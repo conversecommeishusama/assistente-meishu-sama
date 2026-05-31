@@ -3,6 +3,7 @@ import pickle
 import faiss
 import json
 import os
+import zipfile
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import numpy as np
@@ -14,7 +15,7 @@ from docx import Document
 DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-40ece4b96446426597c9ed76f76624e1")
 
 # ==============================================
-# FUNÇÕES DE LEITURA E PROCESSAMENTO DOS .DOCX
+# FUNÇÕES DE EXTRAÇÃO E PROCESSAMENTO
 # ==============================================
 def extrair_texto_docx(caminho):
     doc = Document(caminho)
@@ -30,7 +31,7 @@ def dividir_chunks(texto, tamanho_max=800, sobreposicao=150):
     return chunks
 
 # ==============================================
-# CARREGAR GLOSSÁRIO E PROTOCOLO (do repositório)
+# CARREGAR GLOSSÁRIO E PROTOCOLO
 # ==============================================
 @st.cache_data
 def carregar_glossario():
@@ -52,7 +53,7 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR MODELO E PROCESSAR TEXTOS (cache)
+# CARREGAR MODELO, DESCOMPACTAR E PROCESSAR TEXTOS
 # ==============================================
 @st.cache_resource
 def carregar_modelo():
@@ -60,37 +61,48 @@ def carregar_modelo():
 
 @st.cache_resource
 def carregar_indices():
-    # Listar todos os .docx na pasta "textos"
+    # 1. Descompactar o ZIP se a pasta 'textos' não existir
+    if not os.path.exists("textos"):
+        if not os.path.exists("textos.zip"):
+            st.error("Arquivo textos.zip não encontrado. Verifique se ele foi enviado ao repositório.")
+            return [], None
+        with zipfile.ZipFile("textos.zip", "r") as zip_ref:
+            zip_ref.extractall("textos")
+        st.info("Arquivos descompactados com sucesso!")
+
     pasta_textos = "textos"
     if not os.path.exists(pasta_textos):
-        st.error("Pasta 'textos' não encontrada. Verifique se os arquivos .docx estão no repositório.")
+        st.error("Pasta 'textos' não encontrada após descompactação.")
         return [], None
-    
+
+    # Listar arquivos .docx
     arquivos = [f for f in os.listdir(pasta_textos) if f.endswith('.docx')]
     if not arquivos:
         st.error("Nenhum arquivo .docx encontrado na pasta 'textos'.")
         return [], None
-    
-    # Extrair texto e gerar chunks
+
+    # Processar todos os .docx
     todos_chunks = []
     for arquivo in arquivos:
-        texto = extrair_texto_docx(os.path.join(pasta_textos, arquivo))
-        chunks = dividir_chunks(texto)
-        todos_chunks.extend(chunks)
-    
+        caminho = os.path.join(pasta_textos, arquivo)
+        texto = extrair_texto_docx(caminho)
+        if texto:
+            chunks = dividir_chunks(texto)
+            todos_chunks.extend(chunks)
+
     if not todos_chunks:
         st.error("Nenhum chunk foi gerado. Verifique os arquivos .docx.")
         return [], None
-    
-    # Gerar embeddings
+
+    # Gerar embeddings (pode levar alguns minutos)
     modelo = carregar_modelo()
     embeddings = modelo.encode(todos_chunks, show_progress_bar=True)
-    
+
     # Criar índice FAISS
     dim = embeddings.shape[1]
     index = faiss.IndexFlatIP(dim)
     index.add(embeddings.astype('float32'))
-    
+
     return todos_chunks, index
 
 chunks, indice = carregar_indices()
@@ -108,7 +120,7 @@ else:
     cliente = None
 
 # ==============================================
-# FUNÇÕES DE BUSCA E RESPOSTA (idênticas às anteriores)
+# FUNÇÕES DE BUSCA E RESPOSTA
 # ==============================================
 def buscar_trechos(pergunta, k=15, threshold=0.20):
     if indice is None or not chunks:
@@ -179,7 +191,7 @@ RESPOSTA:"""
         return f"Erro na comunicação com a DeepSeek: {str(e)}"
 
 # ==============================================
-# INTERFACE STREAMLIT (sem alterações)
+# INTERFACE STREAMLIT
 # ==============================================
 st.set_page_config(page_title="Meishu-Sama", layout="wide")
 st.title("🕊️ Assistente dos Escritos de Meishu-Sama")
@@ -191,8 +203,9 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
+        st.markdown(f"- Textos processados: {len([f for f in os.listdir('textos') if f.endswith('.docx')])} arquivos")
     else:
-        st.markdown("- Aguardando processamento dos textos...")
+        st.markdown("- **Processando textos na primeira execução...**")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -202,7 +215,7 @@ for mensagem in st.session_state.historico:
     with st.chat_message(mensagem["role"]):
         st.markdown(mensagem["content"])
 
-if pergunta := st.chat_input("Digite sua pergunta..."):
+if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meishu-Sama..."):
     st.session_state.historico.append({"role": "user", "content": pergunta})
     with st.chat_message("user"):
         st.markdown(pergunta)
@@ -214,4 +227,4 @@ if pergunta := st.chat_input("Digite sua pergunta..."):
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Protocolo v2.1 | Precedência espírito → matéria")
+st.caption("Assistente Meishu-Sama | Protocolo v2.1 | Baseado nos escritos originais | Precedência espírito → matéria")
