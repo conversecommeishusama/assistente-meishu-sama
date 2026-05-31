@@ -1,0 +1,7 @@
+cd C:\meishu
+git init
+git add app.py converter.py glossario.json protocolo.txt requirements.txt .gitignore .streamlit/
+git commit -m "Primeira versão do assistente"
+git branch -M main
+git remote add origin https://github.com/conversecommeishusama/assistente-meishu-sama.git
+git push -u origin main
