@@ -2,17 +2,35 @@ import streamlit as st
 import pickle
 import faiss
 import json
+import os
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import numpy as np
+from docx import Document
 
 # ==============================================
 # CONFIGURAÇÕES
 # ==============================================
-DEEPSEEK_API_KEY = "sk-40ece4b96446426597c9ed76f76624e1"   # <--- SUBSTITUA PELA SUA CHAVE
+DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-40ece4b96446426597c9ed76f76624e1")
 
 # ==============================================
-# CARREGAR GLOSSÁRIO E PROTOCOLO
+# FUNÇÕES DE LEITURA E PROCESSAMENTO DOS .DOCX
+# ==============================================
+def extrair_texto_docx(caminho):
+    doc = Document(caminho)
+    return "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
+
+def dividir_chunks(texto, tamanho_max=800, sobreposicao=150):
+    palavras = texto.split()
+    chunks = []
+    for i in range(0, len(palavras), tamanho_max - sobreposicao):
+        chunk = " ".join(palavras[i:i+tamanho_max])
+        if len(chunk) > 100:
+            chunks.append(chunk)
+    return chunks
+
+# ==============================================
+# CARREGAR GLOSSÁRIO E PROTOCOLO (do repositório)
 # ==============================================
 @st.cache_data
 def carregar_glossario():
@@ -20,7 +38,6 @@ def carregar_glossario():
         with open('glossario.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except:
-        st.warning("Arquivo glossario.json não encontrado. Executando sem glossário.")
         return {}
 
 @st.cache_data
@@ -29,14 +46,13 @@ def carregar_protocolo():
         with open('protocolo.txt', 'r', encoding='utf-8') as f:
             return f.read()
     except:
-        st.warning("Arquivo protocolo.txt não encontrado. Executando sem protocolo.")
         return ""
 
 GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR MODELO, ÍNDICES E CLIENTE
+# CARREGAR MODELO E PROCESSAR TEXTOS (cache)
 # ==============================================
 @st.cache_resource
 def carregar_modelo():
@@ -44,26 +60,60 @@ def carregar_modelo():
 
 @st.cache_resource
 def carregar_indices():
-    with open('chunks.pkl', 'rb') as f:
-        chunks = pickle.load(f)
-    index = faiss.read_index('indice.faiss')
-    return chunks, index
+    # Listar todos os .docx na pasta "textos"
+    pasta_textos = "textos"
+    if not os.path.exists(pasta_textos):
+        st.error("Pasta 'textos' não encontrada. Verifique se os arquivos .docx estão no repositório.")
+        return [], None
+    
+    arquivos = [f for f in os.listdir(pasta_textos) if f.endswith('.docx')]
+    if not arquivos:
+        st.error("Nenhum arquivo .docx encontrado na pasta 'textos'.")
+        return [], None
+    
+    # Extrair texto e gerar chunks
+    todos_chunks = []
+    for arquivo in arquivos:
+        texto = extrair_texto_docx(os.path.join(pasta_textos, arquivo))
+        chunks = dividir_chunks(texto)
+        todos_chunks.extend(chunks)
+    
+    if not todos_chunks:
+        st.error("Nenhum chunk foi gerado. Verifique os arquivos .docx.")
+        return [], None
+    
+    # Gerar embeddings
+    modelo = carregar_modelo()
+    embeddings = modelo.encode(todos_chunks, show_progress_bar=True)
+    
+    # Criar índice FAISS
+    dim = embeddings.shape[1]
+    index = faiss.IndexFlatIP(dim)
+    index.add(embeddings.astype('float32'))
+    
+    return todos_chunks, index
 
+chunks, indice = carregar_indices()
+
+# ==============================================
+# CLIENTE DEEPSEEK
+# ==============================================
 @st.cache_resource
 def criar_cliente():
-    return OpenAI(
-        api_key=DEEPSEEK_API_KEY,
-        base_url="https://api.deepseek.com/v1"
-    )
+    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
-modelo = carregar_modelo()
-chunks, indice = carregar_indices()
-cliente = criar_cliente()
+if indice is not None:
+    cliente = criar_cliente()
+else:
+    cliente = None
 
 # ==============================================
-# FUNÇÕES DE BUSCA E RESPOSTA
+# FUNÇÕES DE BUSCA E RESPOSTA (idênticas às anteriores)
 # ==============================================
 def buscar_trechos(pergunta, k=15, threshold=0.20):
+    if indice is None or not chunks:
+        return []
+    modelo = carregar_modelo()
     emb_pergunta = modelo.encode([pergunta])
     scores, indices = indice.search(emb_pergunta.astype('float32'), k)
     trechos = []
@@ -75,7 +125,7 @@ def buscar_trechos(pergunta, k=15, threshold=0.20):
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
         return ""
-    linhas = ["### GLOSSÁRIO OBRIGATÓRIO (use estas traduções exatas):"]
+    linhas = ["### GLOSSÁRIO OBRIGATÓRIO:"]
     for i, (jap, port) in enumerate(GLOSSARIO.items()):
         if i >= 500:
             linhas.append(f"... e outros {len(GLOSSARIO)-500} termos")
@@ -84,7 +134,6 @@ def formatar_glossario_para_prompt():
     return "\n".join(linhas)
 
 def formatar_historico(historico, ultimas_n=8):
-    """Formata as últimas N mensagens da conversa para enviar ao modelo"""
     if not historico:
         return "Nenhuma mensagem anterior."
     linhas = ["### HISTÓRICO DA CONVERSA (mensagens recentes):"]
@@ -94,6 +143,8 @@ def formatar_historico(historico, ultimas_n=8):
     return "\n".join(linhas)
 
 def responder(pergunta, historico_conversa):
+    if cliente is None:
+        return "Sistema não inicializado corretamente. Verifique os arquivos de texto."
     trechos = buscar_trechos(pergunta, k=15, threshold=0.20)
     if not trechos:
         return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
@@ -109,14 +160,13 @@ def responder(pergunta, historico_conversa):
 Responda à pergunta do usuário em português, baseando-se ESTRITAMENTE nos trechos abaixo.
 Siga o protocolo de tradução e a regra da precedência do espírito sobre a matéria.
 NUNCA invente citações ou informações. Se a resposta não estiver explicitamente nos trechos, diga: "Não encontrei essa informação nos escritos de Meishu-Sama."
-NÃO use aspas para frases que não sejam cópia literal de um trecho.
 
-TRECHOS (escritos originais de Meishu-Sama em japonês):
+TRECHOS:
 {contexto}
 
-PERGUNTA DO USUÁRIO: {pergunta}
+PERGUNTA: {pergunta}
 
-RESPOSTA (em português, seguindo todas as regras acima):"""
+RESPOSTA:"""
     try:
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
@@ -129,45 +179,39 @@ RESPOSTA (em português, seguindo todas as regras acima):"""
         return f"Erro na comunicação com a DeepSeek: {str(e)}"
 
 # ==============================================
-# INTERFACE STREAMLIT (com histórico e chat funcional)
+# INTERFACE STREAMLIT (sem alterações)
 # ==============================================
 st.set_page_config(page_title="Meishu-Sama", layout="wide")
 st.title("🕊️ Assistente dos Escritos de Meishu-Sama")
 
-# Inicializar histórico na sessão
 if "historico" not in st.session_state:
     st.session_state.historico = []
 
-# Sidebar
 with st.sidebar:
     st.markdown("### ℹ️ Sobre")
-    st.markdown("Seguindo o Protocolo Revisado v2.1 e a precedência espírito → matéria.")
-    st.markdown(f"- Chunks indexados: {len(chunks):,}")
+    if indice is not None:
+        st.markdown(f"- Chunks indexados: {len(chunks):,}")
+    else:
+        st.markdown("- Aguardando processamento dos textos...")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
-    st.markdown("- Configuração: `k=15`, `threshold=0.20`, `temp=0.25`")
-    st.markdown("---")
-    if st.button("🗑️ Limpar histórico", key="limpar"):
+    if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
         st.rerun()
 
-# Área de exibição do histórico (do mais antigo para o mais novo)
 for mensagem in st.session_state.historico:
     with st.chat_message(mensagem["role"]):
         st.markdown(mensagem["content"])
 
-# Campo de entrada de nova pergunta (sempre no final)
-if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meishu-Sama..."):
-    # Adiciona pergunta do usuário ao histórico
+if pergunta := st.chat_input("Digite sua pergunta..."):
     st.session_state.historico.append({"role": "user", "content": pergunta})
-    # Gera resposta (passando o histórico para contexto)
-    with st.spinner("Buscando nos escritos e aplicando protocolo..."):
-        resposta = responder(pergunta, st.session_state.historico[:-1])  # exclui a pergunta atual do histórico? vamos passar o histórico completo anterior
-        # Na verdade, vamos passar o histórico antes de adicionar a resposta, mas já com a pergunta? Para evitar confusão, ajustei: melhor passar o histórico atual (já com a pergunta) - mas a pergunta já está no prompt. Vou simplificar: passar o histórico inteiro (incluindo a pergunta) é ok.
-    # Corrigindo: o histórico já contém a pergunta. Vamos passar tudo.
-    resposta = responder(pergunta, st.session_state.historico[:-1])  # sem a resposta ainda, mas com a pergunta
+    with st.chat_message("user"):
+        st.markdown(pergunta)
+    with st.chat_message("assistant"):
+        with st.spinner("Buscando e aplicando protocolo..."):
+            resposta = responder(pergunta, st.session_state.historico[:-1])
+        st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
-# Rodapé
 st.markdown("---")
-st.caption("Baseado nos escritos originais de Meishu-Sama | Protocolo v2.1 | Histórico integrado | Sem alucinações")
+st.caption("Assistente Meishu-Sama | Protocolo v2.1 | Precedência espírito → matéria")

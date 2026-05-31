@@ -4,3 +4,4 @@ faiss-cpu
 openai
 python-docx
 numpy
+requests
