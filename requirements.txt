@@ -5,3 +5,4 @@ openai
 python-docx
 numpy
 rank-bm25
+torchvision
