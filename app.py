@@ -8,11 +8,12 @@ from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import numpy as np
 from docx import Document
+from rank_bm25 import BM25Okapi
 
 # ==============================================
 # CONFIGURAÇÕES
 # ==============================================
-DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-40ece4b96446426597c9ed76f76624e1")
+DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-2fdb0fd4344148e2a3df8f8cc22ad694")
 
 # ==============================================
 # FUNÇÕES DE EXTRAÇÃO E PROCESSAMENTO
@@ -61,10 +62,10 @@ def carregar_modelo():
 
 @st.cache_resource
 def carregar_indices():
-    # 1. Descompactar o ZIP se a pasta 'textos' não existir
+    # Descompactar o ZIP se necessário
     if not os.path.exists("textos"):
         if not os.path.exists("textos.zip"):
-            st.error("Arquivo textos.zip não encontrado. Verifique se ele foi enviado ao repositório.")
+            st.error("Arquivo textos.zip não encontrado.")
             return [], None
         with zipfile.ZipFile("textos.zip", "r") as zip_ref:
             zip_ref.extractall("textos")
@@ -72,33 +73,28 @@ def carregar_indices():
 
     pasta_textos = "textos"
     if not os.path.exists(pasta_textos):
-        st.error("Pasta 'textos' não encontrada após descompactação.")
+        st.error("Pasta 'textos' não encontrada.")
         return [], None
 
-    # Listar arquivos .docx
     arquivos = [f for f in os.listdir(pasta_textos) if f.endswith('.docx')]
     if not arquivos:
-        st.error("Nenhum arquivo .docx encontrado na pasta 'textos'.")
+        st.error("Nenhum arquivo .docx encontrado.")
         return [], None
 
-    # Processar todos os .docx
     todos_chunks = []
     for arquivo in arquivos:
         caminho = os.path.join(pasta_textos, arquivo)
         texto = extrair_texto_docx(caminho)
         if texto:
-            chunks = dividir_chunks(texto)
-            todos_chunks.extend(chunks)
+            todos_chunks.extend(dividir_chunks(texto))
 
     if not todos_chunks:
-        st.error("Nenhum chunk foi gerado. Verifique os arquivos .docx.")
+        st.error("Nenhum chunk gerado.")
         return [], None
 
-    # Gerar embeddings (pode levar alguns minutos)
+    # Gerar embeddings (FAISS)
     modelo = carregar_modelo()
     embeddings = modelo.encode(todos_chunks, show_progress_bar=True)
-
-    # Criar índice FAISS
     dim = embeddings.shape[1]
     index = faiss.IndexFlatIP(dim)
     index.add(embeddings.astype('float32'))
@@ -108,32 +104,65 @@ def carregar_indices():
 chunks, indice = carregar_indices()
 
 # ==============================================
+# BM25 (busca literal) - só se chunks carregados
+# ==============================================
+@st.cache_resource
+def carregar_bm25():
+    if not chunks:
+        return None
+    tokenized_chunks = [chunk.split() for chunk in chunks if chunk.strip()]
+    return BM25Okapi(tokenized_chunks)
+
+bm25 = carregar_bm25()
+
+# ==============================================
 # CLIENTE DEEPSEEK
 # ==============================================
 @st.cache_resource
 def criar_cliente():
     return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
-if indice is not None:
+if indice is not None and bm25 is not None:
     cliente = criar_cliente()
 else:
     cliente = None
 
 # ==============================================
-# FUNÇÕES DE BUSCA E RESPOSTA
+# BUSCA HÍBRIDA (FAISS + BM25 + RRF)
 # ==============================================
-def buscar_trechos(pergunta, k=15, threshold=0.20):
-    if indice is None or not chunks:
+def buscar_trechos(pergunta, k_semantico=20, k_literal=10, threshold=0.15):
+    if indice is None or not chunks or bm25 is None:
         return []
+
+    # 1. Busca semântica (FAISS)
     modelo = carregar_modelo()
     emb_pergunta = modelo.encode([pergunta])
-    scores, indices = indice.search(emb_pergunta.astype('float32'), k)
-    trechos = []
-    for i, idx in enumerate(indices[0]):
+    scores, idxs = indice.search(emb_pergunta.astype('float32'), k_semantico)
+    semanticos = []
+    for i, idx in enumerate(idxs[0]):
         if scores[0][i] >= threshold:
-            trechos.append(chunks[idx])
-    return trechos
+            semanticos.append((chunks[idx], scores[0][i]))
 
+    # 2. Busca literal (BM25)
+    tokens_pergunta = pergunta.split()
+    scores_literal = bm25.get_scores(tokens_pergunta)
+    melhores_idx = np.argsort(scores_literal)[::-1][:k_literal]
+    literais = [(chunks[i], scores_literal[i]) for i in melhores_idx if scores_literal[i] > 0]
+
+    # 3. Fusão RRF
+    rrf_scores = {}
+    k_rrf = 60
+    for rank, (chunk, _) in enumerate(semanticos):
+        rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+    for rank, (chunk, _) in enumerate(literais):
+        rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+
+    trechos_ordenados = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
+    return [chunk for chunk, _ in trechos_ordenados[:30]]
+
+# ==============================================
+# FUNÇÕES DE FORMATAÇÃO E RESPOSTA
+# ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
         return ""
@@ -148,7 +177,7 @@ def formatar_glossario_para_prompt():
 def formatar_historico(historico, ultimas_n=8):
     if not historico:
         return "Nenhuma mensagem anterior."
-    linhas = ["### HISTÓRICO DA CONVERSA (mensagens recentes):"]
+    linhas = ["### HISTÓRICO DA CONVERSA:"]
     for msg in historico[-ultimas_n:]:
         papel = "Usuário" if msg["role"] == "user" else "Assistente"
         linhas.append(f"{papel}: {msg['content']}")
@@ -156,10 +185,10 @@ def formatar_historico(historico, ultimas_n=8):
 
 def responder(pergunta, historico_conversa):
     if cliente is None:
-        return "Sistema não inicializado corretamente. Verifique os arquivos de texto."
-    trechos = buscar_trechos(pergunta, k=15, threshold=0.20)
+        return "Sistema não inicializado. Verifique os arquivos."
+    trechos = buscar_trechos(pergunta, k_semantico=20, k_literal=10, threshold=0.15)
     if not trechos:
-        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
+        return "Não encontrei trechos relacionados nos escritos de Meishu-Sama."
     contexto = "\n\n---\n\n".join(trechos)
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
     prompt = f"""{PROTOCOLO}
@@ -169,9 +198,9 @@ def responder(pergunta, historico_conversa):
 {historico_texto}
 
 ### TAREFA ATUAL:
-Responda à pergunta do usuário em português, baseando-se ESTRITAMENTE nos trechos abaixo.
-Siga o protocolo de tradução e a regra da precedência do espírito sobre a matéria.
-NUNCA invente citações ou informações. Se a resposta não estiver explicitamente nos trechos, diga: "Não encontrei essa informação nos escritos de Meishu-Sama."
+Responda à pergunta em português, baseando-se ESTRITAMENTE nos trechos abaixo.
+Siga o protocolo de tradução e a precedência espírito → matéria.
+NUNCA invente citações. Se a resposta não estiver nos trechos, diga: "Não encontrei essa informação nos escritos de Meishu-Sama."
 
 TRECHOS:
 {contexto}
@@ -181,14 +210,14 @@ PERGUNTA: {pergunta}
 RESPOSTA:"""
     try:
         resposta = cliente.chat.completions.create(
-            model="deepseek-chat",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.25,
-            max_tokens=2500
-        )
+    model="deepseek-chat",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.25,
+    max_tokens=8000   # suficiente para respostas longas
+)
         return resposta.choices[0].message.content
     except Exception as e:
-        return f"Erro na comunicação com a DeepSeek: {str(e)}"
+        return f"Erro na DeepSeek: {str(e)}"
 
 # ==============================================
 # INTERFACE STREAMLIT
@@ -202,29 +231,27 @@ if "historico" not in st.session_state:
 with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
-        st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown(f"- Textos processados: {len([f for f in os.listdir('textos') if f.endswith('.docx')])} arquivos")
-    else:
-        st.markdown("- **Processando textos na primeira execução...**")
-    st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
+        st.markdown(f"- Chunks: {len(chunks):,}")
+        st.markdown("- Busca híbrida (FAISS + BM25 + RRF)")
+    st.markdown(f"- Glossário: {len(GLOSSARIO):,} termos")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
         st.rerun()
 
-for mensagem in st.session_state.historico:
-    with st.chat_message(mensagem["role"]):
-        st.markdown(mensagem["content"])
+for msg in st.session_state.historico:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
 
-if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meishu-Sama..."):
+if pergunta := st.chat_input("Digite sua pergunta..."):
     st.session_state.historico.append({"role": "user", "content": pergunta})
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando e aplicando protocolo..."):
+        with st.spinner("Buscando nos escritos (busca híbrida)..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Protocolo v2.1 | Baseado nos escritos originais | Precedência espírito → matéria")
+st.caption("Assistente Meishu-Sama | Busca Híbrida | Protocolo v2.1 | Precedência espírito → matéria")

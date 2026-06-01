@@ -4,4 +4,4 @@ faiss-cpu
 openai
 python-docx
 numpy
-requests
+rank-bm25
