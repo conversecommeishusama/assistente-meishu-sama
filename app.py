@@ -4,6 +4,7 @@ import faiss
 import json
 import os
 import zipfile
+import re
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import numpy as np
@@ -16,7 +17,40 @@ from rank_bm25 import BM25Okapi
 DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-2fdb0fd4344148e2a3df8f8cc22ad694")
 
 # ==============================================
-# FUNÇÕES DE EXTRAÇÃO E PROCESSAMENTO
+# PRÉ‑PROCESSAMENTO E EXPANSÃO DE CONSULTA
+# ==============================================
+def normalizar_pergunta(pergunta: str) -> str:
+    """Corrige erros comuns de digitação e melhora a consulta."""
+    pergunta = pergunta.strip()
+    # Exemplo: "de pressão" -> "pressão alta"
+    pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
+    # Outras correções podem ser adicionadas aqui
+    return pergunta
+
+# Dicionário de sinônimos (expansão de consulta)
+SINONIMOS = {
+    "doenças venéreas": ["gonorreia", "sífilis", "DST", "doença sexualmente transmissível"],
+    "pressão alta": ["hipertensão"],
+    "ikebana": ["arranjo floral", "flor", "arranjo de flores"],
+    "gonorreia": ["doenças venéreas", "DST"],
+    "sífilis": ["doenças venéreas", "DST"],
+    "ponto vital": ["pontos vitais", "acupuntura", "johrei ponto"],
+    "pontos vitais": ["ponto vital", "acupuntura"]
+}
+
+def expandir_consulta(pergunta: str) -> list:
+    """Retorna uma lista de termos de busca (original + sinônimos relevantes)."""
+    termos_adicionais = []
+    pergunta_lower = pergunta.lower()
+    for termo, sin_list in SINONIMOS.items():
+        if termo in pergunta_lower:
+            termos_adicionais.extend(sin_list)
+    # Remove duplicatas e junta com a pergunta original
+    todos_termos = [pergunta] + list(set(termos_adicionais))
+    return todos_termos
+
+# ==============================================
+# FUNÇÕES DE EXTRAÇÃO E PROCESSAMENTO DE TEXTOS
 # ==============================================
 def extrair_texto_docx(caminho):
     doc = Document(caminho)
@@ -54,7 +88,7 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR MODELO, DESCOMPACTAR E PROCESSAR TEXTOS
+# CARREGAR MODELO, DESCOMPACTAR E INDEXAR TEXTOS
 # ==============================================
 @st.cache_resource
 def carregar_modelo():
@@ -62,7 +96,7 @@ def carregar_modelo():
 
 @st.cache_resource
 def carregar_indices():
-    # Descompactar o ZIP se necessário
+    # Descompactar ZIP se necessário
     if not os.path.exists("textos"):
         if not os.path.exists("textos.zip"):
             st.error("Arquivo textos.zip não encontrado.")
@@ -104,7 +138,7 @@ def carregar_indices():
 chunks, indice = carregar_indices()
 
 # ==============================================
-# BM25 (busca literal) - só se chunks carregados
+# BM25 (BUSCA LITERAL) E RRF
 # ==============================================
 @st.cache_resource
 def carregar_bm25():
@@ -128,37 +162,39 @@ else:
     cliente = None
 
 # ==============================================
-# BUSCA HÍBRIDA (FAISS + BM25 + RRF)
+# BUSCA HÍBRIDA (FAISS + BM25 + RRF) COM EXPANSÃO
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=20, k_literal=10, threshold=0.15):
+def buscar_trechos(pergunta, k_semantico=25, k_literal=15, threshold=0.10):
     if indice is None or not chunks or bm25 is None:
         return []
 
-    # 1. Busca semântica (FAISS)
-    modelo = carregar_modelo()
-    emb_pergunta = modelo.encode([pergunta])
-    scores, idxs = indice.search(emb_pergunta.astype('float32'), k_semantico)
-    semanticos = []
-    for i, idx in enumerate(idxs[0]):
-        if scores[0][i] >= threshold:
-            semanticos.append((chunks[idx], scores[0][i]))
-
-    # 2. Busca literal (BM25)
-    tokens_pergunta = pergunta.split()
-    scores_literal = bm25.get_scores(tokens_pergunta)
-    melhores_idx = np.argsort(scores_literal)[::-1][:k_literal]
-    literais = [(chunks[i], scores_literal[i]) for i in melhores_idx if scores_literal[i] > 0]
-
-    # 3. Fusão RRF
+    # Expansão da consulta
+    consultas = expandir_consulta(pergunta)
+    todos_trechos = set()
     rrf_scores = {}
     k_rrf = 60
-    for rank, (chunk, _) in enumerate(semanticos):
-        rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
-    for rank, (chunk, _) in enumerate(literais):
-        rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+
+    for consulta in consultas:
+        # Busca semântica
+        emb = carregar_modelo().encode([consulta])
+        scores, idxs = indice.search(emb.astype('float32'), k_semantico)
+        for i, idx in enumerate(idxs[0]):
+            if scores[0][i] >= threshold:
+                chunk = chunks[idx]
+                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+
+        # Busca literal (BM25)
+        tokens = consulta.split()
+        if tokens:
+            scores_lit = bm25.get_scores(tokens)
+            best_idx = np.argsort(scores_lit)[::-1][:k_literal]
+            for rank, idx in enumerate(best_idx):
+                if scores_lit[idx] > 0:
+                    chunk = chunks[idx]
+                    rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
 
     trechos_ordenados = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    return [chunk for chunk, _ in trechos_ordenados[:30]]
+    return [chunk for chunk, _ in trechos_ordenados[:40]]
 
 # ==============================================
 # FUNÇÕES DE FORMATAÇÃO E RESPOSTA
@@ -177,7 +213,7 @@ def formatar_glossario_para_prompt():
 def formatar_historico(historico, ultimas_n=8):
     if not historico:
         return "Nenhuma mensagem anterior."
-    linhas = ["### HISTÓRICO DA CONVERSA:"]
+    linhas = ["### HISTÓRICO DA CONVERSA (mensagens recentes):"]
     for msg in historico[-ultimas_n:]:
         papel = "Usuário" if msg["role"] == "user" else "Assistente"
         linhas.append(f"{papel}: {msg['content']}")
@@ -186,11 +222,17 @@ def formatar_historico(historico, ultimas_n=8):
 def responder(pergunta, historico_conversa):
     if cliente is None:
         return "Sistema não inicializado. Verifique os arquivos."
-    trechos = buscar_trechos(pergunta, k_semantico=20, k_literal=10, threshold=0.15)
+
+    # Normalizar a pergunta antes da busca
+    pergunta_normalizada = normalizar_pergunta(pergunta)
+
+    trechos = buscar_trechos(pergunta_normalizada)
     if not trechos:
-        return "Não encontrei trechos relacionados nos escritos de Meishu-Sama."
+        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
+
     contexto = "\n\n---\n\n".join(trechos)
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
+
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -198,23 +240,25 @@ def responder(pergunta, historico_conversa):
 {historico_texto}
 
 ### TAREFA ATUAL:
-Responda à pergunta em português, baseando-se ESTRITAMENTE nos trechos abaixo.
-Siga o protocolo de tradução e a precedência espírito → matéria.
-NUNCA invente citações. Se a resposta não estiver nos trechos, diga: "Não encontrei essa informação nos escritos de Meishu-Sama."
+Responda à pergunta do usuário em português, baseando-se ESTRITAMENTE nos trechos abaixo.
+Siga o protocolo de tradução e a precedência do espírito sobre a matéria.
+**IMPORTANTE**: SEMPRE que possível, cite a fonte do ensinamento (título do livro ou artigo, data, volume). Use o formato: "Conforme [Título do Ensinamento], Meishu-Sama ensina que..."
+NUNCA invente citações. Se a resposta não estiver explicitamente nos trechos, diga: "Não encontrei essa informação nos escritos de Meishu-Sama."
 
 TRECHOS:
 {contexto}
 
-PERGUNTA: {pergunta}
+PERGUNTA DO USUÁRIO: {pergunta}
 
-RESPOSTA:"""
+RESPOSTA (com citações das fontes, sempre que disponível):"""
+
     try:
         resposta = cliente.chat.completions.create(
-    model="deepseek-chat",
-    messages=[{"role": "user", "content": prompt}],
-    temperature=0.25,
-    max_tokens=8000   # suficiente para respostas longas
-)
+            model="deepseek-chat",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.25,
+            max_tokens=8000
+        )
         return resposta.choices[0].message.content
     except Exception as e:
         return f"Erro na DeepSeek: {str(e)}"
@@ -231,9 +275,9 @@ if "historico" not in st.session_state:
 with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
-        st.markdown(f"- Chunks: {len(chunks):,}")
-        st.markdown("- Busca híbrida (FAISS + BM25 + RRF)")
-    st.markdown(f"- Glossário: {len(GLOSSARIO):,} termos")
+        st.markdown(f"- Chunks indexados: {len(chunks):,}")
+        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) com expansão")
+    st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
         st.rerun()
@@ -242,16 +286,16 @@ for msg in st.session_state.historico:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if pergunta := st.chat_input("Digite sua pergunta..."):
+if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meishu-Sama..."):
     st.session_state.historico.append({"role": "user", "content": pergunta})
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando nos escritos (busca híbrida)..."):
+        with st.spinner("Buscando (busca híbrida + expansão) e aplicando protocolo..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida | Protocolo v2.1 | Precedência espírito → matéria")
+st.caption("Assistente Meishu-Sama | Busca Híbrida com Expansão | Protocolo v2.1 | Precedência espírito → matéria")
