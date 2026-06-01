@@ -5,7 +5,7 @@ import json
 import os
 import zipfile
 import re
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
 import numpy as np
 from docx import Document
@@ -35,7 +35,8 @@ SINONIMOS = {
     "gonorreia": ["doenças venéreas", "DST"],
     "sífilis": ["doenças venéreas", "DST"],
     "ponto vital": ["pontos vitais", "acupuntura", "johrei ponto"],
-    "pontos vitais": ["ponto vital", "acupuntura"]
+    "pontos vitais": ["ponto vital", "acupuntura"],
+    "video games": ["jogos eletrônicos", "entretenimento eletrônico", "jogos de vídeo"]
 }
 
 def expandir_consulta(pergunta: str) -> list:
@@ -95,6 +96,10 @@ def carregar_modelo():
     return SentenceTransformer('intfloat/multilingual-e5-small')
 
 @st.cache_resource
+def carregar_cross_encoder():
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+@st.cache_resource
 def carregar_indices():
     # Descompactar ZIP se necessário
     if not os.path.exists("textos"):
@@ -148,6 +153,7 @@ def carregar_bm25():
     return BM25Okapi(tokenized_chunks)
 
 bm25 = carregar_bm25()
+cross_encoder = carregar_cross_encoder() if chunks else None
 
 # ==============================================
 # CLIENTE DEEPSEEK
@@ -156,27 +162,27 @@ bm25 = carregar_bm25()
 def criar_cliente():
     return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
-if indice is not None and bm25 is not None:
+if indice is not None and bm25 is not None and cross_encoder is not None:
     cliente = criar_cliente()
 else:
     cliente = None
 
 # ==============================================
-# BUSCA HÍBRIDA (FAISS + BM25 + RRF) COM EXPANSÃO
+# BUSCA HÍBRIDA (FAISS + BM25 + RRF) COM RERANKER
 # ==============================================
 def buscar_trechos(pergunta, k_semantico=25, k_literal=15, threshold=0.10):
-    if indice is None or not chunks or bm25 is None:
+    if indice is None or not chunks or bm25 is None or cross_encoder is None:
         return []
 
     # Expansão da consulta
     consultas = expandir_consulta(pergunta)
-    todos_trechos = set()
     rrf_scores = {}
     k_rrf = 60
+    modelo = carregar_modelo()  # cacheado
 
     for consulta in consultas:
-        # Busca semântica
-        emb = carregar_modelo().encode([consulta])
+        # Busca semântica (FAISS)
+        emb = modelo.encode([consulta])
         scores, idxs = indice.search(emb.astype('float32'), k_semantico)
         for i, idx in enumerate(idxs[0]):
             if scores[0][i] >= threshold:
@@ -193,8 +199,24 @@ def buscar_trechos(pergunta, k_semantico=25, k_literal=15, threshold=0.10):
                     chunk = chunks[idx]
                     rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
 
-    trechos_ordenados = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    return [chunk for chunk, _ in trechos_ordenados[:40]]
+    # Ordena pelo RRF
+    trechos_com_score_rrf = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
+    if not trechos_com_score_rrf:
+        return []
+
+    # Pega os 40 melhores do RRF para aplicar o reranker
+    top_candidatos = [chunk for chunk, _ in trechos_com_score_rrf[:40]]
+
+    # Aplica reranker (Cross-Encoder)
+    pares = [(pergunta, chunk) for chunk in top_candidatos]
+    scores_rerank = cross_encoder.predict(pares)
+
+    # Reordena pelos scores do cross-encoder
+    candidatos_com_scores = list(zip(top_candidatos, scores_rerank))
+    candidatos_com_scores.sort(key=lambda x: x[1], reverse=True)
+
+    # Retorna os chunks reordenados (até 30 para não estourar contexto)
+    return [chunk for chunk, _ in candidatos_com_scores[:30]]
 
 # ==============================================
 # FUNÇÕES DE FORMATAÇÃO E RESPOSTA
@@ -276,7 +298,7 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) com expansão")
+        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) com expansão e reranker")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -291,11 +313,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando (busca híbrida + expansão) e aplicando protocolo..."):
+        with st.spinner("Buscando (busca híbrida + reranker) e aplicando protocolo..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida com Expansão | Protocolo v2.1 | Precedência espírito → matéria")
+st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Protocolo v3.0 | Precedência espírito → matéria")
