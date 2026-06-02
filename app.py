@@ -10,11 +10,11 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 # ==============================================
-# CONFIGURAÇÕES
+# CONFIGURAÇÃO DA CHAVE (apenas variável de ambiente)
 # ==============================================
-DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-2fdb0fd4344148e2a3df8f8cc22ad694")
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 if not DEEPSEEK_API_KEY:
-    st.error("Chave da DeepSeek não configurada. Configure DEEPSEEK_API_KEY nos segredos do Render.")
+    st.error("Chave da DeepSeek não configurada. Defina a variável de ambiente DEEPSEEK_API_KEY.")
     st.stop()
 
 # ==============================================
@@ -61,75 +61,6 @@ def expandir_consulta(pergunta: str) -> list:
     return todos_termos
 
 # ==============================================
-# FUNÇÕES DE EXTRAÇÃO (não usadas na inicialização, mas mantidas)
-# ==============================================
-def extrair_texto_docx(caminho):
-    from docx import Document
-    doc = Document(caminho)
-    return "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
-
-def dividir_chunks_semantico(texto, tamanho_max_palavras=500, sobreposicao=50):
-    paragrafos = re.split(r'\n\s*\n', texto)
-    chunks = []
-    for para in paragrafos:
-        para = para.strip()
-        if not para:
-            continue
-        if len(para.split()) <= tamanho_max_palavras:
-            chunks.append(para)
-        else:
-            frases = re.split(r'(?<=[.!?;:、。])\s+', para)
-            chunk_atual = []
-            contagem = 0
-            for frase in frases:
-                palavras_frase = len(frase.split())
-                if contagem + palavras_frase <= tamanho_max_palavras:
-                    chunk_atual.append(frase)
-                    contagem += palavras_frase
-                else:
-                    if chunk_atual:
-                        chunks.append(' '.join(chunk_atual))
-                    if len(chunk_atual) >= 2:
-                        sobreposicao_frases = chunk_atual[-2:]
-                    else:
-                        sobreposicao_frases = chunk_atual[-1:] if chunk_atual else []
-                    chunk_atual = sobreposicao_frases + [frase]
-                    contagem = sum(len(f.split()) for f in chunk_atual)
-            if chunk_atual:
-                chunks.append(' '.join(chunk_atual))
-    chunks = [c for c in chunks if len(c) > 50]
-    return chunks
-
-def extrair_metadados(texto, nome_arquivo):
-    linhas = texto.split('\n')
-    cabecalho = '\n'.join(linhas[:15])
-    metadados = {
-        'arquivo': nome_arquivo,
-        'titulo_kanji': '',
-        'titulo_romaji': '',
-        'data': '',
-        'volume': '',
-        'tipo': ''
-    }
-    titulo_match = re.search(r'(御教え集|御光話録|栄光|御垂示録|神示|御光話|御教え|岡田茂吉全集)', cabecalho)
-    if titulo_match:
-        kanji = titulo_match.group(0)
-        metadados['titulo_kanji'] = kanji
-        metadados['titulo_romaji'] = TRANSLITERACAO_TITULOS.get(kanji, kanji)
-    numero_match = re.search(r'第\s*(\d+)\s*号', cabecalho)
-    if numero_match:
-        metadados['volume'] = f"Nº {numero_match.group(1)}"
-    data_match = re.search(r'昭和(\d{1,2})年(\d{1,2})月(\d{1,2})日', cabecalho)
-    if data_match:
-        ano = int(data_match.group(1)) + 1925
-        metadados['data'] = f"{ano}/{data_match.group(2)}/{data_match.group(3)}"
-    else:
-        data_match = re.search(r'(\d{4})[./-](\d{1,2})[./-](\d{1,2})', cabecalho)
-        if data_match:
-            metadados['data'] = f"{data_match.group(1)}/{data_match.group(2)}/{data_match.group(3)}"
-    return metadados
-
-# ==============================================
 # CARREGAR GLOSSÁRIO E PROTOCOLO
 # ==============================================
 @st.cache_data
@@ -152,16 +83,8 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR MODELOS E ÍNDICES (LOCAIS)
+# CARREGAR ÍNDICES (locais)
 # ==============================================
-@st.cache_resource
-def carregar_modelo():
-    return SentenceTransformer('all-MiniLM-L6-v2')
-
-@st.cache_resource
-def carregar_cross_encoder():
-    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
-
 @st.cache_resource
 def carregar_indices():
     with open('chunks.pkl', 'rb') as f:
@@ -176,15 +99,21 @@ def carregar_indices():
     return chunks, index, metadados, originais
 
 @st.cache_resource
-def carregar_bm25(chunks):
-    if not chunks:
-        return None
-    tokenized_chunks = [chunk.split() for chunk in chunks if chunk.strip()]
-    return BM25Okapi(tokenized_chunks)
+def carregar_modelo():
+    return SentenceTransformer('all-MiniLM-L6-v2')
 
+@st.cache_resource
+def carregar_cross_encoder():
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+@st.cache_resource
+def carregar_bm25(chunks):
+    tokenized = [c.split() for c in chunks if c.strip()]
+    return BM25Okapi(tokenized)
+
+chunks, indice, metadados_lista, textos_originais = carregar_indices()
 modelo = carregar_modelo()
 cross_encoder = carregar_cross_encoder()
-chunks, indice, metadados_lista, textos_originais = carregar_indices()
 bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
@@ -192,13 +121,9 @@ cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1
 # BUSCA HÍBRIDA (FAISS + BM25 + RRF + Reranker)
 # ==============================================
 def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
-    if indice is None or not chunks or bm25 is None or cross_encoder is None:
-        return [], []
-
     consultas = expandir_consulta(pergunta)
     rrf_scores = {}
     k_rrf = 60
-
     for consulta in consultas:
         emb = modelo.encode([consulta])
         scores, idxs = indice.search(emb.astype('float32'), k_semantico)
@@ -206,7 +131,6 @@ def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
             if scores[0][i] >= threshold:
                 chunk = chunks[idx]
                 rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
-
         tokens = consulta.split()
         if tokens:
             scores_lit = bm25.get_scores(tokens)
@@ -215,23 +139,19 @@ def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
                 if scores_lit[idx] > 0:
                     chunk = chunks[idx]
                     rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
-
     if not rrf_scores:
         return [], []
-
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
     top_candidatos = [chunk for chunk, _ in trechos_com_score[:50]]
     pares = [(pergunta, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
-    candidatos_com_scores = list(zip(top_candidatos, scores_rerank))
-    candidatos_com_scores.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos_com_scores[:30]]
-
+    candidatos = list(zip(top_candidatos, scores_rerank))
+    candidatos.sort(key=lambda x: x[1], reverse=True)
+    chunks_reranked = [chunk for chunk, _ in candidatos[:30]]
     metadados_reranked = []
     for chunk in chunks_reranked:
         idx = chunks.index(chunk)
         metadados_reranked.append(metadados_lista[idx])
-
     return chunks_reranked, metadados_reranked
 
 # ==============================================
@@ -262,7 +182,6 @@ def responder(pergunta, historico_conversa):
     trechos, metadados = buscar_trechos(pergunta_normalizada)
     if not trechos:
         return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
-
     contexto = ""
     for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
         titulo = meta.get('titulo_romaji', '')
@@ -272,7 +191,6 @@ def responder(pergunta, historico_conversa):
         if not fonte or fonte == "Fonte: ":
             fonte = "Fonte: (não identificada)"
         contexto += f"**[Trecho {i+1}]** {fonte}\n{trecho}\n\n---\n\n"
-
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
     palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
     use_cot = any(palavra in pergunta_normalizada.lower() for palavra in palavras_chave_cot)
@@ -281,7 +199,6 @@ def responder(pergunta, historico_conversa):
         "Antes de responder, liste os trechos relevantes e explique a relação com a pergunta.\n"
         "Se os trechos forem insuficientes, diga 'Não encontrei'.\n\n"
     ) if use_cot else ""
-
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -307,7 +224,6 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
 **RESPOSTA:"""
-
     try:
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
