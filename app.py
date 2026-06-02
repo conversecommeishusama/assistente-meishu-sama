@@ -33,13 +33,14 @@ TRANSLITERACAO_TITULOS = {
 }
 
 # ==============================================
-# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA
+# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA (sem adição manual de sinônimos)
 # ==============================================
 def normalizar_pergunta(pergunta: str) -> str:
     pergunta = pergunta.strip()
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     return pergunta
 
+# Dicionário de sinônimos original (sem adições)
 SINONIMOS = {
     "doenças venéreas": ["gonorreia", "sífilis", "DST", "doença sexualmente transmissível"],
     "pressão alta": ["hipertensão"],
@@ -83,14 +84,10 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR ÍNDICES E MODELOS (com cache)
+# CARREGAR ÍNDICES E MODELOS (com modelo melhor para japonês)
 # ==============================================
 @st.cache_resource
 def carregar_indices():
-    for arq in ['chunks.pkl', 'indice.faiss', 'metadados.pkl']:
-        if not os.path.exists(arq):
-            st.error(f"Arquivo {arq} não encontrado.")
-            return None, None, None, None
     with open('chunks.pkl', 'rb') as f:
         chunks = pickle.load(f)
     with open('metadados.pkl', 'rb') as f:
@@ -104,7 +101,8 @@ def carregar_indices():
 
 @st.cache_resource
 def carregar_modelo():
-    return SentenceTransformer('all-MiniLM-L6-v2')
+    # Modelo multilíngue com boa performance para japonês (sem o peso do GLuCoSE)
+    return SentenceTransformer('intfloat/multilingual-e5-small')
 
 @st.cache_resource
 def carregar_cross_encoder():
@@ -112,34 +110,33 @@ def carregar_cross_encoder():
 
 @st.cache_resource
 def carregar_bm25(chunks):
-    if not chunks:
-        return None
     tokenized = [c.split() for c in chunks if c.strip()]
     return BM25Okapi(tokenized)
 
 chunks, indice, metadados_lista, textos_originais = carregar_indices()
-if chunks is None:
-    st.stop()
-
 modelo = carregar_modelo()
 cross_encoder = carregar_cross_encoder()
 bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# BUSCA HÍBRIDA (FAISS + BM25 + RRF + Reranker)
+# BUSCA HÍBRIDA COM PARÂMETROS OTIMIZADOS
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
+def buscar_trechos(pergunta, k_semantico=50, k_literal=25, threshold=0.04):
     consultas = expandir_consulta(pergunta)
     rrf_scores = {}
     k_rrf = 60
+
     for consulta in consultas:
+        # Busca semântica (FAISS)
         emb = modelo.encode([consulta])
         scores, idxs = indice.search(emb.astype('float32'), k_semantico)
         for i, idx in enumerate(idxs[0]):
             if scores[0][i] >= threshold:
                 chunk = chunks[idx]
                 rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+
+        # Busca literal (BM25)
         tokens = consulta.split()
         if tokens:
             scores_lit = bm25.get_scores(tokens)
@@ -148,19 +145,23 @@ def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
                 if scores_lit[idx] > 0:
                     chunk = chunks[idx]
                     rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+
     if not rrf_scores:
         return [], []
+
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:50]]
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:60]]  # mais candidatos
     pares = [(pergunta, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
     candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos[:30]]
+    chunks_reranked = [chunk for chunk, _ in candidatos[:40]]  # mais contexto
+
     metadados_reranked = []
     for chunk in chunks_reranked:
         idx = chunks.index(chunk)
         metadados_reranked.append(metadados_lista[idx])
+
     return chunks_reranked, metadados_reranked
 
 # ==============================================
@@ -190,8 +191,7 @@ def responder(pergunta, historico_conversa):
     pergunta_normalizada = normalizar_pergunta(pergunta)
     trechos, metadados = buscar_trechos(pergunta_normalizada)
     if not trechos:
-        # Se não encontrou trechos, ainda tenta inferir apenas com princípios gerais? Melhor responder negativamente.
-        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama para responder a essa pergunta."
+        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
 
     contexto = ""
     for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
@@ -205,7 +205,15 @@ def responder(pergunta, historico_conversa):
 
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
 
-    # Instrução especial para inferência (não usaremos chain-of-thought fixo, mas sim um lembrete)
+    # Palavras-chave para chain-of-thought (sem adições manuais)
+    palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
+    use_cot = any(palavra in pergunta_normalizada.lower() for palavra in palavras_chave_cot)
+    instrucao_cot = (
+        "**Instrução especial para perguntas complexas:**\n"
+        "Antes de responder, liste os trechos relevantes e explique a relação com a pergunta.\n"
+        "Se os trechos forem insuficientes, faça uma inferência responsável, claramente rotulada.\n\n"
+    ) if use_cot else ""
+
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -215,15 +223,17 @@ def responder(pergunta, historico_conversa):
 **TRECHOS COM FONTES:**
 {contexto}
 
+{instrucao_cot}
+
 **REGRAS OBRIGATÓRIAS:**
 1. NUNCA invente citações. Não use aspas sem cópia literal.
-2. Se a resposta não estiver explicitamente nos trechos, você PODE fazer inferências baseadas nos princípios doutrinários, desde que:
+2. Se a resposta não estiver nos trechos, você PODE fazer inferências baseadas nos princípios doutrinários, desde que:
    - Sejam claramente rotuladas como "inferência", "possibilidade" ou "dedução".
    - Não sejam apresentadas como fato.
    - Acompanhem a nota: "Nota de Interpretação (Inferência): Esta conclusão não está literalmente nos trechos, mas é uma dedução baseada nos princípios gerais do ensinamento."
-3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei", quando a pergunta claramente se relaciona com conceitos doutrinários presentes nos trechos.
+3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei", quando a pergunta claramente se relaciona com conceitos doutrinários.
 4. SEMPRE que possível, cite a fonte (título romanizado, volume, data).
-5. Siga a precedência do espírito sobre a matéria (霊主体従).
+5. Siga precedência espírito→matéria.
 
 **ACESSO A TEXTOS ORIGINAIS:**
 Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
@@ -237,11 +247,10 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.25,   # meio termo entre fidelidade e fluidez
+            temperature=0.25,
             max_tokens=8000
         )
         resposta_texto = resposta.choices[0].message.content
-        # Substitui marcador de original, se houver
         padrao = r'\[ORIGINAL:([^\]]+\.docx)\]'
         match = re.search(padrao, resposta_texto)
         if match:
@@ -270,8 +279,9 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida + reranker + metadados + originais")
-        st.markdown("- Temperatura: 0.25 | Inferência responsável ativada")
+        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) + reranker")
+        st.markdown("- Modelo: multilingual-e5-small (otimizado para japonês)")
+        st.markdown("- Parâmetros: k=50, threshold=0.04")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -286,11 +296,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando e raciocinando..."):
+        with st.spinner("Buscando..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Inferência responsável | Temp=0,25")
+st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo multilingual-e5-small | Temp=0,25 | Inferência responsável")
