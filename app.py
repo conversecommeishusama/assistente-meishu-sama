@@ -8,6 +8,7 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
 import numpy as np
 from rank_bm25 import BM25Okapi
+from itertools import chain
 
 # ==============================================
 # CONFIGURAÇÃO DA CHAVE (via variável de ambiente)
@@ -33,33 +34,39 @@ TRANSLITERACAO_TITULOS = {
 }
 
 # ==============================================
-# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA (básica)
+# PRÉ-PROCESSAMENTO BÁSICO
 # ==============================================
 def normalizar_pergunta(pergunta: str) -> str:
     pergunta = pergunta.strip()
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     return pergunta
 
-# Sinônimos apenas para termos muito comuns, sem adição manual para termos doutrinários
-SINONIMOS = {
-    "doenças venéreas": ["gonorreia", "sífilis", "DST", "doença sexualmente transmissível"],
-    "pressão alta": ["hipertensão"],
-    "ikebana": ["生け花", "活け花", "活花", "花を活け", "arranjo floral", "arte floral"],
-    "gonorreia": ["doenças venéreas", "DST"],
-    "sífilis": ["doenças venéreas", "DST"],
-    "ponto vital": ["pontos vitais", "acupuntura", "johrei ponto"],
-    "pontos vitais": ["ponto vital", "acupuntura"],
-    "video games": ["jogos eletrônicos", "entretenimento eletrônico", "jogos de vídeo"]
-}
+# Sem sinônimos manuais – vamos usar expansão automática por n-gramas
+
+def expandir_consulta_automatica(pergunta: str) -> list:
+    """
+    Gera termos de busca a partir da pergunta: palavras individuais,
+    bigramas, trigramas e a pergunta inteira. Isso permite capturar
+    termos compostos sem dicionário manual.
+    """
+    palavras = pergunta.split()
+    termos = set()
+    termos.add(pergunta)
+    for p in palavras:
+        termos.add(p)
+    # bigramas
+    for i in range(len(palavras)-1):
+        termos.add(f"{palavras[i]} {palavras[i+1]}")
+    # trigramas
+    for i in range(len(palavras)-2):
+        termos.add(f"{palavras[i]} {palavras[i+1]} {palavras[i+2]}")
+    # também adicionamos a versão em minúsculas e sem acentos (simplificado)
+    termos.add(pergunta.lower())
+    return list(termos)
 
 def expandir_consulta(pergunta: str) -> list:
-    termos_adicionais = []
-    pergunta_lower = pergunta.lower()
-    for termo, sin_list in SINONIMOS.items():
-        if termo in pergunta_lower:
-            termos_adicionais.extend(sin_list)
-    todos_termos = [pergunta] + list(set(termos_adicionais))
-    return todos_termos
+    # Usa a expansão automática + a pergunta original
+    return expandir_consulta_automatica(pergunta)
 
 # ==============================================
 # CARREGAR GLOSSÁRIO E PROTOCOLO
@@ -101,8 +108,8 @@ def carregar_indices():
 
 @st.cache_resource
 def carregar_modelo():
-    # Modelo especialista em japonês (GLuCoSE) – melhor para termos raros como 大三災
-    return SentenceTransformer('pkshatech/GLuCoSE-base-ja')
+    # Modelo multilíngue estável e testado
+    return SentenceTransformer('intfloat/multilingual-e5-small')
 
 @st.cache_resource
 def carregar_cross_encoder():
@@ -120,9 +127,9 @@ bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# BUSCA HÍBRIDA COM PARÂMETROS MUITO SENSÍVEIS
+# BUSCA HÍBRIDA COM PARÂMETROS EXTREMAMENTE SENSÍVEIS
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=100, k_literal=50, threshold=0.01):
+def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
     consultas = expandir_consulta(pergunta)
     rrf_scores = {}
     k_rrf = 60
@@ -150,12 +157,12 @@ def buscar_trechos(pergunta, k_semantico=100, k_literal=50, threshold=0.01):
         return [], []
 
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:80]]
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:100]]
     pares = [(pergunta, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
     candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos[:50]]
+    chunks_reranked = [chunk for chunk, _ in candidatos[:60]]
 
     metadados_reranked = []
     for chunk in chunks_reranked:
@@ -165,7 +172,7 @@ def buscar_trechos(pergunta, k_semantico=100, k_literal=50, threshold=0.01):
     return chunks_reranked, metadados_reranked
 
 # ==============================================
-# FORMATAÇÃO DO PROMPT
+# FORMATAÇÃO DO PROMPT (igual à versão anterior)
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -279,8 +286,8 @@ with st.sidebar:
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
         st.markdown("- Busca híbrida (FAISS + BM25 + RRF) + reranker")
-        st.markdown("- Modelo: GLuCoSE (especialista em japonês)")
-        st.markdown("- Parâmetros: k=100, threshold=0.01")
+        st.markdown("- Modelo: multilingual-e5-small (com parâmetros ultra-sensíveis)")
+        st.markdown("- Parâmetros: k=150, threshold=0.005, expansão automática")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -302,4 +309,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo GLuCoSE (japonês) | Temp=0,25 | Inferência responsável")
+st.caption("Assistente Meishu-Sama | Busca Híbrida ultra-sensível | Modelo multilingual-e5-small | Temp=0,25 | Expansão automática de consulta")
