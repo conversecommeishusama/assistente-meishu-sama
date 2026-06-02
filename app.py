@@ -4,7 +4,6 @@ import faiss
 import json
 import os
 import re
-import requests
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
 import numpy as np
@@ -17,34 +16,6 @@ DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-2fdb0fd4344148e2a3df8f
 if not DEEPSEEK_API_KEY:
     st.error("Chave da DeepSeek não configurada. Configure DEEPSEEK_API_KEY nos segredos do Render.")
     st.stop()
-
-# URLs dos arquivos no Google Drive (download direto)
-URLS = {
-    'chunks.pkl': 'https://drive.google.com/uc?export=download&id=1XBbRaWHf-0B1vh2MZ7pLWb6fZ_oa4e8h',
-    'indice.faiss': 'https://drive.google.com/uc?export=download&id=1bPUXQArggxJ4IecCALZcfOGYeev82D-y',
-    'metadados.pkl': 'https://drive.google.com/uc?export=download&id=1cl1i4B-Ub-Uy9VINQ-tmKHYYsEaU7l-X',
-    'textos_originais.pkl': 'https://drive.google.com/uc?export=download&id=1mJZmI2IoV8P8Ro5VyYK63BI4svjuE40f'
-}
-
-def baixar_arquivo(nome_arquivo, url):
-    """Baixa um arquivo do Google Drive se ele não existir localmente."""
-    if os.path.exists(nome_arquivo):
-        return
-    with st.spinner(f"Baixando {nome_arquivo} (pode levar alguns minutos)..."):
-        try:
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-            with open(nome_arquivo, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            st.success(f"{nome_arquivo} baixado com sucesso.")
-        except Exception as e:
-            st.error(f"Erro ao baixar {nome_arquivo}: {e}")
-            st.stop()
-
-# Baixar todos os arquivos necessários (se não existirem)
-for nome, url in URLS.items():
-    baixar_arquivo(nome, url)
 
 # ==============================================
 # TRANSLITERAÇÃO DE TÍTULOS (KANJI -> ROMAJI)
@@ -90,7 +61,7 @@ def expandir_consulta(pergunta: str) -> list:
     return todos_termos
 
 # ==============================================
-# FUNÇÕES DE EXTRAÇÃO (não usadas na inicialização, mas mantidas para referência)
+# FUNÇÕES DE EXTRAÇÃO (não usadas na inicialização, mas mantidas)
 # ==============================================
 def extrair_texto_docx(caminho):
     from docx import Document
@@ -181,18 +152,18 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR MODELOS E ÍNDICES
+# CARREGAR MODELOS E ÍNDICES (LOCAIS)
 # ==============================================
 @st.cache_resource
 def carregar_modelo():
-    return SentenceTransformer('all-MiniLM-L6-v2')  # modelo leve
+    return SentenceTransformer('all-MiniLM-L6-v2')
 
 @st.cache_resource
 def carregar_cross_encoder():
     return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
 @st.cache_resource
-def carregar_chunks_e_metadados():
+def carregar_indices():
     with open('chunks.pkl', 'rb') as f:
         chunks = pickle.load(f)
     with open('metadados.pkl', 'rb') as f:
@@ -211,10 +182,9 @@ def carregar_bm25(chunks):
     tokenized_chunks = [chunk.split() for chunk in chunks if chunk.strip()]
     return BM25Okapi(tokenized_chunks)
 
-# Carregar todos os recursos
 modelo = carregar_modelo()
 cross_encoder = carregar_cross_encoder()
-chunks, indice, metadados_lista, textos_originais = carregar_chunks_e_metadados()
+chunks, indice, metadados_lista, textos_originais = carregar_indices()
 bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
@@ -230,7 +200,6 @@ def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
     k_rrf = 60
 
     for consulta in consultas:
-        # Busca semântica (FAISS)
         emb = modelo.encode([consulta])
         scores, idxs = indice.search(emb.astype('float32'), k_semantico)
         for i, idx in enumerate(idxs[0]):
@@ -238,7 +207,6 @@ def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
                 chunk = chunks[idx]
                 rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
 
-        # Busca literal (BM25)
         tokens = consulta.split()
         if tokens:
             scores_lit = bm25.get_scores(tokens)
@@ -338,7 +306,7 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
 
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
-**RESPOSTA:**"""
+**RESPOSTA:"""
 
     try:
         resposta = cliente.chat.completions.create(
