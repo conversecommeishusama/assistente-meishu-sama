@@ -10,7 +10,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 # ==============================================
-# CONFIGURAÇÃO DA CHAVE (apenas variável de ambiente)
+# CONFIGURAÇÃO DA CHAVE (via variável de ambiente)
 # ==============================================
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 if not DEEPSEEK_API_KEY:
@@ -83,10 +83,14 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR ÍNDICES (locais)
+# CARREGAR ÍNDICES E MODELOS (com cache)
 # ==============================================
 @st.cache_resource
 def carregar_indices():
+    for arq in ['chunks.pkl', 'indice.faiss', 'metadados.pkl']:
+        if not os.path.exists(arq):
+            st.error(f"Arquivo {arq} não encontrado.")
+            return None, None, None, None
     with open('chunks.pkl', 'rb') as f:
         chunks = pickle.load(f)
     with open('metadados.pkl', 'rb') as f:
@@ -108,10 +112,15 @@ def carregar_cross_encoder():
 
 @st.cache_resource
 def carregar_bm25(chunks):
+    if not chunks:
+        return None
     tokenized = [c.split() for c in chunks if c.strip()]
     return BM25Okapi(tokenized)
 
 chunks, indice, metadados_lista, textos_originais = carregar_indices()
+if chunks is None:
+    st.stop()
+
 modelo = carregar_modelo()
 cross_encoder = carregar_cross_encoder()
 bm25 = carregar_bm25(chunks)
@@ -181,7 +190,9 @@ def responder(pergunta, historico_conversa):
     pergunta_normalizada = normalizar_pergunta(pergunta)
     trechos, metadados = buscar_trechos(pergunta_normalizada)
     if not trechos:
-        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
+        # Se não encontrou trechos, ainda tenta inferir apenas com princípios gerais? Melhor responder negativamente.
+        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama para responder a essa pergunta."
+
     contexto = ""
     for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
         titulo = meta.get('titulo_romaji', '')
@@ -191,14 +202,10 @@ def responder(pergunta, historico_conversa):
         if not fonte or fonte == "Fonte: ":
             fonte = "Fonte: (não identificada)"
         contexto += f"**[Trecho {i+1}]** {fonte}\n{trecho}\n\n---\n\n"
+
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
-    palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
-    use_cot = any(palavra in pergunta_normalizada.lower() for palavra in palavras_chave_cot)
-    instrucao_cot = (
-        "**Instrução especial para perguntas complexas:**\n"
-        "Antes de responder, liste os trechos relevantes e explique a relação com a pergunta.\n"
-        "Se os trechos forem insuficientes, diga 'Não encontrei'.\n\n"
-    ) if use_cot else ""
+
+    # Instrução especial para inferência (não usaremos chain-of-thought fixo, mas sim um lembrete)
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -208,14 +215,15 @@ def responder(pergunta, historico_conversa):
 **TRECHOS COM FONTES:**
 {contexto}
 
-{instrucao_cot}
-
 **REGRAS OBRIGATÓRIAS:**
 1. NUNCA invente citações. Não use aspas sem cópia literal.
-2. Se a resposta não estiver nos trechos, diga "Não encontrei".
-3. Inferências devem ser rotuladas como "Nota de Interpretação".
-4. SEMPRE cite a fonte (título romanizado, volume, data).
-5. Siga precedência espírito→matéria.
+2. Se a resposta não estiver explicitamente nos trechos, você PODE fazer inferências baseadas nos princípios doutrinários, desde que:
+   - Sejam claramente rotuladas como "inferência", "possibilidade" ou "dedução".
+   - Não sejam apresentadas como fato.
+   - Acompanhem a nota: "Nota de Interpretação (Inferência): Esta conclusão não está literalmente nos trechos, mas é uma dedução baseada nos princípios gerais do ensinamento."
+3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei", quando a pergunta claramente se relaciona com conceitos doutrinários presentes nos trechos.
+4. SEMPRE que possível, cite a fonte (título romanizado, volume, data).
+5. Siga a precedência do espírito sobre a matéria (霊主体従).
 
 **ACESSO A TEXTOS ORIGINAIS:**
 Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
@@ -223,15 +231,17 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
 
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
-**RESPOSTA:"""
+**RESPOSTA (seguindo as regras acima):**"""
+
     try:
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.15,
+            temperature=0.25,   # meio termo entre fidelidade e fluidez
             max_tokens=8000
         )
         resposta_texto = resposta.choices[0].message.content
+        # Substitui marcador de original, se houver
         padrao = r'\[ORIGINAL:([^\]]+\.docx)\]'
         match = re.search(padrao, resposta_texto)
         if match:
@@ -261,6 +271,7 @@ with st.sidebar:
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
         st.markdown("- Busca híbrida + reranker + metadados + originais")
+        st.markdown("- Temperatura: 0.25 | Inferência responsável ativada")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -275,11 +286,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando..."):
+        with st.spinner("Buscando e raciocinando..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo leve | Temp=0,15")
+st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Inferência responsável | Temp=0,25")
