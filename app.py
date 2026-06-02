@@ -3,20 +3,52 @@ import pickle
 import faiss
 import json
 import os
-import zipfile
 import re
-from datetime import datetime
+import requests
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
 import numpy as np
-from docx import Document
 from rank_bm25 import BM25Okapi
 
 # ==============================================
 # CONFIGURAÇÕES
 # ==============================================
 DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY", "sk-2fdb0fd4344148e2a3df8f8cc22ad694")
+if not DEEPSEEK_API_KEY:
+    st.error("Chave da DeepSeek não configurada. Configure DEEPSEEK_API_KEY nos segredos do Render.")
+    st.stop()
 
+# URLs dos arquivos no Google Drive (download direto)
+URLS = {
+    'chunks.pkl': 'https://drive.google.com/uc?export=download&id=1XBbRaWHf-0B1vh2MZ7pLWb6fZ_oa4e8h',
+    'indice.faiss': 'https://drive.google.com/uc?export=download&id=1bPUXQArggxJ4IecCALZcfOGYeev82D-y',
+    'metadados.pkl': 'https://drive.google.com/uc?export=download&id=1cl1i4B-Ub-Uy9VINQ-tmKHYYsEaU7l-X',
+    'textos_originais.pkl': 'https://drive.google.com/uc?export=download&id=1mJZmI2IoV8P8Ro5VyYK63BI4svjuE40f'
+}
+
+def baixar_arquivo(nome_arquivo, url):
+    """Baixa um arquivo do Google Drive se ele não existir localmente."""
+    if os.path.exists(nome_arquivo):
+        return
+    with st.spinner(f"Baixando {nome_arquivo} (pode levar alguns minutos)..."):
+        try:
+            response = requests.get(url, stream=True)
+            response.raise_for_status()
+            with open(nome_arquivo, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            st.success(f"{nome_arquivo} baixado com sucesso.")
+        except Exception as e:
+            st.error(f"Erro ao baixar {nome_arquivo}: {e}")
+            st.stop()
+
+# Baixar todos os arquivos necessários (se não existirem)
+for nome, url in URLS.items():
+    baixar_arquivo(nome, url)
+
+# ==============================================
+# TRANSLITERAÇÃO DE TÍTULOS (KANJI -> ROMAJI)
+# ==============================================
 TRANSLITERACAO_TITULOS = {
     "御教え集": "Mioshie-shū",
     "御光話録": "Gokōwa-roku",
@@ -30,7 +62,7 @@ TRANSLITERACAO_TITULOS = {
 }
 
 # ==============================================
-# PRÉ-PROCESSAMENTO E EXPANSÃO
+# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA
 # ==============================================
 def normalizar_pergunta(pergunta: str) -> str:
     pergunta = pergunta.strip()
@@ -58,9 +90,10 @@ def expandir_consulta(pergunta: str) -> list:
     return todos_termos
 
 # ==============================================
-# EXTRAÇÃO DE TEXTO, CHUNKING, METADADOS
+# FUNÇÕES DE EXTRAÇÃO (não usadas na inicialização, mas mantidas para referência)
 # ==============================================
 def extrair_texto_docx(caminho):
+    from docx import Document
     doc = Document(caminho)
     return "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
 
@@ -126,7 +159,7 @@ def extrair_metadados(texto, nome_arquivo):
     return metadados
 
 # ==============================================
-# GLOSSÁRIO E PROTOCOLO
+# CARREGAR GLOSSÁRIO E PROTOCOLO
 # ==============================================
 @st.cache_data
 def carregar_glossario():
@@ -148,65 +181,18 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CRIAÇÃO DE ÍNDICES AUTOMÁTICA (se não existirem)
-# ==============================================
-def criar_indices_se_necessario():
-    if os.path.exists('chunks.pkl') and os.path.exists('indice.faiss') and os.path.exists('metadados.pkl'):
-        return
-    st.info("🔨 Gerando índices pela primeira vez (pode levar alguns minutos)...")
-    if not os.path.exists("textos"):
-        if not os.path.exists("textos.zip"):
-            st.error("Arquivo textos.zip não encontrado. Envie os arquivos .docx em uma pasta 'textos' ou o arquivo 'textos.zip'.")
-            return
-        with zipfile.ZipFile("textos.zip", "r") as z:
-            z.extractall("textos")
-        st.info("Textos descompactados.")
-    pasta_textos = "textos"
-    if not os.path.exists(pasta_textos):
-        st.error("Pasta 'textos' não encontrada.")
-        return
-    arquivos = [f for f in os.listdir(pasta_textos) if f.endswith('.docx')]
-    if not arquivos:
-        st.error("Nenhum arquivo .docx encontrado.")
-        return
-    todos_chunks = []
-    todos_metadados = []
-    textos_originais = {}
-    for arq in arquivos:
-        caminho = os.path.join(pasta_textos, arq)
-        texto = extrair_texto_docx(caminho)
-        if not texto:
-            continue
-        textos_originais[arq] = texto
-        meta = extrair_metadados(texto, arq)
-        chunks = dividir_chunks_semantico(texto)
-        todos_chunks.extend(chunks)
-        todos_metadados.extend([meta] * len(chunks))
-    if not todos_chunks:
-        st.error("Nenhum chunk gerado.")
-        return
-    modelo = SentenceTransformer('intfloat/multilingual-e5-small')
-    embeddings = modelo.encode(todos_chunks, show_progress_bar=True, batch_size=128)
-    dim = embeddings.shape[1]
-    index = faiss.IndexFlatIP(dim)
-    index.add(embeddings.astype('float32'))
-    with open('chunks.pkl', 'wb') as f:
-        pickle.dump(todos_chunks, f)
-    with open('metadados.pkl', 'wb') as f:
-        pickle.dump(todos_metadados, f)
-    with open('textos_originais.pkl', 'wb') as f:
-        pickle.dump(textos_originais, f)
-    faiss.write_index(index, 'indice.faiss')
-    st.success("✅ Índices criados com sucesso!")
-
-# ==============================================
-# CARREGAR RECURSOS (com auto-criação)
+# CARREGAR MODELOS E ÍNDICES
 # ==============================================
 @st.cache_resource
-def carregar_chunks_metadados_originais():
-    criar_indices_se_necessario()
-    if not os.path.exists('chunks.pkl'):
-        return [], None, [], {}
+def carregar_modelo():
+    return SentenceTransformer('all-MiniLM-L6-v2')  # modelo leve
+
+@st.cache_resource
+def carregar_cross_encoder():
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+@st.cache_resource
+def carregar_chunks_e_metadados():
     with open('chunks.pkl', 'rb') as f:
         chunks = pickle.load(f)
     with open('metadados.pkl', 'rb') as f:
@@ -218,44 +204,41 @@ def carregar_chunks_metadados_originais():
             originais = pickle.load(f)
     return chunks, index, metadados, originais
 
-chunks, indice, metadados_lista, textos_originais = carregar_chunks_metadados_originais()
-
 @st.cache_resource
-def carregar_bm25():
+def carregar_bm25(chunks):
     if not chunks:
         return None
-    tokenized_chunks = [c.split() for c in chunks if c.strip()]
+    tokenized_chunks = [chunk.split() for chunk in chunks if chunk.strip()]
     return BM25Okapi(tokenized_chunks)
 
-@st.cache_resource
-def carregar_cross_encoder():
-    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
-
-@st.cache_resource
-def criar_cliente():
-    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
-
-bm25 = carregar_bm25()
-cross_encoder = carregar_cross_encoder() if chunks else None
-cliente = criar_cliente() if (indice is not None and bm25 is not None and cross_encoder is not None) else None
+# Carregar todos os recursos
+modelo = carregar_modelo()
+cross_encoder = carregar_cross_encoder()
+chunks, indice, metadados_lista, textos_originais = carregar_chunks_e_metadados()
+bm25 = carregar_bm25(chunks)
+cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# BUSCA HÍBRIDA E RESPOSTA
+# BUSCA HÍBRIDA (FAISS + BM25 + RRF + Reranker)
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=50, k_literal=25, threshold=0.05):
+def buscar_trechos(pergunta, k_semantico=35, k_literal=18, threshold=0.08):
     if indice is None or not chunks or bm25 is None or cross_encoder is None:
         return [], []
+
     consultas = expandir_consulta(pergunta)
     rrf_scores = {}
     k_rrf = 60
-    modelo = SentenceTransformer('intfloat/multilingual-e5-small')
+
     for consulta in consultas:
+        # Busca semântica (FAISS)
         emb = modelo.encode([consulta])
         scores, idxs = indice.search(emb.astype('float32'), k_semantico)
         for i, idx in enumerate(idxs[0]):
             if scores[0][i] >= threshold:
                 chunk = chunks[idx]
                 rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+
+        # Busca literal (BM25)
         tokens = consulta.split()
         if tokens:
             scores_lit = bm25.get_scores(tokens)
@@ -264,21 +247,28 @@ def buscar_trechos(pergunta, k_semantico=50, k_literal=25, threshold=0.05):
                 if scores_lit[idx] > 0:
                     chunk = chunks[idx]
                     rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+
     if not rrf_scores:
         return [], []
+
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:60]]
-    pares = [(pergunta, ch) for ch in top_candidatos]
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:50]]
+    pares = [(pergunta, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
-    candidatos = list(zip(top_candidatos, scores_rerank))
-    candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [ch for ch, _ in candidatos[:40]]
+    candidatos_com_scores = list(zip(top_candidatos, scores_rerank))
+    candidatos_com_scores.sort(key=lambda x: x[1], reverse=True)
+    chunks_reranked = [chunk for chunk, _ in candidatos_com_scores[:30]]
+
     metadados_reranked = []
-    for ch in chunks_reranked:
-        idx = chunks.index(ch)
+    for chunk in chunks_reranked:
+        idx = chunks.index(chunk)
         metadados_reranked.append(metadados_lista[idx])
+
     return chunks_reranked, metadados_reranked
 
+# ==============================================
+# FORMATAÇÃO DO PROMPT
+# ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
         return ""
@@ -300,29 +290,30 @@ def formatar_historico(historico, ultimas_n=8):
     return "\n".join(linhas)
 
 def responder(pergunta, historico_conversa):
-    if cliente is None:
-        return "Sistema não inicializado."
-    pergunta_norm = normalizar_pergunta(pergunta)
-    trechos, metas = buscar_trechos(pergunta_norm)
+    pergunta_normalizada = normalizar_pergunta(pergunta)
+    trechos, metadados = buscar_trechos(pergunta_normalizada)
     if not trechos:
         return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
+
     contexto = ""
-    for i, (trecho, meta) in enumerate(zip(trechos, metas)):
+    for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
         titulo = meta.get('titulo_romaji', '')
         if not titulo:
             titulo = meta.get('titulo_kanji', meta.get('arquivo', 'fonte desconhecida'))
-        fonte = f"Fonte: {titulo} {meta.get('volume', '')} {meta.get('data', '')} [{meta.get('arquivo', '')}]".strip()
+        fonte = f"Fonte: {titulo} {meta.get('volume', '')} {meta.get('data', '')}".strip()
         if not fonte or fonte == "Fonte: ":
             fonte = "Fonte: (não identificada)"
         contexto += f"**[Trecho {i+1}]** {fonte}\n{trecho}\n\n---\n\n"
+
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
-    palavras_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
-    use_cot = any(p in pergunta_norm.lower() for p in palavras_cot)
+    palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
+    use_cot = any(palavra in pergunta_normalizada.lower() for palavra in palavras_chave_cot)
     instrucao_cot = (
         "**Instrução especial para perguntas complexas:**\n"
         "Antes de responder, liste os trechos relevantes e explique a relação com a pergunta.\n"
         "Se os trechos forem insuficientes, diga 'Não encontrei'.\n\n"
     ) if use_cot else ""
+
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -338,17 +329,17 @@ def responder(pergunta, historico_conversa):
 1. NUNCA invente citações. Não use aspas sem cópia literal.
 2. Se a resposta não estiver nos trechos, diga "Não encontrei".
 3. Inferências devem ser rotuladas como "Nota de Interpretação".
-4. SEMPRE cite a fonte (título, volume, data, arquivo).
+4. SEMPRE cite a fonte (título romanizado, volume, data).
 5. Siga precedência espírito→matéria.
 
 **ACESSO A TEXTOS ORIGINAIS:**
-Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), você deve responder com o marcador:
+Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
 [ORIGINAL:nome_do_arquivo.docx]
-Isso fará o sistema exibir o conteúdo completo do arquivo.
 
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
 **RESPOSTA:**"""
+
     try:
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
@@ -357,7 +348,6 @@ Isso fará o sistema exibir o conteúdo completo do arquivo.
             max_tokens=8000
         )
         resposta_texto = resposta.choices[0].message.content
-        # substituir marcador [ORIGINAL:...] pelo conteúdo real
         padrao = r'\[ORIGINAL:([^\]]+\.docx)\]'
         match = re.search(padrao, resposta_texto)
         if match:
@@ -408,4 +398,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker + Metadados + Textos Originais | Temp=0,15")
+st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo leve | Temp=0,15")
