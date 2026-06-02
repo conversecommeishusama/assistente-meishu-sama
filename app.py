@@ -33,14 +33,14 @@ TRANSLITERACAO_TITULOS = {
 }
 
 # ==============================================
-# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA (sem adição manual de sinônimos)
+# PRÉ-PROCESSAMENTO E EXPANSÃO DE CONSULTA (básica)
 # ==============================================
 def normalizar_pergunta(pergunta: str) -> str:
     pergunta = pergunta.strip()
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     return pergunta
 
-# Dicionário de sinônimos original (sem adições)
+# Sinônimos apenas para termos muito comuns, sem adição manual para termos doutrinários
 SINONIMOS = {
     "doenças venéreas": ["gonorreia", "sífilis", "DST", "doença sexualmente transmissível"],
     "pressão alta": ["hipertensão"],
@@ -84,7 +84,7 @@ GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
-# CARREGAR ÍNDICES E MODELOS (com modelo melhor para japonês)
+# CARREGAR ÍNDICES E MODELOS
 # ==============================================
 @st.cache_resource
 def carregar_indices():
@@ -101,8 +101,8 @@ def carregar_indices():
 
 @st.cache_resource
 def carregar_modelo():
-    # Modelo multilíngue com boa performance para japonês (sem o peso do GLuCoSE)
-    return SentenceTransformer('intfloat/multilingual-e5-small')
+    # Modelo especialista em japonês (GLuCoSE) – melhor para termos raros como 大三災
+    return SentenceTransformer('pkshatech/GLuCoSE-base-ja')
 
 @st.cache_resource
 def carregar_cross_encoder():
@@ -120,9 +120,9 @@ bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# BUSCA HÍBRIDA COM PARÂMETROS OTIMIZADOS
+# BUSCA HÍBRIDA COM PARÂMETROS MUITO SENSÍVEIS
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=50, k_literal=25, threshold=0.04):
+def buscar_trechos(pergunta, k_semantico=100, k_literal=50, threshold=0.01):
     consultas = expandir_consulta(pergunta)
     rrf_scores = {}
     k_rrf = 60
@@ -150,12 +150,12 @@ def buscar_trechos(pergunta, k_semantico=50, k_literal=25, threshold=0.04):
         return [], []
 
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:60]]  # mais candidatos
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:80]]
     pares = [(pergunta, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
     candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos[:40]]  # mais contexto
+    chunks_reranked = [chunk for chunk, _ in candidatos[:50]]
 
     metadados_reranked = []
     for chunk in chunks_reranked:
@@ -205,7 +205,6 @@ def responder(pergunta, historico_conversa):
 
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
 
-    # Palavras-chave para chain-of-thought (sem adições manuais)
     palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
     use_cot = any(palavra in pergunta_normalizada.lower() for palavra in palavras_chave_cot)
     instrucao_cot = (
@@ -280,8 +279,8 @@ with st.sidebar:
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
         st.markdown("- Busca híbrida (FAISS + BM25 + RRF) + reranker")
-        st.markdown("- Modelo: multilingual-e5-small (otimizado para japonês)")
-        st.markdown("- Parâmetros: k=50, threshold=0.04")
+        st.markdown("- Modelo: GLuCoSE (especialista em japonês)")
+        st.markdown("- Parâmetros: k=100, threshold=0.01")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -303,4 +302,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo multilingual-e5-small | Temp=0,25 | Inferência responsável")
+st.caption("Assistente Meishu-Sama | Busca Híbrida + Reranker | Modelo GLuCoSE (japonês) | Temp=0,25 | Inferência responsável")
