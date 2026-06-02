@@ -8,7 +8,8 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
 import numpy as np
 from rank_bm25 import BM25Okapi
-from itertools import chain
+from collections import Counter
+import itertools
 
 # ==============================================
 # CONFIGURAÇÃO DA CHAVE (via variável de ambiente)
@@ -41,35 +42,23 @@ def normalizar_pergunta(pergunta: str) -> str:
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     return pergunta
 
-# Sem sinônimos manuais – vamos usar expansão automática por n-gramas
-
+# ==============================================
+# EXPANSÃO AUTOMÁTICA DA CONSULTA (n‑gramas)
+# ==============================================
 def expandir_consulta_automatica(pergunta: str) -> list:
-    """
-    Gera termos de busca a partir da pergunta: palavras individuais,
-    bigramas, trigramas e a pergunta inteira. Isso permite capturar
-    termos compostos sem dicionário manual.
-    """
     palavras = pergunta.split()
     termos = set()
     termos.add(pergunta)
     for p in palavras:
         termos.add(p)
-    # bigramas
     for i in range(len(palavras)-1):
         termos.add(f"{palavras[i]} {palavras[i+1]}")
-    # trigramas
     for i in range(len(palavras)-2):
         termos.add(f"{palavras[i]} {palavras[i+1]} {palavras[i+2]}")
-    # também adicionamos a versão em minúsculas e sem acentos (simplificado)
-    termos.add(pergunta.lower())
     return list(termos)
 
-def expandir_consulta(pergunta: str) -> list:
-    # Usa a expansão automática + a pergunta original
-    return expandir_consulta_automatica(pergunta)
-
 # ==============================================
-# CARREGAR GLOSSÁRIO E PROTOCOLO
+# EXPANSÃO POR GLOSSÁRIO (usa o arquivo glossario.json)
 # ==============================================
 @st.cache_data
 def carregar_glossario():
@@ -79,6 +68,27 @@ def carregar_glossario():
     except:
         return {}
 
+GLOSSARIO = carregar_glossario()
+
+def expandir_por_glossario(pergunta: str) -> list:
+    """Adiciona termos japoneses do glossário cuja tradução aparece na pergunta."""
+    termos_adicionais = []
+    pergunta_lower = pergunta.lower()
+    for jap, port in GLOSSARIO.items():
+        # Verifica se a tradução em português (ou parte dela) está na pergunta
+        if port.lower() in pergunta_lower or any(palavra in pergunta_lower for palavra in port.lower().split()):
+            termos_adicionais.append(jap)
+    return termos_adicionais
+
+def expandir_consulta(pergunta: str) -> list:
+    termos = expandir_consulta_automatica(pergunta)
+    termos += expandir_por_glossario(pergunta)
+    # Remove duplicatas
+    return list(set(termos))
+
+# ==============================================
+# CARREGAR PROTOCOLO
+# ==============================================
 @st.cache_data
 def carregar_protocolo():
     try:
@@ -87,7 +97,6 @@ def carregar_protocolo():
     except:
         return ""
 
-GLOSSARIO = carregar_glossario()
 PROTOCOLO = carregar_protocolo()
 
 # ==============================================
@@ -108,7 +117,6 @@ def carregar_indices():
 
 @st.cache_resource
 def carregar_modelo():
-    # Modelo multilíngue estável e testado
     return SentenceTransformer('intfloat/multilingual-e5-small')
 
 @st.cache_resource
@@ -127,7 +135,31 @@ bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# BUSCA HÍBRIDA COM PARÂMETROS EXTREMAMENTE SENSÍVEIS
+# ÍNDICE INVERTIDO PARA TERMOS RAROS (automático)
+# ==============================================
+@st.cache_resource
+def construir_indice_termos_raros():
+    # Conta frequência de cada palavra em todos os chunks
+    freq = Counter()
+    for chunk in chunks:
+        # Captura palavras (letras, números, kanjis)
+        palavras = set(re.findall(r'[\u4e00-\u9fff0-9a-zA-Z]+', chunk))
+        for p in palavras:
+            freq[p] += 1
+    
+    # Índice para palavras que aparecem em no máximo 10 chunks
+    indice = {}
+    for i, chunk in enumerate(chunks):
+        palavras = set(re.findall(r'[\u4e00-\u9fff0-9a-zA-Z]+', chunk))
+        for p in palavras:
+            if freq[p] <= 10:
+                indice.setdefault(p, set()).add(i)
+    return indice
+
+indice_termos_raros = construir_indice_termos_raros() if chunks else {}
+
+# ==============================================
+# BUSCA HÍBRIDA COM ÍNDICE INVERTIDO E EXPANSÃO
 # ==============================================
 def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
     consultas = expandir_consulta(pergunta)
@@ -153,6 +185,15 @@ def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
                     chunk = chunks[idx]
                     rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
 
+    # ---- ÍNDICE INVERTIDO PARA TERMOS RAROS ----
+    # Extrai palavras da pergunta (inclui kanjis)
+    palavras_pergunta = set(re.findall(r'[\u4e00-\u9fff0-9a-zA-Z]+', pergunta.lower()))
+    for palavra in palavras_pergunta:
+        if palavra in indice_termos_raros:
+            for idx in indice_termos_raros[palavra]:
+                chunk = chunks[idx]
+                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 10000  # peso altíssimo
+
     if not rrf_scores:
         return [], []
 
@@ -172,7 +213,7 @@ def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
     return chunks_reranked, metadados_reranked
 
 # ==============================================
-# FORMATAÇÃO DO PROMPT (igual à versão anterior)
+# FORMATAÇÃO DO PROMPT E RESPOSTA
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -285,10 +326,10 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) + reranker")
-        st.markdown("- Modelo: multilingual-e5-small (com parâmetros ultra-sensíveis)")
-        st.markdown("- Parâmetros: k=150, threshold=0.005, expansão automática")
-    st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
+        st.markdown("- Busca híbrida + reranker + índice invertido automático")
+        st.markdown("- Modelo: multilingual-e5-small (parâmetros ultra-sensíveis)")
+        st.markdown("- Expansão por glossário e n‑gramas")
+        st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
         st.rerun()
@@ -309,4 +350,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca Híbrida ultra-sensível | Modelo multilingual-e5-small | Temp=0,25 | Expansão automática de consulta")
+st.caption("Assistente Meishu-Sama | Busca Híbrida ultra-sensível | Índice invertido automático | Expansão por glossário")
