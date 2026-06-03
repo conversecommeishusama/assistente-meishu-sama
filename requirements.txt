@@ -6,3 +6,4 @@ python-docx
 numpy
 rank-bm25
 torchvision
+deep-translator
