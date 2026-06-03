@@ -183,9 +183,9 @@ def forcar_por_glossario(pergunta_normalizada: str, rrf_scores: dict):
                     break
 
 # ==============================================
-# BUSCA HÍBRIDA OTIMIZADA
+# BUSCA HÍBRIDA OTIMIZADA (parâmetros ajustados)
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=80, k_literal=40, threshold=0.02):
+def buscar_trechos(pergunta, k_semantico=40, k_literal=20, threshold=0.10):
     pergunta_normalizada = normalizar_pergunta(pergunta)
     consultas = expandir_consulta(pergunta_normalizada)
     rrf_scores = {}
@@ -222,12 +222,12 @@ def buscar_trechos(pergunta, k_semantico=80, k_literal=40, threshold=0.02):
         return [], []
 
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:60]]
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:30]]  # menos candidatos
     pares = [(pergunta_normalizada, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
     candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos[:40]]
+    chunks_reranked = [chunk for chunk, _ in candidatos[:20]]
 
     metadados_reranked = []
     for chunk in chunks_reranked:
@@ -376,7 +376,8 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida + reranker + glossário forçado + back-translation")
+        st.markdown("- Busca híbrida + reranker + glossário forçado + back‑translation")
+        st.markdown("- Parâmetros: k=40, threshold=0.10")
         st.markdown("- Modelo: multilingual-e5-small")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
@@ -392,11 +393,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando (busca híbrida + back-translation)..."):
+        with st.spinner("Buscando (busca otimizada)..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada | Back-translation | Protocolo v3.4 | Causalidade espiritual")
+st.caption("Assistente Meishu-Sama | Busca otimizada (k=40, th=0.10) | Back‑translation | Protocolo v3.4 | Causalidade espiritual")
