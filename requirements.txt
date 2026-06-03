@@ -7,3 +7,5 @@ numpy
 rank-bm25
 torchvision
 deep-translator
+langchain
+langchain-text-splitters
