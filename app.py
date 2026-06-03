@@ -9,13 +9,14 @@ from openai import OpenAI
 import numpy as np
 from rank_bm25 import BM25Okapi
 from collections import Counter
+from deep_translator import GoogleTranslator
 
 # ==============================================
 # CONFIGURAÇÃO DA CHAVE
 # ==============================================
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 if not DEEPSEEK_API_KEY:
-    st.error("Chave da DeepSeek não configurada.")
+    st.error("Chave da DeepSeek não configurada. Defina a variável de ambiente DEEPSEEK_API_KEY.")
     st.stop()
 
 # ==============================================
@@ -48,6 +49,40 @@ def normalizar_pergunta(pergunta: str) -> str:
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     pergunta = normalizar_numeros(pergunta)
     return pergunta
+
+# ==============================================
+# BACK‑TRANSLATION (para gerar sinônimos automaticamente)
+# ==============================================
+@st.cache_resource
+def get_translator():
+    return GoogleTranslator()
+
+def back_translation(pergunta: str) -> list:
+    try:
+        tradutor = get_translator()
+        ja = tradutor.translate(pergunta, source='pt', target='ja')
+        pt_back = tradutor.translate(ja, source='ja', target='pt')
+        # Extrai termos da volta
+        termos = set(pt_back.lower().split())
+        originais = set(pergunta.lower().split())
+        return list(termos - originais)
+    except Exception as e:
+        return []
+
+# ==============================================
+# EXPANSÃO DE CONSULTA
+# ==============================================
+def expandir_consulta(pergunta: str) -> list:
+    termos = [pergunta]
+    # Adiciona back‑translation
+    termos.extend(back_translation(pergunta))
+    # Adiciona sinônimos comportamentais (apenas para termos relacionados a moral/psique)
+    palavras_chave = pergunta.lower().split()
+    for pc in palavras_chave:
+        if pc in ["grosseria", "ignorância", "violência", "preguiça", "medo", "insônia", "histeria", "crime"]:
+            termos.extend(["副霊", "憑依", "悪霊", "地縛の霊", "病気の精神的原因"])
+            break
+    return list(set(termos))
 
 # ==============================================
 # CARREGAR GLOSSÁRIO E PROTOCOLO
@@ -107,7 +142,7 @@ bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# ÍNDICE INVERTIDO PARA PALAVRAS RARAS (freq <= 10)
+# ÍNDICE INVERTIDO PARA TERMOS RAROS
 # ==============================================
 @st.cache_resource
 def construir_indice_termos_raros():
@@ -127,54 +162,63 @@ def construir_indice_termos_raros():
 indice_termos_raros = construir_indice_termos_raros() if chunks else {}
 
 # ==============================================
-# FORÇA POR GLOSSÁRIO (peso suficiente para priorizar, sem eliminar outros)
+# FORÇA POR GLOSSÁRIO
 # ==============================================
 def forcar_por_glossario(pergunta_normalizada: str, rrf_scores: dict):
     if not GLOSSARIO:
         return
     pergunta_lower = pergunta_normalizada.lower()
     for japones, portugues in GLOSSARIO.items():
-        if portugues.lower() in pergunta_lower:
-            for i, chunk in enumerate(chunks):
-                if japones in chunk:
-                    rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 100000
+        # aceita string ou lista
+        if isinstance(portugues, str):
+            traducao = portugues.lower()
+            if traducao in pergunta_lower:
+                for i, chunk in enumerate(chunks):
+                    if japones in chunk:
+                        rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 100000
+        else:
+            for trad in portugues:
+                if trad.lower() in pergunta_lower:
+                    for i, chunk in enumerate(chunks):
+                        if japones in chunk:
+                            rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 100000
+                    break
 
 # ==============================================
-# BUSCA HÍBRIDA (otimizada)
+# BUSCA HÍBRIDA OTIMIZADA
 # ==============================================
 def buscar_trechos(pergunta, k_semantico=80, k_literal=40, threshold=0.02):
     pergunta_normalizada = normalizar_pergunta(pergunta)
+    consultas = expandir_consulta(pergunta_normalizada)
     rrf_scores = {}
     k_rrf = 60
 
-    # Busca semântica (FAISS)
-    emb = modelo.encode([pergunta_normalizada])
-    scores, idxs = indice.search(emb.astype('float32'), k_semantico)
-    for i, idx in enumerate(idxs[0]):
-        if scores[0][i] >= threshold:
-            chunk = chunks[idx]
-            rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+    for consulta in consultas:
+        # Busca semântica
+        emb = modelo.encode([consulta])
+        scores, idxs = indice.search(emb.astype('float32'), k_semantico)
+        for i, idx in enumerate(idxs[0]):
+            if scores[0][i] >= threshold:
+                rrf_scores[chunks[idx]] = rrf_scores.get(chunks[idx], 0) + 1 / (k_rrf + i + 1)
 
-    # Busca literal (BM25)
-    tokens = pergunta_normalizada.split()
-    if tokens:
-        scores_lit = bm25.get_scores(tokens)
-        best_idx = np.argsort(scores_lit)[::-1][:k_literal]
-        for rank, idx in enumerate(best_idx):
-            if scores_lit[idx] > 0:
-                chunk = chunks[idx]
-                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
+        # Busca literal
+        tokens = consulta.split()
+        if tokens:
+            scores_lit = bm25.get_scores(tokens)
+            best_idx = np.argsort(scores_lit)[::-1][:k_literal]
+            for rank, idx in enumerate(best_idx):
+                if scores_lit[idx] > 0:
+                    rrf_scores[chunks[idx]] = rrf_scores.get(chunks[idx], 0) + 1 / (k_rrf + rank + 1)
 
     # Força por glossário
     forcar_por_glossario(pergunta_normalizada, rrf_scores)
 
-    # Índice invertido (palavras raras)
+    # Índice invertido
     palavras_pergunta = set(re.findall(r'[\u4e00-\u9fff0-9a-zA-Z]+', pergunta_normalizada.lower()))
     for palavra in palavras_pergunta:
         if palavra in indice_termos_raros:
             for idx in indice_termos_raros[palavra]:
-                chunk = chunks[idx]
-                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 10000
+                rrf_scores[chunks[idx]] = rrf_scores.get(chunks[idx], 0) + 10000
 
     if not rrf_scores:
         return [], []
@@ -195,7 +239,24 @@ def buscar_trechos(pergunta, k_semantico=80, k_literal=40, threshold=0.02):
     return chunks_reranked, metadados_reranked
 
 # ==============================================
-# FORMATAÇÃO DO PROMPT E RESPOSTA (idênticos à versão anterior)
+# EXTRAIR TERMO PRINCIPAL DA PERGUNTA
+# ==============================================
+def extrair_termo_principal(pergunta: str) -> str:
+    match = re.search(r'(?:sobre|fala sobre|o que é|o que significa|o que Meishu-Sama fala sobre)\s+["\']?([^"\']+?)["\']?(?:\?|$)', pergunta, re.IGNORECASE)
+    if match:
+        return match.group(1).strip()
+    palavras = pergunta.split()
+    return palavras[-1] if palavras else ""
+
+def traduzir_termo_para_japones(termo_pt: str) -> str:
+    try:
+        tradutor = GoogleTranslator()
+        return tradutor.translate(termo_pt, source='pt', target='ja')
+    except:
+        return None
+
+# ==============================================
+# FORMATAÇÃO DO PROMPT E RESPOSTA
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -205,7 +266,10 @@ def formatar_glossario_para_prompt():
         if i >= 500:
             linhas.append(f"... e outros {len(GLOSSARIO)-500} termos")
             break
-        linhas.append(f"- {jap} → {port}")
+        if isinstance(port, list):
+            linhas.append(f"- {jap} → {', '.join(port[:3])}{' ...' if len(port)>3 else ''}")
+        else:
+            linhas.append(f"- {jap} → {port}")
     return "\n".join(linhas)
 
 def formatar_historico(historico, ultimas_n=8):
@@ -219,8 +283,20 @@ def formatar_historico(historico, ultimas_n=8):
 
 def responder(pergunta, historico_conversa):
     trechos, metadados = buscar_trechos(pergunta)
+    termo_chave = extrair_termo_principal(pergunta)
+    termo_jap = traduzir_termo_para_japones(termo_chave) if termo_chave else None
+
     if not trechos:
-        return "Não encontrei trechos suficientemente relacionados nos escritos de Meishu-Sama."
+        # Mensagem personalizada com tradução do termo
+        if termo_jap:
+            resposta_sem_trechos = f"""Traduzimos “{termo_chave}” para o japonês como “{termo_jap}”. Embora esse termo não apareça exatamente nos trechos fornecidos, os ensinamentos de Meishu‑Sama sobre conceitos relacionados nos permitem compreender o tema.
+
+Com base nos princípios doutrinários, podemos inferir que Meishu‑Sama consideraria {termo_chave} como uma manifestação de nuvens espirituais e influência de espíritos encostados (conforme “Os Japoneses e as Doenças Psíquicas”). Para uma resposta mais precisa, seria necessário consultar os escritos originais completos.
+
+Gostaria que eu aprofundasse algum aspecto específico?”""
+        else:
+            resposta_sem_trechos = "Não encontrei trechos diretamente relacionados nos escritos de Meishu‑Sama fornecidos. Com base nos princípios gerais, posso tentar uma inferência responsável. Gostaria que eu tentasse?"
+        return resposta_sem_trechos
 
     contexto = ""
     for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
@@ -234,13 +310,10 @@ def responder(pergunta, historico_conversa):
 
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
 
-    palavras_chave_cot = ["judeus", "hitler", "perseguição", "nazista", "holocausto", "排斥", "ドイツ"]
-    use_cot = any(palavra in pergunta.lower() for palavra in palavras_chave_cot)
-    instrucao_cot = (
-        "**Instrução especial para perguntas complexas:**\n"
-        "Antes de responder, liste os trechos relevantes e explique a relação com a pergunta.\n"
-        "Se os trechos forem insuficientes, faça uma inferência responsável, claramente rotulada.\n\n"
-    ) if use_cot else ""
+    # Se o termo foi traduzido, adicionamos essa informação ao prompt
+    informacao_traducao = ""
+    if termo_jap and termo_jap != termo_chave:
+        informacao_traducao = f"\nNOTA: O termo “{termo_chave}” foi traduzido para o japonês como “{termo_jap}”. Utilize essa informação para guiar sua busca e resposta.\n"
 
     prompt = f"""{PROTOCOLO}
 
@@ -250,18 +323,18 @@ def responder(pergunta, historico_conversa):
 
 **TRECHOS COM FONTES:**
 {contexto}
-
-{instrucao_cot}
+{informacao_traducao}
 
 **REGRAS OBRIGATÓRIAS:**
 1. NUNCA invente citações. Não use aspas sem cópia literal.
-2. Se a resposta não estiver nos trechos, você PODE fazer inferências baseadas nos princípios doutrinários, desde que:
+2. Se a resposta não estiver literalmente nos trechos, você PODE fazer inferências baseadas nos princípios doutrinários, desde que:
    - Sejam claramente rotuladas como "inferência", "possibilidade" ou "dedução".
    - Não sejam apresentadas como fato.
-   - Acompanhem a nota: "Nota de Interpretação (Inferência): Esta conclusão não está literalmente nos trechos, mas é uma dedução baseada nos princípios gerais do ensinamento."
-3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei", quando a pergunta claramente se relaciona com conceitos doutrinários.
+   - Acompanhem a nota: "Nota de Interpretação (Inferência): ..."
+3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei".
 4. SEMPRE que possível, cite a fonte (título romanizado, volume, data).
 5. Siga precedência espírito→matéria.
+6. Para perguntas sobre comportamento moral, emocional ou psíquico, obrigatoriamente inclua a cadeia causal: enfraquecimento espiritual → atração de espíritos encostados → manifestação do problema (conforme “Os Japoneses e as Doenças Psíquicas”).
 
 **ACESSO A TEXTOS ORIGINAIS:**
 Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
@@ -269,7 +342,7 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
 
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
-**RESPOSTA:**"""
+**RESPOSTA (seguindo as regras acima):**"""
 
     try:
         resposta = cliente.chat.completions.create(
@@ -307,7 +380,7 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida + reranker + glossário forçado")
+        st.markdown("- Busca híbrida + reranker + glossário forçado + back‑translation")
         st.markdown("- Modelo: multilingual-e5-small")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
@@ -323,11 +396,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando..."):
+        with st.spinner("Buscando (busca híbrida + back‑translation)..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada com força por glossário | Protocolo v3.3")
+st.caption("Assistente Meishu-Sama | Busca otimizada | Back‑translation | Protocolo v3.4 | Causalidade espiritual")
