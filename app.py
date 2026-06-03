@@ -1,8 +1,14 @@
+import os
+import torch
+
+# Força uso da CPU e reduz threads para economizar memória
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+torch.set_num_threads(1)
+
 import streamlit as st
 import pickle
 import faiss
 import json
-import os
 import re
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from openai import OpenAI
@@ -51,7 +57,7 @@ def normalizar_pergunta(pergunta: str) -> str:
     return pergunta
 
 # ==============================================
-# BACK‑TRANSLATION (para gerar sinônimos automaticamente)
+# BACK‑TRANSLATION
 # ==============================================
 @st.cache_resource
 def get_translator():
@@ -68,14 +74,10 @@ def back_translation(pergunta: str) -> list:
     except Exception as e:
         return []
 
-# ==============================================
-# EXPANSÃO DE CONSULTA
-# ==============================================
 def expandir_consulta(pergunta: str) -> list:
     termos = [pergunta]
-    # Adiciona back‑translation
     termos.extend(back_translation(pergunta))
-    # Adiciona sinônimos comportamentais (apenas para termos relacionados a moral/psique)
+    # Palavras-chave para comportamentos (opcional)
     palavras_chave = pergunta.lower().split()
     for pc in palavras_chave:
         if pc in ["grosseria", "ignorância", "violência", "preguiça", "medo", "insônia", "histeria", "crime"]:
@@ -90,9 +92,14 @@ def expandir_consulta(pergunta: str) -> list:
 def carregar_glossario():
     try:
         with open('glossario.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except:
-        return {}
+            gloss = json.load(f)
+            st.sidebar.success(f"✅ Glossário carregado: {len(gloss)} termos")
+            return gloss
+    except FileNotFoundError:
+        st.sidebar.error("❌ Arquivo glossario.json NÃO ENCONTRADO. Verifique se ele está no repositório.")
+    except Exception as e:
+        st.sidebar.error(f"❌ Erro ao ler glossario.json: {e}")
+    return {}
 
 @st.cache_data
 def carregar_protocolo():
@@ -119,15 +126,17 @@ def carregar_indices():
     if os.path.exists('textos_originais.pkl'):
         with open('textos_originais.pkl', 'rb') as f:
             originais = pickle.load(f)
+    st.sidebar.success(f"📚 Índices carregados: {len(chunks)} chunks")
     return chunks, index, metadados, originais
 
 @st.cache_resource
 def carregar_modelo():
-    return SentenceTransformer('intfloat/multilingual-e5-small')
+    # Modelo otimizado para CPU
+    return SentenceTransformer('intfloat/multilingual-e5-small', device='cpu')
 
 @st.cache_resource
 def carregar_cross_encoder():
-    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2', device='cpu')
 
 @st.cache_resource
 def carregar_bm25(chunks):
@@ -183,9 +192,9 @@ def forcar_por_glossario(pergunta_normalizada: str, rrf_scores: dict):
                     break
 
 # ==============================================
-# BUSCA HÍBRIDA OTIMIZADA (parâmetros ajustados)
+# BUSCA HÍBRIDA OTIMIZADA
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=40, k_literal=20, threshold=0.10):
+def buscar_trechos(pergunta, k_semantico=40, k_literal=30, threshold=0.08):
     pergunta_normalizada = normalizar_pergunta(pergunta)
     consultas = expandir_consulta(pergunta_normalizada)
     rrf_scores = {}
@@ -222,7 +231,7 @@ def buscar_trechos(pergunta, k_semantico=40, k_literal=20, threshold=0.10):
         return [], []
 
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:30]]  # menos candidatos
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:30]]
     pares = [(pergunta_normalizada, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
@@ -377,8 +386,8 @@ with st.sidebar:
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
         st.markdown("- Busca híbrida + reranker + glossário forçado + back‑translation")
-        st.markdown("- Parâmetros: k=40, threshold=0.10")
-        st.markdown("- Modelo: multilingual-e5-small")
+        st.markdown("- Parâmetros: k=40, threshold=0.08")
+        st.markdown("- Modelo: multilingual-e5-small (CPU optimizado)")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -400,4 +409,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada (k=40, th=0.10) | Back‑translation | Protocolo v3.4 | Causalidade espiritual")
+st.caption("Assistente Meishu-Sama | Busca otimizada | Back‑translation | Protocolo v3.4 | CPU mode")
