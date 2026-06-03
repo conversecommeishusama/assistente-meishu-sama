@@ -62,7 +62,6 @@ def back_translation(pergunta: str) -> list:
         tradutor = get_translator()
         ja = tradutor.translate(pergunta, source='pt', target='ja')
         pt_back = tradutor.translate(ja, source='ja', target='pt')
-        # Extrai termos da volta
         termos = set(pt_back.lower().split())
         originais = set(pergunta.lower().split())
         return list(termos - originais)
@@ -169,7 +168,6 @@ def forcar_por_glossario(pergunta_normalizada: str, rrf_scores: dict):
         return
     pergunta_lower = pergunta_normalizada.lower()
     for japones, portugues in GLOSSARIO.items():
-        # aceita string ou lista
         if isinstance(portugues, str):
             traducao = portugues.lower()
             if traducao in pergunta_lower:
@@ -267,9 +265,9 @@ def formatar_glossario_para_prompt():
             linhas.append(f"... e outros {len(GLOSSARIO)-500} termos")
             break
         if isinstance(port, list):
-            linhas.append(f"- {jap} → {', '.join(port[:3])}{' ...' if len(port)>3 else ''}")
+            linhas.append(f"- {jap} -> {', '.join(port[:3])}{' ...' if len(port)>3 else ''}")
         else:
-            linhas.append(f"- {jap} → {port}")
+            linhas.append(f"- {jap} -> {port}")
     return "\n".join(linhas)
 
 def formatar_historico(historico, ultimas_n=8):
@@ -287,15 +285,14 @@ def responder(pergunta, historico_conversa):
     termo_jap = traduzir_termo_para_japones(termo_chave) if termo_chave else None
 
     if not trechos:
-        # Mensagem personalizada com tradução do termo
         if termo_jap:
-            resposta_sem_trechos = f"""Traduzimos “{termo_chave}” para o japonês como “{termo_jap}”. Embora esse termo não apareça exatamente nos trechos fornecidos, os ensinamentos de Meishu‑Sama sobre conceitos relacionados nos permitem compreender o tema.
+            resposta_sem_trechos = f"""Traduzimos "{termo_chave}" para o japonês como "{termo_jap}". Embora esse termo não apareça exatamente nos trechos fornecidos, os ensinamentos de Meishu-Sama sobre conceitos relacionados nos permitem compreender o tema.
 
-Com base nos princípios doutrinários, podemos inferir que Meishu‑Sama consideraria {termo_chave} como uma manifestação de nuvens espirituais e influência de espíritos encostados (conforme “Os Japoneses e as Doenças Psíquicas”). Para uma resposta mais precisa, seria necessário consultar os escritos originais completos.
+Com base nos princípios doutrinários, podemos inferir que Meishu-Sama consideraria {termo_chave} como uma manifestação de nuvens espirituais e influência de espíritos encostados (conforme "Os Japoneses e as Doenças Psíquicas"). Para uma resposta mais precisa, seria necessário consultar os escritos originais completos.
 
-Gostaria que eu aprofundasse algum aspecto específico?”""
+Gostaria que eu aprofundasse algum aspecto específico?"""
         else:
-            resposta_sem_trechos = "Não encontrei trechos diretamente relacionados nos escritos de Meishu‑Sama fornecidos. Com base nos princípios gerais, posso tentar uma inferência responsável. Gostaria que eu tentasse?"
+            resposta_sem_trechos = "Não encontrei trechos diretamente relacionados nos escritos de Meishu-Sama fornecidos. Com base nos princípios gerais, posso tentar uma inferência responsável. Gostaria que eu tentasse?"
         return resposta_sem_trechos
 
     contexto = ""
@@ -310,7 +307,6 @@ Gostaria que eu aprofundasse algum aspecto específico?”""
 
     historico_texto = formatar_historico(historico_conversa, ultimas_n=8)
 
-    # Se o termo foi traduzido, adicionamos essa informação ao prompt
     informacao_traducao = ""
     if termo_jap and termo_jap != termo_chave:
         informacao_traducao = f"\nNOTA: O termo “{termo_chave}” foi traduzido para o japonês como “{termo_jap}”. Utilize essa informação para guiar sua busca e resposta.\n"
@@ -333,8 +329,8 @@ Gostaria que eu aprofundasse algum aspecto específico?”""
    - Acompanhem a nota: "Nota de Interpretação (Inferência): ..."
 3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei".
 4. SEMPRE que possível, cite a fonte (título romanizado, volume, data).
-5. Siga precedência espírito→matéria.
-6. Para perguntas sobre comportamento moral, emocional ou psíquico, obrigatoriamente inclua a cadeia causal: enfraquecimento espiritual → atração de espíritos encostados → manifestação do problema (conforme “Os Japoneses e as Doenças Psíquicas”).
+5. Siga precedência espírito -> matéria.
+6. Para perguntas sobre comportamento moral, emocional ou psíquico, obrigatoriamente inclua a cadeia causal: nuvens espirituais -> toxinas solidificadas -> compressão das veias -> redução do fluxo sanguíneo -> enfraquecimento espiritual -> atração de espíritos encostados -> domínio sobre razão e sentimento -> manifestação do problema (conforme “Os Japoneses e as Doenças Psíquicas”).
 
 **ACESSO A TEXTOS ORIGINAIS:**
 Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
@@ -380,7 +376,7 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida + reranker + glossário forçado + back‑translation")
+        st.markdown("- Busca híbrida + reranker + glossário forçado + back-translation")
         st.markdown("- Modelo: multilingual-e5-small")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
@@ -396,11 +392,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando (busca híbrida + back‑translation)..."):
+        with st.spinner("Buscando (busca híbrida + back-translation)..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada | Back‑translation | Protocolo v3.4 | Causalidade espiritual")
+st.caption("Assistente Meishu-Sama | Busca otimizada | Back-translation | Protocolo v3.4 | Causalidade espiritual")
