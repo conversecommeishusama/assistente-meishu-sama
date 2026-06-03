@@ -11,15 +11,15 @@ from rank_bm25 import BM25Okapi
 from collections import Counter
 
 # ==============================================
-# CONFIGURAÇÃO DA CHAVE (via variável de ambiente)
+# CONFIGURAÇÃO DA CHAVE
 # ==============================================
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 if not DEEPSEEK_API_KEY:
-    st.error("Chave da DeepSeek não configurada. Defina a variável de ambiente DEEPSEEK_API_KEY.")
+    st.error("Chave da DeepSeek não configurada.")
     st.stop()
 
 # ==============================================
-# TRANSLITERAÇÃO DE TÍTULOS (KANJI -> ROMAJI)
+# TRANSLITERAÇÃO DE TÍTULOS
 # ==============================================
 TRANSLITERACAO_TITULOS = {
     "御教え集": "Mioshie-shū",
@@ -37,12 +37,8 @@ TRANSLITERACAO_TITULOS = {
 # NORMALIZAÇÃO DA PERGUNTA
 # ==============================================
 def normalizar_numeros(texto: str) -> str:
-    """Substitui dígitos por palavras por extenso (1-10)."""
-    mapeamento = {
-        "0": "zero", "1": "um", "2": "dois", "3": "três", "4": "quatro",
-        "5": "cinco", "6": "seis", "7": "sete", "8": "oito", "9": "nove",
-        "10": "dez"
-    }
+    mapeamento = {"0": "zero", "1": "um", "2": "dois", "3": "três", "4": "quatro",
+                  "5": "cinco", "6": "seis", "7": "sete", "8": "oito", "9": "nove", "10": "dez"}
     for num, palavra in mapeamento.items():
         texto = re.sub(rf'\b{num}\b', palavra, texto)
     return texto
@@ -52,20 +48,6 @@ def normalizar_pergunta(pergunta: str) -> str:
     pergunta = re.sub(r'\bde pressão\b', 'pressão alta', pergunta, flags=re.IGNORECASE)
     pergunta = normalizar_numeros(pergunta)
     return pergunta
-
-# ==============================================
-# EXPANSÃO AUTOMÁTICA DA CONSULTA (n‑gramas)
-# ==============================================
-def expandir_consulta_automatica(pergunta: str) -> list:
-    palavras = pergunta.split()
-    termos = {pergunta}
-    for p in palavras:
-        termos.add(p)
-    for i in range(len(palavras)-1):
-        termos.add(f"{palavras[i]} {palavras[i+1]}")
-    for i in range(len(palavras)-2):
-        termos.add(f"{palavras[i]} {palavras[i+1]} {palavras[i+2]}")
-    return list(termos)
 
 # ==============================================
 # CARREGAR GLOSSÁRIO E PROTOCOLO
@@ -125,7 +107,7 @@ bm25 = carregar_bm25(chunks)
 cliente = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
 # ==============================================
-# ÍNDICE INVERTIDO (para termos raros, frequência ≤ 10)
+# ÍNDICE INVERTIDO PARA PALAVRAS RARAS (freq <= 10)
 # ==============================================
 @st.cache_resource
 def construir_indice_termos_raros():
@@ -145,50 +127,48 @@ def construir_indice_termos_raros():
 indice_termos_raros = construir_indice_termos_raros() if chunks else {}
 
 # ==============================================
-# FORÇA POR GLOSSÁRIO (peso moderado, apenas quando a tradução completa está na pergunta)
+# FORÇA POR GLOSSÁRIO (peso suficiente para priorizar, sem eliminar outros)
 # ==============================================
 def forcar_por_glossario(pergunta_normalizada: str, rrf_scores: dict):
     if not GLOSSARIO:
         return
     pergunta_lower = pergunta_normalizada.lower()
     for japones, portugues in GLOSSARIO.items():
-        # Verifica se a frase completa da tradução está na pergunta (case-insensitive)
         if portugues.lower() in pergunta_lower:
             for i, chunk in enumerate(chunks):
                 if japones in chunk:
-                    rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1000
+                    rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 100000
 
 # ==============================================
-# BUSCA HÍBRIDA (FAISS + BM25 + RRF + índice invertido + glossário)
+# BUSCA HÍBRIDA (otimizada)
 # ==============================================
-def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
+def buscar_trechos(pergunta, k_semantico=80, k_literal=40, threshold=0.02):
     pergunta_normalizada = normalizar_pergunta(pergunta)
-    consultas = expandir_consulta_automatica(pergunta_normalizada)
     rrf_scores = {}
     k_rrf = 60
 
-    # Busca semântica (FAISS) e literal (BM25)
-    for consulta in consultas:
-        emb = modelo.encode([consulta])
-        scores, idxs = indice.search(emb.astype('float32'), k_semantico)
-        for i, idx in enumerate(idxs[0]):
-            if scores[0][i] >= threshold:
+    # Busca semântica (FAISS)
+    emb = modelo.encode([pergunta_normalizada])
+    scores, idxs = indice.search(emb.astype('float32'), k_semantico)
+    for i, idx in enumerate(idxs[0]):
+        if scores[0][i] >= threshold:
+            chunk = chunks[idx]
+            rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+
+    # Busca literal (BM25)
+    tokens = pergunta_normalizada.split()
+    if tokens:
+        scores_lit = bm25.get_scores(tokens)
+        best_idx = np.argsort(scores_lit)[::-1][:k_literal]
+        for rank, idx in enumerate(best_idx):
+            if scores_lit[idx] > 0:
                 chunk = chunks[idx]
-                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + i + 1)
+                rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
 
-        tokens = consulta.split()
-        if tokens:
-            scores_lit = bm25.get_scores(tokens)
-            best_idx = np.argsort(scores_lit)[::-1][:k_literal]
-            for rank, idx in enumerate(best_idx):
-                if scores_lit[idx] > 0:
-                    chunk = chunks[idx]
-                    rrf_scores[chunk] = rrf_scores.get(chunk, 0) + 1 / (k_rrf + rank + 1)
-
-    # Força por glossário (peso 1000)
+    # Força por glossário
     forcar_por_glossario(pergunta_normalizada, rrf_scores)
 
-    # Índice invertido para palavras raras (peso 10000)
+    # Índice invertido (palavras raras)
     palavras_pergunta = set(re.findall(r'[\u4e00-\u9fff0-9a-zA-Z]+', pergunta_normalizada.lower()))
     for palavra in palavras_pergunta:
         if palavra in indice_termos_raros:
@@ -200,12 +180,12 @@ def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
         return [], []
 
     trechos_com_score = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    top_candidatos = [chunk for chunk, _ in trechos_com_score[:100]]
+    top_candidatos = [chunk for chunk, _ in trechos_com_score[:60]]
     pares = [(pergunta_normalizada, chunk) for chunk in top_candidatos]
     scores_rerank = cross_encoder.predict(pares)
     candidatos = list(zip(top_candidatos, scores_rerank))
     candidatos.sort(key=lambda x: x[1], reverse=True)
-    chunks_reranked = [chunk for chunk, _ in candidatos[:60]]
+    chunks_reranked = [chunk for chunk, _ in candidatos[:40]]
 
     metadados_reranked = []
     for chunk in chunks_reranked:
@@ -215,7 +195,7 @@ def buscar_trechos(pergunta, k_semantico=150, k_literal=60, threshold=0.005):
     return chunks_reranked, metadados_reranked
 
 # ==============================================
-# FORMATAÇÃO DO PROMPT E RESPOSTA
+# FORMATAÇÃO DO PROMPT E RESPOSTA (idênticos à versão anterior)
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -289,7 +269,7 @@ Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japon
 
 **PERGUNTA DO USUÁRIO:** {pergunta}
 
-**RESPOSTA (seguindo as regras acima):**"""
+**RESPOSTA:**"""
 
     try:
         resposta = cliente.chat.completions.create(
@@ -327,9 +307,8 @@ with st.sidebar:
     st.markdown("### ℹ️ Sobre")
     if indice is not None:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
-        st.markdown("- Busca híbrida (FAISS + BM25 + RRF) + reranker")
-        st.markdown("- Índice invertido automático + força por glossário")
-        st.markdown("- Modelo: multilingual-e5-small (parâmetros ultra‑sensíveis)")
+        st.markdown("- Busca híbrida + reranker + glossário forçado")
+        st.markdown("- Modelo: multilingual-e5-small")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -351,4 +330,4 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada com força por glossário | Inferência responsável v3.3")
+st.caption("Assistente Meishu-Sama | Busca otimizada com força por glossário | Protocolo v3.3")
