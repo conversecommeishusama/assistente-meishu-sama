@@ -21,7 +21,7 @@ from collections import Counter
 # ==============================================
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-d4ce0c4840c5422e9a656568c8cff60a")
 if not DEEPSEEK_API_KEY:
-    st.error("Chave da DeepSeek não configurada.")
+    st.error("Chave da DeepSeek não configurada. / DeepSeek API key not set.")
     st.stop()
 
 # ==============================================
@@ -41,7 +41,7 @@ def normalizar_pergunta(pergunta: str) -> str:
     return pergunta
 
 # ==============================================
-# TRADUTOR GOOGLE
+# TRADUTOR GOOGLE (APENAS PARA EXTRAIR TERMO PRINCIPAL)
 # ==============================================
 def traduzir_google(texto, source='pt', target='ja'):
     try:
@@ -54,20 +54,21 @@ def traduzir_google(texto, source='pt', target='ja'):
         return texto
 
 # ==============================================
-# EXTRAI TERMO PRINCIPAL
+# EXTRAI TERMO PRINCIPAL DA PERGUNTA
 # ==============================================
 def extrair_termo_principal(pergunta: str) -> str:
     palavras = re.findall(r'\b\w+\b', pergunta.lower())
-    ignorar = {'o', 'que', 'meishu', 'sama', 'fala', 'sobre', 'é', 'um', 'uma', 'para', 'com', 'por', 'de', 'da', 'do', 'em', 'no', 'na', 'os', 'as', 'a', 'e', 'meishu-sama'}
+    ignorar = {'o', 'que', 'meishu', 'sama', 'fala', 'sobre', 'é', 'um', 'uma', 'para', 'com', 'por', 'de', 'da', 'do', 'em', 'no', 'na', 'os', 'as', 'a', 'e', 'meishu-sama',
+               'what', 'does', 'think', 'about', 'is', 'the', 'of', 'and', 'to', 'in', 'for', 'on', 'with', 'by', 'from', 'at', 'a', 'an', 'be', 'this', 'that'}
     palavras_filtradas = [p for p in palavras if p not in ignorar and len(p) > 2]
     if not palavras_filtradas:
         return None
-    if re.search(r'^(o que|qual|quais) é?', pergunta.lower()):
+    if re.search(r'^(o que|qual|quais|what|which) é?', pergunta.lower()):
         return palavras_filtradas[-1] if palavras_filtradas else None
     return palavras_filtradas[0] if palavras_filtradas else None
 
 # ==============================================
-# BUSCA LITERAL
+# BUSCA LITERAL EXATA (SUBSTRING)
 # ==============================================
 def buscar_literal_exata(termo_japones: str):
     resultados = []
@@ -156,7 +157,6 @@ def carregar_glossario():
     try:
         with open('glossario.json', 'r', encoding='utf-8') as f:
             gloss = json.load(f)
-            st.sidebar.success(f"✅ Glossário carregado: {len(gloss)} termos")
             return gloss
     except:
         return {}
@@ -183,7 +183,6 @@ def carregar_indices():
     if os.path.exists('textos_originais.pkl'):
         with open('textos_originais.pkl', 'rb') as f:
             originais = pickle.load(f)
-    st.sidebar.success(f"📚 Índices carregados: {len(chunks)} chunks")
     return chunks, index, metadados, originais
 
 @st.cache_resource
@@ -228,13 +227,13 @@ indice_termos_raros = construir_indice_termos_raros() if chunks else {}
 def buscar_trechos(pergunta):
     pergunta_original = pergunta.strip()
     termo_pt = extrair_termo_principal(pergunta_original)
-    
+
     if termo_pt:
         termo_ja = traduzir_google(termo_pt, source='pt', target='ja')
-        st.sidebar.info(f"🔍 Busca literal por '{termo_pt}' → '{termo_ja}'")
+        st.sidebar.info(f"🔍 Literal search for '{termo_pt}' → '{termo_ja}'")
         resultados = buscar_literal_exata(termo_ja)
         if resultados:
-            st.sidebar.success(f"✅ Busca literal encontrou {len(resultados)} trechos.")
+            st.sidebar.success(f"✅ Literal search found {len(resultados)} passages.")
             chunks_reranked = [chunk for chunk, _ in resultados[:50]]
             metadados_reranked = []
             for chunk in chunks_reranked:
@@ -242,14 +241,14 @@ def buscar_trechos(pergunta):
                 metadados_reranked.append(metadados_lista[idx])
             return chunks_reranked, metadados_reranked
         else:
-            st.sidebar.warning(f"⚠️ Busca literal não encontrou '{termo_ja}'. Caindo para busca híbrida.")
+            st.sidebar.warning(f"⚠️ Literal search not found '{termo_ja}'. Using hybrid fallback.")
     else:
-        st.sidebar.info("🔍 Nenhum termo específico detectado. Usando busca híbrida.")
-    
+        st.sidebar.info("🔍 No specific term detected. Using hybrid search.")
+
     return buscar_trechos_hibrido(pergunta)
 
 # ==============================================
-# FORMATAÇÃO DA RESPOSTA (COM PROMPT APRIMORADO)
+# FORMATAÇÃO E RESPOSTA (COM TODOS OS IDIOMAS)
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -268,63 +267,100 @@ def formatar_glossario_para_prompt():
 def formatar_historico(historico, ultimas_n=8):
     if not historico:
         return "Nenhuma mensagem anterior."
-    linhas = ["### HISTÓRICO DA CONVERSA:"]
+    linhas = ["### HISTÓRICO DA CONVERSA / CONVERSATION HISTORY / 会話履歴:"]
     for msg in historico[-ultimas_n:]:
         papel = "Usuário" if msg["role"] == "user" else "Assistente"
         linhas.append(f"{papel}: {msg['content']}")
     return "\n".join(linhas)
 
-def responder(pergunta, historico_conversa):
+def responder(pergunta, historico_conversa, idioma):
+    # Comando de idioma para 12 línguas
+    if idioma == "English":
+        instrucao_idioma = "You MUST answer in English. Use only English. Do not use Portuguese, Spanish, French, German, etc."
+    elif idioma == "Español":
+        instrucao_idioma = "Debes responder en español. Solo español. No uses portugués, inglés, francés, alemán, etc."
+    elif idioma == "Français":
+        instrucao_idioma = "Vous devez répondre en français. Seulement en français. N'utilisez ni portugais, ni anglais, ni espagnol, etc."
+    elif idioma == "Deutsch":
+        instrucao_idioma = "Sie müssen auf Deutsch antworten. Nur Deutsch. Verwenden Sie kein Portugiesisch, Englisch, Französisch, etc."
+    elif idioma == "Italiano":
+        instrucao_idioma = "Devi rispondere in italiano. Solo italiano. Non usare portoghese, inglese, spagnolo, francese, tedesco."
+    elif idioma == "Русский":
+        instrucao_idioma = "Вы должны отвечать на русском. Только на русском. Не используйте португальский, английский, испанский и т.д."
+    elif idioma == "中文":
+        instrucao_idioma = "您必须用中文回答。只使用中文。不要使用葡萄牙语、英语、西班牙语等。"
+    elif idioma == "日本語":
+        instrucao_idioma = "日本語で答えてください。日本語のみを使用し、英語やポルトガル語は使わないでください。"
+    elif idioma == "한국어":
+        instrucao_idioma = "한국어로 답변해야 합니다. 한국어만 사용하세요. 포르투갈어, 영어, 일본어 등을 사용하지 마세요."
+    elif idioma == "हिन्दी":
+        instrucao_idioma = "आपको हिंदी में जवाब देना होगा। केवल हिंदी का प्रयोग करें। पुर्तगाली, अंग्रेजी, स्पेनिश आदि का उपयोग न करें।"
+    elif idioma == "العربية":
+        instrucao_idioma = "يجب عليك الإجابة بالعربية. استخدم العربية فقط. لا تستخدم البرتغالية أو الإنجليزية أو الإسبانية."
+    else:  # Português
+        instrucao_idioma = "Responda em português. Use apenas português do Brasil."
+
     trechos, metadados = buscar_trechos(pergunta)
-    
+
     contexto = ""
     if trechos:
         for i, (trecho, meta) in enumerate(zip(trechos, metadados)):
-            titulo = meta.get('titulo_romaji', '')
-            if not titulo:
-                titulo = meta.get('titulo_kanji', meta.get('arquivo', 'fonte desconhecida'))
-            fonte = f"Fonte: {titulo} {meta.get('volume', '')} {meta.get('data', '')}".strip()
-            if not fonte or fonte == "Fonte: ":
-                fonte = "Fonte: (não identificada)"
-            contexto += f"**[Trecho {i+1}]** {fonte}\n{trecho}\n\n---\n\n"
+            arquivo = meta.get('arquivo', '')
+            if arquivo:
+                nome_base = os.path.splitext(arquivo)[0]
+                fonte = f"**[{nome_base}]**"
+            else:
+                fonte = "**[Fonte não identificada / Unidentified source]**"
+            
+            volume = meta.get('volume', '')
+            data = meta.get('data', '')
+            if volume or data:
+                complemento = ' | '.join([v for v in [volume, data] if v])
+                fonte = f"{fonte} - {complemento}"
+            
+            contexto += f"{fonte}\n"
+            contexto += f"🔹 Original Japanese text: {trecho}\n"
+            contexto += "---\n\n"
     else:
-        contexto = "Nenhum trecho literal encontrado."
+        contexto = "Nenhum trecho literal encontrado / No literal passages found / 該当する文章が見つかりません。"
 
-    prompt = f"""{PROTOCOLO}
+    prompt = f"""{instrucao_idioma}
+
+{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
 
 {formatar_historico(historico_conversa)}
 
-**TRECHOS ENCONTRADOS (se houver):**
+**TRECHOS ENCONTRADOS (texto original em japonês):**
 {contexto}
 
-**INSTRUÇÕES PARA A RESPOSTA:**
-1. **Se houver trechos literais:** baseie‑se neles, citando as fontes.
-2. **Se NÃO houver trechos literais:** você deve fazer uma **inferência aprofundada** usando os princípios doutrinários de Meishu‑Sama. Siga estas etapas:
-   a. **Identifique o núcleo da pergunta** (ex: inteligência artificial, tecnologia, futuro).
-   b. **Relacione com os conceitos centrais da doutrina** que você conhece (materialismo vs. espiritualismo, toxinas, purificação, cultura vertical/horizontal, etc.).
-   c. **Use analogias explícitas** com temas que Meishu‑Sama de fato abordou (ex: a crítica à medicina materialista, a arte como expressão divina, o perigo da ciência sem espírito).
-   d. **Estruture sua resposta em tópicos** (pelo menos três): (i) o que seria condenável, (ii) o que poderia ser aceito, (iii) como a IA se encaixaria (ou não) no Plano Divino.
-   e. **Conclua com uma nota pastoral** – qual seria a advertência ou o conselho de Meishu‑Sama.
-3. **Sempre rotule explicitamente como "Inferência:"** quando não for citação literal.
-4. **Evite respostas vagas** como "ele provavelmente diria". Seja concreto: aponte qual princípio doutrinário está sendo aplicado.
-5. **Mantenha a fidelidade** aos ensinamentos conhecidos (não invente posições contraditórias).
+**INSTRUÇÕES OBRIGATÓRIAS (NÃO IGNORE):**
+1. **Cada trecho está identificado pelo nome do arquivo original** (ex: `[19521115-御垂示録15号]`). Use essa informação para citar a fonte.
+2. **Quando houver trechos literais sobre o tema**, cite‑os no formato: "Tradução [Original]" e, ao final, indique a fonte exatamente como aparece no cabeçalho (o nome do arquivo entre colchetes). Exemplo:  
+   *“A purificação dissolve as toxinas [浄化作用が毒素を溶かす] (Fonte: 19521115-御垂示録15号)”*
+3. **Quando NÃO houver trechos literais sobre o tema** (ex: COVID‑19, IA), faça uma inferência baseada nos princípios doutrinários.  
+   **Cada afirmação deve ser acompanhada da referência a um ou mais trechos concretos (com o respectivo nome do arquivo).**  
+   Exemplo:  
+   *“Meishu‑Sama afirma que ‘toda substância com nome de remédio é um narcótico’ [全ての薬剤は麻薬である] (Fonte: 19521115-御垂示録15号).”*
+4. **NUNCA use expressões vagas como ‘nos trechos’ ou ‘conforme os ensinamentos’ sem especificar o nome do arquivo.**  
+5. **NUNCA invente citações.** Se um princípio não estiver respaldado por nenhum trecho, não o use.  
+6. **Estruture a resposta em tópicos** quando útil, mas cada tópico deve conter sua respectiva fonte.
 
-**PERGUNTA DO USUÁRIO:** {pergunta}
+**PERGUNTA DO USUÁRIO / USER QUESTION / ユーザーの質問:** {pergunta}
 
-**RESPOSTA (seguindo as instruções acima):**"""
+**RESPOSTA / ANSWER / 回答:**"""
 
     try:
         resposta = cliente.chat.completions.create(
             model="deepseek-chat",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.25,
+            temperature=0.1,
             max_tokens=8000
         )
         return resposta.choices[0].message.content
     except Exception as e:
-        return f"Erro na DeepSeek: {str(e)}"
+        return f"Erro na DeepSeek / DeepSeek error / DeepSeekエラー: {str(e)}"
 
 # ==============================================
 # INTERFACE STREAMLIT
@@ -336,30 +372,40 @@ if "historico" not in st.session_state:
     st.session_state.historico = []
 
 with st.sidebar:
+    st.markdown("### 🌐 Idioma / Language / 言語")
+    idioma = st.selectbox(
+        "Escolha o idioma da resposta / Choose response language / 回答言語を選択",
+        ["Português", "English", "Español", "Français", "Deutsch", "Italiano", "Русский", "中文", "日本語", "한국어", "हिन्दी", "العربية"],
+        index=0
+    )
+    st.markdown("---")
     st.markdown("### ℹ️ Sobre")
     st.markdown(f"- Chunks indexados: {len(chunks):,}")
     st.markdown("- Busca: literal primeiro → híbrida (fallback)")
     st.markdown("- Parâmetros: k_semântico=500, k_literal=200")
     st.markdown("- Modelo: multilingual-e5-small")
     st.markdown(f"- Glossário: {len(GLOSSARIO)} termos")
-    st.markdown("- Prompt: **inferências aprofundadas**")
-    if st.button("🗑️ Limpar histórico"):
+    st.markdown("- Fonte: nome do arquivo original")
+    if st.button("🗑️ Limpar histórico / Clear history / 履歴をクリア"):
         st.session_state.historico = []
         st.rerun()
 
+# Exibe o histórico
 for msg in st.session_state.historico:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if pergunta := st.chat_input("Digite sua pergunta..."):
+# Campo de entrada da pergunta
+if pergunta := st.chat_input("Digite sua pergunta (em qualquer idioma) / Type your question (any language) / 質問を入力してください（どの言語でも）"):
     st.session_state.historico.append({"role": "user", "content": pergunta})
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando (literal primeiro; resposta aprofundada)..."):
-            resposta = responder(pergunta, st.session_state.historico[:-1])
+        with st.spinner("Buscando / Searching / 検索中..."):
+            resposta = responder(pergunta, st.session_state.historico[:-1], idioma)
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
-st.caption("Assistente Meishu-Sama | Estratégia: literal → híbrida | Inferências estruturadas")
+st.markdown("---")
+st.caption("Assistente Meishu-Sama | Busca literal → híbrida | Fonte = nome do arquivo | 12 idiomas disponíveis")
