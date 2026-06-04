@@ -77,12 +77,7 @@ def back_translation(pergunta: str) -> list:
 def expandir_consulta(pergunta: str) -> list:
     termos = [pergunta]
     termos.extend(back_translation(pergunta))
-    # Palavras-chave para comportamentos (opcional)
-    palavras_chave = pergunta.lower().split()
-    for pc in palavras_chave:
-        if pc in ["grosseria", "ignorância", "violência", "preguiça", "medo", "insônia", "histeria", "crime"]:
-            termos.extend(["副霊", "憑依", "悪霊", "地縛の霊", "病気の精神的原因"])
-            break
+    # Removemos palavras‑chave comportamentais extras
     return list(set(termos))
 
 # ==============================================
@@ -131,8 +126,8 @@ def carregar_indices():
 
 @st.cache_resource
 def carregar_modelo():
-    # Modelo otimizado para CPU
-    return SentenceTransformer('intfloat/multilingual-e5-small', device='cpu')
+    # Modelo Ruri (leve, otimizado para japonês)
+    return SentenceTransformer('cl-nagoya/ruri-v3-70m', device='cpu')
 
 @st.cache_resource
 def carregar_cross_encoder():
@@ -263,7 +258,7 @@ def traduzir_termo_para_japones(termo_pt: str) -> str:
         return None
 
 # ==============================================
-# FORMATAÇÃO DO PROMPT E RESPOSTA
+# FORMATAÇÃO DO PROMPT E RESPOSTA (VERSÃO PURA)
 # ==============================================
 def formatar_glossario_para_prompt():
     if not GLOSSARIO:
@@ -320,6 +315,7 @@ Gostaria que eu aprofundasse algum aspecto específico?"""
     if termo_jap and termo_jap != termo_chave:
         informacao_traducao = f"\nNOTA: O termo “{termo_chave}” foi traduzido para o japonês como “{termo_jap}”. Utilize essa informação para guiar sua busca e resposta.\n"
 
+    # PROMPT VERSÃO PURA – REMOVIDAS REGRAS COMPORTAMENTAIS
     prompt = f"""{PROTOCOLO}
 
 {formatar_glossario_para_prompt()}
@@ -338,8 +334,6 @@ Gostaria que eu aprofundasse algum aspecto específico?"""
    - Acompanhem a nota: "Nota de Interpretação (Inferência): ..."
 3. É PREFERÍVEL fazer uma inferência útil do que simplesmente dizer "não encontrei".
 4. SEMPRE que possível, cite a fonte (título romanizado, volume, data).
-5. Siga precedência espírito -> matéria.
-6. Para perguntas sobre comportamento moral, emocional ou psíquico, obrigatoriamente inclua a cadeia causal: nuvens espirituais -> toxinas solidificadas -> compressão das veias -> redução do fluxo sanguíneo -> enfraquecimento espiritual -> atração de espíritos encostados -> domínio sobre razão e sentimento -> manifestação do problema (conforme “Os Japoneses e as Doenças Psíquicas”).
 
 **ACESSO A TEXTOS ORIGINAIS:**
 Se o usuário pedir o "trecho original", a "fonte completa" ou o "texto em japonês" de um arquivo específico (ex: "19521115-御垂示録15号.docx"), responda com o marcador:
@@ -387,7 +381,7 @@ with st.sidebar:
         st.markdown(f"- Chunks indexados: {len(chunks):,}")
         st.markdown("- Busca híbrida + reranker + glossário forçado + back‑translation")
         st.markdown("- Parâmetros: k=40, threshold=0.08")
-        st.markdown("- Modelo: multilingual-e5-small (CPU optimizado)")
+        st.markdown("- Modelo: Ruri v3 (cl-nagoya/ruri-v3-70m)")
     st.markdown(f"- Termos no glossário: {len(GLOSSARIO):,}")
     if st.button("🗑️ Limpar histórico"):
         st.session_state.historico = []
@@ -402,11 +396,11 @@ if pergunta := st.chat_input("Digite sua pergunta sobre os ensinamentos de Meish
     with st.chat_message("user"):
         st.markdown(pergunta)
     with st.chat_message("assistant"):
-        with st.spinner("Buscando (busca otimizada)..."):
+        with st.spinner("Buscando..."):
             resposta = responder(pergunta, st.session_state.historico[:-1])
         st.markdown(resposta)
     st.session_state.historico.append({"role": "assistant", "content": resposta})
     st.rerun()
 
 st.markdown("---")
-st.caption("Assistente Meishu-Sama | Busca otimizada | Back‑translation | Protocolo v3.4 | CPU mode")
+st.caption("Assistente Meishu-Sama | Busca pura | Modo sem regras comportamentais | Ruri v3")
