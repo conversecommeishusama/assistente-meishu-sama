@@ -1,0 +1,28 @@
+:root { --bg:#eef6ff; --card:#fff; --text:#1f1f1f; --muted:#5f6368; --primary:#1a73e8; --soft:#e8f0fe; --border:#d2e3fc; }
+* { box-sizing: border-box; }
+body { background: linear-gradient(180deg,#eef6ff,#f8fbff); color: var(--text); font-family: Inter,"Segoe UI",system-ui,sans-serif; margin: 0; }
+button, textarea { font: inherit; }
+.admin-shell { margin: 0 auto; max-width: 1180px; padding: 22px; }
+.admin-topbar { align-items: center; display: flex; gap: 18px; justify-content: space-between; margin-bottom: 22px; }
+.admin-topbar h1 { color: #1418fc; font-size: clamp(2rem,5vw,3.4rem); letter-spacing: -0.05em; line-height: 1; margin: 0; }
+.admin-topbar span, .eyebrow, .details-box, .ticket-detail { color: var(--muted); }
+.admin-topbar a, button { background: var(--primary); border: 0; border-radius: 999px; color: #fff; cursor: pointer; padding: 10px 14px; text-decoration: none; }
+.metric-grid, .admin-grid { display: grid; gap: 14px; }
+.metric-grid { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 14px; }
+.admin-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.metric-card, .admin-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 14px 38px rgba(60,64,67,.08); padding: 18px; }
+.metric-card span { color: var(--muted); display: block; font-size: .88rem; }
+.metric-card strong { color: #174ea6; display: block; font-size: 1.8rem; margin-top: 6px; }
+.admin-card h2 { margin: 0 0 12px; }
+.details-box, .support-list, .ticket-detail { display: grid; gap: 8px; }
+.support-item, .user-row { background: var(--soft); border: 1px solid transparent; border-radius: 16px; display: grid; gap: 3px; padding: 11px; text-align: left; }
+.support-item.active { border-color: #174ea6; }
+.support-item strong, .user-row strong { color: #174ea6; }
+.users-box { max-height: 420px; overflow-y: auto; }
+.message-row { background: #f8fafd; border-radius: 14px; padding: 10px; }
+.message-row.admin { background: #e6f4ea; }
+.reply-form { display: grid; gap: 10px; margin-top: 12px; }
+.reply-form textarea { border: 1px solid var(--border); border-radius: 16px; min-height: 120px; padding: 12px; resize: vertical; }
+.reply-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+#close-ticket { background: #e6f4ea; color: #137333; }
+@media (max-width:760px) { .admin-shell { padding: 14px; } .admin-topbar { align-items: flex-start; flex-direction: column; } .metric-grid, .admin-grid { grid-template-columns: 1fr; } }

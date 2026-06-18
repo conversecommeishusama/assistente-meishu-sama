@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=133">
+</head>
+<body class="landing-body">
+    <main class="landing-shell">
+        <img class="landing-logo" src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+
+        <section class="landing-card">
+            <p class="eyebrow">Assistente Goshinsho</p>
+            <h1>Consulte os escritos de Meishu-Sama</h1>
+            <p>
+                Acesse pelo navegador ou instale o aplicativo Android para conversar com o assistente.
+            </p>
+
+            <div class="landing-actions">
+                <a class="landing-button primary" href="{{ url_for('web.app_view') }}">Acessar pelo navegador</a>
+                <a class="landing-button" href="{{ url_for('web.app_view', panel='register') }}">Criar conta gratuita</a>
+                <a class="landing-button" href="{{ url_for('web.download_apk') }}">Baixar aplicativo Android</a>
+            </div>
+
+            <small>No Android, talvez seja necessário permitir a instalação de apps de fontes desconhecidas.</small>
+        </section>
+    </main>
+</body>
+</html>

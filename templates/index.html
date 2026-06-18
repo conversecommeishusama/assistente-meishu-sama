@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span>Menu</span>
+            <strong>Histórico</strong>
+        </div>
+
+        {% if user %}
+            <button class="new-chat" id="new-chat-button">+ Nova conversa</button>
+            <div class="conversation-list">
+                {% for conversation in conversations %}
+                    <a
+                        class="conversation-link {% if conversation.id|string == active_conversation_id|string %}active{% endif %}"
+                        href="/?conversation_id={{ conversation.id }}"
+                    >
+                        <span>💬</span>
+                        <span>{{ conversation.titulo or "Conversa sem título" }}</span>
+                    </a>
+                {% else %}
+                    <p class="muted">Nenhuma conversa salva ainda.</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="muted">Faça login para ver seu histórico.</p>
+        {% endif %}
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir histórico">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <img src="{{ url_for('web.logo') }}" alt="Goshinsho">
+                <span>Goshinsho</span>
+            </div>
+
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.assinatura') }}">Assinar</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" data-panel="login-panel">Login</button>
+                    <button type="button" data-panel="register-panel">Cadastro</button>
+                {% endif %}
+                <button type="button" data-panel="contact-panel">Contato</button>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="flash-list">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        <section class="panel-grid">
+            <form class="floating-panel" id="login-panel" action="{{ url_for('web.login') }}" method="post">
+                <h2>Login</h2>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <input name="password" type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <form class="floating-panel" id="register-panel" action="{{ url_for('web.cadastro') }}" method="post">
+                <h2>Cadastro</h2>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <input name="password" type="password" placeholder="Senha" required>
+                <input name="confirm_password" type="password" placeholder="Confirmar senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <form class="floating-panel" id="contact-panel" action="{{ url_for('web.contato') }}" method="post">
+                <h2>Contato</h2>
+                <input name="name" type="text" placeholder="Nome" required>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <textarea name="message" placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="hero {% if messages %}compact{% endif %}">
+            <h1>Como posso ajudar?</h1>
+            <p>Faça uma pergunta sobre os escritos de Meishu-Sama.</p>
+        </section>
+
+        <section class="chat" id="chat" data-conversation-id="{{ active_conversation_id or '' }}">
+            {% for message in messages %}
+                <article class="message {{ message.role }}">
+                    <div class="bubble">{{ message.content }}</div>
+                </article>
+            {% endfor %}
+        </section>
+
+        <form class="composer" id="chat-form">
+            <select id="language" aria-label="Idioma da resposta">
+                <option>Português</option>
+                <option>English</option>
+                <option>Español</option>
+            </select>
+            <textarea id="message-input" placeholder="Digite sua pergunta..." rows="1" {% if not user %}disabled{% endif %}></textarea>
+            <button type="submit" {% if not user %}disabled{% endif %}>Enviar</button>
+        </form>
+
+        {% if not user %}
+            <p class="login-hint">Faça login para iniciar uma conversa.</p>
+        {% endif %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

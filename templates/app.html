@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=133">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong data-i18n="history">Histórico</strong>
+        </div>
+
+        {% if user %}
+            <button class="new-chat" id="new-chat-button" data-i18n="newChat">+ Nova conversa</button>
+            <div class="sidebar-section-title" data-i18n="conversations">Conversas</div>
+            <input class="history-search" id="history-search" type="search" placeholder="Buscar no histórico..." data-i18n-placeholder="historySearch">
+            <div class="conversation-list">
+                {% for conversation in conversations %}
+                    <a
+                        class="conversation-link {% if conversation.id|string == active_conversation_id|string %}active{% endif %}"
+                        href="{{ url_for('web.app_view', conversation_id=conversation.id) }}"
+                    >
+                        <span>💬</span>
+                        <span>{{ conversation.titulo or "Conversa sem título" }}</span>
+                    </a>
+                {% else %}
+                    <p class="muted" data-i18n="noHistory">Nenhuma conversa salva ainda.</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="muted" data-i18n="loginHistory">Faça login para ver seu histórico.</p>
+        {% endif %}
+        <div class="favorites-box" id="favorites-box">
+            <strong data-i18n="favorites">Favoritos</strong>
+            <div id="favorites-list" class="favorites-list"></div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell {% if not messages %}initial-view{% endif %}">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir histórico" data-i18n-aria="historyAria">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view') }}" aria-label="Ir para a página principal">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.assinatura') }}" data-i18n="subscribe">Assinar</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" data-panel="login-panel" data-i18n="login">Login</button>
+                    <button type="button" data-panel="register-panel" data-i18n="register">Cadastro</button>
+                {% endif %}
+                <button type="button" data-panel="contact-panel" data-i18n="contact">Contato</button>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="flash-list">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        <section class="panel-grid">
+            <form class="floating-panel" id="login-panel" action="{{ url_for('web.login') }}" method="post" accept-charset="UTF-8">
+                <h2 data-i18n="loginTitle">Acesse sua conta</h2>
+                <input name="email" type="email" placeholder="E-mail" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email" required>
+                <label class="password-field">
+                    <input name="password" type="password" placeholder="Senha" data-i18n-placeholder="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+                    <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
+                </label>
+                <label class="checkbox-field">
+                    <input name="remember" type="checkbox">
+                    <span data-i18n="rememberMe">Mantenha-me conectado</span>
+                </label>
+                <button type="submit" data-i18n="signIn">Entrar</button>
+                <button type="button" class="text-button" data-panel="forgot-password-panel" data-i18n="forgotPassword">Esqueci minha senha</button>
+            </form>
+
+            <form class="floating-panel" id="register-panel" action="{{ url_for('web.cadastro') }}" method="post">
+                <h2 data-i18n="registerTitle">Criar cadastro</h2>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <label class="password-field">
+                    <input name="password" type="password" placeholder="Senha" data-i18n-placeholder="password" required>
+                    <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
+                </label>
+                <label class="password-field">
+                    <input name="confirm_password" type="password" placeholder="Confirmar senha" data-i18n-placeholder="confirmPassword" required>
+                    <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
+                </label>
+                <button type="submit" data-i18n="createAccount">Cadastrar</button>
+            </form>
+
+            <form class="floating-panel" id="forgot-password-panel" action="{{ url_for('web.recuperar_senha') }}" method="post">
+                <h2 data-i18n="resetTitle">Recuperar senha</h2>
+                <p class="panel-note" data-i18n="resetNote">Digite seu e-mail cadastrado para receber um link de redefinição de senha.</p>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <button type="submit" data-i18n="recoveryButton">Enviar link de recuperação</button>
+                <button type="button" class="text-button" data-close-panels data-i18n="backToChat">Voltar ao chat</button>
+            </form>
+
+            <form class="floating-panel" id="reset-password-panel">
+                <h2 data-i18n="newPasswordTitle">Nova senha</h2>
+                <p class="panel-note" data-i18n="newPasswordNote">Digite e confirme sua nova senha.</p>
+                <label class="password-field">
+                    <input name="password" type="password" placeholder="Nova senha" data-i18n-placeholder="newPasswordPlaceholder" required>
+                    <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
+                </label>
+                <label class="password-field">
+                    <input name="confirm_password" type="password" placeholder="Confirmar nova senha" data-i18n-placeholder="confirmNewPassword" required>
+                    <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
+                </label>
+                <button type="submit" data-i18n="updatePassword">Atualizar senha</button>
+                <p class="panel-note" id="reset-password-message"></p>
+                <button type="button" class="text-button" data-close-panels data-i18n="backToChat">Voltar ao chat</button>
+            </form>
+
+            <form class="floating-panel support-panel" id="contact-panel">
+                <h2 data-i18n="contactTitle">Suporte</h2>
+                <p class="panel-note">Abra um atendimento para login, assinatura, erro no app, resposta da IA ou sugestões.</p>
+                {% if not user %}
+                    <input name="name" type="text" placeholder="Nome" data-i18n-placeholder="name" required>
+                    <input name="email" type="email" placeholder="E-mail" required>
+                {% endif %}
+                <select name="category" required>
+                    <option value="login">Login ou cadastro</option>
+                    <option value="subscription">Assinatura ou pagamento</option>
+                    <option value="ai_answer">Resposta da IA</option>
+                    <option value="app_bug">Erro no aplicativo</option>
+                    <option value="suggestion">Sugestão</option>
+                    <option value="other">Outro assunto</option>
+                </select>
+                <input name="subject" type="text" placeholder="Resumo do problema" required>
+                <textarea name="message" placeholder="Descreva o que aconteceu..." data-i18n-placeholder="messageLabel" required></textarea>
+                <button type="submit" data-i18n="send">Abrir atendimento</button>
+                <p class="panel-note" id="support-message"></p>
+                <div class="support-ticket-list" id="support-ticket-list"></div>
+                <section class="support-ticket-detail" id="support-ticket-detail" hidden>
+                    <div id="support-ticket-thread"></div>
+                    <label class="support-reply-box">
+                        <textarea id="support-reply-input" placeholder="Responder ao suporte..."></textarea>
+                        <button type="button" id="support-reply-button">Enviar resposta</button>
+                    </label>
+                </section>
+                <button type="button" class="text-button" data-close-panels data-i18n="backToChat">Voltar ao chat</button>
+            </form>
+        </section>
+
+        <section class="hero {% if messages %}compact{% endif %}">
+            <h1 data-i18n="heroTitle">Como posso ajudar?</h1>
+            <p data-i18n="heroSubtitle">Faça uma pergunta sobre os escritos de Meishu-Sama.</p>
+            <fieldset class="response-mode" aria-label="Tipo de resposta">
+                <label>
+                    <input type="radio" name="response-mode" value="direct">
+                    <span data-i18n="directMode">Resposta direta</span>
+                </label>
+                <label>
+                    <input type="radio" name="response-mode" value="deep" checked>
+                    <span data-i18n="deepMode">Resposta aprofundada</span>
+                </label>
+            </fieldset>
+        </section>
+
+        <section class="chat" id="chat" data-conversation-id="{{ active_conversation_id or '' }}">
+            {% for message in messages %}
+                <article class="message {{ message.role }}" {% if message.id %}data-message-id="{{ message.id }}"{% endif %}>
+                    <div class="bubble">{{ message.content }}</div>
+                    {% if message.role == "assistant" %}
+                        <div class="message-actions" aria-label="Ações da resposta">
+                            <button type="button" data-feedback="like" aria-label="Gostei" title="Gostei">👍</button>
+                            <button type="button" data-feedback="dislike" aria-label="Não gostei" title="Não gostei">👎</button>
+                            <button type="button" data-favorite-response aria-label="Salvar favorito" title="Salvar favorito">☆</button>
+                            <button type="button" data-show-sources aria-label="Ver fontes" title="Ver fontes">📚</button>
+                            <button type="button" data-share-response aria-label="Compartilhar" title="Compartilhar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <path d="M8.7 10.7 15.3 6.3M8.7 13.3l6.6 4.4"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </section>
+
+        <form class="composer" id="chat-form">
+            <select id="language" class="language-select-hidden" aria-label="Idioma da resposta">
+                <option>Português</option>
+                <option>English</option>
+                <option>Español</option>
+                <option>日本語</option>
+                <option>中文</option>
+                <option>हिन्दी</option>
+                <option>العربية</option>
+                <option>Français</option>
+                <option>বাংলা</option>
+                <option>Русский</option>
+                <option>اردو</option>
+                <option>Indonesia</option>
+                <option>Deutsch</option>
+            </select>
+            <textarea id="message-input" placeholder="Digite sua pergunta..." data-i18n-placeholder="chatPlaceholder" rows="1"></textarea>
+            <button type="button" class="language-chip" id="language-button">Idioma: Português</button>
+            <button type="submit" data-i18n="send">Enviar</button>
+        </form>
+
+        <section class="quota-card" id="quota-card" data-quota='{{ quota_status | tojson }}'>
+            <div>
+                <strong id="quota-title">{{ quota_status.label }}</strong>
+                <p id="quota-message">{{ quota_status.message }}</p>
+            </div>
+            <div class="quota-plans" id="quota-plans">
+                <span>Teste: 2 perguntas</span>
+                <span>Cadastro grátis: 3 dias ilimitados</span>
+                <span>Depois: 5 perguntas/mês</span>
+                <span>Premium: ilimitado</span>
+            </div>
+            {% if not user %}
+                <button type="button" data-panel="register-panel" data-i18n="freeAccount">Criar conta gratuita</button>
+            {% elif not quota_status.is_premium %}
+                <a href="{{ url_for('web.assinatura') }}">Conhecer premium</a>
+            {% endif %}
+        </section>
+
+        {% if not user %}
+            <p class="login-hint" data-i18n="loginHint">Faça login para salvar seu histórico de conversas.</p>
+        {% endif %}
+    </main>
+
+    <div class="language-dialog" id="language-dialog" aria-hidden="true">
+        <div class="language-dialog-card" role="dialog" aria-modal="true" aria-labelledby="language-dialog-title">
+            <p class="eyebrow">Idioma</p>
+            <h2 id="language-dialog-title" data-i18n="languageTitle">Escolha o idioma do aplicativo</h2>
+            <p data-i18n="languageNote">O site será ajustado para o idioma escolhido e sua preferência ficará salva neste dispositivo.</p>
+            <div class="language-options" id="language-options"></div>
+            <div class="language-dialog-actions">
+                <button type="button" class="language-cancel" id="language-cancel" data-i18n="back">Voltar</button>
+                <button type="button" class="language-confirm" id="language-confirm" data-i18n="continue">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=130"></script>
+</body>
+</html>
