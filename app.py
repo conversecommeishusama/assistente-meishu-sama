@@ -19,7 +19,7 @@ from collections import Counter
 # ==============================================
 # CHAVE API
 # ==============================================
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-d4ce0c4840c5422e9a656568c8cff60a")
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 if not DEEPSEEK_API_KEY:
     st.error("Chave da DeepSeek não configurada. / DeepSeek API key not set.")
     st.stop()

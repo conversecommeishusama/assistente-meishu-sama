@@ -452,7 +452,7 @@
   "三次元の霊気界": "terceiro mundo, o da energia espiritual",
   "明主様におすがりする": "buscar socorro em Meishu-Sama",
   "神霊医学": "Medicina do Espírito Divino",
-  "御神書": "Escritos Divinos",
+  "御神書": ["Escritos Divinos", "Goshinsho"],
   "天国的救い": "salvação paradisíaca",
   "神様の方の病気に対する知識": "conhecimento divino em relação às doenças",
   "火素・水素・土素": "elemento fogo / elemento água / elemento terra",
