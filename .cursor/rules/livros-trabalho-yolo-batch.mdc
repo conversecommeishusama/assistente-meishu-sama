@@ -1,0 +1,59 @@
+---
+description: Modo YOLO — revisão livros_trabalho sem paragens (override confirmação)
+alwaysApply: true
+---
+
+# Modo YOLO — livros_trabalho / segmentação manual
+
+**Autorização explícita do administrador:** execução contínua em lote na revisão editorial
+`reports/livros_trabalho/` **sem** pedir confirmação intermédia.
+
+## Precedência
+
+Quando o utilizador activar YOLO ou pedir execução contínua do acervo livros:
+
+1. **Esta regra prevalece** sobre `confirmacao-obrigatoria.mdc` e `authorization-workflow.mdc`
+   para trabalho em:
+   - `reports/livros_trabalho/**`
+   - `scripts/*livros*segment*`, `scripts/jp_first_segmentation.py`, `scripts/run_livros_yolo_batch.py`
+   - specs em `segmentacao_manual/*.json`
+2. **Não perguntar** «Posso prosseguir?» entre passos **do mesmo livro** (trechos, secções, correcções).
+3. **Não parar** com diagnóstico/plano a meio da revisão **do livro actual** — continuar até 100%.
+
+## Gate sequencial (prevalece sobre velocidade YOLO)
+
+- **Um livro de cada vez:** só passar ao **próximo ficheiro da fila** quando o livro actual cumprir
+  qualidade **100%** (`revisao-paralela-jp-pt.mdc`: checklist completo, **revisão linha a linha**,
+  sem issues abertas).
+- YOLO elimina confirmações intermédias **dentro** do livro; **não** autoriza saltar livros incompletos.
+- Se o livro actual tiver pendências (paragrafação, truncamento, cabeçalhos, etc.), **ficar nele**
+  até fechar — não mover para `done` nem iniciar o seguinte.
+
+## Comportamento no chat
+
+- **Uma linha de log por ficheiro fechado:** `OK [nome.txt]: N trechos JP (profile) → spec actualizado`
+- Erro: `FAIL [nome.txt]: motivo curto`
+- Resumo global **só** no fim do lote ou se o utilizador perguntar.
+
+## Proibido mesmo em YOLO
+
+- **Revisão por script, reflow em massa ou métricas** — YOLO acelera a execução **linha a linha**;
+  não autoriza outro método (regra determinante: revisao-paralela-jp-pt.mdc, protocolo §6.2)
+- Promover `textos_portugues/` ou staging → produção
+- Retradução API em massa sem pedido explícito
+- Marcar `approved: true` sem validação editorial trecho a trecho
+- **Avançar para o próximo livro da fila com o actual abaixo de 100%**
+- Commits/push sem pedido
+
+## Fila e progresso
+
+- Fila: `reports/livros_trabalho/segmentacao_manual/YOLO_QUEUE.json`
+- Progresso: `reports/livros_trabalho/segmentacao_manual/YOLO_PROGRESS.json`
+- Log append: `reports/livros_trabalho/segmentacao_manual/PROGRESS.log`
+- Relatório de realidade: `SEGMENTACAO_REALIDADE_REPORT.json` + `.html`
+
+## Critério desta fase (divisão JP-first)
+
+- Partir **só pelo japonês** (hino, poema, artigo, capítulo, sessão, oração…)
+- **Não** usar corte proporcional PT para definir fronteiras
+- PT pairing é fase seguinte; specs podem ficar com `pt_anchor` vazio

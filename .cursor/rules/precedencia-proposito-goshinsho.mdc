@@ -1,0 +1,57 @@
+---
+description: Precedência decisória + propósito pastoral/doutrinário — ler antes de qualquer mudança estratégica
+alwaysApply: true
+---
+
+# Precedência e propósito do Goshinsho
+
+## Ordem de precedência (obrigatória)
+
+Em **qualquer** decisão estratégica (busca, tradução, prompt, pipeline, escala):
+
+1. **Determinações explícitas do utilizador** (especialista de domínio)
+2. **Regras `.cursor/rules`** (`regra-suprema-tutela-pesquisa`, `regras-estruturais-sem-tutela`, `glossario-dual-busca-traducao`, `confirmacao-obrigatoria`, `authorization-workflow`)
+3. **`reports/HANDOFF_AGENTE.md`** e decisões registadas no run
+4. **Sugestões técnicas do agente** — só se não violarem 1–3
+
+Se houver conflito: **parar, declarar o conflito, pedir «Posso prosseguir?»** — nunca implementar por iniciativa.
+
+## Propósito do produto (critério de aceitação)
+
+- Respostas com base no **corpus doutrinário completo**, sem desvio e **sem completar por memória**.
+- **Fiel comum:** pode tomar **decisões de vida** com base na resposta.
+- **Pesquisador:** julga **credibilidade** pela **abrangência** e fidelidade do que recupera.
+- Erro doutrinário ou resposta incompleta = **falha de confiança**, não bug cosmético.
+
+## Proibições estruturais (nunca “atalho técnico”)
+
+- **Tutela por tema** (asma → slots, Johrei Ho Koza inject, listas PROIBIDO/OBRIGATÓRIO por doença)
+- **Ajuste pontual** para um exemplo de teste sem generalização aprovada via glossário
+- **Inferência** quando o ensinamento directo existe no corpus mas não foi recuperado
+- **Inferência sem rotulo** quando o assunto específico está ausente dos trechos
+- **Promover corpus / reindexar FAISS** sem autorização explícita
+
+## Inferência legitimada (regra geral)
+
+Quando o assunto **específico** da pergunta **não** consta nos trechos, mas há trechos **relacionados**: inferência **rotulada**, só com base neles, declarando ausência de ensino directo. Ver `inferencia-legitimada.mdc`. **Sem** listas de temas ou pontes obrigatórias.
+
+## Exemplos negativos (não repetir)
+
+| Situação | ❌ Errado | ✅ Correcto |
+|----------|----------|------------|
+| **Asma / Johrei** | Resposta que **centra o diafragma como ponto vital**; inject Koza por tema | Recuperar ensino **nos trechos**; hierarquia doutrinária do corpus; **sem tutela** |
+| **Pressão alta** | «Não há ensinamento específico» + **inferência** de nuca/ombros como ponto vital | Recuperar Gosuiji-roku / cursos com **pressão alta** ou **hipertensão** via glossário (`高血圧` ↔ sinónimos **aprovados**) |
+| **Busca** | `expandir_consulta_busca` com termos injectados por tema | Expansão só via **`glossario.json`** (termos na pergunta) + pipeline v2 genérica |
+| **Tradução** | 2 runners no mesmo JP; glossário O(n²) sem quarentena de gigantes | 1 runner; quarentena preventiva; optimizar glossário **sem** alterar protocolo |
+| **Escala** | Lançar com FAISS antigo + 21 clusters de sinónimo | Tradução completa → corpus promovido → sinónimos **minados e aprovados** → reindex → suite doutrinária |
+
+## Antes de propor implementação
+
+Responder por escrito:
+
+1. Isto viola tutela ou ajuste pontual?
+2. Isto altera o PT ou a doutrina exposta ao utilizador?
+3. Foi **autorizado** pelo utilizador?
+4. Qual o **critério de sucesso** mensurável (ex.: trecho X no top‑K, sem inferência)?
+
+Se qualquer resposta for incerta → **não implementar**.

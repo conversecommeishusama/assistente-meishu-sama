@@ -1,0 +1,38 @@
+---
+description: REGRA SUPREMA — proibição de tutela sem autorização expressa
+alwaysApply: true
+---
+
+# Regra suprema — tutela
+
+**Prioridade máxima.** Em conflito com outra regra ou handoff, **prevalece isto** e `regras-estruturais-sem-tutela.mdc`.
+
+## Proibição
+
+É **terminantemente proibido** criar, reactivar ou alargar **qualquer tutela** sem **autorização expressa por escrito** do utilizador.
+
+**Tutela** = qualquer desvio da busca/resposta genérica que force resultados ou conteúdo por tema, doença, obra ou intenção, incluindo:
+
+- Rotas dedicadas (`buscar_trechos_*`, `if pergunta_sobre_*` → caminho especial)
+- Inject, multi-query ou re-ranking por tema (Johrei Ho Koza, Ohikari, ministeração, definicional, etc.)
+- Prompts com regras **específicas por tema** ou listas de conteúdo proibido/obrigatório por assunto
+- Patches pontuais para uma pergunta ou exemplo de teste
+
+## Permitido SEM tutela
+
+- **`buscar_trechos_core`** + ranking/expansão padrão da pipeline v2
+- **Glossário**: expandir termos **presentes na pergunta** (clusters PT/JP)
+- **Modos de formato**: directo, aprofundado, expand, pastoral, ensinamento, artigo
+- **Regras base genéricas** em `prompts.py` (estruturais, válidas para qualquer pergunta)
+- **Identidade Goshinsho / Escritos Divinos** (meta-pergunta fixa)
+- **`GOSHINSHO_JOHREI_HO_KOZA`**: código pode existir, mas **desactivado por defeito** — reactivar só com autorização
+
+## Antes de implementar tutela (se algum dia autorizada)
+
+1. Descrever o quê, porquê, alternativas estruturais e riscos
+2. Perguntar **«Posso prosseguir?»**
+3. Implementar **só** o pacote autorizado
+
+## Propostas
+
+Pode **propor** tutela; **nunca** implementar por iniciativa própria.

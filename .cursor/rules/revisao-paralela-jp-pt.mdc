@@ -1,0 +1,136 @@
+---
+description: Revisão paralela JP/PT — qualidade máxima, acervo completo, sem atalhos
+alwaysApply: true
+---
+
+# Revisão paralela JP/PT (livros_acervo)
+
+Quando o utilizador pedir revisão editorial, adequação real ou qualidade máxima:
+
+## Delegação autorizada ao agente (2026-07-03, decisão explícita do usuário)
+
+O usuário autorizou expressamente que a leitura linha a linha (JP fonte de verdade ↔ PT)
+seja executada **pelo próprio agente**, não pessoalmente por ele, dado o volume de trabalho
+(dezenas de volumes) e o custo pessoal de revisar cada um. Isto **substitui**, só para este
+ponto, a exigência de leitura humana linha a linha — mas com salvaguardas obrigatórias:
+
+1. **O agente executa** as etapas A–D abaixo por conta própria, volume a volume, sem parar
+   para pedir confirmação a cada trecho.
+2. **Escalar ao usuário só quando genuinamente incerto** — ambiguidade real de quem fala,
+   sinal JP conflitante, decisão que exige julgamento doutrinário/editorial que o agente não
+   consegue resolver sozinho com confiança. Não escalar itens que o agente resolve com
+   confiança razoável.
+3. **Trilha de auditoria obrigatória, mesmo sem incerteza:** para **todo** volume, mesmo os
+   que fecham sem nenhuma escalada, o agente grava um registo linha a linha (mapa JP: quem
+   fala em cada linha + decisão tomada + nível de confiança) em ficheiro separado
+   (`*_AUDIT_TRAIL.json` ou equivalente, ao lado do spec/volume). Isto não é para leitura
+   imediata do usuário — existe para permitir reconferência posterior (pelo usuário, por
+   outra pessoa, ou por outro agente) se algo for questionado depois.
+4. **O gate mecânico (contagem/formato, Δ=0, ver `gokowa-gate-enforcement.mdc`) continua
+   obrigatório e não é substituído por isto** — é uma checagem objectiva adicional, não uma
+   alternativa à trilha de auditoria.
+5. Isto não revoga a proibição de tutela nem a exigência de citar só o que está nos trechos —
+   aplica-se apenas ao **método de revisão** (quem lê linha a linha), não ao conteúdo doutrinário
+   exposto ao usuário final.
+
+Esta delegação é válida para `livros_acervo` e Gokōwa. Continua proibido: pular etapas,
+usar só métricas agregadas como prova de fecho, ou fechar (`approved: true`) sem a trilha de
+auditoria gravada.
+
+## Escalonamento não-bloqueante (2026-07-03)
+
+Quando o agente encontrar um item incerto (§ ponto 2 acima), **não parar o trabalho à espera
+de resposta**. Em vez disso:
+
+1. Registar o item numa fila única de pendências:
+   `reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json` — um registo por
+   item, com: ficheiro/volume, trecho (linha/âncora), o que está em dúvida, opções
+   consideradas, estado = `"aguardando_decisao"`.
+2. Deixar esse volume/trecho **sem** `approved: true` (fica pendente, não aprovado nem
+   rejeitado) e **seguir imediatamente** para o próximo item da fila/plano — nunca esperar.
+3. Continuar processando todos os outros volumes e fases que não dependam dessa resposta.
+4. **Só revisitar as pendências quando o usuário pedir explicitamente** (ex.: "vamos ver as
+   pendências") — apresentar a lista acumulada de uma vez, não uma a uma.
+5. Nenhum volume com item em `PENDENCIAS_REVISAO.json` pode ser marcado `approved: true` até
+   a pendência ser resolvida com o usuário e removida/atualizada no ficheiro.
+
+Excepção: decisões que exigem autorização categórica (promoção para produção, alterar
+protocolos/glossários, ver `confirmacao-obrigatoria.mdc`) **não** entram nesta fila de
+pendências "leves" — essas continuam sendo paradas reais, não itens para depois.
+
+## Regra determinante — só linha a linha (obrigatório, agora executada pelo agente)
+
+**Para livros_acervo, qualquer forma de trabalho que não seja linha a linha não funciona
+e está terminantemente proibida** — linha a linha aqui significa o agente percorrendo
+efectivamente cada linha (com trilha de auditoria), não amostragem nem métrica agregada.
+
+- **Único método válido:** percorrer o japonês linha a linha (fonte de verdade), confrontar
+  com o par português na mesma ordem, corrigir inline quando divergir.
+- **Obrigatório** em **todo** o volume, trecho a trecho — sem amostragem, sem «já revi o essencial».
+- **Terminantemente proibido** usar como revisão editorial (ou como critério de fecho):
+  - reflow / realinhamento do PT em massa por script;
+  - correcção por contagem de parágrafos, ratio JP/PT ou métricas agregadas;
+  - batch Q/A, flags de `REVISAO_PARALELA_REPORT.json` ou triagem automática **sem**
+    leitura linha a linha completa depois (pelo agente, com trilha gravada);
+  - alterar blocos ou ficheiros inteiros sem percorrer cada linha JP ↔ PT.
+- Scripts são **auxiliares de triagem** (apontar onde olhar); **nunca** substituem nem
+  validam a revisão linha a linha — quem valida é o agente lendo, não o script sozinho.
+
+## Gate sequencial — um livro de cada vez (obrigatório)
+
+**Só avançar para o próximo livro da fila quando o livro actual estiver com qualidade 100%.**
+
+- A fila (`YOLO_QUEUE.json`) é **sequencial**: livro N+1 fica bloqueado enquanto o livro N não fechar.
+- **100%** = checklist § abaixo cumprido em **todo** o volume (trecho a trecho, JP ↔ PT), sem
+  issues abertas de paragrafação, truncamento, cabeçalhos, CJK indevido, desalinhamento ou PT em falta.
+- **Proibido** passar ao livro seguinte por «já revi o essencial», amostragem, batch Q/A ou flags
+  automáticas sem leitura paralela completa.
+- **Proibido** marcar o livro como concluído na fila (`done` / `approved: true`) com pendências
+  conhecidas (ex.: paragrafação desalinhada, artefactos no corpo, chunk estrutural por aplicar
+  quando já devia estar validado).
+- Ordem de fecho por livro: (1) corrigir PT work file; (2) re-validar checklist; (3) aplicar
+  chunk estrutural se aplicável; (4) só então `approved: true` no spec e avanço na fila.
+
+## Proibido
+
+- **Qualquer revisão que não seja linha a linha** (§ regra determinante acima)
+- Revisar só os exemplos que o utilizador mencionou (Gosanka, Jikan, etc.) e declarar o resto OK
+- Usar contagem Q/A batch, ratio de caracteres ou amostragem como critério de conclusão
+- Reflow ou patch em massa do PT por script **em substituição** da leitura linha a linha
+- Marcar `approved: true` sem revisão linha a linha trecho a trecho
+- Parar com diagnóstico/plano em vez de executar a etapa actual
+- **Avançar para o próximo livro com o actual abaixo de 100%**
+
+## Obrigatório — checklist por trecho (JP ↔ PT)
+
+1. **Subdivisão**: o bloco devia partir-se? (orações, artigos, capítulos, sessões internas)
+2. **Existência PT**: todo o JP tem par?
+3. **Alinhamento**: mesmo trecho, ordem correcta (não deslocado)
+4. **Completude PT**: sem truncamento, cauda em falta, `...` suspeito
+5. **CJK no PT**: ideogramas / japonês residual no corpo PT
+6. **Paragrafação 1:1**: quebras de parágrafo correspondentes ao JP
+7. **Títulos/cabeçalhos/metadados**: correctos e consistentes
+8. **Outros**: duplicação, eco, PT de outra edição, ordem invertida, anchor errado
+
+## PT em falta
+
+**Ordem obrigatória** (retradução é excepção, não regra — nos periódicos tudo existia localmente):
+
+1. Busca **exaustiva** nos ficheiros actuais: monólitos PT, snapshots P2–P11, `pt_orfaos`, variantes de título, acervo completo, agulhas de conteúdo JP
+2. Documentar a busca (onde procurou, o que não existiu)
+3. Corrigir **pareamento/subdivisão/spec** antes de concluir que falta PT (muitos «faltantes» são desalinhamento, não ausência)
+4. **Só então**, se confirmado que não há correspondente em nenhum ficheiro: traduzir (local ou API)
+5. **Toda retradução** deve usar `glossario_traducao.json` via pipeline existente (`load_glossary`, `translation_protocol_core`, `apply_periodicos_traducao_pass`)
+6. Após tradução: validar com `retranslate_qa` (sem CJK residual, sem truncamento); integrar no monólito PT; regenerar comparativo
+
+## Etapas (qualidade máxima)
+
+| Etapa | Âmbito |
+|-------|--------|
+| A | Triagem rigorosa **100%** ficheiros → `REVISAO_PARALELA_REPORT.json` |
+| B | Leitura paralela profunda por perfil; corrigir specs/PT quando possível |
+| C | Busca cross-acervo; **traduzir** trechos em falta (local ou API) |
+| D | Re-validação comparativos; só então considerar fechado |
+
+Scripts são **auxiliares de triagem**; a conclusão exige **revisão linha a linha**, não só
+flags automáticas nem métricas.

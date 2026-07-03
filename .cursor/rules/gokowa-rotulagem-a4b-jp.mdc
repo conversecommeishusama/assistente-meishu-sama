@@ -1,0 +1,80 @@
+---
+description: Rotulagem §4.4-B Gokōwa-roku — JP linha a linha, depois contagem/formato, depois PT
+globs: reports/livros_trabalho/**/御光話録*.txt,reports/livros_trabalho/segmentacao_manual/*御光話録*.json,scripts/label_gokowa_a4b_from_jp.py
+alwaysApply: false
+---
+
+# Rotulagem Gokōwa-roku §4.4-B (Interlocutor / Meishu-Sama)
+
+## Ordem obrigatória (3 etapas)
+
+A rotulagem **nunca** começa pelo PT nem só por métricas. Sequência fixa:
+
+### Etapa A — Contexto: JP linha a linha (fonte de verdade)
+
+Percorrer **todo** o japonês, linha a linha, trecho a trecho, e classificar cada unidade:
+
+| Sinal no JP | Papel | Rótulo PT |
+|-------------|-------|-----------|
+| `――` / `（お伺）` | pergunta do interlocutor | `Interlocutor:` |
+| parágrafo(s) `　` seguintes | resposta Meishu-Sama | `Meishu-Sama:` |
+| data / sessão (`十一月二十八日`, `［…］`) | cabeçalho | `[data]` ou linha de sessão |
+| prosa sem turno Q/A | narração | sem rótulo de diálogo |
+
+**Objectivo:** saber, turno a turno, o que é pergunta e o que é resposta **antes** de tocar no português.
+
+Scripts (`parse_qa_turns`) são **apoio de triagem** — geram mapa de turnos para conferência; **não substituem** a leitura linha a linha quando houver dúvida ou fecho editorial.
+
+### Etapa B — Confirmação: contagem + formatação
+
+Só após a Etapa A estar clara para o volume (ou sessão):
+
+1. **Contagem:** `# ――` no JP ≈ `# Interlocutor:` no PT (Δ ≤ 2); Meishu ≈ Interlocutor (M/I ≥ 0,85).
+2. **Formatação:** 0 travessões `—` no corpo PT; alternância I→M coerente; blocos I→I consecutivos ≤ 2.
+3. **Cruzamento:** mapa JP (Etapa A) alinhado em ordem com blocos PT na mesma sequência.
+
+Se contagem ou formato divergirem do mapa JP, **voltar à Etapa A** — não forçar rotulagem no PT.
+
+### Etapa C — Ajuste no português
+
+Com mapa JP confirmado e métricas OK:
+
+1. Extrair texto PT na ordem existente (ignorar rótulos errados).
+2. Atribuir `Interlocutor:` / `Meishu-Sama:` conforme o **papel definido no JP** para cada bloco na mesma posição.
+3. **Não reordenar** texto PT por script; **não** decidir rótulo pelo `—` do PT.
+
+```bash
+# Mapa JP para conferência (Etapa A–B)
+python3 scripts/label_gokowa_a4b_from_jp.py --audit-jp --file <nome>.txt
+
+# Aplicar rótulos no PT (Etapa C) — só após mapa confirmado
+python3 scripts/label_gokowa_a4b_from_jp.py --no-corpus --file <nome>.txt
+```
+
+## Proibido
+
+- Rotular PT só pelo `—` ou só por contagem, sem mapa JP linha a linha
+- `rebuild` / reflow em massa como substituto da Etapa A
+- `approved: true` sem Etapas A–C concluídas no volume
+
+## Fecho (`approved: true`)
+
+Desde 2026-07-03, a leitura linha a linha do mapa JP (Etapa A) é feita pelo **agente**, não
+pelo usuário — ver `revisao-paralela-jp-pt.mdc` § Delegação autorizada. Critérios de fecho:
+
+1. Mapa JP conferido **pelo agente**, linha a linha, com trilha de auditoria gravada
+   (ficheiro `*_AUDIT_TRAIL.json` com decisão + confiança por linha)
+2. Métricas Etapa B OK (gate mecânico `gate_gokowa_linha.py`, Δ=0)
+3. PT ajustado (Etapa C)
+4. Nenhum item da trilha marcado como incerto sem ter sido escalado e resolvido com o usuário
+5. Checklist revisão paralela
+
+## Formato alvo
+
+```
+[28 de outubro (quinta-feira)]
+
+Interlocutor: …
+
+Meishu-Sama: …
+```

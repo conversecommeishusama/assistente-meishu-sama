@@ -1,0 +1,35 @@
+---
+description: Contexto da pipeline de busca v2 — handoff e restrições
+globs: goshinsho/pipeline/**,goshinsho/services/search_*.py,goshinsho/services/experimental_router.py,tests/test_pipeline_v2.py,reports/handoff_retrieve_strategy_v2.md
+alwaysApply: false
+---
+
+# Pipeline de busca v2 — continuidade
+
+**Regras supremas:** `regra-suprema-tutela-pesquisa.mdc`, `regras-estruturais-sem-tutela.mdc`.
+
+Ao trabalhar nestes ficheiros, ler `reports/handoff_retrieve_strategy_v2.md` e o estado actual do código.
+
+## Política (utilizador)
+
+- **Default:** `buscar_trechos_core` + expansão via **glossário** — **sem tutela**
+- **Qualidade:** regras de prompt **genéricas** + retrieval genérico; ajustes **estruturais**, nunca pontuais por tema
+- **Proibido** sem autorização: inject Koza, re-rank por doença/ministério/definicional, prompts temáticos
+
+## Restrições operacionais
+
+- Sem reiniciar `goshinsho.service` salvo pedido explícito
+- Sem commits salvo pedido explícito
+
+## Pendente (só com autorização)
+
+- Remover rotas structural / transição em `retrieve_strategy.py`
+- Remover tutelas legadas em `search_service.py` se ainda activas
+
+## Novo chat
+
+1. Ler **`reports/HANDOFF_AGENTE.md`** (estado actual, decisões pendentes)
+2. Ler **`reports/handoff_retrieve_strategy_v2.md`** (detalhe técnico da pipeline v2)
+3. Regras: `regra-suprema-tutela-pesquisa.mdc`, `glossario-dual-busca-traducao.mdc`, `confirmacao-obrigatoria.mdc`
+
+Comando sugerido: «continuar Goshinsho» ou `@reports/HANDOFF_AGENTE.md`.

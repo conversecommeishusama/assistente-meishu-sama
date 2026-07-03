@@ -1,0 +1,35 @@
+---
+description: Dois glossários — busca (chat) vs tradução (massa); nunca confundir
+alwaysApply: true
+---
+
+# Glossário dual — busca vs tradução
+
+**Prioridade alta.** Erro recorrente com custo API (~R$50 em duas ocasiões): usar o glossário errado na tradução.
+
+## Dois ficheiros, dois papéis
+
+| Ficheiro | Uso | Forma dos termos |
+|----------|-----|------------------|
+| `glossario.json` | **Busca/chat** — expansão de retrieval | Pode ter **variantes** para facilitar busca (ex.: Omamori + Ohikari, clusters PT/JP) |
+| `glossario_traducao.json` | **Tradução em massa** — pass 1, pass 2 e QA | **Uma forma canónica** por termo (glossário sanitizado do protocolo original) |
+
+## Regras
+
+1. **Nunca** usar `glossario.json` na tradução em massa nem na verificação QA de tradução.
+2. **Nunca** alterar `glossario_traducao.json` quando o pedido for só melhorar busca no chat — e vice-versa, salvo pedido explícito de alinhar ambos.
+3. Alterar qualquer glossário **exige confirmação** (`confirmacao-obrigatoria.mdc`).
+4. Antes de **iniciar ou retomar** tradução em massa, **confirmar por escrito** com o utilizador:
+   - protocolo: `protocolo_traducao.txt`
+   - glossário: `glossario_traducao.json`
+   - momentos: pass 1, pass 2, pós-tradução/QA
+5. Expansão de termos na **busca** (ex.: ohikari → omamori, talismã) faz-se **só via `glossario.json`**, não via tutela de código.
+
+## Protocolo de tradução
+
+- Fonte: `protocolo_traducao.txt` (não inventar protocolo paralelo).
+- Documentação: `reports/translation_review/GLOSSARIO_TRADUCAO_APLICADO.md`
+
+## Ohikari / termos de busca
+
+A única forma autorizada de ampliar busca por termo relacionado é **entrada no glossário de busca** (`glossario.json`), não rota ou inject dedicado novo.

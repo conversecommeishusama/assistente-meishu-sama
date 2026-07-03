@@ -1,0 +1,35 @@
+---
+description: Autonomia do watchdog na tradução em massa (sem pedir autorização)
+alwaysApply: false
+globs:
+  - reports/translation_review/translation_mass/**
+  - scripts/run_translation_mass.py
+  - scripts/translation_mass_watchdog.py
+  - scripts/translation_mass_repair.py
+---
+
+# Tradução em massa — autonomia do watchdog
+
+Durante um run activo (`run_translation_mass.py` + `translation_mass_watchdog.py`):
+
+## Pode fazer sem pedir autorização
+
+- Reparar ficheiros WARN (duplicação, ordem, glossário) via `translation_mass_repair.py`
+- Adicionar padrões em `glossary_pattern_overrides.json` do run
+- Reiniciar o job de massa se morrer
+- Ajustes mínimos no pipeline/QA/glossário **só** para destravar o run (mesmo espírito das correcções de agricultura)
+- Actualizar `progress.jsonl`, `summary.json`, `watchdog.jsonl`
+
+## Não fazer sem autorização explícita
+
+- Promover staging → produção (`textos_portugues/`)
+- Alterar `protocolo_traducao.txt` ou prompts de forma substantiva
+- Parar/cancelar o run por decisão própria (excepto erro irrecuperável documentado)
+- Mudanças no chat/retrieve ou outros subsistemas não relacionados
+
+## Política de WARN automática
+
+- **Bloqueante:** ratio, japonês residual, duplicação → watchdog aplica `cleanup_prose_duplication` + layout
+- **Não bloqueante:** só `glossary_residual_*` → marca `glossary_deferred: true`, run continua; termos ficam em `qa_issues` para revisão humana posterior
+- Estado: `watchdog_state.json`
+- Reparar manualmente: `.venv/bin/python scripts/translation_mass_repair.py --run-id <id>`

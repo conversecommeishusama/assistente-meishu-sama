@@ -1,0 +1,53 @@
+---
+description: Gokōwa — gate fail-closed, 1 volume/chat, proibido batch sem conteúdo PT
+globs: reports/livros_trabalho/**/御光話録*.txt,scripts/gate_gokowa_linha.py,scripts/restore_gokowa_from_prod.py
+alwaysApply: true
+---
+
+# Gokōwa — gate fail-closed (prevalece sobre velocidade)
+
+## Actualização 2026-07-03 — batch autorizado, revisão pelo agente
+
+O usuário autorizou expressamente rodar os volumes restantes da fila em sequência, na
+mesma sessão, **sem** parar para confirmação a cada volume — ver delegação em
+`revisao-paralela-jp-pt.mdc`. O agente faz a rotulagem (Etapa A→B→C) sozinho, grava trilha
+de auditoria por volume, e quando genuinamente incerto sobre atribuição de fala **regista em
+`PENDENCIAS_REVISAO.json` e segue para o próximo volume** — nunca pára à espera de resposta
+(ver § Escalonamento não-bloqueante em `revisao-paralela-jp-pt.mdc`). Isto substitui a
+restrição "uma conversa = um volume" abaixo, mas **não** substitui o gate mecânico nem a
+trilha de auditoria — ambos continuam obrigatórios em cada volume antes de marcar
+`approved: true`. Um volume com pendência aberta fica sem `approved: true` até ser resolvido.
+
+## Uma conversa = um volume (regra anterior, mantida como fallback se a delegação for revogada)
+
+- Fila: `reports/livros_trabalho/segmentacao_manual/GOKOWA_GATE_QUEUE.json` (`current` = próximo).
+- **Proibido** fechar ou passar ao volume seguinte com `gate_gokowa_linha.py` em FAIL.
+- Batch nos 20 volumes na mesma conversa: **autorizado** desde 2026-07-03 (ver acima),
+  desde que gate + trilha de auditoria sejam cumpridos por volume.
+
+## Antes de declarar feito num volume
+
+```bash
+python3 scripts/gate_gokowa_linha.py --file <nome>.txt
+# exit 0 obrigatório (Δ=0, CJK=0 no diálogo, sem — no corpo)
+```
+
+## Restaurar corpo PT (fonte: retradução massa)
+
+```bash
+python3 scripts/restore_gokowa_from_prod.py --file <nome>.txt
+```
+
+- Fonte: `textos_portugues/` (inline com `—`), **nunca** ficheiro já A4B.
+- Depois: correcções cirúrgicas se necessário; **re-correr gate**.
+
+## Proibido
+
+- `rebuild_a4b()` sobre ficheiro **já** A4B (duplica rótulos / cola JP).
+- Marcar `approved: true` ou sync produção com gate FAIL.
+- Usar `--audit-jp` ou Δ sozinho como prova de fecho.
+- `convert_gokowa_dialogue_a4b` + relabel como substituto de conteúdo PT completo quando há CJK no corpo.
+
+## Etapa A→B→C (inalterada)
+
+JP linha a linha → gate (conteúdo + contagem) → ajuste PT. Scripts são apoio; gate é **bloqueio mecânico**.

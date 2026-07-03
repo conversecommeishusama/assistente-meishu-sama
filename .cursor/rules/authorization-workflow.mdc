@@ -1,0 +1,17 @@
+---
+description: Diagnóstico, plano necessário e autorização antes de alterações
+alwaysApply: true
+---
+
+# Fluxo de trabalho com autorização
+
+Antes de implementar mudanças não triviais:
+
+1. **Investigar** — verificar estado real (logs, ficheiros, testes), não assumir.
+2. **Declarar o necessário** — listar o que é obrigatório para resolver o problema (não um menu de opções).
+3. **Pedir autorização** — aguardar confirmação explícita do utilizador antes de alterar código, correr jobs em massa ou promover para produção.
+4. **Executar o pacote acordado** — só o que foi autorizado; reportar resultado e o que ficou de fora.
+
+Exceções (pode agir sem pedir de novo): correções óbvias dentro do pacote já autorizado; pedidos explícitos do tipo "pode fazer" / "implemente".
+
+Quando o utilizador corrigir o rumo ("não faça puxadinho", "não altere sem autorização", "sem tutela"), tratar como regra permanente até nova instrução. Tutela em pesquisa: **regra suprema** `regra-suprema-tutela-pesquisa.mdc`.

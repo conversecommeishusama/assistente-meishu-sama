@@ -1,0 +1,36 @@
+---
+description: Inferência doutrinária — regras gerais (sem tutela por tema)
+alwaysApply: true
+---
+
+# Inferência legitimada (regras gerais)
+
+## Permitido
+
+Quando **nenhum trecho recuperado** trata **directamente** do assunto concreto da pergunta:
+
+- Articular resposta **somente** a partir dos trechos fornecidos neste turno.
+- Usar associação doutrinária **entre trechos recuperados**.
+- Rotular secção não-citativa directa (ex.: "Inferência:" / "Interpretação com base nos escritos:").
+- Declarar explicitamente que Meishu-Sama **não abordou directamente** aquele assunto específico.
+
+## Proibido
+
+- Completar com **memória do modelo** ou conhecimento geral sem trecho.
+- **Inferir** quando o ensino directo (ou equivalente doutrinário nos trechos) **já existe** mas não foi citado.
+- **Tutela por tema**: listas de obras, doenças, pontes obrigatórias ou slots injectados por assunto.
+- Prescrever no código ou no prompt **quais** temas associar a **quais** outros.
+
+## Distinção crítica
+
+| Situação | Acção |
+|----------|--------|
+| Ensino directo nos trechos | Citar — sem inferência substitutiva |
+| Assunto específico ausente; trechos relacionados presentes | Inferência rotulada, só com base nos trechos |
+| Nem directo nem relacionado nos trechos | Declarar ausência — não inventar |
+
+## Implementação
+
+- Regras no **prompt genérico** (`goshinsho/pipeline/prompts.py`).
+- Expansão lexical só via **`glossario.json`** aprovado — não tutela em runtime.
+- Casos de teste na bateria de aceitação (`reports/acceptance/`) — não no produto.

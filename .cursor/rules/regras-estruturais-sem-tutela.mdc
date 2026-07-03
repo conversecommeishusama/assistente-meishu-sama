@@ -1,0 +1,38 @@
+---
+description: Regras estruturais — sem tutela; ajustes genéricos, nunca pontuais por tema
+alwaysApply: true
+---
+
+# Regras estruturais — pipeline e resposta (sem tutela)
+
+**Prioridade máxima** junto com `regra-suprema-tutela-pesquisa.mdc`.
+
+## Princípio
+
+A IA deve trabalhar com **qualidade só com regras gerais** — busca genérica, glossário, modos de resposta (directo / aprofundado / expand) e continuidade de diálogo. **Nenhuma tutela** por tema, doença, obra ou forma de pergunta, salvo autorização expressa do utilizador.
+
+## Proibido (tutela disfarçada)
+
+- Prompts com listas **PROIBIDO** ou **OBRIGATÓRIO** por tema (Johrei, asma, elementos, ponto vital, etc.)
+- Re-ranking ou inject de retrieval por tema (`injetar_*`, `_rerank_for_*`, boosts por marcadores de doença/ministério)
+- Regras de prompt activadas só para `johrei_terapeutico`, `pergunta_sobre_*` → caminho especial de instrução
+- Patches pontuais «para corrigir esta pergunta» — isso é tutela, não estrutura
+
+## Permitido (estrutural e genérico)
+
+- Modos de **formato**: directo (síntese), aprofundado (citações + análise), expand (complemento sem repetir)
+- Regra definicional **por forma** («o que é / o que significa»): essência **dos trechos**; extensão calibrada pela pergunta, sem contagem fixa de frases
+- **Glossário** (`glossario.json`): termos presentes na pergunta → variantes PT/JP
+- **Identidade do produto**: nome **Goshinsho**, significado **Escritos Divinos** (meta-pergunta, resposta fixa)
+- **Continuidade de diálogo**, âncora temática, clarificação quando referência deíctica é ambígua
+- Modo pastoral / ensinamento em foco / artigo completo — scope de resposta, não rota paralela por tema
+
+## Como corrigir problemas de qualidade
+
+1. Melhorar **retrieval genérico** (índice, ranking, expansão por obra, glossário)
+2. Refinar **regras base** que valem para **qualquer** pergunta (ex.: «comece pelo ensinamento central», «só os trechos deste turno»)
+3. Ajustar **modo de formato**, não conteúdo doutrinário imposto
+
+## Antes de adicionar qualquer excepção temática
+
+Descrever alternativa estrutural → pedir **«Posso prosseguir?»** → implementar só o autorizado.

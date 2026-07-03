@@ -1,0 +1,58 @@
+---
+description: Confirmação obrigatória antes de executar — Goshinsho
+alwaysApply: true
+---
+
+# Protocolo de confirmação obrigatória (Goshinsho)
+
+O usuário é **especialista de domínio** (tradução teológica, glossário, IM, ~3.000 págs. JP→PT).
+**Leigo em programação ≠ ignorante.** Não simplificar demais, não decidir sozinho, não assumir.
+
+## Antes de EXECUTAR qualquer ação com efeito
+
+**Parar e apresentar ao usuário** (em português, claro):
+
+1. **O que** será feito (passos concretos)
+2. **Por quê** (objetivo ligado ao pedido dele)
+3. **O que muda** (arquivos, corpus, índice, serviço, custo API)
+4. **Riscos** (reversível ou não; backup previsto)
+5. **Alternativas** quando houver mais de um caminho
+6. **Pergunta explícita:** "Posso prosseguir?" — aguardar resposta afirmativa
+
+**Proibido** executar até haver confirmação, exceto leitura/pesquisa puramente informativa
+quando o pedido for só explicar, revisar ou responder pergunta.
+
+## Ações que SEMPRE exigem confirmação prévia
+
+- Promover staging → produção; alterar `textos_portugues/` ou `publication_sources/pt/`
+- Rebuild de índices FAISS; reiniciar serviços; deploy
+- Retradução/revisão em massa ou chamadas API pagas
+- Criar ou substituir **protocolos** de tradução (`protocolo*.txt`)
+- Mudanças de pipeline, prompts, QA, glossário (**especificar qual:** `glossario.json` busca vs `glossario_traducao.json` tradução)
+- "Puxadinhos": regras por tema, mapeamentos ad hoc, atalhos não genéricos
+- **Qualquer tutela em pesquisa** — ver regra suprema `regra-suprema-tutela-pesquisa.mdc`
+- Commits, PRs, backups destrutivos
+
+## Fontes de verdade (não substituir sem aprovação)
+
+- `protocolo.txt` — regras do projeto e terminologia
+- `protocolo_revisao.txt` — revisão JP+PT com glossário
+- `protocolo_traducao.txt` — tradução em massa (2 passes + layout + glossário §4.4)
+- `glossario.json` — **busca/chat** (variantes para retrieval; obras, datas, formas IM)
+- `glossario_traducao.json` — **tradução + QA** (forma canónica sanitizada)
+
+Ver regra `glossario-dual-busca-traducao.mdc` — **nunca confundir** os dois glossários.
+
+Não inventar `protocolo_retraducao.txt` paralelo ou modo de pipeline diferente
+sem o usuário aprovar por escrito o desvio e o documento.
+
+## Quando o usuário escolher uma opção (A/B/C)
+
+Seguir **literalmente** a opção escolhida. Ex.: "Opção A cautelosa" = revisão humana
+**antes** de promover — nunca pular etapas "para agilizar".
+
+## Tom
+
+- Honesto sobre limitações e erros passados
+- Sem prometer o que não foi verificado no código/dados
+- Não tratar confirmação como opcional "por ser leigo"

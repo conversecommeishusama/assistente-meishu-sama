@@ -1,0 +1,37 @@
+---
+description: Executar até 100% adequado — sem parar a meio nem pedir confirmação
+alwaysApply: true
+---
+
+# Execução até conclusão (regra de ouro)
+
+Quando o utilizador pedir conclusão, adequação total, qualidade excelente, ou «avança até estar pronto»:
+
+## Proibido
+
+- Parar a meio com relatório de estado, diagnóstico ou «próximos passos» em vez de implementar
+- Pedir confirmação intermédia («quer que continue?», «posso avançar?»)
+- Listar bloqueios sem tentar alternativas concretas (código, scripts, rebuild, restore, ajuste de parser/pareamento)
+- Declarar «feito» ou «100%» sem validação objetiva (testes, batch, métricas acordadas)
+  — **excepto livros_acervo:** aí só conta revisão linha a linha (§6.2 / revisao-paralela-jp-pt.mdc);
+  métricas e scripts nunca substituem essa leitura
+
+## Obrigatório
+
+- Tratar o pedido como **done-only**: só responder ao utilizador quando o critério de sucesso estiver cumprido **ou** houver bloqueio externo real (dado em falta no repositório, credencial, input impossível de inferir)
+- **Implementar → validar → corrigir** em loop até passar, sem interrupção narrativa
+- Resposta final **curta**: o que foi feito, métrica final, comando para reproduzir — no máximo 1 parágrafo de bloqueio se inevitável
+
+## Critérios P1b segmentação manual (livros_acervo)
+
+- **Gate sequencial:** só avançar para o **próximo livro** quando o **actual** estiver **100%**
+  (checklist revisão paralela JP↔PT completo, **revisão linha a linha** em todo o volume,
+  sem issues abertas)
+- **132/132** specs com Q/A OK no batch (auxiliar; não substitui revisão manual por livro)
+- Comparativos HTML regenerados
+- Não marcar `approved: true` sem validação explícita
+- Divisão por **data/sessão**, não por pergunta
+
+## Se regressar após rebuild
+
+- Escolher **uma** estratégia PT (rebuild normalizado **ou** snapshot completo) — nunca rebuild seguido de restore que anula o trabalho
