@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goshinsho — Resposta compartilhada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=143">
+    <style>
+        .shared-page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 22px 60px;
+        }
+        .shared-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary, #1a73e8);
+            margin: 18px 0 14px;
+        }
+        .shared-answer {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.86);
+            border-radius: 18px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+        }
+        .shared-cta {
+            margin-top: 26px;
+            padding: 20px;
+            border-radius: 18px;
+            background: rgba(238, 246, 255, 0.9);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .shared-cta p { margin: 0 0 14px; }
+        .shared-cta a {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: var(--primary, #1a73e8);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="shared-page">
+        <header class="topbar" style="position: static;">
+            <div class="brand">
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view') }}" aria-label="Ir para a página principal">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+        </header>
+
+        <p class="shared-question">{{ question or "Pergunta" }}</p>
+        <div class="shared-answer">{{ answer }}</div>
+
+        {% if not user %}
+        <div class="shared-cta">
+            <p>Esta resposta foi gerada com base nos escritos de Meishu-Sama pelo Goshinsho.
+               Crie sua conta gratuita para fazer suas próprias perguntas ao acervo.</p>
+            <a href="{{ url_for('web.app_view', panel='register') }}">Criar conta gratuita</a>
+        </div>
+        {% endif %}
+    </main>
+</body>
+</html>
