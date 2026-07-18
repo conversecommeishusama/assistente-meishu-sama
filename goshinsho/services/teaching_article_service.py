@@ -525,6 +525,13 @@ def normalize_article_hint(text: str) -> str:
     match = ARTICLE_HINT_STOP_RE.search(candidate)
     if match:
         candidate = candidate[: match.start()].strip(" '\"")
+    # 2026-07-18: "na íntegra"/"texto completo" etc. nunca fazem parte do
+    # título real -- deixá-los no hint dilui o casamento de título (ex.:
+    # "os japoneses e as doenças mentais na íntegra" pontuava pior que sem
+    # o sufixo), impedindo o modo "reproduzir artigo completo" de reconhecer
+    # o artigo certo.
+    candidate = FULL_TEXT_REQUEST_RE.sub(" ", candidate).strip(" '\"")
+    candidate = re.sub(r"\s+", " ", candidate).strip()
     return candidate
 
 
@@ -870,6 +877,28 @@ def _title_core_matches_query(title_core: str, query_core: str) -> bool:
     return query_core in title_core or title_core in query_core
 
 
+def _canonicalize_plural_tokens(tokens: set[str]) -> set[str]:
+    """Reduz cada token à forma singular/plural mais curta antes de comparar
+    título x pergunta -- sem isso, "doenças" (pergunta) e "doença" (título)
+    contam como palavras diferentes no overlap por conjunto, derrubando a
+    pontuação (0,98 -> 0,17 medido com "os japoneses e as doenças mentais"
+    vs. título "Os Japoneses e a Doença Mental") e fazendo o modo "na
+    íntegra" nunca reconhecer o artigo certo. Reaproveita
+    _variante_singular_plural (search_service.py), já testada esta sessão
+    pra busca -- mapeia, não soma variantes, então o tamanho do conjunto
+    não muda e a matemática de proporção mais abaixo continua igual."""
+    from .search_service import _variante_singular_plural
+
+    canonical = set()
+    for token in tokens:
+        variante = _variante_singular_plural(token)
+        if variante and len(variante) < len(token):
+            canonical.add(variante)
+        else:
+            canonical.add(token)
+    return canonical
+
+
 def score_article_match(query: str, article: dict) -> float:
     query_core = normalize_title_core(query)
     title_core = article.get("title_core_normalized") or normalize_title_core(article.get("title", ""))
@@ -899,6 +928,9 @@ def score_article_match(query: str, article: dict) -> float:
     title_tokens = _title_core_tokens(article)
     if not query_tokens or not title_tokens:
         return 0.0
+
+    query_tokens = _canonicalize_plural_tokens(query_tokens)
+    title_tokens = _canonicalize_plural_tokens(title_tokens)
 
     overlap = query_tokens & title_tokens
     extra_in_query = query_tokens - title_tokens
