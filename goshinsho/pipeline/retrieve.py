@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import statistics
 from collections import defaultdict
 from typing import Callable
 
@@ -360,9 +361,22 @@ def _window_around_best_match(
 ) -> list[tuple[str, dict]]:
     """Restringe uma entry estilo-diário ao trecho contíguo em torno do
     chunk mais relevante -- expande enquanto os vizinhos ainda pontuarem
-    perto do pico (>=40%), pra pegar a pergunta+resposta completa sem
-    arrastar o resto do dia. Sem pico real (score 0), devolve tudo -- não
-    há sinal suficiente pra restringir com segurança."""
+    bem acima da linha de base do documento, pra pegar a pergunta+resposta
+    completa sem arrastar o resto do dia. Sem pico real (score 0), devolve
+    tudo -- não há sinal suficiente pra restringir com segurança.
+
+    2026-07-18 (achado por rastreamento, pedido explícito do usuário pra
+    investigar a fundo o caso câncer): limiar como fração fixa do pico
+    (ex. 40% do máximo) falha quando a pergunta tem poucos termos de peso
+    (ex. só "câncer"/"cancer") -- o baseline do documento inteiro já fica
+    perto do pico (ex. pico 20.00 vs. baseline 9.00 espalhado por TODOS os
+    chunks, quando só 1 chunk é realmente sobre o assunto), e 40% do pico
+    (8.00) fica ABAIXO do próprio baseline -- a janela então "expande" pro
+    dia inteiro de novo, o mesmo bug que essa função existe pra evitar.
+    Corrigido usando a MEDIANA de todos os chunks como baseline e o limiar
+    relativo à distância entre baseline e pico, não uma fração absoluta do
+    pico sozinho.
+    """
     if not weighted_prior or len(siblings) <= 3:
         return siblings
     scores = [
@@ -373,7 +387,8 @@ def _window_around_best_match(
     best_score = scores[best_idx]
     if best_score <= 0:
         return siblings
-    threshold = best_score * 0.4
+    baseline = statistics.median(scores)
+    threshold = baseline + (best_score - baseline) * 0.4
     lo = best_idx
     while lo > 0 and scores[lo - 1] >= threshold:
         lo -= 1

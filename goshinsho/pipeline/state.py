@@ -81,17 +81,40 @@ def build_state(
         history, question, pastoral=pastoral
     )
 
-    scoped = find_explicit_article_in_question(question)
-    if not scoped and is_thematic_continuation(question):
-        scoped = find_last_scoped_article_in_history(history, current_question=question)
-    if not scoped and (full_article or re.search(r"\b(incompleto|completo|continua)\b", question, re.I)):
-        scoped = _find_article_from_last_answer(history)
-
     from ..services.conversation_context import recent_assistant_answers, most_recent_answer_sources
 
     answers = recent_assistant_answers(history, limit=1, current_question=question)
     last_answer = answers[0] if answers else ""
     last_answer_sources = most_recent_answer_sources(history)
+
+    scoped = find_explicit_article_in_question(question)
+    if not scoped and is_thematic_continuation(question):
+        scoped = find_last_scoped_article_in_history(history, current_question=question)
+    if (
+        not scoped
+        and not last_answer_sources
+        and (full_article or re.search(r"\b(incompleto|completo|continua)\b", question, re.I))
+    ):
+        # 2026-07-18 (achado por rastreamento pedido pelo usuário, mesmo
+        # investigado como a "instabilidade" e o "problema do câncer" no
+        # na íntegra): _find_article_from_last_answer escaneia a resposta
+        # anterior atrás de QUALQUER trecho entre aspas (extract_sources_
+        # from_text) e busca por título no acervo -- mas trechos entre
+        # aspas são prosa normal citando as palavras de Meishu-Sama (ex.:
+        # "câncer — dói um pouco..."), não citação de fonte. Isso casa por
+        # coincidência de palavra-chave com títulos curtos e genéricos do
+        # acervo (achado real: "câncer — dói um pouco..." -> artigo
+        # "Câncer", score 0.98; "pecado dos médicos" -> "Fragmentos
+        # Médicos", score 0.41) -- e como a prosa do LLM varia levemente
+        # entre chamadas (temperature=0.1), qual trecho casa e com qual
+        # artigo também varia, produzindo resultados instáveis pra "na
+        # íntegra". Isso sequestra retrieve() (scoped_article tem
+        # prioridade sobre o marcador) antes do mecanismo mais confiável
+        # (last_answer_sources, que grava exatamente o que foi usado, não
+        # adivinha por texto) ter chance de rodar. Só cair nesse scan
+        # frágil quando não há marcador disponível (histórico antigo,
+        # anterior a este mecanismo, ou conversa anônima sem persistência).
+        scoped = _find_article_from_last_answer(history)
 
     return PipelineState(
         question=question,
