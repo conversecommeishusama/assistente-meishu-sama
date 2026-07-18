@@ -1,19 +1,41 @@
+import json
+import queue
+import threading
 from collections import defaultdict, deque
+from datetime import datetime, timezone
 from pathlib import Path
 from time import time
 
 import stripe
-from flask import Blueprint, flash, jsonify, make_response, redirect, render_template, request, send_from_directory, session, url_for
+from flask import (
+    Blueprint,
+    Response,
+    copy_current_request_context,
+    flash,
+    jsonify,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    send_from_directory,
+    session,
+    stream_with_context,
+    url_for,
+)
 
 from .config import Config
 from .services.access_service import record_access
+from .services.anonymous_usage_service import summarize_anonymous_usage
 from .services.auth_service import (
     DEVELOPER_EMAILS,
+    EMAIL_CONFIRMATION_REQUIRED,
+    EMAIL_NOT_CONFIRMED_MESSAGE,
     FREE_MONTHLY_QUESTIONS,
     FREE_TRIAL_DAYS,
     check_question_quota,
     consume_question_quota,
     current_user,
+    is_email_confirmed,
     is_free_trial_active,
     is_premium_user,
     login_user,
@@ -21,12 +43,15 @@ from .services.auth_service import (
     request_password_reset,
     refresh_user_profile,
     register_user,
+    resend_signup_confirmation,
     update_password_with_recovery_token,
     update_subscription_plan,
+    _public_auth_redirect,
 )
 from .services.conversation_service import (
     create_conversation,
     get_message,
+    get_shared_answer,
     list_conversations,
     list_messages,
     save_contact,
@@ -35,6 +60,7 @@ from .services.conversation_service import (
 )
 from .services.deepseek_usage_service import reset_deepseek_usage_context, set_deepseek_usage_context, summarize_deepseek_usage
 from .services.email_service import is_email_configured, send_contact_emails
+from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
 from .services.support_service import (
     SUPPORT_CATEGORIES,
     add_ticket_message,
@@ -44,13 +70,28 @@ from .services.support_service import (
     list_tickets,
     update_ticket_status,
 )
+from .services.premium_grant_service import (
+    FINANCIAL_SITUATIONS,
+    create_grant_request,
+    get_grant,
+    get_user_grant,
+    grant_summary,
+    list_grant_requests,
+    review_grant_request,
+)
 
 
 web_bp = Blueprint("web", __name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 stripe.api_key = Config.STRIPE_SECRET_KEY
-ANONYMOUS_FREE_QUESTIONS = 2
 RATE_LIMIT_BUCKETS = defaultdict(deque)
+
+SUBSCRIPTION_EXPLANATION = (
+    "Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, "
+    "que têm custo real de operação. A assinatura premium ajuda a manter o aplicativo "
+    "disponível e a melhorar as respostas. Se você não tem condições de pagar, "
+    "pode solicitar acesso gratuito pelo formulário de cadastro."
+)
 
 PLANS = {
     "mensal": {
@@ -68,6 +109,45 @@ PLANS = {
         "features": ["Perguntas ilimitadas", "Histórico salvo", "Economia em relação ao mensal"],
     },
 }
+
+
+def _runtime_health():
+    version_path = PROJECT_ROOT / "VERSION"
+    index_dir = PROJECT_ROOT / "experiments" / "uploaded_indexes"
+    build_report_path = index_dir / "build_report.json"
+    required_index_files = [
+        "chunks_pt.pkl",
+        "metadados_pt.pkl",
+        "indice_pt.faiss",
+        "chunks_jp.pkl",
+        "metadados_jp.pkl",
+        "indice_jp.faiss",
+        "build_report.json",
+    ]
+
+    checks = {
+        "supabase_config": bool(Config.SUPABASE_URL and Config.SUPABASE_KEY),
+        "deepseek_config": bool(Config.DEEPSEEK_API_KEY),
+        "stripe_config": bool(Config.STRIPE_SECRET_KEY),
+        "indexes_present": all((index_dir / name).exists() for name in required_index_files),
+        "version_present": version_path.exists(),
+    }
+
+    build_report = {}
+    if build_report_path.exists():
+        try:
+            build_report = json.loads(build_report_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            checks["indexes_present"] = False
+
+    ok = all(checks.values())
+    return {
+        "status": "ok" if ok else "degraded",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "version": version_path.read_text(encoding="utf-8").strip() if version_path.exists() else None,
+        "checks": checks,
+        "indexes": build_report.get("indexes", []),
+    }, ok
 
 
 def _client_ip():
@@ -108,6 +188,23 @@ def _require_user_json():
     return user, None
 
 
+def _require_confirmed_user_json():
+    user, error = _require_user_json()
+    if error:
+        return None, error
+    if not is_email_confirmed(user):
+        return None, (
+            jsonify(
+                {
+                    "error": EMAIL_NOT_CONFIRMED_MESSAGE,
+                    "email_confirmation_required": True,
+                }
+            ),
+            403,
+        )
+    return user, None
+
+
 def _is_developer_user(user):
     return (user or {}).get("email", "").strip().lower() in DEVELOPER_EMAILS
 
@@ -137,6 +234,16 @@ def _friendly_error(exc):
         return "E-mail ou senha incorretos. Verifique os dados e tente novamente."
     if "email not confirmed" in normalized:
         return "Confirme seu e-mail antes de fazer login."
+    if "duplicate key" in normalized and "usuarios_email" in normalized:
+        return (
+            "Este e-mail já está cadastrado. Faça login ou use "
+            "«Reenviar confirmação de e-mail» se ainda não confirmou."
+        )
+    if "user already registered" in normalized or "already been registered" in normalized:
+        return (
+            "Este e-mail já está cadastrado. Faça login ou use "
+            "«Reenviar confirmação de e-mail» se ainda não confirmou."
+        )
     if "jwt expired" in normalized:
         session.clear()
         return "Sua sessão expirou. Faça login novamente."
@@ -145,46 +252,84 @@ def _friendly_error(exc):
     return message
 
 
-def _anonymous_remaining():
-    used = int(session.get("anonymous_questions_used") or 0)
-    return max(ANONYMOUS_FREE_QUESTIONS - used, 0)
+def _guest_quota_status():
+    return {
+        "plan": "cadastro_necessario",
+        "label": "Cadastro necessário",
+        "remaining_questions": 0,
+        "limit": None,
+        "trial_days": FREE_TRIAL_DAYS,
+        "is_premium": False,
+        "is_trial": False,
+        "is_limited": True,
+        "requires_login": True,
+        "show_signup_link": True,
+        "message": (
+            f"Para fazer perguntas, crie sua conta gratuita. "
+            f"Você terá {FREE_TRIAL_DAYS} dias com perguntas ilimitadas; "
+            f"depois, assine o plano premium para continuar."
+        ),
+    }
+
+
+def _login_required_chat_response():
+    return jsonify(
+        {
+            "error": _guest_quota_status()["message"],
+            "quota_status": _guest_quota_status(),
+            "requires_login": True,
+            "signup_recommended": True,
+        }
+    ), 401
 
 
 def _quota_status(user):
     if not user:
-        remaining = _anonymous_remaining()
-        return {
-            "plan": "anonimo",
-            "label": "Teste gratuito sem cadastro",
-            "remaining_questions": remaining,
-            "limit": ANONYMOUS_FREE_QUESTIONS,
-            "trial_days": 0,
-            "is_premium": False,
-            "is_trial": False,
-            "message": f"Você tem {remaining} de {ANONYMOUS_FREE_QUESTIONS} perguntas de teste antes de criar uma conta gratuita.",
-        }
+        return _guest_quota_status()
     if is_premium_user(user):
-        return {"plan": "premium", "label": "Premium", "remaining_questions": None, "limit": None, "trial_days": None, "is_premium": True, "is_trial": False, "message": "Plano premium: perguntas ilimitadas."}
-    if is_free_trial_active(user):
-        return {"plan": "gratis_teste", "label": "Gratuito em teste", "remaining_questions": None, "limit": FREE_MONTHLY_QUESTIONS, "trial_days": FREE_TRIAL_DAYS, "is_premium": False, "is_trial": True, "message": f"Conta gratuita: perguntas ilimitadas nos primeiros {FREE_TRIAL_DAYS} dias. Depois, {FREE_MONTHLY_QUESTIONS} perguntas por mês."}
-    ok, remaining = check_question_quota(user)
-    return {"plan": "gratis", "label": "Gratuito", "remaining_questions": remaining if ok else 0, "limit": FREE_MONTHLY_QUESTIONS, "trial_days": 0, "is_premium": False, "is_trial": False, "message": f"Conta gratuita: {remaining if ok else 0} de {FREE_MONTHLY_QUESTIONS} perguntas restantes neste mês."}
-
-
-def _anonymous_limit_response():
-    return jsonify(
-        {
-            "error": f"Você usou suas {ANONYMOUS_FREE_QUESTIONS} perguntas gratuitas de teste. Crie uma conta gratuita para continuar: os primeiros {FREE_TRIAL_DAYS} dias são ilimitados e, depois, você mantém {FREE_MONTHLY_QUESTIONS} perguntas por mês. No plano premium, as perguntas são ilimitadas.",
-            "quota_status": _quota_status(None),
-            "quota_limit_reached": True,
-            "plan_options": {
-                "anonymous": f"Teste: {ANONYMOUS_FREE_QUESTIONS} perguntas",
-                "trial": f"Cadastro grátis: {FREE_TRIAL_DAYS} dias ilimitados",
-                "free": f"Depois: {FREE_MONTHLY_QUESTIONS} perguntas/mês",
-                "premium": "Premium: ilimitado",
-            },
+        return {
+            "plan": "premium",
+            "label": "Premium",
+            "remaining_questions": None,
+            "limit": None,
+            "trial_days": None,
+            "is_premium": True,
+            "is_trial": False,
+            "message": "Plano premium: perguntas ilimitadas.",
         }
-    ), 403
+    if is_free_trial_active(user):
+        return {
+            "plan": "gratis_teste",
+            "label": "Período de experiência",
+            "remaining_questions": None,
+            "limit": FREE_MONTHLY_QUESTIONS,
+            "trial_days": FREE_TRIAL_DAYS,
+            "is_premium": False,
+            "is_trial": True,
+            "show_subscription_intro": False,
+            "pricing_explanation": SUBSCRIPTION_EXPLANATION,
+            "message": (
+                f"Perguntas ilimitadas por {FREE_TRIAL_DAYS} dias a partir do cadastro. "
+                f"Depois desse período, será necessário assinar o plano premium para continuar."
+            ),
+        }
+    ok, remaining = check_question_quota(user)
+    remaining_count = remaining if ok else 0
+    return {
+        "plan": "gratis",
+        "label": "Conta gratuita",
+        "remaining_questions": remaining_count,
+        "limit": FREE_MONTHLY_QUESTIONS,
+        "trial_days": 0,
+        "is_premium": False,
+        "is_trial": False,
+        "show_subscription_intro": True,
+        "pricing_explanation": SUBSCRIPTION_EXPLANATION,
+        "message": (
+            f"Seu período de experiência terminou. Assine o plano premium para perguntas ilimitadas. "
+            f"(Enquanto isso: {remaining_count} de {FREE_MONTHLY_QUESTIONS} perguntas gratuitas neste mês.)"
+        ),
+    }
 
 
 @web_bp.get("/")
@@ -192,9 +337,7 @@ def index():
     return render_template("landing.html")
 
 
-@web_bp.get("/app")
-@web_bp.get("/app/")
-def app_view():
+def _render_app_view(*, retrieval_mode: str):
     _track_access()
     user = current_user()
     conversations = []
@@ -206,7 +349,31 @@ def app_view():
             messages = list_messages(active_conversation_id) if active_conversation_id else []
         except Exception as exc:
             flash(_friendly_error(exc), "error")
-    return render_template("app.html", user=user, conversations=conversations, messages=messages, active_conversation_id=active_conversation_id, quota_status=_quota_status(user))
+    app_endpoint = "web.app_view" if retrieval_mode == "jp_direct" else "web.app_view_pt"
+    return render_template(
+        "app.html",
+        user=user,
+        conversations=conversations,
+        messages=messages,
+        active_conversation_id=active_conversation_id,
+        quota_status=_quota_status(user),
+        grant_request=get_user_grant(user["id"]) if user else None,
+        financial_situations=FINANCIAL_SITUATIONS,
+        retrieval_mode=retrieval_mode,
+        app_endpoint=app_endpoint,
+    )
+
+
+@web_bp.get("/app")
+@web_bp.get("/app/")
+def app_view():
+    return _render_app_view(retrieval_mode="jp_direct")
+
+
+@web_bp.get("/app-pt")
+@web_bp.get("/app-pt/")
+def app_view_pt():
+    return _render_app_view(retrieval_mode="pt_direct")
 
 
 @web_bp.get("/admin")
@@ -263,9 +430,94 @@ def api_admin_support_status(ticket_id):
     return jsonify({"ticket": ticket})
 
 
+@web_bp.get("/api/premium-grant")
+def api_premium_grant_status():
+    user = current_user()
+    if not user:
+        return jsonify({"error": "Faça login para consultar sua solicitação."}), 401
+    grant = get_user_grant(user["id"])
+    return jsonify(
+        {
+            "grant": grant,
+            "is_premium": is_premium_user(user),
+            "financial_situations": FINANCIAL_SITUATIONS,
+        }
+    )
+
+
+@web_bp.post("/api/premium-grant")
+def api_premium_grant_submit():
+    user, error = _require_confirmed_user_json()
+    if error:
+        return error
+    limited = _rate_limit_response(
+        "premium-grant",
+        limit=5,
+        window_seconds=3600,
+        message="Muitas tentativas de envio. Tente novamente mais tarde.",
+    )
+    if limited:
+        return limited
+    payload = request.get_json(silent=True) or request.form.to_dict()
+    try:
+        grant = create_grant_request(user, payload)
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+    except Exception as exc:
+        return jsonify({"error": _friendly_error(exc)}), 500
+    return jsonify({"grant": grant, "message": "Solicitação enviada. Analisaremos seus dados e responderemos por e-mail."}), 201
+
+
+@web_bp.get("/api/admin/premium-grants")
+def api_admin_premium_grants():
+    _, error = _require_developer_json()
+    if error:
+        return error
+    status = request.args.get("status")
+    return jsonify({"grants": list_grant_requests(status=status), "summary": grant_summary()})
+
+
+@web_bp.post("/api/admin/premium-grants/<grant_id>/review")
+def api_admin_premium_grant_review(grant_id):
+    admin, error = _require_developer_json()
+    if error:
+        return error
+    payload = request.get_json(silent=True) or {}
+    decision = (payload.get("decision") or "").strip().lower()
+    note = (payload.get("note") or "").strip()
+    try:
+        grant = review_grant_request(grant_id, decision, admin.get("email"), note=note)
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+    except Exception as exc:
+        return jsonify({"error": _friendly_error(exc)}), 500
+    return jsonify({"grant": grant})
+
+
 @web_bp.get("/logo.png")
 def logo():
     return send_from_directory(PROJECT_ROOT, "logo.png")
+
+
+@web_bp.get("/health")
+def health():
+    payload, ok = _runtime_health()
+    return jsonify(payload), 200 if ok else 503
+
+
+@web_bp.get("/resposta/<message_id>")
+def resposta_compartilhada(message_id):
+    shared = get_shared_answer(message_id)
+    if not shared:
+        flash("Esta resposta não foi encontrada ou não está mais disponível.", "error")
+        return redirect(url_for("web.app_view"))
+    user = current_user()
+    return render_template(
+        "resposta.html",
+        user=user,
+        question=shared["question"],
+        answer=shared["answer"],
+    )
 
 
 @web_bp.get("/downloads/goshinsho.apk")
@@ -326,6 +578,11 @@ def assinatura_sucesso():
 
 @web_bp.post("/login")
 def login():
+    limited = _rate_limit_response("login", limit=20, window_seconds=3600, message="Muitas tentativas de login. Tente novamente mais tarde.")
+    if limited:
+        flash("Muitas tentativas de login. Tente novamente mais tarde.", "error")
+        return redirect(session.pop("next_url", url_for("web.app_view")))
+
     email = request.form.get("email", "").strip().lower()
     password = request.form.get("password", "").strip()
     try:
@@ -338,17 +595,64 @@ def login():
 
 @web_bp.post("/cadastro")
 def cadastro():
-    password = request.form.get("password", "")
-    confirm_password = request.form.get("confirm_password", "")
+    limited = _rate_limit_response("cadastro", limit=8, window_seconds=3600, message="Muitas tentativas de cadastro. Tente novamente mais tarde.")
+    if limited:
+        flash("Muitas tentativas de cadastro. Tente novamente mais tarde.", "error")
+        return redirect(session.pop("next_url", url_for("web.app_view")))
+
+    if not is_human_confirmed(request.form):
+        flash(HUMAN_CHECK_REQUIRED, "error")
+        return redirect(session.pop("next_url", url_for("web.app_view")))
+
+    if is_bot_submission(request.form):
+        flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
+        return redirect(session.pop("next_url", url_for("web.app_view")))
+
+    email = request.form.get("email", "").strip().lower()
+    if is_email_blocked(email):
+        flash(SIGNUP_GENERIC_ERROR, "error")
+        return redirect(session.pop("next_url", url_for("web.app_view")))
+
+    password = request.form.get("password", "").strip()
+    confirm_password = request.form.get("confirm_password", "").strip()
     if password != confirm_password:
         flash("As senhas não coincidem.", "error")
         return redirect(url_for("web.app_view"))
     try:
-        register_user(request.form.get("email", ""), password)
+        register_user(email, password, allow_bot_check=False, form=request.form)
         flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
     except Exception as exc:
-        flash(_friendly_error(exc), "error")
+        if str(exc) == "__BOT_SILENT_SUCCESS__":
+            flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
+        elif str(exc) == EMAIL_CONFIRMATION_REQUIRED:
+            flash(
+                "Cadastro realizado. Confirme seu e-mail pelo link enviado (verifique também a pasta de spam) "
+                "antes de fazer login e usar o assistente.",
+                "success",
+            )
+        else:
+            flash(_friendly_error(exc), "error")
     return redirect(session.pop("next_url", url_for("web.app_view")))
+
+
+@web_bp.post("/reenviar-confirmacao")
+def reenviar_confirmacao():
+    email = request.form.get("email", "").strip().lower()
+    if not email and current_user():
+        email = (current_user().get("email") or "").strip().lower()
+    if not email:
+        flash("Informe seu e-mail para reenviar a confirmação.", "error")
+        return redirect(url_for("web.app_view", panel="login"))
+    try:
+        resend_signup_confirmation(email)
+        flash(
+            "Se este e-mail estiver cadastrado e ainda não confirmado, enviamos um novo link. "
+            "Verifique a caixa de entrada e a pasta de spam.",
+            "success",
+        )
+    except Exception as exc:
+        flash(_friendly_error(exc), "error")
+    return redirect(url_for("web.app_view", panel="login"))
 
 
 @web_bp.post("/recuperar-senha")
@@ -358,7 +662,7 @@ def recuperar_senha():
         flash("Digite seu e-mail para recuperar a senha.", "error")
         return redirect(url_for("web.app_view"))
     try:
-        request_password_reset(email, url_for("web.app_view", _external=True))
+        request_password_reset(email, _public_auth_redirect("/app"))
         flash("Se este e-mail estiver cadastrado, enviaremos um link para redefinir a senha.", "success")
     except Exception as exc:
         flash(_friendly_error(exc), "error")
@@ -397,6 +701,9 @@ def contato():
     message = request.form.get("message", "").strip()
     if not name or not email or not message:
         flash("Preencha todos os campos.", "error")
+        return redirect(url_for("web.app_view"))
+    if is_email_blocked(email):
+        flash("Mensagem recebida com sucesso! Responderemos em breve.", "success")
         return redirect(url_for("web.app_view"))
     try:
         save_contact(name, email, message)
@@ -456,7 +763,7 @@ def api_support_ticket_message(ticket_id):
 
 @web_bp.get("/api/conversations/<conversation_id>/messages")
 def api_messages(conversation_id):
-    user, error = _require_user_json()
+    user, error = _require_confirmed_user_json()
     if error:
         return error
     return jsonify({"messages": list_messages(conversation_id), "user": user})
@@ -464,7 +771,7 @@ def api_messages(conversation_id):
 
 @web_bp.post("/api/conversations/new")
 def api_new_conversation():
-    user, error = _require_user_json()
+    user, error = _require_confirmed_user_json()
     if error:
         return error
     session.pop("active_conversation_id", None)
@@ -473,7 +780,7 @@ def api_new_conversation():
 
 @web_bp.post("/api/messages/<message_id>/feedback")
 def api_message_feedback(message_id):
-    user, error = _require_user_json()
+    user, error = _require_confirmed_user_json()
     if error:
         return error
     payload = request.get_json(silent=True) or {}
@@ -494,15 +801,31 @@ def api_message_feedback(message_id):
 def api_chat():
     user = current_user()
     payload = request.get_json(silent=True) or {}
+    expand_previous = bool(payload.get("expand_previous"))
+    expand_anchor_question = (payload.get("expand_anchor_question") or "").strip()
+    expand_anchor_answer = (payload.get("expand_anchor_answer") or "").strip()
     question = (payload.get("message") or "").strip()
     language = payload.get("language") or "Português"
-    response_mode = payload.get("response_mode") or "deep"
+    response_mode = payload.get("response_mode") or "direct"
+    retrieval_mode = (payload.get("retrieval_mode") or "jp_direct").strip().lower()
     conversation_id = payload.get("conversation_id") or (session.get("active_conversation_id") if user else None)
     client_history = payload.get("history") or []
+    if expand_previous:
+        response_mode = "expand"
+        if not question:
+            question = "Aprofundar a resposta anterior"
     if not question:
         return jsonify({"error": "Digite uma pergunta."}), 400
-    if not user and _anonymous_remaining() <= 0:
-        return _anonymous_limit_response()
+    if not user:
+        return _login_required_chat_response()
+    if not is_email_confirmed(user):
+        return jsonify(
+            {
+                "error": EMAIL_NOT_CONFIRMED_MESSAGE,
+                "email_confirmation_required": True,
+                "quota_status": _quota_status(user),
+            }
+        ), 403
     if user:
         try:
             user = refresh_user_profile(user["id"]) or user
@@ -515,22 +838,110 @@ def api_chat():
         conversation_id = create_conversation(user["id"], question[:50] + ("..." if len(question) > 50 else ""))
         session["active_conversation_id"] = conversation_id
     history = list_messages(conversation_id) if user and conversation_id else client_history
-    if user and conversation_id:
+    if user and conversation_id and not expand_previous:
         save_message(conversation_id, "user", question)
-    from .services.ai_service import answer_question
+    if Config.PIPELINE == "v2":
+        from .pipeline import answer as answer_question_v2
+        from .services.jp_retrieval import jp_only_pool
+        from .services.pt_retrieval import pt_only_pool
+
+        if retrieval_mode == "jp_direct":
+            base_pool_fn = jp_only_pool
+        elif retrieval_mode == "pt_direct":
+            base_pool_fn = pt_only_pool
+        else:
+            base_pool_fn = None
+        retrieval_suffix = "_" + retrieval_mode if retrieval_mode in ("jp_direct", "pt_direct") else ""
+        search_variant = (
+            f"pipeline_v2_research{retrieval_suffix}"
+            if (response_mode or "").lower() in ("research", "pesquisa", "pesquisa_profunda")
+            else f"pipeline_v2{retrieval_suffix}"
+        )
+        event_queue: queue.Queue = queue.Queue()
+        result_holder: dict = {}
+        error_holder: dict = {}
+
+        def notify_japanese_fallback() -> None:
+            event_queue.put({"event": "status", "code": "checking_japanese"})
+
+        def notify_status(code: str, **kwargs) -> None:
+            event_queue.put({"event": "status", "code": code, **kwargs})
+
+        @copy_current_request_context
+        def worker() -> None:
+            token = set_deepseek_usage_context(
+                user_email=user.get("email") if user else "anonymous",
+                search_variant=search_variant,
+            )
+            try:
+                result_holder["answer"] = answer_question_v2(
+                    question,
+                    history,
+                    language=language,
+                    response_mode=response_mode,
+                    expand_previous=expand_previous,
+                    expand_anchor_question=expand_anchor_question,
+                    expand_anchor_answer=expand_anchor_answer,
+                    on_japanese_fallback=notify_japanese_fallback,
+                    on_status=notify_status,
+                    base_pool_fn=base_pool_fn,
+                )
+            except Exception as exc:
+                error_holder["error"] = exc
+            finally:
+                reset_deepseek_usage_context(token)
+                event_queue.put(None)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+        def generate():
+            while True:
+                item = event_queue.get()
+                if item is None:
+                    break
+                yield json.dumps(item, ensure_ascii=False) + "\n"
+
+            if error_holder:
+                yield json.dumps(
+                    {"event": "error", "error": _friendly_error(error_holder["error"])},
+                    ensure_ascii=False,
+                ) + "\n"
+                return
+
+            answer = result_holder.get("answer", "")
+            remaining_questions = consume_question_quota(user)
+            assistant_message_id = (
+                save_message(conversation_id, "assistant", answer) if user and conversation_id else None
+            )
+            yield json.dumps(
+                {
+                    "event": "done",
+                    "answer": answer,
+                    "conversation_id": conversation_id,
+                    "assistant_message_id": assistant_message_id,
+                    "remaining_questions": remaining_questions,
+                    "quota_status": _quota_status(user),
+                    "search_variant": search_variant,
+                },
+                ensure_ascii=False,
+            ) + "\n"
+
+        return Response(stream_with_context(generate()), mimetype="application/x-ndjson")
+
+    from .services.ai_service import answer_question as answer_question_legacy
     from .services.experimental_router import select_search_strategy
 
     search_func, search_variant = select_search_strategy(question, user.get("email") if user else "anonymous")
+    answer_fn = lambda q, h, lang, rm: answer_question_legacy(
+        q, h, lang, response_mode=rm, search_func=search_func
+    )
     token = set_deepseek_usage_context(user_email=user.get("email") if user else "anonymous", search_variant=search_variant)
     try:
-        answer = answer_question(question, history, language, response_mode=response_mode, search_func=search_func)
+        answer = answer_fn(question, history, language=language, response_mode=response_mode)
     finally:
         reset_deepseek_usage_context(token)
-    remaining_questions = consume_question_quota(user) if user else None
-    if not user:
-        session["anonymous_questions_used"] = int(session.get("anonymous_questions_used") or 0) + 1
-        remaining_questions = _anonymous_remaining()
-    assistant_message_id = save_message(conversation_id, "assistant", answer) if user and conversation_id else None
+    remaining_questions = consume_question_quota(user)
+    assistant_message_id = save_message(conversation_id, "assistant", answer) if conversation_id else None
     return jsonify({"answer": answer, "conversation_id": conversation_id, "assistant_message_id": assistant_message_id, "remaining_questions": remaining_questions, "quota_status": _quota_status(user), "search_variant": search_variant})
 
 

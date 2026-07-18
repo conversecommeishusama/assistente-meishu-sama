@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=133">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=143">
 </head>
-<body>
+<body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_direct') }}">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span data-i18n="menu">Menu</span>
@@ -21,7 +21,7 @@
                 {% for conversation in conversations %}
                     <a
                         class="conversation-link {% if conversation.id|string == active_conversation_id|string %}active{% endif %}"
-                        href="{{ url_for('web.app_view', conversation_id=conversation.id) }}"
+                        href="{{ url_for(app_endpoint|default('web.app_view'), conversation_id=conversation.id) }}"
                     >
                         <span>💬</span>
                         <span>{{ conversation.titulo or "Conversa sem título" }}</span>
@@ -49,13 +49,19 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a class="brand-link brand-home" href="{{ url_for('web.app_view') }}" aria-label="Ir para a página principal">
+                <a class="brand-link brand-home" href="{{ url_for(app_endpoint|default('web.app_view')) }}" aria-label="Ir para a página principal">
                     <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
                     <span>Goshinsho</span>
+                    {% if retrieval_mode in ('pt_direct', 'pt_first') %}
+                    <span class="retrieval-badge" title="Versão principal: índice português">PT</span>
+                    {% else %}
+                    <span class="retrieval-badge" title="Versão principal: índice japonês">JP</span>
+                    {% endif %}
                 </a>
             </div>
 
             <nav class="top-actions">
+                {% include "_developer_nav.html" %}
                 {% if user %}
                     <span class="user-pill">{{ user.email }}</span>
                     <a class="nav-link subscribe-link" href="{{ url_for('web.assinatura') }}" data-i18n="subscribe">Assinar</a>
@@ -67,6 +73,7 @@
                     <button type="button" data-panel="register-panel" data-i18n="register">Cadastro</button>
                 {% endif %}
                 <button type="button" data-panel="contact-panel" data-i18n="contact">Contato</button>
+                <button type="button" data-panel="premium-grant-panel">Acesso gratuito</button>
             </nav>
         </header>
 
@@ -79,6 +86,19 @@
                 </section>
             {% endif %}
         {% endwith %}
+
+        {% if user and not user.get('email_confirmado') %}
+            <section class="flash-list">
+                <div class="flash error">
+                    Confirme seu e-mail pelo link enviado no cadastro antes de fazer perguntas.
+                    Depois de confirmar, faça login novamente.
+                </div>
+                <form class="resend-confirm-form" action="{{ url_for('web.reenviar_confirmacao') }}" method="post">
+                    <input type="hidden" name="email" value="{{ user.email }}">
+                    <button type="submit">Reenviar e-mail de confirmação</button>
+                </form>
+            </section>
+        {% endif %}
 
         <section class="panel-grid">
             <form class="floating-panel" id="login-panel" action="{{ url_for('web.login') }}" method="post" accept-charset="UTF-8">
@@ -94,10 +114,20 @@
                 </label>
                 <button type="submit" data-i18n="signIn">Entrar</button>
                 <button type="button" class="text-button" data-panel="forgot-password-panel" data-i18n="forgotPassword">Esqueci minha senha</button>
+                <button type="button" class="text-button" data-panel="resend-confirm-panel">Reenviar confirmação de e-mail</button>
             </form>
 
             <form class="floating-panel" id="register-panel" action="{{ url_for('web.cadastro') }}" method="post">
                 <h2 data-i18n="registerTitle">Criar cadastro</h2>
+                <p class="panel-note" data-i18n="registerPolicyNote">
+                    Cadastro gratuito: {{ quota_status.trial_days or 3 }} dias com perguntas ilimitadas.
+                    Depois desse período, assine o plano premium para continuar.
+                </p>
+                <div class="signup-shield" aria-hidden="true">
+                    <label for="signup-website">Website</label>
+                    <input id="signup-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="signup_started" id="signup-started" value="">
+                </div>
                 <input name="email" type="email" placeholder="E-mail" required>
                 <label class="password-field">
                     <input name="password" type="password" placeholder="Senha" data-i18n-placeholder="password" required>
@@ -107,7 +137,24 @@
                     <input name="confirm_password" type="password" placeholder="Confirmar senha" data-i18n-placeholder="confirmPassword" required>
                     <button type="button" class="password-toggle" aria-label="Mostrar senha" data-password-toggle>👁</button>
                 </label>
+                <label class="checkbox-field human-check-field">
+                    <input name="human_check" type="checkbox" value="1" required>
+                    <span data-i18n="humanCheck">Sou humano</span>
+                </label>
                 <button type="submit" data-i18n="createAccount">Cadastrar</button>
+                <p class="panel-note">
+                    Após o cadastro, confirme seu e-mail pelo link enviado (verifique também a pasta de spam).
+                </p>
+            </form>
+
+            <form class="floating-panel" id="resend-confirm-panel" action="{{ url_for('web.reenviar_confirmacao') }}" method="post">
+                <h2>Reenviar confirmação de e-mail</h2>
+                <p class="panel-note">
+                    Não recebeu o link? Informe seu e-mail para receber um novo envio de confirmação.
+                </p>
+                <input name="email" type="email" placeholder="E-mail" required>
+                <button type="submit">Reenviar link</button>
+                <button type="button" class="text-button" data-panel="login-panel" data-i18n="login">Voltar ao login</button>
             </form>
 
             <form class="floating-panel" id="forgot-password-panel" action="{{ url_for('web.recuperar_senha') }}" method="post">
@@ -163,21 +210,111 @@
                 </section>
                 <button type="button" class="text-button" data-close-panels data-i18n="backToChat">Voltar ao chat</button>
             </form>
+
+            <form class="floating-panel grant-panel" id="premium-grant-panel" novalidate>
+                <h2>Solicitar premium gratuito</h2>
+                <p class="panel-note">
+                    Se você não tem condições de pagar a assinatura, preencha o formulário abaixo.
+                    Analisaremos sua solicitação com base nos dados informados e responderemos pelo e-mail cadastrado.
+                </p>
+                {% if not user %}
+                    <p class="panel-note grant-login-note">
+                        É necessário ter cadastro no Goshinsho antes de enviar a solicitação.
+                    </p>
+                    <button type="button" data-panel="register-panel" data-i18n="freeAccount">Criar conta gratuita</button>
+                    <button type="button" data-panel="login-panel" data-i18n="login">Já tenho cadastro</button>
+                {% elif quota_status.is_premium %}
+                    <p class="panel-note grant-status-note success">Sua conta já possui acesso premium.</p>
+                {% elif grant_request and grant_request.status == 'pending' %}
+                    <p class="panel-note grant-status-note pending">
+                        Sua solicitação enviada em {{ grant_request.created_at[:10] }} está em análise.
+                        Responderemos pelo e-mail <strong>{{ user.email }}</strong>.
+                    </p>
+                {% elif grant_request and grant_request.status == 'approved' %}
+                    <p class="panel-note grant-status-note success">
+                        Sua solicitação foi aprovada. Você já possui acesso premium gratuito.
+                    </p>
+                {% else %}
+                    {% if grant_request and grant_request.status == 'rejected' %}
+                        <p class="panel-note grant-status-note rejected">
+                            Sua solicitação anterior foi recusada{% if grant_request.admin_note %}: {{ grant_request.admin_note }}{% endif %}.
+                            Você pode enviar uma nova solicitação com informações atualizadas.
+                        </p>
+                    {% endif %}
+                    <input type="hidden" name="user_email" value="{{ user.email }}">
+                    <label>
+                        <span>Nome completo</span>
+                        <input name="full_name" type="text" required autocomplete="name">
+                    </label>
+                    <label>
+                        <span>E-mail da conta</span>
+                        <input type="email" value="{{ user.email }}" readonly>
+                    </label>
+                    <label>
+                        <span>Telefone / WhatsApp</span>
+                        <input name="phone" type="tel" required autocomplete="tel">
+                    </label>
+                    <label>
+                        <span>País</span>
+                        <input name="country" type="text" required autocomplete="country-name">
+                    </label>
+                    <label>
+                        <span>Cidade e estado / região</span>
+                        <input name="city_state" type="text" required>
+                    </label>
+                    <label>
+                        <span>Data de nascimento</span>
+                        <input name="birth_date" type="date">
+                    </label>
+                    <label>
+                        <span>Vínculo com centro, associação ou grupo de estudo</span>
+                        <input name="community_affiliation" type="text" placeholder="Opcional">
+                    </label>
+                    <label>
+                        <span>Ocupação / atividade principal</span>
+                        <input name="occupation" type="text" placeholder="Opcional">
+                    </label>
+                    <label>
+                        <span>Situação financeira</span>
+                        <select name="financial_situation" required>
+                            <option value="">Selecione...</option>
+                            {% for key, label in financial_situations.items() %}
+                                <option value="{{ key }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <label>
+                        <span>Pessoas no domicílio (incluindo você)</span>
+                        <input name="household_size" type="number" min="1" max="20" placeholder="Opcional">
+                    </label>
+                    <label>
+                        <span>Por que você precisa de acesso gratuito?</span>
+                        <textarea name="reason" rows="4" required placeholder="Descreva sua situação com sinceridade — quanto mais contexto, melhor analisamos."></textarea>
+                        <small class="field-hint">Escreva pelo menos 20 caracteres.</small>
+                    </label>
+                    <label>
+                        <span>Como pretende usar o Goshinsho?</span>
+                        <textarea name="usage_intent" rows="3" required placeholder="Ex.: estudo pessoal dos escritos de Meishu-Sama, preparação de palestras, apoio ao trabalho espiritual."></textarea>
+                        <small class="field-hint">Uma frase curta já basta — ex.: «Estudo pessoal dos escritos de Meishu-Sama».</small>
+                    </label>
+                    <label class="checkbox-field">
+                        <input name="truthfulness_ack" type="checkbox" value="1" required>
+                        <span>Declaro que as informações prestadas são verdadeiras.</span>
+                    </label>
+                    <label class="checkbox-field">
+                        <input name="data_consent" type="checkbox" value="1" required>
+                        <span>Autorizo o uso destes dados apenas para análise desta solicitação.</span>
+                    </label>
+                    <button type="submit">Enviar solicitação</button>
+                    <p class="panel-note" id="premium-grant-message"></p>
+                {% endif %}
+                <button type="button" class="text-button" data-close-panels data-i18n="backToChat">Voltar ao chat</button>
+            </form>
         </section>
 
         <section class="hero {% if messages %}compact{% endif %}">
             <h1 data-i18n="heroTitle">Como posso ajudar?</h1>
             <p data-i18n="heroSubtitle">Faça uma pergunta sobre os escritos de Meishu-Sama.</p>
-            <fieldset class="response-mode" aria-label="Tipo de resposta">
-                <label>
-                    <input type="radio" name="response-mode" value="direct">
-                    <span data-i18n="directMode">Resposta direta</span>
-                </label>
-                <label>
-                    <input type="radio" name="response-mode" value="deep" checked>
-                    <span data-i18n="deepMode">Resposta aprofundada</span>
-                </label>
-            </fieldset>
         </section>
 
         <section class="chat" id="chat" data-conversation-id="{{ active_conversation_id or '' }}">
@@ -205,6 +342,20 @@
         </section>
 
         <form class="composer" id="chat-form">
+            <fieldset class="response-mode composer-response-mode" aria-label="Tipo de resposta" data-i18n-aria="responseModeAria">
+                <label>
+                    <input type="radio" name="response-mode" value="direct" checked>
+                    <span data-i18n="directMode">Resposta direta</span>
+                </label>
+                <label>
+                    <input type="radio" name="response-mode" value="deep">
+                    <span data-i18n="deepMode">Resposta aprofundada</span>
+                </label>
+                <label>
+                    <input type="radio" name="response-mode" value="research">
+                    <span data-i18n="researchMode">Pesquisa profunda</span>
+                </label>
+            </fieldset>
             <select id="language" class="language-select-hidden" aria-label="Idioma da resposta">
                 <option>Português</option>
                 <option>English</option>
@@ -230,23 +381,47 @@
                 <strong id="quota-title">{{ quota_status.label }}</strong>
                 <p id="quota-message">{{ quota_status.message }}</p>
             </div>
+            {% if user and not quota_status.is_premium and quota_status.pricing_explanation %}
+                <p class="quota-pricing-note" id="quota-pricing-note">{{ quota_status.pricing_explanation }}</p>
+            {% endif %}
             <div class="quota-plans" id="quota-plans">
-                <span>Teste: 2 perguntas</span>
-                <span>Cadastro grátis: 3 dias ilimitados</span>
-                <span>Depois: 5 perguntas/mês</span>
-                <span>Premium: ilimitado</span>
+                <span><span data-i18n="quotaPlanFreePrefix">Cadastro grátis:</span> {{ quota_status.trial_days or 3 }} <span data-i18n="quotaPlanFreeSuffix">dias com perguntas ilimitadas</span></span>
+                <span data-i18n="quotaPlanThen">Depois: assine o plano premium</span>
+                <span data-i18n="quotaPlanPremium">Premium: perguntas ilimitadas</span>
             </div>
             {% if not user %}
-                <button type="button" data-panel="register-panel" data-i18n="freeAccount">Criar conta gratuita</button>
-            {% elif not quota_status.is_premium %}
-                <a href="{{ url_for('web.assinatura') }}">Conhecer premium</a>
+                <p id="quota-signup-hint" class="quota-signup-hint visible" data-i18n="quotaSignupHint">
+                    Crie sua conta gratuita para fazer perguntas.
+                </p>
+                <button type="button" id="quota-signup-button" data-panel="register-panel" data-i18n="freeAccount">Criar conta gratuita</button>
+                {% elif not quota_status.is_premium %}
+                <a href="{{ url_for('web.assinatura') }}">Assinar plano premium</a>
+                <button type="button" class="text-button quota-grant-link" data-panel="premium-grant-panel">Sem condições de pagar? Solicite acesso gratuito</button>
             {% endif %}
         </section>
 
         {% if not user %}
-            <p class="login-hint" data-i18n="loginHint">Faça login para salvar seu histórico de conversas.</p>
+            <p class="login-hint" data-i18n="loginHint">Para fazer perguntas, crie sua conta ou faça login.</p>
         {% endif %}
     </main>
+
+    <div class="language-dialog" id="subscription-intro-dialog" aria-hidden="true">
+        <div class="language-dialog-card subscription-intro-card" role="dialog" aria-modal="true" aria-labelledby="subscription-intro-title">
+            <p class="eyebrow">Sobre a assinatura</p>
+            <h2 id="subscription-intro-title">Por que existe plano pago?</h2>
+            <p id="subscription-intro-text">
+                Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, que têm custo real de operação.
+                A assinatura premium ajuda a manter o aplicativo disponível e a melhorar as respostas.
+            </p>
+            <p class="panel-note">
+                Se você não tem condições de pagar, pode solicitar acesso gratuito pelo formulário de cadastro.
+            </p>
+            <div class="language-dialog-actions">
+                <button type="button" class="language-cancel" id="subscription-intro-grant">Solicitar acesso gratuito</button>
+                <button type="button" class="language-confirm" id="subscription-intro-confirm">Entendi</button>
+            </div>
+        </div>
+    </div>
 
     <div class="language-dialog" id="language-dialog" aria-hidden="true">
         <div class="language-dialog-card" role="dialog" aria-modal="true" aria-labelledby="language-dialog-title">
@@ -261,6 +436,6 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=130"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=145"></script>
 </body>
 </html>
