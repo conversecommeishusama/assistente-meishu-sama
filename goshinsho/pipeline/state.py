@@ -34,6 +34,7 @@ class PipelineState:
     content_question: str
     scoped_article: dict | None
     last_answer: str
+    last_answer_sources: list[str]
     topic_anchor: list[str]
     needs_search_clarification: bool
 
@@ -86,10 +87,11 @@ def build_state(
     if not scoped and (full_article or re.search(r"\b(incompleto|completo|continua)\b", question, re.I)):
         scoped = _find_article_from_last_answer(history)
 
-    from ..services.conversation_context import recent_assistant_answers
+    from ..services.conversation_context import recent_assistant_answers, most_recent_answer_sources
 
     answers = recent_assistant_answers(history, limit=1, current_question=question)
     last_answer = answers[0] if answers else ""
+    last_answer_sources = most_recent_answer_sources(history)
 
     return PipelineState(
         question=question,
@@ -102,6 +104,7 @@ def build_state(
         content_question=question,
         scoped_article=scoped,
         last_answer=last_answer,
+        last_answer_sources=last_answer_sources,
         topic_anchor=topic_anchor,
         needs_search_clarification=needs_search_clarification,
     )

@@ -347,6 +347,12 @@ def _render_app_view(*, retrieval_mode: str):
         try:
             conversations = list_conversations(user["id"])
             messages = list_messages(active_conversation_id) if active_conversation_id else []
+            if messages:
+                from .services.conversation_context import strip_source_marker
+
+                for msg in messages:
+                    if msg.get("role") == "assistant":
+                        msg["content"] = strip_source_marker(msg.get("content") or "")
         except Exception as exc:
             flash(_friendly_error(exc), "error")
     app_endpoint = "web.app_view" if retrieval_mode == "jp_direct" else "web.app_view_pt"
@@ -910,13 +916,20 @@ def api_chat():
 
             answer = result_holder.get("answer", "")
             remaining_questions = consume_question_quota(user)
+            # 2026-07-18: answer pode ter um marcador oculto de fontes no
+            # fim (ver conversation_context.append_source_marker) -- grava
+            # a versão COMPLETA (com marcador) no banco, pra "me dê a fonte
+            # na íntegra" num turno seguinte poder resolver por consulta
+            # directa; mostra ao usuário só a versão limpa.
             assistant_message_id = (
                 save_message(conversation_id, "assistant", answer) if user and conversation_id else None
             )
+            from .services.conversation_context import strip_source_marker
+
             yield json.dumps(
                 {
                     "event": "done",
-                    "answer": answer,
+                    "answer": strip_source_marker(answer),
                     "conversation_id": conversation_id,
                     "assistant_message_id": assistant_message_id,
                     "remaining_questions": remaining_questions,

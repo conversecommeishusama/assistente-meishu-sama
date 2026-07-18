@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from typing import Callable
 
@@ -9,6 +10,7 @@ from ..config import Config
 from ..services.search_glossary import frases_ancora_literal, weighted_terms_for_search
 from ..services.search_ranking import score_chunk_tokens, score_literal_phrases, promote_literal_anchors
 from ..services.conversation_mode import is_definitional_question
+from ..services.conversation_context import recent_user_questions
 from ..services.search_service import (
     extrair_pergunta_usuario,
     injetar_johrei_ho_koza,
@@ -331,6 +333,56 @@ def _rank_query(state: PipelineState) -> str:
     return normalizar_pergunta(extrair_pergunta_usuario(state.search_query) or state.content_question)
 
 
+# 2026-07-18: "na íntegra" pra colectâneas organizadas por DATA (Gosuiji-Roku,
+# Coletânea de Ensinamentos etc.) -- ver bloco em retrieve() abaixo. O título
+# de cada sessão nessas colectâneas é só a data ("1º de março", "5 de
+# outubro"), nunca um tema -- sinal puramente estrutural (não é lista de
+# série/tema, funciona pra qualquer colectânea futura organizada do mesmo
+# jeito) de que a entry cobre um dia inteiro de diálogo com vários assuntos,
+# não um único tema. Pra essas, "na íntegra" deve devolver só o trecho
+# realmente discutido, não o dia inteiro.
+_DATE_TITLE_RE = re.compile(
+    r"^\d{1,2}º?\s+de\s+"
+    r"(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)$",
+    re.IGNORECASE,
+)
+
+
+def _is_diary_style_entry(siblings: list[tuple[str, dict]]) -> bool:
+    titulo = (siblings[0][1].get("titulo") or "").strip()
+    return bool(_DATE_TITLE_RE.match(titulo))
+
+
+def _window_around_best_match(
+    siblings: list[tuple[str, dict]],
+    weighted_prior: list[tuple[str, float]],
+    prior_question: str,
+) -> list[tuple[str, dict]]:
+    """Restringe uma entry estilo-diário ao trecho contíguo em torno do
+    chunk mais relevante -- expande enquanto os vizinhos ainda pontuarem
+    perto do pico (>=40%), pra pegar a pergunta+resposta completa sem
+    arrastar o resto do dia. Sem pico real (score 0), devolve tudo -- não
+    há sinal suficiente pra restringir com segurança."""
+    if not weighted_prior or len(siblings) <= 3:
+        return siblings
+    scores = [
+        score_chunk_tokens(weighted_prior, chunk, pergunta=normalizar_pergunta(prior_question))
+        for chunk, _ in siblings
+    ]
+    best_idx = max(range(len(scores)), key=lambda i: scores[i])
+    best_score = scores[best_idx]
+    if best_score <= 0:
+        return siblings
+    threshold = best_score * 0.4
+    lo = best_idx
+    while lo > 0 and scores[lo - 1] >= threshold:
+        lo -= 1
+    hi = best_idx
+    while hi < len(siblings) - 1 and scores[hi + 1] >= threshold:
+        hi += 1
+    return siblings[lo : hi + 1]
+
+
 def retrieve(
     state: PipelineState,
     *,
@@ -370,6 +422,82 @@ def retrieve(
                     max_output=max_output,
                     pastoral=state.pastoral,
                 )
+
+    if state.full_article and not state.scoped_article and state.last_answer_sources:
+        # 2026-07-18: "na íntegra" pedido em turno de seguimento, sem
+        # citação na resposta anterior pra ancorar via scoped_article (modo
+        # directo nunca cita fonte -- é a regra, não uma excepção). Duas
+        # tentativas anteriores de resolver isto por BUSCA (pool da query
+        # actual, depois busca com o texto da resposta anterior) foram
+        # revertidas por não confiável -- a resposta anterior varia um
+        # pouco a cada chamada, então a mesma pergunta às vezes resolvia
+        # pra fonte certa, às vezes pra qualquer coisa (achado real: caiu
+        # num despejo de 21 mil caracteres de "Gosuiji-Roku" genérico).
+        # Fix real: sem busca nenhuma -- consulta DIRECTA ao marcador de
+        # fontes gravado na própria resposta anterior (ver
+        # conversation_context.append_source_marker/most_recent_answer_sources,
+        # CLAUDE.md secção 8/9) -- determinístico, não depende de busca nova
+        # nem da variação natural do texto gerado.
+        #
+        # state.last_answer_sources vem na ordem de _select_for_llm do
+        # turno anterior, que nem sempre põe primeiro a fonte mais
+        # TEMATICAMENTE central (achado real: numa pergunta ampla sobre
+        # "fazendas modelo de agricultura natural", uma sessão genérica de
+        # perguntas e respostas entrou em 1º por pontuação geral, à frente
+        # do artigo específico sobre agricultura -- o modelo, ao receber
+        # essa fonte fora de tema, ficava inconsistente: às vezes recusava
+        # "não é possível fornecer a fonte", às vezes despejava mesmo assim
+        # um texto que não tinha nada a ver). Por isso: entre as fontes
+        # candidatas (com tamanho seguro), escolhe a mais relevante pra
+        # pergunta SUBSTANTIVA anterior do usuário (não "me dê a fonte",
+        # que não tem conteúdo próprio) -- mesma pontuação léxica já usada
+        # no resto do pipeline, não uma heurística nova.
+        prior_question = next(iter(recent_user_questions(state.history, limit=1)), "")
+        weighted_prior = (
+            weighted_terms_for_search(normalizar_pergunta(prior_question), pastoral=state.pastoral)
+            if prior_question
+            else []
+        )
+        candidatos = []
+        for entry_id in state.last_answer_sources:
+            siblings = entry_siblings_index().get(entry_id)
+            if not siblings or len(siblings) <= 1:
+                continue
+            if len(siblings) > 30:
+                # Fonte é uma série/colecção inteira, não um artigo
+                # delimitado (ex.: "Gosuiji-Roku" sem separar por volume) --
+                # nunca despejar isso.
+                continue
+            candidatos.append((entry_id, siblings))
+        if candidatos:
+            if weighted_prior:
+                # 2026-07-18 (achado por rastreamento pedido pelo usuário):
+                # pontuar só item[1][:3] (3 primeiros chunks) enviesa contra
+                # entries onde o trecho relevante está mais adiante -- ex.:
+                # Gosuiji-Roku nº 18 (1º de março), a fonte CERTA da pergunta
+                # sobre fazendas-modelo, tinha o trecho relevante no chunk
+                # índice 5/16 e perdia (score 9.00 no top3) pra sessões
+                # multi-tema sem relação nenhuma (score alto só por coincidência
+                # nos 3 primeiros chunks). Pontuar TODOS os siblings -- mesma
+                # classe de bug já corrigida em promote_literal_anchors/
+                # _select_for_llm (janela cortada descartando o candidato certo).
+                candidatos.sort(
+                    key=lambda item: -max(
+                        score_chunk_tokens(weighted_prior, chunk, pergunta=normalizar_pergunta(prior_question))
+                        for chunk, _ in item[1]
+                    )
+                )
+            entry_id, siblings = candidatos[0]
+            if _is_diary_style_entry(siblings):
+                # 2026-07-18 (pedido explícito do usuário, mesmo achado): pra
+                # colectâneas por data, "na íntegra" devolvendo TODOS os
+                # siblings despeja o dia inteiro (múltiplos assuntos sem
+                # relação) quando só uma pergunta+resposta é o que foi
+                # discutido -- ver _window_around_best_match.
+                siblings = _window_around_best_match(siblings, weighted_prior, prior_question)
+            full_c = [c for c, _ in siblings]
+            full_m = [m for _, m in siblings]
+            return remover_chunks_ja_citados(full_c, full_m, state.last_answer)
 
     internal_max = max(INTERNAL_POOL_SIZE, max_output + 8)
     max_por_fonte = 5 if internal_max >= 28 else 3

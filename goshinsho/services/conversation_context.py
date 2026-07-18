@@ -14,6 +14,51 @@ from .conversation_mode import (
 from .teaching_article_service import wants_cross_source_search
 
 
+# 2026-07-18: marcador oculto com as fontes (entry_id) que alimentaram uma
+# resposta -- ver CLAUDE.md, sessão 2026-07-18, secção 8/9. Resolve "me dê a
+# fonte na íntegra" num turno seguinte por CONSULTA DIRECTA ao que foi
+# realmente usado, em vez de re-adivinhar por regex de citação (falha
+# sempre no modo directo, que nunca cita) ou por busca nova com a pergunta
+# de seguimento (nova busca não tem o assunto -- só um resumo fraco de
+# "tema da conversa" -- e podia resolver pra qualquer fonte errada,
+# incluindo despejos enormes de séries genéricas tipo "Gosuiji-Roku"). Fica
+# dentro do `content` já persistido (sem mudança de esquema no banco),
+# removido antes de qualquer exibição ao usuário e antes de qualquer texto
+# que vá pro LLM como contexto (recent_assistant_answers/recent_dialogue_turns
+# já limpam) -- só é lido de volta em pipeline/state.py, via
+# most_recent_answer_sources(), pra alimentar a resolução de "na íntegra".
+_SOURCE_MARKER_RE = re.compile(r"\n*<!--SRC:([^>]*)-->\s*$")
+
+
+def append_source_marker(text: str, entry_ids: list[str]) -> str:
+    text = text or ""
+    ids = [e for e in dict.fromkeys(entry_ids) if e][:20]
+    if not ids:
+        return text
+    return f"{text}\n\n<!--SRC:{'|'.join(ids)}-->"
+
+
+def strip_source_marker(text: str) -> str:
+    return _SOURCE_MARKER_RE.sub("", text or "")
+
+
+def extract_source_marker(text: str) -> list[str]:
+    match = _SOURCE_MARKER_RE.search(text or "")
+    if not match:
+        return []
+    return [e for e in match.group(1).split("|") if e]
+
+
+def most_recent_answer_sources(history) -> list[str]:
+    """Entry_ids da ÚLTIMA resposta do assistente na conversa (marcador
+    oculto). Vazio se a última resposta não tiver marcador (ex.: resposta
+    pastoral, identidade do assistente, ou histórico de antes deste fix)."""
+    for message in reversed(history or []):
+        if message.get("role") == "assistant":
+            return extract_source_marker(message.get("content") or "")
+    return []
+
+
 TOPIC_DEFINITIONS = (
     {
         "key": "elo_espiritual",
@@ -99,7 +144,7 @@ def recent_user_questions(history, limit=5, current_question: str | None = None)
 def recent_assistant_answers(history, limit=2, current_question: str | None = None):
     answers = []
     for message in reversed(_history_without_current_user(history, current_question)):
-        content = (message.get("content") or "").strip()
+        content = strip_source_marker((message.get("content") or "").strip())
         if message.get("role") == "assistant" and content:
             answers.append(content)
         if len(answers) >= limit:
@@ -274,6 +319,8 @@ def recent_dialogue_turns(history, limit: int = DIALOGUE_TURN_LIMIT, current_que
     for message in trimmed:
         role = message.get("role")
         content = (message.get("content") or "").strip()
+        if role == "assistant":
+            content = strip_source_marker(content)
         if not content:
             continue
         if role == "user":

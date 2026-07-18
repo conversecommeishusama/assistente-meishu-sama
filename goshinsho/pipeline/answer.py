@@ -110,9 +110,15 @@ def generate_from_retrieval(
         )
     )
 
-    if state.full_article and state.scoped_article:
+    # 2026-07-18: "na íntegra" resolvido via marcador de fontes do turno
+    # anterior (retrieve.py já limita os chunks a UMA única fonte nesse
+    # caso -- ver CLAUDE.md secção 8/9) também deve accionar as instruções
+    # de "reproduza tudo", não só o caminho scoped_article original.
+    fonte_unica = next(iter(fontes)) if len(fontes) == 1 else None
+    if state.full_article and (state.scoped_article or fonte_unica):
+        titulo_artigo = state.scoped_article["title"] if state.scoped_article else fonte_unica
         response_instructions = full_article_instructions(
-            state.scoped_article["title"],
+            titulo_artigo,
             follow_up=follow_up,
         )
         label = "TEXTO COMPLETO"
@@ -420,7 +426,7 @@ def answer(
                 pastoral=state.pastoral,
             )
 
-    return generate_from_retrieval(
+    resposta = generate_from_retrieval(
         state,
         chunks,
         metas,
@@ -432,3 +438,15 @@ def answer(
         previous_answer=previous_answer,
         effective_question=effective_question if expand else None,
     )
+
+    # 2026-07-18: anexa marcador oculto com as fontes (entry_id) que
+    # alimentaram esta resposta -- ver CLAUDE.md secção 8/9 e
+    # conversation_context.append_source_marker. Permite que um turno
+    # seguinte tipo "me dê a fonte na íntegra" resolva por consulta
+    # directa ao que foi realmente usado, não por busca nova (que não tem
+    # o assunto) nem por citação no texto (modo directo nunca cita).
+    from ..services.conversation_context import append_source_marker
+    from .retrieve import _entry_id
+
+    entry_ids = [_entry_id(meta) for meta in metas]
+    return append_source_marker(resposta, entry_ids)
