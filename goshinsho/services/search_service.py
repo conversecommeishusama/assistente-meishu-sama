@@ -1468,7 +1468,15 @@ def buscar_trechos_hibrido_pt(
         idx = chunks_lista.index(chunk)
         metadados_reranked.append(metadados_lista[idx])
 
-    return diversificar_fontes_agressivo(chunks_reranked, metadados_reranked, max_por_fonte=2, total_max=30, min_fontes=3)
+    # 2026-07-18: max_por_fonte subiu de 2 para 5 (mesmo valor que
+    # retrieve_base_pool usa no pt_first) -- medido no benchmark de 20
+    # perguntas: em temas amplos/vagos (ex. "fale sobre espíritos"), 2 por
+    # fonte descartava ângulos diferentes do mesmo texto antes mesmo da
+    # expansão por entry ter chance de atuar, deixando pt_direct
+    # visivelmente mais raso que pt_first nesses casos. Custo extra é só
+    # um número maior num loop local (sem chamada de modelo), não deve
+    # afetar tempo de resposta de forma perceptível.
+    return diversificar_fontes_agressivo(chunks_reranked, metadados_reranked, max_por_fonte=5, total_max=30, min_fontes=3)
 
 
 def _buscar_pool_pt_direto(
@@ -1494,13 +1502,37 @@ def _buscar_pool_pt_direto(
     pool_metas: list[dict] = []
     seen: set[int] = set()
 
-    for termo in termos_pt:
-        for chunk, idx in buscar_literal_exata(termo, chunks_pt):
-            if idx in seen:
-                continue
-            seen.add(idx)
-            pool_chunks.append(chunk)
-            pool_metas.append(metadados_pt[idx])
+    # 2026-07-18: causa raiz real do recall fraco em pergunta ampla/conceitual
+    # (achado investigando "agricultura natural"): termos_pt mistura frase
+    # forte com palavra solta comum (ex. "segundo", "natural" sozinhos) --
+    # busca literal desses termos sem filtro nem limite inundava o pool com
+    # milhares de trechos (>3000 medido), a maioria irrelevante ("segundo"
+    # bate 883x, "natural" sozinho 2164x no corpus). O trecho conceitual
+    # certo (confirmado presente no pool, ex. Gosuiji-roku nº9 sobre
+    # "imitar a natureza em tudo") ficava afogado numa massa de trechos sem
+    # pontuação nenhuma antes de entrar no pool. buscar_trechos_core
+    # (pt_first) nunca deixa isso acontecer: pontua e corta pra 500 pelos
+    # termos que mais coincidem (score_chunk_tokens, favorece trecho que
+    # bate 2+ termos, não só 1) ANTES de juntar ao pool. Mesmo mecanismo
+    # aqui -- reaproveita as funções já existentes, sem busca nova/modelo
+    # novo, só pontuação+corte local sobre o que já foi buscado.
+    resultados_lit = buscar_literal_multitermos(termos_pt, chunks_pt)
+    if resultados_lit and weighted_terms:
+        from .search_ranking import score_chunk_tokens
+
+        pool_score = _literal_pool_for_scoring(resultados_lit, weighted_terms, pergunta_norm=pergunta_norm)
+        scored_lit = [
+            (score_chunk_tokens(weighted_terms, chunk, pergunta=pergunta_norm), chunk, idx)
+            for chunk, idx in pool_score
+        ]
+        scored_lit.sort(key=lambda item: (-item[0], item[2]))
+        resultados_lit = [(chunk, idx) for _, chunk, idx in scored_lit[:LITERAL_SCORE_CAP]]
+    for chunk, idx in resultados_lit[:LITERAL_SCORE_CAP]:
+        if idx in seen:
+            continue
+        seen.add(idx)
+        pool_chunks.append(chunk)
+        pool_metas.append(metadados_pt[idx])
 
     hibrido_c, hibrido_m = buscar_trechos_hibrido_pt(
         pergunta_busca,
@@ -1514,11 +1546,46 @@ def _buscar_pool_pt_direto(
         termo_pt_forcado=termo_pt,
         termos_pt_boost=termos_pt,
     )
+    seen_prefixes = {(c or "")[:160] for c in pool_chunks}
     for chunk, meta in zip(hibrido_c, hibrido_m):
-        if any((chunk or "")[:160] == (c or "")[:160] for c in pool_chunks):
+        prefixo = (chunk or "")[:160]
+        if prefixo in seen_prefixes:
             continue
+        seen_prefixes.add(prefixo)
         pool_chunks.append(chunk)
         pool_metas.append(meta)
+
+    # 2026-07-18: decomposição estrutural (sub-consultas extras pra pergunta
+    # ampla/genérica) foi testada e removida -- criada pra compensar a causa
+    # real, um bug de duas etapas no pipeline compartilhado (busca literal
+    # sem corte/pontuação inundando o pool + promote_literal_anchors/
+    # _select_for_llm descartando o excedente ao "fixar" os melhores no
+    # topo, ver histórico de commits). Com o bug corrigido, a passada única
+    # já traz profundidade equivalente (confirmado: agricultura natural,
+    # arte, tuberculose, Paraíso na Terra) sem o custo extra de rodar até 3
+    # buscas híbridas adicionais por pergunta.
+
+    # 2026-07-18: garantir_top_por_lexico (search_ranking.py) -- mesma etapa
+    # final que buscar_trechos_core usa, docstring lá é literal: "evita que
+    # o cross-encoder enterre ensinamentos centrais". pt_direct montava o
+    # pool (literal + RRF + estrutural) mas nunca garantia que o trecho com
+    # melhor pontuação léxica+glossário ficasse na frente -- um trecho de
+    # depoimento/resultado que só menciona o termo de passagem podia ficar
+    # à frente do trecho que de fato define/explica o conceito. Isso
+    # explicava o padrão relatado (agricultura natural/arte/espíritos:
+    # resposta fica no resultado prático, não no princípio). Só reordena o
+    # pool já montado -- sem busca nova, sem chamada de modelo.
+    from .search_ranking import garantir_top_por_lexico
+
+    pool_chunks, pool_metas = garantir_top_por_lexico(
+        pool_chunks,
+        pool_metas,
+        pergunta_norm,
+        weighted_terms,
+        reserve=3,
+        min_lex=4.0,
+        max_output=len(pool_chunks),
+    )
 
     return remover_chunks_ja_citados(pool_chunks, pool_metas, ultima_resposta)
 
@@ -1630,7 +1697,9 @@ def buscar_trechos_hibrido_jp(
         idx = chunks_lista.index(chunk)
         metadados_reranked.append(metadados_lista[idx])
 
-    return diversificar_fontes_agressivo(chunks_reranked, metadados_reranked, max_por_fonte=2, total_max=30, min_fontes=3)
+    # 2026-07-18: max_por_fonte 2->5, mesmo ajuste e motivo do lado PT
+    # (buscar_trechos_hibrido_pt) -- mantém as duas arquiteturas simétricas.
+    return diversificar_fontes_agressivo(chunks_reranked, metadados_reranked, max_por_fonte=5, total_max=30, min_fontes=3)
 
 
 def remover_chunks_ja_citados(chunks, metadados, resposta_anterior=""):

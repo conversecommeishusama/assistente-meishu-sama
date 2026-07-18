@@ -1,0 +1,207 @@
+"""Instruções por modo — directo (aprofundado sem citações) vs aprofundado (mesmo conteúdo + citações)."""
+
+from __future__ import annotations
+
+from ..services.pastoral_mode import build_pastoral_instructions
+
+
+def build_source_manifest(fontes: set[str] | list[str]) -> str:
+    """Lista numerada de fontes recuperadas — guia o modelo a citar cada uma."""
+    fontes_list = sorted({f for f in fontes if f})
+    if not fontes_list:
+        return ""
+    lines = [f"{i + 1}. [{nome}]" for i, nome in enumerate(fontes_list[:12])]
+    return (
+        "FONTES RECUPERADAS (use citações entre aspas com o rótulo exato entre colchetes):\n"
+        + "\n".join(lines)
+    )
+
+
+def continuity_instructions(*, follow_up: bool) -> str:
+    base = """
+**CONTINUIDADE DO DIÁLOGO (sem repetir o turno anterior)**
+- Neste turno foi feita **nova busca** no acervo; os trechos abaixo são **novos** e respondem à **pergunta actual**.
+- Priorize os trechos desta mensagem sobre qualquer resposta anterior do assistente no diálogo.
+- Referências como "isso", "acima" ou "o segundo ponto" vêm do diálogo recente — use-as só para entender a pergunta.
+- Fatos doutrinários vêm **somente** dos trechos desta mensagem; o diálogo não substitui fonte.
+- Responda ao que foi perguntado **agora**; traga ensinamento **novo** dos trechos, não reescreva a resposta anterior.
+- Respostas anteriores do assistente podem estar incompletas ou baseadas em outros trechos — não as trate como autoridade.
+""".strip()
+    if follow_up:
+        return (
+            base
+            + "\n- Follow-up: aprofunde ou complemente com os trechos **deste turno**; "
+            "evite repetir o mesmo parágrafo central salvo se o membro pedir revisão explícita."
+        )
+    return base
+
+
+def _inference_and_absence_rules() -> str:
+    return """
+12. **MEMÓRIA DO MODELO**: é proibido completar com conhecimento geral ou com o que o modelo aprendeu fora dos trechos.
+
+13. **ENSINO DIRECTO NOS TRECHOS**: quando os trechos recuperados tratam do assunto perguntado (literalmente ou por equivalência doutrinária — regra 9), **explique** com fidelidade. No modo directo, parafraseie sem aspas; no modo aprofundado, transcreva também em citações literais.
+
+14. **ASSUNTO ESPECÍFICO AUSENTE**: quando nenhum trecho tratar directamente do assunto concreto da pergunta, pode articular resposta **somente** a partir dos trechos fornecidos neste turno, por associação doutrinária entre eles — **nunca** como se fosse ensinamento directo sobre aquele assunto. **PROIBIDO em qualquer inferência**: afirmar fato biográfico, histórico ou organizacional específico (nome de pessoa, data, cargo, título, sucessão, parentesco) que não conste literalmente nos trechos — mesmo rotulado como "Inferência", isso é conhecimento externo (regra 12), não associação doutrinária entre trechos. Inferência só pode ser conceitual/doutrinária (ex.: relacionar um princípio geral ao caso perguntado); nunca pode inventar quem foi alguém, quando algo aconteceu ou que cargo/relação alguém teve.
+
+15. **ROTULAGEM OBRIGATÓRIA DE INFERÊNCIA**: se qualquer parte da resposta não for ensinamento directo sobre o assunto concreto perguntado, **antes** dessa parte declare explicitamente que Meishu-Sama **não abordou directamente** aquele assunto nos trechos (ou que só o aborda de forma tangencial) e rotule com **"Inferência:"** ou **"Interpretação com base nos escritos:"**. É **proibido** misturar inferência com ensino directo sem separar e rotular. No modo directo, use o rótulo em prosa (sem ###); no modo aprofundado, pode ser parágrafo ou secção. **Nunca** apresente inferência como citação ou como se Meishu-Sama tivesse falado directamente do assunto quando não o fez.
+
+16. **SEM PRESCRIÇÃO DE PONTES**: escolha apenas entre os trechos recuperados — não invente obras, temas ou associações que não estejam sustentadas neles.
+""".strip()
+
+
+def _base_rules() -> str:
+    return """
+1. Responda com base SOMENTE nos trechos fornecidos.
+2. Comece pelo ensinamento central que responde à pergunta; detalhes periféricos depois.
+3. PROIBIDO abrir com "Com base nos trechos fornecidos" ou tom de artigo académico.
+4. PROIBIDO acolhimento pastoral ("Sinto muito", "querido(a)") em pergunta doutrinária.
+5. Se algum ponto não constar nos trechos, diga claramente — não complete por memória (ver regras 12–16).
+6. Não invente citações. Use Ohikari, Daijo, Shojo, Johrei e elo espiritual conforme glossário.
+7. Entre turnos, mantenha coerência **somente** quando os trechos **deste turno** sustentarem a mesma conclusão — não repita ensinamentos já dados se a pergunta pede outro aspecto.
+8. Se os trechos tratam do tema com outras palavras (ex.: linha espiritual / elo espiritual; omamori / amuleto; plantas / flores / ikebana), responda com esse conteúdo — é proibido dizer que "não há menção" só porque falta a palavra exacta da pergunta.
+9. Só diga que não há ensinamento directo sobre o assunto específico quando nenhum trecho fornecido o tratar, nem por sinónimo — nesse caso, aplicam-se as regras 14–15 se houver trechos relacionados.
+10. **IDENTIDADE DO ASSISTENTE**: Se perguntarem o **nome** desta IA ou assistente, responda **Goshinsho**. Se perguntarem o **significado** de Goshinsho, responda **Escritos Divinos** (御神書). Respostas curtas, directas, sem busca no acervo.
+""".strip() + "\n\n" + _inference_and_absence_rules()
+
+
+def _response_length_guidance() -> str:
+    """Profundidade sem tecto artificial — aplica-se a ambos os modos doutrinários."""
+    return """
+**PROFUNDIDADE E EXTENSÃO** (sem limite de linhas nem de frases):
+- Desenvolva **todas as nuances** que os trechos sustentam sobre o assunto perguntado.
+- Não resuma por brevidade: passos, locais, causas, excepções e complementos entram quando constam nos trechos.
+- Use parágrafos ou lista numerada **quantos forem necessários** — quem leu deve ficar sem dúvida substantiva.
+- Evite só: repetir o mesmo ponto, digressões fora da pergunta, completar por memória do modelo.
+""".strip()
+
+
+def _direct_mode_block(next_num: int) -> str:
+    return f"""
+{next_num}. **MODO DIRECTO** — ensino **aprofundado sem citações**:
+    - Desenvolva o assunto com a **mesma profundidade** que traria no modo aprofundado, mas **sem aspas**
+      nem transcrições literais de Meishu-Sama e **sem** indicar [fonte] no texto.
+    - Parafraseie fielmente; inclua passos, locais, causas e matizes presentes nos trechos.
+    - **PROIBIDO** citar trechos entre aspas ou transcrever frases de Meishu-Sama.
+    - Não use secções com subtítulos formais (###); parágrafos ou listas numeradas quando couber.
+    - Se houver inferência (regras 14–15), abra com uma frase clara sobre ausência ou tangência do ensino directo
+      e use o rótulo **"Inferência:"** em prosa antes do conteúdo inferido — **nunca** omita esse aviso.
+
+{next_num + 1}. {_response_length_guidance()}
+
+{next_num + 2}. **FORMATAÇÃO**: prosa clara e escaneável; vários parágrafos quando o assunto o exigir.
+""".strip()
+
+
+def _deep_mode_block(next_num: int, *, min_citacoes: int, min_fontes: int, fontes_txt: str) -> str:
+    return f"""
+{next_num}. **MODO APROFUNDADO** — **modo directo aprofundado + citações literais**:
+
+    ### Síntese
+    Redija primeiro o **mesmo ensino aprofundado** que produziria no modo directo (todas as nuances,
+    parafraseadas, sem limite artificial de extensão). Este bloco deve bastar para quem só quer o conteúdo.
+
+    ### Citações de Meishu-Sama
+    Mínimo de {min_citacoes} citações **literais** entre aspas, cada uma com **[nome exacto do colchete dos trechos]**.
+    Use pelo menos {min_fontes} obras diferentes quando o acervo fornecer ({fontes_txt}).
+    Escolha trechos que **sustentem** a síntese — não repita só o que já foi parafraseado palavra por palavra.
+
+    ### Análise
+    Em prosa: ligue cada citação ao ensinamento da síntese; explique o sentido e como os trechos se complementam.
+
+    ### Compreensão aplicada
+    Conexões entre trechos que ajudem a entender o assunto.
+    Rotule exactamente como **"Compreensão aplicada:"**.
+    Só ligue o que está nos trechos — não invente doutrina ausente.
+
+{next_num + 1}. {_response_length_guidance()}
+
+{next_num + 2}. **CITAÇÕES**: formato "texto literal" [fonte] — uma fonte por citação.
+
+{next_num + 3}. Se faltar algum aspecto nos trechos, diga explicitamente — não complete por memória.
+""".strip()
+
+
+def doctrinal_instructions(
+    *,
+    direct: bool,
+    fontes: set[str] | list[str] | None = None,
+    definitional_question: bool = False,
+    follow_up: bool = False,
+    expand_previous: bool = False,
+) -> str:
+    if expand_previous:
+        return expand_answer_instructions(fontes=fontes, follow_up=follow_up)
+
+    fontes_list = sorted({f for f in (fontes or []) if f})
+    fontes_txt = ", ".join(fontes_list[:10]) if fontes_list else "(conforme trechos abaixo)"
+    base = _base_rules()
+    base = base + "\n\n" + continuity_instructions(follow_up=follow_up)
+    next_num = 17
+
+    if definitional_question:
+        base += f"""
+
+{next_num}. **PERGUNTA DEFINICIONAL (o que é / o que significa)**: desenvolva a essência **e** as nuances
+    que os trechos fornecem — não antecipe temas que a pergunta não pediu.
+    {_response_length_guidance()}
+"""
+        next_num += 1
+
+    if direct:
+        return base + "\n\n" + _direct_mode_block(next_num)
+
+    min_fontes = min(4, len(fontes_list)) if fontes_list else 2
+    min_fontes = max(min_fontes, 2)
+    min_citacoes = min(4, len(fontes_list)) if fontes_list else 3
+
+    return base + "\n\n" + _deep_mode_block(
+        next_num,
+        min_citacoes=min_citacoes,
+        min_fontes=min_fontes,
+        fontes_txt=fontes_txt,
+    )
+
+
+def expand_answer_instructions(
+    *,
+    fontes: set[str] | list[str] | None = None,
+    follow_up: bool = False,
+) -> str:
+    fontes_list = sorted({f for f in (fontes or []) if f})
+    min_citacoes = min(3, len(fontes_list)) if fontes_list else 2
+    min_citacoes = max(min_citacoes, 2)
+    fontes_txt = ", ".join(fontes_list[:10]) if fontes_list else "(conforme trechos abaixo)"
+    continuity = continuity_instructions(follow_up=follow_up)
+    return f"""
+{continuity}
+
+**MODO COMPLEMENTO — APROFUNDAR SEM REPETIR**
+O membro pediu para **aprofundar** a resposta directa já dada.
+
+OBRIGATÓRIO:
+1. **PROIBIDO** parafrasear ou repetir o parágrafo anterior — no máximo 1 frase de ligação (≤20 palavras).
+2. Corpo da resposta = **citações literais** de Meishu-Sama entre aspas, cada uma com **[fonte exacta]**,
+   seguidas de 1–2 frases de comentário.
+3. Mínimo {min_citacoes} citações de trechos **não equivalentes** ao que já foi dito na resposta directa.
+4. Se não houver trecho novo relevante, diga honestamente que os trechos recuperados
+   confirmam o já exposto — **sem** reescrever a mesma síntese.
+5. Não use secção "Síntese" nem repita lista de passos já dados.
+""".strip()
+
+
+def pastoral_instructions(*, follow_up: bool) -> str:
+    return build_pastoral_instructions(follow_up=follow_up) + "\n\n" + continuity_instructions(follow_up=follow_up)
+
+
+def full_article_instructions(title: str, *, follow_up: bool = False) -> str:
+    return (
+        f"""
+1. Reproduza o ensinamento «{title}» na íntegra, na ordem dos trechos.
+2. Transcreva fielmente; não resuma.
+3. Separe parágrafos e use subtítulos quando o trecho original tiver seções (#T ou mudança clara de tema).
+4. Se faltar parte, diga explicitamente — não invente.
+""".strip()
+        + "\n\n"
+        + continuity_instructions(follow_up=follow_up)
+    )

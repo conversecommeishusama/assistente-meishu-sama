@@ -163,11 +163,27 @@ def promote_literal_anchors(
     if not promoted:
         return chunks, metadados
 
+    # 2026-07-18: bug real -- promoted[reserve:] (tudo que qualificou pra
+    # promoção mas não coube nas `reserve` vagas do topo) era descartado em
+    # silêncio, não devolvido ao pool. Passava despercebido porque
+    # normalmente "rest" (quem NÃO qualifica) é grande e "promoted" é
+    # pequeno -- mas quando o pool de entrada já é todo literal-relevante
+    # (ex.: pt_direct depois do fix de recall que capa a busca literal por
+    # score), TODOS podem qualificar, e a função colapsava um pool de 500
+    # pra só `reserve` (4) trechos, descartando 496 -- inclusive o trecho
+    # certo. "Garante slots no topo" deve reordenar, nunca truncar.
     promoted.sort(key=lambda item: (-item[0], item[1]))
     out_c = [item[2] for item in promoted[:reserve]]
     out_m = [item[3] for item in promoted[:reserve]]
     seen = {(c or "")[:160] for c in out_c}
     for chunk, meta in zip(rest_chunks, rest_metas):
+        key = (chunk or "")[:160]
+        if key in seen:
+            continue
+        seen.add(key)
+        out_c.append(chunk)
+        out_m.append(meta)
+    for _, _, chunk, meta in promoted[reserve:]:
         key = (chunk or "")[:160]
         if key in seen:
             continue
