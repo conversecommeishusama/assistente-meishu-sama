@@ -9,7 +9,7 @@ import pickle
 from sentence_transformers import SentenceTransformer
 
 from ..config import Config
-from .search_service import buscar_trechos, diversificar_fontes_agressivo, expandir_consulta_busca, normalizar_pergunta, pergunta_sobre_ohikari
+from .search_service import buscar_trechos, diversificar_fontes_agressivo, expandir_consulta_busca, normalizar_pergunta, remover_chunks_ja_citados, try_buscar_escopo_artigo
 
 
 DEV_ROUTING_EMAIL = "dgtannus@gmail.com"
@@ -72,11 +72,6 @@ def _rare_terms(question):
 
 
 def _should_use_structural(question):
-    normalized = (question or "").lower()
-    if pergunta_sobre_ohikari(question):
-        return False
-    if "transição" in normalized and ("noite" in normalized or "dia" in normalized):
-        return False
     rare_terms = _rare_terms(question)
     return bool(rare_terms) and len(_tokens(question)) >= 5
 
@@ -86,16 +81,9 @@ def _has_japanese(question):
 
 
 def _should_use_large(question):
-    normalized = (question or "").lower()
-    if pergunta_sobre_ohikari(question):
-        return False
     if _rare_terms(question):
         return True
     if _has_japanese(question):
-        return True
-    if "transição" in normalized and ("noite" in normalized or "dia" in normalized):
-        return True
-    if any(term in normalized for term in ("calamidade", "calamidades", "kannon", "kanzeon", "ikebana", "生け花")):
         return True
     return len(_tokens(question)) >= 7
 
@@ -128,6 +116,10 @@ def _load_uploaded_large_indexes():
 
 
 def buscar_trechos_large_experimental(pergunta, ultima_resposta_assistente=""):
+    scoped = try_buscar_escopo_artigo(pergunta, ultima_resposta_assistente)
+    if scoped is not None:
+        return scoped
+
     stores = _load_uploaded_large_indexes()
     if not stores:
         return buscar_trechos(pergunta, ultima_resposta_assistente)
@@ -159,10 +151,15 @@ def buscar_trechos_large_experimental(pergunta, ultima_resposta_assistente=""):
         if len(chunks) >= 80:
             break
 
+    chunks, metadata = remover_chunks_ja_citados(chunks, metadata, ultima_resposta_assistente)
     return diversificar_fontes_agressivo(chunks, metadata, max_por_fonte=3, total_max=30, min_fontes=3)
 
 
 def buscar_trechos_structural_experimental(pergunta, ultima_resposta_assistente=""):
+    scoped = try_buscar_escopo_artigo(pergunta, ultima_resposta_assistente)
+    if scoped is not None:
+        return scoped
+
     queries = [pergunta]
     rare_terms = _rare_terms(pergunta)
     queries.extend(rare_terms)
@@ -182,7 +179,9 @@ def buscar_trechos_structural_experimental(pergunta, ultima_resposta_assistente=
             break
 
     chunks = list(unique_chunks.keys())[:30]
-    return chunks, [unique_meta[chunk] for chunk in chunks]
+    metadata = [unique_meta[chunk] for chunk in chunks]
+    chunks, metadata = remover_chunks_ja_citados(chunks, metadata, ultima_resposta_assistente)
+    return chunks, metadata
 
 
 def select_search_strategy(question, user_email=None):
