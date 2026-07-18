@@ -12,6 +12,10 @@ def _hash(value):
     return hashlib.sha256((value or "unknown").encode("utf-8")).hexdigest()[:16]
 
 
+def device_fingerprint(ip, user_agent):
+    return _hash(f"{ip}|{user_agent}")
+
+
 def record_access(ip, user_agent, user=None, path="/"):
     ACCESS_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     entry = {

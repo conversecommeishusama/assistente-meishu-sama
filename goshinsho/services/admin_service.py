@@ -3,7 +3,10 @@ import stripe
 from ..config import Config
 from ..supabase_client import get_supabase
 from .access_service import summarize_access
+from .auth_service import FREE_MONTHLY_QUESTIONS, FREE_TRIAL_DAYS, describe_user_access, is_premium_user
 from .deepseek_usage_service import summarize_deepseek_usage
+from .anonymous_usage_service import summarize_anonymous_usage
+from .premium_grant_service import grant_summary
 from .support_service import support_summary
 
 
@@ -40,17 +43,32 @@ def _stripe_summary():
     }
 
 
+def _enrich_user(user):
+    access = describe_user_access(user)
+    return {**user, "access": access}
+
+
 def build_admin_dashboard():
-    users = _safe_supabase_users()
-    premium_users = [user for user in users if (user.get("plano") or "").strip().lower() == "premium"]
-    free_users = [user for user in users if user not in premium_users]
+    users = [_enrich_user(user) for user in _safe_supabase_users()]
+    premium_users = [user for user in users if is_premium_user(user)]
+    trial_users = [user for user in users if user["access"]["access_status"] == "trial"]
+    limited_users = [user for user in users if user["access"]["access_status"] == "limited"]
+    free_quota_users = [user for user in users if user["access"]["access_status"] == "free_quota"]
     usage = summarize_deepseek_usage(limit=5000)
     access = summarize_access(limit=20000)
     return {
+        "trial_policy": {
+            "trial_days": FREE_TRIAL_DAYS,
+            "monthly_free_questions": FREE_MONTHLY_QUESTIONS,
+            "active": True,
+        },
         "users": {
             "total": len(users),
             "premium": len(premium_users),
-            "free": len(free_users),
+            "free": len(users) - len(premium_users),
+            "trial_active": len(trial_users),
+            "free_with_quota": len(free_quota_users),
+            "limited": len(limited_users),
             "all": sorted(users, key=lambda item: item.get("data_criacao") or "", reverse=True),
         },
         "access": access,
@@ -65,4 +83,6 @@ def build_admin_dashboard():
         },
         "sales": _stripe_summary(),
         "support": support_summary(),
+        "anonymous_usage": summarize_anonymous_usage(),
+        "premium_grants": grant_summary(),
     }

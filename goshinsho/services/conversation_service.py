@@ -53,6 +53,26 @@ def get_message(message_id):
     return response.data[0] if response.data else None
 
 
+def get_shared_answer(message_id):
+    """Retorna a resposta do assistente e a pergunta do usuário que a originou, para a página de compartilhamento."""
+    message = get_message(message_id)
+    if not message or message.get("role") != "assistant":
+        return None
+    question_response = (
+        get_supabase()
+        .table("mensagens")
+        .select("content,created_at")
+        .eq("conversa_id", message["conversa_id"])
+        .eq("role", "user")
+        .lt("created_at", message["created_at"])
+        .order("created_at", desc=True)
+        .limit(1)
+        .execute()
+    )
+    question = question_response.data[0]["content"] if question_response.data else ""
+    return {"question": question, "answer": message["content"]}
+
+
 def save_message(conversation_id, role, content):
     payload = {
         "conversa_id": conversation_id,

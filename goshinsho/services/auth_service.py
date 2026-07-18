@@ -1,10 +1,13 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from urllib.parse import urlencode
 
 import requests
 from flask import has_request_context, session
+from supabase import create_client
 
 from ..config import Config
 from ..supabase_client import get_supabase
+from .signup_protection import LOGIN_GENERIC_ERROR, SIGNUP_GENERIC_ERROR, assert_email_allowed, is_bot_submission, is_email_blocked
 
 FREE_MONTHLY_QUESTIONS = 5
 FREE_TRIAL_DAYS = 3
@@ -13,6 +16,208 @@ DEVELOPER_EMAILS = {
     "frantannus@gmail.com",
     "fagibrailtannus@gmail.com",
 }
+
+EMAIL_CONFIRMATION_REQUIRED = "EMAIL_CONFIRMATION_REQUIRED"
+EMAIL_NOT_CONFIRMED_MESSAGE = (
+    "Confirme seu e-mail antes de usar o assistente. "
+    "Verifique sua caixa de entrada (e a pasta de spam) pelo link de confirmação."
+)
+
+
+def _public_auth_redirect(path="/app", **query):
+    url = f"{Config.PUBLIC_SITE_URL}{path}"
+    if query:
+        url = f"{url}?{urlencode(query)}"
+    return url
+
+
+def _admin_generate_signup_link(email, redirect_to):
+    service_key = Config.SUPABASE_SERVICE_ROLE_KEY
+    if not service_key or not Config.SUPABASE_URL:
+        return None
+    for link_type in ("signup", "magiclink"):
+        response = requests.post(
+            f"{Config.SUPABASE_URL.rstrip('/')}/auth/v1/admin/generate_link",
+            headers={
+                "apikey": service_key,
+                "Authorization": f"Bearer {service_key}",
+                "Content-Type": "application/json",
+            },
+            json={"type": link_type, "email": email, "options": {"redirect_to": redirect_to}},
+            timeout=15,
+        )
+        if response.status_code >= 400:
+            continue
+        payload = response.json()
+        link = payload.get("action_link") or (payload.get("properties") or {}).get("action_link")
+        if link:
+            return link
+    return None
+
+
+def _deliver_signup_confirmation_email(email, redirect_to):
+    """Envia confirmação via SES quando Supabase SMTP falha ou não está configurado."""
+    try:
+        from .email_service import is_email_configured, send_email
+
+        if not is_email_configured():
+            return False
+        link = _admin_generate_signup_link(email, redirect_to)
+        if not link:
+            return False
+        send_email(
+            email,
+            "Confirme seu cadastro - Goshinsho",
+            (
+                "Olá,\n\n"
+                "Confirme seu e-mail para usar o Goshinsho:\n"
+                f"{link}\n\n"
+                "Se você não solicitou este cadastro, ignore este e-mail."
+            ),
+            html_body=(
+                "<p>Olá,</p>"
+                f'<p><a href="{link}">Confirme seu e-mail</a> para usar o Goshinsho.</p>'
+                "<p>Se você não solicitou este cadastro, ignore este e-mail.</p>"
+            ),
+        )
+        return True
+    except Exception:
+        return False
+
+
+def _is_duplicate_email_error(exc):
+    message = str(exc).lower()
+    return "duplicate key" in message and "usuarios_email" in message
+
+
+def _get_supabase_admin():
+    if not Config.SUPABASE_SERVICE_ROLE_KEY or not Config.SUPABASE_URL:
+        return None
+    return create_client(Config.SUPABASE_URL, Config.SUPABASE_SERVICE_ROLE_KEY)
+
+
+def _fetch_auth_user_by_email(email):
+    """Estado real de confirmação no Supabase Auth (admin API).
+
+    BUG REAL CORRIGIDO (2026-07-16): a versão anterior chamava
+    GET /auth/v1/admin/users?email=... esperando um filtro server-side que
+    essa API não aplica — o parâmetro é ignorado e a chamada retorna a
+    primeira página de TODOS os usuários, sem filtrar por e-mail. O código
+    então pegava cegamente users[0], ou seja, verificava a confirmação de
+    e-mail de um usuário aleatório (o primeiro da lista), não do usuário
+    pedido. Isso quebrava tanto is_email_confirmed() (podia negar acesso a
+    um usuário confirmado, ou liberar um não confirmado, dependendo de quem
+    calhasse de ser o primeiro da lista) quanto a checagem de e-mail
+    duplicado no cadastro. Corrigido usando list_users() do SDK e filtrando
+    pelo e-mail exato no cliente.
+    """
+    normalized = (email or "").strip().lower()
+    if not normalized:
+        return None
+    admin = _get_supabase_admin()
+    if not admin:
+        return None
+    page = 1
+    while True:
+        response = admin.auth.admin.list_users(page=page, per_page=200)
+        users = response if isinstance(response, list) else getattr(response, "users", None)
+        if not users:
+            return None
+        for auth_user in users:
+            if (getattr(auth_user, "email", "") or "").strip().lower() == normalized:
+                return {
+                    "id": auth_user.id,
+                    "email": auth_user.email,
+                    "email_confirmed_at": getattr(auth_user, "email_confirmed_at", None),
+                    "confirmed_at": getattr(auth_user, "confirmed_at", None),
+                    "user_metadata": getattr(auth_user, "user_metadata", None) or {},
+                }
+        if len(users) < 200:
+            return None
+        page += 1
+
+
+def sync_user_email_confirmation(user):
+    """Sincroniza confirmação de e-mail com o Auth — não confia só na sessão Flask."""
+    if not user:
+        return user
+    email = (user.get("email") or "").strip().lower()
+    if email in DEVELOPER_EMAILS:
+        user["email_confirmado"] = True
+        if has_request_context() and session.get("user"):
+            session["user"]["email_confirmado"] = True
+        return user
+    auth_row = _fetch_auth_user_by_email(email)
+    confirmed = bool(auth_row and (auth_row.get("email_confirmed_at") or auth_row.get("confirmed_at")))
+    user["email_confirmado"] = confirmed
+    if has_request_context() and session.get("user") and session["user"].get("id") == user.get("id"):
+        session["user"]["email_confirmado"] = confirmed
+    return user
+
+
+def _ensure_usuario_profile(supabase, auth_user, *, defaults=None):
+    """Garante linha em usuarios — idempotente quando cadastro é repetido."""
+    uid = auth_user.id
+    email = (auth_user.email or "").strip().lower()
+    by_id = supabase.table("usuarios").select("*").eq("id", uid).limit(1).execute()
+    if by_id.data:
+        return by_id.data[0]
+
+    by_email = supabase.table("usuarios").select("*").eq("email", email).limit(1).execute()
+    if by_email.data:
+        row = by_email.data[0]
+        if row.get("id") != uid:
+            supabase.table("usuarios").update({"id": uid}).eq("email", email).execute()
+            return {**row, "id": uid}
+        return row
+
+    profile = dict(defaults or {})
+    profile.update(
+        {
+            "id": uid,
+            "email": auth_user.email,
+            "plano": profile.get("plano") or "gratis",
+            "perguntas_restantes": profile.get("perguntas_restantes", 5),
+            "data_criacao": profile.get("data_criacao") or datetime.now(timezone.utc).isoformat(),
+        }
+    )
+    try:
+        supabase.table("usuarios").insert(profile).execute()
+    except Exception as exc:
+        if _is_duplicate_email_error(exc):
+            retry = supabase.table("usuarios").select("*").eq("email", email).limit(1).execute()
+            if retry.data:
+                return retry.data[0]
+        raise
+    return profile
+
+
+def _auth_user_email_confirmed(auth_user):
+    if not auth_user:
+        return False
+    for attr in ("email_confirmed_at", "confirmed_at"):
+        if getattr(auth_user, attr, None):
+            return True
+    user_metadata = getattr(auth_user, "user_metadata", None) or {}
+    if isinstance(user_metadata, dict) and user_metadata.get("email_verified"):
+        return True
+    return False
+
+
+def is_email_confirmed(user):
+    if not user:
+        return False
+    user = sync_user_email_confirmation(user)
+    email = (user.get("email") or "").strip().lower()
+    if email in DEVELOPER_EMAILS:
+        return True
+    return bool(user.get("email_confirmado"))
+
+
+def _session_profile(profile, auth_user):
+    enriched = dict(profile)
+    enriched["email_confirmado"] = _auth_user_email_confirmed(auth_user)
+    return enriched
 
 
 def current_user():
@@ -48,17 +253,91 @@ def is_free_trial_active(user, now=None):
     return (now - created_at).days < FREE_TRIAL_DAYS
 
 
+def _trial_ends_at(user):
+    created_at = _parse_datetime(user.get("data_criacao")) if user else None
+    if not created_at:
+        return None
+    return created_at + timedelta(days=FREE_TRIAL_DAYS)
+
+
+def describe_user_access(user, now=None):
+    """Summarize trial/quota state for admin dashboards and API responses."""
+    now = now or datetime.now(timezone.utc)
+    if not user:
+        return {
+            "access_status": "anonymous",
+            "access_label": "Anônimo",
+            "is_trial": False,
+            "is_limited": False,
+            "trial_days_remaining": None,
+            "trial_hours_remaining": None,
+            "trial_ends_at": None,
+            "remaining_questions": None,
+            "monthly_limit": None,
+        }
+
+    if is_premium_user(user):
+        return {
+            "access_status": "premium",
+            "access_label": "Premium",
+            "is_trial": False,
+            "is_limited": False,
+            "trial_days_remaining": None,
+            "trial_hours_remaining": None,
+            "trial_ends_at": None,
+            "remaining_questions": None,
+            "monthly_limit": None,
+        }
+
+    trial_ends_at = _trial_ends_at(user)
+    if trial_ends_at and now < trial_ends_at:
+        remaining = trial_ends_at - now
+        total_hours = max(int(remaining.total_seconds() // 3600), 0)
+        days_remaining = total_hours // 24
+        hours_remaining = total_hours % 24
+        return {
+            "access_status": "trial",
+            "access_label": "Experiência gratuita",
+            "is_trial": True,
+            "is_limited": False,
+            "trial_days_remaining": days_remaining,
+            "trial_hours_remaining": hours_remaining,
+            "trial_ends_at": trial_ends_at.isoformat(),
+            "remaining_questions": None,
+            "monthly_limit": FREE_MONTHLY_QUESTIONS,
+        }
+
+    ok, remaining = check_question_quota(user)
+    remaining_int = int(remaining) if remaining is not None else 0
+    is_limited = not ok or remaining_int <= 0
+    return {
+        "access_status": "limited" if is_limited else "free_quota",
+        "access_label": "Limitado (0 perguntas)" if is_limited else "Gratuito (cota mensal)",
+        "is_trial": False,
+        "is_limited": is_limited,
+        "trial_days_remaining": 0,
+        "trial_hours_remaining": 0,
+        "trial_ends_at": trial_ends_at.isoformat() if trial_ends_at else None,
+        "remaining_questions": remaining_int if not is_limited else 0,
+        "monthly_limit": FREE_MONTHLY_QUESTIONS,
+    }
+
+
 def refresh_user_profile(user_id):
     response = get_supabase().table("usuarios").select("*").eq("id", user_id).limit(1).execute()
     if not response.data:
         return None
     profile = response.data[0]
     if has_request_context() and session.get("user") and session["user"].get("id") == user_id:
-        session["user"] = profile
+        session["user"] = sync_user_email_confirmation({**profile, **session["user"], **profile})
     return profile
 
 
 def login_user(email, password, remember=False):
+    normalized_email = (email or "").strip().lower()
+    if is_email_blocked(normalized_email):
+        raise ValueError(LOGIN_GENERIC_ERROR)
+
     supabase = get_supabase()
     response = supabase.auth.sign_in_with_password({"email": email, "password": password})
     user = response.user
@@ -67,43 +346,115 @@ def login_user(email, password, remember=False):
     if data.data:
         profile = data.data[0]
     else:
-        profile = {
-            "id": user.id,
-            "email": user.email,
-            "plano": "gratis",
-            "perguntas_restantes": 5,
-            "data_criacao": datetime.now(timezone.utc).isoformat(),
-        }
-        supabase.table("usuarios").insert(profile).execute()
+        profile = _ensure_usuario_profile(
+            supabase,
+            user,
+            defaults={
+                "plano": "gratis",
+                "perguntas_restantes": 5,
+                "data_criacao": datetime.now(timezone.utc).isoformat(),
+            },
+        )
 
     if (profile.get("email") or "").strip().lower() in DEVELOPER_EMAILS and not is_premium_user(profile):
         update_subscription_plan(profile["id"])
         profile = refresh_user_profile(profile["id"]) or profile
 
+    profile = refresh_user_profile(user.id) or profile
+    if not _auth_user_email_confirmed(user):
+        try:
+            supabase.auth.sign_out()
+        except Exception:
+            pass
+        raise ValueError(EMAIL_NOT_CONFIRMED_MESSAGE)
+
     session.permanent = remember
-    session["user"] = profile
-    return profile
+    session["user"] = _session_profile(profile, user)
+    return session["user"]
 
 
-def register_user(email, password):
+def register_user(email, password, *, allow_bot_check=True, form=None):
+    normalized_email = (email or "").strip().lower()
+    assert_email_allowed(normalized_email)
+    if allow_bot_check and form is not None and is_bot_submission(form):
+        raise ValueError("__BOT_SILENT_SUCCESS__")
+
     supabase = get_supabase()
-    response = supabase.auth.sign_up({"email": email, "password": password})
-    user = response.user
+    redirect_to = _public_auth_redirect("/app", panel="login", confirmed="1")
 
-    profile = {
-        "id": user.id,
-        "email": user.email,
-        "plano": "gratis",
-        "perguntas_restantes": 5,
-        "data_criacao": datetime.now(timezone.utc).isoformat(),
-    }
-    supabase.table("usuarios").insert(profile).execute()
-    session["user"] = profile
-    return profile
+    existing_auth = _fetch_auth_user_by_email(normalized_email)
+    if existing_auth:
+        if existing_auth.get("email_confirmed_at") or existing_auth.get("confirmed_at"):
+            raise ValueError("Este e-mail já está cadastrado. Faça login com sua senha.")
+        resend_signup_confirmation(normalized_email)
+        raise ValueError(EMAIL_CONFIRMATION_REQUIRED)
+
+    response = supabase.auth.sign_up(
+        {
+            "email": email,
+            "password": password,
+            "options": {"email_redirect_to": redirect_to},
+        }
+    )
+    user = response.user
+    if not user:
+        raise ValueError(SIGNUP_GENERIC_ERROR)
+
+    profile = _ensure_usuario_profile(
+        supabase,
+        user,
+        defaults={
+            "plano": "gratis",
+            "perguntas_restantes": 5,
+            "data_criacao": datetime.now(timezone.utc).isoformat(),
+        },
+    )
+
+    if not _auth_user_email_confirmed(user):
+        try:
+            supabase.auth.resend(
+                {
+                    "type": "signup",
+                    "email": normalized_email,
+                    "options": {"email_redirect_to": redirect_to},
+                }
+            )
+        except Exception:
+            pass
+        try:
+            supabase.auth.sign_out()
+        except Exception:
+            pass
+        session.pop("user", None)
+        _deliver_signup_confirmation_email(normalized_email, redirect_to)
+        raise ValueError(EMAIL_CONFIRMATION_REQUIRED)
+
+    session["user"] = _session_profile(profile, user)
+    return session["user"]
 
 
 def request_password_reset(email, redirect_to):
+    normalized_email = (email or "").strip().lower()
+    if is_email_blocked(normalized_email):
+        return
     get_supabase().auth.reset_password_for_email(email, {"redirect_to": redirect_to})
+
+
+def resend_signup_confirmation(email):
+    normalized_email = (email or "").strip().lower()
+    if is_email_blocked(normalized_email):
+        raise ValueError(SIGNUP_GENERIC_ERROR)
+    if not normalized_email:
+        raise ValueError("Informe seu e-mail.")
+    redirect_to = _public_auth_redirect("/app", panel="login", confirmed="1")
+    get_supabase().auth.resend(
+        {
+            "type": "signup",
+            "email": normalized_email,
+            "options": {"email_redirect_to": redirect_to},
+        }
+    )
+    _deliver_signup_confirmation_email(normalized_email, redirect_to)
 
 
 def update_password_with_recovery_token(access_token, password):
@@ -158,7 +509,11 @@ def check_question_quota(user):
     if not _is_same_month(last_access, now) or remaining is None:
         remaining = FREE_MONTHLY_QUESTIONS
     if int(remaining) <= 0:
-        return False, "Você atingiu o limite de 5 perguntas gratuitas deste mês. Assine o plano premium para perguntas ilimitadas."
+        return False, (
+            "Você usou as perguntas gratuitas deste mês. Cada pergunta tem custo de operação "
+            "(inteligência artificial e servidores); a assinatura premium ajuda a manter o app no ar. "
+            "Sem condições de pagar? Solicite acesso gratuito pelo formulário de cadastro."
+        )
     return True, int(remaining)
 
 
