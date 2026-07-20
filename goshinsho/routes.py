@@ -603,7 +603,12 @@ def login():
         flash("Login realizado com sucesso.", "success")
     except Exception as exc:
         flash(_friendly_error(exc), "error")
-    return redirect(session.pop("next_url", url_for("web.app_view")))
+    # 2026-07-20: contas admin (DEVELOPER_EMAILS) caem em /app-pt (pt_direct)
+    # por padrão pós-login, não em /app (jp_direct) como o resto dos
+    # usuários -- só afeta o destino padrão quando não há next_url (ex.:
+    # login vindo de um link específico continua indo pra lá).
+    default_endpoint = "web.app_view_pt" if email in DEVELOPER_EMAILS else "web.app_view"
+    return redirect(session.pop("next_url", url_for(default_endpoint)))
 
 
 @web_bp.post("/cadastro")
