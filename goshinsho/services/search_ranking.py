@@ -380,18 +380,26 @@ def garantir_top_por_lexico(
     min_lex: float = 4.0,
     max_output: int = 12,
     anchor_phrases: list[str] | None = None,
+    score_fn=None,
 ) -> tuple[list[str], list[dict]]:
     """
     Garante que os melhores matches lexicais (glossário + tokens) entrem no top-N
     entregue ao modelo — evita que o cross-encoder enterre ensinamentos centrais.
+
+    score_fn: scorer alternativo, assinatura (weighted_terms, chunk, query) -> float.
+    Default None usa score_chunk_tokens (PT). 2026-07-20: parametrizado pra também
+    servir o índice JP (score_chunk_japanese, densidade de kanji) -- mesma etapa,
+    só troca o critério de pontuação léxica.
     """
     if not chunks or reserve <= 0:
         return chunks[:max_output], metadados[:max_output]
 
+    scorer = score_fn or (lambda terms, chunk, q: score_chunk_tokens(terms, chunk, pergunta=q))
+
     anchors = anchor_phrases or []
     scored = []
     for idx, (chunk, meta) in enumerate(zip(chunks, metadados)):
-        lex = score_chunk_tokens(weighted_terms, chunk, pergunta=query)
+        lex = scorer(weighted_terms, chunk, query)
         phrase = score_literal_phrases(anchors, chunk) if anchors else 0.0
         scored.append((lex + phrase * 2.0, idx, chunk, meta))
     scored.sort(key=lambda item: (-item[0], item[1]))

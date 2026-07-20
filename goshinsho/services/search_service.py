@@ -1259,6 +1259,19 @@ def _buscar_pool_jp(
     pool_metas: list[dict] = []
     seen: set[int] = set()
 
+    # Import local: jp_scoring já importa normalizar_pergunta deste módulo,
+    # então o import teria que ser sempre adiado pra não formar ciclo no
+    # carregamento do módulo.
+    from ..pipeline.jp_scoring import score_chunk_japanese
+
+    weighted_ja: dict[str, float] = {}
+    for kanji in termos_ja:
+        weight = 4.0 if kanji == termo_ja_forcado else 3.0
+        weighted_ja[kanji] = max(weighted_ja.get(kanji, 0.0), weight)
+    weighted_ja_list = sorted(
+        weighted_ja.items(), key=lambda item: (-item[1], -len(item[0]), item[0])
+    )
+
     resultados_lit: list[tuple[str, int]] = []
     seen_lit: set[int] = set()
     for termo_ja in termos_ja:
@@ -1275,18 +1288,7 @@ def _buscar_pool_jp(
         # de qualquer pontuação. Pontua por densidade de kanji/glossário
         # (score_chunk_japanese -- o scorer certo pro índice JP, não
         # score_chunk_tokens que é PT) e corta pros LITERAL_SCORE_CAP
-        # melhores antes de seguir. Import local: jp_scoring já importa
-        # normalizar_pergunta deste módulo, então o import teria que ser
-        # sempre adiado pra não formar ciclo no carregamento do módulo.
-        from ..pipeline.jp_scoring import score_chunk_japanese
-
-        weighted_ja: dict[str, float] = {}
-        for kanji in termos_ja:
-            weight = 4.0 if kanji == termo_ja_forcado else 3.0
-            weighted_ja[kanji] = max(weighted_ja.get(kanji, 0.0), weight)
-        weighted_ja_list = sorted(
-            weighted_ja.items(), key=lambda item: (-item[1], -len(item[0]), item[0])
-        )
+        # melhores antes de seguir.
         scored_lit = [
             (score_chunk_japanese(weighted_ja_list, chunk, query=pergunta_busca), chunk, idx)
             for chunk, idx in resultados_lit
@@ -1320,6 +1322,24 @@ def _buscar_pool_jp(
             continue
         pool_chunks.append(chunk)
         pool_metas.append(meta)
+
+    # 2026-07-20: paridade com _buscar_pool_pt_direto -- garante que o
+    # trecho com melhor pontuação léxica (densidade de kanji/glossário)
+    # não fique enterrado atrás de um trecho de depoimento/menção de
+    # passagem só porque a fusão RRF não o priorizou. Reordena o pool já
+    # montado -- sem busca nova, sem chamada de modelo.
+    from .search_ranking import garantir_top_por_lexico
+
+    pool_chunks, pool_metas = garantir_top_por_lexico(
+        pool_chunks,
+        pool_metas,
+        pergunta_busca,
+        weighted_ja_list,
+        reserve=3,
+        min_lex=4.0,
+        max_output=len(pool_chunks),
+        score_fn=lambda terms, chunk, q: score_chunk_japanese(terms, chunk, query=q),
+    )
 
     return remover_chunks_ja_citados(pool_chunks, pool_metas, ultima_resposta)
 
