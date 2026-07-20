@@ -869,12 +869,43 @@ def api_chat():
                 "quota_status": _quota_status(user),
             }
         ), 403
+    # 2026-07-20: rate limit por conta, independente de plano -- antes disso,
+    # contas premium/período de experiência ("perguntas ilimitadas") não
+    # tinham NENHUM freio de ritmo, só a cota mensal (que nem se aplica a
+    # elas). Protege contra automação/abuso de custo de API antes de abrir
+    # ao público geral (ver plano de escala).
+    limited = _rate_limit_response(
+        "chat",
+        limit=20,
+        window_seconds=600,
+        message="Muitas perguntas em pouco tempo. Aguarde alguns minutos e tente novamente.",
+        identity=user["id"],
+    )
+    if limited:
+        return limited
     if user:
         try:
             user = refresh_user_profile(user["id"]) or user
             ok, quota_error = check_question_quota(user)
             if not ok:
                 return jsonify({"error": quota_error, "quota_status": _quota_status(user), "quota_limit_reached": True}), 403
+            # Cota diária extra pro plano gratuito -- evita que a cota do mês
+            # inteiro (5 perguntas) seja gasta numa única rajada. Não se
+            # aplica a premium/experiência (essas já passaram pelo check
+            # acima e não usam perguntas_restantes).
+            if not is_premium_user(user) and not is_free_trial_active(user):
+                daily_limited = _rate_limit_response(
+                    "chat_daily_free",
+                    limit=3,
+                    window_seconds=86400,
+                    message=(
+                        "Você atingiu o limite de perguntas gratuitas de hoje. "
+                        "Tente novamente amanhã, ou assine o plano premium para perguntas ilimitadas."
+                    ),
+                    identity=user["id"],
+                )
+                if daily_limited:
+                    return daily_limited
         except Exception as exc:
             return jsonify({"error": _friendly_error(exc)}), 401
     if user and not conversation_id:
