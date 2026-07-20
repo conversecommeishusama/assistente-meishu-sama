@@ -252,7 +252,17 @@ def corrigir_primeira_ocorrencia(texto, termo="Ohikari", explicacao="Medalha da 
     return re.sub(padrao_termo, f"{termo} ({explicacao})", texto, count=1, flags=re.IGNORECASE)
 
 
-def fix_messianic_terms(text):
+def fix_messianic_terms(text, language="Português"):
+    """Correções de glossário no texto final.
+
+    "linha espiritual"/"reisen" -> "elo espiritual" e o glosário "(Medalha
+    da Luz Divina)" injetado por corrigir_primeira_ocorrencia() são texto em
+    PORTUGUÊS -- aplicar isso a uma resposta noutro idioma injetava um
+    fragmento em português dentro, por exemplo, de uma resposta em inglês
+    (achado 2026-07-20, ao investigar relato do usuário de resposta em
+    português com idioma=English selecionado). Loanwords (Daijo, Shojo,
+    Ohikari) são universais e continuam a ser corrigidas em qualquer idioma.
+    """
     substitutions = {
         r"\bmahayana\b": "Daijo",
         r"\bhinayana\b": "Shojo",
@@ -260,13 +270,15 @@ def fix_messianic_terms(text):
         r"\bMedalha da Luz Divina\b": "Ohikari",
         r"\bamuleto\b": "Ohikari",
         r"\bO-pre-Hikari\b": "Ohikari",
-        r"\blinhas?\s+espiritua(?:l|is)\b": "elo espiritual",
-        r"\breisen\b": "elo espiritual",
     }
+    if language == "Português":
+        substitutions[r"\blinhas?\s+espiritua(?:l|is)\b"] = "elo espiritual"
+        substitutions[r"\breisen\b"] = "elo espiritual"
     for wrong, correct in substitutions.items():
         text = re.sub(wrong, correct, text, flags=re.IGNORECASE)
     text = re.sub(r"\bOhikari\s*\(\s*Ohikari\s*\)", "Ohikari", text, flags=re.IGNORECASE)
-    text = corrigir_primeira_ocorrencia(text)
+    if language == "Português":
+        text = corrigir_primeira_ocorrencia(text)
     return text
 
 

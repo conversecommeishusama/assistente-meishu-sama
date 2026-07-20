@@ -842,6 +842,15 @@ def api_chat():
     language = payload.get("language") or "Português"
     response_mode = payload.get("response_mode") or "direct"
     retrieval_mode = (payload.get("retrieval_mode") or "jp_direct").strip().lower()
+    # 2026-07-20: em qualquer idioma que não seja português, a busca é
+    # sempre no acervo japonês (jp_direct) -- o acervo PT só serve
+    # respostas em português nativamente; noutro idioma, deixar o pt_direct
+    # correr (conteúdo-fonte em português) faz o modelo tender a continuar
+    # em português mesmo com a instrução de idioma, e a citação literal
+    # deixa de ser uma tradução genuína. jp_direct força a tradução real,
+    # como já acontece para citações em japonês (ver prompts.py regra 11).
+    if language != "Português":
+        retrieval_mode = "jp_direct"
     conversation_id = payload.get("conversation_id") or (session.get("active_conversation_id") if user else None)
     client_history = payload.get("history") or []
     if expand_previous:

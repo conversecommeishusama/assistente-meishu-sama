@@ -60,6 +60,28 @@ def _is_deep_mode(response_mode: str) -> bool:
     return (response_mode or "").lower() in ("deep", "aprofundada")
 
 
+def _response_label(kind: str, language: str) -> str:
+    """Rótulo final antes da geração -- é o último token que o modelo vê
+    antes de escrever, então precisa estar no idioma da resposta (não fixo
+    em português) para não enviesar o modelo a continuar em português
+    mesmo depois da instrução MANDATORY de idioma no início do prompt."""
+    if language == "Português":
+        labels = {
+            "full": "TEXTO COMPLETO",
+            "expand": "COMPLEMENTO",
+            "deep": "RESPOSTA APROFUNDADA",
+            "direct": "RESPOSTA",
+        }
+    else:
+        labels = {
+            "full": "FULL TEXT",
+            "expand": "SUPPLEMENT",
+            "deep": "IN-DEPTH ANSWER",
+            "direct": "ANSWER",
+        }
+    return labels[kind]
+
+
 def generate_from_retrieval(
     state,
     chunks: list[str],
@@ -116,7 +138,7 @@ def generate_from_retrieval(
             titulo_artigo,
             follow_up=follow_up,
         )
-        label = "TEXTO COMPLETO"
+        label = _response_label("full", effective_language)
         max_tokens = 6000
     elif expand:
         response_instructions = doctrinal_instructions(
@@ -125,7 +147,7 @@ def generate_from_retrieval(
             expand_previous=True,
             follow_up=True,
         )
-        label = "COMPLEMENTO"
+        label = _response_label("expand", effective_language)
         max_tokens = 2800
     else:
         response_instructions = doctrinal_instructions(
@@ -134,7 +156,7 @@ def generate_from_retrieval(
             definitional_question=is_definitional_question(state.question),
             follow_up=follow_up,
         )
-        label = "RESPOSTA APROFUNDADA" if deep else "RESPOSTA"
+        label = _response_label("deep" if deep else "direct", effective_language)
         max_tokens = 4000
 
     history_lines = []
@@ -198,7 +220,9 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
         max_tokens=max_tokens,
     )
     record_deepseek_usage(response, usage_label)
-    return strip_academic_opening(fix_messianic_terms(response.choices[0].message.content))
+    return strip_academic_opening(
+        fix_messianic_terms(response.choices[0].message.content, language=effective_language)
+    )
 
 
 def _query_terms_covered(chunks: list[str], query: str, *, pastoral: bool) -> bool:

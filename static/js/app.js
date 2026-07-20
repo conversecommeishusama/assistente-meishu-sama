@@ -1216,6 +1216,8 @@ function getResponseMode() {
 }
 
 function getRetrievalMode() {
+    const language = languageInput?.value || selectedLanguage;
+    if (language && language !== "Português") return "jp_direct";
     return document.body.dataset.retrievalMode || "jp_direct";
 }
 
