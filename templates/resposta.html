@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho — Resposta compartilhada</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=143">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=145">
     <style>
         .shared-page {
             max-width: 720px;
@@ -49,7 +49,7 @@
     <main class="shared-page">
         <header class="topbar" style="position: static;">
             <div class="brand">
-                <a class="brand-link brand-home" href="{{ url_for('web.app_view') }}" aria-label="Ir para a página principal">
+                <a class="brand-link brand-home" href="{{ url_for(app_endpoint|default('web.app_view')) }}" aria-label="Ir para a página principal">
                     <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
                     <span>Goshinsho</span>
                 </a>
@@ -63,7 +63,7 @@
         <div class="shared-cta">
             <p>Esta resposta foi gerada com base nos escritos de Meishu-Sama pelo Goshinsho.
                Crie sua conta gratuita para fazer suas próprias perguntas ao acervo.</p>
-            <a href="{{ url_for('web.app_view', panel='register') }}">Criar conta gratuita</a>
+            <a href="{{ url_for(app_endpoint|default('web.app_view'), panel='register') }}">Criar conta gratuita</a>
         </div>
         {% endif %}
     </main>

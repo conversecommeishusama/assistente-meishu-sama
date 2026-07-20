@@ -15,11 +15,12 @@
             <h1>Consulte os escritos de Meishu-Sama</h1>
             <p>
                 Acesse pelo navegador ou instale o aplicativo Android para conversar com o assistente.
+                Cadastro gratuito com 3 dias de perguntas ilimitadas; depois, assine o plano premium para continuar.
             </p>
 
             <div class="landing-actions">
-                <a class="landing-button primary" href="{{ url_for('web.app_view') }}">Acessar pelo navegador</a>
-                <a class="landing-button" href="{{ url_for('web.app_view', panel='register') }}">Criar conta gratuita</a>
+                <a class="landing-button primary" href="{{ url_for(app_endpoint|default('web.app_view')) }}">Acessar pelo navegador</a>
+                <a class="landing-button" href="{{ url_for(app_endpoint|default('web.app_view'), panel='register') }}">Criar conta gratuita</a>
                 <a class="landing-button" href="{{ url_for('web.download_apk') }}">Baixar aplicativo Android</a>
             </div>
 

@@ -209,6 +209,17 @@ def _is_developer_user(user):
     return (user or {}).get("email", "").strip().lower() in DEVELOPER_EMAILS
 
 
+def _default_app_endpoint(user=None):
+    # 2026-07-20: contas admin (DEVELOPER_EMAILS) caem em /app-pt (pt_direct)
+    # por padrão, não em /app (jp_direct) como o resto dos usuários -- usado
+    # em todo ponto de entrada que decide pra onde mandar o usuário sem uma
+    # preferência explícita (login, landing page, resposta compartilhada).
+    if user is None:
+        user = current_user()
+    email = (user or {}).get("email", "").strip().lower()
+    return "web.app_view_pt" if email in DEVELOPER_EMAILS else "web.app_view"
+
+
 def _require_developer_json():
     user = current_user()
     if not user:
@@ -334,7 +345,12 @@ def _quota_status(user):
 
 @web_bp.get("/")
 def index():
-    return render_template("landing.html")
+    # 2026-07-20: link principal da landing ("Acessar pelo navegador")
+    # também precisa respeitar o padrão pt_direct pra contas admin -- antes
+    # ia direto pra web.app_view (JP) sempre, então quem já estava logado
+    # (sessão persistente, sem passar pelo formulário de login) continuava
+    # caindo em JP mesmo com o fix do login().
+    return render_template("landing.html", app_endpoint=_default_app_endpoint())
 
 
 def _render_app_view(*, retrieval_mode: str):
@@ -530,6 +546,7 @@ def resposta_compartilhada(message_id):
         user=user,
         question=shared["question"],
         answer=shared["answer"],
+        app_endpoint=_default_app_endpoint(user),
     )
 
 
@@ -603,12 +620,11 @@ def login():
         flash("Login realizado com sucesso.", "success")
     except Exception as exc:
         flash(_friendly_error(exc), "error")
-    # 2026-07-20: contas admin (DEVELOPER_EMAILS) caem em /app-pt (pt_direct)
-    # por padrão pós-login, não em /app (jp_direct) como o resto dos
-    # usuários -- só afeta o destino padrão quando não há next_url (ex.:
-    # login vindo de um link específico continua indo pra lá).
-    default_endpoint = "web.app_view_pt" if email in DEVELOPER_EMAILS else "web.app_view"
-    return redirect(session.pop("next_url", url_for(default_endpoint)))
+    # só afeta o destino padrão quando não há next_url (ex.: login vindo de
+    # um link específico continua indo pra lá). Usa o e-mail do formulário
+    # (não current_user()) pra não depender de timing de leitura da sessão
+    # logo após login_user().
+    return redirect(session.pop("next_url", url_for(_default_app_endpoint({"email": email}))))
 
 
 @web_bp.post("/cadastro")

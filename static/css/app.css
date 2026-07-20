@@ -28,6 +28,20 @@ body {
     text-decoration: none;
 }
 
+.retrieval-badge {
+    background: #e8f0fe;
+    border: 1px solid #c6dafc;
+    border-radius: 6px;
+    color: #174ea6;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-left: 6px;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
 .quota-card,
 .support-ticket-detail {
     background: rgba(255,255,255,.82);
@@ -52,7 +66,7 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.quota-plans span {
+.quota-plans > span {
     background: #e8f0fe;
     border-radius: 999px;
     color: #174ea6;
@@ -92,6 +106,39 @@ body {
     display: flex;
     gap: 6px;
     margin-top: 6px;
+    position: relative;
+}
+
+.share-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(34, 66, 112, 0.18);
+    overflow: hidden;
+}
+
+.share-menu button,
+.share-menu a {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.share-menu button:hover,
+.share-menu a:hover {
+    background: rgba(26, 115, 232, 0.08);
 }
 
 .brand-home {
@@ -413,11 +460,13 @@ body.modal-open {
     }
 }
 
-/* Final responsive guard: prevent horizontal overflow on web and Android WebView. */
+/* Final responsive guard: prevent horizontal overflow on web and Android WebView.
+   overflow-x:clip (not hidden) — hidden forces overflow-y to auto per spec, which turns
+   html/body into a scroll container and breaks position:sticky on descendants like .topbar. */
 html,
 body {
     max-width: 100% !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     width: 100% !important;
 }
 
@@ -435,7 +484,6 @@ body,
 }
 
 .app-shell {
-    overflow-x: hidden !important;
     width: 100% !important;
 }
 
@@ -811,15 +859,24 @@ body,
     }
 }
 
-/* User questions follow the same left-to-right reading flow requested for the app. */
-.message.user {
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
+/* Chat bubbles centered in the conversation column. */
+.chat .message {
+    align-items: center !important;
+    flex-direction: column;
+    justify-content: center !important;
 }
 
-.message.user .bubble {
-    margin-left: 0 !important;
-    margin-right: auto !important;
+.chat .message.user .bubble,
+.chat .message.assistant .bubble {
+    margin-inline: auto !important;
+    max-width: min(100%, 760px);
+    width: min(100%, 760px);
+}
+
+.chat .message.assistant .message-actions {
+    justify-content: center;
+    max-width: min(100%, 760px);
+    width: 100%;
 }
 
 .landing-body {
@@ -921,6 +978,7 @@ button {
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px 0 16px;
     position: sticky;
@@ -1166,6 +1224,16 @@ button {
 .floating-panel textarea {
     min-height: 110px;
     resize: vertical;
+}
+
+.signup-shield {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .hero {
@@ -1525,7 +1593,7 @@ body {
         radial-gradient(circle at 88% 18%, rgba(255, 247, 219, 0.72), transparent 24rem),
         linear-gradient(180deg, #ffffff 0%, #f5f9ff 52%, #eef5ff 100%);
     min-height: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .app-shell {
@@ -1780,10 +1848,42 @@ body {
     margin: 4px 0 0;
 }
 
-.quota-plans span {
+.quota-plans > span {
     background: linear-gradient(135deg, #eef7ff, #e3efff);
     border: 1px solid #d2e3fc;
     font-weight: 650;
+}
+
+.quota-card button.quota-highlight {
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+}
+
+.quota-signup-hint {
+    color: #c5221f;
+    display: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.quota-signup-hint.visible {
+    display: block;
+}
+
+.quota-limit-text {
+    margin: 0 0 12px;
+}
+
+.inline-signup-btn {
+    background: var(--primary, #1a73e8);
+    border: 0;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 650;
+    padding: 10px 16px;
 }
 
 .login-hint {
@@ -1893,7 +1993,7 @@ body {
         gap: 6px;
     }
 
-    .quota-plans span {
+    .quota-plans > span {
         font-size: 0.72rem;
         padding: 6px;
     }
@@ -1936,7 +2036,7 @@ body {
 body {
     background: var(--bg) !important;
     color: var(--text);
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .app-shell {
@@ -1954,6 +2054,7 @@ body {
     border-radius: 0 !important;
     box-shadow: none !important;
     display: flex;
+    flex-wrap: wrap;
     gap: 14px;
     justify-content: space-between;
     margin: 0 !important;
@@ -2112,13 +2213,13 @@ body {
 }
 
 .message.assistant {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
 }
 
 .message.user {
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 .bubble {
@@ -2127,14 +2228,32 @@ body {
     border-radius: 24px;
     box-shadow: none !important;
     line-height: 1.55;
-    max-width: 82%;
+    margin-inline: auto;
+    max-width: min(92%, 680px);
     padding: 14px 18px;
     white-space: pre-wrap;
+    width: fit-content;
 }
 
 .message.user .bubble {
     background: var(--primary-soft) !important;
     border-color: #d2e3fc !important;
+}
+
+.composer-response-mode {
+    border: 0;
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.composer .response-mode {
+    margin-inline: auto;
+    max-width: 100%;
+    width: auto;
 }
 
 .composer {
@@ -2197,7 +2316,7 @@ body {
     padding: 12px;
 }
 
-.quota-plans span {
+.quota-plans > span {
     background: #e8f0fe !important;
     border: 0 !important;
     color: #174ea6;
@@ -2281,12 +2400,197 @@ body {
         width: 100%;
     }
 
-    .bubble {
-        max-width: 100%;
+    .chat .message .bubble {
+        max-width: min(100%, 680px) !important;
         overflow-wrap: anywhere;
     }
 
     .quota-plans {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Centered chat bubbles and composer response-mode toggle. */
+.chat .message,
+.chat .message.user,
+.chat .message.assistant {
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.chat .message .bubble {
+    margin-inline: auto !important;
+    max-width: min(92%, 680px) !important;
+    width: fit-content !important;
+}
+
+.chat .message.user .bubble,
+.chat .message.assistant.is-pending .bubble {
+    text-align: center;
+}
+
+.chat .message.assistant .message-actions {
+    justify-content: center;
+    margin-inline: auto;
+    max-width: min(92%, 680px);
+    width: 100%;
+}
+
+.composer-response-mode {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.composer .response-mode {
+    margin-inline: auto !important;
+    max-width: 100%;
+    width: auto !important;
+}
+
+.grant-panel.open {
+    max-height: min(88vh, 920px);
+    overflow-y: auto;
+}
+
+.grant-panel label:not(.checkbox-field) {
+    display: grid;
+    gap: 6px;
+}
+
+.grant-panel label:not(.checkbox-field) span {
+    color: var(--muted, #5f6368);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.grant-panel .checkbox-field {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+}
+
+.grant-panel .checkbox-field input {
+    flex-shrink: 0;
+    margin-top: 0.15em;
+    width: auto;
+}
+
+.grant-panel .checkbox-field span {
+    color: var(--muted, #5f6368);
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.grant-status-note.success {
+    color: #137333;
+}
+
+.grant-status-note.pending {
+    color: #174ea6;
+}
+
+.grant-status-note.rejected {
+    color: #c5221f;
+}
+
+.quota-grant-link {
+    display: block;
+    margin-top: 8px;
+}
+
+.resend-confirm-form {
+    margin-top: -8px;
+}
+
+.resend-confirm-form button {
+    background: var(--primary, #1a73e8);
+    border: 0;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px 16px;
+}
+
+.pricing-grant {
+    background: #f8fbff;
+    border: 1px solid #d2e3fc;
+    border-radius: 24px;
+    margin-top: 24px;
+    padding: 24px;
+    text-align: center;
+}
+
+.pricing-grant h2 {
+    margin: 0 0 8px;
+}
+
+.pricing-grant p {
+    color: #5f6368;
+    margin: 0 0 16px;
+}
+
+.quota-pricing-note {
+    background: #f8fbff;
+    border: 1px solid #d2e3fc;
+    border-radius: 14px;
+    color: #174ea6;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 12px 14px;
+}
+
+.field-hint {
+    color: var(--muted, #5f6368);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.pricing-why {
+    color: #5f6368;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 12px auto 0;
+    max-width: 560px;
+}
+
+.subscription-intro-card .panel-note {
+    margin: 0 0 8px;
+}
+
+.developer-nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.developer-nav a {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--primary);
+    font-size: 0.88rem;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.developer-nav a:hover {
+    background: var(--primary-soft);
+}
+
+/* Final override (see "Final responsive guard" above): .top-actions is
+   forced flex-wrap:nowrap on mobile in multiple earlier blocks in this
+   file, tuned to fit only the regular user actions (conta/assinar/sair).
+   .developer-nav adds 3 more pill links (JP/PT/Admin) only for contas
+   admin, which never fit that row and overlapped the hamburger/logo.
+   Admin continues to reach /app, /app-pt e /admin por URL direta ou pelo
+   desktop; no mobile a barra fica só com as ações regulares. */
+@media (max-width: 720px) {
+    .developer-nav {
+        display: none !important;
     }
 }
