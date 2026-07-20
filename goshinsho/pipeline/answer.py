@@ -220,6 +220,8 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
 ### PERGUNTA ACTUAL:
 {effective_q if not expand else effective_q}
 
+{_language_instruction(effective_language)}
+
 **{label}:**
 """.strip()
 
