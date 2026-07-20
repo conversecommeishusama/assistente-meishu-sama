@@ -100,9 +100,15 @@ def _chunk_rank_score(
     if meta.get("rank_priority") == "alta":
         bonus += 0.35
     if japanese_scoring:
+        # 2026-07-20: mesma preferência escrito>oral do lado PT (pedido
+        # explícito do usuário) -- content_score é agnóstico de idioma
+        # (rótulos Meishu-Sama:/Interlocutor: são os mesmos em latim nos
+        # dois corpora, ver rotulagem JP Fase 5; campo `fonte` do JP
+        # também já vem em PT) -- só faltava ser somado aqui.
         return (
             float(meta.get("rank_score") or 0.0)
             + score_chunk_japanese(weighted, chunk, query=query)
+            + content_score(chunk, meta, query=query) * 2.0
             + bonus
         )
     return (

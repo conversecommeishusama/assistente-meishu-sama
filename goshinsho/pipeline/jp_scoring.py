@@ -7,6 +7,7 @@ import re
 from ..services.search_glossary import resolver_consulta_jp
 from ..services.search_ranking import termo_principal
 from ..services.search_service import normalizar_pergunta
+from .scoring import content_score
 
 _CJK_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
 
@@ -87,7 +88,12 @@ def rerank_by_japanese(
     weighted = japanese_weighted_terms(query, pastoral=pastoral)
     scored = [
         (
-            score_chunk_japanese(weighted, chunk, query=query),
+            # 2026-07-20: mesma preferência escrito>oral do lado PT
+            # (rerank_by_content, pipeline/scoring.py) -- content_score é
+            # agnóstico de idioma (rótulos Meishu-Sama:/Interlocutor: são
+            # os mesmos em latim nos dois corpora desde a rotulagem JP
+            # Fase 5; `fonte` do JP também já vem em PT).
+            score_chunk_japanese(weighted, chunk, query=query) + content_score(chunk, meta, query=query),
             chunk,
             meta,
         )

@@ -1259,13 +1259,47 @@ def _buscar_pool_jp(
     pool_metas: list[dict] = []
     seen: set[int] = set()
 
+    resultados_lit: list[tuple[str, int]] = []
+    seen_lit: set[int] = set()
     for termo_ja in termos_ja:
         for chunk, idx in buscar_literal_exata(termo_ja, chunks_jp):
-            if idx in seen:
+            if idx in seen_lit:
                 continue
-            seen.add(idx)
-            pool_chunks.append(chunk)
-            pool_metas.append(metadados_jp[idx])
+            seen_lit.add(idx)
+            resultados_lit.append((chunk, idx))
+
+    if len(resultados_lit) > LITERAL_SCORE_CAP:
+        # 2026-07-20: mesmo bug de recall afogado já corrigido em
+        # _buscar_pool_pt_direto (2026-07-18) -- um termo kanji comum sem
+        # peso/limite podia inundar o pool com trechos irrelevantes antes
+        # de qualquer pontuação. Pontua por densidade de kanji/glossário
+        # (score_chunk_japanese -- o scorer certo pro índice JP, não
+        # score_chunk_tokens que é PT) e corta pros LITERAL_SCORE_CAP
+        # melhores antes de seguir. Import local: jp_scoring já importa
+        # normalizar_pergunta deste módulo, então o import teria que ser
+        # sempre adiado pra não formar ciclo no carregamento do módulo.
+        from ..pipeline.jp_scoring import score_chunk_japanese
+
+        weighted_ja: dict[str, float] = {}
+        for kanji in termos_ja:
+            weight = 4.0 if kanji == termo_ja_forcado else 3.0
+            weighted_ja[kanji] = max(weighted_ja.get(kanji, 0.0), weight)
+        weighted_ja_list = sorted(
+            weighted_ja.items(), key=lambda item: (-item[1], -len(item[0]), item[0])
+        )
+        scored_lit = [
+            (score_chunk_japanese(weighted_ja_list, chunk, query=pergunta_busca), chunk, idx)
+            for chunk, idx in resultados_lit
+        ]
+        scored_lit.sort(key=lambda item: (-item[0], item[2]))
+        resultados_lit = [(chunk, idx) for _, chunk, idx in scored_lit[:LITERAL_SCORE_CAP]]
+
+    for chunk, idx in resultados_lit:
+        if idx in seen:
+            continue
+        seen.add(idx)
+        pool_chunks.append(chunk)
+        pool_metas.append(metadados_jp[idx])
 
     hibrido_c, hibrido_m = buscar_trechos_hibrido_jp(
         pergunta_busca,
