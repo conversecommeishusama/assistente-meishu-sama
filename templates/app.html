@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=143">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=144">
 </head>
 <body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_direct') }}">
     <aside class="sidebar" id="sidebar">
@@ -319,7 +319,7 @@
 
         <section class="chat" id="chat" data-conversation-id="{{ active_conversation_id or '' }}">
             {% for message in messages %}
-                <article class="message {{ message.role }}" {% if message.id %}data-message-id="{{ message.id }}"{% endif %}>
+                <article class="message {{ message.role }}" {% if message.id %}data-message-id="{{ message.id }}"{% endif %} {% if message.role == "assistant" %}data-sources="{{ (message.sources or []) | tojson | forceescape }}"{% endif %}>
                     <div class="bubble">{{ message.content }}</div>
                     {% if message.role == "assistant" %}
                         <div class="message-actions" aria-label="Ações da resposta">

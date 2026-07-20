@@ -49,6 +49,29 @@ def _entry_id(meta: dict) -> str:
     return (meta.get("entry_id") or meta.get("arquivo") or "").strip()
 
 
+def resolve_source_titles(entry_ids: list[str]) -> list[str]:
+    """Resolve entry_ids do marcador de fontes (ver conversation_context.
+    append_source_marker/extract_source_marker) para nomes de obra legíveis
+    -- usado pelo botão "Ver fontes" do chat, que antes vasculhava o texto
+    da própria resposta por palavras-chave ("fonte", "livro", "ensinamento"
+    etc.), quase sempre devolvendo pedaços da resposta em vez da fonte real
+    (achado do usuário, 2026-07-20 -- o modo direto nunca cita fonte no
+    texto, então qualquer frase teológica normal batia no filtro)."""
+    idx = entry_siblings_index()
+    seen: set[str] = set()
+    titles: list[str] = []
+    for entry_id in entry_ids:
+        siblings = idx.get(entry_id)
+        if not siblings:
+            continue
+        fonte = (siblings[0][1].get("fonte") or "").strip()
+        if not fonte or fonte in seen:
+            continue
+        seen.add(fonte)
+        titles.append(fonte)
+    return titles
+
+
 def _selection_params(query: str, *, pastoral: bool) -> tuple[int, int]:
     """(max_chunks_por_obra, min_fontes_distintas) conforme especificidade da pergunta."""
     weighted = weighted_terms_for_search(normalizar_pergunta(query), pastoral=pastoral)

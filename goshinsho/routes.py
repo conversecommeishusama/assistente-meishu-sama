@@ -348,11 +348,18 @@ def _render_app_view(*, retrieval_mode: str):
             conversations = list_conversations(user["id"])
             messages = list_messages(active_conversation_id) if active_conversation_id else []
             if messages:
-                from .services.conversation_context import strip_source_marker
+                from .services.conversation_context import extract_source_marker, strip_source_marker
+                from .pipeline.retrieve import resolve_source_titles
 
                 for msg in messages:
                     if msg.get("role") == "assistant":
-                        msg["content"] = strip_source_marker(msg.get("content") or "")
+                        raw = msg.get("content") or ""
+                        # 2026-07-20: resolve fontes reais tambem pra
+                        # historico recarregado (mensagens salvas depois do
+                        # marcador existir) -- mesmo dado que o botao "Ver
+                        # fontes" usa pra mensagens novas, ver api_chat.
+                        msg["sources"] = resolve_source_titles(extract_source_marker(raw))
+                        msg["content"] = strip_source_marker(raw)
         except Exception as exc:
             flash(_friendly_error(exc), "error")
     app_endpoint = "web.app_view" if retrieval_mode == "jp_direct" else "web.app_view_pt"
@@ -924,12 +931,22 @@ def api_chat():
             assistant_message_id = (
                 save_message(conversation_id, "assistant", answer) if user and conversation_id else None
             )
-            from .services.conversation_context import strip_source_marker
+            from .services.conversation_context import extract_source_marker, strip_source_marker
+            from .pipeline.retrieve import resolve_source_titles
+
+            # 2026-07-20: botão "Ver fontes" do chat -- antes vasculhava o
+            # texto da resposta por palavra-chave ("fonte"/"livro"/
+            # "ensinamento"...), quase sempre devolvendo pedaços da própria
+            # resposta (achado do usuário: modo direto nunca cita fonte no
+            # texto, então qualquer frase teológica normal batia no
+            # filtro). Agora resolve pelo marcador real de fontes.
+            sources = resolve_source_titles(extract_source_marker(answer))
 
             yield json.dumps(
                 {
                     "event": "done",
                     "answer": strip_source_marker(answer),
+                    "sources": sources,
                     "conversation_id": conversation_id,
                     "assistant_message_id": assistant_message_id,
                     "remaining_questions": remaining_questions,
@@ -955,7 +972,9 @@ def api_chat():
         reset_deepseek_usage_context(token)
     remaining_questions = consume_question_quota(user)
     assistant_message_id = save_message(conversation_id, "assistant", answer) if conversation_id else None
-    return jsonify({"answer": answer, "conversation_id": conversation_id, "assistant_message_id": assistant_message_id, "remaining_questions": remaining_questions, "quota_status": _quota_status(user), "search_variant": search_variant})
+    # 2026-07-20: pipeline legado nao tem marcador de fontes -- sources
+    # vazio, nao a heuristica de palavra-chave que o botao usava antes.
+    return jsonify({"answer": answer, "sources": [], "conversation_id": conversation_id, "assistant_message_id": assistant_message_id, "remaining_questions": remaining_questions, "quota_status": _quota_status(user), "search_variant": search_variant})
 
 
 @web_bp.get("/api/deepseek-usage-summary")
