@@ -251,23 +251,77 @@ def build_thread_search_query(
     return f"{core}\n\n(desambiguação — {'; '.join(hints)})"
 
 
-def search_clarification_message(*, language: str = "Português") -> str:
-    if language and language.lower().startswith("english"):
-        return (
-            "I'm not sure what you'd like me to look up in this follow-up. "
-            "Could you be a bit more specific? For example, name the topic or condition "
-            "you want guidance on — that helps me search Meishu-Sama's writings."
-        )
-    if language and language.lower().startswith("espa"):
-        return (
-            "No entendí bien qué desea saber en esta continuación. "
-            "¿Podría ser un poco más específico? Indique el tema o la condición "
-            "sobre la que busca orientación — eso me ayuda a buscar en los escritos."
-        )
-    return (
+_SEARCH_CLARIFICATION_BY_LANGUAGE = {
+    "Português": (
         "Não entendi bem o que deseja saber nesta continuação da conversa. "
         "Pode ser um pouco mais específico? Por exemplo, indique o tema ou a situação "
         "sobre a qual quer orientação — isso ajuda-me a buscar nos escritos de Meishu-Sama."
+    ),
+    "English": (
+        "I'm not sure what you'd like me to look up in this follow-up. "
+        "Could you be a bit more specific? For example, name the topic or condition "
+        "you want guidance on — that helps me search Meishu-Sama's writings."
+    ),
+    "Español": (
+        "No entendí bien qué desea saber en esta continuación. "
+        "¿Podría ser un poco más específico? Indique el tema o la condición "
+        "sobre la que busca orientación — eso me ayuda a buscar en los escritos."
+    ),
+    "日本語": (
+        "この続きの会話で何を調べればよいのか、はっきりわかりませんでした。"
+        "もう少し具体的に教えていただけますか？例えば、知りたいテーマや状況を挙げていただければ、"
+        "明主様の教えを検索する助けになります。"
+    ),
+    "中文": (
+        "我不太确定您想在这次追问中了解什么。能请您说得更具体一些吗？"
+        "例如，请说明您想了解的主题或情况——这样能帮助我在明主的教诲中查找相关内容。"
+    ),
+    "हिन्दी": (
+        "मुझे यह ठीक से समझ नहीं आया कि आप इस अगले प्रश्न में क्या जानना चाहते हैं। "
+        "क्या आप थोड़ा और स्पष्ट रूप से बता सकते हैं? उदाहरण के लिए, वह विषय या स्थिति बताइए "
+        "जिस पर आप मार्गदर्शन चाहते हैं — इससे मुझे मैशु-सामा की रचनाओं में खोजने में मदद मिलेगी।"
+    ),
+    "العربية": (
+        "لم أفهم جيدًا ما تريد معرفته في هذا السؤال التابع. هل يمكنك أن تكون أكثر تحديدًا؟ "
+        "على سبيل المثال، اذكر الموضوع أو الحالة التي تريد توجيهًا بشأنها — "
+        "سيساعدني ذلك على البحث في كتابات مايشو ساما."
+    ),
+    "Français": (
+        "Je n'ai pas bien compris ce que vous souhaitez savoir dans cette suite de la conversation. "
+        "Pourriez-vous préciser un peu plus ? Par exemple, indiquez le sujet ou la situation sur "
+        "laquelle vous souhaitez des conseils — cela m'aide à rechercher dans les écrits de Meishu-Sama."
+    ),
+    "বাংলা": (
+        "এই পরবর্তী প্রশ্নে আপনি কী জানতে চান তা আমি ঠিক বুঝতে পারিনি। "
+        "আপনি কি একটু আরও সুনির্দিষ্টভাবে বলতে পারেন? উদাহরণস্বরূপ, যে বিষয় বা পরিস্থিতি নিয়ে আপনি "
+        "দিকনির্দেশনা চান তা উল্লেখ করুন — এটি আমাকে মেইশু-সামার লেখায় খুঁজতে সাহায্য করবে।"
+    ),
+    "Русский": (
+        "Я не совсем понял, что вы хотели бы узнать в этом уточняющем вопросе. "
+        "Могли бы вы уточнить немного подробнее? Например, укажите тему или ситуацию, по которой "
+        "хотите получить наставление — это поможет мне найти нужное в текстах Мэйсю-Сама."
+    ),
+    "اردو": (
+        "مجھے ٹھیک طرح سے سمجھ نہیں آیا کہ آپ اس اگلے سوال میں کیا جاننا چاہتے ہیں۔ "
+        "کیا آپ تھوڑا مزید واضح طور پر بتا سکتے ہیں؟ مثال کے طور پر، وہ موضوع یا صورتحال بتائیں "
+        "جس پر آپ رہنمائی چاہتے ہیں — اس سے مجھے میشو سما کی تحریروں میں تلاش کرنے میں مدد ملے گی۔"
+    ),
+    "Indonesia": (
+        "Saya kurang paham apa yang ingin Anda ketahui dalam lanjutan percakapan ini. "
+        "Bisakah Anda lebih spesifik? Misalnya, sebutkan topik atau situasi yang ingin Anda "
+        "ketahui panduannya — itu membantu saya mencari dalam tulisan-tulisan Meishu-Sama."
+    ),
+    "Deutsch": (
+        "Mir ist nicht ganz klar, was Sie mit dieser Anschlussfrage wissen möchten. "
+        "Könnten Sie etwas genauer sein? Nennen Sie zum Beispiel das Thema oder die Situation, "
+        "zu der Sie Orientierung suchen — das hilft mir, in den Schriften von Meishu-Sama zu suchen."
+    ),
+}
+
+
+def search_clarification_message(*, language: str = "Português") -> str:
+    return _SEARCH_CLARIFICATION_BY_LANGUAGE.get(
+        language, _SEARCH_CLARIFICATION_BY_LANGUAGE["English"]
     )
 
 

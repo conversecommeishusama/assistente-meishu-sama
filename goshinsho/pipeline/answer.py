@@ -42,6 +42,23 @@ def _is_expand_mode(response_mode: str) -> bool:
     return (response_mode or "").lower() in ("expand", "aprofundar", "complemento")
 
 
+_NO_PREVIOUS_ANSWER_BY_LANGUAGE = {
+    "Português": "Não há resposta anterior nesta conversa para aprofundar.",
+    "English": "There is no previous answer in this conversation to expand on.",
+    "Español": "No hay una respuesta anterior en esta conversación para ampliar.",
+    "日本語": "この会話にはさらに詳しく説明できる以前の回答がありません。",
+    "中文": "此对话中没有可供进一步展开的先前回答。",
+    "हिन्दी": "इस बातचीत में विस्तार करने के लिए कोई पिछला उत्तर नहीं है।",
+    "العربية": "لا توجد إجابة سابقة في هذه المحادثة لتوسيعها.",
+    "Français": "Il n'y a pas de réponse précédente dans cette conversation à approfondir.",
+    "বাংলা": "এই কথোপকথনে বিস্তারিত করার জন্য কোনো পূর্ববর্তী উত্তর নেই।",
+    "Русский": "В этом разговоре нет предыдущего ответа, который можно было бы расширить.",
+    "اردو": "اس گفتگو میں تفصیل کے لیے کوئی پہلا جواب موجود نہیں ہے۔",
+    "Indonesia": "Tidak ada jawaban sebelumnya dalam percakapan ini untuk dijelaskan lebih lanjut.",
+    "Deutsch": "Es gibt in diesem Gespräch keine vorherige Antwort, die vertieft werden könnte.",
+}
+
+
 def _last_user_question(history) -> str:
     from ..services.conversation_context import recent_user_questions
 
@@ -319,11 +336,9 @@ def answer(
         retrieval_question = (expand_anchor_question or "").strip() or _last_user_question(history) or question
         if not previous_answer or not retrieval_question.strip():
             effective_language = requested_output_language(question) or language
-            if effective_language.lower().startswith("english"):
-                return "There is no previous answer in this conversation to expand on."
-            if effective_language.lower().startswith("espa"):
-                return "No hay una respuesta anterior en esta conversación para ampliar."
-            return "Não há resposta anterior nesta conversa para aprofundar."
+            return _NO_PREVIOUS_ANSWER_BY_LANGUAGE.get(
+                effective_language, _NO_PREVIOUS_ANSWER_BY_LANGUAGE["English"]
+            )
         effective_question = retrieval_question
         response_mode = "expand"
 

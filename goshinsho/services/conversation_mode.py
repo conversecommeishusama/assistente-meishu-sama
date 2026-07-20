@@ -68,18 +68,32 @@ def is_assistant_identity_question(question: str) -> bool:
     return bool(_ASSISTANT_NAME_QUESTION.search(text) or _GOSHINSHO_MEANING_QUESTION.search(text))
 
 
+_GOSHINSHO_MEANING_BY_LANGUAGE = {
+    "Português": "Escritos Divinos.",
+    "English": "Goshinsho means Divine Writings.",
+    "Español": "Goshinsho significa Escritos Divinos.",
+    "日本語": "Goshinshoとは「御神書（神聖な書）」を意味します。",
+    "中文": "Goshinsho意为“神圣的著作”（御神书）。",
+    "हिन्दी": "Goshinsho का अर्थ है “दिव्य लेखन” (गोशिंशो)。",
+    "العربية": "تعني Goshinsho «الكتابات الإلهية».",
+    "Français": "Goshinsho signifie Écrits Divins.",
+    "বাংলা": "Goshinsho অর্থ “ঐশ্বরিক লেখা”।",
+    "Русский": "Goshinsho означает «Божественные Писания».",
+    "اردو": "Goshinsho کا مطلب ہے “الہی تحریریں”۔",
+    "Indonesia": "Goshinsho berarti “Tulisan Ilahi”.",
+    "Deutsch": "Goshinsho bedeutet Göttliche Schriften.",
+}
+
+
 def assistant_identity_response(question: str, *, language: str = "Português") -> str | None:
     """Resposta fixa para meta-perguntas sobre o assistente — sem busca no acervo."""
     text = (question or "").strip()
     if not text:
         return None
-    lang = (language or "Português").lower()
     if _GOSHINSHO_MEANING_QUESTION.search(text):
-        if lang.startswith("english"):
-            return "Goshinsho means Divine Writings."
-        if lang.startswith("espa"):
-            return "Goshinsho significa Escritos Divinos."
-        return "Escritos Divinos."
+        return _GOSHINSHO_MEANING_BY_LANGUAGE.get(
+            language, _GOSHINSHO_MEANING_BY_LANGUAGE["English"]
+        )
     if _ASSISTANT_NAME_QUESTION.search(text):
         return "Goshinsho."
     return None
