@@ -35,8 +35,6 @@ class Config:
     STRIPE_WEBHOOK_SECRET = _env("STRIPE_WEBHOOK_SECRET")
     SEARCH_ROUTING = (_env("GOSHINSHO_SEARCH_ROUTING") or "hybrid").lower()
     PIPELINE = (_env("GOSHINSHO_PIPELINE") or "v2").lower()
-    # Modo orientação / sacerdócio (pastoral). false = pausado até retomar.
-    ORIENTATION_MODE_ENABLED = _env_bool("GOSHINSHO_ORIENTATION_MODE", default=True)
     # Tutela Johrei Ho Koza (inject + prompt). Desactivada por defeito — testar busca genérica + glossário.
     JOHREI_HO_KOZA_PRIORITY = _env_bool("GOSHINSHO_JOHREI_HO_KOZA", default=False)
     # Termo isolado do glossário → intenção definicional + enriquecimento de busca.

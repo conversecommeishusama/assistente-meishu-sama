@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from ..services.pastoral_mode import build_pastoral_instructions
-
 
 def build_source_manifest(fontes: set[str] | list[str]) -> str:
     """Lista numerada de fontes recuperadas — guia o modelo a citar cada uma."""
@@ -62,6 +60,7 @@ def _base_rules() -> str:
 8. Se os trechos tratam do tema com outras palavras (ex.: linha espiritual / elo espiritual; omamori / amuleto; plantas / flores / ikebana), responda com esse conteúdo — é proibido dizer que "não há menção" só porque falta a palavra exacta da pergunta.
 9. Só diga que não há ensinamento directo sobre o assunto específico quando nenhum trecho fornecido o tratar, nem por sinónimo — nesse caso, aplicam-se as regras 14–15 se houver trechos relacionados.
 10. **IDENTIDADE DO ASSISTENTE**: Se perguntarem o **nome** desta IA ou assistente, responda **Goshinsho**. Se perguntarem o **significado** de Goshinsho, responda **Escritos Divinos** (御神書). Respostas curtas, directas, sem busca no acervo.
+11. **IDIOMA DAS CITAÇÕES**: toda citação ou transcrição literal deve estar no MESMO idioma da resposta (ver instrução de idioma no início do prompt) — nunca em japonês, mesmo que o trecho-fonte recuperado esteja em japonês. Se o trecho-fonte estiver em japonês, apresente uma tradução fiel e literal (não paráfrase) dessa passagem exacta como a "citação" — nunca copie caracteres japoneses (kanji/kana) para dentro da resposta. Excepção única: o usuário pediu explicitamente a resposta em japonês (ou pediu a citação no original japonês) — nesse caso, e só nesse caso, reproduza em japonês.
 """.strip() + "\n\n" + _inference_and_absence_rules()
 
 
@@ -105,6 +104,9 @@ def _deep_mode_block(next_num: int, *, min_citacoes: int, min_fontes: int, fonte
     Mínimo de {min_citacoes} citações **literais** entre aspas, cada uma com **[nome exacto do colchete dos trechos]**.
     Use pelo menos {min_fontes} obras diferentes quando o acervo fornecer ({fontes_txt}).
     Escolha trechos que **sustentem** a síntese — não repita só o que já foi parafraseado palavra por palavra.
+    **Idioma**: mesmo que o trecho recuperado esteja em japonês, a citação deve sair traduzida no idioma da
+    resposta (regra 11) — "literal" significa fiel ao sentido exacto da passagem, não preservar o script
+    japonês. Nunca inclua caracteres japoneses na citação, salvo pedido explícito do usuário nesse sentido.
 
     ### Análise
     Em prosa: ligue cada citação ao ensinamento da síntese; explique o sentido e como os trechos se complementam.
@@ -187,11 +189,9 @@ OBRIGATÓRIO:
 4. Se não houver trecho novo relevante, diga honestamente que os trechos recuperados
    confirmam o já exposto — **sem** reescrever a mesma síntese.
 5. Não use secção "Síntese" nem repita lista de passos já dados.
+6. **Idioma**: citação traduzida no idioma da resposta (regra 11), mesmo que o trecho-fonte esteja em
+   japonês — nunca reproduza caracteres japoneses, salvo pedido explícito do usuário.
 """.strip()
-
-
-def pastoral_instructions(*, follow_up: bool) -> str:
-    return build_pastoral_instructions(follow_up=follow_up) + "\n\n" + continuity_instructions(follow_up=follow_up)
 
 
 def full_article_instructions(title: str, *, follow_up: bool = False) -> str:
@@ -201,6 +201,7 @@ def full_article_instructions(title: str, *, follow_up: bool = False) -> str:
 2. Transcreva fielmente; não resuma.
 3. Separe parágrafos e use subtítulos quando o trecho original tiver seções (#T ou mudança clara de tema).
 4. Se faltar parte, diga explicitamente — não invente.
+5. Idioma: reproduza no idioma da resposta (regra 11) — nunca em japonês, salvo pedido explícito do usuário.
 """.strip()
         + "\n\n"
         + continuity_instructions(follow_up=follow_up)

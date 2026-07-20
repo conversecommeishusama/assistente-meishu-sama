@@ -7,7 +7,6 @@ import re
 from .conversation_mode import (
     MODE_ENSINAMENTO,
     MODE_GENERAL,
-    MODE_PASTORAL,
     is_thematic_continuation,
     resolve_conversation_mode,
 )
@@ -210,12 +209,11 @@ def build_conversation_search_context(history, question: str) -> dict:
     cited_sources = list(dict.fromkeys(cited_sources))[:8]
 
     active_topic = None
-    if mode_ctx["mode"] in {MODE_GENERAL, MODE_PASTORAL}:
+    if mode_ctx["mode"] == MODE_GENERAL:
         active_topic = detect_active_topic(history, question, thread_questions=thread)
 
     return {
         "mode": mode_ctx["mode"],
-        "pastoral": mode_ctx.get("pastoral", False),
         "search_question": mode_ctx.get("search_question", question),
         "previous_questions": thread,
         "assistant_answers": assistant_answers,
@@ -242,21 +240,10 @@ def build_search_question(question: str, history, is_ohikari: bool = False) -> s
         for index, prev in enumerate(ctx["previous_questions"][-4:], start=1):
             parts.append(f"- Pergunta anterior {index}: {prev}")
 
-    if ctx["mode"] == MODE_PASTORAL:
-        parts.append(
-            "- Modo orientação/sacerdócio: o membro compartilha situação pessoal. "
-            "Busque ensinamentos acolhedores e práticos sobre o tema."
-        )
-
     if ctx["mode"] == MODE_ENSINAMENTO and ctx.get("active_article"):
         article = ctx["active_article"]
         parts.append(f"- Ensinamento ativo (artigo): {article['title']}")
         parts.append(f"- ARTIGO_ID: {article['id']}")
-        if ctx.get("pastoral"):
-            parts.append(
-                "- O membro também compartilha aspecto pessoal; mantenha tom pastoral "
-                "dentro do ensinamento em foco."
-            )
         if ctx.get("wants_cross_source") or ctx.get("ensinamento_continuation"):
             parts.append(
                 "- Modo ensinamento: priorizar trechos deste artigo; incluir busca "
@@ -268,7 +255,7 @@ def build_search_question(question: str, history, is_ohikari: bool = False) -> s
                 "não misturar com outros ensinamentos ou coletâneas."
             )
 
-    if ctx.get("active_topic") and ctx["mode"] in {MODE_GENERAL, MODE_PASTORAL}:
+    if ctx.get("active_topic") and ctx["mode"] == MODE_GENERAL:
         topic = ctx["active_topic"]
         parts.append(f"- Assunto recorrente na conversa: {topic['label']}")
 
@@ -280,8 +267,6 @@ def build_search_question(question: str, history, is_ohikari: bool = False) -> s
     if ctx["continuation"] or ctx.get("active_topic") or ctx["mode"] == MODE_ENSINAMENTO:
         if ctx["mode"] == MODE_ENSINAMENTO:
             mode_hint = "Modo ensinamento ativo: priorize o artigo indicado. "
-        elif ctx["mode"] == MODE_PASTORAL:
-            mode_hint = "Modo orientação pastoral: busque no corpus todo com foco no acolhimento. "
         else:
             mode_hint = "Conversa temática geral: busque no corpus todo, sem restringir a um único ensinamento. "
         parts.append(

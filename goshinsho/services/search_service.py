@@ -911,10 +911,9 @@ def try_buscar_escopo_artigo(
     )
     primary_metas = tag_search_tier(primary_metas, "ensinamento_foco")
 
-    from .pastoral_mode import detect_pastoral_mode
-
     content_q = build_article_content_query(pergunta, article) or pergunta_usuario
-    pastoral = detect_pastoral_mode(pergunta_usuario)
+    # 2026-07-20: modo pastoral eliminado a pedido do usuário -- sempre False.
+    pastoral = False
 
     if not allow_supplementary:
         return rank_chunks_for_query(
@@ -2006,9 +2005,8 @@ def buscar_trechos_sem_tutelas(
     chunks_jp, metadados_jp, indice_jp, modelo_jp, bm25_jp, indice_termos_raros_jp = carregar_indices_jp()
     chunks_pt, metadados_pt, indice_pt, modelo_pt = carregar_indices_pt()
 
-    from .pastoral_mode import detect_pastoral_mode
-
-    pastoral_busca = detect_pastoral_mode(pergunta_usuario)
+    # 2026-07-20: modo pastoral eliminado a pedido do usuário -- sempre False.
+    pastoral_busca = False
 
     def _ret(chunks, metas, *, rerank: bool = True):
         if exclude_artigo_id:
@@ -2159,9 +2157,8 @@ def buscar_trechos_sem_tutelas_com_glossario(
     chunks_jp, metadados_jp, indice_jp, modelo_jp, bm25_jp, indice_termos_raros_jp = carregar_indices_jp()
     chunks_pt, metadados_pt, indice_pt, modelo_pt = carregar_indices_pt()
 
-    from .pastoral_mode import detect_pastoral_mode
-
-    pastoral_busca = detect_pastoral_mode(pergunta_usuario)
+    # 2026-07-20: modo pastoral eliminado a pedido do usuário -- sempre False.
+    pastoral_busca = False
     weighted_terms = weighted_terms_for_search(pergunta_normalizada, pastoral=pastoral_busca)
     phrase_anchors = frases_ancora_literal(pergunta_normalizada, weighted_terms)
 
@@ -2343,9 +2340,8 @@ def buscar_trechos(
     chunks_jp, metadados_jp, indice_jp, modelo_jp, bm25_jp, indice_termos_raros_jp = carregar_indices_jp()
     chunks_pt, metadados_pt, indice_pt, modelo_pt = carregar_indices_pt()
 
-    from .pastoral_mode import detect_pastoral_mode
-
-    pastoral_busca = detect_pastoral_mode(pergunta_usuario)
+    # 2026-07-20: modo pastoral eliminado a pedido do usuário -- sempre False.
+    pastoral_busca = False
 
     def _ret(chunks, metas, *, rerank: bool = True):
         if exclude_artigo_id:

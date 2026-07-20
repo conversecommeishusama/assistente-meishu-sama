@@ -18,7 +18,6 @@ from ..services.conversation_mode import (
     is_thematic_continuation,
 )
 from ..services.glossary_intent import definitional_enrichment_query
-from ..services.pastoral_mode import detect_pastoral_mode
 from ..services.teaching_article_service import wants_full_article_text, find_best_article
 
 
@@ -28,6 +27,13 @@ class PipelineState:
     history: list
     language: str
     response_mode: str
+    # 2026-07-20: modo pastoral (orientação/sacerdócio) eliminado a pedido
+    # do usuário -- sempre False. Campo mantido (em vez de removido) porque
+    # ainda é lido, sempre com default False, por várias funções de
+    # ranking/busca (ver pipeline/retrieve.py, pipeline/rank.py,
+    # pipeline/jp_scoring.py, services/search_ranking.py etc.) -- remover o
+    # campo exigiria tocar todas elas; manter sempre False é equivalente em
+    # comportamento e muito mais seguro.
     pastoral: bool
     full_article: bool
     search_query: str
@@ -68,7 +74,7 @@ def build_state(
 ) -> PipelineState:
     history = history or []
     question = (question or "").strip()
-    pastoral = detect_pastoral_mode(question, history)
+    pastoral = False
     full_article = wants_full_article_text(question)
     topic_anchor = infer_conversation_anchor(history, question, pastoral=pastoral)
     search_query = build_thread_search_query(question, history, pastoral=pastoral)

@@ -20,15 +20,7 @@ from .search_service import (
     buscar_trechos_por_obra,
     extract_work_title_queries,
 )
-from .conversation_mode import MODE_ENSINAMENTO, MODE_PASTORAL
-from .pastoral_mode import (
-    build_broader_comprehension_instructions,
-    build_pastoral_instructions,
-    build_pastoral_opening_retry_instructions,
-    response_lacks_pastoral_opening,
-    user_requests_literal_search,
-    user_wants_broader_comprehension,
-)
+from .conversation_mode import MODE_ENSINAMENTO
 from .search_ranking import (
     assess_retrieval_quality,
     build_chunk_usage_instructions,
@@ -40,6 +32,50 @@ from .teaching_article_service import extract_content_question, wants_full_artic
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+# 2026-07-20: movidas de pastoral_mode.py (removido a pedido do usuário —
+# ver detect_pastoral_mode/build_pastoral_instructions) por serem recursos
+# independentes do modo pastoral, sem relação com tom/acolhimento.
+_LITERAL_SEARCH_RE = re.compile(
+    r"\b(?:"
+    r"(?:pesquisa|busca|procur[ae])\s+literal|"
+    r"ampliar.*(?:pesquisa|busca)\s+literal|"
+    r"(?:pesquisa|busca)\s+literal"
+    r")\b",
+    flags=re.IGNORECASE,
+)
+
+_BROADER_COMPREHENSION_RE = re.compile(
+    r"\b("
+    r"preso nos mesmos|mesmos ensinamentos|sempre os mesmos|"
+    r"ampliar (?:minha )?compreens|n[aã]o est[aá] me ajudando|"
+    r"n[aã]o me ajuda|repetindo|repete|j[aá] citou|"
+    r"outros ensinamentos|outra perspectiva|mais profund|"
+    r"vis[aã]o mais ampla|enriquecer| divers"
+    r")\b",
+    flags=re.IGNORECASE,
+)
+
+
+def user_requests_literal_search(question: str) -> bool:
+    return bool(_LITERAL_SEARCH_RE.search(question or ""))
+
+
+def user_wants_broader_comprehension(question: str) -> bool:
+    return bool(_BROADER_COMPREHENSION_RE.search(question or ""))
+
+
+def build_broader_comprehension_instructions(question: str) -> str:
+    return f"""
+O membro expressou frustração: sente que a conversa repetiu os mesmos ensinamentos
+(«{question.strip()[:160]}»).
+
+OBRIGATÓRIO:
+1. Reconheça a frustração com humildade — não se defenda de forma fria.
+2. Use trechos NOVOS desta busca, de fontes diferentes das já citadas na conversa.
+3. Ampliar a compreensão com base nos trechos recuperados — não repita citações já usadas.
+4. Não invente trechos; se os novos trechos forem limitados, diga isso honestamente.
+""".strip()
 
 LANGUAGE_ALIASES = {
     "Português": ["português", "portugues", "pt-br", "brasileiro"],
@@ -371,9 +407,6 @@ def build_special_instructions(question, history=None, metadados=None, conv_ctx=
     history = history or []
     ctx = conv_ctx or build_conversation_search_context(history, question)
     blocks = []
-    if ctx.get("pastoral") or ctx.get("mode") == MODE_PASTORAL:
-        follow_up = bool(ctx.get("continuation") or ctx.get("previous_questions"))
-        blocks.append(f"\n{build_pastoral_instructions(follow_up=follow_up)}")
     if user_wants_broader_comprehension(question):
         blocks.append(f"\n{build_broader_comprehension_instructions(question)}")
     has_supplementary = any(meta.get("search_tier") == "complementar" for meta in (metadados or []))
@@ -416,7 +449,7 @@ def build_special_instructions(question, history=None, metadados=None, conv_ctx=
                 "Se houver passagem equivalente, cite-a entre aspas e explique a correspondência de termos. "
                 "Não negue o tema apenas porque a frase exata do usuário não aparece literalmente no trecho."
             )
-    if not ctx.get("article_scope") and ctx.get("mode") != MODE_ENSINAMENTO and not ctx.get("pastoral"):
+    if not ctx.get("article_scope") and ctx.get("mode") != MODE_ENSINAMENTO:
         blocks.append(
             "\nConversa temática geral — NÃO há ensinamento em foco. "
             "Responda com os trechos mais pertinentes ao tema em qualquer obra de Meishu-Sama. "
@@ -587,7 +620,6 @@ def answer_question(question, history=None, language="Português", response_mode
     dedup_context = assistant_context or previous_answer
 
     conv_ctx = build_conversation_search_context(history, question)
-    pastoral_mode = conv_ctx.get("pastoral") or conv_ctx.get("mode") == MODE_PASTORAL
     wants_broader = user_wants_broader_comprehension(question)
     search_question = build_search_question(
         conv_ctx.get("search_question") or question, history
@@ -620,14 +652,12 @@ def answer_question(question, history=None, language="Português", response_mode
     quality = assess_retrieval_quality(
         content_for_search,
         trechos,
-        pastoral=pastoral_mode,
         enriched_question=content_for_search,
     )
     if quality["needs_retry"]:
         expanded_query = expand_query_for_retry(
             content_for_search,
-            pastoral=pastoral_mode,
-            conv_ctx=conv_ctx,
+                conv_ctx=conv_ctx,
         )
         retry_search_question = build_search_question(expanded_query, history)
         retry_chunks, retry_metas = active_search(
@@ -639,14 +669,12 @@ def answer_question(question, history=None, language="Português", response_mode
             retry_chunks,
             retry_metas,
             content_query=content_for_search,
-            pastoral=pastoral_mode,
-        )
+            )
 
     chunk_usage = build_chunk_usage_instructions(
         content_for_search,
         trechos,
         metadados,
-        pastoral=pastoral_mode,
     )
     instrucao_especial = build_special_instructions(
         question_normalizada, history, metadados=metadados, conv_ctx=conv_ctx
@@ -678,29 +706,6 @@ def answer_question(question, history=None, language="Português", response_mode
 """.strip()
         response_label = "TEXTO COMPLETO"
         max_tokens = 4000
-    elif pastoral_mode and is_direct_response:
-        response_instructions = """
-1. **ORIENTAÇÃO PASTORAL**: Responda em 3 a 5 parágrafos naturais e acolhedores.
-2. **OBRIGATÓRIO**: As primeiras 2–4 frases acolhem a dor — ANTES de citar Meishu-Sama.
-3. PROIBIDO abrir com "Não, não é...", "Meishu-Sama ensina/aborda/fala" ou citar fontes no primeiro período.
-4. Responda SOMENTE ao que foi perguntado nesta mensagem; ignore trechos recuperados sobre outros temas.
-5. Não cite donativo/oferta/dízimo se o membro não mencionou nesta mensagem.
-6. Depois do acolhimento, integre ensinamentos pertinentes com tom de esperança.
-""".strip()
-        response_label = "ORIENTAÇÃO"
-        max_tokens = 1400
-    elif pastoral_mode:
-        response_instructions = f"""
-1. **ORIENTAÇÃO PASTORAL APROFUNDADA**: Comece com 2–4 frases de acolhimento empático.
-2. PROIBIDO abrir com "Não, não é...", "Meishu-Sama ensina/aborda/fala" — acolha a pessoa primeiro.
-3. Responda SOMENTE ao que foi perguntado nesta mensagem; ignore trechos sobre temas não perguntados.
-4. Não cite donativo/oferta/dízimo se o membro não mencionou nesta mensagem.
-5. Depois integre ensinamentos pertinentes de: {", ".join(list(fontes_unicas)[:8])} com tom caloroso.
-6. Cite trechos entre aspas; ligue cada citação ao sentimento do membro.
-7. NÃO INVENTE citações.
-""".strip()
-        response_label = "ORIENTAÇÃO APROFUNDADA"
-        max_tokens = 2400
     elif is_direct_response:
         response_instructions = """
 1. **RESPOSTA DIRETA**: Responda em um único parágrafo natural, curto e conclusivo.
@@ -752,36 +757,16 @@ def answer_question(question, history=None, language="Português", response_mode
 
     answer = _generate_answer(prompt, max_tokens)
 
-    if pastoral_mode and response_lacks_pastoral_opening(answer):
-        pastoral_retry = build_pastoral_opening_retry_instructions(question)
-        retry_prompt = _build_answer_prompt(
-            effective_language=effective_language,
-            question_normalizada=question_normalizada,
-            instrucao_medalha=instrucao_medalha,
-            instrucao_ohikari=instrucao_ohikari,
-            instrucao_especial=instrucao_especial + "\n\n" + pastoral_retry,
-            contexto=contexto,
-            history_text=history_text,
-            conv_ctx=conv_ctx,
-            previous_question=previous_question,
-            question=question,
-            response_instructions=response_instructions,
-            response_label=response_label,
-        )
-        answer = _generate_answer(retry_prompt, max_tokens)
-
     if response_denies_with_evidence(
         answer,
         content_for_search,
         trechos,
-        pastoral=pastoral_mode,
     ):
         guardrail = build_guardrail_retry_instructions(
             content_for_search,
             trechos,
             metadados,
-            pastoral=pastoral_mode,
-        )
+            )
         retry_prompt = _build_answer_prompt(
             effective_language=effective_language,
             question_normalizada=question_normalizada,

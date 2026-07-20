@@ -1,4 +1,4 @@
-"""Orquestrador de modo de conversa: geral, ensinamento em foco, orientação pastoral."""
+"""Orquestrador de modo de conversa: geral, ensinamento em foco."""
 
 from __future__ import annotations
 
@@ -21,7 +21,6 @@ from .teaching_article_service import (
 
 MODE_GENERAL = "general"
 MODE_ENSINAMENTO = "ensinamento_foco"
-MODE_PASTORAL = "pastoral"
 
 _DEFINITIONAL_QUESTION = re.compile(
     r"(?is)^\s*(?:"
@@ -226,7 +225,7 @@ def _tokens_since_article_scope(history, article_id: str) -> set[str]:
     return tokens
 
 
-def _resolve_ensinamento_mode(question: str, history, pastoral: bool) -> dict | None:
+def _resolve_ensinamento_mode(question: str, history) -> dict | None:
     explicit_article = find_explicit_article_in_question(question)
     if explicit_article:
         previous_article = find_last_scoped_article_in_history(history, current_question=question)
@@ -237,7 +236,6 @@ def _resolve_ensinamento_mode(question: str, history, pastoral: bool) -> dict | 
             "article_switched": bool(
                 previous_article and previous_article["id"] != explicit_article["id"]
             ),
-            "pastoral": pastoral,
         }
 
     if is_ensinamento_continuation(question):
@@ -248,7 +246,6 @@ def _resolve_ensinamento_mode(question: str, history, pastoral: bool) -> dict | 
                 "active_article": last_article,
                 "article_scope": True,
                 "article_switched": False,
-                "pastoral": pastoral,
             }
 
     if detect_topic_shift(question, history):
@@ -267,16 +264,14 @@ def _resolve_ensinamento_mode(question: str, history, pastoral: bool) -> dict | 
             "active_article": last_article,
             "article_scope": True,
             "article_switched": False,
-            "pastoral": pastoral,
         }
     return None
 
 
 def resolve_conversation_mode(question: str, history=None) -> dict:
-    """Ponto único de decisão: pastoral > ensinamento explícito > geral."""
+    """Ponto único de decisão: ensinamento explícito > geral."""
     history = history or []
     question = (question or "").strip()
-    pastoral = detect_pastoral_mode(question, history)
 
     result = {
         "mode": MODE_GENERAL,
@@ -284,7 +279,6 @@ def resolve_conversation_mode(question: str, history=None) -> dict:
         "article_scope": False,
         "article_switched": False,
         "topic_shift": False,
-        "pastoral": pastoral,
         "continuation": is_thematic_continuation(question),
         "ensinamento_continuation": is_ensinamento_continuation(question),
         "wants_cross_source": wants_cross_source_search(question),
@@ -294,16 +288,12 @@ def resolve_conversation_mode(question: str, history=None) -> dict:
 
     if user_rejects_article_scope(question):
         result["topic_shift"] = True
-        result["mode"] = MODE_PASTORAL if pastoral else MODE_GENERAL
+        result["mode"] = MODE_GENERAL
         return result
 
-    ensinamento = _resolve_ensinamento_mode(question, history, pastoral)
+    ensinamento = _resolve_ensinamento_mode(question, history)
     if ensinamento:
         result.update(ensinamento)
-        return result
-
-    if pastoral:
-        result["mode"] = MODE_PASTORAL
         return result
 
     if detect_topic_shift(question, history):

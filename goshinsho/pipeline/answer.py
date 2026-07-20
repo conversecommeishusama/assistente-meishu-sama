@@ -33,7 +33,7 @@ from ..services.retrieval_fallback import augment_with_legacy_fallback, needs_le
 from ..services.search_ranking import build_chunk_usage_instructions, expand_query_for_retry
 from .context import build_context
 from .format import strip_academic_opening
-from .prompts import build_source_manifest, doctrinal_instructions, full_article_instructions, pastoral_instructions
+from .prompts import build_source_manifest, doctrinal_instructions, full_article_instructions
 from .retrieve import LLM_MAX_DEEP, LLM_MAX_DIRECT, retrieve
 from .scoring import content_score
 from .state import build_state
@@ -123,10 +123,6 @@ def generate_from_retrieval(
         )
         label = "TEXTO COMPLETO"
         max_tokens = 6000
-    elif state.pastoral:
-        response_instructions = pastoral_instructions(follow_up=follow_up)
-        label = "ORIENTAÇÃO"
-        max_tokens = 1400 if not deep else 2000
     elif expand:
         response_instructions = doctrinal_instructions(
             direct=False,
