@@ -17,7 +17,6 @@ from ..services.conversation_context import (
     format_recent_dialogue_block,
     recent_user_questions,
 )
-from ..config import Config
 from ..services.conversation_mode import (
     assistant_identity_response,
     is_definitional_question,
@@ -59,10 +58,6 @@ def _last_assistant_answer(history) -> str:
 
 def _is_deep_mode(response_mode: str) -> bool:
     return (response_mode or "").lower() in ("deep", "aprofundada")
-
-
-def _is_research_mode(response_mode: str) -> bool:
-    return (response_mode or "").lower() in ("research", "pesquisa", "pesquisa_profunda")
 
 
 def generate_from_retrieval(
@@ -139,10 +134,8 @@ def generate_from_retrieval(
             definitional_question=is_definitional_question(state.question),
             follow_up=follow_up,
         )
-        label = "PESQUISA PROFUNDA" if usage_label == "answer_generation_research" else (
-            "RESPOSTA APROFUNDADA" if deep else "RESPOSTA"
-        )
-        max_tokens = 4500 if usage_label == "answer_generation_research" else (4000 if deep else 4000)
+        label = "RESPOSTA APROFUNDADA" if deep else "RESPOSTA"
+        max_tokens = 4000
 
     history_lines = []
     for q in recent_user_questions(history or [], limit=3, current_question=question):
@@ -178,16 +171,7 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
 {snippet}…
 """
 
-    research_note = ""
-    if usage_label == "answer_generation_research":
-        research_note = """
-### MODO PESQUISA PROFUNDA
-Os trechos abaixo vêm de **várias buscas** no acervo (PT e, se aplicável, JP).
-Integre as fontes de forma coerente; cite obras quando relevante.
-"""
-
     final_user_prompt = f"""
-{research_note}
 ### NOVA BUSCA NESTE TURNO — TRECHOS RECUPERADOS PARA A PERGUNTA ACTUAL:
 {contexto}
 {expand_block}
@@ -300,29 +284,11 @@ def answer(
     expand_anchor_question: str = "",
     expand_anchor_answer: str = "",
     on_japanese_fallback=None,
-    on_status=None,
     base_pool_fn=None,
 ) -> str:
     expand = expand_previous or _is_expand_mode(response_mode)
     effective_question = question
     previous_answer = ""
-
-    if (
-        Config.RESEARCH_MODE
-        and _is_research_mode(response_mode)
-        and not expand
-        and not expand_previous
-    ):
-        from ..agent.research import research_answer
-
-        return research_answer(
-            question,
-            history,
-            language=language,
-            on_status=on_status,
-            on_japanese_fallback=on_japanese_fallback,
-            base_pool_fn=base_pool_fn,
-        )
 
     if expand:
         previous_answer = (expand_anchor_answer or "").strip() or _last_assistant_answer(history)

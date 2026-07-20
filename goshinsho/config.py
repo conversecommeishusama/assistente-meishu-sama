@@ -44,11 +44,6 @@ class Config:
     SOURCE_HIERARCHY_WRITTEN_FIRST = _env_bool("GOSHINSHO_SOURCE_HIERARCHY", default=False)
     # Se o v2 não cobre a pergunta, segunda busca com motor legacy sem tutelas.
     LEGACY_MOTOR_FALLBACK = _env_bool("GOSHINSHO_LEGACY_MOTOR_FALLBACK", default=True)
-    # Modo Pesquisa Profunda (Tier 2 opt-in): multi-busca + síntese.
-    RESEARCH_MODE = _env_bool("GOSHINSHO_RESEARCH_MODE", default=True)
-    RESEARCH_MAX_SUB_QUERIES = int(_env("GOSHINSHO_RESEARCH_MAX_SUB_QUERIES") or 4)
-    RESEARCH_CHUNKS_PER_QUERY = int(_env("GOSHINSHO_RESEARCH_CHUNKS_PER_QUERY") or 8)
-    RESEARCH_MAX_MERGED_CHUNKS = int(_env("GOSHINSHO_RESEARCH_MAX_MERGED_CHUNKS") or 20)
     AWS_REGION = _env("AWS_REGION") or "us-east-1"
     AWS_ACCESS_KEY_ID = _env("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = _env("AWS_SECRET_ACCESS_KEY")

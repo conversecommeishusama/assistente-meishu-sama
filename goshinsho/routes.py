@@ -886,20 +886,13 @@ def api_chat():
         else:
             base_pool_fn = None
         retrieval_suffix = "_" + retrieval_mode if retrieval_mode in ("jp_direct", "pt_direct") else ""
-        search_variant = (
-            f"pipeline_v2_research{retrieval_suffix}"
-            if (response_mode or "").lower() in ("research", "pesquisa", "pesquisa_profunda")
-            else f"pipeline_v2{retrieval_suffix}"
-        )
+        search_variant = f"pipeline_v2{retrieval_suffix}"
         event_queue: queue.Queue = queue.Queue()
         result_holder: dict = {}
         error_holder: dict = {}
 
         def notify_japanese_fallback() -> None:
             event_queue.put({"event": "status", "code": "checking_japanese"})
-
-        def notify_status(code: str, **kwargs) -> None:
-            event_queue.put({"event": "status", "code": code, **kwargs})
 
         @copy_current_request_context
         def worker() -> None:
@@ -917,7 +910,6 @@ def api_chat():
                     expand_anchor_question=expand_anchor_question,
                     expand_anchor_answer=expand_anchor_answer,
                     on_japanese_fallback=notify_japanese_fallback,
-                    on_status=notify_status,
                     base_pool_fn=base_pool_fn,
                 )
             except Exception as exc:
