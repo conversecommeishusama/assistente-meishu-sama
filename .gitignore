@@ -39,3 +39,8 @@ static/downloads/*.apk
 logo.before-*.png
 logo.original.png
 
+# Material de referência com direitos autorais de terceiros (IMMB) -- nunca
+# commitar, só para consulta local durante análise de corpus/glossário.
+referencia_manuais/
+referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/
+

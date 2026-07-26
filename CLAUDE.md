@@ -1655,14 +1655,17 @@ depois dos fixes acima:
   `reports/resultado_dialogo_topico_fora.json` — ambos fora do git, como
   o resto de `reports/`).
 
-### Onde continuar (prioridade sobre leituras anteriores deste documento)
+### Onde continuar (prioridade sobre leituras anteriores deste documento —
+### ver seção "Sessão 2026-07-26 (continuação)" abaixo, mais recente)
 
 1. **Backup externo (`backup_to_b2.sh`) ainda não agendado** — só rodou
    manualmente uma vez em 20/07, continua sendo o item mais urgente do
    plano de escala.
 2. **Glossário de tradução (Ohikari, Gorokushiti/五六七, cruzamento com
    manuais de liturgia/sorei-saishi)** — combinado explicitamente com o
-   usuário: só depois que a revisão editorial fechar (hoje ~96%).
+   usuário: só depois que a revisão editorial fechar. Ver seção seguinte
+   para o estado atual (falta 1 item) e o plano de execução automática já
+   preparado.
 3. **Wiring dos periódicos no índice de busca** — fica para a mesma
    reconstrução pós-revisão-editorial (achado nesta sessão via o caso das
    "três calamidades").
@@ -1674,3 +1677,129 @@ depois dos fixes acima:
    fechamento da sessão, se o usuário quiser algo mais durável).
 6. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário.
+
+## Sessão 2026-07-26 (Claude Code, continuação) — estudo litúrgico
+## aprofundado, confirmação do fallback DeepSeek, revisão editorial a 1
+## item de fechar (executor reiniciado), preparo do gatilho automático
+## de glossário
+
+### 1. Estudo litúrgico (manuais × corpus) aprofundado — 19 pontos
+
+A pedido do usuário ("gostaria de confirmar... o estudo ficou muito
+superficial"), aprofundei a análise cruzada dos dois manuais litúrgicos
+(`Manual do Sorei Saishi 2023`, `Manual Litúrgico`) contra o corpus,
+cobrindo os pontos que faltavam: oferendas (oniku, tamagushi de pinheiro,
+makoto/donativo), Culto às Almas dos Antepassados (mecanismo do Obon),
+liturgia diária (origem prática da Zengen Sanji — Meishu-Sama explica tê-la
+comprimido para caber em 5 minutos), Imagens da Luz Divina (caligrafia como
+corpo divino), o escalonamento numérico de Maitokasai/Nensai, e Mitamaya.
+Documento fonte: `referencia_manuais/ESTUDO_INICIAL_CONCEITOS_VS_CORPUS.md`
+(19 pontos, cada um com trecho real do corpus + análise de alinhamento).
+**Este arquivo e toda a pasta `referencia_manuais/` (PDFs com direitos
+autorais da IMMB) foram adicionados ao `.gitignore` nesta sessão** — nunca
+devem ir para o git, mesmo o `.md` de análise (cita trechos do manual
+protegido). Dashboard publicado (mesma URL reaproveitada,
+`https://claude.ai/code/artifact/0357ca0f-f090-4f41-962d-19f3db94d6ac`,
+favicon 📜): 8 alinhados, 9 diverge-só-no-nome/parcial, 1 diverge no
+conteúdo (feto "forma humana" aos 3 meses no manual vs. 5 meses em 2 livros
+do corpus — achado real, não resolvido), 1 pendente (Maitokasai/Nensai:
+conceito de base confirmado, mas o escalonamento numérico fino — 10/20/30/
+40/50 dias, depois anos crescentes — não foi localizado como prescrição
+direta de Meishu-Sama, provável sistematização administrativa posterior,
+mesmo padrão dos nomes de ofício já catalogado). Pendências residuais de
+menor prioridade continuam as mesmas (matsuri isolado, "75 sons", etimologia
+dragão→surdez, frase exata sobre concepção).
+
+### 2. Fallback de termos via DeepSeek — confirmado ativo em produção
+
+Usuário pediu confirmação de que o fallback (criado na sessão anterior,
+commit `d4c0e8a`) está realmente rodando. Verificado ponta a ponta: `Config.
+LLM_TERM_FALLBACK` com `default=True` sem override; `answer.py` importa e
+chama `suggest_search_terms`; e — mais importante — o **timing do deploy**
+confirma que o gunicorn de produção (`--preload`, subiu às 03:09:54) já
+carregou essa versão do código, porque os arquivos relevantes tinham mtime
+até 03:05:21, antes do restart (o commit em si foi feito às 03:22, depois
+do restart, mas isso não importa — o que importa é a ordem
+mtime-do-arquivo vs. `ActiveEnterTimestamp` do serviço, que confirma
+código novo já rodando). Chamada real à função (fora do pipeline) executou
+sem exceção. **Ativo nos dois modos** (`pt_direct` e `jp_direct`), já que o
+gatilho fica em `answer.py`, compartilhado pelos dois.
+
+### 3. Revisão editorial — a 1 item de fechar, executor estava parado,
+### reiniciado nesta sessão
+
+Checagem de todas as filas relevantes (livros shard A/B + periódicos
+Fase G shard A/B + auditorias externas + 6 filas de cross-reference de
+periódico): **tudo em 0 pendente, exceto `REVISAO_EDITORIAL_QUEUE.json`
+(livros, shard A), que tem exatamente 1 item pendente — `Tijotengoku.txt`,
+tipo "periodico"**, reaberto às 2026-07-26T00:55:47Z (backup
+`REVISAO_EDITORIAL_AUDITORIA_EXTERNA_REABERTURAS.json.bak_pre_reopen_
+tijotengoku_...`). Confirma literalmente o que o usuário disse ("falta
+apenas um periódico"). **Achado**: a sessão tmux do executor shard A
+(`revisao_editorial_executor_a`) não existia mais — só a do auditor
+continuava rodando, mesmo padrão de trava já catalogado em
+`[[project_revisao_editorial_self_reference_stall]]` e
+`[[project_revisao_editorial_executor_ignora_reabertura]]`. **Reiniciada
+nesta sessão** via `scripts/run_revisao_editorial_executor_a_loop.sh` em
+nova sessão tmux — não fiz mais nada além de reiniciar o loop (não editei
+o conteúdo do Tijotengoku manualmente).
+
+### 4. Preparo do gatilho automático de glossário pós-revisão-editorial
+
+Pedido do usuário: quando a revisão editorial fechar 100% (só falta o
+item acima), rodar **automaticamente, sem pedir autorização antes**, uma
+verificação dos itens de glossário pendentes em `PENDENCIAS_REVISAO.json`
+contra o que já foi decidido, resolvendo/excluindo o que eu mesmo puder
+decidir com segurança, deixando só os pontos de dúvida real para o
+usuário — e usar as decisões de sessões anteriores (14/07 principalmente)
+para não repetir pergunta sobre algo já resolvido.
+
+**Levantamento feito nesta sessão** (não a execução final, só o preparo):
+`PENDENCIAS_REVISAO.json` tem 794 itens no total; filtrando por estado
+contendo "glossario"/"terminologia"/"nomenclatura"/"convencao", **122 itens**
+tratam de decisão de glossário/terminologia. Cruzando alguns termos-chave
+contra `glossario_traducao.json` **hoje** (2026-07-26), confirmei que pelo
+menos estes já têm forma canônica decidida (sessão de 14/07 e depois) mas
+**ainda aparecem como pendência em arquivos específicos que nunca foram
+corrigidos para bater com a decisão**:
+`日蓮`→Nichiren, `盤古`→Banko, `産土神`→Ubusunagami (Deus da Terra Natal),
+`御額`→caligrafia, `艮の金神`→Ushitora no Konjin (Deus Dourado do Nordeste),
+`マッソン`→Masson / `フリーメーソン`→Maçonaria, `千手観音様`→Kannon de Mil Braços,
+`大教会`/`中教会`/`分教会`→Igreja Grande/Média/Filial, `御守`/`御守り`→Ohikari,
+`五六七`→Miroku, `天照大神`→Amaterasu Ōmikami (com mácron), celadom→celadon
+(erro de digitação). Isso é **exatamente** a classe de repetição que o
+usuário quer evitar — a decisão já existe, só falta aplicar mecanicamente
+ao trecho do arquivo sinalizado. Os itens restantes dos 122 (romanizações
+sem entrada de glossário ainda, convenções de série como "Curso de Johrei"
+vs. "Método do Johrei", pares 経/緯 em contextos que NÃO são o caso já
+esclarecido de `御垂示録12号`, etc.) são candidatos reais a decisão nova —
+alguns claros o suficiente pra decidir sozinho (grafia dominante ≥80% no
+acervo, furigana inequívoca), outros genuinamente ambíguos.
+
+**Plano registrado (memória `project_glossario_pendencias_auto_pass_prep`)**
+para quando o gatilho disparar: re-extrair os itens de glossário/
+terminologia de `PENDENCIAS_REVISAO.json` (a lista pode mudar até lá),
+aplicar diretamente os que baterem com decisão já feita em
+`glossario_traducao.json`, decidir sozinho os que tiverem evidência clara
+e inequívoca (mesmo critério que o usuário já deu em 14/07: "termos
+relacionados a igreja, quando tiver certeza"), e **preparar uma lista curta
+só com os pontos genuinamente incertos** para a avaliação do usuário —
+nunca reabrir os já decididos.
+
+### Onde continuar (prioridade máxima — mais recente)
+
+1. **Não fazer check-in sobre a revisão editorial** — o executor do
+   shard A foi reiniciado, deixar rodar. Só agir de novo se travar outra
+   vez ou quando as 4 filas relevantes (livros A/B + auditorias A/B)
+   chegarem a 0 pendente.
+2. **Quando isso acontecer, executar automaticamente (sem perguntar) o
+   plano da seção 4 acima** — ler a memória
+   `project_glossario_pendencias_auto_pass_prep` para o levantamento já
+   feito, não repetir decisões já tomadas (14/07 e depois), e só trazer ao
+   usuário os pontos genuinamente incertos.
+3. Estudo litúrgico (seção 1) está entregue e salvo — só retomar se o
+   usuário pedir (matsuri, "75 sons", etimologia dragão, frase da
+   concepção continuam pendentes, baixa prioridade).
+4. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário; glossário de tradução novo só decidido com
+   segurança nos casos claros, resto pro usuário.
