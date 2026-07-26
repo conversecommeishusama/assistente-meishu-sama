@@ -1803,3 +1803,59 @@ nunca reabrir os já decididos.
 4. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário; glossário de tradução novo só decidido com
    segurança nos casos claros, resto pro usuário.
+
+## Atualização 2026-07-26 (mesma sessão, mais tarde) — revisão editorial
+## fechou de verdade; erro real cometido e corrigido no meio do caminho
+
+**A passada automática de glossário da seção anterior foi executada**: dos
+122 itens de glossário/terminologia pendentes, 15 já estavam corretos no
+texto (correções de sessões anteriores nunca fechadas no
+`PENDENCIAS_REVISAO.json`, agora marcadas `resolvido_verificado_2026-07-26`)
+e 2 eram erro factual real (狸/tanuki traduzido como "texugo" — espécie
+errada — em `19490423-御光話録6号.txt` e `19520825-御垂示録12号.txt`,
+corrigido). Os ~105 itens restantes ficaram categorizados por tema
+(convenção de série 浄霊法講座, formato de citação de ano Showa,
+romanizações sem entrada de glossário, termos doutrinários recorrentes,
+ambiguidades pontuais) e reportados ao usuário — não decididos
+unilateralmente.
+
+**Erro real cometido e corrigido**: ao fechar a revisão editorial, o
+executor do shard A (reiniciado nesta sessão) processou o único item
+pendente (`Tijotengoku.txt`) mas só verificou estrutura superficial
+(contagem de entry_id/title_pt), sem checar o achado específico do
+auditor (bloco título+citação duplicado em 14 artigos). O auditor reabriu
+2x pelo mesmo motivo. Ao investigar a 2ª reabertura, **verifiquei o
+arquivo errado** — `reports/periodicos_trabalho/pt/Tijotengoku.txt` (cópia
+de trabalho pré-revisão, sempre esteve limpa) em vez de
+`livros_publicacao_pt_revisado/Tijotengoku.txt` (a saída real da revisão,
+que é o que o auditor audita) — e concluí, errado, que o achado do
+auditor era falso positivo. Fechei a fila com essa "refutação".
+
+**O usuário perguntou "por que consta 1 pendente no dashboard"** horas
+depois — foi assim que o erro foi descoberto: o auditor tinha reaberto a
+fila uma 3ª vez, com uma nota explícita apontando a causa exata do meu
+erro (checar o arquivo revisado, não o original). Verifiquei
+`livros_publicacao_pt_revisado/Tijotengoku.txt` e a duplicação era **real**
+nos 14 artigos apontados (confirmado por grep: cada título aparecia 2x,
+com o bloco "TÍTULO\n\ncitação\n\n" repetido antes do corpo). **Corrigido
+de fato agora** — removida a 2ª ocorrência duplicada em cada um dos 14
+artigos (regex ancorado título+citação+título+citação → título+citação
+único), 70/70 artigos preservados, tamanho 411195→409671 chars. As 4 filas
+da revisão editorial (livros A/B + auditorias A/B) estão em 0 pendente de
+verdade agora. Lição registrada em memória:
+`feedback_verificar_arquivo_publicacao_revisado_nao_working_copy` —
+qualquer achado do auditor desta fila específica deve ser verificado
+contra `livros_publicacao_pt_revisado/<arquivo>`, nunca contra as cópias
+de trabalho em `reports/*_trabalho/pt/`.
+
+### Onde continuar (prioridade máxima)
+
+1. Revisão editorial genuinamente fechada (128 livros + periódicos).
+   Próximo passo natural (não feito ainda, não autorizado): rodar
+   `build_clean_large_indexes.py` para gerar o staging com todas as
+   correções acumuladas, e só promover com autorização explícita.
+2. Triagem de glossário (~105 itens restantes, categorizados por tema)
+   aguardando decisão do usuário — não é bloqueante, é know-gap
+   documentado.
+3. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
