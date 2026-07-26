@@ -44,6 +44,10 @@ class Config:
     SOURCE_HIERARCHY_WRITTEN_FIRST = _env_bool("GOSHINSHO_SOURCE_HIERARCHY", default=False)
     # Se o v2 não cobre a pergunta, segunda busca com motor legacy sem tutelas.
     LEGACY_MOTOR_FALLBACK = _env_bool("GOSHINSHO_LEGACY_MOTOR_FALLBACK", default=True)
+    # Se a busca (pt_direct/jp_direct) vier insuficiente, pede ao DeepSeek termos
+    # alternativos de busca antes de tentar de novo — só dispara quando a busca
+    # normal já falhou (raro), nunca em toda pergunta.
+    LLM_TERM_FALLBACK = _env_bool("GOSHINSHO_LLM_TERM_FALLBACK", default=True)
     AWS_REGION = _env("AWS_REGION") or "us-east-1"
     AWS_ACCESS_KEY_ID = _env("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = _env("AWS_SECRET_ACCESS_KEY")

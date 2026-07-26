@@ -28,6 +28,7 @@ from ..services.conversation_topic import (
     search_clarification_message,
 )
 from ..services.deepseek_usage_service import record_deepseek_usage
+from ..services.llm_term_fallback import suggest_search_terms
 from ..services.retrieval_fallback import augment_with_legacy_fallback, needs_legacy_motor_fallback
 from ..services.search_ranking import build_chunk_usage_instructions, expand_query_for_retry
 from .context import build_context
@@ -244,13 +245,36 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
     )
 
 
-def _query_terms_covered(chunks: list[str], query: str, *, pastoral: bool) -> bool:
-    from ..services.search_glossary import extrair_termos_busca
+def _query_terms_covered(
+    chunks: list[str], query: str, *, pastoral: bool, japanese: bool = False
+) -> bool:
     from ..services.search_service import normalizar_pergunta
+
+    pergunta_norm = normalizar_pergunta(query)
+
+    if japanese:
+        # 2026-07-26: os chunks de jp_direct são texto japonês (kanji) --
+        # comparar contra os termos PT extraídos da pergunta nunca bate
+        # (achado real testando o fallback de termos via LLM: a checagem
+        # antiga sempre "passava" por um atalho que ignorava a pergunta,
+        # mascarando isso). Resolve os termos da pergunta pro kanji via
+        # glossário antes de checar cobertura.
+        from ..services.search_glossary import resolver_consulta_jp, weighted_terms_for_search
+
+        weighted = weighted_terms_for_search(pergunta_norm, pastoral=pastoral)
+        consulta = resolver_consulta_jp(pergunta_norm, weighted)
+        terms_ja = [t for t in consulta.termos_ja if len(t) >= 2]
+        if not terms_ja:
+            return True
+        joined = "".join(chunks)
+        hits = sum(1 for term in terms_ja if term in joined)
+        return hits >= max(1, (len(terms_ja) + 1) // 2)
+
+    from ..services.search_glossary import extrair_termos_busca
 
     terms = [
         term
-        for term, weight in extrair_termos_busca(normalizar_pergunta(query), pastoral=pastoral)
+        for term, weight in extrair_termos_busca(pergunta_norm, pastoral=pastoral)
         if len(term) >= 4 and weight >= 0.45
     ]
     if not terms:
@@ -267,20 +291,29 @@ def _retrieval_is_sufficient(
     deep: bool = False,
     query: str = "",
     pastoral: bool = False,
+    japanese: bool = False,
 ) -> bool:
     if not chunks:
         return False
+    # 2026-07-26: cobertura de termos da pergunta agora é obrigatória em
+    # qualquer caminho -- antes, o último ramo (content_score genérico nos
+    # 3 primeiros trechos) não checava a pergunta nenhuma, só qualidade
+    # estrutural do texto (fala do Meishu-Sama ou prosa escrita longa),
+    # quase sempre verdadeiro independente de relevância real. Isso fazia
+    # esta função quase nunca retornar False em pt_direct/jp_direct
+    # (achado ao prototipar o fallback de termos via LLM: testado com
+    # várias perguntas difíceis/compostas, sempre "suficiente"), tornando
+    # qualquer fallback pendurado nela letra morta.
+    if not _query_terms_covered(chunks, query, pastoral=pastoral, japanese=japanese):
+        return False
     min_chunks = 8 if deep else 6
-    if len(chunks) >= min_chunks and _query_terms_covered(chunks, query, pastoral=pastoral):
+    if len(chunks) >= min_chunks:
         return True
     if metas:
         fontes = {(m.get("fonte") or m.get("arquivo") or "") for m in metas[:12]}
-        if (
-            len({f for f in fontes if f}) >= (3 if deep else 2)
-            and _query_terms_covered(chunks, query, pastoral=pastoral)
-        ):
+        if len({f for f in fontes if f}) >= (3 if deep else 2):
             return True
-    return any(content_score(chunk, query="") >= 0.10 for chunk in chunks[:3])
+    return any(content_score(chunk) >= 0.10 for chunk in chunks[:3])
 
 
 def _merge_retry(
@@ -402,13 +435,26 @@ def answer(
         deep=deep,
         query=state.content_question,
         pastoral=state.pastoral,
+        japanese=bool(getattr(base_pool_fn, "japanese_pool", False)),
     ):
+        retry_query = expand_query_for_retry(
+            state.search_query,
+            pastoral=state.pastoral,
+            conv_ctx=None,
+        )
+        # 2026-07-26 (protótipo pedido pelo usuário): busca já falhou (raro) --
+        # antes de repetir com os mesmos termos fracos, pede ao DeepSeek termos
+        # alternativos (sinônimos, romanização, nomes próprios) e tenta de
+        # novo com eles. Só roda em pt_direct/jp_direct (base_pool_fn
+        # explícito); o caminho antigo (base_pool_fn=None) já tem seu próprio
+        # fallback (motor legacy, acima). Falha na chamada -> segue sem os
+        # termos extras, comportamento idêntico a antes.
+        if base_pool_fn is not None:
+            extra_terms = suggest_search_terms(state.content_question)
+            if extra_terms:
+                retry_query = f"{retry_query} {extra_terms}"
         retry_state = build_state(
-            expand_query_for_retry(
-                state.search_query,
-                pastoral=state.pastoral,
-                conv_ctx=None,
-            ),
+            retry_query,
             history,
             language=language,
             response_mode=response_mode,
