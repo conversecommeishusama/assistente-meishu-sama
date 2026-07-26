@@ -308,7 +308,7 @@ def describe_user_access(user, now=None):
         }
 
     ok, remaining = check_question_quota(user)
-    remaining_int = int(remaining) if remaining is not None else 0
+    remaining_int = int(remaining) if ok and remaining is not None else 0
     is_limited = not ok or remaining_int <= 0
     return {
         "access_status": "limited" if is_limited else "free_quota",

@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.goshinsho.app",
+    "sha256_cert_fingerprints": [
+      "18:55:70:A7:F6:96:85:2C:9E:ED:AE:3E:32:BA:0F:77:3A:5A:89:82:93:94:65:9C:D9:FF:D7:9C:27:0B:C7:33"
+    ]
+  }
+}]

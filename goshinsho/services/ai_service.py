@@ -338,7 +338,7 @@ Tarefa:
 """.strip()
 
     response = _client().chat.completions.create(
-        model="deepseek-chat",
+        model="deepseek-v4-flash",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
         max_tokens=4000,
@@ -601,7 +601,7 @@ Antes de responder, confira o idioma escolhido: {_language_instruction(effective
 
 def _generate_answer(prompt: str, max_tokens: int) -> str:
     response = _client().chat.completions.create(
-        model="deepseek-chat",
+        model="deepseek-v4-flash",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1,
         max_tokens=max_tokens,

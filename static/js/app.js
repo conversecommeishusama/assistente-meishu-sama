@@ -1493,9 +1493,15 @@ function closeShareMenuOnOutsideClick(event) {
     }
 }
 
+const SHARE_ANSWER_PREVIEW_CHARS = 400;
+
 function openShareMenu(button, { question, answer, url }) {
     closeShareMenu();
-    const text = question ? `${question}\n\n${answer}\n\n${url}` : `${answer}\n\n${url}`;
+    const trimmedAnswer =
+        answer.length > SHARE_ANSWER_PREVIEW_CHARS
+            ? `${answer.slice(0, SHARE_ANSWER_PREVIEW_CHARS).trim()}…`
+            : answer;
+    const text = question ? `${question}\n\n${trimmedAnswer}\n\n${url}` : `${trimmedAnswer}\n\n${url}`;
     const menu = document.createElement("div");
     menu.className = "share-menu";
     menu.innerHTML = `

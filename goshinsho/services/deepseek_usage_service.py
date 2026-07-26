@@ -33,7 +33,7 @@ def _usage_to_dict(response):
     }
 
 
-def record_deepseek_usage(response, purpose, model="deepseek-chat"):
+def record_deepseek_usage(response, purpose, model="deepseek-v4-flash"):
     usage = _usage_to_dict(response)
     if not usage:
         return

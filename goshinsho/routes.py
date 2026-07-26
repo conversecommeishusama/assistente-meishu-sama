@@ -528,6 +528,21 @@ def logo():
     return send_from_directory(PROJECT_ROOT, "logo.png")
 
 
+@web_bp.get("/.well-known/assetlinks.json")
+def assetlinks():
+    return send_from_directory(PROJECT_ROOT, "assetlinks.json")
+
+
+@web_bp.get("/icon-192.png")
+def icon_192():
+    return send_from_directory(PROJECT_ROOT, "icon-192.png")
+
+
+@web_bp.get("/icon-512.png")
+def icon_512():
+    return send_from_directory(PROJECT_ROOT, "icon-512.png")
+
+
 @web_bp.get("/health")
 def health():
     payload, ok = _runtime_health()

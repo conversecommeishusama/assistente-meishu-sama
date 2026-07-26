@@ -233,7 +233,7 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
     )
 
     response = _client().chat.completions.create(
-        model="deepseek-chat",
+        model="deepseek-v4-flash",
         messages=messages,
         temperature=0.1,
         max_tokens=max_tokens,
