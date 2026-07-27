@@ -82,9 +82,18 @@
 
             <form class="floating-panel" id="register-panel" action="{{ url_for('web.cadastro') }}" method="post">
                 <h2>Cadastro</h2>
+                <div class="signup-shield" aria-hidden="true">
+                    <label for="signup-website-index">Website</label>
+                    <input id="signup-website-index" name="website" type="text" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="signup_started" id="signup-started" value="">
+                </div>
                 <input name="email" type="email" placeholder="E-mail" required>
                 <input name="password" type="password" placeholder="Senha" required>
                 <input name="confirm_password" type="password" placeholder="Confirmar senha" required>
+                <label class="checkbox-field human-check-field">
+                    <input name="human_check" type="checkbox" value="1" required>
+                    <span>Sou humano</span>
+                </label>
                 <button type="submit">Cadastrar</button>
             </form>
 

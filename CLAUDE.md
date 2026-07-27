@@ -1848,7 +1848,7 @@ qualquer achado do auditor desta fila específica deve ser verificado
 contra `livros_publicacao_pt_revisado/<arquivo>`, nunca contra as cópias
 de trabalho em `reports/*_trabalho/pt/`.
 
-### Onde continuar (prioridade máxima)
+### Onde continuar (prioridade máxima, SUPERADA — ver sessão 2026-07-27 abaixo)
 
 1. Revisão editorial genuinamente fechada (128 livros + periódicos).
    Próximo passo natural (não feito ainda, não autorizado): rodar
@@ -1858,4 +1858,206 @@ de trabalho em `reports/*_trabalho/pt/`.
    aguardando decisão do usuário — não é bloqueante, é know-gap
    documentado.
 3. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27 (Claude Code) — triagem dos 105 itens de glossário
+## por tema, começando pelo Tema 1 (série 浄霊法講座), fechado
+
+Retomada da triagem de glossário/terminologia. Método acordado com o
+usuário: reconstruir a lista completa dos itens pendentes a partir de
+`reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json`
+(filtro por `estado` contendo glossario/terminologia/nomenclatura/convencao
+→ **105 itens confirmados**, reconferido nesta sessão, número não mudou
+desde 26/07), organizar em **7 blocos temáticos** (1. convenção da série
+浄霊法講座; 2. formato de data/era Showa; 3. romanizações sem entrada de
+glossário, ~20 itens; 4. termos doutrinários recorrentes; 5. 笑の泉
+pseudônimos de autor; 6. ambiguidades pontuais, ~14 itens; 7. ~24 itens sem
+conteúdo recuperável no registro — `arquivo`/`duvida` vazios, herança de
+uma passagem antiga do pipeline), e decidir **um bloco de cada vez em
+formato pergunta+opções** (`AskUserQuestion`), aplicando ao corpus antes de
+passar ao próximo bloco — não acumular decisões sem aplicar.
+
+**Corpus confirmado**: `livros_publicacao_pt_revisado/` é a fonte real
+(mtimes 20-26/07, mais recente que `reports/livros_trabalho/pt/`, onde a
+Fase G escreveu) — inclui os 128 livros **e os periódicos**
+(`Eiko.txt`, `Hikari.txt`, `Keiko.txt`, `Kyusei.txt`, `Tijotengoku.txt`,
+`Revista_Asahi.txt`, `Relatos_de_Milagres.txt`, `Jornais.txt` — todos no
+mesmo diretório, confirmado nesta sessão). `reports/periodicos_trabalho/pt/`
+com nomes de livro individual (não confundir com os `.txt` de periódico
+puro) é cópia órfã de 03/07, pré-todas-as-correções — não é fonte de nada.
+
+### Masson (マッソン) — aprofundado antes de decidir
+
+Pedido do usuário: investigar o termo antes de aceitar a entrada antiga do
+glossário (`"マッソン": "Masson"`). Achado real no próprio texto de
+Meishu-Sama (`御教え集2号`, `19号`): マッソン e フリーメーソン não são
+sinônimos — マッソン é a "sociedade secreta" raiz (~2000 anos, ligada ao
+sindicato de pedreiros 石屋組合, de onde vem o trocadilho 石屋/医者),
+フリーメーソン é um ramo posterior que se separou dela (descrito como "o
+lado relativamente bom", ligado ao capitalismo americano). Etimologia
+provável: マッソン é só o katakana de "Mason"/"Maçon" (o ofício), não um
+sobrenome próprio. **Decisão do usuário**: `マッソン`→"Maçons",
+`マッソン秘密結社`→"Sociedade Secreta dos Maçons" — aceitando a ambiguidade
+com "Maçonaria" como inerente ao próprio conceito (uma se originou da
+outra). Aplicado em 5 livros (`観音講座`, `御垂示録17号`, `御教え集2号/18号/19号`);
+`御教え集2号` tinha o bug mais sério — nunca distinguia os dois termos,
+tratava ambos como "maçonaria" — reescrito.
+
+### Processo de decisão: pergunta+opções, decidir tudo antes de aplicar
+
+Usuário pediu explicitamente esse formato para o Tema 1. Padrão que
+funcionou bem: pesquisar contexto real (JP + PT atual) antes de apresentar
+opções — em pelo menos 2 casos (大教師 vs 大先生, e 御伺/御垂示 como
+citação vs diálogo) a pesquisa mudou a pergunta certa a fazer, evitando uma
+decisão baseada em premissa errada. Ordem acordada: terminar todas as
+decisões de um tema, só then aplicar tudo em lote (evita reabrir os mesmos
+arquivos várias vezes).
+
+### Tema 1 (série 浄霊法講座, 10 volumes) — decisões e aplicação, FECHADO
+
+- **Nome da série**: "Curso do Método de Johrei" (forma nova, mesclando as
+  duas concorrentes "Curso de Johrei"/"Método do Johrei" — decisão do
+  usuário). Aplicado nos 10 títulos + 2 autorreferências no corpo.
+- **御伺/御垂示 (pergunta/resposta)**: achado estrutural importante —
+  `浄霊法講座` é uma **antologia de citações** (cada trecho cita a fonte
+  original: Mioshie-shū, Gosuiji-roku, Chijō Tengoku), não um diálogo
+  corrido gravado. Cogitado usar `Interlocutor:`/`Meishu-Sama:` (padrão do
+  resto do acervo), mas descoberto que o rótulo aparece **no fim do bloco
+  anterior** (função de aviso de transição: "a seguir vem a
+  pergunta/resposta"), não como rótulo do texto que seria movido para um
+  prefixo — mover isso corretamente exigiria reposicionar texto entre
+  parágrafos em ~400 ocorrências, risco alto. **Usuário decidiu manter o
+  formato de rótulo entre parênteses** (mais seguro, é troca de palavra
+  só) e apenas normalizar a palavra: `御伺`→`(Pergunta)` (elimina
+  "Consulta"), `御垂示`/`御教え`-como-resposta→`(Resposta Divina)` (elimina
+  "Resposta"/"Instrução Divina"/"Orientação"/"Revelação"/"Ensinamento
+  Direto"/"Resposta de Meishu-Sama"). Aplicado em 5 volumes (3,7,8,9,10;
+  vols 5 e 6 não usam esse padrão de rótulo). **Achado fora de escopo, não
+  tocado**: `19511125-御教え集3号.txt` usa `"Interlocutor: (Consulta)"` —
+  rótulo colado ao prefixo, estrutura diferente, não é da série
+  `浄霊法講座` — deixado para decisão futura separada.
+- **Marcador bare `（御教え）`** (sem número/página, distinto de `御教え集
+  nº X, p. Y`): confirmado por padrão estrutural (alterna com citações
+  completas para o mesmo tipo de item numerado, em 7 volumes) que é
+  citação abreviada de Mioshie-shū, não rótulo genérico de "ensinamentos".
+  Canonizado para `(Mioshie-shū)`. Achado extra no meio do caminho: o
+  vol.3 usava "Coletânea de Ensinamentos nº X, p. Y" como nome completo da
+  coleção (nome diferente do padrão "Mioshie-shū" dos outros 6 volumes) —
+  também padronizado. Caso especial preservado: `(Mioshie-shū, Gokōwa-roku
+  nº 16)` (citação dupla legítima, o mesmo trecho aparece nas duas
+  coletâneas).
+- **Categoria do vol.8** ("Medicina e Johrei" vs "Coletânea de
+  Ensinamentos" dos vizinhos 7/9): mantida distinta, decisão do usuário
+  (conteúdo de fato mais clínico).
+- **教師/大教師/中教師/小教師**: achado de fundo relevante — 教師 (kyōshi)
+  é o termo técnico-legal japonês para "clero credenciado/ordenado"
+  (categoria da lei de corporações religiosas, não "professor" no sentido
+  pedagógico). Usuário trouxe contexto histórico real: imigrantes
+  japoneses no Brasil traduziam como "professor", "ministro" veio depois
+  por influência da cultura cristã brasileira — e é o termo oficial atual
+  da igreja. **Decisão**: `教師`→"Ministro", `大教師`→"Ministro Titular",
+  `中教師`→"Ministro Adjunto", `小教師`→"Ministro Assistente" (dai/chū/shō
+  — só dai e chū têm ocorrência real no corpus, confirmado por grep; shō
+  fica reservado no glossário para quando aparecer). Aplicado em 7
+  arquivos (`御垂示録14号`, `浄霊法講座3号`, `御教え集1号/5号/7号/8号`,
+  `浄霊法講座8号`) — `大先生` (título honorífico exclusivo de Meishu-Sama,
+  já "Grão-Mestre") confirmado como termo **diferente**, não tocado.
+- **Colofão**: escopo corrigido no meio do caminho — esses itens eram na
+  verdade da série **御教え集** (18-33), não de `浄霊法講座` (erro de
+  categorização do próprio agente ao montar a lista temática original,
+  corrigido quando a busca não encontrou nada nos 10 volumes certos).
+  Decisões: rótulo do campo final (発行所) → "Editora:" (fixado em 3
+  arquivos que usavam "Publicação:"/"Distribuidor:"); ordem do nome do
+  editor → sobrenome primeiro; `Abe Seizō` canônico (1 arquivo tinha
+  "Seizō Abe" invertido). Achados extras via verificação cruzada:
+  "Moriyama Jitarō" (typo, 1 t) num livro fora da série
+  (`19530505-革命的増産の自然農法解説.txt`) — corrigido para "Jittarō"
+  por consistência de nome próprio em todo o acervo.
+
+### Achado paralelo: Enma Daiō (閻魔大王) não estava padronizado
+
+Verificação pedida pelo usuário antes de fechar o Tema 1. Confirmado por
+kanji (閻魔大王 em todas as ocorrências, nenhuma variante sem 大) que
+"Enma Daiō"/"Grande Rei Enma"/"Rei Enma" eram o mesmo termo traduzido de 3
+formas — inclusive dentro do MESMO arquivo (`御光話録（補）`: 3x "Enma
+Daiō" + 1x "Grande Rei Enma" + 6x "Rei Enma"). Usuário decidiu
+"Enma Daiō" (forma dominante, já alinhada com o padrão de transliteração
+usado para outras divindades — Amaterasu Ōmikami, Kunitokotachi-no-mikoto,
+Ushitora no Konjin). Aplicado em 4 arquivos divergentes (`観音講座`,
+`御光話録（補）`, `教えの光`, `Eiko.txt`) — os outros 5 já usavam a forma
+certa.
+
+### Falso alarme investigado: "processo paralelo" editando arquivo
+
+Usuário perguntou (boa prática, não assumir) qual processo paralelo
+estava alterando `浄霊法講座3号` depois de um system-reminder do harness
+dizer "modificado pelo usuário ou por um linter". Investigado a fundo:
+`ps aux`, `crontab -l`, `lsof` no arquivo — **nenhum processo de terceiros
+ativo** (tmux `chunk_turnaware_executor_b`/`auditor_b` estavam com o shell
+parado, sem processo rodando dentro). Causa real: o próprio agente tinha
+escrito no arquivo via `python3` dentro de uma chamada Bash (em vez da
+ferramenta Edit) — esse tipo de escrita não passa pelo rastreamento nativo
+do Claude Code, e o harness dispara esse aviso genérico para qualquer
+escrita "externa" às suas próprias ferramentas, mesmo quando é a mesma
+sessão que escreveu. Não é evidência de conflito real; mas vale conferir
+sempre que aparecer (não assumir que é sempre isso sem checar `lsof`/`ps`).
+
+### Pendência nova, registrada pelo usuário: verificar segmentação PT×JP
+### antes de gerar índice/chunk
+
+Ao pedir o commit desta sessão (2026-07-27), o usuário levantou um ponto
+importante ainda não executado: como o Tema 1 (e o resto da triagem de
+glossário) está fazendo **edições de texto direto** em
+`livros_publicacao_pt_revisado/*.txt` (troca de palavra/frase, sem alterar
+contagem de linhas na maioria dos casos, mas mudando o comprimento de
+string em vários pontos), existe risco real de que `pt_anchor` (usado por
+`split_by_anchors`/`build_clean_large_indexes.py`) tenha sido invalidado
+silenciosamente em algum ponto — mesmo padrão de bug já catalogado em
+sessão de 17/07 (edições legítimas de conteúdo invalidam âncoras de busca
+literal sem gatilho de re-auditoria automática). **Não verificado ainda
+nesta sessão** — precisa rodar
+`python3 scripts/audit_manual_livros_segmentacao.py` (sem `--fix` primeiro,
+só diagnóstico) nos arquivos tocados por esta rodada de glossário antes de
+considerar qualquer reconstrução de índice/chunk, não só nos 9 livros já
+fechados em 17/07. Lista de arquivos tocados nesta sessão até aqui (2026-07-27):
+`19530215-御垂示録17号`, `19530215-御教え集18号`, `19530315-御教え集19号`,
+`19350000-観音講座`, `19511025-御教え集2号`, `19521015-御垂示録14号`,
+`19541001-浄霊法講座3号`, `19510920-御教え集1号`, `19520320-御教え集7号`,
+`19520420-御教え集8号`, `19520115-御教え集5号`, `19550501-浄霊法講座8号`,
+`19531001/19531101/19541120/19550210/19550401/19550425/19550615/19550625-浄霊法講座
+(2,1,4,5,6,7,9,10号)`, `19530215-御教え集18号`, `19530315-御教え集19号`,
+`19530515-御教え集21号`, `19530815-御教え集24号`, `19540415-御教え集32号`,
+`19530505-革命的増産の自然農法解説`, `19480101-御光話録（補）`,
+`19510520-教えの光`, `Eiko.txt`, `Tijotengoku.txt` (Tijotengoku também
+tocado na sessão anterior, 26/07, pela correção de duplicação).
+
+### Estado do git nesta sessão (commit pedido 2026-07-27)
+
+`glossario_traducao.json` e `livros_publicacao_pt_revisado/` **continuam
+fora do git**, por decisão explícita do usuário nesta sessão — ainda estão
+em edição ativa (triagem de glossário em andamento) e serão usados como
+base do índice/chunk depois; faz mais sentido esperar terminar e resolver
+a pendência de verificação de segmentação acima antes de decidir se/como
+versionar. Commit desta sessão cobre só: atualização deste documento
+(CLAUDE.md) + 10 arquivos de código já modificados antes desta sessão
+começar (não alterados por mim nesta sessão, só constatados e commitados
+a pedido do usuário: `app.py`, `goshinsho/__init__.py`, `protocolo.txt`,
+`scripts/build_clean_large_indexes.py`, `static/css/admin.css`,
+`static/js/admin.js`, `templates/admin.html`, `templates/assinatura.html`,
+`templates/index.html`, `.cursor/rules/gokowa-gate-enforcement.mdc`,
+`.cursor/rules/revisao-paralela-jp-pt.mdc`).
+
+### Onde continuar (prioridade máxima)
+
+1. Seguir a triagem de glossário pelo Tema 2 (formato de data/era Showa),
+   mesmo formato pergunta+opções, decidir tudo antes de aplicar.
+2. **Antes de qualquer reconstrução de índice/chunk**: rodar o diagnóstico
+   de pareamento PT×JP (`audit_manual_livros_segmentacao.py`, sem
+   `--fix`) nos arquivos tocados por esta rodada de glossário (lista
+   acima) — não presumir que ficaram intactos só porque as edições foram
+   "só troca de palavra".
+3. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — não tentar commitá-los sem
+   perguntar de novo.
+4. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário.

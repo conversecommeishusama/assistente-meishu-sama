@@ -91,6 +91,48 @@ efectivamente cada linha (com trilha de auditoria), não amostragem nem métrica
 - Ordem de fecho por livro: (1) corrigir PT work file; (2) re-validar checklist; (3) aplicar
   chunk estrutural se aplicável; (4) só então `approved: true` no spec e avanço na fila.
 
+## Δ=0 é necessário, nunca suficiente (2026-07-05 — auditoria pós-fechamento)
+
+Uma sessão anterior fechou os 20 volumes Gokōwa com `approved: true` e gate `Δ=0` em todos,
+reportando "100% concluído". Uma auditoria semântica independente pedida depois encontrou
+corrupção estrutural grave em 10 dos 20 arquivos — invisível ao gate `Δ=0` porque o método
+usado (ler apenas onde a contagem já divergia) é **cego** a erros que preservam a contagem
+total de turnos. Padrões confirmados, todos com `Δ=0` intacto apesar do erro:
+
+1. **Troca sistemática de falante** — blocos inteiros com `Interlocutor:`/`Meishu-Sama:`
+   invertidos. A contagem bate porque é só rótulo trocado, não quantidade. Achado em
+   4号, 5号, 7号, 8号, 9号, 11号, 14号, 17号, 補 — em alguns casos dezenas de turnos seguidos.
+2. **Pergunta longa com cláusula final migrada para o turno de Meishu-Sama** — quando a
+   pergunta do Interlocutor termina com uma sub-pergunta ou cláusula adicional sem novo `――`
+   no JP, essa cauda às vezes aparece deslocada para o início da resposta de Meishu-Sama.
+   Padrão recorrente: achado 20+ vezes só no 補.
+3. **Perda real de conteúdo mascarada por divisão espúria** em outro ponto do mesmo arquivo
+   que compensa a contagem (achado em 19号: ~12 pares P&R do final ausentes, `Δ=0` "por
+   coincidência" porque outro trecho tinha uma divisão extra).
+4. **Corrupção de texto** (substituição literal de palavras/frases) — nunca muda contagem de
+   turnos. Achado em 1号 (string "18 de novembro" substituindo conteúdo real em ~20 pontos).
+5. **Duplicação de blocos inteiros** (pergunta+resposta repetidas) — não muda a contagem
+   líquida se a duplicata inclui P e R juntas. Achado em 9号, 12号, 13号, 17号 (Santuário de
+   Atsuta duplicado e intercalado com a pergunta real sobre pesca).
+6. **Artefacto de duplicação já presente na produção** (`textos_portugues/`) usada como fonte
+   ao reconstruir um arquivo de trabalho — um rascunho truncado seguido da versão completa
+   da mesma P&R. Verificar contra o JP se o tópico ocorre só uma vez antes de decidir qual
+   cópia manter.
+
+**Consequência prática:** o gate `gate_gokowa_linha.py` (Δ=0, sem CJK) continua obrigatório,
+mas **nunca** é suficiente sozinho para `approved: true`. É preciso, adicionalmente:
+
+- Verificar especificamente por rótulos de falante trocados: reler o JP ao redor de qualquer
+  troca "Meishu-Sama pergunta, Interlocutor responde" (padrão invertido é sinal de alerta).
+- Ao encontrar `Interlocutor:`/`Meishu-Sama:` consecutivos do mesmo falante sem alternância,
+  verificar se não é um turno mesclado incorretamente ou um bloco inteiro trocado.
+- Nunca presumir que "o resto do arquivo está certo" só por não ter aparecido numa tabela de
+  divergência de contagem — o achado #3 acima prova que perda de conteúdo pode ter `Δ=0`.
+- **Segunda auditoria independente antes de `approved: true`**: depois que quem corrigiu
+  considera o arquivo pronto, uma leitura semântica separada (outra sessão, ou um subagente
+  sem poder de edição) deve confirmar — não é uma etapa opcional "se sobrar tempo", é parte
+  do checklist de fechamento (ver `gokowa-gate-enforcement.mdc`).
+
 ## Proibido
 
 - **Qualquer revisão que não seja linha a linha** (§ regra determinante acima)

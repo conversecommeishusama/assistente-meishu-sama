@@ -4,17 +4,47 @@ from .config import Config
 from .routes import web_bp
 
 
-def create_app():
+def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
+    """Monta a app Flask.
+
+    Acervo Studio foi decomissionado (2026-07-16) — ver docs/11-PACOTE-CORRECOES-APLICATIVO.md §6.2.
+    """
     app = Flask(
         __name__,
         template_folder="../templates",
         static_folder="../static",
     )
     app.config.from_object(Config)
-    app.register_blueprint(web_bp)
+
+    if include_web:
+        app.register_blueprint(web_bp)
+
+    if warmup_search is None:
+        warmup_search = include_web
+
+    if warmup_search:
+        try:
+            from .pipeline.warmup import warmup_search_stack
+
+            warmup_search_stack()
+        except Exception:
+            pass
+
+    @app.context_processor
+    def inject_template_globals():
+        from .services.auth_service import current_user
+        from .services.dev_auth import is_developer_user
+
+        user = current_user()
+        return {
+            "show_developer_nav": is_developer_user(user),
+            "public_site_url": Config.PUBLIC_SITE_URL,
+        }
 
     @app.after_request
     def add_security_headers(response):
+        from flask import request
+
         response.headers.setdefault("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
         response.headers.setdefault("X-Content-Type-Options", "nosniff")
         response.headers.setdefault("X-Frame-Options", "DENY")

@@ -7,6 +7,8 @@ button, textarea { font: inherit; }
 .admin-topbar h1 { color: #1418fc; font-size: clamp(2rem,5vw,3.4rem); letter-spacing: -0.05em; line-height: 1; margin: 0; }
 .admin-topbar span, .eyebrow, .details-box, .ticket-detail { color: var(--muted); }
 .admin-topbar a, button { background: var(--primary); border: 0; border-radius: 999px; color: #fff; cursor: pointer; padding: 10px 14px; text-decoration: none; }
+.admin-nav .developer-nav { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.admin-nav .developer-nav a { background: var(--soft); color: #174ea6; }
 .metric-grid, .admin-grid { display: grid; gap: 14px; }
 .metric-grid { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 14px; }
 .admin-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -18,6 +20,13 @@ button, textarea { font: inherit; }
 .support-item, .user-row { background: var(--soft); border: 1px solid transparent; border-radius: 16px; display: grid; gap: 3px; padding: 11px; text-align: left; }
 .support-item.active { border-color: #174ea6; }
 .support-item strong, .user-row strong { color: #174ea6; }
+.access-badge { border-radius: 999px; display: inline-block; font-size: .82rem; font-weight: 600; padding: 4px 10px; width: fit-content; }
+.access-badge.trial { background: #e8f0fe; color: #174ea6; }
+.access-badge.quota { background: #fef7e0; color: #b06000; }
+.access-badge.limited { background: #fce8e6; color: #c5221f; }
+.access-badge.premium { background: #e6f4ea; color: #137333; }
+.user-row small, .policy-note { color: var(--muted); font-size: .82rem; }
+.policy-note { margin: 0 0 10px; }
 .users-box { max-height: 420px; overflow-y: auto; }
 .message-row { background: #f8fafd; border-radius: 14px; padding: 10px; }
 .message-row.admin { background: #e6f4ea; }
@@ -25,4 +34,6 @@ button, textarea { font: inherit; }
 .reply-form textarea { border: 1px solid var(--border); border-radius: 16px; min-height: 120px; padding: 12px; resize: vertical; }
 .reply-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 #close-ticket { background: #e6f4ea; color: #137333; }
+#grant-approve { background: #137333; }
+#grant-reject { background: #fce8e6; color: #c5221f; }
 @media (max-width:760px) { .admin-shell { padding: 14px; } .admin-topbar { align-items: flex-start; flex-direction: column; } .metric-grid, .admin-grid { grid-template-columns: 1fr; } }

@@ -47,6 +47,10 @@ python3 scripts/restore_gokowa_from_prod.py --file <nome>.txt
 - Marcar `approved: true` ou sync produção com gate FAIL.
 - Usar `--audit-jp` ou Δ sozinho como prova de fecho.
 - `convert_gokowa_dialogue_a4b` + relabel como substituto de conteúdo PT completo quando há CJK no corpo.
+- **Marcar `approved: true` só com gate PASS, sem segunda auditoria semântica independente**
+  (ver `revisao-paralela-jp-pt.mdc` § "Δ=0 é necessário, nunca suficiente") — gate PASS prova
+  ausência de erro de contagem, não ausência de troca de falante, perda de conteúdo mascarada,
+  corrupção textual ou duplicação. Todos esses passam no gate com `Δ=0` intacto.
 
 ## Etapa A→B→C (inalterada)
 

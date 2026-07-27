@@ -34,6 +34,10 @@
             <p class="eyebrow">Assinatura Goshinsho</p>
             <h1>Escolha seu plano</h1>
             <p>Tenha perguntas ilimitadas e mantenha seu histórico de conversas salvo.</p>
+            <p class="pricing-why">
+                O Goshinsho usa inteligência artificial e servidores em nuvem que têm custo por pergunta.
+                A assinatura ajuda a manter o aplicativo no ar para todos.
+            </p>
         </section>
 
         <section class="pricing-grid">
@@ -63,6 +67,15 @@
         <p class="pricing-note">
             O pagamento é processado com segurança pela Stripe. A ativação automática do plano deve ser finalizada com webhook em produção.
         </p>
+
+        <section class="pricing-grant">
+            <h2>Sem condições de pagar?</h2>
+            <p>
+                Se você não tem condições financeiras para assinar, pode solicitar acesso premium gratuito
+                preenchendo um cadastro detalhado para análise da equipe.
+            </p>
+            <a class="landing-button" href="{{ url_for('web.app_view', panel='premium-grant') }}">Solicitar acesso gratuito</a>
+        </section>
     </main>
 </body>
 </html>
