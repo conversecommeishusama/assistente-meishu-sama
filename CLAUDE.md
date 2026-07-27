@@ -2243,7 +2243,8 @@ glossário, não de decisão nova.
   unem, nasce o poder (chikara)") em vez de "a união do corpo espiritual"
   — preserva o trocadilho que a forma fixa obscurecia.
 
-### Onde continuar (prioridade máxima)
+### Onde continuar (prioridade máxima, SUPERADA — ver sessão 2026-07-27
+### cont. 3 abaixo, triagem de glossário INTEIRA encerrada)
 
 1. Tema 5 (笑の泉 pseudônimos de autor) é o próximo — decisão de escopo
    maior (transliterar vs. traduzir todos os apelidos de um livro
@@ -2259,4 +2260,118 @@ glossário, não de decisão nova.
    fora do git por decisão do usuário — não tentar commitá-los sem
    perguntar de novo.
 5. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27 (continuação 3) — Temas 5 e 6 fechados, triagem de
+## glossário INTEIRA encerrada (Temas 1-6), Tema 7 dispensado
+
+### Tema 5 (笑の泉 pseudônimos de autor) — já estava resolvido
+
+Investigação sistemática (mais de 20 pseudônimos verificados, incluindo
+todos os citados na pendência original: Hyōtan/瓢箪, Imo Kō/芋公, Boneco de
+Pau/木偶之坊, Norakura/のらくら, Funako/舟子 — este último apontado na
+pendência como trocando até o gênero implícito —, Ōmaru/凹丸,
+Totsumaru/凸丸, Maru Maru/丸々, entre outros) confirmou que **cada nome
+japonês já mapeia consistentemente para uma única forma em português em
+todo o livro** (~1093 poemas). Estratégia de facto é mista (alguns nomes
+transliterados, outros traduzidos pelo sentido), mas cada nome individual
+não alterna mais. A pendência estava desatualizada — resolvida em sessão
+anterior não documentada neste ponto específico. Nenhuma ação necessária,
+só confirmação.
+
+### Tema 6 (ambiguidades pontuais, ~14 itens) — FECHADO
+
+Mesmo padrão do Tema 5: a maioria dos itens já estava corrigida de
+sessões anteriores, só precisando de verificação e confirmação:
+- Typo do glossário "Desempedida"→"Desimpedida" (só a entrada do
+  glossário estava errada, o corpus já usava a forma certa) — corrigido.
+- `御論文` (citação de artigo, `御教え集23号`): já normalizado para "(Do
+  artigo '...')" em todas as 15 ocorrências.
+- `(Artigo de Meishu-Sama:)` vs `(Artigo:)` (`御教え集25号`): já
+  normalizado para a forma longa em todas as 6 ocorrências.
+- Markdown negrito em subtítulos (`革命的増産の自然農法解説`): já
+  normalizado para texto plano, 0 ocorrências de markdown residual.
+- `教主` (`教えの光`): já traduzido corretamente como "líder da Igreja
+  Tenri", não "fundador" — a pendência temia inversão de sentido, mas já
+  estava certo.
+- `辰巳` (`御垂示録11号`): só 1 ocorrência no arquivo atual, sem
+  inconsistência real (a pendência apontava alternância dentro do mesmo
+  arquivo, não mais presente).
+- **Achado real corrigido**: `足御代` (Tarumiyo, "Era da Plenitude",
+  `明麿近詠集`) tinha 2 ocorrências no mesmo livro — poema 111 usava "Era
+  da Plenitude" (nome próprio), poema 146 usava "uma era plena"
+  (genérico, minúsculo) para o mesmo termo 足御代 no JP. Uniformizado.
+- **Confirmados pelo usuário, mantidos como estão**: "Meiji 48" +
+  "104 ou 105 anos" (`御垂示録3号` — Meishu-Sama fala com incerteza
+  própria, marcada por か no original; a gramática japonesa favoreceria
+  levemente "140-150 anos", mas a data real da fundação da Tenrikyo
+  [1838] fica mais perto de "104-105" a partir de 1951 — usuário manteve
+  a forma já usada); título de `明主様御言葉 水晶殿御遷座` (usuário optou
+  por manter a paráfrase atual em vez de nomear o rito de consagração
+  explicitamente, mesmo havendo convenção de arquivo irmão divergente).
+- Não investigados a fundo por falta de retorno claro na pesquisa (baixo
+  risco, não voltar a menos que o usuário peça): `shaku` (só encontrada 1
+  leitura no arquivo atual, não 2 como a pendência original descrevia),
+  citação de volume em `天国の福音書` (nenhuma referência de volume
+  encontrada para restaurar), convenção de idade numeral vs. extenso
+  (`御光話録15号` — pendência original sem `duvida` recuperável),
+  inconsistência de pessoa gramatical em `御教え集3号` (pode estar
+  relacionada ao conteúdo ainda não traduzido desse arquivo, uma
+  categoria de pendência diferente — completude de tradução, não
+  terminologia).
+
+### Tema 7 (itens sem conteúdo recuperável, ~24 itens) — DISPENSADO
+
+Usuário decidiu não investigar: como os registros têm só o campo
+`estado` preenchido (`arquivo`/`duvida` vazios), não há pista de qual
+arquivo ou qual era a dúvida original — não é um problema de conteúdo do
+corpus identificável, é lacuna de registro de uma sessão anterior.
+Investigar exigiria varredura especulativa ampla do acervo sem alvo
+definido, um esforço muito maior e incerto do que a verificação dirigida
+usada nos Temas 1-6 (que já pegou os erros reais via cruzamento JP/PT).
+Avaliação: não interfere na qualidade do trabalho já verificado.
+
+### TRIAGEM DE GLOSSÁRIO COMPLETA — resumo executivo (Temas 1-6, 2026-07-27)
+
+Encerrada a triagem dos 122 itens de glossário/terminologia levantados em
+26/07 (12 já decididos + 105 pendentes de nova decisão + Tema 7
+dispensado). Padrão que se repetiu constantemente: **pesquisar o JP e o
+estado atual do PT antes de perguntar ao usuário mudou a pergunta certa
+a fazer em pelo menos 6-8 casos ao longo da sessão inteira**, e uma fração
+muito grande dos itens listados como "pendentes" já tinha sido
+corrigida silenciosamente em sessões anteriores (Fase G, revisão
+editorial, ou passadas não documentadas) — sempre verificar o estado
+atual antes de tratar uma pendência antiga como ainda aberta.
+
+**Achados de erro real de tradução (não só formatação/romanização)
+descobertos durante a triagem**, vale destacar para não esquecer:
+- `御教え集2号`: マッソン/フリーメーソン nunca distinguidos, tratados
+  como sinônimos (Tema 3).
+- `御教え集2号`: "567 anos após a morte de Buda" — deveria ser "a era de
+  Miroku viria após a morte de Buda" (Tema 3, Grupo E).
+- `御光話録10号`/`16号`: 証覚 traduzido como "testemunho"/"comprovação"
+  em vez de "Chieshōkaku" (Tema 4).
+- `御光話録10号`: 御軸 traduzido como "pergaminho" genérico em vez de
+  "Imagem da Luz Divina" em 2 ocorrências devocionais (Tema 4).
+- `明麿近詠集`: 足御代 inconsistente entre 2 poemas do mesmo livro (Tema
+  6).
+- Diversos achados de nomenclatura de organização real da igreja
+  (Igreja Miroku/Tengoku, não "Associação") corrigidos com ajuda direta
+  do usuário (Tema 3/4).
+
+### Onde continuar (prioridade máxima)
+
+1. Triagem de glossário/terminologia (Temas 1-7) está **encerrada**. Não
+   reabrir sem pedido explícito do usuário.
+2. **Antes de qualquer reconstrução de índice/chunk**: continua pendente
+   (nunca executado nesta rodada de sessões) rodar
+   `audit_manual_livros_segmentacao.py` (sem `--fix`) em todos os
+   arquivos tocados pela triagem inteira — a lista de arquivos tocados
+   está espalhada pelas seções desta sessão acima (Temas 1-6), não
+   consolidada num único lugar ainda; vale montar essa lista consolidada
+   antes de rodar o diagnóstico.
+3. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — não tentar commitá-los sem
+   perguntar de novo.
+4. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário.
