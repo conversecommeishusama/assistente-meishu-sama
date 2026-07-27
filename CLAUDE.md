@@ -2165,7 +2165,8 @@ Nada mudou nos arquivos rastreados desde o último commit (`b712edd`) além
 deste próprio documento — commit desta rodada cobre só a atualização do
 CLAUDE.md.
 
-### Onde continuar (prioridade máxima)
+### Onde continuar (prioridade máxima, SUPERADA — ver sessão 2026-07-27
+### cont. 2 abaixo, Tema 4 fechado)
 
 1. Tema 4 (termos doutrinários recorrentes) é o próximo da fila — mesmo
    formato pergunta+opções, pesquisar JP/PT antes de perguntar.
@@ -2175,6 +2176,85 @@ CLAUDE.md.
    rodar `audit_manual_livros_segmentacao.py` (sem `--fix`) nos arquivos
    tocados pela triagem de glossário inteira (Temas 1-3 agora, não só o
    Tema 1) — a lista de arquivos tocados só cresceu.
+4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — não tentar commitá-los sem
+   perguntar de novo.
+5. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27 (continuação 2) — Tema 4 fechado (termos doutrinários
+## recorrentes), correção do usuário sobre Igreja Miroku/Tengoku
+
+### Correção do usuário, antes do Tema 4: Igreja Miroku/Tengoku, não Associação
+
+Ao aplicar o Grupo E do Tema 3, registrei `五六七会`→"Associação Miroku"
+sozinho, sem checar convenção. Ao aparecer também em `御教え集3号` (junto
+de `天国会`, contexto doutrinário maior sobre a divisão urdidura/trama da
+igreja em 1948-49, antes de virar Sekai Kyusei Kyō), o usuário corrigiu:
+são **"Igreja Miroku" e "Igreja Tengoku"**, não "Associação". Corrigido no
+glossário e em 3 arquivos (`御教え集3号` 14+8 ocorrências, `御教え集11号` 1,
+`御光話録（補）` 1). **Lição**: nomes de organizações internas reais da
+igreja (fase pré-Sekai-Kyusei-Kyō, quando ainda se chamava 観音教) não são
+termos genéricos — desconfiar de traduções "genéricas" tipo
+Associação/Sociedade para nomes próprios de organização sem checar se já
+existe convenção do usuário.
+
+### Tema 4 (termos doutrinários recorrentes) — FECHADO, 7 itens
+
+Padrão que se repetiu bastante nesta rodada: **vários itens da pendência
+já estavam corrigidos de sessões anteriores** (a lista original de 105
+itens envelhece à medida que outras rotinas — Fase G, revisão editorial —
+tocam os mesmos arquivos) — só precisavam de verificação e registro no
+glossário, não de decisão nova.
+
+- **九分九厘/一厘** (99%/1%, o mal velho vs. a missão de Meishu-Sama): já
+  consistente no arquivo original da pendência ("noventa e nove por cento
+  e um por cento", 5x, sem forma romanizada nem fração concorrente) — só
+  registrado. Usuário pediu para confirmar/adicionar entrada para `一厘`
+  sozinho (sem "の力") — adicionado (`"一厘": "um por cento"`).
+- **天国は近づけり** (citação bíblica de Cristo, "O Reino dos Céus está
+  próximo"): já consistente (10 ocorrências), só registrado como exceção
+  documentada à regra geral 天国→Paraíso.
+- **証覚/智慧証覚** (Chieshōkaku): achado real — a mesma frase-fórmula de
+  fechamento editorial ("...aprimore essa Sabedoria Sagrada, eleve
+  [証覚]...") aparece em pelo menos 2 volumes de Gokōwa-roku
+  (`御光話録10号`/`16号`) com 証覚 traduzido como "testemunho" e
+  "comprovação" respectivamente — nenhum dos dois tem relação com o
+  significado (é a mesma raiz de 智慧証覚, já "Chieshōkaku" no glossário).
+  Corrigido para "Chieshōkaku" nos dois.
+- **生前/帰幽/転帰** (terminologia de morte, `霊界叢談`): a pendência
+  original temia erro teológico (tratar os três como sinônimos), mas o
+  texto atual já distingue corretamente "vida terrena" (生前, o período)
+  de "o próprio ato" (帰幽/転帰, o evento da morte) — pendência
+  desatualizada, já correto, só registrado.
+- **御軸** (pergaminho consagrado do altar): usuário pediu verificação
+  contextual — se usado como altar, "Imagem da Luz Divina"; caso
+  contrário, caligrafia em pergaminho comum. Varredura ampla no JP
+  confirmou que `御軸` (com o honorífico 御) é **sempre** o objeto
+  devocional do altar neste corpus, nunca caligrafia comum — corrigidas 2
+  ocorrências em `御光話録10号` que diziam "pergaminho" em vez de "Imagem
+  da Luz Divina". Conferidos os outros 15 arquivos com a palavra
+  "pergaminho" solta — todos são objetos diferentes (pergaminho de
+  Amida-Nyorai de outra tradição, talismã de dragão do Monte Togakushi,
+  pintura decorativa comprada de artista) — não precisavam de correção.
+- **霊体** (trocadilho kotodama チ+カラ=チカラ/chi+kara=chikara, em
+  `御垂示録14号`): usuário decidiu quebrar o termo fixo do glossário só
+  nesta frase específica ("quando o espírito (chi) e o corpo (kara) se
+  unem, nasce o poder (chikara)") em vez de "a união do corpo espiritual"
+  — preserva o trocadilho que a forma fixa obscurecia.
+
+### Onde continuar (prioridade máxima)
+
+1. Tema 5 (笑の泉 pseudônimos de autor) é o próximo — decisão de escopo
+   maior (transliterar vs. traduzir todos os apelidos de um livro
+   inteiro, ~800 poemas), não item a item.
+2. Restam os Temas 6 (ambiguidades pontuais, ~14 itens) e 7 (itens sem
+   conteúdo recuperável, ~24 itens só com `estado` preenchido).
+3. **Antes de qualquer reconstrução de índice/chunk**: continua pendente
+   rodar `audit_manual_livros_segmentacao.py` (sem `--fix`) nos arquivos
+   tocados pela triagem de glossário inteira (Temas 1-4 agora) — lista só
+   cresce, não foi executado ainda em nenhum momento desta rodada de
+   sessões.
 4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
    fora do git por decisão do usuário — não tentar commitá-los sem
    perguntar de novo.
