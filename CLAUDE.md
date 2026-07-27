@@ -2047,7 +2047,7 @@ a pedido do usuário: `app.py`, `goshinsho/__init__.py`, `protocolo.txt`,
 `templates/index.html`, `.cursor/rules/gokowa-gate-enforcement.mdc`,
 `.cursor/rules/revisao-paralela-jp-pt.mdc`).
 
-### Onde continuar (prioridade máxima)
+### Onde continuar (prioridade máxima, SUPERADA — ver sessão 2026-07-27 cont. abaixo)
 
 1. Seguir a triagem de glossário pelo Tema 2 (formato de data/era Showa),
    mesmo formato pergunta+opções, decidir tudo antes de aplicar.
@@ -2060,4 +2060,123 @@ a pedido do usuário: `app.py`, `goshinsho/__init__.py`, `protocolo.txt`,
    fora do git por decisão do usuário — não tentar commitá-los sem
    perguntar de novo.
 4. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27 (continuação) — Temas 2 e 3 fechados (formato de
+## data/era + romanizações), commit de documentação
+
+Continuação da triagem de glossário no mesmo formato pergunta+opções,
+decidir tudo antes de aplicar por tema.
+
+### Tema 2 (formato de data/era Showa) — FECHADO
+
+- **"Nº ano" sem era/ano gregoriano** (regra já existia no protocolo
+  §1.2, só faltava aplicar): dos 85 originalmente levantados, restavam de
+  fato só 3 reais no corpus atual (a maioria já corrigida em sessões
+  anteriores) — corrigidos em `自観叢書2篇`, `御教え集18号`, `Eiko.txt`.
+  O resto dos "candidatos" eram falsos positivos (anos de prática de
+  cultivo agrícola, aniversário budista de 33 anos, reinado do Imperador
+  Kinmei — sistema de era diferente).
+- **Era mencionada sem número** (decisão nova): sempre incluir o
+  intervalo gregoriano completo da era (Meiji 1868-1912, Taishō
+  1912-1926, Showa 1926-1989), registrado como adendo ao protocolo
+  (`PROTOCOLO_REVISAO_LITERARIA_FASE_F.md` §1.2). Aplicado em ~44
+  ocorrências em ~30 arquivos, respeitando "só na 1ª menção por
+  artigo/ensaio" — decidido caso a caso (por proximidade de texto e
+  continuidade de tópico) se ocorrências repetidas eram do mesmo
+  artigo/testemunho ou de artigos diferentes.
+- **Bug cometido e corrigido no meio do processo**: a primeira passada
+  usou formato "era Showa, 1926-1989" (vírgula) em vez de "(1926-1989)"
+  (parênteses, o padrão já estabelecido) — em 12 casos isso duplicou
+  informação já presente (ex. "era Showa, 1926-1989, 1951)"). Revertido e
+  convertido para o formato correto em todo o acervo.
+- **Verificação pedida pelo usuário, confirmada**: as duas regras (ano
+  específico vs. era sem número) não se contaminaram — nenhum "Nº ano da
+  Era X (YYYY)" recebeu o intervalo por engano.
+
+### Tema 3 (romanizações sem entrada de glossário) — FECHADO, 5 grupos
+
+- **Grupo A (nomes próprios)**: 乙姫→Otohime (leitura padrão inequívoca,
+  "Otome" era erro, 17 ocorrências corrigidas); 天若彦/天之若彦→
+  Ame-no-wakahiko (3 furiganas diferentes no próprio corpus, usuário
+  decidiu a forma de referência mitológica); 林屋友次郎→Hayashiya
+  Tomojirō (convenção de sobrenome composto); ラダ→Radha (região
+  histórica indiana, confirmada por contexto com Nālandā); 徽宗→Huizong
+  (só faltava registrar); Okada Jikan→**Okada Jikan é o próprio
+  Meishu-Sama** (pseudônimo literário 自観/Jikan, confirmado por
+  "岡田自観" no JP — não é irmão de Meishu-Sama como cheguei a supor por
+  engano, corrigido pelo usuário); ordem de nome: Okada Jikan (sobrenome
+  primeiro, 21 ocorrências) e Onisaburo Deguchi (nome primeiro, seguindo
+  maioria real do corpus, 40 ocorrências — exceção deliberada à convenção
+  geral por evidência de uso).
+- **Grupo B (termos religiosos/organizacionais)**: Seicho-no-Ie (forma
+  majoritária, 7 corrigidas); 大日本観音会/教会 mantidos com a mesma
+  tradução (decisão do usuário, aceita a não-distinção); 観音教団/観音教→
+  Igreja Kannon (confirmado já aplicado, formalizado); 執事→"Secretário"
+  (trocado de "Mordomo", conotação doméstica inadequada); 支部→"filial"
+  (confirmado por definição do próprio Meishu-Sama no texto — toda
+  filial precisa ter um chefe, sem ambiguidade real).
+- **Grupo C (termos técnicos não-eclesiásticos)**: raio-X (confirmado por
+  grep no JP — レントゲン/エックス線 é sempre a máquina/exame médico,
+  nunca conceito doutrinário de "incógnita X" como o usuário cogitou
+  verificar antes de decidir — 205 ocorrências normalizadas); 種痘→
+  "vacinação" (formalizado); 応身→"corpo de resposta (oujin)" e 俵→
+  "saca (hyō)" (já consistentes, só formalizados).
+- **Grupo D**: mácron Chū/Chūkyōkai já corrigido de sessão anterior;
+  Hoshō→Hōsei (typo confirmado por idade da testemunha batendo com
+  宝生中教会 no JP — achado extra: há duas igrejas JP diferentes no
+  mesmo arquivo, 宝生中教会/Hōsei e 応身中教会/Ōjin, ambas corretas depois
+  do fix); 日光殿→"Nikkōden (Palácio da Luz Solar)" na 1ª menção de cada
+  arquivo, só "Nikkōden" depois (8 arquivos).
+- **Grupo E (五六七→Miroku, o mais disseminado)**: o pior caso histórico
+  (`無肥料栽培法`, 11 formas concorrentes) já estava ~95% corrigido de
+  sessão anterior. **Achado mais sério desta rodada**: em `御教え集2号`,
+  "567 anos após a morte de Buda" era **erro de tradução real** (não só
+  formatação) — o JP diz "a era de Miroku viria após a morte de Buda"
+  (仏滅後五六七の世が来る), não uma contagem de anos — corrigido. Mais 2
+  ocorrências de "567" bare sem glosa corrigidas; 2 falsos positivos
+  confirmados e descartados (`笑の泉`/`山と水` usam "567" como número de
+  poema). Varredura final: 0 variantes residuais em todo o acervo.
+- **Correção do usuário sobre um erro meu, pós-Grupo E**: registrei
+  `五六七会`→"Associação Miroku" e, ao aparecer em `御教え集3号` (contexto
+  doutrinário maior, junto de `天国会`/"Associação do Paraíso", sobre a
+  divisão urdidura/trama da igreja em 1948-49), o usuário corrigiu: são
+  **"Igreja Miroku" e "Igreja Tengoku"**, não "Associação". Corrigido no
+  glossário e em 3 arquivos (`御教え集3号` 14+8 ocorrências, `御教え集11号`
+  1, `御光話録（補）` 1). **Lição**: essas duas eram nomes de organizações
+  internas reais da igreja em sua fase pré-Sekai-Kyusei-Kyō (quando ainda
+  se chamava 観音教), não termos genéricos — vale desconfiar de traduções
+  "genéricas" (Associação/Sociedade) para nomes próprios de organizações
+  específicas sem checar se o usuário já tem uma convenção estabelecida.
+
+### Padrão útil confirmado nesta sessão: pesquisar antes de perguntar
+
+Repetidamente, checar o JP e o estado atual do PT antes de apresentar as
+opções mudou a pergunta certa a fazer (ex.: Hoshō/Hōsei via idade da
+testemunha, raio-X via grep de レントゲン, 支部 via definição do próprio
+Meishu-Sama) — evitou pelo menos 3 decisões que teriam sido tomadas com
+premissa errada se eu tivesse só perguntado sem investigar primeiro.
+
+### Estado do git (commit pedido 2026-07-27, mesma sessão)
+
+Igual à rodada anterior: `glossario_traducao.json` e
+`livros_publicacao_pt_revisado/` continuam fora do git (edição ativa).
+Nada mudou nos arquivos rastreados desde o último commit (`b712edd`) além
+deste próprio documento — commit desta rodada cobre só a atualização do
+CLAUDE.md.
+
+### Onde continuar (prioridade máxima)
+
+1. Tema 4 (termos doutrinários recorrentes) é o próximo da fila — mesmo
+   formato pergunta+opções, pesquisar JP/PT antes de perguntar.
+2. Restam os Temas 5 (笑の泉 pseudônimos), 6 (ambiguidades pontuais) e 7
+   (itens sem conteúdo recuperável, ~24 itens só com `estado` preenchido).
+3. **Antes de qualquer reconstrução de índice/chunk**: continua pendente
+   rodar `audit_manual_livros_segmentacao.py` (sem `--fix`) nos arquivos
+   tocados pela triagem de glossário inteira (Temas 1-3 agora, não só o
+   Tema 1) — a lista de arquivos tocados só cresceu.
+4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — não tentar commitá-los sem
+   perguntar de novo.
+5. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário.
