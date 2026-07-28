@@ -2375,3 +2375,576 @@ descobertos durante a triagem**, vale destacar para não esquecer:
    perguntar de novo.
 4. Continua valendo: nenhuma promoção de índice/produção sem autorização
    explícita do usuário.
+
+## Sessão 2026-07-27 (Claude Code) — análise final linha a linha pós-triagem
+## de glossário: aplicação sistemática, qualidade editorial, segmentação
+
+Pedido do usuário: "análise final linha a linha semântica do trabalho feito
+na revisão editorial e nesse ajuste de termos, verifique a aplicação
+sistemática e rigorosa de todo o glossário, a qualidade editorial do texto
+em português, e a adequação da segmentação jp/pt", com correções
+automáticas quando certas e pendências trazidas só no final. Ordem seguida
+(por instrução explícita do usuário, corrigindo minha proposta inicial):
+glossário → qualidade/semântica → **segmentação por último** (edições de
+texto podem quebrar âncoras de novo, então auditar segmentação antes seria
+desperdício).
+
+### 1. Achado sistêmico real: 教師 (Ministro) — 381 correções em 51 livros
+
+A decisão do Tema 1 (教師→"Ministro") só tinha sido aplicada a um punhado
+de arquivos na investigação original. Rastreamento pelo lado JP (120
+ocorrências genuinas de 教師 fora de compostos como 布教師/宣教師, em 52
+livros) revelou que ~52 livros ainda traduziam como "professor"/
+"instrutor religioso" — nunca "Ministro". Corrigido via substituição
+sensível a contexto (lista de exclusão pra não tocar menções genuínas de
+professor/universidade não relacionadas à igreja, ex. "Dr. Myers",
+"professor emérito Fujikawa") — 381 substituições em 51 arquivos, 2 falsos-
+negativos da lista de exclusão corrigidos manualmente (`浄霊法講座 6号/7号`).
+Confirmado por verificação: os casos de "Professor Watanabe"/"Professor
+Nakajima" que sobraram são **先生** (sensei, honorífico genérico), não 教師
+— tradução correta, não tocar.
+
+### 2. Achado real: 天国会 (Igreja Tengoku) — 6 livros com romanização
+### crua em vez do termo decidido
+
+`天国会` tem decisão de glossário (Tema 5/6, "Igreja Tengoku", paralelo a
+"Igreja Miroku" para 五六七会), mas 6 arquivos usavam a romanização crua
+sem traduzir (`Tenkokukai`/`Tengoku-kai`/`Tengokukai`, inclusive em
+bylines de testemunho tipo "Tenkokukai Komei Bunka, Tomita Hisako (30)")
+— inconsistência confirmada comparando com o mesmo arquivo usando
+corretamente "Igreja Miroku" para 五六七会 na mesma página. Corrigido nos 6
+arquivos (`御光話録（補）`, `結核と神霊療法`, `奇蹟物語`, `御光話録18号`,
+`無肥料栽培法`, `革命的増産の自然農法解説` — este último tinha "antiga
+Igreja do Paraíso", tradução descritiva alternativa, também padronizada).
+
+### 3. Achado de formatação: 大教会/中教会 (Igreja Grande/Média) —
+### 1 outlier de 357 ocorrências
+
+`世界メシヤ教手引（海外入信者のために）` usava "igrejas grandes e médias"
+(minúsculo, adjetivo) em vez da forma decidida como nome próprio "Igreja
+Grande/Média" (357 ocorrências em 17 outros arquivos do acervo). Único
+outlier, corrigido.
+
+### 4. Dois achados NÃO corrigidos — ficam para avaliação do usuário
+### (ver seção "Pendências" mais abaixo, é a mesma lista)
+
+- `観音教`/`観音教団` (Kannon-kyōdan): investigação revelou que é termo de
+  autorreferência histórica da igreja em fase inicial (antes de virar
+  "Sekai Kyusei Kyo" em 1950), usado em ~15 livros, ~40+ ocorrências, com
+  registros muito variados: nome de organização composto ("日本観音教明成
+  会"), uso coloquial em diálogo ("観音教はいいんだ" = "[nossa religião]
+  Kannon-kyo é boa"), citação histórica formal. Glossário tem entrada
+  fixa "Igreja Kannon", mas boa parte do uso real no corpus é descritivo/
+  coloquial, não nome-próprio-de-instituição — forçar "Igreja Kannon" em
+  todo lugar arriscaria soar artificial em trechos de diálogo natural.
+  Não é um simples find-replace seguro.
+- `教導師` (Kyōdōshi — "ministro-guia", distinto de 教師): **sem entrada
+  no glossário**, usado em 20 livros, ~66 ocorrências, com pelo menos 3
+  traduções diferentes já em uso ("Ministro guia (kyōdōshi)", "Instrutor
+  Auxiliar" para 教導師補, "Instrutora Doutrinária") — inconsistência real,
+  mas decidir a forma canônica é decisão de glossário eclesiástico que
+  merece confirmação explícita antes de aplicar em escala.
+
+### 5. Varredura sistemática do glossário (678 entradas) — a maioria dos
+### "misses" é variação natural de linguagem, não erro
+
+Rodada uma checagem automática comparando cada entrada do glossário contra
+o uso real no corpus (normalizado, case-insensitive, artigos removidos).
+564 termos sinalizados com "miss ratio" alto — mas a esmagadora maioria são
+glosses descritivos de vocabulário comum (ex. `一生懸命`→"com empenho ou
+esforço", `本教`→"nossa Igreja", `体的`→"materialmente", `生前`/`帰幽`/
+`応身`) que nunca foram pensados como regra de substituição cega, e variam
+legitimamente por contexto — confirmado por amostragem (mesmo padrão já
+documentado em sessões anteriores para 念/一生懸命/理屈/道/etc.). Verificados
+individualmente os candidatos de maior sinal (nome próprio/termo técnico
+fixo, não vocabulário genérico): `管長` (falso positivo — a própria nota
+do glossário já diz "ajustado conforme contexto"), `ラダ` (falso positivo —
+colisão de substring com パラダイス/サラダ/ダラダラ/カラダ, nenhuma ocorrência real
+do nome próprio "Radha"), `中教会`/`観音教`/`天国会`/`教導師` (ver acima).
+
+### 6. Qualidade editorial e segmentação — sem regressão
+
+Revisão da própria correção em lote de 教師 (a de maior volume/risco desta
+sessão): confirmado que os "Professor X" residuais são 先生 legítimo, não
+教師 mal corrigido — sem falso positivo de maiúscula/minúscula na regex.
+Auditoria de pareamento PT×JP rodada **sem `--fix`** (só diagnóstico) no
+acervo inteiro pós-edições: **ok=3178, ratio_warn=39, error=3** — os 3
+`error` e todos os 82 `anchor_diff` estão confinados a
+`結核の革命的療法` (já documentado como falso-alarme conhecido do
+algoritmo de pareamento por idade, spec verificado correto por fora do
+pipeline — **não rodar `--fix` nele**). Dos 22 `ratio_warn` restantes fora
+desse arquivo, amostrados e confirmados como o padrão já aceito de
+cabeçalho curto de seção/capítulo (ex. "一　頭の部" 5 caracteres JP vs.
+título PT mais longo) — nenhuma quebra de segmentação causada pelas
+edições desta sessão ou das sessões anteriores de triagem de glossário.
+
+### Pendências para avaliação do usuário (nenhuma decidida sozinho)
+
+1. **`観音教`/`観音教団`** — decidir se vale a pena/como uniformizar
+   parcialmente (ex. só nos casos de nome de organização composto) ou
+   deixar a variação atual como está (ver item 4 acima).
+2. **`教導師`** — decidir forma canônica (ex. "Ministro-guia", manter
+   "Instrutor Auxiliar", outra) e se aplicar às 66 ocorrências em 20
+   arquivos.
+3. **`御守`→Ohikari** (pendência antiga, já conhecida de sessões
+   anteriores, não nova desta análise): ainda ~24 arquivos usam "amuleto"
+   genérico em vez de "Ohikari".
+4. Nenhuma promoção de índice/produção sem autorização explícita — não
+   mudou nesta sessão.
+
+### Onde continuar
+
+1. Trazer os itens 1-3 da lista de pendências ao usuário (feito no chat
+   ao fechar esta sessão).
+2. Se o usuário decidir os itens 1-2, aplicar em lote com o mesmo método
+   desta sessão (rastrear pelo lado JP, lista de exclusão de contexto,
+   verificar amostra antes/depois).
+3. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27 (continuação, mesmo dia) — resposta às 3 pendências:
+## 観音教/観音教団, significado de 教導師, varredura exaustiva Ohikari×proteção
+
+Usuário respondeu às 3 pendências da análise final anterior:
+
+### 1. 観音教/観音教団 → decisão: "Igreja Kannon" / "Organização Kannon"
+
+Decisão do usuário: `観音教` (a religião/fé) → **"Igreja Kannon"**; `観音教団`
+(o corpo organizacional/corporativo, 団=dan="organização") → **"Organização
+Kannon"**. Distinção aplicada em prosa (não em bylines de testemunho, que são
+nomes compostos de suborganizações específicas, escopo diferente) em
+9 arquivos: `19490701-無肥料栽培法` (2), `19481208-御光話録1号` (3),
+`19480101-御光話録（補）` (7, incluindo 2 capitalizações de
+"organização"→"Organização" para consistência de nome próprio). Também
+corrigido, achado durante o processo: `天国会` (Igreja Tengoku) usava
+romanização crua "Tenkokukai"/"Tengoku-kai"/"Tengokukai" sem traduzir em 6
+arquivos (`御光話録（補）`, `結核と神霊療法`, `奇蹟物語`, `御光話録18号`,
+`無肥料栽培法`, `革命的増産の自然農法解説`), e 大教会/中教会 (Igreja
+Grande/Média) tinha 1 outlier em minúsculo/adjetivo (`世界メシヤ教手引`) —
+ambos corrigidos por consistência com o padrão dominante do resto do acervo.
+**Pendente**: o restante do levantamento de ~15 arquivos/~40 ocorrências de
+観音教/観音教団 identificado na análise anterior não foi totalmente
+percorrido nesta sessão (ficou em ~9 dos 15 arquivos) — retomar se o usuário
+quiser fechar 100%.
+
+### 2. 教導師 (kyōdōshi) → aguardando decisão final do usuário
+
+Expliquei o significado com mais detalhe a pedido do usuário: é o ministro
+que **efetivamente pratica o Johrei** nos fiéis (não apenas título honorífico),
+opera seu próprio **教導所** (posto de atendimento, tipo consultório em
+casa), e o posto é **conquistado por mérito de serviço** — citação direta de
+Meishu-Sama: "支部長は教導師であり、教導師は信者を百人以上作った人か、
+三万円以上献金した人か、または支部長の推薦による" ("o chefe de sucursal é
+um kyōdōshi, e vira-se kyōdōshi quem converteu 100+ fiéis, ou doou 30 mil
+ienes ou mais, ou foi indicado"). Distinto de 教師 (Ministro, o título
+formal/jurídico da estrutura corporativa) — nos textos aparecem quase como
+categorias paralelas/sobrepostas, não uma hierarquia estrita.
+
+Usuário propôs **"Ministro Responsável de Unidade Religiosa"** (forma
+completa, 1ª menção por arquivo) / **"Ministro Responsável"** (forma
+abreviada depois) — aceito por mim como boa síntese (captura função +
+mérito). **Ainda não aplicado ao corpus** (20 arquivos, ~66 ocorrências) —
+aguardando confirmação final do usuário antes de rodar em lote (mesmo
+método já usado para 教師→Ministro: rastrear pelo JP, lista de exclusão de
+contexto, verificar amostra).
+
+### 3. Ohikari × 御守護 (proteção divina) — varredura EXAUSTIVA concluída,
+### 100% dos 97 arquivos verificados individualmente
+
+Usuário pediu explicitamente para verificar **todas as ~932 ocorrências**
+individualmente (não aceitar amostragem), mesmo depois de eu mostrar
+evidência forte (heurística validada + amostra de 8 arquivos) de que o
+problema estava concentrado. Cumprido à risca: **os 97 arquivos com
+ocorrências de 御守護/御加護 ou "Ohikari" foram lidos um a um**, cada menção
+de "Ohikari" no PT comparada contra o trecho JP correspondente.
+
+**Método usado** (2 técnicas combinadas, a 2ª descoberta no meio do
+processo): (a) alinhamento por spec de segmentação (`jp_anchor`/`pt_anchor`,
+reaproveitando a lógica de `split_by_anchors` de
+`apply_manual_livros_segmentacao.py`) quando o spec tinha boa cobertura; (b)
+**heurística de concordância de gênero** — "Ohikari" é sempre masculino
+("o Ohikari") na convenção do corpus; todo erro real encontrado tinha
+concordância **feminina** ("a Ohikari", "pela Ohikari", "uma Ohikari"),
+sinal de que o termo original era "proteção divina" (feminino) trocado por
+"Ohikari" sem ajustar a concordância — false-positives de genitivo (ex. "a
+grandeza da Ohikari", onde "a" concorda com "grandeza", não com "Ohikari")
+excluídos com lista de substantivos femininos comuns antes do "da/na". Essa
+heurística, testada retroativamente contra os erros já achados manualmente,
+teve 100% de recall e ainda achou 3 que uma primeira passada manual tinha
+deixado passar.
+
+**Resultado final**: **32 erros reais, todos confinados a um único
+arquivo** — `19530910-世界救世教奇蹟集.txt` (a maior coletânea de
+testemunhos do acervo, ~335 ocorrências de 御守護/御守 combinadas). Os
+outros **96 arquivos, lidos individualmente, não têm nenhum erro deste
+tipo** — confirmado tanto pela heurística de gênero (0 hits) quanto por
+verificação manual direta de cada menção de "Ohikari" contra o contexto JP
+(feita para todos os 96, não só amostra, incluindo os 12 arquivos com mais
+de 8 ocorrências cada, lidos integralmente).
+
+Padrão dos 32 erros corrigidos em `世界救世教奇蹟集`: frases de gratidão
+tipo "graças à proteção divina", "pela proteção divina que recebi", "esta
+vida renascida pela proteção divina" tinham "proteção divina"
+sistematicamente substituído por "Ohikari" nesse arquivo específico
+(provavelmente traduzido num lote/sessão diferente do resto do acervo,
+mais propenso a esse erro) — todas corrigidas para "proteção divina",
+preservando a construção gramatical (só trocando o substantivo, sem alterar
+o resto da frase).
+
+**Nota metodológica para o futuro**: a heurística de concordância de
+gênero (Ohikari=masculino, proteção=feminino) é uma ferramenta rápida e de
+altíssima precisão para achar este tipo específico de erro em qualquer
+revisão futura do corpus — reutilizável se novos arquivos forem
+adicionados ou revisados.
+
+### Onde continuar (prioridade máxima)
+
+1. **教導師**: aguardando confirmação final do usuário sobre "Ministro
+   Responsável de Unidade Religiosa" antes de aplicar em lote aos 20
+   arquivos/~66 ocorrências.
+2. **観音教/観音教団**: decisão já tomada e parcialmente aplicada (9
+   arquivos) — falta terminar o restante do levantamento original
+   (~15 arquivos, ~40 ocorrências) se o usuário quiser fechar 100%.
+3. Ohikari×proteção divina: **fechado, verificação exaustiva concluída**,
+   não precisa retomar a menos que novo conteúdo seja adicionado ao
+   corpus.
+4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — não tentar commitá-los sem
+   perguntar de novo.
+5. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Atualização 2026-07-27 (mesma sessão, mais tarde) — 観音教/観音教団
+## concluído (~30 arquivos), erro próprio cometido e corrigido no processo
+
+Terminado o levantamento completo de 観音教 (Igreja Kannon) / 観音教団
+(Organização Kannon) nos arquivos restantes: mais ~21 arquivos corrigidos
+além dos 9 já feitos, total ~30 arquivos com o termo agora padronizado
+corretamente conforme o kanji exato (教 vs 教団).
+
+**Erro cometido e corrigido no processo**: ao inferir o termo certo em 3
+instâncias sem checar o kanji exato primeiro (2 em `御光話録（補）`, 1 em
+`御垂示録1号`), troquei "Associação Kannon" por "Organização Kannon" —
+mas o JP original nesses 3 casos específicos era na verdade **観音会**
+(kai, "associação/sociedade"), um TERCEIRO composto distinto de 観音教
+(kyo, a religião) e 観音教団 (kyodan, a organização/corpo corporativo).
+`観音会` já tinha tradução estabelecida e correta como "Associação Kannon"
+(mesma forma usada para `大日本観音会`→"Associação Kannon do Grande
+Japão"), então a versão original **já estava certa** e minha "correção"
+introduziu um erro novo. Descoberto ao verificar o kanji exato no JP antes
+de seguir para os próximos arquivos (hábito que devia ter aplicado desde
+o início) — os 3 casos foram revertidos para "Associação Kannon".
+**Lição**: sempre conferir o kanji exato (教/教団/会) no JP antes de trocar
+o termo, nunca inferir pelo padrão da frase sozinho — os três compostos
+têm tradução fixa e diferente, e são visualmente parecidos o suficiente
+para confundir por inferência.
+
+Achados adicionais corrigidos durante o processo: `世界救世教奇蹟集`
+(1 instância com romanização crua "Kannon-kyō" não traduzida → "Igreja
+Kannon"), `御光話録10号`/`御垂示録14号`/`信仰雑話` (教団 traduzido como
+"Igreja Kannon" em vez de "Organização Kannon" — 3 correções).
+
+**Não tocado, decisão deliberada**: 2 referências históricas em `Kyusei.txt`
+que citam o nome legal formal "Nihon Kannon Kyodan" (romanizado) ao
+descrever a dissolução/fundação corporativa formal de 1950 — mantido como
+está por ser citação de nome de entidade jurídica num contexto histórico
+formal, não prosa comum (estilo defensável, diferente dos casos de
+romanização "por preguiça" corrigidos no resto do acervo). 1 instância em
+`Eiko.txt` (pergunta sobre por que o nome mudou de "Kannon-kyō" para
+"Igreja Messiânica") também deixada como está pelo mesmo motivo — é uma
+citação do nome antigo dentro de uma pergunta sobre a mudança de nome, não
+prosa descritiva comum.
+
+**Resultado final**: 27 arquivos do acervo agora usam "Igreja Kannon"
+e/ou "Organização Kannon" de forma correta e distinta pelo kanji de
+origem. Título do ensaio `自観叢書第7篇『基仏と観音教』` mantido como
+"Cristianismo, Budismo e a Religião de Kannon" (paráfrase de título, não
+alterado — decisão de manter fluência de título, não obrigar o termo
+fixo no nível de título de capa).
+
+### Onde continuar (prioridade máxima)
+
+1. **観音教/観音教団: concluído.** Não retomar a menos que o usuário peça
+   nova varredura.
+2. **教導師: concluído.** Usuário confirmou explicitamente ("sim, aplique
+   nos 20 arquivos"). Aplicado `教導師`→"Ministro Responsável de Unidade
+   Religiosa" (1ª menção por arquivo) / "Ministro Responsável" (depois);
+   `教導師補`→"Ministro Responsável de Unidade Religiosa Assistente" /
+   "Ministro Responsável Assistente". Entradas adicionadas ao
+   `glossario_traducao.json`.
+3. Ohikari×proteção divina: fechado (ver seção anterior).
+4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário.
+5. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Atualização 2026-07-27 (mesma sessão, mais tarde ainda) — 教導師
+## aplicado aos 20 arquivos (72 ocorrências)
+
+Usuário confirmou aplicar "Ministro Responsável de Unidade Religiosa"
+(1ª menção)/"Ministro Responsável" (depois) aos 20 arquivos com 教導師
+(72 ocorrências totais, incluindo `教導師補`→"...Assistente").
+
+**Achado importante que mudou o método**: ao contrário do fix de 教師
+(que usava consistentemente "professor"/"instrutor religioso" em quase
+todo o acervo), a tradução atual de 教導師 era **muito mais variada**
+entre arquivos e até dentro do mesmo arquivo — "instrutor" genérico,
+"Mestre Instrutor", "Professor Orientador", "Professor Assistente",
+"Ministro guia", "Instrutor Auxiliar", "Instrutora Doutrinária",
+"kyōdōshi" (romanizado), e pelo menos 2 bugs reais de tradução onde
+**教師 e 教導師 foram fundidos na mesma palavra** (ex.: "a maioria são
+Ministros e Ministros." — perdendo a distinção; "Entre os Ministros, há
+pessoas que sentem dor..." quando o JP dizia 教導師, não 教師). Por isso,
+**não foi possível um find-replace cego em nenhum arquivo onde 教師 e
+教導師 coexistem** (10 dos 20 arquivos) — cada ocorrência foi confirmada
+pelo kanji exato no JP e localizada individualmente no PT antes de
+corrigir. Nos 10 arquivos onde só 教導師 aparece (sem 教師 bare), a
+contagem de "instrutor"/variantes bateu com a contagem JP e foi aplicado
+com segurança em lote (com ajustes pontuais de gramática depois, ex.
+remover qualificador redundante "religioso" que sobrava de
+"instrutor religioso"→"Ministro Responsável religioso").
+
+**Resultado**: 72 ocorrências corrigidas nos 20 arquivos, incluindo os 2
+bugs de fusão 教師/教導師 (`御光話録13号`, `浄霊法講座3号`,
+`世界救世教奇蹟集`). Título "Ministro Responsável de Unidade Religiosa"
+usado na 1ª menção de cada arquivo (bylines incluídas, diferente do
+tratamento dado a nomes de organização como 観音教 — aqui a palavra em si
+é o título sendo conferido, não um nome próprio de entidade, então
+bylines também foram corrigidas). Glossário atualizado com as duas
+entradas (`教導師`, `教導師補`).
+
+**Não perseguido, baixa prioridade**: 1 citação paralela de Gokōwa em
+`浄霊法講座（九）9号` (mesmo conteúdo já corrigido em `御光話録16号`) não
+teve correspondência literal encontrada no PT deste volume específico —
+pode já estar ausente/resumida nesse volume, não investigado a fundo.
+
+### Onde continuar
+
+1. Os 3 itens da análise final (観音教/観音教団, 教導師, Ohikari) estão
+   **todos concluídos**.
+2. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — perguntar antes de commitar.
+3. Continua valendo: nenhuma promoção de índice/produção sem autorização
+   explícita do usuário.
+
+## Sessão 2026-07-27/28 (Claude Code) — corpus inteiro ajustado linha a
+## linha para o chunk estrutural (100%), gap crítico de pipeline achado
+## e corrigido (sync `livros_publicacao_pt_revisado` → `livros_trabalho/pt`)
+
+### Pedido do usuário e mandato
+
+No início desta sessão, ao verificar se a segmentação atual estava
+adequada para o chunk estrutural determinado pelo projeto (regras em
+`reports/livros_trabalho/segmentacao_manual/PROTOCOLO_CHUNK_TURNAWARE.md`:
+segmentação sempre pela divisão estrutural do autor; exceção de corte por
+contagem de caractere só nas 3 séries por data — Gokōwa-roku, Gosuiji-roku,
+Mioshie-shū —; corte nunca no meio de um par Interlocutor:/Meishu-Sama:;
+padrão de aceitação é 100%), a auditoria revelou que **80% do acervo**
+(102 de 128 livros) tinha `pt_anchor` desatualizado em relação ao texto
+atual — causa raiz: âncoras são busca de texto **literal**, e as inúmeras
+sessões de revisão editorial (Fase F/G) e triagem de glossário (sessões de
+26-27/07, ver acima) editaram o texto de `livros_publicacao_pt_revisado/`
+sem nunca revalidar as âncoras que apontavam para ele. **Instrução literal
+do usuário, depois de eu reportar esse achado**: "a ÚNICA forma que
+funciona para o ajuste da segmentação é linha a linha de forma semantica e
+comparativa com o jp. Faça o ajuste de todo o corpus dessa forma... O
+padrão é 100%, não importa o custo e o tempo." Em seguida, o usuário
+concedeu autonomia total até o fim ("levar esse trabalho até o fim sem
+precisar confirmar nada comigo"), pedindo commit + atualização de
+documentos ao terminar, e deixando a decisão de promoção para quando
+voltasse.
+
+**Erro cometido e corrigido no meio do caminho**: parei de trabalhar e dei
+um status quando o usuário disse "boa noite" (voltando de uma pausa) — o
+usuário corrigiu na hora ("pq vc parou?"), e confirmei que a instrução de
+autonomia total (sem check-ins) continuava valendo até o fim de fato.
+
+### Método usado (repetido ~150 vezes ao longo da sessão)
+
+Para cada âncora (`pt_anchor`) que `split_by_anchors` (a função real de
+produção, de `apply_manual_livros_segmentacao.py`, a mesma usada por
+`article_entries_from_spec` em `build_clean_large_indexes.py`) não
+conseguia encontrar: (1) localizar o trecho correspondente atual no PT via
+busca de palavras-chave distintivas da âncora antiga; (2) comparar
+literalmente com o texto atual para achar o ponto exato de divergência
+(reformulação, glossário aplicado, pontuação, aspas retas vs curvas,
+espaço de largura total vs normal); (3) atualizar a âncora com o texto
+REAL atual; (4) reverificar com a função de produção de verdade, nunca
+assumir que "parece certo" — e quando a verificação falhava de novo mais
+adiante no mesmo livro (comum: cursor avança e a próxima âncora, que
+parecia bater em `grep`, na verdade batia numa ocorrência ANTES do cursor,
+de um trecho repetido — mesmo padrão de "retelling" já documentado em
+sessões anteriores para Gokōwa/Gosuiji/Mioshie), repetir o processo até o
+livro inteiro fechar 100%.
+
+### Escopo completo, em 3 fases (Tasks #7-#12 desta sessão)
+
+1. **Gokōwa-roku (20 livros)** — todos corrigidos, a maioria só no
+   cabeçalho/data; achado extra: `19490522-御光話録7号.txt` tinha os
+   âncoras de art0/art1 literalmente TROCADOS entre si.
+2. **Gosuiji-roku (30 livros)** — corrigidos, principalmente o formato de
+   cabeçalho `[1º de mês]` colchete vs sem colchete.
+3. **Mioshie-shū (33 livros)** — corrigidos; `19530815-御教え集24号`
+   precisou de busca semântica profunda em 6 artigos (temas: exposição de
+   ukiyo-e, inundação em Kyushu, "Livro da Revolução Médica" três vezes,
+   bactérias/Johrei); achado de **erro real de pareamento de conteúdo**
+   em `19491130-自観叢書第8篇『明麿近詠集』.txt` (poema 145 apontava por
+   engano para o texto do poema 146 — corrigido, não é só desatualização,
+   era um bug de conteúdo herdado).
+4. **45 livros de outros perfis** — o grupo mais trabalhoso, incluindo:
+   - 10 volumes de `浄霊法講座` (koza_lectures): título mudou para "Curso
+     do Método de Johrei" (decisão de glossário do Tema 1, 27/07) e
+     colofões antigos (`"Curso de Johrei nº X, publicado em..."`) foram
+     removidos do texto atual — âncoras recriadas a partir do título.
+   - `結核の革命的療法` (196 artigos) — o livro mais complexo do acervo,
+     com pelo menos 5 citações de hino/poema recorrentes ao longo do
+     texto (a mesma frase aparecendo 3-4 vezes em pontos diferentes);
+     **cometi e corrigi 3 vezes o mesmo erro de índice** (sobrescrever o
+     artigo ERRADO ao confundir índice 0-based vs a posição relatada
+     1-based pela mensagem de erro `pt[N]`) — sempre pego porque a
+     reverificação com `split_by_anchors` falhava de novo no MESMO
+     índice, nunca passou despercebido.
+   - `アメリカを救う` (84 artigos) — achado de um artigo "nota de
+     substituição" (idx65, explicando que um depoimento foi substituído
+     em edições posteriores) cujo texto **não existe mais** no PT atual
+     (removido em alguma revisão editorial); resolvido apontando a âncora
+     para o início do conteúdo real seguinte (o byline anônimo "N.Y."),
+     não uma posição inventada — confirmado por leitura direta do texto
+     antes e depois do ponto de transição.
+   - `世界救世教奇蹟集`, `天国の福音書`, `結核信仰療法`, etc. — a maioria
+     com 1-3 âncoras divergentes (aspas, espaços, reformulação leve).
+
+### Task #11 — reverificação de profundidade dos 13 livros "ok à primeira
+### vista" (não tocados nas fases acima)
+
+Confirmar que passar em `split_by_anchors` na primeira tentativa não
+escondia um "acerto por coincidência" (âncora velha batendo em algum
+trecho por sorte, não no lugar certo). Verificação em 2 camadas:
+
+1. **Leitura/comparação temática de âncoras JP×PT** para os 13 livros
+   (`観音講座`, `御光話録3号`, `無肥料栽培法`, `山と水`, `光への道`,
+   `御垂示録1号`, `法難手記`, `自然農法解説`, `世界救世教教義`,
+   `結核信仰療法`, `革命的増産の自然農法解説`, `A Story of Ukiyo-e`,
+   `世界メシヤ教手引`) — todos confirmados coerentes.
+2. **Checagem programática de "âncora começando no meio de uma palavra"**
+   (script ad-hoc: para cada âncora resolvida, comparar o caractere
+   imediatamente anterior à posição encontrada; se ambos alfanuméricos
+   ASCII, é sinal de truncamento) — achou e corrigiu **1 bug real** em
+   `無肥料栽培法` (artigo 24: âncora começava em `"26 anos)"`, cortando o
+   nome "Sato Katsuto (" do início; texto correto confirmado por grep no
+   arquivo).
+
+**Achado sistêmico adicional**: a checagem original (`verify_all_anchors.py`)
+tratava todo livro de **1 artigo só** como "sem risco" e nunca verificava
+se a única âncora batia de verdade. Rodando a checagem real neles: **8 de
+13 livros de artigo único** (do acervo inteiro, não só os 13 do Task #11)
+tinham a âncora quebrada — `19490423-御光話録6号`, `19490530-御光話録8号`,
+`19490730-御光話録9号`, `19491220-御光話録15号`, `19500228-御光話録17号`,
+`19500921-地上天国出来るまで`, `19510805-新しき暴力`,
+`19541211-明主様御言葉 水晶殿御遷座` — todos corrigidos e reverificados.
+Esse é um gap real do processo de auditoria anterior, não hipotético: por
+`article_entries_from_spec()`, mesmo um livro de 1 artigo cai pro
+fallback de arquivo inteiro se a única âncora não bater.
+
+### Task #12 — verificação final: turn-aware + descoberta crítica de
+### gap de pipeline
+
+**1. Turn-aware (nunca cortar Interlocutor:/Meishu-Sama: ao meio)**:
+primeira rodada do script de verificação (reaproveitado de sessão
+anterior) reportou dezenas de "violações" — investigação encontrou que o
+BUG estava no PRÓPRIO script de verificação (usava
+`texto.split("\n\n")` simples para derivar parágrafos, enquanto
+`split_chunks_by_size` de produção usa
+`re.split(r"\n\s*\n+", texto)` — mais tolerante a variações de
+espaço em linha branca). Corrigido o script de verificação para replicar
+exatamente a lógica de produção; resultado real: **0 violações em 16.291
+unidades de turno verificadas** nos 83 livros das 3 séries (408 unidades
+legitimamente gigantes, >3200 chars, com corte interno esperado e
+documentado). O corte turn-aware está genuinamente correto e íntegro.
+
+**2. Gap crítico de pipeline descoberto (achado não-trivial, novo nesta
+sessão)**: `scripts/build_clean_large_indexes.py` **não lê texto de
+`livros_publicacao_pt_revisado/`** — lê de `textos_portugues/`/
+`textos_japones/` (constantes `PT_DIR`/`JP_DIR` no topo do script). A
+ponte entre os dois é `scripts/promote_livros_trabalho_to_produção.py`,
+que copia bytes de `reports/livros_trabalho/{pt,jp}/` (não de
+`livros_publicacao_pt_revisado/`) para `textos_portugues/`/`textos_japones/`.
+Comparação directa confirmou: **todos os 128 livros** divergiam (em
+bytes) entre `livros_publicacao_pt_revisado/` e `reports/livros_trabalho/pt/`
+— ou seja, **nenhuma correção de nenhuma sessão de revisão editorial ou
+glossário desde pelo menos 16/07 havia chegado à cópia que alimenta o
+pipeline de build** (o lado JP, em contraste, já estava sincronizado:
+`reports/livros_trabalho/jp/` ↔ `textos_japones/` sem diferenças de
+conteúdo, só 6 arquivos extra fora de escopo). Sem essa sincronização, o
+ajuste de âncoras desta sessão inteira **não teria efeito real** no
+próximo rebuild — as âncoras (corrigidas contra o texto novo) não bateriam
+contra o texto antigo ainda presente em `textos_portugues/`, e
+`article_entries_from_spec` cairia de volta no fallback de arquivo
+inteiro para a maioria dos livros, exatamente o problema que esta sessão
+inteira existiu para resolver.
+
+**Ação tomada**: sincronizados os 128 arquivos `.txt` de
+`livros_publicacao_pt_revisado/` → `reports/livros_trabalho/pt/`
+(sobrescrita simples, com backup de cada arquivo substituído em
+`reports/livros_trabalho/pt_sync_backup_20260728/`) — **não** os arquivos
+de periódico (`Eiko.txt` etc., fora do escopo deste pipeline de 128
+livros) nem qualquer `.bak_*` existente. Confirmado por `diff -rq`: 0
+arquivos `.txt` divergentes entre os dois diretórios após a sincronização.
+Reverificado com `split_by_anchors` apontando para
+`reports/livros_trabalho/pt/`: mesmo resultado 100% (128/128 livros, JP+PT).
+**Deliberadamente NÃO fiz o próximo passo** (rodar
+`promote_livros_trabalho_to_produção.py --apply` para levar a
+`textos_portugues/`, nem `build_clean_large_indexes.py`, nem qualquer
+instalação) — isso já entra em território de promoção, que o usuário
+reservou explicitamente para quando voltar.
+
+**3. Auditoria legada (`audit_manual_livros_segmentacao.py`) — descartada
+como ferramenta de verificação para este trabalho**: ao rodar (sem
+`--fix`, só leitura) contra o acervo já sincronizado, o script **crashou
+em praticamente todos os 128 livros** (`IndexError: list index out of
+range` em `parse_article(pt_blocks[0])` — ele espera o formato antigo de
+blocos com cabeçalho `=== ARTIGO ===`, que `livros_publicacao_pt_revisado/`
+nunca usou; ao sincronizar o texto limpo para `reports/livros_trabalho/pt/`,
+esse pressuposto do script quebrou de vez). Não faz sentido consertar essa
+ferramenta legada agora (fora de escopo, e o mecanismo de pareamento por
+idade que ela usa já tem bug catalogado de sessões anteriores) — a
+verificação real e confiável para este trabalho é o par
+`split_by_anchors`/`article_entries_from_spec` (produção) +
+`_group_into_turn_units`/`split_chunks_by_size` (produção), ambos
+exercitados directamente nesta sessão contra o corpus real, não a
+ferramenta de diagnóstico legada.
+
+### Resultado final desta sessão
+
+- **128/128 livros do acervo** com `pt_anchor` e `jp_anchor` batendo
+  literalmente contra o texto atual, verificado pela função real de
+  produção (`split_by_anchors`), tanto em `livros_publicacao_pt_revisado/`
+  quanto (após a sincronização) em `reports/livros_trabalho/pt/`.
+- **0 violações de corte turn-aware** em 16.291 unidades verificadas nas
+  3 séries por data (Gokōwa-roku, Gosuiji-roku, Mioshie-shū).
+- **`reports/livros_trabalho/pt/` sincronizado com a fonte real** —
+  pré-requisito que faltava e que, se não corrigido, teria neutralizado
+  o efeito prático de todo o resto deste trabalho no próximo rebuild.
+- **3 bugs de conteúdo reais corrigidos** (não só desatualização de
+  âncora): poema 145↔146 trocado em `明麿近詠集`; nome cortado
+  "Sato Katsuto" em `無肥料栽培法`; 8 livros de artigo único com a única
+  âncora quebrada (gap de auditoria anterior, agora fechado).
+
+### Onde continuar (prioridade máxima — mais recente)
+
+1. **Corpus 100% pronto para o chunk estrutural** — não é mais bloqueio
+   para nenhum rebuild.
+2. **Próximo passo mecânico, ainda não feito** (decisão do usuário se/quando
+   rodar): `python3 scripts/promote_livros_trabalho_to_produção.py --lang pt
+   --apply` (leva `reports/livros_trabalho/pt/` → `textos_portugues/`,
+   com backup automático) — JP não precisa, já está sincronizado. Depois
+   disso, `build_clean_large_indexes.py` geraria o staging novo em
+   `experiments/` com todas as correções (glossário + estrutura) desta e
+   de sessões anteriores.
+3. **Nenhuma promoção/instalação em produção sem autorização explícita do
+   usuário** — regra reafirmada, nada mudou aqui. O trabalho desta sessão
+   foi inteiramente preparatório (specs de segmentação + sincronização de
+   staging interno), não tocou `textos_portugues/`, `experiments/` nem a
+   raiz de produção.
+4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário — este commit cobre só o CLAUDE.md.
