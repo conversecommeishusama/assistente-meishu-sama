@@ -3222,7 +3222,32 @@ atualizado no acervo. Achado anterior retirado.
 4. **Investigado e resolvido**: o suposto gap do Eiko nº 150 não existia
    — o artigo já está migrado (índice 299 do spec), só tinha sido
    reformulado pela revisão editorial. Nada a fazer aqui.
-5. Nenhuma promoção/instalação em produção sem autorização explícita do
-   usuário — regra reafirmada, nada mudou.
-6. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
    fora do git por decisão do usuário.
+
+## Sessão 2026-07-28 (continuação) — AUTORIZAÇÃO EXPLÍCITA DE PROMOÇÃO
+## CONCEDIDA — corpus de 139 obras sendo promovido a produção
+
+**Instrução literal do usuário**: "Pode fazer a promoção do corpus que
+trabalhamos até o fim sem me consultar em nada. Faça o commit e a
+atualização da documentação antes da promoção e ao final também. Ao
+final desse trabalho o corpus que trabalhamos deve estar sendo usado
+plenamente no goshinsho."
+
+Isso **substitui, só para este corpus específico de 139 obras
+(128 livros + 10 periódicos + Esboço da Medicina) e só nesta sessão**, a
+regra padrão de sempre pedir autorização explícita antes de promover.
+Não é uma mudança permanente da regra — é uma autorização pontual,
+literal, para terminar este trabalho específico até produção.
+
+Sequência planejada (tasks #13-#19): promover PT (`reports/livros_trabalho/pt`
+→ `textos_portugues`), promover JP (`reports/livros_trabalho/jp` →
+`textos_japones`, só os 11 arquivos novos de periódico/Esboço da
+Medicina deveriam mudar, os 128 livros já estavam sincronizados),
+rodar `build_clean_large_indexes.py` para gerar o build novo, instalar
+em produção (location a confirmar: `experiments/uploaded_indexes/` é o
+que `_index_file()` prioriza, não necessariamente a raiz), reiniciar o
+serviço (`systemctl restart goshinsho.service`) por causa do
+`lru_cache` documentado em sessão anterior (16/07: produção não recarrega
+índice sem restart), e verificar de ponta a ponta que o site está
+servindo o corpus novo antes de considerar concluído.
