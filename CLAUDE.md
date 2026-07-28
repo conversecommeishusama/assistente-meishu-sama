@@ -2948,3 +2948,142 @@ ferramenta de diagnóstico legada.
    raiz de produção.
 4. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
    fora do git por decisão do usuário — este commit cobre só o CLAUDE.md.
+
+## Sessão 2026-07-28 (continuação, mesma sessão) — os 10 periódicos trazidos
+## ao mesmo padrão de segmentação dos 128 livros (corpus agora é 138 obras)
+
+### Pergunta do usuário que revelou a lacuna
+
+Depois de fechar os 128 livros a 100%, o usuário perguntou diretamente:
+"esse trabalho de segmentação foi incluído os periódicos jp/pt?" — não
+tinha sido. Ao investigar, o usuário corrigiu o enquadramento: "o corpus
+tem 138 livros e não 128 + 10... isso precisa ser mudado" — ou seja, os
+10 periódicos (`Eiko`, `Hikari`, `Kyusei`, `Tijotengoku`, `Keiko`,
+`Revista_Asahi`, `Relatos_de_Milagres`, `Jornais`, `Medicina_do_Amanha`,
+`Ensinamentos_diversos`) deveriam estar no mesmo pipeline de segmentação/
+chunk estrutural que os 128 livros, tratados como parte de um único
+corpus de 138 obras, não como um projeto à parte.
+
+### Achado antes de agir: dois mecanismos de periódico não reconciliados
+
+Investigação encontrou **dois sistemas de periódico distintos e nunca
+reconciliados**:
+1. `data/publication_sources/entries.jsonl` (mais antigo, do projeto
+   Zenshū/Rokkan) — já ligado ao índice via `publication_source_entries()`
+   em `build_clean_large_indexes.py`, mas organizado por categoria
+   temática solta (não por periódico+cronologia), e com pelo menos **1
+   colisão de ID confirmada** (mesmo `entry_id` apontando para conteúdo
+   diferente entre os dois sistemas) — sinal de que ficou desatualizado.
+2. `livros_publicacao_pt_revisado/{periodico}.txt` (mais novo, projeto de
+   17/07 em diante, cruzado contra o Rokkan para legitimidade doutrinária)
+   — **nunca ligado a nada**: sem spec em `segmentacao_manual/`, ausente
+   de `textos_portugues/`/`textos_japones/`.
+
+Perguntado qual fonte deveria virar a base oficial, o usuário pediu meu
+julgamento ("o que vc acha mais lógico e condizente com um trabalho
+padrão 100%?"). Recomendei a fonte 2 (mesma pasta/rigor editorial dos 128
+livros, já cruzada contra o Rokkan, sem a colisão de ID) — usuário
+confirmou e deu autonomia total até terminar.
+
+### Achado que facilitou o trabalho: os arquivos já vêm com fronteira de
+### artigo pronta
+
+Ao contrário dos 128 livros (onde a fronteira de artigo era o problema
+difícil, exigindo trabalho manual extensivo), os 10 arquivos de
+periódico em `livros_publicacao_pt_revisado/` e o correspondente JP em
+`reports/periodicos_trabalho/jp/` **já vêm em blocos `=== ARTIGO ===`**
+com metadados por artigo (`entry_id`, `paired_id`, `sort_date`,
+`title_jp`, `title_pt`) embutidos no próprio texto — um formato de
+trabalho intermediário, não o formato de publicação limpo usado em todo
+o resto do acervo. Confirmado por contagem: **contagem de blocos bate
+exatamente com o cabeçalho `# Artigos: N`** de cada arquivo, e o
+**pareamento JP↔PT por posição é 100% consistente** (mesmo `entry_id`/
+`paired_id` no mesmo índice dos dois lados, 0 divergências em todos os
+10) — ou seja, o trabalho difícil (decidir onde cada artigo começa e
+casar JP com PT) já tinha sido feito em sessão anterior; faltava só
+extrair isso para o formato de publicação limpo + spec, não refazer a
+segmentação do zero.
+
+**1 formato de bloco alternativo encontrado** (2 dos 68 artigos de
+`Kyusei`): sem o bloco de metadados redundante `Title:/Publication
+source:/.../Paired...` que a maioria tem — só os campos
+`entry_id`/`paired_id`/.../`title_pt` seguidos direto do conteúdo, sem
+duplicar o título antes da citação. Parser escrito de forma tolerante a
+essa variante (detecta ausência de `---` e ajusta), verificado por
+inspeção manual dos 2 casos — conteúdo íntegro, só faltando o bloco
+redundante.
+
+### Método usado
+
+1. Parser tolerante (`scripts/parse_periodico.py`) que lê os blocos
+   `=== ARTIGO ===`, extrai metadados e corpo, tolerando a variante sem
+   bloco de metadados redundante.
+2. Para cada um dos 10 periódicos: gerar texto limpo (título + citação +
+   corpo, sem nenhum resíduo de metadado) para PT e JP, e uma spec de
+   segmentação (`reports/livros_trabalho/segmentacao_manual/{nome}.txt.json`,
+   `profile: periodico_publicacao`) com `jp_anchor`/`pt_anchor` = início
+   literal do texto limpo de cada artigo (o próprio título, texto
+   inequivocamente único dentro do periódico).
+3. Verificado com a função real de produção (`split_by_anchors`) **antes**
+   de gravar em disco (dry-run) — **100% de acerto na primeira tentativa
+   em todos os 10 arquivos** (678 artigos ao todo: 368+122+68+70+1+1+5+4+
+   33+6), sem nenhum ajuste manual necessário — diferença marcante do
+   trabalho de 150 correções manuais feito nos 128 livros, porque aqui a
+   fronteira e o pareamento já vinham prontos.
+4. Gravado: texto limpo PT sobrescreve `livros_publicacao_pt_revisado/
+   {nome}.txt` (backup do formato de bloco original salvo em
+   `reports/livros_trabalho/pt_sync_backup_20260728/{nome}.txt.bak_block_format`);
+   texto limpo JP escrito em `reports/livros_trabalho/jp/{nome}.txt`
+   (local novo, mesma convenção dos 128 livros — antes só existia em
+   `reports/periodicos_trabalho/jp/`, não tocado).
+5. Checagem de resíduo (grep por `entry_id:`/`Collection ID:`/
+   `=== ARTIGO ===` nos arquivos limpos) e checagem de âncora cortada no
+   meio de palavra (mesma checagem que achou o bug de `無肥料栽培法`
+   antes) — **0 ocorrências** nos 10 periódicos.
+6. Sincronizado `reports/livros_trabalho/pt/{nome}.txt` a partir de
+   `livros_publicacao_pt_revisado/` (mesmo passo de sincronização feito
+   para os 128 livros mais cedo nesta sessão) — reverificado 100% contra
+   essa cópia também.
+
+### Confirmação de que não é preciso mexer em código
+
+`collect_entries()`/`_load_spec_for()` em `build_clean_large_indexes.py`
+já iteram sobre **todo** arquivo `.txt` em `PT_DIR`/`JP_DIR`
+(`textos_portugues`/`textos_japones`) e procuram a spec correspondente
+por nome (`{nome}.txt.json`) — sem nenhuma referência hardcoded aos 128
+livros. Assim que o passo de promoção (`promote_livros_trabalho_to_produção.py`)
+rodar (decisão do usuário, ainda não executada — mesma regra dos 128
+livros), os periódicos serão automaticamente descobertos e processados
+por `article_entries_from_spec()`, sem nenhuma mudança de código
+necessária. **Exceção esperada, não um bug**: `Keiko` e `Revista_Asahi`
+têm só 1 artigo cada — `article_entries_from_spec()` retorna `None` para
+specs de 1 artigo só (mesma regra que afeta os livros de artigo único),
+então esses 2 caem no tratamento de arquivo inteiro — correto, dado que
+realmente só têm 1 artigo mesmo.
+
+**Resultado final: 138/138 obras (128 livros + 10 periódicos) verificadas
+100% pela função real de produção**, tanto em `livros_publicacao_pt_revisado/`
++ `reports/livros_trabalho/jp/` quanto na cópia de staging sincronizada
+`reports/livros_trabalho/pt/`.
+
+**Não tocado, propositalmente**: `data/publication_sources/entries.jsonl`
+(mecanismo antigo, com a colisão de ID) — decisão de aposentar ou
+reconciliar fica para o usuário decidir depois, fora do escopo desta
+sessão. `reports/periodicos_trabalho/` (o projeto de origem dos
+periódicos) não foi alterado, só lido.
+
+### Onde continuar (prioridade máxima — mais recente)
+
+1. **Corpus inteiro (138 obras) pronto para o chunk estrutural** — não é
+   mais bloqueio para nenhum rebuild.
+2. Próximo passo mecânico ainda não feito (decisão do usuário):
+   `promote_livros_trabalho_to_produção.py --lang pt --apply` (agora
+   cobre os 138, não só 128) + `build_clean_large_indexes.py`.
+3. **Decisão pendente do usuário**: o que fazer com
+   `data/publication_sources/entries.jsonl` (a fonte antiga de
+   periódico, com a colisão de ID) — manter em paralelo, aposentar, ou
+   reconciliar linha a linha? Não decidido nesta sessão.
+4. Nenhuma promoção/instalação em produção sem autorização explícita do
+   usuário — regra reafirmada, nada mudou.
+5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário.
