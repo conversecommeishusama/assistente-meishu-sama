@@ -3131,18 +3131,88 @@ de "Showa 38" (1963) — 8 anos depois da morte de Meishu-Sama (1955).
 Pode ser erro de conversão de era na base antiga ou compilação póstuma;
 não investigado a fundo, mantido como está.
 
+### Atualização (mesma sessão, mais tarde ainda) — as 25 entradas "únicas"
+### investigadas a fundo: 22 eram redundantes mal rotuladas, só 3 eram
+### genuinamente novas (corpus final: 139 obras)
+
+Usuário pediu para trazer as 25 entradas únicas ao corpus (mesmo padrão de
+rigor) e, no meio do caminho, notou um título estranho ("Toxina Urêmica"
+em vez de "Toxina Urinária") e perguntou se esse conteúdo já tinha passado
+por revisão editorial. **Resposta confirmada: não** — `glossario_traducao.json`
+já tem `"尿毒": "toxina urinária"` desde sessão anterior; a entrada antiga
+usava "urêmica", prova direta de que nunca passou pelo glossário. Além
+disso, nenhuma das 25 entradas tinha `paired_id` preenchido (diferente de
+tudo mais no projeto) — o pareamento JP↔PT que eu tinha inferido por
+tema/data era só uma suposição minha, não algo já estabelecido.
+
+Investigando a fundo (comparando o CORPO de cada arquivo, não só o
+título, contra os 138 specs já existentes), descobri um padrão sistemático
+de **rotulagem errada no catálogo antigo** (`data/publication_sources/`):
+título dizia uma coisa, corpo era sobre outra completamente diferente.
+Exemplos confirmados: "Prefácio de Guia para Ukiyo-e" continha na verdade
+um texto sobre visitar o Templo Kofukuji (e esse texto real do Kofukuji,
+por sua vez, é um artigo genuíno do Eiko nº 150 que **nunca entrou** nos
+368 artigos já migrados — gap real, não corrigido, deixado registrado);
+"Quem é o Messias?" continha na verdade "Respeite a Natureza", já em
+`結核の革命的療法`; "A Causa das Doenças e a Impureza do Pecado" continha
+"A Possessão do Dragão Divino", já em `光への道`, pareado (por coincidência
+de data, não de conteúdo) com um arquivo JP sobre "doenças femininas" que
+por sua vez já está em `Ensinamentos_diversos.txt`; "Perguntas e Respostas
+Úteis" não tinha corpo nenhum, só título; o "問答有用" (JP, sobre arte e
+religião) já está inteiro em `Jornais.txt`; a entrevista longa com um
+locutor da NHK (16 mil caracteres) está espalhada entre `御光話録13号` e
+`Ensinamentos_diversos.txt`; "Bodhisattva Kannon" (mitologia de Susanoo/
+Amaterasu) já está em `Tijotengoku.txt`; a palestra "Tudo neste mundo é
+veneno" já está em `結核信仰療法`. Verificação feita por busca de múltiplos
+trechos do corpo (não só o início) em todos os 138 arquivos, não por
+amostra.
+
+**Resultado: 22 das 25 entradas eram redundantes** (já cobertas em algum
+lugar do corpus, só mal rotuladas no catálogo de origem) — nenhuma ação
+necessária, apenas confirmação. **Só 3 eram genuinamente novas**, todas do
+mesmo tratado médico de 1939 ("Esboço da Medicina" / `医学試稿`): as duas
+partes de `薬剤の毒` ("A Toxina dos Medicamentos") e `尿毒`. A Parte II
+nunca tinha sido traduzida (só existia em japonês) — traduzida do zero
+nesta sessão. `尿毒` corrigido de "Toxina Urêmica" para "Toxina Urinária"
+conforme o glossário.
+
+Criado `Esboco_da_Medicina.txt` (PT em `livros_publicacao_pt_revisado/`,
+JP em `reports/livros_trabalho/jp/`, spec em `segmentacao_manual/`,
+`profile: periodico_publicacao`), 3 artigos, verificado 3/3 pela função
+real de produção (`split_by_anchors`) tanto na fonte quanto na cópia de
+staging sincronizada `reports/livros_trabalho/pt/`. **Corpus final: 139
+obras** (128 livros + 10 periódicos + 1 obra nova pequena).
+
+**Ressalva honesta, dada ao usuário**: a tradução da Parte II é minha,
+feita agora nesta sessão — não recebeu as múltiplas rodadas de revisão
+editorial e triagem de glossário que o resto do corpus acumulou ao longo
+de semanas. É uma tradução cuidadosa e única, mas não tem o mesmo nível
+de escrutínio acumulado que todo o resto.
+
+**Achado colateral, não corrigido**: o artigo do Eiko nº 150 (sobre a
+exposição de tesouros do Templo Kofukuji, com o Buda "Ashura") existe na
+fonte bruta (`reports/periodicos_trabalho/jp/Eiko.txt`, `publication-jp-1821`)
+mas **não está entre os 368 artigos** já migrados para `Eiko.txt`. Gap real
+na curadoria de 17/07, não revisitado nesta sessão — mencionar se o
+usuário quiser fechar isso depois.
+
 ### Onde continuar (prioridade máxima — mais recente)
 
-1. **Corpus inteiro (138 obras) pronto para o chunk estrutural** — não é
-   mais bloqueio para nenhum rebuild. Verificação turn-aware agora cobre
-   as 138 obras inteiras, não só as 3 séries especiais.
+1. **Corpus inteiro (139 obras) pronto para o chunk estrutural** — não é
+   mais bloqueio para nenhum rebuild. Verificação turn-aware cobre as 139
+   obras inteiras.
 2. Próximo passo mecânico ainda não feito (decisão do usuário):
    `promote_livros_trabalho_to_produção.py --lang pt --apply` (agora
-   cobre os 138, não só 128) + `build_clean_large_indexes.py`.
-3. `data/publication_sources/entries.jsonl` já triado e reduzido a 25
-   entradas únicas — nada mais pendente aqui, a menos que o usuário
-   queira investigar a anomalia de data do Showa 38.
-4. Nenhuma promoção/instalação em produção sem autorização explícita do
+   cobre as 139) + `build_clean_large_indexes.py`.
+3. `data/publication_sources/entries.jsonl` totalmente resolvido — 22 das
+   25 entradas confirmadas redundantes (nenhuma ação necessária), 3
+   viraram `Esboco_da_Medicina.txt` no corpus principal. Nada pendente
+   aqui.
+4. **Gap conhecido, não corrigido**: 1 artigo do Eiko nº 150 (Templo
+   Kofukuji) existe na fonte bruta mas não foi incluído nos 368 artigos
+   migrados — decisão do usuário se vale a pena reabrir a migração do
+   Eiko para incluí-lo.
+5. Nenhuma promoção/instalação em produção sem autorização explícita do
    usuário — regra reafirmada, nada mudou.
-5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+6. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
    fora do git por decisão do usuário.
