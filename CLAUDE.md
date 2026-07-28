@@ -3189,12 +3189,23 @@ editorial e triagem de glossário que o resto do corpus acumulou ao longo
 de semanas. É uma tradução cuidadosa e única, mas não tem o mesmo nível
 de escrutínio acumulado que todo o resto.
 
-**Achado colateral, não corrigido**: o artigo do Eiko nº 150 (sobre a
-exposição de tesouros do Templo Kofukuji, com o Buda "Ashura") existe na
-fonte bruta (`reports/periodicos_trabalho/jp/Eiko.txt`, `publication-jp-1821`)
-mas **não está entre os 368 artigos** já migrados para `Eiko.txt`. Gap real
-na curadoria de 17/07, não revisitado nesta sessão — mencionar se o
-usuário quiser fechar isso depois.
+**Achado colateral inicial — CORRIGIDO, não era um gap real**: cheguei a
+reportar que o artigo do Eiko nº 150 (exposição de tesouros do Templo
+Kofukuji, Buda "Ashura") estaria faltando nos 368 artigos migrados,
+baseado numa busca por trecho exato do catálogo antigo que não bateu.
+Investigando a pedido do usuário: **o artigo está lá, sim** — índice 299
+do spec (`Eiko.txt.json`), `entry_id=publication-jp-1821`, título
+"Observando a Exposição (Parte 1)", verificado por `split_by_anchors`
+real. A frase específica que eu tinha buscado ("fui visitar a exposição
+do título que se tornou famosa no Mitsukoshi") foi apenas **reformulada**
+pela revisão editorial ("fui visitar, no Mitsukoshi, a exposição citada
+no título deste artigo, que se tornou muito comentada") — mesmo
+conteúdo, texto diferente, por isso minha busca por string exata deu
+falso negativo. Conferido também que a "Parte 2" (Eikō nº 156,
+`publication-jp-1822`) está no índice 304, igualmente correta. **Não há
+gap nenhum aqui** — "Prefácio de Guia para Ukiyo-e" (o arquivo mal
+rotulado) era só um rascunho pré-revisão do mesmo artigo já correto e
+atualizado no acervo. Achado anterior retirado.
 
 ### Onde continuar (prioridade máxima — mais recente)
 
@@ -3208,10 +3219,9 @@ usuário quiser fechar isso depois.
    25 entradas confirmadas redundantes (nenhuma ação necessária), 3
    viraram `Esboco_da_Medicina.txt` no corpus principal. Nada pendente
    aqui.
-4. **Gap conhecido, não corrigido**: 1 artigo do Eiko nº 150 (Templo
-   Kofukuji) existe na fonte bruta mas não foi incluído nos 368 artigos
-   migrados — decisão do usuário se vale a pena reabrir a migração do
-   Eiko para incluí-lo.
+4. **Investigado e resolvido**: o suposto gap do Eiko nº 150 não existia
+   — o artigo já está migrado (índice 299 do spec), só tinha sido
+   reformulado pela revisão editorial. Nada a fazer aqui.
 5. Nenhuma promoção/instalação em produção sem autorização explícita do
    usuário — regra reafirmada, nada mudou.
 6. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
