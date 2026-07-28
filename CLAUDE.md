@@ -3072,17 +3072,76 @@ reconciliar fica para o usuário decidir depois, fora do escopo desta
 sessão. `reports/periodicos_trabalho/` (o projeto de origem dos
 periódicos) não foi alterado, só lido.
 
+### Atualização (mesma sessão, mais tarde) — `entries.jsonl` aposentado e
+### triado; ampliação da verificação turn-aware para as 138 obras inteiras
+
+Usuário perguntou "qual a garantia que você me dá que o corpus está
+segmentado 100%?" — resposta honesta e em camadas dada (ver abaixo), e
+motivou rodar a checagem turn-aware (nunca cortar Interlocutor:/
+Meishu-Sama: ao meio) **sem restringir às 3 séries especiais** desta vez:
+**0 violações em 44.511 unidades de turno, cobrindo as 138 obras
+inteiras** (69 delas têm diálogo rotulado, incluindo periódicos como
+Eiko), 641 unidades legitimamente gigantes (>3200 chars) com corte
+interno esperado.
+
+**Garantia dada ao usuário, por camadas**:
+- **Garantido com evidência reproduzível**: toda âncora bate
+  literalmente e na ordem certa contra o texto atual (mesma função de
+  produção `split_by_anchors`); corte nunca no meio de um par de
+  diálogo (0 violações, 138/138 obras); nenhuma âncora cortada no meio
+  de palavra; nenhuma âncora vazia.
+- **Não re-verificado nesta sessão**: se cada um dos ~3.800 cortes de
+  artigo está na unidade estrutural exata que o autor pretendia — essa
+  decisão foi tomada em sessões anteriores dedicadas (Fase Inicial para
+  os livros; sessão de 17/07 para os periódicos); este trabalho
+  realinhou âncoras ao texto atual, não relitigou onde cortar. Também
+  não rodei `build_clean_large_indexes.py` de ponta a ponta contra
+  `textos_portugues/`/`textos_japones/` — só a camada de entrada.
+
+**Aposentadoria de `data/publication_sources/entries.jsonl` — feita, em
+duas etapas**:
+1. Removidas as **1352 entradas que correspondiam exatamente aos 10
+   periódicos** já migrados (categorias eiko/hikari/kyusei/tijotengoku/
+   keiko/revista-asahi/relatos-de-milagres/jornais/medicina-do-amanha/
+   ensinamentos-diversos) — restaram 140.
+2. Usuário pediu triagem das 140 restantes. Cruzando cada uma contra os
+   138 specs (por número de volume de `自観叢書` no
+   `original_publication_reference`, por título, por trecho de corpo):
+   **115 confirmadas redundantes** — `jikan-sosho` (100, todas
+   rastreadas aos volumes 3/4/5/9/10/12 do自観叢書, todos já no
+   acervo; nenhuma cai nos volumes 6/11/13/14/15 que não tenho),
+   `guia-rapido-da-igreja-messianica-mundial` (8, é literalmente
+   `世界救世教早わかり`), `agricultura-natural` (6, bate com
+   `自然農法解説`/`革命的増産の自然農法解説`), e 1 entrada solta
+   ("Meishu-Sama e o Dr. Braden") já coberta pelo `Eiko.txt` migrado.
+   **25 confirmadas únicas** (não encontradas em lugar nenhum do corpus
+   atual, mantidas): `fonte-sem-periodico-identificado` (9),
+   `esboco-da-medicina` (5), `eventos-e-discursos` (3),
+   `verdadeira-natureza-da-tuberculose` (2), `movimento-kannon` (2),
+   `fenomenos-da-transicao-noite-dia` (2), `seculo-xxi` (1),
+   `outras-fontes` (1).
+3. `entries.jsonl` final: **25 entradas** (de 1492 originais). Backups
+   em cada etapa salvos em
+   `reports/livros_trabalho/pt_sync_backup_20260728/` (`entries.jsonl.bak_pre_aposentadoria_periodicos`,
+   `entries.jsonl.bak_pre_triagem_140`).
+
+**Achado não resolvido, reportado ao usuário, não decidido**: uma das 25
+entradas mantidas (`fenomenos-da-transicao-noite-dia`) cita fonte datada
+de "Showa 38" (1963) — 8 anos depois da morte de Meishu-Sama (1955).
+Pode ser erro de conversão de era na base antiga ou compilação póstuma;
+não investigado a fundo, mantido como está.
+
 ### Onde continuar (prioridade máxima — mais recente)
 
 1. **Corpus inteiro (138 obras) pronto para o chunk estrutural** — não é
-   mais bloqueio para nenhum rebuild.
+   mais bloqueio para nenhum rebuild. Verificação turn-aware agora cobre
+   as 138 obras inteiras, não só as 3 séries especiais.
 2. Próximo passo mecânico ainda não feito (decisão do usuário):
    `promote_livros_trabalho_to_produção.py --lang pt --apply` (agora
    cobre os 138, não só 128) + `build_clean_large_indexes.py`.
-3. **Decisão pendente do usuário**: o que fazer com
-   `data/publication_sources/entries.jsonl` (a fonte antiga de
-   periódico, com a colisão de ID) — manter em paralelo, aposentar, ou
-   reconciliar linha a linha? Não decidido nesta sessão.
+3. `data/publication_sources/entries.jsonl` já triado e reduzido a 25
+   entradas únicas — nada mais pendente aqui, a menos que o usuário
+   queira investigar a anomalia de data do Showa 38.
 4. Nenhuma promoção/instalação em produção sem autorização explícita do
    usuário — regra reafirmada, nada mudou.
 5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
