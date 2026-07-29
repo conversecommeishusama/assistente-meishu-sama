@@ -20,6 +20,44 @@ de produção dos achados corrigíveis do piloto, ver
 - §3.8 (desacoplar do modelo de embedding): já feito em
   `search_service.carregar_chunks_metadados_pt_leve`, reaproveitado aqui
   via `teaching_article_service` (que já usa essa função).
+- §3.9 (achado 2026-07-29, depois de eliminar o teto fixo de rodadas a
+  pedido do usuário): sem teto, o modelo pode entrar em loop de
+  reformulação sem nunca achar nada novo -- turno 3 do piloto v3
+  ("é possível mudar de plano espiritual na mesma reencarnação?") foi até
+  o teto de segurança de 40 rodadas (125s, $0,204) sem se dar por vencido
+  antes. Mecanismo ESTRUTURAL de estagnação (nunca temático -- ver regra
+  suprema anti-tutela do projeto): rastreia um "fingerprint" de conteúdo
+  (hash do texto retornado, não só o nome do arquivo) de cada chamada de
+  ferramenta; se `LIMITE_ESTAGNACAO_RODADAS` rodadas consecutivas não
+  trouxerem NENHUM fragmento de texto genuinamente novo (nem em
+  `buscar_termo`, `ler_mais_contexto` ou `buscar_artigo_por_titulo`),
+  força a síntese mais cedo, reaproveitando o mesmo mecanismo já usado
+  para o teto de segurança. Reler um trecho já visto de um arquivo já
+  encontrado não é penalizado por si só (é normal aprofundar); o que conta
+  é o CONTEÚDO (texto) já ter aparecido antes, não o arquivo. Validado com
+  2 pares de controle sem relação temática com o achado original antes de
+  reconfirmar os turnos 3/4 -- ver `reports/agentic_search_orcamento/
+  VALIDACAO.json` e a seção correspondente do CLAUDE.md.
+- §3.10 (achado 2026-07-30, causa raiz real por trás do §3.9): o usuário
+  apontou que ajustar o limiar de rodadas não resolve o problema de fundo --
+  o modelo nunca reconhece que a busca se esgotou porque toda reformulação
+  ainda acha ALGO tangencial (nunca um "zero resultados" que dispararia a
+  regra 6 do prompt). Investigando o turno 3 do piloto ("mudar de plano
+  espiritual na mesma reencarnação"), achamos 2 causas reais e corrigíveis:
+  (a) `buscar_termo` batia frase de várias palavras como substring
+  CONTÍGUA -- o corpus usa "planos: superior, médio e inferior" para a
+  hierarquia do mundo espiritual, nunca a frase "plano espiritual inferior"
+  que o modelo tentou; corrigido para AND de palavras significativas em
+  janela de proximidade, não mais frase exata (só agentic_search.py --
+  pt_direct/jp_direct usam outro mecanismo, não tocados); (b) "plano
+  espiritual" tem 2 sentidos no corpus (genérico vs. hierarquia) e o modelo
+  sempre buscava o sentido errado -- criado
+  `glossario_sinonimos_busca_agente.json` (novo, terceiro glossário do
+  projeto, distinto de `glossario.json` e `glossario_traducao.json`) para
+  equalizar isso: quando a busca bate uma frase cadastrada, os termos
+  relacionados também são buscados automaticamente. Estrutural (equaliza
+  vocabulário por termo literal, não por tema da pergunta) -- consistente
+  com a regra suprema anti-tutela do projeto.
 
 Este módulo ainda NÃO está ligado a `routes.py`/`pipeline/answer.py`. É a
 peça a ser testada (passo 6 da seção 5 do estudo) antes de qualquer
@@ -34,6 +72,7 @@ português (traduzindo qualquer trecho japonês encontrado).
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import time
@@ -53,6 +92,16 @@ JAPONES_DIR = PROJECT_ROOT / "textos_japones"
 # o teste mais exigente até agora usou 6 rodadas antes desta mudança);
 # atingi-lo é sinal de anomalia, não de pergunta difícil.
 LIMITE_SEGURANCA_RODADAS = 40
+
+# §3.9: quantas rodadas CONSECUTIVAS de chamada de ferramenta sem nenhum
+# fragmento de texto genuinamente novo (fingerprint de conteúdo) contam como
+# "estagnação" e forçam a síntese mais cedo. Escolhido 3, não 1: uma única
+# rodada sem novidade é esperada e normal (o próprio SYSTEM_PROMPT, regra 2,
+# instrui tentar pelo menos um sinônimo antes de desistir -- cortar em 1
+# penalizaria exatamente o comportamento pedido); 3 consecutivas sem NENHUM
+# conteúdo novo é um sinal estrutural forte de loop de reformulação vazio,
+# sem depender do tema da pergunta.
+LIMITE_ESTAGNACAO_RODADAS = 3
 JANELA_PROXIMIDADE = 400
 TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000
 
@@ -91,29 +140,102 @@ def _termos_significativos(termo_folded: str) -> list[str]:
     return [t for t in re.split(r"\s+", termo_folded.strip()) if len(t) >= 3]
 
 
-def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
-    """Busca literal (tolerante a acento/maiúscula, fronteira de palavra) do
-    termo/frase em todo o acervo, ordenada por relevância -- corrige dois
-    achados do estudo: (a) §3.3, DeepSeek buscando 'cancer' sem acento batia
-    só 3x contra 366x de 'câncer', jogando a busca para um canto errado do
-    acervo; (b) §3.6, uma ordenação ingênua por ordem de arquivo podia cortar
-    o trecho certo antes de ele aparecer quando o termo tem muitas
-    ocorrências espalhadas."""
-    termo_folded = fold_ortografico_lower(termo)
-    if not termo_folded:
-        return []
-    padrao = re.compile(r"\b" + re.escape(termo_folded) + r"\b")
+@lru_cache(maxsize=1)
+def _glossario_sinonimos_busca() -> dict[str, list[str]]:
+    """§3.10 (achado 2026-07-30): glossário de desambiguação/sinônimos SÓ do
+    modo agenciado (glossario_sinonimos_busca_agente.json na raiz do
+    projeto) -- diferente de glossario.json (kanji->PT, usado por
+    pt_direct/jp_direct) e glossario_traducao.json (tradução do corpus), não
+    tocados por este módulo. Mapeia uma frase em PT que tem mais de um
+    sentido no corpus (ou cuja fraseologia comum diverge da real) para
+    termos relacionados que também devem ser buscados. Estrutural, não
+    temático: equaliza vocabulário, não decide por assunto/doença/obra."""
+    path = PROJECT_ROOT / "glossario_sinonimos_busca_agente.json"
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    resultado: dict[str, list[str]] = {}
+    for chave, valor in raw.items():
+        if chave.startswith("_") or not isinstance(valor, dict):
+            continue
+        relacionados = valor.get("termos_relacionados")
+        if relacionados:
+            resultado[fold_ortografico_lower(chave)] = list(relacionados)
+    return resultado
+
+
+def _termos_expandidos_por_glossario(termo_folded: str) -> list[str]:
+    """Termos adicionais a buscar quando `termo_folded` bate (como frase
+    inteira, ou contém as mesmas palavras significativas) com uma entrada do
+    glossário de sinônimos de busca -- ver `_glossario_sinonimos_busca`."""
+    extras: list[str] = []
+    palavras_termo = set(_termos_significativos(termo_folded))
+    for chave_folded, relacionados in _glossario_sinonimos_busca().items():
+        palavras_chave = set(_termos_significativos(chave_folded))
+        if chave_folded == termo_folded or (palavras_chave and palavras_chave <= palavras_termo):
+            extras.extend(relacionados)
+    return extras
+
+
+def _ocorrencias_com_fronteira(padrao_termo: str, texto_folded: str) -> list[int]:
+    return [m.start() for m in re.finditer(r"\b" + re.escape(padrao_termo) + r"\b", texto_folded)]
+
+
+def _buscar_termo_unico(termo_folded: str) -> list[dict]:
+    """Busca UM termo/frase -- match por AND de palavras significativas em
+    janela de proximidade, não mais substring contígua exata (§3.10, achado
+    2026-07-30): o corpus usa 'planos: superior, médio e inferior' para a
+    hierarquia do mundo espiritual, nunca a frase contígua 'plano espiritual
+    inferior' -- correspondência de frase exata nunca batia, mesmo com o
+    termo certo em mente, fazendo o agente reformular a pergunta sem nunca
+    achar o trecho certo. Com 0-1 palavra significativa, o comportamento é
+    idêntico ao original (a palavra tem que aparecer, com fronteira). Só usado
+    pelo modo agenciado -- pt_direct/jp_direct usam outro mecanismo de busca,
+    não tocado por esta mudança."""
     termos_sig = _termos_significativos(termo_folded)
+    termos_busca = termos_sig if len(termos_sig) >= 2 else [termo_folded]
 
     candidatos: list[dict] = []
     for arquivo, (_, texto_folded) in _corpus_pt().items():
-        for match in padrao.finditer(texto_folded):
-            pos = match.start()
+        ocorrencias_por_termo = [_ocorrencias_com_fronteira(t, texto_folded) for t in termos_busca]
+        if not all(ocorrencias_por_termo):
+            continue  # todas as palavras significativas precisam aparecer em algum lugar do arquivo
+
+        idx_ancora = min(range(len(ocorrencias_por_termo)), key=lambda i: len(ocorrencias_por_termo[i]))
+        outras = [ocorrencias_por_termo[i] for i in range(len(ocorrencias_por_termo)) if i != idx_ancora]
+
+        for pos in ocorrencias_por_termo[idx_ancora]:
+            if outras and not all(
+                any(pos - JANELA_PROXIMIDADE <= p <= pos + JANELA_PROXIMIDADE for p in lista) for lista in outras
+            ):
+                continue
             janela_ini = max(0, pos - JANELA_PROXIMIDADE)
-            janela_fim = min(len(texto_folded), pos + len(termo_folded) + JANELA_PROXIMIDADE)
+            janela_fim = min(len(texto_folded), pos + JANELA_PROXIMIDADE)
             vizinhanca = texto_folded[janela_ini:janela_fim]
-            score = sum(vizinhanca.count(t) for t in termos_sig) if termos_sig else 1
+            score = sum(vizinhanca.count(t) for t in termos_busca)
             candidatos.append({"arquivo": arquivo, "posicao": pos, "score": score})
+    return candidatos
+
+
+def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
+    """Busca literal (tolerante a acento/maiúscula) do termo/frase em todo o
+    acervo, ordenada por relevância -- corrige achados do estudo original:
+    (a) §3.3, DeepSeek buscando 'cancer' sem acento batia só 3x contra 366x
+    de 'câncer', jogando a busca para um canto errado do acervo; (b) §3.6,
+    uma ordenação ingênua por ordem de arquivo podia cortar o trecho certo
+    antes de ele aparecer quando o termo tem muitas ocorrências espalhadas;
+    (c) §3.10, frases de 2+ palavras casam por AND de palavras em janela de
+    proximidade, não mais substring contígua exata -- e frases com entrada
+    no glossário de sinônimos de busca (`_glossario_sinonimos_busca`) também
+    disparam busca pelos termos relacionados, mesclada aos resultados."""
+    termo_folded = fold_ortografico_lower(termo)
+    if not termo_folded:
+        return []
+
+    candidatos = _buscar_termo_unico(termo_folded)
+    for extra in _termos_expandidos_por_glossario(termo_folded):
+        candidatos.extend(_buscar_termo_unico(fold_ortografico_lower(extra)))
 
     candidatos.sort(key=lambda c: (-c["score"], c["arquivo"], c["posicao"]))
 
@@ -392,6 +514,34 @@ def executar_ferramenta(nome: str, entrada: dict) -> dict:
     return {"erro": f"ferramenta desconhecida: {nome}"}
 
 
+def _fingerprint_texto(texto: str) -> str:
+    """Hash curto de um trecho de texto -- usado para detectar estagnação
+    (§3.9) por CONTEÚDO, não por nome de arquivo ou termo de busca (a mesma
+    busca reformulada pode achar o mesmo trecho de sempre; o mesmo arquivo
+    pode render texto genuinamente novo numa posição diferente)."""
+    return hashlib.sha1(texto.strip().encode("utf-8", errors="ignore")).hexdigest()[:16]
+
+
+def _fingerprints_da_ferramenta(nome: str, resultado) -> set[str]:
+    """Fingerprints de conteúdo retornado por uma chamada de ferramenta --
+    genérica para PT e JP, já que as três ferramentas devolvem a mesma forma
+    de dict nos dois acervos (`resultados`/`trecho`, `texto`,
+    `texto_completo`). Usada só para medir NOVIDADE (§3.9), não substitui
+    `_arquivos_da_ferramenta`/`_arquivos_da_ferramenta_jp` (que servem para
+    validar citação, §3.4)."""
+    if not isinstance(resultado, dict):
+        return set()
+    if nome == "buscar_termo":
+        return {_fingerprint_texto(r["trecho"]) for r in resultado.get("resultados", []) if r.get("trecho")}
+    if nome == "ler_mais_contexto":
+        texto = resultado.get("texto")
+        return {_fingerprint_texto(texto)} if texto else set()
+    if nome == "buscar_artigo_por_titulo":
+        texto = resultado.get("texto_completo")
+        return {_fingerprint_texto(texto)} if texto else set()
+    return set()
+
+
 def _resposta_vazou_sintaxe_de_ferramenta(texto: str) -> bool:
     """Detecta um vazamento real achado ao testar o fallback de síntese
     forçada (§3.2, 2026-07-29): o deepseek-v4-flash pode devolver a sintaxe
@@ -476,12 +626,22 @@ def responder_agentico_deepseek(
     rodadas_busca = 0
     chamadas_ferramenta: list[str] = []
     arquivos_retornados: set[str] = set()
+    fingerprints_vistos: set[str] = set()
+    rodadas_sem_novidade = 0
     esgotou_orcamento_busca = False
+    parou_por_estagnacao = False
     t0 = time.time()
     resposta_final = ""
     truncada = False
 
-    while rodadas_busca < max_rodadas_busca:
+    while True:
+        if rodadas_busca >= max_rodadas_busca:
+            # Rede de segurança atingida (LIMITE_SEGURANCA_RODADAS) sem o
+            # modelo ter parado sozinho nem a estagnação (abaixo) ter
+            # disparado antes -- em uso normal não deveria acontecer.
+            esgotou_orcamento_busca = True
+            break
+
         rodadas_busca += 1
         resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema)
         usage = resp.usage
@@ -492,6 +652,7 @@ def responder_agentico_deepseek(
 
         if choice.finish_reason == "tool_calls" and msg.tool_calls:
             messages.append({"role": "assistant", "content": msg.content, "tool_calls": [tc.model_dump() for tc in msg.tool_calls]})
+            novidade_nesta_rodada = False
             for tc in msg.tool_calls:
                 nome = tc.function.name
                 try:
@@ -501,6 +662,10 @@ def responder_agentico_deepseek(
                 chamadas_ferramenta.append(f"{nome}({json.dumps(entrada, ensure_ascii=False)})")
                 resultado = executor_fn(nome, entrada)
                 arquivos_retornados |= arquivos_extractor_fn(nome, entrada, resultado)
+                fps = _fingerprints_da_ferramenta(nome, resultado)
+                if fps - fingerprints_vistos:
+                    novidade_nesta_rodada = True
+                fingerprints_vistos |= fps
                 messages.append(
                     {
                         "role": "tool",
@@ -508,24 +673,33 @@ def responder_agentico_deepseek(
                         "content": json.dumps(resultado, ensure_ascii=False)[:TAMANHO_MAX_RESULTADO_FERRAMENTA],
                     }
                 )
+
+            # §3.9: rendimento decrescente -- N rodadas seguidas sem NENHUM
+            # fragmento de texto novo (fingerprint de conteúdo, não nome de
+            # arquivo) é sinal estrutural de loop de reformulação vazio.
+            # Reler mais contexto de um arquivo já visto não penaliza por si
+            # só, desde que o texto lido em si seja novo.
+            rodadas_sem_novidade = 0 if novidade_nesta_rodada else rodadas_sem_novidade + 1
+            if rodadas_sem_novidade >= LIMITE_ESTAGNACAO_RODADAS:
+                parou_por_estagnacao = True
+                break
             continue
 
         resposta_final = msg.content or ""
         truncada = choice.finish_reason == "length"
         break
-    else:
-        # Rede de segurança atingida (LIMITE_SEGURANCA_RODADAS) sem o modelo
-        # ter parado sozinho -- em uso normal isso não deveria acontecer (o
-        # próprio modelo decide quando parar, ver docstring); força síntese
-        # mesmo assim, para nunca devolver uma resposta vazia. Achado real ao
-        # testar: só remover "tools" da chamada (ou usar tool_choice="none"
-        # com tools ainda presentes) NÃO basta -- o deepseek-v4-flash "vaza" a
-        # sintaxe interna de tool-call como texto literal (tokens
-        # <｜｜DSML｜｜tool_calls>...) mesmo sem "tools" no payload. Só parou de
-        # acontecer ao acrescentar uma mensagem explícita de usuário avisando
-        # que não há mais ferramenta disponível -- comportamento específico
-        # deste modelo, não documentado, achado por teste direto (2026-07-29).
-        esgotou_orcamento_busca = True
+
+    if esgotou_orcamento_busca or parou_por_estagnacao:
+        # Força síntese com o que já foi encontrado, nunca resposta vazia --
+        # mesmo mecanismo para as duas causas (teto de segurança OU
+        # estagnação detectada). Achado real ao testar: só remover "tools" da
+        # chamada (ou usar tool_choice="none" com tools ainda presentes) NÃO
+        # basta -- o deepseek-v4-flash "vaza" a sintaxe interna de tool-call
+        # como texto literal (tokens <｜｜DSML｜｜tool_calls>...) mesmo sem
+        # "tools" no payload. Só parou de acontecer ao acrescentar uma
+        # mensagem explícita de usuário avisando que não há mais ferramenta
+        # disponível -- comportamento específico deste modelo, não
+        # documentado, achado por teste direto (2026-07-29).
         messages.append(
             {
                 "role": "user",
@@ -559,6 +733,7 @@ def responder_agentico_deepseek(
         "resposta": resposta_final,
         "truncada": truncada,
         "esgotou_orcamento_busca": esgotou_orcamento_busca,
+        "parou_por_estagnacao": parou_por_estagnacao,
         "vazamento_sintaxe_ferramenta": vazamento_sintaxe_ferramenta,
         "tempo": round(tempo, 1),
         "rodadas": rodadas_busca,

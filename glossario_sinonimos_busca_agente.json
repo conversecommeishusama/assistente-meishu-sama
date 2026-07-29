@@ -1,0 +1,14 @@
+{
+  "_leia_me": "Glossário de desambiguação/sinônimos de BUSCA, usado só por goshinsho/services/agentic_search.py (modo agenciado, sem embedding). Diferente de glossario.json (chave = kanji japonês, resolve termo JP a partir de busca em PT) e de glossario_traducao.json (padroniza a TRADUÇÃO do corpus). Aqui a chave é uma frase em português que tem mais de um sentido no corpus ou cuja fraseologia comum diverge da fraseologia real usada no texto -- quando a pergunta do usuário contém a chave (ou algo próximo), o buscar_termo também tenta os termos_relacionados automaticamente, além do termo original. Estrutural: não direciona por tema/doença/obra, só equaliza vocabulário -- mesmo princípio da regra suprema anti-tutela do projeto.",
+  "plano espiritual": {
+    "nota": "2026-07-30: achado real. No corpus, 'plano espiritual' quase sempre tem sentido GENÉRICO ('espiritualmente falando', ex. 'no plano espiritual, nos esforçarmos...'), nunca o sentido de HIERARQUIA (superior/médio/inferior). Quando a pergunta usa 'plano espiritual' no sentido de nível/camada do mundo espiritual (ex. 'mudar de plano espiritual'), o termo que realmente aparece no texto é outro -- ver termos_relacionados. Achado ao investigar por que o agente nunca encontrava resposta para 'é possível mudar de plano espiritual na mesma reencarnação?': a busca (mesmo já tolerante a AND de palavras) nunca convergia porque o modelo insistia em reformulações do sentido genérico, nunca chegava aos termos reais da hierarquia.",
+    "termos_relacionados": [
+      "planos: superior, médio e inferior",
+      "Camadas do Mundo Espiritual",
+      "nove estágios",
+      "plano superior",
+      "plano médio",
+      "plano inferior"
+    ]
+  }
+}
