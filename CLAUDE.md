@@ -3251,3 +3251,167 @@ serviço (`systemctl restart goshinsho.service`) por causa do
 `lru_cache` documentado em sessão anterior (16/07: produção não recarrega
 índice sem restart), e verificar de ponta a ponta que o site está
 servindo o corpus novo antes de considerar concluído.
+
+## Sessão 2026-07-28 (continuação) — promoção concluída (3 rebuilds),
+## 6 bugs reais e genéricos corrigidos em `find_best_article`/"na íntegra",
+## 1 gap de conteúdo achado e corrigido — corpus de 139 obras plenamente
+## em produção
+
+### Promoção do corpus (PT+JP), execução completa
+
+Seguindo a autorização explícita da seção anterior, executado sem mais
+consultas: PT promovido (128 alterados + 11 novos, 0 erro), JP promovido
+(11 novos, 0 erro — os 128 livros já estavam sincronizados). **3 rebuilds
+completos foram necessários, não 1**:
+
+1. **v1** — primeiro rebuild com `build_clean_large_indexes.py --install`
+   (PT 8720/JP 5045 chunks), instalado e produção reiniciada. Na
+   verificação manual pós-instalação (abrir os pickles e conferir um
+   trecho do `Esboco_da_Medicina.txt` novo), achado um bug real: o
+   catálogo antigo `data/publication_sources/entries.jsonl` ainda tinha 25
+   entradas (das sessões de retirada anteriores), incluindo 5 que
+   duplicavam o conteúdo do `Esboco_da_Medicina.txt` recém-criado com o
+   erro de terminologia antigo ("Toxina Urêmica") e sem a Parte II —
+   nunca removidas do catálogo ao criar o arquivo novo.
+2. **v2** — lançado para remover essas 5 entradas, mas **investigação
+   mais profunda revelou que as outras ~20 entradas restantes do catálogo
+   também eram, sem exceção, duplicatas mal rotuladas** de conteúdo já
+   presente em algum lugar do acervo (mesmo achado já documentado em
+   `[[project_periodicos_segmentacao_2026-07-28]]` para as 22 das 25
+   "únicas" originais). Por pedido do usuário ("remove as outras 20
+   entradas e faz o terceiro rebuild também"), o v2 foi **morto no meio
+   do processamento** (seguro — `--install` só grava depois do cálculo
+   completo, nada tinha sido escrito em produção) para não desperdiçar
+   3h processando um índice que já se sabia incompleto.
+3. **v3** — `entries.jsonl` esvaziado por completo (0 entradas, era 1492
+   no início da sessão de 17/07) e rebuild final rodado do zero (PT 8668/
+   JP 5037 chunks — a redução de contagem reflete a remoção das
+   duplicatas). Instalado com sucesso
+   (`experiments/uploaded_indexes_backup_20260728141638`), produção
+   reiniciada e confirmada respondendo.
+
+`publication_source_entries()` (em `build_clean_large_indexes.py`) trata
+arquivo vazio como lista vazia sem erro — confirmado antes de esvaziar.
+Resultado final: **100% dos chunks do índice são `entry_type: "file"`**
+(zero `publication_source`), zero resíduo do catálogo legado confirmado
+por busca direta nos pickles instalados.
+
+### 6 bugs reais e genéricos achados e corrigidos em
+### `goshinsho/services/teaching_article_service.py` (reconhecimento de
+### artigo / modo "na íntegra")
+
+Disparado por um teste real do usuário em produção ("as três grandes
+calamidades e as três pequenas calamidades na íntegra" devolveu trechos
+de um livro de poesia sem relação nenhuma, `笑の泉`/Fonte do Riso, mais uma
+nota dizendo que o ensinamento não foi encontrado). **Regra do usuário,
+repetida e reforçada várias vezes nesta investigação**: nenhum fix pode
+ser validado só com o exemplo do próprio bug relatado — isso seria
+"tutela" (amarrar a solução a um caso específico) e não garante que a
+classe geral do problema foi resolvida. Todo fix abaixo foi validado com
+exemplos **sem nenhuma relação** com "calamidades" (aula de Kannon, elo
+espiritual/reisen, doenças mentais no plural, datas soltas de
+Gosuiji-roku/Mioshie-shū, e uma amostra aleatória de 15 arquivos do
+acervo) antes de sequer testar o caso original.
+
+1. **Substituição de sinônimo unidirecional**: `score_article_match` trocava
+   "calamidades"→"desastres" só na PERGUNTA, nunca no TÍTULO — quando o
+   título já usa o termo literal (o caso comum), a troca desalinhava os
+   tokens em vez de alinhar. Corrigido: só substitui quando o título NÃO
+   contém o termo original.
+2. **Substring sem fronteira de palavra no bloco de sinônimos**: o par
+   `("calamidade","desastre")` (singular) batia dentro de "calamidades"
+   (plural, sempre) e de qualquer título contendo "desastre" em qualquer
+   lugar — inflava artigos sem relação nenhuma (ex.: pergunta sobre
+   calamidades escolhendo "Desastre Após a Conversão", 0,92, um ensaio
+   completamente diferente). Corrigido com `\b...\b` (regex de fronteira).
+3. **O achado maior — `build_article_index()` nunca usava o campo
+   `titulo` por chunk**: só reconhecia artigo via um marcador de texto
+   raro (`#T`, presente em só 2 dos 139 livros) ou quando o arquivo inteiro
+   cabia num único chunk. Resultado: **~99% dos artigos do acervo inteiro
+   estavam invisíveis ao modo "artigo completo"**, em qualquer tema — não
+   é peculiaridade de nenhum livro. Corrigido: o campo `titulo` (já
+   correto por artigo em praticamente todo o acervo, subproduto do
+   trabalho de segmentação desta sessão) virou a fonte primária de
+   fronteira de artigo; os mecanismos antigos (`#T`, chunk único) viraram
+   fallback só para os poucos chunks sem `titulo`. Efeito: de 116 artigos
+   reconhecidos para **3.788**.
+4. **`_title_core_matches_query` com substring sem fronteira**: "8" batia
+   dentro de "18"/"28" (qualquer data de dia 1-9 batia em qualquer data
+   terminada nesse dígito). Mesma correção de fronteira de palavra.
+5. **`_tokenize` descartava número de dia inteiro**: filtro de tamanho
+   mínimo (3+ caracteres) eliminava "8"/"18"/"28" (1-2 dígitos), reduzindo
+   qualquer título de data ao nome do mês só — "8 de novembro" e "28 de
+   novembro" ficavam com o MESMO conjunto de tokens. Corrigido: números
+   são conteúdo válido independente do tamanho, a exigência de 3+
+   caracteres vale só para palavras.
+6. **`find_best_article` sem detecção de ambiguidade real**: **164 títulos
+   se repetem idênticos em arquivos diferentes** (427 artigos — "Prefácio"
+   em 14 livros, "Conclusão" em 6, datas soltas repetidas em várias
+   séries/anos) e o desempate antigo (tamanho de corpo) era arbitrário,
+   escolhendo um "vencedor" sem evidência real. Corrigido: quando o
+   título empatado no topo é idêntico em mais de um arquivo, tenta
+   desambiguar por contexto genuíno da própria pergunta (nº de volume/
+   série, reaproveitando a normalização genérica já usada em
+   `buscar_trechos_por_obra`) e, se não conseguir, **recusa a escolher**
+   (retorna `None`, cai na busca normal) em vez de adivinhar — mesmo
+   princípio já aplicado ao pareamento PT/JP do projeto.
+
+**Validação final**: amostra aleatória de 15 arquivos/títulos do acervo
+(sementes fixa, sem escolha temática) → 10 acertos diretos + 4 recusas
+corretas (título com duplicata real confirmada) + 1 falha atribuída a
+artefato do índice v1 (ainda vivo na hora do teste, já teria sumido com o
+v3). 14/15 comportamento genuinamente correto. Código commitado e **já em
+produção** (`systemctl restart goshinsho.service` rodado depois do commit
+destas mudanças, confirmado via `curl` respondendo).
+
+### Gap de conteúdo achado durante a verificação: 1 artigo sem título real
+
+Verificação pós-rebuild encontrou 2 artigos com título placeholder
+"Sem titulo"/"Sem Título" em `Eiko.txt` — 1 é legítimo (título original
+do autor é literalmente `無題`/"Untitled", furigana confirma, mantido); o
+outro é um gap real herdado da sessão de periódicos de 17/07 (artigo da
+Eikō nº 181 sobre o "princípio da correspondência"/harmonia natural entre
+roupa-comida-moradia, nunca recebeu título de verdade em nenhum dos dois
+idiomas). Corrigido: título derivado do próprio conteúdo (`相応の理`/"O
+Princípio da Correspondência", o termo central que o próprio ensaio usa
+para se organizar) aplicado em 5 cópias do arquivo (`livros_publicacao_pt_
+revisado/`, `reports/livros_trabalho/{pt,jp}/`, `textos_portugues/`,
+`textos_japones/`) + spec (`título`/âncoras) + **patch direto nos pickles
+já instalados** (`experiments/uploaded_indexes/` e
+`experiments/rebuilt_large_indexes/`, chunks 7715/7716 PT e 4531 JP) —
+decisão explícita do usuário de não rodar um 4º rebuild completo (~3h)
+só para 1 título, aceitando que o vetor semântico FAISS desse chunk
+específico fica levemente desatualizado (ainda reflete o texto antigo)
+até o próximo rebuild natural; o campo `titulo` (o que
+`find_best_article` de fato usa) já está correto e verificado
+end-to-end. Verificado por varredura completa: **0 outros artigos com
+título placeholder em todo o acervo** (só esse par, o outro é legítimo).
+
+### Estado final da promoção
+
+- **139 obras (128 livros + 10 periódicos + Esboço da Medicina) plenamente
+  em produção** — PT e JP promovidos, 3º rebuild instalado, serviço
+  reiniciado 3 vezes ao longo da sessão (após o fix de busca, depois do
+  patch de título), respondendo normalmente a cada verificação.
+- `data/publication_sources/entries.jsonl` **totalmente aposentado** (0
+  entradas, era 1492 no início do dia 17/07) — todo o conteúdo real que
+  restava (`Esboço da Medicina`) já está no corpus principal com rigor
+  editorial equivalente ao resto.
+- 6 bugs genéricos de busca/reconhecimento de artigo corrigidos e
+  validados sem tutela, já em produção.
+- 1 gap de conteúdo (título faltando) achado e corrigido.
+
+### Onde continuar
+
+1. **Promoção do corpus de 139 obras: concluída.** Autorização daquela
+   sessão específica já foi plenamente executada — não é permanente,
+   volta a valer a regra padrão (nunca promover/reiniciar produção sem
+   autorização explícita) para qualquer trabalho futuro.
+2. Se algum dia for feito um 4º rebuild completo por outro motivo, ele
+   vai naturalmente recalcular o vetor FAISS do chunk da Eikō nº 181 com
+   o texto já corrigido — não é preciso fazer nada de propósito para
+   isso, só notar que já está certo quando acontecer.
+3. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário.
+4. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita do usuário (regra padrão restaurada).

@@ -156,47 +156,53 @@ def build_article_index(cache_key: str):
     articles_list: list[dict] = []
     articles_map: dict[str, dict] = {}
 
+    def _register(title: str, meta: dict) -> str:
+        article_id = make_article_id(arquivo, title)
+        if article_id not in articles_map:
+            article = {
+                "id": article_id,
+                "title": title,
+                "title_normalized": normalize_article_text(title),
+                "title_core_normalized": normalize_title_core(title),
+                "arquivo": arquivo,
+                "fonte": meta.get("fonte", ""),
+                "categoria": meta.get("categoria", ""),
+                "chunk_indices": [],
+            }
+            articles_map[article_id] = article
+            articles_list.append(article)
+        return article_id
+
     for arquivo, indices in by_file.items():
         current_id = None
+        current_titulo = None
         for idx in indices:
             chunk = chunks[idx]
             meta = metadados[idx]
-            leading = extract_leading_article_marker(chunk)
-            if leading:
-                current_id = make_article_id(arquivo, leading)
-                if current_id not in articles_map:
-                    article = {
-                        "id": current_id,
-                        "title": leading,
-                        "title_normalized": normalize_article_text(leading),
-                        "title_core_normalized": normalize_title_core(leading),
-                        "arquivo": arquivo,
-                        "fonte": meta.get("fonte", ""),
-                        "categoria": meta.get("categoria", ""),
-                        "chunk_indices": [],
-                    }
-                    articles_map[current_id] = article
-                    articles_list.append(article)
+
+            # 2026-07-28: fonte primária de fronteira de artigo -- o campo
+            # 'titulo' já vem correto por chunk desde a segmentação/chunk
+            # estrutural desta sessão (109/162 arquivos do acervo têm mais de
+            # um titulo distinto, não só periódico/publicação legada). Os
+            # marcadores '#T'/nome-de-arquivo-legado abaixo viram só um
+            # fallback para os poucos chunks sem 'titulo' preenchido -- sem
+            # isso, "artigo completo"/"na íntegra" nunca reconhecia a imensa
+            # maioria dos artigos do acervo, em qualquer tema.
+            titulo = (meta.get("titulo") or "").strip()
+            if titulo and titulo != current_titulo:
+                current_titulo = titulo
+                current_id = _register(titulo, meta)
+            elif not titulo:
+                leading = extract_leading_article_marker(chunk)
+                if leading:
+                    current_id = _register(leading, meta)
 
             _, trailing_title = split_chunk_at_inline_marker(chunk)
             if current_id and current_id in articles_map:
                 articles_map[current_id]["chunk_indices"].append(idx)
 
-            if trailing_title:
-                current_id = make_article_id(arquivo, trailing_title)
-                if current_id not in articles_map:
-                    article = {
-                        "id": current_id,
-                        "title": trailing_title,
-                        "title_normalized": normalize_article_text(trailing_title),
-                        "title_core_normalized": normalize_title_core(trailing_title),
-                        "arquivo": arquivo,
-                        "fonte": meta.get("fonte", ""),
-                        "categoria": meta.get("categoria", ""),
-                        "chunk_indices": [],
-                    }
-                    articles_map[current_id] = article
-                    articles_list.append(article)
+            if trailing_title and not titulo:
+                current_id = _register(trailing_title, meta)
 
         if len(indices) == 1 and current_id is None:
             meta = metadados[indices[0]]
@@ -504,10 +510,17 @@ META_CROSS_SOURCE_RE = re.compile(
 
 def _tokenize(text: str, *, core: bool = False) -> set[str]:
     normalized = normalize_title_core(text) if core else normalize_article_text(text)
+    # 2026-07-28: o filtro de tamanho (>=3) descartava número de dia inteiro
+    # ("8", "18", "28" têm 1-2 dígitos) -- qualquer título de data ficava
+    # reduzido só ao nome do mês, tornando "8 de novembro" e "28 de novembro"
+    # idênticos para casamento de título em todo o acervo (séries por data:
+    # Gosuiji-roku, Mioshie-shū, Gokōwa-roku). Número é conteúdo válido
+    # independente do tamanho; a exigência de 3+ caracteres deve valer só
+    # para palavras.
     return {
         token
         for token in normalized.split()
-        if len(token) >= 3 and token not in STOPWORD_TOKENS
+        if (len(token) >= 3 or token.isdigit()) and token not in STOPWORD_TOKENS
     }
 
 
@@ -874,7 +887,15 @@ def _title_core_matches_query(title_core: str, query_core: str) -> bool:
         return True
     if len(title_core) <= 4 or len(title_core.split()) == 1:
         return bool(re.search(rf"\b{re.escape(title_core)}\b", query_core))
-    return query_core in title_core or title_core in query_core
+    # 2026-07-28: "in" era substring bruta, sem fronteira de palavra -- "8 de
+    # novembro" batia dentro de "28 de novembro" (a string aparece literalmente
+    # colada, sem espaço). Isso atinge qualquer título numérico/data do acervo
+    # inteiro (achado ao investigar por que uma data ambígua escolhia outra
+    # data sozinha), não é peculiaridade de nenhum título específico.
+    return bool(
+        re.search(rf"\b{re.escape(query_core)}\b", title_core)
+        or re.search(rf"\b{re.escape(title_core)}\b", query_core)
+    )
 
 
 def _canonicalize_plural_tokens(tokens: set[str]) -> set[str]:
@@ -914,6 +935,14 @@ def score_article_match(query: str, article: dict) -> float:
         ("calamidade", "desastre"),
     )
     for left, right in synonym_pairs:
+        if left in title_core or left in title_norm:
+            # o título já usa o termo literal (ex.: "Calamidades") -- substituir
+            # na pergunta por "desastres" faria o overlap de tokens divergir do
+            # título em vez de convergir, derrubando o casamento exato que
+            # deveria funcionar sem nenhum sinônimo (achado 2026-07-28, "As Três
+            # Grandes Calamidades e as Três Pequenas Calamidades": 0,485 em vez
+            # de ~1,0 por causa desta troca cega).
+            continue
         if left in query_norm:
             query_norm = query_norm.replace(left, right)
         if left in query_core:
@@ -968,10 +997,20 @@ def score_article_match(query: str, article: dict) -> float:
     )
     query_norm = normalize_article_text(query)
     title_norm = article.get("title_normalized") or normalize_article_text(article.get("title", ""))
+
+    def _has_word(term: str, text: str) -> bool:
+        return bool(re.search(rf"\b{re.escape(term)}\b", text))
+
     for left, right in synonyms:
-        if left in query_norm and right in title_norm:
+        # 2026-07-28: substring solta (sem fronteira de palavra) fazia "calamidade"
+        # (singular) bater dentro de "calamidades" (plural) na própria pergunta, e
+        # "desastre" bater em qualquer título com essa palavra -- inflava artigos
+        # sem relação nenhuma (ex.: query sobre calamidades escolhendo "Desastre
+        # Após a Conversão" com 0,92 em vez do artigo certo). Fronteira de palavra
+        # corrige a classe inteira, não só este par.
+        if _has_word(left, query_norm) and _has_word(right, title_norm):
             score = max(score, 0.92)
-        if right in query_norm and left in title_norm:
+        if _has_word(right, query_norm) and _has_word(left, title_norm):
             score = max(score, 0.92)
 
     if "camada" in query_core and "camada" in title_core:
@@ -1000,6 +1039,43 @@ def find_best_article(query: str, min_score: float = 0.45) -> dict | None:
     candidates.sort(key=lambda item: (-item[0], item[1]["chunk_indices"][0] if item[1]["chunk_indices"] else 0))
     top_score = candidates[0][0]
     tied = [article for score, article in candidates if score >= top_score - 0.04]
+
+    # 2026-07-28: título empatado e IDÊNTICO em arquivos diferentes é comum e
+    # estrutural (164 títulos, 427 artigos no acervo -- "Prefácio", datas
+    # soltas como "8 de novembro" que se repetem em vários volumes/anos das
+    # séries por data) -- o desempate anterior (tamanho de corpo) não é
+    # evidência real, é arbitrário. Restrito ao subconjunto que empata no
+    # título EXATO do melhor colocado (não a faixa de 0,04 inteira, que
+    # também inclui títulos parecidos mas genuinamente diferentes -- ex.
+    # poema cujo título cita a mesma data entre parênteses -- e esses a
+    # especificidade de pick_canonical_article já distingue sozinha).
+    top_title = normalize_title_core(tied[0].get("title", "")) if tied else ""
+    same_title_as_top = [a for a in tied if normalize_title_core(a.get("title", "")) == top_title]
+    distinct_arquivos = {a.get("arquivo") for a in same_title_as_top}
+    if len(same_title_as_top) > 1 and len(distinct_arquivos) > 1:
+        # Antes de desistir, tenta achar sinal genuíno na própria pergunta
+        # (nº de volume/série, ex. "Gosuiji-roku 4") contra fonte/arquivo de
+        # cada candidato -- reaproveita a mesma normalização genérica já
+        # usada em buscar_trechos_por_obra (não é regra nova por tema/obra).
+        # Só quando isso também não resolve é que se recusa a escolher --
+        # mesmo princípio já aplicado ao pareamento PT/JP do projeto: nunca
+        # inventar, sinalizar ambiguidade em vez de adivinhar.
+        from .search_service import _normalize_work_query
+
+        query_tokens = {t for t in _normalize_work_query(query).split() if len(t) >= 3 or t.isdigit()}
+        scored_by_context = []
+        for article in same_title_as_top:
+            combined = _normalize_work_query(f"{article.get('fonte', '')} {article.get('arquivo', '')}")
+            combined_tokens = set(combined.split())
+            scored_by_context.append((len(query_tokens & combined_tokens), article))
+        scored_by_context.sort(key=lambda item: -item[0])
+        if scored_by_context[0][0] > 0 and (
+            len(scored_by_context) == 1 or scored_by_context[0][0] > scored_by_context[1][0]
+        ):
+            tied = [scored_by_context[0][1]]
+        else:
+            return None
+
     best = pick_canonical_article(tied, query)
     return {**best, "match_score": top_score}
 
