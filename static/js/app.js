@@ -1057,6 +1057,23 @@ let conversationHistory = [];
 let selectedSupportTicketId = null;
 let selectedLanguage = localStorage.getItem(languageStorageKey) || "Português";
 
+// 2026-07-29: a URL do navegador nunca acompanhava a conversa ativa -- nem
+// ao criar uma conversa nova, nem ao clicar "Nova Conversa". Isso fazia um
+// simples F5/recarregar a página voltar para o que quer que estivesse na
+// URL antes (ex.: uma conversa antiga aberta pela barra lateral), dando a
+// impressão de que a conversa nova "sumiu" ou se fundiu com outras do
+// mesmo dia -- os dados no banco sempre estiveram corretos e isolados por
+// conversa, só a navegação do navegador ficava dessincronizada.
+function syncConversationUrl(conversationId) {
+    const url = new URL(window.location.href);
+    if (conversationId) {
+        url.searchParams.set("conversation_id", conversationId);
+    } else {
+        url.searchParams.delete("conversation_id");
+    }
+    window.history.replaceState({}, document.title, url.pathname + url.search);
+}
+
 function uiText(key) {
     const dictionary = uiTranslations[selectedLanguage] || uiTranslations.English || uiTranslations["Português"];
     return dictionary[key] || uiTranslations["Português"][key] || key;
@@ -1730,6 +1747,7 @@ newChatButton?.addEventListener("click", async () => {
         chat.innerHTML = "";
     }
     conversationHistory = [];
+    syncConversationUrl(null);
     toggleSidebar(false);
 });
 
@@ -1791,6 +1809,7 @@ chatForm?.addEventListener("submit", async (event) => {
             throw new Error(data.error || "Erro ao enviar mensagem.");
         }
         if (chat) chat.dataset.conversationId = data.conversation_id || "";
+        if (data.conversation_id) syncConversationUrl(data.conversation_id);
         setBubbleContent(loading, data.answer || "", "assistant");
         const article = loading?.closest(".message");
         article?.classList.remove("is-pending");
@@ -1850,6 +1869,7 @@ async function expandPreviousAnswer(article) {
             throw new Error(data.error || "Erro ao aprofundar resposta.");
         }
         if (chat) chat.dataset.conversationId = data.conversation_id || chat.dataset.conversationId || "";
+        if (chat?.dataset.conversationId) syncConversationUrl(chat.dataset.conversationId);
         setBubbleContent(loading, data.answer || "", "assistant");
         const answerArticle = loading?.closest(".message");
         answerArticle?.classList.remove("is-pending");

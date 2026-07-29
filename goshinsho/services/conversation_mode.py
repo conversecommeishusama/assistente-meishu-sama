@@ -155,14 +155,40 @@ def find_explicit_article_in_question(question: str) -> dict | None:
 
 
 def find_last_scoped_article_in_history(history, current_question: str | None = None) -> dict | None:
+    """Acha o ensinamento explicitamente nomeado mais recente, mas só se o
+    fio da conversa nunca abandonou esse assunto no meio do caminho.
+
+    2026-07-29 (achado real, relatado várias vezes pelo usuário -- conversa
+    longa "trava" na primeira pergunta): a versão anterior varria o
+    histórico de trás pra frente e devolvia a primeira pergunta que
+    "nomeia explicitamente um ensinamento", sem checar se perguntas
+    posteriores mudaram de assunto. Sequência real que reproduzia o bug:
+    (1) "...as três calamidades... na íntegra" [nomeia explicitamente] ->
+    (2) "clã Yamato" [assunto novo, não nomeia nada] -> (3) "linhagens
+    espirituais" [outro assunto, não nomeia nada] -> (4) "e a linhagem do
+    sol/lua?" [continuação de (3)] -- a versão antiga voltava direto para
+    o ensinamento de (1), ignorando que (2) e (3) já tinham mudado de
+    assunto. Corrigido caminhando na ordem cronológica e usando
+    `detect_topic_shift` (já existente, mas nunca usado aqui) para
+    abandonar o escopo sempre que a pergunta seguinte não for continuação
+    nem nomear um novo ensinamento -- mesmo mecanismo genérico já usado
+    para o "modo geral" da conversa, não é regra nova por tema."""
     from .conversation_context import recent_user_questions
 
-    for question in reversed(recent_user_questions(history, limit=8, current_question=current_question)):
+    questions = recent_user_questions(history, limit=8, current_question=current_question)
+    scoped_article = None
+    prior_question = None
+    for question in questions:
+        if scoped_article is not None and prior_question is not None:
+            fake_history = [{"role": "user", "content": prior_question}]
+            if detect_topic_shift(question, fake_history):
+                scoped_article = None
         if question_explicitly_scopes_ensinamento(question):
             found = find_explicit_article_in_question(question)
             if found:
-                return found
-    return None
+                scoped_article = found
+        prior_question = question
+    return scoped_article
 
 
 def detect_topic_shift(question: str, history) -> bool:

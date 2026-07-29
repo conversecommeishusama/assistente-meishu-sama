@@ -3415,3 +3415,104 @@ título placeholder em todo o acervo** (só esse par, o outro é legítimo).
    fora do git por decisão do usuário.
 4. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita do usuário (regra padrão restaurada).
+
+## Sessão 2026-07-29 (Claude Code) — bug recorrente de "trava na pesquisa
+## inicial" em conversas longas: causa raiz achada e corrigida; bug de
+## navegação de URL entre conversas também corrigido
+
+Usuário reportou (já tinha mencionado antes, sem diagnóstico até agora) um
+bug real: em conversas longas que mudam de assunto, o site "trava" na
+primeira pesquisa e não consegue mais buscar o assunto atual. Sequência
+real fornecida pelo usuário que reproduz o bug: (1) "as três grandes
+calamidades..." na íntegra → ok; (2) "clã Yamato" → ok; (3) "me fale sobre
+as linhagens espirituais" → ok; (4) "e a linhagem do sol/lua, que outras
+linhagens?" → **travava**, respondendo só com trechos de (1) e dizendo não
+achar o assunto.
+
+### Causa raiz encontrada e corrigida
+
+`find_last_scoped_article_in_history()` (`goshinsho/services/
+conversation_mode.py`) varria o histórico de trás pra frente procurando a
+pergunta mais recente que **nomeia explicitamente** um ensinamento (ex.:
+"o ensinamento X na íntegra") e travava a busca nele — mas nunca checava
+se perguntas *depois* dessa mudaram de assunto. Como (2) e (3) mudam de
+assunto sem nomear um ensinamento novo explicitamente, a varredura ignorava
+essa mudança e voltava direto para (1). Existia até uma função de detecção
+de mudança de tema já pronta e testada (`detect_topic_shift`), mas nunca
+usada aqui — sintoma clássico de duas implementações concorrentes (uma
+mais cuidadosa, `resolve_active_article`/`should_use_article_scope` em
+`teaching_article_service.py`, nunca conectada a lugar nenhum do pipeline
+real; a mais simples, sem essa checagem, é a que estava em uso).
+
+**Corrigido**: `find_last_scoped_article_in_history` agora caminha em
+ordem cronológica e usa `detect_topic_shift` (reaproveitado, não é lógica
+nova) para abandonar o escopo sempre que a pergunta seguinte não for
+continuação nem nomear um novo ensinamento. Validado: (a) a sequência
+completa do usuário agora responde corretamente sobre linhagem do
+Sol/Lua/Água/Fogo citando Gosuiji-Roku; (b) continuação legítima
+imediata ("e o que mais ele fala sobre isso?" logo após um "na íntegra")
+continua funcionando — não regrediu o caso que a função original tentava
+resolver.
+
+**Segundo relato do usuário (3 aulas de iniciação vs. Kyoshu/3 dias)**:
+investigado e **confirmado como o mesmo bug** — testado isoladamente
+("fale sobre as 3 aulas de iniciação" sem histórico) já respondia
+corretamente antes mesmo do fix (Meishu-Sama não usa "aulas" separadas,
+descreve como bloco de 3 dias, cita Gosuiji-Roku nº 7/Eikō/Manual
+19530811) — o problema só aparecia quando essa pergunta vinha depois de
+outro assunto (no caso do usuário, o ensinamento "Paraíso e Inferno") na
+mesma conversa, mesma classe do bug acima.
+
+### Investigação à parte: hipótese de "Nova Conversa" não resetar — dado
+### real, mas causa diferente do que parecia
+
+Usuário levantou a hipótese de que o botão "Nova Conversa" não reseta de
+verdade, citando que uma conversa da noite "ficou no mesmo histórico das
+outras que teve no dia". Testado rigorosamente com a conta real do
+usuário (`dgtannus@gmail.com`, via Flask test client + sessão injetada,
+não pelo navegador) reproduzindo o cenário exato relatado (Paraíso/Inferno
+→ Nova Conversa → 3 aulas de iniciação): **o backend cria uma conversa
+nova de verdade** (`conversation_id` diferente, `list_messages` filtrado
+corretamente por `conversa_id`, sem vazamento de conteúdo entre
+conversas) — conversas de teste criadas durante o diagnóstico foram
+apagadas do banco ao final (`mensagens`/`conversas`, 2 pares de IDs,
+confirmado vazio depois).
+
+**Bug real encontrado, mas em outro lugar**: `static/js/app.js` **nunca
+atualiza a URL do navegador** (`window.location`) para refletir a
+conversa ativa — nem ao criar uma conversa nova organicamente, nem ao
+clicar "Nova Conversa" (que só reseta `chat.dataset.conversationId`/
+`conversationHistory` em memória, sem tocar a URL). Reproduzido via teste
+direto: abrir uma conversa antiga pela barra lateral (`?conversation_id=
+X` na URL) → clicar Nova Conversa → conversar → **simular um F5** (GET na
+mesma URL antiga, sem parâmetro atualizado) → a página volta a mostrar a
+conversa ANTIGA (X), não a nova — a conversa nova não se perde no banco
+(continua lá, aparece na barra lateral pelo título), mas o painel de chat
+ativo reverte, dando exatamente a impressão relatada de "voltou pro
+histórico de antes".
+
+**Corrigido**: nova função `syncConversationUrl(conversationId)` em
+`app.js` (usa `history.replaceState`, sem recarregar a página) chamada em
+3 pontos: ao clicar "Nova Conversa" (limpa o parâmetro da URL), e após
+receber `conversation_id` da resposta normal e da resposta "aprofundar"
+(seta/atualiza o parâmetro). `app.js` bump de `?v=146` para `?v=147` em
+`templates/app.html` pra forçar cache novo no navegador.
+
+### Estado do git
+
+Commit desta sessão cobre: `goshinsho/services/conversation_mode.py` (fix
+de escopo), `static/js/app.js` + `templates/app.html` (fix de URL), e
+este documento. Produção reiniciada e confirmada servindo `app.js?v=147`.
+
+### Onde continuar
+
+1. Os dois bugs relatados pelo usuário (trava de escopo + "nova conversa"
+   parecendo não resetar) estão **corrigidos e em produção**, verificados
+   via teste real de ponta a ponta (incluindo a conta real do usuário,
+   com limpeza dos dados de teste).
+2. Se o usuário relatar de novo algo parecido, verificar primeiro se é
+   uma varíante desses dois bugs (escopo travado ou URL desatualizada)
+   antes de investigar do zero.
+3. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita do usuário — as duas reinicializações desta
+   sessão foram autorizadas explicitamente a cada vez.
