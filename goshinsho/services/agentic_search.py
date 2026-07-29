@@ -46,7 +46,13 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 TEXTOS_DIR = PROJECT_ROOT / "textos_portugues"
 JAPONES_DIR = PROJECT_ROOT / "textos_japones"
 
-MAX_RODADAS_BUSCA_PADRAO = 6
+# Não é mais um orçamento de trabalho (a decisão de quando parar de buscar é
+# do próprio modelo, ver regras 2/6/7 do SYSTEM_PROMPT abaixo) -- é só uma
+# rede de segurança contra loop descontrolado/custo fora de controle. Um
+# valor alto o suficiente para nunca ser alcançado em uso normal (2026-07-29:
+# o teste mais exigente até agora usou 6 rodadas antes desta mudança);
+# atingi-lo é sinal de anomalia, não de pergunta difícil.
+LIMITE_SEGURANCA_RODADAS = 40
 JANELA_PROXIMIDADE = 400
 TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000
 
@@ -442,7 +448,7 @@ def responder_agentico_deepseek(
     historico: list[dict] | None = None,
     *,
     modelo: str = "deepseek-v4-flash",
-    max_rodadas_busca: int = MAX_RODADAS_BUSCA_PADRAO,
+    max_rodadas_busca: int = LIMITE_SEGURANCA_RODADAS,
     max_tokens: int = 8000,
     tools_schema: list[dict] = TOOLS_SCHEMA,
     system_prompt: str = SYSTEM_PROMPT,
@@ -450,12 +456,16 @@ def responder_agentico_deepseek(
     arquivos_extractor_fn=_arquivos_da_ferramenta,
     validador_citacoes_fn=validar_citacoes,
 ) -> dict:
-    """Laço agenciado real (não o protótipo do piloto): orçamento de rodadas
-    de busca separado do orçamento de síntese (§3.2, o bug mais sério
-    achado) -- se o modelo esgota as rodadas de ferramenta sem parar
-    sozinho, uma última chamada é feita SEM ferramentas disponíveis,
-    forçando o modelo a sintetizar com o que já foi encontrado em vez de
-    devolver uma resposta vazia.
+    """Laço agenciado real. Decisão do usuário (2026-07-29): NÃO existe mais
+    orçamento de busca como limite de trabalho normal -- é o próprio modelo
+    quem decide quando parar (regras 2/6/7 do SYSTEM_PROMPT: tentar
+    sinônimos antes de desistir, parar assim que tiver material suficiente,
+    e dizer explicitamente quando não encontrar nada em vez de forçar
+    resposta genérica). `max_rodadas_busca` agora é só uma rede de
+    segurança contra loop descontrolado -- se for atingida, é sinal de
+    anomalia (bug/loop), não de "pergunta difícil que precisava de mais
+    orçamento", e o resultado ainda assim sintetiza com o que já foi
+    encontrado em vez de devolver uma resposta vazia.
 
     Parametrizado (tools/prompt/executor) para poder apontar para o acervo
     PT (padrão) ou JP (`responder_agentico_deepseek_jp`) sem duplicar o
@@ -504,15 +514,17 @@ def responder_agentico_deepseek(
         truncada = choice.finish_reason == "length"
         break
     else:
-        # Orçamento de busca esgotado sem o modelo ter parado sozinho --
-        # força síntese. Achado real ao testar: só remover "tools" da chamada
-        # (ou usar tool_choice="none" com tools ainda presentes) NÃO basta --
-        # o deepseek-v4-flash "vaza" a sintaxe interna de tool-call como texto
-        # literal (tokens <｜｜DSML｜｜tool_calls>...) mesmo sem "tools" no
-        # payload. Só parou de acontecer ao acrescentar uma mensagem
-        # explícita de usuário avisando que não há mais ferramenta disponível
-        # -- comportamento específico deste modelo, não documentado, achado
-        # por teste direto (2026-07-29).
+        # Rede de segurança atingida (LIMITE_SEGURANCA_RODADAS) sem o modelo
+        # ter parado sozinho -- em uso normal isso não deveria acontecer (o
+        # próprio modelo decide quando parar, ver docstring); força síntese
+        # mesmo assim, para nunca devolver uma resposta vazia. Achado real ao
+        # testar: só remover "tools" da chamada (ou usar tool_choice="none"
+        # com tools ainda presentes) NÃO basta -- o deepseek-v4-flash "vaza" a
+        # sintaxe interna de tool-call como texto literal (tokens
+        # <｜｜DSML｜｜tool_calls>...) mesmo sem "tools" no payload. Só parou de
+        # acontecer ao acrescentar uma mensagem explícita de usuário avisando
+        # que não há mais ferramenta disponível -- comportamento específico
+        # deste modelo, não documentado, achado por teste direto (2026-07-29).
         esgotou_orcamento_busca = True
         messages.append(
             {
@@ -564,7 +576,7 @@ def responder_agentico_deepseek_jp(
     historico: list[dict] | None = None,
     *,
     modelo: str = "deepseek-v4-flash",
-    max_rodadas_busca: int = MAX_RODADAS_BUSCA_PADRAO,
+    max_rodadas_busca: int = LIMITE_SEGURANCA_RODADAS,
     max_tokens: int = 8000,
 ) -> dict:
     """Mesmo laço agenciado, mas buscando no acervo ORIGINAL japonês

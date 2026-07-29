@@ -3680,3 +3680,134 @@ em PT.
    explícita separada, nunca automática.
 4. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita do usuário.
+
+## Sessão 2026-07-29 (continuação, mesmo dia) — dashboard de 4 perguntas
+## reais, orçamento fixo de busca eliminado a pedido do usuário, achado um
+## problema real de loop sem parar (turno 3), investigação autônoma
+## disparada em tmux no servidor
+
+### Dashboard de avaliação subjetiva (4 perguntas do usuário)
+
+A pedido do usuário, rodei 4 perguntas específicas (câncer; hora das
+bruxas/calada da noite; mudar de plano espiritual na mesma reencarnação;
+correlação entre infernos do mundo animal e espírito secundário) em
+**sequência única de chat** (histórico encadeado dentro de cada sistema),
+comparando `agentic_search.py` (DeepSeek) vs. `pt_direct` (produção).
+Script: `scripts/pilot_agentic_v3_perguntas_usuario.py`. Resultado
+publicado em dashboard (Artifact, favicon ⚖️,
+`https://claude.ai/code/artifact/581516e2-7477-460c-92ad-7719417bc7a9`) —
+achados de conteúdo relevantes ficaram registrados ali, não repetidos
+aqui (ex.: turno 2 o agêntico trouxe testemunhos concretos que o
+`pt_direct` não trouxe; turno 4 antes da mudança de orçamento nenhum dos
+dois sistemas achou a correlação pedida, o `pt_direct` pelo menos nomeou
+infernos específicos).
+
+### Orçamento fixo de rodadas de busca eliminado, a pedido do usuário
+
+Usuário pediu explicitamente: "é para eliminar esse orçamento, o agente
+deve determinar o fim da pesquisa quando não achar a resposta adequada".
+`goshinsho/services/agentic_search.py`: `MAX_RODADAS_BUSCA_PADRAO = 6`
+(orçamento de trabalho normal, rotineiramente atingido) virou
+`LIMITE_SEGURANCA_RODADAS = 40` (rede de segurança contra loop
+descontrolado — não deveria ser atingida em uso normal; o próprio modelo
+já é instruído pelas regras 2/6/7 do `SYSTEM_PROMPT` a tentar sinônimos,
+parar quando tiver material suficiente, e admitir quando não achar nada
+em vez de forçar resposta genérica). Docstring da função e comentário do
+branch de síntese forçada atualizados para refletir que atingir o teto
+agora é sinal de anomalia, não de "pergunta difícil que precisava de mais
+orçamento". Mudança feita só neste módulo isolado — **ainda não ligado à
+produção** (ver seção anterior).
+
+### Problema real achado ao re-testar as 4 perguntas após a mudança
+
+Re-rodei o mesmo script após a mudança, mesma sequência de 4 perguntas.
+Resultado (guardado em `reports/piloto_agentico_v3_perguntas_usuario.json`,
+sobrescreveu a rodada anterior — a rodada anterior ["antes"] foi
+preservada só dentro do dashboard já publicado, não em disco separado):
+
+- **Turnos 1 e 2**: sem mudança relevante (o modelo já parava bem antes
+  das 6 rodadas do orçamento antigo).
+- **Turno 4** (infernos do mundo animal × espírito secundário): **melhora
+  real** — desta vez o agêntico achou e citou a tabela completa de
+  correspondência animal↔característica (serpente=apego, raposa=engano,
+  tanuki=insolência, cão=espionagem, javali=imprudência, gato=preguiça,
+  macaco=astúcia, rato=avareza, boi/porco=vadiagem, tigre/lobo=ferocidade,
+  galo=amor ilícito, pássaro canoro=vaidade, coelho=dócil/inútil,
+  cavalo=trabalha só para si, ovelha=falta de vitalidade), com fontes
+  citadas (`19490825-自観叢書第3篇『霊界叢談』.txt`,
+  `19480905-信仰雑話.txt`, `Eiko.txt`) — algo que **nem a rodada anterior
+  do agêntico nem o `pt_direct`** conseguiram trazer. Parou sozinho em 9
+  rodadas, sem atingir o teto.
+- **Turno 3** ("Segundo Meishu-Sama é possível mudar de plano espiritual
+  na mesma reencarnação?") — **achado sério**: o modelo **não parou
+  sozinho** — foi até o novo teto de segurança de 40 rodadas, levando
+  **125s e custando $0,204** (vs. 40s e $0,016 quando o orçamento antigo
+  de 6 cortava a busca). A resposta final ficou mais honesta (admite
+  explicitamente não achar um ensinamento literal, em vez de forçar uma
+  leitura, como acontecia antes), mas o comportamento de busca em si —
+  continuar tentando por 40 rodadas sem se dar por vencido — é exatamente
+  o oposto do que o usuário pediu ("o agente deve determinar o fim da
+  pesquisa quando não achar a resposta adequada"). As regras 2/6/7 do
+  `SYSTEM_PROMPT`, que já instruem o modelo a admitir quando não encontra
+  nada, **não foram suficientes** para essa pergunta específica — o
+  modelo preferiu continuar buscando por sinônimos/reformulações em vez
+  de concluir cedo que a resposta literal não existe no corpus.
+
+**Achado colateral, não relacionado à mudança de orçamento**: a resposta
+do `pt_direct` no turno 4 (rodada pós-mudança) saiu com um glifo chinês
+solto no meio do texto em português ("pecados e所以 conduta") — artefato
+pontual de geração do modelo usado em produção, não um erro de conteúdo
+do corpus. Registrado no dashboard, não investigado a fundo nesta sessão.
+
+### Investigação autônoma disparada em tmux (o usuário ia desligar o
+### computador antes de eu terminar)
+
+Usuário pediu para: (1) documentar o achado acima e commitar — feito
+nesta seção; (2) depois, pesquisar e testar de forma autônoma uma
+solução para o turno 3 não parar sozinho, implementar, commitar, e
+atualizar a documentação de novo, para retomar a conversa à noite. No
+meio da investigação, o usuário avisou que ia desligar o computador — a
+sessão interativa não sobreviveria a isso, então a parte de pesquisa/
+teste/implementação/commit foi movida para uma **sessão tmux no
+servidor** (`agentic_orcamento_fix`, ver comando abaixo), independente
+desta conversa, seguindo o mesmo padrão já usado no projeto para trabalho
+autônomo de longa duração (executor/auditor da Fase G, chunk turn-aware,
+etc. — motor genérico `scripts/run_stateless_claude_loop.sh`).
+
+Diferença aqui: como é uma tarefa única e delimitada (não uma fila de
+~128 livros), **não** usei o esquema de fila JSON (`pending`/`done`)
+daqueles processos — criei um wrapper mais simples,
+`scripts/run_fix_orcamento_agentico_loop.sh`, que reaproveita a mesma
+lógica de tratamento de limite de sessão/backoff do motor genérico (para
+não reinventar isso, ver comentário no topo do próprio script genérico
+sobre o incidente de crash-loop de 2026-07-10), mas checa a existência de
+um arquivo-sentinela (`reports/agentic_search_orcamento/DONE.marker`) em
+vez de uma fila com contagem de itens pendentes. Prompt autocontido da
+tarefa: `reports/agentic_search_orcamento/PROMPT_INVESTIGACAO.md`
+(instrui pesquisa + implementação + validação com perguntas de controle
+não relacionadas ao bug original, antes de reconfirmar nos turnos 3/4 —
+mesma disciplina anti-tutela já registrada em
+`feedback_nao_validar_fix_com_exemplo_do_bug` — e exige commit + rodada
+final de atualização deste documento ao terminar).
+
+### Onde continuar (prioridade máxima — mais recente)
+
+1. **Verificar se a sessão tmux `agentic_orcamento_fix` terminou.**
+   `tmux attach -t agentic_orcamento_fix` (ou `tmux capture-pane -t
+   agentic_orcamento_fix -p` para só ler sem entrar) e checar se
+   `reports/agentic_search_orcamento/DONE.marker` existe. Se existir, ler
+   `reports/agentic_search_orcamento/RESULTADO.md` para o resumo da
+   solução encontrada, validada e commitada — e ler a seção que essa
+   mesma sessão tmux deve ter acrescentado a este documento (data/hora
+   depois desta, se tudo correu bem) antes de assumir que este resumo
+   ainda é o estado mais atual.
+2. Se a sessão **não** terminou (`DONE.marker` ausente), o loop
+   (`scripts/run_fix_orcamento_agentico_loop.sh`, log em
+   `reports/agentic_search_orcamento/loop.log`) deve continuar tentando
+   sozinho (com backoff em caso de falha/limite de sessão) — não
+   precisa reiniciar nada manualmente, só esperar ou investigar o log se
+   parecer travado por muito tempo.
+3. Continua valendo: `agentic_search.py` não está ligado a
+   `routes.py`/`pipeline/answer.py` — a tarefa da tmux é só achar/validar
+   a correção do loop sem parar, não integrar a produção. Nenhuma
+   promoção/reinício de produção sem autorização explícita do usuário.
