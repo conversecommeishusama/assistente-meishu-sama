@@ -3516,3 +3516,88 @@ este documento. Produção reiniciada e confirmada servindo `app.js?v=147`.
 3. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita do usuário — as duas reinicializações desta
    sessão foram autorizadas explicitamente a cada vez.
+
+## Sessão 2026-07-29 (continuação) — piloto de busca agenciada (sem
+## embedding) validado; usuário decidiu migrar para DeepSeek agêntico;
+## estudo completo de peculiaridades documentado
+
+Motivado pela pergunta "não teria como criar uma versão do app usando o
+próprio corpus, com as mesmas restrições, mas sem embedding, usando algo
+como a própria busca do Claude Code?" — usuário percebeu corretamente que
+a maioria dos bugs desta sessão (reconhecimento de artigo, tokenização,
+trava de escopo) são sintomas do pipeline de embedding, não do conteúdo.
+
+Construído um piloto (`scripts/pilot_agentic_claude.py`, protótipo de
+investigação): Claude recebe 3 ferramentas (`buscar_termo` — grep literal
+sobre `textos_portugues/*.txt`; `ler_mais_contexto`; `buscar_artigo_por_
+titulo` — reaproveita `find_best_article`/`load_article_chunks`, **os
+mesmos corrigidos mais cedo nesta sessão**) e decide sozinho o que
+buscar, tentando de novo com sinônimo se a primeira busca falhar — testado
+com Claude Sonnet 5, Haiku 4.5 e DeepSeek v4-flash, comparado contra o
+`pt_direct` em produção.
+
+**2 lotes de teste, 13 perguntas** (lote 1: sequência que travava o
+`pt_direct` antes do fix de escopo desta sessão — calamidades → Yamato →
+linhagens → sol/lua; lote 2: 9 temas sem relação — câncer, Johrei,
+ikebana, homossexualidade, Ohikari, hora das bruxas, quem é Meishu-Sama,
+hipotética sobre Covid-19, critérios de recebimento do Ohikari).
+
+**Achado mais importante, factual não teórico**: perguntado sobre "outras
+linhagens" além de sol/lua, o `pt_direct` (produção) respondeu que não
+havia outras — **errado**: existe uma terceira linhagem real (Izunome,
+cor amarela, descendente de Kunitokotachi-no-mikoto) bem documentada no
+acervo, que os três modelos agênticos encontraram e citaram corretamente.
+Confirma com evidência real, não hipótese, que a busca por embedding tem
+lacunas de recall que a busca agenciada não tem.
+
+**Custo/tempo (13 perguntas)**: Sonnet ~$0,11-0,12/pergunta (~$330-350/mês
+projetado); Haiku ~$0,02-0,03 (~$62-84/mês); **DeepSeek ~$0,009-0,011
+(~$27-32/mês) — tão barato quanto ou mais barato que a produção atual**,
+sem a complexidade de FAISS/chunking/âncoras.
+
+**Validação externa (pesquisa web)**: a Anthropic removeu busca vetorial
+do Claude Code em maio/2025, substituindo por `grep` — "superou tudo, e
+por muito". Cursor, Windsurf, Cline, Devin, Sourcegraph Amp fizeram o
+mesmo. RAG religiosa publicada (chatbots islâmicos etc.) ainda usa
+majoritariamente vetores/grafos — não achamos nenhum caso documentado do
+padrão agêntico-sem-embedding aplicado a corpus religioso. O padrão em si
+é validado (principalmente em código); aplicá-lo aqui é território não
+documentado publicamente, nossos testes são a evidência real disponível.
+
+**Bugs reais achados no piloto** (detalhados com causa raiz e recomendação
+em `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md`, não repetidos aqui):
+`max_tokens` baixo cortando resposta; **orçamento de rodadas de ferramenta
+não reservava rodada de síntese — bug mais sério, fez Sonnet e DeepSeek
+devolverem resposta vazia em pelo menos 2 perguntas apesar de já terem
+buscado o suficiente**; busca literal sem normalização de acento (bug
+real "câncer" vs "cancer" — 366 ocorrências vs 3, jogou o DeepSeek pra um
+canto errado do acervo); Haiku inventando rótulo de fonte ("Hikari" para
+arquivos que são na verdade Gokōwa-roku, conteúdo certo mas citação
+errada); resposta especulativa pra evento pós-morte de Meishu-Sama
+(Covid-19) — Haiku recusou corretamente, DeepSeek e o pt_direct
+**atual** construíram "inferência" (achado que isso já é comportamento de
+produção hoje, não introduzido pelo piloto — decisão de política ainda
+pendente do usuário).
+
+**Decisão do usuário**: migrar a busca de embedding para busca agenciada
+usando **DeepSeek** como modelo (mais barato, sem o defeito de citação do
+Haiku, achou tanto ou mais conteúdo que o Sonnet). Commit desta sessão
+inclui o script do piloto e este estudo — **a implementação real na
+pipeline de produção ainda não foi feita**, o estudo lista a sequência
+recomendada de correções antes disso (seção 5 do documento).
+
+### Onde continuar
+
+1. Ler `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` por completo antes de
+   qualquer implementação real — lista bugs com causa raiz e correção
+   recomendada, não repetir a investigação do zero.
+2. Antes de tocar `routes.py`/`pipeline/answer.py` de verdade: corrigir na
+   ferramenta de busca real a normalização de acento (§3.3 do estudo) e
+   o orçamento de síntese separado do orçamento de busca (§3.2 — o bug
+   mais sério, não pode ir pra produção sem isso).
+3. Decidir com o usuário a política de resposta especulativa para eventos
+   fora do escopo temporal (§3.5) antes de escrever o novo system prompt.
+4. JP (`jp_direct`) não foi tocado nem testado com busca agenciada —
+   escopo explicitamente não coberto ainda.
+5. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita do usuário.
