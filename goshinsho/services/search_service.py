@@ -1405,6 +1405,23 @@ def carregar_indices_pt():
     return None, None, None, None
 
 
+@lru_cache(maxsize=1)
+def carregar_chunks_metadados_pt_leve():
+    """Só chunks_pt.pkl/metadados_pt.pkl, sem FAISS nem SentenceTransformer.
+
+    Para consumidores que só precisam do texto/metadado por chunk (ex. a
+    ferramenta de busca agenciada, teaching_article_service) e não fazem
+    busca vetorial -- evita pagar o custo de memória/CPU de carregar o
+    modelo de embedding à toa (2026-07-29)."""
+    if not (os.path.exists(_index_file("chunks_pt.pkl")) and os.path.exists(_index_file("metadados_pt.pkl"))):
+        return None, None
+    with _index_file("chunks_pt.pkl").open("rb") as file:
+        chunks_pt = pickle.load(file)
+    with _index_file("metadados_pt.pkl").open("rb") as file:
+        metadados_pt = pickle.load(file)
+    return chunks_pt, metadados_pt
+
+
 # Nome do "sistema idêntico ao japonês" pedido pelo usuário (2026-07-17):
 # passe único, direto no índice PT, sem fallback -- espelha exatamente
 # carregar_indices_jp()/_buscar_pool_jp()/buscar_trechos_hibrido_jp(), só

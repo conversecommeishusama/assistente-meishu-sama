@@ -140,9 +140,9 @@ def extract_article_markers(chunk: str) -> list[str]:
 
 @lru_cache(maxsize=2)
 def build_article_index(cache_key: str):
-    from .search_service import carregar_indices_pt
+    from .search_service import carregar_chunks_metadados_pt_leve
 
-    chunks, metadados, _, _ = carregar_indices_pt()
+    chunks, metadados = carregar_chunks_metadados_pt_leve()
     if not chunks:
         return {}, []
 
@@ -277,9 +277,9 @@ def _is_publication_article(article: dict) -> bool:
 
 
 def _load_raw_article_chunks(article: dict) -> tuple[list[str], list[dict]]:
-    from .search_service import carregar_indices_pt
+    from .search_service import carregar_chunks_metadados_pt_leve
 
-    chunks, metadados, _, _ = carregar_indices_pt()
+    chunks, metadados = carregar_chunks_metadados_pt_leve()
     result_chunks = []
     result_metas = []
     for idx in article.get("chunk_indices") or []:

@@ -3586,7 +3586,7 @@ inclui o script do piloto e este estudo — **a implementação real na
 pipeline de produção ainda não foi feita**, o estudo lista a sequência
 recomendada de correções antes disso (seção 5 do documento).
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia)
 
 1. Ler `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` por completo antes de
    qualquer implementação real — lista bugs com causa raiz e correção
@@ -3600,4 +3600,83 @@ recomendada de correções antes disso (seção 5 do documento).
 4. JP (`jp_direct`) não foi tocado nem testado com busca agenciada —
    escopo explicitamente não coberto ainda.
 5. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita do usuário.
+
+## Sessão 2026-07-29 (continuação) — implementação real do módulo de busca
+## agenciada (PT + JP), 2 bugs novos achados e corrigidos, cobertura JP feita
+
+Usuário decidiu a política pendente (§3.5): **inferência rotulada**
+(mantém o comportamento atual, mas agora com regra explícita no prompt) e
+autorizou começar os passos técnicos (1,2,4,5 da seção 5 do estudo).
+
+**Criado**: `goshinsho/services/agentic_search.py` (módulo de produção,
+substitui o protótipo `scripts/pilot_agentic_claude.py` como referência) e
+`scripts/pilot_agentic_v2.py` (script de teste usando o módulo real).
+Corrigidos e validados: §3.3 (acento/maiúscula, com fronteira de palavra +
+ranking por relevância), §3.2 (orçamento de síntese separado do orçamento
+de busca — o bug mais sério), §3.4 (citação literal reforçada +
+validação programática), §3.5 (regra de política no prompt), §3.8 (já
+feito antes desta parte da sessão, `carregar_chunks_metadados_pt_leve`).
+
+**Disciplina de validação reforçada pelo usuário no meio do caminho**: ao
+validar o fix de acento, usei primeiro o próprio par do estudo
+("cancer"/"câncer") — o usuário corrigiu na hora: isso pode parecer
+"tutela" por termo específico, mesmo o código sendo genérico. Refeito com
+par de controle sem relação ("oracao"/"coracao") antes de confirmar com o
+caso original por último — mesma disciplina de
+`feedback_nao_validar_fix_com_exemplo_do_bug` (memória), agora também
+associada explicitamente à regra suprema de não-tutela do projeto.
+
+**2 bugs novos achados durante a própria validação** (não previstos no
+estudo original):
+1. **Vazamento de sintaxe interna de tool-call do deepseek-v4-flash**: só
+   remover `tools` da chamada (ou `tool_choice="none"` com tools ainda
+   presente) NÃO impede o modelo de devolver tokens internos de
+   function-calling como texto literal (`<｜｜DSML｜｜tool_calls>...`) em vez
+   de prosa. Corrigido acrescentando uma mensagem explícita de usuário
+   avisando que não há mais ferramenta disponível antes da chamada final
+   — só isso eliminou o vazamento nos testes. Rede de segurança adicional
+   (`_resposta_vazou_sintaxe_de_ferramenta`) nunca deixa esse vazamento
+   chegar ao usuário, mesmo que reapareça.
+2. **Validador de citações com falso positivo sistemático**: a regex
+   original para extrair "arquivo.txt" da resposta quebrava em pontuação
+   japonesa do nome real do arquivo (『』（）, hífen), capturando só o
+   final (ex.: "3号.txt" em vez do nome completo) e sinalizando quase toda
+   resposta como suspeita. Corrigido comparando contra a lista real de
+   nomes de arquivo do acervo em vez de regex genérica.
+
+**Cobertura JP adicionada** (item explicitamente não testado no estudo
+original, §4): `responder_agentico_deepseek_jp` busca no acervo ORIGINAL
+japonês (`textos_japones/*.txt`), mesma arquitetura (sem fronteira de
+palavra nem normalização de acento — japonês não usa nenhum dos dois),
+resposta final sempre em português. Sem `buscar_artigo_por_titulo` para
+JP (não há equivalente de `find_best_article` para japonês ainda). O laço
+principal (`responder_agentico_deepseek`) foi generalizado para aceitar
+`tools_schema`/`system_prompt`/`executor_fn`/`arquivos_extractor_fn`/
+`validador_citacoes_fn` como parâmetros, para não duplicar o laço entre
+PT e JP.
+
+**Validação** (ver `reports/piloto_agentico_v2_pos_correcoes.json`, fora
+do git): recall do Izunome (achado original do piloto que o `pt_direct`
+errou) confirmado presente e citado corretamente no módulo novo; política
+de inferência rotulada testada com pergunta diferente da do estudo
+("inteligência artificial" em vez de "Covid-19") — funcionou como
+esperado, com declaração explícita da incompatibilidade temporal e rótulo
+"Inferência:"; bateria JP rodada comparando `responder_agentico_deepseek_jp`
+contra `jp_direct` (produção) em temas sem sobreposição com os já testados
+em PT.
+
+### Onde continuar
+
+1. Módulo `agentic_search.py` (PT+JP) ainda **não está ligado a**
+   `routes.py`/`pipeline/answer.py` — é só a peça testada, não a
+   integração real (item 7 da seção 5 do estudo).
+2. Ler a memória `project_agentic_search_implementacao_2026-07-29` para o
+   detalhe técnico completo dos 2 bugs novos (ainda não espelhados no
+   `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` — vale fazer isso se a
+   próxima sessão for adiante com a integração real).
+3. Próximo passo natural: decidir com o usuário se/quando integrar de
+   verdade em `routes.py`/`pipeline/answer.py` — precisa de autorização
+   explícita separada, nunca automática.
+4. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita do usuário.
