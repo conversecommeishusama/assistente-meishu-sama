@@ -4285,3 +4285,186 @@ o que já está catalogado e ainda não mudou:
    usuário acima, não um problema novo.
 5. Nenhuma promoção/integração/reinício/remoção de código de produção sem
    autorização explícita do usuário.
+
+## Sessão 2026-07-30 (conversa nova, após a sessão anterior cair) —
+## terminologia "Camadas do Mundo Espiritual" corrigida e promovida em
+## produção; achado real de regressão na busca agenciada (regra 10 do
+## prompt, não a tradução) — NÃO corrigido ainda, fica para retomar
+
+### Recuperação da sessão que caiu
+
+Pedido do usuário ao abrir esta conversa: ler os documentos e achar o
+último ponto recuperável da sessão anterior (que caiu, ver seção
+"Sessão 2026-07-30" mais acima). Achado: `glossario_sinonimos_busca_agente.json`
+tinha uma edição não commitada (feita ~7min depois do último commit
+daquela sessão) — um refinamento das entradas `plano espiritual`/
+`camada espiritual`/`nível espiritual`, motivado por uma pesquisa em 3
+livros (御光話録8号, 霊界叢談, 御光話録17号) que concluiu que a PALAVRA usada
+para as 60 subdivisões do Mundo Espiritual variava por livro (níveis num,
+planos noutro, degraus num terceiro) — e por isso instruía o agente a
+"não confiar na palavra, só no número". Essa observação era verdadeira
+no corpus de então, mas nunca tinha sido levada à correção de tradução
+propriamente dita.
+
+### Pergunta do usuário: como o glossário de TRADUÇÃO trata esses termos?
+
+Verificado `glossario_traducao.json`: só tinha `三段階`→"três planos"
+(fixo pras 3 grandes divisões), `層`→"camada" (genérico) e `霊層界`→
+"camadas do mundo espiritual" (nome do sistema). Não havia entrada para
+`段`/`段階` sozinhos — exatamente os kanji usados nos 3 livros pras 60/180
+subdivisões finas, confirmado direto no JP-fonte (`六十段`, `百八十段`).
+Ou seja, o gap real estava na tradução, não no glossário de busca — o
+glossário de busca só contornava um problema nunca resolvido na origem.
+
+### Estrutura confirmada e proposta aceita pelo usuário
+
+Usuário informou a estrutura correta (verificada no texto): **180 camadas
+= 3 planos (superior/médio/inferior = Paraíso/Mundo Intermediário/Inferno)
+x 60 cada, cada plano subdividido em 3 sub-níveis x 20 camadas cada**.
+Confirmado no JP-fonte de `霊界叢談`: "天国、中有、地獄の三段階が三分されて
+九段階となっており、一段はまた二十に分かれ...総計百八十段となる". Usuário
+pediu para incluir também o subtotal de 20 (achado: `二十段` aparece
+explicitamente em 4 livros). **8 entradas novas/revisadas** adicionadas a
+`glossario_traducao.json` (backup `.bak_hierarquia_espiritual_*`):
+`九段階`→"nove sub-níveis", `二十段`→"vinte camadas", `六十段`/`六十階`→
+"sessenta camadas", `百八十段`/`百八十階`/`百八十階級`→"cento e oitenta
+camadas", `段階` (genérico, sem número)→nota contextual (plano/sub-nível/
+estágio conforme o número). As 3 já existentes mantidas.
+
+### Varredura do acervo inteiro, aplicação, promoção — concluído e em produção
+
+Varredura de todos os 139 arquivos JP (`reports/livros_trabalho/jp/`) por
+padrões (`霊層界`, `百八十`, `六十(段|階)`, `二十(段|階)`, `九段階`, `三段階`)
+→ **29 candidatos**, triados um a um por contexto real: **10 confirmados**
+com a doutrina real (御光話録8号, 霊界叢談, 御光話録17号, 世界救世教奇蹟集,
+御教え集29号, 御教え集30号, 天国の福音書, Eiko, Relatos_de_Milagres,
+Tijotengoku), **19 falsos-positivos** descartados (números de grão/moeda/
+data/temperatura sem relação, o idioma "180 graus" de virada de
+civilização, uma tríade diferente "物質界/空気界/霊気界" — dimensões
+material/atmosférica/espiritual, já com glossário próprio —, "3 estágios"
+de purificação mundial, "3 estágios" de cultura de Kyoto, etc.). **9 dos
+10 livros corrigidos** (`御教え集30号` já estava certo, zero mudanças) —
+terminologia padronizada com concordância de gênero revisada (camada é
+feminino). **Âncoras de segmentação revalidadas** com a função real de
+produção (`split_by_anchors`) — 1 âncora quebrada pelo próprio edit
+corrigida, 100% resolvido nos 10 livros. Sincronizado
+`livros_publicacao_pt_revisado/`→`reports/livros_trabalho/pt/`→
+`textos_portugues/` (via `promote_livros_trabalho_to_produção.py --lang pt
+--apply`, só os 9 arquivos alterados, resto idêntico). **Reconstrução do
+índice PT** rodada (`build_clean_large_indexes.py --lang pt`, ~2h40min,
+JP reaproveitado sem mudança, 8.668 chunks PT — mesma contagem de antes).
+**Instalado em produção** (`experiments/uploaded_indexes/`, backup
+timestampado do índice anterior) e **`goshinsho.service` reiniciado**
+(autorização explícita do usuário para os 2 passos finais). **Verificado
+com consulta real** via `pt_direct` (o mesmo modo que produção usa) — a
+resposta citou corretamente `天国の福音書`/"Camadas do Mundo Espiritual"
+com "nove sub-níveis... vinte camadas... sessenta camadas... cento e
+oitenta camadas", terminologia nova de ponta a ponta.
+
+**Achado lateral, não investigado**: `textos_portugues`/`textos_japones`
+(produção) têm 145 arquivos cada — 6 a mais que os 139 do acervo oficial
+(`19490715-自観叢書第6篇『怪物か聖者か』`, `19491205-自観叢書第13篇『世界の
+六大神秘家』`, `19500125-自観叢書第15篇『基督と自観師』`,
+`19510601-世界救世教教義解説`, e 2 marcados `未刊行` — "não publicado" —
+`自観叢書第11篇『神示の病理』`/`第14篇『天国の花』`). Os 2 "não publicado"
+provavelmente ficaram fora do corpus de 139 por já não serem material
+publicado em vida (regra de escopo já estabelecida); os outros 4 não têm
+motivo documentado. Não investigado, não bloqueia nada, fica pra depois
+se o usuário quiser.
+
+### Achado de regressão real na busca agenciada — investigado a fundo,
+### causa raiz identificada, NÃO corrigida ainda
+
+Usuário pediu para repetir 5x uma pergunta de teste de sessão anterior
+("pergunta 3" do `pilot_agentic_v3_perguntas_usuario.py`: "Segundo
+Meishu-Sama é possível mudar de plano espiritual na mesma reencarnação?",
+testada via busca agenciada/DeepSeek, `goshinsho/services/agentic_search.py`)
+para confirmar a correção de tradução. Resultado: **0 das 5 repetições
+deu a resposta doutrinariamente correta** ("não é possível mudar de
+plano, só a posição/sina dentro dele muda") — usuário apontou que isso é
+regressão real (sessões anteriores conseguiam "até certo ponto") e que a
+correção de tradução não deveria ter causado isso, pedindo investigação
+de outra mudança.
+
+**1ª causa encontrada e corrigida**: `glossario_sinonimos_busca_agente.json`
+(a edição não commitada recuperada no início desta sessão) estava
+desatualizado — descrevia a inconsistência de tradução que **esta mesma
+sessão corrigiu na origem**, e por isso (a) instruía o agente a não
+confiar em "plano" como significando as 3 grandes divisões (verdade antes
+da correção, falso agora) e (b) listava 8 `termos_relacionados` de busca
+("sessenta planos", "nove planos", "cento e oitenta níveis" etc.) que,
+confirmado por varredura, **têm 0 ocorrências em todo o corpus atual**
+(termos mortos, plantados por uma versão do glossário anterior à
+correção). Reescrito para refletir o estado real e correto (plano=3,
+sub-nível=9 — entrada nova —, camada=60/180), sem mais ressalva de
+desconfiança, termos de busca mortos removidos. **Efeito real, mas
+parcial**: retestado 5x — tempo/custo caiu bem (média ~78s/$0,043 contra
+~112s/$0,073 antes), e a proporção de repetições que acham o trecho de
+destino/sina se manteve em 2/5 (igual a antes do fix) — não resolveu o
+problema de fundo.
+
+**2ª causa encontrada, mais profunda, com evidência concreta — NÃO
+corrigida ainda**: achado um teste salvo da sessão anterior
+(`reports/agentic_search_orcamento/TESTE_REGRA7.json`, rodado às 02:34 do
+dia 30/07, **antes** do commit `51e3a2d` "Novo modelo de resposta...")
+com a mesma pergunta 3: **2 de 3 repetições davam a resposta certa e
+decisiva** ("Não, não é possível mudar de plano espiritual..."), citando
+`19540825-天国の福音書.txt` ("destino predeterminado"/"destino mutável",
+trecho paralelo ao de `霊界叢談` sobre destino/sina, confirmado intacto e
+não tocado pelas edições de tradução desta sessão). O commit `51e3a2d`
+(03:25 do mesmo dia, já documentado na seção anterior deste arquivo)
+adicionou a **regra 10** ao `SYSTEM_PROMPT` de `agentic_search.py`:
+proíbe o agente de unir afirmações de arquivos DIFERENTES num só tema, a
+menos que algum trecho conecte os dois explicitamente. A resposta certa
+desta pergunta exige justamente cruzar `世界救世教奇蹟集` ("a pessoa sobe e
+desce de plano conforme as ações") com `霊界叢談`/`天国の福音書` ("o
+destino é fixo a um plano, impossível sair; só a sina/posição dentro dele
+varia") e concluir que o primeiro trecho fala de sina/camada, não de
+plano — mas nenhum trecho cita o outro arquivo explicitamente, então a
+regra 10, do jeito que está escrita hoje, **proíbe exatamente esse
+cruzamento**, mesmo sendo doutrinariamente correto (não uma fusão
+inventada como o caso do câncer que a regra foi desenhada pra evitar).
+Nenhum teste da pergunta 3 tinha sido refeito depois da regra 10 entrar
+(a sessão anterior testou só câncer com o formato novo, depois caiu) —
+por isso essa lacuna nunca tinha sido percebida antes de hoje.
+
+**Decisão consciente de não mexer sozinho**: a regra 10 foi pedida
+explicitamente pelo usuário na sessão anterior, pra um problema real
+(fusão falsa de fontes não relacionadas, caso do câncer). Afrouxá-la é
+mudança de comportamento geral do prompt (afeta toda resposta agenciada,
+não só esta pergunta) — fica pra decisão do usuário, não decidida
+unilateralmente.
+
+**Pendência explícita do usuário para retomar depois**: aprofundar o
+trecho de `世界救世教奇蹟集` ("a pessoa sobe e desce de plano conforme as
+ações") — investigar se esse trecho realmente fala de "plano" (o que
+contradiria a doutrina de "Camadas do Mundo Espiritual") ou se é um uso
+solto da palavra que deveria ser entendido como "camada"/posição, antes
+de decidir como ajustar a regra 10 ou a interpretação do agente.
+
+### Onde continuar (prioridade máxima)
+
+1. **Terminologia "Camadas do Mundo Espiritual" (plano/sub-nível/camada):
+   concluída e em produção** — 9 livros corrigidos, âncoras revalidadas,
+   índice reconstruído e instalado, produção reiniciada e verificada com
+   consulta real. Não é mais um bloqueio.
+2. **Pendência explícita do usuário, próxima sessão**: aprofundar o
+   trecho de `世界救世教奇蹟集` sobre subir/descer de plano conforme as
+   ações — decidir se é um uso solto de "plano" (deveria ser lido como
+   posição/camada) antes de mexer em qualquer regra do prompt.
+3. **Regra 10 do `SYSTEM_PROMPT` (`agentic_search.py`, linhas ~437/623)**:
+   causa raiz confirmada da regressão na pergunta 3, mas **não
+   corrigida** — proíbe reconciliar `世界救世教奇蹟集` com
+   `霊界叢談`/`天国の福音書` sem trecho que conecte os dois explicitamente.
+   Qualquer ajuste exige decisão do usuário (afeta o prompt geral, não só
+   esta pergunta) — não mudar sozinho.
+4. `glossario_sinonimos_busca_agente.json` já corrigido e commitado nesta
+   sessão — não é mais um problema.
+5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário (mesma regra de sempre).
+6. `agentic_search.py` continua não ligado a `routes.py`/`pipeline/answer.py`
+   — nenhuma integração de produção (só `pt_direct`/`jp_direct` estão
+   ativos, e foi o que recebeu a promoção desta sessão).
+7. Nenhuma promoção/integração/reinício de produção sem autorização
+   explícita do usuário — a promoção desta sessão já foi autorizada e
+   executada, não é permanente pra trabalho futuro.
