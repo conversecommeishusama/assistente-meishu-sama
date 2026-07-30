@@ -77,18 +77,36 @@ def _response_length_guidance() -> str:
 
 def _direct_mode_block(next_num: int) -> str:
     return f"""
-{next_num}. **MODO DIRECTO** — ensino **aprofundado sem citações**:
-    - Desenvolva o assunto com a **mesma profundidade** que traria no modo aprofundado, mas **sem aspas**
-      nem transcrições literais de Meishu-Sama e **sem** indicar [fonte] no texto.
-    - Parafraseie fielmente; inclua passos, locais, causas e matizes presentes nos trechos.
-    - **PROIBIDO** citar trechos entre aspas ou transcrever frases de Meishu-Sama.
-    - Não use secções com subtítulos formais (###); parágrafos ou listas numeradas quando couber.
+{next_num}. **MODO DIRECTO** — explicação por tema, com citação confirmatória:
+    - Divida a resposta nos TEMAS/aspectos distintos que os trechos sustentam sobre a pergunta — cada tema
+      recebe um subtítulo curto (###).
+    - Em cada tema, **explique primeiro em prosa própria** (parafraseada, fiel ao sentido dos trechos) —
+      essa explicação é o conteúdo principal da resposta, a citação nunca a substitui nem a antecede.
+    - Logo **depois** da explicação de cada tema (ou ao fechar o parágrafo que encerra aquele tema), inclua
+      ao menos uma citação literal entre aspas com **[fonte exacta]** que **confirme** o que acabou de ser
+      explicado — a citação serve para comprovar a explicação, nunca para abrir o tema ou substituí-la.
+    - Um trecho de apoio já basta por tema; não é obrigatório empilhar várias citações no mesmo tema.
+    - **PROIBIDO** reunir as citações numa secção separada ao final da resposta — cada citação acompanha o
+      tema a que se refere, logo depois da explicação correspondente.
     - Se houver inferência (regras 14–15), abra com uma frase clara sobre ausência ou tangência do ensino directo
       e use o rótulo **"Inferência:"** em prosa antes do conteúdo inferido — **nunca** omita esse aviso.
+      Inferência não precisa de citação confirmatória (por definição, não há trecho directo sobre o assunto).
+    - **PROIBIDO fundir afirmações de trechos diferentes sem base textual**: se dois trechos (de obras ou datas
+      diferentes) descrevem o mesmo conceito de formas distintas ou aparentemente incompatíveis (ex.: um diz
+      que a causa de X é espiritual, outro diz que a causa de X é física/alimentar), não os apresente como uma
+      única explicação unificada nem trate um como "causa" do outro — a menos que algum trecho conecte os dois
+      explicitamente. Cada enquadramento diferente vira o seu próprio tema, com a sua própria citação; não
+      invente elo causal ou complementaridade que os trechos não sustentam, mesmo quando usam a mesma
+      palavra-chave para coisas que cada trecho define de forma diferente. Se a resposta tiver 2 ou mais
+      temas separados por esta regra, é **proibido** escrever um parágrafo de "resumo geral" no final que
+      tente comprimir tudo numa frase só — é exactamente nesse resumo que a fusão costuma voltar (ex. "X é
+      espiritual e vem da toxina Y" reintroduz o elo que os temas separados evitaram). A separação por
+      temas já é suficiente; termine no último tema, sem parágrafo de fecho que junte os enquadramentos.
 
 {next_num + 1}. {_response_length_guidance()}
 
-{next_num + 2}. **FORMATAÇÃO**: prosa clara e escaneável; vários parágrafos quando o assunto o exigir.
+{next_num + 2}. **FORMATAÇÃO**: subtítulo curto (###) por tema; dentro de cada tema, prosa clara seguida da(s)
+    citação(ões) confirmatória(s) daquele tema.
 """.strip()
 
 
