@@ -972,6 +972,14 @@ def api_chat():
                 "testemunhos e trechos adicionais do acervo que ainda não foram citados, e traga uma "
                 "explicação mais completa, sem repetir literalmente o que já foi dito."
             )
+            # 2026-07-31: achado real testando o fix de idioma -- esta
+            # instrução em português (é uma instrução PARA o modelo, não
+            # conteúdo do usuário) puxava a resposta de volta pro
+            # português mesmo com a regra 4/9 do system prompt já
+            # corrigida para {language}. Reforço explícito e literal no
+            # fim resolve, testado com inglês/espanhol.
+            if language != "Português":
+                pergunta_agentico += f" (Answer in {language}.)"
         event_queue: queue.Queue = queue.Queue()
         result_holder: dict = {}
         error_holder: dict = {}
@@ -983,7 +991,13 @@ def api_chat():
                 search_variant=search_variant,
             )
             try:
-                r = responder_fn(pergunta_agentico, historico_agentico)
+                # 2026-07-31: achado real -- o idioma nunca chegava até o
+                # laço agêntico (jp_agentic sempre respondia em português,
+                # mesmo com outro idioma selecionado). Só o lado JP precisa
+                # do parâmetro (pt_agentic é sempre português, corpus já
+                # está no idioma certo).
+                extra_kwargs = {"idioma": language} if retrieval_mode == "jp_agentic" else {}
+                r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
             except Exception as exc:

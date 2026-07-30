@@ -121,9 +121,6 @@ const uiTranslations = {
         shareEmail: "E-mail",
         shareCopied: "Copiado",
         shareError: "Erro",
-        expandAnswer: "Aprofundar resposta",
-        expandRequest: "Aprofundar a resposta anterior",
-        expanding: "Aprofundando com citações...",
     },
     "English": {
         quotaRequiredTitle: "Registration required",
@@ -191,9 +188,6 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Copied",
         shareError: "Error",
-        expandAnswer: "Expand answer",
-        expandRequest: "Expand the previous answer",
-        expanding: "Expanding with citations...",
     },
     "Español": {
         quotaRequiredTitle: "Registro necesario",
@@ -261,9 +255,6 @@ const uiTranslations = {
         shareEmail: "Correo",
         shareCopied: "Copiado",
         shareError: "Error",
-        expandAnswer: "Profundizar respuesta",
-        expandRequest: "Profundizar la respuesta anterior",
-        expanding: "Profundizando con citas...",
     },
     "日本語": {
         quotaRequiredTitle: "登録が必要です",
@@ -330,9 +321,6 @@ const uiTranslations = {
         shareEmail: "メール",
         shareCopied: "コピーしました",
         shareError: "エラー",
-        expandAnswer: "回答を詳しくする",
-        expandRequest: "前の回答を詳しくする",
-        expanding: "引用を追加して詳しくしています...",
     },
     "中文": {
         quotaRequiredTitle: "需要注册",
@@ -399,9 +387,6 @@ const uiTranslations = {
         shareEmail: "邮件",
         shareCopied: "已复制",
         shareError: "出错了",
-        expandAnswer: "深入解答",
-        expandRequest: "深入解答上一个问题",
-        expanding: "正在生成带引用的深入解答...",
     },
     "हिन्दी": {
         quotaRequiredTitle: "पंजीकरण आवश्यक है",
@@ -468,9 +453,6 @@ const uiTranslations = {
         shareEmail: "ईमेल",
         shareCopied: "कॉपी हो गया",
         shareError: "त्रुटि",
-        expandAnswer: "उत्तर का विस्तार करें",
-        expandRequest: "पिछले उत्तर का विस्तार करें",
-        expanding: "उद्धरणों के साथ विस्तार किया जा रहा है...",
     },
     "العربية": {
         quotaRequiredTitle: "التسجيل مطلوب",
@@ -537,9 +519,6 @@ const uiTranslations = {
         shareEmail: "البريد الإلكتروني",
         shareCopied: "تم النسخ",
         shareError: "خطأ",
-        expandAnswer: "توسيع الإجابة",
-        expandRequest: "توسيع الإجابة السابقة",
-        expanding: "جارٍ التوسيع مع الاقتباسات...",
     },
     "Français": {
         quotaRequiredTitle: "Inscription requise",
@@ -607,9 +586,6 @@ const uiTranslations = {
         shareEmail: "E-mail",
         shareCopied: "Copié",
         shareError: "Erreur",
-        expandAnswer: "Approfondir la réponse",
-        expandRequest: "Approfondir la réponse précédente",
-        expanding: "Approfondissement avec citations...",
     },
     "বাংলা": {
         quotaRequiredTitle: "নিবন্ধন প্রয়োজন",
@@ -676,9 +652,6 @@ const uiTranslations = {
         shareEmail: "ইমেইল",
         shareCopied: "কপি হয়েছে",
         shareError: "ত্রুটি",
-        expandAnswer: "উত্তর বিস্তৃত করুন",
-        expandRequest: "পূর্বের উত্তর বিস্তৃত করুন",
-        expanding: "উদ্ধৃতিসহ বিস্তৃত করা হচ্ছে...",
     },
     "Русский": {
         quotaRequiredTitle: "Требуется регистрация",
@@ -745,9 +718,6 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Скопировано",
         shareError: "Ошибка",
-        expandAnswer: "Углубить ответ",
-        expandRequest: "Углубить предыдущий ответ",
-        expanding: "Углубляю ответ с цитатами...",
     },
     "اردو": {
         quotaRequiredTitle: "رجسٹریشن درکار ہے",
@@ -814,9 +784,6 @@ const uiTranslations = {
         shareEmail: "ای میل",
         shareCopied: "کاپی ہو گیا",
         shareError: "خرابی",
-        expandAnswer: "جواب کو وسعت دیں",
-        expandRequest: "پچھلے جواب کو وسعت دیں",
-        expanding: "حوالوں کے ساتھ وسعت دی جا رہی ہے...",
     },
     "Indonesia": {
         quotaRequiredTitle: "Pendaftaran diperlukan",
@@ -883,9 +850,6 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Disalin",
         shareError: "Terjadi kesalahan",
-        expandAnswer: "Perdalam jawaban",
-        expandRequest: "Perdalam jawaban sebelumnya",
-        expanding: "Memperdalam jawaban dengan kutipan...",
     },
     "Deutsch": {
         quotaRequiredTitle: "Registrierung erforderlich",
@@ -952,9 +916,6 @@ const uiTranslations = {
         shareEmail: "E-Mail",
         shareCopied: "Kopiert",
         shareError: "Fehler",
-        expandAnswer: "Antwort vertiefen",
-        expandRequest: "Vorherige Antwort vertiefen",
-        expanding: "Wird mit Zitaten vertieft...",
     },
 };
 
@@ -1162,7 +1123,6 @@ function temporaryButtonText(button, text) {
 
 function messageActionsHtml() {
     return `
-        <button type="button" data-expand-response aria-label="${escapeHtml(uiText("expandAnswer"))}" title="${escapeHtml(uiText("expandAnswer"))}">↳</button>
         <button type="button" data-feedback="like" aria-label="${escapeHtml(uiText("like"))}" title="${escapeHtml(uiText("like"))}">👍</button>
         <button type="button" data-feedback="dislike" aria-label="${escapeHtml(uiText("dislike"))}" title="${escapeHtml(uiText("dislike"))}">👎</button>
         <button type="button" data-favorite-response aria-label="${escapeHtml(uiText("favorite"))}" title="${escapeHtml(uiText("favorite"))}">☆</button>
@@ -1721,76 +1681,7 @@ chatForm?.addEventListener("submit", async (event) => {
     }
 });
 
-async function expandPreviousAnswer(article) {
-    if (!article || article.classList.contains("is-pending")) return;
-    const expandButton = article.querySelector("[data-expand-response]");
-    if (expandButton?.disabled) return;
-
-    const messages = [...(chat?.querySelectorAll(".message") || [])];
-    const idx = messages.indexOf(article);
-    let expandAnchorQuestion = "";
-    for (let i = idx - 1; i >= 0; i -= 1) {
-        if (messages[i].classList.contains("user")) {
-            expandAnchorQuestion = messages[i].querySelector(".bubble")?.innerText?.trim() || "";
-            break;
-        }
-    }
-    const expandAnchorAnswer = article.querySelector(".bubble")?.innerText?.trim() || "";
-
-    enterChatMode();
-    if (expandButton) expandButton.disabled = true;
-    const loading = appendMessage("assistant", uiText("expanding"), null, { pending: true });
-
-    try {
-        const response = await fetch("/api/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                message: uiText("expandRequest"),
-                language: languageInput?.value || selectedLanguage,
-                response_mode: "expand",
-                retrieval_mode: getRetrievalMode(),
-                expand_previous: true,
-                expand_anchor_question: expandAnchorQuestion,
-                expand_anchor_answer: expandAnchorAnswer,
-                conversation_id: chat?.dataset.conversationId,
-                history: conversationHistory.slice(-8),
-            }),
-        });
-        const contentType = response.headers.get("content-type") || "";
-        const data = contentType.includes("application/x-ndjson")
-            ? await readNdjsonStream(response, (event) => handleChatStatusEvent(loading, event))
-            : await readJson(response);
-        if (!response.ok && !contentType.includes("application/x-ndjson")) {
-            updateQuotaCard(data.quota_status);
-            throw new Error(data.error || "Erro ao aprofundar resposta.");
-        }
-        if (chat) chat.dataset.conversationId = data.conversation_id || chat.dataset.conversationId || "";
-        if (chat?.dataset.conversationId) syncConversationUrl(chat.dataset.conversationId);
-        setBubbleContent(loading, data.answer || "", "assistant");
-        const answerArticle = loading?.closest(".message");
-        answerArticle?.classList.remove("is-pending");
-        if (answerArticle && data.assistant_message_id) {
-            answerArticle.dataset.messageId = data.assistant_message_id;
-        }
-        if (answerArticle) answerArticle.dataset.sources = JSON.stringify(data.sources || []);
-        updateQuotaCard(data.quota_status);
-        conversationHistory.push({ role: "assistant", content: data.answer || "" });
-        answerArticle?.scrollIntoView({ behavior: "smooth", block: "start" });
-    } catch (error) {
-        loading?.closest(".message")?.classList.remove("is-pending");
-        setBubbleContent(loading, error.message, "assistant");
-    } finally {
-        if (expandButton) expandButton.disabled = false;
-    }
-}
-
 chat?.addEventListener("click", async (event) => {
-    const expandButton = event.target.closest("[data-expand-response]");
-    if (expandButton) {
-        await expandPreviousAnswer(expandButton.closest(".message"));
-        return;
-    }
     const feedbackButton = event.target.closest("[data-feedback]");
     const favoriteButton = event.target.closest("[data-favorite-response]");
     const sourcesButton = event.target.closest("[data-show-sources]");

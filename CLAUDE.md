@@ -5383,3 +5383,91 @@ dias", composer sem o toggle.
 3. Nenhuma promoção/reinício de produção sem autorização explícita --
    a desta sessão já foi dada (pedido de commit + correções subsequentes
    tratadas como parte do mesmo fio de trabalho autorizado).
+
+## Sessão 2026-07-31 (continuação, mesmo fio) -- bug real de idioma no
+## modo agêntico corrigido (jp_agentic sempre respondia em português,
+## independente do idioma selecionado); opção "aprofundar" removida
+
+Usuário perguntou se o modo agêntico estava habilitado pra todas as
+línguas e se as línguas não-portuguesas usam o corpus JP -- as duas
+respostas eram sim, mas ao verificar a fundo (não só confirmar de
+memória) achei um bug real: `responder_agentico_deepseek_jp()` nunca
+recebia o parâmetro `language` do payload, e o `SYSTEM_PROMPT_JP` tinha
+"a resposta final deve ser em português" **fixo**, sem condicional.
+Testado fielmente (pergunta em inglês, sem instrução explícita de idioma
+na própria pergunta, igual ao que o frontend real envia) -- confirmado
+que a resposta saía sempre em português, não no idioma selecionado.
+
+### Correção
+
+`goshinsho/services/agentic_search.py`: `SYSTEM_PROMPT_JP` virou
+`SYSTEM_PROMPT_JP_TEMPLATE` (placeholder `{idioma}` nas regras 4 e 9, as
+únicas que mencionam idioma de saída -- o resto do prompt independe de
+idioma) + função `_system_prompt_jp(idioma="Português")` que formata o
+template. `responder_agentico_deepseek_jp()` ganhou parâmetro
+`idioma: str = "Português"` (default preserva o comportamento de sempre).
+`SYSTEM_PROMPT_JP` mantido como constante (`_system_prompt_jp("Português")`)
+pra não quebrar quem importa o texto pronto (scripts de piloto).
+`goshinsho/routes.py`: o bloco agêntico passa `idioma=language` só pra
+`jp_agentic` (pt_agentic é sempre português, corpus já está no idioma
+certo, sem necessidade do parâmetro).
+
+**Achado extra durante o teste** (não bastava só o fix acima): o modo
+"aprofundar" (`expand_previous`) tinha uma instrução hardcoded em
+português ("Aprofunde a resposta anterior...") que puxava a resposta de
+volta pro português mesmo com o system prompt já corrigido -- é uma
+instrução PARA o modelo, mas escrita em português parece ter mais peso
+que a regra do system prompt sobre uma pergunta em outro idioma. Corrigido
+com um reforço explícito no fim da instrução (`"(Answer in {language}.)"`)
+quando o idioma não é português -- testado e confirmado (inglês).
+
+### Opção "aprofundar" removida (pedido do usuário, mesmo fio)
+
+Enquanto testava o fix acima, o usuário pediu pra remover a opção
+"aprofundar" (botão ↳ nas mensagens) por completo -- as respostas do modo
+agêntico já vêm completas/aprofundadas por padrão (o modo agêntico não
+tem a distinção direct/deep que o pipeline antigo tinha, decisão de
+regra 9 do SYSTEM_PROMPT). Removido de `static/js/app.js`: o botão
+`data-expand-response` de `messageActionsHtml()`, a função inteira
+`expandPreviousAnswer()`, o branch do click handler que a disparava, e as
+chaves i18n órfãs `expandAnswer`/`expandRequest`/`expanding` nos 13
+idiomas. **Backend não foi tocado** (`expand_previous`/`response_mode=
+"expand"` continuam existindo em `routes.py`, usados pelo pipeline v2
+antigo que ainda existe como fallback interno) -- só a entrada da UI que
+deixou de existir, mesmo padrão conservador já usado nas sessões
+anteriores (remover o caminho que usuário real alcança, manter o código
+de baixo nível intacto).
+
+### Testes antes de produção
+
+Testado em 3 camadas antes de promover: (1) chamada direta à função
+(`responder_agentico_deepseek_jp(..., idioma="English")` e `"Español"`,
+confirmado resposta no idioma certo, e chamada sem `idioma` explícito
+confirmado que continua em português -- backward-compat preservada);
+(2) HTTP real contra `/var/www/goshinsho-test` (porta 5090) com conta
+real não-developer, testando pergunta simples em inglês
+(`search_variant: agentic_jp`, resposta em inglês) e "aprofundar" em
+inglês (confirmado em inglês só depois do reforço explícito -- a 1ª
+tentativa, só com o fix do system prompt, ainda saiu em português,
+achado real durante o próprio teste); (3) suíte de testes automatizados
+completa (128 testes) rodada 2x nesta sessão -- mesmas 2 falhas + 1 erro
+de import pré-existentes de sempre (não relacionados a nenhum arquivo
+tocado), nenhuma regressão nova. Produção reiniciada e reverificada com
+uma chamada real (inglês, `agentic_jp`, resposta em inglês confirmada) --
+a conversa de teste criada na conta real usada pro teste
+(`raquelgibrail@gmail.com`) foi apagada do banco ao final, não ficou
+resíduo na conta do usuário real.
+
+### Onde continuar
+
+1. Tudo desta atualização já está em produção, verificado.
+2. Idioma agora funciona corretamente pros 13 idiomas do seletor (testado
+   diretamente inglês/espanhol/português; os outros 11 usam o mesmo
+   mecanismo genérico -- não testados individualmente um a um, mas sem
+   motivo estrutural pra falharem diferente).
+3. Botão "aprofundar" removido da UI -- se o usuário quiser recuperar
+   esse tipo de funcionalidade no futuro (ex. "traga mais detalhes"),
+   pensar num mecanismo novo, não reativar o antigo (ele dependia da
+   distinção direct/deep que não existe mais no modo agêntico).
+4. Nenhuma promoção/reinício de produção sem autorização explícita -- a
+   desta sessão já foi dada, não é permanente para trabalho futuro.
