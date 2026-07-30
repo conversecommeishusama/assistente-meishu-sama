@@ -246,6 +246,67 @@ def _buscar_termo_unico(termo_folded: str) -> list[dict]:
     return candidatos
 
 
+@lru_cache(maxsize=1)
+def _bm25_index():
+    """Índice BM25 em nível de ARQUIVO INTEIRO (não de janela) -- só entra
+    como sinal COMPLEMENTAR de candidatura em `buscar_termo` (§3.12, achado
+    2026-07-30): o filtro AND+janela de `_buscar_termo_unico` é preciso mas
+    tem recall baixo quando a consulta é uma paráfrase cujas palavras estão
+    espalhadas longe umas das outras no texto-fonte (ex.: pergunta cita
+    'subir'/'descer'/'conforme'/'ações' e o texto real tem essas ideias em
+    parágrafos distantes de um diálogo longo) -- nesse caso o AND+janela dá
+    ZERO candidatos mesmo com o arquivo certo no acervo. BM25 por arquivo
+    inteiro não exige proximidade nem todas as palavras presentes; pondera
+    por raridade do termo no corpus (evita que palavras comuns como 'morte'
+    dominem o placar). Testado (script `test_bm25.py`, não versionado):
+    melhora a posição do arquivo-alvo de 195º/145 para 3º/145 numa consulta
+    que antes dava zero resultados, sem regressão em consultas de controle
+    sem relação temática nenhuma (câncer, agricultura natural, calamidades).
+    Requer a biblioteca `rank_bm25` (já usada por `search_service.py` no
+    pipeline pt_direct/jp_direct)."""
+    from rank_bm25 import BM25Okapi
+
+    arquivos = list(_corpus_pt().keys())
+    tokenizado = [re.findall(r"\b\w{3,}\b", _corpus_pt()[a][1]) for a in arquivos]
+    return arquivos, BM25Okapi(tokenizado)
+
+
+def _bm25_top_arquivos(termo_folded: str, k: int = 20) -> list[str]:
+    arquivos, bm25 = _bm25_index()
+    termos = _termos_significativos(termo_folded) or [termo_folded]
+    scores = bm25.get_scores(termos)
+    ranking = sorted(range(len(arquivos)), key=lambda i: -scores[i])
+    return [arquivos[i] for i in ranking[:k] if scores[i] > 0]
+
+
+def _melhor_posicao_no_arquivo(termos_busca: list[str], texto_folded: str) -> dict | None:
+    """Dado que BM25 já decidiu que este arquivo é um candidato relevante
+    (por conteúdo geral, não por proximidade), acha a melhor posição para
+    mostrar como trecho -- mesma lógica de densidade local de
+    `_buscar_termo_unico`, mas sem exigir que TODAS as palavras estejam na
+    janela (aceita quantas houver por perto, pontua pela quantidade).
+
+    Testa como âncora a posição de CADA ocorrência de CADA termo presente,
+    não só as do termo mais raro -- bug real achado ao testar: com 'subir
+    descer conforme ações', ancorar só em 'conforme' (o termo mais raro,
+    1 ocorrência) nunca via que 'subir' e 'descer' se agrupam a poucos
+    caracteres um do outro noutro ponto do texto (2 termos por perto ali,
+    contra 1 na posição de 'conforme') -- perdia o melhor trecho por só
+    olhar as posições do termo errado."""
+    ocorrencias_por_termo = [_ocorrencias_com_fronteira(t, texto_folded) for t in termos_busca]
+    presentes = [(i, occ) for i, occ in enumerate(ocorrencias_por_termo) if occ]
+    if not presentes:
+        return None
+    melhor_pos, melhor_score = None, -1
+    for _, ocorrencias in presentes:
+        for pos in ocorrencias:
+            janela_ini, janela_fim = pos - JANELA_PROXIMIDADE, pos + JANELA_PROXIMIDADE
+            score = sum(1 for _, occ in presentes if any(janela_ini <= p <= janela_fim for p in occ))
+            if score > melhor_score:
+                melhor_score, melhor_pos = score, pos
+    return {"posicao": melhor_pos, "score": melhor_score}
+
+
 def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
     """Busca literal (tolerante a acento/maiúscula) do termo/frase em todo o
     acervo, ordenada por relevância -- corrige achados do estudo original:
@@ -256,7 +317,10 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
     (c) §3.10, frases de 2+ palavras casam por AND de palavras em janela de
     proximidade, não mais substring contígua exata -- e frases com entrada
     no glossário de sinônimos de busca (`_glossario_sinonimos_busca`) também
-    disparam busca pelos termos relacionados, mesclada aos resultados."""
+    disparam busca pelos termos relacionados, mesclada aos resultados;
+    (d) §3.12, candidatos adicionais via BM25 em nível de arquivo (ver
+    `_bm25_index`) para arquivos que o AND+janela não capturou de jeito
+    nenhum -- só complementa, nunca substitui o mecanismo original."""
     termo_folded = fold_ortografico_lower(termo)
     if not termo_folded:
         return []
@@ -264,6 +328,16 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
     candidatos = _buscar_termo_unico(termo_folded)
     for extra in _termos_expandidos_por_glossario(termo_folded):
         candidatos.extend(_buscar_termo_unico(fold_ortografico_lower(extra)))
+
+    arquivos_ja_achados = {c["arquivo"] for c in candidatos}
+    termos_sig = _termos_significativos(termo_folded) or [termo_folded]
+    if len(termos_sig) >= 2:
+        for arquivo in _bm25_top_arquivos(termo_folded):
+            if arquivo in arquivos_ja_achados:
+                continue
+            melhor = _melhor_posicao_no_arquivo(termos_sig, _corpus_pt()[arquivo][1])
+            if melhor and melhor["score"] > 0:
+                candidatos.append({"arquivo": arquivo, "posicao": melhor["posicao"], "score": melhor["score"]})
 
     candidatos.sort(key=lambda c: (-c["score"], c["arquivo"], c["posicao"]))
 
@@ -431,7 +505,7 @@ REGRAS OBRIGATÓRIAS:
 4. A RESPOSTA FINAL deve ser em português. Toda citação/trecho usado, mesmo encontrado em japonês, deve ser traduzido fielmente (não paráfrase livre) para português na resposta -- NUNCA inclua caracteres japoneses (kanji/kana) na resposta final, salvo se o usuário pedir explicitamente o texto original.
 5. Cite a fonte (nome do arquivo) dos trechos usados na resposta EXATAMENTE como a ferramenta devolveu no campo "arquivo" -- nunca traduza, abrevie ou invente nome de série/coleção diferente do que foi literalmente retornado.
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
-7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo.
+7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo. ATENÇÃO A UM PADRÃO ESPECÍFICO: se um resultado vem de um arquivo cujo título/cabeçalho ou trecho mostrado deixa claro que o TEMA GERAL bate com a pergunta, mas o texto mostrado é só definição/descrição estrutural do assunto (ex.: explica os conceitos e a organização geral, sem tratar diretamente do caso ou da pergunta específica) -- isso é sinal forte de que a resposta real está em OUTRO PONTO DO MESMO ARQUIVO, não que o arquivo é irrelevante. Nesse caso, o próximo passo correto é chamar ler_mais_contexto nesse mesmo arquivo (inclusive em posições mais adiante do texto, não só ao redor da posição devolvida), não abandonar o arquivo e tentar um novo termo de busca.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos, você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:", nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
 9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória: divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO em português, com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal traduzida (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.
 10. PROIBIDO FUNDIR AFIRMAÇÕES DE FONTES DIFERENTES SEM BASE TEXTUAL: se dois trechos (de arquivos diferentes, ou de datas diferentes) descrevem o mesmo conceito de formas distintas ou aparentemente incompatíveis (ex.: um trecho diz que a causa de X é espiritual, outro diz que a causa de X é física/alimentar), NÃO os apresente como uma única explicação unificada, nem trate um como a "causa" do outro, a menos que algum trecho conecte os dois explicitamente. Cada fonte com um enquadramento diferente vira seu próprio SUBTÍTULO (###) na resposta, com sua própria citação -- não basta suavizar a redação com frases tipo "há duas camadas de explicação" ou "por um lado... por outro lado" DENTRO do mesmo tema; isso ainda é fundir. Se você notar que está prestes a escrever esse tipo de ressalva dentro de um único tema, é sinal de que precisa quebrar em dois subtítulos separados, não só suavizar o texto. Não invente elo causal ou complementaridade entre fontes que o próprio texto não faz. Isso vale mesmo quando as fontes usam a mesma palavra-chave (ex. "verdadeiro" X) para coisas que cada uma define de forma diferente. SE A RESPOSTA TIVER 2 OU MAIS TEMAS SEPARADOS POR ESTA REGRA, É PROIBIDO ESCREVER UM PARÁGRAFO DE "RESUMO GERAL" NO FINAL QUE TENTE COMPRIMIR TUDO NUMA FRASE SÓ -- é exatamente nesse resumo que a fusão sempre volta (ex. "o câncer verdadeiro é espiritual e vem da toxina da carne" reintroduz o elo que os temas separados evitaram). A separação por subtítulos já é suficiente; termine a resposta no último tema, sem parágrafo de fechamento que junte os enquadramentos de novo. EXCEÇÃO CONTROLADA: depois de separar os enquadramentos em temas distintos como acima, se houver uma forma de reconciliá-los apoiada no que os próprios trechos NÃO afirmam (ex.: nenhum dos dois menciona um limite de escopo -- tempo, vida, contexto -- que o outro pressupõe), você PODE acrescentar, depois dos temas separados, um bloco adicional rotulado "Inferência:" (mesmo rótulo da regra 8) oferecendo essa reconciliação -- nunca como se o texto tivesse dito isso, sempre como leitura sua, claramente separada e justificada. Isso é diferente de inventar elo causal (proibido acima): ali você afirmaria que os trechos se conectam; aqui você declara abertamente que está oferecendo uma interpretação sua que os concilia, e explica o motivo.
@@ -617,7 +691,7 @@ REGRAS OBRIGATÓRIAS:
 4. Cite a fonte (nome do arquivo) dos trechos usados na resposta EXATAMENTE como a ferramenta devolveu no campo "arquivo" -- nunca traduza, abrevie ou invente nome de série/coleção/periódico diferente do que foi literalmente retornado.
 5. Se o usuário pedir um ensinamento "na íntegra" ou por título, use buscar_artigo_por_titulo para trazer o texto completo, não apenas trechos soltos.
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
-7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo.
+7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo. ATENÇÃO A UM PADRÃO ESPECÍFICO: se um resultado vem de um arquivo cujo título/cabeçalho ou trecho mostrado deixa claro que o TEMA GERAL bate com a pergunta, mas o texto mostrado é só definição/descrição estrutural do assunto (ex.: explica os conceitos e a organização geral, sem tratar diretamente do caso ou da pergunta específica) -- isso é sinal forte de que a resposta real está em OUTRO PONTO DO MESMO ARQUIVO, não que o arquivo é irrelevante. Nesse caso, o próximo passo correto é chamar ler_mais_contexto nesse mesmo arquivo (inclusive em posições mais adiante do texto, não só ao redor da posição devolvida), não abandonar o arquivo e tentar um novo termo de busca.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos (ex.: eventos históricos, tecnologias ou pandemias posteriores a 1955), você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- ex. epidemia, sofrimento, purificação -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:", nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
 9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória (não se aplica ao modo "na íntegra" da regra 5, que é reprodução literal): divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.
 10. PROIBIDO FUNDIR AFIRMAÇÕES DE FONTES DIFERENTES SEM BASE TEXTUAL: se dois trechos (de arquivos diferentes, ou de datas diferentes) descrevem o mesmo conceito de formas distintas ou aparentemente incompatíveis (ex.: um trecho diz que a causa de X é espiritual, outro diz que a causa de X é física/alimentar), NÃO os apresente como uma única explicação unificada, nem trate um como a "causa" do outro, a menos que algum trecho conecte os dois explicitamente. Cada fonte com um enquadramento diferente vira seu próprio SUBTÍTULO (###) na resposta, com sua própria citação -- não basta suavizar a redação com frases tipo "há duas camadas de explicação" ou "por um lado... por outro lado" DENTRO do mesmo tema; isso ainda é fundir. Se você notar que está prestes a escrever esse tipo de ressalva dentro de um único tema, é sinal de que precisa quebrar em dois subtítulos separados, não só suavizar o texto. Não invente elo causal ou complementaridade entre fontes que o próprio texto não faz. Isso vale mesmo quando as fontes usam a mesma palavra-chave (ex. "verdadeiro" X) para coisas que cada uma define de forma diferente. SE A RESPOSTA TIVER 2 OU MAIS TEMAS SEPARADOS POR ESTA REGRA, É PROIBIDO ESCREVER UM PARÁGRAFO DE "RESUMO GERAL" NO FINAL QUE TENTE COMPRIMIR TUDO NUMA FRASE SÓ -- é exatamente nesse resumo que a fusão sempre volta (ex. "o câncer verdadeiro é espiritual e vem da toxina da carne" reintroduz o elo que os temas separados evitaram). A separação por subtítulos já é suficiente; termine a resposta no último tema, sem parágrafo de fechamento que junte os enquadramentos de novo. EXCEÇÃO CONTROLADA: depois de separar os enquadramentos em temas distintos como acima, se houver uma forma de reconciliá-los apoiada no que os próprios trechos NÃO afirmam (ex.: nenhum dos dois menciona um limite de escopo -- tempo, vida, contexto -- que o outro pressupõe), você PODE acrescentar, depois dos temas separados, um bloco adicional rotulado "Inferência:" (mesmo rótulo da regra 8) oferecendo essa reconciliação -- nunca como se o texto tivesse dito isso, sempre como leitura sua, claramente separada e justificada. Isso é diferente de inventar elo causal (proibido acima): ali você afirmaria que os trechos se conectam; aqui você declara abertamente que está oferecendo uma interpretação sua que os concilia, e explica o motivo.

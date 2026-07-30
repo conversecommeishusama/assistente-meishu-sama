@@ -4773,3 +4773,133 @@ restante sobre este tópico.
 4. Investigação de recall do `agentic_search.py` — achados reportados,
    nada implementado, decisão de correção pendente do usuário.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-07-30 (mesma sessão) — investigação de recall do
+## `agentic_search.py` aprofundada e testada de verdade: BM25 por arquivo +
+## reforço de regra 7, melhora real e mensurável, não 100%
+
+Continuação da investigação de causa raiz de recall inconsistente (seção
+anterior "Sessão 2026-07-30 (conversa nova...)"). O usuário pediu para não
+aceitar "é impossível resolver" e pesquisar como esse problema (busca
+lexical falhando em paráfrase, sem embedding) já foi resolvido noutros
+contextos — não fomos os primeiros a passar por isso.
+
+### Pesquisa externa (web, não só memória do modelo)
+
+O problema é o clássico "vocabulary mismatch" de recuperação de
+informação. Duas referências diretamente aplicáveis, achadas e lidas:
+
+- **Pseudo-Relevance Feedback (PRF)** — técnica clássica de IR: usar os
+  resultados de uma primeira busca (mesmo fraca) para extrair vocabulário
+  real do corpus e reformular a consulta.
+- **HyDE (Hypothetical Document Embeddings)** — originalmente para busca
+  vetorial, mas o princípio (gerar um texto hipotético que soaria como a
+  resposta, buscar por ELE em vez da pergunta crua) é adaptável a busca
+  lexical.
+- **"Rethinking Agentic RAG: Toward LLM-Driven Logical Retrieval Beyond
+  Embeddings"** (arXiv, 2026) — o mais diretamente aplicável: recomenda
+  **separar "o que pode ser recuperado" (filtro lógico/booleano) de "o
+  que rankeia mais alto" (BM25)** — inverted index filtra candidatos,
+  BM25 rankeia dentro do subconjunto. Validou uma intuição de design que
+  eu já tinha testado informalmente (aproximação de IDF).
+
+### Implementação real, testada e com 1 bug próprio achado e corrigido
+
+Adicionado a `goshinsho/services/agentic_search.py`:
+
+1. **`_bm25_index()`/`_bm25_top_arquivos()`** -- índice BM25 real
+   (biblioteca `rank_bm25`, já em `requirements.txt`, já usada por
+   `search_service.py` no pipeline `pt_direct`/`jp_direct`) em nível de
+   **arquivo inteiro**, não de janela -- só entra como candidatura
+   COMPLEMENTAR em `buscar_termo()`, nunca substitui o mecanismo AND+janela
+   original (que continua tendo precisão maior para frases curtas/literais).
+2. **`_melhor_posicao_no_arquivo()`** -- dado que BM25 já decidiu que um
+   arquivo é relevante, acha a melhor posição pra mostrar como trecho.
+   **Bug real achado e corrigido durante o próprio teste**: a primeira
+   versão só testava posições do termo mais raro como âncora -- com "subir
+   descer conforme ações", ancorar só em "conforme" (1 ocorrência) nunca
+   via que "subir"/"descer" se agrupam a poucos caracteres um do outro
+   noutro ponto do texto (2 termos por perto ali, contra 1 na posição de
+   "conforme"). Corrigido para testar TODAS as ocorrências de TODOS os
+   termos presentes como âncora candidata, não só as do termo mais raro.
+3. **Regra 7 do `SYSTEM_PROMPT`/`SYSTEM_PROMPT_JP` reforçada**: instrução
+   explícita e genérica (sem citar tema algum) para reconhecer quando um
+   resultado bate pelo TEMA GERAL/título mas o trecho mostrado é só
+   definição estrutural, sem responder à pergunta específica -- sinal de
+   que a resposta real está mais adiante no MESMO arquivo, não que o
+   arquivo é irrelevante; nesse caso, chamar `ler_mais_contexto` no mesmo
+   arquivo antes de trocar de termo de busca.
+
+### Resultados medidos (não estimados) -- honestos, mistura de sucesso parcial
+
+**Nível de função de busca** (sem custo de API, script `search_variants.py`/
+`test_bm25.py`, não versionados): posição do arquivo-alvo no ranking
+completo de 145 arquivos, pra "subir descer conforme ações": de **195ª**
+(parcial+janela por parágrafo+peso por raridade, minha primeira tentativa,
+que NÃO funcionou de verdade depois de simular o corte top-12 real) para
+**3ª** com BM25 verdadeiro. Testado com 4 consultas de controle sem relação
+temática nenhuma (câncer, agricultura natural, calamidades, hora das
+bruxas) -- sem regressão, resultados plausíveis em todas.
+
+**Nível de modelo real** (`responder_agentico_deepseek`, pergunta fixa
+"Segundo Meishu-Sama é possível mudar de plano espiritual na mesma
+reencarnação?", repetida 4x por rodada):
+
+| Rodada | Achou e apresentou os dois lados da doutrina | Arquivo `piloto_agentico_v7_bm25.json`/`v8_regra7_reforcada.json` |
+|---|---|---|
+| Antes de qualquer correção (sessão anterior) | 2/4 | -- |
+| BM25 sozinho | 3/4 (rep 4 falhou do jeito antigo) | `reports/piloto_agentico_v7_bm25.json` |
+| BM25 + regra 7 reforçada | 3/4 (rep 1 falhou do jeito antigo) | `reports/piloto_agentico_v8_regra7_reforcada.json` |
+
+**Achado técnico ao investigar por que a rep. 4 (rodada BM25-sozinho)
+falhou apesar de a busca já achar o arquivo certo**: os arquivos-chave
+(`霊界叢談`, `天国の福音書`) JÁ apareciam nos resultados de busca da
+rep. 4 -- mas o trecho mostrado (posição de maior densidade de palavras
+da consulta) caía na **descrição estrutural** das camadas do mundo
+espiritual, não na frase crucial ("destino predeterminado... impossível
+sair dele"), que fica ~5-6 mil caracteres mais adiante no mesmo artigo.
+O modelo nunca chamou `ler_mais_contexto` nesses 2 arquivos apesar de
+aparecerem na busca -- daí o reforço da regra 7 acima. **Mas o reforço não
+eliminou completamente esse padrão de falha** (rep. 1 da rodada seguinte
+repetiu o mesmo problema) -- é melhora real, não solução definitiva.
+
+**Achado colateral positivo, na rodada com regra 7 reforçada**: quando o
+modelo teve sucesso (reps 2-4), passou a incorporar espontaneamente a
+complicação mais sofisticada descoberta nesta mesma sessão (`御垂示録24号`,
+onde Meishu-Sama diz que "destino" nesse contexto é sobre classe social,
+não sobre plano espiritual) -- inclusive uma resposta (rep 4) que separou
+os dois enquadramentos com disciplina exemplar, sem forçar conclusão
+única, respeitando a regra 10 corretamente.
+
+**Controle do câncer, reconfirmado com BM25 ativo**: melhorou (achou 4
+enquadramentos em vez de 2, incluindo 2 fontes novas nunca achadas antes)
+e continuou respeitando a regra 10 (sem fusão, conclusão final explícita
+de que as fontes não se conectam no texto).
+
+### Estado final: melhora real, não solução completa
+
+Progressão honesta: ~50% (antes) → ~75% (BM25) → ~75% com profundidade
+maior quando funciona (BM25 + regra 7). Não chegou a 100% e não há
+caminho óbvio para fechar esse resíduo sem risco de virar ajuste
+específico demais para este caso de teste (risco de tutela, já discutido
+à exaustão nesta sessão). Ficou registrado honestamente, não inflado.
+
+### Estado de deploy
+
+Código editado em `goshinsho/services/agentic_search.py` -- **commitado
+nesta atualização**, mas o módulo continua **não ligado a
+`routes.py`/produção** (mesma situação de sempre). Nenhum reinício de
+serviço.
+
+### Onde continuar
+
+1. `agentic_search.py` tem agora: exceção controlada da regra 10 (sessão
+   anterior), BM25 complementar + regra 7 reforçada (esta atualização).
+   Ainda não integrado à produção.
+2. Se retomado: considerar se vale a pena repetir esse mesmo padrão de
+   pesquisa+teste (PRF/HyDE adaptado) para o resíduo de falhas restante,
+   ou aceitar que ~75% é o teto razoável de busca lexical pura para
+   perguntas que exigem cruzar fontes com vocabulário muito diferente da
+   pergunta.
+3. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita do usuário.
