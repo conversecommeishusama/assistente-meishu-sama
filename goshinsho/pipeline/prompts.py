@@ -102,6 +102,14 @@ def _direct_mode_block(next_num: int) -> str:
       tente comprimir tudo numa frase só — é exactamente nesse resumo que a fusão costuma voltar (ex. "X é
       espiritual e vem da toxina Y" reintroduz o elo que os temas separados evitaram). A separação por
       temas já é suficiente; termine no último tema, sem parágrafo de fecho que junte os enquadramentos.
+    - **Excepção controlada**: depois de separar os enquadramentos em temas distintos como acima, se houver
+      uma forma de reconciliá-los apoiada no que os próprios trechos **não afirmam** (ex.: nenhum dos dois
+      menciona um limite de escopo — tempo, vida, contexto — que o outro pressupõe), pode acrescentar,
+      depois dos temas separados, um bloco adicional rotulado **"Inferência:"** (regras 14–15) oferecendo
+      essa reconciliação — nunca como se o texto tivesse dito isso, sempre como leitura sua, claramente
+      separada e justificada. Isso é diferente de inventar elo causal (proibido acima): ali afirmaria que os
+      trechos se conectam; aqui declara abertamente que está a oferecer uma interpretação sua que os
+      concilia, e explica o motivo.
 
 {next_num + 1}. {_response_length_guidance()}
 

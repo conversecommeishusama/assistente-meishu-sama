@@ -4468,3 +4468,308 @@ de decidir como ajustar a regra 10 ou a interpretação do agente.
 7. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário — a promoção desta sessão já foi autorizada e
    executada, não é permanente pra trabalho futuro.
+
+## Sessão 2026-07-30 (conversa nova) — pendência do 世界救世教奇蹟集
+## investigada e resolvida teologicamente pelo usuário; regra 10 ganhou
+## exceção controlada de reconciliação por inferência rotulada
+
+### A investigação
+
+Retomada a pendência explícita deixada no fim da sessão anterior: o
+trecho de `19530910-世界救世教奇蹟集.txt` (JP linha 51) que diz que a
+pessoa comum, posicionada no plano médio, "sobe ao plano superior fazendo
+o bem ou desce ao plano inferior fazendo o mal" — usando o mesmo termo
+técnico 段/段階 do sistema de 180 camadas — parecia contradizer
+`19490825-自観叢書第3篇『霊界叢談』.txt` (JP linha 301), que diz que o
+shukumei (plano) é fixo ao nascer e "impossível sair dele", só a
+sina/unmei (posição dentro do plano) muda por esforço. Confirmado por
+citação literal dos dois trechos (não é falso alarme nem uso solto de
+vocabulário — é o mesmo termo técnico, mesma estrutura de três grandes
+divisões, conclusões aparentemente opostas).
+
+### Resolução teológica do usuário (não decidida por mim)
+
+O usuário esclareceu, em duas rodadas: (1) os ensinamentos não são
+contraditórios, se complementam — o Kiseki-shū **não afirma** que a
+subida/descida de plano acontece nesta mesma vida, isso fica em aberto no
+próprio texto; (2) a doutrina de "Camadas do Mundo Espiritual" já deixa
+claro que **nesta vida** a pessoa pode mudar de **camada** (posição
+dentro do plano em que nasceu — exatamente o unmei de `霊界叢談`), e **só
+após a morte** é que pode mudar de **plano** (o shukumei). Ou seja: o
+"subir ao Paraíso/cair no inferno" do Kiseki-shū é lido como referindo-se
+ao destino após a morte (ou a um novo shukumei numa vida seguinte), não a
+uma travessia de plano em vida — o que reconcilia os dois textos sem
+que nenhum dos dois precise estar "errado".
+
+**Importante**: essa reconciliação específica é conhecimento de domínio
+do usuário, registrada aqui como documentação — **não foi escrita em
+nenhum prompt, glossário ou código que o modelo leia como fato**. Isso é
+deliberado, para não repetir o erro já cometido 2x nesta mesma
+investigação (ver seção anterior "episódio de tutela pego pelo usuário em
+tempo real") — gravar a CONCLUSÃO doutrinária de um caso específico em
+qualquer arquivo que alimente a busca/resposta seria tutela, mesmo sendo
+uma conclusão correta e vinda do usuário. O que foi ao código é só o
+MECANISMO genérico (ver abaixo), nunca o conteúdo desta reconciliação
+específica.
+
+### Mudança de código: exceção controlada na regra 10 (fusão de fontes)
+
+A pedido explícito do usuário ("o aplicativo precisa ser sincero... que o
+Goshinsho apontasse os dois ensinamentos e conseguisse fazer essa
+inferência demonstrando claramente que está inferindo"), adicionado um
+adendo **genérico** (sem nomear plano/camada/Kiseki-shū em lugar nenhum)
+à regra 10 ("proibido fundir afirmações de fontes diferentes sem base
+textual") nos dois lugares onde ela existe:
+
+- `goshinsho/services/agentic_search.py` — `SYSTEM_PROMPT` e
+  `SYSTEM_PROMPT_JP` (texto idêntico nos dois, `replace_all`).
+- `goshinsho/pipeline/prompts.py` — bloco `_direct_mode_block()` (afeta
+  `pt_direct`/`jp_direct`, produção).
+
+Texto do adendo (mesma ideia, numeração de regra de inferência adaptada a
+cada arquivo — regra 8 em `agentic_search.py`, regras 14–15 em
+`prompts.py`): depois de separar os enquadramentos em temas distintos
+(já exigido pela regra 10), se houver uma forma de reconciliá-los apoiada
+no que os próprios trechos **não afirmam** (ex.: nenhum dos dois menciona
+um limite de escopo — tempo, vida, contexto — que o outro pressupõe), o
+modelo PODE acrescentar, depois dos temas separados, um bloco adicional
+rotulado **"Inferência:"** oferecendo essa reconciliação — nunca como se
+o texto tivesse dito isso, sempre como leitura do próprio modelo,
+claramente separada e justificada. Distinção explícita da proibição
+original: inventar elo causal afirmaria que os trechos SE CONECTAM; a
+exceção controlada declara abertamente que é uma INTERPRETAÇÃO que os
+concilia, e explica o motivo.
+
+**Verificado**: `ast.parse` confirma sintaxe válida nos dois arquivos
+depois da edição.
+
+**Estado de deploy, conforme decisão explícita do usuário**: os dois
+arquivos foram editados, **nada foi commitado nem `goshinsho.service` foi
+reiniciado** — o usuário escolheu "editar os dois arquivos, mas só isso
+por agora". `agentic_search.py` não está ligado à produção de qualquer
+forma (mesma situação de sessões anteriores). `pipeline/prompts.py`
+**está** em produção (`pt_direct`/`jp_direct`), mas a mudança só passa a
+valer para usuários reais depois de um commit + restart do
+`goshinsho.service`, que não foi autorizado nesta sessão.
+
+### Onde continuar
+
+1. Se o usuário quiser testar a exceção controlada na prática antes de
+   promover: rodar uma pergunta sobre "mudar de plano espiritual" via
+   `agentic_search.py` localmente (não afeta produção) para ver se o
+   modelo agora apresenta os dois temas (`霊界叢談`/`天国の福音書` de um
+   lado, `世界救世教奇蹟集` do outro) e oferece a reconciliação rotulada
+   como inferência, sem inventar elo não sustentado.
+2. Commit + restart de `goshinsho.service` (para `pipeline/prompts.py`
+   valer em produção) exige autorização explícita separada — não foi
+   pedida nem executada nesta sessão.
+3. A reconciliação teológica específica (plano só muda após a morte,
+   camada muda nesta vida, Kiseki-shū fica em aberto sobre o momento)
+   fica só documentada aqui — deliberadamente fora de qualquer
+   prompt/glossário/código.
+4. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita do usuário.
+
+## Sessão 2026-07-30 (mesma conversa, continuação longa) — padronização
+## shukumei/unmei em todo o acervo (宿命→"destino predeterminado",
+## 運命→"destino mutável" quando doutrinário; "destino" puro no resto),
+## regra 10 ganhou exceção controlada, achado de recall investigado
+
+### Contexto: por que isso começou
+
+Retomando a pendência de `世界救世教奇蹟集` vs. `霊界叢談` (ver seção anterior),
+o usuário trouxe uma terceira fonte nova (`19530915-御垂示録24号.txt`, achada
+numa repetição de teste do `agentic_search.py`) onde Meishu-Sama, perguntado
+diretamente sobre a mesma contradição aparente, diz que "não existe destino
+do Inferno nem do Paraíso — o que chamamos de destino/sina é uma questão de
+classe". O usuário concluiu que os ensinamentos não se contradizem — a
+diferença real estava na **tradução inconsistente de 宿命 (shukumei) e 運命
+(unmei)** ao longo do acervo, não na doutrina em si. Pedido: levantar como
+esses dois termos estão traduzidos em todo o corpus e definir um padrão.
+
+### Decisão final do usuário sobre o padrão
+
+- **Quando a passagem é doutrinária** (contrasta explicitamente algo FIXO
+  com algo MUTÁVEL dentro de um limite, em qualquer domínio — plano
+  espiritual, classe social, etc.): `宿命`→**"destino predeterminado"**,
+  `運命`→**"destino mutável"**, sempre por extenso, em toda ocorrência
+  (sem abreviar para "destino"/"sina" depois da primeira menção — decisão
+  explícita do usuário, mesmo em trechos densos onde isso repete muito).
+- **Quando NÃO é doutrinário** (uso cotidiano de "destino/sina/fado" em
+  depoimentos, poesia, narrativa histórica): sempre **"destino" puro**,
+  nunca "sina"/"sorte"/"fado"/"carma"/"predestinação" — para não sugerir
+  doutrina onde não há. Isso vale mesmo quando o texto já usava outra
+  palavra (ex. corrigido "sina"→"destino" em casos genéricos).
+- **Critério de julgamento** (não mecânico): não basta 宿命 e 運命
+  aparecerem perto um do outro — é preciso a passagem genuinamente
+  contrastar um limite fixo com liberdade/mutabilidade dentro dele. O
+  mesmo padrão de ensinamento pode aparecer sem os dois termos lado a
+  lado (ex. só 運命 ligado explicitamente a "camadas"/"registro
+  espiritual" já conta como doutrinário, confirmado cruzando com outra
+  citação do mesmo artigo em livro diferente).
+
+### Achado ao longo do levantamento: pelo menos 10 padrões de tradução
+### diferentes e inconsistentes para o mesmo par técnico, antes desta sessão
+
+`destino`/`sina` (霊界叢談, 御垂示録24号) · `destino predeterminado`/`destino`
+(信仰雑話) · `destino predeterminado`/`destino mutável` (天国の福音書,
+1 das 2 passagens — o único já certo) · `carma inato`/`destino`
+(Tijotengoku) · `destino`/`sorte` (Ensinamentos_diversos) · `destino
+predestinado`/`destino` (教えの光) · `destino imutável`/`destino`
+(御垂示録23号) · `carma`/`destino` (御垂示録3号) · `destino imutável`/
+`consequência` (御光話録14号) · além de "sina" usada solta (sem par) em
+contexto puramente genérico em `Hikari.txt` (3x) e `自観説話集` (1x,
+"sorte"). Confirma a suspeita original do usuário: a aparência de
+contradição entre livros era, em vários casos, efeito de vocabulário
+inconsistente, não de doutrina divergente.
+
+### Método usado
+
+Para cada um dos 65 arquivos do acervo que contêm 宿命 e/ou 運命 no JP
+(levantado por grep, 20 arquivos com 宿命/69 ocorrências, 59 arquivos com
+運命/325 ocorrências, união de 65 arquivos únicos — 2 arquivos tinham sido
+perdidos numa primeira passagem por erro de contagem, achados e corrigidos
+depois: `信仰雑話` tinha 14 ocorrências de 運命, não fora incluído no lote
+certo; `自観叢書第4篇『奇蹟物語』` e `自観叢書第5篇『自観隨談』` também
+faltavam): script auxiliar (`find_shukumei_context.py`, usa
+`split_by_anchors`/`load_boundary_file` reais de
+`apply_manual_livros_segmentacao.py` para extrair o texto de cada artigo
+já delimitado pela spec, depois isola as frases JP com 宿命/運命 e busca no
+PT correspondente por "destino/sina/sorte/fado/predetermin") para ler cada
+ocorrência em contexto antes de decidir — nunca aplicado cegamente.
+
+### Resultado: 17 arquivos editados, ~40 ocorrências corrigidas
+
+`19530915-御垂示録24号`, `Eiko.txt`, `Tijotengoku.txt`,
+`19540825-天国の福音書`, `19480101-御光話録（補）`,
+`19490825-自観叢書第3篇『霊界叢談』`, `Ensinamentos_diversos`, `Hikari.txt`,
+`19510520-教えの光`, `19521115-御教え集15号`, `19530815-御垂示録23号`,
+`19511125-御垂示録3号`, `19501120-世界救世教早わかり`,
+`19540215-御教え集30号`, `19500130-自観叢書第12篇『自観説話集』`,
+`19491120-御光話録14号`, `19480905-信仰雑話`. Dois títulos de artigo
+tiveram que ser alterados também ("O Destino é Livremente Criado"→"O
+Destino Mutável é Livremente Criado" em `Tijotengoku`/`Eiko`; "Destino e
+Sorte São Coisas Diferentes"→"Destino Predeterminado e Destino Mutável
+São Coisas Diferentes" em `Ensinamentos_diversos`) — nos dois primeiros
+casos o título era literalmente o `pt_anchor` da spec, corrigido junto
+(`reports/livros_trabalho/segmentacao_manual/*.json`) para não quebrar a
+segmentação; no terceiro era só subtítulo interno, sem risco de âncora.
+
+**Todos os outros ~48 arquivos foram lidos e não precisaram de nenhuma
+mudança** — a maioria é depoimento de cura (uso cotidiano de "destino",
+já correto), poesia (`明麿近詠集`, `山と水`, `御讃歌集` — linguagem
+literária, não doutrina), ou ensaio comparativo (`基仏と観音教`,
+descrevendo crenças de OUTRAS religiões/culturas, não ensinamento de
+Meishu-Sama).
+
+### Sincronização e verificação
+
+Os 17 arquivos editados em `livros_publicacao_pt_revisado/` foram
+sincronizados para `reports/livros_trabalho/pt/` (backup prévio em
+`reports/livros_trabalho/pt_sync_backup_hierarquia_espiritual_shukumei_unmei_20260730T162642Z/`).
+**Todas as âncoras (`pt_anchor`) dos 17 arquivos reverificadas com a
+função real de produção (`split_by_anchors`) nas duas cópias — 100%
+resolvidas**, incluindo os 2 casos onde o título de artigo mudou (specs
+já corrigidos antes da verificação).
+
+### 13 casos ambíguos, agrupados em 3 clusters, para o usuário decidir
+
+Nenhum decidido sozinho — critério do usuário era trazer tudo junto ao
+final. Lista completa salva em
+`/tmp/claude-0/-var-www-goshinsho/1494c821-d056-4b05-88b5-fd045020e27d/scratchpad/casos_ambiguos.md`
+(fora do projeto, copiar para local permanente se for retomar depois
+desta sessão). Resumo:
+
+- **Cluster A — "sinais externos influenciam 運命"** (nomes, selos
+  pessoais, pintas/hokuro, casa/terreno) — 9 ocorrências em 6 arquivos
+  (`御光話録（補）` artigos 18/26/31, `教えの光` artigos 43/79,
+  `御教え集29号` artigo 10, `御光話録1号` artigo 3, `御光話録18号`).
+  Mesmo tema recorrente (fisiognomonia/geomancia), nunca contrastado
+  explicitamente com 宿命 nos trechos.
+- **Cluster B — "運命 é moldável pela virtude/vontade"**, sem contraste
+  explícito com 宿命 nem menção de camada no trecho específico — 3
+  ocorrências (`御光話録17号` livro inteiro, `御光話録5号` artigo 3,
+  `御垂示録29号` artigo 1). Mesmo tema já confirmado doutrinário noutros
+  livros (via ligação com camadas), mas sem essa ponte explícita aqui.
+- **Cluster C — caso único**: `御垂示録26号` artigo 1 — 運命 descrito
+  como o lado LIMITADO, em contraste com o coração/kokoro (infinito), não
+  com 宿命. Estrutura diferente da dualidade já aplicada.
+- **Abertura do artigo "O Segredo da Boa Sorte"** (`Eiko.txt`, antes da
+  parte técnica já corrigida) — usa 宿命 de forma retórica antes da
+  explicação técnica que vem a seguir no mesmo artigo.
+
+### Trabalho em paralelo nesta mesma sessão (não repetir do zero depois)
+
+1. **Investigação da causa raiz do recall inconsistente do
+   `agentic_search.py`** (agente em background, concluída): confirmado
+   que `_buscar_termo_unico` exige todas as palavras da busca dentro de
+   uma janela fixa de ±400 caracteres, sem pontuação parcial — em
+   diálogos longos (pergunta/resposta em pontos distantes do texto),
+   paráfrases de 3+ palavras falham mesmo quando o assunto certo está no
+   arquivo. Recomendações (arquiteturais, genéricas, nada implementado):
+   pontuação parcial em vez de filtro binário; janela por
+   parágrafo/turno de diálogo em vez de caracteres fixos; devolver sinal
+   de "quase bateu" ao modelo. Ver mensagem completa do agente no chat
+   desta sessão se precisar do texto exato.
+2. **Regra 10 (`agentic_search.py` + `pipeline/prompts.py`) ganhou uma
+   exceção controlada** (ver seção anterior deste documento) — editada
+   mas **não commitada nem produção reiniciada**, conforme decisão
+   explícita do usuário.
+
+### Onde continuar
+
+1. **Trazer os 13 casos ambíguos ao usuário** (lista acima) para decisão
+   em lote — nenhum foi resolvido sozinho.
+2. Depois de decididos, aplicar as correções restantes e reverificar
+   âncoras dos arquivos tocados adicionalmente.
+3. `glossario_traducao.json` já tem as 2 entradas novas (`宿命`→"destino
+   predeterminado", `運命`→"destino mutável") — refletem a forma
+   doutrinária; não cobre o caso de uso genérico (ficou só documentado
+   aqui, não há campo de nota estruturada no glossário para isso).
+4. Commit + restart de `goshinsho.service`/reconstrução de índice: nada
+   disso foi feito nesta sessão — exige autorização explícita separada,
+   como sempre.
+5. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário.
+
+## Atualização 2026-07-30 (mesma sessão) — os 13 casos ambíguos resolvidos
+## pelo usuário, últimas correções aplicadas
+
+Usuário decidiu os 4 grupos de ambiguidade (pergunta+opções, todas as
+recomendações aceitas):
+
+- **Cluster A (sinais externos — nomes/selos/pintas/casa)**: deixar
+  "destino" puro. **Nenhuma mudança aplicada** (já estava correto).
+- **Cluster B (運命 moldável pela virtude/vontade)**: aplicar "destino
+  mutável". Corrigido em 3 arquivos: `19500228-御光話録17号.txt` (2
+  frases), `19490000-御光話録5号.txt` (1 frase), `19540315-御垂示録29号.txt`
+  (4 frases).
+- **Caso C (運命 vs. coração/kokoro em `御垂示録26号`)**: deixar "destino"
+  puro. **Nenhuma mudança aplicada.**
+- **Abertura retórica de "O Segredo da Boa Sorte" (`Eiko.txt`)**: aplicar
+  "destino predeterminado". Corrigido (1 frase: "destino humano"→"destino
+  predeterminado humano").
+
+**Total final da sessão: 20 arquivos editados** (os 17 já listados + estes
+3 novos: `御光話録17号`, `御光話録5号`, `御垂示録29号`; `Eiko.txt` recebeu
+mais 1 edição). Todas as âncoras dos 4 arquivos desta rodada final
+reverificadas com `split_by_anchors` real — 100% resolvidas — e
+sincronizadas para `reports/livros_trabalho/pt/` (backups em
+`reports/livros_trabalho/pt_sync_backup_hierarquia_espiritual_shukumei_unmei_20260730T162642Z/`,
+arquivos desta rodada com sufixo `.round2`).
+
+**Trabalho de padronização shukumei/unmei encerrado nesta sessão** —
+todos os 13 casos ambíguos resolvidos, nenhuma pendência de decisão
+restante sobre este tópico.
+
+### Onde continuar
+
+1. Padronização shukumei/unmei: **concluída**, não retomar sem novo
+   pedido do usuário.
+2. `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário.
+3. Regra 10 (exceção controlada) editada mas não commitada/deployada —
+   ver seção anterior.
+4. Investigação de recall do `agentic_search.py` — achados reportados,
+   nada implementado, decisão de correção pendente do usuário.
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
