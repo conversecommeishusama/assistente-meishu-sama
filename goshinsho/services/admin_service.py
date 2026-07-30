@@ -3,9 +3,8 @@ import stripe
 from ..config import Config
 from ..supabase_client import get_supabase
 from .access_service import summarize_access
-from .auth_service import FREE_MONTHLY_QUESTIONS, FREE_TRIAL_DAYS, describe_user_access, is_premium_user
+from .auth_service import FREE_MONTHLY_QUESTIONS, describe_user_access, is_premium_user
 from .deepseek_usage_service import summarize_deepseek_usage
-from .anonymous_usage_service import summarize_anonymous_usage
 from .premium_grant_service import grant_summary
 from .support_service import support_summary
 
@@ -57,10 +56,14 @@ def build_admin_dashboard():
     usage = summarize_deepseek_usage(limit=5000)
     access = summarize_access(limit=20000)
     return {
+        # 2026-07-31: período de experiência removido -- único sistema de
+        # acesso é premium gratuito (ver CLAUDE.md). Campo mantido só pra
+        # não quebrar o admin.js que já lê essa forma; "active": False daqui
+        # pra frente.
         "trial_policy": {
-            "trial_days": FREE_TRIAL_DAYS,
+            "trial_days": None,
             "monthly_free_questions": FREE_MONTHLY_QUESTIONS,
-            "active": True,
+            "active": False,
         },
         "users": {
             "total": len(users),
@@ -83,6 +86,5 @@ def build_admin_dashboard():
         },
         "sales": _stripe_summary(),
         "support": support_summary(),
-        "anonymous_usage": summarize_anonymous_usage(),
         "premium_grants": grant_summary(),
     }

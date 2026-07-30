@@ -25,18 +25,15 @@ from flask import (
 
 from .config import Config
 from .services.access_service import record_access
-from .services.anonymous_usage_service import summarize_anonymous_usage
 from .services.auth_service import (
     DEVELOPER_EMAILS,
     EMAIL_CONFIRMATION_REQUIRED,
     EMAIL_NOT_CONFIRMED_MESSAGE,
     FREE_MONTHLY_QUESTIONS,
-    FREE_TRIAL_DAYS,
     check_question_quota,
     consume_question_quota,
     current_user,
     is_email_confirmed,
-    is_free_trial_active,
     is_premium_user,
     login_user,
     logout_user,
@@ -301,22 +298,10 @@ def _quota_status(user):
             "is_trial": False,
             "message": "Plano premium: perguntas ilimitadas.",
         }
-    if is_free_trial_active(user):
-        return {
-            "plan": "gratis_teste",
-            "label": "Período de experiência",
-            "remaining_questions": None,
-            "limit": FREE_MONTHLY_QUESTIONS,
-            "trial_days": FREE_TRIAL_DAYS,
-            "is_premium": False,
-            "is_trial": True,
-            "show_subscription_intro": False,
-            "pricing_explanation": SUBSCRIPTION_EXPLANATION,
-            "message": (
-                f"Perguntas ilimitadas por {FREE_TRIAL_DAYS} dias a partir do cadastro. "
-                f"Depois desse período, será necessário assinar o plano premium para continuar."
-            ),
-        }
+    # 2026-07-31: sem trial -- este ramo só é alcançado por uma conta que,
+    # por algum motivo fora do fluxo normal da aplicação, não está marcada
+    # como premium (toda conta nova/existente já é). Fallback defensivo,
+    # não um plano oferecido.
     ok, remaining = check_question_quota(user)
     remaining_count = remaining if ok else 0
     return {
@@ -324,14 +309,15 @@ def _quota_status(user):
         "label": "Conta gratuita",
         "remaining_questions": remaining_count,
         "limit": FREE_MONTHLY_QUESTIONS,
-        "trial_days": 0,
+        "trial_days": None,
         "is_premium": False,
         "is_trial": False,
-        "show_subscription_intro": True,
+        "show_subscription_intro": False,
         "pricing_explanation": SUBSCRIPTION_EXPLANATION,
         "message": (
-            f"Seu período de experiência terminou. Assine o plano premium para perguntas ilimitadas. "
-            f"(Enquanto isso: {remaining_count} de {FREE_MONTHLY_QUESTIONS} perguntas gratuitas neste mês.)"
+            f"Sua conta ainda não está com o acesso premium gratuito ativo. "
+            f"Entre em contato com o suporte. (Enquanto isso: {remaining_count} de "
+            f"{FREE_MONTHLY_QUESTIONS} perguntas gratuitas neste mês.)"
         ),
     }
 
@@ -922,16 +908,16 @@ def api_chat():
                 return jsonify({"error": quota_error, "quota_status": _quota_status(user), "quota_limit_reached": True}), 403
             # Cota diária extra pro plano gratuito -- evita que a cota do mês
             # inteiro (5 perguntas) seja gasta numa única rajada. Não se
-            # aplica a premium/experiência (essas já passaram pelo check
-            # acima e não usam perguntas_restantes).
-            if not is_premium_user(user) and not is_free_trial_active(user):
+            # aplica a premium (toda conta real já é -- este ramo é
+            # fallback defensivo, não um plano oferecido).
+            if not is_premium_user(user):
                 daily_limited = _rate_limit_response(
                     "chat_daily_free",
                     limit=3,
                     window_seconds=86400,
                     message=(
                         "Você atingiu o limite de perguntas gratuitas de hoje. "
-                        "Tente novamente amanhã, ou assine o plano premium para perguntas ilimitadas."
+                        "Tente novamente amanhã, ou entre em contato com o suporte."
                     ),
                     identity=user["id"],
                 )

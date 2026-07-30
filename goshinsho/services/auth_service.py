@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from urllib.parse import urlencode
 
 import requests
@@ -10,7 +10,6 @@ from ..supabase_client import get_supabase
 from .signup_protection import LOGIN_GENERIC_ERROR, SIGNUP_GENERIC_ERROR, assert_email_allowed, is_bot_submission, is_email_blocked
 
 FREE_MONTHLY_QUESTIONS = 5
-FREE_TRIAL_DAYS = 3
 DEVELOPER_EMAILS = {
     "dgtannus@gmail.com",
     "frantannus@gmail.com",
@@ -249,23 +248,17 @@ def is_premium_user(user):
     return email in DEVELOPER_EMAILS or plan == "premium"
 
 
-def is_free_trial_active(user, now=None):
-    now = now or datetime.now(timezone.utc)
-    created_at = _parse_datetime(user.get("data_criacao")) if user else None
-    if not created_at:
-        return False
-    return (now - created_at).days < FREE_TRIAL_DAYS
-
-
-def _trial_ends_at(user):
-    created_at = _parse_datetime(user.get("data_criacao")) if user else None
-    if not created_at:
-        return None
-    return created_at + timedelta(days=FREE_TRIAL_DAYS)
-
-
 def describe_user_access(user, now=None):
-    """Summarize trial/quota state for admin dashboards and API responses."""
+    """Summarize quota state for admin dashboards and API responses.
+
+    2026-07-31: mecanismo de "período de experiência" (3 dias com
+    perguntas ilimitadas antes de precisar assinar) removido -- único
+    sistema de acesso agora é premium gratuito (ver CLAUDE.md). Campos
+    `is_trial`/`trial_days_remaining`/`trial_hours_remaining`/`trial_ends_at`
+    mantidos na forma da resposta (sempre False/None) só para não quebrar
+    quem já lê esse formato (ex. admin dashboard), não porque o conceito
+    ainda exista.
+    """
     now = now or datetime.now(timezone.utc)
     if not user:
         return {
@@ -293,24 +286,6 @@ def describe_user_access(user, now=None):
             "monthly_limit": None,
         }
 
-    trial_ends_at = _trial_ends_at(user)
-    if trial_ends_at and now < trial_ends_at:
-        remaining = trial_ends_at - now
-        total_hours = max(int(remaining.total_seconds() // 3600), 0)
-        days_remaining = total_hours // 24
-        hours_remaining = total_hours % 24
-        return {
-            "access_status": "trial",
-            "access_label": "Experiência gratuita",
-            "is_trial": True,
-            "is_limited": False,
-            "trial_days_remaining": days_remaining,
-            "trial_hours_remaining": hours_remaining,
-            "trial_ends_at": trial_ends_at.isoformat(),
-            "remaining_questions": None,
-            "monthly_limit": FREE_MONTHLY_QUESTIONS,
-        }
-
     ok, remaining = check_question_quota(user)
     remaining_int = int(remaining) if ok and remaining is not None else 0
     is_limited = not ok or remaining_int <= 0
@@ -321,7 +296,7 @@ def describe_user_access(user, now=None):
         "is_limited": is_limited,
         "trial_days_remaining": 0,
         "trial_hours_remaining": 0,
-        "trial_ends_at": trial_ends_at.isoformat() if trial_ends_at else None,
+        "trial_ends_at": None,
         "remaining_questions": remaining_int if not is_limited else 0,
         "monthly_limit": FREE_MONTHLY_QUESTIONS,
     }
@@ -502,9 +477,15 @@ def update_subscription_plan(user_id, plan="premium", remaining=None):
 
 
 def check_question_quota(user):
+    # 2026-07-31: único sistema de acesso é premium gratuito (ver CLAUDE.md)
+    # -- toda conta (existente ou nova) já é criada com plano="premium", que
+    # is_premium_user() reconhece e devolve acesso ilimitado abaixo. O ramo
+    # de cota mensal/perguntas_restantes que segue é um fallback defensivo
+    # para o caso (hoje sem caminho real na aplicação) de uma conta não
+    # estar marcada como premium -- não representa um plano oferecido.
     if not user:
         return True, None
-    if is_premium_user(user) or is_free_trial_active(user):
+    if is_premium_user(user):
         return True, None
 
     now = datetime.now(timezone.utc)
@@ -515,14 +496,13 @@ def check_question_quota(user):
     if int(remaining) <= 0:
         return False, (
             "Você usou as perguntas gratuitas deste mês. Cada pergunta tem custo de operação "
-            "(inteligência artificial e servidores); a assinatura premium ajuda a manter o app no ar. "
-            "Sem condições de pagar? Solicite acesso gratuito pelo formulário de cadastro."
+            "(inteligência artificial e servidores). Entre em contato com o suporte."
         )
     return True, int(remaining)
 
 
 def consume_question_quota(user):
-    if not user or is_premium_user(user) or is_free_trial_active(user):
+    if not user or is_premium_user(user):
         return None
     ok, remaining = check_question_quota(user)
     if not ok:

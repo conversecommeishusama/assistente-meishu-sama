@@ -104,11 +104,7 @@ function renderDashboard(data) {
         <p>Respostas contabilizadas: <strong>${number(cost.answer_count)}</strong></p>
     `;
 
-    const policy = data.trial_policy || {};
-    const anon = data.anonymous_usage || {};
-    const policyLine = policy.active
-        ? `<p class="policy-note">Política ativa: <strong>${policy.trial_days || 3} dias ilimitados</strong>, depois <strong>${policy.monthly_free_questions || 5} perguntas/mês</strong>. Teste anônimo: <strong>${anon.limit_per_device || 1} pergunta por dispositivo (total)</strong> · ${number(anon.devices_exhausted || 0)} dispositivo(s) já usaram o teste.</p>`
-        : `<p class="policy-note">Política de experiência desativada.</p>`;
+    const policyLine = `<p class="policy-note">Único sistema de acesso: <strong>premium gratuito</strong> para toda conta cadastrada (sem trial, sem cota mensal). Cartão de crédito é usado só para doação voluntária.</p>`;
 
     usersBox.innerHTML = policyLine + (data.users?.all || [])
         .map((user) => {

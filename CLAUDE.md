@@ -5285,3 +5285,101 @@ validação acima. Confirmado em produção real
 7. Continua valendo a regra padrão: nenhuma promoção/reinício de produção
    sem autorização explícita -- a desta sessão já foi dada e executada,
    não é permanente para trabalho futuro.
+
+## Sessão 2026-07-31 (continuação, mesmo fio) -- resíduos do trial de 3
+## dias e da pergunta anônima removidos; toggle "com/sem citações"
+## removido do composer
+
+Usuário testou o cadastro real depois da promoção anterior e reportou 3
+problemas em sequência, todos com a mesma causa raiz: a promoção anterior
+tinha corrigido a cópia Jinja/server-side, mas deixado várias camadas de
+código JS/backend ainda descrevendo o antigo modelo (trial de 3 dias +
+cota mensal + 1 pergunta anônima por dispositivo) -- essas camadas
+"vazavam" de volta pra UI porque nunca foram removidas, só contornadas.
+
+### 1. "3 dias" ainda aparecia no cadastro
+
+Causa: `static/js/app.js` tem um sistema de i18n com **13 idiomas**, cada
+um com sua própria cópia de `registerPolicyNote`/`quotaRequiredMessagePrefix`/
+`quotaRequiredMessageSuffix` -- esse texto (client-side) **sobrescreve** o
+texto já corrigido no Jinja (`data-i18n="registerPolicyNote"`) assim que a
+página carrega, então o fix anterior nunca chegou a aparecer de verdade
+pro usuário. Corrigido nos 13 idiomas (PT/EN/ES/JA/ZH/HI/AR/FR/BN/RU/UR/
+ID/DE): `quotaRequiredMessagePrefix`+`quotaRequiredMessageSuffix` (que
+concatenavam com um número de dias vindo de `status.trial_days || 3` --
+o fallback fixo `3` era outro vazamento) viraram uma única chave
+`quotaRequiredMessage` sem menção a dias; `registerPolicyNote` reescrito
+em todos os 13 para "acesso premium para sempre... sem necessidade de
+assinatura paga". As chaves `quotaPlanFreePrefix/Suffix/Then/Premium`
+(descreviam o antigo card de comparação de planos, `#quota-plans`, já
+removido do HTML na sessão anterior) estavam órfãs -- removidas nos 13
+idiomas também.
+
+**Backend também tinha o mecanismo de trial ainda vivo** (não só a cópia):
+`is_free_trial_active()`/`FREE_TRIAL_DAYS`/`_trial_ends_at()` em
+`auth_service.py` concediam acesso ilimitado por 3 dias a partir de
+`data_criacao`, **independente do campo `plano`** -- ou seja, mesmo com o
+default de cadastro já sendo `"premium"` (sessão anterior), esse
+mecanismo paralelo continuava estruturalmente presente (só nunca
+disparava na prática, porque `is_premium_user()` já intercepta primeiro).
+Removido de vez: a função, a constante, o ramo `trial` de
+`describe_user_access()`, e as duas chamadas `or is_free_trial_active(user)`
+em `check_question_quota()`/`consume_question_quota()`. `routes.py`
+(`_quota_status`, import, exceção de rate-limit diário) e
+`admin_service.py`/`admin.js` (dashboard interno) ajustados para não
+reportar mais política de trial.
+
+### 2. "não deve ser possível fazer pergunta sem premium gratuito"
+
+Verificado que `/api/chat` **já bloqueava** requisição sem login (401,
+nenhuma resposta gerada) -- não havia vazamento real nesse endpoint.
+Mas existia uma infraestrutura **paralela e não utilizada** pra conceder
+1 pergunta grátis por dispositivo sem cadastro
+(`goshinsho/services/anonymous_usage_service.py`,
+`consume_anonymous_quota()`/`anonymous_quota_status()`) -- nunca chamada
+de verdade em nenhuma rota (confirmado por grep antes de remover), só
+existia como código morto + 1 métrica exibida no dashboard admin. Como o
+usuário foi explícito que essa possibilidade "deve desaparecer", o módulo
+inteiro foi removido (não só desconectado) -- é uma feature que não deve
+existir, não só uma feature inativa.
+
+### 3. Toggle "Com citações" / "Sem citações" removido
+
+Pedido do usuário: como o modo agêntico **sempre** cita fonte inline
+(regra 9 do `SYSTEM_PROMPT`, `[arquivo.txt]` dentro do texto), a escolha
+direct/deep não faz mais sentido -- na prática já não fazia nada
+(confirmado: o bloco agêntico de `routes.py` nunca lê `response_mode` do
+payload, só o pipeline v2 antigo, fora de uso). Removido o `<fieldset>`
+de `templates/app.html`, a função `getResponseMode()` e o campo
+`response_mode` do payload em `static/js/app.js`, e as chaves i18n
+`directMode`/`deepMode`/`responseModeAria` nos 13 idiomas. Aproveitado
+para também corrigir `getRetrievalMode()`: o fallback pra idioma
+não-português ainda apontava pro `"jp_direct"` antigo (inofensivo, porque
+o servidor já força `jp_agentic` de qualquer forma, mas inconsistente) --
+atualizado pra `"jp_agentic"`.
+
+### Testes antes de produção
+
+Sincronizado e testado em `/var/www/goshinsho-test` (porta 5090) antes de
+tocar produção: página `/app-pt` sem o toggle e com a cópia nova, `/api/chat`
+funcionando sem o campo `response_mode` no payload (`search_variant:
+agentic_pt` confirmado). Suíte de testes (128) rodada de novo: mesmas 2
+falhas + 1 erro de import pré-existentes de sempre, nenhuma regressão nova.
+`node --check` limpo em `app.js`/`admin.js` depois das remoções em massa
+nos 13 idiomas (script Python usado pra aplicar as substituições de forma
+consistente, não editado idioma a idioma na mão). Produção reiniciada e
+confirmada: `/api/chat` sem login → 401 (sem resposta), cadastro sem "3
+dias", composer sem o toggle.
+
+### Onde continuar
+
+1. Tudo desta atualização já está em produção, verificado.
+2. Lição para o futuro: ao "remover" uma opção da UI, sempre verificar
+   se existe (a) cópia i18n client-side que sobrescreve o HTML
+   server-side, e (b) mecanismo de backend correspondente ainda vivo
+   (mesmo que não disparado no caminho comum) -- os 3 problemas desta
+   sessão foram todos essa mesma classe de bug (fix cosmético sem
+   remover a causa estrutural).
+3. Nenhuma promoção/reinício de produção sem autorização explícita --
+   a desta sessão já foi dada (pedido de commit + correções subsequentes
+   tratadas como parte do mesmo fio de trabalho autorizado).
