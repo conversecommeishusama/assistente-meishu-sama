@@ -929,6 +929,84 @@ def api_chat():
     history = list_messages(conversation_id) if user and conversation_id else client_history
     if user and conversation_id and not expand_previous:
         save_message(conversation_id, "user", question)
+
+    # 2026-07-30: modo experimental "pt_agentic" -- busca agenciada real
+    # (goshinsho/services/agentic_search.py, sem embedding/FAISS), testado
+    # extensivamente nesta sessão (BM25 complementar, regra 10 com exceção
+    # controlada, regra 7 reforçada, cache de ocorrência por termo). Ainda
+    # não validado com usuários reais -- restrito a contas de desenvolvedor
+    # (DEVELOPER_EMAILS), mesmo padrão já usado para outras funcionalidades
+    # experimentais deste projeto (ver _default_app_endpoint). Não integra
+    # ainda com response_mode="expand" (aprofundar) nem com o marcador de
+    # fontes usado por "fonte na íntegra" -- essas duas coisas ficam para
+    # quando/se este modo for promovido além de teste interno.
+    if retrieval_mode == "pt_agentic" and _is_developer_user(user):
+        from .services.agentic_search import responder_agentico_deepseek
+        from .services.conversation_context import strip_source_marker
+
+        search_variant = "agentic_pt"
+        historico_agentico = [
+            {"role": h.get("role"), "content": strip_source_marker(h.get("content") or "")}
+            for h in history
+            if isinstance(h, dict) and h.get("role") in ("user", "assistant") and h.get("content")
+        ]
+        event_queue: queue.Queue = queue.Queue()
+        result_holder: dict = {}
+        error_holder: dict = {}
+
+        @copy_current_request_context
+        def worker() -> None:
+            token = set_deepseek_usage_context(
+                user_email=user.get("email") if user else "anonymous",
+                search_variant=search_variant,
+            )
+            try:
+                r = responder_agentico_deepseek(question, historico_agentico)
+                result_holder["answer"] = r.get("resposta", "")
+                result_holder["meta"] = r
+            except Exception as exc:
+                error_holder["error"] = exc
+            finally:
+                reset_deepseek_usage_context(token)
+                event_queue.put(None)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+        def generate_agentic():
+            while True:
+                item = event_queue.get()
+                if item is None:
+                    break
+                yield json.dumps(item, ensure_ascii=False) + "\n"
+
+            if error_holder:
+                yield json.dumps(
+                    {"event": "error", "error": _friendly_error(error_holder["error"])},
+                    ensure_ascii=False,
+                ) + "\n"
+                return
+
+            answer = result_holder.get("answer", "")
+            remaining_questions = consume_question_quota(user)
+            assistant_message_id = (
+                save_message(conversation_id, "assistant", answer) if user and conversation_id else None
+            )
+            yield json.dumps(
+                {
+                    "event": "done",
+                    "answer": answer,
+                    "sources": [],
+                    "conversation_id": conversation_id,
+                    "assistant_message_id": assistant_message_id,
+                    "remaining_questions": remaining_questions,
+                    "quota_status": _quota_status(user),
+                    "search_variant": search_variant,
+                },
+                ensure_ascii=False,
+            ) + "\n"
+
+        return Response(stream_with_context(generate_agentic()), mimetype="application/x-ndjson")
+
     if Config.PIPELINE == "v2":
         from .pipeline import answer as answer_question_v2
         from .services.jp_retrieval import jp_only_pool

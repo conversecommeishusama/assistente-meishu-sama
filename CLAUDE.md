@@ -4993,3 +4993,92 @@ antes/depois, medição de tempo real).
    atual trata como frase única, não bag-of-words.
 2. Nenhuma integração/promoção/reinício de produção sem autorização
    explícita.
+
+## Atualização 2026-07-30 (mesma sessão) — `agentic_search.py` integrado a
+## `routes.py` (modo `pt_agentic`, restrito a contas developer) e testado
+## de ponta a ponta na cópia de teste
+
+Pedido do usuário: "integra ao routes.py e testa em produção de teste."
+
+### Integração
+
+`/api/chat` ganhou um novo `retrieval_mode`: `"pt_agentic"`. Quando esse
+valor é enviado **e** a conta é de desenvolvedor (`_is_developer_user`,
+mesmo gate já usado para outras funcionalidades experimentais do
+projeto), o handler chama `responder_agentico_deepseek` em vez do
+pipeline v2 normal, streamando a resposta no mesmo formato NDJSON já
+usado (`event: done`, com `search_variant: "agentic_pt"`). Fora esse
+gate, o comportamento é idêntico ao de antes — nenhum usuário real é
+afetado, e o frontend atual (`templates/app.html`/`static/js/app.js`)
+nunca envia esse `retrieval_mode` (não há botão/toggle para isso ainda).
+
+**Limitações conscientes, não resolvidas nesta integração** (deixadas
+assim de propósito, dado o escopo "integrar e testar", não "produzir
+paridade completa"): não integra com `response_mode="expand"`
+(aprofundar) nem com o marcador oculto de fontes usado por "fonte na
+íntegra" — histórico é passado (com o marcador removido via
+`strip_source_marker`), mas uma resposta agenciada não grava marcador
+novo. Ficam para quando/se este modo for promovido além de teste
+interno.
+
+### Cópia de teste atualizada e usada para o teste real
+
+`/var/www/goshinsho-test` estava bem desatualizada (código de 15-17/jul,
+antes da promoção de 139 obras de 28/jul e de tudo que veio depois, sem
+`agentic_search.py`, sem `textos_portugues/`/`textos_japones/`). Atualizada
+nesta sessão: `goshinsho/`, `templates/`, `static/`, `app.py` sincronizados
+com a raiz atual (`rsync`), mais 2 symlinks novos que o módulo agenciado
+precisa e não existiam: `textos_portugues/`, `textos_japones/` (aponta
+pra raiz real, leitura), `glossario_sinonimos_busca_agente.json`. Removido
+também um diretório órfão (`goshinsho/agent/`, só `__pycache__` vazio,
+módulo não existe mais na raiz atual, sem referência em código nenhum).
+Subida como processo próprio (`gunicorn --workers 1 --bind
+127.0.0.1:5090`, mesmo padrão já usado em sessão anterior, log em
+`/var/www/goshinsho-test/logs/gunicorn.log`) — **processo separado da
+`goshinsho.service` real, que não foi tocada**.
+
+### Testes feitos (3 camadas)
+
+1. **`test_client()` direto** (WSGI in-process, mesmo padrão já
+   validado em sessões anteriores para testar com a conta real do
+   usuário sem precisar de login via Supabase): pergunta complexa
+   ("plano espiritual"), sessão com o perfil real de
+   `dgtannus@gmail.com` (consultado direto na tabela `usuarios` do
+   Supabase) injetada via `session_transaction()`. Resultado: `200`,
+   `search_variant=agentic_pt`, resposta coerente e citada, 81,5s.
+2. **HTTP real contra o processo vivo na porta 5090** (cookie de sessão
+   assinado de verdade com a `SECRET_KEY` do app via
+   `itsdangerous`/`SecureCookieSessionInterface`, sem precisar de login
+   interativo): pergunta simples ("clã Yamato"). Resultado: `200`,
+   `search_variant=agentic_pt`, resposta correta (Raça de Yamato,
+   confirma o fix de `glossario.json` de sessão anterior continua
+   valendo), 29,7s.
+3. **Verificação direta do gate de segurança**: `_is_developer_user`
+   retorna `False` para qualquer email fora de `DEVELOPER_EMAILS`
+   (testado com conta fabricada) e para `None` — confirma que o modo
+   `pt_agentic` é estruturalmente inalcançável por usuários reais,
+   independente do que o cliente envie.
+
+Nenhum erro no log do gunicorn da cópia de teste durante os testes.
+
+### Estado de deploy
+
+`routes.py` editado e **commitado**. `goshinsho.service` (produção real,
+porta 8000) **não foi tocado, não foi reiniciado** — só a cópia de teste
+(porta 5090) roda o código novo. O modo `pt_agentic` está no repositório
+mas inerte para qualquer usuário real até (a) alguém com conta developer
+mandar a requisição manualmente, ou (b) o frontend ganhar uma forma de
+selecioná-lo — nenhuma das duas coisas foi feita.
+
+### Onde continuar
+
+1. Se quiser ir além de teste interno: decidir se/como expor esse modo
+   no frontend (novo toggle? substituir `pt_direct`? outra rota como
+   `/app-pt-agentic`?) — decisão de produto, não técnica, do usuário.
+2. Resolver as 2 lacunas conscientes (modo aprofundar, marcador de
+   fontes) antes de qualquer exposição a usuários reais.
+3. Cópia de teste (`/var/www/goshinsho-test`, porta 5090) continua
+   rodando — útil para mais testes manuais; pode ser parada quando não
+   precisar mais (`pkill -f "gunicorn.*5090"` ou similar).
+4. Nenhuma integração/promoção/reinício de **produção real** sem
+   autorização explícita — regra de sempre, não mudou aqui.
