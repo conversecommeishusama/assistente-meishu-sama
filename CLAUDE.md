@@ -4154,7 +4154,7 @@ correção (capturar os campos de cache reais do `usage` e recalcular com
 preço correto, reconciliar as duas tabelas de preço) fica pendente de
 decisão do usuário sobre se/quando fazer.
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesma sessão, reconciliação aprofundada)
 
 1. **Formato de resposta por tema (commit `51e3a2d`) está commitado mas
    NÃO ativo em produção** (`goshinsho.service` rodando desde 29/07
@@ -4179,3 +4179,109 @@ decisão do usuário sobre se/quando fazer.
    — nenhuma integração de produção.
 5. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário.
+
+## Atualização 2026-07-30 (mesma sessão) — reconciliação de custo
+## aprofundada com dado real do painel DeepSeek: gap de 63% não explicado
+## só pelo cache; achado 2º bug de rastreamento; **conclusão estratégica
+## do usuário: o modo agenciado é barato o suficiente para aposentar
+## pt_direct/jp_direct**
+
+Usuário trouxe o painel real de faturamento da DeepSeek para "ontem"
+(29/07 UTC, filtro nativo do painel): **$0,59 de custo, 1.129
+requisições, 13.923.984 tokens**, modelo `deepseek-v4-flash`, cobrindo
+**todos** os testes do dia, não só a última sessão isolada (o pedido
+anterior, que tinha resultado em $0,26 para um recorte menor). Refeita a
+reconciliação com essa janela maior (UTC 2026-07-29 00:00-23:59 inteiro,
+não só as ~4h da sessão de investigação):
+
+| Fonte | Chamadas | Tokens (in+out) |
+|---|---:|---:|
+| `logs/deepseek_usage.jsonl`, chamadas de teste (`pt_direct` via script) | 77 | 1.165.081 |
+| `logs/deepseek_usage.jsonl`, tráfego real de produção (`web.api_chat`, `dgtannus@gmail.com`) | 15 | 187.967 |
+| Arquivos de piloto/teste agenciado (`reports/piloto_agentico_*.json` + `agentic_search_orcamento/*.json`) | 75 | 3.788.187 |
+| **Total rastreável por arquivo** | | **5.141.235** |
+| **Painel real (deepseek-v4-flash, 29/07 UTC)** | **1.129** | **13.923.984** |
+| **Diferença não explicada** | | **8.782.749 (63%)** |
+
+Tráfego real de produção é pequeno (15 requisições) — não explica o gap.
+Duas causas reais, concretas, achadas ao investigar por que não bate:
+
+1. **Segundo bug de rastreamento, novo, diferente do cache**:
+   `goshinsho/services/llm_term_fallback.py:50` (`suggest_search_terms()`,
+   fallback de termos via DeepSeek, ativo em produção desde 26/07, dispara
+   quando a busca normal falha) chama `client.chat.completions.create(...)`
+   diretamente e **nunca chama `record_deepseek_usage`** — todo uso desse
+   caminho é invisível em `logs/deepseek_usage.jsonl`, tanto para tráfego
+   real quanto para teste. Dispara justamente nos casos "difíceis"
+   (retrieval insuficiente) — o mesmo perfil das perguntas testadas o dia
+   inteiro.
+2. **Evidência concreta de chamadas reais sem artefato correspondente**:
+   `reports/agentic_search_orcamento/iter_0001.log` (1ª iteração do laço
+   tmux `agentic_orcamento_fix`, morta antes da sessão interativa que
+   consertou o loop sem parar) registra *"Aguardando a conclusão do
+   script de validação (chamadas reais à API DeepSeek)"* — chamadas
+   pagas, reais, sem nenhum `VALIDACAO.json` correspondente a essa rodada
+   (o que existe em disco foi gerado depois, numa iteração posterior).
+
+**Preço médio implícito pelo total real do painel**: $0,59 ÷ 13.923.984
+tokens ≈ **$0,042 por 1M tokens (blended)** — consistente em ordem de
+grandeza com o ~$0,04/1M já estimado antes (a partir do recorte de $0,26)
+para reconciliar com a tabela de preço assumida em `agentic_search.py`
+($0,28/1M entrada, $0,42/1M saída — **~6,7× mais cara que o preço real
+implícito**). Ou seja: **o achado do cache não contabilizado (sessão
+anterior, mesmo dia) se confirma de novo com um dado independente maior**
+— não foi coincidência do recorte menor.
+
+### Conclusão estratégica do usuário, registrada aqui para não se perder
+
+O usuário decidiu explicitamente que este achado — o modo agenciado
+custando na prática uma fração pequena do que a tabela de preço
+assumida sugeria — **demonstra que o modo agenciado é barato o
+suficiente para justificar aposentar `pt_direct` e `jp_direct` por
+completo**, ficando só com a busca agenciada (DeepSeek) como mecanismo
+único de busca/resposta do site. Isto é uma mudança de direção real em
+relação ao estado documentado até aqui (`agentic_search.py` "não ligado a
+`routes.py`/`pipeline/answer.py`", modo agenciado tratado como
+experimento paralelo) — passa a ser candidato a **substituir**
+`pt_direct`/`jp_direct`, não só complementá-los. **Só a decisão foi
+registrada nesta atualização — nenhuma implementação, integração ou
+remoção de código foi feita ainda** (pedido explícito do usuário: "só
+documenta esse achado").
+
+Antes de qualquer implementação real dessa aposentadoria, vale relembrar
+o que já está catalogado e ainda não mudou:
+- A confiabilidade doutrinária do modo agenciado ainda não é 100% (ver
+  seção "Resultado da validação final" mais acima, mesmo dia) — turno
+  mais difícil testado ainda teve uma repetição isolada que se confundiu,
+  mesmo depois de todas as correções.
+- O bug de cache/preço não foi corrigido — os números de custo do modo
+  agenciado, incluindo os que embasam esta própria decisão, continuam
+  sendo *estimativas* reconciliadas por ordem de grandeza contra o
+  painel, não uma medição exata por chamada.
+- `pt_direct`/`jp_direct` têm anos de ajuste fino acumulado (rerank,
+  glossário de busca, `garantir_top_por_lexico`, hierarquia de fonte,
+  etc.) — aposentar os dois é uma mudança de arquitetura grande, não uma
+  troca de flag.
+
+### Onde continuar
+
+1. **Decisão estratégica registrada**: aposentar `pt_direct`/`jp_direct`
+   em favor do modo agenciado como mecanismo único — aguardando o usuário
+   decidir quando iniciar a implementação real. Nenhum código foi tocado
+   nesta atualização.
+2. Antes de implementar essa aposentadoria, sequência recomendada (não
+   decidida ainda, só levantada): (a) corrigir os 2 bugs de rastreamento
+   de custo desta sessão (cache não capturado, `llm_term_fallback` não
+   logado) para ter um número de custo real, não estimado; (b) fechar a
+   confiabilidade doutrinária do modo agenciado a um padrão mais alto
+   (ver limitação residual documentada mais acima); (c) só então planejar
+   a integração real em `routes.py`/`pipeline/answer.py` e a remoção do
+   caminho antigo.
+3. Formato de resposta por tema (commit `51e3a2d`) continua commitado mas
+   não ativo em produção (`goshinsho.service` de pé desde antes do
+   commit) — sem reinício nesta sessão.
+4. Gaps de recall do `pt_direct` (Izunome, confusão de marcador de fonte)
+   continuam confirmados — mais um argumento a favor da decisão do
+   usuário acima, não um problema novo.
+5. Nenhuma promoção/integração/reinício/remoção de código de produção sem
+   autorização explícita do usuário.
