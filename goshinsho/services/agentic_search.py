@@ -141,41 +141,69 @@ def _termos_significativos(termo_folded: str) -> list[str]:
 
 
 @lru_cache(maxsize=1)
-def _glossario_sinonimos_busca() -> dict[str, list[str]]:
-    """§3.10 (achado 2026-07-30): glossário de desambiguação/sinônimos SÓ do
-    modo agenciado (glossario_sinonimos_busca_agente.json na raiz do
+def _glossario_sinonimos_busca() -> dict[str, dict]:
+    """§3.10/§3.11 (achado 2026-07-30): glossário de desambiguação/sinônimos
+    SÓ do modo agenciado (glossario_sinonimos_busca_agente.json na raiz do
     projeto) -- diferente de glossario.json (kanji->PT, usado por
     pt_direct/jp_direct) e glossario_traducao.json (tradução do corpus), não
-    tocados por este módulo. Mapeia uma frase em PT que tem mais de um
-    sentido no corpus (ou cuja fraseologia comum diverge da real) para
-    termos relacionados que também devem ser buscados. Estrutural, não
-    temático: equaliza vocabulário, não decide por assunto/doença/obra."""
+    tocados por este módulo. Cada entrada tem até 3 campos: `termos_
+    relacionados` (busca adicional, ver `_termos_expandidos_por_glossario`),
+    `significado` (definição NEUTRA/ESTRUTURAL do termo, mostrada ao agente
+    via `_significados_por_glossario` -- NUNCA uma conclusão que responda a
+    uma pergunta específica, isso seria tutela) e `nota` (só documentação,
+    nunca lida por código). Estrutural, não temático: equaliza vocabulário e
+    evita que o agente confunda termos parecidos, nunca decide por
+    assunto/doença/obra nem entrega a resposta pronta."""
     path = PROJECT_ROOT / "glossario_sinonimos_busca_agente.json"
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return {}
-    resultado: dict[str, list[str]] = {}
+    resultado: dict[str, dict] = {}
     for chave, valor in raw.items():
         if chave.startswith("_") or not isinstance(valor, dict):
             continue
-        relacionados = valor.get("termos_relacionados")
-        if relacionados:
-            resultado[fold_ortografico_lower(chave)] = list(relacionados)
+        resultado[fold_ortografico_lower(chave)] = valor
     return resultado
 
 
-def _termos_expandidos_por_glossario(termo_folded: str) -> list[str]:
-    """Termos adicionais a buscar quando `termo_folded` bate (como frase
-    inteira, ou contém as mesmas palavras significativas) com uma entrada do
-    glossário de sinônimos de busca -- ver `_glossario_sinonimos_busca`."""
-    extras: list[str] = []
+def _entradas_glossario_batidas(termo_folded: str) -> list[dict]:
+    """Entradas do glossário de sinônimos de busca cuja chave bate (frase
+    inteira, ou palavras significativas contidas em `termo_folded`)."""
     palavras_termo = set(_termos_significativos(termo_folded))
-    for chave_folded, relacionados in _glossario_sinonimos_busca().items():
+    batidas = []
+    for chave_folded, entrada in _glossario_sinonimos_busca().items():
         palavras_chave = set(_termos_significativos(chave_folded))
         if chave_folded == termo_folded or (palavras_chave and palavras_chave <= palavras_termo):
-            extras.extend(relacionados)
+            batidas.append(entrada)
+    return batidas
+
+
+def _termos_expandidos_por_glossario(termo_folded: str) -> list[str]:
+    """Termos adicionais a buscar quando `termo_folded` bate com uma entrada
+    do glossário de sinônimos de busca -- ver `_glossario_sinonimos_busca`."""
+    extras: list[str] = []
+    for entrada in _entradas_glossario_batidas(termo_folded):
+        extras.extend(entrada.get("termos_relacionados") or [])
     return extras
+
+
+def _significados_por_glossario(termo_folded: str) -> list[str]:
+    """Definições NEUTRAS/ESTRUTURAIS (campo `significado`) das entradas do
+    glossário que batem com `termo_folded` -- mostradas ao agente (via
+    resultado de `buscar_termo`) para ele não confundir termos parecidos
+    (ex.: 'plano' vs 'camada' vs 'nível'). Nunca inclui conclusão que
+    responda a uma pergunta específica -- só o que cada termo representa
+    estruturalmente, deixando a interpretação da pergunta ao próprio agente
+    (ver `regra-suprema-tutela-pesquisa.mdc`)."""
+    vistos: set[str] = set()
+    significados: list[str] = []
+    for entrada in _entradas_glossario_batidas(termo_folded):
+        sig = entrada.get("significado")
+        if sig and sig not in vistos:
+            vistos.add(sig)
+            significados.append(sig)
+    return significados
 
 
 def _ocorrencias_com_fronteira(padrao_termo: str, texto_folded: str) -> list[int]:
@@ -255,7 +283,7 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
     return dedup
 
 
-def ler_mais_contexto(arquivo: str, posicao: int, tamanho: int = 3000) -> str:
+def ler_mais_contexto(arquivo: str, posicao: int, tamanho: int = 6000) -> str:
     entry = _corpus_pt().get(arquivo)
     if not entry:
         return f"Arquivo '{arquivo}' não encontrado no acervo."
@@ -322,7 +350,7 @@ def buscar_termo_jp(termo: str, max_resultados: int = 12) -> list[dict]:
     return dedup
 
 
-def ler_mais_contexto_jp(arquivo: str, posicao: int, tamanho: int = 3000) -> str:
+def ler_mais_contexto_jp(arquivo: str, posicao: int, tamanho: int = 6000) -> str:
     texto = _corpus_jp().get(arquivo)
     if not texto:
         return f"Arquivo '{arquivo}' não encontrado no acervo japonês."
@@ -335,7 +363,7 @@ def executar_ferramenta_jp(nome: str, entrada: dict) -> dict:
     if nome == "buscar_termo":
         return {"resultados": buscar_termo_jp(entrada["termo"])}
     if nome == "ler_mais_contexto":
-        return {"texto": ler_mais_contexto_jp(entrada["arquivo"], entrada["posicao"], entrada.get("tamanho", 3000))}
+        return {"texto": ler_mais_contexto_jp(entrada["arquivo"], entrada["posicao"], entrada.get("tamanho", 6000))}
     return {"erro": f"ferramenta desconhecida: {nome}"}
 
 
@@ -379,13 +407,13 @@ TOOLS_SCHEMA_JP = [
         "type": "function",
         "function": {
             "name": "ler_mais_contexto",
-            "description": "Lê um trecho maior de um arquivo específico do acervo japonês, ao redor de uma posição já encontrada por buscar_termo.",
+            "description": "Lê um trecho maior de um arquivo específico do acervo japonês, ao redor de uma posição já encontrada por buscar_termo. Se o documento já parece central ao tema mas o trecho lido não respondeu totalmente, prefira chamar de novo com uma posição MAIOR no mesmo arquivo (continuar lendo adiante) antes de trocar de termo de busca -- a explicação completa costuma continuar logo depois do trecho já lido, não em outro arquivo.",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "arquivo": {"type": "string"},
                     "posicao": {"type": "integer"},
-                    "tamanho": {"type": "integer", "description": "Quantos caracteres ler (padrão 3000)"},
+                    "tamanho": {"type": "integer", "description": "Quantos caracteres ler (padrão 6000)"},
                 },
                 "required": ["arquivo", "posicao"],
             },
@@ -403,7 +431,7 @@ REGRAS OBRIGATÓRIAS:
 4. A RESPOSTA FINAL deve ser em português. Toda citação/trecho usado, mesmo encontrado em japonês, deve ser traduzido fielmente (não paráfrase livre) para português na resposta -- NUNCA inclua caracteres japoneses (kanji/kana) na resposta final, salvo se o usuário pedir explicitamente o texto original.
 5. Cite a fonte (nome do arquivo) dos trechos usados na resposta EXATAMENTE como a ferramenta devolveu no campo "arquivo" -- nunca traduza, abrevie ou invente nome de série/coleção diferente do que foi literalmente retornado.
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
-7. Não é obrigatório usar todas as rodadas de busca disponíveis -- pare de buscar assim que tiver material suficiente para responder com confiança; buscas repetidas sem necessidade custam tempo e dinheiro à toa.
+7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos, você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:", nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
 """
 
@@ -457,13 +485,13 @@ TOOLS_SCHEMA = [
         "type": "function",
         "function": {
             "name": "ler_mais_contexto",
-            "description": "Lê um trecho maior de um arquivo específico, ao redor de uma posição já encontrada por buscar_termo.",
+            "description": "Lê um trecho maior de um arquivo específico, ao redor de uma posição já encontrada por buscar_termo. Se o documento já parece central ao tema mas o trecho lido não respondeu totalmente, prefira chamar de novo com uma posição MAIOR no mesmo arquivo (continuar lendo adiante) antes de trocar de termo de busca -- a explicação completa costuma continuar logo depois do trecho já lido, não em outro arquivo.",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "arquivo": {"type": "string"},
                     "posicao": {"type": "integer"},
-                    "tamanho": {"type": "integer", "description": "Quantos caracteres ler (padrão 3000)"},
+                    "tamanho": {"type": "integer", "description": "Quantos caracteres ler (padrão 6000)"},
                 },
                 "required": ["arquivo", "posicao"],
             },
@@ -506,9 +534,14 @@ def _arquivos_da_ferramenta(nome: str, entrada: dict, resultado) -> set[str]:
 
 def executar_ferramenta(nome: str, entrada: dict) -> dict:
     if nome == "buscar_termo":
-        return {"resultados": buscar_termo(entrada["termo"])}
+        termo = entrada["termo"]
+        resultado = {"resultados": buscar_termo(termo)}
+        significados = _significados_por_glossario(fold_ortografico_lower(termo))
+        if significados:
+            resultado["definicoes_de_termos"] = significados
+        return resultado
     if nome == "ler_mais_contexto":
-        return {"texto": ler_mais_contexto(entrada["arquivo"], entrada["posicao"], entrada.get("tamanho", 3000))}
+        return {"texto": ler_mais_contexto(entrada["arquivo"], entrada["posicao"], entrada.get("tamanho", 6000))}
     if nome == "buscar_artigo_por_titulo":
         return buscar_artigo_por_titulo(entrada["titulo"])
     return {"erro": f"ferramenta desconhecida: {nome}"}
@@ -582,7 +615,7 @@ REGRAS OBRIGATÓRIAS:
 4. Cite a fonte (nome do arquivo) dos trechos usados na resposta EXATAMENTE como a ferramenta devolveu no campo "arquivo" -- nunca traduza, abrevie ou invente nome de série/coleção/periódico diferente do que foi literalmente retornado.
 5. Se o usuário pedir um ensinamento "na íntegra" ou por título, use buscar_artigo_por_titulo para trazer o texto completo, não apenas trechos soltos.
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
-7. Não é obrigatório usar todas as rodadas de busca disponíveis -- pare de buscar assim que tiver material suficiente para responder com confiança; buscas repetidas sem necessidade custam tempo e dinheiro à toa.
+7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos (ex.: eventos históricos, tecnologias ou pandemias posteriores a 1955), você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- ex. epidemia, sofrimento, purificação -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:", nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
 """
 

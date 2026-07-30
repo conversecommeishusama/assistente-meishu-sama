@@ -1,14 +1,30 @@
 {
-  "_leia_me": "Glossário de desambiguação/sinônimos de BUSCA, usado só por goshinsho/services/agentic_search.py (modo agenciado, sem embedding). Diferente de glossario.json (chave = kanji japonês, resolve termo JP a partir de busca em PT) e de glossario_traducao.json (padroniza a TRADUÇÃO do corpus). Aqui a chave é uma frase em português que tem mais de um sentido no corpus ou cuja fraseologia comum diverge da fraseologia real usada no texto -- quando a pergunta do usuário contém a chave (ou algo próximo), o buscar_termo também tenta os termos_relacionados automaticamente, além do termo original. Estrutural: não direciona por tema/doença/obra, só equaliza vocabulário -- mesmo princípio da regra suprema anti-tutela do projeto.",
+  "_leia_me": "Glossário de desambiguação/sinônimos de BUSCA, usado só por goshinsho/services/agentic_search.py (modo agenciado, sem embedding). Diferente de glossario.json (chave = kanji japonês, resolve termo JP a partir de busca em PT) e de glossario_traducao.json (padroniza a TRADUÇÃO do corpus). Aqui a chave é uma frase em português que tem mais de um sentido no corpus ou cuja fraseologia comum diverge da fraseologia real usada no texto. Cada entrada tem 2 campos que CHEGAM ao agente (mostrados no resultado da ferramenta de busca) e 1 que não chega: 'termos_relacionados' (busca também esses termos, amplia o que é encontrado) e 'significado' (definição NEUTRA e ESTRUTURAL do termo -- o que ele representa, nunca o que muda/não muda ou qualquer conclusão que responda a uma pergunta específica -- isso seria tutela); 'nota' é só documentação para quem ler o arquivo, nunca mostrada ao agente. Estrutural: não direciona por tema/doença/obra, só equaliza vocabulário e evita que o agente confunda termos parecidos -- mesmo princípio da regra suprema anti-tutela do projeto.",
   "plano espiritual": {
-    "nota": "2026-07-30: achado real. No corpus, 'plano espiritual' quase sempre tem sentido GENÉRICO ('espiritualmente falando', ex. 'no plano espiritual, nos esforçarmos...'), nunca o sentido de HIERARQUIA (superior/médio/inferior). Quando a pergunta usa 'plano espiritual' no sentido de nível/camada do mundo espiritual (ex. 'mudar de plano espiritual'), o termo que realmente aparece no texto é outro -- ver termos_relacionados. Achado ao investigar por que o agente nunca encontrava resposta para 'é possível mudar de plano espiritual na mesma reencarnação?': a busca (mesmo já tolerante a AND de palavras) nunca convergia porque o modelo insistia em reformulações do sentido genérico, nunca chegava aos termos reais da hierarquia.",
+    "nota": "2026-07-30. No corpus, 'plano espiritual' quase sempre tem sentido GENÉRICO ('espiritualmente falando'), raramente o sentido de hierarquia. 'Plano', 'camada' e 'nível' são três palavras usadas no corpus para coisas diferentes -- por isso viraram entradas separadas, cada uma com sua própria definição neutra.",
+    "significado": "No corpus, 'plano' (no sentido de hierarquia do mundo espiritual) refere-se a um dos 3 grandes níveis: superior, médio ou inferior. É um termo diferente de 'camada' e de 'nível' -- não presuma que são a mesma coisa.",
     "termos_relacionados": [
       "planos: superior, médio e inferior",
-      "Camadas do Mundo Espiritual",
       "nove estágios",
       "plano superior",
       "plano médio",
       "plano inferior"
     ]
+  },
+  "camada espiritual": {
+    "nota": "2026-07-30. Ver nota da entrada 'plano espiritual'.",
+    "significado": "No corpus, 'camada' refere-se às subdivisões dentro de cada plano do mundo espiritual (o texto descreve até 180 camadas ao todo, 60 por plano). É um termo diferente de 'plano' e de 'nível' -- não presuma que são a mesma coisa.",
+    "termos_relacionados": [
+      "Camadas do Mundo Espiritual",
+      "180 camadas",
+      "cento e oitenta camadas",
+      "camada mais alta",
+      "camada mais baixa"
+    ]
+  },
+  "nível espiritual": {
+    "nota": "2026-07-30. Ver nota da entrada 'plano espiritual'.",
+    "significado": "No corpus, 'nível' é usado de forma mais solta/genérica do que 'plano' (3 grandes divisões) ou 'camada' (180 subdivisões) -- não tem uma contagem fixa própria no texto. É um termo diferente dos outros dois -- não presuma que 'nível' significa exatamente a mesma coisa que 'plano' ou 'camada' sem conferir o contexto.",
+    "termos_relacionados": []
   }
 }
