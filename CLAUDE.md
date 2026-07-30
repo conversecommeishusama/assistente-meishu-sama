@@ -5070,7 +5070,8 @@ mas inerte para qualquer usuário real até (a) alguém com conta developer
 mandar a requisição manualmente, ou (b) o frontend ganhar uma forma de
 selecioná-lo — nenhuma das duas coisas foi feita.
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia, promoção
+### completa em produção)
 
 1. Se quiser ir além de teste interno: decidir se/como expor esse modo
    no frontend (novo toggle? substituir `pt_direct`? outra rota como
@@ -5082,3 +5083,205 @@ selecioná-lo — nenhuma das duas coisas foi feita.
    precisar mais (`pkill -f "gunicorn.*5090"` ou similar).
 4. Nenhuma integração/promoção/reinício de **produção real** sem
    autorização explícita — regra de sempre, não mudou aqui.
+
+## Sessão 2026-07-30 (continuação, mesmo dia) — modo agêntico promovido a
+## motor ÚNICO de busca; sistema de assinatura substituído por "premium
+## gratuito" universal + doação voluntária; bug de CSS do menu corrigido
+
+**Pedido do usuário, literal, com autorização explícita ampla**: "pode
+colocar o modo agentico como único e principal modo de pesquisa. Também
+gostaria que vc mudasse o sistema de assinatura. Agora o único sistema
+deve ser o premium gratuito, transforme todos os logins existentes para
+premium gratuito, além disso, novos usuários só podem acessar o goshinsho
+para perguntas mediante o cadastramento como premium gratuito, o sistema
+de cartão de crédito será utilizado para doações voluntárias tanto única
+como recorrente. Pode fazer todas as alterações necessárias para a
+implantação desse novo sistema. Além disso, o menu principal está em cima
+do logo e do nome do Goshinsho, precisa ajustar isso." Antes de codificar,
+2 perguntas genuinamente de negócio/externas foram levadas ao usuário via
+`AskUserQuestion` (não decididas sozinho): formato da doação (botões de
+valor sugerido + campo livre, confirmado) e se os Products da Stripe
+deviam ser criados agora via API na conta real (`sk_live_`/`pk_live_`,
+confirmado) — todo o resto foi decidido e executado sem pausar para
+confirmação, dado o escopo explícito do pedido.
+
+### 1. Bug de CSS: menu sobrepondo o logo
+
+Causa raiz encontrada por leitura cuidadosa da cascata (sem ferramenta de
+navegador disponível nesta sessão -- Claude in Chrome não estava
+conectado): `static/css/app.css` acumulou, ao longo de várias sessões,
+**pelo menos 4 blocos `@media (max-width: 720px) { .topbar {...} }`
+concorrentes**, cada um com `display`/`flex-wrap` diferentes e todos com
+`!important` -- o que "ganha" é só o último por ordem de declaração no
+arquivo. O vencedor real (linha ~738) usa `.top-actions { flex-wrap:
+nowrap !important; overflow: visible !important; }` -- sem quebra de
+linha permitida, o conteúdo que não cabe (mesmo só com os botões normais
+Assinar/Sair/Contato/Acesso gratuito, sem `.developer-nav`) transborda
+por cima da marca em telas estreitas. Um fix anterior (`.developer-nav {
+display: none }` no mobile) já tinha detectado o mesmo sintoma mas só
+tratou o caso developer (3 pills extras), não a barra regular. **Corrigido**
+com um bloco final (depois do guard anterior, vence por ordem de
+declaração) que força `.topbar`/`.top-actions` a `flex-wrap: wrap`,
+deixando a barra de ações quebrar para uma 2ª linha abaixo da marca em vez
+de transbordar sobre ela. Cache-bust: `app.css` `?v=145`→`146`.
+**Não verificado visualmente em navegador real** (ferramenta indisponível
+nesta sessão) -- só por análise de cascata; vale o usuário confirmar
+visualmente.
+
+### 2. Modo agêntico (DeepSeek, sem embedding) promovido a motor único
+
+`goshinsho/routes.py`: o bloco que antes só respondia a `retrieval_mode ==
+"pt_agentic"` **e** conta de desenvolvedor agora responde a
+`"pt_agentic"` **ou** `"jp_agentic"` para **qualquer usuário logado**
+(gate de developer removido). `/app` e `/app-pt` (as duas páginas reais
+que usuários acessam) passaram a renderizar `retrieval_mode="jp_agentic"`/
+`"pt_agentic"` por padrão -- `pt_direct`/`jp_direct` (pipeline v2 antigo)
+**continuam intactos no código**, só não são mais o padrão de nenhuma
+página; ainda utilizáveis via `retrieval_mode` explícito na chamada
+`/api/chat` (fallback interno, não removido). `responder_agentico_deepseek_jp`
+já existia (criado em sessão anterior) -- só faltava conectar o roteamento.
+
+**As 2 lacunas conscientes da integração anterior (aprofundar / fonte na
+íntegra) foram testadas e confirmadas resolvidas sem precisar de nenhum
+mecanismo novo**, antes de promover:
+- **"Fonte na íntegra"**: testado com uma conversa real de 2 turnos
+  (pergunta substantiva → "me forneça a fonte original na íntegra"). As
+  citações `[arquivo.txt]` do modo agêntico já ficam visíveis no texto da
+  resposta (regra 4/9 do `SYSTEM_PROMPT`) e esse texto entra no histórico
+  reenviado ao modelo -- o próprio modelo already sabe qual arquivo buscar
+  via `buscar_artigo_por_titulo` (regra 5), sem precisar do marcador
+  oculto `<!--SRC:...-->` que o pipeline antigo usa. Resultado do teste:
+  reproduziu corretamente 3 arquivos relacionados na íntegra.
+- **"Aprofundar" (`expand_previous`)**: implementado com uma instrução
+  explícita montada em `routes.py` ("Aprofunde a resposta anterior sobre
+  este mesmo tema: busque mais detalhes... sem repetir literalmente o que
+  já foi dito") enviada como a "pergunta" ao agente, com o histórico
+  completo já incluído. Testado (tema Johrei): resposta de aprofundamento
+  gerou conteúdo genuinamente novo (técnica de aplicação, sem repetir a
+  resposta original).
+
+Ambos os testes rodados **diretamente contra a função** antes de integrar,
+e depois **de novo via HTTP real** contra `/var/www/goshinsho-test` (porta
+5090) com uma conta real não-developer (`raquelgibrail@gmail.com`),
+confirmando que o gate removido realmente libera o modo pra conta comum
+(`search_variant: "agentic_pt"` na resposta) e que "aprofundar" funciona
+de ponta a ponta pelo pipeline HTTP completo (worker thread + NDJSON).
+
+Também ajustado: badge PT/JP do cabeçalho (`retrieval_mode in ('pt_direct',
+'pt_first', 'pt_agentic')`), `app_endpoint` (usa `.startswith("jp")` em
+vez de comparação exata, robusto a qualquer modo novo), default de
+`retrieval_mode` em `/api/chat` (era `"jp_direct"`, agora `"jp_agentic"`),
+override de idioma não-português (era `"jp_direct"`, agora `"jp_agentic"`).
+
+### 3. Sistema de assinatura → premium gratuito universal + doação voluntária
+
+- **Todos os 35 usuários reais existentes convertidos para `plano =
+  "premium"`** diretamente no Supabase real (31 estavam `"gratis"`, 4 já
+  `"premium"`) -- confirmado por reconsulta: 35/35 `"premium"` depois.
+- **Cadastro novo**: `_ensure_usuario_profile()` (`auth_service.py`)
+  default de `plano` mudou de `"gratis"` para `"premium"` -- toda conta
+  nova já nasce com acesso ilimitado, sem período de teste, sem cobrança.
+  `is_premium_user()`/`check_question_quota()` já tratavam `plano ==
+  "premium"` como "sem limite" antes desta sessão -- **nenhuma mudança de
+  schema ou de lógica de quota foi necessária**, só o valor default.
+- **Doação (avulsa + recorrente)** substitui a assinatura paga:
+  - 2 Products criados na conta Stripe real (`sk_live_`) via API:
+    `prod_UyzQmz4bWIm6LB` (avulsa), `prod_UyzQQVgbu433BX` (recorrente) --
+    guardados em `Config.STRIPE_DOACAO_PRODUTO_AVULSA`/`_RECORRENTE`
+    (`goshinsho/config.py`). Sem Price fixo por valor -- cada checkout usa
+    `price_data` dinâmico (`unit_amount` calculado do valor escolhido),
+    então qualquer valor funciona sem precisar criar um Price novo por
+    faixa.
+  - Novas rotas em `routes.py`: `GET /doacao` (`templates/doacao.html`,
+    novo), `POST /checkout/doacao` (cria `stripe.checkout.Session`, modo
+    `"payment"` pra avulsa / `"subscription"` pra recorrente, valida
+    R$5-R$10.000), `GET /doacao/sucesso`. Rotas antigas
+    `/assinatura`/`/checkout/assinatura`/`/assinatura/sucesso` **removidas**
+    -- `/assinatura` agora só redireciona pra `/doacao` (compatibilidade
+    com link/favorito antigo). `PLANS` (dict de planos mensal/anual) e
+    `templates/assinatura.html` **removidos** (órfãos, substituídos).
+  - `templates/doacao.html`: botões de valor sugerido (R$20/50/100 avulsa,
+    R$20/50/mês recorrente) + campo de valor livre, JS simples só pra
+    montar o campo oculto `valor` enviado ao backend. CSS novo em
+    `app.css` (`.donation-*`, reaproveitando `.pricing-card`/`.pricing-grid`
+    já existentes).
+  - Testado via HTTP real contra `/checkout/doacao` (porta 5090, chave
+    Stripe **live**): avulsa R$50 e recorrente R$20 mensal, ambos geraram
+    `Checkout Session` reais (`cs_live_...`) com redirect válido pra
+    `checkout.stripe.com` -- **nenhum pagamento foi completado** (criar a
+    sessão não cobra nada; sessões abandonadas expiram sozinhas em 24h).
+    Valor abaixo do mínimo (R$1) corretamente rejeitado com redirect de
+    volta pra `/doacao`.
+  - `SUBSCRIPTION_EXPLANATION`, `_guest_quota_status()` (mensagem de
+    cadastro necessário), o card de cota (`templates/app.html`
+    `#quota-card`), o diálogo `#subscription-intro-dialog`, o CTA do
+    cabeçalho ("Assinar"→"Apoiar ❤", linkando pra `/doacao`), e o aviso do
+    formulário de cadastro (`registerPolicyNote`) -- todos reescritos pra
+    não mencionarem mais "3 dias de teste, depois assine" (falso agora) e
+    em vez disso refletirem "premium gratuito pra sempre + doação
+    opcional".
+  - **Painel "Solicitar acesso gratuito"** (`#premium-grant-panel`,
+    `premium_grant_service.py`) ficou órfão -- não faz mais sentido pedir
+    algo que já é automático. **Não removido do backend** (rota/serviço
+    intactos, harmless), mas escondido (`hidden`) e desconectado dos 2
+    pontos de entrada do cabeçalho/quota-card que antes abriam esse
+    painel (ambos repontados pra `/doacao`). Se aberto por algum caminho
+    residual (ex. hash antigo `#grant`), o próprio formulário já mostra
+    corretamente "Sua conta já possui acesso premium." pra qualquer
+    conta -- não está quebrado, só inacessível pela UI normal agora.
+
+### 4. Testes antes de produção
+
+Sincronizado pra `/var/www/goshinsho-test` (porta 5090) e testado de
+ponta a ponta antes de tocar produção real: página `/app-pt`/`/app` (badge
+e `data-retrieval-mode` corretos), `/api/chat` com conta real não-developer
+(gate removido, `search_variant: agentic_pt`), `expand_previous` via HTTP
+completo, `/doacao` (renderização dos valores) e `/checkout/doacao` (avulsa
++ recorrente + validação de valor mínimo, Stripe live real), default de
+`plano` no cadastro (checado por inspeção de código, sem criar conta real
+de teste). Suíte de testes automatizados (`tests/`, 128 testes via
+`unittest`) rodada por completo: **125 passando**, 2 falhas + 1 erro de
+import **pré-existentes, não relacionados a nenhum arquivo tocado nesta
+sessão** (confirmado via `git status` -- `search_service.py`,
+`pipeline/prompts.py` etc. sem nenhuma mudança; falhas em
+`test_ohikari_filter.py` (`chunk_valido_ohikari` não existe mais --
+função provavelmente renomeada em sessão anterior sem atualizar o teste),
+`test_pipeline_format.py`, `test_qa_dialogue_annotation.py` -- não
+investigado a fundo, fora do escopo desta sessão).
+
+### 5. Produção: promovida e reiniciada
+
+Autorização do usuário ("Pode fazer todas as alterações necessárias para
+a implantação desse novo sistema") tratada como cobrindo a promoção
+completa, não só a preparação -- mesmo padrão da sessão de 28/07 (139
+obras). `systemctl restart goshinsho.service` rodado depois de toda a
+validação acima. Confirmado em produção real
+(`https://goshinsho.com.br`) pós-restart: `/app-pt` →
+`data-retrieval-mode="pt_agentic"`, `/app` → 200, `/doacao` → 200,
+`/assinatura` → redireciona pra `/doacao`.
+
+### Onde continuar
+
+1. **Tudo desta seção já está em produção, promovido e verificado.** Não
+   é mais um trabalho pendente.
+2. Fix de CSS (item 1) não foi conferido visualmente em navegador real --
+   se o usuário reportar que o menu ainda sobrepõe o logo em algum
+   dispositivo específico, pedir print/vídeo antes de tentar de novo (a
+   análise de cascata deste arquivo já é complexa o bastante pra não
+   confiar só em leitura de código uma segunda vez).
+3. `pt_direct`/`jp_direct` (pipeline v2 antigo) continuam no código como
+   fallback interno, nunca mais o padrão de nenhuma página -- podem ser
+   removidos de vez numa sessão futura se o modo agêntico se confirmar
+   estável em produção real por um tempo, mas não foi pedido ainda.
+4. `templates/index.html` (referenciando `web.assinatura`, a rota antiga)
+   confirmado **não usado por nenhuma rota** (dead template, não tocado
+   nesta sessão) -- só notar se algum dia for reativado.
+5. Painel "Solicitar acesso gratuito" (`premium_grant_service.py`) ficou
+   com backend intacto mas UI escondida/desconectada -- decidir numa
+   sessão futura se vale remover de vez ou deixar como está (harmless).
+6. As 2 falhas + 1 erro de import pré-existentes na suíte de testes (item
+   4 acima) não foram investigados -- útil revisar numa sessão dedicada a
+   manutenção de testes, não bloqueiam nada desta promoção.
+7. Continua valendo a regra padrão: nenhuma promoção/reinício de produção
+   sem autorização explícita -- a desta sessão já foi dada e executada,
+   não é permanente para trabalho futuro.

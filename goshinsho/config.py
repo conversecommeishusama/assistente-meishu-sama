@@ -55,5 +55,14 @@ class Config:
     SES_CONTACT_TO_EMAIL = _env("SES_CONTACT_TO_EMAIL") or SES_FROM_EMAIL
     RESEND_API_KEY = _env("RESEND_API_KEY")
     RESEND_FROM_EMAIL = _env("RESEND_FROM_EMAIL") or "Goshinsho <noreply@goshinsho.com.br>"
+    # 2026-07-30: PRICE_MENSAL/PRICE_ANUAL são do antigo modelo de assinatura
+    # paga (aposentado -- único sistema de acesso agora é premium gratuito,
+    # ver CLAUDE.md). Mantidos só porque as rotas /assinatura antigas ainda
+    # existem como redirecionamento de compatibilidade.
     PRICE_MENSAL = "price_1TgCMzF2Js1cKxv5mwWP0nym"
     PRICE_ANUAL = "price_1TgCOQF2Js1cKxv5h3NyQQCp"
+    # Products de doação voluntária (criados via API nesta sessão, 2026-07-30)
+    # -- os Prices são gerados dinamicamente a cada checkout (price_data),
+    # não há Price fixo por valor sugerido.
+    STRIPE_DOACAO_PRODUTO_AVULSA = "prod_UyzQmz4bWIm6LB"
+    STRIPE_DOACAO_PRODUTO_RECORRENTE = "prod_UyzQQVgbu433BX"

@@ -88,27 +88,18 @@ RATE_LIMIT_BUCKETS = defaultdict(deque)
 
 SUBSCRIPTION_EXPLANATION = (
     "Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, "
-    "que têm custo real de operação. A assinatura premium ajuda a manter o aplicativo "
-    "disponível e a melhorar as respostas. Se você não tem condições de pagar, "
-    "pode solicitar acesso gratuito pelo formulário de cadastro."
+    "que têm custo real de operação. O Goshinsho é gratuito para todos -- doações "
+    "voluntárias ajudam a manter o aplicativo disponível e a melhorar as respostas."
 )
 
-PLANS = {
-    "mensal": {
-        "name": "Mensal",
-        "price": "R$ 29,90",
-        "period": "por mês",
-        "stripe_price_id": Config.PRICE_MENSAL,
-        "features": ["Perguntas ilimitadas", "Histórico salvo", "Acesso ao assistente completo"],
-    },
-    "anual": {
-        "name": "Anual",
-        "price": "R$ 299,00",
-        "period": "por ano",
-        "stripe_price_id": Config.PRICE_ANUAL,
-        "features": ["Perguntas ilimitadas", "Histórico salvo", "Economia em relação ao mensal"],
-    },
-}
+# 2026-07-30: único sistema de acesso passou a ser premium gratuito (ver
+# CLAUDE.md) -- o cartão de crédito (Stripe) deixou de ser um portão de
+# acesso e virou doação voluntária, avulsa ou recorrente. Valores sugeridos
+# nos botões da página /doacao; o usuário também pode digitar outro valor.
+DONATION_SUGGESTED_AMOUNTS_AVULSA = [20, 50, 100]
+DONATION_SUGGESTED_AMOUNTS_RECORRENTE = [20, 50]
+DONATION_MIN_BRL = 5
+DONATION_MAX_BRL = 10000
 
 
 def _runtime_health():
@@ -264,21 +255,23 @@ def _friendly_error(exc):
 
 
 def _guest_quota_status():
+    # 2026-07-30: único sistema de acesso é "premium gratuito" -- cadastro
+    # já concede perguntas ilimitadas para sempre, sem período de teste nem
+    # necessidade de assinatura paga depois (ver CLAUDE.md).
     return {
         "plan": "cadastro_necessario",
         "label": "Cadastro necessário",
         "remaining_questions": 0,
         "limit": None,
-        "trial_days": FREE_TRIAL_DAYS,
+        "trial_days": None,
         "is_premium": False,
         "is_trial": False,
         "is_limited": True,
         "requires_login": True,
         "show_signup_link": True,
         "message": (
-            f"Para fazer perguntas, crie sua conta gratuita. "
-            f"Você terá {FREE_TRIAL_DAYS} dias com perguntas ilimitadas; "
-            f"depois, assine o plano premium para continuar."
+            "Para fazer perguntas, crie sua conta gratuita -- o acesso é premium gratuito, "
+            "com perguntas ilimitadas, sem necessidade de assinatura paga."
         ),
     }
 
@@ -378,7 +371,7 @@ def _render_app_view(*, retrieval_mode: str):
                         msg["content"] = strip_source_marker(raw)
         except Exception as exc:
             flash(_friendly_error(exc), "error")
-    app_endpoint = "web.app_view" if retrieval_mode == "jp_direct" else "web.app_view_pt"
+    app_endpoint = "web.app_view" if retrieval_mode.startswith("jp") else "web.app_view_pt"
     return render_template(
         "app.html",
         user=user,
@@ -396,13 +389,13 @@ def _render_app_view(*, retrieval_mode: str):
 @web_bp.get("/app")
 @web_bp.get("/app/")
 def app_view():
-    return _render_app_view(retrieval_mode="jp_direct")
+    return _render_app_view(retrieval_mode="jp_agentic")
 
 
 @web_bp.get("/app-pt")
 @web_bp.get("/app-pt/")
 def app_view_pt():
-    return _render_app_view(retrieval_mode="pt_direct")
+    return _render_app_view(retrieval_mode="pt_agentic")
 
 
 @web_bp.get("/admin")
@@ -580,45 +573,66 @@ def download_admin_apk():
 
 @web_bp.get("/assinatura")
 def assinatura():
-    user = current_user()
-    if not user:
-        flash("Faça login para assinar.", "error")
-        return redirect(url_for("web.app_view"))
-    return render_template("assinatura.html", user=user, plans=PLANS)
+    # 2026-07-30: assinatura paga foi substituída por doação voluntária --
+    # único sistema de acesso agora é premium gratuito (ver CLAUDE.md).
+    # Redirecionamento de compatibilidade para links/favoritos antigos.
+    return redirect(url_for("web.doacao"))
 
 
-@web_bp.post("/checkout/assinatura")
-def checkout_assinatura():
+@web_bp.get("/doacao")
+def doacao():
     user = current_user()
-    if not user:
-        flash("Faça login para assinar.", "error")
-        return redirect(url_for("web.app_view"))
-    plan_id = request.form.get("plan")
-    plan = PLANS.get(plan_id)
-    if not plan:
-        flash("Plano inválido.", "error")
-        return redirect(url_for("web.assinatura"))
+    return render_template(
+        "doacao.html",
+        user=user,
+        valores_avulsa=DONATION_SUGGESTED_AMOUNTS_AVULSA,
+        valores_recorrente=DONATION_SUGGESTED_AMOUNTS_RECORRENTE,
+    )
+
+
+@web_bp.post("/checkout/doacao")
+def checkout_doacao():
+    user = current_user()
+    tipo = (request.form.get("tipo") or "avulsa").strip().lower()
+    recorrente = tipo == "recorrente"
+    valor_raw = (request.form.get("valor") or "").replace(",", ".").strip()
     try:
-        checkout_session = stripe.checkout.Session.create(
-            line_items=[{"price": plan["stripe_price_id"], "quantity": 1}],
-            mode="subscription",
-            customer_email=user["email"],
-            client_reference_id=user["id"],
-            subscription_data={"metadata": {"user_id": user["id"], "plan": plan_id}},
-            success_url=url_for("web.assinatura_sucesso", _external=True) + "?session_id={CHECKOUT_SESSION_ID}",
-            cancel_url=url_for("web.assinatura", _external=True),
-            metadata={"user_id": user["id"], "plan": plan_id},
+        valor = float(valor_raw)
+    except ValueError:
+        flash("Valor de doação inválido.", "error")
+        return redirect(url_for("web.doacao"))
+    if valor < DONATION_MIN_BRL or valor > DONATION_MAX_BRL:
+        flash(f"Escolha um valor entre R$ {DONATION_MIN_BRL} e R$ {DONATION_MAX_BRL}.", "error")
+        return redirect(url_for("web.doacao"))
+
+    unit_amount = round(valor * 100)
+    product_id = (
+        Config.STRIPE_DOACAO_PRODUTO_RECORRENTE if recorrente else Config.STRIPE_DOACAO_PRODUTO_AVULSA
+    )
+    price_data = {"currency": "brl", "product": product_id, "unit_amount": unit_amount}
+    if recorrente:
+        price_data["recurring"] = {"interval": "month"}
+    try:
+        session_kwargs = dict(
+            line_items=[{"price_data": price_data, "quantity": 1}],
+            mode="subscription" if recorrente else "payment",
+            success_url=url_for("web.doacao_sucesso", _external=True) + "?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url=url_for("web.doacao", _external=True),
+            metadata={"tipo": tipo, "valor_brl": str(valor), "user_id": (user or {}).get("id") or ""},
         )
+        if user:
+            session_kwargs["customer_email"] = user["email"]
+        checkout_session = stripe.checkout.Session.create(**session_kwargs)
         return redirect(checkout_session.url, code=303)
     except Exception as exc:
-        flash(f"Erro ao criar checkout: {exc}", "error")
-        return redirect(url_for("web.assinatura"))
+        flash(f"Erro ao criar checkout de doação: {exc}", "error")
+        return redirect(url_for("web.doacao"))
 
 
-@web_bp.get("/assinatura/sucesso")
-def assinatura_sucesso():
-    flash("Assinatura iniciada com sucesso. Em breve seu plano será atualizado.", "success")
-    return redirect(url_for("web.app_view"))
+@web_bp.get("/doacao/sucesso")
+def doacao_sucesso():
+    flash("Muito obrigado pela sua doação! Ela ajuda a manter o Goshinsho disponível para todos.", "success")
+    return redirect(url_for(_default_app_endpoint()))
 
 
 @web_bp.post("/login")
@@ -856,16 +870,18 @@ def api_chat():
     question = (payload.get("message") or "").strip()
     language = payload.get("language") or "Português"
     response_mode = payload.get("response_mode") or "direct"
-    retrieval_mode = (payload.get("retrieval_mode") or "jp_direct").strip().lower()
+    retrieval_mode = (payload.get("retrieval_mode") or "jp_agentic").strip().lower()
     # 2026-07-20: em qualquer idioma que não seja português, a busca é
-    # sempre no acervo japonês (jp_direct) -- o acervo PT só serve
-    # respostas em português nativamente; noutro idioma, deixar o pt_direct
-    # correr (conteúdo-fonte em português) faz o modelo tender a continuar
-    # em português mesmo com a instrução de idioma, e a citação literal
-    # deixa de ser uma tradução genuína. jp_direct força a tradução real,
-    # como já acontece para citações em japonês (ver prompts.py regra 11).
+    # sempre no acervo japonês -- o acervo PT só serve respostas em
+    # português nativamente; noutro idioma, deixar a busca em PT correr
+    # (conteúdo-fonte em português) faz o modelo tender a continuar em
+    # português mesmo com a instrução de idioma, e a citação literal
+    # deixa de ser uma tradução genuína. Buscar no JP força a tradução
+    # real, como já acontece para citações em japonês (ver prompts.py
+    # regra 11). 2026-07-30: agora aponta pro modo agêntico (jp_agentic),
+    # não mais jp_direct, já que este passou a ser o motor único.
     if language != "Português":
-        retrieval_mode = "jp_direct"
+        retrieval_mode = "jp_agentic"
     conversation_id = payload.get("conversation_id") or (session.get("active_conversation_id") if user else None)
     client_history = payload.get("history") or []
     if expand_previous:
@@ -930,26 +946,46 @@ def api_chat():
     if user and conversation_id and not expand_previous:
         save_message(conversation_id, "user", question)
 
-    # 2026-07-30: modo experimental "pt_agentic" -- busca agenciada real
-    # (goshinsho/services/agentic_search.py, sem embedding/FAISS), testado
-    # extensivamente nesta sessão (BM25 complementar, regra 10 com exceção
-    # controlada, regra 7 reforçada, cache de ocorrência por termo). Ainda
-    # não validado com usuários reais -- restrito a contas de desenvolvedor
-    # (DEVELOPER_EMAILS), mesmo padrão já usado para outras funcionalidades
-    # experimentais deste projeto (ver _default_app_endpoint). Não integra
-    # ainda com response_mode="expand" (aprofundar) nem com o marcador de
-    # fontes usado por "fonte na íntegra" -- essas duas coisas ficam para
-    # quando/se este modo for promovido além de teste interno.
-    if retrieval_mode == "pt_agentic" and _is_developer_user(user):
-        from .services.agentic_search import responder_agentico_deepseek
+    # 2026-07-30: modo agêntico (goshinsho/services/agentic_search.py, busca
+    # sem embedding/FAISS -- BM25 + AND de proximidade + ferramentas de
+    # busca reais) promovido a motor ÚNICO e padrão de busca para todo
+    # usuário real (decisão do usuário, sessão de 30/07: custo real medido
+    # via fatura DeepSeek ficou uma fração do estimado, e testes
+    # comparativos repetidos mostraram profundidade igual ou maior que o
+    # pipeline antigo). pt_direct/jp_direct (bloco Config.PIPELINE=="v2"
+    # abaixo) continuam no código, intactos, como fallback interno --
+    # nenhuma página renderizada aponta mais pra eles por padrão, mas
+    # continuam utilizáveis via retrieval_mode explícito na chamada.
+    #
+    # "Aprofundar" (expand_previous) e "fonte na íntegra" (pedido de fonte
+    # sem conteúdo temático próprio, ex. depois de uma resposta) não têm
+    # marcador oculto equivalente ao do pipeline antigo -- testado e
+    # confirmado nesta sessão que não precisam: as citações
+    # `[arquivo.txt]` do modo agêntico já ficam visíveis no texto da
+    # resposta (regra 4/9 do SYSTEM_PROMPT), e esse texto entra no
+    # histórico enviado de volta ao modelo, então "me dê a fonte na
+    # íntegra" já resolve sozinho via buscar_artigo_por_titulo (regra 5).
+    # "Aprofundar" usa uma instrução explícita pedindo mais profundidade
+    # sobre o mesmo tema, também validada por teste direto.
+    if retrieval_mode in ("pt_agentic", "jp_agentic"):
+        from .services.agentic_search import responder_agentico_deepseek, responder_agentico_deepseek_jp
         from .services.conversation_context import strip_source_marker
 
-        search_variant = "agentic_pt"
+        search_variant = "agentic_pt" if retrieval_mode == "pt_agentic" else "agentic_jp"
+        responder_fn = responder_agentico_deepseek if retrieval_mode == "pt_agentic" else responder_agentico_deepseek_jp
         historico_agentico = [
             {"role": h.get("role"), "content": strip_source_marker(h.get("content") or "")}
             for h in history
             if isinstance(h, dict) and h.get("role") in ("user", "assistant") and h.get("content")
         ]
+        pergunta_agentico = question
+        if expand_previous:
+            pergunta_agentico = (
+                f"Aprofunde a resposta anterior sobre este mesmo tema (\"{question}\" se houver texto "
+                "próprio, senão o assunto do turno anterior): busque mais detalhes, exemplos, "
+                "testemunhos e trechos adicionais do acervo que ainda não foram citados, e traga uma "
+                "explicação mais completa, sem repetir literalmente o que já foi dito."
+            )
         event_queue: queue.Queue = queue.Queue()
         result_holder: dict = {}
         error_holder: dict = {}
@@ -961,7 +997,7 @@ def api_chat():
                 search_variant=search_variant,
             )
             try:
-                r = responder_agentico_deepseek(question, historico_agentico)
+                r = responder_fn(pergunta_agentico, historico_agentico)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
             except Exception as exc:

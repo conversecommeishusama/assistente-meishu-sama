@@ -118,7 +118,7 @@ const uiTranslations = {
         checkingJapanese:
             "Não encontrei uma resposta adequada nos textos traduzidos. Estou consultando o original em japonês — isso pode levar até 2 minutos.",
         sourcesTitle: "Fontes identificadas",
-        noSources: "As fontes aparecem no corpo da resposta quando a resposta aprofundada encontra trechos correspondentes.",
+        noSources: "As fontes aparecem citadas diretamente no corpo da resposta.",
         like: "Gostei",
         dislike: "Não gostei",
         favorite: "Salvar favorito",
@@ -2089,7 +2089,7 @@ function initSignupShield() {
 subscriptionIntroConfirm?.addEventListener("click", closeSubscriptionIntroDialog);
 subscriptionIntroGrant?.addEventListener("click", () => {
     closeSubscriptionIntroDialog();
-    openPanel("premium-grant-panel");
+    window.location.href = "/doacao";
 });
 subscriptionIntroDialog?.addEventListener("click", (event) => {
     if (event.target === subscriptionIntroDialog) closeSubscriptionIntroDialog();

@@ -176,7 +176,11 @@ def _ensure_usuario_profile(supabase, auth_user, *, defaults=None):
         {
             "id": uid,
             "email": auth_user.email,
-            "plano": profile.get("plano") or "gratis",
+            # 2026-07-30: único sistema de acesso passou a ser "premium
+            # gratuito" -- todo cadastro novo já nasce premium (decisão do
+            # usuário, ver CLAUDE.md). O cartão de crédito (Stripe) deixou
+            # de ser um portão de acesso e virou doação voluntária.
+            "plano": profile.get("plano") or "premium",
             "perguntas_restantes": profile.get("perguntas_restantes", 5),
             "data_criacao": profile.get("data_criacao") or datetime.now(timezone.utc).isoformat(),
         }

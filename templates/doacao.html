@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doação - Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=146">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
+                <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                <span>Goshinsho</span>
+            </a>
+
+            <nav class="top-actions">
+                {% if user %}<span class="user-pill">{{ user.email }}</span>{% endif %}
+                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}">Voltar ao chat</a>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="flash-list">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        <section class="pricing-hero">
+            <p class="eyebrow">Apoie o Goshinsho</p>
+            <h1>O Goshinsho é gratuito para todos</h1>
+            <p>Toda conta tem acesso premium gratuito, com perguntas ilimitadas -- nunca é necessário pagar para usar o aplicativo.</p>
+            <p class="pricing-why">
+                Cada pergunta usa inteligência artificial e servidores em nuvem, que têm custo real de
+                operação. Se o Goshinsho te ajuda nos seus estudos, considere apoiar com uma doação
+                voluntária -- avulsa ou recorrente, no valor que fizer sentido para você.
+            </p>
+        </section>
+
+        <section class="pricing-grid">
+            <article class="pricing-card">
+                <h2>Doação avulsa</h2>
+                <p>Uma única contribuição, no valor que você escolher.</p>
+                <form action="{{ url_for('web.checkout_doacao') }}" method="post" class="donation-form">
+                    <input type="hidden" name="tipo" value="avulsa">
+                    <div class="donation-amounts">
+                        {% for valor in valores_avulsa %}
+                            <label class="donation-amount-option">
+                                <input type="radio" name="valor_sugerido" value="{{ valor }}" {% if loop.first %}checked{% endif %}>
+                                <span>R$ {{ valor }}</span>
+                            </label>
+                        {% endfor %}
+                        <label class="donation-amount-option donation-amount-custom">
+                            <input type="radio" name="valor_sugerido" value="outro">
+                            <span>Outro valor</span>
+                        </label>
+                    </div>
+                    <label class="donation-custom-field">
+                        <span>Valor (R$)</span>
+                        <input type="number" name="valor_manual" min="5" max="10000" step="0.01" placeholder="Ex.: 35,00">
+                    </label>
+                    <input type="hidden" name="valor" class="donation-valor-final">
+                    <button type="submit">Doar agora</button>
+                </form>
+            </article>
+
+            <article class="pricing-card featured">
+                <span class="badge">Ajuda contínua</span>
+                <h2>Doação recorrente</h2>
+                <p>Uma contribuição mensal, até você decidir cancelar (direto pela Stripe).</p>
+                <form action="{{ url_for('web.checkout_doacao') }}" method="post" class="donation-form">
+                    <input type="hidden" name="tipo" value="recorrente">
+                    <div class="donation-amounts">
+                        {% for valor in valores_recorrente %}
+                            <label class="donation-amount-option">
+                                <input type="radio" name="valor_sugerido" value="{{ valor }}" {% if loop.first %}checked{% endif %}>
+                                <span>R$ {{ valor }}/mês</span>
+                            </label>
+                        {% endfor %}
+                        <label class="donation-amount-option donation-amount-custom">
+                            <input type="radio" name="valor_sugerido" value="outro">
+                            <span>Outro valor</span>
+                        </label>
+                    </div>
+                    <label class="donation-custom-field">
+                        <span>Valor mensal (R$)</span>
+                        <input type="number" name="valor_manual" min="5" max="10000" step="0.01" placeholder="Ex.: 35,00">
+                    </label>
+                    <input type="hidden" name="valor" class="donation-valor-final">
+                    <button type="submit">Assinar doação mensal</button>
+                </form>
+            </article>
+        </section>
+
+        <p class="pricing-note">
+            O pagamento é processado com segurança pela Stripe. Doações recorrentes podem ser
+            canceladas a qualquer momento -- o link de gerenciamento chega por e-mail após a primeira
+            cobrança. Nenhuma doação afeta seu acesso ao Goshinsho: ele já é gratuito e ilimitado para
+            toda conta cadastrada.
+        </p>
+    </main>
+
+    <script>
+        // Preenche o campo "valor" (enviado ao backend) a partir do botão
+        // sugerido escolhido, ou do valor digitado manualmente quando
+        // "Outro valor" está selecionado -- sem isso o backend não recebe
+        // nenhum valor em R$ pra montar o checkout.
+        document.querySelectorAll(".donation-form").forEach((form) => {
+            const hidden = form.querySelector(".donation-valor-final");
+            const manualInput = form.querySelector('input[name="valor_manual"]');
+            const radios = form.querySelectorAll('input[name="valor_sugerido"]');
+
+            function sync() {
+                const checked = form.querySelector('input[name="valor_sugerido"]:checked');
+                if (!checked) return;
+                if (checked.value === "outro") {
+                    hidden.value = manualInput.value || "";
+                } else {
+                    hidden.value = checked.value;
+                }
+            }
+
+            radios.forEach((radio) => radio.addEventListener("change", sync));
+            manualInput.addEventListener("input", () => {
+                const outro = form.querySelector('input[name="valor_sugerido"][value="outro"]');
+                if (outro) outro.checked = true;
+                sync();
+            });
+            sync();
+        });
+    </script>
+</body>
+</html>

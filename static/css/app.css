@@ -2594,3 +2594,85 @@ body {
         display: none !important;
     }
 }
+
+/* Doação (2026-07-30): substitui a antiga assinatura paga (/doacao,
+   templates/doacao.html) -- botões de valor sugerido no estilo pill,
+   reaproveitando .pricing-card/.pricing-grid já existentes. */
+.donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.donation-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.donation-amount-option {
+    position: relative;
+}
+
+.donation-amount-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.donation-amount-option span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.92rem;
+    cursor: pointer;
+    background: var(--surface, #fff);
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.donation-amount-option input:checked + span {
+    background: var(--primary, #1418fc);
+    border-color: var(--primary, #1418fc);
+    color: #fff;
+}
+
+.donation-custom-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.donation-custom-field input {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+}
+
+/* Final layout guard (2026-07-30): mesmo com .developer-nav escondido no
+   mobile (guarda acima), a barra de ações regular (conta/assinar ou
+   doar/sair/contato/acesso gratuito) já é larga o suficiente para não
+   caber ao lado da marca em telas estreitas. O bloco de maior
+   precedência de origem para .top-actions neste arquivo (linha ~781)
+   usa flex-wrap:nowrap + overflow:visible — sem quebra de linha
+   permitida, o conteúdo que não cabe transborda por cima da marca
+   (logo+nome) em vez de ser cortado ou empurrado pra baixo. Este bloco,
+   por ser o último do arquivo, vence por ordem de declaração e força a
+   barra de ações a quebrar para uma segunda linha, abaixo da marca,
+   nunca sobre ela. */
+@media (max-width: 720px) {
+    .topbar {
+        flex-wrap: wrap !important;
+    }
+
+    .top-actions {
+        flex: 1 1 100% !important;
+        flex-wrap: wrap !important;
+        overflow: visible !important;
+        width: 100% !important;
+    }
+}
