@@ -3989,7 +3989,7 @@ linha, mesmo parecendo pequeno/inofensivo. Na dúvida, a pergunta que
 funcionou nesta sessão foi literalmente perguntar ao usuário antes de
 implementar, e ele corrigiu 2 vezes em tempo real.
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia, sessão nova)
 
 1. `agentic_search.py` continua **não ligado a** `routes.py`/
    `pipeline/answer.py` — nenhuma integração de produção foi feita.
@@ -4001,4 +4001,181 @@ implementar, e ele corrigiu 2 vezes em tempo real.
    fica como registro desta investigação — fora do git, como o resto de
    `reports/`.
 4. Nenhuma promoção/integração/reinício de produção sem autorização
+   explícita do usuário.
+
+## Atualização 2026-07-30 (mesma sessão anterior, nunca documentada até
+## agora) — novo formato de resposta por tema, achado durante o próprio
+## teste (fusão de fontes diferentes) — commitado, mas NÃO reiniciado em
+## produção
+
+**Gap de handoff constatado nesta sessão nova**: entre o fechamento da
+seção anterior (dashboard final, artifact `581516e2`) e o início desta
+sessão, houve mais trabalho de código — commit `51e3a2d` ("Novo modelo de
+resposta: explicação por tema + citação confirmatória, sem fundir fontes
+diferentes") — que nunca chegou a atualizar este documento. Reconstruído
+a partir do próprio commit e de `reports/agentic_search_orcamento/RESULTADO.md`,
+não de memória de sessão (esta é uma conversa nova, sem contexto da
+anterior).
+
+**O que o commit faz**: unifica o formato de resposta do modo direto
+(`pt_direct`/`jp_direct`, produção) com o modo agenciado — em vez de
+citações soltas ou bloco de citações ao final, a resposta é dividida por
+tema (`### ` por tema), cada tema explicado com palavras próprias primeiro
+e a citação literal vem **depois**, só para confirmar, nunca para abrir o
+tema. Mudança em `goshinsho/pipeline/prompts.py` (afeta `pt_direct`/
+`jp_direct` diretamente) e regra 9 equivalente nos dois system prompts de
+`agentic_search.py` (PT/JP).
+
+**Achado real que motivou a regra 10** (não é tutela — é um problema
+estrutural achado testando "câncer", não uma exceção por tema): o agente
+fundiu duas explicações de fontes diferentes para "câncer verdadeiro" (uma
+diz origem espiritual, outra diz causada por toxina de carne animal) como
+se fossem uma única doutrina — as duas fontes nunca se conectam no texto
+real. Regra 10 proíbe esse tipo de fusão sem base textual: cada
+enquadramento diferente vira tema separado, com sua própria citação, sem
+inventar elo causal. Levou 2 rodadas de reforço (primeiro para forçar
+subtítulos separados, depois para proibir um parágrafo de "resumo geral"
+final que reintroduzia a fusão).
+
+**Verificado nesta sessão nova, não estava óbvio pelo commit sozinho**:
+`systemctl show goshinsho.service -p ActiveEnterTimestamp` → produção
+rodando desde **29/07 06:43:38**, ou seja, **antes** do commit `51e3a2d`
+(30/07 03:25). O novo formato está commitado mas **não está ativo em
+produção** — o `pt_direct`/`jp_direct` que usuários reais recebem hoje
+ainda é o formato antigo (sem tema/citação-confirmatória, regras 9/10
+ausentes).
+
+### Teste de validação pós-mudança (10 perguntas, `pilot_agentic_v5_dez_perguntas.py`)
+
+Rodado logo após o commit (`reports/piloto_agentico_v5_dez_perguntas.json`,
+30/07 03:38): mesma sequência de chat única, DeepSeek agenciado vs.
+`pt_direct`, já com o novo formato nos dois lados. Perguntas 1-4 repetem o
+piloto v3; 5-8 repetem a sequência que travava escopo (calamidades→
+Yamato→linhagens→sol/lua, corrigida em 29/07); 9-10 repetem o bug do
+marcador de fonte ("fazendas modelo"→"fonte na íntegra", também corrigido
+em 29/07).
+
+**Resultado agregado**: 10/10 turnos sem nenhuma flag de anomalia (sem
+esgotar orçamento de busca, sem estagnação, sem vazamento de sintaxe, sem
+citação suspeita) nos dois lados — o novo formato não reintroduziu os
+bugs antigos. Tempo do agenciado: 24-112s (turno 3, o mais difícil, ainda
+caro); `pt_direct`: 16-48s.
+
+**Achado de conteúdo, lendo as respostas (não só os números)**:
+- **Turno 8** ("outras linhagens além de sol/lua?"): `pt_direct` respondeu
+  que **não há outras linhagens** — repete exatamente a lacuna do Izunome
+  já documentada em `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` como não
+  resolvida, mesmo com o novo formato de resposta. O agenciado achou e
+  citou corretamente sol (Yamato/Amaterasu) e lua (Susanoo/Izumo).
+- **Turno 10** ("fonte original na íntegra" logo após perguntar sobre
+  fazendas-modelo): `pt_direct` deu resposta **internamente
+  contraditória** — diz que os trechos recuperados são sobre "agricultura
+  natural... fazendas-modelo" (tema certo, do turno anterior) mas depois
+  recusa dizendo que o texto pedido era sobre "linhagens espirituais"
+  (tema de 2 turnos atrás). O agenciado identificou certo (Gosuiji-roku
+  nº 18, 15/03/1953) e reproduziu o diálogo completo.
+
+Conclusão honesta: os gaps de recall do `pt_direct` (Izunome) e o
+descompasso do marcador de fonte continuam presentes mesmo depois da
+mudança de formato — a mudança resolveu fusão de fontes, não os problemas
+estruturais de recuperação já catalogados.
+
+## Atualização 2026-07-30 (sessão nova) — reconciliação de custo real:
+## cálculo interno da sessão anterior não bate com a fatura real, achado
+## bug de contabilização de cache não capturado
+
+Usuário reportou que o custo real cobrado por **toda** a sessão anterior
+(todos os testes DeepSeek agenciado + `pt_direct`, não só o piloto de 10
+perguntas) foi de **$0,26**, e pediu para eu conferir contra os cálculos
+já fornecidos. Reconciliação feita a partir de dados reais do próprio
+projeto, não estimativa:
+
+- **Lado agenciado**: somado o campo `custo` (autocalculado por
+  `agentic_search.py`, usando `PRECOS["deepseek-v4-flash"] = {"entrada":
+  0.28, "saida": 0.42}` por 1M tokens) em **todos** os JSONs de teste da
+  sessão anterior (`reports/agentic_search_orcamento/*.json` +
+  `piloto_agentico_v3_perguntas_usuario.json` nas 2 rodadas +
+  `piloto_agentico_v5_dez_perguntas.json`) — **43 chamadas, $1,69 no
+  total** (maior parte: `TESTE_LIMIAR6` $0,30, `piloto_v5` $0,47, `piloto_v3`
+  $0,25+$0,22 nas 2 rodadas).
+- **Lado `pt_direct`**: não calculado por estimativa — lido direto de
+  `logs/deepseek_usage.jsonl` (tokens reais retornados pela API em cada
+  chamada de teste, purpose `answer_generation_v2`, sem `endpoint`
+  preenchido = chamada de script, não de usuário real). Filtrando a janela
+  temporal da sessão (29/07 ~22:58 a 30/07 01:38 UTC) e excluindo 2
+  entradas com `endpoint=web.api_chat`/`user_email=frantannus@gmail.com`
+  que são tráfego real de produção intercalado, não teste: **16 chamadas,
+  198.460 tokens de entrada / 26.189 de saída** → $0,035–0,067 dependendo
+  de qual das duas tabelas de preço do projeto se usa (ver abaixo).
+- **Total calculado: ≈ $1,73–1,76** — contra os **$0,26 reais**, uma
+  diferença de **~6,7×**. Não bate, e o gap está quase todo do lado
+  agenciado, não do `pt_direct`.
+
+**Achado colateral, também real**: duas tabelas de preço diferentes e
+nunca reconciliadas no próprio projeto, para o mesmo modelo
+`deepseek-v4-flash` — `agentic_search.py` usa $0,28/$0,42 por 1M
+(entrada/saída), `deepseek_usage_service.py` usa $0,14/$0,28 por 1M.
+Nenhuma das duas bate com a fatura real.
+
+**Causa mais provável, com evidência de código (não é só hipótese
+solta)**: `agentic_search.py:684-686` e `751-753` leem só
+`usage.prompt_tokens`/`usage.completion_tokens` da resposta da API e
+tratam **100% do input como preço cheio**. O loop agenciado reenvia, a
+cada rodada de ferramenta, um prefixo enorme e quase idêntico ao da
+rodada anterior (system prompt + corpus já lido + histórico de chamadas
+crescendo) — exatamente o padrão que o cache de contexto em disco da
+DeepSeek foi desenhado para descontar pesado. O código **nunca lê** os
+campos de cache que a API da DeepSeek retorna no objeto `usage`
+(`prompt_cache_hit_tokens`/`prompt_cache_miss_tokens`, feature real e
+documentada da API, cliente é OpenAI-compatível então os campos chegam no
+`resp.usage`, só não são lidos) — todo o input é cobrado como se fosse
+cache miss. O preço implícito que reconciliaria com os $0,26 reais é
+~$0,04/1M tokens (blended), quase 7× mais barato que o $0,28/1M assumido
+— ordem de grandeza compatível com desconto de cache hit em prompt que se
+repete quase inteiro a cada rodada. **Não verificado ainda contra o
+objeto `usage` bruto de uma chamada real** (só inferido pela lacuna de
+código + pela ordem de grandeza do gap) — verificação direta seria rodar
+uma chamada e inspecionar `resp.usage.model_extra`/campos além de
+`prompt_tokens`/`completion_tokens`.
+
+**Implicação para todo o histórico do projeto, não só este teste**: se a
+causa é essa, **todo "custo" já reportado para o modo agenciado em
+qualquer sessão anterior está superestimado** — incluindo os números de
+`docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` §3.9 (~$0,009-0,011/pergunta)
+e todo campo `custo` impresso em qualquer piloto anterior (v2, v3, v4,
+perguntas difíceis, 3vias, vs_ptdirect). Isso não muda qual opção é mais
+barata (DeepSeek agenciado tende a ficar ainda mais vantajoso, não menos,
+se corrigido), mas significa que nenhum número absoluto de custo usado
+até agora para decisão foi verificado contra fatura real antes desta
+sessão.
+
+**Não corrigido ainda** — só diagnosticado e reportado ao usuário; a
+correção (capturar os campos de cache reais do `usage` e recalcular com
+preço correto, reconciliar as duas tabelas de preço) fica pendente de
+decisão do usuário sobre se/quando fazer.
+
+### Onde continuar
+
+1. **Formato de resposta por tema (commit `51e3a2d`) está commitado mas
+   NÃO ativo em produção** (`goshinsho.service` rodando desde 29/07
+   06:43, antes do commit) — nenhum reinício foi feito nesta sessão nem
+   na anterior. Não reiniciar sem autorização explícita.
+2. Gaps de recall do `pt_direct` (Izunome/linhagens, confusão de tópico no
+   marcador de fonte) continuam confirmados mesmo com o novo formato —
+   ver teste de 10 perguntas acima. Não é um problema do formato de
+   resposta, é o mesmo gap estrutural de recuperação já catalogado em
+   `docs/13`.
+3. **Bug de contabilização de custo do modo agenciado, achado nesta
+   sessão, não corrigido**: `agentic_search.py` não captura cache
+   hit/miss da API DeepSeek, superestimando custo em ~6,7× (calculado vs.
+   fatura real). Duas tabelas de preço divergentes no projeto
+   (`agentic_search.py` vs. `deepseek_usage_service.py`), nenhuma
+   verificada contra fatura real. Se retomado: (a) inspecionar
+   `resp.usage` bruto de uma chamada real para confirmar os campos de
+   cache existem e quais valores trazem; (b) reconciliar as duas tabelas
+   de preço; (c) recalcular os números de `docs/13` §3.9 com o valor
+   corrigido antes de usá-los para qualquer decisão de custo.
+4. `agentic_search.py` continua não ligado a `routes.py`/`pipeline/answer.py`
+   — nenhuma integração de produção.
+5. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário.
