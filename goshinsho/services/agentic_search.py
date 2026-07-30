@@ -210,6 +210,20 @@ def _ocorrencias_com_fronteira(padrao_termo: str, texto_folded: str) -> list[int
     return [m.start() for m in re.finditer(r"\b" + re.escape(padrao_termo) + r"\b", texto_folded)]
 
 
+@lru_cache(maxsize=None)
+def _ocorrencias_termo_em_arquivo(termo_folded: str, arquivo: str) -> tuple[int, ...]:
+    """Mesma busca de `_ocorrencias_com_fronteira`, cacheada por par
+    (termo, arquivo) -- achado 2026-07-30: uma consulta que bate no
+    glossário de sinônimos de busca (ex. 'plano espiritual', 8 termos
+    relacionados) chamava `_buscar_termo_unico` 9 vezes (1 pelo termo
+    original + 8 pelos relacionados), cada vez varrendo os 145 arquivos do
+    zero -- ~3000 varreduras regex repetidas, 7,5s numa única chamada de
+    `buscar_termo`. Sem custo de correção (mesmo resultado, só não
+    recalculado), já que o corpus não muda durante o processo."""
+    texto_folded = _corpus_pt()[arquivo][1]
+    return tuple(m.start() for m in re.finditer(r"\b" + re.escape(termo_folded) + r"\b", texto_folded))
+
+
 def _buscar_termo_unico(termo_folded: str) -> list[dict]:
     """Busca UM termo/frase -- match por AND de palavras significativas em
     janela de proximidade, não mais substring contígua exata (§3.10, achado
@@ -226,7 +240,7 @@ def _buscar_termo_unico(termo_folded: str) -> list[dict]:
 
     candidatos: list[dict] = []
     for arquivo, (_, texto_folded) in _corpus_pt().items():
-        ocorrencias_por_termo = [_ocorrencias_com_fronteira(t, texto_folded) for t in termos_busca]
+        ocorrencias_por_termo = [_ocorrencias_termo_em_arquivo(t, arquivo) for t in termos_busca]
         if not all(ocorrencias_por_termo):
             continue  # todas as palavras significativas precisam aparecer em algum lugar do arquivo
 
@@ -279,7 +293,7 @@ def _bm25_top_arquivos(termo_folded: str, k: int = 20) -> list[str]:
     return [arquivos[i] for i in ranking[:k] if scores[i] > 0]
 
 
-def _melhor_posicao_no_arquivo(termos_busca: list[str], texto_folded: str) -> dict | None:
+def _melhor_posicao_no_arquivo(termos_busca: list[str], arquivo: str) -> dict | None:
     """Dado que BM25 já decidiu que este arquivo é um candidato relevante
     (por conteúdo geral, não por proximidade), acha a melhor posição para
     mostrar como trecho -- mesma lógica de densidade local de
@@ -293,7 +307,7 @@ def _melhor_posicao_no_arquivo(termos_busca: list[str], texto_folded: str) -> di
     caracteres um do outro noutro ponto do texto (2 termos por perto ali,
     contra 1 na posição de 'conforme') -- perdia o melhor trecho por só
     olhar as posições do termo errado."""
-    ocorrencias_por_termo = [_ocorrencias_com_fronteira(t, texto_folded) for t in termos_busca]
+    ocorrencias_por_termo = [_ocorrencias_termo_em_arquivo(t, arquivo) for t in termos_busca]
     presentes = [(i, occ) for i, occ in enumerate(ocorrencias_por_termo) if occ]
     if not presentes:
         return None
@@ -335,7 +349,7 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
         for arquivo in _bm25_top_arquivos(termo_folded):
             if arquivo in arquivos_ja_achados:
                 continue
-            melhor = _melhor_posicao_no_arquivo(termos_sig, _corpus_pt()[arquivo][1])
+            melhor = _melhor_posicao_no_arquivo(termos_sig, arquivo)
             if melhor and melhor["score"] > 0:
                 candidatos.append({"arquivo": arquivo, "posicao": melhor["posicao"], "score": melhor["score"]})
 

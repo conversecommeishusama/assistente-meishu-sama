@@ -4903,3 +4903,93 @@ serviço.
    pergunta.
 3. Nenhuma integração/promoção/reinício de produção sem autorização
    explícita do usuário.
+
+## Atualização 2026-07-30 (mesma sessão) — dashboard das 10 perguntas
+## republicado com o módulo atualizado (BM25 + regra 7)
+
+Rodado `scripts/pilot_agentic_v5_dez_perguntas.py` de novo (mesma
+sequência de 10 perguntas, mesmo histórico de chat único), agora com o
+módulo já incluindo BM25 complementar + regra 7 reforçada desta sessão.
+Sem erros, sem timeout; 1 alerta de citação suspeita no turno 8 (mesmo
+padrão de alerta estrutural já existente, não investigado a fundo aqui).
+Resultado salvo em `reports/piloto_agentico_v5_dez_perguntas.json`
+(sobrescreveu a rodada anterior).
+
+Dashboard republicado no MESMO link já usado para este teste
+(`https://claude.ai/code/artifact/581516e2-7477-460c-92ad-7719417bc7a9`,
+favicon ⚖️) — perguntas e respostas completas dos dois sistemas, lado a
+lado, para avaliação subjetiva do usuário. Deliberadamente sem veredito
+de conteúdo meu, só métricas estruturais (tempo/custo/rodadas/alertas).
+
+### Onde continuar
+
+1. Avaliação de conteúdo das 10 respostas é do usuário — aguardar
+   retorno antes de qualquer ajuste adicional no módulo agenciado.
+2. `agentic_search.py` continua não ligado a produção.
+3. Nenhuma promoção/integração/reinício de produção sem autorização
+   explícita.
+
+## Atualização 2026-07-30 (mesma sessão) — usuário aprovou as 10 respostas
+## como adequadas, pediu velocidade nas perguntas complexas: achado real
+## de performance corrigido (buscar_termo 7,5x mais lento quando bate no
+## glossário de sinônimos)
+
+Usuário confirmou que as 10 respostas do dashboard estavam todas
+adequadas, e perguntou se dá para acelerar as perguntas mais complexas
+(as simples já ficam próximas do tempo de `pt_direct`).
+
+### Diagnóstico
+
+Instrumentado o laço real (tempo por rodada de API + tokens) e depois
+`cProfile` isolado em `buscar_termo`. Achado: perguntas que batem no
+glossário de sinônimos de busca (`glossario_sinonimos_busca_agente.json`)
+disparam uma varredura completa do acervo **por termo relacionado** --
+"plano espiritual" tem 8 termos relacionados, então 1 chamada de
+`buscar_termo` executa **9 passadas completas pelos 145 arquivos** (o
+termo original + 8 expandidos), cada uma rescaneando os arquivos do zero
+com regex, sem nenhum cache entre elas nem entre chamadas repetidas.
+Medido isoladamente: 7,5s numa única chamada de `buscar_termo`, contra
+custo desprezível para consultas que não batem no glossário.
+
+### Correção
+
+Adicionado `_ocorrencias_termo_em_arquivo(termo, arquivo)`, decorado com
+`@lru_cache(maxsize=None)` -- substitui as chamadas diretas de
+`_ocorrencias_com_fronteira` em `_buscar_termo_unico` e
+`_melhor_posicao_no_arquivo`. Como o corpus não muda durante a vida do
+processo, cachear por par (termo, arquivo) é seguro e sem risco de
+inconsistência -- é pura memoização, resultado idêntico ao de antes
+(confirmado: mesma contagem e mesma lista de arquivos antes/depois).
+
+**Efeito medido**: mesma chamada (`buscar_termo("mudar de plano
+espiritual")`) caiu de 7,5s para 5,2s na 1ª vez (ainda paga o custo das
+palavras genuinamente novas) e para **0,011s** em qualquer repetição
+--- e como o processo do `agentic_search.py` roda como worker de vida
+longa em produção (gunicorn com preload), esse cache fica quente **entre
+perguntas de usuários diferentes**, não só dentro de uma conversa --
+depois do aquecimento inicial, a maioria das buscas subsequentes por
+palavras já vistas (comum, já que várias perguntas de usuários
+compartilham vocabulário) se beneficia.
+
+**Ponta a ponta**, a mesma pergunta complexa de teste ("Segundo
+Meishu-Sama é possível mudar de plano espiritual na mesma reencarnação?")
+caiu de ~72-137s (medido em rodadas anteriores desta sessão) para
+**50,5s** numa nova medição pós-correção.
+
+### Estado de deploy
+
+Editado e **commitado** — módulo continua não ligado a produção. Sem
+suíte de testes automatizados dedicada a este módulo ainda (não há
+`tests/test_agentic_search.py`); validação foi manual (mesmo resultado
+antes/depois, medição de tempo real).
+
+### Onde continuar
+
+1. Se quiser acelerar ainda mais: um índice invertido único por arquivo
+   (palavra -> posições, construído 1x) eliminaria o custo residual de
+   ~2,5ms por par (palavra, arquivo) nunca visto antes -- não implementado
+   nesta sessão por risco de mudar sutilmente o comportamento em termos
+   com hífen/caracteres não-\\w (ex. "sub-níveis"), que a busca por regex
+   atual trata como frase única, não bag-of-words.
+2. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita.
