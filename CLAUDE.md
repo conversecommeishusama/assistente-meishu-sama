@@ -5471,3 +5471,188 @@ resíduo na conta do usuário real.
    distinção direct/deep que não existe mais no modo agêntico).
 4. Nenhuma promoção/reinício de produção sem autorização explícita -- a
    desta sessão já foi dada, não é permanente para trabalho futuro.
+
+## Sessão 2026-07-31 (conversa nova) -- bug real de cadastro gratuito
+## residual corrigido, layout do app ajustado à tela, doação traduzida nos
+## 13 idiomas, dashboard admin reformulado (período, perguntas/doações por
+## usuário, custo recalibrado), 3 pendências de teste automatizado
+## explicadas
+
+### 1. Bug real: cadastro gratuito de 5 perguntas ainda ativo
+
+Usuário reportou que o cadastro gratuito com limite de 5 perguntas
+continuava ativo, apesar da sessão de 30/07 já ter documentado "todo
+cadastro novo já nasce premium". Achado real: `register_user()` e o
+fallback de `login_user()` (`goshinsho/services/auth_service.py`)
+passavam explicitamente `defaults={"plano": "gratis",
+"perguntas_restantes": 5, ...}` para `_ensure_usuario_profile()` --
+isso SOBRESCREVIA o default interno "premium" da função
+(`profile.get("plano") or "premium"`, que só age quando `plano` vem
+vazio). Ou seja, a mudança de 30/07 mudou o default INTERNO da função,
+mas os dois pontos de chamada continuavam passando "gratis" explícito por
+cima -- o comentário no código ("todo cadastro novo já nasce premium")
+era falso desde então. Corrigido removendo `plano`/`perguntas_restantes`
+dos dois `defaults={}`. **1 conta real afetada** (`ricwbrasil@gmail.com`,
+cadastrada em 31/07, presa com 0 perguntas) corrigida direto no banco
+para `plano="premium"`.
+
+### 2. Layout: página do app maior que a tela
+
+Medido com Playwright/Chromium headless (não só leitura de CSS) contra um
+servidor local isolado. Causa raiz real, achada por medição elemento a
+elemento: duas regras `!important` em `static/css/app.css` faziam a caixa
+de mensagem (`#message-input`) crescer para 22-34% da altura da TELA
+mesmo vazia (`min-height: clamp(128px, 22vh, 210px)` / `min-height:
+min(34vh, 220px)`) -- em celular, isso sozinho já causava até 281px de
+rolagem extra. Trocado para altura fixa de 48px (o crescimento ao digitar,
+via JS, continua igual). Também removido `.login-hint`, um parágrafo
+abaixo do card de cota que duplicava exatamente a mesma mensagem já
+mostrada 2x acima dele. Resultado medido: 0px de sobra em desktop,
+notebook e celulares modernos (iPhone 12+, Android 360-412px de largura);
+sobra residual pequena (≤45px) só em telas muito antigas/incomuns
+(ex. 320×568, iPhone 5/SE de 1ª geração).
+
+### 3. Doação/"Apoiar" sem tradução nos 13 idiomas
+
+O link "Apoiar ❤" do menu, o aviso de doação do card de cota, o diálogo
+"Sobre o Goshinsho" e a página `/doacao` inteira (título, formulários,
+avisos) tinham texto fixo em português, ignorando o idioma escolhido.
+Adicionadas ~22 chaves novas (mais a reforma da chave `subscribe`
+já existente, órfã desde a troca "Assinar"→"Apoiar ❤") nos 13 idiomas já
+suportados por `static/js/app.js` (`uiTranslations`). Para `/doacao`
+(página carregada isolada, fora da SPA de `app.js`): dicionário próprio
+gerado em `goshinsho/data/doacao_i18n.json`, passado pelo backend
+(`routes.py`, rota `/doacao`) e aplicado no cliente via
+`localStorage["goshinsho-language"]` (mesma chave usada pelo app
+principal, lida e traduzida sozinha ao carregar a página).
+
+Testado com Playwright contra servidor local + suíte de 128 testes (sem
+regressão nova) antes de promover.
+
+### 4. Produção reiniciada com os 3 itens acima
+
+`systemctl restart goshinsho.service`, confirmado `/app`, `/app-pt`,
+`/doacao` respondendo 200 com `app.css?v=147`/`app.js?v=149` (autorização
+explícita do usuário, "Reinicie o goshinsho" no mesmo pedido que trouxe o
+resto desta sessão).
+
+### 5. Dashboard admin reformulado
+
+Pedido do usuário: filtro de período, perguntas + doações por usuário,
+custo recalibrado com os valores mais baratos encontrados na sessão de
+30/07, e remoção das seções "Solicitações de premium gratuito"/"Analisar
+solicitação"/"Em experiência"/"Limitados"/"Solicitações premium"
+(obsoletas desde a virada pra premium gratuito universal, também de
+30/07).
+
+- **Filtro de período** (`goshinsho/services/admin_service.py`,
+  `resolve_range()`): desde o início / últimos 6 meses / último mês /
+  última semana / hoje / personalizado (2 campos de data). Aplicado a
+  tokens/custo (`deepseek_usage_service.summarize_deepseek_usage`),
+  acessos (`access_service.summarize_access`), perguntas por usuário e
+  doações -- todos ganharam parâmetro `since`/`until`.
+- **Perguntas por usuário**: `conversation_service.count_user_questions()`
+  (novo), conta mensagens `role="user"` na tabela `mensagens` no período,
+  resolvidas para `user_id` via `conversas` -- fonte é o histórico real de
+  conversas, não o log de uso de DeepSeek (mais completo, cobre desde
+  sempre, não só desde que o log de custo existe).
+- **Doações por usuário**: `goshinsho/services/donation_service.py`
+  (novo) -- sem tabela local de doações (checkout só grava metadata na
+  sessão Stripe, sem webhook), consulta a API do Stripe diretamente:
+  `checkout.Session.list` (mode="payment", doações avulsas) +
+  `Invoice.list` (status="paid", cobranças recorrentes, inclui a primeira
+  cobrança de cada assinatura), ambos paginados e filtrados por `created`
+  (período). Atribuição por conta via `metadata.user_id` da sessão
+  (avulsas) ou e-mail do pagador (recorrentes, cuja fatura não carrega a
+  metadata original da sessão). **Bug real achado e corrigido no
+  caminho**: nesta versão do SDK do Stripe, os objetos de resposta
+  (`Session`/`Invoice`/`ListObject`) não suportam mais `.get()` nem `[]`
+  diretamente (levanta `AttributeError: get`) -- é preciso converter com
+  `_to_dict_recursive()` primeiro, mesmo padrão que já existia (sem eu
+  perceber de início) no antigo `_stripe_summary()` removido nesta sessão.
+- **Custo recalibrado**: `deepseek_usage_service.py` tinha preço de tabela
+  assumido ($0,14/1M entrada, $0,28/1M saída) nunca reconciliado contra
+  fatura real. Substituído por uma taxa única "blended"
+  (`DEEPSEEK_BLENDED_USD_PER_1M_TOKENS ≈ US$0,0424/1M`, calculada a partir
+  do achado da sessão de 30/07: US$0,59 de fatura real ÷ 13.923.984
+  tokens) aplicada igualmente a entrada e saída -- honesto dado que não
+  temos o detalhamento exato de hit/miss de cache por chamada, só o total
+  reconciliado. Mesma constante espelhada em `agentic_search.py` (`PRECOS`)
+  só para o autorrelato de custo dessa função não divergir do dashboard.
+- **Achado sério no caminho, corrigido**: a busca agenciada (motor único
+  de produção desde 30/07) **nunca chamava `record_deepseek_usage`** --
+  o dashboard de custo/uso estava cego pra quase todo o tráfego real
+  (só enxergava sobras do pipeline antigo/scripts de teste). Corrigido com
+  `record_deepseek_usage_totals()` (nova, agrega por token total em vez de
+  exigir um objeto `response` por chamada) chamada em `routes.py` logo
+  após `responder_agentico_deepseek`/`_jp` retornar. Also corrigido o
+  mesmo gap em `llm_term_fallback.py` (fallback de termos via DeepSeek,
+  também nunca logava).
+- **Removido**: cards/JS de "Solicitações de premium gratuito"/"Analisar
+  solicitação"/"Em experiência"/"Limitados"/"Solicitações premium" de
+  `templates/admin.html`/`static/js/admin.js`, e o import de
+  `grant_summary`/`trial_users`/`limited_users` de `admin_service.py`.
+  Backend de `premium_grant_service.py` e as rotas
+  `/api/admin/premium-grants*` **não foram apagados** (mesmo padrão já
+  usado no projeto: esconder da UI, não apagar o serviço) -- só deixaram
+  de ser chamados pelo dashboard.
+- Tabela "Usuários cadastrados" agora mostra e-mail, plano, cadastro,
+  perguntas no período, valor doado (R$), nº de doações e última doação --
+  substituiu a lista simples de antes.
+
+Testado em 3 camadas antes de promover: chamada direta às funções
+(`summarize_donations`, `count_user_questions`), `/api/admin/dashboard`
+via `test_client()` com sessão real injetada (todos os 5 valores de
+`range` + um período personalizado, verificando que os totais mudam
+corretamente com a janela), e HTTP real contra a produção já reiniciada
+(cookie de sessão assinado de verdade, conta developer real) confirmando
+`/admin` e `/api/admin/dashboard` servindo o dashboard novo e sem as
+seções removidas. Suíte de 128 testes automatizados: mesmas 2 falhas + 1
+erro pré-existentes (ver seção seguinte), nenhuma regressão nova.
+
+### 6. As 3 pendências de teste automatizado, explicadas (usuário pediu
+### detalhe, não só "pré-existente")
+
+Nenhuma das três tem relação com o trabalho desta sessão (confirmado:
+nenhum dos arquivos envolvidos foi tocado). Causas raiz lidas direto no
+código, não repetidas de memória:
+
+1. **`test_ohikari_filter.py` (erro de import)**: importa
+   `chunk_valido_ohikari`/`pergunta_sobre_ohikari` de
+   `search_service.py`, mas essas funções foram renomeadas para
+   `pergunta_sobre_reisen` numa sessão de 18/07 (já catalogado no
+   histórico de commits daquela sessão) -- o teste nunca foi atualizado
+   pro novo nome. Bug do teste, não do código de produção.
+2. **`test_pipeline_format.py::test_direct_mode_is_in_depth_without_citations`**:
+   espera que o prompt do "modo direto" contenha a frase "sem citações".
+   Mas a regra 17 do prompt foi reescrita de propósito na sessão de 30/07
+   ("explicação por tema, com citação confirmatória") -- o modo direto
+   passou a incluir citação sim, só que depois da explicação de cada
+   tema, não antes. Teste ficou testando o comportamento antigo,
+   substituído deliberadamente.
+3. **`test_qa_dialogue_annotation.py::test_pt_orientacao_and_consulta`**:
+   espera `t == 1` (contagem de turnos tipo "teaching"), recebe `0`. Causa
+   raiz lida em `scripts/qa_dialogue_annotation.py`
+   (`parse_qa_turns_pt_mioshie`): quando o parser encontra o marcador
+   `[Ensinamento]` enquanto o modo corrente é `"interlocutor"` (resposta
+   sem marcador explícito antes dele, como no texto do teste), ele
+   classifica o bloco como `"meishu"` (resposta), não como `"teaching"` --
+   por design do código atual, não por acidente. Diverge do que o teste
+   espera; não investigado a fundo qual dos dois está doutrinariamente
+   certo (decisão de estrutura de diálogo do acervo, não decidida
+   sozinho).
+
+### Onde continuar
+
+1. Tudo desta sessão já está em produção, verificado via HTTP real
+   (cookie assinado, conta developer).
+2. As 3 pendências de teste automatizado (seção 6) continuam sem
+   correção -- nenhuma delas bloqueia produção, mas ficam registradas
+   caso o usuário queira resolver numa sessão futura (a #3 precisa de
+   decisão do usuário sobre a regra de estrutura, não é só ajuste de
+   código).
+3. `donation_service.py` limita paginação Stripe a 20 páginas (2000
+   registros) por consulta -- suficiente para a escala atual (~36
+   usuários), revisar se o volume de doações crescer muito.
+4. Nenhuma promoção/reinício de produção sem autorização explícita -- a
+   desta sessão já foi dada, não é permanente para trabalho futuro.
