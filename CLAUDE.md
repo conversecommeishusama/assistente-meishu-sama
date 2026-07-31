@@ -5656,3 +5656,127 @@ código, não repetidas de memória:
    usuários), revisar se o volume de doações crescer muito.
 4. Nenhuma promoção/reinício de produção sem autorização explícita -- a
    desta sessão já foi dada, não é permanente para trabalho futuro.
+
+## Sessão 2026-07-31 (conversa nova) -- retomada do plano de escala,
+## backup externo agendado, correção shukumei/unmei promovida, busca
+## agenciada reavaliada com número real (75%→100% no caso mais difícil)
+
+### 1. Plano de escala (20/07) revisitado com verificação real, não memória
+
+Usuário pediu retomada do planejamento de escala feito em 20/07
+(artifacts `plano_escala_publico_goshinsho.md` e
+`avaliacao_escala_goshinsho.md`, ambos ainda publicados nas URLs
+originais). Cada item foi conferido no servidor real (cron, código,
+arquivos, banco), não assumido a partir da documentação:
+
+- ✅ Rate limit em `/api/chat` (20/10min) -- feito em 20/07, confirmado.
+- ✅ Revisão editorial + glossário + reconstrução/promoção de índice --
+  fechados nas sessões de 26-30/07 (ver histórico acima).
+- 🔴 Backup externo (B2) -- rodou 1x manualmente em 20/07, nunca
+  agendado, 11 dias desatualizado (índice do bucket era de 17/07,
+  `reports/livros_trabalho` no bucket com 177 MB vs 217 MB reais).
+  **Resolvido nesta sessão**, ver seção 2.
+- 🔴 Termos de Uso/Privacidade, aviso de independência, monitoramento
+  (UptimeRobot/Sentry), rotação de log -- nenhum feito, confirmado por
+  varredura direta (nenhuma página, `sentry-sdk` não instalado, nenhum
+  `/etc/logrotate.d/goshinsho`). **Ainda pendentes.**
+- 🟡 Idiomas incomuns -- só PT/EN/ES testados de ponta a ponta.
+- 🔴 Teste de carga, soft launch deliberado -- nunca feitos (36 contas
+  hoje vs. 33 em 20/07, crescimento orgânico pequeno, não uma onda).
+- 🔴 "Freio de mão" automático por custo -- não implementado. Nota nova:
+  o plano original assumia cota mensal como 2ª camada de defesa contra
+  abuso de custo; isso não existe mais desde a virada pra premium
+  gratuito universal (30/07) -- hoje o rate limit é a **única** defesa
+  técnica, vale reavaliar esse ponto especificamente numa sessão futura.
+- ✅ "Painel de métricas de negócio" (apontado como faltante em 20/07) --
+  construído na sessão anterior (dashboard admin reformulado, 31/07).
+
+### 2. Backup externo (B2) agendado e atualizado
+
+`/etc/cron.d/goshinsho-backup` ganhou uma 2ª linha: `scripts/backup_to_b2.sh`
+diariamente às 3h50 (30min depois do backup local existente, às 3h20).
+Rodado manualmente também nesta sessão pra não esperar até amanhã --
+bucket foi de 866 MB/12.365 arquivos (estado de 20/07) para 902 MB/14.692
+arquivos, refletindo as duas reconstruções de índice (28/07, 30/07) e as
+correções de glossário/terminologia desde então. Script em si
+(`scripts/backup_to_b2.sh`) não foi alterado, só passou a rodar sozinho.
+
+### 3. Correção shukumei/unmei (documentada em 30/07, nunca promovida) --
+### achada, sincronizada, reconstruída e promovida
+
+Usuário perguntou diretamente "a última versão dos ajustes de tradução já
+foram subidas pro aplicativo?" -- investigação (comparação de mtimes e
+conteúdo, não suposição) confirmou que **não**: a correção shukumei/unmei
+("destino predeterminado"/"destino mutável", 20 arquivos, tarde/noite de
+30/07) tinha sido aplicada só em `livros_publicacao_pt_revisado/`, nunca
+sincronizada para `reports/livros_trabalho/pt/` nem `textos_portugues/`,
+e por isso nunca entrou em nenhuma reconstrução de índice. O que estava
+em produção até esta sessão era só a correção ANTERIOR do mesmo dia
+("Camadas do Mundo Espiritual", 9 livros, essa sim promovida na hora).
+
+Resolvido: os 20 arquivos sincronizados (backup em
+`reports/livros_trabalho/pt_sync_backup_shukumei_unmei_20260731/`),
+todas as 20 âncoras de segmentação reverificadas com a função real de
+produção (`split_by_anchors`) contra o texto novo -- **100% resolvidas,
+nenhum ajuste manual necessário** (diferente de rodadas anteriores desta
+natureza, que sempre exigiam algum reparo). Promovido para
+`textos_portugues/` (`promote_livros_trabalho_to_produção.py --lang pt
+--apply`), índice PT reconstruído (`build_clean_large_indexes.py --lang
+pt --install`, 8.668 chunks, ~3h10 de execução real -- mais lento que os
+~2h40 da rodada de 30/07, provavelmente por contenção de CPU com o
+reteste da busca agenciada rodando em paralelo) e instalado. Usuário deu
+autorização antecipada explícita ("terminando eu lhe autorizo a promover
+e reiniciar automaticamente") -- produção reiniciada assim que o build
+terminou, sem nova rodada de confirmação. Verificado por 3 camadas: HTTP
+real (`/app`, `/app-pt`, `/doacao` -- 200), e leitura direta do pickle
+instalado confirmando 40 chunks com "destino predeterminado"/"destino
+mutável" no índice que a produção está servindo agora.
+
+### 4. Busca agenciada reavaliada com número real -- 75%→100% no caso mais
+### difícil, causa provável identificada
+
+No meio da sessão anterior eu tinha citado o número de 30/07 (~75% de
+acerto na pergunta mais difícil já testada, "é possível mudar de plano
+espiritual na mesma reencarnação?") como nota da arquitetura de busca.
+Usuário contestou com base no uso real ("todas as perguntas... nível
+excepcional") e pediu reteste -- feito com o código atual, mesma
+metodologia (4 repetições da pergunta mais difícil + perguntas de
+controle sem relação temática, pra não validar só com o caso conhecido).
+**Resultado: 4/4 (100%)**, confirmado lendo o conteúdo completo das
+respostas (não só presença de palavra-chave) -- as duas formulações
+doutrinárias diferentes (destino predeterminado × destino mutável) foram
+separadas corretamente, com citação certa. Perguntas de controle (doenças
+de pele, pragas na agricultura, arte, Johrei/antepassados) também com
+qualidade alta e consistente.
+
+**Achado real, não hipotético**: a melhora bate exatamente com a correção
+da seção 3 -- a fonte que esse teste precisa encontrar
+(`19490825-自観叢書第3篇『霊界叢談』.txt`) estava entre os 20 arquivos
+recém-promovidos. Ou seja, parte do que parecia "limitação estrutural da
+busca" em 30/07 era, pelo menos neste caso, **inconsistência de
+terminologia no próprio corpus** (o texto antigo não usava
+"predeterminado"/"mutável" de forma consistente) -- corrigida no
+conteúdo, não no algoritmo de busca. Resultado salvo em
+`reports/reteste_agentic_31_07.json`. Ressalva honesta: amostra pequena
+(4 repetições), mas direção clara e reproduzível.
+
+### Onde continuar
+
+1. Plano de escala: itens ainda pendentes (Termos/Privacidade, aviso de
+   independência, monitoramento, rotação de log, teste de idiomas
+   incomuns, teste de carga, soft launch deliberado, freio de mão
+   automático de custo) -- nenhum é caro nem tecnicamente complexo,
+   maioria é configuração rápida ou redação de texto.
+2. Backup B2: agendado e atualizado, não precisa de mais nada até o
+   usuário querer testar uma restauração de verdade (item do plano
+   original ainda não feito: "testar a restauração do backup pelo menos
+   uma vez").
+3. Corpus/índice: 100% sincronizado (fonte, staging e produção
+   idênticos), sem pendência conhecida de tradução aguardando promoção.
+4. Se o usuário quiser aprofundar a hipótese da seção 4 (recall ruim =
+   sintoma de inconsistência de terminologia, não só limitação de busca):
+   vale revisitar outros casos antigos de "limitação estrutural"
+   documentados e checar se já foram resolvidos de graça por correções de
+   conteúdo desde então, antes de investir mais em ajuste de algoritmo.
+5. Nenhuma promoção/reinício de produção sem autorização explícita -- a
+   desta sessão já foi dada, não é permanente para trabalho futuro.
