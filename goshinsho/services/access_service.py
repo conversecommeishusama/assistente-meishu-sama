@@ -30,7 +30,16 @@ def record_access(ip, user_agent, user=None, path="/"):
         file.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
-def summarize_access(limit=20000):
+def _parse_timestamp(value):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def summarize_access(limit=20000, since=None, until=None):
     if not ACCESS_LOG_PATH.exists():
         return {"entries": 0, "unique_ips": 0, "unique_devices": 0, "recent": []}
 
@@ -38,9 +47,15 @@ def summarize_access(limit=20000):
     entries = []
     for line in lines:
         try:
-            entries.append(json.loads(line))
+            raw = json.loads(line)
         except json.JSONDecodeError:
             continue
+        ts = _parse_timestamp(raw.get("timestamp"))
+        if since is not None and (ts is None or ts < since):
+            continue
+        if until is not None and (ts is None or ts > until):
+            continue
+        entries.append(raw)
 
     return {
         "entries": len(entries),

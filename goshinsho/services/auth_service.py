@@ -329,8 +329,6 @@ def login_user(email, password, remember=False):
             supabase,
             user,
             defaults={
-                "plano": "gratis",
-                "perguntas_restantes": 5,
                 "data_criacao": datetime.now(timezone.utc).isoformat(),
             },
         )
@@ -383,8 +381,6 @@ def register_user(email, password, *, allow_bot_check=True, form=None):
         supabase,
         user,
         defaults={
-            "plano": "gratis",
-            "perguntas_restantes": 5,
             "data_criacao": datetime.now(timezone.utc).isoformat(),
         },
     )

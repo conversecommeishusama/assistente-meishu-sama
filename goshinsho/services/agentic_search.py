@@ -105,10 +105,17 @@ LIMITE_ESTAGNACAO_RODADAS = 3
 JANELA_PROXIMIDADE = 400
 TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000
 
-# Preços por 1M tokens -- aproximados em 2026-07-29, conferir antes de usar
-# para decisão financeira real (mesma ressalva do piloto).
+# 2026-07-31: preço do deepseek-v4-flash recalibrado contra a fatura REAL
+# (painel de faturamento DeepSeek, 29/07: US$ 0,59 / 13.923.984 tokens =
+# ~US$ 0,0424/1M, blended) -- a tabela assumida antes ($0,28/$0,42)
+# superestimava em ~6-7x porque o código nunca lia os campos de cache que a
+# API retorna, e o laço agenciado reenvia um prefixo quase idêntico a cada
+# rodada de ferramenta (fortemente descontado por cache de contexto em
+# disco). Ver mesma constante/nota em deepseek_usage_service.py -- fonte
+# única da verdade é lá, este valor é mantido igual só para o "custo"
+# autorreportado por esta função não divergir do dashboard admin.
 PRECOS = {
-    "deepseek-v4-flash": {"entrada": 0.28, "saida": 0.42},
+    "deepseek-v4-flash": {"entrada": 0.0424, "saida": 0.0424},
     "claude-sonnet-5": {"entrada": 3.0, "saida": 15.0},
     "claude-haiku-4-5-20251001": {"entrada": 1.0, "saida": 5.0},
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=146">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=147">
 </head>
 <body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}">
     <aside class="sidebar" id="sidebar">
@@ -64,14 +64,14 @@
                 {% include "_developer_nav.html" %}
                 {% if user %}
                     <span class="user-pill">{{ user.email }}</span>
-                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}">Apoiar ❤</a>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
                     <form action="{{ url_for('web.logout') }}" method="post">
                         <button type="submit" data-i18n="logout">Sair</button>
                     </form>
                 {% else %}
                     <button type="button" data-panel="login-panel" data-i18n="login">Login</button>
                     <button type="button" data-panel="register-panel" data-i18n="register">Cadastro</button>
-                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}">Apoiar ❤</a>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
                 {% endif %}
                 <button type="button" data-panel="contact-panel" data-i18n="contact">Contato</button>
             </nav>
@@ -379,31 +379,27 @@
                 </p>
                 <button type="button" id="quota-signup-button" data-panel="register-panel" data-i18n="freeAccount">Criar conta gratuita</button>
             {% else %}
-                <p class="quota-pricing-note" id="quota-pricing-note">
+                <p class="quota-pricing-note" id="quota-pricing-note" data-i18n="quotaPricingText">
                     O Goshinsho é gratuito para todos. Cada pergunta usa inteligência artificial e
                     servidores em nuvem, que têm custo real de operação — se o app te ajuda, considere
                     apoiar com uma doação voluntária.
                 </p>
-                <a href="{{ url_for('web.doacao') }}">Fazer uma doação</a>
+                <a href="{{ url_for('web.doacao') }}" data-i18n="makeDonation">Fazer uma doação</a>
             {% endif %}
         </section>
-
-        {% if not user %}
-            <p class="login-hint" data-i18n="loginHint">Para fazer perguntas, crie sua conta ou faça login.</p>
-        {% endif %}
     </main>
 
     <div class="language-dialog" id="subscription-intro-dialog" aria-hidden="true">
         <div class="language-dialog-card subscription-intro-card" role="dialog" aria-modal="true" aria-labelledby="subscription-intro-title">
-            <p class="eyebrow">Sobre o Goshinsho</p>
-            <h2 id="subscription-intro-title">O Goshinsho é gratuito para todos</h2>
-            <p id="subscription-intro-text">
+            <p class="eyebrow" data-i18n="subscriptionIntroEyebrow">Sobre o Goshinsho</p>
+            <h2 id="subscription-intro-title" data-i18n="subscriptionIntroTitle">O Goshinsho é gratuito para todos</h2>
+            <p id="subscription-intro-text" data-i18n="subscriptionIntroText">
                 Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, que têm custo real de operação.
                 Doações voluntárias ajudam a manter o aplicativo disponível e a melhorar as respostas.
             </p>
             <div class="language-dialog-actions">
-                <button type="button" class="language-cancel" id="subscription-intro-grant">Fazer uma doação</button>
-                <button type="button" class="language-confirm" id="subscription-intro-confirm">Entendi</button>
+                <button type="button" class="language-cancel" id="subscription-intro-grant" data-i18n="makeDonation">Fazer uma doação</button>
+                <button type="button" class="language-confirm" id="subscription-intro-confirm" data-i18n="subscriptionIntroConfirm">Entendi</button>
             </div>
         </div>
     </div>
@@ -421,6 +417,6 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=148"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=149"></script>
 </body>
 </html>

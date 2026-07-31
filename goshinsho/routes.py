@@ -55,7 +55,12 @@ from .services.conversation_service import (
     save_feedback,
     save_message,
 )
-from .services.deepseek_usage_service import reset_deepseek_usage_context, set_deepseek_usage_context, summarize_deepseek_usage
+from .services.deepseek_usage_service import (
+    record_deepseek_usage_totals,
+    reset_deepseek_usage_context,
+    set_deepseek_usage_context,
+    summarize_deepseek_usage,
+)
 from .services.email_service import is_email_configured, send_contact_emails
 from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
 from .services.support_service import (
@@ -97,6 +102,13 @@ DONATION_SUGGESTED_AMOUNTS_AVULSA = [20, 50, 100]
 DONATION_SUGGESTED_AMOUNTS_RECORRENTE = [20, 50]
 DONATION_MIN_BRL = 5
 DONATION_MAX_BRL = 10000
+
+# 2026-07-31: /doacao é uma página carregada isoladamente (fora da SPA de
+# app.js), mas precisa respeitar o idioma já escolhido pelo usuário --
+# traduções aplicadas no cliente via localStorage["goshinsho-language"]
+# (mesma chave usada em app.js), ver templates/doacao.html.
+with open(PROJECT_ROOT / "goshinsho" / "data" / "doacao_i18n.json", encoding="utf-8") as _f:
+    DOACAO_I18N = json.load(_f)
 
 
 def _runtime_health():
@@ -398,9 +410,18 @@ def api_admin_dashboard():
     _, error = _require_developer_json()
     if error:
         return error
-    from .services.admin_service import build_admin_dashboard
+    from .services.admin_service import RANGE_CHOICES, build_admin_dashboard
 
-    return jsonify(build_admin_dashboard())
+    range_key = request.args.get("range", "all")
+    if range_key not in RANGE_CHOICES:
+        range_key = "all"
+    return jsonify(
+        build_admin_dashboard(
+            range_key=range_key,
+            date_from=request.args.get("from"),
+            date_to=request.args.get("to"),
+        )
+    )
 
 
 @web_bp.get("/api/admin/support/tickets")
@@ -573,6 +594,7 @@ def doacao():
         user=user,
         valores_avulsa=DONATION_SUGGESTED_AMOUNTS_AVULSA,
         valores_recorrente=DONATION_SUGGESTED_AMOUNTS_RECORRENTE,
+        doacao_i18n=DOACAO_I18N,
     )
 
 
@@ -1000,6 +1022,15 @@ def api_chat():
                 r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
+                # 2026-07-31: sem isso, o modo agenciado (motor único desde
+                # 30/07) nunca aparecia em logs/deepseek_usage.jsonl -- o
+                # dashboard admin ficava cego pra quase todo o tráfego real.
+                record_deepseek_usage_totals(
+                    r.get("tokens_entrada"),
+                    r.get("tokens_saida"),
+                    "agentic_answer",
+                    model=r.get("modelo", "deepseek-v4-flash"),
+                )
             except Exception as exc:
                 error_holder["error"] = exc
             finally:

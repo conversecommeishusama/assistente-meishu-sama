@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import datetime, timezone
 
 from ..supabase_client import get_supabase
@@ -94,6 +95,37 @@ def save_feedback(message_id, user_id, feedback):
             "created_at": datetime.now(timezone.utc).isoformat(),
         }
     ).execute()
+
+
+def count_user_questions(since=None, until=None):
+    """Quantas perguntas (mensagens role="user") cada conta fez, no
+    período dado -- para o dashboard admin. Fonte é `mensagens`/`conversas`
+    (histórico completo desde sempre, não o log de uso de DeepSeek, que só
+    passou a cobrir o modo agenciado em 2026-07-31)."""
+    supabase = get_supabase()
+    query = supabase.table("mensagens").select("conversa_id,created_at").eq("role", "user")
+    if since is not None:
+        query = query.gte("created_at", since.isoformat())
+    if until is not None:
+        query = query.lte("created_at", until.isoformat())
+    messages = query.execute().data or []
+    if not messages:
+        return {}
+
+    conversa_ids = list({m["conversa_id"] for m in messages if m.get("conversa_id")})
+    conversa_to_user = {}
+    for i in range(0, len(conversa_ids), 500):
+        chunk = conversa_ids[i : i + 500]
+        response = supabase.table("conversas").select("id,user_id").in_("id", chunk).execute()
+        for row in response.data or []:
+            conversa_to_user[row["id"]] = row["user_id"]
+
+    counts = defaultdict(int)
+    for message in messages:
+        user_id = conversa_to_user.get(message.get("conversa_id"))
+        if user_id:
+            counts[user_id] += 1
+    return dict(counts)
 
 
 def save_contact(name, email, message):

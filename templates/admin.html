@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho Admin</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=trial1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=range1">
 </head>
 <body>
     <main class="admin-shell">
@@ -14,29 +14,45 @@
                 {% include "_developer_nav.html" %}
             </nav>
         </header>
+
+        <section class="range-bar" id="range-bar">
+            <div class="range-options" role="group" aria-label="Filtrar por período">
+                <button type="button" data-range="all" class="range-option active">Desde o início</button>
+                <button type="button" data-range="6m" class="range-option">Últimos 6 meses</button>
+                <button type="button" data-range="1m" class="range-option">Último mês</button>
+                <button type="button" data-range="7d" class="range-option">Última semana</button>
+                <button type="button" data-range="today" class="range-option">Hoje</button>
+                <button type="button" data-range="custom" class="range-option">Personalizado</button>
+            </div>
+            <div class="range-custom" id="range-custom" hidden>
+                <label>De <input type="date" id="range-from"></label>
+                <label>Até <input type="date" id="range-to"></label>
+                <button type="button" id="range-custom-apply">Aplicar</button>
+            </div>
+            <span class="range-note" id="range-note"></span>
+        </section>
+
         <section class="metric-grid">
             <article class="metric-card"><span>Usuários</span><strong id="metric-users">-</strong></article>
             <article class="metric-card"><span>Premium</span><strong id="metric-premium">-</strong></article>
+            <article class="metric-card"><span>Perguntas no período</span><strong id="metric-questions">-</strong></article>
             <article class="metric-card"><span>IPs únicos</span><strong id="metric-ips">-</strong></article>
             <article class="metric-card"><span>Aparelhos únicos</span><strong id="metric-devices">-</strong></article>
-            <article class="metric-card"><span>Em experiência</span><strong id="metric-trial">-</strong></article>
-            <article class="metric-card"><span>Limitados</span><strong id="metric-limited">-</strong></article>
             <article class="metric-card"><span>Tokens usados</span><strong id="metric-tokens">-</strong></article>
+            <article class="metric-card"><span>Custo no período</span><strong id="metric-cost-total">-</strong></article>
             <article class="metric-card"><span>Custo/pergunta</span><strong id="metric-cost">-</strong></article>
-            <article class="metric-card"><span>Assinaturas</span><strong id="metric-sales">-</strong></article>
+            <article class="metric-card"><span>Doações no período</span><strong id="metric-donations">-</strong></article>
+            <article class="metric-card"><span>Doações recorrentes ativas</span><strong id="metric-recurring">-</strong></article>
             <article class="metric-card"><span>Tickets abertos</span><strong id="metric-support">-</strong></article>
-            <article class="metric-card"><span>Solicitações premium</span><strong id="metric-grants">-</strong></article>
         </section>
         <section class="admin-grid">
-            <article class="admin-card"><h2>Vendas</h2><div id="sales-box" class="details-box">Carregando...</div></article>
+            <article class="admin-card"><h2>Doações</h2><div id="donations-box" class="details-box">Carregando...</div></article>
             <article class="admin-card"><h2>DeepSeek</h2><div id="tokens-box" class="details-box">Carregando...</div></article>
-            <article class="admin-card"><h2>Usuários cadastrados</h2><div id="users-box" class="details-box users-box">Carregando...</div></article>
+            <article class="admin-card admin-card-wide"><h2>Usuários cadastrados</h2><div id="users-box" class="details-box users-box">Carregando...</div></article>
             <article class="admin-card"><h2>Atendimentos</h2><div id="support-list" class="support-list">Carregando...</div></article>
-            <article class="admin-card"><h2>Solicitações de premium gratuito</h2><div id="grant-list" class="support-list">Carregando...</div></article>
-            <article class="admin-card"><h2>Analisar solicitação</h2><div id="grant-detail" class="ticket-detail">Selecione uma solicitação.</div><form id="grant-review-form" class="reply-form"><textarea id="grant-review-note" placeholder="Observação opcional para o solicitante..."></textarea><div class="reply-actions"><button type="button" id="grant-approve">Aprovar premium gratuito</button><button type="button" id="grant-reject">Recusar solicitação</button></div></form></article>
             <article class="admin-card"><h2>Responder suporte</h2><div id="ticket-detail" class="ticket-detail">Selecione um atendimento.</div><form id="reply-form" class="reply-form"><textarea id="reply-message" placeholder="Responder em português..." required></textarea><div class="reply-actions"><button type="submit">Enviar resposta</button><button type="button" id="close-ticket">Marcar resolvido</button></div></form></article>
         </section>
     </main>
-    <script src="{{ url_for('static', filename='js/admin.js') }}?v=grant1"></script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}?v=range1"></script>
 </body>
 </html>

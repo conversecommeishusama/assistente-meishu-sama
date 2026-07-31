@@ -1,29 +1,30 @@
 const metricUsers = document.querySelector("#metric-users");
 const metricPremium = document.querySelector("#metric-premium");
-const metricTrial = document.querySelector("#metric-trial");
-const metricLimited = document.querySelector("#metric-limited");
+const metricQuestions = document.querySelector("#metric-questions");
 const metricIps = document.querySelector("#metric-ips");
 const metricDevices = document.querySelector("#metric-devices");
 const metricTokens = document.querySelector("#metric-tokens");
+const metricCostTotal = document.querySelector("#metric-cost-total");
 const metricCost = document.querySelector("#metric-cost");
-const metricSales = document.querySelector("#metric-sales");
+const metricDonations = document.querySelector("#metric-donations");
+const metricRecurring = document.querySelector("#metric-recurring");
 const metricSupport = document.querySelector("#metric-support");
-const metricGrants = document.querySelector("#metric-grants");
-const salesBox = document.querySelector("#sales-box");
+const donationsBox = document.querySelector("#donations-box");
 const tokensBox = document.querySelector("#tokens-box");
 const usersBox = document.querySelector("#users-box");
 const supportList = document.querySelector("#support-list");
-const grantList = document.querySelector("#grant-list");
-const grantDetail = document.querySelector("#grant-detail");
-const grantReviewNote = document.querySelector("#grant-review-note");
-const grantApproveButton = document.querySelector("#grant-approve");
-const grantRejectButton = document.querySelector("#grant-reject");
 const ticketDetail = document.querySelector("#ticket-detail");
 const replyForm = document.querySelector("#reply-form");
 const replyMessage = document.querySelector("#reply-message");
 const closeTicketButton = document.querySelector("#close-ticket");
+const rangeOptions = document.querySelectorAll(".range-option");
+const rangeCustom = document.querySelector("#range-custom");
+const rangeFrom = document.querySelector("#range-from");
+const rangeTo = document.querySelector("#range-to");
+const rangeCustomApply = document.querySelector("#range-custom-apply");
+const rangeNote = document.querySelector("#range-note");
 let selectedTicket = null;
-let selectedGrant = null;
+let currentRange = "all";
 
 function number(value) {
     return new Intl.NumberFormat("pt-BR").format(value || 0);
@@ -31,6 +32,10 @@ function number(value) {
 
 function moneyUsd(value) {
     return `US$ ${(value || 0).toFixed(4)}`;
+}
+
+function moneyBrl(value) {
+    return `R$ ${(value || 0).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 async function jsonFetch(url, options = {}) {
@@ -54,144 +59,91 @@ function escapeHtml(value) {
         .replace(/"/g, "&quot;");
 }
 
-function formatTrialRemaining(access) {
-    if (!access?.is_trial) return "";
-    const days = access.trial_days_remaining || 0;
-    const hours = access.trial_hours_remaining || 0;
-    if (days > 0 && hours > 0) return `${days}d ${hours}h restantes`;
-    if (days > 0) return `${days} dia(s) restante(s)`;
-    if (hours > 0) return `${hours}h restante(s)`;
-    return "Expira em breve";
-}
-
 function formatAccessDetail(user) {
     const access = user.access || {};
     if (access.access_status === "premium") {
-        return `<span class="access-badge premium">Premium · ilimitado</span>`;
+        return `<span class="access-badge premium">Premium</span>`;
     }
-    if (access.access_status === "trial") {
-        return `<span class="access-badge trial">Experiência · ${formatTrialRemaining(access)}</span>`;
+    return `<span class="access-badge quota">${escapeHtml(access.access_label || "Gratuito")}</span>`;
+}
+
+function dashboardUrl() {
+    const params = new URLSearchParams({ range: currentRange });
+    if (currentRange === "custom") {
+        if (rangeFrom.value) params.set("from", rangeFrom.value);
+        if (rangeTo.value) params.set("to", rangeTo.value);
     }
-    if (access.access_status === "limited") {
-        return `<span class="access-badge limited">Limitado · 0 de ${access.monthly_limit || 5} perguntas</span>`;
+    return `/api/admin/dashboard?${params.toString()}`;
+}
+
+function updateRangeNote(range) {
+    if (!rangeNote) return;
+    if (!range?.since && !range?.until) {
+        rangeNote.textContent = "";
+        return;
     }
-    return `<span class="access-badge quota">Gratuito · ${access.remaining_questions ?? 0} de ${access.monthly_limit || 5} perguntas</span>`;
+    const since = range.since ? new Date(range.since).toLocaleDateString("pt-BR") : "o início";
+    const until = range.until ? new Date(range.until).toLocaleDateString("pt-BR") : "agora";
+    rangeNote.textContent = `Período: ${since} até ${until}`;
 }
 
 function renderDashboard(data) {
+    updateRangeNote(data.range);
     metricUsers.textContent = number(data.users?.total);
     metricPremium.textContent = number(data.users?.premium);
-    if (metricTrial) metricTrial.textContent = number(data.users?.trial_active);
-    if (metricLimited) metricLimited.textContent = number(data.users?.limited);
+    if (metricQuestions) metricQuestions.textContent = number(data.users?.questions_total);
     metricIps.textContent = number(data.access?.unique_ips);
     metricDevices.textContent = number(data.access?.unique_devices);
     metricTokens.textContent = number(data.tokens?.total_tokens);
-    metricCost.textContent = `R$ ${(data.tokens?.cost?.per_answer_brl || 0).toFixed(3)}`;
-    metricSales.textContent = data.sales?.available ? number(data.sales.active_subscriptions) : "-";
-    metricSupport.textContent = number(data.support?.open);
-    if (metricGrants) metricGrants.textContent = number(data.premium_grants?.pending);
-
-    salesBox.innerHTML = data.sales?.available
-        ? `<p>Assinaturas ativas: <strong>${number(data.sales.active_subscriptions)}</strong></p><p>Checkouts pagos recentes: <strong>${number(data.sales.paid_sessions)}</strong></p><p>Receita recente: <strong>${data.sales.currency} ${number(data.sales.total_revenue)}</strong></p>`
-        : (data.sales?.message || "Stripe indisponível.");
 
     const cost = data.tokens?.cost || {};
+    metricCostTotal.textContent = `${moneyUsd(cost.total_usd)} / ${moneyBrl(cost.total_brl)}`;
+    metricCost.textContent = moneyBrl(cost.per_answer_brl);
+
+    const donations = data.donations || {};
+    if (metricDonations) metricDonations.textContent = donations.available ? moneyBrl(donations.total_brl) : "-";
+    if (metricRecurring) metricRecurring.textContent = donations.available && donations.active_recurring != null ? number(donations.active_recurring) : "-";
+    metricSupport.textContent = number(data.support?.open);
+
+    donationsBox.innerHTML = donations.available
+        ? `<p>Total no período: <strong>${moneyBrl(donations.total_brl)}</strong></p>
+           <p>Doações registradas: <strong>${number(donations.count)}</strong></p>
+           <p>Recorrentes ativas agora: <strong>${number(donations.active_recurring)}</strong></p>
+           ${(donations.by_user || []).slice(0, 8).map((row) => `<div class="user-row"><strong>${escapeHtml(row.email)}</strong><small>${moneyBrl(row.total_brl)} · ${number(row.count)} doação(ões)${row.last_at ? " · última em " + new Date(row.last_at).toLocaleDateString("pt-BR") : ""}</small></div>`).join("")}`
+        : (donations.message || "Stripe indisponível.");
+
     tokensBox.innerHTML = `
         <p>Entradas: <strong>${number(data.tokens?.prompt_tokens)}</strong></p>
         <p>Saídas: <strong>${number(data.tokens?.completion_tokens)}</strong></p>
-        <p>Custo total estimado: <strong>${moneyUsd(cost.total_usd)}</strong></p>
-        <p>Custo médio por pergunta: <strong>${moneyUsd(cost.per_answer_usd)} / R$ ${(cost.per_answer_brl || 0).toFixed(4)}</strong></p>
+        <p>Custo total no período: <strong>${moneyUsd(cost.total_usd)} / ${moneyBrl(cost.total_brl)}</strong></p>
+        <p>Custo médio por pergunta: <strong>${moneyUsd(cost.per_answer_usd)} / ${moneyBrl(cost.per_answer_brl)}</strong></p>
         <p>Respostas contabilizadas: <strong>${number(cost.answer_count)}</strong></p>
+        <p class="policy-note">Taxa aplicada: US$ ${(cost.rate_usd_per_1m_tokens || 0).toFixed(4)} / 1M tokens -- recalibrada contra a fatura real da DeepSeek em 30/07/2026 (ver CLAUDE.md).</p>
     `;
 
     const policyLine = `<p class="policy-note">Único sistema de acesso: <strong>premium gratuito</strong> para toda conta cadastrada (sem trial, sem cota mensal). Cartão de crédito é usado só para doação voluntária.</p>`;
-
-    usersBox.innerHTML = policyLine + (data.users?.all || [])
+    const rows = (data.users?.all || [])
         .map((user) => {
-            const created = user.data_criacao ? new Date(user.data_criacao).toLocaleString("pt-BR") : "data desconhecida";
-            return `<div class="user-row"><strong>${escapeHtml(user.email || "sem e-mail")}</strong>${formatAccessDetail(user)}<small>Cadastro: ${escapeHtml(created)} · plano ${escapeHtml(user.plano || "gratis")}</small></div>`;
+            const created = user.data_criacao ? new Date(user.data_criacao).toLocaleDateString("pt-BR") : "?";
+            const lastDonation = user.donations_last_at ? new Date(user.donations_last_at).toLocaleDateString("pt-BR") : "-";
+            return `<tr>
+                <td>${escapeHtml(user.email || "sem e-mail")}</td>
+                <td>${formatAccessDetail(user)}</td>
+                <td>${created}</td>
+                <td class="num">${number(user.questions_count)}</td>
+                <td class="num">${moneyBrl(user.donations_total_brl)}</td>
+                <td class="num">${number(user.donations_count)}</td>
+                <td>${lastDonation}</td>
+            </tr>`;
         })
-        .join("") || "Nenhum usuário cadastrado.";
+        .join("");
+    usersBox.innerHTML = policyLine + (rows
+        ? `<div class="user-table-wrap"><table class="user-table">
+            <thead><tr><th>E-mail</th><th>Plano</th><th>Cadastro</th><th>Perguntas</th><th>Doado (R$)</th><th>Doações</th><th>Última doação</th></tr></thead>
+            <tbody>${rows}</tbody>
+           </table></div>`
+        : "Nenhum usuário cadastrado.");
 }
-
-function formatGrantStatus(status) {
-    if (status === "pending") return "Em análise";
-    if (status === "approved") return "Aprovada";
-    if (status === "rejected") return "Recusada";
-    return status || "Desconhecido";
-}
-
-function renderGrants(grants) {
-    if (!grantList) return;
-    grantList.innerHTML = "";
-    const pending = (grants || []).filter((grant) => grant.status === "pending");
-    const items = pending.length ? pending : grants || [];
-    if (!items.length) {
-        grantList.textContent = "Nenhuma solicitação registrada.";
-        return;
-    }
-    items.forEach((grant) => {
-        const item = document.createElement("button");
-        item.type = "button";
-        item.className = `support-item ${selectedGrant?.id === grant.id ? "active" : ""}`;
-        item.dataset.grantId = grant.id;
-        item.innerHTML = `<strong>${escapeHtml(grant.full_name || "Sem nome")}</strong><span>${formatGrantStatus(grant.status)} · ${escapeHtml(grant.financial_situation_label || grant.financial_situation || "")}</span><small>${escapeHtml(grant.user_email || "sem e-mail")}</small>`;
-        item.addEventListener("click", () => selectGrant(grant));
-        grantList.appendChild(item);
-    });
-}
-
-function selectGrant(grant) {
-    selectedGrant = grant;
-    if (!grantDetail) return;
-    grantDetail.innerHTML = `
-        <strong>${escapeHtml(grant.full_name || "Solicitante")}</strong>
-        <span>${formatGrantStatus(grant.status)} · ${escapeHtml(grant.created_at || "")}</span>
-        <p><strong>E-mail:</strong> ${escapeHtml(grant.user_email || "")}</p>
-        <p><strong>Telefone:</strong> ${escapeHtml(grant.phone || "")}</p>
-        <p><strong>Local:</strong> ${escapeHtml(grant.city_state || "")}, ${escapeHtml(grant.country || "")}</p>
-        <p><strong>Nascimento:</strong> ${escapeHtml(grant.birth_date || "não informado")}</p>
-        <p><strong>Vínculo:</strong> ${escapeHtml(grant.community_affiliation || "não informado")}</p>
-        <p><strong>Ocupação:</strong> ${escapeHtml(grant.occupation || "não informado")}</p>
-        <p><strong>Situação financeira:</strong> ${escapeHtml(grant.financial_situation_label || grant.financial_situation || "")}</p>
-        <p><strong>Domicílio:</strong> ${escapeHtml(String(grant.household_size || "não informado"))}</p>
-        <p><strong>Motivo:</strong> ${escapeHtml(grant.reason || "")}</p>
-        <p><strong>Uso pretendido:</strong> ${escapeHtml(grant.usage_intent || "")}</p>
-        ${grant.admin_note ? `<p><strong>Observação:</strong> ${escapeHtml(grant.admin_note)}</p>` : ""}
-    `;
-    grantList?.querySelectorAll(".support-item").forEach((item) => item.classList.remove("active"));
-    grantList?.querySelector(`[data-grant-id="${grant.id}"]`)?.classList.add("active");
-    if (grantReviewNote) grantReviewNote.value = grant.admin_note || "";
-}
-
-async function loadGrants() {
-    const data = await jsonFetch("/api/admin/premium-grants");
-    renderGrants(data.grants || []);
-    if (selectedGrant) {
-        const refreshed = (data.grants || []).find((grant) => grant.id === selectedGrant.id);
-        if (refreshed) selectGrant(refreshed);
-    }
-}
-
-async function reviewGrant(decision) {
-    if (!selectedGrant) return alert("Selecione uma solicitação.");
-    const note = (grantReviewNote?.value || "").trim();
-    const data = await jsonFetch(`/api/admin/premium-grants/${selectedGrant.id}/review`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ decision, note }),
-    });
-    selectGrant(data.grant);
-    await Promise.all([loadGrants(), loadDashboard()]);
-}
-
-grantApproveButton?.addEventListener("click", () => {
-    reviewGrant("approved").catch((error) => alert(error.message));
-});
-
-grantRejectButton?.addEventListener("click", () => {
-    reviewGrant("rejected").catch((error) => alert(error.message));
-});
 
 function renderTickets(tickets) {
     supportList.innerHTML = "";
@@ -215,7 +167,7 @@ function selectTicket(ticket) {
 }
 
 async function loadDashboard() {
-    renderDashboard(await jsonFetch("/api/admin/dashboard"));
+    renderDashboard(await jsonFetch(dashboardUrl()));
 }
 
 async function loadTickets() {
@@ -245,9 +197,22 @@ closeTicketButton?.addEventListener("click", async () => {
     await loadTickets();
 });
 
-Promise.all([loadDashboard(), loadTickets(), loadGrants()]).catch((error) => alert(error.message));
+rangeOptions.forEach((button) => {
+    button.addEventListener("click", () => {
+        currentRange = button.dataset.range;
+        rangeOptions.forEach((b) => b.classList.toggle("active", b === button));
+        if (rangeCustom) rangeCustom.hidden = currentRange !== "custom";
+        if (currentRange !== "custom") loadDashboard().catch((error) => alert(error.message));
+    });
+});
+
+rangeCustomApply?.addEventListener("click", () => {
+    if (!rangeFrom.value || !rangeTo.value) return alert("Escolha as duas datas.");
+    loadDashboard().catch((error) => alert(error.message));
+});
+
+Promise.all([loadDashboard(), loadTickets()]).catch((error) => alert(error.message));
 setInterval(() => {
     loadDashboard().catch(() => {});
     loadTickets().catch(() => {});
-    loadGrants().catch(() => {});
 }, 15000);

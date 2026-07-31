@@ -53,6 +53,9 @@ def suggest_search_terms(question: str) -> str:
             temperature=0,
             max_tokens=700,
         )
+        from .deepseek_usage_service import record_deepseek_usage
+
+        record_deepseek_usage(response, "term_fallback")
         text = (response.choices[0].message.content or "").strip()
     except Exception:
         logger.warning("llm_term_fallback: falha ao chamar DeepSeek", exc_info=True)
