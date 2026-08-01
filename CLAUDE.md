@@ -5780,3 +5780,166 @@ conteúdo, não no algoritmo de busca. Resultado salvo em
    conteúdo desde então, antes de investir mais em ajuste de algoritmo.
 5. Nenhuma promoção/reinício de produção sem autorização explícita -- a
    desta sessão já foi dada, não é permanente para trabalho futuro.
+
+## Sessão 2026-07-31/08-01 (mesmo fio) -- diagnóstico real do gap de
+## tempo (latência), e investigação de formato de resposta: redundância
+## explicação/citação -- 4 iterações até "sem citação literal"
+
+### Diagnóstico real da discrepância de tempo (não "sorte do servidor")
+
+Usuário cronometrou a mesma pergunta difícil duas vezes na produção real
+(47s, depois 41s) e contestou -- com razão -- minha primeira explicação
+("variação aleatória do servidor DeepSeek") como estatisticamente
+implausível. Investigação real, com instrumentação por chamada de API
+(não só agregado), encontrou a causa mecânica: **o tempo total é dominado
+pela chamada FINAL de síntese (gerar a resposta em prosa), cujo custo
+escala com o TAMANHO da resposta gerada (decodificação é sequencial,
+token a token)** -- numa repetição instrumentada, 7 rodadas de busca
+levaram 27,9s no total (1,9-6,2s cada, rápidas), mas a chamada final
+sozinha levou 41,9s pra gerar ~5.400 tokens de resposta. Combinado com
+**variação real no número de rodadas de busca que o próprio modelo decide
+fazer** (já documentado no projeto: de 8 a 40 rodadas pra essa mesma
+pergunta, dependendo do caminho de raciocínio) -- não é hipótese, é
+estocasticidade real do laço agenciado, testável e reproduzida diversas
+vezes nesta sessão. Achado auxiliar, confirmado no log do systemd: o
+timeout do gunicorn (`--timeout 180`) mata o worker exatamente aos 180s
+quando uma chamada ultrapassa esse tempo -- gera resposta vazia, não erro
+visível ao usuário -- explica pelo menos parte dos casos mais extremos já
+registrados. Não foi feita nenhuma mudança de código a partir desse
+diagnóstico nesta sessão (ficou só investigação + explicação ao usuário).
+
+### Comparativo sequencial real: modelo atual × busca em lotes
+
+A pedido do usuário, refeito o comparativo `pt_agentic` vs. "busca em
+lotes" (agrupar várias buscas na mesma rodada, regra 20 do
+`SYSTEM_PROMPT`, já criada em sessão anterior mas nunca testada de forma
+sequencial/sem concorrência) -- 8 perguntas, 100% sequencial (nunca duas
+chamadas de API simultâneas, pra eliminar a inflação de tempo por
+contenção que tinha distorcido medições anteriores). Resultado limpo:
+**lotes venceu em tempo nas 8 de 8 perguntas** -- 78,1s médio contra
+103,5s do modelo atual (24% mais rápido), menos rodadas (6,1 vs. 9,9
+médias) e menor custo (US$0,0064 vs. US$0,0101 médio). Achado à parte: o
+modelo atual devolveu resposta vazia na pergunta difícil (172s, 9
+rodadas) -- o mesmo bug de resposta vazia já catalogado, reproduzido de
+novo. Scripts e dados ficam no scratchpad da sessão (fora do git, como
+sempre) -- `agentic_v3_lotes.py`, `reports/comparativo_sequencial_lotes_31_07.json`.
+**A "busca em lotes" continua só testada, não integrada a `routes.py`** --
+regra 20 existe só nas variantes de teste do scratchpad, não em
+`goshinsho/services/agentic_search.py` real.
+
+### Investigação de formato de resposta: redundância explicação/citação
+
+Usuário notou que, como a tradução do corpus melhorou muito nas últimas
+sessões (texto já sai como prosa doutrinária limpa), o formato atual
+(regra 9, "explicação por tema, com citação confirmatória" -- explicar
+com palavras próprias e DEPOIS citar o trecho literal) ficou redundante:
+a explicação e a citação dizem quase a mesma coisa duas vezes. Pediu pra
+testar alternativas, culminando na direção final abaixo. **Nenhuma dessas
+mudanças foi commitada ainda como padrão de produção** (só a versão
+"sem citação", ver seção seguinte, está a caminho disso) -- as tentativas
+intermediárias ficaram só no scratchpad.
+
+**Tentativa 1 -- regra 9 "relaxada"** (só parafraseia quando agrega algo
+que a citação sozinha não deixa claro): testada, tamanho médio da
+resposta caiu 26% (6.249→4.353 caracteres) -- mas o **usuário verificou
+as respostas e confirmou que a redundância continuava**: a frase de
+abertura de cada tema ainda reformulava o conteúdo da citação que vinha
+logo depois (ex.: "O Ohikari é... no qual entra a própria luz divina no
+momento da escrita" seguido de citação dizendo quase o mesmo). A regra
+permissiva ("pode citar direto quando já é claro") não bastou -- o modelo
+manteve o hábito de parafrasear por padrão.
+
+**Tentativa 2 -- regra 9 "estrita"** (proíbe explicitamente que a frase de
+abertura antecipe CONTEÚDO da citação; só permite CONTEXTO PURO -- quem
+pergunta, quando, por quê -- com teste embutido na própria regra: "se o
+leitor lesse só a frase de abertura, já saberia a resposta? se sim, é
+parafraseio, reescreva"): tamanho caiu 46% (6.249→3.368 caracteres),
+verificação qualitativa confirmou o padrão resolvido (ex.: "Em diálogo
+com uma jovem de 23 anos que tinha desde os 6 anos uma mancha branca na
+pele, Meishu-Sama respondeu: 'Doenças de pele, além das espirituais, são
+toxinas medicamentosas...'" -- frase de abertura é só contexto, não
+conteúdo). **Usuário, porém, não gostou da estrutura em si** ("acho que
+voltar ao modo resposta direta e com citações teria sentido") -- a
+objeção não era mais sobre redundância de conteúdo, era sobre o RITMO
+mecânico do formato (cabeçalho → frase → bloco de citação, repetido por
+tema).
+
+**Tentativa 3 -- prosa corrida com citação tecida na frase** (sem
+cabeçalho ### obrigatório a menos que 4+ fontes distintas; citação
+literal entra DENTRO da frase, não em bloco separado): gerou leitura bem
+mais natural, mas o usuário esclareceu que não era essa a mudança pedida
+-- ele queria a MESMA organização por tema já testada, só sem citação
+alguma no texto exibido, e sugeriu primeiro um atalho barato (sem chamada
+de API nova): pegar uma resposta já gerada COM citação (do teste de
+lotes, rodada 1) e simplesmente remover as linhas de citação em bloco por
+pós-processamento -- funcionou bem, mostrando que a explicação por tema
+já era, sozinha, um conteúdo substantivo e legível (a "redundância"
+original era ter as duas coisas juntas, não que a explicação sozinha
+fosse fraca).
+
+**Tentativa 4 (direção atual) -- regra 9 sem exigência de citação
+literal**: usuário pediu para ir além do pós-processamento e deixar o
+PRÓPRIO modelo escrever melhor, já sabendo que não precisa encaixar
+citação exata -- "agora ele pode melhorar ainda mais a resposta dele sem
+as citações". Nova regra 9 (`agentic_v7_sem_citacao.py`, scratchpad):
+mantém organização por tema (### subtítulo), explicação completa e fiel
+ao sentido dos trechos, mas SEM citação literal nem `[arquivo.txt]` no
+texto -- precisão continua obrigatória (nada que os trechos não
+sustentem), só a citação exata deixa de ser exigida. Regra 10 (proibição
+de fundir fontes diferentes) mantida intacta, sem mudança. **Resultado do
+teste isolado (1 pergunta, Ohikari)**: 48,6s, 4 rodadas, US$0,00211 -- o
+mais rápido e mais barato de todos os formatos testados nesta sessão --
+com prosa notavelmente mais rica e conectada (ex.: interpretação positiva
+de perder o Ohikari, que antes ficava perdida entre citações soltas, aqui
+entra natural no parágrafo de proteção divina).
+
+**Trade-off explícito, levantado mas não resolvido**: sem citação
+literal visível, perde-se a camada de verificabilidade que a citação
+oferecia ao usuário (poder conferir a fonte exata) -- o `validar_citacoes`
+(`agentic_search.py`) também perde sentido nesse modo, já que não há mais
+string entre aspas pra validar contra o acervo. Grounding continua vindo
+da pesquisa real (o modelo só pode responder com o que as ferramentas
+retornaram), mas isso é auditável só nos bastidores (log de
+`chamadas_ferramenta`/`arquivos_retornados`), não mais no texto que o
+usuário vê. Não decidido se isso é aceitável -- não foi levantado
+explicitamente com o usuário ainda.
+
+### Bateria completa das 8 perguntas, modo "sem citação" -- rodando
+
+A pedido do usuário, rodando (background, sequencial) a mesma bateria de
+8 perguntas usadas em todos os testes desta sessão, agora no modo "sem
+citação" (`teste_sem_citacao.py`, scratchpad) -- resultado ainda não
+disponível no momento deste registro (ver o chat da sessão pelo resultado
+real quando terminar). Sem promessa de resultado aqui -- só descrição do
+que foi disparado.
+
+### Estado de deploy
+
+**Nada desta investigação de formato de resposta foi commitado nem
+integrado a `routes.py`/produção** -- tudo em variantes de teste no
+scratchpad (`agentic_v3_lotes.py` até `agentic_v7_sem_citacao.py`,
+`/tmp/claude-.../scratchpad/`, fora do git, como sempre). O único commit
+desta sessão cobre 2 arquivos com mudanças reais de sessão ANTERIOR que
+ainda estavam pendentes de commit (não geradas nesta sessão, só
+constatadas e commitadas agora): `goshinsho/routes.py`
+(`refresh_user_profile` na renderização da página, corrige status
+desatualizado de plano gratuito→premium sem precisar relogar) e
+`goshinsho/services/agentic_search.py` (`on_deep_search` callback opcional,
+avisa 1x quando a busca passa de 3 rodadas sem resposta pronta -- ainda
+não conectado a nenhuma UI real, mecanismo inerte por enquanto).
+
+### Onde continuar
+
+1. Decidir com o usuário, depois de ver a bateria completa das 8
+   perguntas no dashboard: promover "sem citação" (tentativa 4) a
+   `SYSTEM_PROMPT` real em `agentic_search.py`, ou pedir mais uma rodada
+   de ajuste.
+2. Se promovido: decidir o trade-off de verificabilidade (citação visível
+   sumiu) -- perguntar ao usuário se isso é aceitável antes de integrar a
+   produção de vez.
+3. "Busca em lotes" (regra 20) continua testada e vencedora em tempo/custo,
+   mas nunca integrada a `agentic_search.py` real -- decidir se combina
+   com a mudança de citação antes de integrar as duas de uma vez, ou uma
+   de cada vez.
+4. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita do usuário -- regra de sempre.

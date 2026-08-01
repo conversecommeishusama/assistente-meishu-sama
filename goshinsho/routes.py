@@ -347,6 +347,16 @@ def index():
 def _render_app_view(*, retrieval_mode: str):
     _track_access()
     user = current_user()
+    if user:
+        # 2026-07-31: achado real -- o status exibido na página (cadastro
+        # gratuito, sem limite de perguntas) vinha só do cookie de sessão,
+        # gravado no login. Se o plano mudar depois (ex.: conta convertida
+        # manualmente pra premium), a tela continuava mostrando "conta
+        # gratuita" até a pessoa sair e entrar de novo -- mesmo com a
+        # conta já premium de verdade no banco (achado com um caso real,
+        # ricwbrasil@gmail.com). /api/chat já fazia esse refresh; a
+        # renderização da página não fazia.
+        user = refresh_user_profile(user["id"]) or user
     conversations = []
     messages = []
     active_conversation_id = request.args.get("conversation_id")

@@ -102,6 +102,14 @@ LIMITE_SEGURANCA_RODADAS = 40
 # conteúdo novo é um sinal estrutural forte de loop de reformulação vazio,
 # sem depender do tema da pergunta.
 LIMITE_ESTAGNACAO_RODADAS = 3
+
+# 2026-07-31: a pedido do usuário -- preocupação com experiência do
+# usuário durante a espera, não com o tempo total em si. Depois de uma
+# primeira busca curta (esta constante) sem resposta pronta, o chamador
+# (routes.py) é avisado uma vez via `on_deep_search`, pra poder mostrar
+# "ainda pesquisando" ao usuário -- não muda em nada o que o agente busca
+# nem quando ele decide parar, só quando um aviso é disparado.
+RODADAS_AVISO_BUSCA_PROFUNDA = 3
 JANELA_PROXIMIDADE = 400
 TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000
 
@@ -754,6 +762,7 @@ def responder_agentico_deepseek(
     executor_fn=executar_ferramenta,
     arquivos_extractor_fn=_arquivos_da_ferramenta,
     validador_citacoes_fn=validar_citacoes,
+    on_deep_search=None,
 ) -> dict:
     """Laço agenciado real. Decisão do usuário (2026-07-29): NÃO existe mais
     orçamento de busca como limite de trabalho normal -- é o próprio modelo
@@ -768,7 +777,13 @@ def responder_agentico_deepseek(
 
     Parametrizado (tools/prompt/executor) para poder apontar para o acervo
     PT (padrão) ou JP (`responder_agentico_deepseek_jp`) sem duplicar o
-    laço inteiro."""
+    laço inteiro.
+
+    `on_deep_search`: callback opcional, sem argumentos, chamado UMA vez
+    (2026-07-31) quando a busca passa de `RODADAS_AVISO_BUSCA_PROFUNDA`
+    rodadas sem resposta pronta -- só para o chamador avisar o usuário que
+    a pesquisa vai continuar mais a fundo. Não influencia em nada a busca
+    em si (mesma decisão de parar/continuar de sempre)."""
     client = _client()
     messages = [{"role": "system", "content": system_prompt}] + list(historico or []) + [{"role": "user", "content": pergunta}]
     total_in = total_out = 0
@@ -792,6 +807,11 @@ def responder_agentico_deepseek(
             break
 
         rodadas_busca += 1
+        if rodadas_busca == RODADAS_AVISO_BUSCA_PROFUNDA and on_deep_search is not None:
+            try:
+                on_deep_search()
+            except Exception:
+                pass  # aviso de UX nunca deve derrubar a busca em si
         resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema)
         usage = resp.usage
         total_in += usage.prompt_tokens
@@ -903,6 +923,7 @@ def responder_agentico_deepseek_jp(
     max_rodadas_busca: int = LIMITE_SEGURANCA_RODADAS,
     max_tokens: int = 8000,
     idioma: str = "Português",
+    on_deep_search=None,
 ) -> dict:
     """Mesmo laço agenciado, mas buscando no acervo ORIGINAL japonês
     (`textos_japones/*.txt`) em vez do PT -- cobre o item explicitamente
@@ -926,4 +947,5 @@ def responder_agentico_deepseek_jp(
         executor_fn=executar_ferramenta_jp,
         arquivos_extractor_fn=_arquivos_da_ferramenta_jp,
         validador_citacoes_fn=validar_citacoes_jp,
+        on_deep_search=on_deep_search,
     )
