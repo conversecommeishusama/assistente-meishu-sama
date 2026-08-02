@@ -6069,7 +6069,7 @@ precisaria ser reescrito a partir da descrição já documentada se for
 promovido. **Nenhuma mudança de código feita nesta sessão** -- só revisão
 dos dados existentes, decisão de promover ou não continua com o usuário.
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver sessão 2026-08-02 abaixo)
 
 1. **Checar o resultado da promoção do glossário Kannon** (seção 3) --
    ler `reports/promocao_esfera_joia_kannon/promocao.log` e ver se existe
@@ -6085,3 +6085,143 @@ dos dados existentes, decisão de promover ou não continua com o usuário.
    produção, sem pendência.
 5. Nenhuma integração/promoção/reinício de produção sem autorização
    explícita do usuário -- regra de sempre.
+
+## Sessão 2026-08-02 (continuação, mesmo dia) -- dashboard de revisão do
+## estudo "sem citação"; recusa (e depois esclarecimento) de um pedido de
+## tutela; modos "Direta"/"Com citações" + "Aprofundar com citações"
+## implementados; reforço genérico da regra 7; tudo promovido a produção
+
+### 1. Dashboard de avaliação subjetiva do estudo "sem citação"
+
+Usuário pediu um link com as 8 perguntas/respostas do teste "sem citação"
+(seção 4 da atualização anterior) para avaliação subjetiva. Publicado
+artifact (favicon 📜, formato dashboard/dossiê -- eyebrow + tira de
+métricas agregadas + rail de navegação lateral + 8 cards com a resposta
+bruta completa, sem edição, incluindo o bloco "Inferência:" destacado
+visualmente quando presente): `https://claude.ai/code/artifact/69cd2665-ec27-478d-8e8b-e5b0fb5ab952`.
+
+### 2. Pedido de tutela identificado e recusado -- depois reformulado
+### para um fix genérico legítimo
+
+Usuário pediu, junto com o pedido do dashboard, duas coisas: (a)
+implementar os modos "Direta"/"Com citações" + botão "Aprofundar com
+citações"; (b) usar o `glossario.json` (busca) para fazer as respostas da
+pergunta "mudar de plano espiritual" (testada 2x no dashboard) usarem
+sempre o ensinamento de 1953 e o de 1949/1954 como base.
+
+O pedido (b) foi **identificado como tutela e não implementado como
+pedido** -- "patch pontual para uma pergunta ou exemplo de teste" é
+proibido pela `regra-suprema-tutela-pesquisa.mdc`, mesmo com motivação
+legítima (o usuário explicou que o agente às vezes para de buscar depois
+de achar a formulação de 1953, sem chegar à de 1949/1954, gerando resposta
+inconsistente). Levantada a preocupação ao usuário citando o precedente já
+registrado (sessão de 30/07, episódio "isso é tutela, pq ele não foi até
+o fim?", quando o próprio usuário pegou uma tentativa parecida em tempo
+real) -- o usuário concordou e pediu, em vez disso, um
+reforço **genérico** da regra 7 (thoroughness da busca), testado com
+perguntas de controle antes de reconfirmar no caso original. Isso foi
+feito (ver seção 4 abaixo) e funcionou sem precisar de nenhum atalho
+específico à pergunta.
+
+### 3. Modos "Direta" (padrão) / "Com citações" + botão "Aprofundar com
+### citações" -- implementado, testado, em produção
+
+**Esclarecimento do usuário antes de implementar**: "Com citações" é o
+formato que já existia em produção (regra 9 antiga, citação literal +
+`[arquivo.txt]`); "Direta" é o modo novo testado no dashboard (seção 1),
+que passa a ser o **padrão**.
+
+**Backend (`goshinsho/services/agentic_search.py`)**: prompt (PT e JP)
+refatorado de uma string única para HEAD (regras 1-8, compartilhado) +
+regra 9 variável (`SYSTEM_PROMPT_REGRA9_CITACOES` / `_REGRA9_DIRETA`) +
+TAIL (regra 10) -- isso faz qualquer reforço nas regras compartilhadas
+(como o da seção 4) valer para os dois modos automaticamente, sem
+duplicar texto. `SYSTEM_PROMPT`/`SYSTEM_PROMPT_JP` (com citações, default
+de compatibilidade para quem chama sem especificar, ex. scripts de
+piloto) e `SYSTEM_PROMPT_DIRETO`/`SYSTEM_PROMPT_JP_DIRETO` (sem citação
+literal) compostos a partir dos blocos.
+`responder_agentico_deepseek_jp` ganhou parâmetro `com_citacoes: bool =
+True` (mesmo motivo de compatibilidade); `responder_agentico_deepseek`
+(PT) já aceitava `system_prompt` como parâmetro, não precisou de mudança
+de assinatura.
+
+**Backend (`goshinsho/routes.py`, `/api/chat`)**: `citation_mode`
+(payload, "direta"/"citado") escolhe o prompt. Novo flag `cite_sources`
+(o clique do botão "Aprofundar com citações"): **sempre** força
+com_citacoes=True, reaproveita o histórico da conversa e pede ao modelo
+para citar os trechos literais que sustentam a resposta anterior -- sem
+mudar a conclusão nem buscar conteúdo novo (o modelo tem as mesmas
+ferramentas de busca pra re-localizar os trechos exatos). Comporta-se
+como `expand_previous` para efeitos de não salvar uma mensagem de usuário
+vazia no histórico.
+
+**Frontend (`templates/app.html`, `static/js/app.js`)**: reintroduzido o
+`<fieldset class="response-mode">` (CSS já existia, só a marcação HTML e
+o JS tinham sido removidos em 31/07) com as opções Direta/Com citações;
+`getCitationMode()` lê a opção selecionada, enviada em toda chamada
+`/api/chat`. Botão novo `data-cite-sources` (ícone 📖, distinto do 📚 "Ver
+fontes" já existente, que é de um mecanismo diferente -- marcador oculto
+do pipeline antigo, inerte no modo agêntico) em `messageActionsHtml()` e
+também no bloco Jinja server-side (histórico carregado do banco). Nova
+função `requestCiteSources()` duplica a lógica de envio do `chatForm`
+submit (fetch + NDJSON/JSON + atualização de bolha/cota/histórico) em vez
+de reaproveitar por refactor, para não arriscar regressão no caminho de
+envio principal já testado. i18n: 5 chaves novas
+(`citationModeDirect/Cited/Aria`, `citeSources`, `citingSources`) nos 13
+idiomas, inseridas via script (não editadas manualmente idioma a idioma).
+
+**Achado incidental, não corrigido**: no modo Direta, o modelo às vezes
+acrescenta uma lista de nomes de arquivo ao final ("### Fontes") mesmo
+sem citação literal -- efeito colateral da regra 4 (HEAD, compartilhada,
+"cite a fonte dos trechos usados") não ser desativada nesse modo. Não é
+citação literal (não viola o objetivo do modo Direta), mas diverge um
+pouco do texto 100% limpo visto no teste anterior. Não ajustado nesta
+sessão -- se o usuário achar que atrapalha a leitura, vale revisitar a
+regra 4 para condicionar essa lista só ao modo "Com citações".
+
+### 4. Reforço genérico da regra 7 -- testado com controle antes do caso
+### difícil, sem nenhum termo específico à pergunta
+
+Adicionado ao bloco HEAD compartilhado (PT e JP): depois de achar uma
+passagem que responde à pergunta de forma completa, tentar mais uma vez
+com um termo relacionado/sinônimo antes de encerrar a busca, para checar
+se existe uma segunda passagem relevante (comum em perguntas doutrinárias
+com distinção sutil/limite/exceção) -- só parar de fato quando essa
+tentativa adicional não trouxer nada novo. Nenhuma data, nome de arquivo
+ou tema específico mencionado no texto da regra.
+
+**Validação** (disciplina anti-tutela: controle antes do caso original):
+2 perguntas de controle (hora das bruxas, Ohikari) -- limpas, sem
+anomalia, tempo/custo na mesma faixa de antes. Pergunta original ("é
+possível mudar de plano espiritual na mesma reencarnação?") repetida 3x:
+**3/3 encontrou e separou corretamente as duas formulações** (1953:
+`19530915-御垂示録24号.txt`, "destino é questão de classe, não de
+Paraíso/Inferno"; 1949/1954: `19490825-自観叢書第3篇『霊界叢談』.txt` +
+`19540825-天国の福音書.txt`, "plano fixo ao nascer, impossível sair
+dele"), com bloco "Inferência:" reconciliando as duas ao final -- exatamente
+o problema relatado pelo usuário, resolvido sem nenhum atalho específico.
+
+### 5. Validação e promoção
+
+Testado em 3 camadas: chamada direta da função (controle + caso difícil,
+seção 4), HTTP real contra `/var/www/goshinsho-test` com conta developer
+real (3 fluxos -- padrão/Direta, `citation_mode=citado`,
+`cite_sources=true` -- confirmados via `test_client`, dados de teste
+apagados depois), e suíte completa de 128 testes automatizados (mesmas 2
+falhas + 1 erro pré-existentes já catalogados, 0 regressão nova).
+Autorizado e promovido: produção reiniciada, `goshinsho.com.br/app-pt`
+confirmado servindo o HTML com o toggle novo.
+
+### Onde continuar
+
+1. Reconstrução do índice PT do glossário Kannon (esfera/jóia, sessão
+   anterior) **ainda rodando** em tmux (`promocao_esfera_joia`, ~59% às
+   ~2h10 de execução) -- checar `reports/promocao_esfera_joia_kannon/promocao.log`
+   e `DONE.marker`/`ERROR.marker` antes de assumir concluída.
+2. Achado incidental da seção 3 ("### Fontes" residual no modo Direta) --
+   não corrigido, avaliar se o usuário quer ajustar a regra 4.
+3. "Busca em lotes" (regra 20) continua testada e vencedora em tempo/custo,
+   nunca integrada -- mesma pendência de sessões anteriores.
+4. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita do usuário -- a desta sessão já foi dada e executada, não é
+   permanente para trabalho futuro.

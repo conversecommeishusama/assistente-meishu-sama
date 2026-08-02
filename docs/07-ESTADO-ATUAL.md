@@ -24,12 +24,20 @@ documento só resume.
   descontinuada — todo cadastro (novo ou existente) já nasce/vira
   "premium gratuito", sem cota, sem trial. Cartão de crédito só para
   doação voluntária (avulsa ou recorrente, `/doacao`, Stripe).
-- **Estudo em aberto, sem decisão**: remover a citação literal das
-  respostas (regra 9 de `agentic_search.py`), mantendo só explicação por
-  tema — testado e com resultado revisado (2/ago), mas nunca promovido ao
-  código real; trade-off de verificabilidade (perde-se a citação exata no
-  texto) ainda não resolvido com o usuário. Ver `CLAUDE.md`, sessões de
-  31/jul–02/ago.
+- **Modos "Direta" (padrão) / "Com citações" + botão "Aprofundar com
+  citações" (2/ago), em produção**: resolve o estudo anterior sobre
+  remover citação literal — em vez de substituir, os dois formatos
+  convivem (regra 9 de `agentic_search.py` variável por modo, resto do
+  prompt compartilhado), e o trade-off de verificabilidade foi resolvido
+  com um botão dedicado que produz a citação literal sob demanda, sem
+  precisar mudar o modo padrão. Ver `CLAUDE.md`, sessão de 2/ago.
+- **Regra 7 (busca) reforçada de forma genérica (2/ago)**: antes de
+  encerrar a busca, tenta mais uma vez checar se existe uma segunda
+  passagem relevante sobre o mesmo tema — corrige inconsistência real
+  encontrada em perguntas doutrinárias com mais de uma formulação no
+  acervo, sem nenhum atalho específico a pergunta alguma (identificado e
+  recusado um pedido nesse sentido por violar a regra suprema de
+  "sem tutela" — ver `CLAUDE.md`).
 - **Dashboard admin (`/admin`)**: bug real de paginação Supabase corrigido
   (contagem de perguntas travava em 1000) e tabela de usuários ganhou
   ordenação por qualquer coluna + filtro por e-mail/plano (2/ago).
@@ -67,9 +75,14 @@ doutrinários), não mais filas automáticas de milhares de itens.
 
 ## Pendências abertas conhecidas
 
-- Promover "resposta sem citação literal" em `agentic_search.py` — testado
-  e revisado (2/ago), qualidade boa, mas não decidido (trade-off de perder
-  a citação exata visível no texto).
+- Achado incidental (2/ago): no modo Direta, o modelo às vezes acrescenta
+  uma lista de nomes de arquivo ("### Fontes") ao final mesmo sem citação
+  literal — não é citação literal (não viola o objetivo do modo), mas
+  diverge do texto 100% limpo visto no teste original. Não corrigido,
+  avaliar se vale ajustar a regra 4 (compartilhada) do prompt.
+- Reconstrução do índice PT do glossário Kannon (esfera/jóia) — checar
+  `reports/promocao_esfera_joia_kannon/promocao.log`/`DONE.marker` antes
+  de assumir concluída.
 - "Busca em lotes" (regra 20 de teste) — testada, mais rápida/barata que o
   modo atual, nunca integrada ao módulo real.
 - Backup externo (`backup_to_b2.sh`) — **agendado** como cron diário
