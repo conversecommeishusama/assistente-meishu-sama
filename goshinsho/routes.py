@@ -1007,14 +1007,20 @@ def api_chat():
                 "testemunhos e trechos adicionais do acervo que ainda não foram citados, e traga uma "
                 "explicação mais completa, sem repetir literalmente o que já foi dito."
             )
-            # 2026-07-31: achado real testando o fix de idioma -- esta
-            # instrução em português (é uma instrução PARA o modelo, não
-            # conteúdo do usuário) puxava a resposta de volta pro
-            # português mesmo com a regra 4/9 do system prompt já
-            # corrigida para {language}. Reforço explícito e literal no
-            # fim resolve, testado com inglês/espanhol.
-            if language != "Português":
-                pergunta_agentico += f" (Answer in {language}.)"
+        # 2026-07-31/2026-08-02: achado real testando o fix de idioma -- esta
+        # instrução em {language} (é uma instrução PARA o modelo, não
+        # conteúdo do usuário) puxava a resposta de volta pro português
+        # mesmo com a regra 4/9 do system prompt já corrigida para
+        # {language}. No início só era aplicada ao "Aprofundar"; achado
+        # 2026-08-02 (reprodução real): numa conversa já com histórico em
+        # português, uma pergunta NORMAL depois de trocar de idioma também
+        # sofria o mesmo puxão -- o volume de português acumulado no
+        # histórico vencia a instrução única do system prompt. Reforço
+        # explícito e literal no fim da pergunta de todo turno (não só
+        # "Aprofundar") resolve, testado com inglês/japonês, com e sem
+        # histórico prévio em português.
+        if language != "Português":
+            pergunta_agentico += f" (Answer in {language}.)"
         event_queue: queue.Queue = queue.Queue()
         result_holder: dict = {}
         error_holder: dict = {}
