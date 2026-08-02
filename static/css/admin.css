@@ -35,11 +35,18 @@ button, textarea { font: inherit; }
 .access-badge.premium { background: #e6f4ea; color: #137333; }
 .user-row small, .policy-note { color: var(--muted); font-size: .82rem; }
 .policy-note { margin: 0 0 10px; }
+.users-filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.users-filter-bar input, .users-filter-bar select { background: var(--card); border: 1px solid var(--border); border-radius: 999px; color: var(--text); font-size: .85rem; padding: 8px 14px; }
+.users-filter-bar input { flex: 1 1 220px; min-width: 160px; }
+.users-count-note { color: var(--muted); font-size: .8rem; margin: 0 0 8px; }
 .users-box { max-height: 460px; overflow-y: auto; }
 .user-table-wrap { overflow-x: auto; }
 .user-table { border-collapse: collapse; font-size: .86rem; width: 100%; }
 .user-table th, .user-table td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; white-space: nowrap; }
 .user-table th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--card); }
+.user-table th.sortable { cursor: pointer; user-select: none; }
+.user-table th.sortable:hover { color: #174ea6; }
+.user-table th.active { color: #174ea6; }
 .user-table td.num, .user-table th:nth-child(4), .user-table th:nth-child(5), .user-table th:nth-child(6) { text-align: right; }
 .message-row { background: #f8fafd; border-radius: 14px; padding: 10px; }
 .message-row.admin { background: #e6f4ea; }

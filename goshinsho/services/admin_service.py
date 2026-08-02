@@ -100,9 +100,12 @@ def build_admin_dashboard(range_key="all", date_from=None, date_to=None):
             "total": len(users),
             "premium": len(premium_users),
             "questions_total": sum(question_counts.values()),
+            # Ordem padrão: cadastro mais recente primeiro (o front-end
+            # permite reordenar por qualquer coluna, mas este é o estado
+            # inicial esperado pelo usuário -- 2026-08-02).
             "all": sorted(
                 users,
-                key=lambda item: (item.get("questions_count", 0), item.get("data_criacao") or ""),
+                key=lambda item: item.get("data_criacao") or "",
                 reverse=True,
             ),
         },

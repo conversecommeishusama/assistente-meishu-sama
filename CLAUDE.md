@@ -5928,7 +5928,7 @@ desatualizado de plano gratuito→premium sem precisar relogar) e
 avisa 1x quando a busca passa de 3 rodadas sem resposta pronta -- ainda
 não conectado a nenhuma UI real, mecanismo inerte por enquanto).
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver sessão 2026-08-02 abaixo)
 
 1. Decidir com o usuário, depois de ver a bateria completa das 8
    perguntas no dashboard: promover "sem citação" (tentativa 4) a
@@ -5942,4 +5942,146 @@ não conectado a nenhuma UI real, mecanismo inerte por enquanto).
    com a mudança de citação antes de integrar as duas de uma vez, ou uma
    de cada vez.
 4. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita do usuário -- regra de sempre.
+
+## Sessão 2026-08-02 (Claude Code) -- dashboard admin: bug de paginação
+## Supabase + ordenação/filtro; glossário de tradução: bola/esfera que
+## Kannon carrega (esfera/jóia, Mani no Tama); estudo de citação revisado
+## (sem código novo)
+
+### 1. Dashboard admin -- bug real de paginação corrigido + tabela ordenável/filtrável
+
+Usuário reportou que alguns campos do dashboard "parecem não atualizar".
+Investigação (não assumida, testada contra o Supabase real) achou a causa:
+`count_user_questions()` (`goshinsho/services/conversation_service.py`)
+consultava a tabela `mensagens` **sem paginação** -- o Supabase limita a
+1000 linhas por consulta por padrão. O total real de perguntas de usuário
+já é 1237, então "Perguntas no período" (e a coluna por usuário) ficava
+**travado em exatamente 1000** para qualquer período que incluísse mais de
+1000 mensagens -- por isso parecia "não atualizar" (não conseguia mesmo).
+Corrigido com paginação real (`.range()` em loop até esgotar as páginas) --
+confirmado 1237 depois do fix.
+
+Adicionado também (pedido do usuário): tabela de usuários agora ordena por
+**cadastro, do mais recente para o mais antigo** por padrão (era por nº de
+perguntas); cabeçalhos de coluna clicáveis para reordenar por qualquer
+campo (E-mail, Plano, Cadastro, Perguntas, Doado, Doações, Última doação),
+com indicador visual (▲/▼); filtro por e-mail (busca) e por plano
+(Todos/Premium/Gratuito), com contador "X de Y usuários".
+
+Validado em 3 camadas contra `/var/www/goshinsho-test` (porta 5090, código
+sincronizado por completo, dados reais do Supabase) antes de promover;
+suíte de 128 testes sem regressão nova (mesmas 3 falhas pré-existentes já
+catalogadas). **Promovido e reiniciado em produção, autorizado
+explicitamente pelo usuário** ("Coloque no ar").
+
+### 2. Glossário de tradução -- a bola/joia que Kannon carrega (esfera vs. jóia)
+
+Usuário pediu para aprofundar a escolha tradutória de "jóia" para o 玉
+(tama) que Kannon segura/carrega -- não havia entrada no glossário para
+isso. Investigação no corpus JP (sem consultar os manuais litúrgicos --
+`referencia_manuais/`, protegidos por direitos autorais -- tentei extrair
+texto via `pdftotext`, mas os PDFs são majoritariamente digitalização de
+imagem, sem texto selecionável útil sobre o tema; não ajudou) achou:
+
+- O ensino central de Meishu-Sama (観音講座) é sobre a **forma redonda**
+  do 玉 (tama) -- "rola porque não tem arestas... se um deus tiver
+  arestas, não pode ser um deus bondoso" -- e não sobre ele ser precioso.
+  `自観説話集` chega a comparar o tamanho a uma "bola de borracha pequena"
+  (ゴム鞠).
+- **O corpus já era inconsistente consigo mesmo**: a mesma palavra 玉, no
+  mesmo tipo de ensino, já saía como "esfera" (`Tijotengoku.txt`, "uma
+  esfera rola") e como "jóia" (`観音講座`, "a jóia rola") em livros
+  diferentes -- e a fórmula recorrente "há uma esfera/jóia de luz dentro
+  do meu ventre" (光の玉, que o próprio texto identifica como sendo o
+  mesmo 如意宝珠/Nyoi Hōju) saía "esfera de luz" em `Eiko.txt` (7x) e
+  "joia de luz" em `Tijotengoku.txt` (2x).
+
+**Decisões do usuário** (perguntadas em pontos genuinamente ambíguos, não
+decididas sozinho -- 2 rodadas de `AskUserQuestion`, a 2ª rejeitada pelo
+usuário que preferiu responder direto em texto):
+- 玉 (tama) solto, ensino sobre forma redonda → **esfera**.
+- 麻邇の玉 (Mani no Tama, nome xintoísta) → **transliterado**, sem
+  tradução (era "a jóia Mani").
+- 如意宝珠/如意の玉 (Nyoi Hōju, nome budista do mesmo objeto,
+  "cintāmaṇi") → **"esfera (jóia) que realiza os desejos"** na 1ª
+  aparição de cada artigo/poema, depois só **"esfera"**.
+- 宝珠 (hōju) sozinho, sem 如意 (ex.: "a jóia preciosa da Santa Kannon"
+  em `御讃歌集`) → **mantido "jóia"**, sem mudança -- é registro budista
+  estabelecido (o kanji 宝 já significa "tesouro", a preciosidade é o
+  ponto ali), fora do escopo da decisão sobre forma redonda.
+
+**Aplicado em 12 arquivos, ~29 ocorrências**: `観音講座`, `御光話録（補）`
+(2 passagens, achado numa varredura mais ampla -- a 2ª usava マニ em
+katakana, que o grep inicial por 麻邇 em kanji não pegava), `御光話録2号`,
+`御光話録11号`, `御光話録12号`, `御垂示録2号`, `御讃歌集`, `自観説話集`,
+`明麿近詠集`, `Tijotengoku.txt`, `Eiko.txt`, `御教え集32号`. Método:
+pesquisar o JP de cada ocorrência antes de decidir (não find-replace cego),
+determinar limite de artigo/poema para aplicar corretamente a regra de "1ª
+aparição, depois só esfera" (script auxiliar comparando linha de cada
+ocorrência com as linhas de título `Eikō nº X, publicado em...` para achar
+o artigo correspondente).
+
+**Verificação**: todas as âncoras de segmentação (`pt_anchor`)
+revalidadas com a função real de produção (`split_by_anchors`) -- 2
+quebraram porque a âncora era o próprio texto que mudou (poemas em
+`御讃歌集` e `明麿近詠集`, corrigidas no spec); 12/12 arquivos OK depois.
+Sincronizado `livros_publicacao_pt_revisado/` → `reports/livros_trabalho/pt/`
+(backup em `reports/livros_trabalho/pt_sync_backup_esfera_joia_kannon_20260802T141634Z/`),
+revalidado de novo contra essa cópia -- 12/12 OK. Decisão registrada em
+`glossario_traducao.json` (entradas novas: `麻邇の玉`, `如意宝珠`,
+`如意の玉`, `光の玉`).
+
+### 3. Promoção para produção -- rodando em tmux, autorizado
+
+Usuário pediu para promover numa sessão tmux pra poder desligar o Claude
+Code. Criado `reports/promocao_esfera_joia_kannon/run_promocao.sh`
+(4 passos: `promote_livros_trabalho_to_produção.py --lang pt --apply` →
+`build_clean_large_indexes.py --lang pt --install` → `systemctl restart
+goshinsho.service` → verificação HTTP + contagem de chunks com os termos
+novos no índice instalado), rodando na sessão tmux `promocao_esfera_joia`.
+Loga em `reports/promocao_esfera_joia_kannon/promocao.log`; ao terminar
+cria `DONE.marker`, se falhar cria `ERROR.marker` em vez disso (trap de
+erro no script) -- checar qual dos dois existe antes de assumir o
+resultado. Passo 1 (promoção PT) já confirmado OK antes do fechamento
+desta sessão (12/12 alterados, 0 erros, backup automático). Passo 2
+(reconstrução do índice) ainda rodando no momento deste registro --
+**não confirmado concluído**, checar o log/marker na próxima sessão antes
+de assumir que já está no ar.
+
+### 4. Estudo de "resposta sem citação literal" -- revisado, sem mudança de código
+
+Usuário pediu para retomar o estudo (ver sessão 31/07-01/08 acima). O
+resultado da bateria de 8 perguntas que tinha ficado rodando (sessão
+anterior, nunca revisado) foi encontrado salvo em
+`reports/teste_sem_citacao_01_08.json` -- 8/8 sem nenhuma anomalia
+(sem esgotar orçamento, sem estagnação), média 87,5s/US$0,0073/4.814
+caracteres por pergunta. Lidas 2 respostas completas (a mais difícil,
+"mudar de plano espiritual", e uma simples, "Ohikari") -- qualidade
+consistente com o que já tinha sido observado antes: bem organizada por
+tema, sem o formato antigo de citação, com o bloco "Inferência:"
+funcionando corretamente na pergunta difícil. **`agentic_search.py` real
+continua com a regra 9 antiga** (exige citação literal) -- a variante
+"sem citação" só existiu no script de teste da sessão anterior
+(scratchpad, provavelmente não sobreviveu ao fim daquela sessão); os
+resultados sobreviveram porque foram salvos em `reports/`, mas o código
+precisaria ser reescrito a partir da descrição já documentada se for
+promovido. **Nenhuma mudança de código feita nesta sessão** -- só revisão
+dos dados existentes, decisão de promover ou não continua com o usuário.
+
+### Onde continuar
+
+1. **Checar o resultado da promoção do glossário Kannon** (seção 3) --
+   ler `reports/promocao_esfera_joia_kannon/promocao.log` e ver se existe
+   `DONE.marker` (sucesso) ou `ERROR.marker` (falhou, ver log) antes de
+   assumir que "esfera (jóia)"/"Mani no Tama" já está na busca real.
+2. Decidir com o usuário se promove o modo "sem citação literal" em
+   `agentic_search.py` -- precisa reescrever a regra 9 (descrita na seção
+   4 e na sessão 31/07-01/08 anterior), trade-off de verificabilidade
+   ainda não resolvido.
+3. "Busca em lotes" (regra 20) continua testada e vencedora em tempo/custo,
+   nunca integrada -- mesma pendência de antes.
+4. Dashboard admin: correção de paginação + ordenação/filtro já em
+   produção, sem pendência.
+5. Nenhuma integração/promoção/reinício de produção sem autorização
    explícita do usuário -- regra de sempre.

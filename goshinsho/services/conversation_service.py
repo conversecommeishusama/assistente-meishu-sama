@@ -103,12 +103,26 @@ def count_user_questions(since=None, until=None):
     (histórico completo desde sempre, não o log de uso de DeepSeek, que só
     passou a cobrir o modo agenciado em 2026-07-31)."""
     supabase = get_supabase()
-    query = supabase.table("mensagens").select("conversa_id,created_at").eq("role", "user")
-    if since is not None:
-        query = query.gte("created_at", since.isoformat())
-    if until is not None:
-        query = query.lte("created_at", until.isoformat())
-    messages = query.execute().data or []
+    messages = []
+    page_size = 1000
+    start = 0
+    while True:
+        query = (
+            supabase.table("mensagens")
+            .select("conversa_id,created_at")
+            .eq("role", "user")
+            .order("created_at", desc=False)
+            .range(start, start + page_size - 1)
+        )
+        if since is not None:
+            query = query.gte("created_at", since.isoformat())
+        if until is not None:
+            query = query.lte("created_at", until.isoformat())
+        page = query.execute().data or []
+        messages.extend(page)
+        if len(page) < page_size:
+            break
+        start += page_size
     if not messages:
         return {}
 

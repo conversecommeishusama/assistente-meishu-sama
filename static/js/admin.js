@@ -26,6 +26,25 @@ const rangeNote = document.querySelector("#range-note");
 let selectedTicket = null;
 let currentRange = "all";
 
+const usersFilterInput = document.querySelector("#users-filter");
+const usersPlanFilterSelect = document.querySelector("#users-plan-filter");
+let lastUsersData = [];
+let lastUsersPolicyLine = "";
+let usersSortField = "data_criacao";
+let usersSortDir = "desc";
+let usersFilterText = "";
+let usersPlanFilter = "";
+
+const USER_COLUMNS = [
+    { field: "email", label: "E-mail", type: "string" },
+    { field: "plano", label: "Plano", type: "string" },
+    { field: "data_criacao", label: "Cadastro", type: "date" },
+    { field: "questions_count", label: "Perguntas", type: "number" },
+    { field: "donations_total_brl", label: "Doado (R$)", type: "number" },
+    { field: "donations_count", label: "Doações", type: "number" },
+    { field: "donations_last_at", label: "Última doação", type: "date" },
+];
+
 function number(value) {
     return new Intl.NumberFormat("pt-BR").format(value || 0);
 }
@@ -121,8 +140,42 @@ function renderDashboard(data) {
         <p class="policy-note">Taxa aplicada: US$ ${(cost.rate_usd_per_1m_tokens || 0).toFixed(4)} / 1M tokens -- recalibrada contra a fatura real da DeepSeek em 30/07/2026 (ver CLAUDE.md).</p>
     `;
 
-    const policyLine = `<p class="policy-note">Único sistema de acesso: <strong>premium gratuito</strong> para toda conta cadastrada (sem trial, sem cota mensal). Cartão de crédito é usado só para doação voluntária.</p>`;
-    const rows = (data.users?.all || [])
+    lastUsersPolicyLine = `<p class="policy-note">Único sistema de acesso: <strong>premium gratuito</strong> para toda conta cadastrada (sem trial, sem cota mensal). Cartão de crédito é usado só para doação voluntária.</p>`;
+    lastUsersData = data.users?.all || [];
+    renderUsersTable();
+}
+
+function compareUsersBy(a, b, field, type) {
+    if (type === "number") {
+        return (Number(a[field]) || 0) - (Number(b[field]) || 0);
+    }
+    const va = a[field];
+    const vb = b[field];
+    if (!va && !vb) return 0;
+    if (!va) return 1;
+    if (!vb) return -1;
+    return String(va).localeCompare(String(vb), "pt-BR");
+}
+
+function filterUsersList(users) {
+    const text = usersFilterText.trim().toLowerCase();
+    return users.filter((user) => {
+        if (usersPlanFilter && (user.plano || "") !== usersPlanFilter) return false;
+        if (text && !(user.email || "").toLowerCase().includes(text)) return false;
+        return true;
+    });
+}
+
+function renderUsersTable() {
+    if (!usersBox) return;
+    const column = USER_COLUMNS.find((c) => c.field === usersSortField) || USER_COLUMNS[2];
+    const filtered = filterUsersList(lastUsersData);
+    const sorted = [...filtered].sort((a, b) => {
+        const result = compareUsersBy(a, b, column.field, column.type);
+        return usersSortDir === "asc" ? result : -result;
+    });
+
+    const rows = sorted
         .map((user) => {
             const created = user.data_criacao ? new Date(user.data_criacao).toLocaleDateString("pt-BR") : "?";
             const lastDonation = user.donations_last_at ? new Date(user.donations_last_at).toLocaleDateString("pt-BR") : "-";
@@ -137,13 +190,47 @@ function renderDashboard(data) {
             </tr>`;
         })
         .join("");
-    usersBox.innerHTML = policyLine + (rows
+
+    const headerCells = USER_COLUMNS
+        .map((col) => {
+            const isActive = col.field === usersSortField;
+            const arrow = isActive ? (usersSortDir === "asc" ? " ▲" : " ▼") : "";
+            return `<th data-sort-field="${col.field}" class="sortable${isActive ? " active" : ""}">${col.label}${arrow}</th>`;
+        })
+        .join("");
+
+    const countNote = `<p class="users-count-note">${number(sorted.length)} de ${number(lastUsersData.length)} usuário(s)</p>`;
+
+    usersBox.innerHTML = lastUsersPolicyLine + countNote + (lastUsersData.length
         ? `<div class="user-table-wrap"><table class="user-table">
-            <thead><tr><th>E-mail</th><th>Plano</th><th>Cadastro</th><th>Perguntas</th><th>Doado (R$)</th><th>Doações</th><th>Última doação</th></tr></thead>
-            <tbody>${rows}</tbody>
+            <thead><tr>${headerCells}</tr></thead>
+            <tbody>${rows || `<tr><td colspan="${USER_COLUMNS.length}">Nenhum usuário corresponde ao filtro.</td></tr>`}</tbody>
            </table></div>`
         : "Nenhum usuário cadastrado.");
 }
+
+usersBox?.addEventListener("click", (event) => {
+    const th = event.target.closest("th[data-sort-field]");
+    if (!th) return;
+    const field = th.dataset.sortField;
+    if (usersSortField === field) {
+        usersSortDir = usersSortDir === "asc" ? "desc" : "asc";
+    } else {
+        usersSortField = field;
+        usersSortDir = field === "email" || field === "plano" ? "asc" : "desc";
+    }
+    renderUsersTable();
+});
+
+usersFilterInput?.addEventListener("input", () => {
+    usersFilterText = usersFilterInput.value;
+    renderUsersTable();
+});
+
+usersPlanFilterSelect?.addEventListener("change", () => {
+    usersPlanFilter = usersPlanFilterSelect.value;
+    renderUsersTable();
+});
 
 function renderTickets(tickets) {
     supportList.innerHTML = "";

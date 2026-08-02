@@ -1,31 +1,38 @@
 # Estado Atual
 
-Retrato do projeto em **30 de julho de 2026** (revisão da fotografia
-original de 15/jul, que estava desatualizada). Este documento fica
-desatualizado rápido por natureza — trate-o como uma fotografia, não como
-fonte viva. Para o histórico completo e detalhado sessão a sessão, `CLAUDE.md`
-na raiz do projeto é a fonte primária; este documento só resume.
+Retrato do projeto em **2 de agosto de 2026** (revisão da fotografia de
+30/jul, que já estava desatualizada num ponto central — ver abaixo). Este
+documento fica desatualizado rápido por natureza — trate-o como uma
+fotografia, não como fonte viva. Para o histórico completo e detalhado
+sessão a sessão, `CLAUDE.md` na raiz do projeto é a fonte primária; este
+documento só resume.
 
 ## Aplicativo
 
-- **`pt_direct`/`jp_direct` (pipeline v2 estendida) em produção** desde
-  18/jul — substituíram `pt_first` como caminho padrão para usuários de
-  português (`pt_first` descontinuado em 26/jul, não testar mais). Política
-  "sem tutela" em vigor.
-- **Bug crítico corrigido em 26/jul**: a API DeepSeek rejeitava o modelo
-  `deepseek-chat` (produção inteira respondendo com erro cru) — corrigido
-  para `deepseek-v4-flash`. Vários bugs genéricos de busca/reconhecimento
-  de artigo também corrigidos nessa janela (ver `CLAUDE.md`, sessões de
-  26–29/jul).
-- **Investigação em andamento, não implementada**: migração da busca por
-  embedding (FAISS/BM25) para **busca agenciada** (o modelo decide o que
-  buscar via ferramentas, sem índice vetorial), usando DeepSeek. Módulo já
-  escrito (`goshinsho/services/agentic_search.py`), testado extensivamente,
-  **ainda não ligado a `routes.py`/produção**. Ver
-  `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` e `CLAUDE.md` (sessões de
-  29–30/jul) para o estado detalhado, incluindo um bug de recall real
-  (filtro de proximidade tudo-ou-nada em `_buscar_termo_unico`) ainda não
-  corrigido.
+- **Busca agenciada (DeepSeek, sem índice vetorial) é o motor ÚNICO de
+  produção desde 30/jul** — substituiu `pt_direct`/`jp_direct` (pipeline
+  v2) como caminho padrão para `/app` e `/app-pt`, para qualquer usuário
+  logado (não só developer). `pt_direct`/`jp_direct` continuam no código
+  como fallback interno, mas não são mais o que o usuário final recebe.
+  **Isto substitui a framing anterior desta seção** ("investigação em
+  andamento, não implementada") — a migração já aconteceu de fato. Ver
+  `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` para o estudo original e
+  `CLAUDE.md` (sessões de 29/jul a 01/ago) para a sequência completa de
+  bugs corrigidos (recall, BM25 complementar, cache de custo, formato de
+  resposta por tema com citação confirmatória).
+- **Sistema de acesso simplificado (30/jul)**: assinatura paga
+  descontinuada — todo cadastro (novo ou existente) já nasce/vira
+  "premium gratuito", sem cota, sem trial. Cartão de crédito só para
+  doação voluntária (avulsa ou recorrente, `/doacao`, Stripe).
+- **Estudo em aberto, sem decisão**: remover a citação literal das
+  respostas (regra 9 de `agentic_search.py`), mantendo só explicação por
+  tema — testado e com resultado revisado (2/ago), mas nunca promovido ao
+  código real; trade-off de verificabilidade (perde-se a citação exata no
+  texto) ainda não resolvido com o usuário. Ver `CLAUDE.md`, sessões de
+  31/jul–02/ago.
+- **Dashboard admin (`/admin`)**: bug real de paginação Supabase corrigido
+  (contagem de perguntas travava em 1000) e tabela de usuários ganhou
+  ordenação por qualquer coluna + filtro por e-mail/plano (2/ago).
 
 ## Acervo — produção vs. trabalho
 
@@ -36,14 +43,16 @@ na raiz do projeto é a fonte primária; este documento só resume.
   índice, autorizado explicitamente pelo usuário. **Isto substitui o
   estado de "produção reflete 13/jun" registrado na fotografia anterior.**
 - **Trabalho contínuo pós-promoção**: múltiplas rodadas de triagem de
-  glossário/terminologia (sessões de 27–30/jul) e, mais recentemente, uma
-  padronização completa dos termos `宿命` (shukumei) e `運命` (unmei) em
-  todo o acervo — ver `CLAUDE.md`, sessão de 30/jul, para o método e a
-  lista de arquivos tocados. Essas correções vivem em
-  `livros_publicacao_pt_revisado/` e `reports/livros_trabalho/pt/`
-  (sincronizados entre si), mas **ainda não foram promovidas a produção**
-  desde a rodada de 28/jul — exigem novo rebuild + autorização explícita
-  quando o usuário decidir.
+  glossário/terminologia (sessões de 27–30/jul), a padronização de
+  `宿命`/`運命` (shukumei/unmei, 30/jul) e, mais recentemente, a
+  padronização de `esfera`/`jóia`/`Mani no Tama` para a bola/joia que
+  Kannon carrega (2/ago, 12 arquivos, ver `CLAUDE.md`) — todas essas
+  rodadas já foram **promovidas para produção** (shukumei/unmei em
+  31/jul; a rodada de 2/ago estava com a promoção rodando em tmux no
+  momento desta revisão do documento — conferir
+  `reports/promocao_esfera_joia_kannon/promocao.log`/`DONE.marker` antes
+  de assumir concluída). `glossario_traducao.json` e
+  `livros_publicacao_pt_revisado/` continuam a fonte de trabalho ativa.
 - `glossario_traducao.json` e `livros_publicacao_pt_revisado/` continuam
   **fora do git** por decisão explícita do usuário (edição ativa).
 
@@ -58,13 +67,13 @@ doutrinários), não mais filas automáticas de milhares de itens.
 
 ## Pendências abertas conhecidas
 
-- Investigação de recall do `agentic_search.py` (bug de proximidade) —
-  achado, não corrigido.
-- Regra 10 do prompt (`agentic_search.py`/`pipeline/prompts.py`) ganhou
-  uma exceção controlada de reconciliação por inferência rotulada
-  (30/jul) — editada, não commitada/deployada até esta rodada.
-- Backup externo (`backup_to_b2.sh`) ainda não agendado como cron
-  recorrente — rodou manualmente uma única vez (20/jul).
+- Promover "resposta sem citação literal" em `agentic_search.py` — testado
+  e revisado (2/ago), qualidade boa, mas não decidido (trade-off de perder
+  a citação exata visível no texto).
+- "Busca em lotes" (regra 20 de teste) — testada, mais rápida/barata que o
+  modo atual, nunca integrada ao módulo real.
+- Backup externo (`backup_to_b2.sh`) — **agendado** como cron diário
+  desde 31/jul (não é mais pendência).
 - Wiring dos 10 periódicos ao índice de busca antigo
   (`data/publication_sources/`) — resolvido: esse mecanismo foi
   **aposentado por completo** em 28/jul (0 entradas, era 1492), os

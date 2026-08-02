@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho Admin</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=range1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=range2">
 </head>
 <body>
     <main class="admin-shell">
@@ -48,11 +48,22 @@
         <section class="admin-grid">
             <article class="admin-card"><h2>Doações</h2><div id="donations-box" class="details-box">Carregando...</div></article>
             <article class="admin-card"><h2>DeepSeek</h2><div id="tokens-box" class="details-box">Carregando...</div></article>
-            <article class="admin-card admin-card-wide"><h2>Usuários cadastrados</h2><div id="users-box" class="details-box users-box">Carregando...</div></article>
+            <article class="admin-card admin-card-wide">
+                <h2>Usuários cadastrados</h2>
+                <div class="users-filter-bar">
+                    <input type="search" id="users-filter" placeholder="Filtrar por e-mail...">
+                    <select id="users-plan-filter">
+                        <option value="">Todos os planos</option>
+                        <option value="premium">Premium</option>
+                        <option value="gratis">Gratuito</option>
+                    </select>
+                </div>
+                <div id="users-box" class="details-box users-box">Carregando...</div>
+            </article>
             <article class="admin-card"><h2>Atendimentos</h2><div id="support-list" class="support-list">Carregando...</div></article>
             <article class="admin-card"><h2>Responder suporte</h2><div id="ticket-detail" class="ticket-detail">Selecione um atendimento.</div><form id="reply-form" class="reply-form"><textarea id="reply-message" placeholder="Responder em português..." required></textarea><div class="reply-actions"><button type="submit">Enviar resposta</button><button type="button" id="close-ticket">Marcar resolvido</button></div></form></article>
         </section>
     </main>
-    <script src="{{ url_for('static', filename='js/admin.js') }}?v=range1"></script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}?v=range2"></script>
 </body>
 </html>
