@@ -2676,3 +2676,46 @@ body {
         width: 100% !important;
     }
 }
+
+/* 2026-08-02: compactado o quota-card (mesmo conteúdo, menos espaço
+   vertical) para caber a página inteira sem rolagem nas resoluções
+   comuns, medido com Playwright. */
+.quota-card {
+    gap: 6px;
+    padding: 10px;
+}
+
+.quota-pricing-note {
+    padding: 8px 12px;
+}
+
+/* Medido com Playwright: o maior bloco de sobra de longe é o saudação
+   "Como posso ajudar?" (.hero) -- ~125px -- que continuava totalmente
+   visível em modo .compact (só o *espaçamento* era reduzido, não o
+   conteúdo), mesmo já havendo uma conversa em andamento e a saudação
+   perder o sentido. Escondendo por completo nesse estado é o que
+   realmente devolve a página a caber sem rolagem. */
+.hero.compact {
+    display: none;
+}
+
+/* Celular: o quota-card cresce muito mais que no desktop (o texto de
+   doação quebra em várias linhas na largura estreita) -- ainda o maior
+   bloco de sobra depois do ajuste acima, então compactado à parte aqui. */
+@media (max-width: 720px) {
+    .quota-card {
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .quota-pricing-note {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        padding: 6px 10px;
+    }
+
+    .quota-card a,
+    .quota-card button {
+        padding: 6px 12px;
+    }
+}

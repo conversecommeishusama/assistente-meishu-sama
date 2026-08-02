@@ -87,18 +87,6 @@
             {% endif %}
         {% endwith %}
 
-        {% if user and not user.get('email_confirmado') %}
-            <section class="flash-list">
-                <div class="flash error">
-                    Confirme seu e-mail pelo link enviado no cadastro antes de fazer perguntas.
-                    Depois de confirmar, faça login novamente.
-                </div>
-                <form class="resend-confirm-form" action="{{ url_for('web.reenviar_confirmacao') }}" method="post">
-                    <input type="hidden" name="email" value="{{ user.email }}">
-                    <button type="submit">Reenviar e-mail de confirmação</button>
-                </form>
-            </section>
-        {% endif %}
 
         <section class="panel-grid">
             <form class="floating-panel" id="login-panel" action="{{ url_for('web.login') }}" method="post" accept-charset="UTF-8">
@@ -333,7 +321,6 @@
                             <button type="button" data-feedback="dislike" aria-label="Não gostei" title="Não gostei">👎</button>
                             <button type="button" data-favorite-response aria-label="Salvar favorito" title="Salvar favorito">☆</button>
                             <button type="button" data-show-sources aria-label="Ver fontes" title="Ver fontes">📚</button>
-                            <button type="button" data-cite-sources aria-label="Aprofundar com citações" title="Aprofundar com citações">📖</button>
                             <button type="button" data-share-response aria-label="Compartilhar" title="Compartilhar">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <circle cx="18" cy="5" r="3"></circle>
@@ -348,16 +335,6 @@
             {% endfor %}
         </section>
 
-        <fieldset class="response-mode" id="citation-mode" data-i18n-aria="citationModeAria" aria-label="Formato da resposta">
-            <label>
-                <input type="radio" name="citation-mode" value="direta" checked>
-                <span data-i18n="citationModeDirect">Direta</span>
-            </label>
-            <label>
-                <input type="radio" name="citation-mode" value="citado">
-                <span data-i18n="citationModeCited">Com citações</span>
-            </label>
-        </fieldset>
         <form class="composer" id="chat-form">
             <select id="language" class="language-select-hidden" aria-label="Idioma da resposta">
                 <option>Português</option>
@@ -428,6 +405,6 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=150"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=149"></script>
 </body>
 </html>

@@ -121,11 +121,6 @@ const uiTranslations = {
         dislike: "Não gostei",
         favorite: "Salvar favorito",
         showSources: "Ver fontes",
-        citationModeDirect: "Direta",
-        citationModeCited: "Com citações",
-        citationModeAria: "Formato da resposta",
-        citeSources: "Aprofundar com citações",
-        citingSources: "Buscando as citações...",
         share: "Compartilhar",
         shareCopyLink: "Copiar link",
         shareWhatsapp: "WhatsApp",
@@ -199,11 +194,6 @@ const uiTranslations = {
         dislike: "Dislike",
         favorite: "Save favorite",
         showSources: "View sources",
-        citationModeDirect: "Direct",
-        citationModeCited: "With citations",
-        citationModeAria: "Response format",
-        citeSources: "Deepen with citations",
-        citingSources: "Finding the citations...",
         share: "Share",
         shareCopyLink: "Copy link",
         shareWhatsapp: "WhatsApp",
@@ -277,11 +267,6 @@ const uiTranslations = {
         dislike: "No me gusta",
         favorite: "Guardar favorito",
         showSources: "Ver fuentes",
-        citationModeDirect: "Directa",
-        citationModeCited: "Con citas",
-        citationModeAria: "Formato de la respuesta",
-        citeSources: "Profundizar con citas",
-        citingSources: "Buscando las citas...",
         share: "Compartir",
         shareCopyLink: "Copiar enlace",
         shareWhatsapp: "WhatsApp",
@@ -354,11 +339,6 @@ const uiTranslations = {
         dislike: "よくない",
         favorite: "お気に入りに保存",
         showSources: "出典を見る",
-        citationModeDirect: "直接",
-        citationModeCited: "引用付き",
-        citationModeAria: "回答形式",
-        citeSources: "引用で深掘り",
-        citingSources: "引用を検索しています...",
         share: "共有",
         shareCopyLink: "リンクをコピー",
         shareWhatsapp: "WhatsApp",
@@ -431,11 +411,6 @@ const uiTranslations = {
         dislike: "踩",
         favorite: "收藏",
         showSources: "查看来源",
-        citationModeDirect: "直接",
-        citationModeCited: "附引用",
-        citationModeAria: "回答格式",
-        citeSources: "附引用深入",
-        citingSources: "正在查找引用...",
         share: "分享",
         shareCopyLink: "复制链接",
         shareWhatsapp: "WhatsApp",
@@ -508,11 +483,6 @@ const uiTranslations = {
         dislike: "नापसंद",
         favorite: "पसंदीदा में सहेजें",
         showSources: "स्रोत देखें",
-        citationModeDirect: "सीधा",
-        citationModeCited: "उद्धरण सहित",
-        citationModeAria: "उत्तर प्रारूप",
-        citeSources: "उद्धरणों के साथ गहराई से जानें",
-        citingSources: "उद्धरण खोजे जा रहे हैं...",
         share: "साझा करें",
         shareCopyLink: "लिंक कॉपी करें",
         shareWhatsapp: "WhatsApp",
@@ -585,11 +555,6 @@ const uiTranslations = {
         dislike: "عدم إعجاب",
         favorite: "حفظ في المفضلة",
         showSources: "عرض المصادر",
-        citationModeDirect: "مباشر",
-        citationModeCited: "مع الاقتباسات",
-        citationModeAria: "تنسيق الرد",
-        citeSources: "تعميق بالاقتباسات",
-        citingSources: "جارٍ البحث عن الاقتباسات...",
         share: "مشاركة",
         shareCopyLink: "نسخ الرابط",
         shareWhatsapp: "واتساب",
@@ -663,11 +628,6 @@ const uiTranslations = {
         dislike: "Je n'aime pas",
         favorite: "Enregistrer comme favori",
         showSources: "Voir les sources",
-        citationModeDirect: "Directe",
-        citationModeCited: "Avec citations",
-        citationModeAria: "Format de réponse",
-        citeSources: "Approfondir avec citations",
-        citingSources: "Recherche des citations...",
         share: "Partager",
         shareCopyLink: "Copier le lien",
         shareWhatsapp: "WhatsApp",
@@ -740,11 +700,6 @@ const uiTranslations = {
         dislike: "অপছন্দ",
         favorite: "পছন্দসইয়ে সংরক্ষণ করুন",
         showSources: "উৎস দেখুন",
-        citationModeDirect: "সরাসরি",
-        citationModeCited: "উদ্ধৃতি সহ",
-        citationModeAria: "উত্তরের বিন্যাস",
-        citeSources: "উদ্ধৃতি দিয়ে বিস্তারিত",
-        citingSources: "উদ্ধৃতি খোঁজা হচ্ছে...",
         share: "শেয়ার করুন",
         shareCopyLink: "লিংক কপি করুন",
         shareWhatsapp: "WhatsApp",
@@ -817,11 +772,6 @@ const uiTranslations = {
         dislike: "Не нравится",
         favorite: "Сохранить в избранное",
         showSources: "Показать источники",
-        citationModeDirect: "Прямой",
-        citationModeCited: "С цитатами",
-        citationModeAria: "Формат ответа",
-        citeSources: "Углубить с цитатами",
-        citingSources: "Поиск цитат...",
         share: "Поделиться",
         shareCopyLink: "Скопировать ссылку",
         shareWhatsapp: "WhatsApp",
@@ -894,11 +844,6 @@ const uiTranslations = {
         dislike: "ناپسند",
         favorite: "پسندیدہ میں محفوظ کریں",
         showSources: "ذرائع دیکھیں",
-        citationModeDirect: "براہ راست",
-        citationModeCited: "حوالوں کے ساتھ",
-        citationModeAria: "جواب کی شکل",
-        citeSources: "حوالوں کے ساتھ مزید تفصیل",
-        citingSources: "حوالے تلاش کیے جا رہے ہیں...",
         share: "شیئر کریں",
         shareCopyLink: "لنک کاپی کریں",
         shareWhatsapp: "WhatsApp",
@@ -971,11 +916,6 @@ const uiTranslations = {
         dislike: "Tidak suka",
         favorite: "Simpan sebagai favorit",
         showSources: "Lihat sumber",
-        citationModeDirect: "Langsung",
-        citationModeCited: "Dengan kutipan",
-        citationModeAria: "Format jawaban",
-        citeSources: "Perdalam dengan kutipan",
-        citingSources: "Mencari kutipan...",
         share: "Bagikan",
         shareCopyLink: "Salin tautan",
         shareWhatsapp: "WhatsApp",
@@ -1048,11 +988,6 @@ const uiTranslations = {
         dislike: "Gefällt mir nicht",
         favorite: "Als Favorit speichern",
         showSources: "Quellen anzeigen",
-        citationModeDirect: "Direkt",
-        citationModeCited: "Mit Zitaten",
-        citationModeAria: "Antwortformat",
-        citeSources: "Mit Zitaten vertiefen",
-        citingSources: "Zitate werden gesucht...",
         share: "Teilen",
         shareCopyLink: "Link kopieren",
         shareWhatsapp: "WhatsApp",
@@ -1243,10 +1178,6 @@ function getRetrievalMode() {
     return document.body.dataset.retrievalMode || "jp_agentic";
 }
 
-function getCitationMode() {
-    return document.querySelector('input[name="citation-mode"]:checked')?.value || "direta";
-}
-
 function handleChatStatusEvent(loading, event) {
     if (event.event !== "status" || !event.code) return;
     if (event.code === "checking_japanese") {
@@ -1274,7 +1205,6 @@ function messageActionsHtml() {
         <button type="button" data-feedback="dislike" aria-label="${escapeHtml(uiText("dislike"))}" title="${escapeHtml(uiText("dislike"))}">👎</button>
         <button type="button" data-favorite-response aria-label="${escapeHtml(uiText("favorite"))}" title="${escapeHtml(uiText("favorite"))}">☆</button>
         <button type="button" data-show-sources aria-label="${escapeHtml(uiText("showSources"))}" title="${escapeHtml(uiText("showSources"))}">📚</button>
-        <button type="button" data-cite-sources aria-label="${escapeHtml(uiText("citeSources"))}" title="${escapeHtml(uiText("citeSources"))}">📖</button>
         <button type="button" data-share-response aria-label="${escapeHtml(uiText("share"))}" title="${escapeHtml(uiText("share"))}">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <circle cx="18" cy="5" r="3"></circle>
@@ -1787,7 +1717,6 @@ chatForm?.addEventListener("submit", async (event) => {
                 message,
                 language: languageInput?.value || selectedLanguage,
                 retrieval_mode: getRetrievalMode(),
-                citation_mode: getCitationMode(),
                 conversation_id: chat?.dataset.conversationId,
                 history: conversationHistory.slice(-8),
             }),
@@ -1830,54 +1759,10 @@ chatForm?.addEventListener("submit", async (event) => {
     }
 });
 
-async function requestCiteSources(button) {
-    if (!isLoggedIn) {
-        openPanel("register-panel");
-        return;
-    }
-    button.disabled = true;
-    const loading = appendMessage("assistant", uiText("citingSources"), null, { pending: true });
-    try {
-        const response = await fetch("/api/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                message: "",
-                language: languageInput?.value || selectedLanguage,
-                retrieval_mode: getRetrievalMode(),
-                conversation_id: chat?.dataset.conversationId,
-                history: conversationHistory.slice(-8),
-                cite_sources: true,
-            }),
-        });
-        const contentType = response.headers.get("content-type") || "";
-        const data = contentType.includes("application/x-ndjson")
-            ? await readNdjsonStream(response, (event) => handleChatStatusEvent(loading, event))
-            : await readJson(response);
-        if (!response.ok && !contentType.includes("application/x-ndjson")) {
-            throw new Error(data.error || "Erro ao buscar as citações.");
-        }
-        if (chat) chat.dataset.conversationId = data.conversation_id || "";
-        setBubbleContent(loading, data.answer || "", "assistant");
-        const article = loading?.closest(".message");
-        article?.classList.remove("is-pending");
-        if (article && data.assistant_message_id) article.dataset.messageId = data.assistant_message_id;
-        updateQuotaCard(data.quota_status);
-        conversationHistory.push({ role: "assistant", content: data.answer || "" });
-        article?.scrollIntoView({ behavior: "smooth", block: "start" });
-    } catch (error) {
-        loading?.closest(".message")?.classList.remove("is-pending");
-        setBubbleContent(loading, error.message, "assistant");
-    } finally {
-        button.disabled = false;
-    }
-}
-
 chat?.addEventListener("click", async (event) => {
     const feedbackButton = event.target.closest("[data-feedback]");
     const favoriteButton = event.target.closest("[data-favorite-response]");
     const sourcesButton = event.target.closest("[data-show-sources]");
-    const citeSourcesButton = event.target.closest("[data-cite-sources]");
     const shareButton = event.target.closest("[data-share-response]");
     const article = event.target.closest(".message");
 
@@ -1887,10 +1772,6 @@ chat?.addEventListener("click", async (event) => {
     }
     if (sourcesButton) {
         toggleSourcesPanel(article);
-        return;
-    }
-    if (citeSourcesButton) {
-        await requestCiteSources(citeSourcesButton);
         return;
     }
     if (shareButton) {
