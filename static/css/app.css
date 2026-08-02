@@ -266,6 +266,40 @@ body {
     color: #174ea6;
 }
 
+/* 2026-08-03: os seletores herdados `.hero .response-mode`/`.composer
+   .response-mode` (mais abaixo neste arquivo) nunca centralizam de fato o
+   toggle Direta/Com citações -- no HTML atual o fieldset é IRMÃO do
+   `<form class="composer">`, não descendente dele nem de `.hero`, então
+   `margin-inline: auto` nunca chega a valer. Regra própria por id,
+   suficientemente específica para vencer as demais sem depender da
+   posição no documento. */
+#citation-mode.response-mode {
+    display: flex !important;
+    margin-inline: auto !important;
+    width: fit-content !important;
+}
+
+@media (max-width: 400px) {
+    /* Tela cheia sem sobra em telas pequenas -- reduz a margem/altura só
+       deste toggle (o resto da página já foi ajustado em sessões
+       anteriores, ver notas de layout no CLAUDE.md). O min-height:34px
+       de `.response-mode span` (regra herdada, ~720px de largura) é o que
+       realmente define a altura do pill -- sem sobrescrever isso aqui, a
+       redução de padding do label sozinha não encolhe nada. */
+    #citation-mode.response-mode {
+        margin-top: 6px !important;
+    }
+
+    #citation-mode.response-mode label {
+        padding: 4px 8px !important;
+    }
+
+    #citation-mode.response-mode label span {
+        min-height: 0 !important;
+        padding: 0 !important;
+    }
+}
+
 .language-select-hidden {
     display: none !important;
 }

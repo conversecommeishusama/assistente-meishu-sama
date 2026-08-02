@@ -6212,7 +6212,7 @@ falhas + 1 erro pré-existentes já catalogados, 0 regressão nova).
 Autorizado e promovido: produção reiniciada, `goshinsho.com.br/app-pt`
 confirmado servindo o HTML com o toggle novo.
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver sessão 2026-08-03 abaixo)
 
 1. Reconstrução do índice PT do glossário Kannon (esfera/jóia, sessão
    anterior) **ainda rodando** em tmux (`promocao_esfera_joia`, ~59% às
@@ -6223,5 +6223,171 @@ confirmado servindo o HTML com o toggle novo.
 3. "Busca em lotes" (regra 20) continua testada e vencedora em tempo/custo,
    nunca integrada -- mesma pendência de sessões anteriores.
 4. Nenhuma integração/promoção/reinício de produção sem autorização
+   explícita do usuário -- a desta sessão já foi dada e executada, não é
+   permanente para trabalho futuro.
+
+## Sessão 2026-08-03 (Claude Code, retomando após relogin) -- modos
+## Direta/Com citações reimplementados sobre a base já corrigida (fix de
+## idioma), bug real de centralização achado e corrigido no processo,
+## promovido a produção
+
+### Contexto: por que isso foi reimplementado
+
+A sessão de 02/08 tinha implementado os modos "Direta"/"Com citações" +
+botão "Aprofundar com citações" (commit `39af99c`), mas um teste real
+revelou respostas em japonês para usuários esperando português --
+`496a40d` reverteu por completo `agentic_search.py`/`app.js` (mantendo só
+os ajustes independentes, ver nota daquele commit) para não arriscar
+piorar o problema sob pressão. A causa raiz do bug de idioma (reforço de
+`(Answer in {language}.)` só aplicado ao "Aprofundar", não a toda
+pergunta) foi isolada e corrigida separadamente em `40bbb4c`, **sem**
+reintroduzir os modos. Esta sessão (nova conversa, após a anterior cair
+por necessidade de relogin) retomou exatamente do ponto descrito no
+último parágrafo daquela sessão: reimplementar os dois modos **sobre**
+essa base já corrigida, não voltar à versão revertida.
+
+### O que foi reimplementado (mesmo desenho da sessão de 02/08)
+
+- `goshinsho/services/agentic_search.py`: prompt PT e JP divididos em
+  HEAD (regras 1-8, já incluindo os fixes de 40bbb4c -- etimologia sem
+  kanji, `buscar_artigo_por_titulo` restrito a pedido explícito de "na
+  íntegra") + regra 9 variável (`SYSTEM_PROMPT_REGRA9_CITACOES`/
+  `_REGRA9_DIRETA`, e os equivalentes `_JP_..._TEMPLATE`) + TAIL (regra
+  10, fusão de fontes). `responder_agentico_deepseek_jp` ganhou
+  `com_citacoes: bool = True`.
+  **Refinamento novo nesta sessão** (não existia na versão revertida): a
+  regra 9 "Direta" agora proíbe explicitamente uma lista de nomes de
+  arquivo ou seção "Fontes"/"Referências" ao final da resposta -- mitiga
+  o achado incidental documentado na sessão anterior (regra 4,
+  compartilhada, "cite a fonte dos trechos usados" vazando pro modo sem
+  citação). Confirmado ausente nos testes desta sessão (não é garantia
+  absoluta, é instrução de prompt).
+- `goshinsho/routes.py`: `citation_mode`/`cite_sources` no payload de
+  `/api/chat`, escolhendo `SYSTEM_PROMPT`/`SYSTEM_PROMPT_DIRETO` (PT) ou
+  `com_citacoes` (JP). **Cuidado deliberado**: o reforço de idioma
+  `(Answer in {language}.)` de `40bbb4c` (aplicado a **todo turno**, não
+  só ao "Aprofundar"/"cite_sources") foi mantido como estava -- a versão
+  revertida de 02/08 tinha essa reforço só dentro do bloco
+  `expand_previous`/`cite_sources`, que é exatamente o formato do bug já
+  corrigido; reimplementar cegamente a partir do diff antigo teria
+  reintroduzido a regressão.
+- `templates/app.html`/`static/js/app.js`: fieldset `#citation-mode`
+  (Direta/Com citações) reintroduzido antes do `<form class="composer">`,
+  botão 📖 (`data-cite-sources`) nas respostas, `getCitationMode()`,
+  `requestCiteSources()`, chaves i18n (`citationModeDirect/Cited/Aria`,
+  `citeSources`, `citingSources`) inseridas nos 13 idiomas via script
+  (não editadas manualmente idioma a idioma, mesmo método de sessões
+  anteriores).
+
+### Achado real, não previsto no pedido original: toggle não estava
+### centralizado
+
+Medido com Playwright (chromium headless, sessão real via cookie
+assinado de `test_client()`, mesmo método já usado em sessões anteriores)
+contra `/var/www/goshinsho-test`: o fieldset `#citation-mode` ficava
+flush-left no desktop (gap esquerda=22px, direita=858px num viewport de
+1440px) -- só coincidentemente centralizado no mobile (390px), porque
+nesse breakpoint o padding lateral da página já deixa pouca folga.
+
+**Causa raiz**: `static/css/app.css` tem pelo menos 6 blocos de regra
+`.response-mode` acumulados de sessões/experimentos anteriores (mesmo
+padrão de cruft já documentado para `.topbar` em 31/07), incluindo duas
+variantes `.hero .response-mode`/`.composer .response-mode` com
+`margin-inline: auto` -- mas nenhuma delas se aplica de verdade, porque
+no HTML atual o fieldset é **irmão** do `<form class="composer">` (e não
+descendente de `.hero` nem de `.composer`). Além disso, o `display`
+efetivo vencedor da cascata (`inline-grid`, de um bloco posterior sem
+`!important`) é um valor **inline-level**, para o qual `margin: auto`
+nunca centraliza, mesmo que o seletor batesse.
+
+**Corrigido**: regra própria por id (`#citation-mode.response-mode`,
+especificidade suficiente para vencer sem depender de posição no
+arquivo) forçando `display: flex !important; margin-inline: auto !important;
+width: fit-content !important`. Verificado com Playwright: gap
+esquerda=direita em 1440px, 390px e 360px de largura.
+
+### Ajuste de tela pequena, com resíduo documentado (não perseguido a zero)
+
+O novo fieldset (~44-58px de altura com margem) empurrou telas muito
+pequenas/antigas para sobra de rolagem que não existia antes dele
+(360×640 foi de ~52px de sobra pré-existente para ~124px com o toggle
+sem ajuste). Adicionado `@media (max-width: 400px)` reduzindo margem e
+padding do próprio toggle (inclusive sobrescrevendo o `min-height:34px`
+herdado do `<span>` que na prática definia a altura mínima do pill) --
+resultado: 360×640 caiu para 100px de sobra, 320×568 (iPhone 5/SE) para
+185px. **Não chegou a zero nessas duas telas específicas** -- telas
+modernas (390×844 e maiores, e desktop) continuam com 0px de sobra,
+como já estava antes desta sessão. Mesma decisão já tomada em 31/07 para
+outro elemento: aceitar resíduo pequeno em hardware muito antigo em vez
+de reestruturar `.hero`/`.quota-card` (que são as maiores fatias de
+altura nessas telas, fora do escopo deste pedido).
+
+### Testes, em 3 camadas, antes de promover
+
+1. **Chamada direta**: `responder_agentico_deepseek` (PT, com/sem
+   `system_prompt=SYSTEM_PROMPT_DIRETO`) e `responder_agentico_deepseek_jp`
+   (com `idioma="English", com_citacoes=False`, confirmando a combinação
+   idioma+modo funciona junto) -- respostas reais, sem citação `[arquivo.txt]`
+   no modo Direta, com citação no modo padrão, resposta em inglês
+   confirmada no JP+Direta.
+2. **Suíte automatizada** (`python3 -m unittest discover -s tests`):
+   125/128 -- as mesmas 2 falhas + 1 erro de import já catalogados em
+   sessão anterior (31/07, `test_ohikari_filter` renomeado,
+   `test_direct_mode_is_in_depth_without_citations` testando regra
+   antiga do pipeline v2, `test_qa_dialogue_annotation` decisão de
+   estrutura pendente) -- nenhuma regressão nova.
+3. **HTTP real** contra `/var/www/goshinsho-test` (porta 5090, código
+   sincronizado, conta real não-developer `raquelgibrail@gmail.com`,
+   sessão injetada via `test_client()` + cookie assinado, mesmo método
+   de sessões anteriores): 3 fluxos em sequência na mesma conversa --
+   `citation_mode=direta` (sem citação), `citation_mode=citado` (com
+   citação), `cite_sources=true` (reaproveitou corretamente o histórico
+   REAL do banco para a última pergunta, não o histórico fabricado que o
+   teste enviou no payload -- confirma que `routes.py` prioriza
+   `list_messages(conversation_id)` sobre `client_history` para usuário
+   logado, como já era esperado). Conversa de teste apagada do banco
+   (`mensagens`+`conversas`) ao final -- as outras conversas antigas
+   dessa conta (de sessões anteriores) não foram tocadas.
+
+### Achado colateral durante o restart: promoção pendente do glossário
+### Kannon (esfera/jóia, sessão de 02/08) resolvida de graça
+
+Ao investigar o estado do projeto para este handoff, `reports/
+promocao_esfera_joia_kannon/ERROR.marker` mostrava que aquele script de
+promoção (rodado em tmux numa sessão anterior) tinha **completado a
+reconstrução do índice PT** (8.668 chunks, confirmadas 24 ocorrências
+de "esfera (jóia)"/"Mani no Tama" no `chunks_pt.pkl` instalado) mas
+falhado no seu próprio passo de `systemctl restart` (script com `set -e`
++ trap de erro, log termina sem as linhas de verificação do passo 4).
+Como **esta sessão reiniciou `goshinsho.service` de qualquer forma** (por
+causa dos modos Direta/Com citações), esse restart pendente da sessão
+anterior foi resolvido de tabela -- confirmado por leitura direta do
+`chunks_pt.pkl` em `experiments/uploaded_indexes/` (o staging que
+`_index_file()` prioriza): a correção de glossário Kannon já estava
+instalada há dias, só faltava o restart que nunca tinha rodado com
+sucesso.
+
+### Produção: reiniciada e commitada
+
+`systemctl restart goshinsho.service`, confirmado `/app-pt`/`/app` → 200,
+HTML servido já com `app.css?v=148`, `app.js?v=150`, `id="citation-mode"`.
+Commit cobre: `goshinsho/routes.py`, `goshinsho/services/agentic_search.py`,
+`templates/app.html`, `static/js/app.js`, `static/css/app.css` (+ este
+documento). `git diff --stat` conferido antes do commit -- só estes 5
+arquivos de código estavam modificados, sem cruft acumulado de sessão
+anterior.
+
+### Onde continuar
+
+1. Modos Direta/Com citações + botão "Aprofundar com citações": **em
+   produção, testados nas 3 camadas de sempre**. Não é mais pendência.
+2. Centralização do toggle: **corrigida e verificada** em 3 larguras de
+   tela. Sobra de rolagem em telas muito pequenas/antigas (360×640,
+   320×568) reduzida mas não zerada -- documentado como aceito, mesmo
+   padrão de decisão já usado em 31/07 para outro elemento.
+3. "Busca em lotes" (regra 20, testada em sessão anterior como mais
+   rápida/barata) continua **não integrada** a `agentic_search.py` real
+   -- mesma pendência de sessões anteriores, não tocada aqui.
+4. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário -- a desta sessão já foi dada e executada, não é
    permanente para trabalho futuro.

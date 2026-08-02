@@ -888,6 +888,13 @@ def api_chat():
     expand_previous = bool(payload.get("expand_previous"))
     expand_anchor_question = (payload.get("expand_anchor_question") or "").strip()
     expand_anchor_answer = (payload.get("expand_anchor_answer") or "").strip()
+    # 2026-08-03: modo "Direta" (padrão, sem citação literal) vs. "Com
+    # citações" (formato antigo, com trecho literal + [arquivo.txt]) do
+    # modo agêntico -- ver CLAUDE.md. `cite_sources` é o botão de ícone
+    # "Aprofundar com citações": não muda o modo escolhido pelo usuário,
+    # sempre força citações para justificar a resposta anterior.
+    citation_mode = (payload.get("citation_mode") or "direta").strip().lower()
+    cite_sources = bool(payload.get("cite_sources"))
     question = (payload.get("message") or "").strip()
     language = payload.get("language") or "Português"
     response_mode = payload.get("response_mode") or "direct"
@@ -909,6 +916,8 @@ def api_chat():
         response_mode = "expand"
         if not question:
             question = "Aprofundar a resposta anterior"
+    if cite_sources and not question:
+        question = "Mostrar as fontes da resposta anterior"
     if not question:
         return jsonify({"error": "Digite uma pergunta."}), 400
     if not user:
@@ -964,7 +973,7 @@ def api_chat():
         conversation_id = create_conversation(user["id"], question[:50] + ("..." if len(question) > 50 else ""))
         session["active_conversation_id"] = conversation_id
     history = list_messages(conversation_id) if user and conversation_id else client_history
-    if user and conversation_id and not expand_previous:
+    if user and conversation_id and not expand_previous and not cite_sources:
         save_message(conversation_id, "user", question)
 
     # 2026-07-30: modo agêntico (goshinsho/services/agentic_search.py, busca
@@ -989,7 +998,12 @@ def api_chat():
     # "Aprofundar" usa uma instrução explícita pedindo mais profundidade
     # sobre o mesmo tema, também validada por teste direto.
     if retrieval_mode in ("pt_agentic", "jp_agentic"):
-        from .services.agentic_search import responder_agentico_deepseek, responder_agentico_deepseek_jp
+        from .services.agentic_search import (
+            SYSTEM_PROMPT,
+            SYSTEM_PROMPT_DIRETO,
+            responder_agentico_deepseek,
+            responder_agentico_deepseek_jp,
+        )
         from .services.conversation_context import strip_source_marker
 
         search_variant = "agentic_pt" if retrieval_mode == "pt_agentic" else "agentic_jp"
@@ -1006,6 +1020,20 @@ def api_chat():
                 "próprio, senão o assunto do turno anterior): busque mais detalhes, exemplos, "
                 "testemunhos e trechos adicionais do acervo que ainda não foram citados, e traga uma "
                 "explicação mais completa, sem repetir literalmente o que já foi dito."
+            )
+        elif cite_sources:
+            # 2026-08-03: botão "Aprofundar com citações" -- não é uma busca
+            # nova nem um aprofundamento de conteúdo, é pedir os trechos
+            # literais que sustentam a resposta anterior (que, no modo
+            # "Direta", nunca teve citação visível). Reaproveita o histórico
+            # da conversa; o modelo tem as mesmas ferramentas de busca para
+            # re-localizar os trechos exatos.
+            pergunta_agentico = (
+                f"Cite os trechos literais (entre aspas, com o nome do arquivo entre colchetes) que "
+                f"sustentam a resposta anterior sobre este mesmo tema (\"{question}\" se houver texto "
+                "próprio, senão o assunto do turno anterior) -- sem mudar a conclusão nem acrescentar "
+                "conteúdo novo, apenas mostre as fontes exatas que a embasam, organizadas pelos mesmos "
+                "temas já usados na resposta anterior."
             )
         # 2026-07-31/2026-08-02: achado real testando o fix de idioma -- esta
         # instrução em {language} (é uma instrução PARA o modelo, não
@@ -1037,7 +1065,15 @@ def api_chat():
                 # mesmo com outro idioma selecionado). Só o lado JP precisa
                 # do parâmetro (pt_agentic é sempre português, corpus já
                 # está no idioma certo).
-                extra_kwargs = {"idioma": language} if retrieval_mode == "jp_agentic" else {}
+                #
+                # 2026-08-03: com_citacoes -- "Aprofundar com citações"
+                # sempre força citação, independente do modo escolhido pelo
+                # usuário; fora isso, o toggle Direta/Com citações decide.
+                com_citacoes = True if cite_sources else citation_mode == "citado"
+                if retrieval_mode == "jp_agentic":
+                    extra_kwargs = {"idioma": language, "com_citacoes": com_citacoes}
+                else:
+                    extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
