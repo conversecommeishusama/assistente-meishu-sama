@@ -56,6 +56,7 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
         return {
             "show_developer_nav": is_developer_user(user),
             "public_site_url": Config.PUBLIC_SITE_URL,
+            "meta_pixel_id": Config.META_PIXEL_ID,
         }
 
     @app.after_request

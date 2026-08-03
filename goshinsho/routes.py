@@ -779,9 +779,15 @@ def cadastro():
     if password != confirm_password:
         flash("As senhas não coincidem.", "error")
         return redirect(url_for("web.app_view"))
+    # 2026-08-03: sinaliza cadastro REAL concluído (não bot) pro frontend
+    # disparar o evento de conversão do Meta Pixel (goshinsho-cookie-consent
+    # precisa já ter sido aceito -- ver cookie_consent.js) -- via parâmetro
+    # de query na URL de redirecionamento, nunca no caminho de bot/erro.
+    signup_succeeded = False
     try:
         register_user(email, password, allow_bot_check=False, form=request.form)
         flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
+        signup_succeeded = True
     except Exception as exc:
         if str(exc) == "__BOT_SILENT_SUCCESS__":
             flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
@@ -791,9 +797,14 @@ def cadastro():
                 "antes de fazer login e usar o assistente.",
                 "success",
             )
+            signup_succeeded = True
         else:
             flash(_friendly_error(exc), "error")
-    return redirect(session.pop("next_url", url_for("web.app_view")))
+    destination = session.pop("next_url", url_for("web.app_view"))
+    if signup_succeeded:
+        separator = "&" if "?" in destination else "?"
+        destination = f"{destination}{separator}signup=1"
+    return redirect(destination)
 
 
 @web_bp.post("/reenviar-confirmacao")

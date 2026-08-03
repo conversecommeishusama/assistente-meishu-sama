@@ -74,3 +74,7 @@ class Config:
     # 2026-08-03: monitoramento de erros (Sentry, plano de escala). Vazio
     # desativa -- sem custo/dependência obrigatória pra rodar o app.
     SENTRY_DSN = _env("SENTRY_DSN")
+    # 2026-08-03: Meta Pixel (medição de campanha paga Facebook/Instagram).
+    # Vazio desativa -- o script (cookie_consent.js) só carrega o Pixel de
+    # verdade com consentimento explícito do usuário, nunca antes disso.
+    META_PIXEL_ID = _env("META_PIXEL_ID")

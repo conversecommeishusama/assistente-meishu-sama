@@ -1674,6 +1674,20 @@ function openRequestedPanelFromUrl() {
     if (params.get("confirmed") === "1") {
         showTransientNotice("E-mail confirmado! Faça login para continuar.", "success");
     }
+    // 2026-08-03: cadastro real concluído (routes.py só acrescenta este
+    // parâmetro nos casos de sucesso genuíno, nunca em bot/erro) -- dispara
+    // o evento de conversão do Meta Pixel (cookie_consent.js, sem efeito
+    // se o usuário não tiver consentido) e limpa o parâmetro da URL pra não
+    // disparar de novo num refresh.
+    if (params.get("signup") === "1") {
+        if (typeof window.goshinshoTrackConversion === "function") {
+            window.goshinshoTrackConversion("CompleteRegistration");
+        }
+        params.delete("signup");
+        const cleanQuery = params.toString();
+        const cleanUrl = window.location.pathname + (cleanQuery ? `?${cleanQuery}` : "") + window.location.hash;
+        window.history.replaceState({}, "", cleanUrl);
+    }
     const panelMap = {
         login: "login-panel",
         register: "register-panel",

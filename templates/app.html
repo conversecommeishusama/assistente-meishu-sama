@@ -6,7 +6,7 @@
     <title>Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=150">
 </head>
-<body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}">
+<body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}" data-meta-pixel-id="{{ meta_pixel_id or '' }}">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span data-i18n="menu">Menu</span>
@@ -428,5 +428,6 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/app.js') }}?v=152"></script>
+    <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <title data-i18n="eyebrow">Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=150">
 </head>
-<body class="landing-body" data-landing-i18n="{{ landing_i18n | tojson | forceescape }}">
+<body class="landing-body" data-landing-i18n="{{ landing_i18n | tojson | forceescape }}" data-meta-pixel-id="{{ meta_pixel_id or '' }}">
     <main class="landing-shell">
         <div class="landing-language-bar">
             <label for="landing-language-select" class="sr-only" data-i18n="languageLabel">Idioma</label>
@@ -48,5 +48,6 @@
     </footer>
 
     <script src="{{ url_for('static', filename='js/legal_i18n.js') }}?v=2"></script>
+    <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
 </body>
 </html>

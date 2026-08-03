@@ -2913,3 +2913,53 @@ body {
     color: var(--muted);
     text-decoration: underline;
 }
+
+/* 2026-08-03: aviso de cookies (Meta Pixel, só com consentimento) */
+.cookie-consent-banner {
+    background: var(--card, #fff);
+    border-top: 1px solid var(--border);
+    bottom: 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    left: 0;
+    padding: 14px 20px;
+    position: fixed;
+    right: 0;
+    z-index: 9999;
+}
+
+.cookie-consent-banner p {
+    color: var(--text);
+    flex: 1 1 320px;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.cookie-consent-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.cookie-consent-actions button {
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+}
+
+.cookie-consent-accept {
+    background: var(--primary);
+    border: none;
+    color: #fff;
+}
+
+.cookie-consent-reject {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
