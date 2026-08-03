@@ -7154,6 +7154,78 @@ sem regressão), sincronizado e confirmado subindo sem erro em
    `/etc/cron.d/goshinsho-backup` -- ainda não feito.
 3. Fazer o teste de restauração de verdade (baixar do Drive pra pasta
    temporária, verificar integridade) -- objetivo original ainda pendente.
-4. Freio de mão por custo: pronto e commitado, falta só pedir
-   autorização de reinício de produção (regra de sempre).
+4. Freio de mão por custo: **já em produção** (reiniciado com autorização
+   explícita do usuário, confirmado com pergunta real pós-restart).
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- 10 idiomas incomuns +
+## teste de carga confirmados; monitoramento (uptime + logrotate + Sentry
+## pendente de DSN) implementado
+
+### Testes de validação antes de soft launch
+
+- **10 idiomas nunca testados** (日本語, 中文, हिन्दी, العربية, Français,
+  বাংলা, Русский, اردو, Indonesia, Deutsch) -- **10/10 OK**, respostas
+  completas (1.389-6.139 caracteres) e confirmadas no idioma certo
+  (conferido o alfabeto/script de cada uma). Junto com PT/EN/ES já
+  testados antes, **os 13 idiomas do seletor estão confirmados
+  funcionando**.
+- **Teste de carga** (6 perguntas simultâneas contra produção, acima dos
+  4 workers reais do gunicorn -- `--workers 4 --timeout 180`, confirmado
+  via `systemctl cat`): **6/6 sem erro**, 36-92s cada, fila degradou bem
+  (sem timeout/500/503) -- confirma que o pool de workers aguenta um
+  pico moderado de concorrência sem quebrar.
+- Conversas de teste de ambos os testes apagadas do banco depois.
+
+### Monitoramento externo -- uptime + logrotate implementados, Sentry
+### pendente de conta/DSN do usuário
+
+Usuário perguntou se já existia algo configurado nesse sentido --
+verificado de verdade (não por memória): só existia a rota `/health`
+(`goshinsho/routes.py:573`, checa config Supabase/DeepSeek/Stripe +
+presença dos índices, 200/503) -- mas **nada externo vigiava essa rota**,
+sem Sentry instalado, sem logrotate, sem cron de verificação. Não é
+"monitoramento", é só um endpoint de diagnóstico que existia sem uso.
+
+**Implementado**:
+- `scripts/uptime_check.py` -- roda a cada 5min via
+  `/etc/cron.d/goshinsho-uptime` (fora do git), bate em `/health`, envia
+  e-mail (reaproveitando `email_service.py`/SES-Resend já configurados,
+  sem depender de UptimeRobot ou serviço de terceiro) se cair/degradar.
+  Deduplicado: 1º alerta imediato, depois só a cada 30min enquanto
+  persistir (`logs/uptime_check_state.json`), mais um e-mail de
+  "voltou ao normal" quando o `/health` responder ok de novo. Testado
+  com `_check_health` mockado (falha→alerta, 2ª falha→sem reenvio,
+  recuperação→e-mail + limpa estado) antes de agendar.
+- `/etc/logrotate.d/goshinsho` (fora do git) -- `deepseek_usage.jsonl` e
+  `access_devices.jsonl` (os 2 únicos logs de produção que crescem sem
+  limite; os diretórios de log dos laços de trabalho antigos --
+  fase_f/fase_g/revisao_editorial/etc. -- já terminaram, não crescem
+  mais, não incluídos). Semanal, 12 rotações, `copytruncate` (a app só
+  abre o arquivo em modo append, nunca reabre um handle novo -- precisa
+  de copytruncate, não rotação normal). Validado com `logrotate -d`
+  (dry-run) antes de confiar. `logrotate.timer` do próprio sistema já
+  roda diariamente à meia-noite -- não precisou de cron novo pra isso.
+
+**Sentry**: usuário decidiu que quer (não só uptime+logrotate) --
+aguardando ele criar conta gratuita em sentry.io e passar o DSN pra eu
+integrar ao código (`sentry-sdk`, captura de exceção real em produção).
+Ainda não implementado.
+
+### Onde continuar
+
+1. **Aguardando o DSN do Sentry do usuário** para integrar
+   (`sentry-sdk`, `goshinsho/web_app.py` provavelmente o ponto certo de
+   inicialização).
+2. Backup Google Drive: primeira sincronização completa ainda rodando em
+   segundo plano (lenta, ~10 arquivos/min pela limitação de taxa do
+   Google Drive para muitos arquivos pequenos -- pode levar várias horas
+   no total). Usuário decidiu deixar rodando sem pressa. Falta depois:
+   trocar o cron de `backup_to_b2.sh` para `backup_to_gdrive.sh`, e
+   fazer o teste de restauração de verdade (ainda o objetivo original
+   pendente).
+3. Revisão jurídica profissional do item 9 dos Termos: usuário decidiu
+   **não fazer** por restrição de orçamento, confiando no texto atual.
+   Registrado como decisão consciente do usuário, não pendência técnica.
+4. contato@goshinsho.com.br: usuário confirmou que já está ativo/configurado.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
