@@ -7283,3 +7283,132 @@ transações, ver seção anterior) e não há plano de voltar a usá-la.
    -- objetivo original do item do plano de escala, fazer depois que a
    1ª sincronização completa terminar.
 3. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- documentos jurídicos
+## traduzidos pros 13 idiomas + seletor de idioma na landing + preparação
+## técnica para campanha paga no Facebook (workers 6, teto de custo US$25,
+## alerta antecipado 50%/80%)
+
+### Tradução dos 3 documentos jurídicos (12 idiomas novos)
+
+Delegado a um agente em segundo plano (usuário pediu explicitamente
+"faça em background"). Criados `goshinsho/data/{termos,privacidade,
+aviso_independencia}_i18n.json` (60/101/23 chaves × 13 idiomas, mesmo
+padrão de `doacao_i18n.json`), `static/js/legal_i18n.js` (script
+compartilhado pelas 3 páginas), templates com `data-i18n` em cada bloco
+-- parágrafos com link/negrito no meio da frase foram separados em
+`<span>`/`<a>`/`<strong>` cada um com sua própria chave, pra não apagar o
+HTML filho na hora de aplicar a tradução via `textContent`.
+
+**Fidelidade**: números, datas, nomes de lei (Lei nº 9.610/1998, LGPD,
+art. 7º/41/18), e-mails e nomes próprios (Meishu-Sama, Stripe, DeepSeek
+etc.) não traduzidos em nenhum dos 13 idiomas -- confirmado
+programaticamente. Menção à LGPD/lei brasileira preservada em todo
+idioma (é fato jurídico -- o responsável e a lei aplicável continuam
+brasileiros, independente de quem lê). Achado ao investigar: a citação
+"9.610" parecia ausente em 6 idiomas (inglês, japonês, chinês, hindi,
+árabe, urdu) -- não é erro, é só convenção de separador de milhares
+("9,610" com vírgula nesses idiomas vs. "9.610" com ponto nos outros),
+confirmado lendo o texto real antes de reportar como problema.
+
+**Verificação de qualidade feita nesta sessão** (além da checagem
+estrutural já feita pelo agente): testado com Playwright contra um
+servidor real (não só leitura de JSON) -- troca de idioma confirmada
+funcionando de ponta a ponta em inglês, espanhol, japonês e francês,
+incluindo confirmar que o link no meio da frase sobrevive à tradução
+(technique `<span>`/`<a>` separados). Leitura de amostras mais longas em
+inglês/alemão/francês confirma fluência e terminologia jurídica correta
+(ex. "Haftungsbeschränkung" = termo alemão correto para limitação de
+responsabilidade). **Ressalva que se mantém, repetida pelo próprio
+agente e por mim**: nenhum dos 12 idiomas teve revisão de falante nativo
+-- aceitável dado que o usuário já decidiu não fazer revisão jurídica
+profissional por orçamento, mas vale saber que o registro formal/legal
+em idiomas como árabe/hindi/bengali/urdu pode ter nuances que uma
+tradução por IA, por mais cuidadosa, não capturaria com certeza.
+
+### Seletor de idioma na landing.html (pedido do usuário)
+
+Antes só existia dentro do `/app` (via modal). Agora `templates/landing.html`
+(a rota `/`, primeira página que qualquer visitante vê antes de criar
+conta) tem um `<select>` populado com os 13 idiomas, que troca a página
+na hora (sem reload) e grava em `localStorage["goshinsho-language"]` --
+mesma chave usada em todo o resto do app, então a escolha feita na
+landing já vale quando a pessoa entrar no `/app` depois, e vice-versa.
+Novo `goshinsho/data/landing_i18n.json` (11 chaves × 13 idiomas, textos
+curtos de marketing, traduzidos por mim diretamente nesta sessão, não
+pelo agente). `static/js/legal_i18n.js` generalizado pra servir também a
+landing (antes só as 3 páginas jurídicas).
+
+### Preparação técnica para campanha paga no Facebook
+
+Usuário está cogitando divulgação paga (post patrocinado) num grupo de
+estudo dos ensinamentos de Meishu-Sama com ~37 mil participantes --
+ainda sem orçamento/alcance definido, testando aos poucos primeiro. Três
+ajustes técnicos feitos preventivamente:
+
+1. **Gunicorn de 4 para 6 workers** (`/etc/systemd/system/goshinsho.service`,
+   fora do git) -- servidor tem 6 núcleos e RAM de sobra (confirmado:
+   7,1GB livres de 11GB, `--preload` compartilha a maior parte da memória
+   dos modelos entre workers via copy-on-write). Reduz o risco de fila
+   longa num pico de gente testando ao mesmo tempo logo após o post ir
+   ao ar (o teste de carga de mais cedo, com só 4 workers, já mostrava
+   fila real acima de 4 simultâneas).
+2. **Teto de custo diário de US$10 para US$25** (`.env`,
+   `DAILY_COST_CAP_USD=25`) -- o valor de US$10 foi calibrado pra "bem
+   acima do uso histórico" (~R$11,50 no total, não por dia), não pra "o
+   que uma campanha paga pode gerar". A US$0,0009/pergunta (custo médio
+   real, painel admin), US$25/dia permite ~27 mil perguntas antes de
+   bloquear -- ainda um teto real (protege contra bug/abuso), mas com
+   folga suficiente pra não travar todo mundo bem na hora que a campanha
+   "der certo".
+3. **Alerta antecipado em 50%/80% do teto** (`cost_guard_service.py`,
+   `maybe_send_warning_alert`) -- antes só avisava quando o teto já
+   tinha sido atingido (bloqueando). Agora avisa por e-mail bem antes,
+   pra dar tempo de reagir (ex. subir o teto na hora, se for crescimento
+   real) sem esperar o bloqueio acontecer. Deduplicado por nível/dia
+   (marcadores separados pra 50% e 80%, mesmo padrão do alerta de teto
+   atingido). Testado com `today_cost_usd` mockado antes de confiar.
+
+**Achado real durante a sessão**: enquanto o agente de tradução mexia em
+`routes.py` e `cost_guard_service.py` em paralelo com minhas próprias
+edições nesses mesmos arquivos, os dois conjuntos de mudança coexistiram
+sem conflito (regiões diferentes do arquivo) -- confirmado por
+`ast.parse` antes de prosseguir, e o commit final do agente já incluiu
+minhas mudanças de custo (routes.py dependia delas pra importar sem
+erro).
+
+**Dados reais do painel admin, conferidos antes desta preparação**: 40
+usuários cadastrados (todos premium), 1.291 perguntas reais já feitas,
+custo histórico total de IA de só ~US$2,13 (~R$11,50) -- confirma que o
+uso real até agora é muito barato, e que o "soft launch" com o grupo de
+apoiadores já estava em andamento havia um tempo, não é um lançamento do
+zero.
+
+### Backup Google Drive -- movido pra sessão tmux
+
+A pedido do usuário ("seria mais seguro deixar rodando numa tmux, caso a
+sessão caia?") -- resposta técnica: sim, o processo anterior tinha sido
+iniciado como tarefa em segundo plano da própria ferramenta desta sessão
+(não um processo verdadeiramente desanexado do SO), então cairia junto
+se a sessão caísse. Morto e reiniciado dentro de uma sessão tmux real
+(`tmux new-session -s backup_gdrive`), sem perda de progresso (os
+arquivos já enviados continuam no Drive; `rclone copy` só re-verifica o
+que já está lá, não reenvia). Consultar com `tmux attach -t
+backup_gdrive`.
+
+### Onde continuar
+
+1. **Restart de produção autorizado antecipadamente pelo usuário** para
+   esta rodada de mudanças ("reiniciar de forma autônoma dessa vez") --
+   feito nesta mesma sessão, ver confirmação abaixo.
+2. Backup Google Drive continua sincronizando dentro da sessão tmux
+   `backup_gdrive`, sem pressa -- ainda falta o teste de restauração de
+   verdade quando terminar.
+3. Se a campanha paga no Facebook avançar com números reais de orçamento/
+   alcance, reavaliar se US$25/dia e 6 workers ainda são suficientes --
+   os números desta sessão foram uma estimativa de segurança razoável,
+   não um cálculo preciso baseado em dados reais de conversão de anúncio
+   (que ninguém tem ainda).
+4. Nenhuma promoção/reinício de produção sem autorização explícita --
+   regra padrão restaurada para qualquer trabalho futuro além desta
+   rodada já autorizada.
