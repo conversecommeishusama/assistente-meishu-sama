@@ -7262,3 +7262,24 @@ não dados pessoais por padrão.
    (decisão do usuário) -- ainda falta trocar o cron de B2 pra Google
    Drive e fazer o teste de restauração de verdade.
 4. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- cron do backup
+## trocado de B2 pra Google Drive
+
+`/etc/cron.d/goshinsho-backup` (fora do git) atualizado: a 2ª linha
+(backup off-server diário, 3h50) agora chama `scripts/backup_to_gdrive.sh`
+em vez de `backup_to_b2.sh`, logando em `logs/backup_gdrive/cron.log`.
+`backup_to_b2.sh` continua existindo no repo (não apagado), só não é
+mais chamado por cron nenhum -- a conta B2 continua travada (limite de
+transações, ver seção anterior) e não há plano de voltar a usá-la.
+
+### Onde continuar
+
+1. Sincronização inicial completa pro Google Drive ainda rodando em
+   segundo plano (na 2ª de 5 pastas, `reports/periodicos_trabalho`, no
+   momento deste registro) -- sem pressa, decisão do usuário.
+2. Ainda falta o teste de restauração de verdade (baixar do Drive pra
+   pasta temporária, verificar integridade dos `.pkl`/`.faiss`/`.json`)
+   -- objetivo original do item do plano de escala, fazer depois que a
+   1ª sincronização completa terminar.
+3. Nenhuma promoção/reinício de produção sem autorização explícita.
