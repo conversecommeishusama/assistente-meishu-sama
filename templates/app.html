@@ -128,6 +128,12 @@
                 <p class="panel-note">
                     Após o cadastro, confirme seu e-mail pelo link enviado (verifique também a pasta de spam).
                 </p>
+                <p class="panel-note legal-links-inline">
+                    Ao criar sua conta, você concorda com os
+                    <a href="{{ url_for('web.termos_de_uso') }}" target="_blank" rel="noopener">Termos de Uso</a>
+                    e a
+                    <a href="{{ url_for('web.politica_privacidade') }}" target="_blank" rel="noopener">Política de Privacidade</a>.
+                </p>
             </form>
 
             <form class="floating-panel" id="resend-confirm-panel" action="{{ url_for('web.reenviar_confirmacao') }}" method="post">
@@ -390,6 +396,11 @@
             <p id="subscription-intro-text" data-i18n="subscriptionIntroText">
                 Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, que têm custo real de operação.
                 Doações voluntárias ajudam a manter o aplicativo disponível e a melhorar as respostas.
+            </p>
+            <p class="legal-links-inline">
+                <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a> ·
+                <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a> ·
+                <a href="{{ url_for('web.politica_privacidade') }}">Privacidade</a>
             </p>
             <div class="language-dialog-actions">
                 <button type="button" class="language-cancel" id="subscription-intro-grant" data-i18n="makeDonation">Fazer uma doação</button>

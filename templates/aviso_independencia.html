@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aviso de Independência - Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=148">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
+                <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                <span>Goshinsho</span>
+            </a>
+            <nav class="top-actions">
+                {% if user %}<span class="user-pill">{{ user.email }}</span>{% endif %}
+                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}">Voltar ao chat</a>
+            </nav>
+        </header>
+
+        <article class="legal-content">
+            <h1>Aviso de Independência</h1>
+            <p class="legal-updated">Última atualização: 3 de agosto de 2026</p>
+
+            <div class="legal-callout">
+                <strong>O Goshinsho é um projeto pessoal e independente.</strong>
+            </div>
+
+            <p>
+                Este site e aplicativo não são um produto oficial, e não são supervisionados,
+                autorizados, patrocinados ou endossados pela Igreja Messiânica Mundial
+                (Sekai Kyusei Kyo) nem por qualquer organização, associação ou entidade a ela
+                vinculada, em nenhum país.
+            </p>
+
+            <p>
+                O Goshinsho foi criado por iniciativa pessoal, com o objetivo de facilitar a
+                consulta e o estudo dos ensinamentos de Meishu-Sama a partir de traduções
+                próprias e de um sistema de busca com inteligência artificial (IA).
+            </p>
+
+            <p>Isso significa, na prática:</p>
+
+            <ul>
+                <li>
+                    As respostas do Goshinsho são geradas por um sistema de IA a partir de
+                    textos traduzidos e organizados por este projeto. Por mais cuidado que se
+                    tenha na tradução e na revisão do conteúdo, <strong>erros, imprecisões,
+                    interpretações equivocadas ou desatualizações são possíveis</strong> — como
+                    em qualquer tradução e em qualquer sistema de IA.
+                </li>
+                <li>
+                    O Goshinsho <strong>não substitui</strong> os textos oficiais publicados
+                    pela Igreja Messiânica Mundial, nem a orientação de um ministro, sacerdote
+                    ou responsável qualificado da Igreja.
+                </li>
+                <li>
+                    Em caso de dúvida doutrinária, de fé, ou sobre qualquer decisão pessoal
+                    importante baseada nesse conteúdo, procure sempre os canais oficiais da
+                    Igreja Messiânica Mundial ou um representante qualificado dela.
+                </li>
+                <li>
+                    Nomes, termos e conceitos próprios da Igreja e dos ensinamentos de
+                    Meishu-Sama são usados aqui <strong>apenas para identificar e referenciar o
+                    conteúdo original</strong> — nunca com a intenção de sugerir vínculo
+                    institucional, comercial ou de representação oficial.
+                </li>
+            </ul>
+
+            <p>
+                Qualquer dúvida sobre este aviso pode ser enviada para
+                <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a>.
+            </p>
+        </article>
+
+        <nav class="legal-footer-nav">
+            <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a>
+            <a href="{{ url_for('web.politica_privacidade') }}">Política de Privacidade</a>
+        </nav>
+    </main>
+</body>
+</html>

@@ -2753,3 +2753,120 @@ body {
         padding: 6px 12px;
     }
 }
+
+/* 2026-08-03: páginas jurídicas (Termos de Uso, Privacidade, Aviso de
+   Independência) -- prosa simples, sem componentes de app. */
+.legal-content {
+    margin: 40px auto 60px;
+    max-width: 760px;
+    padding: 0 20px;
+}
+
+.legal-content h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 6px;
+}
+
+.legal-updated {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0 0 28px;
+}
+
+.legal-content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 34px 0 12px;
+}
+
+.legal-content p,
+.legal-content li {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.legal-content p {
+    margin: 0 0 14px;
+}
+
+.legal-content ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+}
+
+.legal-content li {
+    margin: 0 0 8px;
+}
+
+.legal-content a {
+    color: var(--primary);
+}
+
+.legal-content table {
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+.legal-content th,
+.legal-content td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.legal-content th {
+    background: var(--muted-bg, rgba(0, 0, 0, 0.03));
+}
+
+.legal-callout {
+    background: rgba(183, 71, 42, 0.08);
+    border-left: 3px solid #b7472a;
+    border-radius: 8px;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0 0 24px;
+    padding: 14px 18px;
+}
+
+.legal-footer-nav {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    justify-content: center;
+    margin: 40px auto 20px;
+    max-width: 760px;
+    padding: 20px 20px 0;
+    text-align: center;
+}
+
+.legal-footer-nav a {
+    color: var(--muted);
+}
+
+.site-footer {
+    color: var(--muted);
+    font-size: 0.82rem;
+    padding: 24px 20px 40px;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--muted);
+}
+
+.legal-links-inline {
+    font-size: 0.82rem;
+}
+
+.legal-links-inline a {
+    color: var(--muted);
+    text-decoration: underline;
+}

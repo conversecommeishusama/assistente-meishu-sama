@@ -6917,11 +6917,88 @@ considerar isso resolvido.
    `raquelgibrail@gmail.com` é o único caso confirmado até agora (conta
    de teste), mas não foi feita uma varredura de todas as assinaturas
    ativas para confirmar que é o único caso.
-4. Stripe Customer Portal: configurado e testado, mas **não publicado em
-   produção ainda** (mudanças em `routes.py`/`donation_service.py`/
-   `templates/doacao.html`/`doacao_i18n.json` só estão no working tree +
-   sincronizadas em `/var/www/goshinsho-test`, `goshinsho.service` real
-   continua com o código antigo) -- aguardando autorização explícita do
-   usuário para reiniciar produção.
+4. Stripe Customer Portal: configurado e testado, **já publicado em
+   produção** (`goshinsho.service` reiniciado com autorização explícita
+   do usuário, portal testado ao vivo).
 5. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita.
+
+**Atualização rápida (mesma sessão, restart já autorizado e executado)**:
+item 3 acima está resolvido -- o usuário confirmou que a assinatura de
+`raquelgibrail@gmail.com` (R$29,90/mês) é conhecida e intencional (é a
+irmã do usuário), não uma cobrança indevida esquecida. Não é mais
+pendência. Produção foi reiniciada, portal de doação testado ao vivo (2
+perguntas reais de aquecimento, PT+EN, conversas de teste apagadas do
+banco depois).
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- Termos de Uso,
+## Política de Privacidade e Aviso de Independência publicados como
+## páginas reais do site
+
+Os 3 documentos jurídicos (rascunhos finalizados na atualização anterior,
+`reports/juridico_draft/`) foram publicados como páginas de verdade:
+
+- `templates/termos.html` → rota `GET /termos-de-uso`
+  (`web.termos_de_uso`).
+- `templates/privacidade.html` → rota `GET /privacidade`
+  (`web.politica_privacidade`).
+- `templates/aviso_independencia.html` → rota `GET /aviso-independencia`
+  (`web.aviso_independencia`).
+
+Publicados **só em português** por decisão prática (não pedida
+explicitamente, mas assumida com risco baixo e sinalizada ao usuário) --
+traduzir texto jurídico com precisão nos 13 idiomas do seletor é um
+trabalho à parte, arriscado de fazer automaticamente; os 13 idiomas
+continuam servindo o resto do app normalmente.
+
+As duas notas "[A DEFINIR]" que ainda restavam nos rascunhos (política de
+retenção da DeepSeek fora do nosso controle; escopo de leis
+internacionais) foram reescritas para texto público final, sem colchete
+de nota interna -- honestas, mas sem parecer rascunho inacabado.
+
+**Linkados de 4 lugares**: rodapé de `doacao.html` e `landing.html`
+(`.site-footer`, nova classe CSS); dentro do modal "Sobre o Goshinsho" já
+existente em `app.html` (`#subscription-intro-dialog`, sem tocar o layout
+fixo do chat -- decisão deliberada, ver motivo abaixo); e uma linha de
+consentimento no próprio formulário de cadastro ("Ao criar sua conta,
+você concorda com os Termos de Uso e a Política de Privacidade").
+
+**Decisão de não adicionar rodapé fixo em `app.html`**: o layout do chat
+(`.app-shell`) já passou por um ajuste cuidadoso de altura de tela em
+31/07 (`#message-input`/`.login-hint`, ver seção daquela data) --
+adicionar um rodapé sempre visível ali arriscava reintroduzir sobra de
+rolagem sem necessidade. Os links já existem em 3 lugares menos
+arriscados (modal "Sobre", cadastro, e as páginas dedicadas de
+doação/landing) -- suficiente para descoberta, sem mexer no layout
+crítico do chat.
+
+Nova classe CSS `.legal-content` (prosa: h1/h2/p/ul/table/callout) +
+`.legal-footer-nav` + `.site-footer` + `.legal-links-inline` em
+`static/css/app.css`, usando as variáveis de tema já existentes
+(`--bg`/`--text`/`--muted`/`--border`/`--primary`) -- funciona em
+claro/escuro automaticamente, sem CSS novo por tema.
+
+**Testado**: `test_client()` in-process (as 3 páginas + `/app`/`/app-pt`
++ o link de cadastro/modal renderizando corretamente, sem `BuildError` de
+`url_for`), suíte completa (128 testes, 1 skip, sem regressão), e HTTP
+real contra `/var/www/goshinsho-test` (gunicorn próprio, porta 5090,
+5 rotas confirmadas 200).
+
+**Pendências que continuam do rascunho anterior**: revisão jurídica
+profissional da cláusula de limitação de responsabilidade (item 9 dos
+Termos) -- ainda recomendada, não fiz nem posso fazer sozinho; e-mail
+contato@goshinsho.com.br ainda não configurado em nenhum provedor de
+verdade (só decidido o endereço).
+
+### Onde continuar
+
+1. As 3 páginas jurídicas estão **prontas e testadas**, aguardando
+   autorização explícita para reiniciar produção (mesma regra de sempre).
+2. Tradução dos documentos jurídicos para os outros 12 idiomas: não
+   feita, fica como possível trabalho futuro se o usuário pedir.
+3. Configurar contato@goshinsho.com.br (Zoho Mail grátis, recomendado
+   antes) continua pendente, do lado do usuário.
+4. Revisão jurídica profissional do item 9 dos Termos (limitação de
+   responsabilidade) continua recomendada antes de considerar o texto
+   definitivo.
+5. Nenhuma promoção/reinício de produção sem autorização explícita.

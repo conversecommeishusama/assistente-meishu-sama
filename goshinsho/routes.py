@@ -604,6 +604,21 @@ def download_admin_apk():
     return send_from_directory(PROJECT_ROOT / "static" / "downloads", "goshinsho-admin.apk", as_attachment=True)
 
 
+@web_bp.get("/termos-de-uso")
+def termos_de_uso():
+    return render_template("termos.html", user=current_user())
+
+
+@web_bp.get("/privacidade")
+def politica_privacidade():
+    return render_template("privacidade.html", user=current_user())
+
+
+@web_bp.get("/aviso-independencia")
+def aviso_independencia():
+    return render_template("aviso_independencia.html", user=current_user())
+
+
 @web_bp.get("/assinatura")
 def assinatura():
     # 2026-07-30: assinatura paga foi substituída por doação voluntária --

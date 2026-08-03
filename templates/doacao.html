@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="pageTitle">Doação - Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=147">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=148">
 </head>
 <body data-doacao-i18n="{{ doacao_i18n | tojson | forceescape }}">
     <main class="app-shell">
@@ -107,6 +107,12 @@
         </p>
         {% endif %}
     </main>
+
+    <footer class="site-footer">
+        <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a> ·
+        <a href="{{ url_for('web.politica_privacidade') }}">Política de Privacidade</a> ·
+        <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>
+    </footer>
 
     <script src="{{ url_for('static', filename='js/doacao.js') }}?v=1"></script>
 </body>
