@@ -3,43 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=149">
+    <title data-i18n="eyebrow">Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=150">
 </head>
-<body class="landing-body">
+<body class="landing-body" data-landing-i18n="{{ landing_i18n | tojson | forceescape }}">
     <main class="landing-shell">
+        <div class="landing-language-bar">
+            <label for="landing-language-select" class="sr-only" data-i18n="languageLabel">Idioma</label>
+            <select id="landing-language-select" class="landing-language-select"></select>
+        </div>
+
         <img class="landing-logo" src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
 
         <section class="landing-card">
-            <p class="eyebrow">Assistente Goshinsho</p>
-            <h1>Consulte os escritos de Meishu-Sama</h1>
-            <p>
+            <p class="eyebrow" data-i18n="eyebrow">Assistente Goshinsho</p>
+            <h1 data-i18n="h1">Consulte os escritos de Meishu-Sama</h1>
+            <p data-i18n="p1">
                 Acesse pelo navegador ou instale o aplicativo Android para conversar com o assistente.
                 Cadastro gratuito com acesso premium para sempre: perguntas ilimitadas, sem necessidade de assinatura paga.
             </p>
 
             <div class="landing-actions">
-                <a class="landing-button primary" href="{{ url_for(app_endpoint|default('web.app_view')) }}">Acessar pelo navegador</a>
-                <a class="landing-button" href="{{ url_for(app_endpoint|default('web.app_view'), panel='register') }}">Criar conta gratuita</a>
-                <a class="landing-button" href="{{ url_for('web.download_apk') }}">Baixar aplicativo Android</a>
+                <a class="landing-button primary" href="{{ url_for(app_endpoint|default('web.app_view')) }}" data-i18n="btnBrowser">Acessar pelo navegador</a>
+                <a class="landing-button" href="{{ url_for(app_endpoint|default('web.app_view'), panel='register') }}" data-i18n="btnRegister">Criar conta gratuita</a>
+                <a class="landing-button" href="{{ url_for('web.download_apk') }}" data-i18n="btnApk">Baixar aplicativo Android</a>
             </div>
 
-            <p style="font-weight:600; color:#b7472a;">
+            <p style="font-weight:600; color:#b7472a;" data-i18n="updateNotice">
                 Atualização importante (26/07/2026): se você já tinha o aplicativo Android
-                instalado, é necessário <strong>desinstalar a versão antiga e instalar esta de novo</strong>
+                instalado, é necessário desinstalar a versão antiga e instalar esta de novo
                 — corrigimos vários problemas (idioma da busca, compartilhar respostas no WhatsApp)
                 e o Android não aceita atualizar por cima da versão anterior. Nenhum dado de login
                 ou histórico de conversa é perdido (fica salvo na sua conta, não no aparelho).
             </p>
 
-            <small>No Android, talvez seja necessário permitir a instalação de apps de fontes desconhecidas.</small>
+            <small data-i18n="androidNotice">No Android, talvez seja necessário permitir a instalação de apps de fontes desconhecidas.</small>
         </section>
     </main>
 
     <footer class="site-footer">
-        <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a> ·
-        <a href="{{ url_for('web.politica_privacidade') }}">Política de Privacidade</a> ·
-        <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>
+        <a href="{{ url_for('web.termos_de_uso') }}" data-i18n="footerTermos">Termos de Uso</a> ·
+        <a href="{{ url_for('web.politica_privacidade') }}" data-i18n="footerPrivacidade">Política de Privacidade</a> ·
+        <a href="{{ url_for('web.aviso_independencia') }}" data-i18n="footerAviso">Aviso de Independência</a>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/legal_i18n.js') }}?v=2"></script>
 </body>
 </html>

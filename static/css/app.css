@@ -929,6 +929,31 @@ body,
     text-align: center;
 }
 
+.landing-language-bar {
+    align-self: flex-end;
+    margin-bottom: 12px;
+}
+
+.landing-language-select {
+    background: #fff;
+    border: 1px solid #d2e3fc;
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.82rem;
+    padding: 6px 14px;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 .landing-logo {
     border-radius: 28px;
     height: 150px;

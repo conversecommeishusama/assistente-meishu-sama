@@ -128,6 +128,12 @@ with open(
 ) as _f:
     AVISO_INDEPENDENCIA_I18N = json.load(_f)
 
+# 2026-08-03: landing.html (primeira página do site, "/") ganhou o mesmo
+# seletor de idioma -- antes só existia dentro do /app, pedido explícito do
+# usuário pra escolher o idioma já na entrada, antes de criar conta.
+with open(PROJECT_ROOT / "goshinsho" / "data" / "landing_i18n.json", encoding="utf-8") as _f:
+    LANDING_I18N = json.load(_f)
+
 
 def _runtime_health():
     version_path = PROJECT_ROOT / "VERSION"
@@ -362,7 +368,9 @@ def index():
     # ia direto pra web.app_view (JP) sempre, então quem já estava logado
     # (sessão persistente, sem passar pelo formulário de login) continuava
     # caindo em JP mesmo com o fix do login().
-    return render_template("landing.html", app_endpoint=_default_app_endpoint())
+    return render_template(
+        "landing.html", app_endpoint=_default_app_endpoint(), landing_i18n=LANDING_I18N
+    )
 
 
 def _render_app_view(*, retrieval_mode: str):
