@@ -62,6 +62,7 @@ from .services.deepseek_usage_service import (
     set_deepseek_usage_context,
     summarize_deepseek_usage,
 )
+from .services.cost_guard_service import cost_cap_status, maybe_send_cap_alert
 from .services.donation_service import create_billing_portal_session
 from .services.email_service import is_email_configured, send_contact_emails
 from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
@@ -991,6 +992,23 @@ def api_chat():
     )
     if limited:
         return limited
+    # 2026-08-03: freio de mão automático por custo -- teto de gasto diário
+    # com a API DeepSeek (ver cost_guard_service.py, plano de escala em
+    # CLAUDE.md). Único freio além do rate limit acima; aplica-se a toda
+    # conta, sem exceção, mesmo developer -- é uma rede de segurança contra
+    # abuso/loop descontrolado, não uma cota de plano.
+    cap_status = cost_cap_status()
+    if cap_status["exceeded"]:
+        maybe_send_cap_alert(cap_status)
+        return jsonify(
+            {
+                "error": (
+                    "O Goshinsho atingiu o limite diário de uso da IA e está temporariamente "
+                    "indisponível para novas perguntas. Volte a tentar mais tarde ou amanhã."
+                ),
+                "cost_cap_reached": True,
+            }
+        ), 503
     if user:
         try:
             user = refresh_user_profile(user["id"]) or user

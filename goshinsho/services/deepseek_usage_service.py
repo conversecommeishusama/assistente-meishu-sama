@@ -170,3 +170,31 @@ def summarize_deepseek_usage(limit=20000, since=None, until=None):
             "rate_usd_per_1m_tokens": DEEPSEEK_BLENDED_USD_PER_1M_TOKENS,
         },
     }
+
+
+# 2026-08-03: freio de mão automático por custo (ver cost_guard_service.py).
+# Recalcula o gasto do dia (UTC) a partir do log real, com um cache curto
+# (evita reler o arquivo inteiro a cada requisição -- cada worker gunicorn
+# tem seu próprio cache em memória, então o teto é aproximado entre workers,
+# não exato ao centavo -- aceitável para uma rede de segurança, não para
+# faturamento preciso).
+_DAILY_TOTAL_CACHE = {"date": None, "cost_usd": 0.0, "checked_at": None}
+_DAILY_TOTAL_CACHE_TTL_SECONDS = 30
+
+
+def today_cost_usd():
+    now = datetime.now(timezone.utc)
+    today = now.date()
+    cache = _DAILY_TOTAL_CACHE
+    stale = (
+        cache["date"] != today
+        or cache["checked_at"] is None
+        or (now - cache["checked_at"]).total_seconds() > _DAILY_TOTAL_CACHE_TTL_SECONDS
+    )
+    if stale:
+        start = datetime(today.year, today.month, today.day, tzinfo=timezone.utc)
+        summary = summarize_deepseek_usage(since=start)
+        cache["date"] = today
+        cache["cost_usd"] = summary["cost"]["total_usd"]
+        cache["checked_at"] = now
+    return cache["cost_usd"]

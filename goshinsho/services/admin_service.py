@@ -4,6 +4,7 @@ from ..config import Config
 from .access_service import summarize_access
 from .auth_service import FREE_MONTHLY_QUESTIONS, describe_user_access, is_premium_user
 from .conversation_service import count_user_questions
+from .cost_guard_service import cost_cap_status
 from .deepseek_usage_service import summarize_deepseek_usage
 from .donation_service import active_recurring_donations, summarize_donations
 from .support_service import support_summary
@@ -118,6 +119,10 @@ def build_admin_dashboard(range_key="all", date_from=None, date_to=None):
             "by_user": usage.get("by_user", [])[:10],
             "by_purpose": usage.get("by_purpose", [])[:10],
             "cost": usage.get("cost", {}),
+            # 2026-08-03: freio de mão -- status do teto do DIA ATUAL (UTC),
+            # independente do filtro de período `range_key` acima (o teto é
+            # sempre "hoje", não o intervalo selecionado no painel).
+            "daily_cap": cost_cap_status(),
         },
         "donations": {
             "available": donations.get("available", False),

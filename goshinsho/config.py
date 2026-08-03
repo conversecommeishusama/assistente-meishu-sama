@@ -66,3 +66,8 @@ class Config:
     # não há Price fixo por valor sugerido.
     STRIPE_DOACAO_PRODUTO_AVULSA = "prod_UyzQmz4bWIm6LB"
     STRIPE_DOACAO_PRODUTO_RECORRENTE = "prod_UyzQQVgbu433BX"
+    # 2026-08-03: freio de mão automático por custo -- teto de gasto diário
+    # com a API DeepSeek. Rede de segurança contra abuso/loop descontrolado,
+    # não o gasto esperado do dia a dia (que fica bem abaixo disso). 0 ou
+    # vazio desativa o freio.
+    DAILY_COST_CAP_USD = float(_env("DAILY_COST_CAP_USD") or 10.0)

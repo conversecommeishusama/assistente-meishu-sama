@@ -131,6 +131,11 @@ function renderDashboard(data) {
            ${(donations.by_user || []).slice(0, 8).map((row) => `<div class="user-row"><strong>${escapeHtml(row.email)}</strong><small>${moneyBrl(row.total_brl)} · ${number(row.count)} doação(ões)${row.last_at ? " · última em " + new Date(row.last_at).toLocaleDateString("pt-BR") : ""}</small></div>`).join("")}`
         : (donations.message || "Stripe indisponível.");
 
+    const dailyCap = data.tokens?.daily_cap || {};
+    const capLine = dailyCap.enabled
+        ? `<p class="${dailyCap.exceeded ? "policy-note-alert" : "policy-note"}">Freio de mão (hoje, UTC): <strong>${moneyUsd(dailyCap.spent_usd)} / ${moneyUsd(dailyCap.cap_usd)}</strong>${dailyCap.exceeded ? " -- TETO ATINGIDO, perguntas novas bloqueadas até virar o dia" : ""}</p>`
+        : `<p class="policy-note">Freio de mão por custo desativado (DAILY_COST_CAP_USD não configurado).</p>`;
+
     tokensBox.innerHTML = `
         <p>Entradas: <strong>${number(data.tokens?.prompt_tokens)}</strong></p>
         <p>Saídas: <strong>${number(data.tokens?.completion_tokens)}</strong></p>
@@ -138,6 +143,7 @@ function renderDashboard(data) {
         <p>Custo médio por pergunta: <strong>${moneyUsd(cost.per_answer_usd)} / ${moneyBrl(cost.per_answer_brl)}</strong></p>
         <p>Respostas contabilizadas: <strong>${number(cost.answer_count)}</strong></p>
         <p class="policy-note">Taxa aplicada: US$ ${(cost.rate_usd_per_1m_tokens || 0).toFixed(4)} / 1M tokens -- recalibrada contra a fatura real da DeepSeek em 30/07/2026 (ver CLAUDE.md).</p>
+        ${capLine}
     `;
 
     lastUsersPolicyLine = `<p class="policy-note">Único sistema de acesso: <strong>premium gratuito</strong> para toda conta cadastrada (sem trial, sem cota mensal). Cartão de crédito é usado só para doação voluntária.</p>`;
