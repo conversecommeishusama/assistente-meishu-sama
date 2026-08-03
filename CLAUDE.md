@@ -6391,3 +6391,181 @@ anterior.
 4. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário -- a desta sessão já foi dada e executada, não é
    permanente para trabalho futuro.
+
+## Sessão 2026-08-03 (mesmo dia, continuação) -- 2 bugs reais achados pelo
+## usuário testando os modos Direta/Com citações; "Aprofundar com
+## citações" redesenhado para "Refazer com citações"; os 3 testes
+## historicamente falhos resolvidos de vez
+
+### Bug 1: sessão vazando entre conversas ao navegar pelo logo (real, corrigido)
+
+Usuário testou os modos e relatou: clicou no logo do Goshinsho pra "zerar"
+a conversa antes de perguntar, mas a resposta seguinte tratou a pergunta
+como continuação de uma conversa anterior ("como você já perguntou isso,
+vou trazer outros aspectos"). Clicar em "Nova Conversa" resolveu -- o que
+apontava pra uma diferença real entre os dois.
+
+**Causa raiz confirmada**: `_render_app_view` (rota `GET /app-pt`/`/app`,
+acionada ao navegar pelo logo) calcula `active_conversation_id` só a
+partir de `request.args.get("conversation_id")` -- sem esse parâmetro na
+URL (como o link do logo, que nunca inclui), a página renderiza em
+branco (sem mensagens, `data-conversation-id=""`), o que PARECE zerado.
+Mas `session["active_conversation_id"]` (guardado no cookie de sessão do
+Flask) **nunca era limpo** nessa navegação -- só o botão "Nova Conversa"
+faz isso, via `POST /api/conversations/new`
+(`session.pop("active_conversation_id", None)`). Na pergunta seguinte, o
+JS manda `conversation_id: chat.dataset.conversationId` (`""`, falsy);
+em `/api/chat`, `payload.get("conversation_id") or session.get(...)`
+cai no fallback e recupera o id ANTIGO ainda na sessão -- a pergunta é
+anexada silenciosamente à conversa anterior, mesmo a tela parecendo
+zerada. Isso também explicava a lentidão relatada no "aprofundar com
+fontes" logo em seguida (resposta "confusa" com mais temas misturados
+por causa do histórico vazado, exigindo mais busca pra citar tudo).
+
+**Corrigido**: `_render_app_view` agora limpa `session["active_conversation_id"]`
+sempre que não há `conversation_id` na query string (`goshinsho/routes.py`).
+Testado com Playwright/requests reproduzindo o cenário exato (pergunta →
+GET sem conversation_id → pergunta de novo): antes do fix, mesma
+`conversation_id`; depois do fix, `conversation_id` novo e resposta sem
+menção a continuação, confirmado por chamada real à API.
+
+### Bug 2 (achado + diagnosticado pelo próprio usuário): "Aprofundar com
+### citações" refazia a busca inteira do zero, sem aproveitar nada da
+### pergunta original
+
+Usuário testou o botão em duas conversas diferentes e percebeu a
+inconsistência: numa conversa em modo "Com citações" (resposta já citada),
+"aprofundar" levou 30s; numa conversa em modo Direta (paráfrase, sem
+citação), levou mais de 2min, depois 1:40 numa repetição. Diagnóstico do
+próprio usuário, confirmado no código: o motor agenciado não guarda os
+trechos brutos encontrados na pergunta original entre uma chamada e
+outra -- cada chamada (incluindo o aprofundar) monta o prompt do zero só
+com o TEXTO da resposta anterior. No modo "Com citações" esse texto já
+tem citação literal e nome de arquivo, que servem de atalho de busca; no
+modo Direta não tem nada disso, então o modelo reconstrói a busca
+inteira tentando "provar" uma paráfrase sem nenhuma pista.
+
+**Opções discutidas e descartadas antes de decidir**: persistir os
+trechos brutos da pergunta original (cache em disco, TTL, mesmo achado
+como mais rápido nos dois modos) -- descartada por reintroduzir a mesma
+classe de risco de um bug já documentado neste projeto (29/07, marcador
+de fontes: estado persistido entre turnos causando resposta errada) e
+por contradizer a regra deliberada "cada turno faz busca nova". Um
+atalho só pro caso "Com citações" (regex detectando citação já
+presente) -- foi implementado, mas sozinho não resolvia o problema real,
+porque **o usuário identificou que o botão só faz sentido mesmo no modo
+Direta** (no modo "Com citações" a resposta já tem citação, "aprofundar"
+não agrega nada -- na prática o atalho serve só de rede de segurança
+pro caso raro de alguém clicar mesmo assim).
+
+**Redesenho aplicado, sugerido pelo próprio usuário**: renomeado de
+"Aprofundar com citações" para **"Refazer com citações"** -- mais
+honesto sobre o que realmente acontece (não é uma "prova" da resposta
+anterior, é a MESMA pergunta original refeita com `com_citacoes=True`
+forçado, literalmente o mesmo caminho de código do modo "Com citações"
+normal). Implementado em `goshinsho/routes.py`:
+- Se a última resposta do assistente já contém um padrão de citação
+  (`\[[^\[\]]*\.txt\]`), responde na hora, sem nenhuma chamada nova à
+  API (atalho, ~3s, zero custo) -- cobre o caso "Com citações" onde o
+  botão é redundante.
+- Caso contrário, extrai a última pergunta real do usuário do histórico
+  e a reenvia como pergunta nova, com `com_citacoes=True` -- mesmo
+  código do modo "Com citações", sem cache, sem estado novo.
+
+**Resultado medido** (HTTP real, cópia de teste, 2 cenários): atalho
+(citação já presente) → 3s; modo Direta → refazer com citações → **30.8s**
+(era 1:40-2min+), com citação `[arquivo.txt]` real na resposta.
+**Trade-off aceito**: por ser busca nova (não uma prova estrita da
+resposta anterior), os temas podem se organizar diferente da resposta
+Direta original -- daí o nome "Refazer", não "Aprofundar". Botão/label
+renomeado nos 13 idiomas (`citeSources`/`citingSources` em `app.js`) e
+no HTML server-renderizado (`templates/app.html`).
+
+### Os 3 testes historicamente falhos, resolvidos de vez (a pedido do
+### usuário -- "tem como resolver de vez essas 3 questões?")
+
+Documentados como "pré-existentes, fora de escopo" em várias sessões
+anteriores (30/07, 31/07). Investigados a fundo desta vez:
+
+1. **`test_ohikari_filter.py` (erro de import)**: `chunk_valido_ohikari`/
+   `pergunta_sobre_ohikari` foram **removidas por completo** (não
+   renomeadas) no commit `eb36886` (18/07, arquitetura jp_direct/pt_direct)
+   -- confirmado por `git log -S` e leitura do diff real. Não é bug, é
+   funcionalidade deliberadamente descontinuada junto com o resto do
+   pipeline `pt_first` daquela era, sem substituto equivalente em
+   nenhum lugar do código atual. Corrigido removendo os 5 testes que
+   dependiam delas; mantido o único teste do arquivo que testa código
+   ainda vivo (`retrieve()`, pipeline v2, fallback interno).
+2. **`test_pipeline_format.py::test_direct_mode_is_in_depth_without_citations`**:
+   testava o formato ANTIGO do modo directo ("sem citações"). Mudança
+   deliberada de 30/07 (mesmo redesenho de "explicação por tema + citação
+   confirmatória" aplicado ao `agentic_search.py`) reescreveu a regra 17
+   de `pipeline/prompts.py` pra exigir citação confirmatória por tema --
+   o teste nunca foi atualizado. Corrigido: teste renomeado e reescrito
+   pra checar `"citação confirmatória"` em vez de `"sem citações"`;
+   docstring do módulo (linha 1 de `prompts.py`, também desatualizado)
+   corrigido junto.
+3. **`test_qa_dialogue_annotation.py::test_pt_orientacao_and_consulta`**:
+   investigação mais profunda revelou que NÃO é uma questão de "decisão
+   de estrutura pendente" (como uma sessão anterior tinha registrado) --
+   é um teste com **cenário de entrada irreal**. O texto de teste tinha a
+   2ª resposta SEM marcador explícito (`"Segunda resposta sem marcador
+   explícito."`), um caso hipotético que não reflete o padrão real do
+   corpus Mioshie-shū (toda resposta tem marcador -- `[Resposta Divina]`/
+   `[Orientação Divina]`/etc. --, como em todos os OUTROS testes do mesmo
+   arquivo). Rastreado o parser linha a linha
+   (`scripts/qa_dialogue_annotation.py`, `parse_qa_turns_pt_mioshie`):
+   sem marcador, o texto da resposta é silenciosamente absorvido no MESMO
+   bloco `interlocutor` da pergunta (nunca vira turno `meishu` separado);
+   por isso, quando `[Ensinamento]` aparece a seguir, a regra real do
+   parser (`mode = "meishu" if mode == "interlocutor" else "teaching"`)
+   interpreta como resposta pendente daquela pergunta, não como bloco de
+   ensino novo -- comportamento correto PARA aquele cenário incomum, mas
+   o teste estava medindo o cenário errado. **Decisão**: não mexer no
+   parser (é uma ferramenta de anotação de corpus de uma fase já
+   concluída, `scripts/`, não código vivo de `goshinsho/` -- mudar a
+   heurística de "resposta sem marcador" traria risco real sem forma de
+   revalidar contra o acervo inteiro hoje); em vez disso, corrigido o
+   texto do teste pra usar marcador explícito na 2ª resposta (`[Resposta
+   Divina]`), igual aos outros testes do arquivo -- com isso, o mesmo
+   comportamento pretendido (`[Ensinamento]` após Q&A resolvido vira
+   `teaching`) passa a ser o resultado natural do parser, sem mudança de
+   código nele.
+
+**Resultado**: suíte completa **128/128 (1 skip, 0 falhas, 0 erros)** --
+primeira vez limpa de verdade desde que essas 3 pendências começaram a
+ser documentadas como "pré-existentes" (pelo menos desde 30/07).
+
+### Estado do git
+
+`tests/` inteiro sempre esteve **fora do git** (diretório inteiro
+untracked, confirmado por `git ls-files tests/` vazio) -- decisão/estado
+herdado, não questionado nesta sessão. Como os 3 arquivos corrigidos
+consertam bugs reais e vale preservá-los pra sessões futuras, foram
+adicionados ao commit desta sessão (primeira vez que arquivos de
+`tests/` entram no git) -- o resto do diretório (125 outros arquivos de
+teste) continua untracked, não alterado.
+
+### Produção: reiniciada e commitada
+
+`systemctl restart goshinsho.service`, confirmado `/app-pt`/`/app` → 200,
+`app.js?v=151` servindo `"Refazer com citações"`. Commit cobre:
+`goshinsho/routes.py`, `goshinsho/pipeline/prompts.py`,
+`templates/app.html`, `static/js/app.js`, `tests/test_ohikari_filter.py`,
+`tests/test_pipeline_format.py`, `tests/test_qa_dialogue_annotation.py`
+(+ este documento).
+
+### Onde continuar
+
+1. Os 2 bugs relatados pelo usuário (sessão vazando pelo logo, "aprofundar
+   com fontes" lento no modo Direta) estão **corrigidos e em produção**,
+   verificados por chamada real à API antes de promover.
+2. Suíte de testes **100% limpa** (128/128, 1 skip) -- se uma falha nova
+   aparecer numa sessão futura, não presumir que é "mais uma pré-existente"
+   sem investigar, já que as 3 conhecidas foram resolvidas de verdade
+   (não silenciadas).
+3. "Busca em lotes" (regra 20) continua não integrada -- mesma pendência
+   de sessões anteriores.
+4. Nenhuma promoção/integração/reinício de produção sem autorização
+   explícita do usuário -- a desta sessão já foi dada e executada, não é
+   permanente para trabalho futuro.

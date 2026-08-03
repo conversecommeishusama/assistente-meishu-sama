@@ -1,5 +1,6 @@
 import json
 import queue
+import re
 import threading
 from collections import defaultdict, deque
 from datetime import datetime, timezone
@@ -363,6 +364,17 @@ def _render_app_view(*, retrieval_mode: str):
     conversations = []
     messages = []
     active_conversation_id = request.args.get("conversation_id")
+    if not active_conversation_id:
+        # 2026-08-03: achado real -- navegar para a página base (ex.: clicar
+        # no logo) renderiza a tela em branco (sem mensagens, sem
+        # conversation_id), mas isso nunca limpava session["active_conversation_id"]
+        # -- só o botão "Nova Conversa" faz isso, via /api/conversations/new.
+        # A próxima pergunta então caía no fallback de /api/chat
+        # (`payload.get("conversation_id") or session.get("active_conversation_id")`)
+        # e era anexada silenciosamente à conversa anterior, mesmo a tela
+        # parecendo zerada -- reportado pelo usuário (resposta tratando a
+        # pergunta como continuação de uma conversa "já zerada").
+        session.pop("active_conversation_id", None)
     if user:
         try:
             conversations = list_conversations(user["id"])
@@ -891,8 +903,8 @@ def api_chat():
     # 2026-08-03: modo "Direta" (padrão, sem citação literal) vs. "Com
     # citações" (formato antigo, com trecho literal + [arquivo.txt]) do
     # modo agêntico -- ver CLAUDE.md. `cite_sources` é o botão de ícone
-    # "Aprofundar com citações": não muda o modo escolhido pelo usuário,
-    # sempre força citações para justificar a resposta anterior.
+    # "Refazer com citações": não muda o modo escolhido pelo usuário,
+    # refaz a última pergunta forçando com_citacoes=True.
     citation_mode = (payload.get("citation_mode") or "direta").strip().lower()
     cite_sources = bool(payload.get("cite_sources"))
     question = (payload.get("message") or "").strip()
@@ -1013,6 +1025,36 @@ def api_chat():
             for h in history
             if isinstance(h, dict) and h.get("role") in ("user", "assistant") and h.get("content")
         ]
+        if cite_sources:
+            # 2026-08-03: atalho sem chamada nova ao modelo -- se a resposta
+            # anterior já foi dada em modo "Com citações", ela já tem
+            # citação literal com [arquivo.txt]; "Refazer com citações"
+            # nesse caso não agrega nada (mesmo achado do usuário: o botão
+            # só faz sentido depois de uma resposta em modo Direta). Detecta
+            # o padrão de citação já presente e responde na hora, sem
+            # nenhuma nova busca/custo de API.
+            ultima_resposta = next(
+                (h.get("content") for h in reversed(historico_agentico) if h.get("role") == "assistant"),
+                "",
+            )
+            if re.search(r"\[[^\[\]]*\.txt\]", ultima_resposta):
+                remaining_questions = consume_question_quota(user)
+                atalho_resposta = (
+                    "A resposta anterior já foi dada com citações literais -- não há nada novo para "
+                    "buscar (o botão \"Refazer com citações\" só é útil depois de uma resposta no modo "
+                    "Direta, sem citação)."
+                )
+                return jsonify(
+                    {
+                        "answer": atalho_resposta,
+                        "sources": [],
+                        "conversation_id": conversation_id,
+                        "assistant_message_id": None,
+                        "remaining_questions": remaining_questions,
+                        "quota_status": _quota_status(user),
+                        "search_variant": search_variant,
+                    }
+                )
         pergunta_agentico = question
         if expand_previous:
             pergunta_agentico = (
@@ -1022,18 +1064,25 @@ def api_chat():
                 "explicação mais completa, sem repetir literalmente o que já foi dito."
             )
         elif cite_sources:
-            # 2026-08-03: botão "Aprofundar com citações" -- não é uma busca
-            # nova nem um aprofundamento de conteúdo, é pedir os trechos
-            # literais que sustentam a resposta anterior (que, no modo
-            # "Direta", nunca teve citação visível). Reaproveita o histórico
-            # da conversa; o modelo tem as mesmas ferramentas de busca para
-            # re-localizar os trechos exatos.
-            pergunta_agentico = (
-                f"Cite os trechos literais (entre aspas, com o nome do arquivo entre colchetes) que "
-                f"sustentam a resposta anterior sobre este mesmo tema (\"{question}\" se houver texto "
-                "próprio, senão o assunto do turno anterior) -- sem mudar a conclusão nem acrescentar "
-                "conteúdo novo, apenas mostre as fontes exatas que a embasam, organizadas pelos mesmos "
-                "temas já usados na resposta anterior."
+            # 2026-08-03 (redesenhado a partir de teste real do usuário):
+            # a primeira versão pedia pro modelo "justificar com citação
+            # literal" a resposta anterior já parafraseada -- mas sem
+            # nenhuma citação/nome de arquivo na paráfrase para ancorar a
+            # busca, isso ficava sistematicamente mais lento (1:40-2min+)
+            # do que simplesmente perguntar de novo em modo "Com citações"
+            # (30s, confirmado pelo usuário). O botão só faz sentido mesmo
+            # no modo Direta (no modo "Com citações" a resposta já tem
+            # citação, reaproveitar não agrega nada) -- então "Refazer com
+            # citações" agora É, literalmente, refazer a MESMA última
+            # pergunta do usuário, só que com com_citacoes=True forçado --
+            # mesmo caminho de código do modo "Com citações" normal, sem
+            # cache/estado novo. Trade-off aceito: por ser uma busca nova
+            # (não uma prova estrita da resposta anterior), os temas podem
+            # se organizar de forma um pouco diferente da resposta Direta
+            # já mostrada -- daí o nome "Refazer", não "Aprofundar".
+            pergunta_agentico = next(
+                (h.get("content") for h in reversed(historico_agentico) if h.get("role") == "user"),
+                question or "Refaça a última pergunta com citações.",
             )
         # 2026-07-31/2026-08-02: achado real testando o fix de idioma -- esta
         # instrução em {language} (é uma instrução PARA o modelo, não
@@ -1066,8 +1115,8 @@ def api_chat():
                 # do parâmetro (pt_agentic é sempre português, corpus já
                 # está no idioma certo).
                 #
-                # 2026-08-03: com_citacoes -- "Aprofundar com citações"
-                # sempre força citação, independente do modo escolhido pelo
+                # 2026-08-03: com_citacoes -- "Refazer com citações" sempre
+                # força citação, independente do modo escolhido pelo
                 # usuário; fora isso, o toggle Direta/Com citações decide.
                 com_citacoes = True if cite_sources else citation_mode == "citado"
                 if retrieval_mode == "jp_agentic":

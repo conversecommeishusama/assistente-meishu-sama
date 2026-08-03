@@ -1,4 +1,4 @@
-"""Instruções por modo — directo (aprofundado sem citações) vs aprofundado (mesmo conteúdo + citações)."""
+"""Instruções por modo — directo (por tema, com citação confirmatória) vs aprofundado (mesmo conteúdo + citações literais mais extensas)."""
 
 from __future__ import annotations
 
