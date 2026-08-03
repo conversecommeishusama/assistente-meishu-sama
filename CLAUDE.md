@@ -6615,3 +6615,101 @@ no HTML) e confirmado em produção após restart.
    descartada.
 3. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia) -- modo Direta vazando nome de
+## arquivo japonês dentro da própria frase; achado de flakiness em teste
+## legado; velocidade no celular investigada sem causa encontrada no código
+
+### Bug real: modo Direta citava nome de arquivo japonês dentro da prosa
+
+Usuário relatou: respostas no modo Direta às vezes vinham como "Meishu-Sama
+em XXXXXX (nome do arquivo em japonês) fala que...". A regra 9-Direta
+(sessão de 03/08 mais cedo) já proibia citação em colchetes e lista de
+"Fontes" ao final, mas não proibia menção **dentro da própria frase** --
+o modelo, tentando cumprir a regra 4/5 (HEAD, compartilhada, "cite a
+fonte") sem violar a proibição de colchetes/lista, encontrou essa
+terceira forma de citar. Como os nomes de arquivo deste acervo são em
+japonês (contêm kanji), isso também violava a regra de nunca incluir
+caracteres japoneses na resposta.
+
+**Corrigido**: `SYSTEM_PROMPT_REGRA9_DIRETA`/`SYSTEM_PROMPT_JP_REGRA9_DIRETA_TEMPLATE`
+(`agentic_search.py`) agora dizem explicitamente que a regra de citar a
+fonte NÃO SE APLICA no modo Direta, proibindo QUALQUER menção ao nome do
+arquivo -- colchetes, lista, ou dentro da frase -- com exemplo explícito
+do padrão problemático. **Erro cometido e corrigido no processo**: a
+primeira versão do texto em PT referenciava "regra 4" duas vezes com
+sentidos diferentes (citar fonte E "nunca incluir caracteres
+japoneses") -- em PT só existe uma regra 4 (citar fonte); a regra
+separada de "sem kanji" só existe na numeração do lado JP (regra 4 lá,
+regra 5 é citar fonte). Corrigido antes de testar.
+
+**Validado** em 3 camadas: chamada direta (PT e JP, sem kanji/sem
+".txt" na resposta), HTTP real via cópia de teste (pergunta longa sobre
+"elo espiritual", resposta de ~7 temas, nenhuma menção a arquivo em
+nenhum lugar do texto), suíte completa.
+
+**Achado colateral, não corrigido, sem relação com o bug acima**: numa
+das chamadas diretas de teste (JP, pergunta sobre "Daijo"), a resposta
+veio **vazia** com `truncada=True` -- o modelo estava compondo uma
+rodada de ferramentas grande (10 chamadas acumuladas) quando bateu o
+teto de `max_tokens=8000` no meio de uma chamada de ferramenta, sem
+sobrar texto de conteúdo. Reproduzido só 1x em várias tentativas
+(a mesma pergunta poderia reproduzir de novo, não testado à exaustão);
+não investigado a fundo nesta sessão -- registrar caso reapareça.
+
+### Achado colateral: teste legado intermitente (pipeline v2, não é dos
+### meus testes de hoje)
+
+Rodando a suíte completa 2x nesta sessão, `test_ohikari_filter.py::
+test_reception_question_prioritizes_central_teaching` (mantido na
+limpeza de testes de mais cedo hoje, testa `retrieve()` do pipeline v2)
+falhou numa rodada e passou na outra -- e passa sempre quando rodado
+isolado. Indica algum estado compartilhado entre testes (cache global,
+ordem de execução) afetando o ranking de retrieval nesse pipeline
+legado -- não investigado a fundo (fora do escopo desta sessão, pipeline
+v2 não é mais o motor ativo de produção). **Não é flakiness introduzida
+por mim** -- não toquei em `pipeline/retrieve.py`/`search_service.py`
+nesta atualização, só `agentic_search.py` (prompt) e antes disso
+`templates/app.html` (badge).
+
+### Velocidade no celular (Android e iPhone) mais lenta que no computador --
+### investigado, causa não encontrada no código
+
+Usuário relatou 30-40s no computador contra mais de 1 minuto no celular
+(os dois sistemas, Android e iPhone). Investigado: Caddy (proxy reverso
+real do domínio, `/etc/caddy/Caddyfile`) trata todo cliente igual, sem
+nenhuma configuração condicional por dispositivo; o backend
+(`goshinsho/routes.py`/`agentic_search.py`) não tem nenhuma ramificação
+por user-agent/plataforma; o `fetch()` do `app.js` não tem timeout nem
+retry que explicasse tempo extra. **Nenhuma causa de código encontrada.**
+Hipótese mais provável, não confirmada: latência de rede móvel (dado
+celular tende a ter RTT bem maior que wifi/cabo do computador) somada à
+variação normal do motor de busca (já documentada extensivamente: de 8 a
+40+ rodadas dependendo da pergunta) -- ou seja, parte do que parece
+"celular mais lento" pode ser só pergunta mais difícil tendo sido feita
+no celular, não uma diferença real de plataforma. Sugerido ao usuário um
+teste controlado (mesma pergunta, mesma rede wifi nos dois aparelhos)
+para isolar a variável de rede antes de investigar mais fundo.
+
+### Produção: reiniciada e commitada
+
+`systemctl restart goshinsho.service`, confirmado `/app-pt`/`/app` → 200.
+Commit cobre só `goshinsho/services/agentic_search.py` (+ este
+documento) -- o achado de velocidade não gerou nenhuma mudança de
+código (nenhuma causa encontrada pra corrigir).
+
+### Onde continuar
+
+1. Vazamento de nome de arquivo japonês no modo Direta: **corrigido e em
+   produção**, validado nas 3 camadas de sempre.
+2. Velocidade no celular: **não resolvida, causa não encontrada** -- se
+   o usuário conseguir fazer o teste controlado (mesma pergunta, mesma
+   rede) e a diferença persistir, retomar a investigação com esse dado
+   novo.
+3. Truncamento raro (`truncada=True`, resposta vazia) achado 1x em teste
+   direto -- não investigado a fundo, watch se reaparecer.
+4. Flakiness do `test_reception_question_prioritizes_central_teaching`
+   (pipeline v2, teste legado) -- intermitente, não bloqueante (pipeline
+   v2 não é o motor ativo), não investigado a fundo.
+5. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita.
