@@ -7002,3 +7002,64 @@ verdade (só decidido o endereço).
    responsabilidade) continua recomendada antes de considerar o texto
    definitivo.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- item 7 dos Termos
+## reescrito (domínio público 2026 + desvinculação) + aviso fixo de
+## independência abaixo do composer do chat
+
+**Item 7 dos Termos de Uso reescrito**, a pedido do usuário: o app é
+baseado nas publicações de Meishu-Sama publicadas em vida, que **entraram
+em domínio público no Brasil neste ano de 2026** -- confirmado via
+pesquisa (Lei 9.610/98, art. 41: direitos patrimoniais duram 70 anos
+contados de 1º de janeiro do ano seguinte ao falecimento; Meishu-Sama
+faleceu em 1955, contagem começou em 1956, 70 anos completam-se em 1º de
+janeiro de 2026 -- bate exatamente com o que o usuário disse). Direitos
+morais (autoria de Meishu-Sama) são imprescritíveis e continuam
+preservados, só os direitos patrimoniais expiraram. As traduções usadas
+no Goshinsho são **100% produzidas por este projeto** (IA + protocolo e
+glossário próprios, não cópia de terceiros) -- protegidas como obra nova
+(art. 7º, XI, da mesma lei), direito autoral pertence ao Goshinsho.
+Reforçado, de forma explícita e destacada, que o Goshinsho **não tem
+nenhum vínculo com a Igreja Messiânica Mundial nem com qualquer outra
+igreja/organização que siga os ensinamentos de Meishu-Sama** -- o uso do
+conteúdo de domínio público é iniciativa pessoal independente, não
+decorre de nenhuma relação institucional.
+
+**Aviso fixo de independência religiosa** adicionado abaixo do composer
+do chat (`app.html`, classe `.ai-disclaimer`) -- decisão tomada depois de
+discutir com o usuário duas abordagens (frase dentro de cada resposta
+gerada pela IA vs. linha fixa na interface); recomendei a linha fixa por
+ser garantida (não depende do modelo lembrar de incluir a frase) e não
+inflar respostas curtas com texto repetido -- usuário concordou. Texto
+estático, sem `data-i18n` (mesma decisão de manter conteúdo jurídico só
+em português por enquanto), com link para `/aviso-independencia`.
+
+**Medido o impacto no layout com Playwright** (mesmo método da sessão de
+31/07) antes de commitar: 0px de sobra em desktop (1440×900) e celular
+moderno (390×844, sem mudança); pequeno aumento de sobra em telas muito
+antigas -- 360×640 foi de 100px (estado pós-fix de 31/07) para 140px,
+320×568 de 185px para 242px. Mesmo tipo de trade-off já aceito
+anteriormente para outros elementos do layout (dispositivos raros/muito
+antigos, não a maioria real de usuários) -- não revertido, mas registrado
+com números reais, não estimativa.
+
+**Correção de processo durante a sessão**: um primeiro commit acabou
+versionando `reports/juridico_draft/TERMOS_DE_USO.md` no git por engano
+(`git add` explícito demais) -- `reports/` é convencionalmente mantido
+fora do git neste projeto; desfeito com `git rm --cached` num commit
+separado, arquivo continua em disco, só deixou de ser rastreado.
+
+Testado nas 3 camadas de sempre (`test_client()`, suíte completa 128
+testes/1 skip sem regressão, HTTP real contra `/var/www/goshinsho-test`)
+antes de cada commit.
+
+### Onde continuar
+
+1. Ambas as mudanças (item 7 + aviso fixo) estão commitadas, aguardando
+   autorização explícita para reiniciar produção.
+2. Seguem valendo as pendências já registradas: tradução dos documentos
+   jurídicos para os outros 12 idiomas (não feita), configurar
+   contato@goshinsho.com.br (ainda não configurado em nenhum provedor),
+   revisão jurídica profissional do item 9 (limitação de
+   responsabilidade).
+3. Nenhuma promoção/reinício de produção sem autorização explícita.
