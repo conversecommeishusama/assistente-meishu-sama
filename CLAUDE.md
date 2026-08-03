@@ -7229,3 +7229,36 @@ Ainda não implementado.
    Registrado como decisão consciente do usuário, não pendência técnica.
 4. contato@goshinsho.com.br: usuário confirmou que já está ativo/configurado.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- Sentry integrado
+
+Usuário criou conta gratuita no sentry.io e passou o DSN. Integrado:
+`sentry_sdk.init()` em `create_app()` (`goshinsho/__init__.py`),
+condicionado a `Config.SENTRY_DSN` (novo, `.env`, vazio desativa sem
+quebrar nada) -- `FlaskIntegration()`, sem tracing de performance
+(`traces_sample_rate=0.0`, só captura de erro mesmo), sem PII por padrão
+(`send_default_pii=False`). `sentry-sdk[flask]` adicionado ao
+`requirements.txt`.
+
+Testado com 2 eventos reais antes de confiar (não só "importou sem
+erro"): uma mensagem de teste e uma exceção `ValueError` capturada de
+propósito, ambos com `event_id` retornado -- usuário confirmará no
+painel do Sentry se os 2 eventos chegaram. Suíte completa (128, 1 skip)
+sem regressão, sincronizado e testado via HTTP em
+`/var/www/goshinsho-test` (boot limpo, sem traceback).
+
+Política de Privacidade (item 4, terceiros) atualizada pra listar o
+Sentry -- dados técnicos de erro (trecho de código, dados da requisição),
+não dados pessoais por padrão.
+
+### Onde continuar
+
+1. Confirmar com o usuário se os 2 eventos de teste apareceram no painel
+   do Sentry (Issues) antes de considerar a integração 100% validada.
+2. Commitado, aguardando autorização explícita de reinício de produção
+   junto com o resto do trabalho desta sessão (uptime check, logrotate,
+   já commitados antes).
+3. Backup Google Drive continua rodando em segundo plano, sem pressa
+   (decisão do usuário) -- ainda falta trocar o cron de B2 pra Google
+   Drive e fazer o teste de restauração de verdade.
+4. Nenhuma promoção/reinício de produção sem autorização explícita.
