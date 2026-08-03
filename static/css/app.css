@@ -2870,3 +2870,21 @@ body {
     color: var(--muted);
     text-decoration: underline;
 }
+
+/* 2026-08-03: aviso fixo de independência religiosa, abaixo do composer --
+   texto estático (não gerado por IA), sempre visível, sem depender do
+   modelo incluir a frase em cada resposta. Deliberadamente mínimo (uma
+   linha, fonte pequena) para não repetir a sobra de altura em telas
+   pequenas já corrigida em 31/07 (#message-input/.quota-card). */
+.ai-disclaimer {
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    margin: 4px 0 10px;
+    text-align: center;
+}
+
+.ai-disclaimer a {
+    color: var(--muted);
+    text-decoration: underline;
+}

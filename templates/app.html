@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=148">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=149">
 </head>
 <body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}">
     <aside class="sidebar" id="sidebar">
@@ -367,6 +367,11 @@
             <button type="button" class="language-chip" id="language-button">Idioma: Português</button>
             <button type="submit" data-i18n="send">Enviar</button>
         </form>
+
+        <p class="ai-disclaimer">
+            Respostas geradas por IA · Projeto independente, sem vínculo com nenhuma igreja ·
+            <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>
+        </p>
 
         <section class="quota-card" id="quota-card" data-quota='{{ quota_status | tojson }}'>
             <div>
