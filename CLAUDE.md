@@ -31,6 +31,20 @@ aqui, via Claude Code, diretamente neste servidor.
    Seja direto e econômico: menos exploração manual arquivo-a-arquivo, menos
    verificação redundante, decisões em lote quando o script já resolveu.
 
+4. **(2026-08-03) Regra permanente: pós-mudança automático, restart
+   continua manual.** Depois de terminar (testar e validar) qualquer
+   mudança de código no projeto: **commitar** e **atualizar este
+   documento** acontecem automaticamente, sem precisar que o usuário peça
+   a cada vez -- isso substitui a leitura mais antiga do item 2 acima
+   ("não decidir sozinho... commits") só para esse caso específico de
+   commit de código já testado. **Reiniciar produção
+   (`systemctl restart goshinsho.service`) continua exigindo confirmação
+   explícita do usuário a cada vez** -- isso NÃO mudou, é a mesma regra
+   de sempre, reafirmada pelo usuário quando perguntado diretamente.
+   "Aquecer o aplicativo" (mandar perguntas reais pra pré-carregar caches)
+   só faz sentido DEPOIS que um restart real foi confirmado e executado --
+   nunca antes disso.
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral
