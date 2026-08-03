@@ -128,6 +128,27 @@ def summarize_donations(since=None, until=None, users_by_email=None):
     }
 
 
+def create_billing_portal_session(email, return_url):
+    """Cria uma sessão do Stripe Customer Portal para o cliente com este
+    e-mail poder gerenciar/cancelar sua doação recorrente sozinho. Não há
+    tabela local de customer_id (ver docstring do módulo) -- localiza o
+    cliente Stripe pelo e-mail no momento da chamada. Retorna a URL da
+    sessão, ou None se nenhum cliente Stripe com esse e-mail for encontrado
+    (ex.: quem nunca doou, ou doou com um e-mail diferente)."""
+    if not Config.STRIPE_SECRET_KEY or not email:
+        return None
+    stripe.api_key = Config.STRIPE_SECRET_KEY
+    try:
+        customers = stripe.Customer.list(email=email, limit=1)
+        if not customers.data:
+            return None
+        customer_id = customers.data[0].id
+        session = stripe.billing_portal.Session.create(customer=customer_id, return_url=return_url)
+        return session.url
+    except Exception:
+        return None
+
+
 def active_recurring_donations():
     """Contagem "agora" de doações recorrentes ativas -- não é filtrável por
     período (é um estado atual, não um evento histórico), fica separado de

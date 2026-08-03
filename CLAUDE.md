@@ -6779,3 +6779,149 @@ devidamente separados por linha em branco.
    relacionada a este bug.
 3. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia) -- retomada do plano de escala:
+## rascunhos de Termos de Uso/Privacidade/Aviso de Independência + portal
+## de autoatendimento Stripe para cancelar doação recorrente (achado real:
+## assinatura antiga ainda cobrando R$29,90/mês)
+
+### 1. Rascunhos jurídicos (Termos de Uso, Política de Privacidade, Aviso
+### de Independência)
+
+A pedido do usuário, retomado o plano de escala (`docs`/artifacts de
+20/07) pausado desde então. Escolhido pelo usuário como primeiro item:
+Termos de Uso + Política de Privacidade + aviso de independência
+religiosa (os outros itens do plano -- monitoramento, freio de mão de
+custo, teste de carga -- ficaram para depois).
+
+Antes de escrever, levantamento factual real do código (não suposição)
+sobre o que o Goshinsho de fato coleta/compartilha: cadastro é só e-mail+senha
+via Supabase Auth (sem nome, sem login social); tabelas `usuarios`/
+`conversas`/`mensagens`/`feedbacks`/`contatos` guardam pergunta/resposta
+indefinidamente, sem função de exclusão pelo usuário; formulário de acesso
+gratuito coleta dados sensíveis (situação financeira, telefone, cidade)
+com consentimento explícito próprio; hashes (não dados brutos) de IP/UA
+para antifraude; terceiros reais são DeepSeek (recebe o texto das
+perguntas), Supabase (hospedagem), Stripe (checkout hospedado, cartão
+nunca toca o servidor do Goshinsho), Amazon SES/Resend (e-mail
+transacional) -- sem analytics/rastreamento de terceiros, sem login
+social, sem verificação de idade.
+
+Decisões do usuário (formato pergunta+opções): projeto pessoal
+independente sem vínculo com a Igreja Messiânica Mundial; pessoa física
+(sem CNPJ); nome completo NÃO aparece publicamente, só
+**contato@goshinsho.com.br** (e-mail novo, confirmado pelo usuário,
+ainda a configurar -- ver seção 2 abaixo sobre recomendação de provedor);
+idade mínima **18 anos (16 com consentimento dos pais)** -- usuário
+perguntou se "idade livre" seria problema por ser conteúdo religioso;
+respondido com base real da LGPD art. 14 (protege por CAPACIDADE de
+consentir, não por natureza do conteúdo -- não há exceção religiosa/
+educacional) e no Código Civil (menor de 16 não tem capacidade plena de
+contratar) -- usuário manteve a recomendação original; foro/comarca:
+**São Caetano do Sul (SP)**; cancelamento de doação recorrente: portal do
+Stripe (ver seção 2).
+
+Rascunhos completos em `reports/juridico_draft/` (fora do git, como o
+resto de `reports/`): `AVISO_INDEPENDENCIA.md`, `TERMOS_DE_USO.md`,
+`POLITICA_PRIVACIDADE.md`. **Ainda não publicados como páginas do site**
+(não existe `templates/termos.html`/`privacidade.html` ainda) -- são só
+o texto para revisão. Único ponto ainda sinalizado como pendente dentro
+dos próprios documentos: a cláusula de limitação de responsabilidade
+(item 9 dos Termos) merece uma revisão jurídica profissional antes de
+publicar -- não sou advogado, o texto é uma boa base, não um parecer.
+
+### 2. Recomendação de provedor de e-mail (fora do código, pesquisa externa)
+
+Usuário pediu indicação de serviço de e-mail profissional que aceite CPF
+(pessoa física, sem CNPJ) para `contato@goshinsho.com.br`. Pesquisado
+via WebSearch: **Zoho Mail** (grátis até 5 caixas/1 domínio/5GB, aceita
+CPF) recomendado como primeira opção; **Titan Email via HostGator**
+(~R$8,99/mês, claramente pensado para pessoa física) como alternativa
+paga; **Google Workspace** e **Microsoft 365 Business** evitados --
+ambos pedem CNPJ no fluxo padrão de checkout no Brasil (confirmado para
+o Microsoft 365 por reclamações reais no Reclame Aqui + documentação
+oficial da Microsoft, que lista CNPJ como "registration number"
+obrigatório para o Brasil). Usuário confirmou o e-mail final:
+**contato@goshinsho.com.br** -- ainda não configurado em nenhum provedor,
+é só o endereço já decidido para os documentos jurídicos.
+
+### 3. Stripe Customer Portal implementado (autoatendimento de cancelamento)
+
+Motivado pelo próprio texto dos Termos ("como cancelar doação
+recorrente") -- antes disso dependia só de e-mail manual. Verificado que
+a conta Stripe **não tinha nenhuma configuração de Customer Portal**
+(0 encontradas) -- criada uma nova (`bpc_1U0MFRF2Js1cKxv5qK70sb7F`,
+`is_default=true`), com autorização explícita do usuário antes de tocar
+a conta Stripe ao vivo: permite cancelar assinatura (`at_period_end`) e
+atualizar forma de pagamento, não permite trocar de plano (doação não
+tem "planos"), com `default_return_url` para `/doacao`.
+
+**Código novo**: `create_billing_portal_session(email, return_url)` em
+`goshinsho/services/donation_service.py` -- localiza o cliente Stripe
+pelo e-mail (`stripe.Customer.list(email=...)`, já que não há tabela
+local de `customer_id`) e cria a sessão do portal; retorna `None` se
+nenhum cliente Stripe tiver esse e-mail (nunca doou, ou doou com e-mail
+diferente). Nova rota `GET /doacao/gerenciar` (`routes.py`): exige login
+(senão seta `next_url` e redireciona com flash, mesmo padrão já usado em
+`_require_developer_page`), busca o cliente pelo e-mail da conta, e
+redireciona (303) para o portal ou mostra mensagem amigável se não achar
+nada. `templates/doacao.html`: link "Gerenciar ou cancelar doação
+recorrente" (só visível logado) + `footerNote` corrigido -- o texto
+antigo ("o link de gerenciamento chega por e-mail após a primeira
+cobrança") era **falso**, o Stripe não manda esse link automaticamente
+sem essa configuração explícita, que nunca tinha sido feita. Chave nova
+`manageSubscription` + `footerNote` atualizado nos 13 idiomas de
+`goshinsho/data/doacao_i18n.json`.
+
+**Testado em 2 camadas** (não em produção): suíte completa
+(`python3 -m unittest discover -s tests`, 128 testes, 1 skip, sem
+regressão) + `test_client()` in-process contra o código sincronizado em
+`/var/www/goshinsho-test` (servidor subido/derrubado só para o teste,
+gunicorn próprio na porta 5090, `--chdir /var/www/goshinsho-test` usando
+o venv da raiz): confirmado que uma conta sem doação recebe mensagem
+amigável (nenhum cliente Stripe achado), uma conta sem login é
+redirecionada com `next_url`, e -- mais importante -- testado contra um
+cliente Stripe REAL com assinatura ativa, que gerou uma URL de portal
+`billing.stripe.com` de verdade. Página `/doacao` confirmada mostrando o
+link só quando logado, e sem o texto antigo incorreto no footer.
+
+**Achado real e não relacionado ao trabalho desta sessão, sinalizado ao
+usuário, não resolvido sozinho**: ao testar o cenário "conta com
+doação ativa", usada a conta de teste já conhecida do projeto
+(`raquelgibrail@gmail.com`) -- ela tem uma **assinatura Stripe real e
+ativa, R$29,90/mês, criada em 2026-06-13**, bem antes da doação
+voluntária existir (criada só em 30/07) e do valor R$29,90 não bater com
+nenhum dos valores sugeridos de doação (R$20/50/100) -- é quase certamente
+uma sobra do **antigo sistema de assinatura paga** (descontinuado em
+30/07 quando todo cadastro virou premium gratuito), nunca cancelada no
+Stripe quando o modelo mudou. Como não há webhook nem tabela de
+assinaturas, isso nunca apareceria em nenhum dashboard/alerta -- só foi
+achado porque essa conta de teste específica tinha uma assinatura real
+ativa. **Não cancelada nem investigada mais a fundo nesta sessão** (é uma
+decisão financeira/de usuário real, não uma decisão técnica) -- vale
+verificar se há outras contas na mesma situação (cobrança automática
+continuando de um modelo de negócio que não existe mais) antes de
+considerar isso resolvido.
+
+### Onde continuar
+
+1. **Rascunhos jurídicos prontos para leitura final do usuário** em
+   `reports/juridico_draft/` -- faltam: publicar como páginas reais do
+   site (`templates/termos.html`/`privacidade.html` + rotas), e a
+   revisão jurídica profissional da cláusula de responsabilidade.
+2. **Configurar de fato o contato@goshinsho.com.br** (recomendação:
+   Zoho Mail grátis) -- decisão e execução ainda pendentes do usuário.
+3. **Achado real, não resolvido**: verificar se existem outras
+   assinaturas Stripe antigas (pré-30/07) ainda ativas e cobrando de
+   contas que hoje deveriam estar só no modelo premium gratuito --
+   `raquelgibrail@gmail.com` é o único caso confirmado até agora (conta
+   de teste), mas não foi feita uma varredura de todas as assinaturas
+   ativas para confirmar que é o único caso.
+4. Stripe Customer Portal: configurado e testado, mas **não publicado em
+   produção ainda** (mudanças em `routes.py`/`donation_service.py`/
+   `templates/doacao.html`/`doacao_i18n.json` só estão no working tree +
+   sincronizadas em `/var/www/goshinsho-test`, `goshinsho.service` real
+   continua com o código antigo) -- aguardando autorização explícita do
+   usuário para reiniciar produção.
+5. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita.

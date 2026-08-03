@@ -62,6 +62,7 @@ from .services.deepseek_usage_service import (
     set_deepseek_usage_context,
     summarize_deepseek_usage,
 )
+from .services.donation_service import create_billing_portal_session
 from .services.email_service import is_email_configured, send_contact_emails
 from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
 from .services.support_service import (
@@ -666,6 +667,25 @@ def checkout_doacao():
 def doacao_sucesso():
     flash("Muito obrigado pela sua doação! Ela ajuda a manter o Goshinsho disponível para todos.", "success")
     return redirect(url_for(_default_app_endpoint()))
+
+
+@web_bp.get("/doacao/gerenciar")
+def doacao_gerenciar():
+    user = current_user()
+    if not user:
+        session["next_url"] = request.path
+        flash("Faça login para gerenciar sua doação recorrente.", "error")
+        return redirect(url_for(_default_app_endpoint()))
+    return_url = url_for("web.doacao", _external=True)
+    portal_url = create_billing_portal_session(user["email"], return_url)
+    if not portal_url:
+        flash(
+            "Nenhuma doação recorrente encontrada para esta conta. Se você doou com outro "
+            "e-mail, entre em contato: contato@goshinsho.com.br",
+            "error",
+        )
+        return redirect(url_for("web.doacao"))
+    return redirect(portal_url, code=303)
 
 
 @web_bp.post("/login")

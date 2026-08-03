@@ -97,11 +97,15 @@
         </section>
 
         <p class="pricing-note" data-i18n="footerNote">
-            O pagamento é processado com segurança pela Stripe. Doações recorrentes podem ser
-            canceladas a qualquer momento -- o link de gerenciamento chega por e-mail após a primeira
-            cobrança. Nenhuma doação afeta seu acesso ao Goshinsho: ele já é gratuito e ilimitado para
-            toda conta cadastrada.
+            O pagamento é processado com segurança pela Stripe. Nenhuma doação afeta seu acesso ao
+            Goshinsho: ele já é gratuito e ilimitado para toda conta cadastrada.
         </p>
+
+        {% if user %}
+        <p class="pricing-note">
+            <a href="{{ url_for('web.doacao_gerenciar') }}" data-i18n="manageSubscription">Gerenciar ou cancelar doação recorrente</a>
+        </p>
+        {% endif %}
     </main>
 
     <script src="{{ url_for('static', filename='js/doacao.js') }}?v=1"></script>

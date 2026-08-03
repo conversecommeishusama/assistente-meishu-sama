@@ -15,9 +15,10 @@
     "recurringDesc": "Uma contribuição mensal, até você decidir cancelar (direto pela Stripe).",
     "amountLabelMonthly": "Valor mensal (R$)",
     "submitRecurring": "Assinar doação mensal",
-    "footerNote": "O pagamento é processado com segurança pela Stripe. Doações recorrentes podem ser canceladas a qualquer momento — o link de gerenciamento chega por e-mail após a primeira cobrança. Nenhuma doação afeta seu acesso ao Goshinsho: ele já é gratuito e ilimitado para toda conta cadastrada.",
+    "footerNote": "O pagamento é processado com segurança pela Stripe. Nenhuma doação afeta seu acesso ao Goshinsho: ele já é gratuito e ilimitado para toda conta cadastrada.",
     "heroTitle": "O Goshinsho é gratuito para todos",
-    "backToChat": "Voltar ao chat"
+    "backToChat": "Voltar ao chat",
+    "manageSubscription": "Gerenciar ou cancelar doação recorrente"
   },
   "English": {
     "pageTitle": "Donation - Goshinsho",
@@ -35,9 +36,10 @@
     "recurringDesc": "A monthly contribution, until you decide to cancel (directly through Stripe).",
     "amountLabelMonthly": "Monthly amount (R$)",
     "submitRecurring": "Subscribe to monthly donation",
-    "footerNote": "Payment is securely processed by Stripe. Recurring donations can be canceled at any time — the management link arrives by email after the first charge. No donation affects your access to Goshinsho: it is already free and unlimited for every registered account.",
+    "footerNote": "Payment is securely processed by Stripe. No donation affects your access to Goshinsho: it is already free and unlimited for every registered account.",
     "heroTitle": "Goshinsho is free for everyone",
-    "backToChat": "Back to chat"
+    "backToChat": "Back to chat",
+    "manageSubscription": "Manage or cancel recurring donation"
   },
   "Español": {
     "pageTitle": "Donación - Goshinsho",
@@ -55,9 +57,10 @@
     "recurringDesc": "Una contribución mensual, hasta que decidas cancelarla (directamente por Stripe).",
     "amountLabelMonthly": "Monto mensual (R$)",
     "submitRecurring": "Suscribirse a la donación mensual",
-    "footerNote": "El pago se procesa de forma segura por Stripe. Las donaciones recurrentes se pueden cancelar en cualquier momento — el enlace de gestión llega por correo tras el primer cobro. Ninguna donación afecta tu acceso a Goshinsho: ya es gratuito e ilimitado para toda cuenta registrada.",
+    "footerNote": "El pago se procesa de forma segura a través de Stripe. Ninguna donación afecta tu acceso a Goshinsho: ya es gratuito e ilimitado para toda cuenta registrada.",
     "heroTitle": "Goshinsho es gratuito para todos",
-    "backToChat": "Volver al chat"
+    "backToChat": "Volver al chat",
+    "manageSubscription": "Gestionar o cancelar donación recurrente"
   },
   "日本語": {
     "pageTitle": "寄付 - Goshinsho",
@@ -75,9 +78,10 @@
     "recurringDesc": "キャンセルするまで毎月寄付されます（Stripeから直接管理できます）。",
     "amountLabelMonthly": "月額 (R$)",
     "submitRecurring": "月額寄付を申し込む",
-    "footerNote": "お支払いはStripeによって安全に処理されます。継続寄付はいつでもキャンセルできます — 管理用リンクは初回の課金後にメールで届きます。寄付をしてもGoshinshoへのアクセスには影響しません。登録済みのすべてのアカウントは、すでに無料かつ無制限でご利用いただけます。",
+    "footerNote": "お支払いはStripeによって安全に処理されます。寄付の有無に関わらずGoshinshoへのアクセスには影響しません -- 登録済みのすべてのアカウントは既に無料で無制限にご利用いただけます。",
     "heroTitle": "Goshinshoはすべての人に無料です",
-    "backToChat": "チャットに戻る"
+    "backToChat": "チャットに戻る",
+    "manageSubscription": "定期寄付の管理・解約"
   },
   "中文": {
     "pageTitle": "捐赠 - Goshinsho",
@@ -95,9 +99,10 @@
     "recurringDesc": "每月捐款一次，直到你决定取消为止（可直接通过Stripe管理）。",
     "amountLabelMonthly": "每月金额 (R$)",
     "submitRecurring": "订阅每月捐赠",
-    "footerNote": "付款由Stripe安全处理。定期捐赠可随时取消——管理链接会在首次扣款后通过邮件发送给你。任何捐赠都不会影响你对Goshinsho的访问：所有注册账户已经可以免费且无限制地使用。",
+    "footerNote": "付款通过 Stripe 安全处理。是否捐款不影响您对 Goshinsho 的访问权限：所有注册账户均已享有免费且无限制的使用权限。",
     "heroTitle": "Goshinsho对所有人免费开放",
-    "backToChat": "返回聊天"
+    "backToChat": "返回聊天",
+    "manageSubscription": "管理或取消定期捐款"
   },
   "हिन्दी": {
     "pageTitle": "दान - Goshinsho",
@@ -115,9 +120,10 @@
     "recurringDesc": "जब तक आप रद्द करने का फैसला न करें, हर महीने का योगदान (सीधे Stripe के ज़रिए प्रबंधित)।",
     "amountLabelMonthly": "मासिक राशि (R$)",
     "submitRecurring": "मासिक दान की सदस्यता लें",
-    "footerNote": "भुगतान Stripe द्वारा सुरक्षित रूप से संसाधित किया जाता है। नियमित दान कभी भी रद्द किए जा सकते हैं — पहली राशि कटने के बाद प्रबंधन लिंक ईमेल से भेजा जाता है। कोई भी दान Goshinsho तक आपकी पहुँच को प्रभावित नहीं करता: यह पहले से ही हर पंजीकृत खाते के लिए मुफ़्त और असीमित है।",
+    "footerNote": "भुगतान Stripe द्वारा सुरक्षित रूप से संसाधित किया जाता है। कोई भी दान आपकी Goshinsho तक पहुँच को प्रभावित नहीं करता -- हर पंजीकृत खाते के लिए यह पहले से ही मुफ़्त और असीमित है।",
     "heroTitle": "Goshinsho सभी के लिए मुफ़्त है",
-    "backToChat": "चैट पर वापस जाएं"
+    "backToChat": "चैट पर वापस जाएं",
+    "manageSubscription": "आवर्ती दान प्रबंधित करें या रद्द करें"
   },
   "العربية": {
     "pageTitle": "تبرع - غوشينشو",
@@ -135,9 +141,10 @@
     "recurringDesc": "مساهمة شهرية، حتى تقرر إلغاءها (مباشرة عبر Stripe).",
     "amountLabelMonthly": "المبلغ الشهري (R$)",
     "submitRecurring": "الاشتراك في التبرع الشهري",
-    "footerNote": "تتم معالجة الدفع بأمان بواسطة Stripe. يمكن إلغاء التبرعات الدورية في أي وقت — يصلك رابط الإدارة عبر البريد الإلكتروني بعد أول عملية خصم. لا يؤثر أي تبرع على وصولك إلى غوشينشو: فهو بالفعل مجاني وغير محدود لكل حساب مسجَّل.",
+    "footerNote": "تتم معالجة الدفع بأمان عبر Stripe. لا يؤثر أي تبرع على وصولك إلى Goshinsho: فهو مجاني وغير محدود بالفعل لكل حساب مسجَّل.",
     "heroTitle": "غوشينشو مجاني للجميع",
-    "backToChat": "العودة إلى المحادثة"
+    "backToChat": "العودة إلى المحادثة",
+    "manageSubscription": "إدارة أو إلغاء التبرع المتكرر"
   },
   "Français": {
     "pageTitle": "Don - Goshinsho",
@@ -155,9 +162,10 @@
     "recurringDesc": "Une contribution mensuelle, jusqu'à ce que vous décidiez de l'annuler (directement via Stripe).",
     "amountLabelMonthly": "Montant mensuel (R$)",
     "submitRecurring": "S'abonner au don mensuel",
-    "footerNote": "Le paiement est traité en toute sécurité par Stripe. Les dons récurrents peuvent être annulés à tout moment — le lien de gestion arrive par e-mail après le premier prélèvement. Aucun don n'affecte votre accès à Goshinsho : il est déjà gratuit et illimité pour tout compte enregistré.",
+    "footerNote": "Le paiement est traité en toute sécurité par Stripe. Aucun don n'affecte votre accès à Goshinsho : il est déjà gratuit et illimité pour tout compte inscrit.",
     "heroTitle": "Goshinsho est gratuit pour tous",
-    "backToChat": "Retour au chat"
+    "backToChat": "Retour au chat",
+    "manageSubscription": "Gérer ou annuler le don récurrent"
   },
   "বাংলা": {
     "pageTitle": "অনুদান - Goshinsho",
@@ -175,9 +183,10 @@
     "recurringDesc": "আপনি বাতিল না করা পর্যন্ত প্রতি মাসে একটি অবদান (সরাসরি Stripe-এর মাধ্যমে পরিচালিত)।",
     "amountLabelMonthly": "মাসিক পরিমাণ (R$)",
     "submitRecurring": "মাসিক অনুদানে সাবস্ক্রাইব করুন",
-    "footerNote": "পেমেন্ট নিরাপদে Stripe দ্বারা প্রক্রিয়া করা হয়। নিয়মিত অনুদান যেকোনো সময় বাতিল করা যায় — প্রথম চার্জের পরে ব্যবস্থাপনার লিঙ্কটি ইমেইলে আসে। কোনো অনুদান Goshinsho-তে আপনার অ্যাক্সেসকে প্রভাবিত করে না: এটি ইতিমধ্যে প্রতিটি নিবন্ধিত অ্যাকাউন্টের জন্য বিনামূল্যে এবং সীমাহীন।",
+    "footerNote": "Stripe-এর মাধ্যমে নিরাপদে পেমেন্ট প্রক্রিয়া করা হয়। কোনো অনুদান আপনার Goshinsho অ্যাক্সেসকে প্রভাবিত করে না -- প্রতিটি নিবন্ধিত অ্যাকাউন্টের জন্য এটি ইতিমধ্যেই বিনামূল্যে এবং সীমাহীন।",
     "heroTitle": "Goshinsho সবার জন্য বিনামূল্যে",
-    "backToChat": "চ্যাটে ফিরে যান"
+    "backToChat": "চ্যাটে ফিরে যান",
+    "manageSubscription": "পুনরাবৃত্ত অনুদান পরিচালনা বা বাতিল করুন"
   },
   "Русский": {
     "pageTitle": "Пожертвование - Goshinsho",
@@ -195,9 +204,10 @@
     "recurringDesc": "Ежемесячный взнос, пока вы не решите отменить его (напрямую через Stripe).",
     "amountLabelMonthly": "Сумма в месяц (R$)",
     "submitRecurring": "Оформить ежемесячное пожертвование",
-    "footerNote": "Платёж безопасно обрабатывается через Stripe. Регулярные пожертвования можно отменить в любой момент — ссылка для управления приходит по электронной почте после первого списания. Ни одно пожертвование не влияет на ваш доступ к Goshinsho: он уже бесплатен и безлимитен для каждого зарегистрированного аккаунта.",
+    "footerNote": "Оплата надёжно обрабатывается через Stripe. Пожертвования никак не влияют на ваш доступ к Goshinsho: он уже бесплатный и безлимитный для любой зарегистрированной учётной записи.",
     "heroTitle": "Goshinsho бесплатен для всех",
-    "backToChat": "Вернуться к чату"
+    "backToChat": "Вернуться к чату",
+    "manageSubscription": "Управлять или отменить регулярное пожертвование"
   },
   "اردو": {
     "pageTitle": "عطیہ - Goshinsho",
@@ -215,9 +225,10 @@
     "recurringDesc": "جب تک آپ منسوخ کرنے کا فیصلہ نہ کریں، ہر ماہ ایک تعاون (براہ راست Stripe کے ذریعے منظم)۔",
     "amountLabelMonthly": "ماہانہ رقم (R$)",
     "submitRecurring": "ماہانہ عطیے کی رکنیت لیں",
-    "footerNote": "ادائیگی Stripe کے ذریعے محفوظ طریقے سے پروسیس کی جاتی ہے۔ باقاعدہ عطیات کسی بھی وقت منسوخ کیے جا سکتے ہیں — پہلی کٹوتی کے بعد انتظامی لنک ای میل کے ذریعے موصول ہوتا ہے۔ کوئی بھی عطیہ Goshinsho تک آپ کی رسائی کو متاثر نہیں کرتا: یہ پہلے ہی ہر رجسٹرڈ اکاؤنٹ کے لیے مفت اور لامحدود ہے۔",
+    "footerNote": "ادائیگی Stripe کے ذریعے محفوظ طریقے سے پروسیس کی جاتی ہے۔ کوئی بھی عطیہ آپ کی Goshinsho تک رسائی کو متاثر نہیں کرتا -- ہر رجسٹرڈ اکاؤنٹ کے لیے یہ پہلے ہی مفت اور لامحدود ہے۔",
     "heroTitle": "Goshinsho سب کے لیے مفت ہے",
-    "backToChat": "چیٹ پر واپس جائیں"
+    "backToChat": "چیٹ پر واپس جائیں",
+    "manageSubscription": "بار بار ہونے والا عطیہ منظم یا منسوخ کریں"
   },
   "Indonesia": {
     "pageTitle": "Donasi - Goshinsho",
@@ -235,9 +246,10 @@
     "recurringDesc": "Kontribusi bulanan, sampai Anda memutuskan untuk membatalkannya (langsung melalui Stripe).",
     "amountLabelMonthly": "Jumlah bulanan (R$)",
     "submitRecurring": "Berlangganan donasi bulanan",
-    "footerNote": "Pembayaran diproses dengan aman oleh Stripe. Donasi berulang dapat dibatalkan kapan saja — tautan pengelolaan dikirim melalui email setelah tagihan pertama. Donasi apa pun tidak memengaruhi akses Anda ke Goshinsho: aplikasi ini sudah gratis dan tanpa batas untuk setiap akun terdaftar.",
+    "footerNote": "Pembayaran diproses dengan aman melalui Stripe. Donasi apa pun tidak memengaruhi akses Anda ke Goshinsho: akses sudah gratis dan tanpa batas untuk setiap akun terdaftar.",
     "heroTitle": "Goshinsho gratis untuk semua orang",
-    "backToChat": "Kembali ke obrolan"
+    "backToChat": "Kembali ke obrolan",
+    "manageSubscription": "Kelola atau batalkan donasi berulang"
   },
   "Deutsch": {
     "pageTitle": "Spende - Goshinsho",
@@ -255,8 +267,9 @@
     "recurringDesc": "Ein monatlicher Beitrag, bis du dich zur Kündigung entscheidest (direkt über Stripe).",
     "amountLabelMonthly": "Monatlicher Betrag (R$)",
     "submitRecurring": "Monatliche Spende abonnieren",
-    "footerNote": "Die Zahlung wird sicher über Stripe abgewickelt. Wiederkehrende Spenden können jederzeit gekündigt werden — der Verwaltungslink wird nach der ersten Abbuchung per E-Mail zugestellt. Keine Spende beeinflusst deinen Zugang zu Goshinsho: Er ist bereits für jedes registrierte Konto kostenlos und unbegrenzt.",
+    "footerNote": "Die Zahlung wird sicher über Stripe abgewickelt. Keine Spende wirkt sich auf deinen Zugang zu Goshinsho aus: Er ist für jedes registrierte Konto bereits kostenlos und unbegrenzt.",
     "heroTitle": "Goshinsho ist für alle kostenlos",
-    "backToChat": "Zurück zum Chat"
+    "backToChat": "Zurück zum Chat",
+    "manageSubscription": "Wiederkehrende Spende verwalten oder kündigen"
   }
 }
