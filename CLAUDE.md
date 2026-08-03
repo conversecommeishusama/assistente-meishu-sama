@@ -6713,3 +6713,55 @@ código (nenhuma causa encontrada pra corrigir).
    v2 não é o motor ativo), não investigado a fundo.
 5. Continua valendo: nenhuma promoção/reinício de produção sem
    autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia) -- compartilhar no WhatsApp vinha
+## com título do tema grudado no texto seguinte (bug real, não ligado a
+## nenhuma mudança de hoje)
+
+Usuário relatou: ao compartilhar uma resposta pelo WhatsApp, a mensagem
+vinha "desconfigurada", com o título dos temas misturado com o texto
+(ex.: "O que é o OhikariO Ohikari é um caractere..." sem separação).
+
+**Causa raiz confirmada**: `shareResponse()` (`static/js/app.js`) extraía
+o texto a compartilhar via `article.querySelector(".bubble")?.textContent`.
+Para mensagens geradas na sessão atual, o bubble é renderizado a partir
+de markdown (`### Tema` → `<h3>Tema</h3>`, parágrafo → `<p>...</p>`) por
+`renderAssistantMarkdown`/`setBubbleContent` -- mas `.textContent` **não
+insere nenhuma quebra de linha entre elementos de bloco**, então o texto
+do `<h3>` fica colado direto no texto do `<p>` seguinte, sem separador
+nenhum. Bug pré-existente, não introduzido em nenhuma sessão recente
+(`shareResponse`/`renderAssistantMarkdown` não tinham sido tocados antes
+de hoje) -- só ficou mais visível/comum porque o formato "explicação por
+tema com `###`" é o padrão desde 30/07.
+
+**Corrigido**: `setBubbleContent` já guarda o texto markdown original
+(antes da conversão pra HTML) em `bubble.dataset.rawContent` -- só
+nunca era usado pra nada. `shareResponse()` agora lê esse campo primeiro
+(preserva as quebras de linha reais entre temas), caindo pra
+`.textContent` só como fallback para histórico recarregado do servidor
+(que nunca passa por `renderAssistantMarkdown` -- mostra o markdown cru
+como texto simples, sem estrutura de bloco pra perder, então
+`.textContent` já funciona certo nesse caso).
+
+**Validado com Playwright** (injeção de mensagem fake via
+`appendMessage`, clique simulado no botão compartilhar, inspeção do link
+`wa.me/?text=...` decodificado): texto compartilhado agora sai com
+`### Tema\n\nTexto do tema\n\n### Outro tema\n\n...`, título e corpo
+devidamente separados por linha em branco.
+
+### Produção: reiniciada e commitada
+
+`systemctl restart goshinsho.service`, confirmado `/app-pt` → 200,
+`app.js?v=152`. Commit cobre `static/js/app.js` + `templates/app.html`
+(bump de versão) + este documento. Suíte completa rodada antes (128/128,
+1 skip) sem regressão.
+
+### Onde continuar
+
+1. Corrigido e em produção, validado com teste real de navegador.
+2. Mesmas pendências residuais das atualizações anteriores de hoje
+   (velocidade no celular sem causa encontrada, truncamento raro achado
+   1x, flakiness do teste legado do pipeline v2) -- nenhuma delas
+   relacionada a este bug.
+3. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita.

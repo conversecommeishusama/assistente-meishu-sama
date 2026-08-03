@@ -1549,7 +1549,17 @@ function openShareMenu(button, { question, answer, url }) {
 }
 
 async function shareResponse(article, button) {
-    const answer = article?.querySelector(".bubble")?.textContent?.trim() || "";
+    // 2026-08-03: achado real -- `.textContent` descarta a estrutura de
+    // blocos (### tema virou <h3>, parágrafos viraram <p>) sem inserir
+    // nenhuma quebra de linha entre eles, grudando o título no texto
+    // seguinte ao compartilhar. `data-raw-content` (setado em
+    // setBubbleContent) guarda o texto original com as quebras de linha
+    // reais -- usar isso quando disponível (mensagens da sessão atual);
+    // cai pra `.textContent` só pra histórico recarregado do servidor,
+    // que nunca passa por renderAssistantMarkdown (mostra o markdown cru
+    // como texto simples, sem estrutura pra perder).
+    const bubble = article?.querySelector(".bubble");
+    const answer = (bubble?.dataset.rawContent || bubble?.textContent || "").trim();
     const question = findQuestionForArticle(article);
     const messageId = article?.dataset.messageId;
     const url = messageId ? `${window.location.origin}/resposta/${messageId}` : window.location.href;
