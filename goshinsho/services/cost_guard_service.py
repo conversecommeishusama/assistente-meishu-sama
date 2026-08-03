@@ -16,17 +16,72 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ALERT_MARKER_DIR = PROJECT_ROOT / "logs" / "cost_cap_alerts"
 
 
+# 2026-08-03: níveis de aviso antecipado -- avisa bem antes do bloqueio
+# acontecer, pra dar tempo do responsável reagir (ex. subir o teto na hora,
+# se for crescimento real de campanha, não abuso) em vez de só saber quando
+# já bloqueou todo mundo.
+WARNING_THRESHOLDS = (0.5, 0.8)
+
+
 def cost_cap_status():
     """Sem cache próprio -- reaproveita o cache curto de `today_cost_usd()`."""
     cap = Config.DAILY_COST_CAP_USD
     if not cap or cap <= 0:
-        return {"enabled": False, "exceeded": False, "spent_usd": 0.0, "cap_usd": cap}
+        return {"enabled": False, "exceeded": False, "warning_level": None, "spent_usd": 0.0, "cap_usd": cap}
     spent = today_cost_usd()
-    return {"enabled": True, "exceeded": spent >= cap, "spent_usd": spent, "cap_usd": cap}
+    ratio = spent / cap
+    warning_level = None
+    for threshold in sorted(WARNING_THRESHOLDS, reverse=True):
+        if ratio >= threshold:
+            warning_level = threshold
+            break
+    return {
+        "enabled": True,
+        "exceeded": spent >= cap,
+        "warning_level": warning_level,
+        "spent_usd": spent,
+        "cap_usd": cap,
+    }
 
 
 def _alert_marker_path(today):
     return ALERT_MARKER_DIR / f"{today.isoformat()}.sent"
+
+
+def _warning_marker_path(today, threshold):
+    return ALERT_MARKER_DIR / f"{today.isoformat()}_{int(threshold * 100)}.sent"
+
+
+def maybe_send_warning_alert(status):
+    """Alerta antecipado (1x por nível de aviso, por dia) -- chamado quando
+    `status["warning_level"]` não é None mas o teto ainda não foi
+    ultrapassado (`exceeded=False`); se já excedeu, `maybe_send_cap_alert`
+    cuida do alerta, não este."""
+    level = status.get("warning_level")
+    if level is None or status.get("exceeded"):
+        return
+    today = datetime.now(timezone.utc).date()
+    marker = _warning_marker_path(today, level)
+    if marker.exists():
+        return
+    ALERT_MARKER_DIR.mkdir(parents=True, exist_ok=True)
+    marker.touch()
+    if not is_email_configured() or not Config.SES_CONTACT_TO_EMAIL:
+        return
+    try:
+        send_email(
+            Config.SES_CONTACT_TO_EMAIL,
+            f"Goshinsho: {int(level * 100)}% do teto diário de IA já usado",
+            (
+                f"O gasto de hoje com a API DeepSeek chegou a US$ {status['spent_usd']:.2f} "
+                f"({int(level * 100)}% do teto de US$ {status['cap_usd']:.2f}/dia).\n\n"
+                "Isso ainda não bloqueou nada -- é só um aviso antecipado. Se o volume for "
+                "crescimento real (ex. uma campanha de divulgação), considere subir "
+                "DAILY_COST_CAP_USD no .env antes do teto ser atingido de fato."
+            ),
+        )
+    except Exception:
+        pass
 
 
 def maybe_send_cap_alert(status):

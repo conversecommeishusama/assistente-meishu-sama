@@ -62,7 +62,7 @@ from .services.deepseek_usage_service import (
     set_deepseek_usage_context,
     summarize_deepseek_usage,
 )
-from .services.cost_guard_service import cost_cap_status, maybe_send_cap_alert
+from .services.cost_guard_service import cost_cap_status, maybe_send_cap_alert, maybe_send_warning_alert
 from .services.donation_service import create_billing_portal_session
 from .services.email_service import is_email_configured, send_contact_emails
 from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
@@ -112,6 +112,21 @@ DONATION_MAX_BRL = 10000
 # (mesma chave usada em app.js), ver templates/doacao.html.
 with open(PROJECT_ROOT / "goshinsho" / "data" / "doacao_i18n.json", encoding="utf-8") as _f:
     DOACAO_I18N = json.load(_f)
+
+# 2026-08-03: mesmo padrão do DOACAO_I18N acima, agora para as 3 páginas
+# jurídicas (Termos de Uso, Política de Privacidade, Aviso de Independência)
+# -- também carregadas isoladamente (fora da SPA), também traduzidas no
+# cliente via localStorage["goshinsho-language"], ver
+# static/js/legal_i18n.js e templates/termos.html, privacidade.html,
+# aviso_independencia.html.
+with open(PROJECT_ROOT / "goshinsho" / "data" / "termos_i18n.json", encoding="utf-8") as _f:
+    TERMOS_I18N = json.load(_f)
+with open(PROJECT_ROOT / "goshinsho" / "data" / "privacidade_i18n.json", encoding="utf-8") as _f:
+    PRIVACIDADE_I18N = json.load(_f)
+with open(
+    PROJECT_ROOT / "goshinsho" / "data" / "aviso_independencia_i18n.json", encoding="utf-8"
+) as _f:
+    AVISO_INDEPENDENCIA_I18N = json.load(_f)
 
 
 def _runtime_health():
@@ -607,17 +622,23 @@ def download_admin_apk():
 
 @web_bp.get("/termos-de-uso")
 def termos_de_uso():
-    return render_template("termos.html", user=current_user())
+    return render_template("termos.html", user=current_user(), termos_i18n=TERMOS_I18N)
 
 
 @web_bp.get("/privacidade")
 def politica_privacidade():
-    return render_template("privacidade.html", user=current_user())
+    return render_template(
+        "privacidade.html", user=current_user(), privacidade_i18n=PRIVACIDADE_I18N
+    )
 
 
 @web_bp.get("/aviso-independencia")
 def aviso_independencia():
-    return render_template("aviso_independencia.html", user=current_user())
+    return render_template(
+        "aviso_independencia.html",
+        user=current_user(),
+        aviso_independencia_i18n=AVISO_INDEPENDENCIA_I18N,
+    )
 
 
 @web_bp.get("/assinatura")
@@ -1009,6 +1030,7 @@ def api_chat():
                 "cost_cap_reached": True,
             }
         ), 503
+    maybe_send_warning_alert(cap_status)
     if user:
         try:
             user = refresh_user_profile(user["id"]) or user

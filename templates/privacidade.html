@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Política de Privacidade - Goshinsho</title>
+    <title data-i18n="pageTitle">Política de Privacidade - Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=149">
 </head>
-<body>
+<body data-privacidade-i18n="{{ privacidade_i18n | tojson | forceescape }}">
     <main class="app-shell">
         <header class="topbar">
             <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
@@ -15,233 +15,235 @@
             </a>
             <nav class="top-actions">
                 {% if user %}<span class="user-pill">{{ user.email }}</span>{% endif %}
-                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}">Voltar ao chat</a>
+                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}" data-i18n="backToChat">Voltar ao chat</a>
             </nav>
         </header>
 
         <article class="legal-content">
-            <h1>Política de Privacidade do Goshinsho</h1>
-            <p class="legal-updated">Última atualização: 3 de agosto de 2026</p>
+            <h1 data-i18n="h1">Política de Privacidade do Goshinsho</h1>
+            <p class="legal-updated" data-i18n="updated">Última atualização: 3 de agosto de 2026</p>
 
-            <p>
+            <p data-i18n="introP1">
                 Esta Política de Privacidade explica quais dados o Goshinsho coleta, por quê,
                 com quem compartilha, e quais são os seus direitos, em conformidade com a Lei
                 Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
             </p>
 
-            <h2>1. Quem é o responsável pelos seus dados (controlador)</h2>
-            <p>
+            <h2 data-i18n="s1Title">1. Quem é o responsável pelos seus dados (controlador)</h2>
+            <p data-i18n="s1P1">
                 O Goshinsho é mantido por uma pessoa física, responsável pelo tratamento dos
                 dados descritos nesta Política.
             </p>
             <p>
-                Contato para qualquer assunto de privacidade:
+                <span data-i18n="s1P2Before">Contato para qualquer assunto de privacidade:</span>
                 <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a>
             </p>
 
-            <h2>2. Quais dados coletamos</h2>
+            <h2 data-i18n="s2Title">2. Quais dados coletamos</h2>
 
-            <p><strong>2.1 Dados de cadastro.</strong> Ao criar uma conta: e-mail e senha. A
+            <p><strong data-i18n="s21Strong">2.1 Dados de cadastro.</strong> <span data-i18n="s21After">Ao criar uma conta: e-mail e senha. A
             senha é gerenciada inteiramente pelo Supabase (nosso provedor de autenticação) — o
-            Goshinsho nunca vê nem armazena sua senha em texto simples.</p>
+            Goshinsho nunca vê nem armazena sua senha em texto simples.</span></p>
 
-            <p><strong>2.2 Dados de uso do serviço.</strong> As perguntas que você faz e as
+            <p><strong data-i18n="s22Strong">2.2 Dados de uso do serviço.</strong> <span data-i18n="s22After">As perguntas que você faz e as
             respostas geradas ficam salvas, associadas à sua conta, para manter o histórico das
             suas conversas e permitir continuidade de diálogo. Hoje esse histórico é mantido
             indefinidamente enquanto sua conta existir (não há exclusão automática por tempo).
             Também guardamos o título das conversas e a reação (👍/👎) que você der às
-            respostas.</p>
+            respostas.</span></p>
 
-            <p><strong>2.3 Formulário de contato/suporte.</strong> Se você usar o formulário de
+            <p><strong data-i18n="s23Strong">2.3 Formulário de contato/suporte.</strong> <span data-i18n="s23After">Se você usar o formulário de
             contato ou abrir um chamado de suporte: nome, e-mail e o conteúdo da sua
-            mensagem.</p>
+            mensagem.</span></p>
 
-            <p><strong>2.4 Formulário de solicitação de acesso gratuito</strong> (quando
+            <p><strong data-i18n="s24Strong">2.4 Formulário de solicitação de acesso gratuito</strong> <span data-i18n="s24After">(quando
             aplicável). Este formulário, opcional, pede: nome completo, telefone/WhatsApp,
             país, cidade/estado, ocupação (opcional), situação financeira, número de pessoas no
             domicílio (opcional), data de nascimento (opcional) e o motivo do pedido. Esses
             dados só são coletados se você preencher esse formulário voluntariamente, mediante
             consentimento explícito dado no próprio formulário, e usados exclusivamente para
-            analisar o pedido de acesso.</p>
+            analisar o pedido de acesso.</span></p>
 
-            <p><strong>2.5 Dados técnicos e de segurança.</strong> Para prevenir abuso e
+            <p><strong data-i18n="s25Strong">2.5 Dados técnicos e de segurança.</strong> <span data-i18n="s25After">Para prevenir abuso e
             fraude, registramos, de forma técnica, um hash (não o dado bruto) do seu endereço
             IP e do seu navegador (user-agent), além do caminho acessado no site. Não guardamos
-            seu IP nem seu user-agent em texto legível.</p>
+            seu IP nem seu user-agent em texto legível.</span></p>
 
-            <p><strong>2.6 Dados de uso da inteligência artificial.</strong> Para fins de
+            <p><strong data-i18n="s26Strong">2.6 Dados de uso da inteligência artificial.</strong> <span data-i18n="s26After">Para fins de
             controle interno de custo e uso, registramos metadados como e-mail, endpoint usado
             e quantidade de tokens processados — não o conteúdo da sua pergunta (esse fica na
-            tabela de conversas, descrita acima, não neste registro).</p>
+            tabela de conversas, descrita acima, não neste registro).</span></p>
 
-            <p><strong>2.7 Cookies e armazenamento no navegador.</strong> Um cookie de sessão,
+            <p><strong data-i18n="s27Strong">2.7 Cookies e armazenamento no navegador.</strong> <span data-i18n="s27After">Um cookie de sessão,
             necessário para manter você logado (protegido: HttpOnly, Secure). No armazenamento
             local do seu navegador (localStorage, que não sai do seu dispositivo): o idioma
             escolhido, respostas que você marcou como favoritas, e se você já viu determinado
             aviso introdutório. Isso não é compartilhado com terceiros nem usado para
-            publicidade.</p>
+            publicidade.</span></p>
 
-            <p><strong>2.8 O que não coletamos.</strong> Não pedimos nem armazenamos dados de
+            <p><strong data-i18n="s28Strong">2.8 O que não coletamos.</strong> <span data-i18n="s28After">Não pedimos nem armazenamos dados de
             cartão de crédito (isso é feito inteiramente pelo Stripe, nosso processador de
             pagamento). Não usamos ferramentas de analytics/rastreamento de terceiros (ex.
             Google Analytics, Meta Pixel) hoje. Não fazemos login social (Google, Facebook
-            etc.) — não recebemos dados de outras plataformas por esse caminho.</p>
+            etc.) — não recebemos dados de outras plataformas por esse caminho.</span></p>
 
-            <h2>3. Por que usamos esses dados (finalidades e base legal)</h2>
+            <h2 data-i18n="s3Title">3. Por que usamos esses dados (finalidades e base legal)</h2>
             <table>
                 <thead>
-                    <tr><th>Finalidade</th><th>Dados envolvidos</th><th>Base legal (LGPD)</th></tr>
+                    <tr><th data-i18n="tableFinalidade">Finalidade</th><th data-i18n="tableDados">Dados envolvidos</th><th data-i18n="tableBase">Base legal (LGPD)</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Criar e manter sua conta, autenticação</td><td>e-mail, senha</td><td>Execução de contrato (art. 7º, V)</td></tr>
-                    <tr><td>Responder suas perguntas e manter histórico de conversa</td><td>perguntas, respostas, título da conversa</td><td>Execução de contrato</td></tr>
-                    <tr><td>Processar doações voluntárias</td><td>e-mail, valor, tipo de doação (via Stripe)</td><td>Execução de contrato / consentimento</td></tr>
-                    <tr><td>Atender pedidos de suporte/contato</td><td>nome, e-mail, mensagem</td><td>Execução de contrato / legítimo interesse</td></tr>
-                    <tr><td>Analisar pedidos de acesso gratuito</td><td>dados do formulário específico</td><td>Consentimento explícito</td></tr>
-                    <tr><td>Prevenir fraude e abuso</td><td>hashes de IP/user-agent</td><td>Legítimo interesse (segurança)</td></tr>
-                    <tr><td>Melhorar e monitorar o serviço</td><td>métricas agregadas de uso/custo</td><td>Legítimo interesse</td></tr>
+                    <tr><td data-i18n="r1Finalidade">Criar e manter sua conta, autenticação</td><td data-i18n="r1Dados">e-mail, senha</td><td data-i18n="r1Base">Execução de contrato (art. 7º, V)</td></tr>
+                    <tr><td data-i18n="r2Finalidade">Responder suas perguntas e manter histórico de conversa</td><td data-i18n="r2Dados">perguntas, respostas, título da conversa</td><td data-i18n="r2Base">Execução de contrato</td></tr>
+                    <tr><td data-i18n="r3Finalidade">Processar doações voluntárias</td><td data-i18n="r3Dados">e-mail, valor, tipo de doação (via Stripe)</td><td data-i18n="r3Base">Execução de contrato / consentimento</td></tr>
+                    <tr><td data-i18n="r4Finalidade">Atender pedidos de suporte/contato</td><td data-i18n="r4Dados">nome, e-mail, mensagem</td><td data-i18n="r4Base">Execução de contrato / legítimo interesse</td></tr>
+                    <tr><td data-i18n="r5Finalidade">Analisar pedidos de acesso gratuito</td><td data-i18n="r5Dados">dados do formulário específico</td><td data-i18n="r5Base">Consentimento explícito</td></tr>
+                    <tr><td data-i18n="r6Finalidade">Prevenir fraude e abuso</td><td data-i18n="r6Dados">hashes de IP/user-agent</td><td data-i18n="r6Base">Legítimo interesse (segurança)</td></tr>
+                    <tr><td data-i18n="r7Finalidade">Melhorar e monitorar o serviço</td><td data-i18n="r7Dados">métricas agregadas de uso/custo</td><td data-i18n="r7Base">Legítimo interesse</td></tr>
                 </tbody>
             </table>
-            <p>Não usamos seus dados para venda a terceiros, nem para publicidade direcionada.</p>
+            <p data-i18n="s3P1">Não usamos seus dados para venda a terceiros, nem para publicidade direcionada.</p>
 
-            <h2>4. Com quem compartilhamos seus dados</h2>
-            <p>
+            <h2 data-i18n="s4Title">4. Com quem compartilhamos seus dados</h2>
+            <p data-i18n="s4P1">
                 Usamos os seguintes prestadores de serviço (operadores de dados, na linguagem
                 da LGPD), cada um responsável por sua própria segurança e política de
                 privacidade:
             </p>
             <ul>
                 <li>
-                    <strong>DeepSeek</strong> (fornecedor de inteligência artificial, com sede
+                    <strong data-i18n="s4Li1Strong">DeepSeek</strong> <span data-i18n="s4Li1After">(fornecedor de inteligência artificial, com sede
                     fora do Brasil): o texto das suas perguntas e do histórico da conversa é
                     enviado a essa API para gerar as respostas do Goshinsho. Não temos controle
                     sobre a política de retenção de dados desse fornecedor — consulte os termos
-                    de privacidade públicos da DeepSeek para mais detalhes.
+                    de privacidade públicos da DeepSeek para mais detalhes.</span>
                 </li>
-                <li><strong>Supabase</strong> (hospedagem do banco de dados e do sistema de autenticação).</li>
+                <li><strong data-i18n="s4Li2Strong">Supabase</strong> <span data-i18n="s4Li2After">(hospedagem do banco de dados e do sistema de autenticação).</span></li>
                 <li>
-                    <strong>Stripe</strong> (processamento de doações/pagamentos) — os dados do
+                    <strong data-i18n="s4Li3Strong">Stripe</strong> <span data-i18n="s4Li3After">(processamento de doações/pagamentos) — os dados do
                     seu cartão são inseridos diretamente na página do Stripe, nunca passam
-                    pelos nossos servidores.
+                    pelos nossos servidores.</span>
                 </li>
                 <li>
-                    <strong>Amazon SES</strong> e/ou <strong>Resend</strong> (envio de e-mails
-                    transacionais, como confirmação de cadastro e recuperação de senha).
+                    <strong data-i18n="s4Li4Strong1">Amazon SES</strong> <span data-i18n="s4Li4Mid">e/ou</span> <strong data-i18n="s4Li4Strong2">Resend</strong> <span data-i18n="s4Li4After">(envio de e-mails
+                    transacionais, como confirmação de cadastro e recuperação de senha).</span>
                 </li>
                 <li>
-                    <strong>Sentry</strong> (monitoramento técnico de erros): quando ocorre um
+                    <strong data-i18n="s4Li5Strong">Sentry</strong> <span data-i18n="s4Li5After">(monitoramento técnico de erros): quando ocorre um
                     erro no funcionamento do site, detalhes técnicos do que aconteceu (ex.
                     trecho do código, dados da requisição) são enviados a essa ferramenta para
                     nos ajudar a corrigir o problema — configurada para não incluir dados
-                    pessoais identificáveis por padrão.
+                    pessoais identificáveis por padrão.</span>
                 </li>
             </ul>
-            <p>
+            <p data-i18n="s4P2">
                 Não compartilhamos seus dados com nenhum outro terceiro além dos listados
                 acima, exceto quando exigido por lei ou ordem judicial.
             </p>
 
-            <h2>5. Por quanto tempo guardamos seus dados</h2>
+            <h2 data-i18n="s5Title">5. Por quanto tempo guardamos seus dados</h2>
             <ul>
-                <li>Dados de conta e histórico de conversas: enquanto sua conta existir.</li>
+                <li data-i18n="s5Li1">Dados de conta e histórico de conversas: enquanto sua conta existir.</li>
                 <li>
-                    Hoje, não existe ainda uma função de autoatendimento para excluir sua conta
+                    <span data-i18n="s5Li2Before">Hoje, não existe ainda uma função de autoatendimento para excluir sua conta
                     ou seu histórico — se você quiser solicitar a exclusão dos seus dados,
-                    entre em contato por
-                    <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a> e
-                    atenderemos manualmente.
+                    entre em contato por</span>
+                    <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a> <span data-i18n="s5Li2After">e
+                    atenderemos manualmente.</span>
                 </li>
-                <li>
+                <li data-i18n="s5Li3">
                     Dados de formulários de contato/suporte/acesso gratuito: mantidos enquanto
                     necessário para atender ao pedido, podendo ser apagados mediante
                     solicitação.
                 </li>
             </ul>
 
-            <h2>6. Seus direitos (LGPD, art. 18)</h2>
+            <h2 data-i18n="s6Title">6. Seus direitos (LGPD, art. 18)</h2>
             <p>
-                Você tem direito a, mediante solicitação para
-                <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a>:
+                <span data-i18n="s6P1Before">Você tem direito a, mediante solicitação para</span>
+                <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a><span data-i18n="s6P1After">:</span>
             </p>
             <ul>
-                <li>Confirmar se tratamos dados seus;</li>
-                <li>Acessar os dados que temos sobre você;</li>
-                <li>Corrigir dados incompletos, inexatos ou desatualizados;</li>
-                <li>
+                <li data-i18n="s6Li1">Confirmar se tratamos dados seus;</li>
+                <li data-i18n="s6Li2">Acessar os dados que temos sobre você;</li>
+                <li data-i18n="s6Li3">Corrigir dados incompletos, inexatos ou desatualizados;</li>
+                <li data-i18n="s6Li4">
                     Solicitar anonimização, bloqueio ou eliminação de dados desnecessários ou
                     tratados em desconformidade com a lei;
                 </li>
-                <li>Solicitar a portabilidade dos seus dados a outro fornecedor de serviço;</li>
-                <li>Solicitar a eliminação dos dados tratados com o seu consentimento;</li>
-                <li>Obter informação sobre com quem compartilhamos seus dados;</li>
-                <li>
+                <li data-i18n="s6Li5">Solicitar a portabilidade dos seus dados a outro fornecedor de serviço;</li>
+                <li data-i18n="s6Li6">Solicitar a eliminação dos dados tratados com o seu consentimento;</li>
+                <li data-i18n="s6Li7">Obter informação sobre com quem compartilhamos seus dados;</li>
+                <li data-i18n="s6Li8">
                     Revogar o consentimento dado (quando o tratamento se basear em
                     consentimento, ex. o formulário de acesso gratuito);
                 </li>
-                <li>
+                <li data-i18n="s6Li9">
                     Solicitar revisão de decisões tomadas unicamente por tratamento automatizado
                     que afetem seus interesses.
                 </li>
             </ul>
-            <p>Responderemos às solicitações dentro do prazo legal.</p>
+            <p data-i18n="s6P2">Responderemos às solicitações dentro do prazo legal.</p>
 
-            <h2>7. Segurança</h2>
+            <h2 data-i18n="s7Title">7. Segurança</h2>
             <ul>
-                <li>
+                <li data-i18n="s7Li1">
                     Sua senha nunca é vista ou armazenada por nós em texto simples — fica sob
                     custódia do Supabase Auth.
                 </li>
-                <li>O cookie de sessão é protegido (HttpOnly, Secure, SameSite).</li>
-                <li>
+                <li data-i18n="s7Li2">O cookie de sessão é protegido (HttpOnly, Secure, SameSite).</li>
+                <li data-i18n="s7Li3">
                     Dados de pagamento são processados inteiramente pelo Stripe, sob os padrões
                     de segurança próprios dessa empresa (PCI-DSS).
                 </li>
-                <li>
+                <li data-i18n="s7Li4">
                     Guardamos apenas hashes (não os dados brutos) de IP e user-agent para fins
                     de segurança.
                 </li>
             </ul>
-            <p>
+            <p data-i18n="s7P1">
                 Nenhum sistema é 100% livre de risco — nos comprometemos a agir com diligência
                 razoável na proteção dos seus dados, mas não podemos garantir segurança
                 absoluta.
             </p>
 
-            <h2>8. Crianças e adolescentes</h2>
+            <h2 data-i18n="s8Title">8. Crianças e adolescentes</h2>
             <p>
-                O Goshinsho não é direcionado deliberadamente a crianças. Conforme os
-                <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a>, o serviço se
+                <span data-i18n="s8P1Before">O Goshinsho não é direcionado deliberadamente a crianças. Conforme os</span>
+                <a href="{{ url_for('web.termos_de_uso') }}" data-i18n="linkTermosDeUso">Termos de Uso</a><span data-i18n="s8P1After">, o serviço se
                 destina a maiores de 18 anos, ou a partir de 16 anos com consentimento de um
                 responsável legal. Hoje não há verificação técnica de idade no cadastro. Se
                 tomarmos conhecimento de que coletamos dados de uma criança sem o devido
                 consentimento dos pais/responsáveis, tomaremos medidas para excluir esses
-                dados.
+                dados.</span>
             </p>
 
-            <h2>9. Usuários fora do Brasil</h2>
-            <p>
+            <h2 data-i18n="s9Title">9. Usuários fora do Brasil</h2>
+            <p data-i18n="s9P1">
                 O Goshinsho está disponível em 13 idiomas e pode ser usado por pessoas fora do
                 Brasil. Esta Política foi escrita com base na LGPD (lei brasileira, aplicável
                 ao responsável pelo tratamento, que está no Brasil).
             </p>
 
-            <h2>10. Alterações nesta Política</h2>
-            <p>
+            <h2 data-i18n="s10Title">10. Alterações nesta Política</h2>
+            <p data-i18n="s10P1">
                 Podemos atualizar esta Política de Privacidade a qualquer momento. Mudanças
                 relevantes serão comunicadas por aviso no site ou por e-mail.
             </p>
 
-            <h2>11. Contato</h2>
+            <h2 data-i18n="s11Title">11. Contato</h2>
             <p>
-                Dúvidas ou solicitações sobre privacidade e dados pessoais:
+                <span data-i18n="s11P1Before">Dúvidas ou solicitações sobre privacidade e dados pessoais:</span>
                 <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a>
             </p>
         </article>
 
         <nav class="legal-footer-nav">
-            <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a>
-            <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>
+            <a href="{{ url_for('web.termos_de_uso') }}" data-i18n="linkTermosDeUso">Termos de Uso</a>
+            <a href="{{ url_for('web.aviso_independencia') }}" data-i18n="linkAvisoIndependencia">Aviso de Independência</a>
         </nav>
     </main>
+
+    <script src="{{ url_for('static', filename='js/legal_i18n.js') }}?v=1"></script>
 </body>
 </html>

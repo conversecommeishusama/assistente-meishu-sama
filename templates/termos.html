@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Termos de Uso - Goshinsho</title>
+    <title data-i18n="pageTitle">Termos de Uso - Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=149">
 </head>
-<body>
+<body data-termos-i18n="{{ termos_i18n | tojson | forceescape }}">
     <main class="app-shell">
         <header class="topbar">
             <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
@@ -15,35 +15,35 @@
             </a>
             <nav class="top-actions">
                 {% if user %}<span class="user-pill">{{ user.email }}</span>{% endif %}
-                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}">Voltar ao chat</a>
+                <a class="nav-link" href="{{ url_for('web.app_view_pt') }}" data-i18n="backToChat">Voltar ao chat</a>
             </nav>
         </header>
 
         <article class="legal-content">
-            <h1>Termos de Uso do Goshinsho</h1>
-            <p class="legal-updated">Última atualização: 3 de agosto de 2026</p>
+            <h1 data-i18n="h1">Termos de Uso do Goshinsho</h1>
+            <p class="legal-updated" data-i18n="updated">Última atualização: 3 de agosto de 2026</p>
 
-            <h2>1. Quem oferece este serviço</h2>
-            <p>
+            <h2 data-i18n="s1Title">1. Quem oferece este serviço</h2>
+            <p data-i18n="s1P1">
                 O Goshinsho (goshinsho.com.br, incluindo o aplicativo Android) é mantido por
                 uma pessoa física, doravante "responsável pelo Goshinsho" ou "nós".
             </p>
-            <p>Contato: <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a></p>
+            <p><span data-i18n="s1ContactLabel">Contato:</span> <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a></p>
             <p>
-                Ver também o <a href="{{ url_for('web.aviso_independencia') }}">Aviso de
-                Independência</a> — o Goshinsho não é um produto oficial da Igreja Messiânica
-                Mundial.
+                <span data-i18n="s1P3Before">Ver também o</span> <a href="{{ url_for('web.aviso_independencia') }}" data-i18n="linkAvisoIndependencia">Aviso de
+                Independência</a> <span data-i18n="s1P3After">— o Goshinsho não é um produto oficial da Igreja Messiânica
+                Mundial.</span>
             </p>
 
-            <h2>2. Aceitação destes termos</h2>
+            <h2 data-i18n="s2Title">2. Aceitação destes termos</h2>
             <p>
-                Ao criar uma conta ou usar o Goshinsho, você concorda com estes Termos de Uso e
-                com a nossa <a href="{{ url_for('web.politica_privacidade') }}">Política de
-                Privacidade</a>. Se você não concordar com algum ponto, não deve usar o serviço.
+                <span data-i18n="s2P1Before">Ao criar uma conta ou usar o Goshinsho, você concorda com estes Termos de Uso e
+                com a nossa</span> <a href="{{ url_for('web.politica_privacidade') }}" data-i18n="linkPoliticaPrivacidade">Política de
+                Privacidade</a><span data-i18n="s2P1After">. Se você não concordar com algum ponto, não deve usar o serviço.</span>
             </p>
 
-            <h2>3. O que é o Goshinsho</h2>
-            <p>
+            <h2 data-i18n="s3Title">3. O que é o Goshinsho</h2>
+            <p data-i18n="s3P1">
                 O Goshinsho é uma ferramenta de consulta que responde perguntas sobre os
                 ensinamentos de Meishu-Sama a partir de um acervo de textos traduzidos e
                 organizados por este projeto, usando um sistema de inteligência artificial
@@ -51,78 +51,78 @@
                 localizar trechos relevantes e formular respostas.
             </p>
             <p>
-                <strong>As respostas são geradas por IA e podem conter erros.</strong> Quando o
+                <strong data-i18n="s3P2Strong">As respostas são geradas por IA e podem conter erros.</strong> <span data-i18n="s3P2After">Quando o
                 sistema declara explicitamente estar fazendo uma inferência/especulação
                 (marcado como "Inferência:" na resposta), isso significa que aquele trecho é
                 uma interpretação do sistema, não uma citação direta de um ensinamento.
-                Recomendamos sempre conferir, quando possível, a fonte original citada.
+                Recomendamos sempre conferir, quando possível, a fonte original citada.</span>
             </p>
 
-            <h2>4. Cadastro e conta</h2>
+            <h2 data-i18n="s4Title">4. Cadastro e conta</h2>
             <ul>
-                <li>Para usar o Goshinsho é necessário criar uma conta com e-mail e senha.</li>
-                <li>
+                <li data-i18n="s4Li1">Para usar o Goshinsho é necessário criar uma conta com e-mail e senha.</li>
+                <li data-i18n="s4Li2">
                     Você é responsável por manter sua senha em sigilo e por toda atividade
                     realizada na sua conta.
                 </li>
-                <li>
+                <li data-i18n="s4Li3">
                     Você deve fornecer um e-mail válido e ao qual tenha acesso (usado para
                     confirmação de cadastro, recuperação de senha e comunicações sobre sua
                     conta).
                 </li>
                 <li>
-                    <strong>Idade mínima</strong>: o uso do Goshinsho é destinado a maiores de
+                    <strong data-i18n="s4Li4Strong">Idade mínima</strong><span data-i18n="s4Li4After">: o uso do Goshinsho é destinado a maiores de
                     18 anos. Menores de 18 e maiores de 16 anos podem usar o serviço com o
                     consentimento de um dos pais ou responsável legal. Hoje o Goshinsho não
                     verifica tecnicamente a idade do usuário no cadastro — ao criar uma conta,
-                    você declara estar de acordo com esta condição.
+                    você declara estar de acordo com esta condição.</span>
                 </li>
             </ul>
 
-            <h2>5. Acesso e custos</h2>
+            <h2 data-i18n="s5Title">5. Acesso e custos</h2>
             <ul>
-                <li>O acesso ao conteúdo do Goshinsho é gratuito.</li>
-                <li>
+                <li data-i18n="s5Li1">O acesso ao conteúdo do Goshinsho é gratuito.</li>
+                <li data-i18n="s5Li2">
                     O Goshinsho aceita doações voluntárias, únicas ou recorrentes, processadas
                     integralmente pela plataforma de pagamento Stripe — o Goshinsho nunca
                     recebe nem armazena dados do seu cartão.
                 </li>
                 <li>
-                    Doações recorrentes podem ser canceladas a qualquer momento pelo próprio
-                    doador, através do <a href="{{ url_for('web.doacao_gerenciar') }}">portal de
-                    gerenciamento de cobrança</a> (Stripe Customer Portal), acessível a partir
-                    da página de doação.
+                    <span data-i18n="s5Li3Before">Doações recorrentes podem ser canceladas a qualquer momento pelo próprio
+                    doador, através do</span> <a href="{{ url_for('web.doacao_gerenciar') }}" data-i18n="s5Li3Link">portal de
+                    gerenciamento de cobrança</a> <span data-i18n="s5Li3After">(Stripe Customer Portal), acessível a partir
+                    da página de doação.</span>
                 </li>
-                <li>
+                <li data-i18n="s5Li4">
                     Doações não são obrigatórias para usar o serviço e, salvo erro comprovado
                     de cobrança, não são reembolsáveis.
                 </li>
             </ul>
 
-            <h2>6. Uso aceitável</h2>
-            <p>Ao usar o Goshinsho, você concorda em <strong>não</strong>:</p>
+            <h2 data-i18n="s6Title">6. Uso aceitável</h2>
+            <p><span data-i18n="s6P1Before">Ao usar o Goshinsho, você concorda em</span> <strong data-i18n="s6P1Strong">não</strong><span data-i18n="s6P1After">:</span></p>
             <ul>
-                <li>Usar o serviço para fins ilegais ou que violem direitos de terceiros;</li>
-                <li>
+                <li data-i18n="s6Li1">Usar o serviço para fins ilegais ou que violem direitos de terceiros;</li>
+                <li data-i18n="s6Li2">
                     Tentar acessar, testar ou comprometer a segurança do site, contornar
                     limites de uso (rate limit) ou automatizar o uso da conta de forma abusiva
                     (ex. scripts em massa, scraping);
                 </li>
-                <li>
+                <li data-i18n="s6Li3">
                     Reproduzir, redistribuir ou comercializar o conteúdo do acervo do Goshinsho
                     (textos traduzidos, respostas geradas) em escala, sem autorização prévia
                     por escrito;
                 </li>
-                <li>Se passar por outra pessoa, ou usar a conta de outra pessoa sem autorização.</li>
+                <li data-i18n="s6Li4">Se passar por outra pessoa, ou usar a conta de outra pessoa sem autorização.</li>
             </ul>
-            <p>
+            <p data-i18n="s6P2">
                 Reservamo-nos o direito de suspender ou encerrar contas que violem estas
                 regras.
             </p>
 
-            <h2>7. Propriedade intelectual sobre o conteúdo original e as traduções</h2>
+            <h2 data-i18n="s7Title">7. Propriedade intelectual sobre o conteúdo original e as traduções</h2>
             <ul>
-                <li>
+                <li data-i18n="s7Li1">
                     O Goshinsho é baseado nas publicações de Meishu-Sama (Mokichi Okada),
                     publicadas ainda em vida. Meishu-Sama faleceu em 1955; pelo art. 41 da Lei
                     de Direitos Autorais (Lei nº 9.610/1998), os direitos patrimoniais sobre uma
@@ -135,7 +135,7 @@
                     imprescritíveis e permanecem preservados independentemente do domínio
                     público, conforme a mesma lei.)
                 </li>
-                <li>
+                <li data-i18n="s7Li2">
                     Todas as traduções para o português usadas no Goshinsho são elaboradas
                     integralmente por este projeto, com apoio de inteligência artificial,
                     seguindo um protocolo de tradução e um glossário terminológico próprios —
@@ -144,18 +144,18 @@
                     direitos autorais sobre elas pertencem ao Goshinsho.
                 </li>
                 <li>
-                    <strong>O Goshinsho não possui nenhum vínculo, afiliação, autorização ou
+                    <strong data-i18n="s7Li3Strong">O Goshinsho não possui nenhum vínculo, afiliação, autorização ou
                     relação institucional com a Igreja Messiânica Mundial (Sekai Kyusei Kyo)
                     nem com qualquer outra igreja, associação, organização religiosa ou
                     entidade que siga os ensinamentos de Meishu-Sama, em qualquer país.</strong>
-                    O uso das publicações de domínio público de Meishu-Sama neste projeto é uma
+                    <span data-i18n="s7Li3Mid">O uso das publicações de domínio público de Meishu-Sama neste projeto é uma
                     iniciativa pessoal e independente, amparada exclusivamente no domínio
                     público dessas obras — não decorre de, nem representa, qualquer relação com
-                    essas instituições. Ver também o
-                    <a href="{{ url_for('web.aviso_independencia') }}">Aviso de
-                    Independência</a>.
+                    essas instituições. Ver também o</span>
+                    <a href="{{ url_for('web.aviso_independencia') }}" data-i18n="linkAvisoIndependencia">Aviso de
+                    Independência</a><span data-i18n="s7Li3After">.</span>
                 </li>
-                <li>
+                <li data-i18n="s7Li4">
                     Você pode usar o conteúdo apresentado no Goshinsho para uso pessoal e não
                     comercial (estudo, prática religiosa). Reprodução em massa ou redistribuição
                     comercial das traduções produzidas por este projeto exige autorização
@@ -165,59 +165,61 @@
                 </li>
             </ul>
 
-            <h2>8. Disponibilidade do serviço</h2>
-            <p>
+            <h2 data-i18n="s8Title">8. Disponibilidade do serviço</h2>
+            <p data-i18n="s8P1">
                 O Goshinsho é oferecido "como está", sem garantia de disponibilidade contínua,
                 ininterrupta ou livre de erros. Podemos, a qualquer momento, alterar, suspender
                 ou descontinuar total ou parcialmente o serviço, com ou sem aviso prévio,
                 especialmente por se tratar de um projeto pessoal mantido sem fins lucrativos.
             </p>
 
-            <h2>9. Limitação de responsabilidade</h2>
-            <p>Na máxima extensão permitida pela lei brasileira:</p>
+            <h2 data-i18n="s9Title">9. Limitação de responsabilidade</h2>
+            <p data-i18n="s9P1">Na máxima extensão permitida pela lei brasileira:</p>
             <ul>
-                <li>
+                <li data-i18n="s9Li1">
                     O Goshinsho é fornecido gratuitamente e sem garantias de qualquer tipo,
                     incluindo quanto à precisão, completude ou atualização do conteúdo gerado
                     por IA.
                 </li>
-                <li>
+                <li data-i18n="s9Li2">
                     Não nos responsabilizamos por decisões pessoais, espirituais, médicas,
                     financeiras ou de qualquer outra natureza tomadas com base nas respostas do
                     sistema — o Goshinsho é uma ferramenta de apoio ao estudo, não uma fonte de
                     aconselhamento profissional ou religioso oficial.
                 </li>
-                <li>
+                <li data-i18n="s9Li3">
                     Não nos responsabilizamos por indisponibilidade temporária do serviço,
                     perda de dados ou danos indiretos decorrentes do uso do site/aplicativo.
                 </li>
             </ul>
 
-            <h2>10. Alterações nestes Termos</h2>
-            <p>
+            <h2 data-i18n="s10Title">10. Alterações nestes Termos</h2>
+            <p data-i18n="s10P1">
                 Podemos atualizar estes Termos de Uso a qualquer momento. Mudanças relevantes
                 serão comunicadas por aviso no site ou por e-mail. O uso continuado do
                 Goshinsho após uma atualização representa aceitação dos novos termos.
             </p>
 
-            <h2>11. Lei aplicável e foro</h2>
-            <p>
+            <h2 data-i18n="s11Title">11. Lei aplicável e foro</h2>
+            <p data-i18n="s11P1">
                 Estes Termos são regidos pela legislação brasileira. Fica eleito o foro da
                 comarca de São Caetano do Sul (SP) para dirimir eventuais controvérsias, com
                 renúncia a qualquer outro, por mais privilegiado que seja.
             </p>
 
-            <h2>12. Contato</h2>
+            <h2 data-i18n="s12Title">12. Contato</h2>
             <p>
-                Dúvidas sobre estes Termos:
+                <span data-i18n="s12P1Before">Dúvidas sobre estes Termos:</span>
                 <a href="mailto:contato@goshinsho.com.br">contato@goshinsho.com.br</a>
             </p>
         </article>
 
         <nav class="legal-footer-nav">
-            <a href="{{ url_for('web.politica_privacidade') }}">Política de Privacidade</a>
-            <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>
+            <a href="{{ url_for('web.politica_privacidade') }}" data-i18n="linkPoliticaPrivacidade">Política de Privacidade</a>
+            <a href="{{ url_for('web.aviso_independencia') }}" data-i18n="linkAvisoIndependencia">Aviso de Independência</a>
         </nav>
     </main>
+
+    <script src="{{ url_for('static', filename='js/legal_i18n.js') }}?v=1"></script>
 </body>
 </html>
