@@ -7396,7 +7396,7 @@ arquivos já enviados continuam no Drive; `rclone copy` só re-verifica o
 que já está lá, não reenvia). Consultar com `tmux attach -t
 backup_gdrive`.
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver seção seguinte, mesma sessão, Meta Pixel)
 
 1. **Restart de produção autorizado antecipadamente pelo usuário** para
    esta rodada de mudanças ("reiniciar de forma autônoma dessa vez") --
@@ -7412,3 +7412,133 @@ backup_gdrive`.
 4. Nenhuma promoção/reinício de produção sem autorização explícita --
    regra padrão restaurada para qualquer trabalho futuro além desta
    rodada já autorizada.
+
+## Atualização 2026-08-03 (mesma sessão, continuação) -- Meta Pixel
+## implementado com consentimento explícito, testado de ponta a ponta,
+## commitado (ainda não em produção -- falta o ID real do Pixel)
+
+Contexto: usuário revelou plano de campanha paga no Facebook/Instagram
+(grupo fechado de ~37 mil pessoas sobre os ensinamentos de Meishu-Sama).
+Descartada a ideia inicial de mirar direto os membros do grupo (Meta não
+permite isso nativamente, só via scraper de terceiro que violaria os
+Termos do Facebook e contradiria a própria Política de Privacidade recém-
+publicada) -- decidido por campanha impulsionada geral (Facebook +
+Instagram), destino landing page (`www.goshinsho.com.br`). Perguntado
+"qual ganho isso me traz?" sobre o Meta Pixel antes de aprovar -- expliquei
+o ganho (rastrear conversão real de cadastro, permitir ao algoritmo do
+Meta otimizar por quem de fato se cadastra, não só por clique) contra o
+custo (a Política de Privacidade já publicada dizia explicitamente "não
+usamos Meta Pixel" -- teria que ser corrigida antes). Usuário confirmou:
+"vamos incluir".
+
+### Implementação
+
+- **Consentimento explícito antes de qualquer rastreamento**: novo
+  `static/js/cookie_consent.js` -- banner (13 idiomas, texto lido de
+  `localStorage["goshinsho-language"]`, mesma chave já usada no resto do
+  site) com botões Aceitar/Recusar. O Pixel (`fbq`, snippet padrão da
+  Meta) só é injetado no DOM depois de clique em "Aceitar", ou
+  automaticamente se `localStorage["goshinsho-cookie-consent"] ===
+  "accepted"` já estiver salvo de uma visita anterior -- nunca antes
+  disso, nunca sem consentimento. Escolha "Recusar" grava `"rejected"` e
+  não pergunta de novo. Ativado em `templates/landing.html` e
+  `templates/app.html` via `data-meta-pixel-id="{{ meta_pixel_id or ''
+  }}"` no `<body>` -- se `Config.META_PIXEL_ID` (novo, `goshinsho/config.py`)
+  estiver vazio (ainda é o caso, ver pendência abaixo), o script não faz
+  nada (sem banner, sem erro).
+- **Política de Privacidade corrigida** (`templates/privacidade.html` +
+  `goshinsho/data/privacidade_i18n.json`, 13 idiomas): removida a
+  afirmação falsa de "não usamos Meta Pixel"; adicionado item 2.7 (cookie
+  de publicidade), atualizado item 2.8, nova linha na tabela do item 3
+  (finalidade/dados/base legal -- "só com consentimento explícito"), novo
+  item na lista do item 4. Corrigido ANTES de o Pixel ser de fato ligado
+  ao site (ordem deliberada, para nunca haver um momento em que o site
+  rastreia e a política ainda nega isso).
+- **Rastreamento de conversão de cadastro**: `goshinsho/routes.py`,
+  `cadastro()` -- variável `signup_succeeded` (True só no cadastro real
+  bem-sucedido ou no ramo de confirmação de e-mail pendente; **nunca**
+  True em caminho de bot-detection). Quando True, o redirect final ganha
+  `?signup=1` (ou `&signup=1` se já houver query string). `static/js/app.js`,
+  `openRequestedPanelFromUrl()` -- detecta `signup=1`, chama
+  `window.goshinshoTrackConversion("CompleteRegistration")` (função
+  definida em `cookie_consent.js`, no-op se o Pixel não estiver carregado
+  -- ou seja, usuário que recusou o cookie nunca gera evento de conversão),
+  depois limpa o parâmetro da URL via `history.replaceState` (não fica
+  marcado permanentemente na URL).
+- `goshinsho/__init__.py`, `inject_template_globals()` -- `meta_pixel_id`
+  disponível automaticamente em todo template (mesmo padrão já usado para
+  `public_site_url`/`show_developer_nav`).
+
+### Testes, em 3 camadas, antes de commitar (nenhuma promoção feita ainda)
+
+1. **Playwright end-to-end** contra um gunicorn temporário na porta 5092
+   com `META_PIXEL_ID=999999999999999` (ID falso só para o teste) --
+   15 checagens automatizadas, todas passando: banner aparece na 1ª
+   visita; `fbq` indefinido antes de aceitar; aceitar grava
+   `localStorage` + carrega `fbq` de verdade + banner some; reload depois
+   de aceitar não mostra banner de novo e carrega o Pixel direto (sem
+   precisar clicar); recusar grava `rejected` + `fbq` nunca definido +
+   banner some; reload depois de recusar mantém `fbq` indefinido e não
+   reexibe o banner; texto do banner em inglês quando
+   `localStorage["goshinsho-language"] === "English"` (confirmado: chave
+   usa o nome completo do idioma, ex. `"English"`/`"Português"`, não
+   código ISO -- mesmo padrão já usado em `app.js`).
+2. **Suíte automatizada completa** (`venv/bin/python3 -m unittest
+   discover -s tests`): **128 testes, 1 skip, 0 falhas** -- primeira
+   rodada desde a sessão de 03/08 anterior (que tinha deixado a suíte
+   100% limpa pela primeira vez) e continua limpa, sem regressão do
+   batch Meta Pixel.
+3. **HTTP real contra `/var/www/goshinsho-test`** (porta 5090, arquivos
+   sincronizados por `rsync`; achado e corrigido no processo: um erro de
+   digitação no comando de sync tinha deixado uma cópia solta e
+   redundante de `privacidade_i18n.json` direto em `goshinsho/` em vez de
+   só em `goshinsho/data/` -- removida, confirmado que a cópia real bate
+   com a fonte via `diff`). Confirmado: `/` e `/app-pt` renderizam
+   `data-meta-pixel-id=""` (vazio, sem erro, já que `.env` da cópia de
+   teste não tem `META_PIXEL_ID` ainda -- mesmo estado da produção real);
+   `/privacidade` menciona "Meta Pixel"; `cookie_consent.js` responde 200;
+   tag `<script>` presente em `/app-pt`. **Achado à parte**: a cópia de
+   teste (`/var/www/goshinsho-test`) não tem `venv/` próprio -- usar o
+   venv da raiz (`/var/www/goshinsho/venv/bin/gunicorn --chdir
+   /var/www/goshinsho-test ...`) para subir o servidor de teste lá,
+   registrar isso pra não perder tempo de novo numa sessão futura.
+
+### Commitado, ainda NÃO em produção
+
+Commit `fa2c67e` cobre os 10 arquivos do batch (`goshinsho/__init__.py`,
+`goshinsho/config.py`, `goshinsho/data/privacidade_i18n.json`,
+`goshinsho/routes.py`, `static/css/app.css`, `static/js/app.js`,
+`static/js/cookie_consent.js` [novo], `templates/app.html`,
+`templates/landing.html`, `templates/privacidade.html`). `git diff --stat`
+conferido antes do commit -- nenhum cruft de sessão anterior, só as
+mudanças desta feature. **Produção NÃO foi reiniciada com este commit**
+-- falta o ID real do Meta Pixel (usuário ainda não forneceu; passo a
+passo já repassado: Meta Events Manager → Conectar Dados → Web → Meta
+Pixel → nomear → copiar o ID de 15-16 dígitos).
+
+### Onde continuar
+
+1. **Aguardando o usuário fornecer o ID real do Meta Pixel** -- sem ele,
+   `META_PIXEL_ID` continua vazio em produção e o banner/Pixel nunca
+   aparecem para usuários reais (comportamento seguro por padrão, não é
+   um bug, mas a feature fica inerte até isso acontecer).
+2. Quando o ID chegar: adicionar `META_PIXEL_ID=<id>` ao `.env` de
+   produção, reiniciar `goshinsho.service` -- **confirmar com o usuário
+   se a autorização antecipada anterior ("reiniciar de forma autônoma
+   dessa vez") ainda cobre esse restart específico**, já que foi dada
+   antes de o Meta Pixel sequer ser cogitado nesta sessão; dado o volume
+   de trabalho novo desde então, mais seguro pedir confirmação explícita
+   de novo em vez de presumir que a autorização antiga se estende.
+3. Depois do restart: aquecer com uma pergunta de teste real (padrão já
+   usado em sessões anteriores: conta `raquelgibrail@gmail.com` via
+   cookie de sessão assinado, apagar a conversa de teste do banco depois).
+4. Backup Google Drive: ver estado na seção anterior (ainda sincronizando
+   em tmux `backup_gdrive` na ocasião daquela atualização) -- conferir se
+   já terminou e, se sim, ainda falta o teste de restauração de verdade
+   (baixar pra diretório temporário, verificar integridade de
+   `.pkl`/`.faiss`/`.json`).
+5. Campanha Facebook/Instagram em si: orçamento, alcance e conteúdo do
+   post ainda não decididos pelo usuário -- aguardando ele avançar esse
+   planejamento.
+6. Nenhuma promoção/reinício de produção sem autorização explícita do
+   usuário -- regra padrão, não mudou aqui.
