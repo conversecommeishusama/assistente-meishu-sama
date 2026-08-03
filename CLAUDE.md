@@ -7055,11 +7055,105 @@ antes de cada commit.
 
 ### Onde continuar
 
-1. Ambas as mudanças (item 7 + aviso fixo) estão commitadas, aguardando
-   autorização explícita para reiniciar produção.
+1. Item 7 dos Termos + aviso fixo: **já reiniciado em produção**, com
+   autorização explícita do usuário (mesma sessão) -- confirmado ao vivo
+   e aquecido com perguntas reais.
 2. Seguem valendo as pendências já registradas: tradução dos documentos
    jurídicos para os outros 12 idiomas (não feita), configurar
    contato@goshinsho.com.br (ainda não configurado em nenhum provedor),
    revisão jurídica profissional do item 9 (limitação de
    responsabilidade).
 3. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-03 (mesmo dia, mais tarde) -- backup migrado de
+## Backblaze B2 para Google Drive (achado real: conta B2 travada por
+## limite de transações) + freio de mão automático por custo implementado
+
+### Backup off-server: B2 travado, migrado para Google Drive
+
+Ao retomar o plano de escala e escolher "testar restauração do backup"
+como próximo item, a restauração nem chegou a ser tentada: **a conta
+Backblaze B2 estava com o limite de transações ("transaction cap")
+esgotado**, bloqueando até uma simples listagem (`rclone lsd`) com
+`403 transaction_cap_exceeded`. Investigando os logs
+(`logs/backup_b2/*.log`), confirmado que isso não era pontual -- em
+qualquer dia com volume real de mudança de conteúdo (01/08: 2497 erros;
+03/08: 1297 erros, ambos "403 unknown"/"Failed to HEAD for download"), o
+backup diário falhava no meio do envio. Em dias "tranquilos" (sem
+mudança), o script "funcionava" só porque não tinha nada novo pra
+transferir -- mascarando o problema. Ou seja, **o backup fora do
+servidor não estava protegendo o trabalho de pelo menos 01-03/08**
+(promoção do corpus de 139 obras, correções de glossário, páginas
+jurídicas de hoje).
+
+**Decisão do usuário**: em vez de resolver o cap do B2 (que exigiria
+entrar no painel web da Backblaze), migrar o backup inteiro para o
+Google Drive -- o usuário já paga por 2TB lá, sem sentido manter/pagar
+um segundo provedor. Processo de configuração (headless, sem navegador no
+servidor): gerado o token OAuth via `rclone authorize "drive"` rodado no
+computador pessoal do usuário (Linux, guiado passo a passo por ser
+primeira vez usando Linux), token colado de volta no chat e inserido
+diretamente em `/root/.config/rclone/rclone.conf` (remoto novo
+`gdrivebackup`, `type = drive`, `scope = drive`) -- nunca reexibido
+depois de configurado, por ser credencial sensível (acesso total ao
+Drive). Confirmado funcionando: `rclone about gdrivebackup:` mostra 2TiB
+total, ~1,78TB livre.
+
+Criado `scripts/backup_to_gdrive.sh` (cópia adaptada de
+`backup_to_b2.sh`, mesma lista de diretórios/arquivos, mesmo padrão
+`rclone copy` -- nunca `sync`, nunca apaga no remoto), destino
+`gdrivebackup:goshinsho-backup-2026`. Rodado manualmente pela primeira
+vez para validar de ponta a ponta (não só configurar) -- resultado ainda
+não confirmado no momento deste registro (rodando em segundo plano,
+volume real de ~932MB). **Ainda pendente, próxima sessão se não
+finalizado nesta**: (a) confirmar que a 1ª execução completou sem erro;
+(b) trocar o cron `/etc/cron.d/goshinsho-backup` do script antigo
+(`backup_to_b2.sh`) para o novo (`backup_to_gdrive.sh`) -- **ainda
+apontando pro B2 no cron**, não mudado nesta sessão; (c) fazer o teste de
+restauração de verdade (baixar pra uma pasta temporária, verificar
+integridade dos `.pkl`/`.faiss`/`.json`) -- esse era o objetivo original
+do item do plano de escala, ainda não cumprido.
+
+### Freio de mão automático por custo -- implementado, testado, NÃO em produção ainda
+
+Decisão do usuário: teto de **US$ 10/dia** (gasto real com API DeepSeek),
+e quando atingido: **bloquear novas perguntas + enviar e-mail de alerta**
+(uma vez por dia).
+
+- `Config.DAILY_COST_CAP_USD` (novo, `.env`, padrão 10.0).
+- `goshinsho/services/deepseek_usage_service.py`: nova `today_cost_usd()`
+  -- soma o custo do dia (UTC) a partir do log real
+  (`logs/deepseek_usage.jsonl`), com cache curto (30s) por processo
+  (aproximado entre os 4 workers do gunicorn, não exato ao centavo --
+  aceitável pra uma rede de segurança, não pra faturamento preciso).
+- Novo `goshinsho/services/cost_guard_service.py`: `cost_cap_status()`
+  (enabled/exceeded/spent/cap) + `maybe_send_cap_alert()` (e-mail único
+  por dia, deduplicado por arquivo-marcador em
+  `logs/cost_cap_alerts/<data>.sent`).
+- `routes.py`, `/api/chat`: checagem logo após o rate limit por conta,
+  antes de qualquer chamada de IA -- se `exceeded`, retorna 503 com
+  mensagem amigável, sem gastar nada. Aplica-se a **toda conta, sem
+  exceção** (inclusive developer) -- é rede de segurança contra
+  abuso/loop, não cota de plano.
+- Painel admin (`admin_service.py`/`admin.js`/`admin.css`): novo campo
+  `tokens.daily_cap` mostrando gasto de hoje vs. teto, com destaque
+  visual (`.policy-note-alert`, vermelho) se o teto foi atingido.
+
+**Testado** (mockando `today_cost_usd`, sem esperar gasto real de US$10):
+bloqueio com 503 confirmado, alerta disparado uma única vez por dia (2ª
+chamada no mesmo dia não reenvia), suíte completa (128 testes, 1 skip,
+sem regressão), sincronizado e confirmado subindo sem erro em
+`/var/www/goshinsho-test` (HTTP real, `/app-pt` 200), commitado
+(`39a8f2b`). **Só falta reiniciar produção** -- ver "Onde continuar".
+
+### Onde continuar
+
+1. Confirmar se a 1ª execução do `backup_to_gdrive.sh` completou sem
+   erro (rodou em segundo plano, resultado não confirmado ainda).
+2. Trocar o cron de `backup_to_b2.sh` para `backup_to_gdrive.sh` em
+   `/etc/cron.d/goshinsho-backup` -- ainda não feito.
+3. Fazer o teste de restauração de verdade (baixar do Drive pra pasta
+   temporária, verificar integridade) -- objetivo original ainda pendente.
+4. Freio de mão por custo: pronto e commitado, falta só pedir
+   autorização de reinício de produção (regra de sempre).
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
