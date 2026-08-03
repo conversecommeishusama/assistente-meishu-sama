@@ -52,11 +52,6 @@
                 <a class="brand-link brand-home" href="{{ url_for(app_endpoint|default('web.app_view')) }}" aria-label="Ir para a página principal">
                     <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
                     <span>Goshinsho</span>
-                    {% if retrieval_mode in ('pt_direct', 'pt_first', 'pt_agentic') %}
-                    <span class="retrieval-badge" title="Versão principal: índice português">PT</span>
-                    {% else %}
-                    <span class="retrieval-badge" title="Versão principal: índice japonês">JP</span>
-                    {% endif %}
                 </a>
             </div>
 

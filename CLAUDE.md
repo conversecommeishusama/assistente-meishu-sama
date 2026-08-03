@@ -6569,3 +6569,49 @@ teste) continua untracked, não alterado.
 4. Nenhuma promoção/integração/reinício de produção sem autorização
    explícita do usuário -- a desta sessão já foi dada e executada, não é
    permanente para trabalho futuro.
+
+## Atualização 2026-08-03 (mesmo dia) -- badge estático "PT"/"JP" removido
+## do topo (era enganoso, não refletia o idioma ativo)
+
+Usuário notou: a página mostra "Goshinsho PT" e o endereço é `/app-pt`,
+mas isso não muda independente do idioma escolhido no seletor -- não faz
+sentido ter "PT" fixo ali.
+
+**Causa confirmada**: o badge (`<span class="retrieval-badge">PT/JP</span>`,
+`templates/app.html`) é renderizado **uma vez pelo servidor**, com base
+em qual URL foi aberta (`/app-pt` vs `/app`), e **nunca é atualizado por
+JS** quando o usuário troca de idioma no seletor -- confirmado por grep,
+não existe nenhum código em `app.js` que toque `.retrieval-badge`. Pior:
+desde a mudança de 30/07 (`_default_app_endpoint()`, "português é o
+padrão universal para qualquer conta"), `/app-pt` é literalmente o ponto
+de entrada padrão pra QUALQUER usuário, não só quem quer português -- o
+"PT" no badge e na URL é sobra de um design anterior (quando `/app` vs.
+`/app-pt` distinguiam idioma de entrada por padrão) e hoje é
+estruturalmente enganoso, já que o mesmo `/app-pt` responde em qualquer
+um dos 13 idiomas via seletor, sem nunca sair da página.
+
+**Decisão do usuário, entre 3 opções levantadas** (remover só o badge /
+tornar o badge dinâmico via JS / trocar a URL também): **só remover o
+badge**. Motivo prático levantado antes da escolha: `/app-pt` está
+gravada como `startUrl` no `twa-manifest.json` do APK Android já
+instalado (`/var/www/goshinsho_landing/twa-manifest.json`) -- mudar a
+URL quebraria o app já instalado nos celulares até alguém reconstruir e
+reinstalar (mesma dor da troca de chave de assinatura em 26/07). Manter
+a URL como está evita esse risco.
+
+**Aplicado**: removido o bloco `{% if retrieval_mode in (...) %}...PT/JP...{% endif %}`
+de `templates/app.html` -- só o logo "Goshinsho" fica, sem rótulo de
+idioma/índice ao lado. CSS `.retrieval-badge` em `app.css` ficou órfão
+(não removido -- inofensivo, sem elemento HTML que o use mais). Testado
+(`test_client().get("/app-pt")`, confirma ausência de `retrieval-badge`
+no HTML) e confirmado em produção após restart.
+
+### Onde continuar
+
+1. Removido e em produção -- não é mais pendência.
+2. Se algum dia quiser revisitar a ideia de abandonar o nome "app-pt" na
+   URL: precisa manter `/app-pt` viva como redirecionamento (não apagar
+   a rota), por causa do APK já instalado -- decisão adiada, não
+   descartada.
+3. Continua valendo: nenhuma promoção/reinício de produção sem
+   autorização explícita.
