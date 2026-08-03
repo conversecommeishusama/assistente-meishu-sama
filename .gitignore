@@ -44,3 +44,8 @@ logo.original.png
 referencia_manuais/
 referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/
 
+# reports/ é convenção do projeto para rascunhos/relatórios de trabalho,
+# sempre fora do git (2026-08-03: `git add` explícito demais já commitou
+# arquivos daqui por engano 2x na mesma sessão -- isso fecha a causa raiz).
+reports/
+
