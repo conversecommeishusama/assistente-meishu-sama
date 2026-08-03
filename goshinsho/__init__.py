@@ -4,11 +4,28 @@ from .config import Config
 from .routes import web_bp
 
 
+def _init_sentry():
+    """Rastreamento de erros (2026-08-03, plano de escala) -- vazio/ausente
+    desativa silenciosamente, sem quebrar o app em dev/test sem a chave."""
+    if not Config.SENTRY_DSN:
+        return
+    import sentry_sdk
+    from sentry_sdk.integrations.flask import FlaskIntegration
+
+    sentry_sdk.init(
+        dsn=Config.SENTRY_DSN,
+        integrations=[FlaskIntegration()],
+        traces_sample_rate=0.0,
+        send_default_pii=False,
+    )
+
+
 def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
     """Monta a app Flask.
 
     Acervo Studio foi decomissionado (2026-07-16) — ver docs/11-PACOTE-CORRECOES-APLICATIVO.md §6.2.
     """
+    _init_sentry()
     app = Flask(
         __name__,
         template_folder="../templates",

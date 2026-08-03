@@ -71,3 +71,6 @@ class Config:
     # não o gasto esperado do dia a dia (que fica bem abaixo disso). 0 ou
     # vazio desativa o freio.
     DAILY_COST_CAP_USD = float(_env("DAILY_COST_CAP_USD") or 10.0)
+    # 2026-08-03: monitoramento de erros (Sentry, plano de escala). Vazio
+    # desativa -- sem custo/dependência obrigatória pra rodar o app.
+    SENTRY_DSN = _env("SENTRY_DSN")
