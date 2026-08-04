@@ -7542,3 +7542,120 @@ Pixel → nomear → copiar o ID de 15-16 dígitos).
    planejamento.
 6. Nenhuma promoção/reinício de produção sem autorização explícita do
    usuário -- regra padrão, não mudou aqui.
+
+## Sessão 2026-08-04 (Claude Code) -- Meta Pixel real ativado em produção,
+## bug real de ordem de scripts corrigido, campanha Facebook Ads em
+## configuração (guiada, não executada pelo agente)
+
+### 1. Meta Pixel real ativado -- bug de ordem de scripts achado e corrigido
+
+Usuário conectou a Página do Facebook ao Instagram e criou o Pixel real no
+Gerenciador de Eventos (ID `2094454594442858`). Antes de ativar em
+produção, testado na cópia de teste (`/var/www/goshinsho-test`, porta
+5090) com Playwright contra o Pixel **real** (não um ID fake):
+
+- Confirmado: banner de consentimento aparece, sem `fbq` antes de aceitar;
+  ao aceitar, `fbq` real carrega, `init` com o ID correto, `PageView`
+  disparado.
+- **Bug real achado no primeiro teste do evento de conversão**:
+  `CompleteRegistration` (disparado via `?signup=1` na URL após cadastro
+  bem-sucedido, mecanismo criado em 03/08) **nunca disparava**. Causa:
+  `templates/app.html` carregava `app.js` **antes** de `cookie_consent.js`
+  -- como `app.js` já tenta chamar `window.goshinshoTrackConversion()`
+  logo na inicialização (`openRequestedPanelFromUrl()`, síncrono, sem
+  `defer`/`DOMContentLoaded`), e é `cookie_consent.js` que define essa
+  função, a chamada sempre encontrava `undefined` e falhava em silêncio
+  (sem erro visível). **Corrigido invertendo a ordem dos dois
+  `<script>`** -- `cookie_consent.js` primeiro, depois `app.js`. Retestado
+  com o Pixel real: `init` → `PageView` → `CompleteRegistration`, os 3
+  confirmados na fila do `fbq`.
+- Suíte completa (128 testes, 1 skip) sem regressão. Commit `23f25e1`.
+- **Promovido a produção** (autorização explícita do usuário):
+  `META_PIXEL_ID=2094454594442858` adicionado ao `.env` de produção,
+  `goshinsho.service` reiniciado, confirmado via HTML real (`cookie_consent.js`
+  antes de `app.js`, `data-meta-pixel-id` correto) e via chamada real ao
+  `/api/chat` com sessão assinada da conta de teste já usada em sessões
+  anteriores (`raquelgibrail@gmail.com`) -- resposta normal
+  (`search_variant: agentic_pt`), conversa de teste apagada do banco
+  depois.
+- **Achado de processo, não específico do projeto**: durante os testes na
+  cópia de teste, `pkill` retornava sistematicamente código de saída 144
+  neste ambiente (sandbox parece interceptar/bloquear o comando,
+  independente de haver processo correspondente ou não) -- contornado
+  checando a porta com `ss -ltnp` antes de decidir se precisa matar algo,
+  e subindo o gunicorn de teste com `nohup ... & disown` em uma chamada
+  Bash isolada, seguida de uma chamada separada só para o polling (compor
+  tudo numa única chamada Bash causava abortos silenciosos do processo em
+  background).
+
+### 2. Campanha Facebook Ads -- guiada tela a tela, ainda não publicada
+
+A pedido do usuário, todo o processo de configuração da campanha foi
+conduzido no chat (Gerenciador de Anúncios da Meta é uma ferramenta
+externa, fora do escopo de qualquer tool deste agente) -- decisões
+tomadas com o usuário via `AskUserQuestion` nos pontos genuinamente dele:
+
+- **Objetivo**: Tráfego (não Conversões) -- justificativa: conta de
+  anúncios nova, sem histórico, e volume histórico de cadastros muito
+  baixo (~40 no total) para o algoritmo de otimização por conversão sair
+  da fase de aprendizado com confiança. Recomendação: reavaliar migrar
+  para Conversões (otimizando `CompleteRegistration`, já validado
+  funcionando de ponta a ponta) depois de mais volume de tráfego real.
+- **Formato**: Campanha nova manual no Gerenciador de Anúncios (não
+  impulsionar post existente) -- mais controle sobre público, otimização
+  e evento do Pixel.
+- **Orçamento**: R$25/dia, sem data de término definida, mínimo 5-7 dias
+  antes de qualquer decisão de ajuste.
+- **Configuração**: "Campanha de tráfego manual" (não os presets
+  "Simplificada"/"Boas práticas" da Meta, que reduzem controle sobre
+  interesses/otimização -- pouco valor numa conta sem histórico ainda).
+  Tipo de compra: Leilão. Sem Teste A/B (orçamento pequeno demais pra
+  dividir com confiança estatística). Categoria de anúncios especiais:
+  Nenhuma (conteúdo religioso/espiritual não se encaixa em
+  Crédito/Emprego/Habitação/Questões Sociais). Otimização por
+  "Visualizações da página de destino" (não "Cliques no link"). Público:
+  segmentação manual com interesses (Igreja Messiânica Mundial,
+  Meishu-Sama, Johrei, Sekai Kyusei Kyo, religiões japonesas novas,
+  agricultura natural) + Vantagem+ Audience ativado por cima (não em
+  branco). Posicionamentos: Vantagem+ automáticos, nada excluído
+  (incluindo Status do WhatsApp). Parâmetros de URL sugeridos:
+  `utm_source=facebook&utm_medium=paid_social&utm_campaign=teste_trafego_ago2026&utm_content={{ad.name}}`.
+  URL de destino corrigida de `http://www.goshinsho.com.br` (2 redirects
+  até o destino final) para `https://goshinsho.com.br` direto (confirmado
+  por `curl` que os parâmetros de URL/`fbclid` sobrevivem aos redirects
+  de qualquer forma, mas o destino direto evita latência extra).
+- **Texto do anúncio**: Meta tinha deixado só o preview automático do
+  link (sem texto principal/título preenchido) -- rascunhadas 3 versões
+  de título+texto, incorporando os diferenciais reais do produto que o
+  usuário quis destacar: acervo completo do que Meishu-Sama publicou em
+  vida, não inventa resposta nem fonte (grounding real via busca, citação
+  verificável -- diferente de IA genérica), acesso independente do país
+  do usuário, tradução cuidadosa/revisada (não automática crua), projeto
+  independente de qualquer igreja. Evitado citar concorrentes por nome
+  (política de anúncio da Meta sobre comparação direta de marca).
+- **Criativo**: conduzido pela esposa do usuário a partir daqui.
+  Orientação dada: preferir 2 tamanhos de imagem (1080×1080 quadrado +
+  1080×1920 vertical, pra cobrir Stories/Reels e resolver o aviso "não
+  será veiculado em 1 posicionamento"), pouco texto sobre a imagem,
+  conferir preview por posicionamento antes de publicar.
+
+**Estado ao fechar esta sessão: campanha configurada tela a tela no chat,
+mas a publicação em si (clique final em "Publicar") não foi confirmada
+pelo usuário** -- não presumir que já está no ar sem confirmação
+explícita na próxima sessão.
+
+### Onde continuar
+
+1. Confirmar com o usuário se a campanha foi de fato publicada, e se sim,
+   acompanhar CPC/CPM/visualizações de página nos primeiros dias.
+2. Se o volume de cadastros crescer de forma consistente, considerar com
+   o usuário migrar para uma campanha de Conversões otimizada em
+   `CompleteRegistration` (mecanismo já ativo e validado).
+3. Meta Pixel: **ativo em produção, testado de ponta a ponta**. Não é
+   mais pendência.
+4. Seguem valendo as pendências já registradas em sessões anteriores
+   (backup Google Drive -- teste de restauração ainda não feito; revisão
+   jurídica profissional do item 9 dos Termos -- descartada por decisão
+   consciente do usuário).
+5. Nenhuma promoção/reinício de produção sem autorização explícita do
+   usuário -- regra padrão, não mudou aqui.
