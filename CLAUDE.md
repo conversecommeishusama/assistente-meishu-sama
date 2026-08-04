@@ -7918,3 +7918,153 @@ revisão jurídica profissional por orçamento.
 6. Princípio fundamental registrado no topo desta seção -- aplicar em
    qualquer decisão futura de escopo do corpus, não só para o Zenshū.
 7. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Sessão 2026-08-04/05 (continuação) -- distinção crítica: corpus do app
+## vs. projeto de publicação impressa; recusa de tradução integral do
+## Zenshū; usuário sinaliza migração futura para DeepSeek; plano de 32
+## volumes definido (ainda não implementado em arquivo)
+
+### Distinção que rege todo trabalho daqui pra frente (regra permanente)
+
+**São dois projetos diferentes, com destinos de arquivo diferentes:**
+
+1. **Corpus do aplicativo** (`livros_publicacao_pt_revisado/` →
+   `reports/livros_trabalho/{pt,jp}/` → `textos_portugues/`/`textos_japones/`
+   → índice de busca) -- continua na estrutura atual (139 obras, 1 arquivo
+   por periódico/livro), recebendo só **ajustes pontuais necessários**:
+   incluir os 60 artigos novos (depois de aprovados na revisão), aplicar a
+   correção de marcadores (já feita, ver seção anterior), manter a entrada
+   `立春祭` no glossário de tradução. **Nunca reorganizar este corpus** na
+   lógica dos 32 volumes -- são propósitos diferentes (busca vs. livro
+   impresso).
+
+2. **Projeto de publicação impressa** (32 volumes definidos nesta sessão,
+   ver abaixo) -- é trabalho **novo**, em **pastas e arquivos novos**
+   (ainda não criados -- só o plano foi definido, publicado como artifact).
+   Nunca escrever por cima dos arquivos do corpus oficial para montar esses
+   volumes -- sempre copiar para uma estrutura separada.
+
+### Recusa de tradução integral do Zenshū para "uso pessoal" -- mantida
+### mesmo sob pressão
+
+O usuário pediu para eu traduzir o Zenshū inteiro (~8,2 milhões de
+caracteres) via API, para uso pessoal, argumentando que a responsabilidade
+legal seria dele e que não há problema jurídico nem ético. Recusei --
+mesmo confirmando que a Lei 9.610/98 art. 46, II limita a exceção de cópia
+para uso privado a "pequenos trechos", entendo que a decisão de operacionalizar
+essa reprodução em escala é minha, independente de quem responda
+legalmente depois. O usuário insistiu, ficou frustrado, e **declarou que
+pretende migrar 100% para a API do DeepSeek assim que os trabalhos atuais
+(revisão dos livros + lançamento da campanha) terminarem** -- não como
+ameaça, decisão já cogitada antes. Não tentei reverter essa decisão, seria
+inadequado insistir. **Se uma sessão futura for a última antes dessa
+migração, não há necessidade de reabrir essa discussão** -- a posição
+foi mantida com clareza, o usuário entendeu e respeitou, e a relação de
+trabalho continuou normalmente depois (ver todo o trabalho de organização
+de livros feito na sequência, na mesma sessão).
+
+### Achado extra durante a investigação: bug de marcador também no `信仰雑話`
+### já revisado editorialmente em 20/07 -- marcadores preservados de propósito
+### na época, mas ainda assim eram bug de exibição
+
+Achado ao investigar: o item `19480905-信仰雑話.txt` já tinha passado pela
+revisão editorial em 20/07/2026, e a nota de `done` daquela fila registra
+explicitamente "todos os #E/#S/#T/#K/#W80 e divisórias preservados" --
+confirma que a preservação foi deliberada NAQUELE momento (provavelmente
+porque a limpeza de metadado dos periódicos, feita em 28/07, ainda não
+existia como padrão), não um erro da revisão editorial em si. Isso não
+muda a correção feita nesta sessão (os marcadores continuam sendo um bug
+real de exibição em produção, só a causa raiz ficou mais clara).
+
+### Plano de publicação de 139 obras em 32 volumes -- definido, não
+### implementado em arquivo ainda
+
+Processo: apresentei o inventário completo (`corpus_inventory.py`,
+1.900 car./pág., calibrado pelo formato físico real de "Alicerce do
+Paraíso" da IMMB -- confirmado via pesquisa web, 21,8×14,5cm capa dura,
+vol.1=216pág./vol.3=187pág.), depois revisei categoria por categoria com o
+usuário, aplicando as correções que ele foi dando (ver histórico completo
+da conversa desta sessão para o raciocínio caso a caso -- não repetido
+aqui por brevidade). **Artifacts publicados**:
+- Inventário bruto por categoria: `https://claude.ai/code/artifact/1bc7b3c5-a9c0-4c34-ac88-bbcdc32c0a75`
+- Plano final consolidado (32 volumes): `https://claude.ai/code/artifact/32cf436d-afe0-440e-84c7-abdadc9de660`
+  (**desatualizado** -- não reflete as 3 últimas mudanças, ver abaixo)
+
+**Achados relevantes do processo**:
+- **4 obras da série Jikan Sōsho (自観叢書 nº6, 13, 15) e 1 avulsa
+  (`世界救世教教義解説`) são de terceiros** (Sue Takao, Matsui Seikun),
+  não de Meishu-Sama -- só o prefácio é dele. Confirmado lendo o próprio
+  texto (`textos_portugues/`, os 4 arquivos "extras" que já tinham sido
+  sinalizados sem explicação em sessão de 30/07). Mantidas dentro de suas
+  séries originais, sinalizadas com rótulo `[terceiro]`, nunca isoladas
+  numa categoria à parte (decisão do usuário).
+- **`地上天国出来るまで`** não é poema (só a abertura tem registro
+  poético/cerimonial; o resto é prosa memorialística sobre a construção
+  do modelo de Hakone Gōra) -- corrigido depois de eu ter classificado
+  errado inicialmente, baseado numa nota antiga do projeto (Fase Inicial)
+  que descrevia só a abertura.
+- **`明主様御言葉 水晶殿御遷座`** e **`Medicina do Amanhã`** ficam de fora
+  do plano de publicação impressa (mas continuam no corpus do app) --
+  o primeiro por ser a exceção de risco assumido "só no aplicativo"
+  (decisão de sessão anterior, reafirmada nesta), o segundo por ser
+  publicação da era de guerra com só alguns artigos pontualmente
+  sancionados pela IMM.
+- **`無肥料栽培法`** (Jikan Sōsho nº2) duplicado propositalmente em 2
+  volumes (Jikan Sōsho I e Agricultura Natural) -- decisão explícita do
+  usuário, não é erro.
+
+**3 últimas mudanças pedidas, ainda NÃO refletidas no artifact publicado**
+(fazer na próxima sessão antes de considerar o plano fechado):
+1. "Registros e Discursos Breves" (4 obras, 30,3 pág.) se funde dentro de
+   "Diversos" -- novo total de Diversos: 160,2 pág., 13 itens.
+2. `Eiko.txt` (875,8 pág.) se divide em 3 volumes de ~290-293 pág. cada
+   -- **achado real**: o arquivo NÃO está ordenado cronologicamente do
+   início ao fim (a "parte 1" cobre até a edição 142, a "parte 2" pula
+   pra 159-193, a "parte 3" volta pra perto da edição 140) -- corte por
+   tamanho de caractere é justo pra paginação mas não corresponde a um
+   recorte cronológico real. **Pendente de decisão do usuário**: aceitar
+   o corte por tamanho mesmo assim, ou pedir reordenação cronológica do
+   arquivo antes de cortar (trabalho adicional, não feito ainda).
+3. `世界救世教教義（地上天国と自然栽培の巻）` (19,5 pág.) confirmado (o
+   próprio título já cita 自然栽培) como sendo sobre agricultura natural
+   -- move pra dentro da coletânea "Agricultura Natural" (novo total:
+   327,7 pág., 4 itens).
+
+### Estado das duas frentes em andamento (herdadas de antes desta seção)
+
+1. **Revisão dos 60 artigos novos** (executor+auditor via `Agent`, não
+   mais tmux -- ver seção anterior sobre bloqueio de OAuth/saldo, já
+   resolvido, mas a migração de volta pra tmux não foi refeita) -- rodando
+   em segundo plano, Eiko já concluído e auditado, Hikari/Tijotengoku em
+   andamento na última verificação. **Só depois de aprovados é que devem
+   ser inseridos de fato no corpus** (arquivo JP ainda nem foi extraído
+   pros 60 -- só o PT existe como rascunho em
+   `reports/zenshu_periodicos_novos_artigos_revisao/`).
+2. **Correção de marcadores** (`信仰雑話`, `天国の福音書`) -- feita,
+   sincronizada em `reports/livros_trabalho/pt/`, **não promovida pra
+   `textos_portugues/` nem reindexada** -- aguardando autorização.
+
+### Onde continuar
+
+1. Aplicar as 3 mudanças pendentes no plano de 32 volumes e republicar o
+   artifact (mesma URL, `file_path` correspondente em
+   `/tmp/.../scratchpad/plano_publicacao_final.html` -- **atenção**: esse
+   caminho é dentro do diretório de scratchpad da sessão anterior, pode já
+   não existir numa sessão nova -- se precisar reconstruir do zero, os
+   dados fonte estão em `/tmp/.../scratchpad/inventario_final.json` e
+   `plano_final_volumes.json`, também podem não sobreviver entre sessões;
+   nesse caso, refazer o inventário a partir de
+   `livros_publicacao_pt_revisado/` é rápido, o trabalhoso foi o
+   raciocínio de agrupamento, que está registrado aqui).
+2. Decidir com o usuário a questão da ordem cronológica do Eiko antes de
+   fechar o corte em 3 volumes.
+3. Quando o plano estiver 100% fechado: só então criar de fato os
+   arquivos/pastas do projeto de publicação (novo, separado do corpus).
+4. Terminar a revisão dos 60 artigos (Hikari/Tijotengoku), só depois
+   integrar ao corpus oficial (com extração do JP, spec de segmentação,
+   reindexação -- nenhum desses passos foi feito ainda).
+5. Promover a correção de marcadores pra produção (pendente de
+   autorização).
+6. Lembrar da distinção corpus-vs-publicação em qualquer trabalho futuro
+   -- nunca misturar os dois propósitos no mesmo arquivo.
+7. Nenhuma promoção/reinício de produção sem autorização explícita.
