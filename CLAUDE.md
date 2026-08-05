@@ -8198,3 +8198,76 @@ depois). `zenshu_revisao_auditor` está viva mas dormindo em loop de
 5. Segue pendente, sem relação com isso: promoção da correção de
    marcadores (`信仰雑話`, `天国の福音書`) pendente de autorização.
 6. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 -- Tijotengoku resolvido (substituição pelas
+## versões novas), executor reiniciado, 1 decisão de romanização pendente
+
+Usuário decidiu (pergunta+opções): **substituir os 3 capítulos duplicados/
+mal rotulados de `Tijotengoku.txt` pelas versões novas** (título+data
+corretos), não só corrigir metadado no acervo antigo.
+
+**Aplicado diretamente** (backup de cada arquivo antes da edição):
+- `livros_publicacao_pt_revisado/Tijotengoku.txt` -- os 3 capítulos
+  substituídos por inteiro (título+citação+corpo): "A Cura de Doenças
+  pelos Praticantes" (data impossível 20/04/1945) → "A Era da
+  Semicivilização" (nº5, 25/06/1949); "Conhecer as Coisas" (15/08/1950,
+  mas com o corpo do relato de viagem) → "Relato de Viagem ao Kansai"
+  (nº25, 25/06/1951); "Brâmanes e Maomé" (citado como nº16) → "O
+  Bramanismo e o Islamismo" (nº56 real, 25/01/1954). Backup:
+  `Tijotengoku.txt.bak_pre_merge_60artigos_20260805`.
+- **Decisão minha, não pedida ao usuário**: o capítulo "Relato de Viagem
+  ao Kansai" tinha 6 notas de rodapé editoriais (*1-*6, glosas de nomes
+  de lugar/objeto) que a tradução nova não tinha -- preservei,
+  apensando-as ao final do corpo novo, em vez de descartar informação
+  real só porque a nova tradução não usa esse formato.
+- Spec de segmentação (`reports/livros_trabalho/segmentacao_manual/
+  Tijotengoku.txt.json`, índices 0/30/62): `title_pt`/`pt_anchor`
+  atualizados para o texto novo. Reverificado **70/70 artigos resolvidos**
+  pela função real de produção (`split_by_anchors`), tanto em
+  `livros_publicacao_pt_revisado/` quanto (depois de sincronizado) em
+  `reports/livros_trabalho/pt/Tijotengoku.txt`. **Não promovido pra
+  `textos_portugues/` nem reindexado** -- fica pendente junto com o
+  resto da integração dos 60 artigos.
+- `Tijotengoku_novos_artigos.md`: os 3 artigos removidos (20→17
+  genuinamente novos), cabeçalho corrigido (removida a alegação falsa de
+  que duplicatas já tinham sido checadas antes de traduzir).
+- `EXECUTOR_QUEUE.json`: item movido de `pending` pra `done`, nota
+  completa de resolução.
+
+**Executor reiniciado** (`zenshu_revisao_executor`, nova sessão tmux) --
+só resta `Hikari_novos_artigos.md` na fila (correção pequena e objetiva,
+sem ambiguidade: farpa "Ah, que confusão" do Sun-tetsu nº35 fundida por
+engano, precisa virar item próprio).
+
+### Pendência real, não decidida: romanização de 金掘吉次
+
+Achado do auditor (Tijotengoku, artigo nº23 中, sobre o buscador de ouro
+ligado a Minamoto no Yoshitsune): a tradução nova usa "Kanahori
+Yoshitsugu", mas há 2 problemas -- (a) a leitura corrente desse nome
+histórico é **Kichiji**, não **Yoshitsugu** (o próprio Zenshū traz a
+glosa 金掘〔売〕吉次 noutro volume, apontando pra 金売吉次/Kanauri
+Kichiji); (b) o acervo já tem o mesmo personagem em
+`19520425-御垂示録8号.txt` como **"Kinkiri Yoshitsugu"** -- ou seja, há
+hoje 2 romanizações divergentes no corpus pro mesmo nome, e nenhuma das
+duas parece certa por si só. Nada foi decidido nem aplicado -- fica pra
+você escolher a forma canônica (ou indicar outra) antes de eu uniformizar
+os 2 arquivos.
+
+### Onde continuar
+
+1. **Decidir a romanização de 金掘吉次** (ver acima) -- só então aplicar
+   nos 2 arquivos (`Tijotengoku_novos_artigos.md` e
+   `19520425-御垂示録8号.txt`) e no glossário.
+2. Deixar o executor terminar o Hikari sozinho (correção pequena, sem
+   necessidade de acompanhar) -- checar depois se a auditoria fecha sem
+   reabrir de novo.
+3. Depois que Hikari e a decisão de romanização fecharem: os 60 artigos
+   (agora 57 -- 20 Eiko... não, 23 Eiko + 17 Tijotengoku + 13 Hikari = 53
+   genuinamente novos, 3 viraram correção de metadado do Tijotengoku,
+   4 duplicatas descartadas do Hikari) estarão prontos pra fase de
+   integração ao corpus oficial (extrair JP, criar spec, sync, reindexar
+   -- nenhum desses passos feito ainda, exige autorização separada).
+4. `publicacao_livros/`: seguem as mesmas pendências já registradas
+   (revisão do usuário, ressalva não mais aplicável do Eiko -- já
+   corrigida por fronteira de ano).
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
