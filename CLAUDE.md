@@ -9178,20 +9178,38 @@ sozinhas, candidatas a retomada dedicada**:
   artigo errado, confirmado em várias transições, não fechado (ver
   seção da Wave 0 acima) -- **prioridade alta pra retomar**.
 
+### Wave 2 -- lançada (12/12 batches, 2026-08-06 ~00:10 -- última wave
+### das Waves 0-2)
+
+Batches 4/5 (明麿近詠集), 11 (御讃歌集), 28 (浄霊法講座5号+世界メシヤ教手引),
+29 (無肥料栽培法+神示の健康法+観音講座), 30 (革命的増産+奇蹟物語), 31
+(浄霊法講座9号+10号), 32 (天国の福音書+自観説話集+御垂示録7号), 33
+(浄霊法講座4号+御光話録補+浄霊法講座1号), 34 (結核と神霊療法+浄霊法講座6号),
+35 (浄霊法講座7号+3号), 36 (信仰雑話+法難手記+光への道+一信者の告白+
+明主様御言葉). Prompt com adendo v3 (já inclui a lição de "escopo real
+pode ter mudado, confie no split_by_anchors do Passo 0, não na contagem
+nominal do prompt"). Mapeamento em `.../scratchpad/wave2_agents.json`.
+**Depois desta wave fechar, as Waves 0-2 (36 batches) estarão 100%
+completas.**
+
 ### Onde continuar (prioridade máxima)
 
-1. **Preparar e lançar a Wave 2** (`[4,5,11,28,29,30,31,32,33,34,35,36]`,
-   12 batches) -- mesmo processo: copiar
-   `full_corpus_prompts.json['prompts'][i]` + o adendo (texto já salvo em
-   qualquer `prompts_waves0-2/batch<N>.txt` existente) para
-   `prompts_waves0-2/batch<N>.txt` de cada um dos 12 índices da Wave 2,
-   lançar 12 agentes em paralelo, cada um só lendo seu próprio arquivo de
-   prompt.
+1. **Aguardar a Wave 2 terminar**, verificar cada um com
+   `verify_staging.py` antes de aceitar.
 2. **Ficar atento a sinais do teto de gastos mensal de novo** (ver
    incidente registrado acima) -- se um lote de agentes parar de notificar
    silenciosamente, considerar essa hipótese antes de esperar
    indefinidamente.
-3. Para cada agente que terminar: reverificar com
+3. **Depois que a Wave 2 fechar: as Waves 0-2 estarão completas.**
+   Próximos passos, em ordem: (a) consolidar um relatório final honesto
+   cobrindo as 3 waves + o Lote 2 original; (b) retomar as pendências de
+   alta prioridade levantadas ao longo do dia (bug de título/manchete do
+   `世界救世教奇蹟集`, cobertura incompleta de parte do
+   `結核信仰療法`); (c) verificar com o usuário o estado dos "Lotes 3/4"
+   do executor separado antes de considerar a operação 128-livros
+   inteira fechada; (d) nenhuma promoção/reindexação sem autorização
+   explícita.
+4. Para cada agente que terminar: reverificar com
    `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
    scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
 3. **NÃO tocar em batch 38** (Lote 2, já fechado) nem nos batches
