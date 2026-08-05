@@ -8480,3 +8480,90 @@ menores, registradas para quando fizer sentido revisitar.
    depois -- não decidir/aplicar sozinho sem trazer ao usuário primeiro.
 4. Nada foi promovido pra produção nem reindexado -- fica em staging.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 (mesmo dia, mais tarde) -- confiança quebrada:
+## achado real de glossário não aplicado (fonte errada usada na inserção
+## dos 3 capítulos do Tijotengoku); auditoria linha a linha completa dos
+## 10 periódicos disparada (10 agentes, 678 artigos)
+
+### Achado crítico: "小乗信仰->fé Shojo" alegado como corrigido, nunca
+### aplicado -- causa raiz identificada e corrigida
+
+Usuário notou, ao ler os trechos que eu estava mostrando durante a
+verificação, que "crença Hinayana" aparecia em vez de "fé Shojo" (a forma
+fixada em `glossario_traducao.json` para 小乗) no capítulo "O Bramanismo
+e o Islamismo" -- mesmo o AUDITOR do laço executor/auditor dos 60 artigos
+tendo escrito explicitamente, numa auditoria anterior deste mesmo dia,
+"Glossario/acervo conferidos... 小乗信仰->fe Shojo... confere".
+
+**Causa raiz confirmada, comparando lado a lado**: ao inserir os 3
+capítulos substituídos no Tijotengoku (mais cedo nesta sessão), usei
+`reports/zenshu_periodicos_novos_artigos/Tijotengoku_novos_artigos.md`
+(o **rascunho pré-revisão**) em vez de
+`reports/zenshu_periodicos_novos_artigos_revisao/Tijotengoku_novos_artigos.md`
+(o **entregável já revisado e auditado**) -- o laço executor/auditor
+funcionou corretamente e aplicou as correções (小乗信仰->Shojo,
+難行苦行->"práticas ascéticas" em 6 passagens, parágrafo dividido,
+assinatura restaurada, mais várias correções de nome próprio); eu que
+descartei esse trabalho ao copiar do arquivo errado.
+
+**Corrigido**: reextraídos os 3 capítulos inteiros de `_revisao/`
+(removendo o bloco de nota editorial), refeita a substituição no
+`livros_publicacao_pt_revisado/Tijotengoku.txt`. **Erro cometido e pego
+no processo**: usei os 3 títulos-alvo como fronteira de substituição uns
+dos outros (ex. "A Era da Semicivilização" até "Relato de Viagem ao
+Kansai" como se fossem adjacentes) -- mas eles NÃO são adjacentes no
+arquivo, há ~30 outros artigos entre cada um; isso apagou ~110KB de
+conteúdo legítimo. Pego imediatamente pela contagem de citações
+(70->41), revertido do backup, refeito com a fronteira real (o vizinho
+imediato de cada capítulo, não outro capítulo-alvo). Resultado final:
+70/70 citações, 70/70 âncoras, 0 ocorrências residuais de "Hinayana" ou
+"prática ascética extrema", sincronizado pro staging.
+
+### Usuário não aceita relatório pontual -- pediu auditoria completa
+
+Usuário: "não adianta vc consertar os textos pontualmente pois eles
+estão completamente comprometidos... Precisa entender pq essa falha
+aconteceu para poder refazer o trabalho" -- e, depois de eu explicar a
+causa raiz acima: "eu não tenho como confiar no seu relatório mesmo vc
+afirmando que a causa foi a transferência dos arquivos corretos. ...
+quero que vc faça uma revisão detalhada linha a linha comparando o texto
+jp e pt de todo os periódicos, mesmo aqueles que consideramos fechados,
+verifique a aplicação correta do glossário os cabeçalhos, tudo aquilo
+que encontramos de erro hoje."
+
+**Disparados 10 agentes em paralelo**, cobrindo os 678 artigos dos 10
+periódicos (Eiko dividido em 4 partes de ~92 artigos; Hikari em 2 partes
+de ~61; Kyusei, Tijotengoku, Medicina do Amanhã inteiros; os 5 periódicos
+pequenos -- Keiko, Revista_Asahi, Relatos_de_Milagres, Jornais,
+Ensinamentos_diversos -- juntos numa tarefa). Cada agente: (1) monta os
+blocos reais de cada artigo via `split_by_anchors` (JP e PT); (2) lê
+frase a frase JP×PT procurando omissão/invenção/inversão de sentido; (3)
+carrega `glossario_traducao.json` inteiro e confere CADA termo cuja chave
+japonesa aparece no bloco contra a forma fixada, não só os termos já
+sabidos como problemáticos; (4) confere título contra `title_jp` (mesmo
+padrão de "fragmento de corpo usado como título" e "duplicata
+cross-contaminada" já achado hoje no Eiko); (5) reconfere citação/data
+contra a referência bruta, mesmo nos artigos já corrigidos pela varredura
+automática anterior (que já provou ter pontos cegos -- subtítulo longo
+escondendo divergência). Corrige o que confirma com confiança, backup
+antes de cada edição, reverifica 100% dos anchors do arquivo inteiro
+(não só o range do agente) antes de considerar pronto, sincroniza pro
+staging.
+
+**Status ao fechar esta atualização: os 10 agentes ainda estão
+rodando**, nenhum resultado consolidado ainda. Dado o escopo (auditoria
+com leitura genuína, não heurística), o tempo de execução deve ser maior
+que os 6 agentes de correção de data (que levaram 2-16min cada, com
+escopo mais raso).
+
+### Onde continuar
+
+1. Aguardar os 10 agentes terminarem. Ler o relatório de cada um.
+2. **Verificar por amostragem eu mesmo** (não confiar cegamente nos 10
+   relatórios) antes de consolidar -- mesmo princípio que already levou
+   ao achado do problema original.
+3. Consolidar um relatório único, honesto, sem maquiagem, cobrindo TODOS
+   os achados dos 10 agentes -- é isso que o usuário pediu
+   explicitamente como entregável final desta rodada.
+4. Nada disso vai pra produção sem autorização explícita, como sempre.
