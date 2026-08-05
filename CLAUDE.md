@@ -9269,4 +9269,65 @@ fazer" (aí sim, parar e confirmar antes de agir) de "isso só muda COMO
 me chamam / quem está gerenciando o trabalho" (aí seguir o que já estava
 autorizado, registrar a dúvida sobre o nome, e só travar de verdade se a
 ação em si for nova, cara ou irreversível — não travar por causa de um
+apelido desconhecido sozinho.
+
+## Atualização 2026-08-06 -- Wave 2 100% fechada (43-lote "refaça tudo"),
+## periódicos lançados pelo novo coordenador ("Tannus")
+
+Os 6 lotes que faltavam da Wave 2 (do redo autorizado após o Lote 2 achar
+86% de erro real) fecharam e foram **verificados de forma independente**
+por mim (Daniel), sempre com `split_by_anchors` (função real de produção)
+nas 2 cópias (`livros_publicacao_pt_revisado/` e
+`reports/livros_trabalho/pt/`) antes de aceitar qualquer relatório de
+agente:
+
+- batch30 (革命的増産の自然農法解説, 奇蹟物語): 23 correções reais.
+- batch32 (天国の福音書, 自観説話集, 御垂示録7号): verificado.
+- batch34 (結核と神霊療法, 浄霊法講座6号): 24 correções.
+- batch35 (浄霊法講座7号, 浄霊法講座3号, 御光話録17号): 11 correções.
+- batch36 (信仰雑話, 法難手記, 光への道, 一信者の告白,
+  明主様御言葉水晶殿御遷座): 7 erros de tradução + 1 correção estrutural
+  de âncora.
+- batch29 (無肥料栽培法, 神示の健康法, 観音講座): 57 artigos corrigidos
+  (76 fixes só no primeiro livro) -- achado extra: o próprio agente
+  descobriu e corrigiu um desync real (staging desatualizado numa citação
+  bíblica).
+
+**2 desyncs reais entre publicado/staging achados e corrigidos nesta
+rodada** (1 por mim, 1 pelo próprio agente do batch29) -- sinal de que
+interrupções de sessão (compactação, troca de contexto) podem deixar o
+staging desatualizado silenciosamente; sempre reverificar as 2 cópias, não
+confiar que "terminou" implica "sincronizado".
+
+**Handoff de coordenação no meio do caminho**: por pedido do usuário, a
+sessão principal ("Gibrail") foi substituída por um agente novo
+("Tannus") como coordenador ativo da revisão, com "Daniel" (agente que
+cuidava do estudo de arquitetura de busca) promovido a gerente,
+acompanhando os dois fios. Ver seção anterior ("Regra permanente") para a
+lição sobre esse handoff. Tannus recebeu briefing completo (MANIFESTO.md,
+CLAUDE.md, método dos 8 critérios + 2ª passada cética 100%, disciplina de
+nunca aceitar relatório de agente sem verificar) e, confirmada a
+legitimidade da reorganização, foi instruído a lançar os 11 lotes dos
+periódicos (`prompts_periodicos/p1.txt` a `p11.txt`) assim que a Wave 2
+fechasse -- **instrução já enviada, lançamento e resultado ainda não
+confirmados no momento deste registro**.
+
+### Onde continuar
+
+1. Aguardar confirmação do Tannus de que os periódicos foram lançados, e
+   depois monitorar/verificar cada um conforme fecha (mesma disciplina:
+   nunca aceitar sem `split_by_anchors` independente).
+2. Depois que os periódicos fecharem: consolidar relatório final (Lote 2
+   + Waves 0-2 + periódicos), verificar pendências de alta prioridade já
+   catalogadas (título/manchete do `世界救世教奇蹟集`, cobertura do
+   `結核信仰療法`), checar estado dos "Lotes 3/4" do executor separado,
+   e só então cogitar promoção -- sempre com autorização explícita do
+   usuário a cada passo.
+3. Estudo de arquitetura de busca agenciada (Daniel): comparativo de 3
+   vias (baseline / baseline+hierarquia-escrita+resposta-objetiva /
+   modelo completo) rodado nesta sessão -- resultado ainda não
+   consolidado em dashboard no momento deste registro, retomar isso
+   separadamente do fio da revisão.
+4. Continua valendo: nenhuma promoção/reindexação/reinício de produção
+   sem autorização explícita separada do usuário.
 apelido desconhecido sozinho).
