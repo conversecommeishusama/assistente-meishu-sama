@@ -9113,14 +9113,50 @@ adendo reforçado (v2, já distingue explicitamente "convenção de data" de
 `prompts_waves0-2/batch<N>.txt` desta wave). Mapeamento batch→agentId em
 `.../scratchpad/wave1_agents.json`.
 
+### INCIDENTE -- teto de gastos mensal da API atingido (2026-08-05 ~22:10,
+### resolvido, relançado)
+
+O coordenador (outra sessão/agente monitorando, ver seção "Investigação de
+agente zumbi" mais acima -- é quem também escreve no `MANIFESTO.md`) me
+avisou via `SendMessage` que 3 dos 12 agentes da Wave 1 falharam com erro
+real de API: **"You've hit your monthly spend limit"** (teto de GASTO
+MENSAL da conta, não o limite de janela de 5h) -- batch17
+(結核の革命的療法, no meio de aplicar correções ~idx132-195), batch24
+(結核信仰療法, no meio dos fixes de 教修), batch26 (笑の泉+自観隨談+Esboço,
+falhou logo antes de sincronizar pro staging, mas já tinha confirmado
+estrutura 100% íntegra e aparentemente as edições completas). Prováveis
+mais vítimas silenciosas do mesmo bloqueio simultâneo (não deram nem
+notificação de erro): batch10, batch14, batch20, batch23, batch25, batch27
+-- nenhum dos 9 tinha me notificado conclusão até esse ponto.
+
+Verifiquei os 5 livros afetados diretamente (`split_by_anchors`) --
+**nenhum ficou corrompido pela falha parcial**, todos 100% resolvidos nas
+duas cópias. O usuário confirmou que o teto foi renovado/resolvido. **Os 9
+batches sem notificação de conclusão foram relançados** (mesmos prompts,
+com uma nota extra avisando que pode haver trabalho parcial de uma
+tentativa anterior -- os agentes são desenhados pra sempre reverificar o
+estado real primeiro, então relançar é seguro e idempotente, não duplica
+correção). Mapeamento batch→agentId da 2ª tentativa em
+`.../scratchpad/wave1_agents_retry.json`.
+
+**Lição pro futuro**: se um lote grande de agentes parar de notificar
+todos de uma vez sem razão aparente, considerar teto de gasto mensal da
+conta como hipótese antes de assumir que estão só "demorando" -- o
+coordenador (outra sessão) teve visibilidade disso que eu não tive
+diretamente (não recebi erro de ferramenta do meu lado, só a ausência de
+notificação).
+
 ### Onde continuar (prioridade máxima)
 
-1. **Aguardar a Wave 1 terminar**, verificar cada um com
-   `verify_staging.py` antes de aceitar. Depois, preparar e lançar a
-   Wave 2 (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches) do mesmo
-   jeito (copiar `full_corpus_prompts.json['prompts'][i]` + o adendo
-   para `prompts_waves0-2/batch<N>.txt`, lançar 12 agentes em paralelo).
-2. Para cada agente que terminar: reverificar com
+1. **Aguardar os 9 batches relançados da Wave 1** (mais os 3 que já
+   tinham completado antes do incidente: batch2, batch3, batch9) --
+   verificar cada um com `verify_staging.py` antes de aceitar. Ficar
+   atento a sinal do MESMO erro de teto de gasto se acontecer de novo.
+2. Depois da Wave 1 fechada: preparar e lançar a Wave 2
+   (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches) do mesmo jeito
+   (copiar `full_corpus_prompts.json['prompts'][i]` + o adendo para
+   `prompts_waves0-2/batch<N>.txt`, lançar 12 agentes em paralelo).
+3. Para cada agente que terminar: reverificar com
    `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
    scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
 3. **NÃO tocar em batch 38** (Lote 2, já fechado) nem nos batches
