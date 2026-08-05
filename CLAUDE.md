@@ -8763,3 +8763,182 @@ Nenhuma menção a "Zenshū"/"Rokkan" em texto final publicado.
    sessão para todos os 10 periódicos (inclusive ainda com a duplicata
    do Relatos_de_Milagres ativa).
 4. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Sessão 2026-08-05 (Claude Code) -- revisão rigorosa TOTAL do acervo
+## (43 lotes, ~3305 artigos): 37 de 43 concluídos, 6 pausados por dois
+## bloqueios técnicos em sequência, handoff detalhado abaixo
+
+**LEIA ISTO PRIMEIRO SE VOCÊ ACABOU DE ABRIR ESTA SESSÃO**: existe um
+manifesto operacional completo, com os 6 prompts prontos pra copiar/colar
+e todas as pendências cross-file levantadas hoje, em
+`reports/revisao_rigorosa_total_20260805/MANIFESTO.md`. Esta seção do
+CLAUDE.md é o resumo -- o manifesto tem o detalhe que permite concluir o
+trabalho sem precisar reconstruir nada do zero. Leia os dois antes de
+agir.
+
+### Mandato do usuário (verbatim)
+
+> "faça o trabalho de revisão rigorosa do periódico em todo o acervo. Não
+> faça 1/3, 1/2, 2/3, faça TODO o acervo com a mesma rigorosidade dos
+> periódicos, eu percebo que vc tende a 'baratear' o trabalho o que afeta
+> a qualidade, se fazer através da api antrophic favorece o resultado
+> pode fazer pq tenho saldo lá."
+
+Antes desta sessão, o mesmo dia já tinha produzido: (a) a reauditoria
+completa dos 10 periódicos (678 artigos, 17% erro real, ver seção
+anterior deste documento -- **essa parte já está genuinamente fechada**);
+(b) uma pequena correção pontual em `19491021-御光話録13号.txt`
+(romanização Sakai Katsutoki + "princípio da correspondência", replicando
+o achado de `Ensinamentos_diversos`); (c) uma auditoria por amostragem de
+100 trechos do resto do acervo (excluindo periódicos), que achou **56% de
+erro real** -- essa amostragem foi o gatilho direto para o usuário pedir
+a cobertura TOTAL, sem atalho, descrita nesta seção.
+
+### Escopo e método
+
+43 lotes cobrindo os 128 livros restantes do acervo (~3305 artigos),
+lançados em 4 "ondas" (waves) de agentes paralelos, capadas em no máximo
+2 lotes por arquivo simultâneo (pra evitar colisão de escrita
+concorrente em livros grandes divididos em partes). Cada lote usou o
+mesmo prompt-padrão: rodar `split_by_anchors` (função real de produção,
+`scripts/apply_manual_livros_segmentacao.py`) antes de ler; ler JP↔PT
+completo frase a frase; verificar 8 classes de erro (título vazado,
+glossário mal aplicado, fidelidade, conteúdo inventado, citação bíblica
+fixa `天国は近づけり`, romanização de nome próprio, anacronismo
+institucional, conteúdo duplicado/fundido); segunda passada cética
+cobrindo 100% dos "sem problema" (nunca amostra); corrigir com backup
+antes de cada edição; reverificar `split_by_anchors` no arquivo inteiro
+depois; sincronizar pra staging (`reports/livros_trabalho/pt/`); nunca
+tocar `textos_portugues/`/`textos_japones/`; relatório final honesto e
+exaustivo, com pendências levadas ao usuário em vez de decididas
+sozinho.
+
+### Estado ao pausar: 37 de 43 lotes concluídos
+
+- **Wave 0 (12 lotes) + Wave 1 (12 lotes) + Wave 2 (12 lotes) = 36
+  lotes, 100% concluídos.**
+- **+1 gap-closure**: achei sozinho (verificação própria, não confiando
+  no relatório do batch23) que o bug de âncora vazando persistia em
+  `結核信仰療法` idx13-51 -- corrigido, o livro fechou em **113/113
+  artigos** (recuperando 5 depoimentos inteiros que estavam escondidos
+  como cauda de outros artigos).
+- **Wave 3 (7 lotes): só 1 concluiu** -- `明麿近詠集` idx420-486, o
+  7º/último trecho desse livro (agora as 7 partes do livro inteiro estão
+  fechadas). **Os outros 6 falharam em sequência por dois bloqueios
+  técnicos diferentes**, sem perder nem corromper trabalho (verificado
+  arquivo por arquivo antes de tentar de novo):
+  1. Limite de janela de 5h da API do plano (não é o limite semanal, que
+     ainda estava em 43% de uso quando o usuário checou).
+  2. Depois que o usuário confirmou que a janela de 5h parecia ter
+     liberado e pediu pra tentar de novo, bati no teto de **200
+     sub-agentes por sessão** do Claude Code
+     (`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`) -- esse é um teto por
+     SESSÃO, não por dia/conta, então reseta numa sessão nova.
+
+  **Decisão combinada com o usuário para destravar**: abrir uma sessão
+  nova (que já zera o contador de sub-agentes), depois de o usuário
+  exportar `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` com um valor mais alto
+  (ex. 400) antes de iniciar o `claude` nesta pasta -- e pediu pra deixar
+  tudo documentado em detalhe suficiente pra uma sessão nova concluir
+  "com a mesma qualidade", só lendo os documentos, sem precisar de mais
+  perguntas.
+
+### Os 6 lotes que faltam -- prontos para relançar, sem trabalho extra de
+### preparação
+
+Os prompts completos (já incluindo a nota de retomada, o aviso do bug de
+âncora vazando, a correção do glossário `観音教団`, e -- no lote 5 -- o
+alerta específico sobre um arquivo com possível edição parcial sem
+backup) estão em
+`reports/revisao_rigorosa_total_20260805/prompt_lote{1..6}_*.txt`. O
+lote 6 (`prompt_lote6_okoshiroku_E_ultimo.txt`) é o **último de toda a
+operação de 43 lotes** -- depois dele, os ~3305 artigos do acervo
+inteiro terão sido revisados.
+
+**Passo a passo pra retomar**: ler os 6 arquivos `prompt_loteN_*.txt`
+com `Read`, chamar `Agent` (subagent_type: general-purpose,
+run_in_background: true) uma vez por lote, todos numa única
+mensagem/turno (chamadas paralelas -- não sequenciais, senão desperdiça
+o paralelismo que o resto da operação já usou o dia inteiro). Depois,
+monitorar as notificações de conclusão uma a uma, registrando cada
+achado com uma nota via Bash antes de seguir (mesmo padrão usado nas 36
+lotes já concluídos) -- nunca dar check-in de status sem uma conclusão
+real ter chegado, nunca inflar nem esconder achados.
+
+### 2 bugs sistêmicos achados e corrigidos hoje, fora do escopo de
+### tradução pontual
+
+1. **Âncora vazando** (`pt_anchor`/`jp_anchor` de um artigo aponta pra um
+   FRAGMENTO NO MEIO DA LINHA de cabeçalho em vez do início real, fazendo
+   o cabeçalho/título inteiro vazar pro FINAL do artigo anterior) --
+   achado primeiro em coletâneas de testemunho
+   (`世界救世教奇蹟集`/`結核の革命的療法`), depois confirmado em formatos
+   bem diferentes (`天国の福音書`/`御垂示録7号`, que não são testemunho).
+   Cada lote que passou por isso já corrigiu no seu próprio escopo. A
+   contagem agregada de QUANTOS artigos tiveram esse bug em toda a
+   operação **não foi somada ainda** -- fica pra consolidação final (ver
+   manifesto).
+2. **Metadado bruto de trabalho vazando pro índice JP** (`# Ficheiro de
+   trabalho:`, `=== ARTIGO ===`, `entry_id:` etc. aparecendo dentro do
+   texto servido do artigo 0 de um livro): um agente estimou "42
+   arquivos" sem lista verificada -- **investiguei pessoalmente todos os
+   138 arquivos JP de trabalho** e achei que o cabeçalho aparece em 127,
+   mas só é um bug FUNCIONAL de verdade (contamina o bloco servido) em
+   **17**, todos já corrigidos e reverificados (lista completa no
+   manifesto). Os outros 110 têm o mesmo cabeçalho, mas é cosmético --
+   não afeta `split_by_anchors`, não precisa de correção.
+
+Também corrigi uma entrada errada do glossário
+(`glossario_traducao.json`, `観音教団` tinha revertido pra "Igreja
+Kannon" em vez da forma decidida em 27/07, "Organização Kannon") --
+achado por 2 agentes independentes no mesmo dia, corrigido uma vez
+(backup `glossario_traducao.json.bak_fix_kannon_kyodan_20260805`), os
+lotes seguintes já usaram o valor certo.
+
+### Pendências cross-file para o relatório final (10 itens, detalhe
+### completo no manifesto)
+
+Não decididas, não decidir sozinho quando a sessão nova consolidar:
+光/光明/大光明 (3 formas concorrentes pros níveis de caligrafia do
+Ohikari), 天御中主大神 (3+ romanizações), 大峠 ("grande passagem" vs.
+"grande divisor de águas"), 五六七教 vs. 五六七会 (compostos diferentes,
+só 1 tem entrada de glossário), 善言讃詞 (Zengen-Sandji vs. Zensan
+Sanka -- a reconciliação já está pedida dentro do próprio lote 6),
+非真理 ("Pseudo-Verdade" no título vs. "não-verdade" na prosa, consistente
+entre 2 livros mas divergente do glossário), 大日〔阿弥陀〕如来 (correção
+editorial no colchete do JP, mas são 2 Budas diferentes -- decisão
+teológica), 豊受明神 (Myōjin vs. Ōkami), 三段階 possivelmente
+sobre-aplicado numa metáfora genérica em `自観説話集` idx8, e a
+formatação mista de pontuação em `笑の泉` (358 vs. 705 poemas em 2
+formatos diferentes -- fora do escopo dos 8 critérios de erro, decisão
+separada se vale a pena).
+
+### Depois que os 6 lotes fecharem
+
+Consolidar relatório final honesto (mesmo padrão da reauditoria de
+periódicos e da amostragem de 100 trechos -- publicar como `Artifact`),
+cobrindo total revisado, correções por classe, a contagem agregada do
+bug de âncora vazando, as 10 pendências acima (mais qualquer nova que os
+6 últimos lotes trouxerem), e confirmação de que os 2 bugs sistêmicos
+(âncora vazando, metadado JP) estão genuinamente fechados. **Fazer
+verificação própria por amostragem antes de aceitar os relatórios dos
+agentes sem checar** -- foi assim que achei o gap do `結核信仰療法` e o
+bug de metadado JP hoje, não confiar cegamente é o que sustentou a
+qualidade da operação inteira.
+
+### Onde continuar
+
+1. Ler `reports/revisao_rigorosa_total_20260805/MANIFESTO.md` por
+   completo antes de agir -- tem o detalhe operacional que esta seção
+   resume.
+2. Relançar os 6 lotes restantes (prompts prontos, ver acima), em
+   paralelo, na mesma mensagem.
+3. Monitorar até fechar -- é o último passo antes do acervo inteiro
+   (~3305 artigos + os 678 já fechados dos periódicos) estar 100%
+   revisado com este rigor.
+4. Consolidar o relatório final (Artifact), incluindo as 10 pendências
+   cross-file levantadas para decisão do usuário.
+5. Continua valendo, sem exceção: nenhuma promoção/reindexação/reinício
+   de produção sem autorização explícita separada do usuário --
+   `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
+   fora do git por decisão do usuário, este commit cobre só o CLAUDE.md.
