@@ -9069,25 +9069,61 @@ Cobre (parcialmente, 2 de N batches cada): 明麿近詠集, 御讃歌集, 山と
 fica 100% completo só com a Wave 0, precisam também das Waves 1/2
 (batches 2-6, 9-11, 14, 17, 20, 23-24 conforme `full_corpus_batches.json`).
 
+### Wave 0 -- FECHADA e verificada (12/12 batches, 2026-08-05 ~21:40)
+
+Todos os 12 agentes terminaram, todos os 12 livros/trechos reverificados
+por mim com `split_by_anchors` real (100% em publicado + staging) antes de
+aceitar qualquer relatório. Nenhum dos agentes repetiu o erro de "corrigir"
+convenção estrutural (o adendo funcionou) -- pelo contrário, 2 deles
+(結核の革命的療法 batch15/16, 世界救世教奇蹟集 batch21/22) confirmaram e
+corrigiram um tipo DIFERENTE e genuinamente real de bug estrutural
+("byline/título vazando pro artigo anterior, atribuindo conteúdo à pessoa
+errada" -- não é a convenção de data do 御教え集, é erro de fato).
+
+**Achado importante, NÃO fechado, precisa de retomada dedicada**: o agente
+do batch22 (世界救世教奇蹟集, artigos 71-140) confirmou que esse mesmo
+padrão de vazamento de título/manchete se repete "dezenas de vezes" no
+range dele, mas não corrigiu (fora do escopo de um único lote, afeta o
+livro inteiro) -- ficou só como pendência reportada. O batch21 (mesmo
+livro, artigos 0-70) já tinha corrigido 3 casos pontuais (idx59-62) do
+mesmo bug. **Recomendação para quando sobrar tempo**: rodar uma passada
+dedicada só de estrutura (não semântica) neste livro específico,
+cobrindo os 141 artigos, focada em achar/corrigir todo caso desse
+vazamento de título -- não decidir isso sozinho sem avisar o usuário,
+mas vale sinalizar como prioridade alta (é bug real, não convenção).
+
+Resumo de correções por livro nesta Wave: 明麿近詠集 (2 erros, idx109/131),
+御讃歌集 (2 erros, idx29/122), 山と水 (0 na parte 0-74, 6 na parte 75-149),
+教えの光 (2 corrigidos + 2 pendências na parte 0-50; 12 artigos/~22
+correções + 1 bug de âncora real + pendência de markdown sistêmico na
+parte 51-101), 結核の革命的療法 (42 artigos corrigidos na parte 66-131,
+~43 artigos corrigidos + 1 autoerro corrigido na parte 0-65 -- o pior
+índice de erro de todos os 12), 世界救世教奇蹟集 (19 artigos corrigidos
+na parte 0-70, 23 correções + achado sistêmico não fechado na parte
+71-140).
+
 ### Onde continuar (prioridade máxima)
 
-1. **Aguardar os 12 agentes da Wave 0 terminarem**, verificar cada um com
-   `verify_staging.py <nome_livro>` (não confiar no relatório sozinho),
-   prestando atenção especial a qualquer "correção" de cabeçalho de
-   data/markdown que possa repetir o erro já cometido no Lote 2 -- os
-   prompts já têm o adendo de aviso, mas confirmar mesmo assim.
-2. **Depois da Wave 0 verificada**: gerar os prompts da Wave 1
-   (`[2,3,9,10,14,17,20,23,24,25,26,27]`) do mesmo jeito (copiar de
-   `full_corpus_prompts.json['prompts'][i]` + o mesmo adendo, salvar em
-   `prompts_waves0-2/batch<N>.txt`) e lançar em paralelo. Depois Wave 2
-   (`[4,5,11,28,29,30,31,32,33,34,35,36]`).
+1. **Preparar e lançar a Wave 1** (`[2,3,9,10,14,17,20,23,24,25,26,27]`,
+   12 batches) -- copiar `full_corpus_prompts.json['prompts'][i]` + o
+   mesmo adendo de convenção estrutural (texto salvo em qualquer um dos
+   arquivos já gerados em `prompts_waves0-2/batch<N>.txt` da Wave 0, é
+   idêntico) para `prompts_waves0-2/batch<N>.txt` de cada um dos 12
+   índices da Wave 1, e lançar 12 agentes em paralelo do mesmo jeito
+   (cada um só lendo seu próprio arquivo de prompt). Depois, Wave 2
+   (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches).
+2. Para cada agente que terminar: reverificar com
+   `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
+   scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
 3. **NÃO tocar em batch 38** (Lote 2, já fechado) nem nos batches
    37/39-42 (escopo do executor separado, "Lotes 3/4").
-4. **Commitar + atualizar este documento a cada avanço real** (pedido
-   explícito do usuário, motivado pela perda de contexto de hoje) --
-   fazer isso depois de CADA wave verificada, não só no final.
-5. Pendências não autorizadas (bug de âncora genérico ~300 artigos,
-   triagem `御神体` 401 ocorrências) seguem fora de escopo até o
-   usuário autorizar explicitamente.
-6. Continua valendo: nenhuma promoção/reindexação/reinício de produção
+4. **Commitar + atualizar este documento a cada wave verificada** (pedido
+   explícito do usuário) -- não esperar as 3 waves inteiras.
+5. **Lembrar de retomar o achado do `世界救世教奇蹟集`** (vazamento de
+   título/manchete real, ver acima) numa rodada dedicada, depois que as
+   Waves 0-2 fecharem.
+6. Pendências não autorizadas (bug de âncora genérico do 御教え集/
+   Gosuiji-roku ~300 artigos, triagem `御神体` 401 ocorrências) seguem
+   fora de escopo até o usuário autorizar explicitamente.
+7. Continua valendo: nenhuma promoção/reindexação/reinício de produção
    sem autorização explícita separada.
