@@ -9102,16 +9102,24 @@ parte 51-101), 結核の革命的療法 (42 artigos corrigidos na parte 66-131,
 na parte 0-70, 23 correções + achado sistêmico não fechado na parte
 71-140).
 
+### Wave 1 -- lançada (12/12 batches, 2026-08-05 ~22:05)
+
+Mesmo padrão da Wave 0: 12 agentes em paralelo (明麿近詠集 batches 2/3,
+御讃歌集 9/10, 山と水 14, 結核の革命的療法 17, 教えの光 20,
+結核信仰療法 23/24, アメリカを救う+御教え集31号 25, 笑の泉+自観隨談+
+Esboco_da_Medicina 26, 浄霊法講座8号+A Story of Ukiyo-e 27), prompt do
+adendo reforçado (v2, já distingue explicitamente "convenção de data" de
+"bug real de byline/nome cortado" -- ver texto salvo em qualquer
+`prompts_waves0-2/batch<N>.txt` desta wave). Mapeamento batch→agentId em
+`.../scratchpad/wave1_agents.json`.
+
 ### Onde continuar (prioridade máxima)
 
-1. **Preparar e lançar a Wave 1** (`[2,3,9,10,14,17,20,23,24,25,26,27]`,
-   12 batches) -- copiar `full_corpus_prompts.json['prompts'][i]` + o
-   mesmo adendo de convenção estrutural (texto salvo em qualquer um dos
-   arquivos já gerados em `prompts_waves0-2/batch<N>.txt` da Wave 0, é
-   idêntico) para `prompts_waves0-2/batch<N>.txt` de cada um dos 12
-   índices da Wave 1, e lançar 12 agentes em paralelo do mesmo jeito
-   (cada um só lendo seu próprio arquivo de prompt). Depois, Wave 2
-   (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches).
+1. **Aguardar a Wave 1 terminar**, verificar cada um com
+   `verify_staging.py` antes de aceitar. Depois, preparar e lançar a
+   Wave 2 (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches) do mesmo
+   jeito (copiar `full_corpus_prompts.json['prompts'][i]` + o adendo
+   para `prompts_waves0-2/batch<N>.txt`, lançar 12 agentes em paralelo).
 2. Para cada agente que terminar: reverificar com
    `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
    scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
