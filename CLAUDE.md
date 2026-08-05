@@ -8269,13 +8269,131 @@ confirmado).
 1. Deixar o executor terminar o Hikari sozinho (correção pequena, sem
    necessidade de acompanhar) -- checar depois se a auditoria fecha sem
    reabrir de novo.
-2. Depois que Hikari fechar: os artigos ficam assim -- 23 (Eiko) + 17
-   (Tijotengoku, após os 3 virarem correção de metadado) + 13 (Hikari,
-   após as 4 duplicatas descartadas) = **53 artigos genuinamente novos**,
-   prontos pra fase de integração ao corpus oficial (extrair JP, criar
-   spec de segmentação, sync, reindexar -- nenhum desses passos feito
-   ainda, exige autorização separada).
+2. Os artigos ficam assim -- 23 (Eiko) + 17 (Tijotengoku, após os 3
+   virarem correção de metadado) + 13 (Hikari, após as 4 duplicatas
+   descartadas) = **53 artigos genuinamente novos**, prontos pra fase de
+   integração ao corpus oficial (extrair JP, criar spec de segmentação,
+   sync, reindexar -- nenhum desses passos feito ainda, exige autorização
+   separada).
 3. `publicacao_livros/`: seguem as mesmas pendências já registradas
    (revisão do usuário, ressalva não mais aplicável do Eiko -- já
    corrigida por fronteira de ano).
 4. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 -- 3ª auditoria do Tijotengoku (erro real: arquivo
+## errado editado) + descoberta de que o bug de data é sistêmico em 6 dos
+## 10 periódicos (310 artigos) -- varredura + correção em andamento
+
+### Erro cometido e corrigido: resolução do Tijotengoku tinha editado o
+### arquivo errado
+
+Ao resolver o Tijotengoku mais cedo nesta sessão (substituir os 3
+capítulos duplicados/mal rotulados pelas versões novas), removi as 3
+seções duplicadas de `reports/zenshu_periodicos_novos_artigos/
+Tijotengoku_novos_artigos.md` (o **rascunho** pré-revisão) em vez de
+`reports/zenshu_periodicos_novos_artigos_revisao/Tijotengoku_novos_artigos.md`
+(o **entregável revisado de verdade**, produzido pelo executor) -- o
+protocolo (`EXECUTOR_PROMPT.md` passo 6) nunca deveria sobrescrever o
+rascunho. O auditor externo pegou isso na 3ª auditoria: o arquivo
+revisado continuava com 20 seções (as 3 duplicatas intactas) e o
+cabeçalho com a alegação falsa de checagem prévia. **Corrigido**: mesma
+remoção de 3 seções + correção de cabeçalho aplicada agora no arquivo
+certo (`_revisao/`, 20→17).
+
+**Achado 2, mais sério**: o texto de "A Era da Semicivilização" que
+efetivamente entrou em `livros_publicacao_pt_revisado/Tijotengoku.txt`
+veio do RASCUNHO (sem a assinatura "(Jikan)" e sem o parágrafo dividido
+corretamente), não da versão REVISADA (que já tinha as duas correções).
+**Corrigido diretamente no acervo**: parágrafo dividido em "Examinando a
+questão sob outro ângulo..." (recupera a divisão de 2 blocos temáticos
+do japonês original) + assinatura "(Jikan)" adicionada. Reverificado
+70/70 por `split_by_anchors`, sincronizado pra staging.
+
+`EXECUTOR_QUEUE.json` atualizado com nota de resolução da 3ª rodada --
+Tijotengoku voltou a `done`, aguardando a 4ª auditoria confirmar.
+
+### Descoberta principal: o bug de data (亓/OCR) é sistêmico, não isolado
+### aos 3 artigos já corrigidos
+
+O auditor da 3ª rodada também confirmou, como "achado adjacente", que **o
+desalinhamento título/citação em `Tijotengoku.txt` não se limitava aos 3
+capítulos já substituídos** -- achou mais 2 pontos (`Até a Construção do
+Paraíso Terrestre` com data impossível de 1945; `Era Semi-Civilizada`
+carregando a data do artigo nº5 que já foi corrigido). Isso bateu
+exatamente com uma varredura sistemática que eu já tinha rodado nos 10
+periódicos, a pedido do usuário, ANTES desse achado do auditor --
+confirmando de forma independente que o problema é mesmo generalizado.
+
+**Método da varredura**: script Python (parser de numeral kanji clássico,
+incluindo suporte a centena/milhar e ao caractere corrompido 亓) comparando
+a citação REALMENTE PUBLICADA (via `split_by_anchors`, a função real de
+produção) contra a citação bruta ("Original publication reference") do
+catálogo original -- usando `entry_id` (armazenado no campo `notes` de
+cada spec de segmentação) pra casar os dois. **Dois bugs do próprio script
+achados e corrigidos durante a varredura** (registrar como lição:
+`Δ=0`/contagem sozinha nunca é suficiente, nem em ferramenta de
+diagnóstico própria): (1) comparar contra o campo `sort_date` de um
+arquivo de trabalho desatualizado, em vez do texto realmente publicado --
+dava falsos positivos e falsos negativos; (2) parser de numeral kanji não
+tratava 百="100" nem 千="1000", cortando números de edição grandes (ex.
+"二百四十一号"=241 virava 41) -- causava falsos positivos em massa no
+Eiko (343→166 depois do fix).
+
+**Resultado final da varredura (contra o texto publicado real)**:
+
+| Periódico | Divergentes / total | Título também suspeito |
+|---|---:|---:|
+| Eiko | 166 / 368 | 14 |
+| Hikari | 73 / 122 | 6 |
+| Kyusei | 23 / 68 | 4 |
+| Tijotengoku | 37 / 70 (além dos 3 já corrigidos) | 3 |
+| Medicina do Amanhã | 8 / 33 | 1 |
+| Jornais | 3 / 4 | 0 |
+| Keiko, Revista Asahi, Relatos de Milagres, Ensinamentos diversos | 0 | 0 |
+| **Total** | **310** | **28** |
+
+176 dos 310 têm o caractere 亓 visível na citação bruta atual (assinatura
+direta do bug já diagnosticado); os outros 134 divergem por outro motivo
+(mesma classe de corrupção, mas sem o 亓 sobrevivendo na citação bruta
+atual -- pode ter sido "limpo" numa etapa intermediária sem corrigir o
+número).
+
+### Correção em massa -- delegada a 6 agentes em paralelo, em andamento
+
+Usuário pediu "corrija todos manualmente e de forma definitiva". Dado o
+volume (310 artigos, 2+ classes de erro, alguns exigindo recuperação de
+título via busca no Zenshū), delegado a **6 agentes em background**, um
+por periódico, cada um com: (a) manifesto pré-calculado (`/tmp/.../
+scratchpad/manifestos_correcao_datas/{periodico}.json`) com citação atual
++ citação correta + citação bruta pra conferência independente -- **nunca
+pra aplicar cegamente, cada agente foi instruído a reconferir contra a
+fonte real antes de cada correção**; (b) instrução de recuperar título via
+busca em `chosaku_full.txt` (por `#T <periódico> <edição>`) quando o
+`title_jp` do catálogo bruto parecer trecho de corpo, não título real,
+registrando explicitamente se o título veio do Zenshū ou foi escolha
+editorial; (c) obrigação de reverificar segmentação 100% (`split_by_anchors`,
+função real) antes de considerar pronto, em ambas as cópias (publicado +
+staging); (d) proibição de tocar `textos_portugues/` ou rodar qualquer
+reindexação/promoção.
+
+**Status ao fechar esta atualização: os 6 agentes ainda estão rodando**,
+nenhum resultado consolidado ainda. Retomar lendo os relatórios de cada
+um quando terminarem (via notificação de conclusão) antes de considerar
+qualquer promoção.
+
+### Onde continuar
+
+1. Aguardar os 6 agentes terminarem, ler os relatórios de cada um,
+   verificar amostra dos resultados antes de confiar cegamente (mesmo
+   princípio de sempre -- "trust but verify").
+2. Depois de todos fecharem: rodar `split_by_anchors` uma última vez
+   contra os 10 periódicos juntos (não só cada um isoladamente) pra
+   garantir que nenhuma interação entre eles quebrou algo.
+3. Considerar rodar a mesma varredura sistemática também nos livros
+   avulsos/coletâneas fora dos 10 periódicos "puros" que passaram pelo
+   mesmo pipeline do Zenshū (nenhum indício disso até agora, mas não
+   verificado a fundo).
+4. Nada disso foi promovido pra produção nem reindexado -- fica em
+   staging, junto com o resto do trabalho acumulado de correção pendente
+   de autorização.
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
