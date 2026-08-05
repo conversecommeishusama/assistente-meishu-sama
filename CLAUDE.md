@@ -9054,26 +9054,38 @@ independentes (agente zumbi + meus 8 agentes) aplicadas e verificadas,
 estrutura de âncora/formatação alinhada com a convenção real do acervo.
 **Considerar fechado, não retomar.**
 
+### Wave 0 lançada (12 batches, 2026-08-05 ~21:00)
+
+Lancei os 12 batches da Wave 0 (`[0,1,7,8,12,13,15,16,18,19,21,22]`) em
+paralelo, cada agente lendo seu próprio prompt já pronto (com o adendo
+sobre a armadilha de convenção estrutural, ver seção anterior) de
+`/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
+scratchpad/prompts_waves0-2/batch<N>.txt`. Mapeamento batch→agentId salvo
+em `.../scratchpad/wave0_agents.json` (nomes de agente não sobrevivem a
+autocompactação de forma confiável -- usar esse arquivo pra retomar via
+`SendMessage` se precisar, ou simplesmente aguardar as notificações).
+Cobre (parcialmente, 2 de N batches cada): 明麿近詠集, 御讃歌集, 山と水,
+結核の革命的療法, 教えの光, 世界救世教奇蹟集 -- nenhum desses 6 livros
+fica 100% completo só com a Wave 0, precisam também das Waves 1/2
+(batches 2-6, 9-11, 14, 17, 20, 23-24 conforme `full_corpus_batches.json`).
+
 ### Onde continuar (prioridade máxima)
 
-1. **Lançar os 36 batches das Waves 0-2** (`0` a `36`, usando
-   `full_corpus_prompts.json['prompts'][i]` como prompt pronto de cada
-   um) -- em lotes controlados de concorrência (não saturar; o teto
-   sugerido no handoff original era 20 sub-agentes simultâneos, mas o
-   limite de sessão já foi elevado para 1000 via
-   `.claude/settings.local.json` -- ainda assim, lançar em ondas
-   moderadas, não os 36 de uma vez, pra manter capacidade de verificar
-   cada um em vez de só disparar e torcer).
-2. **NÃO tocar em batch 38** (já fechado, ver acima) nem nos batches
+1. **Aguardar os 12 agentes da Wave 0 terminarem**, verificar cada um com
+   `verify_staging.py <nome_livro>` (não confiar no relatório sozinho),
+   prestando atenção especial a qualquer "correção" de cabeçalho de
+   data/markdown que possa repetir o erro já cometido no Lote 2 -- os
+   prompts já têm o adendo de aviso, mas confirmar mesmo assim.
+2. **Depois da Wave 0 verificada**: gerar os prompts da Wave 1
+   (`[2,3,9,10,14,17,20,23,24,25,26,27]`) do mesmo jeito (copiar de
+   `full_corpus_prompts.json['prompts'][i]` + o mesmo adendo, salvar em
+   `prompts_waves0-2/batch<N>.txt`) e lançar em paralelo. Depois Wave 2
+   (`[4,5,11,28,29,30,31,32,33,34,35,36]`).
+3. **NÃO tocar em batch 38** (Lote 2, já fechado) nem nos batches
    37/39-42 (escopo do executor separado, "Lotes 3/4").
-3. Para cada batch concluído: reverificar com `verify_staging.py` (ou
-   `split_by_anchors` direto) antes de aceitar -- não confiar no
-   relatório do agente sozinho. Ficar atento a "correções" de
-   convenção estrutural (cabeçalho de data, markdown) que na verdade
-   são padrão deliberado -- mesma armadilha em que caí no Lote 2.
 4. **Commitar + atualizar este documento a cada avanço real** (pedido
    explícito do usuário, motivado pela perda de contexto de hoje) --
-   não esperar o fim de tudo pra registrar progresso.
+   fazer isso depois de CADA wave verificada, não só no final.
 5. Pendências não autorizadas (bug de âncora genérico ~300 artigos,
    triagem `御神体` 401 ocorrências) seguem fora de escopo até o
    usuário autorizar explicitamente.
