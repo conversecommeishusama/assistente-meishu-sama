@@ -8068,3 +8068,59 @@ aqui por brevidade). **Artifacts publicados**:
 6. Lembrar da distinção corpus-vs-publicação em qualquer trabalho futuro
    -- nunca misturar os dois propósitos no mesmo arquivo.
 7. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 -- estrutura de pastas do projeto de publicação
+## criada: 32 volumes, `publicacao_livros/` (nova, fora do git, nunca
+## escreve de volta no corpus do app)
+
+Aplicados os 3 ajustes pendentes ao plano (artifact republicado no mesmo
+link, `https://claude.ai/code/artifact/32cf436d-afe0-440e-84c7-abdadc9de660`):
+"Registros e Discursos Breves" absorvido em "Diversos" (160,2 pág., 13
+itens); `Eiko.txt` dividido em 3 volumes por corte de tamanho (293,1/
+290,5/292,1 pág. -- ressalva mantida: não é corte cronológico, o arquivo
+de origem não está ordenado por edição do início ao fim);
+`世界救世教教義（地上天国と自然栽培の巻）` movido para "Agricultura
+Natural" (327,7 pág., 4 itens). Total final: 32 volumes, 8.693,3 páginas.
+
+**Estrutura criada** (`scripts` ad-hoc no scratchpad da sessão, não
+salvos em `scripts/` do projeto -- eram de uso único): nova pasta
+`publicacao_livros/` (raiz do projeto, fora do git, mesmo padrão de
+`reports/`/`livros_publicacao_pt_revisado/`), 32 subpastas numeradas
+`01_...` a `32_...` na mesma ordem já revisada com o usuário (falas
+orais → ensaios/cursos → coletâneas temáticas → grandes obras
+individuais → periódicos maiores → guias). Cada pasta contém os `.txt`
+de origem **copiados** (nunca movidos) de `livros_publicacao_pt_revisado/`
+(fonte principal) ou, para as 4 obras fora do corpus oficial de 139
+(Jikan Sōsho nº6/13/15 + `世界救世教教義解説`), de `textos_portugues/`
+(única fonte onde existem) -- mais um `MANIFESTO.json` por volume
+(título, nota editorial, página estimada, proveniência exata de cada
+arquivo) e um `README.md`/`00_INDICE_GERAL.json` na raiz com o índice
+completo.
+
+**Verificado antes de considerar pronto**: 142 arquivos `.txt` copiados
+(139 obras + 2 cópias extras do corte do Eiko + 1 duplicata proposital
+de `無肥料栽培法`), 16.516.889 caracteres somados, conteúdo de amostra
+lido e íntegro (não só "arquivo existe"), `git status` confirma
+`livros_publicacao_pt_revisado/`/`reports/livros_trabalho/`/
+`textos_portugues/`/`textos_japones/` **sem nenhuma modificação**
+(mtimes de antes desta sessão, só leitura) -- a regra "nunca escrever de
+volta no corpus do app a partir da publicação" foi respeitada
+estruturalmente (script só copia, nunca teve caminho de escrita nas
+pastas de origem).
+
+### Onde continuar
+
+1. Revisar a estrutura criada em `publicacao_livros/` (README.md tem o
+   índice completo com link relativo pra cada pasta) -- confirmar com o
+   usuário se o resultado bate com o que ele tinha em mente antes de
+   qualquer trabalho de diagramação real.
+2. Ressalva do Eiko (corte por tamanho, não cronológico) ainda não
+   resolvida -- decidir se vale reordenar o arquivo de origem por edição
+   antes de aceitar o corte definitivo.
+3. Seguem pendentes, sem relação com este trabalho: revisão dos 60
+   artigos novos de periódico (checar status das tmux
+   `zenshu_revisao_executor`/`zenshu_revisao_auditor`, não verificado há
+   um tempo); promoção da correção de marcadores (`信仰雑話`,
+   `天国の福音書`) para `textos_portugues/` + reindexação, pendente de
+   autorização.
+4. Nenhuma promoção/reinício de produção sem autorização explícita.
