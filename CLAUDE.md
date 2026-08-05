@@ -8239,35 +8239,43 @@ só resta `Hikari_novos_artigos.md` na fila (correção pequena e objetiva,
 sem ambiguidade: farpa "Ah, que confusão" do Sun-tetsu nº35 fundida por
 engano, precisa virar item próprio).
 
-### Pendência real, não decidida: romanização de 金掘吉次
+### Romanização de 金掘吉次 -- resolvido
 
-Achado do auditor (Tijotengoku, artigo nº23 中, sobre o buscador de ouro
-ligado a Minamoto no Yoshitsune): a tradução nova usa "Kanahori
-Yoshitsugu", mas há 2 problemas -- (a) a leitura corrente desse nome
-histórico é **Kichiji**, não **Yoshitsugu** (o próprio Zenshū traz a
-glosa 金掘〔売〕吉次 noutro volume, apontando pra 金売吉次/Kanauri
-Kichiji); (b) o acervo já tem o mesmo personagem em
-`19520425-御垂示録8号.txt` como **"Kinkiri Yoshitsugu"** -- ou seja, há
-hoje 2 romanizações divergentes no corpus pro mesmo nome, e nenhuma das
-duas parece certa por si só. Nada foi decidido nem aplicado -- fica pra
-você escolher a forma canônica (ou indicar outra) antes de eu uniformizar
-os 2 arquivos.
+Achado do auditor (Tijotengoku, artigo nº23 中): a tradução nova usava
+"Kanahori Yoshitsugu" e o acervo já tinha "Kinkiri Yoshitsugu" em
+`19520425-御垂示録8号.txt` -- 2 formas divergentes, nenhuma parecendo
+certa. Usuário pediu verificação na internet antes de decidir.
+**Confirmado por busca** (Wikipédia JP, Kotobank, Weblio, fontes
+convergentes): o nome histórico é **金売吉次 (かねうりきちじ) = Kaneuri
+Kichiji** -- "Kichiji, o mercador de ouro", figura semilendária do fim do
+Heian ligada a Minamoto no Yoshitsune (aparece em Heiji Monogatari, Heike
+Monogatari, Gikeiki). O kanji "掘" (escavar) do Zenshū é variante/erro por
+"売" (vender) -- a própria glosa editorial do Zenshū já indicava isso
+(金掘〔売〕吉次).
+
+**Aplicado nos 2 arquivos + glossário**: `Tijotengoku_novos_artigos.md`
+("Kanahori Yoshitsugu"→"Kaneuri Kichiji", 1 ocorrência) e
+`livros_publicacao_pt_revisado/19520425-御垂示録8号.txt` ("Kinkiri
+Yoshitsugu"→"Kaneuri Kichiji", 1 ocorrência, backup
+`.bak_pre_kaneuri_20260805`) -- confirmado que nenhum `pt_anchor` da
+spec deste livro referenciava o trecho alterado, reverificado 3/3 artigos
+pela função real de produção depois da troca, sincronizado pra
+`reports/livros_trabalho/pt/`. `glossario_traducao.json` ganhou a entrada
+`"金売吉次": "Kaneuri Kichiji"` (697→696... 696 entradas totais,
+confirmado).
 
 ### Onde continuar
 
-1. **Decidir a romanização de 金掘吉次** (ver acima) -- só então aplicar
-   nos 2 arquivos (`Tijotengoku_novos_artigos.md` e
-   `19520425-御垂示録8号.txt`) e no glossário.
-2. Deixar o executor terminar o Hikari sozinho (correção pequena, sem
+1. Deixar o executor terminar o Hikari sozinho (correção pequena, sem
    necessidade de acompanhar) -- checar depois se a auditoria fecha sem
    reabrir de novo.
-3. Depois que Hikari e a decisão de romanização fecharem: os 60 artigos
-   (agora 57 -- 20 Eiko... não, 23 Eiko + 17 Tijotengoku + 13 Hikari = 53
-   genuinamente novos, 3 viraram correção de metadado do Tijotengoku,
-   4 duplicatas descartadas do Hikari) estarão prontos pra fase de
-   integração ao corpus oficial (extrair JP, criar spec, sync, reindexar
-   -- nenhum desses passos feito ainda, exige autorização separada).
-4. `publicacao_livros/`: seguem as mesmas pendências já registradas
+2. Depois que Hikari fechar: os artigos ficam assim -- 23 (Eiko) + 17
+   (Tijotengoku, após os 3 virarem correção de metadado) + 13 (Hikari,
+   após as 4 duplicatas descartadas) = **53 artigos genuinamente novos**,
+   prontos pra fase de integração ao corpus oficial (extrair JP, criar
+   spec de segmentação, sync, reindexar -- nenhum desses passos feito
+   ainda, exige autorização separada).
+3. `publicacao_livros/`: seguem as mesmas pendências já registradas
    (revisão do usuário, ressalva não mais aplicável do Eiko -- já
    corrigida por fronteira de ano).
-5. Nenhuma promoção/reinício de produção sem autorização explícita.
+4. Nenhuma promoção/reinício de produção sem autorização explícita.
