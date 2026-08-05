@@ -9200,16 +9200,36 @@ completas.**
    incidente registrado acima) -- se um lote de agentes parar de notificar
    silenciosamente, considerar essa hipótese antes de esperar
    indefinidamente.
-3. **Depois que a Wave 2 fechar: as Waves 0-2 estarão completas.**
-   Próximos passos, em ordem: (a) consolidar um relatório final honesto
-   cobrindo as 3 waves + o Lote 2 original; (b) retomar as pendências de
-   alta prioridade levantadas ao longo do dia (bug de título/manchete do
+3. **Decisão do usuário (2026-08-06): assim que a Wave 2 fechar, lançar
+   IMEDIATAMENTE a revisão dos 9 periódicos** (mesmo método Lote 2 --
+   sem teto artificial de escopo, 2ª passada cética genuína), pra poder
+   fechar TODA a revisão do corpus, promover, e montar os livros finais
+   pro usuário começar a própria leitura de revisão antes da publicação
+   (processo que ele estima levar alguns bons meses). **11 prompts já
+   preparados e salvos** em
+   `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
+   scratchpad/prompts_periodicos/` (p1-p5 = Eiko em 5 partes de ~74
+   artigos cada [369 total]; p6-p7 = Hikari em 2 partes [122 total];
+   p8 = Kyusei [68]; p9 = Tijotengoku [69]; p10 = Medicina_do_Amanhã
+   [33]; p11 = Keiko+Revista_Asahi+Jornais+Ensinamentos_diversos juntos
+   [11 artigos]) -- script gerador em `prompts_periodicos/build.py` se
+   precisar regenerar. Total: 672 artigos, 9 periódicos, 11 lotes.
+4. **Depois que os periódicos fecharem também**: consolidar relatório
+   final honesto cobrindo Lote 2 + Waves 0-2 + periódicos; verificar
+   pendências de alta prioridade (bug de título/manchete do
    `世界救世教奇蹟集`, cobertura incompleta de parte do
-   `結核信仰療法`); (c) verificar com o usuário o estado dos "Lotes 3/4"
-   do executor separado antes de considerar a operação 128-livros
-   inteira fechada; (d) nenhuma promoção/reindexação sem autorização
-   explícita.
-4. Para cada agente que terminar: reverificar com
+   `結核信仰療法`); verificar com o usuário o estado dos "Lotes 3/4" do
+   executor separado; **promover o corpus revisado e montar os livros
+   finais** (projeto `publicacao_livros/`, 32 volumes já estruturados em
+   sessão anterior) -- só com autorização explícita do usuário a cada
+   passo de promoção/reinício de produção.
+5. **Pausado, não descartado**: estudo de arquitetura da busca agenciada
+   (rodadas 1-2 "gordas" com lote obrigatório + regra 7 reforçada pra
+   diálogo completo + hierarquia palavra escrita soberana/oral
+   complementar + resposta mais enxuta com convite a aprofundar) --
+   ficou só no nível de desenho nesta conversa, nenhuma mudança de
+   código feita. Retomar depois que a revisão do corpus fechar.
+6. Para cada agente que terminar: reverificar com
    `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
    scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
 3. **NÃO tocar em batch 38** (Lote 2, já fechado) nem nos batches
