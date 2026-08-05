@@ -8557,7 +8557,8 @@ com leitura genuína, não heurística), o tempo de execução deve ser maior
 que os 6 agentes de correção de data (que levaram 2-16min cada, com
 escopo mais raso).
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesma sessão, os 10
+### terminaram e as 16 decisões pendentes foram todas resolvidas)
 
 1. Aguardar os 10 agentes terminarem. Ler o relatório de cada um.
 2. **Verificar por amostragem eu mesmo** (não confiar cegamente nos 10
@@ -8567,3 +8568,198 @@ escopo mais raso).
    os achados dos 10 agentes -- é isso que o usuário pediu
    explicitamente como entregável final desta rodada.
 4. Nada disso vai pra produção sem autorização explícita, como sempre.
+
+## Atualização 2026-08-05 (mesma sessão) — os 10 periódicos reauditados
+## fecharam (678/678 artigos), relatório final consolidado, 16 decisões
+## pendentes levadas ao usuário via pergunta/resposta e todas aplicadas
+
+### Os 10 agentes fecharam — resultado consolidado
+
+Todos os 10 terminaram (a maioria demorou 20-60min, o Eikō/Hikari/
+Tijotengoku mais longos por serem os maiores). Verifiquei eu mesmo,
+independente dos relatórios, rodando `split_by_anchors` (função real de
+produção) contra os 10 periódicos inteiros nas 3 cópias (publicado,
+staging, JP) -- **678/678 artigos resolvidos**, publicado e staging
+byte-a-byte idênticos, inclusive no caso onde 2 agentes editaram o mesmo
+arquivo (`Hikari.txt`, partes A e B) ao mesmo tempo -- confirmado que as
+correções dos dois sobreviveram sem se sobrescrever.
+
+**115 de 678 artigos (17%) tinham erro real, corrigido** -- de título
+vazado/cruzado entre artigos até frases inventadas, fala reatribuída ao
+interlocutor errado, glossário mal aplicado, citação bíblica fixa
+violada. A confirmação numérica mais direta da suspeita original do
+usuário (que a 1ª rodada de 10 auditorias tinha sido superficial): em
+Hikari parte A, a 1ª rodada tinha marcado 59 artigos "sem problema" -- a
+releitura de 100% achou que **39% deles na verdade tinham um erro real**.
+
+Relatório completo publicado como artifact (favicon 📋, dossiê por
+periódico + lista consolidada de decisões pendentes):
+`https://claude.ai/code/artifact/6ce79ab9-91d5-4e21-8a2f-b1f0f86f7677`.
+
+### As 16 decisões pendentes -- todas levadas ao usuário e resolvidas
+
+Usuário pediu explicitamente "me traga os pontos pendentes para revisão
+no sistema de pergunta/resposta" -- as 16 decisões foram levadas via
+`AskUserQuestion`, em 3 lotes de até 4 perguntas (limite da ferramenta),
+mais 2 perguntas de esclarecimento sobre o caso do "光" (usuário pediu
+"clarify" antes de responder, deu a regra em texto livre em vez de
+escolher uma opção pronta). Todas as 16 decisões:
+
+1. **Eikō idx193 / Tijotengoku idx25** (trecho nunca publicado fundido
+   com trecho genuíno) -> **remover a parte nunca publicada, manter só a
+   publicada**.
+2. **Eikō idx184** (2 edições genuínas fundidas, nº70+nº71) -> **separar
+   em 2 artigos**.
+3. **Tijotengoku idx65 / Ensinamentos_diversos artigo 3** (manuscritos
+   póstumos confirmados) -> **remover os dois**.
+4. **Tijotengoku idx26** (観音教団) -> **"Organização Kannon"**.
+5. **Relatos_de_Milagres** (duplicata de 世界救世教奇蹟集) -> **remover
+   do acervo**.
+6. **Jornais artigos 1/2** (abertura quase idêntica, mesma data/jornal)
+   -> **manter os 2 como estão**.
+7. **Ensinamentos_diversos artigo 1** (~5.900 car. de PT sem JP pareado)
+   -> **importar o JP para poder verificar fidelidade**.
+8. **sort_date** (metadado interno divergente da citação real) ->
+   **investigar a causa raiz na origem**.
+9. **Hikari, 4 artigos sem número de edição** -> **tentar recuperar
+   cruzando com o Zenshū**.
+10. **Glossário 土素/火素/水素** (capitalização inconsistente na própria
+    entrada) -> **padronizar maiúsculo nos 3** (Elemento Terra/Fogo/Água).
+11. **Hikari — 光** -> regra de 3 vias dada pelo usuário em texto livre:
+    **"Hikari"** só quando é o próprio periódico, **"Ohikari"** quando é
+    o objeto/amuleto outorgado por Meishu-Sama, **"Luz"/"Luz Divina"**
+    nos demais casos, conforme o contexto.
+12. **Hikari — mácron Kikugorō/Danjūrō** (2 auditores discordavam) ->
+    usuário pediu **"verifique na internet"** -- resolvido via
+    `WebSearch` contra a romanização Hepburn canônica (confirmada pela
+    própria codificação de URL da Wikipédia: `Onoe_Kikugor%C5%8D` =
+    Kikugorō, `Ichikawa_Danj%C5%ABr%C5%8D` = Danjūrō) -- aplicado
+    diretamente por mim (mecânico, sem ambiguidade), 8+5 ocorrências
+    padronizadas em `Hikari.txt`, antes de delegar o resto.
+
+Depois de resolvidas, delegadas a 7 agentes em paralelo, agrupados por
+ARQUIVO (não por item da lista) para nunca ter 2 agentes editando o
+mesmo arquivo ao mesmo tempo -- lição já aprendida antes nesta mesma
+sessão (o incidente do Tijotengoku, arquivo errado editado, ver seção
+anterior "3ª auditoria do Tijotengoku"). Cada prompt teve as mesmas
+regras de sempre: nunca find-replace cego (sempre confirmar contra o JP
+antes), backup antes de editar, nunca inventar posição de âncora,
+`split_by_anchors` real antes/depois, sincronizar staging, nunca citar
+"Zenshū"/"Rokkan" em texto final, nunca tocar `textos_portugues/`/
+`textos_japones/`, nenhuma reindexação/promoção.
+
+### Resultado, verificado por mim de forma independente após cada agente
+
+**Eikō** (idx193+idx184): confirmado por leitura cruzada com o Zenshū
+que idx193 fundia 3 origens -- manuscrito nunca publicado (1948),
+palestra sem citação de periódico (Hibiya, 1951), e o artigo genuíno
+(Eikō nº68, 1950, que sobrou, retitulado "Crítica à Civilização (1) –
+A Transição das Culturas Antiga e Nova"). idx184 dividido em idx184
+(nº70) + idx185 novo (nº71) -- achado extra: a citação do topo do
+artigo fundido já estava errada antes mesmo da fusão (dizia nº71 mas a
+Parte I é nº70). **369/369 artigos** (era 368), verificado
+independentemente.
+
+**Tijotengoku** (idx25+idx65+idx26): idx25 despoluído (mesmo padrão do
+idx193, achado extra: nosso corpus tinha até o kanji do título errado,
+真文明 em vez de 新文明, corrigido). idx65 removido (nota póstuma
+explícita no próprio JP). idx26 corrigido. **69/69 artigos** (era 70),
+verificado independentemente.
+
+**Ensinamentos_diversos** (artigo1+artigo3): achado que melhorou o
+método -- o JP faltante do artigo 1 não precisou vir do Zenshū bruto
+(OCR degradado), foi localizado já limpo e rotulado dentro do próprio
+acervo oficial (`19491021-御光話録13号.txt`), confirmando o achado já
+registrado em 28/07 sobre essa entrevista estar espalhada entre os dois
+arquivos. Na verificação de fidelidade, 2 erros reais corrigidos
+(romanização "Sakai Katsutoshi"→"Katsutoki", confirmada por busca
+externa; "correspondem ao destino"→"princípio da correspondência",
+termo já canonizado noutro livro do acervo). **Achado fora de escopo,
+não corrigido, registrado para decisão futura**: o mesmo par de erros
+existe idêntico em `19491021-御光話録13号.txt` -- nunca tocado, é a fonte
+original de onde a tradução foi copiada. Artigo 3 (manuscrito póstumo,
+1963) removido. **5/5 artigos** (era 6), verificado independentemente.
+
+**Relatos_de_Milagres**: duplicação reconfirmada de verdade (não só
+aceita do achado anterior) linha a linha contra `世界救世教奇蹟集` --
+os 5 artigos batem por completo. Removido do acervo -- **8 arquivos
+movidos para backup** (`reports/livros_trabalho/removidos_duplicata_relatos_de_milagres_20260805/`),
+nada apagado de vez. Confirmado que `build_clean_large_indexes.py`
+descobre arquivos por glob de diretório (não lista hardcoded) -- remover
+os arquivos de staging é suficiente, nenhuma edição de script necessária.
+2 scripts históricos mortos com referência hardcoded encontrados, não
+tocados (fora do pipeline vivo). `publicacao_livros/18_Diversos/
+03_Relatos_de_Milagres.txt` (projeto de publicação impressa, destino
+separado) encontrado, **não tocado**, fora do escopo. **Achado
+importante**: `textos_portugues/`/`textos_japones/Relatos_de_Milagres.txt`
+continuam existindo (produção) -- a duplicata só sai do índice de busca
+real numa promoção futura, que exige autorização separada.
+
+**Hikari** (4 citações + regra 光): as 4 citações sem número são,
+confirmado em 2 fontes independentes (catálogo bruto + Zenshū), de uma
+**edição extra (号外)** do Hikari, sem numeração por convenção editorial
+japonesa -- corrigido para "Hikari, edição extra, publicado em..." nos
+4, nenhum número inventado. Regra de 光 aplicada: 5 correções
+Luz→Hikari (autorreferência ao periódico, ex. título do idx73 "A
+Expansão do Jornal Hikari"), 10 "Hikari" já corretas confirmadas, demais
+ocorrências de "Luz"/"Luz Divina" confirmadas corretas como estão
+(sentido comum/divino) -- nenhum caso do objeto Ohikari via 光 isolado
+encontrado neste arquivo. **122/122 artigos**, verificado
+independentemente.
+
+**Glossário 土素/火素/水素**: `土素`→"Elemento Terra" (era minúsculo,
+inconsistente com os outros 2). Varredura do acervo inteiro achou que
+火素/水素 TAMBÉM tinham ocorrências residuais em minúsculo (não só o
+土素, o achado original) -- **41 ocorrências corrigidas em 14 arquivos**,
+cada uma confirmada contra o JP antes de mudar. 0 ambiguidade, 0
+ocorrência ficou pendente. **split_by_anchors 100% nos 14 arquivos**,
+nenhum precisou de ajuste de âncora (a edição não mudou tamanho de
+texto o suficiente para deslocar nenhuma âncora existente).
+
+**sort_date** (investigação de causa raiz + correção): agente de
+investigação achou a causa (campo `source_date` já nascia errado no
+catálogo antigo `data/publication_sources/entries.jsonl`, hoje
+aposentado, propagado sem correção por 2 scripts ad-hoc não preservados
+até a spec atual) e quantificou (318/672 divergentes na época da
+investigação) -- mas **corretamente recusou aplicar o fix sozinho**,
+porque detectou (com evidência real de mtime, não hipótese) que os
+outros 6 agentes estavam editando os mesmos arquivos ao vivo durante a
+investigação -- decisão certa, mesmo padrão de cuidado já usado no
+projeto. Depois que os 6 agentes terminaram (risco de concorrência
+eliminado), **apliquei eu mesmo** a correção (script próprio, testado
+primeiro em modo dry-run): extrai dia/mês/ano da citação real (já
+verificada) via `split_by_anchors` e regrava só `notes.sort_date` --
+**351 entradas corrigidas em 7 periódicos**, 7 casos legítimos sem dia
+recuperável na citação (ex. "publicado em maio de 1953", sem dia)
+deixados como estavam, nenhuma data inventada. Achado no processo:
+minha primeira versão do regex não pegava o formato "do Nº ano da Era
+Showa" (número antes de "ano", não depois) -- corrigido antes de aplicar
+de verdade, confirmado com dry-run 2x.
+
+### Estado final verificado (toda a sessão, ponta a ponta)
+
+**672 artigos** nos 9 periódicos que restaram (era 678: -5 Relatos_de_
+Milagres, -1 Tijotengoku idx65, -1 Ensinamentos_diversos artigo3, +1
+Eikō split) -- **100% resolvidos por `split_by_anchors`** (a função real
+de produção) nas 3 cópias (`livros_publicacao_pt_revisado/`, staging
+`reports/livros_trabalho/pt/`, JP `reports/livros_trabalho/jp/`),
+publicado e staging confirmados byte-a-byte idênticos em todos os 9.
+`textos_portugues/`/`textos_japones/` confirmados intocados (mtimes de
+sessões anteriores). Nenhuma reindexação/build/promoção rodada.
+Nenhuma menção a "Zenshū"/"Rokkan" em texto final publicado.
+
+### Onde continuar
+
+1. **A reauditoria e a triagem de decisões pendentes dos 10 periódicos
+   está genuinamente fechada.** Não é mais pendência.
+2. Achado fora de escopo, não decidido: replicar em
+   `19491021-御光話録13号.txt` a mesma correção de romanização/glossário
+   aplicada ao trecho espelhado em `Ensinamentos_diversos` (Sakai
+   Katsutoki, princípio da correspondência).
+3. Próximo passo natural, ainda não pedido nem feito: promover essas
+   correções para `textos_portugues/`/`textos_japones/` e reconstruir o
+   índice -- exige autorização explícita separada, como sempre. Até lá,
+   a busca real do site continua servindo a versão anterior a esta
+   sessão para todos os 10 periódicos (inclusive ainda com a duplicata
+   do Relatos_de_Milagres ativa).
+4. Nenhuma promoção/reinício de produção sem autorização explícita.
