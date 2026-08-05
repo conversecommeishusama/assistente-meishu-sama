@@ -8108,7 +8108,7 @@ volta no corpus do app a partir da publicação" foi respeitada
 estruturalmente (script só copia, nunca teve caminho de escrita nas
 pastas de origem).
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver as duas atualizações seguintes, mesmo dia)
 
 1. Revisar a estrutura criada em `publicacao_livros/` (README.md tem o
    índice completo com link relativo pra cada pasta) -- confirmar com o
@@ -8124,3 +8124,77 @@ pastas de origem).
    `天国の福音書`) para `textos_portugues/` + reindexação, pendente de
    autorização.
 4. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 -- Eiko recortado por fronteira de ano (não
+## por tamanho puro)
+
+A pedido do usuário ("no caso do eiko ideal é não cortar um ano no
+meio"), recalculado o corte dos 3 volumes de Eiko. O arquivo alterna anos
+sem ordem (não é cronológico do início ao fim -- confirmado: 1951/1952/
+1953/1954 se intercalam constantemente do meio ao fim do arquivo, 73
+pontos de mudança de ano identificados na sequência real). Escolhidos os
+2 pontos de mudança de ano mais próximos de 1/3 e 2/3 do arquivo (33,0% e
+64,2%): Volume I termina numa transição 1951→1952, Volume II numa
+1952→1953. Resultado: **289,2 / 272,7 / 313,9 páginas** (menos equilibrado
+que o corte puro por tamanho, 293,1/290,5/292,1, mas nunca divide um
+mesmo ano entre dois volumes). Verificado que os 3 cortes caem exatamente
+no início de um artigo (`Eikō nº X, publicado em...`), nunca no meio de
+texto. Atualizado em `publicacao_livros/25_Eiko__Volume_I/`,
+`26_.../`, `27_.../` (arquivo + `MANIFESTO.json`) e republicado o
+artifact do plano (mesma URL,
+`https://claude.ai/code/artifact/32cf436d-afe0-440e-84c7-abdadc9de660`).
+Total geral: 8.693,4 páginas.
+
+## Atualização 2026-08-05 -- status das tmux de revisão dos 60 artigos:
+## mesmo bug de auto-referência já catalogado, executor morto
+
+Checado a pedido do usuário. `zenshu_revisao_executor` **não existe
+mais** -- o laço processou a fila real até `pending=0` e encerrou sozinho
+("fila concluída, encerrando laço") às 2026-08-04T22:32:22Z, mas **duas
+reaberturas do auditor aconteceram logo depois** (22:39 e 22:49 UTC,
+mesmo dia) -- ninguém está processando esse trabalho desde então. É
+literalmente o mesmo padrão já catalogado em
+`[[project_revisao_editorial_self_reference_stall]]` (executor sai
+quando `pending` zera, mas não é reiniciado quando o auditor reabre item
+depois). `zenshu_revisao_auditor` está viva mas dormindo em loop de
+300s há mais de 1h30, sem nada pra auditar (só sincroniza a partir do
+`done` do executor, que não está rodando).
+
+**Estado real dos 3 arquivos** (`reports/zenshu_periodicos_novos_artigos_revisao/`):
+- **Eiko** (23 artigos): ✅ aprovado, fechado.
+- **Hikari** (17→13 artigos após 1ª rodada de dedup): reaberto uma 2ª vez
+  pelo auditor -- achado real confirmado (farpa "Ah, que confusão" do
+  Sun-tetsu nº35 fundida por engano no parágrafo anterior; o próprio
+  recuo do JP original comprova que devia ser item próprio, 14→15
+  farpas) + 2 registros menores (subtítulo em markdown, inconsistência de
+  tradução de 寸鉄/Sun-tetsu numa farpa). **Pendente, parado.**
+- **Tijotengoku** (20 artigos): auditor achou 3 duplicatas reais, mas com
+  complicação séria -- os capítulos JÁ publicados no acervo
+  (`Tijotengoku.txt`) têm **título e data errados** (título/citação
+  desalinhados do corpo, bug pré-existente do próprio arquivo de
+  trabalho), enquanto as 3 traduções novas trazem título/citação
+  corretos (conferidos contra `#K` do original). O auditor **explicitamente
+  não decidiu sozinho** e pediu para trazer ao usuário: (a) descartar as
+  3 traduções novas e corrigir só título/data dos capítulos já
+  publicados, ou (b) substituir os capítulos do acervo pelas versões
+  novas. **Pendente, parado, aguardando decisão do usuário.**
+
+### Onde continuar
+
+1. **Reiniciar o executor** (`scripts/run_zenshu_revisao_executor_loop.sh`,
+   nova sessão tmux) para fechar Hikari (correção pequena e objetiva) --
+   seguro, sem decisão pendente do usuário.
+2. **Tijotengoku precisa de decisão do usuário antes de reiniciar o
+   executor para esse item específico** -- (a) vs (b) acima, ver nota
+   completa do auditor no `EXECUTOR_QUEUE.json` para os 3 casos
+   (半文明時代, 関西紀行, 婆羅門とマホメット).
+3. Considerar, se isso se repetir noutra fila do projeto: automatizar a
+   reabertura reiniciando o executor sozinho quando `pending` voltar a
+   >0 (ainda não existe esse gatilho em nenhuma das filas do projeto,
+   inclusive as mais antigas) -- não decidido, só registrado como padrão
+   recorrente.
+4. `publicacao_livros/`: estrutura criada, Eiko corrigido por fronteira
+   de ano -- pronta pra revisão do usuário.
+5. Segue pendente, sem relação com isso: promoção da correção de
+   marcadores (`信仰雑話`, `天国の福音書`) pendente de autorização.
+6. Nenhuma promoção/reinício de produção sem autorização explícita.
