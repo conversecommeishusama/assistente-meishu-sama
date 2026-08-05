@@ -8926,7 +8926,7 @@ agentes sem checar** -- foi assim que achei o gap do `結核信仰療法` e o
 bug de metadado JP hoje, não confiar cegamente é o que sustentou a
 qualidade da operação inteira.
 
-### Onde continuar
+### Onde continuar (SUPERADO -- ver seção seguinte "Sessão A", mais recente e prioritária)
 
 1. Ler `reports/revisao_rigorosa_total_20260805/MANIFESTO.md` por
    completo antes de agir -- tem o detalhe operacional que esta seção
@@ -8942,3 +8942,140 @@ qualidade da operação inteira.
    de produção sem autorização explícita separada do usuário --
    `glossario_traducao.json`/`livros_publicacao_pt_revisado/` continuam
    fora do git por decisão do usuário, este commit cobre só o CLAUDE.md.
+
+## Sessão 2026-08-05 (continuação, "Sessão A") -- escopo expandido para
+## REFAZER Waves 0-2 inteiras (36 lotes / ~41 livros), Lote 2 (9 livros)
+## fechado e validado, infraestrutura de lotes já pronta em disco
+
+**LEIA ISTO PRIMEIRO se você acabou de retomar depois de uma
+autocompactação** -- esta sessão (`cc3c4724-3e2b-4393-a540-2bff425f3372`)
+já passou por 4 autocompactações hoje e perdeu contexto pelo menos uma vez
+de forma real (ver "Erro cometido e corrigido" abaixo). O usuário pediu
+explicitamente: **commitar + atualizar este documento a cada avanço**, não
+só no fim, para não perder o fio de novo.
+
+### Quem eu sou nesta sessão: "Sessão A"
+
+Nasci como sessão **auditora** das Waves 0-2 (128 livros processados por
+uma sessão executora anterior, ver `reports/revisao_rigorosa_total_20260805/`
+seção mais acima). No meio do dia, um lote meu (**Lote 2** = os 9 livros
+御教え集18号/26号/6号/28号/21号/15号/17号 + Doutrina Igreja Messiânica
+(自然栽培) + 御垂示録8号, batch **38** na numeração de 43 lotes) rodou com
+o **método completo** (1 agente por livro + coordenador que verifica em
+disco, nunca amostra) e achou **86% de erro real** (82/95 artigos) --
+muito acima dos 56%/17% de rodadas anteriores "confirmadas". Isso motivou
+o usuário a autorizar: **"Sim, refaça tudo -- Waves 0-2, lotes 3 e 4"**.
+
+**Escopo dividido, sem sobreposição**:
+- **Meu escopo (Sessão A)**: refazer as **Waves 0-2 inteiras** -- batches
+  `0-36` da numeração de 43 lotes (36 lotes, ~41 livros únicos, alguns
+  grandes fatiados em vários lotes por tamanho -- ex. 明麿近詠集 usa os
+  batches 0-6, 御讃歌集 usa 7-11).
+- **Fora do meu escopo**: batch `38` (Lote 2, já fechado por mim hoje, ver
+  abaixo) e os "Lotes 3/4" (~21 livros/199 artigos, dentro dos batches
+  39-42) que ficaram com um **executor separado** (outra sessão) -- não
+  competir por esse escopo.
+- **Pendências explicitamente NÃO autorizadas ainda** (não decidir
+  sozinho): (a) uniformizar o "bug" de âncora/cabeçalho de data
+  (~300 artigos/~30 arquivos -- na verdade é convenção da série 御教え集,
+  ver erro abaixo); (b) triagem de `御神体` (401 ocorrências, sentido A
+  "caligrafia-altar"/"Imagem da Luz Divina" vs. sentido B "corpo divino"
+  genérico -- ver nota técnica no MANIFESTO, "corpo divino" já tem 9+3
+  ocorrências no acervo, não seria termo novo).
+
+### Infraestrutura já pronta em disco -- NÃO reconstruir do zero
+
+No scratchpad desta sessão (`/tmp/claude-0/-var-www-goshinsho/
+cc3c4724-3e2b-4393-a540-2bff425f3372/scratchpad/`):
+- **`waves.json`** -- agrupamento dos 43 batches em 4 waves:
+  `[[0,1,7,8,12,13,15,16,18,19,21,22],[2,3,9,10,14,17,20,23,24,25,26,27],
+  [4,5,11,28,29,30,31,32,33,34,35,36],[6,37,38,39,40,41,42]]`. Waves 0-2 =
+  os primeiros 3 sub-arrays (36 batches), meu escopo.
+- **`full_corpus_batches.json`** -- lista de 43 entradas, cada uma uma
+  lista de `[nome_do_livro, idx_inicio, idx_fim]` (permite fatiar livros
+  grandes em vários batches por range de artigo).
+- **`full_corpus_prompts.json`** -- dict com `prompts` (lista de 43
+  strings, os PROMPTS JÁ MONTADOS pra cada batch) e `descs` (lista de 43
+  strings, nome(s) do(s) livro(s) de cada batch) -- **use estes prompts
+  prontos para lançar os agentes das Waves 0-2**, não escreva novos do
+  zero. `descs[38]` confirma que o batch 38 é exatamente o Lote 2 (meus
+  9 livros).
+- Script de verificação usado hoje:
+  `/tmp/claude-0/.../scratchpad/revisao/verify_staging.py <nome_livro>`
+  (roda `split_by_anchors`, a função real de produção, contra publicado
+  E staging) -- reaproveitar para conferir cada livro depois de cada
+  lote.
+
+### Lote 2 (batch 38, meus 9 livros) -- FECHADO, com um erro real cometido
+### e corrigido no meio do caminho
+
+Os 9 livros já tinham sido processados hoje mais cedo por um "agente
+zumbi" de uma sessão minha anterior ao handoff (task `aec6137ed903258a8`,
+rodou ~3,9h em segundo plano) -- resultado bom, correções reais aplicadas
+(gênero de pronome, Ohikari, títulos padronizados, nomes próprios). Eu
+(depois da autocompactação, sem lembrar disso) dispachei 8 NOVOS agentes
+de "revisão semântica" pros mesmos 9 livros como 2ª camada -- todos os 8
+terminaram e acharam erros genuínos adicionais (Kane Kyuhei, Shunjūan,
+物性論 traduzido de 4 formas diferentes, "Grande Festival de Outono" preso
+no artigo errado, etc.). **Nenhum dano** -- confirmado por diff completo
+entre `.txt` atual e os backups `.bak_pre_revisao_rigorosa_20260805`.
+
+**Erro real cometido por mim e corrigido**: no meio do trabalho, tratei
+como "bug" (e apliquei correção) um padrão que na verdade é **convenção
+deliberada da série 御教え集** -- a linha de data ("6 de novembro") ficar
+no FINAL do artigo anterior em vez de abrir o artigo seguinte. Um
+coordenador anterior (relatório em
+`reports/revisao_rigorosa_total_20260805/LOTE_MIOSHIE_GOSUIJI_coordenador.md`)
+já tinha analisado isso **acervo-wide** e confirmado: **32 dos 33 volumes**
+de 御教え集 usam esse padrão (só o 31号 usa cabeçalho) -- é a convenção
+global da série, mudar só nos meus livros criaria inconsistência com os
+outros 26. Mesma coisa para o markdown `**negrito**` na Doutrina
+(世界救世教教義): **26 dos 138 arquivos do acervo** usam markdown, não é
+convenção limpa o suficiente pra remover unilateralmente num arquivo só.
+**Revertido nos 2 casos** (6 livros de anchor + 1 livro de markdown),
+reverificado 100% com `split_by_anchors` depois do revert -- as edições
+semânticas (palavras) dos agentes continuam intactas, só a estrutura de
+âncora/formatação voltou ao padrão correto. **Lição**: um padrão que
+parece bug num livro isolado pode ser convenção deliberada da série --
+sempre checar acervo-wide (ou o relatório de quem já checou) antes de
+"corrigir" estrutura, não só conteúdo.
+
+**1 achado real e válido, mantido** (não é o mesmo erro): o agente do
+26号 achou um cabeçalho de seção específico (`秋季大祭御教え`, Grande
+Festival de Outono) preso no artigo errado -- mas confirmou com
+precedentes diretos de 2 volumes-irmãos (2号, 14号) que esse título
+específico SEMPRE abre o dia seguinte, nunca fica solto no dia anterior.
+Isso não é o padrão genérico de data (que é convenção), é um erro de
+posicionamento real desse título específico -- mantido corrigido.
+
+**Resultado final do Lote 2**: 9/9 livros com `split_by_anchors` 100% nas
+duas cópias (publicado + staging), edições semânticas de 2 camadas
+independentes (agente zumbi + meus 8 agentes) aplicadas e verificadas,
+estrutura de âncora/formatação alinhada com a convenção real do acervo.
+**Considerar fechado, não retomar.**
+
+### Onde continuar (prioridade máxima)
+
+1. **Lançar os 36 batches das Waves 0-2** (`0` a `36`, usando
+   `full_corpus_prompts.json['prompts'][i]` como prompt pronto de cada
+   um) -- em lotes controlados de concorrência (não saturar; o teto
+   sugerido no handoff original era 20 sub-agentes simultâneos, mas o
+   limite de sessão já foi elevado para 1000 via
+   `.claude/settings.local.json` -- ainda assim, lançar em ondas
+   moderadas, não os 36 de uma vez, pra manter capacidade de verificar
+   cada um em vez de só disparar e torcer).
+2. **NÃO tocar em batch 38** (já fechado, ver acima) nem nos batches
+   37/39-42 (escopo do executor separado, "Lotes 3/4").
+3. Para cada batch concluído: reverificar com `verify_staging.py` (ou
+   `split_by_anchors` direto) antes de aceitar -- não confiar no
+   relatório do agente sozinho. Ficar atento a "correções" de
+   convenção estrutural (cabeçalho de data, markdown) que na verdade
+   são padrão deliberado -- mesma armadilha em que caí no Lote 2.
+4. **Commitar + atualizar este documento a cada avanço real** (pedido
+   explícito do usuário, motivado pela perda de contexto de hoje) --
+   não esperar o fim de tudo pra registrar progresso.
+5. Pendências não autorizadas (bug de âncora genérico ~300 artigos,
+   triagem `御神体` 401 ocorrências) seguem fora de escopo até o
+   usuário autorizar explicitamente.
+6. Continua valendo: nenhuma promoção/reindexação/reinício de produção
+   sem autorização explícita separada.
