@@ -8397,3 +8397,86 @@ qualquer promoção.
    staging, junto com o resto do trabalho acumulado de correção pendente
    de autorização.
 5. Nenhuma promoção/reinício de produção sem autorização explícita.
+
+## Atualização 2026-08-05 -- os 6 agentes de correção de data terminaram:
+## 310/310 corrigidos, verificado de forma independente, 0 divergências
+## residuais
+
+Os 6 agentes em background (Eiko, Hikari, Kyusei, Tijotengoku, Jornais,
+Medicina do Amanhã) terminaram com sucesso, cada um verificando a
+citação bruta original antes de aplicar qualquer correção (não confiando
+cegamente no manifesto pré-calculado):
+
+| Periódico | Corrigidos | Títulos recuperados |
+|---|---:|---:|
+| Eiko | 166/166 | 14 (todos achados no Zenshū, nenhuma invenção) |
+| Hikari | 73/73 | 6 (todos achados no Zenshū) |
+| Kyusei | 23/23 | 2 (achados no Zenshū) |
+| Tijotengoku | 37/37 | 7 (2 reaproveitados de forma já publicada no
+  corpus, 3 escolha editorial, 2 achados no Zenshū -- ver detalhe abaixo) |
+| Medicina do Amanhã | 8/8 | 1 (achado no Zenshū) |
+| Jornais | 3/3 | 0 |
+| **Total** | **310/310** | **30** |
+
+**Verificação final agregada, feita por mim (não pelos agentes)**: rodei
+`split_by_anchors` (a função real de produção) contra os 10 periódicos
+juntos, nas duas cópias (publicado + staging) -- **678/678 artigos
+resolvidos**, as duas cópias byte-a-byte idênticas. Refiz também a
+varredura sistemática original (o mesmo script que achou os 310) contra
+o corpus já corrigido -- **0/678 divergências residuais**, confirmando de
+forma independente que a correção realmente fechou, não só que os
+agentes disseram que fechou.
+
+### Achados reais durante a correção, não decididos sozinhos, trazidos aqui
+
+- **Tijotengoku, "Até a Construção do Paraíso Terrestre"/"Era
+  Semi-Civilizada"**: os 2 casos que o auditor da revisão dos 60 artigos
+  já tinha sinalizado como "achado adjacente" foram resolvidos -- o
+  primeiro reaproveitou o título "Sobre Conhecer as Coisas" já usado em
+  `19540825-天国の福音書.txt` pra essa mesma passagem; o segundo foi
+  retitulado "A Barbárie Cultural" (地天38, achado no Zenshū). Uma cadeia
+  de contaminação cruzada de mais 5 títulos foi descoberta e corrigida no
+  processo (3 delas com escolha editorial minha por não ter forma
+  publicada em nenhum outro lugar do acervo -- ver relatório completo do
+  agente no histórico da sessão).
+- **Eiko, "Conversa em Hakone" (jp-1777)**: achado real, não resolvido --
+  o corpo bate palavra por palavra com um texto catalogado no Zenshū sob
+  "光" (Hikari) nº17, não "栄光" (Eiko). A citação bruta do NOSSO catálogo
+  diz "栄光" nº17 de forma autoconsistente, então a correção de data foi
+  aplicada normalmente -- mas fica em aberto se esse artigo está no
+  periódico errado desde a extração original. Decisão de mover (ou não)
+  pra Hikari fica pro usuário.
+- **Eiko, jp-1731 e jp-1727**: mais 2 títulos com sintoma de contaminação
+  (title_jp = fragmento de corpo), fora do escopo do manifesto original
+  (não estavam nos 14 marcados), não corrigidos ainda.
+- **Kyusei**: mais 3 artigos com um bug de formatação DIFERENTE (citação
+  sem "nº X", não data errada) achados fora do escopo do manifesto --
+  `publication-jp-1140/1053/1631`, não corrigidos.
+- **Eiko**: 7 artigos onde a citação nunca teve "nº" no texto publicado
+  (não só errada -- ausente) -- os agentes corrigiram só a data, sem
+  inventar um "nº" que não existia no formato original, por instrução
+  explícita. A edição real é conhecida (recuperável da citação bruta) se
+  o usuário quiser completar depois.
+
+Nenhum desses 4 achados bloqueia o restante do trabalho -- são pendências
+menores, registradas para quando fizer sentido revisitar.
+
+### Onde continuar
+
+1. **Correção de data: genuinamente fechada e verificada**, não é mais
+   pendência.
+2. Próximo passo, já combinado com o usuário: inserir os 53 artigos
+   novos (23 Eiko + 17 Tijotengoku + 13 Hikari, da revisão dos 60
+   artigos do Zenshū) nos arquivos correspondentes -- **no acervo do
+   Goshinsho**, com segmentação completa (JP extraído de `chosaku_full.txt`
+   sem nenhuma menção a Zenshū/Rokkan, entrada nova na spec com
+   `jp_anchor`/`pt_anchor` verificados 100% por `split_by_anchors`,
+   seguindo o critério de chunk estrutural já usado no resto do projeto)
+   -- **no projeto de publicação impressa** (`publicacao_livros/`), só
+   como texto corrido dentro do arquivo do volume correspondente, sem
+   spec nem âncora (os volumes lá não são segmentados).
+3. Os 4 achados pendentes acima (Conversa em Hakone, jp-1731/1727,
+   3 artigos do Kyusei sem "nº", 7 artigos do Eiko sem "nº") ficam pra
+   depois -- não decidir/aplicar sozinho sem trazer ao usuário primeiro.
+4. Nada foi promovido pra produção nem reindexado -- fica em staging.
+5. Nenhuma promoção/reinício de produção sem autorização explícita.
