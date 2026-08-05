@@ -9146,16 +9146,51 @@ coordenador (outra sessão) teve visibilidade disso que eu não tive
 diretamente (não recebi erro de ferramenta do meu lado, só a ausência de
 notificação).
 
+### Wave 1 -- FECHADA e verificada (12/12 batches, 2026-08-05 ~23:10,
+### incluindo os 9 relançados após o incidente de teto de gastos)
+
+Todos os 12 verificados por mim com `split_by_anchors` real (publicado +
+staging) antes de aceitar. Achados estruturais reais confirmados e
+corrigidos (não convenção): `結核の革命的療法` teve 4 pares byline+corpo
+separados fundidos (196→192 artigos, bug real); `アメリカを救う` teve bug
+de âncora vazando em 68/84 títulos de testemunho (títulos já existiam no
+texto, só a âncora não apontava pra eles -- um agente cometeu e
+autocorrigiu uma duplicação acidental no processo, revertida a tempo);
+`結核信仰療法` teve 13 casos do mesmo padrão de título vazando em cascata
++ art. 63 documentado com "Ministra" onde devia ser "professora" (mesma
+confusão 教員/教師 achada em outros livros hoje); `笑の泉` teve um achado
+sério de má atribuição de autoria (3 pseudônimos diferentes apagados sob
+o rótulo genérico "Batata", 38 correções).
+
+**Pendências/observações que sobraram desta wave, não corrigidas
+sozinhas, candidatas a retomada dedicada**:
+- `結核信仰療法` batch23: artigos 43-56 (14 de 57) não tiveram releitura
+  literal completa, só amostragem dirigida + varredura automatizada --
+  cobertura honesta, mas não é o padrão de 100% do projeto.
+- `明麿近詠集`: `釈迦`→"Shakya" (forma truncada) já corrigido por mim
+  diretamente (ver acima); pendência residual "Shaka" vs "Shakyamuni"
+  (forma dominante do resto do acervo) é decisão maior, corpus-wide, já
+  registrada em sessão anterior (27/07) -- não decidir sozinho.
+- `教えの光`: marcador `**` de negrito preso em 81/150 transições (achado
+  do batch19, Wave 0) -- possível artefato de âncora, não convenção
+  clara, ainda não investigado a fundo.
+- `世界救世教奇蹟集` (Wave 0): bug real de título/manchete presa no
+  artigo errado, confirmado em várias transições, não fechado (ver
+  seção da Wave 0 acima) -- **prioridade alta pra retomar**.
+
 ### Onde continuar (prioridade máxima)
 
-1. **Aguardar os 9 batches relançados da Wave 1** (mais os 3 que já
-   tinham completado antes do incidente: batch2, batch3, batch9) --
-   verificar cada um com `verify_staging.py` antes de aceitar. Ficar
-   atento a sinal do MESMO erro de teto de gasto se acontecer de novo.
-2. Depois da Wave 1 fechada: preparar e lançar a Wave 2
-   (`[4,5,11,28,29,30,31,32,33,34,35,36]`, 12 batches) do mesmo jeito
-   (copiar `full_corpus_prompts.json['prompts'][i]` + o adendo para
-   `prompts_waves0-2/batch<N>.txt`, lançar 12 agentes em paralelo).
+1. **Preparar e lançar a Wave 2** (`[4,5,11,28,29,30,31,32,33,34,35,36]`,
+   12 batches) -- mesmo processo: copiar
+   `full_corpus_prompts.json['prompts'][i]` + o adendo (texto já salvo em
+   qualquer `prompts_waves0-2/batch<N>.txt` existente) para
+   `prompts_waves0-2/batch<N>.txt` de cada um dos 12 índices da Wave 2,
+   lançar 12 agentes em paralelo, cada um só lendo seu próprio arquivo de
+   prompt.
+2. **Ficar atento a sinais do teto de gastos mensal de novo** (ver
+   incidente registrado acima) -- se um lote de agentes parar de notificar
+   silenciosamente, considerar essa hipótese antes de esperar
+   indefinidamente.
 3. Para cada agente que terminar: reverificar com
    `/tmp/claude-0/-var-www-goshinsho/cc3c4724-3e2b-4393-a540-2bff425f3372/
    scratchpad/revisao/verify_staging.py <nome_livro>` antes de aceitar.
