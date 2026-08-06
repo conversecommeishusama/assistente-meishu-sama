@@ -9656,3 +9656,150 @@ avisando quando terminar).
    `agentic_search.py` real (ver seção acima) -- pendente, não decidido.
 4. Depois da instalação/restart: nenhuma ação adicional de escala/
    campanha sem autorização nova.
+
+## Sessão 2026-08-06 (Claude Code) -- desbloqueio de usuário real preso em
+## loop de confirmação de e-mail; causa raiz achada e corrigida (token
+## único + página intersticial de confirmação); busca semântica embutida
+## em toda chamada de `buscar_termo` no modo agenciado
+
+### Contexto e pedido do usuário
+
+Usuário reportou: `folhamarques04@gmail.com` fez cadastro, confirmou o
+e-mail, tentou logar, recebeu mensagem pedindo confirmação de novo --
+repetiu isso 4 vezes sem resolver. Pediu desbloqueio imediato + apuração
+da causa.
+
+### Desbloqueio imediato
+
+Confirmado o e-mail manualmente via admin API do Supabase
+(`update_user_by_id(uid, {"email_confirm": True})`), verificado pela
+mesma função que o app usa (`_fetch_auth_user_by_email`) -- confirmado
+`True`. Evidência de que funcionou: `last_sign_in_at` do usuário já
+registrado minutos depois, ele conseguiu logar.
+
+### Causa raiz real, reproduzida com prova concreta (não hipótese)
+
+Investigação por camadas, cada uma testada com conta descartável (criada
+e removida via admin API, nunca tocando dados reais além do desbloqueio
+em si):
+
+1. **Achado 1 -- `confirmation_sent_at` do usuário real mostrava só 1
+   envio**, apesar de "4 tentativas de confirmar" relatadas -- sinal de
+   que só um link de verdade existiu.
+2. **Achado 2 -- o `redirect_to` completo (`/app?panel=login&confirmed=1`)
+   chega truncado pra só o domínio puro** (`https://goshinsho.com.br`) no
+   link gerado pela Supabase -- a lista de URLs de redirecionamento
+   permitidas no projeto Supabase não inclui o caminho completo.
+3. **Achado 3, o decisivo -- reproduzido o clique real via HTTP**: bati 2x
+   no MESMO link de confirmação (simulando dupla requisição). A 1ª
+   confirmou de verdade (`email_confirmed_at` setado); a 2ª devolveu
+   exatamente `"Email link is invalid or has expired"` (otp_expired) --
+   o mesmo sintoma relatado pelo usuário real. **Um link de confirmação
+   da Supabase (fluxo implicit-grant) é consumido por QUALQUER requisição,
+   não só o clique humano** -- inclusive varredura automática de
+   segurança de provedor de e-mail (Gmail/Outlook corporativo
+   pré-acessam links antes do usuário abrir a mensagem).
+4. **Achado 4, mais sério -- bug real no nosso próprio código, não só um
+   risco externo**: `register_user()` gerava **até 3 tokens concorrentes
+   por cadastro**: `supabase.auth.sign_up()` dispara o e-mail nativo da
+   Supabase (token A), o código então chamava `auth.resend()` (token B,
+   invalida A), e por fim `_admin_generate_signup_link` gerava o link que
+   de fato mandávamos por SES (token C, invalida B). Se a Supabase também
+   entregasse seu e-mail nativo (token A ou B) e o usuário clicasse nele
+   em vez do nosso, o link **sempre estaria inválido por definição**,
+   mesmo com clique real e imediato -- isso não depende de nenhuma
+   varredura externa, é uma corrida interna do próprio código.
+
+### Correção aplicada (commit `b7cf565`)
+
+1. **`register_user()`** (`goshinsho/services/auth_service.py`): troca
+   `supabase.auth.sign_up()` por `admin.auth.admin.create_user(email_confirm=False)`
+   -- não dispara nenhum e-mail/token automático. Removida a chamada
+   redundante a `supabase.auth.resend()`. Agora só **um único token** é
+   gerado por cadastro, sem concorrência.
+2. **`resend_signup_confirmation()`**: removida a mesma chamada redundante
+   a `auth.resend()` (gerava um token descartado, invalidando o que
+   `_deliver_signup_confirmation_email` geraria a seguir).
+3. **Nova função `_admin_generate_signup_token(email)`**: gera o token via
+   admin API e devolve `(hashed_token, verification_type)` em vez do link
+   cru da Supabase.
+4. **Nova função `confirm_signup_token(token_hash, verification_type)`**:
+   troca o token por um POST server-side em `/auth/v1/verify` (nunca GET
+   no link exposto), devolve o perfil já pronto pra sessão.
+5. **Página intersticial nova** (`templates/confirmar_email.html` +
+   rotas `GET`/`POST /confirmar-email` em `routes.py`): o e-mail agora
+   aponta pra essa página nossa, não mais direto pro endpoint bruto da
+   Supabase. O `GET` só renderiza (não confirma nada -- imune a
+   pré-varredura); só o `POST`, disparado pelo clique real no botão
+   "Confirmar meu cadastro", confirma de fato.
+
+**Validação, reproduzindo o cenário exato do bug via rotas HTTP reais**:
+simuladas 3 "varreduras automáticas" (GET puro na página) -- nenhuma
+confirmou nada (status 200, sem tocar `email_confirmed_at`); o clique
+real (POST) confirmou com sucesso e redirecionou pra `/app-pt/`. Suíte
+completa (128 testes) rodada 2x nesta sessão -- mesmas 2 falhas
+pré-existentes de sempre (`test_ohikari_filter`,
+`test_caminho_do_casal_prefers_publication_with_bible`), 0 regressão
+nova.
+
+**Não corrigido, fora do escopo desta sessão**: a lista de URLs de
+redirecionamento permitidas no painel do Supabase (achado 2) continua
+truncando `redirect_to` pro domínio puro -- não é mais um problema
+prático (a nova página intersticial não depende mais desse campo pra
+funcionar, o POST devolve os tokens diretamente em JSON), mas vale
+ajustar no painel do Supabase se algum outro fluxo (recuperação de
+senha, magic link) depender dele no futuro.
+
+### Busca semântica embutida em `buscar_termo` (modo agenciado)
+
+Trabalho paralelo desta sessão, antes do desvio pro bug de e-mail:
+`buscar_termo_enriquecido()` (nova, `agentic_search.py`) funde os
+resultados de `buscar_termo()` (literal) com `buscar_por_significado()`
+(embedding, k=4), dedupe por posição, e passou a ser o que
+`executar_ferramenta("buscar_termo", ...)` chama por padrão -- toda
+busca do modo agenciado agora vem enriquecida automaticamente, sem o
+modelo precisar lembrar de pedir a busca semântica à parte.
+
+Medido: custo marginal ~0,5-0,8s por chamada com o worker já aquecido
+(o modelo de embedding só carrega a frio uma vez por processo, não por
+requisição). Retestada a pergunta-bandeira ("é possível mudar de plano
+espiritual na mesma reencarnação?", 3x em cada modo Direta/Com citações):
+**100% das 6 execuções encontraram e citaram o trecho de desambiguação**
+("destino predeterminado") -- antes, isso era instável. Tempo médio
+(133,5s citações / 88,1s direta) na mesma faixa de antes, sem aumento
+perceptível. Disciplina da frase de abertura (nunca resposta
+determinística em ambiguidade) ainda não é 100% -- 2 de 6 abrem com
+"Sim —" antes de qualificar a nuance (melhor que o erro antigo, que não
+qualificava nada, mas não perfeito).
+
+Retestadas também as 2 perguntas de validação já catalogadas: "O Ser
+Humano é Segundo Seus Pensamentos" (funciona bem, cita Hikari nº25
+corretamente) e a frase "filósofo/artista/salvador" (que travava com
+"Resposta inesperada do servidor" antes do fix de `LIMITE_SEGURANCA_SEGUNDOS`)
+-- agora responde honestamente que não achou a formulação exata, com
+trechos próximos, sem travar (114,8s, esgotou o tempo de busca mas
+sintetizou educadamente em vez de estourar o timeout do gunicorn).
+
+**Nada da busca semântica embutida foi commitado ainda nesta sessão**
+(só o fix de autenticação foi commitado, `b7cf565`) -- fica pendente de
+decisão do usuário se quer manter.
+
+### Onde continuar
+
+1. **Correção de autenticação: commitada (`b7cf565`), ainda NÃO reiniciada
+   em produção** -- aguardando autorização explícita do usuário pra
+   `systemctl restart goshinsho.service` (regra padrão, restart sempre
+   exige confirmação a cada vez, mesmo com commit automático já feito).
+2. Busca semântica embutida em `buscar_termo` (`agentic_search.py`) --
+   testada e com resultado positivo (100% de recall na pergunta-bandeira),
+   mas ainda não commitada -- perguntar ao usuário se quer manter antes
+   de commitar.
+3. Se quiser fechar 100% a disciplina de abertura (2/6 ainda abrem com
+   "Sim —"), seria preciso mais uma rodada de ajuste de prompt -- não
+   feito nesta sessão, ficou em "melhora real, não perfeita".
+4. Lista de URLs de redirecionamento permitidas no Supabase continua
+   truncando o caminho completo (achado 2) -- não bloqueia mais nada
+   (a correção não depende disso), mas vale corrigir no painel se algum
+   fluxo futuro precisar.
+5. Nenhuma promoção/reinício de produção sem autorização explícita do
+   usuário -- regra de sempre.
