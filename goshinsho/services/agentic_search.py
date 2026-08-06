@@ -93,6 +93,24 @@ JAPONES_DIR = PROJECT_ROOT / "textos_japones"
 # atingi-lo é sinal de anomalia, não de pergunta difícil.
 LIMITE_SEGURANCA_RODADAS = 40
 
+# 2026-08-06: achado real em produção -- pergunta sem resposta literal no
+# acervo ("filósofo/artista/salvador") esgotou as 40 rodadas de segurança
+# em 270s, bem acima do timeout de 180s do gunicorn (--timeout 180), o
+# worker foi morto no meio (WORKER TIMEOUT + SIGKILL) e o usuário viu
+# "Resposta inesperada do servidor" -- 3 vezes, reproduzido e confirmado.
+# O teto de RODADA sozinho não protege contra isso, porque a duração de
+# cada rodada varia (latência real da API DeepSeek, já documentada em
+# sessão anterior). Este teto de TEMPO DECORRIDO é um segundo tipo de rede
+# de segurança, independente da contagem de rodada -- força a mesma
+# síntese com o que já foi encontrado (nunca resposta vazia) bem antes do
+# timeout do servidor, com margem real para a própria chamada de síntese
+# final (que também gasta tempo) e para o overhead de fila/streaming do
+# routes.py. Escolhido 100s: no pior caso já medido (~7s/rodada média),
+# ainda permite ~14 rodadas de busca real antes de cortar -- suficiente
+# pra a maioria das perguntas difíceis já testadas no projeto -- e deixa
+# ~80s de margem sob os 180s do gunicorn para síntese + streaming.
+LIMITE_SEGURANCA_SEGUNDOS = 100
+
 # §3.9: quantas rodadas CONSECUTIVAS de chamada de ferramenta sem nenhum
 # fragmento de texto genuinamente novo (fingerprint de conteúdo) contam como
 # "estagnação" e forçam a síntese mais cedo. Escolhido 3, não 1: uma única
@@ -829,6 +847,7 @@ def responder_agentico_deepseek(
     rodadas_sem_novidade = 0
     esgotou_orcamento_busca = False
     parou_por_estagnacao = False
+    esgotou_tempo_busca = False
     t0 = time.time()
     resposta_final = ""
     truncada = False
@@ -839,6 +858,15 @@ def responder_agentico_deepseek(
             # modelo ter parado sozinho nem a estagnação (abaixo) ter
             # disparado antes -- em uso normal não deveria acontecer.
             esgotou_orcamento_busca = True
+            break
+
+        if time.time() - t0 >= LIMITE_SEGURANCA_SEGUNDOS:
+            # 2026-08-06: rede de segurança por tempo decorrido -- ver nota
+            # em LIMITE_SEGURANCA_SEGUNDOS. Independente da contagem de
+            # rodada, protege contra o timeout real do servidor (gunicorn
+            # --timeout 180) quando rodadas individuais demoram mais que o
+            # normal (variância documentada da API DeepSeek).
+            esgotou_tempo_busca = True
             break
 
         rodadas_busca += 1
@@ -893,10 +921,10 @@ def responder_agentico_deepseek(
         truncada = choice.finish_reason == "length"
         break
 
-    if esgotou_orcamento_busca or parou_por_estagnacao:
+    if esgotou_orcamento_busca or parou_por_estagnacao or esgotou_tempo_busca:
         # Força síntese com o que já foi encontrado, nunca resposta vazia --
-        # mesmo mecanismo para as duas causas (teto de segurança OU
-        # estagnação detectada). Achado real ao testar: só remover "tools" da
+        # mesmo mecanismo para as três causas (teto de rodadas, teto de
+        # tempo OU estagnação detectada). Achado real ao testar: só remover "tools" da
         # chamada (ou usar tool_choice="none" com tools ainda presentes) NÃO
         # basta -- o deepseek-v4-flash "vaza" a sintaxe interna de tool-call
         # como texto literal (tokens <｜｜DSML｜｜tool_calls>...) mesmo sem
@@ -937,6 +965,7 @@ def responder_agentico_deepseek(
         "resposta": resposta_final,
         "truncada": truncada,
         "esgotou_orcamento_busca": esgotou_orcamento_busca,
+        "esgotou_tempo_busca": esgotou_tempo_busca,
         "parou_por_estagnacao": parou_por_estagnacao,
         "vazamento_sintaxe_ferramenta": vazamento_sintaxe_ferramenta,
         "tempo": round(tempo, 1),
