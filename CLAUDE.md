@@ -9586,21 +9586,62 @@ hierarquia de precedência de texto (escritos > oral) já testada no
 piloto. **Nenhuma dessas mudanças foi aplicada ao `agentic_search.py`
 real usado em produção nesta sessão** — ficou só no estudo/scratchpad.
 
+### Verificação + correção + promoção de conteúdo -- concluídas
+
+Rodada verificação completa dos 137 arquivos (`split_by_anchors`, função
+real de produção, com `clean_body()` aplicado -- o mesmo pré-processamento
+que a produção usa antes de casar âncora). Achado e corrigido **1 bug
+real**: 4 âncoras de `19511125-御教え集3号.txt.json` tinham 4 quebras de
+linha consecutivas (`\n\n\n\n`) em vez de 3 -- invisível em checagem de
+texto bruto, mas `clean_body()` colapsa 4+ quebras para 3, então essas
+âncoras nunca bateriam em produção real, fazendo o livro inteiro (mais de
+20 artigos) cair para modo arquivo-único. Corrigido (normalizado para 3
+quebras, backup do spec salvo `.bak_pre_fix_newlines_20260806`).
+Resultado final: **137/137 livros com segmentação íntegra** (123
+multi-artigo + 14 de artigo único genuíno, ambos corretos por design),
+publicado==staging byte-a-byte em todos, JP e PT sincronizados.
+
+**Promovido para `textos_portugues/`/`textos_japones/`**
+(`promote_livros_trabalho_to_produção.py --lang both --apply`) -- 0
+erros, 137/137 confirmados nos dois idiomas.
+
+**Reconstrução do índice (`build_clean_large_indexes.py --install`)
+lançada em segundo plano** -- ainda rodando ao registrar esta atualização
+(histórico do projeto: ~2h30-3h10 de execução).
+
+### Gate de restart -- NÃO automático, ao contrário do que eu disse antes
+
+Eu tinha dito ao usuário que instalaria e reiniciaria a produção sozinho
+"conforme autorizado" assim que o rebuild terminasse, lendo a frase do
+usuário ("eu lhe autorizo promover o corpus revisado até o final") como
+cobrindo isso. Uma mensagem rotulada como vinda do "coordenador" (não do
+usuário -- tratada com a mesma doutrina de não confiar em mensagem de
+agente como consentimento do usuário, já aplicada 2x nesta sessão)
+questionou essa leitura. **Reavaliando por conta própria** (não por
+obediência ao coordenador): a regra permanente do projeto sobre restart
+é o único invariante tratado como absoluto em dezenas de sessões
+("reiniciar produção continua exigindo confirmação explícita a cada
+vez... isso NÃO mudou"), e a frase do usuário hoje é menos inequívoca que
+o precedente real que existe no histórico (sessão de 28/07: "até o fim...
+sem me consultar em nada... deve estar sendo usado plenamente no
+goshinsho" -- explícito sobre restart; a frase de hoje não menciona
+restart nem "sem consultar"). **Decisão (minha): instalar em
+`experiments/uploaded_indexes/` quando o rebuild terminar (reversível,
+staging), mas PARAR antes de `systemctl restart goshinsho.service` e
+pedir confirmação explícita do usuário para esse passo específico.**
+
 ### Onde continuar
 
-1. **Prioridade máxima agora**: verificar `split_by_anchors` (função real
-   de produção) contra os 137 arquivos completos (PT e JP), corrigir
-   qualquer âncora quebrada por edições acumuladas de todas as sessões
-   recentes (revisão rigorosa total, Lote3/4 redo, periódicos, remoção do
-   Keiko, piloto de chunk desta sessão), sincronizar staging, promover
-   (`promote_livros_trabalho_to_produção.py --apply`), reconstruir índice
-   (`build_clean_large_indexes.py --install`), reiniciar produção — tudo
-   isso já autorizado explicitamente pelo usuário nesta sessão, não
-   precisa de nova confirmação a cada etapa.
+1. **Aguardar o rebuild terminar** (rodando em segundo plano desde
+   2026-08-06 ~05:17 UTC). Ao terminar: instalar em
+   `experiments/uploaded_indexes/`, mas **não reiniciar produção sem
+   confirmação explícita nova do usuário** para esse passo específico
+   (ver seção acima).
 2. Deixar os agentes de chunk ainda em voo (da leva de 20 já lançada)
-   terminarem sozinhos — não lançar nenhum chunk novo.
+   terminarem sozinhos -- não lançar nenhum chunk novo (campanha de 8.580
+   chunks restantes pausada por decisão do usuário).
 3. **Lembrar o usuário**, quando ele retomar: decidir sobre adotar o
    modelo de 6 rodadas + ajustes de resposta + hierarquia de texto no
-   `agentic_search.py` real (ver seção acima) — pendente, não decidido.
-4. Depois da promoção: nenhuma ação adicional de escala/campanha sem
-   autorização nova.
+   `agentic_search.py` real (ver seção acima) -- pendente, não decidido.
+4. Depois da instalação/restart: nenhuma ação adicional de escala/
+   campanha sem autorização nova.
