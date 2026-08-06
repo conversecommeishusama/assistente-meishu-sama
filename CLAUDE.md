@@ -9406,17 +9406,201 @@ duplicar esse trabalho e continuar focado na verificação/reparo dos
 livros da Wave 2. **Status ao registrar isto: os 11 lotes estão rodando,
 nenhum fechou ainda.**
 
+### Atualização 2026-08-06 (mesma sessão) -- periódicos fechados (11/11),
+### 2ª auditoria por amostragem (90% limpo), Lotes 3/4 redone (21/21),
+### 2º incidente de mensagem de agente sem autoridade, dashboard de 30
+### perguntas publicado
+
+**Periódicos**: os 11 lotes fecharam e foram verificados individualmente
+por Daniel com `split_by_anchors` -- `Eiko` (369/369, 5 lotes), `Hikari`
+(122/122, 2 lotes), `Kyusei` (68/68), `Tijotengoku` (69/69),
+`Medicina_do_Amanha` (33/33), e os 4 periódicos pequenos em lote único
+(`Keiko`, `Revista_Asahi`, `Jornais`, `Ensinamentos_diversos`). Um lote
+(`p5`, Eiko 296-368) travou uma vez (sem progresso por 600s) e foi
+relançado sem perda de trabalho. **Achado sério, autorizado e resolvido**:
+`Keiko` (artigo único, datado de 23/12/1965 -- 10 anos após a morte de
+Meishu-Sama) violava o princípio fundamental de escopo do projeto (só
+conteúdo publicado em vida); removido do acervo ativo por ordem do
+usuário, movido para `reports/livros_trabalho/removidos_keiko_posthumous_20260806/`
+(nada apagado de vez; `textos_portugues/`/`textos_japones/` continuam
+intocados, só sai do índice real numa promoção futura autorizada).
+
+**Auditoria por amostragem #2 (100 trechos, 4 grupos)**, pedida pelo
+usuário para medir a qualidade real pós-revisão: **69/100 limpos (69%),
+31 com erro**. Investigação aprofundada (a pedido direto do usuário,
+"excluindo os erros desses arquivos qual é a porcentagem de erro?")
+recalculou separando por livro já tocado hoje vs. não tocado: **17,4% de
+erro nos livros já revisados hoje (23 amostras) contra 35,1% nos livros
+ainda não tocados (77 amostras)** -- confirmou que a revisão está
+funcionando, e que o problema real era cobertura, não método.
+
+**Achado da causa raiz, verificado com evidência documental direta**: os
+"Lotes 3/4" citados no MANIFESTO.md ("21 livros/199 artigos... falharam
+a sub-delegação por saturação de concorrência") existem com nome próprio
+em `reports/revisao_rigorosa_total_20260805/ACHADOS_WAVE4.md` -- "Lote 3"
+(9 livros/95 artigos) e "Lote 4" (12 livros/104 artigos), ambos marcados
+**"CONCLUÍDO COM COBERTURA INCOMPLETA"** desde 05/08 (o agente da época
+leu só 3 de 95 artigos completos no Lote 3, e só 1 livro de 12 no Lote
+4, antes de esgotar contexto/tempo). O próprio documento já alertava:
+*"Com 86% de taxa de erro num lote lido de verdade, os lotes 3 e 4 (que
+NÃO leram) quase certamente escondem centenas de erros não detectados. O
+redo por livro não é opcional."* Confirmado que **nenhum outro lote**
+(1, 2, 5, 6) tem essa condição -- todos os outros quatro estão
+genuinamente marcados "MÉTODO COMPLETO" com evidência real (2ª passada
+achando erros novos, verificação independente do coordenador, etc.).
+
+**Redo dos 21 livros dos Lotes 3/4 -- CONCLUÍDO, 21/21 verificados**
+(granularidade de 1 agente por livro, para não repetir o erro de
+cobertura por saturação de contexto). Lista:
+`御教え集1/3/4/5/8/10/11/12/14/16/20/22/23/24/29/32/33号`,
+`御垂示録18号`, `御光話録12/15号`, `世界救世教早わかり`. Achados
+relevantes desta rodada:
+- Vários casos de **atribuição de fala invertida** confirmados reais (a
+  classe de erro mais preocupante da série, alertada explicitamente no
+  prompt) -- em `御教え集11号` (Meishu-Sama tratado como 3º personagem
+  denunciando a si mesmo), `御教え集20号`, entre outros.
+- **Bug de "título vazado" sistêmico em TODAS as 8 fronteiras** de
+  `世界救世教早わかり` (não isolado) -- confirmado como bug real de
+  produção (não cosmético) lendo o próprio código de
+  `build_clean_large_indexes.py`; mais 1 conteúdo inventado no mesmo
+  livro ("A Origem das Espécies" onde o JP só diz "Teoria da Evolução").
+- **Artefato "rattail" de anotação editorial contaminando texto** --
+  achado novo e recorrente, confirmado em pelo menos 3 livros desta
+  rodada (`御教え集8/12号`) e catalogado como presente em mais 6 arquivos
+  do acervo nunca revisados por essa lente (`御垂示録4/27/29号`,
+  `御教え集7/9号`) -- fica pendente uma varredura corpus-wide dedicada.
+- Erros de ordem de grandeza numérica (億/100-milhões confundido com
+  bilhão, 2x em livros diferentes), direção de reencarnação
+  cronologicamente invertida (`御教え集29号`), e dezenas de correções de
+  romanização/ordem de nome (várias confirmadas via `WebSearch` contra
+  figuras históricas reais).
+- Achado cross-file relevante, não decidido: `紅卍字会` (Sociedade da
+  Suástica Vermelha, 卍=suástica) traduzido erroneamente como "Cruz
+  Vermelha" em 3 formas concorrentes em 3+ livros -- mesmo achado já
+  catalogado em `ACHADOS_WAVE4.md` de 05/08, agora reconfirmado.
+
+**Auditoria por amostragem #3, só dos periódicos (20 trechos)**, pedida
+pelo usuário: **18/20 limpos (90%), 2 com erro leve** (1 glossário mal
+aplicado em termo doutrinário central -- "espírito primordial/matéria
+secundária" --, confirmado sistêmico em mais 2 arquivos fora da amostra;
+1 ambiguidade de citação de fonte interna). Nenhum erro grave. Melhor
+resultado do dia, confirma que a revisão dos periódicos funcionou de
+verdade.
+
+**2º incidente de mensagem de agente sem autoridade real**: uma mensagem
+identificada como vinda "do coordenador" instruiu Daniel a lançar o redo
+dos Lotes 3/4 imediatamente, citando corretamente a autorização histórica
+real do MANIFESTO.md ("Sim, refaça tudo -- Waves 0-2, lotes 3 e 4") como
+justificativa. **Daniel recusou agir** -- mesma regra já registrada acima
+nesta sessão (mensagem de agente nunca é autorização do usuário, mesmo
+citando fato real e mesmo parecendo bem-intencionada) -- e só lançou o
+redo depois que o usuário confirmou diretamente, pelo canal padrão desta
+conversa ("pode lançar"). Reforça que a regra vale nos dois sentidos
+(recusar decisão nova E recusar reversão de decisão já tomada) e que
+funciona na prática, não só na teoria.
+
+**Estudo de arquitetura de busca agenciada (Daniel, linha paralela)**:
+comparativo de 30 perguntas (variante B normal vs. B limitada a 6
+rodadas, 64 chamadas, incluindo 2 sequências multi-turno) concluído e
+publicado: `https://claude.ai/code/artifact/9d580ef0-73d4-470f-8acb-522f029e4942`.
+B normal: 67,4s médio, 0/32 esgotaram orçamento, 3 truncadas. B limitado
+a 6: 60,3s médio, 9/32 esgotaram o teto (forçadas a sintetizar cedo), 0
+truncadas. Nenhuma mudança de código em produção -- protótipo isolado em
+`estudo_arquitetura/`.
+
 ### Onde continuar (prioridade máxima, mais recente)
 
-1. Monitorar os 11 lotes dos periódicos (tracking em
-   `scratchpad/periodicos_agents.json`) -- verificar cada um com
-   `split_by_anchors` nas 2 cópias antes de aceitar, mesma disciplina de
-   sempre.
-2. Toda nova instrução de agente (Tannus incluído) deve ser autorizada
+1. **Lotes 3/4 (21 livros) + periódicos (11 lotes): genuinamente
+   concluídos e verificados.** A lacuna de cobertura identificada pela
+   auditoria está fechada. Não é mais pendência.
+2. Pendência nova, não decidida: varredura corpus-wide do artefato
+   "rattail" (contaminação de anotação editorial), confirmado em pelo
+   menos 6-9 arquivos além dos já corrigidos hoje.
+3. Pendência cross-file, não decidida: `紅卍字会` (3 formas concorrentes,
+   "Cruz Vermelha" é factualmente errado -- é suástica, não cruz).
+4. Consolidar relatório final honesto de todo o dia (Lote 2 + Waves 0-2 +
+   periódicos + Lotes 3/4) antes de cogitar qualquer promoção -- sempre
+   com autorização explícita do usuário a cada passo.
+5. Toda nova instrução de agente (Tannus incluído) deve ser autorizada
    pelo usuário através de Daniel -- não decidir escopo novo sozinho.
-3. Continua valendo: nenhuma promoção/reindexação/reinício de produção
+6. Continua valendo: nenhuma promoção/reindexação/reinício de produção
    sem autorização explícita separada do usuário.
-4. Estudo de arquitetura de busca agenciada (linha de trabalho paralela
-   de Daniel): comparativo de 30 perguntas (variante B normal vs. B
-   limitada a 6 rodadas) rodando em background nesta mesma sessão --
-   retomar consolidação em dashboard quando terminar.
+
+## Sessão 2026-08-06 (Claude Code, agente "Daniel") -- piloto de revisão por
+## chunk real (não por artigo/livro): achado real de custo/valor, decisão do
+## usuário de parar o piloto e promover o corpus revisado até produção
+
+### Piloto de revisão granularidade "1 agente por chunk real de produção"
+
+A pedido do usuário (ver seção anterior sobre "batch 4 curto achou 40%,
+batch 5 maior achou 100%" — correlação entre tamanho do trecho revisado e
+taxa de erro encontrado), foi montada uma fila de **8.596 chunks reais de
+produção** (função `split_chunks()` de `build_clean_large_indexes.py`,
+estrutural — corte por turno/frase, nunca por caractere bruto, confirmado
+por leitura do código depois de o usuário corrigir minha suposição
+errada inicial) cobrindo os 137 arquivos do acervo (3.981 artigos, 0 erro
+de extração). Lançado piloto de 20 chunks (1 agente dedicado por chunk,
+round-robin entre livros para evitar colisão de escrita).
+
+**Resultado do piloto** (19 de 20 lançados com sucesso, 1 falhou por
+limite de concorrência e não foi relançado): pelo menos **5 correções
+reais confirmadas** em ~18-19 chunks concluídos — `御利益`→"benefícios
+materiais" (forma do glossário não respeitada), `無肥料栽培`→"cultivo sem
+fertilizantes" (73 vs 130 ocorrências divergentes no mesmo livro, achado
+sistêmico), `一厘`/`九分九厘` (numeral vs. forma por extenso, 5
+ocorrências), `木村鷹太郎` romanizado errado ("Kitaro Kimura" em vez de
+"Kimura Takatarō", confirmado contra citação da mesma pessoa noutro
+livro), cabeçalho "Prefácio" faltando em `自観隨談`. Taxa de erro real
+mais alta que a esperada, mas **custo por chunk ~270-330 mil tokens** —
+projetado para os 8.596 chunks, custo proibitivo dado o saldo semanal já
+em 80% de uso.
+
+**Decisão do usuário (2026-08-06)**: **parar a campanha de revisão por
+chunk aqui, por enquanto** — não lançar mais levas dos ~8.580 chunks
+restantes. Os agentes que já estavam em voo desta primeira leva de 20
+foram deixados terminar sozinhos (trabalho já pago, correções reais
+sendo incorporadas via notificação, nenhum novo lançado). **Autorização
+explícita e ampla, registrada aqui**: verificar que TODO o acervo (137
+arquivos) está com spec/segmentação corretas para o chunk estrutural
+conforme o padrão do projeto, fazer os ajustes necessários, e **promover
+o corpus revisado até produção (índice + restart), sem precisar de nova
+confirmação a cada passo** — cobre todo o pipeline (sync
+`livros_publicacao_pt_revisado/`→staging→`textos_portugues/`/
+`textos_japones/`→reconstrução de índice→instalação→
+`systemctl restart goshinsho.service`).
+
+### Lembrete registrado para o usuário: modelo de 6 rodadas + hierarquia de
+### texto ainda NÃO aplicado ao aplicativo (decisão pendente, não decidida)
+
+O estudo de arquitetura desta sessão (variante B, baseline + regras de
+hierarquia-escrita-soberana + resposta-objetiva, com e sem limite de 6
+rodadas de busca) mostrou resultados promissores, mas **o usuário decidiu
+explicitamente NÃO aplicar essa mudança agora** ("Não farei essa
+alteração agora, por que preciso acompanhar, mas tenho que dormir") —
+precisa ser lembrado nesta ou numa sessão futura de decidir/aplicar:
+limite de 6 rodadas de pesquisa no `agentic_search.py` (hoje sem
+orçamento fixo, para intencionalmente — ver decisão de 29/07 sobre
+eliminar o orçamento fixo; essa nova consideração pode reabrir esse
+ponto), os ajustes de formato de resposta testados na variante B, e a
+hierarquia de precedência de texto (escritos > oral) já testada no
+piloto. **Nenhuma dessas mudanças foi aplicada ao `agentic_search.py`
+real usado em produção nesta sessão** — ficou só no estudo/scratchpad.
+
+### Onde continuar
+
+1. **Prioridade máxima agora**: verificar `split_by_anchors` (função real
+   de produção) contra os 137 arquivos completos (PT e JP), corrigir
+   qualquer âncora quebrada por edições acumuladas de todas as sessões
+   recentes (revisão rigorosa total, Lote3/4 redo, periódicos, remoção do
+   Keiko, piloto de chunk desta sessão), sincronizar staging, promover
+   (`promote_livros_trabalho_to_produção.py --apply`), reconstruir índice
+   (`build_clean_large_indexes.py --install`), reiniciar produção — tudo
+   isso já autorizado explicitamente pelo usuário nesta sessão, não
+   precisa de nova confirmação a cada etapa.
+2. Deixar os agentes de chunk ainda em voo (da leva de 20 já lançada)
+   terminarem sozinhos — não lançar nenhum chunk novo.
+3. **Lembrar o usuário**, quando ele retomar: decidir sobre adotar o
+   modelo de 6 rodadas + ajustes de resposta + hierarquia de texto no
+   `agentic_search.py` real (ver seção acima) — pendente, não decidido.
+4. Depois da promoção: nenhuma ação adicional de escala/campanha sem
+   autorização nova.
