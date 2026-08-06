@@ -9630,13 +9630,24 @@ restart nem "sem consultar"). **Decisão (minha): instalar em
 staging), mas PARAR antes de `systemctl restart goshinsho.service` e
 pedir confirmação explícita do usuário para esse passo específico.**
 
+### Atualização: usuário confirmou explicitamente ("reinicie sozinho")
+
+Depois do gate registrado acima, o usuário respondeu diretamente nesta
+mesma conversa: **"reinicie sozinho"** -- autorização explícita e direta
+(não via relay de agente) para instalar + reiniciar produção sem pedir
+confirmação de novo quando o rebuild terminar. Gate satisfeito. Rebuild
+teve que ser relançado 1x (1ª tentativa via `Bash run_in_background`
+morreu com status "killed" aos ~58min/~30% sem erro do script --
+provavelmente fronteira de sessão; relançado dentro de sessão tmux
+`rebuild_index_20260806` para resistir a isso, com `Monitor` persistente
+avisando quando terminar).
+
 ### Onde continuar
 
-1. **Aguardar o rebuild terminar** (rodando em segundo plano desde
-   2026-08-06 ~05:17 UTC). Ao terminar: instalar em
-   `experiments/uploaded_indexes/`, mas **não reiniciar produção sem
-   confirmação explícita nova do usuário** para esse passo específico
-   (ver seção acima).
+1. **Aguardar o rebuild terminar** (tmux `rebuild_index_20260806`,
+   monitorado). Ao terminar: instalar em `experiments/uploaded_indexes/`
+   **e reiniciar produção**, ambos autorizados explicitamente pelo
+   usuário -- não pedir confirmação de novo.
 2. Deixar os agentes de chunk ainda em voo (da leva de 20 já lançada)
    terminarem sozinhos -- não lançar nenhum chunk novo (campanha de 8.580
    chunks restantes pausada por decisão do usuário).
