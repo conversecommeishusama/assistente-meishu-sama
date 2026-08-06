@@ -30,7 +30,20 @@ def _public_auth_redirect(path="/app", **query):
     return url
 
 
-def _admin_generate_signup_link(email, redirect_to):
+def _admin_generate_signup_token(email):
+    """Gera exatamente 1 token de confirmação via admin API, sem devolver o
+    link cru da Supabase (que aponta pro /auth/v1/verify e é consumido por
+    QUALQUER requisição GET, inclusive varredura automática de segurança de
+    provedor de e-mail -- Gmail/Outlook corporativo pré-acessam links de
+    e-mail antes do usuário abrir, e isso gasta o token de uso único antes
+    do clique real).
+
+    2026-08-06: devolve (hashed_token, verification_type) em vez do link,
+    para que _deliver_signup_confirmation_email monte um link pro NOSSO
+    domínio (/confirmar-email) -- só quando o usuário clica de verdade num
+    botão nessa página é que o token é de fato trocado (POST server-side
+    pro /auth/v1/verify da Supabase), imune a pré-varredura.
+    """
     service_key = Config.SUPABASE_SERVICE_ROLE_KEY
     if not service_key or not Config.SUPABASE_URL:
         return None
@@ -42,28 +55,41 @@ def _admin_generate_signup_link(email, redirect_to):
                 "Authorization": f"Bearer {service_key}",
                 "Content-Type": "application/json",
             },
-            json={"type": link_type, "email": email, "options": {"redirect_to": redirect_to}},
+            json={"type": link_type, "email": email, "options": {}},
             timeout=15,
         )
         if response.status_code >= 400:
             continue
         payload = response.json()
-        link = payload.get("action_link") or (payload.get("properties") or {}).get("action_link")
-        if link:
-            return link
+        hashed_token = payload.get("hashed_token")
+        verification_type = payload.get("verification_type") or link_type
+        if hashed_token:
+            return hashed_token, verification_type
     return None
 
 
 def _deliver_signup_confirmation_email(email, redirect_to):
-    """Envia confirmação via SES quando Supabase SMTP falha ou não está configurado."""
+    """Envia confirmação via SES quando Supabase SMTP falha ou não está configurado.
+
+    2026-08-06: o link enviado agora aponta pro NOSSO /confirmar-email (não
+    mais direto pro /auth/v1/verify da Supabase) -- ver _admin_generate_signup_token.
+    O parâmetro redirect_to é mantido só por compatibilidade de assinatura
+    (não é mais usado para montar o link em si, a página /confirmar-email
+    sempre manda pro /app depois de confirmar).
+    """
     try:
         from .email_service import is_email_configured, send_email
 
         if not is_email_configured():
             return False
-        link = _admin_generate_signup_link(email, redirect_to)
-        if not link:
+        token_info = _admin_generate_signup_token(email)
+        if not token_info:
             return False
+        hashed_token, verification_type = token_info
+        link = (
+            f"{Config.PUBLIC_SITE_URL}/confirmar-email"
+            f"?{urlencode({'token_hash': hashed_token, 'type': verification_type, 'email': email})}"
+        )
         send_email(
             email,
             "Confirme seu cadastro - Goshinsho",
@@ -82,6 +108,49 @@ def _deliver_signup_confirmation_email(email, redirect_to):
         return True
     except Exception:
         return False
+
+
+def confirm_signup_token(token_hash, verification_type="signup"):
+    """Troca o token (só chamado quando o usuário clica de verdade no botão
+    da página /confirmar-email -- nunca a partir de um GET cru de e-mail).
+
+    Confirma o e-mail no Supabase Auth via POST server-side (não expõe o
+    link consumível por varredura automática) e devolve o perfil pronto
+    pra logar (mesmo formato de login_user), ou None se o token for
+    inválido/expirado (ex. clicado 2x, ou depois de 24h).
+    """
+    if not Config.SUPABASE_URL or not Config.SUPABASE_KEY:
+        return None
+    response = requests.post(
+        f"{Config.SUPABASE_URL.rstrip('/')}/auth/v1/verify",
+        headers={"apikey": Config.SUPABASE_KEY, "Content-Type": "application/json"},
+        json={"type": verification_type or "signup", "token_hash": token_hash},
+        timeout=15,
+    )
+    if response.status_code >= 400:
+        return None
+    payload = response.json()
+    user_data = payload.get("user") or {}
+    uid = user_data.get("id")
+    if not uid:
+        return None
+
+    supabase = get_supabase()
+    data = supabase.table("usuarios").select("*").eq("id", uid).execute()
+    if data.data:
+        profile = data.data[0]
+    else:
+        admin = _get_supabase_admin()
+        auth_user = admin.auth.admin.get_user_by_id(uid).user if admin else None
+        if not auth_user:
+            return None
+        profile = _ensure_usuario_profile(
+            supabase, auth_user, defaults={"data_criacao": datetime.now(timezone.utc).isoformat()}
+        )
+    profile = refresh_user_profile(uid) or profile
+    enriched = dict(profile)
+    enriched["email_confirmado"] = True
+    return enriched
 
 
 def _is_duplicate_email_error(exc):
@@ -366,13 +435,31 @@ def register_user(email, password, *, allow_bot_check=True, form=None):
         resend_signup_confirmation(normalized_email)
         raise ValueError(EMAIL_CONFIRMATION_REQUIRED)
 
-    response = supabase.auth.sign_up(
-        {
-            "email": email,
-            "password": password,
-            "options": {"email_redirect_to": redirect_to},
-        }
-    )
+    # 2026-08-06: criação via admin API (email_confirm=False) em vez de
+    # supabase.auth.sign_up(). Causa raiz real de "confirmei e continua
+    # pedindo confirmação" investigada e confirmada nesta sessão: sign_up()
+    # dispara o e-mail nativo de confirmação da Supabase por conta própria
+    # (token A); o código antigo ainda chamava resend() logo em seguida
+    # (token B, invalida A) e por fim gerava o link que de fato mandávamos
+    # por e-mail via SES (token C, invalida B) -- três tokens concorrentes
+    # por cadastro, cada um invalidando o anterior. Se o e-mail nativo da
+    # Supabase (com token A ou B) chegasse e a pessoa clicasse nele em vez
+    # do nosso, o link SEMPRE estaria inválido por definição, mesmo sendo
+    # um clique real e imediato. create_user(email_confirm=False) não
+    # dispara nenhum e-mail/token automático -- o único token gerado é o
+    # da chamada única em _deliver_signup_confirmation_email logo abaixo.
+    admin = _get_supabase_admin()
+    if not admin:
+        raise ValueError(SIGNUP_GENERIC_ERROR)
+    try:
+        response = admin.auth.admin.create_user(
+            {"email": email, "password": password, "email_confirm": False}
+        )
+    except Exception as exc:
+        message = str(exc).lower()
+        if "already" in message or "duplicate" in message or "registered" in message:
+            raise ValueError("Este e-mail já está cadastrado. Faça login com sua senha.")
+        raise
     user = response.user
     if not user:
         raise ValueError(SIGNUP_GENERIC_ERROR)
@@ -386,20 +473,6 @@ def register_user(email, password, *, allow_bot_check=True, form=None):
     )
 
     if not _auth_user_email_confirmed(user):
-        try:
-            supabase.auth.resend(
-                {
-                    "type": "signup",
-                    "email": normalized_email,
-                    "options": {"email_redirect_to": redirect_to},
-                }
-            )
-        except Exception:
-            pass
-        try:
-            supabase.auth.sign_out()
-        except Exception:
-            pass
         session.pop("user", None)
         _deliver_signup_confirmation_email(normalized_email, redirect_to)
         raise ValueError(EMAIL_CONFIRMATION_REQUIRED)
@@ -422,13 +495,11 @@ def resend_signup_confirmation(email):
     if not normalized_email:
         raise ValueError("Informe seu e-mail.")
     redirect_to = _public_auth_redirect("/app", panel="login", confirmed="1")
-    get_supabase().auth.resend(
-        {
-            "type": "signup",
-            "email": normalized_email,
-            "options": {"email_redirect_to": redirect_to},
-        }
-    )
+    # 2026-08-06: removida a chamada extra a get_supabase().auth.resend()
+    # -- ela gerava um token concorrente que _deliver_signup_confirmation_email
+    # invalidava na sequência (ver nota em register_user), sem nenhum
+    # benefício, já que nunca usávamos o resultado dela. Um único token,
+    # gerado abaixo, é suficiente e evita a corrida entre dois links.
     _deliver_signup_confirmation_email(normalized_email, redirect_to)
 
 

@@ -32,6 +32,7 @@ from .services.auth_service import (
     EMAIL_NOT_CONFIRMED_MESSAGE,
     FREE_MONTHLY_QUESTIONS,
     check_question_quota,
+    confirm_signup_token,
     consume_question_quota,
     current_user,
     is_email_confirmed,
@@ -825,6 +826,54 @@ def reenviar_confirmacao():
     except Exception as exc:
         flash(_friendly_error(exc), "error")
     return redirect(url_for("web.app_view", panel="login"))
+
+
+@web_bp.get("/confirmar-email")
+def confirmar_email_pagina():
+    """Página intersticial de confirmação de cadastro.
+
+    2026-08-06: existe pra corrigir um bug real -- o link antigo apontava
+    direto pro endpoint de verificação da Supabase, que é consumido por
+    QUALQUER requisição GET (inclusive varredura automática de segurança
+    de provedor de e-mail, que "clica" nos links antes do usuário abrir a
+    mensagem). Essa página em si não confirma nada (é só leitura/render);
+    a confirmação de verdade só acontece no POST abaixo, disparado por um
+    clique real do usuário -- imune a esse tipo de pré-varredura.
+    """
+    token_hash = request.args.get("token_hash", "").strip()
+    verification_type = request.args.get("type", "signup").strip() or "signup"
+    email = request.args.get("email", "").strip()
+    if not token_hash:
+        flash("Link de confirmação inválido. Solicite um novo.", "error")
+        return redirect(url_for("web.app_view", panel="login"))
+    return render_template(
+        "confirmar_email.html",
+        token_hash=token_hash,
+        verification_type=verification_type,
+        email=email,
+    )
+
+
+@web_bp.post("/confirmar-email")
+def confirmar_email_concluir():
+    token_hash = request.form.get("token_hash", "").strip()
+    verification_type = request.form.get("verification_type", "signup").strip() or "signup"
+    if not token_hash:
+        flash("Link de confirmação inválido. Solicite um novo.", "error")
+        return redirect(url_for("web.app_view", panel="login"))
+    profile = confirm_signup_token(token_hash, verification_type)
+    if not profile:
+        flash(
+            "Este link de confirmação já foi usado ou expirou (é comum quando o "
+            "provedor de e-mail pré-acessa o link antes de você abrir a mensagem). "
+            "Solicite um novo link abaixo.",
+            "error",
+        )
+        return redirect(url_for("web.app_view", panel="login"))
+    session.permanent = True
+    session["user"] = profile
+    flash("E-mail confirmado com sucesso! Bem-vindo(a).", "success")
+    return redirect(url_for(_default_app_endpoint(profile)))
 
 
 @web_bp.post("/recuperar-senha")

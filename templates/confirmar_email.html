@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confirmar cadastro - Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=150">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
+                <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                <span>Goshinsho</span>
+            </a>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="flash-list">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        <section class="pricing-hero">
+            <p class="eyebrow">Falta só um passo</p>
+            <h1>Confirmar seu cadastro</h1>
+            <p class="pricing-why">
+                {% if email %}Confirme o cadastro de <strong>{{ email }}</strong> clicando no botão abaixo.{% else %}Clique no botão abaixo para confirmar seu cadastro.{% endif %}
+                Esse clique precisa ser feito por você mesmo -- não confirmamos automaticamente ao
+                abrir esta página, porque alguns provedores de e-mail pré-acessam links de forma
+                automática antes de você ler a mensagem, o que gastaria o link sem a sua ação real.
+            </p>
+            <form method="post" action="{{ url_for('web.confirmar_email_concluir') }}">
+                <input type="hidden" name="token_hash" value="{{ token_hash }}">
+                <input type="hidden" name="verification_type" value="{{ verification_type }}">
+                <button type="submit" style="padding:0.75rem 1.5rem; font-size:1rem; border-radius:0.5rem; cursor:pointer; background:var(--primary,#4a63e7); color:#fff; border:none;">
+                    Confirmar meu cadastro
+                </button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
