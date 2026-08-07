@@ -57,6 +57,20 @@ DECISOES = [
     ("悪霊", ["Espírito do Mal", "espírito do mal"], "espírito maligno"),
 ]
 
+# Quando a forma errada é palavra COMUM em português, a contagem sozinha não
+# basta: um artigo pode ter 祝詞 três vezes e "oração" três vezes por
+# coincidência, com parte das "orações" traduzindo 祈り. Nesses casos só toca
+# o artigo se o japonês NÃO tiver o termo concorrente.
+CONFLITOS = {
+    "祝詞": ["祈り", "祈願", "お祈り", "御祈願", "善言讃詞"],
+    "支部": ["中心", "拠点", "本部"],
+}
+
+DECISOES += [
+    ("祝詞", ["orações", "oração", "preces", "prece"], "norito"),
+    ("支部", ["Centros Regionais", "centros regionais", "núcleos", "núcleo"], "filial"),
+]
+
 _cache: dict[str, tuple[list[str], list[str]]] = {}
 
 
@@ -98,6 +112,10 @@ def main() -> None:
                 continue
             for jp, pt in zip(ajp, apt):
                 if chave not in jp or certo in pt:
+                    continue
+                conflito = next((c for c in CONFLITOS.get(chave, []) if c in jp), None)
+                if conflito:
+                    pulados.append((chave, obra, f"convive com {conflito}", 0, 0))
                     continue
                 njp = jp.count(chave)
                 for errado in errados:
