@@ -44,8 +44,20 @@ CJK = re.compile(r"[぀-ヿ㐀-䶿一-鿿]")
 
 
 def fold(s: str) -> str:
+    """Minúscula, sem acento e SEM MARCA DE PLURAL.
+
+    O plural cai no meio de expressões de várias palavras -- "micróbio
+    patogênico" contra "micróbios patogênicos" --, então a comparação por
+    substring falhava mesmo com o termo aplicado corretamente. Medido: 16
+    ocorrências reais de "micróbios patogênicos" no acervo eram contadas como
+    ausência de `病菌`, e o mesmo padrão inflava a contagem de todos os 608
+    termos. Remover o `s` final de cada palavra dos DOIS lados resolve; é
+    grosseiro para o português mas simétrico, e erra para o lado permissivo,
+    que é o certo para quem procura faltas.
+    """
     s = unicodedata.normalize("NFD", s.lower())
-    return "".join(c for c in s if unicodedata.category(c) != "Mn")
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return re.sub(r"([a-z])s\b", r"\1", s)
 
 
 def formas_aceitas(valor: str) -> list[str]:
@@ -70,6 +82,12 @@ def formas_aceitas(valor: str) -> list[str]:
         pedaco = pedaco.strip()
         if len(pedaco) >= 4:
             formas.add(pedaco)
+    # Variante com hífen: o corpus escreve "Daikōmyō-Nyorai" e o glossário
+    # registra "Daikōmyō Nyorai". Sem aceitar as duas, o termo aparecia como
+    # violado em artigos que na verdade o aplicam corretamente.
+    for f in list(formas):
+        if " " in f:
+            formas.add(f.replace(" ", "-"))
     return [fold(f) for f in formas if len(f.strip()) >= 3]
 
 
