@@ -10502,3 +10502,101 @@ Faixa E caiu de 25 para 18: as correções desta rodada resolveram 7.
    que continua exigindo autorização explícita.
 3. Etapa 4 (leitura de fidelidade artigo a artigo) só depois da 3 fechar --
    e agora contra japonês corrigido, o que muda a qualidade do que ela vai ver.
+
+## Atualização 2026-08-07 (fim de sessão) -- faixa A julgada, decisões do
+## usuário aplicadas, e um defeito meu que só apareceu na verificação
+
+### Faixa A (294 termos) -- o número que importa não é o primeiro
+
+    190  aplicados em 100% dos artigos, nada a julgar
+    104  com alguma falta, julgados:
+           48 FALSO_POSITIVO · 35 VIOLACAO (93 artigos) · 18 SISTEMATICO · 3 INCERTO
+
+Os 190 apareceram como "erro: nenhuma amostra recuperada" na primeira leitura,
+porque meu filtro de faixa incluía taxa de 100%. Rótulo enganoso -- eles são o
+melhor resultado possível. Corrigido: termo sem falta não gasta chamada de API.
+
+### O achado mais importante veio de VERIFICAR um resultado, não de gerá-lo
+
+O DeepSeek marcou `御垂示録` como violação em 6 artigos, dizendo que o
+português omitia a citação de fonte （御垂示録 19号 P.24）. Fui ao arquivo: a
+citação ESTÁ no texto, dentro do título do item. A âncora é que apontava para
+`(Pergunta)`, deixando o título com sua citação pendurado no artigo anterior --
+e o modelo julgou o artigo como a âncora o delimitou.
+
+**Segunda assinatura do bug de âncora**, que a regra H5 da varredura não pegava
+(só procurava byline). 37 âncoras movidas em `浄霊法講座 7号`; citações de fonte
+ausentes no português caíram de 6 de 8 para 0 de 8.
+
+GUARDA que evitou repetir um erro já catalogado: o diagnóstico inicial acusou
+79 âncoras, mas as de `御教え集`/`御光話録` moviam a âncora para uma LINHA DE
+DATA -- e nessa série a data ficar no fim do artigo anterior é convenção
+deliberada, confirmada em 32 dos 33 volumes. Já tratei isso como defeito uma
+vez neste projeto e tive de reverter. Dos 79, sobraram os 37 legítimos.
+
+### Defeito que EU introduzi, achado pela mesma via
+
+A correção de âncoras mexeu só no lado português. O japonês ficou para trás e
+os dois lados passaram a delimitar artigos diferentes -- foi isso que fez o
+julgamento acusar `明主様`, `人霊` e `潰瘍` como omitidos: não estavam omitidos,
+estavam no artigo vizinho de um dos lados. **100 âncoras japonesas
+realinhadas**, assimetria de 94 para 1.
+
+E repeti um bug que este projeto já corrigiu uma vez: usei `[都道府県]` como
+classe de caractere, que casa com `道` em qualquer posição -- e 道 é "caminho".
+O título 「二道かけていた愚かな私の告白」 foi lido como endereço e descartado. O
+`jp_line_split.py` teve exatamente esse bug com 夫婦の道.
+
+### Decisões do usuário nesta rodada
+
+| termo | decisão | efeito |
+|---|---|---|
+| `地上天国` | "Paraíso Terrestre" (padrão da IMMB, ajuda a busca) | 889 ocorrências |
+| `悪霊` | "espíritos malignos" | 8 |
+| `真善美` | "Verdade, Bem e Belo" / "a Verdade, o Bem e o Belo" -- Bem por oposição a Mal (zenaku), nunca Bondade | 3 |
+| `野菜` | "hortaliças"; legumes se só não-folhas; verduras se só folhas | 85 artigos, em curso |
+| `唯物論` | "teoria materialista" | entrada nova |
+| `唯心論` | "teoria espiritualista" | entrada nova |
+| `唯物思想` | mantém "pensamento materialista" | 0 |
+| bloco 1 (7 termos já decididos antes) | aplicar | 24 |
+
+**No `地上天国` levei o número de volta ao usuário antes de aplicar**: minha
+pergunta falava de 11 artigos divergentes, e a resposta dele redefinia a forma
+canônica -- o que muda mais de mil ocorrências. A frase admitia duas leituras e
+não quis escolher sozinho. Ele confirmou: padrão da IMMB.
+
+**No `唯物論` o usuário me corrigiu e ele estava certo.** Eu propus "doutrina
+materialista"; ele observou que "teoria" em português não se limita a hipótese
+científica. O corpus prova: usa "teoria do ki", "teorias da medicina", e reserva
+"doutrina" para a própria doutrina da Igreja ("Em nossa doutrina..."). Uma frase
+do acervo resolve sozinha: *"se a doutrina e a teoria da fé se mostrarem
+racionais"*.
+
+### A guarda de contagem, que evitou 10 estragos
+
+A aplicação só troca dentro de artigo cujo japonês contém a chave, E só quando a
+contagem bate. Pulou 10 casos, cada um um estrago em potencial:
+
+    肺結核    JP 1x, PT 11x "doença pulmonar" -- as outras 10 traduzem outro termo
+    大先生    JP 1x, PT 2x "o Mestre" -- o outro é 先生
+    大光明如来 JP 1x, PT 2x "Komyo-Nyorai" -- o outro é 光明如来, legítimo sem o Dai
+
+### Achados abertos, para decisão do usuário
+
+1. **`救世会館` e `メシヤ会館` são quase certamente o mesmo prédio** -- `救世` se
+   lê "meshiya", como em `世界救世教` / `世界メシヤ教`, e os contextos falam do
+   mesmo prédio de Atami. Hoje: "Templo Messiânico" (60) x "Salão Messiânico"
+   (18, sem entrada no glossário).
+2. **116 citações do periódico `地上天国`** ficaram como "Paraíso na Terra nº X",
+   preservadas de propósito. Mas os periódicos irmãos são citados por
+   transliteração ("Eikō nº 167", "Mioshie-shū nº 22") -- essas já divergiam do
+   padrão antes desta rodada.
+3. Os 10 casos pulados pela guarda de contagem, para tratamento individual.
+
+### Onde continuar
+
+1. `野菜` em classificação por modelo (85 artigos) -- "vegetais" traduz tanto
+   `野菜` quanto `植物`, e trocar às cegas viraria "óleo de hortaliça".
+2. Faixas B (181 termos) e C (70) do glossário ainda não julgadas.
+3. Nada da etapa 3 chega ao aplicativo antes de uma reconstrução de índice, que
+   continua exigindo autorização explícita.
