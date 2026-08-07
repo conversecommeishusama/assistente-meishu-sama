@@ -10072,3 +10072,173 @@ contra **130-175s medidos pelo usuário no site**. Se a diferença estiver no
 histórico de conversa injetado no prompt ou na camada HTTP/worker, é ali
 que está o maior ganho de latência restante -- e nada disso foi investigado
 ainda. Refazer agora mede a produção já com o cap corrigido.
+
+## Sessão 2026-08-07 (continuação) -- plano de 5 etapas para a revisão final
+## acordado com o usuário; checklist de protocolo extraída; etapa 1 (varredura
+## determinística) implementada e rodada no acervo inteiro
+
+### Contexto: o que o usuário quer desta revisão
+
+O usuário vai **ler todo o acervo pessoalmente ao longo dos próximos meses**
+para fazer a revisão humana e depois publicar em livros. O que ele precisa da
+revisão automática, em ordem declarada de prioridade:
+
+1. Glossário 100% implementado.
+2. Nenhum erro de tradução.
+3. Termos que precisam entrar no glossário, apontados (ex.: `御尊影` →
+   "Fotografia de Meishu-Sama", achado neste dia sem entrada, romanizado cru).
+4. Padronização do protocolo -- formato de nome, data, cabeçalho etc.
+
+### Plano de 5 etapas, acordado (o usuário aprovou e ajustou)
+
+| etapa | o que | quem faz | quem confere |
+|---|---|---|---|
+| 1 | Regras de protocolo verificáveis por script | script, custo zero | -- |
+| 2 | Correção das 2 violações estruturais (corte por caractere; âncoras) | script | -- |
+| 3 | Julgar as 698 entradas do glossário, uma a uma | DeepSeek | Claude acompanha; dúvidas vão ao usuário no final, em pergunta e resposta |
+| 4 | Leitura de fidelidade artigo a artigo | DeepSeek corrige | Claude audita; **conflito vai ao usuário** |
+| 5 | Claude reservado para o que o DeepSeek marcar como grave ou onde falhar | -- | -- |
+
+**Duas mudanças que eu propus e o usuário incorporou** (registradas porque
+mudam o desenho, não só a execução):
+
+1. **Na etapa 4, separar por gravidade.** Grave e médio (sentido invertido,
+   sujeito trocado, omissão, número errado) o DeepSeek corrige e eu audito.
+   Achados "leve" viram **anotação na margem**, não correção -- porque aplicar
+   milhares de ajustes de nuance empurra o texto para o literalismo, contra o
+   §3 do protocolo de tradução, e é exatamente onde o julgamento do usuário
+   lendo vale mais que o de qualquer modelo. Exemplo real que motivou:
+   `不慮の死` ("morte inesperada") traduzido como "morre de forma violenta"
+   para Jesus e Gandhi -- os dois **foram** mortos com violência; a tradução
+   escolheu a palavra concreta, e trocar seria empobrecer.
+2. **Toda edição revalida a âncora no mesmo passo.** Em julho, edições
+   legítimas quebraram silenciosamente as âncoras de 102 dos 128 livros. Se o
+   DeepSeek editar milhares de trechos, isso se repete em escala maior.
+3. **Conflitos vão ao usuário agrupados por padrão, não um a um** -- "quer
+   trocar X por Y em 40 lugares, discordo por Z" é uma pergunta, não quarenta.
+
+### Evidência que sustentou a escolha do DeepSeek para as etapas 3 e 4
+
+Bateria de 10 artigos com o DeepSeek rodando **dentro do laço agenciado de
+produção**, com ferramentas de busca no acervo PT e JP (o teste anterior o
+comparava sem ferramentas, crítica válida do usuário):
+
+- **US$ 0,032 pelos 10 artigos.** Projetado para os 3.977 artigos do acervo:
+  **~US$ 13**. O mesmo trabalho com agentes Claude mediu 3,03 milhões de
+  tokens por 10 artigos → ~1,2 bilhão no acervo, várias vezes a cota semanal.
+- No artigo maior (23 mil caracteres, uma entrevista), enumerou **188 pares de
+  frase JP↔PT**, confirmou 162 como fiéis citando o japonês de cada um, e
+  marcou 26 com achado. **Cobertura demonstrada**, não amostrada -- nenhum
+  agente Claude fez isso.
+- 2 falhas em 10, e **a causa é do meu harness, não dele**: o raciocínio
+  consumiu o orçamento de saída e o módulo devolveu a mensagem padrão "Não
+  consegui sintetizar uma resposta"; minha retomada só disparava com resposta
+  vazia, e essa mensagem não é vazia. Bug de três linhas no script de teste.
+
+### Checklist consolidada de protocolo -- `reports/CHECKLIST_PADRONIZACAO.md`
+
+Extraídas dos 7 documentos de protocolo (`protocolo.txt`,
+`protocolo_traducao.txt` com suas 461 linhas, `protocolo_revisao.txt`,
+`protocolo_retraducao.txt`, `PROTOCOLO_REVISAO_LITERARIA_FASE_F.md`,
+`PROTOCOLO_CHUNK_TURNAWARE.md`, `PROTOCOLO_REVISAO_PERIODICOS.md`):
+**57 regras determinadas**, cada uma classificada em verificável por script
+(34), script gera candidatos e alguém julga (12), ou exige leitura por modelo
+(11).
+
+**O achado central é favorável: a maior parte do protocolo é mecânica.** O que
+realmente precisa de modelo é fidelidade, mais nome próprio, título e
+atribuição de fala. Regras que estavam no protocolo e nunca tinham sido
+verificadas sistematicamente: **D7/D8** (proibido citar o Zenshū como fonte em
+qualquer cabeçalho, direitos autorais ativos), **A7** (`言霊` com aspas na 1ª
+ocorrência, sem aspas depois, nunca "Kotodama"), **C7** (colchete de dúvida do
+tradutor vazando para o publicado), **F1/§5.1(b)** (kanji só entre aspas com
+romaji entre parênteses; `§5.2` proíbe expressamente a forma `(五)`).
+
+### Etapa 1 executada -- `scripts/varredura_padronizacao.py` (commit `1c05567`)
+
+Lê pelo **mesmo caminho da produção** (`clean_body` + `split_by_anchors`), para
+que um achado seja um achado no que o usuário final recebe, não no arquivo de
+trabalho. Não edita nada. Saída em `reports/varredura_padronizacao/`:
+`ACHADOS.json`, `RESUMO.md`, `GLOSSARIO.md`, `por_livro/*.md`.
+
+**Resultado: 137 obras, 2.691 achados, 48 obras completamente limpas.**
+
+| regra | ocorrências | obras |
+|---|---:|---:|
+| G4 artigo escrito cortado por contagem de caractere | 1078 | 50 |
+| R1 negrito markdown como convenção (decisão do usuário) | 945 | 24 |
+| F1 caractere japonês fora da exceção do §5.1(b) | 253 | 20 |
+| H5 âncora em byline com cabeçalho vazando | 157 | 4 |
+| C5 ano de era sem a era nomeada | 135 | 14 |
+| C8 caixa inconsistente em "Era Showa" | 52 | 33 |
+| A4 terminologia proibida (30 "Kotodama", 2 "Mahayana") | 32 | 7 |
+| C4 número de edição fora de "nº N" | 29 | 14 |
+| A3 glosa aninhada · A6 §2.6 sem o JP · C7 colchete de dúvida | 10 | 7 |
+
+**Zero achados em D7 (Zenshū citado), D9 (metadado vazando) e R2 (corrupção de
+OCR)** -- essas três estão genuinamente limpas no acervo inteiro.
+
+### 4 regras corrigidas durante a própria validação (todas davam falso positivo)
+
+Registrado porque é o padrão que sustenta a qualidade: **conferir os achados
+contra o texto real antes de reportar**, nunca confiar na contagem.
+
+1. **A4/A6** -- o §2.6 é **condicional** ("só se o japonês do trecho usar
+   explicitamente o equivalente"). Sem checar o JP do artigo, "nuvens
+   espirituais" gerava **430 falsos positivos**: é a forma canônica de 曇/曇り
+   no glossário. Separada em A4 (incondicional) e A6 (condicional): 430 → 3.
+2. **F1** -- o §5.1(b) permite o kanji **entre aspas com romaji entre
+   parênteses**. A checagem passou a classificar em vez de contar: `"丁" (chō)`
+   conforma e não é achado; `(春)` viola o §5.2 expressamente. 460 → 253.
+3. **C5** -- "22º ano (1947)" traz o ano gregoriano e era contado como erro.
+   Passou a separar "sem era nem gregoriano" de "gregoriano presente, era não
+   nomeada", e a exigir o ordinal (senão "(1 ano)" de idade entrava).
+4. **R1** -- negrito markdown **não é resíduo**: o §4.4-A2 prescreve `**data**`
+   em negrito e várias obras o usam como marcação de seção. Reclassificado de
+   "leve" para **decisão do usuário** -- é convenção inconsistente entre obras
+   (24 de 137 usam), não defeito.
+
+### Achado sério novo, confirmado no texto real: âncora cortando nome ao meio
+
+O bug de vazamento de cabeçalho em `19530910-世界救世教奇蹟集.txt` já estava
+catalogado (05/08, batch22, nunca fechado). A varredura o reproduziu de forma
+independente **e mostrou que é pior do que descrito**: em **13 pontos a âncora
+corta o nome de uma pessoa ao meio**. Exemplo verificado lendo o texto:
+
+```
+artigo 132 (fim)   ... não tenho receio de afirmar isso abertamente.
+                   Curada pelo Johrei de uma grande cirurgia ...   <- TÍTULO do 133
+                   Mitsue                                          <- 1º nome do autor do 133
+artigo 133 (início) Watanabe (40 anos)                             <- sobrenome + idade
+```
+
+Ou seja: o título e metade do nome do depoente ficam atribuídos ao depoimento
+anterior. Concentrado em 4 obras (`世界救世教奇蹟集` 117, `結核の革命的療法` 30,
+`Eiko` 2, `Jornais` 1).
+
+### Glossário -- o insumo da etapa 3
+
+**434 dos 698 termos** ocorrem no japonês sem a forma canônica no português
+correspondente, somando 12.006 artigos. Lista completa por termo em
+`GLOSSARIO.md`, ordenada por volume.
+
+**Não são 434 erros** -- o topo da lista é vocabulário genérico cuja entrada é
+glosa descritiva, não regra fixa (`熱`→febre 585 artigos, `自然`→natureza 436,
+`説明`→explicação 231). É exatamente por isso que a varredura de 27/07
+descartou ~559 dos 564 sinalizados "por amostragem" -- e é exatamente por isso
+que `御利益`, `邪神`, `微熱` e `本教` escaparam dentro do descarte. A correção é
+julgar **uma vez por termo, com a contagem na mão** (698 julgamentos), não por
+ocorrência (milhares) nem por amostra.
+
+### Onde continuar
+
+1. **Etapa 1 concluída.** Relatórios por obra prontos para o usuário usar
+   durante a leitura.
+2. **Etapa 2 pendente**: corrigir `split_chunks` para respeitar o `profile`
+   (a determinação de 14/07, hoje violada em 1.078 artigos de 50 obras) e as
+   157 âncoras em byline -- as 13 que cortam nome ao meio primeiro. Depois,
+   reconstrução de índice, que exige autorização.
+3. **Etapa 3 pendente**: julgar os 434 termos via DeepSeek, com meu
+   acompanhamento; dúvidas ao usuário em pergunta e resposta no final.
+4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita do usuário.
