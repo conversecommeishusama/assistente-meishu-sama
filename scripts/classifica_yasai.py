@@ -43,7 +43,8 @@ PT_FONTE = RAIZ / "livros_publicacao_pt_revisado"
 PT_STAGING = RAIZ / "reports/livros_trabalho/pt"
 JP_DIR = RAIZ / "reports/livros_trabalho/jp"
 SPEC_DIR = RAIZ / "reports/livros_trabalho/segmentacao_manual"
-DESTINO = RAIZ / "reports/varredura_padronizacao/YASAI_JULGAMENTO.json"
+DESTINO = RAIZ / ("reports/varredura_padronizacao/YASAI_JULGAMENTO%s.json"
+            % ("_2" if "--passo2" in sys.argv else ""))
 MODELO = "deepseek-v4-flash"
 PARALELISMO = 6
 
@@ -109,10 +110,18 @@ def alvos() -> list[dict]:
         for i, (jp, pt) in enumerate(zip(ajp, apt)):
             if "野菜" not in jp:
                 continue
+            # 2ª passada: só artigos que ainda têm "vegetal/vegetais" solto
+            # (não "vegetariano", que é outra palavra) e limites maiores. A
+            # 1ª passada perdeu ~63 ocorrências por truncar em 6 frases e
+            # 6.000 caracteres.
+            if "--passo2" in sys.argv:
+                if not re.search(r"\bvegeta(l|is)\b", pt, re.IGNORECASE):
+                    continue
             frases = [re.sub(r"\s+", " ", jp[max(0, m.start() - 70): m.start() + 80])
                       for m in re.finditer("野菜", jp)]
-            saida.append({"obra": obra, "artigo": i, "frases_jp": frases[:6],
-                          "pt": pt[:6000]})
+            limite_f, limite_pt = (14, 14000) if "--passo2" in sys.argv else (6, 6000)
+            saida.append({"obra": obra, "artigo": i, "frases_jp": frases[:limite_f],
+                          "pt": pt[:limite_pt]})
     return saida
 
 
