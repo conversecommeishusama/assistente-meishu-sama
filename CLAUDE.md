@@ -10242,3 +10242,121 @@ ocorrência (milhares) nem por amostra.
    acompanhamento; dúvidas ao usuário em pergunta e resposta no final.
 4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita do usuário.
+
+## Atualização 2026-08-07 -- etapa 2 executada: 146 âncoras corrigidas e o
+## corte por caractere finalmente respeitando o `profile`
+
+### Parte 1 -- âncoras em byline (regra H5)
+
+Ver commit `e5e997c`. **157 -> 11 achados, nenhum nome partido restante.** 146
+âncoras movidas em 2 obras (`世界救世教奇蹟集`, `結核の革命的療法`), `title_pt`
+preenchido onde estava vazio. Integridade reverificada nas 137 obras, nas duas
+cópias: 0 erro.
+
+O detector precisou de 4 correções, cada uma depois de conferir o texto real:
+critério de parada por pontuação (título terminado em `!` e ficha de publicação
+terminada em `)` escondiam o cabeçalho -- trocado por classificação estrutural
+da linha); guarda posicional (existem artigos que são SÓ o título, separados do
+corpo -- sem a guarda o artigo anterior ficaria vazio); âncora multilinha só é
+cabeçalho estruturado quando traz a ficha de publicação (§4.4-A4), senão é a
+byline quebrada em duas linhas, e sem essa distinção 21 casos reais ficavam de
+fora; divisor `---` como âncora daria ponteiro ambíguo.
+
+Corrigir uma âncora muda a fronteira seguinte e revela cabeçalhos antes
+escondidos -- o laço repete por arquivo até estabilizar. Cada gravação
+revalida com `split_by_anchors` nas duas cópias e reverte o arquivo inteiro se
+a contagem não bater (a reversão disparou de verdade duas vezes durante o
+desenvolvimento, e foi o que impediu de gravar spec quebrada).
+
+### Parte 2 -- `split_chunks` passa a ler o `profile`
+
+**O `profile` existe nas 137 specs e NUNCA era lido por
+`build_clean_large_indexes.py`** -- confirmado por `grep`: o arquivo inteiro
+não tinha uma única referência ao campo. A exceção autorizada em 14/07 para as
+3 séries orais virava regra geral por omissão. Não foi decisão de ninguém
+contrariar a determinação; foi implementação que nunca aconteceu.
+
+Diálogo com o usuário que fechou a decisão (registrado porque corrigi a mim
+mesmo no meio):
+
+1. Apresentei como trade-off: cumprir a determinação custaria 59% do artigo
+   mediano invisível ao embedding (janela de 512 tokens ~ 2.120 caracteres).
+2. O usuário pediu minha opinião. Ao verificar o código antes de opinar,
+   **descobri que a premissa da minha própria pergunta estava errada**: o
+   `write_index` já constrói `embedding_texts` separadamente do chunk (chunk +
+   cabeçalho de metadados). O que é vetorizado nunca foi exatamente o que é
+   guardado, então o trade-off não existia como eu o apresentei.
+3. Decisão do usuário, com a qual concordo: **um artigo, um corte**; as 3
+   séries orais mantêm o corte por tamanho respeitando fronteira de turno.
+
+**Escopo confirmado com o usuário -- "artigo" é a unidade autoral em qualquer
+das doze categorias de palavra escrita**, não só as chamadas "artigo":
+
+| categoria | perfil | unidades | mediana | maior | >3200 |
+|---|---|---:|---:|---:|---:|
+| artigos de periódico | `periodico_publicacao` | 674 | 3.704 | 57.930 | 381 |
+| experiências de fé | `structured` | 566 | 1.984 | 51.513 | 210 |
+| itens numerados | `numbered_collection` | 517 | 135 | 39.788 | 1 |
+| aulas | `koza_lectures` | 437 | 1.230 | 28.207 | 62 |
+| hinos | `hymn_collection` | 310 | 96 | 928 | 0 |
+| capítulos de ensaio | `jikan_hen` | 309 | 3.080 | 24.775 | 149 |
+| poemas | `poem_collection` | 224 | 552 | 4.309 | 2 |
+| relatos de milagre | `miracle_collection` | 141 | 4.806 | 21.488 | 106 |
+| depoimentos de cura | `tuberculosis_faith` | 113 | 5.175 | 26.718 | 96 |
+| artigos | `article_collection` | 98 | 3.512 | 14.315 | 60 |
+| poemas cômicos | `wara_collection` | 70 | 1.402 | 4.476 | 6 |
+| livros sem divisão | `monolith` | 5 | 6.042 | 19.065 | 4 |
+| **palavra oral** | `mioshie_shu`/`gokowa_roku_qa`/`ochishiji_roku` | 517 | -- | -- | -- |
+
+**Implementado**: `PERFIS_PALAVRA_ORAL` + `pode_cortar_por_tamanho(profile)`;
+`article_entries_from_spec` e `file_entry` marcam cada entrada;
+`split_chunks(..., cortar_por_tamanho=False)` devolve a unidade autoral
+inteira.
+
+**Achado durante o teste, corrigido**: `pode_cortar_por_tamanho(None)` (arquivo
+SEM spec) devolvia `False` e produzia chunks de **134.407 caracteres** -- livro
+inteiro, não artigo. São os 4 arquivos de `textos_portugues/` fora do acervo
+curado (três `自観叢書` escritos por terceiros e um manual de doutrina). Sem
+spec não há divisão do autor a proteger: passou a devolver `True`, mantendo o
+comportamento anterior nesses casos.
+
+### Parte 3 -- amostra para o embedding, em vez de truncamento
+
+Com um artigo por corte, truncar em 512 tokens deixaria o modelo ver só a
+abertura. `amostra_para_embedding()` monta uma representação que cabe na
+janela: abertura (metade do orçamento, onde o autor anuncia o tema) mais frases
+distribuídas por igual até o fim do artigo, cada uma cortada para caber na sua
+vaga.
+
+**Primeira versão falhou e foi medida antes de aceitar**: preenchia em ordem
+até o orçamento acabar, e num artigo de 25.857 caracteres cobria só os 3
+primeiros quintos. Reservar a vaga antes de preencher resolveu -- medido em 4
+artigos reais de 3.838 a 28.207 caracteres, a amostra passou a tocar 7 a 8 dos
+10 décimos do texto, contra 1 a 3 no truncamento simples, sempre dentro do
+orçamento (401-428 de 500 tokens). Artigo que já cabe inteiro passa intacto.
+
+A busca literal (`buscar_termo`, grep no texto cru) continua alcançando
+qualquer frase exata -- a amostragem troca precisão literal por cobertura
+temática só na perna semântica, que é onde essa troca é a certa.
+
+### Efeito medido, sem reconstruir índice
+
+| | antes | depois |
+|---|---:|---:|
+| chunks PT | 8.642 | 6.629 |
+| chunks JP | 5.012 | 4.800 |
+| maior chunk PT | -- | 57.930 (artigo real do Hikari) |
+| obras com spec que caem para arquivo inteiro | -- | 0 |
+
+`textos_portugues/` confirmado em sincronia com
+`livros_publicacao_pt_revisado/` (0 arquivos divergentes).
+
+### Onde continuar
+
+1. Etapas 1 e 2 concluídas. **Nada disso tem efeito antes de uma reconstrução
+   de índice**, que continua exigindo autorização explícita.
+2. Etapa 3 (julgar os 434 termos de glossário via DeepSeek, com meu
+   acompanhamento; dúvidas ao usuário em pergunta e resposta) é a próxima.
+3. Sobram 11 achados H5 -- estrutura legítima que as guardas excluíram de
+   propósito (artigo que é só título, cabeçalho de periódico com ficha,
+   nota de rodapé). Julgamento individual, não automatizável.

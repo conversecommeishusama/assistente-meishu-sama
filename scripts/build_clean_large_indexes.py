@@ -429,8 +429,43 @@ def split_teaching_units(text: str) -> list[str]:
     return units or ([text.strip()] if text.strip() else [])
 
 
-def split_chunks(text: str, max_chars=3200, overlap_chars=220):
-    """Híbrido: nunca corta entre ensinamentos (#T); só subdivide por tamanho dentro de cada um."""
+# Determinação do usuário, 2026-07-14: a segmentação é SEMPRE pela divisão
+# estrutural do autor. O corte por contagem de caractere foi autorizado
+# exclusivamente para as três séries de palavra oral, porque uma sessão de um
+# dia inteiro de diálogo não tem outra divisão natural além da data.
+#
+# BUG CORRIGIDO 2026-08-07: esta regra nunca chegou a ser implementada. O
+# `profile` existe em todas as 137 specs e NUNCA era lido por este script --
+# a exceção das 3 séries orais virava regra geral por omissão, e 1.077
+# unidades de palavra escrita (artigos de periódico, experiências de fé,
+# aulas, capítulos, poemas, hinos, depoimentos) eram partidas por tamanho em
+# 50 obras. Achado pela regra G4 de scripts/varredura_padronizacao.py.
+PERFIS_PALAVRA_ORAL = {"gokowa_roku_qa", "ochishiji_roku", "mioshie_shu"}
+
+
+def pode_cortar_por_tamanho(profile: str | None) -> bool:
+    """Só as 3 séries de palavra oral podem ser cortadas por contagem.
+
+    `profile is None` significa arquivo SEM spec de segmentação -- não existe
+    divisão do autor registrada para proteger, e tratar o livro inteiro como
+    uma unidade daria chunks absurdos (medido: 134.407 caracteres em
+    `自観叢書第6篇『怪物か聖者か』`, que é livro inteiro, não artigo). Nesses
+    casos mantém o comportamento anterior. São os 4 arquivos de
+    `textos_portugues/` fora do acervo curado de 137 obras -- três da série
+    Jikan Sōsho escritos por terceiros e um manual de doutrina.
+    """
+    return profile is None or profile in PERFIS_PALAVRA_ORAL
+
+
+def split_chunks(text: str, max_chars=3200, overlap_chars=220, *, cortar_por_tamanho=True):
+    """Híbrido: nunca corta entre ensinamentos (#T); só subdivide por tamanho dentro de cada um.
+
+    `cortar_por_tamanho=False` (palavra escrita) devolve a unidade autoral
+    inteira, por mais longa que seja -- é a determinação de 14/07.
+    """
+    if not cortar_por_tamanho:
+        unidades = [u.strip() for u in split_teaching_units(text) if u.strip()]
+        return unidades or ([text.strip()] if text.strip() else [])
     all_chunks: list[str] = []
     for unit in split_teaching_units(text):
         all_chunks.extend(split_chunks_by_size(unit, max_chars=max_chars, overlap_chars=overlap_chars))
@@ -538,6 +573,7 @@ def article_entries_from_spec(path: Path, lang: str, paired_path: Path | None, s
             "paired_original_filename": paired_path.name if paired_path else "",
             "has_parallel": bool(paired_path),
             "body": body,
+            "cortar_por_tamanho": pode_cortar_por_tamanho(spec.get("profile")),
         }
         entries.append(enrich_entry_from_header(entry))
     return entries
@@ -569,6 +605,12 @@ def file_entry(path: Path, lang: str, paired_path: Path | None):
         "paired_original_filename": paired_path.name if paired_path else "",
         "has_parallel": bool(paired_path),
         "body": text,
+        # Livro inteiro como uma entrada só: os `monolith` e os de artigo
+        # único caem aqui (article_entries_from_spec devolve None para spec
+        # com <= 1 artigo). O `profile` continua valendo -- não há divisão do
+        # autor a respeitar, mas também não há autorização para cortar.
+        "cortar_por_tamanho": pode_cortar_por_tamanho(
+            (_load_spec_for(original_filename) or {}).get("profile")),
     }
     return enrich_entry_from_header(entry)
 
@@ -689,7 +731,10 @@ def build_chunks(entries, lang):
     for entry in entries:
         if entry["lang"] != lang:
             continue
-        for chunk_index, chunk in enumerate(split_chunks(entry["body"]), start=1):
+        cortar = entry.get("cortar_por_tamanho", True)
+        for chunk_index, chunk in enumerate(
+            split_chunks(entry["body"], cortar_por_tamanho=cortar), start=1
+        ):
             if len(chunk.strip()) < 40:
                 continue
             chunks.append(chunk)
@@ -718,19 +763,108 @@ def build_chunks(entries, lang):
     return chunks, metadata
 
 
+RE_FRASE = re.compile(r"(?<=[.!?。！？])\s+|\n{2,}")
+
+
+def amostra_para_embedding(corpo: str, tokenizer, orcamento: int) -> str:
+    """Representação do corpo que cabe na janela do modelo de embedding.
+
+    O multilingual-e5-large trunca em 512 tokens (~2.100 caracteres em
+    português). Um artigo escrito inteiro -- que desde 2026-08-07 é uma
+    unidade só, por determinação do usuário -- passa disso na maioria dos
+    casos: a mediana dos artigos de periódico é 3.704 caracteres e o maior
+    tem 57.930. Truncar simplesmente deixaria o modelo ver só a abertura, e o
+    que fosse tratado no meio ou no fim do artigo nunca seria alcançado pela
+    busca semântica.
+
+    Em vez de truncar, monta uma amostra: a abertura (onde o autor quase
+    sempre anuncia o tema) mais frases distribuídas por igual ao longo do
+    resto. A cobertura temática passa a ser do artigo inteiro. A busca
+    literal (`buscar_termo`, grep no texto cru) continua alcançando qualquer
+    frase exata, então a amostragem não cria ponto cego de recuperação --
+    só troca precisão literal por cobertura, na perna onde isso é o certo.
+    """
+    def n_tokens(s: str) -> int:
+        return len(tokenizer.encode(s, add_special_tokens=False))
+
+    if n_tokens(corpo) <= orcamento:
+        return corpo
+
+    frases = [f.strip() for f in RE_FRASE.split(corpo) if f and f.strip()]
+    if len(frases) <= 1:
+        return corpo
+
+    def corta_em(s: str, teto: int) -> str:
+        """Corta a frase para caber em `teto` tokens, sem partir palavra."""
+        if n_tokens(s) <= teto:
+            return s
+        proporcao = teto / max(1, n_tokens(s))
+        cortada = s[: max(20, int(len(s) * proporcao))].rsplit(" ", 1)[0]
+        while cortada and n_tokens(cortada) > teto:
+            cortada = cortada[: int(len(cortada) * 0.85)].rsplit(" ", 1)[0]
+        return cortada
+
+    escolhidas: list[tuple[int, str]] = []
+    usado = 0
+
+    # Abertura: metade do orçamento. É onde o autor costuma anunciar o tema.
+    teto_abertura = orcamento // 2
+    i = 0
+    while i < len(frases):
+        custo = n_tokens(frases[i]) + 1
+        if usado + custo > teto_abertura:
+            break
+        escolhidas.append((i, frases[i]))
+        usado += custo
+        i += 1
+    if not escolhidas:  # a primeira frase sozinha já estoura
+        return corta_em(frases[0], orcamento)
+
+    # Resto: vagas de tamanho FIXO distribuídas por igual até o fim do artigo.
+    # Preencher em ordem até o orçamento acabar faria a amostra parar no meio
+    # -- medido: num artigo de 25.857 caracteres, cobria só os 3 primeiros
+    # quintos. Reservar a vaga antes de preencher garante que a última frase
+    # amostrada venha do fim do texto.
+    restantes = list(range(i, len(frases)))
+    if restantes:
+        sobra = orcamento - usado
+        vagas = max(1, min(len(restantes), sobra // 28))
+        por_vaga = max(12, sobra // vagas)
+        passo = len(restantes) / vagas
+        for k in range(vagas):
+            j = restantes[min(len(restantes) - 1, int(k * passo))]
+            if any(idx == j for idx, _ in escolhidas):
+                continue
+            frag = corta_em(frases[j], por_vaga - 1)
+            if not frag:
+                continue
+            custo = n_tokens(frag) + 1
+            if usado + custo > orcamento:
+                break
+            escolhidas.append((j, frag))
+            usado += custo
+
+    escolhidas.sort()
+    return " ".join(f for _, f in escolhidas)
+
+
 def write_index(chunks, metadata, lang, model):
-    embedding_texts = [
-        (
+    tokenizer = model.tokenizer
+    limite = model.max_seq_length or 512
+    embedding_texts = []
+    for chunk, meta in zip(chunks, metadata):
+        cabecalho = (
             f"Fonte: {meta['fonte']}\n"
             f"Titulo: {meta['titulo']}\n"
             f"Categoria: {meta['categoria']}\n"
             + (f"Obra: {meta['obra']}\n" if meta.get("obra") else "")
             + (f"Edicao: {meta['numero_edicao']}\n" if meta.get("numero_edicao") else "")
             + (f"Data sessao: {meta['data_sessao']}\n" if meta.get("data_sessao") else "")
-            + f"\n{chunk}"
         )
-        for chunk, meta in zip(chunks, metadata)
-    ]
+        # 4 tokens de folga para os marcadores especiais do modelo
+        orcamento = limite - len(tokenizer.encode(cabecalho, add_special_tokens=False)) - 4
+        corpo = amostra_para_embedding(chunk, tokenizer, max(64, orcamento))
+        embedding_texts.append(f"{cabecalho}\n{corpo}")
     embeddings = model.encode(embedding_texts, batch_size=32, show_progress_bar=True, convert_to_numpy=True).astype("float32")
     faiss.normalize_L2(embeddings)
     index = faiss.IndexFlatIP(embeddings.shape[1])
