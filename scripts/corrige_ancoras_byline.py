@@ -117,11 +117,27 @@ def cabecalho_vazado(corpo_anterior: str) -> list[str]:
     return vazadas
 
 
+# Linha que é só uma data de sessão. Nas séries 御教え集 / 御光話録 /
+# 御垂示録 a data ficar no FIM do artigo anterior é convenção deliberada do
+# acervo -- confirmada em 32 dos 33 volumes de 御教え集 -- e não bug. Já
+# tratei isso como defeito uma vez neste projeto e tive de reverter; a
+# guarda existe para não repetir.
+# O sufixo entre parênteses faz parte do cabeçalho de data desta série --
+# dia da semana ("28 de dezembro (terça-feira)") ou nota editorial
+# ("5 de agosto (apenas neste dia, sem uso de taquigrafia)", exigida pelo
+# §4.4-A3 do protocolo). Sem aceitá-lo, 4 datas escapavam da guarda.
+RE_SO_DATA = re.compile(
+    r"^\[?\s*\d{1,2}\s*(º|o)?\s+de\s+"
+    r"(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|"
+    r"outubro|novembro|dezembro)"
+    r"(\s+de\s+\d{4})?\s*(\([^)]*\))?\s*\]?\s*$", re.IGNORECASE)
+
+
 def eh_titulo(linha: str) -> bool:
     """Serve como início de artigo? Título de depoimento, não endereço, não
     byline, não nota de rodapé, não divisor."""
     cand = limpa_markdown(linha)
-    if len(cand) < 12 or eh_divisor(linha):
+    if len(cand) < 12 or eh_divisor(linha) or RE_SO_DATA.match(linha.strip()):
         return False
     if linha.lstrip().startswith(("*", "†", "(")) and not linha.lstrip().startswith("**"):
         return False
@@ -177,7 +193,16 @@ def analisa(nome: str) -> dict:
             or re.match(r"^Igreja\s+\w+.{0,60}\(\s*\d{1,3}", primeira)
             or re.match(r"^[A-ZÀ-Ú][\wÀ-ÿ'\- ]{2,40},\s*\d{1,3}\s+anos", primeira)
         )
-        if not eh_byline:
+        # Segunda assinatura do mesmo bug, achada em 2026-08-07 ao verificar um
+        # achado de glossário: a âncora aponta para o RÓTULO DE DIÁLOGO em vez
+        # do título do item. Efeito idêntico -- o título, com sua citação de
+        # fonte, fica pendurado no fim do artigo anterior. Foi o que fez o
+        # julgamento do glossário acusar "omissão da citação （御垂示録 19号
+        # P.24）" em 6 artigos: a citação estava no texto, mas fora do artigo.
+        eh_rotulo_dialogo = bool(
+            re.match(r"^\((Pergunta|Consulta|Resposta|Ensinamento|Orientação)", primeira)
+            or re.match(r"^(Interlocutor|Meishu-Sama):", primeira))
+        if not (eh_byline or eh_rotulo_dialogo):
             continue
         vazadas = cabecalho_vazado(corpos[i - 1])
         if not vazadas:
@@ -189,6 +214,8 @@ def analisa(nome: str) -> dict:
         anterior = pos_ancora[i - 1]
         nova = ""
         for cand in vazadas[:-1] or vazadas:
+            if not eh_titulo(cand):
+                continue
             if texto.count(cand) != 1:
                 continue
             if anterior < 0 or texto.find(cand) <= anterior:

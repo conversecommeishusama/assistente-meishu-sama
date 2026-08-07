@@ -26,7 +26,9 @@ import argparse
 import json
 import re
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 RAIZ = Path("/var/www/goshinsho")
@@ -52,6 +54,7 @@ MAX_PT_POR_AMOSTRA = 2200
 # tokens sem produzir uma linha. O orçamento precisa caber raciocínio E
 # resposta.
 MAX_TOKENS = 16000
+PARALELISMO = 6
 
 SYSTEM = """Você julga entradas do glossário de tradução japonês→português do acervo de Meishu-Sama (Igreja Messiânica Mundial).
 
@@ -211,6 +214,14 @@ def main() -> None:
 
     taxa = json.loads((SAIDA / "GLOSSARIO_TAXA.json").read_text(encoding="utf-8"))
     alvos = [(k, v) for k, v in taxa.items() if faixa_de(v) == args.faixa]
+    # Termo sem nenhuma falta está 100% aplicado -- não há divergência para
+    # julgar e chamar a API seria desperdício. Na primeira rodada da faixa A
+    # esses 190 termos apareceram como "erro: nenhuma amostra recuperada",
+    # o que é rótulo enganoso: eles são o melhor resultado possível.
+    perfeitos = [k for k, v in alvos if v["miss"] == 0]
+    alvos = [(k, v) for k, v in alvos if v["miss"] > 0]
+    if perfeitos:
+        print(f"{len(perfeitos)} termos com 100% de aplicação — nada a julgar", flush=True)
     alvos.sort(key=lambda x: -x[1]["miss"])
     if args.limite:
         alvos = alvos[: args.limite]
@@ -224,21 +235,44 @@ def main() -> None:
         alvos = [(k, v) for k, v in alvos if k not in ja]
         print(f"retomando: {len(ja)} já julgados, {len(alvos)} restantes\n", flush=True)
 
-    tk = 0
-    for n, (chave, info) in enumerate(alvos, 1):
+    # Pré-carrega os artigos de todas as obras UMA vez, em série. `_cache` é
+    # um dict compartilhado; deixá-lo ser preenchido por várias threads ao
+    # mesmo tempo faria o mesmo arquivo ser lido e segmentado N vezes.
+    print("pré-carregando artigos...", flush=True)
+    for pt_path in sorted(PT_DIR.glob("*.txt")):
+        obra = pt_path.name
+        if (SPEC_DIR / f"{obra}.json").exists() and (JP_DIR / obra).exists():
+            try:
+                par_de_artigos(obra)
+            except Exception:
+                pass
+    print(f"{len(_cache)} obras em memória\n", flush=True)
+
+    trava = threading.Lock()
+    tk = [0]
+    feito_n = [0]
+
+    def trabalho(item):
+        chave, info = item
         try:
             r = julga(chave, info)
         except Exception as exc:
             r = {"chave": chave, "erro": repr(exc)[:200]}
-        feitos.append(r)
-        tk += r.get("tokens", 0)
-        if "erro" in r:
-            print(f"[{n:>3}/{len(alvos)}] {chave:<12} ERRO {r['erro'][:70]}", flush=True)
-        else:
-            print(f"[{n:>3}/{len(alvos)}] {chave:<12} {r['veredito']:<15} "
-                  f"{r['miss']:>4} falta | usa: {r['forma_usada'][:38]}", flush=True)
-        destino.write_text(json.dumps(feitos, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"\n{len(feitos)} julgados | {tk:,} tokens | ~US$ {tk / 1e6 * 0.0424:.4f}")
+        with trava:
+            feitos.append(r)
+            feito_n[0] += 1
+            tk[0] += r.get("tokens", 0)
+            if "erro" in r:
+                print(f"[{feito_n[0]:>3}/{len(alvos)}] {chave:<12} ERRO {r['erro'][:60]}", flush=True)
+            else:
+                print(f"[{feito_n[0]:>3}/{len(alvos)}] {chave:<12} {r['veredito']:<15} "
+                      f"{r['miss']:>4} falta | usa: {r['forma_usada'][:36]}", flush=True)
+            destino.write_text(json.dumps(feitos, ensure_ascii=False, indent=1),
+                               encoding="utf-8")
+
+    with ThreadPoolExecutor(max_workers=PARALELISMO) as pool:
+        list(pool.map(trabalho, alvos))
+    print(f"\n{len(feitos)} julgados | {tk[0]:,} tokens | ~US$ {tk[0] / 1e6 * 0.0424:.4f}")
     print(f"saída em {destino}")
 
 
