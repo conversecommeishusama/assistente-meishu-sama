@@ -9997,15 +9997,78 @@ defeito sistemático.
 3. Pendente: **subir o timeout do gunicorn** (hoje `--timeout 180`, com
    medições reais de 175s -- margem de 5 segundos para o usuário receber
    resposta vazia).
-4. Pendente de teste isolado: **o cap `TAMANHO_MAX_RESULTADO_FERRAMENTA =
-   8000`** trunca ~33% do resultado de busca em silêncio (medido: JSON de
-   11.929 chars cortado em 8.000, e o corte cai justamente na cauda, onde
-   ficam os resultados semânticos). Produção venceu mesmo assim, então o
-   benefício de subir é **hipótese não comprovada** -- testar SOZINHO, sem
-   o resto da alavanca junto, que foi o erro de desenho desta sessão.
+4. ~~Pendente de teste isolado: o cap~~ **RESOLVIDO E EM PRODUÇÃO** -- ver
+   seção "Fechamento" logo abaixo.
 5. Pendente: **teste de camada** -- a mesma configuração de produção deu
    48,4s chamada direto como função e 130-175s pelo site. Se a diferença
    estiver no histórico de conversa injetado no prompt ou na camada HTTP,
    é ali que está o ganho real de latência, não no motor de busca.
 6. Continua valendo: nenhuma promoção/reinício de produção sem autorização
    explícita do usuário.
+
+### Fechamento da sessão 2026-08-07 -- o que foi para produção
+
+Restart autorizado e executado às **07:28:24** (hora do servidor). Três
+mudanças de usuário foram juntas, todas commitadas antes:
+
+**1. `TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000 -> 20000`** (commit
+`21ad1ba`). Testado ISOLADO a pedido do usuário -- 12 execuções
+sequenciais, 3 perguntas x 2 caps x 2 repetições, tudo o mais idêntico a
+produção:
+
+| pergunta | cap 8000 | cap 20000 |
+|---|---|---|
+| difícil | 123,7s / 8,0 rodadas | **54,8s / 5,0 rodadas** |
+| ampla | 40,2s / 2,5 rodadas | 47,2s / 3,5 rodadas (empate, ruído) |
+| simples | 67,1s / 6,5 rodadas | **28,4s / 3,5 rodadas** |
+| **geral** | **77,0s / 5,7 rodadas** | **43,5s / 4,0 rodadas** |
+
+−44% de tempo, vencendo em 5 dos 6 pares diretos. Nas 6 execuções com o cap
+antigo, **31 buscas foram truncadas e 96.234 caracteres descartados em
+silêncio** -- o modelo gastava rodadas extras recuperando o que já tinha
+sido encontrado e jogado fora. Fundamentação inalterada (3,5 x 3,2 fontes
+abertas): o ganho é de trabalho desperdiçado, não de profundidade.
+
+**LIÇÃO CARA, registrada para não repetir**: este mesmo valor tinha sido
+testado horas antes DENTRO de um pacote ("alavanca estrutural" = cap +
+janela 250/900 + fusão de hits). O pacote inteiro foi reprovado, e o
+veredito em bloco escondeu que havia uma peça boa cercada de duas ruins.
+Só apareceu porque o usuário pediu explicitamente o teste isolado.
+**Testar mudanças em bloco produz um veredito, não um diagnóstico.**
+
+**2. Aviso "Estamos aprofundando a pesquisa"** -- liga o `on_deep_search`
+que existia inerte desde 31/07. Dispara uma vez, na 3ª rodada, pela mesma
+`event_queue`/NDJSON do aviso de consulta ao japonês; `handleChatStatusEvent`
+no `app.js` troca o conteúdo da bolha de carregamento. Traduzido nos 13
+idiomas. **Confirmado disparando em pergunta real em produção** no
+aquecimento pós-restart (`eventos: ['deep_search', 'done']`).
+
+**3. Rótulos dos modos** -- "Direta" -> **"Direta / Sem citações"**;
+"Com citações" -> **"Aprofundada / Com citações"** (13 idiomas +
+`templates/app.html`, cache-bust `app.js?v=154`). Motivo medido: os modos
+não diferem em formatação e sim em profundidade -- Direta lê 3,0 fontes /
+2.059 caracteres / 41,6s; Aprofundada lê 5,7 fontes, cita 6,3 arquivos /
+5.658 caracteres / 85,3s.
+
+**Verificação pós-restart**: serviço ativo, `/app-pt` `/app` `/doacao`
+`/health` todos 200, índices 8.642 chunks PT / 5.012 JP, HTML servindo os
+rótulos novos e `app.js?v=154`. Aquecimento com pergunta real
+("O que é o Ohikari?") via `/api/chat` com sessão assinada: **29,3s**,
+1.717 caracteres, evento `deep_search` disparado; conversa de teste
+removida do banco.
+
+**Suíte**: 128 testes, as mesmas 2 falhas pré-existentes já catalogadas
+(`test_reception_question_prioritizes_central_teaching` do
+`test_ohikari_filter`, intermitente, pipeline v2 legado; e
+`test_caminho_do_casal_prefers_publication_with_bible` do
+`test_teaching_article`). Nenhuma regressão nova.
+
+**Pendência única que sobrou**: o **teste de camada** --
+`scripts`/scratchpad `teste_camada_app.py` (chamada direta x POST
+`/api/chat` sem histórico x com histórico). Foi morto antes de rodar para
+não medir a configuração que estava saindo do ar. Motivo de existir: a
+configuração idêntica à de produção deu **48,4s chamada direto como função**
+contra **130-175s medidos pelo usuário no site**. Se a diferença estiver no
+histórico de conversa injetado no prompt ou na camada HTTP/worker, é ali
+que está o maior ganho de latência restante -- e nada disso foi investigado
+ainda. Refazer agora mede a produção já com o cap corrigido.
