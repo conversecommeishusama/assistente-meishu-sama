@@ -1245,6 +1245,19 @@ def api_chat():
         result_holder: dict = {}
         error_holder: dict = {}
 
+        def aviso_busca_profunda() -> None:
+            # 2026-08-07: liga o `on_deep_search` de agentic_search.py, que
+            # existia desde 2026-07-31 e nunca tinha sido conectado a
+            # nenhuma UI. Dispara UMA vez, quando a busca passa de
+            # RODADAS_AVISO_BUSCA_PROFUNDA rodadas sem resposta pronta.
+            #
+            # Motivo (medido nesta sessão): perguntas em que as fontes do
+            # acervo se contradizem levam 6-9 rodadas e 130-175s -- não
+            # estão travadas, estão pesquisando. Perguntas comuns respondem
+            # em 27-57s. Sem aviso, o usuário não tem como distinguir uma
+            # coisa da outra. Não influencia a busca em nada.
+            event_queue.put({"event": "status", "code": "deep_search"})
+
         @copy_current_request_context
         def worker() -> None:
             token = set_deepseek_usage_context(
@@ -1266,6 +1279,7 @@ def api_chat():
                     extra_kwargs = {"idioma": language, "com_citacoes": com_citacoes}
                 else:
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
+                extra_kwargs["on_deep_search"] = aviso_busca_profunda
                 r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r

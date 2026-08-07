@@ -113,6 +113,7 @@ const uiTranslations = {
         back: "Voltar",
         continue: "Continuar",
         loading: "Consultando os escritos...",
+        deepSearchNotice: "Estamos aprofundando a pesquisa — este tema aparece em fontes que precisam ser comparadas. Pode levar mais um pouco.",
         checkingJapanese:
             "Não encontrei uma resposta adequada nos textos traduzidos. Estou consultando o original em japonês — isso pode levar até 2 minutos.",
         sourcesTitle: "Fontes identificadas",
@@ -191,6 +192,7 @@ const uiTranslations = {
         back: "Back",
         continue: "Continue",
         loading: "Consulting the writings...",
+        deepSearchNotice: "We're going deeper into the research — this topic appears in sources that need to be compared. It may take a little longer.",
         checkingJapanese:
             "I didn't find an adequate answer in the translated texts. I'm checking the original Japanese — this may take up to 2 minutes.",
         sourcesTitle: "Identified sources",
@@ -269,6 +271,7 @@ const uiTranslations = {
         back: "Volver",
         continue: "Continuar",
         loading: "Consultando los escritos...",
+        deepSearchNotice: "Estamos profundizando la investigación — este tema aparece en fuentes que deben compararse. Puede tardar un poco más.",
         checkingJapanese:
             "No encontré una respuesta adecuada en los textos traducidos. Estoy consultando el original en japonés — esto puede tardar hasta 2 minutos.",
         sourcesTitle: "Fuentes identificadas",
@@ -347,6 +350,7 @@ const uiTranslations = {
         back: "戻る",
         continue: "続ける",
         loading: "教えを確認しています...",
+        deepSearchNotice: "調査を深めています — このテーマは比較が必要な複数の資料に現れます。もう少し時間がかかる場合があります。",
         checkingJapanese: "翻訳されたテキストでは適切な回答が見つかりませんでした。日本語の原文を確認しています — 最大2分ほどかかる場合があります。",
         sourcesTitle: "特定された出典",
         noSources: "詳細回答で該当箇所が見つかった場合、出典が回答本文に表示されます。",
@@ -424,6 +428,7 @@ const uiTranslations = {
         back: "返回",
         continue: "继续",
         loading: "正在查阅教诲...",
+        deepSearchNotice: "正在深入检索——这个主题出现在需要相互比对的多处文献中，可能还需要一点时间。",
         checkingJapanese: "未能在译文中找到合适的答案。正在查阅日文原文——这可能需要长达2分钟。",
         sourcesTitle: "已识别的来源",
         noSources: "当深入回答找到匹配片段时，来源会显示在回答正文中。",
@@ -501,6 +506,7 @@ const uiTranslations = {
         back: "वापस",
         continue: "जारी रखें",
         loading: "शिक्षाओं की जांच की जा रही है...",
+        deepSearchNotice: "हम शोध को गहरा कर रहे हैं — यह विषय ऐसे स्रोतों में आता है जिनकी तुलना आवश्यक है। इसमें थोड़ा और समय लग सकता है।",
         checkingJapanese: "अनुवादित पाठ में उचित उत्तर नहीं मिला। मूल जापानी पाठ की जांच की जा रही है — इसमें 2 मिनट तक लग सकते हैं।",
         sourcesTitle: "पहचाने गए स्रोत",
         noSources: "जब विस्तृत उत्तर में मिलते-जुलते अंश मिलते हैं, तो स्रोत उत्तर के मुख्य भाग में दिखाई देते हैं।",
@@ -578,6 +584,7 @@ const uiTranslations = {
         back: "رجوع",
         continue: "متابعة",
         loading: "جارٍ الاطّلاع على التعاليم...",
+        deepSearchNotice: "نحن نعمّق البحث — يظهر هذا الموضوع في مصادر تحتاج إلى مقارنة. قد يستغرق الأمر وقتًا أطول قليلاً.",
         checkingJapanese: "لم أجد إجابة مناسبة في النصوص المترجمة. أتحقّق الآن من الأصل الياباني — قد يستغرق ذلك حتى دقيقتين.",
         sourcesTitle: "المصادر المحدَّدة",
         noSources: "تظهر المصادر ضمن نص الإجابة عندما تجد الإجابة المتعمّقة مقاطع مطابقة.",
@@ -655,6 +662,7 @@ const uiTranslations = {
         back: "Retour",
         continue: "Continuer",
         loading: "Consultation des écrits...",
+        deepSearchNotice: "Nous approfondissons la recherche — ce sujet apparaît dans des sources qui doivent être comparées. Cela peut prendre un peu plus de temps.",
         checkingJapanese:
             "Je n'ai pas trouvé de réponse adéquate dans les textes traduits. Je consulte l'original en japonais — cela peut prendre jusqu'à 2 minutes.",
         sourcesTitle: "Sources identifiées",
@@ -733,6 +741,7 @@ const uiTranslations = {
         back: "পিছনে",
         continue: "চালিয়ে যান",
         loading: "শিক্ষা পর্যালোচনা করা হচ্ছে...",
+        deepSearchNotice: "আমরা অনুসন্ধান আরও গভীর করছি — এই বিষয়টি এমন উৎসে রয়েছে যেগুলির তুলনা প্রয়োজন। এতে আরও কিছুটা সময় লাগতে পারে।",
         checkingJapanese: "অনূদিত পাঠ্যে উপযুক্ত উত্তর পাওয়া যায়নি। মূল জাপানি পাঠ্য পরীক্ষা করা হচ্ছে — এতে ২ মিনিট পর্যন্ত সময় লাগতে পারে।",
         sourcesTitle: "চিহ্নিত উৎস",
         noSources: "বিস্তারিত উত্তরে মিলযুক্ত অংশ পাওয়া গেলে উৎস উত্তরের মূল অংশে প্রদর্শিত হয়।",
@@ -810,6 +819,7 @@ const uiTranslations = {
         back: "Назад",
         continue: "Продолжить",
         loading: "Изучаю тексты...",
+        deepSearchNotice: "Мы углубляем поиск — эта тема встречается в источниках, которые нужно сопоставить. Это может занять чуть больше времени.",
         checkingJapanese: "Не удалось найти подходящий ответ в переведённых текстах. Проверяю оригинал на японском — это может занять до 2 минут.",
         sourcesTitle: "Найденные источники",
         noSources: "Источники появляются в тексте ответа, когда углублённый ответ находит совпадающие отрывки.",
@@ -887,6 +897,7 @@ const uiTranslations = {
         back: "واپس",
         continue: "جاری رکھیں",
         loading: "تعلیمات کا جائزہ لیا جا رہا ہے...",
+        deepSearchNotice: "ہم تحقیق کو گہرا کر رہے ہیں — یہ موضوع ایسے مآخذ میں آتا ہے جن کا موازنہ ضروری ہے۔ اس میں کچھ اور وقت لگ سکتا ہے۔",
         checkingJapanese: "ترجمہ شدہ متن میں مناسب جواب نہیں ملا۔ اصل جاپانی متن کی جانچ کی جا رہی ہے — اس میں 2 منٹ تک لگ سکتے ہیں۔",
         sourcesTitle: "شناخت شدہ ذرائع",
         noSources: "جب تفصیلی جواب میں مماثل اقتباسات ملتے ہیں تو ذرائع جواب کے متن میں ظاہر ہوتے ہیں۔",
@@ -964,6 +975,7 @@ const uiTranslations = {
         back: "Kembali",
         continue: "Lanjutkan",
         loading: "Memeriksa tulisan-tulisan...",
+        deepSearchNotice: "Kami sedang memperdalam pencarian — topik ini muncul dalam sumber-sumber yang perlu dibandingkan. Ini mungkin memakan waktu sedikit lebih lama.",
         checkingJapanese: "Saya tidak menemukan jawaban yang memadai dalam teks terjemahan. Sedang memeriksa naskah asli bahasa Jepang — ini bisa memakan waktu hingga 2 menit.",
         sourcesTitle: "Sumber yang teridentifikasi",
         noSources: "Sumber muncul di badan jawaban ketika jawaban mendalam menemukan kutipan yang sesuai.",
@@ -1041,6 +1053,7 @@ const uiTranslations = {
         back: "Zurück",
         continue: "Weiter",
         loading: "Schriften werden durchsucht...",
+        deepSearchNotice: "Wir vertiefen die Recherche — dieses Thema erscheint in Quellen, die verglichen werden müssen. Es kann etwas länger dauern.",
         checkingJapanese: "In den übersetzten Texten wurde keine passende Antwort gefunden. Das japanische Original wird geprüft — dies kann bis zu 2 Minuten dauern.",
         sourcesTitle: "Identifizierte Quellen",
         noSources: "Quellen erscheinen im Antworttext, wenn die vertiefte Antwort passende Auszüge findet.",
@@ -1251,6 +1264,9 @@ function handleChatStatusEvent(loading, event) {
     if (event.event !== "status" || !event.code) return;
     if (event.code === "checking_japanese") {
         setBubbleContent(loading, uiText("checkingJapanese"), "assistant");
+    }
+    if (event.code === "deep_search") {
+        setBubbleContent(loading, uiText("deepSearchNotice"), "assistant");
     }
 }
 

@@ -129,7 +129,25 @@ LIMITE_ESTAGNACAO_RODADAS = 3
 # nem quando ele decide parar, só quando um aviso é disparado.
 RODADAS_AVISO_BUSCA_PROFUNDA = 3
 JANELA_PROXIMIDADE = 400
-TAMANHO_MAX_RESULTADO_FERRAMENTA = 8000
+# 2026-08-07: 8000 -> 20000, medido em teste ISOLADO (12 execuções
+# sequenciais, 3 perguntas x 2 caps x 2 repetições, tudo o mais idêntico à
+# configuração de produção). O corte de 8000 descartava em silêncio a CAUDA
+# do resultado de busca -- 31 buscas truncadas e 96.234 caracteres perdidos
+# só nessas 6 execuções -- e o modelo gastava rodadas extras tentando
+# recuperar o que já tinha sido encontrado e jogado fora:
+#
+#   pergunta   cap 8000              cap 20000
+#   difícil    123,7s / 8,0 rodadas  54,8s / 5,0 rodadas
+#   ampla       40,2s / 2,5 rodadas  47,2s / 3,5 rodadas   (empate, ruído)
+#   simples     67,1s / 6,5 rodadas  28,4s / 3,5 rodadas
+#   GERAL       77,0s / 5,7 rodadas  43,5s / 4,0 rodadas   (-44%, venceu 5 de 6 pares)
+#
+# Fundamentação (fontes abertas) ficou igual: 3,5 x 3,2, dentro do ruído --
+# o ganho é de trabalho desperdiçado, não de profundidade. IMPORTANTE: este
+# valor foi testado SOZINHO. Uma tentativa anterior de mudá-lo junto com
+# janela de trecho e fusão de hits ("alavanca estrutural") foi reprovada em
+# bloco, escondendo o fato de que o cap era a peça boa do pacote.
+TAMANHO_MAX_RESULTADO_FERRAMENTA = 20000
 
 # 2026-07-31: preço do deepseek-v4-flash recalibrado contra a fatura REAL
 # (painel de faturamento DeepSeek, 29/07: US$ 0,59 / 13.923.984 tokens =
