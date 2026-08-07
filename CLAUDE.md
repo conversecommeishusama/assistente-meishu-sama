@@ -9803,3 +9803,209 @@ decisão do usuário se quer manter.
    fluxo futuro precisar.
 5. Nenhuma promoção/reinício de produção sem autorização explícita do
    usuário -- regra de sempre.
+
+## Sessão 2026-08-07 (Claude Code) -- estudo de arquitetura de busca fechado:
+## o que funciona, o que NÃO funciona, e por que não adianta insistir
+
+Sessão longa e quase inteiramente de medição (60+ execuções reais da API,
+todas registradas). Retomou o estudo do "modo silencioso" que a sessão
+anterior deixou pela metade e terminou fechando a questão de arquitetura de
+busca. **Leia esta seção antes de reabrir qualquer linha de otimização de
+tempo da busca agenciada** -- várias hipóteses aparentemente óbvias foram
+testadas e reprovadas com dados.
+
+### 1. Achado que reorganiza tudo: TEMPO = RACIOCÍNIO, não busca
+
+Correlação medida entre tempo de resposta e tokens de raciocínio:
+**r = 0,954** (9 execuções), **r = 0,881** (18 execuções), **r = 0,789**
+(12 execuções sequenciais). É a variável dominante, com folga.
+
+Não são variáveis explicativas: número de rodadas, tokens de entrada,
+tamanho do payload de busca, presença de embedding. Casos concretos que
+provam: uma execução com 4 rodadas e a MENOR entrada do lote (93k) foi a
+MAIS LENTA (110,5s) por gastar 12.042 tokens de raciocínio; outra com 6
+rodadas e 144k de entrada fez 66,9s com 6.033 de raciocínio.
+
+**Corolário prático**: cortar rodadas, reduzir payload ou trocar mecanismo
+de busca não reduz tempo de forma confiável. Só reduzir deliberação reduz --
+e a sessão anterior já mediu que cortar deliberação custa precisão (o
+"modo silencioso" abria com "sim" categórico e fundia fontes; a versão sem
+restrição separava 3 temas e fechava honestamente).
+
+### 2. O que o raciocínio realmente responde: TENSÃO ENTRE FONTES
+
+O custo não é do sistema, é da pergunta. Mesmo modelo (produção, modo
+Direta), três perguntas:
+
+| pergunta | raciocínio | tempo |
+|---|---|---|
+| "O que é o Ohikari?" (sem tensão) | 1.642 | **28,8s** |
+| "Meishu-Sama fala sobre câncer?" (2 enquadramentos, sem contradição) | 4.100 | 47,6s |
+| "mudar de plano espiritual?" (contradição real entre fontes) | 2.080-12.317 | 48-155s |
+
+**Perguntas normais já respondem em 27-57 segundos hoje, em produção, sem
+nenhum ajuste.** Os 130-175s que o usuário sentiu são o preço específico da
+pergunta-bandeira, que é o pior caso conhecido do acervo (escrito de 1949/54
+diz que o plano é fixo; oral de 1953 reformula como questão de classe).
+
+### 3. O que foi testado e REPROVADO (não reabrir sem motivo novo)
+
+Todas as configurações abaixo perderam para o que já está em produção, em
+bateria final de 4 modelos x 3 perguntas (12 execuções sequenciais):
+
+| modelo | tempo médio | raciocínio | fontes lidas |
+|---|---|---|---|
+| **prod_direta** (o que está no ar) | **41,6s** | 2.607 | 3,0 |
+| b6_direta (com "melhorias") | 55,2s | 3.863 | 1,7 |
+| **prod_citacoes** (o que está no ar) | **85,3s** | 6.066 | 5,7 |
+| b6_citacoes (com "melhorias") | 135,0s | 11.428 | 3,3 |
+
+**(a) "Alavanca estrutural"** -- janela do trecho de busca de 200/300 para
+250/900, fusão de hits próximos do mesmo arquivo, cap do payload de 8.000
+para 20.000. Parecia obviamente certo (mediu-se que os trechos decisivos
+passavam a aparecer nos resultados, `hoje=False -> alavanca=True`). **Efeito
+colateral que só apareceu com 3 perguntas**: com o trecho de busca tão
+grande, o modelo PARA DE ABRIR OS ARQUIVOS -- respondeu "O que é o Ohikari"
+lendo ZERO arquivos, e citou 8 arquivos tendo aberto 4. Otimizar a busca
+para entregar mais de uma vez fez o modelo pesquisar menos.
+
+**(b) "Regra 12"** -- instruir o agente a formular 4-6 termos correlatos e
+buscar todos na 1ª rodada. Funciona no que promete (densidade de busca sobe
+de 1,6-1,9 para 2,7-3,1 chamadas por rodada) mas **o volume extra não trouxe
+nenhuma fonte nova** -- convergiu para os mesmos textos, mais devagar. E é
+ativamente RUIM no modo com citações, que precisa de profundidade, não
+largura.
+
+**(c) Trocar embedding por termos do próprio agente** -- empate técnico
+(106,9s x 105,3s, mesma cobertura). Não vale a troca em nenhuma direção.
+
+**(d) Mexer no teto de rodadas (6 x 40)** -- praticamente irrelevante. O
+modelo para sozinho em 4-6 rodadas na esmagadora maioria dos casos. Uma
+única execução em 40+ execuções chegou a 9 rodadas. **Nota importante**: o
+modelo emite ~1,8 chamadas de ferramenta POR rodada (paralelismo próprio,
+sem instrução nossa), então 6 rodadas = ~10-11 operações de busca.
+
+**(e) "Modo silencioso" / regra 11** -- instruir o modelo a não narrar
+raciocínio ao chamar ferramenta. Ver seção 4: a premissa estava errada.
+
+### 4. Bug de método que invalidou uma linha inteira de investigação
+
+A sessão anterior levantou (por inferência de tokens, nunca verificada) que
+o modelo "narra o raciocínio em voz alta" entre chamadas de ferramenta, e
+que suprimir isso economizaria tempo. Nesta sessão instrumentei para
+confirmar e reportei "zero narração em todas as rodadas" -- **conclusão
+errada, causada por ler o campo errado**.
+
+O campo `message.content` fica SEMPRE vazio quando há `tool_calls`. A
+narração vive em **`message.reasoning_content`**, campo separado, e é
+contabilizada em `usage.completion_tokens_details.reasoning_tokens`. Medido
+depois de corrigir: **72-77% de todos os tokens de saída são raciocínio**,
+presente em 6 de 6 rodadas nas duas variantes. E sai em INGLÊS, mesmo com o
+prompt inteiro em português.
+
+**Lição**: ao instrumentar a API da DeepSeek, sempre despejar
+`msg.model_dump()` inteiro antes de concluir qualquer coisa sobre
+comportamento -- há campos que não aparecem no acesso ingênuo.
+
+### 5. Descoberta sobre os dois modos: NÃO é escolha de formatação
+
+"Com citações" não é o mesmo conteúdo com aspas. É quase o dobro de
+pesquisa, porque para citar literalmente o modelo PRECISA abrir o arquivo
+(não dá para parafrasear do resumo da busca):
+
+| | fontes lidas | arquivos citados | tamanho | tempo |
+|---|---|---|---|---|
+| Direta | 3,0 | -- | 2.059 car. | 41,6s |
+| Com citações | 5,7 | 6,3 | 5.658 car. | 85,3s |
+
+O modo com citações foi o único a alcançar `19521215-御垂示録16号.txt` e
+`19540215-御教え集30号.txt`, que **não apareceram em nenhuma das 48
+execuções** de todas as outras configurações testadas.
+
+**Decisão do usuário (2026-08-07)**: rótulos mudados de "Direta"/"Com
+citações" para **"Direta / Sem citações"** e **"Aprofundada / Com
+citações"**, nos 13 idiomas de `static/js/app.js` e no
+`templates/app.html`, justamente porque os rótulos antigos sugeriam
+diferença de formatação quando a diferença real é de profundidade.
+
+### 6. Armadilhas de medição (custaram horas nesta sessão)
+
+**(a) Paralelismo infla tempo.** Rodar 3 execuções em paralelo distorce os
+tempos o suficiente para inverter conclusões -- publiquei uma página
+afirmando que um modelo era 20% mais rápido; medindo sequencialmente, o
+empate apareceu. A sessão anterior já tinha documentado isso e eu repeti o
+erro. **Qualquer comparação de tempo tem que ser 100% sequencial.**
+
+**(b) Heurística de palavra no texto da resposta é inútil para medir
+cobertura.** Usei `"sobe" e "desce" no texto` como proxy de "leu fonte
+oral": errou nos dois sentidos (execução que leu o 24号 marcada como
+False; execução que não leu nenhum oral marcada como True). **A medida
+correta é classificar os ARQUIVOS efetivamente abertos** via
+`ler_mais_contexto` (séries orais = 御垂示録/御教え集/御光話録; o resto é
+escrito).
+
+**(c) 3 repetições numa pergunta só engana.** A configuração "B@6" venceu
+com folga quando testada só na pergunta-bandeira e PERDEU feio quando
+testada em 3 perguntas de dificuldades diferentes. Nunca concluir sobre
+arquitetura com uma pergunta só -- ainda mais sendo o pior caso do acervo.
+
+**(d) `pgrep -f <script>` dentro de um `bash -c` que contém o nome do
+script casa consigo mesmo** -- laço de encadeamento fica preso para sempre.
+Duas baterias não rodaram por causa disso. Usar outro padrão de espera.
+
+### 7. Corrigido e commitado nesta sessão
+
+**Commit `5a8b738`** -- versiona o que já rodava em produção há 12+ horas
+mas nunca tinha sido commitado (existia só no disco do servidor; qualquer
+checkout apagaria): busca semântica embutida (`buscar_por_significado`,
+`buscar_termo_enriquecido`), e as regras **8a** (recorrer à busca por
+sentido quando a literal falha), **8b** (hierarquia palavra escrita > oral),
+**8c** (disciplina da frase de abertura), **8d** (nunca determinístico em
+ambiguidade), **9a** (teto de ~2.000 caracteres no modo Direta, com exceção
+quando a 8d se aplica) -- nas duas variantes de prompt, PT e JP.
+
+**ATENÇÃO à numeração real das regras** (a documentação anterior citava
+errado): 8=inferência, 8a=busca semântica de resgate, 8b=hierarquia,
+8c=abertura, 8d=não-determinístico, 9=temas, 9a=objetividade, 10=não fundir.
+
+### 8. Qualidade: as regras estão funcionando em produção
+
+Verificado lendo dezenas de respostas completas. Nenhuma das 12 execuções da
+bateria final abriu com "sim"/"não" categórico numa pergunta ambígua; todas
+separaram os enquadramentos e fecharam reconhecendo a tensão. Na pergunta do
+câncer, o modelo chega a ANUNCIAR a separação (*"o acervo apresenta o câncer
+verdadeiro de duas formas distintas, sem um texto que as una
+explicitamente"*) -- exatamente o que a regra 10 pretende, e o oposto do bug
+histórico de fusão.
+
+**Falso alarme registrado**: sinalizei que o modo com citações estaria
+violando a regra 10 num parágrafo de síntese final (visto numa medição do
+usuário). **Não se reproduziu** em nenhuma das 3 execuções controladas do
+mesmo modo -- os fechos preservam a tensão. Foi ocorrência isolada, não
+defeito sistemático.
+
+### Onde continuar
+
+1. **Não reabrir** as linhas reprovadas da seção 3 sem evidência nova. O
+   estudo custou 60+ chamadas reais e o resultado é consistente: a
+   configuração de produção venceu em todos os cortes.
+2. Pendente e potencialmente valioso: **ligar o `on_deep_search`** (já
+   existe em `agentic_search.py`, dispara na 3ª rodada, está inerte e não
+   conectado a nenhuma UI). Para as perguntas difíceis que levam 150s, avisar
+   "estou pesquisando mais a fundo" ataca o problema real (esperar sem
+   feedback) sem tocar em qualidade.
+3. Pendente: **subir o timeout do gunicorn** (hoje `--timeout 180`, com
+   medições reais de 175s -- margem de 5 segundos para o usuário receber
+   resposta vazia).
+4. Pendente de teste isolado: **o cap `TAMANHO_MAX_RESULTADO_FERRAMENTA =
+   8000`** trunca ~33% do resultado de busca em silêncio (medido: JSON de
+   11.929 chars cortado em 8.000, e o corte cai justamente na cauda, onde
+   ficam os resultados semânticos). Produção venceu mesmo assim, então o
+   benefício de subir é **hipótese não comprovada** -- testar SOZINHO, sem
+   o resto da alavanca junto, que foi o erro de desenho desta sessão.
+5. Pendente: **teste de camada** -- a mesma configuração de produção deu
+   48,4s chamada direto como função e 130-175s pelo site. Se a diferença
+   estiver no histórico de conversa injetado no prompt ou na camada HTTP,
+   é ali que está o ganho real de latência, não no motor de busca.
+6. Continua valendo: nenhuma promoção/reinício de produção sem autorização
+   explícita do usuário.
