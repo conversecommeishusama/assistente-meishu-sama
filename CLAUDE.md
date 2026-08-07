@@ -10600,3 +10600,134 @@ contagem bate. Pulou 10 casos, cada um um estrago em potencial:
 2. Faixas B (181 termos) e C (70) do glossário ainda não julgadas.
 3. Nada da etapa 3 chega ao aplicativo antes de uma reconstrução de índice, que
    continua exigindo autorização explícita.
+
+## Sessão 2026-08-07/08 -- etapa 3 do glossário: as três faixas julgadas, e um
+## erro grave meu que obrigou a descartar e refazer o dia inteiro
+
+### O que deu errado, com o nome que tem
+
+`scripts/aplica_decisoes_glossario.py` contava as ocorrências POR ARTIGO --
+justamente para só trocar quando o japonês e o português batessem -- e aplicava
+com `texto.replace()` no ARQUIVO INTEIRO, sem fronteira de palavra. Aprovar um
+artigo trocava o livro todo.
+
+    aprovei 76 trocas nas duas rodadas    o script fez ~545
+
+E, sem fronteira de palavra, comeu palavras comuns que continham o termo:
+
+    coração    -> cnorito      ("coração" contém "oração")
+    adoração   -> adnorito
+    preceito   -> noritoito    ("preceito" contém "prece")
+    precedente -> noritodente
+
+O pior efeito não foi o volume: `光明如来` (Komyo-Nyorai) e `大光明如来`
+(Daikōmyō Nyorai) são **duas Imagens distintas**, e 120 depoimentos passaram a
+dizer que a pessoa recebeu uma quando o japonês diz a outra.
+
+### Como apareceu, e o que isso ensina
+
+Não apareceu por teste. Apareceu porque conferi a contagem final: `norito`
+saltou de 152 para 552 com 28 trocas aprovadas. Antes disso, a mesma rodada
+tinha passado por verificação de integridade estrutural (137 obras, 0 âncoras
+quebradas, 0 divergência) -- **todas verdes, e o corpus corrompido**.
+
+É a regra já registrada em `[[feedback_no_numeric_delta_validation]]`,
+confirmada de novo: contagem e integridade estrutural não provam nada sobre
+conteúdo.
+
+### A determinação do usuário, e por que ele estava certo
+
+    "vc tende a fazer as coisas por script que é o mais lógico para vc, mas se
+     vc olhar os documentos verá a orientação de sempre fazer de forma
+     semântica, por mais que o custo seja maior."
+    "verifique todo o trabalho realizado hoje de forma semântica, tudo o que
+     foi feito sem exceção" ... "e sem fazer por amostragem"
+    "TODO O TRABALHO DEVE SER FEITO LINHA A LINHA COMPARANDO JP PT DE FORMA
+     SEMÂNTICA."
+
+Verificação completa dos 1.292 trechos alterados no dia, cada um lido contra o
+japonês do artigo:
+
+    CORRETO   895   70%
+    ERRADO    355   28%
+    INCERTO    30    2%
+
+Os erros, por natureza: 110 nome do periódico 地上天国 trocado em citação (eu
+tinha decidido preservar, e minha guarda por regex só pegava a forma "nº X");
+88 concordância quebrada pela troca ("a norito", "as norito xintoístas" --
+norito é masculino); 65 Daikōmyō onde o japonês diz 光明如来; 31 substring
+"coração"; 27 Byōbu Kannon indevida; 14 norito onde o japonês diz 祈り.
+
+**Dos onze termos aplicados no dia, o único que não aparece nessa lista é o
+`野菜`** -- o único que foi feito lendo passagem a passagem desde o início.
+
+### Decisão: descartar o dia e refazer semanticamente
+
+`textos_portugues/` (promovido em 06/08) nunca foi tocado e serviu de estado
+íntegro. Restaurados os 137 arquivos em fonte e staging; 20 obras tiveram
+âncora reparada contra o texto restaurado, preservando as correções
+ESTRUTURAIS do dia (âncora em byline / rótulo de diálogo movida para o título).
+
+Preservado, porque não vive no texto: o glossário com as 703 entradas e todas
+as decisões do usuário; os julgamentos das faixas A, B e C; a correção de OCR
+do japonês; as âncoras japonesas realinhadas.
+
+### Decisões do usuário nesta sessão
+
+| termo | decisão |
+|---|---|
+| `地上天国` | "Paraíso Terrestre" (padrão da IMMB, ajuda a busca) |
+| `地上天国` periódico | citação vira "Tijotengoku nº X", como os irmãos Eikō/Hikari/Mioshie-shū |
+| `野菜` | "hortaliças"; legumes se só não-folhas; verduras se só folhas |
+| `御屏風観音様` | "Byōbu Kannon", SEM ARTIGO, glosa só na 1ª menção |
+| `祝詞` | "norito" -- o japonês distingue de 祈り/祈願 |
+| `悪霊` | "espíritos malignos" (邪神 continua "Divindades malignas") |
+| `真善美` | "a Verdade, o Bem e o Belo" -- Bem por oposição a Mal (zenaku), nunca Bondade |
+| `唯物論`/`唯心論` | "teoria materialista"/"teoria espiritualista" |
+| `凝結` | "solidificação" |
+| `救世会館` = `メシヤ会館` | "Templo Messiânico" -- 救世 lê-se meshiya, mesmo prédio de Atami |
+
+**Duas vezes o usuário me corrigiu e tinha razão.** No `唯物論` eu propus
+"doutrina materialista"; ele observou que "teoria" em português não se limita a
+hipótese científica, e o corpus provou: usa "teoria do ki", "teorias da
+medicina", e reserva "doutrina" para a doutrina da Igreja. No gênero de Kannon,
+eu ia uniformizar "o/a Kannon do biombo" como descuido; ele lembrou que
+Meishu-Sama ensina que Kannon é homem E mulher (観世音菩薩は... 男であり、
+女であり、両性を具備され給うておらる), e que não usar artigo evita tomar partido
+-- o que o acervo confirma ser o padrão dos nomes irmãos.
+
+### Método que passa a valer, e que é o registrado desde sempre
+
+`scripts/reaplica_semantico.py`: artigo por artigo, JP e PT lado a lado, o
+modelo lê e devolve por ocorrência o trecho exato e o corrigido. Três
+salvaguardas que faltavam:
+
+1. O trecho proposto tem de existir LITERALMENTE no artigo -- verificado em
+   código antes de aceitar.
+2. Só grava se o trecho for ÚNICO no arquivo. Se repetir, fica pendente.
+   Nunca `replace` global.
+3. O prompt carrega as armadilhas nomeadas: 光明如来 ≠ 大光明如来, 邪神 ≠ 悪霊,
+   祈り ≠ 祝詞, 先生 ≠ 大先生, 植物 continua "vegetal", "coração" contém
+   "oração" mas não é oração.
+
+### Estado das faixas do glossário (todas julgadas)
+
+| faixa | termos | FALSO_POS | SISTEMÁTICO | VIOLAÇÃO | INCERTO |
+|---|---:|---:|---:|---:|---:|
+| A (>=90%) | 294 (203 em 100%) | 48 | 18 | 35 | 3 |
+| B (60-89%) | 181 | 101 | 50 | 26 | 4 |
+| C (25-59%) | 70 | 38 | 26 | 4 | 2 |
+| E (0%) | 25 | 13 | 4 | 0 | 8 |
+
+Os 98 vereditos SISTEMÁTICO são pergunta de glossário -- nunca correção
+automática -- e continuam abertos para o usuário.
+
+### Onde continuar
+
+1. `reaplica_semantico.py` rodando sobre 1.504 artigos. Ao terminar: auditar as
+   propostas, aplicar, revalidar âncoras, e reverificar semanticamente.
+2. Nada chegou nem chega ao aplicativo sem reconstrução de índice, que exige
+   autorização explícita. Produção segue servindo o índice de 06/08.
+3. Backup do estado danificado em
+   `reports/livros_trabalho/pt_estado_danificado_20260807T234913Z/`, caso
+   alguma correção legítima do dia precise ser resgatada de lá.
