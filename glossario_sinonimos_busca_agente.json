@@ -14,6 +14,17 @@
       "Camadas do Mundo Espiritual"
     ]
   },
+  "plano": {
+    "nota": "2026-08-06: entrada nova a pedido do usuário -- a pergunta 'mudar de plano espiritual na mesma reencarnação' costuma ser buscada só com a palavra 'plano' sozinha (sem 'espiritual' junto), o que não batia com a entrada 'plano espiritual' (exige as duas palavras juntas na busca). Objetivo: garantir que a definição estrutural de 'plano' chegue ao agente mesmo quando a busca usa só essa palavra isolada -- achado real: em testes repetidos, o agente vinha respondendo 'sim, muda de plano' mesmo quando a citação encontrada só sustentava mudança de camada/posição dentro do mesmo plano. Ajuste 2026-08-06 (mesma sessão): o usuário notou que 'plano' também é usada em português no sentido de projeto/desígnio (ex. 'Plano Divino', que no corpus pode corresponder a Gokeirin ou Goshinkai, sem relação com a estrutura do Mundo Espiritual) -- o significado foi qualificado para só se aplicar quando 'plano' estiver associado à estrutura hierárquica, evitando confundir os dois sentidos mesmo que a entrada dispare numa busca por 'Plano Divino'.",
+    "significado": "Quando a palavra 'plano' aparece associada à estrutura/hierarquia do Mundo Espiritual, ela se refere especificamente a um dos 3 grandes planos (Paraíso, Mundo Intermediário, Inferno) -- não é sinônimo solto de 'camada' (60/180, a unidade mais fina) nem de 'sub-nível' (9, a categoria intermediária); são 3 categorias numeradas diferentes na mesma hierarquia. Esse é um sentido diferente do uso comum de 'plano' como projeto/desígnio (ex. 'Plano Divino'), que não se refere a essa estrutura hierárquica.",
+    "termos_relacionados": [
+      "três planos",
+      "plano superior",
+      "plano médio",
+      "plano inferior",
+      "Camadas do Mundo Espiritual"
+    ]
+  },
   "sub-nível espiritual": {
     "nota": "2026-07-30: entrada nova, mesma sessão da correção de tradução. 'Sub-nível' é o termo introduzido pela padronização para a subdivisão intermediária (3 por plano, 9 no total) -- antes não tinha palavra fixa própria no corpus, era confundida ora com 'plano', ora com 'camada', dependendo do livro.",
     "significado": "Cada um dos 3 grandes planos do Mundo Espiritual se subdivide em 3 sub-níveis (posição superior, média ou inferior dentro do próprio plano) -- 9 sub-níveis no total. Cada sub-nível se subdivide em 20 camadas. É a categoria intermediária entre 'plano' (3 no total) e 'camada' (60 por plano / 180 no total). No caso específico do Paraíso, os 3 sub-níveis têm nome próprio: Primeiro, Segundo e Terceiro Paraíso.",

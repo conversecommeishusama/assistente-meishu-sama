@@ -414,6 +414,109 @@ def ler_mais_contexto(arquivo: str, posicao: int, tamanho: int = 6000) -> str:
     return texto[ini:fim]
 
 
+@lru_cache(maxsize=1)
+def _indices_semanticos_pt():
+    """Carrega o índice FAISS/embedding já usado pelo search_service (mesmo
+    índice de produção, intfloat/multilingual-e5-large) -- reaproveitado,
+    não duplicado. lru_cache evita recarregar o modelo/índice a cada
+    chamada da ferramenta dentro do mesmo processo."""
+    from .search_service import carregar_indices_pt
+
+    return carregar_indices_pt()
+
+
+def buscar_por_significado(consulta: str, k: int = 6) -> list[dict]:
+    """Busca por SENTIDO via embedding, complementar a `buscar_termo` (que é
+    busca literal de palavra). Achado real, 2026-08-06: um título oficial
+    conhecido de fora do acervo (ex. IMMB) ou uma paráfrase de memória pode
+    ter baixíssima sobreposição de palavra com a tradução própria do nosso
+    corpus para o MESMO conteúdo (ex.: "O ser humano depende do seu
+    pensamento" x "O Ser Humano é Segundo Seus Pensamentos") -- busca
+    literal não acha nada, mesmo com o trecho presente. Validado: embedding
+    achou o trecho certo em 1º lugar, com folga de score, num caso real
+    onde a busca agenciada completa (40 rodadas) não achou nada.
+
+    Retorna posição REAL no arquivo bruto (localizando o chunk dentro do
+    texto original via correspondência de início), compatível com
+    `ler_mais_contexto` -- igual ao formato de `buscar_termo`."""
+    try:
+        import faiss as _faiss
+    except Exception:
+        return []
+    chunks_pt, metadados_pt, indice_pt, modelo_pt = _indices_semanticos_pt()
+    if not chunks_pt:
+        return []
+    emb = modelo_pt.encode([consulta]).astype("float32")
+    _faiss.normalize_L2(emb)
+    distancias, indices = indice_pt.search(emb, k)
+    corpus = _corpus_pt()
+    resultados: list[dict] = []
+    for dist, idx in zip(distancias[0], indices[0]):
+        if idx < 0:
+            continue
+        meta = metadados_pt[idx]
+        arquivo = meta.get("arquivo") or meta.get("arquivo_original")
+        texto_chunk = chunks_pt[idx]
+        if not arquivo or arquivo not in corpus or not texto_chunk:
+            continue
+        texto_original = corpus[arquivo][0]
+        agulha = texto_chunk[:80].strip()
+        posicao = texto_original.find(agulha) if agulha else -1
+        if posicao < 0:
+            posicao = 0
+        ini = max(0, posicao - 100)
+        fim = min(len(texto_original), posicao + 700)
+        resultados.append(
+            {
+                "arquivo": arquivo,
+                "posicao": posicao,
+                "trecho": texto_original[ini:fim].strip(),
+                "score_semantico": round(float(dist), 3),
+            }
+        )
+    return resultados
+
+
+def buscar_termo_enriquecido(termo: str, max_resultados: int = 12, k_semantico: int = 4) -> list[dict]:
+    """`buscar_termo` (literal) + resultados semânticos complementares na
+    MESMA chamada -- 2026-08-06, decisão do usuário: enriquecer toda busca
+    por padrão, não só como fallback quando a busca literal falha por
+    completo (regra 8a). Achado real ao testar a mesma pergunta várias
+    vezes: a busca literal já encontrava BASTANTE conteúdo relevante (não
+    falhava), mas nem sempre a citação específica que resolve uma
+    ambiguidade -- variava de tentativa pra tentativa qual termo o modelo
+    escolhia tentar. Isso não é o cenário que a regra 8a cobre (ela só
+    dispara quando a busca literal não acha nada). Fundir os dois na
+    mesma chamada, em vez de exigir uma ferramenta separada, evita o
+    custo de uma rodada de rede inteira (~a fatia dominante do tempo,
+    medido antes: 80-87% do tempo é chamada à API, só 13-19% é local) --
+    o cálculo do embedding + busca FAISS é local e rápido (<1s medido).
+
+    Resultados semânticos que caem muito perto de um resultado literal já
+    encontrado (mesmo arquivo, posição a menos de 500 caracteres) são
+    descartados -- não adianta mostrar o mesmo trecho duas vezes."""
+    resultados = buscar_termo(termo, max_resultados=max_resultados)
+    ja_vistos = {(r["arquivo"], r["posicao"] // 500) for r in resultados}
+    try:
+        semanticos = buscar_por_significado(termo, k=k_semantico)
+    except Exception:
+        semanticos = []
+    for s in semanticos:
+        chave = (s["arquivo"], s["posicao"] // 500)
+        if chave in ja_vistos:
+            continue
+        ja_vistos.add(chave)
+        resultados.append(
+            {
+                "arquivo": s["arquivo"],
+                "posicao": s["posicao"],
+                "trecho": s["trecho"],
+                "via": "busca semântica (por sentido, não palavra exata) -- complementar aos resultados acima",
+            }
+        )
+    return resultados
+
+
 # --------------------------------------------------------------------------
 # Variante japonesa (§4 do estudo: "não testado ainda, escopo explícito") --
 # busca sobre o acervo ORIGINAL em japonês (textos_japones/*.txt), mesma
@@ -554,12 +657,17 @@ REGRAS OBRIGATÓRIAS:
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
 7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo. ATENÇÃO A UM PADRÃO ESPECÍFICO: se um resultado vem de um arquivo cujo título/cabeçalho ou trecho mostrado deixa claro que o TEMA GERAL bate com a pergunta, mas o texto mostrado é só definição/descrição estrutural do assunto (ex.: explica os conceitos e a organização geral, sem tratar diretamente do caso ou da pergunta específica) -- isso é sinal forte de que a resposta real está em OUTRO PONTO DO MESMO ARQUIVO, não que o arquivo é irrelevante. Nesse caso, o próximo passo correto é chamar ler_mais_contexto nesse mesmo arquivo (inclusive em posições mais adiante do texto, não só ao redor da posição devolvida), não abandonar o arquivo e tentar um novo termo de busca.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos, você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:" (ou o equivalente em {idioma}), nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
+8a. HIERARQUIA ENTRE PALAVRA ESCRITA E PALAVRA ORAL: todo o acervo é doutrina estabelecida (é só o que Meishu-Sama escolheu publicar em vida). Mas quando uma pergunta encontra trechos de fontes ESCRITAS (ensaios, artigos de periódico, livros doutrinários) e de fontes ORAIS (diálogos registrados -- coletâneas de perguntas e respostas) sobre o MESMO assunto, com enquadramentos diferentes: trate a fonte ESCRITA como a base doutrinária central, e a fonte ORAL como complemento/ampliação dela -- a fala oral está presa ao contexto do momento e do interlocutor específico, enquanto o texto escrito é a formulação mais deliberada e permanente do ensinamento. Isso NÃO muda a regra 10 (nunca fundir sem base textual) -- os enquadramentos continuam em temas/subtítulos separados -- mas ao decidir COM QUAL TEMA ABRIR a resposta e ao apresentar os temas, coloque a fonte escrita primeiro/como referência central, e enquadre a oral explicitamente como complementando/detalhando a partir dela, não como uma visão alternativa de peso igual. Se só existir um dos dois tipos sobre o assunto (só escrito, ou só oral), esse é a doutrina soberana por padrão, sem necessidade de aplicar essa hierarquia.
+8b. DISCIPLINA DA FRASE DE ABERTURA: a abertura da resposta pesa mais do que o resto do texto -- muitos leitores só leem essa parte e param. NUNCA abra com uma afirmação categórica (ex. "Sim, ..."/"Não, ..." ou equivalente em {idioma}) decidida antes de você ter processado todos os trechos que vai usar -- isso é comum em geração de texto sequencial: começa-se a escrever com uma primeira impressão, e uma nuance ou contradição só aparece depois, no meio ou no fim da resposta, sem a abertura ser corrigida para refletir isso. Antes de escrever a primeira frase, finalize mentalmente qual é a síntese completa (incluindo qualquer nuance, exceção ou tensão entre trechos que você vai apresentar mais adiante) e só então escreva a abertura de acordo com essa síntese final -- nunca de acordo com a primeira impressão. Se a resposta plena for mista ou matizada (não um "sim" ou "não" limpo), a abertura já deve refletir essa complexidade, não simplificar para depois complicar.
+8c. NUNCA DÊ RESPOSTA DETERMINÍSTICA EM CASO DE AMBIGUIDADE EXPLÍCITA OU IMPLÍCITA: se os trechos encontrados, tomados em conjunto, sustentam leituras diferentes ou aparentemente contraditórias sobre a mesma pergunta -- ambiguidade EXPLÍCITA (os próprios trechos discordam entre si) ou IMPLÍCITA (um termo da pergunta ou de um trecho admite mais de uma interpretação plausível, e a resposta muda dependendo de qual interpretação se usa) -- NUNCA feche a resposta com um "Sim" ou "Não" categórico (ou equivalente em {idioma}), nem na abertura (regra 8b) nem na conclusão. Apresente os enquadramentos como a regra 10 já pede (temas/subtítulos separados, cada um com sua citação), e feche reconhecendo abertamente que a resposta depende de como se interpreta o termo ou a pergunta, ou que o acervo sustenta mais de uma leitura -- sem escolher uma delas como "a resposta certa" por conta própria. Isso só deixa de valer quando um trecho específico resolve a ambiguidade de forma explícita (nesse caso, cite esse trecho como o que resolve, e a regra 8a sobre precedência escrita/oral se aplica quando for o caso).
 """
 
 SYSTEM_PROMPT_JP_REGRA9_CITACOES_TEMPLATE = """9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória: divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO em {idioma}, com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal traduzida (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.
 """
 
 SYSTEM_PROMPT_JP_REGRA9_DIRETA_TEMPLATE = """9. FORMATO DA RESPOSTA -- explicação por tema, sem citação literal (não se aplica ao modo "na íntegra" da regra 5, que é reprodução literal): divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique em {idioma}, com suas próprias palavras, fiel ao sentido dos trechos -- a precisão continua obrigatória (nada que os trechos não sustentem pode aparecer na resposta), mas NÃO é necessário transcrever nenhuma citação literal entre aspas nem indicar [arquivo.txt] no texto. Escreva como um texto corrido e conectado, não como uma lista de citações comentadas. NO MODO DIRETA, A REGRA 5 (citar a fonte) NÃO SE APLICA: é PROIBIDO mencionar o nome do arquivo em QUALQUER lugar ou formato da resposta -- nem entre colchetes, nem em lista/seção "Fontes"/"Referências" ao final, nem citado DENTRO da própria frase/prosa (ex.: "Meishu-Sama, em [nome de arquivo], diz que..." também é proibido, mesmo sem colchetes). O nome de arquivo deste acervo é em japonês (contém kanji) -- mencioná-lo violaria também a regra 4 sobre nunca incluir caracteres japoneses na resposta. Se sentir necessidade de indicar de onde vem a informação, use no máximo uma referência genérica e sem nome de arquivo (ex.: "segundo os ensinamentos de Meishu-Sama sobre o tema"), nunca o nome do arquivo.
+
+9a. TAMANHO NO MODO DIRETA (2026-08-06, decisão do usuário: só se aplica aqui, nunca no modo com citações): a resposta final deve ter, no máximo, cerca de 2000 caracteres -- é uma restrição real, não uma sugestão solta. Para caber nisso: escolha só os 1-2 enquadramentos mais centrais e diretos ao tema perguntado, sem tentar cobrir todos os ângulos que a busca trouxe. Termine SEMPRE com um convite específico e concreto, em {idioma} (nomeando o assunto real que ficou de fora, nunca um convite genérico tipo "posso explicar mais se quiser") para o usuário perguntar mais sobre o que não coube -- o aprofundamento no modo Direta acontece pela conversa continuar, pergunta a pergunta, não numa única resposta que tenta caber tudo. EXCEÇÃO (2026-08-06): quando a regra 8c (nunca dar resposta determinística em ambiguidade) se aplicar -- ou seja, quando os trechos sustentarem leituras diferentes/contraditórias e não houver como resolver isso com uma resposta limpa --, o teto de 2000 caracteres pode ser ultrapassado o necessário para apresentar os enquadramentos separadamente, como a regra 8c exige. Mesmo nesse caso, a resposta deve continuar o mais objetiva possível -- cada enquadramento apresentado de forma direta e sem elaboração supérflua, nunca um pretexto para voltar a despejar tudo que a busca encontrou.
 """
 
 SYSTEM_PROMPT_JP_TAIL = """10. PROIBIDO FUNDIR AFIRMAÇÕES DE FONTES DIFERENTES SEM BASE TEXTUAL: se dois trechos (de arquivos diferentes, ou de datas diferentes) descrevem o mesmo conceito de formas distintas ou aparentemente incompatíveis (ex.: um trecho diz que a causa de X é espiritual, outro diz que a causa de X é física/alimentar), NÃO os apresente como uma única explicação unificada, nem trate um como a "causa" do outro, a menos que algum trecho conecte os dois explicitamente. Cada fonte com um enquadramento diferente vira seu próprio SUBTÍTULO (###) na resposta, com sua própria citação -- não basta suavizar a redação com frases tipo "há duas camadas de explicação" ou "por um lado... por outro lado" DENTRO do mesmo tema; isso ainda é fundir. Se você notar que está prestes a escrever esse tipo de ressalva dentro de um único tema, é sinal de que precisa quebrar em dois subtítulos separados, não só suavizar o texto. Não invente elo causal ou complementaridade entre fontes que o próprio texto não faz. Isso vale mesmo quando as fontes usam a mesma palavra-chave (ex. "verdadeiro" X) para coisas que cada uma define de forma diferente. SE A RESPOSTA TIVER 2 OU MAIS TEMAS SEPARADOS POR ESTA REGRA, É PROIBIDO ESCREVER UM PARÁGRAFO DE "RESUMO GERAL" NO FINAL QUE TENTE COMPRIMIR TUDO NUMA FRASE SÓ -- é exatamente nesse resumo que a fusão sempre volta (ex. "o câncer verdadeiro é espiritual e vem da toxina da carne" reintroduz o elo que os temas separados evitaram). A separação por subtítulos já é suficiente; termine a resposta no último tema, sem parágrafo de fechamento que junte os enquadramentos de novo. EXCEÇÃO CONTROLADA: depois de separar os enquadramentos em temas distintos como acima, se houver uma forma de reconciliá-los apoiada no que os próprios trechos NÃO afirmam (ex.: nenhum dos dois menciona um limite de escopo -- tempo, vida, contexto -- que o outro pressupõe), você PODE acrescentar, depois dos temas separados, um bloco adicional rotulado "Inferência:" (regra 8) oferecendo essa reconciliação -- nunca como se o texto tivesse dito isso, sempre como leitura sua, claramente separada e justificada. Isso é diferente de inventar elo causal (proibido acima): ali você afirmaria que os trechos se conectam; aqui você declara abertamente que está oferecendo uma interpretação sua que os concilia, e explica o motivo.
@@ -624,9 +732,12 @@ TOOLS_SCHEMA = [
             "name": "buscar_termo",
             "description": (
                 "Busca literal (tolerante a acento e maiúscula/minúscula) de uma palavra ou "
-                "frase em todo o acervo de textos de Meishu-Sama. Retorna trechos ordenados por "
-                "relevância, com o nome do arquivo e a posição. Se não encontrar nada relevante, "
-                "tente de novo com um sinônimo ou termo relacionado antes de desistir."
+                "frase em todo o acervo de textos de Meishu-Sama, já enriquecida com alguns "
+                "resultados complementares por SENTIDO (embedding) além dos literais -- não é "
+                "preciso chamar buscar_por_significado à parte para obter esse complemento. "
+                "Retorna trechos ordenados por relevância, com o nome do arquivo e a posição. "
+                "Se não encontrar nada relevante, tente de novo com um sinônimo ou termo "
+                "relacionado antes de desistir."
             ),
             "parameters": {
                 "type": "object",
@@ -675,6 +786,29 @@ TOOLS_SCHEMA = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "buscar_por_significado",
+            "description": (
+                "Busca por SENTIDO (embedding), não por palavra exata -- use como COMPLEMENTO a "
+                "buscar_termo, nunca como primeira tentativa. Útil especificamente quando "
+                "buscar_termo (inclusive com sinônimos) não encontrou nada relevante, mas você "
+                "suspeita que o conteúdo existe sob outra formulação -- por exemplo, o usuário "
+                "citou um título ou frase que parece vir de memória ou de uma fonte externa "
+                "(título oficial de outra publicação, resumo de terceiro), que pode não bater "
+                "palavra por palavra com a tradução própria deste acervo para o mesmo conteúdo. "
+                "Retorna trechos ordenados por proximidade de sentido, não de palavra."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "consulta": {"type": "string", "description": "A frase ou pergunta cujo SENTIDO deve ser buscado"},
+                },
+                "required": ["consulta"],
+            },
+        },
+    },
 ]
 
 
@@ -689,13 +823,15 @@ def _arquivos_da_ferramenta(nome: str, entrada: dict, resultado) -> set[str]:
     if nome == "buscar_artigo_por_titulo" and isinstance(resultado, dict):
         arquivo = resultado.get("arquivo")
         return {arquivo} if arquivo else set()
+    if nome == "buscar_por_significado" and isinstance(resultado, dict):
+        return {r["arquivo"] for r in resultado.get("resultados", []) if r.get("arquivo")}
     return set()
 
 
 def executar_ferramenta(nome: str, entrada: dict) -> dict:
     if nome == "buscar_termo":
         termo = entrada["termo"]
-        resultado = {"resultados": buscar_termo(termo)}
+        resultado = {"resultados": buscar_termo_enriquecido(termo)}
         significados = _significados_por_glossario(fold_ortografico_lower(termo))
         if significados:
             resultado["definicoes_de_termos"] = significados
@@ -704,6 +840,8 @@ def executar_ferramenta(nome: str, entrada: dict) -> dict:
         return {"texto": ler_mais_contexto(entrada["arquivo"], entrada["posicao"], entrada.get("tamanho", 6000))}
     if nome == "buscar_artigo_por_titulo":
         return buscar_artigo_por_titulo(entrada["titulo"])
+    if nome == "buscar_por_significado":
+        return {"resultados": buscar_por_significado(entrada["consulta"])}
     return {"erro": f"ferramenta desconhecida: {nome}"}
 
 
@@ -732,6 +870,8 @@ def _fingerprints_da_ferramenta(nome: str, resultado) -> set[str]:
     if nome == "buscar_artigo_por_titulo":
         texto = resultado.get("texto_completo")
         return {_fingerprint_texto(texto)} if texto else set()
+    if nome == "buscar_por_significado":
+        return {_fingerprint_texto(r["trecho"]) for r in resultado.get("resultados", []) if r.get("trecho")}
     return set()
 
 
@@ -777,12 +917,18 @@ REGRAS OBRIGATÓRIAS:
 6. Se, mesmo após tentar termos diferentes, não encontrar nada relevante, diga isso claramente -- não force uma resposta genérica.
 7. NÃO se contente com a primeira leitura plausível. Encontrar um trecho que parece responder a pergunta não é motivo para parar -- continue buscando e leia (ler_mais_contexto) os trechos genuinamente relevantes que aparecerem nos resultados, mesmo que já pareça ter uma resposta. Uma leitura posterior pode revelar uma distinção, exceção ou nuance que muda a resposta -- respostas incompletas por pressa são um risco maior do que gastar mais tempo buscando. Só considere a busca concluída quando as tentativas deixarem de trazer conteúdo genuinamente novo. ATENÇÃO A UM PADRÃO ESPECÍFICO: se um resultado vem de um arquivo cujo título/cabeçalho ou trecho mostrado deixa claro que o TEMA GERAL bate com a pergunta, mas o texto mostrado é só definição/descrição estrutural do assunto (ex.: explica os conceitos e a organização geral, sem tratar diretamente do caso ou da pergunta específica) -- isso é sinal forte de que a resposta real está em OUTRO PONTO DO MESMO ARQUIVO, não que o arquivo é irrelevante. Nesse caso, o próximo passo correto é chamar ler_mais_contexto nesse mesmo arquivo (inclusive em posições mais adiante do texto, não só ao redor da posição devolvida), não abandonar o arquivo e tentar um novo termo de busca.
 8. Se a pergunta pedir a opinião, reação ou "o que ele diria" de Meishu-Sama sobre um evento ou tema POSTERIOR à sua morte (1955) que ele nunca comentou nos textos (ex.: eventos históricos, tecnologias ou pandemias posteriores a 1955), você PODE construir uma inferência com base em princípios doutrinários reais do acervo (busque o tema de fundo -- ex. epidemia, sofrimento, purificação -- não invente sem buscar), mas deve: (a) rotular explicitamente essa parte como "Inferência:", nunca como citação ou posição documentada dele; (b) deixar claro que ele nunca se pronunciou sobre esse evento específico; (c) nunca misturar a inferência com uma citação literal sem essa separação clara.
+8a. Se buscar_termo (mesmo tentando sinônimos, regra 2) não encontrar nada relevante, mas a pergunta citar um título, frase ou formulação que parece vir de memória ou de uma fonte externa (ex.: o nome oficial de uma publicação, um resumo de terceiro) -- ou seja, algo que provavelmente EXISTE no acervo mas com vocabulário de tradução diferente do que a pergunta usa -- tente buscar_por_significado antes de concluir que o conteúdo não existe. Ela busca por sentido, não por palavra exata, e pode achar o trecho certo mesmo com baixíssima sobreposição de vocabulário.
+8b. HIERARQUIA ENTRE PALAVRA ESCRITA E PALAVRA ORAL: todo o acervo é doutrina estabelecida (é só o que Meishu-Sama escolheu publicar em vida). Mas quando uma pergunta encontra trechos de fontes ESCRITAS (ensaios, artigos de periódico, livros doutrinários) e de fontes ORAIS (diálogos registrados -- coletâneas de perguntas e respostas) sobre o MESMO assunto, com enquadramentos diferentes: trate a fonte ESCRITA como a base doutrinária central, e a fonte ORAL como complemento/ampliação dela -- a fala oral está presa ao contexto do momento e do interlocutor específico, enquanto o texto escrito é a formulação mais deliberada e permanente do ensinamento. Isso NÃO muda a regra 10 (nunca fundir sem base textual) -- os enquadramentos continuam em temas/subtítulos separados -- mas ao decidir COM QUAL TEMA ABRIR a resposta e ao apresentar os temas, coloque a fonte escrita primeiro/como referência central, e enquadre a oral explicitamente como complementando/detalhando a partir dela, não como uma visão alternativa de peso igual. Se só existir um dos dois tipos sobre o assunto (só escrito, ou só oral), esse é a doutrina soberana por padrão, sem necessidade de aplicar essa hierarquia.
+8c. DISCIPLINA DA FRASE DE ABERTURA: a abertura da resposta pesa mais do que o resto do texto -- muitos leitores só leem essa parte e param. NUNCA abra com uma afirmação categórica (ex. "Sim, ..."/"Não, ...") decidida antes de você ter processado todos os trechos que vai usar -- isso é comum em geração de texto sequencial: começa-se a escrever com uma primeira impressão, e uma nuance ou contradição só aparece depois, no meio ou no fim da resposta, sem a abertura ser corrigida para refletir isso. Antes de escrever a primeira frase, finalize mentalmente qual é a síntese completa (incluindo qualquer nuance, exceção ou tensão entre trechos que você vai apresentar mais adiante) e só então escreva a abertura de acordo com essa síntese final -- nunca de acordo com a primeira impressão. Se a resposta plena for mista ou matizada (não um "sim" ou "não" limpo), a abertura já deve refletir essa complexidade, não simplificar para depois complicar.
+8d. NUNCA DÊ RESPOSTA DETERMINÍSTICA EM CASO DE AMBIGUIDADE EXPLÍCITA OU IMPLÍCITA: se os trechos encontrados, tomados em conjunto, sustentam leituras diferentes ou aparentemente contraditórias sobre a mesma pergunta -- ambiguidade EXPLÍCITA (os próprios trechos discordam entre si) ou IMPLÍCITA (um termo da pergunta ou de um trecho admite mais de uma interpretação plausível, e a resposta muda dependendo de qual interpretação se usa) -- NUNCA feche a resposta com um "Sim" ou "Não" categórico, nem na abertura (regra 8c) nem na conclusão. Apresente os enquadramentos como a regra 10 já pede (temas/subtítulos separados, cada um com sua citação), e feche reconhecendo abertamente que a resposta depende de como se interpreta o termo ou a pergunta, ou que o acervo sustenta mais de uma leitura -- sem escolher uma delas como "a resposta certa" por conta própria. Isso só deixa de valer quando um trecho específico resolve a ambiguidade de forma explícita (nesse caso, cite esse trecho como o que resolve, e a regra 8b sobre precedência escrita/oral se aplica quando for o caso).
 """
 
 SYSTEM_PROMPT_REGRA9_CITACOES = """9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória (não se aplica ao modo "na íntegra" da regra 5, que é reprodução literal): divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.
 """
 
 SYSTEM_PROMPT_REGRA9_DIRETA = """9. FORMATO DA RESPOSTA -- explicação por tema, sem citação literal (não se aplica ao modo "na íntegra" da regra 5, que é reprodução literal): divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique com suas próprias palavras, fiel ao sentido dos trechos -- a precisão continua obrigatória (nada que os trechos não sustentem pode aparecer na resposta), mas NÃO é necessário transcrever nenhuma citação literal entre aspas nem indicar [arquivo.txt] no texto. Escreva como um texto corrido e conectado, não como uma lista de citações comentadas. NO MODO DIRETA, A REGRA 4 (citar a fonte) NÃO SE APLICA: é PROIBIDO mencionar o nome do arquivo em QUALQUER lugar ou formato da resposta -- nem entre colchetes, nem em lista/seção "Fontes"/"Referências" ao final, nem citado DENTRO da própria frase/prosa (ex.: "Meishu-Sama, em [nome de arquivo], diz que..." também é proibido, mesmo sem colchetes). O nome de arquivo deste acervo é em japonês (contém kanji) -- mencioná-lo também introduziria caracteres japoneses soltos na resposta, o que nunca deve acontecer. Se sentir necessidade de indicar de onde vem a informação, use no máximo uma referência genérica e sem nome de arquivo (ex.: "segundo os ensinamentos de Meishu-Sama sobre o tema"), nunca o nome do arquivo.
+
+9a. TAMANHO NO MODO DIRETA (2026-08-06, decisão do usuário: só se aplica aqui, nunca no modo com citações): a resposta final deve ter, no máximo, cerca de 2000 caracteres -- é uma restrição real, não uma sugestão solta. Para caber nisso: escolha só os 1-2 enquadramentos mais centrais e diretos ao tema perguntado, sem tentar cobrir todos os ângulos que a busca trouxe. Termine SEMPRE com um convite específico e concreto (nomeando o assunto real que ficou de fora, nunca um convite genérico tipo "posso explicar mais se quiser") para o usuário perguntar mais sobre o que não coube -- o aprofundamento no modo Direta acontece pela conversa continuar, pergunta a pergunta, não numa única resposta que tenta caber tudo. EXCEÇÃO (2026-08-06): quando a regra 8d (nunca dar resposta determinística em ambiguidade) se aplicar -- ou seja, quando os trechos sustentarem leituras diferentes/contraditórias e não houver como resolver isso com uma resposta limpa --, o teto de 2000 caracteres pode ser ultrapassado o necessário para apresentar os enquadramentos separadamente, como a regra 8d exige. Mesmo nesse caso, a resposta deve continuar o mais objetiva possível -- cada enquadramento apresentado de forma direta e sem elaboração supérflua, nunca um pretexto para voltar a despejar tudo que a busca encontrou.
 """
 
 SYSTEM_PROMPT_TAIL = """10. PROIBIDO FUNDIR AFIRMAÇÕES DE FONTES DIFERENTES SEM BASE TEXTUAL: se dois trechos (de arquivos diferentes, ou de datas diferentes) descrevem o mesmo conceito de formas distintas ou aparentemente incompatíveis (ex.: um trecho diz que a causa de X é espiritual, outro diz que a causa de X é física/alimentar), NÃO os apresente como uma única explicação unificada, nem trate um como a "causa" do outro, a menos que algum trecho conecte os dois explicitamente. Cada fonte com um enquadramento diferente vira seu próprio SUBTÍTULO (###) na resposta, com sua própria citação -- não basta suavizar a redação com frases tipo "há duas camadas de explicação" ou "por um lado... por outro lado" DENTRO do mesmo tema; isso ainda é fundir. Se você notar que está prestes a escrever esse tipo de ressalva dentro de um único tema, é sinal de que precisa quebrar em dois subtítulos separados, não só suavizar o texto. Não invente elo causal ou complementaridade entre fontes que o próprio texto não faz. Isso vale mesmo quando as fontes usam a mesma palavra-chave (ex. "verdadeiro" X) para coisas que cada uma define de forma diferente. SE A RESPOSTA TIVER 2 OU MAIS TEMAS SEPARADOS POR ESTA REGRA, É PROIBIDO ESCREVER UM PARÁGRAFO DE "RESUMO GERAL" NO FINAL QUE TENTE COMPRIMIR TUDO NUMA FRASE SÓ -- é exatamente nesse resumo que a fusão sempre volta (ex. "o câncer verdadeiro é espiritual e vem da toxina da carne" reintroduz o elo que os temas separados evitaram). A separação por subtítulos já é suficiente; termine a resposta no último tema, sem parágrafo de fechamento que junte os enquadramentos de novo. EXCEÇÃO CONTROLADA: depois de separar os enquadramentos em temas distintos como acima, se houver uma forma de reconciliá-los apoiada no que os próprios trechos NÃO afirmam (ex.: nenhum dos dois menciona um limite de escopo -- tempo, vida, contexto -- que o outro pressupõe), você PODE acrescentar, depois dos temas separados, um bloco adicional rotulado "Inferência:" (mesmo rótulo da regra 8) oferecendo essa reconciliação -- nunca como se o texto tivesse dito isso, sempre como leitura sua, claramente separada e justificada. Isso é diferente de inventar elo causal (proibido acima): ali você afirmaria que os trechos se conectam; aqui você declara abertamente que está oferecendo uma interpretação sua que os concilia, e explica o motivo.
@@ -951,6 +1097,40 @@ def responder_agentico_deepseek(
             "Não consegui sintetizar uma resposta com o material buscado -- tente reformular a pergunta."
         )
         truncada = choice.finish_reason == "length"
+
+    if truncada:
+        # 2026-08-06: achado real, reproduzido em teste direto -- às vezes
+        # UMA ÚNICA chamada (natural ou de síntese forçada acima) estoura
+        # max_tokens=8000 no meio da geração (finish_reason="length") e o
+        # texto fica cortado abruptamente, mesmo com o teto de tempo/rodada
+        # (LIMITE_SEGURANCA_SEGUNDOS/RODADAS) nunca tendo sido atingido --
+        # é um estouro de UMA chamada, não de rodadas acumuladas, então
+        # aquele fix não cobre este caso. Em vez de aceitar o texto cortado
+        # como resposta final, tenta 1x mais pedindo explicitamente uma
+        # resposta mais concisa que caiba inteira -- sem tools, sem repetir
+        # o texto cortado no histórico (nunca foi anexado a `messages`).
+        messages.append(
+            {
+                "role": "user",
+                "content": (
+                    "Sua resposta anterior foi cortada por exceder o limite de tamanho antes de "
+                    "terminar. Responda de novo, do zero, de forma mais concisa (escolha só os "
+                    "pontos mais centrais para caber inteira dentro do limite), sem tentar chamar "
+                    "nenhuma função ou ferramenta."
+                ),
+            }
+        )
+        resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages)
+        usage = resp.usage
+        total_in += usage.prompt_tokens
+        total_out += usage.completion_tokens
+        choice = resp.choices[0]
+        nova_resposta = (choice.message.content or "").strip()
+        if nova_resposta:
+            resposta_final = nova_resposta
+            truncada = choice.finish_reason == "length"
+        # se a 2ª tentativa também vier vazia, mantém o resultado da 1ª
+        # (mesmo truncado) em vez de substituir por nada -- nunca piora.
 
     vazamento_sintaxe_ferramenta = _resposta_vazou_sintaxe_de_ferramenta(resposta_final)
     if vazamento_sintaxe_ferramenta:
