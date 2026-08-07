@@ -10360,3 +10360,145 @@ temática só na perna semântica, que é onde essa troca é a certa.
 3. Sobram 11 achados H5 -- estrutura legítima que as guardas excluíram de
    propósito (artigo que é só título, cabeçalho de periódico com ficha,
    nota de rodapé). Julgamento individual, não automatizável.
+
+## Atualização 2026-08-07 -- etapa 3 em curso: taxa de aplicação do glossário,
+## faixa E julgada, 4 decisões do usuário aplicadas, e corrupção de OCR do
+## japonês corrigida (3.034 caracteres)
+
+### O insumo que mudou a forma do problema: taxa de aplicação
+
+`scripts/glossario_taxa_aplicacao.py` (commit `eab8bbd`). A varredura da etapa 1
+diz em quantos artigos a chave japonesa ocorre sem a forma canônica no
+português. Esse número sozinho não separa **regra fixa violada** de **glosa
+descritiva de vocabulário comum**. O que separa é a taxa: quantas vezes a forma
+canônica FOI usada contra quantas não foi.
+
+`天国 -> Paraíso` está aplicado em 725 artigos e ausente em 40: regra com
+escorregão. `御教 -> ensinar` está aplicado em 27 e ausente em 586: nunca foi
+regra. É exatamente o cálculo que faltou na varredura de 27/07, que descartou
+~559 dos 564 termos sinalizados "por amostragem".
+
+Duas faixas são decidíveis sem modelo nenhum e viraram a faixa Z: entrada que
+declara na própria redação que varia (`管長 -> "presidente ou líder (ajustado
+conforme contexto)"`) e chave de 1 caractere, que casa dentro de compostos
+(`我` casa em 我々, 我慢).
+
+### Faixa E julgada -- e o achado de uma classe nova
+
+25 termos nunca aplicados, via DeepSeek: 13 FALSO_POSITIVO, 8 INCERTO, 4
+SISTEMATICO, **0 VIOLACAO**. Custo US$ 0,0063.
+
+Auditei os dois de maior peso contra o texto real, e os dois ensinaram algo:
+
+- `病菌 -> "micróbio patogênico"`, 15 artigos: **erro meu**. O acervo usa
+  "micróbio**s** patogênico**s**" 16 vezes; o plural cai no meio da expressão e
+  a comparação por substring falhava. Corrigido normalizando plural dos dois
+  lados -- **327 faltas falsas a menos** no glossário inteiro, 14 termos
+  promovidos à faixa A.
+- `宝生中教会 -> "Igreja Hōsei Chū"`: o acervo usa "Igreja Média Hōsei" nas 4
+  ocorrências e a forma transliterada em nenhuma. **A entrada do glossário é
+  que estava errada** -- contradizia a decisão do próprio usuário de 14/07
+  (中教会 -> "Igreja Média"). Corrigida a entrada, não o corpus.
+
+Essa é uma **classe que o plano não previa**: entrada de glossário desatualizada
+em relação a decisão já tomada. A faixa E (0% de aplicação) é o detector natural
+dela -- um termo que o corpus nunca usa raramente é corpus errado.
+
+### Decisões do usuário nesta rodada, e o que cada uma custou
+
+**`報恩感謝` -> "retribuição em gratidão"** (mantida a forma canônica). 3
+passagens corrigidas, âncoras revalidadas.
+
+**`凝結` -> "solidificação"**. Levantei os 4 sentidos distintos no corpus antes
+de propor: toxina que endurece (o doutrinário, e a passagem de `御光話録17号`
+usa 固結 e 凝結 na mesma frase), sangue que coagula (citando a medicina para
+refutá-la), 凝結岩 geológico, e enrijecimento de membros. Aplicado ao caso claro
+(`Eiko` 355, 背部に凝結する -> "solidifica-se nas costas"); os de sangue ficaram
+como estão. **Erro de conduta meu, registrado**: gravei a entrada no glossário
+ANTES da decisão do usuário, quando ele tinha apenas perguntado o contexto.
+Percebi e reverti por conta própria, e só reapliquei depois do "pode ser
+solidificação".
+
+**Família `作用` -> "processo"**, com o achado maior da etapa: **`浄化作用` não
+tinha entrada no glossário**, sendo um dos conceitos centrais do ensinamento, e
+estava em três formas concorrentes com 358 ocorrências (ação de purificação 195,
+ação purificadora 99, processo de purificação 64). Decisão do usuário: "processo
+de purificação" como padrão da Igreja, com "ação purificadora" liberada para
+evitar repetição próxima. Resultado 317 / 41 / 0, mais 解毒作用 (2) e 溶解作用
+(7). Escopo limitado ao vocabulário doutrinário -- `副作用` ("efeito colateral",
+26 ocorrências) e os outros ~545 compostos comuns ficaram fora.
+
+### `scripts/padroniza_purificacao.py` -- seis defeitos, todos meus
+
+Registro porque o padrão importa mais que o resultado: **cada defeito só
+apareceu na verificação, e cada um exigiu reverter o acervo inteiro e refazer.**
+
+1. Concordância anterior ausente -> "a processo de purificação" em dezenas de
+   lugares ("ação" é feminino, "processo" é masculino).
+2. A regra de intercalar reescreveu **títulos de artigo** ("A Doença é um
+   Processo de Purificação", "O Processo de Purificação"), quebrando âncoras de
+   dois livros. Título é estrutura: passou a receber sempre a forma canônica.
+3. Caixa de título: copiar só a inicial rebaixava a segunda palavra.
+4. **CORRUPÇÃO DE TEXTO.** A janela de concordância posterior avançava 90
+   caracteres e engolia a ocorrência seguinte, emitida de novo em seguida.
+   Saída real: *"...uma ação de purificação fraca é localizada e rad**AÇÃO
+   PURIFICADORA FRACA É LOCALIZADA E RAD**ial..."*. Passou pela primeira
+   verificação; só apareceu porque a contagem de formas não fechou. Existe agora
+   uma asserção que falha em vez de gravar corpus corrompido.
+5. `concorda_antes` reexaminava a palavra que acabara de trocar em vez de andar
+   para trás: "uma violenta ação" virava "uma violento processo".
+6. Lista de adjetivos é incompleta por natureza -- sobraram 20 casos. Tentei
+   substituir por regra morfológica e ela ia corromper mais ("a doença é um
+   processo" -> "o doenço"); descartada em favor de lista explícita revisada uma
+   a uma no contexto.
+
+Âncoras que continham o termo foram atualizadas junto com o texto, com a mesma
+concordância -- trocar só o termo produzia "uma processo de purificação".
+
+### Corrupção de OCR no japonês -- 3.034 caracteres (commit `b641046`)
+
+Achada ao investigar `凝結`: o japonês de `Eiko` art178 traz 雄中凝結, que é
+集中凝結. Investigando, os 7 arquivos de periódico vieram por OCR do PDF do
+Zenshū com substituições sistemáticas. **641 das 1.870 ocorrências de 明主様
+estavam escritas 明为様** -- um terço. Quem revisa tradução contra o japonês lia
+um original corrompido, e a busca em japonês do aplicativo não achava essas 641.
+
+Quatro caracteres não existem em japonês -- troca incondicional: `为->主` 990,
+`吅->合` 912, `尐->少` 470, `亓->五` 372.
+
+Dois existem legitimamente e exigiram contexto. Li **todos** os bigramas de cada
+um, não amostra: `朋->服` 111 (preserva 朋友 e o nome 朋子), `雄->集` 180
+(preserva 英雄, 雄大, 雌雄, 雄弁, 雄々しい e as dezenas de nomes próprios
+terminados em 雄 que aparecem em bylines -- 義雄, 益雄, 数雄, 久雄). O achado
+mais bonito: `苦雄滅道` era **苦集滅道**, as Quatro Nobres Verdades.
+
+A regra de exclusão se validou sozinha: os 3 únicos casos que ela pulou fora dos
+periódicos são exatamente 朋子 ×2 e 朋友 ×1.
+
+78 âncoras japonesas foram corrigidas no mesmo passo. Verificado: 137 obras × 2
+cópias, 0 âncoras quebradas, 0 divergência staging/produção.
+
+**O que a correção NÃO faz**: consertar tradução já feita lendo o japonês
+corrompido. Se alguém traduziu 明为様 sem reconhecer 明主様, o erro está no
+português -- matéria da etapa 4, que agora rodará contra um japonês confiável.
+
+### Estado das faixas depois de todas as correções
+
+| faixa | termos | artigos com falta |
+|---|---:|---:|
+| A -- regra fixa, violação pontual (>=90%) | 294 | 643 |
+| B -- provável regra, violação ampla (60-89%) | 184 | 3.119 |
+| C -- ambíguo (25-59%) | 70 | 3.405 |
+| D -- provável glosa (1-24%) | 23 | 1.425 |
+| E -- nunca aplicado | 18 | 32 |
+| Z -- excluídas por natureza | 20 | 2.835 |
+
+Faixa E caiu de 25 para 18: as correções desta rodada resolveram 7.
+
+### Onde continuar
+
+1. Faixa A (294 termos) em julgamento. Depois: B e C.
+2. Nada da etapa 3 chega ao aplicativo antes de uma reconstrução de índice,
+   que continua exigindo autorização explícita.
+3. Etapa 4 (leitura de fidelidade artigo a artigo) só depois da 3 fechar --
+   e agora contra japonês corrigido, o que muda a qualidade do que ela vai ver.
