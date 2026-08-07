@@ -88,6 +88,8 @@ def formas_aceitas(valor: str) -> list[str]:
     for f in list(formas):
         if " " in f:
             formas.add(f.replace(" ", "-"))
+        if "-" in f:
+            formas.add(f.replace("-", " "))
     return [fold(f) for f in formas if len(f.strip()) >= 3]
 
 
