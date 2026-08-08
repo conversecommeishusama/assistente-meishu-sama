@@ -224,21 +224,13 @@ def aplicar() -> None:
         anc = [a.get("pt_anchor", "") for a in arts]
         if len(anc) <= 1 or not all(anc):
             continue
-        texto = clean_body((PT_FONTE / obra).read_text(encoding="utf-8"))
-        mudou = False
-        for a in arts:
-            alvo = a.get("pt_anchor", "")
-            if not alvo or alvo in texto:
-                continue
-            for corte in (50, 38, 26):
-                ch = alvo[:corte]
-                if texto.count(ch) == 1:
-                    a["pt_anchor"] = texto[texto.find(ch): texto.find(ch) + len(alvo)]
-                    mudou = True
-                    break
-        if mudou:
-            sp.write_text(json.dumps(spec, ensure_ascii=False, indent=2), encoding="utf-8")
-            anc = [a["pt_anchor"] for a in arts]
+        # O reparo de âncora NÃO acontece aqui. Casar a âncora quebrada pelos
+        # seus primeiros caracteres reaponta silenciosamente para outro artigo
+        # que comece igual -- aconteceu de verdade em Tijotengoku, onde o
+        # prefixo "O Juízo Final\n\nParaíso na " passou a ser único e a âncora
+        # do artigo nº 42 foi parar no artigo nº 12. Use
+        # scripts/repara_ancoras_ordem.py, que só aceita forma nascida de uma
+        # troca real e que caia DEPOIS da âncora anterior.
         for base in (PT_FONTE, PT_STAGING):
             f = base / obra
             if not f.exists():
