@@ -1,0 +1,470 @@
+PROTOCOLO DE TRADUÇÃO — GOSHINSHO (JP → PT-BR)
+Versão: 2026-06-20 (rev. pós-piloto) | Base: protocolo.txt, protocolo_revisao.txt, glossario_traducao.json
+
+Objetivo: produzir português brasileiro fiel ao japonês, com terminologia consagrada
+da Igreja Messiânica Mundial, em prosa mais fluida e elegante que a tradução rígida
+anterior — sem alterar doutrina, sem inventar conteúdo, sem “puxadinhos” por tema.
+
+Este protocolo substituirá protocolo_retraducao.txt para novos trabalhos.
+
+Modo preferencial: TRADUÇÃO NOVA do japonês para o português (§6.1).
+O português já presente no acervo do projeto NÃO é base de comparação nem modelo
+de qualidade — foi gerado sem este protocolo e sem revisão manual do revisor.
+
+Após a tradução pela API, a revisão (§6.2) compara apenas JP + PT novo + este
+protocolo + glossario_traducao.json — nunca “manter o PT antigo porque estava igual”.
+
+═══════════════════════════════════════════════════════════════════════════════
+0. HIERARQUIA DE REGRAS (quando houver tensão)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. glossario_traducao.json (forma consagrada) — vence tradução livre ou “título fiel” genérico
+2. Fidelidade semântica ao japonês (nada omitido, nada inventado)
+3. Fluidez e elegância em PT-BR (calques suavizados se o sentido for idêntico)
+4. Este protocolo (§1–5, §8) — critério único de aceitação do PT produzido
+
+═══════════════════════════════════════════════════════════════════════════════
+1. FIDELIDADE
+═══════════════════════════════════════════════════════════════════════════════
+
+1.1 O japonês é a fonte de verdade semântica.
+1.2 Não omita frases. Não acrescente explicações, comentários ou inferências.
+1.3 Preserve a ordem das ideias e a estrutura argumentativa.
+1.4 Não invente citações. Aspas só para transcrição literal do trecho traduzido.
+
+═══════════════════════════════════════════════════════════════════════════════
+2. GLOSSÁRIO (OBRIGATÓRIO — glossario_traducao.json)
+═══════════════════════════════════════════════════════════════════════════════
+
+2.1 Sempre que o termo japonês (ou forma listada no glossário) aparecer no trecho,
+    use EXCLUSIVAMENTE a forma portuguesa do glossario_traducao.json.
+
+2.2 Termos doutrinários essenciais (exemplos — consulte o arquivo completo):
+    - 霊線 / reisen → elo espiritual (NUNCA "linha espiritual")
+    - 浄霊 → Johrei (NUNCA "purificação espiritual" genérica; 末教浄霊 → só Johrei)
+    - 言霊 → na 1ª menção de CADA ARTIGO: espírito da palavra (kotodama);
+      depois, só espírito da palavra. Nunca "Kotodama" nu, sem a tradução, e
+      nunca "palavra-espírito" (forma concorrente que aparecia no corpus).
+
+    REGRA GERAL DE 1ª MENÇÃO (decisão do usuário, 2026-08-08)
+    Toda entrada do glossário cujo critério seja "na 1ª menção" vale POR
+    ARTIGO, nunca por arquivo. O artigo é a unidade que o leitor recebe
+    inteira — na busca, um trecho chega sem o resto do livro em volta, e uma
+    glosa dada só na abertura do arquivo nunca alcança quem lê o artigo 40.
+    Vale para 言霊, 御屏風観音様, 日光殿, 教導師, 惟神, 惟神医術, 如意宝珠,
+    如意の玉, 光の玉 e qualquer outra que venha a adotar o mesmo critério.
+    - 明主様 / 明为様 → Meishu-Sama (NUNCA "Meishu-sama")
+    - 小乗 / 大乗 → Shojo / Daijo (NUNCA Hinayana / Mahayana)
+    - 末教 → Doutrina Absoluta (≠ メシヤ教 / 救世教 → Igreja Messiânica)
+    - 末療法 / 末医術 → terapia absoluta
+    - 医術 → terapia (neste contexto; não "medicina" genérica)
+    - 大三災 / 小三災 → grandes / pequenas calamidades (NUNCA "desastres")
+    - 道理 → Caminho Perfeito (≠ 大道 → Grande Caminho)
+    - 経綸 → Plano Divino (quando for o plano divino nos ensinamentos)
+    - 憑く / 付く → possuir / apossar-se de (nunca deixar 附/憑 no PT)
+
+2.3 Nomes de obras e publicações periódicas — usar forma do glossário ou já
+    consagrada na IM; NÃO traduzir o sentido como título novo:
+    - 御光話録 → Gokōwa-roku (ou Gosuiji-roku quando o japonês for 御垂示録 /
+      convenção da edição — conforme glossario_traducao.json, não conforme PT antigo)
+    - 御垂示録 → Gosuiji-roku
+    - 御教え集 → Mioshie-shū / Coletânea de Ensinamentos (conforme glossário)
+    - Demais obras: consultar glossario_traducao.json e JA_TO_PT_TERMS do acervo
+
+2.4 Títulos de ensinamentos (artigos #T) e de artigos avulsos: traduza o sentido
+    com elegância (ex.: 末療法の原理 → O Princípio da Terapia Absoluta), respeitando
+    o glossário nos termos que aparecem no título.
+
+2.5 Não substitua termos consagrados por sinônimos “mais bonitos”.
+    Não aninhe glossas (ex.: proibido "Kotodama (Kotodama (...))").
+
+2.6 Terminologia proibida em protocolo.txt (ex.: "cadeia causal", "toxinas
+    solidificadas") só se o japonês do trecho usar explicitamente o equivalente.
+
+2.7 Nomes próprios japoneses — TRANSLITERAR, NÃO TRADUZIR:
+    Aplica-se a pessoas, empresas, instituições, cidades, províncias, montanhas,
+    rios, jornais e revistas, títulos de obras musicais próprias, etc.
+    - Use forma romanizada consagrada ou Hepburn com macrons quando aplicável.
+    - Ex.: Atami, Hakone, Minakami, Kamakura, Kawabata Yasunari, Frank Lloyd Wright
+      (estrangeiro mantém forma usual), Yomiuri Shinbun, Hikari Shinbun.
+    - Periódicos IM: 救世 → Kyusei; 末紙 → Mattō (NUNCA "jornal da Doutrina Absoluta"
+      ou tradução do sentido de 紙).
+    - NÃO confundir com §2.1–2.3: termos doutrinários do glossário (Johrei, Doutrina
+      Absoluta, Igreja Messiânica) seguem glossario_traducao.json; nomes geográficos e
+      institucionais próprios seguem transliteração.
+    - Divindades e nomes consagrados no glossário (Meishu-Sama, Kannon-Sama,
+      Miroku Ōkami, etc.) usam a forma do glossário — nunca kanji solto na saída.
+
+═══════════════════════════════════════════════════════════════════════════════
+3. FLUIDEZ E ELEGÂNCIA (sem sacrificar fidelidade)
+═══════════════════════════════════════════════════════════════════════════════
+
+3.1 Escreva PT-BR claro, formal e reverente, próprio dos escritos de Meishu-Sama.
+3.2 Corrija calques japoneses óbvios quando o português natural preserve o mesmo
+    sentido (ex.: ordem de palavras, repetições desnecessárias, construções passivas
+    artificiais).
+3.3 Corrija gramática: concordância, regência, artigos, pontuação; maiúscula após
+    ponto final.
+3.4 Prefira períodos bem formados a frases telegráficas — desde que nenhuma
+    informação do japonês se perca.
+3.5 NÃO “literature” o texto: sem floreios, sem simplificar doutrina, sem resumir.
+3.6 Diferença em relação ao protocolo rígido anterior: PODE reformular frases
+    em português mais natural; NÃO PODE mudar o que Meishu-Sama disse.
+
+═══════════════════════════════════════════════════════════════════════════════
+4. DATAS, NÚMEROS E FORMATO
+═══════════════════════════════════════════════════════════════════════════════
+
+4.1 Datas no estilo do acervo IM:
+    - Preferir numeral ordinal + mês por extenso + era Showa + ano ocidental entre
+      parênteses quando aplicável.
+    - Ex.: 1º de janeiro do ano 23 da Era Showa (1948)
+    - NÃO escrever dias por extenso ("Primeiro de janeiro") se o padrão do volume
+      usar algarismos ordinais.
+4.2 Ano Showa e ano gregoriano: manter ambos quando o original ou o volume o fizer.
+4.3 Números de edição (号): "nº 5", "nº 13", etc.
+
+4.4 LAYOUT — cabeçalhos, datas e diálogos (obrigatório em obras-seriadas):
+    Volumes de registro de audiências e ensinamentos periódicos (Gokōwa-roku,
+    Gosuiji-roku, Mioshie-shū, etc.) devem preservar a estrutura visual do
+    original — não colapsar tudo em bloco único de prosa corrida.
+
+    Regra geral: cada bloco abaixo = parágrafo ou linha própria; linha em branco
+    entre blocos; nunca juntar cabeçalho + diálogo na mesma linha.
+
+    F) Paragrafação — seguir blocos do japonês (assunto/turno, não tamanho):
+       - Linha em branco no JP = linha em branco no PT (novo parágrafo).
+       - ［data］ / [data] = bloco próprio (§4.4-A).
+       - 「 pergunta = Interlocutor: (§4.4-B); resposta seguinte = Meishu-Sama:.
+       - Não dividir parágrafos por número de caracteres; preservar a lógica
+         de assunto do original.
+       - Quebra de linha simples no JP (sem linha em branco) pode permanecer
+         no mesmo parágrafo em português.
+
+    ── A) PADRONIZAÇÃO DE CABEÇALHO (modelos fixos por tipo de obra) ──
+
+    A1) Gosuiji-roku / Gokōwa-roku — edições numeradas (御垂示録n号, 御光話録n号):
+
+        Linha 1 — ficha única de publicação:
+          {Obra} nº {N}, publicado em {dia ordinal} de {mês} do ano {n} da
+          Era Showa ({ano ocidental})
+          (ex.: Gosuiji-roku nº 3, publicado em 25 de novembro do ano 26 da
+          Era Showa (1951) | Gokōwa-roku nº 1, publicado em ...)
+
+        Linha 2 — data da sessão / audiência:
+          [{dia} de {mês} ({dia da semana})]
+          Incluir dia da semana quando o JP traz （木）（水） etc.
+          (ex.: [28 de outubro (quinta-feira)] | [1º de outubro])
+
+        Linha 3 em diante — corpo (§4.4-B).
+
+        Não repetir título curto, 『』 nem linha abreviada “(ano n da Era Showa)”
+        quando o JP só traz a ficha de publicação uma vez — uma linha basta.
+
+    A2) Gokōwa-roku (Suplemento) — prefácio de volume + registros datados:
+
+        Linha 1:
+          Gokōwa-roku (Suplemento)
+
+        Linhas 2–N — prefácio editorial (prosa fluida, parágrafos separados;
+          sem rótulos Interlocutor/Meishu-Sama).
+
+        Antes de cada encontro datado no corpo:
+          **{data por extenso + Era Showa + ano ocidental}**
+          Subtítulo entre parênteses se houver no JP (ex.: poemas do Grão-Mestre).
+          Linha em branco; em seguida o corpo (§4.4-B ou prosa).
+
+    A3) Mioshie-shū — 御教え集 (casos + instruções):
+
+        Linha 1 — ficha única de publicação:
+          Mioshie-shū nº {N}, publicado em {data completa Era Showa + ocidental}
+          (ex.: Mioshie-shū nº 1, publicado em 20 de setembro do ano 26 da
+          Era Showa (1951))
+
+        Linha 2 — data do item (quando houver no JP):
+          [{data}]
+          (ex.: [1º de agosto])
+
+        Linha 3 em diante — corpo; cada par (お伺)/(御垂示) ou (お伺)/〔御垂示〕:
+          Interlocutor: ...  (substitui rótulos JP; ver §4.4-B)
+          Meishu-Sama: ...
+
+        Notas especiais do JP (ex.: “Neste dia apenas, não baseado em
+        taquigrafia”) — linha destacada **antes** do item:
+          **{data} ({nota})**
+
+        Ensino contínuo sem par pergunta/resposta (ex.: seção final “Ensinamento”):
+          parágrafo normal ou **Meishu-Sama:** se for fala direta sem interlocutor.
+
+    A4) Publicações periódicas avulsas (Kyusei, Eiko, Hikari, etc.):
+
+        Linha 1 — título do artigo (traduzido conforme §2.4, respeitando glossário):
+          **{Título do artigo}**
+
+        Linha 2 — ficha da publicação original (metadado Publication source /
+          Original publication reference ou equivalente no JP):
+          {Fonte transliterada} nº {N}, publicado em {data completa Era Showa +
+          ocidental}
+          (ex.: Kyusei nº 61, publicado em 6 de janeiro do ano 25 da Era Showa
+          (1950) | Eiko nº 164, publicado em 9 de julho do ano 27 da Era Showa
+          (1952))
+          Fonte = nome transliterado do periódico (§2.7); nº = número do
+          exemplar quando constar no original.
+
+        Linha 3 em diante — prosa contínua (não é audiência; sem Interlocutor:/
+        Meishu-Sama: salvo se o artigo transcrever diálogo).
+
+    A4-bis) PROIBIDO citar "Obras Completas de Mokichi Okada" / "Mokichi Okada
+        Zenshu" (岡田茂吉全集) como fonte, em nenhum cabeçalho, #K ou linha de
+        citação. Essa coletânea (final dos anos 80/início dos 90) tem direitos
+        autorais ativos; os textos individuais nela reunidos são de domínio
+        público por terem sido publicados em vida de Meishu-Sama. A citação deve
+        usar SEMPRE a publicação original (nome transliterado do periódico/obra +
+        data + página, conforme A1–A4), nunca o volume/seção da coletânea
+        (ex.: nunca "..., Obras Completas de Mokichi Okada, Escritos, Volume 12,
+        p. 43", apenas "..., 19540825, p. 43"). Se o JP fonte trouxer citação
+        interna à coletânea (ex.: 岡田茂吉全集著述篇第十二巻), essa parte NÃO deve
+        ser traduzida nem repassada ao PT — apenas omitida da linha de citação.
+
+        Citações a periódicos no corpo do texto: transliterar (Mattō, Kyusei —
+        §2.7), nunca traduzir o nome do jornal.
+
+    A5) Metadados de arquivo (Title:, Publication source:, Date:, etc.):
+        Preservar apenas quando o pipeline exigir cabeçalho técnico; corpo traduzido
+        começa pelo modelo A1–A4 acima, não pelo metadata inglês/português.
+
+    G) Pipeline pós-tradução (layout automático):
+       Após tradução e revisão (§6), o sistema aplica §4.4-A/B/F em código:
+       - injeta cabeçalho A4 quando metadados JP existem e a tradução omitiu;
+       - separa turnos colados (Interlocutor:/Meishu-Sama:);
+       - alinha parágrafos PT aos blocos JP (御伺い/御垂示, 「, falantes nomeados).
+       A tradução deve antecipar esse layout; o pipeline corrige omissões, não
+       substitui retradução de conteúdo errado.
+
+    H) Pipeline pós-tradução (glossário automático):
+       Após §4.4-G, o sistema aplica em código (sem nova chamada à API):
+       - regras consolidadas com porta por parágrafo JP (substituições seguras);
+       - correção de variantes conhecidas (ex.: calque detectável → forma do glossário);
+       - auditoria residual: termo JP obrigatório ausente no PT gera aviso QA
+         (glossary_residual_N), não bloqueia promoção ao acervo por si só.
+       Termos ambíguos ou de contexto (kanji isolado, paráfrase legítima) não são
+       forçados — ficam para revisão humana futura, se necessária.
+
+    ── B) Diálogos de audiência (Gosuiji-roku, Gokōwa-roku, Mioshie-shū, etc.) ──
+       Atribuição explícita de falas (corrige confusão do PT legado, que muitas
+       vezes mistura voz do interlocutor com voz de Meishu-Sama):
+
+       - Fala do interlocutor (pergunta 「…」, réplica ――, ou turno claramente
+         do visitante/fiel): parágrafo próprio iniciando com rótulo de falante:
+         • interlocutor não identificado no JP → **Interlocutor:**
+         • pessoa japonesa identificada (氏, 先生, nome no contexto) → **Nome transliterado:**
+           (ex.: **Fukuichi:**, **Kawabata Yasunari:** — ordem sobrenome + nome
+           em romanização Hepburn/macrons conforme acervo)
+         • pessoa ocidental identificada → **Nome original** (ex.: **Cartier:**,
+           **Frank Lloyd Wright:** — não traduzir nem adaptar)
+         • genérico sem nome no JP → **Interlocutor:** basta.
+       - Fala de Meishu-Sama (resposta, ensino direto no turno de audiência):
+         parágrafo próprio iniciando sempre com **Meishu-Sama:** — mesmo quando
+         o interlocutor anterior foi identificado por nome.
+       - Nunca fundir pergunta e resposta no mesmo parágrafo.
+       - Nunca apresentar fala do interlocutor como se fosse prosa anônima de
+         Meishu-Sama.
+       - Trechos narrativos, prefácios editoriais ou leitura por terceiros
+         (ex.: 井上先生朗読) não usam esses rótulos; mantêm prosa normal (§4.4-E).
+
+       Exemplo completo (Gosuiji-roku nº 3 — cabeçalho + diálogo):
+
+       Gosuiji-roku nº 3, publicado em 25 de novembro do ano 26 da Era Showa (1951)
+
+       [1º de outubro]
+
+       Interlocutor: "Gostaria de perguntar sobre o Johrei..."
+
+       Meishu-Sama: Naquela época, sim.
+
+       Exemplo (interlocutor identificado — japonês):
+       Fukuichi: "Gostaria de enviar para a Universidade de Michigan..."
+
+       Meishu-Sama: Não, isso não pode. Basta enviar apenas isto.
+
+       Exemplo (interlocutor identificado — ocidental):
+       Cartier: "..."
+
+       Meishu-Sama: ...
+
+       Exemplo (Mioshie-shū nº 1):
+
+       Mioshie-shū nº 1, publicado em 20 de setembro do ano 26 da Era Showa (1951)
+
+       [1º de agosto]
+
+       Interlocutor: ...
+
+       Meishu-Sama: ...
+
+       Exemplo (Kyusei — artigo avulso):
+
+       **Uma Palavra ao Mestre Okada Michiaki: Sobre a Terapia Espiritual Sokohito**
+
+       Kyusei nº 61, publicado em 6 de janeiro do ano 25 da Era Showa (1950)
+
+       [prosa contínua do artigo]
+
+    C) Datas de encontro no corpo (Gokōwa-roku Suplemento e similares):
+       **{data por extenso + Era Showa + ano ocidental}** — linha destacada,
+       linha em branco, depois subtítulo ou corpo (conforme A2).
+
+    D) Múltiplas sessões no mesmo arquivo: repetir bloco [data] + corpo para
+       cada encontro; nunca omitir a data de transição entre sessões.
+
+    E) Prefácios e notas editoriais: prosa fluida (aprovada na amostragem do
+       Suplemento) — parágrafos distintos, sem rótulos de diálogo.
+
+═══════════════════════════════════════════════════════════════════════════════
+5. JAPONÊS NA SAÍDA
+═══════════════════════════════════════════════════════════════════════════════
+
+5.1 Nenhum kanji, hiragana ou katakana na tradução final, salvo:
+    a) termos latinizados do glossário (Johrei, Meishu-Sama, Kannon, etc.);
+    b) exceção pedagógica: quando o texto discute explicitamente um kanji como
+       tema (ex.: artigo sobre 程 / hodo), manter o caractere entre aspas com
+       romaji entre parênteses — conforme aprovado na amostragem Eiko.
+5.2 Etimologia de kanji: descrever em português ou romaji; nunca "(五)" ou similar.
+5.3 Nunca colar japonês a palavra portuguesa (ex.: 附ando → "está se apossando").
+5.4 Nomes divinos e títulos consagrados: usar forma do glossário (ex.: 弥勒大神 →
+    Miroku Ōkami), nunca deixar kanji residual.
+
+═══════════════════════════════════════════════════════════════════════════════
+6. MODO DE TRABALHO
+═══════════════════════════════════════════════════════════════════════════════
+
+6.1 MODO TRADUÇÃO (preferencial) — somente japonês como entrada:
+    A) Leia o trecho japonês (fonte de verdade).
+    B) Traduza para PT-BR aplicando §1–5 e glossario_traducao.json.
+    C) Não consulte nem imite o PT antigo do acervo; ele não define terminologia,
+       obras, datas nem estilo.
+    D) Entregue prosa contínua (ou JSON conforme §7, conforme o pipeline).
+
+6.2 MODO REVISÃO PÓS-TRADUÇÃO (obrigatório após 6.1) — JP + PT recém-traduzido:
+
+    REGRA DETERMINANTE — SÓ LINHA A LINHA (livros_acervo / revisão manual JP↔PT)
+
+    Para revisão editorial de livros_acervo (fila segmentacao_manual, YOLO_QUEUE),
+    qualquer método que não seja leitura paralela linha a linha é inválido e não
+    conta como trabalho feito.
+
+    Obrigatório:
+    - Percorrer o japonês como fonte de verdade, linha a linha (ou bloco a bloco
+      quando o JP tiver parágrafo único), e confrontar com o par PT correspondente
+      na mesma posição e ordem.
+    - Corrigir o PT inline, trecho a trecho, com base nessa leitura — não por
+      heurística de volume, ratio ou contagem de parágrafos.
+
+    Terminantemente proibido (não substituem revisão linha a linha):
+    - Reflow, realinhamento ou reparo do PT em massa por script (ex.: ajustar
+      paragrafação por contagem JP vs PT, split por datas só para bater métricas).
+    - Declarar feito, approved ou avançar na fila com base em flags automáticas,
+      batch Q/A, ratio de caracteres/parágrafos ou amostragem.
+    - Corrigir «blocos inteiros» ou ficheiros completos sem percorrer cada linha
+      JP ↔ PT do volume.
+
+    Scripts e relatórios (revisao_paralela, reflow, métricas) são auxiliares de
+    triagem e apoio — nunca critério de conclusão nem substituto da leitura linha
+    a linha.
+
+    A) Compare cada parágrafo: japonês ↔ português novo.
+    B) Verifique estritamente: glossário, fidelidade, fluidez (§1–5), datas (§4).
+    C) Corrija o PT novo onde violar o protocolo; registre cada correção.
+    D) Não compare com o PT antigo do projeto para decidir manter ou descartar.
+    E) Se o PT novo já cumpre o protocolo face ao JP, devolva-o inalterado neste passe.
+
+    Esta revisão é controle de qualidade da tradução recém-feita — não “revisão
+    do texto legado”.
+
+6.3 MODO EXCEPCIONAL — retradução forçada de trecho já marcado ❌ pelo revisor
+    humano na amostragem, ou quando auditoria detectar par JP↔arquivo errado
+    (corpo sobre outro tema).
+
+6.4 Ensinamentos (#T): um ensinamento = um artigo (#T), não a coletânea inteira
+    (conforme protocolo.txt).
+
+6.5 Elo espiritual: artigo «Sobre o elo espiritual»; polo positivo = lado yang
+    elétrico (陽電) quando aplicável.
+
+6.6 Johrei: método de cura espiritual da Igreja Messiânica; não confundir com
+    práticas genéricas (conforme protocolo.txt).
+
+═══════════════════════════════════════════════════════════════════════════════
+7. FORMATO DE SAÍDA (pipeline automatizado)
+═══════════════════════════════════════════════════════════════════════════════
+
+Responda APENAS com JSON válido, sem markdown:
+
+{
+  "paragraphs": [
+    {
+      "index": 0,
+      "revised_pt": "texto revisado ou igual ao original",
+      "changed": true,
+      "changes": ["terminologia: 霊線 → elo espiritual", "fluidez: calque suavizado"]
+    }
+  ]
+}
+
+Regras:
+- Passe de tradução (6.1): produza "revised_pt" como tradução nova; "changed": true.
+- Passe de revisão pós-tradução (6.2): "changed": false somente se o PT novo já
+  cumpre o protocolo face ao JP; nunca porque coincide com PT antigo do acervo.
+- "changes": lista vazia se changed for false; senão tipo: terminologia | sentido |
+  gramática | fluidez | data_formato.
+- Não inclua o japonês na saída.
+- Não inclua comentários fora do JSON.
+
+═══════════════════════════════════════════════════════════════════════════════
+8. CRITÉRIOS DE ACEITAÇÃO (QA automático + amostra humana)
+═══════════════════════════════════════════════════════════════════════════════
+
+Rejeitar ou marcar para revisão humana se:
+□ Termo do glossário violado (incl. Meishu-Sama, Johrei, obras, elo espiritual)
+□ Kotodama ou linha espiritual
+□ Caracteres japoneses residuais (exceto §5.1-b)
+□ Truncamento ou expansão suspeita vs. japonês (ratio fora de faixa definida no QA)
+□ Título de obra traduzido livremente ignorando glossário
+□ Nome próprio traduzido em vez de transliterado (§2.7)
+□ Cabeçalho fora do modelo A1–A4 (§4.4-A) ou colapsado em prosa corrida
+□ Falas de audiência sem rótulo correto: Interlocutor: / Nome: (§4.4-B) ou Meishu-Sama: nas respostas
+□ Pergunta e resposta no mesmo parágrafo (viola §4.4-B)
+□ Artigo A4 (Eiko/Kyusei) sem ficha «Fonte nº N, publicado em…»
+
+Aprovação em massa exige amostra humana (mín. 5–10 textos) após piloto.
+
+8.1 Gate sequencial — livros_acervo (revisão manual JP↔PT)
+
+    Fila de trabalho: reports/livros_trabalho/segmentacao_manual/YOLO_QUEUE.json
+
+    Regra: só avançar para o próximo livro quando o livro actual estiver com qualidade 100%.
+
+    100% significa, para todo o volume (trecho a trecho, sem amostragem):
+    □ Revisão linha a linha JP ↔ PT em todo o corpo (§6.2 — regra determinante;
+      nenhum outro método conta como revisão feita)
+    □ Checklist revisão paralela (existência, alinhamento, completude, paragrafação 1:1,
+      cabeçalhos §4.4-A, diálogos §4.4-B quando aplicável, CJK §5.1-b)
+    □ PT work file corrigido; sem truncamento, artefactos nem desalinhamento conhecido
+    □ Chunk estrutural aplicado no .txt quando a spec o exige e o PT já foi validado
+    □ Spec com approved: true apenas após o acima
+
+    Proibido: passar ao livro N+1 com pendências no livro N; marcar done/approved com
+    issues abertas; usar batch Q/A ou flags automáticas como critério de fecho;
+    reflow ou correcção do PT em massa por script em substituição da leitura linha a linha.
+
+═══════════════════════════════════════════════════════════════════════════════
+9. REFERÊNCIAS
+═══════════════════════════════════════════════════════════════════════════════
+
+- glossario_traducao.json — autoridade terminológica
+- protocolo.txt — regras de consulta aplicáveis à tradução (§ ensinamento, Johrei, etc.)
+- japonês do acervo — única fonte semântica para tradução e revisão pós-tradução
+
+═══════════════════════════════════════════════════════════════════════════════
+FIM DO PROTOCOLO
+═══════════════════════════════════════════════════════════════════════════════
