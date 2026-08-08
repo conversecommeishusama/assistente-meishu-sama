@@ -327,9 +327,18 @@ protocolo + glossario_traducao.json — nunca “manter o PT antigo porque estav
 5.1 Nenhum kanji, hiragana ou katakana na tradução final, salvo:
     a) termos latinizados do glossário (Johrei, Meishu-Sama, Kannon, etc.);
     b) exceção pedagógica: quando o texto discute explicitamente um kanji como
-       tema (ex.: artigo sobre 程 / hodo), manter o caractere entre aspas com
-       romaji entre parênteses — conforme aprovado na amostragem Eiko.
-5.2 Etimologia de kanji: descrever em português ou romaji; nunca "(五)" ou similar.
+       tema (ex.: artigo sobre 程 / hodo), manter o caractere visível. Duas
+       ordens são aceitas, conforme o que a frase precisa destacar (decisão do
+       usuário, 2026-08-08):
+         - caractere primeiro, com romaji: «示» (shimesu), "道" (michi)
+         - português primeiro, com o caractere glosando: «Caminho» (道)
+       Aspas retas, curvas ou guillemets — tanto faz, desde que haja aspas.
+       Em decomposição de caractere, o kanji pode aparecer alinhado à tradução
+       (観 — 世 — 音 sob "Ver — o mundo — de Otohime"): ali ele É o argumento.
+5.2 Etimologia de kanji: descrever em português ou romaji. A forma proibida é o
+    kanji NU entre parênteses, sem nada que o ancore — "(五)" solto no meio de
+    uma frase que não está falando do caractere. Quando a frase discute o
+    próprio caractere, vale o §5.1(b) acima.
 5.3 Nunca colar japonês a palavra portuguesa (ex.: 附ando → "está se apossando").
 5.4 Nomes divinos e títulos consagrados: usar forma do glossário (ex.: 弥勒大神 →
     Miroku Ōkami), nunca deixar kanji residual.

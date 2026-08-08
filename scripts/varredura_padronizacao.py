@@ -107,8 +107,19 @@ def r_f1(pt: str, ctx: dict):
         if entre_aspas and romaji:
             continue  # conforma ao §5.1(b)
 
+        # §5.1(b) revisto em 2026-08-08 por decisão do usuário: as duas ordens
+        # valem. O caractere glosando o português -- «Caminho» (道) -- conforma
+        # tanto quanto o inverso, desde que a frase esteja falando do próprio
+        # caractere. Proibido é o kanji NU, sem nada que o ancore, numa frase
+        # que não discute o caractere.
+        fala_do_caractere = bool(re.search(
+            r"caractere|ideograma|radical|escrit[oa]|composto|significa|"
+            r"letra|grafia|kanji|se lê|leitura", pt[max(0, m.start() - 160): fim + 90],
+            re.IGNORECASE))
+        if (antes.endswith("(") or antes.endswith("（")) and fala_do_caractere:
+            continue
         if antes.endswith("(") or antes.endswith("（"):
-            motivo = "kanji nu entre parênteses — §5.2 proíbe expressamente esta forma"
+            motivo = "kanji nu entre parênteses, em frase que não discute o caractere (§5.2)"
         elif entre_aspas:
             motivo = "entre aspas mas sem romaji entre parênteses (§5.1b incompleto)"
         else:
