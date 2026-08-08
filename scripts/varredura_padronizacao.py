@@ -38,6 +38,9 @@ SAIDA = RAIZ / "reports/varredura_padronizacao"
 
 PERFIS_ORAIS = {"gokowa_roku_qa", "ochishiji_roku", "mioshie_shu"}
 MAX_CHARS_CHUNK = 3200  # o mesmo de split_chunks_by_size em produção
+# G4 virou informativa quando split_chunks passou a respeitar o profile;
+# ligue com --g4 para ver quantos artigos dependem dessa proteção.
+INCLUIR_G4 = "--g4" in sys.argv
 
 CJK = re.compile(r"[぀-ヿ㐀-䶿一-鿿ｦ-ﾟ]")
 LATIN = re.compile(r"[A-Za-zÀ-ÿ]")
@@ -409,9 +412,14 @@ def r_h5(pt: str, ctx: dict):
 @regra("G4", "Artigo escrito longo o bastante para ser cortado por caractere", "grave")
 def r_g4(pt: str, ctx: dict):
     """A determinação de 2026-07-14 proíbe corte por contagem de caractere fora
-    das 3 séries orais. `split_chunks` de produção não lê o `profile`, então
-    todo artigo escrito acima de MAX_CHARS_CHUNK está sendo cortado hoje."""
-    if ctx["perfil"] in PERFIS_ORAIS:
+    das 3 séries orais.
+
+    RESOLVIDO em 2026-08-08: `split_chunks` passou a ler o `profile` e só corta
+    os perfis orais. A regra fica como informativa -- diz quantos artigos
+    SERIAM partidos se a proteção saísse --, não como achado a corrigir. Contar
+    isso como defeito reabria 1.077 itens já fechados no código.
+    """
+    if ctx["perfil"] in PERFIS_ORAIS or not INCLUIR_G4:
         return []
     achados = []
     for i, corpo in enumerate(ctx["artigos_pt"]):

@@ -21,6 +21,7 @@ Uso:
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -57,6 +58,8 @@ DERIVADOS = [
     ("poder de Kannon", "Poder Kannon"),
     ("espírito da palavra", "espírito da palavra (kotodama)"),
     ("Kannon do biombo", "Byōbu Kannon"),
+    # remove o negrito markdown do título, decisão de 2026-08-08
+    ("**", ""),
 ]
 
 
@@ -74,6 +77,16 @@ def trocas_por_obra() -> dict[str, list[tuple[str, str]]]:
 def candidatos(velha: str, pares: list[tuple[str, str]]) -> list[str]:
     """Formas que a âncora pode ter assumido -- nunca um pedaço dela."""
     vistos, saida = {velha}, []
+    # A remoção do negrito de título (2026-08-08) não foi só tirar os
+    # asteriscos: onde o corpo vinha colado na mesma linha -- `**Título** (cit)`
+    # -- o título virou parágrafo próprio, `Título\n\n(cit)`. O par simples
+    # "**" -> "" não reproduz isso, então a transformação entra explícita.
+    if "**" in velha:
+        for forma in (re.sub(r"\*\*([^*\n]+)\*\*[ \t]+", r"\1\n\n", velha),
+                      re.sub(r"\*\*([^*\n]+)\*\*", r"\1", velha)):
+            if forma not in vistos:
+                vistos.add(forma)
+                saida.append(forma)
     for de, para in pares:
         if de in velha:
             novo = velha.replace(de, para)
