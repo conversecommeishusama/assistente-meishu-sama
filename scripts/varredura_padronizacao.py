@@ -42,7 +42,10 @@ MAX_CHARS_CHUNK = 3200  # o mesmo de split_chunks_by_size em produção
 # ligue com --g4 para ver quantos artigos dependem dessa proteção.
 INCLUIR_G4 = "--g4" in sys.argv
 
+# `・` e `ー` entram no bloco katakana mas são pontuação: o divisor tipográfico
+# ―――――――――・―――――――――― de 一信者の告白 não é texto japonês vazando, é uma régua.
 CJK = re.compile(r"[぀-ヿ㐀-䶿一-鿿ｦ-ﾟ]")
+PONTUACAO_CJK = set("・ー〜、。「」『』（）")
 LATIN = re.compile(r"[A-Za-zÀ-ÿ]")
 
 
@@ -98,7 +101,15 @@ def r_f1(pt: str, ctx: dict):
         while fim < len(pt) and CJK.match(pt[fim]):
             fim += 1
         seq = pt[m.start():fim]
-        antes = pt[max(0, m.start() - 2):m.start()]
+        if all(ch in PONTUACAO_CJK for ch in seq):
+            continue
+        # símbolo geométrico entre a âncora e o caractere não deve quebrar o
+        # reconhecimento: em `Su (○ヽ)` e `"○丶" (ponto central)` o ○ fica no
+        # meio e a sequência CJK começa em ヽ / 丶
+        ini_simb = m.start()
+        while ini_simb > 0 and pt[ini_simb - 1] in "○◯●〇△▲□■◇◆☆★ ":
+            ini_simb -= 1
+        antes = pt[max(0, ini_simb - 2):ini_simb]
         depois = pt[fim:fim + 45]
 
         entre_aspas = bool(antes and antes[-1] in ASPAS and depois and depois[0] in ASPAS)
@@ -118,7 +129,8 @@ def r_f1(pt: str, ctx: dict):
         fala_do_caractere = bool(re.search(
             r"caractere|ideograma|radical|escrit[oa]|composto|significa|"
             r"letra|grafia|kanji|se lê|leitura|representa|forma de|originou|"
-            r"combinando|é lido|quer dizer|traduz|denomina|chama-se",
+            r"combinando|é lido|quer dizer|traduz|denomina|chama-se|"
+            r"escrev|soa como|trocadilho|se pronuncia|ponto|círculo|som de",
             pt[max(0, m.start() - 200): fim + 120], re.IGNORECASE))
 
         # 1) o mesmo caractere já foi apresentado com glosa antes, no mesmo
@@ -148,6 +160,21 @@ def r_f1(pt: str, ctx: dict):
         if fala_do_caractere and (entre_aspas or antes.endswith("(")
                                   or antes.endswith("（")):
             continue
+
+        # §5.1(b) revisto aceita a ordem "português/romaji primeiro, caractere
+        # glosando": Amaterasu Ōmikami (天照皇大神), "Ka" (カ), sacas (俵, hyō).
+        # O caractere está ancorado a uma forma legível -- é auxílio de
+        # identificação, não japonês vazando. O que continua proibido é o
+        # caractere LIDERANDO sem romanização nenhuma (和光同塵, 地龍), que o
+        # §5.4 manda trazer na forma do glossário.
+        abre = pt.rfind("(", max(0, m.start() - 90), m.start())
+        fecha_par = pt.find(")", fim, fim + 90)
+        if abre >= 0 and fecha_par > 0 and re.search(r"[A-Za-zÀ-ÿ]{2,}", pt[abre:fecha_par]):
+            continue          # parêntese misto: "(seis, 六)", "(俵, hyō)"
+        if antes.endswith("(") or antes.endswith("（"):
+            cabeca = pt[max(0, ini_l): ini_simb - 1].rstrip()
+            if re.search(r"[A-Za-zÀ-ÿ][\wÀ-ÿ'’\-]*[\s\"“”'’»]*$", cabeca):
+                continue
         if antes.endswith("(") or antes.endswith("（"):
             motivo = "kanji nu entre parênteses, em frase que não discute o caractere (§5.2)"
         elif entre_aspas:
