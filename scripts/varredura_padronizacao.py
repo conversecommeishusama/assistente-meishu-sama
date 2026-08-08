@@ -75,7 +75,7 @@ def regra(codigo: str, titulo: str, grau: str):
     return deco
 
 
-ASPAS = '"“”「」『』‘’'
+ASPAS = "\"“”「」『』‘’«»"
 
 
 @regra("F1", "Caractere japonês no texto em português", "grave")
@@ -99,7 +99,11 @@ def r_f1(pt: str, ctx: dict):
         depois = pt[fim:fim + 45]
 
         entre_aspas = bool(antes and antes[-1] in ASPAS and depois and depois[0] in ASPAS)
-        romaji = bool(re.match(r"['\"“”]?\s*\(\s*[a-zA-ZÀ-ÿ]", depois))
+        # a aspa de fechamento pode ser qualquer uma do conjunto -- a versão
+        # anterior só aceitava ' " “ ” e por isso «示» (shimesu), que conforma
+        # ao §5.1(b), era contado como violação
+        fecha = "".join(re.escape(c) for c in ASPAS)
+        romaji = bool(re.match(rf"[{fecha}]?\s*\(\s*[a-zA-ZÀ-ÿ]", depois))
         if entre_aspas and romaji:
             continue  # conforma ao §5.1(b)
 
