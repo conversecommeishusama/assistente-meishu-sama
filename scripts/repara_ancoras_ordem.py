@@ -54,6 +54,9 @@ DERIVADOS = [
     ("Oração", "Norito"),
     ("vegetais", "hortaliças"),
     ("Vegetais", "Hortaliças"),
+    ("poder de Kannon", "Poder Kannon"),
+    ("espírito da palavra", "espírito da palavra (kotodama)"),
+    ("Kannon do biombo", "Byōbu Kannon"),
 ]
 
 
@@ -111,11 +114,25 @@ def repara_obra(obra: str, pares: list[tuple[str, str]], aplicar: bool) -> tuple
         if pos >= 0:
             cursor = pos + 1
             continue
+        # onde a PRÓXIMA âncora ainda existente começa: é o teto da janela
+        teto = len(texto)
+        for prox in arts[i + 1:]:
+            q = texto.find(prox.get("pt_anchor", "\x00"), cursor)
+            if q >= 0:
+                teto = q
+                break
+
         escolhida = None
         for c in candidatos(velha, pares + DERIVADOS):
             p = texto.find(c, cursor)
-            # única no arquivo E depois da âncora anterior
-            if p >= 0 and texto.count(c) == 1:
+            if p < 0:
+                continue
+            # Aceita se for única no arquivo (caso simples) OU se cair dentro
+            # da janela deste artigo -- entre a âncora anterior e a próxima.
+            # A janela é o invariante real; exigir unicidade global rejeitava
+            # títulos legítimos que se repetem no corpo (caso real: a âncora
+            # "Paraíso na Terra" de 信仰雑話, e o título de 結核と神霊療法).
+            if texto.count(c) == 1 or p < teto:
                 escolhida, pos = c, p
                 break
         if escolhida is None:
