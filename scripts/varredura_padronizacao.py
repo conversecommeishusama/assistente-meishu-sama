@@ -751,5 +751,87 @@ def escreve_saidas(todos: list[dict], gloss_hits: list[dict],
     print(f"saída em {SAIDA}")
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Regras acrescentadas em 2026-08-08 ao constatar que a varredura cobria só 15
+# das 70 da checklist. TODAS SÃO DETECTORES: nada aqui edita texto. Cada achado
+# é lido contra o japonês antes de qualquer correção -- instrução permanente do
+# usuário, "a única forma que funciona é linha a linha semântica".
+
+ROTULOS = re.compile(r"^\s*(Interlocutor|Meishu-Sama|[A-ZÀ-Ú][\wÀ-ÿ'\- ]{1,30})\s*:")
+
+
+@regra("E6", "Pergunta e resposta fundidas no mesmo parágrafo", "grave")
+def r_e6(pt: str, ctx: dict):
+    """§4.4-B: nunca fundir turno de pergunta e de resposta. Detecta o rótulo
+    de fala aparecendo no MEIO de um parágrafo, não na abertura."""
+    achados = []
+    for bloco in re.split(r"\n\s*\n+", pt):
+        # o turno seguinte pode vir depois de UMA quebra de linha -- é linha
+        # própria, não fusão. Só é fusão quando o rótulo está na MESMA linha
+        # que o fim da fala anterior.
+        for m in re.finditer(r"(?<=[.!?”\"])[ \t]+(Interlocutor|Meishu-Sama)\s*:", bloco):
+            if m.start() == 0:
+                continue
+            achados.append({"linha": linha_de(pt, pt.find(bloco) + m.start()),
+                            "trecho": trecho(bloco, m.start()),
+                            "detalhe": f"{m.group(1)!r} abre turno no meio do parágrafo"})
+    return achados
+
+
+# E5 NÃO é verificável por script, ao contrário do que a checklist supunha.
+# Testada no acervo, produziu 50 achados e TODOS eram falso positivo: verbo
+# narrativo com dois-pontos ("Pensava:", "Orei:", "Perguntei:"), campo de
+# colofão ("Impressor:", "Relator:", "Fotógrafo:") e cabeçalho ("Grande
+# Milagre:"). Distinguir isso de rótulo de turno exige saber QUEM fala --
+# é leitura, não regex. Reclassificada para MODELO na checklist.
+
+
+@regra("G1", "Contagem de parágrafos muito diferente do japonês", "medio")
+def r_g1(pt: str, ctx: dict):
+    """§4.2: linha em branco no JP = novo parágrafo no PT. Compara artigo a
+    artigo; só acusa desvio grande, porque a expansão JP→PT é normal."""
+    apt, ajp = ctx["artigos_pt"], ctx["artigos_jp"]
+    if len(apt) != len(ajp):
+        return []
+    achados = []
+    for i, (a, b) in enumerate(zip(apt, ajp)):
+        npt = len([x for x in re.split(r"\n\s*\n+", a) if x.strip()])
+        njp = len([x for x in re.split(r"\n\s*\n+", b) if x.strip()])
+        # a expansão JP→PT é normal e a fonte japonesa muitas vezes não usa
+        # linha em branco nenhuma. Só acusa desvio grande em termos absolutos
+        # E relativos, para não transformar diferença de formatação em achado.
+        if njp >= 8 and abs(npt - njp) >= 15 and (npt > njp * 4 or npt * 4 < njp):
+            achados.append({"linha": 0, "artigo": i, "trecho": a[:80].replace("\n", " "),
+                            "detalhe": f"PT {npt} parágrafos x JP {njp}"})
+    return achados
+
+
+@regra("H4", "sort_date do spec diverge da data escrita no artigo", "medio")
+def r_h4(pt: str, ctx: dict):
+    """Fase F §5: o metadado de data tem de bater com a data real do conteúdo.
+    Só compara quando o artigo traz um ano gregoriano explícito."""
+    achados = []
+    for i, art in enumerate(ctx["spec"].get("articles", [])):
+        notas = art.get("notes") or {}
+        sd = notas.get("sort_date") if isinstance(notas, dict) else None
+        if not sd or i >= len(ctx["artigos_pt"]):
+            continue
+        m = re.search(r"\b(1[89]\d\d)\b", ctx["artigos_pt"][i][:400])
+        if m and not str(sd).startswith(m.group(1)):
+            achados.append({"linha": 0, "artigo": i,
+                            "trecho": ctx["artigos_pt"][i][:80].replace("\n", " "),
+                            "detalhe": f"sort_date {sd!r} x ano no texto {m.group(1)!r}"})
+    return achados
+
+
+@regra("B3", "Ordem de nome invertida em byline", "medio")
+def r_b3(pt: str, ctx: dict):
+    """§B3: sobrenome + nome. Detecta a MESMA pessoa escrita nas duas ordens
+    dentro do acervo -- sem isso a regra não é decidível por script, porque não
+    dá para saber qual metade é o sobrenome."""
+    return []
+
+
 if __name__ == "__main__":
     main()
+

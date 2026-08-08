@@ -88,6 +88,14 @@ def candidatos(velha: str, pares: list[tuple[str, str]]) -> list[str]:
     # asteriscos: onde o corpo vinha colado na mesma linha -- `**Título** (cit)`
     # -- o título virou parágrafo próprio, `Título\n\n(cit)`. O par simples
     # "**" -> "" não reproduz isso, então a transformação entra explícita.
+    # o turno passou a abrir parágrafo próprio: "data\nInterlocutor:" virou
+    # "data\n\nInterlocutor:" (decisão estrutural de 2026-08-08)
+    import re as _re
+    alt = _re.sub(r"([^\n])\n(?!\n)([ \t]*(?:Interlocutor|Meishu-Sama)\s*:)",
+                  r"\1\n\n\2", velha)
+    if alt != velha and alt not in vistos:
+        vistos.add(alt)
+        saida.append(alt)
     if "**" in velha:
         for forma in (re.sub(r"\*\*([^*\n]+)\*\*[ \t]+", r"\1\n\n", velha),
                       re.sub(r"\*\*([^*\n]+)\*\*", r"\1", velha)):
