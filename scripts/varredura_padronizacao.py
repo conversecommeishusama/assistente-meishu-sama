@@ -117,9 +117,36 @@ def r_f1(pt: str, ctx: dict):
         # que não discute o caractere.
         fala_do_caractere = bool(re.search(
             r"caractere|ideograma|radical|escrit[oa]|composto|significa|"
-            r"letra|grafia|kanji|se lê|leitura", pt[max(0, m.start() - 160): fim + 90],
-            re.IGNORECASE))
-        if (antes.endswith("(") or antes.endswith("（")) and fala_do_caractere:
+            r"letra|grafia|kanji|se lê|leitura|representa|forma de|originou|"
+            r"combinando|é lido|quer dizer|traduz|denomina|chama-se",
+            pt[max(0, m.start() - 200): fim + 120], re.IGNORECASE))
+
+        # 1) o mesmo caractere já foi apresentado com glosa antes, no mesmo
+        #    artigo: repetir a romanização a cada menção é o oposto do que a
+        #    própria regra de 1ª menção pede
+        # trocadilho: "Yoshida (吉田 = bem)" -- o "=" mostra que a frase está
+        # decompondo o nome pelo sentido dos caracteres
+        if re.match(r"\s*=\s*", depois):
+            continue
+        ja_glosado = bool(re.search(
+            re.escape(seq) + r"[»”\"'’」』]?\s*\(\s*[a-zA-ZÀ-ÿ]", pt[:m.start()]))
+
+        # 2) linha de decomposição: o kanji aparece alinhado à tradução, um
+        #    caractere por posição (観 — 世 — 音 sob "Ver — o mundo — de Otohime").
+        #    O §5.1(b) revisto aceita, porque ali o caractere É o argumento.
+        ini_l = pt.rfind("\n", 0, m.start()) + 1
+        fim_l = pt.find("\n", fim)
+        linha = pt[ini_l: fim_l if fim_l > 0 else len(pt)]
+        decomposicao = bool(re.search(r"[぀-鿿]\s*[—–-]\s*[぀-鿿]", linha))
+
+        if ja_glosado or decomposicao:
+            continue
+        # frase que discute o próprio caractere: o §5.1(b) revisto aceita o
+        # kanji à vista, seja glosando o português, seja entre aspas sem
+        # romaji -- exigir romanização de "ノ" numa frase que descreve o traço
+        # ("representa a forma de descer do céu") é pedantismo, não fidelidade
+        if fala_do_caractere and (entre_aspas or antes.endswith("(")
+                                  or antes.endswith("（")):
             continue
         if antes.endswith("(") or antes.endswith("（"):
             motivo = "kanji nu entre parênteses, em frase que não discute o caractere (§5.2)"
