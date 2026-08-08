@@ -255,7 +255,7 @@ TERMOS_PROIBIDOS = [
 # para a passagem em que Meishu-Sama DISTINGUE o seu Daijo do budismo Mahayana
 # -- ali tirar a palavra destruiria a distinção que ele está fazendo.
 GLOSA_ACEITA = [
-    (re.compile(r"[Kk]otodama"), re.compile(r"espírito da palavra\s*\(")),
+    (re.compile(r"[Kk]otodama"), re.compile(r"(?i:espírito da palavra)\s*\(")),
     (re.compile(r"Mahayana"), re.compile(r"Daijo")),
     (re.compile(r"Hinayana|Hinaiana"), re.compile(r"Shojo")),
 ]
