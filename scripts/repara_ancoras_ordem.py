@@ -60,6 +60,13 @@ DERIVADOS = [
     ("Kannon do biombo", "Byōbu Kannon"),
     # remove o negrito markdown do título, decisão de 2026-08-08
     ("**", ""),
+    # caixa uniformizada para a forma dominante (1.779 x 174)
+    ("era Showa", "Era Showa"),
+    ("era Meiji", "Era Meiji"),
+    ("era Taishō", "Era Taishō"),
+    ("era Taisho", "Era Taisho"),
+    ("Shōwa", "Showa"),
+    ("Taishō", "Taisho"),
 ]
 
 

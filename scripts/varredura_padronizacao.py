@@ -68,7 +68,7 @@ def trecho(texto: str, pos: int, antes: int = 45, depois: int = 60) -> str:
 
 # ------------------------------------------------------------------- regras
 # Cada regra recebe (texto_pt, contexto) e devolve lista de dicts.
-# `contexto` traz: arquivo, artigos_pt, artigos_jp, spec, texto_jp.
+# `contexto` traz: arquivo, artigos_pt, artigos_jp, spec, perfil.
 
 REGRAS: list = []
 
@@ -239,15 +239,45 @@ def r_c5(pt: str, ctx: dict):
     achados = []
     for m in re.finditer(r"\b(\d{1,3})\s*º\s+ano\b", pt):
         cauda = pt[m.end(): m.end() + 40]
+        cabeca = pt[max(0, m.start() - 30): m.start()]
         if re.match(r"\s*(da|de|do)\s+(Era|era)\b", cauda):
             continue
         if re.match(r"\s*(da|de|do)\s+(Showa|Meiji|Taish[oō]|Sh[oō]wa)", cauda):
             continue
-        cabeca = pt[max(0, m.start() - 30): m.start()]
+        # a era pode vir dentro do parêntese ou do COLCHETE que segue:
+        # "27º ano [Showa 27, 1952]" -- forma dominante em 浄霊法講座6号
+        if re.match(r"\s*[\(\[]\s*(Showa|Meiji|Taish[oō])", cauda):
+            continue
+        # não é data: "33º ano de seu aniversário de morte", "22º ano de vida"
+        if re.match(r"\s+(de|do|da)\s+(seu|sua|meu|minha)?\s*"
+                    r"(aniversário|falecimento|morte|memorial)", cauda):
+            continue
+        # anaforico: a mesma expressão já apareceu ANTES no mesmo artigo com a
+        # era nomeada -- o protocolo pede a era na 1ª menção, não em todas
+        ordinal = m.group(0)
+        if re.search(re.escape(ordinal) + r"\s*[\(\[]\s*(Showa|Meiji|Taish[oō])",
+                     pt[:m.start()]):
+            continue
+        if re.search(re.escape(ordinal) + r"\s+(da|de|do)\s+(Era|era)", pt[:m.start()]):
+            continue
         if re.search(r"(Era|era)\s+(Showa|Meiji|Taish)", cabeca):
             continue
         if re.match(r"\s+(de|da|do)\s+(prática|doença|casamento|vida|idade|escola|"
-                    r"curso|fé|tratamento|ginásio|primário)", cauda):
+                    r"curso|fé|tratamento|ginásio|primário|cultivo|reinado|"
+                    r"plantio|colheita)", cauda):
+            continue
+        # coluna de tabela agrícola: "Natural 1º ano", "2º ano para arroz"
+        if re.match(r"\s+(para|natural\b)", cauda, re.IGNORECASE):
+            continue
+        if re.search(r"(Natural|natural)\s*$", cabeca):
+            continue
+        # tabela de anos de cultivo: "1º ano 2º ano 3º ano..." em sequência, ou
+        # coluna de planilha ("Kanayama Yoshio, 2º ano"). Não é data de era.
+        if re.match(r"\s+\d{1,2}º\s+ano\b", cauda):
+            continue
+        if re.search(r"\d{1,2}º\s+ano\s+$", pt[max(0, m.start() - 14): m.start()]):
+            continue
+        if re.search(r"[A-ZÀ-Ý][\wÀ-ÿ]+\s*,\s*$", cabeca):
             continue
         tem_gregoriano = bool(re.match(r"\s*\(\s*1[89]\d\d\s*\)", cauda))
         achados.append({
@@ -260,6 +290,11 @@ def r_c5(pt: str, ctx: dict):
 
 @regra("C7", "Colchete de dúvida do tradutor no texto publicado", "medio")
 def r_c7(pt: str, ctx: dict):
+    # 〔 〕 é colchete editorial da própria fonte japonesa -- em 御教え集3号 o
+    # original traz 〔ＢＣＧは無害か有害か〕 e o português o reproduz fielmente.
+    # Só conta como dúvida do tradutor se o japonês do artigo não usa 〔 〕.
+    if any("〔" in a for a in ctx.get("artigos_jp") or []):
+        return []
     achados = []
     for m in re.finditer(r"\[[^\[\]\n]{0,80}\?\s*\]", pt):
         achados.append({"linha": linha_de(pt, m.start()), "trecho": trecho(pt, m.start()),
@@ -269,25 +304,41 @@ def r_c7(pt: str, ctx: dict):
 
 @regra("C8", "Caixa inconsistente em 'Era Showa' dentro do mesmo arquivo", "leve")
 def r_c8(pt: str, ctx: dict):
-    formas = Counter(m.group() for m in re.finditer(r"\b[Ee]ra\s+(Showa|Meiji|Taish[oō])", pt))
-    if len(formas) <= 1:
-        return []
-    dom = formas.most_common(1)[0][0]
+    # A inconsistência é a MESMA era escrita de dois jeitos (Taisho x Taishō,
+    # Era x era). "Era Taisho convive com Era Showa" não é inconsistência --
+    # são eras diferentes, e a versão anterior desta regra acusava isso.
+    por_era: dict[str, Counter] = defaultdict(Counter)
+    for m in re.finditer(r"\b([Ee]ra)\s+(Showa|Sh[ōo]wa|Meiji|Taish[oō]|Taisyo)", pt):
+        chave = fold(m.group(2))[:5]          # showa / meiji / taish
+        por_era[chave][m.group()] += 1
     achados = []
-    for forma, n in formas.items():
-        if forma == dom:
+    for chave, formas in por_era.items():
+        if len(formas) <= 1:
             continue
-        i = pt.find(forma)
-        achados.append({"linha": linha_de(pt, i), "trecho": trecho(pt, i),
-                        "detalhe": f"{forma!r} ({n}x) convive com {dom!r} ({formas[dom]}x)"})
+        dom = formas.most_common(1)[0][0]
+        for forma, n in formas.items():
+            if forma == dom:
+                continue
+            i = pt.find(forma)
+            achados.append({"linha": linha_de(pt, i), "trecho": trecho(pt, i),
+                            "detalhe": f"{forma!r} ({n}x) convive com {dom!r} "
+                                       f"({formas[dom]}x) -- mesma era, grafias diferentes"})
     return achados
 
 
 @regra("C4", "Número de edição fora do formato 'nº N'", "leve")
 def r_c4(pt: str, ctx: dict):
     achados = []
-    for m in re.finditer(r"\b(No\.|N\.|n\.|Nº|N°|n°|número)\s*\d+", pt):
-        if m.group(1) in ("Nº",):
+    # A regra vale para EDIÇÃO de publicação. "o Japão é o número 5" é
+    # numerologia doutrinária, "Norin No. 8" é variedade de arroz e
+    # "Jutaku No. 92" é endereço -- nenhum vira "nº". Exige o nome de uma
+    # publicação por perto, que é o que o protocolo está regulando.
+    PUBLICACOES = (r"Gok[ōo]wa-roku|Mioshie-sh[ūu]|Gosuiji-roku|Eik[ōo]|Hikari|"
+                   r"Kyusei|Tijotengoku|revista|jornal|edição|publicad[ao]|boletim")
+    for m in re.finditer(r"\b(No\.|N\.|n\.|N°|n°|número)\s*\d+", pt):
+        volta = pt[max(0, m.start() - 90): m.start()]
+        adiante = pt[m.end(): m.end() + 90]
+        if not re.search(PUBLICACOES, volta + adiante, re.IGNORECASE):
             continue
         achados.append({"linha": linha_de(pt, m.start()), "trecho": trecho(pt, m.start()),
                         "detalhe": f"{m.group()!r} — o formato do protocolo é 'nº N'"})
@@ -299,7 +350,9 @@ def r_a3(pt: str, ctx: dict):
     achados = []
     for m in re.finditer(r"\(([^()]{0,60}?)\s*\(([^()]{0,60}?)\)", pt):
         a, b = fold(m.group(1)).strip(), fold(m.group(2)).strip()
-        if a and b and (a in b or b in a):
+        # o menor precisa ter corpo: "(I)" contido em "Artigo ..." casa só
+        # porque a letra i aparece em "artigo" -- número de parte não é glosa
+        if a and b and min(len(a), len(b)) >= 4 and (a in b or b in a):
             achados.append({"linha": linha_de(pt, m.start()), "trecho": trecho(pt, m.start()),
                             "detalhe": f"glosa aninhada: {m.group()[:60]!r}"})
     return achados
@@ -346,7 +399,8 @@ def _dentro_de_glosa(termo: str, contexto: str) -> bool:
 # falsos positivos (medido: 430 numa primeira versão desta varredura).
 TERMOS_CONDICIONAIS = [
     ("nuvens espirituais", ("曇", "曇り", "くもり"), "medio"),
-    ("toxinas solidificadas", ("凝結毒素", "固結", "凝結"), "medio"),
+    ("toxinas solidificadas", ("凝結毒素", "固結", "凝結", "固め", "固ま",
+                              "固まっ", "溜結"), "medio"),
     ("cadeia causal", ("因果", "因縁"), "medio"),
 ]
 
@@ -439,11 +493,29 @@ def r_h5(pt: str, ctx: dict):
             or re.match(r"^Igreja\s+\w+.{0,60}\(\s*\d{1,3}", primeira)
             or re.match(r"^[A-ZÀ-Ú][\wÀ-ÿ'\- ]{2,40},\s*\d{1,3}\s+anos", primeira)
         )
+        # Título de artigo tem a mesma forma de uma byline quando termina em
+        # número entre parênteses -- "Fragmentos Médicos (8) – Histórias
+        # Estranhas (3)". A diferença: a byline ACABA no parêntese (ou segue
+        # com endereço), o título continua com travessão e mais texto.
+        if byline and re.search(r"\)\s*[–—-]\s*\S", primeira):
+            byline = None
         if not byline:
+            continue
+        # Quando o artigo anterior é muito curto DOS DOIS LADOS, a divisão vem
+        # da própria fonte, não de âncora mal posta. Caso real: 世界救世教奇蹟集
+        # artigo 8 tem 88 caracteres em português e 24 em japonês -- título
+        # mais a primeira linha do endereço --, e o artigo 9 abre pela igreja
+        # e pelo nome. O português espelha o japonês; é fidelidade, não vazamento.
+        jps = ctx.get("artigos_jp") or []
+        if (len(corpos[i - 1]) < 200 and i - 1 < len(jps)
+                and len(jps[i - 1]) < 120):
             continue
         cauda = [ln.strip() for ln in corpos[i - 1].splitlines() if ln.strip()][-3:]
         vazou = [ln for ln in cauda
-                 if len(ln) <= 90 and not ln.rstrip().endswith((".", "!", "?", ":", "”", '"'))]
+                 # nota editorial fecha em parêntese e não é cabeçalho vazado:
+                 # "(O trecho seguinte foi omitido por não ter relação...)"
+                 if len(ln) <= 90 and not ln.rstrip().endswith(
+                     (".", "!", "?", ":", "”", '"', ")", "]", "»"))]
         if not vazou:
             continue
         # Sinal mais grave: a última linha do artigo anterior é uma única
