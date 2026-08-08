@@ -42,9 +42,13 @@ DESTINO = RAIZ / "reports/varredura_padronizacao/REAPLICACAO_SEMANTICA2.json"
 
 # forma canônica -> chave que o japonês precisa trazer
 CANONICAS = [
+    # o honorífico aparece em kanji e em hiragana: 御守護 e ご守護, 御利益 e
+    # ご利益 -- a primeira versão só via o kanji e rejeitou por engano uma
+    # troca legítima em 御教え集6号, onde o japonês diz 神様のご守護があるから
     (re.compile(r"Kannon-Sama"), re.compile(r"観\s*音\s*様")),
-    (re.compile(r"proteção divina|graça divina"), re.compile(r"御\s*守\s*護")),
-    (re.compile(r"benefício[s]? material|benefícios materiais"), re.compile(r"御\s*利\s*益")),
+    (re.compile(r"proteção divina|graça divina"), re.compile(r"[御ごお]\s*守\s*護")),
+    (re.compile(r"benefício[s]? material|benefícios materiais"),
+     re.compile(r"[御ごお]\s*利\s*益")),
     (re.compile(r"nuvens? espirituais?|nuvem espiritual"), re.compile(r"曇")),
 ]
 

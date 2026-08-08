@@ -10863,3 +10863,109 @@ usuário, não erro.
 5. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita.** A produção serve o índice de 06/08 -- nada desta
    sessão chegou lá.
+
+## Atualização 2026-08-08 -- as duas passadas semânticas fechadas; um defeito
+## meu de reparo de âncora achado e corrigido; quatro decisões novas
+
+### 1ª passada concluída (o saldo DeepSeek foi recarregado)
+
+**1.504 artigos lidos, 0 erros, 2.308 trocas, ~US$ 0,81.** Aplicadas em 112
+obras. A auditoria prévia confirmou contra o japonês as 15 propostas
+`Komyo -> Daikōmyō` (todas com `大光明` no original) e 132 das 134
+`vegetal -> hortaliça` (as outras 2 o japonês diz `菜ッ葉`/`菜葉`, folha --
+ficaram "hortaliças", menos preciso que "verduras", não errado).
+
+### Defeito real, meu, na mesma classe do desastre do dia anterior
+
+O reparo de âncora que eu escrevera dentro de `reaplica_semantico.aplicar()`
+casava a âncora quebrada pelos seus **26 primeiros caracteres**. Em
+`Tijotengoku`, depois de a citação do corpo virar "Tijotengoku nº 42", o
+prefixo `"O Juízo Final\n\nParaíso na "` passou a ocorrer uma única vez no
+arquivo -- na OUTRA ocorrência -- e o reparo **reapontou silenciosamente a
+âncora do artigo nº 42 para o artigo nº 12**. Prefixo não distingue artigos
+que começam igual. Achado ao investigar por que a verificação seguia
+quebrando; confirmado comparando com o backup do spec de 06/08.
+
+Substituído por `scripts/repara_ancoras_ordem.py`, que só aceita âncora
+(a) nascida de uma troca REAL aplicada àquele arquivo ou de um par derivado
+das decisões, (b) única no arquivo, e (c) **posterior à âncora anterior** --
+a ordem dos artigos é o invariante. Sabe compor duas mudanças no mesmo
+título (ex.: "Verdade, Bem e Beleza" -> "Belo" pela decisão 真善美 mais a
+citação do periódico). O reparo por prefixo foi removido do `aplicar()` com
+comentário explicando o caso, para não voltar.
+
+### Quatro decisões novas do usuário (2026-08-08)
+
+Levadas em pergunta e resposta depois de eu medir o uso real e verificar os
+dois maiores sinais médicos da lista de SISTEMÁTICO, ambos falso alarme:
+`肋膜` (102 artigos) está certo -- o português diz "pleurisia" onde o japonês
+usa 肋膜 como nome de doença (肋膜をやる/になる/を患う, uso corrente da época)
+e "pleura" onde é a membrana; e o par `肺病`/`結核` parecia invertido só
+porque meu casamento era por artigo, grosso demais.
+
+| termo | decisão |
+|---|---|
+| `御利益` | "benefício(s) material(is)"; onde a repetição ficar redundante, "graça(s)" junto |
+| `曇り` | "nuvens espirituais" quando é a mácula do corpo espiritual; "nublado/névoa" só no sentido meteorológico |
+| `観音様` | manter "-Sama" sempre que o japonês trouxer 様 |
+| `御守護` | "proteção divina" ou "graça divina", ambas válidas; nunca "proteção" seco |
+
+### 2ª passada concluída
+
+`scripts/reaplica_semantico2.py`, mesma disciplina: **512 artigos, 0 erros,
+844 propostas, ~US$ 0,24**. Entra só o artigo cujo japonês traz a chave mais
+vezes do que o português traz a forma canônica.
+
+`scripts/audita_reaplicacao2.py` confere cada proposta contra o japonês do
+próprio artigo e rejeitou **3 de 844**:
+- `御光話録（補）` art23: "com o Ohikari" virando "com a proteção divina" --
+  reescreve o objeto, não a proteção.
+- `御光話録5号` art1 e `御光話録13号` art3: "nuvens espirituais" virando
+  "nebulosidade"/"lugares nublados", quando o japonês traz o 曇 doutrinário
+  (`戦争のあとは曇りが多い`; `曇っている場所へ行ってそこを浄める`).
+
+A auditoria precisou de duas correções minhas, cada uma depois de conferir o
+original: barrava quando o composto apenas APARECIA no trecho, mesmo intacto
+(rejeitava "o poder de Kannon passa do Ohikari" -> "Kannon-Sama"); e a regex
+só via `御守護` em kanji, rejeitando por engano uma troca legítima em
+`御教え集6号`, onde o japonês diz `神様のご守護があるから` -- **o honorífico
+aparece também em hiragana (ご守護, ご利益)**, lição para qualquer contagem
+futura.
+
+**Achado que parecia erro e não é**: o modelo REMOVE "-Sama" em alguns pontos.
+Fui ao original -- nesses lugares o japonês diz `観音に擬える` e `観音力`, sem
+`様`. É fidelidade, não descuido. Mantido e contabilizado à parte.
+
+### Estado verificado ao fechar
+
+**137 obras: 123 multi-artigo íntegras, 14 de artigo único, 0 âncoras
+quebradas, 0 dessincronizadas**, nas duas cópias, pela função real de
+produção. Zero corrupção de substring. Os compostos que não podiam mudar
+seguem intactos (Kannon de Mil Braços 56, Byōbu Kannon 118, Guse-Kannon 16,
+Kanzeon-Bosatsu 82). 20 âncoras reparadas pelo script que preserva a ordem,
+mais 13 `title_pt` sincronizados com as âncoras novas.
+
+Contagens finais: Kannon-Sama 623, proteção divina 804, graça divina 47,
+benefício material 102 + benefícios materiais 171, nuvens espirituais 545.
+
+**Pendência registrada, não corrigida**: 3 obras têm mais "Kannon-Sama" do
+que o japonês sustenta (`御垂示録3号` +6, `御教え集5号` +3, `教えの光` +3).
+Verificado que é ANTERIOR a este trabalho -- destas, as passadas de hoje
+acrescentaram 1, 0 e 0 respectivamente. É pergunta de convenção para o
+usuário, não erro introduzido aqui.
+
+### Onde continuar
+
+1. **101 vereditos SISTEMÁTICO** das faixas A/B/C continuam abertos em
+   `reports/varredura_padronizacao/SISTEMATICOS_PARA_USUARIO.json`. A maioria
+   é variação gramatical natural (自然->"naturalmente", 心臓->"cardíaco") e
+   não pede ação; as de peso doutrinário foram decididas hoje. Sobram, entre
+   outras, `邪神`, `天国`/"Reino dos Céus", `栄光`/"glória", `教修`,
+   `善言讃詞`, `主神`.
+2. `御尊影` e outros termos SEM entrada de glossário, levantados na varredura,
+   ainda não foram levados ao usuário.
+3. Entrada de glossário a completar: `肋膜` só registra "pleura" -- falta a
+   acepção de doença ("pleurisia"), que o corpus já usa corretamente.
+4. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita.** A produção serve o índice de 06/08 -- nada destas
+   duas passadas chegou lá.
