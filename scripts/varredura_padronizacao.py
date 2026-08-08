@@ -786,24 +786,19 @@ def r_e6(pt: str, ctx: dict):
 # é leitura, não regex. Reclassificada para MODELO na checklist.
 
 
-@regra("G1", "Contagem de parágrafos muito diferente do japonês", "medio")
-def r_g1(pt: str, ctx: dict):
-    """§4.2: linha em branco no JP = novo parágrafo no PT. Compara artigo a
-    artigo; só acusa desvio grande, porque a expansão JP→PT é normal."""
-    apt, ajp = ctx["artigos_pt"], ctx["artigos_jp"]
-    if len(apt) != len(ajp):
-        return []
-    achados = []
-    for i, (a, b) in enumerate(zip(apt, ajp)):
-        npt = len([x for x in re.split(r"\n\s*\n+", a) if x.strip()])
-        njp = len([x for x in re.split(r"\n\s*\n+", b) if x.strip()])
-        # a expansão JP→PT é normal e a fonte japonesa muitas vezes não usa
-        # linha em branco nenhuma. Só acusa desvio grande em termos absolutos
-        # E relativos, para não transformar diferença de formatação em achado.
-        if njp >= 8 and abs(npt - njp) >= 15 and (npt > njp * 4 or npt * 4 < njp):
-            achados.append({"linha": 0, "artigo": i, "trecho": a[:80].replace("\n", " "),
-                            "detalhe": f"PT {npt} parágrafos x JP {njp}"})
-    return achados
+# G1 NÃO é verificável por script neste acervo, e a evidência é do próprio
+# corpus: o japonês mistura duas codificações de linha. Em 信仰雑話 e
+# 天国の福音書 o texto vem quebrado em largura fixa (mediana 34 caracteres,
+# máximo 41 e 66) -- cada linha é uma quebra tipográfica, não um parágrafo. Em
+# 革命的増産 e 御垂示録7号 as linhas correm até 2.128 e 2.258 caracteres.
+#
+# Contar PARÁGRAFO mede o separador (linha em branco x quebra simples); contar
+# LINHA mede a largura da coluna. Testadas as duas: a primeira acusou 8 obras,
+# a segunda 97, e em nenhum dos casos inspecionados havia perda de estrutura --
+# 革命的増産 art10 tem 151 linhas de conteúdo no JP contra 159 no PT, mesma
+# alternância de falas, mesma ordem.
+#
+# Reclassificada para MODELO: comparar estrutura exige ler os dois lados.
 
 
 @regra("H4", "sort_date do spec diverge da data escrita no artigo", "medio")
