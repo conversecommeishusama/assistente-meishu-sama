@@ -1,0 +1,7 @@
+=== idx 13 title_jp='14, Weaving. Woodcut print, by Suzuki Harunobu.' title_pt='' ===
+
+--- EN (source) ---
+14, Weaving. Woodcut print, by Suzuki Harunobu.
+
+--- PT ---
+14, Tecelagem. Gravura em madeira, por Suzuki Harunobu.

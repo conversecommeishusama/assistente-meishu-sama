@@ -1,0 +1,7 @@
+=== idx 23 title_jp='24, Ko-no-Moronao (a character in a Kabuki drama). Woodcut print, by Katsukawa S' title_pt='' ===
+
+--- EN (source) ---
+24, Ko-no-Moronao (a character in a Kabuki drama). Woodcut print, by Katsukawa Shun-ei.
+
+--- PT ---
+24, Ko-no-Moronao (um personagem de um drama Kabuki). Gravura em madeira, por Katsukawa Shun-ei.

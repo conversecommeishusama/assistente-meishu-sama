@@ -1,0 +1,9 @@
+=== idx 24 title_jp='25, Actor Otani Oniji as Edohei. Woodcut print, by Toshusai Sharaku.' title_pt='' ===
+
+--- EN (source) ---
+25, Actor Otani Oniji as Edohei. Woodcut print, by Toshusai Sharaku.
+26
+
+--- PT ---
+25, Ator Otani Oniji como Edohei. Gravura em madeira, por Toshusai Sharaku.
+26

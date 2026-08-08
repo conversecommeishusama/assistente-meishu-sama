@@ -1,0 +1,7 @@
+=== idx 4 title_jp='5, Dancing Beauty of Kambun Era. Artist unknown.' title_pt='' ===
+
+--- EN (source) ---
+5, Dancing Beauty of Kambun Era. Artist unknown.
+
+--- PT ---
+5, Beleza Dançante da Era Kambun. Artista desconhecido.

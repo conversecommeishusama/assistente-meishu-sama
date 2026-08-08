@@ -1,0 +1,7 @@
+=== idx 18 title_jp='19, CoolEvening by Riverside at Shijo. Woodcut print, by Tori-i Kiyonaga.' title_pt='' ===
+
+--- EN (source) ---
+19, CoolEvening by Riverside at Shijo. Woodcut print, by Tori-i Kiyonaga.
+
+--- PT ---
+19, Noite Fresca à Beira do Rio em Shijo. Gravura em madeira, por Tori-i Kiyonaga.

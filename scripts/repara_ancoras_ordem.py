@@ -47,6 +47,8 @@ DERIVADOS = [
     ("Paraíso na Terra nº", "Tijotengoku nº"),
     ("Paraíso na Terra,", "Tijotengoku,"),
     ("Paraíso na Terra", "Paraíso Terrestre"),
+    # âncora com a citação truncada -- "(Paraíso na Terra" sem o "nº"
+    ("Paraíso na Terra", "Tijotengoku"),
     ("Orações", "Norito"),
     ("orações", "norito"),
     ("Oração", "Norito"),

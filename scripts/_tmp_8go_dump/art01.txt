@@ -1,0 +1,7 @@
+=== idx 1 title_jp='一、胃疾患' title_pt='1. Doenças do Estômago' ===
+
+--- JP ---
+一、胃疾患
+
+--- PT ---
+1. Doenças do Estômago

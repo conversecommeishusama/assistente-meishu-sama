@@ -1,0 +1,7 @@
+=== idx 9 title_jp='10, Monk and Nun. Woodcut print, by Ishikawa Toyonobu.' title_pt='' ===
+
+--- EN (source) ---
+10, Monk and Nun. Woodcut print, by Ishikawa Toyonobu.
+
+--- PT ---
+10, Monge e Freira. Gravura em madeira, por Ishikawa Toyonobu.

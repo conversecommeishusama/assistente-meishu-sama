@@ -1,0 +1,7 @@
+=== idx 15 title_jp='16, A Couple. Woodcut print, by Isoda Koryusai.' title_pt='' ===
+
+--- EN (source) ---
+16, A Couple. Woodcut print, by Isoda Koryusai.
+
+--- PT ---
+16, Um Casal. Gravura em madeira, por Isoda Koryusai.

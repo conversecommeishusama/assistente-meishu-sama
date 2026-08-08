@@ -1,0 +1,7 @@
+=== idx 26 title_jp='28, Landscape. By Katsushika Hokusai.' title_pt='' ===
+
+--- EN (source) ---
+28, Landscape. By Katsushika Hokusai.
+
+--- PT ---
+28, Paisagem. Por Katsushika Hokusai.

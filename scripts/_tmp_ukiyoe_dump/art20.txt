@@ -1,0 +1,7 @@
+=== idx 20 title_jp='21, Beauty Bathing. By Kitagawa Utamaro.' title_pt='' ===
+
+--- EN (source) ---
+21, Beauty Bathing. By Kitagawa Utamaro.
+
+--- PT ---
+21, Beleza Banhando-se. Por Kitagawa Utamaro.

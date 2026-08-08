@@ -10969,3 +10969,122 @@ usuário, não erro introduzido aqui.
 4. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita.** A produção serve o índice de 06/08 -- nada destas
    duas passadas chegou lá.
+
+## Atualização 2026-08-08 (cont.) -- passadas 3, 4 e 5; a guarda de unicidade
+## por ARQUIVO estava descartando um terço do trabalho, em silêncio
+
+### Separação feita antes de perguntar
+
+Dos 101 vereditos SISTEMÁTICO, a maioria é variação gramatical natural
+(自然->"naturalmente", 心臓->"cardíaco") e não pede ação. Os de peso
+doutrinário foram medidos por taxa de aplicação e separados em três grupos:
+
+**Falso alarme, verificado no texto** -- `天国` usa "Reino dos Céus" só em
+citação cristã fixa ("O Reino dos Céus está próximo", "O Evangelho do Reino
+dos Céus"); `栄光` usa "glória" só em 栄光の雲, a imagem bíblica, não o
+periódico Eikō; `肋膜` distingue certo "pleurisia" (nome de doença, 肋膜をやる/
+になる/を患う, uso da época) de "pleura" (a membrana); `肺病`/`結核` pareciam
+invertidos por casamento grosso por artigo -- na frase real cada um está no
+lugar.
+
+**Decisão já sua, corpus violando** -- 3ª passada.
+**Decisão nova** -- levada em pergunta e resposta (`邪神`, `言霊`).
+
+### 3ª passada: 14 termos já decididos
+
+255 artigos, 338 propostas, 337 aplicadas, ~US$ 0,14. Uma rejeição legítima
+("Kannon de Mil Braços" virando "Kannon-Sama de Mil Braços"; 千手観音様 tem
+forma própria). `Deus Principal` zerou.
+
+**Regra minha que estava errada, derrubada por caso real**: quatro propostas
+trocavam "Johrei" por "purificação" e a auditoria as rejeitou como regressão.
+O japonês daqueles pontos diz **浄化**, não 浄霊 -- o português é que estava
+errado, e eu ia barrar o conserto. Tirar a forma canônica NÃO é erro por si.
+E a presença da chave no artigo não decide: `結核の革命的療法` art114 tem 浄霊
+7x e 浄化 17x. Passou a ser sinalizado para leitura, não rejeitado.
+
+### Decisões novas do usuário
+
+| termo | decisão |
+|---|---|
+| `邪神` | "Divindades malignas" sempre; nunca "deuses malignos" (mantém a família coerente com 正神 -> "divindades corretas") |
+| `言霊` | "espírito da palavra (kotodama)" na 1ª menção, "espírito da palavra" depois; nunca "palavra-espírito" nem "Kotodama" nu |
+
+**Erro meu no caminho, corrigido antes de agir**: eu disse que corpus e
+protocolo se contradiziam no `言霊`. Tinha lido três ocorrências e
+generalizado -- e eram as raras. O corpus usa "espírito da palavra" puro em
+**186 de 222** ocorrências, exatamente o que o protocolo manda. Não havia
+contradição, havia 36 desvios. Levei o número correto de volta ao usuário
+antes de qualquer aplicação.
+
+### REGRA GERAL: toda glosa de 1ª menção vale por ARTIGO
+
+Decisão do usuário na mesma rodada, e vale para todas as entradas com esse
+critério, não só a que motivou a pergunta. Registrada em
+`protocolo_traducao.txt` com o motivo: o artigo é a unidade que o leitor
+recebe inteira -- na busca um trecho chega sem o resto do livro em volta, e
+a glosa dada só na abertura do arquivo nunca alcança quem lê o artigo 40.
+**9 entradas do glossário uniformizadas** (御屏風観音様, 惟神, 惟神医術,
+教導師, 日光殿, 如意宝珠, 如意の玉, 光の玉, 言霊).
+
+### 4ª e 5ª passadas
+
+4ª (`邪神` + glosa por artigo de 言霊, 日光殿, 教導師, 惟神, 御屏風観音):
+174 artigos, 161 propostas, 2 rejeitadas -- o modelo quis glosar "Imagem da
+Luz Divina" como "(Nikkōden: Palácio da Luz Solar)", confundindo o objeto
+sagrado (御神体) com o palácio; o japonês do artigo não tem 日光殿 nenhum.
+
+Duas outras rejeições eram MINHAS e foram desfeitas depois de ler o original:
+converter a perífrase "o biombo com a imagem de Kannon-Sama" para "Byōbu
+Kannon" está certo, porque o japonês ali diz 御屏風観音様. Regra refinada:
+**quando a forma de destino é canônica E o japonês a sustenta, a troca está
+justificada mesmo que um composto suma da origem.**
+
+5ª (residual): o gatilho por contagem não pega o artigo que já tem a forma
+canônica num ponto e a perífrase noutro. 34 artigos, 19 propostas.
+
+### O achado de maior efeito: escopo de aplicação errado
+
+A guarda de unicidade -- que existe desde o desastre do replace global -- é
+por ARQUIVO. Mas a troca é decidida lendo UM artigo. Numa obra de 200
+depoimentos, "Ministro Responsável" ou "espírito da palavra" repetem em
+dezenas de lugares, e a troca legítima do artigo 12 morria por causa do
+artigo 130. Na 4ª passada isso descartou 54 de 159, **em silêncio**.
+
+`scripts/aplica_no_artigo.py` delimita a janela pelas âncoras e exige
+unicidade DENTRO do artigo -- o escopo apertou, não afrouxou, e continua sem
+replace global. Rodado sobre as cinco passadas: **514 trocas recuperadas**
+(260 da 1ª, 201 da 2ª, 46 da 3ª, 7 da 4ª). Duas correções foram necessárias
+nele: obra de artigo único (janela = arquivo), e busca de janela tolerante a
+quebra de linha, porque a âncora foi gravada contra `clean_body()` (que
+colapsa 4+ quebras em 3) e no texto bruto elas continuam 4 -- caso real,
+`御教え集3号`, 4 de 10 âncoras.
+
+### Estado verificado
+
+**137 obras: 123 multi-artigo íntegras, 14 de artigo único, 0 âncoras
+quebradas, 0 dessincronizadas**, nas duas cópias, pela função real de
+produção. Zero corrupção de substring.
+
+Contagens: Divindades malignas 358 (era 127), deuses malignos 8 (era 27),
+palavra-espírito 0, Paraíso Terrestre 633, Byōbu Kannon 198, nuvens
+espirituais 547, Kannon-Sama 646, proteção divina 834, Deus Principal 0.
+
+Duas âncoras precisaram de reparo à mão porque o reparo automático se recusou
+a adivinhar -- corretamente: em `世界救世教教義` o candidato ocorre duas vezes
+(o título e uma autorreferência), e a regra exige candidato único. Resolvidas
+confirmando que a 1ª ocorrência cai antes da âncora do artigo seguinte.
+
+### Onde continuar
+
+1. Sobram 8 "deuses malignos" e alguns "Kannon do biombo" soltos -- resíduo
+   do gatilho por contagem, não erro conhecido. Vale uma última residual se o
+   padrão de 100% exigir.
+2. Termos SEM entrada de glossário (`御尊影` e outros da varredura) ainda não
+   foram levados ao usuário.
+3. `肋膜` só registra "pleura" no glossário -- falta a acepção de doença, que
+   o corpus já usa corretamente.
+4. Três obras têm mais "Kannon-Sama" do que o japonês sustenta -- verificado
+   que é ANTERIOR a este trabalho, é convenção para o usuário decidir.
+5. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita.** Produção serve o índice de 06/08.

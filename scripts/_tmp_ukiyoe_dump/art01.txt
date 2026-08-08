@@ -1,0 +1,7 @@
+=== idx 1 title_jp='2, (Portion) Screen-painting "Women in Merriments." Artist unknown.' title_pt='' ===
+
+--- EN (source) ---
+2, (Portion) Screen-painting "Women in Merriments." Artist unknown.
+
+--- PT ---
+2, (Porção) Pintura em biombo "Mulheres em Folias". Artista desconhecido.

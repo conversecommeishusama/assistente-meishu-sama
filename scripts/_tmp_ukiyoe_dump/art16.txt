@@ -1,0 +1,7 @@
+=== idx 16 title_jp='17, Shio-kumi ("Drawing Sea-water," a dance). Woodcut print, by Katsukawa Shunsh' title_pt='' ===
+
+--- EN (source) ---
+17, Shio-kumi ("Drawing Sea-water," a dance). Woodcut print, by Katsukawa Shunsho.
+
+--- PT ---
+17, Shio-kumi ("Extraindo Água do Mar", uma dança). Gravura em madeira, por Katsukawa Shunsho.

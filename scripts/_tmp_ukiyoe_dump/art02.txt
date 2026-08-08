@@ -1,0 +1,7 @@
+=== idx 2 title_jp='3, (Portion) Screen with paintings "Various Professions." Artist unknown.' title_pt='' ===
+
+--- EN (source) ---
+3, (Portion) Screen with paintings "Various Professions." Artist unknown.
+
+--- PT ---
+3, (Porção) Biombo com pinturas "Várias Profissões". Artista desconhecido.

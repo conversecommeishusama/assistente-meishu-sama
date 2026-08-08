@@ -1,0 +1,7 @@
+=== idx 7 title_jp='8, Street Scene at Yoshiwara. Woodcut print, by Hishiknwa Moronobu.' title_pt='' ===
+
+--- EN (source) ---
+8, Street Scene at Yoshiwara. Woodcut print, by Hishiknwa Moronobu.
+
+--- PT ---
+8, Cena de Rua em Yoshiwara. Gravura em madeira, por Hishikawa Moronobu.
