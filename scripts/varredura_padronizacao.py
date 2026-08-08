@@ -246,6 +246,28 @@ TERMOS_PROIBIDOS = [
     ("três pequenos desastres", "§2.2: 小三災 é 'pequenas calamidades'", "grave"),
 ]
 
+# O termo proibido deixa de ser proibido dentro de uma glosa que já traz a
+# forma canônica ao lado -- é o japonês entre parênteses ancorando o termo, não
+# a transliteração substituindo a tradução. Sem isto a varredura reabre decisão
+# já tomada: o usuário decidiu em 2026-08-08 que 言霊 é "espírito da palavra
+# (kotodama)" na 1ª menção de cada artigo, e a regra passou a acusar as 45
+# glosas legítimas que ela mesma pedira. Vale também para "Daijo (Mahayana)" e
+# para a passagem em que Meishu-Sama DISTINGUE o seu Daijo do budismo Mahayana
+# -- ali tirar a palavra destruiria a distinção que ele está fazendo.
+GLOSA_ACEITA = [
+    (re.compile(r"[Kk]otodama"), re.compile(r"espírito da palavra\s*\(")),
+    (re.compile(r"Mahayana"), re.compile(r"Daijo")),
+    (re.compile(r"Hinayana|Hinaiana"), re.compile(r"Shojo")),
+]
+
+
+def _dentro_de_glosa(termo: str, contexto: str) -> bool:
+    """A forma canônica acompanha o termo proibido na mesma vizinhança?"""
+    for rx_termo, rx_canonica in GLOSA_ACEITA:
+        if rx_termo.fullmatch(termo) and rx_canonica.search(contexto):
+            return True
+    return False
+
 # §2.6 é CONDICIONAL: estes termos só são proibidos quando o japonês do MESMO
 # trecho não traz o equivalente explícito. Onde o JP traz, é a forma canônica
 # do glossário e está correta. Sem checar o JP, a regra produz centenas de
@@ -267,6 +289,9 @@ def r_a4(pt: str, ctx: dict):
         while i >= 0:
             # "Meishu-sama" só conta se não for parte de "Meishu-Sama"
             if termo == "Meishu-sama" and pt[i: i + len(termo)] != "Meishu-sama":
+                i = f.find(a, i + 1)
+                continue
+            if _dentro_de_glosa(pt[i: i + len(termo)], pt[max(0, i - 60): i + 60]):
                 i = f.find(a, i + 1)
                 continue
             achados.append({"linha": linha_de(pt, i), "trecho": trecho(pt, i),
