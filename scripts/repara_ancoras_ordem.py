@@ -37,6 +37,8 @@ SPEC_DIR = RAIZ / "reports/livros_trabalho/segmentacao_manual"
 PROPOSTAS = [
     RAIZ / "reports/varredura_padronizacao/REAPLICACAO_SEMANTICA.json",
     RAIZ / "reports/varredura_padronizacao/REAPLICACAO_SEMANTICA2.json",
+    RAIZ / "reports/varredura_padronizacao/REAPLICACAO_SEMANTICA3.json",
+    RAIZ / "reports/varredura_padronizacao/REAPLICACAO_SEMANTICA4.json",
 ]
 
 # Pares derivados das decisões, para a âncora que o modelo nunca citou por
