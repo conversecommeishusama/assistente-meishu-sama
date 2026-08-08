@@ -10731,3 +10731,135 @@ automática -- e continuam abertos para o usuário.
 3. Backup do estado danificado em
    `reports/livros_trabalho/pt_estado_danificado_20260807T234913Z/`, caso
    alguma correção legítima do dia precise ser resgatada de lá.
+
+## Sessão 2026-08-07/08 (Claude Code) -- padronização de protocolo/glossário:
+## desastre de troca global, recuperação, e retomada 100% semântica
+## (bloqueada em 45% por saldo DeepSeek esgotado)
+
+### O desastre, registrado sem maquiagem
+
+`scripts/aplica_decisoes_glossario.py` **contava as ocorrências POR ARTIGO**
+(justamente para só trocar quando japonês e português batessem) mas **aplicava
+com `texto.replace()` no ARQUIVO INTEIRO**, sem fronteira de palavra. Aprovar
+uma troca num artigo trocava o livro todo. Aprovei 76 trocas; ~545 foram
+aplicadas. `norito` foi de 152 para 552 ocorrências.
+
+Destruiu também palavras comuns que continham a sequência: `coração` ->
+`cnorito`, `adoração` -> `adnorito`, `preceito` -> `noritoito`. O pior:
+**120 depoimentos passaram a dizer que a pessoa recebeu `Daikōmyō Nyorai`
+quando o japonês diz `光明如来` (Komyo-Nyorai)** -- são duas Imagens
+distintas, e o erro inverteu o fato relatado por testemunhas reais.
+
+**O que não pegou o erro**: a verificação estrutural passou 100% verde --
+137 obras, 0 âncoras quebradas -- com o corpus corrompido. Contagem e
+integridade estrutural não detectam troca semanticamente errada. Só a
+conferência das contagens finais por termo revelou o dano.
+
+### Recuperação executada
+
+Estado danificado preservado em
+`reports/livros_trabalho/pt_estado_danificado_20260807T234913Z/`; os 137
+arquivos restaurados de `textos_portugues/` (cópia íntegra promovida em
+06/08, não tocada); âncoras de 20 obras reparadas (0 falhas), preservando as
+correções *estruturais* legítimas do dia (byline, rótulo de diálogo).
+
+### Verificação semântica integral do dia (determinação do usuário)
+
+*"verifique todo o trabalho realizado hoje de forma semantica, tudo o que foi
+feito sem excessão"* e *"sem fazer por amostragem, fazer tudo sem excessão"*.
+1.292 trechos alterados foram lidos contra o japonês:
+**CORRETO 895 (70%), ERRADO 355 (28%), INCERTO 30**.
+
+Achado que decidiu o método daqui em diante: das onze trocas aplicadas
+naquele dia, **`野菜` -- a única feita lendo passagem por passagem -- é a
+única ausente da lista de erros.**
+
+### Instrução permanente reafirmada pelo usuário
+
+> **"TODO O TRABALHO DEVE SER FEITO LINHA A LINHA COMPARANDO JP PT DE FORMA
+> SEMANTICA."**
+
+Nada de find-replace, regex de substituição ou troca de termo por script.
+Toda alteração tem de nascer da leitura do japonês e do português lado a lado.
+
+### Reaplicação semântica (`scripts/reaplica_semantico.py`)
+
+Um artigo por vez, japonês e português juntos, o modelo propondo trecho a
+trecho. Três salvaguardas contra a repetição do desastre:
+1. a proposta só é aceita se o trecho existir **literalmente** no português;
+2. só é gravada se `texto.count(trecho) == 1` -- **nunca replace global**;
+3. o prompt nomeia as armadilhas conhecidas (`光明如来` != `大光明如来`,
+   `邪神` != `悪霊`, `祈り` != `祝詞`, `先生` != `大先生`, "coração" contém
+   "oração").
+
+**Resultado parcial: 834 de 1.504 artigos lidos, 1.301 trocas aplicadas.**
+Os outros **670 falharam com `402 Insufficient Balance`** -- o saldo da conta
+DeepSeek acabou no meio da execução. Não é falha de método; as entradas com
+erro foram removidas do JSON para que a retomada as releia.
+
+Auditoria das propostas antes de aplicar: 2 descartadas (1 `Komyo->Daikōmyō`
+sem apoio no japonês, 1 tocando a substring de "coração"). Depois de aplicar,
+3 obras tiveram o texto da própria âncora alterado -- âncoras atualizadas,
+137 obras reverificadas: **123 multi-artigo íntegras, 14 de artigo único,
+0 quebradas, 0 dessincronizadas, 0 corrupção de substring.**
+
+### Auditoria dedicada do `Daikōmyō` (o ponto do dano anterior)
+
+263 ocorrências no português contra 254 no japonês. Cada excesso foi lido
+contra o original. **Achado de método**: o japonês tem espaço de OCR no meio
+do termo (`大光明 如来`), então contar `大光明如来` subestima -- é preciso
+regex tolerante a espaço (`大\s*光\s*明`). Com isso, dos 9 excessos:
+7 confirmados corretos (anáfora, ou o mesmo termo rendido em romaji + glosa
+entre parênteses, ou `大光明様` sem `如来`), **1 erro real corrigido**
+(`19530910-世界救世教奇蹟集` art44: `光明如来様の絶大なる御守護` estava como
+Daikōmyō, virou Komyo-Nyorai). Conferência inversa (PT `Komyo` vs JP
+`光明如来` sem `大`) não achou nenhuma corrupção -- défices de 1 são anáfora.
+
+Observação não corrigida: `19480905-信仰雑話.txt` usa `Kōmyō-Nyorai` (com
+mácron) numa lista de epítetos búdicos do sutra -- registro diferente do
+Ohikari da Igreja, provavelmente legítimo, mas é decisão de glossário do
+usuário, não erro.
+
+### Bugs estruturais reais corrigidos nesta rodada (não são de tradução)
+
+1. **`build_clean_large_indexes.py` nunca lia o campo `profile`** da spec --
+   corte por tamanho era aplicado a todo perfil, inclusive aos que não são
+   palavra oral. Corrigido: só os 3 perfis orais (`gokowa_roku_qa`,
+   `ochishiji_roku`, `mioshie_shu`) podem ser cortados por tamanho.
+2. **Âncora de byline** (assinatura de depoimento vazando para o artigo
+   anterior) -- 157 casos para 11, 146 âncoras movidas. Com guarda explícita:
+   nas séries `御教え集`/`御光話録`/`御垂示録` a data ficar no fim do artigo
+   anterior é **convenção deliberada** (confirmada em 32 dos 33 volumes), não
+   bug -- não mexer.
+3. **Assimetria JP/PT que eu mesmo introduzi**: a correção de byline tocou só
+   o português, deixando 94 âncoras japonesas para trás -- artigos delimitados
+   de forma diferente em cada lado. Corrigido (100 âncoras realinhadas).
+4. **OCR japonês**: 3.034 caracteres corrigidos (`明为様` -> `明主様` em 641 de
+   1.870 ocorrências; `苦雄滅道` -> `苦集滅道`, as Quatro Nobres Verdades).
+
+### Lições de método, para não repetir
+
+- **Verificação estrutural verde não prova nada sobre conteúdo.** O corpus
+  passou 137/137 corrompido.
+- **Testar em bloco produz veredito, não diagnóstico** -- já registrado em
+  07/08 e reconfirmado aqui.
+- Ao comparar contagens JP x PT neste acervo, **sempre usar regex tolerante a
+  espaço de OCR** -- o japonês de trabalho tem espaços inseridos dentro de
+  termos compostos.
+
+### Onde continuar
+
+1. **Bloqueio real: saldo da conta DeepSeek esgotado (`402 Insufficient
+   Balance`).** A retomada dos 670 artigos restantes é um comando --
+   `python3 scripts/reaplica_semantico.py` -- e o script pula sozinho o que
+   já foi lido. Nada mais depende de decisão minha.
+2. Depois dos 670: reverificar âncoras nas duas cópias e reler semanticamente
+   por cima do resultado, como foi feito nos 834.
+3. **98 vereditos SISTEMATICO** das faixas A/B/C continuam abertos -- são
+   perguntas de glossário, nunca corrigidas automaticamente, aguardando o
+   usuário.
+4. `御尊影` e outros termos sem entrada de glossário, levantados na varredura,
+   ainda não foram levados ao usuário.
+5. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita.** A produção serve o índice de 06/08 -- nada desta
+   sessão chegou lá.
