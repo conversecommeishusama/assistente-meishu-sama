@@ -113,7 +113,7 @@ const uiTranslations = {
         back: "Voltar",
         continue: "Continuar",
         loading: "Consultando os escritos...",
-        deepSearchNotice: "Estamos aprofundando a pesquisa — este tema aparece em fontes que precisam ser comparadas. Pode levar mais um pouco.",
+        deepSearchNotice: "Estamos aprofundando a pesquisa — este tema aparece em fontes que precisam ser comparadas. Isso pode demorar um pouco mais.",
         checkingJapanese:
             "Não encontrei uma resposta adequada nos textos traduzidos. Estou consultando o original em japonês — isso pode levar até 2 minutos.",
         sourcesTitle: "Fontes identificadas",

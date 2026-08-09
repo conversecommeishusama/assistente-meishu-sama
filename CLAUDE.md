@@ -11088,3 +11088,140 @@ confirmando que a 1ª ocorrência cai antes da âncora do artigo seguinte.
    que é ANTERIOR a este trabalho, é convenção para o usuário decidir.
 5. Continua valendo: **nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita.** Produção serve o índice de 06/08.
+
+## Sessão 2026-08-08/09 (Claude Code) — etapa 4 em curso: leitura de fidelidade
+## artigo a artigo, dois defeitos estruturais meus encontrados, e um achado que
+## reverteria uma decisão do usuário
+
+Relatório da noite publicado em
+`https://claude.ai/code/artifact/3e51d412-4757-413a-aa28-dc02a56c72aa`.
+
+### Autorização e condição
+
+Usuário autorizou aplicar as correções no corpus sem estar presente, com uma
+condição literal: **"os erros surgiram pq não foram feitos linha a linha de
+forma semantica, se fizer dessa forma pode aplicar"**. O diagnóstico dele está
+certo — o dano de 07/08 veio de substituição por regra em escopo de arquivo,
+não de leitura. Produção continua fora: nenhuma promoção, reconstrução ou
+reinício sem autorização explícita, e ausência não é autorização.
+
+### A engrenagem
+
+Três camadas, nesta ordem, e nada é gravado antes da terceira:
+
+1. `scripts/leitura_fidelidade.py` — 8.030 chamadas (2.488 artigos inteiros +
+   5.542 pedaços dos longos). **Desenho assimétrico deliberado**: o japonês vai
+   INTEIRO em toda chamada e só o português é fatiado. Fatiar os dois desalinha
+   — medido: num artigo de 3.962 caracteres o pedaço 0 do japonês saiu com 4
+   caracteres contra 2.268 do português. O japonês é ~40% do tamanho do
+   português neste corpus, então cabe inteiro.
+2. `scripts/verifica_fidelidade.py` — verificação adversarial, prompt invertido
+   ("sua inclinação é derrubá-la"), rodando em laço ao lado da leitura. Na
+   dúvida, cai. Só GRAVE e MEDIO passam por aqui; LEVE nunca é aplicado.
+3. `scripts/auditoria.py` — meus vereditos: `aprovado` / `recusado` /
+   `reformar` (erro real, correção proposta viola o protocolo).
+
+**Vazão**: os dois laços em paralelo rendem ~1.045 chamadas/hora contra 416 da
+leitura sozinha. **Custo real medido contra o saldo do usuário: US$ 0,242 por
+milhão** (a tabela de `agentic_search.py` diz 0,278) — projeção da etapa caiu
+de US$ 52 para ~US$ 31.
+
+### Achado estrutural 1: cabeçalho vazado no japonês (159 âncoras corrigidas)
+
+Um GRAVE dizia que «Quinta Aula» devia ser «Sexta Aula» em `観音講座`, citando
+`第六講座`. A prova existia, pelo motivo errado: **cada bloco japonês terminava
+com o cabeçalho da aula seguinte**, e a âncora começava depois dele. O português
+estava certo; aplicar teria quebrado a âncora e criado duas «Sexta Aula».
+
+`scripts/repara_titulo_vazado_jp.py` (novo) corrigiu **159 fronteiras em 10
+obras** — só o caso ASSIMÉTRICO, em que o japonês perdeu o título e o português
+manteve. Deixou intactas 37 fronteiras onde os dois lados vazam (continuam
+alinhados entre si) e as três séries orais, onde a data fechar o bloco anterior
+é convenção do usuário — **já tratei isso como defeito uma vez neste projeto e
+tive de reverter**.
+
+Consequência: 258 artigos já lidos contra o japonês torto voltaram para a fila,
+e os **665 achados** que vieram deles foram descartados. Densidade nesses
+livros: 2,6 achados por chamada contra 1,2 da média — o desalinhamento estava
+fabricando erro.
+
+**Cuidado de processo aprendido aqui**: os dois laços mantêm a lista em memória
+e reescrevem o arquivo inteiro a cada gravação. Limpar o JSON com o processo
+vivo é desfeito na gravação seguinte — parar, limpar, religar.
+
+### Achado 2: o verificador ia reverter uma decisão do usuário
+
+Cinco achados procedentes propunham trocar `日月地大神` → «Miroku Ōkami» por
+«Nichigetsuchi Ōkami». É decisão registrada, e o corpus a aplica em 21 lugares
+contra 1. Causa: eu tinha listado as decisões **de memória** no prompt, e
+memória não cobre 703 entradas. Agora `glossario_do_trecho()` injeta as entradas
+reais do `glossario_traducao.json` que aparecem no trecho. Sobrevivência dos
+graves caiu de 95% para 76% — falsos positivos saindo.
+
+### Achado 3: dano das minhas próprias aplicações de glossário (29 sítios)
+
+Um achado trazia «Ministros Responsáveis **de Unidade Religiosa de Unidade
+Religiosa de Unidade Religiosa de Unidade Religiosa**». Não era tradução: era
+termo escrito por cima de si mesmo pelas minhas aplicações de 07-08/08.
+Varredura achou **29 sítios em 12 obras**, de cinco aplicações diferentes:
+`proteções divinas divinas` (13, de `御守護`), `benefícios materiais materiais`
+(11, de `御利益`), `de Unidade Religiosa` ×4 (2, de `教導師`), mais
+`mundo material material material`, `tuberculose pulmonar pulmonar pulmonar`,
+`(Palácio da Luz Solar)` ×3 e `para receber o Ohikari (kyoshu)` ×2. Todos
+corrigidos, âncoras revalidadas, classe zerada.
+
+Preservado o que **parece** repetição e não é: `Tokyo Nichi Nichi` é o nome do
+jornal (東京日日新聞), `ware yoshi ware yoshi` é citação do Ofudesaki, «o avesso
+do avesso» é o poema, e «O Caminho para a Felicidade» duas vezes no sumário de
+`Medicina_do_Amanha` está assim no japonês também (`幸福への道` ×2).
+
+### Vão real na varredura de Ohikari de 27/07, que eu declarei exaustiva
+
+Ela usava concordância de gênero e só pegava «**a** Ohikari». Um caso com
+concordância correta e termo errado — «com **o** Ohikari» onde o japonês diz
+`御守護` (`御光話録（補）` art23) — passou, e a leitura desta noite achou.
+Levantados 18 candidatos parecidos; a leitura em curso cobre a classe artigo a
+artigo, não vale varredura separada.
+
+### Cinco detectores meus erraram, cada um pego só pela leitura
+
+Registrado porque é o padrão que o usuário nomeou: (1) o primeiro contou poesia
+como cabeçalho vazado — 1.761 falsos, `明麿近詠集` 483/487; (2) o segundo casou
+`title_jp` de 2-4 caracteres (`誠`, `禁欲`) por acaso na cauda; (3) o terceiro
+consultou `title_pt`, que está VAZIO em vários livros — o título vive no
+`pt_anchor` —, classificando 76 fronteiras ao contrário; (4) o quarto exigia
+espaço DEPOIS da repetição, então `divinas divinas.` (com ponto) nunca casava —
+perdeu 9 de 9 danos num arquivo; (5) o quinto contou a fórmula do kyoshu como
+menção a Ohikari e inflou 80 suspeitas para 18 reais. **Nenhum chegou ao
+corpus.**
+
+### Estado ao fechar esta nota
+
+Leitura 25% (2.031/8.030, 34 obras tocadas, 0 erros de API). Verificação 756
+julgados (76% dos graves e 70% dos médios sobrevivem). Auditoria 32 lidos: 26
+aprovados, 5 `reformar`, 1 recusado. **Zero achados aplicados ao corpus** — as
+únicas escritas da noite foram as 159 âncoras japonesas e os 29 sítios de dano,
+ambas com backup por arquivo e revalidação por `split_by_anchors`.
+
+Amostra do que é erro real e aprovado: `薬` (remédio) traduzido como **veneno**
+num corpus cuja doutrina central é sobre medicamento; `アブ` (mutuca) como
+abelha; `二十五母音五十声` como «cinquenta consoantes» em vez de sons, em
+passagem de kotodama; `何十分の一` como «um décimo»; `脊椎カリエス` como «doença
+pulmonar vertebral»; `小田原` dividido O/dawa/ra em vez de O/da/wara;
+`インド人の生活` como «estilo de vida dos japoneses».
+
+As 5 marcadas `reformar`: três são atribuição de fala (frase do Interlocutor
+dada a Meishu-Sama) — erro real, mas consertar exige mover o turno inteiro, e
+não cabe em troca de trecho literal; uma traria kanji cru para o português
+(§5.2); uma propõe «Deus do Mundo Oculta» quando o corpus usa «Oculto» 11× contra 4×.
+
+### Onde continuar
+
+1. Deixar os dois laços fecharem (tmux `fidelidade` e `verifica`, independentes
+   da sessão). O saldo do usuário cobre a etapa inteira.
+2. Seguir a auditoria: 100% dos GRAVE um a um, os MÉDIO por padrão.
+3. Aplicar só depois, por `scripts/aplica_no_artigo.py` — trecho literal, único
+   dentro da janela do artigo, backup, âncora revalidada.
+4. LEVE nunca entra no corpus: vira relatório por livro para a leitura do usuário.
+5. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita.

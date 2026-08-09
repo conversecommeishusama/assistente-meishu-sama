@@ -46,7 +46,7 @@ from goshinsho.services import agentic_search as ag  # noqa: E402
 
 DESTINO = RAIZ / "reports/varredura_padronizacao/LEITURA_FIDELIDADE.json"
 MODELO = "deepseek-v4-flash"
-PARALELISMO = 8
+PARALELISMO = 12
 # Medido em 2026-08-08 neste mesmo artigo (10.054 caracteres de português
 # contra 3.962 de japonês):
 #
@@ -61,6 +61,8 @@ PARALELISMO = 8
 # raciocinar, não tarefa grande demais: a hipótese de fatiar o artigo estava
 # errada e foi descartada (ver alvos()).
 MAX_TOKENS = 65536
+MAX_CAR_INTEIRO = 4000     # até aqui o artigo vai inteiro
+MAX_CAR_PEDACO = 3000      # acima disso, o português vai em pedaços
 
 SYSTEM = """Você é revisor de tradução japonês→português do acervo de Meishu-Sama (Igreja Messiânica Mundial).
 
@@ -122,6 +124,18 @@ ele está explicando o termo 真如 — o jogo de palavras é o conteúdo.
 · «Caminho» (道) e «示» (shimesu): as duas ordens de glosa valem
 · marcador de turno (Pergunta)/(Resposta Divina) nos volumes do 浄霊法講座 —
   ali o rótulo fecha o bloco anterior, por decisão registrada do usuário
+· 教修 -> «curso (aula) de preparação para receber o Ohikari (kyoshu)» — o
+  «(kyoshu)» fecha a expressão inteira, não qualifica «Ohikari». Forma
+  literal decidida pelo usuário; não reordenar nem encurtar
+· a linha de citação da fonte («Eikō nº 167, publicado em…», «Tijotengoku
+  nº 42…») é metadado NOSSO, não tradução — ela não existe no japonês e a
+  ausência dela lá nunca é erro
+· 地上天国 -> «Paraíso Terrestre» como conceito; como nome do periódico,
+  «Tijotengoku nº X», igual aos irmãos Eikō e Hikari
+· 祝詞 -> «norito», sempre; o japonês distingue de 祈り/祈願/祈祷 (prece),
+  que continuam «prece»/«oração»
+· «Byōbu Kannon» vai SEM artigo — Kannon é homem e mulher ao mesmo tempo
+  no ensinamento, e o artigo tomaria partido
 
 ═══ FORMATO — uma linha por achado, nada mais ═══
 
@@ -135,25 +149,20 @@ NADA
 """
 
 
-def _fatia(texto: str, n: int) -> list[str]:
-    """Divide em n pedaços aproximados, sempre em fronteira de parágrafo."""
-    if n <= 1:
-        return [texto]
+def _fatia_por_paragrafo(texto: str, maximo: int) -> list[str]:
+    """Pedaços de até `maximo` caracteres, sempre em fronteira de parágrafo."""
     paras = re.split(r"(\n\s*\n+)", texto)
     blocos = ["".join(paras[i:i + 2]) for i in range(0, len(paras), 2)]
-    alvo = len(texto) / n
     saida, atual = [], ""
     for b in blocos:
-        if atual and len(atual) + len(b) > alvo and len(saida) < n - 1:
+        if atual and len(atual) + len(b) > maximo:
             saida.append(atual)
             atual = b
         else:
             atual += b
     if atual:
         saida.append(atual)
-    while len(saida) < n:
-        saida.append("")
-    return saida[:n]
+    return saida or [texto]
 
 
 def alvos() -> list[dict]:
@@ -167,20 +176,35 @@ def alvos() -> list[dict]:
         for i, (jp, pt) in enumerate(zip(ajp, apt)):
             if len(jp.strip()) < 60 or len(pt.strip()) < 60:
                 continue                      # cabeçalho/fragmento, não há o que ler
-            # NÃO fatiar: os dois lados têm estrutura de parágrafo diferente
-            # e o corte independente desalinha. Medido -- num artigo de 3.962
-            # caracteres o pedaço 0 do japonês saiu com 4 caracteres (só o
-            # título) contra 2.268 do português. O artigo vai inteiro, e o que
-            # resolveu a resposta vazia foi o orçamento de saída, não o corte.
-            saida.append({"obra": obra, "artigo": i, "parte": 0,
-                          "jp": jp[:16000], "pt": pt[:16000]})
+            # Artigo curto vai inteiro. Longo vai com o JAPONÊS INTEIRO em
+            # toda chamada e o PORTUGUÊS em pedaços -- assimétrico de
+            # propósito. Fatiar os DOIS lados desalinha, porque a estrutura de
+            # parágrafo difere: medido, num artigo de 3.962 caracteres o pedaço
+            # 0 do japonês saiu com 4 caracteres contra 2.268 do português. O
+            # japonês é ~40% do tamanho do português neste corpus, então cabe
+            # inteiro mesmo nos artigos grandes, e o modelo localiza sozinho a
+            # parte correspondente.
+            if len(pt) <= MAX_CAR_INTEIRO:
+                saida.append({"obra": obra, "artigo": i, "parte": 0, "partes": 1,
+                              "jp": jp, "pt": pt})
+                continue
+            pedacos = _fatia_por_paragrafo(pt, MAX_CAR_PEDACO)
+            for k, ped in enumerate(pedacos):
+                saida.append({"obra": obra, "artigo": i, "parte": k,
+                              "partes": len(pedacos), "jp": jp[:20000], "pt": ped})
     return saida
 
 
 def julga(item: dict) -> dict:
-    pedido = (f"ORIGEM: {item['obra']} (artigo {item['artigo']}, "
-              f"parte {item.get('parte', 0) + 1})\n\n"
-              f"=== JAPONÊS ===\n{item['jp']}\n\n"
+    n = item.get("partes", 1)
+    if n > 1:
+        cab = (f"ORIGEM: {item['obra']} (artigo {item['artigo']})\n"
+               f"O japonês abaixo é do ARTIGO INTEIRO; o português é o pedaço "
+               f"{item['parte'] + 1} de {n}. Localize a parte correspondente e "
+               f"relate apenas o que estiver errado NESSE pedaço.\n\n")
+    else:
+        cab = f"ORIGEM: {item['obra']} (artigo {item['artigo']})\n\n"
+    pedido = (cab + f"=== JAPONÊS ===\n{item['jp']}\n\n"
               f"=== PORTUGUÊS ===\n{item['pt']}")
     texto, tokens, tent = "", 0, 0
     while not texto.strip() and tent < 3:
