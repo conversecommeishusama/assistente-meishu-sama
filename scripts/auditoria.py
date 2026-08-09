@@ -79,7 +79,67 @@ def resumo() -> None:
         print(f"  {k:<10} {v:,}")
 
 
+def dossie(k: str) -> str:
+    """Tudo o que é preciso para julgar um achado -- montado por código.
+
+    A checagem de âncora fica AQUI, não no julgamento: em 2026-08-09 eu aprovei
+    três correções que mexiam em âncora de segmentação porque julguei de
+    cabeça, e o DeepSeek, consultando, acertou os três. Fato consultável não
+    se decide por opinião.
+
+    A contagem no acervo entra como CONTEXTO, nunca como autoridade: no mesmo
+    teste ela fez recusar duas correções certas (重吉->Jūkichi, 伊都能売->Izunome)
+    porque a forma errada era a dominante. Erro dominante continua erro.
+    """
+    import verifica_fidelidade as V
+    it = {A2["chave"]: A2 for A2 in
+          [{**r, "chave": chave(r)} for r in procedentes()]}.get(k)
+    if not it:
+        return f"(achado {k} não está mais na lista de procedentes)"
+    jp, pt = V.textos(it["obra"], it["artigo"])
+    p_ = pt.find(it["de"])
+    viz = pt[max(0, p_ - 900):p_ + len(it["de"]) + 900] if p_ >= 0 else it["de"]
+
+    # âncora: fato, verificado em código
+    sp = RAIZ / f"reports/livros_trabalho/segmentacao_manual/{it['obra']}.json"
+    aviso = ""
+    if sp.exists():
+        arts = json.loads(sp.read_text(encoding="utf-8")).get("articles", [])
+        for i, a in enumerate(arts):
+            anc = a.get("pt_anchor", "")
+            if anc and (it["de"] in anc or anc[:40] in it["de"]):
+                aviso = (f"\n*** ÂNCORA DE SEGMENTAÇÃO do artigo {i}. Mudar o "
+                         f"texto quebra a busca: veredito REFORMAR. ***\n")
+                break
+
+    # o texto vem do arquivo ATUAL -- um achado pode já ter sido consertado
+    atual = (RAIZ / f"livros_publicacao_pt_revisado/{it['obra']}").read_text(
+        encoding="utf-8")
+    if it["de"] not in atual:
+        aviso += ("\n*** O trecho NÃO existe mais no arquivo atual — já foi "
+                  "corrigido ou reescrito. Veredito RECUSADO (obsoleto). ***\n")
+
+    glos = V.glossario_do_trecho(it.get("jp_apoio", "") + it["de"], viz,
+                                 it["para"] + it["motivo"])
+    return (f"CHAVE: {k}\nOBRA: {it['obra']}  artigo {it['artigo']}\n{aviso}{glos}"
+            f"\n=== JAPONÊS (artigo inteiro) ===\n{jp[:14000]}\n"
+            f"\n=== PORTUGUÊS (em volta do trecho) ===\n{viz}\n"
+            f"\n=== CORREÇÃO PROPOSTA ===\ntrecho atual: {it['de']}\n"
+            f"viraria:      {it['para']}\nalegação:     {it['motivo']}\n")
+
+
 def main() -> None:
+    if "--dossie" in sys.argv:
+        print(dossie(sys.argv[sys.argv.index("--dossie") + 1]))
+        return
+    if "--veredito" in sys.argv:
+        i = sys.argv.index("--veredito")
+        k, v, nota = sys.argv[i + 1], sys.argv[i + 2], sys.argv[i + 3]
+        if v not in ("aprovado", "recusado", "reformar"):
+            print(f"veredito inválido: {v}")
+            sys.exit(1)
+        registra({k: (v, nota)})
+        return
     if "--resumo" in sys.argv:
         resumo()
         return
