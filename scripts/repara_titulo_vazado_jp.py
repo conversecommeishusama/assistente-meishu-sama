@@ -106,8 +106,110 @@ def nova_ancora(texto: str, velha: str, titulo: str) -> str | None:
     return cand if texto.count(cand) == 1 else None
 
 
+CJK = re.compile(r"[぀-ヿ一-鿿]")
+
+
+def _linhas(b: str) -> list[str]:
+    return [l.strip("　 \t") for l in b.strip().split("\n") if l.strip("　 \t")]
+
+
+def _cab_jp(l: str) -> bool:
+    return (bool(l) and len(l) <= 16 and bool(CJK.search(l))
+            and not l.endswith(("。", "、")) and not re.match(r"^\d", l))
+
+
+def _cab_pt(l: str) -> bool:
+    return (bool(l) and 3 <= len(l) <= 48 and not re.match(r"^\d", l)
+            and not l.endswith((".", "!", "?", ";", ":", ",")))
+
+
+def alvos_pt(obra: str) -> list[tuple[int, str]]:
+    """O caso ESPELHADO: o português é que deixou o cabeçalho no bloco anterior.
+
+    Achado ao auditar 山と水: o japonês do artigo 34 abre com 初冬 e o português
+    do 33 TERMINA com «Início do Inverno» -- todo cabeçalho do português está
+    uma posição atrás. A primeira correção só tratou a direção oposta.
+
+    O sinal é estrutural, não depende de `title_jp`: naquele livro o título do
+    artigo é a data, e o cabeçalho temático é outra coisa.
+    """
+    sp = SPEC_DIR / f"{obra}.json"
+    jf, pf = JP_DIR / obra, PT_FONTE / obra
+    if not (sp.exists() and jf.exists() and pf.exists()):
+        return []
+    spec = json.loads(sp.read_text(encoding="utf-8"))
+    if spec.get("profile") in ORAL:
+        return []
+    arts = spec.get("articles", [])
+    aj = [a.get("jp_anchor", "") for a in arts]
+    ap = [a.get("pt_anchor", "") for a in arts]
+    if len(arts) < 2 or not all(aj) or not all(ap):
+        return []
+    try:
+        bj = split_by_anchors(clean_body(jf.read_text(encoding="utf-8")), aj, label=obra)
+        bp = split_by_anchors(clean_body(pf.read_text(encoding="utf-8")), ap, label=obra)
+    except ValueError:
+        return []
+    saida = []
+    for i in range(len(bj) - 1):
+        lj1, lp1, lp0 = _linhas(bj[i + 1]), _linhas(bp[i + 1]), _linhas(bp[i])
+        if not (lj1 and lp1 and lp0):
+            continue
+        if _cab_jp(lj1[0]) and not _cab_pt(lp1[0]) and _cab_pt(lp0[-1]):
+            saida.append((i + 1, lp0[-1]))
+    return saida
+
+
+def repara_pt(aplicar: bool) -> None:
+    carimbo = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    tot = falhou = obras = 0
+    for pp in sorted(PT_FONTE.glob("*.txt")):
+        obra = pp.name
+        alvos = alvos_pt(obra)
+        if not alvos:
+            continue
+        sp = SPEC_DIR / f"{obra}.json"
+        spec = json.loads(sp.read_text(encoding="utf-8"))
+        arts = spec["articles"]
+        texto = clean_body(pp.read_text(encoding="utf-8"))
+        antes = [a.get("pt_anchor", "") for a in arts]
+        feitos = 0
+        for idx, titulo in alvos:
+            nova = nova_ancora(texto, arts[idx].get("pt_anchor", ""), titulo)
+            if nova is None:
+                falhou += 1
+                continue
+            arts[idx]["pt_anchor"] = nova
+            feitos += 1
+        depois = [a.get("pt_anchor", "") for a in arts]
+        try:
+            if len(split_by_anchors(texto, depois, label=obra)) != len(arts):
+                raise ValueError("contagem")
+        except ValueError as exc:
+            print(f"  REVERTIDO {obra[:44]}: {str(exc)[:70]}")
+            for a, v in zip(arts, antes):
+                a["pt_anchor"] = v
+            continue
+        obras += 1
+        tot += feitos
+        print(f"  {obra[:50]:<52} {feitos:>4} títulos recuperados")
+        if aplicar and feitos:
+            sp.with_suffix(f".json.bak_titulo_pt_{carimbo}").write_text(
+                json.dumps({"articles": [{"pt_anchor": v} for v in antes]},
+                           ensure_ascii=False, indent=1), encoding="utf-8")
+            sp.write_text(json.dumps(spec, ensure_ascii=False, indent=2),
+                          encoding="utf-8")
+    print(f"\n{tot} âncoras portuguesas estendidas em {obras} obras "
+          f"({falhou} não resolvidas)")
+
+
 def main() -> None:
     aplicar = "--aplicar" in sys.argv
+    if "--pt" in sys.argv:
+        repara_pt(aplicar)
+        if not aplicar:
+            print("(diagnóstico apenas -- rode com --aplicar)")
+        return
     carimbo = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     tot = falhou = obras = 0
 

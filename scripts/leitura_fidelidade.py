@@ -63,6 +63,10 @@ PARALELISMO = 12
 MAX_TOKENS = 65536
 MAX_CAR_INTEIRO = 4000     # até aqui o artigo vai inteiro
 MAX_CAR_PEDACO = 3000      # acima disso, o português vai em pedaços
+# O corte anterior, de 20.000, truncava o japonês de 9 artigos -- o pior deles
+# perdia 18.522 dos 38.522 caracteres. Achado ao auditar: um GRAVE alegava que
+# uma pergunta "não existe no japonês" quando ela estava no pedaço cortado fora.
+MAX_JP = 40000
 
 SYSTEM = """Você é revisor de tradução japonês→português do acervo de Meishu-Sama (Igreja Messiânica Mundial).
 
@@ -191,7 +195,7 @@ def alvos() -> list[dict]:
             pedacos = _fatia_por_paragrafo(pt, MAX_CAR_PEDACO)
             for k, ped in enumerate(pedacos):
                 saida.append({"obra": obra, "artigo": i, "parte": k,
-                              "partes": len(pedacos), "jp": jp[:20000], "pt": ped})
+                              "partes": len(pedacos), "jp": jp[:MAX_JP], "pt": ped})
     return saida
 
 
