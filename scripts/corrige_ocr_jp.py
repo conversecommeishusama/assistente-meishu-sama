@@ -160,6 +160,8 @@ COMPOSTOS2 = [
     ("財献",   "貢献"),
     ("負産",   "財産"),
     ("実観",   "客観"),   # o próprio texto contrasta: 主観 é o osso, 客観 a pele
+    ("主実転倒", "主客転倒"),  # 5 nos periódicos, 0 nos livros; 主客転倒 existe lá.
+                             # Apontado pelo desafiador: «o dossiê traz 主実転倒».
     # TERCEIRA ONDA, achada rodando o detector de bigramas outra vez depois de
     # aplicar a segunda. 吐 tinha ZERO ocorrências nos periódicos e 392 nos
     # livros: sumiu inteiro, virou 名. Li as 31 e são todas 嘘を吐く, 溜息を
@@ -179,6 +181,13 @@ COMPOSTOS2 = [
 
 # 吉 é 同 só nestes compostos; fora deles é nome próprio (吉田, 秀吉, 岡田茂吉).
 SEG_DOU = "様じ一時情志氏感権音国"
+# A lista acima cobria só os compostos que o detector de bigramas mostrou. Mas
+# 吉+kanji é 同 quase sempre: sobraram 171 casos, entre eles 同士, 同然, 同紙,
+# 同僚, 同級生, 同誌, 同署, 同伴, e dois idiomas -- 大同小異 e 同工異曲. Li os
+# 171 e a regra verdadeira é a inversa: 吉 diante de kanji vira 同, salvo os
+# nomes próprios abaixo, que são a exceção fechada.
+NOME_DEPOIS = "田川右野五"      # 吉田, 吉川, 吉右衛門, 吉野桜, 吉五さん
+NOME_ANTES = "秀茂住不定達藤清千三五良万寅堀"  # 秀吉, 岡田茂吉, 住吉, 入沢達吉, 金堀吉次
 # Caracteres que formam nome próprio com 吉 e o protegem da regra acima.
 NOME_KICHI = "秀茂住不定達藤清千三五良村万寅"
 
@@ -192,6 +201,7 @@ def emenda2(t: str) -> str:
     # 皇太后陛下 em 皇太向陛下 e 岡田茂吉氏 em 岡田茂同氏. Nenhum dos dois
     # ocorre nos periódicos, mas uma regra não pode depender só do escopo.
     t = _re.sub(f"(?<![{NOME_KICHI}])吉(?=[{SEG_DOU}])", "同", t)
+    t = _re.sub(f"(?<![{NOME_ANTES}])吉(?=[一-鿿])(?![{NOME_DEPOIS}])", "同", t)
     t = _re.sub("(?<![皇太])后", "向", t)
     t = _re.sub("名(?=[くきいか])", "吐", t)
     return t.replace("\x00A\x00", "住吉様").replace("\x00B\x00", "の后は")
@@ -243,11 +253,20 @@ def main() -> None:
             # deixava intacta enquanto o texto virava 同, e a busca falhava.
             # Como toda substituição preserva o comprimento, basta recortar a
             # mesma faixa do texto já emendado.
+            # Quase toda substituição preserva o comprimento, e por isso o
+            # recorte por posição funciona. A exceção é 「名 血」->「吐血」, que
+            # apaga um espaço espúrio do OCR: dali para a frente as posições
+            # andam um caractere. Por isso o recorte é CONFERIDO, e recai na
+            # aplicação direta das regras quando não bate.
+            e2 = (lambda s: emenda2(emenda(s))) if f.name in PERIODICOS else emenda
             anc_novas = []
             for a in arts:
                 v = a.get("jp_anchor", "")
                 i = antes.find(v)
-                anc_novas.append(depois[i:i + len(v)] if v and i >= 0 else v)
+                nova = depois[i:i + len(v)] if v and i >= 0 else v
+                if v and nova not in depois:
+                    nova = e2(v)
+                anc_novas.append(nova)
             # a âncora só vale se ainda dividir a obra em tantos artigos quanto a spec
             if len(anc_novas) > 1 and all(anc_novas):
                 try:
