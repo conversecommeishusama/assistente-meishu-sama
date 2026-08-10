@@ -47,10 +47,19 @@ COMANDOS = {
     "verifica": ('while true; do venv/bin/python3 -u scripts/verifica_fidelidade.py '
                  '>/tmp/verifica.log 2>&1; tmux has-session -t fidelidade 2>/dev/null '
                  '|| break; sleep 240; done'),
-    "auditoria": "bash scripts/run_auditoria_loop.sh",
+    # auditoria em claude -p descontinuada por decisão do usuário em 2026-08-10:
+    # 60 julgamentos/h contra 385 do DeepSeek, o que dava 3 dias para os 4.350
+    # restantes. O desafiador de consenso assume o papel da terceira opinião.
     "auditor_ds": ('while true; do venv/bin/python3 -u scripts/auditor_deepseek.py '
                    '>/tmp/auditor_ds.log 2>&1; tmux has-session -t fidelidade 2>/dev/null '
                    '|| break; sleep 300; done'),
+    "auditor_ds2": ('while true; do venv/bin/python3 -u scripts/auditor_deepseek2.py '
+                    '>/tmp/auditor_ds2.log 2>&1; tmux has-session -t fidelidade 2>/dev/null '
+                    '|| break; sleep 300; done'),
+    "desafiador": ('while true; do venv/bin/python3 -u scripts/desafiador.py --pilhaA '
+                   '>/tmp/desafiador.log 2>&1; sleep 300; done'),
+    "desafiador": ('while true; do venv/bin/python3 -u scripts/desafiador.py --pilhaA '
+                   '>/tmp/desafiador.log 2>&1; sleep 300; done'),
 }
 
 
@@ -62,7 +71,7 @@ def anota(txt: str) -> None:
 def contagens() -> dict[str, tuple[int, int]]:
     """(feito, pendente) por laço — pendente=0 significa que pode parar em paz."""
     import auditoria as A
-    import auditor_deepseek as D
+    import triagem as T
     def n(p):
         try:
             return len(json.loads((R / p).read_text(encoding="utf-8")))
@@ -70,13 +79,16 @@ def contagens() -> dict[str, tuple[int, int]]:
             return 0
     lidos = n("LEITURA_FIDELIDADE.json")
     verif = n("VERIFICACAO_FIDELIDADE.json")
-    au, ad = len(A.carrega()), len(D.carrega())
     proc = len(A.procedentes())
+    d1, d2 = n("AUDITORIA_DEEPSEEK.json"), n("AUDITORIA_DEEPSEEK2.json")
+    des = n("DESAFIADOR.json")
+    consenso = len(T.pilhas()["A"]) + len(T.pilhas()["aguardando"])
     return {
         "fidelidade": (lidos, max(0, 8030 - lidos)),
-        "verifica": (verif, max(0, int(len(A.procedentes())) - verif)),
-        "auditoria": (au, max(0, proc - au)),
-        "auditor_ds": (ad, max(0, proc - ad)),
+        "verifica": (verif, max(0, proc - verif)),
+        "auditor_ds": (d1, max(0, proc - d1)),
+        "auditor_ds2": (d2, max(0, proc - d2)),
+        "desafiador": (des, max(0, consenso - des)),
     }
 
 

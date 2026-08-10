@@ -11225,3 +11225,92 @@ não cabe em troca de trecho literal; uma traria kanji cru para o português
 4. LEVE nunca entra no corpus: vira relatório por livro para a leitura do usuário.
 5. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita.
+
+## Sessão 2026-08-09/10 — etapa 4 executada; o padrão de trabalho passa a ser
+## três agentes DeepSeek, com a camada Claude arquivada
+
+### O padrão, para não ser reinventado
+
+Toda correção ao corpus passa por esta cadeia, e nada é gravado antes do fim:
+
+    leitura JP↔PT  ->  verificação adversarial  ->  DS1 e DS2  ->  desafiador  ->  triagem
+
+    DS1 = DS2 e o desafiador SUSTENTA  ->  pilha A: aplica
+    DS1 = DS2 e o desafiador DERRUBA   ->  pilha C: decisão do usuário
+    DS1 ≠ DS2                           ->  pilha C: decisão do usuário
+
+Sete laços em tmux, todos religados por `scripts/vigia_progresso.py`, que julga
+por PROGRESSO e não por sessão viva — mata e religa quem tiver pendência e ficar
+25 min sem produzir, e manda e-mail (no máximo um por hora por laço).
+Acompanhamento sem depender do agente: `DIARIO.md` (o que o agente faz, minuto a
+minuto), `PULSO.log` (contadores com carimbo de hora), `VIGIA.log` (religamentos).
+
+### Por que o Claude saiu da linha, e o que ficou arquivado
+
+Medido, não suposto: **60 julgamentos/h contra 385 do DeepSeek** — três dias para
+os 4.350 achados restantes, prazo que o usuário recusou. O trabalho está em
+`reports/arquivo_auditoria_claude/` (1.114 pareceres, 116 decisões pós-contraponto,
+os scripts e os prompts) e continua consultável.
+
+O desafiador ocupa aquele lugar por medição: dois DeepSeek independentes
+concordam entre si em **92%** — convergem porque compartilham o modo de ler —, e
+o risco real da pilha A é o erro que os dois cometem juntos. Auditar uma terceira
+vez reproduz a convergência; perguntar «por que os dois podem estar errados» não.
+No teste cego sobre 17 consensos, sustentou 14 e derrubou 3, acertando nos 3 a
+posição a que o Claude tinha chegado por outro caminho, sem tê-la visto.
+
+### Números da comparação, para decisão futura de arquitetura
+
+| par | concordância |
+|---|---:|
+| DS1 × DS2 | 92% |
+| DS1 × Claude | 75% |
+| DS2 × Claude | 78% |
+| os três | 72% |
+
+Quando o Claude discordava e escrevia o contraponto, um DeepSeek independente
+achava o argumento suficiente em **58%** dos casos (65 de 112) — não em 100%,
+como eu vinha pressupondo ao relatar, nem em 18%, como o desafiador sozinho
+sugeriria. Custo: DeepSeek **US$ 0,00136** por julgamento; leitura completa
+US$ 37,75; etapa inteira em torno de US$ 60.
+
+### Erros meus que viraram guarda em código, e não instrução
+
+Cada um custou retrabalho real e está documentado no cabeçalho do script que o
+corrige:
+
+- **Cabeçalho vazado** — 159 âncoras japonesas em 10 obras e 198 portuguesas em
+  11: o título da seção seguinte ficava preso no fim do bloco anterior, e o
+  leitor relatava «título omitido» para cabeçalhos que existem.
+  (`repara_titulo_vazado_jp.py`)
+- **Japonês truncado** em 20.000 caracteres nos artigos longos — o pior lido
+  contra 20 mil de 38.522. Teto para 40.000.
+- **Regra absoluta de glossário**: o dossiê dizia que propor mudar entrada
+  registrada «NUNCA procede», em maiúsculas, e os dois DeepSeek obedeceram —
+  recusaram corrigir 曇り num exame de raio-X porque o glossário fixa «nuvens
+  espirituais» para a mácula do corpo espiritual. A ressalva já estava na própria
+  entrada; meu absoluto passou por cima. **Não era viés do modelo: era obediência
+  a instrução minha mal escrita.**
+- **19 aprovações minhas mexiam em âncora** e teriam quebrado a segmentação de
+  sete obras. A verificação de âncora saiu do julgamento e virou consulta em
+  código no dossiê (`auditoria.dossie`).
+- **Cinco detectores por regex** deram falso positivo — o pior com 1.761 falsos,
+  por contar poesia como cabeçalho. Regra que passa a valer: suspeita de problema
+  sistêmico vira relato, não script.
+- **Gargalo de orquestração**: `run_stateless_claude_loop.sh` tinha fixo
+  «processe apenas pending[0]», herdado da Fase F, onde cada item era um livro.
+  Custou 96 invocações para 116 julgamentos. Parametrizado no 6º argumento, com o
+  padrão antigo preservado para os outros laços.
+
+### Onde continuar
+
+1. O desafiador está varrendo os 4.846 consensos. Quando fechar, `triagem.py`
+   dá as pilhas completas.
+2. `aplicar_pilha_a.py` grava só os `aprovado` unânimes — trecho literal, escopo
+   de artigo, recusa de âncora verificada em código, backup, âncora revalidada com
+   reversão automática, e varredura da assinatura de dano. **Não roda sem o
+   usuário aprovar o lote.**
+3. A pilha C vai para o usuário agrupada por tipo (`triagem.py --grupos`), para
+   ele decidir a classe e não o caso, ao longo dos meses de leitura.
+4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita. Produção serve o índice de 6 de agosto.
