@@ -18,5 +18,5 @@ print(len(alvo-f('AUDITORIA_DEEPSEEK.json'))+len(alvo-f('AUDITORIA_DEEPSEEK2.jso
   sleep 120
 done
 echo "$(date -u +%FT%TZ) DS1 e DS2 fecharam; soltando o desafiador" >> $R/rejulgamento.log
-venv/bin/python3 scripts/desafiador.py >> $R/desafiador.log 2>&1
+venv/bin/python3 scripts/desafiador.py --pilhaA >> $R/desafiador.log 2>&1
 echo "$(date -u +%FT%TZ) desafiador fechou" >> $R/rejulgamento.log

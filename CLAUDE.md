@@ -11365,3 +11365,213 @@ Registrados porque a classe importa mais que o caso:
    A leitura do usuário ao longo dos meses é de CONFIRMAÇÃO, não de decisão.
 4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita. Produção serve o índice de 6 de agosto.
+
+## Sessão 2026-08-10 (Claude Code) — pilha C organizada em 12 decisões; e a
+## descoberta que interrompeu tudo: o japonês do acervo estava corrompido por
+## OCR em 7.137 caracteres, e a revisão inteira leu um original adulterado
+
+**LEIA ESTA SEÇÃO INTEIRA ANTES DE QUALQUER AÇÃO.** Há trabalho rodando em
+tmux que sobrevive ao fechamento da sessão, e há uma regra nova do usuário que
+muda o critério de tudo que envolve o japonês.
+
+### 1. REGRA NOVA E PERMANENTE: o japonês não se revisa
+
+Determinação literal do usuário nesta sessão:
+
+> «precisa verificar se não é kanji utilizado propositalmente por Meishu-Sama,
+> o japonês não é para ser revisado, apenas corrigido os problemas oriundo da
+> ocr»
+
+Meishu-Sama escreve em kyūjitai e com usos de época. "Corrigir" isso é revisar
+o original. O critério que passou a valer, e que nada pode pular:
+
+1. a forma suspeita **não é palavra nenhuma** em japonês;
+2. tem **zero ocorrências nos 128 livros** — que vieram de outro pipeline e
+   nunca passaram pelo OCR do Zenshū, e por isso servem de controle limpo;
+3. a forma correta é **abundante nos livros**;
+4. **todas** as ocorrências foram lidas, nunca amostra.
+
+Esse teste salvou dois casos reais nesta sessão. `曰われる` ia virar `言われる`
+— mas os livros trazem `曰く`/`曰うなり` 50 vezes, é a forma arcaica de 言う que
+ele escreve. `旺ん` ia virar `盛ん` — mas os livros trazem **`旺（さか）ん` com
+furigana** marcando a leitura. Os dois ficaram intactos.
+
+### 2. A correção de OCR: três ondas mais o fecho dos 吉
+
+Uma varredura de 05/08 tinha corrigido seis classes (3.034 caracteres) e parado
+aí. O resto estava lá o tempo todo, e a etapa 4 inteira — 8.031 chamadas de
+leitura JP↔PT, 5.585 achados, três agentes julgando — rodou contra ele.
+
+| onda | o que é | como se acha | volume |
+|---|---|---|---|
+| 1ª | glifo que não existe em japonês (`实`, `扊`, `飝`, `痚`) | inventário de caracteres raros | 6.705 |
+| 2ª | kanji legítimo por kanji legítimo (`吉`→`同`, `后`→`向`) | bigrama frequente nos periódicos e **ausente** nos livros | 925 |
+| 3ª | o que a 2ª desentupiu (`名`→`吐`, `負`→`財`, `雄`→`集`) | o mesmo detector, rodado de novo | ~140 |
+| fecho | os `吉` restantes: a regra era a **inversa** | leitura das 171 sobrantes | ~130 |
+
+Total: **7.137 caracteres, 73 classes**, nos 8 periódicos. Nenhum livro tocado.
+
+Achados que valem guardar:
+- `实` por `実` em 2.016 lugares; `扊` por `手` em 847; `吆` por `吉` até no nome
+  `岡田茂吉`.
+- `吐` tinha **zero** ocorrências nos periódicos e 392 nos livros: sumiu
+  inteiro, virou `名`. Por isso `嘘を吐く` estava escrito `嘘を名く`.
+- `后` ocorre 16 vezes nos livros e **as 16 são imperatriz** (`光明皇后`,
+  `神功皇后`, `皇太后陛下`); 308 nos periódicos e **nenhuma**.
+- A regra de `吉` que o detector sugeriu era estreita demais. Lendo as 171
+  restantes, a verdadeira é a inversa: **`吉` diante de kanji é `同`**, e o nome
+  próprio é a exceção fechada (`吉田`, `吉川`, `吉右衛門`, `吉野桜`, `吉五さん`,
+  e por prefixo `秀吉`, `岡田茂吉`, `住吉`, `入沢達吉`, `金堀吉次`, `寅吉物語`).
+  Apareceram `同士`, `同然`, `同紙`, `同僚`, `同級生`, `同署`, `同伴`, e três
+  expressões inteiras: `大同小異`, `同工異曲`, `大同団結`.
+- `主実転倒` → `主客転倒`, apontado pelo próprio desafiador ao recusar uma
+  correção dizendo «o dossiê traz 主実転倒» — a objeção estava certa.
+
+**Não aplicado, e por quê:** `絵否油絵` parecia `絵画` com o `画` corrompido em
+`否`. Mas `否` ocorre 155 vezes nos periódicos e **241 nos livros**, como
+interjeição de autocorreção (`。否、反対`). `絵、否、油絵` é japonês legítimo.
+Falha no teste 2, fica. **`盡`, `挾`, `爐`, `繩`, `罐`, `爼`, `濶`, `潑` são
+kyūjitai legítimo, não defeito — não tocar.**
+
+Script: `scripts/corrige_ocr_jp.py`, idempotente, com o método e cada exceção
+documentados no próprio arquivo. Rodar de novo é seguro.
+
+### 3. Erros meus nesta sessão, todos pegos antes de gravar (menos um)
+
+- A regra `吊`→`名` excluía só as formas verbais e teria convertido `吊橋` em
+  `名橋`, `吊革` em `名革`, `吊柿` em `名柿` — em oito livros fora dos
+  periódicos, a mesma classe do estrago de 07/08. **O ensaio pegou.**
+- `皇太后陛下` virava `皇太向陛下` e `岡田茂吉氏` virava `岡田茂同氏`. Guardas de
+  lookbehind acrescentadas, em vez de confiar só no escopo.
+- A âncora 28 do `Tijotengoku` termina cortada num `吉` cujo alvo depende do
+  caractere seguinte, que ficou fora do recorte. Âncora deixou de receber as
+  regras e passa a ser **recortada do texto já emendado**, com conferência.
+- Rodar a varredura duas vezes converteria o `魑魅魍魎` que ela mesma restaurou
+  (`魐魅`→`魑魅`) em `魔魅`. Protegido.
+- **O que NÃO foi pego a tempo:** removi vereditos com os laços dos auditores
+  ainda vivos. Eles carregam o dicionário na memória ao iniciar e reescrevem o
+  arquivo inteiro a cada gravação — restauraram tudo, e a remoção não teve
+  efeito. Isso **já estava documentado neste projeto** e eu repeti. A ordem é
+  **parar, limpar, religar**, e existe `scripts/fecha_e_relanca.sh` para isso.
+
+### 4. A pilha C organizada: 12 decisões, não 16
+
+Artifact publicado (japonês, texto atual e proposta em cada caso, com as
+divergências entre auditores marcadas):
+`https://claude.ai/code/artifact/b40de699-a007-4227-8835-7c1e24553215`
+
+Das 16 decisões que o agrupamento produziu, **três já tinham resposta** no
+registro (glossário prevalece, 35 casos; âncora vira `reformar`, 14; divindade
+com forma no glossário, 12) e **uma dissolveu-se** — a de «kanji que parece
+erro no original» era a corrupção de OCR, não decisão.
+
+Sobram **12 decisões cobrindo 555 casos**, mais **164 individuais**. As
+maiores: explicitude gramatical (196), sujeito/gênero que o japonês não marca
+(124), orientação da ação (47), modalizadores (45), conectivos (44).
+
+**Erro de método meu, corrigido pela conferência:** eu tinha anunciado «287
+casos já resolvidos» citando regras do protocolo. Ao conferir amostra de cada
+grupo contra a regra citada, três citações não sustentavam o grupo — a de
+discurso citado (`§4.4-B`) não fala de pseudônimo em senryū, e a de era Showa
+não fala de `六年前` nem de `ばかり`. O número real era ~60. **Nunca anunciar
+cobertura de regra sem conferir amostra do grupo contra ela.**
+
+### 5. O rejulgamento: o que está rodando AGORA
+
+935 achados foram julgados contra japonês adulterado; depois das ondas 2/3 e do
+fecho dos `吉`, a fila estabilizou em **770**, medida artigo a artigo (não obra
+a obra). Dos 770, **764 foram tocados pela 1ª onda E pelas seguintes** — estão
+sendo julgados pela terceira vez, e só a terceira vale.
+
+Estado ao fechar a sessão (17h45 UTC):
+
+| | |
+|---|---:|
+| DS1 e DS2 | **770 / 770 — fechados** |
+| desafiador | 389 / 770, **rodando** |
+| atribuição | encadeada, dispara sozinha |
+
+**tmux que sobrevivem à sessão** (não recriar, só conferir):
+- `desafiador` → `scripts/roda_desafiador_ate_fechar.sh`. Existe porque o
+  desafiador fecha a fila que pegou ao **iniciar** e sai — mas a fila cresce
+  enquanto ele roda, já que cada par novo em que DS1 e DS2 concordam vira caso
+  de consenso. Morreu em 389/770 assim nesta sessão. O script o relança até
+  esvaziar de verdade. **Atenção: sem a flag `--pilhaA` ele cai noutro ramo e
+  sai na hora, deixando o log com cara de conclusão** — perdi 15 minutos nisso.
+- `cadeia_atribui` → `scripts/aguarda_e_atribui.sh`. Espera o desafiador
+  esgotar e roda `scripts/atribui_ocr.py`.
+
+As filas de trabalho foram copiadas de `/tmp` para
+`reports/varredura_padronizacao/FILA_REJULGAMENTO.json` e `AFETADOS_KICHI.json`
+— **nenhum script depende mais de `/tmp`**, que não sobrevive a reinício.
+
+Conferir com:
+```bash
+tail -2 reports/varredura_padronizacao/rejulgamento.log
+ps -eo etime,args | grep "[d]esafiador.py"
+```
+
+### 6. A passada de atribuição — o que ela é e o que ela NÃO é
+
+`scripts/atribui_ocr.py`. Depois da emenda, ~10% dos vereditos mudaram. Contar
+isso não responde nada: as mudanças vieram **simétricas** (33 de aprovado para
+recusado, 30 no inverso), e simetria é assinatura de variação do modelo, não de
+fonte corrigida.
+
+O desafiador julga **cego ao próprio parecer anterior** — desenho deliberado,
+para o julgamento ser independente —, e por isso a saída dele não diz **por
+quê** mudou. Nas 16 derrubadas que caíram, reconstruí isso lendo: **só 3
+citavam um kanji restaurado**. Parar na contagem teria creditado 16 à emenda e
+errado em 13.
+
+A passada põe o japonês de antes e o de agora lado a lado com os dois pareceres
+e pergunta se a mudança decorre da correção. **Ela não decide** — monta a fila
+de leitura ordenada por essa alegação. Perguntar a um modelo por que mudou de
+ideia produz racionalização, não causa; o que torna a resposta conferível é o
+japonês estar ali dos dois lados, para conferir se o kanji invocado existe mesmo
+na passagem em disputa. **Essa conferência é leitura, não código.** O usuário
+corrigiu explicitamente quando afirmei o contrário: «vc não faz essa checagem
+em código, vc le para confirmar».
+
+Números já disponíveis: **232 mudanças de veredito** (102 DS1, 98 DS2, 32
+desafiador), das quais **só 47 têm o japonês da passagem efetivamente
+alterado** — teto do que pode ser atribuído ao OCR. As outras 185 são mudança
+de opinião por construção.
+
+### 7. O que a emenda já salvou (lido, não contado)
+
+Quatro correções estavam **aprovadas por unanimidade na pilha A**, a caminho de
+serem gravadas, e iam escrever no corpus conteúdo que o japonês não sustenta:
+
+| japonês | o auditor lia | ia gravar |
+|---|---|---|
+| `朩来` → `未来` | inventava `本来` | «ciência **original**» onde o texto diz ciência do futuro — 2 vezes |
+| `邪魑` → `邪魔` | lia 魑 como demônio | «isso, agindo como **espírito maligno**» onde o texto diz apenas que algo atrapalha |
+| `抭かれ` → `抱かれ` | lia `惹かれ` | «deixem-se **atrair**» — e «envolvam-se pelo grande amor de Deus», que já estava lá, era o certo |
+
+Dez aprovações unânimes deixaram de existir depois do rejulgamento, cinco delas
+por causa da emenda.
+
+### Onde continuar
+
+1. **Conferir se o desafiador fechou** (`tail -2 .../rejulgamento.log`). Se a
+   sessão tmux `desafiador` sumiu com fila pendente, relançar
+   `scripts/roda_desafiador_ate_fechar.sh` — **com `--pilhaA`**.
+2. Quando a atribuição rodar, ler `scripts/atribui_ocr.py --relatorio`. A fila
+   de leitura sai ordenada. **Ler os que alegam OCR um a um**, conferindo se o
+   kanji invocado está na passagem; os demais, por amostra.
+3. Rodar `scripts/triagem.py` para as pilhas A e C definitivas sobre japonês
+   correto, e comparar com as de antes.
+4. Só então levar as **12 decisões** ao usuário (artifact acima). Decisão dele:
+   a pilha C se decide **toda no fim, numa rodada só, e se aplica junto com a
+   pilha A** — uma passada no corpus, um backup por arquivo, uma revalidação de
+   âncora. Não trazer lotes durante o processo.
+5. A aplicação usa `scripts/aplicar_semantico.py` (o modelo reescreve o
+   parágrafo lendo o japonês) com `scripts/conferir_aplicacao.py` (confere o
+   arquivo INTEIRO contra o backup e reverte a obra se houver diferença sem
+   explicação). **Nunca `replace` global** — foi o que destruiu o corpus em
+   07/08.
+6. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou reinício
+   de produção sem autorização explícita.** Produção serve o índice de 06/08, e
+   nada desta sessão chegou lá — o japonês corrigido está só em
+   `reports/livros_trabalho/jp/`.

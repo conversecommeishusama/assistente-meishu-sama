@@ -19,7 +19,7 @@ sleep 5
 venv/bin/python3 -c "
 import json,pathlib,shutil,time
 R=pathlib.Path('reports/varredura_padronizacao')
-af=set(json.load(open('/tmp/afetados_kichi.json')))
+af=set(json.load(open('reports/varredura_padronizacao/AFETADOS_KICHI.json')))
 car=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())
 for n in ('AUDITORIA_DEEPSEEK','AUDITORIA_DEEPSEEK2','DESAFIADOR'):
     fp=R/(n+'.json'); d=json.loads(fp.read_text(encoding='utf-8'))

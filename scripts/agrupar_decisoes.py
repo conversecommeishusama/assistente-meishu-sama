@@ -42,7 +42,13 @@ from goshinsho.services import agentic_search as ag  # noqa: E402
 
 DESTINO = RAIZ / "reports/varredura_padronizacao/DECISOES.json"
 MODELO = "deepseek-v4-flash"
-AMOSTRA = 160
+AMOSTRA = 90
+# Teto medido, não arbitrado: na taxonomia o raciocínio sozinho consumiu 17.007
+# tokens e o texto útil foram 4.003. Com o teto de 16.384 que estava aqui, o
+# raciocínio estourava o orçamento e a resposta vinha VAZIA -- a mesma falha já
+# documentada neste projeto para a leitura de fidelidade, que precisou de 65.536.
+TETO_TAXONOMIA = 65536
+TETO_ATRIBUI = 8192
 PARALELISMO = 8
 
 SYS_TAXONOMIA = """Você lê justificativas de auditoria de uma tradução do
@@ -108,7 +114,7 @@ def taxonomia(cs: list[dict]) -> list[dict]:
         f"[{i}] {c['de'][:90]} -> {c['para'][:90]}\n    " +
         "\n    ".join(n[:170] for n in c["notas"]) for i, c in enumerate(am))
     r = ag._client().chat.completions.create(
-        model=MODELO, max_tokens=16384,
+        model=MODELO, max_tokens=TETO_TAXONOMIA,
         messages=[{"role": "system", "content": SYS_TAXONOMIA},
                   {"role": "user", "content":
                    f"{len(am)} casos de uma pilha de {len(cs)}:\n\n{corpo}\n\n"
@@ -125,7 +131,7 @@ def atribui(c: dict, dec: list[dict]) -> dict:
     lista = "\n".join(f"{i+1}. {d['pergunta']}  ({d['criterio']})"
                       for i, d in enumerate(dec))
     r = ag._client().chat.completions.create(
-        model=MODELO, max_tokens=4096,
+        model=MODELO, max_tokens=TETO_ATRIBUI,
         messages=[{"role": "system", "content": SYS_ATRIBUI},
                   {"role": "user", "content":
                    f"DECISÕES:\n{lista}\n\nCASO:\n{c['de'][:200]}\n-> {c['para'][:200]}\n" +
@@ -159,6 +165,14 @@ def main() -> None:
     cs = casos()
     print(f"{len(cs)} casos na pilha C\n", flush=True)
     dec = taxonomia(cs)
+    # Sem esta parada, a versão anterior seguiu com a lista VAZIA e gastou 781
+    # chamadas classificando cada caso contra nada, produzindo «781 individuais»
+    # -- um resultado que parecia conclusão e era ausência de taxonomia.
+    if len(dec) < 3:
+        print(f"ABORTADO: a taxonomia devolveu {len(dec)} decisões. Sem pelo "
+              f"menos 3 não há em que classificar, e seguir gastaria "
+              f"{len(cs)} chamadas para nada.")
+        sys.exit(1)
     print(f"{len(dec)} decisões propostas:\n")
     for i, x in enumerate(dec, 1):
         print(f"  {i}. {x['pergunta'][:100]}")

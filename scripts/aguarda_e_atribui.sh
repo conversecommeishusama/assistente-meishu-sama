@@ -5,7 +5,7 @@ R=reports/varredura_padronizacao
 while :; do
   n=$(venv/bin/python3 -c "
 import json,pathlib
-R=pathlib.Path('$R'); alvo=set(json.load(open('/tmp/rejulgar.json')))
+R=pathlib.Path('$R'); alvo=set(json.load(open(R/'FILA_REJULGAMENTO.json')))
 d1=set(json.loads((R/'AUDITORIA_DEEPSEEK.json').read_text(encoding='utf-8')))
 d2=set(json.loads((R/'AUDITORIA_DEEPSEEK2.json').read_text(encoding='utf-8')))
 ds=set(json.loads((R/'DESAFIADOR.json').read_text(encoding='utf-8')))
