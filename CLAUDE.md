@@ -11645,3 +11645,148 @@ por causa da emenda.
    de produção sem autorização explícita.** Produção serve o índice de 06/08, e
    nada desta sessão chegou lá — o japonês corrigido está só em
    `reports/livros_trabalho/jp/`.
+
+## Sessão 2026-08-10/11 — a pilha C resolvida: 412 fechados pelo DeepSeek,
+## 143 em leitura minha (48 feitos), 345 prontos para gravar
+
+**LEIA ESTA SEÇÃO PRIMEIRO — ela substitui a instrução «depurar o agrupamento»
+da seção anterior, que já foi cumprida.** Nada foi gravado no corpus nesta
+sessão; tudo está em disco, retomável comando a comando.
+
+### O que aconteceu com o agrupamento (a tarefa que abria a sessão)
+
+Depurado, e o veredito é que ele **não servia**. As 13 «decisões» que ele
+propôs foram conferidas contra `glossario_traducao.json` e
+`protocolo_traducao.txt` reais, caso a caso:
+
+| decisão | casos | o que se confirmou ao ler |
+|---|---:|---|
+| 1 — impor forma fixa do glossário | 37 | quase todas JÁ têm entrada (救世教, 御利益, カリエス, 段階…). Não é decisão, é aplicar regra existente. Só 極楽 está mesmo ausente |
+| 3 — verbo para 祀る | 1 | o glossário já resolve: «sufragar (espíritos) ou cultuar (divindades)» |
+| 4 — glifo citado como objeto | 8 | §5.1(b) já cobre; sobra disputa factual de leitura, não de convenção |
+| 8 — âncora pode ser alterada | 16 | já é processo estabelecido desde 09/08 |
+| 9 — ano de era | 1 | §4.1/4.2 já mandam manter era + gregoriano |
+| **12 e 13** | **555** | **não são decisões**: o rótulo genérico («qual o limiar», «correção parcial») cobria centenas de disputas factuais distintas, cada uma sobre uma passagem |
+
+Genuinamente novas e pequenas: 霊系 (1, ausente do glossário), endereços
+japoneses (7), erro tipográfico no original (4), pontuação de diálogo em
+senryū (7), estender correção a outras ocorrências (15), acréscimo sem base
+no japonês (53 — §1.2 já proíbe, mas DS1/DS2 divergem sobre haver margem
+estilística).
+
+### Os 555 lidos semanticamente (determinação do usuário)
+
+`scripts/resolve_pilha_c_lote.py` — dois leitores independentes por caso,
+cada um vendo o japonês do artigo inteiro, a vizinhança em português e as
+TRÊS opiniões anteriores (DS1, DS2, desafiador), decidindo RESOLVIDO ou
+PRECISA_USUARIO. Depois `scripts/compara_resolucoes_c.py` — terceiro passe
+que compara as duas redações, porque concordar no veredito não é concordar
+no texto.
+
+    555 casos  ->  527 resolvidos nas duas leituras
+                   412 com redação equivalente (CONCORDAM)
+                   115 com redação divergente
+                    25 resolvidos por só uma leitura
+                     3 sem resolução
+
+**Erro meu, achado e corrigido no meio:** `MAX_JP` estava em 14.000 e 32 dos
+555 têm artigo maior — três responderam literalmente «o trecho não consta do
+artigo fornecido», que eu quase levei ao usuário como ambiguidade. Era
+truncamento. Teto para 40.000 (o maior artigo do lote tem 38.522), os 32
+refeitos. Os «precisa do usuário» caíram de 5 para 3. **É o mesmo bug já
+registrado neste projeto para a leitura de fidelidade — verificar o teto de
+japonês antes de confiar em qualquer «não encontrei».**
+
+### Ensaio de aplicação — 345 prontos, 52 barrados pela guarda
+
+`scripts/aplica_resolucoes_c.py` (ensaio já rodado, nada gravado): 397
+resoluções aplicáveis, **345 aceitas**, 52 recusadas — quase todas por
+«mudou fora do vão do trecho», isto é, o DeepSeek reescreveu além da região
+autorizada e a guarda de contenção barrou. Log completo em
+`reports/varredura_padronizacao/ensaio_aplic_c.log`.
+
+### Os 143 que sobraram — leitura MINHA, caso a caso, 48 feitos
+
+O usuário perguntou diretamente se eu tinha lido os casos, e a resposta
+honesta era não — eu ia mandar para a mesa dele um agrupamento automático
+sobre casos que ninguém tinha lido, repetindo o erro que passei a manhã
+depurando. Ele então determinou: ler cada um semanticamente, resolver o que
+eu puder, levar o resto, com relatório de todos.
+
+**Estado: 48 de 143.** Registro em
+`reports/varredura_padronizacao/DECIDIDO_MESA_C.json`; os lotes que já
+escrevi ficam em `reports/varredura_padronizacao/lotes_decisao/lote{0..3}.json`.
+
+    A        16   a redação A resolve
+    MANTER   13   nenhuma procede; o texto atual está certo
+    OUTRO     7   as duas erram; redação minha, às vezes com span ampliado
+    B         6   a redação B resolve
+    USUARIO   6   disputa real — vai para a mesa do usuário
+
+### COMO RETOMAR (basta ler os documentos e seguir daqui)
+
+```bash
+source venv/bin/activate
+
+python3 scripts/decide_mesa_c.py --resumo    # quantos faltam
+python3 scripts/decide_mesa_c.py --faltam    # índices pendentes
+python3 scripts/dossies_mesa_c.py 48 60      # próximo lote de 12
+```
+
+Ler o lote inteiro contra o japonês, decidir caso a caso, escrever o JSON do
+lote em `reports/varredura_padronizacao/lotes_decisao/loteN.json` e gravar:
+
+```bash
+python3 scripts/decide_mesa_c.py --grava "$(cat reports/varredura_padronizacao/lotes_decisao/loteN.json)"
+```
+
+Seguir em lotes de 12 até 143. **A leitura é minha, na sessão — não há tmux
+para ela**, e é deliberado: os 143 são justamente os casos em que duas
+passadas do DeepSeek divergiram ou desistiram, então uma terceira passada do
+mesmo modelo tende a reproduzir a divergência, não a resolver. Se a sessão
+cair, nada se perde além do contexto: as decisões estão em disco e os
+dossiês se regeneram por script.
+
+### O que aprendi lendo os 48, e que vale para os 95 restantes
+
+- **A armadilha mais comum não é de mérito, é de encaixe.** Em uma boa parte
+  dos casos as duas leituras acertam o japonês e mesmo assim nenhuma serve,
+  porque a redação proposta repete texto que já está logo antes ou logo
+  depois do trecho — aplicá-la duplicaria. Por isso `decide_mesa_c.py` aceita
+  um campo `de` opcional, que amplia o span a substituir (validado em código:
+  o span tem de ocorrer exatamente 1x no arquivo). Sem isso eu marcaria
+  «usuário» por limitação do meu mecanismo, não por dúvida — o que seria
+  enganoso.
+- **Conferir o glossário sempre, mesmo quando a leitura parece boa.** 本教 é
+  «nossa Igreja» (fixo); 恵者 é o agraciado, não o rico; 拝受 é receber, não
+  venerar.
+- **Cruzar com o resto do acervo resolve romanização.** 房前圭正 aparecia como
+  «Masamasa Fusae» num livro e «Fusasaki Keisei» noutro — mesma pessoa, mesmo
+  endereço, mesma idade. Adotei a forma já usada no acervo.
+- **Furigana desempata.** Em 看読真詮榜［看経榜］(カンキンポウ) a furigana é do
+  termo entre colchetes, e isso decide a romanização.
+- **Nem toda divergência é erro.** 13 dos 48 terminaram em MANTER: であろう
+  retórico, ばかり aproximativo, いけない como juízo de valor e não proibição,
+  だけ já traduzido pelo contraste seguinte.
+
+### Depois que os 143 fecharem
+
+1. Aplicar, numa passada só: os 345 do ensaio + o que sair de A/B/OUTRO dos
+   143. Sempre por `aplica_resolucoes_c.py` — o DeepSeek reescreve o
+   parágrafo lendo o japonês, a guarda `contido` verifica, a âncora é
+   revalidada e a obra inteira é revertida se a contagem de artigos mudar.
+   **Nunca `replace` global** — foi o que destruiu o corpus em 07/08.
+2. Levar ao usuário, em um relatório único, os 143 com a decisão de cada um
+   (ele pediu explicitamente relatório de todos, não só dos que sobram) mais
+   os USUARIO agrupados.
+3. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o índice
+   de 06/08.
+
+### Fora deste fio, feito nesta sessão
+
+Conta `laercioajsilva567@gmail.com` — e-mail confirmado via admin API do
+Supabase; já era `premium` desde 01/08. **O endereço que o usuário passou
+(`laerciosilva567@gmail.com`) não existe** — a conta real tem «aj» a mais, e
+só apareceu por busca aproximada. Vale conferir o endereço antes de concluir
+que uma conta não existe.
