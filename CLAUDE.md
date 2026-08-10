@@ -11302,15 +11302,66 @@ corrige:
   Custou 96 invocações para 116 julgamentos. Parametrizado no 6º argumento, com o
   padrão antigo preservado para os outros laços.
 
+### A aplicação: o modelo escreve, o script contém
+
+Determinado pelo usuário: a emenda tem de ser semântica. Substituição mecânica
+deixa a costura quebrada -- trocar «proteção divina» por «Ohikari» produz «a
+Ohikari»; «orações» por «norito» produz «as norito xintoístas». Foi parte do
+dano de 07/08 e não se resolve com regex, porque concordância se lê.
+
+    localizar artigo e parágrafo  -> script (posição, sem julgamento)
+    reescrever o PARÁGRAFO        -> DeepSeek, lendo o japonês
+    verificar antes de gravar     -> `aplicar_semantico.contido`
+    conferir o ARQUIVO INTEIRO    -> `conferir_aplicacao.inexplicadas`
+    gravar, revalidar âncora      -> script, revertendo se quebrar
+
+**Duas guardas independentes, e a segunda existe porque a primeira não podia
+pegar o dano de 07/08 por construção**: aquela só olha onde se pretendia mexer,
+e o estrago aconteceu onde ninguém estava olhando. A conferência compara o
+arquivo com o backup e exige que CADA parágrafo alterado (a) contenha um trecho
+autorizado e (b) tenha a mudança contida no vão desse trecho. Diferença sem
+explicação, em qualquer lugar, reverte a obra inteira.
+
+Testado sobre obra real (`御光話録（補）`, 363 mil caracteres, 110 emendas):
+100 parágrafos alterados, zero inexplicados; e os quatro danos injetados de
+propósito -- palavra trocada longe, parágrafo apagado, frase acrescentada,
+termo duplicado -- todos barrados.
+
+### Defeitos meus que os testes pegaram, e o corpus não viu
+
+Registrados porque a classe importa mais que o caso:
+
+- **Contenção invertida**: exigia que a diferença mínima contivesse o trecho
+  inteiro, quando prefixo e sufixo comuns consomem quase tudo (em
+  «Kannon-Sama-Sama» -> «Kannon-Sama» a diferença é só «-Sama»). Rejeitava 85%
+  das emendas corretas.
+- **Comparação por caractere** na conferência: produzia `'qu' -> 't'`, em que
+  nada é reconhecível.
+- **String vazia contida em tudo**: `v[:40] in t` com `v` vazio é sempre
+  verdadeiro, então toda inserção pura passava como explicada.
+- **Parágrafos vizinhos fundidos** pelo `SequenceMatcher`: a mudança não
+  autorizada pegava carona na autorizada. É a forma como um dano real passaria.
+- **Um vão só por parágrafo**: parágrafo com duas correções aprovadas era
+  acusado -- 12 de 100 numa obra real.
+- **Erro de método**: a primeira rodada testou uma CÓPIA da regra escrita dentro
+  do teste, não a regra do script. Passou nos quatro danos e não significava
+  nada. Extraída para `inexplicadas()` e chamada de verdade, três dos quatro
+  defeitos apareceram. **Testar a cópia da regra é não testar.**
+
 ### Onde continuar
 
-1. O desafiador está varrendo os 4.846 consensos. Quando fechar, `triagem.py`
+1. O desafiador está varrendo os consensos. Quando fechar, `triagem.py`
    dá as pilhas completas.
 2. `aplicar_pilha_a.py` grava só os `aprovado` unânimes — trecho literal, escopo
    de artigo, recusa de âncora verificada em código, backup, âncora revalidada com
    reversão automática, e varredura da assinatura de dano. **Não roda sem o
    usuário aprovar o lote.**
-3. A pilha C vai para o usuário agrupada por tipo (`triagem.py --grupos`), para
-   ele decidir a classe e não o caso, ao longo dos meses de leitura.
+3. **Decisão do usuário (2026-08-10): a pilha C é decidida toda no FIM, numa
+   rodada só, e aplicada junto com a pilha A** -- uma passada no corpus, um
+   backup por arquivo, uma revalidação de âncora. Não trazer lotes durante o
+   processo. `agrupar_decisoes.py` agrupa por PERGUNTA (não por tipo de erro) e
+   dispara sozinho quando o desafiador esgotar a fila; casos que não couberem em
+   nenhuma decisão de lote ficam marcados INDIVIDUAL, que é resultado legítimo.
+   A leitura do usuário ao longo dos meses é de CONFIRMAÇÃO, não de decisão.
 4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita. Produção serve o índice de 6 de agosto.
