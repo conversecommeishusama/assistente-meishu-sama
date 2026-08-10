@@ -11366,6 +11366,76 @@ Registrados porque a classe importa mais que o caso:
 4. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita. Produção serve o índice de 6 de agosto.
 
+## PRIMEIRA TAREFA DA PRÓXIMA SESSÃO (determinação do usuário, 2026-08-10)
+
+> «o primeiro trabalho que sessão nova do claude code deve fazer é o de
+> depuração do agrupamento feito pela deepseek antes de enviar para a minha
+> mesa.»
+
+Quando esta sessão for reaberta, a cadeia automática já terá rodado até o fim
+e parado. **Não rode nada, não mande nada ao usuário — depure o agrupamento
+primeiro.** Confira o estado com:
+
+```bash
+tail -6 reports/varredura_padronizacao/rejulgamento.log
+```
+
+A cadeia (`scripts/cadeia_final.sh`, tmux `cadeia_final`) faz três passos e
+para: [1/3] espera o desafiador esgotar, [2/3] roda a atribuição de OCR,
+[3/3] refaz triagem e agrupamento sobre japonês íntegro. Se o log não mostrar
+`[3/3]`, ela ainda está rodando ou travou — nesse caso ver a seção
+«O rejulgamento» acima antes de intervir.
+
+### Por que depurar, e o que já se sabe que o agrupamento erra
+
+O agrupamento (`scripts/agrupar_decisoes.py`) tem duas passadas: o modelo lê
+uma amostra das justificativas e PROPÕE as decisões, depois cada caso é
+atribuído a uma ou marcado INDIVIDUAL. Ele é útil, mas erra de formas já
+observadas nesta sessão, e cada uma tem de ser conferida:
+
+1. **O rótulo não corresponde ao conteúdo do grupo.** A decisão 1 chamava-se
+   «remover acréscimos sem correspondência no japonês», mas ao ler os casos o
+   que estava em jogo era outra coisa: quanto da explicitude gramatical do
+   japonês o português deve reproduzir. O rótulo teria levado a uma pergunta
+   errada ao usuário.
+2. **Casos entram no grupo por semelhança superficial.** Na decisão 3
+   («kanji no corpo do texto»), três dos dez eram erro factual de
+   romanização, não convenção — `sarassouju` por 沙羅双樹, `Shigun-sō
+   Bekkaku` por 紫雲郷別院. Não são decisão de ninguém, são conserto.
+3. **Grupos que já têm resposta no registro.** Três das 16 saíram da mesa por
+   isso: `§5.1(b)` do protocolo, «glossário prevalece», «âncora vira
+   reformar». **Erro meu aqui, para não repetir:** anunciei «287 casos já
+   resolvidos» citando regras, e ao conferir amostra de cada grupo contra a
+   regra citada, três citações não sustentavam o grupo. O número real era
+   ~60. Nunca anunciar cobertura sem conferir amostra contra a regra.
+4. **Grupos dissolvidos pela emenda do OCR.** A decisão 5 («quando o kanji do
+   original parece erro») não era decisão: era corrupção. Entre os
+   individuais deve haver mais.
+
+### O método da depuração
+
+Para cada decisão proposta: ler 3 casos reais do grupo e confirmar que (a) o
+rótulo descreve o que está em disputa, (b) os casos pertencem mesmo àquela
+pergunta, (c) o registro já não responde. Para os INDIVIDUAIS, aplicar os três
+filtros combinados com o usuário, nesta ordem, antes de qualquer um chegar à
+mesa dele:
+
+1. **o registro já responde?** — decisão sua de sessão anterior ou regra do
+   protocolo. Isso é aplicação, não decisão nova.
+2. **o japonês resolve sozinho?** — quando o original é inequívoco não há o
+   que decidir. Foi assim que as 18 ocorrências de `実観` fecharam sem ele: o
+   próprio texto contrasta 主観 com o que o envolve.
+3. **a emenda do OCR dissolveu?**
+
+O que sobrar vai ao usuário agrupado por TIPO DE JULGAMENTO, com o japonês ao
+lado, e de preferência em formato de confirmar ou rejeitar, não de decidir do
+zero. E ao apresentar, dizer de cada bloco **quantos caíram em qual filtro e
+por quê**, para ele conferir por amostra em vez de aceitar na palavra.
+
+**Ele não decide 164 casos um a um.** Foi ele mesmo quem levantou isso, e tem
+razão.
+
+
 ## Sessão 2026-08-10 (Claude Code) — pilha C organizada em 12 decisões; e a
 ## descoberta que interrompeu tudo: o japonês do acervo estava corrompido por
 ## OCR em 7.137 caracteres, e a revisão inteira leu um original adulterado
