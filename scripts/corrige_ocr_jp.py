@@ -67,6 +67,9 @@ SPEC = RAIZ / "reports/livros_trabalho/segmentacao_manual"
 
 # Compostos primeiro: são exceções às regras simples que vêm depois.
 COMPOSTOS = [
+    ("魑魅",   "\x00C\x00"),   # 魑魅魍魎 é palavra real -- e a varredura o RESTAURA
+                             # (魐魅->魑魅), então roda-la de novo o converteria
+                             # em 魔魅. O ensaio pegou isso na segunda passada.
     ("断未魑", "断末魔"),   # 未 é legítimo em toda parte, menos aqui
     ("改吊",   "改名"),     # único 吊し que não é "pendurar"
     ("選抝",   "選択"),
@@ -108,13 +111,99 @@ INCERTOS = {
 }
 
 
+# ---------------------------------------------------------------------------
+# SEGUNDA ONDA: kanji legítimo trocado por OUTRO kanji legítimo.
+#
+# O inventário de glifos raros é cego a esta classe -- 吉 e 后 são japonês
+# perfeitamente normal, e por isso nenhum deles apareceu na primeira varredura.
+# O detector certo compara BIGRAMAS: os 128 livros vieram de outro pipeline e
+# nunca passaram pelo OCR do Zenshū, então um bigrama frequente nos periódicos
+# e AUSENTE nos livros é suspeito.
+#
+# Suspeito não é culpado. O detector devolveu 真山 (真山照政氏, o locutor),
+# 置氏 (日置氏, sobrenome), 文省 (本文省略), 御対 (御対談) e 以で (所以で) --
+# palavras legítimas que só não ocorrem nos livros. Tratar a lista do detector
+# como lista de correção teria trocado o nome de duas pessoas reais.
+#
+# E DOIS ERAM DE MEISHU-SAMA, não do OCR:
+#   曰われる  os livros trazem 曰く/曰うなり 50 vezes -- é a forma arcaica de
+#             言う que ele escreve. Trocar seria revisar o original.
+#   旺ん      os livros trazem 旺（さか）ん COM FURIGANA marcando a leitura.
+#             É a grafia dele para 盛ん.
+# Os dois ficam. O japonês não se revisa; corrige-se o que o OCR estragou.
+#
+# O teste que separa uma coisa da outra, e que vale para tudo aqui:
+#   1. a forma suspeita não é palavra nenhuma em japonês;
+#   2. ela tem ZERO ocorrências nos 128 livros;
+#   3. a forma correta é abundante nos livros (同様 352, 向かっ 125, 財産 75);
+#   4. todas as ocorrências foram lidas, não amostradas.
+#
+# Escopo: só os oito periódicos. Ao contrário da primeira onda, aqui o glifo de
+# origem É legítimo nos livros -- 后 ocorre 16 vezes lá e as 16 são imperatriz
+# (光明皇后, 神功皇后, 皇太后陛下). Nos periódicos, nenhuma das 308 é.
+# ---------------------------------------------------------------------------
+
+PERIODICOS = {"Eiko.txt", "Hikari.txt", "Kyusei.txt", "Tijotengoku.txt",
+              "Medicina_do_Amanha.txt", "Jornais.txt", "Ensinamentos_diversos.txt",
+              "Revista_Asahi.txt", "Esboco_da_Medicina.txt"}
+
+# Compostos da segunda onda, aplicados antes das regras de caractere.
+COMPOSTOS2 = [
+    ("住吉様", "\x00A\x00"),   # protege a divindade da regra 吉 -> 同
+    ("の后は",  "\x00B\x00"),   # 天皇の后は — consorte, não 向
+    ("吉胝",   "同胞"),   # 「四方の海みな同胞と思ふ世に」, o waka do Imperador Meiji
+    ("一吉",   "一同"),
+    ("混吉",   "混同"),
+    ("協吉",   "協同"),
+    ("后後",   "今後"),   # as duas únicas ocorrências de 后 que não são 向
+    ("始未",   "始末"),
+    ("財献",   "貢献"),
+    ("負産",   "財産"),
+    ("実観",   "客観"),   # o próprio texto contrasta: 主観 é o osso, 客観 a pele
+    # TERCEIRA ONDA, achada rodando o detector de bigramas outra vez depois de
+    # aplicar a segunda. 吐 tinha ZERO ocorrências nos periódicos e 392 nos
+    # livros: sumiu inteiro, virou 名. Li as 31 e são todas 嘘を吐く, 溜息を
+    # 吐く, 弱音を吐く, 嘔吐, 吐血 -- enquanto 二名/一名/大名/御名 são 名 de
+    # verdade e ficam. 負閥/負政/文化負 são 財閥/財政/文化財, e 抱負/負ける
+    # ficam. 断片雄/蒐雄/編雄 são 集: sobra da varredura condicional de 05/08,
+    # que tratou 雄->集 e parou nos casos que via.
+    ("嘔名",   "嘔吐"),
+    ("名 血", "吐血"),
+    ("文化負", "文化財"),
+    ("負閥",   "財閥"),
+    ("負政",   "財政"),
+    ("断片雄", "断片集"),
+    ("蒐雄",   "蒐集"),
+    ("編雄",   "編集"),
+]
+
+# 吉 é 同 só nestes compostos; fora deles é nome próprio (吉田, 秀吉, 岡田茂吉).
+SEG_DOU = "様じ一時情志氏感権音国"
+# Caracteres que formam nome próprio com 吉 e o protegem da regra acima.
+NOME_KICHI = "秀茂住不定達藤清千三五良村万寅"
+
+
+def emenda2(t: str) -> str:
+    """Segunda onda. Só faz sentido nos periódicos -- ver bloco acima."""
+    import re as _re
+    for a, b in COMPOSTOS2:
+        t = t.replace(a, b)
+    # As duas guardas não são teóricas: o teste de fumaça converteu
+    # 皇太后陛下 em 皇太向陛下 e 岡田茂吉氏 em 岡田茂同氏. Nenhum dos dois
+    # ocorre nos periódicos, mas uma regra não pode depender só do escopo.
+    t = _re.sub(f"(?<![{NOME_KICHI}])吉(?=[{SEG_DOU}])", "同", t)
+    t = _re.sub("(?<![皇太])后", "向", t)
+    t = _re.sub("名(?=[くきいか])", "吐", t)
+    return t.replace("\x00A\x00", "住吉様").replace("\x00B\x00", "の后は")
+
+
 def emenda(t: str) -> str:
     for a, b in COMPOSTOS:
         t = t.replace(a, b)
     t = re.sub(f"吊(?![ 　]?[{PENDURAR}])", "名", t)
     for a, b in SIMPLES.items():
         t = t.replace(a, b)
-    return t
+    return t.replace("\x00C\x00", "魑魅")
 
 
 def conta(t: str) -> Counter:
@@ -136,6 +225,8 @@ def main() -> None:
     for f in sorted(JP.glob("*.txt")):
         antes = f.read_text(encoding="utf-8")
         depois = emenda(antes)
+        if f.name in PERIODICOS:
+            depois = emenda2(depois)
         c = conta(antes)
         if antes == depois:
             continue
@@ -145,7 +236,18 @@ def main() -> None:
         if sp.exists():
             d = json.loads(sp.read_text(encoding="utf-8"))
             arts = d.get("articles", [])
-            anc_novas = [emenda(a.get("jp_anchor", "")) for a in arts]
+            # A âncora NÃO recebe as regras de novo: ela é um recorte do texto,
+            # e um recorte pode cortar no meio de um composto. A âncora 28 do
+            # Tijotengoku termina exatamente num 吉 cujo alvo depende do
+            # caractere SEGUINTE, que ficou de fora do recorte -- a regra a
+            # deixava intacta enquanto o texto virava 同, e a busca falhava.
+            # Como toda substituição preserva o comprimento, basta recortar a
+            # mesma faixa do texto já emendado.
+            anc_novas = []
+            for a in arts:
+                v = a.get("jp_anchor", "")
+                i = antes.find(v)
+                anc_novas.append(depois[i:i + len(v)] if v and i >= 0 else v)
             # a âncora só vale se ainda dividir a obra em tantos artigos quanto a spec
             if len(anc_novas) > 1 and all(anc_novas):
                 try:
