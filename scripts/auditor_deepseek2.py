@@ -31,7 +31,7 @@ sys.path.insert(0, str(RAIZ / "scripts"))
 import auditoria as A  # noqa: E402
 from goshinsho.services import agentic_search as ag  # noqa: E402
 
-DESTINO = RAIZ / "reports/varredura_padronizacao/AUDITORIA_DEEPSEEK.json"
+DESTINO = RAIZ / "reports/varredura_padronizacao/AUDITORIA_DEEPSEEK2.json"
 MODELO = "deepseek-v4-flash"
 MAX_TOKENS = 32768
 PARALELISMO = 4

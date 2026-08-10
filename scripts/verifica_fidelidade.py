@@ -142,8 +142,11 @@ def glossario_do_trecho(jp: str, pt: str, alegacao: str) -> str:
             achou.append(f"  {k} -> {v}")
     if not achou:
         return ""
-    return ("\n=== GLOSSÁRIO DO PROJETO (decisões já tomadas; propor mudá-las "
-            "NUNCA procede) ===\n" + "\n".join(achou[:25]) + "\n")
+    return ("\n=== GLOSSÁRIO DO PROJETO — entradas que tocam este trecho ===\n"
+            + "\n".join(achou[:25]) +
+            "\n(A entrada vale para o SENTIDO DOUTRINÁRIO do termo. A mesma "
+            "palavra em sentido comum -- 曇り como sombra de raio-X, 理 como "
+            "princípio -- não deve receber a forma fixa; ali aplicá-la é o erro.)\n")
 
 
 def julga(it: dict) -> dict:

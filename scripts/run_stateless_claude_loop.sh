@@ -35,6 +35,13 @@ PROMPT_FILE="${2:?uso: $0 <queue.json> <prompt.md> <logdir> [presync.py] [idle_s
 LOGDIR="${3:?uso: $0 <queue.json> <prompt.md> <logdir> [presync.py] [idle_sleep_s]}"
 PRESYNC="${4:-}"
 IDLE_SLEEP_S="${5:-300}"
+# 6o parametro: o que dizer sobre quantos itens processar por invocacao.
+# O padrao preserva o comportamento historico (Fase F/G), onde cada item da
+# fila era um LIVRO inteiro e um por iteracao era o certo. Filas cujo item e
+# pequeno -- a auditoria, em que cada item e um achado -- passam sua propria
+# frase: com o padrao, gastavam uma invocacao inteira do Claude para julgar um
+# caso so (96 iteracoes para 116 julgamentos, medido em 2026-08-09).
+LOTE_INSTRUCAO="${6:-Processe apenas pending[0] desta vez, conforme instruido no arquivo.}"
 mkdir -p "$LOGDIR"
 
 # Teto padrão de espera por subagente (tarefas em background) é 600s (10min);
@@ -121,7 +128,7 @@ while true; do
   iter=$((iter+1))
   echo "$(date -Is) — iteracao $iter, pending=$n" >> "$LOGDIR/loop.log"
   LOGFILE="$LOGDIR/iter_$(printf '%04d' "$iter").log"
-  IS_SANDBOX=1 timeout "$INVOCATION_TIMEOUT_S" claude -p "Leia e execute integralmente as instrucoes em $PROMPT_FILE. Processe apenas pending[0] desta vez, conforme instruido no arquivo." \
+  IS_SANDBOX=1 timeout "$INVOCATION_TIMEOUT_S" claude -p "Leia e execute integralmente as instrucoes em $PROMPT_FILE. $LOTE_INSTRUCAO" \
     --dangerously-skip-permissions \
     --no-session-persistence \
     > "$LOGFILE" 2>&1
