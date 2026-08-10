@@ -10,13 +10,17 @@ R=reports/varredura_padronizacao
 esperar_desafiador() {
   while :; do
     n=$(venv/bin/python3 - <<'PY' 2>/dev/null
-import json, pathlib
+import json, pathlib, sys
+sys.path.insert(0, "/var/www/goshinsho"); sys.path.insert(0, "/var/www/goshinsho/scripts")
+import desafiador as D
 R = pathlib.Path("reports/varredura_padronizacao")
 alvo = set(json.load(open(R / "FILA_REJULGAMENTO.json")))
-d1 = set(json.loads((R / "AUDITORIA_DEEPSEEK.json").read_text(encoding="utf-8")))
-d2 = set(json.loads((R / "AUDITORIA_DEEPSEEK2.json").read_text(encoding="utf-8")))
 ds = set(json.loads((R / "DESAFIADOR.json").read_text(encoding="utf-8")))
-print(len({k for k in alvo if k in d1 and k in d2} - ds))
+# alvos_pilha_a exige DS1 == DS2: o desafiador so examina CONSENSO. Contar
+# "os dois ja julgaram" incluia os casos em que eles DISCORDAM, que nunca
+# recebem parecer dele -- a contagem jamais chegaria a zero e o laco giraria
+# para sempre, travando a cadeia inteira antes da atribuicao.
+print(len((set(D.alvos_pilha_a()) & alvo) - ds))
 PY
 )
     [ "$n" = "0" ] && break
