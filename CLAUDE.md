@@ -12186,9 +12186,329 @@ uniformizando com o cabeçalho.
 **Zero pendências abertas na pilha C.** Todas as decisões documentadas
 em `DECIDIDO_MESA_C.json` e `DECIDIDO_RESIDUAL.json`.
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia, verificação
+### da implantação achou dano real e foi refeita do zero)
 
 1. Pilha C: **encerrada de verdade, nada pendente.**
 2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada da revisão de tradução chegou lá ainda.
+
+## Sessão 2026-08-11 (continuação, mesmo dia) — a implantação dos 5.018
+## trechos decididos (pilha A + pilha C) foi VERIFICADA, achou dano real
+## de duplicação, e foi refeita do zero com um pipeline semântico novo —
+## 137/137 obras (PT e JP) fechadas ao final
+
+### O pedido do usuário e a correção de escopo que ele fez no meio
+
+Depois de a pilha C fechar, o usuário pediu para verificar se a
+**implantação** das ~5.018 correções já decididas (4.495 pilha A + 523
+pilha C) tinha sido feita corretamente — não para reabrir o mérito de
+cada decisão. Isso ficou explícito quando eu comecei a desviar pra uma
+nova revisão: **"a minha determinação foi verificar a correção da
+implantação dos ajustes da revisão feita e não fazer uma nova revisão...
+qualquer nova revisão irá trazer novos problemas isso é natural e esse
+trabalho não acabaria nunca."** — ordem literal, prioridade sobre
+qualquer leitura anterior deste documento sobre "sempre verificar tudo
+de novo".
+
+**Achado real da verificação** (agentes Claude Code + DeepSeek, leitura
+dupla): uma amostra de 38 trechos aplicados tinha **29 casos de
+duplicação de conteúdo** — o texto corrigido repetindo algo que já
+existia antes ou depois do trecho editado. O usuário perguntou
+explicitamente se aquilo era culpa do script de implantação ou de
+diagnóstico errado da verificação — e a resposta, apurada linha a linha
+antes de responder, foi que **os dois existiam, mas por causas
+diferentes**: a maioria das duplicações vinha de `aplicar_pilha_a.py`,
+que fazia `texto.replace(de, para)` **sem nenhuma verificação semântica
+por edição** — o próprio usuário identificou isso antes de eu
+confirmar: **"o problema foi 100% seu de mandar fazer o replace de forma
+cega ao invés de seguir a norma suprema de fazer tudo linha a linha de
+forma semantica"** — e uma fração menor vinha de `aplicar_semantico.py`
+mostrar ao modelo só o parágrafo isolado (sem o artigo inteiro), que
+também podia gerar duplicação sem saber que o mesmo conteúdo já existia
+alhures.
+
+O usuário também apontou que minha amostra de 38 estava incompleta
+("não foi só 29, pq vc não terminou a revisão que diagnosticou esse
+problema") — a leitura real precisava cobrir tudo, não uma amostra.
+
+### Ordem do usuário: reverter, construir certo, testar, só então refazer
+### tudo -- com custo estimado antes de rodar
+
+> "deve haver vários outros erros. Volte o texto ao ponto antes da
+> aplicação dos ajustes, prepara o script e aplicação semantica para os
+> agentes do deepseek, faça um teste com os trechos diagnosticados com
+> falha e se der certo refaça todo o trabalho de implantação da forma
+> correta. Me forneça um custo disso."
+
+Executado nessa ordem exata:
+
+1. **Revertidas 135 obras** para o estado anterior à aplicação dos
+   ajustes de tradução (usando o backup mais antigo de cada obra dentre
+   os vários rótulos `.bak_(pilhaA|pilhaC|mesaC|residual|...)`, nunca os
+   `.bak_pre_*` de sessões anteriores não relacionadas — 998 arquivos
+   com esse prefixo existiam no diretório, teria sido fácil pegar o
+   errado).
+2. **Construído `implanta_semantico_v2.py`**: para cada correção, lê o
+   parágrafo a editar + o ARTIGO INTEIRO em português (contexto) + o
+   japonês, pede ao modelo pra reescrever o parágrafo aplicando a
+   correção sem duplicar conteúdo que já apareça em outro lugar do
+   artigo, e verifica o resultado contra o parágrafo original antes de
+   aceitar. Distingue 3 tipos de correção pelo texto de "para" (que às
+   vezes trazia instrução literal em vez de texto pronto — achado real,
+   não hipotético): substituição normal, remoção ("(remover a frase)"),
+   inserção ("Inserir antes: ...").
+3. **Guarda de contenção (`contido()`) reescrita** depois de achar, com
+   evidência (`reasoning_content` da API, não suposição), que a versão
+   antiga rejeitava correções CERTAS: a regra "se o trecho antigo ainda
+   aparece no novo, recusa" derrubava toda inserção legítima (o trecho
+   antigo sobrevive como parte do texto quando algo é só acrescentado ao
+   lado); e o teto fixo de crescimento (1,6× o parágrafo) derrubava
+   restaurações grandes e corretas (ex. título inteiro que faltava).
+   Substituídas por "não mudou nada" (a falha real) e um teto ligado ao
+   crescimento que a própria correção já anuncia (`len(para)-len(trecho)`
+   + folga), não ao tamanho do parágrafo inteiro.
+4. **Teste dirigido nos casos já diagnosticados como falha** (não
+   amostra aleatória) — passou 40/41 (97,6%), e o caso residual (uma
+   cascata de âncora cruzada em `結核信仰療法`) foi investigado à parte.
+5. **Custo estimado e confirmado com dado real**: a projeção pros ~5.263
+   itens bateu com o que de fato foi gasto ao rodar tudo (a ordem exata
+   de grandeza, não uma fatura surpresa).
+
+### Perguntas técnicas do usuário, respondidas com medição, não suposição
+
+- **"Se o script tivesse a determinação de olhar o entorno, o problema de
+  duplicação teria acontecido?"** — resposta apurada caso a caso, não
+  genérica: pra maioria dos 29 casos vindos de `aplicar_pilha_a.py`, NÃO
+  — o replace cego nunca envolvia modelo nenhum, "olhar o entorno" não
+  teria feito diferença nenhuma, porque a causa nasce na PROPOSTA
+  original (`leitura_fidelidade.py`), não na aplicação. Só nos casos
+  vindos de `aplicar_semantico.py` (parágrafo isolado) é que dar mais
+  contexto ao modelo resolvia de verdade -- e foi exatamente isso que
+  `implanta_semantico_v2.py` passou a fazer (artigo inteiro, não só o
+  parágrafo).
+- **"Se o vazio não foi resolvido, existe necessidade de manter os
+  tokens tão altos, lentos e caros?"** — testado empiricamente subir
+  `MAX_TOKENS_SAIDA` de 8192 pra 16000: **não resolveu** o único caso
+  estrutural pendente (era cascata de âncora, não limite de token) e, em
+  casos normais que nunca batiam no teto antigo, correlacionou com MAIS
+  tokens gastos (não é "reserva de graça"). Revertido pra 8192 com base
+  nessa medição, não em suposição.
+- **"Quem está fazendo a implementação?"** — esclarecido: o DeepSeek
+  reescreve o texto; o código Python só acha a posição, monta o contexto
+  enviado ao modelo, e verifica o resultado antes de aceitar -- nunca
+  escreve texto de tradução por conta própria.
+
+### A rodada completa: 5.263 itens calculados, 18 obras reverter por
+### cascata de âncora, investigadas uma a uma como o usuário pediu
+
+`--calcular` (checkpoint incremental a cada 20 itens, retomável) rodou
+sobre os 5.263 itens de pilha A + pilha C decididos: **5.197 aceitos, 66
+recusados**. `--aplicar` escreveu a maioria com sucesso, mas **18 obras
+foram revertidas por inteiro** quando uma âncora quebrava no meio do
+lote e a obra não fechava 100% -- pedido explícito do usuário:
+**"investiga essas 18 uma a uma e os 66 recusados também"**.
+
+**Método de reparo de âncora, em 3 camadas de segurança, refinado ao
+longo do dia depois de cada achado real**:
+1. **de-in-anchor**: se uma correção JÁ aprovada pra este mesmo artigo
+   tinha "de" batendo dentro da âncora velha, reconstrói a âncora nova
+   substituindo exatamente esse trecho (nunca busca cega) -- mas usando
+   o mesmo corte de parágrafo (`\n\n`) que a aplicação real usa, não um
+   replace ingênuo de substring (achado real: `世界救世教奇蹟集` art134,
+   `velha.replace(de,para)` duplicava o resto da linha do título porque
+   "de" cobria só parte dela).
+2. **title_pt como âncora de verdade**: quando a via 1 não resolve e
+   `title_pt` é único no texto, usa ele -- é o campo que
+   `find_best_article` realmente usa em produção, e revelou 2 âncoras
+   **corrompidas desde ANTES desta sessão** em `世界救世教奇蹟集`
+   (artigo 134 apontava pra um trecho sobre "Cálculos" 220 mil
+   caracteres fora de ordem, quando o conteúdo real era sobre "Tifo
+   Exantemático"; artigo 140 tinha uma palavra a mais que nunca existiu
+   no texto real).
+3. **Busca cega numa JANELA local** (nunca no arquivo inteiro) -- só
+   como último recurso, porque uma busca cega no arquivo inteiro já
+   tinha trocado "Tuberculose" por "Varíola" de um testemunho diferente
+   numa tentativa anterior (títulos parecidos, coleção de depoimentos).
+
+Resultado: de 18 obras reverter, **12 foram resolvidas** nesse dia
+(`明麿近詠集`, `御教え集22号`, `世界救世教奇蹟集`, `御教え集26号` e mais
+8), com 444+ correções recuperadas de forma segura -- as demais ficaram
+pra depois de o usuário propor um redesenho (ver seção seguinte).
+
+### A virada de método: o usuário perguntou se não seria mais fácil
+### ignorar âncora na aplicação e resegmentar depois
+
+> "não seria mais fácil fazer as correções ignorando as âncoras e
+> refazer as âncoras, specs, segmentação para o chunk estrutural depois,
+> pois esse trabalho terá que ser feito de uma forma ou outra para a
+> promoção?"
+
+Concordei com a parte de âncora (bate com o que já é obrigatório fazer
+antes de qualquer promoção mesmo), mas sinalizei um risco que ele não
+tinha considerado: a âncora quebrando era só o **sintoma** de um
+problema mais sério -- quando 2+ correções caem no MESMO parágrafo,
+cada uma sendo uma reescrita **inteira** calculada **independentemente**
+(sem saber da outra), aplicar as duas em sequência faz a segunda apagar
+silenciosamente a primeira, com ou sem âncora no meio. Ignorar a âncora
+não resolve isso sozinho. O usuário autorizou as duas mudanças juntas,
+condicionadas a confirmar que `split_by_anchors` (a verificação usada) é
+mesmo a função real de produção -- confirmado direto no código
+(`build_clean_large_indexes.py:18,545`, `article_entries_from_spec()`
+chama `split_by_anchors` de verdade) antes de prosseguir.
+
+### `mescla_e_aplica.py` -- corrige a mesclagem, ignora âncora na hora de
+### aplicar
+
+Pra cada obra: agrupa itens do mesmo artigo cujos spans de parágrafo se
+sobrepõem (contra o texto BASE, nunca editado durante o processo); grupo
+de 1 item reaproveita o `novo_paragrafo` já calculado; grupo de 2+ faz
+**uma chamada nova ao modelo**, mostrando TODAS as trocas de uma vez,
+pedindo UM parágrafo que aplique todas juntas. Aplica de trás pra frente
+(posição descendente) na obra inteira, sem `janelas()` no meio -- não
+tenta preservar âncora durante a aplicação, por decisão do usuário.
+
+**2 bugs reais achados e corrigidos durante o próprio teste, com
+evidência, não suposição**:
+1. **`finish_reason: length` em grupos grandes** -- um parágrafo de 7
+   correções mescladas em 8.387 caracteres saiu vazio porque o
+   raciocínio sozinho já consumia o teto de 8192 tokens
+   (`reasoning_tokens=8192`, confirmado inspecionando o objeto de
+   resposta direto). **Diferente** do caso já descartado antes (subir
+   token não ajudava uma falha estrutural) -- aqui era demanda genuína,
+   testado com 20000 e resolveu de verdade (`finish_reason` voltou a
+   `stop`). Corrigido com retentativa só neste caminho (grupos
+   mesclados), não no caso normal de 1 item.
+2. **Borda de espaço perdida** -- o modelo devolve o parágrafo sem
+   quebra de linha nas pontas (normal). Mas em coleções sem `\n\n` entre
+   itens (poemas separados por 1 quebra só, `hymn_collection`/
+   `poem_collection`), essa quebra final É parte real do parágrafo
+   (fronteira é o início do próximo artigo). Achado real (`御讃歌集`
+   art13): sem reconstituir a borda, "...tesouro." colava direto em
+   "14. Quem pensaria..." -- corrigido com `preserva_bordas()`, aplicado
+   tanto na mesclagem quanto no reaproveitamento de item único (essa
+   última também precisou do mesmo fix em `implanta_semantico_v2.py`).
+
+Além disso, **`regenera_ancora()` tinha um bug real**: pegava sempre
+`n+60` caracteres a partir da posição achada, sem respeitar fronteira
+natural -- num livro de poemas curtos, isso engolia o poema SEGUINTE
+inteiro dentro da âncora do anterior. Corrigido pra nunca passar de
+`\n\n` (ou do fim do texto).
+
+### `resegmenta_pos_mescla.py` -- reconstrói `pt_anchor` depois, com
+### busca em janela sequencial (nunca no arquivo inteiro)
+
+Mesma disciplina de segurança de `repara_implanta_v2.py`, mas pra
+reconstruir a spec inteira depois da mescla: se a âncora velha ainda
+bate a partir de onde a anterior parou, mantém; senão, tenta reconstruir
+via `candidata_por_correcao()` (só quando exatamente 1 correção toca a
+âncora -- achado real, `御讃歌集` art13: com 2 correções tocando a mesma
+âncora curta, usar o `novo_paragrafo` de só uma delas isoladamente
+produzia candidato ERRADO, que só "passou" antes por coincidência com a
+busca cega); senão, busca cega numa janela local. A janela da via 1 é
+bem mais larga (40 mil caracteres) que a da busca cega (6 mil) -- é
+seguro porque o candidato vem de uma correção JÁ aprovada, não de
+coincidência de prefixo (achado real: `Eiko.txt` art332, artigo de mais
+de 20 mil caracteres, a janela padrão nunca alcançava a posição real).
+
+### O achado mais sério do dia: corrupção de marcador de trabalho
+### REINTRODUZIDA pelo próprio revert do início desta sessão
+
+`天国の福音書` e `信仰雑話` tinham 4-6 títulos que sumiam sem
+explicação depois da mescla. Investigação (não assumida) revelou: essas
+2 obras ainda tinham os marcadores `#T`/divisórias (`──────`) que
+**já tinham sido limpos numa sessão de 04/08** -- o "voltar ao ponto
+antes da aplicação" no início desta sessão usou um backup anterior
+demais e desfez essa limpeza sem ninguém perceber, até agora.
+
+**2 bugs reais em `clean_body()` (função de produção,
+`build_clean_large_indexes.py`), achados nesta investigação**:
+1. A checagem de linha divisória pura rodava contra
+   `clean_heading(raw)`, que aplica `.strip("#-—–─: ")` -- pra uma linha
+   feita 100% desses caracteres, isso zera a string inteira, e
+   `fullmatch` numa string vazia nunca bate com `{5,}`. A linha
+   sobrevivia intacta. Corrigido pra checar contra `raw.strip()`.
+2. `#T` nunca estava na lista de metadado ignorado (`#E`/`#S`/`#K`/`#W`
+   já estavam). Adicionado.
+
+Confirmado por varredura do acervo inteiro (137 obras) que **só essas 2
+obras** tinham esse resíduo -- o fix não mudou nada nas outras 135.
+
+Mas a correção do `clean_body()` sozinha não bastava: `paragrafo()`
+(usado pra decidir o que reescrever) corta por `\n\n`, e nesses blocos
+título/citação/corpo eram separados por UMA quebra só -- sem `\n\n` em
+lugar nenhum próximo, o "parágrafo" calculado pra uma correção no corpo
+podia se estender pra trás e incluir o bloco de marcador+título
+inteiro, e a reescrita do modelo (mesmo instruída a não tocar fora da
+região da correção) às vezes não preservava esse preâmbulo. **Limpei
+fisicamente o texto bruto** (não só a leitura via `clean_body()`) de
+`天国の福音書` (53 blocos, PT e JP) e refiz a mesclagem a partir daí --
+resolveu os 4 títulos de uma vez, sem precisar de nenhum tratamento
+especial.
+
+**2 casos residuais únicos, investigados e corrigidos manualmente**
+(nunca decididos por script): `信仰雑話` art30 tinha um `#T` de 1.421
+caracteres que era na verdade o PARÁGRAFO DE ABERTURA do artigo,
+mal-formatado como se fosse título -- diferente dos outros 39 blocos
+`#T` da mesma obra (30-83 caracteres, título de verdade); removido só o
+prefixo indevido, preservando o conteúdo. `革命的増産の自然農法解説`
+art37 teve título+citação inteiros apagados por uma correção de byline
+vizinha (mesmo padrão de fronteira ausente, mas sem marcador `#T`
+envolvido) -- reconstruído a partir do backup, comparado contra um
+artigo irmão da mesma obra pra confirmar a formatação exata (separador
+de linha única, não `\n\n`, é a convenção real desse livro).
+
+### Auditoria pedida 2x pelo usuário, a 2ª vez incluindo o lado japonês
+
+Na 1ª rodada ("roda a auditoria completa de novo pra confirmar
+137/137"), a verificação (só do lado PT até então) confirmou 137/137 --
+mas eu resolvi também checar o lado JP pela primeira vez no mesmo
+comando, e achei exatamente os mesmos 2 arquivos (`信仰雑話`,
+`天国の福音書`) com o mesmo problema de marcador, nunca limpo do lado
+japonês. Reportado com honestidade em vez de declarar sucesso parcial
+como se fosse completo.
+
+Usuário pediu pra resolver também. A estrutura do bloco `#T` no japonês
+era mais irregular que no português (o número de página aparece em até
+4 posições diferentes dentro do bloco, dependendo do artigo) -- mapeada
+com uma regex tolerante a essas 4 variações, testada contra os 96 blocos
+das 2 obras (53+43) até casar 100% sem nenhum título capturado suspeito
+(vazio ou só dígito) antes de aplicar. Limpo fisicamente o texto bruto
+japonês das 2 obras, reconstruídos os 96 `jp_anchor` extraindo só o
+título.
+
+### Resultado final, verificado com a função real de produção
+
+**137/137 obras, PT e JP, 3.981 artigos, 0 âncoras quebradas, 0
+dessincronizadas** entre `livros_publicacao_pt_revisado/` +
+`reports/livros_trabalho/{pt,jp}/`.
+
+### Commit desta sessão
+
+`68f9ff7` -- cobre `scripts/build_clean_large_indexes.py` (fix de
+`clean_body()`) e os scripts novos (`implanta_semantico_v2.py`,
+`mescla_e_aplica.py`, `repara_implanta_v2.py`, `resegmenta_pos_mescla.py`,
+mais 3 scripts de apoio/verificação usados na investigação inicial:
+`apoio_verificacao_trechos.py`, `verifica_pilha_a_deepseek.py`,
+`verifica_trechos_alterados_deepseek.py`). Como sempre neste projeto,
+`glossario_traducao.json` e `livros_publicacao_pt_revisado/` continuam
+fora do git por decisão do usuário -- este commit é só de código.
+
+### Onde continuar
+
+1. A implantação das ~5.018 correções da pilha A+C está **verificada,
+   corrigida onde havia dano real, e o corpus inteiro (137 obras, PT+JP)
+   fechou 100%** contra a função real de produção.
+2. Os 66 itens originalmente recusados no cálculo (`--calcular`) --
+   citados no pedido do usuário "e os 66 recusados também" -- **ainda
+   não foram investigados individualmente** nesta sessão (o foco foi
+   inteiramente nas 18 obras revertidas por cascata de âncora, que
+   consumiram o dia). Ficam como pendência explícita pra retomar.
+3. `regenera_ancora()`, `contido()`, `preserva_bordas()` e o fix de
+   `clean_body()` são utilitários genéricos, já testados contra casos
+   reais -- reaproveitáveis se aparecer corrupção de âncora parecida em
+   qualquer obra futura.
+4. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada do trabalho de hoje chegou lá ainda.
