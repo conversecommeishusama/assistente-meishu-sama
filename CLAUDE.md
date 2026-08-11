@@ -12153,3 +12153,42 @@ dessincronizadas.
 2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada da revisão de tradução chegou lá ainda.
+
+## Atualização 2026-08-11 (mesmo dia) — os últimos 2 USUARIO decididos:
+## pilha C inteira (143+213+221 = 377 casos) genuinamente fechada
+
+Ao mostrar os 2 casos finais (japonês+português lado a lado, sem opções
+pré-digeridas — método que o usuário exigiu de novo nesta rodada), achei
+um problema extra no caso do nome: as duas ocorrências de `江畠` no
+próprio arquivo **não usavam nem a mesma forma entre si** — cabeçalho
+"Ehata", corpo "Ebahata" (forma corrompida, nem uma das duas leituras
+válidas). Não é só dúvida de romanização, é inconsistência real dentro
+do arquivo.
+
+Decisões do usuário: Stahl (`Medicina_do_Amanha.txt`) — **manter como
+está** (aspas fecham logo após "tonicidade do corpo"). Nome — delegou a
+escolha; fiquei com **"Ehata"** (já usada no cabeçalho, evidência igual à
+outra opção, menos disrupção) e corrigi "Ebahata" para "Ehata" no corpo,
+uniformizando com o cabeçalho.
+
+**Verificação final: 137 obras, 0 âncoras quebradas, 0 dessincronizadas.**
+
+### Estado final da pilha C inteira, de ponta a ponta
+
+- 143 casos (leitura manual original): 52 A, 30 B, 35 OUTRO, 26 MANTER.
+- 213 (nunca lidos) + 221 (reformar): 187 aplicados automaticamente +
+  73 lidos manualmente (33 A, 30 B, 4 MANTER, 6 USUARIO).
+- Aprofundamento dos 6 USUARIO: 4 resolvidos de verdade (citações em
+  cascata do 10号, gênero do narrador do 御教え集4号, turno de Cristo do
+  御光話録2号, convenção de rubrica do 笑の泉), 2 decididos pelo usuário
+  agora (Stahl MANTER, nome próprio Ehata).
+
+**Zero pendências abertas na pilha C.** Todas as decisões documentadas
+em `DECIDIDO_MESA_C.json` e `DECIDIDO_RESIDUAL.json`.
+
+### Onde continuar
+
+1. Pilha C: **encerrada de verdade, nada pendente.**
+2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada da revisão de tradução chegou lá ainda.
