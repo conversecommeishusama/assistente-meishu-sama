@@ -12500,15 +12500,131 @@ fora do git por decisão do usuário -- este commit é só de código.
 1. A implantação das ~5.018 correções da pilha A+C está **verificada,
    corrigida onde havia dano real, e o corpus inteiro (137 obras, PT+JP)
    fechou 100%** contra a função real de produção.
-2. Os 66 itens originalmente recusados no cálculo (`--calcular`) --
-   citados no pedido do usuário "e os 66 recusados também" -- **ainda
-   não foram investigados individualmente** nesta sessão (o foco foi
-   inteiramente nas 18 obras revertidas por cascata de âncora, que
-   consumiram o dia). Ficam como pendência explícita pra retomar.
+2. Os 66 itens originalmente recusados no cálculo foram investigados um a
+   um -- ver seção seguinte, "os 66 recusados investigados um a um".
 3. `regenera_ancora()`, `contido()`, `preserva_bordas()` e o fix de
    `clean_body()` são utilitários genéricos, já testados contra casos
    reais -- reaproveitáveis se aparecer corrupção de âncora parecida em
    qualquer obra futura.
 4. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada do trabalho de hoje chegou lá ainda.
+
+## Sessão 2026-08-11 (continuação, mesmo dia) — os 66 recusados
+## investigados um a um; 3 bugs reais achados na própria camada de
+## verificação, não no julgamento do DeepSeek
+
+Pedido do usuário, retomando a pendência deixada na seção anterior:
+"investiga os 66 itens recusados um a um". Categorizados pelo motivo de
+recusa original: 45 "resposta vazia", 15 "não mudou nada", 3 "trecho não
+está na janela", 2 "2 ocorrências no parágrafo", 1 "mudou fora do vão".
+
+### Os 21 que já estavam certos -- verificados um a um contra o texto
+### atual, nenhum aplicado às cegas
+
+- **15 "não mudou nada"**: todos batiam com a convenção "（御教え）ANTES
+  do número/página vira sempre (Mioshie-shū), nunca (Mioshie)" -- fixada
+  no prompt numa sessão anterior. A recusa era a guarda funcionando
+  certo, não uma falha.
+- **1 "mudou fora do vão"** (mesma família, `浄霊法講座6号` art7):
+  conferido no texto atual -- "(Mioshie-shū)" já preservado, nada a
+  fazer.
+- **4 "trecho não está na janela"/"2 ocorrências"**: cada um lido contra
+  o texto atual antes de decidir. 3 já tinham sido resolvidos por outro
+  caminho (o conteúdo que a correção queria consertar simplesmente não
+  existe mais na forma antiga -- foi reescrito em algum ponto anterior
+  deste projeto, achado confirmado buscando a citação/frase alvo e
+  achando zero ocorrências, depois achando o conteúdo equivalente já
+  correto alhures no mesmo artigo). O 4º (`天国の福音書` art29, "Não Se
+  Irai" -> "Não Se Irrite") era um typo real ainda presente, único no
+  arquivo -- corrigido direto.
+
+### Os 45 "resposta vazia" -- 3 bugs reais achados na camada de
+### verificação, não no DeepSeek
+
+**Achado 1 -- descrição de remoção não reconhecida.** `MARCADOR_REMOCAO`
+só batia com "remover"/"-"/"—" sozinho. Uma correção como "remover a
+linha de data -- o texto passa a terminar em '...'" não batia, caía no
+caminho de SUBSTITUIÇÃO normal com a frase de instrução inteira sendo
+tratada como se fosse texto literal a inserir -- o modelo ficava confuso
+e devolvia vazio, mesmo em retentativa. Corrigido com
+`MARCADOR_REMOCAO_DESCRITIVO` (bate "remover"/"suprimir" no início,
+qualquer coisa depois) e repassando a explicação como orientação extra
+no prompt, não descartando.
+
+**Achado 2, o mais importante -- remover o parágrafo INTEIRO produz
+resultado vazio, e isso está CERTO.** Testado diretamente contra a API
+(inspecionando `reasoning_content`, não supondo): quando "de" é o
+parágrafo inteiro (uma linha de byline/título sozinha, tipo "*Província
+de Kanagawa...*"), o modelo raciocina corretamente que o resultado depois
+de remover é vazio -- e a guarda `contido()` rejeitava isso como
+"resposta vazia", tratando a resposta CERTA como falha. Corrigido:
+`contido()` aceita vazio quando `trecho.strip() == velho.strip()`, ou
+quando sobra só pontuação/marcação (`*`, aspas) depois de tirar o trecho
+do parágrafo -- nunca aceita vazio se sobrar texto de verdade.
+
+**Achado 3 -- o script de retentativa nunca chegava a testar o fix
+acima.** `retry_vazios.py` só chamava `contido()` quando a resposta vinha
+não-vazia (`if candidato.strip():`) -- para os casos do achado 2, a
+resposta vazia nunca passava por `contido()`, então o fix nunca era
+exercitado, e o item continuava marcado "ainda vazio" mesmo depois de
+corrigido o código. Corrigido para sempre chamar `contido()`,
+distinguindo: se o motivo for "resposta vazia" (falta de espaço de
+raciocínio), vale insistir com teto maior (24000); qualquer outro motivo,
+teto maior não ajuda, para na hora.
+
+**Achado 4, pego só na aplicação real -- remover o título quebra a
+âncora do próprio artigo, e o script CRASHAVA sem tratar isso.** Uma
+correção que remove o título de um artigo remove também o texto que
+serve de `pt_anchor` para aquele artigo -- `split_by_anchors` levanta
+`ValueError` (não devolve `False`), e sem `try/except` isso derrubava o
+script inteiro no meio da gravação, perdendo o resto do lote que ainda
+não tinha sido escrito. Corrigido: tenta regenerar a âncora do artigo
+afetado (mesmo `regenera_ancora()` de sempre) antes de decidir se grava;
+`try/except` em volta de `split_by_anchors` para nunca mais derrubar o
+script inteiro por causa de uma obra.
+
+**Resultado dos 45**: a grande maioria (32) já tinha sido resolvida por
+outro caminho ao longo do dia (o "de" da correção simplesmente não existe
+mais no artigo -- superado por trabalho anterior). Os que restaram, após
+os 4 achados acima, em rodadas sucessivas: a maioria resolvida por
+retentativa, 5 confirmados "não mudou nada" de verdade (lidos um a um
+contra o texto atual -- todos já corretos), e **1 pendência genuína**:
+`世界救世教奇蹟集` art104 pede pra remover o título do próprio artigo
+("Câncer de pele de vinte anos completamente curado" -> "-") -- a
+regeneração automática de âncora não achou substituto seguro pra esse
+caso específico (coleção de depoimentos com títulos parecidos, mesmo
+risco já documentado hoje), e não foi forçado. Fica registrado, não
+aplicado.
+
+### Um momento de fricção real com o usuário, registrado com honestidade
+
+No meio da investigação, o usuário reclamou da demora (horas para
+investigar 66 itens) e chegou a suspeitar que eu estava usando regex em
+vez de trabalho semântico -- inclusive um comentário duro sobre estar
+"esperando como um palhaço". A resposta, factual: a parte semântica (o
+DeepSeek lendo o japonês pra decidir o texto) nunca mudou -- o que
+consumiu tempo foram bugs reais na MINHA camada de verificação em volta
+disso (os 4 achados acima), incluindo um crash real que aconteceu ao
+vivo durante a conversa. Não houve desobediência à instrução de "sempre
+semântico" -- houve, sim, tempo real gasto corrigindo minha própria
+ferramenta de orquestração, o que é uma crítica legítima sobre o método
+(overhead de verificação), só não sobre estar ignorando o pedido.
+
+### Estado final
+
+**137/137 obras, PT+JP, 0 quebradas, 0 dessincronizadas**, confirmado
+depois de cada rodada de aplicação. Commit `deae28b`.
+
+### Onde continuar
+
+1. A investigação dos 66 recusados está **encerrada** -- 65 resolvidos ou
+   confirmados corretos, 1 pendência genuína documentada acima (remoção
+   de título que quebraria âncora, não forçada).
+2. Se quiser fechar essa 1 pendência: precisa de decisão humana sobre se
+   o título "Câncer de pele de vinte anos completamente curado" é mesmo
+   redundante (a correção original não veio com explicação, só "-") --
+   não decidir sozinho sem entender o motivo da remoção primeiro.
+3. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada do trabalho de hoje chegou lá ainda.
