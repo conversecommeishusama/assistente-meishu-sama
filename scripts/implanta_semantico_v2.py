@@ -76,6 +76,15 @@ MARCADOR_REMOCAO = re.compile(r"^\s*[-–—]\s*$|^\s*\(?\s*(ou\s+)?remover(\s+a
 # teste (世界救世教奇蹟集|78): o regex acima só pega quando "para" é SÓ o
 # marcador; este aqui pega quando o marcador vem colado ao final de uma frase.
 MARCADOR_REMOCAO_FINAL = re.compile(r"\(\s*(ou\s+)?remover(\s+a\s+frase)?\s*\.?\)\.?\s*$", re.I)
+# achado real (investigação dos 66 recusados, 2026-08-11): "remover" seguido
+# de uma EXPLICAÇÃO ("remover a linha de data -- o texto passa a terminar
+# em...") não batia em nenhum dos dois regex acima (exigem "remover" sozinho
+# ou só no fim) -- caía no caminho de SUBSTITUIÇÃO normal, com a frase
+# inteira de instrução sendo tratada como se fosse o texto literal a
+# inserir, o que deixava o modelo confuso e a resposta saía vazia
+# repetidamente, mesmo em retentativa. Esta forma pega "remover"/"suprimir"
+# no INÍCIO de "para", com ou sem parênteses, com qualquer coisa depois.
+MARCADOR_REMOCAO_DESCRITIVO = re.compile(r"^\s*\(?\s*(suprimir|remover)\b", re.I)
 INSERE_ANTES = re.compile(r"^\s*(antes,?\s+)?inserir(\s+antes)?\s*:\s*(.+)$", re.I | re.S)
 INSERE_DEPOIS = re.compile(r"^\s*(depois,?\s+)?inserir(\s+depois)?\s*:\s*(.+)$", re.I | re.S)
 
@@ -204,6 +213,24 @@ def contido(velho: str, novo: str, trecho: str, para: str) -> str | None:
       len(trecho)), não ao tamanho do parágrafo inteiro.
     """
     if not novo.strip():
+        # achado real (investigação dos 66 recusados, 2026-08-11): quando o
+        # parágrafo INTEIRO é o trecho a remover (uma linha de byline/título
+        # sozinha, sem mais nada), o resultado correto DEPOIS de remover é
+        # mesmo vazio -- o modelo reconhecia isso certo (reasoning_content
+        # confirmado: "the result is an empty line... output nothing") e
+        # essa guarda rejeitava a resposta certa como se fosse falha. Só
+        # aceita vazio nesse caso específico -- em qualquer outro, resposta
+        # vazia continua sendo recusada.
+        resto = velho.strip().replace(trecho.strip(), "", 1).strip("*_\"'` \n")
+        if trecho.strip() == velho.strip() or (trecho.strip() in velho.strip() and not resto):
+            # aceita vazio quando "trecho" É o parágrafo, ou quando o
+            # parágrafo é só "trecho" decorado por marcação (ex.:
+            # "*Vila de Shishimachi...*" -- achado real, 世界救世教奇蹟集
+            # art19: o "de" não incluía os asteriscos do markdown, então
+            # trecho != parágrafo em bytes mas semanticamente é a mesma
+            # linha inteira; sobra só pontuação/marcação depois de tirar
+            # "trecho" do meio, nunca texto de verdade).
+            return None
         return "resposta vazia"
     if novo == velho:
         return "não mudou nada"
@@ -261,16 +288,23 @@ def para_efetivo_para_marcador(para: str) -> str:
 
 
 def emenda_v2(jp: str, artigo_pt: str, par: str, de: str, para: str) -> str:
-    remover = bool(MARCADOR_REMOCAO.match(para.strip()))
+    remover = bool(MARCADOR_REMOCAO.match(para.strip()) or MARCADOR_REMOCAO_DESCRITIVO.match(para.strip()))
     insercao = None if remover else _extrai_insercao(para)
 
     if remover:
         system = SYSTEM_REMOVE
+        # achado real: "remover"/"suprimir" seguido de uma explicação
+        # ("remover a linha de data -- o texto passa a terminar em...") tem
+        # informação útil (o que deve sobrar depois) -- passa como
+        # orientação extra, não descarta.
+        guia = MARCADOR_REMOCAO.match(para.strip())
+        explicacao = "" if guia else para.strip()
         pedido = (f"=== JAPONÊS DO ARTIGO ===\n{jp[:MAX_JP]}\n\n"
                   f"=== ARTIGO INTEIRO EM PORTUGUÊS (contexto) ===\n{artigo_pt_para_contexto(artigo_pt)}\n\n"
                   f"=== PARÁGRAFO A EDITAR ===\n{par}\n\n"
                   f"=== TRECHO A REMOVER ===\n{de}\n\n"
-                  f"Devolva o parágrafo com esse trecho removido.")
+                  + (f"=== ORIENTAÇÃO DE QUEM APROVOU A REMOÇÃO ===\n{explicacao}\n\n" if explicacao else "")
+                  + "Devolva o parágrafo com esse trecho removido.")
     elif insercao:
         posicao, frase = insercao
         system = SYSTEM_INSERE
@@ -336,7 +370,7 @@ def calcula_emenda(item: dict) -> dict:
     # tem de refletir o que a correção REALMENTE deve produzir, não o texto
     # cru da instrução (que pode ser "Inserir antes: ..." ou ter marcador
     # de remoção colado).
-    if MARCADOR_REMOCAO.match(para.strip()):
+    if MARCADOR_REMOCAO.match(para.strip()) or MARCADOR_REMOCAO_DESCRITIVO.match(para.strip()):
         para_delta = ""
     else:
         ins = _extrai_insercao(para)
