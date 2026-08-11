@@ -11790,3 +11790,124 @@ Supabase; já era `premium` desde 01/08. **O endereço que o usuário passou
 (`laerciosilva567@gmail.com`) não existe** — a conta real tem «aj» a mais, e
 só apareceu por busca aproximada. Vale conferir o endereço antes de concluir
 que uma conta não existe.
+
+## Sessão 2026-08-11 (Claude Code) — pilha C fechada: 143/143 casos
+## decididos e aplicados; achado de terminologia doutrinária (弥勒三会);
+## regra permanente de método confirmada pelo usuário
+
+### Pilha C — os 143 casos de leitura manual, todos decididos
+
+Retomada a leitura caso a caso (`decide_mesa_c.py`) de onde a sessão
+anterior parou. **143/143 decididos**: 52 A, 30 B, 35 OUTRO (redação
+própria, geralmente span ampliado pra evitar duplicação), 26 MANTER
+(nenhuma das duas leituras procede, texto atual já certo).
+
+Padrão que se repetiu na maioria dos casos OUTRO (a "armadilha de
+encaixe"): as duas leituras acertam o japonês, mas a redação proposta
+repete texto que já está logo antes/depois do trecho em disputa —
+aplicar ao vão estreito duplicaria. `decide_mesa_c.py` aceita um campo
+`de` que amplia o span (validado em código: `count==1` no arquivo).
+
+### Aplicação — dois caminhos, o mesmo resultado final: 137/137 íntegro
+
+1. **`aplica_mesa_c.py`** (pipeline automático: DeepSeek reescreve o
+   parágrafo lendo o japonês, guarda `contido` verifica, âncora
+   revalidada) — 95 aceitas, 15 recusadas pela guarda.
+2. **`aplica_16_manual.py`** (as 15 recusadas + 1 caso à parte, de/para
+   já verificados por leitura direta, `.replace()` literal com
+   `count==1`) — 16/16 aplicadas. Achado no meio: 1 dos 16
+   (`19511215-御教え集4号.txt`) tinha mais 2 ocorrências do mesmo erro
+   (Kanrin Shin Sen Bō/Daikoku → Kankinpō/Daitō) fora do span original
+   — corrigidas também.
+3. Gap achado e corrigido: os 16 manuais nunca tinham sido escritos em
+   `APLICADO_MESA_C.json` (o script não gravava no registro) — mesclado
+   depois de o usuário pedir verificação explícita ("verifique se ficou
+   algo para tras").
+
+**Total: 340 (pipeline automático, casos convergentes fora da mesa) +
+117 (mesa, manual/semi-manual) aplicados.** Verificação final: **137
+obras, 0 âncoras quebradas, 0 dessincronizadas**, nas duas cópias
+(`livros_publicacao_pt_revisado/` e `reports/livros_trabalho/pt/`).
+
+### Achado doutrinário: 三尊の弥陀/弥勒三会 (Miroku San-e) — pesquisado
+### antes de decidir, não inventado
+
+Um dos 8 casos USUARIO (o mais complexo) pedia o significado de "三尊の
+弥陀" — usuário deu a pista: é о encontro dos três Miroku (弥勒三会,
+Amida+Shaka+Kannon). Confirmado por grep no corpus inteiro (o próprio
+Meishu-Sama explica o termo em mais de um livro) e aplicado:
+
+- `19350000-観音講座` — título do artigo revisado 2x: primeiro "O
+  Encontro dos Três Miroku e o Cinco, Seis, Sete", **depois corrigido**
+  para "Os Três Miroku e o Cinco, Seis, Sete" — usuário identificou que
+  são **duas formas distintas**: "os três Miroku" (nomeando o grupo)
+  vs. "o encontro dos três Miroku" (弥勒三会 especificamente, o evento
+  de reunião — 会 = encontro). Eu tinha aplicado "Encontro" em todas as
+  7 ocorrências da varredura; revertido/revisado nas 7 pra usar "os
+  Três Miroku" na acepção de nomear o grupo, deixando "o encontro dos
+  três Miroku" só onde o texto cita 弥勒三会 explicitamente (uma citação
+  em `19521015-御教え集14号.txt`, nunca tocada).
+- Varredura em mais 8 obras (`19490208-御光話録3号`, `19480905-信仰雑話`,
+  `19540825-天国の福音書`, `19521015-御教え集14号` ×2,
+  `19530515-御教え集21号`, `19510920-御教え集1号`) — todas alinhadas.
+- Citação de hino em `19510920-御教え集1号` alinhada com o título já
+  usado em `19480701-御讃歌集.txt` ("O Amida das Três Honras (Sanzon no
+  Mida)"), corrigindo também o typo de romanização Sanson→Sanzon.
+
+### Os 3 últimos USUARIO — método confirmado pelo usuário: japonês bruto
+### e português lado a lado, sem opções pré-digeridas
+
+O usuário rejeitou `AskUserQuestion` duas vezes nesta sessão para esses
+casos, e determinou o método diretamente: **"como posso analisar se vc
+não me fornece o original em japones contrapondo a tradução?"** — regra
+permanente para qualquer disputa de tradução que exija julgamento do
+usuário: mostrar o japonês cru e o português lado a lado em texto
+corrido no chat, nunca resumir em opções de UI. Aplicado nos 3 casos
+finais:
+
+1. **`19490625-自観叢書第1篇『結核と神霊療法』` art44** (妹/irmã) —
+   usuário perguntou se 妹 podia ser "qualquer jovem" em vez da irmã da
+   narradora, e se "família messiânica" seria melhor que "família
+   Kannon". Resolvido: rastreado o relato completo (tia→narradora→
+   mãe→irmã, sem outro referente introduzido, "5ª série" como detalhe
+   pessoal específico) confirmando ser a irmã; "família messiânica"
+   descartado por anacronismo (documento de 1949, igreja só vira 世界救
+   世教/"messiânica" em 1950). Usuário corrigiu o registro (não "família
+   Kannon", mas "família de Kannon" — soa melhor em português) e
+   aplicou.
+2. **`19530515-御垂示録20号` art1** (として, sufrágio de espíritos
+   descobertos de linhagem colateral) — usuário pediu mais contexto;
+   fornecida a Q&A completa (túmulo Moriyama achado, linhagem colateral
+   por "pecado perdoado", distinção no 戒名). Usuário confirmou: として
+   é "como" literal, comum nos ensinamentos de sufrágio/culto — bate com
+   as ~10 outras ocorrências de として+祀る no corpus (`稲荷として祀っ
+   た`, `御神体として祀られている`), todas no sentido de identidade.
+   **MANTER** — texto atual já reflete essa leitura.
+3. **`Kyusei.txt` art33** (未来新聞/"jornais do futuro" vs. "jornais
+   atuais") — usuário confirmou com certeza que é erro de OCR do
+   original. Texto atual já traduz "atuais" (opção A) — **MANTER**,
+   nada a aplicar. Não tocado o glifo no japonês de trabalho: 未来 é
+   palavra japonesa legítima, não se qualifica pelo critério técnico de
+   correção de OCR do §1 (só corrige forma que não é palavra alguma).
+
+### Confirmado: nenhum caractere japonês vazou pro corpus traduzido
+
+Usuário perguntou diretamente se o japonês/colchetes que apareciam na
+minha análise estavam no corpus publicado. Confirmado por grep
+(`[\p{Han}\p{Hiragana}\p{Katakana}]`) no arquivo: **zero ocorrências** —
+tudo que aparece em japonês nas minhas mensagens de análise é só para
+avaliação do usuário, nunca escreve no `.txt` do acervo (que só permite
+kanji nos casos do §5.1(b)/§5.2 do protocolo).
+
+### Onde continuar
+
+1. **Pilha C: encerrada.** Etapas 3 (glossário) e 4/5 (leitura de
+   fidelidade + arbitragem manual) do plano de revisão final estão
+   completas.
+2. Pendente, já prometido ao usuário: **relatório único consolidado dos
+   143 casos** (não só os USUARIO) — ele pediu isso explicitamente numa
+   sessão anterior, ainda não entregue.
+3. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada da revisão de tradução (glossário, pilha A/B/C)
+   chegou lá ainda.
