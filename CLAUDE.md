@@ -12628,3 +12628,192 @@ depois de cada rodada de aplicação. Commit `deae28b`.
 3. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada do trabalho de hoje chegou lá ainda.
+
+## Sessão 2026-08-11 (continuação, mesmo dia) — HANDOFF URGENTE: achado
+## crítico de 1.113 correções "aceitas" nunca escritas no corpus,
+## trabalho de reaplicação INTERROMPIDO a pedido do usuário antes de
+## terminar — leia esta seção INTEIRA antes de qualquer ação
+
+**Contexto do pedido que gerou esta seção**: depois de fechar a
+investigação dos 66 recusados (seção anterior), o usuário pediu uma
+conferência: "quero que vc faça uma conferencia se todos os ajustes
+realmente foram aplicados, se o texto e a segmentação pt está compatível
+com o jp, e que se as ancoras e specs estão corretos". No meio da
+reaplicação que essa conferência revelou ser necessária, ele pediu pra
+**parar tudo e documentar** pra uma sessão nova conseguir continuar sem
+perder contexto. É exatamente isso que esta seção faz.
+
+### O que a auditoria confirmou como OK
+
+`scripts/auditoria_final_completa.py` (novo, não commitado ainda) roda 3
+checagens. Resultado desta sessão, com o corpus no estado em que ficou
+(ver "estado exato do corpus" mais abaixo):
+
+- **Estrutura**: `split_by_anchors` (a função real de produção) contra
+  PT (2 cópias) e JP -- **137/137 obras, 0 quebradas, 0
+  dessincronizadas, 0 âncoras vazias.**
+- **Paridade PT/JP**: todas as 137 obras têm o mesmo número de artigos
+  com `pt_anchor` e `jp_anchor` preenchidos (esperado, já que os dois
+  vêm da mesma lista `articles` do spec -- confirmado mesmo assim).
+
+### O achado crítico: 1.113 de 5.197 correções "aceitas" nunca foram
+### escritas no texto
+
+A 3ª checagem ("de" ainda aparece no artigo? não devia) comparou, para
+cada um dos 5.197 itens com `novo_paragrafo` no checkpoint
+(`reports/varredura_padronizacao/CHECKPOINT_IMPLANTA_V2.json`), se o
+texto original ("de") ainda existe dentro do escopo do próprio artigo
+(via `janelas()`, não no arquivo inteiro -- evita falso positivo de "de"
+aparecer legitimamente em outro artigo do mesmo livro).
+
+**Resultado: 1.113 itens, espalhados por 103 das 137 obras (75% do
+acervo), onde "de" ainda está lá -- ou seja, o texto CORRETO já estava
+calculado no checkpoint, mas nunca chegou a ser escrito no corpus.**
+Lista completa das 103 obras salva em
+`reports/varredura_padronizacao/OBRAS_COM_ITENS_NAO_APLICADOS.json`.
+
+**Confirmado com um caso real, não é falso positivo do script de
+auditoria**: `19350000-観音講座　（１～７）.txt` artigo 2 tem, no texto
+atual, "foi informado por Kannon-Sama-Sama" (o mesmo bug de termo escrito
+duas vezes já catalogado antes neste projeto). O checkpoint já tinha a
+correção calculada e aprovada: `de='foi informado por Kannon-Sama-Sama'`,
+`para='foi informado por Kannon-Sama'`, `novo_paragrafo` com o texto já
+certo (`'...foi informado por Kannon-Sama. Amida e Shakyamuni...'`). A
+correção nunca foi gravada -- confirmado lendo o arquivo diretamente,
+não só confiando no script.
+
+### Causa raiz mais provável (hipótese fundamentada, não 100% confirmada)
+
+`aplicar_resultados()` (`scripts/implanta_semantico_v2.py`, usada pela
+aplicação ORIGINAL do checkpoint, antes de todo o trabalho de hoje com
+`mescla_e_aplica.py`) aplica os itens de uma obra em ordem descendente de
+artigo, um de cada vez, com `texto[lim2[0]:lim2[1]].count(it["de"]) != 1`
+como guarda -- se um artigo tem MAIS de uma correção, aplicar a primeira
+(reescrevendo o parágrafo inteiro) pode fazer a segunda não encontrar
+mais o "de" dela no parágrafo já modificado (`lim2 is None`), e o item é
+**silenciosamente pulado** (`continue`, com um log genérico "PULADO na
+gravação (mudou)" que eu nunca tinha conferido sistematicamente até
+agora). É a MESMA classe de bug de colisão de correções no mesmo
+parágrafo já documentada e corrigida hoje (ver seção "A virada de
+método" mais acima) -- só que aqui o sintoma não é âncora quebrando (que
+eu já tinha caçado e corrigido via as "18 obras revertidas"), é
+**perda silenciosa sem nenhum erro visível**, em obras que nunca
+apareceram como "revertidas" porque o resto da obra escreveu bem o
+suficiente pra passar no `split_by_anchors` final.
+
+**Não fica 100% provado que essa é a única causa** -- pode haver mais de
+um mecanismo (ex.: itens de obras que passaram por múltiplos ciclos de
+revert/reaplica ao longo do dia podem ter se perdido de formas
+diferentes). O importante pra quem retomar: **não presumir a causa,
+confirmar de novo se for investigar mais peculiaridades** -- o que já
+está bem confirmado é o SINTOMA (1.113 itens não aplicados) e que o
+MÉTODO DE CORREÇÃO (`mescla_e_aplica.py`) já resolve isso de forma
+comprovada.
+
+### O método de correção já validado, mas NÃO terminado
+
+`scripts/mescla_e_aplica.py` (já existente, criado mais cedo hoje para as
+8 obras travadas) lê o checkpoint inteiro, filtra pela obra pedida, e
+**automaticamente ignora itens cujo "de" já não existe mais** (porque
+`agrupa_por_span()`/`paragrafo()` não encontra o trecho e descarta o
+item) -- ou seja, rodar de novo contra TODAS as 103 obras é seguro: os
+itens já aplicados corretamente são ignorados sozinhos, só os 1.113
+faltantes são processados. **Testado e confirmado nesta sessão**: rodado
+em modo ensaio só contra `観音講座` -- achou exatamente **14 grupos**,
+batendo com os 14 itens que a auditoria tinha apontado como não
+aplicados para essa obra especificamente.
+
+**O que NÃO deu tempo de fazer**: rodar isso contra as 103 obras de
+verdade. Cheguei a disparar o ensaio completo (`ThreadPoolExecutor` com
+`max_workers=4`, os mesmos usados no resto do dia) contra as 103 de uma
+vez, mas **matei o processo antes de terminar** (o usuário pediu pra
+parar tudo). Como era modo ENSAIO (sem `--aplicar`), matar o processo
+**não escreveu nada no disco** -- confirmado depois com
+`auditoria_final_completa.py` rodado de novo: 137/137 obras continuam
+íntegras, 0 quebradas, 0 dessincronizadas. **O corpus está num estado
+seguro e consistente, só ainda com as 1.113 correções pendentes.**
+
+### Arquivos/scripts preparados para retomar (nenhum commitado ainda)
+
+- `scripts/auditoria_final_completa.py` -- roda as 3 checagens descritas
+  acima. Rodar de novo a qualquer momento pra reconferir o estado real
+  (não confiar neste documento se muito tempo tiver passado sem rodar de
+  novo).
+- `reports/varredura_padronizacao/OBRAS_COM_ITENS_NAO_APLICADOS.json` --
+  lista das 103 obras afetadas (pode estar desatualizada se alguém já
+  tiver corrigido algumas -- regenerar rodando a checagem 2 da auditoria
+  de novo, é barato, não usa API).
+- `scripts/roda_mescla_103.py` + `/tmp/mescla103_args.json` -- **o
+  `/tmp/mescla103_args.json` não sobrevive entre sessões**, foi só uma
+  forma prática de passar 103 nomes de arquivo com caracteres japoneses
+  pro subprocess sem problema de quoting do shell. Pra retomar, o jeito
+  mais direto é reconstruir a lista de argumentos a partir do JSON salvo
+  (durável) em `reports/varredura_padronizacao/OBRAS_COM_ITENS_NAO_APLICADOS.json`
+  -- ver comando abaixo.
+
+### Comando exato para retomar
+
+```bash
+source venv/bin/activate
+
+# 1. reconfirma o estado atual (recomendado, é rápido e não usa API)
+python3 scripts/auditoria_final_completa.py
+
+# 2. reconstrói a lista de argumentos a partir do JSON durável e roda o
+#    ensaio primeiro (nunca pular direto pro --aplicar)
+python3 -c "
+import json, subprocess
+obras = json.load(open('reports/varredura_padronizacao/OBRAS_COM_ITENS_NAO_APLICADOS.json', encoding='utf-8'))
+args = ['python3', 'scripts/mescla_e_aplica.py',
+        'reports/varredura_padronizacao/CHECKPOINT_IMPLANTA_V2.json'] + obras
+subprocess.run(args, check=False)
+"
+
+# 3. se o ensaio parecer coerente (números de grupo batendo com o
+#    esperado, 0 ou poucas pendências), rodar de novo com --aplicar
+#    (mesmo comando, adicionando '--aplicar' na lista de args)
+```
+
+**Considerar antes de rodar**: são 103 obras, algumas com dezenas de
+itens (世界救世教奇蹟集 sozinha tem 90) -- com `max_workers=4` (o padrão
+atual do script), isso pode levar muitas horas, no mesmo ritmo lento que
+já frustrou o usuário hoje (ver seção anterior, "momento de fricção").
+**Vale considerar subir `max_workers` em `mescla_e_aplica.py` linha ~259
+antes de rodar em escala** (são chamadas de API, gargalo de rede, não de
+CPU -- mais paralelismo deve ser seguro) -- **não fiz essa mudança
+ainda, fica pra quem retomar decidir e testar com cautela** (subir
+demais pode esbarrar em rate limit da API DeepSeek, nunca testado neste
+projeto com mais de ~8-10 workers simultâneos).
+
+### Depois que a reaplicação terminar
+
+1. Rodar `auditoria_final_completa.py` de novo -- checagem 2 (aplicação)
+   deve cair pra 0 (ou perto disso -- pode sobrar um resíduo pequeno de
+   itens genuinamente problemáticos, tipo o caso já documentado de
+   `世界救世教奇蹟集` art104 removendo o próprio título).
+2. Conferir estrutura (checagem 1) continua 137/137 -- `mescla_e_aplica.py`
+   já tem a mesma disciplina de nunca gravar se `split_by_anchors`
+   quebrar, então isso já devia estar garantido, mas confirmar mesmo
+   assim.
+3. **Só depois disso** considerar a auditoria "todos os ajustes foram
+   aplicados" como respondida de verdade -- até lá, a resposta honesta
+   pra pergunta do usuário é "não, 1.113 ainda faltavam, a correção está
+   em andamento".
+4. Commitar os scripts novos (`auditoria_final_completa.py`,
+   `roda_mescla_103.py` se ainda fizer sentido mantê-lo, e qualquer ajuste
+   feito em `mescla_e_aplica.py` como o de `max_workers`) e atualizar
+   este documento com o resultado final.
+
+### O que fazer se abrir uma sessão nova AGORA
+
+1. Ler esta seção inteira antes de qualquer coisa.
+2. Rodar `python3 scripts/auditoria_final_completa.py` pra confirmar que
+   o estado descrito aqui (137/137 estrutura OK, 1.113 pendentes de
+   aplicação) ainda bate -- **nada mudou desde que esta seção foi escrita
+   até a sessão fechar**, mas confirmar é barato e é a norma deste
+   projeto (nunca confiar em documentação sem reconferir o estado real).
+3. Seguir o "comando exato para retomar" acima.
+4. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 -- isso não muda até esse trabalho de reaplicação
+   fechar E o usuário autorizar promoção separadamente.
