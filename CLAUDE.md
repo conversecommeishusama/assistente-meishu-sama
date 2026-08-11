@@ -11899,7 +11899,7 @@ tudo que aparece em japonês nas minhas mensagens de análise é só para
 avaliação do usuário, nunca escreve no `.txt` do acervo (que só permite
 kanji nos casos do §5.1(b)/§5.2 do protocolo).
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia)
 
 1. **Pilha C: encerrada.** Etapas 3 (glossário) e 4/5 (leitura de
    fidelidade + arbitragem manual) do plano de revisão final estão
@@ -11911,3 +11911,89 @@ kanji nos casos do §5.1(b)/§5.2 do protocolo).
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada da revisão de tradução (glossário, pilha A/B/C)
    chegou lá ainda.
+
+## Atualização 2026-08-11 (mesmo dia) — achado real: a pilha C fechada
+## acima era só 555 de 768 casos; pilha A (4.539 correções unânimes)
+## nunca tinha sido aplicada — as duas resolvidas agora
+
+Usuário perguntou diretamente "tudo o que foi identificado na revisão pelos
+agentes deepseek foi ajustado? Não ficou nada pendente?" — a resposta, ao
+investigar de verdade (não de memória), era não. `scripts/triagem.py`
+(o script real de triagem dos três agentes DeepSeek — DS1, DS2, desafiador
+— sobre os 5.585 achados GRAVE/MEDIO confirmados pela verificação
+adversarial) mostrou um quadro bem maior do que a sessão anterior tinha
+fechado:
+
+| pilha | qtd | estado achado |
+|---|---:|---|
+| A — os três concordam, aplica | 4.539 | nunca aplicada (script pronto, nunca rodado com `--aplicar`) |
+| A — "reformar" (erro real, correção proposta não serve) | 221 | pendente, sem decisão |
+| A — "sem ação" | 55 | não é pendência real |
+| C — desafiador derrubou / DS1≠DS2, vai pra mesa | 768 | só 555 (72%) tinham sido lidos — os 143 fechados na sessão anterior eram só a fração final desses 555 |
+| C — nunca lidos por ninguém | 213 | descoberto por comparação de chaves entre `triagem.py` e `RESOLVE_C_1.json` |
+
+### Pilha A aplicada — 4.495/4.539, com 6 obras exigindo reparo de âncora
+
+`scripts/aplicar_pilha_a.py --aplicar` (mesmas salvaguardas já
+documentadas no cabeçalho do script: trecho literal nunca regex, único
+dentro da janela do ARTIGO não do arquivo, nunca em âncora, backup +
+revalidação com reversão automática por obra, varredura de dano ao
+final). Resultado da 1ª rodada: 3.855 aplicadas, 44 puladas
+(ambiguidade de ocorrência), **6 obras revertidas por inteiro** (âncora
+quebrada): `19491130-自観叢書第8篇『明麿近詠集』`, `19520420-御教え集8号`,
+`19521215-御教え集16号`,
+`19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号`, `Eiko.txt`,
+`Tijotengoku.txt`.
+
+**Causa raiz investigada e confirmada nas 6, com bisseção fiel (usando a
+mesma lógica de janela por artigo do script real, não uma simplificação
+por arquivo inteiro — a 1ª tentativa de bisseção usava `.replace()` no
+arquivo todo e deu diagnóstico errado para o Tijotengoku)**: em todas,
+a âncora do artigo é um **prefixo de comprimento fixo** (60-120
+caracteres, truncado no meio de uma palavra ou frase) do próprio texto
+de abertura do artigo, e a correção aprovada altera texto bem na
+fronteira desse corte — nunca dentro da âncora inteira (o que o guard
+`e_ancora()` já verifica), mas na ponta truncada dela, que o guard não
+cobre. Confirmado que nenhuma das 6 correções em si era problemática —
+a mais estranha à primeira vista (Tijotengoku art33, "Neste Ano Novo" →
+frase inteira nova) é uma restauração legítima de um período do
+original que tinha sido omitido na tradução, inserida ANTES de "Neste
+Ano Novo", não uma substituição bizarra — conferido lendo o achado, o
+`jp_apoio` e os 3 vereditos (DS1/DS2/desafiador) antes de aceitar.
+
+`scripts/repara_pilha_a_revertidas.py` (novo): reaplica as correções das
+6 obras e, quando a verificação de âncora falha, regenera a `pt_anchor`
+do artigo afetado a partir do texto já corrigido — acha a posição pelo
+maior prefixo da âncora velha que ainda existe (e é único) no texto
+novo, recorta um trecho do mesmo tamanho (+60 de folga) a partir dali.
+Resultado: **640/640 aplicadas nas 6 obras**, todas as âncoras
+regeneradas revalidadas. Total final: **4.495 de 4.539 aplicadas**
+(3.855 + 640), **44 puladas** (mesma lista nas duas rodadas — ambiguidade
+de ocorrência dentro da janela do artigo, não decidido sozinho).
+
+**Verificação final**: 137 obras, 0 âncoras quebradas, 0
+dessincronizadas. Varredura de repetição (`REPETE`, a mesma assinatura
+do dano de 07/08 — termo escrito por cima de si mesmo) rodada duas vezes
+— **0 repetições novas** confirmado pela guarda embutida (compara
+antes/depois por obra) nas duas rodadas de aplicação; uma varredura
+minha mais ampla no acervo inteiro achou 99 repetições, mas são todas
+pré-existentes e majoritariamente legítimas (onomatopeia, "Nichi Nichi"
+= nome de jornal, a repetição retórica "é bom é bom / é ruim é ruim" já
+documentada em sessão anterior, título repetido como subtítulo).
+
+### Onde continuar
+
+1. **Pilha A: aplicada e íntegra.** Não é mais pendência.
+2. **Pendente, ainda não decidido**: os 221 casos "reformar" (erro real
+   confirmado pelos três agentes, mas a correção proposta não serve —
+   precisa reescrita, não é aplicação mecânica) e os **213 casos da
+   pilha C que nunca foram lidos por ninguém** (nem pela leitura em
+   dupla DS, nem manualmente). Rodar `python3 scripts/aplicar_pilha_a.py
+   --reformar` lista os 221; recalcular a pilha C completa via
+   `scripts/triagem.py --pilha C` e comparar contra
+   `RESOLVE_C_1.json`/`RESOLVE_C_2.json` acha os 213 que faltam.
+3. Pendente, já prometido ao usuário: **relatório único consolidado dos
+   143 casos da pilha C já decididos** — ainda não entregue.
+4. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada da revisão de tradução chegou lá ainda.
