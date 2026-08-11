@@ -12080,10 +12080,76 @@ atualização: 187 (convergentes automáticos) + 58 (residual manual) =
    leituras propõem soluções incompatíveis, risco de atribuir citação
    errada sem verificar as duas fontes diretamente.
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia)
 
 1. Trazer os 6 USUARIO acima ao usuário, japonês+português lado a lado
    (mesmo método já confirmado nesta sessão).
+2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada da revisão de tradução chegou lá ainda.
+
+## Atualização 2026-08-11 (mesmo dia) — aprofundamento dos 6 USUARIO:
+## 4 resolvidos de verdade, 2 continuam genuinamente ambíguos
+
+Usuário pediu para aprofundar antes de trazer os 6 casos. Investigado um
+a um, lendo mais contexto do que o dossiê original mostrava:
+
+1. **`19550625-...10号.txt` art2 (citações 21号/24号)** — RESOLVIDO.
+   Nenhum dos dois leitores tinha visto o quadro completo. Lendo o
+   japonês bruto linhas 27-40 do arquivo de trabalho: não é só o
+   parágrafo de 21号/6 (延髄) que falta — as 4 citações seguintes
+   (24/49, 32/22, 32/30, 32/39) também estão deslocadas uma posição,
+   porque a ausência desse primeiro parágrafo empurrou tudo. Cada bloco
+   de texto já estava correto e completo, só com a etiqueta de citação
+   do parágrafo ANTERIOR. Confirmado comparando cada bloco PT contra o
+   JP correspondente frase a frase — nada duplicado, nada perdido além
+   do parágrafo do 延髄. Inserido esse parágrafo, as 4 citações
+   corrigidas. Aplicado, âncora OK.
+2. **`19511215-御教え集4号.txt` art4 (gênero do narrador)** — RESOLVIDO.
+   Lido o testemunho inteiro (não só o trecho): só existem 3 ocorrências
+   de gênero marcado no artigo todo, todas femininas, todas no mesmo
+   parágrafo de abertura. Sem menção a cônjuge em lugar nenhum;
+   profissão (電気技師, engenheiro eletricista) fortemente masculina nos
+   anos 1940-50 no Japão. Corrigidas as 3 juntas para masculino —
+   resolve a inconsistência por completo, não deixa nenhuma sobrando.
+   Aplicado, âncora regenerada (mesmo padrão de truncamento de hoje).
+3. **`19490108-御光話録2号.txt` art4 (turno de Cristo)** — RESOLVIDO.
+   Confirmada a fronteira exata: a fala do Interlocutor termina em
+   "...nos itens a seguir."; a citação de Cristo abre a fala de
+   Meishu-Sama, antes de "Isso é bom." Construída a correção atravessando
+   a fronteira de turno (span único no arquivo). Aplicado, âncora OK.
+4. **`19510130-笑の泉.txt` art40 (rubrica de poema)** — RESOLVIDO como
+   MANTER. Verificados os poemas vizinhos (651, 656, 657) da mesma
+   coletânea: todos têm a rubrica de autor posicionada literalmente onde
+   a LINHA 1 do japonês termina, mesmo quando isso cai no meio da frase
+   em português (ex. poema 656: "...ela estica o traseiro — Momotarō e
+   solta um pum"). É a convenção estabelecida da coletânea inteira — o
+   texto atual do 654 já segue esse padrão. Mudar só este poema criaria
+   inconsistência com dezenas de outros. Nada corrigido.
+5. **`Medicina_do_Amanha.txt` art11 (voz de Stahl)** — continua USUARIO.
+   Achado real: a frase seguinte ("したがって彼は...") usa 彼は (ele) em
+   3ª pessoa referindo a Stahl, confirmando que a citação fecha ANTES
+   dela (Stahl não se refere a si mesmo em 3ª pessoa numa citação
+   direta). Mas isso não desempata a frase em disputa em si — o marcador
+   のである aparece tanto dentro do que é claramente de Stahl quanto em
+   comentário do narrador noutros pontos do mesmo texto, não é indicador
+   confiável aqui. Baixo impacto (nuance de citação em texto expositivo
+   sobre teoria médica histórica, não doutrina).
+6. **`19530101-アメリカを救う.txt` art53 (romanização 江畠)** — continua
+   USUARIO. Pesquisa externa: sobrenome raro (~800 pessoas no Japão), com
+   as duas leituras (Ebata/Ehata) genuinamente atestadas em dicionário de
+   sobrenomes, concentrado em Akita/Ibaraki/Niigata — nenhuma dessas
+   províncias bate com a da autora (Ōita), a distribuição geográfica não
+   ajuda a desempatar.
+
+**Verificação final**: 137 obras, 0 âncoras quebradas, 0
+dessincronizadas.
+
+### Onde continuar
+
+1. Trazer os **2 casos genuinamente ambíguos** (Stahl, 江畠) ao usuário
+   — os outros 4 já foram resolvidos e aplicados, não precisam mais de
+   decisão dele.
 2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada da revisão de tradução chegou lá ainda.
