@@ -11981,7 +11981,7 @@ pré-existentes e majoritariamente legítimas (onomatopeia, "Nichi Nichi"
 = nome de jornal, a repetição retórica "é bom é bom / é ruim é ruim" já
 documentada em sessão anterior, título repetido como subtítulo).
 
-### Onde continuar
+### Onde continuar (SUPERADO — ver seção seguinte, mesmo dia)
 
 1. **Pilha A: aplicada e íntegra.** Não é mais pendência.
 2. **Pendente, ainda não decidido**: os 221 casos "reformar" (erro real
@@ -11995,5 +11995,95 @@ documentada em sessão anterior, título repetido como subtítulo).
 3. Pendente, já prometido ao usuário: **relatório único consolidado dos
    143 casos da pilha C já decididos** — ainda não entregue.
 4. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
+   reinício de produção sem autorização explícita.** Produção serve o
+   índice de 06/08 — nada da revisão de tradução chegou lá ainda.
+
+## Atualização 2026-08-11 (mesmo dia) — relatório dos 143 publicado; os
+## 213 nunca lidos + os 221 reformar tratados: 245 correções a mais
+
+### Relatório dos 143
+
+Publicado como artifact (favicon 📜, filtro por decisão e busca):
+`https://claude.ai/code/artifact/da43957b-3b53-443d-9607-0202c21a3318`.
+Cada caso mostra trecho original, texto decidido, as duas leituras que
+motivaram a leitura manual, e a nota final.
+
+### 213 (pilha C nunca lidos) e 221 (reformar) — mesmo pipeline dos
+### 555/143 anteriores, generalizado em vez de reescrito
+
+`resolve_pilha_c_lote.py` e `compara_resolucoes_c.py` viram módulos
+reaproveitados (`resolve_pilha_c_213.py`, `resolve_reformar_221.py`,
+`compara_213.py`, `compara_reformar.py` — wrappers finos que só trocam os
+arquivos de entrada/saída). Duas leituras independentes + comparador:
+
+- **213**: 205/213 resolvido nas duas leituras, 0 PRECISA_USUARIO nas
+  duas. 179 CONCORDAM.
+- **221 (reformar)**: 214/221 resolvido nas duas, 1 PRECISA_USUARIO nas
+  duas. 182 CONCORDAM.
+
+**Aplicação dos convergentes** (`aplica_213.py`/`aplica_reformar.py`,
+mesma mecânica de `aplica_resolucoes_c.py`): 139/205 (213) + 48/214
+(reformar) = **187 aplicadas** na 1ª passada. O lote "reformar" tinha
+alta concentração do mesmo padrão de âncora truncada já visto na pilha A
+(ver seção anterior) — `repara_convergentes_ancora.py` (generalização de
+`repara_pilha_a_revertidas.py` para o formato `emenda()`) recuperou a
+maioria; **12 obras (19 itens) ficaram sem aplicar** por âncora não
+regenerável mesmo depois do reparo — revertidas com segurança, sem dano.
+
+### Os 73 casos que restaram (DIVERGEM ou nunca convergiram) — lidos um
+### a um por mim, mesmo método dos 143
+
+`dossies_residual.py`/`decide_residual.py` (generalização de
+`dossies_mesa_c.py`/`decide_mesa_c.py` para as duas fontes). **73/73
+decididos**: 33 A, 30 B, 6 USUARIO, 4 MANTER.
+
+**Achado de processo real**: `aplica_residual.py` (mesma mecânica com
+`emenda()` do DeepSeek reescrevendo o parágrafo) rodou 0/19 aceitas em
+ensaio — a leitura manual já tinha escolhido, caso a caso, o texto MAIS
+CURTO que evita duplicar conteúdo adjacente já correto (a armadilha de
+encaixe, repetida dezenas de vezes nesta sessão) — exatamente os casos
+que MENOS precisam de "reescrita coerente" e mais sofrem com ela (a
+guarda `contido()`, margem de 60 caracteres, rejeitava a extensão que
+`emenda()` insistia em fazer). Substituído por
+`aplica_residual_literal.py` (substituição literal direta — a leitura
+semântica já tinha sido feita por mim, não precisa passar pelo DeepSeek
+de novo) + `repara_residual_ancora.py` (mesmo reparo de âncora de sempre
+para os que quebraram). **58/58 decisões A/B/OUTRO aplicadas e
+confirmadas no corpus.**
+
+### Verificação final
+
+137 obras, **0 âncoras quebradas, 0 dessincronizadas**. Total desta
+atualização: 187 (convergentes automáticos) + 58 (residual manual) =
+**245 correções a mais** além das 143 já fechadas antes.
+
+### 6 casos USUARIO finais — para você decidir
+
+1. `19510130-笑の泉.txt` art40 — posição do rótulo de autor (孑孑/Bōfura)
+   antes ou depois de um parêntese de réplica — convenção editorial, sem
+   como desempatar com confiança.
+2. `19511215-御教え集4号.txt` art4 — gênero do narrador (電気技師, neutro
+   em japonês) — há MAIS de uma ocorrência de gênero misto no mesmo
+   parágrafo, corrigir só uma pioraria a inconsistência.
+3. `Medicina_do_Amanha.txt` art11 — atribuição de voz genuinamente
+   ambígua (continuação de fala citada ou conclusão do próprio autor) —
+   baixo impacto de conteúdo.
+4. `19490108-御光話録2号.txt` art4 — bug real de atribuição de turno
+   (confirmado), mas o conserto exige mover texto pro OUTRO lado da
+   fronteira de turno — não cabe em troca de trecho literal, precisa
+   reparo estrutural manual.
+5. `19530101-アメリカを救う.txt` art53 — romanização do sobrenome 江畠
+   (Ehata/Ebata) genuinamente ambígua, sem furigana nem outra ocorrência
+   no acervo para desempatar.
+6. `19550625-...10号.txt` art2 — disputa estrutural real: qual citação
+   (御教え集21号6頁 ou 24号49頁) pertence a qual bloco de texto — as duas
+   leituras propõem soluções incompatíveis, risco de atribuir citação
+   errada sem verificar as duas fontes diretamente.
+
+### Onde continuar
+
+1. Trazer os 6 USUARIO acima ao usuário, japonês+português lado a lado
+   (mesmo método já confirmado nesta sessão).
+2. Continua valendo, sem exceção: **nenhuma promoção, reindexação ou
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 — nada da revisão de tradução chegou lá ainda.
