@@ -502,10 +502,24 @@ def clean_body(text: str) -> str:
         # como "岡田茂吉全集...") vazavam para o texto limpo/indexado.
         # Checagem agora roda sobre a linha só com espaço removido, antes de
         # clean_heading() mexer nela.
-        if raw_check in {"#E", "#S"} or raw_check.startswith("#K") or raw_check.startswith("#W"):
+        if (raw_check in {"#E", "#S"} or raw_check.startswith("#K")
+                or raw_check.startswith("#W") or raw_check.startswith("#T")):
             continue
-        stripped = clean_heading(raw)
-        if re.fullmatch(r"[─ー\-—–]{5,}", stripped):
+        # BUG REAL CONFIRMADO 2026-08-11: a linha divisória pura (só
+        # "─"/"-"/"—" repetidos) checava contra `clean_heading(raw)`, que
+        # aplica `.strip("#-—–─: ")` -- pra uma linha feita 100% desses
+        # caracteres, isso zera a string inteira. `fullmatch` numa string
+        # vazia nunca bate com "{5,}", então a linha nunca era reconhecida
+        # como divisor e sobrevivia intacta (achado em 天国の福音書/信仰雑話,
+        # 735/630 divisórias vazando pro texto limpo). Checa contra
+        # `raw_check` (só rstrip/strip, sem clean_heading) em vez disso.
+        if re.fullmatch(r"[─ー\-—–]{5,}", raw_check):
+            # a divisória cumpria a função de separar título/citação/corpo
+            # em blocos -- removê-la sem deixar rastro colava os três num
+            # "\n" só, quando o resto do acervo usa "\n\n" entre eles
+            # (mesmo padrão de 自観説話集, a referência citada em 04/08).
+            # Uma linha vazia no lugar dela produz o "\n\n" de volta.
+            cleaned.append("")
             continue
         cleaned.append(raw)
     text = "\n".join(cleaned)
