@@ -83,6 +83,13 @@ referência do Zenshū/Rokkan estão em
   backup + validação de âncora. Dados de apoio em
   `reports/varredura_padronizacao/VERIFICACAO_DEEPSEEK_PILHA_A.json` e
   `VERIFICACAO_DEEPSEEK_TRECHOS.json`.
+  - O laço (`scripts/run_correcoes_213_loop.sh`) **regenera** a fila a cada
+    iteração via `scripts/gera_fila_correcoes_213.py`, que deriva `done` do
+    `PROGRESSO_CORRECOES_MANUAIS.md`. Registrar cada caso no formato
+    `- **Caso N** (obra, art. X): ...` com um status literal (GRAVADO / sem ação
+    / já-correto / REJEITADA / DUVIDA) — é isso que o gerador lê. O gerador
+    também preserva o `done` da fila em disco (item processado nunca volta a
+    `pending`).
 - Corpus: `livros_publicacao_pt_revisado/` (fonte de verdade PT),
   `reports/livros_trabalho/{pt,jp}/` (staging), `textos_portugues/`/
   `textos_japones/` (produção). Verificação de segmentação real:
