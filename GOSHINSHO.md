@@ -90,11 +90,18 @@ referência do Zenshū/Rokkan estão em
     / já-correto / REJEITADA / DUVIDA) — é isso que o gerador lê. O gerador
     também preserva o `done` da fila em disco (item processado nunca volta a
     `pending`).
-  - **ESTADO 2026-08-12 (final da manhã)**: loop autônomo na tmux
-    `correcoes_213` rodando via `claude -p` (independente do chat). ~41/213
-    processados (o número exato vive em `CORRECOES_213_QUEUE.json`). Método
-    validado: lê JP, decide pelo sentido, backup + `valida_ancoras`, grava
-    fonte+staging, registra no progresso.
+  - **ESTADO 2026-08-12 (tarde)**: os **213 casos foram processados até o fim**
+    pelo loop autônomo (0 pending / 197 done + 16 anteriores). Resultado: **101
+    correções GRAVADAS** (backup + `valida_ancoras`), **117 verificados como
+    já-correto** (recortes enganosos da verificação rejeitados pelo agente), 3
+    dúvidas (a do caso 34 foi resolvida pela restauração do 笑の泉). Reverificação
+    final: fonte=staging e âncoras OK nos 54 arquivos tocados.
+  - **Âncoras de segmentação corrigidas** (2026-08-12): 奇蹟集 arts. 19/20/21 e
+    アメリカを救う art. 10 (pt_anchor apontando para assinatura/data em vez do
+    título). Pendência 185 (信仰雑話) corrigida (ordem Ubusunagami/Ujigami).
+  - **Pendências abertas**: padronização de glossário `俵`→saca/saco (classe
+    aberta), classe de reversões silenciosas de 11/08 (investigar), revisão
+    final do lote completo.
   - **ESTADO 2026-08-12 (noite)**: 74/213 na fila (casos 75–77). 1 gravado
     (御教え集16号 art. 5: 「これは…無理はないのですが」 lido como "não há como culpar
     ninguém" com sujeito ambíguo → "Isso é compreensível, pois eu não havia dito a
