@@ -95,6 +95,14 @@ referência do Zenshū/Rokkan estão em
     processados (o número exato vive em `CORRECOES_213_QUEUE.json`). Método
     validado: lê JP, decide pelo sentido, backup + `valida_ancoras`, grava
     fonte+staging, registra no progresso.
+  - **ESTADO 2026-08-12 (noite)**: 74/213 na fila (casos 75–77). 1 gravado
+    (御教え集16号 art. 5: 「これは…無理はないのですが」 lido como "não há como culpar
+    ninguém" com sujeito ambíguo → "Isso é compreensível, pois eu não havia dito a
+    verdade; mas o fato é que…"); 2 sem ação — アメリカを救う art. 18 (proposta
+    rejeitada: "deixando de X" **pressupõe** o X anterior, o 「〜していたのを」 do JP
+    não foi negado) e 御教え集16号 art. 2 (recorte enganoso: 「日本が世界を救うのだ」
+    já estava no PT). **Lição recorrente**: proposta que acusa "omissão" costuma ser
+    artefato do recorte `final`; conferir sempre a linha inteira no disco antes.
   - **ESTADO 2026-08-12 (tarde)**: 71/213 na fila (casos 72–74 feitos no chat).
     Achados de classe em `19521201-結核信仰療法.txt`, todos já corrigidos: 12
     artigos sem a linha de fonte 『結核の革命的療法』 (restaurada), 1 cabeçalho
