@@ -95,6 +95,17 @@ referência do Zenshū/Rokkan estão em
     processados (o número exato vive em `CORRECOES_213_QUEUE.json`). Método
     validado: lê JP, decide pelo sentido, backup + `valida_ancoras`, grava
     fonte+staging, registra no progresso.
+  - **ESTADO 2026-08-12 (tarde)**: 71/213 na fila (casos 72–74 feitos no chat).
+    Achados de classe em `19521201-結核信仰療法.txt`, todos já corrigidos: 12
+    artigos sem a linha de fonte 『結核の革命的療法』 (restaurada), 1 cabeçalho
+    truncado no meio da palavra + endereço perdido (art. spec 10), 1 fonte
+    posicionada antes do título (art. spec 113 — `pt_anchor` reapontada na spec).
+    **Lição**: a linha de fonte/endereço do depoimento é conteúdo, e some sem
+    quebrar âncora nem contagem de artigos — só a comparação JP↔PT por artigo pega.
+  - **Pendência de termo (aberta)**: 祀る aparece como "adorar/adoração" em
+    19521201-結核信仰療法, enquanto `glossario_traducao.json` define
+    "sufragar (espíritos) / cultuar (divindades)" — "sufragar" tem 150
+    ocorrências no corpus revisado e 0 nesse livro. Merece passada própria.
   - **PERDA DE CONTEÚDO EM 笑の泉 — CORRIGIDA (2026-08-12)**: o revisado tinha
     perdido 61 itens numerados (blocos 616-654, 816-826, 965-975) numa passada
     automática pós-11/08 14:07. Restaurados a partir do backup
