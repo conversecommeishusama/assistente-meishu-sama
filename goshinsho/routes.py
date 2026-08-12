@@ -99,7 +99,7 @@ SUBSCRIPTION_EXPLANATION = (
 )
 
 # 2026-07-30: único sistema de acesso passou a ser premium gratuito (ver
-# CLAUDE.md) -- o cartão de crédito (Stripe) deixou de ser um portão de
+# GOSHINSHO.md) -- o cartão de crédito (Stripe) deixou de ser um portão de
 # acesso e virou doação voluntária, avulsa ou recorrente. Valores sugeridos
 # nos botões da página /doacao; o usuário também pode digitar outro valor.
 DONATION_SUGGESTED_AMOUNTS_AVULSA = [20, 50, 100]
@@ -294,7 +294,7 @@ def _friendly_error(exc):
 def _guest_quota_status():
     # 2026-07-30: único sistema de acesso é "premium gratuito" -- cadastro
     # já concede perguntas ilimitadas para sempre, sem período de teste nem
-    # necessidade de assinatura paga depois (ver CLAUDE.md).
+    # necessidade de assinatura paga depois (ver GOSHINSHO.md).
     return {
         "plan": "cadastro_necessario",
         "label": "Cadastro necessário",
@@ -653,7 +653,7 @@ def aviso_independencia():
 @web_bp.get("/assinatura")
 def assinatura():
     # 2026-07-30: assinatura paga foi substituída por doação voluntária --
-    # único sistema de acesso agora é premium gratuito (ver CLAUDE.md).
+    # único sistema de acesso agora é premium gratuito (ver GOSHINSHO.md).
     # Redirecionamento de compatibilidade para links/favoritos antigos.
     return redirect(url_for("web.doacao"))
 
@@ -1027,7 +1027,7 @@ def api_chat():
     expand_anchor_answer = (payload.get("expand_anchor_answer") or "").strip()
     # 2026-08-03: modo "Direta" (padrão, sem citação literal) vs. "Com
     # citações" (formato antigo, com trecho literal + [arquivo.txt]) do
-    # modo agêntico -- ver CLAUDE.md. `cite_sources` é o botão de ícone
+    # modo agêntico -- ver GOSHINSHO.md. `cite_sources` é o botão de ícone
     # "Refazer com citações": não muda o modo escolhido pelo usuário,
     # refaz a última pergunta forçando com_citacoes=True.
     citation_mode = (payload.get("citation_mode") or "direta").strip().lower()
@@ -1083,7 +1083,7 @@ def api_chat():
         return limited
     # 2026-08-03: freio de mão automático por custo -- teto de gasto diário
     # com a API DeepSeek (ver cost_guard_service.py, plano de escala em
-    # CLAUDE.md). Único freio além do rate limit acima; aplica-se a toda
+    # GOSHINSHO.md). Único freio além do rate limit acima; aplica-se a toda
     # conta, sem exceção, mesmo developer -- é uma rede de segurança contra
     # abuso/loop descontrolado, não uma cota de plano.
     cap_status = cost_cap_status()

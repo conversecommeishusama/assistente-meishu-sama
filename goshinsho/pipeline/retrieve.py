@@ -480,7 +480,7 @@ def retrieve(
         # Fix real: sem busca nenhuma -- consulta DIRECTA ao marcador de
         # fontes gravado na própria resposta anterior (ver
         # conversation_context.append_source_marker/most_recent_answer_sources,
-        # CLAUDE.md secção 8/9) -- determinístico, não depende de busca nova
+        # GOSHINSHO.md secção 8/9) -- determinístico, não depende de busca nova
         # nem da variação natural do texto gerado.
         #
         # state.last_answer_sources vem na ordem de _select_for_llm do

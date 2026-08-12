@@ -18,7 +18,7 @@ _USAGE_CONTEXT = contextvars.ContextVar("deepseek_usage_context", default={})
 # código nunca lia os campos de cache (prompt_cache_hit_tokens) que a API
 # retorna, e o modo agenciado reenvia um prefixo quase idêntico a cada
 # rodada de ferramenta, um padrão que a DeepSeek desconta pesado via cache
-# de contexto em disco (ver CLAUDE.md, sessão 2026-07-30). Sem o
+# de contexto em disco (ver GOSHINSHO.md, sessão 2026-07-30). Sem o
 # detalhamento exato de hit/miss por chamada, a forma honesta de reportar
 # é uma única taxa "blended" calibrada contra a fatura real, aplicada
 # igualmente a tokens de entrada e saída -- não uma tabela de preço de

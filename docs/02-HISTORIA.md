@@ -4,7 +4,7 @@ De onde viemos, como chegamos até aqui, e que dificuldades reais moldaram
 as regras que hoje regem o projeto. Datas e commits vêm do histórico real
 do git (`git log`) onde existe; a fase mais recente (o trabalho sobre o
 acervo, a partir de julho) não é versionada em git — seu registro vive em
-`CLAUDE.md`, nos ficheiros `PENDENCIAS_REVISAO.json` /
+`GOSHINSHO.md`, nos ficheiros `PENDENCIAS_REVISAO.json` /
 `*_AUDIT_TRAIL.json` de cada livro, e na memória de sessão acumulada dos
 agentes que trabalharam nela.
 

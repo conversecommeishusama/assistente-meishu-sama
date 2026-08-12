@@ -1,5 +1,5 @@
 """Freio de mão automático por custo (2026-08-03) -- ver plano de escala em
-CLAUDE.md. Única proteção contra gasto descontrolado de IA além do rate
+GOSHINSHO.md. Única proteção contra gasto descontrolado de IA além do rate
 limit por conta: um teto de gasto diário (Config.DAILY_COST_CAP_USD) com a
 API DeepSeek. Ao ser atingido, novas perguntas são bloqueadas até o dia
 seguinte (UTC) e um único e-mail de alerta é enviado ao responsável no

@@ -15,7 +15,7 @@
 ## 1. Contexto — por que migrar
 
 O sistema de busca por embedding, ao longo de toda esta sessão longa
-(ver `CLAUDE.md`), acumulou uma quantidade grande de bugs estruturais no
+(ver `GOSHINSHO.md`), acumulou uma quantidade grande de bugs estruturais no
 reconhecimento de artigo/título: tokenização descartando números,
 substring sem fronteira de palavra, 99% do acervo invisível ao modo
 "artigo completo" até hoje, trava de escopo em conversas longas, e —
@@ -186,7 +186,7 @@ diretamente à nova ferramenta:
 
 `buscar_artigo_por_titulo` usa `find_best_article`/`load_article_chunks`
 — ou seja, os 6 bugs corrigidos hoje mesmo (reconhecimento de 116→3.788
-artigos, desambiguação de título repetido, etc., ver `CLAUDE.md` sessão
+artigos, desambiguação de título repetido, etc., ver `GOSHINSHO.md` sessão
 "promoção 139 obras") já beneficiam a arquitetura nova de graça. Isso
 significa que **não é preciso refazer o trabalho de segmentação/título**
 — só a camada de busca por palavra-chave (grep) e o laço agenciado são

@@ -1,5 +1,5 @@
 """Resumo de doações (Stripe) para o dashboard admin -- sem tabela local
-própria (ver CLAUDE.md: cartão de crédito virou doação voluntária em
+própria (ver GOSHINSHO.md: cartão de crédito virou doação voluntária em
 2026-07-30, checkout grava só metadata na sessão Stripe, nenhum webhook
 persiste doação no banco). Consulta a API do Stripe diretamente, com
 paginação e filtro de período, e atribui cada doação a uma conta cadastrada

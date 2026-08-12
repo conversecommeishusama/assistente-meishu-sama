@@ -37,7 +37,7 @@ de produção dos achados corrigíveis do piloto, ver
   é o CONTEÚDO (texto) já ter aparecido antes, não o arquivo. Validado com
   2 pares de controle sem relação temática com o achado original antes de
   reconfirmar os turnos 3/4 -- ver `reports/agentic_search_orcamento/
-  VALIDACAO.json` e a seção correspondente do CLAUDE.md.
+  VALIDACAO.json` e a seção correspondente do GOSHINSHO.md.
 - §3.10 (achado 2026-07-30, causa raiz real por trás do §3.9): o usuário
   apontou que ajustar o limiar de rodadas não resolve o problema de fundo --
   o modelo nunca reconhece que a busca se esgotou porque toda reformulação

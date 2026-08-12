@@ -61,11 +61,11 @@ foram tocados nesta reorganização.
 - `.cursor/rules/*.mdc` — continuam sendo a fonte operacional que um hook
   de editor de fato aplica; esta documentação sintetiza os princípios que
   elas expressam, mas não as substitui.
-- Documentos operacionais do pipeline de corpus (`CLAUDE.md`,
+- Documentos operacionais do pipeline de corpus (`GOSHINSHO.md`,
   `PROTOCOLO_*.md`, filas `*_QUEUE.json`, `PENDENCIAS_REVISAO.json`) —
   continuam sendo lidos e escritos ao vivo pelos processos autônomos em
   execução; não foram tocados.
-- `CLAUDE.md` na raiz continua sendo o documento de handoff operacional
+- `GOSHINSHO.md` na raiz continua sendo o documento de handoff operacional
   entre sessões de trabalho no pipeline de corpus — esta pasta `docs/` não
   o substitui, é um nível acima (a história e os princípios por trás do
-  que o `CLAUDE.md` registra dia a dia).
+  que o `GOSHINSHO.md` registra dia a dia).

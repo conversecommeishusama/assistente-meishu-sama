@@ -10,7 +10,7 @@ Perguntas 1-4: mesmas do piloto v3 (câncer, hora das bruxas, plano
 espiritual, correlação animal/espírito secundário).
 
 Perguntas 5-10: 6 perguntas historicamente problemáticas, documentadas em
-CLAUDE.md -- as 4 primeiras (5-8) reproduzem a sequência real que travava
+GOSHINSHO.md -- as 4 primeiras (5-8) reproduzem a sequência real que travava
 o escopo em conversas longas (trava de escopo corrigida em 2026-07-29);
 as últimas 2 (9-10) reproduzem o bug do marcador de fontes estruturado
 ("me forneça a fonte original na íntegra" puxando ensinamento errado,

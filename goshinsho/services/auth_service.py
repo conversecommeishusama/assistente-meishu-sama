@@ -246,7 +246,7 @@ def _ensure_usuario_profile(supabase, auth_user, *, defaults=None):
             "email": auth_user.email,
             # 2026-07-30: único sistema de acesso passou a ser "premium
             # gratuito" -- todo cadastro novo já nasce premium (decisão do
-            # usuário, ver CLAUDE.md). O cartão de crédito (Stripe) deixou
+            # usuário, ver GOSHINSHO.md). O cartão de crédito (Stripe) deixou
             # de ser um portão de acesso e virou doação voluntária.
             "plano": profile.get("plano") or "premium",
             "perguntas_restantes": profile.get("perguntas_restantes", 5),
@@ -322,7 +322,7 @@ def describe_user_access(user, now=None):
 
     2026-07-31: mecanismo de "período de experiência" (3 dias com
     perguntas ilimitadas antes de precisar assinar) removido -- único
-    sistema de acesso agora é premium gratuito (ver CLAUDE.md). Campos
+    sistema de acesso agora é premium gratuito (ver GOSHINSHO.md). Campos
     `is_trial`/`trial_days_remaining`/`trial_hours_remaining`/`trial_ends_at`
     mantidos na forma da resposta (sempre False/None) só para não quebrar
     quem já lê esse formato (ex. admin dashboard), não porque o conceito
@@ -544,7 +544,7 @@ def update_subscription_plan(user_id, plan="premium", remaining=None):
 
 
 def check_question_quota(user):
-    # 2026-07-31: único sistema de acesso é premium gratuito (ver CLAUDE.md)
+    # 2026-07-31: único sistema de acesso é premium gratuito (ver GOSHINSHO.md)
     # -- toda conta (existente ou nova) já é criada com plano="premium", que
     # is_premium_user() reconhece e devolve acesso ilimitado abaixo. O ramo
     # de cota mensal/perguntas_restantes que segue é um fallback defensivo

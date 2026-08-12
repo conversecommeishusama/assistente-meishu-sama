@@ -147,7 +147,7 @@ def generate_from_retrieval(
 
     # 2026-07-18: "na íntegra" resolvido via marcador de fontes do turno
     # anterior (retrieve.py já limita os chunks a UMA única fonte nesse
-    # caso -- ver CLAUDE.md secção 8/9) também deve accionar as instruções
+    # caso -- ver GOSHINSHO.md secção 8/9) também deve accionar as instruções
     # de "reproduza tudo", não só o caminho scoped_article original.
     fonte_unica = next(iter(fontes)) if len(fontes) == 1 else None
     if state.full_article and (state.scoped_article or fonte_unica):
@@ -489,7 +489,7 @@ def answer(
     )
 
     # 2026-07-18: anexa marcador oculto com as fontes (entry_id) que
-    # alimentaram esta resposta -- ver CLAUDE.md secção 8/9 e
+    # alimentaram esta resposta -- ver GOSHINSHO.md secção 8/9 e
     # conversation_context.append_source_marker. Permite que um turno
     # seguinte tipo "me dê a fonte na íntegra" resolva por consulta
     # directa ao que foi realmente usado, não por busca nova (que não tem

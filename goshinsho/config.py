@@ -57,7 +57,7 @@ class Config:
     RESEND_FROM_EMAIL = _env("RESEND_FROM_EMAIL") or "Goshinsho <noreply@goshinsho.com.br>"
     # 2026-07-30: PRICE_MENSAL/PRICE_ANUAL são do antigo modelo de assinatura
     # paga (aposentado -- único sistema de acesso agora é premium gratuito,
-    # ver CLAUDE.md). Mantidos só porque as rotas /assinatura antigas ainda
+    # ver GOSHINSHO.md). Mantidos só porque as rotas /assinatura antigas ainda
     # existem como redirecionamento de compatibilidade.
     PRICE_MENSAL = "price_1TgCMzF2Js1cKxv5mwWP0nym"
     PRICE_ANUAL = "price_1TgCOQF2Js1cKxv5h3NyQQCp"

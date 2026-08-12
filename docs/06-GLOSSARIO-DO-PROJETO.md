@@ -5,7 +5,7 @@ trabalho — não confundir com os glossários de conteúdo teológico
 (`glossario.json`, `glossario_traducao.json`, ver
 [04-ACERVO.md](04-ACERVO.md)). Este glossário existe para que qualquer
 pessoa (ou sessão de IA nova) entenda as siglas e nomes de fase usados em
-`CLAUDE.md`, na memória de sessão e nas conversas sobre o projeto.
+`GOSHINSHO.md`, na memória de sessão e nas conversas sobre o projeto.
 
 ## Fases do trabalho sobre o acervo
 

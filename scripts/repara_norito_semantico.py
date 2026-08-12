@@ -1,6 +1,6 @@
 """Repara o excesso de "norito" LENDO cada passagem contra o japonês.
 
-Instrução permanente do usuário, registrada em CLAUDE.md: *"a ÚNICA forma que
+Instrução permanente do usuário, registrada em GOSHINSHO.md: *"a ÚNICA forma que
 funciona é linha a linha de forma semântica e comparativa com o jp... o padrão
 é 100%, não importa o custo e o tempo."* Contrariei isso ao aplicar
 `祝詞 -> norito` por script, e o script trocou ~400 ocorrências onde eu tinha

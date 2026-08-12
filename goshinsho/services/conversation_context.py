@@ -14,7 +14,7 @@ from .teaching_article_service import wants_cross_source_search
 
 
 # 2026-07-18: marcador oculto com as fontes (entry_id) que alimentaram uma
-# resposta -- ver CLAUDE.md, sessão 2026-07-18, secção 8/9. Resolve "me dê a
+# resposta -- ver GOSHINSHO.md, sessão 2026-07-18, secção 8/9. Resolve "me dê a
 # fonte na íntegra" num turno seguinte por CONSULTA DIRECTA ao que foi
 # realmente usado, em vez de re-adivinhar por regex de citação (falha
 # sempre no modo directo, que nunca cita) ou por busca nova com a pergunta

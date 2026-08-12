@@ -4,7 +4,7 @@ Retrato do projeto em **2 de agosto de 2026** (revisão da fotografia de
 30/jul, que já estava desatualizada num ponto central — ver abaixo). Este
 documento fica desatualizado rápido por natureza — trate-o como uma
 fotografia, não como fonte viva. Para o histórico completo e detalhado
-sessão a sessão, `CLAUDE.md` na raiz do projeto é a fonte primária; este
+sessão a sessão, `GOSHINSHO.md` na raiz do projeto é a fonte primária; este
 documento só resume.
 
 ## Aplicativo
@@ -17,7 +17,7 @@ documento só resume.
   **Isto substitui a framing anterior desta seção** ("investigação em
   andamento, não implementada") — a migração já aconteceu de fato. Ver
   `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` para o estudo original e
-  `CLAUDE.md` (sessões de 29/jul a 01/ago) para a sequência completa de
+  `GOSHINSHO.md` (sessões de 29/jul a 01/ago) para a sequência completa de
   bugs corrigidos (recall, BM25 complementar, cache de custo, formato de
   resposta por tema com citação confirmatória).
 - **Sistema de acesso simplificado (30/jul)**: assinatura paga
@@ -30,14 +30,14 @@ documento só resume.
   convivem (regra 9 de `agentic_search.py` variável por modo, resto do
   prompt compartilhado), e o trade-off de verificabilidade foi resolvido
   com um botão dedicado que produz a citação literal sob demanda, sem
-  precisar mudar o modo padrão. Ver `CLAUDE.md`, sessão de 2/ago.
+  precisar mudar o modo padrão. Ver `GOSHINSHO.md`, sessão de 2/ago.
 - **Regra 7 (busca) reforçada de forma genérica (2/ago)**: antes de
   encerrar a busca, tenta mais uma vez checar se existe uma segunda
   passagem relevante sobre o mesmo tema — corrige inconsistência real
   encontrada em perguntas doutrinárias com mais de uma formulação no
   acervo, sem nenhum atalho específico a pergunta alguma (identificado e
   recusado um pedido nesse sentido por violar a regra suprema de
-  "sem tutela" — ver `CLAUDE.md`).
+  "sem tutela" — ver `GOSHINSHO.md`).
 - **Dashboard admin (`/admin`)**: bug real de paginação Supabase corrigido
   (contagem de perguntas travava em 1000) e tabela de usuários ganhou
   ordenação por qualquer coluna + filtro por e-mail/plano (2/ago).
@@ -54,7 +54,7 @@ documento só resume.
   glossário/terminologia (sessões de 27–30/jul), a padronização de
   `宿命`/`運命` (shukumei/unmei, 30/jul) e, mais recentemente, a
   padronização de `esfera`/`jóia`/`Mani no Tama` para a bola/joia que
-  Kannon carrega (2/ago, 12 arquivos, ver `CLAUDE.md`) — todas essas
+  Kannon carrega (2/ago, 12 arquivos, ver `GOSHINSHO.md`) — todas essas
   rodadas já foram **promovidas para produção** (shukumei/unmei em
   31/jul; a rodada de 2/ago estava com a promoção rodando em tmux no
   momento desta revisão do documento — conferir
@@ -94,6 +94,6 @@ doutrinários), não mais filas automáticas de milhares de itens.
 
 ## Onde ler mais
 
-`CLAUDE.md` na raiz — histórico completo, sessão a sessão, desde 3/jul.
+`GOSHINSHO.md` na raiz — histórico completo, sessão a sessão, desde 3/jul.
 Este documento (`docs/07`) é só um resumo executivo, não substitui a
-leitura de `CLAUDE.md` para retomar trabalho em andamento.
+leitura de `GOSHINSHO.md` para retomar trabalho em andamento.
