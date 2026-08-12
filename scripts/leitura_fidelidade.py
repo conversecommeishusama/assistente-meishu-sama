@@ -266,12 +266,20 @@ def main() -> None:
     itens = alvos()
     feitos = []
     if DESTINO.exists():
-        feitos = [r for r in json.loads(DESTINO.read_text(encoding="utf-8"))
-                  if "erro" not in r]
+        # Um item só conta como "lido de verdade" se tem `bruto` com conteúdo
+        # real (não "NADA"/vazio). Itens com `bruto: "NADA"` são placeholders
+        # da geração da fila que nunca foram processados -- considerá-los
+        # "lidos" fazia a retomada pular 1.882 itens pendentes (achado
+        # 2026-08-12: "retomando: 8031 lidos, 5 restantes" quando na verdade
+        # havia ~1880 pendentes).
+        todos = json.loads(DESTINO.read_text(encoding="utf-8"))
+        feitos = [r for r in todos
+                  if "erro" not in r and r.get("bruto", "NADA") not in (None, "", "NADA")]
         vistos = {(r["obra"], r["artigo"], r.get("parte", 0)) for r in feitos}
         itens = [i for i in itens
                  if (i["obra"], i["artigo"], i.get("parte", 0)) not in vistos]
-        print(f"retomando: {len(feitos)} lidos, {len(itens)} restantes", flush=True)
+        print(f"retomando: {len(feitos)} lidos, {len(itens)} restantes "
+              f"(de {len(todos)} no arquivo)", flush=True)
     print(f"{len(itens)} artigos a ler\n", flush=True)
 
     trava, n = threading.Lock(), [0]

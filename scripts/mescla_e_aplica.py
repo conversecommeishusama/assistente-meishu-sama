@@ -44,9 +44,10 @@ sys.path.insert(0, str(RAIZ))
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 from build_clean_large_indexes import clean_body  # noqa: E402
+from apply_manual_livros_segmentacao import split_by_anchors  # noqa: E402
 from aplica_no_artigo import janelas  # noqa: E402
 from implanta_semantico_v2 import (  # noqa: E402
-    paragrafo, PT_FONTE, PT_STAGING, carrega_jp_por_obra,
+    paragrafo, PT_FONTE, PT_STAGING, SPEC_DIR, carrega_jp_por_obra,
     artigo_pt_para_contexto, MAX_JP, MAX_TOKENS_SAIDA, MODELO,
 )
 from goshinsho.services import agentic_search as ag  # noqa: E402
@@ -237,6 +238,44 @@ def processa_obra(obra: str, itens_por_chave: dict) -> dict:
     }
 
 
+def valida_ancoras(obra: str, texto: str) -> tuple[bool, str]:
+    """Valida que as âncoras PT do spec ainda resolvem no texto novo, com a
+    MESMA função que a produção usa (`split_by_anchors`, via
+    `article_entries_from_spec` em build_clean_large_indexes.py).
+
+    É a proteção que faltava no fluxo original: `mescla_e_aplica.py` gravava
+    PT_FONTE + PT_STAGING sem nunca conferir âncora -- se a correção mexe no
+    início do parágrafo (que é a própria âncora do artigo), a segmentação
+    quebra SILENCIOSAMENTE, e a auditoria final só descobre depois (o dano de
+    07/08 passou com estrutura 137/137 verde por exatamente isso).
+
+    Retorna (ok, motivo). Quando ok=False, quem chama NÃO deve gravar --
+    deixa a obra pendente (o passo `resegmenta_pos_mescla.py` é o
+    responsável por reconstruir âncoras num passo separado, com janela
+    sequencial e reversão automática).
+    """
+    sp = SPEC_DIR / f"{obra}.json"
+    if not sp.exists():
+        return True, "sem spec (não valida)"
+    try:
+        spec = json.loads(sp.read_text(encoding="utf-8"))
+    except Exception:
+        return True, "spec ilegível (não valida)"
+    arts = spec.get("articles", [])
+    anc = [a.get("pt_anchor", "") for a in arts]
+    if len(anc) <= 1:
+        # obra de artigo único ou sem âncoras: split_by_anchors não é o
+        # mecanismo usado (cai no fallback de arquivo inteiro) -- nada a validar
+        return True, "artigo único/sem âncoras"
+    try:
+        ok = len(split_by_anchors(clean_body(texto), anc, label=obra)) == len(anc)
+    except ValueError as exc:
+        return False, f"split_by_anchors falhou: {exc}"
+    if not ok:
+        return False, "contagem de artigos não fecha com as âncoras"
+    return True, "ok"
+
+
 def main() -> None:
     aplicar = "--aplicar" in sys.argv
     args = [a for a in sys.argv[1:] if a != "--aplicar"]
@@ -265,6 +304,14 @@ def main() -> None:
         for art, motivo in r["pendencias"]:
             print(f"    pendência {r['obra'][:40]} artigo {art}: {motivo}")
         if aplicar:
+            # ANTES de gravar: validar que as âncoras ainda resolvem no texto
+            # novo. Se quebrar, NÃO grava -- a obra fica pendente de
+            # resegmentação (resegmenta_pos_mescla.py), nunca corrompida.
+            ok, motivo = valida_ancoras(r["obra"], r["texto"])
+            if not ok:
+                print(f"    *** NÃO GRAVADO {r['obra'][:40]}: âncora quebrada ({motivo}) "
+                      f"-- deixando pendente para resegmenta_pos_mescla.py")
+                continue
             f = PT_FONTE / r["obra"]
             shutil.copy(f, f.with_suffix(f".txt.bak_mescla_{carimbo}"))
             f.write_text(r["texto"], encoding="utf-8")

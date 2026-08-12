@@ -12817,3 +12817,74 @@ projeto com mais de ~8-10 workers simultâneos).
    reinício de produção sem autorização explícita.** Produção serve o
    índice de 06/08 -- isso não muda até esse trabalho de reaplicação
    fechar E o usuário autorizar promoção separadamente.
+
+## Sessão 2026-08-12 (Claude Code) -- bug de retomada da leitura de
+## fidelidade corrigido; leitura pendente lançada em tmux; investigação do
+## art104 do Kiseki concluída (sem correção necessária)
+
+### 1. Bug real corrigido: `leitura_fidelidade.py` pulava 1.882 itens pendentes na retomada
+
+Ao lançar a leitura de fidelidade pendente (ver handoff de 11/08), o log mostrou
+"retomando: 8031 lidos, 5 restantes" -- quando na verdade havia ~1.880 pendentes.
+Causa raiz: a lógica de retomada (linha 269) considerava "lido" QUALQUER item no
+`LEITURA_FIDELIDADE.json` sem campo `erro` -- mas os itens com `bruto: "NADA"`
+são placeholders da geração da fila que NUNCA foram processados de verdade.
+Corrigido: só conta como lido se `bruto` tem conteúdo real (não "NADA"/vazio).
+Após o fix, a retomada detecta corretamente "6151 lidos, 1878 restantes".
+
+### 2. Leitura de fidelidade pendente LANÇADA em tmux
+
+Sessão tmux `fidelidade` rodando `scripts/leitura_fidelidade.py` (retomável,
+processa os 1.878 itens pendentes). Custo estimado ~US$ 2,43 (blended
+0.0424). Logs em `reports/varredura_padronizacao/leitura_retomada_v2_*.log`.
+Quando fechar: rodar verificação adversarial + DS1/DS2/desafiador sobre os
+achados novos, aplicar via `mescla_e_aplica.py`, auditoria final.
+
+### 3. Investigação do art104 do Kiseki (19530910-世界救世教奇蹟集) -- CONCLUSÃO: sem correção necessária
+
+O item REFORMAR `...|104|0|0` pedia REMOVER o título "Câncer de pele de vinte
+anos completamente curado" (que é a `pt_anchor`). Investigação completa:
+
+- **O comentário `医学が病気を作る実例` no art104 é um ENSINAMENTO de
+  Meishu-Sama** publicado no Eikō 170 (20/08/1952) e republicado no Kiseki
+  旧版 (10/09/1953). A citação `『栄光』170号` no JP do Kiseki está CORRETA.
+- **O Zenshū remove a origem do periódico** e indexa sob a fonte de
+  compilação (`#K『世界救世教奇蹟集』旧版`) -- por isso a varredura de 04/08
+  (periódicos vs Zenshū) não detecta esses ensinamentos.
+- **Os testemunhos NÃO pertencem aos periódicos** (usuário confirmou) -- os
+  periódicos (Eiko/Hikari/Kyusei/Tijotengoku) são SÓ ensinamentos editoriais;
+  0 testemunhos neles.
+- **Os ensinamentos-comentários do Kiseki dependem do testemunho ao lado**
+  (`左記`/`左の御蔭話`, 46 ocorrências) -- pertencem ao Kiseki, não aos
+  periódicos. NÃO é lacuna dos periódicos.
+- **A distribuição dos comentários aos testemunhos no Kiseki é imprecisa em
+  vários artigos** (ex.: art104 testemunho=câncer de pele mas comentário fala
+  de ouvido; art103 testemunho=眼病 mas comentário=câncer). É questão
+  EDITORIAL para o usuário decidir, NÃO corrigida automaticamente.
+- **Formato do art104** (comentário com `---`+título+fonte) é CONSISTENTE
+  com dezenas de outros artigos do Kiseki (art18, 19, 105, 108, 109, 115,
+  116, 117, 118, 128, 133, 135...) -- NÃO é desvio de padrão.
+
+**Decisão**: NÃO remover o título do art104 (é o padrão da obra e a âncora).
+NÃO mover o comentário (não se sabe o destino correto). Uma "normalização"
+precipitada (remover título+fonte do comentário) foi aplicada e REVERTIDA ao
+descobrir que o formato é o padrão da obra. **Lição**: verificar o padrão
+amplo da obra antes de "normalizar" qualquer coisa.
+
+### 4. Commits desta sessão
+
+- `scripts/leitura_fidelidade.py`: correção do bug de retomada (itens NADA
+  tratados como pendentes).
+- `scripts/mescla_e_aplica.py`: proteção `valida_ancoras()` (da sessão
+  anterior, validada e testada -- adicionada agora ao commit).
+
+### Onde continuar (prioridade máxima)
+
+1. **A leitura de fidelidade pendente está rodando em tmux `fidelidade`**
+   (1.878 itens, ~US$ 2,43). Não interferir; quando fechar, rodar verificação
+   adversarial + DS1/DS2/desafiador sobre os achados novos.
+2. **Questão editorial pendente (do usuário)**: a distribuição imprecisa dos
+   comentários de Meishu-Sama aos testemunhos no Kiseki (vários artigos com
+   tema incompatível). Não decidida -- levar ao usuário.
+3. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
+   autorização explícita.
