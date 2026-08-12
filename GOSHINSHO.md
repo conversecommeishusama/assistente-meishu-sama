@@ -103,6 +103,19 @@ referência do Zenshū/Rokkan estão em
     não foi negado) e 御教え集16号 art. 2 (recorte enganoso: 「日本が世界を救うのだ」
     já estava no PT). **Lição recorrente**: proposta que acusa "omissão" costuma ser
     artefato do recorte `final`; conferir sempre a linha inteira no disco antes.
+  - **ESTADO 2026-08-12 (casos 103–105, no chat)**: 101/213 processados, 96 na
+    fila. 2 gravados por defeito de fidelidade — 奇蹟集 art. 110 (「機会をこしらえて」
+    é *criar* a oportunidade, não "sempre que surge"; 「お念じしつつ」 é orar, não
+    "ter expectativa") e 御教え集24号 art. 9 (「できれば…それでよいのです」 é realis com
+    suficiência → "Se … for alcançada, **basta que** … abandonem"; o `corrigido`
+    propunha "intensamente" para 一生懸命 e foi **rejeitado** por contrariar o
+    glossário, que fixa "com empenho"). 1 achado já-correto (奇蹟集 art. 54) que
+    **mesmo assim** rendeu gravação: no parágrafo seguinte, 御神体 ("Imagem da Luz
+    Divina", feminino no glossário) levava predicativos masculinos
+    ("sujo/molhado/limpo/pendurado" → "suja/molhada/limpa/pendurada"); classe
+    varrida na obra inteira (as demais são legítimas). **Lição**: achado de
+    recorte enganoso não encerra o caso — a classe do defeito pode estar viva no
+    artigo ao lado.
   - **ESTADO 2026-08-12 (tarde)**: 71/213 na fila (casos 72–74 feitos no chat).
     Achados de classe em `19521201-結核信仰療法.txt`, todos já corrigidos: 12
     artigos sem a linha de fonte 『結核の革命的療法』 (restaurada), 1 cabeçalho
