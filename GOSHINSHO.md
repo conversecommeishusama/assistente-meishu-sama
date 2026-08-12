@@ -99,6 +99,12 @@ referência do Zenshū/Rokkan estão em
   - **Âncoras de segmentação corrigidas** (2026-08-12): 奇蹟集 arts. 19/20/21 e
     アメリカを救う art. 10 (pt_anchor apontando para assinatura/data em vez do
     título). Pendência 185 (信仰雑話) corrigida (ordem Ubusunagami/Ujigami).
+  - **CORREÇÃO DO USUÁRIO (Miroku/Amida, 2026-08-12)**: no 観音講座 art2, o
+    título "Os Três Amidas e o Cinco, Seis, Sete" era errado — o JP `三尊の弥陀`
+    refere-se aos três corpos de Miroku (Kannon/Amida/Shaka = 応身/法身/報身).
+    Corrigido para "Os Três Miroku e o Cinco, Seis, Sete". Varredura no resto do
+    acervo confirmou que o erro era isolado (0 "Três Amidas" em todo o corpus;
+    弥勒三会 = "encontro dos três Miroku" consistente).
   - **Pendências abertas**: padronização de glossário `俵`→saca/saco (classe
     aberta), classe de reversões silenciosas de 11/08 (investigar), revisão
     final do lote completo.
