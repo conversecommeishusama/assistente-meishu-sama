@@ -108,6 +108,33 @@ referência do Zenshū/Rokkan estão em
   - **Pendências abertas**: padronização de glossário `俵`→saca/saco (classe
     aberta), classe de reversões silenciosas de 11/08 (investigar), revisão
     final do lote completo.
+
+## 7. VERIFICAÇÕES DE INTEGRIDADE (2026-08-12)
+
+### OCR do japonês (verificação #2)
+- Comparado o JP atual (`reports/livros_trabalho/jp/`) com o backup pré-OCR de
+  05/08 (50 arquivos com backup) por contagem de **kana** (hiragana/katakana,
+  que o OCR não deveria alterar): **41/50 idênticos**; 9 com diferença de 6-14
+  kana, confirmados como correção de OCR (katakana→kanji, ex.: スケッチ→素描)
+  e remoção de furigana/metadados — **não é perda**.
+- O que a correção de OCR fez (legítimo): corrigiu kanji corrompidos, removeu
+  metadados (`#Ficheirodetrabalho`/`#Segmento`), removeu separadores decorativos
+  `─` e números de página. **Nenhuma exclusão de conteúdo** — esqueleto kana
+  intacto.
+
+### Integridade PT vs JP + specs/âncoras (verificações #1 e #4)
+- 137 obras com spec + PT + JP (3.981 artigos).
+- `split_by_anchors` (função de produção) valida **137/137 PT** e **137/137 JP**
+  → segmentação íntegra nos dois lados.
+- **LIÇÃO IMPORTANTE**: `valida_ancoras`/`split_by_anchors` operam sobre o texto
+  **limpo** (`clean_body`), que remove `#T/#K/#W80`/separadores e normaliza
+  quebras de linha (4→3 `\n`). Portanto, âncoras que parecem "erradas" no texto
+  cru podem estar **corretas** para o texto limpo. NUNCA "corrigir" uma âncora
+  sem rodar `valida_ancoras` contra o texto limpo primeiro (cometi esse erro 2x
+  nesta sessão e reverti).
+- Âncoras efetivamente corrigidas (pré-existentes, não causadas pelos 213):
+  `Revista_Asahi` JP art 1 (`明为`→`明主`, OCR não atualizou a âncora) e
+  `地上天国出来るまで` PT art 1 (`Paraíso na Terra`→`Paraíso Terrestre`).
   - **ESTADO 2026-08-12 (noite)**: 74/213 na fila (casos 75–77). 1 gravado
     (御教え集16号 art. 5: 「これは…無理はないのですが」 lido como "não há como culpar
     ninguém" com sujeito ambíguo → "Isso é compreensível, pois eu não havia dito a
