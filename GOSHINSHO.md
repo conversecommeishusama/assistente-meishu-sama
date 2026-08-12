@@ -90,6 +90,18 @@ referência do Zenshū/Rokkan estão em
     / já-correto / REJEITADA / DUVIDA) — é isso que o gerador lê. O gerador
     também preserva o `done` da fila em disco (item processado nunca volta a
     `pending`).
+  - **ESTADO 2026-08-12 (final da manhã)**: loop autônomo na tmux
+    `correcoes_213` rodando via `claude -p` (independente do chat). ~41/213
+    processados (o número exato vive em `CORRECOES_213_QUEUE.json`). Método
+    validado: lê JP, decide pelo sentido, backup + `valida_ancoras`, grava
+    fonte+staging, registra no progresso.
+  - **PERDA DE CONTEÚDO EM 笑の泉 — CORRIGIDA (2026-08-12)**: o revisado tinha
+    perdido 61 itens numerados (blocos 616-654, 816-826, 965-975) numa passada
+    automática pós-11/08 14:07. Restaurados a partir do backup
+    `.bak_reparaimplantav2_20260811T140707Z` (fonte+staging, âncoras OK,
+    correção do caso 35 preservada). Verificação sistemática
+    (`scripts/verifica_perda_conteudo.py`) rodada: **nenhum outro arquivo
+    mutilado** (só 1 falso positivo em 奇蹟集, diferença editorial legítima).
 - Corpus: `livros_publicacao_pt_revisado/` (fonte de verdade PT),
   `reports/livros_trabalho/{pt,jp}/` (staging), `textos_portugues/`/
   `textos_japones/` (produção). Verificação de segmentação real:
