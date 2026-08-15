@@ -57,9 +57,12 @@ Fluxo do executor: retraduz → valida completude → **trava de glossário**
   (também montado em `publicacao_livros/01_.../01_19480101 - Gokōwa-roku (Suplemento).txt`)
 
 ### Auditoria com Claude — EM ANDAMENTO (6 lotes)
-- Lotes prontos: `reports/amostragem_semantica_gokowa/lotes_claude/lote_{1..6}.json`
-  (957 falas no total; 0 vazias; 16 marcadas como `corrigida:true` com a versão final)
-- Prompts prontos: `reports/amostragem_semantica_gokowa/lotes_claude/prompt_{1..6}.md`
+- Lotes prontos: `reports/amostragem_semantica_gokowa/lotes_claude/`
+  → `lote_1.json` … `lote_6.json` (6 arquivos reais, **957 falas no total;
+  0 vazias**; 16 marcadas como `corrigida:true` com a versão final). O padrão
+  `lote_{1..6}.json` abaixo refere-se a esses 6 arquivos.
+- Prompts prontos: `reports/amostragem_semantica_gokowa/lotes_claude/`
+  → `prompt_1.md` … `prompt_6.md` (6 arquivos reais).
 - **Resultados gravados até agora:**
   - `reports/amostragem_semantica_gokowa/auditoria_lotes/auditoria_lote_6.json` — **COMPLETO** (157 auditadas; 151 OK; 6 ERRO_TRADUCAO → 3,8%)
   - Lotes 1–5: **NÃO iniciados/completados ainda** (sem arquivo de resultado)
