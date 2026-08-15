@@ -92,6 +92,19 @@ doutrinários), não mais filas automáticas de milhares de itens.
   **aposentado por completo** em 28/jul (0 entradas, era 1492), os
   periódicos entraram pelo pipeline principal de 139 obras.
 
+## Retomada — retradução dos orais (14-15/08/2026)
+
+Trabalho EM ANDAMENTO (não refletido nas seções acima, que são a
+fotografia de 2/ago): **retradução dos textos orais** com arquitetura em
+4 papéis (executor DeepSeek → trava de glossário → auditor Claude →
+correções pontuais). Estado detalhado, termos fixos e próximos passos em
+`docs/14-RETOMADA-RETRADUCAO-ORAIS.md` — **leia-o ao retomar**.
+
+Resumo: Gokōwa-roku (Suplemento) retraduzido (957 falas, 16 pontos
+integrados); auditoria Claude dividida em 6 lotes — lote 6 auditado
+(151 OK / 6 erros), lotes 1–5 pendentes; depois, expandir para outros
+orais com o mesmo perfil de truncamento.
+
 ## Onde ler mais
 
 `GOSHINSHO.md` na raiz — histórico completo, sessão a sessão, desde 3/jul.

@@ -135,6 +135,25 @@ referência do Zenshū/Rokkan estão em
 - Âncoras efetivamente corrigidas (pré-existentes, não causadas pelos 213):
   `Revista_Asahi` JP art 1 (`明为`→`明主`, OCR não atualizou a âncora) e
   `地上天国出来るまで` PT art 1 (`Paraíso na Terra`→`Paraíso Terrestre`).
+
+### Implementação de TODAS as alterações propostas (verificação #3)
+- **Escopo**: o `CHECKPOINT_IMPLANTA_V2.json` tem **5.263 propostas** (`de`→`para`
+  com posição `lim`). O `APLICADO.json` registra 4.495 como aplicadas.
+- **Verificação automática por presença do `de` (antigo) no texto**: apontou
+  **~1.034 candidatas** com o `de` ainda presente na região `lim` — MAS a
+  verificação manual de amostras revelou que **muitos são falsos positivos**:
+  posições `lim` desatualizadas (texto reformulado depois), fragmentos
+  compartilhados, e `de` que começa igual ao texto real mas cuja alteração foi
+  sim aplicada (ex.: 御光話録補 19|1|0 removia "como terremotos" — o texto atual
+  não tem mais, mas o início da frase coincide).
+- **Conclusão honesta**: o método automático NÃO é confiável para afirmar que
+  "20% não foram implementadas". Exige verificação manual caso a caso (como os
+  213). A lista de candidatos está em
+  `reports/varredura_padronizacao/NAO_IMPLEMENTADAS_POR_LIM.json` (1.034 itens)
+  para revisão manual futura. **Pendência em aberto.**
+- O que está **comprovado** (não por amostra, por execução completa): 137/137
+  âncoras PT válidas, 137/137 JP válidas, fonte=staging nos 54 tocados, 101
+  correções dos 213 gravadas com backup, OCR JP com kana íntegro.
   - **ESTADO 2026-08-12 (noite)**: 74/213 na fila (casos 75–77). 1 gravado
     (御教え集16号 art. 5: 「これは…無理はないのですが」 lido como "não há como culpar
     ninguém" com sujeito ambíguo → "Isso é compreensível, pois eu não havia dito a
@@ -182,6 +201,31 @@ referência do Zenshū/Rokkan estão em
   pilha A/B/C, correções) chegou lá ainda. Nenhuma promoção sem autorização.
 - Comandos úteis: ver `HISTORICO.md` (seções recentes) e
   `reports/varredura_padronizacao/`.
+
+### Retradução dos orais — Gokōwa-roku (Suplemento) e expansão (14-15/08/2026)
+
+**Mapa completo: `docs/14-RETOMADA-RETRADUCAO-ORAIS.md` (LEIA AO RETOMAR).**
+Resumo:
+- **Arquitetura em 4 papéis** implementada: executor DeepSeek
+  (`scripts/retraducao_completa_gokowa.py`) → trava de glossário
+  (`scripts/trava_glossario.py`) → auditor Claude (lotes) → correções pontuais
+  (`scripts/retraduzir_pontos_problema.py` + `scripts/integrar_pontos_gokowa.py`).
+- **Suplemento retraduzido**: 957 falas, 0 vazias. Checkpoint:
+  `reports/amostragem_semantica_gokowa/laco_retraducao_checkpoint.json`;
+  export p/ auditoria:
+  `reports/amostragem_semantica_gokowa/retraducao_gokowa_para_auditoria.json`.
+- **16 pontos-problema retraduzidos e integrados** no texto publicado
+  (`livros_publicacao_pt_revisado/19480101 - Gokōwa-roku (Suplemento).txt`).
+- **Auditoria Claude em 6 lotes** (`lotes_claude/lote_{1..6}.json` +
+  `prompt_{1..6}.md`): **lote 6 auditado** (`auditoria_lotes/auditoria_lote_6.json`
+  → 151 OK / 6 erros, 3,8%); **lotes 1–5 pendentes**.
+- **Próximo**: auditar lotes 1–5 → consolidar → decidir qualidade → levantar
+  outros orais com o mesmo perfil de truncamento (Mioshie-shū, Gosuiji-roku,
+  etc.) → retraduzir todos com o mesmo ciclo → revisão literária final (Claude)
+  de todos juntos.
+- Termos fixos críticos (glossário): 審神者→médium, 茂吉→Mokichi,
+  御守り→Ohikari, 大光明→Daikōmyō (amuleto), 光明→Kōmyō, 大清算→Grande Acerto
+  de Contas, 大浄化→Grande Purificação.
 
 ---
 

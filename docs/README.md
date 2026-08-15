@@ -51,6 +51,15 @@ foram tocados nesta reorganização.
     achado urgente sobre o índice `metadados_pt.pkl` de produção e o
     achado maior de 9/13 idiomas sem tradução real. Aguarda autorização
     para promover.
+12. **[14-RETOMADA-RETRADUCAO-ORAIS.md](14-RETOMADA-RETRADUCAO-ORAIS.md)**
+    — **LEIA PRIMEIRO ao retomar o trabalho de retradução dos orais**
+    (Gokōwa-roku Suplemento e demais). Mapa do trabalho em andamento:
+    arquitetura em 4 papéis, estado dos lotes de auditoria, termos fixos,
+    próximos passos. É o handoff entre chats.
+
+> **Nota de prioridade:** se o trabalho for sobre retradução/auditoria dos
+> orais, leia `14-RETOMADA-RETRADUCAO-ORAIS.md` ANTES dos demais — ele
+> aponta para os arquivos operacionais (checkpoints, lotes, resultados).
 
 ## O que fica de fora, de propósito
 
