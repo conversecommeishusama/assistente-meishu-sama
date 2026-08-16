@@ -49,3 +49,16 @@ referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/
 # arquivos daqui por engano 2x na mesma sessão -- isso fecha a causa raiz).
 reports/
 
+# Dashboard da setorização de Diadema (2026-08-12) -- contém dados pessoais
+# reais (nome, telefone, endereço de ~806 pessoas); só existe no servidor,
+# nunca no versionamento. Rota protegida: /diadema.
+goshinsho/data/dashboard_diadema/
+
+
+# 2026-08-16: efetivar decisão do usuário -- glossario_traducao.json e
+# livros_publicacao_pt_revisado/ ficam FORA do git (edição ativa; não commitar).
+glossario_traducao.json
+livros_publicacao_pt_revisado/
+
+# Backups de edição espalhados (terminam em .bak_<timestamp>Z) -- nunca versionar.
+*.bak_*
