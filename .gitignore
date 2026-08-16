@@ -62,3 +62,7 @@ livros_publicacao_pt_revisado/
 
 # Backups de edição espalhados (terminam em .bak_<timestamp>Z) -- nunca versionar.
 *.bak_*
+
+# Índices FAISS/pkl legados na raiz (o app usa experiments/uploaded_indexes/).
+/*.pkl
+/*.faiss
