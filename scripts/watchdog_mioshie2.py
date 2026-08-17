@@ -83,6 +83,10 @@ def mioshie_restantes() -> list[Path]:
         # evita conflito com arquivos parciais em processamento
         if not ckpt.exists():
             restantes.append(arq)
+    # ORDEM REVERSA (do último para o primeiro): a 1ª instância processa 1→8;
+    # a 2ª processa 8→1. Elas se encontram no meio, NUNCA no mesmo arquivo.
+    # Isso elimina o risco de corrida/edição simultânea (solução do usuário 17/08).
+    restantes.reverse()
     return restantes
 
 
