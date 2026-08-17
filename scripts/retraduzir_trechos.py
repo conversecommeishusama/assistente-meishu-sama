@@ -208,6 +208,42 @@ def relatorio_glossario_falas(falas: list[tuple[str, str]], indices: list[int], 
     return relatorio
 
 
+def adquirir_lock(arquivo: Path) -> bool:
+    """Adquire um lock atômico (arquivo .lock) para processar `arquivo`.
+
+    Previne edição simultânea quando múltiplas instâncias processam a mesma
+    coleção (ex.: 2 instâncias do mioshie). Retorna True se o lock foi
+    adquirido (ou já é nosso), False se outro processo está processando.
+    """
+    lock_path = Path(str(arquivo) + ".lock")
+    if lock_path.exists():
+        # verifica se o lock é "stale" (processo morto há >6h) para não travar
+        try:
+            idade = time.time() - lock_path.stat().st_mtime
+            if idade < 6 * 3600:
+                return False  # outro processo ativo
+            lock_path.unlink()  # lock stale — remove e tenta de novo
+        except Exception:
+            return False
+    try:
+        fd = os.open(str(lock_path), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.write(fd, str(os.getpid()).encode())
+        os.close(fd)
+        return True
+    except FileExistsError:
+        return False
+
+
+def liberar_lock(arquivo: Path) -> None:
+    """Remove o lock do arquivo (ao concluir ou em erro)."""
+    lock_path = Path(str(arquivo) + ".lock")
+    try:
+        if lock_path.exists():
+            lock_path.unlink()
+    except Exception:
+        pass
+
+
 def main() -> None:
     if len(sys.argv) < 3:
         print("uso: .venv/bin/python scripts/retraduzir_trechos.py <gokowa|gosuiji|mioshie> <arquivo_jp>")
@@ -218,6 +254,12 @@ def main() -> None:
         print(f"coleção inválida: {colecao}")
         sys.exit(1)
     extrator = EXTRATORES[colecao]
+
+    # LOCK: impede que 2 instâncias processem o MESMO arquivo ao mesmo tempo
+    arq_path = Path(arquivo)
+    if not adquirir_lock(arq_path):
+        print(f"[{arq_path.name}] LOCK: outro processo está processando este arquivo — saindo")
+        sys.exit(0)
 
     texto = Path(arquivo).read_text(encoding="utf-8")
     falas = extrator(texto)
@@ -278,6 +320,9 @@ def main() -> None:
 
     n_ok = sum(1 for f in dados["falas"].values() if f.get("pt_contextual"))
     print(f"\n[{saida_nome}] {n_ok}/{len(falas)} falas com pt_contextual")
+
+    # libera o lock ao concluir
+    liberar_lock(arq_path)
 
 
 if __name__ == "__main__":
