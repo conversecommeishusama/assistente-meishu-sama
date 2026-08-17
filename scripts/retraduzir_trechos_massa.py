@@ -72,32 +72,45 @@ def arquivo_concluido(ckpt_path: Path, n_falas: int) -> bool:
 
 def main() -> None:
     if len(sys.argv) < 2:
-        print("uso: .venv/bin/python scripts/retraduzir_trechos_massa.py <gokowa|gosuiji|mioshie>")
+        print("uso: .venv/bin/python scripts/retraduzir_trechos_massa.py <gokowa|gosuiji|mioshie> [--zerar]")
+        print("  --zerar: apaga checkpoints (retraduzir do zero). SEM a flag, retoma do checkpoint.")
         sys.exit(1)
     colecao = sys.argv[1]
+    zerar = "--zerar" in sys.argv
     if colecao not in PADROES:
         print(f"coleção inválida: {colecao}")
         sys.exit(1)
 
     arquivos = sorted(TEXTOS.glob(PADROES[colecao]))
     arquivos = [a for a in arquivos if arquivo_no_escopo(colecao, a.name)]
-    print(f"[{colecao}] {len(arquivos)} arquivos de diálogo no escopo")
+    print(f"[{colecao}] {len(arquivos)} arquivos de diálogo no escopo | zerar={zerar}")
     BACKUP.mkdir(parents=True, exist_ok=True)
 
     for i, arq in enumerate(arquivos, 1):
         ckpt = OUT / f"{arq.stem}.json"
 
-        # backup + APAGA o checkpoint existente (retradução do zero SEMPRE,
-        # sem pular trechos já preenchidos do checkpoint antigo)
-        if ckpt.exists():
-            destino = BACKUP / f"{ckpt.name}.bak_pre_trechos"
-            if not destino.exists():  # não sobrescreve backup já feito
-                shutil.copy2(ckpt, destino)
-                print(f"  [{i}/{len(arquivos)}] {arq.name}: backup em {destino.name}")
-            ckpt.unlink()
-            print(f"  [{i}/{len(arquivos)}] {arq.name}: checkpoint antigo apagado (retraduzir do zero)")
+        # nº real de falas do EXTRATOR (para saber se o arquivo já está completo)
+        try:
+            n_falas = len(EXTRATORES[colecao](arq.read_text(encoding="utf-8")))
+        except Exception:
+            n_falas = 0
 
-        print(f"  [{i}/{len(arquivos)}] {arq.name}: retraduzindo por trechos (do zero)...", flush=True)
+        # FIX 17/08: SEM --zerar, NÃO apagar checkpoint de arquivo concluído
+        # (retomada segura — o reinício anterior apagava checkpoints e perdia
+        # progresso). Só apaga com --zerar (retradução do zero deliberada).
+        if zerar:
+            if ckpt.exists():
+                destino = BACKUP / f"{ckpt.name}.bak_pre_trechos"
+                if not destino.exists():
+                    shutil.copy2(ckpt, destino)
+                    print(f"  [{i}/{len(arquivos)}] {arq.name}: backup em {destino.name}")
+                ckpt.unlink()
+                print(f"  [{i}/{len(arquivos)}] {arq.name}: checkpoint apagado (--zerar)")
+        elif arquivo_concluido(ckpt, n_falas):
+            print(f"  [{i}/{len(arquivos)}] {arq.name}: JÁ CONCLUÍDO, pulando")
+            continue
+
+        print(f"  [{i}/{len(arquivos)}] {arq.name}: retraduzindo por trechos...", flush=True)
         r = subprocess.run(
             [sys.executable, "scripts/retraduzir_trechos.py", colecao, str(arq)],
             cwd=str(RAIZ),
