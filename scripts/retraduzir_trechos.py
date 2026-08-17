@@ -217,12 +217,30 @@ def adquirir_lock(arquivo: Path) -> bool:
     """
     lock_path = Path(str(arquivo) + ".lock")
     if lock_path.exists():
-        # verifica se o lock é "stale" (processo morto há >6h) para não travar
+        # lock STALE: se o processo dono morreu, remove imediatamente (não
+        # esperar 6h — isso fez o orquestrador pular arquivos no incidente 17/08)
         try:
-            idade = time.time() - lock_path.stat().st_mtime
-            if idade < 6 * 3600:
-                return False  # outro processo ativo
-            lock_path.unlink()  # lock stale — remove e tenta de novo
+            pid_str = lock_path.read_text(encoding="utf-8").strip()
+            if pid_str.isdigit():
+                pid = int(pid_str)
+                vivo = False
+                try:
+                    os.kill(pid, 0)  # sinal 0 = só verifica se o processo existe
+                    vivo = True
+                except ProcessLookupError:
+                    vivo = False
+                except PermissionError:
+                    vivo = True  # existe mas não temos permissão → considerar vivo
+                if not vivo:
+                    lock_path.unlink()  # dono morto — remove lock stale
+                else:
+                    return False  # dono vivo → outro processo ativo
+            else:
+                # lock sem PID válido: se for antigo (>6h), remove; senão bloqueia
+                idade = time.time() - lock_path.stat().st_mtime
+                if idade < 6 * 3600:
+                    return False
+                lock_path.unlink()
         except Exception:
             return False
     try:
