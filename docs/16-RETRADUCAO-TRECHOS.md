@@ -35,6 +35,10 @@ Decisão do usuário em 17/08 após comparativo controlado no lote 2 do Suplemen
 - **NUNCA** re-traduzir/travar em loop quando um termo de glossário falha —
   gerar relatório e corrigir pontualmente depois.
 - Simplificar em vez de superengenheirar (lição da sessão).
+- **REGRA DE REINÍCIO (incidente 17/08):** NUNCA reiniciar massas sem antes
+  (1) confirmar backups de TODOS os checkpoints, (2) testar em modo seco,
+  (3) verificar que o orquestrador não apaga concluídos (só `--zerar`). O
+  Suplemento (957 falas) foi apagado num reinício e recuperado do backup.
 
 ## 2. Escopo (diálogos truncados apenas)
 
