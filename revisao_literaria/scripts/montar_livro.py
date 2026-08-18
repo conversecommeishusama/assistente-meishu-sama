@@ -14,6 +14,7 @@ ALERTAS_MONTAGEM.jsonl para checagem manual, e a próxima passada tenta de
 novo (útil quando o auditor reabre um chunk e ele é corrigido).
 """
 import datetime
+import fcntl
 import glob
 import json
 import os
@@ -39,12 +40,35 @@ def carregar_fila_auditor():
             "protocol_file": "revisao_literaria/AUDITORIA_PROMPT.md",
             "pending": [], "in_progress": [], "done": [], "failed": [],
         }
-    return json.load(open(FILA_AUDITOR, encoding="utf-8"))
+    with open(FILA_AUDITOR, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def salvar_fila_auditor(fila):
     with open(FILA_AUDITOR, "w", encoding="utf-8") as f:
         json.dump(fila, f, ensure_ascii=False, indent=2)
+
+
+def lock_fila_auditor():
+    """Adquire lock exclusivo (fcntl.flock) sobre a fila do auditor.
+
+    Evita race condition entre o montador (presync do executor E do auditor)
+    e o harness auditor ao ler/gravar QUEUE_AUDITOR.json — cada um podia
+    sobrescrever o enfileiramento do outro, deixando livros montados órfãos
+    da fila de auditoria. O lock é liberado ao fechar o descritor.
+    """
+    if not os.path.exists(FILA_AUDITOR):
+        open(FILA_AUDITOR, "w", encoding="utf-8").write("{}")
+    fd = os.open(FILA_AUDITOR, os.O_RDWR)
+    fcntl.flock(fd, fcntl.LOCK_EX)
+    return fd
+
+
+def unlock_fila_auditor(fd):
+    try:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+    finally:
+        os.close(fd)
 
 
 def livros_com_chunk_em_aberto():
@@ -76,6 +100,16 @@ def registrar_alerta(livro, motivo, detalhe):
 
 def main():
     os.makedirs(SAIDA_DIR, exist_ok=True)
+    # Lock exclusivo sobre a fila do auditor durante todo o processamento —
+    # serializa contra o harness auditor e o outro laço (race condition fix).
+    fd = lock_fila_auditor()
+    try:
+        return _main()
+    finally:
+        unlock_fila_auditor(fd)
+
+
+def _main():
     fila_auditor = carregar_fila_auditor()
     ja_na_fila_auditor = {
         item["livro"] for item in
