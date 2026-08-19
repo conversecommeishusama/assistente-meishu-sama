@@ -85,16 +85,19 @@ específica) tem um ponto cego que a tradução original não tinha.
 A auditoria atual é **puramente semântica** (SYSTEM_PROMPT foca em sentido,
 inversão, termos) e NÃO detectou a omissão da tabela gojūon no T1.
 
-Teste com auditor HÍBRIDO (semântica + checagem LITERAL de cobertura estrutural:
-todo bloco não-prosaico do JP — tabelas, diagramas, sequências de kana — deve ter
-correspondência no PT) → **ERRO_TRADUCAO detectado corretamente**:
-"a tabela de kana (gojūon) do final do JP não foi incluída no PT", com a correção
-sugerida (incluir a tabela entre o parágrafo do tamagaeshi e o "Comprimindo
-Okada").
+Teste com auditor HÍBRIDO (semântica + checagem LITERAL de cobertura estrutural)
+→ em 1 chamada detectou corretamente a omissão da tabela.
 
-**Conclusão**: incorporar a dimensão LITERAL/ESTRUTURAL ao SYSTEM_PROMPT do
-auditor fecha o gap que a auditoria semântica pura deixa passar. Ação possível:
-adicionar a dimensão B (cobertura estrutural) ao auditor e re-auditar.
+**PORÉM**: ao rodar no pipeline e repetir (3x, 5x) com o MESMO prompt híbrido,
+o resultado foi INCONSISTENTE — o DeepSeek aprovou o T1 numa rodada, e em outras
+detectou erros DIFERENTES (às vezes a tabela, às vezes termo 五六七/霊返し, às vezes
+parse erro). O reasoning model é instável para detecção estrutural fina.
+
+**Conclusão**: a checagem de omissão estrutural (tabelas/diagramas) NÃO deve
+depender de LLM — deve ser uma **verificação LITERAL DETERMINÍSTICA por script**
+(não-LLM): extrair blocos não-prosaicos do JP (sequências de kana, linhas com
+caracteres espaçados, tabelas) e confirmar por regex/estrutura que têm
+correspondência no PT. Isso fecharia o gap de forma confiável e reprodutível.
 
 ## Conclusão
 

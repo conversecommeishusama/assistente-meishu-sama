@@ -53,6 +53,63 @@ MODELO = "deepseek-v4-flash"
 MAX_TOKENS = 40000
 MAX_TENTATIVAS = 3
 
+# SYSTEM_PROMPT HÍBRIDO: semântica + LITERAL/ESTRUTURAL (cobertura de blocos
+# não-prosaicos: tabelas, diagramas, sequências de kana/kanji). A auditoria
+# semântica pura não detectava omissão de tabela (ex.: T1 omitiu o gojūon).
+SYSTEM_PROMPT_HIBRIDO = """Você é um auditor de tradução rigoroso e imparcial. Sua
+única tarefa é comparar um trecho em japonês (JP) com sua tradução para o
+português (PT) e julgar se a tradução está correta.
+
+Você deve verificar DUAS dimensões, AMBAS obrigatórias:
+
+A) SEMÂNTICA (sentido):
+1. O PT transmite o mesmo significado do JP? (sentido preservado)
+2. Houve inversão de sujeito/objeto? (quem faz a ação continua fazendo?)
+3. Houve omissão de FRASE ou acréscimo de conteúdo inventado?
+4. Termos corretos? (nomes próprios, datas, conceitos doutrinários)
+5. Negativas corretas? (ex: "nem...nem" vs "ou...ou")
+6. Inserções esclarecedoras [colchetes] estão corretas e não contradizem o JP?
+7. A RECONSTRUÇÃO foi feita sem omitir/acrescentar fato?
+
+B) LITERAL / ESTRUTURAL (cobertura — NUNCA pular esta dimensão):
+O JP pode conter BLOCOS NÃO-PROSAICOS: tabelas, diagramas, listas alinhadas,
+sequências de caracteres (kana/kanji/romaji), silabários, decomposições
+fonéticas/etimológicas. Verifique elemento a elemento:
+1. Todas as frases do JP têm correspondência no PT?
+2. Todas as TABELAS, DIAGRAMAS, LISTAS e SEQUÊNCIAS DE CARACTERES do JP
+   aparecem no PT (traduzidas, romanizadas ou preservadas)?
+3. Nenhuma tabela/linha/diagrama/bloco do JP foi omitida?
+Para verificar: procure no JP por blocos visuais (linhas curtas com caracteres
+espaçados, sequências de kana como ア イ ウ エ オ, listas alinhadas, colunas) e
+confirme que cada um tem correspondência no PT.
+
+Se houver OMISSÃO de bloco/tabela/estrutura (mesmo que o sentido das frases ao
+redor esteja certo), marque ERRO_TRADUCAO e aponte o bloco omitido.
+
+GLOSSÁRIO DE REFERÊNCIA (autoridade terminológica — use para julgar se o termo
+JP foi vertido para a forma correta em PT). Se o JP contém um termo abaixo e o
+PT NÃO usa a forma indicada (ou usa um sinônimo que foge à forma fixada),
+marque como ERRO_TRADUCAO e sugira a forma correta.
+
+REGRAS SEMÂNTICAS ADICIONAIS:
+- AMULETOS vs IMAGENS: amuletos (御守り, carregados no pescoço) = Ohikari/Kōmyō/
+  Daikōmyō; imagens (御軸, adoradas) = Kōmyō Nyorai/Daikōmyō Nyorai. Não confundir.
+- 大清算 (Grande Acerto de Contas) ≠ 大浄化 (Grande Purificação) — são distintos.
+- Johrei, Ohikari, Kannon, Meishu-Sama — termos consagrados, preservar.
+- O original pode ser registro truncado/telegráfico; a tradução DEVE fazer
+  reconstrução para fluidez, com [colchetes] esclarecedores quando tornam explícito
+  o que o contexto já indica — isso NÃO é erro, desde que não contradiga o JP nem
+  invente fato novo.
+
+Responda SOMENTE com um JSON válido, sem texto ao redor, no formato:
+{{"veredito": "OK" | "ERRO_TRADUCAO", "erro": null | "<descrição curta do erro>", "correcao": "<correção sugerida, se ERRO_TRADUCAO>"}}
+
+Para "OK", "erro" e "correcao" devem ser null.
+Para "ERRO_TRADUCAO", preencha "erro" (o que está errado) e "correcao" (como corrigir).
+IMPORTANTE: se a tradução usa os termos conforme o glossário acima, NÃO marque como erro."""
+
+
+
 
 def _client():
     from openai import OpenAI
@@ -81,7 +138,7 @@ def auditar_trecho(client, idx: int, jp: str, pt: str) -> dict:
                 model=MODELO,
                 max_tokens=MAX_TOKENS,
                 messages=[
-                    {"role": "system", "content": _auditor.SYSTEM_PROMPT},
+                    {"role": "system", "content": SYSTEM_PROMPT_HIBRIDO},
                     {"role": "user", "content": prompt_usuario},
                 ],
             )
@@ -109,6 +166,10 @@ def executor_corrigir(idx: int, jp: str, pt_atual: str, erro: dict) -> str:
         quem="o texto",
     )
     prompt_base = adequar_prompt_prosa(prompt_base)
+
+    # Regra GENÉRICA de estruturas não-prosaicas (anti-tutela) — o executor
+    # precisa saber preservar/romanizar tabelas e diagramas ao corrigir.
+    prompt_base += """\n\n## ESTRUTURAS NÃO-PROSAICAS (regra geral)\nO texto pode conter blocos que não são prosa corrida: tabelas, diagramas,\nlistas alinhadas de caracteres, sequências de kana/silabário ou decomposições\nfonéticas/etimológicas de palavras.\n- PRESERVE-OS INTEGRALMENTE: nunca omita uma tabela, um diagrama ou uma\n  sequência de caracteres presente no original. A omissão de qualquer bloco é\n  erro grave de fidelidade.\n- Quando o bloco representar SOM ou FONÉTICA (sílabas, leituras, pronúncia,\n  decomposição sonora), use a REPRESENTAÇÃO FONÉTICA (romanização) como forma\n  principal, alinhada ao original se houver estrutura de colunas. O caractere\n  gráfico (kanji/kana) só precisa ser mantido se o texto estiver analisando a\n  FORMA ESCRITA como tema — não quando analisa o som.\n- NUNCA deixe um bloco do original sem correspondência no português.\n- NUNCA acrescente tabela, coluna, linha ou caractere que não exista no original.\n"""
 
     reforco = (
         "\n\nAUDITORIA APONTOU UM ERRO NESTA TRADUÇÃO. Corrija o problema "
