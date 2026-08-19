@@ -73,6 +73,29 @@ ou (b) este é um **ponto cego estrutural** do pipeline de retradução para tex
 com tabelas/diagramas, que pesa contra a hipótese de retraduzir os escritos
 (o Curso Kannon e outras obras têm MUITAS tabelas/diagramas de kotodama).
 
+## Descoberta: a tabela já existia na tradução original (pré-revisão)
+
+O `000_src.txt` (tradução ANTES da revisão literária) já continha a tabela gojūon
+romanizada. Ou seja: a tabela foi produzida pela TRADUÇÃO original, e a revisão
+literária apenas a MANTEVE. Isso reforça que a retradução automática (sem regra
+específica) tem um ponto cego que a tradução original não tinha.
+
+## Descoberta: a auditoria HÍBRIDA (semântica + literal) FECHA o gap
+
+A auditoria atual é **puramente semântica** (SYSTEM_PROMPT foca em sentido,
+inversão, termos) e NÃO detectou a omissão da tabela gojūon no T1.
+
+Teste com auditor HÍBRIDO (semântica + checagem LITERAL de cobertura estrutural:
+todo bloco não-prosaico do JP — tabelas, diagramas, sequências de kana — deve ter
+correspondência no PT) → **ERRO_TRADUCAO detectado corretamente**:
+"a tabela de kana (gojūon) do final do JP não foi incluída no PT", com a correção
+sugerida (incluir a tabela entre o parágrafo do tamagaeshi e o "Comprimindo
+Okada").
+
+**Conclusão**: incorporar a dimensão LITERAL/ESTRUTURAL ao SYSTEM_PROMPT do
+auditor fecha o gap que a auditoria semântica pura deixa passar. Ação possível:
+adicionar a dimensão B (cobertura estrutural) ao auditor e re-auditar.
+
 ## Conclusão
 
 - O processo de retradução + auditoria + ajuste é **comparável** à revisão
