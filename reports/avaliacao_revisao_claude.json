@@ -1,0 +1,67 @@
+[
+  {
+    "idx": 1,
+    "livro": "19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual",
+    "chunk": 3,
+    "avaliacao": {
+      "fluidez": 8,
+      "elegancia": 8,
+      "prazer": 7,
+      "fidelidade": 8,
+      "nota_geral": 8,
+      "critica": "A revisão corrige a construção estranha 'temer a invasão' (que soava como gerúndio truncado) inserindo o 'a' antes do infinitivo, e substitui 'tendo... não haveria o que temer' por uma condicional mais elegante ('se dispusesse... nada teria a recear'), evitando repetição de 'inimigo/temer'. A troca de 'essa saúde' por 'a saúde' perde uma nuance referencial sutil do original, mas não compromete o sentido geral. Ganho real em fluidez e variação lexical, mudança discreta mas bem executada."
+    }
+  },
+  {
+    "idx": 2,
+    "livro": "19490830 - Coleção Jikan Volume 5 Diálogos Jikan",
+    "chunk": 2,
+    "avaliacao": {
+      "fluidez": 8,
+      "elegancia": 8,
+      "prazer": 8,
+      "fidelidade": 9,
+      "nota_geral": 8,
+      "critica": "A revisão elimina repetições ('nagauta' -> 'ele'), funde orações curtas em períodos mais fluidos (ex.: 'cuja voz forte e bela, ecoando...') e varia conectivos ('como fundou' em vez de repetir 'mas também'), ganhando em cadência e elegância sem alterar fatos ou nomes. A reordenação 'quando surgiu... porém' também melhora o ritmo da frase. É uma revisão sutil, mas efetiva, mantendo fidelidade total ao conteúdo original."
+    }
+  },
+  {
+    "idx": 3,
+    "livro": "19491230 - Coleção Jikan Volume 9 Caminho para a Luz",
+    "chunk": 0,
+    "avaliacao": {
+      "fluidez": 7,
+      "elegancia": 7,
+      "prazer": 7,
+      "fidelidade": 10,
+      "nota_geral": 7,
+      "critica": "A revisão é mínima: a única alteração real foi trocar 'No entanto, por outro lado' por 'Contudo', eliminando uma redundância notória do original — um acerto pontual e correto. Fora isso, o texto permanece idêntico, palavra por palavra, sem qualquer ganho adicional em ritmo, vocabulário ou construção de frases. Trata-se de uma revisão tecnicamente fiel, mas de baixíssimo esforço editorial, que não chega a 'elevar' o texto a um padrão internacional — apenas corrige um pequeno deslize estilístico."
+    }
+  },
+  {
+    "idx": 4,
+    "livro": "19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina",
+    "chunk": 1,
+    "avaliacao": {
+      "fluidez": 8,
+      "elegancia": 7,
+      "prazer": 7,
+      "fidelidade": 9,
+      "nota_geral": 7,
+      "critica": "A revisão traz ganhos pontuais e bem calibrados: a elipse 'na ocidental' evita repetição, a inversão 'há nela alguma verdade' e o subjuntivo 'fosse ele verdadeiramente saudável' soam mais elegantes e idiomáticos que o original. Porém a supressão do 'existem... que' em 'muitas outras nada têm a ver com micróbios' deixa a frase ligeiramente solta sintaticamente, exigindo esforço extra do leitor para recuperar o antecedente. Ainda assim, é uma revisão comedida e coerente, sem distorcer o sentido original, apenas com polimento estilístico moderado."
+    }
+  },
+  {
+    "idx": 5,
+    "livro": "19491223 - Montanha e Água",
+    "chunk": 2,
+    "avaliacao": {
+      "fluidez": 7,
+      "elegancia": 7,
+      "prazer": 6,
+      "fidelidade": 9,
+      "nota_geral": 7,
+      "critica": "A revisão traz ganhos pontuais de cadência (inversões como 'Alinham-se os rostos negros' e 'Fluem as linhas suaves da colina' dão um toque mais poético e menos truncado que o original), e a correção do corte final ('20 de setembro' completo) é um acerto de fidelidade textual. Porém as mudanças são majoritariamente cosméticas — troca de ponto-e-vírgula por dois-pontos, ajustes de preposição ('através' para 'por entre', 'completamente' para 'por inteiro') — sem uma reformulação estrutural que eleve significativamente o texto a um padrão editorial internacional; a lista de haicais/tankas mantém certa aridez enumerativa em ambas as versões. O item 238 perdeu levemente a fluidez com o 'e fico extasiado', que soa um pouco mais burocrático que o original direto."
+    }
+  }
+]
