@@ -99,6 +99,27 @@ depender de LLM — deve ser uma **verificação LITERAL DETERMINÍSTICA por scr
 caracteres espaçados, tabelas) e confirmar por regex/estrutura que têm
 correspondência no PT. Isso fecharia o gap de forma confiável e reprodutível.
 
+## O problema real: cobertura TOTAL (não só tabela)
+
+O usuário apontou o ponto correto: o problema não é "identificar tabela", é
+garantir que **NADA do JP ficou sem tradução, independente do formato** (frase,
+tabela, diagrama, linha solta). Executor e auditor (ambos LLM) deixam passar
+conteúdo não traduzido porque trabalham por "sentido", não por "cobertura".
+
+**Abordagem determinística testada e VIÁVEL** (não-LLM, reproduzível):
+1. Detectar blocos não-prosaicos no JP (linhas com kana/kanji sem pontuação de
+   frase `。！？.!?…` — tabelas, diagramas, sequências de caracteres).
+2. Converter kana → romaji (mapeamento fonético).
+3. Verificar se cada bloco tem correspondência no PT (por âncora fonética).
+4. Bloco do JP sem correspondência no PT = conteúdo ficou para trás → bloqueia.
+
+Refinamento necessário: verificar a TABELA/DIAGRAMA COMPLETO como bloco (não
+apenas 3 fonemas), para evitar falso positivo quando a âncora curta aparece em
+outro contexto (ex.: "a-i-u-e-o" citado no texto corrido).
+
+Este checador determinístico, integrado ao pipeline como validação obrigatória
+antes de aprovar, fecha o gap que executor e auditor (LLM) deixam passar.
+
 ## Conclusão
 
 - O processo de retradução + auditoria + ajuste é **comparável** à revisão
