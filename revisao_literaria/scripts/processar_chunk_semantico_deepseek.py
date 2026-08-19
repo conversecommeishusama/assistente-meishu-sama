@@ -42,7 +42,9 @@ CHUNKS = REV / "chunks"
 PROTOCOLO = REV / "PROTOCOLO_LITERARIO.md"
 
 MODELO = "deepseek-v4-flash"
-MAX_TOKENS = 16000
+# deepseek-v4-flash é reasoning model: gasta ~14-60k chars raciocinando antes
+# de responder. 16000 tokens estouravam (content vazio); 40000 resolve.
+MAX_TOKENS = 40000
 RATIO_MIN = 0.5
 RATIO_MAX = 2.0
 # Tamanho máximo de chunk enviado por chamada (chunks grandes são divididos)
@@ -84,20 +86,46 @@ def _pedir_edicoes(texto: str, protocolo: str) -> list[dict]:
     """Chama o DeepSeek pedindo edições localizadas. Retorna lista de {de, para}."""
     prompt = f"""{protocolo}
 
-## Tarefa
-Identifique os trechos que merecem revisão literária no texto abaixo e proponha EDIÇÕES LOCALIZADAS.
-Regras:
+## Nível de exigência: editora internacional — AMBIÇÃO ESTÉTICA REAL
+Você não está só corrigindo erros: está ELEVANDO a prosa a padrão de editora de
+livros religiosos/filosóficos de alto nível. O texto atual pode estar
+"correto" e ainda assim estar ABAIXO do nível. Trate cada trecho com olhar de
+editor exigente.
+
+Diretrizes de ambição (aplique sempre que houver ganho):
+- Cadência e ritmo: reordene orações, alterne frases curtas e longas, elimine a
+  monotonia sintática. Períodos picados demais podem fundir; períodos empilhados
+  podem quebrar em dois.
+- Força e precisão lexical: troque paráfrases genéricas e calques por palavra
+  exata e viva. Elimine tiques como "coisas", "de certa forma", "tipo de",
+  "dessa forma", "desse modo" repetidos.
+- Eco mecânico: conectivos repetidos em sequência ("Além disso", "Portanto",
+  "No entanto") e palavras repetidas no mesmo parágrafo devem variar (anáfora ou
+  sinônimo exato).
+- Coesão: garanta transição natural entre parágrafos, sem inventar frase nova.
+
+Regras INEGOCIÁVEIS (vigem mesmo com ambição):
 - `de` deve ser um trecho LITERAL EXATO do texto atual.
-- `para` é a versão revisada (fluidez/elegância) SEM mudar sentido/fato/nome/número/ordem/citação.
-- NÃO reescreva trechos que já estão bons. Só proponha onde há ganho real de fluidez/ritmo/precisão.
-- Não altere numeração, nomes próprios, números, datas, citações entre aspas, títulos, divisórias, estrofes.
+- NUNCA mudar sentido/fato/nome/data/número/ordem/citação.
+- NUNCA adicionar ou cortar informação.
+- NUNCA alterar conteúdo de citação entre aspas, numeração, títulos, divisórias, estrofes.
+
+Exemplos do nível esperado de edição:
+- "a medicina, por ter partido de um erro, desconhece por completo a verdadeira causa das doenças e a essência da saúde; por isso suas explicações patológicas soam forçadas." -> "a medicina, por ter partido de um erro, desconhece por completo a verdadeira causa das doenças e a essência da saúde — daí suas explicações patológicas soarem forçadas."
+- "Recentemente, as pessoas têm muito medo de micróbios, esforçam-se por se prevenir deles e recorrem a todo tipo de método" -> "Ultimamente, as pessoas têm pavor de micróbios: esforçam-se por evitá-los e lançam mão de toda sorte de métodos"
+
+## Tarefa
+Proponha EDIÇÕES LOCALIZADAS para o texto abaixo. Proponha onde houver QUALQUER
+ganho real de fluidez, cadência, coesão ou precisão — mesmo que o trecho esteja
+gramaticalmente correto. Não deixe parágrafo com eco mecânico ou construção
+arrastada sem proposta. Só deixe um trecho intacto se ele já estiver excelente
+(isso deve ser a exceção, não a regra).
 
 ## Texto atual
 {texto}
 
 ## Formato de saída (JSON puro, nada mais)
-{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}
-Se não houver nada a melhorar, retorne {{"edicoes": []}}."""
+{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}"""
 
     for tentativa in range(3):
         reforco = ""

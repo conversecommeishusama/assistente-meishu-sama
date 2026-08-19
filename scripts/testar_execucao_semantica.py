@@ -32,7 +32,30 @@ PROTOCOLO = """## Protocolo (resumo — padrão de editora internacional)
 - Precisão lexical: palavra mais exata e natural em português, sem calques. Vocabulário rico mas não artificial.
 - Coesão entre parágrafos: transição natural, sem inventar frase nova.
 - NUNCA: mudar sentido/fato/nome/data/número/ordem/citação; adicionar ou cortar informação; alterar conteúdo de citação entre aspas.
-- Preservar integralmente: numeração de poemas/versos, autores, títulos, estrutura."""
+- Preservar integralmente: numeração de poemas/versos, autores, títulos, estrutura.
+
+## Nível de exigência: editora internacional — AMBIÇÃO ESTÉTICA REAL
+Você não está só corrigindo erros: está ELEVANDO a prosa a padrão de editora de
+livros religiosos/filosóficos de alto nível. O texto atual pode estar "correto"
+e ainda assim estar ABAIXO do nível. Trate cada trecho com olhar de editor
+exigente.
+
+Diretrizes de ambição (aplique sempre que houver ganho):
+- Cadência e ritmo: reordene orações, alterne frases curtas e longas, elimine a
+  monotonia sintática. Períodos picados demais podem fundir; períodos empilhados
+  podem quebrar em dois.
+- Força e precisão lexical: troque paráfrases genéricas e calques por palavra
+  exata e viva. Elimine tiques como "coisas", "de certa forma", "tipo de",
+  "dessa forma", "desse modo" repetidos.
+- Eco mecânico: conectivos repetidos em sequência ("Além disso", "Portanto",
+  "No entanto") e palavras repetidas no mesmo parágrafo devem variar (anáfora ou
+  sinônimo exato).
+- Coesão: garanta transição natural entre parágrafos, sem inventar frase nova.
+
+Regras INEGOCIÁVEIS (vigem mesmo com ambição):
+- NUNCA mudar sentido/fato/nome/data/número/ordem/citação.
+- NUNCA adicionar ou cortar informação.
+- NUNCA alterar conteúdo de citação entre aspas, numeração, títulos, divisórias, estrofes."""
 
 
 def _client():
@@ -67,19 +90,21 @@ def sistema_semantico_localizado(trecho: str) -> tuple[str, list[dict]]:
     prompt = f"""{PROTOCOLO}
 
 ## Tarefa
-Identifique os trechos que merecem revisão literária no texto abaixo e proponha EDIÇÕES LOCALIZADAS.
+Proponha EDIÇÕES LOCALIZADAS para o texto abaixo. Proponha onde houver QUALQUER
+ganho real de fluidez, cadência, coesão ou precisão — mesmo que o trecho esteja
+gramaticalmente correto. Não deixe parágrafo com eco mecânico ou construção
+arrastada sem proposta. Só deixe um trecho intacto se ele já estiver excelente
+(isso deve ser a exceção, não a regra).
 Regras:
 - `de` deve ser um trecho LITERAL EXATO do texto atual (para a ferramenta encontrar).
 - `para` é a versão revisada (fluidez/elegância) SEM mudar sentido.
-- NÃO reescreva trechos que já estão bons. Só proponha onde há ganho real.
 - Não altere numeração, nomes, números, datas, citações.
 
 ## Texto atual
 {trecho}
 
 ## Formato de saída (JSON puro, nada mais)
-{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}
-Se não houver nada a melhorar, retorne {{"edicoes": []}}."""
+{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}"""
 
     resp = _client().chat.completions.create(
         model=MODELO, messages=[{"role": "user", "content": prompt}],

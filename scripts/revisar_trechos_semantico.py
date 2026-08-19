@@ -7,11 +7,14 @@ e salva os resultados revisados (revisado_semantico_1..5.txt) para avaliação
 pelo Claude.
 
 Uso:
-    python3 scripts/revisar_trechos_semantico.py
+    python3 scripts/revisar_trechos_semantico.py            # processa todos (1-5)
+    python3 scripts/revisar_trechos_semantico.py 5          # só o trecho 5
+    REVISAR_TRECHO=5 python3 scripts/revisar_trechos_semantico.py
 """
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -22,7 +25,9 @@ sys.path.insert(0, "/var/www/goshinsho/goshinsho")
 from goshinsho.services import ai_service
 
 MODELO = "deepseek-v4-flash"
-MAX_TOKENS = 16000
+# deepseek-v4-flash é reasoning model: gasta ~14-60k chars raciocinando antes
+# de responder. 16000 tokens estouravam (content vazio); 40000 resolve.
+MAX_TOKENS = 40000
 TRECHOS = Path("/tmp/trechos_claude")
 
 PROTOCOLO = """## Protocolo (padrão de editora internacional — revisão literária)
@@ -31,7 +36,29 @@ PROTOCOLO = """## Protocolo (padrão de editora internacional — revisão liter
 - Coesão: transição natural entre ideias, sem inventar frase de sentido novo.
 - NUNCA: mudar sentido/fato/nome/data/número/ordem/citação; adicionar ou cortar informação; alterar conteúdo de citação entre aspas.
 - Preservar integralmente: numeração, nomes próprios, títulos, estrutura de parágrafos.
-- SEJA AMBICIOSO: busque elevação estética real (cadência, musicalidade), não apenas correção mínima."""
+
+## Nível de exigência: editora internacional — AMBIÇÃO ESTÉTICA REAL
+Você não está só corrigindo erros: está ELEVANDO a prosa a padrão de editora de
+livros religiosos/filosóficos de alto nível. O texto atual pode estar "correto"
+e ainda assim estar ABAIXO do nível. Trate cada trecho com olhar de editor
+exigente.
+
+Diretrizes de ambição (aplique sempre que houver ganho):
+- Cadência e ritmo: reordene orações, alterne frases curtas e longas, elimine a
+  monotonia sintática. Períodos picados demais podem fundir; períodos empilhados
+  podem quebrar em dois.
+- Força e precisão lexical: troque paráfrases genéricas e calques por palavra
+  exata e viva. Elimine tiques como "coisas", "de certa forma", "tipo de",
+  "dessa forma", "desse modo" repetidos.
+- Eco mecânico: conectivos repetidos em sequência ("Além disso", "Portanto",
+  "No entanto") e palavras repetidas no mesmo parágrafo devem variar (anáfora ou
+  sinônimo exato).
+- Coesão: garanta transição natural entre parágrafos, sem inventar frase nova.
+
+Regras INEGOCIÁVEIS (vigem mesmo com ambição):
+- NUNCA mudar sentido/fato/nome/data/número/ordem/citação.
+- NUNCA adicionar ou cortar informação.
+- NUNCA alterar conteúdo de citação entre aspas, numeração, títulos, divisórias, estrofes."""
 
 
 def _client():
@@ -42,19 +69,21 @@ def _pedir_edicoes(texto: str) -> list[dict]:
     prompt = f"""{PROTOCOLO}
 
 ## Tarefa
-Identifique os trechos que merecem revisão literária no texto abaixo e proponha EDIÇÕES LOCALIZADAS (reescrita de frases/orações inteiras quando houver ganho de fluidez ou elegância).
+Proponha EDIÇÕES LOCALIZADAS para o texto abaixo. Proponha onde houver QUALQUER
+ganho real de fluidez, cadência, coesão ou precisão — mesmo que o trecho esteja
+gramaticalmente correto. Não deixe parágrafo com eco mecânico ou construção
+arrastada sem proposta. Só deixe um trecho intacto se ele já estiver excelente
+(isso deve ser a exceção, não a regra).
 Regras:
 - `de` deve ser um trecho LITERAL EXATO do texto atual.
 - `para` é a versão revisada (fluidez/elegância/cadência) SEM mudar sentido/fato/nome/número/ordem/citação.
-- NÃO reescreva trechos que já estão bons. Só proponha onde há ganho real.
 - Não altere numeração, nomes próprios, números, datas, citações.
 
 ## Texto atual
 {texto}
 
 ## Formato de saída (JSON puro, nada mais)
-{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}
-Se não houver nada a melhorar, retorne {{"edicoes": []}}."""
+{{"edicoes": [{{"de": "trecho literal exato", "para": "novo texto"}}]}}"""
 
     for tentativa in range(3):
         reforco = ""
@@ -96,8 +125,16 @@ def _aplicar(texto: str, edicoes: list[dict]) -> tuple[str, int, int]:
 
 
 def main() -> int:
-    print("=== Revisão semântica dos 5 trechos ===")
-    for i in range(1, 6):
+    # Índice opcional: argumento CLI (ex.: `... 5`) ou env REVISAR_TRECHO.
+    alvo = None
+    if len(sys.argv) > 1 and sys.argv[1].isdigit():
+        alvo = int(sys.argv[1])
+    elif os.environ.get("REVISAR_TRECHO", "").isdigit():
+        alvo = int(os.environ["REVISAR_TRECHO"])
+
+    faixa = [alvo] if alvo is not None else list(range(1, 6))
+    print(f"=== Revisão semântica (trechos {faixa}) ===")
+    for i in faixa:
         src_path = TRECHOS / f"src_{i}.txt"
         if not src_path.exists():
             print(f"  [{i}] src ausente")
@@ -108,7 +145,7 @@ def main() -> int:
         (TRECHOS / f"revisado_semantico_{i}.txt").write_text(revisado, encoding="utf-8")
         print(f"  [{i}] {len(texto)} -> {len(revisado)} chars | {aplicadas} edições aplicadas, {rejeitadas} rejeitadas")
 
-    print("\nResultados salvos em /tmp/trechos_claude/revisado_semantico_*.txt")
+    print(f"\nResultados salvos em /tmp/trechos_claude/revisado_semantico_*.txt")
     return 0
 
 

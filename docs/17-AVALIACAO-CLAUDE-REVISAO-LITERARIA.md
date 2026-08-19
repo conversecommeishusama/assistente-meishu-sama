@@ -38,23 +38,73 @@ o histórico).
   era artefato do pareamento errado (trecho cortado vs início do src). Com o
   pareamento semântico, fidelidade = 8-9 real.
 
-## Comparação com o executor semântico (em andamento)
+## Comparação com o executor semântico (CONCLUÍDA + AJUSTE DE PROMPT — 2026-08-19)
 - O **executor semântico** (reescrita localizada com validação de âncora) foi
-  aplicado aos trechos 1-4 para comparação de qualidade (os arquivos
-  `revisado_semantico_1..4.txt`).
-- O **trecho 5 (Montanha e Água, poema) trava** na API DeepSeek (chamadas demoradas
-  + retries > timeout 600s) — pendente.
-- Objetivo: avaliar se o semântico mantém a fidelidade (maior segurança) e
-  aumenta a ambição estética (menos conservador), endereçando a crítica do Claude.
+  aplicado aos **5 trechos** para comparação de qualidade (os arquivos
+  `revisado_semantico_1..5.txt`).
+- **Infraestrutura resolvida**: o `deepseek-v4-flash` é *reasoning model* — com
+  `max_tokens=16000` o raciocínio estourava e a resposta (`content`) vinha vazia
+  (0 edições falsas). Ajustado para **`max_tokens=40000`** (produção
+  `processar_chunk_semantico_deepseek.py` + `revisar_trechos_semantico.py`).
+- **Ajuste de prompt (2ª rodada)**: adicionada seção "AMBIÇÃO ESTÉTICA REAL"
+  (cadência, precisão lexical, eco mecânico) e removida a instrução conservadora
+  "NÃO reescreva trechos que já estão bons". Resultado reavaliado pelo Claude.
+
+### Tabela comparativa — Integral vs Semântico conservador vs Semântico ambicioso (médias)
+| Critério | Integral | Sem. conservador | **Sem. ambicioso** | Δ cons→amb |
+|----------|----------|-----------|----------|------|
+| Fluidez | 7.6 | 7.6 | **8.0** | +0.4 |
+| Elegância | 7.4 | 7.2 | **7.8** | +0.6 |
+| Prazer | 7.0 | 6.8 | **7.4** | +0.6 |
+| Fidelidade | 9.0 | **9.2** | 8.8 | −0.4 |
+| **Nota geral** | 7.4 | 7.4 | **7.8** | **+0.4** |
+
+### Por trecho (nota geral): integral | sem. conservador | **sem. ambicioso**
+| Trecho | Integral | Sem. cons. | Sem. amb. |
+|--------|----------|-----------|-----------|
+| 1 | 8 | 8 | 7 |
+| 2 | 8 | 7 | **8** |
+| 3 | 7 | 8 | **8** |
+| 4 | 7 | 6 | **8** |
+| 5 | 7 | 8 | **8** |
+
+## Leitura da comparação semântica (após ajuste de prompt)
+- **Ganho estético real**: o prompt ambicioso elevou a nota geral de 7.4 → **7.8**
+  (fluidez 8.0, elegância 7.8, prazer 7.4) — endereça diretamente a crítica de
+  "conservador demais" do Claude. Os trechos 2, 4 e 5 subiram (o T4 foi de 6 → 8).
+- **Custo em fidelidade**: 9.2 → 8.8 (−0.4). O único achado real de fidelidade foi
+  no T5 (item 236: "folhas esparsas do carvalho" → "ramos esparsos do carvalho",
+  troca de referente da poda) — o Claude marcou como deslize pontual, não perda de
+  sentido. Lição: o executor precisa de reforço para **não trocar o referente** de
+  substantivo (folha/ramo, árvore/galho) ao reescrever.
+- **Achado de sintaxe (T2)**: a construção "não apenas se transformou... : fundou"
+  quebra a correlação "não apenas... mas também" — lição: preservar correlações
+  fixas ao aplicar pontuação.
+- **Conclusão para as orais**: manter o executor **semântico com prompt ambicioso**
+  (nota 7.8, fidelidade 8.8 ainda alta), ajustando 2 pontos no prompt:
+  (1) nunca trocar o referente de substantivo ao reescrever; (2) preservar
+  correlações fixas ("não apenas... mas também", "tanto... quanto").
 
 ## Arquivos
-- `reports/avaliacao_revisao_claude.json` — avaliação completa (notas + críticas).
+- `reports/avaliacao_revisao_claude.json` — avaliação integral (notas + críticas).
+- `reports/avaliacao_semantico_claude.json` — avaliação semântica ambiciosa
+  (notas + críticas).
+- `reports/avaliacao_semantico_claude.json.bak_conservador_20260819` — avaliação
+  semântica conservadora (rodada anterior).
 - `/tmp/trechos_claude/` — trechos originais (src_*), revisados integral
-  (trecho_*), revisados semântico (revisado_semantico_*).
-- `scripts/avaliar_revisao_com_claude.py` — script de avaliação.
-- `scripts/revisar_trechos_semantico.py` — script de revisão semântica dos trechos.
+  (trecho_*), revisados semântico (revisado_semantico_*), backup conservador
+  (`backup_conservador/`).
+- `scripts/avaliar_revisao_com_claude.py` — script de avaliação integral.
+- `scripts/avaliar_semantico_com_claude.py` — script de avaliação semântica.
+- `scripts/revisar_trechos_semantico.py` — script de revisão semântica dos trechos
+  (aceita índice opcional: `... 5`; `max_tokens=40000`).
 - `scripts/testar_execucao_semantica.py` — teste comparativo integral vs semântico.
+- `revisao_literaria/scripts/processar_chunk_semantico_deepseek.py` — executor
+  semântico de produção (prompt ambicioso + `max_tokens=40000`).
 
 ## Status
 - ✅ Avaliação integral pelo Claude: concluída (médias acima).
-- 🔄 Comparação semântica: 4/5 trechos revisados; trecho 5 pendente (travamento API).
+- ✅ Avaliação semântica conservadora: concluída (fidelidade 9.2, nota 7.4).
+- ✅ **Ajuste de prompt + reavaliação semântica ambiciosa: concluída** (nota 7.8,
+  fidelidade 8.8 — melhor equilíbrio estética/segurança para as orais).
+- ✅ Trecho 5 (Montanha e Água): semântico ambicioso gerado e avaliado (10 edições).
