@@ -120,6 +120,43 @@ outro contexto (ex.: "a-i-u-e-o" citado no texto corrido).
 Este checador determinístico, integrado ao pipeline como validação obrigatória
 antes de aprovar, fecha o gap que executor e auditor (LLM) deixam passar.
 
+## Implementação: checador determinístico de cobertura + integração no pipeline
+
+Foi implementado `scripts/checador_cobertura.py` (não-LLM, determinístico):
+1. Detecta blocos não-prosaicos do JP (linhas com kana/kanji sem pontuação de
+   frase `。！？.!?…` e sem partículas gramaticais — distingue diagrama/tabela de
+   prosa explicativa).
+2. Converte kana → romaji (com dígrafos: ダイ→dai, ガワ→gawa etc.).
+3. Verifica correspondência no PT por âncora fonética (linha inteira contígua
+   para linhas só-kana; fonemas para linhas com kanji).
+4. Classifica em 3 casos:
+   - **omitido** (nenhuma âncora no PT) → BLOQUEIA
+   - **INCOMPLETA** (parte das âncoras) → BLOQUEIA
+   - **presente em japonês cru** (não romanizado) → observação (não bloqueia)
+
+Integrado ao `pipeline_retrad_escritos.py` **depois da auditoria**: se o checador
+detectar omissão/incompletude, transforma em ERRO_TRADUCAO sintético → executor
+corrige (com instrução de incluir o bloco) → re-audita → re-checa.
+
+## Teste do pipeline com o checador (T1 problemático — sem tabela)
+
+| Etapa | Resultado |
+|-------|-----------|
+| Auditoria #1 (LLM híbrido) | ERRO_TRADUCAO: "tabela de kana (gojūon) omitida" ✅ |
+| **Checador determinístico** | **COBERTURA (BLOQUEIA): 1 bloco omitido** ✅ |
+| Ajuste #1 (executor) | Corrigiu: 5060→5513c, **incluiu a tabela gojūon** ✅ |
+| Auditoria #2 | OK ✅ |
+| Checador (2ª rodada) | Tabela gojūon passa ✅ (resta 1 observação/bloqueio: diagrama 岡田仁斎 parcial) |
+
+**Confirmação**: a camada determinística de cobertura fecha o gap que a auditoria
+semântica pura deixava passar. O fluxo auditoria→checador→correção→re-auditoria
+funciona.
+
+**Limitação identificada**: o checador é RIGOROSO demais para diagramas
+parcialmente representados (岡田仁斎: 3/4 âncoras presentes → bloqueia como
+INCOMPLETA). Calibração recomendada: aceitar diagrama com ≥50% das âncoras
+presentes como observação, mantendo apenas omissão TOTAL como bloqueio.
+
 ## Conclusão
 
 - O processo de retradução + auditoria + ajuste é **comparável** à revisão

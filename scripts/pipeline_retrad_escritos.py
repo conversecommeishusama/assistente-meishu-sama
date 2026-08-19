@@ -40,6 +40,7 @@ from retraducao_completa_gokowa import (
     carregar_glossario_completo,
 )  # noqa: E402
 from teste_retrad_escritos import CONTEXTO_KANNON, ADEQUACAO_PROSA  # noqa: E402
+from checador_cobertura import checar_cobertura  # noqa: E402
 
 # Auditor (SYSTEM_PROMPT + extrair_json)
 _spec = importlib.util.spec_from_file_location(
@@ -229,6 +230,30 @@ def main() -> int:
             v = veredito.get("veredito")
             print(f"    -> {v}" + (f": {veredito.get('erro','')[:120]}" if v == "ERRO_TRADUCAO" else ""), flush=True)
             historico.append({"tentativa": tentativa, "veredito": v, "erro": veredito.get("erro")})
+
+            # CHECADOR DETERMINÍSTICO DE COBERTURA (depois da auditoria):
+            # verifica que NADA do JP ficou sem tradução (blocos não-prosaicos:
+            # tabelas, diagramas, sequências de kana). O LLM não faz isso de
+            # forma confiável — este é determinístico.
+            achados = checar_cobertura(jp, pt_atual)
+            # Bloqueiam: conteúdo OMITIDO ou tabela INCOMPLETA (nada para trás).
+            # "Presente em japonês cru" = observação (conteúdo está lá, mas
+            # idealmente romanizar) — NÃO bloqueia.
+            bloqueantes = [a for a in achados if "omitido" in a["motivo"] or "INCOMPLETA" in a["motivo"]]
+            obs = [a for a in achados if "japonês cru" in a["motivo"]]
+            if bloqueantes:
+                desc = "; ".join(f"{a['motivo']} (bloco: {a['bloco'][0][:20]}...)" for a in bloqueantes[:3])
+                print(f"    -> COBERTURA (BLOQUEIA): {len(bloqueantes)} bloco(s) omitido(s)/incompleto(s)", flush=True)
+                historico.append({"tentativa": tentativa, "etapa": "cobertura", "bloqueantes": len(bloqueantes), "detalhe": desc})
+                # transforma em ERRO_TRADUCAO sintético para o executor corrigir
+                v = "ERRO_TRADUCAO"
+                veredito = {
+                    "veredito": "ERRO_TRADUCAO",
+                    "erro": f"Conteúdo do JP ficou sem tradução no PT (cobertura): {desc}. "
+                            "Inclua os blocos/tabelas/diagramas que estão no japonês e faltam no português, "
+                            "traduzindo ou romanizando todo o conteúdo do original — não omita nada.",
+                    "correcao": None,
+                }
 
             if v == "OK":
                 aprovado = True
