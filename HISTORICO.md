@@ -80,9 +80,44 @@ para os 8 Mioshie-shū (2288 falas), conforme docs/15 §5 e docs/16 §5.
 
 ### Estado atual / pendências
 - Verificação semântica integral: arquivos 1-7 feita (1.934 falas), **11 divergências
-  pontuais encontradas** (lista no memory de sessão). **Arquivo 8 PENDENTE** (agente travou).
-- Próximos passos: (1) verificar nº 8 (dividir em partes), (2) aplicar as 11 divergências,
-  (3) revalidar, (4) avançar para REVISÃO LITERÁRIA (com autorização do usuário).
+  pontuais encontradas** (lista completa abaixo). **Arquivo 8 PENDENTE** (agente travou).
+- Próximos passos: (1) verificar nº 8 (dividir em partes, ex: falas 0-119 / 120-239 /
+  240-357 — o material é `reports/material_leitura_semantica_mioshie_8.txt`, 1441
+  linhas ~525KB), (2) aplicar as 11 divergências abaixo, (3) revalidar, (4) avançar
+  para REVISÃO LITERÁRIA (com autorização do usuário).
+
+### DIVERGÊNCIAS SEMÂNTICAS ENCONTRADAS (11 — aplicar na próxima sessão)
+Material de leitura: `reports/material_leitura_semantica_mioshie_{1..8}.txt`
+(cada fala no formato `=== FALA N (quem) ===` / `JP:` / `PT:`).
+
+1. **nº 2, fala 82** (baixa): JP `五厘違えば良いです` → PT "diferença de cinco por
+   cento". 五厘 = **0,5%** (não 5%). Corrigir para "0,5%" (ou "meio por cento").
+2. **nº 3, fala 44** (baixa): JP `土用波――目の奥が痛く――脳貧血ですね` → PT aplica
+   "anemia cerebral" também à dor nos olhos; no JP o diagnóstico é só do ruído.
+   Ajustar para não estender o diagnóstico ao sintoma ocular.
+3. **nº 3, fala 54** (baixa): estrutura temporal confusa: "há vinte anos, um ano
+   depois do nascimento..." — clarificar a cronologia (doença 1 ano após primogênito).
+4. **nº 3, fala 78** (baixa): PT cria causalidade "a toxina vem de baixo" que não
+   existe no JP (o JP só diz que a percepção é pelo lado inferior; a toxina está em cima).
+5. **nº 3, fala 200** (baixa): confusão de turnos de fala: "três anos" (interlocutor)
+   vs "dois anos" (constatação de Meishu-Sama) misturados no PT.
+6. **nº 5, fala 98** (média): JP `曲がるようになった` (voltou a DOBRAR = recuperação
+   de mobilidade) → PT "passou a se deformar" (inverte o sentido para piora).
+   Corrigir para "passou a dobrar de novo" / "recuperou a mobilidade".
+7. **nº 6, fala 32** (baixa): JP `今日は春だから` (é primavera) → PT "é o Ano Novo".
+   Padronizar como "primavera" (inconsistente com fala 67).
+8. **nº 6, fala 303** (média): JP `とう病` → PT "diabetes". とう病 é prática espiritual
+   (cobras) — manter "doença tō" (a fala 305 mantém "doença tō" corretamente).
+9. **nº 7, fala 60** (baixa): data-cabeçalho `二月七日` (7 de fevereiro) **omitida**
+   no PT — restaurar.
+10. **nº 7, fala 67** (baixa): JP `自分の墓` (túmulo próprio da família) vs `家主の墓`
+    (do proprietário) — PT inverteu a atribuição. Corrigir preferência/alternativa.
+11. **nº 7, fala 202** (baixa): JP `ザルブロ` (Zarubo) → PT "Salvarsan 606" (outro
+    remédio). Manter "Zarubo".
+
+Observações (não-divergências, mas registrar): nº 1 fala 128 referente ambíguo de
+"この人"; grafia de 晴々台 varia no nº 2 (Harehare-dai/Seijindai/Haruharadai/Seisei-dai);
+nº 3 marcador "rattail" é artefato do texto-fonte (fiel).
 
 ### Backups desta sessão
 - `reports/retraducao_colecoes/backup_pre_estrutural_n8_20260820/`
