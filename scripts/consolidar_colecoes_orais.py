@@ -45,7 +45,9 @@ JP_DIA = {
 JP_DIA_SEMANA = {'日':'domingo','月':'segunda-feira','火':'terça-feira','水':'quarta-feira','木':'quinta-feira','金':'sexta-feira','土':'sábado'}
 MESES_PT = ['', 'janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro']
 
-DATA_RE = re.compile(r'^([一二三四五六七八九十]+)月([一二三四五六七八九十]+日)(?:[（(]([日月火水木金土])[）)])?$')
+DATA_RE = re.compile(r'^([一二三四五六七八九十]+)月([一二三四五六七八九十]+日)(?:[（(]([日月火水木金土])[）)])?(?:[（(][^）)]*[）)])?$')
+# data no INÍCIO de um parágrafo/fala (sem exigir fim de linha)
+DATA_PREFIX_RE = re.compile(r'^([一二三四五六七八九十]+)月([一二三四五六七八九十]+日)')
 
 
 def ordinal(d: int) -> str:
@@ -153,26 +155,54 @@ def montar_arquivo(stem: str, colecao: str, dry_run: bool = False) -> str | None
 
     # Fundir blocos consecutivos do MESMO falante (são continuações da mesma
     # fala — o extrator quebrou perguntas/respostas longas em blocos).
+    # Uma fala que COMEÇA com uma data de sessão (ex: "三月二十五日 …") marca o
+    # início de uma nova sessão → não se funde com a anterior.
     agrupados = []
+    datas_fala: list[str] = []  # data_pt da sessão de cada grupo ("" se nenhuma)
     for f in ordenadas:
         quem = f.get("quem")
         pt = f.get("pt_contextual", "").strip()
-        if agrupados and agrupados[-1]["quem"] == quem:
+        jp = f.get("jp", "").strip()
+        data_fala = ""
+        if jp:
+            m_data = DATA_PREFIX_RE.match(jp)
+            if m_data:
+                data_fala = data_jp_para_pt(m_data.group(0)) or ""
+        if agrupados and agrupados[-1]["quem"] == quem and not data_fala:
             agrupados[-1]["pt"] += " " + pt
         else:
             agrupados.append({"quem": quem, "pt": pt})
+            datas_fala.append(data_fala)
+
+    # Datas do JP que JÁ são marcadores de fala (no início do JP) → não devem
+    # ser emitidas pela lógica antiga de datas_do_jp (evita duplicação).
+    datas_fala_set = {d for d in datas_fala if d}
 
     idx_data = 0
     for i, g in enumerate(agrupados):
+        # marcadores do JP (lógica original), pulando datas já marcadas na fala
         while idx_data < len(datas) and i >= datas[idx_data][1]:
             data_pt = data_jp_para_pt(datas[idx_data][0])
-            if data_pt:
+            if data_pt and data_pt not in datas_fala_set:
                 linhas_out.append(f"[{data_pt}]")
                 linhas_out.append("")
             idx_data += 1
+        # marcador de sessão detectado no início do JP da fala (nº 8: 23-27)
+        if datas_fala[i]:
+            linhas_out.append(f"[{datas_fala[i]}]")
+            linhas_out.append("")
         rotulo = "Interlocutor" if g["quem"] == "Interlocutor" else "Meishu-Sama"
         linhas_out.append(f"{rotulo}: {g['pt']}")
         linhas_out.append("")
+
+    # datas restantes do JP que excederam o índice (ex: n_fala >= len(grupos))
+    # e não são marcadores de fala → ficam no FINAL como marcador isolado.
+    while idx_data < len(datas):
+        data_pt = data_jp_para_pt(datas[idx_data][0])
+        if data_pt and data_pt not in datas_fala_set:
+            linhas_out.append(f"[{data_pt}]")
+            linhas_out.append("")
+        idx_data += 1
 
     texto = "\n".join(linhas_out).strip() + "\n"
 

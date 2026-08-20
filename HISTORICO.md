@@ -50,6 +50,54 @@ aqui, via Claude Code, diretamente neste servidor.
    só faz sentido DEPOIS que um restart real foi confirmado e executado --
    nunca antes disso.
 
+## Estado do trabalho nesta sessão (2026-08-20) — ADEQUAÇÃO ESTRUTURAL MIOSHIE-SHŪ 1-8
+
+### O que foi feito
+Executada a etapa **ADEQUAÇÃO ESTRUTURAL** do pipeline (segmentação/âncoras/specs)
+para os 8 Mioshie-shū (2288 falas), conforme docs/15 §5 e docs/16 §5.
+
+**1. Corrigido bug estrutural do nº 8 (sessões 23-27 de março achatadas):**
+- O extractor não capturava prosa contínua datada de Meishu-Sama (sem rótulo
+  `Meishu-Sama:`/`〔御垂示〕`) → sessões 23-27 ficaram fundidas numa linha gigante.
+- Corrigido: `scripts/reestruturar_checkpoint_n8.py` dividiu as falas fundidas;
+  `consolidar_colecoes_orais.py` passou a reconhecer data no início do JP e datas
+  residuais. Consolidado nº 8 agora tem 10 marcadores de sessão.
+
+**2. Corrigido bug do nº 1:** DATA_RE aceita sufixo livre em parênteses
+(`八月五日（本日に限り速記によらず）`) → marcador [5 de agosto] presente.
+
+**3. Reconstrução completa (Opção B) dos 8 consolidados:**
+- `scripts/reconstruir_consolidados_opb.py` reconstrói por sessão via mapeamento
+  por posição JP (cursor + detecção de outlier + limpeza de rótulos duplicados).
+- Consolidados em `revisao_literaria/orais/` e staging em
+  `reports/livros_trabalho/pt/` atualizados com a estrutura correta.
+
+**4. Reconciliação das âncoras das specs** (padrão canônico do nº 7):
+- `pt_anchor` = marcador `[data]` real; `jp_anchor` (base JP) intacta.
+
+**5. Validação:** 8/8 OK, 0 falhas (split_by_anchors JP+PT); 2.292 falas,
+0 faltando, 0 duplicadas; 0 rótulos duplicados; cobertura total.
+
+### Estado atual / pendências
+- Verificação semântica integral: arquivos 1-7 feita (1.934 falas), **11 divergências
+  pontuais encontradas** (lista no memory de sessão). **Arquivo 8 PENDENTE** (agente travou).
+- Próximos passos: (1) verificar nº 8 (dividir em partes), (2) aplicar as 11 divergências,
+  (3) revalidar, (4) avançar para REVISÃO LITERÁRIA (com autorização do usuário).
+
+### Backups desta sessão
+- `reports/retraducao_colecoes/backup_pre_estrutural_n8_20260820/`
+- `reports/livros_trabalho/segmentacao_manual/backup_pre_reconciliacao_ancoras_20260820/`
+- `reports/livros_trabalho/pt_backup_pre_adequacao_estrutural_20260820/`
+- `reports/livros_trabalho/pt_backup_pre_reconstrucao_opB_20260820/`
+- `reports/consolidacao_orais/backup_pre_reconstrucao_opB_20260820/`
+
+### Atenção
+- CONSOLIDADOS + STAGING PT são agora os artefatos canônicos da estrutura.
+- NÃO re-consolidar Mioshie 1-8 a partir do checkpoint sem aplicar a reconstrução depois
+  (o checkpoint mantém as sessões achatadas).
+
+---
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral
