@@ -255,6 +255,46 @@ Todos resolvidos — nenhum ficou pendente:
 
 ---
 
+## Estado do trabalho nesta sessão (2026-08-21) — PAREAMENTO JP↔STAGING DAS ORAIS (INICIADO, AGUARDANDO AVALIAÇÃO)
+
+> Contexto: antes da revisão semântica das orais (Gokōwa/Gosuiji/Mioshie 9-33),
+> é preciso resolver o **pareamento JP↔PT** entre o JP original (`textos_japones/`)
+> e o staging canônico (`reports/livros_trabalho/pt/`).
+
+### Regra suprema confirmada pelo usuário (CRÍTICA)
+- **O original japonês NUNCA deve ser alterado** — regra que JÁ EXISTE no projeto
+  (`protocolo_traducao.txt` §1.1; `protocolo_revisao.txt`; `revisao-paralela-jp-pt.mdc`).
+- Qualquer **inconsistência de rotulagem do JP** deve ser **TRAZIDA PARA AVALIAÇÃO
+  do usuário** — nunca corrigida diretamente no JP.
+- **Adequação de rotulagem feita no PASSADO DEVE ser mantida**; mudanças recentes
+  devem ser avaliadas pelo usuário.
+- O JP é 100% referência para o conteúdo; o staging deve refletir o JP.
+
+### ⚠️ ERRO COMETIDO E CORRIGIDO
+- Adicionei rótulos `Meishu-Sama:`/`Interlocutor:` em **11 arquivos JP** (Gosuiji
+  1,2,6,9,13,19,23,24,30 + Gokowa 10,19) e corrigi 1 rótulo no staging do Gosuiji 19.
+- **TUDO REVERTIDO** aos originais (backups `jp_backup_pre_pareamento_20260821_*.txt`
+  + `pt_backup_pre_pareamento_20260821_gosuiji19.txt`).
+- Lição: NUNCA editar o JP; levar inconsistências ao usuário.
+
+### Diagnóstico do pareamento (divergências de contagem JP vs staging)
+- **Gokōwa**: 15/20 OK; divergem 10, 13, 14, 19.
+- **Gosuiji**: 15/30 OK; divergem 1, 2, 5, 6, 7, 9, 11, 13, 17, 19, 21, 23, 24, 30.
+- Causa típica: **fala do Meishu-Sama sem rótulo no JP** (após `［data］`) que o
+  staging corrigiu; **duas perguntas do Interlocutor juntas**; **divisão de fala
+  longa**; e casos de **omissão/duplicação/reorganização no staging**.
+
+### Relatório de inconsistências de rotulagem (PARA AVALIAÇÃO)
+- Detalhe completo por arquivo em:
+  `reports/pareamento_orais/INCONSISTENCIAS_ROTULAGEM_JP.md`
+- Status: `reports/pareamento_orais/status_pareamento.json`
+
+### Estado atual
+- **PARADO aguardando avaliação do usuário** sobre a rotulagem do JP.
+- Quando o usuário decidir, retomar o pareamento e depois a revisão semântica.
+
+---
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral
