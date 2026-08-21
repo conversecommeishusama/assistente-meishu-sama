@@ -295,6 +295,41 @@ Todos resolvidos — nenhum ficou pendente:
 
 ---
 
+## Estado do trabalho nesta sessão (2026-08-21) — VERIFICAÇÃO: APP (ÍNDICES) vs textos_japones ATUAL
+
+> Pedido do usuário (insegurança sobre alterações no japonês): comparar a versão
+> atual de `textos_japones/` com o que o app usa (índices FAISS + busca agêntica).
+
+### O que o app usa
+- **Índices FAISS**: `experiments/uploaded_indexes/` (chunks_jp.pkl, metadados_jp.pkl,
+  indice_jp.faiss) — construídos em **14/08** a partir de `data/clean_corpus/jp/` (corpus limpo).
+- **Busca agêntica**: lê `textos_japones/*.txt` diretamente.
+
+### Resultado da comparação
+- **Nomes de arquivo**: 137 referenciados = 137 presentes ✅
+- **Conteúdo textual**: IGUAL em todos os 137 (âncoras batem) ✅
+- **ROTULAGEM (divisão de falas)**: **DIVERGE** ⚠️
+  - O app tem **1.094 rótulos `Interlocutor:`/`Meishu-Sama:` a mais** que os
+    arquivos atuais:
+    - Gokowa: 20/20 divergem (faltam 333) — ex: 1号 app 50/53 vs atual 47/47
+    - Gosuiji: 30/30 divergem (faltam 633) — ex: 1号 app 257 vs atual 241
+    - Mioshie 1-8 (diálogo): 7 divergem (faltam 128)
+    - Mioshie 9-33 (prosa): 0/0 OK
+- **Natureza**: o app foi indexado a partir de uma versão com **divisão de falas
+  longas mais granular** (rótulos adicionais no meio de falas). NÃO é diferença de
+  conteúdo — é **segmentação de falas (rotulagem)**.
+
+### Conclusão
+- A **adequação de rotulagem** (divisão de falas) que alimentou o app em 14/08
+  **NÃO está nos arquivos atuais** (`textos_japones/` nem `data/clean_corpus/jp/`).
+- **PENDENTE de avaliação do usuário**: onde está a versão com a rotulagem completa?
+  Deve ser restaurada?
+- Relatório completo: `reports/pareamento_orais/VERIFICACAO_APP_VS_JP_20260821.md`
+- Backups verificados: `reports/livros_trabalho/jp_backup_pre_rotulagem_20260713/`
+  (pré-rotulagem, 0 rótulos) + `jp_backup_pre_pareamento_20260821_*.txt` (revertidos).
+
+---
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral
