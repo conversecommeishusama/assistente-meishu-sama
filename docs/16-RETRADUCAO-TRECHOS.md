@@ -44,13 +44,17 @@ Decisão do usuário em 17/08 após comparativo controlado no lote 2 do Suplemen
 
 | Coleção | Arquivos | Falas | Status |
 |---|---|---|---|
-| **gokowa** | 20 (1-19 + Suplemento 補) | ~3.900 | retraduzindo (massa_gokowa_t) |
-| **gosuiji** | 30 (1-30) | ~5.573 | retraduzindo (massa_gosuiji_t) |
-| **mioshie** | 8 (1-8) | ~2.000 | retraduzindo (massa_mioshie_t) |
+| **gokowa** | 20 (1-19 + Suplemento 補) | ~3.900 | retraduzido ✅ |
+| **gosuiji** | 30 (1-30) | ~5.573 | retraduzido ✅ |
+| **mioshie** | 8 (1-8) | ~2.000 | **NÃO retraduzido** (decisão: ajuste manual, concluído) |
 
-**FORA do escopo (prosa contínua, não diálogo):**
-- Mioshie 9-33 (13-33: 0 falas; 9-12: só Meishu-Sama, prosa) — não retraduzir
-  neste momento; só juntar na revisão literária depois.
+**PROSA CONTÍNUA (Mioshie 9-33) — RETRADUZIDO (2026-08-20):**
+- Mioshie 9-33 são **prosa contínua** (não diálogo). Decisão do usuário: passar
+  por todo o pipeline (tradução → auditoria → ajuste → revisão semântica), com
+  prompts adaptados para prosa.
+- **Retradução CONCLUÍDA**: `scripts/retraduzir_mioshie_prosa_massa.py` (10
+  workers), 24/24 arquivos OK, 694/694 trechos com `pt_contextual`.
+- Pendente: auditoria → ajuste → revisão semântica → consolidação.
 
 ## 3. Scripts
 

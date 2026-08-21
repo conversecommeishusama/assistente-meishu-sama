@@ -33,18 +33,31 @@ duplicatas e por um histórico de idas e vindas (extrator bugado → retraduçã
 parcial → merge → reordenação). **NÃO confiar neles.** A verificação semântica
 manual revelou defeitos que nenhum script tinha detectado.
 
-### 1.3 A confiança do usuário foi perdida
-O usuário (especialista de domínio) NÃO confia mais no trabalho de ajuste.
-Decisão do usuário: **retraduzir o Mioshie-shū 1-8 do ZERO**, com o pipeline
-completo (tradução → auditoria → ajuste), usando 8 gunicorns em paralelo.
+### 1.3 A confiança do usuário foi perdida → DECISÃO FINAL (2026-08-20)
+O usuário (especialista de domínio) NÃO confia mais no trabalho de ajuste e **NÃO
+quer usar mais os checkpoints** dessa tradução (estão corrompidos por duplicatas e
+idas e vindas). **Decisão final do usuário: NÃO retraduzir o Mioshie-shū 1-8 do
+zero** — em vez disso, fazer o **AJUSTE MANUAL dos textos canônicos**, um caso
+por vez, de forma semântica linha a linha (sem script/grep/find-replace em lote),
+lendo o JP original (fonte de verdade) vs o PT do texto canônico lado a lado.
+
+> **⚠️ ATUALIZAÇÃO (2026-08-20, sessão de ajuste):** os ajustes manuais da
+> revisão semântica do Mioshie-shū **1-8 foram CONCLUÍDOS**. O arquivo **nº 8**
+> foi verificado integralmente (358 falas) — **sem pontos a ajustar**. Ver
+> `HISTORICO.md` (seção "Ajustes da revisão semântica Mioshie 1-8") para a tabela
+> de decisões dos 11 casos.
 
 ---
 
-## 2. ESCOPO DA RETRADUÇÃO
+## 2. ESCOPO (após a decisão final de 2026-08-20)
 
-- **Mioshie-shū 1-8** (御教え集 1号 a 8号): retraduzir do zero.
-- **Mioshie 9-33**: prosa contínua — FORA da retradução (docs/16). Só juntar
-  na consolidação.
+- **Mioshie-shū 1-8** (御教え集 1号 a 8号): **NÃO retraduzir do zero**. Ajuste
+  manual dos textos canônicos já **CONCLUÍDO** (ver HISTORICO). Os consolidados
+  em `revisao_literaria/orais/` e o staging em `reports/livros_trabalho/pt/`
+  são os artefatos canônicos (mantidos idênticos).
+- **Mioshie 9-33**: **prosa contínua** (não diálogo). Retradução por trechos de
+  prosa **CONCLUÍDA** (24/24 arquivos, 694/694 trechos com `pt_contextual`).
+  Próximas etapas: auditoria → ajuste → revisão semântica → consolidação.
 - **Gokōwa (19) e Gosuiji (30)**: NÃO foram afetados pelo bug do Mioshie
   (extrator linha-a-linha, sem o `while` bugado). Estão íntegros (validado por
   amostragem semântica). **NÃO retraduzir.**
@@ -69,50 +82,48 @@ completo (tradução → auditoria → ajuste), usando 8 gunicorns em paralelo.
 
 ---
 
-## 4. CAMINHO CORRETO: retraduzir Mioshie 1-8 do ZERO (8 gunicorns)
+## 4. ESTADO ATUAL (2026-08-21) — o que já foi feito
 
-### 4.1 Preparação (por favor, testar ANTES de rodar em massa — regra do projeto)
-1. **Apagar/recolher os checkpoints atuais do Mioshie** (corrompidos):
-   - `reports/retraducao_colecoes/19510*御教え集*.json` (1-8)
-   - JÁ EXISTE backup em `reports/retraducao_colecoes/backup_pre_retraducao_respostas_20260819/`
-     e `backup_reordenacao_20260819/` e `backup_ajuste_respostas_20260819/` — manter.
-2. **Confirmar que o extrator corrigido** (`extrair_falas_mioshie`) produz a
-   sequência correta: rodar `tests/test_extrator_mioshie.py` (deve passar).
-3. **Retraduzir do zero** com o método de trechos (docs/16):
-   - `scripts/retraduzir_trechos.py mioshie <arquivo_jp>` — usa o extrator corrigido.
-   - Orquestrar em paralelo com **8 gunicorns** (um por arquivo, ou fila).
+### 4.1 Mioshie 1-8 — AJUSTE MANUAL CONCLUÍDO (2026-08-20)
+- **Não** foi retraduzido do zero. Os 11 casos da verificação semântica foram
+  tratados **um a um, manualmente**, lendo o JP original vs o PT canônico:
+  - Casos **1–5** (nº2 fala82 五厘, nº3 falas 44/54/78/200): **já estavam
+    corretos** (re-avaliados; a anotação anterior de "五厘 = 0,5%" estava errada —
+    no contexto real 分=10%, 厘=1%, então 五厘 = 5%).
+  - Casos **6–11** (nº5 fala98 dobrar, nº6 fala32 primavera, nº6 fala303 doença
+    tō, nº7 fala60 data 7/2, nº7 fala67 túmulo, nº7 fala202 Zarubo): **corrigidos
+    manualmente** nos canônicos.
+  - **Arquivo nº 8**: verificado integralmente (358 falas) — **sem pontos a
+    ajustar**.
+- Os checkpoints 1-8 **não** são fonte (corrompidos) e **não** foram usados para
+  editar. Os canônicos (`revisao_literaria/orais/` + `reports/livros_trabalho/pt/`)
+  estão consistentes entre si.
 
-### 4.2 Pipeline completo (tradução → auditoria → ajuste)
-1. **Tradução**: `scripts/retraduzir_trechos.py mioshie <arquivo_jp>` (por arquivo).
-   - Usa `extrair_falas_mioshie` corrigido + executor DeepSeek (trechos ~2000 chars,
-     PROMPT + glossário + trava, max_tokens=40000).
-   - Checkpoint por arquivo em `reports/retraducao_colecoes/<stem>.json`.
-2. **Auditoria**: `scripts/auditar_colecoes_loop.py` (DeepSeek, mesmo critério do
-   projeto) → `reports/auditoria_colecoes/<stem>.json`.
-3. **Ajuste pontual**: `scripts/ajustar_pontos_auditoria.py <arquivo_ckpt.json>`
-   (executor corrige + auditor re-audita, até 3x; não-resolvidos → relatório).
-4. **Validação de integridade** (CRÍTICO — ver §4.3): confirmar 100% de cobertura,
-   sem duplicatas, ordem do diálogo correta.
+### 4.2 Mioshie 9-33 — RETRADUÇÃO DE PROSA CONCLUÍDA (2026-08-20, ~3,4h)
+- Os Mioshie 9-33 são **prosa contínua** (não diálogo). Foram retraduzidos por
+  trechos com prompts adaptados para prosa (`retraduzir_mioshie_prosa_massa.py`,
+  10 workers): **24/24 arquivos OK, 0 erros**, 694/694 trechos com `pt_contextual`.
+- **Próximas etapas do pipeline 9-33** (NÃO iniciadas ainda):
+  1. **Auditoria** — `scripts/auditar_colecoes_loop.py` (DeepSeek, critério do
+     projeto) → `reports/auditoria_colecoes/<stem>.json`.
+  2. **Ajuste pontual** — `scripts/ajustar_pontos_auditoria.py` (corrige + re-audita).
+  3. **Revisão semântica** — linha a linha (método aprovado pelo usuário).
+  4. **Consolidação** — gerar os canônicos de prosa em `revisao_literaria/orais/`.
 
-### 4.3 VALIDAÇÃO OBRIGATÓRIA ANTES DE CONSOLIDAR
-Depois da retradução + auditoria + ajuste, **verificar**:
-- [ ] Nº de falas por arquivo == Nº de turnos do JP (extrator corrigido).
-- [ ] **0 duplicatas** (nenhuma fala com conteúdo repetido).
-- [ ] Ordem pergunta → resposta (alternância Interlocutor/Meishu-Sama) correta.
-- [ ] Cobertura 100% do JP (todo turno tem tradução).
-- [ ] Amostra semântica manual (JP ↔ PT lado a lado) em cada arquivo.
-
-**Ferramenta de checagem de duplicatas** (rodar): verificar que não há duas falas
-com mesmo conteúdo (JP e PT normalizados) no checkpoint.
+### 4.3 VALIDAÇÃO OBRIGATÓRIA ANTES DE CONSOLIDAR (9-33)
+- [ ] Cobertura 100% do JP (todo trecho tem `pt_contextual`).
+- [ ] **0 duplicatas**.
+- [ ] Data/sessão e referências a artigos (`【栄光 一XX号】`) preservadas.
+- [ ] Amostra semântica manual (JP ↔ PT lado a lado).
 
 ---
 
-## 5. CONSOLIDAÇÃO (depois da retradução correta)
+## 5. CONSOLIDAÇÃO (dos 1-8 já consolidados; dos 9-33 após o pipeline)
 
 - `scripts/consolidar_colecoes_orais.py` — monta os arquivos na pasta provisória
   `revisao_literaria/orais/` (modelo A1/A3 do protocolo; fusão de blocos
   consecutivos do mesmo falante).
-- **IMPORTANTE**: só rodar DEPOIS que a validação §4.3 passar (checkpoints limpos).
+- **IMPORTANTE**: para os 9-33, só rodar DEPOIS que a validação §4.3 passar.
 
 ---
 

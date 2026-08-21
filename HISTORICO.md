@@ -133,6 +133,71 @@ nº 3 marcador "rattail" é artefato do texto-fonte (fiel).
 
 ---
 
+## Estado do trabalho nesta sessão (2026-08-20) — AJUSTES SEMÂNTICOS MIOSHIE-SHŪ 1-8 + RETRADUÇÃO PROSA 9-33
+
+> ⚠️ **ATUALIZADO em 2026-08-21:** a seção acima ("ADEQUAÇÃO ESTRUTURAL") é
+> histórico. Esta seção registra a continuação real da sessão de 20/08.
+
+### Ajustes da revisão semântica Mioshie-shū 1-8 — CONCLUÍDOS (método manual)
+Conforme a decisão do usuário: **NÃO retraduzir 1-8 do zero e NÃO usar mais os
+checkpoints** (corrompidos). Aplicado o **ajuste manual** dos textos canônicos,
+um caso por vez, de forma semântica linha a linha (sem script/grep em lote),
+lendo o JP original (fonte de verdade) vs o PT do texto canônico lado a lado.
+
+| Caso | Decisão final |
+|------|---------------|
+| 1 — nº2 fala82 (五厘) | ✅ Já correto (55/45% → 分=10%, 厘=1%, logo 五厘 = **5%**; anotação anterior de "0,5%" estava errada) |
+| 2 — nº3 fala44 | ✅ Já correto (PT fiel ao JP) |
+| 3 — nº3 fala54 | ✅ Já correto |
+| 4 — nº3 fala78 | ✅ Já correto (PT fiel) |
+| 5 — nº3 fala200 | ✅ Já correto (3 anos vs 2 anos separados) |
+| 6 — nº5 fala98 | ✏️ Corrigido: "passou a se deformar" → "voltou a dobrar" (inversão de sentido) |
+| 7 — nº6 fala32 | ✏️ Corrigido: "Ano Novo" → "primavera" (今日は春だから) |
+| 8 — nº6 fala303 | ✏️ Corrigido: "diabetes" → "doença tō" (とう病, prática espiritual) |
+| 9 — nº7 fala60 | ✏️ Corrigido: marcador [7 de fevereiro] movido para início da sessão |
+| 10 — nº7 fala67 | ✏️ Corrigido: "túmulo próprio [da família]" / "túmulo do proprietário" (estava invertido) |
+| 11 — nº7 fala202 | ✏️ Corrigido: "Salvarsan 606" → "Zarubo" (ザルブロ) |
+
+- **Arquivo nº 8**: verificado integralmente (358 falas) — **sem pontos a ajustar**.
+- Todos os canônicos (`revisao_literaria/orais/` + `reports/livros_trabalho/pt/`)
+  estão **consistentes entre si**.
+- As divergências listadas na seção anterior (11 itens) foram o **ponto de
+  partida**; a decisão final por caso está na tabela acima.
+
+### Retradução de prosa Mioshie 9-33 — CONCLUÍDA
+Os Mioshie 9-33 são **prosa contínua** (não diálogo). Decisão do usuário: passar
+por todo o pipeline (tradução → auditoria → ajuste → revisão semântica), com
+prompts adaptados para prosa.
+
+- **Retradução**: `scripts/retraduzir_mioshie_prosa_massa.py` (10 workers) —
+  **24/24 OK, 0 pulados, 0 erros, ~204,7 min**. 694/694 trechos com
+  `pt_contextual` preenchido.
+- **Backups**: `reports/retraducao_colecoes/*.bak_pre_trechos` por arquivo.
+- **Próximas etapas (pendentes)**:
+  1. Auditoria dos 9-33 (`scripts/auditar_colecoes_loop.py`).
+  2. Ajuste pontual (`scripts/ajustar_pontos_auditoria.py`).
+  3. Revisão semântica linha a linha.
+  4. Consolidação dos 9-33 nos canônicos.
+
+### Avaliação comparativa oral vs escrito (Claude) — CONCLUÍDA
+- 3 trechos orais (Mioshie nº1/6/8) vs 3 escritos (Guia Rápido, Confissão de um
+  Fiel, Curso Kannon).
+- Médias: **oral 7.2 vs escrito 6.9** (oral venceu em fluência, sentido, qualidade
+  tradutória e glossário; empate em qualidade literária).
+- Conclusão preliminar: a retradução oral já está no mesmo nível (ou levemente
+  superior) do escrito com revisão literária — revisão literária pesada nas orais
+  pode não valer a pena.
+- Resultado: `reports/avaliacao_oral_vs_escrito_claude.json`; script
+  `scripts/avaliar_oral_vs_escrito_claude.py`.
+
+### Regras de segurança registradas na sessão
+- Atualizar **documentos + commit ao fim de cada processo** (regra permanente).
+- Configuração aplicada: `chat.agent.maxRequests` aumentado para evitar paradas
+  do agente em trabalho longo.
+- Sempre backup de segurança + testes exaustivos antes de aplicar em massa.
+
+---
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral
