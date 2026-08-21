@@ -37,41 +37,44 @@
 - **Nenhuma alteração no japonês é necessária.**
 - Detalhes: `reports/pareamento_orais/VERIFICACAO_APP_VS_JP_20260821.md`.
 
-## 4. ESTADO REAL DO PAREAMENTO (verificado no fim da sessão)
+## 4. ESTADO REAL DO PAREAMENTO — **CONCLUÍDO (2026-08-21, sessão 3)**
 
 Método de verificação: `.venv/bin/python scripts/montar_material_semantico_canonico.py <colecao> <n>`
 - `colecao`: `gokowa` | `gosuiji`
 - Saída OK = contagens alinhadas (gera material); ERRO = contagem difere.
 
-### GOKOWA (御光話録)
+### GOKOWA (御光話録) — TODOS RESOLVIDOS
 | Nº | JP vs ST | Estado | O que fazer |
 |---|---|---|---|
 | 10 | 148 vs 148 | ✅ **Resolvido** | Staging: rótulo `Meishu-Sama:` extra após cabeçalho removido (JP é a base — decisão do usuário). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa10.txt` |
-| 13 | 277 vs 278 | ✅ **Resolvido** | Staging: duplicata da pergunta "Isso também é fato?" removida (2x→1x). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa13.txt` |
-| 14 | 160 vs 159 | ✅ **Resolvido** | Staging: pergunta do Interlocutor (foto do falecido) estava embutida no fim da fala do Meishu-Sama → separada. JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa14.txt` |
-| 19 | 186 vs 190 | ⏳ Pendente (complexo) | Fala sem rótulo (これは心得とくこと) + divisão de resposta longa em 3 + reorganização. Exige análise manual detalhada |
+| 13 | 277 vs 277 | ✅ **Resolvido** | Staging: duplicata da pergunta "Isso também é fato?" removida (2x→1x). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa13.txt` |
+| 14 | 160 vs 160 | ✅ **Resolvido** | Staging: pergunta do Interlocutor (foto do falecido) separada. JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa14.txt` |
+| 19 | 186 vs 186 | ✅ **Resolvido** | Staging: 4 rótulos extra removidos (Isso é algo para se ter em mente; Perguntar por que fez; Chamar a atenção; Aqui na sede). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa19.txt` |
 
-### GOSUIJI (御垂示録)
+### GOSUIJI (御垂示録) — TODOS RESOLVIDOS
 | Nº | JP vs ST | Estado | Nota |
 |---|---|---|---|
 | 1 | 241 vs 241 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após [8/8] removido |
 | 2 | 337 vs 337 | ✅ **Resolvido** | 2 rótulos `Meishu-Sama:` extra após [9/5] e [9/8] removidos |
-| 5 | 371 vs 373 | ⏳ **Parcial (1/3)** | Removido rótulo "se vai ou não fazer". Faltam 2: ver L31, L245, L254, L258, L337, L384, L385, L502, L505, L516, L534, L561, L820, L826 (sem rótulo no JP) |
-| 6 | 224 vs 229 | ⏳ Pendente | Após [5/1]/[6/2]/[7/1], 3 falas sem rótulo; +2 perguntas Interlocutor juntas |
+| 5 | 371 vs 371 | ✅ **Resolvido** | 3 rótulos extra removidos (se vai ou não fazer; batata-doce; kotodama) |
+| 6 | 224 vs 224 | ✅ **Resolvido** | 5 rótulos extra removidos (após [5/1]/[6/2]/[7/1]; peito estranho; luz forte) |
 | 7 | 180 vs 180 | ✅ **Resolvido** | 2 rótulos extra (Hashiguchi `Meishu-Sama:` + Korin `Interlocutor:`) removidos |
-| 9 | 156 vs 161 | ⏳ Pendente | Fala longa dividida no staging (講和, 朝日ダイヤ, 美術品, 希望) |
-| 11 | 203 vs 205 | ⏳ Pendente | 2 falas extras no meio do staging (divisões de fala longa) |
+| 9 | 156 vs 156 | ✅ **Resolvido** | 5 rótulos extra removidos (Nara/Shōtoku; tratado de paz; Diamante Asahi; obras de arte; esperança) |
+| 11 | 203 vs 203 | ✅ **Resolvido** | 3 rótulos extra removidos (já troquei; Dr. Nagayo; +1) |
 | 13 | 207 vs 207 | ✅ **Resolvido** | 2 rótulos `Meishu-Sama:` extra (Dunhuang e A Criação da Civilização) removidos |
-| 17 | 133 vs 133 | ✅ **Resolvido** | 4 rótulos extra removidos (Interlocutor "Parto de Haneda", Meishu-Sama "Dia 11 fev", Meishu-Sama "Não teriam conseguido", Interlocutor "Olhando para isso") |
-| 19 | 113 vs 116 | ⏳ Pendente | 2 perguntas Interlocutor juntas (Asahi); fala sobre vendas virou Interlocutor; +1 divisão |
-| 21 | 121 vs 125 | ⏳ Pendente | 4 falas extras no meio do staging (divisões de fala longa) |
+| 17 | 133 vs 133 | ✅ **Resolvido** | 4 rótulos extra removidos |
+| 19 | 113 vs 113 | ✅ **Resolvido** (JP corrigido com autorização) | Correção AUTORIZADA no JP (base: Zenshu kowa_full.txt): fala das livrarias = continuação do Interlocutor; resposta = `Meishu-Sama:`. Backup do JP: `jp_backup_pre_autorizacao_rotulagem_20260821_gosuiji19.txt` |
+| 21 | 121 vs 121 | ✅ **Resolvido** | 5 rótulos extra removidos |
 | 23 | 103 vs 103 | ✅ **Resolvido** | 2 rótulos `Interlocutor:` extra (perguntas duplas: Matsui e acreditar/curar) removidos |
 | 24 | 98 vs 98 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após [1º de setembro] removido |
 | 30 | 123 vs 123 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após (Relato) removido |
 
-> **ESTADO 2026-08-21 (fim da sessão 2)**: resolvidos 1, 2, 7, 13, 17, 23, 24, 30
-> (todos corrigidos no **staging**, JP intacto). Pendentes: 5 (parcial), 6, 9, 11, 19, 21.
-> Os backups de TODOS os arquivos editados estão em `reports/livros_trabalho/pt_backup_pre_pareamento_20260821_*.txt`.
+> **ESTADO FINAL (2026-08-21, sessão 3)**: **todos os 18 casos resolvidos** —
+> JP = staging em todos. A maioria foi corrigida no **staging** (JP intacto);
+> o **Gosuiji 19** teve correção de rotulagem **autorizada no JP** (base: coletânea
+> original `referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/kowa_full.txt`).
+> Próximo passo: **revisão semântica** dos livros pareados (JP↔PT lado a lado).
+
 
 ## 5. COMO PROCEDER NA PRÓXIMA SESSÃO
 
