@@ -319,7 +319,7 @@ Todos resolvidos — nenhum ficou pendente:
   longas mais granular** (rótulos adicionais no meio de falas). NÃO é diferença de
   conteúdo — é **segmentação de falas (rotulagem)**.
 
-### Conclusão
+### Conclusão (primeira passagem — ver CORREÇÃO abaixo)
 - A **adequação de rotulagem** (divisão de falas) que alimentou o app em 14/08
   **NÃO está nos arquivos atuais** (`textos_japones/` nem `data/clean_corpus/jp/`).
 - **PENDENTE de avaliação do usuário**: onde está a versão com a rotulagem completa?
@@ -327,6 +327,25 @@ Todos resolvidos — nenhum ficou pendente:
 - Relatório completo: `reports/pareamento_orais/VERIFICACAO_APP_VS_JP_20260821.md`
 - Backups verificados: `reports/livros_trabalho/jp_backup_pre_rotulagem_20260713/`
   (pré-rotulagem, 0 rótulos) + `jp_backup_pre_pareamento_20260821_*.txt` (revertidos).
+
+### CORREÇÃO DO ACHADO (comparação linha a linha — veredito final)
+- **O "50/53" (e os 1.094 rótulos extras) era ARTEFATO do overlap de chunks do
+  FAISS**, não rotulagem granular real:
+  - A fala de fronteira entre o chunk 1 e o chunk 2 de cada sessão é repetida no
+    início do chunk seguinte (overlap de chunking) → contada 2x.
+- Evidências (Gokowa 1):
+  - `data/clean_corpus/jp/` (fonte real dos 4.076 chunks) = **47/47**, 94 falas
+    idênticas ao atual (0 divergentes).
+  - Reconstrução do Gokowa 1 a partir dos chunks (com dedup de overlap) = **47/47**.
+  - Backup dos índices 17/07 tem os **mesmos chunks** do app atual (mesmas
+    fronteiras e fragmentos de corte "くなるのです"/"いのは気をつけること").
+  - Fragmentos "extras" são **substrings** das falas completas do atual (cortes
+    de chunk), não falas independentes.
+  - 137/137 arquivos: conteúdo de falas idêntico entre `textos_japones` e
+    `clean_corpus`.
+- **VEREDITO**: o app usa a **mesma rotulagem 47/47** do atual. **A versão atual é
+  a correta** — não há versão mais granular perdida e **nenhuma alteração no
+  japonês é necessária** (JP íntegro e alinhado ao app).
 
 ---
 
