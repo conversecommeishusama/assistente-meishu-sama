@@ -99,16 +99,21 @@ lendo o JP original (fonte de verdade) vs o PT do texto canônico lado a lado.
   editar. Os canônicos (`revisao_literaria/orais/` + `reports/livros_trabalho/pt/`)
   estão consistentes entre si.
 
-### 4.2 Mioshie 9-33 — RETRADUÇÃO DE PROSA CONCLUÍDA (2026-08-20, ~3,4h)
+### 4.2 Mioshie 9-33 — PIPELINE COMPLETO (RETRADUÇÃO + AUDITORIA + AJUSTE) CONCLUÍDO
 - Os Mioshie 9-33 são **prosa contínua** (não diálogo). Foram retraduzidos por
   trechos com prompts adaptados para prosa (`retraduzir_mioshie_prosa_massa.py`,
   10 workers): **24/24 arquivos OK, 0 erros**, 694/694 trechos com `pt_contextual`.
-- **Próximas etapas do pipeline 9-33** (NÃO iniciadas ainda):
-  1. **Auditoria** — `scripts/auditar_colecoes_loop.py` (DeepSeek, critério do
-     projeto) → `reports/auditoria_colecoes/<stem>.json`.
-  2. **Ajuste pontual** — `scripts/ajustar_pontos_auditoria.py` (corrige + re-audita).
-  3. **Revisão semântica** — linha a linha (método aprovado pelo usuário).
-  4. **Consolidação** — gerar os canônicos de prosa em `revisao_literaria/orais/`.
+- **Auditoria (21/08)**: 694/694 auditados (10 workers) | **549 OK | 145 ERRO**.
+- **Ajuste pontual (21/08)**: 145 erros tratados | 139 resolvidos automaticamente
+  + 6 resolvidos manualmente (semântica JP/PT). Nenhum pendente.
+  - Scripts: `scripts/auditar_mioshie_prosa_workers.py`,
+    `scripts/ajustar_mioshie_prosa_workers.py` (novos orquestradores paralelos).
+  - `scripts/ajustar_pontos_auditoria.py` adaptado para chaves `t{n}` (prosa).
+- **Erro sistemático corrigido**: data falsa "5 de abril do ano 27 da Era Showa
+  (1952)" inserida em 23 trechos de 17 arquivos pelo retraduzir de prosa — removida.
+- **Próximas etapas do pipeline 9-33** (pendentes):
+  1. **Revisão semântica** — linha a linha (método aprovado pelo usuário).
+  2. **Consolidação** — gerar os canônicos de prosa em `revisao_literaria/orais/`.
 
 ### 4.3 VALIDAÇÃO OBRIGATÓRIA ANTES DE CONSOLIDAR (9-33)
 - [ ] Cobertura 100% do JP (todo trecho tem `pt_contextual`).

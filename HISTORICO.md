@@ -198,6 +198,63 @@ prompts adaptados para prosa.
 
 ---
 
+## Estado do trabalho nesta sessão (2026-08-21) — AUDITORIA + AJUSTE MIOSHIE-SHŪ 9-33 (PROSA)
+
+> Continuação do pipeline dos Mioshie 9-33 (prosa contínua). A retradução de
+> prosa foi concluída em 20/08 (ver seção acima); esta seção registra a
+> auditoria e o ajuste pontual feitos hoje.
+
+### Auditoria dos 25 arquivos (9号-33号) — CONCLUÍDA
+- Executada com 10 workers paralelos (`scripts/auditar_mioshie_prosa_workers.py`
+  criado nesta sessão — mesmo padrão do `auditar_mioshie_8workers.py`, mas para
+  os 9-33).
+- **Resultado: 694/694 trechos auditados | 549 OK | 145 ERRO_TRADUCAO** (~21% de
+  taxa de erro — consistente com a retradução por trechos de prosa).
+- Duração: ~2h15 (03:10 → 05:26). Log: `logs/aud_mioshie_prosa_10.log`.
+- Verificados: `reports/auditoria_colecoes/*御教え集*.json`.
+
+### Ajuste pontual dos 145 erros — CONCLUÍDO
+- Executado com 7 workers nos 22 arquivos prontos (04:59) + 3 workers nos 3
+  restantes (30/31/32, 05:27) — total de 10 workers.
+- `scripts/ajustar_pontos_auditoria.py` **adaptado para prosa** (chaves `t{n}`):
+  função `_chave_ord` e `montar_contexto` agora aceitam índices `t{n}`.
+- Criado `scripts/ajustar_mioshie_prosa_workers.py` (orquestrador paralelo).
+- **Resultado: 145 pontos tratados | 139 resolvidos (96%) | 6 relatórios de
+  não-resolvidos** (10号 t1, 11号 t15, 14号 t13, 18号 t4, 25号 t20, 30号 t34).
+- Logs: `logs/ajust_mioshie_prosa_7.log` + `logs/ajust_mioshie_prosa_3.log`.
+
+### Resolução manual dos 6 não-resolvidos (semântica, JP/PT lado a lado)
+Todos resolvidos — nenhum ficou pendente:
+1. **10号 t1** (data "de 15 a 20" inventada): já corrigido no checkpoint
+   ("a partir do dia 15, por cinco dias" — fiel ao JP 十五日から五日間). ✅
+2. **11号 t15** (観音様 sem honorífico): já "Kannon-Sama". ✅
+3. **14号 t13** (引っ張りダコ → "puxados como polvos"): corrigido para
+   "muito disputados" (sentido correto). ✅
+4. **18号 t4** (掘江物語 → "Horibe"): corrigido para "Horie Monogatari". ✅
+5. **25号 t20** (堆肥/大光明如来様): **falso positivo da auditoria** — o
+   glossário fixa `堆肥 → composto natural` e `大光明如来様 → Daikōmyō Nyorai`
+   (sem Sama). Mantido (correto). ✅
+6. **30号 t34** (data "5 de abril de 1952" inventada): removida manualmente. ✅
+
+### 🐛 Erro sistemático encontrado e corrigido: data falsa "5 de abril do ano 27 da Era Showa (1952)"
+- Ao resolver o ponto 6, descobriu-se que o `retraduzir_mioshie_prosa_massa.py`
+  inseriu **erroneamente** a data de sessão `5 de abril do ano 27 da Era Showa
+  (1952)` + `[Ensinamento]` no início de **23 trechos de 17 arquivos** (não
+  existe no JP original — 昭和二十七年四月五日 não consta nessas falas).
+- **Corrigido manualmente em todos os 23 trechos** (remoção do prefixo falso).
+- Backup: `reports/retraducao_colecoes/backup_pre_correcao_data_falsa_20260821/`.
+- Re-auditoria de amostra (30号 t34, 20号 t30): **OK**.
+- Varredura final: nenhuma outra data suspeita (datas como "15 de junho do ano 6
+  da Era Showa" são legítimas — 昭和六年六月十五日 existe no JP).
+
+### Estado final
+- **694/694 trechos** com `pt_contextual` nos 25 checkpoints (nada perdido).
+- Nenhum trecho vazio/cortado.
+- Próximos passos: revisão semântica linha a linha (método manual) → consolidação
+  dos 9-33 nos canônicos `revisao_literaria/orais/`.
+
+---
+
 ## Estado do trabalho nesta sessão (2026-07-03)
 
 ### Concluído: Fase Inicial — reconfirmação de segmentação JP pelo critério autoral

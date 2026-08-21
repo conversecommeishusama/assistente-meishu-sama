@@ -48,13 +48,17 @@ Decisão do usuário em 17/08 após comparativo controlado no lote 2 do Suplemen
 | **gosuiji** | 30 (1-30) | ~5.573 | retraduzido ✅ |
 | **mioshie** | 8 (1-8) | ~2.000 | **NÃO retraduzido** (decisão: ajuste manual, concluído) |
 
-**PROSA CONTÍNUA (Mioshie 9-33) — RETRADUZIDO (2026-08-20):**
+**PROSA CONTÍNUA (Mioshie 9-33) — PIPELINE COMPLETO (2026-08-20/21):**
 - Mioshie 9-33 são **prosa contínua** (não diálogo). Decisão do usuário: passar
   por todo o pipeline (tradução → auditoria → ajuste → revisão semântica), com
   prompts adaptados para prosa.
-- **Retradução CONCLUÍDA**: `scripts/retraduzir_mioshie_prosa_massa.py` (10
-  workers), 24/24 arquivos OK, 694/694 trechos com `pt_contextual`.
-- Pendente: auditoria → ajuste → revisão semântica → consolidação.
+- **Retradução CONCLUÍDA** (20/08): `scripts/retraduzir_mioshie_prosa_massa.py`
+  (10 workers), 24/24 arquivos OK, 694/694 trechos com `pt_contextual`.
+- **Auditoria CONCLUÍDA** (21/08): 694/694 auditados | 549 OK | 145 ERRO.
+- **Ajuste pontual CONCLUÍDO** (21/08): 139 resolvidos + 6 não-resolvidos
+  resolvidos manualmente. Corrigido também erro sistemático de data falsa
+  ("5 de abril do ano 27 da Era Showa" em 23 trechos).
+- Pendente: **revisão semântica** → **consolidação**.
 
 ## 3. Scripts
 
