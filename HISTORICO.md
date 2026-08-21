@@ -50,6 +50,56 @@ aqui, via Claude Code, diretamente neste servidor.
    só faz sentido DEPOIS que um restart real foi confirmado e executado --
    nunca antes disso.
 
+## Estado do trabalho nesta sessão (2026-08-21) — RETOMADA DO PAREAMENTO DAS ORAIS + HANDOFF
+
+> Sessão longa terminada a pedido do usuário ("essa sessão já está muito longa
+> e você está ficando confuso. Atualize os documentos, faça todos os commits
+> necessários. E me apresente uma proposta de handoff para a próxima sessão").
+
+### 1. Verificação app vs JP (concluída e corrigida)
+
+- O achado anterior ("app tem 1.094 rótulos a mais / 50/53 vs 47/47") foi
+  **REVISADO e CORRIGIDO**: o número "50/53" era **artefato de overlap de
+  chunks** do FAISS (a fala de fronteira entre chunk 1 e 2 era contada 2x).
+- **Veredito**: o app (índices 14/08) usa a **mesma rotulagem 47/47** do
+  `textos_japones/` atual. **Nenhuma alteração no japonês é necessária.**
+- Evidências (Gokowa 1): clean_corpus = 47/47 idêntico ao atual; reconstrução
+  com dedup = 47/47; backup dos índices 17/07 tem os mesmos chunks.
+- Documentado em `reports/pareamento_orais/VERIFICACAO_APP_VS_JP_20260821.md`
+  + commit `aab31b2`.
+
+### 2. Retomada do pareamento (2 Gokowa resolvidos no staging)
+
+- **Gokowa 13** (JP=277 ST=278): corrigido no **staging** — duplicata da
+  pergunta do Interlocutor ("Isso também é fato?" 2x → 1x) removida.
+  Backup: `pt_backup_pre_pareamento_20260821_gokowa13.txt`.
+- **Gokowa 14** (JP=160 ST=159): corrigido no **staging** — pergunta do
+  Interlocutor sobre foto do falecido estava embutida no fim da fala do
+  Meishu-Sama; separada como fala própria.
+  Backup: `pt_backup_pre_pareamento_20260821_gokowa14.txt`.
+- **JP intacto em ambos** (regra suprema mantida).
+- **Importante**: os "resolvidos" da sessão anterior (Gosuiji 1, 2, 6, 9, 13,
+  23, 24, 30; Gokowa 10) tiveram o JP **revertido** — estão TODOS pendentes
+  de novo (ver status_pareamento.json).
+
+### 3. Estado real do pareamento (para a próxima sessão)
+
+- **Gokowa**: resolvidos 13, 14 | pendentes 10, 19 (19 = complexo: fala sem
+  rótulo + divisão em 3 + reorganização).
+- **Gosuiji**: TODOS os 14 divergentes pendentes (1, 2, 5, 6, 7, 9, 11, 13,
+  17, 19, 21, 23, 24, 30) — exigem decisão do usuário sobre rotulagem JP OU
+  ajuste no staging.
+- Decisão do usuário necessária: aplicar a adequação de rotulagem no JP
+  (adicionar rótulos faltantes) para os casos de fala sem rótulo, OU ajustar
+  apenas o staging.
+- Documentos atualizados: `status_pareamento.json`, `REGISTRO_PAREAMENTO.md`,
+  `INCONSISTENCIAS_ROTULAGEM_JP.md`.
+
+### 4. Commits desta sessão
+
+- `aab31b2` — docs(hist): corrige achado verificação app vs JP (50/53 era artefato de overlap).
+- (documentação de pareamento em `reports/` não é versionada — fora do git)
+
 ## Estado do trabalho nesta sessão (2026-08-20) — ADEQUAÇÃO ESTRUTURAL MIOSHIE-SHŪ 1-8
 
 ### O que foi feito

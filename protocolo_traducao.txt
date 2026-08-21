@@ -475,5 +475,47 @@ Aprovação em massa exige amostra humana (mín. 5–10 textos) após piloto.
 - japonês do acervo — única fonte semântica para tradução e revisão pós-tradução
 
 ═══════════════════════════════════════════════════════════════════════════════
+10. TERMOS DE POVOS E ETNIAS (REGRA EDITORIAL — 2026-08-14)
+═══════════════════════════════════════════════════════════════════════════════
+
+Regra: ao traduzir termos que designam povos/etnias, buscar SEMPRE a intenção
+real de Meishu-Sama nos próprios ensinamentos (corpus japonês), não o sentido
+pejorativo que a palavra possa ter no português atual. A decisão tradutória em
+última instância ancora-se nos próprios ensinamentos.
+
+10.1 土人 (dojin)
+- NÃO traduzir como "selvagem" (pejorativo no PT).
+- Traduzir como "povos originários" ou "povos primitivos" (sem evolução cultural).
+- Fundamento no corpus: 観音講座 (L364) define 土人 no sistema dos cinco elementos:
+  "土（Terra）→ 黒色人（povo de cor negra）→ ferro-aço — (土人と書くは面白い)".
+  Ou seja, "povo da Terra" é categoria cosmológica de Meishu-Sama, não injúria.
+
+10.2 ニグロ / ニグロ的 (niguro / niguro-teki)
+- NÃO traduzir como "negróide" (termo racista/obsoleto no PT).
+- Traduzir como "negro" / "de caráter negro" (descritivo, sem carga pejorativa).
+- Fundamento: no corpus o termo é usado descritivamente (origem do jazz, cor de
+  pele durante purificação), nunca como injúria direcionada.
+
+10.3 黒人 (kokujin) → "pessoa negra" (forma respeitosa).
+
+10.4 野蛮人 / 野蛮人的趣味 (yabanjin / yaban-teki shumi)
+- Traduzir como "povos primitivos" / "gosto primitivo" (não "selvagens").
+- Coerente com o sistema de Meishu-Sama (povos em estágio cultural inicial).
+
+10.5 大清算 (daiseisan) vs 大浄化 (daijōka) — conceitos distintos porém interligados
+- 大清算 = "Grande Acerto de Contas": o EVENTO/processo global de julgamento divino
+  (quem será salvo ou perecerá). Eiko: "a base é a grande liquidação mundial — a
+  ação de purificar as impurezas e pecados acumulados há muito tempo".
+- 大浄化 = "Grande Purificação": o MECANISMO/ação pelo qual o acerto se realiza
+  (purificação das toxinas/impurezas/pecados).
+- RELAÇÃO: o Acerto de Contas opera ATRAVÉS da Purificação — dois lados da mesma
+  moeda, mas cada termo enfatiza um aspecto (justiça/conta vs. limpeza/processo).
+- NÃO traduzir ambos como "Grande Purificação" (perde a distinção).
+
+Regra geral: quando um termo étnico do japonês de 1948 soa pejorativo no PT
+atual, preferir a forma que transmita a INTENÇÃO do ensinamento (descrição de
+origem/estágio cultural) sem reproduzir o tom ofensivo.
+
+═══════════════════════════════════════════════════════════════════════════════
 FIM DO PROTOCOLO
 ═══════════════════════════════════════════════════════════════════════════════
