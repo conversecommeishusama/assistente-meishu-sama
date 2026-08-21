@@ -1,0 +1,95 @@
+PROTOCOLO DE REVISÃO TRADUTOLÓGICA — GOSHINSHO (JP → PT-BR)
+
+Objetivo: revisar traduções existentes comparando cada trecho japonês com o português,
+preservando literalidade doutrinária e terminologia da Igreja Messiânica Mundial.
+
+═══════════════════════════════════════════════════════════════════════════════
+1. PRINCÍPIOS OBRIGATÓRIOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1.1 LITERALIDADE
+- Corrija terminologia, gramática e calques; NÃO reescreva para “melhorar” o estilo.
+- Não omita informação presente no japonês.
+- Não acrescente explicações, comentários ou inferências doutrinárias.
+- Preserve a estrutura argumentativa e a ordem das ideias.
+
+1.2 FIDELIDADE AO GLOSSÁRIO
+- Use SEMPRE as formas consagradas de glossario.json quando o termo japonês correspondente
+  estiver no trecho fonte.
+- Nomes próprios e termos consagrados: Ohikari, Daijo, Shojo, Johrei, Meishu-Sama,
+  Kannon-Sama, Kanzeon-Bosatsu, Komyo-Nyorai, Plano Divino, etc.
+- 霊線 / reisen → "elo espiritual" (NUNCA "linha espiritual").
+- 言霊 → "Kotodama (espírito da palavra)" — UMA única vez por ocorrência; sem aninhamento.
+- 浄霊 → Johrei (não "purificação espiritual" genérica).
+- 経綸 → Plano Divino quando for o plano divino nos ensinamentos.
+- 御守護 → proteção divina (não apenas "proteção").
+- 曇り (contexto espiritual) → nuvens espirituais.
+
+1.3 O QUE NÃO FAZER
+- Não invente citações nem conteúdo ausente no japonês.
+- Não substitua termos consagrados por sinônimos “mais bonitos”.
+- Não expanda abreviações já corretas.
+- Não duplique glossas: evite "Kotodama (Kotodama (...))".
+- Não use terminologia proibida em protocolo.txt (ex.: "cadeia causal", "toxinas solidificadas")
+  a menos que apareça explicitamente no japonês do trecho.
+
+1.4 GRAMÁTICA E FLUIDEZ (LIMITADA)
+- Corrija concordância, regência, artigos e pontuação em PT-BR.
+- Suavize calques óbvios SOMENTE quando o sentido permanece idêntico.
+- Após ponto final, a próxima frase começa com maiúscula.
+- Mantenha tom formal e reverente dos escritos de Meishu-Sama.
+
+═══════════════════════════════════════════════════════════════════════════════
+2. PROCEDIMENTO DE REVISÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+Para cada lote de parágrafos alinhados (JP + PT):
+
+A) Leia o parágrafo japonês como fonte de verdade semântica.
+B) Leia o parágrafo português atual.
+C) Identifique: (i) erros terminológicos, (ii) desvios de sentido, (iii) gramática, (iv) calques.
+D) Produza o parágrafo português revisado.
+E) Se não houver correção necessária, devolva o parágrafo português INALTERADO.
+
+═══════════════════════════════════════════════════════════════════════════════
+3. FORMATO DE SAÍDA (OBRIGATÓRIO)
+═══════════════════════════════════════════════════════════════════════════════
+
+Responda APENAS com JSON válido, sem markdown:
+
+{
+  "paragraphs": [
+    {
+      "index": 0,
+      "revised_pt": "texto revisado ou igual ao original",
+      "changed": true,
+      "changes": ["breve descrição de cada correção"]
+    }
+  ]
+}
+
+Regras do JSON:
+- "changed": false quando o PT original já está correto.
+- "changes": lista vazia se changed for false.
+- Não inclua o texto japonês na saída.
+- Não inclua comentários fora do JSON.
+
+═══════════════════════════════════════════════════════════════════════════════
+4. REGRAS DO PROTOCOLO DE CONSULTA (protocolo.txt) APLICÁVEIS À TRADUÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+- Ensinamento = artigo específico (#T), não coletânea inteira.
+- Elo espiritual: artigo «Sobre o elo espiritual»; polo positivo = lado yang elétrico (陽電).
+- Insônia: não negar que Meishu-Sama aborda se o japonês tratar do tema.
+- Johrei: método de cura espiritual da Igreja Messiânica; não confundir com práticas genéricas.
+
+═══════════════════════════════════════════════════════════════════════════════
+5. CRITÉRIOS DE QUALIDADE (CHECKLIST INTERNO)
+═══════════════════════════════════════════════════════════════════════════════
+
+□ Termos do glossário aplicados corretamente
+□ Nenhuma informação adicionada ou removida
+□ Gramática PT-BR correta
+□ Sem aninhamento de glossas
+□ Tom e registro preservados
+□ Parágrafo revisado corresponde ao japonês alinhado

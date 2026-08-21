@@ -1,0 +1,66 @@
+PROTOCOLO DE RETRADUÇÃO — GOSHINSHO (JP → PT-BR)
+
+Modo: RETRADUÇÃO COMPLETA a partir do japonês (não revisar texto português existente).
+
+═══════════════════════════════════════════════════════════════════════════════
+1. FIDELIDADE E FLUIDEZ (EQUILÍBRIO)
+═══════════════════════════════════════════════════════════════════════════════
+
+1.1 Preserve TODO o sentido, informação e ordem argumentativa do japonês.
+1.2 Não omita frases. Não acrescente explicações, comentários ou inferências.
+1.3 Escreva português brasileiro FLUENTE, claro e elegante, com tom formal e reverente
+    próprio dos escritos de Meishu-Sama.
+1.4 Evite calques que soem artificiais em português, DESDE QUE o sentido permaneça idêntico.
+    Prefira construções naturais em PT-BR sem alterar a doutrina.
+1.5 Não seja excessivamente literal a ponto de prejudicar a leitura; não seja liberto
+    a ponto de alterar o sentido.
+1.6 Traduza TODO o texto japonês para português. NÃO deixe caracteres japoneses
+    (kanji, hiragana, katakana) na saída, exceto nomes próprios já estabelecidos
+    no glossário (ex.: Johrei, Meishu-Sama, Kannon).
+1.7 Se o texto for enviado em partes (chunks), traduza apenas a parte indicada,
+    mas mantendo coerência com o contexto; não inclua marcadores como "Parte 1/3".
+1.8 Em explicações etimológicas de kanji (espírito da palavra, composição de
+    caracteres, nomes antigos do Japão):
+    - NUNCA reproduza o kanji, hiragana ou katakana entre parênteses ou no corpo.
+    - Use apenas português ou romaji latinizado: "o caractere 'cinco' (go)",
+      "espírito (rei)", "nordeste (ushitora)" — nunca "(五)", "(霊)", "(うしとら)".
+    - Se o japonês cita o formato do caractere com símbolos (○丶, 十, etc.),
+      descreva em português: "círculo com ponto", "dez", "campo".
+    - NUNCA cole caractere japonês a palavra portuguesa (ex.: 附ando); traduza
+      o verbo por completo: "está possuindo", "está se apossando".
+
+═══════════════════════════════════════════════════════════════════════════════
+2. GLOSSÁRIO (OBRIGATÓRIO)
+═══════════════════════════════════════════════════════════════════════════════
+
+- Use as formas de glossario.json quando o termo japonês aparecer.
+- 末教 → Doutrina Absoluta (doutrina de Meishu-Sama; distinto de メシヤ教/救世教)
+- メシヤ教 / 救世教 → Igreja Messiânica
+- 末療法 / 末医術 → terapia absoluta
+- 医術 → terapia (não "medicina" genérica neste contexto; prática ilegal da medicina)
+- 浄霊 → Johrei (末教浄霊 → apenas Johrei, sem acrescentar instituição)
+- 言霊 → na primeira ocorrência: "espírito da palavra" (com aspas); depois espírito da
+  palavra sem aspas; NUNCA "Kotodama"
+- 霊線 / reisen → elo espiritual (NUNCA "linha espiritual")
+- 明主様 / 明为様 → Meishu-Sama
+- 大三災 / 小三災 → grandes calamidades / pequenas calamidades (NUNCA "desastres")
+- 小乗 / 大乗 → Shojo / Daijo
+- 道理 → Caminho Perfeito (distinto de 大道 → Grande Caminho)
+- 真理 → verdade
+- 大自然 → grande natureza
+- 憑く / 付く (possessão espiritual) → possuir / apossar-se de (nunca deixar 附/憑)
+
+═══════════════════════════════════════════════════════════════════════════════
+3. TÍTULO E METADADOS
+═══════════════════════════════════════════════════════════════════════════════
+
+- Traduza o título do artigo fielmente (末療法の原理 → O Princípio da Terapia Absoluta).
+- Preserve referências de publicação se fornecidas no prompt.
+- Não inclua comentários sobre o processo de tradução.
+
+═══════════════════════════════════════════════════════════════════════════════
+4. SAÍDA
+═══════════════════════════════════════════════════════════════════════════════
+
+Entregue APENAS o texto português traduzido, em prosa contínua após o título.
+Sem JSON, sem markdown, sem notas do tradutor.
