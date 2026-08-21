@@ -17,6 +17,9 @@
 
 1. **JP NUNCA é alterado sem autorização prévia do usuário**
    (`protocolo_traducao.txt` §1.1). O japonês é a fonte de verdade semântica.
+2. **O JAPONÊS ORIGINAL É A BASE do trabalho** (decisão do usuário, 2026-08-21):
+   o staging é corrigido **SEMPRE baseado no JP**, nunca o contrário. Qualquer
+   inconsistência no JP → trazer à **avaliação e definição do usuário** (não alterar).
 2. Adequação de rotulagem feita no passado deve ser **MANTIDA**.
 3. Inconsistências de rotulagem do JP → **trazer à avaliação do usuário**, não alterar.
 4. NÃO usar scripts de regex para decidir o pareamento — resolver **manualmente,
@@ -43,31 +46,32 @@ Método de verificação: `.venv/bin/python scripts/montar_material_semantico_ca
 ### GOKOWA (御光話録)
 | Nº | JP vs ST | Estado | O que fazer |
 |---|---|---|---|
-| 10 | 148 vs 149 | ⏳ Pendente | Fala do Meishu-Sama sem rótulo após cabeçalho → exige decisão do usuário sobre rotulagem JP |
+| 10 | 148 vs 148 | ✅ **Resolvido** | Staging: rótulo `Meishu-Sama:` extra após cabeçalho removido (JP é a base — decisão do usuário). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa10.txt` |
 | 13 | 277 vs 278 | ✅ **Resolvido** | Staging: duplicata da pergunta "Isso também é fato?" removida (2x→1x). JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa13.txt` |
 | 14 | 160 vs 159 | ✅ **Resolvido** | Staging: pergunta do Interlocutor (foto do falecido) estava embutida no fim da fala do Meishu-Sama → separada. JP intacto. Backup `pt_backup_pre_pareamento_20260821_gokowa14.txt` |
 | 19 | 186 vs 190 | ⏳ Pendente (complexo) | Fala sem rótulo (これは心得とくこと) + divisão de resposta longa em 3 + reorganização. Exige análise manual detalhada |
 
-### GOSUIJI (御垂示録) — TODOS OS 14 PENDENTES
-| Nº | JP vs ST | Nota |
-|---|---|---|
-| 1 | 241 vs 242 | Após [8/8], fala Meishu-Sama sem rótulo |
-| 2 | 337 vs 339 | Após [9/5] e [9/8], 2 falas sem rótulo |
-| 5 | 371 vs 374 | Fala sobre moldura/arte sem rótulo; possível reorganização — análise manual |
-| 6 | 224 vs 229 | Após [5/1]/[6/2]/[7/1], 3 falas sem rótulo; +2 perguntas Interlocutor juntas |
-| 7 | 180 vs 182 | Conteúdo extra no staging (troca de terra) — candidato a correção no staging |
-| 9 | 156 vs 161 | Fala longa dividida no staging (講和, 朝日, 美術品, 希望) |
-| 11 | 203 vs 205 | 2 falas extras no meio do staging (divisões de fala longa) |
-| 13 | 207 vs 209 | Fala Meishu-Sama sem rótulo (日々新聞/敦煌, 文明) |
-| 17 | 133 vs 137 | Conteúdo extra no staging — candidato a correção no staging |
-| 19 | 113 vs 116 | 2 perguntas Interlocutor juntas (Asahi); fala sobre vendas virou Interlocutor; +1 divisão |
-| 21 | 121 vs 125 | 4 falas extras no meio do staging (divisões de fala longa) |
-| 23 | 103 vs 105 | 2 perguntas Interlocutor juntas (Matsui; acreditar/curar) |
-| 24 | 98 vs 99 | Após [9/1], fala Meishu-Sama sem rótulo |
-| 30 | 123 vs 124 | Após (御報告), fala Meishu-Sama sem rótulo (時期が近寄ってくる) |
+### GOSUIJI (御垂示録)
+| Nº | JP vs ST | Estado | Nota |
+|---|---|---|---|
+| 1 | 241 vs 241 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após [8/8] removido |
+| 2 | 337 vs 337 | ✅ **Resolvido** | 2 rótulos `Meishu-Sama:` extra após [9/5] e [9/8] removidos |
+| 5 | 371 vs 373 | ⏳ **Parcial (1/3)** | Removido rótulo "se vai ou não fazer". Faltam 2: ver L31, L245, L254, L258, L337, L384, L385, L502, L505, L516, L534, L561, L820, L826 (sem rótulo no JP) |
+| 6 | 224 vs 229 | ⏳ Pendente | Após [5/1]/[6/2]/[7/1], 3 falas sem rótulo; +2 perguntas Interlocutor juntas |
+| 7 | 180 vs 180 | ✅ **Resolvido** | 2 rótulos extra (Hashiguchi `Meishu-Sama:` + Korin `Interlocutor:`) removidos |
+| 9 | 156 vs 161 | ⏳ Pendente | Fala longa dividida no staging (講和, 朝日ダイヤ, 美術品, 希望) |
+| 11 | 203 vs 205 | ⏳ Pendente | 2 falas extras no meio do staging (divisões de fala longa) |
+| 13 | 207 vs 207 | ✅ **Resolvido** | 2 rótulos `Meishu-Sama:` extra (Dunhuang e A Criação da Civilização) removidos |
+| 17 | 133 vs 133 | ✅ **Resolvido** | 4 rótulos extra removidos (Interlocutor "Parto de Haneda", Meishu-Sama "Dia 11 fev", Meishu-Sama "Não teriam conseguido", Interlocutor "Olhando para isso") |
+| 19 | 113 vs 116 | ⏳ Pendente | 2 perguntas Interlocutor juntas (Asahi); fala sobre vendas virou Interlocutor; +1 divisão |
+| 21 | 121 vs 125 | ⏳ Pendente | 4 falas extras no meio do staging (divisões de fala longa) |
+| 23 | 103 vs 103 | ✅ **Resolvido** | 2 rótulos `Interlocutor:` extra (perguntas duplas: Matsui e acreditar/curar) removidos |
+| 24 | 98 vs 98 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após [1º de setembro] removido |
+| 30 | 123 vs 123 | ✅ **Resolvido** | Rótulo `Meishu-Sama:` extra após (Relato) removido |
 
-> **Importante**: os "resolvidos" da sessão anterior (Gosuiji 1, 2, 6, 9, 13,
-> 23, 24, 30) tiveram o **JP revertido** — estão todos pendentes de novo.
+> **ESTADO 2026-08-21 (fim da sessão 2)**: resolvidos 1, 2, 7, 13, 17, 23, 24, 30
+> (todos corrigidos no **staging**, JP intacto). Pendentes: 5 (parcial), 6, 9, 11, 19, 21.
+> Os backups de TODOS os arquivos editados estão em `reports/livros_trabalho/pt_backup_pre_pareamento_20260821_*.txt`.
 
 ## 5. COMO PROCEDER NA PRÓXIMA SESSÃO
 
@@ -78,17 +82,23 @@ Método de verificação: `.venv/bin/python scripts/montar_material_semantico_ca
    - **(a)** autorizar a adequação de rotulagem no JP (adicionar `Meishu-Sama:`/
      `Interlocutor:` onde falta), OU
    - **(b)** ajustar apenas o staging (mantendo o JP intacto).
-3. **Corrigir no staging** (sem tocar no JP) os casos que são claramente erro do
-   staging — já feito Gokowa 13/14; candidatos: Gosuiji 7, 17 (conteúdo extra).
-4. **Continuar** o pareamento dos pendentes até JP=staging em todos.
+3. **Corrigir no staging** (sem tocar no JP) os casos que são erro do staging —
+   já feito: Gokowa 10/13/14; Gosuiji 1/2/7/13/17/23/24/30. Todos com backup.
+4. **Continuar** o pareamento dos pendentes: Gosuiji 5 (faltam 2), 6, 9, 11, 19,
+   21 e Gokowa 19 até JP=staging em todos.
 5. **Depois**: revisão semântica dos livros pareados.
 
 ## 6. BACKUPS DISPONÍVEIS
 
 - **JP originais (intactos)**: `reports/livros_trabalho/jp_backup_pre_pareamento_20260821_*.txt`
 - **JP pré-rotulagem (base)**: `reports/livros_trabalho/jp_backup_pre_rotulagem_20260713/`
-- **Staging editado nesta sessão**: `reports/livros_trabalho/pt_backup_pre_pareamento_20260821_gokowa13.txt`, `_gokowa14.txt`
+- **Staging editado (backups originais)**: `reports/livros_trabalho/pt/pt_backup_pre_pareamento_20260821_{gokowa10,gosuiji1,2,5,6,7,9,11,13,17,19,21,23,24,30,gokowa19}.txt`
+  (e `pt_backup_pre_pareamento_20260821_gokowa13.txt`/`_gokowa14.txt` na raiz de `livros_trabalho/`)
 - **Sempre criar backup antes de editar** (`cp arquivo arquivo.bak_<data>` ou seguir o padrão existente).
+
+> **ATENÇÃO (lição da sessão 2)**: os backups de staging desta sessão ficaram em
+> `reports/livros_trabalho/pt/` (dentro da subpasta, não na raiz). Verificar a
+> localização antes de procurar/restaurar.
 
 ## 7. DOCUMENTOS DE REFERÊNCIA
 
