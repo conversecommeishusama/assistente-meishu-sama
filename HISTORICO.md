@@ -38,8 +38,17 @@
 ### 4. Progresso do pareamento
 - **M5 ALINHADO ✅**: de 39/37 → **55 I/64 M** (bate com o JP). 19 mini-diálogos
   separados + 9 monólogos do Meishu rotulados como `Meishu-Sama:`.
-- **M1 EM ANDAMENTO**: ST (55/61) vs JP (53/62) — 2 I a mais (ST[12], ST[41] devem
-  ser fundidos, seguindo JP J[11]/J[42]) + 1 M a menos.
+- **M1 ALINHADO ✅ (22/08, manual)**: ST 55/61 → **53 I/62 M** (bate com o JP).
+  5 correções por leitura semântica linha a linha (JP é a base):
+  1. Fundir Kame Sugiyama (2 falas Interlocutor → 1; `[5 de agosto]` antes da fala);
+  2. Fundir Mitsuo Tomita (2 → 1; `[16 de agosto]` antes);
+  3. Separar relato da mãe da Shigeko (estava colado na resposta do Meishu sobre a
+     pedra → virou `Interlocutor:`);
+  4. Separar resposta dos repatriados (estava colada na fala do Interlocutor →
+     virou `Meishu-Sama:`);
+  5. Fundir Irie Takuichi (2 → 1; `[28 de agosto]` antes).
+  Integridade verificada vs backup (só removido "— 5 de agosto." redundante,
+  que o JP não tem).
 - **M2-M4, M6-M8**: ainda por parear (diferenças grandes de mini-diálogos).
   Obs: com a correção Ensinamento, o JP desses livros ganhou +Meishu-Sama
   (M2 41/46, M3 70/82, M4 67/75, M6 50/58, M7 39/47, M8 106/112).
@@ -47,7 +56,7 @@
 ### 5. Estado dos 8 (ST vs JP, I/M)
 | Nº | ST | JP |
 |----|-----|-----|
-| 1 | 55/61 | 53/62 |
+| 1 | 53/62 | 53/62 |
 | 2 | 26/31 | 41/46 |
 | 3 | 39/38 | 70/82 |
 | 4 | 42/39 | 67/75 |
