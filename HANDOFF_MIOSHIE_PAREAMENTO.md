@@ -44,7 +44,13 @@
   do Meishu (a fala da entrevista). Conteúdo 100% íntegro (verificado vs backup).
   Backup: `reports/livros_trabalho/jp_backup_pre_correcao_ensinamento_20260822/`.
 - **ST M5 (9) e M1 (8)**: mesma conversão aplicada.
-- Resultado: o ST e o JP **não têm mais `Ensinamento:`** (0 E em ambos).
+- **COMPLETADA a correção em 22/08 (tarde, autorizada)**: M2, M3, M4, M6, M7, M8
+  também corrigidos no JP — TODOS os `Ensinamento:` restantes viraram `Meishu-Sama:`
+  (~48 ocorrências). **8/8 arquivos JP com 0 `Ensinamento:`**.
+- Integridade verificada (conteúdo idêntico aos backups, sem perda).
+- Backup: `reports/livros_trabalho/jp_backup_correcao_ensinamento_incompleta_20260822/`.
+- ⚠️ LIÇÃO: não usar replace_string com texto truncado em JP (duplicou bloco no M3;
+  revertido do backup; casos especiais tratados via script + verificação de integridade).
 
 ## 5. ESTADO REAL DO PAREAMENTO (22/08, fim da sessão)
 
@@ -55,13 +61,13 @@ em cada arquivo (ST vs JP).
 | Nº | ST | JP | Situação |
 |----|-----|-----|----------|
 | 1 | 55/61/0 | 53/62/0 | ⚠️ ST tem 2 I a mais, 1 M a menos |
-| 2 | 26/31/0 | 41/41/5 | ❌ falta separar mini-diálogos |
-| 3 | 39/38/0 | 70/73/9 | ❌ falta separar mini-diálogos |
-| 4 | 42/39/0 | 67/67/8 | ❌ falta separar mini-diálogos |
+| 2 | 26/31/0 | 41/46/0 | ❌ falta separar mini-diálogos |
+| 3 | 39/38/0 | 70/82/0 | ❌ falta separar mini-diálogos |
+| 4 | 42/39/0 | 67/75/0 | ❌ falta separar mini-diálogos |
 | **5** | **55/64/0** | **55/64/0** | ✅ **ALINHADO** |
-| 6 | 36/37/0 | 50/47/12 | ❌ falta separar mini-diálogos |
-| 7 | 32/29/0 | 39/40/8 | ❌ falta separar mini-diálogos |
-| 8 | 45/49/0 | 106/106/6 | ❌ falta separar mini-diálogos |
+| 6 | 36/37/0 | 50/58/0 | ❌ falta separar mini-diálogos |
+| 7 | 32/29/0 | 39/47/0 | ❌ falta separar mini-diálogos |
+| 8 | 45/49/0 | 106/112/0 | ❌ falta separar mini-diálogos |
 
 ### M5 (CONCLUÍDO ✅)
 - De 39/37 → **55 I / 64 M** (bate com o JP).
@@ -96,6 +102,7 @@ em cada arquivo (ST vs JP).
 
 - **ST pré-pareamento**: `reports/livros_trabalho/pt_backup_pre_pareamento_mioshie_20260822/`
 - **JP pré-correção Ensinamento**: `reports/livros_trabalho/jp_backup_pre_correcao_ensinamento_20260822/`
+- **JP pré-correção incompleta (M2-M4, M6-M8)**: `reports/livros_trabalho/jp_backup_correcao_ensinamento_incompleta_20260822/`
 - **JP pré-rotulagem**: `reports/livros_trabalho/jp_backup_pre_rotulagem_mioshie_20260821/`
 - **ST com separação mini-diálogos (20/08)**: `reports/adequacao_estrutural_mioshie_20260820/backup_staging_pt/`
 - **Consolidados canônicos**: `revisao_literaria/orais/` (ainda NÃO atualizados — ver §8)
@@ -103,8 +110,10 @@ em cada arquivo (ST vs JP).
 ## 8. PENDÊNCIA IMPORTANTE (consolidados)
 
 - Os consolidados canônicos (`revisao_literaria/orais/`) **ainda estão ATRÁS** —
-  não foram atualizados com a separação dos mini-diálogos. Após o pareamento dos 8,
-  será preciso **consolidar/atualizar** os canônicos (verificar com o usuário o método).
+  não foram atualizados com a separação dos mini-diálogos **nem** com a correção
+  Ensinamento→Meishu-Sama (ex: M1 lá tem 45/40 + 1 E; M5 tem 39/37). Após o
+  pareamento dos 8, será preciso **consolidar/atualizar** os canônicos
+  (verificar com o usuário o método).
 
 ## 9. FORA DO ESCOPO
 

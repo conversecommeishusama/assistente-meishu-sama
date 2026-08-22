@@ -30,6 +30,10 @@
 - **JP M5 (9) e M1 (8)**: `Ensinamento:` → `Meishu-Sama:` (fala da entrevista).
   Conteúdo 100% íntegro. Backup: `jp_backup_pre_correcao_ensinamento_20260822/`.
 - **ST M5 (9) e M1 (8)**: mesma conversão.
+- **COMPLETADA a correção em 22/08 (sessão da tarde, autorizada)**: M2-M4, M6-M8
+  também corrigidos — TODOS os `Ensinamento:` restantes viraram `Meishu-Sama:`.
+  **8/8 arquivos JP com 0 `Ensinamento:`.** Integridade verificada (conteúdo
+  idêntico aos backups). Backup: `jp_backup_correcao_ensinamento_incompleta_20260822/`.
 
 ### 4. Progresso do pareamento
 - **M5 ALINHADO ✅**: de 39/37 → **55 I/64 M** (bate com o JP). 19 mini-diálogos
@@ -37,26 +41,30 @@
 - **M1 EM ANDAMENTO**: ST (55/61) vs JP (53/62) — 2 I a mais (ST[12], ST[41] devem
   ser fundidos, seguindo JP J[11]/J[42]) + 1 M a menos.
 - **M2-M4, M6-M8**: ainda por parear (diferenças grandes de mini-diálogos).
+  Obs: com a correção Ensinamento, o JP desses livros ganhou +Meishu-Sama
+  (M2 41/46, M3 70/82, M4 67/75, M6 50/58, M7 39/47, M8 106/112).
 
 ### 5. Estado dos 8 (ST vs JP, I/M)
 | Nº | ST | JP |
 |----|-----|-----|
 | 1 | 55/61 | 53/62 |
-| 2 | 26/31 | 41/41 |
-| 3 | 39/38 | 70/73 |
-| 4 | 42/39 | 67/67 |
+| 2 | 26/31 | 41/46 |
+| 3 | 39/38 | 70/82 |
+| 4 | 42/39 | 67/75 |
 | **5** | **55/64** | **55/64** ✅ |
-| 6 | 36/37 | 50/47 |
-| 7 | 32/29 | 39/40 |
-| 8 | 45/49 | 106/106 |
+| 6 | 36/37 | 50/58 |
+| 7 | 32/29 | 39/47 |
+| 8 | 45/49 | 106/112 |
 
 ### 6. Backups criados
 - ST pré-pareamento: `pt_backup_pre_pareamento_mioshie_20260822/`
 - JP pré-correção Ensinamento: `jp_backup_pre_correcao_ensinamento_20260822/`
+- JP pré-correção incompleta (M2-M4, M6-M8): `jp_backup_correcao_ensinamento_incompleta_20260822/`
 
 ### 7. Próximos passos
 - Terminar M1 (fundir 2 I + achar 1 M), depois M2-M4, M6-M8 (mesmo padrão),
-- Atualizar consolidados canônicos (`revisao_literaria/orais/`) após o pareamento.
+- Atualizar consolidados canônicos (`revisao_literaria/orais/`) após o pareamento
+  (ainda desatualizados: M1 45/40 E1, M5 39/37).
 
 ---
 
