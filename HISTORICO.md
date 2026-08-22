@@ -7,6 +7,54 @@
 
 ---
 
+## Continuação (22/08, nova sessão) — PASS0 + M1 FINALIZADO
+
+> Sessão nova (handoff `HANDOFF_MIOSHIE_PAREAMENTO_20260822_fim.md`). Decisão do
+> usuário: **usar como referência o JP que o app usa** (`textos_japones/`, motor
+> `jp_agentic`) e **não reajustar o JP** — o trabalho é adequar o PT (staging) ao
+> JP do app. Método 100% manual, um a um, semântico (reforçado pelo usuário).
+
+### Passo 0 — JP de trabalho = JP do app (concluído)
+- Sincronizado `reports/livros_trabalho/jp/` (trabalho) com `textos_japones/` (app):
+  19 arquivos divergentes (8 Mioshie + 11 outros) foram substituídos pelos do app.
+  **Pasta de trabalho agora = app (0 divergências de `.txt`).**
+- Backup: `reports/livros_trabalho/jp_backup_pre_sync_app_20260822/` (137 arquivos).
+- Confirmado no código: o app usa `jp_agentic` (lê `textos_japones/*.txt` direto),
+  não o FAISS/`clean_corpus` (fallback `jp_direct`, desatualizado — não reativar sem
+  regenerar índices).
+
+### M1 — FINALIZADO e ALINHADO (confirmado nesta sessão)
+- **Estado**: ST = JP = **53 I / 62 M / 0 E**, sequência de rótulos idêntica (115 falas).
+- **Correções manuais feitas (seguindo o JP)**:
+  1. **Fundida** a fala do Meishu-Sama sobre "Criação da Civilização/parte geral/
+     cirurgia/parte da religião" (ST dividia em 2: "agora estou passando para a parte
+     geral..." + "A parte médica está praticamente pronta...") → 1 fala (JP[69]).
+     Também movido "Já escrevi sobre as doenças na parte médica..." (que estava no fim
+     da fala do Byōbu Kannon) para o início dessa fala fundida.
+  2. **Separado** o epílogo "Na criação da civilização..." (JP[115]) como fala
+     `Meishu-Sama:` própria — estava embutido na fala sobre herança com o marcador
+     residual `【Ensinamento de Meishu-Sama】` → marcador removido.
+- **Integridade verificada**: conteúdo puro do ST atual = backup (2743 chars idênticos),
+  0 marcadores `【Ensinamento】` restantes.
+- Backup: `reports/livros_trabalho/pt_backup_pre_correcao_m1_20260822/`.
+- ⚠️ LIÇÃO: no M1, "3 falas Meishu-Sama seguidas" nem sempre = 1 fala no JP (podem ser
+  2 — Byōbu Kannon vs Criação da Civilização). Sempre conferir a quebra exata no JP
+  antes de fundir.
+
+### Estado dos 8 (ST vs JP, I/M) — após M1
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | **53/62** | 53/62 | ✅ ALINHADO |
+| 2 | 44/64/1 | 45/51/0 | ⚠️ em andamento (próximo) |
+| 3 | 39/38/0 | 70/82/0 | ❌ por parear |
+| 4 | 42/39/0 | 67/75/0 | ❌ por parear |
+| 5 | 55/64/0 | 55/64/0 | ✅ ALINHADO |
+| 6 | 36/37/0 | 50/58/0 | ❌ por parear |
+| 7 | 32/29/0 | 39/47/0 | ❌ por parear |
+| 8 | 45/49/0 | 106/112/0 | ❌ por parear |
+
+---
+
 ## Estado do trabalho nesta sessão (2026-08-22) — PAREAMENTO DOS MIOSHIE + CORREÇÃO "ENSINAMENTO"
 
 > Sessão longa. O pareamento dos Mioshie (御教え集 1-8) foi iniciado; houve uma

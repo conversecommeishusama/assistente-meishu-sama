@@ -1,5 +1,10 @@
 # HANDOFF — PAREAMENTO DOS MIOSHIE (JP↔STAGING) — 22/08 (FIM DE SESSÃO)
 
+> **ATUALIZADO na nova sessão (22/08)**: Passo 0 feito (JP de trabalho = app) e
+> **M1 FINALIZADO** (53/62, sequência idêntica). Decisão do §4 RESOLVIDA: **Opção A**
+> (ajustar ST ao JP; JP não é mais tocado). Ver `HISTORICO.md` (seção "Continuação
+> (22/08, nova sessão)").
+
 > Criado em **2026-08-22** ao final da sessão, após perda de qualidade do agente
 > (sessão longa demais). **Leia ESTE arquivo primeiro**, depois `GOSHINSHO.md`,
 > `HISTORICO.md`, `HANDOFF_MIOSHIE_PAREAMENTO.md` e a memória de sessão
@@ -33,14 +38,14 @@
 
 ---
 
-## 2. ESTADO REAL DOS 8 MIOSHIE (verificado em 22/08, fim da sessão)
+## 2. ESTADO REAL DOS 8 MIOSHIE (verificado em 22/08 — ATUALIZADO)
 
 Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
 
 | Nº | ST (staging) | JP | Situação |
 |----|--------------|-----|----------|
-| 1 | 53/62/0 | 53/62/0 | ✅ **ALINHADO** (feito hoje) |
-| 2 | **44/64/1** | 45/51/0 | ⚠️ EM ANDAMENTO (ver §4) |
+| 1 | **53/62/0** | 53/62/0 | ✅ **ALINHADO** (confirmado na nova sessão) |
+| 2 | **44/64/1** | 45/51/0 | ⚠️ EM ANDAMENTO (próximo) |
 | 3 | 39/38/0 | 70/82/0 | ❌ por parear |
 | 4 | 42/39/0 | 67/75/0 | ❌ por parear |
 | 5 | 55/64/0 | 55/64/0 | ✅ **ALINHADO** (já estava) |
@@ -49,7 +54,11 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
 | 8 | 45/49/0 | 106/112/0 | ❌ por parear |
 
 - **8/8 arquivos JP com 0 `Ensinamento:`** (correção completa feita hoje).
-- **M1 e M5 estão ALINHADOS** (ST = JP).
+- **PASSO 0 feito (nova sessão)**: `reports/livros_trabalho/jp/` (trabalho) foi
+  sincronizado com `textos_japones/` (app) — 19 arquivos divergentes substituídos.
+  **A referência agora é o JP do app** (`textos_japones/`). Backup:
+  `reports/livros_trabalho/jp_backup_pre_sync_app_20260822/`.
+- **M1 e M5 estão ALINHADOS** (ST = JP, sequência de rótulos idêntica).
 - **M2 está no meio de um trabalho complexo** (ver §4) — é o único com divergência
   estrutural em aberto e com o ST já editado hoje.
 - M3-M8: o ST ainda está muito "atrás" do JP (falta separar mini-diálogos +
@@ -88,13 +97,38 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
   ficou 45/51. Backup: `reports/livros_trabalho/jp_backup_pre_separacao_minidialogos_m2_20260822/`
   **Integridade VERIFICADA** (removidos apenas parênteses `（`/`）` de fala).
 
+### 3.5 PASSO 0 + M1 FINALIZADO (nova sessão, 22/08)
+- **Passo 0**: `reports/livros_trabalho/jp/` sincronizado com `textos_japones/`
+  (app) — 19 arquivos divergentes substituídos. Referência passa a ser o JP do app.
+  Backup: `reports/livros_trabalho/jp_backup_pre_sync_app_20260822/`.
+- **M1 FINALIZADO**: ST = JP = **53/62**, sequência de rótulos idêntica (115 falas).
+  Correções manuais:
+  1. Fundida a fala "Criação da Civilização/parte geral/cirurgia/parte da religião"
+     (ST dividia em 2 → 1 fala, JP[69]); movido "Já escrevi sobre as doenças na parte
+     médica..." para o início dessa fala.
+  2. Separado o epílogo "Na criação da civilização..." (JP[115]) como `Meishu-Sama:`
+     própria — estava embutido na fala sobre herança com `【Ensinamento de Meishu-Sama】`.
+  - Integridade verificada (conteúdo puro = backup, 2743 chars). Backup:
+    `reports/livros_trabalho/pt_backup_pre_correcao_m1_20260822/`.
+  - ⚠️ LIÇÃO: "3 falas Meishu-Sama seguidas" no ST podem ser 2 no JP (não 1) — conferir
+    a quebra exata no JP antes de fundir.
+
 ---
 
-## 4. M2 — PONTO EXATO ONDE PAROU + DECISÃO PENDENTE (CRÍTICO)
+## 4. M2 — DECISÃO RESOLVIDA (nova sessão) + PONTO DE CONTINUAÇÃO
+
+### ✅ DECISÃO DO USUÁRIO (nova sessão)
+- **Opção A confirmada**: o JP do app (`textos_japones/`) já está com os mini-diálogos
+  separados e 0 `Ensinamento:` — **não se mexe mais no JP**. O trabalho é **adequar o
+  ST (PT retraduzido) ao JP do app**, fala a fala.
+- Isso **encerra a pendência** sobre monólogos de leitura do M2: seguimos o JP como
+  está (monólogos contínuos `Meishu-Sama:` onde o JP os tem).
 
 ### Estado atual do M2
 - **ST M2**: 44 I / 64 M / 1 E (`[Ensinamento]` como marcador de seção)
 - **JP M2**: 45 I / 51 M / 0 E
+- Próximo passo: parear o ST do M2 ao JP 45/51 (seguindo o padrão do M1 — fundir/
+  separar falas conforme o JP, manual, um a um).
 
 ### O PROBLEMA (descobrir na sessão, com fatos)
 - O **JP do M2** tem os **monólogos de leitura como falas `Meishu-Sama:` contínuas**
