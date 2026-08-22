@@ -1,5 +1,11 @@
 # HANDOFF — PAREAMENTO DOS MIOSHIE (JP↔STAGING) — 22/08 (FIM DE SESSÃO)
 
+> **ATUALIZADO (23/08, fim da sessão)**: **M3 RESTAURADO** (monólogo Miroku +
+> Divindades Malignas recuperados — ver §8). **PRÓXIMA SESSÃO: fazer o M4** —
+> ver handoff dedicado `HANDOFF_M4_20260823.md` + memórias
+> `/memories/repo/m4-estado-pareamento-2026-08-23.md` e
+> `/memories/repo/licao-falas-gigantes-st-2026-08-23.md`.
+
 > **ATUALIZADO (23/08, nova sessão)**: **M3 RESTAURADO** — o monólogo do Miroku
 > (弥勒三会) e o das Divindades Malignas foram RECUPERADOS no ST do M3 (o conteúdo
 > NÃO estava perdido — estava embutido numa fala `Meishu-Sama:` gigante de 21K
