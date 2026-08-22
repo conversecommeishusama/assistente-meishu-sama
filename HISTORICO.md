@@ -5,6 +5,61 @@
 > Este arquivo documenta decisões, erros, lições e contexto de cada sessão —
 > consulte aqui quando precisar do "porquê" de qualquer coisa.
 
+---
+
+## Estado do trabalho nesta sessão (2026-08-22) — PAREAMENTO DOS MIOSHIE + CORREÇÃO "ENSINAMENTO"
+
+> Sessão longa. O pareamento dos Mioshie (御教え集 1-8) foi iniciado; houve uma
+> **correção crítica** de classificação (Ensinamento→Meishu-Sama) confirmada pelo
+> usuário e pelo Zenshu. Handoff completo em `HANDOFF_MIOSHIE_PAREAMENTO.md`.
+
+### 1. Regra fundamental reforçada (usuário)
+- **A única forma que funciona é MANUAL, um a um, SEMÂNTICA.** NÃO usar scripts/
+  regex para decidir ou aplicar mudanças de pareamento (corrompe o corpus).
+
+### 2. Descoberta crítica: o rótulo "Ensinamento" estava errado
+- O JP (rotulado na madrugada de 22/08) converteu `【御教え】`→`Ensinamento:`.
+- O usuário (especialista de domínio) apontou que isso está errado, e o **Zenshu
+  (`referencia_zenshu_rokkan.../kowa_full.txt`) CONFIRMA**:
+  - O `御教え` é apenas a **indicação de que foi LIDO um texto** (ex: artigo
+    "Picasso", 著述篇 vol 9 pp 608-613) — o texto lido **não está transcrito**.
+  - A **fala do Meishu-Sama que segue é parte da entrevista coletiva** → deve ser
+    `Meishu-Sama:`, NÃO "Ensinamento:".
+
+### 3. Correção aplicada (com autorização do usuário)
+- **JP M5 (9) e M1 (8)**: `Ensinamento:` → `Meishu-Sama:` (fala da entrevista).
+  Conteúdo 100% íntegro. Backup: `jp_backup_pre_correcao_ensinamento_20260822/`.
+- **ST M5 (9) e M1 (8)**: mesma conversão.
+
+### 4. Progresso do pareamento
+- **M5 ALINHADO ✅**: de 39/37 → **55 I/64 M** (bate com o JP). 19 mini-diálogos
+  separados + 9 monólogos do Meishu rotulados como `Meishu-Sama:`.
+- **M1 EM ANDAMENTO**: ST (55/61) vs JP (53/62) — 2 I a mais (ST[12], ST[41] devem
+  ser fundidos, seguindo JP J[11]/J[42]) + 1 M a menos.
+- **M2-M4, M6-M8**: ainda por parear (diferenças grandes de mini-diálogos).
+
+### 5. Estado dos 8 (ST vs JP, I/M)
+| Nº | ST | JP |
+|----|-----|-----|
+| 1 | 55/61 | 53/62 |
+| 2 | 26/31 | 41/41 |
+| 3 | 39/38 | 70/73 |
+| 4 | 42/39 | 67/67 |
+| **5** | **55/64** | **55/64** ✅ |
+| 6 | 36/37 | 50/47 |
+| 7 | 32/29 | 39/40 |
+| 8 | 45/49 | 106/106 |
+
+### 6. Backups criados
+- ST pré-pareamento: `pt_backup_pre_pareamento_mioshie_20260822/`
+- JP pré-correção Ensinamento: `jp_backup_pre_correcao_ensinamento_20260822/`
+
+### 7. Próximos passos
+- Terminar M1 (fundir 2 I + achar 1 M), depois M2-M4, M6-M8 (mesmo padrão),
+- Atualizar consolidados canônicos (`revisao_literaria/orais/`) após o pareamento.
+
+---
+
 Este projeto vinha sendo trabalhado por um agente no Cursor. Esta sessão foi
 interrompida por custo (orçamento do usuário) e a continuação pode acontecer
 aqui, via Claude Code, diretamente neste servidor.
