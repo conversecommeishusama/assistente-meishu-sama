@@ -41,17 +41,35 @@
   2 — Byōbu Kannon vs Criação da Civilização). Sempre conferir a quebra exata no JP
   antes de fundir.
 
-### Estado dos 8 (ST vs JP, I/M) — após M1
+### Estado dos 8 (ST vs JP, I/M) — após M1 e M2
 | Nº | ST | JP | Situação |
 |----|-----|-----|----------|
 | 1 | **53/62** | 53/62 | ✅ ALINHADO |
-| 2 | 44/64/1 | 45/51/0 | ⚠️ em andamento (próximo) |
+| 2 | **45/51** | 45/51 | ✅ **ALINHADO (nova sessão)** |
 | 3 | 39/38/0 | 70/82/0 | ❌ por parear |
 | 4 | 42/39/0 | 67/75/0 | ❌ por parear |
 | 5 | 55/64/0 | 55/64/0 | ✅ ALINHADO |
 | 6 | 36/37/0 | 50/58/0 | ❌ por parear |
 | 7 | 32/29/0 | 39/47/0 | ❌ por parear |
 | 8 | 45/49/0 | 106/112/0 | ❌ por parear |
+
+### M2 — FINALIZADO e ALINHADO (nova sessão)
+- **Estado**: ST = JP = **45 I / 51 M / 0 E**, sequência de rótulos idêntica (96 falas).
+- **Correções manuais (seguindo o JP)**:
+  - **Fundidos** os monólogos `Meishu-Sama:` que o ST havia separado demais (o JP os tem
+    como 1 fala contínua com `（御論文...）` internos). Marcadores `(Ensinamento após...)`
+    com número de jornal → **`【Eikō n.º 122/126】`/`【Tijotengoku n.º 29】` inline**
+    (padrão do M1); sem número → removidos.
+  - **Removidos** os `[Ensinamento]` solitários (marcadores de seção que o JP não tem).
+  - **Separadas** 2 falas embutidas sem rótulo: "O ovário foi retirado?" (`Meishu-Sama:`)
+    e o mini-diálogo "Parece que não." / "A esposa precisa entrar na fé..." (`I`/`M`).
+  - Reduziu de 44/64 → **45/51** (igual ao JP).
+- **Integridade verificada**: conteúdo preservado vs backup (diferenças estruturais —
+  fusões/separarões + marcadores inline; nada perdido).
+- Backup: `reports/livros_trabalho/pt_backup_pre_pareamento_m2_20260822/`.
+- ⚠️ LIÇÃO: conferir SEMPRE o JP antes de fundir — alguns "monólogos separados" no ST
+  correspondem a 1 fala contínua no JP, mas há também mini-diálogos sem rótulo que
+  precisam ser SEPARADOS (não fundidos).
 
 ---
 

@@ -45,7 +45,7 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
 | Nº | ST (staging) | JP | Situação |
 |----|--------------|-----|----------|
 | 1 | **53/62/0** | 53/62/0 | ✅ **ALINHADO** (confirmado na nova sessão) |
-| 2 | **44/64/1** | 45/51/0 | ⚠️ EM ANDAMENTO (próximo) |
+| 2 | **45/51/0** | 45/51/0 | ✅ **ALINHADO** (nova sessão) |
 | 3 | 39/38/0 | 70/82/0 | ❌ por parear |
 | 4 | 42/39/0 | 67/75/0 | ❌ por parear |
 | 5 | 55/64/0 | 55/64/0 | ✅ **ALINHADO** (já estava) |
@@ -58,11 +58,9 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
   sincronizado com `textos_japones/` (app) — 19 arquivos divergentes substituídos.
   **A referência agora é o JP do app** (`textos_japones/`). Backup:
   `reports/livros_trabalho/jp_backup_pre_sync_app_20260822/`.
-- **M1 e M5 estão ALINHADOS** (ST = JP, sequência de rótulos idêntica).
-- **M2 está no meio de um trabalho complexo** (ver §4) — é o único com divergência
-  estrutural em aberto e com o ST já editado hoje.
-- M3-M8: o ST ainda está muito "atrás" do JP (falta separar mini-diálogos +
-  monólogos), seguindo o padrão do M1/M5.
+- **M1, M2 e M5 estão ALINHADOS** (ST = JP, sequência de rótulos idêntica).
+- **M3-M4, M6-M8**: o ST ainda está muito "atrás" do JP (falta separar mini-diálogos +
+  monólogos), seguindo o padrão do M1/M2/M5.
 
 ---
 
@@ -112,6 +110,20 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
     `reports/livros_trabalho/pt_backup_pre_correcao_m1_20260822/`.
   - ⚠️ LIÇÃO: "3 falas Meishu-Sama seguidas" no ST podem ser 2 no JP (não 1) — conferir
     a quebra exata no JP antes de fundir.
+
+### 3.6 M2 FINALIZADO (nova sessão, 22/08)
+- **Estado**: ST = JP = **45 I / 51 M / 0 E**, sequência de rótulos idêntica (96 falas).
+- Correções manuais (seguindo o JP):
+  - **Fundidos** os monólogos `Meishu-Sama:` que o ST havia separado demais (o JP os
+    tem como 1 fala contínua com `（御論文...）` internos). Marcadores `(Ensinamento
+    após...)` com número de jornal → **`【Eikō n.º 122/126】`/`【Tijotengoku n.º 29】`
+    inline** (padrão do M1); sem número → removidos.
+  - **Removidos** os `[Ensinamento]` solitários (marcadores de seção que o JP não tem).
+  - **Separadas** 2 falas embutidas sem rótulo: "O ovário foi retirado?" (`Meishu-Sama:`)
+    e o mini-diálogo "Parece que não." / "A esposa precisa entrar na fé..." (`I`/`M`).
+  - Reduziu de 44/64 → **45/51** (igual ao JP).
+- Integridade verificada (conteúdo preservado; diferenças estruturais). Backup:
+  `reports/livros_trabalho/pt_backup_pre_pareamento_m2_20260822/`.
 
 ---
 
