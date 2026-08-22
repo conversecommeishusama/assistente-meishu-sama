@@ -1,5 +1,12 @@
 # HANDOFF — PAREAMENTO DOS MIOSHIE (JP↔STAGING) — 22/08 (FIM DE SESSÃO)
 
+> **ATUALIZADO (2ª atualização, fim da sessão 22/08)**: **M2 FINALIZADO** (45/51 =
+> JP, sequência idêntica, 96 falas — commit `5b68d57`). **ACHADO CRÍTICO NO M3**:
+> o ST novo (retraduzido) NÃO contém o monólogo do Miroku (弥勒三会) nem o das
+> Divindades Malignas, que existem no JP e na versão antiga (`textos_portugues/`).
+> **VALIDAR COM O USUÁRIO antes de restaurar** (ver §8). Ver `HISTORICO.md`
+> (seção "Fim da sessão (22/08)").
+
 > **ATUALIZADO na nova sessão (22/08)**: Passo 0 feito (JP de trabalho = app) e
 > **M1 FINALIZADO** (53/62, sequência idêntica). Decisão do §4 RESOLVIDA: **Opção A**
 > (ajustar ST ao JP; JP não é mais tocado). Ver `HISTORICO.md` (seção "Continuação
@@ -46,7 +53,7 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
 |----|--------------|-----|----------|
 | 1 | **53/62/0** | 53/62/0 | ✅ **ALINHADO** (confirmado na nova sessão) |
 | 2 | **45/51/0** | 45/51/0 | ✅ **ALINHADO** (nova sessão) |
-| 3 | 39/38/0 | 70/82/0 | ❌ por parear |
+| 3 | 39/38/0 | 70/82/0 | ⚠️ **POR PAREAR + VALIDAR ACHADO** (ver §8) |
 | 4 | 42/39/0 | 67/75/0 | ❌ por parear |
 | 5 | 55/64/0 | 55/64/0 | ✅ **ALINHADO** (já estava) |
 | 6 | 36/37/0 | 50/58/0 | ❌ por parear |
@@ -59,7 +66,9 @@ Contagens: `I` = `^Interlocutor:`, `M` = `^Meishu-Sama:`, `E` = `^Ensinamento`.
   **A referência agora é o JP do app** (`textos_japones/`). Backup:
   `reports/livros_trabalho/jp_backup_pre_sync_app_20260822/`.
 - **M1, M2 e M5 estão ALINHADOS** (ST = JP, sequência de rótulos idêntica).
-- **M3-M4, M6-M8**: o ST ainda está muito "atrás" do JP (falta separar mini-diálogos +
+- **M3**: ST muito "atrás" do JP (75 falas faltantes) + **ACHADO CRÍTICO** (ver §8) —
+  validar com o usuário antes de continuar.
+- **M4, M6-M8**: o ST ainda está muito "atrás" do JP (falta separar mini-diálogos +
   monólogos), seguindo o padrão do M1/M2/M5.
 
 ---
@@ -205,13 +214,19 @@ No ST, os erros típicos encontrados (M1 e M2):
 ## 7. COMO PROCEDER NA NOVA SESSÃO
 
 1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_MIOSHIE_PAREAMENTO.md`
-   + memória de sessão (`/memories/session/pareamento-mioshie-2026-08-22.md`).
-2. **Primeira ação**: confirmar com o usuário a **decisão do §4 (Opção A ou B)** para
-   o M2 — é bloqueante para o M2.
-3. **Depois do M2 resolvido**: seguir M3, M4, M6, M7, M8 com o mesmo método manual:
-   - Usar `reports/adequacao_estrutural_mioshie_20260820/backup_staging_pt/` como
-     base (mini-diálogos já separados) e comparar fala a fala com o JP.
-   - Corrigir apenas as divergências reais (padrões do §5).
+   + memória de sessão (`/memories/session/pareamento-mioshie-2026-08-22.md`) +
+   memória de repo (`/memories/repo/m3-achado-st-incompleto-2026-08-22.md`).
+2. **PRIMEIRA AÇÃO (M3)**: validar com o usuário o **ACHADO do §8** — o monólogo
+   do Miroku (弥勒三会) e o das Divindades Malignas existem no JP e na versão antiga
+   (`textos_portugues/`), mas **NÃO estão no ST novo (retraduzido)**. Decidir se
+   devem ser retraduzidos/adicionados ou se foram omitidos intencionalmente. **SÓ
+   DEPOIS** continuar o pareamento do M3.
+3. **M2 já está RESOLVIDO** (45/51 = JP). M3, M4, M6, M7, M8: seguir com o mesmo
+   método manual:
+   - Comparar fala a fala com o JP (JP é a base).
+   - Separar mini-diálogos e monólogos conforme o JP; converter marcadores
+     `(Ensinamento...)`/`[Ensinamento]` para `【Eikō...】`/`【Tijotengoku...】` inline
+     (padrão do M1/M2), removendo os sem número.
    - Sempre backup + verificação de integridade.
 4. **Re-verificar integridade** dos arquivos M1, M5, M2 (não foram perdidos) antes
    de confiar neles.
@@ -219,7 +234,41 @@ No ST, os erros típicos encontrados (M1 e M2):
 
 ---
 
-## 8. LIÇÕES APRENDIDAS (evitar repetir erros)
+## 8. ACHADO CRÍTICO NO M3 (VALIDAR COM O USUÁRIO — BLOQUEANTE)
+
+### Contexto (verificado nesta sessão)
+- **`textos_portugues/` e `livros_publicacao_pt_revisado/` = versão ANTIGA (13/08)**,
+  que o app usa no lado PT (motor `pt_agentic` lê `textos_portugues/`).
+- **Estamos trabalhando a versão NOVA RETRADUZIDA** (ST em `reports/livros_trabalho/pt/`,
+  gerado por retradução + adequação estrutural 20/08 + revisão semântica 21/08).
+  O usuário confirmou isso.
+
+### O achado
+- O **ST novo do M3** (`reports/livros_trabalho/pt/19511125 - Mioshie-shū nº 3.txt`)
+  **NÃO contém** o monólogo do Miroku (弥勒三会 — sobre Nao Deguchi, Onisaburo,
+  Izunome, trama/urdidura, Marunouchi) nem o monólogo das Divindades Malignas.
+- Esses dois monólogos **EXISTEM**:
+  - No **JP** (`textos_japones/19511125-御教え集3号.txt`, JP[6] e JP[7], como falas
+    `Meishu-Sama:` contínuas com `（御論文「弥勒三会」のあとの御教）` e
+    `（御論文「邪神と言うもの」のあとの御教）`).
+  - Na **versão antiga** (`textos_portugues/19511125 - Mioshie-shū nº 3.txt`, com
+    marcadores `(Ensinamento após o artigo "O encontro dos três Miroku")` e
+    `(Ensinamento após o artigo "Sobre as Divindades Malignas")`).
+
+### Interpretação (NÃO concluir sozinho)
+- Pode ser (a) **omissão intencional** na retradução (ex.: monólogos de leitura
+  considerados fora do escopo), ou (b) **falha da retradução** (perda).
+- **Regra**: não restaurar/adicionar nada sem o usuário decidir. O JP é a base,
+  mas adicionar conteúdo novo ao ST exige confirmar a fonte (retraduzir do JP ou
+  aproveitar a versão antiga?).
+
+### Estado M3
+- ST 39 I / 38 M vs JP 70 I / 82 M (75 falas faltantes — mesmo sem o achado, é o
+  maior trabalho de separação dos 8).
+
+---
+
+## 9. LIÇÕES APRENDIDAS (evitar repetir erros)
 
 1. **NUNCA usar `replace_string` com texto truncado** em arquivos grandes (duplicou
    bloco no M3). Usar scripts com verificação `count==1` + conferir integridade.
@@ -231,3 +280,7 @@ No ST, os erros típicos encontrados (M1 e M2):
    parar e fazer handoff. Este handoff é o resultado disso.
 5. Backups sempre em `reports/livros_trabalho/` (não só no git — `textos_japones/`
    e os ST de trabalho ficam fora do versionamento).
+6. **NÃO assumir "perda de conteúdo"** num arquivo novo sem comparar com a versão
+   antiga (`textos_portugues/`/`livros_publicacao_pt_revisado/`) e com o JP — e,
+   mesmo assim, **confirmar com o usuário** qual é a fonte de verdade (versão antiga
+   pode ter conteúdo que a nova não tem, e vice-versa).

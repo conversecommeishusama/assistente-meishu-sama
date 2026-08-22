@@ -7,6 +7,62 @@
 
 ---
 
+## Fim da sessão (22/08) — M2 FINALIZADO + ACHADO CRÍTICO NO M3 (handoff)
+
+> Sessão encerrada por decisão do usuário (chat longo, perda de qualidade).
+> Handoff: `HANDOFF_MIOSHIE_PAREAMENTO_20260822_fim.md` (ATUALIZADO).
+> Memória: `/memories/repo/m3-achado-st-incompleto-2026-08-22.md`.
+
+### M2 — FINALIZADO e ALINHADO (nesta sessão, após o M1)
+- **Estado**: ST = JP = **45 I / 51 M / 0 E**, sequência de rótulos idêntica (96 falas).
+- **O que foi feito (manual, seguindo o JP)**:
+  - Fundidos os monólogos `Meishu-Sama:` que o ST havia separado demais (o JP os tem
+    como 1 fala contínua), convertendo marcadores `(Ensinamento após...)` com número
+    de jornal para `【Eikō n.º 122/126】`/`【Tijotengoku n.º 29】` inline (padrão do M1)
+    e removendo os sem número.
+  - Removidos os `[Ensinamento]` solitários (marcadores de seção que o JP não tem).
+  - Separadas 2 falas que estavam embutidas sem rótulo: "O ovário foi retirado?"
+    (`Meishu-Sama:`) e o mini-diálogo "Parece que não." / "A esposa precisa entrar
+    na fé..." (`Interlocutor:`/`Meishu-Sama:`).
+  - Reduziu de 44/64 → **45/51** (igual ao JP).
+- **Integridade verificada**: conteúdo preservado (diferenças são estruturais).
+- Backup: `reports/livros_trabalho/pt_backup_pre_pareamento_m2_20260822/`.
+- Commit: `5b68d57`.
+
+### ACHADO CRÍTICO NO M3 (validar na próxima sessão)
+- **`textos_portugues/` e `livros_publicacao_pt_revisado/` = versão ANTIGA (13/08)**.
+  O usuário confirmou que estamos trabalhando a **versão NOVA retraduzida**
+  (ST em `reports/livros_trabalho/pt/`, retradução + adequação estrutural 20/08 +
+  revisão semântica 21/08).
+- O **ST do M3 (novo, retraduzido) NÃO contém** o monólogo do Miroku (弥勒三会) nem
+  o das Divindades Malignas — que **existem** no JP (`textos_japones/19511125-御教え集3号.txt`,
+  JP[6]/JP[7]) e **também na versão antiga** (`textos_portugues/`, 13/08).
+- **Interpretação**: NÃO concluir que é "perda" — pode ter sido omitido
+  intencionalmente na retradução OU falha da retradução. **Validar com o usuário**
+  antes de restaurar qualquer coisa.
+- Estado M3: ST 39 I / 38 M vs JP 70 I / 82 M (75 falas faltantes — muito a separar).
+
+### Estado dos 8 (ST vs JP, I/M) — fim da sessão
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | 39/38 | 70/82 | ⚠️ por parear (validar achado Miroku) |
+| 4 | 42/39 | 67/75 | ❌ por parear |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | 36/37 | 50/58 | ❌ por parear |
+| 7 | 32/29 | 39/47 | ❌ por parear |
+| 8 | 45/49 | 106/112 | ❌ por parear |
+
+### LIÇÕES (reforçadas)
+1. **Método manual, um a um, semântico** — scripts/regex/grep corrompem (usuário).
+2. Antes de assumir "perda de conteúdo" num arquivo, comparar com a versão de
+   produção (`textos_portugues/`/`livros_publicacao_pt_revisado/`) e com o JP.
+3. A versão antiga (produção) pode ter conteúdo que a nova (retraduzida) não tem —
+   sempre confirmar com o usuário qual é a fonte de verdade.
+
+---
+
 ## Continuação (22/08, nova sessão) — PASS0 + M1 FINALIZADO
 
 > Sessão nova (handoff `HANDOFF_MIOSHIE_PAREAMENTO_20260822_fim.md`). Decisão do
