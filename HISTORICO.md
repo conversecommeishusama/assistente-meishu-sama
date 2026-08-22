@@ -63,8 +63,11 @@
 
 ### 7. Próximos passos
 - Terminar M1 (fundir 2 I + achar 1 M), depois M2-M4, M6-M8 (mesmo padrão),
-- Atualizar consolidados canônicos (`revisao_literaria/orais/`) após o pareamento
-  (ainda desatualizados: M1 45/40 E1, M5 39/37).
+- **Consolidados canônicos ATUALIZADOS em 22/08** (após pedido do usuário):
+  `revisao_literaria/orais/*` agora = staging atual (M1-M8, 0 Ensinamento).
+  Backup da versão anterior: `reports/livros_trabalho/orais_consolidadas_backup_pre_pareamento_20260822/`.
+  Verificado: texto dos consolidados antigos era idêntico ao staging (só faltava a
+  estrutura de falas + correção Ensinamento); o staging é a versão canônica.
 
 ---
 

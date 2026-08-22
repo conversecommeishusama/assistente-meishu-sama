@@ -109,11 +109,12 @@ em cada arquivo (ST vs JP).
 
 ## 8. PENDÊNCIA IMPORTANTE (consolidados)
 
-- Os consolidados canônicos (`revisao_literaria/orais/`) **ainda estão ATRÁS** —
-  não foram atualizados com a separação dos mini-diálogos **nem** com a correção
-  Ensinamento→Meishu-Sama (ex: M1 lá tem 45/40 + 1 E; M5 tem 39/37). Após o
-  pareamento dos 8, será preciso **consolidar/atualizar** os canônicos
-  (verificar com o usuário o método).
+- Os consolidados canônicos (`revisao_literaria/orais/`) **foram ATUALIZADOS em
+  22/08** a pedido do usuário: agora são cópia do staging atual (M1-M8, 0
+  `Ensinamento:`). Backup da versão anterior:
+  `reports/livros_trabalho/orais_consolidadas_backup_pre_pareamento_20260822/`.
+- Quando o pareamento dos 8 terminar e houver novas edições no staging, os
+  consolidados devem ser atualizados de novo (mesmo processo).
 
 ## 9. FORA DO ESCOPO
 
