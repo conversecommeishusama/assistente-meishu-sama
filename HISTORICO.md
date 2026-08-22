@@ -7,6 +7,60 @@
 
 ---
 
+## 23/08 — M3 RESTAURADO (monólogo do Miroku + Divindades Malignas) — achado resolvido
+
+> Investigação + restauração feitas nesta sessão. O achado crítico do M3
+> (documentado no HANDOFF 22/08) está **RESOLVIDO**. Detalhes na memória:
+> `/memories/repo/backup-pt-pos-retraducao-mioshie-2026-08-23.md`.
+
+### O que foi descoberto
+1. **Existe backup do PT dos Mioshie 1-8 pós-retradução** (20/08), antes das edições:
+   `reports/adequacao_estrutural_mioshie_20260820/backup_staging_pt/` (05:40) e
+   `reports/livros_trabalho/pt_backup_pre_adequacao_estrutural_20260820/` (07:29) —
+   mesmos arquivos, com os monólogos de leitura COMPLETOS.
+2. **A "perda" do M3 NÃO foi na retradução.** O conteúdo do monólogo do Miroku e
+   das Divindades Malignas estava **embutido numa fala `Meishu-Sama:` gigante**
+   (21K chars) no ST — resultado da **reconstrução dos consolidados da adequação
+   estrutural** (20/08 05:40 → 05:49). Nada foi apagado; só ficou mesclado.
+3. A auditoria semântica (21/08) e o pareamento (22/08) herdaram esse estado.
+
+### Ação (restauração do M3)
+- Dividida a fala gigante em **2 falas `Meishu-Sama:`**:
+  1. Resposta sobre Izanagi (termina "...audiência especial.")
+  2. **Monólogo do Miroku + Divindades Malignas + Paraíso Terrestre** (fala
+     contínua, padrão do M5/JP, referências `（御論文...）` internas).
+- ST M3: **39 I / 39 M** (era 39/38). Conteúdo 100% preservado (202457 bytes
+  antes/depois). Elementos-chave confirmados: Deguchi Nao, Mestre Sagrado,
+  Izunome, Marunouchi, urdidura/trama, Oomoto, medicina, vacinação, nuvem
+  espiritual, URSS/EUA, A Criação da Civilização.
+- **Consolidado canônico** (`revisao_literaria/orais/19511125 - Mioshie-shū nº 3.txt`)
+  atualizado = staging.
+- **Backups**: `pt_backup_pre_restauracao_monologos_m3_20260823/` (ST pré) e
+  `orais_consolidadas_backup_pre_restauracao_m3_20260823/` (consolidado pré).
+
+### M4/M6/M7/M8 (verificado)
+- Monólogos de leitura **PRESENTES**, embutidos em falas gigantes (M6 linha 5 =
+  45K chars; M4 linha 103 = 13K; M7 linha 5 = 21K). **Sem perda** — falta só o
+  pareamento fino (separação em falas), fase seguinte.
+
+### Estado dos 8 (ST vs JP, I/M) — após restauração do M3
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | **39/39** | 70/82 | 🟡 monólogo restaurado; falta pareamento fino |
+| 4 | 42/39 | 67/75 | ❌ por parear (monólogos presentes) |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | 36/37 | 50/58 | ❌ por parear (monólogos presentes) |
+| 7 | 32/29 | 39/47 | ❌ por parear (monólogos presentes) |
+| 8 | 45/49 | 106/112 | ❌ por parear (monólogos presentes) |
+
+### Próximo passo
+- **Pareamento fino** do M3 (separação de mini-diálogos, 70/82 do JP) e depois
+  M4/M6/M7/M8 — mesmo método manual do M1/M2/M5.
+
+---
+
 ## Fim da sessão (22/08) — M2 FINALIZADO + ACHADO CRÍTICO NO M3 (handoff)
 
 > Sessão encerrada por decisão do usuário (chat longo, perda de qualidade).

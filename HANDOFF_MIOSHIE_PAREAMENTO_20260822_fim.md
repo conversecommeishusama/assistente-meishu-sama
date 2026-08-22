@@ -1,5 +1,17 @@
 # HANDOFF — PAREAMENTO DOS MIOSHIE (JP↔STAGING) — 22/08 (FIM DE SESSÃO)
 
+> **ATUALIZADO (23/08, nova sessão)**: **M3 RESTAURADO** — o monólogo do Miroku
+> (弥勒三会) e o das Divindades Malignas foram RECUPERADOS no ST do M3 (o conteúdo
+> NÃO estava perdido — estava embutido numa fala `Meishu-Sama:` gigante de 21K
+> chars, resultado da reconstrução da adequação estrutural de 20/08). A fala foi
+> dividida em 2 (resposta sobre Izanagi + monólogo contínuo, padrão do M5/JP).
+> ST M3 = 39 I / 39 M (era 39/38). Consolidado canônico atualizado. Backups:
+> `pt_backup_pre_restauracao_monologos_m3_20260823/` e
+> `orais_consolidadas_backup_pre_restauracao_m3_20260823/`. Ver §8 e
+> `/memories/repo/backup-pt-pos-retraducao-mioshie-2026-08-23.md`.
+> ⚠️ IMPORTANTE: o achado do M3 está RESOLVIDO — não há mais bloqueio no M3;
+> falta apenas o pareamento fino (separação de mini-diálogos).
+
 > **ATUALIZADO (2ª atualização, fim da sessão 22/08)**: **M2 FINALIZADO** (45/51 =
 > JP, sequência idêntica, 96 falas — commit `5b68d57`). **ACHADO CRÍTICO NO M3**:
 > o ST novo (retraduzido) NÃO contém o monólogo do Miroku (弥勒三会) nem o das
@@ -208,6 +220,9 @@ No ST, os erros típicos encontrados (M1 e M2):
 | `reports/livros_trabalho/backup_mioshie_separacao_20260821/` | ST M1-M8 pré-pareamento da sessão 22/08 (26/31 etc.) |
 | `reports/livros_trabalho/orais_consolidadas_backup_pre_pareamento_20260822/` | Consolidados antigos (pré-atualização) |
 | `reports/livros_trabalho/jp_backup_pre_correcao_ensinamento_20260822/` | JP M1/M5 pré-correção Ensinamento |
+| `reports/livros_trabalho/pt_backup_pre_restauracao_monologos_m3_20260823/` | ST M3 pré-restauração dos monólogos (23/08) |
+| `reports/livros_trabalho/orais_consolidadas_backup_pre_restauracao_m3_20260823/` | Consolidado M3 pré-restauração (23/08) |
+| `reports/livros_trabalho/pt_backup_pre_adequacao_estrutural_20260820/` | PT M1-M8 pós-retradução (20/08 07:29) — FONTE dos monólogos |
 
 ---
 
@@ -216,13 +231,13 @@ No ST, os erros típicos encontrados (M1 e M2):
 1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_MIOSHIE_PAREAMENTO.md`
    + memória de sessão (`/memories/session/pareamento-mioshie-2026-08-22.md`) +
    memória de repo (`/memories/repo/m3-achado-st-incompleto-2026-08-22.md`).
-2. **PRIMEIRA AÇÃO (M3)**: validar com o usuário o **ACHADO do §8** — o monólogo
-   do Miroku (弥勒三会) e o das Divindades Malignas existem no JP e na versão antiga
-   (`textos_portugues/`), mas **NÃO estão no ST novo (retraduzido)**. Decidir se
-   devem ser retraduzidos/adicionados ou se foram omitidos intencionalmente. **SÓ
-   DEPOIS** continuar o pareamento do M3.
-3. **M2 já está RESOLVIDO** (45/51 = JP). M3, M4, M6, M7, M8: seguir com o mesmo
-   método manual:
+2. **M3 — ACHADO RESOLVIDO (23/08)**: o monólogo do Miroku + Divindades Malignas
+   foram **RESTAURADOS** (ver §8). **NÃO há mais bloqueio no M3.** O trabalho
+   restante no M3 é o **pareamento fino** (separação de mini-diálogos) para chegar
+   aos 70/82 do JP, mesmo método do M1/M2/M5.
+3. **M2 já está RESOLVIDO** (45/51 = JP). M4, M6, M7, M8: seguir com o mesmo
+   método manual (os monólogos estão presentes, embutidos em falas gigantes —
+   separar conforme o JP):
    - Comparar fala a fala com o JP (JP é a base).
    - Separar mini-diálogos e monólogos conforme o JP; converter marcadores
      `(Ensinamento...)`/`[Ensinamento]` para `【Eikō...】`/`【Tijotengoku...】` inline
@@ -234,7 +249,10 @@ No ST, os erros típicos encontrados (M1 e M2):
 
 ---
 
-## 8. ACHADO CRÍTICO NO M3 (VALIDAR COM O USUÁRIO — BLOQUEANTE)
+## 8. ACHADO CRÍTICO NO M3 — RESOLVIDO (23/08) ✅
+
+> **ATUALIZAÇÃO (23/08)**: este achado está **RESOLVIDO**. Investigação completa
+> e restauração feitas. O detalhe abaixo fica como registro histórico.
 
 ### Contexto (verificado nesta sessão)
 - **`textos_portugues/` e `livros_publicacao_pt_revisado/` = versão ANTIGA (13/08)**,
@@ -243,28 +261,45 @@ No ST, os erros típicos encontrados (M1 e M2):
   gerado por retradução + adequação estrutural 20/08 + revisão semântica 21/08).
   O usuário confirmou isso.
 
-### O achado
+### O achado ORIGINAL
 - O **ST novo do M3** (`reports/livros_trabalho/pt/19511125 - Mioshie-shū nº 3.txt`)
-  **NÃO contém** o monólogo do Miroku (弥勒三会 — sobre Nao Deguchi, Onisaburo,
-  Izunome, trama/urdidura, Marunouchi) nem o monólogo das Divindades Malignas.
-- Esses dois monólogos **EXISTEM**:
-  - No **JP** (`textos_japones/19511125-御教え集3号.txt`, JP[6] e JP[7], como falas
-    `Meishu-Sama:` contínuas com `（御論文「弥勒三会」のあとの御教）` e
-    `（御論文「邪神と言うもの」のあとの御教）`).
-  - Na **versão antiga** (`textos_portugues/19511125 - Mioshie-shū nº 3.txt`, com
-    marcadores `(Ensinamento após o artigo "O encontro dos três Miroku")` e
-    `(Ensinamento após o artigo "Sobre as Divindades Malignas")`).
+  **não tinha** o monólogo do Miroku (弥勒三会 — Nao Deguchi, Onisaburo, Izunome,
+  trama/urdidura, Marunouchi) nem o das Divindades Malignas como falas separadas.
+- Esses dois monólogos **EXISTEM** no **JP** (`textos_japones/19511125-御教え集3号.txt`,
+  linhas 50-68, como UMA fala `Meishu-Sama:` contínua com `（御論文「弥勒三会」のあとの御教）`
+  e `（御論文「邪神と言うもの」のあとの御教）`) e na **versão antiga**.
 
-### Interpretação (NÃO concluir sozinho)
-- Pode ser (a) **omissão intencional** na retradução (ex.: monólogos de leitura
-  considerados fora do escopo), ou (b) **falha da retradução** (perda).
-- **Regra**: não restaurar/adicionar nada sem o usuário decidir. O JP é a base,
-  mas adicionar conteúdo novo ao ST exige confirmar a fonte (retraduzir do JP ou
-  aproveitar a versão antiga?).
+### INVESTIGAÇÃO (o que realmente aconteceu)
+- **NÃO foi perda da retradução.** O backup `backup_staging_pt`/`pt_backup_pre_adequacao_estrutural`
+  (20/08) tem os monólogos COMPLETOS.
+- A **perda ocorreu na reconstrução dos consolidados da adequação estrutural**
+  (20/08 05:40 → 05:49): o conteúdo foi **mesclado numa única fala `Meishu-Sama:`
+  gigante** (21K chars) junto com a resposta sobre Izanagi e o trecho do Paraíso
+  Terrestre. Nada foi apagado — só ficou embutido numa fala só.
+- A **auditoria semântica** (21/08) e o **pareamento** (22/08) herdaram esse estado
+  (falas gigantes sem separação).
+
+### RESTAURAÇÃO FEITA (23/08, autorizada pelo usuário)
+- Dividida a fala gigante do M3 em **2 falas `Meishu-Sama:`**:
+  1. Resposta sobre Izanagi (termina "...audiência especial.")
+  2. **Monólogo do Miroku + Divindades Malignas + Paraíso Terrestre** (fala contínua,
+     padrão do M5/JP, com os marcadores `（御論文...）` como referência interna).
+- **Resultado**: ST M3 = **39 I / 39 M** (era 39/38). Conteúdo 100% preservado
+  (202457 bytes antes/depois). Todos os elementos-chave confirmados no ST:
+  Deguchi Nao, Mestre Sagrado, Izunome, Marunouchi, urdidura/trama, Oomoto,
+  medicina, vacinação, nuvem espiritual, URSS/EUA, A Criação da Civilização.
+- **Consolidado canônico** atualizado (= staging).
+- **Backups**: `pt_backup_pre_restauracao_monologos_m3_20260823/` (ST pré) e
+  `orais_consolidadas_backup_pre_restauracao_m3_20260823/` (consolidado pré).
+
+### M4/M6/M7/M8 (verificado em 23/08)
+- Os monólogos de leitura estão **PRESENTES** nos ST, embutidos em falas gigantes
+  (ex.: M6 linha 5 = 45K chars; M4 linha 103 = 13K; M7 linha 5 = 21K). **Sem perda**.
+- Falta apenas o **pareamento fino** (separação em falas), que é a próxima fase.
 
 ### Estado M3
-- ST 39 I / 38 M vs JP 70 I / 82 M (75 falas faltantes — mesmo sem o achado, é o
-  maior trabalho de separação dos 8).
+- ST 39 I / 39 M vs JP 70 I / 82 M. O monólogo está restaurado; falta o pareamento
+  fino (separação de mini-diálogos) para chegar aos 70/82 do JP.
 
 ---
 
