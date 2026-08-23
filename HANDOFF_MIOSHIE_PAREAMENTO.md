@@ -63,10 +63,10 @@ em cada arquivo (ST vs JP).
 | 1 | 55/61/0 | 53/62/0 | ⚠️ ST tem 2 I a mais, 1 M a menos |
 | 2 | 26/31/0 | 41/46/0 | ❌ falta separar mini-diálogos |
 | 3 | 39/38/0 | 70/82/0 | ❌ falta separar mini-diálogos |
-| 4 | 42/39/0 | 67/75/0 | ❌ falta separar mini-diálogos |
+| 4 | 67/75/0 | 67/75/0 | ✅ **ALINHADO** (finalizado 23/08) |
 | **5** | **55/64/0** | **55/64/0** | ✅ **ALINHADO** |
-| 6 | 36/37/0 | 50/58/0 | ❌ falta separar mini-diálogos |
-| 7 | 32/29/0 | 39/47/0 | ❌ falta separar mini-diálogos |
+| **6** | **50/58/0** | **50/58/0** | ✅ **ALINHADO** (finalizado 23/08) |
+| 7 | 32/29/0 | 39/47/0 | ❌ falta separar mini-diálogos (ver HANDOFF_M7_20260823.md) |
 | 8 | 45/49/0 | 106/112/0 | ❌ falta separar mini-diálogos |
 
 ### M5 (CONCLUÍDO ✅)
@@ -88,15 +88,18 @@ em cada arquivo (ST vs JP).
 
 ## 6. COMO PROCEDER NA PRÓXIMA SESSÃO
 
-1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + memória de sessão.
-2. **Terminar o M1** (manual, um a um):
-   - Fundir ST[12] e ST[41] (2→1, seguindo o JP J[11]/J[42]).
-   - Localizar o 1 Meishu-Sama que falta (61 vs 62).
-   - Verificar integridade do conteúdo vs backup após cada edição.
-3. **M2-M4, M6-M8**: mesmo padrão do M5 — separar mini-diálogos (pergunta do
-   Interlocutor + resposta do Meishu fundidas) e monólogos do Meishu (que devem
-   ser `Meishu-Sama:`), manual um a um, seguindo o JP como base.
-4. **Depois**: revisão semântica dos livros pareados.
+1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M7_20260823.md`.
+2. **Próximo: M7 (19520320)** — ver `HANDOFF_M7_20260823.md`:
+   - ⚠️ **Problema de datas defasadas** (como no M6): o ST começa com `[6 de
+     fevereiro]` mas o backup tem `5 de fevereiro (Risshun-sai)` — a seção do
+     Risshun-sai está perdida/embutida na linha 5 (21K chars). Corrigir datas
+     ANTES de parear.
+   - Separar as 10 falas gigantes (mini-diálogos + monólogos), manual um a um.
+3. **Depois M8 (19520420)**: mesmo padrão.
+4. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
+   localizar o 1 Meishu-Sama que falta.
+5. **M2-M3**: mesmo padrão do M5/M6 — separar mini-diálogos e monólogos.
+6. **Depois**: revisão semântica dos livros pareados.
 
 ## 7. BACKUPS DISPONÍVEIS
 

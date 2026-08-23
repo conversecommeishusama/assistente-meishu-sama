@@ -56,6 +56,57 @@
 
 ---
 
+## 23/08 (fim) — M6 FINALIZADO (50/58 = JP) — pareamento JP↔staging completo
+
+> Pareamento do **Mioshie-shū nº 6** feito nesta sessão (continuando o M4).
+> Detalhes na memória: `/memories/repo/m6-finalizado-2026-08-23.md`.
+
+### O que foi feito (método manual, um a um, semântico)
+- **ST M6: 36 I / 37 M → 50 I / 58 M / 0 E = JP** (sequência de rótulos idêntica
+  — 108 posições, 0 diferenças).
+- Separadas as **falas gigantes** das seções 15, 16, 17, 25, 26, 27 de janeiro
+  (mini-diálogos + monólogos de leitura embutidos) comparando com o JP.
+- **⚠️ CRÍTICO — datas do ST estavam defasadas em 1 dia**: o ST rotulava como
+  `[2º de janeiro]` o que era o **1º de janeiro** do JP; a seção **2 de janeiro
+  estava PERDIDA** (embutida na linha gigante do 1º, terminando com "— 2 de
+  janeiro" embutido). Corrigido: renomeei `[2º]`→`[1º]`, `[3º]`→`[3]`, e SEPAREI
+  o 2 de janeiro da linha do 1º. **Lição: sempre conferir a 1ª frase de cada
+  seção do ST contra o JP (e o backup pós-retradução) antes de parear.**
+- Removidas **datas embutidas** no fim de falas (1º/2/5/6/7/15 de janeiro).
+- Movidas falas fora de lugar: sogra de Nishimoto (→ seção 25), Harue Nagai
+  (→ seção 27).
+- Fundidas falas da sogra (eram 2 `Interlocutor:` separados; JP tem 1).
+- Mini-diálogo Yamada Natsu: a continuação final ("É normal / Não fica ausente")
+  ficou SEM rótulo (o JP não rotula essa parte).
+- Verificação final: **0 rótulos no meio de linha, 0 datas embutidas, conteúdo
+  íntegro** (diff +278 chars = quebras de fala + seção 2 jan adicionada).
+- **Consolidado canônico** (`revisao_literaria/orais/19510225 - Mioshie-shū nº 6
+.txt`)
+  sincronizado = staging (MD5 68e0c52a...).
+- **Backups**: `pt_backup_pre_pareamento_m6_20260823/` (ST pré) e
+  `orais_consolidadas_backup_pre_m6_20260823/` (consolidado pré).
+
+### Estado dos 8 (ST vs JP, I/M) — após M6 finalizado
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | 39/39 | 70/82 | 🟡 monólogo restaurado; falta pareamento fino |
+| 4 | **67/75** | 67/75 | ✅ **ALINHADO** |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | **50/58** | 50/58 | ✅ **ALINHADO** |
+| 7 | 32/29 | 39/47 | ❌ por parear (monólogos presentes) |
+| 8 | 45/49 | 106/112 | ❌ por parear (monólogos presentes) |
+
+### Próximo passo
+- **M7** (19520320): ST 32/29 → JP 39/47. Ver `HANDOFF_M7_20260823.md`.
+  ⚠️ **Mesmo problema de datas defasadas**: o ST começa com `[6 de fevereiro]`
+  mas o backup pós-retradução tem `5 de fevereiro (Risshun-sai)` — a seção do
+  Risshun-sai está perdida/embutida. Corrigir datas ANTES de parear.
+  Depois M8 (19520420).
+
+---
+
 ## 23/08 — M3 RESTAURADO (monólogo do Miroku + Divindades Malignas) — achado resolvido
 
 > Investigação + restauração feitas nesta sessão. O achado crítico do M3
