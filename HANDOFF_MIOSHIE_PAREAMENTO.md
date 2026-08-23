@@ -67,7 +67,13 @@ em cada arquivo (ST vs JP).
 | **5** | **55/64/0** | **55/64/0** | ✅ **ALINHADO** |
 | **6** | **50/58/0** | **50/58/0** | ✅ **ALINHADO** (finalizado 23/08) |
 | **7** | **39/47/0** | **39/47/0** | ✅ **ALINHADO** (finalizado 23/08) |
-| 8 | 45/49/0 | 106/112/0 | ❌ falta separar mini-diálogos (ver HANDOFF_M8_20260823.md) |
+| **8** | **106/112/0** | **106/112/0** | ✅ **ALINHADO** (finalizado 23/08) |
+
+### M9-M33 (PROSA) — estrutura pareada (24/08)
+- São **prosa** (sem rótulos I/M). Pareamento = seções de data + [Ensinamento] + referências de artigos.
+- **Todos os 25 arquivos**: datas de seção = JP (verificado; excluídos metadados de publicação).
+- Correções: **M14** (cabeçalho `5 de setembro` adicionado), **M17** (dedup `23 de dezembro`), **M25** (seção `27 de agosto` reconstruída/traduzida do JP), **M22** (sem correção — metadado).
+- **Pendente**: revisão semântica de tradução linha a linha (JP↔PT) + consolidação nos canônicos. Ver `HANDOFF_M9_20260824.md`.
 
 ### M5 (CONCLUÍDO ✅)
 - De 39/37 → **55 I / 64 M** (bate com o JP).
@@ -88,17 +94,16 @@ em cada arquivo (ST vs JP).
 
 ## 6. COMO PROCEDER NA PRÓXIMA SESSÃO
 
-1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M8_20260823.md`.
-2. **Próximo: M8 (19520420)** — ver `HANDOFF_M8_20260823.md`:
-   - ⚠️ **Problema de datas defasadas** (como no M6/M7): o ST começa com `[6 de
-     março]` mas o JP tem `三月五日` (5 de março) — a seção do dia anterior está
-     perdida/embutida. Corrigir datas ANTES de parear.
-   - Separar as **12 falas gigantes** (mini-diálogos + monólogos), manual um a um.
-   - Diferença GRANDE: ST 45/49 vs JP 106/112 (~120 rótulos de diferença).
-3. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
+1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M9_20260824.md`.
+2. **M8 (19520420)**: ✅ **FINALIZADO** (23/08) — ST 106/112 = JP. Ver
+   `HISTORICO.md` seção "24/08 — M8 FINALIZADO".
+3. **M9-M33 (prosa)**: estrutura pareada (24/08). Próximo: **revisão semântica de
+   tradução** linha a linha (JP↔PT) — o pareamento estrutural está feito, falta a
+   revisão de sentido. Ver `HANDOFF_M9_20260824.md`.
+4. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
    localizar o 1 Meishu-Sama que falta.
-4. **M2-M3**: mesmo padrão do M5/M6 — separar mini-diálogos e monólogos.
-5. **Depois**: revisão semântica dos livros pareados.
+5. **M2-M3**: mesmo padrão do M5/M6/M7/M8 — separar mini-diálogos e monólogos.
+6. **Depois**: revisão semântica dos livros pareados.
 
 ## 7. BACKUPS DISPONÍVEIS
 

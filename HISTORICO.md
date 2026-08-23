@@ -7,6 +7,79 @@
 
 ---
 
+## 24/08 — M8 FINALIZADO (106/112 = JP) + M9-M33 (prosa) ajustados
+
+> Pareamento do **Mioshie-shū nº 8** feito (fim da sessão de 23/08, continuando
+> o M4/M6/M7). Depois, verificação e ajuste estrutural dos **M9-M33 (prosa)**.
+> Detalhes nas memórias: `/memories/repo/m8-finalizado-2026-08-23.md` e
+> `/memories/repo/m9m33-ajustes-prosa-2026-08-24.md`.
+
+### M8 — O que foi feito (método manual, um a um, semântico)
+- **ST M8: 45 I / 49 M → 106 I / 112 M / 0 E = JP** (sequência de rótulos
+  idêntica em TODAS as 11 seções — verificado por script: 218 posições, 0
+  diferenças).
+- **⚠️ CRÍTICO — datas defasadas em 1 dia** (como no M4/M6/M7): o ST começava
+  com `[6 de março]` mas o conteúdo era o **5 de março** do JP. Corrigido:
+  renomeei `[6 mar]`→`[5 mar]`, criei novo `[6 mar]` após o fim da seção 5,
+  e reposicionei cabeçalhos [7], [15], [16], [17] de março.
+- Separadas as **12 falas gigantes** (mini-diálogos + monólogos de leitura
+  embutidos) comparando com o JP: L53 (catarata + leitura TB + Kōfukuji → 2 M),
+  L69 (Nasu mini-diálogo → 14 pares I/M), L89 (Itō + Kōfukuji → 2 M), L113
+  (Kameo + leitura + Kōfukuji → 3 M), L127 (Okabe + monólogo Kyoto → 2 M), L173
+  (Aono + monólogo Hakone → 2 M), L191 (Fujiwara mini-diálogo + monólogo → 30
+  pares), L195/199/203/207/219 (seções 23-27 → monólogos).
+- **Seções 23-27 = monólogos SEM rótulo** (parágrafos), igual ao JP (I=0 M=0);
+  o ST original usava `Meishu-Sama:` — removido o rótulo.
+- Fundidas falas divididas: Tsukada Kanae (2 I → 1), Fujii (2 I → 1), Sato
+  Hideko ("segunda esposa" + I), leitura+Kōfukuji da seção 7.
+- Removidas datas embutidas no fim de falas (6/7/15/16/17/24/25/26/27 março) e
+  trechos duplicados de início de seção (23-27); restaurados inícios de seção
+  que faltavam (24-27) a partir do backup pós-retradução.
+- Verificação final: **0 rótulos no meio de linha, 0 datas embutidas, conteúdo
+  íntegro**, sequência de rótulos idêntica ao JP em todas as seções.
+- **Backups**: `pt_backup_pre_pareamento_m8_20260823/` (ST pré).
+
+### M9-M33 (prosa) — verificação e ajustes
+- São **prosa** (sem rótulos I/M). Pareamento = seções de data + [Ensinamento]
+  + referências de artigos. Verifiquei datas de seção (JP kanji vs PT) em todos
+  os 25 arquivos, excluindo metadados de publicação (印刷/発行; impressão/publicação).
+- Correções aplicadas:
+  - **M14**: adicionado cabeçalho `5 de setembro` que faltava (conteúdo estava
+    lá, sem o cabeçalho).
+  - **M17**: removida duplicação do cabeçalho `23 de dezembro` (2× → 1×).
+  - **M25**: **reconstruída a seção 27 de agosto** — estava gravemente
+    incompleta (~720 chars vs ~5.300 do JP). Traduzidos do JP os trechos
+    faltantes: segunda carta do Higuchi (LA), salvação da América/Havaí (750
+    fiéis), Coletânea de Milagres, Revolução Médica (Prefácio), Medicina
+    Moderna, Fabricante de Vidro, Deus e a Bola de Vidro, agricultura natural
+    completa (composto/batata-doce/Kintoki), fotos trocadas, fiel bêbado/
+    "adequação"/"devagar e sempre". Removida triplicação do cabeçalho.
+  - **M22**: sem correção — `10 de junho` era metadado de publicação (rodapé).
+- Verificação final: todos os 25 M9-M33 com **datas de seção = JP** e
+  completude por seção OK.
+- **Backups**: `pt_backup_pre_ajuste_prosa_m9m33_20260824/` (25 arquivos pré).
+
+### Estado dos 8 (ST vs JP, I/M) — após M8 finalizado
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | 39/39 | 70/82 | 🟡 monólogo restaurado; falta pareamento fino |
+| 4 | **67/75** | 67/75 | ✅ **ALINHADO** |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | **50/58** | 50/58 | ✅ **ALINHADO** |
+| 7 | **39/47** | 39/47 | ✅ **ALINHADO** |
+| 8 | **106/112** | 106/112 | ✅ **ALINHADO** |
+
+### Próximo passo
+- **M9-M33 (prosa)**: estrutura pareada; falta **revisão semântica de tradução**
+  linha a linha (JP↔PT) e consolidação nos canônicos. Ver `HANDOFF_M9_20260824.md`.
+- **M3**: único restante do diálogo com pareamento fino pendente (monólogo
+  restaurado; falta alinhar contagem fina 39/39 → 70/82).
+
+---
+
+
 ## 23/08 (fim) — M4 FINALIZADO (67/75 = JP) — pareamento JP↔staging completo
 
 > Pareamento do **Mioshie-shū nº 4** feito nesta sessão. Detalhes na memória:
