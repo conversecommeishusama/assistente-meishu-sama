@@ -7,6 +7,55 @@
 
 ---
 
+## 23/08 (fim) — M4 FINALIZADO (67/75 = JP) — pareamento JP↔staging completo
+
+> Pareamento do **Mioshie-shū nº 4** feito nesta sessão. Detalhes na memória:
+> `/memories/repo/m4-finalizado-2026-08-23.md`.
+
+### O que foi feito (método manual, um a um, semântico)
+- **ST M4: 42 I / 39 M → 67 I / 75 M / 0 E = JP** (sequência de rótulos idêntica).
+- Separadas as **10 falas gigantes** (mini-diálogos + monólogos de leitura
+  embutidos) comparando com o JP, seguindo o padrão editorial validado:
+  - Mini-diálogos: rótulo só na PRIMEIRA fala do bloco; alternadas como
+    continuações SEM rótulo (parágrafos).
+  - Monólogos de leitura: `Meishu-Sama:` contínuos com referência inline
+    【Eikō n.º 130/133/134/135】.
+- Removidas **datas embutidas** no fim de falas (5, 8, 11, 15, 18, 25 nov).
+- Corrigidos: header [18 de novembro] (Sawada pertence à seção 18) e relato do
+  Tatsumi Yoshiko movido p/ seção 28.
+- Verificação final: **0 rótulos no meio de linha, 0 datas embutidas, conteúdo
+  íntegro** (diff -229 chars = só rótulos/headers).
+- **Consolidado canônico** (`revisao_literaria/orais/19511215 - Mioshie-shū nº 4.txt`)
+  sincronizado = staging.
+- **Backups**: `pt_backup_pre_pareamento_m4_20260823/` (ST pré) e
+  `orais_consolidadas_backup_pre_m4_20260823/` (consolidado pré).
+
+### ⚠️ REGRA SUPREMA REFORÇADA (usuário)
+- **Método 100% MANUAL, um a um, LEITURA SEMÂNTICA.** **PROIBIDO usar scripts
+  Python (replace/regex/transformação em lote) para editar/decidir.** Scripts/grep
+  só para inspecionar/localizar/verificar. Memória:
+  `/memories/repo/regra-metodo-manual-2026-08-23.md`.
+- O desvio (scripts de âncora no M4) causou erros e atraso — reverter para manual.
+
+### Estado dos 8 (ST vs JP, I/M) — após M4 finalizado
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | 39/39 | 70/82 | 🟡 monólogo restaurado; falta pareamento fino |
+| 4 | **67/75** | 67/75 | ✅ **ALINHADO** |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | 36/37 | 50/58 | ❌ por parear (monólogos presentes) |
+| 7 | 32/29 | 39/47 | ❌ por parear (monólogos presentes) |
+| 8 | 45/49 | 106/112 | ❌ por parear (monólogos presentes) |
+
+### Próximo passo
+- **M6** (19510225): ST 36/37 → JP 50/58. Ver `HANDOFF_M6_20260823.md`. Seções
+  a trabalhar: 15, 16, 17, 25, 26, 27 de janeiro (falas gigantes + monólogos).
+- Depois M7 (19520320) e M8 (19520420).
+
+---
+
 ## 23/08 — M3 RESTAURADO (monólogo do Miroku + Divindades Malignas) — achado resolvido
 
 > Investigação + restauração feitas nesta sessão. O achado crítico do M3

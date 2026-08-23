@@ -1,5 +1,13 @@
 # HANDOFF — PAREAMENTO DOS MIOSHIE (JP↔STAGING) — 22/08 (FIM DE SESSÃO)
 
+> **ATUALIZADO (23/08, fim da sessão — M4 FINALIZADO)**: **M4 = 67 I / 75 M / 0 E**
+> = JP (era 42/39), sequência de rótulos idêntica seção a seção. Feito: separação
+> manual das 10 falas gigantes (mini-diálogos + monólogos de leitura), remoção de
+> datas embutidas, correção de headers e rótulos embutidos. Consolidado canônico
+> sincronizado. **PRÓXIMA SESSÃO: fazer o M6** — ver handoff dedicado
+> `HANDOFF_M6_20260823.md` + memória `/memories/repo/regra-metodo-manual-2026-08-23.md`
+> (REGRa SUPREMA: método 100% MANUAL; proibido scripts para editar/decidir).
+
 > **ATUALIZADO (23/08, fim da sessão)**: **M3 RESTAURADO** (monólogo Miroku +
 > Divindades Malignas recuperados — ver §8). **PRÓXIMA SESSÃO: fazer o M4** —
 > ver handoff dedicado `HANDOFF_M4_20260823.md` + memórias
