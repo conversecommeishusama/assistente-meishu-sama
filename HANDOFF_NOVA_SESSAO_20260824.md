@@ -43,11 +43,12 @@
 - **A revisão SEMÂNTICA de tradução (sentido JP↔PT) NÃO foi feita** — é tarefa
   desta fase.
 
-### Palavras escritas (50 obras, NÃO orais)
-- Revisão literária `revisao_literaria/QUEUE_EXECUTOR.json`: **765 done / 0
-  pending** (completa).
-- Auditoria `QUEUE_AUDITOR.json`: **50 done / 0 pending**.
-- Saída: `revisao_literaria/livros_publicacao_pt_literaria/` (50 arquivos).
+### Palavras escritas (54 obras, NÃO orais)
+- Revisão literária `revisao_literaria/QUEUE_EXECUTOR.json`: **765 done / 50
+  pending** (os 50 pending = os 4 arquivos recém-adicionados em 24/08).
+- Auditoria `QUEUE_AUDITOR.json`: **50 done / 0 pending** (dos 50 originais).
+- Saída: `revisao_literaria/livros_publicacao_pt_literaria/` (50 arquivos;
+  os 4 novos ainda por processar).
 - **Chunk estrutural**: `scripts/generate_structural_chunks.py` + infra de
   chunks turn-aware (logs em `logs/chunk_turnaware_*`). Verificar estado antes
   de rodar a promoção.
@@ -64,6 +65,74 @@
   `leitura.html`, junto com o resto do trabalho do **Fórum da comunidade**
   (não commitado no repositório principal).
 - **Não misturar** o trabalho do fórum com o pareamento.
+
+---
+
+## 1b. ⚠️ DIFERENÇA DE CONTAGEM: corpus do app (137) vs trabalho atual (133)
+
+Investigado em 24/08. O corpus do app (`textos_portugues/`) tem **137** arquivos,
+mas o trabalho atual (ESCOPO revisão literária + orais) cobre **133**. A diferença
+é de **4 arquivos de escrita** que estão no app mas **fora do ESCOPO**:
+
+| Arquivo (no app, fora do ESCOPO) | Natureza |
+|----------------------------------|----------|
+| `19480905 - Conversas sobre a Fé.txt` | 信仰雑話 (Shinkō Zatsuwa) |
+| `19510520 - Luz dos Ensinamentos.txt` | 教えの光 (Oshie no Hikari) |
+| `19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt` | 水晶殿御遷座 |
+| `Medicina_do_Amanha.txt` | 1936 — Medicina do Amanhã |
+
+### Decomposição exata
+- **Orais: 83** (Gokōwa 20 + Gosuiji 30 + Mioshie 33) — **idênticas** no app e no
+  trabalho atual.
+- **Escritas no app: 54** = 50 (ESCOPO) + 4 (fora do ESCOPO).
+- **Escritas no ESCOPO: 50** = 42 livros + 8 periódicos
+  (Eiko, Hikari, Kyusei, Tijotengoku, Jornais, Revista_Asahi, Esboco_da_Medicina,
+  Ensinamentos_diversos) — todos revisados (765 chunks done, auditoria 50 done).
+
+### Ação necessária (passo 4 do escopo)
+Os 4 arquivos fora do ESCOPO **devem ser avaliados** quanto à inclusão no fluxo
+de revisão/consolidação (ou confirmar se ficam fora por decisão de escopo —
+ex.: Medicina_do_Amanha é de 1936, anterior ao período canônico). Levar ao
+usuário para decidir.
+
+### ✅ DECISÃO DO USUÁRIO (24/08) — os 4 DEVEM ser trabalhados na REVISÃO LITERÁRIA
+- O usuário confirmou: **não estão no escopo da revisão literária → precisam ser
+  trabalhados**; são **palavras escritas** (prosa), não orais → reabrir a revisão
+  literária (NÃO incluí-los na revisão semântica das orais).
+- **`Medicina_do_Amanha` e `Palavras no Palácio de Cristal`**: ficam FORA da
+  "Leitura Colaborativa" (decisão do usuário), mas **continuam no corpus do app**.
+- **JÁ FEITO (24/08, direto)**: os 4 foram adicionados à revisão literária:
+  - Script: `scripts/adicionar_4_fora_escopo_revlit.py` (padrão incremental do
+    `adicionar_suplemento_revlit.py`).
+  - Backup pré: `revisao_literaria/backup_pre_adicionar_4_20260824/`.
+  - ESCOPO: 50 → **54 arquivos** (813 chunks). Fila: **50 chunks pending** (17+
+    13+1+19), 765 done preservados.
+  - Fidelidade byte a byte verificada (chunks = fonte `livros_publicacao_pt_revisado/`).
+  - **PENDENTE (próxima sessão)**: rodar executor + auditor nos 50 chunks novos
+    (mesmo loop dos 765 já feitos) → consolidar na saída literária.
+
+---
+
+## 1c. ⚠️ LEITURA COLABORATIVA — arquivos salvos SEPARADAMENTE (orientação do usuário)
+
+**Os arquivos da Leitura Colaborativa devem ser salvos de forma SEPARADA** do
+corpus canônico, pois **serão editados ao longo do tempo pelos usuários**.
+
+- O corpus canônico (`textos_portugues/`, `textos_japones/`, canônicos de
+  `revisao_literaria/orais/` e `livros_publicacao_pt_literaria/`) é **fonte
+  imutável de verdade** — NÃO deve ser alterado pelas edições colaborativas.
+- A Leitura Colaborativa precisa de um **diretório/armazenamento próprio** (ex.:
+  `textos_leitura_colaborativa/` ou similar + tabelas/estado no app) onde cada
+  texto editável vive separado do original, com:
+  - **Versão base** (cópia do canônico) para o usuário ler/editar.
+  - **Edições dos usuários** persistidas por texto/trecho, sem tocar o original.
+  - Controle de versão/edição (quem editou, quando, diff).
+- **Decisão de design a definir**: local físico (diretório? banco?), granularidade
+  (por obra? por seção? por parágrafo?), e política de moderação (o fórum já tem
+  moderação — reutilizar).
+- Verificar no protótipo o estado atual: `leitura.html` é só a página shell
+  (rota `/forum/leitura` renderiza; a lógica de ler/editar ainda não está
+  implementada).
 
 ---
 
