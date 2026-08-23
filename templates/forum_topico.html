@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ topico.titulo }} — Fórum Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}"
+      data-topico-id="{{ topico.id }}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Fórum</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link">🗨️ Fórum</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <section class="forum-container topico-container">
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('forum.forum_pagina') }}">🗨️ Fórum</a>
+                <a class="community-link" href="{{ url_for('forum.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+            </nav>
+
+            <div class="topico-header">
+                <a href="{{ url_for('forum.forum_pagina') }}" class="back-link">← Voltar ao fórum</a>
+                <h1>{{ topico.titulo }}</h1>
+                {% if topico.descricao %}<p class="muted">{{ topico.descricao }}</p>{% endif %}
+                {% if topico.status != 'aberto' %}
+                    <p class="muted">⚠️ Este tópico está {{ topico.status }}.</p>
+                {% endif %}
+            </div>
+
+            <div class="forum-thread" id="forum-thread">
+                {% if mensagens %}
+                    {% for m in mensagens %}
+                        <div class="forum-msg {{ 'msg-ia' if m.papel == 'assistente' else 'msg-usuario' }} {% if m.status == 'em_revisao' %}msg-em-revisao{% endif %}" data-msg-id="{{ m.id }}" {% if m.status == 'em_revisao' %}data-em-revisao="true"{% endif %}>
+                            <div class="msg-author">{{ m.autor_email or 'Membro' }}</div>
+                            {% if m.status == 'em_revisao' %}
+                                <div class="msg-body msg-coberta">
+                                    🔒 Sua mensagem está em análise pela moderação e ficará visível aos outros após a aprovação.
+                                </div>
+                            {% else %}
+                                <div class="msg-body">{{ m.conteudo }}</div>
+                            {% endif %}
+                            <div class="msg-time">{{ m.created_at }}</div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="muted" id="thread-vazio">Nenhuma mensagem ainda. Comece a discussão ou pergunte à IA.</p>
+                {% endif %}
+            </div>
+
+            {% if user and topico.status == 'aberto' %}
+                <div class="forum-composer">
+                    <label class="composer-apelido">
+                        <span class="muted">Seu nome/apelido (seu e-mail nunca é exibido):</span>
+                        <input type="text" id="forum-msg-apelido" placeholder="Ex.: João, Maria, Estudioso do Johrei..." maxlength="60" autocomplete="nickname">
+                    </label>
+                    <textarea id="forum-msg-input" rows="2" placeholder="Escreva sua mensagem... (será revisada pela moderação)" maxlength="5000"></textarea>
+                    <div class="composer-actions">
+                        <button class="btn-primary" id="forum-msg-submit">Publicar</button>
+                        <button class="btn-secondary" id="forum-ia-btn" title="Perguntar ao Goshinsho com base nos Escritos">
+                            ✨ Perguntar à IA
+                        </button>
+                    </div>
+                    <p class="muted form-error" id="forum-msg-error" hidden></p>
+                    <p class="muted form-ok" id="forum-msg-ok" hidden></p>
+                </div>
+            {% else %}
+                <p class="muted">Faça <a href="{{ url_for('web.app_view_pt') }}">login</a> para participar da discussão.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+</body>
+</html>

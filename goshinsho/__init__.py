@@ -35,6 +35,18 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
 
     if include_web:
         app.register_blueprint(web_bp)
+        # 2026-08-21: Fórum da comunidade (piloto) -- blueprint separado.
+        # Só é registrado quando include_web=True (app público), não no
+        # Acervo Studio. Se o banco/fórum estiver indisponível, as rotas
+        # retornam erros seguros; o app principal não quebra.
+        try:
+            from .forum_routes import forum_bp
+
+            app.register_blueprint(forum_bp)
+        except Exception as exc:  # pragma: no cover - defensivo
+            import logging
+
+            logging.getLogger(__name__).warning("Não foi possível registrar o fórum: %s", exc)
 
     if warmup_search is None:
         warmup_search = include_web

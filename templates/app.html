@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=150">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
 </head>
-<body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}" data-meta-pixel-id="{{ meta_pixel_id or '' }}">
+<body{% if user %} data-logged-in="true"{% endif %} data-retrieval-mode="{{ retrieval_mode|default('jp_agentic') }}" data-meta-pixel-id="{{ meta_pixel_id or '' }}" data-api-prefix="{{ request.script_root }}">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span data-i18n="menu">Menu</span>
@@ -33,6 +33,11 @@
         {% else %}
             <p class="muted" data-i18n="loginHistory">Faça login para ver seu histórico.</p>
         {% endif %}
+        <div class="sidebar-section-title">Comunidade</div>
+        <a class="conversation-link forum-sidebar-link" href="{{ url_for('forum.forum_pagina') }}">
+            <span>🗨️</span>
+            <span>Fórum de Estudos</span>
+        </a>
         <div class="favorites-box" id="favorites-box">
             <strong data-i18n="favorites">Favoritos</strong>
             <div id="favorites-list" class="favorites-list"></div>
@@ -204,7 +209,7 @@
                 <!-- 2026-07-30: painel de solicitação de "acesso gratuito" ficou
                      órfão -- desde que o cadastro já concede premium gratuito
                      automaticamente, não há mais nada a solicitar (ver
-                     CLAUDE.md). Nenhum botão do app ainda abre este painel;
+                     GOSHINSHO.md). Nenhum botão do app ainda abre este painel;
                      mantido oculto/intacto (não removido) só para não quebrar
                      o backend/rota que ainda existe, caso seja reaproveitado. -->
                 <h2>Solicitar premium gratuito</h2>
@@ -308,6 +313,10 @@
         </section>
 
         <section class="hero {% if messages %}compact{% endif %}">
+            <nav class="hero-features" aria-label="Funcionalidades da comunidade">
+                <a class="hero-feature-link" href="{{ url_for('forum.forum_pagina') }}">Fórum</a>
+                <a class="hero-feature-link" href="{{ url_for('forum.leitura_pagina') }}">Leitura Colaborativa</a>
+            </nav>
             <h1 data-i18n="heroTitle">Como posso ajudar?</h1>
             <p data-i18n="heroSubtitle">Faça uma pergunta sobre os escritos de Meishu-Sama.</p>
         </section>
@@ -428,6 +437,7 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}?v=154"></script>
 </body>
 </html>

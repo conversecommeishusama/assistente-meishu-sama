@@ -240,3 +240,76 @@ Resumo:
 - Correção de OCR do japonês: `scripts/corrige_ocr_jp.py` (idempotente).
 - Aplicação semântica com guardas: `scripts/mescla_e_aplica.py` /
   `scripts/implanta_semantico_v2.py` (nunca `replace` global).
+
+---
+
+## 7. Comunidade — Fórum e Leitura Colaborativa (21-24/08/2026)
+
+### Decisão do usuário
+Transformar o aplicativo em **comunidade de estudiosos dos ensinamentos de
+Meishu-Sama**. Primeiro passo: **Fórum** (piloto). Depois: **Leitura
+Colaborativa** (aguarda a promoção do novo corpus para liberar o conteúdo).
+Mais adiante: **áudio por voz** (Web Speech API do navegador — decisão
+registrada).
+
+### Protótipo de teste (IMPORTANTE)
+- **Código de produção NÃO foi ativado** — as melhorias estão num **protótipo
+  separado** em `/var/www/goshinsho-teste/` (porta 5091), servido em
+  `https://goshinsho.com.br/versao2` (via Caddy, sem afetar a produção 8000).
+- O protótipo é uma **cópia separada** com symlinks para os dados de produção.
+  A ativação em produção exige **autorização explícita do usuário** (incluindo
+  restart do `goshinsho.service`).
+- Detalhes técnicos completos em
+  `memories/repo/forum-comunidade-2026-08-21.md`.
+
+### Fórum — o que foi implementado
+- **Tabelas**: `forum_topicos` e `forum_mensagens` (migração:
+  `scripts/migracao_forum.sql`) com coluna `autor_nome` (apelido — o e-mail
+  nunca é exposto).
+- **Backend**: `goshinsho/forum_routes.py` (blueprint `/forum`),
+  `goshinsho/services/forum_service.py` (acesso Postgres direto),
+  `goshinsho/services/forum_moderation.py` (moderação automática por IA —
+  **conduta**, nunca doutrina; decisões: aprovada/em_revisão/reprovada).
+- **Página principal**: busca por tópico/assunto, caixas com os tópicos abertos
+  (5 por página, em ordem de atualização) mostrando título, descrição, criador,
+  data de criação, última atualização (formato ocidental), nº de comentários e
+  as 2 últimas postagens resumidas; paginação.
+- **Novo tópico**: página dedicada (`/forum/novo`); exige **apelido**; ao
+  criar, o Goshinsho posta boas-vindas e o tópico volta ao topo da lista.
+- **Página do tópico**: exige apelido para postar; mensagens em análise são
+  **cobertas** com aviso; botão "Perguntar à IA" (mesmo motor do chat, com base
+  nos Escritos).
+- **Normas de bom comportamento**: página `/forum/regras` com 8 regras; link
+  dourado na página do fórum.
+- **Privacidade**: apelido obrigatório para criar tópico/postar; e-mail nunca
+  exibido (mascarado nos tópicos antigos).
+
+### Leitura Colaborativa — o que foi implementado
+- **Página**: `/forum/leitura` (`templates/leitura.html`).
+- **Textos**: ensinamentos publicados por Meishu-Sama enquanto vivo (domínio
+  público); tradução por IA com protocolo/glossário próprios (divergente das
+  instituições messiânicas; literalidade); **uso exclusivo do Goshinsho** —
+  reprodução não autorizada sem autorização; **não passou por revisão humana
+  completa, pode haver erros de tradução**; seleção de trechos para a equipe
+  avaliar.
+- **Conteúdo dos livros**: será liberado após a promoção do novo corpus
+  (decisão do usuário).
+
+### Links dourados (app)
+- "Fórum" e "Leitura Colaborativa" em dourado (`#8b6914`) acima de "Como posso
+  ajudar?" (que ficou no mesmo tamanho, 1.05rem); links cruzados dourados nas
+  páginas das funcionalidades.
+- **Fix logo**: `logo.png`/ícones no protótipo via symlink; CSS não esconde
+  mais o logo em telas ≤360px.
+- **Fix prefixo**: protótipo montado sob `/versao2` via `SCRIPT_NAME` +
+  `prefix_fetch.js` (fetch com prefixo) — corrigiu "Unexpected token '<'" ao
+  criar fórum (JS chamava a produção).
+
+### Pendências
+- **Ativar em produção**: requer autorização + restart do serviço.
+- **Leitura colaborativa real** (seleção de trechos → comentários → painel da
+  equipe): aguarda promoção do corpus.
+- **Áudio por voz**: Web Speech API (grátis); liberar Permissions-Policy
+  microphone + connect-src.
+- **Painel de moderação** para a equipe (rotas de API existem; UI no admin
+  pendente).

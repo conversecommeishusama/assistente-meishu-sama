@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fórum — Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Fórum</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link active">🗨️ Fórum</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        {% if flash_msg %}
+            <section class="flash error"><div class="flash error">{{ flash_msg }}</div></section>
+        {% endif %}
+
+        <section class="forum-container">
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('forum.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+            </nav>
+
+            <div class="forum-header">
+                <h1>🗨️ Fórum de Estudos</h1>
+                <p class="muted forum-objetivo">
+                    Este é o espaço da comunidade de estudiosos dos ensinamentos de Meishu-Sama.
+                    Aqui você pode abrir discussões, trocar ideias com outros estudiosos e
+                    <strong>consultar o assistente Goshinsho</strong>, que pode ser perguntado no
+                    contexto de cada tópico e responde sempre com base nos Escritos.
+                </p>
+                <p class="muted forum-moderacao">
+                    Para manter um ambiente respeitoso, <strong>cada mensagem é analisada
+                    automaticamente</strong>. Mensagens com discurso de ódio, assuntos fora do
+                    contexto de debate sobre os ensinamentos ou conteúdo inadequado podem ser
+                    <strong>censuradas</strong> (retidas ou bloqueadas) pela moderação.
+                    Antes de participar, leia as
+                    <a href="{{ url_for('forum.forum_regras_pagina') }}" class="forum-regras-link">📜 normas de bom comportamento do fórum</a>.
+                </p>
+            </div>
+
+            {% if request.args.get('criado') %}
+                <p class="form-ok forum-sucesso">✅ Tópico criado com sucesso! Ele aparece no topo da lista por ter sido o último a ser atualizado.</p>
+            {% endif %}
+
+            <div class="forum-toolbar">
+                <form class="forum-busca" method="get" action="{{ url_for('forum.forum_pagina') }}">
+                    <input type="search" name="q" value="{{ busca or '' }}" placeholder="Pesquisar tópico/assunto..." aria-label="Pesquisar tópico ou assunto">
+                    <button type="submit" class="btn-secondary">Buscar</button>
+                    {% if busca %}<a class="btn-secondary" href="{{ url_for('forum.forum_pagina') }}">Limpar</a>{% endif %}
+                </form>
+                {% if user %}
+                    <a class="btn-primary" href="{{ url_for('forum.forum_novo_pagina') }}">+ Abrir novo tópico</a>
+                {% else %}
+                    <p class="muted">Faça <a href="{{ url_for('web.app_view_pt') }}">login</a> para criar tópicos e participar.</p>
+                {% endif %}
+            </div>
+
+            <div class="topicos-list" id="topicos-list">
+                {% if topicos %}
+                    {% for t in topicos %}
+                        <a class="topico-card" href="{{ url_for('forum.topico_pagina', topico_id=t.id) }}">
+                            <div class="topico-card-body">
+                                <h3>{{ t.titulo }}</h3>
+                                {% if t.descricao %}<p class="muted fli-assunto">{{ t.descricao }}</p>{% endif %}
+                                <span class="topico-meta">
+                                    👤 Criado por <strong>{{ t.autor_email or 'membro' }}</strong> em {{ t.created_at_fmt or '—' }}
+                                    · 💬 {{ t.qtd_mensagens or 0 }} comentários
+                                    · 🕒 Última atualização: {{ t.ultima_atividade_fmt or t.created_at_fmt or '—' }}
+                                </span>
+                                {% if t.ultimas_postagens %}
+                                    <div class="topico-ultimas">
+                                        {% for p in t.ultimas_postagens %}
+                                            <div class="topico-post-resumo">
+                                                <span class="post-rotulo">{{ 'Goshinsho' if p.papel == 'assistente' else (p.autor_nome or 'Membro') }}:</span>
+                                                <span class="post-texto">{{ p.resumo or '…' }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p class="muted">{% if busca %}Nenhum tópico encontrado para "{{ busca }}".{% else %}Nenhum tópico aberto ainda. Seja o primeiro a abrir uma discussão!{% endif %}</p>
+                {% endif %}
+            </div>
+
+            {% if total_paginas > 1 %}
+                <nav class="forum-paginacao" aria-label="Paginação">
+                    {% if pagina > 1 %}
+                        <a class="btn-secondary" href="{{ url_for('forum.forum_pagina', page=pagina-1, q=busca) }}">← Anterior</a>
+                    {% endif %}
+                    <span class="muted">Página {{ pagina }} de {{ total_paginas }} ({{ total }} tópicos)</span>
+                    {% if pagina < total_paginas %}
+                        <a class="btn-secondary" href="{{ url_for('forum.forum_pagina', page=pagina+1, q=busca) }}">Próxima →</a>
+                    {% endif %}
+                </nav>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+</body>
+</html>

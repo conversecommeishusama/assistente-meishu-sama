@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leitura Colaborativa — Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Leitura Colaborativa</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link">🗨️ Fórum</a>
+                <a href="{{ url_for('forum.leitura_pagina') }}" class="forum-nav-link active">📖 Leitura Colaborativa</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <section class="forum-container leitura-container">
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+                <a class="community-link" href="{{ url_for('forum.forum_pagina') }}">🗨️ Fórum</a>
+            </nav>
+
+            <div class="forum-header">
+                <h1>📖 Leitura Colaborativa</h1>
+            </div>
+
+            <div class="leitura-intro">
+                <p>
+                    Aqui estão reunidos <strong>todos os ensinamentos publicados por Meishu-Sama
+                    enquanto vivo</strong> e que <strong>se tornaram de domínio público</strong>.
+                </p>
+                <p>
+                    Esta tradução foi feita por <strong>IA, com protocolo e glossário próprios</strong>,
+                    que em muitos pontos <strong>divergem dos ensinamentos traduzidos pelas instituições
+                    messiânicas</strong>. A nossa tradução <strong>privilegiou a literalidade</strong> —
+                    a fidelidade ao texto original japonês.
+                </p>
+                <p>
+                    E é exatamente por isso que ela pode ser melhorada com a sua ajuda:
+                    você pode <strong>selecionar trechos</strong> que considerar que precisam ser
+                    avaliados pela <strong>equipe Goshinsho</strong>, indicando o que achou estranho,
+                    e nós analisaremos cada indicação.
+                </p>
+
+                <div class="leitura-acoes">
+                    {% if user %}
+                        <a class="btn-primary" href="{{ url_for('forum.leitura_pagina') }}">📚 Explorar os livros</a>
+                    {% else %}
+                        <p class="muted">Faça <a href="{{ url_for('web.app_view_pt') }}">login</a> para começar a colaborar com a leitura.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="leitura-aviso">
+                <p>
+                    ⚠️ <strong>Uso exclusivo do Goshinsho:</strong> o conteúdo desta área é de
+                    <strong>uso exclusivo do Goshinsho</strong>. <strong>Não autorizamos a reprodução</strong>,
+                    cópia, distribuição ou publicação destes textos em qualquer outro meio, no todo ou em parte,
+                    sem autorização expressa da equipe.
+                </p>
+                <p>
+                    ⚠️ <strong>Tradução em revisão:</strong> esta tradução <strong>não passou por revisão
+                    humana completa</strong> — foi gerada por IA e pode conter <strong>erros de tradução</strong>.
+                    É exatamente por isso que contamos com a sua colaboração para apontar trechos que precisam
+                    ser avaliados.
+                </p>
+                <p>
+                    📌 Esta é a <strong>versão de teste</strong> da Leitura Colaborativa. O conteúdo completo
+                    dos livros será liberado em breve, após a promoção do novo corpus.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+</body>
+</html>

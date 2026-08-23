@@ -7,6 +7,50 @@
 
 ---
 
+## 21-24/08 — Aplicativo: comunidade (Fórum + Leitura Colaborativa) — protótipo /versao2
+
+> **Decisão do usuário**: transformar o app em comunidade de estudiosos de
+> Meishu-Sama. Implementado o **Fórum** (piloto) e a **página da Leitura
+> Colaborativa**, num **protótipo separado** — nada ativado em produção.
+> Detalhes técnicos completos: `/memories/repo/forum-comunidade-2026-08-21.md`.
+
+### O que foi feito
+- **Banco (Supabase)**: tabelas `forum_topicos` e `forum_mensagens`
+  (`scripts/migracao_forum.sql`), com coluna `autor_nome` (apelido).
+  Connection string do Postgres adicionada ao `.env` (helper
+  `scripts/definir_connection_string.sh`); driver `psycopg2-binary` instalado.
+- **Backend**: `goshinsho/forum_routes.py` (blueprint `/forum`),
+  `forum_service.py` (Postgres direto), `forum_moderation.py` (moderação IA de
+  **conduta**, nunca doutrina).
+- **Fórum**: página principal com busca, caixas de tópicos (5/pág, ordem de
+  atualização, com título/descrição/criador/datas/comentários/2 últimas
+  postagens), página de novo tópico (`/forum/novo`, exige apelido), página do
+  tópico (postar exige apelido, mensagens em análise cobertas, "Perguntar à
+  IA"), normas de bom comportamento (`/forum/regras`).
+- **Leitura Colaborativa**: página com textos de domínio público, tradução por
+  IA divergente das instituições, **uso exclusivo do Goshinsho (reprodução não
+  autorizada)**, **sem revisão humana completa (pode haver erros)**; conteúdo
+  dos livros só após promoção do corpus.
+- **App**: links dourados "Fórum"/"Leitura Colaborativa" acima de "Como posso
+  ajudar?" (mesmo tamanho); links cruzados nas páginas; fix do logo em telas
+  ≤360px; fix de prefixo `/versao2` (SCRIPT_NAME + `prefix_fetch.js`).
+
+### Protótipo
+- `/var/www/goshinsho-teste/` (porta 5091), público em
+  `https://goshinsho.com.br/versao2` (Caddy sem strip_prefix; app montado sob
+  `/versao2` via `SCRIPT_NAME` no `web_app.py`).
+- **Produção NÃO ativada** — requer autorização + restart do serviço.
+
+### Lições / erros
+- **JS com caminhos absolutos quebram sob prefixo**: no protótipo, `fetch("/api/...")`
+  ia para a raiz → produção. Corrigido com `data-api-prefix` + `prefix_fetch.js`.
+- **Logo 404 no protótipo**: faltavam `logo.png`/ícones (só na produção) →
+  symlinks.
+- **Cache do navegador**: sempre incrementar `?v=` de CSS/JS ao mudar (senão o
+  usuário vê versão antiga).
+
+---
+
 ## 24/08 — M8 FINALIZADO (106/112 = JP) + M9-M33 (prosa) ajustados
 
 > Pareamento do **Mioshie-shū nº 8** feito (fim da sessão de 23/08, continuando

@@ -30,6 +30,11 @@ class Config:
     SESSION_REFRESH_EACH_REQUEST = True
     SUPABASE_URL = _env("SUPABASE_URL")
     SUPABASE_KEY = _env("SUPABASE_KEY") or _env("SUPABASE_ANON_KEY")
+    # 2026-08-21: connection string do Postgres (Supabase) usada pelo fórum
+    # (forum_service.py) para acesso direto ao banco -- mais robusto que a
+    # API REST do Supabase para as tabelas novas. Configurada no .env
+    # pelo usuário (scripts/definir_connection_string.sh).
+    POSTGRES_CONNECTION_STRING = _env("POSTGRES_CONNECTION_STRING")
     DEEPSEEK_API_KEY = _env("DEEPSEEK_API_KEY")
     STRIPE_SECRET_KEY = _env("STRIPE_SECRET_KEY")
     STRIPE_WEBHOOK_SECRET = _env("STRIPE_WEBHOOK_SECRET")

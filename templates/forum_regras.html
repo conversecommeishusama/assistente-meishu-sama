@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Normas de Bom Comportamento — Fórum Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Fórum</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link">🗨️ Fórum</a>
+                <a href="{{ url_for('forum.leitura_pagina') }}" class="forum-nav-link">📖 Leitura Colaborativa</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <section class="forum-container regras-container">
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('forum.forum_pagina') }}">🗨️ Fórum</a>
+                <a class="community-link" href="{{ url_for('forum.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+            </nav>
+
+            <div class="forum-header">
+                <a href="{{ url_for('forum.forum_pagina') }}" class="back-link">← Voltar ao fórum</a>
+                <h1>📜 Normas de Bom Comportamento — Fórum</h1>
+                <p class="muted">
+                    Estas normas existem para que o fórum seja um espaço seguro, respeitoso e
+                    focado no estudo dos ensinamentos de Meishu-Sama. Ao participar, você concorda
+                    em segui-las.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>1. Respeito é a base</h2>
+                <p>
+                    Trate todos os participantes com respeito. <strong>Divergir de ideias é
+                    bem-vindo</strong> — o fórum existe para isso —, mas <strong>atacar pessoas
+                    não é</strong>. Discriminação, racismo, xenofobia, misoginia, homofobia ou
+                    qualquer forma de preconceito são proibidos.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>2. Foco nos ensinamentos</h2>
+                <p>
+                    O fórum é dedicado ao estudo dos ensinamentos de Meishu-Sama. Mantenha as
+                    discussões <strong>dentro do tema</strong>. Assuntos sem relação (política
+                    partidária, futebol, assuntos pessoais não relacionados, propaganda etc.)
+                    podem ser removidos.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>3. Sem ataques pessoais, assédio ou ameaças</h2>
+                <p>
+                    É proibido ofender, humilhar, assediar, perseguir ou ameaçar qualquer pessoa,
+                    dentro ou fora do fórum. Mensagens desse tipo são bloqueadas.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>4. Sem spam nem divulgação</h2>
+                <p>
+                    Não publique conteúdo comercial, links maliciosos, correntes ou mensagens
+                    repetidas. Divulgação de produtos ou serviços não é permitida sem autorização
+                    da equipe.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>5. Conteúdo legal e apropriado</h2>
+                <p>
+                    É proibido publicar conteúdo ilegal, violento, pornográfico ou que incentive
+                    dano a si ou a outros.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>6. Moderação e censura</h2>
+                <p>
+                    <strong>Cada mensagem é analisada automaticamente</strong> antes da publicação.
+                    Mensagens que violem estas normas podem ser <strong>retidas para análise</strong>
+                    ou <strong>bloqueadas</strong>. A equipe do Goshinsho pode revisar, editar ou
+                    remover conteúdo, e pode suspender contas em caso de reincidência.
+                </p>
+                <p class="muted">
+                    Se sua mensagem ficar "em análise", ela está sendo verificada pela moderação e
+                    ficará visível aos outros após a aprovação — ou receberá uma justificativa se
+                    for bloqueada.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>7. Uso do assistente Goshinsho no fórum</h2>
+                <p>
+                    Você pode consultar o assistente Goshinsho dentro dos tópicos. Ele responde
+                    <strong>sempre com base nos Escritos</strong>, citando as fontes. Lembre-se de
+                    que a IA pode não ser perfeita — confie, mas também verifique.
+                </p>
+            </div>
+
+            <div class="regras-card">
+                <h2>8. Privacidade</h2>
+                <p>
+                    Para proteger sua privacidade, usamos <strong>nomes ou apelidos</strong> — seu
+                    e-mail nunca é exibido publicamente. Não compartilhe dados pessoais seus ou de
+                    terceiros nos tópicos.
+                </p>
+            </div>
+
+            <p class="muted regras-rodape">
+                Dúvidas ou denúncias? Use o <a href="{{ url_for('web.app_view_pt', panel='contact') }}">Contato</a> do aplicativo.
+            </p>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+</body>
+</html>

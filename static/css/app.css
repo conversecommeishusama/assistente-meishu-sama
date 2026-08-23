@@ -282,7 +282,7 @@ body {
 @media (max-width: 400px) {
     /* Tela cheia sem sobra em telas pequenas -- reduz a margem/altura só
        deste toggle (o resto da página já foi ajustado em sessões
-       anteriores, ver notas de layout no CLAUDE.md). O min-height:34px
+       anteriores, ver notas de layout no GOSHINSHO.md). O min-height:34px
        de `.response-mode span` (regra herdada, ~720px de largura) é o que
        realmente define a altura do pill -- sem sobrescrever isso aqui, a
        redução de padding do label sozinha não encolhe nada. */
@@ -874,8 +874,14 @@ body,
         max-width: 44% !important;
     }
 
+    /* 2026-08-24 (protótipo versão 2): o logo era escondido em telas <=360px
+       para "preservar o texto da marca". O usuário pediu que o logo apareça
+       sempre no topo esquerdo ao lado de "Goshinsho" -- então mostramos o
+       logo em tamanho reduzido em vez de ocultá-lo. */
     .brand img {
-        display: none !important;
+        display: inline !important;
+        height: 22px !important;
+        width: 22px !important;
     }
 
     .brand span {
@@ -1306,16 +1312,43 @@ button {
 
 .hero h1 {
     color: #1418fc;
-    font-size: clamp(1.1rem, 3.5vw, 2.4rem);
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 1;
+    /* 2026-08-23 (protótipo versão 2): "Como posso ajudar?" no MESMO
+       tamanho das opções douradas (1.05rem), conforme pedido. */
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
     margin: 0;
 }
 
 .hero p {
     color: #6b6eff;
     font-size: 1.1rem;
+}
+
+/* 2026-08-23 (protótipo versão 2): links dourados "Fórum" e "Leitura
+   Colaborativa" acima da saudação — mesmo tamanho entre si e da frase. */
+.hero-features {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-feature-link {
+    color: #8b6914;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(139, 105, 20, 0.55);
+    border-radius: 999px;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.hero-feature-link:hover {
+    background-color: rgba(139, 105, 20, 0.12);
 }
 
 .chat {

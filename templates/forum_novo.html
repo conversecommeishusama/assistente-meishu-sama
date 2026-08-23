@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abrir novo tópico — Fórum Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Fórum</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link">🗨️ Fórum</a>
+                <a href="{{ url_for('forum.leitura_pagina') }}" class="forum-nav-link">📖 Leitura Colaborativa</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <section class="forum-container topico-container">
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('forum.forum_pagina') }}">🗨️ Fórum</a>
+                <a class="community-link" href="{{ url_for('forum.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+            </nav>
+
+            <div class="topico-header">
+                <a href="{{ url_for('forum.forum_pagina') }}" class="back-link">← Voltar ao fórum</a>
+                <h1>✨ Abrir novo tópico</h1>
+                <p class="muted">Crie uma discussão sobre os ensinamentos de Meishu-Sama. Após a criação, você será levado de volta à página inicial do fórum, onde seu tópico aparecerá em primeiro lugar.</p>
+            </div>
+
+            <div class="novo-topico-form" id="novo-topico-form">
+                <label>
+                    Nome ou apelido <span class="obrigatorio">*</span>
+                    <input type="text" id="novo-topico-apelido" placeholder="Como você quer ser chamado? (seu e-mail nunca é exibido)" maxlength="60" autocomplete="nickname">
+                </label>
+                <label>
+                    Título do tópico <span class="obrigatorio">*</span>
+                    <input type="text" id="novo-topico-titulo" placeholder="Ex.: O significado da gratidão" maxlength="200">
+                </label>
+                <label>
+                    Descrição do assunto (opcional)
+                    <textarea id="novo-topico-descricao" rows="3" placeholder="Descreva o tema da discussão" maxlength="1000"></textarea>
+                </label>
+                <div class="form-actions">
+                    <button class="btn-primary" id="novo-topico-submit">Criar tópico</button>
+                    <a class="btn-secondary" href="{{ url_for('forum.forum_pagina') }}">Cancelar</a>
+                </div>
+                <p class="muted form-error" id="novo-topico-error" hidden></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+</body>
+</html>
