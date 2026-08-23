@@ -94,16 +94,17 @@ em cada arquivo (ST vs JP).
 
 ## 6. COMO PROCEDER NA PRÓXIMA SESSÃO
 
-1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M9_20260824.md`.
-2. **M8 (19520420)**: ✅ **FINALIZADO** (23/08) — ST 106/112 = JP. Ver
-   `HISTORICO.md` seção "24/08 — M8 FINALIZADO".
-3. **M9-M33 (prosa)**: estrutura pareada (24/08). Próximo: **revisão semântica de
-   tradução** linha a linha (JP↔PT) — o pareamento estrutural está feito, falta a
-   revisão de sentido. Ver `HANDOFF_M9_20260824.md`.
-4. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
+1. **Ler** `HANDOFF_NOVA_SESSAO_20260824.md` (novo handoff com os 5 passos da
+   nova fase) + este arquivo + `GOSHINSHO.md` + `HISTORICO.md`.
+2. **M3 (19511125)**: ❌ por parear (ST 39/39 vs JP 70/82) — separar
+   mini-diálogos e monólogos, manual um a um (padrão M5-M8). Conferir datas
+   defasadas primeiro.
+3. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
    localizar o 1 Meishu-Sama que falta.
-5. **M2-M3**: mesmo padrão do M5/M6/M7/M8 — separar mini-diálogos e monólogos.
-6. **Depois**: revisão semântica dos livros pareados.
+4. **M2-M3**: mesmo padrão — separar mini-diálogos e monólogos.
+5. **Depois (fase nova)**: revisão semântica de TODAS as orais (Gokōwa, Gosuiji,
+   Mioshie) → consolidação nos canônicos → chunk estrutural → promoção → app
+   (Leitura Colaborativa). Detalhes no `HANDOFF_NOVA_SESSAO_20260824.md`.
 
 ## 7. BACKUPS DISPONÍVEIS
 
