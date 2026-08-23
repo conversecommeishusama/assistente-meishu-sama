@@ -66,8 +66,8 @@ em cada arquivo (ST vs JP).
 | 4 | 67/75/0 | 67/75/0 | ✅ **ALINHADO** (finalizado 23/08) |
 | **5** | **55/64/0** | **55/64/0** | ✅ **ALINHADO** |
 | **6** | **50/58/0** | **50/58/0** | ✅ **ALINHADO** (finalizado 23/08) |
-| 7 | 32/29/0 | 39/47/0 | ❌ falta separar mini-diálogos (ver HANDOFF_M7_20260823.md) |
-| 8 | 45/49/0 | 106/112/0 | ❌ falta separar mini-diálogos |
+| **7** | **39/47/0** | **39/47/0** | ✅ **ALINHADO** (finalizado 23/08) |
+| 8 | 45/49/0 | 106/112/0 | ❌ falta separar mini-diálogos (ver HANDOFF_M8_20260823.md) |
 
 ### M5 (CONCLUÍDO ✅)
 - De 39/37 → **55 I / 64 M** (bate com o JP).
@@ -88,18 +88,17 @@ em cada arquivo (ST vs JP).
 
 ## 6. COMO PROCEDER NA PRÓXIMA SESSÃO
 
-1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M7_20260823.md`.
-2. **Próximo: M7 (19520320)** — ver `HANDOFF_M7_20260823.md`:
-   - ⚠️ **Problema de datas defasadas** (como no M6): o ST começa com `[6 de
-     fevereiro]` mas o backup tem `5 de fevereiro (Risshun-sai)` — a seção do
-     Risshun-sai está perdida/embutida na linha 5 (21K chars). Corrigir datas
-     ANTES de parear.
-   - Separar as 10 falas gigantes (mini-diálogos + monólogos), manual um a um.
-3. **Depois M8 (19520420)**: mesmo padrão.
-4. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
+1. **Ler** este arquivo + `GOSHINSHO.md` + `HISTORICO.md` + `HANDOFF_M8_20260823.md`.
+2. **Próximo: M8 (19520420)** — ver `HANDOFF_M8_20260823.md`:
+   - ⚠️ **Problema de datas defasadas** (como no M6/M7): o ST começa com `[6 de
+     março]` mas o JP tem `三月五日` (5 de março) — a seção do dia anterior está
+     perdida/embutida. Corrigir datas ANTES de parear.
+   - Separar as **12 falas gigantes** (mini-diálogos + monólogos), manual um a um.
+   - Diferença GRANDE: ST 45/49 vs JP 106/112 (~120 rótulos de diferença).
+3. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
    localizar o 1 Meishu-Sama que falta.
-5. **M2-M3**: mesmo padrão do M5/M6 — separar mini-diálogos e monólogos.
-6. **Depois**: revisão semântica dos livros pareados.
+4. **M2-M3**: mesmo padrão do M5/M6 — separar mini-diálogos e monólogos.
+5. **Depois**: revisão semântica dos livros pareados.
 
 ## 7. BACKUPS DISPONÍVEIS
 
@@ -116,6 +115,9 @@ em cada arquivo (ST vs JP).
   22/08** a pedido do usuário: agora são cópia do staging atual (M1-M8, 0
   `Ensinamento:`). Backup da versão anterior:
   `reports/livros_trabalho/orais_consolidadas_backup_pre_pareamento_20260822/`.
+- **M6 e M7 (23/08)**: consolidados re-atualizados para o staging pareado
+  (backups pré: `orais_consolidadas_backup_pre_m6_20260823/` e
+  `orais_consolidadas_backup_pre_m7_20260823/`). M6 MD5 68e0c52a..., M7 MD5 9c97d136...
 - Quando o pareamento dos 8 terminar e houver novas edições no staging, os
   consolidados devem ser atualizados de novo (mesmo processo).
 

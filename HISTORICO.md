@@ -56,6 +56,58 @@
 
 ---
 
+## 23/08 (fim) — M7 FINALIZADO (39/47 = JP) — pareamento JP↔staging completo
+
+> Pareamento do **Mioshie-shū nº 7** feito nesta sessão (continuando o M4/M6).
+> Detalhes na memória: `/memories/repo/m7-finalizado-2026-08-23.md`.
+
+### O que foi feito (método manual, um a um, semântico)
+- **ST M7: 32 I / 29 M → 39 I / 47 M / 0 E = JP** (sequência de rótulos idêntica
+  — 86 posições, 0 diferenças).
+- **⚠️ CRÍTICO — datas do ST estavam defasadas em 1 dia** (como no M6): o ST
+  começava com `[6 de fevereiro]` mas o conteúdo era o **Risshun-sai (5 de
+  fevereiro)** do JP. Corrigido: renomeei `[6 fev]`→`[5 fev]`, criei novo
+  `[6 fev]` após o discurso do Risshun-sai, removi datas embutidas no fim das
+  falas (6, 15, 16, 17, 25, 26, 27 de fevereiro).
+- Separadas as **10 falas gigantes** (mini-diálogos + monólogos de leitura
+  embutidos) comparando com o JP: L17/L39/L79/L101 (resposta + monólogo museu/
+  estudante EUA → 2 M), L61 (I+M+I), L65 (I+M+I+M+M+[16 fev] start), L69
+  (monólogo 16 fev + 17 fev + Miyazaki), L89 (diálogo altar + monólogo TB),
+  L117 (mini-diálogo + M furúnculo + M TB + 27 fev + Kojima), L141 (I+M+M).
+- Movidas falas fora de lugar: **Matsunaga** → [15 fev]; **Yamakawa Shizuko** →
+  [25 fev] (unida com a parte que estava no 17 fev).
+- Fundida a consulta de **Kojima** (parte no fim do 26 fev + início do 27 fev).
+- **Corrigida duplicação**: o início da consulta de Kojima ficou duplicado
+  (fim do 26 fev + 27 fev) — removida a duplicata.
+- Verificação final: **0 rótulos no meio de linha, 0 datas embutidas, conteúdo
+  íntegro** (chars ~iguais; -124 = datas embutidas removidas).
+- **Consolidado canônico** (`revisao_literaria/orais/19520320 - Mioshie-shū nº 7
+.txt`)
+  sincronizado = staging (MD5 9c97d136...).
+- **Backups**: `pt_backup_pre_pareamento_m7_20260823/` (ST pré) e
+  `orais_consolidadas_backup_pre_m7_20260823/` (consolidado pré).
+
+### Estado dos 8 (ST vs JP, I/M) — após M7 finalizado
+| Nº | ST | JP | Situação |
+|----|-----|-----|----------|
+| 1 | 53/62 | 53/62 | ✅ ALINHADO |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO |
+| 3 | 39/39 | 70/82 | 🟡 monólogo restaurado; falta pareamento fino |
+| 4 | **67/75** | 67/75 | ✅ **ALINHADO** |
+| 5 | 55/64 | 55/64 | ✅ ALINHADO |
+| 6 | **50/58** | 50/58 | ✅ **ALINHADO** |
+| 7 | **39/47** | 39/47 | ✅ **ALINHADO** |
+| 8 | 45/49 | 106/112 | ❌ por parear (12 falas gigantes) |
+
+### Próximo passo
+- **M8** (19520420): ST 45/49 → JP 106/112. Ver `HANDOFF_M8_20260823.md`.
+  ⚠️ **Mesmo problema de datas defasadas**: o ST começa com `[6 de março]` mas o
+  JP tem `三月五日` (5 de março) — a seção anterior está perdida/embutida.
+  Corrigir datas ANTES de parear. 12 falas gigantes a separar (~120 rótulos de
+  diferença).
+
+---
+
 ## 23/08 (fim) — M6 FINALIZADO (50/58 = JP) — pareamento JP↔staging completo
 
 > Pareamento do **Mioshie-shū nº 6** feito nesta sessão (continuando o M4).
