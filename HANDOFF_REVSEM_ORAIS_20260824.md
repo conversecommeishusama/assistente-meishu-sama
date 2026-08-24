@@ -81,8 +81,11 @@
   festival de santuário local (Suplemento).
 
 ## 4. ⚠️ PENDÊNCIA REGISTRADA (usuário pediu para deixar anotado)
-**Ajustar as PALAVRAS ESCRITAS** com as definições feitas nesta sessão:
-- Títulos de obras (traduzidos) + regra de 祭 + demais definições do glossário.
+**Ajustar as PALAVRAS ESCRITAS** com TODAS as definições feitas nesta sessão:
+- **Títulos de obras** traduzidos (信仰雑話→Conversas sobre a Fé, 御讃歌集→Coletânea de Salmos, 教えの光→Luz dos Ensinamentos, 天国の福音書→Evangelho do Reino dos Céus, 自観叢書→Coleção Jikan, etc. — ver `reports/propostas_traducao_nomes_arquivos.md`).
+- **Regra de 祭 (sai) → "Culto da(o) XX"**: 大祭→Culto Especial; 春季大祭→Culto Especial da Primavera; 月並祭/月例祭→Culto Mensal; 例祭→Culto Regular; 秋の大祭/秋季大祭→Culto Especial de Outono; 立春祭→Culto do Início da Primavera; 臨時祭→Culto Extraordinário; お祭(genérico)→festival/festividade.
+- **Ofertório de Gratidão (otamagushi)**: 玉串→Ofertório de Gratidão (tamagushi) — ramo de sakaki com tiras de papel (shide); 御玉串→mesmo formato, mas na religião PL usado no ritual ofurikae (transferência de doença); 玉串奉奠→apresentação do Ofertório de Gratidão. ⚠️ Distinguir uso cerimonial vs uso PL/ofurikae.
+- **お軸 (kakejiku comum)** → "rolo de pintura" (exceção legítima à regra 御軸→Imagem da Luz Divina).
 - Aplicar nas 54 escritas revisadas (`livros_publicacao_pt_literaria/`).
 - Ver memória `/memories/session/pendencia-ajustes-palavras-escritas-2026-08-24.md`.
 - Requer autorização + backup + verificação de integridade.
