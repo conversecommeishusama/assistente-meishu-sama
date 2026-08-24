@@ -21,19 +21,25 @@
 
 ---
 
-## 1. ESTADO ATUAL (verificado em 24/08)
+## 1. ESTADO ATUAL (verificado em 24/08, fim da sessão)
 
-### Mioshie 1-8 (diálogos) — contagem ST vs JP (I/M)
+### Mioshie 1-8 (diálogos) — contagem ST vs JP (I/M) — ✅ TODOS ALINHADOS
 | Nº | ST | JP | Situação |
 |----|-----|-----|----------|
-| 1 | 53/62 | 53/62 | ⚠️ contagem bate; divergência sutil de estrutura (ver §2) |
-| 2 | 45/51 | 45/51 | ⚠️ contagem bate; conferência fina pendente |
-| 3 | 39/39 | 70/82 | ❌ **por parear** (mini-diálogos/monólogos) |
+| 1 | 53/62 | 53/62 | ✅ ALINHADO (conferência fina 24/08) |
+| 2 | 45/51 | 45/51 | ✅ ALINHADO (conferência fina 24/08) |
+| 3 | 70/82 | 70/82 | ✅ ALINHADO (pareado 24/08) |
 | 4 | **67/75** | 67/75 | ✅ ALINHADO |
 | 5 | **55/64** | 55/64 | ✅ ALINHADO |
 | 6 | **50/58** | 50/58 | ✅ ALINHADO |
 | 7 | **39/47** | 39/47 | ✅ ALINHADO |
 | 8 | **106/112** | 106/112 | ✅ ALINHADO |
+
+- **PASSO 1 (M3) e PASSO 2 (M1/M2) CONCLUÍDOS** — sequência de rótulos idêntica
+  ao JP em todos os 8 Mioshie.
+- **Consolidado M3 atualizado** (`revisao_literaria/orais/`), backup pré:
+  `orais_consolidadas_backup_pre_m3_20260824/`.
+- **Próximo**: PASSO 3 — revisão semântica das orais (ver `HANDOFF_PASSO3_20260824.md`).
 
 ### Mioshie 9-33 (prosa)
 - **Pareamento ESTRUTURAL concluído (24/08)**: datas de seção = JP em todos os
@@ -43,19 +49,23 @@
 - **A revisão SEMÂNTICA de tradução (sentido JP↔PT) NÃO foi feita** — é tarefa
   desta fase.
 
-### Palavras escritas (54 obras, NÃO orais)
-- Revisão literária `revisao_literaria/QUEUE_EXECUTOR.json`: **765 done / 50
-  pending** (os 50 pending = os 4 arquivos recém-adicionados em 24/08).
-- Auditoria `QUEUE_AUDITOR.json`: **50 done / 0 pending** (dos 50 originais).
-- Saída: `revisao_literaria/livros_publicacao_pt_literaria/` (50 arquivos;
-  os 4 novos ainda por processar).
+### Palavras escritas (54 obras, NÃO orais) — ✅ REVISTAS LITERARIAMENTE
+- Revisão literária `revisao_literaria/QUEUE_EXECUTOR.json`: **815 done / 0
+  pending** (765 + 50 chunks dos 4 arquivos adicionados em 24/08).
+- Auditoria `QUEUE_AUDITOR.json`: **52 done / 0 pending**.
+- Saída: `revisao_literaria/livros_publicacao_pt_literaria/` (**54 arquivos**,
+  incluindo Conversas sobre a Fé, Luz dos Ensinamentos, Palácio de Cristal,
+  Medicina do Amanhã).
+- Backup do incremento: `revisao_literaria/backup_pre_adicionar_4_20260824/`.
+- **⚠️ PENDENTE**: **RECONSTRUIR o índice de produção** (atual é de 14/08,
+  pré-revlit dos 4). **EXIGE autorização explícita do usuário** (GOSHINSHO.md §3).
 - **Chunk estrutural**: `scripts/generate_structural_chunks.py` + infra de
   chunks turn-aware (logs em `logs/chunk_turnaware_*`). Verificar estado antes
   de rodar a promoção.
 
-### Orais (Gokōwa / Gosuiji / Mioshie) — filas de revisão literária
+### Orais (Gokōwa / Gosuiji / Mioshie) — filas de revisão semântica (PASSO 3)
 - `revisao_literaria/QUEUE_EXECUTOR_ORAL_{0..3}.json`: **83 pending / 0 done**
-  (revisão literária das orais **ainda não começou**).
+  (revisão semântica das orais **ainda não começou**).
 - `QUEUE_AUDITOR_ORAL_{0..4}.json`: 5 arquivos (255 bytes cada).
 - Protocolo: `revisao_literaria/EXECUCAO_PROMPT.md`.
 
@@ -108,8 +118,11 @@ usuário para decidir.
   - ESCOPO: 50 → **54 arquivos** (813 chunks). Fila: **50 chunks pending** (17+
     13+1+19), 765 done preservados.
   - Fidelidade byte a byte verificada (chunks = fonte `livros_publicacao_pt_revisado/`).
-  - **PENDENTE (próxima sessão)**: rodar executor + auditor nos 50 chunks novos
-    (mesmo loop dos 765 já feitos) → consolidar na saída literária.
+  - **✅ FEITO (24/08)**: executor + auditor rodados nos 50 chunks novos.
+    `QUEUE_EXECUTOR.json`: **815 done / 0 pending**. `QUEUE_AUDITOR.json`:
+    **52 done / 0 pending**. Saída `livros_publicacao_pt_literaria/` com **54 arquivos**.
+  - **⚠️ PENDENTE**: **RECONSTRUIR o índice de produção** para refletir o texto
+    revisado (exige autorização explícita — GOSHINSHO.md §3).
 
 ### ✅ VERIFICADO (24/08): os 4 JÁ ESTÃO no índice de busca de produção
 - Índice de produção (`experiments/uploaded_indexes/`, construído em **14/08**,
@@ -163,28 +176,24 @@ corpus canônico, pois **serão editados ao longo do tempo pelos usuários**.
 
 ## 2. PRÓXIMOS PASSOS (ordem determinada pelo usuário)
 
-### PASSO 1 — Fechar o M3 (19511125) — último diálogo por parear
-- **ST 39/39 vs JP 70/82** (~31 I / 43 M de diferença).
-- Mesmo método do M5/M6/M7/M8: separar **mini-diálogos** e **monólogos de
-  leitura** embutidos nas falas gigantes, manual um a um, comparando com o JP.
-- ⚠️ **Conferir datas defasadas** ANTES (lição dos M6-M8): comparar a 1ª frase
-  de cada seção do ST com o JP (e o backup pós-retradução).
-- ⚠️ A memória registra que o **monólogo do Miroku foi restaurado** (22/08) —
-  verificar se está íntegro; falta o pareamento fino.
-- Backup antes: `reports/livros_trabalho/pt_backup_pre_pareamento_m3_20260824/`.
-- Objetivo: ST = JP = **70 I / 82 M / 0 E**, sequência de rótulos idêntica.
+### ✅ PASSO 1 — Fechar o M3 (19511125) — CONCLUÍDO (24/08)
+- **ST 39/39 → 70/82 = JP**, sequência de rótulos idêntica nas 9 seções.
+- Método M5-M8: separação de mini-diálogos e monólogos, manual um a um.
+- Backup pré: `reports/livros_trabalho/pt_backup_pre_pareamento_m3_20260824/`.
+- **Consolidado M3 atualizado** em `revisao_literaria/orais/` (backup pré:
+  `orais_consolidadas_backup_pre_m3_20260824/`).
+- Detalhes: memória `pareamento-m3-20260824.md`.
 
-### PASSO 2 — Conferência fina do M1 e M2
-- **M1** (53/62 = JP na contagem, mas divergência sutil — ver
-  `HANDOFF_MIOSHIE_PAREAMENTO.md` §5/M1): fundir ST[12] e ST[41] (2 I → 1 I,
-  que no JP são 1 fala cada) + localizar o 1 Meishu-Sama que falta (61 vs 62).
-- **M2** (45/51 = JP na contagem): conferência fala a fala para confirmar
-  sequência idêntica (como feito no M8, com script de verificação de sequência).
-- Objetivo: M1/M2 com **sequência de rótulos idêntica ao JP** (não só contagem).
+### ✅ PASSO 2 — Conferência fina do M1 e M2 — CONCLUÍDO (24/08)
+- **M1** (53/62 = JP): sequência idêntica (115 rótulos). As fusões ST[12]/ST[41]
+  já haviam sido aplicadas em sessões anteriores (ST[12]=Kame=JP[12],
+  ST[43]=Kaneko=JP[43], 1:1). Verificação fala a fala sem divisões indevidas.
+- **M2** (45/51 = JP): sequência idêntica (96 rótulos). Todos os mini-diálogos
+  curtos correspondem 1:1 ao JP. Nenhuma correção necessária.
+- Resultado: **os 8 Mioshie estão todos pareados** (ver tabela §1).
 
 ### PASSO 3 — Revisão semântica de TODAS as palavras orais (Gokōwa, Gosuiji, Mioshie)
-- Depois que M1-M3 fecharem, **todos os 8 Mioshie** terão pareamento completo;
-  as **Orais** (Gokōwa 19 + Gosuiji 30 + Mioshie 33) têm revisão de tradução
+- Agora que os 8 Mioshie estão pareados, **as Orais têm revisão de tradução
   pendente.
 - Usar as filas orais prontas: `revisao_literaria/QUEUE_EXECUTOR_ORAL_{0..3}.json`
   (83 itens, 0 done) — um chunk por vez, manual, JP↔PT linha a linha.

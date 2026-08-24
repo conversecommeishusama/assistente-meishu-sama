@@ -13762,3 +13762,58 @@ amplo da obra antes de "normalizar" qualquer coisa.
    tema incompatível). Não decidida -- levar ao usuário.
 3. Continua valendo: nenhuma promoção/reindexação/reinício de produção sem
    autorização explícita.
+
+---
+
+# SESSÃO 2026-08-24 (tarde/noite) — Pareamento M3 + PASSO 2 + revlit dos 4 arquivos
+
+## 1. M3 (Mioshie-shū nº 3, 19511125) — PAREAMENTO CONCLUÍDO ✅
+- ST passou de **39 I/39 M** → **70 I/82 M = JP exato**, sequência de rótulos
+  idêntica ao JP nas 9 seções.
+- Feito (manual, um a um, semântico):
+  - **Mini-diálogos separados** das falas gigantes: escola/gennoshoko [5 out],
+    câncer útero + Takagi [8 out], Kobayashi/café [11 out], Masako [21 out],
+    Sakuragi + Ogawa [25 out], criança luxação + agulha seio [28 out].
+  - **Monólogos separados** como Meishu-Sama: Kannon Hase, 大宅壮一, BCG,
+    経と緯, budismo 大乗小乗, "Hoje, antes de falar sobre a Igreja".
+  - **Datas defasadas corrigidas**: Chieko (8→11 out), mulher 60 anos (15→18),
+    Gotō (18→21), criança (25→28).
+  - **Fusões** conforme JP: Chieko+Em junho, Gotō (2→1), mulher 60+No início set.
+  - **Remoção de artefatos**: datas embutidas falsas + fala extra inexistente no
+    JP ("Há alguém na família que é contra?").
+- Backups: `pt_backup_pre_pareamento_m3_20260824/`,
+  `orais_consolidadas_backup_pre_m3_20260824/`.
+- **Consolidado M3 atualizado** em `revisao_literaria/orais/`.
+- **LIÇÃO**: verificar SEMPRE se o mini-diálogo existe no JP antes de rotular
+  (não inventar falas); datas embutidas são artefatos a remover.
+
+## 2. PASSO 2 — Conferência fina do M1 e M2 — CONCLUÍDO ✅
+- **M1** (53/62) e **M2** (45/51): sequência de rótulos **idêntica ao JP**
+  (115 e 96 rótulos). Verificação fala a fala (1:1) confirmou **nenhuma**
+  divisão/fusão indevida. As fusões ST[12]/ST[41] do M1 já haviam sido
+  aplicadas em sessões anteriores.
+- **Resultado: os 8 Mioshie estão TODOS pareados** (contagem ST = JP).
+
+## 3. Revisão literária dos 4 arquivos fora do escopo — CONCLUÍDA ✅
+- Os 4 arquivos (Conversas sobre a Fé, Luz dos Ensinamentos, Palácio de
+  Cristal, Medicina do Amanhã) foram **processados e auditados**:
+  - `QUEUE_EXECUTOR.json`: **815 done / 0 pending**.
+  - `QUEUE_AUDITOR.json`: **52 done / 0 pending**.
+  - Saída `livros_publicacao_pt_literaria/` com **54 arquivos**.
+- **PENDENTE**: **reconstruir o índice de produção** (14/08, pré-revlit dos 4) —
+  exige autorização explícita do usuário.
+
+## 4. Commits/arquivos desta sessão
+- `reports/livros_trabalho/pt/19511125 - Mioshie-shū nº 3.txt` (pareado).
+- `revisao_literaria/orais/19511125 - Mioshie-shū nº 3.txt` (consolidado).
+- Docs: `HANDOFF_PASSO3_20260824.md` (novo), `HANDOFF_MIOSHIE_PAREAMENTO.md`,
+  `HANDOFF_NOVA_SESSAO_20260824.md` (atualizados).
+
+## Onde continuar (próxima sessão)
+1. **PASSO 3 — revisão semântica das orais** (Gokōwa/Gosuiji/Mioshie): filas
+   `QUEUE_EXECUTOR_ORAL_{0..3}.json` (83 itens, 0 done), um chunk por vez,
+   manual, JP↔PT. Ver `HANDOFF_PASSO3_20260824.md`.
+2. **Reconstruir o índice de produção** (com autorização) — refletir a revlit
+   dos 4 arquivos.
+3. PASSO 4 (consolidação/chunk estrutural/promoção) e PASSO 5 (Leitura
+   Colaborativa) — ver handoffs.

@@ -52,42 +52,52 @@
 - ⚠️ LIÇÃO: não usar replace_string com texto truncado em JP (duplicou bloco no M3;
   revertido do backup; casos especiais tratados via script + verificação de integridade).
 
-## 5. ESTADO REAL DO PAREAMENTO (22/08, fim da sessão)
+## 5. ESTADO REAL DO PAREAMENTO (24/08, fim da sessão — TODOS OS 8 MIOSHIE ALINHADOS)
 
 Método de verificação: contagem de `^Interlocutor:` / `^Meishu-Sama:` / `^Ensinamento:`
 em cada arquivo (ST vs JP).
 
-### ESTADO DOS 8 MIOSHIE (ST vs JP, em I/M/E)
+### ESTADO DOS 8 MIOSHIE (ST vs JP, em I/M/E) — ✅ TODOS ALINHADOS
 | Nº | ST | JP | Situação |
 |----|-----|-----|----------|
-| 1 | 55/61/0 | 53/62/0 | ⚠️ ST tem 2 I a mais, 1 M a menos |
-| 2 | 26/31/0 | 41/46/0 | ❌ falta separar mini-diálogos |
-| 3 | 39/38/0 | 70/82/0 | ❌ falta separar mini-diálogos |
+| 1 | 53/62/0 | 53/62/0 | ✅ **ALINHADO** (conferência fina 24/08) |
+| 2 | 45/51/0 | 45/51/0 | ✅ **ALINHADO** (conferência fina 24/08) |
+| 3 | 70/82/0 | 70/82/0 | ✅ **ALINHADO** (pareado 24/08) |
 | 4 | 67/75/0 | 67/75/0 | ✅ **ALINHADO** (finalizado 23/08) |
 | **5** | **55/64/0** | **55/64/0** | ✅ **ALINHADO** |
 | **6** | **50/58/0** | **50/58/0** | ✅ **ALINHADO** (finalizado 23/08) |
 | **7** | **39/47/0** | **39/47/0** | ✅ **ALINHADO** (finalizado 23/08) |
 | **8** | **106/112/0** | **106/112/0** | ✅ **ALINHADO** (finalizado 23/08) |
 
-### M9-M33 (PROSA) — estrutura pareada (24/08)
-- São **prosa** (sem rótulos I/M). Pareamento = seções de data + [Ensinamento] + referências de artigos.
-- **Todos os 25 arquivos**: datas de seção = JP (verificado; excluídos metadados de publicação).
-- Correções: **M14** (cabeçalho `5 de setembro` adicionado), **M17** (dedup `23 de dezembro`), **M25** (seção `27 de agosto` reconstruída/traduzida do JP), **M22** (sem correção — metadado).
-- **Pendente**: revisão semântica de tradução linha a linha (JP↔PT) + consolidação nos canônicos. Ver `HANDOFF_M9_20260824.md`.
+- **Sequência de rótulos IDÊNTICA ao JP confirmada** para todos os 8 (M1: 115,
+  M2: 96, M3: 152, M4: 142, M5: 119, M6: 108, M7: 86, M8: 218 rótulos).
+- **PASSO 2 (conferência fina M1/M2) CONCLUÍDO**: verificação fala a fala (1:1)
+  confirmou que não há divisões/fusões indevidas.
+- **Consolidado M3 atualizado** em `revisao_literaria/orais/` (backup:
+  `orais_consolidadas_backup_pre_m3_20260824/`).
+- **Próximo**: PASSO 3 — revisão semântica das orais (ver `HANDOFF_PASSO3_20260824.md`).
 
-### M5 (CONCLUÍDO ✅)
-- De 39/37 → **55 I / 64 M** (bate com o JP).
-- Feito: 19 mini-diálogos separados (pergunta do Interlocutor + resposta do Meishu
-  que estavam fundidas com travessões "—"); 9 monólogos do Meishu separados e
-  rotulados como `Meishu-Sama:`.
-- Estrutura corrigida das sessões de 21/23/25 de dezembro (Ensinamento 105 contínuo
-  com submarcador; Fujikawa = Interlocutor da sessão 25 dez; Tan Hisako separado).
+### M3 (CONCLUÍDO ✅ — pareado 24/08)
+- De 39 I/39 M → **70 I / 82 M** (bate com o JP), sequência idêntica nas 9 seções.
+- Feito: separação de mini-diálogos (escola/gennoshoko, câncer útero, Takagi,
+  Kobayashi/café, Masako, Sakuragi/Ogawa, criança luxação, agulha seio),
+  separação de monólogos (Kannon Hase, 大宅壮一, BCG, 経と緯, budismo 大乗小乗),
+  correção de datas defasadas (Chieko 8→11, mulher 60 15→18, Gotō 18→21,
+  criança 25→28), fusões (Chieko+Em junho, Gotō 2→1, mulher 60+No início set),
+  remoção de datas embutidas falsas e de fala extra inexistente no JP.
+- Backup pré: `pt_backup_pre_pareamento_m3_20260824/`.
+- Detalhes: memória `pareamento-m3-20260824.md`.
 
-### M1 (EM ANDAMENTO — divergência sutil)
-- ST (55 I/61 M) vs JP (53 I/62 M): **2 I a mais** e **1 M a menos** no ST.
-- Identificado: ST[12] ("minha esposa teve a graça...") e ST[41] ("Kaneko
-  Matsujirō...") estão **divididos em 2 falas** no ST, mas no **JP são 1 fala cada**
-  (J[11], J[42]). **Precisa fundir (2→1)** para alinhar.
+### M1 (CONCLUÍDO ✅ — conferência fina 24/08)
+- ST **53 I/62 M** = JP **53/62** (sequência idêntica, 115 rótulos).
+- As fusões ST[12]/ST[41] mencionadas em handoffs antigos **já foram aplicadas**
+  em sessões anteriores (ST[12]=Kame=JP[12], ST[43]=Kaneko=JP[43], 1:1).
+- Verificação fala a fala confirmou nenhuma divisão/fusão indevida.
+
+### M2 (CONCLUÍDO ✅ — conferência fina 24/08)
+- ST **45 I/51 M** = JP **45/51** (sequência idêntica, 96 rótulos).
+- Todos os mini-diálogos curtos (Sim/Nos pés/Existem/Não sei etc.) correspondem
+  1:1 ao JP. Nenhuma correção necessária.
 - Também falta **1 Meishu-Sama** (61 vs 62) — localizar por análise fala a fala.
 - IMPORTANTE: o backup do M1 (que tinha 53 I) já tinha essas falas separadas —
   a estrutura do backup NÃO é idêntica ao JP. Alinhar exige leitura fala a fala.
@@ -96,24 +106,24 @@ em cada arquivo (ST vs JP).
 
 1. **Ler** `HANDOFF_NOVA_SESSAO_20260824.md` (novo handoff com os 5 passos da
    nova fase) + este arquivo + `GOSHINSHO.md` + `HISTORICO.md`.
-2. **M3 (19511125)**: ❌ por parear (ST 39/39 vs JP 70/82) — separar
-   mini-diálogos e monólogos, manual um a um (padrão M5-M8). Conferir datas
-   defasadas primeiro.
-3. **M1** (divergência sutil 55/61 vs 53/62): fundir ST[12] e ST[41] (2→1),
-   localizar o 1 Meishu-Sama que falta.
-4. **M2-M3**: mesmo padrão — separar mini-diálogos e monólogos.
-5. **Depois (fase nova)**: revisão semântica de TODAS as orais (Gokōwa, Gosuiji,
+2. **M3 (19511125)**: ✅ PAREADO (24/08) — 70 I/82 M = JP. Ver memória
+   `pareamento-m3-20260824.md`.
+3. **M1** ✅ e **M2** ✅: conferência fina concluída (24/08) — sequência idêntica,
+   verificação 1:1 sem divisões/fusões indevidas.
+4. **Depois (fase nova)**: revisão semântica de TODAS as orais (Gokōwa, Gosuiji,
    Mioshie) → consolidação nos canônicos → chunk estrutural → promoção → app
-   (Leitura Colaborativa). Detalhes no `HANDOFF_NOVA_SESSAO_20260824.md`.
+   (Leitura Colaborativa). Detalhes no `HANDOFF_PASSO3_20260824.md`.
 
 ## 7. BACKUPS DISPONÍVEIS
 
 - **ST pré-pareamento**: `reports/livros_trabalho/pt_backup_pre_pareamento_mioshie_20260822/`
+- **ST pré-pareamento M3**: `reports/livros_trabalho/pt_backup_pre_pareamento_m3_20260824/`
+- **Consolidado M3 pré**: `reports/livros_trabalho/orais_consolidadas_backup_pre_m3_20260824/`
 - **JP pré-correção Ensinamento**: `reports/livros_trabalho/jp_backup_pre_correcao_ensinamento_20260822/`
 - **JP pré-correção incompleta (M2-M4, M6-M8)**: `reports/livros_trabalho/jp_backup_correcao_ensinamento_incompleta_20260822/`
 - **JP pré-rotulagem**: `reports/livros_trabalho/jp_backup_pre_rotulagem_mioshie_20260821/`
 - **ST com separação mini-diálogos (20/08)**: `reports/adequacao_estrutural_mioshie_20260820/backup_staging_pt/`
-- **Consolidados canônicos**: `revisao_literaria/orais/` (ainda NÃO atualizados — ver §8)
+- **Consolidados canônicos**: `revisao_literaria/orais/` (M1-M8 atualizados — ver §8)
 
 ## 8. PENDÊNCIA IMPORTANTE (consolidados)
 
