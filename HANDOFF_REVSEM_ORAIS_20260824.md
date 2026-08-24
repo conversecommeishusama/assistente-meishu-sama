@@ -43,12 +43,12 @@
   (backup: `backups/glossario_ajuste_titulos_20260824/`).
 
 ## 3. ESTADO DA REVISÃO SEMÂNTICA (24/08)
-### Revisados (JP↔PT): Gokōwa Supl + nº1-19 + Gosuiji nº1-17 (parcial) + Mioshie nº3, nº20
+### Revisados (JP↔PT): Gokōwa Supl + nº1-19 + Gosuiji nº1-20, 23-26 + Mioshie nº3, nº20
 - **Gokōwa**: Supl, 1-19 — todos com relatório (maioria REQUER correções).
 - **Gosuiji**: 1,2,3,4,5,6(APROV),7,8(APROV),9(APROV),10(APROV),11(APROV),12,13(APROV),
-  14,15(APROV),16,17 — revisados.
+  14,15(APROV),16,17,18,19,20,21,22(APROV),23(APROV),24,25(APROV),26 — revisados.
+- **Pendentes de revisão**: Gosuiji 27-30, Mioshie 1-8, Mioshie 9-33.
 - **Mioshie**: nº3, nº20 revisados. M1-8 e M9-33 restantes: NÃO revisados ainda.
-- Pendentes de revisão: Gosuiji 18-30, Mioshie 1-8, Mioshie 9-33.
 
 ### Ajustes APLICADOS (com backup `pt_backup_pre_revsem_20260824/`)
 - **Gokōwa**: nº1 (aspas título), nº3 (Era Meiji datas, Kannon-Sama-Sama), nº4 (bulbo),
@@ -67,6 +67,11 @@
   Especial, Culto Mensal), nº16 (oferenda, bom senso, sem ego, Kanechika, Kyoshu,
   mais de dezoito, Daikōmyō), nº17 (uma, Livro Revolução Médica x2).
 - **Mioshie**: nº3 (Culto Mensal), nº20 (Culto Especial, Culto Especial da Primavera).
+- **Gosuiji nº20**: título livro → "Terapia de Fé para Tuberculose" (2x); 御神書→"Escritos Divinos"; 弟嫁→"casou-se com o irmão mais novo".
+- **Gosuiji nº23**: APROVADO (0).
+- **Gosuiji nº24**: gangrenar→apodrecer (2x); kotodama 1ª menção; destino predeterminado→destino (運命).
+- **Gosuiji nº25**: APROVADO (0).
+- **Gosuiji nº26**: colchete nikuzuki removido; "de um lado"→"um após o outro"; "grande festival"→"festival" (お祭); kotodama 1ª menção; germes→micróbios.
 
 ### Regra de 祭 aplicada nos revisados onde o JP tem -sai.
 - Mantidos como "festival": お祭り genérico (Mioshie 3), Tango no Sekku (Gokōwa 7),
