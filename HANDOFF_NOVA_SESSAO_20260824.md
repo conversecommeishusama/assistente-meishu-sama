@@ -111,6 +111,31 @@ usuário para decidir.
   - **PENDENTE (próxima sessão)**: rodar executor + auditor nos 50 chunks novos
     (mesmo loop dos 765 já feitos) → consolidar na saída literária.
 
+### ✅ VERIFICADO (24/08): os 4 JÁ ESTÃO no índice de busca de produção
+- Índice de produção (`experiments/uploaded_indexes/`, construído em **14/08**,
+  modelo `intfloat/multilingual-e5-large`, PT 6466 chunks / JP 4076 chunks)
+  **já contém os 4 arquivos** — eles NÃO estavam fora da busca do app, estavam
+  apenas fora da revisão literária.
+
+| Arquivo | Chunks no índice PT | Chunks no índice JP |
+|---------|--------------------:|--------------------:|
+| Conversas sobre a Fé (信仰雑話) | 44 | 44 |
+| Luz dos Ensinamentos (教えの光) | 149 | 144 |
+| Palácio de Cristal (水晶殿御遷座) | 1 | 1 |
+| Medicina_do_Amanha (1936) | 33 | 1 |
+
+- Confirma que os specs/profiles estão corretos (palavra escrita →
+  **1 chunk por artigo**): Conversas 44 artigos, Luz 151 artigos (149 no índice,
+  conferir 2), Palácio 1, Medicina 33 (spec `segmentacao_manual/Medicina_do_Amanha.txt.json`,
+  profile `periodico_publicacao`, 33 articles).
+- ⚠️ **JP Medicina_do_Amanha**: 1 chunk único (o JP não tem `#T` nem spec
+  segmentada) vs 33 no PT — o JP segue como arquivo inteiro; verificar se isso
+  é aceitável para busca JP ou se o JP deve ser segmentado (não alterar JP sem
+  autorização).
+- ⚠️ **Depois da revisão literária dos 50 chunks novos, será preciso
+  RECONSTRUIR o índice** de produção para refletir o texto revisado
+  (requer autorização explícita — GOSHINSHO.md §3).
+
 ---
 
 ## 1c. ⚠️ LEITURA COLABORATIVA — arquivos salvos SEPARADAMENTE (orientação do usuário)
