@@ -48,39 +48,39 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=18`, `leitura_texto.js?v=13`, `forum.css?v=14`, `app.css?v=160`.
+- `speech.js?v=19`, `leitura_texto.js?v=14`, `forum.css?v=14`, `app.css?v=160`.
 
-## 3a. RESOLUÇÃO (2026-08-25 tarde) — mapeamento determinístico por offset
+## 3a. RESOLUÇÃO DEFINITIVA (2026-08-25) — CAUSA RAIZ REAL encontrada
 
-**Causa raiz** dos 2 sintomas: o mapeamento "trecho ↔ parágrafo" era
-**heurístico** (score de palavras, primeiros 40 chars do trecho), o que podia:
-- **Clique** achar um trecho ERRADO (ex.: trecho 0 com muitas palavras comuns)
-  → parecia que "reiniciou" a leitura;
-- **Destaque** marcar o parágrafo errado (trechos de 1800 chars = ~10 parágrafos,
-  palavras comuns favoreciam um parágrafo que não era o atual) → "não acompanha".
+**Depois de pesquisa profunda (não chute), as 2 causas raiz foram:**
 
-**Correções** (TODAS no protótipo `/var/www/goshinsho-teste`, cache v=18/v=13):
-1. `speech.js` — `pularParaTexto` reescrito: concatena a fila (`fila.join(" ")`),
-   acha a POSIÇÃO (offset) do início do texto clicado (janelas 60→15 chars) e
-   converte offset→índice de trecho. Determinístico, nunca "reinicia".
-2. `leitura_texto.js` — `destacarPorIndice(indice)`: calcula a posição do início
-   do trecho `indice` na concatenação e escolhe o parágrafo cujo INTERVALO
-   contém essa posição. Validação: 23/23 trechos → parágrafo exato (0 erros).
-3. `speech.js` — callback global `registrarCallbackTrecho(fn)` + `_notificarTrecho()`
-   chamado em `falarDe()`. Novas APIs: `filaTrechos()`, `indiceTrechoAtual()`.
-   O `leitura_texto.js` registra o callback (destaque SEM polling); polling de
-   300ms mantido como safety net (agora usa `indiceTrechoAtual()`).
-4. `leitura_texto.js` — clique com retry: quando não está lendo, `btn.click()` +
-   loop de 120ms (até 20x) esperando `leituraAtiva` existir e pular (o antigo
-   setTimeout de 400ms falhava se a leitura demorasse a começar).
+### Bug 1 — "não existe marcação acompanhando o áudio": FUNÇÃO DUPLICADA
+- `leitura_texto.js` tinha **DUAS `function destacarPorIndice()`**:
+  1. a nova determinística (por offset/intervalo, correta) — linha ~406;
+  2. a ANTIGA (fallback `Math.floor(indice * 6)`, heurística errada) — linha ~563.
+- Em JS, a 2ª definição (mesmo escopo) **SOBRESCREVE** a 1ª → o código que
+  rodava era a ANTIGA, que mapeava trecho→parágrafo por multiplicação fixa ×6
+  (imprecisa). Isso explica "não acompanha": o destaque ia para lugares errados.
+- **FIX: REMOVIDA a função duplicada antiga.** Agora só existe a determinística.
 
-**Validação (Playwright headless):**
-- Parágrafos 10/30/50/60/70/80/90 → trechos 1/7/11/14/16/17/20 (exatos).
-- Clique no parágrafo 60 → posição 15 (NÃO reinicia para 0).
-- Botão "Ouvir" da barra → callback de trecho dispara (destaque começa).
-- NOTA: no headless o `speechSynthesis` sem vozes termina rápido (onend não é
-  confiável), então testes de timing do destaque por callback são frágeis — a
-  validação do ALGORITMO de mapeamento é a prova real.
+### Bug 2 — "clicar reinicia em vez de ler daqui": CORRIDA no cancel()
+- `pularPara()` faz `speechSynthesis.cancel()` antes de falar o trecho novo.
+- No navegador real, `cancel()` dispara `onend`/`onerror` do utterance ANTIGO.
+- O `onend` fazia `indiceFila += 1` + agenda `falarDe()` → CORRIDA com o
+  `_falar(indice)` do pulo → posição instável, parecia "reiniciar".
+- **FIX: flag global `_puloManual`** (setada em `pularPara`, consumida em
+  `onend`/`onerror`): o onend do utterance cancelado é IGNORADO.
+
+### Validação REAL (mock realista de speechSynthesis no Playwright)
+Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
+~2.5s/trecho (como áudio real):
+- Acompanhamento: trecho 0 → parágrafo 0; trecho 1 → parágrafo 9 (perfeito).
+- Clique durante leitura (par 70, posição 8): pulou p/ **trecho 16** (não
+  reiniciou), destaque p/ parágrafo 69, trecho contém o par clicado.
+- Clique sem leitura (par 50): **iniciou E pulou p/ trecho 11**.
+- NOTA: o headless SEM mock não tem vozes → speak falha/termina rápido; por
+  isso os testes anteriores (sem mock) validavam o algoritmo mas NÃO reproduziam
+  o comportamento real. O mock realista é a prova.
 
 ## 3. A DIFICULDADE (NÃO RESOLVIDA)
 
@@ -128,21 +128,18 @@ Na Leitura Colaborativa, o usuário pediu:
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=18` e `leitura_texto.js?v=13` (se o navegador
+   versões novas são `speech.js?v=19` e `leitura_texto.js?v=14` (se o navegador
    mostrar outra coisa, é cache).
-2. **Testar o fluxo no navegador real**: clicar "Ouvir" na barra (destaque deve
+2. **Testar no navegador real**: clicar "Ouvir" na barra (destaque deve
    acompanhar + scroll) e clicar num parágrafo (deve PULAR para dali, não
-   reiniciar).
+   reiniciar) — tanto lendo quanto parado.
 3. Se ainda falhar: pedir **console do navegador (F12 → Console)** com os erros
    ao clicar em "Ouvir" e ao clicar num parágrafo. Verificar que as URLs dos
-   scripts são `?v=18` e `?v=13`.
-4. Se o destaque continuar impreciso em algum texto com parágrafo gigante
-   (>1800 chars), o `destacarPorIndice` já trata (destaca o parágrafo cujo
-   intervalo contém o início do trecho).
-5. Considerar **remover o `dividirEmParagrafos()`** (reescreve o innerHTML e
-   pode causar instabilidade) — em vez disso, fazer o destaque via
-   `Range`/`mark` no texto original sem reescrever o DOM. (Não feito; funciona
-   com a abordagem atual.)
+   scripts são `?v=19` e `?v=14`.
+4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo** (a 2ª
+   sobrescreve a 1ª — foi a causa do "não acompanha"). E ao fazer
+   `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional
+   (o `onend` do utterance cancelado não deve avançar a posição).
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
