@@ -1,5 +1,6 @@
 # HANDOFF — DIFICULDADE: acompanhamento de leitura + clique para pular (Leitura Colaborativa)
 
+> **ATUALIZADO 2026-08-25 (tarde): RESOLVIDO no protótipo (ver §3a).**
 > Criado em **2026-08-25** (fim da sessão). O usuário abriu uma nova sessão.
 > Este handoff documenta uma DIFICULDADE NÃO RESOLVIDA: o código **funciona em
 > Playwright** (headless), mas o usuário **continua reportando que não funciona
@@ -47,7 +48,39 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=16`, `leitura_texto.js?v=10`, `forum.css?v=14`, `app.css?v=160`.
+- `speech.js?v=18`, `leitura_texto.js?v=13`, `forum.css?v=14`, `app.css?v=160`.
+
+## 3a. RESOLUÇÃO (2026-08-25 tarde) — mapeamento determinístico por offset
+
+**Causa raiz** dos 2 sintomas: o mapeamento "trecho ↔ parágrafo" era
+**heurístico** (score de palavras, primeiros 40 chars do trecho), o que podia:
+- **Clique** achar um trecho ERRADO (ex.: trecho 0 com muitas palavras comuns)
+  → parecia que "reiniciou" a leitura;
+- **Destaque** marcar o parágrafo errado (trechos de 1800 chars = ~10 parágrafos,
+  palavras comuns favoreciam um parágrafo que não era o atual) → "não acompanha".
+
+**Correções** (TODAS no protótipo `/var/www/goshinsho-teste`, cache v=18/v=13):
+1. `speech.js` — `pularParaTexto` reescrito: concatena a fila (`fila.join(" ")`),
+   acha a POSIÇÃO (offset) do início do texto clicado (janelas 60→15 chars) e
+   converte offset→índice de trecho. Determinístico, nunca "reinicia".
+2. `leitura_texto.js` — `destacarPorIndice(indice)`: calcula a posição do início
+   do trecho `indice` na concatenação e escolhe o parágrafo cujo INTERVALO
+   contém essa posição. Validação: 23/23 trechos → parágrafo exato (0 erros).
+3. `speech.js` — callback global `registrarCallbackTrecho(fn)` + `_notificarTrecho()`
+   chamado em `falarDe()`. Novas APIs: `filaTrechos()`, `indiceTrechoAtual()`.
+   O `leitura_texto.js` registra o callback (destaque SEM polling); polling de
+   300ms mantido como safety net (agora usa `indiceTrechoAtual()`).
+4. `leitura_texto.js` — clique com retry: quando não está lendo, `btn.click()` +
+   loop de 120ms (até 20x) esperando `leituraAtiva` existir e pular (o antigo
+   setTimeout de 400ms falhava se a leitura demorasse a começar).
+
+**Validação (Playwright headless):**
+- Parágrafos 10/30/50/60/70/80/90 → trechos 1/7/11/14/16/17/20 (exatos).
+- Clique no parágrafo 60 → posição 15 (NÃO reinicia para 0).
+- Botão "Ouvir" da barra → callback de trecho dispara (destaque começa).
+- NOTA: no headless o `speechSynthesis` sem vozes termina rápido (onend não é
+  confiável), então testes de timing do destaque por callback são frágeis — a
+  validação do ALGORITMO de mapeamento é a prova real.
 
 ## 3. A DIFICULDADE (NÃO RESOLVIDA)
 
@@ -93,19 +126,23 @@ Na Leitura Colaborativa, o usuário pediu:
 5. **Modal abria sozinho**: `.leitura-modal-overlay { display:flex }` sobrescrevia
    `hidden`. FIX: `.leitura-modal-overlay[hidden] { display:none !important }`.
 
-## 5. PRÓXIMOS PASSOS (nova sessão)
-1. **Pedir ao usuário para limpar o cache** (Ctrl+Shift+R) e testar de novo —
-   é a hipótese nº 1 e mais provável.
-2. Se continuar: pedir **console do navegador (F12 → Console)** com os erros
-   que aparecem ao clicar em "Ouvir" e ao clicar num parágrafo. Isso revela se o
-   JS está rodando a versão nova.
-3. Verificar se o `speech.js?v=16` e `leitura_texto.js?v=10` estão sendo
-   **realmente servidos** (curl na URL pública).
-4. Considerar **remover o `dividirEmParagrafos()`** (que reescreve o innerHTML e
-   pode estar causando instabilidade) — em vez disso, fazer o destaque via
-   `Range`/`mark` no texto original sem reescrever o DOM.
-5. Considerar **usar `onTrecho` callback** do `criarBotaoLeitura` (já existe no
-   speech.js) em vez do `setInterval` de polling — mais confiável.
+## 5. PRÓXIMOS PASSOS (após a correção)
+1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
+   versões novas são `speech.js?v=18` e `leitura_texto.js?v=13` (se o navegador
+   mostrar outra coisa, é cache).
+2. **Testar o fluxo no navegador real**: clicar "Ouvir" na barra (destaque deve
+   acompanhar + scroll) e clicar num parágrafo (deve PULAR para dali, não
+   reiniciar).
+3. Se ainda falhar: pedir **console do navegador (F12 → Console)** com os erros
+   ao clicar em "Ouvir" e ao clicar num parágrafo. Verificar que as URLs dos
+   scripts são `?v=18` e `?v=13`.
+4. Se o destaque continuar impreciso em algum texto com parágrafo gigante
+   (>1800 chars), o `destacarPorIndice` já trata (destaca o parágrafo cujo
+   intervalo contém o início do trecho).
+5. Considerar **remover o `dividirEmParagrafos()`** (reescreve o innerHTML e
+   pode causar instabilidade) — em vez disso, fazer o destaque via
+   `Range`/`mark` no texto original sem reescrever o DOM. (Não feito; funciona
+   com a abordagem atual.)
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
