@@ -51,6 +51,70 @@
 
 ---
 
+## 25/08 — Comunidade (protótipo /versao2): ÁUDIO (voz + leitura) + Leitura Colaborativa + Colaboração
+
+> **Decisões do usuário nesta sessão**:
+> - **Login é OBRIGATÓRIO para acessar o Goshinsho** (decisão dele, não bug);
+>   logado, tudo é livre.
+> - Leitura Colaborativa organizada em **Palavra Oral** (Gokōwa/Gosuiji/Mioshie)
+>   e **Palavra Escrita**, por ordem de data; progresso de leitura (% + retomada).
+> - **Áudio**: reconhecimento de voz (STT) + leitura de texto (TTS) via Web
+>   Speech API do navegador (grátis).
+> - **Glossário de transliteração** para o áudio (termos messiânicos).
+> - Colaboração com observações na Leitura Colaborativa.
+
+### O que foi feito (tudo no protótipo `/var/www/goshinsho-teste`, NÃO em produção)
+- **`goshinsho/__init__.py`**: liberado `microphone=(self)` no Permissions-Policy
+  (antes `microphone=()` bloqueava o microfone).
+- **`static/js/speech.js`** (motor de áudio):
+  - TTS (speechSynthesis) com **quebra de texto** em trechos de ~1800 chars
+    (textos gigantes de 150-370K chars falhavam no Chrome).
+  - STT (SpeechRecognition) com **`corrigirTranscricao()`** (glossário reverso:
+    "meichu sama"→"Meishu-Sama", "jorei"→"Johrei", "oricari"→"Ohikari" etc.).
+  - **`GLOSSARIO_FONETICO`** para o TTS (pronúncia correta: Meishu-Sama→"meichu
+    sama", Johrei→"djo rei", Ohikari→"oricari" — regras do usuário: japonês sem
+    sílaba tônica, "r" fraco, sem acento agudo).
+  - `trechoAtual()`/`trechoOriginalAtual()`, `pularPara()`/`pularParaTexto()`.
+  - Seleção de voz mais natural (prioriza Google/Microsoft).
+- **`static/js/leitura_texto.js`**: divide o texto em `<p class="leitura-paragrafo">`,
+  **destaque do trecho lido** (`.trecho-lido`) + **scroll automático**,
+  **clique num parágrafo para pular a leitura**, **modal "Sugerir edição"**.
+- **`static/js/leitura.js`**: navegação Palavra Oral/Escrita + progresso %
+  (localStorage `goshinsho-leitura-progresso`).
+- **`goshinsho/services/leitura_service.py`**: lista 135 obras (exclui
+  Medicina_do_Amanha e Palácio de Cristal), estrutura por categoria,
+  **colaborações** (`leitura_colaboracoes` no banco, idempotente).
+- **`goshinsho/forum_routes.py`**: rotas `/forum/leitura/<arquivo>`,
+  `/forum/api/leitura/obras`, POST/GET colaborações.
+- **CSS/templates**: barra fixa de leitura (sticky), modal de edição,
+  `forum.css`, `leitura_texto.html`, `leitura.html`.
+
+### DIFICULDADE NÃO RESOLVIDA (ver `HANDOFF_ACOMPANHAMENTO_LEITURA_20260825.md`)
+- O **acompanhamento da leitura** (destacar o trecho lido + página descer) e o
+  **clique para pular** **validam em Playwright**, mas o usuário **continua
+  reportando que não funcionam no navegador real**.
+- Hipótese nº 1: **cache do navegador** (versões mudaram muito: speech v3→16,
+  leitura_texto v1→10). Instruir Ctrl+Shift+R antes de testar.
+- Se persistir: pedir console (F12) e considerar remover `dividirEmParagrafos()`
+  (reescreve o DOM) usando `onTrecho` callback em vez do setInterval.
+
+### Bugs corrigidos nesta sessão (não regredir)
+- Áudio não saía em texto gigante (preservar `\n` + quebrarTexto).
+- Destaque usava trecho transliterado (não casava com a tela) → trechoOriginalAtual().
+- Destaque marcava 65-97 parágrafos → só o de maior score.
+- Clique pausava e retomava no mesmo lugar → pularParaTexto robusto + fallback
+  sem btn.click().
+- Modal abria sozinho → `.leitura-modal-overlay[hidden] { display:none !important }`.
+- Modal estreito → max-width 560→680px, campos maiores.
+
+### Backups / notas
+- **Nada foi promovido a produção** (só protótipo `/versao2`, porta 5091).
+- `textos_portugues` (produção) é a fonte dos textos; protótipo tem symlink.
+- Cache busts atuais: `speech.js?v=16`, `leitura_texto.js?v=10`, `forum.css?v=14`,
+  `app.css?v=160`.
+
+---
+
 ## 24/08 — M8 FINALIZADO (106/112 = JP) + M9-M33 (prosa) ajustados
 
 > Pareamento do **Mioshie-shū nº 8** feito (fim da sessão de 23/08, continuando
