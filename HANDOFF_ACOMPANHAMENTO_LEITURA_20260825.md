@@ -48,7 +48,31 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=23`, `leitura_texto.js?v=19`, `forum.css?v=15`, `app.css?v=160`.
+- `speech.js?v=24`, `leitura_texto.js?v=19`, `forum.css?v=15`, `app.css?v=160`.
+
+## 3f. PROBLEMA 7 RESOLVIDO (2026-08-26): parar volta para a palavra inicial
+
+**Sintoma do usuário**: "quando para volta a palavra inicial e não fica na
+palavra que estava marcando no fim" + "ainda está mais rápido".
+
+**Causa raiz do "volta à inicial"** (BUG DE AUTO-REFERÊNCIA):
+- `_congelarRelogio()` setava `_relogioPausado = true` ANTES de chamar
+  `_charIndexEstimado()`. Como `_charIndexEstimado()` retorna `_relogioAcumulado`
+  quando `_relogioPausado` é true, ele capturava **0** (o valor ainda não setado)
+  → o destaque "voltava para a palavra inicial" ao pausar/parar.
+- **FIX**: calcular `var atual = _charIndexEstimado()` ANTES de setar
+  `_relogioPausado`.
+
+**Causa do "mais rápido"**:
+- Velocidade padrão de 14 chars/s era alta para voz com rate 0.95; e a medição
+  não compensava o atraso do navegador para começar a falar.
+- **FIX**: `_velocidadePadrao` 14→11; `_velocidadeEfetiva()` aplica **92%** da
+  velocidade medida (nunca fica à frente da voz) + cap 20 chars/s;
+  `LAG_INICIO_MS = 250` compensa o atraso de start do speechSynthesis.
+
+**Validação** (mock respeita speaking/paused): palavra "Gokōwa-roku" destacada
+durante leitura **PERMANECEU a mesma após parar** (`permaneceuMesmaPalavra:true`).
+Clique par 70 → pos 16 (não reinicia).
 
 ## 3e. PROBLEMA 6 RESOLVIDO (2026-08-26): avanço "de acordo com a leitura"
 
@@ -227,19 +251,21 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=23`, `leitura_texto.js?v=19` e `forum.css?v=15`
+   versões novas são `speech.js?v=24`, `leitura_texto.js?v=19` e `forum.css?v=15`
    (se o navegador mostrar outra coisa, é cache).
 2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata
-   destacada avança DE ACORDO COM A LEITURA — calibrada pela duração real dos
-   trechos) e PAUSAR/PARAR (o destaque CONGELA, não avança sozinho). Clicar num
-   parágrafo deve PULAR para dali (não reiniciar).
-3. Se o ritmo ficar levemente fora (voz muito rápida/lenta), a calibração pela
-   duração real do trecho anterior já corrige automaticamente no 2º trecho.
+   destacada avança no ritmo da leitura — calibrada pela duração real, com 92%
+   da velocidade para nunca ficar à frente) e PAUSAR/PARAR (o destaque FICA na
+   palavra atual, não volta ao início). Clicar num parágrafo deve PULAR para
+   dali (não reiniciar).
+3. Se o ritmo ainda ficar adiantado, reduzir `_velocidadePadrao` (já 11) ou o
+   fator 0.92 no speech.js.
 4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo**. Ao fazer
    `speechSynthesis.cancel()` para pular, usar flag `_puloManual`. O charIndex
    do onboundary é da FALA (transliterada) — converter com o mapa. `onboundary`
-   NÃO é confiável — ter fallback por tempo. E o relógio por tempo deve
-   CONGELAR quando o áudio não está tocando (senão "anda sozinho").
+   NÃO é confiável — ter fallback por tempo. Relógio por tempo CONGELA quando o
+   áudio não toca. E em funções que "congelam" estado, calcular o valor ANTES
+   de mudar a flag (auto-referência → voltava ao início).
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
