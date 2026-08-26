@@ -21,9 +21,34 @@ vezes anteriormente").
   - `/tmp/inspecionar_ancoras.py <arq> --todas` → mostra âncoras quebradas.
   - `/tmp/comparar_todas.py <arq>` → mostra TODAS as divergências de um arquivo de uma vez.
 
-## Estado ATUAL (26/08, fim da sessão)
-- **PT: 107 segmentam** (era 83 no início). **Falham 30** (14 são `spec_poucos_artigos` = esperado).
+## Estado ATUAL (26/08, fim da sessão 2)
+- **PT: 117 segmentam** (era 107 no fim da sessão 1). **Falham 20** (14 são `spec_poucos_artigos` = esperado).
 - **JP: 109 segmentam**, falham 28 (14 `spec_poucos_artigos`).
+
+### Corrigidos na SESSÃO 2 (11 arquivos PT, +10 na contagem):
+| Arquivo | Quebradas | Observações |
+|---|---|---|
+| Luz dos Ensinamentos | 5 | `trechos` vs `partes`; `deles`; em-dash `—`; `São 11 divindades...` |
+| Tijotengoku | 5 | separador `―――――――・―――――――` entre título e cabeçalho (3x); título `Fragmentos Médicos (10)` RESTAURADO no texto PT (tinha sumido na retradução, fundido ao fim do art. 9) |
+| Terapia Rev. Tuberculose | 6 | `o pneumotórax, considerado hoje o método`; `ter-me filiado... juntamente`; aspas curvas `*“Quando olho...` |
+| Johrei nº 6 | 6 | `1. Cabeça\n1. Insônia` (sem `\n\n`); `prisão de ventre`; `(a criança tem os mesmos sintomas)`; `(nº 39, p. 11)` |
+| Jikan Vol 1 | 7 | `tratado por inteiro`; `Como se disse`; `entrarei, enfim`; **Conclusão** (título novo) |
+| Jikan Vol 5 | 7 | reescritas de prosa |
+| Johrei nº 3 | 11 | aspas curvas `“”` (muitas); `19. Método para Localizar os Pontos Vitais`; `20. Quando Não Se Encontra` (Se maiúsculo) |
+| Jikan Vol 9 | 14 | reescritas; **overlap de âncoras** (idx 14 e 15 idênticas) → repontado: idx 14 = `A Religião Tenri`, idx 15 = `Açoitar os Mortos` |
+| Jikan Vol 3 | 15 | títulos de seção AUSENTES das âncoras (ex.: `A Existência do Mundo Espiritual`, `Vários Aspectos Após a Morte`, `Espíritos Possessores Grotescos`, etc.); `Paraíso e Inferno` (sem "O") |
+| Jikan Vol 12 | 22 | reescritas + blocos `(Publicado na edição nº...)` / `(Texto acrescido...)` entre título e corpo → âncoras montadas a partir do corpo real |
+| **Suplemento (Gokōwa-roku)** | 34 | ⏸️ NÃO CORRIGIDO — ver seção dedicada abaixo |
+
+### Backups criados na sessão 2:
+- 11 specs: `*.txt.json.bak_manual_20260826`
+- Texto Tijotengoku: `textos_portugues/Tijotengoku.txt.bak_manual_20260826` (antes de restaurar o título)
+
+## ⚠️ SUPLEMENTO (Gokōwa-roku) — caso especial (34 quebradas)
+- As 34 âncoras são **datas** no formato `18 de janeiro do ano 23 da Era Showa (1948) (quarta-feira)`.
+- No corpo PT **as datas foram REMOVIDAS na retradução** — só resta `1º de janeiro do ano 23 da Era Showa (1948)` (idx 1). As demais datas não existem no texto.
+- Exige a **decisão A** (ancorar no conteúdo): mapear cada data JP (ex.: `昭和二十三年一月十八日`) para o trecho real do corpo onde aquela sessão começa. Trabalho manual e extenso (36 artigos).
+- Padrão detectado: as sessões são diálogos `Meishu-Sama: / Interlocutor:` contínuos, sem título de seção separando no PT.
 
 ### Corrigidos nesta sessão (26 arquivos PT):
 Mioshie nº 11, 6, 2, 20, 26, 32, 33 | Fonte do Riso | Jikan Vol 4, 7 |
@@ -42,17 +67,17 @@ Aplicação da Nossa Terapia` + RECRIAÇÃO do #20 `Fatos Espantosos` a partir d
 ### 1. Continuar triviais/moderados PT (16 corrigíveis restantes)
 | Arquivo | Quebradas |
 |---|---|
-| Luz dos Ensinamentos | 5 |
-| Tijotengoku | 5 |
-| Terapia Revolucionária da Tuberculose | 6 |
-| Johrei nº 6 | 6 |
-| Jikan Vol 1 | 7 |
-| Jikan Vol 5 | 7 |
-| Johrei nº 3 | 11 |
-| Jikan Vol 9 | 14 |
-| Jikan Vol 3 | 15 |
-| Jikan Vol 12 | 22 |
-| Suplemento | 34 |
+| Luz dos Ensinamentos | 5 | ✅ FEITO na sessão 2 |
+| Tijotengoku | 5 | ✅ FEITO na sessão 2 |
+| Terapia Revolucionária da Tuberculose | 6 | ✅ FEITO na sessão 2 |
+| Johrei nº 6 | 6 | ✅ FEITO na sessão 2 |
+| Jikan Vol 1 | 7 | ✅ FEITO na sessão 2 |
+| Jikan Vol 5 | 7 | ✅ FEITO na sessão 2 |
+| Johrei nº 3 | 11 | ✅ FEITO na sessão 2 |
+| Jikan Vol 9 | 14 | ✅ FEITO na sessão 2 |
+| Jikan Vol 3 | 15 | ✅ FEITO na sessão 2 |
+| Jikan Vol 12 | 22 | ✅ FEITO na sessão 2 |
+| Suplemento | 34 | ⏸️ caso especial (ver seção acima) |
 
 ### 2. Orais com datas colapsadas (decisão A: ajustar datas e ancorar no conteúdo)
 - **Gosuiji-roku nº 3**: PT só tem `[1º de outubro]`; JP tem 3 datas
