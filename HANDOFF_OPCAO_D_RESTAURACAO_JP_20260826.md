@@ -41,13 +41,17 @@ pré-rotulagem (fonte da verdade), adaptar o build.
 - [x] Fase 1: Piloto 御教え集3号 (restaurar + spec + build) — OK 10/10
 - [x] Fase 2: Mioshie-shū 御教え集 (8 arquivos) — todos OK
   (1,2,3,4,5,6,7,8). JP: 109 → 118 segmentando.
-- [ ] Fase 3: Gosuiji-roku 御垂示録 (30, `「」`)
-- [ ] Fase 3b: Gokōwa-roku 御光話録 (20, `――`)
+- [x] Fase 3: Gosuiji-roku 御垂示録 (30, `「」`) — todos OK
+  (datas ［...］ ancoram; 23 specs tiveram rótulos latinos substituídos por 　/「).
+- [x] Fase 3b: Gokōwa-roku 御光話録 (20, `――`) — todos OK
+  (datas ancoram; 4 specs tiveram `Interlocutor:` removido → `――`).
 - [ ] Fase 4: Ensinamentos_diversos (sem backup)
 - [ ] Fase 5: Rebuild PT+JP e validação
 
 ## Arquivos/specs ainda pendentes JP (não-restaurados, em latim)
 - Medicina_do_Amanha (5), Kyusei (17), Tijotengoku (18), Hikari (36), Eiko (87)
+- Estes NÃO estão na lista de restauração do backup pré-rotulagem (não eram os
+  mesmos 58 com rótulos latinos? Verificar) — ou foram rotulados por outro caminho.
 
 ## Atenção
 - As specs `*.txt.json` NÃO são versionadas (reports/ no .gitignore). Backup manual
