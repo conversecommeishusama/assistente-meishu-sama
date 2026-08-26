@@ -89,14 +89,24 @@
 - **CSS/templates**: barra fixa de leitura (sticky), modal de edição,
   `forum.css`, `leitura_texto.html`, `leitura.html`.
 
-### DIFICULDADE NÃO RESOLVIDA (ver `HANDOFF_ACOMPANHAMENTO_LEITURA_20260825.md`)
+### DIFICULDADE RESOLVIDA (ver `HANDOFF_ACOMPANHAMENTO_LEITURA_20260825.md`)
 - O **acompanhamento da leitura** (destacar o trecho lido + página descer) e o
-  **clique para pular** **validam em Playwright**, mas o usuário **continua
-  reportando que não funcionam no navegador real**.
-- Hipótese nº 1: **cache do navegador** (versões mudaram muito: speech v3→16,
-  leitura_texto v1→10). Instruir Ctrl+Shift+R antes de testar.
-- Se persistir: pedir console (F12) e considerar remover `dividirEmParagrafos()`
-  (reescreve o DOM) usando `onTrecho` callback em vez do setInterval.
+  **clique para pular** valiam em Playwright mas falhavam no navegador real.
+- **Causas raiz encontradas e corrigidas** (sessão 25-26/08, protótipo):
+  1. **Função DUPLICADA** `destacarPorIndice` (a antiga `Math.floor(idx*6)`
+     sobrescrevia a correta → "não acompanhava"). Removida a duplicada.
+  2. **Corrida no `cancel()`** do `pularPara` (onend/onerror do utterance
+     cancelado avançava a posição → "clicar reiniciava"). Flag `_puloManual`.
+  3. **Destaque por trecho (~1800 chars)** era grosseiro → segmentado em
+     **SENTENÇAS** (1 frase por trecho) e avanço **ancorado no `onend` REAL**
+     de cada frase (confiável em todos navegadores) — **sem estimar ritmo**
+     (pedido do usuário: cadência do português varia por vírgulas/pontos).
+  4. **`onboundary` (palavra a palavra)** é bônus quando o navegador oferece
+     (`temBoundaryReal()`); o polling não avança por tempo.
+  5. Bugs de pausa: congelamento no pause/parar + fix de auto-referência no
+     `_congelarRelogio` (não voltar à palavra inicial ao parar).
+- Cache busts atuais: `speech.js?v=25`, `leitura_texto.js?v=20`,
+  `forum.css?v=15`, `app.css?v=160`.
 
 ### Bugs corrigidos nesta sessão (não regredir)
 - Áudio não saía em texto gigante (preservar `\n` + quebrarTexto).
@@ -110,7 +120,7 @@
 ### Backups / notas
 - **Nada foi promovido a produção** (só protótipo `/versao2`, porta 5091).
 - `textos_portugues` (produção) é a fonte dos textos; protótipo tem symlink.
-- Cache busts atuais: `speech.js?v=16`, `leitura_texto.js?v=10`, `forum.css?v=14`,
+- Cache busts atuais: `speech.js?v=25`, `leitura_texto.js?v=20`, `forum.css?v=15`,
   `app.css?v=160`.
 
 ---

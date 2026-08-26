@@ -1,12 +1,11 @@
-# HANDOFF — DIFICULDADE: acompanhamento de leitura + clique para pular (Leitura Colaborativa)
+# HANDOFF — ACOMPANHAMENTO DE LEITURA + clique para pular (Leitura Colaborativa)
 
-> **ATUALIZADO 2026-08-25 (tarde): RESOLVIDO no protótipo (ver §3a).**
-> Criado em **2026-08-25** (fim da sessão). O usuário abriu uma nova sessão.
-> Este handoff documenta uma DIFICULDADE NÃO RESOLVIDA: o código **funciona em
-> Playwright** (headless), mas o usuário **continua reportando que não funciona
-> no navegador real**. Leia junto com as memórias de sessão:
-> `/memories/session/leitura-voz-colaboracao-2026-08-25.md` e
-> `/memories/repo/forum-comunidade-2026-08-21.md`.
+> **ATUALIZADO 2026-08-26: RESOLVIDO no protótipo (ver §3g).**
+> Criado em **2026-08-25** (fim da sessão). Documenta a DIFICULDADE e a
+> resolução completa: o código validava em Playwright (headless) mas falhava
+> no navegador real. Causas raiz encontradas e corrigidas (função duplicada,
+> corrida no cancel, segmentação por sentença ancorada no onend).
+> Memória de repo: `/memories/repo/dificuldade-acompanhamento-leitura-2026-08-25.md`.
 
 ---
 
@@ -31,8 +30,9 @@ Na Leitura Colaborativa, o usuário pediu:
 
 ### Arquivos envolvidos (TODOS no `/var/www/goshinsho-teste`)
 - `static/js/speech.js` — motor de áudio (TTS + STT), com:
-  - `quebrarTexto()` — divide o texto em trechos de ~1800 chars (senão o Chrome
-    rejeita o utterance inteiro).
+  - `quebrarTexto()` — divide o texto em **SENTENÇAS** (1 frase por trecho;
+    antes eram blocos de ~1800 chars). Isso faz o `onend` disparar a cada
+    frase — o avanço do destaque fica ANCORADO na leitura real.
   - `trechoAtual()` / `trechoOriginalAtual()` — trecho sendo lido (o original,
     sem transliteração, para casar com a tela).
   - `pularPara(index)` / `pularParaTexto(texto)` — pular para um trecho.
@@ -40,8 +40,9 @@ Na Leitura Colaborativa, o usuário pediu:
 - `static/js/leitura_texto.js` — página do texto:
   - `dividirEmParagrafos()` — transforma o `.leitura-texto` em
     `<p class="leitura-paragrafo">` (98 no Gokōwa-roku 1).
-  - `setInterval` (300ms) → `destacarTrecho()` — destaca o parágrafo de maior
-    score de palavras com o trecho atual + `scrollIntoView({block:'center'})`.
+  - `destacarTrecho()` — destaca a frase/parágrafo atual + scroll automático,
+    ancorado no `onend` real (callback de trecho) e refinado por `onboundary`
+    quando o navegador oferece.
   - Clique num parágrafo → `pularParaTexto()`.
   - Modal "Sugerir edição".
 - `static/css/forum.css` — barra fixa, destaque `.trecho-lido`, modal.
@@ -234,35 +235,29 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
   isso os testes anteriores (sem mock) validavam o algoritmo mas NÃO reproduziam
   o comportamento real. O mock realista é a prova.
 
-## 3. A DIFICULDADE (NÃO RESOLVIDA)
+## 3. A DIFICULDADE (RESOLVIDA — ver §3a a §3g)
 
 ### Sintoma relatado pelo usuário (navegador real)
 - "O texto continua não sendo selecionado acompanhando a leitura."
 - "Também continua não funcionando o selecionar onde quer que leia."
 - "Quando eu clico no texto, ao invés de ir para o local clicado ele pausa
-  rapidamente e retoma para o mesmo lugar." (este último FOI corrigido — ver §4)
+  rapidamente e retoma para o mesmo lugar."
+- Depois: destaque lento/descompassado; rápido demais; "avança sozinho"; "ao
+  parar volta para a palavra inicial"; pedido final: **ancorar o avanço na
+  leitura real, sem estimar ritmo** (cadência do português varia).
 
-### O que foi VALIDADO em Playwright (headless, Chrome)
-- Destaque acompanha a leitura: ao avançar os trechos, o `.trecho-lido` muda
-  corretamente (validado com simulação de `onend`).
-- Clique num parágrafo pula: clicar no parágrafo 50 pulou do trecho 0 → 11.
-- Sem erros de console.
-- O código **parece correto** e funciona no headless.
+### Causas raiz encontradas (e corrigidas — ver §3a a §3g)
+1. **Função duplicada** `destacarPorIndice` (antiga `Math.floor(idx*6)` sobrescrevia a correta).
+2. **Corrida no `cancel()`** do `pularPara` (flag `_puloManual`).
+3. Destaque por trecho de 1800 chars era grosseiro → **segmentar por sentença + ancorar no `onend` real**.
+4. `onboundary` não confiável → **fallback por sentença** (não por tempo).
+5. Pausa/parada: congelamento + fix de auto-referência no `_congelarRelogio`.
 
-### Hipóteses para a divergência (não confirmadas)
-1. **CACHE DO NAVEGADOR**: as versões mudaram MUITAS vezes hoje (speech v3→16,
-   leitura_texto v1→10). Se o navegador do usuário não recarregou, ele vê uma
-   versão antiga. **Instruir: Ctrl+Shift+R (hard reload).**
-2. **Diferença entre o clique do botão da barra vs. o botão do texto**: o botão
-   "🔊 Ouvir" da barra faz `texto.querySelector(".audio-btn").click()`. Se o
-   `dividirEmParagrafos()` reescreveu o `innerHTML` e o botão foi recriado,
-   pode haver timing. No Playwright funciona.
-3. **O `speechSynthesis` real do navegador do usuário** pode se comportar
-   diferente (ex.: não chamar `onend` de forma confiável, ou o `trechoAtual()`
-   não atualizar). O Playwright usa o mock do headless.
-4. **Seleção de texto**: o usuário pode estar tentando SELECIONAR (arrastar)
-   em vez de CLICAR num parágrafo. O destaque por clique foi implementado, mas
-   o comportamento de "selecionar e clicar" pode não estar claro na UI.
+### O que foi VALIDADO (mock realista de speechSynthesis no Playwright)
+- Destaque acompanha a leitura e o clique pula (sem reiniciar).
+- Avanço **ancorado no `onend` real** de cada frase (validado com durações
+  aleatórias por frase — o destaque só avança quando a frase termina).
+- Ao parar, o destaque **permanece** na frase atual (não volta ao início).
 
 ## 4. BUGS CORRIGIDOS NESTA SESSÃO (para não regredir)
 1. **Áudio não saía na leitura** (texto gigante): `textoAlvo()` fazia
