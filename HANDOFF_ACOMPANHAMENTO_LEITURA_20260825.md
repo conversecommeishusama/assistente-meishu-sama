@@ -48,7 +48,34 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=20`, `leitura_texto.js?v=15`, `forum.css?v=14`, `app.css?v=160`.
+- `speech.js?v=21`, `leitura_texto.js?v=17`, `forum.css?v=15`, `app.css?v=160`.
+
+## 3c. PROBLEMA 4 RESOLVIDO (2026-08-26): destaque POR PALAVRA
+
+**Pedido do usuário**: "não seria melhor o acompanhamento da leitura ser por
+palavra e não por trecho?" — sim, e foi feito.
+
+**Correção** (cache v=21/v=17/v=15):
+1. `speech.js` — `transliterarComMapa(texto)` retorna `{texto, mapa}` onde mapa
+   = `[{falaIni, falaFim, origIni, origFim}]` ligando cada termo transliterado
+   (ex.: "johrei"→"djo rei") à posição ORIGINAL. `converterCharFalaParaOriginal
+   (idxFala, mapa)` converte o charIndex do onboundary (que refere-se à FALA,
+   transliterada) para o texto da tela — SEM isso, o destaque fica
+   DESCOMPASSADO (termos mudam de tamanho). Guarda `mapaFala` no leituraAtiva.
+2. `leitura_texto.js` — `marcarPalavraEm(paragrafo, offset)` envolve a palavra
+   exata com `<mark class="palavra-lida">` (destaque forte dourado escuro);
+   o parágrafo atual mantém o fundo suave `.trecho-lido`. `limparDestaque()`
+   remove TODAS as `.palavra-lida` a cada atualização (sem marcas residuais).
+3. `forum.css` — estilo `.palavra-lida`.
+
+**Validação** (mock com onboundary por palavra): 1 marca por vez, progride
+"outubro" → "Interlocutor:" → "membros," → "interesse." Clique no par 70 →
+posição 16 (não reinicia), destaque por palavra continua no trecho certo.
+
+**IMPORTANTE (lição)**: o `charIndex` do `onboundary` é do texto TRANSLITERADO
+(a fala), não do original da tela. Qualquer destaque por posição precisa do
+mapa de conversão — caso contrário descompassa quando um termo messiânico
+muda de tamanho na transliteração.
 
 ## 3b. PROBLEMA 3 RESOLVIDO (2026-08-25 fim): DESCOMPASSO do destaque
 
@@ -150,18 +177,20 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=20` e `leitura_texto.js?v=15` (se o navegador
-   mostrar outra coisa, é cache).
-2. **Testar no navegador real**: clicar "Ouvir" na barra (destaque deve
-   acompanhar suavemente, palavra a palavra) e clicar num parágrafo (deve PULAR
-   para dali, não reiniciar) — tanto lendo quanto parado.
+   versões novas são `speech.js?v=21`, `leitura_texto.js?v=17` e `forum.css?v=15`
+   (se o navegador mostrar outra coisa, é cache).
+2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata sendo
+   lida fica destacada em dourado escuro, 1 por vez, acompanhando o áudio) e
+   clicar num parágrafo (deve PULAR para dali, não reiniciar) — tanto lendo
+   quanto parado.
 3. Se ainda houver descompasso: verificar se o navegador dispara `onboundary`
    (a maioria dispara; alguns só entre frases). Se não disparar, o polling de
    300ms (safety net) ainda destaca por trecho.
 4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo** (a 2ª
-   sobrescreve a 1ª — foi a causa do "não acompanha"). E ao fazer
-   `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional
-   (o `onend` do utterance cancelado não deve avançar a posição).
+   sobrescreve a 1ª — foi a causa do "não acompanha"). Ao fazer
+   `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional.
+   E o charIndex do onboundary é da FALA (transliterada) — sempre converter com
+   o mapa.
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
