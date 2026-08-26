@@ -7,6 +7,47 @@
 
 ---
 
+## 26/08 — Correção manual das specs de segmentação (rebuild PT/JP)
+
+> **Decisão do usuário**: corrigir as specs de segmentação (que estavam
+> desatualizadas em relação ao corpus retraduzido) de forma 100% MANUAL e
+> SEMÂNTICA, um arquivo por vez — nada de scripts/regex cegos. Objetivo:
+> fazer o rebuild do zero com PT e JP bem segmentados.
+> Detalhes completos: `HANDOFF_CORRECAO_SPECS_SEGMENTACAO_20260826.md`.
+
+### Diagnóstico (causa raiz do descompasso PT 3517 vs JP 4067 chunks)
+- O corpus PT foi RETRADUZIDO; a retradução REESCREVEU textos, REMOVEU datas de
+  seção em orais, RENOMEOU títulos (ex.: `五六七大祭` → "O Culto Especial"),
+  e mudou `\n` → `\n\n` / aspas / `º`.
+- As specs de `segmentacao_manual/*.json` tinham âncoras antigas → não casavam →
+  `article_entries_from_spec` retornava None → caía no fallback (arquivo inteiro) →
+  poucos chunks.
+- 41 arquivos PT falhavam por âncora (851 quebradas no total) + JP 166 quebradas.
+
+### O que foi feito (PT: 83 → 107 segmentando)
+- Corrigidos 26 arquivos PT: Mioshie 11/6/2/20/26/32/33, Fonte do Riso, Jikan 4/7,
+  Explicação Agric Natural + Extra, Johrei 1/4/5/7/8/9/10, Kyusei, Hikari, Eiko,
+  Salvando EUA, Relatos de Milagres, Medicina do Amanhã.
+- **Medicina do Amanhã**: traduziu do JP o artigo #19 (`O Método de Aplicação da
+  Nossa Terapia`) e recriou o #20 (`Fatos Espantosos`) que tinham sumido na
+  retradução (Opção 2 do usuário) — texto PT atualizado + backup.
+- Padrões corrigidos: texto reescrito, `\n` vs `\n\n`, título renomeado, cascata
+  de âncoras, overlap pai/filho (`X-1.`), artigo removido, aspas curvas, `º` extra.
+
+### Estado atual
+- PT: 107 segmentam (30 falham, 14 esperados) | JP: 109 segmentam (28 falham).
+- Próximas etapas: continuar triviais (Luz Ensinamentos, Tijotengoku, Terapia Rev,
+  Johrei 6, Jikan 1/5/3/9/12, Johrei 3, Suplemento), depois orais com datas
+  colapsadas (Gosuiji 3/5 — ancorar no conteúdo), depois poemas (Opção C: agrupar
+  por seção temática — Salmos, Montanha, Akemaro), depois JP (166 quebradas), e
+  rebuild do zero.
+
+### Backups criados
+- 23 specs: `*.txt.json.bak_manual_20260826`
+- Texto Medicina: `Medicina_do_Amanha.txt.bak_pre_art19_20260826`
+
+---
+
 ## 21-24/08 — Aplicativo: comunidade (Fórum + Leitura Colaborativa) — protótipo /versao2
 
 > **Decisão do usuário**: transformar o app em comunidade de estudiosos de
