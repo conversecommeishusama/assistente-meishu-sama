@@ -70,10 +70,11 @@ original japonês (お伺/御垂示, 「」, ――); build adaptado (`_turn_cla
 - Técnica: detectar títulos de seção no corpo (parágrafo não-numerado seguido de
   poema `N.`), usar como âncoras. Backup `bak_pre_opcaoC_20260826`.
 
-### ⏳ Akemaro (PENDENTE)
-- Corpo PT tem **49 seções temáticas** (não 33 como estimado).
-- Corpo JP tem ~49 seções alinhadas (com marcadores `○` a limpar).
-- Reestruturar de 487 poemas → ~50 artigos (seções), PT+JP.
+### ✅ Akemaro (FEITO)
+- Reestruturado de 486 poemas → **51 artigos** (1 prefácio + 50 seções temáticas).
+- 49 seções temáticas alinhadas PT↔JP por faixa de poemas (perfeito).
+- Seção 'Vila Tamagawa' (>3200 chars) subdividida em 2 partes.
+- PT e JP **51/51** segmentam, pareamento mantido.
 
 ### ⏳ Montanha e Água (PENDENTE)
 - Corpo PT tem ~40 seções temáticas por TEMA (A Primavera Passou, Sol e Lua...).
