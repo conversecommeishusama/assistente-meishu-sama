@@ -48,7 +48,29 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=21`, `leitura_texto.js?v=17`, `forum.css?v=15`, `app.css?v=160`.
+- `speech.js?v=22`, `leitura_texto.js?v=18`, `forum.css?v=15`, `app.css?v=160`.
+
+## 3d. PROBLEMA 5 RESOLVIDO (2026-08-26): fallback por TEMPO (onboundary ausente)
+
+**Sintoma do usuário**: "não seleciona as palavras" + "avança muito tempo depois".
+**Causa**: o destaque por palavra dependia do evento `onboundary` da Web Speech
+API, mas o navegador do usuário NÃO o dispara de forma confiável → o fallback
+(polling por trecho) só avançava quando o TRECHO mudava (~1-2 min).
+
+**Correção** (cache v=22/v=18) — estimativa de posição por TEMPO (fallback robusto):
+1. `speech.js` — `_charIndexEstimado()`: usa o último `onboundary` REAL (se
+   houver) como referência e interpola pelo tempo decorrido a `_estimativaVelocidade`
+   (~14 chars/s). `_reiniciarRelogioTrecho()` zera o relógio a cada trecho.
+   Quando um `onboundary` chega, ele CALIBRA o relógio (`_ultimoBoundaryTempo`/
+   `_ultimoBoundaryChar`). `posicaoCharAtual()` agora retorna a estimativa.
+2. `leitura_texto.js` — o polling de 300ms agora usa `posicaoCharAtual()` e
+   destaca por posição (palavra) a cada avanço ≥6 chars (não só por trecho).
+
+**Validação** (mock SEM onboundary, simulando o navegador do usuário):
+- Palavra avança pelo tempo: "Gokōwa-roku" → "(quinta-feira)]" → "Interlocutor:"
+  → "Grande" (charEstimado 8→25→41→58→75). Clique par 70 → pos 16 (não reinicia).
+- **Lição**: o `onboundary` é BÔNUS (posição exata); o fallback por tempo é o que
+  garante o acompanhamento em QUALQUER navegador.
 
 ## 3c. PROBLEMA 4 RESOLVIDO (2026-08-26): destaque POR PALAVRA
 
@@ -177,20 +199,21 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=21`, `leitura_texto.js?v=17` e `forum.css?v=15`
+   versões novas são `speech.js?v=22`, `leitura_texto.js?v=18` e `forum.css?v=15`
    (se o navegador mostrar outra coisa, é cache).
 2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata sendo
-   lida fica destacada em dourado escuro, 1 por vez, acompanhando o áudio) e
-   clicar num parágrafo (deve PULAR para dali, não reiniciar) — tanto lendo
-   quanto parado.
-3. Se ainda houver descompasso: verificar se o navegador dispara `onboundary`
-   (a maioria dispara; alguns só entre frases). Se não disparar, o polling de
-   300ms (safety net) ainda destaca por trecho.
+   lida fica destacada em dourado escuro e AVANÇA pelo tempo, mesmo que o
+   navegador não dispare onboundary) e clicar num parágrafo (deve PULAR para
+   dali, não reiniciar) — tanto lendo quanto parado.
+3. Se a velocidade do destaque por tempo ficar fora do ritmo do áudio, ajustar
+   `_estimativaVelocidade` no speech.js (~14 chars/s padrão; o onboundary real,
+   quando dispara, recalibra automaticamente).
 4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo** (a 2ª
    sobrescreve a 1ª — foi a causa do "não acompanha"). Ao fazer
    `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional.
-   E o charIndex do onboundary é da FALA (transliterada) — sempre converter com
-   o mapa.
+   O charIndex do onboundary é da FALA (transliterada) — sempre converter com o
+   mapa. E o `onboundary` NÃO é confiável em todos os navegadores — SEMPRE ter o
+   fallback por tempo.
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
