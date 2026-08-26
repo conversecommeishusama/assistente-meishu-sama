@@ -38,17 +38,24 @@ vezes anteriormente").
 | Jikan Vol 9 | 14 | reescritas; **overlap de âncoras** (idx 14 e 15 idênticas) → repontado: idx 14 = `A Religião Tenri`, idx 15 = `Açoitar os Mortos` |
 | Jikan Vol 3 | 15 | títulos de seção AUSENTES das âncoras (ex.: `A Existência do Mundo Espiritual`, `Vários Aspectos Após a Morte`, `Espíritos Possessores Grotescos`, etc.); `Paraíso e Inferno` (sem "O") |
 | Jikan Vol 12 | 22 | reescritas + blocos `(Publicado na edição nº...)` / `(Texto acrescido...)` entre título e corpo → âncoras montadas a partir do corpo real |
-| **Suplemento (Gokōwa-roku)** | 34 | ⏸️ NÃO CORRIGIDO — ver seção dedicada abaixo |
+| **Suplemento (Gokōwa-roku)** | 34 | ✅ RESOLVIDO na sessão 2 (ver seção dedicada abaixo) |
 
 ### Backups criados na sessão 2:
-- 11 specs: `*.txt.json.bak_manual_20260826`
+- 12 specs: `*.txt.json.bak_manual_20260826`
 - Texto Tijotengoku: `textos_portugues/Tijotengoku.txt.bak_manual_20260826` (antes de restaurar o título)
+- Texto Suplemento: `textos_portugues/19480101 - Gokōwa-roku (Suplemento).txt.bak_manual_20260826` (antes de inserir a sessão 08/18)
 
-## ⚠️ SUPLEMENTO (Gokōwa-roku) — caso especial (34 quebradas)
-- As 34 âncoras são **datas** no formato `18 de janeiro do ano 23 da Era Showa (1948) (quarta-feira)`.
-- No corpo PT **as datas foram REMOVIDAS na retradução** — só resta `1º de janeiro do ano 23 da Era Showa (1948)` (idx 1). As demais datas não existem no texto.
-- Exige a **decisão A** (ancorar no conteúdo): mapear cada data JP (ex.: `昭和二十三年一月十八日`) para o trecho real do corpo onde aquela sessão começa. Trabalho manual e extenso (36 artigos).
-- Padrão detectado: as sessões são diálogos `Meishu-Sama: / Interlocutor:` contínuos, sem título de seção separando no PT.
+## ✅ SUPLEMENTO (Gokōwa-roku) — RESOLVIDO (34 quebradas)
+- As 34 âncoras eram **datas** (`18 de janeiro do ano 23 da Era Showa (1948) (quarta-feira)`).
+- No corpo PT **as datas foram REMOVIDAS na retradução em massa** — só restava `1º de janeiro` (idx 1) de 46 datas do backup de 06/07.
+- **Diagnóstico**: o backup `reports/livros_trabalho/gokowa.bak_20260706T002000Z/pt/19480101-御光話録（補）.txt` tem as datas; o texto atual não.
+- **Sessão 08/18 AUSENTE do PT** (cerimônia provisória do Sōun-ryō, 2831 chars no JP): traduzida do JP (Opção 2) e inserida no texto PT entre o fim do 08/08 e o início do 08/28. Formato: `**18 de agosto... Cerimônia Provisória de Fundação do Novo Dojô Sōun-ryō**`.
+- **Estratégia de ancoragem**: o conteúdo PT preserva o paralelismo 1:1 por **turnos de Interlocutor** (478 = 478). Cada sessão foi mapeada para o Interlocutor de início (via posição da data no JP → índice do Interlocutor → mesmo índice no PT). As âncoras das 33 sessões sem data foram repontadas para o **texto do Interlocutor de início** (primeiras ~100 chars).
+- **Resultado**: PT segmenta 36/36, JP segmenta 36/36. Nenhum chunk vazio.
+
+## Estado ATUAL (26/08, fim da sessão 2)
+- **PT: 118 segmentam** (era 107 no fim da sessão 1). **Falham 19** (14 são `spec_poucos_artigos` = esperado).
+- **JP: 109 segmentam**, falham 28 (14 `spec_poucos_artigos`).
 
 ### Corrigidos nesta sessão (26 arquivos PT):
 Mioshie nº 11, 6, 2, 20, 26, 32, 33 | Fonte do Riso | Jikan Vol 4, 7 |
@@ -77,13 +84,15 @@ Aplicação da Nossa Terapia` + RECRIAÇÃO do #20 `Fatos Espantosos` a partir d
 | Jikan Vol 9 | 14 | ✅ FEITO na sessão 2 |
 | Jikan Vol 3 | 15 | ✅ FEITO na sessão 2 |
 | Jikan Vol 12 | 22 | ✅ FEITO na sessão 2 |
-| Suplemento | 34 | ⏸️ caso especial (ver seção acima) |
+| Suplemento | 34 | ✅ FEITO na sessão 2 (com tradução do 08/18) |
 
 ### 2. Orais com datas colapsadas (decisão A: ajustar datas e ancorar no conteúdo)
 - **Gosuiji-roku nº 3**: PT só tem `[1º de outubro]`; JP tem 3 datas
   (`［十月一日/五日/八日］`). Datas 5 e 8 sumiram na retradução → ancorar no conteúdo
   (mapeando JP→PT onde cada dia começa).
 - **Gosuiji-roku nº 5**: PT só tem `[1 de dezembro]`; JP tem mais datas.
+- Dica: mesma técnica usada no Suplemento — alinhar por turnos de Interlocutor
+  (contagens iguais entre JP e PT), mapear data JP → índice do turno → texto PT.
 
 ### 3. Poemas (Opção C: agrupar por seção temática)
 - **Salmos** (136 quebradas, 310 arts): 31 seções temáticas.
