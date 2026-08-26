@@ -60,11 +60,31 @@ NAMED_SPEAKER_RE = re.compile(
     r"^(Sr\.|Sra\.|Dr\.|Prof\.|Mr\.|Mrs\.)\s+[A-Za-zÀ-ÿōūāīēŌŪĀĪĒ\-]+:",
 )
 PT_MARKDOWN_SPEAKER_RE = re.compile(r"^\*\*([^*]+?):\*\*\s*")
+
+# Falantes NOMEADOS de entrevistas/mesas-redondas que NÃO usam o padrão
+# Interlocutor:/Meishu-Sama: (levantados do corpus real em 2026-08-26).
+# IMPORTANTE: NÃO usar um padrão genérico "palavra:" aqui — qualquer palavra
+# seguida de dois-pontos no meio de frase virava quebra indevida de parágrafo
+# (regressão: ~1.265 quebras falsas só no Eiko). A lista é fechada aos falantes
+# reais; novos falantes devem ser acrescentados explicitamente ao aparecerem.
+PT_NAMED_SPEAKERS = (
+    "Tanikawa|Moderador|Repórter|Jornalista|Secretário|Político|Médico|Promotor|"
+    "Esposa|Chefe|Presidente|Vice-Presidente|Pai|Imperador|"
+    "Ino|Okada|Okumura|Miyata|Musei|Itō|Nakajima|Onoshima|Tsuchiya|Kataoka|"
+    "Matsumoto|Adachi|Shugakuin|Kitami|Nabata|Suzuki|Sue|Nichiren"
+)
+PT_NAMED_SPEAKER_RE = re.compile(
+    rf"^(?:{PT_NAMED_SPEAKERS}):",
+)
+PT_NAMED_SPEAKER_INLINE_RE = re.compile(
+    rf"(?<=\S)\s+(?=(?:{PT_NAMED_SPEAKERS}):)",
+)
+
 PT_SPEAKER_RE = re.compile(
     r"^("
     r"Interlocutor:|Meishu-Sama:"
     r"|(?:Sr|Sra|Dr|Prof)\.\s+[A-Za-zÀ-ÿ\-]+:"
-    r"|[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'ōūāīēŌŪĀĪĒ\-]{0,14}:"
+    rf"|(?:{PT_NAMED_SPEAKERS}):"
     r")",
     re.IGNORECASE,
 )
@@ -73,7 +93,7 @@ PT_INLINE_SPEAKER_SPLIT_RE = re.compile(
     r"Interlocutor:|Meishu-Sama:"
     r"|(?:Sr|Sra|Dr|Prof)\.\s+[A-Za-zÀ-ÿ\-]+:"
     r"|\*\*[^*]{1,40}:\*\*"
-    r"|[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'ōūāīēŌŪĀĪĒ\-]{0,14}:"
+    rf"|(?:{PT_NAMED_SPEAKERS}):"
     r"))",
     re.IGNORECASE,
 )

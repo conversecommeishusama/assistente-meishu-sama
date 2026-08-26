@@ -352,6 +352,22 @@ def _title_query_specificity(query_core: str, title_core: str) -> float:
     return (len(q_set & t_set) / len(q_set)) * 0.85
 
 
+def _article_date_from_file(article: dict) -> str:
+    """Data de publicação do arquivo (YYYYMMDD), extraída do nome.
+
+    Os arquivos do acervo seguem o padrão 'YYYYMMDD - Nome' (ex.:
+    '19540825 - Evangelho do Reino dos Céus.txt'). Periódicos sem data no
+    nome (Eiko, Hikari, Kyusei...) retornam '' — não entram no desempate.
+    Usada para preferir a republicação mais recente quando o mesmo título
+    existe em arquivos distintos (decisão do usuário 2026-08-26: a versão
+    republicada pelo autor com ajustes é a preferida)."""
+    arquivo = article.get("arquivo") or article.get("fonte") or ""
+    m = re.match(r"(\d{4})(\d{2})(\d{2})\s*-", arquivo)
+    if not m:
+        return ""
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+
+
 def pick_canonical_article(candidates: list[dict], query: str = "") -> dict:
     if len(candidates) == 1:
         return candidates[0]
@@ -373,6 +389,21 @@ def pick_canonical_article(candidates: list[dict], query: str = "") -> dict:
             candidates = camada_candidates
 
     scored: list[tuple[float, dict]] = []
+    # Decisão do usuário (2026-08-26): quando há empate de título EXATO em
+    # arquivos distintos, preferir a republicação MAIS RECENTE (o autor
+    # republicou com ajustes/melhorias). O bônus precisa ser forte o bastante
+    # para vencer os bônus fixos de publicação/citação bíblica quando os
+    # arquivos têm o mesmo título — por isso é aplicado como fator multiplicador
+    # de recência apenas entre candidatos de MESMO título (não entre títulos
+    # diferentes, onde o título_match/specificity já decide).
+    same_title_dates = {}
+    for article in candidates:
+        d = _article_date_from_file(article)
+        if d:
+            same_title_dates.setdefault(
+                normalize_title_core(article.get("title", "")), []
+            ).append((d, article))
+
     for article in candidates:
         chunks, _ = _load_raw_article_chunks(article)
         body_len = len(_article_body_text(chunks))
@@ -388,6 +419,15 @@ def pick_canonical_article(candidates: list[dict], query: str = "") -> dict:
             score += 3.0
         if wants_bible and _article_has_bible_citations(chunks):
             score += 4.0
+        # Bônus de recência: entre republicações de MESMO título, a mais
+        # recente leva vantagem (o autor revisou/ajustou). Só aplica quando
+        # há mais de uma data para o mesmo título (senão não é desempate).
+        title_dates = same_title_dates.get(title_core)
+        if title_dates and len(title_dates) > 1:
+            dates = sorted(d for d, _ in title_dates)
+            article_date = _article_date_from_file(article)
+            if article_date == dates[-1]:
+                score += 6.0
         scored.append((score, article))
 
     scored.sort(key=lambda item: -item[0])
@@ -1074,7 +1114,22 @@ def find_best_article(query: str, min_score: float = 0.45) -> dict | None:
         ):
             tied = [scored_by_context[0][1]]
         else:
-            return None
+            # A query não dá contexto (empate 0 a 0) — mas os candidatos têm o
+            # MESMO título exato em arquivos distintos (republicação da mesma
+            # obra). Nesse caso o pick_canonical_article decide com os bônus de
+            # qualidade E o de recência (decisão do usuário 2026-08-26: preferir
+            # a versão mais recente, republicada com ajustes). Só NÃO desce para
+            # o pick quando os títulos são apenas parecidos (não exatos) — aí
+            # sim é ambiguidade genuína e retornamos None.
+            distinct_titles = {
+                normalize_title_core(a.get("title", "")) for a in same_title_as_top
+            }
+            if len(distinct_titles) == 1 and len(same_title_as_top) > 1:
+                # Título idêntico em arquivos distintos → republicação;
+                # deixar o pick_canonical_article escolher (recência + qualidade).
+                pass
+            else:
+                return None
 
     best = pick_canonical_article(tied, query)
     return {**best, "match_score": top_score}
