@@ -45,13 +45,18 @@ pré-rotulagem (fonte da verdade), adaptar o build.
   (datas ［...］ ancoram; 23 specs tiveram rótulos latinos substituídos por 　/「).
 - [x] Fase 3b: Gokōwa-roku 御光話録 (20, `――`) — todos OK
   (datas ancoram; 4 specs tiveram `Interlocutor:` removido → `――`).
-- [ ] Fase 4: Ensinamentos_diversos (sem backup)
-- [ ] Fase 5: Rebuild PT+JP e validação
+- [x] Fase 4: Ensinamentos_diversos (sem backup) — sem rótulos latinos, ok
+- [x] Fase 5: JP 100% resolvido — Eiko (87), Hikari (36), Kyusei (17),
+  Tijotengoku (18), Medicina (5) corrigidos repontando âncoras para `title_jp`
+  (que refletem os kanji variantes do corpo). **JP 109 → 123 segmentando**;
+  os 14 restantes são `spec_poucos_artigos` (esperado, não são quebras).
 
-## Arquivos/specs ainda pendentes JP (não-restaurados, em latim)
-- Medicina_do_Amanha (5), Kyusei (17), Tijotengoku (18), Hikari (36), Eiko (87)
-- Estes NÃO estão na lista de restauração do backup pré-rotulagem (não eram os
-  mesmos 58 com rótulos latinos? Verificar) — ou foram rotulados por outro caminho.
+## Estado final da Opção D
+- **JP: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
+  TODOS os arquivos JP reais segmentam com o formato original japonês.
+- **PT: 120 segmentam / 17 falham** — restam os 3 livros de poemas
+  (Salmos 136, Montanha e Água 173, Akemaro 364) — Opção C (agrupar por seção
+  temática), trabalho separado.
 
 ## Atenção
 - As specs `*.txt.json` NÃO são versionadas (reports/ no .gitignore). Backup manual
