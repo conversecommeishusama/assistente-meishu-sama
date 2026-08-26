@@ -48,7 +48,36 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=24`, `leitura_texto.js?v=19`, `forum.css?v=15`, `app.css?v=160`.
+- `speech.js?v=25`, `leitura_texto.js?v=20`, `forum.css?v=15`, `app.css?v=160`.
+
+## 3g. PROBLEMA 8 RESOLVIDO (2026-08-26): avanço 100% ANCORADO na leitura
+
+**Pedido do usuário**: "quero que o avanço esteja CONECTADO à leitura, não que
+tente adivinhar um tempo — o português tem ritmo/cadência próprios (vírgulas,
+pontos) impossíveis de padronizar."
+
+**Correção** (cache v=25/v=20) — arquitetura mudada para ancorar em eventos reais:
+1. **`quebrarTexto()` reescrito**: divide o texto em **SENTENÇAS** (por
+   `.!?…:`), cada trecho ≈ 1 frase. `MAX_CHARS_POR_UTTERANCE` (150) vira só
+   teto de segurança para frases gigantes.
+2. **Avanço ancorado no `onend` REAL** (confiável em todos os navegadores):
+   quando a frase N termina de verdade, `falarDe()` avança e o callback de
+   trecho destaca a frase seguinte. **Nenhuma estimativa de tempo.**
+3. **Polling não avança por tempo**: só refina por PALAVRA se o navegador
+   dispara `onboundary` real (`temBoundaryReal()` nova API). Sem onboundary,
+   o destaque avança por SENTENÇA (âncora real no onend) — que é o desejado.
+4. `_temBoundaryReal` resetado a cada trecho; setado no onboundary real.
+
+**Validação** (mock SEM onboundary, com durações ALEATÓRIAS 600ms–4s por frase
+para provar que NÃO depende de ritmo): o destaque ficou no trecho 0 por ~4.8s e
+**só avançou quando o onend da frase disparou** — sincronizado com a leitura
+real, independente da duração de cada frase. Clique par 70 → pos 306 (agora o
+total reflete Nº DE FRASES, ~306, não 23 trechos).
+
+**Lição**: para acompanhar leitura em voz, o correto é **segmentar por frase e
+ancorar o avanço no `onend` real** de cada frase — nunca estimar ritmo por
+tempo (o português tem cadência variável por vírgulas/pontos). O `onboundary`
+(palavra a palavra) é um bônus quando o navegador oferece.
 
 ## 3f. PROBLEMA 7 RESOLVIDO (2026-08-26): parar volta para a palavra inicial
 
@@ -251,21 +280,19 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=24`, `leitura_texto.js?v=19` e `forum.css?v=15`
+   versões novas são `speech.js?v=25`, `leitura_texto.js?v=20` e `forum.css?v=15`
    (se o navegador mostrar outra coisa, é cache).
-2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata
-   destacada avança no ritmo da leitura — calibrada pela duração real, com 92%
-   da velocidade para nunca ficar à frente) e PAUSAR/PARAR (o destaque FICA na
-   palavra atual, não volta ao início). Clicar num parágrafo deve PULAR para
-   dali (não reiniciar).
-3. Se o ritmo ainda ficar adiantado, reduzir `_velocidadePadrao` (já 11) ou o
-   fator 0.92 no speech.js.
-4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo**. Ao fazer
-   `speechSynthesis.cancel()` para pular, usar flag `_puloManual`. O charIndex
-   do onboundary é da FALA (transliterada) — converter com o mapa. `onboundary`
-   NÃO é confiável — ter fallback por tempo. Relógio por tempo CONGELA quando o
-   áudio não toca. E em funções que "congelam" estado, calcular o valor ANTES
-   de mudar a flag (auto-referência → voltava ao início).
+2. **Testar no navegador real**: clicar "Ouvir" na barra — o destaque agora
+   avança **por frase, ancorado no fim real de cada frase** (o `onend`), então
+   está sempre sincronizado com a leitura, seja qual for o ritmo da voz.
+   Pausar/Parar → fica na frase atual. Clicar num parágrafo → pula para dali.
+   Se o navegador disparar `onboundary`, o destaque ainda refina palavra a
+   palavra (bônus); senão, fica por frase (perfeito).
+3. Lembrete técnico: **para acompanhar leitura em voz, segmentar por FRASE e
+   ancorar o avanço no `onend` real** — nunca estimar ritmo por tempo (o
+   português tem cadência variável). `onboundary` (palavra) é bônus, não
+   confiável em todos os navegadores. E **NUNCA duplicar `function`** no mesmo
+   escopo (2ª sobrescreve a 1ª).
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
