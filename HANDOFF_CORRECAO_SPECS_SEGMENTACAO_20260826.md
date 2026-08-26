@@ -76,9 +76,24 @@ original japonês (お伺/御垂示, 「」, ――); build adaptado (`_turn_cla
 - Seção 'Vila Tamagawa' (>3200 chars) subdividida em 2 partes.
 - PT e JP **51/51** segmentam, pareamento mantido.
 
-### ⏳ Montanha e Água (PENDENTE)
-- Corpo PT tem ~40 seções temáticas por TEMA (A Primavera Passou, Sol e Lua...).
-- Atualmente 222 `session` por data → reestruturar por tema.
+### ✅ Montanha e Água (FEITO)
+- Reestruturado de 224 sessões (por data) → **246 artigos** (245 seções temáticas).
+- JP como referência (247 títulos); seção "Luz" do PT subdividida (Luz + 乾坤山).
+- Seção 'Crônica de Viagem a Awa' (>3200 chars) subdividida em 2 partes.
+- PT e JP **246/246** segmentam, pareamento mantido.
+
+## ✅ OPÇÃO C COMPLETA (3 poemas)
+| Livro | Artigos | PT | JP |
+|---|---|---|---|
+| Salmos | 41 | 41/41 | 41/41 |
+| Akemaro | 51 | 51/51 | 51/51 |
+| Montanha e Água | 246 | 246/246 | 246/246 |
+
+## Estado FINAL (26/08, fim da sessão 3)
+- **PT: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
+- **JP: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
+- **Nenhuma quebra real restante em PT ou JP.**
+- Próximo passo: rebuild final `build_clean_large_indexes.py --lang both`.
 
 ### Corrigidos nesta sessão (26 arquivos PT):
 Mioshie nº 11, 6, 2, 20, 26, 32, 33 | Fonte do Riso | Jikan Vol 4, 7 |
