@@ -48,7 +48,29 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=19`, `leitura_texto.js?v=14`, `forum.css?v=14`, `app.css?v=160`.
+- `speech.js?v=20`, `leitura_texto.js?v=15`, `forum.css?v=14`, `app.css?v=160`.
+
+## 3b. PROBLEMA 3 RESOLVIDO (2026-08-25 fim): DESCOMPASSO do destaque
+
+**Sintoma do usuário**: o destaque existia mas estava "lento, descompassado" —
+só mudava ENTRE trechos (a cada onend). Como cada trecho tem ~1800 chars
+(≈ vários parágrafos, ~1-2 min de fala), a marcação ficava presa no 1º parágrafo
+do trecho por muito tempo.
+
+**Correção** (cache v=20/v=15) — acompanhamento INTRATrecho via `onboundary`:
+1. `speech.js` — `utterance.onboundary` (a Web Speech API dispara por palavra,
+   com `charIndex` exato dentro do trecho) → `_notificarPosicao(indice, charIndex)`.
+   Novas APIs: `registrarCallbackPosicao(fn)` e `posicaoCharAtual()`.
+   Variável global `_charIndexAtual` (resetada em `falarDe`/`pularPara`).
+2. `leitura_texto.js` — `acharParagrafoPorPosicao(fila, paragrafos, indice,
+   charIndex)`: converte a posição global (início do trecho + charIndex) no
+   parágrafo cujo intervalo contém aquele caractere. O callback de posição
+   chama `destacarTrecho(indice, charIndex)` → destaque acompanha o áudio
+   palavra a palavra.
+
+**Validação** (mock com `onboundary`): dentro do MESMO trecho 0, o destaque
+avançou parágrafo 0 → 2 → 5 → 7 (progressão contínua). Clique no par 70 →
+posição 16, destaque no par 69 (não reiniciou).
 
 ## 3a. RESOLUÇÃO DEFINITIVA (2026-08-25) — CAUSA RAIZ REAL encontrada
 
@@ -128,14 +150,14 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=19` e `leitura_texto.js?v=14` (se o navegador
+   versões novas são `speech.js?v=20` e `leitura_texto.js?v=15` (se o navegador
    mostrar outra coisa, é cache).
 2. **Testar no navegador real**: clicar "Ouvir" na barra (destaque deve
-   acompanhar + scroll) e clicar num parágrafo (deve PULAR para dali, não
-   reiniciar) — tanto lendo quanto parado.
-3. Se ainda falhar: pedir **console do navegador (F12 → Console)** com os erros
-   ao clicar em "Ouvir" e ao clicar num parágrafo. Verificar que as URLs dos
-   scripts são `?v=19` e `?v=14`.
+   acompanhar suavemente, palavra a palavra) e clicar num parágrafo (deve PULAR
+   para dali, não reiniciar) — tanto lendo quanto parado.
+3. Se ainda houver descompasso: verificar se o navegador dispara `onboundary`
+   (a maioria dispara; alguns só entre frases). Se não disparar, o polling de
+   300ms (safety net) ainda destaca por trecho.
 4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo** (a 2ª
    sobrescreve a 1ª — foi a causa do "não acompanha"). E ao fazer
    `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional
