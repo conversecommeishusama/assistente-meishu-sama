@@ -28,58 +28,97 @@ TARGET_DIR = PROJECT_ROOT / "experiments" / "uploaded_indexes"
 MODEL_NAME = "intfloat/multilingual-e5-large"
 SEGMENTACAO_MANUAL_DIR = PROJECT_ROOT / "reports" / "livros_trabalho" / "segmentacao_manual"
 
+# Mapeamento PT-novo -> JP-antigo (renomeação de arquivos PT, 2026-08-13).
+# O PT foi renomeado para nomes portugueses; o JP mantém os nomes originais.
+# O emparelhamento PT<->JP no rebuild usa ESTE mapeamento, não nome igual.
+# Formato: {nome_novo_pt: nome_antigo_jp, ...}
+RENOMEACAO_MAPA_PATH = PROJECT_ROOT / "reports" / "varredura_padronizacao" / "MAPEAMENTO_RENOMEACAO_TXT.json"
+RENOMEACAO_PT_PARA_JP: dict[str, str] = {}
+if RENOMEACAO_MAPA_PATH.exists():
+    try:
+        for item in json.loads(RENOMEACAO_MAPA_PATH.read_text(encoding="utf-8")):
+            RENOMEACAO_PT_PARA_JP[item["novo"]] = item["antigo"]
+    except Exception:
+        RENOMEACAO_PT_PARA_JP = {}
+# Inverso: JP-antigo -> PT-novo
+RENOMEACAO_JP_PARA_PT: dict[str, str] = {v: k for k, v in RENOMEACAO_PT_PARA_JP.items()}
+
+
+def _par_emparelhado(lang: str, nome: str) -> Path | None:
+    """Encontra o par (PT<->JP) para um arquivo, usando o mapeamento de renomeação."""
+    par_dir = JP_DIR if lang == "pt" else PT_DIR
+    if lang == "pt":
+        # PT (nome novo) -> par JP (nome antigo)
+        jp_nome = RENOMEACAO_PT_PARA_JP.get(nome)
+        if jp_nome:
+            p = par_dir / jp_nome
+            return p if p.exists() else None
+        # fallback: nome igual (periódicos que não mudaram)
+        p = par_dir / nome
+        return p if p.exists() else None
+    else:
+        # JP (nome antigo) -> par PT (nome novo)
+        pt_nome = RENOMEACAO_JP_PARA_PT.get(nome)
+        if pt_nome:
+            p = par_dir / pt_nome
+            return p if p.exists() else None
+        # fallback: nome igual
+        p = par_dir / nome
+        return p if p.exists() else None
+
+
 
 JA_TO_PT_TERMS = [
-    ("革命的増産の自然農法解説", "Agricultura Natural Revolucionaria"),
-    ("浄 霊法講座", "Curso de Johrei"),
-    ("御光話録", "Gosuiji-roku"),
+    ("革命的増産の自然農法解説", "Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção"),
+    ("浄 霊法講座", "Curso do Método de Johrei"),
+    ("御光話録", "Gokōwa-roku"),
     ("御垂示録", "Gosuiji-roku"),
-    ("御教え集", "Coletanea de Ensinamentos"),
+    ("御教え集", "Mioshie-shū"),
     ("御教え", "Ensinamento"),
-    ("御讃歌集", "Coletanea de Salmos"),
-    ("信仰雑話", "Conversas sobre a Fe"),
-    ("天国の福音書", "Evangelho do Reino dos Ceus"),
-    ("天国の福音", "Evangelho do Reino dos Ceus"),
+    ("御讃歌集", "Coletânea de Salmos"),
+    ("信仰雑話", "Conversas sobre a Fé"),
+    ("天国の福音書", "Evangelho do Reino dos Céus"),
+    ("天国の福音", "Evangelho do Reino dos Céus"),
     ("アメリカを救う", "Salvando os Estados Unidos"),
-    ("世界救世教奇蹟集", "Relatos de Milagres da Igreja Messianica Mundial"),
-    ("世界救世教奇跡集", "Relatos de Milagres da Igreja Messianica Mundial"),
-    ("世界救世教早わかり", "Guia Rapido da Igreja Messianica Mundial"),
-    ("世界メシヤ教手引", "Manual da Igreja Messianica Mundial"),
-    ("世界救世教教義解説", "Explicacao da Doutrina da Igreja Messianica Mundial"),
-    ("世界救世教教義", "Doutrina da Igreja Messianica Mundial"),
-    ("結核信仰療法", "Terapia de Fe para Tuberculose"),
-    ("結核の革命的療法", "Terapia Revolucionaria da Tuberculose"),
-    ("浄霊法講座", "Curso de Johrei"),
-    ("自然農法解説", "Explicacao da Agricultura Natural"),
-    ("観音講座", "Curso sobre Kannon"),
-    ("御光話録（補）", "Gosuiji-roku Suplemento"),
+    ("世界救世教奇蹟集", "Relatos de Milagres da Igreja Messiânica Mundial"),
+    ("世界救世教奇跡集", "Relatos de Milagres da Igreja Messiânica Mundial"),
+    ("世界救世教早わかり", "Guia Rápido da Igreja Messiânica Mundial"),
+    ("世界メシヤ教手引", "Manual da Igreja Messiânica Mundial"),
+    ("世界救世教教義解説", "Explicação da Doutrina da Igreja Messiânica Mundial"),
+    ("世界救世教教義", "Doutrina da Igreja Messiânica Mundial"),
+    ("結核信仰療法", "Terapia de Fé para Tuberculose"),
+    ("結核の革命的療法", "Terapia Revolucionária da Tuberculose"),
+    ("浄霊法講座", "Curso do Método de Johrei"),
+    ("自然農法解説", "Explicação da Agricultura Natural"),
+    ("観音講座", "Curso Kannon"),
+    ("御光話録（補）", "Gokowa-roku Suplemento"),
     ("教えの光", "Luz dos Ensinamentos"),
-    ("地上天国出来るまで", "Ate a Construcao do Paraiso Terrestre"),
-    ("法難手記", "Memorias da Perseguicao Religiosa"),
+    ("地上天国出来るまで", "Até a Construção do Paraíso Terrestre"),
+    ("法難手記", "Memórias da Perseguição Religiosa"),
     ("笑の泉", "Fonte do Riso"),
-    ("一信者の告白", "Confissao de um Fiel"),
-    ("新しき暴力", "Nova Violencia"),
-    ("或る日の公判スケッチ", "Esboco de um Julgamento"),
-    ("山と水", "Montanha e Agua"),
+    ("一信者の告白", "Confissão de um Fiel"),
+    ("新しき暴力", "Nova Violência"),
+    ("或る日の公判スケッチ", "Esboço de um Dia de Julgamento"),
+    ("山と水", "Montanha e Água"),
     ("明麿近詠集", "Poemas Recentes de Akemaro"),
-    ("奇蹟物語", "Historias de Milagres"),
+    ("奇蹟物語", "Histórias de Milagres"),
     ("霊界叢談", "Conversas sobre o Mundo Espiritual"),
-    ("無肥料栽培法", "Metodo de Cultivo sem Fertilizantes"),
+    ("無肥料栽培法", "Método de Cultivo sem Fertilizantes"),
     ("結核と神霊療法", "Tuberculose e Terapia Espiritual"),
-    ("基仏と観音教", "Cristo, Buda e a Fe Kannon"),
+    ("基仏と観音教", "Cristo, Buda e a Fé Kannon"),
     ("怪物か聖者か", "Monstro ou Santo"),
     ("光への道", "Caminho para a Luz"),
-    ("神示の健康法", "Metodo de Saude por Revelacao Divina"),
-    ("神示の病理", "Patologia por Revelacao Divina"),
-    ("自観説話集", "Coletanea de Narrativas Jikan"),
-    ("自観隨談", "Dialogos Jikan"),
-    ("自観叢書", "Colecao Jikan"),
+    ("神示の健康法", "Método de Saúde por Revelação Divina"),
+    ("神示の病理", "Patologia por Revelação Divina"),
+    ("自観説話集", "Coletânea de Narrativas Jikan"),
+    ("自観隨談", "Diálogos Jikan"),
+    ("自観叢書", "Coleção Jikan"),
     ("基督と自観師", "Cristo e Mestre Jikan"),
-    ("世界の六大神秘家", "Os Seis Grandes Misticos do Mundo"),
-    ("天国の花", "Flores do Paraiso"),
+    ("世界の六大神秘家", "Os Seis Grandes Místicos do Mundo"),
+    ("天国の花", "Flores do Paraíso"),
     ("明主様御言葉", "Palavras de Meishu-Sama"),
-    ("水晶殿御遷座", "Transferencia ao Templo de Cristal"),
-    ("ハワイ教会落成式に賜った御言葉", "Palavras na Cerimonia da Igreja do Havai"),
+    ("水晶殿御遷座", "no Palácio de Cristal"),
+    ("ハワイ教会落成式に賜った御言葉", "Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí"),
 ]
 
 SOURCE_CATEGORY_RULES = [
@@ -129,6 +168,15 @@ def has_japanese(text: str) -> bool:
 
 def translate_filename_to_pt(filename: str) -> str:
     stem = strip_extension(filename)
+    # Proteção contra dupla tradução: se o nome já está em português (sem
+    # caracteres japoneses), NÃO re-traduzir -- re-processar um nome PT (ex:
+    # "Gokōwa-roku nº 1") geraria corrupção (ex: "no nº"). Retorna como está,
+    # apenas garantindo o formato data - Nome.
+    if not has_japanese(stem):
+        m = re.match(r"^(\d{8}|\d{4}0000)\s*-\s*(.*)$", stem)
+        if m:
+            return normalize_spaces(f"{m.group(1)} - {m.group(2)}")
+        return normalize_spaces(stem)
     stem = stem.replace("未刊行", "Inedito")
     date = ""
     rest = stem
@@ -138,15 +186,15 @@ def translate_filename_to_pt(filename: str) -> str:
     translated = rest
     replacements = {
         "補": "Suplemento",
-        "地上天国と自然栽培の巻": "Paraiso Terrestre e Agricultura Natural",
+        "地上天国と自然栽培の巻": "Paraíso Terrestre e Agricultura Natural",
         "海外入信者のために": "para adeptos do exterior",
-        "薬理批判": "Critica da Farmacologia",
-        "結核、喘息、心臓関係の症状について": "Tuberculose, Asma e Sintomas Cardiacos",
-        "薬毒病について": "Sobre Doencas por Toxinas Medicamentosas",
+        "薬理批判": "Crítica da Farmacologia",
+        "結核、喘息、心臓関係の症状について": "Tuberculose, Asma e Sintomas Cardíacos",
+        "薬毒病について": "Sobre Doenças por Toxinas Medicamentosas",
         "婦人科": "Ginecologia",
-        "胃・腸疾患": "Doencas do Estomago e Intestino",
-        "頭　部": "Cabeca",
-        "頭 部": "Cabeca",
+        "胃・腸疾患": "Doenças do Estômago e Intestino",
+        "頭　部": "Cabeça",
+        "頭 部": "Cabeça",
         "眼・耳・鼻・咽喉・歯科": "Olhos, Ouvidos, Nariz, Garganta e Odontologia",
     }
     for source, target in replacements.items():
@@ -158,11 +206,38 @@ def translate_filename_to_pt(filename: str) -> str:
     translated = translated.replace("号", "")
     translated = re.sub(r"第\s*(\d+)\s*篇", r" Volume \1 ", translated)
     translated = re.sub(r"[（(]\s*[一二三四五六七八九十]\s*[)）]", " ", translated)
-    translated = re.sub(r"(Curso de Johrei)\s+\1", r"\1", translated)
-    translated = re.sub(r"(Curso de Johrei)\s*nº\s*(\d+)", r"\1 nº \2", translated)
-    translated = re.sub(r"(\d+)\s*$", r"nº \1", translated)
-    translated = re.sub(r"([A-Za-zÀ-ÿ])n[oº]\s+(\d+)", r"\1 nº \2", translated)
+    # NFKC no início (antes das conversões de nº) para não converter º em o
     translated = unicodedata.normalize("NFKC", translated)
+    # Colagem "Johrei4" -> "Johrei nº 4" (antes da reordenação do subtema)
+    translated = re.sub(r"Johrei\s*(\d+)", r"Johrei nº \1", translated)
+    # Dedup adjacente ANTES da reordenação:
+    # "Curso <X> de Johrei  Curso <X> de Johrei nº N" -> "Curso <X> de Johrei nº N"
+    translated = re.sub(
+        r"(Curso (?:do Método )?de Johrei)\s+\1(?: nº (\d+))?",
+        lambda m: (m.group(1) + " nº " + m.group(2)) if m.group(2) else m.group(1),
+        translated,
+    )
+    # Reordena a duplicação: "Curso <de/do Método> de Johrei <subtema> ... Johrei nº N"
+    # -> "Curso do Método de Johrei nº N <subtema>"
+    translated = re.sub(
+        r"Curso do Método de Johrei\s+(.+?)\s*Curso do Método de Johrei nº\s*(\d+)",
+        r"Curso do Método de Johrei nº \2 \1",
+        translated,
+    )
+    translated = re.sub(
+        r"Curso de Johrei\s+(.+?)\s*Curso de Johrei nº\s*(\d+)",
+        r"Curso de Johrei nº \2 \1",
+        translated,
+    )
+    # Remove duplicação residual
+    translated = re.sub(r"Curso (?:do Método )?de Johrei\s+(nº\s*\d+)\s*$", r"Curso do Método de Johrei \1", translated)
+    translated = re.sub(r"(Curso (?:do Método )?de Johrei)nº\s*(\d+)\s*Curso", r"\1 nº \2 Curso", translated)
+    # Colagem "shū6" -> "shū 6" (espaço antes de número final após letra)
+    translated = re.sub(r"([A-Za-zÀ-ÿōū])(\d+)\s*$", r"\1 \2", translated)
+    # Converte número solto no fim em "nº N", MAS sem duplicar se já houver "nº"
+    # antes (ex.: "Johrei nº 2" não vira "Johrei nº nº 2").
+    translated = re.sub(r"(?<!nº )(?<!nº)(\d+)\s*$", r"nº \1", translated)
+    translated = re.sub(r"([A-Za-zÀ-ÿ])n[oº]\s+(\d+)", r"\1 nº \2", translated)
     translated = normalize_spaces(translated.strip("- ,"))
     if not translated:
         translated = rest or stem
@@ -226,25 +301,65 @@ PUBLICATION_METADATA_PREFIXES = (
 
 SPEAKER_LABEL_RE = re.compile(r"^(Interlocutor|Meishu-Sama):\s*", re.MULTILINE)
 
+# Rótulos de turno no formato ORIGINAL japonês (anteriores à rotulagem Fase 5,
+# que os converteu para latim). A Opção D (2026-08-26) restaurou os textos JP
+# para o formato original; o build precisa reconhecer AMBOS os formatos para
+# manter a segmentação turn-aware sem quebrar nada.
+#   - 御教え集 (Mioshie-shū): pergunta = "（お伺）..." / resposta = "〔御垂示〕..."
+#   - 御垂示録 (Gosuiji-roku): pergunta = parágrafo entre aspas "「...」" no início
+#   - 御光話録 (Gokōwa-roku): pergunta = parágrafo que começa com "――"
+# A resposta dos dois últimos é o parágrafo seguinte (texto corrido sem rótulo).
+JP_QUESTION_MARKERS = ("（お伺", "〔御垂示〕", "――", "「")
+JP_ANSWER_MARKERS = ("〔御垂示〕", "【御教え】")
+
+
+def _turn_class(paragraph: str) -> str | None:
+    """Classifica um parágrafo como 'question', 'answer' ou None (neutro).
+
+    Reconhece os rótulos latinos (Fase 5) e os japoneses originais (Opção D).
+    Um parágrafo pode abrir com vários marcadores sobrepostos (ex.: uma
+    resposta que é também uma citação "「...」"); a prioridade é: rótulo
+    latino > 〔御垂示〕/【御教え】 (resposta explícita) > （お伺 (pergunta
+    explícita) > 「 (pergunta entre aspas) > ―― (pergunta com travessão).
+    """
+    s = paragraph.lstrip()
+    if s.startswith("Interlocutor:"):
+        return "question"
+    if s.startswith("Meishu-Sama:"):
+        return "answer"
+    # marcadores japoneses
+    if s.startswith("〔御垂示〕") or s.startswith("【御教え】"):
+        return "answer"
+    if s.startswith("（お伺"):
+        return "question"
+    # 御垂示録/御光話録: pergunta entre aspas ou com travessão no início
+    if s.startswith("「") and "」" in s:
+        return "question"
+    if s.startswith("――"):
+        return "question"
+    return None
+
 
 def _group_into_turn_units(paragraphs: list[str]) -> list[str]:
     """Agrupa parágrafos em unidades atômicas de corte (Fase 5, 2026-07-14).
 
-    Cada unidade cobre de um rótulo 'Interlocutor:' até (mas sem incluir) o
-    próximo 'Interlocutor:' -- ou seja, a pergunta e toda a resposta de
-    Meishu-Sama que a segue (inclusive continuações sem rótulo próprio)
-    nunca podem ser separadas em pedaços diferentes por split_chunks_by_size;
-    o corte por tamanho só pode cair ENTRE unidades, nunca dentro de um par
-    pergunta/resposta. Fora de um trecho de diálogo rotulado (a maioria do
-    acervo não usa esses rótulos), cada parágrafo continua sendo sua própria
-    unidade -- comportamento idêntico ao anterior, sem efeito nesses livros.
+    Cada unidade cobre de um rótulo 'Interlocutor:'/'（お伺）' até (mas sem
+    incluir) o próximo rótulo de pergunta -- ou seja, a pergunta e toda a
+    resposta de Meishu-Sama que a segue (inclusive continuações sem rótulo
+    próprio) nunca podem ser separadas em pedaços diferentes por
+    split_chunks_by_size; o corte por tamanho só pode cair ENTRE unidades,
+    nunca dentro de um par pergunta/resposta. Fora de um trecho de diálogo
+    rotulado (a maioria do acervo não usa esses rótulos), cada parágrafo
+    continua sendo sua própria unidade -- comportamento idêntico ao
+    anterior, sem efeito nesses livros.
     """
     units: list[list[str]] = []
     in_dialogue = False
     expecting_answer = False
     for paragraph in paragraphs:
-        is_question = paragraph.startswith("Interlocutor:")
-        is_answer_label = paragraph.startswith("Meishu-Sama:")
+        cls = _turn_class(paragraph)
+        is_question = cls == "question"
+        is_answer_label = cls == "answer"
         if is_question or is_answer_label:
             in_dialogue = True
         if is_question:
@@ -528,9 +643,15 @@ def clean_body(text: str) -> str:
 
 
 def _load_spec_for(original_filename: str) -> dict | None:
+    # tenta o nome direto primeiro
     spec_path = SEGMENTACAO_MANUAL_DIR / f"{original_filename}.json"
     if not spec_path.exists():
-        return None
+        # JP (nome antigo) -> tenta o nome PT novo via mapeamento
+        pt_nome = RENOMEACAO_JP_PARA_PT.get(original_filename)
+        if pt_nome:
+            spec_path = SEGMENTACAO_MANUAL_DIR / f"{pt_nome}.json"
+        if not spec_path.exists():
+            return None
     try:
         return json.loads(spec_path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
@@ -680,8 +801,9 @@ def collect_entries():
     entries = []
     for lang, directory, paired_directory in (("pt", PT_DIR, JP_DIR), ("jp", JP_DIR, PT_DIR)):
         for path in sorted(directory.glob("*.txt")):
-            paired = paired_directory / path.name
-            paired_path = paired if paired.exists() else None
+            # Emparelhamento PT<->JP via mapeamento de renomeação (PT tem nomes
+            # novos, JP mantém nomes originais). Fallback: nome igual.
+            paired_path = _par_emparelhado(lang, path.name)
             spec = _load_spec_for(path.name)
             article_entries = article_entries_from_spec(path, lang, paired_path, spec) if spec else None
             if article_entries:
