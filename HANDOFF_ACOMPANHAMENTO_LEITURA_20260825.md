@@ -48,7 +48,35 @@ Na Leitura Colaborativa, o usuário pediu:
 - `templates/leitura_texto.html` — barra fixa + modal.
 
 ### Cache busts atuais (importante para debug)
-- `speech.js?v=22`, `leitura_texto.js?v=18`, `forum.css?v=15`, `app.css?v=160`.
+- `speech.js?v=23`, `leitura_texto.js?v=19`, `forum.css?v=15`, `app.css?v=160`.
+
+## 3e. PROBLEMA 6 RESOLVIDO (2026-08-26): avanço "de acordo com a leitura"
+
+**Sintoma do usuário**: "avança mais rápido que o áudio e de forma independente;
+quando parei o áudio, ele continuou avançando. Não tem como ser de acordo com a
+leitura?"
+
+**Correção** (cache v=23/v=19) — 3 frentes:
+1. **Velocidade calibrada pela DURAÇÃO REAL** (não chute fixo): `utterance.onstart`
+   marca o início; `onend` mede a duração REAL do trecho e guarda em
+   `_duracaoTrechoMs`. `_velocidadeEfetiva()` = trechoLen / (duracaoMs/1000).
+   O trecho seguinte avança na velocidade REAL da voz (se a voz lê devagar,
+   o destaque acompanha devagar).
+2. **Congela na pausa/parada**: `_congelarRelogio()` (captura char atual,
+   `_relogioPausado=true`); `_descongelarRelogio()` no resume (continua de onde
+   parou). Chamado no pause do botão E no `pararLeitura()` (antes do cancel).
+3. **Polling só avança se o áudio toca**: no `leitura_texto.js`, se
+   `!synth.speaking && !synth.paused` → congela o destaque (não "anda sozinho"
+   quando o áudio está travado/parado).
+
+**Validação** (mock que respeita `speaking`/`paused`): durante leitura, char
+avançou 21 em ~2s (≈10 chars/s); ao PAUSAR, `congelou: true` (char não avançou
+em 1.5s) e a palavra "Gokōwa-roku" ficou destacada parada. Clique par 70 → pos
+16 (não reinicia).
+
+**Lição**: a estimativa por tempo é calibrada pela duração real medida a cada
+trecho — nunca usar velocidade fixa para acompanhamento de leitura; e o relógio
+deve congelar quando o áudio não está tocando.
 
 ## 3d. PROBLEMA 5 RESOLVIDO (2026-08-26): fallback por TEMPO (onboundary ausente)
 
@@ -199,21 +227,19 @@ Mock com vozes presentes; `speak()` dispara `onstart`/`onend` com timing
 
 ## 5. PRÓXIMOS PASSOS (após a correção)
 1. **Pedir ao usuário para limpar o cache (Ctrl+Shift+R)** e testar — as
-   versões novas são `speech.js?v=22`, `leitura_texto.js?v=18` e `forum.css?v=15`
+   versões novas são `speech.js?v=23`, `leitura_texto.js?v=19` e `forum.css?v=15`
    (se o navegador mostrar outra coisa, é cache).
-2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata sendo
-   lida fica destacada em dourado escuro e AVANÇA pelo tempo, mesmo que o
-   navegador não dispare onboundary) e clicar num parágrafo (deve PULAR para
-   dali, não reiniciar) — tanto lendo quanto parado.
-3. Se a velocidade do destaque por tempo ficar fora do ritmo do áudio, ajustar
-   `_estimativaVelocidade` no speech.js (~14 chars/s padrão; o onboundary real,
-   quando dispara, recalibra automaticamente).
-4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo** (a 2ª
-   sobrescreve a 1ª — foi a causa do "não acompanha"). Ao fazer
-   `speechSynthesis.cancel()` para pular, usar flag de cancelamento intencional.
-   O charIndex do onboundary é da FALA (transliterada) — sempre converter com o
-   mapa. E o `onboundary` NÃO é confiável em todos os navegadores — SEMPRE ter o
-   fallback por tempo.
+2. **Testar no navegador real**: clicar "Ouvir" na barra (a PALAVRA exata
+   destacada avança DE ACORDO COM A LEITURA — calibrada pela duração real dos
+   trechos) e PAUSAR/PARAR (o destaque CONGELA, não avança sozinho). Clicar num
+   parágrafo deve PULAR para dali (não reiniciar).
+3. Se o ritmo ficar levemente fora (voz muito rápida/lenta), a calibração pela
+   duração real do trecho anterior já corrige automaticamente no 2º trecho.
+4. Lembrete técnico: **NUNCA duplicar `function` no mesmo escopo**. Ao fazer
+   `speechSynthesis.cancel()` para pular, usar flag `_puloManual`. O charIndex
+   do onboundary é da FALA (transliterada) — converter com o mapa. `onboundary`
+   NÃO é confiável — ter fallback por tempo. E o relógio por tempo deve
+   CONGELAR quando o áudio não está tocando (senão "anda sozinho").
 
 ## 6. ONDE ESTÁ O CÓDIGO (referência rápida)
 - Protótipo: `/var/www/goshinsho-teste/`
