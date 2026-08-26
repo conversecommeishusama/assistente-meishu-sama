@@ -1,0 +1,255 @@
+{
+ "filename": "19530600 - A Story of Ukiyo-e.txt",
+ "profile": "numbered_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 30→30. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 30,
+ "split_method": "line_csv_auto",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "A Story of Ukiyo-e",
+   "pt_anchor": "Uma História do Ukiyo-e",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "2, (Portion) Screen-painting \"Women in Merriments.\" Artist unknown.",
+   "title_pt": "",
+   "jp_anchor": "2, (Portion) Screen-painting \"Women in Merriments.\" Artist unknown.",
+   "pt_anchor": "2, (Porção) Pintura em biombo \"Mulheres em Folias\". Artista desconhecido.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "3, (Portion) Screen with paintings \"Various Professions.\" Artist unknown.",
+   "title_pt": "",
+   "jp_anchor": "3, (Portion) Screen with paintings \"Various Professions.\" Artist unknown.",
+   "pt_anchor": "3, (Porção) Biombo com pinturas \"Várias Profissões\". Artista desconhecido.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "4, Beauty of Kambun Era. Artist Jlnknown.",
+   "title_pt": "",
+   "jp_anchor": "4, Beauty of Kambun Era. Artist Jlnknown.",
+   "pt_anchor": "4, Beleza da Era Kambun. Artista desconhecido.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "5, Dancing Beauty of Kambun Era. Artist unknown.",
+   "title_pt": "",
+   "jp_anchor": "5, Dancing Beauty of Kambun Era. Artist unknown.",
+   "pt_anchor": "5, Beleza Dançante da Era Kambun. Artista desconhecido.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "6, Yang Kuei-fei (Chinese empress of T'ang Dynasty). By Iwasa Matabei.",
+   "title_pt": "",
+   "jp_anchor": "6, Yang Kuei-fei (Chinese empress of T'ang Dynasty). By Iwasa Matabei.",
+   "pt_anchor": "6, Yang Kuei-fei (imperatriz chinesa da Dinastia Tang). Por Iwasa Matabei.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "7, (Portion) Scroll I of scroll-painting \"Horie Monogatari.\" Ascribed to Iwasa M",
+   "title_pt": "",
+   "jp_anchor": "7, (Portion) Scroll I of scroll-painting \"Horie Monogatari.\" Ascribed to Iwasa Matabei.",
+   "pt_anchor": "7, (Porção) Rolo I da pintura em rolo \"Horie Monogatari\". Atribuído a Iwasa Matabei.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "8, Street Scene at Yoshiwara. Woodcut print, by Hishiknwa Moronobu.",
+   "title_pt": "",
+   "jp_anchor": "8, Street Scene at Yoshiwara. Woodcut print, by Hishiknwa Moronobu.",
+   "pt_anchor": "8, Cena de Rua em Yoshiwara. Gravura em madeira, por Hishikawa Moronobu.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "9, Kokonoe, girl of Nishida-ya House in gay quarters of Edo. Woodcut print, by H",
+   "title_pt": "",
+   "jp_anchor": "9, Kokonoe, girl of Nishida-ya House in gay quarters of Edo. Woodcut print, by Hagawa Chinju.",
+   "pt_anchor": "9, Kokonoe, moça da Casa Nishida-ya nos bairros de prazer de Edo. Gravura em madeira, por Hagawa Chinju.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "10, Monk and Nun. Woodcut print, by Ishikawa Toyonobu.",
+   "title_pt": "",
+   "jp_anchor": "10, Monk and Nun. Woodcut print, by Ishikawa Toyonobu.",
+   "pt_anchor": "10, Monge e Freira. Gravura em madeira, por Ishikawa Toyonobu.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "11, (Portion) Hane-tsuki (Battledorc and shuttlecock). By Miyagawa Choshun.",
+   "title_pt": "",
+   "jp_anchor": "11, (Portion) Hane-tsuki (Battledorc and shuttlecock). By Miyagawa Choshun.",
+   "pt_anchor": "11, (Porção) Hane-tsuki (Peteca e raquete). Por Miyagawa Choshun.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "12, Hsuean-tsung and Yang Kuei-fei (Chinese emperor of T'ang Dynasty and his con",
+   "title_pt": "",
+   "jp_anchor": "12, Hsuean-tsung and Yang Kuei-fei (Chinese emperor of T'ang Dynasty and his consort). Woodcut print, by Suzuki Harunobu",
+   "pt_anchor": "12, Hsuean-tsung e Yang Kuei-fei (imperador chinês da Dinastia Tang e sua consorte). Gravura em madeira, por Suzuki Haru",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "13, Mitate Kanzan Jittoku (two girls, in travesty of two Chinese priests, Han-sh",
+   "title_pt": "",
+   "jp_anchor": "13, Mitate Kanzan Jittoku (two girls, in travesty of two Chinese priests, Han-shan and Shih-te). Woodcut print, by Suzuk",
+   "pt_anchor": "13, Mitate Kanzan Jittoku (duas moças, em paródia de dois sacerdotes chineses, Han-shan e Shih-te). Gravura em madeira, ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "14, Weaving. Woodcut print, by Suzuki Harunobu.",
+   "title_pt": "",
+   "jp_anchor": "14, Weaving. Woodcut print, by Suzuki Harunobu.",
+   "pt_anchor": "14, Tecelagem. Gravura em madeira, por Suzuki Harunobu.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "15, Beauties on the Shore. Woodcut print, by Suzuki Harunobu.",
+   "title_pt": "",
+   "jp_anchor": "15, Beauties on the Shore. Woodcut print, by Suzuki Harunobu.",
+   "pt_anchor": "15, Belezas na Praia. Gravura em madeira, por Suzuki Harunobu.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "16, A Couple. Woodcut print, by Isoda Koryusai.",
+   "title_pt": "",
+   "jp_anchor": "16, A Couple. Woodcut print, by Isoda Koryusai.",
+   "pt_anchor": "16, Um Casal. Gravura em madeira, por Isoda Koryusai.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "17, Shio-kumi (\"Drawing Sea-water,\" a dance). Woodcut print, by Katsukawa Shunsh",
+   "title_pt": "",
+   "jp_anchor": "17, Shio-kumi (\"Drawing Sea-water,\" a dance). Woodcut print, by Katsukawa Shunsho.",
+   "pt_anchor": "17, Shio-kumi (\"Extraindo Água do Mar\", uma dança). Gravura em madeira, por Katsukawa Shunsho.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "18, Actor Ichikawa Monnosuke: from the series \"Azuma Ogi.\" Woodcut print, by Kat",
+   "title_pt": "",
+   "jp_anchor": "18, Actor Ichikawa Monnosuke: from the series \"Azuma Ogi.\" Woodcut print, by Katsukawa Shunsho.",
+   "pt_anchor": "18, Ator Ichikawa Monnosuke: da série \"Azuma Ogi\". Gravura em madeira, por Katsukawa Shunsho.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "19, CoolEvening by Riverside at Shijo. Woodcut print, by Tori-i Kiyonaga.",
+   "title_pt": "",
+   "jp_anchor": "19, CoolEvening by Riverside at Shijo. Woodcut print, by Tori-i Kiyonaga.",
+   "pt_anchor": "19, Noite Fresca à Beira do Rio em Shijo. Gravura em madeira, por Tori-i Kiyonaga.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "20, Mono-omou Koi (Love in Reverie): from the series \"Kasen Koi-no-bu.\" Woodcut ",
+   "title_pt": "",
+   "jp_anchor": "20, Mono-omou Koi (Love in Reverie): from the series \"Kasen Koi-no-bu.\" Woodcut print, by Kitagawa Utamaro.",
+   "pt_anchor": "20, Mono-omou Koi (Amor em Devaneio): da série \"Kasen Koi-no-bu\". Gravura em madeira, por Kitagawa Utamaro.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "21, Beauty Bathing. By Kitagawa Utamaro.",
+   "title_pt": "",
+   "jp_anchor": "21, Beauty Bathing. By Kitagawa Utamaro.",
+   "pt_anchor": "21, Beleza Banhando-se. Por Kitagawa Utamaro.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "22, Nine Beauties by the Round Window. By Hosoda (Chobunsai) Eishi.",
+   "title_pt": "",
+   "jp_anchor": "22, Nine Beauties by the Round Window. By Hosoda (Chobunsai) Eishi.",
+   "pt_anchor": "22, Nove Belezas pela Janela Redonda. Por Hosoda (Chobunsai) Eishi.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "23, Beauties. By Hosoda (Chobunsai) Eishi.",
+   "title_pt": "",
+   "jp_anchor": "23, Beauties. By Hosoda (Chobunsai) Eishi.",
+   "pt_anchor": "23, Belezas. Por Hosoda (Chobunsai) Eishi.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "24, Ko-no-Moronao (a character in a Kabuki drama). Woodcut print, by Katsukawa S",
+   "title_pt": "",
+   "jp_anchor": "24, Ko-no-Moronao (a character in a Kabuki drama). Woodcut print, by Katsukawa Shun-ei.",
+   "pt_anchor": "24, Ko-no-Moronao (um personagem de um drama Kabuki). Gravura em madeira, por Katsukawa Shun-ei.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "25, Actor Otani Oniji as Edohei. Woodcut print, by Toshusai Sharaku.",
+   "title_pt": "",
+   "jp_anchor": "25, Actor Otani Oniji as Edohei. Woodcut print, by Toshusai Sharaku.",
+   "pt_anchor": "25, Ator Otani Oniji como Edohei. Gravura em madeira, por Toshusai Sharaku.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "27, Actors on Stage. Aseries of woodcut prints, by Utagawa Toyokuni.",
+   "title_pt": "",
+   "jp_anchor": "27, Actors on Stage. Aseries of woodcut prints, by Utagawa Toyokuni.",
+   "pt_anchor": "27, Atores no Palco. Uma série de gravuras em madeira, por Utagawa Toyokuni.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "28, Landscape. By Katsushika Hokusai.",
+   "title_pt": "",
+   "jp_anchor": "28, Landscape. By Katsushika Hokusai.",
+   "pt_anchor": "28, Paisagem. Por Katsushika Hokusai.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "29, Mt. Fuji Reflected in Water at Misaka in Kai Province: from the series \"Thir",
+   "title_pt": "",
+   "jp_anchor": "29, Mt. Fuji Reflected in Water at Misaka in Kai Province: from the series \"Thirty-six Views of Mt. Fuji.\" Woodcut print",
+   "pt_anchor": "29, Monte Fuji Refletido na Água em Misaka, na Província de Kai: da série \"Trinta e Seis Vistas do Monte Fuji\". Gravura ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "30, Seba: from the series \"Sixty-nine Stages on the Kiso Kaido Highway.\" Woodcut",
+   "title_pt": "",
+   "jp_anchor": "30, Seba: from the series \"Sixty-nine Stages on the Kiso Kaido Highway.\" Woodcut print, by Ando Hiroshige.",
+   "pt_anchor": "30, Seba: da série \"Sessenta e Nove Estações na Estrada Kiso Kaido\". Gravura em madeira, por Ando Hiroshige.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "31, Night Scene at Saruwaka-cho: from the series \"Hundred Famous Places in Edo.\"",
+   "title_pt": "",
+   "jp_anchor": "31, Night Scene at Saruwaka-cho: from the series \"Hundred Famous Places in Edo.\" Woodcut print, by Ando Hiroshige.",
+   "pt_anchor": "31, Cena Noturna em Saruwaka-cho: da série \"Cem Lugares Famosos em Edo\". Gravura em madeira, por Ando Hiroshige.",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

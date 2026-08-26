@@ -1,0 +1,139 @@
+{
+  "filename": "19530505-革命的増産の自然農法解説.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura real e integral do JP (1797 linhas) e do PT (536 linhas, agora ~536 após correções) do início ao fim, em blocos sucessivos de ~30-150 linhas cada, confrontando o conteúdo real (não apenas contagem) na mesma ordem. Cobertura: 100% do volume, do prefácio ao colofão final, incluindo o relatório técnico do engenheiro Kanazaki (tabela de medições), a mesa-redonda de Sado, a mesa-redonda de Ino, e os ~190+ testemunhos individuais numerados que compõem o grosso do livro. Não é amostragem: as 206 unidades do spec foram percorridas em sequência via leitura direta do corpo dos dois ficheiros.",
+  "pre_existing_context": "Alerta inicial do usuário: razão de linhas JP:PT ~3.4:1 (1797:536), tamanho grande (206 artigos no spec). Livros irmãos desta era mostraram colapso de formatação combinado com conteúdo perdido.",
+  "conclusao_sobre_razao_de_linhas": {
+    "causa_real": "Artefacto de formatação do ficheiro de trabalho, não perda de conteúdo. O JP quebra cada campo de metadado dos relatórios agrícolas estruturados (ex.: '一、耕作者　XXX', '一、経営面積　XXX', cada linha de uma tabela de medições, cada réplica de diálogo nas mesas-redondas) em uma linha própria — produzindo centenas de linhas curtas só para os ~15-20 campos de cada um dos dezenas de relatórios técnicos e testemunhos. O PT, por sua vez, armazena cada testemunho/secção como um único parágrafo denso por linha (mesmo padrão observado noutros ficheiros de trabalho deste acervo). Confirmado por leitura direta: o conteúdo dos campos estruturados (datas de semeadura, colheita, pesos em kan/momme, número de perfilhos, tabelas comparativas natural vs. adubado, diálogos das mesas-redondas de Sado e de Ino) está de facto presente e traduzido no PT, apenas condensado em menos quebras de linha. Não há relação entre a razão de linhas e perda de conteúdo neste volume."
+  },
+  "summary": {
+    "articles_in_spec": 206,
+    "coverage": "leitura linear completa de JP e PT, ponta a ponta, sem amostragem",
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 1
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Testemunho de Ogawa Eitarō (小川栄太郎, 37), Presidente da Igreja Kōyō Chū, Niigata — 'Um fiel que excede a cota de fornecimento com o cultivo natural' ('Eikō' nº 79)",
+      "problema": "GRAVE (padrão 'rascunho truncado + versão completa duplicada', já catalogado em Gokōwa): o PT continha um fragmento truncado do início deste testemunho ('...Quanto ao relatório estatístico, cada membro...' cortado a meio da frase), seguido por uma cauda ERRADA colada por engano — a conclusão do testemunho ANTERIOR (Honda Toranosuke, sobre o tufão Kijiya e painço) repetida ali —, e só depois disso vinha a citação e o testemunho de Ogawa completo e correto do início ao fim (Yamagishi Shinjūrō, Yamaguchi Reiji, esposa de Watanabe Seisaku, benefícios de saúde). Ou seja, o conteúdo verdadeiro do testemunho de Ogawa NÃO estava perdido — estava duplicado, com uma cópia truncada e corrompida na frente da cópia completa e correta.",
+      "correcao": "Removido o fragmento truncado/corrompido (endereço duplicado + abertura cortada + cauda errada do testemunho anterior), mantendo apenas a citação e o testemunho completo e correto de Ogawa Eitarō.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Testemunho de Yamaguchi Toraichi (山口寅一, 37), Igreja Ōjin Chūkyōkai, Saitama — 'Vencendo a oposição dos pais, converti todo o cultivo ao Método da Agricultura Natural' ('Eikō' nº 141)",
+      "problema": "Mesmo padrão do item 1: um rascunho truncado do início do testemunho (cortado a meio da frase sobre o primeiro ano de cultivo, '...o arroz com fertilizante foi quase') seguido de uma citação corrompida ('30 de janeiro de 19--', ano incompleto) e então a versão completa e correta do mesmo testemunho do início ao fim.",
+      "correcao": "Removido o rascunho truncado e a citação corrompida, mantendo a versão completa. Nome do autor uniformizado para 'Yamaguchi Toraichi' (寅一 = Tora-ichi; a versão completa duplicada tinha erroneamente 'Yamaguchi Torakichi', e o nome da igreja também estava alterado de 'Ōjin' para 'Oshin') — corrigido usando a leitura correta preservada no próprio rascunho truncado antes de ser removido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Testemunho de Tokimoto/Shigemoto Shigetoshi (時本重敏, 39), Igreja Meirin Chū, Fukuoka — 'Obtém a honra do arroz de primeira classe do cultivo natural, com aumento anual da produção' ('Eikō' nº 198)",
+      "problema": "Erro factual/numérico: a tabela de produção anual por tan no PT trazia os anos gregorianos sistematicamente errados por +2 anos em relação ao ano Showa correspondente (Showa 24 rotulado '1951' em vez de 1949; Showa 25 rotulado '1952' em vez de 1950; Showa 26 rotulado '1953' em vez de 1951; Showa 27 rotulado '1954' em vez de 1952). As menções de ano no corpo do texto corrido (fora da tabela) estavam corretas — o erro estava isolado à tabela.",
+      "correcao": "Corrigidos os 4 anos gregorianos da tabela para 1949/1950/1951/1952, mantendo os anos Showa (corretos) e os valores de colheita (inalterados).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Testemunho de Yamaguchi Toraichi (山口寅一, 39 — segunda ocorrência do mesmo nome, testemunho distinto), Igreja Hōsei Chū, Saitama — 'Não se colhe com cultivo duplo e composto de capim verde' ('Eikō' nº 198)",
+      "problema": "Mesmo erro de romanização do item 2: 'Yamaguchi Torakichi' em vez de 'Yamaguchi Toraichi'.",
+      "correcao": "Nome corrigido para 'Yamaguchi Toraichi', consistente com a leitura correta confirmada no item 2.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Colofão final do livro (última linha do ficheiro)",
+      "problema": "Colofão incompleto no PT: faltavam a data de publicação (só tinha a data de impressão), o formato/número de páginas/aviso de não comercialização (A6, 236 págs., não à venda), o nome do autor (Okada Mokichi, fundador da Sekai Kyūsei Kyō), o nome e endereço do editor responsável (Moriyama Jitarō) e o nome da editora/corporação religiosa — todos presentes no JP mas ausentes do PT, que só tinha 'Impresso em...' e a distribuidora.",
+      "correcao": "Colofão completado com todos os campos presentes no JP (impressão, publicação, formato/páginas/não à venda, autor, editor responsável e endereço, editora/corporação religiosa, distribuidora), traduzidos ao português.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Capa/título + prefácio ('この小冊子は...')",
+      "jp_linhas": "1-28",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ensaio 'Explicação da Agricultura Natural' (princípio, efeito reverso, superstição, composto, cultivo contínuo, bicho-da-seda)",
+      "jp_linhas": "32-67",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ensaio 'A Grande Revolução Agrícola' (partes 1 e 2, benefícios econômicos, Johrei/flexão espiritual)",
+      "jp_linhas": "71-116",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Relatório técnico do eng. Kanazaki Sadao (pesquisa/crítica do método, tabela de medições de campo, seção sobre fungos de raiz/Penicillium)",
+      "jp_linhas": "119-258",
+      "decisao": "ok — todos os ~19 campos numéricos da tabela e a seção teórica de micologia do solo presentes e traduzidos",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Artigo 'Sonho? Milagre?' de Yamakawa Tatsuo + tabela estatística de 6 anos + 'Sobre o Cultivo Natural'",
+      "jp_linhas": "262-317",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mesa-redonda 'Sado, a Ilha do Cultivo Natural' (14 participantes nomeados, ~30 réplicas de diálogo)",
+      "jp_linhas": "305-448",
+      "decisao": "ok — todas as réplicas identificadas presentes e na ordem correta",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mesa-redonda com Ino Masao ('穂に穂が咲いて十八俵', ~90 réplicas de diálogo)",
+      "jp_linhas": "450-742",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Bloco (イ) + testemunhos individuais numerados (Mori Toshio, Furuzawa Kikuo, Abe Shigekichi, Tokimoto Shigetoshi, Iijima Shin'ichi, Ōmae Seijirō, Shiga Yasutarō, Motomatsu Kasaku, Kimura Takashi, Honda Toranosuke, Ogawa Eitarō)",
+      "jp_linhas": "744-1046",
+      "decisao": "ok, com correções 1 e 3 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Bloco (ロ)(ハ) + testemunhos (Ueda Tokumachi, Shigemoto/Ueda Sakae prêmios de exposição, Inoue Chiyoji, Shimonō Yasutarō, Fukuda Kumajirō, Nagaoka Seijirō, Yamaguchi Toraichi 37, Kusugai Tatsuo, Nagatomo Toshiyuki, Karasawa/Kinoshita)",
+      "jp_linhas": "1050-1532",
+      "decisao": "ok, com correção 2 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Bloco (ニ)(ホ)(ヘ)(ト) + testemunhos finais (Kusugai Tatsuo 42, Yamazaki Tōichi, Hazama Keiichirō/mikan, Yamada Kyūichi/soja e taro, Imai Kiichi/pepino, Matsubara Sachiko/taro-berinjela, Wakasugi Sue/nabo, Watanabe Tomeno/azuki, Imai Yoshimi/batata-doce, Yamaguchi Toraichi 39)",
+      "jp_linhas": "1593-1782",
+      "decisao": "ok, com correção 4 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Colofão final (ficha técnica)",
+      "jp_linhas": "1786-1797",
+      "decisao": "corrigido — colofão incompleto (correção 5 acima)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ, ratio JP/PT) deve ser rodado separadamente conforme gokowa-gate-enforcement.mdc; esta trilha documenta apenas a leitura semântica linha a linha, que é anterior e superior ao gate por contagem para efeitos de fecho do volume.",
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente concluída (2026-07-09, lote 9): pendência de nome próprio confirmada corrigida no ficheiro; pendência estrutural de anchors do spec (22 índices) resolvida e validada via dry-run real. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (instância independente, lote 9, Fase E, 2026-07-09)",
+    "achados": [
+      "Pendência do nome próprio 時本重敏 (correção 3 / pendencias_abertas): verificado diretamente no ficheiro de trabalho — já consta corretamente como 'Tokimoto Shigetoshi' (linha ~412). Tabela de anos da mesma correção também conferida e correta (1949/1950/1951/1952). Pendência fechada.",
+      "Pendência estrutural separada (não desta trilha, registada em PENDENCIAS_REVISAO.json): 22 índices do spec .txt.json com falha de ordem/ancoragem (dry-run real de apply_manual_livros_segmentacao.py falhava em PT[129]). Diagnosticados como pseudo-artigos espúrios (campos de tabela de relatório agrícola tratados como fronteiras) e consolidados de volta ao artigo anterior. Spec agora 182 artigos (era 204), dry-run --file passa sem erro do início ao fim em JP e PT."
+    ],
+    "conclusao": "Ambos os bloqueios documentados em pendencias_abertas/aprovacao estão resolvidos e verificados diretamente nos ficheiros (não apenas por relato). Recomendação de aprovação atualizada."
+  },
+  "pendencias_fechadas_2026_07_09": [
+    "Nome próprio 時本重敏: confirmado já corrigido para 'Tokimoto Shigetoshi' no ficheiro de trabalho."
+  ]
+}

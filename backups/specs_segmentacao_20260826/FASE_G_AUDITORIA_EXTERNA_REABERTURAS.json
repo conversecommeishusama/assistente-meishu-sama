@@ -1,0 +1,6 @@
+{
+  "gerado_por": "auditor externo FASE_G",
+  "gerado_em": "2026-07-15T00:00:00Z",
+  "instrucao": "Quando o auditor externo da FASE_G encontrar um desvio real de protocolo, anexa aqui (chave 'itens', nome do arquivo -> nota) antes de devolver o item ao pending do executor.",
+  "itens": {}
+}

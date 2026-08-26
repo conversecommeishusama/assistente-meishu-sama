@@ -1,0 +1,144 @@
+{
+  "filename": "19520125-御垂示録6号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 601 linhas / PT originalmente 201 linhas físicas, agora ~242 blocos de parágrafo após correção), 4 artigos por spec (prefácio + sessões de 1º de abril [dentro do prefácio], 1º de maio, 2 de junho e 1º de julho de 1951/1952 — nota: 1º de abril está tecnicamente agrupado sob o artigo 'preface' do spec, não é artigo próprio; não alterei a contagem de artigos do spec, apenas o conteúdo/segmentação interna). Alerta inicial do pedido (razão JP/PT ~3:1) se confirmou: era o mesmo padrão de monólito já catalogado em 1号, 4号, 5号, 24号 (ver GOSHINSHO.md e AUDIT_TRAIL de 5号) — quase todo o corpo do arquivo estava amassado em ~176 linhas físicas sem quebra de parágrafo por turno, incluindo cabeçalhos de data (`[1º de maio]`, `[2 de junho]`, `[1º de julho]`) soterrados no meio de frases anteriores em vez de isolados.",
+  "pre_existing_context": "Mesma família e mesmo padrão de bug já catalogado em 御垂示録1号, 4号, 5号, 24号 (monólitos gigantes). Diferente de 5号, este arquivo NÃO tinha duplicação de blocos, mas tinha perda real de conteúdo mascarada pelo amassamento (turnos curtos sem aspas — falas breves de Meishu-Sama — foram descartados silenciosamente em pelo menos 6 pontos, e uma pergunta+resposta completa sobre jichinsai/visão espiritual foi perdida quase inteira).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 4,
+    "monolito_encontrado": true,
+    "monolito_resolvido": true,
+    "turnos_novos_segmentados": "~242 blocos de parágrafo reconstruídos a partir de ~201 linhas físicas originais (todo o corpo, prefácio ao final), verificados um a um contra o JP",
+    "conteudo_realmente_perdido_encontrado": "Sim — ver correções 1-8 abaixo. Não é apenas amassamento: houve perda real de sentenças inteiras, algumas delas perguntas/respostas completas.",
+    "duplicacao_encontrada": "Não encontrada neste volume",
+    "troca_de_falante_encontrada": "Não encontrada neste volume",
+    "items_escalated_to_pendencias": 1,
+    "correcoes_terminologicas_aplicadas": 1
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_jp": "linha 26 (primeira frase do 序文/Prefácio)",
+      "problema": "PERDA REAL: a primeira frase do prefácio ('本冊子は、特別御面会における、明主様の御教えを収録せるものであります。' — 'Este livreto reúne os ensinamentos de Meishu-Sama proferidos nas audiências especiais.') estava completamente ausente do PT. O PT pulava direto para a segunda frase do prefácio.",
+      "correcao": "Traduzida e inserida como primeira frase do parágrafo de abertura.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_jp": "linhas 320-333 (sessão 1º de maio, sequência sobre 'ver luz/espíritos' + pergunta sobre jichinsai)",
+      "problema": "PERDA REAL GRAVE: um bloco de ~6 unidades foi quase inteiramente descartado — (a) resposta completa de Meishu-Sama sobre absorção da luz solar/corpo de luz (JP320-322); (b) pergunta de acompanhamento do interlocutor sobre ver mais à noite (JP324); (c) resposta completa de Meishu-Sama sobre pessoas que veem espíritos (JP326); (d) pergunta inteira sobre cerimônia de fundação de terreno/jichinsai (JP329); (e) resposta de Meishu-Sama recomendando procurar um sacerdote xintoísta (JP331); (f) frase sobre desgraças/ancestrais tentando salvar a casa (JP332). Do trecho JP320-333, só a cauda final da JP333 sobrevivia no PT ('O fato de ter se tornado difícil de endurecer significa que se tornou fácil de dissolver.'), com a abertura de JP333 (sobre 'método de solidificar' dos médicos vs. 'método de dissolver') também cortada.",
+      "correcao": "Traduzido e inserido o bloco completo (pergunta sobre luz/espíritos + resposta + pergunta de acompanhamento + resposta + pergunta sobre jichinsai + resposta + frase sobre ancestrais), na ordem correta, e completada a abertura cortada de JP333.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_jp": "linha 479 (sessão 1º de julho, transição Tenrikyo → aumento de conversões em Kyushu)",
+      "problema": "PERDA REAL: frase de Meishu-Sama sem aspas ('だいぶ、これから集団的に信者になる者が、次々できますね。今度、九州でありましたね。') ausente — o PT pulava direto da frase anterior para a resposta do interlocutor sobre Kyushu, sem a pergunta retórica de Meishu que a provoca.",
+      "correcao": "Traduzida e inserida: 'Doravante, cada vez mais pessoas se tornarão seguidoras coletivamente. Desta vez, aconteceu em Kyushu, não é?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_jp": "linhas 491, 495, 499 (sessão 1º de julho, episódio do sobrinho falecido/Fukushima Kenji)",
+      "problema": "PERDA REAL (padrão 'turno curto sem aspas nunca traduzido', exatamente como alertado no pedido): três perguntas breves de Meishu-Sama, todas sem aspas no JP, foram descartadas, deixando as respostas do interlocutor ('Não saíram muitos.', 'Fukushima Kenji.', 'Tenho um.') órfãs, sem a pergunta que as motiva. Faltavam: 'あくびは。' (Teve bocejos?), 'それは義兄の子供ですか。名前は？' (Isso é filho do seu cunhado? Qual é o nome dele?), 'あなたの子供は。' (E o seu filho?).",
+      "correcao": "As três perguntas foram traduzidas e inseridas nos pontos corretos, restaurando a lógica do diálogo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_jp": "linha 517 (sessão 1º de julho, episódio da pedra de Nishinomiya)",
+      "problema": "PERDA REAL (mesmo padrão): pergunta breve de Meishu-Sama sem aspas ('西宮のほうは、光明如来様はお祀りしてますか？') ausente, deixando a resposta do interlocutor sobre onde cultuavam Komyo-Nyorai sem a pergunta motivadora.",
+      "correcao": "Traduzida e inserida: 'Em Nishinomiya, vocês têm Komyo-Nyorai entronizado?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_jp": "linha 543 (mesmo episódio da pedra, poço)",
+      "problema": "PERDA REAL (mesmo padrão): pergunta breve de Meishu-Sama sem aspas ('名前はつけてあるんですか。') ausente, deixando a resposta 'Não.' órfã.",
+      "correcao": "Traduzida e inserida: 'Vocês deram um nome a ela?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_jp": "linhas 261-262 (sessão 1º de maio, sequência 神界/幽界/現界 — amanheceres de Showa 6/16/26)",
+      "problema": "ERRO TERMINOLÓGICO REAL: '神界' (mundo divino) e '幽界' (mundo espiritual) foram ambos traduzidos como 'mundo espiritual', apagando a distinção entre os dois planos ('O amanhecer do mundo espiritual foi em 15 de junho de Showa 6' E 'de Showa 16', duplicando o mesmo termo para dois conceitos diferentes). O glossário (`glossario_traducao.json`) confirma '幽界'→'mundo espiritual' e '現界'→'mundo material', mas não tem entrada isolada para '神界'. Precedente localizado no corpus já revisado (`御光話録（補）`, trecho sobre quem preside 幽界/現界/神界): '神界' é traduzido lá como 'mundo divino (Shinkai)', distinto de 'mundo espiritual (Yukai)' e 'mundo material (Genkai)'.",
+      "correcao": "Corrigido 'O amanhecer do mundo espiritual foi em 15 de junho de Showa 6' para 'O amanhecer do mundo divino foi em 15 de junho de Showa 6', preservando a tríade correta (divino/Showa 6 → espiritual/Showa 16 → material/Showa 26).",
+      "confianca": "alta (apoiada por precedente terminológico já usado em volume irmão do mesmo corpus)"
+    },
+    {
+      "n": 8,
+      "localizacao_jp": "todo o corpo do arquivo (linhas ~26-601)",
+      "problema": "MONÓLITO ESTRUTURAL GRAVE: quase todo o corpo do arquivo (prefácio às sessões de abril/maio/junho/julho) estava amassado em ~176 linhas físicas de PT sem nenhuma quebra de parágrafo por turno de pergunta/resposta (só 4 linhas em branco em todo o arquivo, todas no cabeçalho de metadados). Os cabeçalhos de data '[1º de maio]', '[2 de junho]' e '[1º de julho]' apareciam soterrados no meio de frases da sessão anterior em vez de isolados em linha própria (só '[2 de junho]' já estava isolado por acaso). Viola os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist.",
+      "correcao": "Reconstruído com uma quebra de parágrafo por turno (pergunta entre aspas / resposta sem aspas), conferido turno a turno contra o JP na mesma ordem, com os 4 cabeçalhos de data ('Showa 26 [1º de abril]', '[1º de maio]', '[2 de junho]', '[1º de julho]') isolados em linha própria. Método: divisão automática por limites de aspas (script Python, verificado manualmente ponto a ponto contra a leitura linha a linha já realizada), com 3 falsos-positivos de aspas aninhadas (citações de uma palavra só dentro de uma frase — 'Ensinamentos', 'mei'/'Meishu', 'Conto do Mundo Espiritual') identificados e remesclados de volta ao parágrafo correto antes de finalizar. Nenhum conteúdo já correto foi reescrito ou retraduzido — apenas resegmentado, exceto pelas inserções de conteúdo genuinamente ausente (correções 1-6) e o termo corrigido (correção 7).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + Aviso (序文 + お断り)",
+      "jp_linhas": "22-31",
+      "decisao": "corrigido — frase de abertura ausente inserida (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 1º de abril (~43 pares P&R, tecnicamente dentro do artigo 'preface' do spec)",
+      "jp_linhas": "35-236",
+      "decisao": "ok após resegmentação — nenhuma perda de conteúdo encontrada nesta sessão além da abertura do prefácio",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 1º de maio (~48 pares P&R)",
+      "jp_linhas": "239-393",
+      "decisao": "corrigido — bloco luz/espíritos/jichinsai restaurado (correção 2) e termo 神界 corrigido (correção 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 2 de junho (~24 pares P&R)",
+      "jp_linhas": "396-467",
+      "decisao": "ok após resegmentação — nenhuma perda de conteúdo encontrada",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 1º de julho (~40 pares P&R)",
+      "jp_linhas": "470-601",
+      "decisao": "corrigido — 4 turnos curtos sem aspas restaurados (correções 3-6)",
+      "confianca": "alta"
+    }
+  ],
+  "metodo_de_verificacao_completude": "Além da leitura corrida linha a linha (JP↔PT), foi feita uma varredura sistemática por regex de toda linha JP não iniciada por 「/『/（.../）/［ (i.e. candidatas a fala breve de Meishu-Sama sem aspas, a categoria de bug mais achada neste arquivo), em 3 faixas de tamanho (≤20, 21-60, >60 caracteres), e cada uma conferida individualmente contra o PT. Também foi feita contagem comparativa de blocos entre aspas «」 no JP (132) vs `\"...\"/'...'` no PT (119) — a diferença residual não corresponde a novos achados de perda (already verificado manualmente todas as faixas de tamanho), atribuída a diferenças de convenção de pontuação/aspas aninhadas já existentes na tradução original, não a conteúdo ausente.",
+  "pendencias_abertas": [
+    "Termo '天照天皇' (JP linha 281, 'Amaterasu Tennō', distinto de '天照皇大神'/'Amaterasu Ōmikami' já no glossário) traduzido no arquivo como 'Amaterasu Okami' — pode estar apagando uma distinção doutrinária proposital (Tennō vs Ōkami). Registrado em PENDENCIAS_REVISAO.json, não bloqueante, aguardando decisão do usuário."
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true. Esta revisão encontrou e corrigiu perda real de conteúdo (não apenas amassamento) e um erro terminológico real, além de reestruturar o monólito. Exige segunda auditoria independente antes de fechar, conforme 'revisao-paralela-jp-pt.mdc' § 'Δ=0 é necessário, nunca suficiente'. A pendência de romanização/nomenclatura doutrinária (ver acima) não bloqueia a segunda auditoria, mas deve ser revisada junto e decidida com o usuário antes do fechamento final."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: Etapa A (mapa de turnos construído por leitura linha a linha do JP inteiro — 「pergunta entre aspas」=Interlocutor, prosa corrida sem aspas=Meishu-Sama, cabeçalhos ［data］=separador de sessão), Etapa B (confirmação por contagem: 114 perguntas 「」 no JP mapeadas manualmente, batendo exatamente com 114 blocos iniciados por aspas no PT já resegmentado por auditoria anterior de 2026-07-07), Etapa C (rótulos aplicados por script Python determinístico ao PT existente, sem reordenar nem reescrever conteúdo).",
+    "contagem_turnos": {
+      "interlocutor_jp_mapeado_manualmente": 114,
+      "interlocutor_pt_rotulado": 114,
+      "meishu_sama_pt_rotulado": 123,
+      "delta_interlocutor": 0
+    },
+    "bateu_1_para_1": true,
+    "problema_estrutural_encontrado_e_corrigido": "6 blocos do PT (linhas originais ~327-328, 356-357, 402-403, 433-434, 454-455, 479-480) continham 2 parágrafos físicos de Meishu-Sama consecutivos (sem pergunta do interlocutor entre eles, confirmado no mapa JP — ex.: JP 386+387, 421+422, 477+478+479, 511+512, 536+539, 565+568) colados em duas linhas cruas sem linha em branco separadora. Corrigido: inserida linha em branco entre cada par e aplicado 'Meishu-Sama:' a cada parágrafo separadamente, em vez de tratá-los como um único bloco — consistente com a convenção já estabelecida na série Gokōwa ('cada parágrafo físico de uma resposta longa recebe seu próprio prefixo'). Nenhum texto foi reescrito, reordenado ou traduzido novamente; apenas a quebra de parágrafo ausente foi restaurada.",
+    "casos_especiais_confirmados_contra_jp": [
+      "Linha 33 (Showa 26 [1º de abril]) e as 3 seguintes ([1º de maio], [2 de junho], [1º de julho]): preservadas sem rótulo, como cabeçalho de sessão.",
+      "Bloco 'Aviso' e prefácio editorial (antes do primeiro cabeçalho de data): sem rótulo de diálogo — é voz editorial/narrativa, não fala de Meishu-Sama nem pergunta do interlocutor, confirmado contra o 序文/「お断り」 do JP.",
+      "Parágrafo iniciado por '(Houve um relato de uma graça sobre uma colisão de automóveis)...' (sessão 1º de maio) e os equivalentes em '2 de junho' e '1º de julho' (aberturas de sessão sem pergunta prévia): rotulados Meishu-Sama, pois são prosa corrida sem aspas no JP.",
+      "Par 'Sim.' → nova pergunta sem resposta intermediária (linha ~367) e par de duas perguntas consecutivas sem resposta entre elas (região Kyushu/duzentas-trezentas pessoas): confirmado que essa sequência Interlocutor→Interlocutor já existe assim no JP original (não é erro de rotulagem, é lacuna do registro histórico).",
+      "Bloco com lista numerada dentro de uma única pergunta entre aspas (episódio da tuberculose/Kobe, 4 linhas cruas): mantido como um único turno Interlocutor, sem dividir, pois no JP é uma única fala contínua do interlocutor com itens internos '一、' '二、'."
+    ],
+    "approved_alterado": false
+  },
+  "segunda_auditoria_independente": {
+    "data": "2026-07-09",
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc)",
+    "metodo": "Verificacao direta por amostragem contra o JP (nao apenas confianca na trilha da sessao anterior): conferida a insercao da frase de abertura do prefacio (correcao 1), o bloco jichinsai/luz-espiritos (correcao 2), a correcao terminologica 神界 (correcao 7), a resolucao da pendencia Amaterasu Tenno (PENDENCIAS_REVISAO.json, usuario decidiu \"Imperador Amaterasu\" em 2026-07-08) e a contagem de turnos rotulados (114 Interlocutor / 123 Meishu-Sama, bate com rotulagem_interlocutor_meishu). Varredura adicional de cabecalhos de data duplicados (bug encontrado em outros volumes desta Fase E) — nenhum encontrado neste arquivo. CJK residual: nenhum.",
+    "resultado": "Confirmado sem residuo. approved:true aplicado no spec."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "filename": "19501120-世界救世教早わかり.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 123 linhas, bloco único === ARTIGO === com 10 trechos segundo o spec; PT reconstruído de 30 linhas colapsadas para 154 linhas). Leitura JP parágrafo a parágrafo confrontada com o PT correspondente, na mesma ordem, para os 10 artigos do spec (prefácio + 9 seções) mais o colofão final fora do spec.",
+  "pre_existing_context": "Sinal de alerta do pedido: razão de linhas JP:PT de ~4:1 (123 JP / 30 PT). Livro já havia sido corrigido na Fase Inicial de 'monolith' (0 divisões) para 10 trechos via jp_line_split.py, mas a revisão de CONTEÚDO linha a linha nunca havia sido feita.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 10,
+    "articles_reviewed": 10,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0
+  },
+  "causa_real_da_razao_de_linhas": "Não era truncamento de conteúdo (quase todo o texto já estava traduzido), e sim colapso total de formatação: (1) a seção inteira 'はしがき' (prefácio, JP linhas 24-32, ~5 parágrafos + assinatura 'Outubro de 1950 - O Autor') estava completamente ausente do PT — nenhuma tradução existia, nem deslocada; (2) as 7 seções seguintes (本教の誕生 a 救世主) estavam todas fundidas em UM único parágrafo gigante no PT, com os títulos de seção sobrevivendo apenas como marcadores em negrito ('**Título**') colados ao texto corrido, sem nenhuma quebra de parágrafo interna — um caso do mesmo bug de 'monólito residual' já visto em 法難手記/Gokōwa; (3) esse parágrafo gigante terminava truncado no meio de uma frase ('para que qualquer um possa, com tranquilidade,'), e a frase completa reaparecia duplicada logo a seguir em 3 linhas soltas ('foi-me concedido...' / 'Conforme exposto...' / 'O exposto acima...') — ou seja, a cauda do bloco 救世主 estava traduzida duas vezes, uma incompleta e outra completa; (4) o colofão final do livro (ficha técnica: data de publicação, formato, autor 'Jikan', editor Koyama Masao, editora Eikōsha, JP linhas 116-123) também não tinha par em PT.",
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Início do corpo (antes de 'O Nascimento da Nossa Igreja')",
+      "problema": "Seção inteira 'はしがき' (prefácio) ausente do PT — JP linhas 24-32 (4 parágrafos doutrinários + linha de assinatura 'Outubro de 1950 / O Autor') nunca haviam sido traduzidos nem deslocados para outro ponto do arquivo. Busca confirmada: o conteúdo (definição da razão de ser da Igreja, 'não é xintoísmo nem budismo nem cristianismo, mas contém todos', etc.) não aparece em nenhum outro ponto do PT.",
+      "correcao": "Traduzido do zero a partir do JP e inserido como seção 'Prefácio' com título próprio, 4 parágrafos e a assinatura final, usando glossário (Igreja Messiânica, Paraíso na Terra) e registro formal consistente com o resto do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Corpo entre はしがき e o colofão final (antigas seções 本教の誕生 a 救世主)",
+      "problema": "Paragrafação totalmente colapsada: 7 seções (本教の誕生, 人間, 天地創造記, 人は健康の器, 自然農法, 道理に従う, 救世主) fundidas em um único parágrafo contínuo, com títulos em negrito embutidos no meio do texto corrido em vez de cabeçalhos próprios. Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos) do checklist.",
+      "correcao": "Reformatado com título de seção em linha própria e quebras de parágrafo reinstauradas em correspondência 1:1 com os parágrafos do JP (conferido parágrafo a parágrafo contra o JP para as 9 seções: 10 parágrafos em 本教の誕生, 9 em 人間, 4 em 天地創造記, 6 em 人は健康の器, 2 em 自然農法, 4 em 道理に従う, 9 em 救世主). Nenhum conteúdo removido nesta etapa, apenas reestruturado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Abertura de 天地創造記 (JP linha 68: 'ここで、地球の出来た頃からの事をかいてみるが、そもそも造物主という得体の知れない不思議な親方が、宇宙の中間に頑張っていたらしい...')",
+      "problema": "Mistradução real, não apenas formatação: a frase de abertura fora traduzida como 'A História criou coisas estranhas como o sol, a lua, as estrelas e a Terra' — sujeito errado ('a História' em vez do 'Criador/mestre misterioso' do JP) e perda de conteúdo real (a frase 'sobre um misterioso patrão/Criador que se plantara no meio do universo' e 'não se sabe com que intenção' desapareceram, restando só um resumo vago do resultado).",
+      "correcao": "Retraduzido integralmente a partir do JP, restaurando o sujeito correto (o 'mestre'/Criador, termo mantido consistente com o resto da seção que já usava 'o mestre' para 親方) e todo o conteúdo da frase de abertura, incluindo a criação do sol/lua/estrelas/Terra pelo mestre e a formação inicial da Terra como 'mar de lama'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Final de 救世主 / transição para o colofão",
+      "problema": "Duplicação real de conteúdo (checklist ponto 8): a cauda da seção 救世主 (JP: '...驚くべき霊力を与えられた事である' até o parágrafo de fechamento '...御講読あらん事を御勧めするのであります') estava traduzida DUAS vezes no PT — uma vez dentro do parágrafo-monólito (truncada, terminando em '...para que qualquer um possa, com tranquilidade,' sem completar a frase) e uma segunda vez em 3 linhas soltas logo depois, desta vez completa e com a frase final devidamente fechada.",
+      "correcao": "Mantida apenas a versão completa (que fecha corretamente a frase final sobre a lista anexa e a recomendação de leitura das publicações da Igreja); descartada a versão truncada duplicada dentro do monólito. Nenhum conteúdo perdido — confirmado que a versão completa cobre integralmente o trecho JP correspondente, incluindo a frase final que a versão truncada não alcançava.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Final do arquivo (colofão de publicação, JP linhas 116-123, fora do range com anchor explícito no spec mas dentro do escopo do último artigo, que se estende até o EOF)",
+      "problema": "Colofão de encerramento (título repetido, data de publicação 30/10/1950, formato B6/57 páginas/não à venda, autor 'Jikan', editor Koyama Masao, editora Eikōsha) sem nenhum par em PT.",
+      "correcao": "Traduzido e adicionado como bloco final, usando o glossário para '自観'→'Jikan'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título/colofão de abertura", "jp_linhas": "20-23", "decisao": "ok", "confianca": "alta", "notas": "Já estava correto no PT, sem alteração."},
+    {"bloco": "序文 (kind: preface, título/colofão)", "jp_linhas": "20-23", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "はしがき (kind: preface)", "jp_linhas": "24-32", "decisao": "corrigido - seção inteira ausente, traduzida e inserida (correção 1)", "confianca": "alta"},
+    {"bloco": "一九五○年一○月 (kind: section, linha de assinatura)", "jp_linhas": "31-32", "decisao": "corrigido - fazia parte da seção anterior ausente, incluída junto (correção 1)", "confianca": "alta"},
+    {"bloco": "本教の誕生", "jp_linhas": "36-50", "decisao": "corrigido - reformatado com título e 10 parágrafos + nota de rodapé restaurados (correção 2); conteúdo já estava correto, só faltava estrutura", "confianca": "alta"},
+    {"bloco": "人間", "jp_linhas": "53-64", "decisao": "corrigido - reformatado com título e 9 parágrafos (correção 2); conteúdo conferido linha a linha, sem perdas", "confianca": "alta"},
+    {"bloco": "天地創造記", "jp_linhas": "66-72", "decisao": "corrigido - reformatado (correção 2) e frase de abertura retraduzida por mistradução real (correção 3); demais 3 parágrafos conferidos corretos", "confianca": "alta"},
+    {"bloco": "人は健康の器", "jp_linhas": "74-82", "decisao": "corrigido - reformatado com título e 6 parágrafos (correção 2); conteúdo conferido linha a linha, sem perdas", "confianca": "alta"},
+    {"bloco": "自然農法", "jp_linhas": "84-88", "decisao": "corrigido - reformatado com título e 2 parágrafos (correção 2); conteúdo conferido correto, incluindo diálogo Deus/solo completo", "confianca": "alta"},
+    {"bloco": "道理に従う", "jp_linhas": "90-96", "decisao": "corrigido - reformatado com título e 4 parágrafos (correção 2); conteúdo etimológico conferido correto", "confianca": "alta"},
+    {"bloco": "救世主", "jp_linhas": "98-111", "decisao": "corrigido - reformatado com título e 9 parágrafos + parágrafo de fechamento (correção 2); duplicação de cauda removida, mantendo só a versão completa (correção 4)", "confianca": "alta"},
+    {"bloco": "Colofão final de publicação", "jp_linhas": "116-123", "decisao": "corrigido - bloco inteiro ausente, traduzido e adicionado (correção 5)", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Todos os 10 artigos do spec revisados linha a linha contra o JP; causa raiz da razão de linhas (colapso de formatação + prefácio e colofão ausentes + duplicação de cauda) identificada e corrigida; nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

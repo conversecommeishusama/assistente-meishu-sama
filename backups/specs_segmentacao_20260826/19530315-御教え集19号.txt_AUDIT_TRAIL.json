@@ -1,0 +1,173 @@
+{
+  "filename": "19530315-御教え集19号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 202 linhas / PT 134 linhas após correções, 1 bloco === ARTIGO === no JP contendo 10 trechos por data, spec profile 'mioshie_shu'). Leitura integral do JP linha a linha, confrontado com o PT correspondente na mesma ordem, data por data: prefácio, 5/2, 6/2, 7/2, 15/2, 16/2, 17/2, 25/2, 26/2, 27/2, e o encarte editorial final (ficha de impressão/distribuição).",
+  "alerta_familia": "Volume da família 御教え集 (irmãos 1-18号 já revisados mostraram monólitos residuais, cabeçalhos de data corrompidos e nomes próprios corrompidos). Verificação de rigor máximo aplicada em cada transição de data.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessoes_no_jp": 9,
+    "sessoes_revisadas": 9,
+    "real_corrections_applied": 15,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "categoria": "nome_proprio_corrompido",
+      "localizacao_pt": "sessão 6 de fevereiro (parágrafo sobre imprensa/Partido Comunista, JP linha 68 '「岡田茂吉」と呼び捨てに書いて')",
+      "problema": "GRAVE: o nome verdadeiro do próprio Meishu-Sama (岡田茂吉 = Okada Mokichi, fundador da Igreja) estava romanizado incorretamente como 'Shigeki Okada'. 茂吉 lê-se 'Mokichi' (nome histórico consagrado do fundador), não 'Shigeki'.",
+      "correcao": "'Shigeki Okada' → 'Mokichi Okada'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "data_corrompida",
+      "localizacao_pt": "encarte editorial final, ficha de impressão (JP linha 191 '昭和二十八年三月十日　　印刷')",
+      "problema": "GRAVE: a data de impressão (三月十日 = 10 de março de 1953) foi vertida como '28 de março de 1953' — aparente confusão entre o ano 'Showa 28' e o dia. A data de publicação logo abaixo (三月十五日 = 15 de março) estava correta, evidenciando que só a linha de impressão foi corrompida.",
+      "correcao": "'28 de março de 1953 Impresso' → '10 de março de 1953 Impresso'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "monolito_residual_grave",
+      "localizacao_pt": "sessão 15 de fevereiro inteira (JP linhas 75-89, 9 blocos distintos incl. 2 citações de artigo)",
+      "problema": "GRAVE (mesma assinatura de bug já confirmada nos irmãos 御教え集1-18号): toda a sessão de 15/2 — cerca de 9 parágrafos distintos no JP (texto sobre Coreia/Saga, anúncio do artigo, citação do artigo 'Se o Mal Desaparecesse', comentário sobre o mundo de Miroku, anúncio da Coletânea de Milagres, discussão sobre espíritos protetores, citação do prefácio da Coletânea, discussão sobre medicina chinesa) estava amassada em UM único parágrafo corrido no PT, sem nenhuma quebra, inclusive com as duas citações de artigo embutidas no meio do texto corrido em vez de isoladas.",
+      "correcao": "Reinseridas 6 quebras de parágrafo nos pontos de transição correspondentes ao JP, isolando as duas citações de artigo ('Se o Mal Desaparecesse deste Mundo' e 'Prefácio da Coletânea de Milagres da Igreja Messiânica') em linhas próprias. Nenhum conteúdo foi removido, reordenado ou traduzido de novo — apenas reflow de paragrafação, feito após leitura linha a linha confirmando a correspondência exata com a estrutura do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "categoria": "monolito_residual_grave",
+      "localizacao_pt": "sessão 16 de fevereiro inteira (JP linhas 93-109, 11 blocos distintos incl. 2 citações de artigo)",
+      "problema": "GRAVE (mesmo padrão do item 3): toda a sessão de 16/2 — discussão sobre Coreia/Truman/Eisenhower, 'a barriga de Stalin', citação do Ofudesaki de Oomoto, venda de 'Salvando a América', citação de 'O Livro da Revolução Médica cap.5', e o longo bloco sobre intoxicação por medicina chinesa (incluindo a morte do pai de Meishu-Sama e a visita de Hashimoto Gyōin) — estava inteiramente amassada em UM único parágrafo corrido, sem nenhuma quebra.",
+      "correcao": "Reinseridas 7 quebras de parágrafo nos pontos de transição correspondentes ao JP, isolando as duas citações de artigo em linhas próprias. Nenhum conteúdo removido ou reordenado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "categoria": "paragrafacao",
+      "localizacao_pt": "sessão 17 de fevereiro (citação 'O Livro da Revolução Médica, V. Sobre Cirurgia', JP linha 121-123)",
+      "problema": "Citação de artigo embutida na mesma linha do parágrafo de conteúdo seguinte (sem quebra), diferente do padrão do restante do volume onde citações ficam isoladas.",
+      "correcao": "Quebra de parágrafo inserida separando a citação do texto seguinte.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "categoria": "paragrafacao",
+      "localizacao_pt": "sessão 25 de fevereiro (citação 'Sobre o Cultivo Natural', JP linha 135-137)",
+      "problema": "Mesmo padrão do item 5 — citação embutida no parágrafo seguinte.",
+      "correcao": "Quebra de parágrafo inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "categoria": "paragrafacao",
+      "localizacao_pt": "sessão 26 de fevereiro (citação 'Sobre o Cultivo Natural', JP linha 155-157)",
+      "problema": "Mesmo padrão do item 5.",
+      "correcao": "Quebra de parágrafo inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "categoria": "paragrafacao",
+      "localizacao_pt": "sessão 27 de fevereiro (citação 'Sobre o Cultivo Natural', JP linha 171-173)",
+      "problema": "Mesmo padrão do item 5.",
+      "correcao": "Quebra de parágrafo inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "categoria": "paragrafacao_e_titulo_inconsistente",
+      "localizacao_pt": "sessão 25 de fevereiro e 27 de fevereiro (citação '自然農法解説書〔序文〕', JP linhas 141 e 180 — a MESMA citação de artigo, referenciada duas vezes no JP em datas diferentes)",
+      "problema": "Além da paragrafação embutida (mesmo padrão do item 5), o título do artigo estava traduzido de forma inconsistente nas duas ocorrências: 'Método da Agricultura Natural — Prefácio' (25/2) vs. 'Manual Explicativo da Agricultura Natural [Prefácio]' (27/2), apesar de ser exatamente o mesmo título japonês nas duas vezes.",
+      "correcao": "Padronizado para 'Manual Explicativo da Agricultura Natural [Prefácio]' nas duas ocorrências; quebra de parágrafo inserida em ambas.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Preâmbulo/título do volume",
+      "jp_linhas": "1-23",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cabeçalho, título 御教え集第十九号 e metadados presentes e corretos no PT."
+    },
+    {
+      "bloco": "5 de fevereiro (立春祭御教え)",
+      "jp_linhas": "24-39",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Paragrafação já correspondia 1:1 ao JP (11 blocos em ambos). Conteúdo completo (arroz/Asahi Shimbun, política EUA-URSS, visita de Sano, catolicismo vs. comunismo, Templo Messiânico, penicilina)."
+    },
+    {
+      "bloco": "6 de fevereiro",
+      "jp_linhas": "42-57",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Estrutura e citações já corretas e isoladas no PT. Conteúdo completo (recorde de arroz, visita de Sano/catolicismo, guerra da Coreia, citações de artigos)."
+    },
+    {
+      "bloco": "7 de fevereiro",
+      "jp_linhas": "58-71",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Estrutura e citações já corretas. Conteúdo completo (purificação/medicina chinesa, produção de arroz, dupla citação de 'Sonhos do Mundo (Dois)', discussão Guerra Fria/maçonaria)."
+    },
+    {
+      "bloco": "15 de fevereiro",
+      "jp_linhas": "75-90",
+      "decisao": "corrigido - monólito residual grave (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de fevereiro",
+      "jp_linhas": "93-109",
+      "decisao": "corrigido - monólito residual grave (item 4)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de fevereiro",
+      "jp_linhas": "113-127",
+      "decisao": "corrigido - paragrafação (item 5)",
+      "confianca": "alta",
+      "notas": "Conteúdo completo (simbolismo bandeira EUA/lua-Inglaterra/astros, medicina chinesa)."
+    },
+    {
+      "bloco": "25 de fevereiro",
+      "jp_linhas": "131-146",
+      "decisao": "corrigido - paragrafação e título (itens 6, 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de fevereiro",
+      "jp_linhas": "150-163",
+      "decisao": "corrigido - paragrafação (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de fevereiro",
+      "jp_linhas": "167-185",
+      "decisao": "corrigido - paragrafação e título (itens 8, 9)",
+      "confianca": "alta",
+      "notas": "Conteúdo completo até o fechamento sobre revolução médica/hospitais."
+    },
+    {
+      "bloco": "Encarte editorial final (ficha de impressão)",
+      "jp_linhas": "191-202",
+      "decisao": "corrigido - data (item 2)",
+      "confianca": "alta",
+      "notas": "Demais campos (editor, gráfica, endereço) conferidos e corretos; nome do impressor '小山梅野' romanizado no PT como 'Ume no Oyama' tem leitura genuinamente ambígua (小山 pode ler-se Koyama ou Oyama) — não alterado, baixo valor/baixa certeza, não escalado por ser item administrativo de rodapé sem impacto doutrinário."
+    }
+  ],
+  "verificacao_completude_pt": {
+    "metodo": "Leitura direta de cada parágrafo JP contra o parágrafo PT correspondente, checando presença de todos os tópicos: recordes de arroz/Asahi Shimbun, geopolítica EUA-URSS-China-Coreia, visita de Sano Shigejirō e catolicismo, Templo Messiânico de Hakone/Atami, penicilina/purificação, 'Aizu'/simbolismo astrológico, maçonaria e Dragão Negro/Vermelho, cultivo natural e Associação de Divulgação, medicina chinesa e intoxicação (gennoshōko/dokudami), cosméticos, visita de Hashimoto Gyōin, e citações de 8 artigos/ensaios distintos.",
+    "resultado": "Nenhum trecho de conteúdo ausente encontrado. Nenhum CJK residual encontrado no corpo do PT. Nenhuma duplicação indevida encontrada (a repetição da história da morte do pai de Meishu-Sama em 6/2 e novamente, com mais detalhes, em 16/2 é uma repetição legítima já presente no próprio JP, não um artefato de tradução)."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

@@ -1,0 +1,104 @@
+{
+ "filename": "19520715 - Mioshie-shū nº 11.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9→10 (六月五日 fundido em 序文 por bug jp_line_v2, reinserido como sessão própria). PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十一号",
+   "pt_anchor": "Mioshie-shū nº 11",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月五日",
+   "title_pt": "5 de junho",
+   "jp_anchor": "昭和二十七年六月五日\n\n【御教え】\n　 美術館も見らるる通り足場が取れまして――まだ外の方はいろんな構えや、自動車の通るような橋を作りますが、建物だけは外観が大体できたわけです。誰でも そう思うんですが非常に早いんです。スピードですね。おそらくこんなに早いのはないだろうと思うんで",
+   "pt_anchor": "5 de junho de 1952\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "5 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月六日",
+   "title_pt": "6 de junho",
+   "jp_anchor": "六月六日\n\n【御教え】\n　 今日は少ないですから、ちょっと変わった話をしましょう。私はいつも大乗と小乗ということをよく言うんですが、これが本当に腹に入るのは、なかなか難しい らしいんですね。それで、まったく難しいには違いないんですよ。そこで私は小乗にあらず大乗にあらず",
+   "pt_anchor": "6 de junho\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "6 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月七日",
+   "title_pt": "7 de junho",
+   "jp_anchor": "六月七日\n\n【御教え】\n　落成式が近づいたので、だいぶ少ないようですが――昨日も少なかったので話をしたんで、非常にみんな喜んでましたから、今日も話をしようと思います。",
+   "pt_anchor": "7 de junho\n\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "7 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十五日",
+   "title_pt": "15 de junho",
+   "jp_anchor": "【神仙郷完成兼美術館開館記念祝賀式典御教え】\n\n六月十五日\n\n　神様の御守護やみなさんのお骨折りで、ようやく神仙郷も大体完成しました。特に美術館も一通りできあがったので非常に喜んでいるしだいなんです。それに ついて、いよいよ地上天国の一歩に入ったわけです。これがだんだん広がっていって、そうしてついに世界",
+   "pt_anchor": "[Ensinamento do Mestre na Cerimônia Comemorativa da Conclusão da Terra Divina e da Inauguração do Museu]\n\n15 de junho\nGraças à proteção divina e aos esforços de todos, finalmente a Terra Divina está praticamente concluída.",
+   "notes": "",
+   "pt_prefix": "15 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十六日",
+   "title_pt": "16 de junho",
+   "jp_anchor": "六月十六日\n\n　見らるる通り地上天国の、大体箱根の模型はできたわけなんです。特にあの通り美術館も思い通りできたので、私は非常に満足しているわけです。大体メシヤ 教というものは、地上天国を造るという意味で、最初の――つまり地上天国の模型を造るんです。で、世界",
+   "pt_anchor": "16 de junho\n\nComo podem ver, o modelo do Paraíso Terrestre, em linhas gerais, o modelo de Hakone está pronto. Especialmente, o museu ",
+   "notes": "",
+   "pt_prefix": "16 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十七日",
+   "title_pt": "17 de junho",
+   "jp_anchor": "六月十七日\n\n　ちょうど、今日が祝典の三日目で、お天気都合も割合、入梅中としては上等の方で結構と思います。",
+   "pt_anchor": "17 de junho\nHoje é exatamente o terceiro dia da celebração, e o tempo está relativamente bom, considerando que estamos no período de",
+   "notes": "",
+   "pt_prefix": "17 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十五日",
+   "title_pt": "25 de junho",
+   "jp_anchor": "六月二十五日\n\n【御教え】\n　 今日、美術館はみんな見られたんでしょう。だんだん整ってきたから、最初よりも良いつもりです。この間、博物館長の浅野侯爵が来て見て、よくこんなに良い ものを蒐められた、と言って驚いてました。道具屋なんかも、あんまり良いものが多過ぎると言って――",
+   "pt_anchor": "25 de junho\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "25 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十六日",
+   "title_pt": "26 de junho",
+   "jp_anchor": "六月二十六日\n\n【御教え】\n　 昨夜の映画で、博物館のがあったんですが、これは理研の文化映画なんです。博物館のはほとんど仏像です。それから、あとは奈良が主で京都あたりのお寺、桂 の離宮とか――古美術的なものです。そういう映画で、これは珍しいです。今までそういった映画はない",
+   "pt_anchor": "26 de junho\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "26 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十七日",
+   "title_pt": "27 de junho",
+   "jp_anchor": "六月二十七日\n\n【御教え】\n　 美術館は見らるる通りだんだん整ってきつつありますけれども、だいぶ上層方面に評判になったような話を良く聞くんです。神様は一番――インテリから上層階 級の人たちを救うには、ふつうではなかなか接近してこないんです。それには美術館なんていうのは、も",
+   "pt_anchor": "27 de junho\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "27 de junho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

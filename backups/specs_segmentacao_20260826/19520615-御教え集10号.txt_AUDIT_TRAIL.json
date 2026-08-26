@@ -1,0 +1,128 @@
+{
+  "filename": "19520615-御教え集10号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 213 linhas / PT 101 linhas após correções, 9 trechos por spec: prefácio + 8 sessões datadas — 5, 6, 7, 15, 16, 17, 25, 26 e 27 de maio de 1952). Não é amostragem: todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data, incluindo verificação específica de cada citação de artigo/ensaio (『御論文』) por ser o ponto onde os bugs conhecidos da família 御教え集 costumam aparecer.",
+  "pre_existing_context": "Alerta prévio (tarefa): livros irmãos (御教え集1-9号) mostraram repetidamente monólitos residuais com cauda duplicada, cabeçalhos de data duplicados e turnos ausentes mesmo com ratio JP/PT aparentemente normal (aqui JP 213/PT 112 original ≈ 1.9:1, dentro da faixa 'normal' observada nos irmãos, o que já era o sinal de alerta explícito). Confirmado: ambos os padrões alertados (monólito com cauda duplicada E cabeçalho de data duplicado) estavam de fato presentes neste volume.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: como as correções aplicadas foram remoções de texto duplicado/truncado (não perda de conteúdo real), a contagem de linhas do PT caiu de 112 para 101 — isso é esperado e correto, não é um sinal de perda.",
+  "summary": {
+    "articles_in_spec": 9,
+    "articles_reviewed": 9,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "linhas originais 5-6 (bloco de cabeçalho técnico, antes do prefácio)",
+      "problema": "Marcador estrutural '=== ARTIGO ===' duplicado em duas linhas consecutivas idênticas. O JP correspondente tem o marcador uma única vez.",
+      "correcao": "Removida a linha duplicada, mantido um único marcador '=== ARTIGO ==='.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "linha original 22 (entre o bloco de cabeçalho técnico e o título 'Mioshie-shū, Número 10')",
+      "problema": "Cabeçalho de data espúrio: '6 de maio' aparecia isolado ANTES do título do volume e ANTES do conteúdo de 5 de maio (que só começa depois, na linha 29 original: '5 de maio de 1952'). Este é exatamente o padrão de 'cabeçalho de data duplicado' alertado para a família — o cabeçalho legítimo de '6 de maio' já existe corretamente mais adiante (linha 41 original), no lugar certo, alinhado com o JP五月六日. O da linha 22 era um artefato solto sem função, deslocando a ordem lógica do prefácio.",
+      "correcao": "Removida a linha espúria '6 de maio' (e a linha em branco associada). O prefácio agora flui direto do bloco técnico para o título, e o único cabeçalho '6 de maio' remanescente é o correto, no início da segunda sessão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "sessão '6 de maio', transição para o parágrafo sobre a superstição médica (JP linhas 58-63: fechamento do relato de arte budista → introdução da tuberculose → artigo 'A Terrível Superstição Médica')",
+      "problema": "GRAVE — padrão confirmado de 'monólito residual com cauda duplicada': um rascunho truncado ('Os médicos veem isso, apenas balançam a cabeça surpresos e acabou. Eles não entendem. Isso é algo grave. Assim' — frase cortada no meio, terminando em 'Assim') era seguido por um parágrafo que REABRIA duplicando o fechamento do parágrafo anterior sobre arte budista ('Sim. Como tenho mais variedade nesses itens... Vamos encerrar esse assunto por aqui.' — já dito integralmente no parágrafo imediatamente anterior) antes de finalmente retomar e completar corretamente o mesmo trecho sobre a superstição médica.",
+      "correcao": "Removido o rascunho truncado ('Os médicos veem isso... Assim') e removida a duplicação do fechamento do parágrafo anterior. Mantida apenas a versão completa e correta, que já continha toda a tradução de JP62-63 (o parágrafo sobre superstição médica e sobre o pneumotórax, terminando corretamente em '...vou ser breve', equivalente a '時間がだいぶ来たから寸鉄を。'). Nenhum conteúdo foi perdido — a versão mantida já era integral.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "sessão '16 de maio' (rotulada dentro do bloco corrido, antes do cabeçalho '17 de maio'), transição do parágrafo sobre câncer/EUA para o parágrafo sobre telegramas de proteção divina e catarro (JP linhas 130-132)",
+      "problema": "GRAVE — mesmo padrão: rascunho truncado ('Além disso, outra coisa que quero destacar é que chegam muitos telegramas de proteção divina... No entanto, há casos em que,' — cortado no meio da frase) seguido de um bloco que duplicava todo o parágrafo anterior sobre câncer/vegetais/fertilizante (já traduzido integralmente) antes de retomar e completar corretamente o parágrafo sobre telegramas e sobre a expectoração (catarro) durante o Johrei.",
+      "correcao": "Removido o rascunho truncado e a duplicação do parágrafo sobre câncer/fertilizante. Mantida a versão completa e correta do parágrafo sobre telegramas de proteção divina + catarro/estômago (equivalente a JP131-132, terminando corretamente em '...melhora relativamente rápido').",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "sessão '25 de maio', trecho sobre a coleção de cerâmica chinesa (comparação com Eumorfopoulos/David) e a petição de transporte (JP linhas 167-168)",
+      "problema": "GRAVE — mesmo padrão: o parágrafo era cortado no meio de uma citação direta não fechada ('Isso porque, no ano passado, eu disse a eles: \"Se vierem um mês mais cedo e saírem um mês mais tarde' — aspas nunca fechadas), e o texto seguinte REABRIA duplicando a comparação de coleções (Eumorfopoulos/David/Song Jun Yao) já contada, com uma inconsistência adicional de nome próprio: a primeira passagem usa 'Eumorfopoulos' (nome histórico real do colecionador, mais provável de estar correto — 石炭王ホップレス / George Eumorfopoulos, colecionador famoso de cerâmica chinesa cuja coleção está no Museu de Londres/V&A) e a segunda usa 'Hopeless' (transliteração literal e incorreta do mesmo nome JP ホップレス, sem sentido como nome próprio em português). Sem entrada no glossário de tradução para este nome.",
+      "correcao": "Unificados os dois parágrafos em um só, eliminando a duplicação da comparação de coleções e completando corretamente a citação sobre a petição de transporte (que na versão duplicada estava integral: '...com quinhentas assinaturas de pessoas de Odawara a Hakone...'). Padronizado o nome próprio para 'Eumorfopoulos' (grafia historicamente correta) nas duas ocorrências, eliminando a inconsistência 'Hopeless'/'Eumorfopoulos' para a mesma pessoa. Nenhuma entrada de glossário foi alterada — decisão de padronização pontual dentro deste arquivo, não uma mudança de glossário.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt_aprox": "sessão '27 de maio', trecho sobre o uso da arte para propagar a religião / crítica às religiões anteriores (JP linha 208, final)",
+      "problema": "GRAVE — mesmo padrão: o parágrafo terminava truncado em '...pregavam que viver em uma casa suja, com roupas simples e comida simples, era a vida da verdadeira fé.' (versão resumida e incompleta da frase), seguido por um fragmento solto sem contexto ('…pensam que não é assim.') e depois um bloco que duplicava múltiplos trechos já contados (a atmosfera chinesa do bambu, o achado de peças após a guerra, o uso da arte por Príncipe Shotoku) antes de finalmente completar a mesma frase de forma mais fiel e continuar com conteúdo genuinamente novo (monges mendicantes, 'mundo é o Inferno', a estética como religião do Paraíso).",
+      "correcao": "Removido o fragmento solto '…pensam que não é assim' e toda a duplicação subsequente (atmosfera chinesa, achados pós-guerra, uso da arte por Shotoku — já contados no parágrafo anterior). Mantida a versão mais completa e fiel da frase final ('...era a verdadeira essência da fé.') seguida do conteúdo novo que não aparecia em nenhum outro lugar do arquivo (monges mendicantes descalços, mundo como Inferno, estética como religião do Paraíso).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + ficha de publicação)",
+      "jp_linhas": "20-23",
+      "decisao": "ok, após remoção do cabeçalho '6 de maio' espúrio (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "5 de maio (relato de Nara/Hōryū-ji/Yumedono, superstição médica)",
+      "jp_linhas": "24-43",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Título 'Kuse Kannon'/'Messias Kannon', Príncipe Shōtoku, Kannon de Mil Braços — nomenclatura consistente com o restante do volume."
+    },
+    {
+      "bloco": "6 de maio (Nara/Kyoto, arte budista extensa, museu, superstição médica)",
+      "jp_linhas": "46-64",
+      "decisao": "corrigido (correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7 de maio (viagem Nara/Kyoto, EUA, americanos, Yumedono repetido)",
+      "jp_linhas": "67-96",
+      "decisao": "ok — parágrafo único longo no PT correspondendo a vários parágrafos JP, sem perda de conteúdo (mesmo padrão aceito no precedente de 無肥料栽培法 para prosa contínua do mesmo orador, sem títulos de sub-artigos distintos); conteúdo integralmente presente, checado contra cada citação de artigo (【栄光】) e cada mudança de tópico do JP",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de maio (museu, coleção de arte, falsificações, cerâmica chinesa, Marte, superstição médica)",
+      "jp_linhas": "90-107",
+      "decisao": "ok — bem paragrafado, cada citação de artigo e cada mudança de tópico do JP tem parágrafo PT correspondente, incluindo o relato da mulher cega/tumor (JP101) que é uma repetição legítima do próprio Meishu-Sama entre dias (não confundir com bug de duplicação — verificado que a versão de 16 de maio, JP128, é uma segunda menção genuína e distinta no JP, ambas corretamente traduzidas em separado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de maio (museu, bilheteria, Komyodai, viagem a Kyushu, Marte, mulher cega — segunda menção, farmacêuticos, EUA, telegramas)",
+      "jp_linhas": "110-132",
+      "decisao": "corrigido (correção 4)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de maio (repetição de força/Johrei, EUA, museu/transporte, artigo 'Em vez da língua', Japão-branco, Marte, superstição médica, hidrazida)",
+      "jp_linhas": "136-156",
+      "decisao": "ok — parágrafo único longo no PT, conteúdo conferido citação por citação contra o JP, nenhuma omissão encontrada; repetições de histórias já vistas em dias anteriores (mulher cega, EUA/câncer) são repetições genuínas do orador no JP, não duplicação de bug",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de maio (construção do museu, coleção/milagres, cerâmica chinesa, transporte, 'Terapia pela Fé', 'Minha História', Hideyoshi, disenteria)",
+      "jp_linhas": "159-174",
+      "decisao": "corrigido (correção 5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de maio (museu pronto, Shōtoku, indecisão/rapidez, 'Minha História', Hideyoshi de novo, disenteria de novo — conteúdo distinto do dia 25)",
+      "jp_linhas": "178-197",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de maio (museu quase pronto, bambu/estilo chinês, arte-religião, Hideyoshi/Ieyasu extenso, 'Terapia pela Fé', 'Minha História')",
+      "jp_linhas": "201-213",
+      "decisao": "corrigido (correção 6)",
+      "confianca": "alta"
+    }
+  ],
+  "observacao_estrutural_nao_bloqueante": "As sessões de 7, 17, 25, 26 e 27 de maio mantêm o corpo do dia como um único parágrafo PT corrido, colapsando várias quebras de parágrafo do JP (que separa por citação de artigo e por mudança de tópico). Verificado que não há perda de conteúdo em nenhum desses blocos — todas as citações de artigo e mudanças de tópico do JP estão presentes na ordem correta dentro do parágrafo único. Isso é tratado como 'ok' por analogia direta ao precedente já registrado em 19490701-自観叢書第2篇『無肥料栽培法』.txt_AUDIT_TRAIL.json ('alguns parágrafos JP longos vertidos em um só parágrafo PT, mas sem perda de conteúdo' = ok), reservando reestruturação obrigatória apenas para os casos em que sub-artigos com título/autor distintos ficam amassados sem separação (não é o caso aqui — é discurso contínuo do mesmo orador, sem sub-títulos). Não bloqueia aprovação; registrado para transparência caso um revisor futuro prefira quebrar esses blocos.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 6 correções. approved:true."
+  }
+}

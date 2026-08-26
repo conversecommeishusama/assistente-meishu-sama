@@ -1,0 +1,95 @@
+{
+  "filename": "19490530-御光話録8号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 301 linhas / PT 251→255 linhas após correções), do título ao aviso editorial final. JP inteiro lido linha a linha e confrontado com o PT correspondente na mesma ordem, com atenção máxima à secção final (JP linhas 221-293, da troca de dentição até ao diálogo de 21 anos com fístula anal) por ter sido, segundo o histórico deste ficheiro, traduzida do zero após a remoção de ~37 linhas duplicadas de uma segunda passada de tradução sobreposta (sessão 2026-07-04). Verificada também a alternância Interlocutor/Meishu-Sama do início ao fim, dado este ficheiro constar explicitamente da lista de volumes com troca de rótulo de falante suspeitada (4号,5号,7号,8号,9号,11号,14号,17号,補).",
+  "gate_mecanico": "PASS após correções: `python3 scripts/gate_gokowa_linha.py --file 19490530-御光話録8号.txt` → I=55/55 Δ=0 CJK=0. Rodado antes das correções também dava PASS (Δ=0) — confirma na prática a regra 'Δ=0 é necessário, nunca suficiente': os 7 problemas reais abaixo (troca/fusão de rótulo, 2 erros terminológicos, 1 ambiguidade de pronome, 1 erro factual de data, 1 perda de conteúdo, 1 secção final ausente) não alteravam a contagem de Interlocutor e por isso não seriam detectados só pelo gate.",
+  "summary": {
+    "articles_in_spec": 1,
+    "spec_kind": "monolith (1 artigo, todo o Q&A dentro do mesmo bloco jp_anchor/pt_anchor)",
+    "pares_pergunta_resposta_revistos": 44,
+    "real_corrections_applied": 7,
+    "items_escalated_to_pendencias": 0,
+    "duplicacao_residual_2026_07_04_confirmada": false,
+    "troca_de_falante_confirmada": "parcial — não foi troca de rótulo (Interlocutor↔Meishu-Sama invertidos), mas fusão indevida: um único turno contínuo de Meishu-Sama no JP (linhas 26-30, sem nenhum '――' de interrupção) tinha sido dividido no PT em dois turnos consecutivos rotulados 'Meishu-Sama:' sem Interlocutor entre eles — mesma classe de bug (rótulo de falante malformado), corrigida por fusão."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "1ª pergunta do volume (centros de ensino não se desenvolverem), resposta de Meishu-Sama, por volta da menção às flores no tokonoma",
+      "problema": "GRAVE — turno de falante malformado: o JP (linhas 26-30) é uma única resposta contínua de Meishu-Sama (nenhum '――' de interrupção até à pergunta seguinte), mas o PT dividia essa resposta em dois turnos consecutivos rotulados 'Meishu-Sama:' sem nenhum turno de Interlocutor entre eles — padrão idêntico ao já catalogado noutros volumes (Interlocutor:/Meishu-Sama: consecutivos do mesmo falante sem alternância).",
+      "correcao": "Removido o segundo rótulo 'Meishu-Sama:' redundante, mantendo o texto como continuação em novo parágrafo do mesmo turno (quebra de parágrafo preservada, só o rótulo duplicado eliminado).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Relato sobre o Templo Nippon-ji (Awa), lista de estátuas budistas encontradas pelo caminho",
+      "problema": "GRAVE — corrupção de nome próprio teológico: JP lista '観音、釈迦、阿弥陀から木蓮、龍樹' (Kannon, Shaka, Amida, [木蓮], Ryuju). '木蓮' foi traduzido como 'Miroku', mas 'Miroku' corresponde a 弥勒 (figura central e distinta na doutrina, Era de Miroku etc.), nunca a 木蓮. No contexto (lista de estátuas budistas ao lado de Kannon/Shaka/Amida/Ryuju), '木蓮' é quase certamente uma variante homófona de 目連 (Mokuren/Maudgalyayana, discípulo do Buda) — em nenhuma leitura plausível corresponde a Miroku.",
+      "correcao": "Substituído 'Miroku' por 'Mokuren' nesta lista específica. Confirmado por grep que a Era de Miroku (五六七御代→'Era de Miroku') está correta e inalterada nas restantes ~30 outras ocorrências do volume — o erro era pontual, só nesta lista de nomes.",
+      "confianca": "média-alta — a leitura exata de 木蓮 no JP original (magnólia vs. homófono de 目連) não pode ser resolvida com certeza absoluta a partir do texto, mas 'Miroku' está descartado com alta confiança por não ser foneticamente nem semanticamente compatível com nenhuma das duas leituras"
+    },
+    {
+      "n": 3,
+      "localizacao": "Mesmo relato do Templo Nippon-ji, explicação sobre os 'modelos' (型) que Deus usa em diferentes escalas",
+      "problema": "Erro de unidade de medida: JP '一寸五分' (uma unidade de comprimento, 1 sun e 5 bu) traduzido como 'um sol e cinco bu' — confundindo a unidade 寸 (sun) com a palavra portuguesa 'sol' (sun/estrela), o que não faz sentido como unidade de diâmetro.",
+      "correcao": "Corrigido para 'um sun e cinco bu', consistente com a transliteração de unidades já usada no resto do parágrafo (shaku, bu) e do volume (shaku, cho).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Mesmo relato, episódio do sonho de Koike (o artesão de geta)",
+      "problema": "Ambiguidade de pronome: fala de Koike sobre si mesmo, citada em japonês em primeira pessoa sem necessidade de aspas ('私って世界のピントを合わせるために生まれて来たんだ'), foi vertida em português também em primeira pessoa sem aspas ('E dizia que eu tinha nascido para ajustar o foco do mundo'), correndo o risco real de o leitor atribuir a afirmação a Meishu-Sama (narrador) em vez de a Koike.",
+      "correcao": "Alterado o pronome para terceira pessoa ('E dizia que ele tinha nascido...'), eliminando a ambiguidade sem alterar o sentido (o parágrafo seguinte, onde Meishu-Sama reage com estranheza à afirmação, só faz sentido pleno se a frase for de Koike).",
+      "confianca": "média-alta — mudança de clareza, não uma correção de erro factual per se"
+    },
+    {
+      "n": 5,
+      "localizacao": "Resposta sobre ano/mês/dia de nascimento e sorte/personalidade",
+      "problema": "Erro factual: JP '私は午の年の午の月の一日に生まれたんですが' (nasci no ano do Cavalo, mês do Cavalo, no primeiro dia [一日 = tsuitachi, dia 1 do mês]) foi traduzido como '...no dia do Cavalo...', confundindo com o '午の日' (dia do Cavalo) mencionado no parágrafo seguinte, que se refere a uma coincidência totalmente distinta (5 de maio de 1930, ano/mês/dia do Cavalo simultâneos — uma raridade que o texto explicitamente contrasta com o nascimento do próprio Meishu-Sama, que só bate ano+mês, não dia).",
+      "correcao": "Corrigido para 'no primeiro dia do mês', preservando a distinção que o JP faz entre os dois casos.",
+      "confianca": "alta — '一日' é inequivocamente 'tsuitachi' (primeiro dia do mês) neste contexto, não '午の日'"
+    },
+    {
+      "n": 6,
+      "localizacao": "Resposta sobre 'shirakumo' (tinha/impetigem)",
+      "problema": "GRAVE — perda de conteúdo: a cláusula final do JP '昔は胎毒、いまは遺伝性梅毒、ほんとは薬毒なんですよ。（笑声）' (antigamente chamada toxina fetal, hoje sífilis hereditária, mas na verdade toxina medicamentosa — risos) estava totalmente ausente do PT, que terminava a resposta uma frase antes.",
+      "correcao": "Traduzida e adicionada a cláusula em falta, usando a terminologia já estabelecida noutros volumes do acervo para os mesmos termos ('toxina fetal' para 胎毒, 'sífilis hereditária' para 遺伝性梅毒 — confirmado por grep em reports/livros_trabalho/pt/19530101-アメリカを救う.txt, que usa exatamente esta correspondência).",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "Fim do ficheiro, após o último par pergunta/resposta (fístula anal)",
+      "problema": "PT em falta: o aviso editorial final do JP (linhas 298-301, cabeçalho '御注意', pedindo que o Gokōwa-roku não seja mostrado indiscriminadamente e só a quem já teve audiência com o Grão-Mestre) nunca havia sido traduzido — o PT terminava na última resposta do diálogo. Confirmado por comparação cruzada: dos 20 volumes Gokōwa, só 6号 e 8号 têm este tipo de aviso no JP; em 6号 o aviso equivalente (com cabeçalho diferente, 編輯後記) está traduzido integramente no PT como 'Nota da Redação' — confirma que este tipo de secção deve ser traduzida, não omitida como metadado.",
+      "correcao": "Traduzido e adicionado como secção final 'Aviso', preservando o conteúdo (não mostrar indiscriminadamente; reservado a quem já teve audiência e é devotado ao Caminho).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título + intro editorial", "jp_linhas": "20-22", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Q1 centros de ensino não se desenvolvem (incl. dinheiro/flores)", "jp_linhas": "24-30", "decisao": "corrigido — fusão de turno duplicado (correção 1)", "confianca": "alta"},
+    {"bloco": "Q2 sepultamento em terreno privado; Q3 filha divorciada/loucura; Q4 filho póstumo/sufrágio; Q5 testamento de viuvez; Q6 dois filhos mortos ao nascer; Q7 microcosmo do corpo; Q8 16 qualificações do Messias (Hui Hui)", "jp_linhas": "33-68", "decisao": "ok, sem alterações", "confianca": "alta"},
+    {"bloco": "Q9 útero caído; Q10-13 Sete Maravilhas de Enshu; Q14-15 gato espírito; Q16 pilar de fogo; Q17 elo espiritual do casal; Q18 ascetas de Inari; Q19 cristão falecido; Q20 três toxinas/cinco impurezas; Q21 linhagem espiritual/Extinção do Budismo", "jp_linhas": "70-129", "decisao": "ok, sem alterações", "confianca": "alta"},
+    {"bloco": "Q22 incêndio do Templo Horyu-ji / relato longo do Templo Nippon-ji e sonho de Koike", "jp_linhas": "132-138", "decisao": "corrigido — nome próprio (correção 2), unidade de medida (correção 3), ambiguidade de pronome (correção 4)", "confianca": "média-alta"},
+    {"bloco": "Q23 estrabismo; Q24 tumor lombar; Q25 mancha de nascença; Q26 sangramento anal pós-Johrei; Q27 altar em família separada; Q28 urticária/penas; Q29 rim único", "jp_linhas": "141-173", "decisao": "ok, sem alterações", "confianca": "alta"},
+    {"bloco": "Q30 trepadeiras esquerda/direita; Q31 ano/mês de nascimento e sorte (incl. nascimento do próprio Meishu-Sama)", "jp_linhas": "176-184", "decisao": "corrigido — erro factual de data (correção 5)", "confianca": "alta"},
+    {"bloco": "Q32 dias 210/220; Q33 hemisférios; Q34 dentes na Era de Miroku; Q35 nervosismo em público; Q36-37 língua bífida; Q38 shirakumo", "jp_linhas": "187-218", "decisao": "corrigido — perda de conteúdo em Q38 (correção 6)", "confianca": "alta"},
+    {"bloco": "Q39 dente que troca (início da secção retraduzida do zero); Q40 luxação/gesso/raio-X; Q41 desenvolvimento do pé; Q42 três estágios do mundo espiritual; Q43 mundo material vs. espiritual; Q44 nenpi Kannon riki/gyo/shin", "jp_linhas": "221-256", "decisao": "ok — secção retraduzida revista linha a linha, alternância Interlocutor/Meishu-Sama correta, nenhuma perda ou corrupção encontrada", "confianca": "alta"},
+    {"bloco": "Diálogo final de 21 anos com fístula anal (18 turnos curtos pergunta/resposta)", "jp_linhas": "259-293", "decisao": "ok — revisto turno a turno, alternância de falante correta em todos os 18 pares, conteúdo médico (fístula/tuberculose/hemorragia/febre/Kyoshu 1946) fiel ao JP, nenhuma perda ou troca de rótulo", "confianca": "alta"},
+    {"bloco": "Aviso editorial final (御注意)", "jp_linhas": "296-301", "decisao": "corrigido — secção inteira ausente, traduzida e inserida (correção 7)", "confianca": "alta"}
+  ],
+  "verificacao_duplicacao_residual": {
+    "descricao": "Verificada especificamente a possibilidade de resíduo da duplicação de ~37 linhas removida em 2026-07-04 (segunda passada de tradução sobreposta aos tópicos 0-13). Percorrido o volume inteiro linha a linha; todos os 44 pares pergunta/resposta aparecem exatamente uma vez, na mesma ordem do JP, sem repetição de tópico nem eco de trecho.",
+    "resultado": "sem resíduo encontrado"
+  },
+  "verificacao_troca_de_falante": {
+    "descricao": "Verificada a alternância Interlocutor:/Meishu-Sama: do início ao fim do ficheiro, incluindo a secção final retraduzida do zero (18 pares P&R sobre fístula anal), por este volume constar da lista de arquivos com troca de rótulo suspeitada.",
+    "resultado": "Nenhuma troca de rótulo real (Interlocutor↔Meishu-Sama invertidos) encontrada. Único problema de rotulagem: fusão indevida de um turno único do JP em dois turnos 'Meishu-Sama:' consecutivos no PT (ver correção 1) — já corrigido."
+  },
+  "pendencias_abertas": [],
+  "observacao_nao_bloqueante": "Duas ocorrências de '八度' (literalmente '8 graus') no diálogo final sobre febre foram traduzidas como 'trinta e oito graus' (interpretando como forma abreviada coloquial de '三十八度', já que 8°C não é fisiologicamente plausível como febre). Interpretação consistente nas duas ocorrências e a única leitura que faz sentido clínico; não alterada nesta revisão por não haver indício de erro, mas registada para referência caso surja informação nova sobre a convenção do JP original.",
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Todos os 44 pares pergunta/resposta e o aviso editorial final foram revistos linha a linha contra o JP, com atenção redobrada à secção final retraduzida do zero (dente/dentição até fístula anal) e à alternância de falante em todo o volume. Corrigidos: fusão indevida de turno de falante (1), nome próprio teológico trocado 木蓮→'Miroku' em vez de 'Mokuren' (2), unidade de medida 'sol'→'sun' (3), ambiguidade de pronome no relato de Koike (4), erro factual de data 'dia do Cavalo'→'primeiro dia do mês' (5), cláusula perdida sobre toxina fetal/sífilis hereditária (6), aviso editorial final (御注意) ausente (7). Gate mecânico PASS (I=55/55 Δ=0 CJK=0) após as correções. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

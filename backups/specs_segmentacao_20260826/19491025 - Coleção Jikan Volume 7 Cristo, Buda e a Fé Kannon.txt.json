@@ -1,0 +1,127 @@
+{
+ "filename": "19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Pareamento PT 2026-07-15 (CHUNK_TURNAWARE): 14 artigos com pt_anchor vazio/errado (13 PAREAMENTO_NAO_RESOLVIDO + 1 ratio_warn falso). JP já estava correto (12 capítulos numerados + 2 prefácio). Reconstruído por leitura direta PT (headings romanos I-XII batem 1:1 com os capítulos JP); pt_anchor preenchido para todos. audit --fix --repair-pt: 13 ok, 1 ratio_warn (prefácio, padrão benigno aceito).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 14,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "自観叢書第7篇『基仏と観音教』昭和24(1949)年10月25日発行",
+   "pt_anchor": "Cristianismo, Budismo e a Religião de Kannon",
+   "notes": "line_jikan_structural; ratio PT/JP=0.02; ratio PT/JP=5.93"
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序　文",
+   "title_pt": "",
+   "jp_anchor": "そもそも、あらゆる文化の向上は、破壊と建設を繰返しつつ進歩し、発展しつつ今日に到った事は何人も知る所である。",
+   "pt_anchor": "Antes de tudo, é sabido de todos que toda cultura avançou e se desenvolveu até os dias de hoje repetindo destruição e construção.",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一、緒　言",
+   "title_pt": "",
+   "jp_anchor": "一、緒　言",
+   "pt_anchor": "I. Introdução",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二、キリスト教の起源とその根本観念",
+   "title_pt": "",
+   "jp_anchor": "二、キリスト教の起源とその根本観念",
+   "pt_anchor": "II. A Origem do Cristianismo e seu Conceito Fundamental",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三、キリスト教の発達と神格の変貌",
+   "title_pt": "",
+   "jp_anchor": "三、キリスト教の発達と神格の変貌",
+   "pt_anchor": "III. O Desenvolvimento do Cristianismo e a Transformação da Qualificação Di",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四、キリスト教とパウロ",
+   "title_pt": "",
+   "jp_anchor": "四、キリスト教とパウロ",
+   "pt_anchor": "IV. O Cristianismo e Paulo",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五、釈迦の生誕と仏教の発展",
+   "title_pt": "",
+   "jp_anchor": "五、釈迦の生誕と仏教の発展",
+   "pt_anchor": "V. O Nascimento de Buda e o Desenvolvimento do Budismo",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "六、初期小乗仏教時代",
+   "title_pt": "",
+   "jp_anchor": "六、初期小乗仏教時代",
+   "pt_anchor": "VI. A Era do Budismo Shojo Primitivo",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "七、大乗仏教の全盛時代",
+   "title_pt": "",
+   "jp_anchor": "七、大乗仏教の全盛時代",
+   "pt_anchor": "VII. A Era de Ouro do Budismo Daijo",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "八、密教の興起以後",
+   "title_pt": "",
+   "jp_anchor": "八、密教の興起以後",
+   "pt_anchor": "VIII. Após o Surgimento do Budismo Esotérico",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "九、仏教思想の瞥見",
+   "title_pt": "",
+   "jp_anchor": "九、仏教思想の瞥見",
+   "pt_anchor": "IX. Uma Breve Visão do Pensamento Budista",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十、岡田自観師の宗教",
+   "title_pt": "",
+   "jp_anchor": "十、岡田自観師の宗教",
+   "pt_anchor": "X. A Religião do Mestre Okada Jikan",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十一、観音教の死後の世界観",
+   "title_pt": "",
+   "jp_anchor": "十一、観音教の死後の世界観",
+   "pt_anchor": "XI. A Visão do Mundo Pós-Morte da Religião Kannon",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十二、結　論",
+   "title_pt": "",
+   "jp_anchor": "十二、結　論",
+   "pt_anchor": "XII. Conclusão",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,192 @@
+{
+  "filename": "19511215-御教え集4号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 621 linhas / PT ~288 linhas após correções — ratio ~2:1 típico deste formato de Q&A denso, não é sinal de perda), 10 trechos/datas por spec (profile mioshie_shu), JP não pré-dividido (1 único bloco === ARTIGO ===). Todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, com atenção extra às 8 transições de data (1, 5, 8, 11, 15, 18, 21, 25, 28 de novembro).",
+  "family_context": "Livro da família 御教え集/御垂示録, já com histórico grave nesta sessão (monólitos residuais, cabeçalhos duplicados, trechos nunca traduzidos, corrupção de texto em outros volumes da mesma família). Revisado com rigor máximo por esse motivo.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 10,
+    "articles_reviewed": 10,
+    "real_corrections_applied": 9,
+    "items_escalated_to_pendencias": 0,
+    "known_bug_patterns_confirmed": [
+      "cabeçalhos de data duplicados (heading duplicado no fim de um parágrafo e repetido no início do parágrafo seguinte) — encontrado 4 vezes: '11 de novembro', '21 de novembro', '25 de novembro', e no bloco de abertura do prefácio (título/data duplicados antes do primeiro '1 de novembro')",
+      "duplicação de bloco inteiro (pergunta+resposta) — encontrado 1 vez: caso Sakai Kōsuke ('sequela de mielite'), com uma versão truncada em 3ª pessoa seguida de uma versão completa em 1ª pessoa da mesma pergunta/resposta",
+      "duplicação de bloco de ensinamento — encontrado 1 vez: o ensinamento sobre 孤霊 (Eikō nº 133) traduzido duas vezes de forma diferente ('espírito vulpino' vs 'espírito solitário'), com a primeira versão truncada antes da parte final sobre Shōjō/Daijō",
+      "marcador estrutural duplicado — '=== ARTIGO ===' repetido 2x no topo do ficheiro de trabalho (JP tem só 1x)",
+      "truncamento/perda de palavras no meio da frase (sem quebra de bloco) — encontrado 4 vezes: (1) frase sobre filhos surdos do próprio Meishu-Sama faltando 'São meninos. No início, não ouviam nada, mas depois que'; (2) frase sobre ritmo de fala faltando a palavra 'ritmo'; (3) frase sobre a exposição de Picasso faltando 'alvoroço é porque falta capacidade crítica'; (4) frase sobre necessidade histórica do materialismo faltando duas orações inteiras (~40 palavras) sobre o artigo anterior do mal necessário"
+    ],
+    "known_bug_patterns_not_found": [
+      "troca de falante (Interlocutor/Meishu-Sama invertidos) — não encontrado neste volume",
+      "monólito residual gigante com cauda duplicada (padrão dos 4号/24号 do 御垂示録) — não encontrado; o único bloco === ARTIGO === do JP já corresponde a um documento contínuo sem pré-divisão por trecho, mas o PT preserva a granularidade de parágrafo do JP dentro dele",
+      "CJK residual no corpo PT — nenhum encontrado"
+    ]
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início do ficheiro (linhas 5-6, antes da correção)",
+      "problema": "Marcador '=== ARTIGO ===' duplicado (2x seguidas); JP tem apenas 1x.",
+      "correcao": "Removida a linha duplicada, mantendo um único '=== ARTIGO ==='.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "bloco de abertura (linhas 22-29, antes da correção)",
+      "problema": "Cabeçalho '1 de novembro' aparecia solto antes do título/prefácio (fora de ordem), e o título+data de publicação ('Mioshie-shū nº 4, publicado em 15 de dezembro de 1951') era repetido uma segunda vez, de forma reformulada, imediatamente antes do heading correto '1º de novembro'. JP tem a sequência única: título (御教え集第四号) → dados de publicação (『御教え集』4号...) → cabeçalho de data (十一月一日) → conteúdo.",
+      "correcao": "Removida a ocorrência solta de '1 de novembro' antes do prefácio e a restatement duplicada do título/publicação; mantida a sequência única título → publicação → '1 de novembro' → conteúdo, normalizando '1º de novembro' para '1 de novembro' por consistência com os demais cabeçalhos do volume (todos sem ordinal).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "trecho de 1 de novembro, caso de Sakai Kōsuke (JP linha 162-165, '酒井康祐（五十歳）...脊髄炎後胎症')",
+      "problema": "GRAVE: bloco pergunta+resposta duplicado inteiro. Uma primeira versão em 3ª pessoa ('Sakai Kōsuke (50 anos). Desde junho...') tinha a resposta divina cortada no meio da frase ('...Se fizer Johrei aí, com certeza vai curar. A dor está' — trunca aqui). Em seguida, a MESMA pergunta reaparecia inteira em 1ª pessoa ('Por volta de junho daquele ano, senti rigidez...'), estilo inconsistente com o resto do volume (que usa sempre 3ª pessoa nas perguntas), seguida de uma segunda resposta divina completa e correta.",
+      "correcao": "Completada a frase truncada da 1ª versão com o final correto ('Se doer, é ótimo, porque a purificação está ocorrendo...') e removida inteiramente a pergunta+resposta duplicada em 1ª pessoa, preservando só a versão em 3ª pessoa (consistente com o estilo do resto do volume) com o conteúdo integral.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "trecho de 18 de novembro, ensinamento sobre 孤霊 (JP linha 462, '（御論文「霊憑りに就いて」のあとの御教え）')",
+      "problema": "GRAVE: o mesmo parágrafo de ensinamento (sobre o espírito protetor guardião usar 孤霊/kourei para se comunicar, e o discernimento espiritual — 審神/saniwa) foi traduzido duas vezes de forma diferente e ambas as versões ficaram no ficheiro. A primeira versão ('espíritos vulpinos') estava truncada antes da parte final sobre Shōjō/Daijō; havia ainda um fragmento órfão de uma frase entre as duas versões. A segunda versão ('espíritos solitários') estava completa e é consistente com a tradução usada mais adiante no mesmo volume para o mesmo termo JP (孤霊 → 'espírito solitário', ver trecho de 25 de novembro, ensaio '孤霊でさえ薬毒を知ってる').",
+      "correcao": "Mantida a versão completa e terminologicamente consistente ('espírito solitário'), removida a versão truncada ('espírito vulpino') e o fragmento órfão entre elas, preservando o título do ensinamento uma única vez.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "transição de data '11 de novembro' (antes da correção)",
+      "problema": "Cabeçalho '11 de novembro' duplicado: aparecia sozinho e depois repetido colado ao início do parágrafo de conteúdo ('11 de novembro (Pergunta) Em janeiro do ano 19...').",
+      "correcao": "Removida a repetição, mantendo o cabeçalho uma única vez, seguido do conteúdo em parágrafo próprio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "transição de data '21 de novembro' (antes da correção)",
+      "problema": "Mesmo padrão: '21 de novembro' aparecia colado ao final do parágrafo anterior (ensinamento 'O Ábaco e a Eficiência') e novamente colado ao início do parágrafo seguinte.",
+      "correcao": "Removida a repetição, cabeçalho isolado em linha própria antes do conteúdo do dia.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "transição de data '25 de novembro' (antes da correção)",
+      "problema": "Mesmo padrão: '25 de novembro' colado ao final do parágrafo anterior e repetido ao início do parágrafo de pergunta seguinte.",
+      "correcao": "Removida a repetição, cabeçalho isolado em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "trecho de 8 de novembro, resposta sobre os filhos surdos do próprio Meishu-Sama (JP linha 250, '私の所の子供も、二人とも耳が遠いんです。男の子ですがね。')",
+      "problema": "Truncamento/perda de palavras no meio da frase: 'As crianças da minha casa também têm dificuldade de ouvir, as duas.  comecei a fazer Johrei...' — faltava a informação de que eram meninos e que inicialmente não ouviam nada.",
+      "correcao": "Inserido o trecho faltante: 'São meninos. No início, não ouviam nada, mas depois que passei a fazer Johrei constantemente...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "trecho de 11 de novembro, ensinamento sobre a arte de falar/ouvir (JP linha 383-384, 'その――一つの調子ですね')",
+      "problema": "Palavra faltando no meio da frase: '...há quem ouça gradualmente – é um certo  É como uma arte.' (falta o substantivo depois de 'um certo').",
+      "correcao": "Inserida a palavra 'ritmo': '...é um certo ritmo. É como uma arte.'",
+      "confianca": "média-alta (JP usa 調子, que também poderia ser vertido como 'tom' ou 'cadência'; 'ritmo' captura o sentido central de forma natural em português)"
+    },
+    {
+      "n": 10,
+      "localizacao_pt": "trecho de 25 de novembro, ensinamento sobre a exposição de Picasso (JP linha 549, 'それが、ああして大騒ぎをされていると言うのは、批判力がないからです。')",
+      "problema": "Frase incompleta: 'O fato de fazerem tanto  Dizem que é bom porque os outros dizem que é bom.' — faltava a oração inteira que explica a causa do alvoroço (falta de capacidade crítica).",
+      "correcao": "Inserido o trecho faltante: 'O fato de fazerem tanto alvoroço é porque falta capacidade crítica. Dizem que é bom...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao_pt": "trecho de 28 de novembro, ensinamento final sobre materialismo (JP linha 612, 'これが唯物教育の結果なのです。つまり唯物思想が悪の根本になる訳です。そこで...')",
+      "problema": "GRAVE (maior lacuna de conteúdo do volume): duas orações inteiras (~40 palavras) foram perdidas no meio da frase: 'Não é diferente disso. Isso é  Se não fosse assim, a cultura materialista não teria se desenvolvido...' — faltava toda a explicação de que o pensamento materialista é resultado da educação materialista/raiz do mal, e a referência ao artigo anterior sobre o mal ter sido necessário.",
+      "correcao": "Inserido o trecho faltante, traduzido a partir do JP com apoio do glossário (唯物思想 → 'pensamento materialista', termo já presente em glossario_traducao.json): 'Isso é resultado da educação materialista. Ou seja, o pensamento materialista é a raiz do mal. Por isso, outro dia, também escrevi um artigo dizendo que o mal foi necessário até agora; da mesma forma, o fato de todos se tornarem obstinadamente materialistas também foi necessário até agora. Se não fosse assim...'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + cabeçalho de publicação",
+      "jp_linhas": "1-24",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correções 1 e 2 (marcador duplicado e cabeçalho/título duplicados)."
+    },
+    {
+      "bloco": "1 de novembro (5 perguntas + Ensinamento Kyoto/museu/BCG/vacinação/Zen-Bramanismo)",
+      "jp_linhas": "24-78",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correção 3 (duplicação Sakai Kōsuke). Demais 4 perguntas e o Ensinamento longo conferidos frase a frase, completos e na ordem correta."
+    },
+    {
+      "bloco": "5 de novembro (2 perguntas + Ensinamento bem/mal)",
+      "jp_linhas": "79-112",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "8 de novembro (5 perguntas)",
+      "jp_linhas": "113-161",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correção 8 (truncamento sobre filhos surdos de Meishu-Sama). Demais perguntas completas e na ordem correta."
+    },
+    {
+      "bloco": "11 de novembro (1 pergunta longa + Ensinamento sobre boatos de Fukui + Ensinamento sobre linguagem/psicologia + mentira)",
+      "jp_linhas": "162-219",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correções 5 e 9 (cabeçalho duplicado e truncamento 'ritmo'). Único bloco JP muito longo (uma única pergunta seguida de vários ensinamentos concatenados) — confirmado que corresponde a uma sequência real e contínua no JP, não a perguntas faltando."
+    },
+    {
+      "bloco": "15 de novembro (4 perguntas)",
+      "jp_linhas": "330-386",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "18 de novembro (4 perguntas + Ensinamento sobre possessão espiritual/孤霊/saniwa/ábaco e eficiência)",
+      "jp_linhas": "394-495",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correções 4, 6 (duplicação do ensinamento 孤霊 e cabeçalho '21 de novembro' duplicado na transição)."
+    },
+    {
+      "bloco": "21 de novembro (sem perguntas médicas; ensinamentos sobre possessão espiritual/BCG/superstição ateia/ábaco)",
+      "jp_linhas": "472-495",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Confirmado no JP que não há perguntas de saúde neste dia, conforme o próprio texto anuncia ('今日は病気の質問がないですから')."
+    },
+    {
+      "bloco": "25 de novembro (5 perguntas + Ensinamento sobre mentira/superstição ateia/pintores/BCG)",
+      "jp_linhas": "499-563",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correções 7 e 10 (cabeçalho duplicado e truncamento sobre Picasso/falta de capacidade crítica)."
+    },
+    {
+      "bloco": "28 de novembro (6 perguntas + Ensinamento final sobre superstição ateia/materialismo)",
+      "jp_linhas": "567-621",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "notas": "Ver correção 11 (lacuna de conteúdo sobre materialismo, a mais extensa encontrada neste volume). Confirmado que as 6 perguntas do dia estão todas presentes e na ordem correta."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 11 correções, sem resíduo de duplicação. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "method": "3 etapas (gokowa-rotulagem-a4b-jp.mdc, adaptado para marcadores （お伺）/〔御垂示〕 em vez de ――): Etapa A leitura linha a linha do JP completo (621 linhas) construindo o mapa de turnos por data, incluindo sub-diálogos embutidos marcados só por 「」 dentro da resposta; Etapa B confirmação de que o PT bate 1:1 com o mapa (nenhum par faltando, todos os 19 pares （お伺）/〔御垂示〕 presentes); Etapa C aplicação dos rótulos.",
+    "date": "2026-07-08",
+    "reviewer": "agente",
+    "achado_estrutural_pt": "O ficheiro PT misturava 4 estilos de marcador de resposta ('(Orientação)', '[Instrução Divina]', '[Resposta Divina]', '〔Instrução Divina〕') e às vezes fundia o fim de uma resposta com a pergunta seguinte na mesma linha/parágrafo (ex.: '...para o Johrei? [Instrução Divina]' seguido da pergunta seguinte na mesma linha). Resolvido programaticamente: os marcadores de pergunta ('(Pergunta)'/'(Consulta)') viraram 'Interlocutor:', os 4 estilos de marcador de resposta viraram 'Meishu-Sama:', e cada parágrafo fundido foi corretamente dividido no ponto do marcador — nunca por rótulo pré-existente, sempre pela posição correspondente no mapa JP.",
+    "subdialogos_embutidos": "38 sub-turnos embutidos (réplica curta do interlocutor dentro de uma resposta, sem '（お伺）' próprio) identificados e rotulados 'Interlocutor:', todos confirmados contra o JP （「」）. 4 falsos-positivos descartados: trechos onde o PT usa aspas apenas para citar retoricamente um termo/diagnóstico da pergunta dentro da própria fala de Meishu-Sama (ex.: '\"Sequela de mielite\" é estranho...', '\"Incurável\" — isso é estranho...') — no JP correspondente não há 「」 ali, é um único parágrafo contínuo de Meishu-Sama; heurística usada: réplica genuína = linha inteira é só a citação; citação retórica = citação seguida de texto próprio na mesma linha.",
+    "blocos_sem_rotulo": "Blocos de puro ensinamento/monólogo (【御教え】/[Ensinamento], incl. as digressões sobre Kyoto/museu, Bem e Mal, possessão espiritual, saniwa, ábaco e eficiência, Picasso, superstição ateia) mantidos sem rótulo de falante, conforme a regra; o marcador '[Ensinamento]'/'【Ensinamento】' foi preservado no texto (não apagado), só não recebeu rótulo Interlocutor:/Meishu-Sama:.",
+    "contagem": "Interlocutor: 89 parágrafos; Meishu-Sama: 87 parágrafos (a diferença reflete perguntas longas fragmentadas em vários parágrafos do PT, ex. caso Murofushi com histórico numerado 1-7, não um par faltando — todos os 19 pares （お伺）/〔御垂示〕 batem).",
+    "aplicado_direto_no_pt": true,
+    "spec_approved_alterado": false
+  }
+}

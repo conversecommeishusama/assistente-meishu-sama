@@ -1,0 +1,919 @@
+{
+ "filename": "19521201 - Terapia de Fé para Tuberculose.txt",
+ "profile": "tuberculosis_faith",
+ "method": "jp_line_by_line_v3_stack_aware",
+ "approved": false,
+ "editor_notes": "Reconstrucao estrutural completa 2026-07-14 (Claude Code): ensaio doutrinario (era 1 artigo monolitico, jp_chars=37938) dividido em 12 subsecoes reais pelo criterio autoral; testemunhos do apendice recontados de 66 para 91 (spec anterior tinha titulos empilhados nao capturados e sentencas de abertura confundidas com titulo, causando fusao/perda). Total: 1 prefacio + 12 secoes de ensaio + 91 testemunhos = 104 artigos.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 68,
+ "split_method": "line_bracket_testimony",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "結核信仰療法　現代医学の根本的誤謬を正す",
+   "pt_anchor": "Terapia de Fé para Tuberculose — Corrigindo o Erro Fundamental da Medicina Moderna",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "医学が結核を作る",
+   "title_pt": "A Medicina Cria a Tuberculose",
+   "jp_anchor": "医学が結核を作る",
+   "pt_anchor": "A Medicina Cria a Tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核は感染しない",
+   "title_pt": "A Tuberculose Não é Contagiosa",
+   "jp_anchor": "結核は感染しない",
+   "pt_anchor": "A Tuberculose Não é Contagiosa",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "黴菌の発生",
+   "title_pt": "O Surgimento dos Micróbios",
+   "jp_anchor": "黴菌の発生",
+   "pt_anchor": "O Surgimento dos Micróbios",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "毒素の解剖",
+   "title_pt": "Dissecação da Toxina",
+   "jp_anchor": "毒素の解剖",
+   "pt_anchor": "Dissecação da Toxina",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "天然痘",
+   "title_pt": "Varíola",
+   "jp_anchor": "天然痘\n\n　ここで天然痘について詳しくかいてみるが",
+   "pt_anchor": "Varíola",
+   "notes": "correcao_2026-08-05: pt_anchor apontava para 'Mizuno (23 anos)', testemunho embutido no MEIO do ensaio, nao para o inicio real da secao -- causava vazamento de ~7800 chars do corpo de Varíola para o artigo anterior (Dissecacao da Toxina) e article5 comecava sem seu proprio titulo/abertura. Corrigido para a heading real '**Varíola**'."
+  },
+  {
+   "kind": "section",
+   "title_jp": "肺炎と肋膜炎",
+   "title_pt": "Pneumonia e Pleurisia",
+   "jp_anchor": "肺炎と肋膜炎",
+   "pt_anchor": "Pneumonia e Pleurisia",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核付随病",
+   "title_pt": "Doenças Associadas à Tuberculose",
+   "jp_anchor": "結核付随病",
+   "pt_anchor": "Doenças Associadas à Tuberculose",
+   "notes": "ensaio_reconstruido_2026: subsecao doutrinaria do ensaio (article2 antigo, jp_chars=37938, era 1 artigo so); ensaio 医学が結核を作る..付録に就て tem 12 subsecoes reais pelo criterio autoral; exemplos de testemunho embutidos (Mizuno em 天然痘, Iseri em 栄養, Nakajima/Nagatomo/Tosaki em 事実は雄弁なり) ficam dentro do corpo da subsecao (Okada os cita como ilustracao, nao sao testemunhos autonomos do apendice).; ratio PT/JP=6.70"
+  },
+  {
+   "kind": "section",
+   "title_jp": "栄　養",
+   "title_pt": "Nutrição",
+   "jp_anchor": "栄　養",
+   "pt_anchor": "Nutrição",
+   "notes": "correcao_2026-08-05: pt_anchor apontava para 'Iseri (34 anos)', testemunho embutido no MEIO do ensaio de Nutricao (nao no inicio) -- todo o corpo doutrinario do ensaio (teoria de vitaminas, historia pessoal do autor sobre pleurisia/Dr. Irisawa, esposa curada, estudante de Keio) estava vazando para o artigo anterior (Doencas Associadas a Tuberculose, ratio PT/JP=6.70!) em vez de para este artigo. Corrigido para a heading real '**Nutrição**'."
+  },
+  {
+   "kind": "section",
+   "title_jp": "事実は雄弁なり",
+   "title_pt": "Os Fatos Falam por Si",
+   "jp_anchor": "事実は雄弁なり",
+   "pt_anchor": "Os Fatos Falam por Si",
+   "notes": "correcao_2026-08-05: pt_anchor apontava para 'Nakajima (24 anos)', testemunho embutido no MEIO do ensaio, nao no inicio -- a propria heading '**Os Fatos Falam por Si**' e seu paragrafo de abertura estavam vazando para o artigo anterior (Nutricao). Corrigido para a heading real."
+  },
+  {
+   "kind": "section",
+   "title_jp": "医療誤点の種々相",
+   "title_pt": "Vários aspectos dos erros médicos",
+   "jp_anchor": "医療誤点の種々相",
+   "pt_anchor": "Vários aspectos dos erros médicos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結　論",
+   "title_pt": "Conclusão",
+   "jp_anchor": "結　論",
+   "pt_anchor": "Conclusão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "付録に就て",
+   "title_pt": "Sobre o Apêndice",
+   "jp_anchor": "付録に就て",
+   "pt_anchor": "Sobre o Apêndice",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "これぞ救い",
+   "title_pt": "",
+   "jp_anchor": "これぞ救い",
+   "pt_anchor": "Isto é a Salvação",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Masashi (32 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一カ年半病床の肺結核三日目には起きる",
+   "title_pt": "",
+   "jp_anchor": "一カ年半病床の肺結核三日目には起きる",
+   "pt_anchor": "Tuberculose Pulmonar, Um Ano e Meio no Leito: Levantou-se no Terceiro Dia",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sadako (24 anos)\\n\\nApresento respeitosamente meus agradecimentos pela proteção divina.'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺患の一家に光明を頂いて",
+   "title_pt": "",
+   "jp_anchor": "肺患の一家に光明を頂いて",
+   "pt_anchor": "Recebendo a Luz para uma Família Atingida por Doença Pulmonar",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "「長くて三年」の生命救わる",
+   "title_pt": "",
+   "jp_anchor": "「長くて三年」の生命救わる",
+   "pt_anchor": "\"A vida que me restava, 'no máximo três anos', foi salva\"",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の境より希望を見出した悦び",
+   "title_pt": "",
+   "jp_anchor": "絶望の境より希望を見出した悦び",
+   "pt_anchor": "A alegria de encontrar esperança no abismo do desespero",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Urabe (20 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "諦めた肺浸潤二十日で全快",
+   "title_pt": "",
+   "jp_anchor": "諦めた肺浸潤二十日で全快",
+   "pt_anchor": "Infiltração pulmonar desenganada curada em vinte dias",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Ozaki (36 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "被害妄想狂と結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "被害妄想狂と結核より救わる",
+   "pt_anchor": "Salva da paranoia persecutória e da tuberculose",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sonoda (20 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "生を怨んだ病の身感謝歓喜の日々と変ず",
+   "title_pt": "",
+   "jp_anchor": "生を怨んだ病の身感謝歓喜の日々と変ず",
+   "pt_anchor": "Um corpo doente que amaldiçoava a vida transformado em dias de gratidão e alegria",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Mizuno (23 anos)\\n\\nApresento meus sinceros agradecimentos a Komyo-Nyorai, que me salvou até agora, apesar de eu ser tão p'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺病と痔瘻より救わる〔れ今は更生の道へ〕",
+   "title_pt": "",
+   "jp_anchor": "肺病と痔瘻より救わる〔れ今は更生の道へ〕",
+   "pt_anchor": "Salvo da doença pulmonar e da fístula anal",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Koide (28 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一家五人を斃した結核",
+   "title_pt": "",
+   "jp_anchor": "一家五人を斃した結核",
+   "pt_anchor": "(Apresentado em 26 de junho de 1951)\n\nTuberculose que derrubou cinco pessoas de uma família",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "重症の肺患癒え復職",
+   "title_pt": "",
+   "jp_anchor": "重症の肺患癒え復職",
+   "pt_anchor": "(Apresentado em 19 de janeiro de 1951)\n\nCura de tuberculose pulmonar grave e retorno ao trabalho",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Murai (32 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "再び青春蘇る",
+   "title_pt": "",
+   "jp_anchor": "再び青春蘇る",
+   "pt_anchor": "A Juventude Renasce Novamente",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "悲惨な結核の一家御力に救わる",
+   "title_pt": "",
+   "jp_anchor": "悲惨な結核の一家御力に救わる",
+   "pt_anchor": "Uma Família de Tuberculose Trágica Salva pelo Poder Divino",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "悲惨な結核と併発症",
+   "title_pt": "",
+   "jp_anchor": "悲惨な結核と併発症",
+   "pt_anchor": "Tuberculose Trágica e Complicações",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sato (37 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自殺を〔すら〕思った私だった",
+   "title_pt": "",
+   "jp_anchor": "自殺を〔すら〕思った私だった",
+   "pt_anchor": "Eu, que cheguei a pensar em suicídio",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Yoshiko (29)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の世界より蘇る",
+   "title_pt": "",
+   "jp_anchor": "死の世界より蘇る",
+   "pt_anchor": "Ressurgindo do Mundo da Morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Yasue (35)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核治癒体験記",
+   "title_pt": "Relato de Cura da Tuberculose Pulmonar",
+   "jp_anchor": "肺結核治癒体験記",
+   "pt_anchor": "Relato de Cura da Tuberculose Pulmonar\n\n*“Terapia Revolucionária da Tuberculose”, — 15 de agosto de 1951*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核恐怖抄〔症〕",
+   "title_pt": "",
+   "jp_anchor": "結核恐怖抄〔症〕",
+   "pt_anchor": "[Excerto sobre a Síndrome do Medo da Tuberculose]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Yamamoto (32), Igreja Média Kisei, Distrito de Asahi, Cidade de Osaka.'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の廃人も造りかえられた健康〔体〕",
+   "title_pt": "",
+   "jp_anchor": "絶望の廃人も造りかえられた健康〔体〕",
+   "pt_anchor": "[Um inválido desesperado também foi transformado em um corpo saudável]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sakai (37), Igreja Grande Kōhō, Cidade de Tosu, Distrito de Miyaki, Província de Saga.'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤より斯く救わる",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤より斯く救わる",
+   "pt_anchor": "[Assim fui salvo da infiltração pulmonar]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Uno (23), Igreja Média Hakko, Cidade de Gifu, Província de Gifu.'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "再生の喜び",
+   "title_pt": "",
+   "jp_anchor": "再生の喜び",
+   "pt_anchor": "A Alegria do Renascimento",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Ogawa (38 anos)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五カ年間の結核苦も一カ月にて救わる",
+   "title_pt": "",
+   "jp_anchor": "五カ年間の結核苦も一カ月にて救わる",
+   "pt_anchor": "Cinco Anos de Sofrimento com Tuberculose Curados em Um Mês",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sakaguchi (23 anos)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "疑いつつも結核腎臓炎まで救わる",
+   "title_pt": "",
+   "jp_anchor": "疑いつつも結核腎臓炎まで救わる",
+   "pt_anchor": "Curado até de Tuberculose e Nefrite, Mesmo Duvidando",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Morishita (24 anos)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "暗黒〔闘病〕生活より光明生活へ",
+   "title_pt": "",
+   "jp_anchor": "暗黒〔闘病〕生活より光明生活へ",
+   "pt_anchor": "Da Vida de Trevas (Luta contra a Doença) para a Vida de Luz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Shimizu (24 anos)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "世紀の奇蹟この感激〔の事実〕を見よ",
+   "title_pt": "",
+   "jp_anchor": "世紀の奇蹟この感激〔の事実〕を見よ",
+   "pt_anchor": "Vejam o Milagre do Século, Esta Emoção (Este Fato)",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Takao (43)*'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核より救われたキリスト教徒の私",
+   "title_pt": "",
+   "jp_anchor": "肺結核より救われたキリスト教徒の私",
+   "pt_anchor": "Eu, uma cristã salva da tuberculose pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Chie (45)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病気の問屋のような私でした〔の過去〕",
+   "title_pt": "",
+   "jp_anchor": "病気の問屋のような私でした〔の過去〕",
+   "pt_anchor": "Eu, que era como um \"atacadista de doenças\" (meu passado)",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Hajime (23))'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "七年間の種々の病癒される",
+   "title_pt": "",
+   "jp_anchor": "七年間の種々の病癒される",
+   "pt_anchor": "Curada de várias doenças em sete anos",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Take (35)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一家死滅の肺結核危うく〔より〕救われし喜び",
+   "title_pt": "",
+   "jp_anchor": "一家死滅の肺結核危うく〔より〕救われし喜び",
+   "pt_anchor": "A alegria de ter sido salva, por pouco, da tuberculose pulmonar que levaria toda a família à morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Keisei (22)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "神の力をはじめて知る！",
+   "title_pt": "",
+   "jp_anchor": "神の力をはじめて知る！",
+   "pt_anchor": "(Apresentado em 11 de abril de 1951)\n\nConhecendo o poder de Deus pela primeira vez!",
+   "notes": "correcao_2026-08-05: pt_anchor apontava para '(Apresentado em 11 de abril de 1951)', que na verdade e a assinatura de FECHAMENTO do testemunho ANTERIOR (Keisei, artigo 36, JP: '二十六年四月十一日提出') -- essa data ficava presa ao INICIO do artigo 37 (Miyazaki Bushido, testemunho totalmente diferente, cuja propria data de fechamento e dezembro de 1951) em vez de ficar no final do artigo 36. Corrigido para o titulo real do artigo 37."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "気胸四十本の肺結核一カ月足らずで全治す",
+   "title_pt": "",
+   "jp_anchor": "気胸四十本の肺結核一カ月足らずで全治す",
+   "pt_anchor": "Tuberculose pulmonar com quarenta pneumotóraxes curada completamente em menos de um mês",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Kawashima (24)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺病地獄から健康天国へ",
+   "title_pt": "",
+   "jp_anchor": "肺病地獄から健康天国へ",
+   "pt_anchor": "Do Inferno da doença pulmonar ao Paraíso da saúde",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Yokobori (41)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病気の為一家全滅の一歩手前で救わる",
+   "title_pt": "",
+   "jp_anchor": "病気の為一家全滅の一歩手前で救わる",
+   "pt_anchor": "Salva à beira da extinção total da família devido à doença",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Kumahara (67)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "転禍移福",
+   "title_pt": "",
+   "jp_anchor": "転禍移福",
+   "pt_anchor": "Transformação da desgraça em felicidade",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Kawakami (32)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "〔四年間の〕肺結核と慢性胃腸病忽ち好転",
+   "title_pt": "",
+   "jp_anchor": "〔四年間の〕肺結核と慢性胃腸病忽ち好転",
+   "pt_anchor": "Tuberculose pulmonar [de quatro anos] e doença gastrointestinal crônica melhoram repentinamente",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Abe (27)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核一カ月にして全快",
+   "title_pt": "",
+   "jp_anchor": "肺結核一カ月にして全快",
+   "pt_anchor": "Cura completa da tuberculose pulmonar em um mês",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Furuta (31 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "再三大喀血した重症結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "再三大喀血した重症結核より救わる",
+   "pt_anchor": "(Submetido em 27 de setembro de 1951)\n\nSalva de tuberculose grave com repetidas hemoptises maciças",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Tanaka (51 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核が斯く救われて〔救われるまで〕",
+   "title_pt": "",
+   "jp_anchor": "肺結核が斯く救われて〔救われるまで〕",
+   "pt_anchor": "Como a tuberculose pulmonar foi assim salva [Até ser salva]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Yamashita (38 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病床に臥せし頃〔時〕を顧みて",
+   "title_pt": "",
+   "jp_anchor": "病床に臥せし頃〔時〕を顧みて",
+   "pt_anchor": "Recordando a época em que estava de cama [o tempo]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Nishioka (20 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶対安静の私、歓喜の出勤",
+   "title_pt": "",
+   "jp_anchor": "絶対安静の私、歓喜の出勤",
+   "pt_anchor": "Eu, em Repouso Absoluto, Agora com Alegria no Trabalho",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Chimura (37 anos)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "医学が病人を造る肺浸潤全快の悦び",
+   "title_pt": "",
+   "jp_anchor": "医学が病人を造る肺浸潤全快の悦び",
+   "pt_anchor": "A Alegria da Cura Completa de uma Infiltração Pulmonar — A Medicina Cria Doentes",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Sannomiya (19)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一カ年の肺浸潤三日目に起き上る",
+   "title_pt": "",
+   "jp_anchor": "一カ年の肺浸潤三日目に起き上る",
+   "pt_anchor": "Uma Infiltração Pulmonar de Um Ano Levanta-se ao Terceiro Dia",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Kobayashi (18)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤に纏る死の影　偉大な御力に霧消す",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤に纏る死の影　偉大な御力に霧消す",
+   "pt_anchor": "A Sombra da Morte que Envolvia a Infiltração Pulmonar Desfeita pelo Poder Divino",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Hiyama (20)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一カ月で死より生へ",
+   "title_pt": "",
+   "jp_anchor": "一カ月で死より生へ",
+   "pt_anchor": "Da Morte para a Vida em Um Mês",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | anchor antigo: 'Koguchi (22)'"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "四年間の闘病生活より光明輝く生活へ",
+   "title_pt": "",
+   "jp_anchor": "四年間の闘病生活より光明輝く生活へ",
+   "pt_anchor": "De Quatro Anos de Luta Contra a Doença para uma Vida Resplandecente de Luz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十年間の執拗な痔疾慢性肺結核症救わる",
+   "title_pt": "",
+   "jp_anchor": "十年間の執拗な痔疾慢性肺結核症救わる",
+   "pt_anchor": "Dez Anos de Obstinada Hemorróida e Tuberculose Pulmonar Crônica São Salvos",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の腸結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "絶望の腸結核より救わる",
+   "pt_anchor": "Salva de uma Tuberculose Intestinal Desesperadora\n\n(Publicado em \"A Terapia Revolucionária da Tuberculose\", 15 de agosto de 1951)",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "感謝の一年をかえりみて",
+   "title_pt": "",
+   "jp_anchor": "感謝の一年をかえりみて",
+   "pt_anchor": "Refletindo sobre o ano de gratidão",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五年間の肺病と腎臓病が快癒",
+   "title_pt": "",
+   "jp_anchor": "五年間の肺病と腎臓病が快癒",
+   "pt_anchor": "Cura de cinco anos de doença pulmonar e doença renal",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の寸前の肺結核とリウマチスより救わる",
+   "title_pt": "",
+   "jp_anchor": "死の寸前の肺結核とリウマチスより救わる",
+   "pt_anchor": "Salvo da tuberculose pulmonar e do reumatismo à beira da morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核と腸結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "肺結核と腸結核より救わる",
+   "pt_anchor": "Salva da tuberculose pulmonar e da tuberculose intestinal",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十年間の結核死の病床より救わる",
+   "title_pt": "",
+   "jp_anchor": "十年間の結核死の病床より救わる",
+   "pt_anchor": "Salvo do leito de morte da tuberculose de dez anos",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "膿胸の孫が救われて",
+   "title_pt": "",
+   "jp_anchor": "膿胸の孫が救われて",
+   "pt_anchor": "O neto com empiema foi salvo",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "長い苦しみの境涯から今は喜びの我家に",
+   "title_pt": "",
+   "jp_anchor": "長い苦しみの境涯から今は喜びの我家に",
+   "pt_anchor": "De um longo sofrimento, agora em meu lar de alegria",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "摘出の腎臓結核、脳膜炎で死の一歩前より救わる",
+   "title_pt": "",
+   "jp_anchor": "摘出の腎臓結核、脳膜炎で死の一歩前より救わる",
+   "pt_anchor": "Salva da tuberculose renal com nefrectomia e da meningite, a um passo da morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤、働き乍ら救わる",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤、働き乍ら救わる",
+   "pt_anchor": "Infiltração pulmonar, salvo enquanto trabalhava",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "栄光新聞拝読により結核救われ楽しい家庭へ",
+   "title_pt": "",
+   "jp_anchor": "栄光新聞拝読により結核救われ楽しい家庭へ",
+   "pt_anchor": "Lendo o Jornal Eikō, fui salvo da tuberculose e para um lar feliz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "大御恵みに浴して光明一家へ",
+   "title_pt": "",
+   "jp_anchor": "大御恵みに浴して光明一家へ",
+   "pt_anchor": "Banhado pela grande graça, para um lar de luz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治の結核が二週間で",
+   "title_pt": "",
+   "jp_anchor": "不治の結核が二週間で",
+   "pt_anchor": "Tuberculose incurável em duas semanas",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "暗黒より光明の生活へ",
+   "title_pt": "",
+   "jp_anchor": "暗黒より光明の生活へ",
+   "pt_anchor": "Das trevas para a vida de luz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤全治　商売繁昌光明生活へ",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤全治　商売繁昌光明生活へ",
+   "pt_anchor": "Cura completa da infiltração pulmonar, para uma vida de prosperidade nos negócios e luz",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の境地より救われた喜び",
+   "title_pt": "A alegria de ser salva do abismo do desespero",
+   "jp_anchor": "絶望の境地より救われた喜び",
+   "pt_anchor": "A alegria de ser salva do abismo do desespero",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: pt_anchor apontava para a citacao, mas o titulo real (que existe no JP) tinha vazado para o final do artigo anterior (73) por falta de anchor propria; corrigido para apontar para o titulo real."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "入信し忽ち肺病全治",
+   "title_pt": "",
+   "jp_anchor": "入信し忽ち肺病全治",
+   "pt_anchor": "Convertida, curei completamente a doença pulmonar em pouco tempo",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "七年間の重患癒えて",
+   "title_pt": "Curada de uma doença grave de sete anos",
+   "jp_anchor": "七年間の重患癒えて",
+   "pt_anchor": "Curada de uma doença grave de sete anos",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: '‘Terapia Revolucionária para a Tuberculose’, — 15 de agosto '...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の肺浸潤短時日に快癒",
+   "title_pt": "Infiltração pulmonar desesperadora curada em pouco tempo",
+   "jp_anchor": "絶望の肺浸潤短時日に快癒",
+   "pt_anchor": "Infiltração pulmonar desesperadora curada em pouco tempo",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: 'Kagoshima-ken, Hioki-gun, Tabuse-mura, Ōsaka, Igreja Média N'...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死に花が咲いたと信じられなかった私",
+   "title_pt": "Eu, que não acreditava que a flor da morte havia desabrochado [A alegria da regeneração]",
+   "jp_anchor": "死に花が咲いたと信じられなかった私",
+   "pt_anchor": "Eu, que não acreditava que a flor da morte havia desabrochado [A alegria da regeneração]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: '‘Terapia Revolucionária para a Tuberculose’, — 15 de agosto '...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "暗澹たる結核地獄より救わる",
+   "title_pt": "",
+   "jp_anchor": "暗澹たる結核地獄より救わる",
+   "pt_anchor": "Salvo do sombrio inferno da tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望より歓喜へ",
+   "title_pt": "",
+   "jp_anchor": "絶望より歓喜へ",
+   "pt_anchor": "Do desespero à alegria",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤をお救い頂き光明の生活へ精進",
+   "title_pt": "Dedicando-me a uma vida de luz após ser salvo da infiltração pulmonar",
+   "jp_anchor": "肺浸潤をお救い頂き光明の生活へ精進",
+   "pt_anchor": "Dedicando-me a uma vida de luz após ser salva da infiltração pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: 'Riyoko Yamagishi (36), Igreja Média Seiwa, Kambara-cho, Susa'...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核一週間で救わる",
+   "title_pt": "Salva da tuberculose pulmonar em uma semana",
+   "jp_anchor": "肺結核一週間で救わる",
+   "pt_anchor": "Salva da tuberculose pulmonar em uma semana",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: 'Hamano Ooka (51), Igreja Média Seirei, Hanazono, Tachino, Mi'...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "神の御慈悲により命危き程の大浄化より光明の生活へ",
+   "title_pt": "Da grande purificação que colocou minha vida em risco à vida de luz, pela compaixão de Deus",
+   "jp_anchor": "神の御慈悲により命危き程の大浄化より光明の生活へ",
+   "pt_anchor": "Da grande purificação que colocou minha vida em risco à vida de luz, pela compaixão de Deus",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: 'Masa Fujita (37), Igreja Média Seiwa, Saitama-mura, Kita-Sai'...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "八年間の結核と併発した網膜炎より救われた私の喜び",
+   "title_pt": "Minha alegria por ter sido salvo da tuberculose de oito anos e da retinite que a acompanhava",
+   "jp_anchor": "八年間の結核と併発した網膜炎より救われた私の喜び",
+   "pt_anchor": "Minha alegria por ter sido salvo da tuberculose de oito anos e da retinite que a acompanhava",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"Kin'nosuke Moriya (32), Igreja Média Shinei, Kowada 4388, Ch\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死線を越えての再生の喜びに浸る",
+   "title_pt": "",
+   "jp_anchor": "死線を越えての再生の喜びに浸る",
+   "pt_anchor": "Imerso na alegria de renascer após cruzar a linha da morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核性皮膚炎と肺浸潤を救われて",
+   "title_pt": "",
+   "jp_anchor": "結核性皮膚炎と肺浸潤を救われて",
+   "pt_anchor": "Curada de Dermatite Tuberculosa e Infiltração Pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "診断の奇蹟！",
+   "title_pt": "O Milagre do Diagnóstico!",
+   "jp_anchor": "診断の奇蹟！",
+   "pt_anchor": "O Milagre do Diagnóstico!",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一度は霊界に召され新たな生命賜わる",
+   "title_pt": "",
+   "jp_anchor": "一度は霊界に召され新たな生命賜わる",
+   "pt_anchor": "Uma vez chamado ao mundo espiritual, recebe-se uma nova vida.",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "唯一回の浄霊で救われる",
+   "title_pt": "",
+   "jp_anchor": "唯一回の浄霊で救われる",
+   "pt_anchor": "Salvo com apenas uma sessão de Johrei",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "我家悉く救われるまで",
+   "title_pt": "",
+   "jp_anchor": "我家悉く救われるまで",
+   "pt_anchor": "Até que toda a minha família fosse salva",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "入信当時を回顧して御守護報告",
+   "title_pt": "",
+   "jp_anchor": "入信当時を回顧して御守護報告",
+   "pt_anchor": "Relatório de Proteção Divina, Recordando a Época da Conversão",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核淋巴腺浄霊四回で癒ゆ",
+   "title_pt": "",
+   "jp_anchor": "結核淋巴腺浄霊四回で癒ゆ",
+   "pt_anchor": "Tuberculose Linfática Curada com Quatro Sessões de Johrei",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私の暗き青春期",
+   "title_pt": "",
+   "jp_anchor": "私の暗き青春期",
+   "pt_anchor": "Minha Juventude Sombria",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "腸結核より救われ光明一家に〔の我家に〕",
+   "title_pt": "",
+   "jp_anchor": "腸結核より救われ光明一家に〔の我家に〕",
+   "pt_anchor": "Salvo da tuberculose intestinal, uma família de luz [em minha casa]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺門淋巴腺二週間で救わる",
+   "title_pt": "",
+   "jp_anchor": "肺門淋巴腺二週間で救わる",
+   "pt_anchor": "Salva da tuberculose dos gânglios linfáticos hilares em duas semanas",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核、自家中毒症にも御守護戴く",
+   "title_pt": "",
+   "jp_anchor": "肺結核、自家中毒症にも御守護戴く",
+   "pt_anchor": "Proteção divina contra a tuberculose pulmonar e a intoxicação autógena",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治の肺浸潤其上心臓弁膜症三日で治る",
+   "title_pt": "",
+   "jp_anchor": "不治の肺浸潤其上心臓弁膜症三日で治る",
+   "pt_anchor": "Infiltração pulmonar incurável e, além disso, valvopatia cardíaca curadas em três dias",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "法衣をまとう身の肺結核救わる",
+   "title_pt": "",
+   "jp_anchor": "法衣をまとう身の肺結核救わる",
+   "pt_anchor": "Salva da tuberculose pulmonar, ela que vestia a roupa sacerdotal",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核快癒〔完治〕の歓び",
+   "title_pt": "",
+   "jp_anchor": "肺結核快癒〔完治〕の歓び",
+   "pt_anchor": "A alegria da cura completa da tuberculose pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の肺結核全治し家内一同明るく暮す",
+   "title_pt": "",
+   "jp_anchor": "絶望の肺結核全治し家内一同明るく暮す",
+   "pt_anchor": "[Hemoptise e tuberculose pulmonar desesperadora completamente curada, minha família vive alegremente]",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤快癒せし喜びの我家",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤快癒せし喜びの我家",
+   "pt_anchor": "Minha família, alegre pela cura da infiltração pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核地獄と信仰地獄より救われて",
+   "title_pt": "Salvos do inferno da tuberculose e do inferno da fé",
+   "jp_anchor": "結核地獄と信仰地獄より救われて",
+   "pt_anchor": "Salvos do inferno da tuberculose e do inferno da fé",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"'Terapia Revolucionária da Tuberculose' — 15 de agosto de 19\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死神につかれた一家に光明",
+   "title_pt": "",
+   "jp_anchor": "死神につかれた一家に光明",
+   "pt_anchor": "Luz para uma família agarrada pela morte",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | pt_anchor_corrigido_2026-08-05: anchor antigo ('Tuberculose pulmonar em repouso absoluto por dois anos levanta-se com quatro sessões de Johrei') apontava por engano para o testemunho de Himeno Atsushi (22 anos), nao para o de Tamae Hirahara (22 anos, mesmo titulo/artigo) -- colisao de idade. Corrigido para o titulo real do artigo."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二カ年間絶対安静の肺結核　四回の浄霊にて起き上る",
+   "title_pt": "",
+   "jp_anchor": "二カ年間絶対安静の肺結核　四回の浄霊にて起き上る",
+   "pt_anchor": "Tuberculose pulmonar em repouso absoluto por dois anos levanta-se com quatro sessões de Johrei",
+   "notes": "achado_2026-08-05: testemunho fundido no artigo anterior por falta de anchor propria (bug de segmentacao pre-existente, nao de tradução) -- separado em artigo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喀血に喘いだ私の更生記",
+   "title_pt": "",
+   "jp_anchor": "喀血に喘いだ私の更生記",
+   "pt_anchor": "Meu relato de regeneração, ofegante com hemoptise",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "闘病十三年間を顧みて",
+   "title_pt": "Recordando os treze anos de luta contra a doença",
+   "jp_anchor": "闘病十三年間を顧みて",
+   "pt_anchor": "Recordando os treze anos de luta contra a doença",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"'Terapia Revolucionária da Tuberculose' — 15 de agosto de Sh\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核より救わる看護婦だった私",
+   "title_pt": "Eu, que fui enfermeira, salva da tuberculose pulmonar",
+   "jp_anchor": "肺結核より救わる看護婦だった私",
+   "pt_anchor": "Eu, que fui enfermeira, salva da tuberculose pulmonar",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"'Terapia Revolucionária da Tuberculose' — 15 de agosto de Sh\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核忽ち治癒子宝まで授かる",
+   "title_pt": "Tuberculose curada instantaneamente e ainda ganhei um filho precioso",
+   "jp_anchor": "結核忽ち治癒子宝まで授かる",
+   "pt_anchor": "Tuberculose curada instantaneamente e ainda ganhei um filho precioso",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"'Terapia Revolucionária da Tuberculose' — 15 de agosto de Sh\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核の苦悩より甦った私",
+   "title_pt": "Eu, que renasci da agonia da tuberculose",
+   "jp_anchor": "結核の苦悩より甦った私",
+   "pt_anchor": "Eu, que renasci da agonia da tuberculose",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: \"'Terapia Revolucionária da Tuberculose' — 15 de agosto de Sh\"...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御浄霊にて小児結核より救わる",
+   "title_pt": "Salva da tuberculose infantil pelo Johrei",
+   "jp_anchor": "御浄霊にて小児結核より救わる",
+   "pt_anchor": "Salva da tuberculose infantil pelo Johrei",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | fix_2026-08-05_batch24: titulo vazado para o final do artigo anterior (bug de segmentacao pre-existente); pt_anchor corrigido para o titulo real (era: 'Tóquio, Itabashi, Shimura Shimizu-cho 161'...)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喜びの喀血",
+   "title_pt": "",
+   "jp_anchor": "喜びの喀血",
+   "pt_anchor": "Hemoptise de Alegria",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "見放された結核二カ月で健康体に",
+   "title_pt": "",
+   "jp_anchor": "見放された結核二カ月で健康体に",
+   "pt_anchor": "Tuberculose Abandonada pelos Médicos, Curada em Dois Meses",
+   "notes": "pt_anchor_corrigido_2026-08-05: anchor antigo casava no meio da linha 'Nome: ... Sobrenome (idade)', fazendo o título/endereço/igreja do próprio artigo vazar para o final do artigo ANTERIOR. Corrigido para apontar para o início real do bloco (título ou endereço). | pt_anchor_corrigido_2026-08-12 (caso 73, classe): a linha de fonte ('Terapia Revolucionária da Tuberculose' — 15/08/1951) estava ANTES do título, invertida em relação ao JP (título -> fonte -> endereço); movida para depois do título e âncora reapontada para o título."
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

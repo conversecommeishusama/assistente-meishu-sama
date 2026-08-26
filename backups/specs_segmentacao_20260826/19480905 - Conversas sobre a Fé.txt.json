@@ -1,0 +1,367 @@
+{
+ "filename": "19480905 - Conversas sobre a Fé.txt",
+ "profile": "article_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "2026-07-14 (fila CHUNK_TURNAWARE): spec 'jp_line_v2' havia fragmentado 44 ensaios reais em 134 entradas (divisor tipografico e numero de pagina tratados como titulo/limite de artigo, bug em scripts/jp_line_split.py 'linha_shinko': falta filtro not t.isdigit() presente na copia irma jp_first_segmentation.py). Reconstruido a partir do JP bruto usando os 43 marcadores de metadado #T (title real confirmado por igualdade exata com o sufixo de cada #T, 0 mismatches) mais o prefacio -- 44 artigos reais, cada um contendo integralmente titulo+divisor+citacao+corpo (nada descartado, cobertura verificada por soma de caracteres). PT pairing pendente de --fix --repair-pt.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 134,
+ "split_method": "line_shinko",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "信仰雑話 序文",
+   "title_pt": "",
+   "jp_anchor": "信仰雑話 序文",
+   "pt_anchor": "Conversas sobre a Fé",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "誠",
+   "title_pt": "",
+   "jp_anchor": "誠",
+   "pt_anchor": "Sinceridade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "正しき信仰",
+   "title_pt": "",
+   "jp_anchor": "正しき信仰",
+   "pt_anchor": "A Fé Correta",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "常識",
+   "title_pt": "",
+   "jp_anchor": "常識",
+   "pt_anchor": "Senso Comum",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と政治",
+   "title_pt": "",
+   "jp_anchor": "宗教と政治",
+   "pt_anchor": "Religião e Política",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と芸術",
+   "title_pt": "",
+   "jp_anchor": "宗教と芸術",
+   "pt_anchor": "Religião e Arte",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "敗戦の教訓",
+   "title_pt": "",
+   "jp_anchor": "敗戦の教訓",
+   "pt_anchor": "A Lição da Derrota",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "悪の追放",
+   "title_pt": "",
+   "jp_anchor": "悪の追放",
+   "pt_anchor": "A Expulsão do Mal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "善を楽しむ",
+   "title_pt": "",
+   "jp_anchor": "善を楽しむ",
+   "pt_anchor": "Alegrar-se com o Bem",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "信仰の醍醐味",
+   "title_pt": "",
+   "jp_anchor": "信仰の醍醐味",
+   "pt_anchor": "O Prazer Supremo da Fé",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "奇蹟",
+   "title_pt": "",
+   "jp_anchor": "奇蹟",
+   "pt_anchor": "Milagre",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "プラグマチズム",
+   "title_pt": "",
+   "jp_anchor": "プラグマチズム",
+   "pt_anchor": "Pragmatismo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "怒る勿れ",
+   "title_pt": "",
+   "jp_anchor": "怒る勿れ",
+   "pt_anchor": "Não Se Irrite",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "難行苦行",
+   "title_pt": "",
+   "jp_anchor": "難行苦行",
+   "pt_anchor": "Práticas Ascéticas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "迷信邪教",
+   "title_pt": "",
+   "jp_anchor": "迷信邪教",
+   "pt_anchor": "Religião Maligna e Supersticiosa",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "禁欲",
+   "title_pt": "",
+   "jp_anchor": "禁欲",
+   "pt_anchor": "Abstinência",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "大乗と小乗",
+   "title_pt": "",
+   "jp_anchor": "大乗と小乗",
+   "pt_anchor": "Daijo e Shojo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と分派",
+   "title_pt": "",
+   "jp_anchor": "宗教と分派",
+   "pt_anchor": "Religião e Seitas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "地上天国",
+   "title_pt": "",
+   "jp_anchor": "地上天国",
+   "pt_anchor": "Paraíso na Terra\n\n『Conversas sobre a Fé』, 5 de setembro de 1948, 19480905, pp. 39-42",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "観音教団とは何乎",
+   "title_pt": "",
+   "jp_anchor": "観音教団とは何乎",
+   "pt_anchor": "O que é a Igreja de Kannon?",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "下座の行",
+   "title_pt": "",
+   "jp_anchor": "下座の行",
+   "pt_anchor": "A Prática da Humildade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "運命と自由主義",
+   "title_pt": "",
+   "jp_anchor": "運命と自由主義",
+   "pt_anchor": "Destino e Liberalismo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "気候と天候",
+   "title_pt": "",
+   "jp_anchor": "気候と天候",
+   "pt_anchor": "Clima e Tempo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "主義というもの",
+   "title_pt": "",
+   "jp_anchor": "主義というもの",
+   "pt_anchor": "Ideologias",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "科学の力",
+   "title_pt": "",
+   "jp_anchor": "科学の力",
+   "pt_anchor": "O Poder da Ciência",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "地震に就て",
+   "title_pt": "",
+   "jp_anchor": "地震に就て",
+   "pt_anchor": "Sobre os Terremotos",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "地球は呼吸する",
+   "title_pt": "",
+   "jp_anchor": "地球は呼吸する",
+   "pt_anchor": "A Terra Respira",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "十干十二支の弁",
+   "title_pt": "",
+   "jp_anchor": "十干十二支の弁",
+   "pt_anchor": "Explicação dos Dez Troncos Celestes e dos Doze Ramos Terrestres",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "家相方位",
+   "title_pt": "",
+   "jp_anchor": "家相方位",
+   "pt_anchor": "Fisionomia das Casas e Orientação",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "東洋と西洋",
+   "title_pt": "",
+   "jp_anchor": "東洋と西洋",
+   "pt_anchor": "Leste e Oeste",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "神と仏",
+   "title_pt": "",
+   "jp_anchor": "神と仏",
+   "pt_anchor": "Desde os tempos antigos, existe a expressão \"Deus e Buda têm a mesma raiz\".",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "神は在るか",
+   "title_pt": "",
+   "jp_anchor": "神は在るか",
+   "pt_anchor": "Deus Existe?",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "見神に就て",
+   "title_pt": "",
+   "jp_anchor": "見神に就て",
+   "pt_anchor": "Sobre a Visão de Deus",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "プロテスタントとカトリック",
+   "title_pt": "",
+   "jp_anchor": "プロテスタントとカトリック",
+   "pt_anchor": "Protestantes e Católicos",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "順序を過る勿れ",
+   "title_pt": "",
+   "jp_anchor": "順序を過る勿れ",
+   "pt_anchor": "Não Ultrapasse a Ordem",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "酒と宗教",
+   "title_pt": "",
+   "jp_anchor": "酒と宗教",
+   "pt_anchor": "Álcool e Religião",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "夢に就て",
+   "title_pt": "",
+   "jp_anchor": "夢に就て",
+   "pt_anchor": "Sobre os Sonhos",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "我と執着",
+   "title_pt": "",
+   "jp_anchor": "我と執着",
+   "pt_anchor": "Ga (Ego) e Apego",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "夫婦の道",
+   "title_pt": "",
+   "jp_anchor": "夫婦の道",
+   "pt_anchor": "O Caminho do Casal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "善と悪",
+   "title_pt": "",
+   "jp_anchor": "善と悪",
+   "pt_anchor": "O Bem e o Mal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊線に就て",
+   "title_pt": "",
+   "jp_anchor": "霊線に就て",
+   "pt_anchor": "Sobre o Elo Espiritual\n\n『Conversas sobre a Fé』, 5 de setembro de 1948, 19480905, pp. 87-94",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "人間の賢愚",
+   "title_pt": "",
+   "jp_anchor": "人間の賢愚",
+   "pt_anchor": "A Sabedoria e a Estupidez Humanas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と科学",
+   "title_pt": "",
+   "jp_anchor": "宗教と科学",
+   "pt_anchor": "Religião e Ciência",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "結論",
+   "title_pt": "",
+   "jp_anchor": "結論",
+   "pt_anchor": "Conclusão",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

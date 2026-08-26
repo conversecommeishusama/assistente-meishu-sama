@@ -1,0 +1,51 @@
+{
+ "filename": "19490921 - Gokōwa-roku nº 12.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』12号、昭和24(1949)年9月21日発行",
+   "pt_anchor": "Gokōwa-roku nº 12",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月三日",
+   "title_pt": "3 de junho",
+   "jp_anchor": "六月三日\n\nInterlocutor: ――礼拝および祝詞奏上について、",
+   "pt_anchor": "3 de junho\n\nInterlocutor: Sobre a reverência e a recitação do norito: (1) Fui informado de que podemos recitar a Oração Amatsu para ",
+   "notes": "",
+   "pt_prefix": "3 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十三日",
+   "title_pt": "13 de junho",
+   "jp_anchor": "六月十三日\n\nInterlocutor: ――言葉と言霊について、",
+   "pt_anchor": "13 de junho\n\nInterlocutor: Sobre a palavra e o espírito da palavra (kotodama): (1) Quando se considera que as palavras que proferimos beneficiar",
+   "notes": "",
+   "pt_prefix": "13 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十三日",
+   "title_pt": "23 de junho",
+   "jp_anchor": "六月二十三日\n\nInterlocutor: ――道徳はある程度時代と社会状勢に応ずるものと存じますが、過去の戦時中に国家に尽くした政治家、将兵、戦時産業家などはそれが最善の道であると信じ、また個人の意志にかかわらずそうせざるを得なかったと存じますが、このこ",
+   "pt_anchor": "23 de junho\n\nInterlocutor: Creio que a moral se adapta, até certo ponto, à época e às circunstâncias sociais. No passado, durante a g",
+   "notes": "",
+   "pt_prefix": "23 de junho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

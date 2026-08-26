@@ -1,0 +1,201 @@
+{
+  "filename": "19511210-御垂示録4号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 1102 linhas / PT antes 311 linhas, depois 502 linhas, 4 artigos por spec: prefácio + 3 sessões [1º de novembro]/[5 de novembro]/[8 de novembro]). Não é amostragem: todo o corpo do JP foi lido (offsets 1-615 e 616-1102) e confrontado com o PT correspondente na mesma ordem, linha a linha, incluindo os dois parágrafos-monolito já e recém-diagnosticados.",
+  "pre_existing_context": "Auditoria anterior (mesma sessão, 2026-07-06) já havia diagnosticado um bug específico: logo após o marcador '[1º de novembro]', um parágrafo gigante único (nunca quebrado em turnos de pergunta/resposta) continha conteúdo exclusivo (incl. o termo único 'Kamunagara'), mas cuja cauda final duplicava o início do conteúdo já corretamente segmentado nas linhas seguintes. Esta revisão confirmou o diagnóstico, corrigiu esse bug e, seguindo a instrução de verificar se o mesmo padrão se repetia em outros pontos do arquivo, encontrou e corrigiu uma SEGUNDA ocorrência do mesmo padrão estrutural, maior e não catalogada antes, mais adiante na mesma sessão de 1º de novembro.",
+  "gate_mecanico": "Não aplicável neste formato — este arquivo usa aspas curvas (“...”) para marcar a fala do Interlocutor e parágrafo sem aspas para Meishu-Sama (não o formato 'Interlocutor:'/'Meishu-Sama:' usado em Gokōwa), portanto o script gate_gokowa_linha.py não se aplica diretamente. Verificação mecânica alternativa feita manualmente: (1) contagem de aspas de abertura (“) vs fechamento (”) no arquivo inteiro — 286/286, balanceadas, sem parágrafo remanescente com aspas órfãs; (2) varredura de caracteres CJK residuais no corpo PT — nenhum encontrado; (3) os 3 marcadores de sessão ([1º de novembro], [5 de novembro], [8 de novembro]) presentes, na ordem correta, e cada um alinhado ao marcador JP correspondente (［十一月一日］linha 26, ［十一月五日］linha 442, ［十一月八日］linha 690 do JP).",
+  "summary": {
+    "sessoes_no_spec": 4,
+    "sessoes_revisadas": 4,
+    "monolitos_encontrados_e_corrigidos": 2,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0,
+    "bug_conhecido_status": "corrigido_e_confirmado_por_segunda_auditoria_independente_2026-07-07"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "PT logo após '[1º de novembro]' (linha 25 antes da correção)",
+      "problema": "GRAVE (bug já diagnosticado): parágrafo único de ~24000 caracteres contendo, sem nenhuma quebra de turno, todo o conteúdo desde a abertura da sessão (pergunta sobre Kyoto/presente, resposta longa sobre Kamunagara/entrega a Deus) até a resposta sobre a arte grega/tibetana (correspondente a JP linhas 26-263, 53 turns de pergunta/resposta). A cauda final desse mesmo parágrafo duplicava, com fraseado ligeiramente diferente, o conteúdo já corretamente segmentado logo a seguir no arquivo (sementes de hortaliças/insetos → testemunho da placa em Chiba, JP linhas 266-283), cortado no meio de uma frase.",
+      "correcao": "Desmembrado o parágrafo gigante em 53 turnos individuais de pergunta (Interlocutor, entre aspas curvas) e resposta (Meishu-Sama, sem aspas), cada um comparado e alinhado contra o JP linha a linha (JP 26-263). A cauda duplicada (sementes/Chiba, incompleta) foi removida por já estar presente, completa, nas linhas seguintes do PT (que permaneceram intocadas). Nenhum conteúdo foi perdido; o volume de texto aumentou apenas pela reformatação em parágrafos (as aspas e quebras de linha), não por tradução nova nesse trecho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "PT dentro da mesma sessão '[1º de novembro]', um pouco mais adiante (após o testemunho sobre sericicultura/qualidade do fio), estendendo-se até cruzar o marcador '[8 de novembro]'",
+      "problema": "GRAVE (segunda ocorrência do mesmo padrão, não catalogada na auditoria anterior): um segundo parágrafo único, de ~20800 caracteres e 51 pares de aspas embutidos, continha ininterruptamente dezenas de turnos de pergunta/resposta (JP linhas 539-727), incluindo o próprio marcador de sessão '[8 de novembro]' (JP ［十一月八日］, linha 690) embutido no meio do texto corrido em vez de estar em linha própria. Dentro desse mesmo bloco, encontrado um TRUNCAMENTO real de conteúdo (não apenas falta de formatação): a resposta sobre 'apego na propagação da fé' (JP linha 727) tinha um trecho inteiro sobre o bem do Shojo/mal do Daijo, Kusunoki Masashige e Yoshida Shōin, e o artigo 'Seja um Cidadão do Mundo' (aprox. 500 caracteres JP) simplesmente ausente do PT, que saltava direto de 'É ' para 'Por pensarem apenas no seu próprio povo, todos brigaram' sem transição. Também identificado, na primeira linha desse bloco, um fragmento com uma palavra faltando ('vai  Então' — provavelmente 'vai à casa').",
+      "correcao": "Desmembrado em turnos individuais comparando cada um contra o JP (linhas 539-727), inserido o marcador '[8 de novembro]' em linha própria no ponto correto (entre os turnos que correspondem a JP 686 e JP 692), traduzido e inserido o trecho ausente sobre Shojo/Daijo/Kusunoki Masashige/Yoshida Shōin/'Seja um Cidadão do Mundo' a partir do JP, e restaurada a palavra 'à casa' no primeiro turno. Terminologia Shojo/Daijo/Kamunagara/Izunome/Kenshinjitsu conferida contra glossario_traducao.json antes de usar.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "PT, parágrafo iniciado por 'A ‘Criação da Civilização’ também já está...' (imediatamente antes do bloco corrigido no item 2)",
+      "problema": "Aspa de abertura (“) espúria sem fechamento correspondente: o parágrafo foi formatado como se fosse uma nova pergunta do Interlocutor, mas o conteúdo (progresso do livro 'A Criação da Civilização', capacidade de multitarefa de Meishu-Sama, descoberta de 'pontos vitais') é, no JP (linhas 486-487), uma continuação direta da MESMA resposta de Meishu-Sama sobre sericicultura (JP 484) — só usa aspas japonesas para citar o título do próprio livro, não para indicar novo falante.",
+      "correcao": "Removida a aspa de abertura espúria; o parágrafo passa a ser lido corretamente como continuação da fala de Meishu-Sama (sem rótulo de pergunta), consistente com o JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "PT, testemunho de Inoue Tamotsu (transportador de madeira/jangadas) sobre o Omamori queimado, e a resposta de Meishu-Sama sobre reimplantar o espírito",
+      "problema": "GRAVE: o parágrafo do testemunho (JP linha 1002) estava truncado a meio de frase — faltava toda a parte central da queixa (que o Omamori de fato queimou, sem sinal de fósforo por perto, náilon e saquinho interno queimados mas o amuleto interno intacto) e não fechava as aspas. Em seguida, a resposta de Meishu-Sama (JP linha 1004, explicando que o erro foi colocar o Omamori direto sobre a pedra em vez de sobre a roupa, e que foi um espírito ancestral que fez isso para chamar atenção) estava quase inteiramente ausente — só sobrava a cauda final da frase ('...fez isso para mostrar — para chamar a atenção'), colada dentro do próprio parágrafo do testemunho, dando a impressão de um non-sequitur.",
+      "correcao": "Reescrito o testemunho completo (fechando as aspas) e reinserida a resposta de Meishu-Sama completa, traduzida a partir do JP linhas 1002-1004, terminando com a frase que já estava presente ('fez isso para mostrar — para chamar a atenção'), preservando-a como estava.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + data de publicação)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Sem alterações necessárias."
+    },
+    {
+      "bloco": "Sessão [1º de novembro] — abertura até arte grega/tibetana",
+      "jp_linhas": "26-263",
+      "decisao": "corrigido — monólito 1 (item 1 acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de novembro] — sementes/Chiba até Yudanaka/Shiga/Gifu/Ubusuna",
+      "jp_linhas": "266-441",
+      "decisao": "ok, já corretamente segmentado antes desta revisão",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [5 de novembro] inteira",
+      "jp_linhas": "442-486 (parcial)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Testemunhos agrícolas (arroz, Hida/Norikura, batata-doce, Nagoya, Hokkaido) revisados linha a linha, sem divergência."
+    },
+    {
+      "bloco": "Sericicultura + 'Criação da Civilização' + pontos vitais",
+      "jp_linhas": "482-487",
+      "decisao": "corrigido — item 3 (aspa espúria)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Funabashi Tokuji (envenenamento por Arbazil) até fim da sessão [1º de novembro] cruzando para [8 de novembro] até apego/Daijo",
+      "jp_linhas": "490-727",
+      "decisao": "corrigido — monólito 2 + truncamento restaurado (item 2 acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [8 de novembro] — apego/casamento consanguíneo/Yunishikawa/606/butsudan/etc. até o fim do arquivo",
+      "jp_linhas": "729-1102",
+      "decisao": "ok, com 1 correção pontual (item 4, testemunho de Inoue Tamotsu)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": [
+    "Contagem de aspas de abertura/fechamento no arquivo inteiro após as correções: 286/286 (balanceado).",
+    "Varredura de CJK residual no corpo PT (excluindo metadados de cabeçalho): nenhuma ocorrência.",
+    "Os 3 marcadores de sessão ([1º/5/8 de novembro]) presentes uma única vez cada, na ordem correta, alinhados ao JP.",
+    "Terminologia Kamunagara/Daijo/Shojo/Izunome/Kenshinjitsu conferida contra glossario_traducao.json (consistente, sem divergência a corrigir)."
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmado o bug de monolito já catalogado (pós [1º de novembro]) resolvido, e o segundo monolito não catalogado (pós [8 de novembro], Cidadão do Mundo/Kusunoki/Yoshida Shōin) também resolvido, sem duplicação residual. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc (§4.4-B), adaptado para a família Gosuiji-roku: no JP, `「pergunta entre aspas」` = Interlocutor, prosa corrida sem aspas = Meishu-Sama. Confirmado lendo o JP inteiro (ambas as páginas, offsets 1-615 e 616-1102) antes de tocar no PT.",
+    "etapa_a_mapa_jp": "Mapa de turnos construído linha a linha sobre o JP inteiro: 3 sessões (［十一月一日］JP linha 26, ［十一月五日］JP linha 442, ［十一月八日］JP linha 690), 241 turnos de pergunta (「」) no total (94 + 54 + 93 por sessão), alternando com respostas de Meishu-Sama (prosa sem aspas, por vezes fragmentada em mais de um parágrafo físico consecutivo no JP).",
+    "etapa_b_confirmacao": {
+      "contagem_perguntas_jp": 241,
+      "contagem_perguntas_pt_aspas": 241,
+      "delta": 0,
+      "contagem_por_sessao": "1º nov: JP 94 / PT 94; 5 nov: JP 54 / PT 54; 8 nov: JP 93 / PT 93 — todas batem exatamente, na mesma ordem, sem regressão do bug de monólito já corrigido em 2026-07-07.",
+      "formato": "0 travessões '—' usados para indicar falante (aspas curvas “...” já é a convenção nativa deste family); blocos Interlocutor→Interlocutor consecutivos presentes em 9 pontos do arquivo (contra 2 no gate padrão), todos investigados individualmente contra o JP — ver achado_novo abaixo."
+    },
+    "etapa_c_aplicacao": "Prefixo 'Interlocutor: ' aplicado a todo parágrafo PT já existente iniciado por aspas curva de abertura (“); prefixo 'Meishu-Sama: ' aplicado a todo parágrafo PT restante (incl. os que no JP eram resposta fragmentada em vários parágrafos físicos — cada um recebeu seu próprio prefixo, sem fundir, conforme convenção já usada nos volumes 1 e 2 desta série). Nenhum parágrafo foi reordenado, fundido ou reescrito. Formatação alinhada à convenção dos volumes 1-3 (linha em branco entre cada parágrafo rotulado e entre cabeçalho de sessão e o parágrafo seguinte).",
+    "contagem_final": {
+      "interlocutor": 241,
+      "meishu_sama": 234,
+      "cabecalhos_sessao": 3,
+      "total_paragrafos_rotulados": 478
+    },
+    "achado_novo": "Achado NÃO catalogado na auditoria estrutural de 2026-07-07 (que tratou dos monólitos e truncamentos grandes): existem pelo menos 9 pontos no arquivo onde 2 ou 3 parágrafos 'Interlocutor:' aparecem consecutivos sem um 'Meishu-Sama:' entre eles, quando o JP no mesmo ponto tem uma pergunta-resposta-pergunta normal. Em TODOS os 9 pontos verificados individualmente contra o JP, a causa é a mesma: uma interjeição curta de Meishu-Sama (perguntas de esclarecimento de poucas palavras, ex. '遠いと言っても――どこですか' [mesmo longe, onde?], 'いつですか' [quando?], '親戚は' [e os parentes?], 'おっ母さんはいくつです' [que idade tem a mãe?], '新しいんですか' [é novo?]) simplesmente não foi traduzida/está ausente do PT — não é fusão de parágrafo nem problema de segmentação, é conteúdo semântico faltando. Localizações (linha PT pré-rotulagem): ~138-139, ~169-170, ~172-174, ~182-184, ~194-199, ~345-346, ~431-432, ~466-467, ~495-497. Total estimado de interjeições curtas ausentes: ~14, o que explica a maior parte da diferença de 21 parágrafos entre JP (255 parágrafos de resposta) e PT (234) fora dos cabeçalhos. NÃO CORRIGIDO nesta rotulagem (rotulagem apenas etiqueta o que já existe, sem reescrever/adicionar conteúdo — inserir tradução nova exige decisão de retradução pontual, fora do escopo desta tarefa e sujeita a autorização do usuário, conforme authorization-workflow.mdc). Recomenda-se tratar como pendência aberta e decidir com o usuário se deve ser corrigido nesta sessão ou em lote com os demais achados da família 御教え集/御垂示録/法難手記 já mencionados no handoff.",
+    "approved_alterado": false
+  },
+  "correcao_interjeicoes_ausentes": {
+    "data": "2026-07-08",
+    "autorizacao": "Correção pontual explicitamente autorizada pelo usuário (pacote de 3 correções pequenas e bem delimitadas), conforme authorization-workflow.mdc — não é decisão unilateral.",
+    "metodo": "Cada um dos 9 pontos listados em achado_novo foi relocalizado no PT atual (pós-rotulagem, 980 linhas) por busca de blocos 'Interlocutor:' consecutivos sem 'Meishu-Sama:' entre eles, depois confrontado linha a linha contra o JP fonte para extrair o texto exato da interjeição ausente e traduzi-la.",
+    "insercoes_aplicadas": [
+      {
+        "contexto": "Após 'Durante a crise epiléptica, o rosto fica preto.' (caso Arao Torakichi)",
+        "jp": "そういうのは、なかなか治らないですね。治らないことはないが、そうとう暇がかかりますね。光明如来様はまだお祀りしてないですね。",
+        "pt_inserido": "Esse tipo de caso não se cura facilmente. Não é que não cure, mas leva bastante tempo. Vocês ainda não consagraram Komyo-Nyorai, não é?"
+      },
+      {
+        "contexto": "Após a pergunta sobre o templo de Gifu abolido pelo senhor feudal",
+        "jp": "氏神様か、なにかですか。しかし、神社神道くらいで、仏さんを止すというのはね。よほど前ですか。",
+        "pt_inserido": "Seria o Ujigami, ou algo assim? Mas abandonar o budismo só por causa do xintoísmo de santuário... Foi há muito tempo?"
+      },
+      {
+        "contexto": "Após 'Quando a religião mudou uma vez e não se sabe qual era a religião original...'",
+        "jp": "そんなことはないがね。いつごろですか。",
+        "pt_inserido": "Não é bem assim. De quando é isso?"
+      },
+      {
+        "contexto": "Após 'Desde a geração dos pais. Os próprios interessados não têm nenhum interesse...'",
+        "jp": "親戚は。",
+        "pt_inserido": "E os parentes?"
+      },
+      {
+        "contexto": "Após 'Sobre o caso de Arao Torakichi: na era Meiji...' (2ª menção, santuário da vila)",
+        "jp": "今もあるんですね。",
+        "pt_inserido": "Ainda existe agora?"
+      },
+      {
+        "contexto": "Após 'Não sei.' (1ª ocorrência, sobre o santuário Ubusuna)",
+        "jp": "新しいんですか。",
+        "pt_inserido": "É novo?"
+      },
+      {
+        "contexto": "Após 'Não é oficial, foram pessoas voluntárias da vila que...'",
+        "jp": "無論、有志も祀りますが、いつごろかね。",
+        "pt_inserido": "Claro, os voluntários também podem cultuá-lo, mas de quando é, mais ou menos?"
+      },
+      {
+        "contexto": "Após 'Mesmo que a outra parte se alegre?'",
+        "jp": "相手が喜んでもです。あなたにしても、奥さんが見たらどうですか。",
+        "pt_inserido": "Mesmo que a outra parte se alegre. E você, se sua esposa visse, o que acharia?"
+      },
+      {
+        "contexto": "Após 'Tive uma queimadura no dedão do pé. A carne já cresceu, mas o osso —'",
+        "jp": "いつですか。",
+        "pt_inserido": "Quando foi isso?"
+      },
+      {
+        "contexto": "Após 'Há cinco ou seis. Todos são inteligentes; o filho mais velho é líder do grupo de jovens.' (caso Nishi Hira Kuni)",
+        "jp": "おっ母さんはいくつです。",
+        "pt_inserido": "Que idade tem a mãe?"
+      },
+      {
+        "contexto": "Após 'Sou convertido, mas meu neto está longe...'",
+        "jp": "遠いと言っても――どこですか。",
+        "pt_inserido": "Mesmo dizendo que é longe — onde fica?"
+      },
+      {
+        "contexto": "Após 'É em Kagoshima ou Kumamoto.'",
+        "jp": "あっちで、信仰に入ったら良いじゃないですか。",
+        "pt_inserido": "Não seria bom que ele entrasse na fé por aí mesmo?"
+      }
+    ],
+    "total_insercoes": 13,
+    "verificacao": "Cada inserção confrontada individualmente contra o JP fonte antes de aplicar; nenhum conteúdo pré-existente foi reescrito, reordenado ou removido — apenas as 13 falas curtas de Meishu-Sama foram acrescentadas nos 9 pontos já diagnosticados.",
+    "pendencia_resolvida": true,
+    "approved_nao_alterado": "O campo approved:true do spec permanece inalterado por esta correção pontual; a recomendação de segunda auditoria independente (ver bloco 'aprovacao' acima) continua de pé."
+  },
+  "fase_e_2026_07_09": {
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc)",
+    "verificacao": "Confirmado approved:true ja tinha segunda auditoria independente registrada (orquestrador, 2026-07-07). Varredura adicional de cabecalhos de data duplicados (bug achado em outros volumes desta Fase E, familia Mioshie-shu): nao aplicavel a este arquivo (usa marcadores [1/5/8 de novembro] em colchete, ja confirmados unicos na trilha original). CJK residual: nenhum (reconfirmado). Nenhuma nova correcao necessaria.",
+    "resultado": "Mantido approved:true."
+  }
+}

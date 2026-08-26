@@ -1,0 +1,104 @@
+{
+ "filename": "19530815 - Mioshie-shū nº 24.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十四号",
+   "pt_anchor": "Mioshie-shū nº 24",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月五日",
+   "title_pt": "5 de julho",
+   "jp_anchor": "昭和二十八年七月五日\n\n　浮世絵展の方は時々陳列替えをしますが、今日から三回目の陳列替えをしましたから、この前までのとはまるっきり違います。そのつもりで見てよいと思いま す。今度も博物館のと、それから個人でちょっと持っている人のがいくらか混じりましたが、とにかくドン",
+   "pt_anchor": "5 de julho de 1953 (Showa 28)\n\nQuanto à exposição de ukiyo-e, vamos trocando as peças em exposição de tempos em tempos e, como hoje fizemos a terceira troca, está completamente diferente da vez anterior.",
+   "notes": "",
+   "pt_prefix": "5 de julho de 1953 (Showa 28)"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月六日",
+   "title_pt": "6 de julho",
+   "jp_anchor": "七月六日\n\n　今度の九州の水害はどういうわけかというと、やっぱり浄化作用ですが、つまり土を肥毒で穢してしまったから、これ以上穢すと作物ができなくなってしまう のです。そこでちょっとやそっとの雨くらいでは追いつかないから大水を出して肥毒を流したのです。一時",
+   "pt_anchor": "6 de julho\n\nQuanto à inundação em Kyushu desta vez, qual é a razão? É, afinal, um processo de purificação: como o solo foi contaminado com fertilizante tóxico, se continuasse a ser contaminado, as plantações não poderiam mais crescer.",
+   "notes": "",
+   "pt_prefix": "6 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月七日",
+   "title_pt": "7 de julho",
+   "jp_anchor": "七月七日\n\n　今度の九州の台風については分かっているでしょうが、そのことを分かりやすく書いてみました。",
+   "pt_anchor": "7 de julho\n\nVocês devem saber sobre o tufão em Kyushu desta vez, então escrevi de forma fácil de entender sobre isso.",
+   "notes": "",
+   "pt_prefix": "7 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十五日",
+   "title_pt": "15 de julho",
+   "jp_anchor": "七月十五日\n\n　「医学革命の書」の中に入れる論文ですが、これは非常に科学的に説いたのです。今の科学、特に医学の考え方は非常に幼椎なものでお話にならないくらいで す。よく“科学的、科学的”と言いますが、今の医学は科学としてはごく手前のものです。これを分かりや",
+   "pt_anchor": "15 de julho\n\nÉ um artigo que será incluído no \"Livro da Revolução Médica\", explicado de forma muito científica. A ciência atual, especialmente o pensamento da medicina, é algo muito infantil, que não dá nem para comentar",
+   "notes": "",
+   "pt_prefix": "15 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十六日",
+   "title_pt": "16 de julho",
+   "jp_anchor": "七月十六日\n\n　浄霊の原理を分からせるために、黴菌から説くと一番分かりよいのです。つまり霊の曇りというものは、黴菌の元ですから、黴菌の元というものをだんだん細かく考えるとよく分かります。それを簡単に書きました。",
+   "pt_anchor": "16 de julho\n\nPara fazer compreender o princípio do Johrei, é mais fácil entender começando a explicação pelos micróbios: as nuvens espirituais são a origem dos micróbios, e, pensando gradualmente no que é a origem dos micróbios, compreende-se bem.",
+   "notes": "",
+   "pt_prefix": "16 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十七日",
+   "title_pt": "17 de julho",
+   "jp_anchor": "七月十七日\n\n　今の医学は黴菌説ですが、つまり黴菌を殺せばよいとしているのです。ところが黴菌よりもっとずっと細かいもの、顕微鏡で見えないくらいの細かいもの、無 限といったものが病気の原因になるのです。ですから今の黴菌説は非常に粗いものです。それを殺そうとし",
+   "pt_anchor": "17 de julho\n\nA medicina atual é a teoria dos micróbios, ou seja, acredita-se que basta matar os micróbios. No entanto, coisas muito m",
+   "notes": "",
+   "pt_prefix": "17 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十五日",
+   "title_pt": "25 de julho",
+   "jp_anchor": "七月二十五日\n\n　いつも言っていることですが、新宗教に対しての“科学的でない”ということについてですが、この間の子供の睾丸ができたことなどは、たいへんな奇蹟です から、世界の医学界に知らせたいのです。あれを知らせないということは非常に惜しいのです。医学の方で",
+   "pt_anchor": "25 de julho\n\nComo sempre digo, sobre a acusação de \"não ser científico\" dirigida às novas religiões, o caso do testículo da criança d",
+   "notes": "",
+   "pt_prefix": "25 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十六日",
+   "title_pt": "26 de julho",
+   "jp_anchor": "七月二十六日\n\n　今「医学革命の書」という本を書いてますが、その中でちょっと変わったことを書きましたから、それを読ませます。",
+   "pt_anchor": "26 de julho\n\nEstou escrevendo um livro chamado \"O Livro da Revolução Médica\", e, nele, escrevi algo um pouco diferente; vou lê-lo.",
+   "notes": "",
+   "pt_prefix": "26 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十七日",
+   "title_pt": "27 de julho",
+   "jp_anchor": "七月二十七日\n\n　医学については、分かるようにいろいろな説き方をしてますが、「医学革命の書」に出す原稿で、これはまた別の面から説いてみました。人によっては、かえって分かりよいと思って書いてみました。",
+   "pt_anchor": "27 de julho\n\nSobre a medicina, expliquei de várias maneiras para facilitar a compreensão, mas, no manuscrito para \"O Livro da Revolução Médica\", abordei de um ângulo diferente.",
+   "notes": "",
+   "pt_prefix": "27 de julho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

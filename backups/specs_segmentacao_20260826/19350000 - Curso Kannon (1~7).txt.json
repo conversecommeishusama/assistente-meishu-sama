@@ -1,0 +1,87 @@
+{
+ "filename": "19350000 - Curso Kannon (1~7).txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "CORRIGIDO 2026-07-14 (fila CHUNK_TURNAWARE): spec regenerado erroneamente pelo passe jp_line_v2 para 2 artigos (previous_article_count=8), mas os arquivos de trabalho jp/pt ja estavam corretamente divididos em 8 (prefacio + 7 aulas), com traducao PT completa e identica (exceto 1 termo de glossario) a producao (textos_japones/textos_portugues). Spec reconstruido para refletir os 8 artigos reais, com jp_anchor/pt_anchor tirados do conteudo real (nao interpolado).",
+ "segmentation_pass": "jp_line_v2_corrected_2026-07-14_chunk_turnaware",
+ "previous_article_count": 8,
+ "split_method": "line_kannon_koza",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Primeira Aula — O Propósito do Deus Supremo e a Verdade da Ordem Celestial e Terrestre",
+   "jp_anchor": "観音講座　（１～７）　講座を弟子が筆録したもの",
+   "pt_anchor": "Curso Kannon (1–7) – Transcrição do curso feita por um discípulo",
+   "notes": "",
+   "pt_prefix": "Primeira Aula\n\nO Propósito do Deus Supremo e a Verdade da Ordem Celestial e Terrestre"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第一講座",
+   "title_pt": "Primeira Aula — O Propósito do Deus Supremo e a Verdade da Ordem Celestial e Terrestre",
+   "jp_anchor": "　　　　　　　　第一講座\n\n主神の御目的と天地経綸の真相",
+   "pt_anchor": "Primeira Aula\n\nO Propósito do Deus Supremo e a Verdade do Plano Divino do Céu e da Terr",
+   "notes": "",
+   "pt_prefix": "Primeira Aula\n\nO Propósito do Deus Supremo e a Verdade da Ordem Celestial e Terrestre"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第二講座",
+   "title_pt": "Segunda Aula — A Origem da Religião e o Advento do Salvador",
+   "jp_anchor": "　　　　　　　第二講座\n\n宗教の根源と救世主の出現",
+   "pt_anchor": "Segunda Aula\n\nA Origem da Religião e o Advento do Salvador",
+   "notes": "",
+   "pt_prefix": "Segunda Aula"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第三講座",
+   "title_pt": "Terceira Aula — A Essência do Bodhisattva Kannon",
+   "jp_anchor": "　　　　　　　第三講座\n\n観世音菩薩の本体",
+   "pt_anchor": "Terceira Aula\n\nA Essência de Kanzeon-Bosatsu",
+   "notes": "",
+   "pt_prefix": "Terceira Aula"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第四講座",
+   "title_pt": "Quarta Aula — A Realidade dos Três Mundos: Divino, Espiritual e Material",
+   "jp_anchor": "　　　　　　　第四講座\n\n神幽現三界の実相",
+   "pt_anchor": "Quarta Aula\n\nA Realidade dos Três Mundos: Divino, Espiritual e Material",
+   "notes": "",
+   "pt_prefix": "Quarta Aula"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第五講座",
+   "title_pt": "Quinta Aula — A Verdade do Bem e do Mal e a Construção do Mundo Luminoso",
+   "jp_anchor": "　　　　　　　第五講座\n\n善悪の真諦と光明世界の建設",
+   "pt_anchor": "Quinta Aula\n\nA Verdade do Bem e do Mal e a Construção do Mundo Luminoso",
+   "notes": "",
+   "pt_prefix": "Quinta Aula"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第六講座",
+   "title_pt": "Sexta Aula — A Missão do Japão e dos Países Estrangeiros",
+   "jp_anchor": "　　　　　　第六講座\n\n日本と外国の使命",
+   "pt_anchor": "Sexta Aula\n\nA Missão do Japão e dos Países Estrangeiros",
+   "notes": "",
+   "pt_prefix": "Sexta Aula"
+  },
+  {
+   "kind": "lecture",
+   "title_jp": "第七講座",
+   "title_pt": "Sétima Aula — Princípio da Doença e do Método de Saúde Absoluta",
+   "jp_anchor": "　　　　　　　第七講座\n\n病気及絶対健康法の原理",
+   "pt_anchor": "Sétima Aula\n\nPrincípio da Doença e do Método de Saúde Absoluta",
+   "notes": "",
+   "pt_prefix": "Sétima Aula"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:51Z",
+ "audit_method": "jp_first_content_pair"
+}

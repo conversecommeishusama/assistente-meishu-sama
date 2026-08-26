@@ -1,0 +1,113 @@
+{
+ "filename": "19521015 - Mioshie-shū nº 14.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→11. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十四号",
+   "pt_anchor": "Mioshie-shū nº 14",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月六日",
+   "title_pt": "6 de setembro",
+   "jp_anchor": "この間ラジオで聞いたのですが、スウェーデンのハルマンという学者が調べたところによると、地球は五十年間に温度が十度増えたというのです。これはたい へんな話です。この五十年間というものは、今までにない温度の増え方です。もし昔にそういうことがある",
+   "pt_anchor": "Outro dia, ouvi no rádio que, segundo a pesquisa de um estudioso chamado Hallman, da Suécia, a temperatura da Terra aume",
+   "notes": "",
+   "pt_prefix": "6 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月七日",
+   "title_pt": "7 de setembro",
+   "jp_anchor": "ついこの間のラジオで、スウェーデンのハルマンという学者の研究で、五十年以前の気候と較べると、地球は平均十度高くなっていると言うのです。これは研 究だから間違いないわけです。そうするとこれはたいへんな問題だと思います。昔に――五十年に十度高く",
+   "pt_anchor": "No rádio, outro dia, segundo a pesquisa de um estudioso chamado Hallman, da Suécia, comparando com o clima de cinquenta anos atrás, a temperatura média da Terra aumentou dez graus.",
+   "notes": "",
+   "pt_prefix": "7 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十五日",
+   "title_pt": "15 de setembro",
+   "jp_anchor": "この間、薬がだんだん効かなくなるという話をしましたが、今し方の学校放送の時間で、今年の赤痢の多いのは、サルファ剤というのが、前には飲ませると割 合に良く治ったが、そのサルファ剤がこのごろ効かなくなった。どういうわけで効かないかというと、医者",
+   "pt_anchor": "Outro dia, falei sobre como os remédios gradualmente perdem o efeito. No programa de rádio escolar de agora há pouco, di",
+   "notes": "",
+   "pt_prefix": "15 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十六日",
+   "title_pt": "16 de setembro",
+   "jp_anchor": "今度アメリカから帰ってきた立松文二という人が、あっちの病気の統計をすっかり調べて帰ってきたのですが、この間も話した通り、すばらしく病気が多いの です。で、このまま進んで行くとアメリカは亡びてしまいます。だからその原因や治し方やなにかをすっか",
+   "pt_anchor": "O homem chamado Bunji Tatematsu, que voltou recentemente dos Estados Unidos, pesquisou a fundo as estatísticas de doenças de lá.",
+   "notes": "",
+   "pt_prefix": "16 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十七日",
+   "title_pt": "17 de setembro",
+   "jp_anchor": "今米国では病人が非常に増えてきたのです。今度信者で米国の大学に入っていた立松文二という人が帰ってきて、あっちの統計を細かく調査して帰ってきたのです。それを読ませます。",
+   "pt_anchor": "Atualmente, nos Estados Unidos, o número de doentes aumentou muito. Desta vez, um fiel chamado Bunji Tatematsu, que estudava numa universidade americana,",
+   "notes": "",
+   "pt_prefix": "17 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十三日",
+   "title_pt": "23 de setembro",
+   "jp_anchor": "いよいよ神仙郷も完成したのですが、これはいつも言う通り、つまり地上天国の模型ができたわけです。これがこれから世界に拡がっていくのです。霊界の方 の中心は、もう地上天国ができているのです。これがだんだん現界に写って世界的に拡がっていくのです。",
+   "pt_anchor": "Finalmente, a Terra Divina foi concluída; como sempre digo, isso significa que o modelo do Paraíso Terrestre foi estabel",
+   "notes": "",
+   "pt_prefix": "23 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十四日",
+   "title_pt": "24 de setembro",
+   "jp_anchor": "ちょうどお祭りに際して、報告するのに非常に良いことがありました。それは、今度京都にちょうど思ったような土地が手に入ることになったのです。今年の 春に、京都の嵯峨――広沢の他のある所ですが――あそこに土地を見に行ったことがありました。その時分",
+   "pt_anchor": "Aproveitando o festival, houve algo muito bom para relatar: desta vez, conseguimos adquirir um terreno exatamente como imaginávamos em Quioto.",
+   "notes": "",
+   "pt_prefix": "24 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十五日",
+   "title_pt": "25 de setembro",
+   "jp_anchor": "神様のおやりになることは、すべて型でやっているのです。主の型です。チョンです。このチョンがだんだん拡がって行くのです。世界に、戦争だとか思想問 題とか、いろんな変わり事がありますが、あれはいきなりそういうことが起ってくるのではないのです。地",
+   "pt_anchor": "O que Deus faz é sempre através de modelos — o modelo do Senhor, um único ponto que vai se expandindo gradualmente.",
+   "notes": "",
+   "pt_prefix": "25 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十六日",
+   "title_pt": "26 de setembro",
+   "jp_anchor": "神仙郷もほぼ完成しました。ここが完成したということは、非常に大きな意味があるのです。大きいというと、つまり世界的の意味があるのです。神様は、地 球の経綸――これは地球が始まって以来なのです。ちょうど○にヽ（ポチ）みたいなものです。あるいは池",
+   "pt_anchor": "A Terra Divina está quase concluída, e sua conclusão tem um significado muito grande — grande no sentido de mundial.",
+   "notes": "",
+   "pt_prefix": "26 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十七日",
+   "title_pt": "27 de setembro",
+   "jp_anchor": "今日でお祭りも終わりですが、今度の秋の大祭は特に意味があるのです。この神仙郷が完成した最初の秋の大祭なのです。前にも話した通り、ここは地球の ちょうど真ん中になるのです。中心なのです。これが講和以前では変な目で見られますから、そんなことを言",
+   "pt_anchor": "Hoje o festival termina, mas este Grande Festival de Outono tem um significado especial:",
+   "notes": "",
+   "pt_prefix": "27 de setembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

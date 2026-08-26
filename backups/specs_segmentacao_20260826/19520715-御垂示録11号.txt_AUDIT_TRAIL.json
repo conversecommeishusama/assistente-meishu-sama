@@ -1,0 +1,151 @@
+{
+  "filename": "19520715-御垂示録11号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 476 linhas / PT 222 linhas antes da correção, agora 227), 2 artigos por spec (Prefácio + sessão única [1º de julho], profile ochishiji_roku). Não é amostragem: todo o corpo do JP (207 linhas de conteúdo após o cabeçalho de data, 206 turnos de fala) foi lido e confrontado com o PT correspondente na mesma ordem, turno a turno.",
+  "gate_mecanico": "Não substituído por esta trilha. Contagem de turnos verificada programaticamente como apoio à leitura (não como prova de fecho): JP=206 turnos, PT antes da correção=198 turnos (Δ=8, ratio aparente de linhas ~2.1:1 mencionado no alerta era em parte artefacto de formatação JP com linha em branco entre turnos vs PT sem linha em branco - não é medida de conteúdo). Após as correções, PT=206 turnos, Δ=0. Conforme a regra 'Δ=0 é necessário, nunca suficiente', esta paridade de contagem NÃO foi usada como critério de fecho - todo o volume foi lido linha a linha antes e depois da correção para confirmar que os 8 turnos identificados eram de fato os únicos ausentes (não duplicação disfarçando perda em outro ponto) e que nenhuma troca de falante ou corrupção de texto está presente.",
+  "metodologia_deteccao": "Leitura direta linha a linha do JP contra o PT, com apoio de um script de alinhamento (assinatura por nomes próprios/números + programação dinâmica) para triagem de candidatos a lacuna. O script teve falsos positivos (3 turnos que ele marcou como ausentes - linhas JP 363/365/367 - estavam na verdade presentes no PT, apenas sem âncoras nominais fortes o suficiente para o script reconhecer) e falsos negativos (não detectou sozinho as lacunas nas linhas JP 372, 424, 468, na secção de consultas espirituais/médicas sem nomes próprios). Todos os 8 turnos finais confirmados ausentes foram verificados por leitura direta do texto ao redor (não só pelo script), incluindo grep exaustivo por palavras-chave de cada trecho no PT inteiro para excluir a hipótese de terem sido traduzidos noutro ponto do ficheiro.",
+  "summary": {
+    "turnos_jp_totais": 206,
+    "turnos_pt_antes": 198,
+    "turnos_pt_depois": 206,
+    "turnos_ausentes_encontrados": 8,
+    "turnos_ausentes_corrigidos": 8,
+    "trocas_de_falante_encontradas": 0,
+    "duplicacoes_encontradas": 0,
+    "corrupcao_de_texto_encontrada": 0,
+    "items_escalados_para_pendencias": 0
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Frontispício / prefácio (Title, Publication source, cabeçalho de data)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Metadados e prefácio batem integralmente com o JP."
+    },
+    {
+      "bloco": "Abertura da sessão [1º de julho] - conversa sobre o museu de arte/exposição",
+      "jp_linhas": "26-34",
+      "decisao": "corrigido - 4 turnos inteiros ausentes",
+      "confianca": "alta",
+      "notas": "O PT saltava diretamente do cabeçalho de data '[1º de julho]' (que estava, além disso, colado ao texto sem quebra de linha - corrigido também) para o conteúdo da linha JP 36, omitindo por completo 4 turnos consecutivos: L28 (明主様, 'Desde a manhã, é estranho, já que é a primeira vez, não é?'), L30 (interlocutor, sobre estar cansado das visitas diárias), L32 (明主様, sobre o temperamento ter mudado) e L34 (interlocutor, sobre as peças expostas serem trocadas periodicamente). Confirmado por busca exaustiva de palavras-chave ('cansaço', 'visita', 'personalidade', 'temperamento', 'trocadas') em todo o PT - nenhuma ocorrência, portanto não era desalinhamento nem duplicação, era perda real. Traduzido e inserido inline, com quebra de linha própria para o cabeçalho de data (padrão confirmado contra outros volumes da mesma série, ex. 8º/9º/10º)."
+    },
+    {
+      "bloco": "Discussão sobre pinturas Rinpa, Korin/Sotatsu, cerâmica chinesa/celadon, coleção de arte",
+      "jp_linhas": "36-330",
+      "decisao": "corrigido - 1 turno curto ausente (L68)",
+      "confianca": "alta",
+      "notas": "Entre o elogio de Asano à obra 'Yuna' (L66) e o comentário sobre ela ser anterior a Matabei (L70), faltava a resposta curta de 明主様 'そうでしょうね' (L68). No PT, duas falas do interlocutor apareciam em sequência direta sem resposta entre elas - sinal do padrão de 'turno curto sem aspas nunca traduzido' mencionado no alerta. Traduzido como 'Não é mesmo?', seguindo o precedente de tradução já usado neste mesmo ficheiro para a mesma expressão japonesa em outro ponto (linha JP 246 → PT 'Não é mesmo?'). Resto do bloco (L36-330) conferido linha a linha sem outras divergências - nomes próprios (Korin, Sotatsu, Sesshu, Ninsei, Kenzan, Goto Keita, etc.), números e atribuições de fala todos corretos e completos."
+    },
+    {
+      "bloco": "Instruções sobre santuário doméstico, direções (kimon/ushitora), consagração",
+      "jp_linhas": "327-343",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Consultas de Johrei/espirituais - grávida com tuberculose, catarro",
+      "jp_linhas": "345-368",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Verificado com atenção redobrada por ser secção sem nomes próprios (ponto cego do script de triagem) - turnos L361/L363/L365/L367 confirmados presentes e corretos no PT (o script de triagem os marcou incorretamente como ausentes; a leitura direta confirmou que estão lá)."
+    },
+    {
+      "bloco": "Consulta - mãe de professor com sensação de insetos na garganta",
+      "jp_linhas": "370-377",
+      "decisao": "corrigido - 1 turno curto ausente (L372)",
+      "confianca": "alta",
+      "notas": "Faltava a pergunta de 明主様 'どういう苦痛ですか' (que tipo de dor é) entre a descrição do sintoma (L370) e o detalhe adicional do interlocutor sobre náusea no peito (L374) - no PT as duas falas do interlocutor apareciam em sequência sem a pergunta entre elas. Traduzido como 'Que tipo de dor é?'."
+    },
+    {
+      "bloco": "Consultas - sangue tóxico ao redor dos olhos, mudança de festival mensal, moça que bebe álcool sem efeito, innen de tanuki",
+      "jp_linhas": "379-412",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Consulta - professora com amenorreia, criança que odeia Johrei",
+      "jp_linhas": "414-433",
+      "decisao": "corrigido - 1 turno ausente (L424)",
+      "confianca": "alta",
+      "notas": "Faltava a resposta completa de 明主様 sobre a criança ('霊です。苦しいんです。しかし治ります。信仰ですね――まだお祀りしてないんですか') entre a fala do interlocutor sobre a criança detestar Johrei (L422) e a fala seguinte sobre ser um posto avançado/pai descontente (L426). Traduzido como 'É espírito. Dói. Mas cura. É questão de fé — ainda não consagraram o altar?'."
+    },
+    {
+      "bloco": "Consultas - epilepsia ocular, Imagem da Luz Divina torta, cristão pedindo amuleto",
+      "jp_linhas": "435-456",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Consulta final - surdez após morte do pai ligada a innen com caqui/dragão da árvore",
+      "jp_linhas": "458-476",
+      "decisao": "corrigido - 1 turno ausente (L468)",
+      "confianca": "alta",
+      "notas": "Faltava a pergunta de 明主様 '耳の後ろが腫れてきたんですか' (a parte de trás da orelha começou a inchar?) entre a fala do interlocutor sobre a consagração (L466) e a fala seguinte sobre estar muito dura (L470). Traduzido como 'A parte de trás da orelha começou a inchar?'."
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início da sessão [1º de julho], logo após o cabeçalho (antes: cabeçalho colado ao texto sem quebra de linha)",
+      "jp_referencia": "linhas 26-36",
+      "problema": "4 turnos inteiros ausentes (2 de 明主様, 2 do interlocutor) + cabeçalho de data mal formatado (colado ao texto seguinte sem quebra de linha, inconsistente com o padrão de outros volumes da série 御垂示録).",
+      "correcao": "Inseridos os 4 turnos traduzidos na ordem correta e separado o cabeçalho '[1º de julho]' em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "entre o elogio à obra 'Yuna' por Asano e o comentário sobre Matabei",
+      "jp_referencia": "linha 68",
+      "problema": "Turno curto de 明主様 ('そうでしょうね') ausente entre dois turnos consecutivos do interlocutor.",
+      "correcao": "Inserido 'Não é mesmo?' (mesma tradução já usada neste ficheiro para a mesma expressão japonesa).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "consulta da mãe de professor (68 anos) com sensação de insetos na garganta",
+      "jp_referencia": "linha 372",
+      "problema": "Pergunta curta de 明主様 ('どういう苦痛ですか') ausente entre dois turnos consecutivos do interlocutor.",
+      "correcao": "Inserido 'Que tipo de dor é?'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "consulta da professora/criança que odeia Johrei",
+      "jp_referencia": "linha 424",
+      "problema": "Resposta completa de 明主様 sobre a criança possuída por espírito ausente entre dois turnos consecutivos do interlocutor.",
+      "correcao": "Inserido 'É espírito. Dói. Mas cura. É questão de fé — ainda não consagraram o altar?'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "consulta final sobre surdez ligada ao caqui/dragão da árvore",
+      "jp_referencia": "linha 468",
+      "problema": "Pergunta curta de 明主様 sobre inchaço atrás da orelha ausente entre dois turnos consecutivos do interlocutor.",
+      "correcao": "Inserido 'A parte de trás da orelha começou a inchar?'.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_pos_correcao": {
+    "contagem_turnos": "JP=206, PT=206 (Δ=0) - conferido programaticamente após a correção, mas usado apenas como confirmação auxiliar, não como prova de fecho",
+    "cjk_residual": "nenhum encontrado no corpo do PT (apenas nas linhas de metadado do próprio cabeçalho do ficheiro de trabalho, que contêm o título em japonês por desenho, ex. 'title_jp:')",
+    "balanceamento_de_aspas": "210 aspas duplas = 105 pares, número par, sem quebra",
+    "releitura_completa": "todo o ficheiro PT corrigido foi relido do início ao fim contra o JP após as 5 edições para confirmar que nenhuma outra divergência foi introduzida ou permaneceu"
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmados os 8 turnos inseridos, Δ=0 turnos verificado. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (「pergunta entre aspas」=Interlocutor; prosa corrida sem aspas=Meishu-Sama)",
+    "data": "2026-07-08",
+    "etapa_a_mapa_jp": "JP lido integralmente linha a linha a partir do cabeçalho de sessão [七月一日] (linha 26 do ficheiro JP). Classificação programática (parágrafo iniciado por「=Interlocutor; parágrafo sem aspas=Meishu-Sama) conferida contra a leitura: 206 parágrafos de fala, sendo 102 Interlocutor e 104 Meishu-Sama. A diferença de 2 (104 vs 102 esperados numa alternância pura I/M) vem de um único turno de Meishu-Sama dividido em 2 parágrafos físicos consecutivos (JP linhas 149 e 151, sobre o vaso Ninsei e o comentário ao Sr. Fujikawa sobre a exposição Rinpa) - confirmado por leitura direta que ambos são fala do próprio Meishu-Sama (primeira pessoa 'coloquei'/'falei'), não narração de terceiros.",
+    "etapa_b_confirmacao": "Contagem PT recalculada com o mesmo critério (parágrafo iniciado por aspas=Interlocutor): 206 parágrafos, 102 Interlocutor, 104 Meishu-Sama, incluindo o mesmo par de parágrafos consecutivos de Meishu-Sama na mesma posição relativa (PT linhas 80-81, antes da rotulagem). Paridade total com o mapa JP (Δ=0 em ambas as categorias), sem nenhum outro par de parágrafos consecutivos do mesmo falante. Nenhum problema estrutural novo encontrado (o ficheiro já havia passado por correção de 8 turnos ausentes e segunda auditoria independente em 2026-07-07, ver blocos acima).",
+    "etapa_c_aplicacao": "Prefixos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados programaticamente a cada um dos 206 parágrafos de fala, na ordem existente do PT, sem reordenar nem reescrever texto. Cabeçalho de sessão '[1º de julho]' preservado sem rótulo. Bloco de metadados/prefácio (linhas 1-24) preservado sem alteração.",
+    "resultado": "206/206 parágrafos rotulados (102 Interlocutor, 104 Meishu-Sama), 0 parágrafos sem rótulo, nenhuma divergência de contagem com o JP.",
+    "problemas_corrigidos_ou_documentados": "Nenhum problema novo encontrado nesta etapa. O único ponto de atenção (par de parágrafos consecutivos de Meishu-Sama) já estava presente e correto em ambos JP e PT antes da rotulagem; foi apenas confirmado e cada um dos 2 parágrafos recebeu seu próprio prefixo 'Meishu-Sama:', conforme metodologia."
+  }
+}

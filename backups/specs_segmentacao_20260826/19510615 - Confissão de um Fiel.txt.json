@@ -1,0 +1,63 @@
+{
+ "filename": "19510615 - Confissão de um Fiel.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Corrigido 2026-07-14 (CHUNK_TURNAWARE): 16→6 artigos reais (poema e fechamento estavam partidos linha a linha; testemunho principal absorvido incorretamente por artigo do poema).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 16,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Confissão de um Crente",
+   "jp_anchor": "『一信者の告白』昭和26(1951)年6月15日発行",
+   "pt_anchor": "Confissão de um Fiel",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "自　観",
+   "title_pt": "Prefácio",
+   "jp_anchor": "最近、宮本謹爾という一信者から、送って来た原稿を読んでみると、本教へ入信迄の経路及入信後の感想等いささかの紛飾もなく、ありのままを真によくかいてあり、読むに従って側々人を動かすものがある。しかも君は入信してから近々二年にも充たない今日、よく",
+   "pt_anchor": "Recentemente, li um manuscrito enviado por um crente chamado Kinji Miyamoto. Ao lê-lo, percebi que ele descreve, sem qua",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "奇びなり　噫奇びなり願事の　正しかりせば　叶へますなり",
+   "title_pt": "Que Maravilha! Ah, que Maravilha!",
+   "jp_anchor": "奇びなり　噫奇びなり願事の",
+   "pt_anchor": "Que maravilha! Ah, que maravilha! Se o pedido",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私「あの頃はお前達をどういう風に斬ろうかと",
+   "title_pt": "Eu: \"Naquela Época, Pensei Muito em Como Cortá-los...\"",
+   "jp_anchor": "私「あの頃はお前達をどういう風に斬ろうかと",
+   "pt_anchor": "Eu: \"Naquela época, pensei muito em como cortá-los. De qualquer forma, minha única preocupação era fazê-los morrer da maneira mais fácil possível.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "日本の皆さん、",
+   "title_pt": "Povo do Japão,",
+   "jp_anchor": "日本の皆さん、",
+   "pt_anchor": "Povo do Japão,\n\n　　Povo do mundo inteiro,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "奥付",
+   "title_pt": "Ficha Técnica",
+   "jp_anchor": "Ａ６版",
+   "pt_anchor": "Formato A6, 53 páginas, não à venda",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

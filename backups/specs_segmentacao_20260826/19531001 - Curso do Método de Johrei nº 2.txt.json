@@ -1,0 +1,96 @@
+{
+ "filename": "19531001 - Curso do Método de Johrei nº 2.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Corrigido 2026-07-15 (CHUNK_TURNAWARE): 3 pseudo-seções por data (que eram só a data final de parágrafos dentro do capítulo 三, não cabeçalhos reais) removidas e mescladas de volta ao capítulo 三; title_pt de todos os artigos estava contaminado com títulos de outro livro (ex. 'Advento do Salvador', 'Bodhisattva Kannon') e foi corrigido para refletir o conteúdo real (numeração 1-8 como no PT). 12→9 artigos.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（二）",
+   "pt_anchor": "Curso do Método de Johrei nº 2",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　浄霊の合理性",
+   "title_pt": "1. A Racionalidade do Johrei",
+   "jp_anchor": "一　浄霊の合理性",
+   "pt_anchor": "1. A Racionalidade do Johrei",
+   "notes": "",
+   "pt_prefix": "1. A Racionalidade do Johrei"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　浄霊の霊力について",
+   "title_pt": "2. Sobre a Força Espiritual do Johrei",
+   "jp_anchor": "二　浄霊の霊力について",
+   "pt_anchor": "2. Sobre a Força Espiritual do Johrei",
+   "notes": "",
+   "pt_prefix": "2. Sobre a Força Espiritual do Johrei"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三　浄霊の順序と急所",
+   "title_pt": "3. A Ordem do Johrei e os Pontos Vitais",
+   "jp_anchor": "三　浄霊の順序と急所",
+   "pt_anchor": "3. A Ordem do Johrei e os Pontos Vitais",
+   "notes": "",
+   "pt_prefix": "3. A Ordem do Johrei e os Pontos Vitais"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四　毒素集溜の経過と排泄の順序",
+   "title_pt": "4. Processo de Acumulação e Ordem de Excreção das Toxinas",
+   "jp_anchor": "四　毒素集溜の経過と排泄の順序",
+   "pt_anchor": "4. Processo de Acumulação e Ordem de Excreção das Toxinas",
+   "notes": "",
+   "pt_prefix": "4. Processo de Acumulação e Ordem de Excreção das Toxinas"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五　頭の働きと薬毒について",
+   "title_pt": "5. Sobre o Funcionamento da Cabeça e a Toxina Medicamentosa",
+   "jp_anchor": "五　頭の働きと薬毒について",
+   "pt_anchor": "5. Sobre o Funcionamento da Cabeça e a Toxina Medicamentosa",
+   "notes": "",
+   "pt_prefix": "5. Sobre o Funcionamento da Cabeça e a Toxina Medicamentosa"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "六　婦人と前頭部の熱",
+   "title_pt": "6. A Mulher e o Calor na Testa",
+   "jp_anchor": "六　婦人と前頭部の熱",
+   "pt_anchor": "6. A Mulher e o Calor na Testa",
+   "notes": "",
+   "pt_prefix": "6. A Mulher e o Calor na Testa"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "七　化粧品中毒",
+   "title_pt": "7. Intoxicação por Cosméticos",
+   "jp_anchor": "七　化粧品中毒",
+   "pt_anchor": "7. Intoxicação por Cosméticos",
+   "notes": "",
+   "pt_prefix": "7. Intoxicação por Cosméticos"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "八　顔の自然美と一挙三得",
+   "title_pt": "8. A Beleza Natural do Rosto e o Triplo Benefício em Um Só Ato",
+   "jp_anchor": "八　顔の自然美と一挙三得",
+   "pt_anchor": "8. A Beleza Natural do Rosto e o Triplo Benefício em Um Só Ato",
+   "notes": "",
+   "pt_prefix": "8. A Beleza Natural do Rosto e o Triplo Benefício em Um Só Ato"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

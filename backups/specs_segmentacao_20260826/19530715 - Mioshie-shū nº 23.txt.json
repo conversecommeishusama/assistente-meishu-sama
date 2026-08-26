@@ -1,0 +1,104 @@
+{
+ "filename": "19530715 - Mioshie-shū nº 23.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→8. PT pairing resolvido 2026-07-15 (audit --fix --repair-pt, 8/8 ok). 2026-07-15: 8→9, sessão 六月十五日 (箱根地上天国完成記念祭御教, JP L92) estava mesclada dentro de 六月七日 sem jp_anchor próprio (achado já documentado em AUDIT_TRAIL 2026-07-07); inserida com jp_anchor/pt_anchor dedicados.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十三号",
+   "pt_anchor": "Mioshie-shū nº 23",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月五日",
+   "title_pt": "5 de junho",
+   "jp_anchor": "昭和二十八年六月五日\n\n　だんだん霊界が明るくなるに従って邪神の方はたいへんなのです。七転八倒してます。つまり医学を利用して人類の健康を弱らせようという大謀略なのです。",
+   "pt_anchor": "5 de junho de 1953\n\nÀ medida que o mundo espiritual gradualmente se ilumina, a situação das Divindades malignas torna-se extremamente dif",
+   "notes": "",
+   "pt_prefix": "5 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月六日",
+   "title_pt": "6 de junho",
+   "jp_anchor": "六月六日\n\n　四日の晩のラジオは聞いたでしょうが、なにしろ邪神の方も苦しまぎれにいろんなことをやります。四、五年前は新聞で随分挑戦してきましたが、とうとう こっちが勝ってしまったのです。その次は官憲を利用して、ちょうど三年前にああいった裁判をやりまして、",
+   "pt_anchor": "6 de junho\n\nVocês devem ter ouvido o rádio na noite do dia 4; o fato é que o lado das Divindades malignas também está fazendo de tud",
+   "notes": "",
+   "pt_prefix": "6 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月七日",
+   "title_pt": "7 de junho",
+   "jp_anchor": "六月七日\n\n　 今日はおもしろい奇蹟がありました。さっきこの人が、今日の参拝の人数を報告に来たのですが、その時に五百六十七名というのです。私はいつもそういう数字 が出るとよいと思ったが、今までそういうことは一度もないのです。それが今日に限って五百六十六〔七",
+   "pt_anchor": "7 de junho\n\nHoje houve um milagre interessante. Há pouco, esta pessoa veio relatar o número de participantes da visita de hoje, e di",
+   "notes": "",
+   "pt_prefix": "7 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十五日（箱根地上天国完成記念祭御教）",
+   "title_pt": "15 de junho",
+   "jp_anchor": "六月十五日　（箱根地上天国完成記念祭御教）\n\n　いよいよ地上天国の模型が完成したので、その記念祝典という意味ですが、つまり真善美のうちの美の型ができたわけです。ところで昔からいろいろな宗教が ありましたが、真善はあったが美は作らなかったのです。なぜ美を作らなかったかというと、本当の天国の宗教でなかったからです。時期が夜の世界のために天 国を造ることができなかったのです。そこで美が欠けていたというわけです。それについて書きましたから、今読ませます。",
+   "pt_anchor": "15 de junho (Ensinamento do Festival Comemorativo da Conclusão do Paraíso Terrestre em Hakone)\n\nFinalmente, o modelo do Paraíso Terrestre foi concluído, e isso tem o significado de uma celebração comemorativa. Em out",
+   "notes": "",
+   "pt_prefix": "15 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十六日",
+   "title_pt": "16 de junho",
+   "jp_anchor": "六月十六日\n\n　昨日のお祭りは、箱根地上天国模型完成祝賀記念祭ですが、これはたいへんな意味があって、つまりいよいよ世界にミロクの世が生まれたという意味になるのです。そのことを書きましたから、今読ませます。",
+   "pt_anchor": "16 de junho\n\nO festival de ontem foi a celebração comemorativa da conclusão do modelo do Paraíso Terrestre de Hakone,",
+   "notes": "",
+   "pt_prefix": "16 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月十七日",
+   "title_pt": "17 de junho",
+   "jp_anchor": "六月十七日\n\n　ここの地上天国ができあがったについて、その深い意味をお話する前に、そのことを書いたので読ませます。",
+   "pt_anchor": "17 de junho\n\nAntes de falar sobre o significado profundo do estabelecimento deste Paraíso Terrestre aqui, farei a leitura",
+   "notes": "",
+   "pt_prefix": "17 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十五日",
+   "title_pt": "25 de junho",
+   "jp_anchor": "六月二十五日\n\n　いつも奇蹟はありますが、最近のお蔭話の中に奇蹟中の奇蹟というのがありました。それは、六つになる子供ですが、ふつう医学上では、小便が出ないのは八 時間以上は危険だとなっているのですが、六日間出なかったのです。それで命は取り止めました。ところが",
+   "pt_anchor": "25 de junho\n\nMilagres sempre ocorrem, mas, entre os relatos de graça recentes, houve um que foi o milagre dos milagres.",
+   "notes": "",
+   "pt_prefix": "25 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十六日",
+   "title_pt": "26 de junho",
+   "jp_anchor": "六月二十六日\n\n　今読ませるお蔭話は非常な奇蹟で、とうていあり得べからざることです。",
+   "pt_anchor": "26 de junho\n\nA história de graça que farei ler agora é um milagre extraordinário, algo que jamais poderia acontecer.",
+   "notes": "",
+   "pt_prefix": "26 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "六月二十七日",
+   "title_pt": "27 de junho",
+   "jp_anchor": "六月二十七日\n\n　今度すばらしい奇蹟のお蔭話がありました。たいていな奇蹟には驚きませんが、これだけはなんと言ってよいか、一言も言葉が出ません。これは日刊新聞に出 したいと思って毎日に相談したところが、調べた結果サンデー毎日にでも出そうかと言って、これから調査",
+   "pt_anchor": "27 de junho\n\nDesta vez, houve um relato de graça sobre um milagre maravilhoso. Geralmente não me surpreendo com milagres, mas diante",
+   "notes": "",
+   "pt_prefix": "27 de junho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

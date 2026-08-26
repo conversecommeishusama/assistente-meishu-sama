@@ -1,0 +1,139 @@
+{
+  "dashboard_nota": "Fila CHUNK_TURNAWARE recem-ampliada (2026-07-14) -- escopo corrigido para o acervo inteiro (126 = 128 - 2 adiados), nao so as 3 series. Ainda sem execucao sob o protocolo revisado. [shard B, criado 2026-07-15 para paralelizar apos upgrade de plano]",
+  "created_at": "2026-07-14T00:00:00Z",
+  "phase": "Fechamento de segmentacao JP + replicacao PT (todo o acervo) + corte qualificado por contagem de caracteres, turn-aware, para as series Gokowa-roku/Gosuiji-roku/Mioshie-shu (protocolo)",
+  "protocol_file": "reports/livros_trabalho/segmentacao_manual/PROTOCOLO_CHUNK_TURNAWARE.md",
+  "policy": "Para cada um dos 126 livros: verificar e corrigir a segmentacao JP onde necessario (specs incompletas, sessao/artigo faltante, gap que causa fallback de pareamento) e replicar a correcao no pareamento PT (pt_anchor 100% resolvido, sem interpolacao proporcional nem pendencia aberta). Alem disso, para os livros das 3 series Gokowa-roku (profile gokowa_roku_qa) / Gosuiji-roku (ochishiji_roku) / Mioshie-shu (mioshie_shu) -- 81 dos 126 -- fazer tambem o corte qualificado por contagem de caracteres (chunking turn-aware, nunca partindo um par Interlocutor:/Meishu-Sama:). So aceitar um livro como concluido em 100% -- nunca parcial. Ao fechar a fila inteira (executor+auditor), disparar automaticamente a reconstrucao de metadados/indice do acervo inteiro (scripts/build_clean_large_indexes.py, escreve em experiments/, nao toca producao) -- instalacao em producao continua exigindo autorizacao explicita do usuario, sem mudanca dessa regra.",
+  "escopo_nota": "126 dos 128 livros do acervo (2 adiados para sabado: 19511125-御教え集3号.txt e 19520420-御教え集8号.txt, pendencia de rotulagem que exige retraducao, decisao do usuario 2026-07-14) -- nao processar esses dois nesta fila. Dos 126, 81 pertencem as 3 series (profile gokowa_roku_qa/ochishiji_roku/mioshie_shu na spec do livro) e precisam TAMBEM do corte turn-aware por tamanho -- os outros 45 so precisam do fechamento de segmentacao/pareamento.",
+  "pending": [],
+  "in_progress": [],
+  "done": [
+    {
+      "ficheiro": "19511210-御垂示録4号.txt",
+      "at": "2026-07-15T05:30:26Z",
+      "nota": "- art1-4 pt_anchor: shift off-by-one sistêmico (todos anchor_diff)\n- correção: audit --fix --repair-pt recalculou (4 fixed)\n- audit: 4/4 anchor_fixed; dry-run 4 art ok; turn-aware (ochishiji_roku) 0/338 unidades partidas, nenhuma unidade mista >3200 chars"
+    },
+    {
+      "ficheiro": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "at": "2026-07-15T04:56:36Z",
+      "nota": "- art1-46 pt_anchor/title_pt: vazios/template (PAREAMENTO_DEGENERADO 47/47)\n- correção: reconstruído 1:1 via 46 cabeçalhos reais **N.**/**romano.** do PT; pt_prefix garbage (\"N Aula\") limpo\n- audit: 46/47 ok, 1 ratio_warn benigno (cabeçalho vazio 一, classe já aceita em 4号/10号); dry-run 47 art ok; koza_lectures, fora das 3 séries"
+    },
+    {
+      "ficheiro": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "at": "2026-07-15T04:32:00Z",
+      "nota": "- art1 pt_anchor: vazio (PAREAMENTO_NAO_RESOLVIDO); art2-9 title_pt: template 'N Aula' clobado (bug koza_title_pt), sem relação com conteúdo\n- correção: art8/9 (どんどん強くなる菌/罪はアメや食品にも) eram subtítulo interno da citação de jornal dentro de 六, não seção própria -> 9→7 artigos; title_pt reescrito por artigo\n- audit --fix --repair-pt: 7/7 ok; dry-run 7 art ok; profile koza_lectures, fora das 3 séries"
+    },
+    {
+      "ficheiro": "19520115-御教え集5号.txt",
+      "at": "2026-07-15T04:20:00Z",
+      "nota": "- art2-9 pt_anchor: shift off-by-one sistêmico (todos anchor_diff, cada pt_anchor apontava pro artigo anterior)\n- correção: audit --fix --repair-pt recalculou\n- audit: 10/10 ok; dry-run 10 art ok; turn-aware 115/115 unidades intactas (mioshie_shu)"
+    },
+    {
+      "ficheiro": "19540825-天国の福音書.txt",
+      "at": "2026-07-15T03:20:00Z",
+      "nota": "- art1-159: 53 ensaios fragmentados em 3 pseudo-artigos (título/citação/corpo), positional pairing exigia 1:1 c/ #T\n- correção: spec 160->54 art (1 prefácio+53), jp_anchor=divisor+título (padrão 信仰雑話)\n- audit --fix --repair-pt: 54/54 ok; dry-run ok; cobertura JP/PT ~99,9%"
+    },
+    {
+      "ficheiro": "19531015-御教え集26号.txt",
+      "at": "2026-07-15T02:50:12Z",
+      "nota": "- art2 jp_anchor: sessão 5/set fundida no prefácio, sem entrada própria\n- correção: nova entrada session + fix sistêmico jp_date_header_to_pt/pair_mioshie (título 昭和NN年M月D日, 1ª sessão)\n- script: audit --fix 12/12 ok; dry-run ok; turn-aware 122/122"
+    },
+    {
+      "ficheiro": "19531215-御教え集28号.txt",
+      "at": "2026-07-15T02:54:21Z",
+      "nota": "- art2-12 pt_anchor: anchor_diff (apontava pro título de data, não pro corpo)\n- correção: audit --fix (jp_first_content_pair)\n- audit: 12/12 ok; dry-run ok; 0 Interlocutor (monólogo, turn-aware n/a)"
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-15T02:56:10Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/141 warn)\n- profile miracle_collection, fora das 3 séries, sem corte turn-aware\n- dry-run: 141 artigos, cobertura 284232/285954 chars (98,4%)"
+    },
+    {
+      "ficheiro": "19540215-御教え集30号.txt",
+      "at": "2026-07-15T03:03:36Z",
+      "nota": "- art2 一月一日: sessão ausente (absorvida em 序文), 13→12→13 artigos\n- correção: nova entrada session; fix sistêmico digit_body sem º opcional (1º de <mês>)\n- audit --fix: 13/13 ok; dry-run ok; turn-aware sem Interlocutor (monólogo)"
+    },
+    {
+      "ficheiro": "19540415-御教え集32号.txt",
+      "at": "2026-07-15T03:07:26Z",
+      "nota": "- art1-11 pt_anchor: shift off-by-one sistêmico (todos anchor_diff)\n- correção: audit --fix --repair-pt recalculou (8 fixed)\n- audit: 11/11 ok; dry-run 11 art; turn-aware sem Interlocutor (monólogo, 0/202 split)"
+    },
+    {
+      "ficheiro": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "at": "2026-07-15T03:34:25Z",
+      "nota": "- art0-51 title_pt/pt_anchor: vazios/genéricos (PAREAMENTO_DEGENERADO 52/52)\n- correção: reconstruído 1:1 do PT real; bug sistêmico fixado (koza_title_pt/pair_koza aplicavam template Aula a todo koza_lectures, sobrescrevia/clobava manual)\n- audit: 50/50 ok (2 ratio_warn benignos, header curto); dry-run ok"
+    },
+    {
+      "ficheiro": "19520000-HAKONE ART MUSEUM.txt",
+      "at": "2026-07-15T03:46:15Z",
+      "nota": "- art1 ratio_warn: JP=8543/PT=8614 chars, ratio 1.01 (fora RATIO_OK 1.15-4.8)\n- causa: texto-fonte e o proprio JP sao em ingles (discurso Okada, museu Hakone), nao ha expansao jp->pt esperada; ja documentado em PENDENCIAS_REVISAO.json (verificacao JP-2 anterior)\n- profile monolith, fora das 3 series; dry-run 1 art ok; sem correcao aplicavel"
+    },
+    {
+      "ficheiro": "19350000-観音講座　（１～７）.txt",
+      "at": "2026-07-15T03:48:06Z",
+      "nota": "- art1 GAP_FILLED (prefácio, padrão benigno)\n- art2-8 pt_anchor: faltava subtítulo em negrito da aula\n- fix: audit --fix --repair-pt -> anchor_fixed, 8/8 ok\n- dry-run: 8 artigos; JP confere (prefácio+7 aulas); profile koza_lectures (fora das 3 séries)"
+    },
+    {
+      "ficheiro": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "at": "2026-07-15T03:59:23Z",
+      "nota": "- art0-38 pt_anchor/title_pt: vazios/template 観音講座 (PAREAMENTO_DEGENERADO 39/39)\n- correção: reconstruído 1:1 via marcadores (N)/N. reais do PT (Rota B)\n- audit: 36/39 ok, 3 ratio_warn benignos (cabeçalho curto 二/三/四科, classe já aceita em 4号); dry-run 39 art ok"
+    },
+    {
+      "ficheiro": "19510915-御垂示録1号.txt",
+      "at": "2026-07-15T04:18:43Z",
+      "nota": "- art2 spec: sessão 5-agosto ausente, fundida a 1-agosto\n- correção: inserido artigo; pt_anchor de art2/4 também corrigido\n- bug motor: pair_ochishiji tinha deslocamento de +1 sessão (fix aplicado, ver staging)\n- audit --fix --repair-pt: 4/4 ok; dry-run ok; turn-aware: 0/4 unidades partidas"
+    },
+    {
+      "ficheiro": "19520425-御垂示録8号.txt",
+      "at": "2026-07-15T04:23:29Z",
+      "nota": "- art1-3 pt_anchor: desatualizado (apontava p/ trecho de diálogo em vez de cabeçalho de data)\n- correção: audit --fix --repair-pt recalculou os 3 anchors\n- audit: 3/3 ok; dry-run: 3 artigos sem erro; JP tem só 2 marcadores de data, batendo com 2 sessões+prefácio\n- turn-aware: 0 unidades partidas entre chunks (JP+PT, todos os artigos); todo chunk de diálogo preserva rótulo"
+    },
+    {
+      "ficheiro": "19520125-御垂示録6号.txt",
+      "at": "2026-07-15T04:34:19Z",
+      "nota": "- art2-4 pt_anchor: apontavam p/ sessão errada (deslocados)\n- correção: audit --fix --repair-pt realinhou por idade/título\n- script: 4/4 ok; dry-run ok; turn-aware 0 unidades partidas (ochishiji_roku)"
+    },
+    {
+      "ficheiro": "19511215-御教え集4号.txt",
+      "at": "2026-07-15T04:38:50Z",
+      "nota": "- art1-9 pt_anchor: usava data do proximo artigo (shift), nao conteudo do jp_anchor\n- correcao: audit --fix --repair-pt recalculou os 9 pt_anchor\n- audit: 10/10 ok; dry-run 10 art; turn-aware 0 unidades partidas (JP+PT)"
+    },
+    {
+      "ficheiro": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "at": "2026-07-15T04:51:28Z",
+      "nota": "- pt_anchor: 21/22 vazios ou degenerados (needle/heading falharam), pareamento nunca feito de verdade\n- correcao: leitura direta do PT (22 titulos isolados por linha em branco, mesma ordem do JP); anchor multiline heading+abertura\n- engine: derive_anchor() tinha bug de desambiguacao (ver PENDENCIAS_STAGING); corrigido, regressao checada\n- audit --fix --repair-pt: 22/22 ok; dry-run dos dois idiomas sem erro (perfil jikan_hen, sem secao turn-aware)"
+    },
+    {
+      "ficheiro": "19490710-御光話録10号.txt",
+      "at": "2026-07-15T05:01:58Z",
+      "nota": "- art1/2/3/4 pt_anchor: shift de 1 posicao (cada anchor apontava pro topico da sessao seguinte)\n- correcao: rotacao dos 4 pt_anchor para o inicio real de cada sessao\n- audit --fix --repair-pt: 4/4 ok; dry-run ok; turn-units JP/PT 0/0 broken"
+    },
+    {
+      "ficheiro": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "at": "2026-07-15T05:14:23Z",
+      "nota": "- art18/25 title_jp: citações embutidas (waka em art17; frase de abertura de art24) viravam artigo próprio\n- correção: art18/25 removidos (merge no artigo anterior); jp_anchor de 16 artigos corrigido (apontava após o título, órfão no anterior); pt_anchor lido direto no PT p/ todos\n- audit --fix --repair-pt: 35/35 ok; dry-run 35 art ok; profile jikan_hen, fora das 3 séries"
+    },
+    {
+      "ficheiro": "19491230-自観叢書第9篇『光への道』.txt",
+      "at": "2026-07-15T05:30:00Z",
+      "nota": "- 23->22: art7 麹町時代 ausente da spec, inserido; 2 poemas (玉川郷.../汝と吾との...) eram artigo falso, merge de volta\n- art2 pt_anchor: colidia com art1, corrigido\n- audit --fix --repair-pt: 22/22 ok; dry-run ok; jikan_hen, fora das 3 séries"
+    },
+    {
+      "ficheiro": "19510920-御教え集1号.txt",
+      "at": "2026-07-15T05:26:52Z",
+      "nota": "- art1-10 pt_anchor: pareamento PT nunca rodado pos-resegmentacao JP (14/07), 9/10 anchor_diff\n- correcao: audit --fix --repair-pt realinhou por idade/titulo, confirmado por leitura direta JP/PT\n- audit: 10/10 ok; dry-run: 10 artigos ok; turn-aware: 0 unidades partidas, rotulo preservado em falas >3200"
+    }
+  ],
+  "failed": [
+    {
+      "ficheiro": "19520320-御教え集7号.txt",
+      "at": "2026-07-15T04:10:00Z",
+      "nota": "- seção 1: 8 art shift off-by-one, audit --fix --repair-pt 9/9 ok, 8 datas JP = 8 sessões\n- seção 2: bug sistêmico motor (overlap sem rótulo), 3 repros (art3/4 PT, art8 JP)\n- não editado motor (regra shard B); pendência em STAGING_executor_b, aguarda fix"
+    },
+    {
+      "ficheiro": "19511125-御教え集3号.txt",
+      "at": "2026-07-15T00:00:00Z",
+      "nota": "- seção 1: 10/10 anchor_diff (pt_anchor obsoleto pós-rotulagem PT) -> audit --fix --repair-pt: 10/10 ok; dry-run ok\n- seção 2: JP sem rótulos Interlocutor:/Meishu-Sama: (0 vs PT 85/86); 36 pares （お伺）/〔御垂示〕 sem label; turn-units JP 0/0 detectadas\n- não editado (regra shard B + risco mislabeling, ver irmão 1号 6/40 exceções); pendência em STAGING_executor_b"
+    }
+  ]
+}

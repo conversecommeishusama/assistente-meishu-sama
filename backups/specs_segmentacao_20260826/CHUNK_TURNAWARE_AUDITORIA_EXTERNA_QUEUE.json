@@ -1,0 +1,523 @@
+{
+  "dashboard_nota": "Fila de auditoria externa do CHUNK_TURNAWARE, recem-criada (2026-07-14) -- ainda sem execucao.",
+  "created_at": "2026-07-14T00:00:00Z",
+  "phase": "Sub-chunking turn-aware -- auditoria externa (protocolo)",
+  "protocol_file": "reports/livros_trabalho/segmentacao_manual/PROTOCOLO_CHUNK_TURNAWARE.md",
+  "policy": "Segunda verificacao independente e cetica de cada livro que o executor do CHUNK_TURNAWARE marcar como done, per secao 'Auditoria externa' e 'Criterio final de aceite' de PROTOCOLO_CHUNK_TURNAWARE.md.",
+  "pending": [],
+  "in_progress": [],
+  "done": [
+    {
+      "ficheiro": "19491021-御光話録13号.txt",
+      "at": "2026-07-15T09:10:00Z",
+      "nota": "- reabertura anterior (rótulo ausente linhas 242/244/532): confirmado corrigido\n- seq. tipo JP×PT: 277/277, 0 mismatch posição; grep ^―― sem label: 0\n- audit --file: 4/4 ok; apply --dry-run: 4 art sem erro\n- turn-aware: 285 unid., 0 partidas, 1 oversized c/ rótulo preservado (bate nota executor)\n- 1 bloco jp/pt; produção mtime 13/jun intocada; PENDENCIAS_REVISAO.json item 08:35Z desatualizado (achado já resolvido, não corrigido de volta aqui pois papel é auditar)"
+    },
+    {
+      "ficheiro": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "at": "2026-07-15T06:24:59Z",
+      "nota": "- audit --file (pós edição shard B): 59 ok/2 ratio_warn, mesmo padrão executor\n- ratio_warn idx1 prefácio + idx3 実験報告: divisor sem corpo, grep JP l.72 e PT l.87 confirma título nu seguido de próximo cabeçalho\n- anchors antigos quebrados (肥害を語る idx56, 無肥料栽培の収穫 idx11) agora resolvem únicos (PT l.935/l.234), rebuild 81->61 superou\n- apply --dry-run: 61/61 sem erro; 1 bloco jp/pt; produção mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: shard B (06:10Z, pós fix executor) editou PT (+header, merge duplicata) já registrado spec_desatualizada_regeneracao_pendente, compatível, sem quebra nova"
+    },
+    {
+      "ficheiro": "19510225-御教え集6号.txt",
+      "at": "2026-07-15T05:15:46Z",
+      "nota": "- audit --file: 12/12 ok reproduzido\n- pieces oversized s/ rótulo (art1 JP; art7/9/12 PT), sem erro de atribuição, já em PENDENCIAS_REVISAO.json (turn_aware_label_edge_case_registrado)\n- turn units: 141, 0 partidas; apply --dry-run: 12/12 ok\n- 1 bloco jp/pt; produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19511010-御垂示録2号.txt",
+      "at": "2026-07-15T04:52:24Z",
+      "nota": "- art2-4 pt_anchor: corrigido (apontava p/ sessão seguinte), grep JP=PT 1:1 em 1/5/8 set\n- turn-aware (código real, não reimplementado): 365 unidades, 0 violações, 0 oversized\n- audit --file: 4/4 ok; apply --dry-run: 4 art sem erro\n- 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada; PENDENCIAS_REVISAO.json: 5 entradas prévias (glossário), compatíveis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "at": "2026-07-15T04:31:49Z",
+      "nota": "- audit --file: 46/47 ok, 1 ratio_warn (art1 prefácio, exceção aceitável já confirmada no protocolo)\n- correção do executor (placeholder pt_anchor de outro livro em 39/47 art) reconferida: grep 0 ocorrências de \"Aula\"/\"Deus Principal\" na spec atual\n- art17 (11.) e art36 (36.): pt_anchor conferido por grep direto no PT bruto, 1 ocorrência cada, título real bate JP/PT\n- apply --dry-run: 47 artigos, sem erro\n- profile koza_lectures, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt; produção (chunks*/indice*/metadados*) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 2 entradas prévias (estilo de numeração romano/arábico, JP-2 sem bug estrutural), compatíveis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19490921-御光話録12号.txt",
+      "at": "2026-07-15T04:21:07Z",
+      "nota": "- audit --file: 4/4 status=ok, 0 warn/err\n- art1 pt_anchor: shift+1 confirmado corrigido (bug content_start sistêmico, item 19-livros gokowa_roku_qa)\n- turn-aware (código próprio): 188 unidades, 0 violações, 0 oversized\n- apply --dry-run: 4 artigos sem erro\n- 1 bloco ARTIGO jp/pt; produção (chunks/indice/metadados) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 2 entradas prévias (reposição citação Fase F, bug sistêmico content_start), compatíveis"
+    },
+    {
+      "ficheiro": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "at": "2026-07-15T04:18:43Z",
+      "nota": "- audit --file: 20/20 status=ok, 0 warn/err (reproduzido)\n- art15/16 (地獄界の続き/天狗界): jp_anchor=corpo, title_jp=heading; grep JP heading isolado =1 cada, padrão idêntico aos outros 18 artigos\n- headings JP: 20 detectados (heurística linha isolada), 19 mapeiam 1:1 p/ articles[2..20], 1 é título da obra (sem article próprio), sem seção perdida\n- PT: headers negrito **Continuação...**/**Reino dos Tengu** grep=1 cada, sem stub duplicado\n- apply --dry-run: 20 artigos sem erro\n- profile jikan_hen, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt; produção (chunks*/indice*/metadados*) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 1 entrada prévia (contaminação title_pt cabeçalho JP, não relacionada a article), compatível, nenhuma nova"
+    },
+    {
+      "ficheiro": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "at": "2026-07-15T03:53:42Z",
+      "nota": "- audit --file: 47/47 status=ok, 0 warn/err (reproduzido)\n- apply --dry-run: 47 artigos sem erro\n- 8 cap + 38 itens (8+2+3+5+2+4+10+4=38) + 1 prefacio = 47, grep JP cada header cap =1\n- item1 cap1 (bug proprio, titulo trocado p/ header): agora \"1. Insonia...\" correto, grep PT=1\n- item 6-4 (子宮癌): pt_anchor real (nao mais template Aula X), grep PT=1; resolve de lado o pt_anchor_dessincronizado 07-13 (dry-run sem erro agora)\n- profile koza_lectures, fora 3 series (sem secao 2)\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 4 entradas (titulo serie, spec desatualizada Fase5, pt_anchor dessinc. ja resolvido, achado sistemico KOZA_LECTURES), compativeis"
+    },
+    {
+      "ficheiro": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "at": "2026-07-15T03:36:54Z",
+      "nota": "- rebuild 65->63 art (Rota B) reconferido: audit --file 63/63 status=ok, 0 warn/err\n- apply --dry-run: 63 articles, sem erro\n- item15 十五 (kanji): grep JP linha 244, sequencial entre item14/item16; kind=item correto\n- item32 merge (2 pseudo-cap removidos): 一/二 eram sub-perguntas do mesmo 御伺, JP l.778-779, PT l.391-392 confirma bloco unico\n- pt_anchor art idx58 (32.): grep PT linha 389, unico, fora da cauda do art anterior (corrige pendencia pt_anchor_dessincronizado 07-14T00:30)\n- profile koza_lectures, fora das 3 series (sem secao 2)\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 8 entradas previas (categoria serie, spec desatualizada, pt_anchor dessinc.), compativeis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19510130-笑の泉.txt",
+      "at": "2026-07-15T08:00:00Z",
+      "nota": "- rebuild 25->70 artigos (Rota B): 69 temas 題「」JP grep=69, 69 Título: PT grep=69\n- pareamento por ordem 1:1 conferido pontas+meio (蛆虫/Larvas idx38 bate JP/PT)\n- audit --file: 70/70 ok, 0 warn/err; apply --dry-run: 70/70, 0 chars=0\n- profile wara_collection, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "at": "2026-07-15T07:00:00Z",
+      "nota": "- 10->26 (Rota B): 24 titulos JP grep=1 cada, ordem monotônica linhas 39-341\n- 薬毒/人体は綜合体である/私の健康法 confirmados como headers reais\n- audit --file: 26/26 ok, 0 warn/err; apply --dry-run: 26/26 sem erro\n- profile jikan_hen, fora das 3 séries; 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19531115-御教え集27号.txt",
+      "at": "2026-07-15T06:00:00Z",
+      "nota": "- audit --file: 9/9 status=ok, 0 warn/err\n- apply --dry-run: 9 artigos sem erro\n- turn-aware: 0 rótulos Interlocutor:/Meishu-Sama: (monólogo, mioshie_shu 9-33); reconstrução própria: 182 unidades, 0 violações, 12 oversized\n- sem diálogo escondido em parágrafo gigante (grep negativo)\n- 1 bloco ARTIGO jp/pt; produção (chunks*/indice*/metadados*) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 8 entradas prévias (terminologia aberta + regen Fase5 pendente), compatíveis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-15T05:00:00Z",
+      "nota": "- art9 ratio_warn(5.25): needle_match único, JP linha 136/PT linha 166 confere (header+endereço curto antes de miracle_story)\n- nota antiga PAREAMENTO_NAO_RESOLVIDO no spec é resíduo, não real (posição correta, sem interpolação)\n- extensão pontual da exceção do prefácio (protocolo só cita índice 1) aceita aqui, verificada por leitura direta; ver PENDENCIAS_REVISAO já registrado pelo executor\n- audit --file: 140/141 ok; apply --dry-run: 141/141 sem erro (min 8/30 chars); profile miracle_collection, fora 3 séries\n- 1 bloco ARTIGO jp/pt; produção (chunks/indice/metadados) mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "at": "2026-07-15T00:10:00Z",
+      "nota": "- art2 樋口喜代子: confirmado mesclado no art1 (linha 25 jp, entre intro e はしがき)\n- art13/17 jp_anchor multilinha: grep=1 cada, sem ambiguidade\n- audit --file: 27 ok/1 ratio_warn (art7, título nu 8jp/41pt, já registrado PENDENCIAS_REVISAO.json estado ratio_warn_aceito_titulo_nu, precedente アメリカを救う)\n- apply --dry-run: 28/28 sem erro; 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada\n- profile structured, fora das 3 séries (sem seção 2)"
+    },
+    {
+      "ficheiro": "19521115-御教え集15号.txt",
+      "at": "2026-07-14T18:46:28Z",
+      "nota": "- art7/8 (18/20 out): confirmado JP linhas 122/136, PT linhas 87/99, ambas sequenciais entre 17/25 out\n- audit --file: 11/11 ok (0 warn/err); apply --dry-run: 11 articles sem erro\n- \"Interlocutor:\"/\"Meishu-Sama:\" (6 PT) são citação editorial (\"Artigo de Meishu-Sama:\"), não rótulo de turno -- confirma nota do executor de livro monólogo, 0 unidades partidas\n- 1 bloco ARTIGO jp/pt; produção (chunks/indice/metadados) mtime 13/jun intocada\n- pendências de spec/chunk desatualizado já registradas em PENDENCIAS_REVISAO.json (items 217, 422), compatíveis com o observado"
+    },
+    {
+      "ficheiro": "19521015-御教え集14号.txt",
+      "at": "2026-07-14T21:05:00Z",
+      "nota": "- art2 pt_anchor: off-by-one (apontava p/ dia seguinte), confirmado grep 10/10 datas JP=PT\n- correção: audit --fix --repair-pt, texto conferido pós header \"6 de setembro\"\n- audit: 11/11 ok; 1 bloco ARTIGO jp/pt; turn-aware: 0 violações (129 unidades reconstruídas, executor citou 138, diff irrelevante)"
+    },
+    {
+      "ficheiro": "19520815-御教え集12号.txt",
+      "at": "2026-07-14T18:25:06Z",
+      "nota": "- art1/art2 序文/七月五日: sessão fundida no prefácio (9→10), reproduzido\n- correção: jp_anchor 昭和二十七年七月五日 confere, grep=1:1 c/ 9 datas JP\n- audit --file: 10/10 ok; apply --dry-run: 10 sem erro\n- turn-aware reconstruído do zero: 0 rótulos (monólogo), 0 violações, 10 oversized (bate c/ nota executor)\n- 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19520715-御教え集11号.txt",
+      "at": "2026-07-14T20:15:00Z",
+      "nota": "- art1 序文: 六月五日 fundido nele (bug jp_line_v2), sessão ausente da spec, 9→10 (achado já visto em JP-2 2026-07-13, spec havia regredido)\n- correção: sessão 六月五日 reinserida com jp/pt_anchor próprios, conferida por grep (9 datas 1:1)\n- audit --file: 10/10 status=ok; apply --dry-run: 10 artigos sem erro\n- turn-aware: monólogo (0 rótulos Interlocutor:/Meishu-Sama:), reconstrução própria via _group_into_turn_units/split_chunks_by_size = 0 unidades partidas entre chunks (contagem de unidades da nota do executor não bateu com a minha reconstrução, mas 0 violações confirmado de qualquer forma, é o critério real)\n- 1 bloco ARTIGO jp/pt; produção (chunks*/indice*/metadados*) mtime 13/jun, intocada"
+    },
+    {
+      "ficheiro": "19511025-御教え集2号.txt",
+      "at": "2026-07-14T17:53:03Z",
+      "nota": "- bug pair_mioshie (+1 shift): confirmado corrigido, pt_anchor art2 'Interlocutor: Uma mulher de 65 anos...' bate exato linha 27 PT, logo após '1 de setembro' linha 25\n- audit --file: 13/13 ok, 0 warn/err\n- apply --dry-run: 13 artigos sem erro\n- turn-aware reconstruído do zero: 162 unidades JP+PT, 0 violações (executor citou 163, diff irrelevante p/ aceite)\n- 14 candidatos de data (GOSHINSHO.md antigo): 2 extras são datas inline em testemunho (linhas 153/359), não cabeçalho — confirmado ruído, 12 sessões reais bate com spec\n- pendência labels 「」 JP 50≠88 PT (item 512 PENDENCIAS_REVISAO.json): confirmada não-bloqueante, fundida na unidade anterior, não corta par\n- 1 bloco ARTIGO jp/pt; produção intocada (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "at": "2026-07-14T17:33:46Z",
+      "nota": "- audit --file (sem --fix): 11/11 ok, 0 warn/err (bate com nota do executor)\n- art11 jp_anchor: conferido grep JP =1 ocorrência de （八）　結　論, agora aponta pro cabeçalho (era corpo)\n- art2-11 pt_anchor: 8 headings (I)-(VIII) grep JP e PT = 1:1, ordem e contagem exatas, sem ambiguidade\n- profile structured, fora das 3 séries (sem seção 2)\n- apply --dry-run: 11 artigos, sem erro; blocos ARTIGO jp/pt = 1 cada\n- produção (chunks*/indice*/metadados*): mtime 13/jun, intocada\n- PENDENCIAS_REVISAO.json: 7 entradas prévias (Fase F 2026-07-11), todas não-bloqueantes/glossário, compatíveis; achado antigo de pt_anchor apontando pro parágrafo anterior parece resolvido como efeito colateral desta correção (não gera pendência nova)"
+    },
+    {
+      "ficheiro": "19501120-世界救世教早わかり.txt",
+      "at": "2026-07-14T14:05:26Z",
+      "nota": "- sem achado, pareamento resolvido (audit: 10/10 ok)\n- art5/art9 anchors conferidos no JP (vaso de doença; dōri) - ok\n- profile structured, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt, produção intocada (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "at": "2026-07-14T15:10:00Z",
+      "nota": "Confirmado independente (profile=jikan_hen, sem secao 2). audit --file (sem --fix) rodado por mim = 39 ok/0 warn/err, AUDIT_REPORT.json = 39/39 status=ok. apply --dry-run = 39 articles sem erro. Correcao do executor (序文 14->39: separar 18 ensaios + 2 subitens de 信仰の種類 que faltavam + 善人よ強くなれ) conferida por grep direto no JP/PT brutos: fronteira 序文/真理と非真理 bate com 著者識 (assinatura) seguido de titulo+citacao de fonte nos dois idiomas; os 12 anchors （一）-（十二） de 信仰の種類 aparecem 1x cada no JP (sem ambiguidade), incluindo os 2 que faltavam （二）景場信心/（十一）鰹節信心. Blocos fisicos = 1 em jp/pt (grep -c '=== ARTIGO ==='). Artefatos de producao mtime 13/jun, nao tocados. PENDENCIAS_REVISAO.json items 507/508 (achado sistemico + reconstrucao) ja registrados pelo executor, conferido."
+    },
+    {
+      "ficheiro": "19490208-御光話録3号.txt",
+      "at": "2026-07-14T14:40:00Z",
+      "nota": "Confirmado independentemente (profile=gokowa_roku_qa). Secao 1: audit_manual_livros_segmentacao.py --file (sem --fix) rodado por mim = '4 ok, 0 fixed, 0 warn/err' -- limpo, zero PAREAMENTO_NAO_RESOLVIDO/GAP_FILLED. Nota do executor (2026-07-14T12:40:00Z) dizia GAP_FILLED no artigo 3 causado por sessao-fantasma: o ultimo artigo tratava a data de reimpressao do editorial ('昭和二十四年四月九日', linha 471 do JP bruto) como 4a sessao kind=session, quando na verdade e' so a data de fecho do '編輯後記' (linha 467). Li o trecho JP bruto (linhas 455-472) e PT (linhas 368-382) diretamente: confirmado que 編輯後記 comeca na linha 467 com 3 itens numerados (aviso de reimpressao/omissao editorial/pedido de opiniao) seguidos so da data de fecho -- nao ha 4a pergunta/resposta ali, a correcao (jp_anchor='編輯後記', pt_anchor='Nota da Redacao', kind=tail) esta certa e bate com a convencao ja usada em 19491223-山と水.txt citada pelo executor. grep -c '編輯後記' no JP bruto = 1 (unico, sem ambiguidade de ancora). apply_manual_livros_segmentacao.py --file --dry-run rodado do zero por mim: 4 articles, jp_chars=[6442,5999,6904,136], pt_chars=[14588,14339,15557,284], identico ao citado pelo executor, sem erro. Secao 2 (corte turn-aware, serie aplicavel): NAO confiei so na alegacao do executor -- reconstrui eu mesmo via codigo (split_by_anchors para extrair corpo por artigo, depois paragraphs_of()+_group_into_turn_units()+split_chunks_by_size() importados de build_clean_large_indexes.py, venv/bin/python3 por causa de faiss) nos 4 artigos, JP e PT: 0 unidades de turno partidas entre chunks, 0 unidades > 3200 chars sem rotulo, em nenhum dos 8 conjuntos artigo×idioma. Bloco fisico: grep -c '=== ARTIGO ===' = 1 em ambos jp/19490208-御光話録3号.txt e pt/19490208-御光話録3号.txt (sem fragmentacao). Artefatos de producao (chunks*.pkl/indice*.faiss/metadados*.pkl, raiz do projeto): mtime 13/jun (git status confirma untracked, nao tocados) -- muito antes desta correcao (14/jul), nenhum efeito colateral. PENDENCIAS_REVISAO.json: nao ha entrada nova relacionada a esta correcao especifica (isolada, nao sistemica, conforme a propria nota do executor) -- entradas pre-existentes para este arquivo (eco イ/イ na rotulagem, 伊都能売大神, bug sistemico de content_start() em pareamento automatico) sao de sessoes anteriores, nao relacionadas ao gap_filled do artigo 3/4, e continuam com estado correto (nao regredidas: spec preface pt_anchor atual nao usa mais a linha 'publicado em', confirmando que o workaround do bug sistemico continua em vigor). Segunda verificacao feita do zero (script proprio + leitura direta dos 2 idiomas + reconstrucao de codigo do corte), nao aceita so por relato do executor."
+    },
+    {
+      "ficheiro": "19490000-御光話録5号.txt",
+      "at": "2026-07-14T13:00:00Z",
+      "nota": "Confirmado independentemente (profile=gokowa_roku_qa, uma das 3 series, secao 2 aplicavel). Secao 1: audit_manual_livros_segmentacao.py --file (sem --fix) = 0 ok, 0 fixed, 4 warn/err reproduzido por mim -- os 4 sao status='anchor_diff' com warnings=[] vazio no AUDIT_REPORT.json (mesmo padrao ja aceito em 1号/2号 desta fila, bug sistemico de content_start() ja documentado em PENDENCIAS_REVISAO.json, NAO e' PAREAMENTO_NAO_RESOLVIDO/GAP_FILLED). apply_manual_livros_segmentacao.py --file --dry-run rodado do zero por mim: 4 articles, jp_chars=[26,6815,5687,5475], pt_chars=[46,15058,13243,12793] -- identico ao citado pela nota do executor (2026-07-14T10:20:44Z). Segmentacao JP verificada contra marcadores reais: grep proprio de cabecalho de data no .txt bruto = exatamente 3 ocorrencias (三月八日（火） linha 24, 三月十三日（日） linha 157, 三月二十三日（水） linha 277), 1:1 com os 3 jp_anchor kind=session da spec (+1 preface = 4 articles), sem sessao fundida. Tail dos 2 arquivos brutos coincide com fim do artigo 4 (mesmo dialogo de encerramento sobre clima/flores nos 2 idiomas), sem conteudo remanescente. Contagem de rotulos por grep direto (independente): Interlocutor:/Meishu-Sama: = 58/58 nos 2 idiomas (JP e PT), diff=0. Fui alem da contagem agregada e rodei comparacao SEQUENCIAL completa de turnos (regex ^(Interlocutor|Meishu-Sama): em ordem de linha, JP vs PT): 116/116 turnos, 0 mismatch de posicao -- confirma que os 2 rotulos que o auditor anterior (at=2026-07-14T11:30:00Z, item 'rotulo Interlocutor/Meishu-Sama ausente' em PENDENCIAS_REVISAO.json) havia encontrado ausentes (JP linha 221 'Interlocutor:' e linha 217 'Meishu-Sama:', pergunta/resposta composta sobre canto do corvo) foram de fato inseridos pelo executor e estao hoje presentes e alinhados. Secao 2 (corte turn-aware): reconstrucao independente por script proprio (import direto de split_by_anchors + _group_into_turn_units/split_chunks_by_size de scripts/build_clean_large_indexes.py via venv/bin/python3, sem reimplementar logica) sobre os 4 artigos, JP+PT = 124 unidades de turno, 0 violacoes (toda unidade <=3200 chars encontrada intacta dentro de um unico chunk, verificado por codigo, nao leitura visual), 0 unidades >3200 chars neste livro -- numeros identicos aos citados pelo executor (124 unidades, era 123 antes do 2o fix de rotulo). Tambem inspecionei o codigo-fonte de split_chunks_by_size (linhas 323-342) e confirmei que o fix do bug de rotulo de overlap (buscar o ULTIMO SPEAKER_LABEL_RE em current, nao active_label) esta presente no motor, consistente com a nota do executor sobre esse 2o bug sistemico corrigido durante o processamento deste livro. Nenhum artefato de producao tocado: chunks*.pkl/indice*.faiss/metadados*.pkl com mtime de 13/jun (git status confirma '??', untracked, sem modificacao). PENDENCIAS_REVISAO.json tem 6 entradas para este arquivo: 3 nao-bloqueantes de terminologia/glossario (Amaterasu, centro de instrucao/ensino, oitos direcoes -- decisoes de padronizacao central pendentes de autorizacao, fora de escopo estrutural), 1 sobre o bug sistemico de content_start() (estado pendente_correcao_motor_ou_repeticao_manual, mas contornado manualmente neste livro, compativel com os 4 anchor_diff observados), 1 sobre o achado de rotulo ausente (estado pendente_correcao_executor_por_livro, mas com nota de resolucao datada 2026-07-14T12:15:00Z explicitando os 2 fixes e a reconfirmacao 58/58 + 116/116 sequencial -- exatamente o que reproduzi de forma independente acima) e 1 sobre o 2o bug sistemico do motor generico (estado corrigido_motor_generico_com_regressao_verificada) -- todas compativeis com o observado, nenhuma pendencia real deixada sem registro. Nota: PENDENCIAS_REVISAO.json ainda lista 4 livros irmaos da mesma serie (19490108-御光話録2号.txt [ja fechado nesta fila], 19491021-御光話録13号.txt, 19491120-御光話録14号.txt, 19500613-御光話録19号.txt) como pendentes de reconfirmacao pelo metodo sequencial mais forte -- fora do escopo desta invocacao (que processa so este livro), mas relevante para quando chegarem em pending[0]."
+    },
+    {
+      "ficheiro": "19490108-御光話録2号.txt",
+      "at": "2026-07-14T12:15:00Z",
+      "nota": "Confirmado independentemente (profile=gokowa_roku_qa, uma das 3 series, secao 2 aplicavel). Secao 1: audit_manual_livros_segmentacao.py --file (sem --fix) = 4 ok, 0 fixed, 1 warn/err -- reproduzido por mim, AUDIT_REPORT.json confirma o unico nao-ok e status='anchor_diff' no artigo 1 (preface), campo 'warnings'=[] (vazio, ou seja NAO e' PAREAMENTO_NAO_RESOLVIDO/GAP_FILLED) -- mesmo padrao ja aceito em 19481208-御光話録1号.txt desta fila (bug sistemico documentado de content_start() em PENDENCIAS_REVISAO.json). apply_manual_livros_segmentacao.py --file --dry-run rodado do zero por mim (work_root('livros_acervo') explicito, evitando o pitfall ja catalogado de cair em periodicos_trabalho): 5 articles, jp_chars=[26,4452,6500,5778,7594], pt_chars=[73,11404,16351,13795,17729] -- identico ao relatado pelo executor. Segmentacao JP verificada contra marcadores reais: grep proprio de cabecalho de data isolado no .txt bruto = exatamente 3 ocorrencias (十一月二十八日 linha 24, 十二月八日（水） linha 104, 十二月十八日（土） linha 226, 十二月二十八日（火） linha 355 -- 4 no total incluindo a primeira), 1:1 com os 4 jp_anchor kind=session da spec (+1 preface = 5 articles), sem sessao fundida. Correcoes manuais do executor verificadas por leitura direta do bruto: pt_anchor do prefacio ('Gokōwa-roku nº 2, publicado em 8 de janeiro...') = linha 20 do PT (unica ocorrencia, grep -n confirma), jp_anchor do artigo 2 ('十一月二十八日') = linha 24 do JP (unica ocorrencia) -- ambas batem exatamente com o que a spec registra. Tail dos 2 arquivos brutos coincide com fim do artigo 5 (mesmo dialogo de encerramento sobre 'ひとのみち' nos 2 idiomas), sem conteudo remanescente. Secao 2 (corte turn-aware): reconstrucao independente por script proprio (import direto de split_by_anchors + _group_into_turn_units/split_chunks_by_size de scripts/build_clean_large_indexes.py, sem reimplementar logica) sobre os 5 artigos, JP+PT = 185 unidades de turno, 0 violacoes (nenhuma unidade <=3200 chars partida entre chunks) -- numero identico ao citado pelo executor. 1 unidade oversized (PT artigo 3, 十二月八日, 3970 chars) dividida em 7 chunks por split_chunks_by_size -- confirmei por inspecao direta dos chunks retornados que o chunk de continuacao carrega o rotulo correto 'Meishu-Sama:' (nao 'Interlocutor:'), validando que o fix do bug de atribuicao de rotulo (active_label recalculado por sentenca) esta de fato aplicado neste livro; tambem confirmei visualmente o defeito de overlap ja registrado como pendencia nao-bloqueante (chunk seguinte comeca 'Meishu-Sama: ue considero bom em seu trabalho...', corte de indice fixo no meio da palavra 'que', rotulo correto, conteudo integro so duplicado com corte feio no limite -- consistente com a nota do executor e com a pendencia ja registrada em PENDENCIAS_REVISAO.json). Contagem de rotulos por grep direto (independente): Interlocutor:/Meishu-Sama: = 87/87 no JP e 88/88 no PT (diff=1) -- confirmei que o par consecutivo sem rotulo apontado pela auditoria anterior (linhas originais ~433/436) foi de fato corrigido pelo executor (leitura direta das linhas atuais 431-436 do JP mostra 'Interlocutor: ――日本観音教団...' / 'Meishu-Sama: ――この不正...' / 'Interlocutor: ――例えば...', alinhado 1:1 com PT linhas 353-357); o diff=1 remanescente e' inteiramente o paragrafo de Kumoemon (linha 393 JP) sem nenhum marcador recuperavel ('――' nem quebra de linha) -- ja registrado em PENDENCIAS_REVISAO.json com estado 'granularidade_turno_pt_mais_fina_que_jp_sem_marcador_recuperavel', nao bloqueia (nao parte nenhuma unidade entre chunks, so fica com granularidade mais grossa que o PT nesse ponto). Nenhum artefato de producao tocado: chunks*.pkl/indice*.faiss/metadados*.pkl com mtime de 13/jun (git status confirma '??', untracked, sem modificacao). PENDENCIAS_REVISAO.json tem 3 entradas proprias para este arquivo (Reiyukai/romanizacao nao-bloqueante, granularidade Kumoemon nao-bloqueante, bug sistemico de content_start() com nota de contorno manual aplicado) -- todas compativeis com o observado, nenhuma pendencia real deixada sem registro."
+    },
+    {
+      "ficheiro": "19480905-信仰雑話.txt",
+      "at": "2026-07-14T10:20:00Z",
+      "nota": "Confirmado independentemente: profile=article_collection (fora das 3 series, secao 2 nao se aplica). audit_manual_livros_segmentacao.py --file (sem --fix): 44 ok, 0 fixed, 0 warn/err -- confere com a nota do executor. Segmentacao JP verificada contra os marcadores reais do .txt bruto: grep '#T' em reports/livros_trabalho/jp/19480905-信仰雑話.txt = exatamente 43 ocorrencias, titulos (誠, 正しき信仰, 常識, ..., 結論) comparados em ordem 1:1 contra os 43 jp_anchor kind=article da spec (+1 preface = 44 articles) -- match exato, sem sessao fundida. apply_manual_livros_segmentacao.py --file --dry-run: 44/44 articles, jp_chars e pt_chars sem nenhum valor zero; ratio PT/JP calculado por mim (nao copiado da nota do executor) = min 2.068, max 2.981, sem outlier. Spot-check de conteudo real: ensaio '禁欲' (o caso critico citado pelo executor, antes so 31 chars por interpolacao proibida) -- pt_anchor aponta para reports/livros_trabalho/pt linha 212, corpo com paragrafo completo tematicamente correto sobre abstinencia (nao mais fragmento); ensaio 'A Sabedoria e a Estupidez Humanas' (duplicacao antiga documentada em PENDENCIAS_REVISAO.json) confirmado ja resolvido em auditoria anterior, nao reaberto; 'Conclusao' (ultimo artigo) tem corpo completo terminando em '(Fim de「Shinko Zatsuwa」)', sem corte. Verificado por codigo que o fix sistemico existe no motor: scripts/jp_line_split.py linha 534 tem 'and not t.isdigit()' dentro do bloco gated 'if \"信仰雑話\" in fn' (linha 515) -- afeta so este livro, sem regressao a outros. scripts/livros_segmentacao_pairing.py tem _pair_shinko_positional (linha 924) usada como caminho primario por pair_shinko (linha 972), metodo antigo (rotulo manual + interpolacao) mantido so como fallback. Nenhum artefato de producao tocado: chunks*.pkl/indice*.faiss/metadados*.pkl com mtime de 13/jun, git status confirma untracked ('??'), sem modificacao. PENDENCIAS_REVISAO.json tem 3 entradas para este arquivo: (1) reconstrucao da spec/pareamento desta mesma sessao -- estado 'resolvido', compativel com o observado; (2) title_jp desatualizado do artigo 'Sinceridade/誠' -- estado 'resolvido' via a mesma reconstrucao (confirmado: title_jp do articles[1] agora e '誠', titulo curto); (3) duas pendencias fora de escopo estrutural, corretamente nao tratadas aqui: decisao de paragrafacao tematica dos 42 ensaios (estado 'pendente_decisao_escopo_usuario', e sobre estilo/prosa, nao segmentacao/pareamento) e ratificacao de glossario para 観音教団/観音教='Igreja Kannon' (estado 'resolvido_glossario_pendente_ratificacao', decisao de terminologia, fora do escopo desta auditoria). Tambem confirmado que a entrada relacionada de 19540825-天国の福音書.txt (mesma classe de bug, NAO corrigida aqui) esta corretamente registrada como pendente separada ('pendente_quando_este_livro_for_processado_na_fila'), nao foi tocada por engano nesta auditoria."
+    },
+    {
+      "ficheiro": "19480701-御讃歌集.txt",
+      "at": "2026-07-14T08:05:40Z",
+      "nota": "Confirmado independentemente: profile=hymn_collection (fora das 3 series, secao 2 nao se aplica). audit_manual_livros_segmentacao.py --file (sem --fix): 310 ok, 0 fixed, 0 warn/err -- confere com a nota do executor. Verificacao independente da spec: 1 preface + 309 hymn = 310 articles. Regex sobre reports/livros_trabalho/jp/19480701-...txt (marcador '^N, ' no inicio de linha) encontra exatamente 309 ocorrencias, numeros 1..309, sem lacuna e sem duplicata -- bate 1:1 com os 309 articles kind=hymn da spec, nenhuma sessao/hino fundido ao anterior. --dry-run confirma articles=310 (contagem interna, nao lista), jp_chars/pt_chars com 310 valores cada, sem outlier de fusao: excluindo o preface (indice 0, 328 jp/998 pt chars, esperado por ser paragrafo continuo), min/max dos 309 hinos = JP 60-108, PT 63-162 -- identico ao intervalo citado pelo executor. Nenhum jp_chars/pt_chars = 0. --fix --repair-pt nao foi necessario rodar (ja limpo, nada a reparar). PENDENCIAS_REVISAO.json ja tem entrada preexistente (2026-07-10) sobre este arquivo cobrindo item de glossario (960光, fora de escopo desta auditoria, pendente_decisao_usuario) e a regeneracao de chunks*.pkl/indice*.faiss/metadados*.pkl como etapa final unica da Fase 5 (estado pendente_etapa_final_regeneracao_indices) -- compativel com o observado, nao e pendencia nova. Nenhum artefato de producao tocado por esta fila: chunks*.pkl/indice*.faiss/metadados*.pkl com mtime de 13/jun, git status mostra apenas '??' (untracked, nao modificado)."
+    },
+    {
+      "ficheiro": "19481208-御光話録1号.txt",
+      "at": "2026-07-14T09:01:28Z",
+      "nota": "Confirmado independentemente: profile=gokowa_roku_qa (uma das 3 series, secao 2 aplicavel). Secao 1: audit_manual_livros_segmentacao.py --file (sem --fix) = 0 ok, 0 fixed, 4 warn/err -- os 4 sao status 'anchor_diff' (diagnostico informativo: o motor automatico de pareamento recomputaria posicao diferente da persistida, por causa do bug sistemico de content_start() ja registrado em PENDENCIAS_REVISAO.json 'pendente_correcao_motor_ou_repeticao_manual' -- NAO e PAREAMENTO_NAO_RESOLVIDO nem GAP_FILLED; campo 'warnings' do AUDIT_REPORT.json para este arquivo = [] vazio, confirmando isso). apply_manual_livros_segmentacao.py --file --dry-run (chamada direta da funcao apply_file, work_root='livros_acervo' explicito -- nota: uma primeira tentativa minha usando work_root() sem argumento default caiu por engano em reports/periodicos_trabalho/ (copia antiga e sem rotulos Interlocutor:/Meishu-Sama:, MESMO NOME DE ARQUIVO -- achado registrado abaixo como cuidado para futuras auditorias, nao e bug deste livro, o CLI de producao sempre passa work_root('livros_acervo') explicito): 4 articles, jp_chars=[27,4522,4309,4554], pt_chars=[74,11582,10056,11800], identico ao relatado pelo executor. Segmentacao JP verificada contra marcadores reais: grep proprio por cabecalho de data no .txt bruto = exatamente 3 ocorrencias (十月二十八日, 十一月八日, 十一月十八日), 1:1 com os 3 jp_anchor kind=session da spec (+1 preface = 4 articles), sem sessao fundida. Preface (artigo 1) conferido por leitura direta: jp_anchor '『御光話録』1号、昭和23(1948)年12月8日発行' bate na linha 23 do JP bruto, pt_anchor 'Gokōwa-roku nº 1, publicado em 8 de dezembro do ano 23 da Era Showa (1948)' bate na linha 20 do PT bruto -- a correcao manual do executor (que resolveu o bug de content_start() pulando essa linha) esta persistida corretamente. Tail dos 2 arquivos brutos coincide com fim do artigo 4 (mesmo testemunho de encerramento sobre manchas/verrugas nos 2 idiomas), sem conteudo remanescente. Secao 2 (corte turn-aware): reconstrucao independente por script proprio (import direto de split_by_anchors + _group_into_turn_units/split_chunks_by_size, sem reimplementar logica) sobre os 4 artigos, JP+PT = 102 unidades de turno, 0 violacoes (nenhuma unidade partida entre chunks), 0 unidades >3200 chars neste livro (chunk maximo observado = 3189 chars) -- numeros identicos aos citados pelo executor. Contagem de rotulos por grep direto (independente da reconstrucao): Interlocutor: = 47 e Meishu-Sama: = 47 nos 2 idiomas (JP e PT), diff=0 -- bate exatamente com a nota de rotulagem em PENDENCIAS_REVISAO.json (pt_turnos=94, jp_turnos=94, diff=0) e com o '94 rotulados' citado pelo executor. PENDENCIAS_REVISAO.json tem 5 entradas para este arquivo: 2 nao-bloqueantes de terminologia (interjeicao retorica 'Isto e o que?' = aceito_nao_bloqueante; variantes de Izunome = aguardando_decisao, fora de escopo estrutural), 2 sobre status geral de rotulagem da serie (resolvido 58/58 em 2026-07-13) e 1 sobre o bug sistemico de content_start() (estado=pendente_correcao_motor_ou_repeticao_manual, mas para ESTE livro especificamente ja diz 'contornado manualmente' -- compativel com o observado, nao bloqueia este item). Nenhum artefato de producao tocado: chunks*.pkl/indice*.faiss/metadados*.pkl com mtime de 13/jun, git status confirma untracked ('??'), sem modificacao."
+    },
+    {
+      "ficheiro": "19490000-御光話録4号.txt",
+      "at": "2026-07-14T10:55:35Z",
+      "nota": "Segunda verificacao independente refeita do zero (nao aceito relato do executor). Secao 1: audit_manual_livros_segmentacao.py --file (sem --fix) rodado por mim = '4 ok, 0 fixed, 0 warn/err' -- zero PAREAMENTO_NAO_RESOLVIDO/GAP_FILLED, bate com a nota do executor. Spec JP (profile gokowa_roku_qa, preface + 3 sessions 8/18/28-fev) conferida contra grep proprio dos 3 marcadores de data no .txt bruto: linhas 35/182/387, 1:1 com jp_anchor da spec, sem sessao fundida (grep amplo por padrao de data no arquivo inteiro tambem so achou essas 3 ocorrencias). apply_manual_livros_segmentacao.py --file --dry-run rodado por mim: 4 articles, jp_chars=[265,5595,8217,5729] pt_chars=[963,14008,18971,13878] -- identico a nota do executor. Rotulagem: contagem por grep proprio Interlocutor:/Meishu-Sama: = 86/87 em JP e PT (bate); diff sequencial completo dos 173 rotulos (grep -o por posicao) confirma alinhamento 1:1 exceto a mesma unica assimetria ja documentada pelo executor (poema de abertura do prefacio rotulado Meishu-Sama no JP, sem rotulo correspondente no PT -- estilo, nao Q&A, benigno). Secao 2 (corte turn-aware): reconstrucao independente via import direto de _group_into_turn_units/split_chunks_by_size/SPEAKER_LABEL_RE (build_clean_large_indexes.py) sobre os 4 corpos extraidos por split_by_anchors (apply_manual_livros_segmentacao.py) -- confirmado por codigo (nao leitura visual): JP 91 unidades/9 chunks, PT 101 unidades/21 chunks, 0 unidades partidas entre chunks nos dois idiomas, 1 unidade PT oversized (>3200) com rotulo do falante preservado nos pedacos resultantes -- numeros identicos aos citados pela nota do executor. Verificado tambem que os 2 paragrafos longos sem rotulo proprio no artigo 4 (secoes 'quase-monologo' 迷信邪教について/疥癬について, ~700/~490 chars) sao manuscrito lido por terceiro DENTRO do turno Meishu-Sama ja aberto (confirmado por leitura do contexto imediato no .txt, linha ~475: seguem direto apos 'Meishu-Sama: ああ、煙草にはありましたね。（笑声）' sem novo rotulo Interlocutor: antes) -- nao e' o bug de 'monolito residual' (paragrafo gigante com dialogo escondido) ja catalogado em outros livros da serie, e _group_into_turn_units funde corretamente esse trecho ao turno aberto, sem particao. SPEAKER_LABEL_RE ja usa re.MULTILINE (2o fix sistemico do executor), confirmado por leitura do codigo atual. Nenhum artefato de producao tocado -- chunks*.pkl/indice*.faiss/metadados*.pkl com timestamp 13/jun (anterior a esta fila), confirmado por 'ls -la'. PENDENCIAS_REVISAO.json conferido: ja existe registro pre-existente (auditoria anterior de hoje, 2026-07-14) especifico deste livro sobre um achado sistemico critico e AINDA VALIDO (confirmado por mim lendo build_clean_large_indexes.py agora: collect_entries()+build_chunks() nunca leem segmentacao_manual/jp_anchor/pt_anchor -- grep no arquivo inteiro = zero ocorrencias desses termos; 1 arquivo = 1 entry inteiro, split_chunks() corta o corpo bruto do .txt sem qualquer nocao de fronteira de artigo) -- ou seja, o pareamento por artigo da Secao 1 nao tem efeito no indice de producao enquanto o pipeline real nao for alterado para ler a spec. Esse achado e' sistemico (afeta os 126 livros da fila, nao so este), ja estava registrado antes desta auditoria, nao invalida a Secao 2 (chunking turn-aware independe de jp_anchor/pt_anchor, so precisa dos rotulos no corpo, que estao presentes e corretos) e e' responsabilidade da Secao 6 (reconstrucao final), nao motivo para reabrir este livro especificamente -- registro compativel com o que observei, nao duplicado aqui. Criterio final de aceite (paginas 1-6 do protocolo) respondido 'sim com evidencia concreta' para todos os itens aplicaveis a este livro."
+    },
+    {
+      "ficheiro": "19480101-御光話録（補）.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19490423-御光話録6号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19490522-御光話録7号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19490530-御光話録8号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19490730-御光話録9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19490821-御光話録11号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19491220-御光話録15号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19500120-御光話録16号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19500228-御光話録17号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19500423-御光話録18号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19500921-地上天国出来るまで.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19510805-新しき暴力.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520310-御垂示録7号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520515-御垂示録9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520515-御教え集9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520615-御垂示録10号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520715-御垂示録11号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520825-御垂示録12号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19520925-御垂示録13号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19521015-御垂示録14号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19521115-御垂示録15号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19521215-御垂示録16号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530215-御垂示録17号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530315-御垂示録18号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530415-御垂示録19号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530515-御垂示録20号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530615-御垂示録21号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530715-御垂示録22号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530815-御垂示録23号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19530915-御垂示録24号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19531015-御垂示録25号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19531115-御垂示録26号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19531215-御垂示録27号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19540215-御垂示録28号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19540315-御垂示録29号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19540415-御垂示録30号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Confirmado por script determinístico (ver nota do executor) -- sem auditoria de agente, dispensada por tratar-se de pareamento já limpo e verificável por código."
+    },
+    {
+      "ficheiro": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "at": "2026-07-14T15:10:00Z",
+      "nota": "Auditoria externa confirmada: audit_manual_livros_segmentacao.py --file (sem --fix) = 487 ok, 0 warn/err. apply_manual_livros_segmentacao.py --file --dry-run = 487 artigos extraidos sem erro (486 poemas + 1 prefacio). grep -c \"=== ARTIGO ===\" = 1 em jp/ e 1 em pt/ (nenhuma divisao fisica indevida). Profile numbered_collection, nao pertence as 3 series (gokowa_roku_qa/ochishiji_roku/mioshie_shu) -- corte turn-aware nao se aplica. Li o trecho corrigido pelo executor (pair_numbered_collection em scripts/livros_segmentacao_pairing.py:685, registrada em _pair_positions_raw linha 1322-1323; RATIO_OK_POEM em audit_manual_livros_segmentacao.py:27,269-270) e confirmei semanticamente por amostragem: poema JP \"1, ...\" casa com PT \"1. No ceu a leste...\"; poema 250 JP (\"inconstancia da vida\") casa com PT 250 (\"transitoriedade\"); prefacio JP/PT tambem correspondem. PENDENCIAS_REVISAO.json items[506] registra o achado sistemico como resolvido, consistente com o observado. Nenhum artefato de producao (chunks*.pkl/indice*.faiss/metadados*.pkl, raiz do projeto) foi tocado -- todos com timestamp 13/jun, git status mostra untracked (nao modificado). Nao ha correcao pendente: livro resiste a auditoria, mantido em done."
+    },
+    {
+      "ficheiro": "19491223-山と水.txt",
+      "at": "2026-07-14T13:02:27Z",
+      "nota": "GAP_FILLED em 玉川/末尾 (pt_anchor colidia com substring de \"1225.\") -> corrigido em pair_yamamizu, confirmado lendo JP/PT reais (titulo 玉川 antes de 1231, colofao 全一二三九首収録). audit --file: 224 ok, 0 warn/err. profile=poem_collection, fora das 3 series (secao 2 nao aplica). PENDENCIAS item 495 (giant-chunk na producao) reverificado e resolvido: collect_entries() real hoje usa article_entries_from_spec, 224 entries jp+pt, max chunk 3173 chars -- marcado resolvido em PENDENCIAS_REVISAO.json."
+    },
+    {
+      "ficheiro": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "at": "2026-07-14T15:40:00Z",
+      "nota": "51 anchors degenerados->48 artigos reconstruidos por titulo, confirmado. audit --file: 47 ok/1 ratio_warn (art14 '結核治癒の実例', cabecalho so-titulo antes do 1o depoimento, mesma causa do caso aceito do prefacio -- ver PENDENCIAS_REVISAO.json). apply --dry-run: 48/48 sem erro. profile jikan_hen, sem secao 2. 1 bloco === ARTIGO === em jp/pt. Artefatos de producao mtime 13/jun, intocados."
+    },
+    {
+      "ficheiro": "19501030-法難手記.txt",
+      "at": "2026-07-14T16:05:00Z",
+      "nota": "jp_anchor do art14 '診断書' colidia c/ 3 mencoes inline (linhas 106/109/156); executor usou ancora multilinha unica (cabecalho linha 124 + nome linha 126), confirmado por leitura direta do bruto. audit --file: 22/22 status=ok, 0 warn/err. apply --dry-run: 22/22 sem erro. profile jikan_hen, sem secao 2. 1 bloco === ARTIGO === em jp/pt, artefatos de producao mtime 13/jun intocados. 2 entradas pre-existentes em PENDENCIAS_REVISAO.json (2026-07-10, correcao numerica/nome) ja resolvidas/nao-bloqueantes, compativeis."
+    },
+    {
+      "ficheiro": "19510115-自然農法解説.txt",
+      "at": "2026-07-14T16:20:00Z",
+      "nota": "reconstrucao 43->20 artigos (2 preface+7 section+11 testimony), testemunhos #1/#11 antes ausentes, sem interpolacao\naudit --file: 20/20 status=ok, 0 warn/err\napply --dry-run: 20 artigos sem erro, jp/pt chars batendo\nprofile structured (fora das 3 series, sem secao 2)\n1 bloco === ARTIGO === em jp/pt, artefatos de producao intocados\nPENDENCIAS_REVISAO.json items[143/144/145] pre-existentes (terminologia/fluencia), fora do escopo estrutural, nao-bloqueantes"
+    },
+    {
+      "ficheiro": "19510615-一信者の告白.txt",
+      "at": "2026-07-14T16:20:00Z",
+      "nota": "- sem achado, correção do executor confere (audit: 6/6 ok, todos status=ok)\n- art3 poema / art4 testemunho: fronteira ok, confirmada por grep JP linha 34-39 (divisor entre os dois)\n- fix sistêmico _PURE_DIVIDER_LINE_RE presente em livros_qa_markers.py\n- apply --dry-run: 6 artigos sem erro; 1 bloco ARTIGO jp/pt; produção intocada (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19510810-或る日の公判スケッチ.txt",
+      "at": "2026-07-14T15:03:13Z",
+      "nota": "- art3 jp_anchor: 編者のことば+byline+corpo unidos (era 2 artigos)\n- art4 jp_anchor: multi-linha p/ desambiguar de menção inline em art3\n- confirmado lendo jp/pt reais (linhas 32-37 jp, 30-34 pt): correção correta\n- audit: 3 ok, 1 ratio_warn idx1 (excecao aceita); apply --dry-run: 4 artigos ok; 1 bloco ARTIGO"
+    },
+    {
+      "ficheiro": "19510520-教えの光.txt",
+      "at": "2026-07-14T15:06:10Z",
+      "nota": "- sem achado, pareamento confirmado (audit: 151/151 status=ok)\n- apply --dry-run: 151 artigos, 0 chars=0, sem erro\n- profile structured, fora das 3 series (sem secao 2)\n- pendencia orfa 2026-07-11 (2 anchors) marcada resolvida em PENDENCIAS_REVISAO.json: spec mudou 162->151, anchors antigos nao existem mais, todos resolvem hoje\n- 1 bloco ARTIGO jp/pt; producao intocada (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19520615-御教え集10号.txt",
+      "at": "2026-07-14T18:10:44Z",
+      "nota": "- art1/art2 序文/五月五日: sessão fundida no prefácio (9→10), bug derive_anchor confirmado no código (comentário cita este livro)\n- audit --file: 10/10 ok, 0 warn/err (reproduzido, não só relato)\n- apply --dry-run: 10 artigos sem erro\n- turn-aware recalculado do zero (import direto): 132 unidades, 0 violações, 16 oversized -- bate exato com nota do executor\n- 0 rótulos Interlocutor:/Meishu-Sama: (monólogo real, confirmado por grep e leitura de amostra)\n- 1 bloco ARTIGO jp/pt; produção intocada (mtime 13/jun)\n- regressão motor (audit sem --fix, acervo inteiro): 0 crash novo, só PAREAMENTO_DEGENERADO já conhecido em livros koza pendentes"
+    },
+    {
+      "ficheiro": "19520925-御教え集13号.txt",
+      "at": "2026-07-14T20:30:00Z",
+      "nota": "- art1-7 pt_anchor: audit --fix --repair-pt recalculo, todos batem (find+count==1, ordem monotonica JP/PT)\n- audit --file: 9/9 ok, 0 warn/err\n- apply --dry-run: 9 artigos sem erro\n- turn-aware: 0 rotulos Interlocutor:/Meishu-Sama: (monologo); reconstrucao propria _group_into_turn_units/split_chunks_by_size: 126 unidades, 0 violacoes\n- 1 bloco ARTIGO jp/pt; producao (chunks*/indice*/metadados*) mtime 13/jun, intocada\n- PENDENCIAS_REVISAO.json: 5 entradas previas (terminologia/regen Fase5), compativeis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19521201-結核信仰療法.txt",
+      "at": "2026-07-14T19:21:09Z",
+      "nota": "- profile tuberculosis_faith, fora das 3 series (sem secao 2)\n- art6/9/10 anchor_diff, art8 ratio_warn=6.70: bug conhecido do audit script (recalcula posicao por idade, ignora pt_anchor real) -- confirmado em PENDENCIAS_REVISAO.json 19:06\n- lido JP/PT diretamente: headers 天然痘/栄養/事実は雄弁なり = Variola/Nutricao/Fatos Falam por Si batem em sequencia (JP linhas 90/143/169, PT 112/180/209); Mizuno/Iseri/Nakajima sao exemplos citados dentro da subsecao, nao testemunhos autonomos\n- apply --dry-run: 104/104 sem erro, ratios normais (1 testemunho idx96=1.73, ok, fora das 4 secoes em questao)\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada\n- NAO rodei --fix (reescreveria os 3 anchors corrigidos manualmente, per aviso da pendencia)"
+    },
+    {
+      "ficheiro": "19521215-御教え集16号.txt",
+      "at": "2026-07-14T21:40:00Z",
+      "nota": "- audit --file: 9/9 ok (art1 prefacio ratio 2.36 dentro do padrao, sem ratio_warn)\n- apply --dry-run: 9/9 sem erro\n- datas JP conferidas: 8 cabecalhos (6/7/15/16/17/25/26/27 nov) + prefacio = 9, pt_anchor_old==new (ja fixado por exec)\n- turn-aware: 0 Interlocutor:/Meishu-Sama:, lido JP art1 diretamente = monologo continuo, sem dialogo escondido\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-14T20:07:24Z",
+      "nota": "- Rota B (100->84) confirmada: item 515 (8 pares titulo/corpo), 516->517 reaberto (2 titulos nus + 4 waka inline idx74) fundidos\n- linha 950-967 jp: waka 963-966 inline no fechamento do testemunho, sem quebra estrutural (confirmado leitura direta)\n- audit --file: 84/84 ok, 0 warn/err | dry-run: sem erro | 1 bloco ARTIGO jp/pt | producao mtime 13/jun intocada\n- kinds: 66 testimony/17 section/1 preface, sem kind inventado"
+    },
+    {
+      "ficheiro": "19530315-御教え集19号.txt",
+      "at": "2026-07-14T20:31:16Z",
+      "nota": "- art1: título+ficha (序文) s/ corpo PT próprio, fundido em art2 (10->9), confirmado JP/PT bruto\n- audit: 9/9 ok | dry-run: 9 artigos s/ erro\n- turn-aware: 0 rótulos JP/PT, chunking simulado s/ crash (PT 41/JP 21)\n- 1 bloco ARTIGO jp/pt; produção intocada (13/jun)"
+    },
+    {
+      "ficheiro": "19530215-御教え集18号.txt",
+      "at": "2026-07-14T20:41:27Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/12 warn)\n- turn-aware (código): 180 unid, 0 partidas, 18 oversized s/ rótulo\n- apply --dry-run: 12 artigos ok; 1 bloco ARTIGO jp/pt; produção intocada"
+    },
+    {
+      "ficheiro": "19530415-御教え集20号.txt",
+      "at": "2026-07-14T20:44:07Z",
+      "nota": "- audit: 11/11 status ok\n- dry-run: 11/11 artigos, 1 bloco jp/pt\n- turn-aware: 0/70 unidades partidas, 0/88 chunks sem rotulo (19 unidades >3200)"
+    },
+    {
+      "ficheiro": "19530505-革命的増産の自然農法解説.txt",
+      "at": "2026-07-14T23:20:00Z",
+      "nota": "- profile structured, fora 3 séries, sem turn-aware\n- Rota B 206→60 art (46 testimony/agricultor), confirmado JP real (títulos+colofão, ex. Toraichi 39)\n- audit: 60/60 status ok; apply --dry-run: 60 art sem erro\n- 1 bloco ARTIGO jp/pt; produção intocada (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19530600-A Story of Ukiyo-e.txt",
+      "at": "2026-07-14T22:39:22Z",
+      "nota": "- audit --file: 30/30 ok, 0 warn/err\n- item 26 ausente no JP e PT fonte (25->27), gap real, não bug\n- pt_anchor/jp_anchor conferidos linha a linha (linhas 196-225 pt / 182-211 jp), ordem crescente, spec já regenerada pro texto atual (233/223 linhas)\n- pendência spec_desatualizada_regeneracao_pendente (PENDENCIAS_REVISAO.json) fechada, spec confere\n- profile numbered_collection, fora das 3 séries, sem corte turn-aware\n- 1 bloco === ARTIGO === em jp e pt"
+    },
+    {
+      "ficheiro": "19530515-御教え集21号.txt",
+      "at": "2026-07-15T00:00:00Z",
+      "nota": "- audit --file: 11/11 ok (0 warn/err), sem GAP_FILLED/PAREAMENTO_NAO_RESOLVIDO\n- apply --dry-run: 11 articles sem erro, jp/pt_chars batem com spec\n- 0 Interlocutor:/Meishu-Sama: em jp/pt (livro monólogo), sem rótulo escondido nos 10 maiores parágrafos (até 5367 chars)\n- 1 bloco ARTIGO jp/pt; chunks/indice/metadados mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19530615-御教え集22号.txt",
+      "at": "2026-07-14T22:42:36Z",
+      "nota": "- sem achado adicional, correção do executor (pt_anchor art1-8 drift) confere\n- audit --file (sem --fix): 10/10 ok, 0 warn/err\n- apply --dry-run: 10 articles sem erro\n- 0 diálogo rotulado jp/pt (turn-aware trivial, confirmado por grep)\n- 1 bloco ARTIGO jp/pt; chunks/indice/metadados mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json (JP-2, sessão 5/5) compatível com drift corrigido"
+    },
+    {
+      "ficheiro": "19530115-御教え集17号.txt",
+      "at": "2026-07-14T22:54:29Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 11/11 ok, 0 warn/err)\n- sem rótulo Interlocutor:/Meishu-Sama: (monólogo); grep dialogo/pergunta: 0 ocorrências, confirma nada escondido\n- apply --dry-run: 11 artigos ok; 1 bloco ARTIGO jp/pt; produção (chunks/indice/metadados) mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19530715-御教え集23号.txt",
+      "at": "2026-07-15T01:30:35Z",
+      "nota": "- art2 六月五日 (radio/medicina) fundido no prefacio (preface)\n- correcao: session inserida, jp_anchor no corpo pos data (linha 24 jp)\n- audit --file: 10/10 ok; apply --dry-run: 10/10 sem erro\n- profile mioshie_shu (3a serie), sem Interlocutor:/Meishu-Sama: (turn-aware trivial)\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19530815-御教え集24号.txt",
+      "at": "2026-07-15T06:00:00Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 10/10 ok, 0 warn/err)\n- 9 datas jp (5-27/jul) + prefácio = 10 art, grep 1:1 c/ spec\n- turn-aware (código, paragraph split corrigido): 148 unid, 0 partidas, 26 oversized s/ rótulo (monólogo, 0 Interlocutor:/Meishu-Sama:)\n- 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json itens 324/443 (spec_desatualizada_regeneracao_pendente) compatíveis, não bloqueiam"
+    },
+    {
+      "ficheiro": "19530915-御教え集25号.txt",
+      "at": "2026-07-15T02:25:36Z",
+      "nota": "- pt_anchor: 9/9 ok, sem duplicação; art8/9 Higuchi únicos (1ª carta vs carta)\n- apply --dry-run: 9/9 sem erro (resolve crash antigo pt_anchor_fase3_5 2026-07-13)\n- profile mioshie_shu, 0 rótulos (diário monólogo), sem monólito c/ diálogo oculto\n- 1 bloco ARTIGO jp/pt; produção intocada; spec regen segue pendente Fase 5 (já registrado)"
+    },
+    {
+      "ficheiro": "19540115-御教え集29号.txt",
+      "at": "2026-07-15T02:36:25Z",
+      "nota": "- art2 十二月五日 ausente: confirmado grep JP linha 24, PT linha 25\n- correção: 序文 10→11, jp_anchor pós-header, cascata art3-11 ok\n- audit --file: 11/11 ok; dry-run 11 artigos; 0 rótulos (monólogo); produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19540315-御教え集31号.txt",
+      "at": "2026-07-15T02:53:08Z",
+      "nota": "- art1/2 fronteira: 序文 absorvia 二月四日（立春祭御教え）, JP linha 24 confere\n- correção real: header de data isolado, PT linha 25 alinhado (4 de fevereiro de Showa 29)\n- audit --file: 11/11 status ok; dry-run: 11 artigos sem erro\n- 0 rótulos Interlocutor/Meishu-Sama (monólogo), 1 bloco ARTIGO jp/pt; produção mtime 13/jun intocada"
+    },
+    {
+      "ficheiro": "19540515-御教え集33号.txt",
+      "at": "2026-07-15T03:20:57Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 9/9 ok)\n- title_jp = 9 datas = 9 artigos, nenhuma sessão fundida\n- 0 rótulo Interlocutor:/Meishu-Sama: (monólogo, padrão mioshie_shu)\n- turn-check via código: 0/83 unidades violadas, 13 oversized (sem rótulo p/ preservar)\n- apply --dry-run: 9 artigos ok; 1 bloco ARTIGO em jp/pt"
+    },
+    {
+      "ficheiro": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "at": "2026-07-15T03:55:18Z",
+      "nota": "- audit --file: 13 ok/1 ratio_warn(art1 prefacio, padrao benigno)\n- profile jikan_hen, fora 3 series, secao 2 n/a\n- apply --dry-run: 14/14 artigos ok\n- grep JP 12 cap numerados I-XII + prefacio = 13 headers + titulo = 14; grep PT 12 headers romanos + Prefacio, ordem batendo 1:1, sem fusao\n- 1 bloco === ARTIGO === em jp e pt"
+    },
+    {
+      "ficheiro": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "at": "2026-07-15T04:02:27Z",
+      "nota": "- audit --file: 9/9 ok, 0 warn/err\n- JP: 8 headers 一~八 (grep=8); datas em cap.三 sao fim de paragrafo, nao header (confere merge 12->9)\n- PT: 8 headers 1-8 (grep=8), 0 contaminacao Advento/Kannon\n- apply --dry-run: ok (profile koza_lectures, fora das 3 series)\n- 1 bloco ARTIGO jp/pt; producao (chunks/indice/metadados) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: pendencias preexistentes compativeis (glossario 智慧正覚, convencao title_pt serie), nenhuma nova"
+    },
+    {
+      "ficheiro": "19511125-御垂示録3号.txt",
+      "at": "2026-07-15T04:11:31Z",
+      "nota": "- audit --file: 4/4 status=ok, confirma art2-4 jp_anchor->marcador de data\n- dry-run: 4 artigos, chars batem\n- turn-aware: 0/415 unidades partidas; 1 unid >3200 (art2 PT) rótulo preservado\n- .txt: 1 bloco ARTIGO (jp+pt)"
+    },
+    {
+      "ficheiro": "19500613-御光話録19号.txt",
+      "at": "2026-07-15T04:29:32Z",
+      "nota": "- art11 novo (四月二十八〔十八〕日): jp/pt_anchor por cabeçalho, testemunho incêndio Atami + Q&A corrente\n- audit --file: 14/14 ok (sem --fix)\n- apply --dry-run: 14 artigos, resolve sem erro\n- turn-aware: 189 unidades Interlocutor/Meishu-Sama, 0 partidas entre chunks (JP+PT, script)\n- 1 bloco === ARTIGO === (jp e pt); chunks*.pkl/indice*.faiss/metadados*.pkl não tocados (mtime 13/jun)"
+    },
+    {
+      "ficheiro": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "at": "2026-07-15T09:00:00Z",
+      "nota": "- audit --file: 62/62 status=ok, 0 warn/err (reproduzido)\n- 0 pt_anchor vazio, 0 contaminação título 観音講座 residual\n- apply --dry-run: 62 artigos, sem erro\n- profile koza_lectures, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt; produção (chunks/indice/metadados) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 1 entrada prévia (spec desatualizada Fase F, regen pendente), compatível, nenhuma nova"
+    },
+    {
+      "ficheiro": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "at": "2026-07-15T04:57:13Z",
+      "nota": "- audit --file: 56/56 status=ok, 0 warn/err (reproduzido, subprocesso próprio)\n- rebuild 21->56 (Rota B) reconferido: cap1 sem topico (1) numerado é estrutura real do JP (intro não-numerada linhas 25-36 antes de （２） linha 39), não bug\n- jp_anchor/pt_anchor: 55/56 artigos únicos+monotônicos (grep próprio); único hit múltiplo é o title do art1/prefácio (3x, string curta genérica), sem impacto -- posição confirmada ok pelo audit\n- sem resíduo de garbage de outro livro (grep \"Kannon\"/\"Aula\" = 0 em title_pt/pt_anchor)\n- apply --dry-run: 56 artigos, sem erro, ratio PT/JP 1.6-3.3x (normal)\n- profile koza_lectures, fora das 3 séries (sem seção 2)\n- 1 bloco ARTIGO jp/pt; produção (chunks*/indice*/metadados*) mtime 13/jun intocada\n- PENDENCIAS_REVISAO.json: 14 entradas prévias (glossário série, spec desatualizada Fase5, JP-2 já resolvido), compatíveis, nenhuma nova"
+    },
+    {
+      "ficheiro": "19511225-御垂示録5号.txt",
+      "at": "2026-07-15T05:31:51Z",
+      "nota": "- art1-4 pt_anchor: data única no PT (1/6/8 dez), confirmado sem ambiguidade\n- audit --file: 4/4 ok; apply --dry-run: 4/4 ok\n- turn-aware jp+pt: 0 unidades partidas; 1 unidade pt >3200 (art3), rótulo presente em todos os 10 chunks\n- só 1 bloco === ARTIGO === em jp/pt; produção (pkl/faiss) intocada"
+    },
+    {
+      "ficheiro": "19491120-御光話録14号.txt",
+      "at": "2026-07-15T06:49:19Z",
+      "nota": "- audit --file: 4/4 art status=ok (art1 preface incl.), pt_anchor gravado\n- turn-aware: 82 unidades JP + 82 PT (reconstruido independente via import direto), 0 violacoes, 1 oversized PT art4 (4495c) em 15 chunks c/ rotulo\n- bug fabricacao rotulo (reaberto 2x, 05:28/06:30Z): reproduzido antes do fix, ausente agora -- grep double-label (Interlocutor:|Meishu-Sama:) consecutivos: 0/0 em todos os chunks JP+PT\n- engine fix confirmado no codigo (build_clean_large_indexes.py L339-401): cutoff posicional + SPEAKER_LABEL_RE.match(current)\n- apply --dry-run: 4/4 ok; 1 bloco === ARTIGO === em jp/pt; producao (pkl/faiss, mtime 13/jun) intocada"
+    }
+  ],
+  "failed": [],
+  "concluido": true
+}

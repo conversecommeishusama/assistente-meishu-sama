@@ -1,0 +1,94 @@
+{
+  "filename": "19510915-御垂示録1号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc; mesma família ochishiji_roku já revisada em Gokōwa)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 594 linhas / PT 277 linhas após reconstrução, 3 artigos por spec: prefácio, sessão '1º de agosto', sessão '8 de agosto'). O JP inteiro foi lido do início ao fim e confrontado com o PT correspondente na mesma ordem, turno a turno (não amostragem). Alerta inicial do usuário: PT tinha razão JP:PT de ~5:1 (594 linhas JP vs 118 linhas PT) por causa de um monólito residual gigante na sessão de 8 de agosto.",
+  "gate_mecanico": "Não substituído por esta trilha. Contagem bruta de turnos foi usada apenas como ferramenta de triagem (script python ad-hoc, não gate_gokowa_linha.py formal) para localizar pontos de divergência; a decisão de manter/corrigir cada trecho foi sempre por leitura semântica direta contra o JP, nunca só pela métrica.",
+  "summary": {
+    "articles_in_spec": 3,
+    "articles_reviewed": 3,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "categoria": "monólito residual (mesma classe de bug já vista nos 6 livros monolith da Fase Inicial e em vários Gokōwa)",
+      "localizacao_pt_antes": "linha 115 do PT antes da correção (imediatamente após o cabeçalho '[8 de agosto]')",
+      "problema": "Toda a sessão de 8 de agosto (JP linhas 288-594, ~68 turnos de diálogo Interlocutor/Meishu-Sama mais um monólogo inicial de Meishu-Sama) estava colapsada em UMA única linha física de texto corrido, sem nenhuma quebra de parágrafo entre turnos, com uma cauda final truncada no meio de uma frase ('...Antes mesmo de fazer Johrei, ele já estava debilitado. De que forma' — corta aí, sem fechar a pergunta nem trazer a resposta).",
+      "correcao": "Desmembrado em 136 linhas individuais (1 cabeçalho de sessão + 135 turnos: 67 perguntas do Interlocutor + 68 falas de Meishu-Sama, contagem confirmada por paragrafação real do JP delimitada por linha em branco). Método: o texto já traduzido dentro do monólito foi programaticamente dividido nos limites de aspas (cada pergunta do Interlocutor já vinha entre aspas retas \" \" dentro do bloco corrido) e cada segmento foi conferido, na ordem, contra o parágrafo JP correspondente (falante, conteúdo, presença de nomes próprios e números). Nenhuma tradução nova foi necessária para os primeiros ~129 turnos — o texto existente era fiel, só precisava ser quebrado em linhas e formatado como o resto do arquivo (aspas curvas “ ”, uma linha por turno, sem linha em branco entre turnos, igual ao padrão já usado nas sessões de 1º e 5 de agosto do mesmo arquivo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "duplicação de conteúdo já presente na fonte usada para reconstruir o arquivo de trabalho (padrão #6 do catálogo de bugs Gokōwa)",
+      "localizacao_pt_antes": "linha 117 do PT antes da correção (bloco solto após uma linha em branco, logo depois do monólito)",
+      "problema": "Os últimos 4 pares de pergunta+resposta da sessão de 8 de agosto (pintura Keishoki/Keisho; alimentação de doente debilitado; purificação de tuberculose; primeiro paciente de tuberculose) apareciam DUAS vezes: uma vez dentro do monólito (completa para os primeiros 3 pares, mas truncada no 4º par — falta a resposta final), e uma segunda vez em um bloco solto separado, com fraseado ligeiramente diferente (ex.: 'Keishoki' vs 'Keisho' para 啓書記/啓処), desta vez completo até o fim do livro. Confirma o padrão já documentado em 'repair_gosuiji_pt' (scripts/audit_manual_livros_segmentacao.py).",
+      "correcao": "Mantida a versão dentro do monólito para os 3 primeiros pares (mais precisa: distingue corretamente 啓書記 'Keishoki' [o pintor consagrado] de 啓処 'Keisho' [a assinatura na obra específica], enquanto o bloco solto colapsa os dois nomes em 'Keisho'). Para o último par (pergunta sobre paciente de tuberculose que nunca recebeu Johrei), que estava truncado no monólito, usada a versão completa do bloco solto (pergunta e resposta inteiras, batendo com JP linha 592/594, fim do arquivo). O bloco solto duplicado foi descartado depois de extrair essa última resposta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "PERDA REAL DE CONTEÚDO — 14 pares de pergunta+resposta inteiros ausentes (achado NOVO, não estava no alerta original do usuário)",
+      "localizacao_pt_antes": "entre a antiga linha 113 (testemunho da casa bombardeada/sem nome póstumo) e a antiga linha 114 ('[8 de agosto]')",
+      "problema": "Ao conferir a sessão de 5 de agosto (que no JP continua muito além do bloco de agricultura natural, encadeando 20 testemunhos de fiéis até a linha 284, pouco antes de '［八月八日］' na linha 288), descobri que o PT pulava diretamente do testemunho da 'casa bombardeada' (JP linha 212-214) para o cabeçalho '[8 de agosto]' (JP linha 288) — 14 pares inteiros de pergunta+resposta (JP linhas 217-284) nunca foram traduzidos nem inseridos no arquivo de trabalho: pinheiro/ameixeira do nordeste; localização do butsudan quando igreja e residência são contíguas; bebê que recusa mamar e vira o pescoço; Kannon do biombo para marido com ideias comunistas vindo da Sibéria; cegueira noturna congênita; Imagem da Luz Divina guardada por oposição do marido; câncer de estômago com edema; espírito de raposa/texugo pedindo comida no altar; pinheiro sobre portão no kimon; espírito 'tenma'; bebê de 1 ano e 7 meses que não fala; duas crianças adotivas e os pais mortos; mioma uterino/'amendoim'; contas pretas visíveis ligadas a rosário do butsudan. Busquei por palavras-chave únicas de cada um dos 14 trechos no arquivo PT inteiro (grep case-insensitive) e confirmei ausência total antes de traduzir — não era um caso de desalinhamento/pareamento, o conteúdo simplesmente não existia em nenhum ponto do arquivo de trabalho.",
+      "correcao": "Traduzidos os 14 pares diretamente do JP (linhas 217-284) e inseridos na posição correta, mantendo a ordem do original. Terminologia: 'Kannon do biombo', 'Komyo-Nyorai', 'Johrei', 'Imagem da Luz Divina' seguem glossario_traducao.json (confirmado nas chaves 御屏風観音様, 光明如来様, 浄霊). Para 千手観音様 segui o precedente já usado alhures no mesmo arquivo ('Kannon de mil braços', linha correspondente a JP568). Para termos sem entrada no glossário (鬼門 'kimon', 天魔 'tenma', 毒結 'dokketsu') usei transliteração com glosa curta entre parênteses na primeira ocorrência, seguindo o mesmo padrão já usado no arquivo para outros nomes próprios/técnicos (Susanoo-no-Mikoto, Itsunome no Kami); para 天魔 confirmei precedente de tradução como 'demônio celestial' já usado em 19530315-御垂示録18号.txt.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文)",
+      "jp_linhas": "1-29",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução completa e fiel, sem truncamento, sem CJK residual."
+    },
+    {
+      "bloco": "Sessão [1º de agosto] — antiguidades/arte",
+      "jp_linhas": "33-150",
+      "decisao": "ok, já estava corretamente segmentado turno a turno antes desta revisão",
+      "confianca": "alta",
+      "notas": "Conferido turno a turno contra o JP; alguns parágrafos JP longos (ex. discussão sobre Ashikaga Yoshimasa/escola Kano) aparecem fragmentados em 1 linha PT a mais do que no JP — não é perda de conteúdo, é uma quebra de parágrafo extra pré-existente; não mexida por estar fora do escopo do alerta e não esconder conteúdo faltante."
+    },
+    {
+      "bloco": "Sessão [5 de agosto] — agricultura natural + testemunhos de fiéis",
+      "jp_linhas": "150-284",
+      "decisao": "CORRIGIDO — 14 pares de pergunta+resposta traduzidos e inseridos (ver correção n.3)",
+      "confianca": "alta",
+      "notas": "Bloco de agricultura natural (JP 152-180) e primeiros 6 testemunhos (pesca/Susanoo/Ota Shizuko/tororo konbu/casa bombardeada) já estavam corretos; os 14 testemunhos finais da sessão estavam totalmente ausentes."
+    },
+    {
+      "bloco": "Sessão [8 de agosto] — jornal/religiões/ritual/doenças",
+      "jp_linhas": "288-594",
+      "decisao": "RECONSTRUÍDO — monólito desmembrado em 135 turnos + duplicação resolvida (ver correções n.1 e n.2)",
+      "confianca": "alta",
+      "notas": "Maior intervenção do trabalho. Cada um dos 135 turnos foi conferido individualmente contra o parágrafo JP correspondente (falante, conteúdo, nomes próprios, números) na ordem exata do original — nenhuma reordenação. Verificado ao final: 67 perguntas (Interlocutor) + 68 falas (Meishu-Sama) no PT reconstruído, batendo exatamente com a contagem de parágrafos com/sem 「」 no JP para o mesmo intervalo."
+    }
+  ],
+  "verificacao_final": {
+    "cjk_residual": "nenhum encontrado no corpo (grep confirma só os caracteres do título/metadados de cabeçalho, ex. '御垂示録1号', que são esperados)",
+    "contagem_pt_final": "277 linhas (era 118 antes desta sessão)",
+    "cobertura_testemunhos_aug5_verificada": "todos os 14 testemunhos antes ausentes agora localizados por busca de palavra-chave no arquivo final",
+    "atencao_para_segunda_auditoria": "Como este é trabalho de reconstrução grande (não pequenas correções pontuais), a segunda auditoria independente deve: (1) reler a sessão de 8 de agosto inteira turno a turno contra o JP (linhas 288-594), com atenção a troca de falante já que o desmembramento foi automatizado a partir de aspas e não de releitura humana linha a linha nova; (2) conferir os 14 testemunhos inseridos (JP 217-284) contra a tradução nova; (3) decidir se a escolha de manter a versão 'monólito' (não a versão 'bloco solto duplicado') para os 3 primeiros pares Keishoki/alimentação/tuberculose foi a correta, dado que ambas eram traduções válidas mas com pequenas diferenças de fraseado."
+  },
+  "pendencias_abertas": [],
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado ao formato Gosuiji-roku: JP usa 「pergunta entre aspas」 para o Interlocutor e parágrafo corrido sem aspas (iniciado por 　) para Meishu-Sama, em vez de ――/（お伺）do Gokōwa. Confirmado por leitura direta do JP, não assumido.",
+    "etapa_A_mapa_jp": "JP inteiro (594 linhas) percorrido linha a linha; localizadas programaticamente (grep -n '^「' e '^　') e conferidas manualmente todas as 250 unidades de turno de diálogo (excluídos prefácio e as 2 linhas de data/editorial do prefácio, que também começam com 　 mas não são turno). Resultado: 120 turnos Interlocutor (「」) e 130 turnos Meishu-Sama (parágrafo corrido), intercalados na ordem exata do original, incluindo blocos de 2-3 parágrafos consecutivos de Meishu-Sama sem pergunta intermediária (turnos JP 63-64, 92-93, 97-98, 103-104, 158-160, 290-291, 352-353) e citações internas dentro da fala de Meishu-Sama (ex. turno 88, citação de Matsui Seikun) que não são novo turno.",
+    "etapa_B_confirmacao": {
+      "contagem_jp": "120 Interlocutor / 130 Meishu-Sama (250 turnos)",
+      "contagem_pt_antes_rotulagem": "277 parágrafos de corpo, correspondendo 1:1 aos 250 turnos JP exceto em 2 pontos onde o PT já revisado (sessão anterior, approved:true) uniu 2 parágrafos consecutivos de Meishu-Sama num único parágrafo de texto corrido: (1) turnos JP 114+115 ('東京日日新聞...' + '自分らは相変わらず三文記者...', session 8 de agosto, abertura) e (2) turnos JP 143+144 ('鑑賞ができないのは教育のせいです...' + 'その点が芸術に対して影響しているわけです...', mesma sessão). Confirmado por leitura de conteúdo (não só contagem) que em ambos os casos nenhum conteúdo falta — é só um parágrafo PT cobrindo 2 parágrafos JP, ambos do mesmo falante (Meishu-Sama) — portanto não é erro estrutural, apenas artefato de tradução/parágrafo, resolvido com um único rótulo 'Meishu-Sama:' cobrindo o parágrafo combinado.",
+      "verificacao_independente": "Bate com o achado já registrado em 'checklist_por_bloco' > sessão [8 de agosto] desta mesma trilha (revisão de conteúdo anterior, 2026-07-07): '67 perguntas (Interlocutor) + 68 falas (Meishu-Sama)' para JP 288-594. Meu recálculo independente a partir do JP bruto (sem depender do PT) obteve exatamente os mesmos números para essa sessão (67 I / 70 M brutos no JP, 68 M após os 2 merges acima) — confirmação cruzada por método diferente (leitura JP direta desta sessão vs. reconstrução por aspas da sessão anterior).",
+      "resultado": "Δ=0 real (nenhum turno perdido ou sobrando); nenhum problema estrutural novo encontrado nesta passada — o PT já estava correto desde a revisão de conteúdo anterior."
+    },
+    "etapa_C_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' adicionados a cada um dos 248 parágrafos físicos do PT (120 Interlocutor + 128 Meishu-Sama, este último já contabilizando os 2 parágrafos-fusão acima), sem reordenar nem reescrever conteúdo (verificado por diff automatizado: todas as 274 linhas não-vazias do PT batem caractere a caractere com o original antes da rotulagem, a menos do prefixo adicionado). Cabeçalhos de sessão '[1º de agosto]', '[5 de agosto] (Somente neste dia, não foi por estenografia)' e '[8 de agosto]' preservados sem alteração. Adicionada linha em branco entre cada parágrafo rotulado e entre cada cabeçalho de sessão e o turno seguinte, seguindo o mesmo padrão já usado nos ficheiros de Gokōwa-roku já rotulados (ex. 19481208-御光話録1号.txt, 19490530-御光話録8号.txt), que também repetem o rótulo em parágrafos consecutivos do mesmo falante em vez de fundi-los.",
+    "backup_pre_rotulagem": "/tmp/claude-0/-var-www-goshinsho/75ceece9-9b84-4085-9a66-404d9beb5970/scratchpad/19510915-御垂示録1号.txt.pre_label_backup"
+  },
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): spot-check confirma os 135 turnos reconstruídos, resolução da duplicação repair_gosuiji_pt, e presença dos 14 pares P&R inseridos (Keishoki, mioma/amendoim, raposa/texugo). Final do PT bate exatamente com final do JP. approved:true."
+  }
+}

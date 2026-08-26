@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-06-28T01:00:02Z",
+  "specs_total": 132,
+  "qa_failures": {
+    "19480101-御光話録（補）.txt": [
+      "二月十八日（水）: perguntas JP=12 vs PT=22",
+      "三月八日（月）: perguntas JP=8 vs PT=7",
+      "四月十八日（日）: perguntas JP=8 vs PT=7",
+      "五月十八日: perguntas JP=12 vs PT=13",
+      "六月八日（火）: perguntas JP=13 vs PT=12",
+      "六月二十八日: perguntas JP=19 vs PT=18",
+      "七月二十八日（水）: perguntas JP=44 vs PT=43",
+      "九月二十八日（火）: perguntas JP=34 vs PT=33",
+      "十月十八日（月）: perguntas JP=15 vs PT=5",
+      "十月二十八日（木）: perguntas JP=17 vs PT=11",
+      "十一月十八日（木）: perguntas JP=16 vs PT=15",
+      "十二月十八日（日）: perguntas JP=30 vs PT=29",
+      "十二月二十八日（火）: perguntas JP=30 vs PT=38"
+    ],
+    "19481208-御光話録1号.txt": [
+      "十一月十八日（木）: perguntas JP=16 vs PT=17"
+    ],
+    "19490000-御光話録4号.txt": [
+      "二月八日（火）: perguntas JP=28 vs PT=25",
+      "二月十八日（金）: perguntas JP=58 vs PT=90"
+    ],
+    "19490000-御光話録5号.txt": [
+      "三月八日（火）: perguntas JP=49 vs PT=52"
+    ],
+    "19490108-御光話録2号.txt": [
+      "十二月十八日（土）: perguntas JP=26 vs PT=29",
+      "十二月二十八日（火）: perguntas JP=23 vs PT=25"
+    ],
+    "19490208-御光話録3号.txt": [
+      "一月十八日（火）: perguntas JP=27 vs PT=31"
+    ],
+    "19490423-御光話録6号.txt": [
+      "御光話録６号: perguntas JP=42 vs PT=36"
+    ],
+    "19490522-御光話録7号.txt": [
+      "四月十三日（水）: perguntas JP=12 vs PT=17",
+      "四月二十三日（土）: perguntas JP=30 vs PT=56"
+    ],
+    "19490530-御光話録8号.txt": [
+      "御光話録８号: perguntas JP=55 vs PT=51"
+    ],
+    "19490710-御光話録10号.txt": [
+      "五月三日: perguntas JP=21 vs PT=20",
+      "五月二十三日: perguntas JP=24 vs PT=22"
+    ],
+    "19490730-御光話録9号.txt": [
+      "御光話録９号: perguntas JP=68 vs PT=72"
+    ],
+    "19490821-御光話録11号.txt": [
+      "御光話録11号: perguntas JP=81 vs PT=63"
+    ],
+    "19490921-御光話録12号.txt": [
+      "六月三日: perguntas JP=44 vs PT=36",
+      "六月十三日: perguntas JP=27 vs PT=19",
+      "六月二十三日: perguntas JP=21 vs PT=15"
+    ],
+    "19491021-御光話録13号.txt": [
+      "七月三日: perguntas JP=20 vs PT=19",
+      "七月十三日: perguntas JP=91 vs PT=85",
+      "七月二十三日: perguntas JP=28 vs PT=6"
+    ],
+    "19491120-御光話録14号.txt": [
+      "八月三日: perguntas JP=17 vs PT=0",
+      "八月十三日: perguntas JP=19 vs PT=12",
+      "八月二十三日: perguntas JP=44 vs PT=49"
+    ],
+    "19491220-御光話録15号.txt": [
+      "御光話録15号: perguntas JP=99 vs PT=56"
+    ],
+    "19500120-御光話録16号.txt": [
+      "御光話録16号: perguntas JP=97 vs PT=34"
+    ],
+    "19500423-御光話録18号.txt": [
+      "御光話録18号: perguntas JP=72 vs PT=85"
+    ],
+    "19500613-御光話録19号.txt": [
+      "二月二十八日: perguntas JP=4 vs PT=12",
+      "三月三日: perguntas JP=15 vs PT=33",
+      "三月八日: perguntas JP=5 vs PT=7",
+      "三月十八日: perguntas JP=6 vs PT=11",
+      "三月二十三日: perguntas JP=2 vs PT=4",
+      "三月二十八日: perguntas JP=5 vs PT=6",
+      "四月三日: perguntas JP=21 vs PT=7",
+      "四月八日: perguntas JP=10 vs PT=8",
+      "四月十三日: perguntas JP=7 vs PT=5",
+      "四月二十三日: perguntas JP=11 vs PT=9",
+      "四月二十八日: perguntas JP=7 vs PT=5"
+    ],
+    "19510225-御教え集6号.txt": [
+      "一月十五日: respostas JP=2 vs PT=1; ensinamentos JP=1 vs PT=0",
+      "一月十六日: perguntas JP=6 vs PT=7; respostas JP=6 vs PT=1",
+      "一月十七日: perguntas JP=11 vs PT=12; respostas JP=11 vs PT=8; ensinamentos JP=1 vs PT=0",
+      "一月二十五日: respostas JP=3 vs PT=1; ensinamentos JP=1 vs PT=2",
+      "一月二十六日: perguntas JP=7 vs PT=8; ensinamentos JP=1 vs PT=3"
+    ],
+    "19511025-御教え集2号.txt": [
+      "九月八日: respostas JP=9 vs PT=2",
+      "九月十五日: respostas JP=3 vs PT=1",
+      "九月十八日: respostas JP=5 vs PT=2; ensinamentos JP=0 vs PT=1"
+    ],
+    "19511125-御教え集3号.txt": [
+      "十月一日: respostas JP=3 vs PT=0; ensinamentos JP=1 vs PT=0",
+      "十月五日: perguntas JP=4 vs PT=5",
+      "十月八日: respostas JP=4 vs PT=5; ensinamentos JP=1 vs PT=2",
+      "十月十一日: perguntas JP=2 vs PT=1; ensinamentos JP=1 vs PT=3",
+      "十月十八日: perguntas JP=2 vs PT=3; ensinamentos JP=1 vs PT=4",
+      "十月二十一日: perguntas JP=3 vs PT=4; respostas JP=3 vs PT=2; ensinamentos JP=1 vs PT=0",
+      "十月二十五日: respostas JP=6 vs PT=3",
+      "十月二十八日: respostas JP=6 vs PT=5; ensinamentos JP=1 vs PT=2"
+    ],
+    "19511215-御教え集4号.txt": [
+      "十一月一日: respostas JP=3 vs PT=1; ensinamentos JP=1 vs PT=3",
+      "十一月五日: perguntas JP=2 vs PT=3; respostas JP=2 vs PT=1",
+      "十一月八日: respostas JP=10 vs PT=11",
+      "十一月十一日: respostas JP=4 vs PT=2",
+      "十一月十五日: respostas JP=4 vs PT=0; ensinamentos JP=1 vs PT=3"
+    ],
+    "19520115-御教え集5号.txt": [
+      "十二月一日: respostas JP=2 vs PT=1",
+      "十二月六日: respostas JP=8 vs PT=4; ensinamentos JP=1 vs PT=0",
+      "十二月八日: respostas JP=15 vs PT=9; ensinamentos JP=1 vs PT=0",
+      "十二月十一日: respostas JP=4 vs PT=1",
+      "十二月十五日: respostas JP=3 vs PT=1; ensinamentos JP=1 vs PT=0"
+    ],
+    "19520320-御教え集7号.txt": [
+      "二月六日: perguntas JP=3 vs PT=4; respostas JP=3 vs PT=4; ensinamentos JP=1 vs PT=3",
+      "二月七日: perguntas JP=4 vs PT=5; respostas JP=5 vs PT=6; ensinamentos JP=1 vs PT=2",
+      "二月二十五日: respostas JP=1 vs PT=0; ensinamentos JP=1 vs PT=0",
+      "二月二十六日: respostas JP=6 vs PT=1",
+      "二月二十七日: respostas JP=5 vs PT=0; ensinamentos JP=1 vs PT=0"
+    ],
+    "19520420-御教え集8号.txt": [
+      "三月六日: perguntas JP=9 vs PT=17; respostas JP=9 vs PT=0",
+      "三月七日: perguntas JP=5 vs PT=6",
+      "三月十七日: respostas JP=4 vs PT=1"
+    ],
+    "19521015-御教え集14号.txt": [
+      "九月十六日: perguntas JP=0 vs PT=1"
+    ],
+    "19531015-御教え集26号.txt": [
+      "九月二十四日: perguntas JP=0 vs PT=4"
+    ]
+  },
+  "compare_failures": [],
+  "qa_ok": 104
+}

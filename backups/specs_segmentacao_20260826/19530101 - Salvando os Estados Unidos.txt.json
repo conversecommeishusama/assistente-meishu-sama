@@ -1,0 +1,687 @@
+{
+ "filename": "19530101 - Salvando os Estados Unidos.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 103→91. PT pairing pendente. | 2026-07-14: removidos 8 artigos duplicados falsos (titulo+cabecalho separado do corpo, mesmo testemunho) -- 100->92",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 100,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "昭和28(1953)年1月1日発行",
+   "pt_anchor": "Salvando os Estados Unidos",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病気とは何ぞや",
+   "title_pt": "",
+   "jp_anchor": "病気とは何ぞや\n\n　序論にもある通り、現在米国における病気の漸増（ぜんぞう）は何がためであるかを、その根本から説いてみるが、まず病気なるものの発生原因であるが、驚 くなかれ病気というものは医療が作るのであって、特に薬剤がその中心をなしているという事実である。つ",
+   "pt_anchor": "O que é a Doença",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "種痘と薬毒",
+   "title_pt": "",
+   "jp_anchor": "種痘と薬毒\n\n　ここで先天性毒素について説明してみるが、後天性毒素とはもちろん生まれてから後に入れた薬毒であるが、では先天性毒素とは何かというと、これこそ祖先 以来遺伝されて来た薬毒であって、日本の諺（ことわざ）に「自惚（うぬぼれ）と瘡気（かさけ）のない者",
+   "pt_anchor": "Vacinação e Toxina Medicamentosa",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "手術について",
+   "title_pt": "",
+   "jp_anchor": "手術について\n\n　日本もそうだが特にアメリカにおいては、近来手術の進歩を誇称し、大いに励行しているが、これは大変な誤りである。というのは手術の進歩とは、医術の進 歩ではなくむしろ退歩であるからである。何となれば真の医術とは、病に冒されている臓器その物を除去す",
+   "pt_anchor": "Sobre a Cirurgia",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "浄霊医術",
+   "title_pt": "",
+   "jp_anchor": "浄霊医術\n\n　これから米国における現在の病気状況の調査表と併せて、私が創成した治療法（浄霊法）によって全快した人達の感謝報告を載せるが〔略〕、これは全部本人 手記のものであるから一点の間違はないので、万一疑のある人は、宿所姓名を詳しくかいてあるから、本人",
+   "pt_anchor": "A Terapia do Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "米国に於ける病気状況",
+   "title_pt": "",
+   "jp_anchor": "米国に於ける病気状況　　米国駐在信者　立松文二",
+   "pt_anchor": "Situação das Doenças nos Estados Unidos\nPor Bunji Tachimatsu",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "癌",
+   "title_pt": "",
+   "jp_anchor": "癌\n\n　この病気は肉食病といってもいいくらいのもので",
+   "pt_anchor": "Câncer\n\nEsta doença pode ser chamada de doença da carne. Explicando-a desde a raiz",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "胃癌全治して二十カ月の今日",
+   "title_pt": "",
+   "jp_anchor": "胃癌全治して二十カ月の今日",
+   "pt_anchor": "Câncer de Estômago Completamente Curado: Hoje, 20 Meses Depois",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "愈々駄目だと思った胃癌より救われた喜び",
+   "title_pt": "",
+   "jp_anchor": "愈々駄目だと思った胃癌より救われた喜び",
+   "pt_anchor": "A Alegria de Ser Salvo de um Câncer de Estômago que se Pensava Ser Totalmente Incurável",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "妹の絶望的子宮ガンを救われし私の喜び",
+   "title_pt": "",
+   "jp_anchor": "妹の絶望的子宮ガンを救われし私の喜び",
+   "pt_anchor": "Minha Alegria por Minha Irmã Ter Sido Salva de um Câncer de Útero Desesperador",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死を宣告された子宮癌より蘇りて",
+   "title_pt": "",
+   "jp_anchor": "死を宣告された子宮癌より蘇りて",
+   "pt_anchor": "Ressuscitada de um câncer uterino para o qual fui desenganada pelo médico",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "関節リューマチスも治り瀕死の直腸癌患者癒ゆ",
+   "title_pt": "",
+   "jp_anchor": "関節リューマチスも治り瀕死の直腸癌患者癒ゆ",
+   "pt_anchor": "Reumatismo articular também curado; paciente com câncer retal em estado terminal se recupera",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "直腸癌より救われて",
+   "title_pt": "",
+   "jp_anchor": "直腸癌より救われて",
+   "pt_anchor": "Salvo de um câncer retal",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "盲ほど　儚きものは世にあらじ",
+   "title_pt": "",
+   "jp_anchor": "盲ほど　儚きものは世にあらじ",
+   "pt_anchor": "Não há no mundo nada tão ilusório quanto um cego,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "近処の宝知る由もなく",
+   "title_pt": "",
+   "jp_anchor": "近処の宝知る由もなく",
+   "pt_anchor": "Que não conhece o tesouro que está perto.\"",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核",
+   "title_pt": "",
+   "jp_anchor": "結核\n\n　この病気も全く医学が作るものであって",
+   "pt_anchor": "Tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "これぞ救い",
+   "title_pt": "",
+   "jp_anchor": "これぞ救い\n　――　身を以て体験した医学の恐ろしさ　――",
+   "pt_anchor": "Isto sim é a salvação\n— O terror da medicina experimentado na própria pele —",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "気胸二カ年の肺結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "気胸二カ年の肺結核より救わる",
+   "pt_anchor": "(15 de setembro de 1951)\n\n―――――――――・――――――――――\n\nSalvo da tuberculose pulmonar após dois anos de pneumotórax",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "整形手術直前に救いの御手",
+   "title_pt": "",
+   "jp_anchor": "整形手術直前に救いの御手",
+   "pt_anchor": "A mão da salvação momentos antes da cirurgia plástica",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "世紀の奇蹟この感激の事実を見よ",
+   "title_pt": "",
+   "jp_anchor": "世紀の奇蹟この感激の事実を見よ",
+   "pt_anchor": "Vejam este fato emocionante, o milagre do século!",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "整形手術を免れて",
+   "title_pt": "",
+   "jp_anchor": "整形手術を免れて",
+   "pt_anchor": "Livre da Cirurgia Ortopédica",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喉頭結核救わる",
+   "title_pt": "",
+   "jp_anchor": "喉頭結核救わる\n\n　　　　　　　長崎県壱岐郡沼津村",
+   "pt_anchor": "Salvo da Tuberculose Laríngea",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今底なき沼に悩みつづけむ",
+   "pt_anchor": "Poema de Louvor: Se não fosse a salvação de Kannon, eu agora estaria sofrendo para sempre em um pântano sem fundo. (29 d",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶対安静の私、歓喜の出勤",
+   "title_pt": "",
+   "jp_anchor": "絶対安静の私、歓喜の出勤",
+   "pt_anchor": "Eu, em Repouso Absoluto, Volto ao Trabalho com Alegria",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今底なき沼に悩みつづけむ",
+   "pt_anchor": "Poema de Louvor: Se não fosse a salvação de Kannon, eu agora estaria sofrendo para sempre em um pântano sem fundo. Meish",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "伝染病",
+   "title_pt": "",
+   "jp_anchor": "伝染病\n\n　伝染病は近来米国では非常に減ったとされているが",
+   "pt_anchor": "Doenças Infecciosas\n\nDiz-se que as doenças infecciosas diminuíram muito recentemente nos Estados Unidos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "精神病",
+   "title_pt": "",
+   "jp_anchor": "精神病\n\n　この病気の原因は不眠症からであって",
+   "pt_anchor": "Doenças Mentais\nA causa desta doença é a insônia; quando a insônia se prolonga",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "気違一週間で癒え事故にもこの奇蹟",
+   "title_pt": "",
+   "jp_anchor": "気違一週間で癒え事故にもこの奇蹟",
+   "pt_anchor": "A loucura cura em uma semana — este milagre também.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "発狂の息子全快",
+   "title_pt": "",
+   "jp_anchor": "発狂の息子全快\n\n　　　　　　　　福岡県粕屋郡青柳村",
+   "pt_anchor": "Filho enlouquecido completamente curado",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の精神病癒えて",
+   "title_pt": "",
+   "jp_anchor": "絶望の精神病癒えて",
+   "pt_anchor": "Doença mental desesperadora curada",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御神徳により精神病救わるるまで",
+   "title_pt": "",
+   "jp_anchor": "御神徳により精神病救わるるまで",
+   "pt_anchor": "Até ser salvo da doença mental pelo poder divino",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "娘の精神病かくして救わる",
+   "title_pt": "",
+   "jp_anchor": "娘の精神病かくして救わる",
+   "pt_anchor": "A doença mental de minha filha foi assim salva",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "精神分裂症の私御浄霊により救わる",
+   "title_pt": "",
+   "jp_anchor": "精神分裂症の私御浄霊により救わる",
+   "pt_anchor": "Sou salva pelo Johrei, eu, uma esquizofrênica",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "関節炎",
+   "title_pt": "",
+   "jp_anchor": "関節炎\n\n　この病気はさきにかいたごとく",
+   "pt_anchor": "Artrite\n\nComo escrevi anteriormente, as toxinas medicamentosas se acumulam nos locais onde os nervos são mais utilizados.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の曲がらぬ足二回の浄霊で治る",
+   "title_pt": "",
+   "jp_anchor": "絶望の曲がらぬ足二回の浄霊で治る",
+   "pt_anchor": "Perna enrijecida e sem esperança é curada com duas sessões de Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "全身の関節リューマチス十三年間の病床より救わる",
+   "title_pt": "",
+   "jp_anchor": "全身の関節リューマチス十三年間の病床より救わる",
+   "pt_anchor": "Salvo de treze anos de leito por reumatismo articular generalizado",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "リューマチスの業病救われ忽ち吾が家は天国楽土に",
+   "title_pt": "",
+   "jp_anchor": "リューマチスの業病救われ忽ち吾が家は天国楽土に",
+   "pt_anchor": "Depois que fui salva da doença incurável do reumatismo, minha casa se tornou instantaneamente um Paraíso de alegria",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも闇路杖なく彷ひし吾",
+   "pt_anchor": "Terrível, eu vagava sem cajado na escuridão.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "讃へても称へ尽せぬ大御幸筆も言葉も表はす由なき",
+   "title_pt": "",
+   "jp_anchor": "讃へても称へ尽せぬ大御幸筆も言葉も表はす由なき",
+   "pt_anchor": "Mesmo louvando, não se pode louvar o suficiente,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "心臓病",
+   "title_pt": "",
+   "jp_anchor": "心臓病\n\n　心臓病といえば、大抵は弁膜症の事をいうが",
+   "pt_anchor": "Doença cardíaca\n\nQuando se fala em doença cardíaca, em geral se trata de valvopatia. A causa é que as toxinas medic",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治の心臓弁膜症全快",
+   "title_pt": "",
+   "jp_anchor": "不治の心臓弁膜症全快",
+   "pt_anchor": "Cura completa de valvopatia cardíaca incurável",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十年間の心臓病も一カ月にて快復へ",
+   "title_pt": "",
+   "jp_anchor": "十年間の心臓病も一カ月にて快復へ",
+   "pt_anchor": "Uma doença cardíaca de dez anos se recupera em um mês",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私の心臓病癒され妹の盲腸炎も救わる",
+   "title_pt": "",
+   "jp_anchor": "私の心臓病癒され妹の盲腸炎も救わる",
+   "pt_anchor": "Minha doença cardíaca é curada e a apendicite de minha irmã também é salva",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "慢性頭痛持",
+   "title_pt": "",
+   "jp_anchor": "慢性頭痛持\n\n　これはさきにかいたごとく、現代人は薬を無暗（むやみ）に入れる事と、頭脳を使用する事が多いため、頭部を中心にその付近に固結した毒素が、浄化によっ て発熱と共に溶解し出ようとして、神経を刺戟するためである。というように痛みは治る作用であるから、",
+   "pt_anchor": "Portador de dor de cabeça crônica",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "長年の頭痛を癒されて",
+   "title_pt": "",
+   "jp_anchor": "長年の頭痛を癒されて",
+   "pt_anchor": "Curada de uma longa dor de cabeça",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "長年の慢性頭痛四、五日にて癒さる",
+   "title_pt": "",
+   "jp_anchor": "長年の慢性頭痛四、五日にて癒さる",
+   "pt_anchor": "Dor de cabeça crônica de longos anos curada em quatro ou cinco dias",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "水枕の離せぬ頭痛を救わる",
+   "title_pt": "",
+   "jp_anchor": "水枕の離せぬ頭痛を救わる",
+   "pt_anchor": "Salva de uma dor de cabeça que não largava a bolsa de água fria",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "小児麻痺",
+   "title_pt": "",
+   "jp_anchor": "小児麻痺\n\n　この病気は霊的と体的とがあるが、米国に多い小児麻痺はほとんど体的のようである。今それを詳しくかいてみるが、生まれながらにして歩行困難な症状は、 言うまでもなく親からの遺伝薬毒と、生まれてから入れた薬毒が、足のいずれかの局部に固結するためであ",
+   "pt_anchor": "Paralisia Infantil\n\nEsta doença tem causas espirituais e materiais, mas a paralisia infantil",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "医学で解決出来ぬランドリー氏病",
+   "title_pt": "",
+   "jp_anchor": "医学で解決出来ぬランドリー氏病",
+   "pt_anchor": "Doença de Landry, que a medicina não pode resolver\n(Paralisia infantil extremamente maligna)",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五年間動かぬ愛児の足十五分の浄霊で動く",
+   "title_pt": "",
+   "jp_anchor": "五年間動かぬ愛児の足十五分の浄霊で動く",
+   "pt_anchor": "O pé do meu filho amado, que não se movia há cinco anos, moveu-se com quinze minutos de Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "嗚呼、小児麻痺治るこのよろこび",
+   "title_pt": "",
+   "jp_anchor": "嗚呼、小児麻痺治るこのよろこび",
+   "pt_anchor": "Ah, a alegria de curar a paralisia infantil!",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "吾子の小児麻痺救われ薬毒の恐ろしさを知る",
+   "title_pt": "",
+   "jp_anchor": "吾子の小児麻痺救われ薬毒の恐ろしさを知る",
+   "pt_anchor": "Meu filho foi salvo da paralisia infantil e aprendi o terror da toxina medicamentosa",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "小児麻痺僅か一カ月にて歩く",
+   "title_pt": "",
+   "jp_anchor": "小児麻痺僅か一カ月にて歩く",
+   "pt_anchor": "Paralisia infantil: andou em apenas um mês",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶対不治の全身小児麻痺短時日に癒えゆこの奇蹟",
+   "title_pt": "",
+   "jp_anchor": "絶対不治の全身小児麻痺短時日に癒えゆこの奇蹟",
+   "pt_anchor": "O milagre de uma paralisia infantil generalizada, considerada absolutamente incurável, curar-se em pouco tempo",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "動脈硬化及び高血圧症",
+   "title_pt": "",
+   "jp_anchor": "動脈硬化及び高血圧症\n\n　動脈硬化と高血圧の原因は、二者似て非なるものであるから",
+   "pt_anchor": "Arteriosclerose e hipertensão",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治とされている動脈硬化症を救われて",
+   "title_pt": "",
+   "jp_anchor": "不治とされている動脈硬化症を救われて",
+   "pt_anchor": "Salvo da arteriosclerose, considerada incurável",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "腎臓手術直前に救われ母の動脈硬化も癒さる",
+   "title_pt": "",
+   "jp_anchor": "腎臓手術直前に救われ母の動脈硬化も癒さる",
+   "pt_anchor": "Salva momentos antes da cirurgia renal; a arteriosclerose da minha mãe também foi curada",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喘息と高血圧より救われて",
+   "title_pt": "",
+   "jp_anchor": "喘息と高血圧より救われて",
+   "pt_anchor": "Salvo da asma e da hipertensão",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "脳溢血僅か二カ月余で起つ",
+   "title_pt": "",
+   "jp_anchor": "脳溢血僅か二カ月余で起つ",
+   "pt_anchor": "Levanta-se em pouco mais de dois meses de uma hemorragia cerebral",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "脳溢血で不自由の身を短時間に救わる",
+   "title_pt": "",
+   "jp_anchor": "脳溢血で不自由の身を短時間に救わる",
+   "pt_anchor": "Salva em pouco tempo da condição de incapacidade causada por hemorragia cerebral",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "八年間の半身不随が一時間の御浄霊で起上がる",
+   "title_pt": "",
+   "jp_anchor": "八年間の半身不随が一時間の御浄霊で起上がる",
+   "pt_anchor": "Levanta-se de oito anos de hemiplegia com uma hora de Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "喘息",
+   "title_pt": "",
+   "jp_anchor": "喘息\n\n　これは薬毒が肺の外郭付近に固結したものが",
+   "pt_anchor": "Asma\nIsso ocorre quando a toxina medicamentosa solidificada se deposita nas proximidades da parte externa dos pulmões",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十三年間の喘息から救われて",
+   "title_pt": "",
+   "jp_anchor": "十三年間の喘息から救われて",
+   "pt_anchor": "Salva da asma de treze anos",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喘息八年後の今日",
+   "title_pt": "",
+   "jp_anchor": "喘息八年後の今日",
+   "pt_anchor": "Hoje, após oito anos de asma",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "幼少よりの喘息癒ゆ",
+   "title_pt": "",
+   "jp_anchor": "幼少よりの喘息癒ゆ",
+   "pt_anchor": "A asma desde a infância é curada",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "（無題）",
+   "title_pt": "",
+   "jp_anchor": "（注）この体験談も後の版には掲載されておらず",
+   "pt_anchor": "Província de Nagasaki, N.Y.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "慢性気管支炎",
+   "title_pt": "",
+   "jp_anchor": "慢性気管支炎\n\n　これは体内のどこかに、薬毒の固結があって、それが少しずつ溶けて出ようとする場合、割合固いため、頻繁（ひんぱん）に強い咳をしなければならないのが 原因である。何よりも痰さえ出れば楽になるのはそういう訳である。ところが医療は咳を停めようとするか",
+   "pt_anchor": "Bronquite Crônica\n\nIsso ocorre quando há uma solidificação de toxina medicamentosa em algum lugar",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "高熱の悪性気管支炎を奇跡的にお救い戴いて",
+   "title_pt": "",
+   "jp_anchor": "高熱の悪性気管支炎を奇跡的にお救い戴いて",
+   "pt_anchor": "Salva milagrosamente de bronquite maligna com febre alta",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "気管支カタルをはじめ大病に窶れた私の更生記",
+   "title_pt": "",
+   "jp_anchor": "気管支カタルをはじめ大病に窶れた私の更生記",
+   "pt_anchor": "Relato de minha regeneração, que definhava com grandes doenças, começando pela bronquite catarral",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "幼児の気管支炎癒ゆ",
+   "title_pt": "",
+   "jp_anchor": "幼児の気管支炎癒ゆ",
+   "pt_anchor": "Cura da bronquite de uma criança pequena",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "腎臓炎乃至腎臓病",
+   "title_pt": "",
+   "jp_anchor": "腎臓炎乃至腎臓病",
+   "pt_anchor": "Nefrite e doença renal\n\nTodos sabem que a função dos rins é processar a urina",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "悪性腎臓病を全治させて戴いて",
+   "title_pt": "",
+   "jp_anchor": "悪性腎臓病を全治させて戴いて",
+   "pt_anchor": "Recebendo a cura completa de uma doença renal maligna",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "腎臓病はじめ全身の病苦御浄霊にて悉く御救い戴く",
+   "title_pt": "",
+   "jp_anchor": "腎臓病はじめ全身の病苦御浄霊にて悉く御救い戴く",
+   "pt_anchor": "Sendo salva de todas as doenças, começando pela doença renal, através do Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "危篤の全身浮腫も全快神に委ねし身は安けし",
+   "title_pt": "",
+   "jp_anchor": "危篤の全身浮腫も全快神に委ねし身は安けし",
+   "pt_anchor": "Edema generalizado em estado crítico também curado completamente; quem se entrega a Deus está em paz",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "脱腸",
+   "title_pt": "",
+   "jp_anchor": "脱腸\n\n　これは小児に多いが、稀には老人にもある",
+   "pt_anchor": "Hérnia\n\nIsso é comum em crianças, mas raramente ocorre em idosos.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "幼児の脱腸を救われて",
+   "title_pt": "",
+   "jp_anchor": "幼児の脱腸を救われて",
+   "pt_anchor": "Salva de uma hérnia em uma criança",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御力に子供の脱腸治る",
+   "title_pt": "",
+   "jp_anchor": "御力に子供の脱腸治る",
+   "pt_anchor": "Hérnia de criança curada pelo Poder",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "愛児の脱腸を癒され一家光明の生活へ",
+   "title_pt": "",
+   "jp_anchor": "愛児の脱腸を癒され一家光明の生活へ",
+   "pt_anchor": "Hérnia do filho amado curada, a família segue para uma vida de luz",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "痔",
+   "title_pt": "",
+   "jp_anchor": "痔\n\n　この病気の原因はもちろん薬毒であるが",
+   "pt_anchor": "Hemorroidas\n\nA causa desta doença é, obviamente, a toxina medicamentosa, mas os locais de solidificação são principalmente a nuca e a região da virilha.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十年間の痔疾を癒され病弱の子も健康になる",
+   "title_pt": "",
+   "jp_anchor": "十年間の痔疾を癒され病弱の子も健康になる",
+   "pt_anchor": "Curado de hemorroidas de dez anos, filho doente também fica saudável",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "類のない脱肛から救わる",
+   "title_pt": "",
+   "jp_anchor": "類のない脱肛から救わる",
+   "pt_anchor": "Salvo de um prolapso retal sem igual",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "痔病の大出血より救わる",
+   "title_pt": "",
+   "jp_anchor": "痔病の大出血より救わる",
+   "pt_anchor": "Salvo de uma grande hemorragia de hemorroidas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結論",
+   "title_pt": "",
+   "jp_anchor": "結論\n\n　最後にこの著の結論をかいてみるが",
+   "pt_anchor": "Conclusão\n\nFinalmente, escreverei a conclusão deste livro.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "アメリカを救う",
+   "title_pt": "",
+   "jp_anchor": "アメリカを救う\n\n　昭和28年 1月 1日発行",
+   "pt_anchor": "Salvando os Estados Unidos\n\nPublicado em 1º de janeiro do 28º ano da Era Showa (1953)",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

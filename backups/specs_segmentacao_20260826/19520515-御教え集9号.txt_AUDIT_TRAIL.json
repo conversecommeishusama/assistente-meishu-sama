@@ -1,0 +1,108 @@
+{
+  "filename": "19520515-御教え集9号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 232 linhas / PT ~126 linhas após correções, razão original ~1.8:1 conforme alerta da família 御教え集). JP tem um único bloco === ARTIGO === contendo 10 sessões datadas (4/5, 4/6, 4/7, 4/15, 4/16, 4/17, 4/25, 4/26, 4/27, 4/30); o spec (profile mioshie_shu) agrupa 9 artigos porque a sessão de 4/5 fica dentro do artigo 'preface' e a sessão de 4/30 fica dentro do último artigo '27 de abril' (sem marcador próprio no spec) - isso é escolha de segmentação do spec, não um problema de conteúdo. Todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, sessão de data por sessão de data, conforme alerta de rigor máximo em transições de data.",
+  "pre_existing_context": "Nenhuma correção prévia registrada para este volume antes desta sessão. Alerta do usuário: família 御教え集1-8号 já revisada mostrou monólitos residuais, turnos ausentes, duplicação com cauda mascarando perda, nomes próprios corrompidos, cabeçalhos de data duplicados - confirmado que o mesmo padrão também ocorre no 9号.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessoes_jp": 10,
+    "sessoes_revisadas": 10,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início do ficheiro, antes do título (linha ~21-22 antes da correção)",
+      "problema": "Cabeçalho de data espúrio e duplicado: '6 de abril' aparecia solto ANTES do título 'Mioshie-shū nº 9' e antes de todo o conteúdo de 4 de abril/5 de abril - claro artefacto de cabeçalho de data duplicado (mesma assinatura de bug já confirmada nos irmãos 御教え集1-8号). O '6 de abril' correto (com seu próprio [Mioshie]) já existia mais adiante, no lugar certo.",
+      "correcao": "Removida a linha espúria '6 de abril' antes do título. Nenhum conteúdo foi perdido - era puramente um cabeçalho fantasma sem parágrafo associado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "transição 4/6 -> 4/7 (JP linha 62-69, PT antes da correção ~linha 38-48)",
+      "problema": "GRAVE - monólito residual com duplicação de cauda mascarando a transição: logo após o encerramento correto de 4 de abril ('...então falei. Sabendo disso, muitas outras coisas ficarão mais claras. Vou parar por aqui.'), o cabeçalho '7 de abril' aparecia colado sem quebra, seguido de '[Mioshie]' e o início truncado da sessão de 7 de abril ('Sobre o Templo Messiânico, agora, ao sair, a planta') que parava abruptamente após uma frase incompleta - e então o texto voltava a repetir, quase palavra por palavra, o parágrafo final da sessão de 6 de abril sobre Cristo/Redentor/Perdoador já traduzido linhas antes, antes de finalmente reiniciar '7 de abril' / 'Sete de abril.' / '【Ensinamento】' e prosseguir corretamente com o conteúdo completo do Templo Messiânico (que bate integralmente com o JP a partir daqui). Confirma o padrão #5 do alerta (duplicação de blocos inteiros) e o padrão de monólito residual dos irmãos.",
+      "correcao": "Removido o fragmento truncado ('[Mioshie]' + início cortado do Templo Messiânico) e a repetição duplicada do parágrafo Cristo/Redentor/Perdoador. Mantido um único encerramento limpo de 4 de abril seguido de um único cabeçalho '7 de abril / Sete de abril. / 【Ensinamento】' e o conteúdo completo e correto da sessão de 7 de abril, que já estava presente e íntegro logo depois. Nenhum conteúdo real foi perdido - toda a informação duplicada já estava presente na forma completa mantida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "parágrafo de 4/5 sobre não-adoração e comparação com Cristo/Tenrikyo/Oomoto (JP linhas 38-40, três parágrafos distintos no JP)",
+      "problema": "Paragrafação 1:1 quebrada - três parágrafos JP distintos (sobre a leveza do discurso não impressionar as pessoas; sobre médiuns que alegam falar em nome de Deus; sobre a comparação com Cristo/Tenrikyo/Oomoto e a razão de não adorar) foram fundidos em um único bloco corrido no PT.",
+      "correcao": "Inseridas duas quebras de parágrafo nos pontos correspondentes às três unidades temáticas do JP, sem alterar o texto traduzido.",
+      "confianca": "media-alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "cabeçalho de 4/6 (JP linha 44, transição 4/5 -> 4/6)",
+      "problema": "O cabeçalho '6 de abril' correto estava colado ao final da última frase da sessão de 4/5 ('...então estou explicando. 6 de abril\\n[Mioshie]'), sem quebra de parágrafo, ao contrário do padrão usado nas demais transições de data do mesmo volume.",
+      "correcao": "Inserida quebra de parágrafo antes de '6 de abril', alinhando ao padrão visual das demais transições de data do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "transição 4/17 -> 4/25 (JP linha 165-171, PT antes da correção ~linha 110-123)",
+      "problema": "GRAVE - segunda ocorrência do mesmo padrão de monólito residual/duplicação de cauda: ao final da sessão de 4/17 ('...gostaria que procurassem até junho.'), o cabeçalho '25 de abril' aparecia colado sem espaço, seguido de 'Vinte e cinco de abril. / 【Ensinamento】' e o INÍCIO da sessão de 4/25 (sobre agricultura natural em Sado), mas esse início parava abruptamente no meio de uma frase sobre o Johrei ('Quando a toxina do fertilizante desaparecer'). Em seguida, sem transição, o texto retomava repetindo a frase final já traduzida da sessão de 4/17 ('estou pedindo a Deus. Acho que Deus encontrará a pessoa adequada...'), seguida de um TERCEIRO cabeçalho duplicado '25 de abril' e só então o conteúdo completo e correto da sessão de 4/25 (que bate integralmente com o JP do início ao fim, incluindo a citação '自然農法の勝利' e o encerramento com a viagem a Nara/Quioto).",
+      "correcao": "Removidos: o cabeçalho '25 de abril' colado ao fim de 4/17, a versão truncada/parcial da sessão de 4/25, a repetição espúria da frase final de 4/17, e o cabeçalho duplicado. Mantido um único encerramento de 4/17, seguido de um único par de cabeçalhos '25 de abril / Vinte e cinco de abril. / 【Ensinamento】' e o conteúdo completo e correto de 4/25. Nenhum conteúdo real foi perdido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "dentro da sessão de 4/30, no relato do Yumedono/Kannon Kuse (JP linha 230-231, PT antes da correção ~linha 124-126)",
+      "problema": "GRAVE - terceira ocorrência do mesmo padrão, desta vez sem cabeçalho de data envolvido (dentro da mesma sessão): a frase '...Isso significa que eles terão que trabalhar e realizar várias proezas.' terminava abruptamente com um fragmento cortado ('Sobre isso, a partir de agora, gradualmente, em Quioto') e o parágrafo seguinte reiniciava re-traduzindo, com fraseado ligeiramente diferente mas o mesmo conteúdo, toda a passagem sobre 'esperar o tempo certo' e os budas que aguardam a Igreja Messiânica (já parcialmente coberta pelo parágrafo anterior), antes de finalmente completar a frase original e prosseguir para o assunto seguinte (templos empobrecidos, museu, distribuição de renda).",
+      "correcao": "Removidos o fragmento cortado e a re-tradução duplicada da passagem 'esperar o tempo/budas aguardando'; mantida a frase original completada corretamente ('...então este lado também terá um grande desenvolvimento. Assim, o período tão esperado se aproximou.') seguida diretamente do assunto seguinte, sem perda de conteúdo (a informação duplicada já estava integralmente presente na versão mantida).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "4/5 (JP 24-41)",
+      "decisao": "ok, com 1 correção de paragrafação e 1 de cabeçalho duplicado (itens 1, 3, 4)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/6 -> 4/7 (JP 44-86)",
+      "decisao": "corrigido - monólito residual grave (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/15 (JP 90-110)",
+      "decisao": "ok - conteúdo completo, sem duplicação ou perda",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/16 (JP 114-137)",
+      "decisao": "ok - conteúdo completo, sem duplicação ou perda",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/17 -> 4/25 (JP 141-182)",
+      "decisao": "corrigido - monólito residual grave (item 5)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/26 (JP 186-205)",
+      "decisao": "ok - conteúdo completo, sem duplicação ou perda; parágrafos JP mesclados em blocos maiores no PT mas sem perda de conteúdo (não corrigido - caraterística estilística consistente em todo o volume, não corrupção)",
+      "confianca": "media-alta"
+    },
+    {
+      "sessao": "4/27 (JP 208-220)",
+      "decisao": "ok - conteúdo completo, sem duplicação ou perda",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "4/30 (JP 224-232, palestra no Teatro de Quioto)",
+      "decisao": "corrigido - monólito residual grave dentro da própria sessão (item 6); resto da sessão (visita a Nara, teoria Hakone=5/Atami=6/Quioto=7, tratado de paz/Izunome, Yumedono/Kannon Kuse, templos budistas empobrecidos) conferido linha a linha e completo",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_cjk_residual": "Nenhum ideograma japonês encontrado no corpo traduzido do PT após as correções; os únicos caracteres CJK remanescentes no ficheiro estão no comentário de cabeçalho (nome do ficheiro) e no campo de metadado 'title_jp', ambos esperados e corretos.",
+  "nota_paragrafacao_geral": "O volume inteiro (mesmo antes desta revisão) segue um padrão consistente de mesclar múltiplos parágrafos JP em blocos PT maiores por sessão de data - isso não foi tratado como corrupção e não foi revertido em massa, exceto no ponto pontual do item 3 (mistura de três assuntos distintos). Reformatar exaustivamente toda a paragrafação do volume para 1:1 com o JP não foi feito por não ser uma questão de fidelidade de conteúdo (nenhuma perda encontrada fora dos pontos já listados) e por prudência de custo/escopo - registrado aqui para eventual decisão futura do usuário.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 4 correções de duplicação/truncamento, sem resíduo. approved:true."
+  }
+}

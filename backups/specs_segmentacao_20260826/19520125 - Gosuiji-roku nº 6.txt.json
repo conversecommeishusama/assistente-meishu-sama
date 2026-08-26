@@ -1,0 +1,51 @@
+{
+ "filename": "19520125 - Gosuiji-roku nº 6.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』6号、昭和27(1952)年1月25日発行",
+   "pt_anchor": "Gosuiji-roku nº 6",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［五月一日］",
+   "title_pt": "1 de maio",
+   "jp_anchor": "［五月一日］",
+   "pt_anchor": "[1º de maio]",
+   "notes": "",
+   "pt_prefix": "1 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［六月二日］",
+   "title_pt": "2 de junho",
+   "jp_anchor": "［六月二日］",
+   "pt_anchor": "[2 de junho]",
+   "notes": "",
+   "pt_prefix": "2 de junho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［七月一日］",
+   "title_pt": "1 de julho",
+   "jp_anchor": "［七月一日］",
+   "pt_anchor": "[1º de julho]",
+   "notes": "",
+   "pt_prefix": "1 de julho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

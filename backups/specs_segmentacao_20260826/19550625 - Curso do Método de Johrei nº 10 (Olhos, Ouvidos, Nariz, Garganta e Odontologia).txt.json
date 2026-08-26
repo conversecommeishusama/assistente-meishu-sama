@@ -1,0 +1,366 @@
+{
+ "filename": "19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 85→39. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 85,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Curso do Método de Johrei (10) — (Oftalmologia, Otorrinolaringologia, Odontologia)",
+   "jp_anchor": "浄霊法講座（十）　　　　　（眼・耳・鼻・咽喉・歯科）",
+   "pt_anchor": "Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一、眼　科",
+   "title_pt": "Olhos (Oftalmologia)",
+   "jp_anchor": "一、眼　科",
+   "pt_anchor": "1. Olhos (Oftalmologia)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）目の浄霊に関連して",
+   "title_pt": "Sobre a purificação relacionada aos olhos",
+   "jp_anchor": "（１）目の浄霊に関連して",
+   "pt_anchor": "(1) Sobre a purificação relacionada aos olhos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（２）眼球注射について",
+   "title_pt": "Sobre a injeção intraocular",
+   "jp_anchor": "（２）眼球注射について",
+   "pt_anchor": "(2) Sobre a injeção intraocular",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（３）星眼の原因について",
+   "title_pt": "Sobre a causa do “olho de estrela” (ceratite) (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（３）星眼の原因について",
+   "pt_anchor": "(Mioshie-shū nº 6, p. 64)\n\n(3) Sobre a causa do “olho de estrela” (ceratite) (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（４）薮睨みの霊的、体的な原因",
+   "title_pt": "Causas espirituais e materiais do estrabismo (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（４）薮睨みの霊的、体的な原因",
+   "pt_anchor": "(4) Causas espirituais e materiais do estrabismo (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（５）乱視の原因について",
+   "title_pt": "Sobre a causa do astigmatismo (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（５）乱視の原因について",
+   "pt_anchor": "(5) Sobre a causa do astigmatismo (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（７）眩暈の原因について",
+   "title_pt": "Sobre a causa da tontura (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（７）眩暈の原因について",
+   "pt_anchor": "(7) Sobre a causa da tontura (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（８）目薬を用いて、眼を悪くした人",
+   "title_pt": "Uma pessoa que piorou a visão por usar colírios (Pergunta) (Mioshie-shū nº 2, p. 22)",
+   "jp_anchor": "（８）目薬を用いて、眼を悪くした人",
+   "pt_anchor": "(8) Uma pessoa que piorou a visão por usar colírios (Pergunta) (Mioshie-shū nº 2, p. 22)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（13）白内障（白底翳）の老人",
+   "title_pt": "Um idoso com catarata (úlcera profunda branca) (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（13）白内障（白底翳）の老人",
+   "pt_anchor": "(13) Um idoso com catarata (úlcera profunda branca) (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（17）三歳の頃、底翳になった少年",
+   "title_pt": "Um menino que desenvolveu úlcera profunda aos três anos de idade (Pergunta) (Jornal Hikari nº 20)",
+   "jp_anchor": "（17）三歳の頃、底翳になった少年",
+   "pt_anchor": "(17) Um menino que desenvolveu úlcera profunda aos três anos de idade (Pergunta) (Jornal Hikari nº 20)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（20）メチールによる失明の原因",
+   "title_pt": "Causa da cegueira por metanol",
+   "jp_anchor": "（20）メチールによる失明の原因",
+   "pt_anchor": "(20) Causa da cegueira por metanol",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（22）脳膜炎のあと失明した幼児",
+   "title_pt": "Uma criança que ficou cega após meningite",
+   "jp_anchor": "（22）脳膜炎のあと失明した幼児",
+   "pt_anchor": "(22) Uma criança que ficou cega após meningite",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（23）種痘後失明した幼児",
+   "title_pt": "Uma criança que ficou cega após a vacinação",
+   "jp_anchor": "（23）種痘後失明した幼児",
+   "pt_anchor": "(23) Uma criança que ficou cega após a vacinação",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（32）眼のまわりが黒くなる婦人",
+   "title_pt": "Mulher com escurecimento ao redor dos olhos",
+   "jp_anchor": "（32）眼のまわりが黒くなる婦人",
+   "pt_anchor": "(32) Mulher com escurecimento ao redor dos olhos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（37）逆睫の原因",
+   "title_pt": "Causa dos cílios invertidos",
+   "jp_anchor": "（37）逆睫の原因",
+   "pt_anchor": "(37) Causa dos cílios invertidos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（38）一重瞼と二重瞼に就いて",
+   "title_pt": "Sobre pálpebra simples e pálpebra dupla",
+   "jp_anchor": "（38）一重瞼と二重瞼に就いて",
+   "pt_anchor": "(38) Sobre pálpebra simples e pálpebra dupla",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二、耳　科",
+   "title_pt": "Orelha (Otorrinolaringologia)",
+   "jp_anchor": "二、耳　科",
+   "pt_anchor": "2. Orelha (Otorrinolaringologia)",
+   "notes": "pt_anchor/title_pt reconstruidos 2026-07-15 (spec contaminada com template observado 観音講座); ratio PT/JP=6.40",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）耳鳴及び耳の聞えの悪い原因",
+   "title_pt": "Causa do zumbido e da dificuldade de ouvir",
+   "jp_anchor": "（１）耳鳴及び耳の聞えの悪い原因",
+   "pt_anchor": "(1) Causa do zumbido e da dificuldade de ouvir",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（２）中耳炎後、両耳聞えなくなった娘",
+   "title_pt": "Moça que ficou surda de ambos os ouvidos após otite média",
+   "jp_anchor": "（２）中耳炎後、両耳聞えなくなった娘",
+   "pt_anchor": "(2) Moça que ficou surda de ambos os ouvidos após otite média",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三、鼻　科",
+   "title_pt": "Nariz (Otorrinolaringologia)",
+   "jp_anchor": "三、鼻　科",
+   "pt_anchor": "3. Nariz (Otorrinolaringologia)",
+   "notes": "pt_anchor/title_pt reconstruidos 2026-07-15 (spec contaminada com template observado 観音講座); ratio PT/JP=6.20",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）鼻の悪い人の浄霊個所",
+   "title_pt": "Local de Johrei para pessoas com problemas no nariz",
+   "jp_anchor": "（１）鼻の悪い人の浄霊個所",
+   "pt_anchor": "(1) Local de Johrei para pessoas com problemas no nariz",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（５）鼻血が一升から二升も出る",
+   "title_pt": "Sangramento nasal de um a dois litros",
+   "jp_anchor": "（５）鼻血が一升から二升も出る",
+   "pt_anchor": "(5) Sangramento nasal de um a dois litros",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（８）鼾が大きい人",
+   "title_pt": "Pessoa que ronca alto",
+   "jp_anchor": "（８）鼾が大きい人",
+   "pt_anchor": "(8) Pessoa que ronca alto",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四、咽　喉　科",
+   "title_pt": "Garganta (Otorrinolaringologia)",
+   "jp_anchor": "四、咽　喉　科",
+   "pt_anchor": "4. Garganta (Otorrinolaringologia)",
+   "notes": "pt_anchor/title_pt reconstruidos 2026-07-15 (spec contaminada com template observado 観音講座); ratio PT/JP=4.86",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）咽喉の悪い点で心得て置くべき事",
+   "title_pt": "Coisas que se deve saber sobre problemas na garganta",
+   "jp_anchor": "（１）咽喉の悪い点で心得て置くべき事",
+   "pt_anchor": "(1) Coisas que se devem saber sobre problemas na garganta",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（７）医師に咽喉癌と言われた老人",
+   "title_pt": "Idoso a quem o médico disse ter câncer de garganta",
+   "jp_anchor": "（７）医師に咽喉癌と言われた老人",
+   "pt_anchor": "(7) Idoso a quem o médico disse ter câncer de garganta",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（８）咽喉が圧迫され、物忘れ勝ちの人",
+   "title_pt": "Pessoa com pressão na garganta e propensa a esquecimento",
+   "jp_anchor": "（８）咽喉が圧迫され、物忘れ勝ちの人",
+   "pt_anchor": "(8) Pessoa com pressão na garganta e propensa a esquecimento",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（９）生まれつき口が利けない赤児",
+   "title_pt": "Bebê que não fala desde o nascimento",
+   "jp_anchor": "（９）生まれつき口が利けない赤児",
+   "pt_anchor": "(9) Bebê que não fala desde o nascimento",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（11）喀血後に発声不能となった人",
+   "title_pt": "Pessoa que ficou incapaz de falar após hemoptise",
+   "jp_anchor": "（11）喀血後に発声不能となった人",
+   "pt_anchor": "(11) Pessoa que ficou incapaz de falar após hemoptise",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（12）サ行の発音が出来ない子供",
+   "title_pt": "Criança que não consegue pronunciar o som da linha \"sa\"",
+   "jp_anchor": "（12）サ行の発音が出来ない子供",
+   "pt_anchor": "(12) Criança que não consegue pronunciar o som da linha \"sa\"",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五、　歯　　　科",
+   "title_pt": "Odontologia",
+   "jp_anchor": "五、　歯　　　科",
+   "pt_anchor": "5. Odontologia\n\n(1) Sobre o Johrei nos dentes",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）歯の浄霊について",
+   "title_pt": "Sobre o Johrei nos dentes",
+   "jp_anchor": "（１）歯の浄霊について",
+   "pt_anchor": "(1) Sobre o Johrei nos dentes",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（２）歯の治療について",
+   "title_pt": "Sobre o tratamento dentário",
+   "jp_anchor": "（２）歯の治療について",
+   "pt_anchor": "(2) Sobre o tratamento dentário",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（４）歯の薬毒は後頭部に固まる",
+   "title_pt": "A toxina medicamentosa dos dentes se solidifica na nuca",
+   "jp_anchor": "（４）歯の薬毒は後頭部に固まる",
+   "pt_anchor": "(4) A toxina medicamentosa dos dentes se solidifica na nuca",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（６）歯の激痛が去らない婦人",
+   "title_pt": "Uma mulher cuja dor de dente intensa não passava (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（６）歯の激痛が去らない婦人",
+   "pt_anchor": "(6) Uma mulher cuja dor de dente intensa não passava (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（８）八重歯について",
+   "title_pt": "Sobre dentes duplos (caninos) (Pergunta) (Tijotengoku nº 7, pág. 13)",
+   "jp_anchor": "（８）八重歯について",
+   "pt_anchor": "(8) Sobre dentes duplos (caninos) (Pergunta) (Tijotengoku nº 7, pág. 13)\n\nQuando",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（12）歯石について",
+   "title_pt": "Sobre o tártaro (Pergunta) (Tijotengoku nº 10, pág. 14)",
+   "jp_anchor": "（12）歯石について",
+   "pt_anchor": "(Mioshie-shū nº 24, pág. 66)\n\n(12) Sobre o tártaro (Pergunta) (Tijotengoku nº 10, pág. 14)\n\nHá pessoas",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（13）歯を磨くには",
+   "title_pt": "Sobre escovar os dentes (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（13）歯を磨くには",
+   "pt_anchor": "(13) Sobre escovar os dentes (Pergunta) (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  }
+ ],
+ "audited_at": "2026-07-18T01:21:04Z",
+ "audit_method": "jp_first_content_pair"
+}

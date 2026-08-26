@@ -1,0 +1,427 @@
+{
+  "ficheiro": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+  "metodo": "Leitura linha a linha do JP inteiro (654 linhas) confrontado com o PT inteiro (768 linhas após correções), do início ao fim, conforme .cursor/rules/revisao-paralela-jp-pt.mdc. Não se apoiou em amostragem nem só no diff ATUAL×RUN1 pré-existente (que já havia classificado o livro como 'limpo' — essa auditoria leve NÃO foi aceita como suficiente, exatamente pelo ponto cego descrito na regra). Unidade de trecho usada: cada bloco estrutural do livro (prefácio, cada subsecção do ensaio do Dr. Okada Michikazu, cada secção do ensaio de Okada Jikan, cada um dos 34 testemunhos pessoais), já que este livro não é um diálogo Interlocutor/Meishu-Sama turno a turno (como Gokōwa) e sim uma colectânea de textos autorais e testemunhos em primeira pessoa — a granularidade turno-a-turno não se aplica; a granularidade adequada é parágrafo dentro de cada bloco, que foi o nível efectivamente comparado.",
+  "audited_at": "2026-07-06",
+  "sumario": {
+    "blocos_revistos": 46,
+    "detalhe": "1 prefácio + 4 subsecções (I–IV) do ensaio do Dr. Okada Michikazu + 7 secções do ensaio 'A Tuberculose Tem Cura' de Okada Jikan + 34 testemunhos pessoais",
+    "correcoes_aplicadas": 15,
+    "itens_escalados_pendencias": 0,
+    "achado_estrutural_no_spec_nao_corrigido_aqui": "4 entradas do spec (índices 15, 19, 20, 38) são artefactos de segmentação: a primeira linha do corpo de um testemunho foi tratada como 'título' de uma secção nova, duplicando artificialmente 3 testemunhos reais (o de 'Doença Pulmonar Considerada Incurável é Curada' virou 2 entradas; o de 'Coqueluche' virou 3; o de 'Salvo da Tuberculose Pulmonar' virou 2). Confirmado por leitura directa: são o MESMO testemunho contínuo no JP, sem quebra real. Total real de testemunhos = 34, não 37. Não corrigido nesta sessão (é um problema do spec/pareamento, não do texto PT em si, e pt_anchor já estava marcado 'pendente' no editor_notes desde 2026-07-03 para o spec inteiro) — deixado para a fase dedicada de uniformização/pareamento already prevista no plano do usuário."
+  },
+  "blocos": [
+    {
+      "bloco": "Prefácio (序文)",
+      "jp_lines": "20-29",
+      "quem_fala": "Autor (Okada Mokichi/Jikan, não assinado ainda)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Conteúdo integral e fiel. Cabeçalho de secção '序文' não tinha equivalente em PT — inserido 'Prefácio'."
+    },
+    {
+      "bloco": "Título + assinatura Dr. Okada Michikazu",
+      "jp_lines": "33-34",
+      "quem_fala": "Dr. Okada Michikazu (médico, não o fundador)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Título e autoria correctos, distintos do autor principal do livro."
+    },
+    {
+      "bloco": "(I) Introdução",
+      "jp_lines": "36-41",
+      "quem_fala": "Dr. Okada Michikazu",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "4 parágrafos, todos presentes e fiéis. CJK residual '感应 (reagir/sentir)' no último parágrafo — corrigido para 'reagir'."
+    },
+    {
+      "bloco": "(II) O que é a Energia Vital",
+      "jp_lines": "43-48",
+      "quem_fala": "Dr. Okada Michikazu",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "4 parágrafos presentes e fiéis, mas o cabeçalho '(二)生気とは何ぞや' estava totalmente ausente em PT (o texto saltava do fim da secção I direto para o corpo da secção II sem título) — inserido '(II) O que é a Energia Vital?'. Segundo CJK residual '感应 (reação)' no 3º parágrafo — corrigido para 'reação'."
+    },
+    {
+      "bloco": "(III) A Transformação da Energia Vital na Medicina",
+      "jp_lines": "50-59",
+      "quem_fala": "Dr. Okada Michikazu",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "8 parágrafos, todos presentes, ordem e conteúdo correctos (história de Hipócrates, Galeno/Vesálio, Descartes, etc.)."
+    },
+    {
+      "bloco": "(IV) Aplicar a Energia Vital ao Corpo Humano",
+      "jp_lines": "61-65",
+      "quem_fala": "Dr. Okada Michikazu",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "3 parágrafos, íntegros, incluindo a analogia com Fudō Myōō."
+    },
+    {
+      "bloco": "Título 'A Tuberculose Tem Cura' + autoria",
+      "jp_lines": "69-70",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Muda de autor (Okada Jikan = Meishu-Sama) — correctamente distinguido do Dr. Okada Michikazu acima."
+    },
+    {
+      "bloco": "Resfriado",
+      "jp_lines": "72-80",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "6 parágrafos, todos os números/sintomas preservados (lista completa de sintomas em ordem)."
+    },
+    {
+      "bloco": "Resfriado e Pneumonia",
+      "jp_lines": "83-87",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "3 parágrafos, íntegros."
+    },
+    {
+      "bloco": "A Causa da Tuberculose",
+      "jp_lines": "90-100",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "9 parágrafos. Verificado com atenção o parágrafo sobre autoexperimentação com os 6 filhos e Pasteur — íntegro e correcto."
+    },
+    {
+      "bloco": "Conclusão",
+      "jp_lines": "103-111",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "7 parágrafos, incluindo taxa de cura de 80% e a analogia dos pacifistas na guerra — íntegros."
+    },
+    {
+      "bloco": "Tuberculose e a Ciência Espiritual",
+      "jp_lines": "114-131",
+      "quem_fala": "Okada Jikan",
+      "decisao": "ok",
+      "confianca": "media-alta",
+      "nota": "16 parágrafos, íntegros e fiéis, incluindo números de ampliação de microscópio (3.000-20.000x, 100.000x) e o idiomatismo '角を矯めて牛を殺す' (endireitar os chifres e matar o boi), ambos preservados correctamente. Um trecho ('千里の先に進んでいる' → 'milhares de anos-luz à frente') é uma liberdade de tradução mais forte que o literal ('mil ri à frente') mas preserva o sentido pretendido (muito à frente); não corrigido por ser uma escolha estilística defensável, não um erro de sentido."
+    },
+    {
+      "bloco": "Título 'Exemplos Reais de Cura da Tuberculose'",
+      "jp_lines": "135",
+      "quem_fala": "-",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Título de secção correcto."
+    },
+    {
+      "bloco": "T1 — Doença Pulmonar Considerada Incurável é Curada",
+      "jp_lines": "138-146",
+      "quem_fala": "Hataze Sazo (48)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Fragmento truncado/duplicado 'Eu, da cidade de Fukuoka...' seguido de novo parágrafo recomeçando a mesma frase — fundido numa frase só e completa."
+    },
+    {
+      "bloco": "T2 — Se eu não conhecesse o Hikari",
+      "jp_lines": "150-160",
+      "quem_fala": "Hatano Sugiko (33)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Integro, sem achados."
+    },
+    {
+      "bloco": "T3 — O Poder Grandioso",
+      "jp_lines": "164-179",
+      "quem_fala": "Murakami Sumiko (27)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Datas, nomes (Ozaki, Kotani) e números (42 graus, 38 graus) todos conferidos e correctos."
+    },
+    {
+      "bloco": "T4 — Coqueluche / Salvo de pneumonia aguda",
+      "jp_lines": "183-196",
+      "quem_fala": "Yanase Seiitsu (34)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Testemunho único e contínuo no JP apesar de o spec o ter fatiado em 3 entradas (ver achado estrutural no sumário); poema interno preservado correctamente."
+    },
+    {
+      "bloco": "T5 — Uma morte serena como adormecer abraçado ao poder de Kannon",
+      "jp_lines": "200-214",
+      "quem_fala": "Tomita Hisako (30)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Todas as datas (10, 24, 25 dez; véspera de Ano Novo; 3, 4, 5, 6 jan) conferidas e correctas. Termo '善言讃詞' romanizado incorrectamente como 'Zen-gen San-shi' (3 ocorrências) — corrigido para a forma canónica do glossário 'Zengen-Sanji'."
+    },
+    {
+      "bloco": "T6 — Do Labirinto para a Luz",
+      "jp_lines": "218-233",
+      "quem_fala": "Ota Kazuko (24)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Íntegro."
+    },
+    {
+      "bloco": "T7 — A Pleurisia Cura",
+      "jp_lines": "237-246",
+      "quem_fala": "Maruko Taniyao (38)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Confirmado que 'Sr. Shintaro' e 'Shintaro Masukawa' referem a mesma pessoa (uso japonês de sobrenome depois nome próprio) — não é erro."
+    },
+    {
+      "bloco": "T8 — A Grande Bênção",
+      "jp_lines": "250-259",
+      "quem_fala": "Nakao (27)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Apelido 中尾 (leitura inequívoca 'Nakao') estava romanizado como 'Onaka' — corrigido. Também normalizado 'Komyo-Nyorai' (ver nota de terminologia)."
+    },
+    {
+      "bloco": "T9 — A Alegria de Voltar à Vida",
+      "jp_lines": "263-271",
+      "quem_fala": "Kono Tsuyuko (37)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Número '35 sacos por hora' conferido contra '一時間に三十五俵'."
+    },
+    {
+      "bloco": "T10 — Cura Completa em Meio à Dúvida",
+      "jp_lines": "275-282",
+      "quem_fala": "Hamada Tokizo (43)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Só a normalização de 'Komyo-Nyorai' (ver nota de terminologia)."
+    },
+    {
+      "bloco": "T11 — Pensando na Morte Várias Vezes",
+      "jp_lines": "286-296",
+      "quem_fala": "Fujie Iwakiri (28)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Só a normalização de 'Komyo-Nyorai'."
+    },
+    {
+      "bloco": "T12 — Um Passado Terrível",
+      "jp_lines": "300-309",
+      "quem_fala": "Kohei Sakashita (24)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Conversão de unidades conferida: 五寸≈15cm, 三寸≈9cm, ambas correctas."
+    },
+    {
+      "bloco": "T13 — Minha Alegria",
+      "jp_lines": "313-325",
+      "quem_fala": "Matsumoto Noboru (19)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Nomes Fusasaki Keisei e Iwata Yukie conferidos; testemunho liga-se correctamente ao T18 (o próprio Fusasaki Keisei)."
+    },
+    {
+      "bloco": "T14 — Superando a Linha da Morte",
+      "jp_lines": "329-338",
+      "quem_fala": "Matsumoto Kimiko",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "'菜種の花咲く頃' (época das flores de colza) traduzido correctamente."
+    },
+    {
+      "bloco": "T15 — A Alegria de Ser Salva de Três Anos no Leito de Doença",
+      "jp_lines": "342-349",
+      "quem_fala": "Ito Fusako (24)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Só a normalização de 'Komyo-Nyorai'."
+    },
+    {
+      "bloco": "T16 — Até que Toda a Família Fosse Salva",
+      "jp_lines": "353-362",
+      "quem_fala": "Usami Masae (20)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Nomes Hata, Watanabe, Mizutani conferidos."
+    },
+    {
+      "bloco": "T17 — A Grande Luz",
+      "jp_lines": "366-378",
+      "quem_fala": "Kako Karokuro (52)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Só a normalização de 'Komyo-Nyorai'."
+    },
+    {
+      "bloco": "T18 — Minha Experiência",
+      "jp_lines": "382-395",
+      "quem_fala": "Fusasaki Keisei (22)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Liga-se correctamente ao T13; nome da senhora Sandai conferido."
+    },
+    {
+      "bloco": "T19 — Sonhos e Sofrimentos Desfeitos",
+      "jp_lines": "399-409",
+      "quem_fala": "Fukazawa Suzuko (20)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Nome próprio 鈴子 lê-se inequivocamente 'Suzuko', não 'Reiko' (que seria escrito com outros kanji, ex. 玲子/礼子/麗子) — corrigido."
+    },
+    {
+      "bloco": "T20 — A Infiltração Pulmonar é Curada",
+      "jp_lines": "413-424",
+      "quem_fala": "Kōichi Hashima (23)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Nomes Koseki, Fukase conferidos."
+    },
+    {
+      "bloco": "T21 — Salvo da Tuberculose Pulmonar",
+      "jp_lines": "428-439",
+      "quem_fala": "Akiyoshi Kōno (28)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Endereço 'Daizaicho, Oita-gun' omitia o distrito real (北海郡=Hokkai-gun, não Ōita-gun) e o endereço 大字竹下 (Ōaza Takeshita), e romanizava 大在町 como 'Daizaicho' em vez de 'Oozai-cho' (forma usada nos T13/T18 para o mesmo topónimo) — corrigido para 'Ōaza Takeshita, Oozai-cho, Distrito de Hokkai, Província de Oita'."
+    },
+    {
+      "bloco": "T22 — Salvo da Tuberculose Aberta",
+      "jp_lines": "443-459",
+      "quem_fala": "Yamamoto Yoshio",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Conferido: unidade '一銭銅貨大' (moeda de um sen) e '約五合...約一丁' (gō, chō) preservados como no original, sem conversão — consistente com o estilo do resto do livro."
+    },
+    {
+      "bloco": "T23 — O Morto Chora de Emoção",
+      "jp_lines": "463-472",
+      "quem_fala": "Wakasa Keiko (38)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Fragmento truncado 'mas meu marido...' seguido de novo parágrafo recomeçando com sujeito implícito diferente — fundido numa frase coerente."
+    },
+    {
+      "bloco": "T24 — Para a Margem da Luz",
+      "jp_lines": "476-489",
+      "quem_fala": "Okada Manjiro (29)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Nomes das associações (Seiwa-kai, Jitsugetsu-kai, Meiseikai) e poema conferidos."
+    },
+    {
+      "bloco": "T25 — A Alegria da Luz na Família",
+      "jp_lines": "493-501",
+      "quem_fala": "Mishima Hamayo (34)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Idades '17 aos 31 anos' e poema conferidos."
+    },
+    {
+      "bloco": "T26 — Recordação da Sentença de Morte",
+      "jp_lines": "505-517",
+      "quem_fala": "Higuchi Yoko (25)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Citação directa do segundo médico ('一言で全身結核と称し...') tinha sido cortada a meio por uma quebra de parágrafo, reabrindo aspas e mudando de discurso directo para indirecto a meio da frase — reconstruída como citação única e coerente."
+    },
+    {
+      "bloco": "T27 — Salva da Tuberculose Pulmonar (Ishizu)",
+      "jp_lines": "520-529",
+      "quem_fala": "Ishizu Katsuno (28)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Íntegro."
+    },
+    {
+      "bloco": "T28 — A Alegria de Ter um Corpo que Pode Trabalhar",
+      "jp_lines": "533-543",
+      "quem_fala": "Gotō Matae (25)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Nome 房前圭正 (mesma pessoa dos T13/T18) romanizado incorrectamente como 'Fusae Keishō' — corrigido para 'Fusasaki Keisei', consistente com as outras duas ocorrências."
+    },
+    {
+      "bloco": "T29 — Salva da Solidão da Doença",
+      "jp_lines": "547-554",
+      "quem_fala": "Horie Matsu (36)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Mestre Taki conferido (aparece também no T30)."
+    },
+    {
+      "bloco": "T30 — Cura de Infiltração Pulmonar (2)",
+      "jp_lines": "558-566",
+      "quem_fala": "Horie Yoneko (30)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Mestre Taira (Kosakai) e mestre Taki (Nagoya) conferidos."
+    },
+    {
+      "bloco": "T31 — Salva da Escuridão da Tuberculose Pulmonar",
+      "jp_lines": "569-583",
+      "quem_fala": "Arakawa Masatomo (21)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Fragmento truncado 'Meu pai também...' — fundido com a frase seguinte, preservando a ligação causal (pai morreu de doença pulmonar → família temia contágio). Nome da professora 近澤ぬい (Chikazawa Nui) estava garbled como 'Nuizawa Chikazawa' numa ocorrência (a segunda ocorrência, mais adiante no mesmo testemunho, já estava correcta como 'Chikazawa') — corrigido para consistência interna."
+    },
+    {
+      "bloco": "T32 — Salvo de Três Anos de Vida de Tratamento",
+      "jp_lines": "587-604",
+      "quem_fala": "Gotō Akira (28)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "nota": "Nomes N, Fukase/管長 conferidos; número 'mais de cem mil' fiéis a '十数万'."
+    },
+    {
+      "bloco": "T33 — Na Mão Salvadora de Kannon",
+      "jp_lines": "608-617",
+      "quem_fala": "Harada Tamotsu",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Fim deste testemunho estava fundido sem quebra de parágrafo com o título e morada do testemunho seguinte (T34) — separado com '---' e quebras de linha adequadas."
+    },
+    {
+      "bloco": "T34 — A proteção divina absoluta que transcende a vida e a morte",
+      "jp_lines": "621-632",
+      "quem_fala": "Sakashita Koto (48)",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Início deste testemunho (título + morada + nome+idade) estava fundido com o corpo do testemunho anterior (ver T33) e também fundido internamente (nome+idade colado ao início do corpo sem quebra) — separado. Conteúdo em si sempre esteve completo e fiel (episódio da agricultora falecida, citação '天国八衢地獄' preservada como 'Paraíso, Yachimata ou Inferno')."
+    },
+    {
+      "bloco": "Colofão final",
+      "jp_lines": "639-654",
+      "quem_fala": "-",
+      "decisao": "corrigido",
+      "confianca": "alta",
+      "nota": "Colofão estava fundido ao fim do T34 sem separação — separado com '---'. Cabeçalho 'Texto de apresentação do jornal Eikō' estava fundido ao corpo do anúncio — separado com quebra de linha."
+    }
+  ],
+  "terminologia_normalizada": [
+    {
+      "termo_jp": "光明如来様",
+      "formas_encontradas": [
+        "Kōmyō Nyorai",
+        "Komyo-Nyorai Radiante",
+        "Komyo-Nyorai-sama"
+      ],
+      "forma_final": "Komyo-Nyorai",
+      "justificativa": "glossario_traducao.json define explicitamente 光明如来/光明如来様 → 'Komyo-Nyorai' (sem macron, sem sufixo -sama, diferente do tratamento dado a 観音様→'Kannon-Sama' que mantém o honorífico) — normalizado às 8 ocorrências em todo o livro."
+    },
+    {
+      "termo_jp": "善言讃詞",
+      "formas_encontradas": [
+        "Zen-gen San-shi"
+      ],
+      "forma_final": "Zengen-Sanji",
+      "justificativa": "glossario_traducao.json define 善言讃詞 → 'Oração Zengen-Sanji'; forma com hífens/espaço diferente corrigida nas 3 ocorrências (único testemunho onde o termo aparece neste livro)."
+    }
+  ],
+  "gate_mecanico": "Não corrido nesta sessão um gate automático dedicado a este livro (não existe um gate_*.py específico para Jikan Sosho equivalente ao gate_gokowa_linha.py); a verificação de ausência de CJK residual e de reticências suspeitas foi feita manualmente por grep após as correcções (ver relatório) e confirmada limpa.",
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. Termo 'Zengen-Sanji' já na forma correta (sem 'd') — consistente com a decisão do usuário registrada em PENDENCIAS_REVISAO.json (item Gokōwa 2026-07-06), embora INCONSISTENTE com glossario_traducao.json atual (que ainda diz 'Sandji') — ver nota geral abaixo. Achado estrutural pré-existente não corrigido nesta sessão (4 entradas do spec são artefactos de segmentação que duplicam 3 testemunhos reais) permanece documentado na trilha original, fora do escopo desta camada suplementar. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

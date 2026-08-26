@@ -1,0 +1,156 @@
+{
+  "filename": "19520115-御教え集5号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 484 linhas / PT ~213 linhas após correções, bloco único === ARTIGO === contendo 10 trechos por data conforme spec 'mioshie_shu'). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, trecho a trecho, para as 10 datas (1, 6, 8, 11, 15, 18, 21, 23, 25, 28 de dezembro de 1951).",
+  "alerta_familia": "Livro da família 御教え集/御垂示録, já com padrão de bug conhecido nesta sessão (monólitos com conteúdo exclusivo + cauda duplicada, trechos nunca traduzidos, cabeçalhos corrompidos). Este volume apresentou uma variante nova e sistemática do mesmo bug de fundo: duplicação de blocos inteiros por sobreposição de duas passagens de tradução, não limitada a um único ponto do arquivo mas repetida em pelo menos 6 pontos distintos, do prefácio ao encerramento.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0, ver gokowa-gate-enforcement.mdc) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: o padrão de bug encontrado aqui (duplicação de bloco com P&R/citação repetidas) é exatamente o tipo de erro que pode preservar Δ=0 por coincidência (ver achado nº5 do histórico Gokōwa) — reforça que o gate mecânico sozinho não teria pego isto.",
+  "summary": {
+    "trechos_no_spec": 10,
+    "trechos_revisados": 10,
+    "correcoes_reais_aplicadas": 8,
+    "items_escalados_para_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Prefácio (cabeçalho do livro, antes do trecho '1 de dezembro')",
+      "problema": "Título e subtítulo do livro (Mioshie-shū nº 5 / Coletanea de Ensinamentos, publicado em 15/1/1952) traduzidos duas vezes e cabeçalho de data '十二月一日' também duplicado: uma ocorrência prematura ('1 de dezembro') inserida antes até do título, e uma segunda ocorrência colada ilegivelmente ao final de uma repetição do título/subtítulo ('Mioshie-shū nº 5, publicado em 15 de janeiro de 1952 Primeiro de dezembro').",
+      "correcao": "Removida a inserção prematura do cabeçalho de data; consolidado o título+subtítulo em uma única ocorrência; mantido apenas '1 de dezembro' como cabeçalho de data, na posição correta, imediatamente antes do primeiro Q&A.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Trecho '6 de dezembro' — testemunho do pai com possessão espiritual (神取... não, caso do pai que retirou o Omamori)",
+      "problema": "GRAVE — perda real de conteúdo (não duplicação): entre 'retiramos o Omamori. Em dezembro de 1949, ele teve' e 'É uma conversão apenas de fachada' faltava todo o resto da pergunta (novo episódio de possessão com pregação violenta, febre e possessão alternadas, incêndio da imagem de Kannon do biombo, culto a Fudo Myoo acima do Mestre Kobo, remoção atual dos Omamori) e a abertura da resposta ('Vocês retiraram o Omamori — isso não tem jeito. Então, vocês não se converteram de verdade.'). Sinal visível: transição gramatical quebrada com espaço duplo ('ele teve  É uma conversão').",
+      "correcao": "Traduzido do JP e inserido o trecho que faltava, mantendo terminologia já usada no resto do arquivo (Omamori, Komyo-Nyorai, Kannon do biombo, Fudo Myoo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Trecho '8 de dezembro' — testemunho sobre a filha Chizuko/irmãos mortos de forma violenta",
+      "problema": "P&R inteira duplicada: a resposta do Mestre aparecia truncada uma primeira vez (cortada no meio da frase, sem ponto final: '...como acabei de dizer'), seguida de uma repetição da cauda da pergunta — mas com o nome da filha corrompido de 'Chizuko' para 'Tsuruko' — e então a resposta completa de novo, agora terminando corretamente.",
+      "correcao": "Removida a primeira resposta incompleta e a repetição truncada/corrompida da pergunta; mantida apenas a versão completa e correta (com o nome 'Chizuko', consistente com o resto do parágrafo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Trecho '11 de dezembro' — 【御教え】 sobre corrupção de funcionários públicos e debate de rádio (Okazaki/Abe Shinnosuke/Rōyama Seidō)",
+      "problema": "Todo o parágrafo (exemplo do doente vítima da medicina + debate de rádio sobre corrupção) traduzido duas vezes seguidas; a primeira versão cortava no meio do debate ('...já foi feito inúmeras vezes até agora.' sem continuação), a segunda repetia tudo desde o início e ia até o fim, incluindo a citação final '(Artigo A Religião que Mostra Deus)'.",
+      "correcao": "Removida a primeira versão truncada; mantida a versão completa.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Trecho '18 de dezembro' — 【御教え】 sobre o livro de tuberculose e o ensaio sobre Picasso",
+      "problema": "O mesmo trecho (anúncio do livro 'Terapia pela Fé na Tuberculose' + citações + início da análise sobre Picasso) foi traduzido em duas passagens sobrepostas com frases quase idênticas reformuladas ('Foi bastante ousado...' / 'É bastante ousado...'; título do livro ora 'A Cura pela Fé' ora 'Terapia pela Fé'), e a primeira passagem cortava a frase sobre Picasso no meio ('...ou algo assim — e'), pulando direto para uma repetição do anúncio do livro já dado antes.",
+      "correcao": "Removidas as frases duplicadas/incompletas; mantida a versão que continua de forma coerente e completa até o fim da análise sobre Picasso (dança, jazz, arte oriental x ocidental).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Trecho '23 de dezembro' — 【御教え】 de aniversário, descrição dos museus visitados (Kamakura, Nagao)",
+      "problema": "Descrição dos museus de Kamakura e Nagao traduzida duas vezes; a primeira versão cortava no meio de uma frase ('...venha vê-las\". Depois, Tóquio') sem completar a introdução ao Museu Nezu, a segunda repetia Kamakura+Nagao e só então continuava com Nezu/Okura/Tóquio/Kyoto/Osaka/Hyogo.",
+      "correcao": "Mantida a introdução única ('este ano também visitei os principais museus...') seguida diretamente da versão completa (Kamakura → Nagao → Nezu → Okura → demais museus), sem repetição.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "Trecho '28 de dezembro' — 【御教え】 sobre a coleção de arte, escola Korin e ukiyo-e",
+      "problema": "Passagem sobre a escola Korin e as pinturas ukiyo-e traduzida duas vezes seguidas quase palavra por palavra; a segunda ocorrência era necessária porque só ela continuava com o conteúdo novo sobre a era Higashiyama, Sesshū, Sōami/Geiami/Nōami, Seihō, Hayami Gyoshū, Taikan/Shunsō/Gyokudō (que não aparecia em nenhum outro lugar).",
+      "correcao": "Removida a repetição da passagem Korin/ukiyo-e, preservando a continuação inédita sobre a era Higashiyama em diante.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "Trecho '28 de dezembro' — 【御教え】 final, parágrafo sobre a produção de arroz",
+      "problema": "Frase truncada no meio ('...não importa o quanto a população japonesa aumente, a quantidade nece Mesmo que a humanidade aumente...'), perdendo algumas palavras sobre a garantia da colheita.",
+      "correcao": "Completada a frase a partir do JP: '...essa quantidade será sempre colhida. Mesmo que a humanidade aumente...'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_trecho": [
+    {
+      "trecho": "Prefácio + 1 de dezembro",
+      "decisao": "corrigido (achado nº1) + ok no restante",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "6 de dezembro",
+      "decisao": "corrigido (achado nº2, perda de conteúdo grave)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "8 de dezembro",
+      "decisao": "corrigido (achado nº3, duplicação com corrupção de nome próprio)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "11 de dezembro",
+      "decisao": "corrigido (achado nº4)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "15 de dezembro",
+      "decisao": "ok, sem duplicação nem perda encontrada",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "18 de dezembro",
+      "decisao": "corrigido (achado nº5)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "21 de dezembro",
+      "decisao": "ok, sem duplicação nem perda encontrada",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "23 de dezembro",
+      "decisao": "corrigido (achado nº6)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "25 de dezembro",
+      "decisao": "ok, sem duplicação nem perda encontrada",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "28 de dezembro",
+      "decisao": "corrigido (achados nº7 e nº8)",
+      "confianca": "alta"
+    }
+  ],
+  "achados_menores_nao_corrigidos": [
+    {
+      "descricao": "Convenção de rótulo de pergunta/resposta inconsistente ao longo do arquivo: alterna entre '(Pergunta).../[Orientação Divina]' (predominante do início até ~metade do trecho '8 de dezembro') e '(Consulta).../[Divina Instrução]' (predominante daí em diante, com recaídas ocasionais para '[Orientação Divina]' mesmo depois, ex. trechos de 25 e 28 de dezembro). Ambas as formas são traduções literais aceitáveis de 御垂示/お伺い, mas a alternância não segue um critério claro — provável artefato do mesmo processo de mesclagem de duas passagens de tradução que causou as duplicações. Não normalizado nesta revisão por ser uma decisão de estilo/glossário, não um erro de conteúdo, e por o volume de ocorrências tornar a substituição em massa arriscada sem revisão adicional.",
+      "severidade": "baixa"
+    },
+    {
+      "descricao": "Cabeçalhos de data por vezes colados ao final do parágrafo anterior sem quebra de linha própria (ex. '...acabo me empolgando. 6 de dezembro', '...até o verão do ano que vem.21 de dezembro', '...algo tão absurdo. 18 de dezembro', '...mudarão gradualmente. 28 de dezembro'). É um padrão estrutural pré-existente no arquivo (não introduzido nesta revisão), presente em praticamente toda transição de data. Não corrigido por ser uma questão de formatação/chunking estrutural (spec já usa esses cabeçalhos como pt_prefix/pt_anchor), fora do escopo desta leitura semântica linha a linha.",
+      "severidade": "baixa"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 8 correções, sem resíduo de duplicação. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para família 御教え集/御垂示録 (marcadores （お伺）/〔御垂示〕 em vez de ――)",
+    "etapa_a_mapa_jp": "JP (484 linhas) lido linha a linha por completo. 37 pares （お伺）/〔御垂示〕 confirmados em 10 sessões de data (1, 6, 8, 11, 15, 18, 21, 23, 25, 28 de dezembro de 1951); dois blocos de data (21 e 23 de dezembro) são monólogo puro de Meishu-Sama (【御教え】), sem pergunta, portanto sem rótulo de falante, conforme instrução. Além dos 37 pares principais, identificados 18 sub-diálogos embutidos dentro de respostas 〔御垂示〕 (marcados no JP por linha isolada '　「…」' — réplica breve do interlocutor durante a mesma sessão, ex. 'まだでございます', '少し入ります'), todos resolvidos pelo conteúdo do JP, não pelos rótulos pré-existentes no PT.",
+    "etapa_b_confirmacao": "Contagem PT batia 1:1 com o mapa JP antes da rotulagem: (Pergunta)=15 + (Consulta)=22 = 37 marcadores de pergunta; (Instrução Divina)=10 + [Orientação Divina]=16 + [Divina Instrução]=11 = 37 marcadores de resposta. Δ=0 em ambos os lados, sem necessidade de inserir ou remover conteúdo. Nenhuma inversão de papel encontrada (todas as ocorrências de (Pergunta)/(Consulta) já correspondiam a turno do interlocutor no JP; todas as variantes de resposta já correspondiam a Meishu-Sama).",
+    "etapa_c_aplicacao": "Substituição mecânica e determinística (script Python local, não commitado): '(Pergunta) '/'(Consulta) ' → 'Interlocutor: '; '(Instrução Divina)'/'[Orientação Divina]'/'[Divina Instrução]' → 'Meishu-Sama: '; quebras de parágrafo inseridas em cada transição de turno. Blocos [Ensinamento]/(Ensinamento após...) mantidos sem rótulo de falante (monólogo puro, conforme regra). Os 18 sub-diálogos embutidos (aspas retas e curvas conforme o original) foram convertidos para 'Interlocutor: <texto sem aspas>' seguido de 'Meishu-Sama:' retomando a resposta, sem reordenar nem reescrever o conteúdo. Verificação word-a-word (tokens ignorando apenas os marcadores/rótulos e aspas dos 18 sub-diálogos) confirmou 27938 palavras antes e depois — nenhuma palavra do PT foi adicionada, removida ou alterada; apenas rótulos e quebras de parágrafo.",
+    "achado_nao_corrigido": "Duplicação de cabeçalho de data colado ao fim do parágrafo anterior sem quebra própria (ex. '...acabo me empolgando. 6 de dezembro' seguido de 'Seis de dezembro' em linha própria; mesmo padrão em 18, 21 e 28 de dezembro) é artefato pré-existente já registrado em achados_menores_nao_corrigidos acima; não é um problema de rotulagem de falante e não foi tocado nesta tarefa (fora do escopo autorizado).",
+    "aprovacao": "approved do spec NÃO alterado por esta tarefa, conforme instrução."
+  },
+  "fase_e_2026_07_09": {
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc, segunda auditoria independente)",
+    "achado": "7 cabecalhos de data duplicados encontrados durante releitura linha a linha do PT (checklist pontos 7/8), nao detectados na revisao original de 2026-07-07 nem na segunda auditoria daquela sessao: 6, 8, 15, 18, 21, 28 de dezembro. Padrao ja catalogado na familia (cabecalho colado ao fim do paragrafo anterior e/ou repetido em linha propria, por vezes em forma por extenso divergente do resto do volume).",
+    "correcao": "Removida a ocorrencia redundante em cada ponto, mantendo forma numerica unica e consistente com o resto do documento. pt_anchor do spec revertido do workaround duplo para ocorrencia unica onde aplicavel.",
+    "verificacao": "Confirmado contra o JP que cada data (12/1,6,8,11,15,18,21,25,28) aparece uma unica vez no original. CJK residual: nenhum. Nenhum conteudo substantivo alterado.",
+    "confianca": "alta"
+  }
+}

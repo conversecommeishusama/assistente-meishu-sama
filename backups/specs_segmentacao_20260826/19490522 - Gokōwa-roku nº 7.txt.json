@@ -1,0 +1,51 @@
+{
+ "filename": "19490522 - Gokōwa-roku nº 7.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』7号、昭和24(1949)年5月22日発行",
+   "pt_anchor": "Gokōwa-roku nº 7",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月四日（月）",
+   "title_pt": "4 de abril",
+   "jp_anchor": "四月四日（月）",
+   "pt_anchor": "4 de abril (segunda-feira)",
+   "notes": "",
+   "pt_prefix": "4 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十三日（水）",
+   "title_pt": "13 de abril",
+   "jp_anchor": "四月十三日（水）",
+   "pt_anchor": "13 de abril (quarta-feira)",
+   "notes": "",
+   "pt_prefix": "13 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十三日（土）",
+   "title_pt": "23 de abril",
+   "jp_anchor": "四月二十三日（土）",
+   "pt_anchor": "23 de abril (sábado)",
+   "notes": "",
+   "pt_prefix": "23 de abril"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

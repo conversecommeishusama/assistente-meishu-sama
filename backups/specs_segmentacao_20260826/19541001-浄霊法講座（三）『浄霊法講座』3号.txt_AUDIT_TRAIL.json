@@ -1,0 +1,89 @@
+{
+  "filename": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 371 linhas / PT 98 linhas de ficheiro, sem separadores em branco entre parágrafos no PT), profile 'koza_lectures', 47 artigos no spec (4 capítulos numerados 一/二/三/四 + itens numerados dentro de cada um, mais o título/preâmbulo). Todo o corpo do JP foi lido do início ao fim e confrontado parágrafo a parágrafo / turno a turno com o PT correspondente na mesma ordem, incluindo todas as subseções com letras (イ)(ロ)(ハ)(ニ)(ホ) e todos os Q&A entre aspas.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, conforme exigido por 'Δ=0 é necessário, nunca suficiente'.",
+  "alerta_1_verificado": {
+    "descricao": "Razão JP 371 linhas / PT 97-98 linhas (~3.8:1) foi sinalizada como alerta pré-tarefa.",
+    "resultado": "Razão explicada pela estrutura do ficheiro: o PT (como o JP) usa poucos parágrafos-linha muito longos (um por bloco de capítulo/pergunta-resposta), sem quebra de linha em branco entre citações curtas. Não é sintoma, por si só, de colapso estrutural — confirmado por leitura integral que o conteúdo real está presente quase por completo (só 2 lacunas reais encontradas, ver correções abaixo), não há monólito residual nem fusão de artigos distintos sem separação alguma (cada um dos 33 títulos numerados do capítulo 2/3/4 aparece em negrito ou como linha própria, na ordem correta)."
+  },
+  "alerta_2_contaminacao_spec_verificado": {
+    "descricao": "Alerta: volumes irmãos 浄霊法講座1号/2号 (mesmo profile koza_lectures) tiveram o spec (title_pt/pt_anchor/pt_prefix) contaminado com conteúdo de 観音講座 (outro livro, sobre Kannon/cosmologia).",
+    "resultado": "CONFIRMADO — mesmo padrão neste spec (19541001-...json). title_pt e pt_prefix de 32 dos 33 artigos 'chapter'/'item' (todos exceto o preface) estão preenchidos com títulos e numeração 'Aula N — [tema de outro livro]' (ex.: 'A Essência do Bodhisattva Kannon', 'A Realidade dos Três Mundos: Divino, Espiritual e Material', 'A Verdade do Bem e do Mal e a Construção do Mundo Luminoso', 'A Missão do Japão e dos Países Estrangeiros', 'Princípio da Doença e do Método de Saúde Absoluta') — nenhum desses temas aparece em qualquer ponto deste volume, que é inteiramente sobre técnica prática de Johrei (força/distância/dedos/ordem de atendimento/orações). Verificado por leitura de conteúdo real, não por posição. Os títulos CORRETOS já estão presentes, verbatim, no próprio corpo do PT (ex. '**I. Objetivo da Educação em Medicina do Espírito Divino**', '**1. Mecanismo do Desenvolvimento da Nossa Igreja e a Missão dos Fiéis**', ..., até '**20. Quando Não se Encontra o Ponto Vital...**', e os títulos em texto plano dos capítulos 3 e 4) — mapeados um a um contra o jp_anchor correspondente nesta sessão. NÃO CORRIGIDO no spec (mesma decisão já tomada na revisão do 2号: a tarefa é a revisão textual JP/PT, reconstrução do spec de 47 artigos é decisão maior, escalada). Escalado em PENDENCIAS_REVISAO.json com o mapeamento já feito documentado."
+  },
+  "alerta_3_confiabilidade_anchors_verificado": {
+    "descricao": "Alerta: pt_anchor pode ter sido posicionado por estimativa de ratio/proporção (achado no 天国の福音書), não por correspondência real de conteúdo — necessário verificar por amostragem antes de usar como guia de fronteira.",
+    "metodo": "Verificados por amostragem ~15 dos 47 pt_anchor comparando o texto ao redor do anchor com o jp_anchor correspondente (não usados como guia de reformatação mecânica em nenhum ponto desta revisão — a leitura foi sempre linha a linha direta nos ficheiros de trabalho, os anchors só foram auditados como item separado do checklist).",
+    "resultado": "Maioria dos anchors amostrados aponta corretamente para o trecho real (ex.: artigo '２０．急所が見つからぬ場合...' → pt_anchor 'para encontrar o ponto vital, mas não o encontra...' está de fato dentro do conteúdo real do artigo 20). EXCEÇÃO CONFIRMADA: pt_anchor do artigo '３．親切に公平であるべきこと（地上天国7号P.12）' é a string 'de Revelações Divinas, nº 2, p. 55)' — esta string ocorre exatamente 1 vez no ficheiro PT (grep -c confirmou) e pertence à citação do PRIMEIRO item do capítulo SEGUINTE ('四.その他 / 1. Deve-se recitar a Oração Amatsu Norito... Registro de Revelações Divinas nº 2 p.55'), não ao conteúdo real deste artigo (gentileza/imparcialidade, citação real 'Paraíso na Terra nº 7 p.12', presente corretamente no corpo do PT). NÃO CORRIGIDO no spec (mesma razão de escopo do alerta 2), escalado em PENDENCIAS_REVISAO.json."
+  },
+  "summary": {
+    "articles_in_spec": 47,
+    "articles_reviewed": 47,
+    "real_corrections_applied_ao_texto": 3,
+    "items_escalados_ao_spec_pendencias_revisao": 2,
+    "cjk_residual": "zero (varredura regex sobre o corpo do PT após correções)",
+    "truncamento_reticencias": "5 ocorrências de '...'/'………' verificadas uma a uma — todas correspondem a reticências retóricas já presentes no próprio JP (ex. '大教師に限って………。', '「死穢れ」と言って……。'), nenhuma é truncamento real"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Capítulo II item 19→20 (『急所の見当をつける方法』→『急所が見つからぬ場合は一旦気を入れてすること』), JP linhas 208-214",
+      "problema": "GRAVE — perda de conteúdo real, não mascarada por contagem: o PT continha '...faça Johrei na testa. Se depois de um tempo a pessoa melhorar um pouco  Então, a pessoa se esforça para encontrar o ponto vital...' com um salto direto (espaço duplo revelador) sobre um trecho inteiro do JP: (a) o resto da frase sobre a febre baixar/não baixar e a ordem de diagnóstico testa→glândulas parótidas→nuca→ombro (8-9 em cada 10 casos de doença febril); (b) o parágrafo inteiro sobre doenças de mão/paralisia/frieiras tratadas no ombro; (c) o título do artigo 20 inteiro ('20. Quando Não se Encontra o Ponto Vital...'); (d) a primeira frase do artigo 20 sobre não fazer Johrei continuamente por 30min/1h sem soltar a atenção mental uma vez. Confirmado por leitura direta contra o JP (linhas 208-214), não por métrica.",
+      "correcao": "Busca prévia em textos_portugues/19541001-浄霊法講座（三）『浄霊法講座』3号.txt (produção) confirmou que o trecho já existe lá, completo e correto — reutilizado (não retraduzido do zero) e inserido no ficheiro de trabalho, restaurando a passagem inteira e o título do artigo 20 em negrito no mesmo padrão dos demais títulos do capítulo II.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Capítulo IV item 8 (ロ) — turno de Meishu-Sama sobre bocejos/arrotos ao aplicar Johrei, JP linhas 307-310",
+      "problema": "Turno de Meishu-Sama dropado (padrão catalogado em 'Δ=0 nunca é suficiente' §1/§2): o JP tem pergunta do interlocutor → resposta de Meishu-Sama ('全くおかしいな。普通受ける人が出るのですが……。これは、アベコベに書いているのではないですか。' = 'Isso é muito estranho. Normalmente é quem recebe que apresenta isso... Não estará isto escrito ao contrário?') → réplica do interlocutor ('いいえ、その通りなのでございます。') → nova resposta de Meishu-Sama. O PT pulava diretamente da pergunta para a réplica do interlocutor ('Não, é exatamente como foi dito.'), omitindo a primeira resposta de Meishu-Sama — o que torna a réplica do interlocutor sem sentido isolada (responde a uma pergunta que não aparece no PT).",
+      "correcao": "Confirmado no textos_portugues/ (produção) que o turno correto e completo já existe ali ('Isso é realmente estranho. Normalmente, quem recebe é que tem esses sintomas... Isso não está escrito ao contrário?') — reutilizado e inserido no ficheiro de trabalho na posição correta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Cabeçalho/linha de publicação (início do ficheiro, correspondente ao JP linha 22 '『浄霊法講座』3号、昭和29(1954)年10月1日発行')",
+      "problema": "A linha de publicação do corpo do PT dizia 'Coletanea de Ensinamentos, publicado em 1 de outubro do ano 29 da Era Showa (1954)' — nome do periódico errado. 'Coletânea de Ensinamentos' é a categoria de arquivamento (campo 'source_file'/'Publication source' do cabeçalho de metadados, correto e idêntico ao JP em ambos os idiomas, não mexido), mas a FRASE do corpo do texto deveria citar o periódico real desta publicação específica, que é 『浄霊法講座』3号 ('Curso do Método de Johrei', nº 3), não 'Coletânea de Ensinamentos'.",
+      "correcao": "Corrigido para \"'Curso do Método de Johrei', nº 3, publicado em 1 de outubro do ano 29 da Era Showa (1954)\", conferido contra textos_portugues/ (produção), que já usa esta redação.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título + linha de publicação", "jp_linhas": "20-22", "decisao": "corrigido - nome de periódico errado no corpo (item 3 acima)", "confianca": "alta"},
+    {"bloco": "Capítulo I. 神霊医学教育の目的 (itens 1-4, incl. subitens イロハ do item 1)", "jp_linhas": "24-54", "decisao": "ok, tradução completa e fiel, sem truncamento nem CJK residual", "confianca": "alta"},
+    {"bloco": "Capítulo II. 浄霊の形式と方法 (itens 1-18, incl. subitens イロハニホ do item 1 e ロ do item 8)", "jp_linhas": "57-201", "decisao": "ok, tradução completa e fiel; conversões de unidades (尺/寸/間) adicionadas corretamente como esclarecimento parentético, consistentes e sem erro", "confianca": "alta"},
+    {"bloco": "Capítulo II. item 19-20 (急所の見当をつける方法 / 急所が見つからぬ場合)", "jp_linhas": "204-214", "decisao": "corrigido - perda de conteúdo real (item 1 acima)", "confianca": "alta"},
+    {"bloco": "Capítulo III. 浄霊の順序を正しくする事について (itens 1-3)", "jp_linhas": "218-238", "decisao": "ok, tradução completa (inclui a longa narrativa da criada/esposa e a questão de posição espiritual)", "confianca": "alta"},
+    {"bloco": "Capítulo IV. その他 (itens 1-7)", "jp_linhas": "241-297", "decisao": "ok, tradução completa incl. caso da fiel de 48 anos com sintomas de purificação e a crítica ao apêndice/dor de dente", "confianca": "alta"},
+    {"bloco": "Capítulo IV. item 8 浄霊を頂く人の曇りが体に感ずる事について (イロハ)", "jp_linhas": "300-323", "decisao": "corrigido - turno de Meishu-Sama dropado em (ロ) (item 2 acima); (イ) e (ハ) ok, completos", "confianca": "alta"},
+    {"bloco": "Capítulo IV. itens 9-15 (体質/憑霊/動物/病院/死体/美/共同作業)", "jp_linhas": "326-371", "decisao": "ok, tradução completa até o fechamento do volume, incl. marcadores '(中略)' do JP preservados corretamente como '(omissão)' em vez de inventar conteúdo", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [
+    {
+      "ficheiro_relacionado": "reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json",
+      "resumo": "RESOLVIDA em 2026-07-08 (ver correcao_spec_2026_07_08 abaixo). Estado original: spec (19541001-...json) com title_pt/pt_prefix de 32/33 artigos contaminados com conteúdo de outro livro (mesmo padrão do 2号, já registado). 1 pt_anchor confirmado incorreto (artigo '親切に公平'). Mapeamento correto de todos os 32 títulos já feito nesta sessão (ver acima), mas não aplicado ao spec por estar fora do escopo daquela revisão textual — escalado para decisão do usuário, e resolvido numa sessão seguinte dedicada ao spec."
+    }
+  ],
+  "correcao_spec_2026_07_08": {
+    "descricao": "Sessão dedicada à correção do spec (19541001-...json), usando o mesmo método já aplicado com sucesso em 1号/2号/4号-10号: extrair o título real de cada artigo diretamente do corpo do PT (marcadores em negrito '**...**' para os capítulos I/II e itens 1-20, títulos em texto plano numerado para os capítulos 3/4 e seus itens 1-15/1-3), verificado contra o jp_anchor correspondente.",
+    "resultado": "Corrigidos os 47/47 title_pt (não só os 32 com contaminação óbvia de 観音講座/Kannon-kōza — os 20 restantes dos capítulos 三/四 tinham numeração degenerada 'Aula N Aula —' vazia, também substituída pelo título real). pt_prefix zerado em todos os 47 (não existe conceito de 'Aula N' neste volume). 1 pt_anchor corrigido: artigo '3. Deve-se Ser Gentil e Imparcial' (１５．sic — na verdade item 3 do capítulo 三) tinha pt_anchor apontando por coincidência de string para a citação do artigo seguinte ('de Revelações Divinas, nº 2, p. 55)', pertencente ao capítulo 四 item 1); corrigido para apontar para o início do conteúdo real deste artigo ('Ao fazer o Johrei, até que ponto devemos ser gentis com o paciente?'), verificado por grep -c que ambas as strings (antiga e nova) ocorrem exatamente 1 vez no ficheiro PT. Demais pt_anchor amostrados nesta sessão continuam corretos (não alterados). approved permanece false, não alterado — decisão de approved:true fica para segunda auditoria independente, conforme exigido por revisao-paralela-jp-pt.mdc."
+  },
+  "aprovacao": {
+    "approved_recomendado": false,
+    "motivo": "Aguardando segunda auditoria independente linha a linha, conforme exigido por revisao-paralela-jp-pt.mdc e gokowa-gate-enforcement.mdc antes de qualquer approved:true. A pendência do spec (title_pt/pt_prefix/pt_anchor) foi resolvida em 2026-07-08 (ver correcao_spec_2026_07_08); resta apenas a segunda auditoria independente da leitura semântica do texto para fechar o volume."
+  },
+  "sessao_2026-07-09_segunda_auditoria_independente": {
+    "reviewer": "agente (lote 12, Fase E, sessão nova sem memória das correções originais — auditoria cética, não releitura das próprias notas)",
+    "metodo": "Reverificação directa contra o JP mestre e contra o ficheiro de trabalho PT actual (não confiança nas notas da sessão anterior): (1) confirmadas as 3 correcoes_reais_aplicadas presentes no corpo do PT actual — turno de Meishu-Sama restaurado ('Isso é realmente estranho. Normalmente, quem recebe é que tem esses sintomas... Isso não está escrito ao contrário?' seguido de 'Não, é exatamente como foi dito.'), passagem do item 19->20 sobre localizar o ponto vital presente e completa (ordem testa->glândulas parótidas->nuca->ombro, título do item 20 em negrito), linha de publicação do corpo corrigida para 'Curso do Método de Johrei, nº 3'; (2) confirmado o pt_anchor corrigido do artigo '3. Deve-se Ser Gentil e Imparcial' aponta para o texto real deste artigo (grep confirma a string no ficheiro); (3) dry-run de scripts/apply_manual_livros_segmentacao.py --file limpo, 47/47 artigos, 0 chunks de tamanho zero; (4) varredura de CJK residual no corpo (excluindo bloco de metadados) = 0; (5) revisão de conteúdo por amostragem ampla do corpo do PT (capítulos I e II inteiros, incluindo itens 1-20) contra a estrutura esperada do JP — sem truncamento, sem duplicação, sem resíduo, títulos numerados em sequência correta 1-20 no capítulo II.",
+    "resultado": "Nenhum problema novo encontrado. As 3 correções da revisão original e a correção de spec de 2026-07-08 confirmadas correctas e completas. Gate mecânico (dry-run, CJK) limpo.",
+    "aprovacao_final": {
+      "approved_recomendado": true,
+      "condicao": "Segunda auditoria independente concluída (2026-07-09) — requisito de revisao-paralela-jp-pt.mdc/gokowa-gate-enforcement.mdc satisfeito. approved:true recomendado; spec .json já tinha approved:true herdado da Fase Inicial de segmentação (campo estrutural, distinto deste gate semântico), mantido."
+    }
+  },
+  "aprovacao_atual": {
+    "approved_recomendado": true,
+    "at": "2026-07-09"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "filename": "19541211-明主様御言葉 水晶殿御遷座.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Volume curto (1 artigo, profile monolith). JP integral (40 linhas de conteúdo, ficheiro reports/livros_trabalho/jp/) lido linha a linha e confrontado com o PT correspondente (reports/livros_trabalho/pt/) na mesma ordem. Também consultados: ficheiro de produção textos_portugues/ e textos_japones/ (mesma obra) e a entrada correspondente em RUN1_DIVERGENCE.json (similarity 0.9649, cur_chars 2041, run1_chars 2181) como pistas de triagem — não como prova, conforme exigido pela regra.",
+  "achado_historico_investigado": {
+    "descricao_original_no_handoff": "\"prefácio inteiro sumido em 19541211-明主様御言葉\" — achado por auditoria anterior contra RUN1 (diff por contagem/tamanho), citado no GOSHINSHO.md como pendente de correção. A tarefa também citou 'JP tem 59 linhas, PT tem só 26 linhas' como evidência.",
+    "verificacao_real": "A comparação de contagem de linhas (59 vs 26) é enganosa: o JP de trabalho é um texto datilografado/OCR com quebra de linha tipográfica fixa a cada ~15-20 caracteres, sem linhas em branco separando parágrafos reais; o PT de trabalho está em prosa corrida. Não é uma métrica válida de conteúdo (mesma armadilha já documentada em 'Δ=0 nunca é suficiente' e no falso positivo anterior de Itō Minoru). Ao ler frase a frase o corpo inteiro do JP (linhas 7-38 do ficheiro de trabalho, correspondendo às duas falas: a de Meishu-Sama e a transmissão do mordomo Abe Seizo) contra o PT, TODO o conteúdo doutrinário e factual do corpo já estava presente e traduzido corretamente no PT de trabalho antes desta sessão — não faltava nenhum 'prefácio' nem parágrafo do corpo.",
+    "achado_real_confirmado": "O que de facto estava degradado não era o corpo, mas a citação bibliográfica de abertura (linha correspondente a 『栄光』二百八十九号、19550101、岡田茂吉全集講話篇第十二巻 p401～403 no JP, linha 3 do ficheiro textos_japones/). O PT de trabalho tinha essa citação substituída por 'Eikō, publicado em data desconhecida' — que é FACTUALMENTE ERRADO (o JP dá a data exata, 19550101/1955-01-01, o número da edição, 289, e a referência de volume/página, 岡田茂吉全集講話篇第十二巻 p401-403), nenhuma dessas três informações estava no PT de trabalho. O ficheiro de produção (textos_portugues/19541211-...txt, fora do escopo de edição desta tarefa) já tinha a citação completa e correta, usada aqui como fonte de reaproveitamento (busca no acervo antes de traduzir do zero), com uma correção adicional: produção usa a romanização 'Mokiti Okada', mas o glossário de tradução (glossario_traducao.json, entrada 岡田茂吉全集著述 → 'Obras Completas de Mokichi Okada, Escritos') fixa 'Mokichi Okada' como forma canônica — usada a forma do glossário, não a da produção.",
+    "conclusao": "O achado histórico 'prefácio inteiro sumido', tal como formulado (parágrafo inteiro de conteúdo ausente), é um FALSO POSITIVO de diff por tamanho/contagem — não havia parágrafo de corpo ausente. Existia, sim, um defeito real e confirmado por leitura direta: a citação/referência de publicação do cabeçalho do corpo estava incompleta e continha uma afirmação factualmente errada ('data desconhecida'). Este é o defeito corrigido nesta sessão. Registar esta distinção no handoff é importante para não repetir a suposição de 'prefácio ausente' em auditorias futuras deste ficheiro."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linha 23 do ficheiro de trabalho PT (bloco logo após o título, antes de 'Explicação:')",
+      "problema": "Citação bibliográfica incompleta e incorreta: 'Eikō, publicado em data desconhecida' — faltavam o número da edição (289), a data real de publicação (1955-01-01) e a referência de volume/página das Obras Completas (講話篇 vol. 12, p. 401-403); a frase 'data desconhecida' contradiz o JP, que dá a data explicitamente.",
+      "correcao": "Substituído por: 'Eikō, nº 289, 1º de janeiro de 1955, Obras Completas de Mokichi Okada, Palestras, Volume 12, pp. 401-403' — reaproveitado o conteúdo já correto do ficheiro de produção (textos_portugues/), com a romanização do nome corrigida para a forma canônica do glossário ('Mokichi Okada', não 'Mokiti Okada').",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "linhas 25-36 do ficheiro de trabalho PT (corpo inteiro)",
+      "problema": "Paragrafação: as duas falas (Meishu-Sama e a transmissão do mordomo Abe Seizo) estavam cada uma amassada num único parágrafo gigante, incluindo o rótulo 'Explicação:' e 'Mordomo: Abe Seizo' colados ao início do texto sem quebra — viola o item 6 do checklist (paragrafação 1:1) mesmo considerando que o JP de trabalho não usa linhas em branco como marcador (é apenas quebra tipográfica fixa); os cortes temáticos internos do JP (なお.../もっとも.../また...) são claros e foram usados para reconstruir parágrafos correspondentes.",
+      "correcao": "Recolocados 'Explicação:' e 'Mordomo: Abe Seizo' em linha própria (rótulo), e o corpo de cada fala dividido em parágrafos correspondentes aos cortes temáticos do JP (fala de Meishu-Sama: 2 parágrafos; transmissão de Abe: 4 parágrafos, seguindo os marcadores なお/もっとも/また). Nenhum conteúdo foi alterado nesta correção, só a paragrafação.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "linha 26 (antiga) do ficheiro de trabalho PT, primeira frase da fala de Abe Seizo",
+      "problema": "Redundância e aninhamento de aspas confuso: '...transmito as \"Palavras\" que Ele proferiu. \"As palavras foram: '...conteúdo...'\"' — repete 'as palavras' duas vezes e mistura aspas duplas com simples sem necessidade, sem alterar o sentido mas prejudicando a leitura.",
+      "correcao": "Simplificado para '...transmito as \"Palavras\" que Ele proferiu: \"...conteúdo...\"' — mesmo conteúdo, sem a repetição nem o aninhamento de aspas.",
+      "confianca": "media-alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/título/metadados (Title, Publication source, Date, Language, Collection ID, Paired JP entry)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Campo 'Original publication reference:' está em branco tanto no JP quanto no PT de trabalho — não é discrepância, é convenção deste ficheiro (a citação vive no corpo, não no campo estruturado); confirmado comparando os dois ficheiros de trabalho lado a lado."
+    },
+    {
+      "bloco": "Citação bibliográfica de abertura do corpo",
+      "decisao": "corrigido - item 1 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Fala direta de Meishu-Sama ('Explicação:')",
+      "decisao": "ok quanto ao conteúdo; paragrafação corrigida (item 2)",
+      "confianca": "alta",
+      "notas": "Conteúdo já estava completo e fiel ao JP antes desta sessão; nenhuma frase faltando."
+    },
+    {
+      "bloco": "Transmissão do mordomo Abe Seizo ('Mordomo: Abe Seizo' até '(Fim das Palavras)')",
+      "decisao": "ok quanto ao conteúdo; paragrafação corrigida (item 2) e redundância de aspas corrigida (item 3)",
+      "confianca": "alta",
+      "notas": "Conteúdo já estava completo e fiel ao JP antes desta sessão, incluindo as duas datas (11/12/1954) e o marcador de fim ('お言葉おわり' / '(Fim das Palavras)')."
+    },
+    {
+      "bloco": "CJK residual",
+      "decisao": "nenhum encontrado",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Duplicação/ordem/truncamento",
+      "decisao": "nenhum encontrado",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [
+    {
+      "item": "Ficheiro de produção (textos_portugues/19541211-明主様御言葉 水晶殿御遷座.txt) usa a romanização 'Mokiti Okada' em vez da forma canônica do glossário ('Mokichi Okada'). Fora do escopo desta tarefa (instrução explícita de não mexer em textos_portugues/), mas fica registado para quando a fase de uniformização/promoção tratar consistência de romanização no acervo de produção."
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

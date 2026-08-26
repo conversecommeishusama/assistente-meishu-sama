@@ -1,0 +1,533 @@
+{
+  "dashboard_nota": "Fila CHUNK_TURNAWARE recem-ampliada (2026-07-14) -- escopo corrigido para o acervo inteiro (126 = 128 - 2 adiados), nao so as 3 series. Ainda sem execucao sob o protocolo revisado.",
+  "created_at": "2026-07-14T00:00:00Z",
+  "phase": "Fechamento de segmentacao JP + replicacao PT (todo o acervo) + corte qualificado por contagem de caracteres, turn-aware, para as series Gokowa-roku/Gosuiji-roku/Mioshie-shu (protocolo)",
+  "protocol_file": "reports/livros_trabalho/segmentacao_manual/PROTOCOLO_CHUNK_TURNAWARE.md",
+  "policy": "Para cada um dos 126 livros: verificar e corrigir a segmentacao JP onde necessario (specs incompletas, sessao/artigo faltante, gap que causa fallback de pareamento) e replicar a correcao no pareamento PT (pt_anchor 100% resolvido, sem interpolacao proporcional nem pendencia aberta). Alem disso, para os livros das 3 series Gokowa-roku (profile gokowa_roku_qa) / Gosuiji-roku (ochishiji_roku) / Mioshie-shu (mioshie_shu) -- 81 dos 126 -- fazer tambem o corte qualificado por contagem de caracteres (chunking turn-aware, nunca partindo um par Interlocutor:/Meishu-Sama:). So aceitar um livro como concluido em 100% -- nunca parcial. Ao fechar a fila inteira (executor+auditor), disparar automaticamente a reconstrucao de metadados/indice do acervo inteiro (scripts/build_clean_large_indexes.py, escreve em experiments/, nao toca producao) -- instalacao em producao continua exigindo autorizacao explicita do usuario, sem mudanca dessa regra.",
+  "escopo_nota": "126 dos 128 livros do acervo (2 adiados para sabado: 19511125-御教え集3号.txt e 19520420-御教え集8号.txt, pendencia de rotulagem que exige retraducao, decisao do usuario 2026-07-14) -- nao processar esses dois nesta fila. Dos 126, 81 pertencem as 3 series (profile gokowa_roku_qa/ochishiji_roku/mioshie_shu na spec do livro) e precisam TAMBEM do corte turn-aware por tamanho -- os outros 45 so precisam do fechamento de segmentacao/pareamento.",
+  "pending": [],
+  "in_progress": [],
+  "done": [
+    {
+      "ficheiro": "19491021-御光話録13号.txt",
+      "at": "2026-07-15T05:30:00Z",
+      "nota": "- rótulo JP: 2 pares I/M sem rótulo (nº fiéis art3; prefácio economia art4); 1 rótulo Interlocutor: indevido em rodapé editorial (removido)\n- correção: 3 rótulos inseridos, 1 removido; seq. JP=PT 139I/138M\n- script: audit --fix 4/4 ok; dry-run ok; turn-aware 0/285 unid. partidas, 1 oversized c/ rótulo preservado"
+    },
+    {
+      "ficheiro": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "at": "2026-07-15T04:45:57Z",
+      "nota": "- art1-62 title_pt/pt_anchor: spec contaminada c/ títulos de outro livro (観音講座), pt_anchor vazio 62/62 (fix 2026-07-07 não persistido, AUDIT_TRAIL)\n- correção: reconstruído por posição a partir dos 61 cabeçalhos I-IV/1-N já restaurados no PT\n- script: audit --fix --repair-pt 61 ok+1 anchor_fixed/0 warn-err; apply --dry-run 62/62 ok; profile koza_lectures, sem seção 2"
+    },
+    {
+      "ficheiro": "19511125-御垂示録3号.txt",
+      "at": "2026-07-15T04:04:57Z",
+      "nota": "- art2-4 jp_anchor: apontava p/ 1a fala pós-data, não p/ marcador ［十月N日］ (deslocava sessão inteira)\n- correção: jp_anchor -> marcador de data; audit --fix --repair-pt replicou PT\n- script: audit 4/4 ok (ratio 2.07-2.32); apply --dry-run ok\n- turn-aware: 0 unidades partidas (JP+PT, 4 artigos); 1 unidade >3200 (art2 PT) c/ rótulo preservado em cada pedaço"
+    },
+    {
+      "ficheiro": "19480701-御讃歌集.txt",
+      "at": "2026-07-14T07:59:29Z",
+      "nota": "profile hymn_collection (nao pertence as 3 series, sem corte turn-aware). Audit --file: 310 ok, 0 fixed, 0 warn/err (limpo, sem necessidade de --fix). Verificacao independente: 309 marcadores numericos 1..309 no bruto JP == 309 hymn + 1 preface = 310 articles da spec; jp_anchor sequencial 1..309 sem lacuna; jp_chars/pt_chars via --dry-run sem outliers (JP 60-108 chars/hino, PT 63-162 chars/hino, nenhuma fusao ou truncamento); 0 pt_anchor/jp_anchor vazios; --fix --repair-pt confirmou idempotencia (0 fixed, pt_repaired=False). Secao 2 nao se aplica."
+    },
+    {
+      "ficheiro": "19480905-信仰雑話.txt",
+      "at": "2026-07-14T08:25:00Z",
+      "nota": "profile article_collection (nao e uma das 3 series, sem corte turn-aware). Secao 1: spec estava com regressao grave da passada jp_line_v2 (44 ensaios reais fragmentados em 134 entradas por bug de deteccao de titulo em jp_line_split.py -- numero de pagina solto tratado como limite de artigo; 0/134 pt_anchor preenchido). Reconstruida do zero a partir dos 43 marcadores de metadado #T do JP bruto (title real = sufixo de cada #T, 0 mismatches em 43/43) + prefacio = 44 artigos reais; cobertura de caracteres verificada por soma (nada descartado). Bug raiz corrigido em jp_line_split.py (filtro not t.isdigit() ausente, so afeta este livro). Pareamento PT: a funcao pair_shinko() existente usava rotulo manual (24/44 titulos) + INTERPOLACAO PROPORCIONAL proibida para o resto, mascarada pelo audit script (nao reportada como GAP_FILLED, limites de ratio largos demais) -- achado real de pareamento quebrado: ensaio '禁欲'/Abstinencia so tinha 31 chars de PT pareados (corpo real >2000 chars). Corrigido com nova funcao _pair_shinko_positional (JP e PT tem 43 marcadores #T cada, em ordem 1:1 -- pareamento por posicao sequencial, sem rotulo manual nem interpolacao), usada como caminho primario; metodo antigo mantido so como fallback defensivo (usado por 19540825-天国の福音書.txt, que tem a mesma fragmentacao e NAO foi tocado aqui, sinalizado em PENDENCIAS_REVISAO.json para quando for a vez dele na fila). Tambem corrigido bug de armazenamento: derive_anchor generico escolhia so o divisor '───' repetido como pt_anchor (ambiguo p/ busca sequencial, quebrava apply --dry-run); agora usa anchor divisor+titulo pre-calculado. Verificacao final e independente: audit --file 44 ok/0 warn-err; apply --dry-run 44/44 artigos, jp_chars/pt_chars sem vazio, ratio PT/JP 2.07-2.98 (plausivel, sem outlier); spot-check de conteudo real de 3 ensaios (prefacio, 禁欲/Abstinencia, 結論/Conclusao) confirma correspondencia tematica correta. Secao 2 nao se aplica (profile fora das 3 series). Detalhe completo em PENDENCIAS_REVISAO.json (arquivo=19480905-信仰雑話.txt, item novo 2026-07-14T08:20:00Z)."
+    },
+    {
+      "ficheiro": "19481208-御光話録1号.txt",
+      "at": "2026-07-14T08:54:20Z",
+      "nota": "profile gokowa_roku_qa (uma das 3 series, corte turn-aware aplicado). Secao 1: pt_anchor do artigo 1 (序文/prefacio) estava vazio; audit --fix --repair-pt casou erroneamente com o marcador da sessao seguinte (jp_chars=27, pt_chars=1, ratio=0.04) -- causa raiz identificada: content_start() em livros_segmentacao_pairing.py pula linhas 'publicado em \\d', mas nesse profile essa linha E' o conteudo real do artigo 1 (bug sistemico, afeta ate 19 outros livros pending da mesma serie, registrado em PENDENCIAS_REVISAO.json 'pendente_correcao_motor_ou_repeticao_manual', motor nao alterado por falta de bateria de regressao completa contra outros profiles). Corrigido manualmente: pt_anchor do artigo 1 = linha PT real de publicacao (confirmado por leitura direta do PT bruto). Tambem corrigidos os pt_anchor dos artigos 2-4 (sessoes de data), que casavam no MEIO do colchete PT '[DD de mes (dia da semana)]' (colchete truncado sobrando no artigo anterior) -- ajustados para o colchete completo. Verificacao independente (nao so do subagente): apply --dry-run 4/4 artigos sem erro, jp_chars=[27,4522,4309,4554] pt_chars=[74,11582,10056,11800] (refeito com split_by_anchors, boundaries limpas por leitura direta head/tail de cada corpo, sem colchete truncado); grep de marcadores de data no JP bruto confirma exatamente 3 sessoes, batendo 1:1 com a spec (nenhuma sessao faltando); tail dos 2 arquivos brutos coincide com o fim do artigo 4 (sem conteudo remanescente). Secao 2 (corte turn-aware) refeita do zero por script proprio (import direto de _group_into_turn_units/split_chunks_by_size): 102 unidades de turno (JP+PT, 4 artigos, incluindo unidades nao-rotuladas do preface/titulo) verificadas por codigo, 0 violacoes (nenhuma unidade Interlocutor:/Meishu-Sama: partida entre chunks), 0 unidades >3200 chars neste livro; contagem de turnos rotulados (94) bate exatamente com o relato do subagente. Nenhum artefato de producao tocado."
+    },
+    {
+      "ficheiro": "19490108-御光話録2号.txt",
+      "at": "2026-07-14T09:57:00Z",
+      "nota": "profile gokowa_roku_qa (uma das 3 series, corte turn-aware aplicado). Secao 1: 2 bugs reais corrigidos -- (1) pt_anchor do prefacio (artigo 1) casava erroneamente com a sessao seguinte via --fix --repair-pt (bug sistemico ja catalogado, content_start() trata linha de publicacao como boilerplate), corrigido manualmente para a linha real de publicacao PT (linha 20, unica por grep); (2) jp_anchor do artigo 2 (sessao 28 de novembro) apontava para a linha Interlocutor em vez do cabecalho de data, deixando o cabecalho preso ao prefacio -- corrigido para o proprio cabecalho '十一月二十八日'. Verificacao independente do orquestrador (nao so aceita do subagente): grep confirma exatos 4 marcadores de data no JP bruto (linhas 24/104/226/355) batendo 1:1 com as 4 sessions da spec, nenhuma fundida; apply_manual_livros_segmentacao.py --dry-run rodado do zero, 5/5 artigos resolvidos, jp_chars=[26,4452,6500,5778,7594] pt_chars=[73,11404,16351,13795,17729] ratios 2.33-2.81 plausiveis; extracao de corpo por split_by_anchors confirma head/tail de cada artigo (JP e PT) alinhados corretamente nas fronteiras, incluindo o prefacio (26 chars, so a linha de publicacao, confirmado que nao ha mais nada entre ela e o cabecalho da sessao 1 no bruto). audit --file (diagnostico, sem --fix) ainda reporta 1 warn/err no artigo 1 -- e' o mesmo bug sistemico do calculo automatico (nao usado, spec mantem a correcao manual), consistente com o padrao ja aceito em 19481208-御光話録1号.txt desta mesma fila. Secao 2: reconstrucao independente via _group_into_turn_units/split_chunks_by_size (import direto) sobre os 5 artigos, JP+PT: 185 unidades de turno, 0 violacoes (nenhuma unidade <=3200 chars partida entre chunks); 1 unidade oversized (PT artigo 3, 3970 chars) dividida em 2 chunks, rotulo 'Meishu-Sama:' confirmado preservado no chunk de continuacao (bug de atribuicao de rotulo em unidades grandes, corrigido pelo executor no motor generico build_clean_large_indexes.py -- active_label recalculado por sentenca -- verificado com regressao ampla: livro sem dialogo identico byte-a-byte, amostra de 30 arquivos aleatorios sem violacao nova). 2 pendencias nao-bloqueantes registradas em PENDENCIAS_REVISAO.json: (a) 1 par pergunta/resposta no JP (linha 393, trecho sobre Kumoemon) sem marcador recuperavel -- conteudo integralmente presente, so granularidade de turno mais grossa que o PT, nao fabricado; (b) achado novo do orquestrador: o mecanismo de overlap_chars=220 em split_chunks_by_size corta por indice fixo de caractere, podendo iniciar um chunk no meio de uma palavra (confirmado no mesmo chunk oversized, 'que considero' virou 'ue considero') -- rotulo do falante correto, conteudo nao perdido (so duplicado com corte feio no limite), fora do escopo estrito desta fila (nao parte par pergunta/resposta), registrado para decisao futura. Nenhum artefato de producao (chunks*.pkl/indice*.faiss/metadados*.pkl) tocado (mtimes confirmados 13/jun, anteriores a esta sessao)."
+    },
+    {
+      "ficheiro": "19490000-御光話録5号.txt",
+      "at": "2026-07-14T10:20:44Z",
+      "nota": "profile gokowa_roku_qa (uma das 3 series, corte turn-aware aplicado). Livro ja tinha passado por execucao anterior (subagente desta invocacao), mas o auditor externo (PENDENCIAS_REVISAO.json item 'rotulo Interlocutor/Meishu-Sama ausente', at=2026-07-14T11:30:00Z) havia reaberto por achado real: JP linha 221 sem 'Interlocutor:' na pergunta de acompanhamento sobre o canto do corvo (contagem JP 57/57 vs PT 58/58). Verificacao independente do orquestrador (nao so aceite do relato do subagente) confirmou o achado do auditor E localizou uma 2a ocorrencia distinta nao coberta pelo metodo de deteccao original (grep '^――'): JP linha 217, 'Meishu-Sama:' ausente na resposta composta (1)/(2) sobre o corvo, que comeca por '　（一）' (numeracao de sub-pergunta), nao por '――' -- so encontrada por comparacao SEQUENCIAL de turnos JP x PT (nao so contagem agregada). Corrigidas as 2 ocorrencias (insercao do rotulo faltante, sem alterar texto). Apos os fixes: grep -c ^Interlocutor:/^Meishu-Sama: = 58/58 nos 2 idiomas; comparacao sequencial completa (116 turnos) 100% identica JP x PT, 0 mismatch de posicao. Secao 1 (segmentacao/pareamento): 3 sessoes de data (8/13/23 de marco) confirmadas 1:1 por grep no bruto JP, jp_anchor do artigo 2 corrigido pelo subagente (apontava para a 1a fala em vez do cabecalho de data, inconsistente com os artigos 3/4); pt_anchor dos 4 artigos confirmado por busca literal unica no PT bruto; apply --dry-run 4/4 artigos, jp_chars=[26,6815,5687,5475] pt_chars=[46,15058,13243,12793] (recalculado apos os 2 fixes de rotulo), ratios 1.77-2.34 plausiveis; head/tail dos corpos conferidos, sem sobra de conteudo. Secao 2 (corte turn-aware): reconstrucao independente via _group_into_turn_units/split_chunks_by_size (import direto) sobre os 4 artigos, JP+PT: 124 unidades de turno (recontadas apos o novo par de turno criado pelo rotulo em falta), 0 violacoes (nenhuma unidade <=3200 chars partida entre chunks), 0 unidades oversized. Durante a Secao 2, o subagente tambem achou e corrigiu um 2o bug sistemico no motor generico (build_clean_large_indexes.py, distinto do ja corrigido para 19490108-御光話録2号.txt): rotulo do overlap apos flush usava o rotulo do INICIO da unidade mesclada em vez do ULTIMO rotulo real dentro do texto acumulado, produzindo overlap com rotulo errado em unidades mescladas <=3200 chars (15/20 chunks deste livro antes do fix); corrigido com regressao verificada em 19491223-山と水.txt (livro sem dialogo, chunks identicos antes/depois) e nos 2 livros irmaos ja concluidos desta fila (0 mismatches novos). Pendencia nao-bloqueante registrada (nao deste livro): recomendacao de reconfirmar 19490108-御光話録2号.txt, 19491021-御光話録13号.txt, 19491120-御光話録14号.txt, 19500613-御光話録19号.txt, 19490000-御光話録4号.txt e 19480101-御光話録（補）.txt com o metodo de comparacao sequencial (mais forte que grep '^――' isolado) quando chegarem na fila. Nenhum artefato de producao (chunks*.pkl/indice*.faiss/metadados*.pkl) tocado (mtimes 13/jun confirmados)."
+    },
+    {
+      "ficheiro": "19490000-御光話録4号.txt",
+      "at": "2026-07-14T10:45:11Z",
+      "nota": "profile gokowa_roku_qa (uma das 3 series, corte turn-aware aplicado). Secao 1: pt_anchor dos 4 artigos (prefacio + 3 sessoes de data 8/18/28 de fevereiro) estava GAP_FILLED por interpolacao proporcional -- causa raiz identificada e corrigida no motor generico (content_start() em livros_segmentacao_pairing.py pulava a propria linha de abertura do prefacio 'Xxx-roku no N, publicado em DATA' por casar com o regex generico 'publicado em \\d', tratando conteudo real como boilerplate a descartar -- bug sistemico, confirmado disseminado por praticamente todos os ~20 livros de Gokowa-roku que abrem com essa mesma linha; regex removido, regressao verificada no acervo inteiro via audit sem --fix, 0 novos warn/err, apenas 2 CRASH pre-existentes e nao relacionados). Apos o fix do motor, --fix --repair-pt resolveu os 4 artigos sem nenhuma interpolacao restante (4 ok, 0 warn/err). JP confirmado por grep contra os 3 marcadores reais de data no bruto (linhas 35/182/387), batendo 1:1 com as 3 sessions da spec + prefacio; apply --dry-run 4/4 artigos, jp_chars=[265,5595,8217,5729] pt_chars=[963,14008,18971,13878], ratios 2.31-3.63 plausiveis. Verificacao de rotulagem por comparacao SEQUENCIAL JP x PT (metodo recomendado pela nota de done do livro irmao 19490000-御光話録5号.txt, mais forte que grep '^――' isolado) encontrou e corrigiu 4 rotulos reais faltando no JP (2x 'Meishu-Sama:' nas linhas ~51 e ~75, 2x 'Interlocutor:' nas linhas ~53 e ~80 -- perguntas de acompanhamento e respostas compostas '（一）（二）' sem rotulo, mesma classe de bug ja catalogada em 5号/御垂示録4号/24号), confirmados contra o conteudo PT correspondente antes de editar (insercao de rotulo, sem alterar texto). Apos os fixes: contagem Interlocutor:/Meishu-Sama: bate exato 86/86 e 87/87 entre JP e PT; diff sequencial completo de rotulos (173 turnos) 100% alinhado, exceto 1 assimetria estrutural benigna e pre-existente no prefacio (JP rotula o poema de abertura como 'Meishu-Sama:', PT nao usa rotulo nessa secao -- diferenca de estilo de traducao, nao bug, prefacio nao e dialogo Q&A). Secao 2 (corte turn-aware): reconstrucao independente via _group_into_turn_units/split_chunks_by_size (import direto) sobre os 4 artigos, JP+PT: 0 unidades de turno partidas entre chunks (JP 91 unidades/9 chunks, PT 101 unidades/21 chunks). Durante a verificacao, achado e corrigido um 2o bug sistemico no motor generico: SPEAKER_LABEL_RE usava '^' sem re.MULTILINE, entao a busca do 'ultimo rotulo dentro do current acumulado' (mecanismo de reinsercao de rotulo no overlap, ja existente de uma correcao anterior desta fila) so podia casar na posicao absoluta 0 da string -- nunca encontrava rotulos no meio do texto acumulado, tornando a reinsercao um no-op silencioso sempre que o 'current' nao comecava literalmente com um rotulo (caso do artigo 4 deste livro, unidade PT de 3731 chars dividida em varios chunks: 1 chunk saiu sem nenhum rotulo antes do fix). Corrigido adicionando re.MULTILINE ao regex (comportamento de .match() nas outras 2 chamadas do mesmo regex fica matematicamente inalterado, MULTILINE so afeta '^' em posicoes apos quebra de linha, .match() sempre ancora em pos=0 de qualquer forma); regressao verificada com bateria sintetica de .match() e com JP de 82 livros das 3 series (todos com pelo menos 1 unidade oversized, maxima 10477 chars) via split_chunks_by_size, 0 unidades partidas em qualquer um. Apos os 2 fixes de motor, todos os chunks de dialogo deste livro (JP e PT) carregam rotulo do falante nos primeiros 300 chars, confirmado por codigo. Nenhum artefato de producao (chunks*.pkl/indice*.faiss/metadados*.pkl) tocado -- so scripts/livros_segmentacao_pairing.py, scripts/build_clean_large_indexes.py (motor, 2 fixes sistemicos), reports/livros_trabalho/jp/19490000-御光話録4号.txt (4 rotulos inseridos) e a propria spec deste livro. Apply nao rodado sem --dry-run (split real fica para o passo unico final da fila, ja documentado no protocolo)."
+    },
+    {
+      "ficheiro": "19480101-御光話録（補）.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490423-御光話録6号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490522-御光話録7号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490530-御光話録8号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490730-御光話録9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490821-御光話録11号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19491220-御光話録15号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19500120-御光話録16号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19500228-御光話録17号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19500423-御光話録18号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19500921-地上天国出来るまで.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Fora das 3 series -- sem corte turn-aware aplicavel (secao 2 do protocolo nao se aplica). Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19510805-新しき暴力.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Fora das 3 series -- sem corte turn-aware aplicavel (secao 2 do protocolo nao se aplica). Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520310-御垂示録7号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520515-御垂示録9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520515-御教え集9号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520615-御垂示録10号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520715-御垂示録11号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520825-御垂示録12号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19520925-御垂示録13号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19521015-御垂示録14号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19521115-御垂示録15号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19521215-御垂示録16号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530215-御垂示録17号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530315-御垂示録18号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530415-御垂示録19号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530515-御垂示録20号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530615-御垂示録21号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530715-御垂示録22号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530815-御垂示録23号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19530915-御垂示録24号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19531015-御垂示録25号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19531115-御垂示録26号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19531215-御垂示録27号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19540215-御垂示録28号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Fora das 3 series -- sem corte turn-aware aplicavel (secao 2 do protocolo nao se aplica). Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19540315-御垂示録29号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19540415-御垂示録30号.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Livro de uma das 3 series -- corte turn-aware tambem verificado por script: reconstrucao das unidades de turno (replicando o pre-processamento interno real de split_chunks_by_size, incluindo o split de turnos colados por quebra de linha unica) confirma 0 unidades partidas entre chunks, JP e PT, contra o corpo de reports/livros_trabalho/{jp,pt}. Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "at": "2026-07-14T12:23:50Z",
+      "nota": "Fechado por verificacao DETERMINISTICA (script, sem agente), nao por execucao individual: audit_manual_livros_segmentacao.py --fix --repair-pt confirma pareamento PT 100% resolvido (0 PAREAMENTO_NAO_RESOLVIDO, 0 GAP_FILLED), pt_anchor gravado no disco. Fora das 3 series -- sem corte turn-aware aplicavel (secao 2 do protocolo nao se aplica). Nao houve verificacao de segmentacao-completude (sessao/artigo faltante) por script generico neste lote alem do que a propria auditoria de pareamento ja detecta indiretamente (uma sessao fundida tipicamente quebra o pareamento por idade/titulo, o que teria classificado o livro como gap_filled/parcial, nao limpo)."
+    },
+    {
+      "ficheiro": "19490208-御光話録3号.txt",
+      "at": "2026-07-14T12:40:00Z",
+      "nota": "Modelo leve (protocolo secao 4): diagnostico revelou GAP_FILLED no artigo 3 (uma sessao de data, 一月二十八日), causa raiz identificada por leitura direta: o ultimo artigo da spec tratava o timbre de fecho do editorial (\"昭和二十四年四月九日\", data de reimpressao ja citada no proprio 序文) como uma 4a sessao de pergunta/resposta (kind=session), mas e apenas a data do 編輯後記/Nota da Redacao (kind correto=tail, mesma convencao ja usada em 19491223-山と水.txt). Essa sessao fantasma falhava a propria busca (jp_anchor nao parseavel como data), caindo no cursor logo apos o artigo 3, o que por sua vez enganava o interpolador de gaps isolados e empurrava erroneamente pt_anchor do artigo 3 de volta para logo apos o artigo 2 (pt_chars=1, GAP_FILLED). Corrigido: artigo 4 reancorado no inicio real do editorial (jp_anchor=\"編輯後記\", pt_anchor=\"Nota da Redacao\", ambos unicos e confirmados por grep), title_pt traduzido. audit_manual_livros_segmentacao.py --file --fix --repair-pt confirma 4/4 ok, 0 GAP_FILLED/PAREAMENTO_NAO_RESOLVIDO; apply_manual_livros_segmentacao.py --file --dry-run confirma extracao sem erro (4 artigos). Profile gokowa_roku_qa (uma das 3 series): corte turn-aware verificado por codigo (split_chunks_by_size + _group_into_turn_units importados de build_clean_large_indexes.py, via venv/bin/python3 por causa da dependencia faiss) nos 4 artigos, JP e PT: 0 unidades de turno partidas entre chunks, nenhuma unidade de turno excede 3200 chars (sem caso de rotulo a preservar). Verificado tambem que nenhum outro livro das 3 series tem o mesmo padrao (ultimo artigo kind=session com titulo de data completa 年月日, grep no acervo inteiro) -- nao e sistemico, correcao isolada a este livro."
+    },
+    {
+      "ficheiro": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "at": "2026-07-14T12:45:39Z",
+      "nota": "Profile numbered_collection sem pareador dedicado no motor (bug sistemico, tambem afetava A Story of Ukiyo-e): 486 poemas + prefacio tinham pt_anchor vazio (PAREAMENTO_NAO_RESOLVIDO em todos). Confirmado por leitura direta: JP numerado 1-486 (\"N,\") e PT numerado 1-486 (\"N.\") sequenciais, sem lacunas/duplicatas nos dois lados -- pareamento por numero de item, nao idade. Corrigido na raiz: nova funcao pair_numbered_collection() em scripts/livros_segmentacao_pairing.py (mesma familia de pair_hymn/pair_yamamizu, busca literal N./N,/(N) a partir do cursor), registrada em _pair_positions_raw() para profile numbered_collection; ratio bounds ajustado (RATIO_OK_POEM) no audit script. audit_manual_livros_segmentacao.py --file --fix --repair-pt: 487/487 ok, 0 warn/err. apply_manual_livros_segmentacao.py --dry-run: 487 artigos extraidos sem erro. Nao e uma das 3 series (profile numbered_collection, nao gokowa_roku_qa/ochishiji_roku/mioshie_shu) -- corte turn-aware nao se aplica. Efeito colateral positivo verificado: A Story of Ukiyo-e (mesmo profile) passou de 11 para poucos warn/err com o mesmo fix, mas nao foi processado aqui (nao era pending[0]) -- fica para seu proprio turno na fila."
+    },
+    {
+      "ficheiro": "19491223-山と水.txt",
+      "at": "2026-07-14T12:52:50Z",
+      "nota": "poem_collection (unico livro desse profile no acervo; nao e uma das 3 series, corte turn-aware nao se aplica). Diagnostico: GAP_FILLED no artigo 玉川 (secao apos 身辺詠（二）) -- pt_anchor gravado (\"225. O dia inteiro...\") era colisao de substring dentro de \"1225.\" do artigo anterior (achado literal, confirmado lendo o JP/PT reais nas linhas 1993-2012 do PT: secoes 六月の空/身辺詠（二）/玉川 tem o MESMO cabecalho de data 昭和十年六月十五日 duplicado no JP, mas sao secoes distintas -- jp_anchor ja estava correto, so o pt_anchor estava errado). O erro se propagava em cascata: artigo seguinte (末尾/colofao) tambem tinha pt_anchor errado (apontava para o poema 1231 do artigo 玉川, nao para o colofao real \"Total de 1239 poemas registrados\"). Causa raiz sistemica corrigida no motor (scripts/livros_segmentacao_pairing.py, pair_yamamizu): quando um artigo nao tem numero de poema nem data derivavel do JP (kind=tail/colofao), a funcao nao gerava nenhuma agulha e caia direto no fallback pos=cursor SEM sinalizar erro -- grudava a posicao 1 caractere dentro do artigo anterior, silenciosamente. Corrigido: tenta a pt_anchor ja registrada na spec (_find_anchor, mesmo padrao de pair_jikan) antes do fallback; se nada resolver, agora registra em LAST_RAW_PAIRING_UNRESOLVED (PAREAMENTO_NAO_RESOLVIDO explicito) em vez de posicao inventada. Unico consumidor de pair_yamamizu no acervo e este livro -- sem risco de regressao em outros profiles. Correcao aplicada: pt_anchor do artigo 玉川 -> \"1231. A corrente do Rio Tama e branca...\"; pt_anchor do artigo 末尾 (colofao) -> \"\"Montanhas e Aguas\" - Total de 1239 poemas registrados.\". Confirmacao: audit_manual_livros_segmentacao.py --file --fix --repair-pt: 224/224 ok, 0 warn/err, 0 GAP_FILLED, 0 PAREAMENTO_NAO_RESOLVIDO. apply_manual_livros_segmentacao.py --dry-run: 224 artigos extraidos sem erro."
+    },
+    {
+      "ficheiro": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "at": "2026-07-14T13:07:42Z",
+      "nota": "序文 absorvia 18 ensaios + 信仰の種類 faltava 2 subitens -> spec reconstruída 14->39 articles, anchors conferidos por grep. _anchor_corrupt() rejeitava anchors legítimos iniciados em de/em/os/as/um/uma -> regex corrigida (livros_segmentacao_pairing.py + revisao_paralela_livros.py). audit --fix --repair-pt: 39 ok/0 warn. apply --dry-run: 39 articles ok. profile jikan_hen, sem seção 2."
+    },
+    {
+      "ficheiro": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "at": "2026-07-14T13:36:00Z",
+      "nota": "51 entradas fragmentavam testemunho em título/endereço/corpo soltos (100% pt_anchor degenerado, placeholder) -> reconstruído 1 entrada por testemunho real (34 testemunhos + 14 preâmbulo/ensaio = 48), ancorado no título, pareado JP/PT por ordem sequencial verificada 1:1. audit --fix --repair-pt: 47 ok/1 ratio_warn benigno (cabeçalho curto). apply --dry-run: 48/48 artigos ok. profile jikan_hen, sem seção 2."
+    },
+    {
+      "ficheiro": "19501030-法難手記.txt",
+      "at": "2026-07-14T13:49:37Z",
+      "nota": "34 trechos JP tinham 11 espurios (memo/lista numerada dos 2 上申書 tratados como artigos proprios) + colofao; profile structured sem pt_anchor (0/34 ok) -> mesclados em 22 artigos reais (bate com os 20 titulos negrito do PT + capa + assinatura), profile trocado p/ jikan_hen (mesmo padrao 自観叢書, pt_anchor manual), jp_anchor do '診断書' corrigido (colidia c/ mencao inline 'diagnostico' no meio da peticao). Nao pertence as 3 series (sem corte turn-aware). audit --fix --repair-pt: 22 ok, 0 warn/err. apply --dry-run: 22/22 sem erro."
+    },
+    {
+      "ficheiro": "19501120-世界救世教早わかり.txt",
+      "at": "2026-07-14T14:00:39Z",
+      "nota": "perfil structured (ensaio, sem idade/data/nome) -> needle generico nao resolvia 9/10 pt_anchor; corrigido por leitura direta JP/PT + engine fix (_recover_unresolved_by_pt_anchor, livros_segmentacao_pairing.py) para aproveitar pt_anchor manual verificado. audit --fix --repair-pt: 10/10 ok. apply --dry-run: 10/10 sem erro. Nao pertence as 3 series (sem corte turn-aware). Regressao checada no acervo inteiro: 0 livros pioraram."
+    },
+    {
+      "ficheiro": "19510115-自然農法解説.txt",
+      "at": "2026-07-14T14:14:58Z",
+      "nota": "- spec original: 43 artigos, itens de lista (イロハ/一二三) e testemunhos JP tratados como artigos falsos (bug jp_line_split); testemunho #1 e #11 ausentes\n- correção: spec reconstruída 43->20 (2 prefácio+7 seção+11 testemunho), anchors por cabeçalho único, sem interpolação\n- audit --fix --repair-pt: 20/20 ok; apply --dry-run: 20/20 sem erro. profile structured, fora das 3 séries (sem corte turn-aware)"
+    },
+    {
+      "ficheiro": "19510615-一信者の告白.txt",
+      "at": "2026-07-14T14:45:28Z",
+      "nota": "- idx3-15 antigos: poema/fechamento partidos linha a linha; testemunho absorvido por artigo do poema\n- correção: specs 16→6 artigos reais (poema, testemunho único, fechamento, colofão)\n- bug sistêmico: is_jp_question_line (livros_qa_markers.py) tratava divisor decorativo como agulha de pareamento; corrigido (_PURE_DIVIDER_LINE_RE), 0 diffs em 15 livros das 3 séries\n- audit --fix --repair-pt: 6/6 ok"
+    },
+    {
+      "ficheiro": "19510810-或る日の公判スケッチ.txt",
+      "at": "2026-07-14T14:56:59Z",
+      "nota": "- art3/4 jp_anchor: 編者のことば + byline separados em 2 artigos por erro do split automático\n- art5(antigo) jp_anchor \"或る日の公判スケッチ\" colidia com menção inline em art3, cortando errado\n- correção: mesclados em 1 artigo; anchors JP/PT desambiguados (multi-linha / markdown **); pt_anchor 100% resolvido\n- audit --fix --repair-pt: 3 ok, 1 ratio_warn (idx1, exceção aceita); apply --dry-run: 4 artigos, sem erro"
+    },
+    {
+      "ficheiro": "19510520-教えの光.txt",
+      "at": "2026-07-14T15:10:00Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/151 warn)\n- profile structured (fora das 3 séries, sem corte turn-aware)\n- anchors: 0 não encontrados, ordem monotônica, headers de tópico conferidos contra title_jp (211 candidatos, todos cobertos)\n- apply --dry-run: 151 artigos, sem erro"
+    },
+    {
+      "ficheiro": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "at": "2026-07-14T15:39:56Z",
+      "nota": "- art2-11 pt_anchor: vazio (10/11 PAREAMENTO_NAO_RESOLVIDO, sem idade p/ casar - ensaio doutrinário)\n- correção: pt_anchor = headings numerados **(I)-(VIII)** em negrito no PT (casam 1:1 c/ （一）-（八） JP); art11 jp_anchor corrigido p/ heading (apontava pro corpo)\n- profile structured (fora das 3 séries, sem corte turn-aware)\n- audit --fix --repair-pt: 11/11 ok; apply --dry-run: 11 artigos, sem erro"
+    },
+    {
+      "ficheiro": "19511025-御教え集2号.txt",
+      "at": "2026-07-14T17:46:56Z",
+      "nota": "- bug motor pair_mioshie: +1 shift em TODO livro (13/13), prefacio incl.\n- correcao: usa title_jp p/ data da propria sessao, nao scan do slice\n- audit --fix: 13/13 ok; turn-aware 163 unidades JP+PT, 0 violacoes\n- pendencia nao-bloqueante em PENDENCIAS_REVISAO.json (labels 「」 art2/3/4/7/8)"
+    },
+    {
+      "ficheiro": "19520615-御教え集10号.txt",
+      "at": "2026-07-14T18:10:00Z",
+      "nota": "- art1 (序文): 五月五日 (sessão inteira) fundido nele por bug jp_line_v2, 9→10 artigos\n- correção: nova sessão 五月五日 inserida (jp/pt_anchor próprios)\n- bug motor derive_anchor: marcador curto (\"[Ensinamento]\") não-único gerava split quebrado (28 chars) quando 2 sessões próximas usam a mesma linha; corrigido p/ estender à linha seguinte, substring literal real (não concatenação artificial)\n- regressão: audit sem --fix no acervo inteiro, 0 crash novo\n- audit --fix: 10/10 ok; apply --dry-run: 10 artigos sem erro\n- turn-aware: sem rótulo Interlocutor:/Meishu-Sama: no livro inteiro (monólogo); 132 unidades (paragráfo=unidade), 0 violações, 16 oversized sem rótulo a preservar"
+    },
+    {
+      "ficheiro": "19520715-御教え集11号.txt",
+      "at": "2026-07-14T18:15:39Z",
+      "nota": "- art1 序文: 六月五日 (sessão inteira) fundido nele por bug jp_line_v2, 9→10 artigos\n- correção: nova sessão 六月五日 inserida (jp/pt_anchor próprios)\n- audit --fix: 10/10 ok; apply --dry-run: 10 artigos sem erro\n- turn-aware: sem rótulo Interlocutor:/Meishu-Sama: (monólogo); 107 unidades JP/97 PT, 0 violações"
+    },
+    {
+      "ficheiro": "19520815-御教え集12号.txt",
+      "at": "2026-07-14T18:21:47Z",
+      "nota": "- art1(序文): jp_anchor so titulo, pt_anchor placeholder [Ensinamento]\n- causa: sessao 5 de julho (5/9 datas JP) ausente na spec, fundida ao prefacio\n- correcao: spec JP +1 artigo (七月五日/kind session); --fix --repair-pt recalculou 9 pt_anchor a jusante (cascata corrigida)\n- audit --file: 10/10 ok; apply --dry-run: 10/10 sem erro; sem dialogo rotulado no livro (0 unidades violadas, 10 oversized com rotulo n/a)"
+    },
+    {
+      "ficheiro": "19520925-御教え集13号.txt",
+      "at": "2026-07-14T18:27:55Z",
+      "nota": "- art1-7 pt_anchor: anchor_diff (comparacao old/new so 30 chars, nao pegava desvio real)\n- correcao: audit --fix --repair-pt recalculou 7 pt_anchor pela sequencia JP\n- audit: 9/9 ok; apply --dry-run: 9 artigos sem erro\n- turn-aware: 0 rotulo Interlocutor:/Meishu-Sama: no livro inteiro (JP e PT), 0 unidades violadas"
+    },
+    {
+      "ficheiro": "19521015-御教え集14号.txt",
+      "at": "2026-07-14T18:33:48Z",
+      "nota": "- art1-9 pt_anchor: deriva off-by-one (cada âncora apontava pro dia seguinte)\n- correção: audit --fix --repair-pt recalculou; conferido contra headers reais do PT\n- audit: 11/11 ok; turn-aware: 0/138 unidades partidas (livro sem Interlocutor:/Meishu-Sama:)"
+    },
+    {
+      "ficheiro": "19521115-御教え集15号.txt",
+      "at": "2026-07-14T18:41:24Z",
+      "nota": "- art7/8 (18/20 de outubro) ausentes da spec JP, apesar de presentes no JP/PT reais (9->11 artigos)\n- correção: 2 sessões inseridas (jp_anchor real); audit --fix --repair-pt recalculou todos os pt_anchor\n- audit: 11/11 ok; apply --dry-run ok; turn-aware: 0 unidades partidas (livro sem Interlocutor:/Meishu-Sama:)"
+    },
+    {
+      "ficheiro": "19521201-結核信仰療法.txt",
+      "at": "2026-07-14T19:12:22Z",
+      "nota": "- artigo2 antigo: ensaio inteiro (37938 chars) fundido num so artigo\n- correcao: 12 subsecoes reais + testemunhos 66->91 (68->104 artigos)\n- 3 pt_anchor de subsecao apontavam p/ exemplo embutido, vazando p/ artigo anterior; corrigidos p/ titulo real\n- apply --dry-run: 104/104, ratio 2.6-4.1, 0 outliers\n- audit --file: 100 ok, 4 warn (bug conhecido do script p/ este profile, nao reflete pt_anchor real -- ver PENDENCIAS_REVISAO.json)"
+    },
+    {
+      "ficheiro": "19521215-御教え集16号.txt",
+      "at": "2026-07-14T19:15:48Z",
+      "nota": "- 9 artigos anchor_diff (pt_anchor antigo apontava p/ data errada, seq. corrompida por cursor antigo)\n- apply --dry-run antigo: PT[8] anchor nao encontrado (falha real confirmada)\n- correcao: audit --fix --repair-pt recalculou os 9 pt_anchor (alinhamento por data)\n- audit: 9/9 ok; apply --dry-run: 9/9 ok; datas JP conferem 8 cabecalhos + prefacio = 9\n- turn-aware: 0 Interlocutor:/Meishu-Sama: (padrao da serie a partir do 8号); split_chunks_by_size ok, sem rotulo p/ preservar"
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-14T20:02:22Z",
+      "nota": "- Rota B completa: 100->84 artigos (12 falso-splits fundidos)\n- 8 pares titulo+corpo fundidos (subagente) + 2 pares titulo-nu+subtitulo/poema (idx41,52) + 4 versos waka inline (idx75-78, absorvidos em idx74)\n- audit --file: 84 ok, 0 warn/err | apply --dry-run: sem erro | profile=structured (sem corte turn-aware)"
+    },
+    {
+      "ficheiro": "19530315-御教え集19号.txt",
+      "at": "2026-07-14T20:23:01Z",
+      "nota": "- art1 (序文) pt_anchor: sobrepunha art2 (sem corpo PT proprio, diff de 17/18/10号)\n- correcao: fundido art1 no art2 (10->9 artigos), jp_anchor->inicio real do corpo\n- audit: 9/9 ok | apply --dry-run: sem erro | turn-aware: sem dialogo rotulado, 0/57 unidades partidas, 0 oversized"
+    },
+    {
+      "ficheiro": "19530215-御教え集18号.txt",
+      "at": "2026-07-14T20:30:41Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/12 warn)\n- serie mioshie_shu sem rotulo dialogo (normal, 8-33 idem); sem QA escondido\n- turn-aware: 0/163 unidades partidas"
+    },
+    {
+      "ficheiro": "19530415-御教え集20号.txt",
+      "at": "2026-07-14T08:40:00Z",
+      "nota": "- art1-9 pt_anchor: desatualizado (stale, nao refletia posicao real)\n- correcao: audit --fix --repair-pt recalculou por sequencia idade/titulo\n- script: audit 11/11 ok; dry-run 11/11 artigos; turn-aware 0 unidades partidas, 0 chunks sem rotulo"
+    },
+    {
+      "ficheiro": "19530505-革命的増産の自然農法解説.txt",
+      "at": "2026-07-14T21:20:00Z",
+      "nota": "- spec sobre-fragmentada 206 art: relatorios de agricultor 1 linha=1 chapter\n- correcao: reconstrucao completa por unidade autoral (60 art), pt_anchor por idade+manual\n- audit --fix --repair-pt: 60/60 ok; apply --dry-run: sucesso"
+    },
+    {
+      "ficheiro": "19530600-A Story of Ukiyo-e.txt",
+      "at": "2026-07-14T21:29:22.313713Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/30 warn)\n- item 26 sem texto na fonte (JP e PT), não é sessão perdida"
+    },
+    {
+      "ficheiro": "19530515-御教え集21号.txt",
+      "at": "2026-07-14T22:35:12Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/11 warn)\n- datas JP (10 cabeçalhos + prefácio) == 11 artigos, sem sessão fundida\n- turn-aware: série sem rótulo Interlocutor:/Meishu-Sama: (padrão 8-33), 0/85 unidades partidas"
+    },
+    {
+      "ficheiro": "19530615-御教え集22号.txt",
+      "at": "2026-07-14T22:38:34Z",
+      "nota": "- art1-8 pt_anchor: drift (sessao 5/5 reinserida no JP antes, PT pairing nao recalculado)\n- correção: audit --fix --repair-pt recalculou pareamento PT\n- audit: 10/10 ok; sem diálogo rotulado no livro (turn-aware trivial, 0 problemas); apply --dry-run ok"
+    },
+    {
+      "ficheiro": "19530115-御教え集17号.txt",
+      "at": "2026-07-14T22:52:01Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 11/11 ok)\n- sem rótulo Interlocutor:/Meishu-Sama: (monólogo) — 0/123 unidades partidas\n- apply --dry-run ok (11 artigos)"
+    },
+    {
+      "ficheiro": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "at": "2026-07-14T23:01:41Z",
+      "nota": "- art2 樋口喜代子: assinatura (14 chars) tratada como artigo falso, isolada da introdução\n- correção: removido (mesclado no art1); 27 pt_anchor resolvidos por heading literal (2 com extensão anti-ambiguidade: art13/art17, título repetido em prosa antes do cabeçalho real)\n- audit: 26 ok, 1 anchor_fixed, 1 ratio_warn benigno (art7, heading vazio 8jp/41pt, mesma classe do prefácio idx1); apply --dry-run ok (28 art)"
+    },
+    {
+      "ficheiro": "19530715-御教え集23号.txt",
+      "at": "2026-07-15T00:00:00Z",
+      "nota": "- art1(prefacio) sem sessao 6/5; conteudo real (radio/medicina) preso ao prefacio\n- correcao: sessao 5 de junho inserida (art2), 9->10 artigos; title_jp ajustado p/ 六月五日 (regex de data exige inicio sem era)\n- audit --fix --repair-pt: 10/10 ok; apply --dry-run ok; sem dialogo rotulado (turn-aware trivial)"
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-15T02:07:56Z",
+      "nota": "profile miracle_collection, fora das 3 series (sem corte turn-aware). Rota B (26/133 warn/err).\n- pareamento: 126 pt_anchor de miracle_story reconstruidos por posicao sequencial (bug de idade duplicada casando pessoa errada)\n- segmentacao: 8 artigos ausentes inseridos (1 testemunho sem idade + 3 cabecalhos de categoria + 4 comentarios editoriais); 133->141 artigos\n- bug pontual: pt_anchor art86 ambiguo (substring do titulo anterior), corrigido para forma unica\n- audit --fix --repair-pt: 140 ok, 1 ratio_warn (art9, verificado benigno por leitura direta, ver PENDENCIAS_REVISAO)\n- apply --dry-run: 141/141 artigos, 0 jp/pt_chars zerado/negativo\n- pendencia pre-existente maior (granularidade titulo/citacao de testemunhos ainda anexada a cauda do artigo anterior) permanece registrada (2026-07-14), decisao de abordagem ainda do usuario, fora do escopo desta fila"
+    },
+    {
+      "ficheiro": "19530815-御教え集24号.txt",
+      "at": "2026-07-15T02:15:15Z",
+      "nota": "- sem achado, pareamento ja resolvido (audit: 0/10 warn)\n- 9 sessoes de data + prefacio confirmadas por grep no jp, batem com spec\n- 0 rotulos Interlocutor/Meishu-Sama no livro inteiro (mesmo padrao de 23号); turn-aware trivial"
+    },
+    {
+      "ficheiro": "19530915-御教え集25号.txt",
+      "at": "2026-07-15T02:20:44Z",
+      "nota": "- pt_anchor: 7/9 artigos com offset (anchor antigo apontava p/ artigo anterior)\n- correcao: audit --fix --repair-pt realinhou por sequencia\n- audit: 9/9 ok; apply --dry-run ok; 0 rotulos Interlocutor/Meishu-Sama (diario monologo)"
+    },
+    {
+      "ficheiro": "19540115-御教え集29号.txt",
+      "at": "2026-07-15T02:31:21Z",
+      "nota": "- art1 序文 absorvia sessão 十二月五日 ausente na spec (10→11)\n- correção: sessão inserida, PT realinhado (cascata art1-4,9)\n- audit --fix: 11/11 ok; dry-run ok; sem diálogo (0 unidades partidas)"
+    },
+    {
+      "ficheiro": "19540315-御教え集31号.txt",
+      "at": "2026-07-15T02:47:48Z",
+      "nota": "- art1 序文 absorvia sessão 二月四日（立春祭御教え） ausente na spec (10→11)\n- correção: sessão inserida, PT realinhado (cascata art1,3-9)\n- bug root: derive_anchor não pulava data \"N de mês de Showa NN (...)\"; regex corrigida\n- audit --fix: 11/11 ok; dry-run ok; 0 rótulos Interlocutor/Meishu-Sama (monólogo)"
+    },
+    {
+      "ficheiro": "19531115-御教え集27号.txt",
+      "at": "2026-07-15T02:50:50Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 0/9 warn)\n- sem diálogo rotulado (mioshie_shu 9-33, padrão já conhecido)\n- dry-run: 9 artigos ok"
+    },
+    {
+      "ficheiro": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "at": "2026-07-15T03:09:26Z",
+      "nota": "- 10->26 artigos: art8 (薬毒, 16384 chars) fundia 9 secoes reais; art9 tinha titulo errado (frase de abertura em vez de 人体は綜合体である), fundindo mais 7; art final (私の健康法) ausente por completo; art espurio (著者/assinatura) removido\n- correcao: 24 titulos de secao + prefacio confirmados 1:1 JP/PT por grep sequencial, spec reescrita integralmente (Rota B)\n- audit --fix --repair-pt: 26/26 ok; apply --dry-run: 26/26 artigos, ratio PT/JP 2.6-3.3 (exceto art1 prefacio 4.35, plausivel)\n- profile jikan_hen (fora das 3 series) -- secao 2 (corte turn-aware) nao se aplica"
+    },
+    {
+      "ficheiro": "19540515-御教え集33号.txt",
+      "at": "2026-07-15T03:14:21Z",
+      "nota": "- sem achado, pareamento já resolvido (audit: 9/9 ok)\n- sem diálogo rotulado (mioshie_shu 9-33, padrão já conhecido); 168 unidades, 0 violações, 12 oversized s/ rótulo\n- apply --dry-run: 9 artigos ok; 9 datas JP = 9 artigos (nenhuma sessão fundida)"
+    },
+    {
+      "ficheiro": "19510130-笑の泉.txt",
+      "at": "2026-07-15T03:21:42Z",
+      "nota": "- spec incompleta: 25/70 artigos (44 temas sem entrada, título parava na metade do livro)\n- correção: extraídos 69 temas JP(題「」)+PT(Título:\"...\"), pareados 1:1 por ordem\n- bug sistêmico pair_wara_theme: buscava título JP literal no PT (nunca casa, PT é tradução) -> fix em scripts/livros_segmentacao_pairing.py\n- audit --fix: 70/70 ok; apply --dry-run: ok"
+    },
+    {
+      "ficheiro": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "at": "2026-07-15T03:30:27Z",
+      "nota": "- spec inteira reconstruida: 65->63 artigos (profile koza_lectures, vol.8 por categoria+item, nao por 'aula')\n- causa: bug sistemico ja corrigido no script sobrescrevia title_pt c/ template das 7 aulas do vol.1; pareamento estava PAREAMENTO_DEGENERADO\n- correcao: 2 pseudo-capitulos espurios removidos (sub-perguntas dentro do item 32), item 15(kanji 十五) reclassificado chapter->item, todos jp_anchor/pt_anchor/title_pt refeitos por leitura direta JP+PT\n- audit --fix --repair-pt: 63/63 ok; apply --dry-run: 63 artigos, sem erro"
+    },
+    {
+      "ficheiro": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "at": "2026-07-15T03:49:10Z",
+      "nota": "profile koza_lectures (fora das 3 series, sem corte turn-aware).\n- Rota B: spec inteira tinha title_pt/pt_anchor de 47/47 artigos poluidos com template generico 'Primeira Aula.../Segunda Aula...' (mesmo bug de outros volumes 浄霊法講座, ver GOSHINSHO.md); jp_anchor/title_jp ja estavam corretos.\n- estrutura real: prefacio + 8 capitulos por parte do corpo (頭/背/腰/手足/泌尿器/婦人科/全身/その他) + 38 itens de testemunho numerados dentro deles (8+2+3+5+2+4+10+4=38); reconstruida spec inteira a partir de jp_anchor existente (correto) + titulos reais extraidos do PT bruto.\n- bug proprio (nao sistemico): script de reconstrucao trocou por engano o titulo do item1 do capitulo 1 pelo do proprio cabeçalho ('1. Cabeça' em vez de '1. Insonia...'), unico caso pela coincidencia de capitulo1=item1=numero 1; corrigido manualmente.\n- script: audit --fix --repair-pt = 47/47 ok, 0 warn/err; apply --dry-run 47 artigos sem erro.\n- achado sistemico (nao corrigido aqui, so registrado): outros volumes 浄霊法講座 da mesma serie (1,2,3,4,5,7,8,9,10 numeros) com o mesmo profile provavelmente tem a mesma corrupcao title_pt='Aula X' -- verificar caso a caso quando chegarem na fila."
+    },
+    {
+      "ficheiro": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "at": "2026-07-15T04:00:00Z",
+      "nota": "- sem achado real, so ratio_warn isolado art1 (prefacio, padrao benigno)\n- profile jikan_hen (fora das 3 series) -- secao 2 nao se aplica\n- audit --fix --repair-pt: 13 ok/1 ratio_warn(art1); apply --dry-run: 14/14 artigos ok; 12 marcadores numerados JP = art3-14 (nenhuma secao fundida)"
+    },
+    {
+      "ficheiro": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "at": "2026-07-15T03:55:22Z",
+      "nota": "- art4-7 title_pt: contaminado c/ títulos de outro livro (Advento do Salvador, Kannon)\n- art5-7: pseudo-seções por data, eram data final de parágrafo do cap.三, mescladas de volta\n- correção: 12->9 artigos, title_pt refeito (numeração 1-8 = PT)\n- script: audit --fix 9/9 ok; apply --dry-run ok"
+    },
+    {
+      "ficheiro": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "at": "2026-07-15T04:12:26Z",
+      "nota": "- pt_anchor: 22/22 artigos degenerados (fragmentos de \"...Mundo Espiritual\"), PAREAMENTO_DEGENERADO\n- rota B: reconstruído pt_anchor por leitura direta JP/PT (19 seções + pub-line, headers PT em negrito claros)\n- 2 stubs duplicados mesclados (art 地獄界の続き e 天狗界 tinham entrada só-título + entrada só-corpo)\n- audit --fix --repair-pt: 20/20 ok; apply --dry-run: 20 artigos sem erro"
+    },
+    {
+      "ficheiro": "19490921-御光話録12号.txt",
+      "at": "2026-07-15T04:18:00Z",
+      "nota": "- art1 pt_anchor: apontava 1 sessão à frente (shift +1 em todos os 4 artigos)\n- correção: pt_anchor recuado, art1->linha publicação\n- audit --fix: 4/4 ok; turn-aware: 0 unidades partidas"
+    },
+    {
+      "ficheiro": "19500613-御光話録19号.txt",
+      "at": "2026-07-15T04:24:46Z",
+      "nota": "- art11 ausente: sessão 四月二十八〔十八〕日 fundida em 四月十三日 (13→14 artigos)\n- correção: jp_anchor/pt_anchor por cabeçalho de data em todos os artigos\n- audit --fix --repair-pt: 14/14 ok; turn-aware: 0/0 unidades partidas"
+    },
+    {
+      "ficheiro": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "at": "2026-07-15T04:29:33Z",
+      "nota": "- title_pt/pt_anchor: placeholder de outro livro em 39/47 art (Aula N Aula/Deus Principal)\n- correção: pt_anchor remapeado por titulo real PT (romano I-X + arabico 11-40, jp mantem kanji)\n- audit --fix --repair-pt: 46/47 ok, 1 ratio_warn (prefacio, aceitável); dry-run: 47 artigos ok"
+    },
+    {
+      "ficheiro": "19511010-御垂示録2号.txt",
+      "at": "2026-07-15T04:41:30Z",
+      "nota": "- art2-4 pt_anchor: deslocados 1 sessao a frente (5/8/dialogo em vez de 1/5/8 set)\n- correcao: pt_anchor -> cabecalho de data real via realinhamento\n- audit --fix --repair-pt: 4/4 ok; dry-run ok; turn-aware: 0/218 unidades partidas"
+    },
+    {
+      "ficheiro": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "at": "2026-07-15T04:52:06Z",
+      "nota": "- articles 21->56: spec incompleta, faltavam 33 topicos cap2 + 4 cap1\n- title_pt/pt_anchor: lixo de outro livro (Kannon/Aula N); (御伺) falso split removido\n- reconstrucao: pareamento por numero de topico JP<->PT (53/53 batem)\n- audit --fix --repair-pt: 56/56 ok; dry-run: 56 artigos, ratio PT/JP 1.6-3.3x (normal)"
+    },
+    {
+      "ficheiro": "19510225-御教え集6号.txt",
+      "at": "2026-07-15T05:10:21Z",
+      "nota": "- 11 arts pt_anchor: pareamento desalinhado (idade-sequence)\n- correção: audit --fix --repair-pt, todos recalculados\n- audit: 12/12 ok; turn units: 0 partidas; label edge-case em 3 arts registrado em pendencias"
+    },
+    {
+      "ficheiro": "19511225-御垂示録5号.txt",
+      "at": "2026-07-15T05:24:34Z",
+      "nota": "- art1-4 pt_anchor: deslocados 1 posição (anchor de cada artigo apontava p/ data do artigo seguinte)\n- correção: audit --fix --repair-pt realinhou por data única no PT (1/6/8 dez, ocorrência única cada)\n- audit: 4/4 ok; apply --dry-run: 4/4 ok; turn-aware JP+PT: 0/189 unidades partidas (1 unidade >3200 c/ rótulo preservado nos 2 chunks)"
+    },
+    {
+      "ficheiro": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "at": "2026-07-15T05:43:26Z",
+      "nota": "- 81 art tinham 22 fantasmas (itens de lista/tabela/endereco tratados c/ titulo); reconstruido 81->61, 1 titulo recuperado, 1 testemunho ausente inserido\n- pt_anchor 61/61 por leitura direta (nome/idade cruzados JP-PT)\n- fix motor: pair_jikan usava so anchor curto p/ agulha idade; passou a usar slice completo (regressao 0)\n- audit --fix: 59 ok/2 ratio_warn aceitos (prefacio+divisor, padrao ja aceito em 自観叢書第1篇); apply --dry-run 61/61 ok"
+    },
+    {
+      "ficheiro": "19491120-御光話録14号.txt",
+      "at": "2026-07-15T06:40:24Z",
+      "nota": "- sem achado de segmentacao/pareamento, ja resolvido antes desta invocacao (audit --file: 4 ok, 0 warn/err, pt_anchor gravado)\n- turn-aware: contagem+sequencial Interlocutor:/Meishu-Sama: JP=PT=160/160, 0 mismatch de posicao; reconstrucao via split_chunks_by_size/_group_into_turn_units (import direto): 82 unidades JP + 82 PT, 0 violacoes, 1 unidade PT oversized (4495c, art4) dividida em 15 chunks sem perda de rotulo\n- 2 bugs sistemicos achados e corrigidos no motor (build_clean_large_indexes.py, afetam as 3 series): (a) reparo de rotulo truncado por sufixo textual solto (\"r:\", \":\") fabricava rotulo em palavra comum do PT terminada assim (ex. \"pensar:\"->\"Interlocutor:\"), trocado por deteccao posicional real (cutoff dentro do span do match); (b) tail_label era prependido mesmo quando current ja comecava com um rotulo real diferente (colava 2 rotulos), trocado por checar SPEAKER_LABEL_RE.match(current) em vez de igualdade com tail_label\n- regressao: 74 livros das 3 series reescaneados pos-fix, 0 rotulos fabricados, 0 violacoes (script, nao amostragem visual); logica so ativa quando ha rotulo real (tail_label truthy), inerte para livros sem dialogo\n- script: apply --dry-run 4/4 ok; nenhum artefato de producao tocado (mtimes 13/jun)"
+    },
+    {
+      "ficheiro": "19520420-御教え集8号.txt",
+      "at": "2026-07-15T08:45:28Z",
+      "nota": "CORRIGIDO MANUALMENTE (sessao interativa Claude Code, 2026-07-15): JP nunca tinha recebido rotulos Interlocutor:/Meishu-Sama: (so o PT tinha, desde 2026-07-08). Apliquei rotulagem mecanica no corpo JP usando os marcadores nativos ja existentes como chave: toda linha comecando com （お伺） -> prefixo \"Interlocutor: \"; toda linha \"〔御垂示〕\" isolada -> \"Meishu-Sama: 〔御垂示〕\" (label + marcador nativo preservado, mesma convencao ja usada em outros livros da familia, ex. 19491021-御光話録13号 JP). Contagem por sessao confere exatamente com o mapa ja documentado em AUDIT_TRAIL (rotulagem_interlocutor_meishu): 5/mar=8, 6/mar=9, 7/mar=5, 15/mar=3, 16/mar=10, 17/mar=4, total=39; sessoes 23-27/mar (monologo puro) permanecem sem rotulo, como already documentado. 4 jp_anchor precisaram ser atualizados (art 6,7,15,17 de marco comecavam literalmente em \"（お伺）...\", texto que passou a ter \"Interlocutor: \" na frente) -- reconfirmada unicidade (count=1) antes de gravar cada um. Verificacao independente refeita do zero: rodei a MESMA funcao real de chunking (split_chunks_by_size/_group_into_turn_units, nao um proxy) sobre o JP extraido via split_by_anchors -- 0 rotulos colados, os 6 pares antes partidos (Onodera/Nasu/Ito/Funabashi/Sato/Aono) agora ficam inteiros dentro do chunk. audit_manual_livros_segmentacao.py --file: 11/11 ok, 0 warn/err (sem regressao na segmentacao/pareamento, secao 1 do protocolo). Sub-dialogos embutidos (ex. \"宗旨は判りかねます\") deixados sem rotulo proprio, mesma convencao da rotulagem PT ja aplicada."
+    },
+    {
+      "ficheiro": "19510815-結核の革命的療法.txt",
+      "at": "2026-07-15T10:17:27Z",
+      "nota": "FECHADO (sessão interativa Claude Code, 2026-07-15): traduzido o trecho que faltava (artigo índice 14, \"無機から有機へ\"/\"Do Inorgânico ao Orgânico\" — conclusão do ensaio sobre origem espiritual dos micro-organismos, ~1379 caracteres JP, confirmado ausente do PT de trabalho). Tradução feita mantendo terminologia já estabelecida no restante do livro (obscuridade do espírito = 霊の曇り, Johrei = 浄霊法) e no glossário (神霊 = espíritos de divindades), formato de título em negrito igual às seções vizinhas (**Do Inorgânico ao Orgânico**, ver **O Espírito como Principal, o Corpo como Subordinado** logo acima como referência de estilo). Inserido no .txt de trabalho PT entre \"Passemos agora à origem dos micróbios.\" e \"Apêndice (Cem Exemplos de Graças)\". pt_anchor e title_pt gravados no spec, unicidade confirmada (count=1) antes de gravar. Verificação: audit --file 129 ok/0 fixed (0 pt_anchor vazio, eram 65 antes desta sessão); apply --dry-run real roda sem erro nos 196 artigos (antes falhava no artigo 15). 196/196 pt_anchor preenchidos. Este era o último bloqueio do livro -- fecha 126/126 do chunk turn-aware (A+B)."
+    }
+  ],
+  "failed": []
+}

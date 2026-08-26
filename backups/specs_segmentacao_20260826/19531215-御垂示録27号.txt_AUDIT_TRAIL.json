@@ -1,0 +1,124 @@
+{
+  "filename": "19531215-御垂示録27号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 465 linhas / PT originalmente 105 linhas, razão ~4.4:1, agora PT 238 linhas após correção estrutural), 2 artigos por spec (prefácio + sessão única '1 de dezembro'), do início ao fim. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, turno a turno (pergunta do Interlocutor / resposta de Meishu-Sama), não amostragem.",
+  "gate_mecanico": "gate_gokowa_linha.py rodado contra o ficheiro, mas retornou contagens zeradas (jp_interlocutor=0, pt_interlocutor=0) porque o script é calibrado para a família Gokōwa (marcadores 'Interlocutor:'/'Meishu-Sama:'), não para o formato desta família (Gosuiji-roku, turnos por aspas '「」'/'\"\"'). Não substitui a leitura semântica linha a linha feita nesta trilha, apenas confirma ausência de erro fatal óbvio. Contagem manual de controlo: JP tem 106 marcadores '「' de abertura de turno; PT tem 108 pares de aspas duplas após a correção (diferença de 2 explicada por aspas duplas usadas em citações aninhadas dentro de falas de Meishu-Sama, ex. nome próprio 'Nichigetsuko', não por turnos ausentes ou duplicados) — usado apenas como triagem complementar, não como prova de fecho.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "monolito estrutural grave (a maior parte do volume, não um trecho pontual)",
+      "localizacao_jp": "linhas 26 a 308 do JP (do início da sessão '［十二月一日］' até imediatamente antes do turno sobre nêutrons/prótons no núcleo atômico)",
+      "localizacao_pt_antes": "linhas 25-26 do PT original (duas linhas físicas gigantes, ~22.500 caracteres, sem nenhuma quebra de parágrafo entre dezenas de turnos de pergunta/resposta)",
+      "problema": "Praticamente todo o corpo do volume (cerca de 135 turnos de Interlocutor/Meishu-Sama — cemitério, financiamento/zaibatsu, capitalismo x comunismo, monge e Zengen-Sandji, Kannon do biombo, rato que roeu a placa 'Nichigetsuko', ordem de sufragação Komyo-Nyorai/Daimyo-Nyorai, tokonoma, Inari/raposa, poços de Akashi, fotografia no altar, bússola magnética, física atômica) estava traduzido corretamente em conteúdo, mas amassado em apenas 2 linhas físicas de texto corrido no PT, sem nenhuma quebra de parágrafo entre turnos — viola frontalmente o ponto 6 do checklist (paragrafação 1:1) e torna o diálogo P&R ilegível como tal.",
+      "correcao": "Desmembrado turno a turno comparando cada trecho contra o JP correspondente (verificado programaticamente que os 138 segmentos de tradução já existentes cobriam o blob integralmente, na ordem certa, sem lacunas), reescrito como uma linha por turno, no mesmo padrão já usado no resto do ficheiro (aspas duplas para falas do Interlocutor, texto simples para Meishu-Sama). Nenhuma palavra de tradução nova foi inventada nesta etapa — apenas re-segmentação; o conteúdo textual em si já estava correto e completo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "duplicação de turnos com cauda mascarando truncamento (padrão já catalogado em 御垂示録4号/24号, ver GOSHINSHO.md)",
+      "localizacao_jp": "linhas 310-320 do JP (nêutrons que penetram outros núcleos / comparação pai-filho / Einstein esquecendo a quantidade)",
+      "problema": "Os mesmos 6 turnos (JP 310, 312, 314, 316, 318, 320) foram traduzidos DUAS vezes no PT: uma vez dentro do monólito (completos e corretos para os turnos 310-318, mas com a resposta de Meishu-Sama do turno 320 TRUNCADA — faltava 'um trilhão de vezes, ainda mais sutil. Se chamarmos isso de infinito, está resolvido'), e uma segunda vez logo a seguir, já em formato de um-turno-por-linha, desta vez com o turno 320 completo. A segunda cópia dos turnos 310-318 era puramente redundante (mesmo conteúdo, leve reformulação de superfície).",
+      "correcao": "Mantida uma única cópia de cada turno: usada a versão do monólito para os turnos 310-318 (primeira ocorrência, já correta e completa) e a versão completa (não truncada) do turno 320 vinda da segunda cópia, descartando a duplicata redundante dos turnos 310-318 e a versão truncada do turno 320. Verificado por contagem de string que cada frase-âncora ('mesmo significado de quando um ser humano morre', 'mais leve. É por isso', 'Esquecer') aparece exatamente 1 vez no ficheiro final.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "turno curto de Meishu-Sama sem aspas nunca traduzido (padrão mais comum encontrado ultimamente, confirmado também aqui)",
+      "localizacao_jp": "linha 372: 「それで素粒子と中間子の関係はどうなっているのですか。」— pergunta curta de Meishu-Sama (sem aspas no JP, por ser a fala dele) entre o turno 371 (Meishu-Sama, sobre nêutron/méson serem finitos) e o turno 374 (Interlocutor respondendo sobre partículas elementares)",
+      "problema": "O turno estava totalmente ausente no PT — o texto ia direto de 'Não, força é infinito. Nêutrons e mésons são finitos, portanto não são força. Mesmo sendo força, são materiais.' para a resposta do Interlocutor '\"Partículas elementares são todas as partículas...\"', sem a pergunta que a resposta do Interlocutor pressupõe.",
+      "correcao": "Traduzido e inserido: 'E qual é a relação entre a partícula elementar e o méson?' — mantém o padrão de nenhuma aspas para falas de Meishu-Sama, consistente com o resto do ficheiro.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título + data de publicação)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão '1º de dezembro' — do início até imediatamente antes do turno sobre nêutrons no núcleo atômico",
+      "jp_linhas": "26-308",
+      "decisao": "corrigido — monólito estrutural grave desmembrado (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Turnos sobre nêutrons/prótons, comparação pai-filho, Einstein e quantidade infinita",
+      "jp_linhas": "310-320",
+      "decisao": "corrigido — duplicação removida, versão completa mantida (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Física atômica (continuação): velocidade, elemento água/fogo, radiação, Johrei e partículas",
+      "jp_linhas": "322-343",
+      "decisao": "ok, já estava em formato correto (um turno por linha) antes desta revisão",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Teoria da matéria, Dr. Yukawa, mésons/nêutrons",
+      "jp_linhas": "345-372",
+      "decisao": "corrigido — 1 turno ausente inserido (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Raios cósmicos, cultura judaica x grega",
+      "jp_linhas": "374-397",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Limite da força vital / agricultura natural / população e colheitas",
+      "jp_linhas": "400-410",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Johrei: amuleto, sangue, auto-tratamento, outras religiões, espíritos ancestrais, fechamento (Cristo/Buda/Atami)",
+      "jp_linhas": "413-465",
+      "decisao": "ok",
+      "confianca": "alta"
+    }
+  ],
+  "observacoes_nao_acionaveis": [
+    {
+      "nota": "JP linha 52 contém a string 'rattail（注）' antes de '「霊界の構成」（天国の福音P.278）' — parece ruído/artefacto de OCR no próprio ficheiro-fonte JP (palavra inglesa solta sem sentido no contexto), não um erro de tradução. O PT já ignora corretamente 'rattail' e mantém apenas a nota de referência bibliográfica ('Nota: \"A Estrutura do Mundo Espiritual\", Evangelho do Paraíso, p. 278'). Não é uma correção desta sessão, apenas um comportamento pré-existente já adequado — mencionado para registo, não corrigido pois não há nada de PT para corrigir.",
+      "confianca": "media"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc (Etapas A-B-C), adaptado para Gosuiji-roku: 「pergunta entre aspas」=Interlocutor, texto corrido sem aspas=Meishu-Sama",
+    "etapa_a_mapa_jp": "JP relido linha a linha do zero, independente da trilha anterior desta mesma auditoria. Classificação programática de cada linha de conteúdo (a partir do cabeçalho ［十二月一日］) como Interlocutor (inicia com 「), Meishu-Sama (texto corrido) ou cabeçalho de data, com atenção especial a turnos curtos de Meishu-Sama (ex. 'そうです。', 'よいです。', perguntas de uma linha devolvidas ao Interlocutor). Contagem exaustiva: 102 falas 「」 do Interlocutor e 103 turnos de Meishu-Sama (incluindo abertura da sessão antes da 1ª pergunta e fechamento após a última resposta do Interlocutor) no volume inteiro.",
+    "achado": "Nenhuma lacuna nova encontrada. Ao colapsar parágrafos consecutivos do mesmo falante em ambos os lados (JP e PT) para comparação estrutural, JP e PT produziram exatamente 206 turnos colapsados cada, na mesma sequência exata I/M turno a turno, 0 divergências — confirmado programaticamente (diff de sequência, não amostragem). Isso é esperado: a auditoria linha-a-linha anterior (2026-07-07, ver 'correcoes_reais_aplicadas' acima) já havia corrigido o monólito estrutural, a duplicação de turnos e o turno curto ausente (JP linha 372) que existiam neste mesmo arquivo: não havia mais nada para esta etapa encontrar além de aplicar os rótulos.",
+    "etapa_b_contagem": {
+      "interlocutor_pt": 102,
+      "interlocutor_jp": 102,
+      "delta": 0,
+      "meishu_pt_paragrafos_fisicos": 110,
+      "meishu_jp_turnos_colapsados": 103,
+      "observacao": "PT tem mais parágrafos físicos de Meishu-Sama (110) do que turnos colapsados no JP (103) porque, em 7 pontos, um único turno longo de Meishu-Sama no JP (várias frases sem interrupção do Interlocutor) foi quebrado em 2 parágrafos físicos distintos no PT — sem inserir nem perder conteúdo, sem intercalar um turno do Interlocutor entre eles. Confirmado que a sequência de falantes colapsada (ignorando essa quebra física) bate 206=206 com o JP."
+    },
+    "etapa_c_aplicacao": {
+      "resultado": "212 parágrafos de diálogo rotulados: 102 Interlocutor: + 110 Meishu-Sama:.",
+      "escopo": "Rótulos aplicados a todos os parágrafos a partir do cabeçalho [1º de dezembro] até o fim do arquivo. Cabeçalho, título e metadados de arquivo (linhas 1-26) não rotulados. Aspas originais do Interlocutor preservadas tal como estavam.",
+      "reordenacao": "nenhuma — texto extraído e rotulado na ordem existente, sem reflow/rebuild em massa; verificado por diff linha a linha contra o arquivo original que nenhum texto foi alterado, apenas os prefixos 'Interlocutor: '/'Meishu-Sama: ' foram adicionados.",
+      "backup": "/tmp/claude-0/-var-www-goshinsho/75ceece9-9b84-4085-9a66-404d9beb5970/scratchpad (cópia local); cópia de segurança do PT pré-rotulagem também mantida em /tmp/19531215-御垂示録27号_backup_pre_labeling.txt nesta sessão."
+    },
+    "pendencias_abertas": [],
+    "aprovacao": "approved do spec não alterado por esta tarefa (permanece conforme já fechado em 2026-07-07)."
+  }
+}

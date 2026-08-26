@@ -1,0 +1,95 @@
+{
+ "filename": "19530915 - Mioshie-shū nº 25.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十五号",
+   "pt_anchor": "Mioshie-shū nº 25",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月六日",
+   "title_pt": "6 de agosto",
+   "jp_anchor": "八月六日",
+   "pt_anchor": "6 de agosto",
+   "notes": "",
+   "pt_prefix": "6 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月七日",
+   "title_pt": "7 de agosto",
+   "jp_anchor": "八月七日",
+   "pt_anchor": "7 de agosto",
+   "notes": "",
+   "pt_prefix": "7 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十五日",
+   "title_pt": "15 de agosto",
+   "jp_anchor": "八月十五日",
+   "pt_anchor": "15 de agosto",
+   "notes": "",
+   "pt_prefix": "15 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十六日",
+   "title_pt": "16 de agosto",
+   "jp_anchor": "八月十六日",
+   "pt_anchor": "16 de agosto",
+   "notes": "",
+   "pt_prefix": "16 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十七日",
+   "title_pt": "17 de agosto",
+   "jp_anchor": "八月十七日",
+   "pt_anchor": "17 de agosto",
+   "notes": "",
+   "pt_prefix": "17 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十五日",
+   "title_pt": "25 de agosto",
+   "jp_anchor": "八月二十五日",
+   "pt_anchor": "25 de agosto",
+   "notes": "",
+   "pt_prefix": "25 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十六日",
+   "title_pt": "26 de agosto",
+   "jp_anchor": "八月二十六日",
+   "pt_anchor": "26 de agosto",
+   "notes": "",
+   "pt_prefix": "26 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十七日",
+   "title_pt": "27 de agosto",
+   "jp_anchor": "八月二十七日",
+   "pt_anchor": "27 de agosto",
+   "notes": "",
+   "pt_prefix": "27 de agosto"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

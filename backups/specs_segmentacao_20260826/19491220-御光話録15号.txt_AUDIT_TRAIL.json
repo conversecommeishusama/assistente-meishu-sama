@@ -1,0 +1,63 @@
+{
+  "filename": "19491220-御光話録15号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 509 linhas / PT 419 linhas), monólito único, do título ao editorial final. Nota: este volume já tinha um item arquivado em PENDENCIAS_REVISAO.json referente a uma sessão de retradução anterior (2026-07-04) que removeu duplicação e traduziu uma secção final que faltava por completo — esta auditoria releu tudo de novo, sem presumir que aquele trabalho estivesse limpo.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO encontrada — alternância Interlocutor/Meishu-Sama confere integralmente com o JP do início ao fim, incluindo os trechos de diálogo curto (ex. exemplo do templo com fantasma de Nogi, exemplo do poço na província de Mie).",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CJK=0 confirmado (gate mecânico).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 1,
+    "turnos_interlocutor_jp_pt_gate": "99/99 (Δ=0)",
+    "real_corrections_applied": 0,
+    "items_escalated_to_pendencias": 1,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_de_rotulo_confirmada": false
+  },
+  "correcoes_reais_aplicadas": [],
+  "achado_escalado_pendencias": {
+    "descricao": "Mistura de variante do português dentro do mesmo volume: os primeiros ~40% do arquivo (até por volta da linha 175, tópico 'Kenshinjitsu'/8 Reis Dragões/Norito Amatsu) usam marcadores de português europeu (grafia 'facto', construções progressivas 'está a fazer'/'estão a agir', 'rapariga' para moça), e o resto do arquivo usa exclusivamente português do Brasil ('de fato', gerúndio, vocabulário brasileiro). Confirmado por busca objetiva de marcadores linguísticos (ver item completo em PENDENCIAS_REVISAO.json).",
+    "por_que_nao_corrigido_agora": "Não é erro de sentido/conteúdo (texto integralmente conferido linha a linha contra o JP e semanticamente correto) — é decisão de estilo/uniformização de variante que abrange ~40% do arquivo (não é troca pontual de 2-3 palavras) e depende de uma decisão de padrão do acervo que não estava documentada. Registrado em PENDENCIAS_REVISAO.json para decisão do usuário/orquestrador.",
+    "estado": "aguardando_decisao"
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Perguntas 1-25 (Kenshinjitsu, linhagem de grandes homens, 8 Reis Dragões, Norito Amatsu, Kunitokotachi/Enma Daiō, tempo/desenvolvimento do Caminho)",
+      "decisao": "ok quanto ao conteúdo — variante do português europeia nesta faixa (ver pendência acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Perguntas 26-60 (dívida de gratidão/Tamagushi, correntes da felicidade, possessão, placas mortuárias, casos médicos: derrame, epilepsia, hemorroida etc.)",
+      "decisao": "ok — variante brasileira nesta faixa em diante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Perguntas 61-99 (moda do século XXI, estética/pintura, política de partidos, iorube/superstições de casamento, casos médicos extensos: hipertensão, astigmatismo, tuberculose com bola de resina, câncer de fígado, gonorreia/sífilis, agricultura sem fertilizante)",
+      "decisao": "ok — nenhuma perda de conteúdo, nenhuma troca de falante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Nota editorial final (encerramento do ano, 1 ano de Gokōwa-roku)",
+      "decisao": "ok",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [
+    "Mistura de variante PT-PT/PT-BR dentro do mesmo volume (ver PENDENCIAS_REVISAO.json, item adicionado 2026-07-09) — não bloqueia aprovação por não ser erro de conteúdo, mas fica pendente decisão de uniformização."
+  ],
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19491220-御光話録15号.txt\"",
+    "resultado": "PASS I=99/99 Δ=0 CJK=0"
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro revisado linha a linha contra o JP. Nenhum erro de conteúdo, ordem ou rotulagem encontrado. Único achado é estilístico (mistura de variante do português), registrado como pendência não bloqueante em PENDENCIAS_REVISAO.json, não uma correção de conteúdo. Gate PASS."
+  }
+}

@@ -1,0 +1,2092 @@
+{
+  "generated_at": "2026-07-14T01:52:01Z",
+  "pass": "jp_first_v1",
+  "dry_run": false,
+  "summary": {
+    "files": 127,
+    "ok": 127,
+    "fail": 0,
+    "trechos_before": 3542,
+    "trechos_after": 3531,
+    "trechos_delta": -11,
+    "still_monolith": 13,
+    "expanded": 0
+  },
+  "files": [
+    {
+      "filename": "19350000-観音講座　（１～７）.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_kannon_koza",
+      "old_count": 8,
+      "new_count": 2,
+      "delta": -6,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "lecture": 1
+      }
+    },
+    {
+      "filename": "19480101-御光話録（補）.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 30,
+      "new_count": 30,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 29
+      }
+    },
+    {
+      "filename": "19480701-御讃歌集.txt",
+      "status": "ok",
+      "profile": "hymn_collection",
+      "split_method": "line_csv_hymn",
+      "old_count": 310,
+      "new_count": 310,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "hymn": 309
+      }
+    },
+    {
+      "filename": "19480905-信仰雑話.txt",
+      "status": "ok",
+      "profile": "article_collection",
+      "split_method": "line_shinko",
+      "old_count": 44,
+      "new_count": 134,
+      "delta": 90,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "article": 94,
+        "article_part": 39
+      }
+    },
+    {
+      "filename": "19481208-御光話録1号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19490000-御光話録4号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 3,
+      "new_count": 3,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 2
+      }
+    },
+    {
+      "filename": "19490000-御光話録5号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 3,
+      "new_count": 3,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 2
+      }
+    },
+    {
+      "filename": "19490108-御光話録2号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 5,
+      "new_count": 5,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 4
+      }
+    },
+    {
+      "filename": "19490208-御光話録3号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19490423-御光話録6号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19490522-御光話録7号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19490530-御光話録8号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 51,
+      "new_count": 51,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 46,
+        "topic": 4
+      }
+    },
+    {
+      "filename": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 81,
+      "new_count": 81,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 6,
+        "section": 66,
+        "topic": 8
+      }
+    },
+    {
+      "filename": "19490710-御光話録10号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19490730-御光話録9号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19490821-御光話録11号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 22,
+      "new_count": 22,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 20
+      }
+    },
+    {
+      "filename": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 22,
+      "new_count": 22,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 21
+      }
+    },
+    {
+      "filename": "19490921-御光話録12号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 37,
+      "new_count": 37,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 35
+      }
+    },
+    {
+      "filename": "19491021-御光話録13号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 14,
+      "new_count": 14,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "chapter": 12
+      }
+    },
+    {
+      "filename": "19491120-御光話録14号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "status": "ok",
+      "profile": "numbered_collection",
+      "split_method": "line_jikan_csv_poems",
+      "old_count": 487,
+      "new_count": 487,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "poem": 486
+      }
+    },
+    {
+      "filename": "19491220-御光話録15号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19491223-山と水.txt",
+      "status": "ok",
+      "profile": "poem_collection",
+      "split_method": "line_yamamizu_date_session",
+      "old_count": 224,
+      "new_count": 224,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 222,
+        "tail": 1
+      }
+    },
+    {
+      "filename": "19491230-自観叢書第9篇『光への道』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 23,
+      "new_count": 23,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 22
+      }
+    },
+    {
+      "filename": "19500120-御光話録16号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 14,
+      "new_count": 14,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "topic": 10,
+        "section": 2
+      }
+    },
+    {
+      "filename": "19500228-御光話録17号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 2,
+      "new_count": 1,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "status": "ok",
+      "profile": "jikan_hen",
+      "split_method": "line_jikan_structural",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 8
+      }
+    },
+    {
+      "filename": "19500423-御光話録18号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19500613-御光話録19号.txt",
+      "status": "ok",
+      "profile": "gokowa_roku_qa",
+      "split_method": "line_gokowa_date",
+      "old_count": 13,
+      "new_count": 13,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 12
+      }
+    },
+    {
+      "filename": "19500921-地上天国出来るまで.txt",
+      "status": "ok",
+      "profile": "monolith",
+      "split_method": "line_no_split",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19501030-法難手記.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 34,
+      "new_count": 34,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 25,
+        "item": 2,
+        "chapter": 5
+      }
+    },
+    {
+      "filename": "19501120-世界救世教早わかり.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 8
+      }
+    },
+    {
+      "filename": "19510115-自然農法解説.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 43,
+      "new_count": 43,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "testimony": 10,
+        "section": 17,
+        "chapter": 14
+      }
+    },
+    {
+      "filename": "19510130-笑の泉.txt",
+      "status": "ok",
+      "profile": "wara_collection",
+      "split_method": "line_wara_theme",
+      "old_count": 25,
+      "new_count": 25,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "theme": 24
+      }
+    },
+    {
+      "filename": "19510225-御教え集6号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 12,
+      "new_count": 12,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 11
+      }
+    },
+    {
+      "filename": "19510520-教えの光.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 162,
+      "new_count": 162,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "topic": 152,
+        "section": 8
+      }
+    },
+    {
+      "filename": "19510615-一信者の告白.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 16,
+      "new_count": 16,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 15
+      }
+    },
+    {
+      "filename": "19510805-新しき暴力.txt",
+      "status": "ok",
+      "profile": "monolith",
+      "split_method": "line_no_split",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19510810-或る日の公判スケッチ.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 5,
+      "new_count": 5,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 4
+      }
+    },
+    {
+      "filename": "19510815-結核の革命的療法.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 178,
+      "new_count": 194,
+      "delta": 16,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 84,
+        "testimony": 108
+      }
+    },
+    {
+      "filename": "19510915-御垂示録1号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 3,
+      "new_count": 3,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 2
+      }
+    },
+    {
+      "filename": "19510920-御教え集1号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 11,
+      "new_count": 11,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 1,
+        "topic": 8
+      }
+    },
+    {
+      "filename": "19511010-御垂示録2号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19511025-御教え集2号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 13,
+      "new_count": 13,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 12
+      }
+    },
+    {
+      "filename": "19511125-御垂示録3号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19511210-御垂示録4号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19511215-御教え集4号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19511225-御垂示録5号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19520000-HAKONE ART MUSEUM.txt",
+      "status": "ok",
+      "profile": "monolith",
+      "split_method": "line_no_split",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19520115-御教え集5号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19520125-御垂示録6号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 4,
+      "new_count": 4,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 3
+      }
+    },
+    {
+      "filename": "19520310-御垂示録7号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520320-御教え集7号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 9,
+      "new_count": 9,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19520420-御教え集8号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 11,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 10
+      }
+    },
+    {
+      "filename": "19520425-御垂示録8号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 3,
+      "new_count": 3,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 2
+      }
+    },
+    {
+      "filename": "19520515-御垂示録9号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520515-御教え集9号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 9,
+      "delta": -2,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19520615-御垂示録10号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520615-御教え集10号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19520715-御垂示録11号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520715-御教え集11号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19520815-御教え集12号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 9,
+      "new_count": 9,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19520825-御垂示録12号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520925-御垂示録13号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19520925-御教え集13号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 9,
+      "new_count": 9,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19521015-御垂示録14号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19521015-御教え集14号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 11,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 10
+      }
+    },
+    {
+      "filename": "19521115-御垂示録15号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19521115-御教え集15号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 9,
+      "delta": -2,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19521201-結核信仰療法.txt",
+      "status": "ok",
+      "profile": "tuberculosis_faith",
+      "split_method": "line_bracket_testimony",
+      "old_count": 82,
+      "new_count": 68,
+      "delta": -14,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "testimony": 54,
+        "section": 13
+      }
+    },
+    {
+      "filename": "19521215-御垂示録16号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19521215-御教え集16号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19530101-アメリカを救う.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 103,
+      "new_count": 91,
+      "delta": -12,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "testimony": 74,
+        "section": 16
+      }
+    },
+    {
+      "filename": "19530115-御教え集17号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 10,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19530215-御垂示録17号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530215-御教え集18号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 13,
+      "new_count": 12,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 11
+      }
+    },
+    {
+      "filename": "19530315-御垂示録18号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530315-御教え集19号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 10,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19530415-御垂示録19号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530415-御教え集20号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 12,
+      "new_count": 11,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 10
+      }
+    },
+    {
+      "filename": "19530505-革命的増産の自然農法解説.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 182,
+      "new_count": 206,
+      "delta": 24,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 120,
+        "topic": 10,
+        "testimony": 39,
+        "chapter": 35
+      }
+    },
+    {
+      "filename": "19530515-御垂示録20号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530515-御教え集21号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 12,
+      "new_count": 9,
+      "delta": -3,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19530600-A Story of Ukiyo-e.txt",
+      "status": "ok",
+      "profile": "numbered_collection",
+      "split_method": "line_csv_auto",
+      "old_count": 30,
+      "new_count": 30,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "item": 29
+      }
+    },
+    {
+      "filename": "19530615-御垂示録21号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530615-御教え集22号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19530715-御垂示録22号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530715-御教え集23号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 8,
+      "delta": -2,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 7
+      }
+    },
+    {
+      "filename": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "status": "ok",
+      "profile": "structured",
+      "split_method": "line_author_structure",
+      "old_count": 29,
+      "new_count": 29,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 2,
+        "section": 27
+      }
+    },
+    {
+      "filename": "19530815-御垂示録23号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530815-御教え集24号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19530910-世界救世教奇蹟集.txt",
+      "status": "ok",
+      "profile": "miracle_collection",
+      "split_method": "line_miracle",
+      "old_count": 133,
+      "new_count": 133,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "section": 6,
+        "miracle_story": 126
+      }
+    },
+    {
+      "filename": "19530915-御垂示録24号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19530915-御教え集25号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 12,
+      "new_count": 12,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 8,
+        "section": 3
+      }
+    },
+    {
+      "filename": "19531015-御垂示録25号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19531015-御教え集26号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 12,
+      "new_count": 11,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 10
+      }
+    },
+    {
+      "filename": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 9,
+      "new_count": 9,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 6,
+        "section": 2
+      }
+    },
+    {
+      "filename": "19531115-御垂示録26号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19531115-御教え集27号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 10,
+      "new_count": 9,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19531215-御垂示録27号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19531215-御教え集28号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 13,
+      "new_count": 9,
+      "delta": -4,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 8
+      }
+    },
+    {
+      "filename": "19540115-御教え集29号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 10,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19540215-御垂示録28号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19540215-御教え集30号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 13,
+      "new_count": 12,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 11
+      }
+    },
+    {
+      "filename": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "status": "ok",
+      "profile": "monolith",
+      "split_method": "line_no_split",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19540315-御垂示録29号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19540315-御教え集31号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 10,
+      "delta": -1,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 9
+      }
+    },
+    {
+      "filename": "19540415-御垂示録30号.txt",
+      "status": "ok",
+      "profile": "ochishiji_roku",
+      "split_method": "line_ochishiji_date",
+      "old_count": 2,
+      "new_count": 2,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 1
+      }
+    },
+    {
+      "filename": "19540415-御教え集32号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 11,
+      "new_count": 11,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 10
+      }
+    },
+    {
+      "filename": "19540515-御教え集33号.txt",
+      "status": "ok",
+      "profile": "mioshie_shu",
+      "split_method": "line_mioshie_date",
+      "old_count": 9,
+      "new_count": 7,
+      "delta": -2,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "session": 6
+      }
+    },
+    {
+      "filename": "19540825-天国の福音書.txt",
+      "status": "ok",
+      "profile": "article_collection",
+      "split_method": "line_shinko_generic",
+      "old_count": 160,
+      "new_count": 160,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "article": 159
+      }
+    },
+    {
+      "filename": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 47,
+      "new_count": 47,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 4,
+        "item": 42
+      }
+    },
+    {
+      "filename": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 52,
+      "new_count": 52,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 2,
+        "item": 49
+      }
+    },
+    {
+      "filename": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "status": "ok",
+      "profile": "monolith",
+      "split_method": "line_no_split",
+      "old_count": 1,
+      "new_count": 1,
+      "delta": 0,
+      "was_monolith": true,
+      "still_monolith": true,
+      "warnings": [
+        "line_scan: monolith_after_split"
+      ],
+      "kinds": {
+        "monolith": 1
+      }
+    },
+    {
+      "filename": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 62,
+      "new_count": 62,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 4,
+        "item": 57
+      }
+    },
+    {
+      "filename": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 47,
+      "new_count": 47,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 8,
+        "item": 38
+      }
+    },
+    {
+      "filename": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 47,
+      "new_count": 47,
+      "delta": 0,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 40,
+        "item": 6
+      }
+    },
+    {
+      "filename": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 62,
+      "new_count": 65,
+      "delta": 3,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 5,
+        "item": 59
+      }
+    },
+    {
+      "filename": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 57,
+      "new_count": 21,
+      "delta": -36,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 2,
+        "topic": 17,
+        "section": 1
+      }
+    },
+    {
+      "filename": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "status": "ok",
+      "profile": "koza_lectures",
+      "split_method": "line_johrei_koza_structural",
+      "old_count": 85,
+      "new_count": 39,
+      "delta": -46,
+      "was_monolith": false,
+      "still_monolith": false,
+      "warnings": [],
+      "kinds": {
+        "preface": 1,
+        "chapter": 5,
+        "topic": 33
+      }
+    }
+  ]
+}

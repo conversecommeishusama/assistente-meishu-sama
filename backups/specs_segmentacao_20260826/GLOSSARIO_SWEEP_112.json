@@ -1,0 +1,8734 @@
+{
+  "files_checked": 112,
+  "total_term_checks": 9187,
+  "total_missing": 2127,
+  "files_with_gaps": 109,
+  "detail": {
+    "19350000-観音講座　（１～７）.txt": [
+      {
+        "jp_term": "お筆先",
+        "pt_expected": "Ofudesaki"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "三十三相",
+        "pt_expected": "33 manifestações"
+      },
+      {
+        "jp_term": "三途の川",
+        "pt_expected": "Rio dos Três Caminhos"
+      },
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "五六七の世",
+        "pt_expected": "Mundo de Miroku"
+      },
+      {
+        "jp_term": "五風十雨",
+        "pt_expected": "De cinco em cinco dias ventar, de dez em dez chover, seguindo a ordem perfeita da Grande Natureza"
+      },
+      {
+        "jp_term": "人の道",
+        "pt_expected": "religião Hitonomichi"
+      },
+      {
+        "jp_term": "仁斎",
+        "pt_expected": "Mestre Jinsai"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "体主霊従",
+        "pt_expected": "a matéria é primordial e o espírito é secundário"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "体的文化",
+        "pt_expected": "cultura materialista"
+      },
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "六道の辻",
+        "pt_expected": "cruzamento dos Seis Caminhos"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "凝結",
+        "pt_expected": "condensação"
+      },
+      {
+        "jp_term": "十六の菊",
+        "pt_expected": "dezesseis crisântemos"
+      },
+      {
+        "jp_term": "右進左退",
+        "pt_expected": "avanço para a direita, recuo à esquerda"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "国常立尊",
+        "pt_expected": "Kunitokotachi-no-mikoto"
+      },
+      {
+        "jp_term": "地縛の霊",
+        "pt_expected": "espíritos presos à terra"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "大光明世界",
+        "pt_expected": "Mundo da Grandiosa Luz"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "天狗",
+        "pt_expected": "tengu"
+      },
+      {
+        "jp_term": "天狗界",
+        "pt_expected": "reino dos tengu"
+      },
+      {
+        "jp_term": "宗教家",
+        "pt_expected": "religioso"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "弥勒三会",
+        "pt_expected": "O encontro dos três Miroku"
+      },
+      {
+        "jp_term": "御神体",
+        "pt_expected": "Imagem da Luz Divina"
+      },
+      {
+        "jp_term": "微熱",
+        "pt_expected": "estado ligeiramente febril"
+      },
+      {
+        "jp_term": "応身弥勒",
+        "pt_expected": "Ooshin Miroku (Miroku da Ação Livre e Desempedida)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "暴力団",
+        "pt_expected": "gangue"
+      },
+      {
+        "jp_term": "最勝妙如来",
+        "pt_expected": "Saishōmyō-Nyorai (Nyorai da Suprema Vitória)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "本医術",
+        "pt_expected": "nossa terapia"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "毒血",
+        "pt_expected": "sangue tóxico"
+      },
+      {
+        "jp_term": "水膿",
+        "pt_expected": "pus aquoso [exsudato purulento seroso de consistência semifluida]"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "病貧争",
+        "pt_expected": "doença, pobreza e conflito"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神格",
+        "pt_expected": "qualificação divina"
+      },
+      {
+        "jp_term": "空気の世界",
+        "pt_expected": "Mundo Atmosférico"
+      },
+      {
+        "jp_term": "空気界",
+        "pt_expected": "mundo atmosférico"
+      },
+      {
+        "jp_term": "華族",
+        "pt_expected": "nobreza"
+      },
+      {
+        "jp_term": "観音力",
+        "pt_expected": "Poder Kannon"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "釈迦様",
+        "pt_expected": "o Senhor Shaka"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "閻魔の庁",
+        "pt_expected": "tribunal do Enma"
+      },
+      {
+        "jp_term": "閻魔大王",
+        "pt_expected": "Enma Daiō"
+      },
+      {
+        "jp_term": "霊体の曇",
+        "pt_expected": "nuvens do corpo espiritual"
+      },
+      {
+        "jp_term": "霊素",
+        "pt_expected": "elemento espiritual"
+      },
+      {
+        "jp_term": "霊術",
+        "pt_expected": "técnica espiritual"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "龍神界",
+        "pt_expected": "reino dos deuses dragão"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19480701-御讃歌集.txt": [
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      }
+    ],
+    "19480905-信仰雑話.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "光明如来",
+        "pt_expected": "Komyo-Nyorai"
+      },
+      {
+        "jp_term": "其儘",
+        "pt_expected": "Tal como é"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "唯心主義",
+        "pt_expected": "espiritualismo"
+      },
+      {
+        "jp_term": "唯物主義",
+        "pt_expected": "materialismo"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "塵挨",
+        "pt_expected": "impurezas espirituais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "応身弥勒",
+        "pt_expected": "Ooshin Miroku (Miroku da Ação Livre e Desempedida)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "最勝妙如来",
+        "pt_expected": "Saishōmyō-Nyorai (Nyorai da Suprema Vitória)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "無縁仏",
+        "pt_expected": "almas desamparadas"
+      },
+      {
+        "jp_term": "狐狸",
+        "pt_expected": "raposas, cães-guaxinins (espíritos de)"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "甘露台",
+        "pt_expected": "Pedestal do Néctar (termo escatológico)"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神意",
+        "pt_expected": "Vontade Divina"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "義農の世",
+        "pt_expected": "Mundo da Agricultura Justa"
+      },
+      {
+        "jp_term": "誘発",
+        "pt_expected": "transmissão"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "金仏",
+        "pt_expected": "estátuas de metal"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "鎮魂帰神",
+        "pt_expected": "Método Chinkon Kishin"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "霊術",
+        "pt_expected": "técnica espiritual"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19490625-自観叢書第1篇『結核と神霊療法』.txt": [
+      {
+        "jp_term": "下熱剤",
+        "pt_expected": "anti-térmico"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "叡智",
+        "pt_expected": "Sabedoria Sagrada"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "報恩感謝",
+        "pt_expected": "retribuição em gratidão"
+      },
+      {
+        "jp_term": "大乗",
+        "pt_expected": "Daijo"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御神体",
+        "pt_expected": "Imagem da Luz Divina"
+      },
+      {
+        "jp_term": "御霊徳",
+        "pt_expected": "Graças Divinas"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "指圧療法",
+        "pt_expected": "terapia de digitopuntura"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "歯槽膿漏",
+        "pt_expected": "periodontite"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "毒結",
+        "pt_expected": "concentração de toxinas"
+      },
+      {
+        "jp_term": "浄化発生",
+        "pt_expected": "ocorre a purificação"
+      },
+      {
+        "jp_term": "浄血",
+        "pt_expected": "sangue purificado"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶解作用",
+        "pt_expected": "processo de dissolução"
+      },
+      {
+        "jp_term": "濁血",
+        "pt_expected": "sangue turvo"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "然毒",
+        "pt_expected": "toxina hereditária"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "病毒",
+        "pt_expected": "toxinas/impurezas"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "観音力",
+        "pt_expected": "Poder Kannon"
+      },
+      {
+        "jp_term": "雲翳",
+        "pt_expected": "manchas"
+      },
+      {
+        "jp_term": "霊気",
+        "pt_expected": "energia espiritual"
+      },
+      {
+        "jp_term": "非物質",
+        "pt_expected": "não-matéria"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19490701-自観叢書第2篇『無肥料栽培法』.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "便秘",
+        "pt_expected": "constipação"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御霊徳",
+        "pt_expected": "Graças Divinas"
+      },
+      {
+        "jp_term": "心魂",
+        "pt_expected": "alma/consciência"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "病毒",
+        "pt_expected": "toxinas/impurezas"
+      },
+      {
+        "jp_term": "迷信邪教",
+        "pt_expected": "religião maligna e supersticiosa"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "霊界",
+        "pt_expected": "mundo espiritual"
+      },
+      {
+        "jp_term": "先日",
+        "pt_expected": "outro dia"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19490715-自観叢書第6篇『怪物か聖者か』.txt": [
+      {
+        "jp_term": "下熱",
+        "pt_expected": "redução da febre ou a febre baixa"
+      },
+      {
+        "jp_term": "光明如来",
+        "pt_expected": "Komyo-Nyorai"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "半物質",
+        "pt_expected": "semi-matéria"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "幽体",
+        "pt_expected": "yutai (corpo astral)"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "心魂",
+        "pt_expected": "alma/consciência"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神性",
+        "pt_expected": "natureza divina"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "観世音菩薩",
+        "pt_expected": "Kanzeon-Bosatsu"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "霊波",
+        "pt_expected": "Ondas Espirituais"
+      },
+      {
+        "jp_term": "頭脳",
+        "pt_expected": "cérebro"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19490825-自観叢書第3篇『霊界叢談』.txt": [
+      {
+        "jp_term": "三途の川",
+        "pt_expected": "Rio dos Três Caminhos"
+      },
+      {
+        "jp_term": "中有界",
+        "pt_expected": "Mundo intermediário"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "体的文化",
+        "pt_expected": "cultura materialista"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "光明如来",
+        "pt_expected": "Komyo-Nyorai"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "六道の辻",
+        "pt_expected": "cruzamento dos Seis Caminhos"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "冥官",
+        "pt_expected": "oficiais do submundo"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "地獄極楽説",
+        "pt_expected": "teoria do inferno e paraíso"
+      },
+      {
+        "jp_term": "奸智",
+        "pt_expected": "Sabedoria Astuta"
+      },
+      {
+        "jp_term": "安心立命",
+        "pt_expected": "tranquilidade e paz espiritual"
+      },
+      {
+        "jp_term": "宗教家",
+        "pt_expected": "religioso"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "形而上",
+        "pt_expected": "ciência espiritual"
+      },
+      {
+        "jp_term": "形而下",
+        "pt_expected": "ciência material"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "憑依霊",
+        "pt_expected": "espíritos possessores ou encosto"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "根底の国",
+        "pt_expected": "Reino do Fundo da Raiz"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "白狐",
+        "pt_expected": "Raposa branca"
+      },
+      {
+        "jp_term": "神憑り",
+        "pt_expected": "possessão por divindades"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "閻魔の庁",
+        "pt_expected": "tribunal do Enma"
+      },
+      {
+        "jp_term": "霊層界",
+        "pt_expected": "camadas do mundo espiritual"
+      },
+      {
+        "jp_term": "霊的文化",
+        "pt_expected": "cultura espiritualista"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      }
+    ],
+    "19490830-自観叢書第5篇『自観隨談』.txt": [
+      {
+        "jp_term": "お筆先",
+        "pt_expected": "Ofudesaki"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "余剰尿",
+        "pt_expected": "Excesso de urina não eliminada/excretada"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "国常立尊",
+        "pt_expected": "Kunitokotachi-no-mikoto"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "米国",
+        "pt_expected": "Estados Unidos"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "行詰り",
+        "pt_expected": "beco sem saída"
+      },
+      {
+        "jp_term": "観世音菩薩",
+        "pt_expected": "Kanzeon-Bosatsu"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19491005-自観叢書第4篇『奇蹟物語』.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "気を入れる",
+        "pt_expected": "colocar a força mental"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      }
+    ],
+    "19491025-自観叢書第7篇『基仏と観音教』.txt": [
+      {
+        "jp_term": "中風",
+        "pt_expected": "derrame"
+      },
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "憑依",
+        "pt_expected": "possessão espiritual ou encosto"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "正信",
+        "pt_expected": "fé correta"
+      },
+      {
+        "jp_term": "神格",
+        "pt_expected": "qualificação divina"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      }
+    ],
+    "19491130-自観叢書第8篇『明麿近詠集』.txt": [
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      }
+    ],
+    "19491205-自観叢書第13篇『世界の六大神秘家』.txt": [
+      {
+        "jp_term": "一大神秘",
+        "pt_expected": "mistério supremo"
+      },
+      {
+        "jp_term": "五六七",
+        "pt_expected": "Miroku"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "効果",
+        "pt_expected": "efeito"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "癲癇",
+        "pt_expected": "epilepsia"
+      },
+      {
+        "jp_term": "芸術化",
+        "pt_expected": "transformar-se em arte"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "霊線",
+        "pt_expected": "elo espiritual"
+      },
+      {
+        "jp_term": "頭脳",
+        "pt_expected": "cérebro"
+      },
+      {
+        "jp_term": "相違",
+        "pt_expected": "diferença"
+      }
+    ],
+    "19491223-山と水.txt": [
+      {
+        "jp_term": "人の道",
+        "pt_expected": "religião Hitonomichi"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "曇り",
+        "pt_expected": "nuvens espirituais"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "黴菌",
+        "pt_expected": "micróbio"
+      }
+    ],
+    "19491230-自観叢書第9篇『光への道』.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "応神堂",
+        "pt_expected": "Ōjin-dō (nome da clínica terapêutica de Mokichi Okada antes da fundação da Igreja em 1935)"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "指圧療法",
+        "pt_expected": "terapia de digitopuntura"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "特高",
+        "pt_expected": "Tokkō (Polícia de Segurança Pública do Japão no pré-guerra)"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "自観",
+        "pt_expected": "Jikan"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19500125-自観叢書第15篇『基督と自観師』.txt": [
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "幽体",
+        "pt_expected": "yutai (corpo astral)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "神霊界",
+        "pt_expected": "Mundo do espírito divino"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "非物質",
+        "pt_expected": "não-matéria"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      }
+    ],
+    "19500130-自観叢書第12篇『自観説話集』.txt": [
+      {
+        "jp_term": "三段階",
+        "pt_expected": "três planos"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "前世",
+        "pt_expected": "vida passada"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "形而下",
+        "pt_expected": "ciência material"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "甘露台",
+        "pt_expected": "Pedestal do Néctar (termo escatológico)"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "行詰り",
+        "pt_expected": "beco sem saída"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19500420-自観叢書第10篇『神示の健康法』.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "人霊",
+        "pt_expected": "espírito humano"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "唯物主義",
+        "pt_expected": "materialismo"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "微熱",
+        "pt_expected": "estado ligeiramente febril"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "文化民族",
+        "pt_expected": "nações culturalmente avançadas"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "浄化発生",
+        "pt_expected": "ocorre a purificação"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "腎臓",
+        "pt_expected": "rins"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19500921-地上天国出来るまで.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "学校",
+        "pt_expected": "escola"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "頭脳",
+        "pt_expected": "cérebro"
+      }
+    ],
+    "19501030-法難手記.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "人類",
+        "pt_expected": "humanidade"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "唯物主義",
+        "pt_expected": "materialismo"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "心魂",
+        "pt_expected": "alma/consciência"
+      },
+      {
+        "jp_term": "救世済民",
+        "pt_expected": "Salvação da Humanidade"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "特高",
+        "pt_expected": "Tokkō (Polícia de Segurança Pública do Japão no pré-guerra)"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "神意",
+        "pt_expected": "Vontade Divina"
+      },
+      {
+        "jp_term": "脳溢血",
+        "pt_expected": "hemorragia cerebral"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "先日",
+        "pt_expected": "outro dia"
+      }
+    ],
+    "19501120-世界救世教早わかり.txt": [
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "病貧争",
+        "pt_expected": "doença, pobreza e conflito"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "神霊界",
+        "pt_expected": "Mundo do espírito divino"
+      },
+      {
+        "jp_term": "自観",
+        "pt_expected": "Jikan"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      }
+    ],
+    "19510115-自然農法解説.txt": [
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "気を入れる",
+        "pt_expected": "colocar a força mental"
+      },
+      {
+        "jp_term": "異物",
+        "pt_expected": "corpos estranhos ao organismo"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "一昨年",
+        "pt_expected": "ano retrasado"
+      },
+      {
+        "jp_term": "三日間",
+        "pt_expected": "três dias"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19510130-笑の泉.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19510225-御教え集6号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "六百六号",
+        "pt_expected": "606 (Salvarsan)"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "固結",
+        "pt_expected": "solidificação"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "黴菌",
+        "pt_expected": "micróbio"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      },
+      {
+        "jp_term": "ビッコ",
+        "pt_expected": "claudicação"
+      }
+    ],
+    "19510520-教えの光.txt": [
+      {
+        "jp_term": "カリエス",
+        "pt_expected": "cárie óssea"
+      },
+      {
+        "jp_term": "ユダヤ",
+        "pt_expected": "judeus"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "七分搗き",
+        "pt_expected": "arroz semi-polido (setenta por cento)"
+      },
+      {
+        "jp_term": "三十三相",
+        "pt_expected": "33 manifestações"
+      },
+      {
+        "jp_term": "不眠",
+        "pt_expected": "insônia"
+      },
+      {
+        "jp_term": "中風",
+        "pt_expected": "derrame"
+      },
+      {
+        "jp_term": "五六七の世",
+        "pt_expected": "Mundo de Miroku"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "余剰尿",
+        "pt_expected": "Excesso de urina não eliminada/excretada"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "副霊",
+        "pt_expected": "Espírito Secundário"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "国常立尊",
+        "pt_expected": "Kunitokotachi-no-mikoto"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "尿毒",
+        "pt_expected": "toxina urinária"
+      },
+      {
+        "jp_term": "応身弥勒",
+        "pt_expected": "Ooshin Miroku (Miroku da Ação Livre e Desempedida)"
+      },
+      {
+        "jp_term": "感冒",
+        "pt_expected": "resfriado"
+      },
+      {
+        "jp_term": "戒名",
+        "pt_expected": "nomes póstumos"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "文化民族",
+        "pt_expected": "nações culturalmente avançadas"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "最勝妙如来",
+        "pt_expected": "Saishōmyō-Nyorai (Nyorai da Suprema Vitória)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "月の系統",
+        "pt_expected": "linhagem da lua"
+      },
+      {
+        "jp_term": "本霊",
+        "pt_expected": "Espírito Primordial"
+      },
+      {
+        "jp_term": "正神",
+        "pt_expected": "divindades corretas"
+      },
+      {
+        "jp_term": "毒血",
+        "pt_expected": "sangue tóxico"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "清算",
+        "pt_expected": "acerto de contas"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "濾過性",
+        "pt_expected": "vírus"
+      },
+      {
+        "jp_term": "濾過性黴菌",
+        "pt_expected": "vírus"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神意",
+        "pt_expected": "Vontade Divina"
+      },
+      {
+        "jp_term": "神智",
+        "pt_expected": "Sabedoria Divina"
+      },
+      {
+        "jp_term": "神格",
+        "pt_expected": "qualificação divina"
+      },
+      {
+        "jp_term": "経綸",
+        "pt_expected": "Plano Divino"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "観世音菩薩",
+        "pt_expected": "Kanzeon-Bosatsu"
+      },
+      {
+        "jp_term": "観音力",
+        "pt_expected": "Poder Kannon"
+      },
+      {
+        "jp_term": "言霊",
+        "pt_expected": "espírito da palavra"
+      },
+      {
+        "jp_term": "誘発",
+        "pt_expected": "transmissão"
+      },
+      {
+        "jp_term": "逆理",
+        "pt_expected": "Princípio Inverso"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "霊層界",
+        "pt_expected": "camadas do mundo espiritual"
+      },
+      {
+        "jp_term": "高天原",
+        "pt_expected": "Taka Ama Hara"
+      },
+      {
+        "jp_term": "先日",
+        "pt_expected": "outro dia"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      }
+    ],
+    "19510601-世界救世教教義解説.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "人の道",
+        "pt_expected": "religião Hitonomichi"
+      },
+      {
+        "jp_term": "人類",
+        "pt_expected": "humanidade"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "学校",
+        "pt_expected": "escola"
+      },
+      {
+        "jp_term": "日本人",
+        "pt_expected": "japoneses"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19510615-一信者の告白.txt": [
+      {
+        "jp_term": "信仰雑話",
+        "pt_expected": "Shinkō Zatsuwa"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "大先生",
+        "pt_expected": "Grão-Mestre"
+      },
+      {
+        "jp_term": "大和魂",
+        "pt_expected": "espírito de Yamato"
+      },
+      {
+        "jp_term": "天照皇大神",
+        "pt_expected": "Amaterasu Ōmikami"
+      },
+      {
+        "jp_term": "安心立命",
+        "pt_expected": "tranquilidade e paz espiritual"
+      },
+      {
+        "jp_term": "形而上",
+        "pt_expected": "ciência espiritual"
+      },
+      {
+        "jp_term": "形而下",
+        "pt_expected": "ciência material"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "正神",
+        "pt_expected": "divindades corretas"
+      },
+      {
+        "jp_term": "現当利益",
+        "pt_expected": "graças recebidas nessa vida"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "神憑式",
+        "pt_expected": "rituais de possessão por divindades"
+      },
+      {
+        "jp_term": "神智",
+        "pt_expected": "Sabedoria Divina"
+      },
+      {
+        "jp_term": "迷信邪教",
+        "pt_expected": "religião maligna e supersticiosa"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "高血圧",
+        "pt_expected": "hipertensão"
+      }
+    ],
+    "19510805-新しき暴力.txt": [
+      {
+        "jp_term": "メシヤ教",
+        "pt_expected": "Igreja Messiânica"
+      },
+      {
+        "jp_term": "人類",
+        "pt_expected": "humanidade"
+      },
+      {
+        "jp_term": "岡田茂吉全集著述",
+        "pt_expected": "Obras Completas de Mokichi Okada, Escritos"
+      }
+    ],
+    "19510810-或る日の公判スケッチ.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      }
+    ],
+    "19510815-結核の革命的療法.txt": [
+      {
+        "jp_term": "エーテル",
+        "pt_expected": "éter"
+      },
+      {
+        "jp_term": "三毒",
+        "pt_expected": "os três tipos de toxinas"
+      },
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "再浄化",
+        "pt_expected": "Repurificação"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "堆肥",
+        "pt_expected": "composto natural"
+      },
+      {
+        "jp_term": "大神業",
+        "pt_expected": "Grandiosa Obra Divina"
+      },
+      {
+        "jp_term": "大道",
+        "pt_expected": "Grande Caminho"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "実験神霊学",
+        "pt_expected": "ciência experimental do espírito divino"
+      },
+      {
+        "jp_term": "尿毒",
+        "pt_expected": "toxina urinária"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "御霊徳",
+        "pt_expected": "Graças Divinas"
+      },
+      {
+        "jp_term": "心魂",
+        "pt_expected": "alma/consciência"
+      },
+      {
+        "jp_term": "憑依",
+        "pt_expected": "possessão espiritual ou encosto"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "指圧療法",
+        "pt_expected": "terapia de digitopuntura"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "文化民族",
+        "pt_expected": "nações culturalmente avançadas"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "本療法",
+        "pt_expected": "nossa terapia"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "栄養学",
+        "pt_expected": "Ciência da Nutrição"
+      },
+      {
+        "jp_term": "栄養生産機能",
+        "pt_expected": "função produtora de nutrientes"
+      },
+      {
+        "jp_term": "歯槽膿漏",
+        "pt_expected": "periodontite"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "毒血",
+        "pt_expected": "sangue tóxico"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "浄血",
+        "pt_expected": "sangue purificado"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "浣腸",
+        "pt_expected": "lavagem intestinal"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "溜結",
+        "pt_expected": "acúmulo endurecido"
+      },
+      {
+        "jp_term": "然毒",
+        "pt_expected": "toxina hereditária"
+      },
+      {
+        "jp_term": "物理療法",
+        "pt_expected": "Tratamento por Agentes Físicos"
+      },
+      {
+        "jp_term": "現当利益",
+        "pt_expected": "graças recebidas nessa vida"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "理論神霊学",
+        "pt_expected": "ciência teórica do espírito divino"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "神霊界",
+        "pt_expected": "Mundo do espírito divino"
+      },
+      {
+        "jp_term": "空気界",
+        "pt_expected": "mundo atmosférico"
+      },
+      {
+        "jp_term": "迷信邪教",
+        "pt_expected": "religião maligna e supersticiosa"
+      },
+      {
+        "jp_term": "逆結果",
+        "pt_expected": "efeitos contrários"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "霊作用",
+        "pt_expected": "processo espiritual"
+      },
+      {
+        "jp_term": "霊衣",
+        "pt_expected": "Aura"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "ビッコ",
+        "pt_expected": "claudicação"
+      }
+    ],
+    "19510915-御垂示録1号.txt": [
+      {
+        "jp_term": "下痢",
+        "pt_expected": "diarreia"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "先祖代々之霊",
+        "pt_expected": "espíritos ancestrais de todas as gerações"
+      },
+      {
+        "jp_term": "前世",
+        "pt_expected": "vida passada"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "固結",
+        "pt_expected": "solidificação"
+      },
+      {
+        "jp_term": "子宮",
+        "pt_expected": "útero"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "毒結",
+        "pt_expected": "concentração de toxinas"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "腹部",
+        "pt_expected": "abdômen"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19510920-御教え集1号.txt": [
+      {
+        "jp_term": "人霊",
+        "pt_expected": "espírito humano"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "便秘",
+        "pt_expected": "constipação"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "六百六号",
+        "pt_expected": "606 (Salvarsan)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "奇蹟",
+        "pt_expected": "milagre"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御教え集",
+        "pt_expected": "Mioshie-shū"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "無縁仏",
+        "pt_expected": "almas desamparadas"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "白狐",
+        "pt_expected": "Raposa branca"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺炎",
+        "pt_expected": "pneumonia"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "固結",
+        "pt_expected": "solidificação"
+      },
+      {
+        "jp_term": "心臓",
+        "pt_expected": "coração"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "高血圧",
+        "pt_expected": "hipertensão"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19511010-御垂示録2号.txt": [
+      {
+        "jp_term": "ユダヤ",
+        "pt_expected": "judeus"
+      },
+      {
+        "jp_term": "五六七",
+        "pt_expected": "Miroku"
+      },
+      {
+        "jp_term": "五六七の世",
+        "pt_expected": "Mundo de Miroku"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "体主霊従",
+        "pt_expected": "a matéria é primordial e o espírito é secundário"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "便秘",
+        "pt_expected": "constipação"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "前世",
+        "pt_expected": "vida passada"
+      },
+      {
+        "jp_term": "副守護神",
+        "pt_expected": "espírito protetor secundário"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "右進左退",
+        "pt_expected": "avanço para a direita, recuo à esquerda"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "大先生",
+        "pt_expected": "Grão-Mestre"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御屏風観音様",
+        "pt_expected": "Kannon do biombo"
+      },
+      {
+        "jp_term": "御神体",
+        "pt_expected": "Imagem da Luz Divina"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "惟神霊幸倍坐せ",
+        "pt_expected": "Kamu nagara tamachi haemase"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本守護神",
+        "pt_expected": "espírito protetor primordial"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "清算",
+        "pt_expected": "acerto de contas"
+      },
+      {
+        "jp_term": "然毒",
+        "pt_expected": "toxina hereditária"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神意",
+        "pt_expected": "Vontade Divina"
+      },
+      {
+        "jp_term": "神格",
+        "pt_expected": "qualificação divina"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肥料",
+        "pt_expected": "fertilizante"
+      },
+      {
+        "jp_term": "言霊",
+        "pt_expected": "espírito da palavra"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "迷信邪教",
+        "pt_expected": "religião maligna e supersticiosa"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "霊体の曇",
+        "pt_expected": "nuvens do corpo espiritual"
+      },
+      {
+        "jp_term": "黴菌",
+        "pt_expected": "micróbio"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19511025-御教え集2号.txt": [
+      {
+        "jp_term": "お筆先",
+        "pt_expected": "Ofudesaki"
+      },
+      {
+        "jp_term": "フリーメーソン",
+        "pt_expected": "Maçonaria"
+      },
+      {
+        "jp_term": "メシヤ会館",
+        "pt_expected": "Templo Messiânico"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "国常立尊",
+        "pt_expected": "Kunitokotachi-no-mikoto"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "弥勒三会",
+        "pt_expected": "O encontro dos três Miroku"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御屏風観音様",
+        "pt_expected": "Kannon do biombo"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "憑依霊",
+        "pt_expected": "espíritos possessores ou encosto"
+      },
+      {
+        "jp_term": "文化民族",
+        "pt_expected": "nações culturalmente avançadas"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "正神",
+        "pt_expected": "divindades corretas"
+      },
+      {
+        "jp_term": "毒血",
+        "pt_expected": "sangue tóxico"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "漢方薬",
+        "pt_expected": "medicamentos da medicina chinesa"
+      },
+      {
+        "jp_term": "現界",
+        "pt_expected": "mundo material"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "素盞嗚尊",
+        "pt_expected": "Susanoo no Mikoto"
+      },
+      {
+        "jp_term": "経綸",
+        "pt_expected": "Plano Divino"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "言霊",
+        "pt_expected": "espírito da palavra"
+      },
+      {
+        "jp_term": "鈍痛",
+        "pt_expected": "dores persistentes"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19511125-御垂示録3号.txt": [
+      {
+        "jp_term": "メシヤ会館",
+        "pt_expected": "Templo Messiânico"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "信仰雑話",
+        "pt_expected": "Shinkō Zatsuwa"
+      },
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "前世",
+        "pt_expected": "vida passada"
+      },
+      {
+        "jp_term": "副霊",
+        "pt_expected": "Espírito Secundário"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "右進左退",
+        "pt_expected": "avanço para a direita, recuo à esquerda"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "大和民族",
+        "pt_expected": "Raça de Yamato"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "現界",
+        "pt_expected": "mundo material"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "瑞雲郷",
+        "pt_expected": "Zuiunkyo"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "神憑り",
+        "pt_expected": "possessão por divindades"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "観世音菩薩",
+        "pt_expected": "Kanzeon-Bosatsu"
+      },
+      {
+        "jp_term": "霊媒",
+        "pt_expected": "médium"
+      },
+      {
+        "jp_term": "霊憑り",
+        "pt_expected": "possessão espiritual"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "ピクピク",
+        "pt_expected": "espasmos"
+      }
+    ],
+    "19511125-御教え集3号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "唯物的方法",
+        "pt_expected": "método materialista"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "弥勒三会",
+        "pt_expected": "O encontro dos três Miroku"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御教え集",
+        "pt_expected": "Mioshie-shū"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "応身弥勒",
+        "pt_expected": "Ooshin Miroku (Miroku da Ação Livre e Desempedida)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "正神",
+        "pt_expected": "divindades corretas"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "麻疹",
+        "pt_expected": "sarampo"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19511210-御垂示録4号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "六百六号",
+        "pt_expected": "606 (Salvarsan)"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "後頭部",
+        "pt_expected": "nuca"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "自然農法",
+        "pt_expected": "método da agricultura natural"
+      },
+      {
+        "jp_term": "自観",
+        "pt_expected": "Jikan"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      }
+    ],
+    "19511215-御教え集4号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "唯物思想",
+        "pt_expected": "pensamento materialista"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "水膿",
+        "pt_expected": "pus aquoso [exsudato purulento seroso de consistência semifluida]"
+      },
+      {
+        "jp_term": "浄化発生",
+        "pt_expected": "ocorre a purificação"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "異物",
+        "pt_expected": "corpos estranhos ao organismo"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "一昨年",
+        "pt_expected": "ano retrasado"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      }
+    ],
+    "19511225-御垂示録5号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "再浄化",
+        "pt_expected": "Repurificação"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "対症療法",
+        "pt_expected": "terapia sintomática"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      }
+    ],
+    "19520115-御教え集5号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "毒結",
+        "pt_expected": "concentração de toxinas"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "脳溢血",
+        "pt_expected": "hemorragia cerebral"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "一昨年",
+        "pt_expected": "ano retrasado"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19520125-御垂示録6号.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "憑依",
+        "pt_expected": "possessão espiritual ou encosto"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "鎮魂",
+        "pt_expected": "Chinkon (método de purificação espiritual)"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19520310-御垂示録7号.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19520320-御教え集7号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教線",
+        "pt_expected": "frente de expansão religiosa"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "清算",
+        "pt_expected": "acerto de contas"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19520420-御教え集8号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "水膿",
+        "pt_expected": "pus aquoso [exsudato purulento seroso de consistência semifluida]"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19520425-御垂示録8号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝結",
+        "pt_expected": "condensação"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "堆肥",
+        "pt_expected": "composto natural"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "戒名",
+        "pt_expected": "nomes póstumos"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "漢方薬",
+        "pt_expected": "medicamentos da medicina chinesa"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      }
+    ],
+    "19520515-御垂示録9号.txt": [
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "霊媒",
+        "pt_expected": "médium"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19520515-御教え集9号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "唯物主義",
+        "pt_expected": "materialismo"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "腎臓",
+        "pt_expected": "rins"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19520615-御垂示録10号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "効果",
+        "pt_expected": "efeito"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "政治家",
+        "pt_expected": "político"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "癲癇",
+        "pt_expected": "epilepsia"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      }
+    ],
+    "19520615-御教え集10号.txt": [
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪魔",
+        "pt_expected": "demônio"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      }
+    ],
+    "19520715-御垂示録11号.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "国家",
+        "pt_expected": "nação"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "文化",
+        "pt_expected": "cultura"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      }
+    ],
+    "19520715-御教え集11号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "医術",
+        "pt_expected": "terapia"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      }
+    ],
+    "19520815-御教え集12号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "共産主義",
+        "pt_expected": "comunismo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      }
+    ],
+    "19520825-御垂示録12号.txt": [
+      {
+        "jp_term": "お光様",
+        "pt_expected": "o Senhor Luz"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "後頭部",
+        "pt_expected": "nuca"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "栄光",
+        "pt_expected": "Eikō"
+      },
+      {
+        "jp_term": "氏神",
+        "pt_expected": "Ujigami (Deus do Clã)"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "赤痢",
+        "pt_expected": "disenteria"
+      }
+    ],
+    "19520925-御垂示録13号.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "世界人類",
+        "pt_expected": "toda a humanidade"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "後頭部",
+        "pt_expected": "nuca"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "漢方薬",
+        "pt_expected": "medicamentos da medicina chinesa"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "盤古神王",
+        "pt_expected": "Banko Shin'ō"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19520925-御教え集13号.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "経綸",
+        "pt_expected": "Plano Divino"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19521015-御垂示録14号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19521015-御教え集14号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教線",
+        "pt_expected": "frente de expansão religiosa"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "甘露台",
+        "pt_expected": "Pedestal do Néctar (termo escatológico)"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "ＰＬ教",
+        "pt_expected": "religião PL"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19521115-御垂示録15号.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "脳溢血",
+        "pt_expected": "hemorragia cerebral"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19521115-御教え集15号.txt": [
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "政治家",
+        "pt_expected": "político"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "民間療法",
+        "pt_expected": "terapias populares"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19521201-結核信仰療法.txt": [
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "六百六号",
+        "pt_expected": "606 (Salvarsan)"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "大神業",
+        "pt_expected": "Grandiosa Obra Divina"
+      },
+      {
+        "jp_term": "対症療法",
+        "pt_expected": "terapia sintomática"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "清算",
+        "pt_expected": "acerto de contas"
+      },
+      {
+        "jp_term": "溜結",
+        "pt_expected": "acúmulo endurecido"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "病毒",
+        "pt_expected": "toxinas/impurezas"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "空気界",
+        "pt_expected": "mundo atmosférico"
+      },
+      {
+        "jp_term": "腎臓",
+        "pt_expected": "rins"
+      },
+      {
+        "jp_term": "自観",
+        "pt_expected": "Jikan"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "ビッコ",
+        "pt_expected": "claudicação"
+      }
+    ],
+    "19521215-御垂示録16号.txt": [
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19521215-御教え集16号.txt": [
+      {
+        "jp_term": "お光様",
+        "pt_expected": "o Senhor Luz"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "小乗",
+        "pt_expected": "Shojo"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "頭痛",
+        "pt_expected": "dor de cabeça"
+      },
+      {
+        "jp_term": "天降",
+        "pt_expected": "descer"
+      }
+    ],
+    "19530101-アメリカを救う.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "余剰尿",
+        "pt_expected": "Excesso de urina não eliminada/excretada"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "凝結",
+        "pt_expected": "condensação"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "岡田茂吉全集著述",
+        "pt_expected": "Obras Completas de Mokichi Okada, Escritos"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "微熱",
+        "pt_expected": "estado ligeiramente febril"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "浄血",
+        "pt_expected": "sangue purificado"
+      },
+      {
+        "jp_term": "溜結",
+        "pt_expected": "acúmulo endurecido"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "非物質",
+        "pt_expected": "não-matéria"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19530115-御教え集17号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "三段階",
+        "pt_expected": "três planos"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "利他愛",
+        "pt_expected": "Amor Altruísta"
+      },
+      {
+        "jp_term": "副守護神",
+        "pt_expected": "espírito protetor secundário"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "右進左退",
+        "pt_expected": "avanço para a direita, recuo à esquerda"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "御教え集",
+        "pt_expected": "Mioshie-shū"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "漢方薬",
+        "pt_expected": "medicamentos da medicina chinesa"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "獣性",
+        "pt_expected": "natureza animal"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "自己愛",
+        "pt_expected": "Amor egoísta"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "観世音菩薩",
+        "pt_expected": "Kanzeon-Bosatsu"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19530215-御垂示録17号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "科学",
+        "pt_expected": "ciência"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19530215-御教え集18号.txt": [
+      {
+        "jp_term": "お筆先",
+        "pt_expected": "Ofudesaki"
+      },
+      {
+        "jp_term": "メシヤ会館",
+        "pt_expected": "Templo Messiânico"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "地獄",
+        "pt_expected": "Inferno"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "大乗",
+        "pt_expected": "Daijo"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "奇蹟",
+        "pt_expected": "milagre"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "御教え集",
+        "pt_expected": "Mioshie-shū"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "文化民族",
+        "pt_expected": "nações culturalmente avançadas"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "瑞雲郷",
+        "pt_expected": "Zuiunkyo"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "釈迦様",
+        "pt_expected": "o Senhor Shaka"
+      },
+      {
+        "jp_term": "閻魔の帳",
+        "pt_expected": "registo de Enma"
+      },
+      {
+        "jp_term": "閻魔の庁",
+        "pt_expected": "tribunal do Enma"
+      },
+      {
+        "jp_term": "ＰＬ教",
+        "pt_expected": "religião PL"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19530315-御垂示録18号.txt": [
+      {
+        "jp_term": "ジャーナリスト",
+        "pt_expected": "jornalista"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "甘露台",
+        "pt_expected": "Pedestal do Néctar (termo escatológico)"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      }
+    ],
+    "19530315-御教え集19号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19530415-御垂示録19号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      }
+    ],
+    "19530415-御教え集20号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "医術",
+        "pt_expected": "terapia"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生け花",
+        "pt_expected": "Ikebana"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "脳溢血",
+        "pt_expected": "hemorragia cerebral"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "ビッコ",
+        "pt_expected": "claudicação"
+      }
+    ],
+    "19530505-革命的増産の自然農法解説.txt": [
+      {
+        "jp_term": "お光様",
+        "pt_expected": "o Senhor Luz"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "光波",
+        "pt_expected": "ondas de Luz"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心魂",
+        "pt_expected": "alma/consciência"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "気を入れる",
+        "pt_expected": "colocar a força mental"
+      },
+      {
+        "jp_term": "生花",
+        "pt_expected": "Ikebana"
+      },
+      {
+        "jp_term": "病毒",
+        "pt_expected": "toxinas/impurezas"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "英国",
+        "pt_expected": "Inglaterra"
+      },
+      {
+        "jp_term": "別府",
+        "pt_expected": "Beppu"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      }
+    ],
+    "19530515-御垂示録20号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "社会",
+        "pt_expected": "sociedade"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "先日",
+        "pt_expected": "outro dia"
+      }
+    ],
+    "19530515-御教え集21号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "堆肥",
+        "pt_expected": "composto natural"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "本霊",
+        "pt_expected": "Espírito Primordial"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "科学",
+        "pt_expected": "ciência"
+      },
+      {
+        "jp_term": "自己愛",
+        "pt_expected": "Amor egoísta"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "霊憑り",
+        "pt_expected": "possessão espiritual"
+      },
+      {
+        "jp_term": "ビッコ",
+        "pt_expected": "claudicação"
+      }
+    ],
+    "19530615-御垂示録21号.txt": [
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19530615-御教え集22号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      }
+    ],
+    "19530715-御垂示録22号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19530715-御教え集23号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "中有界",
+        "pt_expected": "Mundo intermediário"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "再浄化",
+        "pt_expected": "Repurificação"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "右進左退",
+        "pt_expected": "avanço para a direita, recuo à esquerda"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "夜の世界",
+        "pt_expected": "Mundo da Noite"
+      },
+      {
+        "jp_term": "大道",
+        "pt_expected": "Grande Caminho"
+      },
+      {
+        "jp_term": "実相",
+        "pt_expected": "verdadeira forma"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "漢方薬",
+        "pt_expected": "medicamentos da medicina chinesa"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "特高",
+        "pt_expected": "Tokkō (Polícia de Segurança Pública do Japão no pré-guerra)"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "結核",
+        "pt_expected": "tuberculose"
+      },
+      {
+        "jp_term": "自己愛",
+        "pt_expected": "Amor egoísta"
+      },
+      {
+        "jp_term": "自観",
+        "pt_expected": "Jikan"
+      },
+      {
+        "jp_term": "言霊",
+        "pt_expected": "espírito da palavra"
+      },
+      {
+        "jp_term": "邪神",
+        "pt_expected": "Divindades malignas"
+      },
+      {
+        "jp_term": "閻魔の帳",
+        "pt_expected": "registo de Enma"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19530811-世界メシヤ教手引（海外入信者のために）.txt": [
+      {
+        "jp_term": "エーテル",
+        "pt_expected": "éter"
+      },
+      {
+        "jp_term": "カリエス",
+        "pt_expected": "cárie óssea"
+      },
+      {
+        "jp_term": "人霊",
+        "pt_expected": "espírito humano"
+      },
+      {
+        "jp_term": "仏教",
+        "pt_expected": "budismo"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "出血",
+        "pt_expected": "hemorragia"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "微熱",
+        "pt_expected": "estado ligeiramente febril"
+      },
+      {
+        "jp_term": "憑依",
+        "pt_expected": "possessão espiritual ou encosto"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "毒結",
+        "pt_expected": "concentração de toxinas"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊界",
+        "pt_expected": "Mundo do espírito divino"
+      },
+      {
+        "jp_term": "脳溢血",
+        "pt_expected": "hemorragia cerebral"
+      },
+      {
+        "jp_term": "自然農法",
+        "pt_expected": "método da agricultura natural"
+      },
+      {
+        "jp_term": "霊体の曇",
+        "pt_expected": "nuvens do corpo espiritual"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19530815-御垂示録23号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "国家",
+        "pt_expected": "nação"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19530815-御教え集24号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "光波",
+        "pt_expected": "ondas de Luz"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "孝行",
+        "pt_expected": "piedade filial"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "智慧証覚",
+        "pt_expected": "Chieshōkaku (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "病菌",
+        "pt_expected": "micróbio patogênico"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "霊術",
+        "pt_expected": "técnica espiritual"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19530910-世界救世教奇蹟集.txt": [
+      {
+        "jp_term": "お光様",
+        "pt_expected": "o Senhor Luz"
+      },
+      {
+        "jp_term": "カリエス",
+        "pt_expected": "cárie óssea"
+      },
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "三段階",
+        "pt_expected": "três planos"
+      },
+      {
+        "jp_term": "三毒",
+        "pt_expected": "os três tipos de toxinas"
+      },
+      {
+        "jp_term": "中有界",
+        "pt_expected": "Mundo intermediário"
+      },
+      {
+        "jp_term": "主神の経綸",
+        "pt_expected": "Plano de Deus Supremo"
+      },
+      {
+        "jp_term": "五六七",
+        "pt_expected": "Miroku"
+      },
+      {
+        "jp_term": "仏滅",
+        "pt_expected": "Extinção do Budismo"
+      },
+      {
+        "jp_term": "信仰雑話",
+        "pt_expected": "Shinkō Zatsuwa"
+      },
+      {
+        "jp_term": "修業",
+        "pt_expected": "treino espiritual"
+      },
+      {
+        "jp_term": "先祖代々",
+        "pt_expected": "antepassados de todas as gerações"
+      },
+      {
+        "jp_term": "光波",
+        "pt_expected": "ondas de Luz"
+      },
+      {
+        "jp_term": "共産主義",
+        "pt_expected": "comunismo"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "報恩感謝",
+        "pt_expected": "retribuição em gratidão"
+      },
+      {
+        "jp_term": "大経綸",
+        "pt_expected": "grande Plano Divino"
+      },
+      {
+        "jp_term": "大道",
+        "pt_expected": "Grande Caminho"
+      },
+      {
+        "jp_term": "尿毒",
+        "pt_expected": "toxina urinária"
+      },
+      {
+        "jp_term": "幽霊",
+        "pt_expected": "fantasmas"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "御霊徳",
+        "pt_expected": "Graças Divinas"
+      },
+      {
+        "jp_term": "念被観音力",
+        "pt_expected": "Graça do Poder Kannon"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "指圧療法",
+        "pt_expected": "terapia de digitopuntura"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本療法",
+        "pt_expected": "nossa terapia"
+      },
+      {
+        "jp_term": "本然",
+        "pt_expected": "Estado original"
+      },
+      {
+        "jp_term": "栄養学",
+        "pt_expected": "Ciência da Nutrição"
+      },
+      {
+        "jp_term": "根底の国",
+        "pt_expected": "Reino do Fundo da Raiz"
+      },
+      {
+        "jp_term": "正神",
+        "pt_expected": "divindades corretas"
+      },
+      {
+        "jp_term": "歯槽膿漏",
+        "pt_expected": "periodontite"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "水膿",
+        "pt_expected": "pus aquoso [exsudato purulento seroso de consistência semifluida]"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "浣腸",
+        "pt_expected": "lavagem intestinal"
+      },
+      {
+        "jp_term": "溜結",
+        "pt_expected": "acúmulo endurecido"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "然毒",
+        "pt_expected": "toxina hereditária"
+      },
+      {
+        "jp_term": "現当利益",
+        "pt_expected": "graças recebidas nessa vida"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "異物",
+        "pt_expected": "corpos estranhos ao organismo"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神人合一",
+        "pt_expected": "Unidade Deus-homem"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "神格",
+        "pt_expected": "qualificação divina"
+      },
+      {
+        "jp_term": "稲荷",
+        "pt_expected": "Inari"
+      },
+      {
+        "jp_term": "米国",
+        "pt_expected": "Estados Unidos"
+      },
+      {
+        "jp_term": "観音力",
+        "pt_expected": "Poder Kannon"
+      },
+      {
+        "jp_term": "誘発",
+        "pt_expected": "transmissão"
+      },
+      {
+        "jp_term": "迷信邪教",
+        "pt_expected": "religião maligna e supersticiosa"
+      },
+      {
+        "jp_term": "逆結果",
+        "pt_expected": "efeitos contrários"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "霊気",
+        "pt_expected": "energia espiritual"
+      },
+      {
+        "jp_term": "霊衣",
+        "pt_expected": "Aura"
+      },
+      {
+        "jp_term": "高血圧",
+        "pt_expected": "hipertensão"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19530915-御垂示録24号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      }
+    ],
+    "19530915-御教え集25号.txt": [
+      {
+        "jp_term": "三千世界",
+        "pt_expected": "três mil mundos"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "左進右退",
+        "pt_expected": "avanço para a esquerda, recuo à direita"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "民間療法",
+        "pt_expected": "terapias populares"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "腎臓",
+        "pt_expected": "rins"
+      },
+      {
+        "jp_term": "逆結果",
+        "pt_expected": "efeitos contrários"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19531001-浄霊法講座（二）『浄霊法講座』2号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "神様の方の病気に対する知識",
+        "pt_expected": "conhecimento divino em relação às doenças"
+      },
+      {
+        "jp_term": "肺病",
+        "pt_expected": "doença pulmonar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19531015-御垂示録25号.txt": [
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "国家",
+        "pt_expected": "nação"
+      },
+      {
+        "jp_term": "大三災",
+        "pt_expected": "\"Três Grandes Calamidades\" (vento, água e fogo)"
+      },
+      {
+        "jp_term": "小三災",
+        "pt_expected": "\"Três Pequenas Calamidades\" (fome, doença e guerra)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "花を活け",
+        "pt_expected": "vivifico ikebana"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19531015-御教え集26号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      }
+    ],
+    "19531101浄霊法講座(一)『浄霊法講座』1号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "浄血",
+        "pt_expected": "sangue purificado"
+      },
+      {
+        "jp_term": "空気界",
+        "pt_expected": "mundo atmosférico"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "頭痛",
+        "pt_expected": "dor de cabeça"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19531115-御垂示録26号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "自然農法",
+        "pt_expected": "método da agricultura natural"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      }
+    ],
+    "19531115-御教え集27号.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "異物",
+        "pt_expected": "corpos estranhos ao organismo"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "背中",
+        "pt_expected": "costas"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19531215-御垂示録27号.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "人の道",
+        "pt_expected": "religião Hitonomichi"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "入信",
+        "pt_expected": "conversão"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "自己愛",
+        "pt_expected": "Amor egoísta"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19531215-御教え集28号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "異物",
+        "pt_expected": "corpos estranhos ao organismo"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神仙郷",
+        "pt_expected": "Terra Divina"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19540115-御教え集29号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "共産主義",
+        "pt_expected": "comunismo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "大道",
+        "pt_expected": "Grande Caminho"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "朝鮮",
+        "pt_expected": "Coreia"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "瑞雲",
+        "pt_expected": "nuvem auspiciosa"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19540215-御垂示録28号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守護",
+        "pt_expected": "proteção divina"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "戒名",
+        "pt_expected": "nomes póstumos"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神示",
+        "pt_expected": "revelação divina"
+      },
+      {
+        "jp_term": "腎臓",
+        "pt_expected": "rins"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      }
+    ],
+    "19540215-御教え集30号.txt": [
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "大道",
+        "pt_expected": "Grande Caminho"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "活花",
+        "pt_expected": "Ikebana"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "頭脳",
+        "pt_expected": "cérebro"
+      }
+    ],
+    "19540226-ハワイ教会落成式に賜った御言葉.txt": [
+      {
+        "jp_term": "大経綸",
+        "pt_expected": "grande Plano Divino"
+      }
+    ],
+    "19540315-御垂示録29号.txt": [
+      {
+        "jp_term": "凝結",
+        "pt_expected": "condensação"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御神書",
+        "pt_expected": "Escritos Divinos"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "大浄化",
+        "pt_expected": "grande purificação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      }
+    ],
+    "19540315-御教え集31号.txt": [
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "霊体",
+        "pt_expected": "corpo espiritual"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19540415-御垂示録30号.txt": [
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "執着",
+        "pt_expected": "apego"
+      },
+      {
+        "jp_term": "御先祖様",
+        "pt_expected": "antepassados (honorífico; culto em sufrágio)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神憑り",
+        "pt_expected": "possessão por divindades"
+      },
+      {
+        "jp_term": "経綸",
+        "pt_expected": "Plano Divino"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19540415-御教え集32号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "共産主義",
+        "pt_expected": "comunismo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "曇り",
+        "pt_expected": "nuvens espirituais"
+      },
+      {
+        "jp_term": "曇る",
+        "pt_expected": "nublar-se"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "注射",
+        "pt_expected": "injeção"
+      },
+      {
+        "jp_term": "消毒薬",
+        "pt_expected": "antissépticos"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "見真実",
+        "pt_expected": "Kenshinjitsu (Inteligência da Percepção Verdadeira)"
+      },
+      {
+        "jp_term": "頭痛",
+        "pt_expected": "dor de cabeça"
+      },
+      {
+        "jp_term": "骨折った",
+        "pt_expected": "esforçou-se além dos seus limites"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      }
+    ],
+    "19540515-御教え集33号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "出血",
+        "pt_expected": "hemorragia"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御利益",
+        "pt_expected": "benefícios materiais"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "急所",
+        "pt_expected": "ponto vital"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "水素",
+        "pt_expected": "Elemento Água"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "生霊",
+        "pt_expected": "espírito de pessoa viva"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "迷信",
+        "pt_expected": "superstição"
+      }
+    ],
+    "19540825-天国の福音書.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "世界人類",
+        "pt_expected": "toda a humanidade"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "八衢",
+        "pt_expected": "Yachimata (encruzilhada de oito direções)"
+      },
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "冥官",
+        "pt_expected": "oficiais do submundo"
+      },
+      {
+        "jp_term": "副守護神",
+        "pt_expected": "espírito protetor secundário"
+      },
+      {
+        "jp_term": "力を抜く",
+        "pt_expected": "retirar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "医術",
+        "pt_expected": "terapia"
+      },
+      {
+        "jp_term": "唯心主義",
+        "pt_expected": "espiritualismo"
+      },
+      {
+        "jp_term": "唯心思想",
+        "pt_expected": "pensamento espiritualista"
+      },
+      {
+        "jp_term": "唯物思想",
+        "pt_expected": "pensamento materialista"
+      },
+      {
+        "jp_term": "大乗",
+        "pt_expected": "Daijo"
+      },
+      {
+        "jp_term": "奸智",
+        "pt_expected": "Sabedoria Astuta"
+      },
+      {
+        "jp_term": "孝行",
+        "pt_expected": "piedade filial"
+      },
+      {
+        "jp_term": "学者",
+        "pt_expected": "estudioso"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "応身弥勒",
+        "pt_expected": "Ooshin Miroku (Miroku da Ação Livre e Desempedida)"
+      },
+      {
+        "jp_term": "悪霊",
+        "pt_expected": "Espírito do Mal"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "最後の審判",
+        "pt_expected": "O Juízo Final"
+      },
+      {
+        "jp_term": "本守護神",
+        "pt_expected": "espírito protetor primordial"
+      },
+      {
+        "jp_term": "正守護神",
+        "pt_expected": "espírito protetor guardião"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "火素",
+        "pt_expected": "Elemento Fogo"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "産土神",
+        "pt_expected": "Ubusunagami (Deus da Terra Natal)"
+      },
+      {
+        "jp_term": "真善美",
+        "pt_expected": "a Verdade, o Bem e o Belo"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "自己愛",
+        "pt_expected": "Amor egoísta"
+      },
+      {
+        "jp_term": "自然淘汰",
+        "pt_expected": "seleção natural"
+      },
+      {
+        "jp_term": "薬毒",
+        "pt_expected": "toxina medicamentosa"
+      },
+      {
+        "jp_term": "行詰り",
+        "pt_expected": "beco sem saída"
+      },
+      {
+        "jp_term": "言霊",
+        "pt_expected": "espírito da palavra"
+      },
+      {
+        "jp_term": "造物主",
+        "pt_expected": "Criador de todas as coisas"
+      },
+      {
+        "jp_term": "邪教",
+        "pt_expected": "cultos malignos"
+      },
+      {
+        "jp_term": "金仏",
+        "pt_expected": "estátuas de metal"
+      },
+      {
+        "jp_term": "霊主体従",
+        "pt_expected": "o espírito é primordial e a matéria é secundária"
+      },
+      {
+        "jp_term": "霊媒",
+        "pt_expected": "médium"
+      },
+      {
+        "jp_term": "非真理",
+        "pt_expected": "Pseudo-Verdade"
+      },
+      {
+        "jp_term": "合掌",
+        "pt_expected": "mãos postas"
+      },
+      {
+        "jp_term": "主宰",
+        "pt_expected": "presidir"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19541001-浄霊法講座（三）『浄霊法講座』3号.txt": [
+      {
+        "jp_term": "下熱",
+        "pt_expected": "redução da febre ou a febre baixa"
+      },
+      {
+        "jp_term": "中風",
+        "pt_expected": "derrame"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "固結",
+        "pt_expected": "solidificação"
+      },
+      {
+        "jp_term": "天国的救い",
+        "pt_expected": "salvação paradisíaca"
+      },
+      {
+        "jp_term": "御垂示録",
+        "pt_expected": "Gosuiji-roku"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御守り",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御教え集",
+        "pt_expected": "Mioshie-shū"
+      },
+      {
+        "jp_term": "惟神",
+        "pt_expected": "Kamunagara (Vontade Divina) na primeira ocorrência, depois apenas Kamunagara"
+      },
+      {
+        "jp_term": "教育",
+        "pt_expected": "educação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "死霊",
+        "pt_expected": "espírito de pessoa falecida"
+      },
+      {
+        "jp_term": "気を入れる",
+        "pt_expected": "colocar a força mental"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "無肥料栽培",
+        "pt_expected": "cultivo sem fertilizantes"
+      },
+      {
+        "jp_term": "発展",
+        "pt_expected": "desenvolvimento"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "科学",
+        "pt_expected": "ciência"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt": [
+      {
+        "jp_term": "お筆先",
+        "pt_expected": "Ofudesaki"
+      },
+      {
+        "jp_term": "主神",
+        "pt_expected": "Deus Supremo"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "大本教",
+        "pt_expected": "religião Oomoto"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "神霊",
+        "pt_expected": "espíritos de divindades"
+      },
+      {
+        "jp_term": "道理",
+        "pt_expected": "Caminho Perfeito"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt": [
+      {
+        "jp_term": "一生懸命",
+        "pt_expected": "com empenho ou com esforço"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "微熱",
+        "pt_expected": "estado ligeiramente febril"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt": [
+      {
+        "jp_term": "下熱",
+        "pt_expected": "redução da febre ou a febre baixa"
+      },
+      {
+        "jp_term": "不眠",
+        "pt_expected": "insônia"
+      },
+      {
+        "jp_term": "出血",
+        "pt_expected": "hemorragia"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "御論文",
+        "pt_expected": "artigo (de Meishu-Sama)"
+      },
+      {
+        "jp_term": "指圧",
+        "pt_expected": "digitopuntura"
+      },
+      {
+        "jp_term": "排泄",
+        "pt_expected": "excreção"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "麻疹",
+        "pt_expected": "sarampo"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt": [
+      {
+        "jp_term": "不安",
+        "pt_expected": "ansiedade"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "戒名",
+        "pt_expected": "nomes póstumos"
+      },
+      {
+        "jp_term": "本教",
+        "pt_expected": "nossa Igreja"
+      },
+      {
+        "jp_term": "理屈",
+        "pt_expected": "Lógica"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      }
+    ],
+    "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt": [
+      {
+        "jp_term": "再生",
+        "pt_expected": "reencarnação, reencarnar"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "幸福",
+        "pt_expected": "felicidade"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "心配",
+        "pt_expected": "preocupação"
+      },
+      {
+        "jp_term": "政治",
+        "pt_expected": "política"
+      },
+      {
+        "jp_term": "殺菌",
+        "pt_expected": "eliminação de micróbios"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "祀る",
+        "pt_expected": "sufragar (espíritos) ou cultuar (divindades)"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "青大将",
+        "pt_expected": "aodaishō (cobra japonesa)"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt": [
+      {
+        "jp_term": "五六七",
+        "pt_expected": "Miroku"
+      },
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "力が入る",
+        "pt_expected": "colocar a força física"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "固結",
+        "pt_expected": "solidificação"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "祖霊",
+        "pt_expected": "espírito ancestral"
+      },
+      {
+        "jp_term": "自然",
+        "pt_expected": "natureza"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      }
+    ],
+    "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt": [
+      {
+        "jp_term": "体的",
+        "pt_expected": "materialmente"
+      },
+      {
+        "jp_term": "先祖",
+        "pt_expected": "antepassado(s)"
+      },
+      {
+        "jp_term": "凝り",
+        "pt_expected": "Nódulo"
+      },
+      {
+        "jp_term": "動物",
+        "pt_expected": "animais (no sentido lato: humanos e animais não-humanos)"
+      },
+      {
+        "jp_term": "善言讃詞",
+        "pt_expected": "Oração Zengen-Sanji"
+      },
+      {
+        "jp_term": "因縁",
+        "pt_expected": "innen (afinidade espiritual)"
+      },
+      {
+        "jp_term": "御守",
+        "pt_expected": "Omamori (Ohikari)"
+      },
+      {
+        "jp_term": "憑依",
+        "pt_expected": "possessão espiritual ou encosto"
+      },
+      {
+        "jp_term": "教修",
+        "pt_expected": "Kyoshu (treinamento, curso, aula, palestra)"
+      },
+      {
+        "jp_term": "新聞",
+        "pt_expected": "jornal"
+      },
+      {
+        "jp_term": "死の宣告",
+        "pt_expected": "ser desenganado pelo médico"
+      },
+      {
+        "jp_term": "水膿",
+        "pt_expected": "pus aquoso [exsudato purulento seroso de consistência semifluida]"
+      },
+      {
+        "jp_term": "浄霊法",
+        "pt_expected": "método do Johrei"
+      },
+      {
+        "jp_term": "溶かす",
+        "pt_expected": "Dissolver"
+      },
+      {
+        "jp_term": "祖先",
+        "pt_expected": "ancestral / ancestrais (linhagem)"
+      },
+      {
+        "jp_term": "肋膜",
+        "pt_expected": "pleura"
+      },
+      {
+        "jp_term": "観音様",
+        "pt_expected": "Kannon-Sama"
+      },
+      {
+        "jp_term": "説明",
+        "pt_expected": "explicação"
+      },
+      {
+        "jp_term": "御教",
+        "pt_expected": "ensinar"
+      },
+      {
+        "jp_term": "死亡",
+        "pt_expected": "falecimento"
+      },
+      {
+        "jp_term": "祝詞",
+        "pt_expected": "norito"
+      },
+      {
+        "jp_term": "奏上",
+        "pt_expected": "recitar"
+      }
+    ]
+  }
+}

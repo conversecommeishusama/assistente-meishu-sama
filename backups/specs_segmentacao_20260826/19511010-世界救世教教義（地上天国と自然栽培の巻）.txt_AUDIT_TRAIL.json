@@ -1,0 +1,68 @@
+{
+  "filename": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 127 linhas / bloco único ARTIGO com 11 trechos por spec: prefácio, título de secção, e artigos (一)-(八)). Todo o corpo JP foi lido e confrontado parágrafo a parágrafo com o PT correspondente, na mesma ordem, do início (prefácio) ao colofão final.",
+  "pre_existing_context": "Alerta de razão de linhas extrema no pedido original: JP 127 linhas vs PT apenas 26 linhas (~4.9:1). Investigação confirmou que a causa real não foi perda de conteúdo doutrinário em massa, mas colapso de formatação: todo o corpo do PT (do prefácio à Conclusão) estava amassado em essencialmente 2 parágrafos gigantes de texto corrido, sem as quebras de parágrafo, marcadores de citação (△◎□) em linha própria, nem títulos de secção em linha própria que o JP tem. Mesma classe de bug já catalogada em outros volumes desta era (6 livros 'monolith' da Fase Inicial, e o achado dos artigos 4号/24号 do Gokōwa).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e a reformatação aplicada.",
+  "summary": {
+    "articles_in_spec": 11,
+    "articles_reviewed": 11,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Início do prefácio (JP linhas 25-27: título '序文' + assinatura '岡田自観' antes do corpo do prefácio)",
+      "problema": "PT omitia completamente o cabeçalho de secção 'Prefácio' e a assinatura do autor do prefácio (Okada Jikan — nome que Meishu-Sama usava nesta época, distinto do autor do corpo doutrinário, Matsui Seikun/Shōraisei). O prefácio começava direto no corpo do texto, sem identificar quem o escreveu.",
+      "correcao": "Inserido '**Prefácio**' como cabeçalho de secção e 'Okada Jikan' como assinatura, na mesma posição (antes do corpo do prefácio) e mesma ordem do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Colofão final (JP linhas 120-127: título repetido, data de publicação, formato/tiragem, autor, editor, editora)",
+      "problema": "PT tinha apenas o título repetido no final; faltava toda a ficha técnica: 'Publicado em 10 de outubro do ano 26 da Era Showa (1951)', 'Formato A6, 32 páginas, não comercializado', e as três linhas de atribuição (著者 松籟生（松井誠勲）/ 発行者 小山正男 / 発行所 世界救世教出版部).",
+      "correcao": "Traduzido e inserido o colofão completo ao final, seguindo a convenção já estabelecida noutros volumes do mesmo período/série (ex.: 19490701-自観叢書第2篇, 19510815-結核の革命的療法): 'Autor: Shōraisei (Matsui Seikun)' / 'Editor: Masao Koyama' / 'Editora: Departamento de Publicações da Igreja Messiânica Mundial (Sekai Kyusei Kyo)'. Nome do autor do corpo confirmado consistente com a menção a 'Sr. Matsui Seikun' já presente no prefácio traduzido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Artigo (IV), fronteira entre a citação ◎ sobre distribuição de microrganismos e o parágrafo seguinte ('Esses microrganismos produzem o alimento das plantas...')",
+      "problema": "Artefacto de aspas: um par de aspas duplas soltas (`\" \"`) sobrava no fim da citação ◎, sem conteúdo entre elas — resíduo de um erro de formatação anterior, não uma citação real (o parágrafo seguinte não tem marcador ◎/△/□ no JP).",
+      "correcao": "Removido o par de aspas soltas ao fim do parágrafo ◎.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Artigo (IV), parágrafo 'As minhocas enviam ar para o solo...' (corresponde ao JP, linha sem marcador, entre as citações ◎ de Darwin e de Albert Howard)",
+      "problema": "Parágrafo estava envolto em aspas duplas como se fosse uma citação direta, mas o JP não o marca com ◎/△/□ nesse ponto — é texto de exposição contínuo, não citação.",
+      "correcao": "Removidas as aspas envolventes, mantendo o conteúdo integral.",
+      "confianca": "media-alta"
+    }
+  ],
+  "reformatacao_estrutural": {
+    "problema_principal": "Colapso de formatação: todo o corpo (prefácio + 8 artigos numerados + citações intercaladas) estava em ~2 parágrafos de texto corrido no ficheiro de trabalho PT, violando os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos/cabeçalhos) do checklist.",
+    "acao": "Reformatado integralmente 1:1 com o JP: cada parágrafo do JP (incluindo os marcados com △/◎/□ como citação de fonte externa) passou a ser um parágrafo próprio no PT, na mesma ordem e com a mesma pontuação de abertura/fecho de citação. Títulos de secção ('(I) Introdução' a '(VIII) Conclusão') e o título de capa repetido antes do artigo (I) foram postos em linha própria em negrito, como já era o padrão local pré-existente para essas marcações.",
+    "verificacao_integridade": "Verificação automatizada (script Python, não usada como critério de aprovação, apenas para garantir que a reformatação não alterou nem uma palavra do texto): concatenação normalizada (espaços colapsados, sem markdown) do corpo original vs. corpo reformatado, removendo apenas as 4 correções reais listadas acima — resultado idêntico caractere a caractere. A leitura semântica linha a linha contra o JP (não a checagem automática) é o que fundamenta a aprovação."
+  },
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio (序文, autoria de Okada Jikan)", "jp_linhas": "25-29", "decisao": "corrigido - cabeçalho e assinatura restaurados (correção 1)", "confianca": "alta"},
+    {"bloco": "Título de secção antes de (一)", "jp_linhas": "33-34", "decisao": "ok, apenas reformatado (sem perda)", "confianca": "alta"},
+    {"bloco": "(一) 緒言", "jp_linhas": "37-43", "decisao": "ok, conteúdo completo, 5 parágrafos reformatados 1:1", "confianca": "alta"},
+    {"bloco": "(二) 地上天国について", "jp_linhas": "45-49", "decisao": "ok, conteúdo completo incl. estatísticas dos EUA (60%/90%/42%/etc.), 3 parágrafos", "confianca": "alta"},
+    {"bloco": "(三) 自然栽培の意義", "jp_linhas": "51-66", "decisao": "ok, todas as citações △/◎ do artigo Dairyman/Rodale presentes e completas", "confianca": "alta"},
+    {"bloco": "(四) 土壌と微生物界の神秘", "jp_linhas": "68-82", "decisao": "corrigido - 2 artefactos de aspas soltas (correções 3 e 4); conteúdo completo (Rodale, Howard, Fleming/penicilina, Darwin, minhocas, Albert Howard)", "confianca": "alta"},
+    {"bloco": "(五) 化学肥料の害", "jp_linhas": "84-88", "decisao": "ok, citações NYT/Dublin/Bromfield completas", "confianca": "alta"},
+    {"bloco": "(六) 食物からくる健康と病気", "jp_linhas": "90-100", "decisao": "ok, todas as 8 citações □ completas (Howard, Balfour, esquimós/hunza, Heart Chart, Carrel, Wells, Scott/Elf); citação Wells (98-99) dividida em 2 parágrafos para bater 1:1 com o JP", "confianca": "alta"},
+    {"bloco": "(七) 自然栽培と増産", "jp_linhas": "102-108", "decisao": "ok, prefácio de Frank S. Booth completo em 3 citações □", "confianca": "alta"},
+    {"bloco": "(八) 結論", "jp_linhas": "110-114", "decisao": "ok, conclusão completa, 3 parágrafos", "confianca": "alta"},
+    {"bloco": "Colofão final", "jp_linhas": "120-127", "decisao": "corrigido - colofão inteiro (data, formato, autor, editor, editora) estava em falta (correção 2)", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Causa da razão de linhas extrema identificada e resolvida (colapso de formatação, não perda de conteúdo doutrinário em massa). As duas omissões reais de conteúdo (cabeçalho+assinatura do prefácio; colofão final) foram traduzidas e inseridas usando convenções já estabelecidas noutros volumes da mesma série. approved definido como true no spec."
+  }
+}

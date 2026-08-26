@@ -1,0 +1,51 @@
+{
+ "filename": "19490208 - Gokōwa-roku nº 3.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』3号、昭和24(1949)年2月8日発行（4月9日再版発行）",
+   "pt_anchor": "Interlocutor: Sobre a maneira de fazer perguntas: (a) Devo limitar-me a perguntar apenas sobre pontos que não compreendo",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十八日（火）",
+   "title_pt": "18 de janeiro",
+   "jp_anchor": "一月十八日（火）",
+   "pt_anchor": "18 de janeiro (terça-feira)\n\nInterlocutor: (a) Sobre o significado do Japão. (b) Há uma teoria de que a bandeira do sol nascente significa conquista.",
+   "notes": "",
+   "pt_prefix": "18 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十八日（金）",
+   "title_pt": "28 de janeiro",
+   "jp_anchor": "一月二十八日（金）",
+   "pt_anchor": "28 de janeiro (sexta-feira)\n\nInterlocutor: Dizem que, na compatibilidade para o casamento, \"quatro olhos e dez olhos\" (yome tōme) não são bons. O que",
+   "notes": "",
+   "pt_prefix": "28 de janeiro"
+  },
+  {
+   "kind": "tail",
+   "title_jp": "編輯後記",
+   "title_pt": "Nota da Redação",
+   "jp_anchor": "編輯後記",
+   "pt_anchor": "Nota da Redação\n\n1. Atendendo aos pedidos dos membros, reimprimimos a terceira edição do \"Gokōwa-roku\".",
+   "pt_prefix": "Nota da Redação",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

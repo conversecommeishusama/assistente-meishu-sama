@@ -1,0 +1,60 @@
+{
+ "filename": "19490108 - Gokōwa-roku nº 2.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 5→5. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 5,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』2号、昭和24(1949)年1月8日発行",
+   "pt_anchor": "Gokōwa-roku nº 2",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十八日",
+   "title_pt": "28 de novembro",
+   "jp_anchor": "十一月二十八日",
+   "pt_anchor": "Interlocutor: Há muitas pessoas no mundo que morrem devido a injeções. Seria porque há uma suposta toxina no líquido injetável?",
+   "notes": "",
+   "pt_prefix": "28 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月八日（水）",
+   "title_pt": "8 de dezembro",
+   "jp_anchor": "十二月八日（水）",
+   "pt_anchor": "Interlocutor: O senhor disse: \"Faça Johrei no ponto vital\". Deve-se dar ênfase ao aspecto material, como o ponto vital, ",
+   "notes": "",
+   "pt_prefix": "8 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十八日（土）",
+   "title_pt": "18 de dezembro",
+   "jp_anchor": "十二月十八日（土）",
+   "pt_anchor": "Interlocutor: Considerando a época, com questões de política, guerra e a Grande Purificação, imagino que não possamos re",
+   "notes": "",
+   "pt_prefix": "18 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十八日（火）",
+   "title_pt": "28 de dezembro",
+   "jp_anchor": "十二月二十八日（火）",
+   "pt_anchor": "Interlocutor: Gostaria de perguntar sobre a relação entre a Religião Kannon do Japão e a Religião Miroku, e também sobre",
+   "notes": "",
+   "pt_prefix": "28 de dezembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

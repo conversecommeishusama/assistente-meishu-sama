@@ -1,0 +1,144 @@
+{
+  "filename": "19510225-御教え集6号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 545 linhas / PT ~226 linhas originais, agora 233 após correções estruturais), 12 trechos por spec (1 prefácio/1º de janeiro + 11 datas: 2, 3, 5, 6, 7, 15, 16, 17, 25, 26, 27 de janeiro). Todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, com atenção extra às transições de data conforme alerta da família 御教え集/御垂示録/法難手記.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta a leitura semântica linha a linha e as correções estruturais aplicadas diretamente no arquivo de trabalho.",
+  "summary": {
+    "articles_in_spec": 12,
+    "articles_reviewed": 12,
+    "real_corrections_applied": 14,
+    "items_escalated_to_pendencias": 0,
+    "padrao_conhecido_confirmado": true,
+    "padrao_conhecido_descricao": "Confirmado: os trechos monológicos do início do volume (1-7 de janeiro) sofriam do padrão já catalogado nesta família de livros — colapso de parágrafos JP em um único parágrafo PT (\"monólito residual\") nas transições 2→3 de janeiro, cabeçalho de data duplicado/colado ao fim do parágrafo anterior em praticamente toda transição de dia (2, 3, 6, 7, 15, 16, 17, 25, 26 de janeiro), e um caso grave de duplicação de conteúdo (o mesmo trecho JP traduzido duas vezes, com nomes próprios diferentes e incorretos em ambas as versões, uma delas truncada a meio da frase) dentro do trecho de 6 de janeiro. Os trechos em formato Pergunta/Resposta (a partir de 15 de janeiro) não sofreram o mesmo colapso de parágrafos, mas herdaram o mesmo bug de cabeçalho de data duplicado."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "cabeçalho do ficheiro (linhas 1-25 do PT)",
+      "problema": "Marcador '=== ARTIGO ===' duplicado; linha órfã '2 de janeiro' inserida antes do título (pertencente à sessão seguinte, sem nenhum motivo estrutural); linha de publicação duplicada logo após a legítima ('Mioshie-shū nº 6, publicado em 25 de fevereiro...').",
+      "correcao": "Removida a linha '=== ARTIGO ===' duplicada, a linha órfã '2 de janeiro' e a linha de publicação duplicada. Cabeçalho agora espelha exatamente a estrutura do JP (título, fonte, data 1º de janeiro, [Ensinamento]).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "trecho de 1º de janeiro, parágrafo sobre o museu de Hakone",
+      "problema": "Erro de tradução: 箱根 (Hakone) traduzido consistentemente como 'Hakata' (cidade diferente, em Fukuoka) em 6 ocorrências no mesmo parágrafo — nome próprio errado, tema recorrente no livro inteiro (museu de Hakone é discutido dezenas de vezes, sempre corretamente como 'Hakone' fora deste parágrafo).",
+      "correcao": "Todas as 6 ocorrências de 'Hakata' corrigidas para 'Hakone'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "transição 1→2 de janeiro",
+      "problema": "Verificado — transição já estava limpa (sem duplicação de cabeçalho).",
+      "correcao": "Nenhuma correção necessária.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "trecho de 2 de janeiro (monólito residual)",
+      "problema": "GRAVE: os 6 parágrafos do JP (linhas 40-45) — situação da Coreia/URSS/EUA, rearmamento japonês, mundo espiritual/'A Criação da Civilização', museu de Hakone, propósito da Igreja Messiânica, Daijo/Shojo — estavam todos colapsados em um único parágrafo gigante no PT, violando o ponto 6 do checklist (paragrafação 1:1). Cabeçalho '3 de janeiro' também colado ao final deste parágrafo, duplicado com o cabeçalho limpo seguinte.",
+      "correcao": "Parágrafo reformatado em 6 parágrafos correspondentes aos 6 parágrafos do JP; cabeçalho duplicado removido, mantendo só a instância limpa antes de '[Ensinamento]'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "trecho de 3 de janeiro (monólito residual parcial)",
+      "problema": "Os 2 primeiros parágrafos do JP (linha 52: situação Coreia/Iugoslávia/Alemanha; linha 53: Reino Unido/socialismo/Attlee) estavam colapsados em um único parágrafo PT. Dentro desse mesmo bloco havia também uma frase inteira duplicada quase literalmente ('estão formando um exército unificado na Europa... quase não tem dinheiro... aos poucos, estão se armando' repetida com leve variação de palavras).",
+      "correcao": "Parágrafo dividido em 2, correspondendo aos parágrafos 52 e 53 do JP; frase duplicada removida, mantendo a versão mais completa.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "transição 5→6 de janeiro",
+      "problema": "Cabeçalho '6 de janeiro' colado ao fim do parágrafo anterior sem quebra, seguido por um segundo cabeçalho '(Seis de janeiro' — grafado por extenso, inconsistente com o estilo numérico usado no resto do livro) antes do '[Ensinamento]'.",
+      "correcao": "Removido o cabeçalho colado; mantido um único cabeçalho limpo '6 de janeiro' em formato numérico consistente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "trecho de 6 de janeiro — GRAVE, duplicação de conteúdo",
+      "problema": "Um trecho inteiro do JP (sobre o interesse de intelectuais e escritores famosos pelo museu de Hakone, incluindo lista de nomes) foi traduzido duas vezes por passagens de pipeline sobrepostas: a primeira versão ficava truncada a meio da frase (terminando em '...essas pessoas ainda viram várias coisas', com os nomes '大仏次郎/Ōsaragi Jirō, 川端康成/Kawabata Yasunari...' vertidos incorretamente como 'Oya Soichi, Kawabata Yasunari...'); a segunda versão retraduzia o mesmo trecho do início, desta vez com o mesmo nome próprio vertido de forma diferente e igualmente incorreta ('Yasushi Inoue'), mas continuando corretamente até o fim do parágrafo.",
+      "correcao": "Removida a primeira versão truncada e a reintrodução redundante do início da segunda versão; mantido o fluxo único e completo do parágrafo. Corrigido o nome próprio 大仏次郎 para a romanização correta 'Osaragi Jirō' (nem 'Oya Soichi' nem 'Yasushi Inoue' correspondem a este autor).",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "transição 6→7 de janeiro",
+      "problema": "Cabeçalho '7 de janeiro' colado ao fim da citação de artigo anterior, seguido por um segundo cabeçalho '(Sete de janeiro' grafado por extenso.",
+      "correcao": "Removido o cabeçalho colado; mantido cabeçalho único '7 de janeiro' em formato numérico.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao": "transição 7→15 de janeiro",
+      "problema": "Cabeçalho '15 de janeiro' colado ao fim da citação de artigo, e repetido novamente colado ao início do bloco de Pergunta seguinte (sem quebra de linha entre cabeçalho e '(Pergunta)').",
+      "correcao": "Mantido um único cabeçalho '15 de janeiro' em linha própria, seguido do '(Pergunta)' na linha seguinte.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao": "trecho de 16 de janeiro — duplicação de conteúdo (Pergunta/Resposta de Itō Yoshio, ptose gástrica)",
+      "problema": "A mesma resposta de Meishu-Sama sobre dieta com chazuke para ptose gástrica (JP linha 191) foi traduzida duas vezes com termos diferentes ('arroz com chá verde' com 'konbu' vs. 'chazuke' com 'katsuobushi'), e a primeira versão ainda repetia internamente uma frase sobre dor/apetite/diarreia. Nenhuma das duas traduziu corretamente 香こ (o-koko, picles/vegetais em conserva japoneses) — 'konbu' (alga) e 'katsuobushi' (flocos de bonito) estão ambos errados.",
+      "correcao": "Consolidado em uma única resposta, sem repetição interna, com o termo corrigido para 'picles japoneses (o-koko)'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao": "transição 16→17 de janeiro",
+      "problema": "Cabeçalho '16 de janeiro' colado ao fim da citação de artigo anterior, sem quebra de parágrafo antes do início do conteúdo de 16 de janeiro.",
+      "correcao": "Inserida quebra de parágrafo antes do cabeçalho '16 de janeiro'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao": "transições 17→25 de janeiro e 25→26 de janeiro",
+      "problema": "Em ambos os casos, cabeçalho de data duplicado: uma instância limpa em linha própria, seguida de uma segunda instância colada diretamente ao '(Pergunta)' do primeiro caso do dia.",
+      "correcao": "Removida a instância duplicada em cada transição, mantendo um único cabeçalho por data.",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "localizacao": "transição 26→27 de janeiro",
+      "problema": "Cabeçalho '26 de janeiro' colado ao fim do parágrafo teórico anterior (sobre galinhas/aumento de produção), repetido de novo colado ao '(Pergunta)' seguinte.",
+      "correcao": "Removida a duplicação; cabeçalho único '26 de janeiro' em linha própria antes do '(Pergunta)'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao": "trecho de 15 de janeiro, início do artigo 'A Medicina Cria a Tuberculose'",
+      "problema": "Erro tipográfico de fusão de palavras: 'Ou sejacomo foi dito' (falta espaço/vírgula).",
+      "correcao": "Corrigido para 'Ou seja, como foi dito'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + 1º de janeiro", "jp_linhas": "1-33", "decisao": "corrigido", "confianca": "alta", "notas": "Cabeçalho duplicado/corrompido no topo do ficheiro corrigido; erro de nome próprio Hakata→Hakone corrigido (6 ocorrências); os 7 parágrafos do JP mapeiam 1:1 com os 7 parágrafos do PT, sem perda de conteúdo."},
+    {"bloco": "2 de janeiro", "jp_linhas": "37-45", "decisao": "corrigido", "confianca": "alta", "notas": "Monólito residual (6 parágrafos JP colapsados em 1 PT) desfeito; cabeçalho duplicado na transição para 3 de janeiro removido."},
+    {"bloco": "3 de janeiro", "jp_linhas": "49-57", "decisao": "corrigido", "confianca": "alta", "notas": "Monólito parcial (2 dos 6 parágrafos) desfeito; frase duplicada dentro do bloco removida; demais 4 parágrafos já estavam corretamente segmentados 1:1."},
+    {"bloco": "5 de janeiro", "jp_linhas": "61-74", "decisao": "corrigido (transições)", "confianca": "alta", "notas": "Corpo do trecho já estava corretamente paragrafado 1:1 com o JP (nenhum monólito); apenas as transições de/para este trecho (5→6) tinham cabeçalho duplicado, corrigido."},
+    {"bloco": "6 de janeiro", "jp_linhas": "78-99", "decisao": "corrigido", "confianca": "alta", "notas": "Achado mais grave do volume: duplicação de um trecho inteiro (interesse de intelectuais pelo museu, com nome próprio incorreto em ambas as cópias) desfeita e nome próprio corrigido para Osaragi Jirō. Cabeçalhos duplicados nas transições 5→6 e 6→7 corrigidos."},
+    {"bloco": "7 de janeiro", "jp_linhas": "94-109", "decisao": "ok (só transição)", "confianca": "alta", "notas": "Corpo do trecho corretamente paragrafado 1:1 com o JP; apenas a transição para 15 de janeiro tinha cabeçalho duplicado, corrigido."},
+    {"bloco": "15 de janeiro (Q&A)", "jp_linhas": "110-147", "decisao": "corrigido (pontual)", "confianca": "alta", "notas": "Perguntas e respostas corretamente pareadas e completas; só um erro de digitação pontual corrigido ('Ou sejacomo')."},
+    {"bloco": "16 de janeiro (Q&A)", "jp_linhas": "152-236", "decisao": "corrigido", "confianca": "alta", "notas": "Duplicação de conteúdo na resposta sobre ptose gástrica (Itō Yoshio) desfeita e termo de comida corrigido; restante do bloco (10 perguntas) correto e completo; cabeçalho duplicado na transição 16→17 corrigido."},
+    {"bloco": "17 de janeiro (Q&A)", "jp_linhas": "238-337", "decisao": "corrigido (cabeçalho)", "confianca": "alta", "notas": "Onze perguntas e respostas verificadas, completas e na ordem correta; cabeçalhos duplicados nas transições 17→25 corrigidos."},
+    {"bloco": "25 de janeiro (Q&A + Ensinamento)", "jp_linhas": "341-390", "decisao": "corrigido (cabeçalho)", "confianca": "alta", "notas": "Três perguntas + bloco de ensinamento ('generosidade de vida') verificados corretos e completos; citação repetida dos mesmos três artigos de agricultura/tuberculose/Picasso confirmada como repetição legítima da fonte JP (Meishu-Sama relendo os mesmos artigos publicados em outra sessão), não um erro; cabeçalho duplicado na transição 25→26 corrigido."},
+    {"bloco": "26 de janeiro (Q&A)", "jp_linhas": "393-467", "decisao": "corrigido (cabeçalho)", "confianca": "alta", "notas": "Sete perguntas e respostas verificadas, completas e na ordem correta; cabeçalho duplicado na transição 26→27 corrigido."},
+    {"bloco": "27 de janeiro (Q&A + Ensinamento final + aviso editorial)", "jp_linhas": "471-545", "decisao": "ok", "confianca": "alta", "notas": "Quatro perguntas, bloco de ensinamento final ('dragão divino existe?' + 'generosidade de vida', versão mais longa e detalhada desta sessão) e o aviso editorial de fecho ('[AVISO]') verificados completos e corretos, sem duplicação nem perda; transição para o aviso final limpa."}
+  ],
+  "pendencias_abertas": [],
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa_a4b_adaptado (ver .cursor/rules/gokowa-rotulagem-a4b-jp.mdc), com marcadores explícitos （お伺）/〔御垂示〕 do JP em vez de travessão",
+    "etapa_a": "Mapa completo do JP construído linha a linha: 33 （お伺） e 32 〔御垂示〕 (o par de Itō Yasuko, 1º de fev/25 de janeiro, não tem cabeçalho 〔御垂示〕 explícito no JP nem no PT — resolvido por conteúdo, não por marcador). Sub-diálogos embutidos identificados dentro de respostas (pergunta curta de Meishu-Sama + réplica breve do interlocutor entre aspas, seguida de continuação de Meishu-Sama): Ōshima Kazuko (15/1, 1 réplica), Yamada Natsu (16/1, 4 réplicas), Kawasaki/Kawakami Kino (17/1, 3 réplicas), Fuse Sumako (17/1, 1 réplica sobre as espadas), Ishizaki Atsuko (25/1, 1 réplica identificando o aplicador de Johrei), Takegami Kuni (26/1, 2 réplicas), Mishina Shigeo (26/1, 1 réplica), Ōishi Kazuo (27/1, 4 réplicas) e Itō Yasuko (27/1, 1 réplica). Citações retóricas (Meishu-Sama citando de volta trechos da própria pergunta escrita, ex.: '\"Curou-se em cerca de meio ano\"', '\"Em seis meses no mínimo\"') e nomes de artigos entre aspas foram identificados e NÃO tratados como sub-diálogo. Um caso (Sr. Ogawa, dentro do ensino de agricultura de 25→26 de janeiro, sem marcador （お伺）/〔御垂示〕, fora do formato pergunta/resposta) foi deixado sem rótulo por ser parte de um bloco de monólogo, não de uma sessão de perguntas formal.",
+    "etapa_b": "Contagem: 33 marcadores '(Pergunta)' no PT = 33 （お伺） no JP. Marcadores de resposta no PT somam 33 ('(Resposta de Meishu-Sama)' x7, '[Instrução Divina]' x11, '(Instrução Divina)' x8, '[Orientação Divina]' x7), cobrindo as 33 perguntas (inclui o par sem marcador formal no JP, que ainda assim tinha marcador no PT). 6 marcadores '[Ensinamento]'/'(Ensinamento)' no corpo de diálogo (fora dos trechos monológicos de 1-7 de janeiro, que ficaram integralmente intocados) resolvidos como transição para monólogo sem rótulo de falante, nunca como resposta a pergunta.",
+    "etapa_c": "Substituição mecânica e verificada por script: '(Pergunta)' -> 'Interlocutor: '; '(Resposta de Meishu-Sama)'/'[Instrução Divina]'/'(Instrução Divina)'/'[Orientação Divina]' -> 'Meishu-Sama: '; '[Ensinamento]'/'(Ensinamento)' -> quebra de parágrafo sem rótulo. Sub-diálogos embutidos rotulados manualmente caso a caso. Verificação automática: texto normalizado (removendo apenas os marcadores antigos do original e apenas os novos rótulos do resultado) é IDÊNTICO byte a byte ao conteúdo original — nenhuma palavra de conteúdo foi adicionada, removida ou reordenada. Cabeçalho do ficheiro e trechos monológicos de 1º e 2, 3, 5, 6 e 7 de janeiro (sem pergunta/resposta) permanecem intocados, sem rótulo de falante, conforme a regra de monólogo puro.",
+    "resultado": "51 ocorrências de 'Interlocutor:' e 52 de 'Meishu-Sama:' aplicadas ao ficheiro PT (33 pares principais + réplicas de sub-diálogo). approved permanece true no spec, sem alteração.",
+    "problemas_corrigidos": "Nenhuma divergência de conteúdo nova encontrada durante esta rotulagem (a revisão de conteúdo já havia sido fechada em 2026-07-07). Um trecho que parecia duplicação à primeira leitura (menção ao poço/Kōshinzuka na pergunta de Kobayashi Urako, 25 de janeiro) foi confirmado como não sendo duplicação: o poço é mencionado uma vez na pergunta (descrição do local) e Meishu-Sama apenas retoma o mesmo detalhe na resposta — consistente com o JP."
+  },
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Todas as 14 divergências reais encontradas (2 estruturais graves de monólito, 2 duplicações de conteúdo, corrupção de cabeçalho de ficheiro, erro de nome próprio Hakata/Hakone, 8 duplicações de cabeçalho de data em transições, 1 erro tipográfico) foram corrigidas inline com confiança alta. O padrão de perda/duplicação em transição de data se confirmou nesta família de livros, mas nesta obra manifestou-se como duplicação de cabeçalho e colapso de parágrafo (não como perda de conteúdo) — nenhum trecho JP ficou sem par PT."
+  }
+}

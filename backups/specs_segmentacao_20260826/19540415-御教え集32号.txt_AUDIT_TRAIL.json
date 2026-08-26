@@ -1,0 +1,139 @@
+{
+  "filename": "19540415-御教え集32号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 252 linhas / PT ~83 linhas após correções — o volume inteiro está dentro de um único bloco === ARTIGO === tanto no JP quanto no PT, refletindo a estrutura real da fonte: um prefácio datado 5/3/1954 seguido de 10 lançamentos diários (6, 7, 15, 16, 17, 23, 24, 25, 26, 27 de março), todos dentro do mesmo número do Mioshie-shū). Não é amostragem: todo o corpo do JP foi lido linha a linha (todas as 252 linhas) e confrontado com o PT correspondente na mesma ordem, trecho a trecho, data a data.",
+  "alerta_familia": "Instrução do usuário: família 御教え集1-31号 tem bug sistemático confirmado em 31 volumes irmãos (monólitos residuais com cauda duplicada, sessões/turnos ausentes, nomes próprios corrompidos, cabeçalhos de data duplicados/corrompidos caractere a caractere, datas erradas no colofão). Verificado com rigor máximo neste volume (32号) — ver correções 1 e 2 abaixo, que são exatamente essa assinatura de bug.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 11,
+    "articles_reviewed": 11,
+    "spec_status": "spec cobre corretamente as 11 unidades reais do JP (prefácio 5/3 + sessões 6,7,15,16,17,23,24,25,26,27 de março) — nenhuma sessão real do JP ficou de fora do spec, nenhuma correção de spec foi necessária",
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0,
+    "colofao_status": "conferido palavra por palavra contra o JP (data de impressão 10/4/1954, data de publicação 15/4/1954, editor Moriyama Jitsutarō, gráfica Atami Shōji K.K., endereço 熱海市田原町一一二) — correto, sem erro de data ou nome"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "entre o fim da sessão 26 de março e o início da sessão 27 de março (imediatamente após '...então também é três, três, que é Miroku... Tudo é feito por Deus, então é assim.')",
+      "problema": "GRAVE — mesma assinatura de bug da família (cabeçalho de data corrompido caractere a caractere): bloco de 15 linhas de lixo estrutural contendo títulos de data DUPLICADOS ('7 de março', '15 de março', '16 de março', '17 de março', '24 de março', '25 de março', '27 de março' — todas sessões que JÁ tinham conteúdo real e completo mais cedo no arquivo) intercalados com 'conteúdo' de uma única letra cada ('s', 'e', 't', 'e', 'd', 'e', seguido de fragmento 'março'), mais um fragmento truncado 'Vinte e' no início (provavelmente resíduo de 'Vinte e sete de março'). Nenhum texto real, apenas debris de um processo de reconstrução malsucedido, sem qualquer valor semântico, colocado logo antes do início real da sessão 27 de março.",
+      "correcao": "Removido o bloco inteiro de 15 linhas de lixo, mantendo apenas um título limpo '27 de março' seguido do início real do conteúdo dessa sessão ('Este é o último Grande Festival da Primavera...'). Nenhum conteúdo real foi removido — confirmado por comparação com o JP (三月二十七日, linha 217) que o texto real da sessão começa exatamente onde ficou, e por busca confirmando que as 6 sessões cujos títulos apareciam duplicados no lixo (7,15,16,17,24,25 de março) já tinham, cada uma, seu conteúdo completo e correto em posição anterior própria no arquivo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "início do arquivo, entre o prefácio (datado 5 de março de 1954, artigo 'kind: preface' no spec) e a primeira sessão diária (6 de março, artigo 'kind: session')",
+      "problema": "O prefácio inteiro (~12,5 mil caracteres, correspondendo ao JP linhas 24-44) e a sessão de 6 de março inteira (~12,3 mil caracteres, JP linhas 47-64) estavam concatenados sem nenhuma quebra de parágrafo em um único bloco de texto corrido de 24.861 caracteres — violação dos pontos 1 (subdivisão) e 6 (paragrafação) do checklist, e descolamento do próprio spec, que trata prefácio e sessão de 6/3 como dois artigos distintos.",
+      "correcao": "Inserida quebra de parágrafo exatamente no ponto de transição ('...é verdadeiramente um milagre.' [fim do prefácio] | '6 de março de 1954 Desta vez, ao selecionar...' [início real da sessão]), confirmado contra o JP onde o prefácio termina com a frase sobre a raridade dos quadros ukiyo-e reunidos em pouco tempo (JP linha 43, fim) e a sessão de 6/3 começa com a mesma abertura de sempre sobre o prefácio da 'Bíblia da Igreja Messiânica' (JP linha 49).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "sessão de 17 de março (menção ao pintor 栖鳳)",
+      "problema": "Nome próprio corrompido/inconsistente — mesma assinatura de bug da família ('nomes próprios corrompidos'). O pintor 栖鳳 é romanizado corretamente como 'Seihō' em todo o resto do volume (17 ocorrências, sessões de 16 e 24 de março), mas na sessão de 17 de março aparece 7 vezes como 'Suiho' (romanização incorreta/inconsistente para o mesmo nome, mesmo contexto: 'o maior pintor do Japão depois de Meiji', coleção do Mestre, filho que serve de intérprete).",
+      "correcao": "Padronizado 'Suiho' → 'Seihō' nas 7 ocorrências dentro da sessão de 17 de março, alinhando com a romanização usada consistentemente no resto do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "sessão de 25 de março (menção ao pintor 御舟)",
+      "problema": "Inconsistência menor de macron: 'Gyoshu' (sem macron) em 2 ocorrências vs. 'Gyoshū' (com macron) em 13 ocorrências no resto do volume, mesmo pintor.",
+      "correcao": "Padronizado 'Gyoshu' → 'Gyoshū' nas 2 ocorrências.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "sessão de 16 de março (Dr. Shimizu)",
+      "problema": "Inconsistência menor de macron: 'Kentaro' (sem macron) vs. 'Kentarō' (com macron) usado na sessão de 17 de março, mesmo médico (Dr. Shimizu Kentarō, cirurgião do caso Yamada Keiko).",
+      "correcao": "Padronizado 'Kentaro' → 'Kentarō'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文, datado 5/3/1954)",
+      "jp_linhas": "20-44",
+      "decisao": "ok, após correção 2 (quebra de parágrafo restaurada)",
+      "confianca": "alta",
+      "notas": "Conteúdo completo e fiel: crítica aos medicamentos como 'ciência', doutrina do plano divino de enfraquecer a humanidade, Kannon/Yakushi Nyorai, comunismo/Stalin/Malenkov, mundo semi-civilizado, progresso do Paraíso na Terra em Atami, estrada Odawara-Atami, exposição de ukiyo-e nikuhitsu no Mitsukoshi. Nada faltando."
+    },
+    {
+      "bloco": "6 de março",
+      "jp_linhas": "47-64",
+      "decisao": "ok, após correção 2",
+      "confianca": "alta",
+      "notas": "Prefácio 'O que é a Igreja Messiânica', crítica a medicamentos/doutrina, ciência vs religião, hierarquia de kenshinjitsu. Completo."
+    },
+    {
+      "bloco": "7 de março",
+      "jp_linhas": "68-81",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Edição especial de agricultura (1 milhão de exemplares), silêncio da grande imprensa sobre fertilizantes, corrupção/toxina, museu, ukiyo-e. Completo, embora mesclado em um único parágrafo gigante (~12,5 mil caracteres) sem quebras internas — ver nota de rodapé sobre paragrafação."
+    },
+    {
+      "bloco": "15 de março",
+      "jp_linhas": "85-101",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Caso Yamada Keiko (cirurgia vs. Johrei), 'Sou um Cientista Religioso', Sra. Guriri/pesquisa de arte americana, Seihō, escultura budista China/Japão, Picasso/Matisse, Gyoshū, Itaya Hazan. Completo, mesmo parágrafo-gigante."
+    },
+    {
+      "bloco": "16 de março",
+      "jp_linhas": "104-116",
+      "decisao": "ok (após correção 5)",
+      "confianca": "alta",
+      "notas": "Repetição do caso Yamada Keiko, associação de agricultura natural no Ministério, crítica à imprensa japonesa vs. americana, delegação cultural americana, exposições em lojas de departamento. Completo."
+    },
+    {
+      "bloco": "17 de março",
+      "jp_linhas": "120-129",
+      "decisao": "ok (após correções 3)",
+      "confianca": "alta",
+      "notas": "Terceira menção ao caso Yamada Keiko, medicina como 'falso messias' antes do verdadeiro, associação de agricultura natural (Yamakawa), crítica à imprensa, delegação americana (Seihō), exposição de ukiyo-e nikuhitsu. Completo."
+    },
+    {
+      "bloco": "23 de março (春季大祭御教え)",
+      "jp_linhas": "134-150",
+      "decisao": "ok, com ressalva de paragrafação (ver nota)",
+      "confianca": "média-alta",
+      "notas": "Mudança no mundo espiritual, possessões de Malenkov/Molotov/Eisenhower/Mao/Nehru, Nakayama Miki, primeiro relato do caso Cristo/crucificação, Stalin no inferno, obras de arte 'milagrosas' (Gyoshū), visita ao Templo Messiânico (メシヤ会館), numerologia 567→369, associação de agricultura natural. Todo o conteúdo confirmado presente; ver nota de rodapé sobre a fronteira de parágrafo com 24/3."
+    },
+    {
+      "bloco": "24 de março",
+      "jp_linhas": "154-169",
+      "decisao": "ok, com ressalva de paragrafação (ver nota)",
+      "confianca": "média-alta",
+      "notas": "Numerologia 369 repetida, segundo relato do caso Cristo (datado 一昨日), obras de arte (Kōetsu), construção do Templo/museu, Kōmanjikai/Shisei Senten Rōso, agricultura natural. Todo o conteúdo confirmado presente; ver nota de rodapé."
+    },
+    {
+      "bloco": "25 de março",
+      "jp_linhas": "174-191",
+      "decisao": "ok, com ressalva de paragrafação (ver nota)",
+      "confianca": "média-alta",
+      "notas": "Terceiro relato do caso Cristo, menção a Izanami-no-Mikoto, Tenrikyo (Nakayama Miki), obras de arte / Nyoihōju, numerologia 369, construção, agricultura natural. Todo o conteúdo confirmado presente; ver nota de rodapé."
+    },
+    {
+      "bloco": "26 de março",
+      "jp_linhas": "195-210",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Quarto relato do caso Cristo/João, deuses que não possuem gente importante (Oomoto/Deguchi), raposas como intermediárias de espíritos bons, obras de arte, numerologia, construção, agricultura natural. Completo."
+    },
+    {
+      "bloco": "27 de março",
+      "jp_linhas": "217-236 + colofão 243-252",
+      "decisao": "ok, após correção 1",
+      "confianca": "alta",
+      "notas": "Último Grande Festival da Primavera no local atual, detalhes finais do Templo/museu, quinto e último relato do caso Cristo (datado explicitamente '22' de março), 18 membros da associação de agricultura natural, revolução médica via toxina de fertilizantes, citação do Ofudesaki de Oomoto. Colofão (datas de impressão/publicação, editor, gráfica) conferido palavra por palavra — correto."
+    }
+  ],
+  "nota_paragrafacao_23_a_26_marco": "Achado estrutural NÃO corrigido nesta sessão, documentado para reconferência: as sessões de 23, 24, 25 e 26 de março retomam repetidamente o mesmo incidente (cura espiritual de 'Cristo' possesso numa fiel) em relatos quase idênticos — isso É um traço autêntico do JP fonte (Meishu-Sama recapitula o mesmo relato em dias consecutivos, cada vez com pequenas variações/adições; confirmado lendo os 4 relatos no JP, que de fato se repetem com a mesma estrutura). Porém, no PT, cada sessão está condensada em um único parágrafo gigante (10-15 mil caracteres), e ao ler line a linha ficou claro que a fronteira exata entre o fim do conteúdo de uma data e o início da próxima nem sempre cai exatamente onde o título aparece — por exemplo, um trecho sobre 'Kōmanjikai/Shisei Senten Rōso' que no JP pertence claramente ao bloco de 24/3 (antes do título 三月二十五日) aparece traduzido dentro do parágrafo rotulado '25 de março' no PT. Confirmei por leitura completa que NENHUM conteúdo está faltando (todos os 5 relatos do caso Cristo, toda a numerologia, toda a menção a obras de arte e à associação de agricultura natural estão presentes e traduzidos corretamente em algum ponto do arquivo) — o problema é de granularidade/atribuição fina de parágrafo dentro de um bloco de texto corrido, não de perda de conteúdo. Refazer a repaginação precisa exigiria redistribuir manualmente ~40 mil caracteres de prosa por data exata, com risco real de introduzir erro novo; dado que o checklist já aceita como 'ok' parágrafos JP longos vertidos em um só parágrafo PT sem perda de conteúdo (precedente do 無肥料栽培法), optei por não arriscar um reflow manual de grande porte nesta passada e documentar o achado para decisão em uma eventual revisão futura dedicada a paragrafação fina.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

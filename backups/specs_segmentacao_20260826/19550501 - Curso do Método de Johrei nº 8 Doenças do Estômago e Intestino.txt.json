@@ -1,0 +1,519 @@
+{
+ "filename": "19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 62→65. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 65,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Curso do Método de Johrei (8) — Doenças do Estômago e Intestinos",
+   "jp_anchor": "浄霊法講座（八）胃・腸疾患",
+   "pt_anchor": "Curso do Método de Johrei nº 8 — Doenças do Estômago e Intestino",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一、胃疾患",
+   "title_pt": "1. Doenças do Estômago",
+   "jp_anchor": "一、胃疾患",
+   "pt_anchor": "1. Doenças do Estômago",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．胃部に平素圧迫感、鈍痛あり、食欲不振の中年男子（御教え）",
+   "title_pt": "1. Homem de meia-idade com sensação de pressão e dor persistente habituais no estômago, e falta de apetite (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "１．胃部に平素圧迫感、鈍痛あり、食欲不振の中年男子（御教え）",
+   "pt_anchor": "1. Homem de meia-idade com sensação de pressão e dor persistente habituais no estômago, e falta de apetite (Mioshie-shū) (Pergunta)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．腹部に固結あり、酸気のあるヌラ状のものを吐き、衰弱はなはだしき少年（御教え）",
+   "title_pt": "2. Jovem com solidificação no abdômen, vômito de substância viscosa e ácida, e extrema fraqueza (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "２．腹部に固結あり、酸気のあるヌラ状のものを吐き、衰弱はなはだしき少年（御教え）",
+   "pt_anchor": "2. Jovem com solidificação no abdômen, vômito de substância viscosa e ácida, e extrema fraqueza (Mioshie-shū) (Pergunta)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．胃病で毎日二回は食物を嘔吐し、衰弱はなはだしき中年の男子（御教え集　1号　P.21）",
+   "title_pt": "3. Homem de meia-idade com doença do estômago, vomitando alimentos duas vezes ao dia, com extrema fraqueza (Mioshie-shū, nº 1, p. 21) (Pergunta)",
+   "jp_anchor": "３．胃病で毎日二回は食物を嘔吐し、衰弱はなはだしき中年の男子（御教え集　1号　P.21）",
+   "pt_anchor": "3. Homem de meia-idade com doença do estômago, vomitando alimentos duas vezes ao dia, com extrema fraqueza (Mioshie-shū,",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．胃下垂にて発熱、胃が痛み、食欲不振、連日下痢で疲れ易くなった青年（御教え集　6号　P.64）",
+   "title_pt": "4. Jovem com ptose gástrica, febre, dor no estômago, falta de apetite, diarreia diária e cansaço fácil (Mioshie-shū, nº 6, p. 64) (Pergunta)",
+   "jp_anchor": "４．胃下垂にて発熱、胃が痛み、食欲不振、連日下痢で疲れ易くなった青年（御教え集　6号　P.64）",
+   "pt_anchor": "4. Jovem com ptose gástrica, febre, dor no estômago, falta de apetite, diarreia diária e cansaço fácil (Mioshie-shū, nº ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．乳を飲ませる時、首を反対に向けてひきつけ、食物は一切さけて、貰い乳を飲ませている生後一年位の幼児　　（御垂示録　1号　P.18）",
+   "title_pt": "5. Bebê de cerca de um ano que, ao mamar, vira o pescoço para o lado oposto e tem convulsões, recusa totalmente alimentos sólidos e mama leite de outra pessoa (Gosuiji-roku, nº 1, p. 18) (Pergunta)",
+   "jp_anchor": "５．乳を飲ませる時、首を反対に向けてひきつけ、食物は一切さけて、貰い乳を飲ませている生後一年位の幼児　　（御垂示録　1号　P.18）",
+   "pt_anchor": "5. Bebê de cerca de um ano que, ao mamar, vira o pescoço para o lado oposto e tem convulsões, recusa totalmente alimento",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．御浄霊の都度、黒茶色の物を十五、六回吐き、見る見る衰弱し食欲のない老婦人（御教え集　7号　P.14）",
+   "title_pt": "6. Senhora idosa que, toda vez que recebe Johrei, vomita quinze ou dezesseis vezes uma substância marrom-escura, definhando visivelmente e sem apetite (Mioshie-shū, nº 7, p. 14) (Pergunta)",
+   "jp_anchor": "６．御浄霊の都度、黒茶色の物を十五、六回吐き、見る見る衰弱し食欲のない老婦人（御教え集　7号　P.14）",
+   "pt_anchor": "6. Senhora idosa que, toda vez que recebe Johrei, vomita quinze ou dezesseis vezes uma substância marrom-escura, definha",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．胃癌、胃下垂、胃潰瘍と診断され、吐血あり、その後下痢、吐き気、食欲不振、便通少なく、衰弱せる老婆　（御教え集　6号　P.85）",
+   "title_pt": "7. Senhora idosa diagnosticada com câncer no estômago, ptose gástrica e úlcera estomacal, com vômito de sangue, depois diarreia, náusea, falta de apetite, poucas evacuações e fraqueza (Mioshie-shū, nº 6, p. 85) (Pergunta)",
+   "jp_anchor": "７．胃癌、胃下垂、胃潰瘍と診断され、吐血あり、その後下痢、吐き気、食欲不振、便通少なく、衰弱せる老婆　（御教え集　6号　P.85）",
+   "pt_anchor": "7. Senhora idosa diagnosticada com câncer no estômago, ptose gástrica e úlcera estomacal, com vômito de sangue, depois d",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．肩、腎臓が固く、胃と下腹が痛み、胃の痛みがとれてより、チョコレート色のヌラヌラしたものを激しく嘔吐し、下腹部に固結が出来、次第に大きくなり死亡した女性（御教え集　8号　P.5）",
+   "title_pt": "8. Mulher com ombros e rins duros, dor no estômago e na parte inferior do abdômen. Após a dor no estômago passar, vomitou violentamente uma substância viscosa cor de chocolate, formou-se uma solidificação na parte inferior do abdômen, que foi aumentando gradualmente, e ela faleceu (Mioshie-shū, nº 8, p. 5) (Pergunta)",
+   "jp_anchor": "８．肩、腎臓が固く、胃と下腹が痛み、胃の痛みがとれてより、チョコレート色のヌラヌラしたものを激しく嘔吐し、下腹部に固結が出来、次第に大きくなり死亡した女性（御教え集　8号　P.5）",
+   "pt_anchor": "8. Mulher com ombros e rins duros, dor no estômago e na parte inferior do abdômen. Após a dor no estômago passar, vomito",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．十年位の間ごく少量の食事、一日にサンマ一匹、カリントー五本位で元気な中年の男子（御垂示録　5号　P.52）",
+   "title_pt": "9. Homem de meia-idade que, por cerca de dez anos, se alimenta de quantidades muito pequenas, como um sanma e cinco karintō por dia, e é enérgico (Gosuiji-roku, nº 5, p. 52) (Pergunta)",
+   "jp_anchor": "９．十年位の間ごく少量の食事、一日にサンマ一匹、カリントー五本位で元気な中年の男子（御垂示録　5号　P.52）",
+   "pt_anchor": "9. Homem de meia-idade que, por cerca de dez anos, se alimenta de quantidades muito pequenas, como um sanma e cinco kari",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．普通に食事が戴けず、起きて三十分以内だと戴ける人（御垂示録　10号　P.19）",
+   "title_pt": "10. Pessoa que não consegue se alimentar normalmente, mas consegue se alimentar dentro de trinta minutos após se levantar (Gosuiji-roku, nº 10, p. 19) (Pergunta)",
+   "jp_anchor": "１０．普通に食事が戴けず、起きて三十分以内だと戴ける人（御垂示録　10号　P.19）",
+   "pt_anchor": "10. Pessoa que não consegue se alimentar normalmente, mas consegue se alimentar dentro de trinta minutos após se levanta",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１１．一日中胃および胃の後一面が痛み、お腹に石のようなものが出来ている人（御教え集　1号　P.14）",
+   "title_pt": "11. Pessoa com dor no estômago e em toda a região atrás do estômago o dia inteiro, e com algo como uma pedra no abdômen (Mioshie-shū, nº 1, p. 14) (Pergunta)",
+   "jp_anchor": "１１．一日中胃および胃の後一面が痛み、お腹に石のようなものが出来ている人（御教え集　1号　P.14）",
+   "pt_anchor": "11. Pessoa com dor no estômago e em toda a região atrás do estômago o dia inteiro, e com algo como uma pedra no abdômen ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１２．胃、肝臓部に固まりがあり、食欲不振で突き上げてくる症状を持った人（御垂示録　4号　P.34）",
+   "title_pt": "12. Pessoa com aglomerado no estômago e no fígado, falta de apetite e sintomas de refluxo (Gosuiji-roku, nº 4, p. 34) (Pergunta)",
+   "jp_anchor": "１２．胃、肝臓部に固まりがあり、食欲不振で突き上げてくる症状を持った人（御垂示録　4号　P.34）",
+   "pt_anchor": "12. Pessoa com aglomerado no estômago e no fígado, falta de apetite e sintomas de refluxo (Gosuiji-roku, nº 4, p. 34) (P",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．胃潰瘍、胃下垂で寒気が治りにくい場合の浄霊の急所、微熱のとれるのに要する時間（御垂示録　8号　P.28）",
+   "title_pt": "14. Ponto vital do Johrei para casos de úlcera estomacal e ptose gástrica em que o calafrio é difícil de passar, e o tempo necessário para baixar o estado ligeiramente febril (Gosuiji-roku, nº 8, p. 28) (Pergunta)",
+   "jp_anchor": "１４．胃潰瘍、胃下垂で寒気が治りにくい場合の浄霊の急所、微熱のとれるのに要する時間（御垂示録　8号　P.28）",
+   "pt_anchor": "14. Ponto vital do Johrei para casos de úlcera estomacal e ptose gástrica em que o calafrio é difícil de passar, e o tem",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．胃潰瘍にて、浄化激しく痛み続けて異物を吐き、人工吐瀉もしばしば行っており、偏食がちな中年の男子　（御教え集　7号　P.34）",
+   "title_pt": "14. Homem de meia-idade com úlcera estomacal, purificação intensa, dor contínua, vômito de corpos estranhos ao organismo, vômito artificial frequente e tendência a comer seletivamente (Mioshie-shū, nº 7, p. 34) (Pergunta)",
+   "jp_anchor": "１４．胃潰瘍にて、浄化激しく痛み続けて異物を吐き、人工吐瀉もしばしば行っており、偏食がちな中年の男子　（御教え集　7号　P.34）",
+   "pt_anchor": "14. Homem de meia-idade com úlcera estomacal, purificação intensa, dor contínua, vômito de corpos estranhos ao organismo",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "十五、胃潰瘍の再浄化にて、毎晩胃部に激痛を覚え、食欲が減り、衰弱してきた中年の男子　（御教え集　七号　三十二頁）",
+   "title_pt": "15. Sobre a Repurificação de úlcera gástrica, um homem de meia-idade que sentia fortes dores no estômago todas as noites, perdeu o apetite, enfraqueceu-se (Mioshie-shū, nº 7, p. 32) (Pergunta)",
+   "jp_anchor": "十五、胃潰瘍の再浄化にて、毎晩胃部に激痛を覚え、食欲が減り、衰弱してきた中年の男子　（御教え集　七号　三十二頁）",
+   "pt_anchor": "15. Sobre a Repurificação de úlcera gástrica, um homem de meia-idade que sentia fortes dores no estômago todas as noites",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１６．下痢と食物、潰瘍の原因と食物について　（御教え集　13号　P.51）",
+   "title_pt": "16. Sobre diarreia e alimentos, e a causa da úlcera e os alimentos (Mioshie-shū, nº 13, p. 51)",
+   "jp_anchor": "１６．下痢と食物、潰瘍の原因と食物について　（御教え集　13号　P.51）",
+   "pt_anchor": "16. Sobre diarreia e alimentos, e a causa da úlcera e os alimentos (Mioshie-shū, nº 13, p. 51)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１７．胃癌で食欲減退、衰弱し、ヌラを嘔吐、不眠、横臥不可能足が痺れる等の症状ある中年の男子　（御教え集　8号　P.20）",
+   "title_pt": "17. Um homem de meia-idade com sintomas de câncer gástrico, como perda de apetite, fraqueza, vômito de muco, insônia, incapacidade de deitar-se, dormência nas pernas, etc. (Mioshie-shū, nº 8, p. 20) (Pergunta)",
+   "jp_anchor": "１７．胃癌で食欲減退、衰弱し、ヌラを嘔吐、不眠、横臥不可能足が痺れる等の症状ある中年の男子　（御教え集　8号　P.20）",
+   "pt_anchor": "17. Um homem de meia-idade com sintomas de câncer gástrico, como perda de apetite, fraqueza, vômito de muco, insônia, in",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１８．薬毒多量に使用してあり、現在ヌラようの物を上げ、乳房の上、みぞおち、腕の下に固まりあり、衰弱した婦人　（御垂示録　21号　P.29）",
+   "title_pt": "18. Uma mulher que usou grande quantidade de toxina medicamentosa, atualmente vomita algo como muco, tem caroços acima dos seios, no epigástrio e abaixo dos braços, e está debilitada (Gosuiji-roku, nº 21, p. 29) (Pergunta)",
+   "jp_anchor": "１８．薬毒多量に使用してあり、現在ヌラようの物を上げ、乳房の上、みぞおち、腕の下に固まりあり、衰弱した婦人　（御垂示録　21号　P.29）",
+   "pt_anchor": "18. Uma mulher que usou grande quantidade de toxina medicamentosa, atualmente vomita algo como muco, tem caroços acima d",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１９．胃癌と言われ、足、腹部、顔にむくみあり、ヌラは吐かないが、衰弱した老人（御垂示録　1号　P.20）",
+   "title_pt": "19. Um idoso com diagnóstico de câncer gástrico, com inchaço nas pernas, abdômen e rosto, não vomita muco, mas está debilitado (Gosuiji-roku, nº 1, p. 20) (Pergunta)",
+   "jp_anchor": "１９．胃癌と言われ、足、腹部、顔にむくみあり、ヌラは吐かないが、衰弱した老人（御垂示録　1号　P.20）",
+   "pt_anchor": "19. Um idoso com diagnóstico de câncer gástrico, com inchaço nas pernas, abdômen e rosto, não vomita muco, mas está debi",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２０．胃癌と宣告され、ヌラを吐き、胃の固まりが動き、井戸の龍神との関係と、衰弱を葡萄糖に依存しようとする老人　（御教え）",
+   "title_pt": "20. Um idoso com diagnóstico de câncer gástrico, vomita muco, o caroço no estômago se move, relação com o Dragão Divino do poço, e tenta depender de glicose para a fraqueza (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "２０．胃癌と宣告され、ヌラを吐き、胃の固まりが動き、井戸の龍神との関係と、衰弱を葡萄糖に依存しようとする老人　（御教え）",
+   "pt_anchor": "20. Um idoso com diagnóstico de câncer gástrico, vomita muco, o caroço no estômago se move, relação com o Dragão Divino ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２１．胃癌と診断され、胃の上部に固結があり、移動し、苦痛あり、水様のものを吐き、現在は吐き気のみにて、食欲不振、衰弱せる中年の男子（地上天国　50号　P.10）",
+   "title_pt": "21. Um homem de meia-idade diagnosticado com câncer gástrico, com uma solidificação na parte superior do estômago, que se move, causando dor, vomita algo aquoso, atualmente apenas náuseas, falta de apetite, debilitado (Paraíso na Terra, nº 50, p. 10) (Pergunta)",
+   "jp_anchor": "２１．胃癌と診断され、胃の上部に固結があり、移動し、苦痛あり、水様のものを吐き、現在は吐き気のみにて、食欲不振、衰弱せる中年の男子（地上天国　50号　P.10）",
+   "pt_anchor": "21. Um homem de meia-idade diagnosticado com câncer gástrico, com uma solidificação na parte superior do estômago, que s",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２２．胃癌にて一時よかったが、再び悪化、体に油気なく、ヌラを吐き、食欲不振の中年の男子（御守様から音が出ることについて）（御教え）",
+   "title_pt": "22. Um homem de meia-idade com câncer gástrico que melhorou temporariamente, mas piorou novamente, sem oleosidade no corpo, vomita muco, falta de apetite (Sobre o som emitido pelo Ohikari) (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "２２．胃癌にて一時よかったが、再び悪化、体に油気なく、ヌラを吐き、食欲不振の中年の男子（御守様から音が出ることについて）（御教え）",
+   "pt_anchor": "22. Um homem de meia-idade com câncer gástrico que melhorou temporariamente, mas piorou novamente, sem oleosidade no cor",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２３．胃癌と診断され、胃の手術をし、その後腹部が左右驚異的な膨張をきたし、肛門脱出、脚部にむくみある老人　　（御教え）",
+   "title_pt": "23. Um idoso diagnosticado com câncer gástrico, submetido a cirurgia no estômago, após a qual o abdômen inchou de forma surpreendente para os lados, com prolapso anal e inchaço nas pernas (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "２３．胃癌と診断され、胃の手術をし、その後腹部が左右驚異的な膨張をきたし、肛門脱出、脚部にむくみある老人　　（御教え）",
+   "pt_anchor": "23. Um idoso diagnosticado com câncer gástrico, submetido a cirurgia no estômago, após a qual o abdômen inchou de forma ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２４．胃癌の手術後、本教に頼りたいと言う人（御垂示録　3号　P.18）",
+   "title_pt": "24. Uma pessoa que, após cirurgia de câncer gástrico, quer depender da nossa Igreja (Gosuiji-roku, nº 3, p. 18) (Pergunta)",
+   "jp_anchor": "２４．胃癌の手術後、本教に頼りたいと言う人（御垂示録　3号　P.18）",
+   "pt_anchor": "24. Uma pessoa que, após cirurgia de câncer gástrico, quer depender da nossa Igreja (Gosuiji-roku, nº 3, p. 18) (Pergunt",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二、腹部疾患",
+   "title_pt": "2. Doenças Abdominais",
+   "jp_anchor": "二、腹部疾患",
+   "pt_anchor": "2. Doenças Abdominais",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．下腹部の固結が溶け、お腹全体が腫れ、はかばかしくない人　　（御教え）",
+   "title_pt": "1. Uma pessoa cujo caroço no baixo ventre se dissolveu, mas todo o abdômen inchou e não melhora (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "１．下腹部の固結が溶け、お腹全体が腫れ、はかばかしくない人　　（御教え）",
+   "pt_anchor": "1. Uma pessoa cujo caroço no baixo ventre se dissolveu, mas todo o abdômen inchou e não melhora (Mioshie-shū) (Pergunta)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．腎臓および腹膜の浄化好転後再び浄化し、発熱、腹部がふくれ、全体に痛み、時折嘔吐があり、食欲減退し、衰弱激しき娘　（御教え集　3号　P.84）",
+   "title_pt": "2. Uma moça que, após melhora da purificação dos rins e do peritônio, teve nova purificação, com febre, abdômen inchado, dor generalizada, vômitos ocasionais, perda de apetite e fraqueza intensa (Mioshie-shū, nº 3, p. 84) (Pergunta)",
+   "jp_anchor": "２．腎臓および腹膜の浄化好転後再び浄化し、発熱、腹部がふくれ、全体に痛み、時折嘔吐があり、食欲減退し、衰弱激しき娘　（御教え集　3号　P.84）",
+   "pt_anchor": "2. Uma moça que, após melhora da purificação dos rins e do peritônio, teve nova purificação, com febre, abdômen inchado,",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．下腹部に拳大の固まりがある婦人（地上天国　40号　P.11）",
+   "title_pt": "3. Uma mulher com um caroço do tamanho de um punho no baixo ventre (Paraíso Terrestre, nº 40, p. 11) (Pergunta)",
+   "jp_anchor": "３．下腹部に拳大の固まりがある婦人（地上天国　40号　P.11）",
+   "pt_anchor": "3. Uma mulher com um caroço do tamanho de um punho no baixo ventre (Tijotengoku, nº 40, p. 11) (Pergunta)\n\nFormou-se um caroço do tamanh",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．腹膜炎にて、漢方薬を常用したため、腹部が臨月大にむくんでいる老婦（御教え集　1号　P.8）",
+   "title_pt": "4. Uma idosa com peritonite, que usava constantemente medicamentos da medicina chinesa, com o abdômen inchado do tamanho de uma gravidez de termo (Mioshie-shū, nº 1, p. 8) (Pergunta)",
+   "jp_anchor": "４．腹膜炎にて、漢方薬を常用したため、腹部が臨月大にむくんでいる老婦（御教え集　1号　P.8）",
+   "pt_anchor": "4. Uma idosa com peritonite, que usava constantemente medicamentos da medicina chinesa, com o abdômen inchado do tamanho de uma gravidez de termo (Mioshie-shū, nº 1, p. 8) (Pergunta)\n\nUma mulher de 61 anos sofria, desde a juventude, de dores abdomina",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．腹膜にて食欲を感じても食べられず、腹部に固まりがあって、移動したり消えたりする人（御教え集　5号　P.31）",
+   "title_pt": "5. Uma pessoa com peritonite que sente fome, mas não consegue comer, tem caroços no abdômen que se movem ou desaparecem (Mioshie-shū, nº 5, p. 31) (Pergunta)",
+   "jp_anchor": "５．腹膜にて食欲を感じても食べられず、腹部に固まりがあって、移動したり消えたりする人（御教え集　5号　P.31）",
+   "pt_anchor": "5. Uma pessoa com peritonite que sente fome, mas não consegue comer, tem caroços no abdômen que se movem ou desaparecem ",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．腹部膨満し、一進一退の幼児　　　（地上天国　48号　P.15）",
+   "title_pt": "6. Criança com abdômen distendido, avanços e recuos (Paraíso Terrestre, nº 48, p. 15) (Pergunta)",
+   "jp_anchor": "６．腹部膨満し、一進一退の幼児　　　（地上天国　48号　P.15）",
+   "pt_anchor": "6. Criança com abdômen distendido, avanços e recuos (Tijotengoku, nº 48, p. 15) (Pergunta)\n\nUma criança de quatro an",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．両足が痺れ、食後は腹が張って苦しい人　（御教え集　2号　P.40）",
+   "title_pt": "7. Pessoa com dormência em ambas as pernas e abdômen distendido após as refeições, sofrendo (Mioshie-shū, nº 2, p. 40) (Pergunta)",
+   "jp_anchor": "７．両足が痺れ、食後は腹が張って苦しい人　（御教え集　2号　P.40）",
+   "pt_anchor": "7. Pessoa com dormência em ambas as pernas e abdômen distendido após as refeições, sofrendo (Mioshie-shū, nº 2, p. 40) (",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．尿が少量ずつ一日十数回出、肝臓が痛んで便秘し、アミーバー赤痢が入ったとて、注射した体、現在、御浄霊戴くと、腹部全体膨張し、嘔吐を催すと言う人（御教え）",
+   "title_pt": "8. Pessoa que urina pequenas quantidades de cada vez, mais de dez vezes ao dia, sente dor no fígado, tem constipação, tomou injeção por ter sido diagnosticado com disenteria amebiana, e atualmente, ao receber Johrei, todo o abdômen incha e sente náuseas (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "８．尿が少量ずつ一日十数回出、肝臓が痛んで便秘し、アミーバー赤痢が入ったとて、注射した体、現在、御浄霊戴くと、腹部全体膨張し、嘔吐を催すと言う人（御教え）",
+   "pt_anchor": "8. Pessoa que urina pequenas quantidades de cada vez, mais de dez vezes ao dia, sente dor no fígado, tem constipação, to",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．アルバジル、ゲンノショウコ等を服用し、最近特に強い浄化を戴き、吐気と連続的な腹痛にうめき通しの人　　（御教え集　3号　P.18）",
+   "title_pt": "9. Pessoa que tomou Albacil, Gen-no-shōko, etc., e recentemente recebeu uma purificação particularmente forte, gemendo sem parar com náuseas e dores abdominais contínuas (Mioshie-shū, nº 3, p. 18) (Pergunta)",
+   "jp_anchor": "９．アルバジル、ゲンノショウコ等を服用し、最近特に強い浄化を戴き、吐気と連続的な腹痛にうめき通しの人　　（御教え集　3号　P.18）",
+   "pt_anchor": "9. Pessoa que tomou Albacil, Gen-no-shōko, etc., e recentemente recebeu uma purificação particularmente forte, gemendo s",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．開腹手術をしたことがあり、時々恥骨付近に激痛、小用が漏れ、便秘症の婦人（御教え）",
+   "title_pt": "10. Mulher que já foi submetida a cirurgia abdominal, com dores intensas ocasionais perto do púbis, incontinência urinária e constipação (Mioshie-shū) (Pergunta)",
+   "jp_anchor": "１０．開腹手術をしたことがあり、時々恥骨付近に激痛、小用が漏れ、便秘症の婦人（御教え）",
+   "pt_anchor": "10. Mulher que já foi submetida a cirurgia abdominal, com dores intensas ocasionais perto do púbis, incontinência urinár",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１１．腹痛時の御浄霊の急所　　（御教え集　3号　P.50）",
+   "title_pt": "11. Ponto vital do Johrei durante dor abdominal (Mioshie-shū, nº 3, p. 50)\nQuando o abdômen dói, há uma massa na região um pouco acima das costas. Como está em ambos os lados, um dos lados está mais inchado. Geralmente, o esquerdo é maior. Dependendo da pessoa, pode ser o lado direito, mas faça Johrei no lado mais inchado. Isto é com paciência. Vai melhorando gradualmente.",
+   "jp_anchor": "１１．腹痛時の御浄霊の急所　　（御教え集　3号　P.50）",
+   "pt_anchor": "11. Ponto vital do Johrei durante dor abdominal (Mioshie-shū, nº 3, p. 50)\n\nQuando o abdômen dói, há uma massa na região logo acima das costas",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１２．トンプク、トクホンを常用し、胃痛のため入院、強痛となり、注射で麻痺させ衰弱、現在背部横側特に左側が局部的にむくみ、衰弱はなはだしい人（御教え集　1号　P.24）",
+   "title_pt": "12. Pessoa que usava regularmente Tonpuku e Tokuhon, foi hospitalizada por dor de estômago que se tornou intensa, ficou paralisada com injeções e debilitada; atualmente apresenta inchaço localizado na região lateral das costas, especialmente do lado esquerdo, com fraqueza extrema (Mioshie-shū, nº 1, p. 24) (Pergunta)",
+   "jp_anchor": "１２．トンプク、トクホンを常用し、胃痛のため入院、強痛となり、注射で麻痺させ衰弱、現在背部横側特に左側が局部的にむくみ、衰弱はなはだしい人（御教え集　1号　P.24）",
+   "pt_anchor": "12. Pessoa que usava regularmente Tonpuku e Tokuhon, foi hospitalizada por dor de estômago que se tornou intensa, ficou paralisada com injeções e debilitada; atualmente apresenta inchaço localizado na região lateral das costas, especialmente do lado esquerdo, com fraqueza extrema (Mioshie-shū, nº 1, p. 24) (Pergunta)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１３．目の手術、脳を患い、腸の手術をし、肺炎を患い、またあらゆる薬を飲み、入信後痔出血が続き貧血して倒れ、その後足がふらつき、頭もボーッとして顔がむくんでいるという中年の男子　（御教え集　4号　P.49）",
+   "title_pt": "13. Homem de meia-idade que passou por cirurgia nos olhos, sofreu do cérebro, fez cirurgia intestinal, teve pneumonia, tomou todo tipo de medicamento, e após a conversão, teve hemorragia hemorroidária contínua, desmaiou por anemia, depois as pernas ficaram trêmulas, a cabeça ficou atordoada e o rosto inchado (Mioshie-shū, nº 4, p. 49) (Pergunta)",
+   "jp_anchor": "１３．目の手術、脳を患い、腸の手術をし、肺炎を患い、またあらゆる薬を飲み、入信後痔出血が続き貧血して倒れ、その後足がふらつき、頭もボーッとして顔がむくんでいるという中年の男子　（御教え集　4号　P.49）",
+   "pt_anchor": "13. Homem de meia-idade que passou por cirurgia nos olhos, sofreu do cérebro, fez cirurgia intestinal, teve pneumonia, t",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．胃潰瘍の傷痕の痛み、胃下垂と診断され、腹部は板のようになり、腸の内部の痛みがつづき、歩行困難で、時折激痛あり、その時は、下腹部に棒状の突起の出来る人（御教え集　3号　P.49）",
+   "title_pt": "14. Pessoa com dor na cicatriz de úlcera gástrica, diagnosticada com gastroptose, abdômen rígido como uma tábua, dor contínua no interior do intestino, dificuldade para andar, com dores intensas ocasionais, e nessas horas, uma protuberância em forma de bastão surge na parte inferior do abdômen (Mioshie-shū, nº 3, p. 49) (Pergunta)",
+   "jp_anchor": "１４．胃潰瘍の傷痕の痛み、胃下垂と診断され、腹部は板のようになり、腸の内部の痛みがつづき、歩行困難で、時折激痛あり、その時は、下腹部に棒状の突起の出来る人（御教え集　3号　P.49）",
+   "pt_anchor": "14. Pessoa com dor na cicatriz de úlcera gástrica, diagnosticada com gastroptose, abdômen rígido como uma tábua, dor con",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１５．分娩後種々の薬剤を多量に服用、最近、血痰排泄、むくみ、衰弱の加わった婦人（御教え集　7号　P.79）",
+   "title_pt": "15. Mulher que, após o parto, tomou grandes quantidades de vários medicamentos, e recentemente apresenta eliminação de escarro com sangue, inchaço e fraqueza (Mioshie-shū, nº 7, p. 79) (Pergunta)",
+   "jp_anchor": "１５．分娩後種々の薬剤を多量に服用、最近、血痰排泄、むくみ、衰弱の加わった婦人（御教え集　7号　P.79）",
+   "pt_anchor": "15. Mulher que, após o parto, tomou grandes quantidades de vários medicamentos, e recentemente apresenta eliminação de e",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１６．排便の前に必ず粘液と出血をし、アミーバー赤痢と診断された青年　（御教え集　8号　P.38）",
+   "title_pt": "16. Um jovem que sempre apresentava muco e hemorragia antes da evacuação e foi diagnosticado com disenteria amebiana (Mioshie-shū, nº 8, p. 38)",
+   "jp_anchor": "１６．排便の前に必ず粘液と出血をし、アミーバー赤痢と診断された青年　（御教え集　8号　P.38）",
+   "pt_anchor": "16. Um jovem que sempre apresentava muco e hemorragia antes da evacuação e foi diagnosticado com disenteria amebiana (Mi",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１７．手術をし、胃薬を用い、最近腹痛の浄化の激しい中年の男子（地上天国　40号　P.14）",
+   "title_pt": "17. Um homem de meia-idade que passou por cirurgia, usou medicamentos para o estômago e recentemente tem tido uma purificação intensa com dor abdominal (Paraíso na Terra, nº 40, p. 14)",
+   "jp_anchor": "１７．手術をし、胃薬を用い、最近腹痛の浄化の激しい中年の男子（地上天国　40号　P.14）",
+   "pt_anchor": "17. Um homem de meia-idade que passou por cirurgia, usou medicamentos para o estômago e recentemente tem tido uma purifi",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１８．四年間毎月一回位の割で、腹痛の浄化を繰返している婦人（地上天国　36号　P.12）",
+   "title_pt": "18. Uma mulher que, durante quatro anos, repete a purificação com dor abdominal cerca de uma vez por mês (Paraíso na Terra, nº 36, p. 12)",
+   "jp_anchor": "１８．四年間毎月一回位の割で、腹痛の浄化を繰返している婦人（地上天国　36号　P.12）",
+   "pt_anchor": "18. Uma mulher que, durante quatro anos, repete a purificação com dor abdominal cerca de uma vez por mês (Tijotengoku, n",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１９．腹部に湯飲み大の固結が出来、切開手術した人（御教え集　5号　P.32）",
+   "title_pt": "19. Uma pessoa que desenvolveu um nódulo sólido do tamanho de uma xícara de chá no abdômen e foi submetida a uma cirurgia de incisão (Mioshie-shū, nº 5, p. 32)",
+   "jp_anchor": "１９．腹部に湯飲み大の固結が出来、切開手術した人（御教え集　5号　P.32）",
+   "pt_anchor": "19. Uma pessoa que desenvolveu um nódulo sólido do tamanho de uma xícara de chá no abdômen e foi submetida a uma cirurgi",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２０．便意を催しても出にくく、直腸癌と診断された老人　（御教え）",
+   "title_pt": "20. Um idoso que, mesmo sentindo vontade de evacuar, tem dificuldade para defecar e foi diagnosticado com câncer retal (Mioshie-shū)",
+   "jp_anchor": "２０．便意を催しても出にくく、直腸癌と診断された老人　（御教え）",
+   "pt_anchor": "20. Um idoso que, mesmo sentindo vontade de evacuar, tem dificuldade para defecar e foi diagnosticado com câncer retal (",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２１．直腸癌と診断され、御浄霊を戴き、一時血便が出るも、その後血便止まり便秘し、胸が苦しい人（御教え集　4号　P.82）",
+   "title_pt": "21. Uma pessoa diagnosticada com câncer retal que, ao receber o Johrei, teve fezes com sangue temporariamente, mas depois as fezes com sangue pararam, ficou constipada e sente aperto no peito (Mioshie-shū, nº 4, p. 82)",
+   "jp_anchor": "２１．直腸癌と診断され、御浄霊を戴き、一時血便が出るも、その後血便止まり便秘し、胸が苦しい人（御教え集　4号　P.82）",
+   "pt_anchor": "21. Uma pessoa diagnosticada com câncer retal que, ao receber o Johrei, teve fezes com sangue temporariamente, mas depoi",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２２．肝臓癌と診断され、肝臓の所に卵大の固結があり、御浄霊すると腹がゴーゴーと鳴る人　　（御教え）",
+   "title_pt": "22. Uma pessoa diagnosticada com câncer de fígado, com um nódulo sólido do tamanho de um ovo na região do fígado, e cujo abdômen ronca ao receber Johrei (Mioshie-shū)",
+   "jp_anchor": "２２．肝臓癌と診断され、肝臓の所に卵大の固結があり、御浄霊すると腹がゴーゴーと鳴る人　　（御教え）",
+   "pt_anchor": "22. Uma pessoa diagnosticada com câncer de fígado, com um nódulo sólido do tamanho de um ovo na região do fígado, e cujo",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２３．脱腸と気付き脱腸帯を使用したが、左太股そけい部の上の腫れは段々と大きくなり、痛みはなく、仰臥すれば引っ込むという老人（御教え集　4号　P.98）",
+   "title_pt": "23. Um idoso que, percebendo uma hérnia, usou uma cinta de hérnia, mas o inchaço acima da virilha da coxa esquerda foi aumentando gradualmente, sem dor, e que desaparece quando deita de costas (Mioshie-shū, nº 4, p. 98)",
+   "jp_anchor": "２３．脱腸と気付き脱腸帯を使用したが、左太股そけい部の上の腫れは段々と大きくなり、痛みはなく、仰臥すれば引っ込むという老人（御教え集　4号　P.98）",
+   "pt_anchor": "23. Um idoso que, percebendo uma hérnia, usou uma cinta de hérnia, mas o inchaço acima da virilha da coxa esquerda foi a",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２４．赤痢、チフス、下痢、便秘と果物について　（御垂示録　2号　P.49）",
+   "title_pt": "24. Sobre disenteria, tifo, diarreia, constipação e frutas (Gosuiji-roku, nº 2, p. 49)",
+   "jp_anchor": "２４．赤痢、チフス、下痢、便秘と果物について　（御垂示録　2号　P.49）",
+   "pt_anchor": "24. Sobre disenteria, tifo, diarreia, constipação e frutas (Gosuiji-roku, nº 2, p. 49)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２５．赤痢の原因と、黴菌は自分の体に湧くと言う事（御教え集　1号　P.8）",
+   "title_pt": "25. Sobre a causa da disenteria e o fato de os micróbios brotarem no próprio corpo (Mioshie-shū, nº 1, p. 8)",
+   "jp_anchor": "２５．赤痢の原因と、黴菌は自分の体に湧くと言う事（御教え集　1号　P.8）",
+   "pt_anchor": "25. Sobre a causa da disenteria e o fato de os micróbios brotarem no próprio corpo (Mioshie-shū, nº 1, p. 8)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２６．赤痢は薬毒が新しいという事　　（御教え集　13号　P.14）",
+   "title_pt": "26. Sobre o fato de a toxina medicamentosa na disenteria ser nova (Mioshie-shū, nº 13, p. 14)",
+   "jp_anchor": "２６．赤痢は薬毒が新しいという事　　（御教え集　13号　P.14）",
+   "pt_anchor": "26. Sobre o fato de a toxina medicamentosa na disenteria ser nova (Mioshie-shū, nº 13, p. 14)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２７．赤痢の原因、経過と浄霊について　（御教え集　1号　P.64）",
+   "title_pt": "27. Sobre a causa, o curso e o Johrei da disenteria (Mioshie-shū, nº 1, p. 64)",
+   "jp_anchor": "２７．赤痢の原因、経過と浄霊について　（御教え集　1号　P.64）",
+   "pt_anchor": "27. Sobre a causa, o curso e o Johrei da disenteria (Mioshie-shū, nº 1, p. 64)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２８．赤痢の原因と現在の予防法について　（御教え集　10号　P.61）",
+   "title_pt": "28. Sobre a causa da disenteria e os métodos atuais de prevenção (Mioshie-shū, nº 10, p. 61)",
+   "jp_anchor": "２８．赤痢の原因と現在の予防法について　（御教え集　10号　P.61）",
+   "pt_anchor": "28. Sobre a causa da disenteria e os métodos atuais de prevenção (Mioshie-shū, nº 10, p. 61)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２９．赤痢の原因と事故について　　（御教え集　10号　P.54）",
+   "title_pt": "29. Sobre a causa da disenteria e os acidentes (Mioshie-shū, nº 10, p. 54)",
+   "jp_anchor": "２９．赤痢の原因と事故について　　（御教え集　10号　P.54）",
+   "pt_anchor": "29. Sobre a causa da disenteria e os acidentes (Mioshie-shū, nº 10, p. 54)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３０．チフスと赤痢の診断の仕方と食物について　（御垂示録　2号　P.50）",
+   "title_pt": "30. Sobre o método de diagnóstico e a alimentação para tifo e disenteria (Gosuiji-roku, nº 2, p. 50)\n(Pergunta)",
+   "jp_anchor": "３０．チフスと赤痢の診断の仕方と食物について　（御垂示録　2号　P.50）",
+   "pt_anchor": "30. Sobre o método de diagnóstico e a alimentação para tifo e disenteria (Gosuiji-roku, nº 2, p. 50)\n(Pergunta",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３１．チフスの原因、症状、御浄霊の個所、食物の注意について（御垂示録　25号　P.19）",
+   "title_pt": "31. Sobre a causa, os sintomas, os locais de Johrei e os cuidados com a alimentação para o tifo (Gosuiji-roku, nº 25, p. 19)\n(Pergunta)",
+   "jp_anchor": "３１．チフスの原因、症状、御浄霊の個所、食物の注意について（御垂示録　25号　P.19）",
+   "pt_anchor": "31. Sobre a causa, os sintomas, os locais de Johrei e os cuidados com a alimentação para o tifo (Gosuiji-roku, nº 25, p.",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３２．チフスに対する食物の注意と腸出血について（御教え集　1号　P.48）",
+   "title_pt": "32. Sobre os cuidados com a alimentação e a hemorragia intestinal no tifo (Mioshie-shū, nº 1, p. 48)\n(Pergunta)",
+   "jp_anchor": "３２．チフスに対する食物の注意と腸出血について（御教え集　1号　P.48）",
+   "pt_anchor": "32. Sobre os cuidados com a alimentação e a hemorragia intestinal no tifo (Mioshie-shū, nº 1, p. 48)\n(Pergunta",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３３．腸チフスの病理と、食物の選定について（御教え集　13号　P.51）",
+   "title_pt": "33. Sobre a patologia do tifo intestinal e a seleção de alimentos (Mioshie-shū, nº 13, p. 51)\nNo tifo intestinal, a mucosa do intestino fica mole, e então surgem vermes ali. E assim se abre um buraco. Então, se houver alimentos sólidos, eles entram nesse buraco. E surge febre. Por isso, na medicina também, dão alimentos líquidos. No entanto, com o Johrei, cura-se rapidamente. O tifo intestinal, para quem está internado no hospital, não é assim, mas cura-se sem problemas. Quem está internado no hospital, como o buraco no intestino não se cura facilmente, fica em alimentos líquidos. Portanto, é bom ingerir alimentos adequados conforme os sintomas.",
+   "jp_anchor": "３３．腸チフスの病理と、食物の選定について（御教え集　13号　P.51）",
+   "pt_anchor": "33. Sobre a patologia do tifo intestinal e a seleção de alimentos (Mioshie-shū, nº 13, p. 51)\nNo tifo intestinal, a muco",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３４．チフスは高熱にかかわらず脈が低い原因について（御垂示録　20号　P.7）",
+   "title_pt": "34. Sobre a causa de o pulso ser baixo apesar da febre alta no tifo (Gosuiji-roku, nº 20, p. 7)\n(Pergunta)",
+   "jp_anchor": "３４．チフスは高熱にかかわらず脈が低い原因について（御垂示録　20号　P.7）",
+   "pt_anchor": "34. Sobre a causa de o pulso ser baixo apesar da febre alta no tifo (Gosuiji-roku, nº 20, p. 7)\n(Pergunta",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３５．浄霊の急所（盲腸炎、肝臓、下腹の痛み、胃痙攣の場合）（御教え）",
+   "title_pt": "35. Pontos vitais do Johrei (casos de apendicite, fígado, dor no baixo-ventre, espasmo estomacal) (Mioshie-shū)\n(Pergunta)",
+   "jp_anchor": "３５．浄霊の急所（盲腸炎、肝臓、下腹の痛み、胃痙攣の場合）（御教え）",
+   "pt_anchor": "35. Pontos vitais do Johrei (casos de apendicite, fígado, dor no baixo-ventre, espasmo estomacal) (Mioshie-shū)\n(Pergunta)",
+   "notes": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３６．盲腸の病理　　　　（御垂示録　25号　P.18）",
+   "title_pt": "36. Patologia do apêndice (Gosuiji-roku, nº 25, p. 18)\n(Pergunta)",
+   "jp_anchor": "３６．盲腸の病理　　　　（御垂示録　25号　P.18）",
+   "pt_anchor": "36. Patologia do apêndice (Gosuiji-roku, nº 25, p. 18)\n(Pergunta",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

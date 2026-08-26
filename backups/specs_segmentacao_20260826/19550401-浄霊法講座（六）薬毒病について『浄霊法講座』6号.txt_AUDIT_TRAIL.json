@@ -1,0 +1,90 @@
+{
+  "filename": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 418 linhas / PT reestruturado para 270 linhas, 47 artigos por spec: 1 prefácio + 8 capítulos + 38 itens). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, incluindo verificação de contaminação do spec e reconstrução estrutural do PT.",
+  "pre_existing_context": "Alertado previamente que os volumes irmãos 浄霊法講座1-5号 (mesmo profile koza_lectures) tiveram o spec contaminado com título/âncoras de outro livro (観音講座), alguns já corrigidos (1号, 4号, 5号). Alertado também que colapso estrutural (parágrafos gigantes escondendo títulos de item) apareceu em quase todos os volumes desta subsérie.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta a leitura semântica linha a linha e as correções estruturais/de conteúdo aplicadas.",
+  "summary": {
+    "articles_in_spec": 47,
+    "articles_reviewed": 47,
+    "spec_estava_contaminado": true,
+    "spec_corrigido": true,
+    "colapso_estrutural_encontrado": true,
+    "colapso_estrutural_corrigido": true,
+    "real_content_bugs_found": 3,
+    "real_content_bugs_fixed": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "contaminacao_spec": {
+    "achado": "Todos os 47 registros do spec tinham title_pt, pt_anchor e pt_prefix preenchidos com conteúdo de outro livro (aparentemente uma série de 'Aulas' sobre a essência de Kannon, os três mundos, a missão do Japão, etc. - claramente não relacionado a este volume, que é uma coletânea de casos clínicos sobre a doença por toxina medicamentosa). jp_anchor e title_jp não estavam contaminados (continuavam corretos, derivados do JP real).",
+    "verificacao": "Confirmado por leitura: nenhum dos títulos 'Primeira Aula - O Propósito do Deus Principal...', 'Aula N Aula - ...' etc. aparece em lugar nenhum do PT work file real, nem tem qualquer relação temática com o conteúdo real (casos de intoxicação medicamentosa, testemunhos de cura por Johrei). Os pt_anchor também não existiam no PT real na posição indicada (eram trechos de outro texto).",
+    "correcao": "title_pt recalculado como tradução real de cada title_jp (mantendo numeração e citação de fonte, ex.: 'Mioshie-shū nº 8, p. 54', 'Paraíso na Terra nº 43, p. 13', 'Gosuiji-roku'). pt_anchor recalculado extraindo diretamente do PT work file real, já reestruturado: para itens, as primeiras ~110 caracteres do testemunho (o texto que efetivamente segue o título no PT real); para capítulos, o title_pt do primeiro item do capítulo (mesmo padrão usado no spec já corrigido de 4号). pt_prefix esvaziado (os antigos 'Primeira Aula'/'Aula N Aula' eram inventados, sem qualquer correspondência real no PT ou no JP - nenhum prefixo de 'Aula' existe nesta obra, que é organizada por capítulo anatômico/temático, não por aula numerada).",
+    "confianca": "alta - cada title_pt e pt_anchor foi extraído programaticamente do PT work file real após a reestruturação, e cada um dos 47 jp_anchor/title_jp foi conferido contra o JP original."
+  },
+  "colapso_estrutural": {
+    "achado": "PT work file tinha 109 linhas contra 418 do JP (razão ~3,8:1, mencionada no alerta inicial). A partir do item 4.5 (cinco dedos roxos, capítulo 'Membros') até o final do livro (item 8.4, último item, capítulo 'Outras partes') - abrangendo o final do capítulo 4, capítulos 5, 6, 7 e 8 inteiros (~27 unidades estruturais: 5 capítulos + 22 itens) - todo o conteúdo estava amassado em poucos parágrafos gigantes de texto corrido, sem nenhuma quebra entre título de item, testemunho e resposta, e sem quebra alguma entre um item e o próximo (título do item seguinte aparecia in-line no meio do texto corrido). Isso tornava impossível localizar onde um item terminava e outro começava, e escondia os títulos de item dentro do corpo do texto (mesmo padrão descrito no alerta inicial para esta subsérie).",
+    "correcao": "Reestruturado o PT work file inteiro a partir do ponto de colapso: cada título de capítulo e de item foi isolado em linha própria (com quebra de parágrafo antes e depois); cada testemunho (citação entre aspas) foi separado da resposta de Meishu-Sama como parágrafo próprio, usando a própria pontuação de aspas do texto (contagem/casamento de aspas curvas e retas) para localizar a fronteira real entre testemunho e resposta - não por posição nem por proporção de caracteres. Também normalizada a numeração de capítulo: os capítulos 7 e 8 estavam com algarismos romanos e a palavra espúria 'Seção:' ('VII. Seção: Corpo Inteiro', 'VIII. Outras partes') enquanto os capítulos 1-6 usavam algarismo arábico simples ('1. Cabeça' etc.) - normalizado para '7. Corpo Inteiro' e '8. Outras partes', consistente com o resto do livro.",
+    "verificacao_zero_perda": "Verificação palavra a palavra (diff de tokens) entre o texto antes e depois da reestruturação confirmou que a única diferença de conteúdo são exatamente as 3 correções documentadas abaixo (duplicata removida + 2 trechos ausentes inseridos) mais a normalização VII./VIII.->7./8. Nenhuma outra palavra foi alterada, removida ou reordenada pela reestruturação - as quebras de parágrafo inseridas são puramente estruturais (espaço em branco), não tocaram o texto em si.",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "item": "六.2 / 六.3 - fronteira entre '2. Pessoa submetida a cirurgia de remoção dos ovários' e '3. Purificação de uma mulher de meia-idade após cirurgia de câncer de útero' (Mioshie-shū nº 3, p. 91 / nº 3, p. 26)",
+      "problema": "GRAVE - duplicação de rascunho+versão final (mesmo padrão já catalogado em revisao-paralela-jp-pt.mdc, achado #6, e no volume 無肥料栽培法): logo após a resposta completa de Meishu-Sama ao item 6.2 (terminando 'Bem, faça assim.'), havia um título e testemunho truncados do item 6.3 (rascunho: testemunho cortado sem nenhuma resposta, terminando abruptamente em '...a frequência urinária continua me atormentando.'), seguido de uma linha em branco e então uma repetição parcial e reformulada do final da resposta do item 6.2 ('...os familiares são seguidores da seita Nichiren...', começando literalmente com reticências '...' no arquivo, sinal de um corte malfeito) e SÓ ENTÃO o título e testemunho completos do item 6.3 (agora com todos os detalhes: cárie óssea, profundidade do orifício de drenagem, consagração da família, ordem de aplicação do Johrei) seguidos da resposta real de Meishu-Sama.",
+      "verificacao": "Confirmado contra o JP (linhas 279-300): o JP tem uma única ocorrência do item 6.3, sem duplicação. A versão 'rascunho' do PT tinha o testemunho cortado na metade (faltava toda a segunda metade: suspeita de cárie óssea, profundidade do orifício, consagração da Imagem da Luz Divina e Kannon do biombo, ordem do Johrei, leitura dos Escritos Divinos) e nenhuma resposta.",
+      "correcao": "Removido o bloco duplicado/truncado (rascunho do item 6.3 + a repetição parcial do final da resposta do item 6.2 que o precedia), mantendo apenas: a resposta completa e correta do item 6.2 (versão mais fiel ao JP, incluindo as duas frases 'Portanto, isso não tem relação com a doença. Agora, não se pode dizer nada.' que só apareciam na primeira ocorrência) + o título e testemunho completos do item 6.3 + a resposta real de Meishu-Sama a esse item. Nenhum conteúdo real foi perdido - apenas o rascunho incompleto/redundante.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "item": "三.3 - Drenagem de pus e dor lombar após cirurgia renal (Mioshie-shū nº 4, p. 62)",
+      "problema": "GRAVE - trecho real do testemunho ausente, sem relação com a duplicação acima (bug distinto, encontrado por comparação direta com o JP, não por métrica). O JP diz: '...その後、膀胱結核、副睾丸結核（片方摘出）腹膜等になり、二十五年十二月、左腎臓が腫れ上がり、切開して膿を取り、二十六年五月退院し、現在、軽微な腰痛と右切開部より少量ずつ膿が出ております。発病時より最近まで、多量の服薬と注射（主に葡萄糖、カルシュウム、ビタミン、ペニシリン七、八十本、マイシン二十本、パス七百㌘等）をいたしました。' O PT pulava diretamente de '...tuberculose no epidídimo (um removido), peritônio,' para 'Atualmente, pesa 51 kg' (com um espaço duplo no ponto do corte, sinal de uma edição anterior malfeita) - omitindo inteiramente: o inchaço do rim esquerdo em dezembro de 1950, a incisão para drenar pus, a alta em maio de 1951, a dor lombar leve e drenagem de pus pela incisão direita, e a lista detalhada de medicamentos e injeções usados (glicose, cálcio, vitaminas, 70-80 injeções de penicilina, 20 de Mycin, 700g de PAS).",
+      "correcao": "Traduzido do JP e inserido no ponto exato da lacuna: 'etc.; em dezembro do 25º ano [Showa 25, 1950], o rim esquerdo inchou, foi feita uma incisão para drenar o pus, e ele recebeu alta em maio do 26º ano [Showa 26, 1951]; atualmente, há uma leve dor lombar, com uma pequena quantidade de pus saindo pela incisão do lado direito. Desde o início da doença até recentemente, usou grande quantidade de medicamentos e injeções (principalmente glicose, cálcio, vitaminas, setenta a oitenta injeções de penicilina, vinte de Mycin, setecentos gramas de PAS, etc.).' Também normalizada a aspas de fechamento do testemunho (estava usando aspas curvas ' ” ' incompatível com a aspas reta de abertura ' \" ', devido a mescla de duas passadas de tradução - normalizada para aspas reta).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "item": "七.10 - Mulher diagnosticada com câncer de estômago (Paraíso na Terra nº 43, p. 12)",
+      "problema": "Mesma classe de bug do item 3 acima (trecho real ausente, com o mesmo sinal de espaço duplo no ponto do corte): o JP diz '頭は絶えずはっきりせず、何か被ったような感じでございます。' (a cabeça não está nunca clara, com a sensação de estar coberta por algo) mas o PT tinha apenas 'A cabeça está constantemente confusa,  Além disso...' (faltava 'como se estivesse coberta por algo'). Além disso, esta era a única citação de todo o livro (entre os 47 itens revisados) sem NENHUMA aspas de fechamento no testemunho inteiro - o testemunho terminava sem aspas e a resposta de Meishu-Sama vinha direto colada ao final, sem separação, tornando impossível saber onde terminava a fala do informante e começava a de Meishu-Sama.",
+      "correcao": "Inserido 'como se estivesse coberta por algo.' no ponto correto (confirmado contra o JP). Adicionada a aspas de fechamento no fim do testemunho (logo após '...ficou internada por cerca de vinte dias para tratamento.', que corresponde ao fechamento 」 do JP), separando claramente o testemunho da resposta real de Meishu-Sama ('Esta pessoa é como uma amostra das vítimas de toxina medicamentosa...').",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + citação de 'Os Medicamentos Criam a Infelicidade' + capítulo 1 (Cabeça, itens 1-8)",
+      "jp_linhas": "1-137",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Já vinha bem estruturado no PT (título/testemunho/resposta em linhas próprias); conteúdo conferido integralmente contra o JP, sem lacunas."
+    },
+    {
+      "bloco": "Capítulo 2 (Costas, itens 1-2) + Capítulo 3 (Cintura, itens 1-2)",
+      "jp_linhas": "140-175",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Estrutura já correta no PT; conteúdo conferido, sem lacunas."
+    },
+    {
+      "bloco": "Capítulo 3, item 3 (Drenagem renal)",
+      "jp_linhas": "176-182",
+      "decisao": "corrigido - lacuna de conteúdo (correção 2) + reestruturado (título/testemunho/resposta/pergunta-resposta curta separados)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo 4 (Membros, itens 1-5) até Capítulo 8 (Outras partes, itens 1-4) - todo o restante do livro",
+      "jp_linhas": "183-419",
+      "decisao": "corrigido - colapso estrutural grave (reestruturado título/testemunho/resposta em todas as ~27 unidades) + duplicação removida (correção 1) + lacuna de conteúdo (correção 3) + normalização de numeração de capítulo VII/VIII->7/8",
+      "confianca": "alta"
+    }
+  ],
+  "spec_contaminado_e_corrigido": true,
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "filename": "19531015-御教え集26号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 213 linhas / PT 91 linhas após correções), 11 trechos por spec (prefácio + 10 sessões datadas: 6, 7, 15, 16, 17, 23, 24, 25, 26, 27 de setembro de 1953). Não é amostragem: todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data.",
+  "pre_existing_context": "JP tem um único bloco '=== ARTIGO ===' contendo as 11 sessões; spec 'mioshie_shu' já mapeia os 11 jp_anchor/pt_anchor corretamente. Alerta do usuário mencionava família de livros irmãos (御教え集/御垂示録) com bugs sistemáticos de monólito residual com cauda duplicada, turnos sem aspas, blocos de data ausentes, nomes próprios corrompidos e cabeçalhos de data duplicados/corrompidos — todas essas classes de bug foram verificadas especificamente neste volume (ver correções 1, 3, 5, 6 abaixo).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 11,
+    "articles_reviewed": 11,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "sessão 27 de setembro, parágrafo final antes do encarte editorial (JP linha 197, trecho sobre a 'teoria da matéria condensada' / 物性論 no contexto dos 55 cientistas mundiais reunidos no Japão)",
+      "problema": "GRAVE — monólito residual com cauda duplicada (mesma assinatura de bug já confirmada em Gokōwa e nos livros irmãos, item #6 do alerta): o parágrafo único do JP (linha 197) havia sido traduzido DUAS VEZES no ficheiro de trabalho. A primeira passagem começava corretamente ('Desta vez, cinquenta e cinco cientistas mundiais se reuniram...') mas parava truncada no meio de uma frase (terminando na palavra solta 'Isto'). Logo em seguida, uma segunda passagem recomeçava do meio do mesmo parágrafo JP ('Parece que surgiram muitos jovens estudiosos...', pulando a abertura sobre os 55 cientistas e a fama do Dr. Yukawa) e desta vez ia até o fim do parágrafo. Confirmado contra o JP que o trecho ocorre uma única vez (não há duas ocorrências no original) e que o mesmo artefacto de duplicação já existia na produção (textos_portugues/19531015-御教え集26号.txt, mesma posição) — ou seja, o bug veio de uma tradução anterior à criação do ficheiro de trabalho, não foi introduzido por este.",
+      "correcao": "Mesclado em um único parágrafo coerente e completo: mantida a abertura da primeira passagem (55 cientistas / fama do Dr. Yukawa / jovens cientistas) e, a partir daí, a continuação completa da segunda passagem (teoria da matéria condensada até o fechamento '...escrevo sobre ela aqui.'). Nenhum conteúdo de sentido foi perdido; apenas a redundância truncada foi removida.",
+      "fonte": "Cotejo interno entre as duas passagens do próprio ficheiro de trabalho + confirmação contra JP linha 197 (parágrafo único).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "sessão 26 de setembro, transição entre o parágrafo sobre a propagação nos EUA (JP linha 182) e o parágrafo sobre a conferência científica (JP linha 183)",
+      "problema": "Frase cortada no meio ('...acho que haverá  O centro das discussões...', com espaço duplo revelador) — faltava 'um desenvolvimento notável' (correspondente a 目覚ましい発展をするだろうと思います no JP) e as duas frases de abertura do parágrafo seguinte sobre a conferência de física teórica em si (que os cientistas se reuniram e que o autor pretende escrever sobre teoria científica depois).",
+      "correcao": "Restaurado texto faltante: '...acho que haverá um desenvolvimento notável. Em seguida, recentemente, cientistas do mundo todo se reuniram no Japão para um congresso de física teórica. Sobre isso, pretendo escrever uma teoria científica daqui a pouco tempo. O centro das discussões...'",
+      "fonte": "Busca exaustiva no acervo antes de traduzir: localizado em textos_portugues/19531015-御教え集26号.txt (monólito de produção), texto idêntico e completo na mesma posição, conferido contra o JP linha 182-183. Nenhuma retradução foi necessária.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "sessão 15 de setembro, abertura do trecho (JP linha 79, metáfora Hokkaidō/Estreito de Tsugaru sobre o atraso da física teórica em relação à religião)",
+      "problema": "GRAVE — bloco de conteúdo inteiro ausente: '...mas, do meu ponto de vista, é como se estivessem  Eu escrevi algo ontem à noite...' (espaço duplo revelador) pulava diretamente da metáfora inacabada para o parágrafo seguinte sobre o artigo 'Superestupidez', omitindo toda a explicação da metáfora Hokkaidō→Tóquio / Tsugaru, a observação sobre religiosos não serem ouvidos, e a ponte para 'teoria da matéria condensada' que introduz o resto do trecho.",
+      "correcao": "Restaurado o parágrafo completo: '...é como se estivessem saindo de Hokkaido e prestes a cruzar o Estreito de Tsugaru para ir a Tóquio. Portanto, como ainda não viram Tóquio, não entenderiam se eu falasse sobre Tóquio. Por outro lado, mesmo que um religioso diga isso, ninguém dá a mínima; por mais que se pense assim, não adianta nada. Atualmente, a teoria da matéria condensada é muito defendida; como falei outro dia, isso está um pouco antes de entrar no campo da religião. Portanto, ainda não se pode entrar no continente. É como comprar uma passagem perto de Hakodate, em Hokkaido. Esse é exatamente o ponto da teoria da matéria condensada. É uma coisa tola. Eu escrevi algo ontem à noite...'",
+      "fonte": "Busca exaustiva no acervo antes de traduzir: localizado em textos_portugues/19531015-御教え集26号.txt, texto idêntico e completo, conferido contra o JP linha 79. Nenhuma retradução foi necessária.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "sessão 16 de setembro, citação do funcionário do Ministério da Agricultura sobre a produção de arroz na era Meiji (JP linha 106)",
+      "problema": "Citação truncada: '\"No início da era Meiji, a produção  Portanto, esse negócio de não usar fertilizante é absolutamente inviável.\"' — faltava o valor numérico e a causalidade ('era de cerca de um koku por tan, e que melhorou subitamente com fertilizantes químicos'), essencial para o argumento que Meishu-Sama refuta na frase seguinte.",
+      "correcao": "Restaurado: '\"No início da era Meiji, a produção era de cerca de um koku por tan. Depois que começaram a usar fertilizantes químicos, os resultados melhoraram subitamente. Portanto, esse negócio de não usar fertilizante é absolutamente inviável.\"'",
+      "fonte": "Busca exaustiva no acervo antes de traduzir: localizado em textos_portugues/19531015-御教え集26号.txt, texto idêntico e completo, conferido contra o JP linha 106. Nenhuma retradução foi necessária.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "transição 17→23 de setembro (JP: cabeçalho de secção '秋季大祭御教え' antes de 九月二十三日)",
+      "problema": "Cabeçalho de secção '**Ensinamento do Festival de Outono**' (tradução de 秋季大祭御教え, que no JP precede isoladamente a sessão de 23 de setembro) estava colado ao final do parágrafo da sessão de 17 de setembro, sem quebra, em vez de aparecer como cabeçalho isolado antes de '23 de setembro'.",
+      "correcao": "Inserida quebra de parágrafo antes do cabeçalho, que agora aparece isolado e corretamente posicionado imediatamente antes de '23 de setembro'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "transição 7→15 de setembro (JP: 九月十五日 antes do trecho sobre física teórica)",
+      "problema": "Cabeçalho de data '15 de setembro' (que deveria ser uma linha isolada antes do início do trecho correspondente, seguindo o mesmo padrão usado nas demais sessões do volume) estava colado ao final do parágrafo da sessão de 7 de setembro, sem quebra.",
+      "correcao": "Inserida quebra de parágrafo, restaurando o padrão de cabeçalho isolado (cabeçalho próprio + linha em branco + parágrafo que repete a data no início, igual às demais sessões do volume).",
+      "confianca": "alta"
+    }
+  ],
+  "correcao_cosmetica_sem_perda_de_conteudo": [
+    {
+      "localizacao_pt": "sessão 6 de setembro, trecho sobre o kakemono 'Kōmyō-Nyorai' (JP: cerca da linha 48)",
+      "problema": "Espaço duplo entre 'se fosse o caso.' e 'É semelhante a isso' — verificado contra textos_portugues/ e contra o JP: não há conteúdo ausente, apenas um espaço supérfluo.",
+      "correcao": "Espaço duplo normalizado para espaço único. Sem impacto de conteúdo."
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "序文 / prefácio (título + data de publicação)",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "title_jp/title_pt do spec e do cabeçalho do ficheiro batem ('御教え集第二十六号' / 'Mioshie-shū nº 26'); nenhuma contaminação de outro livro (verificação específica pedida pelo usuário, cf. bug já achado em 浄霊法講座2号) — não encontrada aqui."
+    },
+    {
+      "sessao": "6 de setembro",
+      "decisao": "ok, com 1 correção cosmética (item acima)",
+      "confianca": "alta",
+      "notas": "Conteúdo completo: medicina feudal, homem-bloco-de-toxina, Nikkatsu/direita política, chieshōkaku, hierarquia/ordem, kakemono Kōmyō-Nyorai, rádio NHK, filial sem chefe. Todos os pontos batem com o JP."
+    },
+    {
+      "sessao": "7 de setembro",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Rádio de Kagoshima, imprensa favorável, medicina feudal/assassinato por boa intenção, carta da Argentina, oração Shōjō, dízimos/preceitos, filial em Tóquio."
+    },
+    {
+      "sessao": "15 de setembro",
+      "decisao": "corrigido — 1 correção grave (item 3)",
+      "confianca": "alta",
+      "notas": "Após correção, conteúdo completo: metáfora Hokkaidō/Tsugaru, 'Superestupidez', lógica do remédio, arroz artificial, agricultura natural, golpes/fraudes (medicamentos, médicos, religião, Tenrikyō)."
+    },
+    {
+      "sessao": "16 de setembro",
+      "decisao": "corrigido — 1 correção (item 4)",
+      "confianca": "alta",
+      "notas": "Após correção, conteúdo completo: metáfora Hokkaidō repetida em contexto próprio, geada em Tōhoku, calor espiritual/campos dos fiéis, cultivo contínuo do arroz, citação do funcionário do Ministério da Agricultura, era dos golpes (repetição temática legítima do dia anterior, confirmada linha a linha contra o JP — não é duplicação espúria)."
+    },
+    {
+      "sessao": "17 de setembro",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Repetição temática de conteúdo similar ao de 16/09 (física teórica, agricultura natural, calor/amor, golpes) é estrutura genuína do JP — Meishu-Sama resume os mesmos tópicos para audiências diferentes em dias consecutivos; confirmado que não é artefacto de tradução."
+    },
+    {
+      "sessao": "23 de setembro (sob cabeçalho '秋季大祭御教え')",
+      "decisao": "corrigido — cabeçalho reposicionado (item 5)",
+      "confianca": "alta",
+      "notas": "Chuva/luz forte, agricultura natural, EUA (Los Angeles/SF/Seattle), museu (Momoyama, obras-primas modernas, ukiyo-e), física teórica/teoria da matéria condensada, Kōmyōdai, esfera de luz no abdômen."
+    },
+    {
+      "sessao": "24 de setembro",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Chuva/festival, quebra de safra, 'Superestupidez' citado novamente, EUA, física teórica/teoria da matéria condensada (segunda exposição do mesmo tema, legítima), museu, Kōmyōdai."
+    },
+    {
+      "sessao": "25 de setembro",
+      "decisao": "ok — nota sobre spec desatualizado",
+      "confianca": "alta",
+      "notas": "O spec (segmentacao_manual/*.json) registra 'ratio PT/JP=0.00' para esta sessão, sinal de que na época da geração do spec o PT ainda não estava pareado. Confirmado nesta revisão que o PT desta sessão está presente e completo (purificação/chuva, Daijihi-Daihi, agricultura natural, EUA, museu, física teórica, Kōmyōdai) — a nota do spec está obsoleta, não reflete o estado atual do ficheiro de trabalho."
+    },
+    {
+      "sessao": "26 de setembro",
+      "decisao": "corrigido — 1 correção grave (item 2)",
+      "confianca": "alta",
+      "notas": "Após correção: Shibata Sanae/Tsutsumi Masako (toxina medicamentosa), agricultura natural, EUA, física teórica/teoria da matéria condensada, museu, Atami/Kōmyōdai (construção circular em leque)."
+    },
+    {
+      "sessao": "27 de setembro",
+      "decisao": "corrigido — 1 correção grave (item 1)",
+      "confianca": "alta",
+      "notas": "Tufão (650 mortos), agricultura natural, EUA, jazz/adoração aos EUA, museu, física teórica (com a duplicação/truncamento corrigida), colofão editorial (impressão 10/10/1953, publicação 15/10/1953, editor Jitsutarō Moriyama) — conferido contra o JP linha 204-213, completo e sem CJK residual."
+    }
+  ],
+  "verificacoes_especificas_do_alerta": {
+    "spec_contaminado_por_outro_livro": "Não encontrado — title_jp/title_pt e pt_anchor de cada uma das 11 entradas do spec batem com o conteúdo real do ficheiro de trabalho.",
+    "monolito_residual_cauda_duplicada": "Encontrado e corrigido (item 1) — mesmo padrão dos livros irmãos, já presente na produção (textos_portugues/) antes da criação do ficheiro de trabalho.",
+    "turnos_sem_aspas": "Não aplicável — este volume não é formato pergunta/resposta (Interlocutor/Meishu-Sama); é prosa corrida de Meishu-Sama com citações de terceiros já entre aspas, todas presentes.",
+    "blocos_de_data_ausentes": "Não encontrado — todas as 10 datas (6,7,15,16,17,23,24,25,26,27/09) têm conteúdo PT completo.",
+    "nomes_proprios_corrompidos": "Verificados os nomes próprios recorrentes (Dr. Yukawa, Kanō Natsuo, Itaya Hazan, Satō Gengen, Hirakushi Denchū, Tsuishu Yōzei, Iizuka Rōkansai, Hōitsu/Zeshin/Gahō/Hōgai/Seihō/Tessai/Taikan/Gyokudō/Shunsō, Kobayashi Ichizō, Shibata Sanae, Tsutsumi Masako, Niwano/Tokuchika, Hirokawa Kōzen) em todas as ocorrências — grafia consistente entre si e com o JP; nenhuma corrupção encontrada.",
+    "cabecalhos_de_data_duplicados_corrompidos": "Encontrados 2 casos de cabeçalho deslocado/colado ao parágrafo anterior (itens 5 e 6), corrigidos. Nenhum cabeçalho duplicado ou com data incorreta."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 6 correções. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "revisor": "agente (lote 11, Fase E)",
+    "metodo": "Releitura completa do ficheiro de trabalho PT do início ao fim, cross-check com a lista de correções desta trilha e verificação de cabeçalho/metadados (checklist item 7) e CJK residual (0 encontrado).",
+    "achado_novo": {
+      "data": "2026-07-09",
+      "revisor": "agente (lote 11, Fase E, segunda auditoria independente)",
+      "achado": "Marcador de delimitação '=== ARTIGO ===' duplicado (2 ocorrências consecutivas nas linhas 5-6 do cabeçalho do ficheiro de trabalho, antes do bloco de metadados) — o JP fonte e o formato-padrão do ficheiro têm só 1 ocorrência. Mesmo padrão já identificado e corrigido no livro-irmão 19531115-御教え集27号.txt (correção nº1 daquela trilha), mas que havia passado despercebido neste arquivo na revisão original de 2026-07-07.",
+      "correcao": "Removida a linha duplicada. Confirmado por grep que agora há exatamente 1 ocorrência, igual ao JP.",
+      "confianca": "alta"
+    },
+    "resultado": "Corrigido. Nenhum outro problema novo encontrado nesta releitura; corrobora as correções da auditoria original."
+  }
+}

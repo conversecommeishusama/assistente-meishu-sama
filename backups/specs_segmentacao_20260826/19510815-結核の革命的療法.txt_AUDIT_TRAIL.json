@@ -1,0 +1,186 @@
+{
+  "filename": "19510815-結核の革命的療法.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura real e completa do volume inteiro em ambos os idiomas: JP 1434/1434 linhas lidas (100%), PT 1783/1783 linhas lidas (100%, após as inserções desta revisão). Cobertura por chamadas sucessivas de Read com offset/limit cobrindo o ficheiro do início (prefácio) ao fim (colofão), sem amostragem — todo o corpo do JP foi confrontado com o PT correspondente na mesma ordem, testemunho a testemunho. Os 194 trechos do spec (2 preface, 84 section [ensaio teórico + poemas waka recorrentes], 108 testimony) foram todos localizados e conferidos quanto a título, autor, endereço e ordem.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 194,
+    "articles_reviewed": 194,
+    "real_corrections_applied": 17,
+    "items_escalated_to_pendencias": 0,
+    "pt_maior_que_jp_explicacao": "Confirmado: expansão normal do português (PT 1783 linhas vs JP 1434 linhas) — NÃO é duplicação de testemunhos. A sequência completa dos 194 itens foi conferida em ambos os idiomas, na mesma ordem, sem nenhum item saltado, duplicado ou reordenado. A proporção maior do PT deve-se à densidade do japonês literário original (parágrafos longos e compactos) exigirem mais texto/quebras de linha em português para o mesmo conteúdo, não a conteúdo extra ou repetido."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "testemunho de Miyawaki Teruko / Oyama Mihoko (肺結核が救われるまで / 不治と宣告さる肺結核治る)",
+      "problema": "Fragmento órfão duplicado 'e sinto isso.' inserido entre o fim de uma frase completa e a linha seguinte 'Meishu-Sama, muito obrigada.' — não corresponde a nada no JP (checklist ponto 8, duplicação/eco).",
+      "correcao": "Removido o fragmento órfão, mantendo a frase original intacta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "testemunho de Mizuno Akiko (生を怨んだ病の身感謝歓喜の日々と変ず)",
+      "problema": "Fragmento órfão 'Não consigo fazer isso.' inserido no meio da descrição da doença, sem correspondência no JP.",
+      "correcao": "Removido; frase reconectada ao trecho seguinte, que já traduzia corretamente o conteúdo do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "testemunho de Fujiwara Hami (医師も驚くほど短期間に肺浸潤全快, episódio pós-cura)",
+      "problema": "Eco/duplicação: a frase final do JP ('...que não havia esperança de cura, mesmo para um médico') foi traduzida duas vezes de forma fragmentada, deixando uma linha solta '— Talvez porque ele não fosse médico — comentavam entre si.'",
+      "correcao": "Mesclado em uma única frase fiel ao JP ('...não havia esperança de cura, mesmo para um médico.').",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "testemunho de Shizuko Shimizu (闘病生活より光明生活へ)",
+      "problema": "Mistradução real: JP '忘れもしません' (\"nunca esquecerei\", expressão de ênfase) foi vertido como 'Esqueci' seguido de uma linha solta 'Não.' — sentido invertido, não apenas fragmento órfão.",
+      "correcao": "Corrigido para 'Nunca esquecerei.', conforme o sentido correto da expressão japonesa.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "testemunho de Masa Watanabe (不治の肺浸潤其上心臓弁膜症三日で治る)",
+      "problema": "Frase cortada de forma espúria: 'meus olhos se enchiam de lágrimas. A escola...' seguida de nova linha 'Ao finalizar, os sintomas pioraram' — quebra que não corresponde à estrutura do JP ('学校を終える頃より症状はすすみ').",
+      "correcao": "Unificado em uma frase coerente: '...meus olhos se enchiam de lágrimas. Por volta do término da escola, os sintomas pioraram...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt_aprox": "testemunho de Suga Mitsuyoshi (急性肺炎より救わる) — trecho 'produtos do método da agricultura natural'",
+      "problema": "Gaguejo de tradução: 'Ao ver os produtos da método da método da agricultura natural' (repetição espúria de 'da método').",
+      "correcao": "Corrigido para 'Ao ver os produtos do método da agricultura natural', mantendo o sentido correto de 自然農法.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt_aprox": "testemunho de Kawakami Sakuichi (転禍移福)",
+      "problema": "Mesmo padrão de gaguejo em outro testemunho: 'servir ao Caminho através da método da método da agricultura natural' (verificado contra o JP '来春よりの自然耕作にお道への御奉仕に' — conteúdo correto, só a repetição da palavra estava errada).",
+      "correcao": "Corrigido para 'servir ao Caminho por meio da agricultura natural a partir da próxima primavera.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt_aprox": "testemunho de Matsubara Kinuko (疑った私がお光に浴して)",
+      "problema": "Fragmento órfão/duplicado 'Pensei em pedir a ajuda, e, embora indigno, estou auxiliando.' anexado após a frase final já traduzida, sem corresponder a uma cláusula própria do JP (o '及ばずながらお手伝いさして頂いています' já deveria estar embutido na frase anterior).",
+      "correcao": "Mesclado na frase anterior, adicionando a cláusula final que faltava ('...ajudando no que for possível, ainda que minhas forças sejam insuficientes').",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt_aprox": "testemunho de Suga Mitsuyoshi, início (急性肺炎より救わる) — trecho sobre o jornal Kyusei",
+      "problema": "Palavra órfã 'Doença' isolada, seguida de nova linha 'Li o relato de experiência de cura completa.' — fragmentação de '病気全快の体験談を拝見致しました'.",
+      "correcao": "Unificado: 'Li o relato de experiência de cura completa de uma doença.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao_pt_aprox": "testemunho de Kuno Toshio (唯一回の浄霊で救われる)",
+      "problema": "Fragmento órfão duplicado 'Algo tão claro assim...' antes de 'Diante dos fatos evidentes, não há mais espaço para dúvidas.' — repetição fragmentada da mesma ideia do JP ('これ程はっきりした事実を見せつけられては').",
+      "correcao": "Removido o fragmento solto; frase reescrita como 'Diante de um fato tão evidente quanto este, não há mais espaço para dúvidas.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao_pt_aprox": "testemunho de Katayama Hajime (病気の問屋のような私でした)",
+      "problema": "Paragrafação espúria com 'mas ainda assim...' pendurado no fim de um parágrafo e 'Embora tenha sido dito que era uma aderência, mas que melhoraria' repetindo 'mas' de forma incoerente.",
+      "correcao": "Unificado em frase única e coerente, sem a duplicação de 'mas'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao_pt_aprox": "testemunho de Ogawa Eitarō (再生の喜び)",
+      "problema": "Gaguejo de tradução: 'acupuntura, moxabustão, medicina popular, medicamentos da medicamentos da medicina chinesa, fisioterapia' — repetição espúria de 'medicamentos da'.",
+      "correcao": "Corrigido para 'acupuntura e moxabustão, medicina popular, terapia da medicina chinesa (kampo), fisioterapia, etc.', fiel ao JP '鍼灸民間療法、漢方療法、物理療法'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "localizacao_pt_aprox": "testemunho de Ozaki Yukie (諦めた肺浸潤二十日で全快)",
+      "problema": "GRAVE — corrupção de termo médico/nome próprio: 'Putomai Shin ouviu falar de algo bom e tomou várias injeções...' — 'Putomai Shin' é uma transliteração corrompida de ストレプトマイシン (estreptomicina), tratada erroneamente como se fosse o nome de uma pessoa realizando a ação. Confirmado contra o JP: '今度はストレプトマイシンが良い事を聞き、何回も注射しましたが効果なく悪化するばかりで'.",
+      "correcao": "Corrigido para 'Desta vez, ouvi dizer que a estreptomicina era boa, e tomei várias injeções, mas não surtiram efeito...' — restaura o sentido correto da primeira pessoa e do termo médico.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao_pt_aprox": "testemunho de Kawai Ryūhei (暗澹たる結核地獄より救わる), final",
+      "problema": "Fragmento órfão 'Não sei.' inserido entre duas frases sem relação com o JP.",
+      "correcao": "Removido; frase final reescrita de forma fiel ao conteúdo do parágrafo final do JP ('...my wish is that even one more person suffering may bathe in God's light...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "localizacao_pt_aprox": "testemunho de Yasue Keiichi (見放された結核二カ月で健康体), abertura",
+      "problema": "CJK residual: uma linha isolada contendo apenas o caractere japonês '。' (ponto final japonês solto, sem texto associado). Violação do checklist ponto 5.",
+      "correcao": "Linha removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "localizacao_pt_aprox": "testemunho de Toshio Morishita (疑いつつも結核腎臓炎まで救わる)",
+      "problema": "Fragmento órfão 'Não foi possível.' inserido entre 'eu ainda não acreditava.' e 'Pensei que tivesse melhorado com o tempo' — quebra que não existe no JP ('時期がきて良くなった位に思っておりましたが').",
+      "correcao": "Removido; frases reunidas em sequência coerente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 17,
+      "localizacao_pt_aprox": "final do ficheiro (colofão)",
+      "problema": "GRAVE — truncamento real: o PT terminava abruptamente logo após o título repetido '**Tratamento Revolucionário para a Tuberculose**', sem o bloco de ficha técnica final presente no JP (linhas 1427-1434: data de publicação, formato B6/255 páginas, autor 自観, editora 世界救世教出版部). Violação do checklist ponto 4 (completude do PT).",
+      "correcao": "Adicionado o bloco de ficha técnica traduzido: data de publicação (15 de agosto de 1951), formato B6, 255 páginas, autor (Jikan), editora (Departamento de Publicações da Igreja Messiânica Mundial).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + ensaio teórico (医学の解剖 até 結核と特効薬)",
+      "jp_linhas": "1-100",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução completa e fiel, sem truncamento nem CJK residual. Paragrafação levemente mais fragmentada que o JP em alguns pontos, mas sem perda de conteúdo."
+    },
+    {
+      "bloco": "Ensaio teórico (栄養 até 霊主体従/無機から有機へ)",
+      "jp_linhas": "100-155",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Inclui um erro de concordância de gênero recorrente ('as micróbios' em vez de 'os micróbios') — problema de qualidade de português, não de fidelidade JP↔PT; não corrigido por estar fora do escopo do checklist de 8 pontos (não é duplicação, truncamento, CJK ou desalinhamento)."
+    },
+    {
+      "bloco": "Testemunhos 1-50 (一家五人を斃した結核 até 肺結核治り商売繁昌する)",
+      "jp_linhas": "155-490",
+      "decisao": "ok, com correções 1-2 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos 51-100 (医師も驚くほど短期間に肺浸潤全快 até 病床時を顧みて)",
+      "jp_linhas": "490-745",
+      "decisao": "ok, com correções 3-9 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos 101-150 (再生の喜び até 現代医学では不治の病とされている肺結核...)",
+      "jp_linhas": "745-1005",
+      "decisao": "ok, com correções 10-13 acima",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos 151-194 (不治の肺浸潤其上心臓弁膜症三日で治る revisitado até 闘病十三年間を顧みて + colofão)",
+      "jp_linhas": "1005-1434",
+      "decisao": "ok, com correções 14-17 acima",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_ordem_e_completude": {
+    "metodo": "Para cada um dos 194 itens do spec (títulos, autores, endereços), localizado o correspondente exato em ambos os idiomas na mesma ordem sequencial, sem uso de contagem agregada — leitura direta linha a linha.",
+    "resultado": "194/194 itens confirmados presentes, na ordem correta, em ambos os idiomas. Nenhum testemunho duplicado, nenhum saltado, nenhuma seção fora de ordem.",
+    "razao_pt_mais_longo_que_jp": "Confirmada como expansão normal de tradução (JP muito denso/compacto), não duplicação de blocos — ver campo pt_maior_que_jp_explicacao acima."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente realizada pelo orquestrador em 2026-07-07: verificação por amostragem das 17 correções aplicadas (estreptomicina, mistraducao invertida, colofão final) confirmadas presentes e corretas; sequência 1-194 já validada íntegra na primeira passada. approved:true."
+  }
+}

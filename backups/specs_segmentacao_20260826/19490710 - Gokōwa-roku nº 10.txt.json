@@ -1,0 +1,51 @@
+{
+ "filename": "19490710 - Gokōwa-roku nº 10.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』10号、昭和24(1949)年7月10日発行",
+   "pt_anchor": "Gokōwa-roku nº 10",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月三日",
+   "title_pt": "3 de maio",
+   "jp_anchor": "五月三日\n\nInterlocutor: ――仲人をいたします場合、結婚する二人に対し責任を持てないことがありますが、かかる際にはどのようにいたすべきでしょうか。",
+   "pt_anchor": "3 de maio\n\nInterlocutor: Quando atuamos como casamenteiros, às vezes não conseguimos nos responsabilizar pelo casal que vai se casar. Nesses casos, como devemos proceder?",
+   "notes": "",
+   "pt_prefix": "3 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十三日",
+   "title_pt": "13 de maio",
+   "jp_anchor": "五月十三日\n\nInterlocutor: ――人が死ぬと「寿命だった」とか、あるいは「医者にかかって寿命が延びた」とか申しますが、寿命ということは決まっているのでしょうか。",
+   "pt_anchor": "13 de maio\n\nInterlocutor: Quando uma pessoa morre, diz-se que \"era a hora\" ou que \"a vida foi prolongada por causa do médico\". O tem",
+   "notes": "",
+   "pt_prefix": "13 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十三日",
+   "title_pt": "23 de maio",
+   "jp_anchor": "五月二十三日\n\nInterlocutor: ――刺青を好む人がありますが、これは霊的に意味がありましょうか。また、刺青をするのは神への冒涜と存じますがいかがでございましょうか。",
+   "pt_anchor": "23 de maio\n\nInterlocutor: Há pessoas que gostam de tatuagens. Isso tem algum significado espiritual? Além disso, acho que fazer tatu",
+   "notes": "",
+   "pt_prefix": "23 de maio"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,108 @@
+{
+  "filename": "19520715-御教え集11号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume (JP 180 linhas / PT 123 linhas originais, ratio ~1.5:1 sinalizado como alerta de família). 9 trechos por spec (prefácio + 8 sessões datadas: 6/6, 7/6, 15/6, 16/6, 17/6, 25/6, 26/6, 27/6). JP tem um único bloco === ARTIGO === contendo todas as 9 datas; leitura feita data a data, confrontando cada transição contra o PT correspondente na mesma ordem, com atenção máxima a cabeçalhos de data (alerta explícito de bug confirmado em quase todos os volumes irmãos 御教え集).",
+  "pre_existing_context": "Nenhuma correção prévia nesta sessão para este arquivo. Primeira revisão linha a linha registrada.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "trechos_no_spec": 9,
+    "trechos_revisados": 9,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0,
+    "padrao_bug_confirmado": "monólito residual com cauda duplicada / bloco inteiro duplicado em transição de data - mesma assinatura já catalogada em revisao-paralela-jp-pt.mdc para a família 御教え集/御垂示録, mas neste volume manifestada como PARÁGRAFO INTEIRO (ou passagem de tour do museu inteira) traduzido duas vezes de forma independente e concatenado no arquivo de trabalho, em vez de apenas a cauda final. Achado em 3 das 8 transições de data (7/6, 17/6, 27/6)."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "seção '7 de junho', parágrafo sobre a prisão/tortura em Ōmiya e a perseguição policial (JP: bloco único, trecho a partir de '大宮警察署に引っ張られて' até 'ホーリネス教会という名前で、どこかにできたということを聞きましたがね。')",
+      "problema": "Duplicação de bloco inteiro: o parágrafo sobre o conselho ambíguo a Deguchi Onisaburō, a repressão policial, a tortura em Ōmiya e o interrogatório de Shizuoka aparecia COMPLETO uma vez (terminando em '...algo terrível.'), e então um segundo parágrafo reiniciava do zero ('O Mestre não tinha essa intenção...') repetindo quase palavra por palavra o mesmo conteúdo já traduzido, antes de finalmente prosseguir com conteúdo genuinamente novo (blacklist de Okada, vigilância em Atami, caso Nakajima/Kannon, perseguição da igreja Holiness de Nakata Shigeharu, facção do Segundo Advento). Verificado contra o JP (bloco único, sem repetição) que o conteúdo existe apenas UMA vez na fonte - é duplicação introduzida no PT, não conteúdo real do JP.",
+      "correcao": "Removida a reafirmação duplicada ('O Mestre não tinha essa intenção... Foi bem duro, mas não teve aquelas coisas terríveis que acabei de mencionar.'), unindo diretamente a frase final do primeiro parágrafo ('...algo terrível.') à continuação genuína ('Quando me levavam para o Departamento de Polícia Metropolitana, um sujeito chamado Okada...'). Nenhum conteúdo novo foi perdido - toda a cauda com informação exclusiva (Okada/blacklist, vigilância em Atami, Nakajima, Holiness/Nakata, Segundo Advento) foi preservada integralmente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "seção '17 de junho', tour detalhado do museu (sala 1: biombos de Kōrin, falsificação no Museu Nezu, Kaihō Yūshō, biombo dos costumes de Kyoto) - JP linha 109, bloco único e contínuo",
+      "problema": "O mesmo padrão de duplicação de passagem inteira: a tradução da descrição da sala 1 (biombo de outono de Kōrin genuíno vs. falsificação do Museu Nezu / discípulo, Kaihō Yūshō, biombo dos costumes de Kyoto do início do Tokugawa) foi feita DUAS VEZES de forma independente (frases parafraseadas de modo diferente cada vez) e ambas as versões foram concatenadas no arquivo - a primeira cortada abruptamente no meio de uma frase ('É em cores vivas. Muito'), a segunda completa e prosseguindo para o restante do tour (Imao Keinen, Ninsei, salas 2-6). Confirmado contra o JP (linha 109) que esse trecho existe uma única vez na fonte.",
+      "correcao": "Removida a primeira passagem (incompleta/truncada), mantendo apenas a versão completa que prossegue corretamente por todas as salas restantes. A descrição do biombo de aves aquáticas de Kōrin (com a anedota de Sano Shigejirō), que era exclusiva da primeira passagem e não se repetia na segunda, foi preservada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "seção '27 de junho', abertura sobre o museu atrair as classes altas/intelectuais (JP linha 169-170, bloco único)",
+      "problema": "Mesmo padrão: o parágrafo sobre Deus usar o museu para atrair intelectuais e elites, seguido da lista de convidados dos dias 30 e 1º, foi traduzido de forma completa uma vez, e imediatamente re-traduzido (paráfrase diferente) uma segunda vez antes de prosseguir para o artigo 'O Significado da Construção do Museu de Belas Artes'. A segunda versão (completa) já contém integralmente o conteúdo da primeira mais a continuação genuína do artigo.",
+      "correcao": "Removida a primeira ocorrência duplicada (parágrafo completo + início truncado da lista de convidados), mantendo apenas a segunda versão, que é completa e flui diretamente para o artigo integral sem perda de conteúdo.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_trecho": [
+    {
+      "trecho": "Prefácio (título do fascículo, referência Coletânea de Ensinamentos)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cabeçalho e metadados corretos, sem CJK residual."
+    },
+    {
+      "trecho": "6 de junho (美術館 andaimes retirados; Grande Mestre / Chieshōkaku; Daijō-Shōjō; Chūshingura; espíritos protetores; dupla-face)",
+      "jp_linhas": "24-57",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Parágrafos longos do JP vertidos em parágrafos PT correspondentes sem perda; nenhuma duplicação encontrada nesta seção nem na transição para 7 de junho."
+    },
+    {
+      "trecho": "7 de junho (dupla-face; Ōmoto/Deguchi Onisaburō; tortura Ōmiya; Holiness/Nakata; Daijō-Shōjō de novo; teoria/prática médica)",
+      "jp_linhas": "58-76",
+      "decisao": "corrigido - duplicação de bloco (item 1 acima)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "15 de junho (cerimônia de conclusão do Santuário + inauguração do museu; tour detalhado sala a sala)",
+      "jp_linhas": "79-87",
+      "decisao": "ok",
+      "confianca": "media-alta",
+      "notas": "Trecho extremamente longo (tour completo do museu); verificado início/fim de cada sala e ausência de CJK residual; não foi possível re-verificar every clause isoladamente dado o volume, mas nenhum padrão de duplicação de bloco foi encontrado nesta seção (diferente de 17/6)."
+    },
+    {
+      "trecho": "16 de junho (modelo Hakone/Atami; visita de Braden; segundo tour completo do museu, mais detalhado)",
+      "jp_linhas": "90-99",
+      "decisao": "ok",
+      "confianca": "media-alta",
+      "notas": "JP repete deliberadamente um tour ainda mais detalhado no dia seguinte (conteúdo real da fonte, não bug) - confirmado que o PT replica essa repetição legítima uma única vez por dia, sem duplicação interna adicional."
+    },
+    {
+      "trecho": "17 de junho (terceiro dia da celebração; terceiro tour do museu; diálogo final sobre autoria de gravuras)",
+      "jp_linhas": "103-123",
+      "decisao": "corrigido - duplicação de bloco (item 2 acima)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "25 de junho (filme cultural Riken/Cannes; artigo 'Significado da Construção do Museu'; história da compra dos terrenos)",
+      "jp_linhas": "127-138",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "26 de junho (burrice/toxina medicamentosa; MacArthur/Truman; comunismo; Braden; artigos sobre toxina medicamentosa e doenças contagiosas)",
+      "jp_linhas": "142-162",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "27 de junho (museu atrai elites; artigo 'Significado da Construção do Museu' - versão completa; modelos de Deus por nação; encerramento do fascículo)",
+      "jp_linhas": "166-180",
+      "decisao": "corrigido - duplicação de bloco (item 3 acima)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual": "Busca automatizada por caracteres CJK no corpo do PT (excluindo cabeçalho/metadados de arquivo) - nenhum encontrado.",
+    "truncamento_final": "Confirmado que o arquivo termina com os três títulos de artigo esperados ('O Terror da Toxina Medicamentosa', 'Lamento pelos Senhores Farmacêuticos', 'O Alarme da Salvação do Mundo'), correspondendo ao final do JP (linhas 176-180) - sem corte abrupto."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 3 correções, sem resíduo de duplicação. approved:true."
+  }
+}

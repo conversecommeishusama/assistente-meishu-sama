@@ -1,0 +1,95 @@
+{
+ "filename": "19520320 - Mioshie-shū nº 7.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 9→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』7号、昭和27(1952)年3月20日発行",
+   "pt_anchor": "Mioshie-shū nº 7",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月六日",
+   "title_pt": "6 de fevereiro",
+   "jp_anchor": "二月六日",
+   "pt_anchor": "6 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "6 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月七日",
+   "title_pt": "7 de fevereiro",
+   "jp_anchor": "二月七日",
+   "pt_anchor": "7 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "7 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十五日",
+   "title_pt": "15 de fevereiro",
+   "jp_anchor": "二月十五日",
+   "pt_anchor": "15 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "15 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十六日",
+   "title_pt": "16 de fevereiro",
+   "jp_anchor": "二月十六日",
+   "pt_anchor": "16 de fevereiro",
+   "notes": "2026-08-05 revisao rigorosa: pt_anchor citava o titulo antigo do livro 結核信仰療法; ao padronizar o titulo para a forma canonica do acervo (\"Terapia pela Fe na Tuberculose\") a ancora quebrou. Repontada para o texto atual. 2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "16 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十七日",
+   "title_pt": "17 de fevereiro",
+   "jp_anchor": "二月十七日",
+   "pt_anchor": "17 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "17 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十五日",
+   "title_pt": "25 de fevereiro",
+   "jp_anchor": "二月二十五日",
+   "pt_anchor": "25 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "25 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十六日",
+   "title_pt": "26 de fevereiro",
+   "jp_anchor": "二月二十六日",
+   "pt_anchor": "26 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "26 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十七日",
+   "title_pt": "27 de fevereiro",
+   "jp_anchor": "二月二十七日",
+   "pt_anchor": "27 de fevereiro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "27 de fevereiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

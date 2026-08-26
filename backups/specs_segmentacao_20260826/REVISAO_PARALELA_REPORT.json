@@ -1,0 +1,899 @@
+{
+  "generated_at": "2026-07-03T15:59:15Z",
+  "stage": "A_triagem_rigorosa",
+  "stats": {
+    "files": 1,
+    "trechos": 51,
+    "fail": 48,
+    "warn": 3,
+    "ok": 0
+  },
+  "files": [
+    {
+      "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "profile": "jikan_hen",
+      "articles_total": 51,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 43,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Tuberculose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "序　　文",
+          "kind": "section",
+          "jp_chars": 380,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 380 (0%)",
+            "pt_anchor não encontrado: 'uberculose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'uberculose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "観音教の治療は医学上合理的なる生気療法也",
+          "kind": "section",
+          "jp_chars": 58,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'berculose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'berculose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "（一）序",
+          "kind": "topic",
+          "jp_chars": 615,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 615 (0%)",
+            "pt_anchor não encontrado: 'erculose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'erculose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 5,
+          "title_jp": "（二）生気とは何ぞや",
+          "kind": "topic",
+          "jp_chars": 1300,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1300 (0%)",
+            "pt_anchor não encontrado: 'rculose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'rculose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 6,
+          "title_jp": "（三）医学上における生気の変遷",
+          "kind": "topic",
+          "jp_chars": 1452,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1452 (0%)",
+            "pt_anchor não encontrado: 'culose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'culose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 7,
+          "title_jp": "（四）生気を人体に応用するは医学上合理的方法なり",
+          "kind": "topic",
+          "jp_chars": 980,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 980 (0%)",
+            "pt_anchor não encontrado: 'ulose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'ulose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 8,
+          "title_jp": "結核は治る",
+          "kind": "section",
+          "jp_chars": 31,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'lose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'lose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 9,
+          "title_jp": "感冒",
+          "kind": "section",
+          "jp_chars": 1911,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1911 (0%)",
+            "pt_anchor não encontrado: 'ose e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'ose e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 10,
+          "title_jp": "感冒と肺炎",
+          "kind": "section",
+          "jp_chars": 967,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 967 (0%)",
+            "pt_anchor não encontrado: 'se e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'se e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 11,
+          "title_jp": "結核の原因",
+          "kind": "section",
+          "jp_chars": 3155,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 3155 (0%)",
+            "pt_anchor não encontrado: 'e e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'e e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 12,
+          "title_jp": "結論",
+          "kind": "section",
+          "jp_chars": 1587,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 13,
+          "title_jp": "結核と神霊科学",
+          "kind": "section",
+          "jp_chars": 3354,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 3354 (0%)",
+            "pt_anchor não encontrado: 'e terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'e terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 14,
+          "title_jp": "結核治癒の実例",
+          "kind": "section",
+          "jp_chars": 17,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 15,
+          "title_jp": "諦めた肺病治る",
+          "kind": "section",
+          "jp_chars": 34,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'terapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'terapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 16,
+          "title_jp": "お観音様の有難いお光りによって、一命をお救い受けた御恩に対し、書かせて戴きます。",
+          "kind": "section",
+          "jp_chars": 809,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 809 (0%)",
+            "pt_anchor não encontrado: 'erapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'erapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 17,
+          "title_jp": "もし御光を知らなかったら",
+          "kind": "section",
+          "jp_chars": 922,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 922 (0%)",
+            "parágrafos JP=4 PT=1 ratio=0.25",
+            "pt_anchor não encontrado: 'rapia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'rapia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 18,
+          "title_jp": "偉大なる御力",
+          "kind": "section",
+          "jp_chars": 1607,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1607 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'apia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'apia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 19,
+          "title_jp": "百日咳",
+          "kind": "section",
+          "jp_chars": 54,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'pia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'pia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 20,
+          "title_jp": "広大無辺御光の射す所、慈悲深き大恵にただただ感謝感激報恩一入湧出るもので有ります。",
+          "kind": "section",
+          "jp_chars": 494,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 494 (0%)",
+            "pt_anchor não encontrado: 'ia dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'ia dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 21,
+          "title_jp": "大いなる幸豊に恵まふ",
+          "kind": "section",
+          "jp_chars": 119,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'a dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'a dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 22,
+          "title_jp": "観音力を抱いて眠るが如き往生",
+          "kind": "section",
+          "jp_chars": 2040,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 23,
+          "title_jp": "迷路より光明へ",
+          "kind": "section",
+          "jp_chars": 1628,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1628 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'dos espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'dos espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 24,
+          "title_jp": "肋膜治る",
+          "kind": "section",
+          "jp_chars": 907,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 907 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'os espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'os espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 25,
+          "title_jp": "偉大な御利益",
+          "kind": "section",
+          "jp_chars": 943,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 943 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 's espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 's espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 26,
+          "title_jp": "起死回生の喜び",
+          "kind": "section",
+          "jp_chars": 542,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 27,
+          "title_jp": "半信半疑の内に病気全快",
+          "kind": "section",
+          "jp_chars": 610,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 610 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'espíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'espíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 28,
+          "title_jp": "幾度か死を思って",
+          "kind": "section",
+          "jp_chars": 737,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 737 (0%)",
+            "parágrafos JP=4 PT=1 ratio=0.25",
+            "pt_anchor não encontrado: 'spíritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'spíritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 29,
+          "title_jp": "恐ろしい過去",
+          "kind": "section",
+          "jp_chars": 733,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 733 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'píritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'píritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 30,
+          "title_jp": "私の喜び",
+          "kind": "section",
+          "jp_chars": 758,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 758 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'íritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'íritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 31,
+          "title_jp": "死線を越えて",
+          "kind": "section",
+          "jp_chars": 577,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 577 (0%)",
+            "pt_anchor não encontrado: 'ritos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'ritos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 32,
+          "title_jp": "三年間の病床より救はれた歓び",
+          "kind": "section",
+          "jp_chars": 511,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 511 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'itos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'itos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 33,
+          "title_jp": "一家が救われるまで",
+          "kind": "section",
+          "jp_chars": 728,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 728 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'tos de divindades'",
+            "pt_anchor corrupto (meio de frase): 'tos de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 34,
+          "title_jp": "大いなる光明――悩みなき日々を迎う――",
+          "kind": "section",
+          "jp_chars": 1161,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1161 (0%)",
+            "parágrafos JP=4 PT=1 ratio=0.25",
+            "pt_anchor não encontrado: 'os de divindades'",
+            "pt_anchor corrupto (meio de frase): 'os de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 35,
+          "title_jp": "私の体験",
+          "kind": "section",
+          "jp_chars": 1961,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1961 (0%)",
+            "pt_anchor não encontrado: 's de divindades'",
+            "pt_anchor corrupto (meio de frase): 's de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 36,
+          "title_jp": "夢と消えた苦悩――肺結核の大出血も忘れる――",
+          "kind": "section",
+          "jp_chars": 1238,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 37,
+          "title_jp": "肺浸潤が治る――医学三年が浄霊一ヶ月で――",
+          "kind": "section",
+          "jp_chars": 1392,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1392 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'de divindades'",
+            "pt_anchor corrupto (meio de frase): 'de divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 38,
+          "title_jp": "肺結核より救はる",
+          "kind": "section",
+          "jp_chars": 48,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "desalinhamento"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'e divindades'",
+            "pt_anchor corrupto (meio de frase): 'e divindades'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 39,
+          "title_jp": "十九歳の時学校卒業後間もなく肋膜炎にて二十一歳の春迄病床生活を送りました。",
+          "kind": "section",
+          "jp_chars": 1136,
+          "pt_chars": 39155,
+          "issues": [
+            "paragrafação"
+          ],
+          "notes": [
+            "parágrafos JP=1 PT=54 ratio=54.00"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 40,
+          "title_jp": "救われた開放性結核",
+          "kind": "section",
+          "jp_chars": 2144,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2144 (0%)",
+            "parágrafos JP=4 PT=1 ratio=0.25"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 41,
+          "title_jp": "死人が感涙す",
+          "kind": "section",
+          "jp_chars": 1067,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1067 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 42,
+          "title_jp": "光明の彼岸へ",
+          "kind": "section",
+          "jp_chars": 1809,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1809 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 43,
+          "title_jp": "一家光明の喜び",
+          "kind": "section",
+          "jp_chars": 761,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 761 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 44,
+          "title_jp": "死の宣告の思出",
+          "kind": "section",
+          "jp_chars": 1640,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1640 (0%)",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 45,
+          "title_jp": "肺病より救はれて",
+          "kind": "section",
+          "jp_chars": 821,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 821 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 46,
+          "title_jp": "働ける身体になった喜び",
+          "kind": "section",
+          "jp_chars": 625,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 625 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 47,
+          "title_jp": "病の孤独より救はる",
+          "kind": "section",
+          "jp_chars": 1041,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1041 (0%)",
+            "parágrafos JP=6 PT=1 ratio=0.17",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 48,
+          "title_jp": "暗黒の肺結核より救はれて",
+          "kind": "section",
+          "jp_chars": 1973,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1973 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 49,
+          "title_jp": "三年間の療養生活から救わる",
+          "kind": "section",
+          "jp_chars": 2101,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2101 (0%)",
+            "parágrafos JP=3 PT=1 ratio=0.33",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 50,
+          "title_jp": "観音様の救いの御手に",
+          "kind": "section",
+          "jp_chars": 1507,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 51,
+          "title_jp": "生死を超越しての絶対の御守護",
+          "kind": "section",
+          "jp_chars": 1931,
+          "pt_chars": 119470,
+          "issues": [
+            "paragrafação",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "parágrafos JP=8 PT=259 ratio=32.38",
+            "pt_anchor não encontrado: 'Jikan Sosho, publicado em 25 de junho do ano 24 da'"
+          ],
+          "severity": "warn"
+        }
+      ],
+      "file_issues": []
+    }
+  ]
+}

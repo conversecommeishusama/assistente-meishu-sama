@@ -1,0 +1,172 @@
+{
+  "filename": "19521115-御教え集15号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 203 linhas / PT 99→94 linhas após correção, 9 artigos por spec: prefácio + 8 sessões datadas de outubro de 1952). JP está todo dentro de um único bloco === ARTIGO === contendo as 9 unidades internamente. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data, conforme alerta do usuário sobre bug de família confirmado nos volumes irmãos (御教え集1-14号).",
+  "pre_existing_context": "Nenhuma correção prévia nesta sessão para este arquivo. Alerta do usuário: razão JP/PT ~2:1 (203 linhas JP vs 99 linhas PT) sugeria risco de monólitos residuais/cauda duplicada, turnos ausentes, cabeçalhos de data duplicados ou blocos de data ausentes - mesma assinatura já confirmada em Gokōwa e em outros volumes desta família.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 9,
+    "articles_reviewed": 9,
+    "real_corrections_applied": 9,
+    "items_escalated_to_pendencias": 1,
+    "content_loss_found": false,
+    "duplicated_meaning_content_found": false,
+    "duplicated_or_corrupted_headers_found": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início do prefácio, entre 'Paired JP entry' e o título 'Mioshie-shū nº 15'",
+      "problema": "Cabeçalho de data errado e fora de ordem: aparecia '6 de outubro' ANTES do título/subtítulo do volume, quando o JP (linha 24: 昭和二十七年十月五日) diz claramente '5 de outubro' e essa data deveria vir DEPOIS do título e subtítulo, não antes. Era o mesmo texto de cabeçalho da sessão seguinte (real '6 de outubro', JP linha 41) colado no lugar errado - assinatura de cabeçalho de data corrompido/deslocado da família de bugs alertada.",
+      "correcao": "Removida a ocorrência errada de '6 de outubro' antes do título. Inserido o cabeçalho correto '5 de outubro' na posição certa: depois do subtítulo 'Coletanea de Ensinamentos, publicado em 15 de novembro...' e antes do primeiro parágrafo ('O que é cômico sobre a eleição...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "fronteira entre as sessões '15 de outubro' e '16 de outubro' (JP linha 87→91)",
+      "problema": "Cabeçalho '16 de outubro' duplicado: aparecia embutido no fim do parágrafo anterior (após a citação '(Artigo de Meishu-Sama: \"Câncer\")') E repetido no início do parágrafo seguinte, sem quebra de linha própria - texto corrido sem separação estrutural.",
+      "correcao": "Removida a duplicata; '16 de outubro' agora aparece uma única vez, em linha própria, entre os dois parágrafos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "fronteira entre '16 de outubro' e '17 de outubro' (JP linha 104→108)",
+      "problema": "Mesmo padrão do item 2: '17 de outubro' duplicado, embutido no fim de um parágrafo e repetido no início do próximo, sem linha própria.",
+      "correcao": "Consolidado num único cabeçalho '17 de outubro' em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "dentro do que era um único parágrafo fundido, dividindo '17 de outubro' de '18 de outubro' (JP linha 118→122)",
+      "problema": "O cabeçalho '18 de outubro (No Ginásio Kanayama, em Nagoia)' (equivalente a JP 十月十八日　（名古屋市金山体育会館に於て）) estava embutido no meio do texto corrido, sem quebra de parágrafo antes ou depois.",
+      "correcao": "Extraído para linha própria, com quebras de parágrafo antes e depois, preservando o parêntese do local (Nagoia).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "dentro de texto fundido, dividindo '18 de outubro' de '20 de outubro' (JP linha 132→136)",
+      "problema": "Mesmo padrão: cabeçalho '20 de outubro (no Teatro de Quioto)' embutido no meio do texto corrido.",
+      "correcao": "Extraído para linha própria com quebras de parágrafo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "fronteira '20 de outubro'→'25 de outubro' (JP linha 146→150)",
+      "problema": "Cabeçalho de data duplicado E com grafia inconsistente: '25 de outubro' aparecia embutido no fim do parágrafo anterior, seguido de uma repetição por extenso 'Vinte e cinco de outubro' como linha própria antes do parágrafo seguinte - duas formas diferentes do mesmo cabeçalho, nenhuma correspondendo ao formato numérico usado no resto do volume nem ao pt_anchor do spec ('25 de outubro').",
+      "correcao": "Removida a duplicata por extenso; mantido um único cabeçalho '25 de outubro' (formato numérico, consistente com o spec e o resto do volume) em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "fronteira '25 de outubro'→'26 de outubro' (JP linha 172→176)",
+      "problema": "Mesmo padrão do item 6: '26 de outubro' embutido + 'Vinte e seis de outubro' duplicado por extenso.",
+      "correcao": "Consolidado num único '26 de outubro' em linha própria, formato numérico.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "fronteira '26 de outubro'→'27 de outubro' (JP linha 188→192) - ACHADO GRAVE",
+      "problema": "Corrupção séria do cabeçalho final: em vez de um cabeçalho limpo '27 de outubro', o texto continha uma sequência fragmentada caractere-a-caractere: '...paro por aqui.\\n2\\n\\n7 de outubro\\n\\n7\\n\\n16 de outubro\\n\\nd\\n\\n17 de outubro\\n\\ne\\n\\n26 de outubro\\n\\no\\n\\n27 de outubro\\n\\nutubro\\nA primeira coisa...'. Decompondo os fragmentos isolados na ordem em que aparecem ('2', '7', 'd', 'e', 'o', 'utubro') forma exatamente a string 'de outubro' - ou seja, os caracteres do cabeçalho real ('27 de outubro') foram intercalados com repetições espúrias e incorretas de cabeçalhos JÁ USADOS anteriormente no mesmo volume ('7 de outubro', '16 de outubro', '17 de outubro', '26 de outubro'), um artefacto claro de corrupção/merge malfeito - exatamente o padrão de 'cabeçalho de data duplicado'/'monólito residual' alertado pelo usuário como recorrente na família 御教え集. Nenhum conteúdo textual real (além do próprio cabeçalho) foi perdido nesse trecho - confirmado comparando com JP linha 192 (十月二十七日), que é só o cabeçalho de data, sem corpo de texto associado além do que já segue corretamente em '94' (A primeira coisa que quero alertar...).",
+      "correcao": "Toda a sequência fragmentada foi substituída por um único cabeçalho limpo '27 de outubro' em linha própria, imediatamente seguido do parágrafo real da sessão ('A primeira coisa que quero alertar...', que já estava correto e completo, confirmado contra JP linhas 194-203).",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "todas as 6 sessões de 'em texto corrido' acima (15, 16, 17, 18, 20, 25, 26 de outubro - JP linhas 79-188)",
+      "problema": "Além dos cabeçalhos, dezenas de parágrafos JP distintos (cada um separado por linha em branco no original) estavam fundidos num único bloco de texto corrido por sessão - ex.: a sessão '18 de outubro' sozinha funde pelo menos 9 parágrafos JP (linhas 124-132) num só parágrafo PT. Verifiquei o CONTEÚDO desses blocos linha a linha contra o JP correspondente e não encontrei perda, duplicação de sentido, troca de falante, nome próprio corrompido ou CJK residual - o texto é fiel e completo, só a quebra de parágrafo (checklist item 6) não é 1:1.",
+      "correcao": "NÃO corrigido nesta passada - risco de introduzir erro de corte no meio de frase ao re-segmentar ~40 parágrafos às pressas superava o benefício, dado que o conteúdo já está correto. Escalado para PENDENCIAS_REVISAO.json como item de paragrafação para uma passada dedicada futura (não bloqueante, documentado).",
+      "confianca": "media - decisão de escopo, não de conteúdo"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (十月五日)",
+      "jp_linhas": "20-37",
+      "decisao": "corrigido - cabeçalho de data errado e deslocado (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "6 de outubro",
+      "jp_linhas": "41-56",
+      "decisao": "ok - cabeçalho e parágrafos já corretamente separados no PT original, sem correção necessária",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7 de outubro",
+      "jp_linhas": "59-73",
+      "decisao": "ok - idem, já bem estruturado",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de outubro",
+      "jp_linhas": "77-87",
+      "decisao": "conteúdo ok; cabeçalho seguinte duplicado corrigido (item 2); paragrafação interna fundida - pendência (item 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de outubro",
+      "jp_linhas": "91-104",
+      "decisao": "conteúdo ok; cabeçalhos duplicados nas duas fronteiras corrigidos (itens 2,3); paragrafação interna fundida - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de outubro",
+      "jp_linhas": "108-118",
+      "decisao": "conteúdo ok; cabeçalhos duplicados corrigidos (itens 3,4); paragrafação interna fundida - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "18 de outubro (Nagoia)",
+      "jp_linhas": "122-132",
+      "decisao": "conteúdo ok; cabeçalho embutido extraído (item 4,5); paragrafação interna fundida (9 parágrafos) - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "20 de outubro (Quioto)",
+      "jp_linhas": "136-146",
+      "decisao": "conteúdo ok; cabeçalho embutido extraído (item 5); paragrafação interna fundida - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de outubro",
+      "jp_linhas": "150-172",
+      "decisao": "conteúdo ok, incluindo diálogo curto com falas entre aspas; cabeçalho duplicado/inconsistente corrigido (item 6); paragrafação interna fundida - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de outubro",
+      "jp_linhas": "176-188",
+      "decisao": "conteúdo ok; cabeçalho duplicado/inconsistente corrigido (item 7); paragrafação interna fundida - pendência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de outubro",
+      "jp_linhas": "192-203",
+      "decisao": "corrigido - corrupção grave do cabeçalho (item 8); corpo do parágrafo (JP 194-203) já estava correto, completo e bem paragrafado (5 blocos separados: parágrafo, intro-citação, citação, parágrafo, citação, parágrafo final), sem necessidade de correção",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_especificas_familia": {
+    "troca_de_falante": "Não aplicável - este volume é monólogo de Meishu-Sama com uma única fala curta de interlocutor não identificado ('Como está fazendo aquacultura', 'A prefeitura também...') na sessão 25 de outubro; falante e atribuição conferidos, sem inversão.",
+    "cabecalhos_de_data_duplicados": "Confirmado e corrigido em 6 das 8 fronteiras entre sessões (itens 2,3,4,5,6,7) + 1 corrupção grave (item 8). Ver acima.",
+    "nomes_proprios": "Conferidos os nomes citados (Kikuzō Ogawa, Murasaki Shikibu, Sei Shōnagon, Mussolini, Hitler, Churchill, Nichiren, Waksman) contra o JP - sem corrupção encontrada.",
+    "blocos_de_data_ausentes": "Não encontrado nenhum bloco de data ausente - todas as 8 datas do JP (5,6,7,15,16,17,18,20,25,26,27 de outubro - 11 datas ao todo, sendo 5 a data do prefácio) têm conteúdo PT correspondente confirmado.",
+    "cjk_residual": "Não encontrado.",
+    "truncamento_final_do_arquivo": "Não encontrado - último parágrafo do PT (linha 94) corresponde integralmente ao último parágrafo do JP (linha 203), incluindo a menção à 'Era de Miroku'."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Reformatação 1:1 concluída; duplicação residual no trecho Saga/Quioto (18/outubro) corrigida pelo orquestrador. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 204 linhas / PT 139 linhas), todas as transicoes de data (5,6,7,15,16,17,20,25,26,27 de outubro) confirmadas presentes e na ordem correta. Conteudo extenso sobre o livro 'Salvando a America', viagem a Quioto/Nara, relato de Ogawa Kikuzo sobre Europa, fielmente traduzido, sem truncamento, sem CJK residual, sem duplicacao. Nenhuma correcao necessaria."
+  }
+}

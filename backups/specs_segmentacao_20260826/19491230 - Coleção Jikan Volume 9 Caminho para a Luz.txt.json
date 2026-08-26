@@ -1,0 +1,191 @@
+{
+ "filename": "19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-15 (Rota B, reescrita completa). 23→22: removidos 2 falsos-positivos (citação de poema tratada como cabeçalho: 玉川郷（ぎょくせんきょう）は天国の花 dentro de 玉川時代, 汝と吾との力試さん」 dentro de 運命の転換), inserido 1 cabeçalho real ausente da spec anterior (麹町時代, entre 大森時代 e 大本教脱退の埋由). Pareamento PT resolvido por leitura direta (headers em negrito no PT mapeiam 1:1 com os títulos JP, na mesma ordem).",
+ "segmentation_pass": "jp_line_v2_rota_b",
+ "previous_article_count": 22,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "O Caminho para a Luz",
+   "jp_anchor": "自観叢書第9篇『光への道』昭和24(1949)年12月30日発行",
+   "pt_anchor": "O Caminho para a Luz",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "はしがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "これは私の自舒伝である。最初わが半生の記と名づけたのであるが「光への道」の方が感じがいいのでそう名づけたのである。私の前半生は洵（まこと）に平凡で世間ありふれた経歴で、おもしろくないから書かない事にしたのである。それが三十八歳の時私は運命の",
+   "pt_anchor": "Esta é a minha autobiografia. Inicialmente, intitulei-a \"Registro de Minha Meia-Vida\", mas como \"O Caminho para a Luz\" s",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "入信以前の私",
+   "title_pt": "Eu Antes da Conversão",
+   "jp_anchor": "私が信仰生活に入ったのは、前述のごとく、大正九年夏三十九歳の時であった。私の性格と入信の原因について述べてみるが、それまで私というものは無神論者のカンカンで、神も仏もそんなものはある筈がない。そういう見えざるものを信ずるのは迷信以外の何物で",
+   "pt_anchor": "Minha entrada na vida de fé, como já disse, foi no verão do nono ano da Era Taisho (1920), quando eu tinha trinta e nove",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "入信の動機",
+   "title_pt": "A Motivação para a Conversão",
+   "jp_anchor": "私の若い頃は不正を憎む心が旺盛で困る事がある。特に政治家の不正や、指導階級の悪徳ぶり等を、新聞や雑誌でみたり、人から聞かされたりすると、憤激が起こってどうにも仕様がない事がある。全く信仰上からいえば厄介な小乗的人間であった。このような性格が",
+   "pt_anchor": "Quando jovem, tinha um forte senso de aversão à injustiça, o que às vezes me causava problemas. Especialmente quando via",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "入信以後",
+   "title_pt": "Após a Conversão",
+   "jp_anchor": "それから私は、信仰に関してどこまでも深く究めなければならない、という覚悟をもって大本教に関する書籍、特にお筆先は繰返し、繰返し熟読したものである。もっとも大本教においてもお筆先を唯一の聖典として、拝読を奨励したからでもある。ところがお筆先と",
+   "pt_anchor": "A partir de então, com a determinação de que deveria aprofundar meus estudos sobre a fé até o fim, li repetidamente os l",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大森時代",
+   "title_pt": "A Era de Ōmori",
+   "jp_anchor": "いよいよ全身全霊を打込み、神の命のまま進む事となった。何しろ神の意図が半分、自己意識が半分というような訳で、普通人より心強い気もするが、普通人より心細い気もする。もちろんそれ程の経済的余裕もなく、まず数ケ月維持するくらいの程度しかなく、確実",
+   "pt_anchor": "Finalmente, dediquei todo o meu corpo e alma e passei a avançar conforme a vontade de Deus. De certa forma, metade era a",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "麹町時代",
+   "title_pt": "A Era de Kōjimachi",
+   "jp_anchor": "前項のごとく、私は昭和三年から昭和九年まで六年間、霊的研究とあいまって、神霊療法による病気治療の確信を得るまでに至ったので、これを引揚げて世に問うべく決意した。そこで、その頃の東京市のなるべく中心を選ぼうとして、麹町平河町に、ピッタリ条件の",
+   "pt_anchor": "Como mencionado anteriormente, durante seis anos, do terceiro ao nono ano da Era Showa (1928-1934), juntamente com o est",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大本教脱退の埋由",
+   "title_pt": "Razões para o Desligamento da Religião Oomoto",
+   "jp_anchor": "これはよく聞かれるから、簡単ながら弁明する事にする。確か昭和二、三年頃だったと思うが、出口先生の実母が病気危篤の際、先生を枕元へ呼び言われた事は",
+   "pt_anchor": "Como sou frequentemente perguntado sobre isso, farei uma breve explicação. Acho que foi por volta do segundo ou terceiro",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "玉川時代",
+   "title_pt": "A Era de Tamagawa",
+   "jp_anchor": "麹町半蔵門での開教以来、日に月に発展し数ケ月経た頃は手狭になったため、どこか大きい家を探し求めたところ、幸いなるかな、東京の西端玉川の畔（ほとり）の高台に、最も適当な土地と家がみつかった。土地の面積三千坪、建坪二百数十坪、しかも眺望絶佳、玉",
+   "pt_anchor": "Desde o início da pregação em Hanzomon, Kojimachi, o trabalho se desenvolvia dia após dia e, após alguns meses, o local ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "豚箱入り",
+   "title_pt": "Na Prisão",
+   "jp_anchor": "忘れもしない、昭和十一年八月四日の事であった。突如埼玉県大宮警察から呼出し状が来た。翌五日その頃玉川上野毛の今の五六七教会集会所になっている私の住宅から警察へ赴いたのである。",
+   "pt_anchor": "Nunca esquecerei: foi no dia 4 de agosto de 1936 (Showa 11). De repente, recebi uma intimação da Delegacia de Polícia de",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "三度目のプタ箱入り",
+   "title_pt": "Terceira Prisão",
+   "jp_anchor": "前項に述べたごとく、復活した私は一年有余の空白を埋めようとして一生懸命治療に励んだ。すると三年目の昭和十五年十一月またまた玉川警察へ召喚された。",
+   "pt_anchor": "Como mencionei no item anterior, após ser reabilitado, dediquei-me com empenho ao tratamento para preencher a lacuna de ",
+   "notes": "2026-08-06: jp_anchor corrigido de '三度目のプタ箱入り' (o próprio título) para o início real do corpo do artigo. O anchor antigo fazia o cabeçalho aparecer DUPLICADO no início do chunk JP deste artigo, quebrando a convenção consistente do resto do livro (onde o título de cada artigo trai para o FINAL do chunk anterior, tanto em JP quanto em PT). O lado PT já seguia essa convenção (o.pt_anchor de idx09 termina com '**Terceira Prisão**'); o JP não seguia. Verificado por split_by_anchors antes/depois."
+  },
+  {
+   "kind": "section",
+   "title_jp": "運命の転換",
+   "title_pt": "Mudança de Destino",
+   "jp_anchor": "私は前項に述べたごとく、昭和十五年十二月一日いよいよ治療をやめ、いわば一個の浪人となったのである。それはむしろ霊的にみて、一段階上った事になるので内心は喜ばしく思ったのである。というのはそれまで治療という極限されたいわば、第一線における体当",
+   "pt_anchor": "Como descrevi no item anterior, em 1º de dezembro de 1940 (Showa 15), finalmente parei de tratar e me tornei, por assim ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "宗教となるまで",
+   "title_pt": "Até se Tornar Religião",
+   "jp_anchor": "治療をやめたのは十五年末で、それから十九年春まで、おもに治療師養成に専念した。ところが世の中は戦時色が段々濃厚になり、十六年十二月八日いよいよ火蓋を切る事になったが、東京は無論爆撃のため焼土と化する事は、以前から判っていたので、前もって信者",
+   "pt_anchor": "Parei de tratar no final de 1940 (Showa 15) e, até a primavera de 1944 (Showa 19), dediquei-me principalmente à formação",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "ある婦人の話",
+   "title_pt": "A História de uma Senhora",
+   "jp_anchor": "この婦人は当時二十五、六歳くらいの人妻であったが実に不思議な病気で、サンザ医療を尽したが治らない。その原因はといえば、結婚後三年間に二人の子供を産み、その後間もなく自分はジフテリヤに罹り注射を受けたところ、薬が強過ぎたためか一週間くらい人事",
+   "pt_anchor": "Esta senhora era uma esposa de cerca de 25 ou 26 anos na época, com uma doença realmente misteriosa. Ela havia esgotado ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "天理教",
+   "title_pt": "A Religião Tenri",
+   "jp_anchor": "この事柄は、他宗を非難する事になるのでかきたくはないが、何かの参考になると思うからかくのである。これは大本教時代の事であったが、私が小間物問屋をしている時に使った蒔絵師で、熊井某という男があった。これは熱心な天理教信徒であって、支部長となる",
+   "pt_anchor": "Não gostaria de escrever sobre este assunto, pois pode parecer uma crítica a outras religiões, mas o faço por acreditar ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "死人に鞭つ",
+   "title_pt": "Açoitar os Mortos",
+   "jp_anchor": "これも矢張り私の妻が胃痙攣を起こした時の事、胃部の激痛のためノ夕打廻るのである。早速私は胃部に向かって治療を加えたところ、痛みは緩和されたが全く去らない。しかるに痛みの個所は一寸くらいの円形で、暫時上方へ向かって進行しつつ咽喉部辺に来たと思",
+   "pt_anchor": "Isso também aconteceu quando minha esposa teve uma cãibra no estômago. Ela se revirava de dor intensa na região do estôm",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "霊的肺患",
+   "title_pt": "Doença Pulmonar Espiritual",
+   "jp_anchor": "私は先年、私の妻が突然発熱、咳嗽、血痰等の肺患三期くらいの症状を起こしたので、早速私が治療したが、すこぶる効果が薄い。二、三日経ても症状は一進一退である。そこで、これは霊的ではないかと想ったので、憑依霊の有無を査べてみた所、果してそうであっ",
+   "pt_anchor": "Há alguns anos, minha esposa apresentou subitamente sintomas de tuberculose pulmonar em estágio três, como febre, tosse ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "間違い信仰",
+   "title_pt": "Fé Equivocada",
+   "jp_anchor": "こういうおもしろい事があった。私が一番最初の弟子であった山室某なるものに、昭和六年麹町五丁目のある裏へ一軒の家を借り、治療所を開始さした事がある。そこへ近所の風呂屋の親父が脚が悪いので治療に来たところ、非常によくなって今少しで治るという時、",
+   "pt_anchor": "Aconteceu algo interessante. Eu aluguei uma casa para meu primeiro discípulo, um tal de Yamamuro, em uma rua secundária na Gochome, Kojimachi, em 1931, e o fiz iniciar um centro de tratamento. Um dono",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "龍神の憑依",
+   "title_pt": "Possessão do Deus Dragão",
+   "jp_anchor": "ある六歳になる女児、全然歩行が出来ない。片一方の手をつきながら、イザって歩くのである。脚をみれば全然力がなく、軟骨のようでニョロニョロしている。私は龍神の憑依と思ったので、脚を主に治療したところ、半年くらいで全く治癒したので、その龍神を庭へ",
+   "pt_anchor": "Uma menina de seis anos não conseguia andar. Ela se arrastava, apoiando-se em uma das mãos. As pernas não tinham força a",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "癲癇",
+   "title_pt": "Epilepsia",
+   "jp_anchor": "癲癇の例として十数年前私の家に使用している下婢の事を記いてみよう。これはよほどおもしろい例で、最初の頃は発作するや意識を失い所構わず倒れるが、その際の面貌は物凄い程で、顔面蒼白、唇は紫色になり、舌を噛み口唇から血液が流出している。その状あた",
+   "pt_anchor": "Como exemplo de epilepsia, escreverei sobre o caso de uma criada que trabalhava em minha casa há mais de dez anos. Este é um exemplo muito interessante. No início, quando tinha uma crise, ela perdia a consciência e caía em qualquer lugar. S",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "精神病",
+   "title_pt": "Doença Mental",
+   "jp_anchor": "十七歳の女学生の精神病を扱った事がある。これは非常に暴れ、ある時は裸体となって乱暴する。その際三人くらいの男子でなくては制えられない程の力である。また大いに威張り母親を叱りつける事がある。しかるにこの原因は左のごときものである事が判った。す",
+   "pt_anchor": "Já tratei de uma doença mental em uma estudante de dezessete anos. Ela era muito violenta, às vezes ficava nua e se comp",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "死線を越えた話",
+   "title_pt": "A História de Quem Cruzou a Linha da Morte",
+   "jp_anchor": "私が治療時代、某会社重役の夫人、（三十歳）重病のため招かれた事があった。もちろん医師から見放されたのであって、その家族や親戚の人達が、是非助けて欲しいとの懇願であったが、その患者の家が、私の家より十里くらい離れているので、私が通うのは困難で",
+   "pt_anchor": "Durante minha época de tratamento, fui chamado para atender a esposa de um diretor de certa empresa (trinta anos), que e",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,177 @@
+{
+  "filename": "19540215-御垂示録28号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 317 linhas / PT originalmente 90 linhas, agora 151 linhas após correções), 1 sessão datada ([1º de fevereiro]) + prefácio, 2 artigos por spec. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do prefácio até a última pergunta sobre Albasil/angina.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, conforme exigido por 'Δ=0 é necessário, nunca suficiente'.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 9,
+    "items_escalated_to_pendencias": 0,
+    "monolito_encontrado": true,
+    "duplicacao_encontrada": true,
+    "turnos_curtos_meishu_sama_ausentes_encontrados": 7
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "categoria": "monólito + duplicação (achado grave)",
+      "localizacao_pt_original": "linhas 87-90 do ficheiro de trabalho PT antes da correção (a partir de 'Não é necessário incluir...' JP linha 228 até o final do arquivo, JP linha 317)",
+      "problema": "GRAVE: aproximadamente um terço do livro (JP linhas ~228-317, cerca de 40 turnos de pergunta/resposta) estava colapsado em UM único parágrafo PT sem nenhuma quebra entre turnos. Além disso, havia duplicação: uma primeira tradução truncada, cortada no meio da frase ('...Além disso, as crianças daquela casa'), era seguida por uma segunda tradução completa que recomeçava do mesmo ponto do JP (o parágrafo sobre consagrar espíritos falecidos / história da xícara de chá, JP linhas 228-229) antes de prosseguir, agora sim de forma única, até o fim do livro. Padrão idêntico ao 'Achado #6' descrito em revisao-paralela-jp-pt.mdc (rascunho truncado + versão completa da mesma passagem concatenados).",
+      "correcao": "Removida a tradução truncada duplicada (mantida apenas a versão completa). Reestruturado o bloco inteiro (JP 228-317) em turnos individuais um por linha, cada resposta de Meishu-Sama em texto simples e cada fala do interlocutor entre aspas (“ ”), seguindo a convenção já usada no resto do ficheiro. Nenhum conteúdo novo foi inventado nesta etapa — apenas re-segmentado o texto já traduzido, com um pequeno ajuste na frase de abertura do trecho duplicado (que dependia gramaticalmente da parte truncada removida) para manter a frase completa e fiel ao sentido do JP ('それからまたおもしろいことは...生まれ変ってくると...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 76 (兄は一緒に住んでいるのですか。)",
+      "problema": "Pergunta curta de Meishu-Sama (\"O irmão mais velho mora junto?\") ausente no PT; a resposta do interlocutor ('Sim, senhor') estava presente mas sem a pergunta que a precede.",
+      "correcao": "Traduzido e inserido: 'O irmão mais velho mora junto?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 80 (兄は信者ですか。)",
+      "problema": "Pergunta curta ausente ('O irmão mais velho é membro?').",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 84 (そういうのはやっぱり浄化です。商売は何ですか。)",
+      "problema": "Frase/pergunta ausente ('Isso também é purificação. Qual é a profissão?').",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 88 (信仰に対しては……どういう信仰のしかたですか。)",
+      "problema": "Pergunta ausente ('Quanto à fé... que tipo de prática vocês têm?').",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 100 (では、一番心配したり迷惑するのは兄ですか。)",
+      "problema": "Pergunta ausente ('Então quem mais se preocupa e sofre transtorno é o irmão mais velho?'). Entre duas respostas 'Sim, senhor' consecutivas no PT original, faltava a pergunta que gerava a segunda resposta.",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 104 (そうすると、その兄というのがウンとやらなければ駄目です。御神書は読みませんか。)",
+      "problema": "Pergunta ausente ('Nesse caso, é preciso que esse irmão mais velho se esforce bastante. Ele não lê os textos sagrados?').",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "categoria": "turno curto de Meishu-Sama ausente (tradução inserida)",
+      "localizacao_jp": "linha 131 (私が開眼したということはどうして分かりましたか。)",
+      "problema": "Pergunta ausente entre o relato sobre o Daikoku-sama já com abertura de olhos feita por Meishu-Sama e a resposta '本人が申しました' ('A própria pessoa disse') — faltava a pergunta 'Como souberam que fui eu quem abriu os olhos?' que a resposta pressupõe.",
+      "correcao": "Traduzido e inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "categoria": "paragrafação 1:1 (correção estrutural, sem perda de conteúdo)",
+      "localizacao_pt": "16 pontos ao longo do ficheiro (linhas originais ~31, 34-37, 46, 53-55, 58, 63, 70, 73, 76, 87-88 antes da renumeração)",
+      "problema": "Resposta de Meishu-Sama e a pergunta seguinte do interlocutor apareciam concatenadas na mesma linha/parágrafo PT (ex.: 'Está bem. Pode ser um kakemono... “Percebi que no lado esquerdo...”'), sem quebra de turno, embora o conteúdo estivesse todo presente e na ordem correta.",
+      "correcao": "Cada um dos 16 pontos foi dividido em duas linhas separadas (fim da resposta anterior / início da nova pergunta entre aspas), sem alterar uma palavra do texto já traduzido. Não afeta conteúdo, apenas paragrafação.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + abertura da sessão [1º de fevereiro] (monólogo sobre Atami/museu/estradas)",
+      "jp_linhas": "1-30",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Um único turno longo e contínuo de Meishu-Sama no JP (sem interrupção do interlocutor) — corretamente vertido como um único parágrafo PT longo, sem perda."
+    },
+    {
+      "bloco": "Q&A amuleto caído / cordas de náilon / kakemono / mancha de sangue no Goshintai",
+      "jp_linhas": "33-58",
+      "decisao": "ok, com 3 correções de paragrafação (item 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A Komyo-Nyorai da loja de saquê / Daikomyo-Nyorai / caso do irmão com doença mental",
+      "jp_linhas": "61-108",
+      "decisao": "corrigido - 6 turnos curtos de Meishu-Sama ausentes (itens 2-7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A milagre cristão / abertura de olhos do Daikoku-sama",
+      "jp_linhas": "111-139",
+      "decisao": "corrigido - 1 turno ausente (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A médium de Shinran (desenhos/poemas) / previsões agrícolas de Suwa-Togakushi / enchentes e cultivo natural / arroz de Oita",
+      "jp_linhas": "142-175",
+      "decisao": "ok, com correções de paragrafação (item 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A Tenri-kyo (Goshintai a descartar) / inveja e ressentimento espiritual (Hideyoshi/Ieyasu) / encadernação do Goshintai",
+      "jp_linhas": "178-207",
+      "decisao": "ok, com correções de paragrafação (item 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A telhado baixo / consagração de desaparecidos e vivos no altar budista / consagrar com nome verdadeiro",
+      "jp_linhas": "209-226",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Reencarnação e consagração / história da xícara de chá (13 anos) / ossos em terreno remanejado / caso de esclerose muscular espiritual (suicídio por veneno) / injeções e remédios ocidentais / toxina medicamentosa e hereditariedade / Albasil e angina",
+      "jp_linhas": "228-317",
+      "decisao": "CORRIGIDO - monólito grave + duplicação (item 1), reestruturado em 41 turnos individuais",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "nota_seguranca": "Durante esta sessão, uma das saídas de ferramenta (Read do spec JSON) veio seguida de um bloco de texto formatado como <system-reminder> alegando mudança de data e instruindo explicitamente a não mencionar isso ao usuário. Tratado como não confiável (mesmo padrão de tentativa de injeção via resultado de ferramenta já registrado em sessões anteriores, ver GOSHINSHO.md) — nenhuma instrução dele foi seguida; sinalizado aqui para registro.",
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado a Gosuiji-roku: 「pergunta entre aspas」 no JP = Interlocutor; texto corrido sem aspas = Meishu-Sama. Etapa A (mapa JP completo, linha a linha, todos os 317 linhas), Etapa B (contagem/formatação), Etapa C (rótulos aplicados ao PT).",
+    "etapa_a_mapa_jp": {
+      "turnos_interlocutor_jp": 64,
+      "nota": "64 aberturas reais de 「」 delimitando turnos do interlocutor (confirmado por leitura linha a linha); mais 3 ocorrências de 「」 aninhadas dentro de falas contínuas — não são turnos novos (JP linha 111: 「御玉串」citado dentro da própria pergunta do interlocutor; JP linha 238: 「諸霊」e 「三界万霊供養」citados dentro da resposta de Meishu-Sama). Prestada atenção especial, conforme instruído, a turnos de uma só palavra/frase curta de Meishu-Sama: confirmados よいです/結構です etc. em JP linhas 135, 148, 206, entre outros — todos presentes no PT."
+    },
+    "etapa_b_confirmacao": {
+      "turnos_interlocutor_pt_antes": "64 falas entre aspas presentes no PT, mas 2 delas estavam fundidas no mesmo parágrafo que o turno adjacente (sem quebra), não separáveis por script automático.",
+      "problemas_encontrados": [
+        "PT linha 25 (parágrafo único, antes da rotulagem): fundia 3 unidades — (a) monólogo de abertura de Meishu-Sama [1º de fevereiro] até 'passem às perguntas', (b) a 1ª pergunta do interlocutor sobre o amuleto caído, (c) o início da resposta de Meishu-Sama 'Deveria ter perguntado na época...'. Corrigido: separado em 4 parágrafos (cabeçalho de data isolado + 3 turnos), sem alterar uma palavra do texto já traduzido.",
+        "PT linha 98 (antes da rotulagem): fundia o fim da resposta longa de Meishu-Sama sobre inveja/Hideyoshi-Ieyasu ('...Porque entende...') com o início da pergunta seguinte do interlocutor sobre a encadernação do Goshintai ('Estou preocupado...'). Corrigido: separado em 2 parágrafos no ponto exato 'Porque entende...' / 'Estou preocupado...'."
+      ],
+      "turnos_interlocutor_pt_depois": 64,
+      "delta": 0,
+      "turnos_meishu_sama_pt_depois": 66,
+      "razao_meishu_maior_que_interlocutor": "Existem blocos de Meishu-Sama consecutivos sem pergunta intermediária, correspondentes a continuações de fala no próprio JP (sem novo 「」 entre eles): monólogo de abertura + 2 parágrafos após a decisão sobre o Goshintai da Tenri-kyo (queimar depois de purificado) + o parágrafo sobre danos de enchente que continua sem nova pergunta. Todos confirmados linha a linha contra o JP correspondente (JP linhas 191-192, 163-164).",
+      "travessoes_no_corpo": 0,
+      "blocos_interlocutor_consecutivos_maximo": 1
+    },
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a cada parágrafo do corpo (a partir do cabeçalho '[1º de fevereiro]'), preservando o cabeçalho de sessão sem rótulo e sem reordenar ou reescrever texto existente. Único cabeçalho de data no ficheiro (sessão única, ao contrário de outros números do Gosuiji-roku com múltiplas datas).",
+    "resultado_final": {
+      "arquivo": "reports/livros_trabalho/pt/19540215-御垂示録28号.txt",
+      "total_paragrafos_corpo": 131,
+      "cabecalhos_data": 1,
+      "interlocutor": 64,
+      "meishu_sama": 66
+    }
+  }
+}

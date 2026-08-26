@@ -1,0 +1,6 @@
+{
+  "gerado_por": "setup inicial JP-2",
+  "gerado_em": "2026-07-14T00:00:00Z (atualizado por auditoria externa JP-2)",
+  "instrucao": "Quando o auditor externo da JP-2 encontrar um desvio real de protocolo, anexa aqui (chave 'itens', nome do arquivo -> nota) antes de devolver o item ao pending do executor. Mesmo mecanismo de FASE_F_AUDITORIA_EXTERNA_REABERTURAS.json.",
+  "itens": {}
+}

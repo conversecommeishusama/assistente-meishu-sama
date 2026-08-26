@@ -1,0 +1,438 @@
+{
+ "filename": "19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 47→47. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 47,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（六）薬毒病について",
+   "pt_anchor": "Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　頭の部",
+   "title_pt": "1. Cabeça",
+   "jp_anchor": "一　頭の部",
+   "pt_anchor": "1. Cabeça\n\n1. Insônia, desmaios ocasionais e dor de cabeça em um homem de meia-idade (Mioshie-shū nº 8, p. 54)",
+   "notes": "ratio PT/JP=22.00",
+   "pt_prefix": "1. Cabeça"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．不眠症と時折の失神、及び頭痛の中年男子（御教え集　8号　P.54）",
+   "title_pt": "1. Insônia, desmaios ocasionais e dor de cabeça em um homem de meia-idade (Mioshie-shū nº 8, p. 54)",
+   "jp_anchor": "１．不眠症と時折の失神、及び頭痛の中年男子（御教え集　8号　P.54）",
+   "pt_anchor": "1. Insônia, desmaios ocasionais e dor de cabeça em um homem de meia-idade (Mioshie-shū nº 8, p. 54)",
+   "notes": "",
+   "pt_prefix": "1. Insônia, desmaios ocasionais e dor de cabeça em um homem de meia-idade (Mioshie-shū nº 8, p. 54)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．膿腫で片眼失明の三歳の女児（御教え集　6号　P.61）",
+   "title_pt": "2. Menina de três anos com cegueira em um olho devido a abscesso (Mioshie-shū nº 6, p. 61)",
+   "jp_anchor": "２．膿腫で片眼失明の三歳の女児（御教え集　6号　P.61）",
+   "pt_anchor": "2. Menina de três anos com cegueira em um olho devido a abscesso (Mioshie-shū nº 6, p. 61)",
+   "notes": "",
+   "pt_prefix": "2. Menina de três anos com cegueira em um olho devido a abscesso (Mioshie-shū nº 6, p. 61)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．中耳炎後、頭脳鈍感の少年（地上天国　8号　P.16）",
+   "title_pt": "3. Menino com lentidão cerebral após otite média (Tijotengoku nº 8, p. 16)",
+   "jp_anchor": "３．中耳炎後、頭脳鈍感の少年（地上天国　8号　P.16）",
+   "pt_anchor": "3. Menino com lentidão cerebral após otite média (Tijotengoku nº 8, p. 16)\n\"Um ",
+   "notes": "",
+   "pt_prefix": "3. Menino com lentidão cerebral após otite média (Paraíso na Terra nº 8, p. 16)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．耳下の瘤がこぶし大になった男（御教え集　1号　P.45）",
+   "title_pt": "4. Homem com um tumor do tamanho de um punho abaixo da orelha (Mioshie-shū nº 1, p. 45)",
+   "jp_anchor": "４．耳下の瘤がこぶし大になった男（御教え集　1号　P.45）",
+   "pt_anchor": "4. Homem com um tumor do tamanho de um punho abaixo da orelha (Mioshie-shū nº 1, p. 45)",
+   "notes": "",
+   "pt_prefix": "4. Homem com um tumor do tamanho de um punho abaixo da orelha (Mioshie-shū nº 1, p. 45)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．目眩及び狭心症の中年婦人（御教え集　6号　P.78）",
+   "title_pt": "5. Tontura e angina do peito em uma mulher de meia-idade (Mioshie-shū nº 6, p. 78)",
+   "jp_anchor": "５．目眩及び狭心症の中年婦人（御教え集　6号　P.78）",
+   "pt_anchor": "5. Tontura e angina do peito em uma mulher de meia-idade (Mioshie-shū nº 6, p. 78)",
+   "notes": "",
+   "pt_prefix": "5. Tontura e angina do peito em uma mulher de meia-idade (Mioshie-shū nº 6, p. 78)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．化膿による下顎脱落（御教え）",
+   "title_pt": "6. Perda da mandíbula inferior devido a supuração (Mioshie-shū)",
+   "jp_anchor": "６．化膿による下顎脱落（御教え）",
+   "pt_anchor": "6. Perda da mandíbula inferior devido a supuração (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "6. Perda da mandíbula inferior devido a supuração (Mioshie)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．咽喉痛、喀痰多量、下痢数回の中年男子（御教え集　4号　P.85）",
+   "title_pt": "7. Dor de garganta, expectoração abundante e várias diarreias em um homem de meia-idade (Mioshie-shū nº 4, p. 85)",
+   "jp_anchor": "７．咽喉痛、喀痰多量、下痢数回の中年男子（御教え集　4号　P.85）",
+   "pt_anchor": "7. Dor de garganta, expectoração abundante e várias diarreias em um homem de meia-idade (Mioshie-shū nº 4, p. 85)",
+   "notes": "",
+   "pt_prefix": "7. Dor de garganta, expectoração abundante e várias diarreias em um homem de meia-idade (Mioshie-shū nº 4, p. 85)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．咽頭結核、右肺癒着と言われた人（御教え集　4号　P.94）",
+   "title_pt": "8. Pessoa diagnosticada com tuberculose da garganta e aderência do pulmão direito (Mioshie-shū nº 4, p. 94)",
+   "jp_anchor": "８．咽頭結核、右肺癒着と言われた人（御教え集　4号　P.94）",
+   "pt_anchor": "8. Pessoa diagnosticada com tuberculose da garganta e aderência do pulmão direito (Mioshie-shū nº 4, p. 94)",
+   "notes": "",
+   "pt_prefix": "8. Pessoa diagnosticada com tuberculose da garganta e aderência do pulmão direito (Mioshie-shū nº 4, p. 94)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　背の部",
+   "title_pt": "2. Costas\n",
+   "jp_anchor": "二　背の部",
+   "pt_anchor": "2. Costas\n\n1. Homem de meia-idade com dor no fígado após bater as costas (Mioshie-shū)",
+   "notes": "ratio PT/JP=16.40",
+   "pt_prefix": "2. Costas\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．背中を打って、肝臓が痛む中年男子（御教え）",
+   "title_pt": "1. Homem de meia-idade com dor no fígado após bater as costas (Mioshie-shū)",
+   "jp_anchor": "１．背中を打って、肝臓が痛む中年男子（御教え）",
+   "pt_anchor": "1. Homem de meia-idade com dor no fígado após bater as costas (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "1. Homem de meia-idade com dor no fígado após bater as costas (Mioshie)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．背中に瘤のような塊りができ、身長が伸びない男（御教え）",
+   "title_pt": "2. Homem com um caroço como um tumor nas costas e que não cresce em altura (Mioshie-shū)",
+   "jp_anchor": "２．背中に瘤のような塊りができ、身長が伸びない男（御教え）",
+   "pt_anchor": "2. Homem com um caroço como um tumor nas costas e que não cresce em altura (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "2. Homem com um caroço como um tumor nas costas e que não cresce em altura (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三　腰の部",
+   "title_pt": "3. Cintura\n",
+   "jp_anchor": "三　腰の部",
+   "pt_anchor": "3. Cintura\n\n1. Mulher completamente imóvel da cintura para baixo (Mioshie-shū)",
+   "notes": "ratio PT/JP=14.80",
+   "pt_prefix": "3. Cintura\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．腰から下が全然動かぬ女（御教え）",
+   "title_pt": "1. Mulher completamente imóvel da cintura para baixo (Mioshie-shū)",
+   "jp_anchor": "１．腰から下が全然動かぬ女（御教え）",
+   "pt_anchor": "1. Mulher completamente imóvel da cintura para baixo (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "1. Mulher completamente imóvel da cintura para baixo (Mioshie)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．座骨神経痛の男（地上天国　43号　P.13）",
+   "title_pt": "2. Homem com ciática (Tijotengoku nº 43, p. 13)",
+   "jp_anchor": "２．座骨神経痛の男（地上天国　43号　P.13）",
+   "pt_anchor": "2. Homem com ciática (Tijotengoku nº 43, p. 13)",
+   "notes": "",
+   "pt_prefix": "2. Homem com ciática (Paraíso na Terra nº 43, p. 13)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．腎臓手術口の排膿と腰痛（御教え集　4号　P.62）",
+   "title_pt": "3. Drenagem de pus e dor lombar após cirurgia renal (Mioshie-shū nº 4, p. 62)",
+   "jp_anchor": "３．腎臓手術口の排膿と腰痛（御教え集　4号　P.62）",
+   "pt_anchor": "3. Drenagem de pus e dor lombar após cirurgia renal (Mioshie-shū nº 4, p. 62)",
+   "notes": "",
+   "pt_prefix": "3. Drenagem de pus e dor lombar após cirurgia renal (Mioshie-shū nº 4, p. 62)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四　手足の部",
+   "title_pt": "4. Membros\n",
+   "jp_anchor": "四　手足の部",
+   "pt_anchor": "4. Membros\n\n1. Homem com dormência nos membros, impossibilitado de movê-los (Mioshie-shū nº 1, p. 49)",
+   "notes": "ratio PT/JP=16.83",
+   "pt_prefix": "4. Membros\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．手足が痺れ、動かす事不能の男子（御教え集　1号　P.49）",
+   "title_pt": "1. Homem com dormência nos membros, impossibilitado de movê-los (Mioshie-shū nº 1, p. 49)",
+   "jp_anchor": "１．手足が痺れ、動かす事不能の男子（御教え集　1号　P.49）",
+   "pt_anchor": "1. Homem com dormência nos membros, impossibilitado de movê-los (Mioshie-shū nº 1, p. 49)",
+   "notes": "",
+   "pt_prefix": "1. Homem com dormência nos membros, impossibilitado de movê-los (Mioshie-shū nº 1, p. 49)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．片手不動、血尿の男子（御教え集　8号　P.45）",
+   "title_pt": "2. Homem com imobilidade de uma das mãos e sangue na urina (Mioshie-shū nº 8, p. 45)",
+   "jp_anchor": "２．片手不動、血尿の男子（御教え集　8号　P.45）",
+   "pt_anchor": "2. Homem com imobilidade de uma das mãos e sangue na urina (Mioshie-shū nº 8, p. 45)",
+   "notes": "",
+   "pt_prefix": "2. Homem com imobilidade de uma das mãos e sangue na urina (Mioshie-shū nº 8, p. 45)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．声がかれ、手足の痺れ、歩行困難、高熱の青年（地上天国　40号　P.13）",
+   "title_pt": "3. Jovem com rouquidão, dormência nos membros, dificuldade para andar e febre alta (Tijotengoku nº 40, p. 13)",
+   "jp_anchor": "３．声がかれ、手足の痺れ、歩行困難、高熱の青年（地上天国　40号　P.13）",
+   "pt_anchor": "3. Jovem com rouquidão, dormência nos membros, dificuldade para andar e febre alta (Tijotengoku nº 40, p. 13)\n\n\"Me",
+   "notes": "",
+   "pt_prefix": "3. Jovem com rouquidão, dormência nos membros, dificuldade para andar e febre alta (Paraíso na Terra nº 40, p. 13)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．左足に卵大の固結ある青年（地上天国　36号　P.14）",
+   "title_pt": "4. Jovem com solidificações do tamanho de um ovo na perna esquerda (Tijotengoku nº 36, p. 14)",
+   "jp_anchor": "４．左足に卵大の固結ある青年（地上天国　36号　P.14）",
+   "pt_anchor": "4. Jovem com solidificações do tamanho de um ovo na perna esquerda (Tijotengoku nº 36, p. 14)\n\n\"Cr",
+   "notes": "",
+   "pt_prefix": "4. Jovem com solidificações do tamanho de um ovo na perna esquerda (Paraíso na Terra nº 36, p. 14)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．手足の指が紫色し、非常に痛む人（御教え集　2号　P.10）",
+   "title_pt": "5. Pessoa com dedos das mãos e dos pés roxos e muita dor (Mioshie-shū nº 2, p. 10)",
+   "jp_anchor": "５．手足の指が紫色し、非常に痛む人（御教え集　2号　P.10）",
+   "pt_anchor": "5. Pessoa com dedos das mãos e dos pés roxos e muita dor (Mioshie-shū nº 2, p. 10)",
+   "notes": "",
+   "pt_prefix": "5. Pessoa com dedos das mãos e dos pés roxos e muita dor (Mioshie-shū nº 2, p. 10)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五　泌尿器の部",
+   "title_pt": "5. Sistema Urinário\n",
+   "jp_anchor": "五　泌尿器の部",
+   "pt_anchor": "5. Sistema Urinário",
+   "notes": "",
+   "pt_prefix": "5. Sistema Urinário\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．膀胱及び尿道附近に不快感を感じ、労働時には尿道に激痛を感ずる男子（地上天国　37号　P.11）",
+   "title_pt": "1. Homem com sensação de desconforto na bexiga e proximidades da uretra, e dor intensa na uretra durante o trabalho (Paraíso na Terra nº 37, p. 11)",
+   "jp_anchor": "１．膀胱及び尿道附近に不快感を感じ、労働時には尿道に激痛を感ずる男子（地上天国　37号　P.11）",
+   "pt_anchor": "1. Homem com sensação de desconforto na bexiga e proximidades da uretra, e dor intensa na uretra durante o trabalho (Tij",
+   "notes": "",
+   "pt_prefix": "1. Homem com sensação de desconforto na bexiga e proximidades da uretra, e dor intensa na uretra durante o trabalho (Paraíso na Terra nº 37, p. 11)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．便通感覚不能の肥満婦人（御教え集　1号　P.4）",
+   "title_pt": "2. Mulher obesa com incapacidade de sentir a evacuação (Mioshie-shū nº 1, p. 4)",
+   "jp_anchor": "２．便通感覚不能の肥満婦人（御教え集　1号　P.4）",
+   "pt_anchor": "2. Mulher obesa com incapacidade de sentir a evacuação (Mioshie-shū nº 1, p. 4)",
+   "notes": "",
+   "pt_prefix": "2. Mulher obesa com incapacidade de sentir a evacuação (Mioshie-shū nº 1, p. 4)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "六　婦人科の部",
+   "title_pt": "6. Ginecologia\n",
+   "jp_anchor": "六　婦人科の部",
+   "pt_anchor": "6. Ginecologia",
+   "notes": "",
+   "pt_prefix": "6. Ginecologia\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．卵巣膿腫、堕胎手術後、全身浄化で一進一退の中年婦人（御教え集　7号　P.68）",
+   "title_pt": "1. Mulher de meia-idade com abscesso ovariano, após cirurgia de aborto, com purificação geral em altos e baixos (Mioshie-shū nº 7, p. 68)",
+   "jp_anchor": "１．卵巣膿腫、堕胎手術後、全身浄化で一進一退の中年婦人（御教え集　7号　P.68）",
+   "pt_anchor": "1. Mulher de meia-idade com abscesso ovariano, após cirurgia de aborto, com purificação geral em altos e baixos (Mioshie",
+   "notes": "",
+   "pt_prefix": "1. Mulher de meia-idade com abscesso ovariano, após cirurgia de aborto, com purificação geral em altos e baixos (Mioshie-shū nº 7, p. 68)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．卵巣摘出手術をした人（御教え集　3号　P.91）",
+   "title_pt": "2. Pessoa submetida a cirurgia de remoção dos ovários (Mioshie-shū nº 3, p. 91)",
+   "jp_anchor": "２．卵巣摘出手術をした人（御教え集　3号　P.91）",
+   "pt_anchor": "2. Pessoa submetida a cirurgia de remoção dos ovários (Mioshie-shū nº 3, p. 91)",
+   "notes": "",
+   "pt_prefix": "2. Pessoa submetida a cirurgia de remoção dos ovários (Mioshie-shū nº 3, p. 91)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．子宮癌手術後の中年婦人の浄化（御教え集　3号　P.26）",
+   "title_pt": "3. Purificação de uma mulher de meia-idade após cirurgia de câncer de útero (Mioshie-shū, nº 3, p. 26)",
+   "jp_anchor": "３．子宮癌手術後の中年婦人の浄化（御教え集　3号　P.26）",
+   "pt_anchor": "3. Purificação de uma mulher de meia-idade após cirurgia de câncer de útero (Mioshie-shū, nº 3, p. 26)",
+   "notes": "",
+   "pt_prefix": "3. Purificação de uma mulher de meia-idade após cirurgia de câncer de útero (Mioshie-shū, nº 3, p. 26)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．子宮癌と診断された人（地上天国　37号　P.13）",
+   "title_pt": "4. Pessoa diagnosticada com câncer de útero (Paraíso Terrestre, nº 37, p. 13)",
+   "jp_anchor": "４．子宮癌と診断された人（地上天国　37号　P.13）",
+   "pt_anchor": "4. Pessoa diagnosticada com câncer de útero (Tijotengoku, nº 37, p. 13)\n\n\"Me",
+   "notes": "",
+   "pt_prefix": "4. Pessoa diagnosticada com câncer de útero (Paraíso na Terra, nº 37, p. 13)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "七　全身の部",
+   "title_pt": "7. Corpo Inteiro\n",
+   "jp_anchor": "七　全身の部",
+   "pt_anchor": "7. Corpo Inteiro\n\n1. Bebê que tem convulsões diariamente (Tijotengoku, nº 41, p. 13)",
+   "notes": "ratio PT/JP=14.83",
+   "pt_prefix": "7. Corpo Inteiro\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．毎日ひきつけを起こす赤ん坊（地上天国　41号　P.13）",
+   "title_pt": "1. Bebê que tem convulsões diariamente (Paraíso Terrestre, nº 41, p. 13)",
+   "jp_anchor": "１．毎日ひきつけを起こす赤ん坊（地上天国　41号　P.13）",
+   "pt_anchor": "1. Bebê que tem convulsões diariamente (Tijotengoku, nº 41, p. 13)",
+   "notes": "",
+   "pt_prefix": "1. Bebê que tem convulsões diariamente (Paraíso na Terra, nº 41, p. 13)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．寒気、咳嗽、便秘で相当衰弱し、腰部は常に痺れ、息苦しく、みぞおちの固まりが胸につっかけてくるという人（御教え集　2号　P.88）",
+   "title_pt": "2. Pessoa bastante debilitada com calafrios, tosse e constipação, com dormência constante na região lombar, falta de ar e um caroço no estômago que sobe para o peito (Mioshie-shū, nº 2, p. 88)",
+   "jp_anchor": "２．寒気、咳嗽、便秘で相当衰弱し、腰部は常に痺れ、息苦しく、みぞおちの固まりが胸につっかけてくるという人（御教え集　2号　P.88）",
+   "pt_anchor": "2. Pessoa bastante debilitada com calafrios, tosse e constipação, com dormência constante na região lombar, falta de ar ",
+   "notes": "",
+   "pt_prefix": "2. Pessoa bastante debilitada com calafrios, tosse e constipação, com dormência constante na região lombar, falta de ar e um caroço no estômago que sobe para o peito (Mioshie-shū, nº 2, p. 88)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．激しい下痢、ヌラ多量の衰弱婦人（子供も同症）（地上天国　39号　P.11）",
+   "title_pt": "3. Mulher debilitada com diarreia intensa e grande quantidade de muco (criança com os mesmos sintomas) (Paraíso Terrestre, nº 39, p. 11)",
+   "jp_anchor": "３．激しい下痢、ヌラ多量の衰弱婦人（子供も同症）（地上天国　39号　P.11）",
+   "pt_anchor": "3. Mulher debilitada com diarreia intensa e grande quantidade de muco (criança com os mesmos sintomas) (Tijotengoku",
+   "notes": "",
+   "pt_prefix": "3. Mulher debilitada com diarreia intensa e grande quantidade de muco (criança com os mesmos sintomas) (Paraíso na Terra, nº 39, p. 11)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．頭重、歯痛、腰痛、聾耳で、発熱、咳嗽のため衰弱の青年（地上天国　43号　P.14）",
+   "title_pt": "4. Jovem debilitado com peso na cabeça, dor de dente, dor lombar, surdez, febre e tosse (Paraíso Terrestre, nº 43, p. 14)",
+   "jp_anchor": "４．頭重、歯痛、腰痛、聾耳で、発熱、咳嗽のため衰弱の青年（地上天国　43号　P.14）",
+   "pt_anchor": "4. Jovem debilitado com peso na cabeça, dor de dente, dor lombar, surdez, febre e tosse (Tijotengoku, nº 43, p. 14)\n\nSou uma pessoa (vinte e seis anos) que se converteu em fevereir",
+   "notes": "",
+   "pt_prefix": "4. Jovem debilitado com peso na cabeça, dor de dente, dor lombar, surdez, febre e tosse (Paraíso na Terra, nº 43, p. 14)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．頭痛、顔面のしびれ、腰部、足部の不感覚の男子（地上天国　41号　P.12）",
+   "title_pt": "5. Homem com dor de cabeça, dormência facial, perda de sensibilidade na região lombar e pernas (Paraíso Terrestre, nº 41, p. 12)",
+   "jp_anchor": "５．頭痛、顔面のしびれ、腰部、足部の不感覚の男子（地上天国　41号　P.12）",
+   "pt_anchor": "5. Homem com dor de cabeça, dormência facial, perda de sensibilidade na região lombar e pernas (Tijotengoku, nº 41, p. 1",
+   "notes": "",
+   "pt_prefix": "5. Homem com dor de cabeça, dormência facial, perda de sensibilidade na região lombar e pernas (Paraíso na Terra, nº 41, p. 12)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．月経不順、白血多量、全身浄化の婦人（地上天国　39号　P.11）",
+   "title_pt": "6. Mulher com menstruação irregular, grande quantidade de leucorreia e purificação geral do corpo (Paraíso Terrestre, nº 39, p. 11)",
+   "jp_anchor": "６．月経不順、白血多量、全身浄化の婦人（地上天国　39号　P.11）",
+   "pt_anchor": "6. Mulher com menstruação irregular, grande quantidade de leucorreia e purificação geral do corpo (Tijotengoku nº ",
+   "notes": "",
+   "pt_prefix": "6. Mulher com menstruação irregular, grande quantidade de leucorreia e purificação geral do corpo (Paraíso na Terra, nº 39, p. 11)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．結核症状の衰弱婦人（地上天国　37号　P.9）",
+   "title_pt": "7. Mulher debilitada com sintomas de tuberculose (Paraíso Terrestre, nº 37, p. 9)",
+   "jp_anchor": "７．結核症状の衰弱婦人（地上天国　37号　P.9）",
+   "pt_anchor": "7. Mulher debilitada com sintomas de tuberculose (Tijotengoku, nº 37, p. 9)\n\nMulher de trinta e seis anos. Por volta de setembro do 20º ano ",
+   "notes": "",
+   "pt_prefix": "7. Mulher debilitada com sintomas de tuberculose (Paraíso na Terra, nº 37, p. 9)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．全身痛、便秘の男（御教え集　4号　P.29）",
+   "title_pt": "8. Homem com dores no corpo todo e constipação (Mioshie-shū, nº 4, p. 29)",
+   "jp_anchor": "８．全身痛、便秘の男（御教え集　4号　P.29）",
+   "pt_anchor": "8. Homem com dores no corpo todo e constipação (Mioshie-shū, nº 4, p. 29)",
+   "notes": "",
+   "pt_prefix": "8. Homem com dores no corpo todo e constipação (Mioshie-shū, nº 4, p. 29)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．急激な熱の高下と胸部痛の男子（御教え集　2号　P.32）",
+   "title_pt": "9. Homem com flutuações bruscas de febre e dor no peito (Mioshie-shū, nº 2, p. 32)",
+   "jp_anchor": "９．急激な熱の高下と胸部痛の男子（御教え集　2号　P.32）",
+   "pt_anchor": "9. Homem com flutuações bruscas de febre e dor no peito (Mioshie-shū, nº 2, p. 32)",
+   "notes": "",
+   "pt_prefix": "9. Homem com flutuações bruscas de febre e dor no peito (Mioshie-shū, nº 2, p. 32)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．胃癌と診断され、嘔吐、便秘、食欲不振、頭ははっきりせず、衰弱している婦人（地上天国　43号　P.12）",
+   "title_pt": "10. Mulher diagnosticada com câncer de estômago, com vômitos, constipação, falta de apetite, mente confusa e debilitada (Paraíso na Terra, nº 43, p. 12)",
+   "jp_anchor": "１０．胃癌と診断され、嘔吐、便秘、食欲不振、頭ははっきりせず、衰弱している婦人（地上天国　43号　P.12）",
+   "pt_anchor": "10. Mulher diagnosticada com câncer de estômago, com vômitos, constipação, falta de apetite, mente confusa e debilitada ",
+   "notes": "",
+   "pt_prefix": "10. Mulher diagnosticada com câncer de estômago, com vômitos, constipação, falta de apetite, mente confusa e debilitada (Paraíso na Terra, nº 43, p. 12)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "八　その他の部",
+   "title_pt": "8. Outras partes\n",
+   "jp_anchor": "八　その他の部",
+   "pt_anchor": "8. Outras partes\n\n1. Pessoa que sente o corpo ficar mole ao falar (Gosuiji-roku, nº 13, p. 13)",
+   "notes": "ratio PT/JP=13.43",
+   "pt_prefix": "8. Outras partes\n"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．しゃべると身体がだるくなる人（御垂示録　13号　P.13）",
+   "title_pt": "1. Pessoa que sente o corpo ficar mole ao falar (Gosuiji-roku, nº 13, p. 13)",
+   "jp_anchor": "１．しゃべると身体がだるくなる人（御垂示録　13号　P.13）",
+   "pt_anchor": "1. Pessoa que sente o corpo ficar mole ao falar (Gosuiji-roku, nº 13, p. 13)",
+   "notes": "",
+   "pt_prefix": "1. Pessoa que sente o corpo ficar mole ao falar (Gosuiji-roku, nº 13, p. 13)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．骨が太ると言われた病気（御垂示録　1号　P.34）",
+   "title_pt": "2. Doença em que diziam que os ossos engrossavam (Gosuiji-roku, nº 1, p. 34)",
+   "jp_anchor": "２．骨が太ると言われた病気（御垂示録　1号　P.34）",
+   "pt_anchor": "2. Doença em que diziam que os ossos engrossavam (Gosuiji-roku, nº 1, p. 34)",
+   "notes": "",
+   "pt_prefix": "2. Doença em que diziam que os ossos engrossavam (Gosuiji-roku, nº 1, p. 34)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．骨や爪が軟らかくなった女（御教え）",
+   "title_pt": "3. Mulher cujos ossos e unhas amoleceram (Mioshie-shū)",
+   "jp_anchor": "３．骨や爪が軟らかくなった女（御教え）",
+   "pt_anchor": "3. Mulher cujos ossos e unhas amoleceram (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "3. Mulher cujos ossos e unhas amoleceram (Mioshie-shū)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．冷たいものに触れると浮腫するという人（御教え集　2号　P.9）",
+   "title_pt": "4. Pessoa que incha ao tocar em coisas frias (Mioshie-shū, nº 2, p. 9)",
+   "jp_anchor": "４．冷たいものに触れると浮腫するという人（御教え集　2号　P.9）",
+   "pt_anchor": "4. Pessoa que incha ao tocar em coisas frias (Mioshie-shū, nº 2, p. 9)",
+   "notes": "",
+   "pt_prefix": "4. Pessoa que incha ao tocar em coisas frias (Mioshie-shū, nº 2, p. 9)"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

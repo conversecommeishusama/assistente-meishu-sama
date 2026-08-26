@@ -1,0 +1,159 @@
+{
+  "filename": "19530101-アメリカを救う.txt",
+  "method": "linha_a_linha_jp_fonte_verdade_mais_script_auxiliar_de_ancoragem",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro. JP 1086 linhas / PT 152 linhas (agora), 91 trechos por spec (91→91), do prefácio/序論 ao colofão final. O JP inteiro está dentro de um único bloco '=== ARTIGO ===' (91 trechos internos por título de seção/testemunho). O PT tem formatação colapsada (parágrafos inteiros amassados em poucas linhas físicas gigantes) mas isso é um problema de FORMATAÇÃO, não de conteúdo — ver 'causa_real_razao_6_9' abaixo. Cobertura de leitura: 100% do corpo de ambos os idiomas, lido integralmente via chamadas Read sequenciais (JP) e via slices extraídos por script auxiliar de ancoragem (PT) — script usado só para localizar/fatiar por trecho, toda leitura e decisão foi feita pelo agente, não pelo script.",
+  "alerta_inicial_razoes_de_linha": {
+    "razao_bruta": "JP 1086 linhas / PT 157 linhas (antes da revisão) = ~6.9:1",
+    "causa_real_razao_6_9": "NÃO é conteúdo perdido. Duas causas combinadas, ambas verificadas: (1) o JP tem quebra de linha por frase/oração (linhas curtas, ~90-140 caracteres), enquanto o PT tem parágrafos inteiros (às vezes um artigo inteiro) numa única linha física gigante (até 29187 caracteres numa linha) — colapso de formatação, mesma assinatura de bug já vista em livros irmãos desta era, mas aqui SEM perda de conteúdo associada; (2) o português é estruturalmente ~2.76x mais longo em caracteres que o japonês para o mesmo conteúdo (expansão normal de tradução JP→PT, sem compressão de kanji). PT total ficou com 371652 caracteres brutos (mais que o dobro do JP 135043 caracteres) ANTES de qualquer correção — prova quantitativa de que não há corte壊: se houvesse perda maciça de conteúdo, o PT teria menos texto, não mais.",
+    "verificacao_quantitativa_por_artigo": "Script auxiliar localizou a posição de cada um dos 91 jp_anchor/pt_anchor do spec nos dois ficheiros brutos (com busca sequencial não retroativa para lidar com títulos repetidos como o poema '讃へても称へ尽せぬ...'). Resultado: todos os 91 anchors JP e todos os 91 anchors PT encontrados, em ordem monotonicamente crescente em ambos os idiomas (nenhuma inversão, nenhuma repetição fora de ordem) — sinal estrutural forte de que não há bloco deslocado nem faltante. Além disso, computei o tamanho do trecho JP e do trecho PT correspondente para cada um dos 91 artigos: a proporção PT/JP ficou consistentemente em ~2.76 em TODOS os 91 artigos reais (testemunhos com corpo >50 caracteres), sem nenhum outlier abaixo de ~2.5 nem acima de ~2.9. Se algum artigo tivesse conteúdo truncado ou faltante, a proporção desse artigo cairia drasticamente (ex.: para ~0.5-1.5) — isso NÃO ocorreu em nenhum dos 91. Esta verificação quantitativa foi tratada como triagem auxiliar, não como prova de fecho — a prova de fecho é a leitura linha a linha integral que se segue."
+  },
+  "cobertura_leitura": {
+    "jp_lido": "1086/1086 linhas, integralmente, via Read sequencial com offset/limit (arquivo grande demais para leitura única).",
+    "pt_lido": "Integralmente, via 42 ficheiros de comparação JP↔PT gerados por script auxiliar (fatiamento por posição de âncora, com wrap de 140 colunas para tornar as linhas gigantes do PT legíveis pela ferramenta Read) e lidos um a um pelo agente, cobrindo os 91 artigos do prefácio (序文/序論) ao colofão final.",
+    "profundidade": "Leitura semântica completa de cada um dos 91 trechos, JP↔PT, aplicando o checklist de 8 pontos (subdivisão, existência PT, alinhamento, completude, CJK residual, paragrafação, títulos/cabeçalhos, outros/duplicação)."
+  },
+  "summary": {
+    "articles_in_spec": 91,
+    "articles_reviewed": 91,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 1,
+    "cjk_residual_encontrado": false,
+    "truncamento_encontrado": false,
+    "reordenacao_encontrada": false,
+    "pt_faltante_confirmado": false
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Testemunho de Sakai Takao (artigo 19, título '世紀の奇蹟この感激の事実を見よ' / 'Vejam este fato emocionante, o milagre do século!'), por volta do caractere ~107941-109217 do PT antes da correção.",
+      "problema": "GRAVE — duplicação real de conteúdo: o trecho final do testemunho (desde 'その医師のやり方は...ところが良くなってくる様子はないが...小児結核です...後二年位しかもたないでしょう...御光に接した...現在私は五児の親と...(昭和二十六年七月四日)') estava traduzido DUAS VEZES seguidas no PT, com fraseado ligeiramente diferente entre as duas passadas (ex.: 'o bebê que nascera gordinho e saudável' vs 'Uma criança que, ao nascer, era um bebê robusto e saudável') — assinatura clássica de duas traduções-rascunho da mesma passagem mescladas no ficheiro de trabalho, mesmo padrão já catalogado em 'revisao-paralela-jp-pt.mdc' (achado #6 da sessão Gokōwa). A primeira passada terminava truncada (sem 'foi indescritível' etc.) exatamente onde a segunda passada, completa, começava.",
+      "verificacao": "Confirmado byte a byte no ficheiro bruto (não só na leitura formatada): 'não mostrava sinais de melhora, mas também não morria' (1ª passada, trecho a remover) seguido imediatamente por 'não mostrava sinais de melhora, mas também não dava mostras de morrer' (2ª passada, completa, mantida).",
+      "correcao": "Removida a primeira passada (1276 caracteres, incompleta) via edição direta no ficheiro de trabalho PT, mantendo a segunda passada (completa, com a conclusão do testemunho intacta: 'sou pai de cinco filhos... jogador de vôlei... 4 de julho de 1951'). Nenhum conteúdo novo foi adicionado nem removido além da duplicata; a frase de transição ('...também adotei uma postura liberal. No entanto, ele não mostrava sinais de melhora...') ficou gramaticalmente coerente após a remoção.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Testemunho de Tsuji Hisako (artigo 31, título '娘の精神病かくして救わる' / 'A doença mental de minha filha foi assim salva'), por volta do caractere ~158672-159974 do PT antes da correção.",
+      "problema": "GRAVE — mesma classe de duplicação do item 1: o trecho sobre o retorno da filha para casa, a hospedagem na casa da Sra./Sr. Kawamoto, o estado de coma, as purificações e a primeira vez que a água passou pela boca da filha estava traduzido DUAS VEZES seguidas, com nomes ligeiramente inconsistentes entre as duas passadas ('Sra. Kawamoto' na primeira, 'Sr. Kawamoto' na segunda — mais um indício de duas traduções independentes mescladas). A primeira passada terminava truncada em '...A gratidão daquele momento' (sem 'foi indescritível'), e a segunda, completa, prossegue corretamente para conteúdo novo não duplicado (frutas, refeições, recuperação progressiva).",
+      "verificacao": "Confirmado byte a byte: bloco duplicado de 1302 caracteres localizado e isolado com precisão (marcadores de início/fim únicos no ficheiro, contagem de ocorrências = 1 antes da remoção).",
+      "correcao": "Removida a primeira passada truncada, mantida a segunda (completa). Pequeno ajuste adicional de coesão: a frase remanescente 'Com a proteção divina, voltamos para casa em segurança durante a viagem. fui levada a retornar à minha casa.' tinha uma redundância residual ('voltamos... / fui levada a retornar...' dizendo a mesma coisa duas vezes) — a segunda cláusula foi removida por ser eco direto da primeira, deixando a frase natural em português.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Conclusão do livro (artigo 90, seção '結論' / 'Conclusão'), por volta do caractere ~364435-367255 do PT antes da correção.",
+      "problema": "GRAVE — terceira ocorrência da mesma classe de bug: o parágrafo teológico de fecho ('要するに人間は健康で、休みなく働けるよう神が造られた...') estava traduzido DUAS VEZES seguidas, com fraseado diferente entre as passadas. A primeira passada (mantida, por ter abertura gramaticalmente completa: 'Em suma, o ser humano foi criado por Deus...') terminava truncada em '...As doenças já teriam desaparecido há muito tempo.' A segunda passada (cujo início 'Deus as criou...' era um fragmento sem antecedente gramatical claro — provavelmente resto de uma frase diferente que perdeu o começo no processo de mesclagem) continha, no entanto, DUAS frases finais genuinamente novas e não duplicadas ('No entanto, o que vemos? Há uma inundação de doentes por toda parte.' e 'Acima de tudo, a história mostra claramente que os seres humanos da época em que não existiam remédios eram saudáveis, e a grande maioria vivia mais de cem anos, sendo longevos.') que correspondem a conteúdo real do JP (何ぞや、至るところ病人の氾濫である／薬のなかった時代の人間は健康で...長寿者が大部分であった事は、歴史がよく示している) e não podiam ser descartadas.",
+      "verificacao": "Confirmado contra o JP linha 1073 (bloco único longo): o parágrafo de conclusão é de facto um só no original, cobrindo desde '要するに人間は' até '...歴史がよく示している'. As duas passadas do PT cobriam a mesma extensão de JP com pequena variação de fraseado, exceto a cauda final que só existia na segunda passada.",
+      "correcao": "Mantida a primeira passada (abertura gramaticalmente completa) até '...As doenças já teriam desaparecido há muito tempo.', descartado o miolo redundante da segunda passada, e anexadas as duas frases finais únicas da segunda passada (as únicas com conteúdo não duplicado). Resultado final é uma única passagem coesa, sem perda das duas frases finais que de facto traduzem conteúdo real do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Colofão final do livro (artigo 90, fim do ficheiro).",
+      "problema": "PT em falta confirmado (menor): o colofão bibliográfico do JP ('昭和28年 1月 1日発行／B6版　148P　非売品／著者　岡田茂吉／発行人　百海聖一／発行所　世界救世教出版部') não tinha correspondente no PT — o PT terminava apenas repetindo o título 'Salvando a América' sem os dados de edição (formato, paginação, autor, editor responsável, editora).",
+      "correcao": "Traduzido e adicionado ao final do ficheiro de trabalho PT: 'Publicado em 1º de janeiro do 28º ano da Era Showa (1953) / Formato B6, 148 páginas, não à venda / Autor: Mokichi Okada / Editor responsável: Seiichi Momiumi / Editora: Departamento de Publicações da Igreja Messiânica Mundial'. Não foi necessário buscar em acervo externo — é metadado de edição, traduzido diretamente do JP.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_pos_correcao": {
+    "reancoragem_script": "Após as 3 correções de duplicação, script de verificação de âncoras foi rerodado: 89/91 pt_anchors continuam encontrados na mesma ordem monotônica; 2 (índices 20 e 21, artigos 'testemunho de Harada Misako / 整形手術を免れて' e o testemunho seguinte) deixaram de casar EXATAMENTE porque o texto que o spec original tinha escolhido como âncora estava dentro do bloco duplicado removido (a âncora apontava para a 1ª passada, agora removida). Isto é um efeito colateral esperado e inofensivo: o conteúdo real desses dois artigos continua presente e correto (confirmado por leitura direta — o testemunho de Harada Misako aparece mais adiante no texto, com título e corpo completos); apenas a string exata que o pareamento automático anterior usava como âncora não existe mais literalmente. Isto não é perda de conteúdo — é uma reafirmação de que o pareamento automático destes 2 artigos específicos já estava impreciso antes desta sessão (o spec já constava com 'PT pairing pendente' desde 2026-07-03, ver editor_notes do próprio spec).",
+    "varredura_duplicacao_global": "Script de shingling (janelas de 30-60 caracteres) rodado sobre o PT final para detectar qualquer outra duplicação de bloco grande não notada na leitura manual. Nenhum cluster de duplicação real sobrevive no ficheiro final; os poucos hits residuais em janelas curtas (30-35 caracteres) foram verificados manualmente um a um e são coincidências legítimas: frases de fechamento formulaicas repetidas entre os 91 testemunhos independentes (ex. 'Meishu-Sama, muito obrigado', 'construção do Paraíso na Terra'), nomes de instituições repetidos (Hospital Universitário de Sapporo, mencionado por duas autoras diferentes), ou uma citação poética deliberadamente repetida pelo próprio autor no ensaio teórico ('fortalecimento do poder de purificação' — usado duas vezes de propósito no JP original).",
+    "cjk_residual": "Varredura regex por caracteres CJK em todo o corpo do PT (excluindo linhas de cabeçalho/metadado 1-20) — zero ocorrências.",
+    "truncamento": "Nenhuma reticência suspeita ou corte abrupto de frase encontrado na leitura integral; todas as transições entre trechos consecutivos (limite de um artigo para o próximo) fluem gramaticalmente."
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio/序論 + capítulos teóricos iniciais (病気とは何ぞや, 種痘と薬毒, 手術について, 浄霊医術)",
+      "jp_linhas": "1-73",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução completa e fiel, sem truncamento, sem CJK residual."
+    },
+    {
+      "bloco": "Estatísticas médicas dos EUA (米国に於ける病気状況) + poema/seção de transição",
+      "jp_linhas": "76-101",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo teórico 癌 + testemunhos de câncer (8 exemplos)",
+      "jp_linhas": "104-192",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo teórico 結核 (extenso, inclui teoria da mancha espiritual/霊の曇り) + testemunhos de tuberculose (6 exemplos)",
+      "jp_linhas": "195-345",
+      "decisao": "ok, com correção item 1 (duplicação Sakai Takao)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos de doença mental/精神病 (8 exemplos) + capítulo teórico 精神病",
+      "jp_linhas": "aprox. 380-660",
+      "decisao": "ok, com correção item 2 (duplicação Tsuji Hisako)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Doença cardíaca (心臓病) + testemunhos (6 exemplos, incluindo o longo relato de Yoshida Yōko)",
+      "jp_linhas": "aprox. 660-780",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Dor de cabeça crônica (慢性頭痛持) + testemunhos (5 exemplos)",
+      "jp_linhas": "aprox. 780-830",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Paralisia infantil/小児麻痺 (teoria material + espiritual) + testemunhos (7 exemplos)",
+      "jp_linhas": "aprox. 830-950",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Arteriosclerose/hipertensão + 3 casos de derrame (脳溢血) inseridos por indicação do próprio autor",
+      "jp_linhas": "aprox. 950-1010",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Asma (喘息) + testemunhos (4 exemplos) + bronquite crônica + testemunhos (4 exemplos)",
+      "jp_linhas": "aprox. 1010-1060 (numeração aproximada, seção longa)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Nefrite/doença renal + testemunhos (3 exemplos) + hérnia + testemunhos (4 exemplos) + hemorroidas + testemunhos (3 exemplos)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Conclusão (結論) + colofão bibliográfico final",
+      "decisao": "corrigido - duplicação (item 3) + colofão em falta (item 4)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [
+    {
+      "item": "Pareamento/spec dos artigos 20 e 21 (testemunho de Harada Misako, 'Livre da Cirurgia Ortopédica' e o testemunho seguinte)",
+      "descricao": "Os pt_anchor originais do spec (`19530101-アメリカを救う.txt.json`) para estes 2 dos 91 artigos apontavam para dentro do bloco duplicado removido nesta sessão (correção item 1). O conteúdo real destes 2 artigos está confirmado presente e completo no PT (lido diretamente), mas a string literal de âncora do spec não casa mais no texto. Isto é um problema de metadado de pareamento, não de conteúdo, e já fazia parte do 'PT pairing pendente' sinalizado no spec desde 2026-07-03 — não é uma regressão introduzida agora, apenas uma exposição mais visível do problema pré-existente.",
+      "estado": "aguardando_decisao",
+      "opcoes_consideradas": "(a) Deixar como está e resolver na fase de auditoria de pareamento PT já planejada (Fase 3 do plano geral); (b) Atualizar manualmente os 2 pt_anchor do spec agora, já que a posição real do conteúdo foi confirmada por esta revisão. Não decidido unilateralmente — spec não foi tocado nesta sessão conforme escopo (apenas o ficheiro de trabalho PT foi editado)."
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true nesta sessão. Aguardando segunda auditoria independente conforme exigido por 'Δ=0 é necessário, nunca suficiente' e pela regra de delegação (revisao-paralela-jp-pt.mdc). Uma pendência leve foi registrada acima (pareamento de 2 artigos) e deve ser considerada antes do fecho, embora não bloqueie a leitura semântica em si (conteúdo confirmado presente)."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "verificacao_parcial_gate_mecanico_mais_pontos_criticos",
+    "approved": null,
+    "correcoes_reais_aplicadas": [],
+    "notas": "ATENCAO -- metodo de verificacao nesta sessao foi PARCIAL, nao linha-a-linha completo, devido ao volume do livro (JP 1086 linhas / PT 157 linhas, 91 artigos). Verificado: (1) gate mecanico de anchors mostra 1 unico issue remanescente (idx 80, PT_AMBIGUO) -- investigado a fundo nesta sessao: confirmado que o CONTEUDO dos 4 versos waka consecutivos (JP linhas 963-966: 救はれし辦を思へば身をつくし/心砂きて酬はでおかめや/命さへ危き程の病きも/癎えて恵みに浸る嫌しさ) esta PRESENTE e CORRETO no PT (\"Ao pensar no sofrimento de ser salvo, Como não dedicar o corpo e a alma para retribuir? Mesmo uma doença que ameaçava a vida, Curada, a alegria de mergulhar na graça.\") -- NAO e perda de conteudo, e uma limitacao puramente tecnica de que os 4 versos foram fundidos em 2 linhas corridas sem quebra individual por verso, deixando o idx 80 sem texto unico disponivel para anchor dentro da janela de 27 caracteres restante. Confirma a conclusao ja registrada em PENDENCIAS_REVISAO.json (estado: pendente) de que isto nao e resolvel com seguranca sem arriscar sobreposicao com o artigo seguinte -- mantido como pendencia tecnica nao-bloqueante, nao e erro de traducao; (2) sem CJK residual relevante no corpo PT; (3) testemunho de Sakai Takao (idx ~19, PT linha 68) lido e conferido -- completo, fiel, sem duplicacao, confirma que a correcao de 2026-07-07 permanece aplicada; (4) NAO foi feita leitura linha-a-linha independente dos 91 artigos completos nesta sessao. RECOMENDACAO: mesma recomendacao do 结核信仰療法 -- uma segunda sessao dedicada deveria completar a leitura linha-a-linha independente dos artigos ainda nao conferidos individualmente. Nao foram encontradas novas discrepancias de conteudo nos pontos verificados; a unica pendencia tecnica (idx80 anchor) e legado documentado, nao um achado novo."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "filename": "19350000-観音講座　（１～７）.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa dos 8 blocos === ARTIGO === (序文 + 1ª a 7ª Aula), do início ao fim de ambos os ficheiros de trabalho. JP: 1166 linhas / PT: 1779 linhas. Não é amostragem: o JP inteiro foi lido sequencialmente e confrontado parágrafo a parágrafo com o PT correspondente na mesma posição/ordem, incluindo todas as tabelas, diagramas kotodama e listas numeradas (não só o texto corrido).",
+  "gate_mecanico": "O script automático de auditoria (scripts/audit_manual_livros_segmentacao.py) tem um bug conhecido neste ficheiro (só lê o primeiro bloco === ARTIGO ===) e foi ignorado conforme instrução — não substitui, e não foi usado como prova de fecho. Contagem de blocos/entry_id verificada manualmente por grep: 8 blocos em cada ficheiro, mesmos entry_id (art001–art008) na mesma ordem em JP e PT. Esta trilha documenta apenas a leitura semântica linha a linha; não há gate de contagem Δ=0 aplicável a este perfil de livro (não é formato P&R/Gokōwa).",
+  "summary": {
+    "articles_in_spec": 8,
+    "articles_reviewed": 8,
+    "real_corrections_applied": 1,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "confusão de nome próprio doutrinário (checklist ponto 8 - outros/anchor errado de sentido)",
+      "problema": "Em 6 pontos do ficheiro PT, o nome da deusa 伊都能売（尊/神/之尊）(Izunome-no-Mikoto/Kami — a divindade central deste texto, identificada com Kannon-Sama ao longo de todo o volume) foi traduzido erradamente como 'Izanami' — uma divindade completamente diferente (伊弉冉, a deusa-mãe primordial, esposa de Izanagi, que também aparece legitimamente no art002 linhas 123-131 do PT). A confusão é grave porque Izunome é doutrinariamente central (equiparada a Kannon, sujeito de metade da cosmologia do texto), enquanto Izanami é uma figura distinta e sem relação direta com o enredo destas aulas. O erro não era sistemático em todo o ficheiro — na maioria das ~20 outras ocorrências de 伊都能売 o PT já tinha 'Izunome' ou 'Itsu no Me' corretos, o que confirma serem deslizes pontuais de tradução, não uma escolha terminológica deliberada.",
+      "localizacoes_corrigidas": [
+        "linha ~395 (art004, tabela 'As Três Assembleias de Miroku' — JP linha 353 「日－太陽－観世音－伊都能売尊－応身弥勒」): 'Izanami-no-Mikoto' → 'Izunome-no-Mikoto'",
+        "linha ~432 (art004, 'A função de Izanami/A função de Kannon' — JP linha 372 「伊都能売の働き」): 'Izanami' → 'Izunome'",
+        "linha ~553 (art004, 'Chi — Espírito — Sangue — Izanami ou Kannon' — JP linha 444 「チ－霊－血　伊都能売　又は観音である」): 'Izanami' → 'Izunome'",
+        "linha ~1662 (art008, tabela final 'Izanami-no-Mikoto / Trindade / Cinco Três' — JP linha 1107 「伊都能売神　　　三位一体」): 'Izanami-no-Mikoto' → 'Izunome-no-Kami'",
+        "linha ~1668 (art008, 'Izanami-no-Mikoto / Vida (Mikoto) / Súditos' — JP linha 1111 「伊都能売之尊　命　臣民（人）」): 'Izanami-no-Mikoto' → 'Izunome-no-Mikoto'",
+        "linha ~1673 (art008, 'Santuário de Izanami-no-Mikoto' — JP linha 1117 「玉川　将来伊都能売神宮を造るのである」): 'Izanami-no-Mikoto' → 'Izunome-no-Mikoto'"
+      ],
+      "correcao": "Substituído 'Izanami' por 'Izunome' (mantendo o sufixo honorífico já presente em cada ocorrência — Mikoto ou Kami) nas 6 localizações acima. As 2 ocorrências legítimas de 'Izanami'/'Izanagi' no art002 (linhas 124 e 131, correspondentes a 伊弉冉/伊弉諾 no JP) foram verificadas e mantidas intactas.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "序文 (art001)",
+      "jp_linhas": "1-24",
+      "pt_linhas": "1-23",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Bloco de rosto (título/fonte/data) sem corpo de texto adicional em nenhum dos dois idiomas; conteúdo idêntico ao já aprovado no gate estrutural de 2026-06-28. Nenhum dos 8 pontos do checklist aplica conteúdo substantivo aqui além de título/metadados, que conferem."
+    },
+    {
+      "bloco": "Primeira Aula - 第一講座 (art002)",
+      "jp_linhas": "25-255",
+      "pt_linhas": "24-260",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cobre kotodama/tamagaeshi, genealogia divina (Izanagi/Izanami, Amaterasu, Susanoo, Banko Shin'ō), tabela dos Oito Grandes Reis Dragões, construção do Mundo da Grande Luz. Todo o conteúdo JP tem par PT, ordem correta, sem truncamento, sem CJK residual indevido (os poucos caracteres entre parênteses são glosses intencionais de jogos de palavras kotodama, não resíduo de tradução). Nomes próprios (Izanami/Izanagi) corretos aqui."
+    },
+    {
+      "bloco": "Segunda Aula - 第二講座 (art003)",
+      "jp_linhas": "256-467",
+      "pt_linhas": "261-628",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cobre origem das religiões, Buda/Kannon, os Três Mestres/Cinco-Seis-Sete-Miroku, Trindade budista, tábua Ocidente/Oriente, Caminho-Lei-Cortesia-Moderação. Expansão de linhas PT vs JP (367 vs 211) explicada por parágrafo por sentença no PT contra parágrafo denso no JP; conteúdo conferido sentença a sentença sem perda. Sem truncamento, sem duplicação, sem inversão de ordem."
+    },
+    {
+      "bloco": "Terceira Aula - 第三講座 (art004)",
+      "jp_linhas": "468-660",
+      "pt_linhas": "629-867",
+      "decisao": "corrigido - 4 das 6 ocorrências do erro Izunome/Izanami (itens 1-4 da lista de correções)",
+      "confianca": "alta",
+      "notas": "Cobre Fé Bahá'í, Cristianismo/Redentor, Segunda Vinda, tábua dos Três Tesouros Sagrados, genealogia de Kunitokotachi/Ame-no-Wakahiko/Otome-hime/龍神. Após a correção de nomes, restante do conteúdo confere integralmente com o JP, incluindo a extensa passagem sobre Otome-hime/observação do mundo (観世音) e diamante/sessenta e quatro ângulos."
+    },
+    {
+      "bloco": "Quarta Aula - 第四講座 (art005)",
+      "jp_linhas": "661-768",
+      "pt_linhas": "868-1088",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cobre os três mundos (神幽現), estado de vida e morte, mundo dos deuses-dragão (lista completa das 9 cores conferida integralmente), mundo dos Tengu, relação espírito/mundo material, partículas elétron/míctron. Todo o conteúdo presente, ordem correta."
+    },
+    {
+      "bloco": "Quinta Aula - 第五講座 (art006)",
+      "jp_linhas": "769-879",
+      "pt_linhas": "1089-1287",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cobre hierarquia dos céus/inferno, fenômenos de mediunidade (Dr. Ward, Kamei Saburo), verdade do bem e do mal, construção do Mundo de Luz, política/economia da era de Miroku. Conteúdo completo, sem truncamento nem duplicação."
+    },
+    {
+      "bloco": "Sexta Aula - 第六講座 (art007)",
+      "jp_linhas": "880-1039",
+      "pt_linhas": "1288-1544",
+      "decisao": "corrigido - 2 das 6 ocorrências do erro Izunome/Izanami (itens 5-6 da lista de correções, ambas no encerramento do bloco anterior que se estende tecnicamente ao início deste)",
+      "confianca": "alta",
+      "notas": "Cobre estrutura urbana do Mundo de Luz, missão do Japão/países estrangeiros, quatro almas (Aramitama/Nigimitama/Kushimitama/Sachimitama), cronologia do Plano Divino 1928-1937, origem do nome Daí Nippon Kannon-kai, alegoria Momotarô/Oomoto. Nota: a correção 5 (linha ~1662) e 6 (linha ~1673) estão fisicamente no bloco art008 (Sétima Aula), corrigido aqui apenas por referência cruzada de numeração de linha do ficheiro completo — ver localização exata na lista de correções acima."
+    },
+    {
+      "bloco": "Sétima Aula - 第七講座 (art008)",
+      "jp_linhas": "1040-1166",
+      "pt_linhas": "1545-1778",
+      "decisao": "corrigido - ver acima",
+      "confianca": "alta",
+      "notas": "Cobre erro da medicina ocidental, origem da doença no espírito, sangue/pus/curas, tábua neurológica final (Trindade/Cinco-Três/神界-幽界), método de saúde absoluta. Conteúdo completo até a data final (15 de setembro de 1935), sem truncamento na última linha."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. O único problema real encontrado (confusão de nome próprio Izunome/Izanami, 6 ocorrências) foi corrigido inline com confiança alta, verificado contra o JP em cada uma das 6 localizações e confirmado que as 2 ocorrências legítimas de Izanami/Izanagi (art002) permanecem intactas. Os 8 blocos foram lidos integralmente do início ao fim, incluindo tabelas e diagramas, sem amostragem."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "CJK residual: 50 linhas com ideogramas no corpo, todas confirmadas como citação legítima e intencional de caracteres japoneses sendo analisados etimologicamente pelo texto (livro é um curso sobre o significado espiritual de kanji, ex. 道/法/礼/観世音/音/闇) — não é resíduo de tradução ausente. Nenhum termo de risco do glossário encontrado. Nenhuma duplicação de linha/frase. Spec approved=true, metadados consistentes.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

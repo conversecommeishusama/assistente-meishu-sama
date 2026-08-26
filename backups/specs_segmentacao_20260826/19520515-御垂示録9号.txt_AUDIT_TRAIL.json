@@ -1,0 +1,87 @@
+{
+  "filename": "19520515-御垂示録9号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume (JP 370 linhas / PT 189 linhas, 2 artigos por spec, perfil ochishiji_roku). Mapeamento explícito de todos os 156 turnos de diálogo do JP (perguntas entre 「」 do Interlocutor / respostas em texto corrido de Meishu-Sama), confrontados um a um contra o PT na mesma ordem, do cabeçalho ao último turno (千手観音様のお参り). Não é amostragem nem métrica de contagem/ratio — cada turno JP foi lido e emparelhado individualmente com seu correspondente PT.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "turnos_jp_mapeados": 156,
+    "turnos_com_par_pt_correto": 156,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 2
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "monólito residual / turno inicial inteiro ausente",
+      "localizacao_jp": "linhas 26-31 (marcador [五月一日] + primeira pergunta do Interlocutor '今日は平川町にお出ましになられました五月一日より丸十八年と思いますが――' + abertura da resposta de Meishu-Sama '九年だからね。そうなりますかね。十八年にね。いよいよ敵をとることになる。')",
+      "localizacao_pt_antes": "linha 25 (arquivo antigo): '[1º de maio]Desta vez, fui a Nara e compreendi...' — o marcador de data e a resposta longa sobre Nara apareciam colados na mesma linha, sem qualquer tradução da pergunta inicial do Interlocutor nem da frase de abertura da resposta de Meishu-Sama.",
+      "problema": "Perda real de conteúdo: a pergunta inteira sobre os '18 anos desde a visita a Hirakawa-chō' e a frase de abertura da resposta ('nove anos... finalmente vai chegar a hora de vingar-me do inimigo') não existiam em nenhuma parte do PT (confirmado por busca por '十八年', '平川町', '敵', 'Hirakawa', 'dezoito anos', 'inimigo', 'vingança' — zero ocorrências antes da correção). O PT começava diretamente no meio da resposta de Meishu-Sama sobre Nara/Kannon, sem o gatilho que a antecede.",
+      "correcao": "Traduzido e inserido o turno completo: pergunta do Interlocutor sobre os 18 anos desde a visita a Hirakawa-chō, seguida da resposta curta de Meishu-Sama ('São nove anos, sabe. Será que dá certo assim? Dezoito anos, então. Finalmente vai chegar a hora de vingar-me do inimigo.'), como parágrafo próprio antes do parágrafo já existente sobre Nara — preservando a mesma estrutura de dois parágrafos do JP (linha 30 curta + linha 31 longa) dentro do mesmo turno de Meishu-Sama. Formato do marcador de data ajustado para o padrão do resto do acervo (linha própria, linha em branco, depois o diálogo), conforme confirmado em 19520125-御垂示録6号.txt e 19490701-自観叢書第2篇.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "duplicação de bloco (artefacto de colagem de duas fontes de tradução)",
+      "localizacao_jp": "linha 227 (turno único, sem repetição no JP): '...西行（さいぎょう）とか貫之（つらゆき）、道風（みちかぜ）。墨跡の中でおもしろいのがあるんです。支那の無準（ぶじゅん）という人の書いた...それを、茶会があって...何を犠牲にしても欲しいと思ったら得ようとする。'",
+      "localizacao_pt_antes": "linhas ~118-124 (arquivo antigo)",
+      "problema": "GRAVE, mesmo padrão já catalogado em outros volumes desta família ('artefacto de duplicação já presente na produção usada como fonte ao reconstruir um arquivo de trabalho'): o trecho sobre Saigyō/Tsurayuki/Michikaze e a pergunta-resposta sobre 'explicação por escrito' (turnos 89-91) apareciam DUAS VEZES no PT, com aspas retas (\"...\") na primeira cópia e aspas curvas (\"...\") na segunda — sinal claro de duas passadas de tradução diferentes coladas no mesmo ponto. A primeira cópia (aspas retas) terminava truncada em '...há uma interessante.', sem a continuação sobre o kakemono de Bujun/Furuta Oribe/Hosokawa; só a segunda cópia (aspas curvas) trazia essa continuação, que existe uma única vez no JP.",
+      "correcao": "Removida a repetição completa (parágrafo duplicado sobre Ninsei + par pergunta/resposta duplicado sobre 'explicação por escrito'), mantendo a primeira cópia (estilo de aspas consistente com o resto do arquivo) e anexando a ela a continuação real sobre o kakemono de Bujun que só existia na segunda cópia. Nenhum conteúdo do JP foi perdido; apenas a repetição foi eliminada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "corrupção de nome próprio",
+      "localizacao_jp": "linha 298: 「手島武子という名前が悪いと行者に言われ、清子と変えましたが...」",
+      "localizacao_pt_antes": "'Um asceta disse que o nome Teshima Takeshi era ruim, então mudei para Kiyoko...'",
+      "problema": "武子 (nome feminino, terminação '子'/'ko', mesmo padrão do nome substituto citado logo a seguir, '清子'→'Kiyoko') foi romanizado como 'Takeshi' (nome masculino, kanji diferente, sem '子'). Inconsistente com o próprio contexto do parágrafo seguinte, que trata a paciente como mulher ('ela').",
+      "correcao": "Corrigido para 'Teshima Takeko', mantendo consistência com a leitura padrão de 武子 e com o restante do parágrafo (troca de nome feminino por nome feminino).",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_escaladas": [
+    {
+      "n": 1,
+      "tipo": "terminologia doutrinária incerta - possível inversão 経/緯",
+      "localizacao_jp": "linhas 350 e 354: '以前の緯の御守様' (amuleto/omamori do tipo 緯) e '経の御守様' (amuleto/omamori do tipo 経)",
+      "localizacao_pt": "linhas ~178-181 (arquivo atual): '緯' traduzido como 'amuleto de urdidura' e '経' como 'amuleto de sutra'",
+      "duvida": "O glossário (glossario_traducao.json) define explicitamente '経の文化'→'Cultura Vertical' e '緯の文化'→'Cultura Horizontal' (par 経=vertical/urdidura, 緯=horizontal/trama), consistente com a metáfora 緯経 (weft/warp, EUA/Japão) usada mais cedo neste mesmo documento (linha 43-44 do JP). Isso sugere que a tradução correta seria o oposto do atual ('urdidura' para 経, não para 緯) ou, alternativamente, que 経 aqui pode se referir a 'sutra' (leitura alternativa de 経 em contexto religioso/budista) e não à mesma metáfora tecelã. Não há outra ocorrência desses dois termos combinados com 御守 em nenhum outro arquivo do corpus para servir de precedente. Decisão exige conhecimento doutrinário específico da Igreja Messiânica sobre os tipos de amuleto (goshintai/omamori) referidos, que o agente não tem confiança para resolver sozinho.",
+      "estado": "aguardando_decisao"
+    },
+    {
+      "n": 2,
+      "tipo": "romanização incerta de nome de obra caligráfica",
+      "localizacao_jp": "linha 227: 「帰雲」と書いてあるんですが",
+      "localizacao_pt": "'Estão escritos dois caracteres: \"Kikumo\".'",
+      "duvida": "帰雲 (dois caracteres, 帰='ki'/'kaeru' + 雲='un'/'kumo') foi romanizado como 'Kikumo', que não corresponde a nenhuma leitura on'yomi ou kun'yomi padrão do composto (esperado algo como 'Kiun'). Não é claro se é erro de tradução ou nome consagrado específico dessa obra de caligrafia histórica (do calígrafo chinês Wuzhun/無準) que o agente desconhece. Baixo impacto (nome de uma peça de caligrafia mencionada uma única vez, não afeta doutrina), mas registrado por precaução em vez de presumir a romanização.",
+      "estado": "aguardando_decisao"
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "approved": true,
+    "condicao": "ATUALIZADO (lote 7, verificação 2026-07-09): as 2 pendências (経/緯 par de Omamori vertical/horizontal; 帰雲→Kiun) foram resolvidas com o usuário em 2026-07-08 (ver PENDENCIAS_REVISAO.json, estado 'resolvido' em ambas) e as correções foram confirmadas efetivamente aplicadas no ficheiro de trabalho PT (grep direto: 'Omamori (Ohikari) escrito na vertical/horizontal' nas linhas 180/182 e 'Kiun' na linha 124, sem resíduo de 'Kikumo' nem de 'amuleto de urdidura/sutra'). Sem pendências abertas remanescentes. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "date": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado ao family Gosuiji-roku: no JP deste family, `「pergunta entre aspas」` = Interlocutor; prosa corrida sem aspas = Meishu-Sama (não usa o sinal `――`/`（お伺）` do Gokōwa). Etapa A: mapa de turnos construído lendo o JP inteiro linha a linha (sessão única `［五月一日］`, sem subsessões por data). Etapa B: confirmação por contagem de aspas antes de tocar no PT. Não mexido na pendência 経/緯 já registrada acima (linhas 350/354 do JP) — apenas rotulado, conteúdo preservado como estava.",
+    "etapa_a_mapa_jp": {
+      "metodo_deteccao": "parágrafo (linha não vazia) iniciado por `「` = Interlocutor; caso contrário = Meishu-Sama",
+      "jp_interlocutor": 78,
+      "observacao": "4 turnos de Meishu-Sama no JP se estendem por mais de um parágrafo físico consecutivo (linhas 30-31: resposta sobre 'nove anos/vingança' + Nara, 2 parágrafos; linhas 43-44-45: resposta sobre Bíblia/sete + tratado de paz + loja de miudezas, 3 parágrafos; linhas 204+206: resposta sobre antiquários de Masuda, 2 parágrafos, com linha 205 em branco entre eles; linhas 254+256: resposta sobre explicar através da beleza + esperança/Yumedono, 2 parágrafos) — cada parágrafo físico recebeu seu próprio prefixo `Meishu-Sama:`, conforme convenção já estabelecida na série (precedente: 19520310-御垂示録7号.txt)."
+    },
+    "etapa_b_confirmacao": {
+      "pt_paragrafos_quote_inicial_antes_da_rotulagem": 78,
+      "pt_paragrafos_prosa_antes_da_rotulagem": 83,
+      "delta_vs_jp": "Interlocutor: JP=78, PT=78 — paridade exata, turno a turno, na mesma ordem (heurística de aspas de abertura, verificada linha a linha contra o mapa da Etapa A). Meishu-Sama: 83 parágrafos no PT, número já esperado pela Etapa A (78 turnos + 5 parágrafos extras dos 4 turnos multi-parágrafo = 83), sem excedente nem falta.",
+      "decisao": "Mapa JP confirmado 1:1 com a estrutura já existente no PT (a auditoria semântica linha a linha registrada mais acima neste ficheiro já havia corrigido as divergências reais de conteúdo desta versão; nenhuma correção estrutural adicional foi necessária para a rotulagem)."
+    },
+    "etapa_c_aplicacao": {
+      "acao": "Prefixo `Interlocutor: ` ou `Meishu-Sama: ` aplicado programaticamente a cada um dos 161 parágrafos de diálogo existentes no PT (linha 27 em diante), na ordem em que já se encontravam, sem reordenar nem reescrever conteúdo. Cabeçalho de sessão `[1º de maio]` (linha 25) e bloco de metadados/título (linhas 1-24) preservados sem rótulo.",
+      "resultado": "Interlocutor: 78 parágrafos; Meishu-Sama: 83 parágrafos. Nenhum travessão `—` sobrando no início de linha (checado)."
+    },
+    "problemas_estruturais_encontrados_nesta_etapa": "Nenhum problema novo. Estrutura já validada pela auditoria semântica anterior (correções nº1-3 registradas acima); a rotulagem apenas confirmou a paridade turno a turno e aplicou os prefixos.",
+    "approved_alterado": false
+  }
+}

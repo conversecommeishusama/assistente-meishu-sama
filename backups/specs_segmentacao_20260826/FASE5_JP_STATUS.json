@@ -1,0 +1,6 @@
+{
+  "step": "pausado_pendencia_rotulagem",
+  "state": "parado_manual",
+  "detail": "Orquestrador PARADO deliberadamente (2026-07-13, processo 538601 morto) -- achado real durante varredura dedicada pos-amostragem: respostas curtas citadas do interlocutor (formato 　「...」, entre aspas, indentadas) dentro de dialogos rapidos medico-paciente estao sendo absorvidas dentro do bloco rotulado Meishu-Sama: em vez de ficarem separadas -- viola diretamente o criterio de seguranca do usuario. Confirmado em pelo menos 23 livros, concentracao pesada na serie completa 御教え集 (1号-8号). Aguardando decisao do usuario (retorno previsto: noite de 2026-07-13) antes de reiniciar o orquestrador ou tocar em producao. Ver PENDENCIAS_REVISAO.json.",
+  "updated_at": "2026-07-13T15:40:00+00:00"
+}

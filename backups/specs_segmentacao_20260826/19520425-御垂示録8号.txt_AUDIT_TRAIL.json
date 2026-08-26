@@ -1,0 +1,120 @@
+{
+  "filename": "19520425-御垂示録8号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 720 linhas / PT originalmente 219 linhas, razão 3.3:1, sinal de alerta confirmado). Todo o corpo do JP foi lido linha a linha (offset/limit) e confrontado com o PT correspondente na mesma ordem, cobrindo prefácio + sessão [1º de março] + sessão [1º de abril] até o encerramento do volume.",
+  "gate_mecanico": "gate_gokowa_linha.py rodado contra o ficheiro: jp_interlocutor=0/pt_interlocutor=0 (formato ochishiji_roku não usa os marcadores 「」/―― que o gate foi construído para contar em Gokōwa — resultado inconclusivo, não um PASS real). Não substitui a leitura linha a linha feita aqui; adicionalmente, foi feita contagem manual de turnos JP (parágrafos 「...」 = Interlocutor, parágrafo plano = Meishu-Sama) confrontada 1:1 contra o PT após cada correção, para as duas sessões inteiras (126 turnos na sessão de março, 54 turnos + prefácio na sessão de abril), confirmando alinhamento exato após as correções abaixo.",
+  "summary": {
+    "articles_in_spec": 3,
+    "articles_reviewed": 3,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "monolito estrutural grave",
+      "localizacao": "sessão [1º de março], PT linha 25 original (ficheiro de 219 linhas antes da correção)",
+      "problema": "126 turnos consecutivos (63 perguntas do Interlocutor + 63 respostas de Meishu-Sama, do início da sessão de março até a pergunta sobre 'água de poço') estavam amassados em um único parágrafo gigante de ~24000 caracteres, com falantes marcados apenas por aspas retas embutidas no meio do texto corrido, violando os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist. Isto é exatamente o padrão 'monólito residual' já catalogado em outros volumes desta família (御垂示録4号/24号) e nos '6 livros monolith' da Fase Inicial.",
+      "correcao": "Ficheiro-fonte do parágrafo extraído e re-segmentado programaticamente por âncoras de texto verificadas manualmente contra o JP linha a linha (mapeamento completo dos 126 turnos, JP linhas 26-300), reconstituindo cada turno em sua própria linha, com aspas curvas para o Interlocutor e texto plano para Meishu-Sama, na mesma ordem e sem nenhuma perda de conteúdo (verificado por comparação de texto normalizado antes/depois: diferença de exatamente 3 caracteres, todos artefactos de pontuação já presentes no ficheiro original, sem divergência de caracteres na área de sobreposição).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "duplicação (rascunho truncado + versão completa) + monolito",
+      "localizacao": "sessão [1º de abril], por volta de JP linhas 594-604 (trecho sobre Daijo/Shojo, comunismo/URSS, e o longo monólogo sobre a mina de Minakami)",
+      "problema": "O mesmo trecho JP (início do parágrafo 594, 'そういう頭でものを考えると...大乗というんですよ...') havia sido traduzido DUAS VEZES: uma primeira passagem truncada (parava no meio do parágrafo 594, terminando em '...não digo coisas como “não se deve fazer” ou “pare com isso”.') seguida de uma linha em branco, e depois uma segunda passagem completa que recomeçava do mesmo ponto ('É isso que se chama Daijo...') e prosseguia corretamente por mais ~9 parágrafos JP (595-604) inteiros — mas todos amassados num único parágrafo monolítico de ~20000 caracteres, terminando com a pergunta do turno seguinte ('Se isso for divulgado ao mundo...') igualmente embutida sem quebra. Padrão idêntico ao achado nº 6 já catalogado em 'revisao-paralela-jp-pt.mdc' (rascunho truncado + versão completa da mesma passagem).",
+      "correcao": "Removida a passagem duplicada/truncada (a versão incompleta). Mantida e re-segmentada a versão completa em 9 parágrafos distintos, um por parágrafo JP (594 cont., 595, 596, 597, 598 'Você viu os minerais?', 599, 600, 601, 602/603 'mineralogia/calor geotérmico'), preservando as quebras de parágrafo do JP dentro do mesmo turno de Meishu-Sama (sem falante intermediário), e separada a pergunta final embutida ('Se isso for divulgado ao mundo, será um problema —') como linha própria, antes da resposta já correta que a seguia no ficheiro. Verificado por comparação de texto normalizado: 19740 caracteres antes e depois, sem divergência.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "duplicação (rascunho truncado + versão completa)",
+      "localizacao": "sessão [1º de abril], bloco de 3 perguntas/respostas sobre (a) comprar cemitério por innen, (b) árvore nascendo sob a lápide, (c) vestido de noiva não usado por causa do espírito da irmã falecida (JP linhas 648, 653, 658)",
+      "problema": "As 3 perguntas e 3 respostas deste bloco apareciam DUAS VEZES no PT: uma primeira passagem (pergunta do cemitério completa, mas a resposta do vestido de noiva CORTADA no meio da frase — '...ela veste' — seguida de um fragmento de texto corrompido/sem sentido: 'acabou, e em algum lugar ele está dizendo que quer comprar...'), e uma segunda passagem completa e correta logo em seguida. A pergunta sobre o vestido de noiva da segunda passagem é, adicionalmente, mais completa que a da primeira (inclui a cláusula 'Dizem que ela se agitou', presente no JP '...と暴れたそうでございます' e ausente na primeira versão).",
+      "correcao": "Mantida a pergunta do cemitério (só existia uma vez) e a resposta/pergunta/resposta sobre a árvore (idênticas nas duas passagens, sem diferença de conteúdo). Descartada a resposta truncada e o fragmento corrompido do cemitério. Usada a versão mais completa da pergunta e resposta sobre o vestido de noiva (a da segunda passagem). Nenhum conteúdo real foi perdido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "turno inteiro ausente (perda real de conteúdo)",
+      "localizacao": "sessão [1º de março], após 'Quanto à raposa...' e antes de 'Cerca de três anos.' (JP: 「狐は――」 → 狐は憑いているんですね。仏壇の中にあるのはいけませんね。屏風観音様を祀ってからどのくらいですか。 → 「三年くらいになります」)",
+      "problema": "A resposta de Meishu-Sama entre a pergunta 'Quanto à raposa...' e a resposta do interlocutor 'Cerca de três anos.' estava completamente ausente do PT — descoberto só pela contagem turno-a-turno contra o JP (126 turnos no JP contra 124 linhas não vazias no PT antes da correção), não por diff de caracteres, exatamente o tipo de perda que o gate Δ=0 não detecta.",
+      "correcao": "Traduzido e inserido: 'A raposa está possuindo, sim. Não pode ficar dentro do butsudan. Há quanto tempo você consagrou a Kannon do biombo?' — terminologia (butsudan, Kannon do biombo, raposa) consistente com o resto do parágrafo já traduzido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "turno inteiro ausente (perda real de conteúdo)",
+      "localizacao": "sessão [1º de março], após a pergunta sobre úlcera gástrica/ptose gástrica e antes de 'Entre as escápulas e a coluna...' (JP: どこを浄霊してますか。)",
+      "problema": "Mesma classe de achado nº 4 — resposta de Meishu-Sama ('Onde você está fazendo Johrei?', que motiva a resposta seguinte do interlocutor sobre a localização anatómica) ausente do PT.",
+      "correcao": "Traduzido e inserido: 'Onde você está fazendo o Johrei?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "tipo": "paragrafação incorreta (pergunta embutida no fim do parágrafo anterior)",
+      "localizacao": "sessão [1º de abril], dois pontos: (a) fim do parágrafo sobre montanhas sem vegetação → pergunta do pastor sobre o dilúvio de Noé; (b) fim do parágrafo sobre a bomba atômica/urânio → pergunta sobre comprar um cemitério",
+      "problema": "Em dois pontos, a pergunta seguinte do Interlocutor ficou grudada ao final do parágrafo de resposta anterior, na mesma linha, violando o ponto 6 do checklist (paragrafação 1:1). Descoberto pela mesma contagem turno-a-turno (54 turnos no JP para a cauda da sessão de abril contra 51 linhas no PT antes da correção).",
+      "correcao": "Cada pergunta embutida foi separada para sua própria linha, sem alterar nenhuma palavra do conteúdo.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + data de publicação)",
+      "jp_linhas": "1-25",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de março] completa (126 turnos)",
+      "jp_linhas": "26-576",
+      "decisao": "corrigido - monolito grave (item 1) + 2 turnos ausentes (itens 4, 5); após correção, contagem turno-a-turno 126/126 confirmada",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de abril], monólogo Daijo/mineração (Minakami)",
+      "jp_linhas": "581-604",
+      "decisao": "corrigido - duplicação truncada + monolito (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de abril], mineralogia/dilúvio de Noé/cemitérios/inícios",
+      "jp_linhas": "605-660",
+      "decisao": "corrigido - duplicação (item 3) + paragrafação embutida (item 6)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de abril], serpente/espíritos/criança/costela/fecho mineração",
+      "jp_linhas": "663-720",
+      "decisao": "ok, sem correções necessárias; contagem turno-a-turno 54/54 confirmada (54 = 1 pergunta antes do bloco lido + 53 linhas seguintes)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual": "nenhum encontrado no corpo do texto (grep Unicode CJK só retorna o cabeçalho/nome de ficheiro, esperado)",
+    "duplicatas_de_paragrafo": "varredura automática de início de parágrafo (primeiros 50 caracteres normalizados) no ficheiro final não encontrou mais nenhuma repetição",
+    "contagem_turno_a_turno": "1ª sessão: 126 turnos JP = 126 linhas PT após correção. 2ª sessão (cauda pós-monólogo): 54 turnos JP = 54 linhas PT após correção (1 fora do intervalo analisado + 53 dentro)."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmado desmembramento dos monólitos e inserção dos turnos ausentes. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "method": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (JP: 「pergunta entre aspas」 = Interlocutor; prosa corrida sem aspas = Meishu-Sama)",
+    "reviewer": "agente",
+    "review_date": "2026-07-08",
+    "etapa_a_mapa_jp": "JP lido linha a linha por completo (parágrafo = unidade separada por quebra de linha, com ou sem linha em branco entre turnos). 327 unidades de conteúdo classificadas: 153 「...」 = Interlocutor, 172 prosa corrida = Meishu-Sama, 2 cabeçalhos de sessão ([三月一日], [四月一日]). Confirmados 3 pontos onde o JP tem 2 parágrafos consecutivos de Meishu-Sama (sem quebra) que o PT já unia num único parágrafo físico (todos no trecho sobre arte budista/tigelas de chá/tesouros nacionais) — não é erro, é o mesmo falante continuando, mantido como um único bloco 'Meishu-Sama:'.",
+    "etapa_b_confirmacao": "Contagem final: 153 Interlocutor (Δ=0 contra 153 「」 do JP) e 169 Meishu-Sama (172 parágrafos JP − 3 fundidos nos blocos já mencionados = 169, conferido). Alternância I→M coerente em todo o volume; a única sequência longa de M consecutivos (14 blocos, sessão de 1º de abril, monólogo sobre mineração de Minakami) reflete fielmente o mesmo padrão no JP (não há pergunta do Interlocutor intercalada nesse trecho no original).",
+    "problemas_encontrados_e_corrigidos": [
+      "15 parágrafos de resposta de Meishu-Sama estavam envoltos em aspas curvas “...” (formato reservado a falas do Interlocutor), sobretudo no final da sessão [1º de março] (bloco do vestido/cobra/raposa) e nas 3 últimas respostas da sessão [1º de abril] (fecho do monólogo de mineração). Confirmado contra o JP que todos são resposta de Meishu-Sama (prosa corrida, sem 「」). Aspas externas removidas ao aplicar o rótulo correto.",
+      "1 aspas de abertura “ órfã (sem par de fechamento em lugar algum do parágrafo ou do parágrafo seguinte) no penúltimo bloco de Meishu-Sama (trecho final sobre venda de minério); removida por ser artefacto de formatação, não parte do conteúdo."
+    ],
+    "problemas_estruturais_reais": "Nenhum turno faltando ou fora de ordem encontrado nesta passagem (a estrutura já havia sido corrigida na auditoria anterior de 2026-07-07, ver correcoes_reais_aplicadas acima). O único achado desta etapa foi de formatação (aspas), não de conteúdo ausente/duplicado.",
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a todos os 322 turnos de fala + prefixo 'Meishu-Sama:' isolado no parágrafo fundido ao cabeçalho '[1º de março]'. Cabeçalhos de sessão preservados em linha própria ('[1º de março]', '[1º de abril]'), sem reordenar ou reescrever conteúdo. Formato final: um bloco por parágrafo, separado por linha em branco, seguindo o padrão já usado nos ficheiros Gokōwa-roku já rotulados.",
+    "spec_approved_alterado": false
+  }
+}

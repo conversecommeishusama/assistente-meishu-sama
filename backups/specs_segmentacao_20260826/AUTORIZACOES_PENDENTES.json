@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-07-06T13:10:00Z",
+  "policy": "Fila de decisões que normalmente exigiriam autorização categórica (promoção para produção, alteração de glossário/protocolo, retradução em massa) durante a revisão autônoma da fila editorial_pending. O usuário autorizou explicitamente NUNCA parar a fila esperando resposta: qualquer item deste tipo encontrado por um agente deve ser registrado aqui e o trabalho deve seguir imediatamente para o próximo livro. Revisão em lote pelo usuário só ao final de toda a fila.",
+  "items": [
+    {
+      "ficheiro": "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "assunto": "Romanização de 日本五六七教会 (nome histórico da organização em 1949, editora do colofão) traduzida nesta sessão como 'Igreja Nihon Miroku' por analogia com o glossário já aprovado (五六七→Miroku), mas este termo específico não consta em glossario_traducao.json.",
+      "duvida": "GOSHINSHO.md já registra que a padronização de 五六七→Miroku no corpus geral está pendente de autorização explícita (achado de 2026-07-06 sobre '無肥料栽培法'). Usei a forma consistente com essa convenção já usada no restante deste mesmo arquivo (ex.: 'Miroku-Bosatsu', 'a descida de Miroku'), mas não é uma adição ao glossário — é uma decisão pontual de tradução no colofão deste livro.",
+      "opcoes_consideradas": [
+        "Manter 'Igreja Nihon Miroku' (decisão pontual já aplicada nesta sessão)",
+        "Usar romanização literal 'Nihon Go-Roku-Shichi Kyokai' até decisão de glossário",
+        "Aguardar decisão categórica do usuário sobre 五六七 e propagar a forma escolhida a todo o corpus (inclusive este colofão)"
+      ],
+      "estado": "aguardando_decisao",
+      "at": "2026-07-06T00:00:00Z"
+    },
+    {
+      "ficheiro": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "assunto": "Romanização inconsistente de 日本五六七教 (nome da organização, citado em bylines de testemunhos) dentro do MESMO ficheiro: 'Nihon Miroku-kyo'/'Igreja Miroku do Japão' (~12 ocorrências) vs 'Go-Roku-Shichi Kyo' (2 ocorrências: testemunhos de Isazaki Sayoko e Masuda Mutsu).",
+      "duvida": "GOSHINSHO.md já registra (achado de 2026-07-06 em 無肥料栽培法) que a uniformização de romanizações de 五六七 para o nome da organização está pendente de decisão de glossário/autorização explícita do usuário, mesmo o termo 五六七→Miroku já constando em glossario_traducao.json para uso geral. Esta revisão CONFIRMA que o mesmo padrão de inconsistência (várias formas para a mesma organização dentro de um único livro) também ocorre em 奇蹟物語, reforçando que é sistémico no corpus, não isolado. Não uniformizei unilateralmente para não antecipar uma decisão que afeta todo o acervo.",
+      "opcoes_consideradas": [
+        "Uniformizar todo o corpus para 'Igreja Miroku do Japão' / 'Nihon Miroku-kyo' (forma majoritária já usada neste e em outros volumes revistos) — requer autorização explícita por afetar múltiplos ficheiros",
+        "Uniformizar para a romanização literal mais próxima do nome real usado em 1949 (levantamento histórico necessário)",
+        "Deixar como está neste ficheiro até a decisão categórica ser tomada — opção seguida agora"
+      ],
+      "estado": "aguardando_decisao",
+      "at": "2026-07-06T00:00:00Z"
+    }
+  ]
+}

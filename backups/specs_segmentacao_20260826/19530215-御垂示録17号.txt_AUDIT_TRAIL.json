@@ -1,0 +1,143 @@
+{
+  "filename": "19530215-御垂示録17号.txt",
+  "profile": "ochishiji_roku",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 331 linhas / PT 108 linhas antes da correção, 171 linhas depois), 2 artigos por spec (prefácio + sessão única [1º de fevereiro]). Todo o corpo do JP (linhas 1-331) foi lido e confrontado com o PT correspondente na mesma ordem. Alerta inicial do pedido (razão JP:PT ~3:1) confirmado como sintoma real de um monólito estrutural grave, não falso alarme.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0,
+    "pt_line_count_before": 108,
+    "pt_line_count_after": 171
+  },
+  "achado_estrutural_principal": {
+    "descricao": "Colapso estrutural grave: a linha 108 do PT de trabalho (última linha do ficheiro) continha 117 parágrafos/turnos do JP (linhas 214-331, do meio da conversa sobre 'Salvando os Estados Unidos'/revolução médica até o final do volume, incluindo toda a secção de agricultura natural) amassados em UMA única linha de ~12.500 caracteres, sem quebra de parágrafo nem separação visual entre falantes (aspas do Interlocutor mantidas apenas inline, sem linha própria). Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 8 (outros: ordem/anchor) do checklist.",
+    "verificacao_de_conteudo": "Conferido turno a turno contra o JP linhas 214-331 (55 turnos identificados e mapeados individualmente). Resultado: NENHUM turno estava ausente dentro do monólito em si — o conteúdo colapsado estava, na sua quase totalidade, completo e bem traduzido, apenas sem separação estrutural. Uma frase real estava perdida dentro do primeiro turno do monólito (ver correção 4 abaixo), confirmada por comparação com textos_portugues/19530215-御垂示録17号.txt (produção).",
+    "correcao": "Ficheiro reescrito via script determinístico (não reflow automático de massa — cada uma das 55 fronteiras de turno foi identificada manualmente por leitura do JP e verificada frase a frase antes de decidir o ponto de corte). Turnos do Interlocutor receberam aspas em linha própria; turnos de Meishu-Sama ficaram sem aspas, consistente com a convenção já usada nas linhas 1-107 do próprio ficheiro. Nenhum conteúdo foi reordenado."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início da sessão [1º de fevereiro], antes do atual PT linha 25 (agora linhas 26-31)",
+      "problema": "GRAVE: os 6 primeiros turnos da sessão inteira estavam completamente ausentes do PT de trabalho — a troca inicial sobre a viagem do senhor Higuchi ao Havaí (partida às 23h59 do dia 11 de fevereiro, coincidência com o Dia da Fundação Nacional, 'um minuto antes da meia-noite... parece que há algum significado nisso') e a frase de transição do Interlocutor sobre ter recebido o ensinamento sobre o resfriado. O PT de trabalho começava direto em '今度風邪を引かない人は...' (JP linha 41), pulando JP linhas 28-39 por inteiro.",
+      "busca_realizada": "Localizado em textos_portugues/19530215-御垂示録17号.txt (produção), linhas 5-10, tradução completa e fiel ao JP.",
+      "correcao": "Trecho inserido integralmente a partir da produção, sem alterações (conferido contra JP linhas 28-39, bate integralmente).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "entre o atual PT linha 72 ('Entrar ou não entrar é por conta da pessoa.') e linha 74 (resposta sobre a viagem de 17 a 25 de fevereiro)",
+      "problema": "Pergunta de Meishu-Sama '東北のほうの講演会はいつ頃ですか' (Quando serão as palestras na região de Tohoku?) ausente — o PT saltava direto da fala anterior para a resposta do Interlocutor sobre datas de viagem, sem a pergunta que a motiva.",
+      "busca_realizada": "Confirmado em textos_portugues/19530215-御垂示録17号.txt linha 52, mesma frase.",
+      "correcao": "Linha inserida: 'Quando serão as palestras na região de Tohoku?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "entre o atual PT linha 87 ('...Instituto de Pesquisa em Ciência Moral de Chiba...') e linha 89 ('...também dizia algo como...')",
+      "problema": "Resposta curta de Meishu-Sama 'モラロジーですね' (Moralogia, não é?) ausente entre as duas metades da fala do Interlocutor, que ficaram artificialmente coladas por reticências como se fossem uma única fala interrompida, mascarando a troca de falante real.",
+      "busca_realizada": "Confirmado em textos_portugues/19530215-御垂示録17号.txt linha 67, mesma frase isolada.",
+      "correcao": "Linha inserida entre as duas metades: 'Moralogia, não é?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "dentro do primeiro turno do monólito (atual PT linha 117), após '...É bom irritá-los.'",
+      "problema": "Frase inteira do JP ('あれを見ると、アメリカ医学を攻撃してあります。アメリカ医学をそうとう暴露的に書いてあるのですから、よほど公平な頭にならないと、それが邪魔をして分かるのに困難でしょう。' — 'Olhando para isso, vê-se que ataca a medicina americana. Como está escrito de forma bastante reveladora sobre a medicina americana, a menos que se tenha uma mente muito imparcial, isso atrapalhará e dificultará a compreensão.') estava totalmente ausente, substituída por um fragmento garbled ('Olhando para ele, o mal, o importante é que se torne um problema.') que perdia o sentido do trecho sobre o livro atacar a medicina americana.",
+      "busca_realizada": "Confirmado por comparação com textos_portugues/19530215-御垂示録17号.txt (linha 101), que tem a frase completa (embora a produção tenha seu próprio defeito de duplicação nas linhas 96-101, não usado como fonte além desta frase pontual).",
+      "correcao": "Frase restaurada integralmente no ponto correto; fragmento garbled removido.",
+      "confianca": "alta"
+    }
+  ],
+  "achado_nao_corrigido_producao": {
+    "descricao": "textos_portugues/19530215-御垂示録17号.txt (produção, NÃO alterado por esta revisão conforme instrução) tem o seu próprio artefacto de duplicação nas linhas 96-101: um rascunho truncado do mesmo trecho ('Quanto a Salvando os Estados Unidos... E, ao ver' — corta no meio da frase na linha 99) seguido de uma linha em branco e depois a versão completa e correta do mesmo trecho (linha 101). Confirmado por comparação com o JP que o tópico ocorre apenas uma vez (JP linha 214 em diante) — a versão completa (linha 101) é a correta; a versão truncada (96-99) é lixo de reconstrução duplicado, mesmo padrão descrito em revisao-paralela-jp-pt.mdc item 6. Não corrigido pois está fora do escopo desta tarefa (produção/textos_portugues não deve ser tocada); registrado aqui para referência futura caso a produção seja revisada.",
+    "acao_recomendada_futura": "Ao promover este volume, remover as linhas duplicadas/truncadas 96-99 do ficheiro de produção antes ou durante a promoção."
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Título, fonte de publicação e data corretos."
+    },
+    {
+      "bloco": "Abertura da sessão (Havaí/Higuchi, resfriado)",
+      "jp_linhas": "26-53",
+      "decisao": "corrigido - correção 1 (6 turnos ausentes restaurados)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Livro 'Salvando os Estados Unidos' / URSS / comunismo / previsão 3ª guerra",
+      "jp_linhas": "54-131",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Paragrafação já correta nesta secção antes da revisão; conteúdo completo, sem CJK residual, sem truncamento."
+    },
+    {
+      "bloco": "Bomba atômica / Inglaterra / URSS",
+      "jp_linhas": "63-102",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sol/lua, nova civilização, fiéis da Igreja Messiânica",
+      "jp_linhas": "105-131",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Próximos livros, palestras (Tohoku)",
+      "jp_linhas": "114-131",
+      "decisao": "corrigido - correção 2 (pergunta sobre Tohoku ausente restaurada)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Outras religiões (Rissho Kosei Kai, Konko Kyo, Moralogia, Tenri Kyo, Seicho no Ie)",
+      "jp_linhas": "137-282",
+      "decisao": "corrigido - correção 3 (resposta 'Moralogia' ausente restaurada)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cristianismo, messias, milagres, França",
+      "jp_linhas": "196-213",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "'Salvando os Estados Unidos' cont. / revolução médica / museu de Hakone / Nagoya-Tenri Kyo / Sol-lua-Higuchi (MONÓLITO)",
+      "jp_linhas": "214-283",
+      "decisao": "corrigido - achado estrutural principal + correção 4 (frase sobre medicina americana ausente restaurada)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Agricultura natural, Shinkōkai, viúva de guerra, nabos em Hakone (MONÓLITO, final do volume)",
+      "jp_linhas": "287-331",
+      "decisao": "corrigido - parte do achado estrutural principal, conteúdo já completo, apenas desmembrado",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: 「pergunta entre aspas」 no JP = Interlocutor, texto corrido sem aspas = Meishu-Sama",
+    "data": "2026-07-08",
+    "etapa_a": "JP lido linha a linha na íntegra (331 linhas). Mapeados 70 turnos de Interlocutor (linhas 「」 iniciando parágrafo) e 76 parágrafos de Meishu-Sama (texto corrido). 5 ocorrências de 「」 identificadas como aspas embutidas dentro de narração de Meishu-Sama, não turnos próprios (JP linhas 121, 160, 168, 282, 283 — citação de texto escrito, título de revista, provérbio Ofudesaki, decomposição do nome 'Higuchi'), excluídas da contagem de turnos do Interlocutor. Atenção especial a turnos curtos de Meishu-Sama (ex.: 'Deus estava controlando.', 'Moralogia, não é?', 'É porque não têm força real.') — todos presentes e corretamente não citados.",
+    "etapa_b": "Contagem: 70 blocos 「」-turno no JP == 70 linhas iniciadas por aspas retas no PT (Δ=0). Meishu 76 / Interlocutor 70 = 1,09 (dentro do esperado). Nenhuma aspa curva (“ ‘) encontrada iniciando parágrafo no PT — não há indício de resposta de Meishu-Sama erroneamente citada. Cruzamento turno a turno (JP ordem x PT ordem) conferido integralmente, 1:1, sem desvio — arquivo já estava reordenado/reparado por auditoria anterior (2026-07-07), preservando essa estrutura.",
+    "etapa_c": "Rótulo 'Interlocutor: ' aplicado às 70 linhas com aspas retas; 'Meishu-Sama: ' aplicado às 76 linhas sem aspas de abertura de turno. Nenhum conteúdo reordenado ou reescrito; cabeçalho de sessão '[1º de fevereiro]' preservado.",
+    "resultado": {
+      "turnos_interlocutor": 70,
+      "turnos_meishu_sama": 76,
+      "total_paragrafos_rotulados": 146,
+      "problemas_encontrados": 0,
+      "turnos_ausentes_inseridos": 0
+    }
+  }
+}

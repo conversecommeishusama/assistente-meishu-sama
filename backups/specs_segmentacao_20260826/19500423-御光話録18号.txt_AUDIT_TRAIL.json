@@ -1,0 +1,77 @@
+{
+  "filename": "19500423-御光話録18号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 379 linhas / PT 327 linhas, lido em duas partes), monólito único, do título ao fim. Nota: PENDENCIAS_REVISAO.json já registrava um checkpoint histórico (2026-07-04/05) que tinha melhorado este volume de Δ=8 para Δ=4 e deixado registrado que 'o excesso de 4 no Δ ainda não tem causa localizada' — esta auditoria encontrou e corrigiu a causa raiz desse resíduo.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO encontrada nenhuma inversão real. Mas encontrada uma ocorrência GRAVE (a mais extensa deste lote) do artefacto de duplicação de rótulo: uma única resposta contínua de Meishu-Sama no JP (linhas 373-379, sobre dinheiro impuro em templos/bolsa de valores/doações à Igreja) tinha sido fatiada em 10 blocos PT, 9 deles com o rótulo 'Meishu-Sama:' repetido indevidamente e SEM nenhum turno Interlocutor intermediário.",
+    "achado_relacionado": "Isto explica exatamente o resíduo de Δ=4 deixado sem causa localizada na sessão histórica de 2026-07-04/05 (citada em PENDENCIAS_REVISAO.json) — o gate de contagem por si não sinaliza rótulo duplicado do mesmo falante como discrepância direta na razão I/M, por isso passou despercebido até esta releitura linha a linha completa.",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CJK=0 confirmado (gate mecânico).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 1,
+    "turnos_interlocutor_jp_pt_gate": "72/72 (Δ=0)",
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_de_rotulo_confirmada": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Resposta sobre o poço malfadado na província de Mie / dinheiro impuro em templos e na bolsa de valores / doações recusadas à Igreja (JP linhas 373-379 — uma única resposta contínua e longa de Meishu-Sama, sem nenhuma nova pergunta ―― do início ao fim)",
+      "problema": "GRAVE — 9 duplicações consecutivas do rótulo 'Meishu-Sama:' sem nenhum turno 'Interlocutor:' intermediário, fatiando uma única resposta em 10 blocos falsos. Um dos pontos de corte inclusive coincidia com uma pergunta retórica que Meishu-Sama faz e responde a si mesmo dentro do próprio raciocínio ('É que o dinheiro também tem nuvens espirituais. Por que isso acontece?' seguido por 'Meishu-Sama: Porque os pensamentos...'), o que tornava o erro estruturalmente convincente à primeira vista mas não corresponde a nenhuma pergunta real do Interlocutor no JP.",
+      "correcao": "Mesclados os 10 blocos em um único parágrafo corrido sob um só rótulo 'Meishu-Sama:', removendo as 9 repetições indevidas, sem alterar nenhuma palavra do texto traduzido.",
+      "confianca": "alta — cada um dos 9 pontos de corte foi conferido individualmente contra o JP correspondente (linhas 373-379), confirmando que não há nenhuma pergunta ―― do Interlocutor entre eles"
+    },
+    {
+      "n": 2,
+      "localizacao": "Ficheiro de trabalho JP — não aplicável (title_pt já estava correto: 'Gokōwa-roku nº 18')",
+      "problema": "N/A — verificado por completude, sem correção necessária neste ficheiro",
+      "correcao": "nenhuma",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Formas de culto, filho mais velho/'total 6', escolha de escola/carreira, artes e cinema (extenso: Kabuki, Noh, Ópera, Jazz, diretores/atores)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Casas triangulares/geomancia, ciência x religião, espírito da palavra (Norinaga/Deguchi), Okinawa, idade no mundo espiritual",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Fotografias espirituais, absorção de doença por Tokuichi Miki/linhagem lunar, 'passar a orientação final', crianças inteligentes que morrem cedo, apego entre filhos",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Adoção, animais e sentimentos, cobra/dragão de árvore, tipo sanguíneo/toxinas, casos médicos diversos",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Poços (direção, água boa/ruim, ouro), o poço malfadado da província de Mie e o dinheiro impuro (correção 1 — trecho de maior risco do volume)",
+      "decisao": "corrigido — 9 duplicações de rótulo mescladas (correção 1); conteúdo semântico já estava correto e completo, só a rotulagem estava fragmentada",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19500423-御光話録18号.txt\"",
+    "resultado": "PASS I=72/72 Δ=0 CJK=0 (mantido após a mesclagem, que não altera a contagem de turnos Interlocutor)"
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro revisado linha a linha contra o JP. Encontrada e corrigida a causa raiz de um resíduo de Δ=4 que uma sessão histórica anterior (2026-07-04/05) já tinha detectado mas não conseguido localizar: 9 duplicações consecutivas de rótulo 'Meishu-Sama:' numa única resposta longa, sem nenhuma perda de conteúdo. Nenhuma troca real de falante. Gate PASS."
+  }
+}

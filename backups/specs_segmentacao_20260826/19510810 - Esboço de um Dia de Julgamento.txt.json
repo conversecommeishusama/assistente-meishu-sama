@@ -1,0 +1,47 @@
+{
+ "filename": "19510810 - Esboço de um Dia de Julgamento.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 5→4 (CHUNK_TURNAWARE_QUEUE: 編者のことば e byline 杉並書房主小坂嘉一郎 eram 2 artigos separados por erro do split automático, mescladas em 1; PT pareado manualmente).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "或る日の公判スケッチ",
+   "pt_anchor": "Esboço de um Dia de Julgamento",
+   "notes": "line_author_structure; ratio PT/JP=0.37"
+  },
+  {
+   "kind": "section",
+   "title_jp": "序文に代えて",
+   "title_pt": "",
+   "jp_anchor": "新しき暴力の著者小坂君は、古いジャーナリストで、その方面では知られている人だが、もちろん信者ではない。私も以前から同君をよく知っているので、君が私の法難手記を読んで非常に感動され、独自の力で編集出版し、世に出したいと言われたので、私も承諾し",
+   "pt_anchor": "O Sr. Kosaka, autor de A Nova Violência, é um jornalista antigo",
+   "notes": "2026-08-05 revisao rigorosa: pt_anchor antigo apontava para a linha de citacao editorial, que no JP pertence ao front matter do artigo 0 (titulo + citacao + 序文に代えて + 岡田茂吉). Isso fazia a citacao, o subtitulo \"Em Substituicao ao Prefacio\" e a assinatura \"Mokichi Okada\" vazarem do artigo 0 para o artigo 1. Novo anchor aponta para o inicio real do corpo, alinhando com o jp_anchor."
+  },
+  {
+   "kind": "section",
+   "title_jp": "編者のことば",
+   "title_pt": "",
+   "jp_anchor": "編者のことば",
+   "pt_anchor": "Palavras do Editor",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "或る日の公判スケッチ",
+   "title_pt": "",
+   "jp_anchor": "或る日の公判スケッチ\n\n　私は去る八月十五日",
+   "pt_anchor": "Esboço de um Dia de Julgamento\n\nGostaria de descrever a cena de quando compareci",
+   "notes": "2026-08-05 revisao rigorosa: pt_anchor antigo (\"Esboço de um Dia de Julgamento\", string curta e repetida 5x no arquivo) batia por engano na ocorrencia embutida dentro da citacao entre aspas ao final das Palavras do Editor (idx2), cortando o fim de idx2 e vazando a continuacao das Palavras do Editor para o inicio de idx3. Corrigido para apontar a ocorrencia real do titulo do ensaio."
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

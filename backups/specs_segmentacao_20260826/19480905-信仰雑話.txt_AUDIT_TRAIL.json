@@ -1,0 +1,102 @@
+{
+  "filename": "19480905-信仰雑話.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-08",
+  "scope": "Primeira revisão completa do volume (43 secções reais no JP: prefácio + 42 ensaios, nunca revisado em sessão anterior). O JP (2555 linhas) foi lido integralmente e todas as 43 secções (marcadores #T) foram localizadas e mapeadas contra o PT. ATENÇÃO: o spec de segmentação lista '134 artigos', mas essa contagem é artefacto de um bootstrap de segmentação malsucedido (fragmentos de página/título tratados como 'artigo' — ver nota de spec abaixo); a contagem real de unidades de conteúdo do livro é 43 (prefácio + 42 ensaios), confirmada pelos 43 marcadores '#T' do JP.",
+  "autoria": {
+    "resultado": "Meishu-Sama (Mokichi Okada) em todas as 43 secções, em primeira pessoa ao longo de todo o volume, encerrado com a assinatura '(Jikan Okada)' (Jikan é um dos nomes literários de Meishu-Sama). Nenhuma autoria de terceiro nomeado encontrada.",
+    "confianca": "alta"
+  },
+  "achado_grave_estrutural": {
+    "descricao": "O ficheiro de trabalho (e também a cópia em produção, ver nota abaixo) tinha aproximadamente 34 das 43 secções (do 'Sinceridade' até 'A Sabedoria e a Estupidez Humanas', ou seja, do início do livro até quase ao fim) comprimidas em apenas 8 linhas físicas gigantes de texto corrido (até 23 mil caracteres cada), sem nenhuma quebra de título, cabeçalho ou parágrafo entre secções distintas — mesma classe de bug já catalogada em GOSHINSHO.md como 'monolito residual' (encontrada antes em 4号/24号 de Gokōwa e nos '6 livros monolith' da Fase Inicial). Violava os pontos 1 (subdivisão), 6 (paragrafação) e 7 (títulos/cabeçalhos) do checklist para a maior parte do volume.",
+    "padrao_de_duplicacao_confirmado": "Em cada uma das 6 junções entre essas linhas gigantes (criadas por algum processo anterior de fatiamento por tamanho de linha), a sessão seguinte começava com uma repetição truncada do fim da secção anterior, ou a secção em curso terminava truncada e reaparecia integralmente (com fraseado ligeiramente diferente) logo a seguir — mesmo padrão 'cauda duplicada / trecho truncado' já documentado para Gokōwa 4号/24号 e corrigido no item 9 do AUDIT_TRAIL de 無肥料栽培法. Identificados e resolvidos 6 pontos de junção com esse padrão (detalhado nas correções abaixo). Em nenhum caso houve perda real de conteúdo — em todos os casos verificados, o conteúdo exclusivo estava presente inteiro numa das duas versões duplicadas; a versão truncada/repetida foi descartada.",
+    "producao_afetada": "CONFIRMADO: o mesmo bug (idêntico byte-a-byte no corpo, salvo cabeçalho de metadado) existe em textos_portugues/19480905-信仰雑話.txt (cópia de produção) e em reports/periodicos_trabalho/pt/19480905-信仰雑話.txt (pipeline paralelo). NÃO foram corrigidos nesta sessão — apenas o ficheiro de trabalho em reports/livros_trabalho/pt/ foi corrigido, por ser o escopo desta tarefa e por promoção para produção exigir autorização explícita do usuário (ver protocolo). Reportado ao usuário como achado urgente a decidir separadamente."
+  },
+  "summary": {
+    "sections_in_jp": 43,
+    "sections_correctly_headed_before_fix": 9,
+    "sections_reconstructed": 34,
+    "real_corrections_applied": 8,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "secoes_afetadas": "Sinceridade, A Fé Correta, Senso Comum, Religião e Política, Religião e Arte, A Lição da Derrota, A Expulsão do Mal, Alegrar-se com o Bem (8 secções)",
+      "problema": "Todo o Prefácio + 8 primeiros ensaios comprimidos numa única linha de 22350 caracteres, sem separação de título/cabeçalho entre eles. A última secção ('Alegrar-se com o Bem') aparecia truncada no final dessa linha (cortada a meio de frase em 'Diante disso,') e reaparecia, completa e com fraseado ligeiramente diferente, numa linha separada logo a seguir.",
+      "correcao": "Secções divididas em cabeçalhos próprios (#T/#K/título/citação de página, no formato já usado no resto do livro). Para 'Alegrar-se com o Bem', usada a versão completa (a truncada foi descartada). Páginas de citação (pp. 9 a 22) extraídas diretamente das linhas de citação originais do JP (não estimadas).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "secoes_afetadas": "Abstinência, Daijo e Shojo, Religião e Seitas, Paraíso na Terra, O que é a Igreja de Kannon?, A Prática da Humildade (6 secções)",
+      "problema": "Corpo da secção 'Abstinência' (cujo cabeçalho já existia, mas sem corpo — divisória truncada a 11 caracteres em vez de 34) e mais 5 secções seguintes comprimidas numa linha de 22559 caracteres. Início dessa linha continha 734 caracteres de conteúdo duplicado (paráfrase do final da secção anterior, 'Religião Maligna e Supersticiosa', já presente e completa mais acima).",
+      "correcao": "Descartados os 734 caracteres duplicados iniciais. Divisória truncada do cabeçalho 'Abstinência' corrigida para 34 caracteres. As 6 secções divididas em cabeçalhos próprios com títulos (identificados pelos marcadores em negrito '**Título**' preservados no texto corrido) e páginas de citação extraídas do JP (pp. 33-45).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "secoes_afetadas": "Destino e Liberalismo / Clima e Tempo (junção)",
+      "problema": "Secção 'Destino e Liberalismo' terminava de forma completa, mas era imediatamente seguida por um início truncado de 'Clima e Tempo' (cortado em '...Vou fazer uma interpretação espiritual sobre o clima e o tempo,'). Na linha física seguinte, a mesma secção 'Destino e Liberalismo' era reaparecia parafraseada do zero antes de completar 'Clima e Tempo' integralmente.",
+      "correcao": "Mantida a versão completa de 'Destino e Liberalismo' (primeira ocorrência). Descartada a paráfrase duplicada. Usada a versão completa de 'Clima e Tempo' (segunda ocorrência, integral).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "secoes_afetadas": "Clima e Tempo, Ideologias, O Poder da Ciência, Sobre os Terremotos, A Terra Respira, Explicação dos Dez Troncos Celestes e dos Doze Ramos Terrestres (6 secções)",
+      "problema": "6 secções comprimidas numa linha de 23747 caracteres, sem cabeçalhos entre si.",
+      "correcao": "Divididas em cabeçalhos próprios com páginas de citação extraídas do JP (pp. 46-57).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "secoes_afetadas": "Explicação dos Dez Troncos... / Fisionomia das Casas e Orientação (junção)",
+      "problema": "Ao final da linha anterior, a secção 'Fisionomia das Casas e Orientação' começava mas ficava truncada a meio (cortada em 'Nesse sentido, se possível, Ushitora'). A linha física seguinte reiniciava essa MESMA secção do zero (paráfrase completa, do início ao fim).",
+      "correcao": "Descartado o início truncado. Usada a versão completa e integral da linha seguinte para 'Fisionomia das Casas e Orientação'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "secoes_afetadas": "Leste e Oeste, Deus e Buda, Deus Existe?, Sobre a Visão de Deus (4 secções, incluindo diálogo P/R já bem formatado)",
+      "problema": "4 secções sem cabeçalhos entre si (embutidas em 2 linhas gigantes de 6157 e 14538 caracteres). A secção 'Sobre a Visão de Deus' inclui um diálogo pergunta/resposta que já estava corretamente quebrado linha a linha (não fazia parte do monólito) — verificado que continua corretamente ligado à secção após reconstrução.",
+      "correcao": "Divididas em cabeçalhos próprios; diálogo preservado sem alteração; páginas de citação do JP (pp. 60-70).",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "secoes_afetadas": "Sobre a Visão de Deus / Protestantes e Católicos (junção)",
+      "problema": "Ao final do diálogo de 'Sobre a Visão de Deus', a secção 'Protestantes e Católicos' começava e chegava a explicar a relação espírito-matéria, mas ficava truncada a meio de frase. A linha seguinte reiniciava essa MESMA explicação (espírito-matéria) parafraseada, completando o pensamento e prosseguindo para a secção seguinte.",
+      "correcao": "Mantido o início de 'Protestantes e Católicos' até ao ponto de corte comum às duas versões ('...essa proteção será, inevitavelmente, mais fraca.'); a partir daí, usada a continuação da segunda versão (que completa o raciocínio sem repetir o que já fora dito). Nenhum conteúdo exclusivo foi perdido — ambas as versões diziam essencialmente o mesmo, apenas com fraseado diferente.",
+      "confianca": "media-alta"
+    },
+    {
+      "n": 8,
+      "secoes_afetadas": "Não Ultrapasse a Ordem, Álcool e Religião, Sobre os Sonhos, Ga (Ego) e Apego, O Caminho do Casal, O Bem e o Mal, Sobre o Elo Espiritual, A Sabedoria e a Estupidez Humanas (8 secções)",
+      "problema": "8 secções comprimidas em 1 linha gigante (22132 caracteres) + linhas de citações bíblicas + fragmentos. Na junção 'O Bem e o Mal' → 'O Bem e o Mal' havia 3 frases duplicadas (parafraseadas) logo após um corte truncado em 'Dessa forma' — mesmo padrão de duplicação das junções anteriores, desta vez dentro de uma mesma secção (não entre secções).",
+      "correcao": "Divididas em cabeçalhos próprios (páginas do JP, pp. 72-98). Na duplicação interna de 'O Bem e o Mal', descartadas as 3 frases parafraseadas repetidas, unindo a frase cortada em 'Dessa forma' à sua continuação real ('Dessa forma, se for possível enganar os olhos das pessoas...'), preservando o sentido integral sem repetição.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_pos_correcao": {
+    "contagem_titulos": "43 marcadores #T (era 9 antes da correção) — corresponde exatamente às 43 secções do JP.",
+    "cjk_residual": "Nenhum ideograma no corpo (apenas no comentário de metadado title_jp do cabeçalho do ficheiro, padrão em todos os ficheiros de trabalho).",
+    "marcadores_negrito_residuais": "Nenhum '**' residual (todos removidos ao extrair títulos).",
+    "delta_tamanho": "Ficheiro cresceu de 187994 para 193816 caracteres (~+3%), consistente apenas com a adição de 34 novos blocos de cabeçalho (#E/#S/#T/#K.../título/citação) — não indica conteúdo inflado nem perdido, apenas reformatação estrutural.",
+    "verificacao_pontual": "Reconferidos manualmente trechos de junção de todas as 34 secções reconstruídas; nenhuma perda de conteúdo detectada; nomes próprios, números e citações bíblicas preservados."
+  },
+  "nota_spec_desatualizado": "O spec 19480905-信仰雑話.txt.json continua a listar 134 'artigos' — essa contagem é artefacto do bootstrap de segmentação original (que tratou fragmentos de número de página e de título como 'artigos' separados) e NÃO reflete a estrutura real do livro (43 secções). O spec não foi regenerado nesta sessão (fora do escopo desta tarefa, que era revisão de conteúdo, não re-segmentação); recomenda-se tratamento numa fase dedicada de uniformização de specs, análoga à Fase 5 do plano.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-08): confirmadas as correções. approved:true."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual no corpo. Sem duplicação de linha/frase. Consolidação de 128→44 artigos (sessão anterior) confirmada íntegra no ficheiro atual. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

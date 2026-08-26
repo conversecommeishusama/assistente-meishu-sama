@@ -1,0 +1,1290 @@
+{
+  "total_avaliados": 112,
+  "excluidos_gokowa": true,
+  "resumo": {
+    "segmentacao_ok": 110,
+    "precisa_ressegmentar": 2,
+    "duvidoso_amostrar": 0
+  },
+  "categorias": {
+    "segmentacao_ok": [
+      "19350000-観音講座　（１～７）.txt",
+      "19480701-御讃歌集.txt",
+      "19480905-信仰雑話.txt",
+      "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "19490830-自観叢書第5篇『自観隨談』.txt",
+      "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "19491223-山と水.txt",
+      "19491230-自観叢書第9篇『光への道』.txt",
+      "19500125-自観叢書第15篇『基督と自観師』.txt",
+      "19500130-自観叢書第12篇『自観説話集』.txt",
+      "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "19501030-法難手記.txt",
+      "19501120-世界救世教早わかり.txt",
+      "19510115-自然農法解説.txt",
+      "19510130-笑の泉.txt",
+      "19510225-御教え集6号.txt",
+      "19510520-教えの光.txt",
+      "19510601-世界救世教教義解説.txt",
+      "19510615-一信者の告白.txt",
+      "19510805-新しき暴力.txt",
+      "19510810-或る日の公判スケッチ.txt",
+      "19510815-結核の革命的療法.txt",
+      "19510915-御垂示録1号.txt",
+      "19510920-御教え集1号.txt",
+      "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "19511010-御垂示録2号.txt",
+      "19511025-御教え集2号.txt",
+      "19511125-御垂示録3号.txt",
+      "19511125-御教え集3号.txt",
+      "19511210-御垂示録4号.txt",
+      "19511215-御教え集4号.txt",
+      "19511225-御垂示録5号.txt",
+      "19520115-御教え集5号.txt",
+      "19520125-御垂示録6号.txt",
+      "19520310-御垂示録7号.txt",
+      "19520320-御教え集7号.txt",
+      "19520420-御教え集8号.txt",
+      "19520425-御垂示録8号.txt",
+      "19520515-御垂示録9号.txt",
+      "19520515-御教え集9号.txt",
+      "19520615-御垂示録10号.txt",
+      "19520615-御教え集10号.txt",
+      "19520715-御垂示録11号.txt",
+      "19520715-御教え集11号.txt",
+      "19520815-御教え集12号.txt",
+      "19520825-御垂示録12号.txt",
+      "19520925-御垂示録13号.txt",
+      "19520925-御教え集13号.txt",
+      "19521015-御垂示録14号.txt",
+      "19521015-御教え集14号.txt",
+      "19521115-御垂示録15号.txt",
+      "19521115-御教え集15号.txt",
+      "19521201-結核信仰療法.txt",
+      "19521215-御垂示録16号.txt",
+      "19521215-御教え集16号.txt",
+      "19530101-アメリカを救う.txt",
+      "19530115-御教え集17号.txt",
+      "19530215-御垂示録17号.txt",
+      "19530215-御教え集18号.txt",
+      "19530315-御垂示録18号.txt",
+      "19530315-御教え集19号.txt",
+      "19530415-御垂示録19号.txt",
+      "19530415-御教え集20号.txt",
+      "19530505-革命的増産の自然農法解説.txt",
+      "19530515-御垂示録20号.txt",
+      "19530515-御教え集21号.txt",
+      "19530600-A Story of Ukiyo-e.txt",
+      "19530615-御垂示録21号.txt",
+      "19530615-御教え集22号.txt",
+      "19530715-御垂示録22号.txt",
+      "19530715-御教え集23号.txt",
+      "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "19530815-御垂示録23号.txt",
+      "19530815-御教え集24号.txt",
+      "19530910-世界救世教奇蹟集.txt",
+      "19530915-御垂示録24号.txt",
+      "19530915-御教え集25号.txt",
+      "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "19531015-御垂示録25号.txt",
+      "19531015-御教え集26号.txt",
+      "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "19531115-御垂示録26号.txt",
+      "19531115-御教え集27号.txt",
+      "19531215-御垂示録27号.txt",
+      "19531215-御教え集28号.txt",
+      "19540115-御教え集29号.txt",
+      "19540215-御垂示録28号.txt",
+      "19540215-御教え集30号.txt",
+      "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "19540315-御垂示録29号.txt",
+      "19540315-御教え集31号.txt",
+      "19540415-御垂示録30号.txt",
+      "19540415-御教え集32号.txt",
+      "19540515-御教え集33号.txt",
+      "19540825-天国の福音書.txt",
+      "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt"
+    ],
+    "precisa_ressegmentar": [
+      "19500921-地上天国出来るまで.txt",
+      "19520000-HAKONE ART MUSEUM.txt"
+    ],
+    "duvidoso_amostrar": []
+  },
+  "detalhe": [
+    {
+      "filename": "19350000-観音講座　（１～７）.txt",
+      "split_method": "line_kannon_koza",
+      "n_articles": 8,
+      "jp_chars": 53728,
+      "density": 0.149,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19480701-御讃歌集.txt",
+      "split_method": "line_csv_hymn",
+      "n_articles": 310,
+      "jp_chars": 20044,
+      "density": 15.466,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19480905-信仰雑話.txt",
+      "split_method": "line_shinko",
+      "n_articles": 134,
+      "jp_chars": 69763,
+      "density": 1.921,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 51,
+      "jp_chars": 53626,
+      "density": 0.951,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 81,
+      "jp_chars": 61693,
+      "density": 1.313,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 32,
+      "jp_chars": 45750,
+      "density": 0.699,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 22,
+      "jp_chars": 37699,
+      "density": 0.584,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 22,
+      "jp_chars": 37502,
+      "density": 0.587,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 37,
+      "jp_chars": 50827,
+      "density": 0.728,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 14,
+      "jp_chars": 34543,
+      "density": 0.405,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "split_method": "line_jikan_csv_poems",
+      "n_articles": 487,
+      "jp_chars": 34563,
+      "density": 14.09,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 25,
+      "jp_chars": 42052,
+      "density": 0.595,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491223-山と水.txt",
+      "split_method": "line_yamamizu_date_session",
+      "n_articles": 224,
+      "jp_chars": 82512,
+      "density": 2.715,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19491230-自観叢書第9篇『光への道』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 23,
+      "jp_chars": 25233,
+      "density": 0.912,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19500125-自観叢書第15篇『基督と自観師』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 76,
+      "jp_chars": 31517,
+      "density": 2.411,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 14,
+      "jp_chars": 36369,
+      "density": 0.385,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "split_method": "line_jikan_structural",
+      "n_articles": 10,
+      "jp_chars": 33190,
+      "density": 0.301,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19500921-地上天国出来るまで.txt",
+      "split_method": "line_no_split",
+      "n_articles": 1,
+      "jp_chars": 6751,
+      "density": 0.148,
+      "sinais": [
+        "monolito_nao_trivial(1 trechos em 6751 chars > 5000)"
+      ],
+      "categoria": "precisa_ressegmentar"
+    },
+    {
+      "filename": "19501030-法難手記.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 34,
+      "jp_chars": 49680,
+      "density": 0.684,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19501120-世界救世教早わかり.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 10,
+      "jp_chars": 19848,
+      "density": 0.504,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510115-自然農法解説.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 43,
+      "jp_chars": 26613,
+      "density": 1.616,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510130-笑の泉.txt",
+      "split_method": "line_wara_theme",
+      "n_articles": 25,
+      "jp_chars": 41373,
+      "density": 0.604,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510225-御教え集6号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 12,
+      "jp_chars": 86717,
+      "density": 0.138,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510520-教えの光.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 162,
+      "jp_chars": 47198,
+      "density": 3.432,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510601-世界救世教教義解説.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 15,
+      "jp_chars": 10950,
+      "density": 1.37,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510615-一信者の告白.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 16,
+      "jp_chars": 19738,
+      "density": 0.811,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510805-新しき暴力.txt",
+      "split_method": "line_no_split",
+      "n_articles": 1,
+      "jp_chars": 2492,
+      "density": 0.401,
+      "sinais": [
+        "documento_trivial_curto"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510810-或る日の公判スケッチ.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 5,
+      "jp_chars": 9418,
+      "density": 0.531,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510815-結核の革命的療法.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 194,
+      "jp_chars": 198441,
+      "density": 0.978,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510915-御垂示録1号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 3,
+      "jp_chars": 19454,
+      "density": 0.154,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19510920-御教え集1号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 53218,
+      "density": 0.188,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 11,
+      "jp_chars": 13555,
+      "density": 0.812,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511010-御垂示録2号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 4,
+      "jp_chars": 30256,
+      "density": 0.132,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511025-御教え集2号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 13,
+      "jp_chars": 66102,
+      "density": 0.197,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511125-御垂示録3号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 4,
+      "jp_chars": 32638,
+      "density": 0.123,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511125-御教え集3号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 70197,
+      "density": 0.142,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511210-御垂示録4号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 4,
+      "jp_chars": 40362,
+      "density": 0.099,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511215-御教え集4号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 66803,
+      "density": 0.15,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19511225-御垂示録5号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 4,
+      "jp_chars": 31858,
+      "density": 0.126,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520000-HAKONE ART MUSEUM.txt",
+      "split_method": "line_no_split",
+      "n_articles": 1,
+      "jp_chars": 7390,
+      "density": 0.135,
+      "sinais": [
+        "monolito_nao_trivial(1 trechos em 7390 chars > 5000)"
+      ],
+      "categoria": "precisa_ressegmentar"
+    },
+    {
+      "filename": "19520115-御教え集5号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 66771,
+      "density": 0.15,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520125-御垂示録6号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 4,
+      "jp_chars": 23586,
+      "density": 0.17,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520310-御垂示録7号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16754,
+      "density": 0.119,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520320-御教え集7号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 64769,
+      "density": 0.139,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520420-御教え集8号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 11,
+      "jp_chars": 89549,
+      "density": 0.123,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520425-御垂示録8号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 3,
+      "jp_chars": 33160,
+      "density": 0.09,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520515-御垂示録9号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 14057,
+      "density": 0.142,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520515-御教え集9号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 48218,
+      "density": 0.187,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520615-御垂示録10号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 14670,
+      "density": 0.136,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520615-御教え集10号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 50236,
+      "density": 0.179,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520715-御垂示録11号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 13210,
+      "density": 0.151,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520715-御教え集11号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 70420,
+      "density": 0.128,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520815-御教え集12号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 29756,
+      "density": 0.302,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520825-御垂示録12号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16190,
+      "density": 0.124,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520925-御垂示録13号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 13477,
+      "density": 0.148,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19520925-御教え集13号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 41726,
+      "density": 0.216,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521015-御垂示録14号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 14408,
+      "density": 0.139,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521015-御教え集14号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 11,
+      "jp_chars": 57301,
+      "density": 0.192,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521115-御垂示録15号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 10709,
+      "density": 0.187,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521115-御教え集15号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 42023,
+      "density": 0.214,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521201-結核信仰療法.txt",
+      "split_method": "line_bracket_testimony",
+      "n_articles": 68,
+      "jp_chars": 233784,
+      "density": 0.291,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521215-御垂示録16号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16318,
+      "density": 0.123,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19521215-御教え集16号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 40313,
+      "density": 0.223,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530101-アメリカを救う.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 91,
+      "jp_chars": 130236,
+      "density": 0.699,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530115-御教え集17号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 42698,
+      "density": 0.234,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530215-御垂示録17号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 14826,
+      "density": 0.135,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530215-御教え集18号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 12,
+      "jp_chars": 57337,
+      "density": 0.209,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530315-御垂示録18号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 15749,
+      "density": 0.127,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530315-御教え集19号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 43003,
+      "density": 0.233,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530415-御垂示録19号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 15445,
+      "density": 0.129,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530415-御教え集20号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 11,
+      "jp_chars": 64229,
+      "density": 0.171,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530505-革命的増産の自然農法解説.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 206,
+      "jp_chars": 99491,
+      "density": 2.071,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530515-御垂示録20号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 15720,
+      "density": 0.127,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530515-御教え集21号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 60875,
+      "density": 0.148,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530600-A Story of Ukiyo-e.txt",
+      "split_method": "line_csv_auto",
+      "n_articles": 30,
+      "jp_chars": 34480,
+      "density": 0.87,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530615-御垂示録21号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 17398,
+      "density": 0.115,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530615-御教え集22号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 44984,
+      "density": 0.2,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530715-御垂示録22号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 12688,
+      "density": 0.158,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530715-御教え集23号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 8,
+      "jp_chars": 59003,
+      "density": 0.136,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "split_method": "line_author_structure",
+      "n_articles": 29,
+      "jp_chars": 26038,
+      "density": 1.114,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530815-御垂示録23号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 17921,
+      "density": 0.112,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530815-御教え集24号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 56533,
+      "density": 0.159,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530910-世界救世教奇蹟集.txt",
+      "split_method": "line_miracle",
+      "n_articles": 133,
+      "jp_chars": 275753,
+      "density": 0.482,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530915-御垂示録24号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16055,
+      "density": 0.125,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19530915-御教え集25号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 46538,
+      "density": 0.193,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 12,
+      "jp_chars": 21766,
+      "density": 0.551,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531015-御垂示録25号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 13900,
+      "density": 0.144,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531015-御教え集26号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 11,
+      "jp_chars": 68331,
+      "density": 0.161,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 9,
+      "jp_chars": 16212,
+      "density": 0.555,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531115-御垂示録26号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 15088,
+      "density": 0.133,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531115-御教え集27号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 40192,
+      "density": 0.224,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531215-御垂示録27号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16328,
+      "density": 0.122,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19531215-御教え集28号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 9,
+      "jp_chars": 65956,
+      "density": 0.136,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540115-御教え集29号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 56402,
+      "density": 0.177,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540215-御垂示録28号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 15074,
+      "density": 0.133,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540215-御教え集30号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 12,
+      "jp_chars": 64224,
+      "density": 0.187,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "split_method": "line_no_split",
+      "n_articles": 1,
+      "jp_chars": 2006,
+      "density": 0.499,
+      "sinais": [
+        "documento_trivial_curto"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540315-御垂示録29号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 16612,
+      "density": 0.12,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540315-御教え集31号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 10,
+      "jp_chars": 51832,
+      "density": 0.193,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540415-御垂示録30号.txt",
+      "split_method": "line_ochishiji_date",
+      "n_articles": 2,
+      "jp_chars": 13415,
+      "density": 0.149,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540415-御教え集32号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 11,
+      "jp_chars": 64759,
+      "density": 0.17,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540515-御教え集33号.txt",
+      "split_method": "line_mioshie_date",
+      "n_articles": 7,
+      "jp_chars": 42141,
+      "density": 0.166,
+      "sinais": [],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19540825-天国の福音書.txt",
+      "split_method": "line_shinko_generic",
+      "n_articles": 160,
+      "jp_chars": 95323,
+      "density": 1.679,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 47,
+      "jp_chars": 16991,
+      "density": 2.766,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 52,
+      "jp_chars": 24154,
+      "density": 2.153,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "split_method": "line_no_split",
+      "n_articles": 1,
+      "jp_chars": 1445,
+      "density": 0.692,
+      "sinais": [
+        "documento_trivial_curto"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 62,
+      "jp_chars": 34273,
+      "density": 1.809,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 47,
+      "jp_chars": 30522,
+      "density": 1.54,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 47,
+      "jp_chars": 27516,
+      "density": 1.708,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 65,
+      "jp_chars": 41078,
+      "density": 1.582,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 21,
+      "jp_chars": 26831,
+      "density": 0.783,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    },
+    {
+      "filename": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "split_method": "line_johrei_koza_structural",
+      "n_articles": 39,
+      "jp_chars": 40788,
+      "density": 0.956,
+      "sinais": [
+        "metodo_ja_reconfirmado"
+      ],
+      "categoria": "segmentacao_ok"
+    }
+  ]
+}

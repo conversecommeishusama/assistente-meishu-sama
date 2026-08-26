@@ -1,0 +1,239 @@
+{
+  "filename": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+  "profile": "structured",
+  "method": "jp_line_by_line",
+  "approved": false,
+  "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 29→29. PT pairing pendente.",
+  "segmentation_pass": "jp_line_v2",
+  "previous_article_count": 29,
+  "split_method": "line_author_structure",
+  "bootstrap_warnings": [],
+  "articles": [
+    {
+      "kind": "preface",
+      "title_jp": "序文",
+      "title_pt": "",
+      "jp_anchor": "世界メシヤ教手引（海外入信者のために）",
+      "pt_anchor": "Manual da Igreja Messiânica Mundial (Para a Conversão de Estrangeiros)",
+      "notes": ""
+    },
+    {
+      "kind": "preface",
+      "title_jp": "はしがき",
+      "title_pt": "Prefácio",
+      "jp_anchor": "第二次大戦に敗戦後の日本には数百という新興宗教の異常な乱立を見ました。恐らくは政府当局もその整理に困惑されている事と思います。しかしながら、それは何を物語るものでありましょう、か。苦悩に充ちたこの世相の中にあって人心は何か真の安心立命を得た",
+      "pt_anchor": "Prefácio",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "「世界救世（メシヤ）教」の手引",
+      "title_pt": "Manual da \"Igreja Messiânica Mundial\"",
+      "jp_anchor": "「世界救世（メシヤ）教」の手引",
+      "pt_anchor": "Manual da \"Igreja Messiânica Mundial\"",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "世界救世教の組織",
+      "title_pt": "Organização da Igreja Messiânica Mundial",
+      "jp_anchor": "世界救世教の組織",
+      "pt_anchor": "Organização da Igreja Messiânica Mundial",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "夏の仮本部",
+      "title_pt": "Sede Temporária de Verão",
+      "jp_anchor": "神奈川県足柄下郡宮城野村強羅一三〇〇番地",
+      "pt_anchor": "1300, Gora, Miyagino-mura, Ashigarashimo-gun, Província de Kanagawa",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "理事及び監事　二十七名",
+      "title_pt": "Conselheiros e Auditores, 27 pessoas",
+      "jp_anchor": "理事及び監事　二十七名",
+      "pt_anchor": "Conselheiros e Auditores: 27 pessoas",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "世界救世教の誕生",
+      "title_pt": "O Nascimento da Igreja Messiânica Mundial",
+      "jp_anchor": "世界救世教の誕生",
+      "pt_anchor": "O Nascimento da Igreja Messiânica Mundial",
+      "notes": "ratio PT/JP=5.12"
+    },
+    {
+      "kind": "section",
+      "title_jp": "世界救世教は宗教か",
+      "title_pt": "A Igreja Messiânica Mundial é uma religião?",
+      "jp_anchor": "世界救世教は宗教か",
+      "pt_anchor": "A Igreja Messiânica Mundial é uma religião?",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "今迄の文化は人類を幸福にしたか",
+      "title_pt": "A cultura até hoje tornou a humanidade feliz?",
+      "jp_anchor": "今迄の文化は人類を幸福にしたか",
+      "pt_anchor": "A cultura até hoje tornou a humanidade feliz?",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "救いの道――力の出現",
+      "title_pt": "O Caminho da Salvação – O Surgimento do Poder",
+      "jp_anchor": "救いの道――力の出現",
+      "pt_anchor": "O Caminho da Salvação – O Surgimento do Poder",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "救世（メシヤ）教のモットー",
+      "title_pt": "O Lema da Igreja Messiânica",
+      "jp_anchor": "救世（メシヤ）教のモットー",
+      "pt_anchor": "O Lema da Igreja Messiânica",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "「病気」の解決について",
+      "title_pt": "Sobre a Solução da \"Doença\"",
+      "jp_anchor": "「病気」の解決について",
+      "pt_anchor": "Sobre a Solução da \"Doença\"",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "霊主体従の法則",
+      "title_pt": "A Lei de que o Espírito é Primordial e a Matéria é Secundária",
+      "jp_anchor": "先にも書きましたように現代人は唯物科学の驚くべき進歩に眩惑されて唯物科学が総てを解決するかのごとくに誤信した点に現代文化の根本的誤謬があるのであります。ところがこの世界は眼に映る世界だけではなく、その真に見えざる世界――霊の世界があり、そし",
+      "pt_anchor": "A Lei de que o Espírito é Primordial e a Matéria é Secundária",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "病気は霊の曇り",
+      "title_pt": "A Doença é a Nuvem Espiritual",
+      "jp_anchor": "肉体の一部に病気があれは霊体のその部分に「曇り」があるのであります。本来ならは霊体は透明体であるべきはずでありますがそこに不透明な部分が発生する、これを「曇り」と申しますが、これは霊自体に発生するものと体から移写されるものとあるのであります",
+      "pt_anchor": "A Doença é a Nuvem Espiritual",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "病気は浄化作用",
+      "title_pt": "A Doença é um Processo de Purificação",
+      "jp_anchor": "現代の人間は誰でも体内に純粋な血と肉だけではなく不純物――つまり濁った血と膿とを持っております。これら不純物を「毒素」といいます。現代の人間に毒素のない人は一人もありません。従って真の健康者は一人もないのであります。",
+      "pt_anchor": "A Doença é um Processo de Purificação",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "人体は総合体",
+      "title_pt": "O corpo humano é um conjunto integrado",
+      "jp_anchor": "人間の身体は一つの総合体として働いているのであって、一部ずつバラバラの活動をしているものではありません。故に、一部分に病気が起きてもそこだけの病気ではなくて、他の部分にその根本原因があるのであります。例えば、眼が悪い場合必ず後頭部延髄付近に",
+      "pt_anchor": "O corpo humano é um conjunto integrado",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "霊界の存在",
+      "title_pt": "A existência do mundo espiritual",
+      "jp_anchor": "先にも書きましたように眼に見える世界の裏に霊の世界があります。明主様は霊界の存在を神示によりお知りになると同時に、二十数年にわたり霊の研究をされて、つぶさにその実相を把握されたのであります。唯物教育を受けた現代人には、見えない世界の事等信じ",
+      "pt_anchor": "A existência do mundo espiritual",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "霊的病気",
+      "title_pt": "Doenças espirituais",
+      "jp_anchor": "癲癇、小児麻痺等の原因は医学では全く不明とされておりますが、これらは全く霊的な病気でありますから唯物的には解るはずもないのであります。原因は先祖の中で変死をしたり、急に脳溢血で斃れたりした霊がある場合、その霊は霊界で救われぬため無意識に肉体",
+      "pt_anchor": "Doenças espirituais",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "「争」の解決について",
+      "title_pt": "Sobre a solução do \"conflito\"",
+      "jp_anchor": "「争」の解決について",
+      "pt_anchor": "Sobre a solução do \"conflito\"",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "毒素と性格",
+      "title_pt": "Toxinas e caráter",
+      "jp_anchor": "「争」はいかにして解決が付くかについて述べる前に、人間の毒素が性格に及ぼす影響が並々ならぬものである事について書かなけれはなりません。簡単な例を挙げますと、耳下腺付近が固い人（毒素が多いと固くなっています）は強情になり勝ちでありますし、又短",
+      "pt_anchor": "Toxinas e caráter",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "毒素と犯罪",
+      "title_pt": "Toxinas e crime",
+      "jp_anchor": "ここで書かなければならない重要な事は毒素と犯罪の関係であります。不良児、犯罪常習犯等は一種の精神異常者でありますが、彼等の首の周囲を検べて見ますと必らず毒素が多く、従って頭部にも多い事に気が付きます。首の周りに毒素が多いとそれが頭に行く血管",
+      "pt_anchor": "Toxinas e crime",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "戦争について",
+      "title_pt": "Sobre a guerra",
+      "jp_anchor": "争いの最も大きいものが戦争であります。国家は個人の集りでありますが、国民の一人一人が平和愛好国民となればその国は好戦国ではなくなりましょう。戦争の起る場合の多くは少数が戦争業者がいてこれを起し、国民はその犠牲となる場合が多いのでありますが、",
+      "pt_anchor": "Sobre a guerra",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "「貧の解決について」",
+      "title_pt": "Sobre a solução da \"pobreza\"",
+      "jp_anchor": "「貧の解決について」",
+      "pt_anchor": "Sobre a solução da \"pobreza\"",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "自然農法",
+      "title_pt": "Método da Agricultura Natural",
+      "jp_anchor": "今一つ国家の経済問題解決の鍵は食糧増産にあります。これは大問題でありますから、国家としても早くから色々な方法で研究し、人肥、金肥を用い、虫害駆除のため新しい消毒剤を用いて努力しておりますが思うような効果が挙らないばかりか、年々病虫害は増え、",
+      "pt_anchor": "Método da Agricultura Natural",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "世の終り",
+      "title_pt": "O Fim do Mundo",
+      "jp_anchor": "以上ザッと述べました事によって救世教の説くところの病貧争解決の根本が大体お解りになった事と思いますが、これ程重大な事がなぜ今日まで人類に解らず、数千年の永い間恐るべき誤謬を犯して来たか、そして今日救世教の明主様によって初めて明らかにされるに",
+      "pt_anchor": "O Fim do Mundo",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "大建設",
+      "title_pt": "A Grande Construção",
+      "jp_anchor": "以上述べましたように世界には大破壊が正に起らんとしておりますがそれは新文明世界建設のためであって、今は破壊と建設が同時に行われている時であります。破壊は曇りあるものの上に自然発生する自己清算でありますが、建設は神の力に救われた者の心身に既に",
+      "pt_anchor": "A Grande Construção",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "神霊力の行使",
+      "title_pt": "O Exercício do Poder Espiritual Divino",
+      "jp_anchor": "最後に、救世教の明主様が発揮され、信者がそれを受けついで驚くべき奇蹟を行うその不思議な「力」はどこから出て、またどのような方法で行使されるかという事を御説明いたしましょう。ただこれはいまだかつてなかった不思議な事でありますからお信じになりに",
+      "pt_anchor": "O Exercício do Poder Espiritual Divino",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "むすび",
+      "title_pt": "Conclusão",
+      "jp_anchor": "宗教に妨害は付物であり、それが偉大なものであればある程妨害は強いものであります。キリストの十字架を筆頭に、法然、親鸞、日蓮等の法難もそうでありますが、これは霊界は昼の世界の確立までは正邪の戦いが続けられるのであり、邪神にとっては光の世界の近",
+      "pt_anchor": "Conclusão",
+      "notes": ""
+    }
+  ],
+  "audited_at": "2026-07-17T10:42:55Z",
+  "audit_method": "jp_first_content_pair"
+}

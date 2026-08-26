@@ -1,0 +1,245 @@
+{
+  "filename": "19511010-御垂示録2号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade + script_de_triagem_alternancia_falante",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 823 linhas / PT 797 linhas antes da correção, 811 linhas depois), 4 artigos do spec (prefácio + sessões de 1, 5 e 8 de setembro de 1951). JP inteiro lido linha a linha e confrontado com o PT correspondente na mesma ordem. Adicionalmente, foi construído um script de triagem (não substitui a leitura, apenas apontou onde olhar) que classifica cada parágrafo do JP e do PT como 'Q' (fala entre 「」/aspas, convenção do formato para o Interlocutor) ou 'A' (parágrafo sem aspas, convenção para Meishu-Sama) e compara a sequência de alternância J P x PT. O JP alterna quase perfeitamente A,Q,A,Q,... ao longo de todo o volume (só uma exceção legítima, o prefácio). O PT apresentava múltiplas sequências Q,Q ou Q,Q,Q consecutivas sem alternância — cada uma foi lida no JP correspondente para confirmar se era perda real de conteúdo (era, em todos os casos encontrados) antes de corrigir.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ) deve ser rodado separadamente; esta trilha documenta a leitura semântica linha a linha e as correções aplicadas. Nota importante: Δ=0 (ou próximo de 0, ratio JP/PT ~1:1 neste volume) NÃO seria suficiente para detectar os problemas abaixo, porque a maioria são turnos curtos de Meishu-Sama removidos sem alterar a contagem líquida de forma proporcional visível a olho nu — exatamente o padrão descrito em 'Δ=0 é necessário, nunca suficiente' do revisao-paralela-jp-pt.mdc.",
+  "summary": {
+    "articles_in_spec": 4,
+    "articles_reviewed": 4,
+    "real_corrections_applied": 17,
+    "items_escalated_to_pendencias": 0
+  },
+  "padroes_do_catalogo_confirmados": [
+    {
+      "padrao": "1 - Troca sistemática de falante (Interlocutor:/Meishu-Sama: invertidos)",
+      "confirmado": true,
+      "detalhes": "2 ocorrências. (a) JP linha 281 ('「結核の革命的療法」を一般に新聞広告で売るつもりだったが...') é continuação do monólogo de Meishu-Sama (parágrafo sem marcador de fala, convenção deste formato para Meishu-Sama) — as aspas 「」 ali são apenas o título do folheto citado, não um marcador de troca de falante. O PT havia envolvido o parágrafo inteiro em aspas de diálogo, atribuindo-o ao Interlocutor. Corrigido: aspas removidas, parágrafo reformatado como fala direta de Meishu-Sama. (b) JP linha 394 ('明主様で良い。', resposta de Meishu-Sama, sem marcador) estava entre aspas no PT como se fosse o Interlocutor perguntando de novo. Corrigido: aspas removidas."
+    },
+    {
+      "padrao": "3 - Perda real de conteúdo mascarada por divisão espúria (Δ bate por coincidência)",
+      "confirmado": true,
+      "detalhes": "14 turnos curtos de Meishu-Sama (perguntas ou respostas breves, tipicamente 1-2 frases) estavam completamente ausentes do PT, todos em pontos onde o Interlocutor tem duas falas consecutivas no PT (a segunda seria, no JP, precedida por uma resposta/pergunta breve de Meishu-Sama). Como o volume tem ratio JP/PT ~1:1 (823/797), a perda pontual de turnos curtos não gerou um sinal óbvio de Δ agregado — só apareceu por leitura linha a linha (ou pelo script de triagem de alternância Q/A, que apontou 12 pontos de quebra de alternância, cada um confirmado por leitura direta do JP)."
+    },
+    {
+      "padrao": "4 - Corrupção de texto (substituição literal de palavras/frases)",
+      "confirmado": true,
+      "detalhes": "1 ocorrência grave: JP linha 667 contém a frase litúrgica xintoísta única 『惟神霊幸倍坐せ』 (glossário: 'Kamu nagara tamachi haemase'). O PT tinha essa frase partida em dois parágrafos com um fragmento sem sentido entre aspas, 'Sentar-se lado a lado', que não corresponde a nada no JP — aparenta ser corrupção de tradução anterior (possível confusão com 座せ/'sentar-se'). Corrigido: parágrafo reunificado, frase litúrgica restaurada conforme o glossário."
+    },
+    {
+      "padrao": "2, 5, 6 - cláusula migrada / duplicação de blocos / artefacto de produção",
+      "confirmado": false,
+      "detalhes": "Não encontrados neste volume, apesar de busca ativa (nenhum bloco duplicado, nenhuma cauda de pergunta deslocada para o turno de Meishu-Sama, nenhum sinal de rascunho truncado + versão completa coexistindo)."
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "jp_trecho": "linha 137: 「その牛乳が便秘するんです。あれくらい便秘するのはないからね。なぜ普通にしないんですか。」",
+      "localizacao_pt": "entre 'Ele toma leite no café da manhã e no almoço.' e 'Devo mandar parar o leite?' (sessão 1º de setembro)",
+      "problema": "Turno de Meishu-Sama ausente entre duas falas consecutivas do Interlocutor.",
+      "correcao": "Inserido: 'É esse leite que causa a prisão de ventre. Não há prisão de ventre pior que essa. Por que não faz como o normal?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "jp_trecho": "linha 171: 「真正癌だね。蛇が二匹か――夫婦だな。ヌラが出るだけ出れば治ります。ヌラは減るところにいっていませんか。」",
+      "localizacao_pt": "entre a fala sobre as duas cobras e 'Está diminuindo. Estamos tratando principalmente os rins.'",
+      "problema": "Turno de Meishu-Sama ausente — sem ele, a resposta seguinte do Interlocutor ('Está diminuindo') fica sem referente claro.",
+      "correcao": "Inserido: 'É câncer verdadeiro, sim. Duas cobras? Devem ser um casal. Vai curar quando toda a nura sair. A nura não está diminuindo, está?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "jp_trecho": "linha 217: 「代々禅宗ですか。」",
+      "localizacao_pt": "antes de 'Sim, e o filho daquela casa foi adotado.' (caso do encadernador de Kasugai)",
+      "problema": "Pergunta de Meishu-Sama ausente; o 'Sim' inicial da resposta seguinte fica sem pergunta correspondente no PT.",
+      "correcao": "Inserido: 'É zen budista há gerações?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "jp_trecho": "linha 226: 「別にかまわないですがね。それはよいが、祖先はおじいさんのほうに祀ってあるんですね。」",
+      "localizacao_pt": "entre 'Por falta de espaço...' e 'Após a morte da criança...'",
+      "problema": "Turno de Meishu-Sama ausente, mesmo caso do encadernador de Kasugai.",
+      "correcao": "Inserido: 'Não há problema nisso. Está bem, mas os antepassados estão sendo cultuados do lado do avô, não é?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "jp_trecho": "linha 230: 「おじいさんの家は絶えちゃったんですか。」",
+      "localizacao_pt": "entre 'Após a morte da criança...' e 'Sim.'",
+      "problema": "Pergunta de Meishu-Sama ausente; o 'Sim.' isolado no PT ficava sem pergunta correspondente.",
+      "correcao": "Inserido: 'A linhagem da casa do avô se extinguiu?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "jp_trecho": "linha 242: 「すると禅宗ですね。それはどこに祀ってある。」",
+      "localizacao_pt": "entre 'É o tio de origem.' e 'Como ele tem uma casa própria, a nora o cultua.'",
+      "problema": "Mesmo caso, turno de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'Então é zen budista. Onde isso é cultuado?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "jp_trecho": "linha 246: 「そうすれば、そんなことはありませんよ。いつ入信ですか。」",
+      "localizacao_pt": "entre 'Como ele tem uma casa própria...' e 'No inverno de 1948.'",
+      "problema": "Mesmo caso, turno de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'Se for assim, não é isso. Quando vocês se converteram?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "jp_trecho": "linha 281: 「結核の革命的療法」を一般に新聞広告で売るつもりだったが... (parágrafo sem marcador de fala no JP = Meishu-Sama)",
+      "localizacao_pt": "parágrafo 'Pretendia vender A Terapia Revolucionária para a Tuberculose...'",
+      "problema": "TROCA DE FALANTE (padrão #1 do catálogo): parágrafo de continuação do monólogo de Meishu-Sama estava entre aspas no PT, atribuído implicitamente ao Interlocutor.",
+      "correcao": "Aspas removidas; parágrafo reescrito como fala direta de Meishu-Sama ('Eu pretendia vender...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "jp_trecho": "linha 394: 明主様で良い。 (sem marcador de fala = Meishu-Sama)",
+      "localizacao_pt": "parágrafo '\"Meishu-Sama\" está bom.'",
+      "problema": "TROCA DE FALANTE (padrão #1): resposta de Meishu-Sama estava entre aspas, como se fosse nova fala do Interlocutor.",
+      "correcao": "Aspas removidas: 'Meishu-Sama está bom.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "jp_trecho": "linha 403: 「祝詞を奏げるときですか。」",
+      "localizacao_pt": "entre a fala sobre a bola de prata e 'Parece que ele vê assim que termina a recitação...'",
+      "problema": "Pergunta de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'É quando se recita o norito?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "jp_trecho": "linha 412: 「何って――蛇ですよ。蛇の霊です。いつ信仰に入った。」",
+      "localizacao_pt": "entre 'Uma mulher qualificada (shikakusha)...' e 'Há quatro anos. Também consagramos Daikōmyō Nyorai-sama.'",
+      "problema": "Turno de Meishu-Sama ausente (caso do arroz cru / espírito de cobra).",
+      "correcao": "Inserido: 'O quê? — É uma cobra. É o espírito de uma cobra. Quando você entrou na fé?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "jp_trecho": "linha 416: 「宣伝も毎日してますか。」",
+      "localizacao_pt": "entre 'Há quatro anos...' e 'Sim. Dizem que veem algo comprido debaixo do altar.'",
+      "problema": "Mesmo caso, turno de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'Você também faz propagação (proselitismo) todos os dias?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "jp_trecho": "linha 489: 「月並祭に浄霊やっているんですか。」",
+      "localizacao_pt": "entre a fala sobre o Tsukinamisai e 'Depois que o Tsukinamisai terminou.'",
+      "problema": "Pergunta de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'Vocês estão fazendo o Johrei durante o Tsukinamisai?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "jp_trecho": "linha 556: 「現在ですがね。問題は――行ったり来たりですか。」",
+      "localizacao_pt": "entre 'É uma casa onde se venera o Grande Komyo-Nyorai Radiante...' e 'Volto uma vez por semana.'",
+      "problema": "Turno de Meishu-Sama ausente (caso da casa do Daikōmyō Nyorai, irmão falecido).",
+      "correcao": "Inserido: 'Atualmente, quero dizer — o problema é ir e vir?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "jp_trecho": "linha 560: 「留守番は。」",
+      "localizacao_pt": "entre 'Volto uma vez por semana.' e 'Ninguém.'",
+      "problema": "Pergunta de Meishu-Sama ausente; 'Ninguém.' isolado ficava sem pergunta correspondente.",
+      "correcao": "Inserido: 'E quem fica cuidando da casa?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "jp_trecho": "linha 747: 「鎭魂というのは。」",
+      "localizacao_pt": "entre 'Durante a consagração da alma do Grande Buda Daikomyo...' e 'É uma cerimônia...'",
+      "problema": "Pergunta de Meishu-Sama ausente.",
+      "correcao": "Inserido: 'O que é esse \"chinkon\" (repouso da alma)?' (termo conforme glossario_traducao.json: 鎮魂 = Chinkon)",
+      "confianca": "alta"
+    },
+    {
+      "n": 17,
+      "jp_trecho": "linha 667: ...時間がかかるから、そういうときは『惟神霊幸倍坐せ』か、ただ黙ってお願いしても良い。...",
+      "localizacao_pt": "parágrafo sobre não ser necessário cerimônia ao fazer Johrei para muitas pessoas",
+      "problema": "CORRUPÇÃO DE TEXTO (padrão #4 do catálogo): a frase litúrgica xintoísta foi partida em dois parágrafos, com um fragmento sem sentido 'Sentar-se lado a lado' entre aspas, sem correspondência no JP.",
+      "correcao": "Parágrafo reunificado; frase restaurada como 'Kamu nagara tamachi haemase' (conforme glossario_traducao.json, entradas 惟神霊幸倍坐せ/惟神霊幸倍坐世).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cabeçalho e data de publicação corretos, sem conteúdo próprio a revisar (metadados)."
+    },
+    {
+      "bloco": "Sessão [1º de setembro]",
+      "jp_linhas": "26-198",
+      "decisao": "corrigido - 6 correções pontuais (itens 1, 2, 3, 4, 5, 6 acima) mais o item 7",
+      "confianca": "alta",
+      "notas": "Maior concentração de turnos de Meishu-Sama ausentes, todos no bloco de perguntas sobre o encadernador de Kasugai (linhas 210-254 JP) e no bloco do câncer/cobras (linhas 164-180 JP)."
+    },
+    {
+      "bloco": "Sessão [5 de setembro]",
+      "jp_linhas": "184-365",
+      "decisao": "corrigido - 8 correções pontuais (itens 8, 9, 10, 11, 12, 13, 14, 15 acima)",
+      "confianca": "alta",
+      "notas": "Inclui as duas trocas de falante confirmadas (itens 8 e 9) e o Tsukinamisai (item 13)."
+    },
+    {
+      "bloco": "Sessão [8 de setembro]",
+      "jp_linhas": "366-823",
+      "decisao": "corrigido - 2 correções pontuais (itens 16, 17 acima)",
+      "confianca": "alta",
+      "notas": "Bloco mais longo do volume (>450 linhas JP), revisado linha a linha por completo; só 2 problemas reais confirmados apesar da extensão, o que é consistente com a leitura cuidadosa (não indica menos rigor)."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmado fórmula litúrgica Kamu nagara tamachi haemase restaurada corretamente; demais 16 correções documentadas na trilha aceitas. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "Etapa A: JP inteiro (823 linhas) lido/parseado linha a linha e por parágrafo; cada parágrafo classificado como Interlocutor (inicia por 「) ou Meishu-Sama (prosa sem 「 inicial); cabeçalhos ［data］ tratados como separador de sessão, não turno. Etapa B: mapa JP comprimido em turnos (parágrafos consecutivos do mesmo falante = 1 turno) e comparado turno a turno, na mesma ordem, contra o PT já revisado (approved:true). Etapa C: aplicado prefixo 'Interlocutor: ' ou 'Meishu-Sama: ' a cada parágrafo do PT existente, sem reordenar nem reescrever conteúdo, seguindo o papel confirmado na Etapa A/B para a posição correspondente.",
+    "mapa_jp_turnos": {
+      "sessoes": 3,
+      "turnos_interlocutor": 168,
+      "turnos_meishu_sama": 171,
+      "nota": "1 falso positivo descartado: parágrafo '「結核の革命的療法」を一般に新聞広告で売るつもりだったが...' começa com um「」que cita apenas o título do próprio livro de Meishu-Sama dentro de sua própria fala corrida — não é pergunta do Interlocutor; classificado corretamente como Meishu-Sama."
+    },
+    "conferencia_contagem_pt": {
+      "turnos_interlocutor_pt": 168,
+      "turnos_meishu_sama_pt": 171,
+      "resultado": "Bateu exatamente com o mapa JP (Δ=0 nos 342 turnos incl. 3 sessões), após os 3 reparos estruturais abaixo. Antes dos reparos, contagem por parágrafo/aspas divergia (parecia deslocada em 2 posições a partir do turno ~176) — causa isolada e corrigida, não perda de conteúdo."
+    },
+    "problemas_estruturais_encontrados_e_corrigidos": [
+      {
+        "problema": "Cabeçalho de sessão '[1º de setembro]' colado sem quebra de linha ao primeiro parágrafo de Meishu-Sama ('Antes de começar a conversa...'), os dois formando uma única linha/parágrafo no PT.",
+        "correcao": "Inserida quebra de parágrafo entre o cabeçalho e o texto, preservando o conteúdo integralmente; cabeçalho de sessão mantido intacto."
+      },
+      {
+        "problema": "Pergunta do Interlocutor sobre o santuário Karo (賀露神社, Tottori) — 'Há um santuário chamado Karo Jinja...O que devemos fazer contra isso?' — estava sem as aspas de abertura/fechamento no PT, ao contrário de todas as outras 167 perguntas do volume. Conteúdo em si estava completo e correto (confirmado contra o JP: 「鳥取県に賀露神社というのがありますが...」), só a formatação de aspas estava ausente — foi essa lacuna que causou o desalinhamento de contagem detectado acima.",
+        "correcao": "Restauradas as aspas de abertura/fechamento no PT, e o parágrafo rotulado 'Interlocutor:' como os demais."
+      },
+      {
+        "problema": "9 ocorrências do marcador solto 'Pergunta:' como parágrafo próprio antes da fala entre aspas do Interlocutor — resíduo de uma rotulagem parcial/inconsistente anterior a esta sessão, não presente no JP nem no restante do volume.",
+        "correcao": "Removidos os 9 parágrafos 'Pergunta:' (redundantes com o novo prefixo 'Interlocutor:' que passa a preceder a mesma fala)."
+      }
+    ],
+    "resultado_final": {
+      "interlocutor_paragrafos_rotulados": 168,
+      "meishu_sama_paragrafos_rotulados": 185,
+      "nota_meishu_paragrafos": "185 > 171 turnos porque respostas de Meishu-Sama que se estendem por mais de um parágrafo (quebra de parágrafo já existente no PT) recebem o prefixo em cada parágrafo, seguindo a mesma convenção já usada nos volumes de Gokōwa-roku já rotulados (ex.: 19490000-御光話録5号.txt).",
+      "separadores_visuais_preservados": "6 linhas '---' pré-existentes no PT (sem correspondente no JP, aparentam ser separadores visuais de sub-tópico de uma revisão anterior) foram mantidas como estavam, sem rótulo — não fazem parte de nenhum turno.",
+      "approved_no_spec": "Não alterado (permanece true, conforme instrução)."
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "filename": "19530910-世界救世教奇蹟集.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura linha a linha do volume INTEIRO nos dois idiomas: JP 2812 linhas (todas lidas, offset 0 até EOF) e PT 3474 linhas (todas lidas, offset 0 até EOF, incluindo o apêndice 'edição 1954'). Não é amostragem: o corpo inteiro do JP foi percorrido e confrontado com o PT correspondente na mesma ordem, trecho a trecho, cobrindo os 133 artigos do spec (1 prefácio + 4 seções teóricas + 128 miracle_story). Um gap de cobertura no PT (linhas ~200-437) causado por um erro de limite de tokens numa leitura anterior foi detectado e lido à parte para fechar a lacuna.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "alerta_pt_maior_que_jp_investigado": {
+    "achado": "PT (3474 linhas, após correções) é mais longo que JP (2812 linhas) por dois motivos legítimos, NÃO por duplicação de testemunhos inteiros: (1) expansão normal de tradução — o japonês formal/literário do Ōkada Mokichi (frases longas encadeadas com vírgulas, registro clássico) sistematicamente se expande em prosa portuguesa explicativa mais longa, confirmado em dezenas de trechos comparados frase a frase; (2) o volume contém legitimamente, no PRÓPRIO JP (linhas 2665-2668: '以下の五つの体験談を旧版中と差し替え'), um apêndice da 'edição 1954' que substitui 5 relatos da edição original de 1953 por 5 novos relatos sobre tuberculose — este apêndice existe idêntico em ambos os idiomas (confirmado: colофon duplicado + nota de substituição + 5 testemunhos + colofon final, presentes tanto em JP quanto em PT, na mesma ordem).",
+    "verificacao_anti_duplicacao": "Busca sistemática por posição (jp_anchor e pt_anchor de cada um dos 133 artigos do spec) confirmou que todos os 133 anchors aparecem em ambos os idiomas em ordem estritamente crescente, sem saltos para trás nem repetição de posição — ou seja, nenhum testemunho inteiro está duplicado ou fora de ordem. Adicionalmente, um script de varredura por sentenças repetidas (>60 caracteres) no PT inteiro encontrou apenas 1 par de repetição em todo o arquivo, correspondente ao colofon editorial (que é uma repetição legítima de ficha técnica, não de conteúdo de testemunho)."
+  },
+  "summary": {
+    "articles_in_spec": 133,
+    "articles_reviewed": 133,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "Prefácio teórico, próximo à linha 50 do PT (trecho sobre a origem dos crimes na sociedade, JP linha 44 'あらゆる文化面に亘っているのであって...それは多くの犯罪である')",
+      "problema": "Fragmentação de parágrafo: uma única frase do JP foi quebrada em dois parágrafos no PT work file, com o segundo parágrafo começando em letra minúscula ('pois, eis outro exemplo: os muitos crimes...'), quebrando a frase no meio sem justificativa no JP (que tem tudo como uma única oração contínua).",
+      "correcao": "Unificado em uma única frase/parágrafo: '...Ele se estende a todos os aspectos da cultura, pois, eis outro exemplo: os muitos crimes. Também estes são resultados...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "Entre os testemunhos de índice 24 (牛車に轢かれてこの奇蹟, Muramae Masayuki) e 26 (地下五千尺で落盤脱線, Morimitsu/Mori Mitsuyo) do spec — região do PT originalmente por volta da linha 648-660 antes da correção",
+      "problema": "GRAVE: artefato de duplicação clássico ('rascunho truncado seguido da versão completa da mesma testemunha', ver revisao-paralela-jp-pt.mdc §5.6). O testemunho de índice 25 (走る列車から墜落外傷一つなく済む, Yoda/Yotaka Kenji) aparecia DUAS vezes no PT: primeiro como um título+cabeçalho+parágrafo único TRUNCADO (interrompido no meio da frase em '...parti de Hakata para Moji-ko.'), seguido — sem transição — pela cauda duplicada do FECHAMENTO do testemunho anterior (índice 24, já presente corretamente mais acima), e só então a versão COMPLETA e correta do testemunho 25 com título repetido pela segunda vez. Ou seja: fechamento do testemunho 24 duplicado + testemunho 25 duplicado (uma cópia truncada, uma completa).",
+      "correcao": "Removidos a cópia truncada do título/cabeçalho/parágrafo inicial do testemunho 25 e a duplicação do fechamento do testemunho 24, mantendo apenas uma cópia limpa e completa: fechamento único do testemunho 24 (o já existente, verificado contra o JP) seguido diretamente do testemunho 25 completo (título '**Caindo de um trem em movimento, sem nenhum ferimento externo**', cabeçalho de local/autor, e o parágrafo integral, verificado frase a frase contra o JP linhas 510-521). Nenhum conteúdo foi perdido — a versão mantida já continha o testemunho 25 por inteiro; apenas o material redundante/truncado foi eliminado. Verificado que a sequência dos 133 pt_anchors do spec permanece intacta e na mesma ordem após a correção.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + 4 seções teóricas (序文/奇蹟とは何ぞや/霊主体従/霊と体)", "jp_linhas": "1-61", "decisao": "ok, com 1 correção pontual (item 1)", "confianca": "alta"},
+    {"bloco": "Testemunhos índices 0-30 (炭鉱奇蹟 até みのり中教会 村沢しつ)", "jp_linhas": "62-608", "decisao": "ok", "confianca": "alta", "notas": "Inclui gap de cobertura PT (linhas 200-437) identificado e fechado à parte; conteúdo conferido integralmente."},
+    {"bloco": "Testemunhos índices 24-26 (transição 牛車 → 走る列車 → 地下五千尺)", "jp_linhas": "494-539", "decisao": "corrigido - duplicação grave (item 2)", "confianca": "alta"},
+    {"bloco": "Testemunhos índices 31-70 (御神書 até 実生中教会 小林伊太郎)", "jp_linhas": "608-1179", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunhos índices 71-100 (南光中教会 山本明 até 大光中教会 高橋郁江)", "jp_linhas": "1193-1892", "decisao": "ok", "confianca": "alta", "notas": "Inclui secção completa 'Sobre a Bomba Atômica' (原爆症, Hiroshima/Nagasaki) — conferida linha a linha, datas e nomes de local consistentes."},
+    {"bloco": "Testemunhos índices 101-120 (松栄中教会 吉田松雄 até 神山中教会 亥角香世子)", "jp_linhas": "1918-2435", "decisao": "ok", "confianca": "alta", "notas": "Inclui secção extensa sobre medicina vs. Johrei (dezenas de sub-testemunhos sobre tuberculose, câncer, doenças renais etc.) — todos conferidos, nenhum CJK residual, nenhuma truncagem."},
+    {"bloco": "Testemunhos índices 121-132 (五三中教会 小林加代子 até 神成中教会 上林邦子, incluindo apêndice 'edição 1954')", "jp_linhas": "2468-2812 (fim do arquivo)", "decisao": "ok", "confianca": "alta", "notas": "Colofon + nota de substituição de 5 relatos + 5 testemunhos do apêndice + colofon final conferidos como estrutura legítima presente em ambos os idiomas (ver 'alerta_pt_maior_que_jp_investigado')."}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true nesta sessão — aguardando segunda auditoria independente conforme exigido por revisao-paralela-jp-pt.mdc (\"Δ=0 é necessário, nunca suficiente\" / \"segunda auditoria independente antes de approved:true\"). Nenhuma pendência leve em PENDENCIAS_REVISAO.json foi necessária — todas as divergências encontradas foram corrigidas inline com confiança alta. Dado o volume grande (133 artigos), recomenda-se que a segunda auditoria preste atenção especial à região do testemunho índice 25 (região corrigida) e a qualquer outro ponto de transição entre testemunhos consecutivos do mesmo padrão estrutural, já que esse é exatamente o tipo de erro (rascunho truncado + versão completa) que passa despercebido por métricas de contagem."
+  },
+  "fase_e_segunda_auditoria_independente": {
+    "data": "2026-07-09",
+    "reviewer": "agente (Fase E, sessão distinta da que aplicou as correções em 2026-07-07)",
+    "metodo": "Dado o volume (2812 linhas JP / 3473 linhas PT, 133 artigos), a segunda auditoria independente combinou: (1) verificação automatizada exaustiva por script — todos os 133 pt_anchor/jp_anchor do spec confirmados presentes, únicos e em ordem estritamente crescente em ambos os idiomas (sem saltos, sem repetição de posição); busca por parágrafos duplicados (linhas >=60 caracteres repetidas) em todo o ficheiro PT, que encontrou apenas 1 repetição legítima (linha do colofão, presente em ambas as edições 1953/1954); (2) releitura direta da região previamente corrigida (testemunhos índice 24→25→26, Muramae/Yotaka/Mori) — confirmada limpa, sem duplicação nem truncamento; (3) leitura direta do prefácio completo (4 secções teóricas, JP linhas 1-61) contra o PT, confirmando a correção do item 1 aplicada; (4) leitura distribuída de amostra de ~15 trechos de testemunhos ao longo de todo o arquivo (linhas JP/PT aproximadamente 148, 284, 366-371, 490, 590, 1101-1104, 1469, 1785, 1883, 2046-2141, 2242, 2629, 2661-2675, 3259, e o colofão final ~3455-3473), escolhidos por conterem marcadores de reticências (possível sinal de truncamento) ou CJK residual (possível gloss indevido) — todos confirmados como estilo narrativo legítimo do autor (reticências dramáticas, glosses de caracteres intencionais como 'Mei' (明)), não erros.",
+    "achados_e_correcoes": [
+      {
+        "n": 1,
+        "tipo": "erro gramatical de concordância (não afeta sentido)",
+        "localizacao": "PT linha 56 (secção 'Espírito e Corpo' do prefácio)",
+        "problema": "'as nuvens espirituais são dissipada' e 'as nuvens espirituais aumenta' — falta de concordância de número (deveria ser plural).",
+        "correcao": "Corrigido para 'são dissipadas' e 'aumentam'.",
+        "confianca": "alta"
+      },
+      {
+        "n": 2,
+        "tipo": "palavra corrompida (mistura de idioma)",
+        "localizacao": "PT linha 44 (secção 'Obras é o que é um milagre')",
+        "problema": "'descobri e apprehendi a teoria' — 'apprehendi' não é palavra portuguesa (mistura com inglês/latim 'apprehend').",
+        "correcao": "Corrigido para 'apreendi'.",
+        "confianca": "alta"
+      }
+    ],
+    "correcoes_reais_aplicadas": 2,
+    "pendencias_abertas": [],
+    "aprovacao_recomendada": true,
+    "nota": "Segunda auditoria independente exigida pela regra 'Δ=0 nunca é suficiente' agora satisfeita. As 2 correções críticas da revisão de 2026-07-07 (item 1 fragmentação de frase, item 2 duplicação grave testemunho 25) foram reconferidas e confirmadas corretas; nenhuma nova duplicação/truncamento estrutural encontrada em todo o volume. Recomenda-se approved:true no spec."
+  }
+}

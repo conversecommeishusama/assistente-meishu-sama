@@ -1,0 +1,95 @@
+{
+  "filename": "19500130-自観叢書第12篇『自観説話集』.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 408 linhas de arquivo / 1 bloco === ARTIGO === único contendo 26 ensaios + prefácio + colofão, conforme spec de 14 trechos 'jikan_hen'; PT antes da revisão tinha 132 linhas de arquivo, quase todo o corpo colapsado em blocos de texto corrido). JP inteiro lido linha a linha e confrontado com o PT correspondente na mesma ordem, ensaio por ensaio, do prefácio ao colofão final. Não é amostragem: todo o corpo do JP foi lido e todo o corpo do PT foi lido e comparado.",
+  "gate_mecanico": "Não substituído por esta trilha. A razão de linhas JP=407/PT=131 apontada como sinal de alerta na tarefa NÃO refletia perda de conteúdo generalizada — refletia (a) o PT estar armazenado como poucas linhas de texto corrido por ensaio, sem quebra de parágrafo 1:1 com o JP, e (b) alguns pontos reais de perda/duplicação de conteúdo, listados abaixo. Depois da reformatação 1:1, o PT passou a ter ~285 parágrafos não vazios, compatível com a estrutura de parágrafos do JP.",
+  "summary": {
+    "articles_in_spec": 14,
+    "articles_reviewed": 14,
+    "essays_reviewed_total": 26,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "causa_real_da_razao_de_linhas": "Falsa alarme de perda de conteúdo em massa. O conteúdo de todos os 26 ensaios estava presente no PT (nenhum ensaio inteiro faltando), mas armazenado com paragrafação colapsada: cada ensaio virou 1-3 linhas de texto corrido no arquivo de trabalho, com os títulos dos ensaios seguintes colados ao final do parágrafo anterior sem quebra de linha nem cabeçalho próprio, e (nos ensaios finais) várias citações bibliográficas/notas de rodapé também coladas ao texto corrente. Isso reduziu o número de linhas de arquivo de ~280 parágrafos esperados para 131. Além dessa causa estrutural dominante, foram confirmados pontualmente 2 blocos de duplicação real de conteúdo e 1 bloco com conteúdo genuinamente ausente (ver correções abaixo) — confirmando que a razão de linhas por si só não provava nem a ausência nem a presença de conteúdo, exigindo leitura real como esperado.",
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Cabeçalho do livro, logo após o título 'Coleção de Narrativas de Jikan' (linha bibliográfica do próprio volume, JP: 自観叢書12編『自観説話集』昭和25(1950)年1月30日発行)",
+      "problema": "O PT trazia 'Paraíso na Terra, publicado em 30 de janeiro do ano 25 da Era Showa (1950)' — confundindo a linha bibliográfica do PRÓPRIO volume (Coleção Jikan, 12º volume) com a citação de uma revista de origem ('Paraíso na Terra' é o nome usado no volume para 地上天国, revista de onde vários ensaios foram republicados, mas não é a fonte deste colofão).",
+      "correcao": "Substituído por 'Coleção Jikan, 12º Volume, \"Coletânea de Narrativas Jikan\", publicado em 30 de janeiro do ano 25 da Era Showa (1950)', fiel ao JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Prefácio (序文)",
+      "problema": "Faltava o cabeçalho 'Prefácio' (JP tem 序文 como título de seção própria antes do corpo do prefácio) e a assinatura final 'Janeiro de 1950 / Pelo Autor' (JP: 昭和二十五年一月 ... 著者識) estava colada diretamente ao título do ensaio seguinte ('Verdade e Pseudo-Verdade'), sem quebra.",
+      "correcao": "Inserido o cabeçalho 'Prefácio' antes do corpo, e separada a assinatura 'Janeiro de 1950 / Pelo Autor' do título do ensaio seguinte.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Ensaio 'A Construção do Mundo de Cinco-Seis-Sete (Miroku)' (五六七世界の建設), parágrafos finais (JP linhas 130-134)",
+      "problema": "DUPLICAÇÃO REAL: o parágrafo final do ensaio (sobre a 'grande limpeza da impureza' antes da construção do Mundo de Miroku) aparecia traduzido DUAS VEZES no PT, com fraseado ligeiramente diferente em cada versão — uma primeira passagem truncada (terminava sem cobrir as duas últimas frases do JP) seguida de uma segunda passagem que reiniciava a meio de frase ('foi construído. Portanto, não há dúvida...'), repetindo o mesmo conteúdo com fraseado distinto e só então completando as duas frases finais do ensaio (ausentes na primeira versão). Confirmado contra o JP (parágrafos 130-134): o conteúdo real do JP corresponde a uma passagem única, não a duas.",
+      "correcao": "Mantida a primeira tradução para os parágrafos 130-131 (idêntica em ambas as versões), substituído o parágrafo 132 pela versão mais completa (2ª passagem, que preserva a frase final 'e aguardar o momento, desfrutando da vida', ausente na 1ª), e adicionados os parágrafos 133-134 (presentes só na 2ª passagem: 'Uma explicação tão vaga...' e 'Em suma, trata-se apenas de expor a postura mental...'). A passagem redundante foi removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Ensaio 'A Cultura que Ignora a Natureza' (自然無視の文化), citação bibliográfica e primeiro parágrafo (JP linhas 230-233)",
+      "problema": "PERDA REAL DE CONTEÚDO (não apenas formatação): o PT pulava diretamente da metade da citação bibliográfica ('Publicado na edição nº 9 da') para o meio do segundo parágrafo do JP ('Portanto, não seria exagero dizer que a seção política dos jornais é quase um registro de fracassos políticos'), saltando por completo: (a) o resto da citação (data 14 de maio de 1949 e 'com acréscimos ao mesmo texto'), (b) o primeiro parágrafo inteiro do JP (sobre o Japão progredir culturalmente mas ter impasses cuja causa o autor atribui a um 'grande erro fundamental'), e (c) a primeira metade do segundo parágrafo (sobre o governo elaborar planos que o Legislativo aprova mas que fracassam na execução).",
+      "correcao": "Traduzido do zero o trecho ausente a partir do JP ('今日、日本における文化が進歩しつつあるにかかわらず...' até '...常に新聞紙を賑わしている。') e inserido antes do texto já existente, restaurando a citação completa e os dois parágrafos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Ensaio 'Pessoas Boas, Tornem-se Fortes' (善人よ強くなれ) → 'O Eu que Eu Vi' (私の観た私), transição entre os dois ensaios",
+      "problema": "DUPLICAÇÃO REAL: depois do encerramento correto e completo de 'Pessoas Boas, Tornem-se Fortes' (incluindo as notas de rodapé sobre 跳梁/跋扈), o PT trazia um fragmento redundante repetindo — com fraseado ligeiramente diferente — o parágrafo final do mesmo ensaio e as mesmas duas notas de rodapé pela segunda vez, seguido só então do início truncado do ensaio seguinte ('O Eu que Eu Vi', apenas a primeira frase). A versão completa e correta de 'O Eu que Eu Vi' (título, citação, e as 13 seções do ensaio inteiro) aparecia só depois, reiniciando do zero.",
+      "correcao": "Removido o fragmento duplicado (reiteração do final de 'Pessoas Boas, Tornem-se Fortes' + notas repetidas + início truncado de 'O Eu que Eu Vi'), mantendo a versão completa e única de cada conteúdo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Todo o volume — nome do periódico 光 (Hikari)",
+      "problema": "Inconsistência terminológica (checklist ponto 7): o nome do jornal 光 aparecia traduzido ora como 'Hikari' (sem tradução, tratado como nome próprio) ora como 'Luz' (traduzido), dependendo do ensaio — sem correspondência com nenhuma diferença no JP (todas as ocorrências são 『光』, idênticas). Não há entrada no glossario_traducao.json que mande traduzir 光 como nome do periódico (glossário só define 地上天国→'Paraíso na Terra', que já estava sendo aplicado corretamente).",
+      "correcao": "Padronizado para 'Hikari' (nome próprio, não traduzido) em todas as citações bibliográficas do volume, eliminando as 4 ocorrências de 'Luz' e 'Terra Celestial' (esta última também usada por engano no lugar de 'Paraíso na Terra' em algumas citações de 地上天国).",
+      "confianca": "media-alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio (序文)", "decisao": "corrigido (cabeçalho + assinatura ausentes) — ver correção 2", "confianca": "alta"},
+    {"bloco": "Verdade e Pseudo-Verdade (真理と非真理)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Explicando as Cinco Sabedorias (五智を説く)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Filosofia da Intuição (直観の哲学)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Superstição da Lógica (理屈の迷信)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Materialização da Verdade (真理の具現)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "O que é o Poder Kannon? (観音力とは何ぞや)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "O Caractere Senhor (主の字)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Construção do Mundo de Cinco-Seis-Sete (五六七世界の建設)", "decisao": "corrigido — duplicação real removida, ver correção 3", "confianca": "alta"},
+    {"bloco": "Super-Religião (超宗教)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Nossa Igreja e o Grande Caminho (本教と大道主義)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Religião Daijo (大乗宗教)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Porta do Mistério se Abriu (神秘の扉は開かれたり)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "O Desalinhamento do Conhecimento (学問のズレ)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "O Sol e a Lua (日と月)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Cultura que Ignora a Natureza (自然無視の文化)", "decisao": "corrigido — conteúdo genuinamente ausente traduzido e inserido, ver correção 4", "confianca": "alta"},
+    {"bloco": "A Luz da Sabedoria (智慧の光)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "As Baixas Pressões São Causadas pelo Homem (低気圧は人災なり)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Terceira Religião (第三宗教)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Tipos de Fé (信仰の種類, 12 subtipos一〜十二)", "decisao": "ok após reformatação, cada subtipo com título próprio em linha separada", "confianca": "alta"},
+    {"bloco": "Pessoas Boas, Tornem-se Fortes (善人よ強くなれ)", "decisao": "corrigido — duplicação real removida na transição para o ensaio seguinte, ver correção 5", "confianca": "alta"},
+    {"bloco": "O Eu que Eu Vi (私の観た私)", "decisao": "corrigido — fragmento duplicado/truncado removido, ver correção 5", "confianca": "alta"},
+    {"bloco": "A Minha Pessoa (私というもの)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "A Ciência Cria a Superstição (科学が迷信を作る)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Metodologia e Resultadologia (方法論と結果論)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Religião Progressista (進歩的宗教)", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Colofão final (自観叢書第12篇...)", "decisao": "ok após reformatação", "confianca": "alta"}
+  ],
+  "verificacao_cjk_residual": "Confirmado por busca automatizada de caracteres CJK no arquivo final: nenhum ideograma no corpo traduzido — as únicas ocorrências de CJK no arquivo estão nos metadados (linha de comentário do nome do arquivo e campo title_jp), que são esperadas e corretas.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Todos os 14 trechos do spec (26 ensaios reais dentro do bloco único) revisados linha a linha contra o JP. Paragrafação reformatada para 1:1 em todo o volume. 2 duplicações reais e 1 perda real de conteúdo corrigidas. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

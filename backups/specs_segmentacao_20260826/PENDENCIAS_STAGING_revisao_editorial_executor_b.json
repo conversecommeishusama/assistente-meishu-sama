@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "ficheiro": "19520420-御教え集8号.txt",
+      "at": "2026-07-20T08:20:34Z",
+      "tipo": "decisao_terminologia",
+      "nota": "Termo ス (Su) aparece 2x no mesmo arquivo com glosas diferentes: 'Cultura do Mestre (Su)' (5 de março) e 'Cultura do Su (centro)' (7 de março), ambos referindo ao mesmo conceito doutrinário (o ponto/centro que Meishu-Sama contrasta com o 'círculo'). Não há entrada para 主/ス em glossario_traducao.json. Preservei ambas as formas como estavam no original (não decidi unificar sozinho, é conteúdo doutrinário, não erro óbvio de gramática) — decisão pendente do usuário: qual é a glosa canônica ('Mestre' vs 'centro') para uso consistente em publicação e, futuramente, no glossário de busca."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "decisao_terminologia",
+      "nota": "No ensaio 'Tuberculose', o texto usa 'hidrogênio impuro/puro' enquanto 'Elemento Fogo' (mesmo parágrafo) segue a forma do glossário de busca (水素→'Elemento Água'). Não alterado por não haver acesso ao JP para confirmar se é o mesmo termo ou distinção deliberada (registro científico vs. místico) — verificar contra o original e decidir forma canônica."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "decisao_terminologia",
+      "nota": "'círculocírculo' e 'Dr. círculocírculo' aparecem como nome de pessoa/médico em pelo menos 2 testemunhos (blocos de revisão paralela linhas 42-73 e 74-97) — provável renderização literal do marcador japonês de anonimização ○○. Um dos dois blocos substituiu por 'Dr. ○○' por clareza tipográfica, o outro manteve a forma literal — ficaram inconsistentes entre si dentro do mesmo livro. Decisão pendente: qual forma adotar como padrão do corpus (manter 'círculocírculo' ou normalizar para 'Dr. ○○'/'Sr. ○○')."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "revisao_gramatical_incerta",
+      "nota": "No testemunho de Fukushima Katsu, o interlocutor é apresentado como 'o senhor da cidade de Taisha' e, mais adiante, sem nova apresentação, passa a ser chamado 'o senhor Sakuchu' — possível nome faltando na primeira menção no original já publicado (não é erro introduzido nesta revisão). Mantido como está; vale conferir contra o texto em japonês se há perda de conteúdo na segmentação/tradução anterior."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "decisao_terminologia",
+      "nota": "'cirurgia plástica' (testemunho de Yoshio Iseri) vs. 'Cirurgia Ortopédica' (título do testemunho de Misako Harada) parecem ser o mesmo termo japonês (provavelmente 整形手術) traduzido de duas formas diferentes já no corpus existente. Não alterado (decisão de terminologia, não de fluidez) — sinalizado para decisão de uniformização."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "decisao_terminologia",
+      "nota": "No testemunho 'Meu filho foi salvo da paralisia infantil...', a oração citada aparece como 'Kamunagara tamachi waemase', divergindo levemente da forma fixada em glossario_traducao.json para a mesma fórmula (惟神霊幸倍坐世 → 'Kamu nagara tamachi haemase', com espaço em 'Kamu nagara' e 'haemase' em vez de 'waemase'). Por ser citação direta de fala/oração entre aspas, não foi alterado (regra de não mexer em citações) — mas pode ser o mesmo padrão de romanização inconsistente já registrado como pendente em outras partes do projeto (ex. 五六七→Miroku); verificar se deve ser corrigido."
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T10:52:15Z",
+      "tipo": "revisao_gramatical_incerta",
+      "nota": "O fechamento 'Meishu-Sama, muito obrigado' aparece de forma invariavelmente masculina ao final de quase todos os testemunhos do livro, mesmo quando a autora é mulher (ex. Sadako Nitta, Yukuko Nagano, Oyanagi Umeko). Em um caso (Akai Teruko) a mesma autora usa 'obrigada' uma vez e 'obrigado' mais adiante no mesmo relato. Não uniformizado por poder ser fórmula fixa/litúrgica do corpus (não flexionada por gênero) — genuinamente incerto se é convenção deliberada ou erro de concordância recorrente; se for erro, recomenda-se correção sistemática em todo o acervo, não só neste livro."
+    },
+    {
+      "ficheiro": "19530515-御教え集21号.txt",
+      "at": "2026-07-20T11:53:52Z",
+      "tipo": "revisao_gramatical_incerta",
+      "nota": "Na secção de 16 de abril, o texto traz: 'Podem ocorrer coisas como \"koshike\" (provavelmente uma condição de pele).' — koshike (こしけ) é termo médico japonês para corrimento vaginal/leucorreia, não condição de pele; todo o parágrafo ao redor é sobre doenças ginecológicas. O parêntese parece ser um palpite de tradução automática que ficou no texto por engano, não parte do discurso de Meishu-Sama. Fora do escopo desta revisão (é conteúdo/tradução, não gramática/prosa) — não alterado, mantido como está no original. Sinalizar para a revisão semântica (Fase G) ou correção pontual de tradução."
+    },
+    {
+      "ficheiro": "19530615-御垂示録21号.txt",
+      "at": "2026-07-20T15:47:08Z",
+      "tipo": "revisao_gramatical_incerta",
+      "nota": "Provável erro de tradução pré-existente (não introduzido nesta revisão, mantido por estar fora do escopo de gramática/prosa): o texto diz 'o fato de eu, Watanabe, ter que dar esta advertência mostra que você...', o que atribui o nome 'Watanabe' ao próprio Meishu-Sama (primeira pessoa). Conferido contra o JP (reports/livros_trabalho/jp/19530615-御垂示録21号.txt, linha 60): '渡辺さんが、こうして私が注意を与えなければならないということは、あなたが...' — a estrutura indica que Watanabe-san é a TERCEIRA PESSOA sendo repreendida (o interlocutor presente, tratado como 'você'/'あなた' no resto do parágrafo, inclusive 'o pecado atual do senhor Watanabe'), não Meishu-Sama. Tradução correta seria algo como 'o fato de eu ter que dar esta advertência ao senhor Watanabe mostra que você...'. Mantido como está (revisão editorial não corrige sentido/conteúdo); sinalizar para revisão semântica (Fase G) ou correção pontual de tradução."
+    }
+  ]
+}

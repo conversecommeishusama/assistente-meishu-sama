@@ -1,0 +1,210 @@
+{
+  "filename": "19530915-御教え集25号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro. JP 1 bloco === ARTIGO === (spec profile mioshie_shu, 9 trechos por data: 5,6,7,15,16,17,25,26,27 de agosto de Showa 28/1953, mais colofão final). Todo o corpo JP (linhas 1-206) foi lido e mapeado parágrafo a parágrafo (tamanho e conteúdo) e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data. Não foi usada contagem/ratio como prova - cada trecho JP foi identificado por conteúdo e localizado no PT antes de considerar 'presente'.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "date_sections_in_spec": 9,
+    "date_sections_reviewed": 9,
+    "real_corrections_applied": 12,
+    "items_escalated_to_pendencias": 0,
+    "content_loss_found": false,
+    "content_duplication_found": false,
+    "note": "Ao contrário de outros volumes irmãos (24号, Gokōwa), este volume NÃO apresentou perda de conteúdo nem cauda duplicada em monólito. O padrão de bug confirmado aqui foi outro: cabeçalho de data duplicado dentro do parágrafo seguinte, e dois nomes próprios corrompidos."
+  },
+  "mapa_estrutural_jp_confirmado": {
+    "metodo": "Todo parágrafo JP (delimitado por linha em branco) foi listado com linha, tamanho em caracteres e primeiras palavras; cada um foi localizado no PT por conteúdo (não por posição). Nenhum parágrafo JP ficou sem correspondente PT.",
+    "secoes": [
+      {
+        "data": "5 de agosto",
+        "jp_linhas": "20-36",
+        "paragrafos_jp": 4,
+        "citacoes_jp": 2,
+        "status": "completo"
+      },
+      {
+        "data": "6 de agosto",
+        "jp_linhas": "38-51",
+        "paragrafos_jp": 5,
+        "citacoes_jp": 2,
+        "status": "completo"
+      },
+      {
+        "data": "7 de agosto",
+        "jp_linhas": "55-68",
+        "paragrafos_jp": 6,
+        "citacoes_jp": 2,
+        "status": "completo"
+      },
+      {
+        "data": "15 de agosto",
+        "jp_linhas": "71-83",
+        "paragrafos_jp": 6,
+        "citacoes_jp": 2,
+        "status": "completo"
+      },
+      {
+        "data": "16 de agosto",
+        "jp_linhas": "87-100",
+        "paragrafos_jp": 6,
+        "citacoes_jp": 2,
+        "status": "completo - reestruturado (ver correção 10)"
+      },
+      {
+        "data": "17 de agosto",
+        "jp_linhas": "104-123",
+        "paragrafos_jp": 8,
+        "citacoes_jp": 2,
+        "status": "completo"
+      },
+      {
+        "data": "25 de agosto",
+        "jp_linhas": "127-146",
+        "paragrafos_jp": 6,
+        "citacoes_jp": 4,
+        "status": "completo"
+      },
+      {
+        "data": "26 de agosto",
+        "jp_linhas": "149-167",
+        "paragrafos_jp": 6,
+        "citacoes_jp": 3,
+        "status": "completo"
+      },
+      {
+        "data": "27 de agosto",
+        "jp_linhas": "171-190",
+        "paragrafos_jp": 8,
+        "citacoes_jp": 4,
+        "status": "completo"
+      },
+      {
+        "data": "colofão final",
+        "jp_linhas": "196-206",
+        "status": "completo, sem corrupção de nomes/datas"
+      }
+    ]
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "categoria": "duplicação de cabeçalho",
+      "localizacao_pt": "início do ficheiro, antes do título",
+      "problema": "Linha solta 'Sr. 6 de agosto' aparecia ANTES do título 'Mioshie-shū nº 25' e da linha de publicação, sem nenhuma relação com o conteúdo que a segue (o corpo do arquivo começa de facto em '5 de agosto'). É um eco do cabeçalho de secção 'Aug 6' que aparece corretamente mais adiante.",
+      "correcao": "Removida a linha solta '6 de agosto' do topo do ficheiro.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "duplicação de metadado",
+      "localizacao_pt": "linhas iniciais (info de publicação)",
+      "problema": "A informação de publicação (equivalente a JP '『御教え集』25号、昭和28年9月15日発行') aparecia traduzida DUAS vezes com fraseados diferentes: 'Coletanea de Ensinamentos, publicado em 15 de setembro do ano 28 da Era Showa (1953)' e, logo a seguir, 'Mioshie-shū nº 25, publicado em 15 de setembro de 1953 (Showa 28)'.",
+      "correcao": "Mantida apenas a segunda forma (mais próxima do estilo de título já usado no ficheiro); removida a primeira.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "cabeçalho de data duplicado no corpo (bug de família confirmado)",
+      "localizacao_pt": "transição '7 de agosto'",
+      "problema": "Frase solta 'Sete de agosto.' repetindo o cabeçalho de secção logo antes do parágrafo real.",
+      "correcao": "Removida a frase duplicada; o cabeçalho de secção já presente é suficiente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "categoria": "cabeçalho de data duplicado no corpo",
+      "localizacao_pt": "transição '15 de agosto'",
+      "problema": "Frase solta 'Quinze de agosto.' repetindo o cabeçalho de secção.",
+      "correcao": "Removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "categoria": "cabeçalho de data duplicado no corpo, colado sem pontuação",
+      "localizacao_pt": "transição '16 de agosto'",
+      "problema": "'16 de agosto Ontem, uma criança...' - o cabeçalho estava colado diretamente ao início do parágrafo, sem ponto nem quebra.",
+      "correcao": "Removido o prefixo '16 de agosto ' repetido; o cabeçalho de secção já presente é suficiente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "categoria": "cabeçalho de data duplicado no corpo, colado sem pontuação",
+      "localizacao_pt": "transição '17 de agosto'",
+      "problema": "'17 de agosto Dizem que o número de visitantes...' - mesmo padrão do item 5.",
+      "correcao": "Removido o prefixo duplicado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "categoria": "cabeçalho de data duplicado no corpo, colado sem pontuação",
+      "localizacao_pt": "transição '25 de agosto'",
+      "problema": "'25 de agosto Anteontem, um grupo turístico...' - mesmo padrão.",
+      "correcao": "Removido o prefixo duplicado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "categoria": "cabeçalho de data duplicado no corpo, colado sem pontuação",
+      "localizacao_pt": "transição '26 de agosto'",
+      "problema": "'26 de agosto Chegou a primeira carta...' - mesmo padrão. Nota: a transição '27 de agosto' foi conferida e está limpa (sem duplicação), assim como '5' e '6 de agosto' no corpo (a duplicação nesses dois casos ocorreu só no cabeçalho solto do topo, já corrigido no item 1).",
+      "correcao": "Removido o prefixo duplicado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "categoria": "nome próprio corrompido (inconsistência interna)",
+      "localizacao_pt": "secção '6 de agosto', menção a 安食さん",
+      "problema": "Romanizado como 'Anjiki' numa ocorrência, enquanto as outras duas ocorrências do mesmo nome no mesmo ficheiro usam 'Ajiki' (forma também usada 10x no acervo em produção, textos_portugues/, e mais 9x noutros ficheiros de trabalho da série 御教え集).",
+      "correcao": "Uniformizado para 'Ajiki' (forma dominante e já estabelecida no corpus). Não é decisão de glossário nova - é correção de inconsistência interna usando a forma já maioritária no próprio ficheiro e no acervo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "categoria": "nome próprio corrompido",
+      "localizacao_pt": "secções '16 de agosto' e '17 de agosto', menções a 岡田道一さん (organizador do exame médico do caso do testículo)",
+      "problema": "Romanizado como 'Okada Doichi' (leitura errada do kanji 道一) nas duas ocorrências deste ficheiro de trabalho. O acervo em produção (textos_portugues/) usa 'Okada Michikazu' 2x noutros volumes para a mesma pessoa (mesmo padrão de bug já confirmado no ficheiro de trabalho e propagado 1x também para textos_portugues/19530915, não corrigido lá por estar fora do escopo autorizado desta revisão).",
+      "correcao": "Corrigido para 'Okada Michikazu' nas 2 ocorrências deste ficheiro de trabalho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "categoria": "nome próprio corrompido",
+      "localizacao_pt": "secção '7 de agosto', crítica de arte sobre cerâmica Song",
+      "problema": "'小山富士夫' (Koyama Fujio, ceramista/historiador de cerâmica japonesa real e conhecido) romanizado incorretamente como 'Koizumi Fujio' (confusão com o sobrenome 小泉, sobrenome diferente).",
+      "correcao": "Corrigido para 'Koyama Fujio'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "categoria": "subdivisão / paragrafação (monólito residual, sem perda de conteúdo)",
+      "localizacao_pt": "secção '16 de agosto' (a mais grave do ficheiro)",
+      "problema": "Oito unidades distintas do JP (parágrafo do testículo, parágrafo de continuação Havaí/EUA, frase de transição para o museu, citação do artigo do Tokyo Evening News, parágrafo da enchente de Quioto/Nara, frase de transição, citação 'Deus e a Bola de Vidro', parágrafo sobre microscópio/encefalite) estavam todas fundidas numa única linha PT gigante (13.372 caracteres), sem quebra de parágrafo nem linha própria para as citações - viola o item 1 (subdivisão) e 6 (paragrafação 1:1) do checklist. Verificado palavra por palavra contra o JP: todo o conteúdo estava presente, completo, na ordem correta, sem cauda duplicada (diferente do padrão Gokōwa) - o problema era exclusivamente de formatação/estrutura.",
+      "correcao": "Reestruturado em 8 blocos separados por linha em branco, com as duas citações em linha própria, restaurando a subdivisão 1:1 com o JP. Nenhum conteúdo foi removido, adicionado ou reordenado.",
+      "confianca": "alta"
+    }
+  ],
+  "observacao_nao_corrigida": {
+    "categoria": "paragrafação (formatação, sem risco de conteúdo)",
+    "descricao": "Em aproximadamente metade das citações do volume (ex.: linhas correspondentes às secções 7, 15, 25, 26 e 27 de agosto), a citação de artigo/correspondência aparece colada ao fim do parágrafo anterior ou ao início do parágrafo seguinte, sem a linha em branco de separação que o JP usa consistentemente. Conferido em todos os casos: o conteúdo está completo e na ordem certa, é só falta de quebra de linha em branco - não afeta a leitura nem esconde perda/duplicação. Dado o volume de ocorrências e o facto de não ser um problema de conteúdo, não foi corrigido linha a linha nesta passada (diferente do item 12, que foi corrigido por juntar OITO unidades de conteúdos distintos num só bloco confuso). Fica registado para quem fizer a segunda auditoria decidir se vale a pena um passe de formatação dedicado.",
+    "bloqueia_aprovacao": false
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "revisor": "agente (lote 11, Fase E)",
+    "metodo": "Releitura completa do ficheiro de trabalho PT do início ao fim, cross-check com a lista de correções desta trilha e verificação de cabeçalho/metadados (checklist item 7) e CJK residual (0 encontrado).",
+    "achado_novo": {
+      "data": "2026-07-09",
+      "revisor": "agente (lote 11, Fase E, segunda auditoria independente)",
+      "achado": "Marcador de delimitação '=== ARTIGO ===' duplicado (2 ocorrências consecutivas nas linhas 5-6 do cabeçalho do ficheiro de trabalho, antes do bloco de metadados) — o JP fonte e o formato-padrão do ficheiro têm só 1 ocorrência. Mesmo padrão já identificado e corrigido no livro-irmão 19531115-御教え集27号.txt (correção nº1 daquela trilha), mas que havia passado despercebido neste arquivo na revisão original de 2026-07-07.",
+      "correcao": "Removida a linha duplicada. Confirmado por grep que agora há exatamente 1 ocorrência, igual ao JP.",
+      "confianca": "alta"
+    },
+    "resultado": "Corrigido. Nenhum outro problema novo encontrado nesta releitura; corrobora as correções da auditoria original."
+  }
+}

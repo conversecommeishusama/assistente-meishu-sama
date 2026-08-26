@@ -1,0 +1,104 @@
+{
+ "filename": "19530615 - Mioshie-shū nº 22.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14 + fix pareamento PT 2026-07-14: sessão 五月五日 (5 de maio) estava fundida ao 序文, reinserida (9→10 artigos, restaura previous_article_count=10). PT pairing recalculado.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十二号",
+   "pt_anchor": "Mioshie-shū nº 22",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月五日",
+   "title_pt": "5 de maio",
+   "jp_anchor": "アメリカに行っている嵐という人の第二信が来ましたが、あっちもなかなかおもしろそうなのです。それを読ませます。",
+   "pt_anchor": "Chegou a segunda carta de uma pessoa chamada Arashi, que está nos Estados Unidos, e parece que, por lá, as coisas estão bastante interessantes.",
+   "notes": "",
+   "pt_prefix": "5 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月六日",
+   "title_pt": "6 de maio",
+   "jp_anchor": "アメリカに行っている嵐という人から報告が来て、だいぶ成績が良いです。まだ日本人だけですけれども、もう少したつとアメリカ人の方にも拡がるだろうと 思ってます。あの人は、かたわら絵をやりながらやってますが、もう二、三カ月になるでしょう。二十二人",
+   "pt_anchor": "Chegou um relatório da pessoa chamada Arashi, que está nos Estados Unidos, e os resultados são bastante bons. Ainda são ",
+   "notes": "",
+   "pt_prefix": "6 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月七日",
+   "title_pt": "7 de maio",
+   "jp_anchor": "アメリカに行っている嵐さんから報告が来ましたが、だいぶ成績が良いです。これは第二信ですが、今読ませます。",
+   "pt_anchor": "Chegou um relatório do Arashi, que está nos Estados Unidos, e os resultados são bastante bons. Esta é a segunda carta;",
+   "notes": "",
+   "pt_prefix": "7 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十五日",
+   "title_pt": "15 de maio",
+   "jp_anchor": "再浄化について、今までも話ししようと思ったが、あんまり話のしよいことではないので、つい言わなかったのです。だんだんこれから再浄化が多くなります から、そこでどうしても本当のことを言わなければ追いつかなくなってきたので、本当のことを言います。",
+   "pt_anchor": "15 de maio\nSe a fama se espalhar por todo o Havaí e causar sensação, isso naturalmente chegará ao conhecimento dos Estados Unidos; quando isso acontecer, as pessoas se perguntarão o que é isso e talvez até queiram que vamos até lá.\n\n16 de maio",
+   "notes": "",
+   "pt_prefix": "15 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十六日",
+   "title_pt": "16 de maio",
+   "jp_anchor": "信仰について一番肝腎なことは、今まで宗教ではあんまり徹底してなかったのです。仏教にしても、仏教の「教」の字が間違っているのです。お釈迦さんが 作った時には仏法と言って「法」なのです。それをどう間違えたものか、仏教という「教」になってしまった",
+   "pt_anchor": "A coisa mais crucial sobre a fé é que, até agora, as religiões não foram suficientemente profundas. Mesmo no budismo, o ",
+   "notes": "",
+   "pt_prefix": "16 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十七日",
+   "title_pt": "17 de maio",
+   "jp_anchor": "熱海はいよいよ今日限りで、明日、箱根に移ることになりました。箱根の美術館は別館もできあがったので、今年は特に楽しみに思ってます。思ったよりも非 常に良くなりました。別館ができ、橋ができたりして、あの付近が非常に良くなりました。外国の古美術展",
+   "pt_anchor": "Hoje é o último dia em Atami; amanhã me mudarei para Hakone. Como o anexo do museu de arte de Hakone também ficou pronto",
+   "notes": "",
+   "pt_prefix": "17 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十五日",
+   "title_pt": "25 de maio",
+   "jp_anchor": "美術館の別館もできて、やっと神仙郷が完成したわけです。非常に順調に予定どおりできて、そうして陳列する物もいろいろな種類を、神様はうまく集めてく れるのです。おもしろいのは浮世絵の屏風ですが、屏風は私の気に入った物がないのです。よくある細かい",
+   "pt_anchor": "O anexo do museu de arte ficou pronto, e finalmente a Terra Divina está completa. Tudo correu muito bem, conforme o plan",
+   "notes": "",
+   "pt_prefix": "25 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十六日",
+   "title_pt": "26 de maio",
+   "jp_anchor": "美術館はたいてい見られたでしょうが、あなた方も驚いたことと思います。とにかく去年の今ごろは浮世絵の掛物が五、六幅くらいあったようなもので、あと はほとんどなかったのです。それがまだ一年たつかたたないうちに、あれだけの物がポカポカと集まってし",
+   "pt_anchor": "Vocês devem ter visto o museu e ficado surpresos. De qualquer forma, nesta época do ano passado, havia apenas cinco ou s",
+   "notes": "",
+   "pt_prefix": "26 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十七日",
+   "title_pt": "27 de maio",
+   "jp_anchor": "美術館は見られたでしょう。自分で言ってはおかしいが、思ったより立派に見られただろうと思います。去年の今ごろはそういう計画はぜんぜんなかったので す。もっとも品物も浮世絵が五、六幅くらいなもので、それが夏を過ぎたころからバタバタと集まってきた",
+   "pt_anchor": "Vocês devem ter visto o museu. Pode parecer estranho eu mesmo dizer, mas acho que ficou mais esplêndido do que se imagin",
+   "notes": "",
+   "pt_prefix": "27 de maio"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

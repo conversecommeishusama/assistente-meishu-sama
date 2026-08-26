@@ -1,0 +1,51 @@
+{
+ "filename": "19511010 - Gosuiji-roku nº 2.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』2号、昭和26(1951)年10月10日発行",
+   "pt_anchor": "Gosuiji-roku nº 2",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［九月一日］",
+   "title_pt": "1 de setembro",
+   "jp_anchor": "［九月一日］\n\nMeishu-Sama: 話の前に言いたいことは、「地上天国」や「栄光」に載せる寄書ですね。あれを少し変えてもらいたい。年中同じで論文ばかりです。おもしろいかどうかは自 分で考えて見ても分かる。分かりきったことやまじめなことは、たまに少しは",
+   "pt_anchor": "[1º de setembro]",
+   "notes": "",
+   "pt_prefix": "1 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［九月五日］",
+   "title_pt": "5 de setembro",
+   "jp_anchor": "［九月五日］\n\n　このごろはだいぶ質問が少なくなってきたが、だいたい聞きたいことは聞いたということじゃないですか。最も、無限じゃないんだから、やっぱりある程度まで分かれば、それでよいわけだがね。それから先は深いことになるからね。",
+   "pt_anchor": "[5 de setembro]",
+   "notes": "",
+   "pt_prefix": "5 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［九月八日］",
+   "title_pt": "8 de setembro",
+   "jp_anchor": "［九月八日］\n\n　麦、米の二毛作は、麦が成績が良くないが、そのことについて御神示がありました。麦は畠に作るもので、麦を田に作るというのが間違っているので、穫れる わけがない。そんなにこすっからくしなくても、稲を田に作るだけで、食うだけは充分穫れる。肥料なんか",
+   "pt_anchor": "[8 de setembro]",
+   "notes": "",
+   "pt_prefix": "8 de setembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

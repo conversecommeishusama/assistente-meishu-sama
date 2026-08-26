@@ -1,0 +1,86 @@
+{
+  "filename": "19490522-御光話録7号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica completa linha a linha do volume inteiro (JP 345 linhas / PT 300→328 linhas após correção), do título/poema de abertura ao colofão final (carta de protesto). JP lido integralmente em ordem e confrontado com o PT correspondente na mesma ordem, com atenção redobrada à alternância Interlocutor:/Meishu-Sama: em toda a extensão do arquivo, dado o histórico deste arquivo ter sido citado (junto com 4号, 5号, 8号, 9号, 11号, 14号, 17号, 補) na auditoria original de 2026-07-05/06 por padrão de troca sistemática de rótulo de falante.",
+  "gate_mecanico": "PASS antes e depois desta revisão (I=57/57, Δ=0, CJK=0). Confirma-se que este volume já havia sido corrigido numa sessão anterior — nenhuma inversão de rótulo Interlocutor:/Meishu-Sama: foi encontrada em nenhum dos 57 pares de turnos revistos.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NENHUMA troca de rótulo encontrada — alerta histórico NÃO se confirma neste arquivo, no estado atual",
+    "metodo": "Todos os 57 pares Interlocutor/Meishu-Sama do arquivo (3 sessões: 4 de abril = 15 pares, 13 de abril = 10 pares, 23 de abril = 32 pares) foram conferidos individualmente: cada linha JP iniciada por「――」ou equivalente (pergunta/comentário do interlocutor) foi confirmada como par de uma linha PT rotulada 'Interlocutor:', e cada linha JP de resposta (sem prefixo ――) foi confirmada como par de uma linha PT rotulada 'Meishu-Sama:', na mesma ordem, sem nenhuma inversão, mescla indevida ou bloco deslocado.",
+    "confianca": "alta — verificação direta de todos os 57 pares, não amostragem"
+  },
+  "summary": {
+    "sessoes_revisadas": ["prefácio/poema (御歌, 19 versos)", "4 de abril", "13 de abril", "23 de abril (incl. Adendo e Carta de Protesto)"],
+    "pares_interlocutor_meishu_sama_revisados": 57,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_confirmada": false,
+    "corrupcao_textual_confirmada": false
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Resposta sobre verdade/真理 (JP linhas 79-81, pergunta '真理は発見さるべきでしょうか、発明さるべきでしょうか。')",
+      "problema": "Paragrafação colapsada: 3 parágrafos do JP (cada um iniciado por indentação 　, sem linha em branco entre si no JP mas semanticamente distintos) estavam comprimidos num único parágrafo PT. Viola o ponto 6 do checklist (paragrafação 1:1).",
+      "correcao": "Parágrafo PT dividido em 3, nos pontos de fronteira correspondentes ao JP: (1) até '...Conhecer mais uma verdade é excelente.'; (2) '...Só é preciso tomar cuidado...' até '...algo temporário e provisório.'; (3) 'Costuma-se falar em 84.000 escrituras...' até o fim. Nenhuma palavra alterada, apenas reintroduzida a quebra de parágrafo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Caso do oftalmologista de 45 anos (JP linhas 99-100)",
+      "problema": "Paragrafação colapsada: 2 parágrafos do JP comprimidos em 1 no PT.",
+      "correcao": "Dividido em 2 parágrafos, fronteira antes de 'Este caso é um pouco difícil.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Resposta sobre transfusão de sangue/Johrei (JP linhas 114-116)",
+      "problema": "Paragrafação colapsada: 3 parágrafos do JP comprimidos em 1 no PT.",
+      "correcao": "Dividido em 3 parágrafos, fronteiras antes de 'Portanto, curar doenças com Johrei...' e antes de 'Atualmente, o que mais preocupa os Estados Unidos...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Resposta sobre o verdadeiro espírito japonês (JP linhas 144-145)",
+      "problema": "Paragrafação colapsada: 2 parágrafos do JP comprimidos em 1 no PT.",
+      "correcao": "Dividido em 2 parágrafos, fronteira antes de 'Por essa razão, o verdadeiro espírito japonês surgirá daqui em diante.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Adendo final (JP linhas 332, 334-335, sobre o significado dos festivais sazonais)",
+      "problema": "Paragrafação colapsada: a frase editorial de introdução (JP 332) e os 2 parágrafos de resposta do Mestre (JP 334, 335) estavam comprimidos num único parágrafo PT sob o título 'Adendo'.",
+      "correcao": "Dividido em 3 parágrafos: (1) frase editorial até '...adicionamos ao que já foi publicado.'; (2) '... Quanto ao pêssego...' até '...costumes da era dos samurais.' (mantendo a reticência '...' que no JP marca a retomada de fala em outra ocasião de audiência); (3) 'Quanto às bonecas Hina...' até o fim.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Carta de protesto contra a transmissão de rádio (JP linhas 339-345, seção final do volume)",
+      "problema": "GRAVE (escala) — paragrafação colapsada: os 7 parágrafos do JP (339, 340, 341, 342, 343, 344, 345) estavam comprimidos num único parágrafo PT gigante (~3.700 caracteres). Viola o ponto 6 do checklist.",
+      "correcao": "Dividido em 7 parágrafos nas fronteiras correspondentes ao JP: (1) '...é um crime imperdoável.'; (2) 'No que diz respeito a alertar a sociedade...' até '...deficiência mental.'; (3) 'A afirmação sobre \"o termômetro\"...' até '...esta Igreja afirma.'; (4) 'A \"possessão espiritual por raposa\"...' até '...bom senso nessa emissora.'; (5) 'Por fim, gostaria de acrescentar...' até '...contrário à democracia.'; (6) 'Gostaríamos de oferecer o Shinkō Zatsuwa...' até '...dar uma olhada.'; (7) 'Para sua referência...' até o fim. Conteúdo integralmente verificado contra o JP frase a frase antes da divisão — nenhuma perda, apenas reintrodução das quebras de parágrafo.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título/metadados + 御歌 (poema de 19 versos)", "jp_linhas": "20-44", "decisao": "ok — 19 versos JP = 19 parágrafos PT, ordem e conteúdo corretos", "confianca": "alta"},
+    {"bloco": "Sessão 4 de abril (15 pares Interlocutor/Meishu-Sama)", "jp_linhas": "47-121", "decisao": "ok após correções 1 e 2 (paragrafação); alternância de falante correta em todos os 15 pares; terminologia (innen, Johrei, Kyoshu) consistente com glossário", "confianca": "alta"},
+    {"bloco": "Sessão 13 de abril (10 pares Interlocutor/Meishu-Sama)", "jp_linhas": "125-184", "decisao": "ok após correções 3 e 4 (paragrafação); alternância de falante correta em todos os 10 pares; termos Chieshōkaku, Butsuritsukō, Suiheisha, Kyoshu conferidos contra glossario_traducao.json", "confianca": "alta"},
+    {"bloco": "Sessão 23 de abril (32 pares Interlocutor/Meishu-Sama)", "jp_linhas": "188-329", "decisao": "ok — alternância de falante correta em todos os 32 pares; termos Kunitokotachi-no-mikoto, Komyo-Nyorai, Daikoku-Sama, Miroku (五六七, romanização já uniformizada, sem variantes) conferidos contra glossário", "confianca": "alta"},
+    {"bloco": "Adendo (補遺, sobre festivais sazonais)", "jp_linhas": "332-335", "decisao": "corrigido — paragrafação colapsada (correção 5)", "confianca": "alta"},
+    {"bloco": "Carta de protesto contra a transmissão de rádio", "jp_linhas": "338-345", "decisao": "corrigido — paragrafação colapsada (correção 6); conteúdo (nomes, valores, citações) integralmente conferido, sem perda", "confianca": "alta"}
+  ],
+  "verificacao_glossario": {
+    "termos_conferidos": ["国常立尊 -> Kunitokotachi-no-mikoto", "光明如来 -> Komyo-Nyorai", "智慧証覚 -> Chieshōkaku (Inteligência da Percepção Verdadeira)", "因縁 -> innen (afinidade espiritual)", "教修 -> Kyoshu", "実相 -> verdadeira forma (jissō)", "五六七 -> Miroku"],
+    "resultado": "todos consistentes com glossario_traducao.json, sem variantes divergentes",
+    "nota_zengen_sanji": "termo 善言讃詞 (Zengen-Sanji/Zengen-Sandji) NÃO ocorre neste arquivo (verificado por busca exaustiva) — a pendência de nomenclatura mencionada para 御垂示録7号 não se aplica aqui"
+  },
+  "pendencias_abertas": [],
+  "observacao_nao_bloqueante": "O spec (19490522-御光話録7号.txt.json) usa title_pt='序文' (mantido em japonês) para o artigo kind='preface' — confirmado que é convenção sistemática de todos os specs da família Gokōwa (1号 a 19号 e 補), não um erro específico deste arquivo; não alterado.",
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Todos os 57 pares Interlocutor/Meishu-Sama e os 19 versos do poema de abertura foram revistos linha a linha contra o JP. Verificação específica de troca de rótulo de falante (motivo da citação original deste arquivo na auditoria de 2026-07-05/06): NENHUMA inversão encontrada — o arquivo já estava corrigido antes desta sessão. Corrigidos nesta sessão: 6 pontos de paragrafação colapsada (respostas de 2-3 parágrafos JP comprimidas em 1 parágrafo PT), incluindo a carta de protesto final (7 parágrafos JP em 1 PT). Terminologia conferida contra glossario_traducao.json, sem divergências. Gate mecânico PASS mantido após as correções (I=57/57, Δ=0, CJK=0). Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Aprovação final do spec (approved: true) fica a critério do usuário/orquestrador, conforme fluxo do projeto — este audit trail documenta que a revisão de conteúdo foi de facto realizada nesta sessão, não apenas sincronização de metadado."
+  }
+}

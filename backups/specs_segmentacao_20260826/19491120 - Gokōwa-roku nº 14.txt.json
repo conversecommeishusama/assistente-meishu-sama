@@ -1,0 +1,51 @@
+{
+ "filename": "19491120 - Gokōwa-roku nº 14.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』14号、昭和24(1949)年11月20日発行",
+   "pt_anchor": "Gokōwa-roku nº 14",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月三日",
+   "title_pt": "3 de agosto",
+   "jp_anchor": "八月三日\n\nInterlocutor: ――知識の開発は霊魂の進化を促進させるのでしょうか。頭脳を使う者ほど永生きするのはそれによって霊魂が進化するため、現世に生存する価値が多いからでございましょうか。",
+   "pt_anchor": "3 de agosto\n\nInterlocutor: O desenvolvimento do conhecimento promove a evolução da alma? As pessoas que mais usam o cérebro vivem mai",
+   "notes": "",
+   "pt_prefix": "3 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十三日",
+   "title_pt": "13 de agosto",
+   "jp_anchor": "八月十三日\n\nInterlocutor: ――　檜は御神木と伺いましたが、庭木として植えてあります場合、手入れのために梢を切ったりいたしてもよろしいでしょうか。",
+   "pt_anchor": "13 de agosto\n\nInterlocutor: Ouvi dizer que o cipreste (hinoki) é uma árvore divina. Se estiver plantado no jardim, pode-se podar os ga",
+   "notes": "",
+   "pt_prefix": "13 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十三日",
+   "title_pt": "23 de agosto",
+   "jp_anchor": "八月二十三日\n\nInterlocutor: ――御浄霊により回虫が出ましても、その卵はなお腹に残りましょうか。もし残りますならばそれがやがて成長するものでしょうか。また、蟯虫（ぎょうちゅう）は何百匹もあとからあとから出ますが、これはなぜでしょうか。",
+   "pt_anchor": "23 de agosto\n\nInterlocutor: Quando as lombrigas saem com o Johrei, os ovos ainda permanecem no abdômen? Se permanecerem, eles crescerã",
+   "notes": "",
+   "pt_prefix": "23 de agosto"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

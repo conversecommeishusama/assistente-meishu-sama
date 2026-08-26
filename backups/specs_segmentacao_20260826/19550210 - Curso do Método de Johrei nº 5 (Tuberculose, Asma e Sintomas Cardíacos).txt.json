@@ -1,0 +1,573 @@
+{
+ "filename": "19550210 - Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos).txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 62→62. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 62,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（五）（結核、喘息、心臓関係の症状について）",
+   "pt_anchor": "Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　結核患者の浄霊について （御教え集　23号　P.56）",
+   "title_pt": "Sobre o Johrei em pacientes com tuberculose (Mioshie-shū nº 23, p. 56)",
+   "jp_anchor": "一　結核患者の浄霊について （御教え集　23号　P.56）",
+   "pt_anchor": "I. Sobre o Johrei em pacientes com tuberculose (Mioshie-shū nº 23, p. 56)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．浄霊の急所は肩 （御教え集　23号　P.47）",
+   "title_pt": "O ponto vital do Johrei são os ombros (Mioshie-shū nº 23, p. 47)",
+   "jp_anchor": "１．浄霊の急所は肩 （御教え集　23号　P.47）",
+   "pt_anchor": "1. O ponto vital do Johrei são os ombros (Mioshie-shū nº 23, p. 47)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．健康診断の一番確実なのは肩をみる事（御教え集　23号　P.48）",
+   "title_pt": "A forma mais segura de exame de saúde é observar os ombros (Mioshie-shū nº 23, p. 48)",
+   "jp_anchor": "２．健康診断の一番確実なのは肩をみる事（御教え集　23号　P.48）",
+   "pt_anchor": "2. A forma mais segura de exame de saúde é observar os ombros (Mioshie-shū nº 23, p. 48)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．肩の浄霊を第一にし、頚の廻りを第二にする（御教え集　23号　P.37）",
+   "title_pt": "Fazer o Johrei nos ombros em primeiro lugar e ao redor do pescoço em segundo (Mioshie-shū nº 23, p. 37)",
+   "jp_anchor": "３．肩の浄霊を第一にし、頚の廻りを第二にする（御教え集　23号　P.37）",
+   "pt_anchor": "3. Fazer o Johrei nos ombros em primeiro lugar e ao redor do pescoço em segundo (Mioshie-shū nº 23, p. 37)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．結核の熱は頭に多い（御教え集　23号　P.57）",
+   "title_pt": "A febre da tuberculose concentra-se mais na cabeça (Mioshie-shū nº 23, p. 57)",
+   "jp_anchor": "４．結核の熱は頭に多い（御教え集　23号　P.57）",
+   "pt_anchor": "4. A febre da tuberculose concentra-se mais na cabeça (Mioshie-shū nº 23, p. 57)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．息切れの原因　（御教え集　23号　P.37）",
+   "title_pt": "Causa da falta de ar (Mioshie-shū nº 23, p. 37)",
+   "jp_anchor": "５．息切れの原因　（御教え集　23号　P.37）",
+   "pt_anchor": "5. Causa da falta de ar (Mioshie-shū nº 23, p. 37)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．結核は肩を充分すれば幾度浄霊しても構わない",
+   "title_pt": "Na tuberculose, se os ombros forem bem tratados, pode-se fazer Johrei quantas vezes quiser (Mioshie-shū nº 23, p. 48)",
+   "jp_anchor": "６．結核は肩を充分すれば幾度浄霊しても構わない",
+   "pt_anchor": "6. Na tuberculose, se os ombros forem bem tratados, pode-se fazer Johrei quantas vezes quiser (Mioshie-shū nº 23, p. 48)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．運動はあまりさせない方がよい",
+   "title_pt": "É melhor não fazer a pessoa se exercitar muito (Mioshie-shū nº 23, p. 49)",
+   "jp_anchor": "７．運動はあまりさせない方がよい",
+   "pt_anchor": "7. É melhor não fazer a pessoa se exercitar muito (Mioshie-shū nº 23, p. 49)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　結核症状の解剖",
+   "title_pt": "Anatomia dos sintomas da tuberculose",
+   "jp_anchor": "二　結核症状の解剖",
+   "pt_anchor": "II. Anatomia dos sintomas da tuberculose",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．喉が痛むのは危ない （御垂示録　2号　P.59）",
+   "title_pt": "Dor de garganta é perigosa (Gosuiji-roku nº 2, p. 59)",
+   "jp_anchor": "１．喉が痛むのは危ない （御垂示録　2号　P.59）",
+   "pt_anchor": "1. Dor de garganta é perigosa (Gosuiji-roku nº 2, p. 59)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．咽喉が痛み、食欲皆無で、毎日一升位のヌラが出て衰弱している人（御教え）",
+   "title_pt": "Pessoa com dor de garganta, falta total de apetite, eliminando cerca de um shō de muco por dia e enfraquecida (Mioshie-shū)",
+   "jp_anchor": "２．咽喉が痛み、食欲皆無で、毎日一升位のヌラが出て衰弱している人（御教え）",
+   "pt_anchor": "2. Pessoa com dor de garganta, falta total de apetite, eliminando cerca de um shō (1,8 litro) de muco por dia e enfraque",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．再浄化で衰弱している婦人（御教え）",
+   "title_pt": "Mulher enfraquecida pela Repurificação (Mioshie-shū)",
+   "jp_anchor": "３．再浄化で衰弱している婦人（御教え）",
+   "pt_anchor": "3. Mulher enfraquecida pela Repurificação (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．結核の末期の浄化に就いて（御教え）",
+   "title_pt": "Sobre a purificação no estágio terminal da tuberculose (Mioshie-shū)",
+   "jp_anchor": "４．結核の末期の浄化に就いて（御教え）",
+   "pt_anchor": "4. Sobre a purificação no estágio terminal da tuberculose (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．頻繁な咳と食欲減退で衰弱してゆく人（御教え集　6号　P.54）",
+   "title_pt": "Pessoa que enfraquece com tosse frequente e perda de apetite (Mioshie-shū nº 6, p. 54)",
+   "jp_anchor": "５．頻繁な咳と食欲減退で衰弱してゆく人（御教え集　6号　P.54）",
+   "pt_anchor": "5. Pessoa que enfraquece com tosse frequente e perda de apetite (Mioshie-shū nº 6, p. 54)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．衰弱甚だしく、月経がなくなった娘（御教え）",
+   "title_pt": "Moça com grande enfraquecimento e menstruação cessada (Mioshie-shū)",
+   "jp_anchor": "６．衰弱甚だしく、月経がなくなった娘（御教え）",
+   "pt_anchor": "6. Moça com grande enfraquecimento e menstruação cessada (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．左を下にして寝ると咳が激しくなる人（御教え集　4号　P.68）",
+   "title_pt": "Pessoa que tosse muito ao deitar-se sobre o lado esquerdo (Mioshie-shū nº 4, p. 68)",
+   "jp_anchor": "７．左を下にして寝ると咳が激しくなる人（御教え集　4号　P.68）",
+   "pt_anchor": "7. Pessoa que tosse muito ao deitar-se sobre o lado esquerdo (Mioshie-shū nº 4, p. 68)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．咽喉の痛み呼吸困難、心臓が苦しく歩行出来ず、食欲なく衰弱している娘（御教え集　6号　P.76）",
+   "title_pt": "Moça com dor de garganta, dificuldade respiratória, sofrimento no coração, incapacidade de andar, falta de apetite e enfraquecimento (Mioshie-shū nº 6, p. 76)",
+   "jp_anchor": "８．咽喉の痛み呼吸困難、心臓が苦しく歩行出来ず、食欲なく衰弱している娘（御教え集　6号　P.76）",
+   "pt_anchor": "8. Moça com dor de garganta, dificuldade respiratória, sofrimento no coração, incapacidade de andar, falta de apetite e ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．胸の下部の激痛は取れたが、呼吸困難、強烈、頻繁な咳嗽に苦しみ、血痰、寝汗、衰弱の増して来た人（御教え集　3号　P.78）",
+   "title_pt": "Uma pessoa cuja dor intensa na parte inferior do peito desapareceu, mas que sofre de dificuldade respiratória, tosse forte e frequente, expectoração com sangue, suores noturnos e fraqueza crescente (Mioshie-shū, nº 3, p. 78)",
+   "jp_anchor": "９．胸の下部の激痛は取れたが、呼吸困難、強烈、頻繁な咳嗽に苦しみ、血痰、寝汗、衰弱の増して来た人（御教え集　3号　P.78）",
+   "pt_anchor": "9. Uma pessoa cuja dor intensa na parte inferior do peito desapareceu, mas que sofre de dificuldade respiratória, tosse ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．咳の為不眠が多く衰弱している人（御教え集　5号　P.26）",
+   "title_pt": "Uma pessoa que, devido à tosse, tem muita insônia e está enfraquecendo (Mioshie-shū, nº 5, p. 26)",
+   "jp_anchor": "１０．咳の為不眠が多く衰弱している人（御教え集　5号　P.26）",
+   "pt_anchor": "10. Uma pessoa que, devido à tosse, tem muita insônia e está enfraquecendo (Mioshie-shū, nº 5, p. 26)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１１．咽喉、胸部が苦しく、高熱で、食欲なく衰弱してゆく婦人（地上天国　44号　P.12）",
+   "title_pt": "Uma mulher com dificuldade na garganta e no peito, febre alta, sem apetite e enfraquecendo (Paraíso Terrestre, nº 44, p. 12)",
+   "jp_anchor": "１１．咽喉、胸部が苦しく、高熱で、食欲なく衰弱してゆく婦人（地上天国　44号　P.12）",
+   "pt_anchor": "11. Uma mulher com dificuldade na garganta e no peito, febre alta, sem apetite e enfraquecendo (Tijotengoku, nº 44, p. 1",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１２．激しい咳と多量の喀痰の為、咽頭が痛み、声も出ず、食事が摂れなくなって来た人（御教え集　8号　P.30）",
+   "title_pt": "Uma pessoa com tosse violenta e grande quantidade de expectoração, com dor na garganta, sem voz e incapaz de se alimentar (Mioshie-shū, nº 8, p. 30)",
+   "jp_anchor": "１２．激しい咳と多量の喀痰の為、咽頭が痛み、声も出ず、食事が摂れなくなって来た人（御教え集　8号　P.30）",
+   "pt_anchor": "12. Uma pessoa com tosse violenta e grande quantidade de expectoração, com dor na garganta, sem voz e incapaz de se alim",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１３．背部の圧迫著しく、胸部に指圧すると激痛する箇所あり、仰臥すると咳痰激しく、呼吸困難、食欲不振の人（御教え集　3号　P.87）",
+   "title_pt": "Uma pessoa com forte pressão nas costas, pontos no peito que doem intensamente ao serem pressionados, tosse e expectoração intensas ao deitar de costas, dificuldade respiratória e falta de apetite (Mioshie-shū, nº 3, p. 87)",
+   "jp_anchor": "１３．背部の圧迫著しく、胸部に指圧すると激痛する箇所あり、仰臥すると咳痰激しく、呼吸困難、食欲不振の人（御教え集　3号　P.87）",
+   "pt_anchor": "13. Uma pessoa com forte pressão nas costas, pontos no peito que doem intensamente ao serem pressionados, tosse e expect",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．咳が多く、時々胸を締めつけるようになり、体が重い人（御教え集　8号　P.21）",
+   "title_pt": "Uma pessoa com muita tosse, que às vezes sente o peito apertado e o corpo pesado (Mioshie-shū, nº 8, p. 21)",
+   "jp_anchor": "１４．咳が多く、時々胸を締めつけるようになり、体が重い人（御教え集　8号　P.21）",
+   "pt_anchor": "14. Uma pessoa com muita tosse, que às vezes sente o peito apertado e o corpo pesado (Mioshie-shū, nº 8, p. 21)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１５．動くと呼吸が苦しく、咳の為喉が痛み、常時床についている人（御教え集　4号　P.4）",
+   "title_pt": "Uma pessoa que, ao se mover, tem dificuldade para respirar, sente dor na garganta devido à tosse e está constantemente de cama (Mioshie-shū, nº 4, p. 4)",
+   "jp_anchor": "１５．動くと呼吸が苦しく、咳の為喉が痛み、常時床についている人（御教え集　4号　P.4）",
+   "pt_anchor": "15. Uma pessoa que, ao se mover, tem dificuldade para respirar, sente dor na garganta devido à tosse e está constantemen",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１６．食欲なく、不眠で、自暴自棄になっている未信者の者（御教え）",
+   "title_pt": "Uma pessoa não convertida, sem apetite, com insônia e em estado de desespero (Mioshie-shū)",
+   "jp_anchor": "１６．食欲なく、不眠で、自暴自棄になっている未信者の者（御教え）",
+   "pt_anchor": "16. Uma pessoa não convertida, sem apetite, com insônia e em estado de desespero (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１７．右胸の脇が腫れて、動悸はげしく、息苦しい婦人（御垂示録　1号　P.35）",
+   "title_pt": "Uma mulher com inchaço na lateral do peito direito, palpitações fortes e falta de ar (Gosuiji-roku, nº 1, p. 35)",
+   "jp_anchor": "１７．右胸の脇が腫れて、動悸はげしく、息苦しい婦人（御垂示録　1号　P.35）",
+   "pt_anchor": "17. Uma mulher com inchaço na lateral do peito direito, palpitações fortes e falta de ar (Gosuiji-roku, nº 1, p. 35)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１８．気胸の時、誤って肋膜を破り、空気がもれ、呼吸困難で苦しんでいる人（御教え集　5号　P.47）",
+   "title_pt": "Uma pessoa que, durante o pneumotórax, perfurou acidentalmente a pleura, causando vazamento de ar e sofrendo de dificuldade respiratória (Mioshie-shū, nº 5, p. 47)",
+   "jp_anchor": "１８．気胸の時、誤って肋膜を破り、空気がもれ、呼吸困難で苦しんでいる人（御教え集　5号　P.47）",
+   "pt_anchor": "18. Uma pessoa que, durante o pneumotórax, perfurou acidentalmente a pleura, causando vazamento de ar e sofrendo de difi",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１９．肺病で脈は早くなく呼吸が早い原因（御教え）",
+   "title_pt": "Causa de pulso não muito rápido e respiração rápida na doença pulmonar (Mioshie-shū)",
+   "jp_anchor": "１９．肺病で脈は早くなく呼吸が早い原因（御教え）",
+   "pt_anchor": "19. Causa de pulso não muito rápido e respiração rápida na doença pulmonar (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２０．足の甲に幾分浮腫みがあり、衰弱しているが、気力のある人（地上天国　14号　P.12）",
+   "title_pt": "Uma pessoa com leve inchaço no dorso do pé, enfraquecida, mas com ânimo (Paraíso Terrestre, nº 14, p. 12)",
+   "jp_anchor": "２０．足の甲に幾分浮腫みがあり、衰弱しているが、気力のある人（地上天国　14号　P.12）",
+   "pt_anchor": "20. Uma pessoa com leve inchaço no dorso do pé, enfraquecida, mas com ânimo (Tijotengoku, nº 14, p. 12)\n\n\"Ho",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２１．足が痺れて軽い浮腫みがあり、背中がだるく、腹が張り、食事が進まない人（御教え集　1号　P.10）",
+   "title_pt": "Uma pessoa com dormência nos pés, leve inchaço, cansaço nas costas, barriga inchada e dificuldade para comer (Mioshie-shū, nº 1, p. 10)",
+   "jp_anchor": "２１．足が痺れて軽い浮腫みがあり、背中がだるく、腹が張り、食事が進まない人（御教え集　1号　P.10）",
+   "pt_anchor": "21. Uma pessoa com dormência nos pés, leve inchaço, cansaço nas costas, barriga inchada e dificuldade para comer (Mioshi",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２２．頭がボケたようになり、全身に浮腫みがあり、衰弱している婦人（地上天国　17号　P.12）",
+   "title_pt": "Uma mulher com aparência de demência, edema generalizado e fraqueza (Paraíso Terrestre, nº 17, p. 12)",
+   "jp_anchor": "２２．頭がボケたようになり、全身に浮腫みがあり、衰弱している婦人（地上天国　17号　P.12）",
+   "pt_anchor": "22. Uma mulher com aparência de demência, edema generalizado e fraqueza (Tijotengoku, nº 17, p. 12)\n“Uma",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２３．結核の霊的原因は兄弟が一番多い（御教え）",
+   "title_pt": "A causa espiritual da tuberculose é, na maioria das vezes, os irmãos (Mioshie-shū)",
+   "jp_anchor": "２３．結核の霊的原因は兄弟が一番多い（御教え）",
+   "pt_anchor": "23. A causa espiritual da tuberculose, na maioria das vezes, são os irmãos (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２４．睾丸及び腎臓結核の手術をしている両肺浸潤の青年（御教え集　4号　P.97）",
+   "title_pt": "Um jovem com infiltração em ambos os pulmões, submetido a cirurgia de tuberculose testicular e renal (Mioshie-shū, nº 4, p. 97)",
+   "jp_anchor": "２４．睾丸及び腎臓結核の手術をしている両肺浸潤の青年（御教え集　4号　P.97）",
+   "pt_anchor": "24. Um jovem com infiltração em ambos os pulmões, submetido a cirurgia de tuberculose testicular e renal (Mioshie-shū, n",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２５．肋膜、肺浸潤を患った事があり、午後になると高熱が出て、肩から腎臓の固い所が痛むという人（御教え集　4号　P.52）",
+   "title_pt": "Uma pessoa que teve pleurisia e infiltração pulmonar, com febre alta à tarde e dor no local duro que vai do ombro ao rim (Mioshie-shū, nº 4, p. 52)",
+   "jp_anchor": "２５．肋膜、肺浸潤を患った事があり、午後になると高熱が出て、肩から腎臓の固い所が痛むという人（御教え集　4号　P.52）",
+   "pt_anchor": "25. Uma pessoa que teve pleurisia e infiltração pulmonar, com febre alta à tarde e dor no local duro que vai do ombro ao",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２６．ラッセル、微熱、咳嗽頻繁の人（御教え集　4号　P.92）",
+   "title_pt": "Uma pessoa com estertor, febre baixa e tosse frequente (Mioshie-shū, nº 4, p. 92)",
+   "jp_anchor": "２６．ラッセル、微熱、咳嗽頻繁の人（御教え集　4号　P.92）",
+   "pt_anchor": "26. Uma pessoa com estertor, febre baixa e tosse frequente (Mioshie-shū, nº 4, p. 92)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２７．肋膜患者の浄霊の箇所（光　20号）",
+   "title_pt": "Locais para aplicar Johrei em pacientes com pleurisia (Hikari, nº 20)",
+   "jp_anchor": "２７．肋膜患者の浄霊の箇所（光　20号）",
+   "pt_anchor": "27. Locais para aplicar Johrei em pacientes com pleurisia (Hikari, nº 20)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２８．肺壊疽（御教え）",
+   "title_pt": "Gangrena pulmonar (Mioshie-shū)",
+   "jp_anchor": "２８．肺壊疽（御教え）",
+   "pt_anchor": "28. Gangrena pulmonar (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２９．胸が痛むのは肋間神経痛（御垂示録　13号　P.17）",
+   "title_pt": "A dor no peito é nevralgia intercostal (Gosuiji-roku, nº 13, p. 17)",
+   "jp_anchor": "２９．胸が痛むのは肋間神経痛（御垂示録　13号　P.17）",
+   "pt_anchor": "29. A dor no peito é nevralgia intercostal (Gosuiji-roku, nº 13, p. 17)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３０．肺炎くらい有難い浄化はない（御教え集　8号　P.47）",
+   "title_pt": "Não há purificação mais valiosa do que a pneumonia (Mioshie-shū, nº 8, p. 47)",
+   "jp_anchor": "３０．肺炎くらい有難い浄化はない（御教え集　8号　P.47）",
+   "pt_anchor": "30. Não há purificação mais valiosa do que a pneumonia (Mioshie-shū, nº 8, p. 47)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３１．気胸に就いて",
+   "title_pt": "Sobre o pneumotórax (Mioshie-shū, nº 10, p. 15)",
+   "jp_anchor": "３１．気胸に就いて",
+   "pt_anchor": "31. Sobre o pneumotórax (Mioshie-shū, nº 10, p. 15)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３２．転地に就いて（御教え集　4号　P.41）",
+   "title_pt": "Sobre a mudança de ares (Mioshie-shū, nº 4, p. 41)",
+   "jp_anchor": "３２．転地に就いて（御教え集　4号　P.41）",
+   "pt_anchor": "32. Sobre a mudança de ares (Mioshie-shū, nº 4, p. 41)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３３．結核を治すには愛の働きをよくすること（御教え）",
+   "title_pt": "Para curar a tuberculose, é importante cultivar o amor (Mioshie-shū)",
+   "jp_anchor": "３３．結核を治すには愛の働きをよくすること（御教え）",
+   "pt_anchor": "33. Para curar a tuberculose, é importante cultivar o amor (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３４．肋骨を切り合成樹脂の玉を入れる治療法について（御教え）",
+   "title_pt": "Sobre o tratamento de cortar as costelas e inserir esferas de resina sintética (Mioshie-shū)",
+   "jp_anchor": "３４．肋骨を切り合成樹脂の玉を入れる治療法について（御教え）",
+   "pt_anchor": "34. Sobre o tratamento de cortar as costelas e inserir esferas de resina sintética (Mioshie-shū)\n\n“Pacientes com tuberculose que tiveram várias costelas cortadas e receberam esferas de resina sintética (do tamanho de",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３５．樹脂球を全部脱出してから経過が良い人",
+   "title_pt": "Uma pessoa que teve uma boa evolução após a expulsão total das esferas de resina",
+   "jp_anchor": "３５．樹脂球を全部脱出してから経過が良い人",
+   "pt_anchor": "35. Uma pessoa que teve uma boa evolução após a expulsão total das esferas de resina",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３６．樹脂治療後、呼吸困難となった人（御教え集　1号　P.32）",
+   "title_pt": "Uma pessoa que teve dificuldade respiratória após o tratamento com resina (Mioshie-shū, nº 1, p. 32)",
+   "jp_anchor": "３６．樹脂治療後、呼吸困難となった人（御教え集　1号　P.32）",
+   "pt_anchor": "36. Uma pessoa que teve dificuldade respiratória após o tratamento com resina (Mioshie-shū, nº 1, p. 32)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３７．微熱、悪寒、咳嗽、貧血し、肩が凝り、胸がつまるようで、恐怖症に悩む青年（御教え集　4号　P.26）",
+   "title_pt": "Um jovem com febre baixa, calafrios, tosse, anemia, rigidez nos ombros, sensação de aperto no peito e que sofre de fobia (Mioshie-shū, nº 4, p. 26)",
+   "jp_anchor": "３７．微熱、悪寒、咳嗽、貧血し、肩が凝り、胸がつまるようで、恐怖症に悩む青年（御教え集　4号　P.26）",
+   "pt_anchor": "37. Um jovem com febre baixa, calafrios, tosse, anemia, rigidez nos ombros, sensação de aperto no peito e que sofre de f",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三　喘息",
+   "title_pt": "Asma",
+   "jp_anchor": "三　喘息",
+   "pt_anchor": "III. Asma\n\n1. A causa da asma (Mioshie-shū, nº 22, p. 22)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．喘息の原因（御教え集　22号　P.22）",
+   "title_pt": "A causa da asma (Mioshie-shū, nº 22, p. 22)",
+   "jp_anchor": "１．喘息の原因（御教え集　22号　P.22）",
+   "pt_anchor": "1. A causa da asma (Mioshie-shū, nº 22, p. 22)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．心臓喘息で、動くと心臓が破裂しそうに苦しい人（御教え）",
+   "title_pt": "Uma pessoa com asma cardíaca que, ao se mover, sente o coração prestes a explodir de tanta dor (Mioshie-shū)",
+   "jp_anchor": "２．心臓喘息で、動くと心臓が破裂しそうに苦しい人（御教え）",
+   "pt_anchor": "2. Uma pessoa com asma cardíaca que, ao se mover, sente o coração prestes a explodir de tanta dor (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．御浄霊を頂くとひどい喘息のように咳き込み、呼吸困難の発作が頻発する子供（御教え集　7号　P.77）",
+   "title_pt": "Uma criança que, ao receber o Johrei, tem crises de tosse violenta como na asma e sofre de ataques frequentes de dificuldade respiratória (Mioshie-shū, nº 7, p. 77)",
+   "jp_anchor": "３．御浄霊を頂くとひどい喘息のように咳き込み、呼吸困難の発作が頻発する子供（御教え集　7号　P.77）",
+   "pt_anchor": "3. Uma criança que, ao receber o Johrei, tem crises de tosse violenta como na asma e sofre de ataques frequentes de difi",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．疥癬の浄化後、喘息が再発した人（地上天国　13号　P.18）",
+   "title_pt": "Pessoa que, após a purificação da sarna, teve recaída de asma (Paraíso Terrestre, nº 13, p. 18)",
+   "jp_anchor": "４．疥癬の浄化後、喘息が再発した人（地上天国　13号　P.18）",
+   "pt_anchor": "4. Pessoa que, após a purificação da sarna, teve recaída de asma (Tijotengoku, nº 13, p. 18)\n\n“Há",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．心臓喘息で衰弱が激しい人（御教え集　4号　P.65）",
+   "title_pt": "Pessoa com asma cardíaca e debilidade intensa (Mioshie-shū, nº 4, p. 65)",
+   "jp_anchor": "５．心臓喘息で衰弱が激しい人（御教え集　4号　P.65）",
+   "pt_anchor": "5. Pessoa com asma cardíaca e debilidade intensa (Mioshie-shū, nº 4, p. 65)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．喘息の冬型と夏型、浄霊の急所に就いて（御教え）",
+   "title_pt": "Sobre a asma de tipo invernal e de tipo estival, e os pontos vitais do Johrei (Mioshie-shū)",
+   "jp_anchor": "６．喘息の冬型と夏型、浄霊の急所に就いて（御教え）",
+   "pt_anchor": "6. Sobre a asma de tipo invernal e de tipo estival, e os pontos vitais do Johrei (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．季節的な喘息はまだ軽症である",
+   "title_pt": "Asma sazonal ainda é um caso leve",
+   "jp_anchor": "７．季節的な喘息はまだ軽症である",
+   "pt_anchor": "7. Asma sazonal ainda é um caso leve",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四　心臓病",
+   "title_pt": "Doenças do coração",
+   "jp_anchor": "四　心臓病",
+   "pt_anchor": "IV. Doenças do coração",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．狭心症の原因と浄霊の箇所に就いて（御教え集　3号　P.3）",
+   "title_pt": "Sobre a causa da angina do peito e os locais de Johrei (Mioshie-shū, nº 3, p. 3)",
+   "jp_anchor": "１．狭心症の原因と浄霊の箇所に就いて（御教え集　3号　P.3）",
+   "pt_anchor": "1. Sobre a causa da angina do peito e os locais de Johrei (Mioshie-shū, nº 3, p. 3)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．心臓弁膜症、狭心症について（御教え）",
+   "title_pt": "Sobre a valvulopatia cardíaca e a angina do peito (Mioshie-shū)",
+   "jp_anchor": "２．心臓弁膜症、狭心症について（御教え）",
+   "pt_anchor": "2. Sobre a valvulopatia cardíaca e a angina do peito (Mioshie-shū)\n\n“Por favor, ensinem a causa da valvulopatia cardíaca, considerada incurável pela medicina, e os locais para aplicar Jo",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．心臓弁膜症で脈拍欠滞し、腹部の膨満、甚だしくなった婦人（御教え集　1号　P.56）",
+   "title_pt": "Mulher com valvulopatia cardíaca, pulso irregular, distensão abdominal intensa (Mioshie-shū, nº 1, p. 56)",
+   "jp_anchor": "３．心臓弁膜症で脈拍欠滞し、腹部の膨満、甚だしくなった婦人（御教え集　1号　P.56）",
+   "pt_anchor": "3. Mulher com valvulopatia cardíaca, pulso irregular, distensão abdominal intensa (Mioshie-shū, nº 1, p. 56)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．床につくと上半身の圧迫感が強く、呼吸が苦しくなる婦人（御教え集　5号　P.80）",
+   "title_pt": "Mulher que, ao se deitar, sente forte pressão na parte superior do corpo e dificuldade para respirar (Mioshie-shū, nº 5, p. 80)",
+   "jp_anchor": "４．床につくと上半身の圧迫感が強く、呼吸が苦しくなる婦人（御教え集　5号　P.80）",
+   "pt_anchor": "4. Mulher que, ao se deitar, sente forte pressão na parte superior do corpo e dificuldade para respirar (Mioshie-shū, nº",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．水泳中の心臓麻痺に就いて（御教え）",
+   "title_pt": "Sobre a parada cardíaca durante a natação (Mioshie-shū)",
+   "jp_anchor": "５．水泳中の心臓麻痺に就いて（御教え）",
+   "pt_anchor": "5. Sobre a parada cardíaca durante a natação (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．心臓麻痺の浄霊箇所（御教え）",
+   "title_pt": "Local de Johrei para parada cardíaca (Mioshie-shū)",
+   "jp_anchor": "６．心臓麻痺の浄霊箇所（御教え）",
+   "pt_anchor": "6. Local de Johrei para parada cardíaca (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

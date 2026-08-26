@@ -1,0 +1,33 @@
+{
+ "filename": "19521115 - Gosuiji-roku nº 15.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 2→2. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 2,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』15号、昭和27(1952)年11月15日発行",
+   "pt_anchor": "Gosuiji-roku nº 15",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［十一月一日］",
+   "title_pt": "1 de novembro",
+   "jp_anchor": "［十一月一日］\n\nMeishu-Sama: 近来アメリカで、日本美術の良いところが分かってきたので、むやみに狙っているのです。それで博物館は、予算が足りないのでしようがない。どういうもの ですか、軍艦を造るときは何億でもありますが、こういうときには馬鹿にしみ",
+   "pt_anchor": "[1º de novembro]",
+   "notes": "",
+   "pt_prefix": "1 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,503 @@
+{
+ "filename": "19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Reconstruido 2026-07-15 (CHUNK_TURNAWARE pending[0]): 81 -> 61 entradas. Removidas 22 entradas fantasma (itens numerados 1-6 do ensaio '無肥料栽培' tratados como capitulos separados; fragmentos de tabela/lista interna de testemunhos tratados como titulos -- 浄霊によって三割増産, 無肥料栽培二年目の報告 x2 listas, 浄霊の南瓜; endereco '京都' tratado como titulo proprio; 1a frase do corpo tratada como titulo falso em 5 testemunhos -- 無肥料麦の強靭, 観音光の作物(四), 農作物に関する御利益, 不安は大感激となる; assinatura de fechamento '（神農生）' tratada como artigo proprio). Recuperado 1 titulo real que tinha sido substituido pela 1a frase do corpo (四尺以上のごぼう). Inserido 1 testemunho que faltava completamente na spec (麦の精白三斗余無肥で増収一石三鳥の儲け). pt_anchor de todas as entradas recalculado via audit --fix --repair-pt (alinhamento por sequencia de idade/titulo). Audit final: 59/61 ok, 序文 (indice 1) ratio_warn aceito (padrao benigno ja usado em 自観叢書第1篇 -- prefacio so tem a linha de publicacao). 実験報告 (indice 2) ratio_warn=0.96 tambem aceito: e um cabecalho divisor puro sem corpo proprio (mesmo padrao ja aceito em 自観叢書第1篇/結核治癒の実例, ratio_warn=5.29, que segue marcado done) -- toda a prosa real pertence ao 1o testemunho seguinte, ratio contra titulo de 2 palavras e sempre implausivel independente da posicao estar certa. apply_manual_livros_segmentacao.py --dry-run: 61/61 artigos extraidos sem erro.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 81,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "自観叢書第二篇、昭和24(1949)年7月1日発行",
+   "pt_anchor": "Método de Cultivo sem Fertilizantes",
+   "notes": "line_jikan_structural; ratio PT/JP=0.00; ratio PT/JP=0.02; ratio PT/JP=19.07"
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料栽培",
+   "title_pt": "",
+   "jp_anchor": "無肥料栽培",
+   "pt_anchor": "Cultivo sem Adubos por Shin'nōsei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "実験報告",
+   "title_pt": "",
+   "jp_anchor": "実験報告",
+   "pt_anchor": "RELATÓRIO DE EXPERIMENTOS",
+   "notes": "line_jikan_structural; ratio PT/JP=0.04; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; pt_anchor determinado por leitura direta 2026-07-15 (nome/idade/endereco do autor cruzados contra o JP), nao por pareamento automatico; ratio PT/JP=0.96"
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料農耕の体験",
+   "title_pt": "",
+   "jp_anchor": "無肥料農耕の体験",
+   "pt_anchor": "Experiência de Agricultura sem Adubos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料耕作特に稲作に就て",
+   "title_pt": "",
+   "jp_anchor": "無肥料耕作特に稲作に就て",
+   "pt_anchor": "Sobre o Cultivo sem Adubos, Especialmente o Arroz",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料の体験",
+   "title_pt": "",
+   "jp_anchor": "無肥料の体験",
+   "pt_anchor": "Experiência com Cultivo Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浄霊と無肥料栽培",
+   "title_pt": "",
+   "jp_anchor": "浄霊と無肥料栽培",
+   "pt_anchor": "Cultivo Sem Fertilizantes e Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "費用かけず一分の増収",
+   "title_pt": "",
+   "jp_anchor": "費用かけず一分の増収",
+   "pt_anchor": "---\n\nAumento de Um Décimo Sem Gastos com Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料麦の強靭",
+   "title_pt": "",
+   "jp_anchor": "無肥料麦の強靭",
+   "pt_anchor": "A Resistência do Trigo Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料栽培の体験",
+   "title_pt": "",
+   "jp_anchor": "無肥料栽培の体験",
+   "pt_anchor": "Experiência com o Cultivo sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "肥毒につきまして",
+   "title_pt": "",
+   "jp_anchor": "肥毒につきまして",
+   "pt_anchor": "Sobre a Toxicidade dos Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料栽培の収穫",
+   "title_pt": "",
+   "jp_anchor": "無肥料栽培の収穫",
+   "pt_anchor": "Colheita do Cultivo sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "おかげ話",
+   "title_pt": "",
+   "jp_anchor": "おかげ話",
+   "pt_anchor": "Relato de Graça\n\nCidade de Kitsuregawa, Província de Tochigi",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浄霊によって三割増産",
+   "title_pt": "",
+   "jp_anchor": "浄霊によって三割増産",
+   "pt_anchor": "Aumento de 30% na Produção Através do Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "黙々三年間の試作体験",
+   "title_pt": "",
+   "jp_anchor": "黙々三年間の試作体験",
+   "pt_anchor": "Experiência de Três Anos de Teste em Silêncio",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音様のお蔭",
+   "title_pt": "Pela Graça de Kannon-Sama",
+   "jp_anchor": "観音様のお蔭",
+   "pt_anchor": "Pela Graça de Kannon-Sama",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料栽培二年目の報告",
+   "title_pt": "",
+   "jp_anchor": "無肥料栽培二年目の報告",
+   "pt_anchor": "Relatório do Segundo Ano de Cultivo sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "麦の精白三斗余無肥で増収一石三鳥の儲け",
+   "title_pt": "",
+   "jp_anchor": "麦の精白三斗余無肥で増収一石三鳥の儲け",
+   "pt_anchor": "Mais de 3 to de trigo beneficiado, aumento de 1 koku com cultivo sem fertilizantes: um lucro de três pássaros com uma pedra",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "御利益報告",
+   "title_pt": "",
+   "jp_anchor": "御利益報告",
+   "pt_anchor": "Relato de Benefícios",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "砂地に稲を試作して",
+   "title_pt": "",
+   "jp_anchor": "砂地に稲を試作して",
+   "pt_anchor": "Cultivo Experimental de Arroz em Terreno Arenoso",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "骨折らず大収穫ウンカの害も全然なし",
+   "title_pt": "",
+   "jp_anchor": "骨折らず大収穫ウンカの害も全然なし",
+   "pt_anchor": "Grande Colheita sem Esforço e Sem Danos de Cigarrinhas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音耕作の御利益について",
+   "title_pt": "",
+   "jp_anchor": "観音耕作の御利益について",
+   "pt_anchor": "Sobre o Benefício Material do Cultivo de Kannon",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "四尺以上のごぼう",
+   "title_pt": "",
+   "jp_anchor": "四尺以上のごぼう",
+   "pt_anchor": "Bardana com Mais de Quatro Shaku (1,2 metro)",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "倒れぬ苗",
+   "title_pt": "",
+   "jp_anchor": "倒れぬ苗",
+   "pt_anchor": "Mudas que Não Caem",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浄霊の南瓜",
+   "title_pt": "",
+   "jp_anchor": "浄霊の南瓜",
+   "pt_anchor": "Abóbora do Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "作物の御利益話",
+   "title_pt": "",
+   "jp_anchor": "作物の御利益話",
+   "pt_anchor": "Relatos de Benefícios Materiais nas Colheitas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料稲の茎",
+   "title_pt": "",
+   "jp_anchor": "無肥料稲の茎",
+   "pt_anchor": "Os Caules do Arroz sem Adubo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料甘藷の素晴しさ",
+   "title_pt": "",
+   "jp_anchor": "無肥料甘藷の素晴しさ",
+   "pt_anchor": "A Maravilha da Batata-Doce sem Adubo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音光の作物",
+   "title_pt": "",
+   "jp_anchor": "観音光の作物",
+   "pt_anchor": "As Culturas da Luz de Kannon",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "農作物に関する御利益",
+   "title_pt": "",
+   "jp_anchor": "農作物に関する御利益",
+   "pt_anchor": "Benefícios Materiais Relacionados a Cultivos Agrícolas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料栽培の有難さ",
+   "title_pt": "",
+   "jp_anchor": "無肥料栽培の有難さ",
+   "pt_anchor": "A Gratidão do Cultivo Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "不安は大感激となる",
+   "title_pt": "",
+   "jp_anchor": "不安は大感激となる",
+   "pt_anchor": "A Ansiedade se Torna Grande Gratidão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料御利益の感謝",
+   "title_pt": "",
+   "jp_anchor": "無肥料御利益の感謝",
+   "pt_anchor": "Gratidão pelos Benefícios Materiais do Cultivo Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料畑は無病で増収",
+   "title_pt": "",
+   "jp_anchor": "無肥料畑は無病で増収",
+   "pt_anchor": "O Campo Sem Fertilizantes é Livre de Doenças e Aumenta a Colheita",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料で一等米――村人も驚く観音様の御利益――",
+   "title_pt": "",
+   "jp_anchor": "無肥料で一等米――村人も驚く観音様の御利益――",
+   "pt_anchor": "Arroz de Primeira Qualidade com Cultivo Sem Fertilizantes – Os Benefícios Materiais de Kannon-Sama que Surpreendem os Moradores",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "村一番の悪田良化す",
+   "title_pt": "",
+   "jp_anchor": "村一番の悪田良化す",
+   "pt_anchor": "O Pior Campo da Vila é Melhorado",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料で試作",
+   "title_pt": "",
+   "jp_anchor": "無肥料で試作",
+   "pt_anchor": "Cultivo Experimental Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浮塵子の大群畦一重で止まる",
+   "title_pt": "",
+   "jp_anchor": "浮塵子の大群畦一重で止まる",
+   "pt_anchor": "---\n\nUma Grande Nuvem de Cigarrinhas-das-gramíneas (Unka) Parou na Divisória do Canteiro",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "脳膜炎の愛馬救はる――獣医の宣告は絶望――",
+   "title_pt": "",
+   "jp_anchor": "脳膜炎の愛馬救はる――獣医の宣告は絶望――",
+   "pt_anchor": "Cavalo Amado com Meningite é Salvo – Veterinário Anunciou Desespero",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "救はれた牛",
+   "title_pt": "",
+   "jp_anchor": "救はれた牛",
+   "pt_anchor": "O Boi Salvo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "鶏の甦生",
+   "title_pt": "",
+   "jp_anchor": "鶏の甦生",
+   "pt_anchor": "A Ressurreição da Galinha",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "禽獣虫魚の末迄も",
+   "title_pt": "",
+   "jp_anchor": "禽獣虫魚の末迄も",
+   "pt_anchor": "Até os Últimos dos Animais, Aves, Insetos e Peixes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料甘藷一躍倍収",
+   "title_pt": "",
+   "jp_anchor": "無肥料甘藷一躍倍収",
+   "pt_anchor": "Batata-Doce sem Adubo Duplica a Colheita",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "不思議な数々",
+   "title_pt": "",
+   "jp_anchor": "不思議な数々",
+   "pt_anchor": "Inúmeras Maravilhas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "入信を顧みて",
+   "title_pt": "",
+   "jp_anchor": "入信を顧みて",
+   "pt_anchor": "Refletindo sobre minha conversão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "蚕と無肥料栽培",
+   "title_pt": "",
+   "jp_anchor": "蚕と無肥料栽培",
+   "pt_anchor": "O Bicho-da-Seda e o Cultivo Sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "家畜にまで御守護を戴いて",
+   "title_pt": "",
+   "jp_anchor": "家畜にまで御守護を戴いて",
+   "pt_anchor": "Recebendo a Proteção Divina Até para os Animais Domésticos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "獣医師に見放された牛は救はる",
+   "title_pt": "",
+   "jp_anchor": "獣医師に見放された牛は救はる",
+   "pt_anchor": "Vaca Abandonada pelo Veterinário é Salva",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "脳炎で絶望の豚が奇蹟蘇生す",
+   "title_pt": "",
+   "jp_anchor": "脳炎で絶望の豚が奇蹟蘇生す",
+   "pt_anchor": "Porco com Encefalite, Dado como Sem Esperança, Ressuscita Milagrosamente",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "甘く美味しい玉葱の収穫",
+   "title_pt": "",
+   "jp_anchor": "甘く美味しい玉葱の収穫",
+   "pt_anchor": "Colheita de Cebolas Doces e Saborosas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "肥料を用いず二倍の収穫",
+   "title_pt": "",
+   "jp_anchor": "肥料を用いず二倍の収穫",
+   "pt_anchor": "Colheita Duplicada sem Uso de Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "キャベツに花が出ぬ",
+   "title_pt": "",
+   "jp_anchor": "キャベツに花が出ぬ",
+   "pt_anchor": "O Repolho Não Floresce",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料耕作の実践",
+   "title_pt": "",
+   "jp_anchor": "無肥料耕作の実践",
+   "pt_anchor": "Prática do Cultivo sem Adubos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "偉大なる無肥料の成果",
+   "title_pt": "",
+   "jp_anchor": "偉大なる無肥料の成果",
+   "pt_anchor": "Os Grandes Resultados do Cultivo sem Adubos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "野猪の被害に就ての御利益",
+   "title_pt": "",
+   "jp_anchor": "野猪の被害に就ての御利益",
+   "pt_anchor": "Benefícios Materiais Relacionados aos Danos Causados por Javalis",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料の柿は落ちず",
+   "title_pt": "",
+   "jp_anchor": "無肥料の柿は落ちず",
+   "pt_anchor": "O caqui sem fertilizantes não cai",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "肥害を語る",
+   "title_pt": "",
+   "jp_anchor": "肥害を語る",
+   "pt_anchor": "Falando sobre os Danos dos Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料耕作の体験談",
+   "title_pt": "",
+   "jp_anchor": "無肥料耕作の体験談",
+   "pt_anchor": "Relato de Experiência de Cultivo sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "不安一蹴の御利益",
+   "title_pt": "",
+   "jp_anchor": "不安一蹴の御利益",
+   "pt_anchor": "Benefícios Materiais que Afastam a Ansiedade",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥料米の重み",
+   "title_pt": "",
+   "jp_anchor": "無肥料米の重み",
+   "pt_anchor": "O Peso do Arroz sem Fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無肥栽培の報告を読んで",
+   "title_pt": "",
+   "jp_anchor": "無肥栽培の報告を読んで",
+   "pt_anchor": "Lendo os Relatos de Cultivo sem Fertilizantes",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

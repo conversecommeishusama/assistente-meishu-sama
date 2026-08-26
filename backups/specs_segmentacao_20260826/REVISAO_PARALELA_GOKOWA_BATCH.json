@@ -1,0 +1,2023 @@
+{
+  "generated_at": "2026-06-28T18:57:31Z",
+  "stage": "auditoria_gokowa",
+  "stats": {
+    "files": 20,
+    "trechos": 90,
+    "fail": 84,
+    "warn": 6,
+    "ok": 0
+  },
+  "issue_counts": {
+    "desalinhamento": 140,
+    "anchor_invalido": 51,
+    "pt_incompleto": 48,
+    "titulo_cabecalho": 23,
+    "cjk_no_pt": 6,
+    "pt_ausente": 5,
+    "subdivisao_possivel": 1,
+    "file:subdivisao_possivel": 1,
+    "file:monólito com 6 marcadores internos JP": 1
+  },
+  "file_summary": [
+    {
+      "file": "19480101-御光話録（補）.txt",
+      "profile": "gokowa_roku_ho",
+      "articles": 30,
+      "trechos": 30,
+      "ok": 0,
+      "warn": 1,
+      "fail": 29,
+      "file_issues": []
+    },
+    {
+      "file": "19481208-御光話録1号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 1,
+      "fail": 3,
+      "file_issues": []
+    },
+    {
+      "file": "19490108-御光話録2号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 5,
+      "trechos": 5,
+      "ok": 0,
+      "warn": 1,
+      "fail": 4,
+      "file_issues": []
+    },
+    {
+      "file": "19490208-御光話録3号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 0,
+      "fail": 4,
+      "file_issues": []
+    },
+    {
+      "file": "19490000-御光話録4号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 3,
+      "trechos": 3,
+      "ok": 0,
+      "warn": 0,
+      "fail": 3,
+      "file_issues": []
+    },
+    {
+      "file": "19490000-御光話録5号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 3,
+      "trechos": 3,
+      "ok": 0,
+      "warn": 1,
+      "fail": 2,
+      "file_issues": []
+    },
+    {
+      "file": "19490423-御光話録6号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19490522-御光話録7号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 1,
+      "fail": 3,
+      "file_issues": []
+    },
+    {
+      "file": "19490530-御光話録8号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19490730-御光話録9号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19490710-御光話録10号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 0,
+      "fail": 4,
+      "file_issues": []
+    },
+    {
+      "file": "19490821-御光話録11号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19490921-御光話録12号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 1,
+      "fail": 3,
+      "file_issues": []
+    },
+    {
+      "file": "19491021-御光話録13号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 0,
+      "fail": 4,
+      "file_issues": []
+    },
+    {
+      "file": "19491120-御光話録14号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 4,
+      "trechos": 4,
+      "ok": 0,
+      "warn": 0,
+      "fail": 4,
+      "file_issues": []
+    },
+    {
+      "file": "19491220-御光話録15号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19500120-御光話録16号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": [
+        "subdivisao_possivel",
+        "monólito com 6 marcadores internos JP"
+      ]
+    },
+    {
+      "file": "19500228-御光話録17号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19500423-御光話録18号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 1,
+      "trechos": 1,
+      "ok": 0,
+      "warn": 0,
+      "fail": 1,
+      "file_issues": []
+    },
+    {
+      "file": "19500613-御光話録19号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles": 13,
+      "trechos": 13,
+      "ok": 0,
+      "warn": 0,
+      "fail": 13,
+      "file_issues": []
+    }
+  ],
+  "files": [
+    {
+      "filename": "19480101-御光話録（補）.txt",
+      "profile": "gokowa_roku_ho",
+      "articles_total": 30,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 129,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Gokōwa-roku (Suplemento)'",
+            "title_pt contém CJK"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "昭和二十三年一月一日",
+          "kind": "session",
+          "jp_chars": 1903,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1903 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=9 vs PT=0",
+            "pt_anchor não encontrado: '**1º de janeiro do ano 23 da Era Showa (1948)**'",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "昭和二十三年一月十八日",
+          "kind": "session",
+          "jp_chars": 3190,
+          "pt_chars": 13404,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=12 vs PT=0",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "二月十八日（水）",
+          "kind": "session",
+          "jp_chars": 5434,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 5434 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=12 vs PT=0",
+            "pt_anchor não encontrado: '18 de fevereiro do ano 23 da Era Showa (1948) (qua'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 5,
+          "title_jp": "三月八日（月）",
+          "kind": "session",
+          "jp_chars": 2480,
+          "pt_chars": 22941,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (5 testadas)",
+            "CJK: …Afinal, é \"Yoshida (吉田 = bem) Ashida (芦田 …",
+            "CJK: …final, é \"Yoshida (吉田 = bem) Ashida (芦田 =…",
+            "CJK: … (吉田 = bem) Ashida (芦田 = mal)\". **28 de f…",
+            "perguntas JP=8 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 6,
+          "title_jp": "三月二十八日（日）",
+          "kind": "session",
+          "jp_chars": 2524,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2524 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=14 vs PT=0",
+            "pt_anchor não encontrado: '28 de março (domingo)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 7,
+          "title_jp": "四月八日（木）",
+          "kind": "session",
+          "jp_chars": 3855,
+          "pt_chars": 17750,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=10 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 8,
+          "title_jp": "四月十八日（日）",
+          "kind": "session",
+          "jp_chars": 1993,
+          "pt_chars": 5461,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=8 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 9,
+          "title_jp": "四月二十八日（水）",
+          "kind": "session",
+          "jp_chars": 3287,
+          "pt_chars": 17886,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=9 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 10,
+          "title_jp": "五月八日（土）",
+          "kind": "session",
+          "jp_chars": 2888,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2888 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=6 vs PT=0",
+            "pt_anchor não encontrado: '8 de maio (sábado)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 11,
+          "title_jp": "五月十八日",
+          "kind": "session",
+          "jp_chars": 4488,
+          "pt_chars": 12233,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=12 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 12,
+          "title_jp": "五月二十八日（金）",
+          "kind": "session",
+          "jp_chars": 4100,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4100 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=8 vs PT=0",
+            "pt_anchor não encontrado: '28 de maio (sexta-feira)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 13,
+          "title_jp": "六月八日（火）",
+          "kind": "session",
+          "jp_chars": 3664,
+          "pt_chars": 21961,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=13 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 14,
+          "title_jp": "六月十八日（金）",
+          "kind": "session",
+          "jp_chars": 3438,
+          "pt_chars": 18741,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "CJK: …esposa; \"wagimoko\" (吾妹子) designa isso. Qu…",
+            "CJK: …sposa; \"wagimoko\" (吾妹子) designa isso. Qua…",
+            "CJK: …posa; \"wagimoko\" (吾妹子) designa isso. Quan…",
+            "perguntas JP=11 vs PT=0",
+            "snapshot com cauda JP: livros_trabalho"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 15,
+          "title_jp": "六月二十八日",
+          "kind": "session",
+          "jp_chars": 3876,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 3876 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=19 vs PT=0",
+            "pt_anchor não encontrado: '28 de junho'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 16,
+          "title_jp": "七月八日（木）",
+          "kind": "session",
+          "jp_chars": 4295,
+          "pt_chars": 12489,
+          "issues": [
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "CJK: …Porque o caractere \"応\" (resposta) de Oshi…",
+            "CJK: …hin se escreve com \"二十\" (vinte) e \"王\" (re…",
+            "CJK: …in se escreve com \"二十\" (vinte) e \"王\" (rei…",
+            "perguntas JP=16 vs PT=0",
+            "pt_anchor não encontrado: '8 de julho (quinta-feira)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 17,
+          "title_jp": "七月十八日（日）",
+          "kind": "session",
+          "jp_chars": 3345,
+          "pt_chars": 9828,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=13 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 18,
+          "title_jp": "七月二十八日（水）",
+          "kind": "session",
+          "jp_chars": 11368,
+          "pt_chars": 46576,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=44 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 19,
+          "title_jp": "八月二十八日",
+          "kind": "session",
+          "jp_chars": 4983,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4983 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=18 vs PT=0",
+            "pt_anchor não encontrado: '28 de agosto'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 20,
+          "title_jp": "九月八日（水）",
+          "kind": "session",
+          "jp_chars": 4630,
+          "pt_chars": 13381,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=20 vs PT=0",
+            "pt_anchor não encontrado: '8 de setembro (quarta-feira)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 21,
+          "title_jp": "九月十八日（土）",
+          "kind": "session",
+          "jp_chars": 3797,
+          "pt_chars": 11019,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "CJK: …eve ser endurecido (固める)?  Meishu-Sama: S…",
+            "CJK: …ve ser endurecido (固める)?  Meishu-Sama: Si…",
+            "CJK: …e ser endurecido (固める)?  Meishu-Sama: Sim…",
+            "perguntas JP=19 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 22,
+          "title_jp": "九月二十八日（火）",
+          "kind": "session",
+          "jp_chars": 7535,
+          "pt_chars": 22157,
+          "issues": [
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "CJK: …r \"carregar arroz\" (稻荷) e ler \"Inari\" vem…",
+            "CJK: … \"carregar arroz\" (稻荷) e ler \"Inari\" vem …",
+            "CJK: …tere para pinheiro (松) é composto pelo ra…",
+            "perguntas JP=34 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 23,
+          "title_jp": "十月十八日（月）",
+          "kind": "session",
+          "jp_chars": 3826,
+          "pt_chars": 11702,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=15 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 24,
+          "title_jp": "十月二十八日（木）",
+          "kind": "session",
+          "jp_chars": 4475,
+          "pt_chars": 12671,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=17 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 25,
+          "title_jp": "十一月八日（月）",
+          "kind": "session",
+          "jp_chars": 4654,
+          "pt_chars": 12401,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=19 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 26,
+          "title_jp": "十一月十八日（木）",
+          "kind": "session",
+          "jp_chars": 4303,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4303 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=16 vs PT=0",
+            "pt_anchor não encontrado: '18 de novembro (quinta-feira)'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 27,
+          "title_jp": "十一月二十八日",
+          "kind": "session",
+          "jp_chars": 4278,
+          "pt_chars": 22506,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=17 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 28,
+          "title_jp": "十二月八日（水）",
+          "kind": "session",
+          "jp_chars": 5897,
+          "pt_chars": 17619,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=24 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 29,
+          "title_jp": "十二月十八日（日）",
+          "kind": "session",
+          "jp_chars": 5097,
+          "pt_chars": 14155,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=30 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 30,
+          "title_jp": "十二月二十八日（火）",
+          "kind": "session",
+          "jp_chars": 8205,
+          "pt_chars": 18759,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "cjk_no_pt",
+            "desalinhamento"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "CJK: …ishu-Sama: O \"kyo\" (教) de \"Igreja Kannon\"…",
+            "CJK: … caractere \"poder\" (力), ele representa a …",
+            "CJK: …suástica invertida (卍) representa isso; a…",
+            "perguntas JP=30 vs PT=0"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19481208-御光話録1号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 27,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 1, publicado em 8 de dezembro do an'"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "十月二十八日（木）",
+          "kind": "session",
+          "jp_chars": 4132,
+          "pt_chars": 11630,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: '[28 de outubro (quinta-feira)]'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "十一月八日（月）",
+          "kind": "session",
+          "jp_chars": 3893,
+          "pt_chars": 10032,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: '[8 de novembro (segunda-feira)]'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "十一月十八日（木）",
+          "kind": "session",
+          "jp_chars": 4138,
+          "pt_chars": 11384,
+          "issues": [
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: '[18 de novembro (quinta-feira)]'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490108-御光話録2号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 5,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 35,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 8 de janeiro do ano 24 d'",
+            "title_pt contém CJK"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "十一月二十八日",
+          "kind": "session",
+          "jp_chars": 4054,
+          "pt_chars": 1159,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1159 chars vs JP 4054 (29%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=15 vs PT=5",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 8 de janeiro do ano 24 d'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "十二月八日（水）",
+          "kind": "session",
+          "jp_chars": 5876,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 5876 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=24 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 2, publicado em 8 de janeiro do ano'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "十二月十八日（土）",
+          "kind": "session",
+          "jp_chars": 5102,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 5,
+          "title_jp": "十二月二十八日（火）",
+          "kind": "session",
+          "jp_chars": 7021,
+          "pt_chars": 13275,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=23 vs PT=83",
+            "pt_anchor não encontrado: '28 de dezembro'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490208-御光話録3号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 5766,
+          "pt_chars": 13948,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=26 vs PT=64",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "一月十八日（火）",
+          "kind": "session",
+          "jp_chars": 5297,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 5297 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=27 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 8 de fevereiro do ano 24'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "一月二十八日（金）",
+          "kind": "session",
+          "jp_chars": 6148,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 6148 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=34 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 3, publicado em 8 de fevereiro do a'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "昭和二十四年四月九日",
+          "kind": "session",
+          "jp_chars": 10,
+          "pt_chars": 4640,
+          "issues": [
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=23",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 3, publicado em 8 de fevereiro do a'",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490000-御光話録4号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 3,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 264,
+          "pt_chars": 14668,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=76",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "二月八日（火）",
+          "kind": "session",
+          "jp_chars": 4857,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4857 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=28 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 1949'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "二月十八日（金）",
+          "kind": "session",
+          "jp_chars": 12442,
+          "pt_chars": 3955,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 3955 chars vs JP 12442 (32%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=58 vs PT=11",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 4, publicado em 1949'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490000-御光話録5号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 3,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 35,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 1949'",
+            "title_pt contém CJK"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "三月八日（火）",
+          "kind": "session",
+          "jp_chars": 11224,
+          "pt_chars": 4705,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=49 vs PT=43",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 1949'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "三月二十三日（水）",
+          "kind": "session",
+          "jp_chars": 5241,
+          "pt_chars": 1800,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1800 chars vs JP 5241 (34%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=9 vs PT=14",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 5, publicado em 1949'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490423-御光話録6号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録６号",
+          "kind": "monolith",
+          "jp_chars": 13517,
+          "pt_chars": 8263,
+          "issues": [
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 6, publicado em 23 de abril do ano '",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490522-御光話録7号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 591,
+          "pt_chars": 1553,
+          "issues": [
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "title_pt contém CJK"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "四月四日（月）",
+          "kind": "session",
+          "jp_chars": 5708,
+          "pt_chars": 13051,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=15 vs PT=48"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "四月十三日（水）",
+          "kind": "session",
+          "jp_chars": 4084,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4084 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=12 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 22 de maio do ano 24 da '"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "四月二十三日（土）",
+          "kind": "session",
+          "jp_chars": 8068,
+          "pt_chars": 2663,
+          "issues": [
+            "pt_incompleto",
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 2663 chars vs JP 8068 (33%)",
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=30 vs PT=9",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 7, publicado em 22 de maio do ano 2'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490530-御光話録8号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録８号",
+          "kind": "monolith",
+          "jp_chars": 18841,
+          "pt_chars": 21257,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490730-御光話録9号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録９号",
+          "kind": "monolith",
+          "jp_chars": 22019,
+          "pt_chars": 14849,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490710-御光話録10号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 34,
+          "pt_chars": 16057,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=65",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "五月三日",
+          "kind": "session",
+          "jp_chars": 6132,
+          "pt_chars": 2744,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=21 vs PT=9"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "五月十三日",
+          "kind": "session",
+          "jp_chars": 6966,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 6966 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=29 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 10 de julho do ano 24 da'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "五月二十三日",
+          "kind": "session",
+          "jp_chars": 8845,
+          "pt_chars": 9,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 9 chars vs JP 8845 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=24 vs PT=0"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490821-御光話録11号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録11号",
+          "kind": "monolith",
+          "jp_chars": 24181,
+          "pt_chars": 60892,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19490921-御光話録12号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 34,
+          "pt_chars": 1,
+          "issues": [
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 21 de setembro do ano 24'",
+            "title_pt contém CJK"
+          ],
+          "severity": "warn"
+        },
+        {
+          "index": 2,
+          "title_jp": "六月三日",
+          "kind": "session",
+          "jp_chars": 10464,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 10464 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=44 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 21 de setembro do ano 24'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "六月十三日",
+          "kind": "session",
+          "jp_chars": 8035,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 8035 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=27 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 12, publicado em 21 de setembro do '"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "六月二十三日",
+          "kind": "session",
+          "jp_chars": 6815,
+          "pt_chars": 17230,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=21 vs PT=92",
+            "pt_anchor não encontrado: '23 de junho'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19491021-御光話録13号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 35,
+          "pt_chars": 10982,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=62",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "七月三日",
+          "kind": "session",
+          "jp_chars": 4585,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4585 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=20 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 21 de outubro do ano 24 '"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "七月十三日",
+          "kind": "session",
+          "jp_chars": 9705,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "七月二十三日",
+          "kind": "session",
+          "jp_chars": 6885,
+          "pt_chars": 10512,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=28 vs PT=77",
+            "pt_anchor não encontrado: '23 de julho'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19491120-御光話録14号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 4,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 35,
+          "pt_chars": 8275,
+          "issues": [
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=10",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 14, publicado em 20 de novembro do '",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "八月三日",
+          "kind": "session",
+          "jp_chars": 4304,
+          "pt_chars": 7123,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=17 vs PT=14",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 14, publicado em 20 de novembro do '"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "八月十三日",
+          "kind": "session",
+          "jp_chars": 3060,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 3060 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=19 vs PT=0",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 20 de novembro do ano 24'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "八月二十三日",
+          "kind": "session",
+          "jp_chars": 15053,
+          "pt_chars": 26583,
+          "issues": [
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=44 vs PT=56",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 14, publicado em 20 de novembro do '"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19491220-御光話録15号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録15号",
+          "kind": "monolith",
+          "jp_chars": 22080,
+          "pt_chars": 21672,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19500120-御光話録16号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録16号",
+          "kind": "monolith",
+          "jp_chars": 21604,
+          "pt_chars": 36134,
+          "issues": [
+            "subdivisao_possivel",
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "JP interno: 6 marcadores (jikan_secao)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 16, publicado em 20 de janeiro do a'",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": [
+        "subdivisao_possivel",
+        "monólito com 6 marcadores internos JP"
+      ]
+    },
+    {
+      "filename": "19500228-御光話録17号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録17号",
+          "kind": "monolith",
+          "jp_chars": 24053,
+          "pt_chars": 7524,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "PT 7524 chars vs JP 24053 (31%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "pt_anchor não encontrado: 'Gokōwa-roku nº 17, publicado em 28 de fevereiro do'",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19500423-御光話録18号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 1,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "御光話録18号",
+          "kind": "monolith",
+          "jp_chars": 23185,
+          "pt_chars": 10533,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    },
+    {
+      "filename": "19500613-御光話録19号.txt",
+      "profile": "gokowa_roku_qa",
+      "articles_total": 13,
+      "trechos": [
+        {
+          "index": 1,
+          "title_jp": "序文",
+          "kind": "preface",
+          "jp_chars": 28,
+          "pt_chars": 431,
+          "issues": [
+            "desalinhamento",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "perguntas JP=0 vs PT=3",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 2,
+          "title_jp": "昭和二十五年二月十八日",
+          "kind": "session",
+          "jp_chars": 178,
+          "pt_chars": 5379,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "anchor_invalido",
+            "titulo_cabecalho"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "perguntas JP=1 vs PT=18",
+            "pt_anchor não encontrado: 'Gokōwa-roku, publicado em 13 de junho do ano 25 da'",
+            "title_pt contém CJK"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 3,
+          "title_jp": "二月二十八日",
+          "kind": "session",
+          "jp_chars": 2086,
+          "pt_chars": 11958,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "marcador truncamento no PT",
+            "agulhas JP não encontradas no chunk PT (4 testadas)",
+            "perguntas JP=4 vs PT=73",
+            "pt_anchor não encontrado: '28 de fevereiro'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 4,
+          "title_jp": "三月三日",
+          "kind": "session",
+          "jp_chars": 4353,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 4353 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=15 vs PT=0",
+            "pt_anchor não encontrado: '23 de março'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 5,
+          "title_jp": "三月八日",
+          "kind": "session",
+          "jp_chars": 983,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 6,
+          "title_jp": "三月十八日",
+          "kind": "session",
+          "jp_chars": 1105,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1105 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=6 vs PT=0",
+            "pt_anchor não encontrado: '28 de fevereiro'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 7,
+          "title_jp": "三月二十三日",
+          "kind": "session",
+          "jp_chars": 700,
+          "pt_chars": 7,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 7 chars vs JP 700 (1%)",
+            "agulhas JP não encontradas no chunk PT (2 testadas)",
+            "perguntas JP=2 vs PT=0",
+            "pt_anchor não encontrado: '23 de março'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 8,
+          "title_jp": "三月二十八日",
+          "kind": "session",
+          "jp_chars": 1334,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 1334 (0%)",
+            "agulhas JP não encontradas no chunk PT (5 testadas)",
+            "perguntas JP=5 vs PT=0",
+            "pt_anchor não encontrado: '23 de março'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 9,
+          "title_jp": "四月三日",
+          "kind": "session",
+          "jp_chars": 2838,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 10,
+          "title_jp": "四月八日",
+          "kind": "session",
+          "jp_chars": 2516,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2516 (0%)",
+            "agulhas JP não encontradas no chunk PT (5 testadas)",
+            "perguntas JP=10 vs PT=0"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 11,
+          "title_jp": "四月十三日",
+          "kind": "session",
+          "jp_chars": 2078,
+          "pt_chars": 1,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 1 chars vs JP 2078 (0%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=7 vs PT=0",
+            "pt_anchor não encontrado: '13 de abril'"
+          ],
+          "severity": "fail"
+        },
+        {
+          "index": 12,
+          "title_jp": "四月二十三日",
+          "kind": "session",
+          "jp_chars": 1983,
+          "pt_chars": 0,
+          "issues": [
+            "pt_ausente"
+          ],
+          "notes": [],
+          "severity": "fail"
+        },
+        {
+          "index": 13,
+          "title_jp": "四月二十八日",
+          "kind": "session",
+          "jp_chars": 1797,
+          "pt_chars": 121,
+          "issues": [
+            "pt_incompleto",
+            "desalinhamento",
+            "desalinhamento",
+            "anchor_invalido"
+          ],
+          "notes": [
+            "PT 121 chars vs JP 1797 (7%)",
+            "agulhas JP não encontradas no chunk PT (6 testadas)",
+            "perguntas JP=7 vs PT=0",
+            "pt_anchor não encontrado: '28 de abril (18 de abril)'"
+          ],
+          "severity": "fail"
+        }
+      ],
+      "file_issues": []
+    }
+  ]
+}

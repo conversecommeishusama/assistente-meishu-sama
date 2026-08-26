@@ -1,0 +1,51 @@
+{
+ "filename": "19490000 - Gokōwa-roku nº 4.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 3→4 (sessão de 28 de fevereiro estava ausente da spec, absorvida em 18 de fevereiro; jp_anchor/pt_anchor únicos confirmados por grep -c=1 nos brutos). pt_anchor dos 4 artigos preenchido manualmente com a forma completa 'DD de mês (dia da semana)' (evita ambiguidade de substring: formas curtas tipo '8 de fevereiro' casam dentro de '18 de fevereiro'/'28 de fevereiro'). NÃO rodado audit_manual_livros_segmentacao.py --fix --repair-pt neste arquivo: testado antes em cópia isolada (--work-root /tmp) e confirmado que reproduz o MESMO bug sistêmico já documentado em 19481208-御光話録1号.txt.json (content_start() em livros_segmentacao_pairing.py pula a linha 'publicado em \\d' tratando-a como metadado, mas nesse profile ela é o conteúdo real do artigo 1/prefácio -- causa GAP_FILLED nos índices [0,1] por interpolação proporcional, e o --fix também trunca os pt_anchor das sessões para a forma curta ambígua). Verificação real feita pelo caminho de produção (apply_manual_livros_segmentacao.py, split_by_anchors literal, não o heurístico pair_gokowa usado só pelo audit): --dry-run 4/4 artigos, ordem monotônica sem erro, jp_chars=[265,5542,8217,5729] pt_chars=[963,14008,18971,13878] (ratio sessões 2.31-2.53, prefácio 3.63 por ser curto -- consistente com o esperado). Corte turn-aware (PROTOCOLO_CHUNK_TURNAWARE.md Secao 2) verificado por código próprio (import direto de _group_into_turn_units/split_chunks_by_size): 190 unidades de turno (JP+PT, 4 artigos), 0 violações (nenhuma unidade Interlocutor:/Meishu-Sama: partida entre chunks); 1 unidade >3200 chars (artigo 4/28-fev, lado PT, 3731 chars) dividida em 2 chunks com rótulo Meishu-Sama: corretamente preservado no início de cada pedaço. Prefácio (artigo 1) confirmado monólito de poemas sem diálogo rotulado escondido, como esperado (JP: 2 unidades/1 rotulada só o cabeçalho 'Meishu-Sama: 立春の御歌'; PT: 10 unidades/0 rotuladas). Artigo 4 contém leituras do 'Sr. Inoue' (parênteses '(O Sr. Inoue lê...)'/（井上先生朗読）) -- confirmado que são rubricas cênicas sem rótulo Interlocutor:/Meishu-Sama:, permanecem corretamente fundidas dentro do monólogo do Meishu-Sama, não tratadas como um novo interlocutor nem como par quebrado. Pendência conhecida (não bloqueia este livro, é bug do motor, mesma nota registrada para 1号): audit --fix --repair-pt não deve ser rodado neste arquivo sem primeiro corrigir o bug de content_start()/pair_gokowa no motor, sob pena de reverter os pt_anchor corretos para a forma ambígua sem dia da semana.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』4号、昭和24(1949)年＊月＊日発行",
+   "pt_anchor": "Gokōwa-roku nº 4",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月八日（火）",
+   "title_pt": "8 de fevereiro",
+   "jp_anchor": "二月八日（火）",
+   "pt_anchor": "8 de fevereiro (terça-feira)\n\nInterlocutor: Dentre os itens a seguir, qual devemos considerar prioritário para as perguntas? 1. Sobre o Johrei, 2. Sobre o desenvolvimento, 3. Sobre a vida social, 4. Sobre o mundo espiritual, 5. Sobre a vida familiar, 6. Sobre a perspectiva futura, 7. Sobre os escritos do Mestre, 8. Sobre assuntos internos da organização religiosa.",
+   "notes": "",
+   "pt_prefix": "8 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十八日（金）",
+   "title_pt": "18 de fevereiro",
+   "jp_anchor": "二月十八日（金）",
+   "pt_anchor": "18 de fevereiro (sexta-feira)\n\nInterlocutor: Existe diferença no poder dos espíritos divididos da mesma divindade ou Buda adorados em diferentes lugares?",
+   "notes": "",
+   "pt_prefix": "18 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十八日（月）",
+   "title_pt": "28 de fevereiro",
+   "jp_anchor": "二月二十八日（月）（本日は光宝会、明成会、長生会とともに御面会をいただく）",
+   "pt_anchor": "Interlocutor: No jornal do outro dia, foi divulgado o resultado do censo do ano 22 da Era Showa (1947).",
+   "notes": "",
+   "pt_prefix": "28 de fevereiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

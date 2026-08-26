@@ -1,0 +1,192 @@
+{
+  "filename": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 859 linhas / PT ~391 linhas apos correcoes), 39 trechos por spec (profile koza_lectures), das 5 secoes medicas (olhos/ouvidos/nariz/garganta/dentes) ao encarte final. Nao e amostragem: todo o corpo do JP foi lido integralmente e confrontado com o PT correspondente na mesma ordem, secao por secao, item por item (39 itens numerados + preambulos nao numerados).",
+  "gate_mecanico": "Nao substituido por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semantica linha a linha.",
+  "contexto_historico": "Este arquivo ja teve uma correcao estrutural na Fase Inicial do projeto (antes desta sessao): reorganizado de 86 trechos genericos para 39 trechos por capitulo medico real. Essa reorganizacao estrutural antiga nao substituiu a revisao semantica linha a linha executada agora - tudo foi reverificado do zero.",
+  "spec_contamination": {
+    "encontrada": true,
+    "descricao": "Confirmado o alerta do usuario: o spec original tinha title_pt e pt_prefix contaminados com titulos de outro livro (aparentemente 観音講座/Kannon Kōza) em todos os 38 artigos de conteudo (indices 1-38): title_pt genericos tipo 'Aula N Aula — ' ou titulos doutrinarios sem nenhuma relacao com o volume medico (ex.: 'A Essencia do Bodhisattva Kannon', 'A Missao do Japao e dos Paises Estrangeiros'), e pt_prefix com valores tipo 'Aula 8 Aula'. Alem disso pt_anchor de 2 dos 39 artigos (indices 14 e 34, correspondentes aos itens JP (32) e (4) do capitulo de dentes) apontavam para trechos de OUTROS itens (nao o proprio), confirmando que anchors nao eram confiaveis por posicao.",
+    "correcao_aplicada": "title_pt e pt_prefix de todos os 39 artigos foram recalculados a partir do titulo JP real (title_jp), traduzido fielmente e conferido contra o conteudo real do PT ja corrigido nesta sessao. pt_anchor recalculado para cada um dos 39 artigos localizando programaticamente a posicao real e unica do marcador '(N) <Titulo>' dentro do PT corrigido (verificado: as 39 ocorrencias sao unicas - count==1 - exceto o artigo 0/prefacio, que aponta para o titulo do livro, repetido 3x no cabecalho, o que e esperado). Nenhuma correcao de anchor foi feita por posicao/ratio - todas foram verificadas por conteudo real.",
+    "confianca": "alta"
+  },
+  "achados_reais_confirmados": [
+    {
+      "n": 1,
+      "tipo": "duplicacao + truncamento (mesmo padrao do bug ja catalogado em Gokowa: rascunho truncado + versao completa intercalados)",
+      "localizacao": "Capitulo Olhos, itens (17)(18)(19) - JP linhas 199-223",
+      "problema": "O PT continha DUAS passagens cobrindo os itens (17)/(18)/(19), em dois estilos de traducao diferentes (primeira usando 'toxina'/'Revelacao', segunda usando 'veneno'/'Resposta Divina'). A primeira passagem tinha (17) e (18) completos mas a pergunta do item (19) truncada e SEM resposta. A segunda passagem tinha a abertura do item (17) truncada (faltando titulo e inicio da pergunta) mas (18) e (19) completos, incluindo a unica copia integral da resposta do item (19).",
+      "correcao": "Mescladas as duas passagens em uma unica sequencia limpa: (17) e (18) mantidos da primeira versao (completos, terminologia 'toxina' consistente com o resto do documento); (19) pergunta+resposta reconstituidos a partir da segunda versao (unica completa), com 'veneno' substituido por 'toxina' para consistencia terminologica com o glossario.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "PT faltante (pergunta ausente)",
+      "localizacao": "Capitulo Olhos, item (20) Causa da cegueira por metanol - JP linha 229",
+      "problema": "A pergunta do consulente ('Onde esta o ponto vital do Johrei para uma pessoa que ficou cega por metanol ha seis anos?') estava totalmente ausente do PT - o texto saltava direto da referencia bibliografica para a resposta.",
+      "correcao": "Traduzida e inserida a pergunta faltante, conferida contra o JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "PT faltante (truncamento de lista enumerada)",
+      "localizacao": "Capitulo Olhos, item (29) testemunho de Fujieda Yasuharu - JP linhas 317-320",
+      "problema": "Das 4 perguntas numeradas do consulente ao final do longo testemunho, apenas a pergunta 4 estava presente no PT; as perguntas 1 ('Havia algo errado no metodo que utilizei?'), 2 ('Seria innen dos antepassados ou do gato?') e 3 ('Meu marido ainda vai demorar para curar?') estavam ausentes.",
+      "correcao": "Traduzidas e inseridas as 3 perguntas faltantes na posicao correta, antes da pergunta 4 ja existente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "PT faltante (bloco grande de texto ausente dentro de uma resposta)",
+      "localizacao": "Capitulo Olhos, item (31) testemunho da picada de mutuca - JP linha 346",
+      "problema": "Um trecho de aproximadamente 6 frases da resposta estava ausente, visivel no PT como um buraco literal ('A congestao ocorreu porque  Se fizer Johrei...' com espaco duplo marcando a lacuna). Faltava: a explicacao de que o sangue toxico se espalhou ate o branco do olho, a rejeicao das expressoes 'coroidite cronica' e 'risco de cegueira' como absurdas, e a afirmacao de que cegueira por picada de inseto nao acontece.",
+      "correcao": "Traduzido e inserido o trecho faltante, conferido contra o JP linha a linha.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "PT faltante (2 perguntas curtas ausentes)",
+      "localizacao": "Capitulo Olhos, item (37) Causa dos cilios invertidos - JP linhas 404 e 411",
+      "problema": "As duas perguntas do consulente ('Por que os cilios invertidos voltam a nascer...?' e 'Ha casos de pais e filhos com cilios invertidos; isso se cura com o Johrei?') estavam ausentes - o PT saltava direto do marcador de citacao para a resposta em ambos os pares.",
+      "correcao": "Traduzidas e inseridas as 2 perguntas faltantes.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "tipo": "PT faltante (pergunta curta ausente)",
+      "localizacao": "Capitulo Ouvidos, trecho nao numerado sobre surdez na velhice - JP linha 439",
+      "problema": "A pergunta ('A medida que a pessoa envelhece, a dificuldade de ouvir tambem e devido a toxina?') estava ausente.",
+      "correcao": "Traduzida e inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "tipo": "PT faltante (interjeicao curta do Mestre ausente entre duas citacoes)",
+      "localizacao": "Capitulo Ouvidos, item (5) menina com secrecao continua - JP linha 480",
+      "problema": "Entre duas respostas citadas da consulente, faltava a pergunta interposta do Mestre ('E antes da vacinacao?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "tipo": "PT faltante (pergunta iniciadora ausente antes de citacao)",
+      "localizacao": "Capitulo Nariz, item (5) sangramento nasal - JP linha 533",
+      "problema": "Faltava a pergunta do Mestre ('Como isso costuma sair?') que precede a resposta citada da familia.",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "tipo": "PT faltante (2 interjeicoes do Mestre ausentes entre citacoes)",
+      "localizacao": "Capitulo Garganta, item (5) idoso com feridas na boca - JP linha 607-612",
+      "problema": "Entre tres respostas citadas do consulente, faltavam duas falas do Mestre ('E toxina medicamentosa. A dor e um bom sinal. Nao ha vermelhidao?' e 'A boca nao abre?').",
+      "correcao": "Inseridas nas posicoes corretas.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "tipo": "PT faltante (2 perguntas curtas do Mestre ausentes)",
+      "localizacao": "Capitulo Garganta, item (7) idoso com cancer de garganta diagnosticado - JP linha 630-639",
+      "problema": "Faltavam as perguntas 'O buraco se abrindo, havia pus tambem?' e 'Quantos anos voce tem?' que o Mestre faz entre as respostas citadas do consulente.",
+      "correcao": "Inseridas.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "tipo": "duplicacao + truncamento (mesmo padrao do achado 1)",
+      "localizacao": "Capitulo Dentes, item (2) Sobre o tratamento dentario - JP linhas 720-736",
+      "problema": "O item aparecia duas vezes no PT: uma versao truncada (cortando a explicacao final sobre 'a dor e a toxina se solidificando') seguida de um fragmento duplicado da conclusao do item (1) e depois uma segunda versao completa do item (2). A segunda versao tambem continha um erro de traducao: 'オキシフル' (nome de produto, agua oxigenada) foi traduzido erroneamente como 'Oxifluoreto de fenol' (substancia quimica inventada, sem correspondencia).",
+      "correcao": "Removida a duplicacao, mantendo a abertura da primeira versao (correta, com 'Oxiflu' preservado como esta no original) e completando com o fechamento da segunda versao, com o erro 'Oxifluoreto de fenol' corrigido de volta para a leitura mais fiel usada na primeira versao.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "tipo": "titulo de capitulo ausente/incompleto",
+      "localizacao": "Cabecalho do capitulo 4 (Garganta) - JP linha 567 '四、咽喉科'",
+      "problema": "O titulo do capitulo aparecia no PT apenas como '4. Otorrinolaringologia', sem a palavra 'Garganta', quebrando o padrao usado nos capitulos 2 e 3 ('2. Orelha (Otorrinolaringologia)', '3. Nariz (Otorrinolaringologia)').",
+      "correcao": "Corrigido para '4. Garganta (Otorrinolaringologia)'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "tipo": "PT faltante (pergunta curta ausente)",
+      "localizacao": "Capitulo Garganta, item (13) Sobre desafinacao - JP linha 698",
+      "problema": "Faltava a fala do Mestre ('Isso e outra escala. Quantos anos tem?') antes da resposta citada.",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "tipo": "PT faltante (par pergunta+resposta inteiro substituido por parafrase que mistura conteudo de outro par)",
+      "localizacao": "Capitulo Dentes, item (8) Sobre dentes duplos - JP linhas 793-813 (3 pares de pergunta/resposta quase identicos no JP)",
+      "problema": "O JP tem 3 pares de Q&A quase identicos sobre dentes duplos, mas com respostas distintas (a 1a resposta explica a causa carmica - 'em vida passada, no momento da morte, o dente foi ferido' - a 2a e a 3a dao instrucoes praticas diferentes). O PT so tinha 2 pares: o primeiro havia sido colapsado numa parafrase generica ('O dente velho cairá com o Johrei?') que usava a RESPOSTA do 2o par, perdendo por completo a explicacao carmica do 1o par.",
+      "correcao": "Reconstituidos os 3 pares fieis ao JP, cada um com sua pergunta e resposta corretas, incluindo a explicacao carmica que estava ausente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "tipo": "titulo de capitulo ausente",
+      "localizacao": "Cabecalho do capitulo 1 (Olhos) e do item (1) dentro dele - JP linhas 24 e 26",
+      "problema": "O titulo do capitulo 1 ('1. Olhos (Oftalmologia)') e o titulo do primeiro item ('(1) Sobre a purificacao relacionada aos olhos') nao existiam em nenhum lugar do PT - o texto comecava direto pela primeira citacao, sem nenhum marcador, quebrando o padrao usado nos demais 4 capitulos e nos demais 38 itens.",
+      "correcao": "Inseridos os dois titulos ausentes, no mesmo padrao usado no resto do documento.",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "tipo": "inconsistencia terminologica (glossario)",
+      "localizacao": "Espalhado por 8 itens em 4 capitulos diferentes (olhos, ouvidos, garganta, dentes)",
+      "problema": "23 ocorrencias da palavra 'veneno' misturadas com 91 ocorrencias de 'toxina'/'toxina medicamentosa' para traduzir os mesmos termos JP 毒/毒素/薬毒. O glossario_traducao.json define 毒素->toxina e 薬毒->toxina medicamentosa; 'veneno' nao e termo do glossario para este conceito recorrente. Indica que o arquivo foi montado a partir de (pelo menos) duas passadas de traducao distintas mescladas sem harmonizacao terminologica.",
+      "correcao": "21 das 23 ocorrencias de 'veneno' corrigidas para 'toxina'/'toxina medicamentosa' (com ajuste de concordancia de genero onde necessario, ex. 'o veneno esta' -> 'a toxina esta'). As 2 ocorrencias restantes ('nao e o veneno da mutuca') foram mantidas propositalmente - referem-se especificamente ao veneno de picada de inseto (contexto distinto de toxina medicamentosa/de doenca, e mais preciso como 'veneno' mesmo).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_capitulo": [
+    {
+      "capitulo": "1. Olhos (Oftalmologia) - itens (1) a (38)",
+      "jp_linhas": "20-423",
+      "decisao": "corrigido - 8 achados reais (1,2,3,4,5,12-parcial,15,16-parcial)",
+      "confianca": "alta"
+    },
+    {
+      "capitulo": "2. Orelha (Otorrinolaringologia) - itens nao numerados + (1)(2)",
+      "jp_linhas": "427-492",
+      "decisao": "corrigido - 2 achados reais (6,7)",
+      "confianca": "alta"
+    },
+    {
+      "capitulo": "3. Nariz (Otorrinolaringologia) - itens (1) a (8)",
+      "jp_linhas": "495-563",
+      "decisao": "corrigido - 1 achado real (8)",
+      "confianca": "alta"
+    },
+    {
+      "capitulo": "4. Garganta (Otorrinolaringologia) - itens (1) a (14)",
+      "jp_linhas": "567-710",
+      "decisao": "corrigido - 3 achados reais (9,10,12,13)",
+      "confianca": "alta"
+    },
+    {
+      "capitulo": "5. Odontologia - itens (1) a (13)",
+      "jp_linhas": "712-852",
+      "decisao": "corrigido - 2 achados reais (11,14)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas_relevantes": [
+    "Busca sistematica por duplicacao de blocos inteiros (comparando n-gramas de 8 palavras ao longo de todo o documento): confirmados apenas 2 clusters de duplicacao real (achados 1 e 11 acima). Um terceiro cluster candidato (repeticao da pergunta+resposta sobre anestesia dentaria nos itens (3) e (7) de Dentes) foi verificado como duplicacao JA PRESENTE NO PROPRIO JP (o autor original cita a mesma resposta duas vezes em contextos diferentes) - nao e bug de traducao, PT preservado corretamente fiel ao JP.",
+    "Nenhuma troca de falante (Interlocutor/Meishu-Sama) encontrada - formato deste volume e Pergunta/Resposta simples, sem o padrao de troca de rotulo do Gokowa.",
+    "Nenhum CJK residual no corpo do PT (apenas no cabecalho de metadados, que reproduz o nome do arquivo - esperado).",
+    "Nenhuma paragrafacao colapsada ao ponto de esconder titulos de item - os titulos '(N) ...' estao todos presentes como texto localizavel, embora embutidos em paragrafos densos (formatacao de arquivo de trabalho, nao arquivo final); ver pendencia registrada abaixo."
+  ],
+  "pendencias_abertas": [
+    {
+      "descricao": "Formatacao densa: a maioria dos 39 itens deste volume esta com titulo/pergunta/resposta concatenados em paragrafos unicos grandes no PT, em vez de quebras de paragrafo 1:1 com o JP (que separa cada item com linhas em branco). Nao impediu a verificacao de conteudo (todos os marcadores '(N) Titulo' estao presentes e localizaveis como texto), mas reduz a citabilidade/legibilidade em producao final. Nao classificado como corrupcao de conteudo (checklist pontos 2-4 ok), mas afeta o checklist ponto 6 (paragrafacao 1:1). Nao foi reformatado nesta sessao por ser uma mudanca mecanica de grande volume (391 linhas) com risco de introducao de erro se feita as pressas sob pressao de orcamento, e por content-correctness ter prioridade mais alta dado o volume de achados reais de conteudo. Registrado para decisao do usuario: reformatar agora com uma segunda passada dedicada, ou aceitar como esta para o arquivo de trabalho e resolver apenas na uniformizacao final (Fase 5 do plano)."
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true. Último livro da fila."
+  }
+}

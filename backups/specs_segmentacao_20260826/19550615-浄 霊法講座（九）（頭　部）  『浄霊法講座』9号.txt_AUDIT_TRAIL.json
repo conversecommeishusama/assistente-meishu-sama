@@ -1,0 +1,96 @@
+{
+  "filename": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro: JP 617 linhas / PT 189 linhas antes da correção (191 depois de inserir os 2 trechos em falta), 21 artigos por spec (Curso de Johrei vol. 9, cabeça). Todo o JP foi lido linha a linha do título ao último item (47. causa de problemas nas pernas está no pescoço) e confrontado com o PT correspondente na mesma ordem, sem amostragem. Adicionalmente, usado como segunda fonte de verificação o arquivo já existente em textos_portugues/19550615-... (produção), comparado por diff de palavras contra o PT de trabalho para localizar qualquer divergência de conteúdo entre as duas versões.",
+  "alerta_spec_contaminado": {
+    "confirmado": true,
+    "descricao": "O spec estava contaminado exatamente como alertado: title_pt dos 7 primeiros artigos continha títulos de um curso completamente diferente (padrão 'Primeira/Segunda/.../Sétima Aula — <tema doutrinário tipo Kannon/Três Mundos/Missão do Japão>', alheio ao tema cabeça — mesmo vazamento de outro volume (tipo Kannon Kōza) já catalogado nos irmãos 2/6/7/8号). A partir do 8º artigo em diante, o template quebrou de vez, produzindo lixo literal 'Aula N Aula — ' (título vazio) nos 14 artigos restantes. O campo pt_prefix replicava o mesmo lixo ('Primeira Aula', 'Segunda Aula', ..., 'Aula 21 Aula').",
+    "correcao": "title_pt regenerado para os 21 artigos, extraindo/traduzindo o título real de cada item a partir do title_jp e conferido contra o conteúdo real do PT no ponto do anchor. pt_prefix zerado ('') em todos os 21, igual ao padrão dos irmãos já corrigidos (2/6/7/8号). Nenhuma mudança de 'kind' foi necessária (granularidade de 21 artigos — mais grossa que a segmentação item-a-item usada no 8号 — estava correta para os pontos escolhidos)."
+  },
+  "alerta_anchors_posicao": {
+    "verificado": true,
+    "resultado": "Confirmado o alerta de que presença literal do substring não garante posição correta. 3 dos 21 pt_anchor estavam errados: (1) índice 17 (item 27, 'Sobre o Johrei no derrame reverso') apontava para dentro de um trecho duplicado que foi removido do PT nesta sessão (ver correção real #1) — corrigido para o início real do testemunho ('Homem de 55 anos...'). (2) índice 15 (item 26, 'Sobre o derrame reverso') e (3) índice 16 (continuação do item 26 — testemunho do homem de 45 anos) tinham pt_anchor apontando para dentro da resposta do item 27 (texto real do arquivo, mas posição semanticamente errada — mais à frente no arquivo do que o conteúdo que deveriam marcar). Corrigidos por conteúdo: índice 15 agora aponta para 'Existe o chamado derrame reverso...', índice 16 para 'Homem de cerca de 45 anos...'. Os 18 anchors restantes foram verificados como corretos (substring presente E posição semanticamente correta, na ordem certa). Ordem sequencial dos 21 anchors reverificada por posição crescente no PT após todas as correções — sem inversões."
+  },
+  "alerta_colapso_estrutural": {
+    "verificado": true,
+    "resultado": "NÃO encontrado colapso estrutural real (parágrafos gigantes escondendo títulos de forma irrecuperável). O PT deste volume segue o mesmo formato de prosa contínua dos volumes irmãos já aprovados (2/6/7/8号): cada título de item aparece embutido no texto corrido (geralmente logo após a citação da fonte do item anterior), sem quebra de parágrafo própria — mas sempre localizável e conferido individualmente contra o JP. Todos os 47 itens numerados do capítulo 2 e os 7 subitens do capítulo 1 foram localizados via regex e conferidos por posição sequencial (sem lacunas, sem duplicação de número, ver verificação automatizada no resumo). Este formato é a convenção aceita para a subsérie 浄霊法講座, não um bug — confirmado por comparação direta com o 8号 (approved:true), que documenta a mesma conclusão."
+  },
+  "summary": {
+    "articles_in_spec": 21,
+    "articles_reviewed": 21,
+    "real_corrections_applied_to_pt_body": 3,
+    "spec_fields_corrected": "21 title_pt + 21 pt_prefix + 3 pt_anchor (índices 15, 16, 17)",
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "Transição do item 27 para o item 28 (derrame reverso / tremor no derrame), JP linhas 424-436 (item 28, 御垂示録三号 45頁), PT linhas ~135-140 antes da correção",
+      "problema": "GRAVE: duplicação de rascunho, mesmo padrão já catalogado em revisao-paralela-jp-pt.mdc e confirmado presente também no arquivo de produção (textos_portugues/), ou seja, herdado de uma passada de tradução anterior comum às duas versões. Depois da resposta correta do item 27 ('...dissolver os nódulos ao redor do pescoço'), aparecia: um título truncado do item 28 seguido de reticências ('Dizem que o derrame ocorre no lado oposto do pescoço...'), uma linha em branco, uma repetição/paráfrase do testemunho do item 27 ('O paciente apresentava convulsões...') terminando em '(Resposta Divina)', e então a resposta do item 27 repetida pela segunda vez, seguida do título do item 28 de novo e só então a pergunta real e completa do item 28. Conferido contra o JP (que tem uma pergunta curta e uma resposta única para o item 28, sem repetição): a versão real é a segunda metade do bloco.",
+      "correcao": "Removido o bloco duplicado (título truncado + testemunho reparafraseado + resposta do item 27 repetida). Mantida a resposta original do item 27 (linha 135) e o título+pergunta reais do item 28 (mesclados de forma limpa: '(28) Tremores extremos devido a derrame são graves... (Pergunta) (Gosuiji-roku nº 3, p. 45)' seguido de 'Dizem que o derrame atinge o lado oposto do pescoço, mas e o caso das pernas? (Resposta Divina)'). PT passou de 189 para 186 linhas (3 linhas espúrias removidas). Nenhum conteúdo real perdido — apenas duplicação removida. NÃO propagada a mesma correção para textos_portugues/ (produção) — fora do escopo autorizado desta tarefa (proibido mexer em textos_portugues/); registrar para o usuário que o mesmo bug existe lá.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "Abertura do volume, JP linhas 24-31 (primeiro parágrafo do item 1, 頭部に関連した浄霊について), PT linha 25 antes da correção",
+      "problema": "PT EM FALTA: o parágrafo de abertura inteiro do volume (どうしても頭を使います。それで頭を使うと、これに固まりが来ます。これは大体肩に溜ったものが、頭を使うのでここに来るのです、citação 御教え集24号23頁) estava ausente do PT de trabalho — o texto começava direto no segundo parágrafo do JP (脳天の奥を浄霊するのがよい). Também faltava a frase '脳天の奥を浄霊するのがよい' isolada (citação do parágrafo anterior, 御教え集24号4頁, aparecia sem essa frase antes dela).",
+      "correcao": "Buscado primeiro no acervo (textos_portugues/19550615-...) antes de traduzir do zero, conforme protocolo — o arquivo de produção tinha a tradução completa deste trecho de abertura. Copiado o texto exato de produção: 'Quanto à cabeça, hoje em dia não se pode viver sem usá-la intensamente. Não é como antigamente, uma época tranquila; por isso, somos obrigados a usar a cabeça. E, ao usá-la, surgem bloqueios nela. De modo geral, o que se acumula nos ombros vem para cá devido ao uso da cabeça.' + '(Mioshie-shū nº 24, p. 23) É bom fazer o Johrei no fundo do alto da cabeça.' inseridos antes do parágrafo já existente ('Para a maioria dos doentes...'). Conferido contra o JP: conteúdo e citação batem exatamente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "Item 2 do capítulo 2 (título + primeira frase), JP linhas 40-43, e item 1 (lista de 4 perguntas a/b/c/d sobre calvície), JP linhas 119-124",
+      "problema": "PT EM FALTA (2 casos, mesmo diff): (a) o título do item 2 '（２）頭の深い所の毒が溶けて出る時は非常に痛い' e a primeira frase da resposta ('頭が良くなるということは、頭の薬毒を早くとるということです。ですから熱が出て頭が割れるほど痛いということは非常によいのです。') estavam ausentes — o PT pulava direto para 'Isso ocorre porque, quando as toxinas...'. (b) no item 1 (calvície), faltavam 3 das 4 perguntas enumeradas do 御伺い (イ/ロ/ハ no JP = a/b/c em português) — só a pergunta 'd' (sobre peruca) estava presente.",
+      "correcao": "Ambos localizados por diff palavra-a-palavra contra textos_portugues/19550615-... (produção), que tinha as duas passagens completas e coerentes com o JP. Inserido '(2) Quando as toxinas das camadas profundas da cabeça se dissolvem e saem, a dor é muito intensa A melhora da cabeça significa a eliminação rápida das toxinas medicamentosas acumuladas nela. Portanto, ter febre e sentir uma dor de cabeça tão forte que parece que a cabeça vai rachar é algo extremamente bom.' antes da frase já existente. Inseridas as perguntas 'a. A calvície é hereditária?', 'b. Dizem que a calvície ocorre quando a atividade das células capilares diminui. O que o senhor acha?', 'c. A calvície causada por febre alta, que não é congênita, tem cura?' antes da pergunta 'd.' já existente. Conferido contra o JP (lista イ/ロ/ハ/ニ) e contra produção: batem exatamente.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Preâmbulo + Capítulo 1 (頭部に関連した浄霊について), itens sem numeração + (2)-(7)",
+      "jp_linhas": "1-114",
+      "decisao": "ok, com 2 correções reais (parágrafo de abertura em falta + título/frase do item 2 em falta, ver acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo 2 (頭部に関連した症状の解剖), itens 1-18 (calvície, alopecia, tumor cerebral, câncer cerebral, hidrocefalia)",
+      "jp_linhas": "115-306",
+      "decisao": "ok, com 1 correção real (perguntas a/b/c em falta no item 1, ver acima)",
+      "confianca": "alta",
+      "notas": "Itens 4, 6, 7, 8, 12-18 não têm artigo próprio no spec (granularidade de 21 artigos agrupa vários itens sob o anchor do item anterior) — conteúdo conferido presente e na ordem certa mesmo sem anchor dedicado."
+    },
+    {
+      "bloco": "Capítulo 2, itens 19-25 (encefalite japonesa, hemorragia cerebral e derrame, causas)",
+      "jp_linhas": "306-401",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo 2, itens 26-28 (derrame reverso e tremor)",
+      "jp_linhas": "401-436",
+      "decisao": "ok, com 1 correção real grave (duplicação de rascunho na transição 27→28, ver acima) e 2 anchors do spec corrigidos por posição",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo 2, itens 29-47 (emergência de hemorragia cerebral, hipertensão, gagueira, fala enrolada, paralisias diversas, causa nos pés)",
+      "jp_linhas": "436-618",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Verificação automatizada adicional: todos os marcadores numéricos (1) a (47) do capítulo 2 localizados via regex no PT, em ordem sequencial, sem lacunas nem duplicação de número (fora dos 2 casos já corrigidos)."
+    },
+    {
+      "bloco": "Comparação cruzada final PT de trabalho vs. textos_portugues/ (produção)",
+      "jp_linhas": "-",
+      "decisao": "ok após as 3 correções",
+      "confianca": "alta",
+      "notas": "Diff de palavras nas duas direções (produção→trabalho e trabalho→produção) não encontrou mais nenhuma divergência de conteúdo além de: (a) formatação da data de publicação (estilo diferente, não é erro), (b) o bug de duplicação do item 27/28 que também existe em produção (não corrigido lá, fora do escopo). Confirma que, após as correções, o PT de trabalho está pelo menos tão completo quanto a produção existente."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

@@ -1,0 +1,191 @@
+{
+ "filename": "19501030 - Memórias da Perseguição Religiosa.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "2026-07-14 (fila CHUNK_TURNAWARE): 34 trechos JP tinham 11 espúrios (sobre-segmentação de memo/lista numerada dentro dos dois 上申書, linha a linha) -> mesclados em 23 trechos reais (confere com os 20 títulos **negrito** do PT + capa + assinatura + colofão). Perfil trocado structured->jikan_hen (mesmo padrão dos livros 自観叢書: sem idade/data, título nomeado, pt_anchor definido manualmente após leitura JP<->PT completa). pt_anchor preenchido para todos os 23.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 34,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Memórias da Perseguição Legal",
+   "jp_anchor": "昭和25(1950)年10月30日発行",
+   "pt_anchor": "Memórias da Perseguição Religiosa",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "はしがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "　　　はしがき\n\n　この記録は昭和二十五年五月八日発生し、同年七月十二日一段落着いたまでの、私の嘗（な）めた体験記録であって、これによって目下起訴中の私の裁判を有 利に導こうなどという考えは毫末（ごうまつ）もない。ただ早い内に書かないと記憶を失う虞（おそ）れが",
+   "pt_anchor": "Prefácio",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "発　　端",
+   "title_pt": "Origem",
+   "jp_anchor": "発　　端",
+   "pt_anchor": "Origem\n\nOkada Mokichi",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "岡田茂吉",
+   "title_pt": "Okada Mokichi",
+   "jp_anchor": "岡田茂吉",
+   "pt_anchor": "Okada Mokichi\n\nA Grande Batida",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大手入れ",
+   "title_pt": "A Grande Batida",
+   "jp_anchor": "　　　大手入れ\n\n　はしがき中にもあるごとく、昭和二十五年五月八日未明、突如として青天の霹靂（へきれき）のごとく、本教関係の熱海所在の建物六ケ所、小田原一ケ所、合 計七ケ所に対し、一大家宅捜索が行われた。その際動員された警官、無慮八十名と言うのであるから、いか",
+   "pt_anchor": "A Grande Batida",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "強請団",
+   "title_pt": "O Grupo de Chantagistas",
+   "jp_anchor": "　　　強請団\n\n　このユスリ団というのは、一、二年前から本教団を狙っており、目的は、巨額の金銭を獲得しようとして、あの手、この手の策略を用いて、教団を執拗に揺ぶ るのである。噂によると国会議員数人を初め、宗教人、旧右翼系の利者（きけもの）、本教の反対者等々、",
+   "pt_anchor": "O Grupo de Chantagistas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "取調べの模様",
+   "title_pt": "Detalhes do Interrogatório",
+   "jp_anchor": "取調べの模様",
+   "pt_anchor": "Detalhes do Interrogatório",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "最初の取調べ",
+   "title_pt": "O Primeiro Interrogatório",
+   "jp_anchor": "　　　最初の取調べ\n\n　警察に勾留された第一日目は、簡単な取調べで終ったが、第二日目であった。朝飯を済ますや直ちに二階の調室に連れられた。Ｋ刑事部長、Ｍ刑事部長の二人 の外に、Ｓ警部という人が応援として、静岡市国警本部からこの朝出張して来たと言われた。ここで右の三",
+   "pt_anchor": "O Primeiro Interrogatório",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "記憶の捏造",
+   "title_pt": "A Fabricação da Memória",
+   "jp_anchor": "　　　記憶の捏造\n\n　これを聞かされる毎に私は気が気じゃない。どうしたらいいのだろう。全然ない記憶を呼び起せと言っても無理だし、呼び起さなければ幾日でも留置されると したら、何とかしなければならない。こんな苦しみをするくらいなら以前に何か少しくらい悪い事をしてお",
+   "pt_anchor": "A Fabricação da Memória",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "頭脳の拷問",
+   "title_pt": "A Tortura do Cérebro",
+   "jp_anchor": "　　　頭脳の拷問\n\n　ここで特筆すべき事が起った。それはＭ氏とＫ氏との両氏から調べられた時の事である。この時は主にＭ氏が訊問に当ったが、昭和二十三年十一月八日に始 まった脱税問題に対する運動費の件が主であった。私は全然記憶にないから答える事が出来ないと言うと、Ｍ",
+   "pt_anchor": "A Tortura do Cérebro",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "刑務所行き",
+   "title_pt": "Rumo à Prisão",
+   "jp_anchor": "　　　刑務所行き\n\n　その翌日例のごとく調べ室に呼ばれた。私は交霊術などと言っても、警察官などに判るはずはないから、色々考えた末こう言った。「実は昨夜絶体絶命の結果 一心に神に祈った、すると御利益があって記憶がハッキリ浮び出し、判ったからお答えをする」と言ってス",
+   "pt_anchor": "Rumo à Prisão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "カマを掛ける",
+   "title_pt": "A Armadilha (Kama wo Kakeru)",
+   "jp_anchor": "　　　カマを掛ける\n\n　取調べの場合、カマを掛けるという言葉は昔からよく言われるが、今度の取調べに際しこのカマを掛けられた事実は非常に多く、ほとんど取調べの骨子となっ ていたと言ってもいい。近来の取調べ方針は誘導訊問を最も嫌っているようだが、しかし誘導訊問よりカマ",
+   "pt_anchor": "A Armadilha (Kama wo Kakeru)",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "上　申　書（井上福夫）",
+   "title_pt": "Relato por Escrito — Inoue Fukuo",
+   "jp_anchor": "上　申　書",
+   "pt_anchor": "Relato por Escrito — Inoue Fukuo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "診断書（井上福夫）",
+   "title_pt": "Atestado Médico",
+   "jp_anchor": "　　診断書\n\n　　　　　　　　　　　　　井上福失",
+   "pt_anchor": "Atestado Médico",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "上　申　書（金　久平）",
+   "title_pt": "Relato por Escrito — Kane Kyuhei",
+   "jp_anchor": "上　申　書",
+   "pt_anchor": "Relato por Escrito — Kane Kyuhei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "刑務所記",
+   "title_pt": "Registro da Prisão",
+   "jp_anchor": "　　 刑務所記\n　勾留期間一杯の五月二十九日午後二時、私の力もつきて刑務所に護送されました。余りの疲労により入所した夜はそのまま寝てしまったのですが、七時の ニュースの時間に何気なくラジオの音に目がさめると、生命に賭けてもと思いつめた、明主様の勾留を知って、",
+   "pt_anchor": "Registro da Prisão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "帰　宅　後",
+   "title_pt": "Após o Retorno para Casa",
+   "jp_anchor": "　　　帰　宅　後\n\n　ここで、帰宅後の事も一通りかかねばならないが、帰宅後某弁護士に面会、色々取調べの模様を話したところ、その弁護士が言うには「それは惜しい事をしま したね。被告には黙秘権があるんだから、記憶にない事は答弁しなくてもよかったので、黙っていてもその",
+   "pt_anchor": "Após o Retorno para Casa",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "当局に望む",
+   "title_pt": "O que se Espera das Autoridades",
+   "jp_anchor": "　　　当局に望む\n\n　以上、詳細に述べたごとく、慈悲も涙もない冷酷極まる取調べを受けた吾らとして、つくづく思われる事は、どうしても、取調べの任にある人達には、宗教心 の必要なる事である。言うまでもなく、被告を悔悟させるには、遮二無二責めるばかりでは効果はない。ど",
+   "pt_anchor": "O que se Espera das Autoridades",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人権蹂躪",
+   "title_pt": "Violação dos Direitos Humanos",
+   "jp_anchor": "　　　人権蹂躪\n\n　自由民主主義とは、人権を尊重する事から始まるというのは、今更言う必要のない程、明らかな話ではあるが、実際上それが仲々行われていない事を、今度の 事件によって、つくづく思われたのである。意外なのは役人が人民に対し、平気で行う人権蹂躙的態度であ",
+   "pt_anchor": "Violação dos Direitos Humanos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "刑務所",
+   "title_pt": "Prisão",
+   "jp_anchor": "　　　刑務所\n\n　私は、今回の事件のため、五日間静岡刑務所（正確にいうと拘置所である）に収容され、獄舎生活をしたが、その時痛切に感じた一事があるから、それをかい てみよう。この刑務所は最近出来たばかりの建物だそうで、設備その他一切がよく完備しており、文化的の",
+   "pt_anchor": "Prisão\n\nPor causa deste incidente, fui detido por cinco dias na Prisão de Shizuoka (mais precisamente, no centro de de",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "ナンセンス",
+   "title_pt": "Bobagens",
+   "jp_anchor": "　　　ナンセンス\n\n　長々と固苦しい事ばかりかいたから、ここで一つ二つ新聞記者諸君や、その他に関するナンセンスをかいてみよう。私が最初連行された時の事である。庵原警 察署へ着く少し手前へ来ると、同乗のＫ部長は「表門は新聞屋が、待っているといけないから、裏門から入",
+   "pt_anchor": "Bobagens",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結　論",
+   "title_pt": "Conclusão",
+   "jp_anchor": "そもそも、今度の事件に対し、冷静に検討して観る時、少なくとも公平に行われた取調べとは思えない。それについての、二、三の疑問符をなげてみよう。ま ず第一容疑の性格に対し、取調べの峻厳な事と、その日数が多過ぎる事である。私の経験によるも、以前特",
+   "pt_anchor": "Conclusão",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,161 @@
+{
+  "filename": "19521215-御教え集16号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 207 linhas / PT 80 linhas antes da correção, 207 linhas depois). JP tem um único bloco === ARTIGO === contendo 9 trechos (prefácio + 8 sessões datadas: 5, 6, 7, 15, 16, 17, 25, 26, 27 de novembro de 1952) conforme o spec (profile mioshie_shu, 9 artigos). Todo o corpo do JP foi lido transição de data por transição de data e confrontado com o PT correspondente na mesma ordem, sem amostragem.",
+  "pre_existing_context": "Alerta prévio: livros irmãos (御教え集1-15号) mostraram repetidamente monólitos residuais com cauda duplicada, blocos de data ausentes, cabeçalhos de data duplicados/corrompidos e nomes próprios corrompidos. Razão JP/PT ~2.6:1 no início da revisão era o sintoma esperado dessa família de bugs.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 9,
+    "sessoes_revisadas": [
+      "5 de novembro (prefácio)",
+      "6 de novembro",
+      "7 de novembro",
+      "15 de novembro",
+      "16 de novembro",
+      "17 de novembro",
+      "25 de novembro",
+      "26 de novembro",
+      "27 de novembro"
+    ],
+    "real_corrections_applied": 8,
+    "items_escalated_to_pendencias": 0,
+    "content_missing_found": false,
+    "content_duplicated_found": true
+  },
+  "diagnostico_geral": "Ao contrário de outros volumes desta família (onde o bug dominante é PERDA de conteúdo), neste volume o PT continha TODO o conteúdo do JP, mas quase inteiramente colapsado: cada sessão datada (um dia inteiro de ensinamento, com várias dezenas de parágrafos e citações de artigo no JP) estava despejada em 1 a 3 linhas gigantes de texto corrido no PT, sem nenhuma quebra de parágrafo interna e sem separar as citações '(Artigo ...)' do texto ao redor. Isso violava os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist em quase 100% do arquivo. Além disso, dentro desse colapso, foram encontrados 2 focos reais de duplicação/truncamento (ponto 8 do checklist) e 3 cabeçalhos de data corrompidos/duplicados (ponto 7), consistentes com os padrões já catalogados para esta família de livros.",
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início do arquivo, antes do título (linha ~22 antiga)",
+      "problema": "Cabeçalho de data espúrio: um '6 de novembro' aparecia solto ANTES do título 'Mioshie-shū nº 16' e da data real do primeiro trecho (5 de novembro), sem nenhuma relação com o conteúdo ao redor - resíduo de corte/reordenação anterior.",
+      "correcao": "Removido. O arquivo agora começa direto no título, seguido pela publicação e só depois '5 de novembro de 1952' como cabeçalho da primeira sessão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "linha do cabeçalho da primeira sessão (5 de novembro)",
+      "problema": "Cabeçalho corrompido: 'Mioshie-shū nº 16, publicado em 15 de dezembro de 1952. 5 de novembro de 1952' repetia o título/data de publicação (já dados duas linhas acima) e colava a data real da sessão ('5 de novembro de 1952') na mesma linha do texto seguinte, sem quebra de parágrafo - mascarava o início da sessão como se fosse uma continuação da ficha de publicação.",
+      "correcao": "Reduzido a apenas '5 de novembro de 1952' como cabeçalho de sessão próprio, com quebra de parágrafo antes do corpo do texto ('Ontem fui ao Museu de Ueno...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "transição 5→6 de novembro (fim do trecho sobre o templo Nihon-ji)",
+      "problema": "Cabeçalho '6 de novembro' da sessão seguinte estava colado ao final da última frase da sessão de 5 de novembro ('...a luz do sol se tornando mais forte. 6 de novembro'), sem quebra de parágrafo nem linha própria.",
+      "correcao": "Separado em linha própria com parágrafo em branco antes e depois, como as demais transições de data do arquivo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "cabeçalho da sessão de 17 de novembro",
+      "problema": "Cabeçalho duplicado: 'de novembro' aparecia sozinho numa linha e, logo em seguida, 'de novembro Chegam muitos telegramas...' repetia o cabeçalho colado ao início do corpo do texto.",
+      "correcao": "Removida a repetição; mantido um único cabeçalho '17 de novembro' seguido do corpo do texto em parágrafo próprio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "cabeçalho da sessão de 25 de novembro",
+      "problema": "Mesmo padrão do item 4: '25 de novembro' duplicado, colado ao início do parágrafo seguinte.",
+      "correcao": "Removida a repetição, mesma solução do item 4.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "sessão de 7 de novembro, imediatamente após a citação '(Artigo \"Luz do Oriente\") [Eikō nº 182]' que introduz o ensinamento sobre 'Senhor Luz'",
+      "problema": "GRAVE - padrão de rascunho truncado + retradução duplicada (mesma assinatura de bug já catalogada para esta família, achado #6 do registro de auditoria do Gokōwa): a citação do artigo 'Luz do Oriente' aparecia duas vezes. Na primeira ocorrência, o texto começava ('...\"A Luz do Oriente\" é o mais importante. Sobre mim') e parava abruptamente após duas frases (rascunho abandonado). Em seguida, um parágrafo inteiro RETRADUZIA (com redação ligeiramente diferente, mas mesmo conteúdo) o trecho sobre o médico ficar surpreso com a cura e a palestra em Nagoia - conteúdo que já estava completo e correto duas linhas antes, na primeira citação '(Artigo \"Religião e Hospital\")'. Só depois vinha a segunda ocorrência da citação 'Luz do Oriente', desta vez com o texto completo (~9950 caracteres, cobrindo a origem do epíteto 'Senhor Luz', a cultura oriente/ocidente, o templo Nihon-ji e a missão do Japão).",
+      "correcao": "Removidos o rascunho truncado ('Sobre mim' + quebra) e o parágrafo duplicado (retradução do trecho já coberto pela primeira citação 'Religião e Hospital'). Mantida intacta a versão completa e correta que segue a segunda ocorrência da citação. Nenhum conteúdo real foi perdido - conferido que ambos os trechos JP correspondentes (sobre o médico/Nagoia e sobre 'Senhor Luz'/Nihon-ji) permanecem completos no PT, cada um uma única vez.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "sessão de 27 de novembro, no meio do relato sobre atletas olímpicos de ascendência negra e o enfraquecimento físico do Ocidente pela vacinação",
+      "problema": "GRAVE - mesmo padrão do item 6: o parágrafo sobre a Inglaterra/socialismo/seleção natural/vacinação/reconhecimento da China comunista foi traduzido DUAS VEZES. A primeira versão ('A melhor prova disso é que, na Inglaterra, o Partido Trabalhista...') estava truncada, cortando abruptamente no meio de uma frase ('...a América se recusava terminantemente a reconhecer. Isso é'). Em seguida vinha uma segunda tradução completa do mesmo parágrafo JP ('A política socialista tem como lema tratar a todos...'), com redação diferente mas cobrindo o mesmo conteúdo e continuando corretamente até o fim do pensamento.",
+      "correcao": "Removida a primeira versão truncada; mantida a segunda versão, completa. Verificado contra o JP (linha 199 do JP) que esse conteúdo existe uma única vez na fonte, portanto deve aparecer uma única vez no PT.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "todo o arquivo",
+      "problema": "Paragrafação 1:1 (ponto 6 do checklist): quase todas as 8 sessões datadas estavam com múltiplos parágrafos JP (tipicamente 3 a 9 por sessão, cada um terminado por uma citação de artigo '（御論文「...」）【栄光　...号】' ou por uma quebra de parágrafo em branco no JP) colapsados em 1 a 3 linhas PT gigantes de texto corrido, com as citações '(Artigo ...)' fundidas ao texto vizinho sem quebra.",
+      "correcao": "Reintroduzidas as quebras de parágrafo correspondentes às unidades temáticas do JP (confirmadas por leitura de conteúdo, não por script de reflow automático) em todas as 8 sessões, e todas as 25 citações de artigo do arquivo foram destacadas em linha própria, no mesmo padrão já usado em trechos do arquivo que não haviam sido corrompidos (ex.: citações da sessão de 25/26 de novembro já estavam corretas e serviram de referência de formato). Nenhuma palavra do texto traduzido foi alterada nesta correção - apenas inserção de quebras de linha nos pontos de fronteira entre parágrafos JP, verificados um a um contra o texto fonte.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + 5 de novembro",
+      "jp_linhas": "20-40",
+      "decisao": "corrigido - cabeçalhos duplicados/corrompidos (itens 1,2,3) + paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "6 de novembro",
+      "jp_linhas": "41-58",
+      "decisao": "corrigido - paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7 de novembro",
+      "jp_linhas": "59-75",
+      "decisao": "corrigido - duplicação/truncamento grave (item 6) + paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de novembro",
+      "jp_linhas": "76-103",
+      "decisao": "corrigido - paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de novembro",
+      "jp_linhas": "104-123",
+      "decisao": "corrigido - paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de novembro",
+      "jp_linhas": "124-152",
+      "decisao": "corrigido - cabeçalho duplicado (item 4) + paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de novembro",
+      "jp_linhas": "153-173",
+      "decisao": "corrigido - cabeçalho duplicado (item 5) + paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de novembro",
+      "jp_linhas": "174-191",
+      "decisao": "corrigido - paragrafação (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de novembro",
+      "jp_linhas": "192-207",
+      "decisao": "corrigido - duplicação/truncamento grave (item 7) + paragrafação (item 8)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual": "Nenhum caractere CJK encontrado no corpo traduzido do PT (13 ocorrências de CJK no arquivo são todas metadados de frontmatter - nome do arquivo e title_jp - não corpo traduzido).",
+    "nomes_proprios": "Conferidos contra o JP e consistentes ao longo do arquivo: Amaterasu Omikami, Susanoo no Mikoto, Izanagi/Izanami no Mikoto, Tsukuyomi no Mikoto, Mori Hōsei, Deguchi (Oomoto), Eisenhower, Stevenson, Inukai Takeru, Stalin, MacArthur, Truman, Chiang Kai-shek, Nehru. Nenhuma corrupção de nome próprio encontrada (diferente de outros volumes da família).",
+    "ordem_e_completude": "As 9 unidades do spec (prefácio + 8 datas) estão todas presentes, na ordem correta, sem bloco de data ausente. Nenhum trecho do JP ficou sem par em PT após as correções.",
+    "linhas_finais": "PT passou de 80 para 207 linhas após a correção (paragrafação restaurada); JP tem 207 linhas. Coincidência de contagem não usada como prova de correção (proibido pela regra), apenas registrada como referência."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 8 correções. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 207 linhas / PT 208 linhas), todas as transicoes de data (5,6,7,15,16,17,25,26,27 de novembro) confirmadas presentes e na ordem correta. Conteudo extenso sobre o misterio de 'Luz do Oriente', a genealogia Izanagi/Amaterasu, a preparacao da viagem ao Havaí/Los Angeles e o lancamento de 'Salvando a America' fielmente traduzido, sem truncamento, sem CJK residual, sem duplicacao. Nenhuma correcao necessaria."
+  }
+}

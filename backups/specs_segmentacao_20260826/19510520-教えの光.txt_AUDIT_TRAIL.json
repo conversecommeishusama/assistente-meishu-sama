@@ -1,0 +1,61 @@
+{
+  "filename": "19510520-教えの光.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura completa e real do volume inteiro: JP 1141/1141 linhas lidas (offsets 1-300, 301-600, 601-900, 901-1141) e PT 994/994 linhas originais lidas por completo (offsets 1-300, 301-600, 601-900, 900-994, mais releitura pontual após cada correção). Não é amostragem: todo o corpo do JP foi percorrido item a item (162 tópicos do spec, do prefácio ao colofão final) e confrontado com o PT correspondente na mesma ordem, usando correspondência de conteúdo (não de número de linha, já que o JP usa mais quebras de linha em branco que o PT — ratio ~1.15:1 é um artefato de formatação, não de conteúdo).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 162,
+    "articles_reviewed": 162,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "seção 'Sobre as Palavras e Kotodama' / 言葉と言霊について, lista de 4 subperguntas (JP: 一/二/三/四, linhas JP 801-804)",
+      "problema": "A subpergunta (三) — 'お世辞の言葉、虚勢を張るための言葉、あるいは自己を卑下する言葉はいかがなものでしょうか' — estava ausente da lista de perguntas no PT, que pulava direto de (2) para (4), embora a resposta (3) na seção Resposta estivesse presente e completa.",
+      "correcao": "Inserida a pergunta (3) traduzida do JP: 'Que dizer de palavras de bajulação, palavras para fazer alarde, ou palavras de autodepreciação?', entre (2) e (4).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "entre a seção 'Sobre as Palavras e Kotodama' e o parágrafo de resposta que começa com 'Isso é um grande erro...' (tópico JP 自己の行いは小乗的に律すべきか)",
+      "problema": "GRAVE: título e pergunta inteiros do tópico 自己の行いは小乗的に律すべきか estavam ausentes do PT — o texto pulava diretamente da resposta (4) do tópico anterior para 'Resposta: Isso é um grande erro...' sem nenhum título ou pergunta introdutória. Confirmado com sed/cat -A que não havia texto residual ali, apenas linhas em branco.",
+      "correcao": "Inserido título '**Deve-se Regular as Próprias Ações pelo Shojo?**' e pergunta 'Pergunta: É correto regular rigorosamente as próprias ações pelo Shojo, mas agir com os outros de acordo com o Daijo?' (tradução do JP: 自己の行いに対してはもっぱら小乗的に律し、他人に対しては大乗的に行くべきが本当でしょうか)。A resposta já presente no PT foi conferida contra o JP e está completa e correta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "seção 'Contracepção e Aborto' / 避妊と堕胎 (JP linhas 1066-1070)",
+      "problema": "As duas subperguntas numeradas do JP — (一) sobre o destino do espírito do feto quando a mãe aborta por dificuldade financeira, e (二) sobre o castigo divino aos pais e o efeito do espírito do feto no futuro deles — estavam totalmente ausentes do PT. Confirmado por grep no arquivo inteiro que nenhum fragmento dessas perguntas aparecia em outro lugar.",
+      "correcao": "Inseridas as duas subperguntas traduzidas do JP, como (1) e (2), antes da Resposta existente (que já cobria adequadamente ambos os pontos).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "seção 'Hidrocefalia (Cérebro D'Água)' / 脳水腫, resposta sobre as duas causas de renascimento (JP linha 1123)",
+      "problema": "Frase truncada no meio: '...quando morreu afogada, engolindo água e' seguida de nova linha 'Isso se trata de dois tipos de renascimento...' — faltava o trecho final do JP '逆さになった' (ficando de cabeça para baixo), cortando a descrição da segunda causa de afogamento a meio da frase.",
+      "correcao": "Unificado e completado: '...quando morreu afogada, engolindo água e ficando de cabeça para baixo. Trata-se da reencarnação desses dois casos, e não de possessão espiritual.'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + Problemas de Religião, Ciência, Filosofia e Arte (Verdade até Mal/Sofrimento, Ciência/Religião, Era Atômica, Reikon, Ondas Cerebrais, Filosofia, Sinceridade Religião/Arte/Cultura, Arte, Música, Paz Mundial, Educação Religiosa, Profecias, Salvação Religiões Antigas, Cristo/12 Discípulos, Poder Divino/Kannon, Kannon Mil Braços, Trikaya, Dragões, Ōkami/Kami, Bunrei/Keshin, Myōjin/Tennō, 7 Deuses da Sorte, Misu, Torii/Sai no Kawara, Juzu, Obon, Dōsojin, Jejum)", "jp_linhas": "1-289", "decisao": "ok", "confianca": "alta", "notas": "Tradução completa e fiel; todos os subtópicos presentes na ordem correta; nenhum truncamento."},
+    {"bloco": "Astronomia/Geografia/Adivinhação/Assuntos Humanos (Arco-íris até Pesca)", "jp_linhas": "292-505", "decisao": "ok", "confianca": "alta", "notas": "Todos os subtópicos (arco-íris, trovão, 210/220 dias, aquecimento climático, marés, preços/lua, ekigaku, data nascimento, nome, sanrinbō, hipnose, liberalismo, papel da mulher, sexto sentido, casamento/antepassados, coabitação, purificação conjugal, linhagem/casamento consanguíneo, brasões, conduta do pai, pedido de desculpas, gênio, mumificação, ano novo com as 6 subperguntas completas, quarenta/cinquenta mãos, choro noturno, casas 4 alas, pesca) presentes e completos."},
+    {"bloco": "Espírito e Mundo Espiritual (Kakuriyo até Espírito de Bebê)", "jp_linhas": "509-603", "decisao": "ok", "confianca": "alta", "notas": "Todos os subtópicos presentes (Grande Deus do Kakuriyo, mudanças no Inferno, Oriente/Ocidente, morte religiosos/leigos, fundadores, idade espiritual, visão espiritual, divisão de espíritos, fuga do mundo espiritual, espírito auxiliar, espíritos possessores, ordem animal, espírito de bebê)."},
+    {"bloco": "Kitamakura até Konjac (túmulos, lápides, transferências, árvores, ginkgo, tanzaku, barbearia, konjac)", "jp_linhas": "605-733", "decisao": "ok", "confianca": "alta", "notas": "Todos os subtópicos presentes e completos na ordem correta."},
+    {"bloco": "Johrei e Fé (Objeto de Culto até Características dos Divindades Malignas)", "jp_linhas": "737-793", "decisao": "ok, com correção 1 e 2 aplicadas nesta faixa (subpergunta ausente e título/pergunta ausentes)", "confianca": "alta"},
+    {"bloco": "Verdade/Kotodama até Métodos de Proselitismo (inclui as 2 correções 1 e 2)", "jp_linhas": "793-887", "decisao": "corrigido - ver correções 1 e 2", "confianca": "alta"},
+    {"bloco": "Descarte de Divindades até final de Espírito de Bebê revisitado / doença pulmonar / discórdia conjugal / cura rápida / Johrei em mestre e gentileza", "jp_linhas": "887-950", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Sintomas refletidos até Segredo da longevidade / mulheres / sono / sangue / arroz / doenças animais/plantas / Johrei animal / diálogo espiritual / noite espiritual e remédios", "jp_linhas": "955-1033", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Língua dupla, dentes duplos, natimorto/aborto, placenta, contracepção/aborto (correção 3), gravidez, nevralgia/clima, gripe, cáries ósseas, criança seletiva, tártaro, hidrocefalia (correção 4), luxação, doença do calor, colofão final", "jp_linhas": "1036-1141", "decisao": "corrigido - ver correções 3 e 4", "confianca": "alta"}
+  ],
+  "observacao_estilistica_nao_corrigida": "O PT alterna entre títulos em negrito markdown ('**Título**') e títulos em texto simples ao longo do volume (mais comum sem negrito nas primeiras ~150 linhas, predominantemente em negrito depois). É uma inconsistência cosmética de formatação herdada do processo de tradução, não um erro de conteúdo, alinhamento ou completude — não foi alterada para não constituir reflow/reformatação em massa fora do escopo desta revisão semântica.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. As 4 divergências reais encontradas (2 perguntas/subperguntas ausentes, 1 título+pergunta ausente, 1 frase truncada) foram corrigidas inline com confiança alta, traduzindo diretamente do JP. Sequência completa de 162 itens confirmada em ambos os idiomas sem nenhum pulado."
+  }
+}

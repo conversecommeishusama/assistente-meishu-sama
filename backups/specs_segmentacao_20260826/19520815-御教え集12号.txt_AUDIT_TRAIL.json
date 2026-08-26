@@ -1,0 +1,124 @@
+{
+  "filename": "19520815-御教え集12号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro. JP tem um único bloco === ARTIGO === contendo 9 trechos internos por data (spec 'mioshie_shu', profile jp_line_by_line): prefácio + sessões de 5, 6, 7, 15, 16, 17, 25, 26 e 27 de julho de 1952. JP 211 linhas / PT 121 linhas antes da correção (ratio ~1.74:1, dentro do esperado para o formato 御教え monólogo, sem diálogo). Todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, sessão por sessão, citação por citação.",
+  "alerta_familia_verificado": "Alerta recebido: livros irmãos (御教え集1-11号) mostraram monólitos residuais com cauda duplicada, passagens traduzidas duas vezes de forma independente e concatenadas, turnos ausentes mesmo com ratio normal, cabeçalhos de data duplicados. Este volume NÃO tem diálogo Interlocutor/Meishu-Sama (é monólogo/ensinamento contínuo), então o padrão de 'troca de falante' não se aplica. Os outros dois padrões (cabeçalho de data duplicado + passagem traduzida duas vezes/monólito residual) FORAM confirmados neste volume e corrigidos (ver correções 1 e 2 abaixo).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessoes_no_jp": 9,
+    "sessoes_revisadas": 9,
+    "citacoes_jp": 30,
+    "citacoes_pt_apos_correcao": 30,
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "categoria": "cabecalho_de_data_duplicado",
+      "localizacao_pt": "topo do ficheiro, antes do bloco de metadados/título (linhas ~13-21 antigas)",
+      "problema": "Cabeçalho 'Mioshie-shū nº 12' + info de publicação estava precedido por uma linha espúria '6 de julho' (que não corresponde a nada no JP nesse ponto — o JP começa direto com o título 御教え集第十二号, depois a info de publicação, depois a data 昭和二十七年七月五日 = 5 de julho). Além disso a linha de info de publicação ('Mioshie-shū nº 12, publicado em 15 de agosto de 1952 (Showa 27)') estava duplicada logo antes da data real de 5 de julho.",
+      "correcao": "Removida a linha espúria '6 de julho' do topo (a data 6 de julho já existe corretamente mais adiante, antes do seu conteúdo real) e removida a linha de info de publicação duplicada. Cabeçalho agora espelha exatamente a ordem do JP: Título / info de publicação / '5 de julho de 1952 (Showa 27)' / [Ensinamento].",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "monolito_residual_com_traducao_duplicada",
+      "localizacao_pt": "sessão de 7 de julho, trecho sobre a Hidrazida e medicina americana (correspondente a JP linha 107, um único parágrafo)",
+      "problema": "GRAVE — confirma o padrão de bug da família. O parágrafo JP único sobre a Hidrazida/purificação nos EUA vs Japão foi traduzido DUAS VEZES de forma independente e concatenado no ficheiro de trabalho: (a) uma primeira tradução, TRUNCADA no meio da frase (terminava com uma pergunta indevida: '...Mesmo do lado americano, a purificação também se tornará mais forte?'); (b) uma linha espúria sem correspondente JP ('Há ainda outro título.'); (c) uma citação duplicada do artigo 'O Alerta para a Salvação do Mundo' sob o título variante 'O Sino de Alerta para a Salvação do Mundo' (já citado corretamente antes); (d) uma citação duplicada de 'Lamento pelos Senhores das Farmácias' (já citada antes) colada diretamente ao início da SEGUNDA tradução, completa e correta, do mesmo parágrafo JP 107, que por sua vez estava fundida sem quebra de parágrafo com o conteúdo de JP 108 (menção a 'Minha História') e depois com a citação de 'Minha História: A Era Sem Fé' e o parágrafo JP 112 (reputação do museu, Tanikawa, Tokugawa Musei), tudo como um único bloco de texto corrido.",
+      "correcao": "Removida a primeira tradução truncada, a linha espúria e as duas citações duplicadas. Mantida a segunda tradução (completa e fiel ao JP 107) como parágrafo único, seguida por quebras de parágrafo próprias para JP 108 (menção a 'Minha História'), a citação de JP 110 ('Minha História: A Era Sem Fé') em linha própria, e o parágrafo de JP 112 (reputação/imprensa) também em linha própria, restaurando a estrutura 1:1 de parágrafos que o JP tem nesse trecho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "monolito_residual_com_traducao_duplicada",
+      "localizacao_pt": "sessão de 27 de julho, trecho sobre a criação da religião/heróis/bomba atômica (correspondente à parte final de JP linha 209, um único parágrafo)",
+      "problema": "Mesmo padrão do achado 2: o trecho do parágrafo JP 209 sobre 'para nos defendermos disso, precisamos usar muita inteligência... bomba atômica... criou-se a religião... Kannon-Sama concedeu o poder de cura' foi traduzido duas vezes de forma independente. A primeira tradução termina cortada no meio da frase ('...então este poder de cura, eu') e a segunda, completa e correta, reinicia do zero um pouco antes no mesmo trecho, como parágrafo totalmente separado.",
+      "correcao": "Removida a primeira tradução truncada; mantida apenas a segunda tradução, completa, unida diretamente ao ponto de corte da primeira ('...não importa quantas pessoas se matem.') para formar um único parágrafo coerente e completo, fiel ao JP 209 sem lacunas nem repetição.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "categoria": "consistencia_de_titulos_de_citacao",
+      "localizacao_pt": "citações do artigo 天国建設と悪の追放 ao longo de todo o volume",
+      "problema": "O mesmo título de artigo JP (天国建設と悪の追放) estava traduzido de duas formas diferentes em pontos distintos do mesmo volume: 'A Construção do Paraíso e a Expulsão do Mal' (3 ocorrências, aspas curvas) vs 'A Construção do Paraíso e a Eliminação do Mal' (3 ocorrências, aspas retas) — checklist item 7 (títulos/cabeçalhos consistentes).",
+      "correcao": "Uniformizado para 'A Construção do Paraíso e a Expulsão do Mal' (aspas curvas, forma predominante e mais literal) nas 6 ocorrências.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "categoria": "consistencia_de_titulos_de_citacao",
+      "localizacao_pt": "citações de 東洋美術雑観 e de 私物語　無信仰時代",
+      "problema": "東洋美術雑観 traduzido ora como 'Observações Variadas sobre a Arte Oriental' (2x) ora como 'Miscelânea sobre Arte Oriental' (2x); 私物語 無信仰時代 traduzido ora como 'Minha História: A Era Sem Fé' (2x) ora como 'Minha História: A Era da Incredulidade' (2x). Mesma classe de inconsistência do achado 4.",
+      "correcao": "Uniformizado para 'Observações Variadas sobre a Arte Oriental' e 'Minha História: A Era Sem Fé' respectivamente, em todas as ocorrências.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio/título + sessão 5 de julho (arte/museu, evolução da igreja, cerâmica chinesa)",
+      "jp_linhas": "20-55",
+      "decisao": "ok apos correcao 1 (cabecalho duplicado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 6 de julho (significado espiritual do museu, agricultura sem fertilizante, arte)",
+      "jp_linhas": "59-90",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Paragrafação 1:1 preservada corretamente nesta sessão."
+    },
+    {
+      "bloco": "Sessão 7 de julho (acidentes, medicina/Hidrazida, reputação do museu)",
+      "jp_linhas": "94-115",
+      "decisao": "corrigido - monolito residual grave (achado 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 15 de julho ('A Criação da Civilização', mal necessário, cinema)",
+      "jp_linhas": "118-136",
+      "decisao": "ok - conteudo integral, sem perda; paragrafos JP mais longos vertidos como blocos maiores no PT sem quebra 1:1 estrita, mas sem perda de conteudo verificada frase a frase",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 16 de julho ('A Criação da Civilização', evangelho do reino, história do cinema mudo)",
+      "jp_linhas": "139-158",
+      "decisao": "ok - mesma observacao de paragrafacao acima, conteudo integral",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 17 de julho (era de Miroku, Kannon/Yakushi Nyorai, mestres da pintura/teatro, remédios)",
+      "jp_linhas": "161-176",
+      "decisao": "ok - conteudo integral verificado frase a frase; paragrafacao JP (4 paragrafos) condensada em bloco maior no PT sem perda",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 25 de julho (luta contra kami maus, perseguição religiosa histórica, incidente do complô)",
+      "jp_linhas": "178-188",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 26 de julho ('A Criação da Civilização', mal necessário, evangelho do paraíso, aumento do Elemento Fogo)",
+      "jp_linhas": "190-198",
+      "decisao": "ok - paragrafo unico no JP, traduzido integralmente e corretamente como paragrafo unico no PT",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 27 de julho (medicina como mal disfarçado de bem, doenças do próprio Meishu-Sama, história evolutiva do mal, Johrei/espírito animal)",
+      "jp_linhas": "201-211",
+      "decisao": "corrigido - monolito residual grave (achado 3)",
+      "confianca": "alta"
+    }
+  ],
+  "observacoes_nao_bloqueantes": [
+    "Em várias sessões (15, 16, 17, 26 de julho) o PT condensa múltiplos parágrafos JP longos em um único parágrafo PT maior (perda de granularidade de parágrafo, checklist item 6), sem perda de conteúdo comprovada por conferência frase a frase. Diferente dos achados 2 e 3 (que envolviam duplicação real de tradução), aqui não há repetição nem lacuna — apenas menor granularidade de parágrafo do que o JP. Não corrigido por não ser erro de conteúdo e por economia de esforço (seria puramente cosmético); sinalizado aqui para eventual padronização futura caso o padrão do acervo exija paragrafação estritamente 1:1 em todos os volumes."
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 5 correções. approved:true."
+  }
+}

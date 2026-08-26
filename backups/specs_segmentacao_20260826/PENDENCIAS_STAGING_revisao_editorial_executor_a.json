@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "ficheiro": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "at": "2026-07-20T01:20:00Z",
+      "tipo": "decisao_glossario",
+      "nota": "glossario_traducao.json mapeia 水晶殿 -> 'Palácio de Cristal', mas o corpus usa majoritariamente 'Salão de Cristal' (5 arquivos em livros_publicacao_pt/ vs 2 com 'Palácio'). Uma revisão anterior (2026-07-17, encontrada já pronta neste arquivo antes desta execução) tinha trocado para 'Palácio de Cristal' inclusive DENTRO de citações entre aspas de Meishu-Sama, violando a regra de nunca alterar citação entre aspas -- revertido nesta execução para 'Salão de Cristal' (forma original, consistente em todo o arquivo, dentro e fora das aspas). Decisão pendente do usuário: qual é a forma canônica (Salão vs Palácio) para publicação e para o glossário de busca -- fora do escopo desta revisão pontual, que só pode preservar consistência interna do arquivo, não resolver o glossário."
+    },
+    {
+      "ficheiro": "19520425-御垂示録8号.txt",
+      "at": "2026-07-20T11:50:00Z",
+      "tipo": "decisao_glossario",
+      "nota": "glossario_traducao.json mapeia 審神者 -> 'médium', mas este livro traduz o mesmo termo como \"'saniwa' (juiz de espíritos)\" (linha ~511, pergunta do interlocutor sobre discernimento de espíritos dentro da ordem). 'Juiz de espíritos' é semanticamente mais preciso para o papel do saniwa (discernir se a possessão é de espírito correto ou não) do que 'médium' (que só indica canalização, não julgamento) -- não alterei o texto por ser decisão de terminologia, não de gramática/fluência, e por não saber se essa forma 'saniwa (juiz de espíritos)' se repete em outros livros da série Gosuiji-roku (mudar só aqui poderia quebrar consistência com outros arquivos ainda não revisados). Decisão pendente do usuário: manter 'médium' como forma única do glossário, ou reconhecer 'saniwa (juiz de espíritos)' como forma de publicação alternativa quando o contexto for especificamente sobre discernimento/julgamento de espíritos (não simples mediunidade)."
+    },
+    {
+      "ficheiro": "19530715-御教え集23号.txt",
+      "at": "2026-07-20T16:46:36.118971+00:00",
+      "tipo": "pendente_decisao_terminologia",
+      "nota": "Trecho (seção 16 de junho) usa \"a Igreja Salvífica está realizando o trabalho de Cristo\", enquanto o resto do documento (e do corpus) usa \"Igreja Messiânica\"/\"Igreja Messiânica Mundial\". Pode ser variação estilística legítima do JP original ou inconsistência de tradução herdada. Não alterado nesta revisão (edição de sentido/nome está fora do escopo de revisão editorial gramatical). Verificar contra o JP antes de decidir se uniformiza."
+    },
+    {
+      "ficheiro": "19530715-御教え集23号.txt",
+      "at": "2026-07-20T16:46:36.118971+00:00",
+      "tipo": "pendente_decisao_terminologia",
+      "nota": "Mesmo trecho usa \"Ofudesaki do Oomoto-kyo\" e, em outro ponto próximo, algo lido como \"Oráculo da Igreja Ômoto\" (duas romanizações/nomeações diferentes de 大本 no mesmo documento) — pode ser o mesmo texto citado de forma inconsistente ou dois documentos distintos (Ofudesaki vs. outro oráculo). Não alterado, mantido como no original. Verificar contra o JP."
+    },
+    {
+      "ficheiro": "19530715-御教え集23号.txt",
+      "at": "2026-07-20T16:46:36.118971+00:00",
+      "tipo": "aguardando_decisao",
+      "nota": "Seção de 26/27 de junho: frase \"acho que, em quatro ou cinco anos, quase metade da população não estará com disenteria\" soa contraditória com o tom alarmista do parágrafo (que descreve disenteria dobrando a cada ano) — possível inversão de sentido na tradução original (pré-existente, não introduzida nesta revisão). Não alterado (regra: revisão editorial não corrige sentido). Também: mesma pessoa aparece como \"Goko Kiyoshi\"/\"Kiyoshi Goko\" e \"Tago Kazutami\"/\"Kazumi Tago\" em ordens de nome diferentes no mesmo texto — não alterado, nomes próprios são intocáveis nesta fase, sinalizando para triagem de consistência."
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-25T18:33:37.503097Z",
+      "tipo": "pendente_decisao_terminologia",
+      "nota": "Texto usa 'Deus Principal (Sushin)' repetidamente (início do livro), mas glossario_traducao.json mapeia 主神 -> 'Deus Supremo'. Não alterado nesta revisão (fora do escopo de fluência/gramática, decisão de terminologia). Verificar se 'Sushin'/'Deus Principal' é romanização/tradução alternativa legítima usada especificamente neste livro ou inconsistência a uniformizar."
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-25T18:33:37.503097Z",
+      "tipo": "pendente_decisao_terminologia",
+      "nota": "Bloco inicial usa 'Omamori (talismã protetor)' — possivelmente o mesmo objeto que o glossário chama de 'Ohikari' (御守), mas não alterado por incerteza (sub-processo não teve acesso ao JP de origem para confirmar). Verificar contra o original antes de decidir se uniformiza para 'Ohikari'."
+    },
+    {
+      "ficheiro": "19530910-世界救世教奇蹟集.txt",
+      "at": "2026-07-25T18:33:37.503097Z",
+      "tipo": "pendente_decisao_terminologia",
+      "nota": "Seção sobre caligrafia sagrada usa a forma romanizada 'Go-shintai' de forma central e extensa (8+ ocorrências), enquanto glossario_traducao.json mapeia 御神体 -> 'Imagem da Luz Divina'. Não alterado — mudar um termo tão central/repetido foge do escopo de uma correção pontual de fluidez; decisão de terminologia para consolidação futura do glossário de publicação."
+    },
+    {
+      "ficheiro": "19540415-御垂示録30号.txt",
+      "at": "2026-07-25T21:40:00Z",
+      "tipo": "pendente_decisao_editorial",
+      "nota": "No relato de 1º de abril há uma nota de tradutor embutida entre parênteses no meio da fala de Meishu-Sama: \"...como na má colheita do ano passado (não seria \"pessoas más\", em vez de \"colheita ruim\"?)\" — parece uma incerteza do próprio tradutor questionando a tradução de um termo JP ambíguo (possivelmente 凶作 vs algo homófono para \"pessoas más\"), não conteúdo de Meishu-Sama. Não removi por não ter certeza se é seguro descartar notas de tradutor deste tipo sem autorização explícita (diferente das notas já cobertas no protocolo, tipo 火宅/無線, que têm precedente de remoção). Mantido no texto tal como no original. Decisão pendente do usuário: notas de tradutor com formato \"(não seria X em vez de Y?)\" devem ser removidas na versão de publicação, como as demais notas de tradutor puras, ou mantidas por representar incerteza real ainda não resolvida?"
+    }
+  ]
+}

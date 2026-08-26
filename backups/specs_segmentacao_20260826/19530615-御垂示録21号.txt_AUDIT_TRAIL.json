@@ -1,0 +1,166 @@
+{
+  "filename": "19530615-御垂示録21号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 297 linhas de arquivo / PT reestruturado de 66 para 152 linhas), 2 artigos por spec (prefácio + sessão única [1º de junho]). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, turno a turno.",
+  "alerta_inicial": "JP 297 linhas, PT original 66 linhas — razão ~4.5:1, sinal de monólito residual confirmado.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "pt_lines_before": 66,
+    "pt_lines_after": 152,
+    "missing_turns_found_and_translated": 10,
+    "duplicated_block_found_and_removed": 1,
+    "monolith_found_and_resegmented": true,
+    "monolith_turns_resegmented": 77,
+    "items_escalated_to_pendencias": 0
+  },
+  "achados_e_correcoes": [
+    {
+      "n": 1,
+      "tipo": "monólito estrutural (turnos sem quebra de parágrafo)",
+      "localizacao": "PT linha 66 original (17666 caracteres), correspondia a JP linhas 129 (cauda) + 132 a 297 — praticamente o segundo semestre inteiro do volume, ~77 turnos de Meishu-Sama/Interlocutor colapsados numa única linha de texto corrido.",
+      "metodo_correcao": "Localizados programaticamente os 38 turnos reais do Interlocutor (aspas) dentro do bloco, usando o JP como referência de ordem e contagem (38 falas 「」 no intervalo JP132–JP297, confirmado por contagem exaustiva linha a linha do arquivo JP bruto). Cada turno do Interlocutor e a resposta correspondente de Meishu-Sama foram isolados em parágrafo próprio, preservando 100% do texto original (verificado por diff de string após normalização de espaços — nenhuma perda, nenhuma reordenação, apenas quebras de parágrafo inseridas). Citações internas curtas dentro da fala de Meishu-Sama (ex.: repetições da palavra 'equilíbrio'/'程', a saudação ritual 'Yamiyo no Ōkami...', frases-exemplo entre aspas que Meishu-Sama sugere dizer) foram mantidas embutidas no parágrafo, não tratadas como turnos — distinção feita por checagem cruzada com o JP (nenhuma dessas citações corresponde a uma fala 「」 real do Interlocutor).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "duplicação de bloco (tradução repetida do mesmo trecho JP)",
+      "localizacao": "Antiga PT linha 64 (final) e início da antiga PT linha 66. JP linha 129 (\"そこでその失敗を神様のほうでよいことにしてくれるわけです。そうすればその働きによって、その罪が消されるということになります。だから、信仰も...お医者の下手なのに対して大いに感謝してよいです。\") havia sido traduzido DUAS vezes: uma versão truncada no meio de uma frase, terminando abruptamente em \"Portanto, pela incompetência dos médicos,\" (linha 64), e uma segunda versão completa e gramaticalmente fechada no início da linha 66 (\"Deus faz com que isso se torne algo bom... podemos ser muito gratos pela inépcia dos médicos.\"). Confirmado contra o JP que esse trecho existe uma única vez na fonte.",
+      "correcao": "Removida a cauda truncada e duplicada da antiga linha 64 (mantendo apenas até '...esse fracasso acaba realizando um bom trabalho.'), preservando a versão completa (não truncada) que já estava no início da antiga linha 66. Nenhum conteúdo único foi perdido — verificado por diff que o span removido é semanticamente idêntico ao span mantido (mesma citação do Ofudesaki, mesmo argumento sobre a incompetência médica).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "10 turnos curtos de Meishu-Sama ausentes (perda real de conteúdo)",
+      "localizacao": "Concentrados na cena da reportagem de jornal (JP linhas 26-129, primeira metade do volume). Padrão sistemático: perguntas curtas e diretas de Meishu-Sama que conduzem o interrogatório (\"Quem é o chefe dessa filial?\", \"Essa pessoa veio?\", \"Desde quando?\", etc.) ficaram totalmente ausentes do PT, embora a resposta do Interlocutor à pergunta ausente estivesse presente e traduzida logo em seguida — mascarando a perda porque o diálogo parecia fluir (a resposta aparecia sem a pergunta correspondente).",
+      "jp_linhas_faltantes": [
+        36,
+        65,
+        77,
+        89,
+        93,
+        97,
+        101,
+        105,
+        109,
+        114
+      ],
+      "traducoes_inseridas": [
+        "L36 -> \"Mas não é possível que algo assim aconteça só por ter batido a cintura. A pessoa que fez o Johrei está aqui hoje?\"",
+        "L65 -> \"Então, é exatamente assim que se deve agir. Quanto tempo se passou entre a batida na cintura e a morte?\"",
+        "L77 -> \"Então a dor impedia de dobrar a cintura? Também não conseguia deitar de lado?\"",
+        "L89 -> \"Quem é o chefe dessa filial?\"",
+        "L93 -> \"Essa pessoa chamada Mizutani veio?\"",
+        "L97 -> \"Isso não está certo. Desde quando esse problema ocorreu?\"",
+        "L101 -> \"Em quantos jornais saiu?\"",
+        "L105 -> \"Não havia mais um problema?\"",
+        "L109 -> \"Mas algo deve ter havido. Não é possível que não tenha havido nada. Qual filial teve o primeiro problema?\"",
+        "L114 -> \"E sobre o problema de janeiro, de que dia foi o jornal?\""
+      ],
+      "verificacao": "Cada uma das 10 lacunas foi identificada comparando, turno a turno, toda a sequência 「pergunta」/「resposta」 do JP entre as linhas 26 e 129 contra o PT (não por amostragem — todas as ~50 alternâncias de falante nesse trecho foram conferidas uma a uma). Depois de inserir as traduções, reconferido que a resposta do Interlocutor que já existia no PT agora responde coerentemente à pergunta inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "inconsistência de estilo de aspas (cosmético, não substantivo)",
+      "localizacao": "Metade do volume usava aspas retas \"...\" para falas do Interlocutor, a outra metade (dentro do antigo monólito) usava aspas curvas \"...\"/\"...\" (herdadas da tradução original sem padronização).",
+      "correcao": "Normalizado todo o arquivo para aspas retas \"...\", consistente com o padrão já usado no restante do acervo (ex. 御垂示録20号).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + título",
+      "jp_linhas": "20-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de junho] — caso do jornal de Nagoya / reportagem de Mie / Gifu",
+      "jp_linhas": "26-129",
+      "decisao": "corrigido — 10 turnos de Meishu-Sama traduzidos e inseridos (achado 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Reflexão de Meishu-Sama sobre raposas, Daijo/Shojo, 'equilíbrio' (程)",
+      "jp_linhas": "127-129",
+      "decisao": "corrigido — duplicação removida (achado 2), monólito resegmentado (achado 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Perguntas e respostas diversas (hinos, altares, Kannon/Amida, casos pastorais, objetos sagrados, casos médicos)",
+      "jp_linhas": "132-297",
+      "decisao": "corrigido — monólito inteiro resegmentado em 77 parágrafos individuais (achado 1); conteúdo já estava completo e fiel, apenas sem quebra de parágrafo",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc (Etapas A-B-C), adaptado para Gosuiji-roku: 「pergunta entre aspas」=Interlocutor, texto corrido sem aspas=Meishu-Sama",
+    "etapa_a_mapa_jp": "JP relido linha a linha, do zero, independente da trilha anterior (achado n.3 acima). Contagem exaustiva de falas 「」 reais do Interlocutor (excluindo aspas internas de citação embutida em fala de Meishu-Sama, ex. linhas JP 129/142/174): 62 turnos do Interlocutor no volume inteiro.",
+    "achado_novo_1": {
+      "tipo": "4 turnos curtos adicionais de Meishu-Sama ainda ausentes do PT, não cobertos pela trilha anterior (achado n.3, que já havia corrigido outras 10 lacunas na mesma cena do jornal)",
+      "jp_linhas_faltantes": [44, 52, 118, 122],
+      "traducoes_inseridas": [
+        "JP L44 (浄霊した人にいろいろ聞きましたか。) -> \"Perguntou várias coisas à pessoa que fez o Johrei?\" — inserida entre \"No dia 27.\" e \"Como ela não veio...\"",
+        "JP L52 (警察には誰が行ったのですか。) -> \"Quem foi à polícia?\" — inserida entre \"Não havia.\" e \"O médico levou.\"",
+        "JP L118 (何と出てましたか。) -> \"O que dizia a notícia?\" — inserida entre \"Por volta de 29 de maio.\" e \"Algo como 'doente mental morre por causa de oração'.\"",
+        "JP L122 (精神病では死なないものですが、他に何かありましたか。) -> \"Não se morre de doença mental; havia mais alguma coisa?\" — inserida entre \"Algo como 'doente mental morre por causa de oração'.\" e \"Ele estava muito debilitado.\""
+      ],
+      "verificacao": "Encontradas por padrão estrutural: pares de falas do Interlocutor (aspas retas) adjacentes no PT sem nenhum parágrafo de Meishu-Sama entre elas, quando o mapa JP exige uma pergunta curta de Meishu-Sama nesse ponto. Cada uma confirmada linha a linha contra o JP antes de traduzir e inserir.",
+      "confianca": "alta"
+    },
+    "achado_novo_2": {
+      "tipo": "cabeçalho de sessão [data] ausente no PT",
+      "localizacao": "Spec (.json) já ancorava pt_anchor \"1 de junho\" para a sessão, e todos os outros 30 volumes de Gosuiji-roku no acervo (1º a 30º, exceto 7º que usa formato de data desconhecida) têm cabeçalho \"[1º de <mês>]\" antes do primeiro turno — mas este volume (21º) não tinha nenhum cabeçalho de sessão no PT, pulando direto do título para o primeiro parágrafo de Meishu-Sama.",
+      "correcao": "Inserido \"[1º de junho]\" antes do primeiro turno, no mesmo ponto indicado pelo spec e pelo JP (［六月一日］).",
+      "confianca": "alta"
+    },
+    "etapa_b_contagem": {
+      "interlocutor_pt_apos_correcao": 62,
+      "interlocutor_jp_real": 62,
+      "delta": 0,
+      "observacao": "Contagem de falas do Interlocutor já batia 62=62 antes da rotulagem (as 4 lacunas eram turnos de Meishu-Sama, que não aparecem nessa contagem — por isso escaparam de qualquer gate mecânico baseado só em contagem de aspas do Interlocutor; achadas apenas por adjacência de dois turnos do Interlocutor sem Meishu-Sama entre eles)."
+    },
+    "etapa_c_aplicacao": {
+      "resultado": "132 parágrafos de diálogo rotulados: 62 Interlocutor: + 70 Meishu-Sama: (contagem de Meishu-Sama inclui turnos que se estendem por vários parágrafos consecutivos sem interrupção do Interlocutor — mesmo padrão já usado em outros volumes do acervo, ex. 御垂示録1号).",
+      "escopo": "Rótulos aplicados a todos os parágrafos a partir do cabeçalho [1º de junho] até o fim do arquivo. Cabeçalho, título e metadados de arquivo (linhas 1-24) não rotulados.",
+      "reordenacao": "nenhuma — texto extraído e rotulado na ordem existente, sem reflow/rebuild em massa"
+    },
+    "pendencias_abertas": [],
+    "aprovacao": "approved do spec não alterado por esta tarefa (permanece true, conforme já fechado em 2026-07-07)."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Fase E — leitura linha a linha completa adicional, foco em fidelidade semântica + glossário + metadados (rotulagem/estrutura já fechadas nas passadas anteriores acima).",
+    "achados_e_correcoes": [
+      {
+        "n": 1,
+        "tipo": "glossário — nome próprio incorreto",
+        "localizacao": "PT linhas 100 e 106 (turnos do Interlocutor), correspondendo a JP linhas 172 e 186 (大光明如来様)",
+        "problema": "PT usava 'Daimyō-Nyorai', que suprime o componente '光明/Komyo' do nome 大光明如来, produzindo um termo diferente e confuso (poderia ser lido como referência a 'Daimyō', senhor feudal). Confirmado contra glossario_traducao.json (光明如来→Komyo-Nyorai) e contra uso consistente no resto do corpus (Daikomyo-Nyorai/Dai Komyo-Nyorai/Daikōmyō Nyorai em pelo menos 8 outros volumes).",
+        "correcao": "Corrigido para 'Dai Komyo-Nyorai', forma usada no volume irmão do mesmo lote (19530815-御垂示録23号.txt).",
+        "confianca": "alta"
+      },
+      {
+        "n": 2,
+        "tipo": "glossário — termo teológico traduzido por engano como termo têxtil",
+        "localizacao": "PT linha 81 (2 ocorrências), correspondendo a JP linha 129 (伊都能売)",
+        "problema": "PT traduzia 伊都能売 (Izunome) como 'o fio da trama (izunome)' e depois 'a ação do fio da trama', confundindo o conceito/nome teológico Izunome (princípio de harmonização, usado como termo próprio em todo o corpus — ex. 19350000-観音講座, 19481208-御光話録1号, 19480701-御讃歌集) com 'weft thread' (緯/よこいと), por proximidade com a metáfora vizinha 'urdidura e trama' (経と緯), que essa sim está correta e foi mantida.",
+        "correcao": "Corrigido para manter 'Izunome' como termo próprio, sem paráfrase têxtil.",
+        "confianca": "alta"
+      }
+    ],
+    "verificacao_geral": "Releitura completa turno a turno de todo o volume (já resegmentado e rotulado pelas passadas anteriores) contra o JP; nenhuma outra divergência semântica, truncamento, duplicação ou troca de falante encontrada além dos 2 itens acima. Sem CJK residual no corpo. Metadados (title_jp/title_pt/datas) consistentes.",
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — 2 correções de glossário aplicadas diretamente no PT de trabalho."
+  }
+}

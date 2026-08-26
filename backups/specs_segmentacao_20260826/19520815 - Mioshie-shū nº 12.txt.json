@@ -1,0 +1,104 @@
+{
+ "filename": "19520815 - Mioshie-shū nº 12.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 9→9. PT pairing pendente. CHUNK_TURNAWARE: sessão 5 de julho ausente (fundida ao prefácio), adicionada 2026-07-14; 9→10.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十二号",
+   "pt_anchor": "Mioshie-shū nº 12",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月五日",
+   "title_pt": "5 de julho",
+   "jp_anchor": "いつも美術館のお話をしますが、まだ霊的の話をしてないから、今からします。",
+   "pt_anchor": "[Ensinamento]\nSempre falo sobre o Museu de Belas Artes, mas ainda não falei sobre o aspecto espiritual, então falarei ag",
+   "notes": "",
+   "pt_prefix": "5 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月六日",
+   "title_pt": "6 de julho",
+   "jp_anchor": "美術館について、霊的の意味があるのでそれをお話します。",
+   "pt_anchor": "[Ensinamento]\nSobre o Museu de Belas Artes, há um significado espiritual, então falarei sobre isso.",
+   "notes": "",
+   "pt_prefix": "6 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月七日",
+   "title_pt": "7 de julho",
+   "jp_anchor": "美術館について、今まで話しなかったが、これを霊的に言うと、今の偉い人たちは宗教というものに触れるのを嫌う人が多いのです。とにかく触れようとしない のです。ところが美術館ができたので、それはもう見たいでしょうから、どうしても来ないわけにいかな",
+   "pt_anchor": "[Ensinamento]\nSobre o Museu de Belas Artes, não falei até agora, mas falando espiritualmente, muitas das pessoas importa",
+   "notes": "",
+   "pt_prefix": "7 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十五日",
+   "title_pt": "15 de julho",
+   "jp_anchor": "美術館やいろんなことで「文明の創造」を書き始めていたのが遅れたので、早くこしらえてしまおうと思ってまた書き始めたのです。根本的のことを書いたので す。つまり今までは本当の文明ではない。本当の文明というのはこういうものだということを書くのです",
+   "pt_anchor": "[Ensinamento]\nComo estava atrasado em começar a escrever \"A Criação da Civilização\" sobre o museu e várias outras coisas",
+   "notes": "",
+   "pt_prefix": "15 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十六日",
+   "title_pt": "16 de julho",
+   "jp_anchor": "今まで結核問題の方が、美術館やなにかで、「文明の創造」も書きかけになっていたが、やっと暇ができたので――暇ができたというより、気持ちがゆったりし たのでまた書き始めたのです。それについて書き方をいくらか変えてやろうと思って、序文の最初の――",
+   "pt_anchor": "[Ensinamento]\nAté agora, a questão da tuberculose e, com o museu e outras coisas, \"A Criação da Civilização\" também esta",
+   "notes": "",
+   "pt_prefix": "16 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十七日",
+   "title_pt": "17 de julho",
+   "jp_anchor": "美術館もいつの間にかできたので、「文明の創造」は先に大体できてましたが、また悪い所は直して完全なものにしようと思って書き始めたのです。それについて、書けた分を少し今読ませてみます。",
+   "pt_anchor": "[Ensinamento]\nO museu foi construído sem que se percebesse, e \"A Criação da Civilização\" já estava praticamente pronta a",
+   "notes": "",
+   "pt_prefix": "17 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十五日",
+   "title_pt": "25 de julho",
+   "jp_anchor": "私は始終邪神と闘っているのです。だから一日といえどもなんにもなくて、せいせいするという日はありません。それからそれへと問題が起ってくるのです。で すから始終闘いです。冷たい戦争と言いますが、まあ冷たい戦争です。武器を持たない戦争です。それを",
+   "pt_anchor": "[Ensinamento]\nEstou constantemente lutando contra as Divindades malignas. Portanto, não há um único dia em que nada acon",
+   "notes": "",
+   "pt_prefix": "25 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十六日",
+   "title_pt": "26 de julho",
+   "jp_anchor": "「文明の創造」ですが、やっと暇ができたので書き始めたのです。最初の方もだいぶ書き変えた所がありますから、ずーっと読ませます。",
+   "pt_anchor": "Sobre \"A Criação da Civilização\", finalmente tive tempo e comecei a escrever. Como reescrevi bastante a parte inicial, v",
+   "notes": "",
+   "pt_prefix": "26 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十七日",
+   "title_pt": "27 de julho",
+   "jp_anchor": "お医者が病気を作るということは始終言ってますが、これはあらゆる方面がそうなってます。そういったような間違ったこと、そういうことのその根本は悪で す。ですからどうしても悪というものを、つまりなくしなければならないわけです。で、この悪というもの",
+   "pt_anchor": "[Ensinamento]\nSempre digo que os médicos criam doenças, e isso se aplica a todos os aspectos. Esses erros, a causa funda",
+   "notes": "",
+   "pt_prefix": "27 de julho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

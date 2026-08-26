@@ -1,0 +1,113 @@
+{
+ "filename": "19521115 - Mioshie-shū nº 15.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentacao linha-a-linha JP 2026-07-14. Trechos: 11->9->11 (18/out e 20/out reinseridos, ausentes da spec apesar de presentes no JP/PT). PT pairing corrigido via audit --fix --repair-pt.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十五号",
+   "pt_anchor": "Mioshie-shū nº 15",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月六日",
+   "title_pt": "6 de outubro",
+   "jp_anchor": "この間、院展と青龍展に行ってみて、あんまり酷いので書かずにいられないから、書いて「栄光」に出して日本画の主なる先生たちに送るつもりです。なにしろ日本画というものは亡びてしまうのです。それを書いてみたのです。言いたいことを言ったわけです。",
+   "pt_anchor": "Outro dia, fui ver as exposições Inten e Seiryū; como estavam tão ruins que não pude deixar de escrever, escrevi e pretendo publicar no \"Eikō\"",
+   "notes": "",
+   "pt_prefix": "6 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月七日",
+   "title_pt": "7 de outubro",
+   "jp_anchor": "私はこの間、院展と青龍展の展覧会を見たのですが、あんまり酷いので、思った通りを書いてみたのです。今度の「栄光」に出して、日本画の主なる大家とい う人たちに読ませようと思っているのです。とにかく日本画というものは、なくなりかけているのです。こ",
+   "pt_anchor": "Outro dia, fui ver as exposições Inten e Seiryū e, como estavam tão ruins, escrevi exatamente o que pensei. Pretendo pub",
+   "notes": "",
+   "pt_prefix": "7 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十五日",
+   "title_pt": "15 de outubro",
+   "jp_anchor": "つい四、五日前信者の小川菊蔵という有名な人で、自動車の方では一方の存在とされている人ですが、世界中を三カ月ばかりまわってきたのです。その人に 会って、あっちの事情を良く聞いてみますと、日本で想像していたのとはよほど違う点があるのです。その違",
+   "pt_anchor": "Há uns quatro ou cinco dias, encontrei um fiel chamado Kikuzō Ogawa — uma pessoa famosa e considerada uma autoridade no ramo automobilístico",
+   "notes": "",
+   "pt_prefix": "15 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十六日",
+   "title_pt": "16 de outubro",
+   "jp_anchor": "「アメリカを救う」という本がやっとできて、これから印刷にかかるのですが、翻訳の方の都合で非常に急いで半月ばかりでこしらえなければならないので、 随分馬力をかけてやったのです。これができたら日本や米国の各方面に配ろうと思ってます。なにしろ、米",
+   "pt_anchor": "O livro \"Salvando os Estados Unidos\" finalmente ficou pronto e vai entrar em impressão;",
+   "notes": "",
+   "pt_prefix": "16 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十七日",
+   "title_pt": "17 de outubro",
+   "jp_anchor": "この間も話しておいた「アメリカを救う」という本を、約半月ばかりで急いで書き上げたのですが、翻訳の上手い人がいてその人のいろいろな仕事の都合で、 どうしても今月半ばまでというので一生懸命書いたのです。なにしろ大統領始め各著名人に読ませるのです",
+   "pt_anchor": "O livro \"Salvando os Estados Unidos\", sobre o qual falei outro dia, terminei de escrever às pressas, em cerca de meio mês.",
+   "notes": "",
+   "pt_prefix": "17 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十八日　（名古屋市金山体育会館に於て）",
+   "title_pt": "18 de outubro",
+   "jp_anchor": "京都に行く途中で立ち寄ったわけですが、今度京都にまいります目的は、嵯峨の土地が手に入りまして、それを見ていろいろな計画を立てようと思います。そ れが主なる目的で、ほかに美術に関係していることもいろいろあるわけです。土地につきましては、去年の春、初めて京都に行ったわけですが、その時に将来京 都に地上天",
+   "pt_anchor": "Estou de passagem a caminho de Quioto. O objetivo de ir a Quioto desta vez é examinar o terreno de Saga, que adquirimos,",
+   "notes": "",
+   "pt_prefix": "18 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十日　（京都劇場において）",
+   "title_pt": "20 de outubro",
+   "jp_anchor": "今日は時間が割合にありますから、ゆっくり話ができると思います。昨日浮世絵展覧会を見ましたが、随分たくさん出てました。みなさんも見られたでしょう が、集めた点では驚きました。しかしずっと見ますと、やはり私の方で出したものが一番良かったです。出したのは四点ですが、有名な「湯女」と、歌麿の「入 浴の図」と",
+   "pt_anchor": "Hoje tenho relativamente mais tempo, então acho que posso falar com calma. Ontem vi a exposição de ukiyo-e,",
+   "notes": "",
+   "pt_prefix": "20 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十五日",
+   "title_pt": "25 de outubro",
+   "jp_anchor": "この間京都や奈良の方に行ってきました。それについて手に入れた嵯峨の土地ですが、今度あの辺を見ると非常に良い所でして、まあ一番良い所かもしれませ ん。山とか、そういったものの具合がちょうど良い所なのです。それで家もあんがい立派な家で、私は手を",
+   "pt_anchor": "Recentemente, fui a Quioto e Nara. Sobre o terreno que adquiri em Saga: ao ver a região, é um lugar muito bom,",
+   "notes": "",
+   "pt_prefix": "25 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十六日",
+   "title_pt": "26 de outubro",
+   "jp_anchor": "「アメリカを救う」という本は、もう大体できたので今翻訳の方をやらせてます。日本文の方は来月あたり印刷にかかるつもりです。徹底的に書きましたが、 割合にアメリカの人は良いものは良いと、あんまり伝統に捉われるということはないですから、非常に解る",
+   "pt_anchor": "O livro \"Salvando os Estados Unidos\" está quase pronto, e estou mandando traduzi-lo agora; a versão em japonês deve começar a ser impressa no próximo mês.",
+   "notes": "",
+   "pt_prefix": "26 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十七日",
+   "title_pt": "27 de outubro",
+   "jp_anchor": "最初に注意したいことは、このごろまた浄霊に少し力が入るようです。みんなではないですが、人によっては力が入るようです。これはそういうものなのです が、お蔭話にでも御守護の電報にでも、それが良く出ているのです。「一生懸命に浄霊しても、どうだ」と",
+   "pt_anchor": "A primeira coisa que quero alertar é que, ultimamente, parece que voltou a entrar um pouco de força física no Johrei. Não são todos, mas, dependendo da pessoa, parece que colocam f",
+   "notes": "",
+   "pt_prefix": "27 de outubro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

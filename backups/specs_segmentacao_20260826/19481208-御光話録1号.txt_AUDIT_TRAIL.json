@@ -1,0 +1,89 @@
+{
+  "filename": "19481208-御光話録1号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (Fase E, delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 268 linhas / PT 216 linhas), do prefácio ao último parágrafo (アザ・イボ・ホクロ). JP lido linha a linha na íntegra (arquivo pequeno, lido de uma vez) e confrontado com o PT correspondente na mesma ordem, sessão por sessão (28 de outubro, 8 de novembro, 18 de novembro). 47 pares Interlocutor/Meishu-Sama identificados e conferidos individualmente (15 na sessão de 28/out, 16 na de 8/nov, 16 na de 18/nov), confirmado contra a saída do gate mecânico (I=47/47).",
+  "contexto_historico_confirmado_pelo_agente": {
+    "corrupcao_18_de_novembro": "Não encontrada. Buscado 'novembro' no corpo inteiro do PT: só 3 ocorrências — os 2 cabeçalhos de sessão legítimos ('[8 de novembro (segunda-feira)]', '[18 de novembro (quinta-feira)]') e 1 ocorrência dentro do conteúdo genuíno sobre os dois bebês falecidos (‘a 7 de novembro’ / ‘a 4 de novembro’, que correspondem exatamente ao JP '十一月七日'/'十一月四日'). Nenhum sinal do padrão antigo de substituição por essa string. Confirmado por leitura direta, não só por grep.",
+    "anchors_fase_c": "Fronteiras de artigo do spec (prefácio + 3 sessões por data) conferidas contra o conteúdo real do JP e do PT — todas corretas; os 47 pares de diálogo caem nas sessões certas, nenhum turno atravessou fronteira de sessão incorretamente."
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + linha de publicação)",
+      "jp_linhas": "20-22",
+      "pt_linhas": "20",
+      "decisao": "ok — título e data de publicação (8 de dezembro de 1948 / Showa 23) traduzidos corretamente",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 28 de outubro (quinta-feira) — 15 pares P&R",
+      "jp_linhas": "24-101",
+      "pt_linhas": "22-82",
+      "temas": "Grande Purificação, sarna/varíola, 3ª Guerra Mundial e profecias, regeneração espiritual e brigas conjugais, innen com o Príncipe Herdeiro (23/dez, nome Akimaro/Akihito, fundação do 1º centro em 1934), virgindade e impureza, sons sonoros/semissonoros (ga/za/pa) e kotodama (incl. episódio Oomoto/Deguchi Onisaburo e a alusão ao judaísmo), Oito/Nove Grandes Reis Dragões e Izunome, Konohana vs Anihana, reino das hordas malignas (Kamurogi/Kamuromi, era de Miroku), água da agonia e água na lápide",
+      "decisao": "ok após 1 correção terminológica (ver correções aplicadas) — conteúdo completo, ordem correta, sem truncamento, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 8 de novembro (segunda-feira) — 16 pares P&R",
+      "jp_linhas": "105-182",
+      "pt_linhas": "84-148",
+      "temas": "sonhos e Johrei durante o sono, oração a Kannon-Sama durante o Johrei, culto de Jizō-Sama herdado, reparo de estátuas danificadas, crítica ao próximo (retomando tema anterior de 'salvação e julgamento'), apego em relação a discípulos, método do 'omikuji' com criança, calor do equador e eixo terrestre (geocentrismo vs heliocentrismo, Galileu), o número sete na Bíblia e o sistema numeral 1-11/20/21, origem de katakana/hiragana/kanji e numerologia de nomes, anemia cerebral ao ver o Go-Shintai, barba e cabelo dos terapeutas",
+      "decisao": "ok — conteúdo completo, ordem correta, sem truncamento, sem duplicação, sem troca de falante; nenhuma cauda de pergunta longa migrada para a resposta",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 18 de novembro (quinta-feira) — 16 pares P&R",
+      "jp_linhas": "186-268",
+      "pt_linhas": "150-216",
+      "temas": "corrupção política para financiamento eleitoral e mercado negro (números conferidos: 2 gō 5 shaku, 10 mil ienes, 1-2 milhões, 17 colunas/68 candidatos), Daijō/Shōjō, profissão e nível espiritual, seguro de vida e de incêndio, incêndios em bairros de prazer, alimentos nutritivos para doentes (incl. parágrafo sobre úlcera/tifo com resposta em 2 parágrafos, ambos presentes), onde pousar o olhar em conversas, olhares e o caso Hirasawa/Banco Teikoku, Miroku Ōkami e o Bodhisattva Maitreya (número 5.670.000.000 anos conferido), norito de casamento xintoísta (Ama no Norito vs Zengen-Sandji), jichinsai para novo centro, udumbara e educação pré-natal, bebês falecidos com manchas (datas 7/nov e 4/nov conferidas), aza/ibo/hokuro final",
+      "decisao": "ok após 1 correção terminológica (ver correções aplicadas) — conteúdo completo até a última frase do arquivo, sem truncamento, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Sessão 28 de outubro — pergunta e resposta sobre os Oito/Nove Grandes Reis Dragões (PT linhas 68 e 70)",
+      "problema": "Terminologia teológica inconsistente: a divindade 伊都能売之神/伊都能売大神 foi traduzida como 'deusa Itsu-no-me' / 'Grande Divindade Itsu-no-me', romanização usada em só 2 outros arquivos de todo o acervo (contra 77 ocorrências de 'Izunome'/'Izunome Ōmikami' nos demais, incluindo a entrada explícita do glossário '伊都能売之大御神': 'Izunome-Ōmikami'). Viola o ponto 3 da tarefa (terminologia contra glossario_traducao.json) e o ponto 7 do checklist (consistência).",
+      "correcao": "Substituído 'deusa Itsu-no-me' → 'deusa Izunome' e 'Grande Divindade Itsu-no-me' → 'Grande Divindade Izunome', alinhando com a forma dominante do acervo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Sessão 18 de novembro — pergunta e resposta sobre o norito do casamento xintoísta (PT linhas 197 e 199, 2 ocorrências)",
+      "problema": "Romanização de 善言讃詞 como 'Oração Zengen-Sanji' diverge da entrada do glossário ('善言讃詞': 'Oração Zengen-Sandji') e da forma dominante no acervo (24 arquivos com 'Zengen-Sandji' contra 11 com 'Zengen-Sanji').",
+      "correcao": "Substituído 'Zengen-Sanji' → 'Zengen-Sandji' (replace_all, 2 ocorrências) para alinhar com o glossário.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Cabeçalho de metadados do ficheiro de trabalho JP (linha 11, campo title_pt)",
+      "problema": "Inconsistência de metadado entre os dois ficheiros de trabalho do mesmo par: o cabeçalho do JP trazia 'title_pt: 19481208 - Gosuiji-roku no 1', enquanto o cabeçalho do próprio PT (e o corpo 'Title:' do PT) usa 'Gokōwa-roku nº 1' — mesmo campo, dois valores diferentes para o mesmo volume. 'Gokōwa-roku nº N' é também a forma majoritária usada nos demais volumes da série (3, 7, 8, 9, 11-19). Viola o ponto 7 do checklist (títulos/cabeçalhos consistentes).",
+      "correcao": "Campo title_pt do cabeçalho do ficheiro de trabalho JP corrigido para 'Gokōwa-roku nº 1', igualando ao PT.",
+      "confianca": "alta",
+      "nota": "O campo title_pt de nível superior no spec (19481208-御光話録1号.txt.json) continua com o valor antigo ('19481208 - Gosuiji-roku no 1') — não alterado por este agente por não ser o ficheiro de trabalho JP/PT em si e por instrução explícita de não mexer em arquivos de fila/orquestração; reportado como pendência informativa não bloqueante."
+    }
+  ],
+  "verificacoes_negativas_ponto_a_ponto": {
+    "troca_de_falante": "Não encontrada. Confirmado por contagem de rótulos: alternância estrita Interlocutor/Meishu-Sama em todas as 94 linhas de diálogo (47 pares), sem dois turnos consecutivos do mesmo falante.",
+    "clausula_migrada": "Não encontrada em nenhuma das perguntas longas com sub-itens numerados (八大龍王 com 4 itens, 優曇華+胎教 com 2 itens, 信仰雑話 com 2 itens) — todos os sub-itens permanecem no turno do Interlocutor, resposta completa no turno seguinte do Meishu-Sama.",
+    "perda_de_conteudo_mascarada": "Não encontrada. Todos os 47 pares JP têm par PT correspondente na mesma ordem; nenhum parágrafo duplo (ex.: resposta de 2 parágrafos sobre nutrição/úlcera, ou sobre udumbara/educação pré-natal) ficou incompleto.",
+    "duplicacao_de_blocos": "Não encontrada em nenhuma das 3 sessões.",
+    "cjk_residual": "0 no corpo de diálogo (confirmado por regex e pelo gate); os únicos caracteres CJK do ficheiro PT estão no comentário de cabeçalho (nome do ficheiro e campo title_jp), fora do corpo traduzido.",
+    "numeros_e_datas": "Conferidos e corretos: 23/dez (aniversário), 1934-05-01 e 1934-04-23 (abertura do centro), 1929-04-21 e 47 barcos (Lago Biwa/Fuji), 5.670.000.000 anos (Miroku/Maitreya), 2 gō 5 shaku (ração), 10 mil ienes / 1-2 milhões (financiamento eleitoral), 17 colunas / 68 candidatos, datas dos 2 bebês falecidos (7/nov e 4/nov, óbito no 7º dia em ambos os casos)."
+  },
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19481208-御光話録1号.txt\"",
+    "resultado": "PASS",
+    "detalhe": "I=47/47 Δ=0 CJK=0",
+    "nota": "Rodado após as 3 correções acima; nenhuma delas alterou a contagem de turnos (troca de termo/campo de metadado), mas o gate foi confirmado mesmo assim."
+  },
+  "pendencias_abertas_para_escalar": [
+    "title_pt de nível superior no spec (19481208-御光話録1号.txt.json) ainda com o valor antigo '19481208 - Gosuiji-roku no 1', divergente do valor real usado nos ficheiros de trabalho ('Gokōwa-roku nº 1'). Não é ambíguo nem exige julgamento doutrinário — é só um campo de metadado desatualizado — mas não foi alterado por este agente por estar fora do escopo dos ficheiros de trabalho JP/PT e por essa classe de arquivo (spec) tipicamente ser tratada pelo orquestrador."
+  ],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume revisado linha a linha (47/47 pares) contra o JP, checklist de 8 pontos cumprido em toda a extensão, gate mecânico PASS (Δ=0, CJK=0), 3 correções reais aplicadas (2 de terminologia teológica, 1 de metadado de cabeçalho). Nenhuma pendência de conteúdo aberta em PENDENCIAS_REVISAO.json referente a este livro — a única pendência é o campo de metadado do spec, não bloqueante, listada acima para o orquestrador decidir se sincroniza."
+  }
+}

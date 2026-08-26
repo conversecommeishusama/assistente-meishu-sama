@@ -1,0 +1,983 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Hikari",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "科学迷信",
+   "title_pt": "Superstição Científica",
+   "jp_anchor": "科学迷信\n\n一般世人は迷信といえば科学と関係がな",
+   "pt_anchor": "Superstição Científica\n\nHikari nº 38, publicado em 3 de dezemb",
+   "notes": "entry_id=publication-jp-1285 sort_date=3 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ある質問者への忚筓",
+   "title_pt": "Resposta a um Questionador",
+   "jp_anchor": "ある質問者への応答\n\nある日、信者の中の幹部級の者が「伺い",
+   "pt_anchor": "Resposta a um Questionador\n\nHikari nº 46, publicado em 21 de janei",
+   "notes": "entry_id=publication-jp-1170 sort_date=21 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "誠の有る無し",
+   "title_pt": "Presença ou Ausência de Sinceridade",
+   "jp_anchor": "誠の有る無し\n\nを最も簡単に知る方法を書いてみよう。",
+   "pt_anchor": "Presença ou Ausência de Sinceridade\n\nHikari nº 47, publicado em 28 de janei",
+   "notes": "entry_id=publication-jp-1133 sort_date=28 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "日本文化の特異性",
+   "title_pt": "A Singularidade da Cultura Japonesa",
+   "jp_anchor": "日本文化の特異性\n\n日本人諸君にむかって大いに言いたい事",
+   "pt_anchor": "A Singularidade da Cultura Japonesa\n\nHikari nº 43, publicado em 1 de janeir",
+   "notes": "entry_id=publication-jp-1787 sort_date=1 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "いわゆる迷信の解剖信仰はあくまで冷静に",
+   "title_pt": "A chamada análise da superstição: a fé deve ser sempre calma",
+   "jp_anchor": "いわゆる迷信の解剖信仰はあくまで冷静に\n\nともすれば、本教団に向かって迷信の言",
+   "pt_anchor": "A anatomia da chamada superstição: a fé deve ser sempre calma\n\nHikari nº 9, publicado em 14 de maio d",
+   "notes": "entry_id=publication-jp-1008 sort_date=14 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "日本人の泣き寝入り癖",
+   "title_pt": "O Hábito Japonês de Sofrer em Silêncio",
+   "jp_anchor": "日本人の泣き寝入り癖\n\n日本人ほど泣き寝入りをする国民は、他",
+   "pt_anchor": "O Hábito Japonês de Sofrer em Silêncio\n\nHikari nº 11, publicado em 31 de maio ",
+   "notes": "entry_id=publication-jp-1102 sort_date=31 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "現当利益",
+   "title_pt": "Graças Recebidas Nessa Vida",
+   "jp_anchor": "現当利益\n\n今日宗教を論ずる宗教学者輩の多くが決",
+   "pt_anchor": "Graças Recebidas Nessa Vida\n\nHikari nº 9, publicado em 14 de maio d",
+   "notes": "entry_id=publication-jp-1018 sort_date=14 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教事業と社会事業",
+   "title_pt": "Obra Religiosa e Obra Social",
+   "jp_anchor": "宗教事業と社会事業\n\n社会各方面を観るとき、官と民による社",
+   "pt_anchor": "Obra Religiosa e Obra Social\n\nHikari nº 10, publicado em 25 de maio ",
+   "notes": "entry_id=publication-jp-1021 sort_date=25 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "恐ろしき新聞の自由",
+   "title_pt": "A Terrível Liberdade de Imprensa",
+   "jp_anchor": "恐ろしき新聞の自由\n\nこの標題を見る人は変に思うかもしれな",
+   "pt_anchor": "A Terrível Liberdade de Imprensa\n\nHikari nº 32, publicado em 22 de outub",
+   "notes": "entry_id=publication-jp-1736 sort_date=22 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "悪人を見別ける法",
+   "title_pt": "Método para Distinguir os Maus",
+   "jp_anchor": "悪人を見別ける法\n\n私は長い間、ずいぶんいろんな人に接近",
+   "pt_anchor": "Método para Distinguir os Maus\n\nHikari nº 17, publicado em 9 de julho ",
+   "notes": "entry_id=publication-jp-1720 sort_date=9 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教の新店と老舗",
+   "title_pt": "Lojas Novas e Lojas Antigas na Religião",
+   "jp_anchor": "宗教の新店と老舗\n\nつらつら世間を見るとき、街の小売商店",
+   "pt_anchor": "Lojas Novas e Lojas Antigas na Religião\n\nHikari nº 3, publicado em 30 de março ",
+   "notes": "entry_id=publication-jp-1015 sort_date=30 de março de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と医学",
+   "title_pt": "Religião e Medicina",
+   "jp_anchor": "宗教と医学\n\n去る三月一日岐阜県高山市において「迷",
+   "pt_anchor": "Religião e Medicina\n\nHikari nº 6, publicado em 25 de abril ",
+   "notes": "entry_id=publication-jp-1503 sort_date=25 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "の使命",
+   "title_pt": "A Missão da Arte",
+   "jp_anchor": "の使命\n\n芸術の使命\nおよそ世にありとしあらゆ",
+   "pt_anchor": "A Missão da Arte\n\nHikari nº 31, publicado em 15 de outub",
+   "notes": "entry_id=publication-jp-1786 sort_date=15 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "早期教育の弊",
+   "title_pt": "Os Malefícios da Educação Precoce",
+   "jp_anchor": "早期教育の弊\n\n今日の人間は、智恵が発達して頭脳が悪",
+   "pt_anchor": "Os Malefícios da Educação Precoce\n\nHikari nº 16, publicado em 2 de julho ",
+   "notes": "entry_id=publication-jp-1703 sort_date=2 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "新聞記事と嘘",
+   "title_pt": "Artigos de Jornal e Mentiras",
+   "jp_anchor": "新聞記事と嘘\n\n日本の新聞記事は嘘が多いということは",
+   "pt_anchor": "Artigos de Jornal e Mentiras\n\nHikari nº 10, publicado em 25 de maio ",
+   "notes": "entry_id=publication-jp-1734 sort_date=25 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ヒロポン中毒",
+   "title_pt": "Vício em Hiropom",
+   "jp_anchor": "ヒロポン中毒\n\n最近覚醒剤としてのヒロポン中毒がやか",
+   "pt_anchor": "Vício em Hiropom\n\nHikari nº 26, publicado em 10 de setem",
+   "notes": "entry_id=publication-jp-1519 sort_date=10 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "七 御対談記",
+   "title_pt": "7. Registro de Diálogos",
+   "jp_anchor": "七 御対談記\n\n彼:\t貴教会の急激な発展のため、世間",
+   "pt_anchor": "7. Registro de Diálogos\n\nHikari nº 7, publicado em 30 de abril ",
+   "notes": "entry_id=publication-jp-1050 sort_date=30 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "亡国的産制論",
+   "title_pt": "A Teoria do Controle de Natalidade que Arruína a Nação",
+   "jp_anchor": "亡国的産制論\n\n私は産児制限について、本欄で二回論文",
+   "pt_anchor": "A Teoria do Controle de Natalidade que Arruína a Nação\n\nHikari nº 16, publicado em 2 de julho ",
+   "notes": "entry_id=publication-jp-1678 sort_date=2 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "無信仰と有信仰",
+   "title_pt": "Ausência de Fé e Presença de Fé",
+   "jp_anchor": "無信仰と有信仰\n\nこの論文を書くに当たって断っておきた",
+   "pt_anchor": "Ausência de Fé e Presença de Fé\n\nHikari nº 2, publicado em 20 de março ",
+   "notes": "entry_id=publication-jp-1439 sort_date=20 de março de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "某医博との対談",
+   "title_pt": "Diálogo com um Certo Doutor em Medicina",
+   "jp_anchor": "某医博との対談\n\n最近の某日、東京都内で開業している懇",
+   "pt_anchor": "Diálogo com um Certo Doutor em Medicina\n\nHikari nº 47, publicado em 28 de janei",
+   "notes": "entry_id=publication-jp-1632 sort_date=28 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "本教は神道か仏教か",
+   "title_pt": "A Nossa Igreja é Xintoísmo ou Budismo?",
+   "jp_anchor": "本教は神道か仏教か\n\n標題のごとき疑問についてよく質かれる",
+   "pt_anchor": "A Nossa Igreja é Xintoísmo ou Budismo?\n\nHikari nº 11, publicado em 31 de maio ",
+   "notes": "entry_id=publication-jp-0991 sort_date=31 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "新聞恐怖時代",
+   "title_pt": "A Era do Terror dos Jornais",
+   "jp_anchor": "新聞恐怖時代\n\n吾〄は人類救済の聖業に日夜奮励努力し",
+   "pt_anchor": "A Era do Terror dos Jornais\n\nHikari nº 32, publicado em 22 de outub",
+   "notes": "entry_id=publication-jp-1735 sort_date=22 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "この世の中において人間が最も厭うのは悲劇であろう。悲劇を全然なくすることは不可能であるが、ある程度軽減することはあえて難事ではない。それについてはまず悲劇なるものの正体を検討してみよう。",
+   "title_pt": "Eliminar a Tragédia",
+   "jp_anchor": "この世の中において人間が最も厭うのは悲劇であろう。悲劇を全然なくすることは不可能であるが、ある程度軽減することはあえて難事ではない。それについてはまず悲劇なるものの正体を検討してみよう。\n\n事実、悲劇",
+   "pt_anchor": "Eliminar a Tragédia\n\nHikari nº 12, publicado em 11 de junho",
+   "notes": "entry_id=publication-jp-0978 sort_date=11 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教は奇蹟なり",
+   "title_pt": "Religião é Milagre",
+   "jp_anchor": "宗教は奇蹟なり\n\n宗教と奇蹟は切っても切れない関係にあ",
+   "pt_anchor": "Religião é Milagre\n\nHikari nº 12, publicado em 11 de junho",
+   "notes": "entry_id=publication-jp-1003 sort_date=11 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "産制の愚",
+   "title_pt": "A Insensatez do Controle de Natalidade",
+   "jp_anchor": "産制の愚\n\n私は産制問題について、この欄に三回出",
+   "pt_anchor": "A Insensatez do Controle de Natalidade\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1679 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "信仰は信用なり",
+   "title_pt": "Fé é Confiança",
+   "jp_anchor": "信仰は信用なり\n\nそもそも宗教信仰者は世間無数にあるが",
+   "pt_anchor": "Fé é Confiança\n\nHikari nº 13, publicado em 18 de junho",
+   "notes": "entry_id=publication-jp-1130 sort_date=18 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "美人になる法",
+   "title_pt": "Método para se Tornar Bela",
+   "jp_anchor": "美人になる法\n\n単に美人といっても大別して三種ある。",
+   "pt_anchor": "Método para se Tornar Bela\n\nHikari nº 25, publicado em 3 de setemb",
+   "notes": "entry_id=publication-jp-1455 sort_date=3 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "借金",
+   "title_pt": "Dívida",
+   "jp_anchor": "借金\n\n本教のモットーである、病貧争絶無の世",
+   "pt_anchor": "Dívida\n\nHikari nº 15, publicado em 30 de junho",
+   "notes": "entry_id=publication-jp-1685 sort_date=30 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "私は二十数年間、借金のためあらゆる苦しみを舐めて来た。差し押さえ数回、破産一回受けたるにみても想像されるであろう。それらの経験によって帰紌されたものが、いま言わんとする借金哲学である。",
+   "title_pt": "Contrair Dívida é Certo ou Errado?",
+   "jp_anchor": "私は二十数年間、借金のためあらゆる苦しみを舐めて来た。差し押さえ数回、破産一回受けたるにみても想像されるであろう。それらの経験によって帰納されたものが、いま言わんとする借金哲学である。\n\nいま借金をし",
+   "pt_anchor": "Contrair Dívida é Certo ou Errado?\n\nHikari nº 35, publicado em 12 de novem",
+   "notes": "entry_id=publication-jp-1687 sort_date=12 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "時期を待て",
+   "title_pt": "Aguardar o Momento",
+   "jp_anchor": "時期を待て\n\n社会各方面を備に観察するとき、失敗者",
+   "pt_anchor": "Aguardar o Momento\n\nHikari nº 14, publicado em 25 de junho",
+   "notes": "entry_id=publication-jp-1148 sort_date=25 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "算盤を無視するな",
+   "title_pt": "Não Ignore o Soroban",
+   "jp_anchor": "算盤を無視するな\n\n私は、日本の政治家に最も欠けているも",
+   "pt_anchor": "Não Ignore o Soroban\n\nHikari nº 26, publicado em 10 de setem",
+   "notes": "entry_id=publication-jp-1666 sort_date=10 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "いまの世の中で誰も一番困っているのは金詰まりであろう。至る所金詰まりの声が充満している。とすれば一体金詰まりの原因は何であるかを知ることと、いつまで続くかということと、どうしたら解決できるかということとこの点を誰も知りたいであろうからここに説明してみよう。",
+   "title_pt": "A Causa da Escassez de Dinheiro",
+   "jp_anchor": "いまの世の中で誰も一番困っているのは金詰まりであろう。至る所金詰まりの声が充満している。とすれば一体金詰まりの原因は何であるかを知ることと、いつまで続くかということと、どうしたら解決できるかということ",
+   "pt_anchor": "A Causa da Escassez de Dinheiro\n\nHikari nº 47, publicado em 28 de janei",
+   "notes": "entry_id=publication-jp-1691 sort_date=28 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "熱海の天国化",
+   "title_pt": "A Transformação de Atami em Paraíso",
+   "jp_anchor": "熱海の天国化\n\n昭和二十四年五月二十八日静岡新聞に左",
+   "pt_anchor": "A Transformação de Atami em Paraíso\n\nHikari nº 14, publicado em 25 de junho",
+   "notes": "entry_id=publication-jp-1680 sort_date=25 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "社会悪は環境か否か",
+   "title_pt": "O Mal Social é Causado pelo Ambiente, ou Não?",
+   "jp_anchor": "社会悪は環境か否か\n\n昔から「恒産あれば恒心あり」といい、",
+   "pt_anchor": "O Mal Social é Causado pelo Ambiente, ou Não?\n\nHikari nº 10, publicado em 25 de maio ",
+   "notes": "entry_id=publication-jp-1710 sort_date=25 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "昔の宗教と今の宗教",
+   "title_pt": "Religião do Passado e Religião do Presente",
+   "jp_anchor": "昔の宗教と今の宗教\n\n私が現在、救世の業を達成すべく簡単な",
+   "pt_anchor": "Religião do Passado e Religião do Presente\n\nHikari nº 17, publicado em 9 de julho ",
+   "notes": "entry_id=publication-jp-1000 sort_date=9 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "恋愛と宗教",
+   "title_pt": "Amor e Religião",
+   "jp_anchor": "恋愛と宗教\n\n恋愛についてよく質問されるが、私は左",
+   "pt_anchor": "Amor e Religião\n\nHikari nº 17, publicado em 9 de julho ",
+   "notes": "entry_id=publication-jp-1165 sort_date=9 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "飝餌と栄養",
+   "title_pt": "Alimentação e Nutrição",
+   "jp_anchor": "食餌と栄養\n\n今日の医学衛生について特に、この食餌",
+   "pt_anchor": "Alimentação e Nutrição\n\nTōhō no Hikari nº 6, publicado em junh",
+   "notes": "entry_id=publication-jp-1532 sort_date=9 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "六\tジャーナリスト",
+   "title_pt": "6. Jornalistas — Carta ao Sr. Ōya Sōichi",
+   "jp_anchor": "六\tジャーナリスト\n\n大宅壮一君に与う\n大宅君、君は最近の",
+   "pt_anchor": "6. Jornalistas — Carta ao Sr. Ōya Sōichi\n\nHikari nº 4, publicado em 8 de abril d",
+   "notes": "entry_id=publication-jp-1732 sort_date=8 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "稲荷の意味",
+   "title_pt": "O Significado de Inari",
+   "jp_anchor": "稲荷の意味\n\n日本の各地に祀られている社に稲荷くら",
+   "pt_anchor": "O Significado de Inari\n\nHikari nº 19, publicado em 23 de julho",
+   "notes": "entry_id=publication-jp-1035 sort_date=23 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "取り締まり当局に要望する",
+   "title_pt": "Apelo às Autoridades Fiscalizadoras",
+   "jp_anchor": "取り締まり当局に要望する\n\nいつの世にも淫祠邪教の絶えないことは",
+   "pt_anchor": "Apelo às Autoridades Fiscalizadoras\n\nHikari nº 41, publicado em 24 de dezem",
+   "notes": "entry_id=publication-jp-1750 sort_date=24 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "氏神とはその土地へ初めて開拓に来た者が漸次子孫繁栄し、数代の後には一村または一集落が形成さるることになった。そこで何か神様を祀りたいということになって、その宗家の祖先を祀ったそれが氏神である。",
+   "title_pt": "Sobre o Ujigami",
+   "jp_anchor": "氏神とはその土地へ初めて開拓に来た者が漸次子孫繁栄し、数代の後には一村または一集落が形成さるることになった。そこで何か神様を祀りたいということになって、その宗家の祖先を祀ったそれが氏神である。\n\nしか",
+   "pt_anchor": "Sobre o Ujigami\n\nHikari nº 20, publicado em 30 de julho",
+   "notes": "entry_id=publication-jp-1036 sort_date=30 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "空前の難問題",
+   "title_pt": "Problema Sem Precedentes",
+   "jp_anchor": "空前の難問題\n\nいまここに論じようとする問題ほど深刻",
+   "pt_anchor": "Problema Sem Precedentes\n\nHikari nº 37, publicado em 26 de novem",
+   "notes": "entry_id=publication-jp-1414 sort_date=26 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教からみた産制問題",
+   "title_pt": "O Problema do Controle de Natalidade sob a Perspectiva Religiosa",
+   "jp_anchor": "宗教からみた産制問題\n\n近来、わが国において産児制限問題が喧",
+   "pt_anchor": "O Problema do Controle de Natalidade sob a Perspectiva Religiosa\n\nHikari nº 7, publicado em 30 de abril ",
+   "notes": "entry_id=publication-jp-1676 sort_date=30 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "大三災と小三災",
+   "title_pt": "As Três Grandes Calamidades e as Três Pequenas Calamidades",
+   "jp_anchor": "大三災と小三災\n\n昔からいわれている風水火の大三災飢病",
+   "pt_anchor": "As Três Grandes Calamidades e as Três Pequenas Calamidades\n\nHikari nº 22, publicado em 13 de agost",
+   "notes": "entry_id=publication-jp-1225 sort_date=13 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "社会悪の根源",
+   "title_pt": "A Raiz do Mal Social",
+   "jp_anchor": "社会悪の根源\n\nいま日本の最も悩みである社会悪につい",
+   "pt_anchor": "A Raiz do Mal Social\n\nHikari nº 9, publicado em 14 de maio d",
+   "notes": "entry_id=publication-jp-1709 sort_date=14 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "吊医・故入沢博士",
+   "title_pt": "Famoso Médico, o Falecido Doutor Irisawa",
+   "jp_anchor": "名医・故入沢博士\n\n博士の説によれば「医者はインチキをや",
+   "pt_anchor": "Famoso Médico, o Falecido Doutor Irisawa\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1587 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "自家中毒",
+   "title_pt": "Autointoxicação",
+   "jp_anchor": "自家中毒\n\nよく医学では自家中毒というが、これは",
+   "pt_anchor": "Autointoxicação\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1594 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "疥癫の原因",
+   "title_pt": "A Causa da Sarna",
+   "jp_anchor": "疥癬の原因\n\n疥癬の原因は種痘のためである。種痘に",
+   "pt_anchor": "A Causa da Sarna\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1595 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "煙草と医学",
+   "title_pt": "Tabaco e Medicina",
+   "jp_anchor": "煙草と医学\n\n専売局では、ピースが売れないので困り",
+   "pt_anchor": "Tabaco e Medicina\n\nHikari nº 40, publicado em 17 de dezem",
+   "notes": "entry_id=publication-jp-1599 sort_date=17 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "三\t経済",
+   "title_pt": "3. Economia — Dinheiro Desonesto Não Permanece",
+   "jp_anchor": "三\t経済\n\n悪銭身に着かず\n昔から悪銭身に着かず",
+   "pt_anchor": "3. Economia — Dinheiro Desonesto Não Permanece\n\nHikari nº 14, publicado em 25 de junho",
+   "notes": "entry_id=publication-jp-1684 sort_date=25 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "結核新薬について",
+   "title_pt": "Sobre os Novos Medicamentos para Tuberculose",
+   "jp_anchor": "結核新薬について\n\n結核に対する新薬くらい現れては消え現",
+   "pt_anchor": "Sobre os Novos Medicamentos para Tuberculose\n\nHikari nº 24, publicado em 27 de agost",
+   "notes": "entry_id=publication-jp-1586 sort_date=27 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ホルモンのことをちょっと書いてみよう。周知のごとく疲労症や性欲減退、子宮発育不全等に多く用いられるが、この薬剤の原料は男性に用いるものは女馬の尿から、女性に用いるものは青年男子の宿舎の便所の尿から抽出製剤するものであるから、知らない人はこれを聞いたら顔をシカメルであろう。",
+   "title_pt": "Sobre os Hormônios",
+   "jp_anchor": "ホルモンのことをちょっと書いてみよう。周知のごとく疲労症や性欲減退、子宮発育不全等に多く用いられるが、この薬剤の原料は男性に用いるものは女馬の尿から、女性に用いるものは青年男子の宿舎の便所の尿から抽出",
+   "pt_anchor": "Sobre os Hormônios\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1591 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "眼を洗う",
+   "title_pt": "Lavar os Olhos",
+   "jp_anchor": "眼を洗う\n\n私は、眼を洗う可否を聞かれた場合こう",
+   "pt_anchor": "Lavar os Olhos\n\nHikari nº 26, publicado em 10 de setem",
+   "notes": "entry_id=publication-jp-1596 sort_date=10 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "議会は立法府だという。なるほど年〄、新しい法規を打ち樹てるからである。ところがこれは自慢にはならない。实は社会悪が殖えるからで、もし善人が殖えれば法規の必要がなくなるから立法の必要がない。故に、国会が廃法府となるこそ本当の文化の進歩である。",
+   "title_pt": "A Câmara Revogadora de Leis e a Câmara Legislativa",
+   "jp_anchor": "議会は立法府だという。なるほど年〄、新しい法規を打ち樹てるからである。ところがこれは自慢にはならない。実は社会悪が殖えるからで、もし善人が殖えれば法規の必要がなくなるから立法の必要がない。故に、国会が",
+   "pt_anchor": "A Câmara Revogadora de Leis e a Câmara Legislativa\n\nHikari nº 21, publicado em 6 de agosto",
+   "notes": "entry_id=publication-jp-1662 sort_date=6 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "人間は想念次第",
+   "title_pt": "O Ser Humano é Segundo Seus Pensamentos",
+   "jp_anchor": "人間は想念次第\n\n感謝が感謝を生み、不平が不平をよぶと",
+   "pt_anchor": "O Ser Humano é Segundo Seus Pensamentos\n\nHikari nº 25, publicado em 3 de setemb",
+   "notes": "entry_id=publication-jp-1131 sort_date=3 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "知能障害児は治る",
+   "title_pt": "Crianças com Deficiência Intelectual São Curáveis",
+   "jp_anchor": "知能障害児は治る\n\n現在日本における知能障害児は八十数万",
+   "pt_anchor": "Crianças com Deficiência Intelectual São Curáveis\n\nHikari nº 45, publicado em 14 de janei",
+   "notes": "entry_id=publication-jp-1487 sort_date=14 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "現在の世界において、人類の苦悩は数え切れないほどあるが、その最も王座を占めるものとしては米ソ問題であることはいまさらいう必要はあるまい。この意味において、もし米ソ間の諸問題が解消し、トルーマン氏とスターリン氏が握扊するような時が来たとしたら、全人類はいかに救わるるであろうし、世界はいかに明るくなるかは計り知れないものがあろう。",
+   "title_pt": "A Inspiração Espiritual para a Reconciliação entre os Estados Unidos e a União Soviética",
+   "jp_anchor": "現在の世界において、人類の苦悩は数え切れないほどあるが、その最も王座を占めるものとしては米ソ問題であることはいまさらいう必要はあるまい。この意味において、もし米ソ間の諸問題が解消し、トルーマン氏とスタ",
+   "pt_anchor": "A Inspiração Espiritual para a Reconciliação entre os Estados Unidos e a União Soviética\n\nHikari nº 30, publicado em 8 de outubr",
+   "notes": "entry_id=publication-jp-1723 sort_date=8 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "農業の大革命 清潔で心から楽しめる家庭菜園の無肥料栽培",
+   "title_pt": "A Grande Revolução na Agricultura: Cultivo Doméstico sem Fertilizantes",
+   "jp_anchor": "農業の大革命 清潔で心から楽しめる家庭菜園の無肥料栽培\n\n無肥料栽培については『地上天国』創刊",
+   "pt_anchor": "A Grande Revolução na Agricultura: Cultivo sem Fertilizantes em uma Horta Doméstica Limpa e que se Pode Desfrutar de Todo o Coração\n\nHikari nº 3, publicado em 30 de março ",
+   "notes": "entry_id=publication-jp-1761 sort_date=30 de março de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "また医学が言うところの、肴の骨にはカルシュウムがあるから飝えというのと吉様で、わざわざ不味くて人間の歯では噛めないようなものを飝えというのは人間を猫と吉様に扱うわけで、現代人は实に憐れむべきである。",
+   "title_pt": "A Casca da Tangerina e as Espinhas do Peixe",
+   "jp_anchor": "また医学が言うところの、肴の骨にはカルシュウムがあるから食えというのと同様で、わざわざ不味くて人間の歯では噛めないようなものを食えというのは人間を猫と同様に扱うわけで、現代人は実に憐れむべきである。\n",
+   "pt_anchor": "A Casca da Tangerina e as Espinhas do Peixe\n\nHikari nº 44, publicado em 7 de janeir",
+   "notes": "entry_id=publication-jp-1528 sort_date=7 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "逆の世の中",
+   "title_pt": "Um Mundo às Avessas",
+   "jp_anchor": "逆の世の中\n\nよく昔から石が流れて木の葉が沈むとい",
+   "pt_anchor": "Um Mundo às Avessas\n\nHikari nº 40, publicado em 17 de dezem",
+   "notes": "entry_id=publication-jp-1600 sort_date=17 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "産制問題の別の観方",
+   "title_pt": "Outra Perspectiva sobre o Problema do Controle de Natalidade",
+   "jp_anchor": "産制問題の別の観方\n\nいま日本が切実の問題として論議の的に",
+   "pt_anchor": "Outra Perspectiva sobre o Problema do Controle de Natalidade\n\nHikari nº 12, publicado em 11 de junho",
+   "notes": "entry_id=publication-jp-1677 sort_date=11 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "日本人と宗教心",
+   "title_pt": "Os Japoneses e o Sentimento Religioso",
+   "jp_anchor": "日本人と宗教心\n\nトルーマン米大統領は昭和二十四年十月",
+   "pt_anchor": "Os Japoneses e o Sentimento Religioso\n\nHikari nº 40, publicado em 17 de dezem",
+   "notes": "entry_id=publication-jp-1245 sort_date=17 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "花による天国化運動",
+   "title_pt": "Movimento de Celestialização através das Flores",
+   "jp_anchor": "花による天国化運動\n\n本教の目標である地上天国建設と言うそ",
+   "pt_anchor": "Movimento de Celestialização através das Flores\n\nHikari nº 8, publicado em 8 de maio do",
+   "notes": "entry_id=publication-jp-1780 sort_date=8 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "迷信と科学",
+   "title_pt": "Superstição e Ciência",
+   "jp_anchor": "迷信と科学\n\n迷信は何から生まれるかというと、実は",
+   "pt_anchor": "Superstição e Ciência\n\nHikari nº 28, publicado em 24 de setem",
+   "notes": "entry_id=publication-jp-1009 sort_date=24 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "神無月",
+   "title_pt": "O Mês Sem Deuses (Kannazuki)",
+   "jp_anchor": "神無月\n\nこの間、ラジオの宗教時間中、神無月に",
+   "pt_anchor": "O Mês Sem Deuses (Kannazuki)\n\nHikari nº 28, publicado em 24 de setem",
+   "notes": "entry_id=publication-jp-1037 sort_date=24 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "批判は公平であれ",
+   "title_pt": "A Crítica Deve Ser Justa",
+   "jp_anchor": "批判は公平であれ\n\n現在の世相について吾らの最も納得し兼",
+   "pt_anchor": "A Crítica Deve Ser Justa\n\nHikari nº 46, publicado em 21 de jane",
+   "notes": "entry_id=publication-jp-1410 sort_date=21 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "天照大神は幾柱あるか",
+   "title_pt": "Quantas Amaterasu Ōmikami Existem?",
+   "jp_anchor": "天照大神は幾柱あるか\n\nかの有名な璽光尊は自分には天照大御神",
+   "pt_anchor": "Quantas Amaterasu Ōmikami Existem?\n\nHikari nº 29, publicado em 1 de outubr",
+   "notes": "entry_id=publication-jp-1038 sort_date=1 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "神と佛の文字",
+   "title_pt": "Os Caracteres para Deus (Kami) e Buda (Hotoke)",
+   "jp_anchor": "神と佛の文字\n\nこの二つの文字をあまり解釈したものは",
+   "pt_anchor": "Os Caracteres para Deus (Kami) e Buda (Hotoke)\n\nHikari nº 30, publicado em 8 de outubr",
+   "notes": "entry_id=publication-jp-1039 sort_date=8 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "天国化と健康問題",
+   "title_pt": "A Celestialização e o Problema da Saúde",
+   "jp_anchor": "天国化と健康問題\n\n本教が常に唱うる地上天国とはいかなる",
+   "pt_anchor": "A Celestialização e o Problema da Saúde\n\nHikari nº 14, publicado em 25 de junho",
+   "notes": "entry_id=publication-jp-1430 sort_date=25 de junho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "想像による批判",
+   "title_pt": "Críticas Baseadas na Imaginação",
+   "jp_anchor": "想像による批判\n\n本教に対し、新聞雑誌が種〄の批判的記",
+   "pt_anchor": "Críticas Baseadas na Imaginação\n\nHikari nº 8, publicado em 8 de maio do",
+   "notes": "entry_id=publication-jp-1733 sort_date=8 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "新宗教と新聞記事",
+   "title_pt": "As Novas Religiões e as Reportagens de Jornal",
+   "jp_anchor": "新宗教と新聞記事\n\n本教が近来、善悪ともに社会各層の話題",
+   "pt_anchor": "As Novas Religiões e as Reportagens de Jornal\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1737 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "新聞は何故宗教を愚弄するか",
+   "title_pt": "Por Que os Jornais Ridicularizam a Religião?",
+   "jp_anchor": "新聞は何故宗教を愚弄するか\n\n吾らの常に不可解と思うことは、日本の",
+   "pt_anchor": "Por Que os Jornais Ridicularizam a Religião?\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1738 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "真の強者",
+   "title_pt": "O Verdadeiro Forte",
+   "jp_anchor": "真の強者\n\n今日口を開けば社会悪を言って嘆くが、",
+   "pt_anchor": "O Verdadeiro Forte\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1090 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "光新聞の拡大は教線の強化",
+   "title_pt": "A Expansão do Jornal Hikari é o Fortalecimento da Linha de Ensino",
+   "jp_anchor": "光新聞の拡大は教線の強化\n\n本教の唯一の宣伝機関として、光新聞を",
+   "pt_anchor": "A Expansão do Jornal Hikari é o Fortalecimento da Linha de Ensino\n\nHikari nº 33, publicado em 29 de o",
+   "notes": "entry_id=publication-jp-1168 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（三） 正しい治療",
+   "title_pt": "Fragmentos Médicos (III) – O Tratamento Correto",
+   "jp_anchor": "医学断片集（三） 正しい治療\n\n今日よく専門家は、正しい治療というが",
+   "pt_anchor": "Fragmentos Médicos (III) – O Tratamento Correto\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1537 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（四） ある看護婦長の話",
+   "title_pt": "Fragmentos Médicos (IV) – A História de uma Enfermeira-Chefe",
+   "jp_anchor": "医学断片集（四） ある看護婦長の話\n\n数年前、本教が日本浄化療法時代に講習",
+   "pt_anchor": "Fragmentos Médicos (IV) – A História de uma Enfermeira-Chefe\n\nHikari nº 34, publicado em 5 de novemb",
+   "notes": "entry_id=publication-jp-1538 sort_date=5 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（五） ある眼科医の話",
+   "title_pt": "Fragmentos Médicos (V) – A História de um Oculista",
+   "jp_anchor": "医学断片集（五） ある眼科医の話\n\nこれは十数年以前、私が麹町半蔵門で開",
+   "pt_anchor": "Fragmentos Médicos (V) – A História de um Oculista\n\nHikari nº 34, publicado em 5 de novemb",
+   "notes": "entry_id=publication-jp-1539 sort_date=5 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教 教育 政治",
+   "title_pt": "Religião, Educação, Política",
+   "jp_anchor": "宗教 教育 政治\n\nいま世の中は誰が見ても、実に社会悪が",
+   "pt_anchor": "Religião, Educação, Política\n\nHikari nº 24, publicado em 27 de agost",
+   "notes": "entry_id=publication-jp-1657 sort_date=27 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "人間を愚にするな",
+   "title_pt": "Não Façam do Ser Humano um Tolo",
+   "jp_anchor": "人間を愚にするな\n\n今日口を開けば新宗教は迷信邪教である",
+   "pt_anchor": "Não Façam do Ser Humano um Tolo\n\nHikari nº 37, publicado em 26 de novem",
+   "notes": "entry_id=publication-jp-1739 sort_date=26 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "インチキの吊を返上する",
+   "title_pt": "Devolvemos o Título de Charlatão",
+   "jp_anchor": "インチキの名を返上する\n\nよく新聞などに新宗教を目してインチキ",
+   "pt_anchor": "Devolvemos o Título de Charlatão\n\nHikari nº 36, publicado em 19 de novem",
+   "notes": "entry_id=publication-jp-1746 sort_date=19 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "真の宗教",
+   "title_pt": "A Verdadeira Religião",
+   "jp_anchor": "真の宗教\n\nとは、世界主義を建前としなくてはなら",
+   "pt_anchor": "A Verdadeira Religião\n\nHikari nº 34, publicado em 5 de novemb",
+   "notes": "entry_id=publication-jp-1025 sort_date=5 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "健康による天国化",
+   "title_pt": "A Celestialização através da Saúde",
+   "jp_anchor": "健康による天国化\n\nキリストの一大予言である「天国は近づ",
+   "pt_anchor": "A Celestialização através da Saúde\n\nHikari, edição extra, publicado em 30 de maio do ano 24 da Era Showa (1949)",
+   "notes": "entry_id=publication-jp-1429 sort_date=30 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（十一） 病は内から外へ",
+   "title_pt": "Fragmentos Médicos (XI) – A Doença de Dentro para Fora",
+   "jp_anchor": "医学断片集（十一） 病は内から外へ\n\n医学においては、病原は外部から侵入す",
+   "pt_anchor": "Fragmentos Médicos (XI) – A Doença de Dentro para Fora\n\nHikari nº 37, publicado em 26 de novem",
+   "notes": "entry_id=publication-jp-1545 sort_date=26 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "投書密告による被害",
+   "title_pt": "Danos Causados por Cartas Anônimas e Denúncias",
+   "jp_anchor": "投書密告による被害\n\n当局が犯罪の手掛かりとして投書密告を",
+   "pt_anchor": "Danos Causados por Cartas Anônimas e Denúncias\n\nHikari nº 35, publicado em 12 de novem",
+   "notes": "entry_id=publication-jp-1749 sort_date=12 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "右の造営は一切私の企画設計によって行われており、建築の構想はもとより庭園の一木一草一石に至るまで、私の指示にならぬものはない。これは何も私の能力を誇ろうとするのではないがそれを言わなければこの文はできないからである。",
+   "title_pt": "Relato de uma Experiência com o Problema Trabalhista",
+   "jp_anchor": "右の造営は一切私の企画設計によって行われており、建築の構想はもとより庭園の一木一草一石に至るまで、私の指示にならぬものはない。これは何も私の能力を誇ろうとするのではないがそれを言わなければこの文はでき",
+   "pt_anchor": "Relato de uma Experiência com o Problema Trabalhista\n\nHikari nº 40, publicado em 17 de dezem",
+   "notes": "entry_id=publication-jp-1698 sort_date=17 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "七\t御対談記",
+   "title_pt": "7. Registro de Diálogos",
+   "jp_anchor": "七\t御対談記\n\n自観大先生との対談\n現当利益の宗教\t",
+   "pt_anchor": "7. Registro de Diálogos\n\nHikari nº 24, publicado em 27 de agost",
+   "notes": "entry_id=publication-jp-1751 sort_date=27 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "現世利益と朩来利益",
+   "title_pt": "Benefícios Neste Mundo e Benefícios no Mundo Futuro",
+   "jp_anchor": "現世利益と未来利益\n\n世間宗教批判の場合、現世利益と未来利",
+   "pt_anchor": "Benefícios Neste Mundo e Benefícios no Mundo Futuro\n\nHikari nº 36, publicado em 19 de novem",
+   "notes": "entry_id=publication-jp-1019 sort_date=19 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "これを何と見る",
+   "title_pt": "Como Ver Isso",
+   "jp_anchor": "これを何と見る\n\nさきに栄養の喜劇という論文を書いたが",
+   "pt_anchor": "Como Ver Isso\n\nHikari nº 17, publicado em 9 de julho ",
+   "notes": "entry_id=publication-jp-1526 sort_date=9 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ユスリ物語",
+   "title_pt": "A História dos Extorsionários",
+   "jp_anchor": "ユスリ物語\n\n由来、宗教団体に対し強請の多いことは",
+   "pt_anchor": "A História dos Extorsionários\n\nHikari nº 19, publicado em 23 de julho",
+   "notes": "entry_id=publication-jp-1748 sort_date=23 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（十二） 人形医学",
+   "title_pt": "Fragmentos Médicos (XII) – Medicina de Bonecos",
+   "jp_anchor": "医学断片集（十二） 人形医学\n\n現代医学は、有体にいえば人間医学では",
+   "pt_anchor": "Fragmentos Médicos (XII) – Medicina de Bonecos\n\nHikari nº 37, publicado em 26 de novem",
+   "notes": "entry_id=publication-jp-1546 sort_date=26 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "造物主に反抗する医学",
+   "title_pt": "A Medicina que se Rebela contra o Criador de Todas as Coisas",
+   "jp_anchor": "造物主に反抗する医学\n\nこの標題をみた人はちょっと変に思うで",
+   "pt_anchor": "A Medicina que se Rebela contra o Criador de Todas as Coisas\n\nHikari nº 30, publicado em 8 de outubr",
+   "notes": "entry_id=publication-jp-1422 sort_date=8 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "六\t寸評",
+   "title_pt": "6. Comentário — É Possível Erradicar os Micróbios?",
+   "jp_anchor": "六\t寸評\n\n黴菌は根絶できるか\n世間一般、黴菌は",
+   "pt_anchor": "6. Comentário — É Possível Erradicar os Micróbios?\n\nHikari nº 24, publicado em 27 de agost",
+   "notes": "entry_id=publication-jp-1578 sort_date=27 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "意外な話",
+   "title_pt": "Uma História Inesperada",
+   "jp_anchor": "意外な話\n\n近来、日本人の死亡率や伝染病減少を喜",
+   "pt_anchor": "Uma História Inesperada\n\nHikari nº 23, publicado em 20 de agost",
+   "notes": "entry_id=publication-jp-1584 sort_date=20 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ところが本当をいえば常に身体の弱い人や弱い子供がある場合真に健康になるべき方法を教えなければならない、それはすなわち健康医である。これらは医師の副業にすればいいが、このようなことはまず夢でしかあるまい。",
+   "title_pt": "Preconceito Sem Experimentar",
+   "jp_anchor": "ところが本当をいえば常に身体の弱い人や弱い子供がある場合真に健康になるべき方法を教えなければならない、それはすなわち健康医である。これらは医師の副業にすればいいが、このようなことはまず夢でしかあるまい",
+   "pt_anchor": "Preconceito Sem Experimentar\n\nHikari nº 34, publicado em 5 de novemb",
+   "notes": "entry_id=publication-jp-1747 sort_date=5 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "三\t神示の医学",
+   "title_pt": "Três: A Medicina da Revelação Divina",
+   "jp_anchor": "三\t神示の医学\n\n（一）浄霊の原理\n浄霊の原理第一\nこ",
+   "pt_anchor": "Três: A Medicina da Revelação Divina\n\nHikari, edição extra, publicado em 30 de maio do ano 24 da Era Showa (1949)",
+   "notes": "entry_id=publication-jp-1299 sort_date=30 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "内臓の三位一体と浄霊",
+   "title_pt": "A Trindade dos Órgãos Internos e o Johrei",
+   "jp_anchor": "内臓の三位一体と浄霊\n\nそもそも、人間生活上体内の最も重要機",
+   "pt_anchor": "A Trindade dos Órgãos Internos e o Johrei\n\nHikari nº 21, publicado em 6 de agosto",
+   "notes": "entry_id=publication-jp-1309 sort_date=6 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "信仰と戒律",
+   "title_pt": "Fé e Preceitos",
+   "jp_anchor": "信仰と戒律\n\n政治にも封建的と自由主義的とあるが、",
+   "pt_anchor": "Fé e Preceitos\n\nHikari nº 40, publicado em 17 de dezem",
+   "notes": "entry_id=publication-jp-1045 sort_date=17 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊的に観たる湯川博士の功績",
+   "title_pt": "A Conquista do Dr. Yukawa Vista Espiritualmente",
+   "jp_anchor": "霊的に観たる湯川博士の功績\n\n今回理論科学によってノーベル賞の受賞",
+   "pt_anchor": "A Conquista do Dr. Yukawa Vista Espiritualmente\n\nHikari nº 38, publicado em 3 de dezemb",
+   "notes": "entry_id=publication-jp-1259 sort_date=3 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "寸 言",
+   "title_pt": "Palavras Breves",
+   "jp_anchor": "寸 言\n\n医者が患者に対していう言葉は実に徹底",
+   "pt_anchor": "Palavras Breves\n\nHikari, edição extra, publicado em 30 de maio do ano 24 da Era Showa (1949)",
+   "notes": "entry_id=publication-jp-1615 sort_date=30 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "寄生虫問題",
+   "title_pt": "O Problema dos Parasitas",
+   "jp_anchor": "寄生虫問題\n\n九月二十五日朝日新聞紙上「回虫恐るべ",
+   "pt_anchor": "O Problema dos Parasitas\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1629 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "唯物主義と唯心主義",
+   "title_pt": "Materialismo e Espiritualismo",
+   "jp_anchor": "唯物主義と唯心主義\n\n本教が発展するにつれて予想もしないこ",
+   "pt_anchor": "Materialismo e Espiritualismo\n\nHikari nº 4, publicado em 8 de abril d",
+   "notes": "entry_id=publication-jp-1701 sort_date=8 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "真の救いとは何ぞや",
+   "title_pt": "O que é a verdadeira salvação?",
+   "jp_anchor": "真の救いとは何ぞや\n\n今日批判者の極っていう言葉は本教が宗",
+   "pt_anchor": "O que é a verdadeira salvação?\n\nHikari nº 41, publicado em 24 de dezem",
+   "notes": "entry_id=publication-jp-1007 sort_date=24 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ある実との対談",
+   "title_pt": "Diálogo com um Certo Homem",
+   "jp_anchor": "ある実との対談\n\n実: 貴教団のすべてのやり方はまこと",
+   "pt_anchor": "Diálogo com um Certo Homem\n\nHikari nº 25, publicado em 3 de setemb",
+   "notes": "entry_id=publication-jp-1752 sort_date=3 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "恐怖を除く",
+   "title_pt": "Eliminar o Medo",
+   "jp_anchor": "恐怖を除く\n\n吾〄の目標とするところは、常にいうご",
+   "pt_anchor": "Eliminar o Medo\n\nHikari nº 44, publicado em 7 de janeir",
+   "notes": "entry_id=publication-jp-0975 sort_date=7 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と自由",
+   "title_pt": "Religião e Liberdade",
+   "jp_anchor": "宗教と自由\n\n今日までの宗教をみると、宗教にはほと",
+   "pt_anchor": "Religião e Liberdade\n\nHikari nº 45, publicado em 14 de janeiro do ",
+   "notes": "entry_id=publication-jp-1044 sort_date=14 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "治るんだ",
+   "title_pt": "Não é Curar, é Curar-se",
+   "jp_anchor": "治るんだ\n\n本教に対し、本教を傷つけんとしてあら",
+   "pt_anchor": "Não é Curar, é Curar-se\n\nHikari nº 3, publicado em 30 de março ",
+   "notes": "entry_id=publication-jp-1502 sort_date=30 de março de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "恋愛哲学",
+   "title_pt": "Filosofia do Amor",
+   "jp_anchor": "恋愛哲学\n\n人間生活のなかで、この恋愛くらい厄介",
+   "pt_anchor": "Filosofia do Amor\nHikari nº 46, publicado em 21 de janeiro do ano 25 da Era Showa (1950)",
+   "notes": "entry_id=publication-jp-1166 sort_date=21 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "本教の批判者へ",
+   "title_pt": "Aos Críticos da Nossa Igreja",
+   "jp_anchor": "本教の批判者へ\n\nこれは常に感じていることであるが、本",
+   "pt_anchor": "Aos Críticos da Nossa Igreja\n\nHikari nº 34, publicado em 5 de novemb",
+   "notes": "entry_id=publication-jp-1417 sort_date=5 de novembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "人間は物質か",
+   "title_pt": "O Ser Humano é Matéria?",
+   "jp_anchor": "人間は物質か\n\n人間を物と観る思想が殺人強盗を生み戦",
+   "pt_anchor": "O Ser Humano é Matéria?\n\nHikari nº 22, publicado em 13 de agost",
+   "notes": "entry_id=publication-jp-1702 sort_date=13 de agosto de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "自殺者の無責任",
+   "title_pt": "A Irresponsabilidade dos Suicidas",
+   "jp_anchor": "自殺者の無責任\n\nいつの時代でも自殺者が絶えないことは",
+   "pt_anchor": "A Irresponsabilidade dos Suicidas\n\nHikari nº 45, publicado em 14 de janei",
+   "notes": "entry_id=publication-jp-1246 sort_date=14 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "日本再建の指針",
+   "title_pt": "Diretrizes para a Reconstrução do Japão",
+   "jp_anchor": "日本再建の指針\n\n私はいま日本今後の国策を論じてみよう",
+   "pt_anchor": "Diretrizes para a Reconstrução do Japão\n\nHikari, edição extra, publicado em 30 de maio do ano 24 da Era Showa (1949)",
+   "notes": "entry_id=publication-jp-1660 sort_date=30 de maio de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "主食の不足はどうすればいい",
+   "title_pt": "Como Resolver a Escassez de Alimentos Básicos",
+   "jp_anchor": "主食の不足はどうすればいい\n\n長い間国民が悩み抜いてきたインフレも",
+   "pt_anchor": "Como Resolver a Escassez de Alimentos Básicos\n\nHikari nº 46, publicado em 21 de janei",
+   "notes": "entry_id=publication-jp-1699 sort_date=21 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "五\t医学断片雄",
+   "title_pt": "Fragmentos Médicos (I) – A História de uma Senhora",
+   "jp_anchor": "五\t医学断片集\n\n医学断片集（一） ある婦人の話\nこの",
+   "pt_anchor": "Fragmentos Médicos (I) – A História de uma Senhora\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1535 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "夜の終り近づけり汝等悔改めよ",
+   "title_pt": "O Fim da Noite se Aproxima, Arrependei-vos",
+   "jp_anchor": "夜の終り近づけり汝等悔改めよ\n\n大聖キリストの曰った「世の終わり近づ",
+   "pt_anchor": "O Fim da Noite se Aproxima, Arrependei-vos\n\nHikari nº 42, publicado em 31 de dezem",
+   "notes": "entry_id=publication-jp-0958 sort_date=31 de dezembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "幸福の秘訣などというと、なにか特別の魑法でも使うように想うかも知れないが、決してそうではない、至極当たり前の話である。ただその当たり前のことを世人はあまりに気がつかないのである。",
+   "title_pt": "O Segredo da Felicidade",
+   "jp_anchor": "幸福の秘訣などというと、なにか特別の魔法でも使うように想うかも知れないが、決してそうではない、至極当たり前の話である。ただその当たり前のことを世人はあまりに気がつかないのである。\n\nいま社会全般を見渡",
+   "pt_anchor": "O Segredo da Felicidade\n\nHikari nº 29, publicado em 1 de outubr",
+   "notes": "entry_id=publication-jp-1078 sort_date=1 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "愚かなる者よ！汝の吊は悪人なり",
+   "title_pt": "Ó Insensato! Teu Nome é Malvado",
+   "jp_anchor": "愚かなる者よ！汝の名は悪人なり\n\n悪人とは何ぞや、いうまでもなく善人の",
+   "pt_anchor": "Ó Insensato! Teu Nome é Malvado\n\nHikari nº 7, publicado em 30 de abril ",
+   "notes": "entry_id=publication-jp-1099 sort_date=30 de abril de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "生活を娯しむ",
+   "title_pt": "Desfrutar a Vida",
+   "jp_anchor": "生活を娯しむ\n\n今度、社会党党首片山氏が帰朝第一声に",
+   "pt_anchor": "Desfrutar a Vida\n\nHikari nº 27, publicado em 17 de setem",
+   "notes": "entry_id=publication-jp-1241 sort_date=17 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "今日の世相くらい悪化していることは朩だかつてなかったであろう。なによりの証拠は犯罪の激増、監獄の超満員、朩解決裁判の多数、迷宮入り事件の少なくないこと等によってみても明らかである。",
+   "title_pt": "A Degradação da Sociedade Atual",
+   "jp_anchor": "今日の世相くらい悪化していることは未だかつてなかったであろう。なによりの証拠は犯罪の激増、監獄の超満員、未解決裁判の多数、迷宮入り事件の少なくないこと等によってみても明らかである。\n\n右の事実は表面に",
+   "pt_anchor": "A Degradação da Sociedade Atual\n\nHikari nº 47, publicado em 28 de janei",
+   "notes": "entry_id=publication-jp-1243 sort_date=28 de janeiro de 1950"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学断片雄（二）輸血",
+   "title_pt": "Fragmentos Médicos (II) – Transfusão de Sangue",
+   "jp_anchor": "医学断片集（二）輸血\n\n血液とは、霊の物質化であることは、常",
+   "pt_anchor": "Fragmentos Médicos (II) – Transfusão de Sangue\n\nHikari nº 33, publicado em 29 de outub",
+   "notes": "entry_id=publication-jp-1536 sort_date=29 de outubro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "社会不安の真因",
+   "title_pt": "A Verdadeira Causa da Ansiedade Social",
+   "jp_anchor": "社会不安の真因\n\n今日、当局の談によれば「犯罪者が殖え",
+   "pt_anchor": "A Verdadeira Causa da Ansiedade Social\n\nHikari nº 25, publicado em 3 de setembro do ",
+   "notes": "entry_id=publication-jp-1711 sort_date=3 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ある実との対談",
+   "title_pt": "Diálogo com um Certo Homem (II)",
+   "jp_anchor": "ある実との対談\n\n最近対談した実は、警察方面の重要な仕",
+   "pt_anchor": "Diálogo com um Certo Homem (II)\n\nHikari nº 27, publicado em 17 de setem",
+   "notes": "entry_id=publication-jp-1753 sort_date=17 de setembro de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "菊五郎丈の死",
+   "title_pt": "A Morte do Grande Ator Kikugorō",
+   "jp_anchor": "菊五郎丈の死\n\n菊五郎の死を聞いて随分がっかりした者",
+   "pt_anchor": "A Morte do Grande Ator Kikugorō\n\nHikari nº 21, publicado em 6 de agosto",
+   "notes": "entry_id=publication-jp-1829 sort_date=6 de agosto de 1949"
+  }
+ ],
+ "filename": "Hikari.txt"
+}

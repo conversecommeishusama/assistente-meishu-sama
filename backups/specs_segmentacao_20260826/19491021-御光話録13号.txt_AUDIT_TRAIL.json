@@ -1,0 +1,69 @@
+{
+  "filename": "19491021-御光話録13号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 674 linhas / PT 583 linhas), 3 sessões datadas (3, 13 e 23 de julho), incluindo a longa entrevista da NHK (formato pergunta-resposta muito curto e denso, cerca de 90 turnos) embutida na sessão de 13 de julho.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO encontrada — a entrevista da NHK, por ser o trecho de maior risco (perguntas e respostas muito curtas, muitas vezes de 1 linha), foi conferida turno a turno contra o JP; toda a alternância Interlocutor/Meishu-Sama confere.",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CJK=0 confirmado (gate mecânico).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 3,
+    "turnos_interlocutor_jp_pt_gate": "139/139 (Δ=0)",
+    "real_corrections_applied": 1,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_de_rotulo_confirmada": false
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Ficheiro de trabalho JP, cabeçalho do artigo (campo title_pt, linha 11)",
+      "problema": "Metadado inconsistente: title_pt continha 'Gosuiji-roku nº 13' (nome da categoria/fonte de publicação, 'Gosuiji-roku', usado no lugar do título de série 'Gokōwa-roku' adotado uniformemente no resto do corpus).",
+      "correcao": "title_pt do ficheiro de trabalho JP corrigido para 'Gokōwa-roku nº 13', igual ao título já usado no ficheiro de trabalho PT.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Sessão 3 de julho (Ujigami, hereditariedade de caráter, hierarquia de aves/feras/insetos/peixes, doença da raiva, estrelas)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 13 de julho — parte 1 (Jesus/Gandhi, cultivo sem fertilizante, cultura japonesa, Dr. Nagai, caracteres da Era dos Deuses)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 13 de julho — entrevista NHK (cerca de 90 turnos curtos, tópicos: história da Igreja, número de fiéis, distintivo/cruz, ciência x religião, agricultura, ateísmo, reencarnação, finanças da igreja, Daikoku-Sama)",
+      "decisao": "ok — trecho de maior risco por densidade de turnos curtos, conferido integralmente sem inversão de falante nem perda de turno",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 23 de julho (gratidão/Tamagushi, cílios invertidos, lábio leporino, romanização Miroku, sonho de Noé, festivais Mikoshi)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Nota editorial final (編輯後記, incluindo citação longa do posfácio do Paraíso na Terra nº 5)",
+      "decisao": "ok — citação longa traduzida integralmente e fielmente",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19491021-御光話録13号.txt\"",
+    "resultado": "PASS I=139/139 Δ=0 CJK=0"
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro (3 sessões + entrevista NHK embutida) revisado linha a linha contra o JP, com atenção extra à entrevista NHK por ser o trecho de maior densidade de turnos curtos do lote. Nenhum erro de conteúdo, ordem ou rotulagem encontrado. Corrigido metadado de título inconsistente no cabeçalho JP. Gate PASS."
+  }
+}

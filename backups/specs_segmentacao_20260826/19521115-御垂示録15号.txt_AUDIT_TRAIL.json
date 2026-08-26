@@ -1,0 +1,201 @@
+{
+  "filename": "19521115-御垂示録15号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06/07",
+  "scope": "Revisão completa do volume inteiro (JP ~200 linhas físicas / PT 1 linha física de corpo antes da correção, 84 linhas depois). 2 artigos por spec (prefácio + sessão única de 1º de novembro de 1952). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do início ao fim.",
+  "pre_existing_context": "Mesma família de 御垂示録/Gokōwa já revisada nesta sessão com achados graves recorrentes em outros volumes. Alerta inicial do orquestrador: razão JP/PT de ~9:1 (219 linhas JP vs 24 linhas PT), a segunda mais alta da família nesta sessão, atrás só de 14号 (11:1). Hipótese de trabalho: monólito gigante intacto, a confirmar com leitura real (não presumir).",
+  "gate_mecanico": "scripts/gate_gokowa_linha.py não é discriminante para esta família (convenção Gosuiji-roku usa aspas retas para o Interlocutor e parágrafo simples para Meishu-Sama, não os rótulos explícitos 'Interlocutor:'/'Meishu-Sama:' que o script procura, convenção da família Gokōwa). Não substitui a leitura linha a linha feita aqui.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 1,
+    "monolito_catastrofico": true,
+    "nota_monolito": "CONFIRMADO monólito estrutural (razão 9:1 explicada): todo o corpo do volume (marcador de sessão '[1º de novembro]' até o encerramento 'Isso mesmo. Falta pouco.') estava comprimido em UMA única linha física de 25.632 caracteres no ficheiro de trabalho PT, contra ~200 linhas físicas no JP (cada parágrafo/turno JP é uma linha física separada). ACHADO CENTRAL, igual ao já confirmado em 14号: apesar do monólito, NENHUM conteúdo estava faltando ou duplicado. Todas as 42 perguntas do Interlocutor (frases entre 「」 no JP / entre aspas retas no PT) e as 42 respostas de Meishu-Sama correspondentes foram localizadas na tradução, na ordem correta, com o conteúdo integral e sem truncamento - confirmado por extração programática de todos os 82 trechos entre aspas do parágrafo único do PT (42 aberturas reais de turno do Interlocutor + 40 citações/termos incorporados dentro de respostas de Meishu-Sama, ex.: título 'Salvando os Estados Unidos', citações do Ofudesaki, etimologias Hi/Mi/Tari, numerologia do caractere 'cinco'), cruzados um a um contra os 42 pares pergunta/resposta enumerados manualmente no JP (linhas 28-219). O problema real era 100% estrutural (parágrafo nunca desmembrado) + 1 erro semântico pontual (nome próprio) + 1 linha de cabeçalho ausente, não perda de conteúdo."
+  },
+  "metodo_verificacao_estrutural": {
+    "descricao": "Leitura completa do JP linha a linha (~200 linhas físicas) enumerando manualmente os 42 turnos do Interlocutor (texto entre 「」) e as 42 respostas de Meishu-Sama na ordem em que aparecem, incluindo os casos em que múltiplos parágrafos consecutivos de Meishu-Sama (sem pergunta interposta) formam uma única resposta contínua (ex.: monólogo de abertura antes da primeira pergunta; resposta sobre os telhados de ouro que continua no parágrafo seguinte sobre eliminar doenças; etimologia do caractere '五'; explicação sobre assento de honra que se estende por dois parágrafos). Em paralelo, extração programática (regex sobre aspas retas) de todos os 82 trechos entre aspas do parágrafo único do PT, classificando cada um como (a) abertura real de turno do Interlocutor (42 casos) ou (b) citação/termo incorporado dentro de uma resposta de Meishu-Sama (40 casos: títulos de obra, citações do Ofudesaki e da Bíblia, etimologias, numerologia). Os dois levantamentos (manual JP e automático PT) foram cruzados turno a turno; todos os 42 pares bateram em conteúdo e ordem. Verificação adicional de integridade: contagem de caracteres do corpo (normalizado, espaços colapsados) do PT original vs. PT reestruturado, após reaplicar a única correção textual (nome próprio) ao original para comparação - resultado idêntico caractere a caractere (25.636 = 25.636), confirmando que a reestruturação em linhas não alterou, cortou nem duplicou nenhuma palavra da tradução já existente.",
+    "resultado": "100% de correspondência 1:1 entre os 42 turnos JP e os 42 turnos PT recuperados do monólito. Nenhum turno ausente, nenhum duplicado, nenhuma troca de falante. Contagem de caracteres do corpo idêntica antes/depois da reestruturação (após normalizar espaços), com a única diferença sendo a correção pontual do nome próprio.",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "colapso_estrutural_grave",
+      "localizacao_pt": "linha física única (linha 24 do ficheiro de trabalho antes da correção)",
+      "problema": "Todo o corpo do volume (monólogo de abertura + 42 pares Interlocutor/Meishu-Sama da sessão de 1º de novembro de 1952) estava fundido em um único parágrafo gigante de 25.632 caracteres, sem nenhuma quebra de linha entre turnos. Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 8 (outros - ordem/estrutura) do checklist de revisao-paralela-jp-pt.mdc.",
+      "correcao": "Reestruturado em 85 linhas físicas de corpo: 1 linha de monólogo de abertura (antes da primeira pergunta) + 42 pares alternados (linha com a pergunta do Interlocutor entre aspas / linha com a resposta de Meishu-Sama sem aspas), na mesma ordem e com o mesmo texto já traduzido - nenhuma palavra de tradução foi alterada nesta correção (só quebras de linha inseridas), com verificação manual de cada um dos 42 pontos de corte contra o JP correspondente. Método: extração automática dos limites de aspas retas no PT, classificação de cada trecho entre aspas (turno real vs. citação incorporada) e corte apenas nos 42 pontos confirmados como abertura real de turno.",
+      "verificacao_adicional": "Contagem de caracteres do corpo (espaços normalizados) preservada integralmente: 25.632 caracteres antes = 25.632 depois da reestruturação (25.636 incluindo a correção de nome própria da correção 2, ver abaixo) - sem perda nem duplicação de conteúdo, apenas inserção de quebras de linha nos limites de turno.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "corrupcao_nome_proprio",
+      "jp_linha": 63,
+      "jp_texto": "木村鷹太郎という人はそういう説を唱えていたのです。",
+      "localizacao_pt": "resposta sobre os quatro portões de Jerusalém / linhagem de Israel",
+      "problema": "O nome próprio 木村鷹太郎 (Kimura Takatarō - autor japonês real, 1870-1943, conhecido por teorias pseudo-históricas ligando o Japão a mitologias mundiais, incluindo a teoria judaico-japonesa mencionada neste trecho) foi traduzido como 'Kimura Tarō', omitindo o kanji 鷹 (taka) do nome. Padrão de erro já catalogado na regra revisao-paralela-jp-pt.mdc ponto 4 (corrupção de texto/substituição literal que não altera contagem de turnos).",
+      "correcao": "'Kimura Tarō' → 'Kimura Takatarō' na frase 'Um homem chamado Kimura Takatarō defendia essa teoria.'",
+      "confianca": "alta - nome histórico verificável, kanji 鷹 claramente presente no JP fonte e ausente na tradução"
+    },
+    {
+      "n": 3,
+      "tipo": "cabecalho_ausente",
+      "jp_linha": 24,
+      "jp_texto": "御垂示録第十五号（昭和二十七年）",
+      "localizacao_pt": "bloco de cabeçalho, entre a linha de publicação e o corpo",
+      "problema": "O JP tem 3 linhas de cabeçalho antes do marcador de sessão (título simples / linha de publicação com data / repetição do título com indicação de era '昭和二十七年'), mas o PT só reproduzia as 2 primeiras, pulando diretamente para o corpo. Mesmo padrão de linha de cabeçalho ausente já corrigido em 14号 (correção estrutural análoga: 'Gosuiji-roku nº 14 (Showa 27)').",
+      "correcao": "Adicionada a linha 'Gosuiji-roku nº 15 (Showa 27)' entre a linha de publicação existente e o corpo, replicando a convenção já usada em 14号.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título, fonte, data de publicação)",
+      "jp_linhas": "20-24",
+      "decisao": "corrigido - linha de cabeçalho ausente adicionada (correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Monólogo de abertura (arte japonesa cobiçada pelos EUA, rolo de Ban Dainagon, sutra de Tenpyo)",
+      "jp_linha": "28",
+      "decisao": "ok - íntegro, mantido como linha única (mesma convenção de 12号/13号/14号 para monólogo sem pergunta prévia)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q1-A1: tesouros escondidos, ukiyo-e, livro 'Salvando os Estados Unidos'",
+      "jp_linhas": "30-33",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q2-A2: vitória para Deus / obtenção de moeda estrangeira",
+      "jp_linhas": "35-37",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q3-A3: obras divinas de cinco/seis/sete, desenvolvimento visível",
+      "jp_linhas": "40-42",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q4-A4: Ofudesaki de Oomoto, classe intelectual",
+      "jp_linhas": "44-46",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q5-A5 / Q6-A6: comparação Japão x EUA, seita Nichiren, novas religiões",
+      "jp_linhas": "48-54",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q7-A7: Tenrikyo, 'demônio bondoso', Juízo Final da medicina",
+      "jp_linhas": "56-58",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro incluindo citações internas ('Tenri-O-no-Mikoto', 'medicina é uma arte de benevolência', etc.)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q8-A8: quatro portões de Jerusalém, linhagem de Israel, Ninigi-no-Mikoto, judeus, Einstein, Izunome/1%",
+      "jp_linhas": "61-63",
+      "decisao": "corrigido - desmembrado + 1 erro de nome próprio corrigido (correção 2: Kimura Takatarō)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q9-A13: China/Pequim, Tibete, ouro/telhados dourados",
+      "jp_linhas": "65-87",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro. Nota terminológica: '北京城' traduzido como 'Cidade Proibida de Pequim' - tradução interpretativa razoável mas não literal (北京城 = muralhas/cidade velha de Pequim, distinto de 紫禁城/Forbidden City); não é erro de sentido grave, escalado como pendência leve.",
+      "confianca": "média (pendência terminológica aberta)"
+    },
+    {
+      "bloco": "Q14-A15: Shōsōin de Nara, toxinas medicamentosas e estatura",
+      "jp_linhas": "90-96",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q16-A23: método e ordem do Johrei, cópia de Escritos Divinos, cadeiras para idosos/estrangeiros",
+      "jp_linhas": "99-132",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q24-A27: senhora avarenta e cobras, Kannon de Mil Braços, oito espíritos de suicidas, caractere 'cinco' na plantação",
+      "jp_linhas": "135-153",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro incluindo a etimologia numerológica do caractere 五",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q28-A31: pinheiros macho/fêmea, família de nove que enrolou o Goshintai",
+      "jp_linhas": "156-171",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q32-A35: assento de honra/inferior, etimologia Hi/Mi/Tari, oficiantes",
+      "jp_linhas": "174-190",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q36-A38: filhos maiores que os pais, toxinas e beleza feminina, Tenrikyo x Nichiren x Igreja Messiânica, etimologia 皇/Hakkōsei",
+      "jp_linhas": "193-203",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q39-A42: tuberculose e radiografia borrada, Johrei com papel espiritual da irmã, encerramento 'falta pouco'",
+      "jp_linhas": "205-219",
+      "decisao": "corrigido - desmembrado, conteúdo íntegro",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas": [
+    "Troca de falante (Interlocutor/Meishu-Sama invertidos): não encontrada em nenhum dos 42 turnos.",
+    "Duplicação de blocos inteiros: não encontrada.",
+    "Perda de conteúdo mascarada por Δ=0 coincidente: não aplicável - não houve perda de conteúdo detectada em nenhum ponto (todos os 42 turnos JP têm par PT íntegro); contagem de caracteres do corpo idêntica antes/depois da reestruturação.",
+    "Corrupção de nomes próprios: 1 encontrada e corrigida (Kimura Tarō → Kimura Takatarō, correção 2). Demais nomes conferidos sem problema: Ban Dainagon, Ninigi-no-Mikoto, Imperador Jinmu, Susano-o, Einstein, Mao Tsé-Tung.",
+    "CJK residual no corpo PT: nenhum encontrado."
+  ],
+  "pendencias_abertas": [
+    "'北京城' traduzido como 'Cidade Proibida de Pequim' (resposta sobre onde ficará o modelo na China, após Kyushu) - tradução interpretativa que equipara a cidade murada histórica de Pequim à Cidade Proibida (紫禁城), que tecnicamente é uma estrutura distinta e menor dentro da cidade. Não é erro de sentido grave (ambos se referem ao núcleo histórico/imperial de Pequim), mas é uma imprecisão terminológica potencialmente relevante para um texto doutrinário que depois fala em plantar árvores 'naquele lugar'. Registrada em PENDENCIAS_REVISAO.json para decisão editorial (manter como está / trocar para 'muralhas de Pequim' ou 'cidade velha de Pequim')."
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true. Aguardando segunda auditoria independente conforme revisao-paralela-jp-pt.mdc. Recomendação do revisor: volume está estruturalmente correto e semanticamente completo após as 3 correções aplicadas (desmembramento do monólito, nome próprio, linha de cabeçalho ausente); apenas a pendência leve de terminologia '北京城' fica em aberto."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: Etapa A (mapa JP linha a linha, 「pergunta」=Interlocutor / parágrafo corrido sem aspas=Meishu-Sama), Etapa B (contagem+formatação), Etapa C (rótulos aplicados no PT já desmembrado em 85 linhas de corpo por correção estrutural anterior desta mesma trilha).",
+    "etapa_a_mapa_jp": {
+      "descricao": "JP (219 linhas físicas) lido linha a linha. Todas as aberturas reais de turno do Interlocutor são marcadas por 「」 no início da linha (grep '「' retorna 47 ocorrências no total, mas 5 são citações/termos incorporados dentro de respostas de Meishu-Sama - linhas 33, 63, 153, 180, 203 - não abertura de turno; apenas as 42 ocorrências em que 「 inicia a linha são turnos reais do Interlocutor). Cada bloco de texto corrido entre um turno do Interlocutor e o próximo (mesmo quando o JP quebra esse bloco em múltiplos parágrafos, ex.: linhas 84+87, 152+153, 184+185, 189+190) corresponde a exatamente 1 turno de Meishu-Sama. Cabeçalho de sessão único para todo o volume: '［十一月一日］' (linha 26), sem outras datas no arquivo.",
+      "turnos_esperados": "42 Interlocutor + 43 Meishu-Sama (1 monólogo de abertura antes da 1ª pergunta + 42 respostas), alternando M,I,M,I,...,I,M, sem blocos consecutivos do mesmo falante."
+    },
+    "etapa_b_conferencia": {
+      "pt_antes_da_rotulagem": "85 linhas físicas de corpo (25-109), já desmembradas do monólito por correção estrutural anterior desta trilha, alternando parágrafo com aspas retas (Interlocutor) / parágrafo sem aspas (Meishu-Sama), 1:1 com o mapa JP - nenhuma linha faltando, nenhuma duplicada.",
+      "contagem_pt_pre_existente": "42 blocos com aspas retas de abertura de turno + 43 blocos de resposta corrida, confirmado por inspeção sequencial de todas as 85 linhas contra a Etapa A.",
+      "achado": "Nenhum turno ausente. Nenhum turno de uma só palavra/frase curta do Meishu-Sama (ex.: linha 54 'Sim.', linha 60 'Pelos dois lados.', linha 62 'Por que razão?') estava faltando ou fundido incorretamente - todos presentes e no lugar certo.",
+      "unico_ajuste_de_formato": "Linha 25 (cabeçalho '[1º de novembro]' + início do monólogo de Meishu-Sama fundidos na mesma linha física) foi separada em 2 linhas: cabeçalho de sessão isolado + linha de corpo iniciando com o rótulo, seguindo o formato-alvo (cabeçalho de sessão em linha própria) e o padrão já usado em 19521015-御垂示録14号.txt. Nenhum texto de tradução foi alterado, apenas a quebra de linha inserida."
+    },
+    "etapa_c_rotulos_aplicados": {
+      "acao": "Prefixo 'Interlocutor: ' aplicado às 42 linhas com pergunta entre aspas; prefixo 'Meishu-Sama: ' aplicado às 43 linhas de resposta/monólogo, na ordem já existente do PT, sem reordenar nem reescrever conteúdo.",
+      "contagem_final_pt": "42 'Interlocutor:' + 43 'Meishu-Sama:' (grep -c confirmado), alternância M,I,M,I,...,I,M coerente, 0 blocos consecutivos do mesmo falante, 0 travessões '—' residuais no corpo.",
+      "problemas_corrigidos": "Nenhum turno ausente ou trocado encontrado nesta etapa; único ajuste foi a separação do cabeçalho de sessão da linha 25 (ver etapa_b)."
+    },
+    "resultado": "100% de correspondência 1:1 entre os 42 turnos do Interlocutor no JP e os 42 rótulos 'Interlocutor:' aplicados no PT, e entre as 43 respostas/monólogos de Meishu-Sama no JP e os 43 rótulos 'Meishu-Sama:' no PT. Nenhuma correção de conteúdo necessária nesta etapa (already corrigido pela auditoria estrutural anterior desta trilha).",
+    "approved_alterado": false,
+    "nota": "spec segmentacao_manual/19521115-御垂示録15号.txt.json permanece com approved:false, conforme instrução - rotulagem não é fecho de auditoria, apenas formatação de falante."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 219 linhas / PT 110 linhas). Confirma que a correcao anterior (北京城 traduzido corretamente como \"cidade murada de Pequim\", nao mais \"Cidade Proibida\") permanece aplicada. Conteudo integro, sem truncamento, sem CJK residual, sem duplicacao. Nenhuma correcao adicional necessaria."
+  }
+}

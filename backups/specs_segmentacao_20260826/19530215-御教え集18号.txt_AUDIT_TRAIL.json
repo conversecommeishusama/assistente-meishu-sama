@@ -1,0 +1,198 @@
+{
+  "filename": "19530215-御教え集18号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 227 linhas em bloco único === ARTIGO ===, PT ~271→261 linhas após correções), 12 trechos por spec (profile mioshie_shu, todos 'session' exceto o preface inicial). Todo o JP foi lido do início ao fim (1º de janeiro a 27 de janeiro + colofão) e confrontado frase a frase com o PT correspondente na mesma ordem, com atenção redobrada a cada transição de data conforme alerta da tarefa (família 御教え集/御垂示録 com bug confirmado em quase todos os volumes irmãos já revisados).",
+  "estrutura": {
+    "jp": "1 único bloco === ARTIGO === contendo 12 sessões por data (1, 2, 3, 5, 6, 7, 15, 16, 17, 25, 26, 27 de janeiro de Showa 28), cada uma um monólogo de Meishu-Sama intercalado com marcadores de citação de artigos publicados (medicina, Eikō, Terra Celestial).",
+    "pt_antes": "Continha bug estrutural: cabeçalho '=== ARTIGO ===' duplicado em 2 linhas consecutivas, seguido de uma linha órfã/espúria '2 de janeiro' inserida ANTES do bloco de título/metadados e do conteúdo de 1º de janeiro (ou seja, antes até da própria sessão de 1º de janeiro que deveria vir primeiro). A sessão real de 2 de janeiro, mais adiante no arquivo, estava com o cabeçalho escrito por extenso 'Dois de janeiro' em vez do formato numeral usado por todas as outras 11 datas do arquivo ('3 de janeiro', '5 de janeiro' etc.), divergindo também do pt_anchor do spec ('2 de janeiro').",
+    "pt_depois": "Cabeçalho '=== ARTIGO ===' único; linha órfã '2 de janeiro' removida do topo; sessão de 2 de janeiro renomeada para '2 de janeiro' (numeral), consistente com o padrão do arquivo e com o spec."
+  },
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0, sem CJK) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, incluindo os itens que um gate de contagem não detectaria (parágrafos partidos no meio da frase sem perda líquida de caracteres, resíduo CJK isolado, cabeçalho duplicado).",
+  "mapa_jp_por_secao": [
+    {
+      "secao": "Preâmbulo (título, ficha de publicação)",
+      "jp_linhas": "20-23",
+      "falante": "editorial (não é fala de Meishu-Sama)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "secao": "1º de janeiro de Showa 28",
+      "jp_linhas": "24-31",
+      "falante": "Meishu-Sama (monólogo, ano novo)",
+      "paragrafos_jp": 6,
+      "decisao": "ok, 1 correção de paragrafação (quebra no meio da frase sobre estilo Corbusier/mirante de vidro)",
+      "confianca": "alta"
+    },
+    {
+      "secao": "2 de janeiro",
+      "jp_linhas": "35-46",
+      "falante": "Meishu-Sama",
+      "paragrafos_jp": 10,
+      "decisao": "ok - conteúdo completo; cabeçalho da sessão corrigido de 'Dois de janeiro' para '2 de janeiro' e removida linha órfã duplicada no topo do arquivo (ver 'estrutura' acima). Paragrafação não é 1:1 estrita em 2 pontos (JP44+45 vertidos como um só parágrafo PT, depois resplit) mas sem perda de conteúdo - checado frase a frase.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "3 de janeiro",
+      "jp_linhas": "50-63",
+      "falante": "Meishu-Sama",
+      "paragrafos_jp": 12,
+      "decisao": "ok - mapeamento 1:1 quase perfeito entre os 12 parágrafos JP e os 12 parágrafos PT, todas as citações (Eikō, Terra Celestial) na posição correta.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "5 de janeiro",
+      "jp_linhas": "67-91",
+      "falante": "Meishu-Sama",
+      "decisao": "ok, incluindo relato do Príncipe Chichibu, Johrei/leveza, e trecho do 'Livro da Revolução Médica' com citações corretas.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "6 de janeiro",
+      "jp_linhas": "91-119ish",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - repetição deliberada do relato do Príncipe Chichibu e do tema 'leveza no Johrei' (o autor genuinamente se repete de um dia para o outro no original JP); conteúdo presente e completo no PT em ambos os casos.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "7 de janeiro",
+      "jp_linhas": "105-131",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - 1 correção de paragrafação (fragmento órfão 'Em seguida, gradualmente a purificação...' antes do parágrafo sobre purificação/livro).",
+      "confianca": "alta"
+    },
+    {
+      "secao": "15 de janeiro",
+      "jp_linhas": "123-131",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - 1 correção (fragmento órfão 'O monge daquele templo...' na 1ª narrativa do Zuiganji, texto duplicado/truncado antes da narrativa completa).",
+      "confianca": "alta"
+    },
+    {
+      "secao": "16 de janeiro",
+      "jp_linhas": "135-146",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - 2 correções: (a) quebra no meio da frase 'Como sempre digo, / Isso mesmo, trata-se...' (estilo Corbusier, 2ª menção); (b) citação encerrada cedo demais seguida de restatement redundante em discurso indireto na 2ª narrativa do Zuiganji ('Assim, / Ele disse que...') - fundida em uma única citação direta coerente.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "17 de janeiro",
+      "jp_linhas": "150-159",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - 3ª narrativa do Zuiganji (mais a de Hakuin, mais a analogia com Ibsen/'Casa de Bonecas') presente e coerente, sem o bug de fragmento órfão encontrado nas duas anteriores.",
+      "confianca": "alta",
+      "nota": "As traduções PT das narrativas Zuiganji de 15/1 e 17/1 são literalmente idênticas palavra por palavra, embora o JP-fonte use redação ligeiramente diferente nas duas ocasiões (o autor reconta a história com pequenas variações estilísticas cada vez). Não é perda de conteúdo nem erro de sentido - a substância da história é idêntica nas duas versões JP - mas é uma perda de nuance estilística, provavelmente herdada de reaproveitamento de tradução em uma etapa anterior do pipeline. Não corrigido (fora do escopo de 'erro real de sentido/conteúdo'; documentado para referência)."
+    },
+    {
+      "secao": "25 de janeiro",
+      "jp_linhas": "162-178",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - mapeamento de parágrafos quase 1:1, incluindo os artigos citados 'Resfriado é Bom' e 'A Era do Grande Terror'.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "26 de janeiro",
+      "jp_linhas": "182-190",
+      "falante": "Meishu-Sama",
+      "decisao": "ok - conteúdo completo (detalhe clínico do resfriado/purificação por zona do corpo), sem truncamento.",
+      "confianca": "alta"
+    },
+    {
+      "secao": "27 de janeiro + colofão",
+      "jp_linhas": "198-227",
+      "falante": "Meishu-Sama + ficha técnica editorial final",
+      "decisao": "ok - 1 correção (fragmento órfão 'sobre o espaço aéreo das Ilhas Curilas...' antes do trecho sobre reconhecimento aéreo soviético sobre Hokkaido, conteúdo fundido sem perda). Colofão final (data de impressão/publicação, editor, gráfica, editora) idêntico e completo em ambos os idiomas.",
+      "confianca": "alta"
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linhas 5-6 (cabeçalho do arquivo)",
+      "problema": "Marcador estrutural '=== ARTIGO ===' duplicado em duas linhas consecutivas idênticas.",
+      "correcao": "Removida a duplicata, mantido um único marcador.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "linha ~22 (antes do bloco de título/metadados, antes até do conteúdo de 1º de janeiro)",
+      "problema": "Linha órfã espúria '2 de janeiro' inserida antes do título 'Ensinamentos Coletânea nº 18' e antes de todo o conteúdo - não corresponde a nenhuma posição estrutural válida (a sessão real de 2 de janeiro fica bem mais adiante, depois de 1º de janeiro). Provável artefato de um script de pareamento que buscou o literal do pt_anchor do spec ('2 de janeiro') e não encontrou correspondência exata no corpo do arquivo (a sessão real estava escrita por extenso, 'Dois de janeiro' - ver correção 3).",
+      "correcao": "Linha removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "linha (originalmente 41) - cabeçalho da 2ª sessão de data",
+      "problema": "Cabeçalho da sessão escrito por extenso 'Dois de janeiro', divergindo do formato numeral usado por todas as outras 11 datas do arquivo ('3 de janeiro', '5 de janeiro', ...) e do pt_anchor declarado no spec ('2 de janeiro').",
+      "correcao": "Renomeado para '2 de janeiro', consistente com o padrão do arquivo e com o spec.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "parágrafo sobre o estilo arquitetônico Corbusier/mirante de vidro do Salão Messiânico de Atami (1ª menção, sessão de 1º de janeiro)",
+      "problema": "Frase partida no meio sem linha em branco entre os fragmentos: '...um estilo que ninguém jamais imaginou, e que, pelo menos,' + 'Acredito que se destacará de forma singular...' - violação do ponto 6 do checklist (paragrafação 1:1), único parágrafo no JP.",
+      "correcao": "Unificado em uma única frase/parágrafo coerente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "resfriado/purificação cerebral, sessão de 16 de janeiro",
+      "problema": "Resíduo CJK não traduzido no corpo do PT: 'esse resfriado que está流行ando' (流行 = 'prevalente/em voga', deixado sem tradução, colado ao verbo português).",
+      "correcao": "'esse resfriado que está circulando agora' (ponto 5 do checklist - CJK no PT).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "1ª narrativa do monge de Zuiganji (sessão de 15 de janeiro)",
+      "problema": "Fragmento órfão truncado 'Há um exemplo antigo disso. Existe um templo chamado Zuiganji em Matsushima. O monge daquele templo...' interrompido com reticências e imediatamente seguido por uma nova sentença completa que reinicia o mesmo pensamento ('Esta é uma história famosa, então vocês devem conhecê-la...'), sem que o fragmento originalmente truncado fosse de fato completado - duplicação/eco (ponto 8 do checklist).",
+      "correcao": "Fundido em uma única frase coerente, incorporando o conteúdo do fragmento órfão ('a história do monge daquele templo é famosa') na frase seguinte, sem perda de conteúdo nem repetição.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "2ª narrativa do monge de Zuiganji (sessão de 16 de janeiro), fala final do monge ao daimyo Date",
+      "problema": "A citação direta do monge foi fechada prematuramente ('...foram o grande motivo do meu sucesso. Assim,') e o mesmo conteúdo foi reafirmado logo em seguida em discurso indireto ('Ele disse que, por ter alcançado sucesso graças ao senhor feudal que o maltratou, queria agradecer-lhe...') - duplicação de conteúdo (ponto 8 do checklist), embora sem perda de informação.",
+      "correcao": "Fundido em uma única citação direta coerente, terminando a fala do monge antes de relatar a reação do senhor feudal.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "parágrafo sobre purificação/plano do livro (sessão de 7 de janeiro)",
+      "problema": "Fragmento órfão truncado 'Em seguida, gradualmente a purificação...' seguido, sem linha em branco, por uma nova frase que retoma o mesmo conteúdo desde o início ('Para se fortalecerem, os seguidores passam por purificações muito intensas...').",
+      "correcao": "Fundido em uma única frase coerente, sem perda de conteúdo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "transição entre o comentário sobre o 'Conto de Sonho do Mundo' e o parágrafo sobre o mundo diurno/Reino Unido (sessão de 25 de janeiro)",
+      "problema": "GRAVE (mascarado por contagem intacta): fragmento truncado no meio de uma palavra - '...Isso já está decidido por Deus. A ideia geral, co' (a palavra 'co' está cortada, provavelmente seria 'com' ou início de outra palavra) - resíduo de uma tentativa de tradução abandonada, imediatamente seguido por uma nova frase completa que já cobre o mesmo trecho JP ('大体のことを言うと' / 'de forma geral') através de 'Isso posto, quando chega o mundo diurno...'. Este é exatamente o padrão de bug 'monolito residual'/fragmento de reconstrução sobreposto descrito no handoff para a família 御教え集/御垂示録.",
+      "correcao": "Fragmento truncado 'A ideia geral, co' removido (conteúdo já coberto pela frase seguinte 'Isso posto...'), sem perda de informação.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao_pt": "abertura do comentário sobre reconhecimento aéreo soviético (sessão de 27 de janeiro, artigo 'A Intenção de Stalin')",
+      "problema": "Fragmento órfão truncado com reticências 'Agora, a União Soviética, na Coreia e, recentemente, sobre o espaço aéreo das Ilhas Curilas...' seguido, sem linha em branco, por uma nova frase que reinicia o pensamento ('E, às vezes, aviões de combate...'). Ao contrário dos demais casos, aqui o fragmento continha informação não repetida no restante da frase (menção à Coreia e às Ilhas Curilas), portanto não podia ser simplesmente descartado.",
+      "correcao": "Fundido preservando toda a informação de ambos os fragmentos: '...na Coreia e, recentemente, sobre o espaço aéreo das Ilhas Curilas e, às vezes, com aviões de combate e outros que vêm fazer reconhecimento nas extremidades de Hokkaido...'.",
+      "confianca": "alta"
+    }
+  ],
+  "padrao_de_bug_confirmado": "Confirma-se nesta família (御教え集) o mesmo padrão de 'monolito residual'/fragmento de tradução sobreposto já catalogado no Gokōwa e nos volumes 御垂示録4号/24号: em pelo menos 5 pontos deste arquivo (correções 4, 6, 7, 8, 9, 10 acima) o PT contém um fragmento de frase truncado ou uma citação encerrada cedo demais, imediatamente seguido (sem linha em branco) por uma nova sentença que recomeça e cobre o mesmo trecho JP - sintoma de reconstrução/patch automatizado que não removeu a tentativa anterior antes de inserir a versão final. Em 4 dos 5 casos não havia perda líquida de conteúdo (a segunda sentença cobria tudo); em 1 caso (correção 10) havia informação exclusiva no fragmento truncado que precisou ser preservada na fusão. Recomenda-se, para os próximos volumes desta família ainda não revisados, buscar especificamente por linhas terminadas em '...' ou vírgula solta seguidas de outra linha de conteúdo sem separador em branco (script auxiliar de triagem, não substitui leitura linha a linha).",
+  "checklist_geral": {
+    "1_subdivisao": "ok - 12 sessões de data corretamente delimitadas e na ordem certa, correspondendo 1:1 ao spec.",
+    "2_existencia_pt": "ok - todo trecho JP tem par PT; nenhuma sessão ausente.",
+    "3_alinhamento": "ok - nenhuma sessão ou parágrafo fora de ordem.",
+    "4_completude_pt": "ok após correções - nenhum truncamento remanescente (verificado por varredura programática de linhas terminadas em fragmento incompleto); os únicos truncamentos reais encontrados (correções 9 e 10) foram corrigidos.",
+    "5_cjk_residual": "ok após correção 5 - varredura programática completa do arquivo não encontra mais nenhum resíduo CJK fora de citações intencionais de caracteres japoneses sendo explicados (八, 昭, 日, etc., que são o próprio objeto da explicação etimológica de Meishu-Sama e devem permanecer).",
+    "6_paragrafacao": "ok após correções 4, 6, 7, 8, 9, 10 - alguns parágrafos JP longos continuam vertidos como um só parágrafo PT com re-divisão diferente da JP (ex.: sessão de 2 de janeiro) mas sem perda de conteúdo, verificado frase a frase.",
+    "7_titulos_cabecalhos": "ok após correções 1, 2, 3 - cabeçalho duplicado e linha órfã removidos; cabeçalho de sessão '2 de janeiro' agora consistente com o padrão do arquivo e com o spec.",
+    "8_duplicacao_eco_ordem": "ok após correções 6 e 7 (fragmentos duplicados/eco); nota registrada sobre reaproveitamento de tradução idêntica entre as narrativas Zuiganji de 15/1 e 17/1 (ver mapa_jp_por_secao, sessão 17 de janeiro) - não corrigido por não envolver perda ou erro de conteúdo, apenas variação estilística perdida."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 10 correções. approved:true."
+  }
+}

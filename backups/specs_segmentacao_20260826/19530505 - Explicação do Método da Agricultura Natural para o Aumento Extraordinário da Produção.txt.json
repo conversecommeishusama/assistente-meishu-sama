@@ -1,0 +1,495 @@
+{
+ "filename": "19530505 - Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção.txt",
+ "profile": "structured",
+ "method": "manual_authorial_structure",
+ "approved": false,
+ "editor_notes": "Reconstruido 2026-07-14 (sessao 2): segmentacao jp_line_by_line anterior sobre-fragmentava relatorios de campo de agricultores (uma entrada por LINHA de tabela de dados, ex. 一、耕作者/一、経営面積/一、浸種期... viravam ate uma duzia de 'chapter' separados por relatorio) e citacoes de fechamento '（〜提出）' viravam 'section' soltas coladas ao testemunho anterior. 206 entradas -> 62 entradas: cada relatorio de UM agricultor/local agora e UMA entrada (kind=testimony ou chapter), cabecalhos tematicos do editor (（イ）-（ト）) mantidos como 'section' curtas, os dois grandes ensaios iniciais (自然栽培の勝利/土の偉力 com suas 6 subsecoes, e 農業の大革命 dividido em suas duas partes (一)(二) autorais) e o relatorio tecnico 金崎貞男 水稲自然農法の研究調査と批判 (dividido em suas duas partes autorais (一) tabela+comentario sobre 椛沢熊吉 e (二) ensaio sobre 根菌) tratados pela unidade autoral real, nao por linha. As duas mesas-redondas (「自然栽培の佐渡」座談会 e 推定反収十八俵の作者伊野さんを囲んで) mantidas cada uma como UMA entrada apesar dos subtitulos ◎ internos (mesma sessao continua de pergunta/resposta, nao artigos separados). pt_anchor recalculado via audit_manual_livros_segmentacao.py --fix --repair-pt (alinhamento por sequencia de idade do testemunho). Ajuste adicional pos-auditoria: 2 cabecalhos tematicos curtos ((ロ) e (へ)) mesclados ao primeiro testemunho do grupo seguinte para eliminar ratio_warn estrutural de trecho minusculo (206->62->60 artigos).",
+ "segmentation_pass": "manual_authorial_v1_2026-07-14b",
+ "previous_article_count": 206,
+ "split_method": "author_unit_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "革命的増産の自然農法解説",
+   "pt_anchor": "Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "この小冊子は現在我国最大の悩みとされている米の問題に対して",
+   "pt_anchor": "Este livreto expõe um método de solução extremamente vantajoso para o problema do arroz, hoje considerado",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "自然栽培の勝利　　土の偉力",
+   "title_pt": "",
+   "jp_anchor": "自然栽培の勝利　　土の偉力",
+   "pt_anchor": "Explicação da Agricultura Natural\n\nA Vitória do Cultivo Natural — O Grande Poder da Terra",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "農業の大革命　五カ年にして米の五割増産は確実（一）",
+   "title_pt": "",
+   "jp_anchor": "農業の大革命",
+   "pt_anchor": "A Grande Revolução Agrícola — Aumento de Cinquenta por Cento na Produção de Arroz em Cinco Anos é Certo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "農業の大革命（二）",
+   "title_pt": "",
+   "jp_anchor": "今度各地から報告された昨年度の成績をみると",
+   "pt_anchor": "Desta vez, observando os resultados do ano passado relatados de várias regiões, é lamentável que, por ser cedo, haja cas",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培に就いて",
+   "title_pt": "",
+   "jp_anchor": "自然栽培に就いて",
+   "pt_anchor": "Sobre o Cultivo Natural",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "水稲自然農法の研究調査と批判（一）　椛沢熊吉氏の実証報告",
+   "title_pt": "",
+   "jp_anchor": "水稲自然農法の研究調査と批判",
+   "pt_anchor": "Pesquisa, Investigação e Crítica do Método da Agricultura Natural para Arroz Irrigado",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "水稲自然農法の研究調査と批判（二）　根菌",
+   "title_pt": "",
+   "jp_anchor": "根　菌",
+   "pt_anchor": "Fungos de Raiz",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "夢物語？　奇蹟？",
+   "title_pt": "",
+   "jp_anchor": "夢物語？　奇蹟？",
+   "pt_anchor": "Registrado em 18 de novembro de 1951 (continua)\n\nSonho? Milagre?\n\n'Eikō' nº 198, 4 de março de 1953 (Showa 28)",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "「自然栽培の佐渡」座談会",
+   "title_pt": "",
+   "jp_anchor": "「自然栽培の佐渡」座談会",
+   "pt_anchor": "Mesa-redonda: \"Sado, a Ilha do Cultivo Natural\"",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "推定反収十八俵の作者伊野さんを囲んで",
+   "title_pt": "",
+   "jp_anchor": "推定反収十八俵の作者伊野さんを囲んで",
+   "pt_anchor": "Em torno do Sr. Ino, autor dos 18 fardos estimados por tan",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（イ）本農法は年と共に増収する",
+   "title_pt": "",
+   "jp_anchor": "（イ）本農法は年と共に増収する",
+   "pt_anchor": "(a) Este Método Agrícola Aumenta a Colheita com o Passar dos Anos",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五年目で五割増産六年目で更に一俵",
+   "title_pt": "",
+   "jp_anchor": "五年目で五割増産六年目で更に一俵",
+   "pt_anchor": "Aumento de 50% no quinto ano, mais um fardo no sexto ano",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培四年にして六割増産　二年目田四石五斗七升で二等賞",
+   "title_pt": "",
+   "jp_anchor": "自然栽培四年にして六割増産",
+   "pt_anchor": "Aumento de 60% na produção no quarto ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "食糧問題の解決いと易し　三年目反当五石一斗（平年三石二斗）",
+   "title_pt": "",
+   "jp_anchor": "食糧問題の解決いと易し",
+   "pt_anchor": "A solução do problema alimentar é fácil: 5 koku e 1 to por tan no terceiro ano (safra normal: 3 koku e 2 to)",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "驚異！！自然栽培三年四倍の増収",
+   "title_pt": "",
+   "jp_anchor": "驚異！！自然栽培三年四倍の増収",
+   "pt_anchor": "Espantoso!! Aumento de quatro vezes na produção no terceiro ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培の回顧",
+   "title_pt": "",
+   "jp_anchor": "自然栽培の回顧",
+   "pt_anchor": "Retrospecto do Cultivo Natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "はじめは見劣りしていた稲　一年目で反当り一俵増収",
+   "title_pt": "",
+   "jp_anchor": "はじめは見劣りしていた稲",
+   "pt_anchor": "Arroz que no início parecia inferior: no primeiro ano, aumento de um fardo por tan",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培一年目にしてこの御蔭",
+   "title_pt": "",
+   "jp_anchor": "自然栽培一年目にしてこの御蔭",
+   "pt_anchor": "Esta graça já no primeiro ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培二年目の実績",
+   "title_pt": "",
+   "jp_anchor": "自然栽培二年目の実績",
+   "pt_anchor": "Resultados do segundo ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "反三千円の肥料で減収の有肥　自然栽培では二俵余の増収",
+   "title_pt": "",
+   "jp_anchor": "反三千円の肥料で減収の有肥",
+   "pt_anchor": "Cultivo com fertilizantes: redução na colheita com 3.000 ienes de adubo por tan; cultivo natural: aumento de mais de 2 fardos",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "稲作自然栽培三年の体験",
+   "title_pt": "",
+   "jp_anchor": "稲作自然栽培三年の体験",
+   "pt_anchor": "Experiência de três anos de cultivo natural de arroz",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培一年目からこの素晴らしい成績",
+   "title_pt": "",
+   "jp_anchor": "自然栽培一年目からこの素晴らしい成績",
+   "pt_anchor": "Resultados esplêndidos desde o primeiro ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培二年度にて七割増収",
+   "title_pt": "",
+   "jp_anchor": "自然栽培二年度にて七割増収",
+   "pt_anchor": "Aumento de 70% na colheita no segundo ano de cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然耕作で超過供出する信徒",
+   "title_pt": "",
+   "jp_anchor": "自然耕作で超過供出する信徒",
+   "pt_anchor": "Seguidor que excede a cota de fornecimento com o cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "（ロ）品質も年毎に優秀になる　／　自然農法品評会に特等入賞",
+   "title_pt": "",
+   "jp_anchor": "（ロ）品質も年毎に優秀になる",
+   "pt_anchor": "(b) A qualidade também se torna superior a cada ano.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "昨年度にも勝る自然栽培に対する御守護の有難さ",
+   "title_pt": "",
+   "jp_anchor": "昨年度にも勝る自然栽培に対する御守護の有難さ",
+   "pt_anchor": "A gratidão pela proteção divina ao cultivo natural, superior à do ano anterior",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "水稲自然栽培三年目に千葉県知事賞入賞の栄を得て",
+   "title_pt": "",
+   "jp_anchor": "水稲自然栽培三年目に千葉県知事賞入賞の栄を得て",
+   "pt_anchor": "Obtendo a honra de receber o Prêmio do Governador da Província de Chiba no terceiro ano de cultivo natural de arroz irrigado",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "稲作自然栽培四カ年の体験記",
+   "title_pt": "",
+   "jp_anchor": "稲作自然栽培四カ年の体験記",
+   "pt_anchor": "Relato de quatro anos de experiência no cultivo natural de arroz",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "農産品展示会に出品　知事賞を獲得",
+   "title_pt": "",
+   "jp_anchor": "農産品展示会に出品　知事賞を獲得",
+   "pt_anchor": "Inscrição em Exposição de Produtos Agrícolas e Conquista do Prêmio do Governador",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "逐年増収の自然栽培一等米の栄位を得る",
+   "title_pt": "",
+   "jp_anchor": "逐年増収の自然栽培一等米の栄位を得る",
+   "pt_anchor": "Obtém a honra do arroz de primeira classe do cultivo natural, com aumento anual da produção",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "「一等に近い米だ」と見本になる　自然農法二年目の二等米",
+   "title_pt": "",
+   "jp_anchor": "「一等に近い米だ」と見本になる",
+   "pt_anchor": "\"É um arroz quase de primeira qualidade\" – torna-se exemplo. Arroz de segunda qualidade do segundo ano do método da agricultura natural.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培は二、三等米　有肥は四等米　逐年増収の自然農法",
+   "title_pt": "",
+   "jp_anchor": "自然栽培は二、三等米　有肥は四等米",
+   "pt_anchor": "Cultivo natural: arroz de segunda e terceira qualidade. Com fertilizante: arroz de quarta qualidade. Método da agricultu",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ハ）風水害、虫害も何のその",
+   "title_pt": "",
+   "jp_anchor": "（ハ）風水害、虫害も何のその",
+   "pt_anchor": "(C) Nem ventos, inundações ou pragas são problema.",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "台風にも倒伏せず反当り九俵余の収穫",
+   "title_pt": "",
+   "jp_anchor": "台風にも倒伏せず反当り九俵余の収穫",
+   "pt_anchor": "Não acama nem com tufão, colheita de mais de 9 fardos por tan",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "輝ける自然農法三年目の凱歌",
+   "title_pt": "",
+   "jp_anchor": "輝ける自然農法三年目の凱歌",
+   "pt_anchor": "O cântico de vitória do terceiro ano do brilhante método da agricultura natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "ルース台風雨に倒伏せぬ稲作状況の報告",
+   "title_pt": "",
+   "jp_anchor": "ルース台風雨に倒伏せぬ稲作状況の報告",
+   "pt_anchor": "Relatório sobre a situação do cultivo de arroz que não acamou com a chuva do tufão Ruth",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "悪天候に強い自然四年の稲　町の供米一手に引受く",
+   "title_pt": "",
+   "jp_anchor": "悪天候に強い自然四年の稲",
+   "pt_anchor": "Arroz de quatro anos de cultivo natural, resistente ao mau tempo, assume integralmente a cota de arroz para fornecimento da cidade",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "たのしい秋",
+   "title_pt": "",
+   "jp_anchor": "たのしい秋",
+   "pt_anchor": "Outono Feliz\n'Eikō' nº 198, 4 de março de 1953 (Showa 28)",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "虫害皆無　超々過供出で村一番イモチの被害に嘆く“有肥耕作者”",
+   "title_pt": "",
+   "jp_anchor": "虫害皆無",
+   "pt_anchor": "Sem danos de pragas, fornecimento excedente recorde na aldeia; \"Agricultores que usam fertilizantes\" lamentam os danos da brusone",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十数日の冠水のもめげず有肥の二倍の御恵を頂く",
+   "title_pt": "",
+   "jp_anchor": "十数日の冠水のもめげず有肥の二倍の御恵を頂く",
+   "pt_anchor": "Sem se abater com a submersão de mais de dez dias, recebo o dobro da bênção do cultivo com fertilizantes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ニ）私は無堆肥でやった",
+   "title_pt": "",
+   "jp_anchor": "（ニ）私は無堆肥でやった",
+   "pt_anchor": "(2) Eu fiz sem composto natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培四年にして自然堆肥さえ不必要になる",
+   "title_pt": "",
+   "jp_anchor": "自然栽培四年にして自然堆肥さえ不必要になる",
+   "pt_anchor": "Após quatro anos de cultivo natural, até mesmo o composto natural se torna desnecessário",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "堆肥を入れぬ田が最高の成績",
+   "title_pt": "",
+   "jp_anchor": "堆肥を入れぬ田が最高の成績",
+   "pt_anchor": "O campo sem composto natural obteve o melhor resultado",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ホ）迫害を乗り越えて",
+   "title_pt": "",
+   "jp_anchor": "（ホ）迫害を乗り越えて",
+   "pt_anchor": "(e) Superando a perseguição",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "水呑み百姓の救わるる道は唯一つ",
+   "title_pt": "",
+   "jp_anchor": "水呑み百姓の救わるる道は唯一つ",
+   "pt_anchor": "O único caminho para a salvação do agricultor pobre",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "嘲笑に堪え努力の二年間　ついに凱歌を挙げ得た自然農法の体験",
+   "title_pt": "",
+   "jp_anchor": "嘲笑に堪え努力の二年間",
+   "pt_anchor": "Dois anos de esforço suportando o escárnio: a experiência do Método da Agricultura Natural que finalmente alcançou o cântico da vitória",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "大自然の偉力　穂に穂が咲くこの事実",
+   "title_pt": "",
+   "jp_anchor": "大自然の偉力　穂に穂が咲くこの事実",
+   "pt_anchor": "O grande poder da natureza: o fato de espigas brotarem de espigas",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "“五割減収”と新聞にたたかれたが",
+   "title_pt": "",
+   "jp_anchor": "“五割減収”と新聞にたたかれたが",
+   "pt_anchor": "Fui atacado pelo jornal como “redução de 50% na colheita”",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "両親の反対を押し切って全耕作自然農法に切替え",
+   "title_pt": "",
+   "jp_anchor": "両親の反対を押し切って全耕作自然農法に切替え",
+   "pt_anchor": "Vencendo a oposição dos pais, converti todo o cultivo ao Método da Agricultura Natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "（へ）米以外の作物に就いて　／　“みかん”の自然耕作に御守護を頂いて",
+   "title_pt": "",
+   "jp_anchor": "（へ）米以外の作物に就いて",
+   "pt_anchor": "(He) Sobre cultivos além do arroz",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "驚異的大豆、里芋の自然栽培",
+   "title_pt": "",
+   "jp_anchor": "驚異的大豆、里芋の自然栽培",
+   "pt_anchor": "Cultivo natural surpreendente de soja e taro",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然耕作の胡瓜五割増産",
+   "title_pt": "",
+   "jp_anchor": "自然耕作の胡瓜五割増産",
+   "pt_anchor": "Aumento de 50% na produção de pepinos com cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然農法による里芋の出来栄え",
+   "title_pt": "",
+   "jp_anchor": "自然農法による里芋の出来栄え",
+   "pt_anchor": "O resultado do taro com o método da agricultura natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "市場で評判の自然栽培大根",
+   "title_pt": "",
+   "jp_anchor": "市場で評判の自然栽培大根",
+   "pt_anchor": "Nabos de cultivo natural aclamados no mercado",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "湿地の悪畑にこの収穫",
+   "title_pt": "",
+   "jp_anchor": "湿地の悪畑にこの収穫",
+   "pt_anchor": "Esta colheita em um campo pantanoso e ruim",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "苗一本から十九貫の甘藷収穫",
+   "title_pt": "",
+   "jp_anchor": "苗一本から十九貫の甘藷収穫",
+   "pt_anchor": "Colheita de 19 kan de batata-doce de uma única muda",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ト）私の失敗談",
+   "title_pt": "",
+   "jp_anchor": "（ト）私の失敗談",
+   "pt_anchor": "(To) Minha história de fracasso",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二毛作と生草堆肥では穫れぬ",
+   "title_pt": "",
+   "jp_anchor": "二毛作と生草堆肥では穫れぬ",
+   "pt_anchor": "Não se colhe com cultivo duplo e composto de capim verde",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "革命的増産の自然農法解説書（奥付）",
+   "title_pt": "",
+   "jp_anchor": "革命的増産の",
+   "pt_anchor": "Livro de Explicações do Método da Agricultura Natural",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

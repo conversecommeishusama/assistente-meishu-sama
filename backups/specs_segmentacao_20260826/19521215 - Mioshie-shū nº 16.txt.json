@@ -1,0 +1,95 @@
+{
+ "filename": "19521215 - Mioshie-shū nº 16.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十六号",
+   "pt_anchor": "Mioshie-shū nº 16",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月六日",
+   "title_pt": "6 de novembro",
+   "jp_anchor": "十一月六日\n\n　話は宗教には関係のないことですが、アイゼンハウアーが割合良い成績でアメリカの大統領に当選しましたが、この原因を良く考えてみると、なにしろアイゼ ンハウアーという人はごく貧乏人の伜で、子供のうちからさんざん苦労した人であるし、それからスティー",
+   "pt_anchor": "6 de novembro\n\nA história não tem relação com religião, mas Eisenhower foi eleito presidente dos Estados Unidos com uma margem relativa",
+   "notes": "",
+   "pt_prefix": "6 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月七日",
+   "title_pt": "7 de novembro",
+   "jp_anchor": "十一月七日\n\n　どこの宗教でもみんな病院を作っていますが、それについてメシヤ教ではぜんぜん病院を作らないということを、できるだけ徹底して書いたので今読ませます。",
+   "pt_anchor": "7 de novembro\n\nTodas as religiões estão construindo hospitais, mas, sobre o fato de a Igreja Messiânica não construir nenhum, escrevi da forma mais exaustiva possível, e agora vou ler.",
+   "notes": "",
+   "pt_prefix": "7 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十五日",
+   "title_pt": "15 de novembro",
+   "jp_anchor": "十一月十五日\n\n　私は今入れ歯をやりかけてますから、上の方がガラガラになっているので話がなんだか洩れるようだから、今日は読むものの方を多くしますから、そのつもりで。",
+   "pt_anchor": "15 de novembro\n\nEstou refazendo minha dentadura agora, então a parte de cima está meio solta e a fala parece estar escapando um pouco;",
+   "notes": "",
+   "pt_prefix": "15 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十六日",
+   "title_pt": "16 de novembro",
+   "jp_anchor": "十一月十六日\n\n　よく御守護電報が来た時に見ると、熱の病気と言いますか、その苦しみというのが一番多いようです。ですから熱を取ることです。熱の原因を今教えようと 思ってますが、熱はほとんど頸のまわりが十中八、九です。頸のまわりの次が頭、腰です。背中や胸というこ",
+   "pt_anchor": "16 de novembro\n\nQuando observo os telegramas de proteção divina que chegam, parece que as doenças com calor, ou melhor, o sofrimento, são o mais comum.",
+   "notes": "",
+   "pt_prefix": "16 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十七日",
+   "title_pt": "17 de novembro",
+   "jp_anchor": "十一月十七日\n\n　よく御守護電報が来ますが、たいてい熱の病気が多いです。これは良く分かっているでしょうが、近ごろはよけいそれが多いです。その熱の原因はほとんど頸 のまわりです。頸のこの辺が一番多いです。つまり延髄の少し横の方です。ですからこのゴリゴリをみると",
+   "pt_anchor": "17 de novembro\n\nChegam muitos telegramas de proteção divina, e a maioria é sobre doenças com febre — vocês devem saber bem disso,",
+   "notes": "",
+   "pt_prefix": "17 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十五日",
+   "title_pt": "25 de novembro",
+   "jp_anchor": "十一月二十五日\n\n　今度いよいよ準備ができたので、樋口さんがハワイに行くことになりました。もう一人嵐さんという人がロサンゼルスに行くことになって、無論どっちも支部 を作るつもりですが、ちょうど“アメリカを救う”という本がもうじきできるので、ちょうど良いと思った",
+   "pt_anchor": "25 de novembro\n\nFinalmente os preparativos ficaram prontos, e o Sr. Higuchi irá para o Havaí; outra pessoa, o Sr. Arashi, irá para Los Angeles.",
+   "notes": "",
+   "pt_prefix": "25 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十六日",
+   "title_pt": "26 de novembro",
+   "jp_anchor": "十一月二十六日\n\n　ようやく手順がついたので、来月の末あたりにハワイに、樋口さんと後一、二人連れて行く予定です、ハワイといってもわけはありません。最新の飛行機では 十一時間何分――十二時間です。ですから朝行くと晩には着いてしまいます。現在のでも二十時間くらいで",
+   "pt_anchor": "26 de novembro\n\nFinalmente os preparativos estão prontos. Pretendo levar o Sr. Higuchi e mais uma ou duas pessoas para o Havaí no final do mês que vem.",
+   "notes": "",
+   "pt_prefix": "26 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十七日",
+   "title_pt": "27 de novembro",
+   "jp_anchor": "十一月二十七日\n\n　“アメリカを救う”という本は、日本文だけは来月できる順序になってます。表紙だけ作ってみたのですが、こういうのです。馬鹿に派手なものですが、言わ ば今までは夜の星の世界です。月が引っ込んで星だけになっているのを、いよいよ太陽が出始めたわけです",
+   "pt_anchor": "27 de novembro\n\nO livro \"Salvando a América\" está programado para ficar pronto no mês que vem, apenas a versão em japonês. Fiz apenas a capa, e é assim: terrivelmente chamativa, mas, por assim dizer, até agora era o mundo das estrelas da noite — a lua se retirou, e só restaram as estrelas, mas finalmente o sol come",
+   "notes": "",
+   "pt_prefix": "27 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

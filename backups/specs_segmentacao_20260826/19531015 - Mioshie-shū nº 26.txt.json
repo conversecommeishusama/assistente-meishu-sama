@@ -1,0 +1,122 @@
+{
+ "filename": "19531015 - Mioshie-shū nº 26.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 12→11. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 12,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十六号",
+   "pt_anchor": "Mioshie-shū nº 26",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和二十八年九月五日",
+   "title_pt": "5 de setembro de Showa 28 (1953)",
+   "jp_anchor": "医学に対しては始終いろんな角度から批判していますが、いくら書いても後から後から出てくるのですから、内容によほど種々雑多なものを含んでいるので す。これも今までの見方と違った見方で書いたのですが、つまり医学というものはすばらしい封建的のもので",
+   "pt_anchor": "Tenho criticado a medicina sob vários ângulos constantemente, mas, por mais que escreva, novos problemas surgem um após ",
+   "notes": "",
+   "pt_prefix": "5 de setembro de Showa 28 (1953)"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月六日",
+   "title_pt": "6 de setembro",
+   "jp_anchor": "今書いているのは、いつかも話した「医学革命の書」ですが、この間は「序文」を読んだので、その次に載せるので一番根本的のものが、大体できあがりましたから読ませます。",
+   "pt_anchor": "O que estou escrevendo agora é o \"Livro da Revolução da Medicina\", de que falei outro dia. Da última vez, li o \"Prefácio",
+   "notes": "",
+   "pt_prefix": "6 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月七日",
+   "title_pt": "7 de setembro",
+   "jp_anchor": "昨日のラジオを聞いたでしょうが、あれはいつかの鹿児島の問題で、こっちからウンとかけ合ったところが、放送は取り消すことはできないので、詫びる意味 でなんとかいたしましょうということになっていて、それが昨日の放送になったのです。本当は救世教だけ",
+   "pt_anchor": "Vocês devem ter ouvido o rádio ontem; aquilo era sobre o problema de Kagoshima da outra vez. Quando insistimos com eles,",
+   "notes": "",
+   "pt_prefix": "7 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十五日",
+   "title_pt": "15 de setembro",
+   "jp_anchor": "今理論物理学の研究があって世界中から偉い学者が寄って、日本でも非常に喜んでますが、これは私からみると、ちょうど東京に行くのに、やっと北海道を出 て津軽海峡を渡ろうというくらいの所でしょう。だからまだ東京は見ないから、東京の話をしたところで分",
+   "pt_anchor": "Atualmente, há pesquisas em física teórica, com grandes estudiosos de todo o mundo se reunindo, e no Japão também estão ",
+   "notes": "",
+   "pt_prefix": "15 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十六日",
+   "title_pt": "16 de setembro",
+   "jp_anchor": "今理論物理学の研究のため、世界中から偉い科学者が集まっていますが、これは北海道から東京に来るとすると、ちょうど津軽海峡を渡ろうとして函館で話し 合っているようなものです。この津軽海峡を渡ると、つまり霊界――宗教の方になるので、ちょうど科学は",
+   "pt_anchor": "Atualmente, grandes cientistas do mundo todo estão se reunindo para pesquisar física teórica, mas isso é como se, para v",
+   "notes": "",
+   "pt_prefix": "16 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十七日",
+   "title_pt": "17 de setembro",
+   "jp_anchor": "今世界中の有名な科学者が日本に集まって、理論物理学の知識の交換をやってます。ところがこの骨子は物性論ですが、これはこの間も書いたとおり、顕微鏡 で見えない粒子があると仮定して、物性すなわち物の性質を理屈だけでつかまえたわけです。ですから理論",
+   "pt_anchor": "Agora, cientistas famosos do mundo inteiro estão reunidos no Japão, trocando conhecimentos de física teórica. O cerne di",
+   "notes": "",
+   "pt_prefix": "17 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十三日",
+   "title_pt": "23 de setembro",
+   "jp_anchor": "秋季大祭御教え\n\n九月二十三日\n\n　今日は珍しく雨ですが、雨が降るということは、光が強くなるほど降るのです。光が強いということは、やっぱり熱が強いのです。今日はここは二十度で、東 京は十七度なのです。ですから東京より三度高いのです。大体今年は平均して東京よりも強羅の方が暑いの",
+   "pt_anchor": "Ensinamento do Culto Especial de Outono\n\n23 de setembro\n\nHoje, excepcionalmente, está chovendo, mas a chuva cai na medida em que a luz se intensifica. A luz forte significa, tam",
+   "notes": "2026-08-05: cabecalho seccional \"秋季大祭御教え\"/\"Ensinamento do Grande Festival de Outono\" incluido no INICIO da ancora deste artigo (idx7, 23 de setembro), nao deixado como cauda do artigo anterior (idx6, 17 de setembro) -- mesmo precedente ja usado em 19511025-御教え集2号 (idx8, jp_anchor comeca literalmente com \"秋季大祭御教え\") e 19521015-御教え集14号 (\"【秋季大祭御教】\"). Distinto da convencao de ancora-de-corpo usada nas outras 10 transicoes deste livro (linha de data simples sem perda de titulo/secao) -- aqui a linha \"秋季大祭御教え\" e um titulo de secao substantivo (Grande Festival de Outono, evento anual real, ver Tijotengoku.txt linha ~442), nao uma data solta; deixa-la na cauda do dia 17 de setembro perderia esse titulo de secao por completo. Verificado por leitura direta do JP: 0 ocorrencias de \"秋季大祭\" em outro ponto do arquivo (termo unico).",
+   "pt_prefix": "23 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十四日",
+   "title_pt": "24 de setembro",
+   "jp_anchor": "今年のお祭りは珍しく雨が多いですが、これはやっぱり光が強くなった関係なのです。これはここばかりではなく、今年になって全国的に雨が多いのです。そ れは霊界で火素が多くなった関係なのです。この分で行ったら今に雨ばかりになってしまうことになるが、",
+   "pt_anchor": "Este outono, excepcionalmente, chove quase todos os dias, mas há uma grande razão espiritual para isso. De qualquer forma, isso também é um processo de purifica",
+   "notes": "",
+   "pt_prefix": "24 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十五日",
+   "title_pt": "25 de setembro",
+   "jp_anchor": "今年の秋は珍しく毎日のように雨ですが、霊的には大いに理由があります。とにかくこれも浄化作用ですから、浄化が強くなったということが最大原因です。 今年の農作物の虫害が多いということも、霊界における火素が増えたために、善いものと悪いものとの区別",
+   "pt_anchor": "26 de setembro\n\nEm 15 de junho deste ano, eu disse",
+   "notes": "",
+   "pt_prefix": "25 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十六日",
+   "title_pt": "26 de setembro",
+   "jp_anchor": "今年の六月十五日の時に“これから浄化が本当になるから、なにがあるか分からない”と言いましたが、それから間もなく九州の水害があり、それから今度の 台風も、その掃除がなかなか念入りになってきました。今年のようにしつこい台風はないでしょう。やはり",
+   "pt_anchor": "Em 15 de junho deste ano, eu disse: \"Daqui em diante, a purificação se tornará real, então não se sabe o que pode aconte",
+   "notes": "",
+   "pt_prefix": "26 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十七日",
+   "title_pt": "27 de setembro",
+   "jp_anchor": "今度の台風もなかなか損害が大きいようで、今朝のラジオで聞いてみると、死者が六百五十人だそうです。行方不明というのは、やっぱり死んだのです。つま り死骸の上がらないのが行方不明なのです。田畑の損害が二十五万町歩というのですから、この前の台風と",
+   "pt_anchor": "O tufão desta vez também parece ter causado grandes danos. Ouvindo o rádio esta manhã, disseram que o número de mortos é",
+   "notes": "",
+   "pt_prefix": "27 de setembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

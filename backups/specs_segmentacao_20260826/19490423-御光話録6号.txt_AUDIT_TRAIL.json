@@ -1,0 +1,71 @@
+{
+  "filename": "19490423-御光話録6号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 244 linhas / PT 194 linhas, cabeçalhos ARTIGO/entry_id/--- ignorados conforme instrução). Todos os 42 pares Pergunta(Interlocutor)/Resposta(Meishu-Sama) percorridos em sequência do início ao fim, incluindo o bloco composto de 4 subperguntas (イ)(ロ)(ハ)(ニ) sobre veneração do Gshintai, mais a nota editorial final (編輯後記, 4 itens). Alerta prévio da tarefa: sessão de 2026-07-04 registrou Δ=-3 'sem duplicata localizável' neste arquivo, depois aparentemente resolvido (gate hoje mostra Δ=0) mas nunca confirmado por leitura semântica — atenção redobrada dada a esse histórico.",
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file 19490423-御光話録6号.txt",
+    "resultado_antes_da_revisao": "PASS I=42/42 Δ=0 CJK=0",
+    "resultado_apos_correcoes": "PASS I=42/42 Δ=0 CJK=0",
+    "nota": "Δ (contagem de Interlocutor) não mudou com as correções aplicadas porque nenhuma delas envolvia parágrafo do tipo Interlocutor — mas isso é exatamente o ponto: o gate mede só balanceamento de turnos de pergunta, não detecta um turno de Meishu-Sama dividido em dois (achado nº1 abaixo), que só aparece comparando contagem M vs I diretamente no corpo (M=43 antes, M=42 depois da correção, agora igual a I=42)."
+  },
+  "summary": {
+    "perguntas_jp_total": 42,
+    "perguntas_revisadas": 42,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0,
+    "residuo_historico_delta_minus3_investigado": true,
+    "residuo_historico_explicacao": "Não foi possível reconstituir a causa exata do Δ=-3 registrado em 2026-07-04 (sessão/estado anteriores não documentados em detalhe), mas a leitura linha a linha desta sessão encontrou e corrigiu exatamente o tipo de bug que a regra do projeto descreve como invisível ao gate Δ=0: um turno de resposta de Meishu-Sama indevidamente dividido em dois parágrafos rotulados (ver achado 1). Não foi encontrada nenhuma perda de conteúdo residual em nenhum outro ponto do arquivo — todas as 42 perguntas JP têm resposta PT completa e na ordem correta."
+  },
+  "achados_e_correcoes": [
+    {
+      "n": 1,
+      "tipo": "divisao_espuria_de_turno (classe de bug catalogada em revisao-paralela-jp-pt.mdc item 3 — Δ=0 não detecta)",
+      "localizacao_jp": "linha 95 (resposta única sobre o homem de 67 anos cego, 'この人の眼はきれいでしょ...御浄霊もよく奥へ通るような気持ちでやるんですね。')",
+      "localizacao_pt_antes": "PT dividia essa única resposta JP em DOIS parágrafos 'Meishu-Sama:' consecutivos (o segundo começando em 'Se estiver saindo, cura-se...'), sem nenhum turno de Interlocutor entre eles — dois rótulos de falante iguais seguidos, sinal de alerta explícito da regra do projeto (§ 'Δ=0 é necessário, nunca suficiente', item sobre turnos consecutivos do mesmo falante).",
+      "problema": "Nenhum conteúdo foi perdido (o texto integral está presente), mas a estrutura de diálogo ficava incorreta: uma resposta única do JP aparecia como duas falas separadas de Meishu-Sama, inflando a contagem de turnos M (43 vs I=42) sem inflar a contagem de I — exatamente o tipo de erro que o gate baseado só em Δ de Interlocutor não pega.",
+      "correcao": "Parágrafos unidos de volta em um único turno 'Meishu-Sama:', preservando literalmente todo o texto de ambos os fragmentos, na ordem original.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "clausula_migrada_para_turno_seguinte (classe de bug catalogada em revisao-paralela-jp-pt.mdc — cláusula/marcador migrado do turno de Interlocutor para o de Meishu-Sama)",
+      "localizacao_jp": "linha 138 — pergunta sobre marcenaria/agricultura termina com '……木工業に成功する見込みがありますでしょうか。（爆笑）' — a marca de riso pertence ao FIM da pergunta do Interlocutor (a audiência ri da pergunta, antes da resposta).",
+      "localizacao_pt_antes": "'(Risos)' aparecia no INÍCIO do turno seguinte de Meishu-Sama ('Meishu-Sama: (Risos) Isso: se você entrar na fé...'), não no fim da pergunta do Interlocutor.",
+      "problema": "Marcador de riso deslocado através da fronteira de turno — atribuía o riso à resposta de Meishu-Sama em vez de à pergunta, alterando levemente o sentido cênico (quem/o que provocou o riso).",
+      "correcao": "'(Risos)' movido para o final da pergunta do Interlocutor; removido do início do turno de Meishu-Sama.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "clausula_migrada_para_turno_seguinte (mesma classe do achado 2, com agravante de contradição semântica aparente)",
+      "localizacao_jp": "linha 150 — pergunta sobre romper relação extraconjugal termina com '……いかがすべきでしょうか。（笑声）' — riso da audiência ao fim da pergunta.",
+      "localizacao_pt_antes": "'(Risos)' aparecia no início da resposta de Meishu-Sama, imediatamente seguido por 'Não, isso não é motivo de riso' — o que produzia uma contradição textual aparente (Meishu-Sama parecendo rir e no mesmo turno dizer que não é motivo de riso).",
+      "problema": "Mesma classe de deslocamento do achado 2, mas aqui com efeito semântico mais sério: no JP, a frase 'いや、これは笑い事ではありませんよ' ('não, isso não é motivo de riso') é precisamente o comentário de Meishu-Sama sobre o riso da audiência à pergunta — faz sentido só se o riso não estiver marcado como sendo dele. Mantendo '(Risos)' dentro do turno de Meishu-Sama antes dessa frase invertia a lógica da cena.",
+      "correcao": "'(Risos)' movido para o final da pergunta do Interlocutor; removido do início do turno de Meishu-Sama. Os outros dois '(Risos)' já presentes mais adiante no mesmo turno de Meishu-Sama (que no JP já pertencem à própria fala dele, dentro da resposta) foram mantidos sem alteração — verificados como corretamente posicionados.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_sem_problema_confirmadas": [
+    "Todas as 42 perguntas JP têm par PT completo, na ordem correta, sem truncamento, sem '...' suspeito de corte de conteúdo.",
+    "Nenhuma troca de rótulo de falante (Interlocutor/Meishu-Sama) encontrada em nenhum outro ponto do arquivo.",
+    "Nenhuma duplicação de bloco (pergunta+resposta repetida) encontrada.",
+    "Nenhum CJK residual no corpo (confirmado pelo gate, CJK=0).",
+    "Bloco composto de 4 subperguntas (イ)(ロ)(ハ)(ニ) sobre veneração do Gshintai (JP linhas 155-171) mapeado corretamente para 4 pares Interlocutor/Meishu-Sama distintos em ordem (PT linhas 128-142).",
+    "Sequência final incomum de 3 turnos (Meishu-Sama pergunta 'tomou injeção?' → Interlocutor responde curto 'Sim, tomou' → Meishu-Sama completa a resposta) confirmada como fiel ao padrão do JP (linhas 227-231), não é bug.",
+    "Referências cruzadas '『御光話録』二号' e '『御光話録』六号' (auto-referência) traduzidas corretamente como 'Gokōwa-roku nº 2' e 'Gokōwa-roku nº 6'.",
+    "Terminologia teológica conferida contra glossario_traducao.json: 光明如来様→Komyo-Nyorai, 大光明如来→Daikomyo-Nyorai, 雲上観音→Unjo-Kannon (mantido nome próprio), 御浄霊→Johrei, 火素→Elemento Fogo, 薬毒→toxina medicamentosa, 因縁→innen, 八衢→Yachimata, 執着→apego, 大先生様→Grão-Mestre — todos consistentes.",
+    "Metadados PT (title_pt: Gokōwa-roku nº 6, sort_date 1949-04-23, 'edição especial'/特輯号) consistentes entre cabeçalho e corpo do próprio ficheiro PT, e com a data '23 de abril do ano 24 da Era Showa (1949)' citada no corpo.",
+    "Nota editorial final (編輯後記, 4 itens) integralmente traduzida, nenhum item ausente, conteúdo fiel ao JP (apenas consolidada em um único parágrafo em vez de 4 — escolha estilística sem perda de conteúdo, não sinalizada como bug)."
+  ],
+  "observacao_nao_bloqueante": {
+    "descricao": "O cabeçalho de metadados do ficheiro de trabalho JP (não do PT) tem title_pt desatualizado ('19490423 - Gosuiji-roku no 6' em vez de 'Gokōwa-roku nº 6'). Confirmado como padrão sistêmico que afeta vários outros volumes Gokōwa (ex.: 4号→'Goshinsho nº 4', 5号→'Registro de Luz Divina nº 5', 10号→'Registro de Luz de Meishu-Sama nº 10'), não é exclusivo deste arquivo. Como a instrução da tarefa pede para ignorar esse bloco de cabeçalho do JP, e o title_pt real e correto está no próprio ficheiro PT (fonte de verdade para produção), não foi corrigido nesta sessão — registrado apenas como observação para eventual limpeza de metadados em lote, fora do escopo deste volume.",
+    "bloqueante": false
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "42/42 pares Pergunta/Resposta revistos linha a linha contra o JP, do título ao colofão final. Corrigidos: turno de Meishu-Sama indevidamente dividido em dois (achado 1, exatamente a classe de bug invisível ao gate Δ=0 mencionada no alerta desta tarefa), e duas cláusulas de riso migradas através de fronteira de turno (achados 2 e 3). Gate mecânico re-executado após as correções: PASS I=42/42 Δ=0 CJK=0. Nenhuma pendência em PENDENCIAS_REVISAO.json referente a este livro. Nenhuma ambiguidade genuína encontrada que exija escalada ao usuário."
+  }
+}

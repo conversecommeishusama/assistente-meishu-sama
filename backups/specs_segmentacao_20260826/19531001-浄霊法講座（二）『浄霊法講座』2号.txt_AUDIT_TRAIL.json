@@ -1,0 +1,74 @@
+{
+  "filename": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 141 linhas de ficheiro / PT 96 linhas de ficheiro após correção, sem separadores em branco entre parágrafos no PT), 8 seções numeradas + parágrafo introdutório + 2 testemunhos citados, do título ao encerramento. Todo o corpo do JP foi lido e confrontado parágrafo a parágrafo com o PT correspondente na mesma ordem, incluindo os trechos com data entre parênteses.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, conforme exigido por 'Δ=0 é necessário, nunca suficiente'.",
+  "summary": {
+    "sections_in_jp": 8,
+    "sections_reviewed": 8,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 1
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "início do corpo do PT (antes da antiga linha 25 'O mais importante é a sabedoria...')",
+      "problema": "GRAVE: o parágrafo introdutório inteiro do JP (linha 24 do ficheiro JP: '病気を治すという事が根本ですから...ですから教師などは病気に対する知識をできるだけ磨くようにしなければいけないと思います。' — sobre a necessidade de conhecimento médico-espiritual, grupos de estudo, e a crítica a perguntas óbvias de fiéis/chefes de filial) estava completamente ausente do PT. O título da seção 1 ('一　浄霊の合理性' = 'A Racionalidade do Johrei') também estava ausente — o PT começava direto no primeiro parágrafo da seção 1, sem introdução nem cabeçalho.",
+      "correcao": "Traduzido o parágrafo introdutório do zero (não localizado em textos_portugues/ nem em outro ponto do próprio PT após busca) usando glossário (御神書→'Escritos Divinos', 浄霊→'Johrei', 支部長→'chefe de filial', convenção já usada em outros volumes do acervo, ex. 19531015-御垂示録25号.txt) e inserido o título '1. A Racionalidade do Johrei' antes do primeiro parágrafo, no mesmo padrão dos demais 7 títulos numerados do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "fim do parágrafo '...entram na fé mais rapidamente. (1º de julho)' e '...a cura é muito mais rápida. (6 de julho)'",
+      "problema": "Os títulos das seções 2 ('2. Sobre a Força Espiritual do Johrei') e 3 ('3. A Ordem do Johrei e os Pontos Vitais') estavam grudados ao final do último parágrafo da seção anterior, na mesma linha/parágrafo, em vez de terem linha própria como os títulos das seções 4, 5, 6, 7 e 8. Violação do checklist item 7 (títulos/cabeçalhos consistentes).",
+      "correcao": "Separados em linha própria, no mesmo padrão dos demais títulos do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "seção 3, passagem sobre miopia/tracoma/zumbido/calor na testa (correspondente ao JP linhas 96-97, um único parágrafo longo)",
+      "problema": "GRAVE — duplicação com truncamento (padrão já catalogado em 'Δ=0 é necessário, nunca suficiente' § achado 6, 'rascunho truncado seguido da versão completa'): o mesmo trecho JP (miopia/tracoma até 'yaki-atama') estava traduzido DUAS vezes no PT. A primeira passagem (JP linha 96 completo) tinha tradução completa, mas era seguida de uma segunda tentativa de traduzir a frase seguinte (JP linha 97, '触ってみて、芯にある人は...') que parava abruptamente em reticências no meio da frase ('...Quem tem na superfície...'). Logo depois, havia uma retradução completa do MESMO trecho JP 96 inteiro, seguida da tradução completa e correta de JP 97. Ou seja: JP96 traduzido 2x, JP97 traduzido 1x truncado + 1x completo.",
+      "correcao": "Removida a tradução duplicada de JP96 e a tentativa truncada de JP97, mantendo apenas a versão completa e não-truncada (que já cobria os dois parágrafos JP 96-97 integralmente, na sequência correta e sem perda de conteúdo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "transição entre o fim da seção 7 (Intoxicação por Cosméticos) e o início da seção 8 (A Beleza Natural do Rosto)",
+      "problema": "GRAVE — mesmo padrão de duplicação/truncamento do item 3, mas mais extenso, coincidindo exatamente com o alerta do usuário sobre monólitos residuais nesta série: (a) a tradução do parágrafo JP133 terminava truncada em reticências ('De qualquer forma, parar com os cosméticos...'), sem a conclusão real ('...とてもきれいになります。少しの辛抱です。' = fica muito bonita, é só um pouco de paciência); (b) em seguida, havia uma RETRADUÇÃO completa da história da presidente de igreja central com os dentes moles e da morte por intoxicação de permanente — mas esse mesmo conteúdo (JP linha 132) já estava correta e completamente traduzido no parágrafo imediatamente anterior (duplicação de um testemunho inteiro); (c) essa segunda passagem, depois de repetir a história, finalmente trazia a conclusão real de JP133 ('De todo modo, se pararem de usar cosméticos, a pele ficará muito bonita...'), seguia direto para o conteúdo de JP134 (crítica à maquiagem como 'espécie de pecado'), e então, SEM QUEBRA DE PARÁGRAFO NEM SEPARAÇÃO DE TÍTULO, emendava diretamente o título da seção 8 ('8. A Beleza Natural do Rosto e o Triplo Benefício em Um Só Ato') e todo o conteúdo de JP139-140, tudo como um único parágrafo monolítico gigante. Violação simultânea dos itens 4 (completude/truncamento), 6 (paragrafação 1:1), 7 (títulos) e 8 (duplicação) do checklist.",
+      "correcao": "Completada a frase truncada de JP133 com sua conclusão real; removida a recapitulação duplicada da história da presidente de igreja/permanente (conteúdo idêntico já presente no parágrafo anterior, nenhuma informação nova perdida na remoção); reintroduzida a quebra de parágrafo entre o fim de JP134 (26 de julho) e o título da seção 8; reintroduzida a quebra entre o título da seção 8 e o parágrafo de conteúdo JP139-140 que o segue, no mesmo padrão dos demais títulos do volume.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título + linha de publicação", "jp_linhas": "20-22", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Parágrafo introdutório (sem título numerado)", "jp_linhas": "24", "decisao": "corrigido - ausente no PT (item 1 acima)", "confianca": "alta"},
+    {"bloco": "1. 浄霊の合理性 (título + 8 parágrafos incl. 2 testemunhos citados e respostas)", "jp_linhas": "27-47", "decisao": "corrigido - título ausente (item 1); conteúdo dos parágrafos ok, completo e alinhado", "confianca": "alta"},
+    {"bloco": "2. 浄霊の霊力について", "jp_linhas": "50-55", "decisao": "corrigido - título grudado ao parágrafo anterior (item 2); conteúdo ok", "confianca": "alta"},
+    {"bloco": "3. 浄霊の順序と急所", "jp_linhas": "58-104", "decisao": "corrigido - título grudado (item 2) e duplicação/truncamento na passagem de miopia/zumbido (item 3); restante do bloco (ombros, tuberculose, encefalite japonesa, dor lombar) ok, completo e alinhado, incl. repetição legítima já presente no próprio JP (linhas 61/83 sobre mãos/pés) preservada corretamente em ambos os idiomas", "confianca": "alta"},
+    {"bloco": "4. 毒素集溜の経過と排泄の順序", "jp_linhas": "106-110", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "5. 頭の働きと薬毒について", "jp_linhas": "114-119", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "6. 婦人と前頭部の熱", "jp_linhas": "121-126", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "7. 化粧品中毒 + transição para 8. 顔の自然美と一挙三得", "jp_linhas": "129-140", "decisao": "corrigido - truncamento + duplicação de testemunho + monólito sem paragrafação nem separação de título na transição para a seção 8 (item 4 acima); restante das seções 7 e 8 ok", "confianca": "alta"}
+  ],
+  "cjk_residual_check": "Varredura automatizada (regex de intervalo Unicode CJK) sobre o ficheiro PT completo após as correções: nenhum caractere CJK encontrado no corpo do texto; a única ocorrência é o campo de metadado 'title_jp' no cabeçalho do ficheiro, que é esperado.",
+  "pendencias_abertas": [
+    {
+      "ficheiro_relacionado": "reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json",
+      "resumo": "O spec deste livro (19531001-...json, profile koza_lectures, 12 artigos) tem os campos title_pt e pt_anchor aparentemente contaminados por outro livro/tema (falam em 'Bodhisattva Kannon', 'Três Mundos: Divino, Espiritual e Material', etc., que não aparecem em nenhum ponto deste volume sobre Johrei). Não corrigido nesta revisão porque a tarefa era a revisão textual JP/PT, não a reconstrução do spec de subdivisão; escalado para decisão.",
+      "estado": "resolvido_confirmado_2026-07-09",
+      "resolucao": "Segunda auditoria independente (2026-07-09, lote 11) releu o spec atual (19531001-浄霊法講座（二）『浄霊法講座』2号.txt.json) e confirmou que os 12 artigos (preface + 8 capítulos numerados + 3 seções de nota de data) têm title_pt/jp_anchor/pt_anchor todos consistentes com o conteúdo real do volume (Johrei/toxina medicamentosa/ombros/cosméticos etc.) — nenhuma menção a Bodhisattva Kannon ou Três Mundos encontrada. A contaminação descrita já não está presente no spec; foi corrigida em algum momento entre 2026-07-07 e esta auditoria. Pendência considerada encerrada para este arquivo."
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "motivo": "Aguardando segunda auditoria independente linha a linha, conforme exigido por revisao-paralela-jp-pt.mdc e gokowa-gate-enforcement.mdc antes de qualquer approved:true. Adicionalmente, há uma pendência aberta (spec com title_pt/pt_anchor incorretos) registrada em PENDENCIAS_REVISAO.json que não impede a leitura do texto mas deve ser resolvida antes do fecho formal do volume.",
+    "segunda_auditoria_independente": {
+      "data": "2026-07-09",
+      "revisor": "agente (lote 11, Fase E, sessão separada da que produziu a trilha original)",
+      "metodo": "Leitura completa do JP (141 linhas) e do PT de trabalho (89 linhas) do início ao fim, confrontados parágrafo a parágrafo. Confirmado: parágrafo introdutório presente (item 1), os 8 títulos numerados todos em linha própria (item 2), sem duplicação/truncamento na passagem de miopia/zumbido da seção 3 (item 3) nem na transição seção 7→8 (item 4). CJK residual: 0. Ellipsis: 0 no corpo. Spec re-verificado e confirmado limpo (ver pendência acima).",
+      "resultado": "Confirmadas as 4 correções da auditoria original. Nenhum problema novo encontrado. approved:true aplicado no spec (já estava true; trilha agora consistente com o spec)."
+    }
+  }
+}

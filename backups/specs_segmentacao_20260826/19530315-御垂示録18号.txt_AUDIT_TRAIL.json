@@ -1,0 +1,103 @@
+{
+  "filename": "19530315-御垂示録18号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 192 linhas, PT reconstruído para 185 linhas com paragrafação turno-a-turno), 2 artigos por spec (prefácio + sessão única de 1º de março), 36 pares pergunta/resposta. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem; nenhuma amostragem.",
+  "pre_existing_context": "Alerta do pedido apontava razão JP:PT ~4.5:1 (192 vs 43 'linhas' no ficheiro de trabalho) como sinal de monólito. Confirmado: era monólito real, não perda de conteúdo — ver achado principal abaixo.",
+  "gate_mecanico": "Não substituído por esta trilha. Antes de qualquer edição, extraí programaticamente todos os 105 trechos entre aspas duplas do PT e o texto integral entre eles, e verifiquei por igualdade byte-a-byte (após normalizar apenas espaços em branco) que o ficheiro reestruturado contém exatamente o mesmo texto do ficheiro original, exceto pelas 2 correções pontuais listadas abaixo — ou seja, a reestruturação em si não apagou, duplicou nem alterou nenhuma palavra do PT já traduzido.",
+  "summary": {
+    "articles_in_spec": 2,
+    "turnos_jp_mapeados": 36,
+    "turnos_pt_confirmados_presentes": 36,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0,
+    "monolith_status": "corrigido — ver achado principal"
+  },
+  "achado_principal_monolito": {
+    "descricao": "O ficheiro de trabalho PT (antes desta revisão) tinha o corpo inteiro do prefácio/monólogo de abertura e TODAS as 36 perguntas e respostas espremidas em apenas 19 'linhas' físicas (linhas 25-43 do ficheiro antigo), sem nenhuma quebra de parágrafo entre falantes na maior parte do volume. Em particular, da resposta A18 (sobre 'não colocar força no abdômen') até a resposta final A36 (miscigenação) — ou seja, 19 turnos inteiros, quase metade do livro — estava tudo dentro de uma única linha/parágrafo gigante (linha 43 do ficheiro antigo).",
+    "verificacao_completude": "Antes de reestruturar, mapeei manualmente os 36 pares JP (linhas 34-192 do JP: Q1 em 34/A1 em 36 ... Q36 em 190/A36 em 192) e localizei os 36 turnos Interlocutor correspondentes no PT via análise das aspas duplas (que já demarcavam corretamente cada fala do Interlocutor, mesmo dentro do monólito — as aspas simples eram usadas para citações internas de Meishu-Sama, o que permitiu diferenciar). Todos os 36 turnos estavam presentes e completos (nenhum truncado, nenhum '...' suspeito, nenhuma cauda cortada) — o defeito era 100% estrutural (falta de parágrafo), não perda de conteúdo.",
+    "correcao": "Reestruturado com quebra de parágrafo antes de cada aspas de abertura do Interlocutor e depois de cada aspas de fechamento, mais separação dos 4 parágrafos JP do monólogo de abertura (linhas JP 28/29/30/31) e dos 3 casos em que uma resposta de Meishu-Sama continua sem interrupção do Interlocutor em 2-3 parágrafos JP distintos (A11 = JP 77+78 sericicultura; A16 = JP 103+104 Sado; A32 = JP 172+173+174 etimologia tsuki/hi e Izunome/Fuji) — nesses 3 casos, inseri quebra de parágrafo no ponto de transição de tópico correspondente ao JP.",
+    "confianca": "alta — verificado por igualdade de texto byte-a-byte contra o original, não apenas visualmente"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "resposta a Q18 ('Recentemente, recebi a palavra não se concentre no Johrei...'), JP linha 114",
+      "problema": "Corrupção de texto: 'No entanto, eu sou  Não se deve colocar força no abdômen.' (nota o espaço duplo) — falta a palavra que traduz 'あべこべ' (o contrário/oposto) do JP 'ところが私はあべこべです。腹に力を入れてはいけないのです。', deixando a frase truncada e sem sentido.",
+      "correcao": "'No entanto, eu sou o contrário: não se deve colocar força no abdômen.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "resposta a Q35 (Monte Tsurugi/Israel), JP linha 186",
+      "problema": "Nome próprio do local errado: 'Monte Ken' — o JP diz 剣山 (Tsurugisan/Monte Tsurugi), a montanha em Shikoku associada à lenda da Arca da Aliança. Confirmado contra o resto do corpus: 19511010-御垂示録2号.txt linha 260 já traduz o mesmo 剣山 como 'Monte Tsurugi' — 'Monte Ken' é inconsistente com o próprio corpus e não é o nome usual da montanha em português.",
+      "correcao": "'Monte Ken' → 'Monte Tsurugi' (consistente com 御垂示録2号)",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "resposta a Q35, mesmo trecho, JP linha 188",
+      "problema": "Typo de romanização: 'hiirókane' (acento agudo indevido) — o JP dá a leitura ヒイロガネ (hiirogane), sem qualquer vogal longa que justificasse acento.",
+      "correcao": "'hiirókane' → 'hiirogane'",
+      "confianca": "alta"
+    },
+    {
+      "n": "3b (nota, não contada separadamente)",
+      "localizacao_pt": "mesma resposta, nome 酒井勝軍",
+      "problema": "JP dá furigana explícito かついさ (katsuisa) para 勝軍; PT tinha 'Sakai Katsusa' (faltando o 'i').",
+      "correcao": "'Sakai Katsusa' → 'Sakai Katsuisa'",
+      "confianca": "média-alta (baseada na furigana do próprio JP fonte)"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/metadados",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Monólogo de abertura [1º de março] (comparação novas religiões: Seicho-no-ie, Rissho Kosei-kai, PL/Hitonomichi, Omoto-kyo; Nichiren; Moriyama/imprensa; Museu de Hakone)",
+      "jp_linhas": "26-31",
+      "decisao": "ok, reestruturado em 4 parágrafos (era 1 bloco corrido), sem perda de conteúdo",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A 1-16 (associação de agricultura natural, modelo de fazenda, vegetais puros, mikan de Wakayama, sericicultura, gafanhotos, parlamento/Sado)",
+      "jp_linhas": "34-104",
+      "decisao": "ok, cada turno separado em parágrafo próprio; A11 e A16 desmembrados em 2 parágrafos internos",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A 17-31 (vacina, 'não se esforce no Johrei', Príncipe Chichibu, peste suína, difteria de Osaka, Tenrikyo/abrigos antiaéreos/hospitais)",
+      "jp_linhas": "107-168",
+      "decisao": "ok, 1 correção real (item 1 acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q&A 32-36 (etimologia tsuki/hi, Izunome, Monte Fuji, Monte Tsurugi/Israel, miscigenação)",
+      "jp_linhas": "170-192",
+      "decisao": "ok, A32 desmembrado em 3 parágrafos internos; 2 correções reais de nome próprio (itens 2 e 3 acima)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_troca_de_falante": "Não há rótulos Interlocutor:/Meishu-Sama: nesta família (usa aspas duplas para Interlocutor, texto plano para Meishu-Sama, igual aos volumes 1-17号 já revisados). Verifiquei os 36 pares um a um contra a ordem e conteúdo do JP — nenhuma troca de falante encontrada, alternância Q/A perfeita (36 perguntas, 36 respostas, na mesma ordem do JP).",
+  "cjk_residual": "Nenhum caractere CJK residual no corpo do texto (os únicos CJK do ficheiro são no cabeçalho técnico title_jp: 御垂示録18号, esperado).",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (「」 = Interlocutor; prosa corrida sem aspas = Meishu-Sama)",
+    "etapa_a": "Mapa de turnos construído a partir do JP linha a linha inteiro (192 linhas): 36 turnos 「」 iniciados em início de parágrafo (confirmado via 'grep -c \"^「\"' = 36) = Interlocutor; 4 parágrafos de monólogo de abertura (JP 28-31, antes de '質問に答えます') + 40 parágrafos de resposta (36 respostas diretas + 4 parágrafos de continuação sem interrupção do Interlocutor: A11/JP77-78 sericicultura, A16/JP103-104 Sado, A32/JP172-173-174 etimologia tsuki-hi/Izunome/Fuji, este último com 2 continuações) = Meishu-Sama. Nenhum turno de uma só palavra encontrado sem aspas que pudesse ser confundido com narração.",
+    "etapa_b": {
+      "contagem": "36 「 (início de parágrafo) no JP == 36 Interlocutor no PT (Δ=0). Meishu-Sama no PT = 44 (4 parágrafos do monólogo de abertura + 36 respostas + 4 parágrafos de continuação de A11/A16/A32). M/I = 44/36 = 1,22 (dentro do esperado, coerente com a reestruturação já documentada no achado_principal_monolito, que havia identificado exatamente essas mesmas 4 continuações).",
+      "formatacao": "0 travessões '—' usados como marcador de fala no corpo do PT; alternância I/M coerente em toda a sessão de 1º de março; blocos M->M consecutivos (monólogo de abertura, 4 parágrafos; e as 3 continuações A11/A16/A32) correspondem cada um a um único turno de Meishu-Sama no JP dividido em múltiplos parágrafos físicos sem interlocutor entre eles — cada parágrafo recebeu seu próprio prefixo 'Meishu-Sama:', conforme a regra."
+    },
+    "etapa_c": "Rótulos aplicados diretamente no PT (reports/livros_trabalho/pt/19530315-御垂示録18号.txt) via script determinístico linha-a-linha (sem reflow/rebuild), sem reordenar nem reescrever conteúdo existente. Cabeçalho de sessão '[1º de março]' preservado sem prefixo. Monólogo de abertura (antes da primeira pergunta) rotulado 'Meishu-Sama:' por ser discurso direto em primeira pessoa dele mesmo (não narração de terceiros), consistente com a convenção desta família.",
+    "verificacao_conteudo": "Nenhum turno faltando encontrado na Etapa B — os 36 pares já haviam sido confirmados completos e presentes na auditoria de conteúdo de 2026-07-07 (achado_principal_monolito), e a rotulagem não exigiu inserção de texto novo.",
+    "resultado": "185 linhas de conteúdo, sem alteração de contagem. 36 Interlocutor + 44 Meishu-Sama + 1 cabeçalho de sessão."
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "filename": "19530815-御垂示録23号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 262 linhas / PT reestruturado de 119 para 134 linhas de conteúdo), spec com 2 artigos (prefácio + sessão única '1 de agosto'). JP inteiro lido linha a linha (monólogo de abertura + ~46 pares de pergunta/resposta) e confrontado com o PT correspondente na mesma ordem, turno a turno.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0
+  },
+  "achados_estruturais": [
+    {
+      "n": 1,
+      "tipo": "monolito grave",
+      "localizacao": "PT linha 25 (arquivo original, 119 linhas)",
+      "problema": "GRAVE: todo o monólogo de abertura de Meishu-Sama (5 parágrafos JP, linhas JP 28-32) mais os primeiros 3-4 turnos de pergunta/resposta (estreptomicina, criança incendiária, 'Deus faz nascer pessoas perigosas', shukumei) estavam colapsados numa única linha gigante do arquivo de trabalho, sem nenhuma quebra de parágrafo entre monólogo/pergunta/resposta. As linhas 26-32 seguintes do arquivo original também estavam fundidas no padrão '[resposta anterior]+[pergunta seguinte]' sem quebra. Viola os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist.",
+      "correcao": "Reestruturado com uma quebra de parágrafo por turno JP: separado o marcador de data '[1º de agosto]', os 4 parágrafos do monólogo, e cada pergunta/resposta subsequente em linha própria, seguindo rigorosamente a ordem e os limites de parágrafo do JP (verificado por âncoras textuais únicas de cada limite de parágrafo). Nenhum conteúdo foi removido nesta etapa, apenas redistribuído.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "corrupção/perda de conteúdo real",
+      "localizacao": "antiga PT linha 32 (fronteira entre resposta 'Deus não é ocupado' e pergunta sobre quando os espíritos protetores se alojam)",
+      "problema": "GRAVE: a resposta de Meishu-Sama sobre não estar ocupado (JP linha 64) foi cortada no meio da frase — faltava o trecho final '…だから忙しくてアップアップしているのは頭が悪い人です。私などは、人がよくお忙しいでしょうと言うが、私は忙しいことはありません。人が一時間ですることを私は一分でやってしまいます。' (quem anda atarefado é pessoa de cabeça fraca; as pessoas dizem que devo estar ocupado, mas não estou; o que se faz em uma hora eu faço em um minuto) — e a pergunta inteira sobre quando os espíritos protetores (honshugoshin/shōshugoshin/fukushugoshin) se alojam (JP linha 67) estava totalmente ausente, substituída por um fragmento gramaticalmente quebrado ('...é uma pessoa de mente o espírito protetor secundário, se alojam?') que misturava o fim da frase perdida com o início da pergunta seguinte.",
+      "correcao": "Reconstituído a partir do JP: completada a resposta sobre 'Deus não é ocupado' até o fim, e traduzida do zero a pergunta completa sobre o momento em que os três espíritos protetores se alojam ('Quando uma pessoa nasce, em que momento se alojam os espíritos protetores — o espírito protetor primordial, o espírito protetor guardião e o espírito protetor secundário?'). A resposta seguinte (sobre os tempos de cada espírito) já estava completa e correta no PT, mantida sem alteração.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "turno ausente (resposta)",
+      "localizacao": "entre 'O Shingon Mikkyo tem os Cinco Budas Secretos...' e a pergunta seguinte sobre o nome 'Kigetsu'",
+      "problema": "A resposta de Meishu-Sama à observação do Interlocutor sobre os cinco Budas secretos do Shingon Mikkyo (JP linha 91: 'そうです。それで真ん中は私だから白髪です。あとのは頭が黒いでしょう。') estava totalmente ausente — o PT saltava diretamente da observação do Interlocutor para a pergunta seguinte, perdendo o turno de resposta inteiro.",
+      "correcao": "Inserida a tradução: 'Sim. E o do meio sou eu, por isso tenho cabelo branco. Os outros têm cabelo preto, não é?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "turno ausente (pergunta)",
+      "localizacao": "antes de 'Estão sendo sufragados.' (pergunta sobre as duas espadas cultuadas)",
+      "problema": "A pergunta de Meishu-Sama '先祖は祀ってありますか。' (JP linha 232, 'Os antepassados estão sendo venerados?') estava ausente entre a pergunta do Interlocutor sobre as espadas e a resposta afirmativa 'Estão sendo sufragados' — o PT apresentava a resposta do Interlocutor sem o turno de pergunta que a provocou.",
+      "correcao": "Inserida a pergunta: 'Os antepassados estão sendo venerados?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "turno ausente (pergunta)",
+      "localizacao": "antes de 'Não pensei nisso.' (seção de cultivo de arroz, palha em excesso)",
+      "problema": "A pergunta de Meishu-Sama '百姓は藁で何か作ることがあるでしょう。それはどうしますか。' (JP linhas 252-253, 'Os agricultores fazem algo com a palha, não fazem? O que você faz com ela?') estava ausente entre a fala do agricultor sobre ter colocado 80% da palha colhida e a resposta 'Não pensei nisso.' — mesmo padrão de turno de pergunta engolido pela fusão de parágrafos.",
+      "correcao": "Inserida a pergunta: 'Isso não está certo. Os agricultores fazem algo com a palha, não fazem? O que você faz com ela?'",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_sem_achado": [
+    "Cabeçalho triplo do JP ('御垂示録23号' / '『御垂示録』23号、昭和28(1953)年8月15日発行' / '御垂示録第二十三号（昭和二十八年）'): confirmado que o terceiro item é um cabeçalho corrido redundante repetido em todos os volumes desta família (verificado também em 19520515-御垂示録20号, mesmo padrão triplo no JP e mesma omissão no PT já revisado). Não é perda de conteúdo, é convenção editorial já aceita no corpus — nenhuma correção necessária.",
+    "Perguntas consecutivas sem resposta intercalada (JP linhas 197-198 'Kihara/Matsui' e linhas 210-212 'fé se aprofunda/cura por crer') conferidas contra o JP: são de fato duas falas seguidas do Interlocutor respondidas por uma única resposta de Meishu-Sama no JP original — o PT já reproduzia esse padrão corretamente, não é bug.",
+    "Nenhum resíduo de CJK no corpo do texto PT (só nos metadados de nome de arquivo/title_jp, que é esperado).",
+    "Nenhuma reticência (...) suspeita de truncamento — todas correspondem a falas do Interlocutor que já terminam em reticências/travessão no JP original (trailing-off intencional do orador).",
+    "Restante do volume (perguntas/respostas sobre sexo dos nascimentos, deslizamento de Gora, Obon, altares, ofuda/raios-X, expiação, pensamento/gratidão, cultivo de arroz) conferido linha a linha contra o JP: conteúdo completo, ordem correta, sem troca de falante, sem duplicação."
+  ],
+  "correcao_formatacao": {
+    "problema": "Ao inserir os novos parágrafos na reconstrução do monólito (achado 1), foram introduzidas quebras de linha em branco entre parágrafos, inconsistentes com a convenção do corpo do arquivo (que usa apenas quebra de linha simples entre parágrafos, sem linha em branco, conforme verificado em 19520515-御垂示録20号 e no restante do próprio arquivo 23号).",
+    "correcao": "Normalizado removendo as linhas em branco espúrias no corpo (mantidas apenas as linhas em branco pré-existentes do cabeçalho/metadados, que seguem outra convenção)."
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/metadados + título",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Monólogo de abertura '[1º de agosto]' + Q1-A4 (estreptomicina, criança incendiária, universo/lei celeste, shukumei/unmei)",
+      "jp_linhas": "26-50",
+      "decisao": "corrigido - monólito grave desmembrado (achado 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q5-Q8 (espírito ancestral, honshugoshin/fukushugoshin, deuses de 1o/2o/3o escalão, Deus ocupado, momento em que espíritos se alojam)",
+      "jp_linhas": "52-69",
+      "decisao": "corrigido - corrupção/perda real de conteúdo (achado 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Q9-Q15 (proporção homens/mulheres, Paris, pampan, Gora/goshintai, cinco budas secretos, Kigetsu, ciência atômica)",
+      "jp_linhas": "72-99",
+      "decisao": "corrigido - resposta ausente (achado 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Deslizamento de Gora, Doryo Gongen, tengu, ancestrais/Obon/altar budista",
+      "jp_linhas": "102-131",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Incidente do fusuma/foto/vidro quebrado, telhado, igreja/residência, Komyo-Nyorai/Dai Komyo-Nyorai",
+      "jp_linhas": "134-172",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ofuda/raios-X, expiação/linhagem do fogo, pensamento/gratidão/Kihara-Matsui, repurificação",
+      "jp_linhas": "175-222",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Aomidoro/drenagem, espadas cultuadas por asceta",
+      "jp_linhas": "225-240",
+      "decisao": "corrigido - pergunta ausente (achado 4)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cultivo de arroz: palha em excesso, perfilhamento, sementes, Tohoku",
+      "jp_linhas": "243-262",
+      "decisao": "corrigido - pergunta ausente (achado 5)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 5 correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: neste family, 「pergunta entre aspas」 no JP = Interlocutor; texto corrido sem aspas = Meishu-Sama (em vez do padrão ―― do Gokōwa-roku).",
+    "data": "2026-07-08",
+    "etapa_a": "JP (262 linhas) lido linha a linha; mapa de turnos construído por conteúdo (109 unidades: monólogo de abertura de 4 parágrafos + 51 pares pergunta/resposta com 2 blocos de perguntas consecutivas do Interlocutor sem resposta intercalada [Kihara/Matsui; 'fé se aprofunda por causa da bênção'/'cura por crer'] e 1 pergunta curta do próprio Meishu-Sama respondida pelo Interlocutor ['Os antepassados estão sendo venerados?']). Atenção especial a turnos curtos de Meishu-Sama: confirmados presentes 'Eles vêm.', 'Se forem sufragados, eles entram.', 'Sim. Portanto, não há mais com o que se preocupar.', 'Os antepassados estão sendo venerados?' — nenhum turno curto ausente (já haviam sido restaurados na auditoria semântica prévia de 2026-07-07, achados 3-5 acima).",
+    "etapa_b": "Mapa JP conferido 1:1 contra as 109 linhas de parágrafo do PT (linhas 26-134 do arquivo de trabalho), na mesma ordem, sem lacunas. Único desvio: os parágrafos JP 28+29 (linha 28 e 29 do JP, ambos monólogo de Meishu-Sama sem interlocutor entre eles) aparecem fundidos num único parágrafo PT (linha 26) — não é perda de turno, apenas fusão de parágrafo dentro da mesma fala do mesmo falante. Confirmado por âncora textual (fecho do parágrafo combinado bate com o fecho do JP 29 'invadir o domínio de Deus'). Regra de detecção verificada e válida para 100% das 109 linhas: parágrafo começa com aspas retas (\") = Interlocutor; caso contrário = Meishu-Sama. Contagem final: 53 Interlocutor / 56 Meishu-Sama.",
+    "etapa_c": "Rótulos aplicados diretamente linha a linha no arquivo PT via script Python (prefixo 'Interlocutor: ' ou 'Meishu-Sama: ' por parágrafo, sem alterar texto, sem reordenar, sem remover aspas existentes). Cabeçalho de sessão '[1º de agosto]' preservado sem rótulo.",
+    "resultado": "109/109 parágrafos rotulados, 0 turnos ausentes, 0 divergência com o mapa JP. approved do spec NÃO alterado (permanece true, decidido na auditoria semântica prévia)."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Releitura completa independente linha a linha (JP 262 linhas / PT 134 linhas) do zero, focada em fidelidade semântica + glossário + metadados.",
+    "achados_e_correcoes": [
+      {
+        "n": 1,
+        "tipo": "erro de romanização de topônimo (nome próprio)",
+        "localizacao": "PT linha 62, correspondendo a JP linha 106 (神山を中心にして...ここは神山になりますが)",
+        "problema": "PT dizia 'Monte Kaminoyama' (2 ocorrências na mesma linha). 神山 é o nome de um monte real no maciço de Hakone, com leitura confirmada かみやま/'Kamiyama' pelo próprio corpus (furigana explícito em 19521015-御教え集14号 linha 183: '神山（かみやま）'), e romanizado consistentemente como 'Kamiyama' em pelo menos 8 outros volumes (19480101-御光話録補, 19490921-御光話録12号, 19500921-地上天国出来るまで, 19520715-御教え集11号, 19521015-御教え集14号, 19521201-結核信仰療法, 19530910-世界救世教奇蹟集). 'Kaminoyama' é o nome de uma cidade real e distinta na província de Yamagata — topônimo errado, não apenas variante de romanização.",
+        "correcao": "Corrigido para 'Monte Kamiyama' nas 2 ocorrências, consistente com o resto do corpus.",
+        "confianca": "alta"
+      }
+    ],
+    "verificacao_geral": "Releitura completa da sessão única [1º de agosto] (monólogo de abertura sobre Divindades malignas/Daijo-Shojo + ~51 pares de pergunta/resposta) contra o JP. Termos Daijo/Shojo, Meguri, Dai Komyo-Nyorai/Komyo-Nyorai (corretos aqui, ao contrário do erro achado em 19530715-御垂示録22号), Ofudesaki/Oomoto, Onisaburo Deguchi conferidos — conformes ao glossário e ao uso do acervo. Sem CJK residual.",
+    "correcoes_reais_aplicadas": 1,
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — 1 correção de topônimo aplicada diretamente no PT de trabalho."
+  }
+}

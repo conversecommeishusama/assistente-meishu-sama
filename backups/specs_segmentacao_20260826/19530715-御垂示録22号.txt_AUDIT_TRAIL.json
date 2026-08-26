@@ -1,0 +1,168 @@
+{
+  "filename": "19530715-御垂示録22号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 318 linhas de arquivo / PT reestruturado de 89 para 161 linhas), 2 artigos por spec (prefácio + sessão única [1º de julho]). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, turno a turno (135 turnos Interlocutor/Meishu-Sama identificados no JP e mapeados 1:1 no PT).",
+  "alerta_inicial": "JP 318 linhas, PT original 89 linhas — razão ~3.6:1, sinal de monólito residual confirmado.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "pt_lines_before": 89,
+    "pt_lines_after": 161,
+    "jp_turns_mapped": 135,
+    "missing_turns_found_and_translated": 5,
+    "content_corruption_fixed": 4,
+    "monolith_found_and_resegmented": true,
+    "monolith_turns_resegmented": 130,
+    "items_escalated_to_pendencias": 0
+  },
+  "achados_e_correcoes": [
+    {
+      "n": 1,
+      "tipo": "perda real de conteúdo (5 turnos ausentes no início da sessão)",
+      "localizacao": "JP linhas 28-38 (as 3 primeiras trocas de pergunta/resposta logo após o marcador de sessão ［七月一日］, sobre a catástrofe das enchentes em Kyushu e os diques). O PT antigo pulava diretamente da marca '[1º de julho]' para o meio da 4ª resposta de Meishu-Sama ('そうです。一般の者は霊的のことが分からないのです...' = 'Isso mesmo. As pessoas comuns não compreendem...'), omitindo por completo as 3 trocas anteriores.",
+      "jp_turnos_faltantes": [
+        "「この度の九州における惨状というものは、来たるべき大浄化の前提と関連があるものでございましょうか」",
+        "少しくらいはあるでしょう。",
+        "「少しくらいで、あれだけになりますのでございますから」",
+        "エーエー。",
+        "「堤防をもっと高く築くとか何とか言っても、こうなりますとどうにもならないことで、結局きれいになるより他ございません」"
+      ],
+      "traducao_inserida": [
+        "\"A tragédia ocorrida desta vez em Kyushu tem alguma relação com a Grande Purificação que está por vir?\"",
+        "Deve haver um pouco de relação, sim.",
+        "\"Mas é que, sendo 'só um pouco', chegou a esse ponto todo...\"",
+        "Sim, sim.",
+        "\"Mesmo que se diga para construir diques mais altos ou algo do tipo, uma vez que chega a esse ponto não há mais nada a fazer; no final, só resta mesmo ficar limpo.\""
+      ],
+      "verificacao": "Confirmado por leitura direta do JP bruto (linhas 26-38) que este é o início real da sessão de 1º de julho e que as 3 trocas faltam por completo no PT (não é desalinhamento nem duplicação compensatória — é omissão pura, mascarada porque o texto seguinte parecia fluir naturalmente a partir de '[1º de julho]').",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "corrupção de data (erro de tradução, contradição interna)",
+      "localizacao": "JP linha 63: '長尾進（六十一才）二十七年人事不省となり、一ケ月後に快復いたしましたが...' — '二十七年' aqui é claramente uma referência a Showa 27 (1952), seguindo o mesmo padrão de todas as outras datas do volume (二十年=Showa20, 二十三年=Showa23, 二十二年=Showa22, todas corretamente vertidas como 'Showa XX (19YY)' em outros pontos do mesmo PT). O PT antigo traduziu como 'ficou inconsciente por 27 anos', criando uma contradição lógica direta com a cláusula seguinte da mesma frase ('e se recuperou um mês depois') — impossível ficar inconsciente por 27 anos e recuperar-se um mês depois.",
+      "correcao": "'Susumu Nagao (61 anos) ficou inconsciente em Showa 27 (1952) e se recuperou um mês depois, mas está com a consciência turva...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "corrupção de nome próprio (título de filme)",
+      "localizacao": "JP linha 285: 'この間チャップリンの殺人狂時代という映画を見ましたが' — 殺人狂時代 (Satsujin Kyō Jidai) é o título de lançamento japonês do filme de Chaplin 'Monsieur Verdoux' (1947), não de 'O Grande Ditador' (que em japonês é 独裁者/Dokusaisha). A citação seguinte no JP ('matar uma pessoa é crime, matar um milhão faz de você um herói') é precisamente a frase mais famosa do próprio Verdoux no filme, confirmando a identificação. O PT antigo trazia 'O Grande Ditador', um filme diferente.",
+      "correcao": "'Outro dia, vi o filme \"Monsieur Verdoux\" (no Japão, \"Satsujin Kyō Jidai\") do Chaplin.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "imprecisão de conversão de unidade (inconsistente com o padrão já usado no acervo)",
+      "localizacao": "JP linha 67: '一日に三升くらいの水を飲み' (bebe cerca de 3 shō de água por dia). O PT antigo trazia 'três litros', mas o padrão de conversão já estabelecido em outros volumes do acervo (ex. 19510815-結核の革命的療法.txt, 19490625-自観叢書...) usa 1 shō ≈ 1,8 litro, logo 3 shō ≈ 5,4 litros, não 3 litros.",
+      "correcao": "'Bebe cerca de três shō (aproximadamente 5,4 litros) de água por dia'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "terminologia inconsistente com o glossário/uso do acervo",
+      "localizacao": "JP linha 77: 'これはよほどメグリがあります' (meguri = carma/causa acumulada, termo técnico do vocabulário da Igreja). O PT antigo traduzia livremente como 'Isso tem um caráter cíclico muito forte', divergindo do padrão já usado em outros volumes do acervo (ex. 19511125-御垂示録3号.txt linha 288, que preserva o termo transliterado 'meguri').",
+      "correcao": "'Isso tem bastante Meguri.'",
+      "confianca": "média-alta"
+    },
+    {
+      "n": 6,
+      "tipo": "imprecisão lexical menor",
+      "localizacao": "JP linha 117 (dentro do monólito longo): 'それから中にはオワイ屋ゴミ掃除みたいな人間も社会には必要なのです' — オワイ屋 refere-se a coletores de dejetos/fossas (não a agiotas). O PT antigo trazia 'pessoas que são como agiotas ou limpadores de lixo', misturando um conceito não presente no JP (agiota/usurário) com o correto (limpador/coletor).",
+      "correcao": "'pessoas como coletores de dejetos ou catadores de lixo também são necessárias na sociedade'",
+      "confianca": "média-alta"
+    },
+    {
+      "n": 7,
+      "tipo": "monólito estrutural (turnos sem quebra de parágrafo)",
+      "localizacao": "Praticamente todo o corpo do PT (antigas linhas 25-89, ~65 linhas de texto corrido) continha múltiplos turnos de Interlocutor (entre aspas) e Meishu-Sama (sem aspas) concatenados sem quebra de parágrafo — o texto já estava integralmente traduzido e as aspas do Interlocutor preservadas corretamente, mas sem separação visual/estrutural turno a turno.",
+      "metodo_correcao": "Localizados programaticamente os 130 turnos restantes (após os 5 inseridos) usando as aspas do Interlocutor como delimitador, verificado cada um contra a ordem e o conteúdo do JP linha a linha. Dois falsos-positivos de quebra foram identificados e corrigidos manualmente: (a) a citação do título da revista '「世界夢物語」' ('Mundo dos Sonhos') dentro de uma fala de Meishu-Sama não é um turno do Interlocutor — mantida embutida; (b) o título do filme '「殺人狂時代」' (ver achado 3) igualmente não é um turno — mantido embutido, e o parágrafo de Meishu-Sama sobre o filme/Chaplin foi ainda subdividido em dois turnos próprios, replicando a quebra de parágrafo existente no JP entre a linha 282 (fim da resposta sobre aborto) e a linha 285 (novo parágrafo sobre o filme de Chaplin). Nenhum conteúdo foi removido, duplicado ou reordenado — verificado por leitura completa do resultado final contra o JP, turno a turno.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + título",
+      "jp_linhas": "20-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de julho] — enchentes de Kyushu, coroação da rainha Elizabeth, Guerra Fria/Stalin",
+      "jp_linhas": "26-60",
+      "decisao": "corrigido — 5 turnos iniciais traduzidos e inseridos (achado 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunho médico de Nagao Susumu (derrame/dragão divino) + caso de Inari doméstico",
+      "jp_linhas": "63-156",
+      "decisao": "corrigido — data de Nagao (achado 2), medida de água (achado 4), termo Meguri (achado 5), termo オワイ屋 (achado 6), monólito resegmentado (achado 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Perguntas diversas: espírito protetor, mudança de túmulo, posição de placas mortuárias, Chujo/Izunome, casos médicos pastorais, espíritos diversos, ossos, internação hospitalar, aborto/controle de natalidade",
+      "jp_linhas": "157-282",
+      "decisao": "corrigido — monólito inteiro resegmentado (achado 7); conteúdo já estava completo e fiel, apenas sem quebra de parágrafo",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Reflexão sobre Chaplin/Verdoux, Maomé, Imperador Jinmu/Meiji, Dohachi, vegetais crus, ordem de missão/oferenda, Oomoto/Ayabe, ateus e o Caminho",
+      "jp_linhas": "285-318",
+      "decisao": "corrigido — título do filme (achado 3), monólito resegmentado (achado 7)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: Etapa A (mapa de turnos construído a partir do JP, linha a linha, fonte de verdade) -> Etapa B (confirmação de contagem/formatação contra o PT) -> Etapa C (aplicação dos rótulos no PT, sem reordenar/reescrever)",
+    "criterio_jp": "「pergunta entre aspas」= Interlocutor; texto corrido sem aspas = Meishu-Sama (mesma convenção do Gokōwa)",
+    "etapa_a_mapa_jp": {
+      "sessao_unica": "［七月一日］ (JP linhas 26-318)",
+      "turnos_interlocutor_jp": 67,
+      "turnos_meishu_jp": 67,
+      "observacao": "Um bloco sem novo turno de Interlocutor entre JP linhas 282 e 285-286 (reflexão sobre o filme de Chaplin/Monsieur Verdoux), onde Meishu-Sama continua falando em novo parágrafo sem pergunta interposta — tratado como continuação do mesmo turno Meishu-Sama (não conta como turno extra de diálogo, mas gera um parágrafo adicional rotulado Meishu-Sama no PT)."
+    },
+    "etapa_b_confirmacao": {
+      "turnos_interlocutor_pt_antes": 67,
+      "turnos_meishu_pt_antes": 68,
+      "delta_interlocutor": 0,
+      "razao_meishu_interlocutor": 1.015,
+      "travessoes_no_corpo": 0,
+      "turnos_faltantes_encontrados": 0,
+      "observacao": "PT já validado 1:1 pela revisão semântica anterior (achados 1-7 acima); recontagem desta etapa apenas confirmou alinhamento turno a turno, sem necessidade de inserir texto novo."
+    },
+    "etapa_c_aplicacao": {
+      "linhas_ficheiro_pt_antes": 161,
+      "linhas_ficheiro_pt_depois": 295,
+      "mudanca": "Prefixo 'Interlocutor: ' aplicado às 67 falas entre aspas; prefixo 'Meishu-Sama: ' aplicado às 68 falas de Meishu-Sama (incluindo o parágrafo de continuação sobre Chaplin); inserida linha em branco entre cada turno rotulado, seguindo o formato-alvo já usado no Gokōwa. Cabeçalho, linha de publicação e marcador de sessão '[1º de julho]' preservados sem alteração. Nenhum conteúdo reordenado ou reescrito.",
+      "problemas_corrigidos": "Nenhum turno ausente encontrado nesta etapa (a auditoria semântica anterior já havia corrigido as 5 falas ausentes no início da sessão — ver achado 1)."
+    },
+    "nota": "approved do spec NÃO foi alterado por esta rotulagem, conforme instrução."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Releitura completa independente linha a linha (JP 319 linhas / PT 296 linhas), sessão única [1º de julho], focada em fidelidade semântica + glossário + metadados.",
+    "achados_e_correcoes": [
+      {
+        "n": 1,
+        "tipo": "glossário — nome próprio incompleto",
+        "localizacao": "PT linha 67 (turno do Interlocutor), correspondendo a JP linha 71 (大光明如来様)",
+        "problema": "PT dizia apenas 'Komyo-Nyorai', omitindo o prefixo '大/Dai' presente no JP (大光明如来様 = Dai Komyo-Nyorai), inconsistente com o uso already estabelecido no mesmo lote (19530615-御垂示録21号) e em pelo menos 8 outros volumes do corpus, que distinguem 光明如来 ('Komyo-Nyorai') de 大光明如来 ('Dai Komyo-Nyorai'/'Daikomyo-Nyorai').",
+        "correcao": "Corrigido para 'Dai Komyo-Nyorai'.",
+        "confianca": "alta"
+      }
+    ],
+    "verificacao_geral": "Confirmado que 伊都能売 (Izunome, JP linha 186) está corretamente traduzido como termo próprio 'Izunome' nesta ocorrência (sem o erro de 'fio da trama' encontrado no volume 21号). Termos Daijo/Shojo/Chujo, Chieshōkaku, Meguri, Johrei conferidos contra glossario_traducao.json e uso do acervo — conformes. Sem CJK residual no corpo. As 7 correções estruturais/semânticas já registradas em 2026-07-07 (turnos ausentes, data de Nagao, filme Monsieur Verdoux, conversão de shō, Meguri, オワイ屋, resegmentação) foram reconferidas em campo e permanecem corretas.",
+    "correcoes_reais_aplicadas": 1,
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — 1 correção de glossário aplicada diretamente no PT de trabalho."
+  }
+}

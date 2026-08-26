@@ -1,0 +1,104 @@
+{
+ "filename": "19510920 - Mioshie-shū nº 1.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→10. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』1号、昭和26(1951)年9月20日発行",
+   "pt_anchor": "Mioshie-shū nº 1",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月一日",
+   "title_pt": "1 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）昭和二十四年五月ごろ急に喘息となり、多くの名医にかかっても効果は一時的でかえってひどくなり、医者ではどうにもならなくなりました。それで弁天様をお祭り（裏庭へ）したらちょうど六十日咳一つ出ず、まったく治りま",
+   "pt_anchor": "1º de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[1º de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "1º de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月五日（本日に限り速記によらず）",
+   "title_pt": "5 de agosto",
+   "jp_anchor": "八月五日（本日に限り速記によらず）",
+   "pt_anchor": "5 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[5 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "5 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月八日",
+   "title_pt": "8 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）昭和二十二年九月入信いたしました四十歳の女でございますが、カリエスのため腰骨の屈伸が不自由で、カリエス特有の青白い皮膚をいたし全身やや腫みで浮いているようでございます。",
+   "pt_anchor": "8 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[8 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "8 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十一日",
+   "title_pt": "11 de agosto",
+   "jp_anchor": "（お伺）現在腹部の大浄化をいただいております金子松次郎（五十二歳）と申します未入信の者につきお伺い申し上げます。",
+   "pt_anchor": "11 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[11 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "11 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十六日",
+   "title_pt": "16 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）富田光男（長男）と申す二十四歳の信者でございますが、十八歳の時、ある夜突然ひきつけを起しまして以来月に一度ないし三カ月に一度くらいの割で起しておりました（症状は手足をバタつかせ呼吸困難となります）。一年ほ",
+   "pt_anchor": "16 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[16 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "16 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月十八日",
+   "title_pt": "18 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）私の先祖の屋敷に稲荷を祭ってありましたが、祖母の代、大火事にて稲荷もともに焼失いたしてしまいました。その後父母の代に屋敷は人手に渡り移転しましたところ、祖母の夢の告げに、狐が現われ「どうか祭ってほしい」と",
+   "pt_anchor": "18 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[18 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "18 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十一日",
+   "title_pt": "21 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）チブスの御浄化につきお伺い申し上げます。",
+   "pt_anchor": "21º de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[21º de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "21º de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十五日",
+   "title_pt": "25 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）島根県簸川郡平田町猪ノ目、篠原玉月（タマツキ）と申す十五歳の男子の御浄化につき謹んでお伺い申し上げます。",
+   "pt_anchor": "25 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "八月二十八日",
+   "title_pt": "28 de agosto",
+   "jp_anchor": "Interlocutor: （お伺）入江宅市（五十一歳）と申す信者でございますが、北支従軍中昭和十六年秋より足が重だるくなり、日増しに悪化しついに歩行困難となりました。病名も不明のままあれこれと医療を受けましたが、悪化するのみでございました",
+   "pt_anchor": "28 de agosto",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[28 de agosto]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "28 de agosto"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

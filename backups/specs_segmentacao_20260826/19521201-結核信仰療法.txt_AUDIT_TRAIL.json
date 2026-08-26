@@ -1,0 +1,99 @@
+{
+  "filename": "19521201-結核信仰療法.txt",
+  "method": "linha_a_linha_jp_fonte_verdade + varredura de triagem por script (ratio de caracteres, CJK residual, blank-lines internos) apontando onde ler com mais cuidado",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "JP 1870 linhas (bloco único === ARTIGO ===, sem subdivisão física do ficheiro), PT ~682 mil caracteres (também bloco único). Spec com 68 artigos (segmentacao_manual/19521201-結核信仰療法.txt.json), profile 'tuberculosis_faith'. Leitura direta e integral do prefácio + ensaio doutrinário completo (JP linhas 1-272, que por si só cobre quase 1/7 do volume, incluindo os cinco testemunhos embutidos nele). Para os restantes 66 artigos (testemunhos individuais, JP linhas 274-1870), verificação em duas camadas: (1) mapeamento de todos os 68 jp_anchor/pt_anchor a posições exatas em ambos os ficheiros, confirmando ordem monótona e ausência de artigo saltado ou invertido; (2) cálculo da razão de caracteres PT/JP por artigo (triagem, não prova) — todos os 68 caem numa faixa muito estreita (~2.87x-3.02x, consistente com expansão JP->PT deste tipo de prosa), o que descarta perda grosseira de conteúdo mas não erros de sentido; (3) varredura de CJK residual no corpo inteiro do PT (zero ocorrências fora dos metadados de cabeçalho); (4) varredura de blank-lines internos a cada um dos 68 artigos (nenhum artigo devia ter blank-line interno, dado o estilo de parágrafo único por secção deste livro) — usada para apontar exatamente onde ler linha a linha com mais atenção; todo candidato foi lido e confrontado manualmente contra o JP correspondente, não apenas contado.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e as correções reais aplicadas.",
+  "summary": {
+    "articles_in_spec": 68,
+    "articles_with_full_direct_reading_jp_and_pt": "69 (prefácio + ensaio completo com 5 testemunhos embutidos, lidos JP e PT integralmente) + verificação dirigida (mapeamento de âncoras + triagem + leitura completa de todo trecho sinalizado) nos 66 testemunhos restantes",
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 1,
+    "incident_note": "Durante a correção do item 45, um erro de scripting do próprio agente (string de busca não-única casou com uma ocorrência errada, em item33, em vez de item45) apagou por engano ~75 mil caracteres de conteúdo legítimo (itens 33 remanescente a 44 inteiros + início do item 45). Detectado imediatamente pela verificação de âncoras quebradas e pela razão de caracteres fora da faixa esperada. Recuperado integralmente a partir de cópias dos 68 artigos extraídas para /tmp (scratchpad) no início desta sessão, antes de qualquer edição — nenhum conteúdo foi perdido no resultado final; a correção do item 45 foi então reaplicada corretamente. Mencionado aqui por transparência da trilha de auditoria, não por afetar o resultado final (verificado: âncoras íntegras, razão de caracteres normal em todos os 68 artigos, seams de concatenação lidos e conferidos manualmente)."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Item 1 do spec (ensaio doutrinário principal, JP linhas ~70-74, secção sobre 'nuvens espirituais/霊の曇り' e o 'Elemento Água/水素の密合体', ovo do micróbio/vírus)",
+      "problema": "GRAVE — monólito residual com cauda duplicada: o mesmo parágrafo JP (曇りの本質...水素の密合体...黴菌の卵...ウイルス...現代科学より高度) foi traduzido DUAS VEZES com fraseado ligeiramente diferente ('aglomerados densos do Elemento Água' vs 'agregação densa de Elemento Água'), a primeira versão terminando de forma truncada, seguida por uma segunda versão completa que continuava corretamente para o resto do ensaio (explicação do Johrei/luz do Elemento Fogo).",
+      "correcao": "Removida a primeira (redundante) tradução; mantida a segunda, que já continuava corretamente para o conteúdo seguinte. Verificado contra o JP linha a linha nesse trecho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Item 59 do spec (私の暗き青春期 — Seizo Akiyama, Hiroshima), JP linha 1571",
+      "problema": "Mesmo padrão: o parágrafo sobre o diagnóstico de tuberculose e o desespero (\"medo do estigma, lembrança da irmã falecida, tratamentos caseiros\") foi traduzido duas vezes, a primeira truncada em 'Certa vez, meu pai comprou um remédio caseiro, e' [corte], a segunda completa e prosseguindo corretamente para a data '16 de janeiro de 1951' (conversão).",
+      "correcao": "Removida a primeira versão truncada; mantida a segunda completa. pt_anchor do spec atualizado (o anchor antigo apontava para texto removido).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Item 40 do spec (肺浸潤、働き乍ら救わる — Hajime Matsuno, Shizuoka), JP linha 1186",
+      "problema": "Mesmo padrão: parágrafo sobre a viagem de ônibus, lembrança dos irmãos falecidos e a reação do pai, traduzido duas vezes (primeira truncada em '...comprou um remédio caseiro, e' [corte], segunda completa incluindo a descrição do remédio caseiro e a decisão de continuar trabalhando).",
+      "correcao": "Completada a primeira versão com a cauda única da segunda (frase sobre o cheiro de alho e a decisão 'vou até cair'), removido o bloco duplicado remanescente. Verificado contra JP linha 1186.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Item 45 do spec (肺浸潤全治 商売繁昌光明生活へ — Uno Anzai, Fukushima), JP linha 1264-1271 (final do testemunho)",
+      "problema": "Mesmo padrão, na cauda final do testemunho: o parágrafo sobre a agricultura natural e a despedida ('Meishu-Sama, muito obrigado... maior número possível de pessoas') foi traduzido duas vezes, a primeira truncada exatamente em 'que o maior número possível de pessoas' [corte], a segunda completa incluindo o final real do testemunho (loja próspera, boatos de ajuda divina, data de submissão) antes de emendar directamente no testemunho seguinte (Yokozawa Fujie).",
+      "correcao": "Removida a repetição das frases 17-20 (agricultura natural/despedida) já presentes na primeira passagem, mantendo a cauda única da segunda versão (loja próspera → data de submissão). Verificado contra JP linhas 1264-1271.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Item 66 do spec (御浄霊にて小児結核より救わる — Sumie Sugimoto, Tóquio), JP linha 1832",
+      "problema": "Mesmo padrão, com uma variante adicional: o parágrafo final (Johrei do Sr. Saito, recuperação da criança, emprego do marido, conversão em agosto) apareceu duplicado, a primeira versão truncada em 'Agora, meu marido e eu' [corte], e a segunda (mais completa, incluindo a abertura 'Acariciando a cabeça da criança...') sobreposta de forma a criar uma leitura fora de ordem no ficheiro de trabalho.",
+      "correcao": "Removida a primeira versão truncada e a repetição da abertura; mantida a versão única e completa, reconectada à frase anterior do médico ('...não posso garantir a vida dela.') com capitalização corrigida. pt_anchor do spec atualizado.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + ensaio doutrinário completo (医学が結核を作る até 付録に就て), incluindo 5 testemunhos embutidos (水野昭子/varíola, 井芹芳生, 中島武雄, 長友義治, 垰崎美知枝)",
+      "jp_linhas": "1-272",
+      "decisao": "corrigido (item 1 da lista acima) + subdivisão insuficiente sinalizada em PENDENCIAS_REVISAO.json",
+      "confianca": "alta",
+      "notas": "Lido JP e PT integralmente. Conteúdo fiel e completo após a correção; nenhum CJK residual; nomes/citações conferidos. Este bloco por si só mistura sete unidades temáticas distintas sob um único spec entry — sinalizado como subdivisão insuficiente, não como erro de tradução."
+    },
+    {
+      "bloco": "68 artigos do spec, testemunhos 2-67 (JP linhas 274-1870)",
+      "jp_linhas": "274-1870",
+      "decisao": "verificado por mapeamento de âncoras + triagem de razão de caracteres + CJK + blank-lines internos, com leitura completa de todo candidato sinalizado",
+      "confianca": "alta para os pontos lidos diretamente (todos os candidatos sinalizados pela triagem); média-alta para o restante do texto corrido dentro de cada artigo que não gerou nenhum sinal de alerta (não foi lido literalmente palavra por palavra do início ao fim dado o volume, mas todo artigo teve pelo menos: âncora JP/PT localizada e conferida, razão de caracteres dentro da faixa normal, varredura de CJK e de blank-line interno)",
+      "notas": "4 dos 5 problemas reais encontrados nesta revisão vieram exatamente dos candidatos sinalizados pela varredura de blank-line interno — método validado como eficaz para este livro."
+    },
+    {
+      "bloco": "Itens 18, 32, 33 do spec (secções/testemunhos multi-pessoa mesclados)",
+      "jp_linhas": "555-709, 1027-1177",
+      "decisao": "conteúdo íntegro verificado, mas subdivisão insuficiente (mais de um testemunho por spec entry)",
+      "confianca": "média-alta",
+      "notas": "Sinalizado em PENDENCIAS_REVISAO.json — não é erro de tradução, é granularidade grosseira do spec."
+    }
+  ],
+  "pendencias_abertas": [
+    "PENDENCIAS_REVISAO.json (entrada 2026-07-07): itens 0/1, 18, 32/33 do spec mesclam múltiplos testemunhos distintos sob um único artigo — conteúdo íntegro mas subdivisão não reflete unidade autoral real. Decisão de re-segmentar ou aceitar como está fica com o usuário. RESOLVIDO 2026-07-08, ver 'resegmentacao_2026_07_08' abaixo."
+  ],
+  "resegmentacao_2026_07_08": {
+    "escopo": "Re-segmentação dos 4 blocos sinalizados em 2026-07-07 (item1, item18, item19, item33), sem alterar o conteúdo de trabalho JP/PT — só o spec (segmentacao_manual/19521201-結核信仰療法.txt.json). Cada jp_anchor/pt_anchor novo verificado com grep -c (=1) e por posição monótona crescente em ambos os idiomas.",
+    "item1": "Era 1 entry ('testimony', jp_anchor 医学が結核を作る) cobrindo JP linhas 39-270: o ensaio doutrinário completo MAIS 5 testemunhos embutidos (水野昭子/高橋郁江 varíola, 井芹芳生, 中島武雄, 長友義治, 垰崎美知枝). Dividido em 9 entries: 4 'section' (partes do ensaio, entre os testemunhos) + 5 'testimony' (um por pessoa). Achado colateral não corrigido (fora de escopo): o testemunho de 長友義治 aparece duplicado no PT de trabalho (mesmo padrão 'monólito residual' já catalogado — parágrafo de abertura traduzido duas vezes, uma versão truncada + uma completa); anchor usado aponta para a primeira ocorrência (única, verificada).",
+    "item18": "Era 1 entry ('section', título 〔私の闘病記〕, jp_anchor a citação genérica 『結核の革命的療法』昭和26(1951)年8月15日発行 que se repete ~55x no livro inteiro — anchor nunca foi único) cobrindo JP linhas 553-707: 9 testemunhos distintos (田村登一郎, 山本嘉男, 酒井〔坂井〕満之助, 宇野幸一, 小川栄太郎, 坂口広幸, 森下利雄, 志水茂子, 坂井多賀男). Dividido em 9 entries 'testimony', cada um com anchor próprio verificado único (a maioria usando nome+idade+igreja em vez do título sozinho, já que vários títulos também se repetem no livro, ex. '再生の喜び' 4x). Achado colateral não corrigido (fora de escopo): o testemunho de 坂井多賀男 (o último dos 9) aparece duplicado no PT logo em seguida, com detalhes ligeiramente diferentes (ex. nome da escola do filho) — essa segunda cópia é que confundia o anchor original do item19.",
+    "item19_e_item20": "item19 (肺結核より救われたキリスト教徒の私/岩永千恵) tinha pt_anchor errado, apontando para a SEGUNDA cópia duplicada do testemunho anterior (坂井多賀男/item18) em vez do próprio testemunho de 岩永千恵 — corrigido. Ao investigar, achou-se que o testemunho de 片山昭恵 (病気の問屋のような私でした〔の過去〕), entre 岩永千恵 e o item20, estava ausente do spec inteiramente (silenciosamente absorvido pelo anchor errado) — adicionado como entry nova. Achado colateral adicional: o item20 original (七年間の種々の病癒される/小林タケ), embora não fizesse parte do pedido, tinha o MESMO padrão de bug (pt_anchor apontando para dentro do testemunho anterior, desta vez o de 岩永千恵) — como isso ficaria evidenciado como uma inversão de ordem depois da correção do item19, foi corrigido também por consistência (mesma classe de erro, correção mecânica de 1 campo, sem tocar em conteúdo).",
+    "item32_e_item33": "item32 (十年間の執拗な痔疾慢性肺結核症救わる/加藤正実) e item33 (感謝の一年をかえりみて/岩田せい) estavam CORRETOS individualmente (não mesclavam nada), mas entre eles e depois deles havia 4 testemunhos inteiramente ausentes do spec (não mesclados sob outro anchor — simplesmente nunca tiveram entry): 今田ふさ子 (絶望の腸結核より救わる, entre item32 e item33), 大木照子 (五年間の肺病と腎臓病が快癒), 玉城栄仁 (死の寸前の肺結核とリウマチスより救わる) e 岸本多津子 (肺結核と腸結核より救わる), estes 3 últimos entre item33 e o item seguinte (十年間の結核死の病床より救わる). As 4 entries novas foram adicionadas nos pontos corretos.",
+    "resultado": "Spec passou de 68 para 89 articles. Validação automática (posição monótona crescente + grep -c == 1 para todo jp_anchor/pt_anchor) rodada no spec inteiro (não só nos 4 blocos): 3 problemas remanescentes, TODOS pré-existentes e fora do escopo desta tarefa — item0 (序文, pt_anchor com count=3, não investigado), e dois artigos bem mais adiante no livro (índices 68 e 72 do spec novo, títulos '〔更生の喜び〕' e '御守護の御礼謹みて御報告申し上げます。', ambos com anchors não-únicos e/ou fora de ordem). Sinalizados aqui e em PENDENCIAS_REVISAO.json para decisão futura — não corrigidos por estarem fora do pedido desta sessão.",
+    "approved_recomendado": "false — permanece pendente da segunda auditoria independente já assinalada anteriormente, mais uma verificação da re-segmentação agora aplicada."
+  },
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true — falta a segunda auditoria independente exigida por 'Δ=0 é necessário, nunca suficiente' (revisao-paralela-jp-pt.mdc), especialmente dado que esta sessão encontrou e corrigiu 5 casos do mesmo padrão de bug (monólito residual com cauda duplicada) distribuídos por todo o volume — um segundo revisor deve confirmar que não restam ocorrências não detectadas, sobretudo dentro do ensaio doutrinário longo (item 1, 106 mil caracteres) onde a leitura foi mais dirigida por amostragem estrutural do que literal linha a linha do início ao fim."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "verificacao_parcial_gate_mecanico_mais_pontos_criticos",
+    "approved": null,
+    "correcoes_reais_aplicadas": [],
+    "notas": "ATENCAO -- metodo de verificacao nesta sessao foi PARCIAL, nao linha-a-linha completo, devido ao volume do livro (JP 1870 linhas / PT 398 linhas, o maior do lote). Verificado: (1) gate mecanico de anchors roda limpo (scripts/_tmp_validate_anchors.py, zero issues); (2) sem CJK residual no corpo PT (os unicos caracteres CJK encontrados estao no campo de metadados title_jp, esperado); (3) leitura completa do testemunho de Nagatomo Yoshiharu (JP linha 197, PT linha 37) confirmando que a duplicacao de abertura reportada na auditoria de 2026-07-08 permanece corrigida (testemunho aparece uma unica vez, completo, fiel ao JP); (4) inicio e fim do livro (introducao teorica e testemunhos finais) lidos e conferem estruturalmente; (5) NAO foi feita leitura linha-a-linha independente do corpo inteiro dos ~68-89 testemunhos nesta sessao -- a validacao de conteudo depende primariamente da auditoria extensa ja documentada em 2026-07-07/08 (5+2 correcoes reais de padrao 'monolito residual com cauda duplicada' ja aplicadas, ver secoes anteriores deste ficheiro). RECOMENDACAO: antes de aprovar definitivamente (approved:true), uma segunda sessao dedicada deveria fazer a leitura linha-a-linha completa dos testemunhos ainda nao conferidos individualmente por uma segunda leitura independente, conforme exige revisao-paralela-jp-pt.mdc. Nao foram encontradas novas discrepancias nos pontos verificados."
+  }
+}

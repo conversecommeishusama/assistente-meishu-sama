@@ -1,0 +1,76 @@
+{
+  "filename": "19500420-自観叢書第10篇『神示の健康法』.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 366 linhas / PT reformatado para ~26 seções tituladas, todas com título+citação+parágrafos próprios), 10 trechos do spec (profile jikan_hen), do prefácio ao encarte final. Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, seção titulada por seção titulada (o JP contém ~26 seções com título próprio dentro dos 10 'trechos' do spec, já que os trechos 8 e 9 do spec agrupam múltiplas seções tituladas do autor sob uma única âncora de spec).",
+  "causa_real_da_razao_de_linhas": "JP 365/366 linhas vs PT original 82 linhas (~4,5:1) tinha DUAS causas simultâneas, confirmadas por leitura real, nunca só por contagem: (1) colapso de formatação -- o PT de trabalho tinha cada título de seção (ex. 'A Verdade da Saúde', 'Toxina Medicamentosa', '(Nota)') colado ao final do parágrafo anterior, sem linha própria nem espaçamento, e a seção 'Prefácio' (序文) estava totalmente ausente como título embora o conteúdo estivesse traduzido; boa parte do miolo do livro (de 人間は健康の器 até pelo menos 私の健康法) estava, na prática, concatenada em pouquíssimas linhas físicas gigantes; (2) conteúdo genuinamente ausente e uma duplicação real (ver correções 1, 8 e 9 abaixo) -- portanto o alerta de 4,5:1 era parcialmente justificado por perda de conteúdo real, não apenas por formatação, confirmando a regra de não presumir 'é só formatação' sem checagem linha a linha completa.",
+  "gate_mecanico": "Não substituído por esta trilha -- gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e a reformatação de parágrafos executada como parte da mesma tarefa (item 6 da regra revisao-paralela-jp-pt.mdc).",
+  "summary": {
+    "articles_in_spec": 10,
+    "articles_reviewed": 10,
+    "jp_titled_subsections_found_and_restored": 26,
+    "real_corrections_applied": 9,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Trecho 8 do spec (薬毒), seção titulada 'A Comédia da Nutrição' (栄養の喜劇), JP linha 95",
+      "problema": "GRAVE -- truncamento real de conteúdo, não apenas formatação: a frase JP '...次いで腸に下り不要分は糞尿となって排泄され必要分のみを吸収するのである。この過程 を経るまでに肝臓、胆嚢、腎臓、膵臓等あらゆる栄養機能の活動によって...' tinha a oração inteira sobre excreção de resíduos (fezes/urina) e a atividade do fígado, vesícula biliar, rins e pâncreas COMPLETAMENTE OMITIDA no PT, que saltava direto de 'desce para o intestino.' para 'necessários para todas as funções, como sangue, músculos...' -- uma frase sem sujeito nem verbo no PT, sintoma do corte.",
+      "correcao": "Traduzido e inserido do zero, a partir do JP: 'A parte desnecessária é excretada como fezes e urina, e apenas a parte necessária é absorvida. Até que esse processo se complete, por meio da atividade de todas as funções nutricionais — fígado, vesícula biliar, rins, pâncreas, etc. —, são produzidos, extraídos e distribuídos os nutrientes necessários para todas as funções...' (glossário consultado, sem termo específico aplicável a este trecho).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Trecho 9 do spec (現代医学がいかに間違っているかを...), seções tituladas 'Estragar o Corpo' (身体をこわす, JP linhas 266-270) e 'Pegar Frio ao Dormir' (寝冷, JP linhas 273-277)",
+      "problema": "GRAVE -- duas seções tituladas inteiras do autor, completamente ausentes do PT de trabalho. O PT saltava diretamente da nota de 日本脳炎は果して蚊の媒介か para o conteúdo de 疫痢 (a terceira das três seções curtas 'que citam o mesmo dstv 光20号 30/7/1949), sob um título incorreto herdado ('Adoecer', que não corresponde a nenhum título real do JP nesse ponto) -- ou seja, 疫痢 sobreviveu mas sem título correto, e as duas seções anteriores (身体をこわす e 寝冷) desapareceram sem deixar rastro.",
+      "correcao": "Traduzidas e inseridas do zero a partir do JP, cada uma com título e citação próprios: 'Estragar o Corpo' (com a nota de citação '...(一字修正)' traduzida como '(com correção de um caractere)') e 'Pegar Frio ao Dormir'. O título da terceira seção foi corrigido de 'Adoecer' para 'Disenteria Epidêmica' (tradução correta de 疫痢), mantendo o parágrafo original (que já estava correto e completo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Trecho 9 do spec, transição entre as seções 'Um Fato que Não Pode Ser Menosprezado' (軽視出来ない事実) e 'Exemplo Real dos Danos das Vacinas' (ワクチン禍の実例)",
+      "problema": "GRAVE -- duplicação real de conteúdo (não apenas formatação): o trecho final de 軽視出来ない事実 (a citação do jornal Mainichi sobre o revezamento 800m, mais a anedota do alpinista, Bernard Shaw e o monge zen Torisu Etsuzan) aparecia COMPLETO uma primeira vez, e em seguida era REPETIDO quase por inteiro numa segunda tradução (com fraseado ligeiramente diferente, ex. 'Furuhashi, apesar de ter vindo da final dos 400 metros, fez um tempo surpreendente de 1 minuto e 1,4 segundos...' repetido como 'Furuhashi obteve um resultado surpreendente de 1 minuto e 4 décimos...') antes de emendar no título da seção seguinte. Consistente com o padrão já catalogado de 'duplicação de blocos inteiros' desta coleção.",
+      "correcao": "Removida a segunda ocorrência duplicada (a variante de fraseado mais fraca), mantendo a primeira tradução (completa e correta) do trecho e prosseguindo diretamente para o título 'Exemplo Real dos Danos das Vacinas'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Todo o volume -- 26 pontos de transição entre seções",
+      "problema": "Colapso de formatação sistemático: todo título de seção (ex. 'A Verdade da Saúde', 'O Ser Humano é um Vaso da Saúde', 'Saúde Verdadeira e Saúde Aparente', 'Toxina Medicamentosa', 'A Comédia da Nutrição', etc.) e todo rótulo de nota '(Nota)' estava colado ao final do último parágrafo da seção anterior, sem linha própria e sem espaçamento -- viola item 7 do checklist (títulos/cabeçalhos) e item 6 (parágrafação 1:1, já que o JP usa linhas em branco e espaçamento consistentes -- 1 linha em branco antes de nota/título dentro do mesmo bloco, 3 linhas em branco entre seções tituladas distintas, 2 linhas em branco entre as três seções curtas de dstv compartilhado). O título 'Prefácio' (序文) estava totalmente ausente (não apenas colado, mas nunca escrito).",
+      "correcao": "Reformatado o arquivo inteiro: cada título extraído para linha própria com espaçamento fiel ao padrão do JP (3 linhas em branco entre seções tituladas principais, 2 entre as três seções curtas de dstv 20号 partilhada, 1 antes de rótulos '(Nota)'); título 'Prefácio' adicionado antes do primeiro parágrafo; assinatura 'Autor' (著者) mantida em linha própria e recuada. Nenhuma palavra do texto já correto foi alterada -- apenas a segmentação em linhas/parágrafos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Título de seção correspondente a 医学に望む",
+      "problema": "Consistência de título -- alguns títulos de seção estavam com marcação markdown '**negrito**' (a partir de 乳幼児の健康 em diante) enquanto o restante do arquivo não usa nenhuma marcação. JP não tem ênfase tipográfica nos títulos.",
+      "correcao": "Removida a marcação '**' de todos os títulos para consistência com o padrão predominante do arquivo (checklist item 7).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Linha de subtítulo logo após o título principal ('Jikan Sosho, publicado em 20 de abril...')",
+      "problema": "Simplificação que perdia informação: o PT dizia apenas 'Jikan Sosho, publicado em 20 de abril do ano 25 da Era Showa (1950)', omitindo '自観叢書10編『神示の健康法』' (nome completo da coletânea, número do volume e título repetido, conforme o JP).",
+      "correcao": "Expandido para 'Coletânea Jikan, 10º Volume, \"Métodos de Saúde da Revelação Divina\", publicado em 20 de abril do ano 25 da Era Showa (1950)'.",
+      "confianca": "media-alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + Autor (序文/著者)", "jp_linhas": "20-35", "decisao": "corrigido -- título 'Prefácio' ausente, adicionado; subtítulo expandido (correção 6)", "confianca": "alta"},
+    {"bloco": "O Erro da Medicina (医学の誤謬)", "jp_linhas": "39-45", "decisao": "ok -- só reformatação de título/nota", "confianca": "alta"},
+    {"bloco": "A Verdade da Saúde / O Ser Humano é um Vaso da Saúde / Saúde Verdadeira e Saúde Aparente / Toxina Medicamentosa (健康の真理/人間は健康の器/真の健康と擬健康/薬毒)", "jp_linhas": "49-84", "decisao": "ok -- conteúdo completo, só reformatação", "confianca": "alta"},
+    {"bloco": "A Comédia da Nutrição (栄養の喜劇)", "jp_linhas": "88-106", "decisao": "corrigido -- truncamento real (correção 1)", "confianca": "alta"},
+    {"bloco": "O que se Aprende com os Relatos de Graças / Como Ver Este Fato / A Medicina do Espírito Divino é uma Medicina Democrática / O que Espero da Medicina / A Transformação em Paraíso Através da Saúde / O Método de Saúde que Cria \"Mimados\" / Os Japoneses e as Doenças Mentais / A Saúde das Crianças Pequenas / O Corpo Humano é um Conjunto / A Encefalite Japonesa é Realmente Transmitida por Mosquitos?", "jp_linhas": "110-262", "decisao": "ok -- conteúdo completo em todas, só reformatação e remoção de ** (correção 5)", "confianca": "alta"},
+    {"bloco": "Estragar o Corpo / Pegar Frio ao Dormir / Disenteria Epidêmica (身体をこわす/寝冷/疫痢)", "jp_linhas": "266-284", "decisao": "corrigido -- duas seções inteiras ausentes + título incorreto na terceira (correção 2)", "confianca": "alta"},
+    {"bloco": "Os Micróbios São Temíveis? / Um Fato que Não Pode Ser Menosprezado (細菌恐るべき乎/軽視出来ない事実)", "jp_linhas": "288-307", "decisao": "corrigido -- duplicação na transição para a seção seguinte (correção 3)", "confianca": "alta"},
+    {"bloco": "Exemplo Real dos Danos das Vacinas / Vacinação Preventiva e Tuberculose (ワクチン禍の実例/予防接種と結核 -- trecho 10 do spec)", "jp_linhas": "311-337", "decisao": "ok -- conteúdo completo (após remoção da duplicação da correção 3), só reformatação", "confianca": "alta"},
+    {"bloco": "Meu Método de Saúde + encarte final (私の健康法 + colofão)", "jp_linhas": "341-366", "decisao": "ok -- conteúdo completo, só reformatação", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Todos os 10 trechos do spec (que cobrem as 26 seções tituladas reais do JP) foram lidos linha a linha, com 2 blocos de conteúdo genuinamente ausente restaurados, 1 truncamento de frase restaurado, 1 duplicação removida, e a paragrafação/títulos reformatados 1:1 com o JP em todo o volume."
+  }
+}

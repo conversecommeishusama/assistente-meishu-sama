@@ -1,0 +1,130 @@
+{
+  "filename": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 125 linhas de ficheiro / PT reestruturado de 34 para 70 linhas de conteúdo, sem alterar o texto real, apenas restaurando a paragrafação e os cabeçalhos). Prefácio + 6 capítulos numerados (I-VI) + 4 subpartes internas do capítulo V (Primeira a Quarta Parte) + 2 subtítulos internos do capítulo VI (citação de jornal). Todo o corpo do JP foi lido e confrontado frase a frase com o PT correspondente na mesma ordem.",
+  "alerta_inicial": "Ratio JP/PT de ~3.7:1 (125 linhas JP vs 34 linhas PT) sinalizado no pedido de revisão. Confirmado como sintoma real de colapso de formatação: quase todo o volume estava com múltiplos parágrafos JP colapsados numa única linha PT gigante, e os títulos de capítulo (que no JP são parágrafos próprios com linhas em branco ao redor) apareciam colados ao final do parágrafo anterior, no meio do texto corrido, em vez de linha própria.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, conforme exigido por 'Δ=0 é necessário, nunca suficiente'.",
+  "spec_contaminado": {
+    "confirmado": true,
+    "descricao": "Os 9 artigos do spec (title_pt, pt_anchor, pt_prefix) estavam contaminados com títulos e âncoras de outro livro/tema, sem nenhuma relação com o conteúdo real deste volume (que é sobre Johrei/doença/tuberculose). Títulos falsos encontrados: 'O Propósito do Deus Principal e a Verdade da Ordem Celestial e Terrestre', 'A Origem da Religião e o Advento do Salvador', 'A Essência do Bodhisattva Kannon', 'A Realidade dos Três Mundos: Divino, Espiritual e Material', 'A Verdade do Bem e do Mal e a Construção do Mundo Luminoso', 'A Missão do Japão e dos Países Estrangeiros', 'Princípio da Doença e do Método de Saúde Absoluta', e dois títulos vazios/sem sentido 'Aula 8 Aula —' / 'Aula 9 Aula —'. Mesmo padrão de contaminação já encontrado e reportado (não corrigido) no volume irmão 浄霊法講座2号.",
+    "correcao_aplicada": "Todos os 9 campos title_pt/pt_anchor/pt_prefix corrigidos diretamente no spec (19531101浄霊法講座(一)『浄霊法講座』1号.txt.json), com base no jp_anchor real de cada artigo (confirmado correto) e no conteúdo real do PT após a correção da paragrafação. title_pt agora usa os títulos genuínos do volume (ex.: 'I — O que é a Doença — \"A Terapia Revolucionária da Tuberculose\"', mantendo o estilo de numeração romana + travessão + título + fonte entre aspas já usado pela tradução existente no corpo do texto). pt_prefix zerado em todos os artigos (os títulos já estão embutidos no corpo do PT corrigido, não precisam de prefixo injetado pelo spec)."
+  },
+  "correcoes_reais_aplicadas_ao_texto": [
+    {
+      "n": 1,
+      "localizacao": "Todo o corpo do PT (linha única original, ~7 blocos gigantes cobrindo múltiplos capítulos cada)",
+      "problema": "GRAVE — colapso de formatação generalizado: os 6 títulos de capítulo (I a VI) estavam colados ao final do parágrafo anterior no meio do texto corrido, em vez de linha própria (ex.: '...Não há outra terapia verdadeira além desta. II — A Geração dos Micróbios — \"Terapia de Fé para a Tuberculose\"\\nComo expliquei no item anterior...'). Além disso, dezenas de parágrafos JP distintos estavam colapsados em uma única linha PT gigante (ex.: os 6 parágrafos do capítulo I viravam 1 linha; os 9 parágrafos do capítulo II viravam 1 linha). Viola os itens 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos/cabeçalhos) do checklist.",
+      "correcao": "Reconstruído com quebra de parágrafo própria para cada um dos 67 parágrafos/títulos reais do JP (conferido frase a frase contra o JP), e cada título de capítulo/subparte movido para linha própria. Nenhum conteúdo foi reescrito ou reordenado — apenas re-parágrafado, com base na comparação frase a frase com os parágrafos JP correspondentes (linhas 24-125 do ficheiro JP).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Capítulo V, transição entre a Primeira Parte e a Segunda Parte (JP linhas 80-84, ＝第一＝ para ＝第二＝)",
+      "problema": "GRAVE — duplicação com truncamento, o mesmo padrão catalogado em 'Δ=0 é necessário, nunca suficiente' § achado 6 ('rascunho truncado seguido da versão completa'): o parágrafo final da Primeira Parte (JP linha 80, sobre a descrição do milagre do Johrei e a declaração 'mundo sem doença, pobreza e conflito') estava traduzido DUAS vezes. A primeira tentativa (que também recobria parte do parágrafo anterior, JP linha 78) terminava truncada em reticências no meio da frase ('...Sem uma convicção verdadeira, não se pode'), sem a conclusão real (que a declaração 'constituiria um engano ao mundo e um crime imperdoável' etc.). Logo em seguida (após a Segunda Parte, Terceira Parte e Quarta Parte e o capítulo VI inteiro, todos colapsados na mesma linha gigante), havia uma RETRADUÇÃO completa e não-truncada do mesmo conteúdo (JP linhas 78-80), desta vez terminando corretamente.",
+      "correcao": "Mantida a primeira tradução (completa e correta) dos parágrafos JP 75, 76 e 77; removida a continuação truncada (rascunho abandonado, cauda do parágrafo JP 78-80 cortada em reticências); usada a segunda tradução (completa, sem truncamento) para os parágrafos JP 78, 79 e 80. Resultado: cada parágrafo JP da Primeira Parte tem exatamente uma tradução completa no PT, na ordem correta, sem lacuna nem duplicação. Verificado por comparação de conteúdo (nenhuma informação nova perdida na remoção do trecho truncado, que era estritamente uma repetição incompleta do que já estava traduzido de forma completa mais adiante).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Prefácio (はしがき, JP linha 24)",
+      "problema": "Cabeçalho 'はしがき' (Prefácio) ausente no PT — o texto do prefácio aparecia diretamente após a linha de publicação, sem nenhum título indicando que se tratava do prefácio. Violação do checklist item 7 (títulos/cabeçalhos).",
+      "correcao": "Inserido '**Prefácio**' como título próprio antes do parágrafo do prefácio, no mesmo padrão (negrito, linha própria) já usado em outros volumes do acervo (ex. 19491230-自観叢書第9篇『光への道』, 19501030-法難手記).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Capítulo V, subpartes 2, 3 e 4 (JP: ＝第二＝, ＝第三＝, ＝第四＝)",
+      "problema": "Inconsistência de estilo entre as subpartes do capítulo V: a primeira subparte tinha título 'descritivo' ('= Primeira Parte ='), mas as seguintes apareciam apenas como '= SEGUNDO =', '= TERCEIRO =', '= QUARTO =' (numeral ordinal solto, maiúsculas, sem a palavra 'Parte'). Violação do checklist item 7 (consistência de títulos/cabeçalhos).",
+      "correcao": "Normalizado para '= Segunda Parte =', '= Terceira Parte =', '= Quarta Parte =', no mesmo padrão de '= Primeira Parte ='.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Título do capítulo VI (JP: 六　薬が効かなくなった　『栄光」一九六号)",
+      "problema": "Inconsistência de estilo: os capítulos I a V usavam numeral romano + travessão ('I —', 'II —' ... 'V —'), mas o capítulo VI estava com numeral arábico e minúsculas ('6. Os remédios deixaram de fazer efeito — ...'). Mesmo problema do achado 4 (item 7 do checklist).",
+      "correcao": "Normalizado para 'VI — Os Remédios Deixaram de Fazer Efeito — \"Eikō\" nº 196', mantendo o padrão romano + título em Título Case usado nos capítulos anteriores.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Capítulo VI, subtítulos internos da notícia de jornal citada (JP linhas 117-118: どんどん強くなる菌 / 罪はアメや食品にも)",
+      "problema": "Os dois subtítulos internos da notícia de jornal citada estavam colados ao texto ao redor (o primeiro ao final do parágrafo anterior, o segundo ao início do primeiro parágrafo de bala '◇'), em vez de linha própria como no JP.",
+      "correcao": "Separados em linha própria, mantendo a tradução já existente ('Bactérias cada vez mais fortes' e 'A culpa também é dos doces e alimentos').",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "Capítulo VI, parágrafo JP122 (curto, conclusão sobre resistência do gonococo) e manchete citada JP114 (\"効かなくなったペニシリン\")",
+      "problema": "O parágrafo curto JP122 estava colado ao final do parágrafo anterior (bala ◇ sobre doenças venéreas) sem quebra própria; a manchete citada JP114 ('Penicilina que não faz mais efeito') estava embutida no meio do parágrafo introdutório em vez de linha própria (o JP a apresenta como título de citação, em linha isolada).",
+      "correcao": "Ambos separados em linha própria.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Título + linha de publicação + Prefácio (はしがき)",
+      "jp_linhas": "20-26",
+      "decisao": "corrigido - título 'Prefácio' ausente (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "I. 病気とは何ぞや (6 parágrafos)",
+      "jp_linhas": "30-37",
+      "decisao": "corrigido - colapso de formatação (item 1); conteúdo completo e fiel",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "II. 黴菌の発生 (9 parágrafos)",
+      "jp_linhas": "41-51",
+      "decisao": "corrigido - colapso de formatação (item 1); conteúdo completo e fiel",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "III. 健康の真理 (4 parágrafos)",
+      "jp_linhas": "55-60",
+      "decisao": "corrigido - colapso de formatação (item 1); conteúdo completo e fiel",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "IV. 人間は健康の器 (2 parágrafos)",
+      "jp_linhas": "64-67",
+      "decisao": "corrigido - colapso de formatação (item 1); conteúdo completo e fiel",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "V. 浄霊の原理 — Primeira Parte (6 parágrafos)",
+      "jp_linhas": "71-80",
+      "decisao": "corrigido - colapso de formatação (item 1) e duplicação/truncamento grave (item 2); nenhum conteúdo perdido após correção",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "V. 浄霊の原理 — Segunda a Quarta Parte (16 parágrafos)",
+      "jp_linhas": "82-106",
+      "decisao": "corrigido - colapso de formatação (item 1) e inconsistência de título das subpartes (item 4); conteúdo completo e fiel, incluindo a repetição estilística legítima já presente no próprio JP ('霊主体従' explicado e depois nomeado, tradução usa a mesma frase do glossário oficial nas duas ocorrências — não é erro, é aplicação correta do termo 霊主体従 do glossario_traducao.json)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "VI. 薬が効かなくなった (título + 10 parágrafos/subtítulos, incl. citação de jornal)",
+      "jp_linhas": "110-125",
+      "decisao": "corrigido - colapso de formatação (item 1), inconsistência de título do capítulo (item 5) e subtítulos internos colados (itens 6-7); conteúdo completo e fiel",
+      "confianca": "alta"
+    }
+  ],
+  "cjk_residual_check": "Varredura automatizada (regex de intervalo Unicode CJK) sobre o corpo do ficheiro PT completo após as correções (excluindo o bloco de metadados do cabeçalho, que legitimamente contém title_jp): nenhum caractere CJK encontrado.",
+  "verificacao_integridade_conteudo": "Comparação de comprimento de texto (sem espaços) entre o conteúdo original (todas as linhas do corpo, incluindo o rascunho truncado duplicado) e o conteúdo reestruturado: a única redução real é exatamente o tamanho do trecho truncado duplicado removido (achado 2), confirmando que nenhum outro conteúdo foi perdido na reestruturação — apenas reorganizado em parágrafos e com o rascunho duplicado descartado.",
+  "summary": {
+    "paragrafos_titulos_no_jp": 67,
+    "paragrafos_titulos_no_pt_apos_correcao": 67,
+    "real_corrections_applied": 7,
+    "items_escalated_to_pendencias": 0,
+    "spec_estava_contaminado": true,
+    "spec_corrigido": true
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções, spec descontaminado. approved:true."
+  }
+}

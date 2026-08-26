@@ -1,0 +1,15 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Revista_Asahi",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "＊この明为様と徳川夢声氏の対談は、『週刉朝日』掲載されたものであるが、途中まではと特に関連性がないため割愛した。",
+   "title_pt": "Diálogo Meishu-Sama e Tokugawa Musei (Arte)",
+   "jp_anchor": "＊この明主様と徳川夢声氏の対談は、『週刊朝日』掲載されたものであるが、途中まではと特に関連性がないため割愛した。",
+   "pt_anchor": "Diálogo Meishu-Sama e Tokugawa Musei (Arte)\n\nRevista Asahi, publicado em 6 de maio ",
+   "notes": "entry_id=publication-jp-1836 sort_date=6 de maio de 1951"
+  }
+ ],
+ "filename": "Revista_Asahi.txt"
+}

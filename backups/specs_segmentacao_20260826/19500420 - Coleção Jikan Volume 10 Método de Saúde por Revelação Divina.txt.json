@@ -1,0 +1,223 @@
+{
+ "filename": "19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Reconstrucao completa 2026-07-15 (Rota B, CHUNK_TURNAWARE): spec anterior tinha 10 artigos, 0 ok / 10 warn-err; JP estava fundindo 9 secoes reais dentro de 1 artigo ('薬毒', 16384 chars) e mais 7 dentro de outro ('人体は綜合体である', mal rotulado com frase de abertura do corpo em vez do titulo real), faltava a ultima secao ('私の健康法') por completo, e havia um artigo espurio (assinatura '著者' tratada como artigo proprio). 10->26 artigos apos reconstrucao integral por leitura direta JP+PT (todos os 24 titulos de secao + prefacio confirmados 1:1 nos dois idiomas por grep sequencial, nenhuma posicao inventada).",
+ "segmentation_pass": "jp_line_v2_route_b_2026-07-15",
+ "previous_article_count": 26,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "自観叢書10編『神示の健康法』昭和25(1950)年4月20日発行",
+   "pt_anchor": "Coleção Jikan Volume 10 Método de Saúde por Revelação Divina",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "私は二十数年前から人類救済の聖業に従事しつつあるが、もちろん私の意識的に創めたものでもなく、企画したものでもない、神が私という人間を選ばれ、文化のあらゆる面における過誤、不正、蒙昧（もうまい）の根本義を開示され一切の是正を行わしめ給うのであ",
+   "pt_anchor": "Há mais de vinte anos venho me dedicando à sagrada obra de salvar a humanidade. Não foi algo que eu tenha iniciado ou planejado conscientemente",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "医学の誤謬",
+   "title_pt": "",
+   "jp_anchor": "医学の誤謬",
+   "pt_anchor": "O Erro da Medicina",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "健康の真理",
+   "title_pt": "",
+   "jp_anchor": "健康の真理",
+   "pt_anchor": "A Verdade da Saúde",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人間は健康の器",
+   "title_pt": "",
+   "jp_anchor": "人間は健康の器",
+   "pt_anchor": "O Ser Humano é um Vaso da Saúde",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "真の健康と擬健康",
+   "title_pt": "",
+   "jp_anchor": "真の健康と擬健康",
+   "pt_anchor": "Saúde Verdadeira e Saúde Aparente",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "薬毒",
+   "title_pt": "",
+   "jp_anchor": "薬毒\n\n　前項のごとく今日まで",
+   "pt_anchor": "Toxina Medicamentosa",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "栄養の喜劇",
+   "title_pt": "A Comédia da Nutrição",
+   "jp_anchor": "栄養の喜劇",
+   "pt_anchor": "A Comédia da Nutrição",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "おかげ話から何を掴んだか",
+   "title_pt": "O que se Aprende com os Relatos de Graças",
+   "jp_anchor": "おかげ話から何を掴んだか",
+   "pt_anchor": "O que se Aprende com os Relatos de Graças",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "此事実を何とみる",
+   "title_pt": "Como Ver Este Fato",
+   "jp_anchor": "此事実を何とみる",
+   "pt_anchor": "Como Ver Este Fato\n\nReedição do artigo publicado na edição nº 11 de \"Hikari\", em 31 de maio de 1949 (Showa 24).",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "神霊医学は民主的医学なり",
+   "title_pt": "A Medicina do Espírito Divino é uma Medicina Democrática",
+   "jp_anchor": "神霊医学は民主的医学なり",
+   "pt_anchor": "A Medicina do Espírito Divino é uma Medicina Democrática",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "医学に望む",
+   "title_pt": "O que Espero da Medicina",
+   "jp_anchor": "医学に望む",
+   "pt_anchor": "O que Espero da Medicina",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "健康による天国化",
+   "title_pt": "A Transformação em Paraíso Através da Saúde",
+   "jp_anchor": "健康による天国化",
+   "pt_anchor": "A Transformação em Paraíso Através da Saúde",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "坊ちゃんを作る健康法",
+   "title_pt": "O Método de Saúde que Cria \"Mimados\"",
+   "jp_anchor": "坊ちゃんを作る健康法",
+   "pt_anchor": "O Método de Saúde que Cria \"Mimados\"",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "日本人と精神病",
+   "title_pt": "Os Japoneses e as Doenças Mentais",
+   "jp_anchor": "日本人と精神病",
+   "pt_anchor": "Os Japoneses e as Doenças Mentais",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "乳幼児の健康",
+   "title_pt": "A Saúde das Crianças Pequenas",
+   "jp_anchor": "乳幼児の健康",
+   "pt_anchor": "A Saúde das Crianças Pequenas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人体は綜合体である",
+   "title_pt": "O Corpo Humano é um Conjunto",
+   "jp_anchor": "人体は綜合体である",
+   "pt_anchor": "O Corpo Humano é um Conjunto",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "日本脳炎は果して蚊の媒介か",
+   "title_pt": "A Encefalite Japonesa é Realmente Transmitida por Mosquitos?",
+   "jp_anchor": "日本脳炎は果して蚊の媒介か",
+   "pt_anchor": "A Encefalite Japonesa é Realmente Transmitida por Mosquitos?",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "身体をこわす",
+   "title_pt": "Estragar o Corpo",
+   "jp_anchor": "身体をこわす",
+   "pt_anchor": "Estragar o Corpo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "寝冷",
+   "title_pt": "Pegar Frio ao Dormir",
+   "jp_anchor": "寝冷",
+   "pt_anchor": "Pegar Frio ao Dormir",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "疫痢",
+   "title_pt": "Disenteria Epidêmica",
+   "jp_anchor": "疫痢",
+   "pt_anchor": "Disenteria Epidêmica",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "細菌恐るべき乎",
+   "title_pt": "Os Micróbios São Temíveis?",
+   "jp_anchor": "細菌恐るべき乎",
+   "pt_anchor": "Os Micróbios São Temíveis?",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "軽視出来ない事実",
+   "title_pt": "Um Fato que Não Pode Ser Menosprezado",
+   "jp_anchor": "軽視出来ない事実",
+   "pt_anchor": "Um Fato que Não Pode Ser Menosprezado",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "ワクチン禍の実例",
+   "title_pt": "Exemplo Real dos Danos das Vacinas",
+   "jp_anchor": "ワクチン禍の実例",
+   "pt_anchor": "Exemplo Real dos Danos das Vacinas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "予防接種と結核",
+   "title_pt": "Vacinação Preventiva e Tuberculose",
+   "jp_anchor": "予防接種と結核",
+   "pt_anchor": "Vacinação Preventiva e Tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "私の健康法",
+   "title_pt": "Meu Método de Saúde",
+   "jp_anchor": "私の健康法",
+   "pt_anchor": "Meu Método de Saúde\n\nPublicação do artigo da edição nº 43 de \"Hikari\", de 1º de janeiro de 1950 (Showa 25).",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

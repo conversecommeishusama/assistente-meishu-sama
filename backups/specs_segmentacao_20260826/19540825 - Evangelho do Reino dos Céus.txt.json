@@ -1,0 +1,447 @@
+{
+ "filename": "19540825 - Evangelho do Reino dos Céus.txt",
+ "profile": "article_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 160→160. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 160,
+ "split_method": "line_shinko_generic",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "作るのであって、人間の力では一個の",
+   "pt_anchor": "Evangelho do Reino dos Céus",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "難行苦行",
+   "title_pt": "",
+   "jp_anchor": "難行苦行",
+   "pt_anchor": "Práticas Ascéticas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "禁欲",
+   "title_pt": "",
+   "jp_anchor": "禁欲",
+   "pt_anchor": "Abstinência",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "解脱",
+   "title_pt": "",
+   "jp_anchor": "解脱",
+   "pt_anchor": "Libertação",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "天国的宗教と地獄的宗教",
+   "title_pt": "",
+   "jp_anchor": "天国的宗教と地獄的宗教",
+   "pt_anchor": "Religião do Paraíso e Religião do Inferno",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "迷信邪教",
+   "title_pt": "",
+   "jp_anchor": "迷信邪教",
+   "pt_anchor": "Religião Maligna e Supersticiosa",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "正邪の戦い",
+   "title_pt": "",
+   "jp_anchor": "正邪の戦い",
+   "pt_anchor": "A Batalha entre o Correto e o Incorreto",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "東洋と西洋",
+   "title_pt": "",
+   "jp_anchor": "東洋と西洋",
+   "pt_anchor": "Oriente e Ocidente",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "大乗と小乗",
+   "title_pt": "",
+   "jp_anchor": "大乗と小乗",
+   "pt_anchor": "Daijo e Shojo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "真理の具現",
+   "title_pt": "",
+   "jp_anchor": "真理の具現",
+   "pt_anchor": "A Manifestação da Verdade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "神を見せる宗教",
+   "title_pt": "",
+   "jp_anchor": "神を見せる宗教",
+   "pt_anchor": "A Religião que Mostra Deus",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "無神論に就いて",
+   "title_pt": "",
+   "jp_anchor": "無神論に就いて",
+   "pt_anchor": "Sobre o Ateísmo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "生きてる宗教",
+   "title_pt": "",
+   "jp_anchor": "生きてる宗教",
+   "pt_anchor": "Religião Viva",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "大乗宗教",
+   "title_pt": "",
+   "jp_anchor": "大乗宗教",
+   "pt_anchor": "Religião Daijo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "真の大乗宗教",
+   "title_pt": "",
+   "jp_anchor": "真の大乗宗教",
+   "pt_anchor": "A Verdadeira Religião Daijo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "宗教と分派",
+   "title_pt": "",
+   "jp_anchor": "宗教と分派",
+   "pt_anchor": "Religião e Seitas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "主義というもの",
+   "title_pt": "",
+   "jp_anchor": "主義というもの",
+   "pt_anchor": "Sobre os \"Ismos\"",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "地上天国",
+   "title_pt": "",
+   "jp_anchor": "地上天国",
+   "pt_anchor": "Paraíso na Terra\n\n『O Evangelho do Paraíso』, 25 de agosto de 1954, 19540825, p. 78",
+   "notes": "pt_anchor tornado mais específico em 2026-08-05 (revisão rigorosa): a string genérica 'Paraíso na Terra' batia numa ocorrência dentro da própria frase final do artigo anterior (idx16), cortando o artigo 16 no meio da frase e vazando o fragmento para o início deste artigo. Verificado com split_by_anchors."
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊界と現界",
+   "title_pt": "",
+   "jp_anchor": "霊界と現界",
+   "pt_anchor": "Mundo Espiritual e Mundo Material",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊層界",
+   "title_pt": "",
+   "jp_anchor": "霊層界",
+   "pt_anchor": "Camadas do Mundo Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "天国と地獄",
+   "title_pt": "",
+   "jp_anchor": "天国と地獄",
+   "pt_anchor": "Paraíso e Inferno",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "浄霊と幸福",
+   "title_pt": "",
+   "jp_anchor": "浄霊と幸福",
+   "pt_anchor": "Johrei e Felicidade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "御説教",
+   "title_pt": "",
+   "jp_anchor": "御説教",
+   "pt_anchor": "O Sermão",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "プラグマチズム",
+   "title_pt": "",
+   "jp_anchor": "プラグマチズム",
+   "pt_anchor": "Pragmatismo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "大乗愛",
+   "title_pt": "",
+   "jp_anchor": "大乗愛",
+   "pt_anchor": "Amor Daijo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "幸福の秘訣",
+   "title_pt": "",
+   "jp_anchor": "幸福の秘訣",
+   "pt_anchor": "O Segredo da Felicidade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "悪に勝つ",
+   "title_pt": "",
+   "jp_anchor": "悪に勝つ",
+   "pt_anchor": "Vencer o Mal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "自分の悪に勝て",
+   "title_pt": "",
+   "jp_anchor": "自分の悪に勝て",
+   "pt_anchor": "Vença o Próprio Mal Interior",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "誠の有る無し",
+   "title_pt": "",
+   "jp_anchor": "誠の有る無し",
+   "pt_anchor": "Presença ou Ausência de Sinceridade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "怒る勿れ",
+   "title_pt": "",
+   "jp_anchor": "怒る勿れ",
+   "pt_anchor": "Não Se Irrite",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "日と月",
+   "title_pt": "",
+   "jp_anchor": "日と月",
+   "pt_anchor": "O Sol e a Lua",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "下座の行",
+   "title_pt": "",
+   "jp_anchor": "下座の行",
+   "pt_anchor": "A Prática da Humildade",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "優しさと奥床しさ",
+   "title_pt": "",
+   "jp_anchor": "優しさと奥床しさ",
+   "pt_anchor": "A Suavidade e o Refinamento",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "伊都能売の身魂",
+   "title_pt": "",
+   "jp_anchor": "伊都能売の身魂",
+   "pt_anchor": "A Alma de Izunome",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "人は人を咎むる勿れ",
+   "title_pt": "",
+   "jp_anchor": "人は人を咎むる勿れ",
+   "pt_anchor": "Não Julgueis os Outros",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "運命と自由主義",
+   "title_pt": "",
+   "jp_anchor": "運命と自由主義",
+   "pt_anchor": "Destino e Liberalismo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "調和の理論",
+   "title_pt": "",
+   "jp_anchor": "調和の理論",
+   "pt_anchor": "A Teoria da Harmonia",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "行詰り",
+   "title_pt": "",
+   "jp_anchor": "行詰り",
+   "pt_anchor": "Impasse",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "時期を待て",
+   "title_pt": "",
+   "jp_anchor": "時期を待て",
+   "pt_anchor": "Espere o Momento Certo",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "順序を過る勿れ",
+   "title_pt": "",
+   "jp_anchor": "順序を過る勿れ",
+   "pt_anchor": "Não Erres a Ordem",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "我と執着",
+   "title_pt": "",
+   "jp_anchor": "我と執着",
+   "pt_anchor": "O Ga e o Apego",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "御任せする",
+   "title_pt": "",
+   "jp_anchor": "御任せする",
+   "pt_anchor": "Entregar-se",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "夫婦の道",
+   "title_pt": "",
+   "jp_anchor": "夫婦の道",
+   "pt_anchor": "O Caminho do Casal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "恋愛哲学",
+   "title_pt": "",
+   "jp_anchor": "恋愛哲学",
+   "pt_anchor": "Filosofia do Amor",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "慢心取違い",
+   "title_pt": "",
+   "jp_anchor": "慢心取違い",
+   "pt_anchor": "Soberba e Equívoco",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "御神意を覚れ",
+   "title_pt": "",
+   "jp_anchor": "御神意を覚れ",
+   "pt_anchor": "Reconhecei a Vontade Divina",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "墳墓の奴隷？",
+   "title_pt": "",
+   "jp_anchor": "墳墓の奴隷？",
+   "pt_anchor": "Escravo do Túmulo?",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "物を識るという事",
+   "title_pt": "",
+   "jp_anchor": "物を識るという事",
+   "pt_anchor": "Sobre Conhecer as Coisas",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "算盤と能率",
+   "title_pt": "",
+   "jp_anchor": "算盤と能率",
+   "pt_anchor": "O Ábaco e a Eficiência",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "家相方位",
+   "title_pt": "",
+   "jp_anchor": "家相方位",
+   "pt_anchor": "Fisionomia e Direção da Casa",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "プロテスタントとカトリック",
+   "title_pt": "",
+   "jp_anchor": "プロテスタントとカトリック",
+   "pt_anchor": "Protestantes e Católicos",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "善と悪",
+   "title_pt": "",
+   "jp_anchor": "善と悪",
+   "pt_anchor": "Bem e Mal",
+   "notes": ""
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊線に就いて",
+   "title_pt": "",
+   "jp_anchor": "霊線に就いて",
+   "pt_anchor": "Sobre o Elo Espiritual\n\n'O Evangelho do Paraíso', 25 de agosto de 1954, 19540825, p. 162",
+   "notes": "pt_anchor estendido em 2026-08-05 (revisão rigorosa) para desambiguar: 'Sobre o Elo Espiritual' aparecia 2x no PT (título real do artigo 52 + citação entre parênteses dentro do próprio corpo do artigo 51, referenciando este item), causando bug de fronteira de âncora (split_by_anchors pegava a 1ª ocorrência errada, truncando o final do artigo 51 e colando-o no início do artigo 52). Verificado por split_by_anchors real após a correção."
+  },
+  {
+   "kind": "article",
+   "title_jp": "神と仏",
+   "title_pt": "",
+   "jp_anchor": "神と仏",
+   "pt_anchor": "Kami e Buda",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,113 @@
+{
+ "filename": "19530515 - Mioshie-shū nº 21.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 12→9. PT pairing pendente. | 2026-07-14 CHUNK_TURNAWARE: inseridas sessões 四月八日/四月十日 ausentes da spec (12->9 tinha pulado 2 sessões). | pt_anchor recalculado manualmente por leitura direta (alinhamento automático produzia cascata errada). | 2026-08-05 revisão rigorosa linha a linha JP<->PT: pt_anchor do artigo 1 realinhado ao texto corrigido (Nagoia->Nagoya).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 12,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十一号",
+   "pt_anchor": "Mioshie-shū nº 21",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月六日",
+   "title_pt": "6 de abril",
+   "jp_anchor": "明後日京都に行こうと思いますが、名古屋でも例のとおりに話をします。明後日は四月八日ですからお釈迦さんの誕生日です。私はそういうことにはかまわず に、七日で面会が終わりますし、いつも桜を見損なうので今年はぜひ桜を見たいと思って八日に決めたとこ",
+   "pt_anchor": "Penso em ir a Quioto depois de amanhã. Em Nagoya, também falarei como de costume. Depois de amanhã é 8 de abril, anivers",
+   "notes": "2026-08-05 revisão rigorosa: pt_anchor atualizado (Nagoia->Nagoya, padronização do topônimo no corpo do texto).",
+   "pt_prefix": "6 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月七日",
+   "title_pt": "7 de abril",
+   "jp_anchor": "明日京都に行くことになりましたが、その目的は、嵯峨の今度の家に泊まって、これからのあそこの地上天国と美術館の土地やいろいろのことの、大体の指図 をしようと思ってます。あそこの美術館は、前にも言ったとおり仏教美術館を造るつもりです。これは箱根",
+   "pt_anchor": "Amanhã irei a Quioto. O objetivo é ficar na nova casa em Saga e dar instruções gerais sobre o terreno do Paraíso Terrest",
+   "notes": "",
+   "pt_prefix": "7 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月八日　（名古屋市金山体育会館において）",
+   "title_pt": "8 de abril",
+   "jp_anchor": "時間がありませんからごく簡単にお話しします。これから一軒寄って、それから京都の嵯峨に行きますから時間がないのです。それに熱海から来る時に、信者 が増えたので、途中橋のたもとに大勢待っているので、その時には徐行して、たくさんなものですから非常",
+   "pt_anchor": "Não tenho tempo, por isso falarei de forma bem resumida. Preciso passar em um lugar e depois ir para Saga, em Quioto, po",
+   "notes": "",
+   "pt_prefix": "8 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十日　（京都市京都劇場において）",
+   "title_pt": "10 de abril",
+   "jp_anchor": "今日は時間があんまりありませんから、ごく簡単に話します。しかし今日の話はあなた方ばかりでなく、世界中が非常に聞きたい話なのです。だからここで話すのは惜しい気がしますが、まだ世界中に放送するまでになっておりませんから、言霊の霊で聞かせるわけで",
+   "pt_anchor": "Hoje não tenho muito tempo, por isso falarei de forma bem resumida. No entanto, o assunto de hoje não é apenas para você",
+   "notes": "",
+   "pt_prefix": "10 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十五日",
+   "title_pt": "15 de abril",
+   "jp_anchor": "今度五日がかりで京都に行ってきました。だいぶ至る所、信者が増えて、なかなか活気があるように見えました。京都ではほとんどお寺まわりで、毎日お寺ば かりをグルグルまわっていました。それでどこの寺も実に疲弊しきって気の毒なようです。まったく仏滅の",
+   "pt_anchor": "Desta vez, fui a Quioto por cinco dias. Em muitos lugares, o número de fiéis aumentou, e pareceu-me haver bastante vital",
+   "notes": "",
+   "pt_prefix": "15 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十六日",
+   "title_pt": "16 de abril",
+   "jp_anchor": "今度京都、奈良の方のお寺まわりをやりましたが、実に各寺が疲弊しきっているのです。このままで行ったらたいていな寺はつぶれてしまうだろうと思いま す。それで京都、奈良が仏教の本元ですから、本元がつぶれようとしているのですから、まったく仏滅の状態",
+   "pt_anchor": "Desta vez, percorri os templos das regiões de Quioto e Nara, e, de fato, cada templo está em completa decadência. Se as ",
+   "notes": "",
+   "pt_prefix": "16 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十七日",
+   "title_pt": "17 de abril",
+   "jp_anchor": "私がこの間京都に行きました時のその主な目的は、仏滅、つまりいよいよ仏教が滅するという時期になって、その救いです。どういう方法で救うかというと、 まず物質的に言えば、京都、奈良にたくさんお寺がありますが、そのお寺が経済的にだんだんやって行けな",
+   "pt_anchor": "O principal objetivo da minha recente ida a Quioto foi a salvação no momento da Extinção do Budismo, ou seja, quando o budismo finalmente se extingue. Como salvar? Primeiro, em termos materiais, há muitos templos em Quioto e Nara, mas esses templos estão gradualmente se tornando economicamente inviá",
+   "notes": "",
+   "pt_prefix": "17 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十五日",
+   "title_pt": "25 de abril",
+   "jp_anchor": "昨夜、木原さんを中心にした座談会の報告を読みましたが、最近割合に教修者が少ないということについて、教修者が増えて発展するようないろいろな方法を 考えなければならない、ということをいろいろ言ってましたが、それはみんな間違ってはいませんが、一番",
+   "pt_anchor": "Ontem à noite, li o relatório da reunião de discussão centrada no Sr. Kihara. Sobre o fato de que ultimamente há relativ",
+   "notes": "",
+   "pt_prefix": "25 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十六日",
+   "title_pt": "26 de abril",
+   "jp_anchor": "いつも言うとおり救世教の信仰は大乗信仰です。それでよく昔から仏教の方で出た言葉で“大乗道”“小乗道”というのがあります。大乗小乗と言っても、本 当の大乗は今までなかったのです。大乗小乗は仏教から出た言葉ですが、仏教そのものが小乗信仰なのです",
+   "pt_anchor": "Como sempre digo, a fé da Igreja Messiânica é a fé Daijo. Desde os tempos antigos, no budismo, surgiram os termos \"Camin",
+   "notes": "",
+   "pt_prefix": "26 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十七日",
+   "title_pt": "27 de abril",
+   "jp_anchor": "昨日、一昨日と大乗、小乗について話しましたが、それについて今度の総選挙の結果、一番意外に成績が良かったのは社会党の左派です。それから悪かったの は改進党です。これはなぜかというと、つまり大乗と小乗の現われです。その原因は再軍備問題なのです。",
+   "pt_anchor": "Ontem e anteontem falei sobre Daijo e Shojo. A respeito disso, o resultado mais surpreendentemente bom na eleição geral ",
+   "notes": "",
+   "pt_prefix": "27 de abril"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

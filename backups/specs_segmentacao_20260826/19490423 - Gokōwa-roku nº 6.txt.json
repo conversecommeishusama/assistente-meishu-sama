@@ -1,0 +1,26 @@
+{
+ "filename": "19490423 - Gokōwa-roku nº 6.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "御光話録６号",
+   "title_pt": "Gokōwa-roku nº 6",
+   "jp_anchor": "『御光話録』6号、昭和24(1949)年4月23日発行、特輯号",
+   "pt_anchor": "Interlocutor: Diz-se que o mundo espiritual é o mundo dos pensamentos. Como ocorre, ali, a comunicação de vontades?",
+   "notes": "",
+   "pt_prefix": "御光話録６号"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,120 @@
+{
+  "filename": "19531115-御垂示録26号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 204 linhas / PT reformatado para ~87 parágrafos de turno único, contra ~66 linhas antes da correção), 2 artigos por spec (prefácio + sessão única [1º de novembro]), profile ochishiji_roku. Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, turno a turno (Interlocutor entre aspas / Meishu-Sama sem aspas).",
+  "alerta_inicial": "Ratio JP/PT ~3.1:1 (JP 204 linhas, PT 66 linhas antes da correção) apontava para monólito residual, padrão já catalogado nesta família (御垂示録25号, Gokōwa) — confirmado.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "turnos_jp_mapeados": 83,
+    "turnos_pt_antes": "~48 turnos discretos + 1 monólito gigante (~40 turnos fundidos em 1 parágrafo)",
+    "turnos_pt_depois": "~87 turnos discretos, 1:1 com o JP",
+    "monolitos_desmembrados": 1,
+    "turnos_reais_faltando_encontrados": 1,
+    "turnos_fundidos_incorretamente_encontrados": 1,
+    "erros_de_traducao_reais_corrigidos": 1,
+    "artefactos_de_edicao_corrigidos": 1,
+    "itens_escalados_a_pendencias_bloqueantes": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "monólito residual (mesma classe de bug dos '6 livros monolith' da Fase Inicial e do padrão '25号' já catalogado)",
+      "localizacao": "início do corpo (session [1º de novembro]) até a pergunta sobre tatuagem, correspondendo a JP linhas 26-116 (~40 turnos alternados Interlocutor/Meishu-Sama)",
+      "problema": "Todo esse trecho estava fundido em um único parágrafo corrido no ficheiro de trabalho, sem quebra de parágrafo entre turnos (viola pontos 1 e 6 do checklist: subdivisão e paragrafação 1:1). O conteúdo traduzido em si estava completo e correto — confirmado frase a frase contra o JP — mas a falta de paragrafação apagava a estrutura de pergunta/resposta. A mesma seção também estava fundida (sem quebra) na produção (textos_portugues/19531115-御垂示録26号.txt, linha 4), confirmando que o defeito é anterior a esta sessão, não introduzido por ela.",
+      "correcao": "Desmembrado em ~40 parágrafos de turno único, seguindo estritamente a alternância Interlocutor(aspas)/Meishu-Sama(sem aspas) do JP. Nenhuma tradução nova foi necessária — todo o texto já estava presente e correto dentro do monólito; o trabalho foi de localizar e restaurar as fronteiras de turno por correspondência de conteúdo com o JP, frase a frase. Turnos multi-parágrafo do próprio Meishu-Sama no JP (ex. linhas 56-57, 65-67, 90, 109, 113) foram mantidos como um único parágrafo PT por turno, sem quebra artificial, pois no JP também são um único monólogo contínuo sem interrupção do Interlocutor.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "turno realmente faltando (Meishu-Sama, curto, sem aspas — padrão mais comum catalogado nesta família)",
+      "localizacao": "JP linha 180 ('いや客観も分かりません。ではあなたが、この人は良い人か悪い人かが分かりますか。'), entre as duas perguntas do Interlocutor sobre objetivo/subjetivo (JP 178 e 182)",
+      "problema": "No ficheiro de trabalho, duas falas do Interlocutor apareciam consecutivas sem a resposta de Meishu-Sama entre elas ('Não se pode saber, mas existe um objetivo além do subjetivo...' seguido diretamente por 'Isso não se pode saber subjetivamente, mas objetivamente...'), quebrando a alternância de turnos do JP.",
+      "correcao": "Localizado em textos_portugues/19531115-御垂示録26号.txt (produção), linha 36: 'Não, o objetivo também não se pode saber. Então, você pode saber se esta pessoa é boa ou má?' — inserido no ficheiro de trabalho na posição correta, reproduzindo a redação já usada na produção (evitando retradução divergente).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "dois turnos fundidos incorretamente",
+      "localizacao": "resposta de Meishu-Sama à pergunta 'Posso permitir que se convertam?' (JP linha 134, fim) seguida imediatamente, sem quebra, pela pergunta do Interlocutor sobre o arroz dourado (JP linha 137)",
+      "problema": "'...essas coisas não são problema.' (fim da resposta sobre tatuagem/conversão) estava colado diretamente à pergunta seguinte entre aspas sobre o arroz 'Kinpane', como um único parágrafo.",
+      "correcao": "Separado em dois parágrafos distintos, um por turno.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "erro de tradução real (não é nome próprio — termo descritivo tratado como nome)",
+      "localizacao": "JP linha 137 '先ほどの有肥の米はガラガラになったということにつきまして', dentro do turno do Interlocutor sobre o arroz dourado",
+      "problema": "有肥 ('com fertilizante', antônimo direto de 無肥 usado no título do livro 無肥料栽培法 e ao longo de todo o volume) foi traduzido como se fosse um nome próprio: 'arroz \\'Yuhi\\''. O mesmo erro está presente na produção (textos_portugues/), portanto não foi introduzido nesta sessão, mas é um erro de conteúdo real e corrigível com alta confiança (paralelismo direto com 無肥/muhi já estabelecido em todo o corpus).",
+      "correcao": "'arroz com fertilizante que ficou oco, como mencionei há pouco' — restaura o sentido de retomada ao ponto anterior do próprio Meishu-Sama sobre o arroz esvaziado pelo gorgulho (JP linha 90, 'そこでガラガラになってしまったのです').",
+      "confianca": "alta",
+      "nota": "Não alterado: '金粒米' → 'Kinpane'. Também presente identicamente na produção; sem correspondência fonética óbvia com a leitura mais provável (kinryū/kintsubu), mas como é termo único no corpus (não aparece em glossario_traducao.json nem em nenhum outro ficheiro) e já está estabelecido de forma consistente na produção, não haveria como decidir uma forma alternativa sem arriscar trocar um possível erro por outro. Não é uma correção de baixo risco como o caso de 有肥/muhi acima — decisão de romanização de nome próprio fica fora do escopo desta revisão (mesmo princípio de 'não decidir glossário unilateralmente' já registado para 五六七→Miroku)."
+    },
+    {
+      "n": 5,
+      "tipo": "artefacto de edição (conector duplicado/pendurado)",
+      "localizacao": "final do turno de Meishu-Sama sobre cristianismo/budismo/observância de templos (JP linha 113), antes da pergunta sobre tatuagem",
+      "problema": "'...elas estão dentro do que abraçamos. Portanto,  Tanto o Cristianismo quanto o Budismo...' — 'Portanto,' pendurado com espaço duplo antes de 'Tanto', resíduo aparente de uma limpeza anterior de duplicação (a produção tem uma versão com truncamento+duplicação nesse mesmo ponto, ver nota abaixo; o ficheiro de trabalho já estava sem essa duplicação, mas com este pequeno resíduo).",
+      "correcao": "Removido o 'Portanto,' pendurado; frase reflui naturalmente para 'Tanto o Cristianismo quanto o Budismo, todas as coisas estão dentro da Igreja Messiânica; portanto, atacá-las...'.",
+      "confianca": "alta",
+      "nota_producao": "A produção (textos_portugues/) tem, neste mesmo ponto, um caso clássico do bug catalogado #6 em revisao-paralela-jp-pt.mdc: um rascunho truncado ('...como salvar as pessoas que estão sofrendo agora, como' cortado no meio da frase) seguido da versão completa e correta do mesmo trecho. O ficheiro de trabalho já não tem essa duplicação (aparenta ter passado por uma limpeza anterior), então nenhuma ação adicional foi necessária além do resíduo do item 5."
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título, data de publicação)",
+      "jp_linhas": "20-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de novembro], agricultura natural até pergunta sobre tatuagem (~40 turnos)",
+      "jp_linhas": "26-116",
+      "decisao": "corrigido - monólito desmembrado (correção 1) + 1 turno fundido separado (correção 3) + 1 erro de tradução corrigido (correção 4) + 1 artefacto removido (correção 5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Tatuagem/moxabustão até arroz dourado (Kinpane)",
+      "jp_linhas": "116-143",
+      "decisao": "ok, já corretamente segmentado no ficheiro de trabalho; correção 3 e 4 aplicadas dentro deste bloco",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ki/coração, Daijo/Shojo branco-preto até pergunta objetivo/subjetivo",
+      "jp_linhas": "146-178",
+      "decisao": "ok, já corretamente segmentado",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Objetivo/subjetivo (turno faltando) até fim do volume (comunismo, médicos, guerra, Miroku)",
+      "jp_linhas": "180-204",
+      "decisao": "corrigido - turno faltando inserido (correção 2); restante já correto e completo, incluindo o monólogo final único (JP 204) que corresponde a um único parágrafo PT, sem interrupção do Interlocutor no original",
+      "confianca": "alta"
+    }
+  ],
+  "busca_cross_acervo_realizada": [
+    "textos_portugues/19531115-御垂示録26号.txt (produção canónica) — usado para confirmar a redação exata do turno faltando (correção 2) e para confirmar que o erro 有肥/'Yuhi' e a grafia 'Kinpane' já existiam na produção antes desta sessão",
+    "reports/acervo_revision/snapshots/.../P9_paragrafos__post/livros_trabalho/pt/19531115-御垂示録26号.txt — verificado e descartado como fonte: contém uma tentativa automática de rotulagem 'Interlocutor:'/'Meishu-Sama:' com fronteiras de turno erradas (cauda da fala do Interlocutor migrada para dentro do rótulo 'Interlocutor:' junto com o início da resposta), convenção diferente da usada no ficheiro de trabalho atual e não confiável"
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado a Gosuiji-roku (mesma convenção: `「」` JP = Interlocutor; texto corrido sem aspas = Meishu-Sama)",
+    "etapa_a": "JP lido linha a linha (linhas 26-204, sessão única [十一月一日]). Mapa de turnos construído por alternância: parágrafo sem aspas = Meishu-Sama, parágrafo `「…」` = Interlocutor. Nenhuma sessão adicional no volume (spec já reconhece 2 artigos: prefácio + sessão única de 1º de novembro). Atenção dada a turnos curtos de uma palavra do Meishu-Sama (ex. JP linha 44 'そうでもありません.', linha 48 'そうです.', linha 118 '何もありません.', linha 188 '言えません.') — todos localizados e confirmados no mapa.",
+    "etapa_b": "Mapa JP (42 turnos Meishu-Sama, 41 turnos Interlocutor, total 83) comparado 1:1 com os 83 parágrafos do PT (linhas 26-108 do ficheiro de trabalho), na mesma ordem. Verificação automática por script: início de cada parágrafo PT com aspas retas (\") vs. sem aspas comparado à paridade esperada da alternância — 0 divergências. Nenhum turno faltando encontrado (a trilha anterior desta sessão, 2026-07-07, já havia corrigido o monólito residual e o turno de Meishu-Sama faltando na linha JP 180; ambas as correções já estavam refletidas no ficheiro de trabalho antes desta rotulagem).",
+    "etapa_c": "Rótulos `Interlocutor: ` / `Meishu-Sama: ` aplicados a cada um dos 83 parágrafos (linhas 26-108), sem reordenar nem reescrever texto existente. Cabeçalho de sessão `[1º de novembro]` (linha 25) preservado sem rótulo.",
+    "resultado": {
+      "turnos_meishu_sama": 42,
+      "turnos_interlocutor": 41,
+      "total_turnos": 83,
+      "turnos_faltando_encontrados_nesta_etapa": 0,
+      "bateu_1_para_1_com_mapa_jp": true
+    },
+    "approved_alterado": false
+  }
+}

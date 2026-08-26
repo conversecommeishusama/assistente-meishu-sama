@@ -1,0 +1,271 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Medicina_do_Amanha",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "病気の本体",
+   "title_pt": "A Natureza Essencial da Doença",
+   "jp_anchor": "病気の本体\n\nそもそも病気とは何ぞや、いうまでなく",
+   "pt_anchor": "A Natureza Essencial da Doença\n\nMedicina do Amanhã, publicado em 15 de",
+   "notes": "entry_id=publication-jp-1437 sort_date=15 de maio de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医療と観念",
+   "title_pt": "Tratamento Médico e Concepção",
+   "jp_anchor": "医療と観念\n\n現在、療病について、非常に誤られてい",
+   "pt_anchor": "Tratamento Médico e Concepção\n\nMedicina do Amanhã, publicado em 15 de",
+   "notes": "entry_id=publication-jp-1468 sort_date=15 de maio de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "病気と人間の性質",
+   "title_pt": "Doença e a Natureza Humana",
+   "jp_anchor": "病気と人間の性質\n\n私が幾多の経験上、面白いことには病気",
+   "pt_anchor": "Doença e a Natureza Humana\n\nMedicina do Amanhã, publicado em 13 de",
+   "notes": "entry_id=publication-jp-1467 sort_date=13 de abril de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "人間の造り主",
+   "title_pt": "O Criador do Ser Humano",
+   "jp_anchor": "人間の造り主\n\n人間の造り主は一体誰であるか。これは",
+   "pt_anchor": "O Criador do Ser Humano\n\nMedicina do Amanhã, publicado em 19 de",
+   "notes": "entry_id=publication-jp-1445 sort_date=19 de junho de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "自然死と不自然死",
+   "title_pt": "Morte Natural e Morte Não Natural",
+   "jp_anchor": "自然死と不自然死\n\nそもそも、人間の死とはいかなるもので",
+   "pt_anchor": "Morte Natural e Morte Não Natural\n\nMedicina do Amanhã, publicado em 19 de",
+   "notes": "entry_id=publication-jp-1471 sort_date=19 de junho de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "まえがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "まえがき\n\n一 健康による天国化\n幸福への道\n幸",
+   "pt_anchor": "Prefácio\n\nMedicina do Amanhã, publicado em 28 de",
+   "notes": "entry_id=publication-jp-1426 sort_date=28 de setembro de 1942"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医家の観たる医薬",
+   "title_pt": "A Medicina Vista por um Médico",
+   "jp_anchor": "医家の観たる医薬\n\n左の記事は私の弟子が聴講した記録であ",
+   "pt_anchor": "A Medicina Vista por um Médico\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1286 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "結 論",
+   "title_pt": "Conclusão",
+   "jp_anchor": "結 論\n\n私は、現代医学に対し、あらゆる面から",
+   "pt_anchor": "Conclusão\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1328 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学の神聖化",
+   "title_pt": "A sacralização da medicina",
+   "jp_anchor": "医学の神聖化\n\n私は現代医学の構成について、常に不可",
+   "pt_anchor": "A sacralização da medicina\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1267 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "四 病気症状の解明",
+   "title_pt": "IV. Esclarecimento dos Sintomas das Doenças",
+   "jp_anchor": "四 病気症状の解明\n\n（一）病気症状の解剖\n病気症状とその",
+   "pt_anchor": "IV. Esclarecimento dos Sintomas das Doenças\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1329 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "現实無視の悲劇",
+   "title_pt": "A Tragédia da Ignorância da Realidade",
+   "jp_anchor": "現実無視の悲劇\n\n現代医学における現実無視は看過できな",
+   "pt_anchor": "A Tragédia da Ignorância da Realidade\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1402 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "生気説",
+   "title_pt": "Teoria do Ki Vital",
+   "jp_anchor": "生気説\n\n左の一文は石井常三氏著『生気法綱要』",
+   "pt_anchor": "Teoria do Ki Vital\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1403 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊気説",
+   "title_pt": "Teoria do Espírito Vital",
+   "jp_anchor": "霊気説\n\n前項に述べた生気説に対し、本医術は霊",
+   "pt_anchor": "Teoria do Espírito Vital\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1404 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医学不明の流行病",
+   "title_pt": "Doenças Epidêmicas de Causa Médica Desconhecida",
+   "jp_anchor": "医学不明の流行病\n\n近来、わが国民の中年以上の男女に特殊",
+   "pt_anchor": "Doenças Epidêmicas de Causa Médica Desconhecida\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1452 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "医師の資格",
+   "title_pt": "A Qualificação do Médico",
+   "jp_anchor": "医師の資格\n\n医師の資格について、ここに見逃すこと",
+   "pt_anchor": "A Qualificação do Médico\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1490 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "哲学的に観たる本医術",
+   "title_pt": "A Nossa Terapia Vista Filosoficamente",
+   "jp_anchor": "哲学的に観たる本医術\n\n今日まで、本療法によって偉効を奏した",
+   "pt_anchor": "A Nossa Terapia Vista Filosoficamente\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1500 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "科学と迷信",
+   "title_pt": "Ciência e Superstição",
+   "jp_anchor": "科学と迷信\n\nそもそも、私の創成したこの日本医術な",
+   "pt_anchor": "Ciência e Superstição\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1504 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "鍼灸療法",
+   "title_pt": "Terapia de Acupuntura e Moxabustão",
+   "jp_anchor": "鍼灸療法\n\n近来、一時頻れたかにみえた灸療法が復",
+   "pt_anchor": "Terapia de Acupuntura e Moxabustão\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1511 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "本医術の施法",
+   "title_pt": "O Método de Aplicação da Nossa Terapia",
+   "jp_anchor": "本医術の施法\n\n本医術は、腎臓医術であるということは",
+   "pt_anchor": "O Método de Aplicação da Nossa Terapia\n\nMedicina do Amanhã, publicado em 5 de",
+   "notes": "entry_id=publication-jp-1451 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "私は本医術の卓越せることを、遍く知らしむべき第一歩としては、前述のごとき医家の狭い視野の是正こそ、なによりも緊要事であると思うのである。",
+   "title_pt": "Fatos Espantosos",
+   "jp_anchor": "私は本医術の卓越せることを、遍く知らしむべき第一歩としては、前述のごとき医家の狭い視野の是正こそ、なによりも緊要事であると思うのである。\n\n私は医家に関し、不思議に堪えない事実",
+   "pt_anchor": "Fatos Espantosos\n\nMedicina do Amanhã, publicado em 5 de",
+   "notes": "entry_id=publication-jp-1273 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "西洋医学の野蛮性",
+   "title_pt": "A Natureza Bárbara da Medicina Ocidental",
+   "jp_anchor": "西洋医学の野蛮性\n\n昭和十七年六月三十日付の手紙が、大阪",
+   "pt_anchor": "A Natureza Bárbara da Medicina Ocidental\n\nMedicina do Amanhã, publicado em 5 de",
+   "notes": "entry_id=publication-jp-1274 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊界の転換",
+   "title_pt": "A Transformação do Mundo Espiritual",
+   "jp_anchor": "霊界の転換\n\n霊界が夜昼転換するにおいて、人間に対",
+   "pt_anchor": "A Transformação do Mundo Espiritual\n\nMedicina do Amanhã, publicado em 23 de",
+   "notes": "entry_id=publication-jp-1310 sort_date=23 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "恐怖時代",
+   "title_pt": "A Era do Terror",
+   "jp_anchor": "恐怖時代\n\n夜の世界の唯物的医学の療法が、固める",
+   "pt_anchor": "A Era do Terror\n\nMedicina do Amanhã, publicado em 23 de",
+   "notes": "entry_id=publication-jp-1311 sort_date=23 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ているから、再生の後現世において浄化作用が行われなければならないからである。勿論現世の浄化作用とは、病気、貧乏、災い等の痚苦であるから不幸な運命を辿る というわけである。故に、生まれながらにして幸不幸があるということは右の理による",
+   "title_pt": "A Purificação na Vida Após a Regeneração",
+   "jp_anchor": "ているから、再生の後現世において浄化作用が行われなければならないからである。勿論現世の浄化作用とは、病気、貧乏、災い等の痛苦であるから不幸な運命を辿る というわけである。故に、生まれながらにして幸不幸",
+   "pt_anchor": "A Purificação na Vida Após a Regeneração\n\nMedicina do Amanhã, publicado em 23 de",
+   "notes": "entry_id=publication-jp-1385 sort_date=23 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "明日の文化",
+   "title_pt": "A Cultura de Amanhã",
+   "jp_anchor": "明日の文化\n\n私はこれから、霊および霊界について、",
+   "pt_anchor": "A Cultura de Amanhã\n\nMedicina do Amanhã, publicado em 23 de",
+   "notes": "entry_id=publication-jp-1436 sort_date=23 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "霊的医術",
+   "title_pt": "Medicina Espiritual",
+   "jp_anchor": "霊的医術\n\n私は種〄の方面から「昼の世界とは霊主",
+   "pt_anchor": "Medicina Espiritual\n\nMedicina do Amanhã, publicado em 23 de",
+   "notes": "entry_id=publication-jp-1501 sort_date=23 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "救世主は誰だ",
+   "title_pt": "Quem é o Messias?",
+   "jp_anchor": "救世主は誰だ\n\nこの標題はずいぶん変わっていると思う",
+   "pt_anchor": "Quem é o Messias?\n\nMedicina do Amanhã, publicado em 20 de",
+   "notes": "entry_id=publication-jp-1433 sort_date=20 de outubro de 1948"
+  },
+  {
+   "kind": "article",
+   "title_jp": "死とは何ぞや",
+   "title_pt": "O que é a Morte?",
+   "jp_anchor": "死とは何ぞや\n\n人生に関する事柄の中、死ほど切実な問",
+   "pt_anchor": "O que é a Morte?\n\nMedicina do Amanhã, publicado em 24 de",
+   "notes": "entry_id=publication-jp-1472 sort_date=24 de fevereiro de 1939"
+  },
+  {
+   "kind": "article",
+   "title_jp": "胃疾患",
+   "title_pt": "Doenças Estomacais",
+   "jp_anchor": "胃疾患\n\n日本人に最も多い病気に胃病がある。こ",
+   "pt_anchor": "Doenças Estomacais\n\nMedicina do Amanhã, publicado em 5 de ",
+   "notes": "entry_id=publication-jp-1341 sort_date=5 de outubro de 1943"
+  },
+  {
+   "kind": "article",
+   "title_jp": "病気の原因と罪穢れ",
+   "title_pt": "A Causa das Doenças e a Impureza do Pecado",
+   "jp_anchor": "気の原因と罪穢れ\n\n病気の原因は、汚血および水膿の溜結であ",
+   "pt_anchor": "A Causa das Doenças e a Impureza do Pecado\n\nMedicina do Amanhã, publicado em 13 de",
+   "notes": "entry_id=publication-jp-1383 sort_date=13 de abril de 1936"
+  },
+  {
+   "kind": "article",
+   "title_jp": "病気の本体は魂なり",
+   "title_pt": "A Verdadeira Natureza da Doença é a Alma",
+   "jp_anchor": "気の本体は魂なり\n\nそもそも、この現象界におけるあらゆる物",
+   "pt_anchor": "A Verdadeira Natureza da Doença é a Alma\n\nMedicina do Amanhã, publicado no ano",
+   "notes": "entry_id=publication-jp-1316 sort_date="
+  },
+  {
+   "kind": "article",
+   "title_jp": "自然療法",
+   "title_pt": "Terapia Natural",
+   "jp_anchor": "然療法\n\n元来、人間なる者は、神が造り給うた、森",
+   "pt_anchor": "Terapia Natural\n\nMedicina do Amanhã, publicado no ano",
+   "notes": "entry_id=publication-jp-1324 sort_date="
+  },
+  {
+   "kind": "article",
+   "title_jp": "真の栄養学",
+   "title_pt": "Alimentação e Nutrição",
+   "jp_anchor": "の栄養学\n\n今日の栄養学上、ビタミンがどうとか、カ",
+   "pt_anchor": "Alimentação e Nutrição\nMedicina do Amanhã, publicado no ano",
+   "notes": "entry_id=publication-jp-1531 sort_date="
+  }
+ ],
+ "filename": "Medicina_do_Amanha.txt"
+}

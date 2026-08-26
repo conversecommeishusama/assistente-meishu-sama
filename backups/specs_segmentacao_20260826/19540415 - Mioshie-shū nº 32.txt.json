@@ -1,0 +1,113 @@
+{
+ "filename": "19540415 - Mioshie-shū nº 32.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→11. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第三十二号",
+   "pt_anchor": "Mioshie-shū nº 32",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月六日",
+   "title_pt": "6 de março",
+   "jp_anchor": "今度、今まで私の書いたものの中から選んで「救世教の聖書」みたいなものを編集するについて、序文を書いてもらいたいというので書いてみましたから読ませます。",
+   "pt_anchor": "Desta vez, ao selecionar meus escritos anteriores para editar algo como uma \"Bíblia da Igreja Messiânica\", pediram-me pa",
+   "notes": "",
+   "pt_prefix": "6 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月七日",
+   "title_pt": "7 de março",
+   "jp_anchor": "今度「救世教の聖書」というようなものを編集することになって、今までに私の書いた中から選り出して編集しているのですが、それについて、序文を書いて くれというので書いたのです。だいたいこれはみんな分かっていることですが、とにかく救世教の特長とい",
+   "pt_anchor": "Desta vez, decidiu-se compilar algo como \"A Bíblia da Igreja Messiânica\", selecionando e editando o que escrevi até agor",
+   "notes": "",
+   "pt_prefix": "7 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十五日",
+   "title_pt": "15 de março",
+   "jp_anchor": "今朝の新聞にデカデカと出てましたが、二重橋事件で目が見えなくなった山田けい子という十一になる子供に関し、写真なども出して、たいへんな医学の功名 のように報じてますが、あれはなんでもないのです。どうも医学だと屁みたいなことでもたいへんなことの",
+   "pt_anchor": "O jornal de hoje trouxe, em letras garrafais e com fotos, a notícia de uma criança de onze anos chamada Yamada Keiko, qu",
+   "notes": "",
+   "pt_prefix": "15 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十六日",
+   "title_pt": "16 de março",
+   "jp_anchor": "最近、二重橋事件で目が見えなくなった山田けい子という十一になる女の子が、清水という博士が手術して見えるようになったといって、新聞にデカデカと書 いてありますが、あれは本当のことが分かるとなんでもないのです。あれは頭を打ったので内出血になって",
+   "pt_anchor": "Recentemente, saiu grande nos jornais que uma menina de onze anos chamada Yamada Keiko, que ficou cega no incidente da P",
+   "notes": "",
+   "pt_prefix": "16 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十七日",
+   "title_pt": "17 de março",
+   "jp_anchor": "最近新聞やラジオで伝えている二重橋事件で目が見えなくなった、山田けい子という十一になる子供が、清水健太郎という博士の手術によって見えるように なったと、写真入りでデカデカと出てますが、あんなことはくだらないことです。あれは内出血が目の裏の視",
+   "pt_anchor": "Recentemente, saiu grande nos jornais e no rádio que uma criança de onze anos chamada Yamada Keiko, que ficou cega no in",
+   "notes": "",
+   "pt_prefix": "17 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十三日",
+   "title_pt": "23 de março",
+   "jp_anchor": "最近霊界がよほど変わってきたのです。変わったということは、いろいろな霊が、だんだん昼間になってきたため、いろいろなことが分かってきた。それで、 大いに救われたいというわけで、あわてだしたのです。あっちこっちに神懸り的のことがだいぶ始まってき",
+   "pt_anchor": "Recentemente, o mundo espiritual mudou bastante. A mudança se deve ao fato de que, como vários espíritos estão gradualme",
+   "notes": "",
+   "pt_prefix": "23 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十四日",
+   "title_pt": "24 de março",
+   "jp_anchor": "春の大祭も、来年は新しくできる会館でやることになりますが、会館は前にも話したとおり、今年の秋の予定だったのですが、神様の方ではどうも、春でなけ ればいけないというお知らせがあったので、落成式は来年の三月三日ということに決まりました。第一に数",
+   "pt_anchor": "O Culto Especial da Primavera do ano que vem será realizado no novo templo que está sendo construído. Como já falei antes",
+   "notes": "",
+   "pt_prefix": "24 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十五日",
+   "title_pt": "25 de março",
+   "jp_anchor": "今年の初めに言ったとおり、霊界が非常に変わってきたのです。ということは、霊界におけるいろいろな偉い、各宗教の教祖とか、その弟子とか、そういった ような人たちの霊がだんだん分かるに従って、霊界が明るくなってくるので、それとともに大きな世界の切",
+   "pt_anchor": "Como disse no início deste ano, o mundo espiritual mudou drasticamente. Isso significa que, à medida que os espíritos de",
+   "notes": "",
+   "pt_prefix": "25 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十六日",
+   "title_pt": "26 de março",
+   "jp_anchor": "最近霊界が非常に変わってきたために、いろいろな霊があわてだしたと言いますか、非常に変動を起こしてきたのです。いろいろな霊が救われたいことと、そ れから救世教の仕事をしたいと（もっとも仕事ということが救われる意味にはなりますが）因縁の人を通じ",
+   "pt_anchor": "Recentemente, devido a grandes mudanças no mundo espiritual, vários espíritos estão em pânico, ou melhor, estão causando",
+   "notes": "",
+   "pt_prefix": "26 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十七日",
+   "title_pt": "27 de março",
+   "jp_anchor": "春季大祭もここでやるのはこれが最後で、この次は会館でやるようになります。なにしろここでは制限しても今年は非常に多くて、立錐（りっすい）の余地も ないです。どうしても無理になったわけで、ちょうど会館ができるということは、チャンと神様は算盤をと",
+   "pt_anchor": "Este é o último Culto Especial da Primavera a ser realizado aqui; da próxima vez, será no Templo. De qualquer forma, me",
+   "notes": "",
+   "pt_prefix": "27 de março"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

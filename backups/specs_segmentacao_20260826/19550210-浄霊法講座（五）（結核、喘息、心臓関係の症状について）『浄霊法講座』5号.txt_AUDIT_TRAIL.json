@@ -1,0 +1,101 @@
+{
+  "filename": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 560 linhas / PT 101→147 linhas após correções), 62 artigos por spec (profile koza_lectures), do prefácio ao encerramento (Cap. IV, item 6, doença cardíaca). JP inteiro lido linha a linha; PT lido integralmente e confrontado com o JP na mesma ordem, incluindo os trechos que estavam colapsados em blocos gigantes sem título visível (ver achado grave abaixo).",
+  "pre_existing_context": "Alerta do usuário antes da revisão: spec (title_pt/pt_prefix/pt_anchor) dos volumes irmãos 浄霊法講座2号/3号 estava contaminado com conteúdo de 観音講座 (outro livro), e 4号 já havia sido corrigido. Alerta confirmado como verdadeiro também para este volume (5号): confirmado e corrigido nesta sessão (ver achado 1).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta a leitura semântica linha a linha e as correções estruturais aplicadas.",
+  "summary": {
+    "articles_in_spec": 62,
+    "articles_reviewed": 62,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0,
+    "spec_contamination_found_and_fixed": true
+  },
+  "achados_e_correcoes": [
+    {
+      "n": 1,
+      "categoria": "spec_contaminado",
+      "descricao": "Confirmado o alerta do usuário: title_pt e pt_prefix de todos os 62 artigos do spec estavam contaminados com títulos de outro livro (padrão 'Aula N — [tema de Kannon/Deus Principal/Bodhisattva]', ex.: 'Segunda Aula — A Origem da Religião e o Advento do Salvador', 'Terceira Aula — A Essência do Bodhisattva Kannon' — nada disso existe no JP ou no PT reais deste volume, que trata de tuberculose/asma/coração). Os pt_anchor (trechos-âncora extraídos do PT real) estavam corretos e serviram de base confiável para a correção, conforme o alerta do usuário sobre não confiar em title_pt/posição.",
+      "correcao": "title_pt e pt_prefix de todos os 62 artigos foram regenerados a partir do conteúdo real do PT (título traduzido de cada item/capítulo, verificado contra o title_jp correspondente e contra o texto do parágrafo, nunca por posição/ratio). pt_prefix definido como string vazia (mesma convenção usada no spec já corrigido de 浄霊法講座4号, verificado como referência). pt_anchor recalculado para todos os 62 artigos a partir do texto real após a reconstrução de parágrafos (achado 2), garantindo que cada âncora aponte para conteúdo verificável e não para posição arbitrária de caracteres.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "categoria": "colapso_estrutural_grave",
+      "descricao": "GRAVE: a partir do item 9 (紧 do Cap. II, 'estrutural tuberculose') até o final do livro (itens 10-37 do Cap. II, Cap. III inteiro 'Asma' com 7 itens, Cap. IV inteiro 'Doenças do coração' com 6 itens — total 41 artigos, quase 2/3 do livro) o PT estava com os títulos de cada item enterrados no meio de blocos de texto corrido gigantes (3 linhas físicas de até 42.355 caracteres cada), sem nenhuma quebra de parágrafo entre item e item. Isso viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos/cabeçalhos) do checklist e é a mesma classe de bug do 'colapso estrutural' já catalogado no volume 無肥料栽培法 (achado 9 daquele audit trail). Explica o ratio anômalo JP:PT de 5,5:1 alertado antes da revisão — não era verbosidade natural do JP, era perda real de estrutura no PT. Nenhum conteúdo estava faltando (todas as 41 citações e títulos estavam presentes, apenas sem quebra de linha antes deles), confirmado por localização de cada um dos 41 títulos traduzidos dentro do texto corrido, na ordem correta e sem lacunas.",
+      "correcao": "Reestruturado inserindo quebra de linha antes de cada um dos 41 títulos de item/capítulo restantes (Cap. II itens 10-37, Cap. III 'Asma' completo, Cap. IV 'Doenças do coração' completo), replicando o padrão já usado corretamente nos itens 1-8 do Cap. I e no cabeçalho do Cap. II já presentes no arquivo. Adicionalmente, dentro do item 31 (Sobre o pneumotórax), que no JP tem 5 sub-parágrafos cada um com sua própria citação-marcador em linha própria (mesmo padrão do Cap. I), foram inseridas as 4 quebras internas correspondentes. Os cabeçalhos de capítulo '3. Asma' e '4. Doenças do coração' foram renomeados para 'III. Asma' e 'IV. Doenças do coração' para eliminar ambiguidade com a numeração dos itens dentro do próprio capítulo e para manter consistência com o cabeçalho já existente 'II. Anatomia dos sintomas da tuberculose'. Nenhum texto foi removido, reordenado ou traduzido de novo — apenas quebras de linha inseridas em pontos verificados um a um contra o título traduzido real. Verificado depois: todos os 62 pt_anchor do spec (recalculados, achado 1) localizam corretamente seus trechos no arquivo reestruturado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "categoria": "duplicacao_rascunho_truncado",
+      "descricao": "Achado dentro do colapso do achado 2: o item 9 (Cap. II, dor no peito/hemoptise/suores noturnos) estava com sua pergunta (testemunho) traduzida DUAS vezes — uma versão truncada/rascunho (terminava em vírgula, sem fechar aspas, sem a resposta de Meishu-Sama) seguida de uma versão completa e bem formatada (com aspas fechadas corretamente e a resposta anexada). A cauda da resposta do item 8 ('...é preciso saber a hora de desistir com habilidade') também estava duplicada (parafraseada) logo antes da segunda versão do item 9. Confirmado contra o JP (que tem a pergunta do item 9 uma única vez, linhas 170-173) que isso era duplicação de rascunho de tradução, não um erro de conteúdo real (mesma classe de bug do achado 6 do audit trail de referência: 'rascunho truncado seguido da versão completa da mesma P&R').",
+      "correcao": "Removida a versão truncada/rascunho do item 9 e a frase duplicada da cauda do item 8, mantendo apenas a versão completa e corretamente formatada do item 9 (título + testemunho + resposta). Nenhum conteúdo real foi perdido — a versão mantida é estritamente mais completa que a removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "categoria": "cabecalho_ausente",
+      "descricao": "O cabeçalho do Capítulo I ('一　結核患者の浄霊について （御教え集　23号　P.56）') nunca havia sido traduzido como linha própria no PT — o parágrafo de abertura aparecia diretamente após o título do livro, sem o título de capítulo correspondente, ao contrário dos Capítulos II, III e IV que têm cabeçalho próprio ('II. Anatomia dos sintomas da tuberculose' etc.). Isso deixava o spec sem conteúdo real para ancorar o artigo de capítulo 1 (o pt_anchor contaminado apontava para o fragmento sem sentido 'owa (1955)').",
+      "correcao": "Inserido 'I. Sobre o Johrei em pacientes com tuberculose (Mioshie-shū nº 23, p. 56)' como linha própria antes do parágrafo de abertura, traduzido diretamente do title_jp do capítulo e seguindo a mesma convenção de numeração romana já usada nos capítulos seguintes.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + título + fonte de publicação",
+      "jp_linhas": "20-23",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. I — tuberculose, itens 1-7 (ombro, diagnóstico, febre, falta de ar)",
+      "jp_linhas": "24-92",
+      "decisao": "ok — já corretamente parágrafo-a-parágrafo antes desta revisão; cabeçalho de capítulo ausente foi adicionado (achado 4)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. II — anatomia dos sintomas, itens 1-8 (garganta, repurificação, menstruação, nevralgia)",
+      "jp_linhas": "95-200",
+      "decisao": "ok — já corretamente formatado antes desta revisão",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. II, item 9 (dor no peito/hemoptise)",
+      "jp_linhas": "170-174",
+      "decisao": "corrigido — duplicação de rascunho removida (achado 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. II, itens 10-37 (tosse, pneumotórax, gangrena, esferas de resina, etc.)",
+      "jp_linhas": "177-447",
+      "decisao": "corrigido — colapso estrutural grave, títulos restaurados em linha própria (achado 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. III — Asma, itens 1-7",
+      "jp_linhas": "450-513",
+      "decisao": "corrigido — mesmo colapso estrutural (achado 2), cabeçalho renomeado para 'III. Asma'",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cap. IV — Doenças do coração, itens 1-6",
+      "jp_linhas": "516-560",
+      "decisao": "corrigido — mesmo colapso estrutural (achado 2), cabeçalho renomeado para 'IV. Doenças do coração'; conferido que o volume termina corretamente em '(Risos)' correspondente a '（笑声）' do JP, sem truncamento",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": [
+    "Nenhum caractere CJK residual encontrado no corpo do PT após as correções (varredura automatizada).",
+    "Nenhuma troca de falante (este volume não usa rótulos Interlocutor:/Meishu-Sama:, é todo em prosa contínua com testemunho entre aspas seguido de resposta não rotulada — classe de bug de troca de falante do Gokōwa não se aplica estruturalmente aqui).",
+    "Terminologia de citação (Mioshie-shū = 御教え集, Gosuiji-roku = 御垂示録, Paraíso na Terra = 地上天国, Hikari = 光, Ensinamentos = 御教え) confirmada consistente em todo o volume.",
+    "Conferido que os 62 pt_anchor recalculados localizam corretamente seus trechos no arquivo de trabalho final (script de verificação, 62/62 encontrados)."
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

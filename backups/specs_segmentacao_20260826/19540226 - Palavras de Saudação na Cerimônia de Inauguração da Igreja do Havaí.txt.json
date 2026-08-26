@@ -1,0 +1,25 @@
+{
+ "filename": "19540226 - Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí.txt",
+ "profile": "monolith",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_no_split",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "ハワイ教会落成式に賜った御言葉",
+   "title_pt": "Palavras Concedidas na Cerimônia de Inauguração da Igreja do Havaí",
+   "jp_anchor": "ハワイ教会落成式に賜った御言葉",
+   "pt_anchor": "Palavras Concedidas na Cerimônia de Inauguração da Igreja do Havaí",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

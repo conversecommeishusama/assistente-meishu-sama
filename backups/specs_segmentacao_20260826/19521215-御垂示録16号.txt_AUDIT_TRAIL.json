@@ -1,0 +1,163 @@
+{
+  "filename": "19521215-御垂示録16号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 219 linhas físicas / PT 2 linhas físicas antes da correção, 90 turnos depois), 2 artigos por spec (prefácio + sessão única de 1º de dezembro de 1952). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do início ao fim, turno a turno (42 perguntas do Interlocutor / 48 blocos de resposta de Meishu-Sama, alguns encadeados em múltiplos parágrafos JP consecutivos).",
+  "pre_existing_context": "Alerta inicial do orquestrador: razão JP/PT de ~8:1 (219 linhas JP vs 2 linhas PT físicas), similar aos volumes 14号/15号 já revisados (monólitos com conteúdo íntegro que precisavam desmembramento). Confirmado o mesmo padrão geral, mas com uma complicação adicional não vista em 14号/15号: o texto PT estava fundido em DUAS linhas físicas (não uma só), e a junção entre elas continha um bloco de ~1.170 caracteres duplicado (ver correção 1).",
+  "gate_mecanico": "gate_gokowa_linha.py não é discriminante para esta família (convenção de aspas, não rótulos 'Interlocutor:'/'Meishu-Sama:'), igual ao já registado nos AUDIT_TRAIL de 14号/15号. Não substitui a leitura linha a linha feita aqui.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 2,
+    "monolito_catastrofico": true,
+    "nota_monolito": "O corpo inteiro da sessão de 1º de dezembro de 1952 (90 turnos: 1 abertura + 42 perguntas do Interlocutor + 47 blocos de resposta de Meishu-Sama, alguns em múltiplos parágrafos) estava comprimido em DUAS linhas físicas gigantes no ficheiro de trabalho PT (23.094 e 16.478 caracteres), contra 219 linhas físicas no JP. ACHADO CENTRAL: apesar do monólito duplo, nenhum conteúdo genuíno estava faltando - todos os 90 turnos foram localizados, na ordem correta, com conteúdo integral. MAS a junção entre as duas linhas físicas continha uma duplicação real de ~1.170 caracteres (ver correção 1), diferente do padrão simples de 14号/15号 (onde uma única linha continha tudo sem duplicação)."
+  },
+  "metodo_verificacao_estrutural": {
+    "descricao": "Leitura completa do JP linha a linha (219 linhas, lines 26-219) enumerando manualmente os 90 turnos (1 marcador de data + 42 perguntas 「」 + 47 blocos de resposta de Meishu-Sama) na ordem em que aparecem. Em paralelo, análise programática da 2ª linha física do PT (parágrafo 27) contra a cauda da 1ª linha física (parágrafo 25): buscas de âncoras exclusivas (nomes próprios, termos técnicos - 'Kyuichi Tokuda', 'Mokichi Okada', 'reeducação', 'Asahi', 'Mainichi', 'jornalistas') confirmaram que o trecho sobre reeducação de jornalistas (correspondente a JP linhas ~141 fim -146) aparecia DUAS vezes: uma vez no final do parágrafo 25, outra vez no início do parágrafo 27, antes do conteúdo genuinamente novo continuar (a partir de '一つの新聞社くらいは...', JP linha 148). Confirmado por 6 âncoras distintas, todas com exactamente 2 ocorrências no ponto de junção e 0 discrepância de conteúdo entre as duas cópias (mesma informação, fraseado ligeiramente diferente - ex.: 'uma única empresa' vs 'uma única empresa de capital aberto', a segunda mais precisa para 株式会社). Após remover a cópia duplicada (mantendo a segunda variante, mais precisa, do '株式会社'→'empresa de capital aberto'), os dois parágrafos foram concatenados e divididos programaticamente em 90 linhas físicas usando 90 âncoras textuais (uma por turno JP), cada uma localizada e verificada manualmente contra o turno JP correspondente antes de aceitar o corte. Nenhuma palavra da tradução já existente foi alterada, exceto a remoção do bloco duplicado.",
+    "resultado": "100% de correspondência 1:1 entre os 90 turnos JP (incluindo o marcador de data) e os 90 turnos PT recuperados/reconstituídos. Nenhum turno ausente, nenhuma troca de falante, nenhuma perda de conteúdo. Verificação de comprimento: parágrafos originais somavam 38.328 caracteres (2 linhas + 1 espaço de junção); após remover a duplicata (~1.170 caracteres incluindo a citação repetida) e dividir em 90 linhas, o conteúdo único remanescente foi preservado integralmente (só espaços de borda entre cortes foram descartados).",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "duplicacao_de_bloco_na_juncao_do_monolito",
+      "jp_linhas": "141 (fim) a 146",
+      "localizacao_pt": "junção entre a 1ª linha física (fim) e a 2ª linha física (início) do ficheiro de trabalho antes da correção",
+      "problema": "O trecho sobre 'aprender do conhecimento/reeducação dos jornalistas por não tratarem Okada Mokichi com o título Sr. mas tratarem Tokuda Kyuichi com Sr.' até 'seria melhor que se tornassem uma única empresa' (correspondente a JP: 思想は学問から来てます...結局新聞記者、ジャーナリストの再教育です。 seguido de 先ほども新聞のことにつきまして...一つの株式会社になったほうが良いでしょう。) estava traduzido DUAS VEZES: uma vez no final da 1ª linha física, e novamente, com fraseado ligeiramente diferente, no início da 2ª linha física, antes do conteúdo genuinamente novo (a partir de '一つの新聞社くらいは特定の宗教を...', JP linha 148) continuar. Confirmado por 6 âncoras textuais únicas (nomes/termos) todas com exactamente 2 ocorrências no ponto de junção.",
+      "correcao": "Removida a cópia duplicada no início da 2ª linha física (a partir de '\"Não acho que seria bom...' era o ponto de retomada do conteúdo novo - o trecho duplicado antes dele, de 'As ideias vêm do estudo...' até '...uma única empresa de capital aberto.', foi descartado), mantendo apenas a versão que já estava no final da 1ª linha física. Verificado que a versão mantida ('Seria melhor se tornassem uma única empresa.') e a versão descartada ('...de capital aberto.') diziam a mesma coisa (株式会社 = sociedade por ações/empresa de capital aberto) - nenhuma informação foi perdida ao escolher qual cópia manter, só a repetição foi removida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "colapso_estrutural_grave",
+      "localizacao_pt": "2 linhas físicas únicas (linhas 25 e 27 do ficheiro de trabalho antes da correção)",
+      "problema": "Todo o corpo do volume (sessão de 1º de dezembro de 1952, 90 turnos) estava fundido em duas linhas físicas gigantes, sem quebra de linha entre turnos. Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 8 (outros - duplicação, ver correção 1) do checklist de revisao-paralela-jp-pt.mdc.",
+      "correcao": "Reestruturado em 90 linhas físicas (1 marcador de data prefixado ao 1º turno + 42 perguntas do Interlocutor entre aspas + 47 blocos de resposta de Meishu-Sama sem aspas), na mesma ordem e com o mesmo texto já traduzido - nenhuma palavra de tradução alterada além da remoção da duplicata (correção 1), apenas inseridas quebras de linha nos limites exatos de cada turno, localizados por 90 âncoras textuais e verificados manualmente contra o JP correspondente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "cabecalho_em_falta",
+      "jp_linha": 24,
+      "jp_texto": "御垂示録第十六号（昭和二十七年）",
+      "localizacao_pt": "bloco de cabeçalho (após o título e a linha de publicação, antes do corpo)",
+      "problema": "Faltava a 3ª linha de cabeçalho correspondente a JP linha 24 ('御垂示録第十六号（昭和二十七年）'). Mesmo padrão de bug já encontrado e corrigido no volume irmão 19521115-御垂示録15号.txt (cabeçalho 'Gosuiji-roku nº 15 (Showa 27)' que faltava, ver AUDIT_TRAIL de 15号).",
+      "correcao": "Adicionada a linha 'Gosuiji-roku nº 16 (Showa 27)' após as duas linhas de cabeçalho já existentes ('Gosuiji-roku nº 16' e 'Gosuiji-roku, publicado em 15 de dezembro do ano 27 da Era Showa (1952)'), seguindo exatamente o formato usado em 15号.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título, fonte, data de publicação)",
+      "jp_linhas": "20-24",
+      "decisao": "corrigido - 3ª linha de cabeçalho em falta adicionada (correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Serviço no Salão de Atami / vida material / Associação Yamato / discípulos de innen anterior",
+      "jp_linhas": "26-47",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 1-10)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mundo da Noite/dia, culpa alheia, discussão vs resultado, viagem ao interior sem esquecer 'Meishu-Sama, por favor'",
+      "jp_linhas": "49-69",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 11-20)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Bênçãos esquecidas, jornal Eikō, graus de gratidão, promessa de responsabilidade, Tenrikyo, doença",
+      "jp_linhas": "72-86",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 21-28)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Diário de Visão Espiritual/velocidade da Luz Divina, correção de histórias de bênçãos, Komyo-Nyorai, Ikeda/Hatoyama/Yoshida, jornal Hikari",
+      "jp_linhas": "89-104",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 29-36)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Tema dos escritos de Meishu-Sama, construção do Salão/mirante, filme sobre Meishu-Sama, 'Luz do Oriente', cinema como arte",
+      "jp_linhas": "106-126",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 37-47)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Música do filme (gagaku vs ocidental), arquitetura religiosa nova, Museu de Kyoto, Buda como arte, cristianismo vs comunismo, Stalin/UNESCO",
+      "jp_linhas": "129-136",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 48-52)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Comunismo e economia, Kimura (Agência de Segurança Nacional), reeducação de jornalistas",
+      "jp_linhas": "138-141",
+      "decisao": "corrigido - desmembrado do monólito + duplicação removida na fronteira com o bloco seguinte (correções 1 e 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Jornais sem características, jornal favorável a uma religião, Kimura do Mainichi/agricultura natural",
+      "jp_linhas": "144-155",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo único preservado após remoção da duplicata (turnos 56-61)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Desaparecimento dos mestres (teatro Kabuki, pintores, vacinação), Europa/socialismo, vacinação tardia EUA/URSS/Japão",
+      "jp_linhas": "158-160",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 62-64)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Festival do Nascimento/Mensal, visita ao santuário",
+      "jp_linhas": "163-169",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 65-68)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos de perda/reaparecimento do 御守様 (Ofuda) - homem de 55 anos, homem 18 anos com Ofuda, homem de 70 anos",
+      "jp_linhas": "172-186",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 69-76); pendência de terminologia registada (Ofuda vs glossário Omamori/Ohikari)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Purificação (doença, pobreza), posição no mundo espiritual, 'cabeça ruim', acumular méritos, julgar pelo valor/continuidade, sabedoria (eichi/dakuchi), escritor Hata",
+      "jp_linhas": "189-219",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro (turnos 77-90); pendência de gênero registada (Sra./escritor Hata)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas": [
+    "Troca de falante (Interlocutor/Meishu-Sama invertidos): não encontrada em nenhum dos 90 turnos.",
+    "Perda de conteúdo mascarada por Δ=0 coincidente: não aplicável - não houve perda de conteúdo detectada em nenhum ponto (todos os 90 turnos JP têm par PT íntegro, incluindo os que estavam duplicados).",
+    "Corrupção de nomes próprios: não encontrada (Ikeda, Yoshida, Hatoyama, Kimura, Tokuda Kyuichi, Okada Mokichi, Kikugoro, Yasuda Yukihiko, Kokei, Toyoda Shiro, Debussy, Schubert, Beethoven, Bach, Kosaburo conferidos contra o JP).",
+    "CJK residual no corpo PT: nenhum encontrado (verificado por varredura de todo o ficheiro após a correção)."
+  ],
+  "pendencias_abertas": [
+    "Ver reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json - item sobre '御守'/'御守様' traduzido como 'Ofuda' em vez do termo do glossário ('Omamori (Ohikari)') nos turnos sobre os testemunhos de perda/reaparecimento do amuleto (JP linhas 172-186). Mesmo padrão de pendência já registado no volume irmão 14号. Baixa severidade (não é erro de sentido), não corrigido nesta passada - decisão de glossário.",
+    "Ver reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json - item sobre inconsistência de gênero em 'um escritor chamado Sra. Hata' (JP linha 217, 秦さん), possível referência a Hata Toyokichi (masculino) mas sem certeza suficiente para corrigir. Baixa severidade, não corrigido nesta passada."
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true. Aguardando segunda auditoria independente conforme revisao-paralela-jp-pt.mdc. Recomendação do revisor: volume está estruturalmente correto e semanticamente completo após as 3 correções aplicadas (duplicação removida, monólito desmembrado em 90 turnos, cabeçalho em falta adicionado); restam apenas 2 pendências leves de terminologia/nome próprio em aberto."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc (Etapa A-B-C), adaptado para Gosuiji-roku: 「pergunta entre aspas」 do JP = Interlocutor; texto corrido sem aspas = Meishu-Sama",
+    "etapa_a_mapa_jp": "Leitura linha a linha de todo o JP (reports/livros_trabalho/jp/19521215-御垂示録16号.txt, linhas 26-219, sessão única [十二月一日]). Extraídos programaticamente os 90 parágrafos de turno (excluindo cabeçalho de título/publicação e o marcador de data), classificados por regra determinística (inicia com「 = Interlocutor, senão = Meishu-Sama). Resultado: 42 parágrafos Interlocutor / 48 parágrafos Meishu-Sama, na mesma ordem e contagem já registados pela auditoria estrutural anterior (2026-07-07, ver campos 'scope' e 'nota_monolito' acima).",
+    "etapa_b_confirmacao": "PT já estava em 90 linhas físicas (uma por turno, sem separação por linha em branco - mesma convenção usada em 19520615-御垂示録10号.txt), fruto da reconstrução estrutural da auditoria anterior. Confronto automático 1:1 entre a sequência de papéis do mapa JP (90 posições) e a marca de aspas de abertura em cada linha PT correspondente (após separar o cabeçalho de sessão '[1º de dezembro]' da 1ª linha, que estava fundido com o primeiro turno): 0 divergências em 90 posições. Nenhum turno faltando, nenhuma troca de falante, Δ=0 confirmado por conteúdo (não só contagem).",
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a cada uma das 90 linhas de turno, na ordem e com o texto PT já existente, sem reescrever ou reordenar conteúdo. Cabeçalho de sessão '[1º de dezembro]' separado para linha própria, precedendo o 1º turno (Interlocutor). Nenhum turno ausente foi encontrado na Etapa B, logo nenhuma tradução nova foi inserida nesta passada.",
+    "resultado": "90 linhas rotuladas (42 Interlocutor: / 48 Meishu-Sama:), 0 problemas de alinhamento encontrados ou corrigidos nesta rotulagem.",
+    "backup": "reports/livros_trabalho/pt/19521215-御垂示録16号.txt.bak_before_labeling_20260708",
+    "approved_alterado": false
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 219 linhas / PT 116 linhas). Confirma que a correcao anterior de genero (\"Sr. Hata\"/escritor, ambos masculinos) permanece aplicada consistentemente. Confirma que 御守/御守様 e traduzido consistentemente como \"Omamori (Ohikari)\" em todas as 5 ocorrencias (linhas 94,96,97,98,99 do PT), resolvendo a pendencia leve de terminologia anteriormente registrada para este volume. Conteudo integro, sem truncamento, sem CJK residual, sem duplicacao. Nenhuma correcao adicional necessaria."
+  }
+}

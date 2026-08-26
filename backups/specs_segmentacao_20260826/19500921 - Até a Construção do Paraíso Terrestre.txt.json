@@ -1,0 +1,25 @@
+{
+ "filename": "19500921 - Até a Construção do Paraíso Terrestre.txt",
+ "profile": "monolith",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_no_split",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "地上天国出来るまで",
+   "title_pt": "Até que o Paraíso na Terra se Concretize — Hakone Gōra, Terra Divina",
+   "jp_anchor": "地上天国出来るまで",
+   "pt_anchor": "Até que o Paraíso Terrestre se Concretize — Hakone Gōra, Terra Divina",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

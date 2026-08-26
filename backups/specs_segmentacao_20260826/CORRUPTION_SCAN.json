@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-07-06T00:14:21Z",
+  "total_files": 132,
+  "severe_count": 0,
+  "warn_count": 9,
+  "findings": [
+    {
+      "filename": "19480101-御光話録（補）.txt",
+      "inline_dash_count": 33,
+      "inline_dash_paragraphs": 17,
+      "work_size": 374689,
+      "prod_size": 364545,
+      "size_ratio": 1.03,
+      "severity": "warn",
+      "notes": [
+        "33 travessão(ões) embutido(s) em 17 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19481208-御光話録1号.txt",
+      "inline_dash_count": 1,
+      "inline_dash_paragraphs": 1,
+      "work_size": 35091,
+      "prod_size": 33419,
+      "size_ratio": 1.05,
+      "severity": "warn",
+      "notes": [
+        "1 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19490000-御光話録4号.txt",
+      "inline_dash_count": 1,
+      "inline_dash_paragraphs": 1,
+      "work_size": 49740,
+      "prod_size": 49037,
+      "size_ratio": 1.01,
+      "severity": "warn",
+      "notes": [
+        "1 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19490208-御光話録3号.txt",
+      "inline_dash_count": 1,
+      "inline_dash_paragraphs": 1,
+      "work_size": 46679,
+      "prod_size": 45957,
+      "size_ratio": 1.02,
+      "severity": "warn",
+      "notes": [
+        "1 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19490530-御光話録8号.txt",
+      "inline_dash_count": 2,
+      "inline_dash_paragraphs": 1,
+      "work_size": 48427,
+      "prod_size": 49848,
+      "size_ratio": 0.97,
+      "severity": "warn",
+      "notes": [
+        "2 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19490710-御光話録10号.txt",
+      "inline_dash_count": 1,
+      "inline_dash_paragraphs": 1,
+      "work_size": 57425,
+      "prod_size": 58287,
+      "size_ratio": 0.99,
+      "severity": "warn",
+      "notes": [
+        "1 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19491021-御光話録13号.txt",
+      "inline_dash_count": 4,
+      "inline_dash_paragraphs": 2,
+      "work_size": 53307,
+      "prod_size": 52403,
+      "size_ratio": 1.02,
+      "severity": "warn",
+      "notes": [
+        "4 travessão(ões) embutido(s) em 2 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19491120-御光話録14号.txt",
+      "inline_dash_count": 2,
+      "inline_dash_paragraphs": 1,
+      "work_size": 57017,
+      "prod_size": 59896,
+      "size_ratio": 0.95,
+      "severity": "warn",
+      "notes": [
+        "2 travessão(ões) embutido(s) em 1 parágrafo(s) já rotulado(s)"
+      ]
+    },
+    {
+      "filename": "19491220-御光話録15号.txt",
+      "inline_dash_count": 4,
+      "inline_dash_paragraphs": 4,
+      "work_size": 59494,
+      "prod_size": 58417,
+      "size_ratio": 1.02,
+      "severity": "warn",
+      "notes": [
+        "4 travessão(ões) embutido(s) em 4 parágrafo(s) já rotulado(s)"
+      ]
+    }
+  ]
+}

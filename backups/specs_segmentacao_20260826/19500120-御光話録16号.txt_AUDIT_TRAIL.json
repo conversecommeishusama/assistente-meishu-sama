@@ -1,0 +1,87 @@
+{
+  "filename": "19500120-御光話録16号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 499 linhas / PT 419 linhas), monólito único, do título ao editorial final. Nota: PENDENCIAS_REVISAO.json já registrava um checkpoint histórico (2026-07-04) que fechou este volume com Δ=0 após mesclar 2 pares de turnos indevidamente divididos — esta auditoria releu tudo de novo (Δ=0 nunca é prova suficiente de fecho) e encontrou 2 novas ocorrências do mesmo padrão de bug que não tinham sido pegas naquela sessão.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO encontrada — nenhuma inversão real de atribuição de falante. Mas encontradas 2 duplicações de rótulo 'Meishu-Sama:' sem turno Interlocutor intermediário (ver correções 1 e 2) — mesma classe de artefacto de segmentação já catalogada em GOSHINSHO.md e no AUDIT_TRAIL de 御光話録5号 (lote anterior).",
+    "achado_relacionado": "Confirmado por comparação direta: em ambos os pontos, o JP tem uma resposta contínua de Meishu-Sama (mudança de parágrafo dentro da mesma resposta, sem nova pergunta ―― no meio), mas o PT tinha dividido essa resposta em dois blocos rotulados 'Meishu-Sama:' separadamente. Nenhuma perda de conteúdo em nenhum dos dois casos — apenas rótulo duplicado indevidamente.",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CJK=0 confirmado (gate mecânico).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 1,
+    "turnos_interlocutor_jp_pt_gate": "97/97 (Δ=0)",
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_de_rotulo_confirmada": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Resposta sobre frutas em caso de ferimento grave / doce de feijão (an) não ser ruim para crianças (JP linhas 280-283, correspondendo a uma única resposta contínua de Meishu-Sama)",
+      "problema": "Rótulo 'Meishu-Sama:' duplicado sem turno Interlocutor intermediário: a resposta sobre frutas terminava e, sem nova pergunta, a resposta sobre o doce de feijão (mesmo raciocínio continuado no JP com 'それからね') aparecia com um novo rótulo 'Meishu-Sama:' no PT.",
+      "correcao": "Mesclados os dois blocos em um único parágrafo sob um só rótulo, sem alterar nenhuma palavra do texto traduzido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Resposta sobre pensamentos dispersos durante oferenda aos mortos / possessão espiritual por fraqueza (JP linhas 368-369, mesma resposta contínua)",
+      "problema": "Mesmo padrão da correção 1: resposta contínua do JP (sem nova ―― no meio) dividida em dois blocos PT com rótulo 'Meishu-Sama:' repetido.",
+      "correcao": "Mesclados os dois blocos em um único parágrafo sob um só rótulo, sem alterar o texto.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Yoshitsune/pacifismo, caligrafia do Ohikari, tokonoma duplo, forma dos cultos, filhos e amor dos pais",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Escolha de escola/carreira, arte/cinema (Tanizaki, Kurosawa/Taniguchi, atores), Kabuki/Noh/Ópera",
+      "decisao": "ok — nomes próprios de artistas e filmes conferidos contra o JP",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Casas triangulares/geomancia, ciência x religião, língua/espírito da palavra, Okinawa",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Idade no mundo espiritual, fotografias espirituais, absorção de doença (bocejo/arroto ao aplicar Johrei) — correção 1",
+      "decisao": "corrigido — duplicação de rótulo (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Karma/apego entre filhos, adoção, animais têm sentimentos, plantas semi-espirituais",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Casos médicos extensos (derrame, dor cardíaca, úlcera gástrica), possessão/sufrágio — correção 2",
+      "decisao": "corrigido — duplicação de rótulo (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Agricultura (palha, cal em solo vulcânico, rã comestível), afundamento de terreno, nota editorial de Ano Novo",
+      "decisao": "ok",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19500120-御光話録16号.txt\"",
+    "resultado": "PASS I=97/97 Δ=0 CJK=0 (mantido após as duas mesclagens de rótulo, que não alteram a contagem de turnos Interlocutor)"
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro revisado linha a linha contra o JP, mesmo já tendo Δ=0 de uma sessão de fecho anterior (2026-07-04) — releitura confirmou 2 novas ocorrências do padrão de bug 'rótulo Meishu-Sama duplicado sem perda de conteúdo' que não tinham sido detectadas antes, agora corrigidas. Nenhuma troca real de falante nem perda de conteúdo. Gate PASS."
+  }
+}

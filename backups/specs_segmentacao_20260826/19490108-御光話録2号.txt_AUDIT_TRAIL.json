@@ -1,0 +1,113 @@
+{
+  "filename": "19490108-御光話録2号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (Fase E, delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 462 linhas / PT 380 linhas após correções), do prefácio ao último parágrafo ('Hito no Michi'). JP lido linha a linha na íntegra (arquivo lido de uma vez, sem amostragem) e confrontado com o PT correspondente na mesma ordem, sessão por sessão (28 de novembro, 8 de dezembro, 18 de dezembro, 28 de dezembro). 88 pares Interlocutor/Meishu-Sama identificados e conferidos individualmente (15 na sessão de 28/nov, 24 na de 8/dez, 26 na de 18/dez, 23 na de 28/dez — soma 88, confirmado contra a saída do gate mecânico I=88/88).",
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + linha de publicação)",
+      "jp_linhas": "20-22",
+      "pt_linhas": "20",
+      "decisao": "ok — título e data de publicação (8 de janeiro de 1949 / Showa 24) traduzidos corretamente. Nota não bloqueante: o JP tem uma linha de título isolada ('御光話録２号') antes da linha de publicação, sem equivalente próprio no PT — conteúdo redundante com o cabeçalho de metadados ('Title:'), não tratado como perda.",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 28 de novembro — 15 pares P&R",
+      "jp_linhas": "24-101",
+      "pt_linhas": "22-80",
+      "temas": "injeções e toxina medicamentosa, rigidez após injeção, resposta a propaganda negativa (individual/grupo), desculpas diante de calúnia, provérbio 'sem posses não há constância', pensamento de país divino e a personalidade do Grão-Mestre, movimentos espirituais durante o Johrei conforme o mestre/local, pacientes de difícil cura em centros de ensino, identificação do ponto vital com roupa, culto ancestral ao entrar no Caminho vindo do Xintoísmo, cobra branca morta e culto a Ryujin/Inari, almas desamparadas e cadáveres de morte violenta, localização do mundo espiritual",
+      "decisao": "ok após 2 correções (ver correções aplicadas nº 1 e nº 3) — conteúdo completo, ordem correta, sem truncamento, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 8 de dezembro (quarta-feira) — 24 pares P&R",
+      "jp_linhas": "104-224",
+      "pt_linhas": "84-180",
+      "temas": "ênfase material vs. espiritual no ponto vital, dificuldade de encontrar o ponto vital sem tocar/despir o paciente, pontos vitais específicos (parótida, linfonodos, nuca, ombros) e ordem de tratamento de febre, tirar a roupa do paciente, rins/coluna/pelve renal, apendicite e fígado, Johrei com paciente deitado, distância da mão, asma, apoiar-se em Kannon-Sama/Grão-Mestre, espíritos protetores (Benzaiten, Inari) e suas hierarquias, mudança de filiação e nova estrutura organizacional (Sede/Subsede/Associação/Ramo/Instrutor), nacionalidade do espírito de criança mestiça, igualdade de gênero, orações fúnebres (Amatsu/Zengen-Sanji), arte/cultura das eras Shotoku e Genroku vs. hoje (pintura, música, cerâmica, tecidos), esquerda/direita",
+      "decisao": "ok após 1 correção estrutural grave (ver correção nº 2 abaixo) e 1 correção de formatação — conteúdo completo, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 18 de dezembro (sábado) — 26 pares P&R",
+      "jp_linhas": "226-353",
+      "pt_linhas": "182-286",
+      "temas": "orientação restrita ao que é dito publicamente, morte de paciente apesar do Johrei sincero, documentos sobre Amida Nyorai e Kannon, relação Kannon/Tenri-O, culto a Daikoku-Sama, calendário 'kinoe-ne', ordem de pendurar imagem/caligrafia, tuberculose vs. gangrena pulmonar, eixo com fugas de empregadas, paralisia infantil, tornozelo sem melhora (importância de acertar o ponto vital), outras religiões antes do Kyoshu, amor de Deus (hierarquia egoísta→família→clã→classe→nação→humanidade), sessões espíritas e escuridão, médium (審神者), caso Northcliffe, invocação de espíritos e Yachimata, transição Noite/Dia e energia atômica, milagre do pão no Novo Testamento, neve em Yamagata, mal de Pott",
+      "decisao": "ok após 1 correção grave de cláusula migrada (ver correção nº 4, PADRÃO JÁ CATALOGADO em Gokōwa) e 1 correção de formatação — conteúdo completo, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 28 de dezembro (terça-feira) — 23 pares P&R",
+      "jp_linhas": "355-462",
+      "pt_linhas": "288-380",
+      "temas": "Religião Kannon do Japão e Religião Miroku (separação, mesma origem), oração ao Ujigami, clarividência vs. visão espiritual (tengu do Monte Takao), artistas infelizes/imorais (Da Vinci, Kumoemon, Mushanokōji Saneatsu, Shimamura Hōgetsu), não-resistência cristã e Nao Deguchi (Oomoto), propaganda maldosa como possível obra de Deus, suicídio de Sócrates, jejum de Gandhi, Confúcio e o povo chinês, fraqueza de Buda e manji/suástica, justiça vs. injustiça (medicina), jornada de trabalho de 4 horas, natimorto/aborto espontâneo, preferência por menina antes de menino, Johrei vs. outras terapias espirituais",
+      "decisao": "ok — conteúdo completo até a última frase do arquivo, sem truncamento, sem duplicação, sem troca de falante",
+      "confianca": "alta"
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Sessão 28 de novembro — resposta sobre culto a cobra branca/Ryujin (PT, dentro do parágrafo do ponto vital 'cultuar um Inari') e resposta sobre espíritos protetores pessoais (Benzaiten/Inari), 2 ocorrências",
+      "problema": "'○○明神'/'○○稲荷' do JP (marcador de nome de família/local em branco, convenção usada consistentemente no resto do acervo — confirmado contra 19480101-御光話録（補）.txt, que preserva '○○ Myōjin' literalmente) foram traduzidos literalmente como a palavra 'círculocírculo' ('círculocírculo Myojin', 'círculocírculo Inari'), divergindo da convenção do acervo e produzindo um artefato de tradução sem sentido em português.",
+      "correcao": "Substituído 'círculocírculo Myojin' → '○○ Myōjin' e 'círculocírculo Inari' → '○○ Inari', preservando o símbolo de marcador em branco como no resto do acervo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Sessão 28 de novembro — resposta sobre a diferença entre o 'satori' das religiões antigas e o do Meishu-Sama (PT)",
+      "problema": "GRAVE — o JP explica um jogo de palavras entre dois kanjis homófonos ('悟', que significa resignação, e '覚', despertar do conhecimento). A frase em PT ficou gramaticalmente quebrada e sem sentido: 'usa o caractere, que significa resignação, mas o meu é, que é o despertar do conhecimento' — o substantivo/caractere de referência foi perdido em algum processamento anterior (provavelmente relacionado à supressão de CJK residual), deixando 'o caractere' e 'o meu é' sem complemento.",
+      "correcao": "Reescrito para 'O \"satori\" de que falam as religiões até agora usa o caractere que significa resignação; o meu usa o caractere que significa despertar do conhecimento, do conhecer.' — sentido e distinção preservados sem reintroduzir CJK no corpo (consistente com o ponto 5 do checklist).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Transição entre a sessão de 28 de novembro e a manchete da sessão de 8 de dezembro; e entre a sessão de 18 de dezembro e a manchete da sessão de 28 de dezembro (PT)",
+      "problema": "Formatação: os cabeçalhos de sessão '8 de dezembro (quarta-feira)' e '28 de dezembro (terça-feira)' ficaram colados ao final do último parágrafo da sessão anterior, sem quebra de parágrafo, ao passo que o terceiro cabeçalho ('18 de dezembro (sábado)') está corretamente isolado em linha própria. Viola o ponto 6 do checklist (paragrafação 1:1) e o ponto 7 (cabeçalhos consistentes) — não é perda de conteúdo, apenas fusão de formatação.",
+      "correcao": "Inserida quebra de parágrafo antes de cada um dos 2 cabeçalhos afetados, isolando-os em linha própria como o terceiro cabeçalho já estava.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Sessão 18 de dezembro — pergunta sobre se seria melhor aguardar ocasião/local adequados para mais orientação ou se basta o que já é dito nas sessões (PT, transição pergunta→resposta)",
+      "problema": "GRAVE — padrão já catalogado em gokowa-gate-enforcement.mdc / revisao-paralela-jp-pt.mdc §2 ('cláusula final de pergunta longa migrada para a resposta'). O JP tem uma única pergunta do Interlocutor com duas alternativas ligadas por 'あるいは' ('devemos buscar ocasião e local adequados... OU basta-nos o que já ouvimos aqui?'). No PT, a pergunta parava na primeira alternativa, e a segunda alternativa ('Ou basta-nos saber o que já ouvimos habitualmente neste lugar?') aparecia deslocada para o início do turno de Meishu-Sama, como se fizesse parte da resposta dele. Contagem de turnos não é afetada (Δ=0 'por coincidência', exatamente o mecanismo descrito na regra).",
+      "correcao": "Movida a cláusula 'Ou basta-nos saber o que já ouvimos habitualmente neste lugar?' de volta para o final da pergunta do Interlocutor; o turno de Meishu-Sama agora começa diretamente em 'Apenas o que é dito aqui é suficiente.'",
+      "confianca": "alta — confirmado por leitura direta do JP (single pergunta com 'あるいは' interno, sem novo marcador '――')"
+    },
+    {
+      "n": 5,
+      "localizacao": "Sessão 8 de dezembro — resposta sobre a hierarquia do amor (egoísta→família→...→nação, com menção à 'lealdade ao imperador' em tempo de guerra), PT",
+      "problema": "Erro gramatical de concordância de gênero: 'O \"lealdade ao imperador\" pregado durante a guerra' (artigo/particípio masculinos aplicados a substantivo feminino).",
+      "correcao": "Corrigido para 'A \"lealdade ao imperador\" pregada durante a guerra'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Cabeçalho de metadados do ficheiro de trabalho JP (campo title_pt)",
+      "problema": "Inconsistência de metadado entre os dois ficheiros de trabalho do mesmo par: o cabeçalho do JP trazia 'title_pt: Goshinsho nº 2', enquanto o cabeçalho do próprio PT (e o corpo 'Title:' do PT) usa 'Gokōwa-roku nº 2' — mesmo campo, dois valores diferentes para o mesmo volume. 'Gokōwa-roku nº N' é também a forma majoritária/consistente usada em todos os demais ficheiros de trabalho PT da série (1, 3, 4, 6-12 conferidos). Viola o ponto 7 do checklist (títulos/cabeçalhos consistentes). Mesma classe de bug já documentada no AUDIT_TRAIL do 御光話録1号.",
+      "correcao": "Campo title_pt do cabeçalho do ficheiro de trabalho JP corrigido para 'Gokōwa-roku nº 2', igualando ao PT.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas_ponto_a_ponto": {
+    "troca_de_falante": "Não encontrada. Confirmado por leitura direta: alternância estrita Interlocutor/Meishu-Sama em todas as 176 linhas de diálogo (88 pares), sem dois turnos consecutivos do mesmo falante.",
+    "clausula_migrada": "Encontrada 1 ocorrência real (ver correção nº 4). Demais perguntas longas com múltiplas alternativas/itens ('あるいは', 'または', incl. a pergunta com 2 itens numerados sobre achado de ossada/cadáver, e a de 3 alternativas sobre qual oração fúnebre) conferidas e corretas — todas as alternativas permanecem no turno do Interlocutor.",
+    "perda_de_conteudo_mascarada": "Não encontrada. Todos os 88 pares JP têm par PT correspondente completo na mesma ordem; nenhum trecho longo (ex.: resposta sobre arte/cultura de ~1900 caracteres, resposta sobre amor de Deus, resposta sobre artistas imorais) ficou truncado.",
+    "duplicacao_de_blocos": "Não encontrada. Verificado por comparação programática de início de parágrafo (180 parágrafos PT) — única coincidência de prefixo é entre duas perguntas distintas ('Gostaria de perguntar sobre a relação entre a...', uma sobre o Grão-Mestre/país divino, outra sobre Religião Kannon/Miroku), não é duplicação.",
+    "corrupcao_textual": "Não encontrada nenhuma substituição literal de palavra/frase por string espúria (ex.: o padrão '18 de novembro' do 1号 Gokōwa). Verificado que os 2 marcadores '○○' remanescentes (corrigidos na correção nº 1) não eram corrupção, mas tradução literal indevida do próprio placeholder.",
+    "cjk_residual": "0 no corpo de diálogo (confirmado por regex e pelo gate); os únicos caracteres CJK do ficheiro estão nos comentários de cabeçalho (nome do ficheiro e campos title_jp/Title em japonês), fora do corpo traduzido.",
+    "terminologia_glossario": "Conferida contra glossario_traducao.json: 五六七/Miroku (usado corretamente como 'Religião Miroku', evitando as variantes inconsistentes 'Go-Roku-Shichi/Nana Kyo' documentadas noutro livro do acervo), Chieshōkaku, Yachimata, médium (審神者), Elemento Água/Elemento Fogo (水素/火素), Zengen-Sanji, Grão-Mestre (大先生様/大先生, 4 ocorrências, todas consistentes), Johrei, Ryujin, Miroku Ōkami — todas conformes.",
+    "numeros_e_medidas": "Conferidos e corretos: conversões de medida japonesa (3/6 shaku quadrados ≈ 90cm/1,80m; 5 sun a 1 shaku ≈ 15-30cm; 1 kan 500 monme = 5,625kg de couve-chinesa), datas das 4 sessões (28/nov, 8/dez, 18/dez, 28/dez), contagem de discípulos de Cristo (onze/doze conforme o trecho), prisões de Nakayama Miki (mais de vinte vezes, quatro ao promotor)."
+  },
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19490108-御光話録2号.txt\"",
+    "resultado": "PASS",
+    "detalhe": "I=88/88 Δ=0 CJK=0",
+    "nota": "Rodado após as 6 correções acima; nenhuma delas alterou a contagem de turnos (2 correções são reflow de parágrafo/quebra de linha, 1 é campo de metadado, as demais são substituição pontual de palavras/frase dentro do mesmo turno). Confirmado PASS mesmo assim, como exigido."
+  },
+  "pendencias_abertas_para_escalar": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume revisado linha a linha (88/88 pares) contra o JP, checklist de 8 pontos cumprido em toda a extensão, gate mecânico PASS (Δ=0, CJK=0), 6 correções reais aplicadas (1 estrutural grave — cláusula de pergunta migrada, mesmo padrão catalogado nas regras Gokōwa —, 1 gramatical grave — sentença quebrada por perda de referência a kanji —, 2 de convenção de placeholder '○○', 1 de formatação/paragrafação, 1 de metadado de cabeçalho). Nenhuma pendência de conteúdo aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

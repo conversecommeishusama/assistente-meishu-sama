@@ -1,0 +1,2495 @@
+{
+ "filename": "19480701 - Coletânea de Salmos.txt",
+ "profile": "hymn_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 310→310. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 310,
+ "split_method": "line_csv_hymn",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "御讃歌集（初版）　昭和23年7月1日発行　309首収録",
+   "pt_anchor": "Coletânea de Salmos (Primeira Edição) — Publicada em 1º de julho de 1948, contendo 309 poemas",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "1, さんぜんせかい　たてなおさむとかしこくも　せんじゅかんのんとあれましにける",
+   "title_pt": "",
+   "jp_anchor": "1, さんぜんせかい　たてなおさむとかしこくも　せんじゅかんのんとあれましにける",
+   "pt_anchor": "1. Para endireitar os três mil mundos, de forma augusta e temível, manifestou-se como Kannon de Mil Braços.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "2, じゆうむげ　せんじゅはおろかまんおくの　みてさしのべてすくいますらむ",
+   "title_pt": "",
+   "jp_anchor": "2, じゆうむげ　せんじゅはおろかまんおくの　みてさしのべてすくいますらむ",
+   "pt_anchor": "2. Livre e desimpedido, não apenas mil mãos, mas um trilhão de mãos estende e salva.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "3, せんのみてに　ぶっかをさずけせんのみめに　ひかりめぐもうせそんとうとし",
+   "title_pt": "",
+   "jp_anchor": "3, せんのみてに　ぶっかをさずけせんのみめに　ひかりめぐもうせそんとうとし",
+   "pt_anchor": "3. Com mil mãos concede o fruto da iluminação, com mil olhos concede luz e graça; venerável é o Buda.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "4, たらちねの　ははのちぶさをしたうがに　よびとすがらんたまのおんてに",
+   "title_pt": "",
+   "jp_anchor": "4, たらちねの　ははのちぶさをしたうがに　よびとすがらんたまのおんてに",
+   "pt_anchor": "4. Como a criança anseia pelo seio da mãe, assim os seres humanos se agarram às preciosas mãos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "5, かしこくも　せんじゅのみてをさしのべて　さんかいばんれいすくわせたもう",
+   "title_pt": "",
+   "jp_anchor": "5, かしこくも　せんじゅのみてをさしのべて　さんかいばんれいすくわせたもう",
+   "pt_anchor": "5. Augustamente, estendendo as mil palmas das mãos, salva todos os espíritos dos três mundos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "6, せんようの　みてのちからにまがかみも　せそんのみまえにぬかづくなるらむ",
+   "title_pt": "",
+   "jp_anchor": "6, せんようの　みてのちからにまがかみも　せそんのみまえにぬかづくなるらむ",
+   "pt_anchor": "6. Pelo poder das mil mãos, até os deuses perversos inclinam a cabeça diante do venerável Buda.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "7, いとふかき　なぞをひめたるかんのんの　せんじゅのみてはひらかせますらむ",
+   "title_pt": "",
+   "jp_anchor": "7, いとふかき　なぞをひめたるかんのんの　せんじゅのみてはひらかせますらむ",
+   "pt_anchor": "7. A Kannon, que oculta um profundo mistério, abre suas mil palmas das mãos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "8, せんのみてに　もるるはあらじうつしよに　ありとしあらゆるもののいのちの",
+   "title_pt": "",
+   "jp_anchor": "8, せんのみてに　もるるはあらじうつしよに　ありとしあらゆるもののいのちの",
+   "pt_anchor": "8. Nada escapa às mil palmas das mãos; neste mundo, a vida de todas as coisas que existem.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "9, しんらばんしょう　よにことごとにけじめなく　じしょいをたもうせんじゅかんのん",
+   "title_pt": "",
+   "jp_anchor": "9, しんらばんしょう　よにことごとにけじめなく　じしょいをたもうせんじゅかんのん",
+   "pt_anchor": "9. A Kannon de Mil Braços concede, sem distinção, terras e posições a todos os fenômenos do universo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "10, いとたかき　おんみにありていとひくき　ぼさつのみなにすくいますかも",
+   "title_pt": "",
+   "jp_anchor": "10, いとたかき　おんみにありていとひくき　ぼさつのみなにすくいますかも",
+   "pt_anchor": "10. Estando na mais elevada forma, salva sob o humilde nome de Bodhisattva.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "11, てんかいの　しびのあるじにましませど　このどすくいにあもりますかも",
+   "title_pt": "",
+   "jp_anchor": "11, てんかいの　しびのあるじにましませど　このどすくいにあもりますかも",
+   "pt_anchor": "11. Embora seja o Senhor da Estrela Púrpura no céu, desce para salvar esta terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "12, とめるものに　なみだをあたえまずしきものに　ものをめぐもうかんぜおんかんも",
+   "title_pt": "",
+   "jp_anchor": "12, とめるものに　なみだをあたえまずしきものに　ものをめぐもうかんぜおんかんも",
+   "pt_anchor": "12. Dá lágrimas aos ricos e concede bens aos pobres; é Kanzeon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "13, やおよろず　しょぜんてんにんよろこびて　まつろうほうざにかがやきたもう",
+   "title_pt": "",
+   "jp_anchor": "13, やおよろず　しょぜんてんにんよろこびて　まつろうほうざにかがやきたもう",
+   "pt_anchor": "13. Os oito milhões de bons seres celestiais se alegram e brilham, no trono de tesouro que servem.\n14. Quem pensaria ser uma pintura? Veneramos o Bodhisattva como se est",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "14, えすがたと　たがおもうらむさながらに　いけますごときぼさつおろがむ",
+   "title_pt": "",
+   "jp_anchor": "14, えすがたと　たがおもうらむさながらに　いけますごときぼさつおろがむ",
+   "pt_anchor": "14. Quem pensaria ser uma pintura? Veneramos o Bodhisattva como se estivesse vivo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "15, おうごんは　ぶっしつのせいなりかんのんの　たまのおんみはこがねなりける",
+   "title_pt": "",
+   "jp_anchor": "15, おうごんは　ぶっしつのせいなりかんのんの　たまのおんみはこがねなりける",
+   "pt_anchor": "15. O ouro é a essência da matéria; o precioso corpo de Kannon é feito de ouro.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "16, おうごんの　おんみのかんのんいつきなば　ぶっしつゆたかにつどうなりける",
+   "title_pt": "",
+   "jp_anchor": "16, おうごんの　おんみのかんのんいつきなば　ぶっしつゆたかにつどうなりける",
+   "pt_anchor": "16. Quando a Kannon de corpo dourado é consagrada, os bens materiais se reúnem em abundância.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "17, みおもてを　あしたゆうべにおろがみまつる　ごとになやみはきえてゆくなり",
+   "title_pt": "",
+   "jp_anchor": "17, みおもてを　あしたゆうべにおろがみまつる　ごとになやみはきえてゆくなり",
+   "pt_anchor": "17. Cada vez que veneramos o rosto divino pela manhã e à noite, as aflições desaparecem.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "18, いかならむ　いたつきとてもねんずれば　とくいやしますかんぜおんかも",
+   "title_pt": "",
+   "jp_anchor": "18, いかならむ　いたつきとてもねんずれば　とくいやしますかんぜおんかも",
+   "pt_anchor": "18. Seja qual for a doença, se pensarmos n'Ela, Kanzeon cura rapidamente.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "19, たらちねの　ははにもましてなつかしく　うちあおぐかなたまのみおもて",
+   "title_pt": "",
+   "jp_anchor": "19, たらちねの　ははにもましてなつかしく　うちあおぐかなたまのみおもて",
+   "pt_anchor": "19. Mais querida que a própria mãe, ergo o olhar para o precioso rosto divino.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "20, かんぜおん　いつきまつりしそのひより　わがいえぬちはあかるみにける",
+   "title_pt": "",
+   "jp_anchor": "20, かんぜおん　いつきまつりしそのひより　わがいえぬちはあかるみにける",
+   "pt_anchor": "20. Desde o dia em que consagramos Kanzeon, nossa casa se iluminou.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "21, うばたまの　やみはれにけりかんのんの　たまのみひかりかがよいそめて",
+   "title_pt": "",
+   "jp_anchor": "21, うばたまの　やみはれにけりかんのんの　たまのみひかりかがよいそめて",
+   "pt_anchor": "21. A escuridão se dissipou; a preciosa luz de Kannon começou a brilhar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "22, かんぜおん　ぼさつとねんずたまゆらに　このみこのたまよみがえりけり",
+   "title_pt": "",
+   "jp_anchor": "22, かんぜおん　ぼさつとねんずたまゆらに　このみこのたまよみがえりけり",
+   "pt_anchor": "22. Ao pensar no Bodhisattva Kanzeon, num instante este corpo e esta alma renasceram.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "23, しらぬまに　すくわれにけりかんのんの　まことのみおしえわれききてより",
+   "title_pt": "",
+   "jp_anchor": "23, しらぬまに　すくわれにけりかんのんの　まことのみおしえわれききてより",
+   "pt_anchor": "23. Sem que eu percebesse, fui salvo, desde que ouvi o verdadeiro ensinamento de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "24, まんがんの　ふみよまずともねんずれば　まことのちえをたもうかんのん",
+   "title_pt": "",
+   "jp_anchor": "24, まんがんの　ふみよまずともねんずれば　まことのちえをたもうかんのん",
+   "pt_anchor": "24. Mesmo sem ler dez mil volumes de escritos, se pensarmos n'Ela, Kannon concede a verdadeira sabedoria.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "25, のりにそれず　みちにかないてとみさかゆ　さちはかんのんぎょうにありける",
+   "title_pt": "",
+   "jp_anchor": "25, のりにそれず　みちにかないてとみさかゆ　さちはかんのんぎょうにありける",
+   "pt_anchor": "25. Sem desviar-se da Lei, adequando-se ao Caminho, a riqueza prospera; a felicidade está na prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "26, やおよろず　かみもしょぜんもてんにんも　あおぐはかんのんのだいじなりけり",
+   "title_pt": "",
+   "jp_anchor": "26, やおよろず　かみもしょぜんもてんにんも　あおぐはかんのんのだいじなりけり",
+   "pt_anchor": "26. Os oito milhões de deuses, todos os seres bons e celestiais veneram a grande compaixão de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "27, いとたかき　みくらをあとにあもりまし　このどをきよむるかんぜおんかも",
+   "title_pt": "",
+   "jp_anchor": "27, いとたかき　みくらをあとにあもりまし　このどをきよむるかんぜおんかも",
+   "pt_anchor": "27. Deixando o trono mais elevado, desceu e purifica esta terra; é Kanzeon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "28, おもいきや　しずのおのこのうつそみに　やどかりたもうかんのんかしこし",
+   "title_pt": "",
+   "jp_anchor": "28, おもいきや　しずのおのこのうつそみに　やどかりたもうかんのんかしこし",
+   "pt_anchor": "28. Quem imaginaria? Habitando no corpo de um homem humilde, a augusta Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "29, めっぽうの　よをすくいますみちからは　かんのんみょうちのみちからとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "29, めっぽうの　よをすくいますみちからは　かんのんみょうちのみちからとぞおもう",
+   "pt_anchor": "29. O poder que salva o mundo da Extinção do Dharma, penso ser o poder da maravilhosa sabedoria de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "30, たいぼうの　メシヤあれなむけいしょうを　ひたうちならしよびとさまさん",
+   "title_pt": "",
+   "jp_anchor": "30, たいぼうの　メシヤあれなむけいしょうを　ひたうちならしよびとさまさん",
+   "pt_anchor": "30. O tão esperado Messias aparecerá; soando o sino de alarme, despertará os seres humanos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "31, おおいなる　ひかりとねつをもれもなく　ゆたにめぐもうかんぜおんはも",
+   "title_pt": "",
+   "jp_anchor": "31, おおいなる　ひかりとねつをもれもなく　ゆたにめぐもうかんぜおんはも",
+   "pt_anchor": "31. A grande luz e o calor, sem exceção, Kanzeon os concederá abundantemente.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "32, よのひじり　とくよしもなきひめごとの　とをひらかむとかんのんあもりぬ",
+   "title_pt": "",
+   "jp_anchor": "32, よのひじり　とくよしもなきひめごとの　とをひらかむとかんのんあもりぬ",
+   "pt_anchor": "32. Para abrir a porta dos segredos que nem mesmo os sábios do mundo podem desvendar, Kannon desceu.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "33, かんのんの　みょうちのかぎにそこふかき　よろずのなぞはうちとくるならん",
+   "title_pt": "",
+   "jp_anchor": "33, かんのんの　みょうちのかぎにそこふかき　よろずのなぞはうちとくるならん",
+   "pt_anchor": "33. Com a chave da maravilhosa sabedoria de Kannon, os profundos mistérios de todas as coisas serão desvendados.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "34, みちとせの　かたきいわともかんのんの　たまのおんてにうちひらくるならん",
+   "title_pt": "",
+   "jp_anchor": "34, みちとせの　かたきいわともかんのんの　たまのおんてにうちひらくるならん",
+   "pt_anchor": "34. Mesmo a porta de pedra firme de três mil anos será aberta pelas preciosas mãos de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "35, あめつちの　もものじっそうめにうつり　まよいのくものはるるうれしさ",
+   "title_pt": "",
+   "jp_anchor": "35, あめつちの　もものじっそうめにうつり　まよいのくものはるるうれしさ",
+   "pt_anchor": "35. As cem formas verdadeiras do céu e da terra refletem-se nos olhos; a alegria de as nuvens da ilusão se dissiparem.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "36, おおかみは　ときみつるまであまのとを　ひらくみかぎをひめおかれませり",
+   "title_pt": "",
+   "jp_anchor": "36, おおかみは　ときみつるまであまのとを　ひらくみかぎをひめおかれませり",
+   "pt_anchor": "36. O Grande Deus manteve oculta a chave que abre a porta do céu até que o tempo se cumprisse.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "37, たちまよう　さぎりはらしてかんのんの　ひかりかがようときはきぬめり",
+   "title_pt": "",
+   "jp_anchor": "37, たちまよう　さぎりはらしてかんのんの　ひかりかがようときはきぬめり",
+   "pt_anchor": "37. A névoa que nos fazia vagar se dissipa; chegou o tempo em que a luz de Kannon brilha.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "38, おおぞらに　かがやくつきとひのかげは　せいかんのんのほっしゅなるらん",
+   "title_pt": "",
+   "jp_anchor": "38, おおぞらに　かがやくつきとひのかげは　せいかんのんのほっしゅなるらん",
+   "pt_anchor": "38. A luz do sol e da lua que brilham no grande céu são a joia preciosa da Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "39, しがの　うみみなそこふかくかくれませし　きんりゅうじんのあれましにける",
+   "title_pt": "",
+   "jp_anchor": "39, しがの　うみみなそこふかくかくれませし　きんりゅうじんのあれましにける",
+   "pt_anchor": "39. O Deus Dragão Dourado, que estava oculto nas profundezas do Lago Shiga, manifestou-se.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "40, ひさかたの　あめのまないのやすがわら　うけいにあれしやたりおめがみ",
+   "title_pt": "",
+   "jp_anchor": "40, ひさかたの　あめのまないのやすがわら　うけいにあれしやたりおめがみ",
+   "pt_anchor": "40. No leito do rio Yasu do poço celestial de Amenomanai, os oito deuses e deusas que nasceram do juramento.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "41, ぶつめつの　みよをかぎりにかくろいし　はちだいりゅうおうはやたりおとめなり",
+   "title_pt": "",
+   "jp_anchor": "41, ぶつめつの　みよをかぎりにかくろいし　はちだいりゅうおうはやたりおとめなり",
+   "pt_anchor": "41. Os Oito Grandes Reis Dragões, que se ocultaram até o fim da era da Extinção do Budismo, são oito, homens e mulheres.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "42, きんりゅうの　こんごうりきのとうとさよ　あわれさたんもまつろうほかなき",
+   "title_pt": "",
+   "jp_anchor": "42, きんりゅうの　こんごうりきのとうとさよ　あわれさたんもまつろうほかなき",
+   "pt_anchor": "42. A venerável força adamantina do Dragão Dourado; até mesmo Satanás não tem escolha senão servir.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "43, やたりおと　めただひとはしらのかんみたまと　ならせこのどにいずのめのかみ",
+   "title_pt": "",
+   "jp_anchor": "43, やたりおと　めただひとはしらのかんみたまと　ならせこのどにいずのめのかみ",
+   "pt_anchor": "43. Os oito homens e a mulher, tornando-se uma única divindade, o espírito divino, manifestam-se nesta terra como a Deus",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "44, ぐせのため　じゆうむげなるみひかりを　まくばせたもうせいかんのんかも",
+   "title_pt": "",
+   "jp_anchor": "44, ぐせのため　じゆうむげなるみひかりを　まくばせたもうせいかんのんかも",
+   "pt_anchor": "44. Para a salvação do mundo, a Santa Kannon distribui a luz livre e desimpedida.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "45, あまかけり　くにかけりつつためしなき　みちからふるわむきんりゅうじんはも",
+   "title_pt": "",
+   "jp_anchor": "45, あまかけり　くにかけりつつためしなき　みちからふるわむきんりゅうじんはも",
+   "pt_anchor": "45. Voando pelos céus, percorrendo as terras, o Deus Dragão Dourado exercerá um poder sem precedentes.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "46, そのころを　かえりみすればおそろしも　やみじつえなくさまよいしわれ",
+   "title_pt": "",
+   "jp_anchor": "46, そのころを　かえりみすればおそろしも　やみじつえなくさまよいしわれ",
+   "pt_anchor": "46. Quando olho para trás, para aquela época, é terrível; eu vagava sem rumo na escuridão, sem um cajado.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "47, だんがいの　ゆくてにあるがしられけり　かみのひかりにめぐまれてより",
+   "title_pt": "",
+   "jp_anchor": "47, だんがいの　ゆくてにあるがしられけり　かみのひかりにめぐまれてより",
+   "pt_anchor": "47. Soube que havia um precipício à minha frente, desde que fui agraciado com a luz de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "48, ふきすさぶ　よあらしとてもわすれけり　かみのみひかりにつつまれてより",
+   "title_pt": "",
+   "jp_anchor": "48, ふきすさぶ　よあらしとてもわすれけり　かみのみひかりにつつまれてより",
+   "pt_anchor": "48. Esqueci até mesmo a tempestade do mundo que soprava furiosa, desde que fui envolvido pela luz divina.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "49, あまてらす　つきのひかりもひのかげも　すのおおかみのおんめなるらむ",
+   "title_pt": "",
+   "jp_anchor": "49, あまてらす　つきのひかりもひのかげも　すのおおかみのおんめなるらむ",
+   "pt_anchor": "49. A luz da lua e o brilho do sol que iluminam o céu são os olhos do Grande Deus Senhor.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "50, めしいほど　はかなきものはよにあらじ　ちかどのたからしるよしもなく",
+   "title_pt": "",
+   "jp_anchor": "50, めしいほど　はかなきものはよにあらじ　ちかどのたからしるよしもなく",
+   "pt_anchor": "50. Não há nada no mundo tão efêmero quanto um cego; não há como conhecer o tesouro próximo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "51, かんのんの　ひかりにまなこさめぬれば　こがねとみしはあらがねのつち",
+   "title_pt": "",
+   "jp_anchor": "51, かんのんの　ひかりにまなこさめぬれば　こがねとみしはあらがねのつち",
+   "pt_anchor": "51. Quando os olhos despertam com a luz de Kannon, o que parecia ouro é terra de metal bruto.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "52, ひとごとと　おもいしこともいつしかに　わがみのうえにふりかかるよや",
+   "title_pt": "",
+   "jp_anchor": "52, ひとごとと　おもいしこともいつしかに　わがみのうえにふりかかるよや",
+   "pt_anchor": "52. O que pensei ser coisa dos outros, um dia recai sobre mim mesmo; é este mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "53, うきぐさの　ところさだめぬわがこころ　あわれとすくいませしかんのん",
+   "title_pt": "",
+   "jp_anchor": "53, うきぐさの　ところさだめぬわがこころ　あわれとすくいませしかんのん",
+   "pt_anchor": "53. Meu coração, como erva flutuante, sem lugar fixo; Kannon, em sua compaixão, salvou-me.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "54, せいしんの　かがみによらでいかにして　もものさかごとわからざらめや",
+   "title_pt": "",
+   "jp_anchor": "54, せいしんの　かがみによらでいかにして　もものさかごとわからざらめや",
+   "pt_anchor": "54. Como poderia compreender as cem coisas contrárias sem me espelhar no espelho das divindades corretas?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "55, かんのんの　みすくいなくばわれはいま　そこなきぬまになやみつづけむ",
+   "title_pt": "",
+   "jp_anchor": "55, かんのんの　みすくいなくばわれはいま　そこなきぬまになやみつづけむ",
+   "pt_anchor": "55. Sem a salvação de Kannon, eu agora continuaria a sofrer num pântano sem fundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "56, いまさらに　すぎにしことどもいわざらむ　わがおろかさのとがにありせば",
+   "title_pt": "",
+   "jp_anchor": "56, いまさらに　すぎにしことどもいわざらむ　わがおろかさのとがにありせば",
+   "pt_anchor": "56. Não falarei mais das coisas passadas; se for por causa da minha tolice.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "57, ちからなく　つえなくともしびもたぬみの　かみのみさちにすくわれしいま",
+   "title_pt": "",
+   "jp_anchor": "57, ちからなく　つえなくともしびもたぬみの　かみのみさちにすくわれしいま",
+   "pt_anchor": "57. Sem forças, sem cajado, sem luz, fui salvo pela graça divina de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "58, はるぬのに　あそぶがごとくうらたのし　かみのれいいにつつまるるみは",
+   "title_pt": "",
+   "jp_anchor": "58, はるぬのに　あそぶがごとくうらたのし　かみのれいいにつつまるるみは",
+   "pt_anchor": "58. Como se brincasse num campo primaveril, alegra-se o coração; o corpo envolto na Aura divina.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "59, つたなくも　まことにいずることのはは　ひとをうごかすちからありけり",
+   "title_pt": "",
+   "jp_anchor": "59, つたなくも　まことにいずることのはは　ひとをうごかすちからありけり",
+   "pt_anchor": "59. Mesmo que desajeitadas, as palavras que brotam da sinceridade têm o poder de mover as pessoas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "60, いうべきと　いわでよきことあるよなり　みちにあるものこころせよゆめ",
+   "title_pt": "",
+   "jp_anchor": "60, いうべきと　いわでよきことあるよなり　みちにあるものこころせよゆめ",
+   "pt_anchor": "60. Há coisas neste mundo que se deve dizer e coisas que é melhor não dizer; quem está no Caminho, tenha cuidado, nunca ",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "61, ささやかな　こととしいえどゆるがせに　せぬひとにしておおきことなる",
+   "title_pt": "",
+   "jp_anchor": "61, ささやかな　こととしいえどゆるがせに　せぬひとにしておおきことなる",
+   "pt_anchor": "61. Mesmo que se considere uma coisa pequena, quem não a negligencia realiza grandes feitos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "62, じょうこんの　ひとのしるしはまじわりて　なにかはしらにゆかしさほのめく",
+   "title_pt": "",
+   "jp_anchor": "62, じょうこんの　ひとのしるしはまじわりて　なにかはしらにゆかしさほのめく",
+   "pt_anchor": "62. O sinal de uma pessoa de alma elevada é que, ao conviver, sente-se uma atração refinada, sem saber por quê.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "63, こころよきは　しろきをしろとそのままに　のることのはをきくにぞありける",
+   "title_pt": "",
+   "jp_anchor": "63, こころよきは　しろきをしろとそのままに　のることのはをきくにぞありける",
+   "pt_anchor": "63. Agradável é ouvir palavras que dizem o branco como branco, exatamente como é.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "64, いささかの　くもりもこうみょうかいにては　もののさやりになるとしれかし",
+   "title_pt": "",
+   "jp_anchor": "64, いささかの　くもりもこうみょうかいにては　もののさやりになるとしれかし",
+   "pt_anchor": "64. Saiba que, no mundo da luz, mesmo pequenas nuvens espirituais se torna um obstáculo para as coisas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "65, えんまんに　ものをおさむるひとにして　もろもろのひとしたいくるなり",
+   "title_pt": "",
+   "jp_anchor": "65, えんまんに　ものをおさむるひとにして　もろもろのひとしたいくるなり",
+   "pt_anchor": "65. Quem administra as coisas com perfeição atrai para si todas as pessoas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "66, おおいなる　のぞみのためにいとちさき　ことにもわれはこころおくなり",
+   "title_pt": "",
+   "jp_anchor": "66, おおいなる　のぞみのためにいとちさき　ことにもわれはこころおくなり",
+   "pt_anchor": "66. Por causa de um grande objetivo, também nas pequenas coisas eu ponho o coração.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "67, ものごしも　のることたまもこころよき　ひとこそかんのんぎょうにかなえり",
+   "title_pt": "",
+   "jp_anchor": "67, ものごしも　のることたまもこころよき　ひとこそかんのんぎょうにかなえり",
+   "pt_anchor": "67. Tanto a postura quanto as palavras do espírito da palavra são agradáveis; essa pessoa está de acordo com a prática d",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "68, いかならん　こともこらえてときをまつ　ひとこそかんのんぎょうのひとなり",
+   "title_pt": "",
+   "jp_anchor": "68, いかならん　こともこらえてときをまつ　ひとこそかんのんぎょうのひとなり",
+   "pt_anchor": "68. Quem suporta qualquer coisa e espera o momento é a pessoa da prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "69, ただひとの　めにはよしとしうつることも　かみのみむねにかなわぬことあり",
+   "title_pt": "",
+   "jp_anchor": "69, ただひとの　めにはよしとしうつることも　かみのみむねにかなわぬことあり",
+   "pt_anchor": "69. Mesmo que aos olhos das pessoas comuns pareça bom, há coisas que não estão de acordo com a vontade de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "70, ちいさなる　ひとのまなこにうつらめや　おおあめつちをただすしぐみの",
+   "title_pt": "",
+   "jp_anchor": "70, ちいさなる　ひとのまなこにうつらめや　おおあめつちをただすしぐみの",
+   "pt_anchor": "70. Será que os pequenos olhos humanos podem refletir o mecanismo que corrige o grande céu e a terra?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "71, たえがたき　いかりおさゆるちからこそ　かんのんりきのあらわれにぞある",
+   "title_pt": "",
+   "jp_anchor": "71, たえがたき　いかりおさゆるちからこそ　かんのんりきのあらわれにぞある",
+   "pt_anchor": "71. O poder de controlar a ira insuportável é a manifestação do Poder Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "72, ちいさなる　まなこをもてるはかなさは　おおいなるみちみうしなうなり",
+   "title_pt": "",
+   "jp_anchor": "72, ちいさなる　まなこをもてるはかなさは　おおいなるみちみうしなうなり",
+   "pt_anchor": "72. A fragilidade de ter olhos pequenos faz com que se perca de vista o grande Caminho.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "73, みぎによらず　ひだりによらずなかみちを　あゆむぞかんのんぎょうにかなえり",
+   "title_pt": "",
+   "jp_anchor": "73, みぎによらず　ひだりによらずなかみちを　あゆむぞかんのんぎょうにかなえり",
+   "pt_anchor": "73. Não se inclinar para a direita, nem para a esquerda, mas seguir o caminho do meio; isso está de acordo com a prática",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "74, かむながら　かみのまにまにすすむこそ　うきのよやすくわたるみちなり",
+   "title_pt": "",
+   "jp_anchor": "74, かむながら　かみのまにまにすすむこそ　うきのよやすくわたるみちなり",
+   "pt_anchor": "74. Avançar segundo a Vontade Divina, Kamunagara, é o caminho para atravessar com facilidade este mundo de sofrimento.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "75, たまきはる　いのちはかみのものにあり　かみにそむきてさかえうべきや",
+   "title_pt": "",
+   "jp_anchor": "75, たまきはる　いのちはかみのものにあり　かみにそむきてさかえうべきや",
+   "pt_anchor": "75. A vida que se estende é propriedade de Deus; pode alguém prosperar rebelando-se contra Deus?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "76, いかならむ　こともこらえてさりげなく　ほほえみあしろうひととなれかし",
+   "title_pt": "",
+   "jp_anchor": "76, いかならむ　こともこらえてさりげなく　ほほえみあしろうひととなれかし",
+   "pt_anchor": "76. Torne-se uma pessoa que suporta qualquer coisa com naturalidade, sorrindo e sendo gentil.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "77, おおみたまは　かみにましましみすがたは　みほとけにませるせいかんのんかも",
+   "title_pt": "",
+   "jp_anchor": "77, おおみたまは　かみにましましみすがたは　みほとけにませるせいかんのんかも",
+   "pt_anchor": "77. O grande espírito reside em Deus; a forma é a Santa Kannon, que é Buda.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "78, あこがれて　かみながたちのまちのぞむ　みろくはやがてげしょうしますらむ",
+   "title_pt": "",
+   "jp_anchor": "78, あこがれて　かみながたちのまちのぞむ　みろくはやがてげしょうしますらむ",
+   "pt_anchor": "78. O Maitreya que os sacerdotes anseiam e esperam em breve descerá ao mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "79, てんりおうの　　みことはてんりんぼさつにて　せいかんのんのけしんとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "79, てんりおうの　　みことはてんりんぼさつにて　せいかんのんのけしんとぞおもう",
+   "pt_anchor": "79. Penso que o Venerável Tenri-Ō é o Bodhisattva que gira a roda e uma encarnação da Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "80, えいこうの　くもよりくだるきりすとに　よろこびいさむとききぬるらむ",
+   "title_pt": "",
+   "jp_anchor": "80, えいこうの　くもよりくだるきりすとに　よろこびいさむとききぬるらむ",
+   "pt_anchor": "80. O tempo de alegria e entusiasmo pelo Cristo que desce das nuvens de glória parece ter chegado.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "81, わがことば　みみかたむくるひとひにつきに　ふえゆくさまのたのもしきかな",
+   "title_pt": "",
+   "jp_anchor": "81, わがことば　みみかたむくるひとひにつきに　ふえゆくさまのたのもしきかな",
+   "pt_anchor": "81. As pessoas que inclinam os ouvidos às minhas palavras aumentam dia após dia, mês após mês; como é animador!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "82, えんまんに　さんじゅうさんそうそなえます　とうときみすがたおろがむあさなさ",
+   "title_pt": "",
+   "jp_anchor": "82, えんまんに　さんじゅうさんそうそなえます　とうときみすがたおろがむあさなさ",
+   "pt_anchor": "82. Perfeitamente dotado das 33 manifestações, venero a augusta forma todas as manhãs.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "83, かんぜおん　いつきまつりていえぬちは　まひるまのごとあかるくなりぬ",
+   "title_pt": "",
+   "jp_anchor": "83, かんぜおん　いつきまつりていえぬちは　まひるまのごとあかるくなりぬ",
+   "pt_anchor": "83. Desde que consagramos Kanzeon, o interior da casa se tornou claro como o meio-dia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "84, やみのなき　あかるきいえにやまいがみ　まがつかみなどさやるべしやは",
+   "title_pt": "",
+   "jp_anchor": "84, やみのなき　あかるきいえにやまいがみ　まがつかみなどさやるべしやは",
+   "pt_anchor": "84. Numa casa clara, sem escuridão, poderiam os deuses da doença e os deuses perversos obstruir?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "85, はずかしき　わがみにあれどまごころを　ささぐるひとのふえゆくたのしさ",
+   "title_pt": "",
+   "jp_anchor": "85, はずかしき　わがみにあれどまごころを　ささぐるひとのふえゆくたのしさ",
+   "pt_anchor": "85. Embora eu seja um ser indigno, a alegria de ver aumentarem as pessoas que oferecem o coração sincero.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "86, かしこくも　かんぜおんぼさつはやおよろず　かみやほとけのひじりにおわさん",
+   "title_pt": "",
+   "jp_anchor": "86, かしこくも　かんぜおんぼさつはやおよろず　かみやほとけのひじりにおわさん",
+   "pt_anchor": "86. Augustamente, Kanzeon-Bosatsu está acima dos oito milhões de deuses e dos santos budas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "87, くしびなる　みょうちのちからうつそみの　よびとにめぐもうじひのみほとけ",
+   "title_pt": "",
+   "jp_anchor": "87, くしびなる　みょうちのちからうつそみの　よびとにめぐもうじひのみほとけ",
+   "pt_anchor": "87. O maravilhoso poder da sabedoria, o Buda compassivo que concede graça aos seres humanos deste mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "88, いそのかみ　ふるきかみよはもろびとの　ことぶきひゃくをこえしとぞいう",
+   "title_pt": "",
+   "jp_anchor": "88, いそのかみ　ふるきかみよはもろびとの　ことぶきひゃくをこえしとぞいう",
+   "pt_anchor": "88. Diz-se que na antiga era divina a longevidade das pessoas ultrapassava cem anos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "89, ひとのよわい　ひゃくをこえたるふるきよは　くすしといふものあらざりしならむ",
+   "title_pt": "",
+   "jp_anchor": "89, ひとのよわい　ひゃくをこえたるふるきよは　くすしといふものあらざりしならむ",
+   "pt_anchor": "89. Na era antiga, em que a idade das pessoas ultrapassava cem anos, provavelmente não existia o que se chama de remédio",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "90, すこやかに　ひといかしゆくわざにこそ　かみのめぐみのちからみゆめり",
+   "title_pt": "",
+   "jp_anchor": "90, すこやかに　ひといかしゆくわざにこそ　かみのめぐみのちからみゆめり",
+   "pt_anchor": "90. É na arte de fazer as pessoas viverem saudáveis que se vê o poder da graça de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "91, ためしなき　ことにこそあれやまいちよう　もののねをたつかんのんりきかも",
+   "title_pt": "",
+   "jp_anchor": "91, ためしなき　ことにこそあれやまいちよう　もののねをたつかんのんりきかも",
+   "pt_anchor": "91. Embora seja algo sem precedentes, o Poder Kannon corta a raiz das doenças.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "92, こころいやし　からたまいやしよをいやす　せいかんのんのおおきみちから",
+   "title_pt": "",
+   "jp_anchor": "92, こころいやし　からたまいやしよをいやす　せいかんのんのおおきみちから",
+   "pt_anchor": "92. Cura o coração, cura o corpo e cura o mundo; o grande poder da Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "93, やむひとの　なきよたてんといづのめの　かみはみちからふるわせたもうも",
+   "title_pt": "",
+   "jp_anchor": "93, やむひとの　なきよたてんといづのめの　かみはみちからふるわせたもうも",
+   "pt_anchor": "93. Para estabelecer um mundo sem doentes, a Deusa Izunome faz vibrar o seu poder.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "94, つかれたるものよ　とくとくきませよと　たまのおんてにまねきますかも",
+   "title_pt": "",
+   "jp_anchor": "94, つかれたるものよ　とくとくきませよと　たまのおんてにまねきますかも",
+   "pt_anchor": "94. \"Ó vós, cansados, vinde depressa\", acena com as preciosas mãos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "95, やまいなど　あるべきはずはよもあらじ　まことのみちをふむひとにして",
+   "title_pt": "",
+   "jp_anchor": "95, やまいなど　あるべきはずはよもあらじ　まことのみちをふむひとにして",
+   "pt_anchor": "95. Doenças e coisas assim não deveriam existir para quem pisa o verdadeiro Caminho.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "96, いたつきを　おそるなつもりしつみけがれ　きよむるかみのみめぐみなりせば",
+   "title_pt": "",
+   "jp_anchor": "96, いたつきを　おそるなつもりしつみけがれ　きよむるかみのみめぐみなりせば",
+   "pt_anchor": "96. Não temas a doença; se for a graça de Deus que purifica os pecados e impurezas acumulados.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "97, やむひとの　さわなるいまのうつしよを　すくうかんのんのみこころとうとし",
+   "title_pt": "",
+   "jp_anchor": "97, やむひとの　さわなるいまのうつしよを　すくうかんのんのみこころとうとし",
+   "pt_anchor": "97. Venerável é o coração de Kannon que salva este mundo atual, cheio de doentes.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "98, やまいなく　ひんなくいさかいなきみよに　たてなおさむとするわがねがいかな",
+   "title_pt": "",
+   "jp_anchor": "98, やまいなく　ひんなくいさかいなきみよに　たてなおさむとするわがねがいかな",
+   "pt_anchor": "98. Estabelecer uma era sem doenças, sem pobreza e sem conflitos; este é o meu desejo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "99, げいじゅつの　たかきにおいはひとのよの　いともとうときものにぞありける",
+   "title_pt": "",
+   "jp_anchor": "99, げいじゅつの　たかきにおいはひとのよの　いともとうときものにぞありける",
+   "pt_anchor": "99. O elevado aroma da arte é algo verdadeiramente nobre neste mundo humano.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "100, うるわしき　はなにみいりておもうかな　かみのめぐみのいともふかきを",
+   "title_pt": "",
+   "jp_anchor": "100, うるわしき　はなにみいりておもうかな　かみのめぐみのいともふかきを",
+   "pt_anchor": "100. Contemplando uma bela flor, penso na profunda graça de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "101, ふるきもの　みなくずおるるよにいまや　あたらしきものあれなむとすも",
+   "title_pt": "",
+   "jp_anchor": "101, ふるきもの　みなくずおるるよにいまや　あたらしきものあれなむとすも",
+   "pt_anchor": "101. Agora, num mundo onde tudo o que é velho se desfaz, algo novo está para nascer.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "102, とこしえに　このどのうえにうちたたむ　あくがれまちしゆめのてんごく",
+   "title_pt": "",
+   "jp_anchor": "102, とこしえに　このどのうえにうちたたむ　あくがれまちしゆめのてんごく",
+   "pt_anchor": "102. Eternamente, sobre esta terra, construirei o Paraíso dos sonhos que tanto ansiava.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "103, いそのかみ　ふることぶみにもいまだみぬ　ちじょうてんごくあれなむとすも",
+   "title_pt": "",
+   "jp_anchor": "103, いそのかみ　ふることぶみにもいまだみぬ　ちじょうてんごくあれなむとすも",
+   "pt_anchor": "103. Nem mesmo no Kojiki se viu algo assim; o Paraíso Terrestre está para nascer",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "104, ひとのよに　ためしとてなきおおいなる　のぞみにもゆるわれにぞありける",
+   "title_pt": "",
+   "jp_anchor": "104, ひとのよに　ためしとてなきおおいなる　のぞみにもゆるわれにぞありける",
+   "pt_anchor": "104. Eu sou aquele que arde na grande esperança, sem precedentes no mundo humano.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "105, きりすとも　しゃかもたたえむおおいなる　わがかむわざをかくりよにいまして",
+   "title_pt": "",
+   "jp_anchor": "105, きりすとも　しゃかもたたえむおおいなる　わがかむわざをかくりよにいまして",
+   "pt_anchor": "105. Cristo e Shaka louvarão meu grande ato divino, estando no mundo espiritual.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "106, くしびなる　このかむわざにくらぶもの　ひろきうつしよにあらじとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "106, くしびなる　このかむわざにくらぶもの　ひろきうつしよにあらじとぞおもう",
+   "pt_anchor": "106. Penso que não há nada neste vasto mundo que se compare a este maravilhoso ato divino.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "107, さんぞんの　みだとはかんのんしゃかあみだ　みっつのそんじゃをたたえしみななる",
+   "title_pt": "",
+   "jp_anchor": "107, さんぞんの　みだとはかんのんしゃかあみだ　みっつのそんじゃをたたえしみななる",
+   "pt_anchor": "107. O Amida das Três Honras é o nome que louva os três veneráveis: Kannon, Shaka e Amida.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "108, さんぞんの　みだのみちからひとつみに　そなえみすくうせいかんのんかも",
+   "title_pt": "",
+   "jp_anchor": "108, さんぞんの　みだのみちからひとつみに　そなえみすくうせいかんのんかも",
+   "pt_anchor": "108. O poder do Amida das Três Honras, reunido num só corpo, salva; é a Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "109, ひだりには　しゃくそんみぎにみだにょらい　せいかんのんはまなかにおわすも",
+   "title_pt": "",
+   "jp_anchor": "109, ひだりには　しゃくそんみぎにみだにょらい　せいかんのんはまなかにおわすも",
+   "pt_anchor": "109. À esquerda está Shaka, à direita está Amida Nyorai; a Santa Kannon está no centro.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "110, しゃかみだに　すくいよさしてみちとせを　かくろいませしかんのんかしこし",
+   "title_pt": "",
+   "jp_anchor": "110, しゃかみだに　すくいよさしてみちとせを　かくろいませしかんのんかしこし",
+   "pt_anchor": "110. Confiando a salvação a Shaka e Amida, Kannon ocultou-se por três mil anos; é augusta.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "111, ほうりんを　てんいましましむげこうを　あまねくたもうせそんとうとき",
+   "title_pt": "",
+   "jp_anchor": "111, ほうりんを　てんいましましむげこうを　あまねくたもうせそんとうとき",
+   "pt_anchor": "111. Faz girar a roda da Lei e concede a luz sem obstáculos universalmente; venerável é o Buda.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "112, まにのたま　にょいのほっしゅをそなえまし　さんがいばんれいすくはせたもう",
+   "title_pt": "",
+   "jp_anchor": "112, まにのたま　にょいのほっしゅをそなえまし　さんがいばんれいすくはせたもう",
+   "pt_anchor": "112. Possui Mani no Tama e a esfera (jóia) que realiza os desejos; salva todos os espíritos dos três mundos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "113, おうしんの　みろくにおわすやみすがたは　おのこおみなのけじめとてなき",
+   "title_pt": "",
+   "jp_anchor": "113, おうしんの　みろくにおわすやみすがたは　おのこおみなのけじめとてなき",
+   "pt_anchor": "113. A forma do Maitreya em corpo de resposta (oujin) não tem distinção entre homem e mulher.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "114, さいほうは　みだのくになりとうほうは　せいかんのんのたまのふるさと",
+   "title_pt": "",
+   "jp_anchor": "114, さいほうは　みだのくになりとうほうは　せいかんのんのたまのふるさと",
+   "pt_anchor": "114. O Ocidente é a terra de Amida; o Oriente é a terra natal do espírito da Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "115, たいぞうかい　いでますみろくをひたすらに　まちあくがるるしょぜんてんにん",
+   "title_pt": "",
+   "jp_anchor": "115, たいぞうかい　いでますみろくをひたすらに　まちあくがるるしょぜんてんにん",
+   "pt_anchor": "115. Os seres celestiais anseiam e esperam unicamente pelo Maitreya que emerge do Mundo Matricial.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "116, こんごうかいに　みろくげしょうをまちのぞむ　しょぜんしょぶつややほよろずかみ",
+   "title_pt": "",
+   "jp_anchor": "116, こんごうかいに　みろくげしょうをまちのぞむ　しょぜんしょぶつややほよろずかみ",
+   "pt_anchor": "116. No Mundo Diamantino, todos os budas e os oito milhões de deuses aguardam a descida de Maitreya.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "117, たいぞうの　みろくあれましぶっせつの　もろもろのなぞとくるうれしさ",
+   "title_pt": "",
+   "jp_anchor": "117, たいぞうの　みろくあれましぶっせつの　もろもろのなぞとくるうれしさ",
+   "pt_anchor": "117. A alegria de que o Maitreya do Matriz tenha nascido e desvende os vários mistérios das escrituras budistas.\n118. A Princesa Konohana, que esperou o tempo no pico de Fuyō, no Mar ",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "118, とうかいの　ふようのみねにときまちし　このはなひめはかんのんにおわせり",
+   "title_pt": "",
+   "jp_anchor": "118, とうかいの　ふようのみねにときまちし　このはなひめはかんのんにおわせり",
+   "pt_anchor": "118. A Princesa Konohana, que esperou o tempo no pico de Fuyō, no Mar do Leste, é Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "119, よのみだれ　ただすちからはかんぜおん　ぼさつのほかにあらじとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "119, よのみだれ　ただすちからはかんぜおん　ぼさつのほかにあらじとぞおもう",
+   "pt_anchor": "119. Penso que não há outro poder para corrigir a desordem do mundo senão Kanzeon-Bosatsu.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "120, いかならむ　つみもゆるさせいかならむ　つみもとがむるあめつちのかみ",
+   "title_pt": "",
+   "jp_anchor": "120, いかならむ　つみもゆるさせいかならむ　つみもとがむるあめつちのかみ",
+   "pt_anchor": "120. Qualquer pecado pode ser perdoado; qualquer pecado pode ser condenado; o Deus do céu e da terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "121, あずさゆみ　はるたちそめてこのはなの　かおりはよものくにににほわむ",
+   "title_pt": "",
+   "jp_anchor": "121, あずさゆみ　はるたちそめてこのはなの　かおりはよものくにににほわむ",
+   "pt_anchor": "121. O arco de azusa, a primavera começa; a fragrância das primeiras flores perfumará os quatro cantos do país.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "122, はちまんと　しせんのきょうもんちぢむれば　しんにょのにじにつくるなりけり",
+   "title_pt": "",
+   "jp_anchor": "122, はちまんと　しせんのきょうもんちぢむれば　しんにょのにじにつくるなりけり",
+   "pt_anchor": "122. Se condensarmos os 84.000 sutras, eles se resumem nos dois caracteres de Shinnyo, \"Talidade\".",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "123, ほけきょうの　はなのうてなにのりのみは　かんのんふもんぼんにやどれる",
+   "title_pt": "",
+   "jp_anchor": "123, ほけきょうの　はなのうてなにのりのみは　かんのんふもんぼんにやどれる",
+   "pt_anchor": "123. O fruto do ensinamento, no pedestal de flor do Sutra do Lótus, reside no capítulo \"Porta Universal\" de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "124, かんのんの　みなねんずればいぶかしも　わがこころねのすがすがしもよ",
+   "title_pt": "",
+   "jp_anchor": "124, かんのんの　みなねんずればいぶかしも　わがこころねのすがすがしもよ",
+   "pt_anchor": "124. Quando recito o nome de Kannon, é surpreendente como a minha mente se torna pura e refrescante.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "125, くしびなり　ああくしびなりねぎごとの　ただしかりせばかなえますなり",
+   "title_pt": "",
+   "jp_anchor": "125, くしびなり　ああくしびなりねぎごとの　ただしかりせばかなえますなり",
+   "pt_anchor": "125. Maravilhoso! Ah, maravilhoso! Se a prece for correta, ela se realiza.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "126, ゆきくれて　みちにまよえるこひつじを　すくわせたもうかんのんのみて",
+   "title_pt": "",
+   "jp_anchor": "126, ゆきくれて　みちにまよえるこひつじを　すくわせたもうかんのんのみて",
+   "pt_anchor": "126. A mão de Kannon que salva o cordeiro que se perdeu no caminho, ao anoitecer.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "127, のりのはな　ちりてむすびしひとつみは　せいかんのんのみたまなるらむ",
+   "title_pt": "",
+   "jp_anchor": "127, のりのはな　ちりてむすびしひとつみは　せいかんのんのみたまなるらむ",
+   "pt_anchor": "127. O único fruto que se formou com a dispersão da Flor da Lei é o espírito da Santa Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "128, うないごも　おにをもひしぐたけきおも　じひのおんめにしたいよるかも",
+   "title_pt": "",
+   "jp_anchor": "128, うないごも　おにをもひしぐたけきおも　じひのおんめにしたいよるかも",
+   "pt_anchor": "128. Tanto a criança pequena quanto o homem feroz que esmaga demônios se aproximam, atraídos pelos olhos de compaixão.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "129, かりこもの　みだれたるよをうちきりて　うましこのどにならせますらむ",
+   "title_pt": "",
+   "jp_anchor": "129, かりこもの　みだれたるよをうちきりて　うましこのどにならせますらむ",
+   "pt_anchor": "129. Cortando este mundo em desordem como capim seco, fará surgir uma bela terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "130, いくとせの　ながきをもものひじりたち　ちからかぎりによをすくわむとせしも",
+   "title_pt": "",
+   "jp_anchor": "130, いくとせの　ながきをもものひじりたち　ちからかぎりによをすくわむとせしも",
+   "pt_anchor": "130. Por longos anos, cem santos tentaram salvar o mundo com todas as suas forças.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "131, よをすくう　ときのちからはかむながら　かみのみむねにありとこそしれ",
+   "title_pt": "",
+   "jp_anchor": "131, よをすくう　ときのちからはかむながら　かみのみむねにありとこそしれ",
+   "pt_anchor": "131. O poder do tempo para salvar o mundo está em Kamunagara; saiba que está no propósito de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "132, おおかみの　まにのちからによらざれば　まがつかみにはかたんすべなし",
+   "title_pt": "",
+   "jp_anchor": "132, おおかみの　まにのちからによらざれば　まがつかみにはかたんすべなし",
+   "pt_anchor": "132. Se não for pelo poder Mani do Grande Deus, não há como vencer o deus da distorção (Magatsukami).",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "133, ちからなり　あいなりじひなりときじくに　いっさいしゅじょうのすくいねぐなり",
+   "title_pt": "",
+   "jp_anchor": "133, ちからなり　あいなりじひなりときじくに　いっさいしゅじょうのすくいねぐなり",
+   "pt_anchor": "133. Força, amor, compaixão; eternamente, é a salvação de todos os seres que se deseja.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "134, ぜったいの　すくいのちからふるいなば　さんがいばんれいよみがえるらむ",
+   "title_pt": "",
+   "jp_anchor": "134, ぜったいの　すくいのちからふるいなば　さんがいばんれいよみがえるらむ",
+   "pt_anchor": "134. Se a força absoluta da salvação for exercida, os espíritos dos três mundos renascerão.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "135, おうしんの　かんのんならでいかにして　じゆうむげなるちからふるわめや",
+   "title_pt": "",
+   "jp_anchor": "135, おうしんの　かんのんならでいかにして　じゆうむげなるちからふるわめや",
+   "pt_anchor": "135. Como poderia ser exercida força tão livre e desimpedida, senão pelo Kannon em corpo de resposta (oujin)?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "136, かんのんの　ちからというはちえがくに　とけぬふしぎのものにぞありける",
+   "title_pt": "",
+   "jp_anchor": "136, かんのんの　ちからというはちえがくに　とけぬふしぎのものにぞありける",
+   "pt_anchor": "136. A força de Kannon é algo misterioso que não se desvenda com sabedoria ou estudo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "137, ためしなき　ことにこそあれやみのなき　だいせんせかいのあれまさんとは",
+   "title_pt": "",
+   "jp_anchor": "137, ためしなき　ことにこそあれやみのなき　だいせんせかいのあれまさんとは",
+   "pt_anchor": "137. É algo sem precedentes, que os grandes mil mundos sem trevas venham a nascer.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "138, あめつちの　もものうごきのくるいなきは　かんのんぎょうのかがみなりけり",
+   "title_pt": "",
+   "jp_anchor": "138, あめつちの　もものうごきのくるいなきは　かんのんぎょうのかがみなりけり",
+   "pt_anchor": "138. O fato de todos os movimentos do céu e da terra não terem desordem é o espelho da Prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "139, れいせつと　じゅんじょをまもることこそは　かんのんぎょうのかなめなるらむ",
+   "title_pt": "",
+   "jp_anchor": "139, れいせつと　じゅんじょをまもることこそは　かんのんぎょうのかなめなるらむ",
+   "pt_anchor": "139. Guardar a cortesia e a ordem é o cerne da Prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "140, かんのんぎょうの　まったきひとはいささかの　いつわりごともこのまざるなり",
+   "title_pt": "",
+   "jp_anchor": "140, かんのんぎょうの　まったきひとはいささかの　いつわりごともこのまざるなり",
+   "pt_anchor": "140. A pessoa completa na Prática de Kannon não aprecia nem mesmo uma pequena mentira.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "141, たれもかも　したいてくなりおのづから　かんのんぎょうのとくになびかい",
+   "title_pt": "",
+   "jp_anchor": "141, たれもかも　したいてくなりおのづから　かんのんぎょうのとくになびかい",
+   "pt_anchor": "141. Todos, naturalmente, vêm atraídos e se inclinam diante da virtude da Prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "142, いかならむ　わざわいとてもかんのんぎょうに　いればいつしかきえてあとなし",
+   "title_pt": "",
+   "jp_anchor": "142, いかならむ　わざわいとてもかんのんぎょうに　いればいつしかきえてあとなし",
+   "pt_anchor": "142. Qualquer que seja a calamidade, se a pessoa entrar na Prática de Kannon, ela desaparece sem deixar vestígios.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "143, なにごとも　ほどのいちじをまもりなば　たやすかるべきこのよなりける",
+   "title_pt": "",
+   "jp_anchor": "143, なにごとも　ほどのいちじをまもりなば　たやすかるべきこのよなりける",
+   "pt_anchor": "143. Se em tudo se guardar a medida (o caráter \"grau\"), este mundo se tornaria fácil de superar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "144, まがびとは　よわきものなりもろもろの　つみにうちかつちからなければ",
+   "title_pt": "",
+   "jp_anchor": "144, まがびとは　よわきものなりもろもろの　つみにうちかつちからなければ",
+   "pt_anchor": "144. A pessoa distorcida é fraca, pois não tem força para vencer os diversos pecados.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "145, およそよに　つよきはおのれをうちわすれ　ただしきみちをつらぬくひとなり",
+   "title_pt": "",
+   "jp_anchor": "145, およそよに　つよきはおのれをうちわすれ　ただしきみちをつらぬくひとなり",
+   "pt_anchor": "145. Em geral, o forte neste mundo é aquele que, esquecendo-se de si mesmo, percorre o caminho reto.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "146, ししんなく　ひたすらみちにいそしめば　おおみめぐみをゆたにうくなり",
+   "title_pt": "",
+   "jp_anchor": "146, ししんなく　ひたすらみちにいそしめば　おおみめぐみをゆたにうくなり",
+   "pt_anchor": "146. Se, sem egoísmo, a pessoa se dedicar apenas ao Caminho, receberá abundantemente a grande graça.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "147, はくあいの　みちよそにしてかんのんの　ぎょうはあらじなこころせよみな",
+   "title_pt": "",
+   "jp_anchor": "147, はくあいの　みちよそにしてかんのんの　ぎょうはあらじなこころせよみな",
+   "pt_anchor": "147. Não há Prática de Kannon que se distancie do caminho do amor universal; sabei disso, todos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "148, ひたすらに　まことのみちをふみゆけば　かんのんぎょうのかどにいるなり",
+   "title_pt": "",
+   "jp_anchor": "148, ひたすらに　まことのみちをふみゆけば　かんのんぎょうのかどにいるなり",
+   "pt_anchor": "148. Se a pessoa caminhar apenas pelo caminho da verdade, entrará no portal da Prática de Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "149, ゆかしけれ　わがみのことをあとにして　ひとのよかれとねがうこころの",
+   "title_pt": "",
+   "jp_anchor": "149, ゆかしけれ　わがみのことをあとにして　ひとのよかれとねがうこころの",
+   "pt_anchor": "149. É admirável o coração que, colocando a si mesmo em segundo plano, deseja o bem dos outros.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "150, みちのため　よのためひとのためのみを　ときじくおもうまびととなれかし",
+   "title_pt": "",
+   "jp_anchor": "150, みちのため　よのためひとのためのみを　ときじくおもうまびととなれかし",
+   "pt_anchor": "150. Tornai-vos uma pessoa verdadeira que, a todo momento, pensa apenas no Caminho, no mundo e nos outros.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "151, ぐせのため　ぼさつとならせたまいしは　だいじだいひにおわせばなりける",
+   "title_pt": "",
+   "jp_anchor": "151, ぐせのため　ぼさつとならせたまいしは　だいじだいひにおわせばなりける",
+   "pt_anchor": "151. O fato de ter se tornado um Bodhisattva para salvar o mundo é porque reside na grande compaixão e no grande amor.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "152, さもしきは　おのがてがらをよのひとに　しめさむとするこころにぞある",
+   "title_pt": "",
+   "jp_anchor": "152, さもしきは　おのがてがらをよのひとに　しめさむとするこころにぞある",
+   "pt_anchor": "152. O que é mesquinho é o coração que deseja mostrar suas próprias realizações às pessoas do mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "153, たかきひくきの　けじめとてなくねもごろに　おしうひとこそみむねにかなわむ",
+   "title_pt": "",
+   "jp_anchor": "153, たかきひくきの　けじめとてなくねもごろに　おしうひとこそみむねにかなわむ",
+   "pt_anchor": "153. A pessoa que ensina com sinceridade, sem distinção entre alto e baixo, é a que se adequa à Vontade Divina.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "154, ちのうえの　いきとしいけるものみなは　かんのんりきによみがえるらむ",
+   "title_pt": "",
+   "jp_anchor": "154, ちのうえの　いきとしいけるものみなは　かんのんりきによみがえるらむ",
+   "pt_anchor": "154. Todos os seres vivos sobre a terra renascerão pelo Poder Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "155, ありがたし　ああありがたしみすがたを　うちあおぐごとこころなごむも",
+   "title_pt": "",
+   "jp_anchor": "155, ありがたし　ああありがたしみすがたを　うちあおぐごとこころなごむも",
+   "pt_anchor": "155. Que gratidão! Ah, que gratidão! Sempre que ergo os olhos para a vossa sagrada forma, meu coração se acalma.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "156, たたえても　たたえつくせぬみめぐみに　むくわむすべのなきぞかなしき",
+   "title_pt": "",
+   "jp_anchor": "156, たたえても　たたえつくせぬみめぐみに　むくわむすべのなきぞかなしき",
+   "pt_anchor": "156. É triste não haver meio de retribuir a graça que, mesmo louvando, não se pode louvar por completo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "157, みめぐみに　むくいまつらでおくべきや　いきしこのみのさちをおもえば",
+   "title_pt": "",
+   "jp_anchor": "157, みめぐみに　むくいまつらでおくべきや　いきしこのみのさちをおもえば",
+   "pt_anchor": "157. Como poderia deixar de retribuir a graça, ao pensar na felicidade deste corpo vivo?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "158, わがいのち　よみがえるさえうれしきに　いやしのわざまでゆるされにける",
+   "title_pt": "",
+   "jp_anchor": "158, わがいのち　よみがえるさえうれしきに　いやしのわざまでゆるされにける",
+   "pt_anchor": "158. Já é alegre que minha vida tenha renascido, e ainda me foi permitida a prática da terapia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "159, いのちさえ　あやうきほどのいたつきも　いえてめぐみにひたるうれしさ",
+   "title_pt": "",
+   "jp_anchor": "159, いのちさえ　あやうきほどのいたつきも　いえてめぐみにひたるうれしさ",
+   "pt_anchor": "159. A alegria de, mesmo em uma doença que punha a vida em risco, ser curado e mergulhar na graça.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "160, ちからなき　みにしあれどもかかぶれる　かんのんりきによびといやさむ",
+   "title_pt": "",
+   "jp_anchor": "160, ちからなき　みにしあれどもかかぶれる　かんのんりきによびといやさむ",
+   "pt_anchor": "160. Embora eu seja um ser sem força, carregando o Poder Kannon, curarei as pessoas do mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "161, みめぐみの　まんぶんいちにとどかねど　まことのみしるしうけさせたまえ",
+   "title_pt": "",
+   "jp_anchor": "161, みめぐみの　まんぶんいちにとどかねど　まことのみしるしうけさせたまえ",
+   "pt_anchor": "161. Embora não alcance nem a décima milésima parte da graça, fazei-me receber o verdadeiro sinal.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "162, みめぐみに　むくゆすべなしひとのよの　たからといえどかぎりありせば",
+   "title_pt": "",
+   "jp_anchor": "162, みめぐみに　むくゆすべなしひとのよの　たからといえどかぎりありせば",
+   "pt_anchor": "162. Não há meio de retribuir a graça; se os tesouros do mundo humano têm limite.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "163, つみぶかき　このみもとがめたまわずて　おおいなるさちゆたにめぐもう",
+   "title_pt": "",
+   "jp_anchor": "163, つみぶかき　このみもとがめたまわずて　おおいなるさちゆたにめぐもう",
+   "pt_anchor": "163. Sem repreender este corpo pecaminoso, será agraciado abundantemente com grande felicidade.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "164, いのちほど　とうときものはよにあらじ　ひたにすがりてよわいのばさむ",
+   "title_pt": "",
+   "jp_anchor": "164, いのちほど　とうときものはよにあらじ　ひたにすがりてよわいのばさむ",
+   "pt_anchor": "164. Não há nada no mundo tão precioso quanto a vida; apegando-me firmemente a ela, prolongarei meus anos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "165, いたつきの　いやされたりしうれすさよ　いのちにかえるたからなければ",
+   "title_pt": "",
+   "jp_anchor": "165, いたつきの　いやされたりしうれすさよ　いのちにかえるたからなければ",
+   "pt_anchor": "165. Ah, a alegria de ter sido curado da doença! Pois não há tesouro que se iguale à vida.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "166, たまきはる　いのちたまいしみほとけに　むくわでおかむわがよのかぎり",
+   "title_pt": "",
+   "jp_anchor": "166, たまきはる　いのちたまいしみほとけに　むくわでおかむわがよのかぎり",
+   "pt_anchor": "166. Ao Buda que me concedeu a vida preciosa, sem poder retribuir, adorarei enquanto durar minha existência.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "167, かんぜおんぼさつの　とうときおんみたま　むかえまつりしきょうのよろこび",
+   "title_pt": "",
+   "jp_anchor": "167, かんぜおんぼさつの　とうときおんみたま　むかえまつりしきょうのよろこび",
+   "pt_anchor": "167. A alegria de hoje, em que recebemos a alma venerável de Kanzeon-Bosatsu.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "168, かんぜおんぼさつ　かしこしまたのみなは　こうみょうにょらいともうしまつるも",
+   "title_pt": "",
+   "jp_anchor": "168, かんぜおんぼさつ　かしこしまたのみなは　こうみょうにょらいともうしまつるも",
+   "pt_anchor": "168. Kanzeon-Bosatsu é augusto; seu outro nome é Komyo-Nyorai, como também é chamado.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "169, こうみょうにょらい　いつきまつりしきょうよりぞ　わがいえぬちはあかるかるらむ",
+   "title_pt": "",
+   "jp_anchor": "169, こうみょうにょらい　いつきまつりしきょうよりぞ　わがいえぬちはあかるかるらむ",
+   "pt_anchor": "169. Desde o dia de hoje, em que consagramos e celebramos Komyo-Nyorai, nossa casa se tornará iluminada.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "170, きょうよりは　もものわざわいきえぬらむ　こうみょうにょらいいつきまつりて",
+   "title_pt": "",
+   "jp_anchor": "170, きょうよりは　もものわざわいきえぬらむ　こうみょうにょらいいつきまつりて",
+   "pt_anchor": "170. A partir de hoje, as diversas calamidades desaparecerão, pois consagramos e celebramos Komyo-Nyorai.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "171, ぬばたまの　やみもあさひのさしそめて　きゆるがごとしわがいえぬちは",
+   "title_pt": "",
+   "jp_anchor": "171, ぬばたまの　やみもあさひのさしそめて　きゆるがごとしわがいえぬちは",
+   "pt_anchor": "171. Como a escuridão da noite que, ao raiar do sol da manhã, se desfaz, assim é a nossa casa.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "172, いたつきの　いえしよろこびいやまして　とうときみたまいつくうれしさ",
+   "title_pt": "",
+   "jp_anchor": "172, いたつきの　いえしよろこびいやまして　とうときみたまいつくうれしさ",
+   "pt_anchor": "172. A alegria de consagrar a alma venerável supera a alegria de ter sido curado da doença.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "173, くらかりし　このうつしよもいつかしら　あかるくなりぬわれすくわりてより",
+   "title_pt": "",
+   "jp_anchor": "173, くらかりし　このうつしよもいつかしら　あかるくなりぬわれすくわりてより",
+   "pt_anchor": "173. Este mundo presente, que era escuro, tornou-se luminoso, não sei quando, desde que fui salvo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "174, かんぜおんぼさつの　とうときみめぐみに　すがりていきんきょうをさかいに",
+   "title_pt": "",
+   "jp_anchor": "174, かんぜおんぼさつの　とうときみめぐみに　すがりていきんきょうをさかいに",
+   "pt_anchor": "174. Viverei apegando-me à preciosa graça de Kanzeon-Bosatsu, a partir de hoje como marco.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "175, かぎりなき　だいじだいひにおわします　こうみょうにょらいのとうときみこころ",
+   "title_pt": "",
+   "jp_anchor": "175, かぎりなき　だいじだいひにおわします　こうみょうにょらいのとうときみこころ",
+   "pt_anchor": "175. O coração venerável de Komyo-Nyorai, que reside, sem limites, na grande compaixão e no grande amor.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "176, おおけなしと　おもえどしずのわがふせや　まもらせたまえだいじのみほとけ",
+   "title_pt": "",
+   "jp_anchor": "176, おおけなしと　おもえどしずのわがふせや　まもらせたまえだいじのみほとけ",
+   "pt_anchor": "176. Embora pense ser indigno, protegei esta minha humilde choupana, ó grande Buda compassivo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "177, うしといいし　よはすぎにけりよのひとよ　たのしきみよはいまきたらむとすも",
+   "title_pt": "",
+   "jp_anchor": "177, うしといいし　よはすぎにけりよのひとよ　たのしきみよはいまきたらむとすも",
+   "pt_anchor": "177. O mundo que se dizia triste já passou; ó pessoas do mundo, a era feliz está prestes a chegar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "178, いやはてに　よのいたつきをなみさむと　かんのんりきのあらわれにける",
+   "title_pt": "",
+   "jp_anchor": "178, いやはてに　よのいたつきをなみさむと　かんのんりきのあらわれにける",
+   "pt_anchor": "178. Para eliminar por completo as doenças do mundo, manifestou-se o Poder Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "179, かんのんの　ちからというはひみずつち　さんみいったいのちからにぞある",
+   "title_pt": "",
+   "jp_anchor": "179, かんのんの　ちからというはひみずつち　さんみいったいのちからにぞある",
+   "pt_anchor": "179. O poder de Kannon é a força da trindade: fogo, água e terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "180, あなうれし　のぞみをたちしよにしあれど　かんのんしりてゆのぞみめばえぬ",
+   "title_pt": "",
+   "jp_anchor": "180, あなうれし　のぞみをたちしよにしあれど　かんのんしりてゆのぞみめばえぬ",
+   "pt_anchor": "180. Ah, que alegria! Embora estivesse num mundo de esperanças perdidas, ao conhecer Kannon, novos brotos de esperança g",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "181, ながきよの　やみのとばりもしずしずと　あけはなれけりまなこさませよ",
+   "title_pt": "",
+   "jp_anchor": "181, ながきよの　やみのとばりもしずしずと　あけはなれけりまなこさませよ",
+   "pt_anchor": "181. O véu de trevas da longa era, lentamente, se abre; despertai os olhos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "182, いまわしき　ことのみおおきうつしよは　やみのとばりのまだのこるなり",
+   "title_pt": "",
+   "jp_anchor": "182, いまわしき　ことのみおおきうつしよは　やみのとばりのまだのこるなり",
+   "pt_anchor": "182. Este mundo presente, cheio apenas de coisas detestáveis, é porque o véu de trevas ainda permanece.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "183, うばたまの　やみよになれしひとのめに　まばゆかるらむかみのひかりは",
+   "title_pt": "",
+   "jp_anchor": "183, うばたまの　やみよになれしひとのめに　まばゆかるらむかみのひかりは",
+   "pt_anchor": "183. A luz de Deus deve ser ofuscante para os olhos das pessoas acostumadas ao mundo tenebroso.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "184, れいめいに　きづくひとこそまことなる　まなこをもてるしるしなりける",
+   "title_pt": "",
+   "jp_anchor": "184, れいめいに　きづくひとこそまことなる　まなこをもてるしるしなりける",
+   "pt_anchor": "184. A pessoa que percebe a aurora é o sinal de que possui olhos verdadeiros.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "185, すこやかに　いまわれあるはおおけなくも　せそんがあつきめぐみとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "185, すこやかに　いまわれあるはおおけなくも　せそんがあつきめぐみとぞおもう",
+   "pt_anchor": "185. O fato de eu estar saudável agora, penso que é pela profunda graça do Buda, embora seja imerecido.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "186, うつしよの　いきとしいけるものみなは　かみのめぐみにもるるはあらじ",
+   "title_pt": "",
+   "jp_anchor": "186, うつしよの　いきとしいけるものみなは　かみのめぐみにもるるはあらじ",
+   "pt_anchor": "186. Todos os seres vivos deste mundo presente não estão excluídos da graça de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "187, せんおくの　とみにもましてうれしきは　つつがなみけるみにしありけり",
+   "title_pt": "",
+   "jp_anchor": "187, せんおくの　とみにもましてうれしきは　つつがなみけるみにしありけり",
+   "pt_anchor": "187. O que é mais alegre do que milhares de milhões de riquezas é ter um corpo sem enfermidades.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "188, たかどのに　にしきまとうもいたつきに　もだえるひとぞあわれはかなき",
+   "title_pt": "",
+   "jp_anchor": "188, たかどのに　にしきまとうもいたつきに　もだえるひとぞあわれはかなき",
+   "pt_anchor": "188. Mesmo vestindo brocado em um palácio, a pessoa que sofre de uma doença é digna de pena e tristeza.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "189, かんぜおん　ぼさつのめぐみなかりせば　このみこのたまほろびしなるらめ",
+   "title_pt": "",
+   "jp_anchor": "189, かんぜおん　ぼさつのめぐみなかりせば　このみこのたまほろびしなるらめ",
+   "pt_anchor": "189. Se não fosse pela graça de Kanzeon-Bosatsu, este corpo e esta alma teriam perecido.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "190, むらきもの　いのちたまいしみめぐみを　うちわすれなばけものにひとしき",
+   "title_pt": "",
+   "jp_anchor": "190, むらきもの　いのちたまいしみめぐみを　うちわすれなばけものにひとしき",
+   "pt_anchor": "190. Se esquecermos a graça de ter recebido a vida, somos iguais aos animais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "191, ひとのみの　とうときわけはもものおん　こころにきざみてわすれねばなり",
+   "title_pt": "",
+   "jp_anchor": "191, ひとのみの　とうときわけはもものおん　こころにきざみてわすれねばなり",
+   "pt_anchor": "191. A razão da nobreza do corpo humano é gravar no coração e não esquecer as diversas graças.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "192, たらちねの　ちちははなくばうつしよに　このみこのたまあらじとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "192, たらちねの　ちちははなくばうつしよに　このみこのたまあらじとぞおもう",
+   "pt_anchor": "192. Penso que, sem os pais, este corpo e esta alma não existiriam neste mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "193, はらからと　むつみあうみとなりにける　かみのみひかりかかぶりてより",
+   "title_pt": "",
+   "jp_anchor": "193, はらからと　むつみあうみとなりにける　かみのみひかりかかぶりてより",
+   "pt_anchor": "193. Tornei-me uma pessoa que se relaciona harmoniosamente com os irmãos, desde que recebi a luz de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "194, つつがなく　ただあるさえもおおけなきに　すくいのみちにいりしうれしさ",
+   "title_pt": "",
+   "jp_anchor": "194, つつがなく　ただあるさえもおおけなきに　すくいのみちにいりしうれしさ",
+   "pt_anchor": "194. Já é imerecido simplesmente existir sem enfermidades, e ainda a alegria de ter entrado no Caminho da Salvação.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "195, たたえても　たたえつくせぬおおみさちを　つたなきうたもてよまるべしやは",
+   "title_pt": "",
+   "jp_anchor": "195, たたえても　たたえつくせぬおおみさちを　つたなきうたもてよまるべしやは",
+   "pt_anchor": "195. Será que se pode louvar com poemas imperfeitos a grande felicidade que, mesmo louvando, não se pode louvar por comp",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "196, よをのろい　ひとをうらみしそのころの　こころのくもりはきえてあとなき",
+   "title_pt": "",
+   "jp_anchor": "196, よをのろい　ひとをうらみしそのころの　こころのくもりはきえてあとなき",
+   "pt_anchor": "196. As nuvens espirituais do coração daquela época, em que amaldiçoava o mundo e odiava as pessoas, desapareceram sem d",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "197, くらかりし　こころのそらもさながらに　まひるまのごとはれしうれしさ",
+   "title_pt": "",
+   "jp_anchor": "197, くらかりし　こころのそらもさながらに　まひるまのごとはれしうれしさ",
+   "pt_anchor": "197. A alegria de que o céu do coração, que era escuro, se iluminou como em pleno dia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "198, おおまえに　ぬかずくごとになみだしぬ　すくわれたりしこのみおもえば",
+   "title_pt": "",
+   "jp_anchor": "198, おおまえに　ぬかずくごとになみだしぬ　すくわれたりしこのみおもえば",
+   "pt_anchor": "198. Toda vez que me prosterno diante do grande altar, as lágrimas brotam ao pensar neste corpo que foi salvo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "199, すくわれし　さちをおもえばみをつくし　こころくだきてむくわでおかめや",
+   "title_pt": "",
+   "jp_anchor": "199, すくわれし　さちをおもえばみをつくし　こころくだきてむくわでおかめや",
+   "pt_anchor": "199. Ao pensar na felicidade de ter sido salvo, como poderia deixar de retribuir, dedicando o corpo e esforçando o coraç",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "200, いそのべの　まさごにひとしきわがみなれど　うけさせたまえまことのしるしを",
+   "title_pt": "",
+   "jp_anchor": "200, いそのべの　まさごにひとしきわがみなれど　うけさせたまえまことのしるしを",
+   "pt_anchor": "200. Embora eu seja como a areia da praia, fazei-me receber o verdadeiro sinal.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "201, ちからなき　みにしあれどもよのために　つくさせたまえいずのめのかみ",
+   "title_pt": "",
+   "jp_anchor": "201, ちからなき　みにしあれどもよのために　つくさせたまえいずのめのかみ",
+   "pt_anchor": "201. Embora eu seja um ser sem força, fazei-me servir para o mundo, ó Deusa Izunome.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "202, くさぐさの　おしえあれどもまったきの　おしえはいまだあらじとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "202, くさぐさの　おしえあれどもまったきの　おしえはいまだあらじとぞおもう",
+   "pt_anchor": "202. Penso que, embora existam vários ensinamentos, ainda não há um ensinamento completo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "203, ものしりに　あらねばとけぬふみをもて　あまねくよびとすくわるべしやは",
+   "title_pt": "",
+   "jp_anchor": "203, ものしりに　あらねばとけぬふみをもて　あまねくよびとすくわるべしやは",
+   "pt_anchor": "203. Será que se pode salvar todas as pessoas do mundo com escrituras que não podem ser compreendidas por quem não é eru",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "204, まつぶさに　いかにりをときつくすとも　しるしなければひとはたらわじ",
+   "title_pt": "",
+   "jp_anchor": "204, まつぶさに　いかにりをときつくすとも　しるしなければひとはたらわじ",
+   "pt_anchor": "204. Por mais que se explique perfeitamente a razão, se não houver sinais, as pessoas não ficarão satisfeitas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "205, よのひとを　すくうちからはりにあらず　みえざるかみのちからにぞあらむ",
+   "title_pt": "",
+   "jp_anchor": "205, よのひとを　すくうちからはりにあらず　みえざるかみのちからにぞあらむ",
+   "pt_anchor": "205. A força para salvar as pessoas do mundo não está na razão; está no poder invisível de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "206, とうとけれ　ああとうとけれかんぜおん　ぼさつはいきとしいけるみなをすくわむ",
+   "title_pt": "",
+   "jp_anchor": "206, とうとけれ　ああとうとけれかんぜおん　ぼさつはいきとしいけるみなをすくわむ",
+   "pt_anchor": "206. É augusto! Ah, é augusto! Kanzeon-Bosatsu salvará todos os seres vivos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "207, いそのかみ　ふることぶみにもみあたらぬ　くしきちからぞみょうちりきなる",
+   "title_pt": "",
+   "jp_anchor": "207, いそのかみ　ふることぶみにもみあたらぬ　くしきちからぞみょうちりきなる",
+   "pt_anchor": "207. É um poder misterioso, não encontrado nem mesmo no Kojiki; é o poder da sabedoria maravilhosa.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "208, かがやける　こんごうせきもめしいには　はまのまさごとみられがちなる",
+   "title_pt": "",
+   "jp_anchor": "208, かがやける　こんごうせきもめしいには　はまのまさごとみられがちなる",
+   "pt_anchor": "208. Mesmo um diamante brilhante, para um cego, é frequentemente visto como areia da praia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "209, あいをとき　じひさとすとておこないの　ともなわざればはまのまつかぜ",
+   "title_pt": "",
+   "jp_anchor": "209, あいをとき　じひさとすとておこないの　ともなわざればはまのまつかぜ",
+   "pt_anchor": "209. Pregar o amor e ensinar a compaixão, se não vier acompanhado da prática, é como o vento nos pinheiros da praia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "210, しゃかくじや　やそのおしえをいやはてに　いかさんとするかんぜおんかも",
+   "title_pt": "",
+   "jp_anchor": "210, しゃかくじや　やそのおしえをいやはてに　いかさんとするかんぜおんかも",
+   "pt_anchor": "210. Será Kanzeon quem fará reviver os ensinamentos de Shakyamuni, Confúcio e Jesus, levando-os ao extremo?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "211, ながきよの　つみあやまちをねもごろに　さとすせそんのめぐみとうとし",
+   "title_pt": "",
+   "jp_anchor": "211, ながきよの　つみあやまちをねもごろに　さとすせそんのめぐみとうとし",
+   "pt_anchor": "211. É preciosa a graça do Buda que adverte com sinceridade os pecados e erros da longa era.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "212, わだのはら　そこいもしれぬいとふかき　めぐみにおにもなみだするらむ",
+   "title_pt": "",
+   "jp_anchor": "212, わだのはら　そこいもしれぬいとふかき　めぐみにおにもなみだするらむ",
+   "pt_anchor": "212. Diante da graça imensamente profunda, cujo fundo nem mesmo o oceano pode alcançar, até os demônios choram.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "213, いぶかしむ　なかれよびとよおもうこと　ならぬはこころにくもりあればなり",
+   "title_pt": "",
+   "jp_anchor": "213, いぶかしむ　なかれよびとよおもうこと　ならぬはこころにくもりあればなり",
+   "pt_anchor": "213. Não vos admireis, ó pessoas do mundo; as coisas não se realizam porque há nuvens espirituais no coração.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "214, ささやかな　ひとのちえもてためしなき　ぐせのみわざのわからざらめや",
+   "title_pt": "",
+   "jp_anchor": "214, ささやかな　ひとのちえもてためしなき　ぐせのみわざのわからざらめや",
+   "pt_anchor": "214. Será que a pequena sabedoria humana pode compreender a obra de salvação sem precedentes?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "215, とことわに　ふゆなきよるなきてんごくに　たまやすませむはやきたれかし",
+   "title_pt": "",
+   "jp_anchor": "215, とことわに　ふゆなきよるなきてんごくに　たまやすませむはやきたれかし",
+   "pt_anchor": "215. Fazei a alma descansar no Paraíso, onde não há inverno nem noite eternos; vinde depressa.\n\nGrande Julgamento (Daishinpan)\n\n216. Chegou o tempo de purificar a impureza dos três mundos, acumulada por milhares de",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "216, いくちとせ　つもりつもりしさんがいの　けがれきよむるときぞきぬらむ",
+   "title_pt": "",
+   "jp_anchor": "216, いくちとせ　つもりつもりしさんがいの　けがれきよむるときぞきぬらむ",
+   "pt_anchor": "216. Chegou o tempo de purificar a impureza dos três mundos, acumulada por milhares de anos.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "217, ひとみずの　せんれいなくばけがれにし　ひとのこのよはほろぶほかなき",
+   "title_pt": "",
+   "jp_anchor": "217, ひとみずの　せんれいなくばけがれにし　ひとのこのよはほろぶほかなき",
+   "pt_anchor": "217. Sem a purificação espiritual pelo fogo e pela água, este mundo humano, manchado, não tem outro destino senão perece",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "218, よるのおわり　きつるをしらでゆめさめぬ　ひとこそよにもあわれなりける",
+   "title_pt": "",
+   "jp_anchor": "218, よるのおわり　きつるをしらでゆめさめぬ　ひとこそよにもあわれなりける",
+   "pt_anchor": "218. A pessoa que, sem saber que o fim da noite chegou, não desperta do sonho, é a mais digna de pena no mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "219, たかきひくきの　けじめさえなくおおかみは　さばきたまわむよぞいかすため",
+   "title_pt": "",
+   "jp_anchor": "219, たかきひくきの　けじめさえなくおおかみは　さばきたまわむよぞいかすため",
+   "pt_anchor": "219. O Grande Deus julgará sem distinção entre alto e baixo, para que o mundo possa viver.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "220, あめつちの　まことのみちをまもるより　ほかにすべなしつみおおきみの",
+   "title_pt": "",
+   "jp_anchor": "220, あめつちの　まことのみちをまもるより　ほかにすべなしつみおおきみの",
+   "pt_anchor": "220. Para este corpo cheio de pecados, não há outro meio senão guardar o verdadeiro caminho do céu e da terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "221, やすらけき　うましのみよはたてられむ　きよくただしきこのちのうえに",
+   "title_pt": "",
+   "jp_anchor": "221, やすらけき　うましのみよはたてられむ　きよくただしきこのちのうえに",
+   "pt_anchor": "221. A era bela e tranquila será estabelecida sobre esta terra pura e reta.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "222, おごそかな　かみのさばきにゆるさるる　ひとにこそなれみたまきよめて",
+   "title_pt": "",
+   "jp_anchor": "222, おごそかな　かみのさばきにゆるさるる　ひとにこそなれみたまきよめて",
+   "pt_anchor": "222. Tornai-vos a pessoa que será perdoada no solene julgamento de Deus, purificando o corpo e o espírito.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "223, うばたまの　よるのおわりとなりにけり　はやひんがしにあかときのかね",
+   "title_pt": "",
+   "jp_anchor": "223, うばたまの　よるのおわりとなりにけり　はやひんがしにあかときのかね",
+   "pt_anchor": "223. Chegou o fim da noite tenebrosa; já no leste, o sino da alvorada.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "224, はやすでに　とこやみのよのすぎけるを　しらでまよえるこひつじあわれ",
+   "title_pt": "",
+   "jp_anchor": "224, はやすでに　とこやみのよのすぎけるを　しらでまよえるこひつじあわれ",
+   "pt_anchor": "224. Já a noite de trevas eternas passou; pobres ovelhas que vagam sem saber.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "225, ほのぼのと　よのれいめいはきつるなり　ひがしのはてにまなことどめそ",
+   "title_pt": "",
+   "jp_anchor": "225, ほのぼのと　よのれいめいはきつるなり　ひがしのはてにまなことどめそ",
+   "pt_anchor": "225. A aurora do mundo já chegou, surgindo timidamente; fixai os olhos no extremo leste.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "226, よるのおしえ　よるのもろもろはすみにけり　こうみょうせかいのきたらんとして",
+   "title_pt": "",
+   "jp_anchor": "226, よるのおしえ　よるのもろもろはすみにけり　こうみょうせかいのきたらんとして",
+   "pt_anchor": "226. O ensinamento da noite: todas as coisas da noite se findaram, pois o mundo de luz está prestes a chegar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "227, つみけがれ　かくしごとなどうちたえぬは　とこやみのよののこればなりけり",
+   "title_pt": "",
+   "jp_anchor": "227, つみけがれ　かくしごとなどうちたえぬは　とこやみのよののこればなりけり",
+   "pt_anchor": "227. O pecado, a impureza e as coisas ocultas não desaparecem porque ainda resta a noite de trevas eternas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "228, まひるびの　あかるきみよにいかにして　かくしごとなどよもあらめやは",
+   "title_pt": "",
+   "jp_anchor": "228, まひるびの　あかるきみよにいかにして　かくしごとなどよもあらめやは",
+   "pt_anchor": "228. Como poderia haver coisas ocultas na era luminosa do sol do meio-dia?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "229, つきのよの　おぐらきかげにもろもろの　つみやけがれのあるるぞせんなし",
+   "title_pt": "",
+   "jp_anchor": "229, つきのよの　おぐらきかげにもろもろの　つみやけがれのあるるぞせんなし",
+   "pt_anchor": "229. É lamentável que vários pecados e impurezas nasçam na sombra ligeiramente escura da noite de lua.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "230, あめがした　むげのひかりをまくばりつ　てんりんぼさつはしゅじょうすくわむ",
+   "title_pt": "",
+   "jp_anchor": "230, あめがした　むげのひかりをまくばりつ　てんりんぼさつはしゅじょうすくわむ",
+   "pt_anchor": "230. Sob o céu, distribuindo a luz sem obstáculos, o Bodhisattva Tenrin salvará os seres.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "231, こうみょうにょらい　まばゆきひかりをなごめさせ　よにかんのんとけげんしませり",
+   "title_pt": "",
+   "jp_anchor": "231, こうみょうにょらい　まばゆきひかりをなごめさせ　よにかんのんとけげんしませり",
+   "pt_anchor": "231. Komyo-Nyorai suavizou a luz ofuscante e se manifestou no mundo como Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "232, ひかりなごめ　ちりにまみれてすくいます　だいじだいひのかんぜおんかも",
+   "title_pt": "",
+   "jp_anchor": "232, ひかりなごめ　ちりにまみれてすくいます　だいじだいひのかんぜおんかも",
+   "pt_anchor": "232. Suavizando a luz e misturando-se à poeira, ela salva; é Kanzeon de grande compaixão e misericórdia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "233, つみをとわず　すぎごととがめずすくいます　だいじだいひのかんのんしんかな",
+   "title_pt": "",
+   "jp_anchor": "233, つみをとわず　すぎごととがめずすくいます　だいじだいひのかんのんしんかな",
+   "pt_anchor": "233. Sem inquirir os pecados, sem repreender as faltas, ela salva; é o Coração de Kannon de grande compaixão e miseric",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "234, ほのぼのと　ひんがしのそらあかるみて　れいめいつぐるかけどりのこえ",
+   "title_pt": "",
+   "jp_anchor": "234, ほのぼのと　ひんがしのそらあかるみて　れいめいつぐるかけどりのこえ",
+   "pt_anchor": "234. O leste do céu clareia timidamente; o canto do galo anuncia a aurora.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "235, いくちとせ　あくがれまちしこうみょうの　かがやくみよはいまきたらんとすも",
+   "title_pt": "",
+   "jp_anchor": "235, いくちとせ　あくがれまちしこうみょうの　かがやくみよはいまきたらんとすも",
+   "pt_anchor": "235. A era radiante de luz, pela qual ansiávamos e esperávamos por milhares de anos, está prestes a chegar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "236, やみのなき　みよになやみのあるべしや　まがのさやらむすきのなければ",
+   "title_pt": "",
+   "jp_anchor": "236, やみのなき　みよになやみのあるべしや　まがのさやらむすきのなければ",
+   "pt_anchor": "236. Como poderia haver sofrimento na era sem trevas? Pois não há espaço para a distorção interferir.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "237, ふゆのよは　はやすぎさりてはなわらい　ももとりうたうはるはきぬめり",
+   "title_pt": "",
+   "jp_anchor": "237, ふゆのよは　はやすぎさりてはなわらい　ももとりうたうはるはきぬめり",
+   "pt_anchor": "237. O inverno já passou, as flores sorriem e a primavera, em que cem pássaros cantam, chegou.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "238, よるのやみに　なれしもろびとこころせよ　まひのひかりにまなこくらまむ",
+   "title_pt": "",
+   "jp_anchor": "238, よるのやみに　なれしもろびとこころせよ　まひのひかりにまなこくらまむ",
+   "pt_anchor": "238. Ó povos acostumados à escuridão da noite, tomai cuidado; vossos olhos se ofuscarão com a luz do sol verdadeiro.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "239, のきしたの　すずめのこえもいさましし　あさひのひかりさしそめてより",
+   "title_pt": "",
+   "jp_anchor": "239, のきしたの　すずめのこえもいさましし　あさひのひかりさしそめてより",
+   "pt_anchor": "239. Até o canto do pardal sob a beira do telhado tornou-se vigoroso, desde que a luz do sol da manhã começou a brilhar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "240, あけがらす　なくねにみればそらあかく　そめてかがようあさひこのかげ",
+   "title_pt": "",
+   "jp_anchor": "240, あけがらす　なくねにみればそらあかく　そめてかがようあさひこのかげ",
+   "pt_anchor": "240. Olhando ao som do corvo da alvorada, o céu se tinge de vermelho e a luz do sol da manhã brilha.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "241, あだぐもは　とおのきにけりひさかたの　みそらにてれるおおきひのかげ",
+   "title_pt": "",
+   "jp_anchor": "241, あだぐもは　とおのきにけりひさかたの　みそらにてれるおおきひのかげ",
+   "pt_anchor": "241. As nuvens adversárias já se afastaram; a luz do grande sol brilha no céu vasto.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "242, おおかみの　つくりたまいしあめつちの　やみにいつまでとざさるべしやは",
+   "title_pt": "",
+   "jp_anchor": "242, おおかみの　つくりたまいしあめつちの　やみにいつまでとざさるべしやは",
+   "pt_anchor": "242. Até quando estará fechada nas trevas do céu e da terra que o Grande Deus criou?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "243, だいこうみょう　せかいというはくもりなき　すいしょうせかいのさまをいうなり",
+   "title_pt": "",
+   "jp_anchor": "243, だいこうみょう　せかいというはくもりなき　すいしょうせかいのさまをいうなり",
+   "pt_anchor": "243. O chamado \"Mundo da Grandiosa Luz\" refere-se ao estado de um mundo de cristal sem nuvens espirituais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "244, おのもおのも　まことごころにたちかえり　かみのひかりにたまてらせかし",
+   "title_pt": "",
+   "jp_anchor": "244, おのもおのも　まことごころにたちかえり　かみのひかりにたまてらせかし",
+   "pt_anchor": "244. Cada um, retornando ao coração sincero, ilumine a alma com a luz de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "245, もろびとの　こころのいわとひらくれば　このよのやみはうちきゆるらむ",
+   "title_pt": "",
+   "jp_anchor": "245, もろびとの　こころのいわとひらくれば　このよのやみはうちきゆるらむ",
+   "pt_anchor": "245. Se a porta de pedra do coração das pessoas se abrir, as trevas deste mundo se dissiparão.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "246, かみほとけ　いつきおろがむこころこそ　いわとひらけししるしなりけり",
+   "title_pt": "",
+   "jp_anchor": "246, かみほとけ　いつきおろがむこころこそ　いわとひらけししるしなりけり",
+   "pt_anchor": "246. O coração de consagrar e adorar os deuses e budas é o sinal de que a porta de pedra se abriu.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "247, ひとのちから　いとどよわきをしりてより　かみをおろがむわれとなりけり",
+   "title_pt": "",
+   "jp_anchor": "247, ひとのちから　いとどよわきをしりてより　かみをおろがむわれとなりけり",
+   "pt_anchor": "247. Desde que soube como a força humana é fraca, tornei-me alguém que adora a Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "248, かみをちからに　まことのつえもてすすむみは　よにおそるものなきをしりけり",
+   "title_pt": "",
+   "jp_anchor": "248, かみをちからに　まことのつえもてすすむみは　よにおそるものなきをしりけり",
+   "pt_anchor": "248. A pessoa que avança com a força de Deus e o cajado da verdade sabe que não há nada a temer no mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "249, みもたまも　すみきよまりしひとにして　なやみのときもやすくこえなむ",
+   "title_pt": "",
+   "jp_anchor": "249, みもたまも　すみきよまりしひとにして　なやみのときもやすくこえなむ",
+   "pt_anchor": "249. A pessoa cujo corpo e alma se purificaram e se tornaram límpidos superará com facilidade até os momentos de sofrime",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "250, もののよく　ほどほどにせよこえがたき　なやみきぬればいかにとやせむ",
+   "title_pt": "",
+   "jp_anchor": "250, もののよく　ほどほどにせよこえがたき　なやみきぬればいかにとやせむ",
+   "pt_anchor": "250. Moderai os desejos materiais; se um sofrimento difícil de superar vier, o que fareis?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "251, いかならむ　なやみのひにもうごなわじ　まことひとつにすすみゆくみは",
+   "title_pt": "",
+   "jp_anchor": "251, いかならむ　なやみのひにもうごなわじ　まことひとつにすすみゆくみは",
+   "pt_anchor": "251. Qualquer que seja o dia de sofrimento, a pessoa que avança firmemente na verdade não vacilará.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "252, しゅうちゃくと　きりなきよくのしがらみに　みもたましいもほろびゆくなり",
+   "title_pt": "",
+   "jp_anchor": "252, しゅうちゃくと　きりなきよくのしがらみに　みもたましいもほろびゆくなり",
+   "pt_anchor": "252. O corpo e a alma perecem devido ao apego e às amarras dos desejos sem fim.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "253, はかなきは　あすをもしらぬさだめもつ　ひとのきりなきよくにこそあれ",
+   "title_pt": "",
+   "jp_anchor": "253, はかなきは　あすをもしらぬさだめもつ　ひとのきりなきよくにこそあれ",
+   "pt_anchor": "253. O que é efêmero está justamente nos desejos sem fim do homem, que possui um destino que nem o amanhã conhece.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "254, ただわがみ　よかれのこころにわざわいの　たねまくひとぞあわれなりけり",
+   "title_pt": "",
+   "jp_anchor": "254, ただわがみ　よかれのこころにわざわいの　たねまくひとぞあわれなりけり",
+   "pt_anchor": "254. A pessoa que, pensando apenas no próprio bem, semeia as sementes da calamidade, é digna de pena.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "255, ものにのみ　たよりしことのおろかさを　よびとさとらむときはきにける",
+   "title_pt": "",
+   "jp_anchor": "255, ものにのみ　たよりしことのおろかさを　よびとさとらむときはきにける",
+   "pt_anchor": "255. Chegou o tempo de as pessoas do mundo perceberem a tolice de confiar apenas nas coisas materiais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "256, ちかみくる　ただしきみよをしらずして　いまだまがことたくむあわれさ",
+   "title_pt": "",
+   "jp_anchor": "256, ちかみくる　ただしきみよをしらずして　いまだまがことたくむあわれさ",
+   "pt_anchor": "256. A tristeza daqueles que, sem conhecer a era reta que se aproxima, ainda tramam coisas distorcidas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "257, あやまれる　みちやこころにきづかずば　やがてほろびむかみのさばきに",
+   "title_pt": "",
+   "jp_anchor": "257, あやまれる　みちやこころにきづかずば　やがてほろびむかみのさばきに",
+   "pt_anchor": "257. Se não se derem conta do caminho e do coração errados, perecerão no julgamento de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "258, いくちとせ　かかりてみちをくるわせし　まがつほろぶるときはきにけり",
+   "title_pt": "",
+   "jp_anchor": "258, いくちとせ　かかりてみちをくるわせし　まがつほろぶるときはきにけり",
+   "pt_anchor": "258. Chegou o tempo de perecer o deus da distorção (Magatsu), que por milhares de anos desviou o caminho.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "259, あやうきは　まがのとりこになりながら　いまだめざめぬひとのゆくすえ",
+   "title_pt": "",
+   "jp_anchor": "259, あやうきは　まがのとりこになりながら　いまだめざめぬひとのゆくすえ",
+   "pt_anchor": "259. Perigoso é o futuro da pessoa que, mesmo se tornando prisioneira da distorção, ainda não desperta.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "260, おおかみは　あめつちももをすみきよめ　すいしょうせかいをうちたてますらむ",
+   "title_pt": "",
+   "jp_anchor": "260, おおかみは　あめつちももをすみきよめ　すいしょうせかいをうちたてますらむ",
+   "pt_anchor": "260. O Grande Deus purificará o céu, a terra e todas as coisas, e estabelecerá o Mundo de Cristal.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "261, よのけがれ　きよめてもものくるいため　ただしきみよをたつるおおかみ",
+   "title_pt": "",
+   "jp_anchor": "261, よのけがれ　きよめてもものくるいため　ただしきみよをたつるおおかみ",
+   "pt_anchor": "261. O Grande Deus purifica a impureza do mundo, corrige todas as distorções e constrói a era reta.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "262, よきひとの　よろこびあしきひとなげく　ただしきみよのきつるうれしさ",
+   "title_pt": "",
+   "jp_anchor": "262, よきひとの　よろこびあしきひとなげく　ただしきみよのきつるうれしさ",
+   "pt_anchor": "262. A alegria dos bons e o lamento dos maus: que alegria a chegada da era reta!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "263, ちりほどの　つみやけがれもかくされぬ　みよをすいしょうせかいというなる",
+   "title_pt": "",
+   "jp_anchor": "263, ちりほどの　つみやけがれもかくされぬ　みよをすいしょうせかいというなる",
+   "pt_anchor": "263. Diz-se que a era onde nem pecados ou impurezas do tamanho de um grão de poeira podem ser ocultados se chama Mundo",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "264, くもひとつ　かくすよしなきおおぞらは　すいしょうせかいのすがたなるらむ",
+   "title_pt": "",
+   "jp_anchor": "264, くもひとつ　かくすよしなきおおぞらは　すいしょうせかいのすがたなるらむ",
+   "pt_anchor": "264. O grande céu, onde nem uma única nuvem pode se esconder, deve ser a própria forma do Mundo de Cristal.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "265, かかなめて　やすけかりけるわれなりき　よをふきすさぶあらしのほかにいて",
+   "title_pt": "",
+   "jp_anchor": "265, かかなめて　やすけかりけるわれなりき　よをふきすさぶあらしのほかにいて",
+   "pt_anchor": "265. Eu era aquele que vivia em paz, dia após dia, permanecendo fora da tempestade que assolava o mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "266, さきさかる　さくらのもとにおもうかな　このくにのたみいずこにゆくや",
+   "title_pt": "",
+   "jp_anchor": "266, さきさかる　さくらのもとにおもうかな　このくにのたみいずこにゆくや",
+   "pt_anchor": "266. Sob as cerejeiras em plena floração, penso: para onde irá este povo desta nação?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "267, ちのそこに　あえぎくるしむこひつじを　すくわむとしてわれはたつなり",
+   "title_pt": "",
+   "jp_anchor": "267, ちのそこに　あえぎくるしむこひつじを　すくわむとしてわれはたつなり",
+   "pt_anchor": "267. Para salvar os cordeiros que gemem e sofrem no fundo da terra, eu me levanto.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "268, おおかみの　おもきよさしはかしこくも　しずのわがみにおわせたまえり",
+   "title_pt": "",
+   "jp_anchor": "268, おおかみの　おもきよさしはかしこくも　しずのわがみにおわせたまえり",
+   "pt_anchor": "268. O Grande Deus, com augusta decisão, fez pesar sobre meu humilde corpo uma pesada missão.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "269, ぬばたまの　やみのよみちにゆきまよう　よびとすくわむわがみわざかな",
+   "title_pt": "",
+   "jp_anchor": "269, ぬばたまの　やみのよみちにゆきまよう　よびとすくわむわがみわざかな",
+   "pt_anchor": "269. Salvar as pessoas que vagueiam perdidas na estrada escura da noite: esta é minha obra divina.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "270, むらきもの　われがこころにむちうちて　ちからかぎりにこのよすくわむ",
+   "title_pt": "",
+   "jp_anchor": "270, むらきもの　われがこころにむちうちて　ちからかぎりにこのよすくわむ",
+   "pt_anchor": "270. Açoitando meu próprio coração, salvarei este mundo com todas as minhas forças.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "271, ひとのよに　ためしとてなきおおいなる　ちからをかみはわれにたまいぬ",
+   "title_pt": "",
+   "jp_anchor": "271, ひとのよに　ためしとてなきおおいなる　ちからをかみはわれにたまいぬ",
+   "pt_anchor": "271. Deus me concedeu um poder imenso, sem precedentes no mundo humano.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "272, しんぜんび　まったきみよをつくらむと　ちからかぎりにいそしむわれかな",
+   "title_pt": "",
+   "jp_anchor": "272, しんぜんび　まったきみよをつくらむと　ちからかぎりにいそしむわれかな",
+   "pt_anchor": "272. Para construir a era perfeita da Verdade, do Bem e do Belo, eu me empenho com todas as minhas forças.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "273, くしびなる　わがかむわざはいにしえゆ　ふみにもみえずことづてにもなき",
+   "title_pt": "",
+   "jp_anchor": "273, くしびなる　わがかむわざはいにしえゆ　ふみにもみえずことづてにもなき",
+   "pt_anchor": "273. Minha maravilhosa obra divina não se encontra em escritos antigos nem em tradições orais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "274, おおいなる　のぞみにいくるわれにして　ちさきことにもこころくばるなり",
+   "title_pt": "",
+   "jp_anchor": "274, おおいなる　のぞみにいくるわれにして　ちさきことにもこころくばるなり",
+   "pt_anchor": "274. Sendo alguém que vive para uma grande esperança, também me ocupo com as pequenas coisas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "275, ふゆしらぬ　あたみめぐましいちがつに　うめさきにがつにさくらさくなり",
+   "title_pt": "",
+   "jp_anchor": "275, ふゆしらぬ　あたみめぐましいちがつに　うめさきにがつにさくらさくなり",
+   "pt_anchor": "275. Em Atami, que não conhece o inverno, abençoada, as ameixeiras florescem em janeiro e as cerejeiras em fevereiro.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "276, うみやまの　けしきうるわしあさなさを　いでゆにつかるあたみよきかな",
+   "title_pt": "",
+   "jp_anchor": "276, うみやまの　けしきうるわしあさなさを　いでゆにつかるあたみよきかな",
+   "pt_anchor": "276. As paisagens do mar e das montanhas são belas; gosto de Atami, de me banhar nas fontes termais todas as manhãs e ta",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "277, しずかなる　うみにうかべるはつしまを　はるかにながめついでゆにつかれる",
+   "title_pt": "",
+   "jp_anchor": "277, しずかなる　うみにうかべるはつしまを　はるかにながめついでゆにつかれる",
+   "pt_anchor": "277. Contemplando ao longe a Ilha Hatsushima, que flutua no mar calmo, banho-me nas fontes termais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "278, はるさめの　しとしとふりてしずやかに　けむれるいずのとおきしまやま",
+   "title_pt": "",
+   "jp_anchor": "278, はるさめの　しとしとふりてしずやかに　けむれるいずのとおきしまやま",
+   "pt_anchor": "278. A chuva de primavera cai suavemente, e as ilhas e montanhas distantes de Izu fumegam em silêncio.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "279, やまきよく　うみしずかなるあたみわも　いでゆのありてたらぬものなき",
+   "title_pt": "",
+   "jp_anchor": "279, やまきよく　うみしずかなるあたみわも　いでゆのありてたらぬものなき",
+   "pt_anchor": "279. Em Atami, onde as montanhas são límpidas e o mar calmo, nada falta, pois há fontes termais.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "280, なつははこね　ふゆはあたみのひととなる　かみのみさちのふかきをぞおもう",
+   "title_pt": "",
+   "jp_anchor": "280, なつははこね　ふゆはあたみのひととなる　かみのみさちのふかきをぞおもう",
+   "pt_anchor": "280. Tornar-se uma pessoa que está em Hakone no verão e em Atami no inverno: penso na profundidade da graça divina.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "281, やまもうみも　しまもうるわしあたみこそ　このうつしよのてんごくのかた",
+   "title_pt": "",
+   "jp_anchor": "281, やまもうみも　しまもうるわしあたみこそ　このうつしよのてんごくのかた",
+   "pt_anchor": "281. Atami, com suas montanhas, mares e ilhas belas, é um modelo do Paraíso neste mundo terreno.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "282, うえになく　たみぐさあわれながきよを　まことわすれしとがにかあらむ",
+   "title_pt": "",
+   "jp_anchor": "282, うえになく　たみぐさあわれながきよを　まことわすれしとがにかあらむ",
+   "pt_anchor": "282. O povo que geme de fome é lastimável; será culpa por terem esquecido a verdade por tanto tempo?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "283, あたらしき　うましのみよはあれむとし　いまこのくにはなやみのなかなる",
+   "title_pt": "",
+   "jp_anchor": "283, あたらしき　うましのみよはあれむとし　いまこのくにはなやみのなかなる",
+   "pt_anchor": "283. A nova e bela era está prestes a nascer, mas agora esta nação está em meio à agonia.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "284, くさもゆる　はるのはいつにかわらねど　うつりゆくよのうれたきすがたよ",
+   "title_pt": "",
+   "jp_anchor": "284, くさもゆる　はるのはいつにかわらねど　うつりゆくよのうれたきすがたよ",
+   "pt_anchor": "284. Embora o campo primaveril onde a grama brota não mude com o tempo, que triste é a forma do mundo que se transforma!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "285, ほろびゆく　いつわりのよのはかなさよ　ゆるさせたまうあめつちのかみ",
+   "title_pt": "",
+   "jp_anchor": "285, ほろびゆく　いつわりのよのはかなさよ　ゆるさせたまうあめつちのかみ",
+   "pt_anchor": "285. Quão efêmero é este mundo de falsidade que perece! Que o Deus do céu e da terra o perdoe.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "286, こうみょうは　はやさしそめぬもろびとよ　こころのとびらはやひらけかし",
+   "title_pt": "",
+   "jp_anchor": "286, こうみょうは　はやさしそめぬもろびとよ　こころのとびらはやひらけかし",
+   "pt_anchor": "286. A luz já começou a brilhar, ó povo! Abram rapidamente as portas de seus corações!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "287, ちはやぶる　かみのひかりにてらされて　ただしきみちのあれなむとすも",
+   "title_pt": "",
+   "jp_anchor": "287, ちはやぶる　かみのひかりにてらされて　ただしきみちのあれなむとすも",
+   "pt_anchor": "287. Iluminados pela luz do poderoso Deus, o justo Caminho está prestes a se manifestar.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "288, ひさかたの　あまつみくにをちのうえに　うちたてむこそわがねがいかも",
+   "title_pt": "",
+   "jp_anchor": "288, ひさかたの　あまつみくにをちのうえに　うちたてむこそわがねがいかも",
+   "pt_anchor": "288. Estabelecer o Reino Celestial Eterno sobre a terra: este é o meu desejo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "289, おおいなる　なやみのなかのこのくにに　けだかくそびゆるふじのたかみね",
+   "title_pt": "",
+   "jp_anchor": "289, おおいなる　なやみのなかのこのくにに　けだかくそびゆるふじのたかみね",
+   "pt_anchor": "289. Nesta nação, em meio à grande aflição, ergue-se o nobre e alto pico do Fuji.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "290, ひみずつち　さんみいったいのみちからを　そなえていでますみろくおおかみ",
+   "title_pt": "",
+   "jp_anchor": "290, ひみずつち　さんみいったいのみちからを　そなえていでますみろくおおかみ",
+   "pt_anchor": "290. O Grande Deus Miroku surge, dotado do poder trino do fogo, da água e da terra.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "291, ちじょうてんごく　うちたてむとておおいなる　ちからふるわすみろくおおかみ",
+   "title_pt": "",
+   "jp_anchor": "291, ちじょうてんごく　うちたてむとておおいなる　ちからふるわすみろくおおかみ",
+   "pt_anchor": "291. Para estabelecer o Paraíso Terrestre, Miroku Ōkami exerce seu imenso poder.\n292. O",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "292, ぬすびとの　きつるがごとくひそやかに　げしょうしませるみろくおおかみ",
+   "title_pt": "",
+   "jp_anchor": "292, ぬすびとの　きつるがごとくひそやかに　げしょうしませるみろくおおかみ",
+   "pt_anchor": "292. O Grande Deus Miroku desceu silenciosamente, como um ladrão que chega.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "293, ばんにんの　さいりんまちしきりすとも　めしやもみろくもおなじとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "293, ばんにんの　さいりんまちしきりすとも　めしやもみろくもおなじとぞおもう",
+   "pt_anchor": "293. Cristo, cuja segunda vinda todos aguardam ansiosamente, o Messias e Miroku — penso que são um só e o mesmo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "294, いとたかき　みくらをすててみすくいの　ままにみろくはげしょうしませり",
+   "title_pt": "",
+   "jp_anchor": "294, いとたかき　みくらをすててみすくいの　ままにみろくはげしょうしませり",
+   "pt_anchor": "294. Abandonando seu altíssimo trono, Miroku desceu para a salvação.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "295, ためしなき　おおきちからによらずして　などすくわめやこのうつしよを",
+   "title_pt": "",
+   "jp_anchor": "295, ためしなき　おおきちからによらずして　などすくわめやこのうつしよを",
+   "pt_anchor": "295. Sem depender de um poder imenso e sem precedentes, como se poderia salvar este mundo terreno?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "296, ちはやぶる　かみのみひかりさしそめて　ちりもあくたもきえゆくうれしさ",
+   "title_pt": "",
+   "jp_anchor": "296, ちはやぶる　かみのみひかりさしそめて　ちりもあくたもきえゆくうれしさ",
+   "pt_anchor": "296. A luz do poderoso Deus começa a brilhar, e que alegria ver até a poeira e a sujeira desaparecerem!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "297, おおかみの　ひかりあまねくかがよいて　よみがえるらむもものたみぐさ",
+   "title_pt": "",
+   "jp_anchor": "297, おおかみの　ひかりあまねくかがよいて　よみがえるらむもものたみぐさ",
+   "pt_anchor": "297. A luz do Grande Deus brilha por toda parte, e todo o povo deve estar renascendo.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "298, いくちとせ　つもりつもりしちりあくた　はらいきよめよよはしらのかみ",
+   "title_pt": "",
+   "jp_anchor": "298, いくちとせ　つもりつもりしちりあくた　はらいきよめよよはしらのかみ",
+   "pt_anchor": "298. Purificai e limpai a poeira e a sujeira acumuladas por milhares de anos, ó Quatro Divindades da Purificação!",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "299, ひとみずの　だいせんれいにうちきよめ　ちじょうてんごくたつるとききぬ",
+   "title_pt": "",
+   "jp_anchor": "299, ひとみずの　だいせんれいにうちきよめ　ちじょうてんごくたつるとききぬ",
+   "pt_anchor": "299. Purificados pela grande lavagem espiritual do fogo e da água, chegou o tempo de estabelecer o Paraíso Terrestre.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "300, ちじょうてんごく　うちたつるまでのいとふかき　しぐみにありぬながきれきしは",
+   "title_pt": "",
+   "jp_anchor": "300, ちじょうてんごく　うちたつるまでのいとふかき　しぐみにありぬながきれきしは",
+   "pt_anchor": "300. A longa história, com seu profundo propósito até o estabelecimento do Paraíso Terrestre, assim se cumpriu",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "301, ちじょうてんごく　みろくのみよとひとよぶも　りそうせかいのことにぞありける",
+   "title_pt": "",
+   "jp_anchor": "301, ちじょうてんごく　みろくのみよとひとよぶも　りそうせかいのことにぞありける",
+   "pt_anchor": "301. Embora o Paraíso Terrestre seja chamado por alguns de Era de Miroku, isso se refere ao mundo ideal.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "302, いにしえの　せいじゃはかみこしらゆうに　つつまれたれどわれはしかせじ",
+   "title_pt": "",
+   "jp_anchor": "302, いにしえの　せいじゃはかみこしらゆうに　つつまれたれどわれはしかせじ",
+   "pt_anchor": "302. Os santos antigos eram envoltos em papel e algodão branco, mas eu não agirei assim.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "303, てんごくに　よびとすくわむのぞみもて　われまずてんごくにじゅうせむとすも",
+   "title_pt": "",
+   "jp_anchor": "303, てんごくに　よびとすくわむのぞみもて　われまずてんごくにじゅうせむとすも",
+   "pt_anchor": "303. Com o desejo de salvar as pessoas do mundo no Paraíso, eu primeiro habitarei no Paraíso.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "304, いかならん　せいじゃといえどおのがみの　じごくにありてよびとすくわめや",
+   "title_pt": "",
+   "jp_anchor": "304, いかならん　せいじゃといえどおのがみの　じごくにありてよびとすくわめや",
+   "pt_anchor": "304. Por mais santo que seja, como poderia um homem, estando ele próprio no Inferno, salvar os outros?",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "305, ひとのなさけ　つきゆきはなにめをそらす　ひとはみたまのひくきがゆえなり",
+   "title_pt": "",
+   "jp_anchor": "305, ひとのなさけ　つきゆきはなにめをそらす　ひとはみたまのひくきがゆえなり",
+   "pt_anchor": "305. As pessoas desviam o olhar da lua, da neve e das flores; isso se deve à baixeza de suas almas.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "306, げいじゅつを　たのしむこころゆたかなる　ひとこそてんごくにじゅうすればなり",
+   "title_pt": "",
+   "jp_anchor": "306, げいじゅつを　たのしむこころゆたかなる　ひとこそてんごくにじゅうすればなり",
+   "pt_anchor": "306. Somente as pessoas de coração generoso, que se alegram com a arte, podem habitar no Paraíso.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "307, はるのはな　あきのもみじをめずるこそ　かみのめぐみにこたうるなりける",
+   "title_pt": "",
+   "jp_anchor": "307, はるのはな　あきのもみじをめずるこそ　かみのめぐみにこたうるなりける",
+   "pt_anchor": "307. Apreciar as flores da primavera e as folhas de outono é corresponder às bênçãos de Deus.",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "308, はなわらい　ももとりうたうはるぬのは　かみがいざなうてんごくのその",
+   "title_pt": "",
+   "jp_anchor": "308, はなわらい　ももとりうたうはるぬのは　かみがいざなうてんごくのその",
+   "pt_anchor": "308. O campo primaveril, onde as flores sorriem e cem pássaros cantam, é o jardim do Paraíso para o qual Deus nos convid",
+   "notes": ""
+  },
+  {
+   "kind": "hymn",
+   "title_jp": "309, かちょうふうげつ　われはともとしうきおおき　よにもたのしくいきむとぞおもう",
+   "title_pt": "",
+   "jp_anchor": "309, かちょうふうげつ　われはともとしうきおおき　よにもたのしくいきむとぞおもう",
+   "pt_anchor": "309. Farei da lua, das flores, do vento e das aves meus amigos, e penso em viver alegremente, mesmo neste mundo cheio de",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

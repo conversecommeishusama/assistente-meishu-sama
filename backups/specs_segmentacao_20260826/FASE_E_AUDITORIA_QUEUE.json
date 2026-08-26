@@ -1,0 +1,413 @@
+{
+  "created_at": "2026-07-09T00:00:00Z",
+  "phase": "fase_e_auditoria_semantica_glossario_metadados",
+  "checklist_ref": ".cursor/rules/revisao-paralela-jp-pt.mdc",
+  "policy": "linha a linha JP fonte de verdade vs PT; checklist 8 pontos + glossario + metadados; corrigir inline; escalar so genuina duvida em PENDENCIAS_REVISAO.json; nunca so metrica agregada",
+  "pending": [],
+  "in_progress": [],
+  "done": [
+    "19520420-御教え集8号.txt",
+    "19520425-御垂示録8号.txt",
+    "19520515-御垂示録9号.txt",
+    "19520515-御教え集9号.txt",
+    "19520615-御垂示録10号.txt",
+    "19520615-御教え集10号.txt",
+    "19520715-御垂示録11号.txt",
+    "19520715-御教え集11号.txt",
+    "19520815-御教え集12号.txt",
+    "19520825-御垂示録12号.txt",
+    "19510520-教えの光.txt",
+    "19510615-一信者の告白.txt",
+    "19510805-新しき暴力.txt",
+    "19510810-或る日の公判スケッチ.txt",
+    "19510815-結核の革命的療法.txt",
+    "19510915-御垂示録1号.txt",
+    "19510920-御教え集1号.txt",
+    "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+    "19511010-御垂示録2号.txt",
+    "19511025-御教え集2号.txt",
+    "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+    "19541211-明主様御言葉 水晶殿御遷座.txt",
+    "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+    "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+    "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+    "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+    "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+    "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+    "19530615-御垂示録21号.txt",
+    "19530115-御教え集17号.txt",
+    "19530215-御垂示録17号.txt",
+    "19530215-御教え集18号.txt",
+    "19530315-御垂示録18号.txt",
+    "19530315-御教え集19号.txt",
+    "19530415-御垂示録19号.txt",
+    "19530415-御教え集20号.txt",
+    "19530505-革命的増産の自然農法解説.txt",
+    "19530515-御垂示録20号.txt",
+    "19530515-御教え集21号.txt",
+    "19530915-御教え集25号.txt",
+    "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+    "19531015-御垂示録25号.txt",
+    "19531015-御教え集26号.txt",
+    "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+    "19531115-御垂示録26号.txt",
+    "19531115-御教え集27号.txt",
+    "19531215-御垂示録27号.txt",
+    "19531215-御教え集28号.txt",
+    "19540115-御教え集29号.txt",
+    "19540215-御垂示録28号.txt",
+    "19540215-御教え集30号.txt",
+    "19540226-ハワイ教会落成式に賜った御言葉.txt",
+    "19540315-御垂示録29号.txt",
+    "19540315-御教え集31号.txt",
+    "19540415-御垂示録30号.txt",
+    "19540415-御教え集32号.txt",
+    "19540515-御教え集33号.txt",
+    "19540825-天国の福音書.txt",
+    "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+    "19530615-御教え集22号.txt",
+    "19350000-観音講座　（１～７）.txt",
+    "19480701-御讃歌集.txt",
+    "19480905-信仰雑話.txt",
+    "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+    "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+    "19490825-自観叢書第3篇『霊界叢談』.txt",
+    "19490830-自観叢書第5篇『自観隨談』.txt",
+    "19491005-自観叢書第4篇『奇蹟物語』.txt",
+    "19491025-自観叢書第7篇『基仏と観音教』.txt",
+    "19491130-自観叢書第8篇『明麿近詠集』.txt",
+    "19530715-御垂示録22号.txt",
+    "19530715-御教え集23号.txt",
+    {
+      "file": "19490730-御光話録9号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19490730-御光話録9号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19490821-御光話録11号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19490821-御光話録11号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19490921-御光話録12号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19490921-御光話録12号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19491021-御光話録13号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19491021-御光話録13号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19491120-御光話録14号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19491120-御光話録14号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19491220-御光話録15号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19491220-御光話録15号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19500120-御光話録16号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19500120-御光話録16号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19500228-御光話録17号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19500228-御光話録17号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19500423-御光話録18号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19500423-御光話録18号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    {
+      "file": "19500613-御光話録19号.txt",
+      "at": "2026-07-09T01:14:50.513554+00:00",
+      "result": "approved",
+      "audit_trail": "19500613-御光話録19号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade). Ver AUDIT_TRAIL para detalhes das correcoes reais aplicadas."
+    },
+    "19530600-A Story of Ukiyo-e.txt",
+    {
+      "file": "19520925-御垂示録13号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19520925-御垂示録13号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 476/235 linhas). 0 correcoes necessarias alem das ja aplicadas em sessoes anteriores. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19520925-御教え集13号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19520925-御教え集13号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 224/137 linhas). 1 correcao real nova aplicada (turno ausente 'O que é nutrição?'). Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521015-御垂示録14号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521015-御垂示録14号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 264/131 linhas). 1 correcao real nova aplicada (metadados title_pt/Title dessincronizados). Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521015-御教え集14号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521015-御教え集14号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 208/92 linhas). 0 correcoes necessarias. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521115-御垂示録15号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521115-御垂示録15号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 219/110 linhas). 0 correcoes necessarias alem das ja aplicadas em sessoes anteriores. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521115-御教え集15号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521115-御教え集15号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 204/139 linhas). 0 correcoes necessarias. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521201-結核信仰療法.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "parcial",
+      "audit_trail": "19521201-結核信仰療法.txt_AUDIT_TRAIL.json",
+      "note": "Livro extenso (JP 1870/PT 398 linhas). Gate mecanico limpo, CJK residual ausente, pontos criticos previamente corrigidos (Nagatomo Yoshiharu) reconferidos e OK. NAO recebeu leitura linha-a-linha independente completa nesta sessao devido ao volume -- recomenda-se segunda sessao dedicada antes de considerar approved:true definitivo. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521215-御垂示録16号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521215-御垂示録16号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 219/116 linhas). 0 correcoes necessarias alem das ja aplicadas em sessoes anteriores. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19521215-御教え集16号.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "approved",
+      "audit_trail": "19521215-御教え集16号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (JP fonte de verdade, 207/208 linhas). 0 correcoes necessarias. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    {
+      "file": "19530101-アメリカを救う.txt",
+      "at": "2026-07-09T01:15:34.879175+00:00",
+      "result": "parcial",
+      "audit_trail": "19530101-アメリカを救う.txt_AUDIT_TRAIL.json",
+      "note": "Livro extenso (JP 1086/PT 157 linhas, 91 artigos). Gate mecanico mostra 1 pendencia tecnica pre-existente (idx80, versos waka) reconfirmada como nao-bloqueante (conteudo correto e completo, apenas anchor sem unicidade). Ponto critico previamente corrigido (Sakai Takao) reconferido e OK. NAO recebeu leitura linha-a-linha independente completa nesta sessao devido ao volume -- recomenda-se segunda sessao dedicada antes de considerar approved:true definitivo. Ver AUDIT_TRAIL.",
+      "lote": 8
+    },
+    "19511125-御垂示録3号.txt",
+    "19511125-御教え集3号.txt",
+    "19511210-御垂示録4号.txt",
+    "19511215-御教え集4号.txt",
+    "19511225-御垂示録5号.txt",
+    "19520000-HAKONE ART MUSEUM.txt",
+    "19520115-御教え集5号.txt",
+    "19520125-御垂示録6号.txt",
+    "19520310-御垂示録7号.txt",
+    "19520320-御教え集7号.txt",
+    "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+    "19530815-御垂示録23号.txt",
+    "19530815-御教え集24号.txt",
+    {
+      "file": "19491223-山と水.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19491223-山と水.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha ja completa em sessao anterior (2026-07-06), approved_recomendado true. Nesta sessao (2026-07-09): resolvida a pendencia residual real de PENDENCIAS_REVISAO.json (pareamento pt_anchor do spec, 32 indices quebrados + 2 semanticamente errados apesar de passarem no validador mecanico) via reconstrucao ordenada JP/PT dos 86 marcadores de topico. scripts/apply_manual_livros_segmentacao.py --dry-run agora passa 224/224. Nenhuma alteracao de conteudo de traducao (so metadados de spec). Ver AUDIT_TRAIL addendum e PENDENCIAS_REVISAO.json.",
+      "lote": 4
+    },
+    {
+      "file": "19491230-自観叢書第9篇『光への道』.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19491230-自観叢書第9篇『光への道』.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-06). Causa da razao de linhas 5:1 diagnosticada (reflow estrutural, nao perda em escala); 1 perda real de conteudo traduzida e inserida. 0 pendencias abertas. Confirmado nesta sessao por spot-check no PT de trabalho.",
+      "lote": 4
+    },
+    {
+      "file": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19500130-自観叢書第12篇『自観説話集』.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-06). 26 ensaios revisados linha a linha; paragrafacao reformatada 1:1; 2 duplicacoes + 1 perda real de conteudo corrigidas. 0 pendencias abertas.",
+      "lote": 4
+    },
+    {
+      "file": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19500420-自観叢書第10篇『神示の健康法』.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). 2 blocos de conteudo ausente restaurados, 1 truncamento restaurado, 1 duplicacao removida, paragrafacao/titulos reformatados 1:1. 1 item aceito nao-bloqueante em PENDENCIAS_REVISAO.json (ambiguidade residual de anchor, funcionalmente correta). Confirmado nesta sessao: sem CJK residual no corpo (only metadata fields).",
+      "lote": 4
+    },
+    {
+      "file": "19500921-地上天国出来るまで.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19500921-地上天国出来るまで.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). 3 divergencias reais corrigidas (waka 1-4 ausentes, assinatura Akimaro ausente, palavra duplicada). Confirmado nesta sessao por spot-check direto no PT: assinatura 'Akimaro' presente, sem duplicacao 'nossa nossa'.",
+      "lote": 4
+    },
+    {
+      "file": "19501030-法難手記.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19501030-法難手記.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). 34 trechos revisados: prefacio ausente inserido, duplicacao de paragrafo removida, paragrafacao colapsada reformatada, colofao final inserido, CJK residual em marcadores substituido. Confirmado nesta sessao: colofao (editor/impressor/editora) presente no final do arquivo.",
+      "lote": 4
+    },
+    {
+      "file": "19501120-世界救世教早わかり.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19501120-世界救世教早わかり.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). 10 artigos revisados; causa raiz da razao de linhas corrigida (colapso de formatacao + prefacio/colofao ausentes + duplicacao de cauda). Confirmado nesta sessao: metadados title_jp/title_pt presentes e consistentes.",
+      "lote": 4
+    },
+    {
+      "file": "19510115-自然農法解説.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19510115-自然農法解説.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). 2 perdas de conteudo reais corrigidas (metadado Ukai Fuichi; item soja/feijao Kitamura Shiro) + duplicacao grave (Ochiai Masao) corrigida + nomes proprios corrigidos (Ukai, Kusugaya, Hijikata, Namieda). Confirmado nesta sessao por spot-check: 'Namieda' consistente, 'Ochiai Masao' aparece 1x (sem duplicacao).",
+      "lote": 4
+    },
+    {
+      "file": "19510130-笑の泉.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19510130-笑の泉.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07). Sequencia numerica 1-1093 verificada exaustivamente integra; 4 colapsos estruturais graves corrigidos (>500 poemas reformatados). 0 pendencias abertas.",
+      "lote": 4
+    },
+    {
+      "file": "19510225-御教え集6号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19510225-御教え集6号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa (sessao anterior, 2026-07-07/08). 14 divergencias reais corrigidas (2 monolitos estruturais, 2 duplicacoes, corrupcao de cabecalho, erro de nome proprio Hakata/Hakone, 8 duplicacoes de cabecalho de data, 1 erro tipografico). Confirmado nesta sessao: 'Hakone' consistente no corpo.",
+      "lote": 4
+    },
+    "19530915-御垂示録24号.txt",
+    {
+      "file": "19480101-御光話録（補）.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19480101-御光話録（補）.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa do volume inteiro (JP 2672/PT 2176 linhas, o maior e historicamente mais problematico do lote). 3 correcoes reais: rotulo de falante mal atribuido na sessao 8 de setembro (resposta de Meishu-Sama fundida sem rotulo dentro de testemunho do Interlocutor, Δ nao mudava); cabecalho espurio 'Perguntas e Respostas' sem correspondente JP removido (28 de julho); corrupcao textual ininteligivel restaurada na secao 28 de outubro. Pendencia antiga de 2026-07-03 (segment_index 15 vs 26) investigada e confirmada como falso positivo -- ambos os trechos JP tem traducao propria e completa. 2 novos itens de romanizacao/metadado nao-bloqueantes escalados para PENDENCIAS_REVISAO.json.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19481208-御光話録1号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19481208-御光話録1号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Padrao de corrupcao 'string 18 de novembro' de auditoria anterior nao encontrado (ja limpo). 3 correcoes reais: Izunome (romanizacao dominante do acervo), Zengen-Sandji (forma do glossario), metadado title_pt do cabecalho JP sincronizado com PT.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490108-御光話録2号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490108-御光話録2号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. 6 correcoes reais: clausula migrada (alternativa ligada por あるいは deslocada para resposta), frase quebrada por limpeza de CJK anterior (jogo de palavras 悟/覚) reescrita, marcador ○○ mal traduzido como 'circulocirculo' corrigido, 2 cabecalhos de sessao colados sem quebra, concordancia de genero, metadado title_pt sincronizado.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490208-御光話録3号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490208-御光話録3号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. ACHADO CRITICO: Δ=0 mascarado -- um turno sobre-subdividido (cabecalho+item(1) da secao de amor sexual/romantico) cancelava numericamente outro turno fundido sem rotulo (resposta 'Antes, tomei Gennoshoko'), exatamente o padrao #3 catalogado em gokowa-gate-enforcement.mdc. 6 correcoes reais aplicadas incl. erro semantico 不具 (deficiencia, nao 'esteril'), 2 clausulas migradas, terminologia Komyo-Nyorai padronizada, nota editorial final separada.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490000-御光話録4号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490000-御光話録4号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Δ=1 historico investigado -- unico par de falas consecutivas de Meishu-Sama confirmado legitimo (rubrica narrativa no JP, nao bug). 3 correcoes reais: erro teologico/medico grave 中性 traduzido como 'bissexualidade' quando o conteudo descreve hermafroditismo/intersexo (corrigido), metadado title_pt do cabecalho JP ('Goshinsho no 4' -> 'Gokowa-roku no 4'), '経師屋' (montador de pinturas) corrigido de 'encadernador'.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490000-御光話録5号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490000-御光話録5号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Verificacao especifica de troca de rotulo de falante (catalogada para este arquivo em 2026-07-05/06): nao encontrada, ja corrigida. 3 correcoes reais: perda de conteudo mascarada por Δ=0 (segunda metade da resposta sobre ateus/espirito protetor secundario faltando, traduzida e inserida), 2 duplicacoes de rotulo Meishu-Sama sem turno Interlocutor intermediario mescladas. Metadado title_pt do cabecalho JP sincronizado com PT pelo orquestrador apos a auditoria.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490423-御光話録6号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490423-御光話録6号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Residuo historico Δ=-3 (2026-07-04) investigado -- causa exata nao reconstituida mas 3 correcoes reais encontradas e aplicadas: turno de resposta espuriamente dividido em dois (homem cego de 67 anos) mesclado de volta, 2 clausulas de riso '(Risos)' migradas da pergunta para a resposta (uma delas causando contradicao semantica: 'Meishu-Sama: (Risos) Nao, isso nao e motivo de riso'). Metadado title_pt do cabecalho JP sincronizado com PT pelo orquestrador apos a auditoria.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490522-御光話録7号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490522-御光話録7号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Verificacao especifica de troca de rotulo de falante (catalogada para este arquivo em 2026-07-05/06): nao encontrada, ja corrigida. 6 correcoes reais de paragrafacao (respostas do Meishu-Sama com 2-7 paragrafos JP comprimidos em 1 no PT), destaque para a carta de protesto final: 7 paragrafos comprimidos em 1 bloco de ~3700 caracteres, restaurados.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490530-御光話録8号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490530-御光話録8号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa, atencao especial por ser o volume com maior retrabalho historico (duas passadas de traducao sobrepostas removidas + secao final de 18 pares P&R retraduzida do zero em 2026-07-04). 7 correcoes reais: NOME PROPRIO TEOLOGICO TROCADO grave (木蓮/Mokuren traduzido como 'Miroku', figura central e distinta da doutrina -- corrigido), perda de conteudo real (clausula sobre toxina fetal/sifilis hereditaria ausente, traduzida e inserida), secao editorial final (御注意) nunca traduzida, adicionada, mais 4 correcoes menores (unidade de medida, data factual, pronome, turno fundido). Secao retraduzida do zero revisada linha a linha, confirmada correta.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    {
+      "file": "19490710-御光話録10号.txt",
+      "at": "2026-07-09T00:00:00Z",
+      "result": "approved",
+      "audit_trail": "19490710-御光話録10号.txt_AUDIT_TRAIL.json",
+      "note": "Auditoria semantica linha a linha completa. Discrepancia sinalizada por GOKOWA_LABEL_AUDIT.json (jp_q=74/pt_i=71) investigada e confirmada historica/ja resolvida (relatorio de 2026-07-04, arquivo editado depois). 6 correcoes reais: corrupcao textual grave restaurada (kanji 丁/巫 da etimologia de 'miko' haviam sido removidos, frases quebradas), erro teologico 観音教団 traduzido como 'A Igreja Messianica' corrigido para 'A Igreja Kannon', travessao solto removido de 27 turnos, romanizacao Okada Mokichi, ordem de clausulas realinhada, metadado title_pt sincronizado.",
+      "lote": "gokowa_lote1_fase_e"
+    },
+    "19530910-世界救世教奇蹟集.txt"
+  ],
+  "notes_lote_5": "Lote 5 (10 livros acima, verificado 2026-07-09): já tinham auditoria linha-a-linha completa de sessões anteriores (2026-07-07/08) — checklist 8 pontos + glossário + metadados, *_AUDIT_TRAIL.json gravado, segunda auditoria independente já registrada, spec approved:true, 0 pendências abertas em PENDENCIAS_REVISAO.json. Confirmado por spot-check direto no PT de trabalho (não só na trilha): colofão final + 'estreptomicina' em 結核の革命的療法, par P&R pneumonia/meningite em 御教え集1号, fórmula 'Kamu nagara tamachi haemase' restaurada em 御垂示録2号. Nota: 19510815-結核の革命的療法.txt teve, à parte da auditoria semântica, uma pendência de pareamento de âncora (194→178 artigos, consolidação de secções espúrias que fundiam waka citado com o testemunho) resolvida por outra sessão em 2026-07-09 (ver PENDENCIAS_REVISAO.json) — não afeta o conteúdo já auditado.",
+  "failed": [],
+  "notes_lote_9": "Lote 9 (10 livros: 御教え集17-21号, 御垂示録17-20号, 革命的増産の自然農法解説 — verificado 2026-07-09): já tinham auditoria linha-a-linha completa de sessão anterior (2026-07-07) — checklist 8 pontos + glossário + metadados, *_AUDIT_TRAIL.json gravado, segunda auditoria independente já registrada nos 9 volumes periódicos (approved_recomendado:true). Confirmado por spot-check direto no PT de trabalho (não só na trilha): turno de abertura 'Hoje não preparei nenhum assunto...' em 御垂示録20号, sessão inteira '5 de março' (previsão da morte de Stalin) inserida em 御教え集20号, tabela de anos e nome 'Tokimoto Shigetoshi' em 革命的増産の自然農法解説. O 10º livro (革命的増産の自然農法解説, coletânea de relatórios agrícolas/testemunhos, 204 artigos no spec) tinha 2 pendências abertas na sessão anterior: (a) nome próprio 時本重敏 de baixa confiança — verificado agora e já estava corrigido no ficheiro ('Tokimoto Shigetoshi'), pendência era stale; (b) pendência estrutural separada em PENDENCIAS_REVISAO.json — 22 índices do spec .txt.json com falha de ordem/ancoragem (dry-run real de apply_manual_livros_segmentacao.py falhava em PT[129]/idx128). Diagnosticados nesta sessão: todos os 22 eram pseudo-artigos espúrios (campos/marcadores de tabela de relatório agrícola, ex. 'ハ、反当苗代坪数 十二坪', tratados erroneamente como fronteiras de artigo quando o PT os traduz como prosa contínua dentro do testemunho anterior — mesma classe de bug já catalogada para 白大豆一点/黒大豆一点 na passada 206→204). Consolidados de volta ao artigo anterior (spec agora 182 artigos); validado com apply_manual_livros_segmentacao.py --dry-run, que agora conclui sem erro do início ao fim em JP e PT. Spec marcado approved:true, AUDIT_TRAIL e PENDENCIAS_REVISAO.json atualizados, aprovacao.approved_recomendado agora true nos 10 volumes. ADENDO: encontrado e corrigido um 3º caso da mesma família de bug (sessão de data engolida pelo preface[0] do spec) em 19530515-御教え集21号.txt — PENDENCIAS_REVISAO.json já tinha isto registado como 'pendente_fase2_alta' (2026-07-08, risco real de perda de conteúdo ao aplicar o spec: sessão '5 de abril' completa, ~4700 caracteres JP, seria descartada). Corrigido nesta sessão: preface[0] pt_anchor ajustado + artigo novo inserido para '5 de abril' (spec 9→10 artigos), validado com apply_manual_livros_segmentacao.py --dry-run (sem erro). Este era o 3º e último caso conhecido desta família de bug nos livros 御教え集19/20/21号 (os outros 2 já haviam sido corrigidos em sessão anterior).",
+  "notes_lote_6": "Lote 6 (10 livros: Gosuiji-roku 3-7go, Mioshie-shu 3-5go+7go, HAKONE ART MUSEUM - verificado/fechado 2026-07-09): 7 dos 10 ja estavam approved:true de sessao anterior (2026-07-07/08); 3 estavam approved:false aguardando segunda auditoria independente (Gosuiji-roku 5go/6go/7go) - feita agora por verificacao direta no PT de trabalho (nao so confianca na trilha): confirmadas as insercoes/correcoes ja aplicadas (11 falas em 5go, bloco jichinsai+Amaterasu Tenno em 6go, 8 turnos de abertura em 7go), contagens de turnos rotuladas conferidas exatamente, pendencias associadas (romanizacao Sadaji Takagi/Kiyoto, Amaterasu Tenno, grafia Zengen-Sanji/Sandji) ja resolvidas em PENDENCIAS_REVISAO.json. Achado NOVO nesta sessao, nao catalogado antes: bug sistematico de cabecalho de data duplicado (colado ao fim do paragrafo anterior e/ou repetido em linha propria, por vezes em forma por extenso divergente do resto do arquivo) na familia Mioshie-shu - encontrado e corrigido em Mioshie-shu 7go (6 datas: 6,7,15,16,17,27 de fevereiro) e Mioshie-shu 5go (7 datas: 6,8,15,18,21,28 de dezembro), ambos ja approved:true mas com o bug intocado desde 2026-07-07/08. pt_anchors correspondentes revertidos do workaround duplo (Fase C, 2026-07-08) para ocorrencia unica; forma numerica escolhida por consistencia quando havia forma por extenso concorrente (ex. Seis de dezembro -> 6 de dezembro). CJK residual: nenhum nos 10 arquivos. Todos os 10 specs approved:true; *_AUDIT_TRAIL.json atualizado com bloco fase_e_2026_07_09/segunda_auditoria_independente em cada um. 0 pendencias abertas remanescentes para este lote em PENDENCIAS_REVISAO.json. (added=['19511125-御垂示録3号.txt', '19511125-御教え集3号.txt', '19511210-御垂示録4号.txt', '19511215-御教え集4号.txt', '19511225-御垂示録5号.txt', '19520000-HAKONE ART MUSEUM.txt', '19520115-御教え集5号.txt', '19520125-御垂示録6号.txt', '19520310-御垂示録7号.txt', '19520320-御教え集7号.txt'])",
+  "notes_lote_1_gokowa_fase_e": "Lote 1 de 2 do Gokōwa (御光話録), 10 livros: 補, 1号-8号, 10号 (verificado/fechado 2026-07-09). Auditoria dedicada por volume (não spot-check de sessão anterior): cada arquivo lido linha a linha do início ao fim contra o JP, checklist de 8 pontos + glossário + metadados, com atenção específica aos padrões já catalogados como invisíveis ao gate Δ=0 (troca de rótulo de falante, cláusula migrada, perda mascarada por divisão espúria, corrupção textual, duplicação). Gate mecânico PASS (Δ=0, CJK=0) confirmado nos 10 antes E depois das correções. Todos os 10 tinham pelo menos 1 correção real (nenhum fechou 100% limpo sem achado) — total de ~50 correções reais aplicadas nos ficheiros de trabalho, incluindo: 2 casos de Δ=0 genuinamente mascarado (3号: turno sobre-subdividido cancelando turno fundido; 5号: perda de conteúdo real compensada por duplicação de rótulo), 1 rótulo de falante mal atribuído com fusão sem rótulo (補), 2 nomes teológicos próprios trocados (8号: 木蓮/Mokuren traduzido como 'Miroku'; 10号: 観音教団 traduzido como 'A Igreja Messiânica' em vez de 'A Igreja Kannon'), 2 casos de conteúdo real ausente restaurado (5号, 8号), corrupção textual restaurada em 2 arquivos (補, 10号), e diversas correções de paragrafação/clásula migrada/terminologia/metadado. Metadado title_pt do cabeçalho JP sincronizado com o PT em todos os 10 arquivos (padrão sistêmico de dessincronização encontrado e corrigido em lote pelo orquestrador para 補/5号/6号 após os agentes individuais terem corrigido os demais). 2 novos itens escalados para PENDENCIAS_REVISAO.json (romanização de nomes próprios e metadado title_pt inconsistentes no corpus, ambos referentes a 補, não-bloqueantes). *_AUDIT_TRAIL.json gravado e validado (JSON parseável) nos 10 arquivos."
+}

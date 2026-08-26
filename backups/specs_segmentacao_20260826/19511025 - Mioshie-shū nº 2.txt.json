@@ -1,0 +1,131 @@
+{
+ "filename": "19511025 - Mioshie-shū nº 2.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 13→13. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 13,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』2号、昭和26(1951)年10月25日発行",
+   "pt_anchor": "Mioshie-shū nº 2",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月一日",
+   "title_pt": "1 de setembro",
+   "jp_anchor": "九月一日\n\nInterlocutor: （お伺）当年六十五歳の未入 信の女、昭和二十五年二月乳癌になり、電気およびテルミをかけて八カ月に及び、どうしても",
+   "pt_anchor": "1 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[1º de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "1 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月五日",
+   "title_pt": "5 de setembro",
+   "jp_anchor": "九月五日\n\nInterlocutor: （お伺）島根県大社町、小銀 政一郎（四十六歳）の御浄化につき御教示ならびに御守護のほど謹んでお願い申し上げます。",
+   "pt_anchor": "5 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[5 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "5 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月八日",
+   "title_pt": "8 de setembro",
+   "jp_anchor": "九月八日\n\nInterlocutor: （お伺）二十年前に流産を し、手術を受けてより、いつからかお腹に固まりができ、目立つようになったのは五、六年前か",
+   "pt_anchor": "8 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[8 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "8 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十一日",
+   "title_pt": "11 de setembro",
+   "jp_anchor": "九月十一日\n\nInterlocutor: （お伺）五十一歳の信者でございますが、昭和二十三年妻が入信いたし、本人は幼少より体が弱く、浄霊をいただきたいへん",
+   "pt_anchor": "11 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[11 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "11 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十五日",
+   "title_pt": "15 de setembro",
+   "jp_anchor": "九月十五日\n\nInterlocutor: （お伺）葡萄状鬼胎（ぶどうじょうきたい）につき、左記御垂示賜りたくお伺い申し上げます。",
+   "pt_anchor": "15 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月十八日",
+   "title_pt": "18 de setembro",
+   "jp_anchor": "九月十八日\n\nInterlocutor: （お伺）未入信、藤田茂（二十六歳）の長女（こまき）と申す一年九カ月の女児でございますが、医師に脳水腫と診断され、",
+   "pt_anchor": "18 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[18 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "18 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十一日",
+   "title_pt": "21 de setembro",
+   "jp_anchor": "九月二十一日\n\nInterlocutor: （お伺）九月十四日入信の信者でございます。昨年八月ごろより、急に一時的発作起り、妻だけを無意識のうちに叩いてしま",
+   "pt_anchor": "21 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[21º de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "21 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十三日",
+   "title_pt": "23 de setembro",
+   "jp_anchor": "秋季大祭御教え\n\n九月二十三日\n\n　今日は二回目の秋季大祭です。去年初めて秋季大祭をやったけれども、何しろ去年は、あの事件から間もない頃だったので、どことなく気がサッパリしな",
+   "pt_anchor": "23 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[23º de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "23 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十四日",
+   "title_pt": "24 de setembro",
+   "jp_anchor": "九月二十四日\n\n　ちょうど去年の第一回のお祭りより、約倍位来る人が多いそうです。何だかんだ色んな圧迫されながらも、ずんずん発展しつつあるわけですね。去年はあ",
+   "pt_anchor": "24 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[24 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "24 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十五日",
+   "title_pt": "25 de setembro",
+   "jp_anchor": "九月二十五日\n\n　だいぶ大入りですね。御神業もだんだん発展してきまして、神仙郷の方も見らるる通りで、美術館の建築もいよいよ取り掛かったのでありますが、来月の",
+   "pt_anchor": "25 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十六日",
+   "title_pt": "26 de setembro",
+   "jp_anchor": "九月二十六日\n\n　今度は割合雨が降るようですが、箱根は、本当は雨が降るのが良いんですがね。熱海は天気が良い方がいいですがね。これは負け惜しみでもなんでもない",
+   "pt_anchor": "26 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[26 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "26 de setembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "九月二十七日",
+   "title_pt": "27 de setembro",
+   "jp_anchor": "九月二十七日\n\n　今日はお天気になって良かったですね。",
+   "pt_anchor": "27 de setembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[27 de setembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "27 de setembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,103 @@
+{
+  "filename": "19540415-御垂示録30号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 307 linhas de arquivo / ~144 parágrafos de conteúdo, PT reestruturado de 84 para 291 linhas de arquivo), 2 artigos por spec (prefácio + sessão única de 1 de abril de 1954). Todo o corpo JP foi lido e confrontado linha a linha (parágrafo a parágrafo) com o PT correspondente, na mesma ordem, do início ao fim.",
+  "pre_existing_context": "Arquivo fazia parte da família 御垂示録1号-29号 já revisada nesta sessão. Alerta inicial do solicitante: razão JP/PT ~3.6:1 (306 linhas JP vs 84 linhas PT), fortemente sugestivo de monólito estrutural.",
+  "gate_mecanico": "Não substituído por esta trilha. Contagem de conteúdo verificada por método próprio (ver metodologia abaixo), mas o gate de contagem/estrutura formal (script gate_gokowa_linha.py ou equivalente) deve ainda ser rodado separadamente.",
+  "metodologia_verificacao": "Como o PT estava com quase todo o corpo colapsado em ~60 linhas físicas (várias delas com mais de 1000-3400 caracteres, mesclando pergunta+resposta+pergunta seguinte sem quebra de parágrafo), a comparação manual turno-a-turno foi apoiada por script de triagem (permitido pela regra, script nunca substitui a leitura): (1) extração de todos os 66 trechos entre colchetes-de-canto「」 do JP e classificação de cada um em 'turno real do Interlocutor' (62, cada um ocupando parágrafo próprio no JP) vs 'citação embutida dentro do discurso de Meishu-Sama' (4, ex. citação do Ofudesaki, do termo 'オチゴ', do provérbio '神は順序なり'); (2) mapeamento manual, turno a turno, dos 62 turnos reais contra os respectivos trechos traduzidos no PT (verificado por leitura direta, não só por script); (3) identificação de 6 pontos adicionais no JP onde dois parágrafos consecutivos pertencem ao mesmo falante (Meishu-Sama) sem interrupção do Interlocutor - estes também exigem quebra de parágrafo autônoma. Após reconstrução, o texto novo foi comparado caractere a caractere (normalizando espaços) contra o texto antigo para confirmar que nenhuma palavra foi perdida, duplicada ou reordenada durante a reformatação - a única diferença de conteúdo real encontrada e corrigida foi a lacuna documentada abaixo (linhas JP 28 e 30).",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "colapso estrutural grave (monólito)",
+      "localizacao_jp": "corpo inteiro da sessão de 1º de abril de 1954, JP linhas 28-306 (~144 parágrafos/turnos)",
+      "localizacao_pt_antes": "linhas 25-84 do arquivo de trabalho PT (quase todo o conteúdo amassado em ~60 linhas físicas, uma delas com 3433 caracteres únicos, mesclando a resposta de Meishu-Sama com a pergunta seguinte do Interlocutor na mesma linha sem quebra de parágrafo, violando o item 6 do checklist - 'Paragrafação 1:1')",
+      "problema": "Apesar de o conteúdo textual estar todo presente e na ordem correta (nenhuma perda ou duplicação encontrada na verificação caractere a caractere), a ausência quase total de quebras de parágrafo tornava o documento ilegível como diálogo estruturado e mascarava a estrutura pergunta-resposta que existe explicitamente no JP (cada turno é uma linha/parágrafo próprio no original).",
+      "correcao": "Reestruturado com uma quebra de parágrafo antes e depois de cada um dos 62 turnos reais do Interlocutor (identificados e verificados individualmente, não por heurística cega - citações embutidas dentro do discurso de Meishu-Sama, como a do Ofudesaki e a do termo 'オチゴ', foram mantidas inline, sem quebra espúria). Adicionalmente, 6 pontos onde Meishu-Sama fala em dois parágrafos JP consecutivos sem interrupção do Interlocutor (mudança de sub-tópico dentro da mesma resposta) foram identificados e splitados: (a) 'medicina cria doentes' -> 'quem desenvolve a Igreja Messiânica é a medicina' (JP 182/183); (b) 'pode pensar assim' -> 'chegou uma época imensa' (JP 188/189); (c) armário aberto/fechado -> caso específico da igreja (JP 194/195); (d) deixar o innen seguir seu curso -> observação sobre a era dos Estados Guerreiros (JP 212/213); (e) espíritos de desabamento de mina -> mudança de assunto para o Museu de Hakone (JP 266/267); (f) história de Ogata Korin/Kenzan -> história da caixa de tinta de Koetsu (JP 305/306). Verificado por diff caractere-a-caractere (espaços normalizados) que o texto resultante é idêntico ao texto anterior, exceto pela correção do item 2 abaixo - nenhuma palavra foi perdida, duplicada ou reordenada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "perda real de conteúdo (2 frases ausentes)",
+      "localizacao_jp": "linhas 28 e 30 do JP: 「例の神憑りの人で、最近ちょっと面白いことが出たので、今読ませます。」 seguido do subtítulo 「（御報告）」",
+      "localizacao_pt_antes": "ausente - o PT saltava diretamente da abertura da sessão '[1º de abril]' para o conteúdo do relato em si ('À medida que a época se aproxima...'), sem a frase de abertura de Meishu-Sama nem o subtítulo",
+      "problema": "A frase de abertura estabelece que o parágrafo seguinte é a leitura de um relato escrito por um médium ('a pessoa com transe espiritual de sempre'), não uma fala direta e espontânea de Meishu-Sama. Sem essa frase e o subtítulo '(Relato)', o leitor do PT perde a informação de que o texto seguinte é uma citação lida em voz alta, não uma declaração original de Meishu-Sama no momento - uma diferença de atribuição de fala relevante dado o alerta da regra de revisão sobre troca/perda de atribuição de falante.",
+      "correcao": "Traduzido e inserido: 'É o médium de sempre; recentemente surgiu algo um pouco interessante, então vou pedir que leiam agora.' seguido de '(Relato)' como subtítulo próprio, antes do parágrafo já existente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "erro de formatação menor",
+      "localizacao_pt_antes": "'[1º de abril]À medida que a época se aproxima' - sem espaço/quebra entre o marcador de sessão e o texto",
+      "correcao": "Separado em linha própria: '[1º de abril]' seguido de parágrafo próprio para o conteúdo.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas": [
+    {
+      "item": "troca de falante (Interlocutor/Meishu-Sama invertidos)",
+      "resultado": "não encontrada - todos os 62 turnos do Interlocutor mapeados individualmente contra o JP, ordem e atribuição corretas em 100% dos casos"
+    },
+    {
+      "item": "duplicação de blocos inteiros",
+      "resultado": "não encontrada - verificação caractere a caractere confirma que nenhum trecho foi duplicado"
+    },
+    {
+      "item": "nomes próprios corrompidos",
+      "resultado": "não encontrada - conferidos Yoshihiko Someya (染矢義彦), Nobu Suzuki (鈴木ノブ), Ogata Korin (尾形光琳), Kenzan (乾山), Koetsu (光悦), Bernard Leach, Muneyoshi Yanagi (柳宗悦) - todos presentes e corretos"
+    },
+    {
+      "item": "CJK residual no corpo PT",
+      "resultado": "não encontrado - único CJK remanescente está nos campos de metadado do cabeçalho (filename, title_jp), como esperado"
+    },
+    {
+      "item": "truncamento / cauda em falta",
+      "resultado": "não encontrado - último parágrafo (história da caixa de tinta de Koetsu) completo e correspondente ao final do JP (linha 306)"
+    }
+  ],
+  "pendencias_abertas": [
+    {
+      "item": "Nuance de tradução de citação arcaica do Ofudesaki de Oomoto",
+      "localizacao": "JP linha 182 (dentro do parágrafo grande sobre bomba atômica): 「神界のことが分からぬという人は分かりたのであるぞよ」, traduzido no PT como 'Aqueles que dizem não compreender as coisas do mundo divino, é porque querem compreender.' - a frase japonesa arcaica é ambígua/dialetal (estilo Ofudesaki), e não fui capaz de confirmar com alta confiança se o sentido pretendido é 'não querem compreender' (leitura mais comum de citações similares de Ofudesaki) em vez de 'querem compreender'. Não é uma decisão que um agente deva resolver sozinho sem conhecimento doutrinário/textual do Ofudesaki de Oomoto - registrado aqui como item de baixa prioridade, não bloqueante, não movido para PENDENCIAS_REVISAO.json por ser uma nuance textual leve dentro de uma citação já presente e coerente no restante do parágrafo, não uma questão estrutural.",
+      "estado": "não escalado - nota informativa apenas, não bloqueia aprovação"
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado a Gosuiji-roku: 「pergunta entre aspas」 no JP = Interlocutor; texto corrido sem aspas = Meishu-Sama. Último volume (30号) da subsérie Gosuiji-roku a rotular. Etapa A (mapa JP completo, linha a linha, todas as 307 linhas de arquivo), Etapa B (contagem/formatação), Etapa C (rótulos aplicados ao PT já reestruturado pela revisão linha-a-linha de 2026-07-07).",
+    "etapa_a_mapa_jp": {
+      "turnos_interlocutor_jp": 62,
+      "nota": "62 aberturas de 「」 delimitando turnos reais do interlocutor (confirmado por leitura linha a linha, mesma contagem já usada na revisão estrutural anterior). Prestada atenção especial, conforme instruído, a turnos de uma só palavra/frase curta de Meishu-Sama: confirmados no JP 'どういうことですか。'(l.55), '表装して見えませんか。'(l.71), 'その人は教師ですか。'(l.85), '信仰に入ったのはいつですか。'(l.89), 'それではぜんぜん意味がないではないですか。'(l.101), 'そう思ってもよいです。'(l.188), 'それは困りますね。'(l.204), 'それは信仰に入ってますか。'(l.208), 'そうです。蛇です。'(l.223), '御守は浄めてあげます。'(l.236), 'やり直してよいです。'(l.249), '仏教です。'(l.272), '天理教では仏教は駄目です。'(l.284), '蒔絵は漆よりしようがないです。'(l.297), 'それは無論漆です。'(l.301) - todos presentes e correspondidos individualmente no PT."
+    },
+    "etapa_b_confirmacao": {
+      "turnos_interlocutor_pt_antes": "62 parágrafos entre aspas já isolados no PT (paragrafação já corrigida pela revisão de 2026-07-07), nenhum turno fundido remanescente.",
+      "problemas_encontrados": [],
+      "turnos_interlocutor_pt_depois": 62,
+      "delta": 0,
+      "turnos_meishu_sama_pt_depois": 69,
+      "razao_meishu_maior_que_interlocutor": "69 = 2 blocos de abertura (frase introdutória do médium + subtítulo '(Relato)' seguido do relato em si, ambos sem aspas = Meishu-Sama) + 62 respostas + 5 blocos de continuação de Meishu-Sama sem pergunta intermediária, já presentes como parágrafos próprios no JP (mudança de sub-tópico dentro da mesma fala): 'medicina cria doentes'→'quem desenvolve a Igreja Messiânica é a medicina' (JP 182/183); 'pode pensar assim'→'chegou uma época imensa' (JP 188/189); armário aberto/fechado→caso da igreja (JP 194/195); innen segue seu curso→observação sobre a era dos Estados Guerreiros (JP 212/213); espíritos de desabamento de mina→mudança de assunto para o Museu de Hakone (JP 266/267); história de Korin/Kenzan→caixa de tinta de Koetsu (JP 305/306). Confirmado por rótulo automático determinístico (aspas = Interlocutor, sem aspas = Meishu-Sama) aplicado parágrafo a parágrafo, sem decisão heurística por script.",
+      "travessoes_no_corpo": 0,
+      "blocos_interlocutor_consecutivos_maximo": 2,
+      "nota_bloco_consecutivo": "Único par I→I consecutivo do volume: 'Por favor, cuide bem disso.' (PT l.59 / JP l.61) seguido diretamente por uma pergunta de tópico novo, sem resposta de Meishu-Sama entre os dois turnos do interlocutor - confirmado como característica genuína do JP (linhas 61 e 64), não erro de rotulagem."
+    },
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a cada parágrafo do corpo (a partir do cabeçalho '[1º de abril]'), preservando os cabeçalhos '[1º de abril]' e '(Relato)' sem rótulo de falante e sem reordenar ou reescrever texto existente. Sessão única (uma só data no volume).",
+    "resultado_final": {
+      "arquivo": "reports/livros_trabalho/pt/19540415-御垂示録30号.txt",
+      "total_paragrafos_corpo": 131,
+      "cabecalhos_sem_rotulo": 2,
+      "interlocutor": 62,
+      "meishu_sama": 69
+    }
+  }
+}

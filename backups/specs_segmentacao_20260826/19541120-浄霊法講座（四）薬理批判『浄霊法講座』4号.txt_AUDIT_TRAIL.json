@@ -1,0 +1,107 @@
+{
+  "filename": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 322 linhas / PT 189 linhas após correções, 52 artigos por spec, perfil koza_lectures). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, incluindo verificação de contaminação do spec e confiabilidade dos anchors, conforme alertado.",
+  "pre_existing_context": "Alerta da tarefa: volumes irmãos 浄霊法講座1号/2号/3号 tiveram o spec (title_pt/pt_anchor/pt_prefix) contaminado com conteúdo de 観音講座 (livro totalmente diferente). Confirmado que este volume (4号) tinha o mesmo problema, mais grave: 7 das 52 entradas continham literalmente os títulos das 7 aulas do 観音講座 (\"Primeira Aula — O Propósito do Deus Principal...\", \"Terceira Aula — A Essência do Bodhisattva Kannon\", etc.) em title_pt/pt_prefix, e as 45 entradas restantes tinham um placeholder quebrado \"Aula N Aula — \" (sem título real). Os campos jp_anchor e pt_anchor (usados para localizar o conteúdo) não estavam contaminados com texto de outro livro — continham fragmentos reais do próprio JP/PT — mas vários pt_anchor apontavam para posições que se revelaram erradas depois que a lacuna de conteúdo (ver abaixo) foi corrigida, pois a busca original foi feita 'jp_first_content_pair' sem o texto correto ainda presente no PT.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e as correções de spec/PT.",
+  "summary": {
+    "articles_in_spec": 52,
+    "articles_reviewed": 52,
+    "spec_contaminated": true,
+    "spec_contamination_source": "observação_agente_カンノン_kouza (観音講座, arquivo 19350000-観音講座　（１～７）.txt) — mesmo bug já documentado para 1号/2号/3号",
+    "spec_fix_applied": true,
+    "real_corrections_applied_to_pt_text": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "contaminacao_spec": {
+    "achado": "title_pt e pt_prefix de todas as 52 entradas estavam errados: as 7 primeiras (preface, chapter 一, item 1, 1-1 a 1-4) continham título/subtítulo literal das 7 aulas do 観音講座 (inclusive menção explícita a 'Bodhisattva Kannon', assunto ausente deste volume sobre farmacologia); as 45 seguintes continham o placeholder genérico quebrado 'Aula N Aula — ' sem qualquer título real.",
+    "verificacao_anchors": "jp_anchor de todas as 52 entradas confirmado correto (fragmentos literais do próprio JP, na ordem certa). pt_anchor pré-existente era um fragmento real do PT (não contaminado com texto de outro livro), mas por causa da lacuna de conteúdo (ver abaixo) vários apontavam para o lugar errado dentro do documento — não eram confiáveis por si só, exatamente como alertado ('não são sempre confiáveis por posição/ratio').",
+    "correcao": "title_pt reescrito para as 52 entradas com títulos fiéis, derivados do jp_anchor (title_jp) e conferidos contra o corpo do PT já corrigido (todos os 52 títulos aparecem literalmente no PT, cada um em linha própria). pt_prefix esvaziado ('') para as 52 entradas — convenção confirmada no spec já corrigido do volume irmão 2号 (19531001-浄霊法講座（二）...json), onde pt_prefix é sempre '' porque o cabeçalho já está inline no corpo do PT, não precisa ser injetado separadamente. pt_anchor regenerado programaticamente: para cada uma das 52 entradas, localizado o título no PT corrigido e capturado o início do texto seguinte (heading ou corpo, conforme o caso) em uma única linha (sem quebra de parágrafo embutida, para ser um substring literal válido). Verificado por script que as 52 âncoras são encontradas e aparecem em ordem estritamente crescente no ficheiro de trabalho."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Início do volume, entre o cabeçalho de publicação e o antigo início abrupto em '1-5' (JP linhas 24-52: capítulo 一 薬剤迷信に就いて, item 1 神霊学的に見た医学の将来, subseções 1-1 a 1-4)",
+      "problema": "GRAVE: o ficheiro de trabalho PT saltava diretamente do cabeçalho de publicação para o corpo de '1-5 — Qual será o futuro dos médicos e dos remédios?', omitindo por completo o capítulo 一, o item 1 e as subseções 1-1 (poder do Senhor/主神, 番頭/administradores, Cristo e Buda), 1-2 (crítica à farmacologia no Ofudesaki, ingresso na religião Oomoto), 1-3 (era em que os remédios serão temíveis) e 1-4 (salvação da noite vira salvação do dia, citação do Ofudesaki sobre 'o que Deus disse não difere um fio de cabelo'). Isso corresponde a ~29 linhas de conteúdo doutrinário substantivo do JP completamente ausentes do ficheiro de trabalho.",
+      "busca_realizada": "Antes de traduzir, buscado o conteúdo em textos_portugues/19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt (produção). Encontrado: a produção TEM o conteúdo das seções 1-1 a 1-4, embutido em um único parágrafo monolítico junto com o cabeçalho de 1-5 (mesma classe de bug 'monolito residual' já catalogada no GOSHINSHO.md para outros arquivos, mas sem perda real de conteúdo nesse caso — só falta de quebra de parágrafo). Conferido palavra por palavra contra o JP (linhas 24-52): conteúdo bate integralmente com 1-1 (主の力/番頭/メシア教), 1-2 (お筆先/大本教/Ofudesaki), 1-3 (ヒドラジッド/B.C.G./ストマイ) e 1-4 (昼の時代/夜の救い/citação de Oomoto).",
+      "correcao": "Conteúdo das seções 1-1 a 1-4 (mais o cabeçalho do capítulo I e do item 1) inserido no ficheiro de trabalho PT, copiado da produção e reestruturado com quebras de parágrafo próprias para cada título/corpo (a produção tinha tudo colapsado em um único parágrafo gigante; o ficheiro de trabalho agora segue o mesmo padrão de parágrafo próprio por seção usado no resto do documento e no volume irmão 2号 já fechado). Nenhuma palavra traduzida do zero — todo o texto vem da produção, já verificado contra o JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Capítulo I, transição do fim de 2-2(c) para o início de 2-3 (JP linha 97, 'それ程ひどくなっているのです... 現代人と言えば、少なくとも脳病です。２－３　薬は消極的健康者にするため...')",
+      "problema": "Duplicação rascunho+versão-final (mesma classe de bug já catalogada em 'Δ=0 é necessário, nunca suficiente' §5-6, achado #6): o trecho final de 2-2(c) mais o título e primeiro parágrafo de 2-3 apareciam traduzidos DUAS vezes — uma vez embutidos no fim do parágrafo gigante de 2-2, terminando abruptamente em '...atividade do bacilo se torna muito forte; como lidar com isso' (cortado no meio da frase), e de novo, completo, como parágrafo(s) separado(s) logo a seguir, com um fragmento órfão solto entre as duas versões ('falando dos homens modernos, pelo menos a doença cerebral.').",
+      "correcao": "Removida a versão truncada/rascunho e o fragmento órfão; mantida a versão completa de 2-3 (que cobre integralmente o parágrafo JP 97-100, incluindo o trecho sobre Inglaterra/boxe/colônias), agora com título em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Capítulo II, seção 2 (六○六号/Salvarsan), transição de 2-2 para 2-3/2-4 (JP linhas 192-211)",
+      "problema": "Mesma classe de duplicação rascunho+versão-final: o conteúdo de 2-3 (六々は強いのです...) e o início de 2-4 apareciam traduzidos numa primeira passada abreviada/truncada (cortada no meio de uma frase em '...Antigamente, dez', seguida de um fragmento órfão que duplicava um diálogo já traduzido corretamente em 2-2 sobre a farmácia), e de novo, completa, numa segunda passada que usa '606' em algarismos em vez de 'seiscentos e seis' por extenso (inconsistente com o estilo do resto do documento) e que só essa segunda versão chega até o fim de 2-4 (doze/cinquenta/sessenta injeções, o caso de Matsushita, a citação sobre perda de cabelo).",
+      "correcao": "Removida a versão truncada e o fragmento órfão duplicado; mantida a versão completa de 2-3/2-4, normalizada para 'seiscentos e seis' por extenso (consistente com 2-1/2-2 do mesmo item), títulos em linha própria.",
+      "confianca": "alta"
+    }
+  ],
+  "outras_correcoes_estruturais": {
+    "paragrafacao": "Corrigidos ~16 pontos onde um título de subseção (1-6, 1-7, '2.'+2-1, 2-2 no capítulo I; '4.', 4-2, 4-3, '5. B.C.G.', 5-2, 5-3, '6.', 6-2, '7.', 7-2, 7-3, 7-4 no capítulo II) estava colado ao final do parágrafo anterior sem quebra de linha, tornando o título ilegível como cabeçalho próprio (checklist ponto 6, paragrafação 1:1). Corrigido inserindo quebra de parágrafo antes de cada título colado, sem alterar nenhuma palavra do conteúdo. A maioria dos títulos do capítulo II já estava em linha própria; o problema era concentrado nos itens 4 a 7 e nos primeiros títulos do capítulo I.",
+    "verificacao_duplicacao_automatizada": "Rodada varredura de janelas de 10 palavras repetidas no ficheiro inteiro, antes e depois das correções. Antes: 3 clusters duplicados reais (2 dos quais corrigidos acima) mais 1 citação de artigo ('Fragmentos sobre Medicina...Eikō nº 174') que aparece legitimamente duas vezes no próprio JP (uma para (a), outra para (b) — não é bug). Depois das correções: restam apenas essa citação legítima e uma sobreposição de 9 palavras entre dois títulos distintos e genuinamente diferentes ('1-2' e '1-8', ambos começando com 'Os medicamentos da medicina chinesa são mais temíveis que os...' mas terminando de forma diferente) — nenhuma duplicação real restante."
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho + capítulo I item 1 (神霊学的に見た医学の将来) completo, incl. 1-1 a 1-7",
+      "jp_linhas": "20-66",
+      "decisao": "corrigido - conteúdo 1-1 a 1-4 estava totalmente ausente (correção 1); demais subseções ok após corrigir paragrafação",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo I item 2 (現代医学には科学性がない) completo, 2-1 a 2-7",
+      "jp_linhas": "69-120",
+      "decisao": "corrigido - duplicação rascunho/final em 2-3 (correção 2); demais subseções ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo I item 3 (一番の詐欺は売薬)",
+      "jp_linhas": "123-125",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo II item 1 (漢方薬), 1-1 a 1-8",
+      "jp_linhas": "130-176",
+      "decisao": "ok, sem divergências de conteúdo",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo II item 2 (六○六号/Salvarsan), 2-1 a 2-4",
+      "jp_linhas": "179-211",
+      "decisao": "corrigido - duplicação rascunho/final em 2-3/2-4 (correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo II item 3 (消毒薬) e item 4 (新薬)",
+      "jp_linhas": "214-245",
+      "decisao": "ok, conteúdo completo; paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo II item 5 (Ｂ・Ｃ・Ｇ)",
+      "jp_linhas": "248-265",
+      "decisao": "ok, conteúdo completo; paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo II item 6 (化粧品中毒) e item 7 (その他), até o fim do volume",
+      "jp_linhas": "268-322",
+      "decisao": "ok, conteúdo completo; paragrafação corrigida",
+      "confianca": "alta"
+    }
+  ],
+  "cjk_residual": "Verificado por regex — nenhum ideograma/kana residual no corpo do PT após as correções.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

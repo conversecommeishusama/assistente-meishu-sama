@@ -1,0 +1,113 @@
+{
+ "filename": "19530115 - Mioshie-shū nº 17.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→10. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十七号",
+   "pt_anchor": "Mioshie-shū nº 17",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月五日",
+   "title_pt": "5 de dezembro",
+   "jp_anchor": "現在の時局について少し話したいと思います",
+   "pt_anchor": "Gostaria de falar um pouco sobre a situação atual. Como também saiu nos jornais, foi noticiado que \"Ike está com paradei",
+   "notes": "",
+   "pt_prefix": "5 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月六日",
+   "title_pt": "6 de dezembro",
+   "jp_anchor": "今回アイゼンハウアーが朝鮮を視察して帰ったようですが、しかし知れないようにうまく秘密を守り通して視察したということは、なかなかやり手だと思いま す。この一事でも確かにアイゼンハウアーという人は大いにやるだろうと思います。新聞記者の四十何人と",
+   "pt_anchor": "Parece que Eisenhower foi inspecionar a Coreia e voltou, e acho que ele é bastante habilidoso por ter conseguido manter o segredo",
+   "notes": "",
+   "pt_prefix": "6 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月七日",
+   "title_pt": "7 de dezembro",
+   "jp_anchor": "最初に時局について少し話してみたいと思います。われわれ国民が直接一番脅威を受けているのはスト問題です。炭労ストに電産ストです。それで今度のは今 までに例がなく、いつまでも解決がつかないのです。まあ彼らはスト気違いです。よくスットン狂と言いま",
+   "pt_anchor": "Primeiramente, gostaria de falar um pouco sobre a situação atual. O que mais ameaça diretamente a nós, cidadãos, são os problemas das greves",
+   "notes": "",
+   "pt_prefix": "7 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十五日",
+   "title_pt": "15 de dezembro",
+   "jp_anchor": "今出がけにラジオの学校新聞というのをちょっと聞いたところが、おもしろいことを言ってました。アメリカの学者のだいぶ根拠のあるような研究ですが、地 球ができてから五十四億年たったというのです。それはそうとう根拠があるのだそうです。そうするとお釈",
+   "pt_anchor": "Pouco antes de sair, ouvi um pouco do \"Jornal Escolar\" no rádio, e algo interessante foi dito:",
+   "notes": "",
+   "pt_prefix": "15 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十六日",
+   "title_pt": "16 de dezembro",
+   "jp_anchor": "今問題になっているのは電産、炭労のストライキですが、あれは結局ソ連が糸を引いてやっているのです。その狙ったところはなかなかうまいものです。それ は日本の再軍備をなかなか怖がっているので、それを妨害してやろうというのです。それには石炭と電気で",
+   "pt_anchor": "O que está em questão agora são as greves da Denki Sangyō Rōdō Kumiai (Sindicato dos Trabalhadores da Indústria Elétrica",
+   "notes": "",
+   "pt_prefix": "16 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十七日",
+   "title_pt": "17 de dezembro",
+   "jp_anchor": "例のストライキですが、今日午前〇時に緊急調整令が出て、五十日間停止することになったのですが、この根本は共産党がやっているわけです。というのは日 本が再軍備をすると、これがソ連にとっては一番不利益なのです。それで軍備を造るには石炭と電力を邪魔",
+   "pt_anchor": "Sobre a referida greve: hoje, à meia-noite, foi emitida uma ordem de ajuste emergencial, suspendendo-a por cinquenta dia",
+   "notes": "",
+   "pt_prefix": "17 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十三日（御生誕祭御教え）",
+   "title_pt": "23 de dezembro",
+   "jp_anchor": "十二月二十三日（御生誕祭御教え）",
+   "pt_anchor": "Hoje completo 70 anos. O número \"sete\" significa \"completude\", significa \"tornar-se\"",
+   "notes": "",
+   "pt_prefix": "23 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十五日",
+   "title_pt": "25 de dezembro",
+   "jp_anchor": "新聞でも見られたでしょうが、裁判の判決はああいう具合でしたが、実に不思議なものだと思いました。この問題を信仰的に話をしてみると、これはまたたい へんな違いがあります。それは、まるっきり罪がないとは言えないでしょうが、とにかくそれを材料にして",
+   "pt_anchor": "Como devem ter visto nos jornais, a sentença do julgamento foi daquela forma, e pensei que era realmente algo misterioso",
+   "notes": "",
+   "pt_prefix": "25 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十六日",
+   "title_pt": "26 de dezembro",
+   "jp_anchor": "新聞でも見られたとおり、裁判は一応片づきましたから、その原因を言おうと思ってます。",
+   "pt_anchor": "Como vocês viram nos jornais, o julgamento foi encerrado por enquanto, então vou falar sobre a causa disso.",
+   "notes": "",
+   "pt_prefix": "26 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十七日",
+   "title_pt": "27 de dezembro",
+   "jp_anchor": "事件の判決は新聞でも見られたでしょうが、神様がついているのにどういうわけか。そんな間抜けな、そういうことがあるのはおかしいではないかと不思議に 思われますが、これは神様からお知らせがありましたが、人間の考えとはぜんぜん違います。それは救世教",
+   "pt_anchor": "Vocês devem ter visto a sentença do caso nos jornais, mas, mesmo com Deus ao nosso lado, por que será que aconteceu algo",
+   "notes": "",
+   "pt_prefix": "27 de dezembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

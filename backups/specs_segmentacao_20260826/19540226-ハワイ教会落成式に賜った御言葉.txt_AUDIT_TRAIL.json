@@ -1,0 +1,56 @@
+{
+  "filename": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 12 parágrafos de corpo + título + subtítulo, PT idem após correção), profile monolith, 1 artigo por spec. Não é amostragem: todo o corpo do JP (linhas 20-35) foi lido e confrontado com o PT correspondente na mesma ordem, frase a frase.",
+  "gate_mecanico": "Não substituído por esta trilha — esta trilha documenta apenas a leitura semântica linha a linha. Arquivo é curto demais para o gate de contagem I/M (não é diálogo Gokōwa, é discurso monológico contínuo).",
+  "summary": {
+    "paragrafos_jp": 12,
+    "paragrafos_revisados": 12,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "linha 23 do PT (subtítulo, antes do corpo), JP linha 22 'パンフレット、昭和29(1954)年2月26日発行'",
+      "problema": "Mistradução: パンフレット ('Folheto'/'Panfleto') foi traduzido como 'Kyusei' (nome da fonte de publicação, copiado do campo de metadados 'Publication source: Kyusei' em vez de traduzir a palavra japonesa real da linha). Resultado: 'Kyusei, publicado em 26 de fevereiro do ano 29 da Era Showa (1954)' — perde a informação real do JP (que é um folheto avulso) e introduz uma palavra que não está na frase original.",
+      "correcao": "'Folheto, publicado em 26 de fevereiro do ano 29 da Era Showa (1954)' — tradução direta e correta de パンフレット, consistente com a mesma palavra já usada (corretamente) mais adiante no próprio corpo do PT antes da correção do item 2.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "linha 25 do PT (corpo inteiro), JP linhas 24-35 (12 parágrafos)",
+      "problema": "GRAVE — dois problemas empilhados: (a) duplicação: a mesma informação de data/subtítulo ('Folheto, 26 de fevereiro de 1954') aparecia DUAS vezes — uma vez (mistraduzida, ver item 1) como linha isolada antes do corpo, e novamente colada ao início do primeiro parágrafo do corpo; (b) colapso estrutural: todos os 12 parágrafos do JP (linhas 24-35, cada um uma unidade temática distinta do discurso) estavam amassados em um único parágrafo PT gigante sem nenhuma quebra — viola o ponto 6 do checklist (paragrafação 1:1). Conteúdo em si (frase a frase) estava completo e sem truncamento nem CJK residual.",
+      "correcao": "Removida a duplicação da linha de data dentro do corpo (mantida só a versão corrigida no subtítulo, item 1). Redividido o parágrafo único em 12 parágrafos, cada um correspondendo exatamente a um parágrafo JP (linhas 24 a 35), separados por linha em branco, seguindo a convenção já usada no resto do acervo (ex.: arquivo de referência 19490701-自観叢書第2篇『無肥料栽培法』.txt). Nenhum conteúdo foi adicionado, removido ou reordenado — só resegmentado. Verificado frase a frase contra o JP: todos os 12 parágrafos batem em ordem, sem lacuna nem truncamento.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "parágrafo 8 do PT (correspondente a JP linha 31, '...地上天国は経（たて）であるから...熱海地上天国は緯（よこ）でありますから...')",
+      "problema": "Inconsistência terminológica com o resto do corpus: o par 経（たて）/緯（よこ）(a metáfora de urdidura/trama do tear, usada recorrentemente nos ensinamentos de Meishu-Sama) estava traduzido como Hakone='trama' (vertical) e Atami='urdidura' (horizontal) — só que essa é a atribuição INVERTIDA da convenção já estabelecida em outros volumes do mesmo acervo (confirmado em 19490730-御光話録9号.txt linha 24: '経（たて）...É a urdidura (tate)... 緯（よこ）...é a trama (yoko)' e em 19510520-教えの光.txt linha 349: 'o Oriente é a urdidura e o Ocidente, a trama' — ambos com 経/tate=urdidura e 緯/yoko=trama, consistente com a terminologia têxtil correta em português: urdidura=fio vertical do tear, trama=fio horizontal). Os esclarecimentos parentéticos '(vertical)'/'(horizontal)' no PT já estavam corretos e evitavam confusão total do leitor, mas o termo técnico principal estava trocado.",
+      "correcao": "Hakone (経/tate) → 'urdidura' (vertical); Atami (緯/yoko) → 'trama' (horizontal), alinhando com a convenção terminológica já estabelecida em outros volumes do mesmo corpus.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_paragrafo": [
+    {"n": 1, "jp_linha": 24, "decisao": "ok", "notas": "Completo, fiel. Sem truncamento."},
+    {"n": 2, "jp_linha": 25, "decisao": "ok"},
+    {"n": 3, "jp_linha": 26, "decisao": "ok"},
+    {"n": 4, "jp_linha": 27, "decisao": "ok", "notas": "Verificado o par キリスト/エホバ e a citação '天国は近づけり' — presentes e corretos."},
+    {"n": 5, "jp_linha": 28, "decisao": "ok"},
+    {"n": 6, "jp_linha": 29, "decisao": "ok", "notas": "Verificado que 'その夫人であるニッポン・タイムスの記者' (a esposa do Sr. Grilli, que é jornalista do Nippon Times) foi corretamente traduzido como uma só pessoa, não duas."},
+    {"n": 7, "jp_linha": 30, "decisao": "ok"},
+    {"n": 8, "jp_linha": 31, "decisao": "corrigido - item 3 acima (trama/urdidura invertidos)", "confianca": "alta"},
+    {"n": 9, "jp_linha": 32, "decisao": "ok"},
+    {"n": 10, "jp_linha": 33, "decisao": "ok", "notas": "病貧争絶無 (ausência de doença/pobreza/conflito) presente e completo."},
+    {"n": 11, "jp_linha": 34, "decisao": "ok", "notas": "霊主体従 traduzido como 'o espírito é primordial e a matéria é secundária' — correto e consistente com o corpus."},
+    {"n": 12, "jp_linha": 35, "decisao": "ok", "notas": "大峠 traduzido como 'grande divisor de águas' — confirmado consistente com a convenção já estabelecida em 19491130-自観叢書第8篇『明麿近詠集』.txt e 19530910-世界救世教奇蹟集.txt. 一挙両得 traduzido como idiom equivalente 'matar dois coelhos com uma cajadada só' — aceitável."}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Checklist de 8 pontos cumprido em todo o volume (12/12 parágrafos), 3 correções reais aplicadas (mistradução de subtítulo, duplicação+colapso de parágrafos, inversão terminológica trama/urdidura), sem itens remanescentes."
+  }
+}

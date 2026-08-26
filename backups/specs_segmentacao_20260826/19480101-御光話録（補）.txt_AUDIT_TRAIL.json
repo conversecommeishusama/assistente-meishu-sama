@@ -1,0 +1,70 @@
+{
+  "filename": "19480101-御光話録（補）.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc) — Fase E auditoria semântica",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 2672 linhas / PT 2176 linhas, 35 secções de data + prefácio, spec com 30 artigos), do prefácio (序文) ao fecho final ('Isso é mentira. Se fosse verdade, o mundo explodiria.'). JP lido sequencialmente do início ao fim em 8 blocos (linhas 1-257, 257-576, 576-1011, 1011-1524, 1524-1976, 1976-2371, 2371-2672 aprox.) e confrontado bloco a bloco com o PT correspondente na mesma ordem. Contexto histórico: este foi o volume historicamente pior do lote Gokōwa em troca de rótulo de falante e cláusula final migrada (20+ ocorrências antes da correção de 2026-07-04/05). Atenção redobrada aplicada a cada transição Interlocutor/Meishu-Sama, especialmente em torno de citações longas, testemunhos multi-parágrafo e blocos com múltiplas perguntas seguidas.",
+  "gate_mecanico": "PASS confirmado antes (I=483/483 Δ=0 CJK=0) e depois das correções desta sessão (mesmo resultado — as correções aplicadas realocaram fronteiras de conteúdo dentro de turnos já existentes ou removeram texto sem rótulo de falante, não alterando a contagem líquida de turnos I/M).",
+  "summary": {
+    "secoes_data_jp": 35,
+    "secoes_data_pt": 35,
+    "secoes_com_correspondencia_1_a_1": true,
+    "articles_in_spec": 30,
+    "real_corrections_applied": 3,
+    "items_escalated": 0,
+    "observacoes_nao_bloqueantes": 2,
+    "pendencia_antiga_confirmada_resolvida": 1
+  },
+  "confirmacao_pendencia_antiga_2026-07-03": {
+    "item": "PENDENCIAS_REVISAO.json registrava (at=2026-07-03T15:45:00Z) que segment_index=15 (8 de julho, tópico marés/lua/kanji 月) e segment_index=26 (28 de novembro, provérbio 恒産なき者は恒心なし) pareciam ambos emparelhados com o MESMO parágrafo PT sobre nomes/kotodama/Ubusuna no Kami/'Shigekichi' — sugerindo que um dos dois trechos JP poderia estar sem tradução real.",
+    "resultado": "FALSO POSITIVO confirmado por leitura direta (não por inferência de contagem). O parágrafo sobre nomes/kotodama/'Shigekichi' está de facto na sessão de 8 de julho, MAS imediatamente a seguir a ele, na mesma sessão, existe um parágrafo PT distinto e completo traduzindo o trecho JP sobre marés/lua ('Interlocutor: Qual a razão de a vazante e a enchente das marés...' / 'Meishu-Sama: A vazante e a enchente das marés são causadas pela atração gravitacional da lua...'), incluindo a menção correta ao radical 月 em caracteres como braço/abdómen/cérebro. Na sessão de 28 de novembro, o provérbio '恒産なき者は恒心なし' também tem tradução própria, completa e correta ('Interlocutor: Existe o provérbio \"quem não tem bens estáveis não tem coração estável\"...'). Ambos os trechos JP têm par PT real e completo; o item antigo da fila de pendências pode ser tratado como resolvido/arquivado.",
+    "confianca": "alta — confirmado por leitura direta de ambos os trechos"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Sessão de 8 de setembro (九月八日), no meio do relato do Interlocutor sobre a purificação em que uma voz mudou de tom durante o Zengen-Sanji e um espírito se manifestou",
+      "problema": "GRAVE — cláusula migrada / rótulo de falante deslocado (exatamente o padrão de bug mais recorrente já catalogado neste volume). O testemunho do Interlocutor (uma citação longa contínua no JP, sem nenhuma marca '――' nova no meio) foi cortado a meio de uma citação entre aspas ('...na parte \"Kuni to kuni to no...') e a continuação ('Jihi no mune ni idakaren\"... até '...frequentando a escola.') foi rotulada como 'Meishu-Sama:' quando ainda é o Interlocutor a falar. Pior: a resposta REAL de Meishu-Sama ('Oh, era um espírito de vivo (ikiryō)... Entrar na linha da fé significa entregar-se a Deus...') ficou silenciosamente fundida dentro do mesmo parágrafo mal rotulado, sem receber o seu próprio rótulo 'Meishu-Sama:'. A contagem de turnos não mudou (1 Interlocutor + 1 Meishu-Sama antes e depois), por isso o gate Δ=0 nunca teria detectado isto — exatamente o mecanismo de erro descrito em revisao-paralela-jp-pt.mdc.",
+      "correcao": "Movida a fronteira do rótulo: o parágrafo 'Interlocutor:' foi estendido para incluir toda a citação/testemunho até '...e descobri que ele estava vivo e frequentando a escola.' e um novo parágrafo 'Meishu-Sama:' próprio foi criado começando em 'Oh, era um espírito de vivo (ikiryō) que se apossou dela....'. Nenhuma palavra do texto traduzido foi alterada, apenas a posição do rótulo e a quebra de parágrafo.",
+      "confianca": "alta — confirmado por comparação directa com o parágrafo único correspondente no JP (linha 1428, testemunho do Interlocutor terminando em '元気で学校へ通っておりました' seguido de linha 1430, resposta de Meishu-Sama começando em 'ほー生霊がついたんですね')"
+    },
+    {
+      "n": 2,
+      "localizacao": "Sessão de 28 de julho (七月二十八日), logo após a pergunta sobre receber a palestra (kōshū) antes ou depois da cura completa, imediatamente antes da pergunta sobre kappa",
+      "problema": "Cabeçalho espúrio 'Perguntas e Respostas' inserido no corpo do PT sem qualquer correspondente no JP (confirmado: não há título, nota editorial nem marcador de secção no JP nesse ponto — apenas a quebra de parágrafo padrão do documento, idêntica a centenas de outras no ficheiro). Ocorrência única no ficheiro inteiro (grep confirmou 1 só resultado), sugerindo um artefacto residual de alguma passada de formatação anterior, não uma tradução de conteúdo real.",
+      "correcao": "Linha removida. Não afeta contagem de turnos (não tinha rótulo I:/M:).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Sessão de 28 de outubro (十月二十八日), resposta sobre o boi e o cão que morreram queimados e que possuíam uma pessoa",
+      "problema": "Corrupção textual — fim da resposta de Meishu-Sama traduzido de forma ininteligível: 'A oração (Yūsei) Deve-se elevar (Deus).' (maiúscula a meio de frase, sintaxe quebrada, termo 'Yūsei' nunca usado em nenhum outro lugar do ficheiro). O JP diz simplesmente '祝詞（幽世大神）を上げてやればよい' — 'basta recitar o norito (invocando Kakuriyo Ōkami) para eles'. 'Kakuriyo Ōkami' é o termo usado de forma consistente em todas as outras dezenas de ocorrências de 幽世大神 neste mesmo ficheiro.",
+      "correcao": "Substituído por 'Basta recitar o norito (Kakuriyo Ōkami) para eles.', alinhado com a terminologia usada em todo o resto do volume.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + 1º jan + 18 jan + 28 jan + 8 fev + 18 fev + 28 fev", "jp_linhas": "1-256", "decisao": "ok — nenhum problema de conteúdo, alinhamento ou rótulo encontrado", "confianca": "alta"},
+    {"bloco": "8 mar + 28 mar + 8 abr + 18 abr + 28 abr + 8 mai", "jp_linhas": "257-575", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "18 mai + 28 mai + 8 jun + 18 jun + 28 jun + 8 jul", "jp_linhas": "576-1010", "decisao": "ok — confirmado que os tópicos marés/lua (jul 8) e nomes/kotodama (jul 8) são ambos reais e distintos, resolvendo pendência antiga", "confianca": "alta"},
+    {"bloco": "18 jul + 28 jul + 8 ago + 18 ago + 28 ago + 8 set", "jp_linhas": "1011-1523", "decisao": "corrigido — cabeçalho espúrio removido (correção 2); troca de rótulo/cláusula migrada corrigida (correção 1); confirmado que o artigo [17] do spec (rotulado '28 de julho') efetivamente cobre 3 datas (28/jul, 8/ago, 18/ago) sem subdivisão própria no JP nem no PT, conteúdo das 3 sessões completo e sem perda", "confianca": "alta"},
+    {"bloco": "18 set + 28 set + 8 out + 18 out + 28 out", "jp_linhas": "1524-1975", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "8 nov + 18 nov + 28 nov + 8 dez", "jp_linhas": "1976-2370", "decisao": "corrigido — corrupção textual 'Yūsei' (correção 3); resto ok; confirmado que o provérbio 恒産なき者は恒心なし (28 nov) tem tradução própria e completa, resolvendo pendência antiga", "confianca": "alta"},
+    {"bloco": "18 dez + 28 dez (fecho do livro)", "jp_linhas": "2371-2672", "decisao": "ok — fecho ('Maria concebeu Jesus virgem... Isso é mentira. Se fosse verdade, o mundo explodiria.') idêntico e completo em ambos os idiomas", "confianca": "alta"}
+  ],
+  "observacoes_nao_bloqueantes": [
+    {
+      "descricao": "Metadado de cabeçalho inconsistente entre os ficheiros de trabalho: o cabeçalho do ficheiro JP (linha 11) tem 'title_pt: Gosuiji-roku (Suplemento)', enquanto o cabeçalho do ficheiro PT (linhas 10/12) tem 'title_pt: Gokōwa-roku (Suplemento)'. Verificado que este campo 'title_pt' no cabeçalho dos ficheiros JP é ruído inconsistente em todo o corpus Gokōwa (ex.: outros volumes têm valores tão díspares como 'Sim, podem recitar a oração.' ou 'Registro de Luz de Meishu-Sama nº 10'), não um problema introduzido ou específico deste ficheiro. Não corrigido — fora do âmbito desta revisão de conteúdo, campo aparentemente não usado a jusante.",
+      "confianca": "média — não investiguei se este campo é consumido por algum script"
+    },
+    {
+      "descricao": "Inconsistência de romanização de nomes próprios dentro do próprio ficheiro (não introduzida nesta sessão, provavelmente herdada da tradução original): 'Amaterasu Okami' (6x) / 'Amaterasu Omikami' (11x) / 'Amaterasu Ōmikami' (7x) / variantes hifenizadas (5x); 'Kunitokotachi no Mikoto' (maioria) vs 'Kuninotokotachi no Mikoto' (5x, com 'no' extra); 'Itsu no me' / 'Itsunome' (grafias distintas para 伊都能売). Não corrigido — é uma decisão de padronização de glossário (mesma classe da pendência já registada no GOSHINSHO.md sobre romanização de 五六七→Miroku), não uma correção de conteúdo isolada; padronizar unilateralmente dezenas de ocorrências sem autorização explícita estaria fora do âmbito desta tarefa.",
+      "confianca": "alta quanto à existência da inconsistência; decisão de correção fica pendente de autorização"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro (JP 2672 linhas / PT 2176 linhas) lido linha a linha do prefácio ao fecho, confrontado secção a secção. Gate mecânico PASS (Δ=0, CJK=0) antes e depois das correções. 3 correções reais aplicadas: (1) cláusula/rótulo de falante migrado corrigido na sessão de 8 de setembro — achado consistente com o histórico deste volume; (2) cabeçalho espúrio 'Perguntas e Respostas' removido; (3) corrupção textual 'Yūsei' corrigida para 'Kakuriyo Ōkami'. Pendência antiga de pareamento (marés/lua vs provérbio, ambos aparentemente ligados ao mesmo parágrafo PT) investigada e confirmada como falso positivo — ambos os trechos têm tradução própria e completa. Nenhuma pendência nova aberta em PENDENCIAS_REVISAO.json. Duas observações não bloqueantes registadas (metadado de cabeçalho ruidoso; inconsistência de romanização de nomes próprios) para eventual decisão de glossário futura, sem impedir a aprovação deste volume quanto a conteúdo/fidelidade semântica."
+  }
+}

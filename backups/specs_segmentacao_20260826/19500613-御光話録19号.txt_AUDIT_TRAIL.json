@@ -1,0 +1,89 @@
+{
+  "filename": "19500613-御光話録19号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 517 linhas / PT 432 linhas, lido em três partes), 12 sessões datadas (18/2, 28/2, 3/3, 8/3, 18/3, 23/3, 28/3, 3/4, 8/4, 13/4, 23/4, 28/4[18/4]), o volume com mais sessões do lote.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO encontrada nenhuma inversão real. Encontrada 1 duplicação de rótulo 'Meishu-Sama:' sem turno Interlocutor intermediário (ver correção 1). Duas outras ocorrências de 'Meishu-Sama:' consecutivo detectadas por varredura automática foram investigadas e confirmadas como FALSOS POSITIVOS: em ambos os casos o JP tem uma nota de contexto entre parênteses (não uma pergunta ―― do Interlocutor) precedendo a resposta de Meishu-Sama (ex. '（信者に閑し某教会と某教会の間で起ったいざこざについて）' e '（熱海大火の際、一会員の家がただ御浄霊のみによって類焼を免れたことの御礼を申し上げる）'), e o PT reproduz corretamente essas notas de contexto como texto entre parênteses antes do turno de Meishu-Sama — o script de varredura simplesmente não reconhece essas notas como equivalentes a um turno Interlocutor, mas não há erro estrutural nesses dois pontos.",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CJK=0 confirmado (gate mecânico).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 12,
+    "turnos_interlocutor_jp_pt_gate": "94/94 (Δ=0)",
+    "real_corrections_applied": 1,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": false,
+    "duplicacao_de_rotulo_confirmada": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Resposta sobre 'não ser vencido pelo mal' / litígio com a Mitsukoshi (JP linhas 109-116 — resposta contínua de Meishu-Sama, sem nova pergunta ―― no meio)",
+      "problema": "Rótulo 'Meishu-Sama:' duplicado sem turno Interlocutor intermediário: a resposta sobre o litígio do Sr. G/Yomiuri terminava e, sem nova pergunta, a continuação sobre o episódio da Mitsukoshi (mesmo raciocínio no JP) aparecia com um novo rótulo 'Meishu-Sama:' no PT.",
+      "correcao": "Mesclados os dois blocos em um único parágrafo sob um só rótulo, sem alterar nenhuma palavra do texto traduzido.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "18/2 e 28/2 (eclipses solares, funcionário ferroviário que largou o emprego por possessão de raposa)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "3/3 (não julgar os outros, litígio Mitsukoshi/Yomiuri/Sr.G — correção 1, desavença entre igrejas, incêndio e crenças)",
+      "decisao": "corrigido — duplicação de rótulo (correção 1); resto do bloco ok, incluindo a nota de contexto sobre desavença entre igrejas (falso positivo da varredura, confirmado correto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "8/3 (Amida/Bodhisattva Hozo, surdez por purificação, enurese)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "18/3 (árvore shara-sōju, cozinha no kimon, pronúncia Kamunagara/Kannagara, possessão por veneno)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "23/3 e 28/3 (cerimônia do chá, oposição familiar à fé, epilepsia, pássaro na Imagem da Luz Divina)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "3/4 (eutanásia, filme 'A História de um Cervo', inundação, casos médicos)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "8/4 (Daikoku-Sama, agulha no corpo, possessão espiritual correta vs. incorreta, caso do professor enganado por raposa/Saniwa, filho que agride os pais possesso por raposa)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "13/4 (grupo Kannon consagra Komyo-Nyorai, purificação e risco de morte, kimon no Monte Ashibetsu, coreia)",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "23/4 e 28/4[18/4] (reumatismo/terapia de abelha, luxação de quadril, mudez, incêndio de Atami — nota de contexto confirmada correta, correntes de galinha)",
+      "decisao": "ok",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19500613-御光話録19号.txt\"",
+    "resultado": "PASS I=94/94 Δ=0 CJK=0"
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro (12 sessões, o mais fragmentado do lote) revisado linha a linha contra o JP. Corrigida 1 duplicação real de rótulo; 2 outras suspeitas investigadas e descartadas como falsos positivos (notas de contexto legítimas). Nenhuma troca real de falante nem perda de conteúdo. Gate PASS."
+  }
+}

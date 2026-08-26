@@ -1,0 +1,103 @@
+{
+ "filename": "19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. PT pairing resolvido manualmente 2026-07-14 (Rota B, headings numerados (I)-(VIII) em negrito no PT casam 1:1 com (一)-(八) no JP). | 2026-08-05 revisao rigorosa: title_pt preenchido nos 11 artigos (estava vazio em todos); title_jp do artigo 0 corrigido (era \"序文\", duplicado com o artigo 1 que e o prefacio real — o bloco 0 e a capa).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "世界救世教教義（地上天国と自然栽培の巻）",
+   "title_pt": "Doutrina da Igreja Messiânica (Volume do Paraíso Terrestre e do Cultivo Natural)",
+   "jp_anchor": "世界救世教教義（地上天国と自然栽培の巻）",
+   "pt_anchor": "Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural)",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序　文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "　　　序　文",
+   "pt_anchor": "Prefácio\n\nOkada Jikan",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "世界救世教教義",
+   "title_pt": "Doutrina da Igreja Messiânica (Volume do Paraíso na Terra e do Cultivo Natural)",
+   "jp_anchor": "　　世界救世教教義",
+   "pt_anchor": "Doutrina da Igreja Messiânica",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（一）　緒　　言",
+   "title_pt": "(I) Introdução",
+   "jp_anchor": "（一）　緒　　言",
+   "pt_anchor": "(I) Introdução",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（二）　地上天国について",
+   "title_pt": "(II) Sobre o Paraíso Terrestre",
+   "jp_anchor": "（二）　地上天国について",
+   "pt_anchor": "(II) Sobre o Paraíso Terrestre",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（三）　自然栽培の意義",
+   "title_pt": "(III) O Significado do Cultivo Natural",
+   "jp_anchor": "（三）　自然栽培の意義",
+   "pt_anchor": "(III) O Significado do Cultivo Natural",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（四）　土壌と微生物界の神秘",
+   "title_pt": "(IV) O Mistério do Solo e do Mundo Microbiano",
+   "jp_anchor": "（四）　土壌と微生物界の神秘",
+   "pt_anchor": "(IV) O Mistério do Solo e do Mundo Microbiano",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（五）　化学肥料の害",
+   "title_pt": "(V) Os Malefícios dos Fertilizantes Químicos",
+   "jp_anchor": "（五）　化学肥料の害",
+   "pt_anchor": "(V) Os Malefícios dos Fertilizantes Químicos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（六）　食物からくる健康と病気",
+   "title_pt": "(VI) Saúde e Doença Provenientes dos Alimentos",
+   "jp_anchor": "（六）　食物からくる健康と病気",
+   "pt_anchor": "(VI) Saúde e Doença Provenientes dos Alimentos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（七）　自然栽培と増産",
+   "title_pt": "(VII) Cultivo Natural e Aumento da Produção",
+   "jp_anchor": "（七）　自然栽培と増産",
+   "pt_anchor": "(VII) Cultivo Natural e Aumento da Produção",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（八）　結　論",
+   "title_pt": "(VIII) Conclusão",
+   "jp_anchor": "　　　（八）　結　論",
+   "pt_anchor": "(VIII) Conclusão",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

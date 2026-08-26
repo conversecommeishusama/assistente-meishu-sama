@@ -1,0 +1,180 @@
+{
+  "filename": "19531215-御教え集28号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro. JP é um único bloco === ARTIGO === contendo 12 sessões por data (prefácio 5/11 + 6,7,8,10,11,15,16,17,25,26,27 de novembro), 240 linhas. PT work file tinha 115 linhas (ratio ~2.1:1, alerta confirmado). Todo o JP foi lido linha a linha (todas as 240 linhas) e confrontado com o PT correspondente na mesma ordem; adicionalmente, o ficheiro de produção `textos_portugues/19531215-御教え集28号.txt` (76 parágrafos) foi lido integralmente como fonte de tradução já existente para confirmar/reconstruir trechos, conforme protocolo de busca no acervo antes de traduzir.",
+  "achado_estrutural_principal": "O PT work file NÃO estava com sessões inteiras em falta (hipótese inicial descartada após leitura completa) — todo o conteúdo das 12 sessões estava de facto presente. O padrão de bug confirmado foi 'monólito residual com cauda duplicada' (mesma assinatura já catalogada para a família 御教え集/御垂示録/法難手記): em cada transição de sessão, um fragmento de parágrafo aparecia truncado a meio de uma frase, seguido de uma repetição do conteúdo já dado (por vezes reformulado) que só depois continuava com o conteúdo novo genuíno. O mesmo padrão, de forma independente, também está presente no ficheiro de produção `textos_portugues/` (não corrigido — fora do escopo desta tarefa, apenas usado como fonte de leitura), confirmando que a corrupção é anterior a esta sessão de revisão e comum às duas cópias.",
+  "spec_corrigida": {
+    "ficheiro": "reports/livros_trabalho/segmentacao_manual/19531215-御教え集28号.txt.json",
+    "problema": "A spec original só listava 9 trechos (prefácio + 6,7,15,16,17,25,26,27 de novembro), omitindo por completo as sessões de 8, 10 e 11 de novembro que existem no JP (e que, de facto, já estavam presentes — fundidas sem quebra — no PT work file).",
+    "correcao": "Adicionadas as 3 sessões em falta (8, 10, 11 de novembro) na ordem correta, com jp_anchor/pt_anchor. Corrigido também o pt_anchor do prefácio, que apontava erradamente para '6 de novembro' (anchor do trecho seguinte) em vez da data do próprio prefácio.",
+    "current_article_count": 12
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Cabeçalho do ficheiro de trabalho (topo)",
+      "problema": "Marcador '=== ARTIGO ===' duplicado em linhas consecutivas; linha solta '6 de novembro' inserida indevidamente antes do bloco de título do prefácio (contaminação do anchor da sessão seguinte).",
+      "correcao": "Removida a duplicação do marcador e a linha '6 de novembro' solta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Transição sessão '6 de novembro' (JP linhas 53-59, referência ao repórter da Chicago Tribune / Simmons / Paraíso na Terra)",
+      "problema": "Monólito residual: um fragmento truncado ('Além disso, disse o seguinte à repórter do Chicago Tribune... Depois, também no Havaí') interrompido a meio da frase, seguido de repetição do parágrafo anterior (purificação/doenças + referência ao artigo 'Religião Viva') antes de finalmente continuar com o conteúdo genuíno e completo do relato ao repórter.",
+      "correcao": "Removido o fragmento truncado e a repetição; mantida só a versão completa e contínua, verificada contra JP linhas 58-59 (inclui estatísticas do Chicago Tribune no fecho da sessão).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Cabeçalho da sessão '7 de novembro'",
+      "problema": "Texto do cabeçalho '7 de novembro' repetido inline no início do corpo do parágrafo seguinte (duplicação de título, item 7 do checklist).",
+      "correcao": "Removida a repetição inline, mantendo o cabeçalho isolado numa linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Transição '7 de novembro' → '8 de novembro' (JP linha 82-86)",
+      "problema": "Cabeçalho '8 de novembro (No Ginásio Kanayama, Cidade de Nagoya)' embutido no meio do texto corrido, sem quebra de linha, violando consistência de títulos/cabeçalhos (checklist item 7).",
+      "correcao": "Cabeçalho movido para linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Meio da sessão '8 de novembro' (JP linha 90, discussão sobre entretenimento/paraíso na Terra)",
+      "problema": "Monólito residual: frase cortada a meio ('...o ser humano de hoje, no que diz respeito ao entretenimento,') seguida de fragmento sem sentido ('Sem uma placa, essas coisas não podem ser feitas.') e de repetição integral do parágrafo anterior sobre Japão-país-pacífico/Paraíso na Terra/museus, antes de finalmente continuar com o conteúdo novo genuíno sobre entretenimento que degrada o caráter.",
+      "correcao": "Removidos o corte, o fragmento sem sentido e a repetição; mantida a frase reiniciada de forma completa e gramatical, verificada contra JP linha 90 até ao fecho da sessão (advogado do Havaí, Amatsu Kanagi/distintivo não fazem parte desta sessão — confirmados como pertencentes à sessão de 10 de novembro, correto no PT).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Transição '8 de novembro' → '10 de novembro' → '11 de novembro' (JP linhas 106-110)",
+      "problema": "(a) Perda real de conteúdo: entre 'jornalistas do' e 'Não é de admirar...' faltava um trecho inteiro (~100 palavras) sobre a visita dos funcionários do Ministério da Educação e jornalistas, incluindo a frase-chave 'Não é uma religião, é algo superior à religião' e a menção ao Paraíso na Terra sem doença/pobreza/conflito (JP linha 104). (b) Cabeçalho 'Onze de novembro (no Auditório Mainichi, cidade de Osaka)' embutido inline no fim de um parágrafo, sem quebra de linha, e escrito por extenso ('Onze') em vez do padrão numérico usado no resto do documento.",
+      "correcao": "(a) Trecho em falta reintroduzido (traduzido a partir do JP e conferido contra a versão já existente em `textos_portugues/`, que tinha o mesmo trecho completo). (b) Cabeçalho isolado em linha própria, normalizado para '11 de novembro (no Auditório Mainichi, cidade de Osaka)'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "Cabeçalho e abertura da sessão '15 de novembro'",
+      "problema": "Cabeçalho duplicado: '15 de novembro' (linha própria) seguido de linha em branco e depois 'Quinze de novembro' (por extenso) reintroduzindo o mesmo cabeçalho antes do corpo do texto.",
+      "correcao": "Removida a duplicação, mantido um único cabeçalho '15 de novembro'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "Meio da sessão '15 de novembro' (JP linha 121-122, visita ao Sanbō-in / biombo de Sōtatsu / jardim do Daigo-ji)",
+      "problema": "Monólito residual: o relato sobre o templo Sanbō-in, o biombo de Sōtatsu e o jardim do Daigo-ji aparecia duas vezes — uma vez truncado a meio da frase ('...mas Hideyoshi'), seguido de uma segunda versão mais completa e ligeiramente reformulada ('não haveria gratidão maior do que essa...') que repetia todo o conteúdo já dado antes de prosseguir para o restante (crítica aos jardins de Quioto, plano do Heian-kyō de Saga).",
+      "correcao": "Removida a primeira versão truncada e duplicada; mantida a segunda versão (completa), que já continha corretamente o resto da sessão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao": "Cabeçalhos das sessões '16 de novembro' e '17 de novembro'",
+      "problema": "Ambos os cabeçalhos apareciam duplicados: linha própria com o cabeçalho, seguida de linha em branco, seguida do mesmo cabeçalho repetido inline no início do parágrafo do corpo.",
+      "correcao": "Removida a repetição inline em ambos os casos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao": "Sessão '26 de novembro' (JP linha 206, discussão sobre EUA/China comunista/Coreia)",
+      "problema": "Perda real de conteúdo com corrupção visível no texto ('quem o o Japão teria se tornado posse da China comunista' — repetição do artigo 'o' marcando exatamente o ponto onde um trecho inteiro sobre a Guerra da Coreia foi cortado: EUA conterem a China comunista, ataque norte-coreano a Busan, hipótese de unificação das Coreias sob controlo chinês/soviético).",
+      "correcao": "Trecho em falta (~90 palavras) reintroduzido, traduzido a partir do JP e conferido contra `textos_portugues/`, que tinha o mesmo trecho completo e permitiu reconstituir a frase de ligação corretamente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao": "Colofão final",
+      "problema": "Data de impressão errada: '昭和二十八年十二月十日' (10 de dezembro de 1953) foi traduzido como '28 de dezembro de 1953' — o número do ano da era Showa (28) foi confundido com o dia do mês. Padrão de bug já catalogado ('datas erradas no colofão').",
+      "correcao": "Corrigido para '10 de dezembro de 1953', consistente com a data de publicação já correta na linha seguinte ('15 de dezembro de 1953').",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "Prefácio (5 de novembro)",
+      "jp_linhas": "20-40",
+      "decisao": "ok após correção do cabeçalho",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "6 de novembro",
+      "jp_linhas": "44-59",
+      "decisao": "ok após correção do monólito duplicado",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "7 de novembro",
+      "jp_linhas": "63-83",
+      "decisao": "ok após remoção do cabeçalho duplicado",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "8 de novembro (Nagoya)",
+      "jp_linhas": "86-93",
+      "decisao": "ok após correção do monólito duplicado, cabeçalho e trecho em falta",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "10 de novembro (Quioto)",
+      "jp_linhas": "97-106",
+      "decisao": "ok — conteúdo já estava completo e correto, só a spec não a listava como trecho próprio",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "11 de novembro (Osaka)",
+      "jp_linhas": "110-115",
+      "decisao": "ok após separar cabeçalho — conteúdo já estava completo",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "15 de novembro",
+      "jp_linhas": "119-124",
+      "decisao": "ok após correção de cabeçalho duplicado e monólito Sanbō-in duplicado",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "16 de novembro",
+      "jp_linhas": "142-157",
+      "decisao": "ok após remoção do cabeçalho duplicado",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "17 de novembro",
+      "jp_linhas": "161-174",
+      "decisao": "ok após remoção do cabeçalho duplicado",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "25 de novembro",
+      "jp_linhas": "180-193",
+      "decisao": "ok, sem problemas encontrados",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "26 de novembro",
+      "jp_linhas": "198-207",
+      "decisao": "ok após reintrodução do trecho Coreia/China comunista em falta",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "27 de novembro",
+      "jp_linhas": "212-224",
+      "decisao": "ok, sem problemas encontrados",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "Colofão",
+      "jp_linhas": "231-240",
+      "decisao": "ok após correção da data de impressão",
+      "confianca": "alta"
+    }
+  ],
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0, sem CJK) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Confirmado manualmente: sem CJK residual no corpo PT (grep verificado).",
+  "pendencias_abertas": [],
+  "nota_metodologica": "O ficheiro de produção `textos_portugues/19531215-御教え集28号.txt` foi usado como fonte de leitura para confirmar/reconstruir os trechos em falta (protocolo 'PT em falta' — busca no acervo antes de traduzir), mas NÃO foi editado (fora do escopo desta tarefa). Note-se que esse ficheiro de produção tem, de forma independente, o mesmo padrão de monólito residual duplicado em pelo menos 2 pontos (transição 6→7→8 de novembro, e sessão de 8 de novembro) — não corrigido por não ser mandato desta tarefa, mas fica registado para uma eventual revisão futura de `textos_portugues/`.",
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 11 correções. approved:true."
+  }
+}

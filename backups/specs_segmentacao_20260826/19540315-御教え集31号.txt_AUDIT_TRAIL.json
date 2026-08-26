@@ -1,0 +1,143 @@
+{
+  "filename": "19540315-御教え集31号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 226 linhas / PT reconstruído para 112 linhas após correções), 1 prefácio + 9 sessões por data (5, 6, 7, 15, 16, 17, 25, 26, 27 de fevereiro de 1954), do prefácio ao encarte final. Leitura linha a linha completa do JP confrontada com o PT na mesma ordem, não amostragem.",
+  "pre_existing_context": "Alerta prévio do usuário: família 御教え集1-30号 (irmãos deste volume) mostrou sistematicamente monólitos residuais com cauda duplicada, sessões ausentes, cabeçalhos de data duplicados/corrompidos. Este volume (31号) confirmou o mesmo padrão, com uma variante adicional não catalogada antes: fragmentos de dígito/letra avulsos (debris) substituindo cabeçalhos inteiros.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessions_in_jp": 9,
+    "sessions_reviewed": 9,
+    "real_corrections_applied": 7,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "início do arquivo, antes do prefácio (JP: bloco de título 御教え集第三十一号, linhas 20-23)",
+      "problema": "Cabeçalho de sessão espúrio '5 de fevereiro' inserido ANTES do título/prefácio do próprio volume (antes de 'Mioshie-shū nº 31' e do texto de 4 de fevereiro/Setsubun), sem nenhuma sessão de 5 de fevereiro ali - o cabeçalho correto pertencia a um ponto bem mais adiante no arquivo.",
+      "correcao": "Removido o cabeçalho espúrio; o prefácio agora abre diretamente com o título, como no JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "abertura da sessão de 5 de fevereiro (JP linha 31-33)",
+      "problema": "O cabeçalho de sessão '5 de fevereiro' que deveria abrir esta sessão tinha sido corrompido para um dígito solto '5' colado ao início da frase seguinte, com a aspa de abertura da citação também perdida: '5 Desejando a Consideração dos Jornalistas\". Escrevi sobre isso...' em vez de 'Escrevi novamente \"Desejando a Consideração dos Jornalistas\". Escrevi sobre isso...'.",
+      "correcao": "Restaurado o cabeçalho '5 de fevereiro' como linha própria e recuperadas as palavras/aspa perdidas ('Escrevi novamente \"...') comparando com o JP (二月五日) e com a cópia em textos_portugues/19540315-御教え集31号.txt, que preserva a frase completa.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "transição 6→7 de fevereiro (JP linhas 66-72)",
+      "problema": "GRAVE - colapso de fronteira de sessão, mesmo padrão da família 御教え集 já confirmado noutros volumes: (a) o cabeçalho '7 de fevereiro' aparecia colado ao fim da última frase da sessão de 6 de fevereiro em vez de em linha própria; (b) seguia-se um rascunho curto e abandonado (798 caracteres) da abertura da sessão de 7 de fevereiro, cortado no meio da citação sobre 'Sete Gerações Celestiais, Cinco Gerações Terrenas'; (c) logo a seguir, um eco/duplicata órfã (499 caracteres) do fecho da sessão de 6 de fevereiro ('...do que mostrar para quem já esperava... o mundo é realmente interessante.'), sem relação com o conteúdo real de 7 de fevereiro; só depois disso vinha a tradução completa e correta da sessão de 7 de fevereiro (a passagem sobre Kunitokotachi-no-mikoto/Enma Daiō/Enra-ō/Yoshida Shōin/Ayabe, ~7075 caracteres, íntegra e fiel ao JP).",
+      "correcao": "Removidos o rascunho curto abandonado e o eco duplicado da sessão de 6 de fevereiro; mantido um único cabeçalho limpo '7 de fevereiro' em linha própria, seguido diretamente da tradução completa e correta já existente no arquivo. Conteúdo real não foi perdido em nenhum momento desta correção (a passagem completa já estava presente no arquivo de trabalho, apenas cercada de duplicatas/fragmentos a remover); cross-checado trecho a trecho contra o JP (linhas 70-86) e contra textos_portugues/19540315-御教え集31号.txt, que mostra a mesma duplicação de rascunho ainda não limpa na produção.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "fim da sessão de 26 de fevereiro (JP linha 184, trecho sobre medicamentos de ervas/gennoshōko)",
+      "problema": "Fragmento numérico órfão 'Vinte e' colado ao fim de uma frase já completa e correta ('...pode-se ter quase certeza de que se deve aos medicamentos da medicina chinesa. Vinte e'), sem continuação - resíduo de corte de um cabeçalho de data (provavelmente '27').",
+      "correcao": "Removido o fragmento 'Vinte e'; a frase já estava semanticamente completa sem ele, confirmado contra o JP (fim de parágrafo em 二十六日).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "transição 26→27 de fevereiro (JP linhas 186-192)",
+      "problema": "GRAVÍSSIMO - o pior bloco de corrupção do volume. Entre o fim real da sessão de 26 de fevereiro e o início real da sessão de 27 de fevereiro havia: cabeçalho '7 de fevereiro' duplicado (numeral + por extenso 'sete de fevereiro.'), seguido de uma frase real de 27 de fevereiro (sobre a cerimônia do Hawaii Hōchi) que terminava abruptamente no meio de uma citação ('(Artigo do Hawaii Hōchi, edição de'); a seguir, uma sequência de CINCO cabeçalhos de data espúrios e fora de ordem ('15 de fevereiro', '16 de fevereiro', '25 de fevereiro', '26 de fevereiro', '27 de fevereiro' - todas datas já tratadas ANTES no arquivo), cada um seguido não de conteúdo real mas de um único caractere solto sem sentido ('1', '5', 'd', 'e'); só depois disso a citação cortada era retomada ('fevereiro: \"Cerimônia de Inauguração...\"') e o conteúdo real de 27 de fevereiro finalmente prosseguia. Isto corresponde exatamente ao padrão de 'monólito residual com debris de cabeçalho' já visto na Fase Inicial, mas nunca antes visto na forma de caracteres soltos substituindo cabeçalhos inteiros.",
+      "correcao": "Todo o bloco de cabeçalhos duplicados/fora de ordem e caracteres soltos foi removido. Mantido um único cabeçalho limpo '27 de fevereiro', e a citação partida foi reunida numa única linha coerente: '(Artigo do Hawaii Hōchi, edição de 15 de fevereiro: \"Cerimônia de Inauguração da Igreja Messiânica Mundial no Havaí\") [Eikō, nº 252]', seguida do conteúdo real já existente (que prossegue corretamente até ao colofão final). Verificado que nenhum conteúdo real de 15, 16, 25 ou 26 de fevereiro foi perdido: essas quatro sessões já estavam corretas e completas mais cedo no arquivo (confirmado linha a linha contra o JP), portanto os cabeçalhos espúrios aqui eram puro lixo de reprocessamento, não indicavam sessões em falta.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "cabeçalho da sessão de 15 de fevereiro",
+      "problema": "Cabeçalho inconsistente com o padrão do resto do arquivo: 'Quinze de fevereiro.' (por extenso, com ponto final) em vez do padrão numérico usado em todas as outras sessões ('5 de fevereiro', '6 de fevereiro' etc.).",
+      "correcao": "Normalizado para '15 de fevereiro', consistente com o restante do arquivo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "cabeçalhos das sessões de 16 e 17 de fevereiro",
+      "problema": "Os cabeçalhos '16 de fevereiro' e '17 de fevereiro' estavam colados ao início do parágrafo de conteúdo seguinte, sem quebra de linha (ex.: '16 de fevereiro Hoje, gostaria de falar...'); adicionalmente, o cabeçalho '17 de fevereiro' aparecia DUPLICADO - uma vez colado ao fim da última frase da sessão de 16 de fevereiro, e de novo colado ao início do parágrafo da sessão de 17 de fevereiro.",
+      "correcao": "Cabeçalhos separados em linha própria (padrão do resto do arquivo) e a duplicação do cabeçalho '17 de fevereiro' removida, mantendo uma única ocorrência limpa entre as duas sessões.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "Prefácio + 4 de fevereiro (Setsubun)",
+      "jp_linhas": "1-27",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cabeçalho espúrio '5 de fevereiro' removido de antes do prefácio (correção 1). Conteúdo completo e fiel."
+    },
+    {
+      "sessao": "5 de fevereiro",
+      "jp_linhas": "31-44",
+      "decisao": "ok, com 1 correção (item 2)",
+      "confianca": "alta",
+      "notas": "Citações 'Desejando Novamente a Consideração dos Jornalistas' [249] e 'Impressões sobre a Situação Atual' [時局雑感, 248] presentes e completas, na ordem correta."
+    },
+    {
+      "sessao": "6 de fevereiro",
+      "jp_linhas": "48-66",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Conteúdo sobre Setsubun/Ofudesaki/Oomoto/Miroku completo; fecho corrigido (correção 3, remoção do cabeçalho colado)."
+    },
+    {
+      "sessao": "7 de fevereiro",
+      "jp_linhas": "70-86",
+      "decisao": "corrigido - colapso grave de fronteira de sessão (correção 3)",
+      "confianca": "alta",
+      "notas": "Passagem sobre Kunitokotachi-no-mikoto/Ame-no-Wakahiko/Enma Daiō/Enra-ō/Yoshida Shōin/Ayabe (o 'oni wa uchi' de Ayabe) íntegra e verificada trecho a trecho contra o JP; citações finais (Impressões sobre a Situação Mundial, Novamente Esperando..., Carta ilustrada dos EUA 6/boxe) presentes e completas."
+    },
+    {
+      "sessao": "15 de fevereiro",
+      "jp_linhas": "90-99",
+      "decisao": "ok, cabeçalho normalizado (correção 6)",
+      "confianca": "alta",
+      "notas": "Conteúdo sobre URSS/comunismo/Kimura completo."
+    },
+    {
+      "sessao": "16 de fevereiro",
+      "jp_linhas": "105-118",
+      "decisao": "ok, cabeçalho separado (correção 7)",
+      "confianca": "alta",
+      "notas": "Continuação sobre URSS/Coreia/China comunista, corrupção, anúncio do Shizuoka Minpō completos."
+    },
+    {
+      "sessao": "17 de fevereiro",
+      "jp_linhas": "121-134",
+      "decisao": "ok, cabeçalho duplicado removido (correção 7)",
+      "confianca": "alta",
+      "notas": "Caso Arita, estratégia soviética, Shizuoka Minpō completos."
+    },
+    {
+      "sessao": "25 de fevereiro",
+      "jp_linhas": "139-158",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Nota: o spec (19540315-御教え集31号.txt.json) traz 'ratio PT/JP=0.00' para esta sessão, sinalizando ausência total de PT - achado FALSO/desatualizado, confirmado presente e completo (cerimônia do Hawaii Hōchi, cura sem remédios kanpo, artigos 'A Corrupção Também é Ação de Purificação' e 'Eu Confesso' e 'Os Medicamentos São Ciência?')."
+    },
+    {
+      "sessao": "26 de fevereiro",
+      "jp_linhas": "162-184",
+      "decisao": "ok, com 1 correção (item 4)",
+      "confianca": "alta",
+      "notas": "Superstição do sofrimento nas exposições de pintura, carta de Ellis Grilli, medicamentos kanpo vs ocidentais completos."
+    },
+    {
+      "sessao": "27 de fevereiro + colofão",
+      "jp_linhas": "188-226",
+      "decisao": "corrigido - o bloco mais corrompido do volume (correção 5)",
+      "confianca": "alta",
+      "notas": "Conteúdo real (Hawaii, Grilli, corrupção, episódio Ishimaru Gohei/Sutra de Kannon) presente e completo; colofão (impressão/publicação/editor) confere com o JP."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "filename": "19520320-御教え集7号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 452 linhas / PT 169 linhas antes da correção, ratio ~2.7:1 conforme alertado). Spec profile 'mioshie_shu', 9 artigos (prefácio + 8 sessões por data: 6, 7, 15, 16, 17, 25, 26, 27 de fevereiro de Showa 27). JP tem um único bloco === ARTIGO === contendo as 9 subdivisões; todas as 8 datas de sessão foram localizadas e conferidas na ordem correta em ambos os idiomas. Todo o corpo do JP foi lido do início ao fim e confrontado com o PT correspondente na mesma ordem, incluindo cada transição de data (alerta específico do pedido, dado o histórico da família 御教え集/御垂示録).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "family_bug_confirmado": "Confirma-se, mais uma vez, o padrão já catalogado para esta família (御教え集/御垂示録): parágrafos-monólito no PT (uma sessão inteira de datas viraram um punhado de linhas gigantes de texto corrido) com CAUDA DUPLICADA logo antes de uma transição/data — ou seja, um trecho final de conteúdo é traduzido, cortado a meio, e reaparece traduzido de novo (numa segunda passagem, com nomes próprios por vezes corrompidos) antes de o texto seguir em frente. Encontradas 3 ocorrências deste padrão exato neste volume, todas corrigidas (ver abaixo). Ao contrário do 4号/24号 (onde a cauda duplicada continha conteúdo novo e exclusivo escondido no meio), aqui os 3 casos são duplicação pura sem perda de conteúdo: o trecho \"extra\" repete literalmente (com pequenas variações de tradução) o que já tinha sido dito.",
+  "resultado_por_data": [
+    {
+      "sessao": "6 de fevereiro",
+      "decisao": "corrigido",
+      "detalhe": "Ver correção 1 abaixo (duplicação Takagi Tomosaburo + corrupção do nome de Asano Kazuko)."
+    },
+    {
+      "sessao": "7 de fevereiro",
+      "decisao": "ok",
+      "notas": "5 testemunhos (Yajima, Sano, Tsukamoto, Kamegai, Murahara) presentes, completos, na ordem correta, sem duplicação."
+    },
+    {
+      "sessao": "15 de fevereiro",
+      "decisao": "ok",
+      "notas": "3 testemunhos com diálogo interativo (Matsunaga, Ishii, Tazuke) corretamente traduzidos turno a turno, incluindo as interjeições entre aspas do requerente; ensinamento sobre tuberculose/dependência/obras sociais completo."
+    },
+    {
+      "sessao": "16 de fevereiro",
+      "decisao": "ok",
+      "notas": "Sessão curta ('hoje não há perguntas'), ensinamento sobre tuberculose e museu de Hakone, completo."
+    },
+    {
+      "sessao": "17 de fevereiro",
+      "decisao": "ok",
+      "notas": "2 testemunhos (Miyazaki Toku, Morinishi Sōichirō) + ensinamento, completos, sem duplicação."
+    },
+    {
+      "sessao": "25 de fevereiro",
+      "decisao": "corrigido",
+      "detalhe": "Ver correção 2 abaixo (duplicação do parágrafo fé infernal/fé celestial)."
+    },
+    {
+      "sessao": "26 de fevereiro",
+      "decisao": "corrigido",
+      "detalhe": "Ver correção 3 abaixo (duplicação da cauda da história de Mayuyama/Tomita Kōjirō)."
+    },
+    {
+      "sessao": "27 de fevereiro",
+      "decisao": "ok",
+      "notas": "5 testemunhos (Kojima, Abe Hiro, Wada Fumiko, Akada Shūkichi, Takayanagi Tatsuko) + ensinamento final. O ensinamento final RE-CONTA a mesma anedota de Mayuyama/Tomita Kōjirō/rolo Heiji Monogatari/Inga-kyō já contada em 26/2 — verificado contra o JP (linhas 375-377 vs. 449-452): são DUAS narrações genuinamente distintas no próprio JP, em datas diferentes, com redação parecida mas não idêntica (mesmo Meishu-Sama recontando um episódio interessante em duas ocasiões). NÃO é bug de duplicação — confirmado por leitura completa das duas passagens JP, que diferem em frase e ênfase. Não corrigido, corretamente preservado como está."
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "sessao": "6 de fevereiro",
+      "localizacao_pt_aprox": "antiga linha ~29-33 do ficheiro de trabalho PT (testemunhos de Takagi Tomosaburo e Asano Kazuko)",
+      "jp_referencia": "linhas 48-58 do JP (（お伺）高木友三郎 ... 〔御垂示〕 ... （お伺）浅野和子 ... 〔御垂示〕)",
+      "problema": "GRAVE: (a) a Resposta Divina completa do testemunho de Takagi Tomosaburo (sobre o espírito da ex-mulher e o comércio da família ramificada) estava traduzida INTEGRALMENTE DUAS VEZES seguidas — uma vez completa e correta, seguida de uma segunda tradução quase idêntica do mesmo trecho (com frases reformuladas) antes de prosseguir. (b) o testemunho seguinte, de 浅野和子 (Asano Kazuko, 56 anos, não convertida), aparecia cortado a meio de frase na primeira passagem ('...e no dia 14 de janeiro, o filho mais velho') e depois reiniciado do zero na segunda passagem — mas com o nome corrompido para 'Asako Asano' (inversão/erro de leitura de 和子/Kazuko) e o nome do instrutor '及川卯三 (Oikawa Uzō)' corrompido para 'Uso Oikawa' (nome próprio invertido e mal-romanizado). Conferido contra o JP: há apenas UMA ocorrência de cada testemunho no original — isto é duplicação pura introduzida no PT, exatamente o padrão já catalogado (§5 'Duplicação de blocos inteiros' da nota de 2026-07-05).",
+      "correcao": "Removida a duplicata da Resposta Divina de Takagi Tomosaburo (mantida apenas a primeira ocorrência, completa). Removido o fragmento truncado inicial do testemunho de Asano Kazuko; mantida e corrigida a segunda passagem (mais completa, vai até a Resposta Divina), com o nome revertido para 'Asano Kazuko' e o instrutor corrigido para 'Oikawa Uzō', ambos consistentes com a romanização japonesa (sobrenome-nome) usada no resto do documento (cf. 'Horikawa Takiyo', 'Takagi Tomosaburo'). Nenhum conteúdo real foi perdido — apenas a repetição foi eliminada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "sessao": "25 de fevereiro",
+      "localizacao_pt_aprox": "antiga linha ~103-106 do ficheiro de trabalho PT (ensinamento sobre 'fé infernal vs. fé celestial' / liberdade de imprensa)",
+      "jp_referencia": "linhas 297-298 do JP (fim do parágrafo sobre 天国的信仰と地獄的信仰 seguido de それから、今言論の自由...)",
+      "problema": "O parágrafo final sobre 'não forçar com esforço humano / fé infernal vs. fé celestial / quanto mais relaxado, melhor o resultado' (~230 palavras) estava traduzido INTEGRALMENTE DUAS VEZES seguidas, com fraseado ligeiramente diferente entre as duas versões, antes de prosseguir para o parágrafo sobre jornalistas sem liberdade de expressão. Conferido contra o JP: o trecho aparece uma única vez no original.",
+      "correcao": "Removida a segunda ocorrência (duplicata) e o início truncado e redundante da primeira ('Em seguida, fala-se em liberdade de expressão, mas a liberdade de expressão é permitida...' que introduzia a frase já completa no parágrafo seguinte, mantido como está).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "sessao": "26 de fevereiro",
+      "localizacao_pt_aprox": "antiga linha ~146-148 do ficheiro de trabalho PT (fim do ensinamento sobre Mayuyama / Tomita Kōjirō / rolo Heiji Monogatari / sutra Inga-kyō, antes da transição para '27 de fevereiro')",
+      "jp_referencia": "linha 377 do JP (fim do 御論文「神様が発展の調節」)",
+      "problema": "A cauda final do relato sobre o negociante Mayuyama, a venda do rolo Heiji Monogatari por Tomita Kōjirō (145.000 ienes), o cuidado do museu de Boston com a peça, e o sutra Inga-kyō de 1200 anos — estava traduzida quase por completo numa primeira passagem (cortada exatamente na frase final, em '...tem 1200 anos. Mil e duzentos'), e então TODA A MESMA PASSAGEM reaparecia traduzida do zero numa segunda versão, desta vez com o nome próprio 'Tomita Kōjirō' substituído por uma reticência ('um homem famoso chamado...') — uma corrupção de nome própria adicional. Confirmado contra o JP: ocorrência única no original nesta sessão (a segunda menção de tema semelhante em 27/2 é uma narração distinta, ver nota acima).",
+      "correcao": "Completada a primeira passagem (que tinha o nome correto e estava só cortada nas duas últimas frases) usando as duas frases finais que só sobreviveram na segunda passagem ('Uma pintura feita há mil e duzentos anos está tão nítida...' até '...encerro por aqui a conversa'), e removida inteiramente a segunda passagem duplicada (incluindo a corrupção do nome de Tomita Kōjirō). Nenhum conteúdo real foi perdido.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + 6 de fevereiro",
+      "decisao": "corrigido (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7, 15, 16, 17 de fevereiro",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Sem duplicação, sem CJK residual, sem truncamento; diálogos interativos entre aspas preservados corretamente."
+    },
+    {
+      "bloco": "25 de fevereiro",
+      "decisao": "corrigido (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de fevereiro",
+      "decisao": "corrigido (correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de fevereiro",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "5 testemunhos + ensinamento final, incluindo a segunda narração legítima (não-bug) da anedota de Mayuyama."
+    }
+  ],
+  "verificacao_cjk_residual": "grep por caracteres CJK no corpo do ficheiro de trabalho PT: nenhuma ocorrência fora dos cabeçalhos de metadados (linhas 1 e 11, que são esperadas — nome do ficheiro e title_jp).",
+  "observacao_nao_bloqueante": "Inconsistência estilística pré-existente (não introduzida nesta revisão, não corrigida): o rótulo para 御垂示 varia ao longo do documento entre '[Resposta Divina]', '[Orientação]', '(Orientação Divina)', '[Ensinamento]'/'(Instrução Divina)' — aparenta ser artefacto de diferentes passagens/lotes de tradução do mesmo volume, não um erro de conteúdo. Não há entrada no glossário para o termo padrão; padronização (se desejada) é decisão de glossário/estilo global do acervo, não específica deste arquivo — não escalada a PENDENCIAS_REVISAO.json por ser cosmética e de baixo risco, não bloqueante para a leitura.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 3 correções, sem resíduo de duplicação/corrupção de nomes. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "3 etapas (gokowa-rotulagem-a4b-jp.mdc), adaptado: esta família usa marcadores explícitos （お伺）/〔御垂示〕 no JP em vez de travessão, e '(Pergunta)/(Consulta)' + '[Resposta Divina]'/'[Orientação]'/'[Orientação Divina]'/'(Instrução Divina)' no PT (variação de rótulo já sinalizada como cosmética na observação acima).",
+    "etapa_a_mapa_jp": "Lido o JP linha a linha por completo (452 linhas). Contagem de turnos primários: 25 （お伺） e 25 〔御垂示〕, distribuídos por 9 datas (5, 6, 7, 15, 16, 17, 25, 26, 27 de fevereiro; 16/2 sem perguntas). Identificados sub-diálogos embutidos (perguntas/respostas curtas dentro de uma única Resposta Divina, marcadas por 「」 no JP) nos testemunhos de Matsunaga Kaichiro (3), Ishii Sada (1), Tazuke Kenzo (6), Yamakawa Shizuko (6), Yoneyama Izaemon (3), Kojima Isao (3), Akada Shūkichi (2) e Takayanagi Tatsuko (1) — total de 25 sub-turnos embutidos, todos confirmados linha a linha contra o JP antes de rotular.",
+    "etapa_b_confirmacao": "PT batia 1:1 com o mapa JP (25 Pergunta/Consulta, 25 marcadores de resposta, todos os sub-diálogos embutidos presentes como frases entre aspas). Nenhum par faltando — não foi necessário inserir tradução nova. Encontrado e corrigido um problema estrutural bloqueante para a rotulagem: duas sessões inteiras (6 de fevereiro e 17 de fevereiro) estavam com todo o seu conteúdo — ensinamento do dia anterior, cabeçalho de data e 2 pares de pergunta/resposta cada — colapsados numa única linha gigante de ficheiro (22.369 e 18.574 caracteres respectivamente), o mesmo padrão de 'monólito residual' já catalogado noutros livros desta família. Sem desfazer esse colapso não era possível rotular turno a turno.",
+    "etapa_c_ajuste_pt": "Aplicados os rótulos 'Interlocutor:'/'Meishu-Sama:' substituindo os marcadores '(Pergunta)'/'(Consulta)'/'[Resposta Divina]'/'[RESPOSTA DIVINA]'/'[Orientação]'/'[Orientação Divina]'/'(Instrução Divina)' (consistente com o formato já usado nos volumes 1-5 desta mesma coleção, onde o rótulo substitui o marcador em vez de conviver com ele). Os 2 blocos monólito (6/2 e 17/2) foram desfeitos em parágrafos separados (ensinamento do dia anterior / cabeçalho de data / pergunta / resposta / pergunta / resposta), sem alterar uma palavra do texto traduzido. Os 25 sub-diálogos embutidos entre aspas foram convertidos em turnos próprios rotulados, removendo apenas as aspas retóricas de citação (as aspas em si não são conteúdo substantivo). Marcadores '[Ensinamento]'/'[ENSINAMENTO]'/'【Ensinamento】'/'【Ensinamentos】' foram mantidos como cabeçalho de bloco não rotulado (sem falante), conforme convenção already-usada. Seguida a convenção já em vigor nos volumes 1-5: o rótulo só é repetido quando o falante muda; parágrafos consecutivos do mesmo falante (resposta em vários parágrafos, ou pergunta em vários parágrafos) ficam sem rótulo repetido.",
+    "cuidado_citacao_retorica": "Um caso real de citação retórica dentro da própria fala de Meishu-Sama foi identificado e preservado sem rotular como turno: no testemunho de Takayanagi Tatsuko (27/2), a frase 'Não deu muita importância' está entre aspas no meio da resposta de Meishu-Sama (ele está a citar/parafrasear a descrição do comportamento dela, não a repetir uma fala do interlocutor) — distinta da pergunta real do interlocutor que vem GENUINAMENTE a seguir ('Parece que não. Como os três partos anteriores...'), confirmada como turno real por corresponder a uma linha 「」 própria no JP (linha 432). As duas foram diferenciadas por leitura direta do JP, não por heurística de aspas.",
+    "monolitos_desfeitos": [
+      {
+        "sessao": "6 de fevereiro",
+        "detalhe": "Ensinamento de 5/2 (festa de Setsubun/Risshun) + cabeçalho '6 de fevereiro' + pergunta/resposta de Horikawa Takiyo + pergunta/resposta de Takagi Tomosaburo, tudo numa única linha de ficheiro; agora em parágrafos separados e rotulados."
+      },
+      {
+        "sessao": "17 de fevereiro",
+        "detalhe": "Cabeçalho '17 de fevereiro' + pergunta/resposta de Miyazaki Toku + pergunta/resposta de Morinishi Sōichirō + ensinamento seguinte, tudo numa única linha de ficheiro; agora em parágrafos separados e rotulados."
+      }
+    ],
+    "achado_nao_corrigido_fora_de_escopo": "Confirmada a existência de cabeçalhos de data duplicados pré-existentes (não introduzidos nesta rotulagem, preservados como estavam): '6 de fevereiro' aparece isolado antes do título do documento (antes de qualquer conteúdo de 5/2), e '7 de fevereiro' / '27 de fevereiro' aparecem duplicados (uma vez isolados, uma vez coladas à pergunta seguinte); e a cauda do bloco de 17/2 repetia '25 de fevereiro' logo antes do cabeçalho correto de 25/2. Esta última duplicação (a única dentro do próprio texto que eu precisei desfazer para rotular o monólito de 17/2) foi deduplicada — mantido um único '25 de fevereiro' no ponto correto, coerente com o cabeçalho já presente a seguir. As outras (6/2 isolado, 7/2 e 27/2 duplicados) foram deixadas exatamente como estavam, por serem pré-existentes e fora do escopo de rotulagem de falante; não decidido unilateralmente removê-las — sinalizado aqui para decisão futura, se o utilizador quiser tratá-las como um 'quick win' de limpeza estrutural.",
+    "verificacao_preservacao_conteudo": "Comparação automática (normalização removendo apenas rótulos/marcadores/aspas e espaços) entre o ficheiro antes e depois da rotulagem: texto substantivo idêntico, exceto pela remoção do único '25 de fevereiro' duplicado descrita acima. Nenhuma palavra de tradução foi adicionada, removida ou reescrita.",
+    "contagem_final": "50 turnos 'Interlocutor:' e 50 turnos 'Meishu-Sama:' no ficheiro PT final (25 pares principais + 25 pares de sub-diálogo embutido = 50, batendo exatamente com o mapa JP).",
+    "approved_alterado": false,
+    "nota": "Campo 'approved' do spec de segmentação NÃO foi alterado por esta rotulagem, conforme instrução."
+  },
+  "fase_e_2026_07_09": {
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc)",
+    "achado": "5 cabecalhos de data duplicados encontrados durante releitura linha a linha do PT (checklist pontos 7/8): 6, 7, 15, 16, 17 e 27 de fevereiro. Todos seguiam o padrao ja catalogado na familia (cabecalho colado ao fim do paragrafo anterior e/ou repetido em linha propria, sem quebra), previamente sinalizado mas nao corrigido em achado_nao_corrigido_fora_de_escopo (rotulagem_interlocutor_meishu, 2026-07-08).",
+    "correcao": "Removida a linha de cabecalho redundante em cada um dos 6 pontos, mantendo uma unica ocorrencia limpa por data, confirmado contra o JP (cada data aparece uma unica vez no original). pt_anchor dos artigos correspondentes no spec revertido do workaround duplo para ocorrencia unica.",
+    "verificacao": "grep de cabecalhos de data (linha exata) confirma 1 ocorrencia por data (6,7,15,16,17,25,26,27 de fevereiro). CJK residual: nenhum fora do cabecalho de metadados. Nenhum conteudo substantivo alterado.",
+    "confianca": "alta"
+  }
+}

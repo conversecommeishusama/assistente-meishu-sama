@@ -1,0 +1,131 @@
+{
+  "filename": "19531115-御教え集27号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 233 linhas / PT ~103 linhas antes da correção, 9 artigos por spec, todos do tipo 'session' exceto o prefácio). JP tem só 1 bloco === ARTIGO === contendo os 9 trechos por data (5, 6, 7, 15, 16, 17, 25, 26, 27 de outubro de 1953). Todo o corpo do JP foi lido e confrontado com o PT correspondente, transição de data por transição de data, incluindo o encarte editorial final (ficha técnica de impressão/publicação).",
+  "alerta_familia_confirmada": "Ratio JP/PT ~2,3:1 citado na tarefa. Confirmados nesta sessão: cabeçalhos de data duplicados/corrompidos em pelo menos 7 transições, um monólito residual real (fusão de 2 dias inteiros num só parágrafo sem quebras, com cabeçalho de dia 'engolido' como texto corrido), um bloco de citação truncado escondendo perda de conteúdo real (parágrafo inteiro ausente), e datas de colofão trocadas (+10 dias). Ou seja: os mesmos padrões da família de bugs já documentados para outros volumes desta série (御教え集/御垂示録), confirmados aqui de forma independente.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 9,
+    "articles_reviewed": 9,
+    "real_corrections_applied": 11,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linha ~6 (logo após o separador '---' do bloco de metadados)",
+      "problema": "Marcador de delimitação '=== ARTIGO ===' duplicado (aparecia duas vezes seguidas); o JP fonte tem só uma ocorrência.",
+      "correcao": "Removida a linha duplicada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "início do corpo, antes do título 'Mioshie-shū nº 27'",
+      "problema": "Cabeçalho de data '6 de outubro' aparecia solto e fora de ordem, antes até do título e da linha de publicação do próprio artigo — não correspondia a nenhum campo de metadado (campo 'Date:' está vazio) nem à posição real da sessão de 6 de outubro, que só começa muito mais adiante no texto.",
+      "correcao": "Removido. Não é conteúdo real, é resíduo de corrupção (mesmo padrão do 'cabeçalho de data duplicado' já confirmado nos livros-irmãos desta família).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "início do corpo (parágrafo do dia 5 de outubro, JP linhas 22-38)",
+      "problema": "GRAVE — monólito residual: os dois primeiros dias (5 de outubro, JP linhas 24-38, e 6 de outubro, JP linhas 42-60) estavam fundidos num único parágrafo corrido, sem nenhuma quebra entre eles nem cabeçalho próprio para '5 de outubro'; o título/data de publicação do artigo apareciam duplicados (uma vez nos metadados de cabeçalho, outra vez dentro do próprio corpo do parágrafo); e o cabeçalho '6 de outubro' aparecia soterrado como texto corrido no meio da frase, em vez de título de sessão.",
+      "correcao": "Reestruturado com quebras de parágrafo nos mesmos pontos do JP (10 quebras inseridas, correspondentes aos parágrafos JP 26/27/28/29+citação/33+citação/37/38 do dia 5, e 44/45+citação/49/50+citações/55+citação/59/60 do dia 6). Inserido cabeçalho próprio '5 de outubro' (ausente antes) e reposicionado '6 de outubro' como cabeçalho de sessão limpo, sem o texto de título/data duplicado embutido. Nenhum conteúdo foi removido nesta etapa — só reflow estrutural após confirmação linha a linha de que a ordem e o conteúdo do JP estavam preservados (exceto o item 4 abaixo, que é perda real).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "dentro do parágrafo do dia 6 de outubro, no ponto de transição para o trecho sobre comunismo (JP linha 59, após a citação do artigo 'Calamidades dos Tufões' / Eikō 230)",
+      "problema": "GRAVE — perda real de conteúdo mascarada por citação truncada: a citação '（御論文「台風禍」）　【栄光　二三〇号】' aparecia cortada no meio, como '(Artigo \"Calamidades' seguido diretamente por texto de outro assunto (comunismo), sem fechar a citação nem completar '[Eikō nº 230]'. Todo o parágrafo JP que vem depois da citação e antes do trecho sobre comunismo — a explicação de que a palma da mão representa o corpo material e as costas representam o espírito, base da origem espiritual da doença e da crítica ao materialismo que sustenta a lógica comunista — estava totalmente ausente do PT. O PT retomava só na cauda do parágrafo JP ('ですからよく前から共産主義について私に意見を聞く人がありますが...').",
+      "correcao": "Citação completada para '(Artigo \"Calamidades dos Tufões\") [Eikō nº 230]'. Traduzido e inserido o parágrafo ausente (JP: 霊体を説明するには掌が一番よいです...霊を認めれば共産主義というのは、屁のカッパみたいなものです), buscado primeiro no acervo (textos_portugues/) sem êxito de correspondência exata para este trecho específico, por isso traduzido diretamente do JP mantendo o registro e a terminologia (霊主体従 já usada mais adiante no mesmo parágrafo) do restante do documento.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "final do parágrafo do dia 6 de outubro, antes do cabeçalho 'Sete de outubro.'",
+      "problema": "Cabeçalho '7 de outubro' vazando como texto corrido no final da última frase do dia 6, imediatamente antes do cabeçalho de sessão correto e já existente 'Sete de outubro.' — duplicação de cabeçalho.",
+      "correcao": "Removida a ocorrência solta; mantido só o cabeçalho de sessão 'Sete de outubro.' que já existia corretamente.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "entre o fim da sessão de 16 de outubro e o início da sessão de 27 de outubro",
+      "problema": "GRAVÍSSIMO — bloco de corrupção pura: em vez da transição limpa para o cabeçalho '27 de outubro' (a frase terminava em 'vou parar por aqui. Vinte e'), havia uma sequência de 12 linhas de lixo: cabeçalhos de data já usados e repetidos sem conteúdo novo ('7 de outubro', '15 de outubro', '16 de outubro', '17 de outubro', '26 de outubro', '27 de outubro') intercalados com letras soltas sem sentido ('s', 'e', 't', 'e', 'd', 'e outubro') — que, concatenadas na ordem em que apareciam, soletram literalmente 's-e-t-e-d-e outubro', ou seja, um fragmento corrompido de 'sete de outubro' preso no meio de cabeçalhos duplicados. Não havia nenhum conteúdo textual único perdido nesse bloco (nenhuma das seis datas repetidas trazia texto novo).",
+      "correcao": "Bloco inteiro removido e substituído pela conclusão correta da frase interrompida: 'Vinte e sete de outubro' como cabeçalho único e limpo da sessão seguinte, no mesmo padrão dos demais cabeçalhos por extenso já usados no arquivo ('Quinze de outubro.', 'Vinte e cinco de outubro', 'Vinte e seis de outubro').",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "transições de sessão em 15, 16, 17, 25 e 26 de outubro",
+      "problema": "Em cada uma dessas 5 transições, o cabeçalho da sessão seguinte vazava como texto corrido no final da última frase da sessão anterior (ex.: '...entende-se bem. 15 de outubro' logo antes de 'Quinze de outubro.\\nAmanhã será...'), duplicando a data imediatamente antes do cabeçalho de sessão real e correto.",
+      "correcao": "Removida a ocorrência solta em cada uma das 5 transições, mantendo intacto o cabeçalho de sessão correto que já vinha em seguida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "encarte editorial final (ficha técnica de impressão/publicação)",
+      "problema": "Datas de impressão/publicação erradas: PT trazia '20 de novembro de 1953 (impressão)' e '25 de novembro de 1953 (publicação)'. O JP diz claramente '昭和二十八年十一月十日　印刷' (10 de novembro) e '昭和二十八年十一月十五日　発行' (15 de novembro) — erro consistente de +10 dias em ambas as datas.",
+      "correcao": "Corrigido para '10 de novembro de 1953 (impressão)' e '15 de novembro de 1953 (publicação)', batendo com o JP e com a data de publicação do próprio número (27号) já citada corretamente no início do arquivo (15 de novembro).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "5 de outubro (JP linhas 22-38)",
+      "decisao": "corrigido - monólito + cabeçalho ausente (itens 2,3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "6 de outubro (JP linhas 42-60)",
+      "decisao": "corrigido - monólito + perda de conteúdo real + cabeçalho vazando (itens 3,4,5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7 de outubro (JP linhas 64-90)",
+      "decisao": "ok - conteúdo completo verificado (citações, aforismos de 'Fraude', física finita/infinita, Waseda/Índia/budismo, Stalin/Vaticano); parágrafos longos do JP vertidos num só bloco PT sem perda de conteúdo, aceitável por precedente (ver AUDIT_TRAIL de referência, bloco 'Prefácio')",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de outubro (JP linhas 93-107)",
+      "decisao": "ok, com cabeçalho duplicado removido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de outubro (JP linhas 111-125)",
+      "decisao": "ok, com cabeçalho duplicado removido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de outubro (JP linhas 129-147)",
+      "decisao": "ok, com cabeçalho duplicado removido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de outubro (JP linhas 151-167)",
+      "decisao": "ok, com cabeçalho duplicado removido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de outubro (JP linhas 171-192)",
+      "decisao": "ok, com cabeçalho duplicado removido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de outubro (JP linhas 196-216)",
+      "decisao": "corrigido - transição para este bloco estava soterrada em bloco de corrupção (item 6); conteúdo do próprio bloco, uma vez alcançado, está completo e correto",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Encarte editorial final / ficha técnica (JP linhas 223-233)",
+      "decisao": "corrigido - datas de impressão/publicação erradas (item 8)",
+      "confianca": "alta"
+    }
+  ],
+  "observacao_paragrafacao_residual": "Dentro de cada sessão diária, o JP quebra em vários parágrafos (ideias/temas distintos) enquanto o PT, mesmo depois das correções acima, mantém a prosa de cada dia como um só bloco corrido (as citações e citações diretas entre aspas, porém, já vinham corretamente isoladas em linha própria, tanto no JP quanto no PT). Verificado linha a linha que isso não esconde perda de conteúdo em nenhuma das sessões 7, 15, 16, 17, 25, 26 e 27 de outubro. Como o próprio precedente desta família de arquivos considera esse padrão aceitável quando não há perda de conteúdo (parágrafos JP longos vertidos num só parágrafo PT), não foi re-segmentado item a item para não extrapolar o escopo desta revisão; fica registrado para eventual passada de padronização futura, não como pendência bloqueante.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 8 correções. approved:true."
+  }
+}

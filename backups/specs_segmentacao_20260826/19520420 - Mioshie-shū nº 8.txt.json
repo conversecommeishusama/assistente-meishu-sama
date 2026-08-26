@@ -1,0 +1,113 @@
+{
+ "filename": "19520420 - Mioshie-shū nº 8.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→11. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』8号、昭和27(1952)年4月20日発行",
+   "pt_anchor": "Mioshie-shū nº 8",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月六日",
+   "title_pt": "6 de março",
+   "jp_anchor": "Interlocutor: （お伺）渡辺用子（四十三歳）昨年十二月ごろより、夜二時か三時ごろに喘息の発作のような状態になり、御浄霊いたしますと、じき良くなります。食欲は変 わりありません。発作の状態は心臓が煽（あお）り、顔面蒼白になり、全身油汗のようなものが出て冷たく",
+   "pt_anchor": "6 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[6 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "6 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月七日",
+   "title_pt": "7 de março",
+   "jp_anchor": "Interlocutor: （お伺）塚田香苗（三十二歳）昨年八月三度目のお産後五日目より出血が止まり、二週間目より家の用事をボツボツいたしておりましたところ、十月初めごろ 頭の具合が悪く、心臓の動悸激しく、一晩腰がたいへん痛み、左半身の感覚がだんだん鈍り、脳血栓と言わ",
+   "pt_anchor": "7 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[7 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "7 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十五日",
+   "title_pt": "15 de março",
+   "jp_anchor": "Interlocutor: （お伺）今井静江（昭和二十五年二月入信。三十二歳）十九歳の時、風邪が因で急に腰が抜け、小児麻痺と言われ、いろいろと医療をいたしました。三年間完 全な躄（いざり）となっております。御浄霊は一カ月に二、三回くらいいただいております。アパートでご",
+   "pt_anchor": "15 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十六日",
+   "title_pt": "16 de março",
+   "jp_anchor": "今日はたくさんあるから簡単にします。",
+   "pt_anchor": "16 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[16 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "16 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十七日",
+   "title_pt": "17 de março",
+   "jp_anchor": "Interlocutor: （お伺）高井力男（三十三歳）昨日午後一時突然痙攣を起し、顔面は紫色で浮腫んでまいり、二時間ほど痙攣を続け、三時間ほどは静かになりましたが、それ より十分おきに二、三分の痙攣を午前一時まで続け、それより今朝まで痙攣はなく昏睡状態を続け、頭部の",
+   "pt_anchor": "17 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[17 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "17 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十三日",
+   "title_pt": "23 de março",
+   "jp_anchor": "今日からこの場所での第二回目の春の大祭をやることになりましたが、この大祭について、なるべくお土産になるようなことを話したいと思います。ふだん ――始終話しているんで、あまりすばらしい話もないんですが、とにかく――大体全般にわたって、ちょっと",
+   "pt_anchor": "23º de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[23º de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "23º de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十四日",
+   "title_pt": "24 de março",
+   "jp_anchor": "今度が、春の大祭が二回目ですが、だんだん発展してきまして、来年のこの大祭は、とても入りきれないだろうと思いますから、少し拡げるつもりなんです。 こっち（御神前）に向かい左側の廊下をもう六尺くらい拡げて、それだけ畳も拡げるわけですね。それから",
+   "pt_anchor": "24 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[24 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "24 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十五日",
+   "title_pt": "25 de março",
+   "jp_anchor": "だいぶお天気が良いので仕合せです。今年は春の大祭がすみますと、よほど神様の方が変わってくることになっているんですね。確かお正月の歌かに、今年は ――世の中に表面的に知れるというような意味の歌を読んだはずですがね。やっぱりそれがだんだん出てき",
+   "pt_anchor": "25 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十六日",
+   "title_pt": "26 de março",
+   "jp_anchor": "お天気の具合が不思議ですね。これについて、最初阿部さんから、お祭りを一週間やると言うんです。二十一日から一週間だそうです。それで私が、どうも一 週間は長すぎるから五日間にしなさいと言った。で、初日を二十三日にして――二日遅らせて二十三日から",
+   "pt_anchor": "26 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[26 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "26 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十七日",
+   "title_pt": "27 de março",
+   "jp_anchor": "大祭もいよいよ今日で終わりになりますが、毎日同じような話をするんで――聞く人は変わっていても、こっちは変わらないからね。今日は少しばかり変わっ た話もしましょう。",
+   "pt_anchor": "27 de março",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[27 de março]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "27 de março"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

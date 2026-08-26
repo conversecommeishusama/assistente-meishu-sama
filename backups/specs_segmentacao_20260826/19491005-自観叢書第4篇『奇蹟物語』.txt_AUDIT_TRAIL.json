@@ -1,0 +1,333 @@
+{
+  "ficheiro": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+  "metodo": "leitura linha a linha JP (fonte de verdade) confrontada com PT, arquivo inteiro, do início ao fim (JP 495 linhas / 37 artigos do spec; PT 118 linhas após correções)",
+  "revisor": "agente (delegação autorizada por revisao-paralela-jp-pt.mdc §Delegação)",
+  "data": "2026-07-06",
+  "checklist_aplicado": [
+    "1. Subdivisão",
+    "2. Existência PT",
+    "3. Alinhamento",
+    "4. Completude/truncamento",
+    "5. CJK residual",
+    "6. Paragrafação 1:1",
+    "7. Títulos/cabeçalhos",
+    "8. Outros (duplicação/eco/ordem)"
+  ],
+  "observacao_estrutural": "O ficheiro de trabalho PT comprime várias frases/parágrafos curtos do JP em linhas físicas únicas mais longas por artigo (convenção já presente no ficheiro inteiro, não introduzida nesta revisão). Isto NÃO foi tratado como violação do checklist ponto 6 quando o conteúdo estava integralmente presente e na ordem correta — só haveria issue se houvesse perda de conteúdo, o que foi verificado frase a frase nos blocos de abertura (序文 até 黄泉比良坂の戦) onde essa compressão é mais acentuada.",
+  "segmentos": [
+    {
+      "id": 1,
+      "titulo_jp": "(cabeçalho bibliográfico)",
+      "jp_linhas": "20-24",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Título, fonte, data de publicação — íntegro."
+    },
+    {
+      "id": 2,
+      "titulo_jp": "序文",
+      "jp_linhas": "28-31",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "4 parágrafos, todos presentes e completos 1:1."
+    },
+    {
+      "id": 3,
+      "titulo_jp": "観世音菩薩と私",
+      "jp_linhas": "34-39",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "4 parágrafos (innen com Oomoto, festival de Kameoka/Lago Biwa/Deus Dragão Dourado, confronto com jovem possuído). Datas Showa conferidas uma a uma."
+    },
+    {
+      "id": 3.1,
+      "titulo_jp": "(erro de data corrigido)",
+      "jp_linhas": "37",
+      "status": "corrigido",
+      "confianca": "alta",
+      "notas": "JP '昭和四年四月' = abril de 1929 (Showa4=1925+4). PT tinha 'abril de 1930' (Showa5). Corrigido para 1929. Confirmado por conferência sistemática de TODAS as datas Showa→Gregoriano do volume (29 ocorrências), esta foi a única divergente."
+    },
+    {
+      "id": 3.2,
+      "titulo_jp": "(romanização incerta)",
+      "jp_linhas": "37",
+      "status": "pendencia_registrada",
+      "confianca": "baixa",
+      "notas": "志賀和多利氏 romanizado como 'Wataru Shiga' — leitura mais comum de 和多利 seria 'Watari', não confirmada por fonte externa (figura política obscura de partido pré-guerra, baixo valor doutrinário para pesquisa aprofundada). Registrado em PENDENCIAS_REVISAO.json."
+    },
+    {
+      "id": 4,
+      "titulo_jp": "私の告白",
+      "jp_linhas": "44-49",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "6 parágrafos, completos 1:1."
+    },
+    {
+      "id": 5,
+      "titulo_jp": "本教救いの特異性",
+      "jp_linhas": "55-59",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "5 parágrafos, completos 1:1."
+    },
+    {
+      "id": 6,
+      "titulo_jp": "入信後の神懸り",
+      "jp_linhas": "65-77 + (注) 79-80",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "13 parágrafos + nota de rodapé sobre 生蕃/Takasago-zoku — todos presentes, incluindo detalhes numéricos (500.000 anos, tamanhos em shaku/pés, etc.). Todas as datas Showa conferidas."
+    },
+    {
+      "id": 7,
+      "titulo_jp": "霊写真",
+      "jp_linhas": "86-92",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Episódio completo do Higashi Mitsuo e as 3 fotografias espirituais (Kannon de mil braços, luz/mãos postas, Dragão Dourado) — íntegro, embora comprimido em uma única linha PT longa junto com o início do artigo seguinte (ver observação estrutural)."
+    },
+    {
+      "id": 8,
+      "titulo_jp": "黄泉比良坂の戦",
+      "jp_linhas": "97-102 + (注) 104-105",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Episódio do visconde/Yomotsu Hirasaka e da compra/leilão do terreno de Hozanso — íntegro, valores em ienes conferidos (100.000/5.000/10.000/45.000/55.000)."
+    },
+    {
+      "id": 9,
+      "titulo_jp": "紅蓮の直中より救はる (Yamamoto Keiko)",
+      "jp_linhas": "115-128",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Testemunho do bombardeio de Tóquio — íntegro."
+    },
+    {
+      "id": 10,
+      "titulo_jp": "屋根から落ちても無事 (Ono Hisako)",
+      "jp_linhas": "134-138",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 11,
+      "titulo_jp": "九死に一生を得て (Kobayashi Shuro)",
+      "jp_linhas": "144-151",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 12,
+      "titulo_jp": "列車に激突 (Taniguchi Kazuichi)",
+      "jp_linhas": "157-163",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 13,
+      "titulo_jp": "軒先迄燃え焼失を免る (Kanaya Tatsu)",
+      "jp_linhas": "169-173",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 14,
+      "titulo_jp": "水禍より逃れて (Konishi Yasuyo)",
+      "jp_linhas": "179-184",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 15,
+      "titulo_jp": "震禍を免る (Yoshizaki Kiyoko)",
+      "jp_linhas": "190-196",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 16,
+      "titulo_jp": "交通事故の奇蹟 (Takeuchi Kokichi)",
+      "jp_linhas": "203-207",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 17,
+      "titulo_jp": "漁の不思議 (Maeda Masano)",
+      "jp_linhas": "213-220",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 18,
+      "titulo_jp": "瓦カマドに浄霊 (Hosono Hiroko)",
+      "jp_linhas": "226-231",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 19,
+      "titulo_jp": "林産物の御利益 (Ono Tsukumo)",
+      "jp_linhas": "238-242",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 20,
+      "titulo_jp": "病貧の御救い (Ishizu Shinako)",
+      "jp_linhas": "248-252",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Fim do artigo verificado com cuidado por ser a âncora do bug de duplicação encontrado no artigo seguinte — o texto deste artigo em si está correto e completo, sem duplicação."
+    },
+    {
+      "id": 21,
+      "titulo_jp": "斯んな事までも (Yoshimura Kiyo)",
+      "jp_linhas": "258-261",
+      "status": "corrigido",
+      "confianca": "alta",
+      "notas": "BUG REAL encontrado: o PT continha um rascunho truncado deste artigo (parava no meio da frase), seguido de um parágrafo intrometido que era na verdade uma retradução duplicada da CAUDA do artigo anterior (病貧の御救い, tema 'inverno/primavera'), e só depois a versão completa e correta do artigo (com um byline em formato diferente). Removido o rascunho truncado + parágrafo intruso (3 linhas), mantida a versão completa e correta. Também corrigida romanização de 鳥栖 (cidade real, Saga): estava 'Tose', corrigido para 'Tosu'. Padrão idêntico ao bug #6 catalogado em revisao-paralela-jp-pt.mdc (rascunho truncado + versão completa da mesma passagem coexistindo no ficheiro)."
+    },
+    {
+      "id": 22,
+      "titulo_jp": "盗難品が出た御利益 (Arai Hana)",
+      "jp_linhas": "267-271",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 23,
+      "titulo_jp": "観音心と盗心 (Yamanishi Shizue)",
+      "jp_linhas": "277-284",
+      "status": "ok",
+      "confianca": "alta",
+      "notas": "Nota cosmética (não é erro de tradução): o spec JSON rotula erroneamente a 1ª frase do corpo deste testemunho como se fosse um título de secção próprio ('教団になったと言うお話を聴いて...'). É um artefacto de segmentação pré-existente (Fase Inicial), não um problema no texto PT em si, que traduz essa frase corretamente como corpo do testemunho, não como título. Não alterado (fora do escopo desta revisão de conteúdo PT)."
+    },
+    {
+      "id": 24,
+      "titulo_jp": "感謝の毎日 (Shishido Kono)",
+      "jp_linhas": "290-295",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 25,
+      "titulo_jp": "返ったリヤカー (Watanabe Seiichi)",
+      "jp_linhas": "301-307",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 26,
+      "titulo_jp": "危機一髪盗難を救はる (Hasegawa Takejiro)",
+      "jp_linhas": "313-320",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 27,
+      "titulo_jp": "反抗の力空しく (Ono Yasujiro)",
+      "jp_linhas": "326-335",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 28,
+      "titulo_jp": "死線を超える事幾度 (Nihongi Teruko)",
+      "jp_linhas": "341-358",
+      "status": "corrigido",
+      "confianca": "alta",
+      "notas": "BUG REAL encontrado: entre os parágrafos correspondentes a JP linhas 350 e 351 (fronteira real de parágrafo no JP), o PT tinha uma retradução duplicada de toda a cauda do parágrafo anterior ('não conseguia rir... apelido coração forte... tia visita... recusei o tratamento') antes de finalmente prosseguir com o conteúdo novo (tratamento do Sr. Hayashi em diante). Removida a duplicata (mantendo só a continuação nova, que já estava correta e completa), preservando a quebra de parágrafo genuína do JP."
+    },
+    {
+      "id": 29,
+      "titulo_jp": "カリエスが治る (Isazaki Sayoko)",
+      "jp_linhas": "364-376",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 30,
+      "titulo_jp": "六年間のカリエス救はる (Masuda Mutsu)",
+      "jp_linhas": "382-392",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 31,
+      "titulo_jp": "精神病が全快す (Inoue Hideo)",
+      "jp_linhas": "398-411",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 32,
+      "titulo_jp": "小児麻痺より救はれて (Haraki Ryo)",
+      "jp_linhas": "418-426",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 33,
+      "titulo_jp": "御力に死者蘇る (Takayanagi Chieko)",
+      "jp_linhas": "432-440",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 34,
+      "titulo_jp": "萬人に一人の病 (Asano Goichi)",
+      "jp_linhas": "446-458",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 35,
+      "titulo_jp": "御教えに深き感謝 (Uchiyama Take)",
+      "jp_linhas": "464-481",
+      "status": "ok",
+      "confianca": "alta"
+    },
+    {
+      "id": 36,
+      "titulo_jp": "(colofão)",
+      "jp_linhas": "487-495",
+      "status": "corrigido",
+      "confianca": "alta",
+      "notas": "PT terminava logo após o título/subtítulo, sem a informação de publicação (data, formato, preço, autor, editor, editora) que está presente no JP e em TODOS os outros volumes irmãos já revistos desta série (自観叢書 1,2,5,6,8,9,10,12,13,15 — confirmado por grep). Adicionado bloco traduzido seguindo a convenção já estabelecida nos volumes irmãos (esp. vol.5, que tem o MESMO editor/editora): 'Publicado em 5 de outubro do ano 24 da Era Showa (1949) / Formato B6, 78 páginas, preço 50 ienes / Autor: Okada Jikan / Editor: Nishiyama Shunnosuke / Editora: Nijusseiki Shuppan Insatsu Goshigaisha'."
+    },
+    {
+      "id": 37,
+      "titulo_jp": "(romanização de organização — inconsistência sistémica)",
+      "jp_linhas": "várias (byline de testemunhos)",
+      "status": "autorizacao_pendente",
+      "confianca": "n/a",
+      "notas": "日本五六七教 aparece romanizado de duas formas diferentes dentro do MESMO ficheiro: 'Nihon Miroku-kyo'/'Igreja Miroku do Japão' (maioria, ~12 ocorrências) vs 'Go-Roku-Shichi Kyo' (2 ocorrências, testemunhos de Isazaki Sayoko e Masuda Mutsu). O glossário já define 五六七→Miroku, mas a uniformização do NOME DA ORGANIZAÇÃO especificamente já está registada como pendente de autorização explícita em GOSHINSHO.md (achado de 2026-07-06 em 無肥料栽培法) — não uniformizado aqui para não decidir unilateralmente um padrão que afeta o corpus inteiro. Registrado em AUTORIZACOES_PENDENTES.json."
+    }
+  ],
+  "cjk_residual": "nenhum encontrado no corpo do texto (14 caracteres CJK no ficheiro são apenas metadados de cabeçalho — nome de ficheiro e title_jp —, não texto de corpo)",
+  "duplicacoes_encontradas_e_corrigidas": 2,
+  "pt_em_falta": "nenhum trecho de JP sem par PT encontrado (situação bem melhor que os outros 5 volumes já revistos desta série, que tiveram perda de 15-20% do conteúdo)",
+  "segunda_auditoria_independente": {
+    "metodo": "subagente separado (Explore), somente leitura, sem contexto prévio da sessão, instruído a reler o ficheiro inteiro do zero e a reconferir especificamente as 4 correções relatadas",
+    "veredito": "PASS com uma ressalva — confirmou as 4 correções (duplicação em 斯んな事までも, duplicação em 死線を超える事幾度, colofão, data 1929) e encontrou um 5º erro que a primeira passagem não pegou",
+    "achado_5": {
+      "titulo_jp": "交通事故の奇蹟 (Takeuchi Kokichi)",
+      "jp_linha": 206,
+      "erro": "JP '去る十九年四月半ば' (Showa19 = 1944) traduzido como '(1943)'. Inconsistente com o próprio critério do livro: a mesma expressão '十九年' aparece em JP 218 e JP 252 e ali já estava corretamente traduzida como 1944.",
+      "status": "corrigido apos a segunda auditoria",
+      "confianca": "alta"
+    },
+    "conclusao": "sem conteúdo ausente, frases cortadas, duplicações remanescentes ou CJK residual encontrados pelo auditor independente além do achado_5, que foi corrigido"
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. ACHADO: 'Zengen-Sandji' (com 'd', 4 ocorrências) — mesma situação de 無肥料栽培法 acima; registado na mesma entrada de PENDENCIAS_REVISAO.json. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0,
+    "items_escalated_fase_e": 1
+  }
+}

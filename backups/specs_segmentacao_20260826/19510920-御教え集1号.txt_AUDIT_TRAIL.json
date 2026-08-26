@@ -1,0 +1,150 @@
+{
+  "filename": "19510920-御教え集1号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 535 linhas / PT reconstruído para 260 linhas, 10 trechos por spec: prefácio + 9 sessões datadas de agosto de 1951). JP é um único bloco === ARTIGO === não pré-dividido; todo o corpo foi lido integralmente (duas passagens de leitura cobrindo 100% das 535 linhas JP e das 191 linhas PT originais) e confrontado frase a frase na mesma ordem. Alerta prévio: livro da mesma família de 御教え集6号 e 御垂示録1号 (bug conhecido de monólito residual, trechos nunca traduzidos, cabeçalhos duplicados, sobreposição de duas traduções) — confirmado como fundamentado.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e as correções de conteúdo/estrutura aplicadas.",
+  "summary": {
+    "articles_in_spec": 10,
+    "articles_reviewed": 10,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0,
+    "padroes_de_bug_confirmados": {
+      "a_monolito_residual_nao_desmembrado": "CONFIRMADO — todo o corpo do PT estava com múltiplos pares (Pergunta)/[Resposta Divina] espremidos em um único parágrafo por sessão de data (ex.: os 5 Q&A + 1 ensinamento de '1 de agosto' formavam 1 parágrafo só), violando o item 6 do checklist (parágrafação 1:1 com o JP). Corrigido mecanicamente após confirmar, por leitura completa, que o conteúdo em si estava correto e completo — quebras de parágrafo inseridas em cada '(Pergunta)'/'[Resposta Divina]'/'[Revelação Divina]'/'[Ensinamento]' que não iniciava já uma linha, com verificação automática de que a concatenação normalizada por espaço do corpo antes/depois é idêntica (nenhum caractere de conteúdo perdido, movido ou duplicado pela reestruturação).",
+      "b_trechos_nunca_traduzidos": "CONFIRMADO — 1 par (Pergunta)/[Resposta Divina] inteiro (duas crianças, 13 e 9 anos, pneumonia recorrente evoluindo para cegueira/quadro tipo meningite, JP linhas 484-488) estava completamente ausente do PT, sem deixar rastro (não é falso positivo de contagem: conferido que o trecho não existe em nenhuma outra parte do PT). Traduzido e inserido na posição correta.",
+      "c_cabecalhos_duplicados": "NÃO encontrado neste volume (este livro não tem cabeçalhos de data repetidos por seção — as 9 datas aparecem uma única vez cada, na ordem correta).",
+      "d_sobreposicao_duplicacao_de_duas_traducoes": "CONFIRMADO — 2 ocorrências: (1) testemunho de Sumiichi Shimizu (tuberculose/pele escamosa) duplicado como rascunho truncado seguido da versão completa da mesma pergunta (mesma assinatura do bug catalogado em 'Δ=0 é necessário, nunca suficiente' item 6); (2) resposta divina sobre Taizo Shide (bebê surdo-mudo) cortada no meio da frase e substituída por um fragmento espúrio duplicado do final da resposta anterior (doença de válvula cardíaca), perdendo o final real da resposta (conselho sobre mudar o nome do bebê, leitura 'Shite', etc.) — aqui a duplicação mascarava simultaneamente uma perda de conteúdo real (padrões b+d combinados)."
+    }
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "seção '18 de agosto', testemunho de Sumiichi Shimizu (tuberculose pulmonar / pele escamosa), JP linhas 312-317",
+      "problema": "Duplicação: o parágrafo terminava truncado em '...devido ao Johrei, peço' e o parágrafo seguinte reiniciava a mesma pergunta desde o meio ('... mas, em abril de 1949, fiz um exame de saúde...'), repetindo quase integralmente o mesmo conteúdo já contado — rascunho truncado + versão completa da mesma pergunta, sem que a resposta divina aparecesse entre elas.",
+      "correcao": "Removido o trecho duplicado truncado; mantida a versão completa e íntegra da pergunta, com abertura '(Pergunta) Sou um crente chamado Sumiichi Shimizu (doze anos)...' seguida diretamente da resposta divina '[Revelação Divina] Isto é, afinal, o renascimento de um dragão divino...'. Nenhum conteúdo novo inventado — apenas remoção do bloco redundante.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "seção '25 de agosto', pergunta sobre Taizo Shide (bebê surdo-mudo de 1 ano e 8 meses), JP linhas 410-415",
+      "problema": "GRAVE: a resposta divina foi cortada no meio da frase em '...Bater aqui (pescoço)...' e o texto seguinte era um fragmento solto começando com a palavra órfã 'espiritualizar' que na verdade repetia (com leve variação de redação) o final da resposta divina ANTERIOR (sobre doença de válvula cardíaca / medicamentos de medicina chinesa) — ou seja, o final real da resposta sobre Taizo Shide (por que o bebê não fala, o conselho de mudar o nome, a leitura 'Shite', a alternativa de quatro patas/quatro mãos) nunca foi traduzido, e no lugar dele foi inserido um trecho duplicado de outra resposta.",
+      "correcao": "Traduzido do JP e inserido o final real da resposta: '...Bateram aqui (pescoço) e morreu. Isso ainda não foi curado no mundo espiritual, mas, de qualquer forma, se fizer Johrei aqui (pescoço), vai curar. Além disso, como é um bebê, a cura é mais lenta. Como isso atrapalha aqui, ele não consegue falar; embora isso não se dissolva completamente, deve melhorar até certo ponto. Rapidamente, é preciso mudar o nome. Um nome sem o caractere \"grande\" está bem. Isso se lê \"Shite\"? Quatro mãos — se fosse um animal, seria quatro patas —, mas um outro nome seria melhor. Um nome comum.' O fragmento duplicado da resposta anterior foi removido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "seção '28 de agosto', entre a resposta sobre garganta comprimida/nevralgia e a pergunta sobre parto prematuro, JP linhas 484-488",
+      "problema": "GRAVE: um par (Pergunta)/[Resposta Divina] inteiro estava completamente ausente do PT — pergunta sobre duas crianças (menina de 13 anos, menino de 9 anos) com pneumonia recorrente evoluindo para cegueira e quadro tipo meningite, e a resposta divina correspondente (pneumonia como boa purificação, erro de resfriar a cabeça com gelo, toxina solidificada prejudicando o nervo óptico, orientação de Johrei nas costas durante o sono, explicação de que a disenteria também tem causa na cabeça). Confirmado por busca exaustiva no PT que o trecho simplesmente não existe em nenhuma outra parte do arquivo — não é desalinhamento nem falso positivo de contagem.",
+      "correcao": "Traduzido integralmente do JP (usando glossário de tradução onde aplicável) e inserido na posição correta, entre a resposta sobre a garganta comprimida e a pergunta sobre o parto prematuro de 1949.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "todo o corpo do documento (paragrafação)",
+      "problema": "Violação sistemática do item 6 do checklist (parágrafação 1:1 com o JP): cada sessão de data tinha todos os seus pares (Pergunta)/[Resposta Divina]/[Ensinamento] comprimidos em um único parágrafo corrido, em vez de um parágrafo por turno como no JP. Confirmado, por leitura completa, que o conteúdo em si (antes desta correção) estava correto e completo em quase todo o documento — o problema era exclusivamente de formatação/parágrafo, não de conteúdo (as 3 exceções de conteúdo real estão nos itens 1-3 acima).",
+      "correcao": "Reestruturado com quebra de parágrafo antes de cada ocorrência de '(Pergunta)', '[Resposta Divina]', '[Revelação Divina]' e '[Ensinamento]' que não iniciava já a própria linha. Verificação automática: concatenação do corpo inteiro (antes/depois, espaços normalizados) é caractere-a-caractere idêntica — nenhuma palavra foi perdida, duplicada ou reordenada pela reestruturação. Também corrigida 1 inconsistência de formatação de marcador: '(Ensinamento)' (parênteses, ocorrência única em '1 de agosto') normalizado para '[Ensinamento]' (colchetes), consistente com as demais 7 ocorrências do mesmo marcador no volume (checklist item 7 — títulos/cabeçalhos consistentes).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文, título apenas)",
+      "jp_linhas": "13-22",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Sem corpo de texto próprio no JP além do cabeçalho editorial; spec já reflete isso (ratio PT/JP=0.03 é esperado, não é falha)."
+    },
+    {
+      "bloco": "1 de agosto (asma, dores articulares, rins/bexiga, parto difícil, Yone Maeda/tuberculose intestinal, ensinamento câncer/disenteria)",
+      "jp_linhas": "24-72",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "5 de agosto (Sugiyama Kame, Okazaki Terumichi/tuberculose, Michiko/tuberculose)",
+      "jp_linhas": "75-101",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "8 de agosto (cárie óssea, úlcera duodenal, Shigeko/raposa, Ushibumi Bunichi/encefalite, sífilis 606, Mori Hatsuko, prolapso uterino, vômito/marido, ensinamento frigidez+agricultura)",
+      "jp_linhas": "105-197",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "11 de agosto (Kaneko Matsujiro, ensinamento frigidez+museu de arte)",
+      "jp_linhas": "200-222",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de agosto (Tomita Mitsuo/epilepsia, solda elétrica, Tanaka Yoshio/bolas pulmão, ensinamento julgamento/Matsushima/Dragão Negro)",
+      "jp_linhas": "226-261",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "18 de agosto (Inari/raposa branca, Fujieda Yasuharu/olhos+filho falecido/gato, Yokoi Riichi/Manchúria, Sumiichi Shimizu/tuberculose+pele escamosa, Sakata Yoshihiro/caroço, família Hisa/cárie óssea, ensinamento medicina/religião)",
+      "jp_linhas": "264-343",
+      "decisao": "corrigido — duplicação Sumiichi Shimizu (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "21 de agosto (tifo, pai/vacina pulso, ensinamento cirurgia+julgamento Ihara/Matsushima)",
+      "jp_linhas": "347-370",
+      "decisao": "ok, conteúdo completo — só paragrafação corrigida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de agosto (Shinohara Tamatsuki/joelho+reumatismo, Kawasaki Kikuko/queimadura, doença de válvula cardíaca+Toyokawa Inari, Taizo Shide/surdo-mudo, ensinamento boxe/cristianismo/museu de arte/disenteria)",
+      "jp_linhas": "374-431",
+      "decisao": "corrigido — perda de conteúdo mascarada por duplicação em Taizo Shide (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "28 de agosto (Irie Takaichi/cirurgia coluna, dor ao urinar/testículo, cárie óssea coluna, mulher 54/útero, úlcera duodenal, garganta comprimida, [FALTAVA] pneumonia/cegueira duas crianças, parto prematuro complexo com diálogo, ensinamento final medicina/religião/julgamento/museu de arte/ordem)",
+      "jp_linhas": "434-535",
+      "decisao": "corrigido — par Pergunta/Resposta inteiro nunca traduzido (item 3)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmado par P&R pneumonia/meningite inserido e correção do trecho Taizo Shide. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "reviewer": "agente (delegação autorizada, gokowa-rotulagem-a4b-jp.mdc adaptado a este volume)",
+    "review_date": "2026-07-08",
+    "contexto": "Primeiro volume de Mioshie-Shū (御教え集) a receber rótulos de falante Interlocutor:/Meishu-Sama:. Marcadores JP deste volume são (お伺)=pergunta e〔御垂示〕=resposta (diferente de Gokōwa-roku). PT já usava marcadores próprios equivalentes: '(Pergunta)' e, de forma inconsistente, '[Resposta Divina]' (25x) / '[Revelação Divina]' (15x) para a mesma função — variação de tradução, não erro estrutural.",
+    "etapa_a_mapa_jp": {
+      "metodo": "JP lido linha a linha integralmente (535 linhas) nas 9 sessões de data (1, 5, 8, 11, 16, 18, 21, 25, 28 de agosto de 1951).",
+      "pares_por_sessao": {"1_agosto": 5, "5_agosto": 3, "8_agosto": 8, "11_agosto": 1, "16_agosto": 3, "18_agosto": 6, "21_agosto": 2, "25_agosto": 4, "28_agosto": 8},
+      "total_pares_principais": 40,
+      "turnos_embutidos_no_meio_da_resposta": "14 falas curtas do Interlocutor aparecem como parágrafo próprio DENTRO do bloco de resposta (ex.: 「はい」, confirmações, perguntas de esclarecimento) em vez de abrirem novo （お伺）. Destas, 11 já estavam preservadas como parágrafo próprio no PT (rotuladas nesta tarefa); 3 (gastralgia em '8 de agosto', Tomita em '16 de agosto', raposa Inari em '18 de agosto') foram traduzidas mas fundidas em prosa corrida dentro do mesmo parágrafo da resposta — não rotuladas separadamente para não violar a proibição de reescrever/redividir parágrafo existente (ver 'nao_corrigido' abaixo)."
+    },
+    "etapa_b_contagem": {
+      "jp_お伺": 40, "jp_御垂示": 40, "pt_Pergunta_antes": 40, "pt_Resposta_ou_Revelacao_antes": 40,
+      "delta": 0,
+      "resultado": "Contagem bate exatamente 1:1, par a par, dentro de cada sessão de data — confirmado antes de aplicar rótulos (Etapa C), conforme exigido pelo método."
+    },
+    "etapa_c_aplicacao": {
+      "metodo": "'(Pergunta)' substituído por 'Interlocutor:' (40x); '[Resposta Divina]' e '[Revelação Divina]' substituídos por 'Meishu-Sama:' (40x); nenhum texto substantivo alterado, apenas o marcador de papel. Os 11 turnos embutidos de interlocutor preservados como parágrafo próprio no PT receberam 'Interlocutor:' e a continuação da resposta que os segue recebeu 'Meishu-Sama:'. Cabeçalhos de data (ex. '1 de agosto') preservados sem rótulo. Blocos '[Ensinamento]' (8 no volume) preservados sem rótulo de diálogo, por serem monólogo/ensinamento sem turno de pergunta (mesma regra usada em Gokōwa: prosa sem turno Q/A = sem rótulo).",
+      "contagem_final": {"Interlocutor:": 51, "Meishu-Sama:": 51},
+      "linhas_arquivo_pt_antes_depois": "260 → 260 (nenhuma linha adicionada/removida, apenas texto de marcador substituído/prefixado)"
+    },
+    "nao_corrigido_documentado": "3 falas embutidas do Interlocutor (JP linhas 125, 236, 274) estão traduzidas no PT mas fundidas dentro do parágrafo de resposta corrido (não formam parágrafo próprio no PT, ao contrário do JP e ao contrário dos outros 11 casos análogos). Conteúdo íntegro, apenas não segmentado como turno próprio. Não corrigido nesta tarefa para não reescrever/redividir parágrafo existente (fora do escopo autorizado de 'ajuste de baixo risco'); documentado para decisão futura caso se queira paridade total de granularidade de turno. [RESOLVIDO em 2026-07-08, ver 'continuacao_2026_07_08' abaixo]",
+    "approved_alterado": false
+  },
+  "rotulagem_interlocutor_meishu_continuacao_2026_07_08": {
+    "reviewer": "agente (nova sessão, continuação do trabalho de rotulagem acima)",
+    "review_date": "2026-07-08",
+    "contexto": "Retomada da rotulagem já aplicada nesta mesma data. Arquivo já tinha 'Interlocutor:'/'Meishu-Sama:' aplicados (51/51, ver seção anterior). Reconferência linha a linha do JP confirmou os 3 gaps já documentados em 'nao_corrigido_documentado' (JP linhas 125, 236, 274) e nenhum outro: os demais ~50 pares e os 11 sub-diálogos embutidos já corretamente rotulados/alternados foram conferidos e estão OK (nenhuma citação retórica de Meishu-Sama foi indevidamente rotulada como turno do Interlocutor, ex. o exemplo hipotético de raposa/perguntas em '8 de agosto' e as falas narradas da filha possuída em '18 de agosto' permanecem corretamente sem rótulo, por serem discurso relatado dentro da própria fala de um único falante).",
+    "correcao_aplicada": "Os 3 casos pendentes foram divididos em parágrafo próprio, no mesmo padrão dos outros 11 análogos: 'Há algo como uma pedra no abdômen.' (seção '8 de agosto', pergunta sobre hiperacidez/úlcera duodenal), 'Houve um caso em que, há quarenta anos, cortaram uma árvore...' (seção '16 de agosto', caso Tomita Mitsuo/epilepsia) e 'Devo consagrar a raposa para sempre?' (seção '18 de agosto', caso Inari/raposa branca) agora abrem com 'Interlocutor:' em parágrafo próprio, seguidos por 'Meishu-Sama:' retomando o restante da resposta já existente. Nenhum texto de conteúdo foi reescrito, traduzido de novo ou reordenado — apenas inserida a quebra de parágrafo e o par de rótulos, igual ao padrão já usado nos 11 casos irmãos do mesmo volume.",
+    "contagem_final": {"Interlocutor:": 54, "Meishu-Sama:": 54, "delta_i_m": 0, "alternancia_verificada": "sem repetição consecutiva I->I ou M->M em todo o arquivo (script de checagem rodado)"},
+    "nao_corrigido_documentado": "Nenhum item pendente remanescente conhecido.",
+    "approved_alterado": false
+  }
+}

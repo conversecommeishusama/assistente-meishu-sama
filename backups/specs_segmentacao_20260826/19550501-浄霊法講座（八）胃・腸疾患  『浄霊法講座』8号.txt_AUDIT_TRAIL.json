@@ -1,0 +1,70 @@
+{
+  "filename": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro: JP 820 linhas / PT 289 linhas (285 após correção), 65 artigos por spec (Curso de Johrei vol. 8, doenças de estômago e intestino). Todo o JP foi lido linha a linha do título ao último artigo (36. Patologia do apêndice) e confrontado com o PT correspondente na mesma ordem, sem amostragem.",
+  "alerta_spec_contaminado": {
+    "confirmado": true,
+    "descricao": "O spec estava contaminado exatamente como alertado: title_pt dos 3 primeiros artigos continha títulos de um curso completamente diferente (padrão 'Primeira/Segunda/Terceira Aula — <tema doutrinário tipo Kannon/Três Mundos>', alheio a doenças de estômago/intestino — provável vazamento do spec de outro volume, tipo Kannon Kōza). A partir do 4º artigo em diante, o template quebrou de vez, produzindo lixo literal 'Aula N Aula — ' (string vazia de título) em todos os 61 artigos restantes. O campo pt_prefix replicava o mesmo lixo ('Primeira Aula', 'Segunda Aula', ..., 'Aula 65 Aula'). Confirmado por comparação com os volumes irmãos já aprovados (2, 6, 7 号), que usam o formato limpo 'N. <descrição real> (fonte, p.X)' com pt_prefix vazio.",
+    "correcao": "title_pt regenerado para os 65 artigos, extraindo/verificando o título real de cada item diretamente do corpo do PT (o título de cada caso já vem embutido no texto corrido, ao final da resposta do item anterior — mesmo formato usado nos volumes irmãos aprovados) e conferido contra o title_jp de cada artigo do spec. pt_prefix zerado ('') em todos os 65, igual ao padrão dos irmãos aprovados. kind corrigido de 'chapter' para 'item' em 3 artigos mal classificados (índice 16 = item 15 do cap.1, numerado em kanji 十五 no JP e por isso capturado como capítulo novo pelo script de segmentação; índices 59 e 60 = subperguntas 1 e 2 do item 32 do cap.2, não capítulos novos). pt_anchor do índice 1 corrigido (apontava para a linha de data de publicação 'Showa (1955)', não para o início real do capítulo/item 1) — trocado pelo mesmo anchor do item 1, já que não há cabeçalho de capítulo próprio no PT (mesma convenção observada no volume irmão 6号, onde o anchor do capítulo repete o anchor do primeiro item)."
+  },
+  "alerta_anchors_posicao": {
+    "verificado": true,
+    "resultado": "Todos os 65 pt_anchor foram checados como substring literal presente no PT (nenhum ausente). Apenas o do índice 1 estava semanticamente errado (ver acima) apesar de ser um substring real do arquivo — confirma o alerta de que presença literal não garante posição correta; a verificação foi feita por conteúdo, não por posição/ratio."
+  },
+  "alerta_colapso_estrutural": {
+    "verificado": true,
+    "resultado": "NÃO encontrado colapso estrutural (parágrafos gigantes escondendo títulos). O PT deste volume segue o mesmo formato dos volumes irmãos já aprovados (2, 6, 7号): cada título de item aparece embutido em linha própria ou ao final da resposta do item anterior, com quebras de parágrafo por turno de pergunta/resposta — não em blocos monolíticos. Confirmado por comparação direta com o 6号 (approved:true), que usa a mesma convenção. Todos os 65 títulos foram localizados e conferidos individualmente contra o JP; nenhum título ficou soterrado ou irrecuperável."
+  },
+  "summary": {
+    "articles_in_spec": 65,
+    "articles_reviewed": 65,
+    "real_corrections_applied_to_pt_body": 1,
+    "spec_fields_corrected": 134,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linhas 210-214 do PT antes da correção (item 15 do capítulo 2 — mulher de 48 anos que tomou grandes quantidades de medicamentos após o parto, JP linhas 600-606, fonte Mioshie-shū nº 7 p.79)",
+      "problema": "GRAVE: duplicação de rascunho. A resposta divina (御垂示) do item 15 aparecia DUAS vezes no PT: uma versão truncada terminando em reticências ('...Bem, se a urina estiver saindo bem...') seguida de uma linha em branco, um fragmento solto em 1ª pessoa ('...estou recebendo a Imagem da Luz Divina...' — inconsistente com a 3ª pessoa usada no resto da pergunta), um cabeçalho '(Orientação)' duplicado, e então a resposta completa de novo, com escolha de termo diferente ('Gerânio-da-silva' em vez de 'Gen-no-shōko', usado consistentemente em todo o resto do volume). Isto corresponde exatamente ao padrão de bug 'rascunho truncado seguido da versão completa da mesma P&R' já catalogado em revisao-paralela-jp-pt.mdc. Conferido contra o JP (que tem uma única resposta, sem repetição): a versão completa e didaticamente correta é a segunda, mas a terminologia consistente com o resto do arquivo é a da primeira.",
+      "correcao": "Mesclado em uma única resposta: mantida a terminologia 'Gen-no-shōko' (consistente com o resto do volume) e completado o final da frase até o fim real da resposta ('...O abdômen e os rins — melhore isso — e foque nisso como principal. Se fizer isso, o apetite aumentará e a fraqueza diminuirá, então, bem — essa é a melhor maneira.'), removido o fragmento solto em 1ª pessoa e o cabeçalho '(Orientação)' duplicado, preservado o título do item 16 que vinha na sequência. PT passou de 289 para 285 linhas (4 linhas espúrias removidas). Nenhum conteúdo real perdido — apenas duplicação removida.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Capítulo 1 — Doenças do estômago, itens 1-24 (incl. os dois itens '14' duplicados no próprio JP e o item 15 numerado em kanji 十五)",
+      "jp_linhas": "20-380",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Todos os 25 blocos (24 itens + cabeçalho) conferidos linha a linha. Conteúdo completo, sem truncamento, sem CJK residual, ordem correta. Numeração duplicada '14/14' e '十五' são do próprio original japonês, não erro de tradução ou segmentação."
+    },
+    {
+      "bloco": "Capítulo 2 — Doenças abdominais, itens 1-23",
+      "jp_linhas": "384-684",
+      "decisao": "ok, com 1 correção real (duplicação do item 15, ver acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulo 2 — Disenteria e tifo, itens 24-36 (incl. as 2 subperguntas do item 32)",
+      "jp_linhas": "687-820",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Inclui os longos monólogos doutrinários de Meishu-Sama sobre a causa espiritual da disenteria (itens 25-29), conferidos parágrafo a parágrafo — são intencionalmente extensos e repetitivos no próprio JP (o autor retoma o mesmo argumento em vários itens), não erro de duplicação da tradução."
+    },
+    {
+      "bloco": "Frases stock repetidas verbatim (checagem de possível duplicação real vs. repetição intencional do autor)",
+      "jp_linhas": "vários",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "3 frases PT idênticas encontradas em posições distintas do arquivo (ex.: instrução sobre qual lado das costas tratar, repetida nos itens ch2-11 e ch2-14). Conferido contra o JP: a repetição já existe no original (Meishu-Sama reitera a mesma instrução em Q&As diferentes) — não é bug de duplicação da tradução."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

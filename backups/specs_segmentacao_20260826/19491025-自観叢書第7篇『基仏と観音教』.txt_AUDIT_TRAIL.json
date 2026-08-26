@@ -1,0 +1,147 @@
+{
+  "filename": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 280 linhas / PT original 125 linhas antes da correção, hoje 257 linhas), 14 trechos por spec (prefácio + 12 capítulos numerados 一~十二, mais o subtítulo interno de abertura), do prefácio à conclusão. Não é amostragem: todo o corpo do JP foi lido e confrontado parágrafo a parágrafo com o PT correspondente, na mesma ordem, incluindo os 3 capítulos que ainda não haviam sido conferidos em detalhe em sessões anteriores (VI, VII, VIII).",
+  "sinal_alerta_279_vs_125": {
+    "pergunta": "JP tinha 279 linhas de corpo e PT só 125 - conteúdo faltando de verdade ou compressão normal do português?",
+    "resposta": "Nem uma coisa nem outra isoladamente - era um problema de FORMATO, não de tradução: quase todo o conteúdo do PT já existia e estava correto, mas dezenas de parágrafos JP tinham sido despejados dentro de umas poucas linhas físicas gigantes no ficheiro de trabalho PT (uma única linha continha, por vezes, o fim de um capítulo inteiro + o cabeçalho do capítulo seguinte + o capítulo seguinte inteiro). Isso por si só derruba a contagem de 'linhas' sem perder conteúdo. MAS o formato colapsado escondeu dois cortes reais de conteúdo (ver correções 1 e 2 abaixo) que só apareceram ao ler frase a frase dentro dos blocos gigantes - exatamente o padrão de risco já descrito em revisao-paralela-jp-pt.mdc (\"Δ=0 nunca é suficiente\"). Após reformatar 1 parágrafo por linha (padrão do resto do acervo) e aplicar as 2 correções, o PT ficou com 257 linhas de corpo - a proporção agora reflete parágrafo-a-parágrafo real, não uma métrica de contagem bruta.",
+    "conclusao": "Confirmado por leitura real: era colapso de formatação (paragrafação), não perda de conteúdo em massa - mas o colapso mascarou 2 perdas pontuais reais, que foram encontradas e corrigidas."
+  },
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 14,
+    "articles_reviewed": 14,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0,
+    "structural_reformat_applied": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "Capítulo IV (キリスト教とパウロ), citação de Atos dos Apóstolos sobre a conversão de Paulo no caminho de Damasco (JP linha 99)",
+      "problema": "GRAVE - truncamento de conteúdo real dentro da citação bíblica. O PT saltava de '...subitamente o cercou um resplendor de' diretamente para 'Levanta-te e entra na cidade...', com um espaço duplo exatamente no ponto do corte (assinatura mecânica do corte). Faltava toda a passagem central da citação: a luz que o envolve, ele caindo em terra, a voz perguntando 'Saulo, Saulo, por que me persegues?', a pergunta de Paulo 'Quem és, Senhor?' e a resposta 'Eu sou Jesus, a quem tu persegues...'. Confirmado por comparação direta com o JP (「彼を環り照したれば、かれ地に倒れて『サウロ、サウロ、何ぞ我を迫害するか』」との声を聴いたのであります。彼は、「主よ、なんぢは誰ぞ」と尋ねた。答えは「われは汝が迫害するイエスなり...」).",
+      "correcao": "Inserido o trecho em falta, seguindo a tradução tradicional de Atos 9:3-6 já usada como referência de estilo nas demais citações bíblicas do volume: '...subitamente o cercou um resplendor de luz do céu; e, caindo em terra, ouviu uma voz que lhe dizia: Saulo, Saulo, por que me persegues? E ele disse: Quem és, Senhor? E disse o Senhor: Eu sou Jesus, a quem tu persegues; dura coisa te é recalcitrar contra os aguilhões. E ele, tremendo e atônito, disse: Senhor, que queres que eu faça? E disse-lhe o Senhor: Levanta-te e entra na cidade...'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "Abertura do Capítulo XI (観音教の死後の世界観), imediatamente após o cabeçalho (JP linhas 226-227)",
+      "problema": "GRAVE - o cabeçalho do capítulo XI emendava diretamente, sem sentido gramatical, em 'durante a vida, a pessoa entra, após a morte, no estágio correspondente do mundo pós-morte' - faltava a introdução inteira do capítulo: (a) a doutrina cristã de céu/inferno via expiação pelo sangue de Jesus e a doutrina budista de paraíso/inferno; (b) a afirmação de que essas doutrinas eram tidas por absurdas pelos intelectuais até a ciência espírita comprovar a existência do mundo pós-morte, com suas categorias (mundo dos espíritos, mundo espiritual, mundo divino) e o critério de pureza dos pensamentos e bem/mal dos atos em vida. Confirmado por comparação direta com o JP (キリスト教においては、イエス・キリストを信仰すれば...冥府に入らねばならないと説いております。また仏教においても...ところが驚くべきことには、心霊科学の発達は死後の世界が存在していることを実証しました...).",
+      "correcao": "Traduzido e inserido o parágrafo em falta na íntegra, preservando a frase seguinte já existente no PT ('Ou seja, quem foi extremamente perverso...') que continuava correta e completa a partir daquele ponto.",
+      "confianca": "alta"
+    }
+  ],
+  "reformatacao_estrutural": {
+    "problema": "Não-GRAVE mas violação clara dos pontos 1, 6 e 7 do checklist: o ficheiro de trabalho PT tinha o conteúdo inteiro correto na ordem certa, mas formatado em pouquíssimas linhas físicas gigantes (por vezes um capítulo inteiro + cabeçalhos de transição numa única linha), em vez de um parágrafo por linha como o resto do acervo. Isso não é o mesmo bug de 'monólito' dos 6 livros da Fase Inicial (que não tinham nenhuma divisão), nem o mesmo bug do colapso de testemunhos do 無肥料栽培法 (blocos com autoria própria mesclados) - aqui é um ensaio contínuo (sem testemunhos nomeados), então o risco de perda por mescla é menor, mas ainda assim escondeu os 2 cortes reais acima. Confirmado que a mescla ocorria sobretudo (mas não só) nas transições de capítulo.",
+    "correcao": "Ficheiro totalmente reformatado: 1 parágrafo por linha, alinhado 1:1 com os parágrafos do JP (confirmado parágrafo a parágrafo durante a leitura, não só nas transições). Cabeçalhos de capítulo padronizados para numeração romana consistente (I a XII, com linha em branco antes/depois), substituindo a mistura anterior de estilos (romano I-IV, arábico simples 5/6/8/9/10/11/12, arábico em negrito **5.**/**6.**/**7.**) - nenhum destes capítulos tinha marcação de negrito no JP original, então a padronização para texto plano romano é a mais fiel e consistente com o resto do volume.",
+    "confianca": "alta"
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文) + assinatura + selo editorial",
+      "jp_linhas": "20-35",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "5 parágrafos + assinatura '自観識' + linha de crédito editorial, todos presentes e completos; apenas reformatados (estavam emendados ao cabeçalho de capítulo I)."
+    },
+    {
+      "bloco": "I. 緒言 (Introdução)",
+      "jp_linhas": "37-43",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "5 parágrafos, completos, ordem correta."
+    },
+    {
+      "bloco": "II. キリスト教の起源とその根本観念",
+      "jp_linhas": "46-59",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "11 parágrafos (origem da humanidade até ascetismo cristão primitivo), completos."
+    },
+    {
+      "bloco": "III. キリスト教の発達と神格の変貌",
+      "jp_linhas": "62-89",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Inclui as 5 citações bíblicas de milagres de Jesus (Mateus 8-9); todas conferidas contra o JP, completas, sem truncamento. Reticências '...' verificadas uma a uma - todas correspondem a elisões já presentes no próprio JP (não são cortes)."
+    },
+    {
+      "bloco": "IV. キリスト教とパウロ",
+      "jp_linhas": "92-110",
+      "decisao": "corrigido - 1 truncamento real (correção 1)",
+      "confianca": "alta",
+      "notas": "Lista de sofrimentos de Paulo (2 Coríntios) conferida item a item contra o JP - completa. Citação de Atos 9 (conversão) tinha corte real, corrigido."
+    },
+    {
+      "bloco": "V. 釈迦の生誕と仏教の発展",
+      "jp_linhas": "113-135",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "20 parágrafos, do nascimento de Buda até a expansão do budismo além das fronteiras indianas; todos conferidos, completos."
+    },
+    {
+      "bloco": "VI. 初期小乗仏教時代",
+      "jp_linhas": "138-144",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "5 parágrafos, completos."
+    },
+    {
+      "bloco": "VII. 大乗仏教の全盛時代",
+      "jp_linhas": "147-162",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "14 parágrafos, completos."
+    },
+    {
+      "bloco": "VIII. 密教の興起以後",
+      "jp_linhas": "165-175",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "9 parágrafos, completos."
+    },
+    {
+      "bloco": "IX. 仏教思想の瞥見",
+      "jp_linhas": "178-196",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "16 parágrafos (Takakusu, Inoue, honzon, Kanzeon Bosatsu, Maeda), todos conferidos, completos."
+    },
+    {
+      "bloco": "X. 岡田自観師の宗教",
+      "jp_linhas": "199-221",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "21 parágrafos de doutrina densa (cosmologia, ciência/elétron, dois métodos de apreender a realidade, rejeição do pecado/ignorância fundamentais); todos conferidos frase a frase contra o JP, completos."
+    },
+    {
+      "bloco": "XI. 観音教の死後の世界観",
+      "jp_linhas": "224-231",
+      "decisao": "corrigido - conteúdo de abertura ausente (correção 2)",
+      "confianca": "alta",
+      "notas": "Resto do capítulo (espíritos da natureza, kiyūrei, raposa/kitsune, poderes do Mestre) conferido e completo."
+    },
+    {
+      "bloco": "XII. 結論 (incl. citação de Hayashi Tomojirō e fecho editorial)",
+      "jp_linhas": "234-266",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "21 parágrafos de epistemologia (percepção vs mundo perceptível, ciência, elétron) + citação longa de Hayashi Tomojirō conferida frase a frase; todos completos. Colofão de publicação (JP 271-280, ficha técnica/editora) não traduzido no corpo - consistente com a convenção já usada no resto do acervo (dados já capturados nos campos de metadado no topo do ficheiro)."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Os 2 cortes reais de conteúdo encontrados foram corrigidos inline com confiança alta. O colapso de paragrafação foi corrigido em todo o volume (não apenas nos pontos onde havia perda de conteúdo). Sem CJK residual, sem truncamento remanescente, sem duplicação, ordem dos 12 capítulos + prefácio confirmada correta e igual ao JP."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. Sem termos de risco do glossário. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

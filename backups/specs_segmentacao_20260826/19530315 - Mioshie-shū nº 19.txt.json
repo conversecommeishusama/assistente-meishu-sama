@@ -1,0 +1,96 @@
+{
+ "filename": "19530315 - Mioshie-shū nº 19.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9 (序文 fundido no art2, sem corpo PT próprio). PT pairing resolvido.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "session",
+   "title_jp": "御教え集第十九号／二月五日（立春祭御教え）",
+   "title_pt": "Mioshie-shū nº 19 / 5 de fevereiro (Ensinamento do Risshun-sai)",
+   "jp_anchor": "御教え集第十九号",
+   "pt_anchor": "Mioshie-shū nº 19",
+   "notes": "",
+   "pt_prefix": "5 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月六日",
+   "title_pt": "6 de fevereiro",
+   "jp_anchor": "二月六日",
+   "pt_anchor": "6 de fevereiro",
+   "notes": "",
+   "pt_prefix": "6 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月七日",
+   "title_pt": "7 de fevereiro",
+   "jp_anchor": "二月七日",
+   "pt_anchor": "7 de fevereiro",
+   "notes": "",
+   "pt_prefix": "7 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十五日",
+   "title_pt": "15 de fevereiro",
+   "jp_anchor": "二月十五日",
+   "pt_anchor": "15 de fevereiro",
+   "notes": "",
+   "pt_prefix": "15 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十六日",
+   "title_pt": "16 de fevereiro",
+   "jp_anchor": "二月十六日",
+   "pt_anchor": "16 de fevereiro",
+   "notes": "",
+   "pt_prefix": "16 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十七日",
+   "title_pt": "17 de fevereiro",
+   "jp_anchor": "二月十七日",
+   "pt_anchor": "17 de fevereiro",
+   "notes": "",
+   "pt_prefix": "17 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十五日",
+   "title_pt": "25 de fevereiro",
+   "jp_anchor": "二月二十五日",
+   "pt_anchor": "25 de fevereiro",
+   "notes": "",
+   "pt_prefix": "25 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十六日",
+   "title_pt": "26 de fevereiro",
+   "jp_anchor": "二月二十六日",
+   "pt_anchor": "26 de fevereiro",
+   "notes": "",
+   "pt_prefix": "26 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十七日",
+   "title_pt": "27 de fevereiro",
+   "jp_anchor": "二月二十七日",
+   "pt_anchor": "27 de fevereiro",
+   "notes": "",
+   "pt_prefix": "27 de fevereiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

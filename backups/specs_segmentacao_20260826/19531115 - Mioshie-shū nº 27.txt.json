@@ -1,0 +1,95 @@
+{
+ "filename": "19531115 - Mioshie-shū nº 27.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十七号",
+   "pt_anchor": "Mioshie-shū nº 27",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月六日",
+   "title_pt": "6 de outubro",
+   "jp_anchor": "十月六日",
+   "pt_anchor": "6 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "6 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月七日",
+   "title_pt": "7 de outubro",
+   "jp_anchor": "十月七日",
+   "pt_anchor": "7 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "7 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十五日",
+   "title_pt": "15 de outubro",
+   "jp_anchor": "十月十五日",
+   "pt_anchor": "15 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "15 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十六日",
+   "title_pt": "16 de outubro",
+   "jp_anchor": "十月十六日",
+   "pt_anchor": "16 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "16 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十七日",
+   "title_pt": "17 de outubro",
+   "jp_anchor": "十月十七日",
+   "pt_anchor": "17 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "17 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十五日",
+   "title_pt": "25 de outubro",
+   "jp_anchor": "十月二十五日",
+   "pt_anchor": "25 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "25 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十六日",
+   "title_pt": "26 de outubro",
+   "jp_anchor": "十月二十六日",
+   "pt_anchor": "26 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "26 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十七日",
+   "title_pt": "27 de outubro",
+   "jp_anchor": "十月二十七日",
+   "pt_anchor": "27 de outubro",
+   "notes": "2026-08-05 uniformizacao (decisao do usuario): ancora repontada do corpo para o cabecalho de data; antes o cabecalho vazava para o fim do artigo anterior no indice servido.",
+   "pt_prefix": "27 de outubro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

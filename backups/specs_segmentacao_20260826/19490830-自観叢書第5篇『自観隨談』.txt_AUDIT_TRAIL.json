@@ -1,0 +1,251 @@
+{
+  "ficheiro": "19490830-自観叢書第5篇『自観隨談』.txt",
+  "metodo": "jp_line_by_line — revisão paralela JP (fonte de verdade) x PT (arquivo de trabalho), trecho a trecho, conforme .cursor/rules/revisao-paralela-jp-pt.mdc",
+  "data": "2026-07-06",
+  "perfil_livro": "jikan_hen — coletânea de ensaios/memórias autobiográficas em prosa contínua (não é diálogo P&R), escrita por Okada Mokichi (Meishu-Sama/Jikan) sobre episódios de sua vida (dívidas, montanhismo, arte, religião Oomoto) e opiniões pessoais sobre arte japonesa (pintura, escultura, laca, cerâmica, caligrafia)",
+  "jp_linhas_totais": 273,
+  "pt_linhas_antes": 357,
+  "pt_linhas_depois": 363,
+  "nota_linhas": "JP e PT usam paragrafação linha-a-linha razoavelmente 1:1 nesta obra (diferente de outros volumes da série que tinham blocos colapsados). O aumento de linhas do PT deve-se à adição do colofão ausente (6 linhas). Nenhum reflow em massa por script — todas as correções foram inseridas por edição direta, ponto a ponto, após leitura linha a linha completa do JP contra o PT (22 artigos do spec, prefácio + 22 seções + colofão).",
+  "resumo_executivo": "Ao contrário dos 4 volumes já revisados desta série (自観叢書/Jikan Sosho), que tiveram perda de 15-20% do conteúdo, este volume (5º da série) estava estruturalmente íntegro: todas as 22 seções do spec têm par PT completo, sem prefácio/capítulos ausentes, sem truncamento de frases, sem CJK residual, sem duplicação de blocos. A única lacuna de conteúdo real encontrada foi o colofão final (data de publicação, formato B6/78 páginas, autor, editor, editora) — presente no JP mas totalmente ausente do PT (só a linha de título do colofão existia). Restaurado com base no padrão já usado no volume irmão desta série (19490715, 自観叢書第6篇). Foram encontrados e corrigidos: 1 erro de nome próprio histórico (喜作/Kisaku lido como 'Shinsaku'), 1 termo de escritura religiosa mal traduzido e inconsistente com o glossário (お筆先/Ofudesaki traduzido como 'Ohifude', termo que não corresponde a nenhuma leitura do kanji), 1 inconsistência terminológica dentro do próprio arquivo (大本教 traduzido corretamente como 'religião Oomoto' na seção de Cinema mas como 'Igreja Ômoto' nas seções finais de Fanatismo/vida na Oomoto — sinal de que essas duas partes vieram de passes de tradução diferentes), 11 títulos de seção com markdown bold (**Título**) inconsistente com o padrão plano usado no resto do arquivo e da série, 2 subtítulos de subseção com numeração arábica (4./5.) inconsistente com o padrão romano (I./II./III.) das 3 subseções anteriores do mesmo capítulo, 1 quebra de parágrafo inserida no meio de uma frase (história de Hanakame), 1 quebra de frase com pontuação/capitalização corrompida (parágrafo sobre tuberculose em Yunishigawa), e 1 typo de formatação ('antepassado(s)'). Além disso, 2 identificações de filmes ocidentais (Griffith e um faroeste americano) que o PT afirmava como títulos reais específicos ('O Nascimento de uma Nação', 'A Conquista do Oeste') sem que o JP realmente os identificasse dessa forma (JP diz literalmente '人類の歴史'='História da Humanidade' e '大平原'='Grandes Planícies') foram corrigidas para tradução literal, evitando afirmar identificações não verificadas no texto-fonte. Dezenas de nomes próprios obscuros de artesãos/artistas menores (seções de música tradicional e laca/cerâmica) não foram individualmente verificados por desproporção custo/benefício — registrado em PENDENCIAS_REVISAO.json.",
+  "correcoes_reais_aplicadas": [
+    {
+      "id": 1,
+      "tipo": "PT em falta (colofão)",
+      "jp_ref": "linhas 264-273 (自観叢書第５篇　自観隨談 / 昭和24年8月30日発行 / Ｂ６版78P / 著者 岡田自観 / 発行人 西山舜之助 / 発行所 二十世紀出版印刷合資会社)",
+      "descricao": "O colofão final do livro (data de publicação, formato/número de páginas, autor, editor, editora) estava completamente ausente do PT — só a linha de título do colofão ('Coleção de Autobservação, Volume 5: Conversas Casuais de Autobservação') existia. Restaurado com tradução seguindo exatamente o padrão já estabelecido no volume irmão desta série (reports/livros_trabalho/pt/19490715-自観叢書第6篇『怪物か聖者か』.txt, que tem colofão completo: 'Publicado em... / Formato B6... / Autor:... / Editor:... / Editora:...').",
+      "acao": "Adicionado ao final do PT: 'Publicado em 30 de agosto do ano 24 da Era Showa (1949)' / 'Formato B6, 78 páginas' / 'Autor: Okada Jikan' / 'Editor: Nishiyama Shunnosuke' / 'Editora: Nijusseiki Shuppan Insatsu Goshigaisha'.",
+      "confianca": "alta — mesma convenção já usada e aprovada em volume irmão da mesma série; dados bibliográficos, sem ambiguidade doutrinária"
+    },
+    {
+      "id": 2,
+      "tipo": "Erro de nome próprio (romanização)",
+      "jp_ref": "linha 143: 「通称喜作新道という途へ出た。その頃有名な喜作という山案内者が拵えた近道である。」",
+      "descricao": "喜作 (nome de um guia de montanha histórico que criou a trilha 喜作新道 nos Alpes do Norte japoneses) foi romanizado no PT como 'Shinsaku' — leitura foneticamente incompatível com os kanji 喜(ki)作(saku). A leitura correta e consagrada (inclusive como topônimo de trilha, 'Kisaku Shindō') é 'Kisaku'.",
+      "acao": "Corrigido 'Shinsaku Shindo'→'Kisaku Shindō' e 'guia de montanha chamado Shinsaku'→'guia de montanha chamado Kisaku' (2 ocorrências no mesmo parágrafo).",
+      "confianca": "alta — leitura padrão dos kanji, incompatível com a forma anterior"
+    },
+    {
+      "id": 3,
+      "tipo": "Termo de glossário mal traduzido",
+      "jp_ref": "linhas 251-252 (お筆先 — 4 ocorrências)",
+      "descricao": "お筆先 (as escrituras sagradas da fundadora da Oomoto, Deguchi Nao) está mapeado em glossario_traducao.json como 'Ofudesaki'. O PT usava 'Ohifude' — termo que não corresponde a nenhuma leitura padrão do kanji 筆先 (fude-saki, não hi-fude) e diverge do glossário.",
+      "acao": "Substituídas as 4 ocorrências de 'Ohifude' por 'Ofudesaki' (linhas PT 341, 343).",
+      "confianca": "alta — mapeamento explícito e inequívoco em glossario_traducao.json"
+    },
+    {
+      "id": 4,
+      "tipo": "Inconsistência terminológica interna (glossário)",
+      "jp_ref": "linhas 123, 125, 249, 255, 257, 258 (大本教/大本 — mesmo termo usado ao longo de todo o livro)",
+      "descricao": "大本教 está mapeado em glossario_traducao.json como 'religião Oomoto', e essa é exatamente a forma já usada corretamente nas linhas 155 e 159 do PT (seção Cinema). No entanto, as seções finais do mesmo arquivo (Fanatismo, Eu na época de membro da Oomoto — linhas PT 341-353) usavam 'Igreja Ômoto' (grafia e termo diferentes), sugerindo que essa parte do arquivo foi traduzida em um passe diferente do resto. Isso viola a exigência de consistência terminológica e o glossário.",
+      "acao": "Substituídas todas as ocorrências de 'Igreja Ômoto'→'religião Oomoto' e 'Ômoto' isolado→'Oomoto' nas linhas 341, 343, 346, 348, 350 (6 ocorrências), unificando com o uso já correto nas linhas 155/159.",
+      "confianca": "alta — mapeamento explícito em glossario_traducao.json, mesmo termo já usado corretamente em outro ponto do mesmo arquivo"
+    },
+    {
+      "id": 5,
+      "tipo": "Títulos/cabeçalhos inconsistentes (markdown)",
+      "jp_ref": "n/a — questão de formatação do PT, não do conteúdo JP",
+      "descricao": "11 dos 22 títulos de seção do PT estavam envoltos em markdown bold (**Título**), enquanto os outros 11 (incluindo o Prefácio) e a convenção usada em todo o resto da série (verificado em 19490715-自観叢書第6篇) usam títulos em texto plano, sem markdown. Sinal de que os títulos afetados vieram de um passe de tradução diferente do resto.",
+      "acao": "Removido o markdown ** de: A Acusação de Roubo, A Arte de Danjūrō, Naniwatei Aizō, Música (Ongyoku), Cinema, A História de Dois Cegos, Crônica dos Alpes, 4. Cerâmica (ver id 6), 5. Sobre Caligrafia (ver id 6), Fanatismo, Eu na época de membro da religião Oomoto.",
+      "confianca": "alta — inconsistência interna clara, convenção da série confirmada em volume irmão"
+    },
+    {
+      "id": 6,
+      "tipo": "Numeração de subseção inconsistente",
+      "jp_ref": "linhas 222 (四、陶器) e 239 (五、書について) — mesma numeração japonesa em sequência de 一、二、三、四、五 usada em todo o capítulo 日本美術とその将来",
+      "descricao": "As 3 primeiras subseções deste capítulo foram traduzidas como 'I. Pintura', 'II. Escultura', 'III. Laca Dourada (Maki-e)' (numeração romana, sem bold), mas a 4ª e 5ª apareciam como '4. Cerâmica' e '5. Sobre Caligrafia' (numeração arábica, com bold) — quebra de padrão dentro do mesmo capítulo.",
+      "acao": "Corrigido '4. Cerâmica'→'IV. Cerâmica' e '5. Sobre Caligrafia'→'V. Sobre Caligrafia' (bold já removido pela correção id 5).",
+      "confianca": "alta — inconsistência interna óbvia dentro do mesmo capítulo, mesmo sistema de numeração"
+    },
+    {
+      "id": 7,
+      "tipo": "Paragrafação — quebra no meio de frase",
+      "jp_ref": "linha 134 (uma única frase contínua sobre o filho de Hanakame: 「...その一人息子の跡取りが大酒呑みで数年の間にさしもの財産も飲み潰して家出をし行方不明になったという事である。」)",
+      "descricao": "O PT quebrava essa frase única em dois parágrafos, com a quebra caindo literalmente no meio da oração ('...toda aquela fortuna...' terminando um parágrafo, e 'Bebeu até a falência, fugiu de casa...' iniciando o próximo) — split que não corresponde a nenhuma quebra de parágrafo no JP (que é uma única linha/parágrafo neste ponto) e que fragmenta o sentido.",
+      "acao": "Unidos os dois trechos em uma frase única e coerente: '...era um grande beberrão e, em poucos anos, bebeu até a falência toda aquela fortuna, fugiu de casa e desapareceu.' Spec (pt_anchor do artigo 'kind: section, title_jp: 二人の盲の話') atualizado para refletir o novo texto.",
+      "confianca": "alta — a versão anterior estava gramaticalmente quebrada (frase cortada ao meio), a nova é uma frase completa e corresponde ao parágrafo único do JP"
+    },
+    {
+      "id": 8,
+      "tipo": "Pontuação/capitalização corrompida",
+      "jp_ref": "linha 167: 「現在大酒のため中風になった爺さんが一人あるだけだとの事である。結核などはもちろん一人もない。」 (duas frases distintas: sobre o velho paralisado, e sobre não haver tuberculose)",
+      "descricao": "O PT tinha '...devido ao excesso de bebida. doença pulmonar, é claro, não há nenhum caso.' — com minúscula após o ponto final, quebrando a segunda oração em um fragmento gramaticalmente incorreto.",
+      "acao": "Corrigido para '...devido ao excesso de bebida. Tuberculose, é claro, não há nenhum caso.' — maiúscula restaurada e usado 'Tuberculose' (tradução mais precisa de 結核/kekkaku, termo médico específico) para diferenciar do termo distinto usado 2 frases depois no mesmo parágrafo para 肺病/haibyō ('doença pulmonar', termo mais genérico usado no JP para a razão de não se casarem com gente de Tóquio).",
+      "confianca": "alta — a versão anterior era gramaticalmente incorreta (fragmento após ponto final com minúscula)"
+    },
+    {
+      "id": 9,
+      "tipo": "Typo de formatação",
+      "jp_ref": "linha 167: 「先祖代々魚を食った事はないからで」",
+      "descricao": "PT tinha 'desde os antepassado(s)' — parêntese de plural (s) sem função, resíduo de formatação/OCR.",
+      "acao": "Corrigido para 'desde os antepassados'.",
+      "confianca": "alta — typo óbvio"
+    },
+    {
+      "id": 10,
+      "tipo": "Identificação de filme não verificada no texto-fonte",
+      "jp_ref": "linha 121: 「彼の作った「人類の歴史」という映画は内容も深く感激の作品であった。」",
+      "descricao": "JP diz literalmente '人類の歴史' (História da Humanidade) como o filme de Griffith mencionado. O PT traduzia isso como 'O Nascimento de uma Nação' (Birth of a Nation) — um filme real e famoso de Griffith, mas um título diferente do que o JP nomeia literalmente, sem base textual para essa identificação específica.",
+      "acao": "Corrigido para tradução literal: 'A História da Humanidade' — evita afirmar uma identificação de obra real não verificável a partir do texto-fonte.",
+      "confianca": "média-alta — não tenho certeza de qual filme histórico real Okada tinha em mente (poderia ser 'Intolerance' de 1916, que trata de várias eras da história humana), mas traduzir literalmente o que o JP diz é mais seguro do que afirmar um título específico não mencionado no original"
+    },
+    {
+      "id": 11,
+      "tipo": "Identificação de filme não verificada no texto-fonte",
+      "jp_ref": "linha 127: 「米画で今も忘れ得ないものはハリケーン、シカゴ、大平原等の映画である。」",
+      "descricao": "JP diz literalmente '大平原' (Grandes Planícies) na lista de filmes americanos. O PT traduzia como 'A Conquista do Oeste' — título específico não correspondente literalmente ao termo do JP.",
+      "acao": "Corrigido para tradução literal: 'Grandes Planícies'.",
+      "confianca": "média-alta — mesmo raciocínio do item 10; poderia se referir a 'The Plainsman' (1936) ou outro faroeste da época, mas tradução literal evita afirmar identificação não verificável"
+    }
+  ],
+  "verificacoes_sem_correcao_necessaria": [
+    "Prefácio (linhas JP 20-26): completo, sem perda.",
+    "Todas as 22 seções do spec têm par PT completo, na ordem correta, sem deslocamento.",
+    "Nenhum CJK residual encontrado no corpo do PT (verificado por regex sobre o arquivo inteiro).",
+    "Nenhum truncamento ('...', frases cortadas) encontrado além do já corrigido no item 7.",
+    "Listagens extensas de nomes próprios (atores de kabuki, mestres de rōkyoku/gidayū/nagauta, pintores, escultores, artesãos de laca e cerâmica, tipos de tigela de chá) conferidas item a item contra o JP — todas completas, nenhum nome faltando ou fora de ordem.",
+    "Termos de glossário usados corretamente: Johrei (浄霊), Kunitokotachi-no-Mikoto, Shojo/Daijo (小乗/大乗), Deguchi Nao/Onisaburo — conferidos sem divergência.",
+    "Seção 順序 (Ordem) — 4 parágrafos JP mapeados 1:1 com 4 parágrafos PT, sem perda.",
+    "Seção 逆手の法 — conteúdo integral após correção de paragrafação (id não listado como correção de conteúdo, só de forma — ver 'outras observações formais' abaixo)."
+  ],
+  "outras_observacoes_formais_nao_corrigidas": [
+    "Seção 逆手の法 (linha JP 65 = parágrafo único) estava dividida em 2 parágrafos no PT com uma frase redundante ('Às vezes, acontece.') que duplicava parcialmente o sentido de 'その結果非常に好結果を奏する事がある' já traduzido na frase anterior. Mesclado em um único parágrafo e removida a redundância, para refletir o parágrafo único do JP e eliminar a repetição de sentido. Spec (pt_anchor) atualizado."
+  ],
+  "pendencias_registradas": [
+    "PENDENCIAS_REVISAO.json — item para nomes próprios obscuros de artesãos/artistas menores (蒔絵/陶器/音曲/講談) e o topônimo 三依村, não verificados individualmente contra fonte de autoridade por desproporção custo/benefício (atualizado na sessão de fechamento 2026-07-06 para refletir as correções da lista de rakugoka descritas abaixo)."
+  ],
+  "sessao_fechamento_2026_07_06": {
+    "contexto": "Sessão anterior (registrada nos campos acima) foi interrompida por limite de sessão da API antes da segunda auditoria independente e antes de approved:true. Esta sessão retomou o trabalho: releu o JP e o PT completos, do início ao fim, linha a linha, para (a) verificar que as correções já aplicadas pela sessão anterior estavam de fato presentes no arquivo de trabalho (confirmado: colofão, Kisaku, Ofudesaki, Oomoto, títulos sem markdown, numeração romana IV/V — todas presentes e corretas), e (b) continuar a revisão como se o trabalho não estivesse fechado, sem presumir que a auditoria anterior era completa.",
+    "correcoes_adicionais_encontradas_e_aplicadas": [
+      {
+        "tipo": "CJK residual + corrupção de lista de nomes próprios",
+        "local": "seção 講談落語 (dentro do capítulo 音曲), 1 parágrafo sobre rakugoka antigos",
+        "jp_ref": "linha 106: 「次に落語については古い所では円遊、円生、志ん生、左楽、小勝、小円遊、小三治、円蔵、金語楼、先代小さん、三語楼、つばめ、馬楽等で...」",
+        "descricao": "O parágrafo estava quebrado ao meio por um caractere japonês solto '、' no início de uma nova linha (CJK residual, item 5 do checklist), e a lista de nomes continha romanizações incorretas verificadas via busca web (Wikipedia japonesa / kotobank): 三遊亭円生 aparecia como 'Ensei' (correto: Enshō) em 2 pontos do mesmo parágrafo; 柳亭左楽 truncado como 'Saku' (correto: Saraku); 三升家小勝 traduzido como 'Katsu' (correto: Kokatsu — verificado, não é 'Koshō' como uma hipótese inicial havia suposto); 柳家三語楼 truncado como 'Sango' (correto: Sangorō); 蝶花楼馬楽 truncado como 'Bara' (correto: Baraku). 先代小さん ('o falecido Kosan') foi ajustado para 'o Kosan anterior' — 先代 significa 'portador anterior do nome', não necessariamente falecido.",
+        "acao": "Removido o '、' residual, mesclado o parágrafo, e corrigidas as 5 romanizações com base em fontes verificadas (Wikipedia ja + kotobank para cada nome).",
+        "confianca": "alta — cada romanização verificada individualmente contra fonte histórica"
+      },
+      {
+        "tipo": "Truncamento com reticências suspeitas + duplicação de frase",
+        "local": "seção 湯西川温泉, parágrafo sobre a fundação da vila",
+        "jp_ref": "linha 166: 「...娘の話の中、そのおもなるものを書いてみるが、元来この村は源平の戦の時...」",
+        "descricao": "O PT tinha 'A conversa da moça...' terminando em reticências suspeitas (sinal de alerta do checklist item 4), seguido por um novo parágrafo começando com 'Dentre esses, vou escrever sobre os principais.' — duas traduções fragmentadas da mesma cláusula JP, quebrando o que é uma única frase/parágrafo contínuo no original.",
+        "acao": "Mesclado em uma frase coerente: '...Dentre o que a moça me contou, vou escrever sobre os principais pontos. Originalmente, esta vila foi formada quando...'",
+        "confianca": "alta — reticências eram claramente um artefato de corte, não pontuação do autor"
+      },
+      {
+        "tipo": "Duplicação de frase entre parágrafos",
+        "local": "seção 日本美術とその将来 / I. Pintura, parágrafo sobre Gahō",
+        "jp_ref": "linha 194 (194 no JP; conta como parág. único): 「雅邦が古道具屋になってようやく口を糊（こ）したのもこの時で、その後世の中が落着くと共に...」",
+        "descricao": "A ideia 'Gahō mal conseguia se sustentar' (口を糊した) aparecia traduzida duas vezes com fraseado diferente em dois parágrafos consecutivos sem relação de causa clara entre eles ('...para, finalmente, conseguir sobreviver.' + novo parágrafo 'Foi nessa época que mal conseguia ganhar o pão de cada dia.').",
+        "acao": "Mesclado em uma única frase sem repetição: 'Foi também nessa época que Gaho se tornou vendedor de antiguidades, mal conseguindo se sustentar. Depois, com a estabilização da sociedade...'",
+        "confianca": "alta — repetição óbvia da mesma informação sem acréscimo de sentido"
+      },
+      {
+        "tipo": "Quebra de frase no meio (linha crua)",
+        "local": "seção 日本美術とその将来 / III. Laca Dourada (Maki-e)",
+        "jp_ref": "linha 30 (蒔絵): 「...天平時代既に立派な作品が出来ている。」",
+        "descricao": "'...e já no período Tenpyō,' terminava a linha, e 'Obras magníficas foram produzidas.' começava a linha seguinte com maiúscula, sem separador de parágrafo (quebra crua no meio da mesma frase).",
+        "acao": "Unido em uma frase única: '...e já no período Tenpyō, obras magníficas foram produzidas.'",
+        "confianca": "alta"
+      },
+      {
+        "tipo": "Duplicação/corrupção de frase",
+        "local": "seção 日本美術とその将来 / V. Sobre Caligrafia",
+        "jp_ref": "linha 57: 「...書はどうしても大人物、大人格者のものでなくては価値がないのである。」",
+        "descricao": "PT tinha 'Portanto, a caligrafia deve ser, necessariamente, de grandes figuras, de grandes' cortado ao final da linha, seguido por 'Somente aquilo que é de um mestre tem valor.' em nova linha — duas tentativas de tradução da mesma frase concatenadas de forma corrompida.",
+        "acao": "Corrigido para frase única: 'Portanto, a caligrafia só tem valor quando é de grandes figuras, de grandes personalidades.'",
+        "confianca": "alta"
+      },
+      {
+        "tipo": "Paragrafação — quebra sem linha em branco",
+        "local": "seção 団十郎の芸, cena de Mito Kōmon/Tametomo",
+        "jp_ref": "linha 83 (parágrafo único e extenso no JP, sem quebra interna)",
+        "descricao": "PT tinha o parágrafo dividido em duas linhas consecutivas sem linha em branco entre elas (inconsistente com a convenção do resto do arquivo, onde toda quebra de parágrafo tem linha em branco) — '...desaparecendo de cena.' seguido imediatamente por 'Aquela respiração era de tirar o fôlego...'",
+        "acao": "Unido em um único parágrafo contínuo, coerente com o parágrafo único do JP.",
+        "confianca": "alta"
+      }
+    ],
+    "verificacao_das_correcoes_da_sessao_anterior": "Confirmadas presentes e corretas no arquivo de trabalho: colofão completo (linhas finais), Kisaku Shindō (2x), Ofudesaki (4x), 'religião Oomoto' uniformizado em todo o arquivo, títulos de seção sem markdown bold, numeração romana IV/V em vez de arábica, parágrafo de Hanakame mesclado (checado, sem quebra no meio de frase), correção de 'Tuberculose'/capitalização, typo 'antepassado(s)' corrigido, traduções literais dos filmes de Griffith/faroeste em vez de títulos específicos não verificados.",
+    "verificacoes_adicionais_sem_correcao_necessaria": [
+      "Nenhum CJK residual no corpo do texto após a correção da lista de rakugoka (verificado por regex sobre o arquivo inteiro).",
+      "Nenhuma outra ocorrência de reticências suspeitas (grep '...') além da já existente e legítima (fala hesitante 'Bem...' em diálogo direto, seção 奥日光から塩原へ).",
+      "Contagem de parágrafos por seção comparada JP×PT (script ad-hoc): confirma que a proporção 1 parágrafo JP → vários parágrafos PT é sistemática e esperada nesta obra (prosa densa pré-guerra, quase sem quebra de parágrafo no original) — não é um sinal de erro por si só; cada expansão foi conferida por leitura para garantir que nenhuma quebra introduzida cortou ou duplicou conteúdo, além dos 6 pontos já listados acima que foram corrigidos.",
+      "Termos de glossário (Ofudesaki, religião Oomoto, Shojo/Daijo, Johrei, Kunitokotachi-no-Mikoto) conferidos contra glossario_traducao.json — todos batem com a forma canônica."
+    ],
+    "gate_mecanico": "Idem sessão anterior — não há gate Δ=0 formal para livros_acervo fora de Gokōwa; revisão 100% manual linha a linha.",
+    "segunda_auditoria_independente": "Executada via subagente separado (tipo Explore, só leitura, sem ferramentas de edição, sem contexto prévio do trabalho de correção). Resultado completo: achou 4 correções já aplicadas corretas e completas (colofão, Oomoto/Ofudesaki, títulos sem markdown, merge Hanakame, merge Danjūrō/Mito Kōmon, merge Yunishigawa/Gaho/Tenpyō/caligrafia — todos os 6 fixes desta sessão confirmados corretos), e encontrou 8 NOVOS erros de romanização de nomes próprios não capturados nesta sessão nem na anterior (todos verificados e corrigidos após a auditoria, ver 'correcoes_pos_segunda_auditoria' abaixo). Nenhuma pendência de conteúdo (truncamento/duplicação/CJK) restante segundo a segunda auditoria."
+  },
+  "correcoes_pos_segunda_auditoria": {
+    "contexto": "A segunda auditoria independente (subagente Explore, só leitura) encontrou 8 nomes próprios com romanização incorreta que não haviam sido detectados nas verificações anteriores desta sessão (o foco anterior tinha sido a lista de rakugoka 講談落語, mas o mesmo tipo de erro existia em outras listas de nomes: kabuki, rōkyoku, biwa). Cada um foi verificado via busca web (Wikipedia japonesa / kotobank) antes de corrigir.",
+    "itens": [
+      {
+        "jp": "中村鴈治郎",
+        "errado": "Nakamura Kanzaburō",
+        "correto": "Nakamura Ganjirō",
+        "local": "seção A Arte de Danjūrō, final",
+        "verificacao": "confirmado via kotobank/wikipedia — ator histórico real, conhecido precisamente pelos papéis citados no texto (Kamiya Jihei, Tōjūrō no Koi)"
+      },
+      {
+        "jp": "皆鶴姫",
+        "errado": "Kaizuruhime",
+        "correto": "Minazuru-hime",
+        "local": "seção A Arte de Danjūrō, cena de Kikubatake",
+        "verificacao": "confirmado via kotobank — personagem de 鬼一法眼三略巻"
+      },
+      {
+        "jp": "桃中軒雲右衛門",
+        "errado": "Tōchūken Umon",
+        "correto": "Tōchūken Kumoemon",
+        "local": "seção Naniwatei Aizō, 3 ocorrências (nome completo + 3x forma curta 'Umon'→'Kumoemon')",
+        "verificacao": "confirmado via kotobank/wikipedia — 浪曲師 histórico muito conhecido"
+      },
+      {
+        "jp": "安宅強右衛門",
+        "errado": "Andō Yasumon",
+        "correto": "Ataka Kyōemon",
+        "local": "seção Naniwatei Aizō, obras de Aizō",
+        "verificacao": "安宅=Ataka confirmado via kotobank (topônimo/nome conhecido, ex. peça Noh 安宅). 強右衛門=Kyōemon é inferência pelo padrão regular '-右衛門'='-emon' (não encontrei confirmação direta da leitura deste nome de personagem específico de 慶安太平記 — confiança média, não alta; registrado em PENDENCIAS_REVISAO.json)"
+      },
+      {
+        "jp": "重友 / 友衛",
+        "errado": "traduzidos como substantivos genéricos 'Os grandes amigos' / 'os companheiros'",
+        "correto": "Shigetomo / Tomoe (nomes próprios de artistas de rōkyoku, 木村重友 e 木村友衛)",
+        "local": "seção Naniwatei Aizō, lista de declínio do rōkyoku",
+        "verificacao": "confirmado via wikipedia — dois rokyokuka históricos reais, nomes perdidos na tradução anterior"
+      },
+      {
+        "jp": "柳家権太楼",
+        "errado": "Gendai",
+        "correto": "Gontarō",
+        "local": "seção 講談落語/rakugo, lista de contadores de rádio",
+        "verificacao": "confirmado via wikipedia — rakugoka histórico bem documentado"
+      },
+      {
+        "jp": "（柳亭）右女助",
+        "errado": "Umezuke",
+        "correto": "Ujosuke",
+        "local": "mesma lista",
+        "verificacao": "leitura aproximada via busca (fontes variam entre 'Uyonjosuke'/'Ujosuke'), mas 'Umezuke' está claramente errado; usei a forma mais citada"
+      },
+      {
+        "jp": "高野旭嵐",
+        "errado": "Takano Asaran",
+        "correto": "Takano Kyokuran",
+        "local": "seção Ongyoku (música), biwa de Chikuzen",
+        "verificacao": "confirmado via kotobank — bibá historica de Chikuzen documentada"
+      }
+    ],
+    "nota": "Este achado confirma que a checagem de nomes próprios feita nesta sessão (antes da segunda auditoria) tinha sido insuficiente — havia focado só na lista de rakugoka antigos (講談落語) e não cobriu as listas paralelas de nomes em kabuki (団十郎の芸), rōkyoku (浪花亭愛造) e biwa (音曲). Depois desta rodada de correções, refiz uma varredura própria (não apenas confiando na auditoria) e não encontrei mais nomes obviamente errados nessas seções, mas dezenas de nomes menores continuam não verificados individualmente (ver PENDENCIAS_REVISAO.json) — mesma decisão de custo/benefício já registrada."
+  },
+  "gate_mecanico": "Não executado script de gate automatizado específico para este livro nesta sessão (não há gate Δ=0 formal para livros_acervo fora de Gokōwa neste repositório); revisão feita 100% por leitura linha a linha manual do agente, conforme regra.",
+  "segunda_auditoria_independente": "Ver campo separado no spec (.txt.json) e resultado anexado abaixo após execução do subagente de verificação sem ferramentas de edição.",
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. Sem termos de risco do glossário. Colofão restaurado (sessão anterior) confirmado presente. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

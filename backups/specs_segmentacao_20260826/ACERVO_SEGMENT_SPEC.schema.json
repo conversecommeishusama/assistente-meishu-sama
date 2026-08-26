@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://goshinsho.local/schemas/acervo-segment-spec/1.0",
+  "title": "Acervo segment spec (JP-first)",
+  "description": "Especificação de segmentação lógica JP, metadados, topics e chunks estruturais para tradução/revisão (Acervo Studio) e indexação (Goshinsho).",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "filename",
+    "profile",
+    "method",
+    "articles"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Versão do schema; incrementar quando campos obrigatórios mudarem."
+    },
+    "filename": {
+      "type": "string",
+      "description": "Nome do ficheiro work JP/PT (ex. 19490108-御光話録2号.txt)."
+    },
+    "entry_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$",
+      "description": "ID do artigo/livro em entries.jsonl."
+    },
+    "profile": {
+      "type": "string",
+      "description": "Perfil de parsing (ex. gokowa_roku_qa, livros_monolith, periodicos_article)."
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "jp_line_by_line",
+        "manual_anchor",
+        "auto_split_reviewed"
+      ],
+      "description": "Como as fronteiras foram definidas."
+    },
+    "segmentation_pass": {
+      "type": "string",
+      "description": "Identificador da passagem de segmentação (ex. jp_line_v2)."
+    },
+    "split_method": {
+      "type": "string",
+      "description": "Heurística usada (ex. line_gokowa_date, jp_line_split)."
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Fronteiras e topics aprovados para pipeline downstream."
+    },
+    "editor_notes": {
+      "type": "string"
+    },
+    "audited_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "audit_method": {
+      "type": "string"
+    },
+    "source_jp_path": {
+      "type": "string",
+      "description": "Caminho relativo ao root do acervo do ficheiro JP de referência."
+    },
+    "articles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/segment"
+      }
+    }
+  },
+  "$defs": {
+    "line_range": {
+      "type": "object",
+      "required": ["start", "end"],
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Linha inicial (1-based) no ficheiro work JP."
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Linha final (1-based, inclusiva) no ficheiro work JP."
+        }
+      }
+    },
+    "topic": {
+      "type": "object",
+      "required": ["id", "label_pt", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "description": "Slug estável para filtros de busca."
+        },
+        "label_pt": {
+          "type": "string",
+          "description": "Rótulo legível em português."
+        },
+        "label_jp": {
+          "type": "string",
+          "description": "Termo japonês de referência, se aplicável."
+        },
+        "source": {
+          "type": "string",
+          "enum": ["glossary", "manual", "llm", "rule"],
+          "description": "Origem da atribuição do assunto."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confiança (1.0 = validado humano)."
+        }
+      }
+    },
+    "dialogue_stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "jp_interlocutor": { "type": "integer", "minimum": 0 },
+        "jp_meishu": { "type": "integer", "minimum": 0 },
+        "jp_narration": { "type": "integer", "minimum": 0 },
+        "pt_interlocutor": { "type": "integer", "minimum": 0 },
+        "pt_meishu": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "required": [
+        "segment_index",
+        "kind",
+        "structural_chunk_id",
+        "line_range_jp",
+        "title_jp",
+        "jp_anchor"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "segment_index": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Ordem zero-based dentro do ficheiro."
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "preface",
+            "session",
+            "chapter",
+            "article",
+            "lecture",
+            "poem",
+            "psalm",
+            "prayer",
+            "section",
+            "theme",
+            "tail",
+            "monolith"
+          ],
+          "description": "Tipo lógico do trecho (oral ou escrito)."
+        },
+        "structural_chunk_id": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+/[^/]+$",
+          "description": "ID estável: {entry_id_ou_stem}/{kind}/{índice}."
+        },
+        "line_range_jp": {
+          "$ref": "#/$defs/line_range"
+        },
+        "title_jp": { "type": "string" },
+        "title_pt": { "type": "string" },
+        "jp_anchor": {
+          "type": "string",
+          "description": "Substring única no JP que marca o início do trecho."
+        },
+        "pt_anchor": {
+          "type": "string",
+          "description": "Substring correspondente no PT (após pareamento)."
+        },
+        "pt_prefix": {
+          "type": "string",
+          "description": "Cabeçalho PT curto (ex. data da sessão)."
+        },
+        "date_jp": {
+          "type": "string",
+          "description": "Data em formato JP quando kind=session."
+        },
+        "date_iso": {
+          "type": "string",
+          "format": "date",
+          "description": "Data ISO 8601 inferida (ex. 1948-11-28)."
+        },
+        "topics": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/topic" },
+          "maxItems": 12,
+          "description": "Assuntos principais do trecho para busca e metadados."
+        },
+        "entities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Entidades/nomes-chave mencionados (JP ou PT)."
+        },
+        "dialogue_stats": {
+          "$ref": "#/$defs/dialogue_stats"
+        },
+        "notes": { "type": "string" },
+        "topics_status": {
+          "type": "string",
+          "enum": ["draft", "reviewed", "approved"],
+          "default": "draft"
+        }
+      }
+    }
+  }
+}

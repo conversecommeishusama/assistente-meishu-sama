@@ -1,0 +1,180 @@
+{
+  "filename": "19520420-御教え集8号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 708 linhas / PT 282 linhas após correções, era 295 antes), spec profile 'mioshie_shu' com 11 trechos (datas) dentro de um único bloco === ARTIGO === no JP. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data: 5(prefácio)/6/7/15/16/17/23/24/25/26/27 de março.",
+  "alerta_familia": "Livro da família 御教え集/御垂示録 (1-7号 já revisados nesta sessão, todos com achados reais). Ratio JP:PT bruto de ~2.4:1 chamou atenção, mas — conforme regra 'Δ=0 nunca é suficiente' — a causa raiz encontrada aqui NÃO foi perda de conteúdo por ratio, e sim um padrão de DUPLICAÇÃO interna: blocos de tradução truncados a meio de frase, seguidos de um segundo (ou terceiro) rascunho que retraduz parte do mesmo trecho já traduzido antes de finalmente prosseguir com conteúdo novo. Esse padrão infla o número de caracteres do PT (por isso o ratio bruto não sinalizava falta), mas ainda assim não é sinal de 'tudo bem' — cada ocorrência foi lida e confirmada manualmente contra o JP.",
+  "summary": {
+    "trechos_em_spec": 11,
+    "trechos_revisados": 11,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Transição 6→7 de março (Tsukada Kanae / 塚田香苗), antiga linha PT ~111-116",
+      "problema": "Monólito residual: após o cabeçalho '7 de março', a pergunta de Tsukada Kanae foi iniciada, truncada a meio de frase ('...e a coluna vertebral...'), seguida por um eco duplicado do FINAL do ensinamento anterior sobre Ashura/arte japonesa (já traduzido, sem correspondente extra no JP - conferido: JP tem essa passagem uma única vez, linha 256, antes do marcador 三月七日 na linha 260) e só depois a mesma pergunta reaparecia completa.",
+      "correcao": "Removido o fragmento truncado e o eco duplicado; mantida uma única versão completa e fiel da pergunta de Kanae Tsukada, com nome padronizado na ordem ocidental (nome+sobrenome) para consistência com o resto do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Caso Takai Rikio (高井力男), pulso fraturado, dentro de '16 de março', antiga linha PT ~191-215",
+      "problema": "Mesmo padrão: diálogo pergunta/resposta traduzido uma primeira vez (parcial, terminando antes da conclusão sobre Salvarsan/sífilis), seguido de uma restatement da pergunta em 1ª pessoa e um SEGUNDO diálogo quase idêntico (mesmas perguntas 'Fica assim (tremendo)?', 'Não fez cirurgia?' etc. com fiação ligeiramente diferente), e só no final desse segundo bloco aparecia a conclusão real (toxina do Salvarsan indo à cabeça / comentário sobre sífilis) — confirmado no JP como existente uma única vez (linhas 494-502).",
+      "correcao": "Eliminado o diálogo duplicado (13 linhas), preservando o primeiro diálogo (mais próximo do JP) e anexando diretamente a conclusão única sobre Salvarsan/sífilis.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Ensinamento longo pós-'16 de março' sobre 'cultura do Su/経緯/力' — trecho sobre situação política de França/Inglaterra (JP linha 630, PT no parágrafo do 'poder')",
+      "problema": "Completude PT: o trecho sobre a Indochina Francesa/Birmânia foi colapsado numa frase truncada e incoerente ('Da Indochina Francesa para venceu, mas, ao contrário, o Japão e a Alemanha estão melhores'), omitindo todo o conteúdo real do JP sobre o exército de Ho Chi Minh, o gasto militar francês, o exército unificado europeu, a ameaça soviética e a crise de primeiros-ministros na França.",
+      "correcao": "Traduzido e inserido o trecho que faltava, com o glossário de nomes próprios já em uso no volume (Ho Chi Minh, Indochina Francesa) preservando o sentido integral do original.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Transição '23 de março'→'24 de março', ensinamento sobre o museu de Hakone/Atami e a montanha do futuro Kōmyōdai",
+      "problema": "Mesmo padrão de monólito residual: o parágrafo de 24 de março termina truncado a meio de frase ('Comprei-a há três ou quatro anos. Exatamente'), e o parágrafo seguinte reabre com um eco parcial do mesmo trecho (árvores de bordo/momiji, ampliação do Salão Nikko, compra da montanha) antes de prosseguir com conteúdo genuinamente novo (nome 'Kōmyōdai', capacidade do templo etc.). Conferido no JP (linha 658): a frase é contínua e única — 'ちょうどケーブルから半町くらいですから、非常に便利です' (= 'fica bem a meio-chō do teleférico, então é muito conveniente'), que efetivamente completa o 'Exatamente' truncado.",
+      "correcao": "Unidas as duas metades no ponto exato de encaixe ('Exatamente' + 'a cerca de meio quarteirão do teleférico, então é muito conveniente'), removendo a reabertura duplicada ('Adquiri aquela montanha há três ou quatro anos.') que antecedia essa continuação.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Dentro de '26 de março', trecho sobre o estacionamento/bilheteria/sala de espera no canto do parque de Gōra",
+      "problema": "Mesmo padrão: o parágrafo é truncado a meio de frase ('Dessa forma, a Terra Divina') e o parágrafo seguinte reabre do zero ('Exatamente — na esquina do parque...') repetindo quase integralmente a descrição do estacionamento, doação/aluguel do terreno, realocação do dormitório e sala de espera, antes de seguir para conteúdo novo (bordos, musgo, contagem de azaleias). Confirmado no JP (linha 686): esse trecho existe uma única vez.",
+      "correcao": "Cortada a duplicação: o primeiro parágrafo foi encerrado logo após a frase sobre o túnel sob o teleférico (ponto onde a duplicação começava), preservando o segundo parágrafo — mais completo — como única versão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Dentro de '27 de março', trecho sobre o parque de Gōra em estilo ocidental / fonte / atrativo turístico",
+      "problema": "Mesmo padrão pela terceira vez no mesmo livro: parágrafo termina em frase completa mas o parágrafo seguinte reabre repetindo quase palavra por palavra a mesma descrição (parque em estilo ocidental, arbustos, flores, fonte, benefício para hospedarias) antes de seguir para conteúdo novo (bordos da casa de chá, musgo, ponte, contagem final de azaleias/ameixeiras, história da mina). Confirmado no JP (linha 703-704): passagem única.",
+      "correcao": "Removida a reabertura duplicada no início do parágrafo seguinte, mantendo apenas a versão já traduzida e prosseguindo diretamente para o conteúdo novo sobre a mina.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_trecho": [
+    {
+      "trecho": "Prefácio + 5 de março (Inoue Noboru até Hasegawa Ishikichi + ensinamento tuberculose/Ashura nº1)",
+      "jp_linhas": "1-108",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Q&A 1:1 completas; ensinamento sobre exposição do Kofuku-ji (1ª menção) fiel."
+    },
+    {
+      "trecho": "6 de março (Watanabe Yoko até Ito Fusako + ensinamento Ashura nº2)",
+      "jp_linhas": "112-256",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Segunda menção da história de Ashura no mesmo dia é repetição autêntica de Meishu-Sama (confirmado: 興福寺 aparece 7x no JP e 7x no PT, contagem idêntica) — não é bug de duplicação."
+    },
+    {
+      "trecho": "6→7 de março (Tsukada Kanae)",
+      "jp_linhas": "256-266",
+      "decisao": "corrigido (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "7 de março (Tsukada Kanae resposta até Kameo Kamemasa + ensinamento nº3 Ashura)",
+      "jp_linhas": "262-316",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Terceira menção de Ashura, mais detalhada — repetição autêntica confirmada."
+    },
+    {
+      "trecho": "15 de março (Imai Shizue, jovem de 18 anos, Okabe Satoko + ensinamento museu Kyoto)",
+      "jp_linhas": "319-354",
+      "decisao": "ok, com fix de formatação de cabeçalho duplicado ('15 de março' aparecia 2x colado)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "16 de março (Fujii Rikichi até Sato Hideko / Uchida Masao / Sakurai Inosuke / Takai Rikio / Aono Minoru)",
+      "jp_linhas": "358-509",
+      "decisao": "corrigido (item 2) + fix de cabeçalho duplicado",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "Ensinamento pós-16 (medicina como superstição / força / política mundial)",
+      "jp_linhas": "512-634",
+      "decisao": "corrigido (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "23 de março (Ensinamento da Grande Festa da Primavera)",
+      "jp_linhas": "637-648",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Parágrafo único e extenso, conferido de ponta a ponta sem truncamento nem duplicação."
+    },
+    {
+      "trecho": "24 de março",
+      "jp_linhas": "652-663",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "25 de março",
+      "jp_linhas": "666-678",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Parágrafo extenso, conferido integralmente sem truncamento; repetições de tópicos (museu, Hakone/Atami) são autênticas retomadas diárias de Meishu-Sama, não duplicação de tradução."
+    },
+    {
+      "trecho": "26 de março",
+      "jp_linhas": "681-693",
+      "decisao": "corrigido (item 5)",
+      "confianca": "alta"
+    },
+    {
+      "trecho": "27 de março (até o fim do volume, incluindo a história da mina de Minakami)",
+      "jp_linhas": "695-708",
+      "decisao": "corrigido (item 6)",
+      "confianca": "alta",
+      "notas": "Conferido até a última linha do JP (fechamento do Johrei); PT termina de forma completa, sem corte."
+    }
+  ],
+  "verificacao_estrutural": {
+    "cabecalhos_data": "Todos os 11 marcadores de data confirmados presentes e na ordem correta (6,7,15,16,17,23,24,25,26,27 de março + prefácio de 5 de março), 2 deles com formatação de cabeçalho duplicado corrigida (15 e 16 de março).",
+    "cjk_residual": "Nenhum ideograma remanescente no corpo do texto (grep confirmou ocorrências só no cabeçalho de metadados do ficheiro, esperado).",
+    "troca_de_falante": "Verificado especificamente por rótulos Interlocutor/Meishu-Sama trocados (padrão do achado #1 da auditoria Gokōwa) — não encontrado neste volume; os diálogos deste 号 usam aspas para o interlocutor e texto corrido para Meishu-Sama, sem inversão detectada.",
+    "duplicacao_de_blocos": "Encontrado e corrigido em 4 pontos distintos (itens 1,2,4,5,6 acima contam 6 correções, sendo 4 delas duplicação de bloco inteiro) — ver 'correcoes_reais_aplicadas'. Padrão consistente: sempre um parágrafo truncado a meio de frase seguido de reabertura duplicada antes do conteúdo novo. Depois de corrigidos, não restam blocos duplicados identificados por leitura linha a linha nem por buscas cruzadas de frases distintivas (nomes próprios, números redondos como 'trezentos e sessenta', 'três mil e seiscentas')."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 6 correções, sem resíduo de duplicação. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc (3 etapas): A) leitura linha a linha do JP completo (708 linhas) para mapear todos os turnos （お伺）/〔御垂示〕 por data, incluindo sub-diálogos embutidos; B) confirmação de que o PT batia 1:1 com o mapa JP (nenhum par faltando — o conteúdo já havia sido fechado na auditoria de 2026-07-07); C) aplicação dos rótulos no PT.",
+    "mapa_jp_turnos_por_sessao": {
+      "5_de_marco_prefacio": 8,
+      "6_de_marco": 9,
+      "7_de_marco": 5,
+      "15_de_marco": 3,
+      "16_de_marco": 10,
+      "17_de_marco": 4,
+      "total_pares_pergunta_resposta": 39
+    },
+    "sessoes_sem_dialogo": "23, 24, 25, 26 e 27 de março são monólogos contínuos de Meishu-Sama (Ensinamento da Grande Festa da Primavera) sem nenhum （お伺）/〔御垂示〕 no JP — deixados sem rótulo de falante, conforme regra de blocos de monólogo puro.",
+    "resultado": "39 pares Interlocutor:/Meishu-Sama: aplicados no PT, batendo exatamente com os 39 pares mapeados no JP (Δ=0). PT passou de 282 para 390 linhas só por causa das quebras de parágrafo inseridas — nenhuma palavra do conteúdo existente foi reescrita, reordenada ou removida; os rótulos foram inseridos substituindo apenas o espaço/quebra de linha único que já separava os turnos (mecânica, verificada por script Python com posições únicas por 'offset' de texto, não por edição manual linha a linha).",
+    "casos_especiais": [
+      "Formato de tag varia dentro do próprio volume: na maioria dos turnos a tag ([Orientação]/[Orientação Divina]/[Divina Instrução]) aparece colada ao fim da pergunta (mantida ali, com 'Interlocutor:' na frente); em 10 turnos (Aono Minoru e todo o bloco de 17 de março) a tag aparece isolada numa linha própria já do lado da resposta — nesses casos 'Meishu-Sama:' foi colocado antes da tag (ex.: 'Meishu-Sama: [Divina Instrução]'), replicando o padrão já usado no 御教え集3号.",
+      "Sub-diálogos embutidos (perguntas curtas entre aspas dentro da fala de Meishu-Sama, ex. caso Nasu Toichi/6 de março e Maekawa Tsuruichi/16 de março) foram deixados como estavam, sem rótulo próprio — mesma convenção dos volumes 1-7 já rotulados.",
+      "Cabeçalhos de data (6, 7, 15, 16, 17 de março) preservados; nenhum foi alterado no texto, só ficaram naturalmente isolados em linha própria como efeito colateral da quebra de parágrafo inserida antes de 'Interlocutor:'."
+    ],
+    "problemas_corrigidos": "Nenhum problema de conteúdo novo encontrado nesta etapa (a etapa B não achou nenhum par JP sem correspondente no PT) — o trabalho desta etapa foi puramente de formatação/rotulagem sobre um texto já fechado quanto ao conteúdo.",
+    "approved_alterado": false
+  },
+  "rotulagem_bug_citacao_interlocutor_absorvida_2026_07_15": {
+    "data": "2026-07-15",
+    "contexto": "Retomada da pendência registrada em PENDENCIAS_REVISAO.json (ROTULAGEM_JP_BUG_CITACAO_INTERLOCUTOR_ABSORVIDA, 2026-07-13): 御教え集8号 era 1 dos 2 livros não aplicados pela reaplicação da regra nova em rotular_turnos_jp.py (causa não investigada na nota original).",
+    "causa_raiz": "Diferente dos outros 56 livros da série (onde a checagem de segurança do script bateu 1:1), este volume tem 67 respostas curtas do interlocutor em diálogo rápido médico-paciente embutidas dentro de blocos 〔御垂示〕/(お伺) já rotulados como turno único de Meishu-Sama — MUITO mais que os outros volumes (não é só o caso Fujiwara Ayako de 17 de março, mas espalhado por quase todas as sessões do livro: 5, 6, 7, 15, 16 e 17 de março).",
+    "verificacao": "67 linhas JP no padrão '「...」' isolado (regex: linha strip começa com「 e termina com」) mapeadas 1:1 em ordem contra 67 parágrafos PT já traduzidos como citação isolada (aspas retas \" ou curvas “”), sem nenhuma lacuna. Conteúdo confirmado idêntico antes/depois da correção (diff byte-a-byte após remover os rótulos recém-inseridos = igual ao arquivo original, backup em scratchpad).",
+    "correcao": "Rotulagem mecânica aplicada: 67 linhas 'Interlocutor: ' + 67 linhas 'Meishu-Sama: ' inseridas (134 rótulos novos), sempre que um parágrafo sem rótulo (a) é citação isolada -> Interlocutor, ou (b) segue imediatamente um parágrafo Interlocutor recém-rotulado -> Meishu-Sama. Nenhuma palavra do conteúdo traduzido foi alterada, reordenada ou removida. Marcadores estruturais ([Ensinamento], (Artigo...), 【御教え】 etc.) explicitamente excluídos da rotulagem.",
+    "resultado": "Total de turnos: 39 pares originais (78 rótulos) + 67 pares novos (134 rótulos) = 106 pares (212 rótulos), Interlocutor:Meishu-Sama 106:106 (Δ=0).",
+    "pendencia_relacionada": "Resolve o item 'causa em 御教え集8号 ainda não investigada a fundo' de PENDENCIAS_REVISAO.json / GOSHINSHO.md. Segunda verificação independente ainda recomendada antes de considerar definitivamente fechado, seguindo o mesmo padrão de auditoria externa usado nos outros 56 livros."
+  }
+}

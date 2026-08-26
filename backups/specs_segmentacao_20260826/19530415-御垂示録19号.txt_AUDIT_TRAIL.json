@@ -1,0 +1,118 @@
+{
+  "filename": "19530415-御垂示録19号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 281 linhas / PT originalmente 90 linhas, agora 194 linhas após correção estrutural), 2 artigos por spec (prefácio + sessão única [1º de abril]). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, incluindo a parte final (perguntas de agricultura natural) que já estava corretamente segmentada turno a turno antes desta revisão.",
+  "alerta_inicial": "Razão JP/PT ~3.1:1 (281/90) sinalizada antes da leitura como suspeita de monólito. Confirmado: falso positivo parcial de contagem pura, mas real quanto à estrutura - ver achado grave abaixo.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0
+  },
+  "achados": [
+    {
+      "n": 1,
+      "severidade": "grave",
+      "localizacao": "PT linha 25 (antes da correção) = todo o corpo do PT entre o cabeçalho de data '[1º de abril]' e o início da segunda metade já bem segmentada (que começava em '\"Às vezes ouço, às vezes não.\"'); corresponde a JP linhas 26-139 (do início da conversa sobre a coleção de arte do Kenzan até o fim da resposta sobre o motivo de médicos de universidade vs. médicos de bairro).",
+      "problema": "Monólito residual clássico (mesma classe de bug já catalogada na Fase Inicial e em 4号/24号): cerca de 113 linhas de JP, cobrindo ~23 turnos de pergunta/resposta (arte/coleção, imprensa Asahi sobre medicina, situação internacional/armistício, bolsa de valores, Miroku, Shirako, espiritualidade da arte, e o início do testemunho da moça de 19 anos surda), estavam colapsadas em um único parágrafo corrido no PT, sem nenhuma quebra de parágrafo, aspas de interlocutor ou separação de turnos - violando os pontos 1 (subdivisão), 3 (alinhamento) e 6 (paragrafação 1:1) do checklist. O restante do arquivo (a partir de '\"Às vezes ouço, às vezes não.\"', correspondente a JP linha 141 em diante) já estava corretamente segmentado turno a turno, no mesmo estilo do resto da família Gosuiji-roku.",
+      "correcao": "Parágrafo único desmembrado em 49 parágrafos/turnos individuais (perguntas entre aspas em parágrafo próprio, respostas de Meishu-Sama em parágrafo próprio), seguindo rigorosamente a ordem e o conteúdo do JP linha a linha, e no mesmo estilo editorial já usado no restante do arquivo e em outros volumes da família (ex.: 18号). O cabeçalho de data '[1º de abril]' foi separado em parágrafo próprio, como nos demais volumes. Nenhum conteúdo foi reordenado; apenas re-paragrafado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "severidade": "grave - perda real de conteúdo mascarada",
+      "localizacao": "Dentro do monólito acima, na transição sobre o caso do tímpano artificial: JP linhas 131-139 (『元どおり鼓膜のできる人と...』 até `...要するに研究のためにやっているのです。`).",
+      "problema": "Confirma o padrão #3 da regra 'Δ=0 nunca é suficiente' (perda real de conteúdo mascarada por outro ponto do arquivo que compensa a contagem/fluência - aqui mascarada pela ausência total de quebras de parágrafo, que tornava o texto parecer contínuo e completo). Um bloco inteiro foi omitido do PT: (a) a resposta sobre o tímpano poder ou não se regenerar e por que médicos furam o tímpano para drenar pus do ouvido interno (JP 135); (b) a pergunta do interlocutor 'foi feito em uma clínica de otorrinolaringologia famosa' (JP 137); e (c) a primeira metade da resposta seguinte, que introduz o sujeito 'médico de segunda categoria/yabu' (JP 139, início) - sem essa primeira metade, a frase seguinte do PT original ('então ele faz com muito cuidado...') ficava sem sujeito e sem sentido, um sinal claro de que algo tinha sido cortado.",
+      "correcao": "Traduzido e inserido inline, na posição correta: '\"Removeram.\"' / 'Há pessoas em quem o tímpano volta a se formar como antes e pessoas em quem não volta, mas se mexeram tanto assim, provavelmente não vai dar certo. Não é preciso romper o tímpano. Ou seja, como se acumula pus no ouvido interno, rompem o tímpano para que o pus saia por ali, e fazem isso porque é mais rápido, mas é isso que estraga.' / '\"Foi feito em uma clínica de otorrinolaringologia famosa.\"' / 'É justamente esse \"famosa\" que é ruim. Um médico de segunda categoria é melhor. O que é feito em um lugar respeitável como uma universidade é ruim para qualquer doença. O que é feito por um médico de segunda categoria da cidade está bem. Porque, se o médico de segunda categoria errar, isso afeta sua reputação, ' (seguido do texto que já existia no PT, agora com sujeito e sentido completo). Tradução nova (não localizada em textos_portugues/ - buscado antes de traduzir, tópico específico deste volume, sem correspondente no acervo).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "severidade": "leve",
+      "localizacao": "Dentro do parágrafo sobre a exposição 'Em Memória das Gerações de Kenzan' (JP linha 54/PT correspondente).",
+      "problema": "Erro gramatical de concordância de gênero: 'virei um conversa de antiquário' (deveria ser 'uma conversa').",
+      "correcao": "Corrigido para 'virei uma conversa de antiquário'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título, data de publicação)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Conversa sobre coleção de arte/exposição Kenzan (Korin, Bernard Leach, Egito/Grécia/Pérsia, Bridgestone, Cézanne)",
+      "jp_linhas": "26-55",
+      "decisao": "corrigido - monólito desmembrado (achado 1), 1 typo corrigido (achado 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Repercussão de 'Salvando a América'/'Terapia pela Fé na Tuberculose' na imprensa (Asahi)",
+      "jp_linhas": "58-84",
+      "decisao": "corrigido - monólito desmembrado (achado 1); conteúdo integralmente presente, nenhuma perda encontrada",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Situação internacional (armistício Coreia/China/URSS/EUA) e bolsa de valores",
+      "jp_linhas": "82-90",
+      "decisao": "corrigido - monólito desmembrado (achado 1); conteúdo integralmente presente",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Miroku (economia futura), Shirako (serpente branca), espiritualidade na arte, dinheiro/Daijo-Shojo",
+      "jp_linhas": "88-101",
+      "decisao": "corrigido - monólito desmembrado (achado 1); conteúdo integralmente presente",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunho da moça de 19 anos surda / tímpano artificial",
+      "jp_linhas": "104-139",
+      "decisao": "corrigido - monólito desmembrado + conteúdo faltante restaurado (achados 1 e 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Continuação do caso do tímpano até eleição geral/política partidária (EUA/URSS/China/Chiang Kai-shek)",
+      "jp_linhas": "141-172",
+      "decisao": "ok - já corretamente segmentado antes desta revisão, nenhuma correção necessária",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Guarda de filhos, olho/cobra (innen), Inari, peixes/maré, tangerina",
+      "jp_linhas": "175-204",
+      "decisao": "ok - já corretamente segmentado, nenhuma correção necessária",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Agricultura natural (casca de arroz, cirurgia/gravidez ectópica, sementeiras, técnica, Hokkaido, batata)",
+      "jp_linhas": "207-281",
+      "decisao": "ok - já corretamente segmentado, nenhuma correção necessária",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "method": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku: 「pergunta entre aspas」 no JP = Interlocutor; texto corrido sem aspas = Meishu-Sama",
+    "reviewer": "agente (delegação autorizada, revisao-paralela-jp-pt.mdc)",
+    "label_date": "2026-07-08",
+    "etapa_a": "JP lido linha a linha, todo o volume (281 linhas). Mapa de turnos construído: 57 turnos reais de Interlocutor (63 ocorrências de「 no total, das quais 5 na linha 36 são aspas de títulos de obras de arte dentro da fala de Meishu-Sama, não turnos de diálogo - descartadas). Casos especiais mapeados: JP linhas 58+59 são 2 perguntas consecutivas do Interlocutor sem resposta de Meishu entre elas (bloco I→I, ≤2, permitido); JP linhas 63-64 são uma única fala do Interlocutor com quebra de parágrafo interna (aspas abrem em 63, fecham em 64).",
+    "etapa_b": "Confronto turno a turno do PT (já corrigido estruturalmente em revisão anterior de 2026-07-07) contra o mapa JP. 58 parágrafos do PT já começavam com aspas (candidatos a Interlocutor) e batiam 1:1 em ordem e conteúdo com os 57 turnos reais do JP mais a divisão de JP 63-64 em 2 parágrafos no PT (linhas 'Está saindo grande...' e 'Além disso, estão investigando...') - contagem líquida conferida e fechada (57 turnos reais − 1 pelo par 58+59 fundido em 1 parágrafo PT + 1 pela divisão de 63-64 em 2 parágrafos PT = 58, bate). Achado: turno curto de Meishu-Sama ausente no PT - JP linha 177 '二才の子供はやりたくないというのですか。' (pergunta curta de Meishu-Sama de volta ao interlocutor, sobre a criança de dois anos), entre a pergunta do interlocutor de JP 175 e a resposta dele em JP 179 - não tinha correspondente no PT (o PT ia direto de 'Tenho três filhos...' para 'Sim. No entanto, ele diz que se for para um seguidor...', sem a pergunta intermediária de Meishu-Sama).",
+    "correcao_turno_ausente": "Inserida tradução curta e de baixo risco 'Não quer dar a criança de dois anos?' como parágrafo Meishu-Sama próprio, entre os parágrafos 'Tenho três filhos, de quatorze, sete e dois anos...' e 'Sim. No entanto, ele diz que se for para um seguidor...', no arquivo PT.",
+    "etapa_c": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a todos os parágrafos do corpo (após o cabeçalho de data '[1º de abril]', que foi preservado). Nenhum conteúdo reordenado ou reescrito. Formatação normalizada para 1 linha em branco entre cada parágrafo/turno em todo o arquivo (a partir de '\"Foi feito em uma clínica de otorrinolaringologia famosa.\"'/JP 137 em diante, o PT já corrigido em 2026-07-07 estava com os parágrafos separados só por quebra de linha simples, sem linha em branco - normalizado para o mesmo padrão do resto do arquivo e dos demais volumes da família, sem alterar o texto).",
+    "contagem_final": {
+      "interlocutor": 58,
+      "meishu_sama": 60,
+      "total_turnos": 118,
+      "nota": "60 Meishu-Sama = 59 parágrafos que já existiam sem aspas no PT + 1 turno curto inserido (achado desta rotulagem)."
+    },
+    "approved_alterado": false
+  }
+}

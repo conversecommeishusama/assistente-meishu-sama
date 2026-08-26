@@ -1,0 +1,135 @@
+{
+  "filename": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 922 linhas / PT ~981 linhas após correções), 81 artigos por spec, do prefácio ao encarte final. Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem.",
+  "pre_existing_context": "Uma auditoria leve anterior (mesma sessão, mesmo dia) já havia detectado e corrigido a mescla agramatical Hori Onoe (testemunho do caqui) / Gotō Shūhei ('肥害を語る'), restaurando cabeçalho e abertura perdidos do relato de Gotō Shūhei. Esta revisão linha a linha trata essa correção como não confirmada até reconferência independente (ver item de confirmação abaixo), conforme exigido por 'Δ=0 é necessário, nunca suficiente'.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 81,
+    "articles_reviewed": 81,
+    "real_corrections_applied": 9,
+    "items_escalated_to_pendencias": 0,
+    "hori_onoe_goto_shuhei_correction_status": "confirmado_correto_na_segunda_auditoria_independente"
+  },
+  "confirmacao_hori_onoe_goto_shuhei": {
+    "trecho_jp": "linhas 822-847 do JP (無肥料の柿は落ちず, 堀斧衛 44 / 肥害を語る, 後藤周平 34, ambos 三重県河芸郡上野村西千里 e 岐阜県稲葉郡日置江村字次木 respectivamente)",
+    "verificacao": "Conferido palavra por palavra contra o JP nesta sessão, de forma independente da correção anterior. O título '**O caqui sem fertilizantes não cai**' com autor 'Hori Onoe (44)' e o título seguinte '**Falando sobre os Danos dos Fertilizantes**' com autor 'Instrutor Shuhei Goto (34)' estão ambos presentes, na ordem correta, com atribuição de autor/local corretas, e o conteúdo de cada testemunho bate integralmente com o respectivo trecho JP (testemunho do caqui completo em si mesmo; testemunho de Gotō Shūhei sobre arroz/berinjela/trigo completo, sem mescla com o testemunho anterior).",
+    "resultado": "correto - nenhuma mescla residual encontrada",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "linha ~67 (parágrafo sobre hortaliças/higiene, próximo ao trecho JP linha 60 '無肥料の菜類は...もちろん糞尿を用いないから最も衛生的である')",
+      "problema": "Frase truncada em reticências ('É claro que fezes humanas...') seguida de um parágrafo espúrio desconexo ('Não utiliza adubos, portanto é o mais higiênico.') - fragmentação sem sentido de uma única oração do JP.",
+      "correcao": "Unificado em uma frase coerente: 'É claro que, por não se usar fezes humanas, é o mais higiênico.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "linha ~203 (testemunho de Kitamura Shirō, trigo, JP linha 161 '今度は大先生の無肥料耕作の論文が出るそうですが')",
+      "problema": "Mistradução truncada: '今度は' (por essa época/em breve) foi lido como 'desta vez [farei algo]', quebrando a frase em 'Desta vez...' + novo parágrafo 'O senhor Mestre publicará um artigo sobre o cultivo sem fertilizantes.' - sentido distorcido e paragrafação espúria.",
+      "correcao": "Reunido e corrigido: 'Por essa época, parece que o Grande Mestre estava para publicar um tratado sobre o cultivo sem fertilizantes, mas, na ocasião, eu só ouvia do mestre dizer: \"Cultive uma vez a mais do que o habitual\".'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "linha ~327 (testemunho de Oikawa Tomio, JP linha 270 '前記の二割ないし三割という増収')",
+      "problema": "'obtive um aumento de 20%...' seguido de novo parágrafo iniciando 'Aumento de 30% na colheita...' - lido como dois números contraditórios/duplicados quando o JP diz claramente uma faixa única 'de 20% a 30%'.",
+      "correcao": "Unificado: 'obtive um aumento de 20% a 30% na colheita, o que fez com que toda a vila olhasse com admiração...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "linha ~257 (testemunho de Yoshikawa Risaku, JP linha 216 '一両日照り続くと干割れてしまうと言う時')",
+      "problema": "Quebra de parágrafo artificial não presente no JP, cortando a frase sobre a seca/chuva em dois blocos com reticências.",
+      "correcao": "Unificado em uma única frase, preservando o sentido (a seca que rachava a terra vs. a chuva oportuna).",
+      "confianca": "media-alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "linha ~461 (testemunho de Sato Katsuto, abóbora, JP linha 398 '現在一貫五百匁から七、八百匁')",
+      "problema": "Peso da abóbora fragmentado de forma incoerente: 'pesam de 1 kan 500 momme (cerca de 5,6 kg) a 7...' + novo parágrafo 'Oitocentas *momme*: ainda pequenas, estão crescendo vigorosamente.' - quebra no meio de um número composto (7-800 momme).",
+      "correcao": "Unificado: 'pesam de 1 kan e 500 momme (cerca de 5,6 kg) a 7-800 momme; as ainda pequenas estão engrossando rapidamente.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt_aprox": "linha ~649 (testemunho de Kazukawa Yoshinobu, JP linha 567 '私は植付前苗を浄霊させて頂き')",
+      "problema": "Quebra de parágrafo artificial cortando a frase sobre Johrei antes do plantio.",
+      "correcao": "Unificado, preservando conteúdo integralmente.",
+      "confianca": "media-alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt_aprox": "linha ~825 (testemunho de Mizukubo Nakakichi, porco com encefalite, JP linha 724 'もし脳炎なら二頭ともやられているに違いない、値段にして四万円')",
+      "problema": "Frase cortada no meio: '...será que os dois...' + novo parágrafo iniciando 'Com certeza, o preço era de quarenta mil ienes.' - o valor monetário ficou deslocado como se fosse um novo pensamento, quando no JP é o mesmo período.",
+      "correcao": "Unificado: 'Se for encefalite, certamente os dois seriam atingidos — em valor, quarenta mil ienes — senti como se o mundo tivesse escurecido diante dos meus olhos e, sem pegar nada, voltei correndo para casa.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt_aprox": "linha ~507 (testemunho de Yamamoto Chie, JP linha 449 '特別早稲の植付をいたし')",
+      "problema": "CJK residual não traduzido no corpo do PT: 'plantei arroz特别早稲 (variedade precoce especial)'.",
+      "correcao": "'No meio disso, plantei uma variedade especial de arroz precoce.' (checklist ponto 5 - CJK no PT)",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt_aprox": "linhas ~937-981 (final do volume: testemunhos de Hata Nobutaka, Sano Issei, Iwasaki Kiyo, ensaio de fechamento '無肥栽培の報告を読んで', e todo o encarte editorial final - correspondente a JP linhas 851-922)",
+      "problema": "GRAVE: colapso estrutural - quatro testemunhos inteiros, o ensaio de fechamento e o encarte editorial (ficha técnica + anúncio do jornal Eikō) estavam todos amassados em 4 linhas gigantes de texto corrido, com títulos em negrito e blocos de autor/local enterrados no meio de parágrafos de outros testemunhos, sem nenhuma quebra de parágrafo entre artigos distintos. Isto viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos/cabeçalhos) do checklist. Também corrigida inconsistência de atribuição de autoria '(神農生)' que estava romanizado como '(Jin'nōsei)' quando o resto do volume usa '(Shin'nōsei)' (linha 31).",
+      "correcao": "Reestruturado com quebras de parágrafo e títulos em linha própria, restaurando a ordem e separação dos artigos: 'Relato de Experiência de Cultivo sem Fertilizantes' (Hata), 'Benefícios Materiais que Afastam a Ansiedade' (Sano), 'O Peso do Arroz sem Fertilizantes' (Iwasaki), 'Lendo os Relatos de Cultivo sem Fertilizantes' (ensaio final), e o encarte editorial (Série Jikan Volume 2 / ficha técnica / anúncio do jornal Eikō). Nenhum conteúdo foi removido ou reordenado - verificado por script que todos os 81 pt_anchors do spec continuam presentes e na mesma ordem após a correção.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文) + ensaio teórico introdutório",
+      "jp_linhas": "1-68",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução completa, fiel, sem truncamento. Parágrafos 1:1 com o JP na maior parte; alguns parágrafos JP longos vertidos em um só parágrafo PT, mas sem perda de conteúdo."
+    },
+    {
+      "bloco": "Seis pontos numerados (害虫/肥料 1-6) + fechamento teórico",
+      "jp_linhas": "40-68",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Todos os 6 pontos presentes e completos; nenhuma subdivisão faltando."
+    },
+    {
+      "bloco": "Testemunhos agrícolas (無肥料農耕の体験 até 御利益報告)",
+      "jp_linhas": "75-324",
+      "decisao": "ok, com 3 correções pontuais (itens 1,2,3 acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos agrícolas (砂地に稲を試作して até 費害を語る)",
+      "jp_linhas": "328-847",
+      "decisao": "ok, com 5 correções pontuais (itens 4,5,6,7,9-parcial acima) e confirmação da correção Hori Onoe/Gotō Shūhei",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos finais + ensaio de fechamento + encarte editorial",
+      "jp_linhas": "851-922",
+      "decisao": "corrigido - colapso estrutural grave (item 9)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Todas as divergências encontradas foram corrigidas inline com confiança alta ou média-alta. A correção Hori Onoe/Gotō Shūhei foi reconfirmada de forma independente conforme exigido."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. ACHADO: 'Zengen-Sandji' (com 'd', 3 ocorrências) — forma desatualizada face à decisão do usuário de 2026-07-06 ('Zengen-Sanji', sem 'd'), mas consistente com o glossario_traducao.json atual (que também ainda diz 'Sandji'). Registado em PENDENCIAS_REVISAO.json (novo item, estado aguardando_decisao) em vez de corrigido unilateralmente, porque a correção correta depende de uma atualização coordenada do glossário mestre (afeta ~25 ficheiros do corpus, não só este lote). Spec approved=true.",
+    "real_corrections_applied_fase_e": 0,
+    "items_escalated_fase_e": 1
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "filename": "19520000-HAKONE ART MUSEUM.txt",
+  "method": "linha_a_linha_ingles_fonte_verdade",
+  "method_note": "Caso especial: o item 'jp/19520000-HAKONE ART MUSEUM.txt' (59 linhas) NÃO é japonês — é o discurso original que Mokichi Okada (Meishu-Sama) fez em INGLÊS sobre o propósito de fundar o Museu de Arte de Hakone (1952). Não existe texto japonês de origem para este item; o inglês é, portanto, a fonte de verdade para efeitos desta revisão, substituindo o JP no princípio geral de revisao-paralela-jp-pt.mdc (mesma exigência: proibido usar contagem de parágrafos ou métrica agregada como prova de correção, só leitura semântica linha a linha).",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc, aplicada por analogia ao par inglês/PT)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do artigo único (perfil 'monolith', 1 artigo no spec). Inglês (59 linhas) lido integralmente e confrontado parágrafo a parágrafo, na mesma ordem, com o PT (originalmente 1 único parágrafo corrido de 25 linhas de arquivo / ~13 parágrafos lógicos). Não é amostragem: todo o corpo do inglês foi comparado ao PT correspondente.",
+  "gate_mecanico": "Não há gate Δ=0 aplicável (fonte não-JP, sem contador de turnos Q/A). Verificação mecânica feita manualmente: 0 caracteres CJK residuais no PT (script ad-hoc), e o arquivo corrigido passou de 1 bloco de texto corrido para 20 blocos separados por linha em branco, compatível com a estrutura de 14 parágrafos do inglês + título/subtítulo/metadado/assinatura. Este gate mecânico não substitui a leitura semântica abaixo, apenas a complementa.",
+  "summary": {
+    "paragraphs_in_english_source": 13,
+    "additional_blocks_english_source": ["título + subtítulo (3 linhas)", "assinatura MOKICHI OKADA / Diretor do Museu de Arte de Hakone (2 linhas)", "legenda de imagem 'YUNA...' + 'National Treasures.' (2 blocos)"],
+    "paragraphs_reviewed": 13,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Título/subtítulo do artigo",
+      "problema": "Faltava no PT a tradução do subtítulo do inglês ('THE PURPORT OF ESTABLISHING / THE ART MUSEUM'), que no original aparece como segunda e terceira linha do título, antes da assinatura. O PT tinha apenas 'MUSEU DE ARTE DE HAKONE' sem subtítulo (checklist ponto 7 - títulos/cabeçalhos).",
+      "correcao": "Adicionada linha de subtítulo traduzida: 'O PROPÓSITO DE FUNDAR O MUSEU DE ARTE', logo abaixo do título principal.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Assinatura/byline do autor (equivalente a 'MOKICHI OKADA / Director of the Hakone Art Museum' no inglês)",
+      "problema": "A assinatura do autor, que no original é um bloco de cabeçalho autônomo em duas linhas (nome, depois cargo) ANTES do corpo do discurso, estava mesclada de forma agramatical dentro do primeiro parágrafo do corpo: 'Diretor do Museu de Arte de Hakone Sou Mokichi Okada, fundador da Igreja Messiânica.' — ordem invertida (cargo antes do nome) e sem separação do parágrafo seguinte (checklist pontos 6 e 7). O conteúdo em si (nome, cargo, 'fundador da Igreja Messiânica') estava correto e completo, só a estrutura estava colapsada.",
+      "correcao": "Separado em bloco de assinatura próprio, na ordem do original (nome, depois cargo): 'MOKICHI OKADA' / 'Diretor do Museu de Arte de Hakone', seguido de linha em branco e do parágrafo do corpo começando corretamente em 'Sou Mokichi Okada, fundador da Igreja Messiânica. Expresso aqui meus sinceros agradecimentos...'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Corpo inteiro do artigo (13 parágrafos do inglês + legenda de imagem 'YUNA')",
+      "problema": "GRAVE (mesma classe dos '6 livros monolith' já corrigidos na Fase Inicial, ver GOSHINSHO.md): o PT inteiro — os 13 parágrafos do discurso mais a legenda de imagem intercalada ('YUNA (Geishas na era Momoyama.) Pintor desconhecido. Obras do início do Ukiyoe. Tesouros Nacionais.') — estava colapsado em UM único parágrafo corrido de ponta a ponta, sem nenhuma quebra de parágrafo, violando o checklist ponto 6 (paragrafação 1:1) e parcialmente o ponto 1 (subdivisão) e ponto 7 (a legenda da imagem, que no original é um bloco visualmente distinto de título de obra + créditos, ficava indistinguível do texto corrido do discurso).",
+      "correcao": "Reestruturado com quebra de parágrafo em cada um dos 13 pontos correspondentes às quebras de parágrafo do inglês, e a legenda 'YUNA / (Geishas na era Momoyama.) / Pintor desconhecido. / Obras do início do \"Ukiyoe\".' e 'Tesouros Nacionais.' isolada em dois blocos próprios (replicando a separação visual do original, que tem essa legenda entre o parágrafo sobre a conclusão do Paraíso em Miniatura de Hakone e o parágrafo seguinte sobre museus de arte puramente japoneses). Nenhuma palavra de conteúdo foi adicionada, removida ou reordenada — apenas inseridas quebras de parágrafo; verificado frase a frase contra o inglês que a sequência e o conteúdo de cada parágrafo permanecem idênticos aos já existentes no PT antes da correção.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título 'HAKONE ART MUSEUM' + subtítulo 'THE PURPORT OF ESTABLISHING THE ART MUSEUM'", "decisao": "corrigido - subtítulo ausente adicionado (item 1)", "confianca": "alta"},
+    {"bloco": "Assinatura 'MOKICHI OKADA / Director of the Hakone Art Museum'", "decisao": "corrigido - separado do corpo, ordem restaurada (item 2)", "confianca": "alta"},
+    {"bloco": "Parágrafo 1: 'I am Mokichi Okada, the founder of the World Messianity...'", "decisao": "ok, conteúdo completo e fiel; apenas reparagrafado (item 3)", "confianca": "alta"},
+    {"bloco": "Parágrafo 2: 'The fundamental ideal of religion...based upon religion.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 3: 'Nowadays, however...two wheels of a cart.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 4: 'Here I would like to mention...excellency in handiworks.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 5: 'Nevertheless, Japan who was not aware...no further meaning.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 6: 'From the above viewpoint...including the art gallery.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Legenda de imagem: 'YUNA (Geisha-Girls in Momoyama era.) Painter unknown. Works at the begining time of Ukiyoe.' + 'National Treasures.'", "decisao": "ok, conteúdo já traduzido corretamente; isolado em bloco próprio (item 3)", "confianca": "alta"},
+    {"bloco": "Parágrafo 7: 'There have hitherto been scarcely any pure Japanese art museums...greatest pleasure for me.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 8: 'I have never been abroad...about 360 years ago).'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 9: 'As for Chinese pottery and copper-wares...preserved most of the Chinese art.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 10: 'In addition, it must be noted...enrichment of this art museum.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 11: 'This art museum was planned all by myself...preservation of national treasures.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 12: 'As it has been explained above...true phase of Japan.'", "decisao": "ok, completo e fiel", "confianca": "alta"},
+    {"bloco": "Parágrafo 13: 'I am planning to construct other miniature paradises...greatly appreciated.'", "decisao": "ok, completo e fiel", "confianca": "alta"}
+  ],
+  "verificacoes_negativas": {
+    "cjk_residual": "nenhum encontrado (0 caracteres CJK no PT após correção, verificado por script)",
+    "truncamento_reticencias": "nenhuma frase truncada ou reticência suspeita encontrada",
+    "duplicacao_eco": "nenhuma duplicação de trecho ou eco encontrado",
+    "ordem_invertida": "nenhuma inversão de ordem de parágrafo encontrada; sequência PT bate 1:1 com a sequência do inglês",
+    "termo_glossario": "'World Messianity' -> 'Igreja Messiânica' já era a tradução pré-existente no PT antes desta revisão e está alinhada com o glossario_traducao.json (メシヤ教/救世教 -> Igreja Messiânica); mantido sem alteração, não é decisão nova desta revisão"
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Checklist de 8 pontos cumprido em todo o artigo (único, perfil monolith). Único problema real era estrutural (colapso de parágrafo + título/assinatura mesclados), não de conteúdo/tradução — conteúdo já estava completo e fiel ao inglês antes desta revisão. Corrigido inline. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este arquivo."
+  }
+}

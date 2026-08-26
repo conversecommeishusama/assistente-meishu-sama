@@ -1,0 +1,31 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Esboco_da_Medicina",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "薬剤の毒（一）",
+   "title_pt": "A Toxina dos Medicamentos (I)",
+   "jp_anchor": "薬剤の毒（一）\n天然痘毒素のほかに薬剤の毒",
+   "pt_anchor": "A Toxina dos Medicamentos (I)\n\nAlém da toxina da varíola",
+   "notes": "Esboço da Medicina, 1939 (医学試稿, Showa 14). Origem: catálogo antigo data/publication_sources (Zenshū), nunca revisado editorialmente antes."
+  },
+  {
+   "kind": "article",
+   "title_jp": "薬剤の毒（二）",
+   "title_pt": "A Toxina dos Medicamentos (II)",
+   "jp_anchor": "薬剤の毒（二）\n人間が病気に罹るとする。",
+   "pt_anchor": "A Toxina dos Medicamentos (II)\n\nSuponhamos que uma pessoa adoeça.",
+   "notes": "Esboço da Medicina, 1939. PT traduzido nesta sessão (não existia tradução anterior)."
+  },
+  {
+   "kind": "article",
+   "title_jp": "尿毒",
+   "title_pt": "Toxina Urinária",
+   "jp_anchor": "尿毒\nドイツの医界の泰斗",
+   "pt_anchor": "Toxina Urinária\n\nSegundo a teoria do Dr. XX",
+   "notes": "Esboço da Medicina, 1939. Termo corrigido de \"Toxina Urêmica\" (catálogo antigo) para \"Toxina Urinária\", conforme glossario_traducao.json (尿毒 -> toxina urinária)."
+  }
+ ],
+ "filename": "Esboco_da_Medicina.txt"
+}

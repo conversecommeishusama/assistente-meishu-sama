@@ -1,0 +1,51 @@
+{
+ "filename": "19491021 - Gokōwa-roku nº 13.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』13号、昭和24(1949)年10月21日発行",
+   "pt_anchor": "Gokōwa-roku nº 13",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月三日",
+   "title_pt": "3 de julho",
+   "jp_anchor": "七月三日",
+   "pt_anchor": "3 de julho\n\nInterlocutor: Quando vou a uma nova terra para a propagação, devo cumprimentar o Ujigami (Deus do Clã) daquela terra? Se",
+   "notes": "",
+   "pt_prefix": "3 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月十三日",
+   "title_pt": "13 de julho",
+   "jp_anchor": "七月十三日",
+   "pt_anchor": "13 de julho\n\n(Hoje, uma equipe de gravação da NHK veio e gravou a audiência com o Grão-Mestre)",
+   "notes": "",
+   "pt_prefix": "13 de julho"
+  },
+  {
+   "kind": "session",
+   "title_jp": "七月二十三日",
+   "title_pt": "23 de julho",
+   "jp_anchor": "七月二十三日",
+   "pt_anchor": "23 de julho\n\nInterlocutor: Quando uma pessoa em dificuldades financeiras está passando por purificação devido a doenças, com o desejo",
+   "notes": "",
+   "pt_prefix": "23 de julho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

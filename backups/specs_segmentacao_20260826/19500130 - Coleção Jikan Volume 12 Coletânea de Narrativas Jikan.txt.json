@@ -1,0 +1,327 @@
+{
+ "filename": "19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "2026-07-14 (fila CHUNK_TURNAWARE): spec original (14 artigos) absorvia 18 ensaios distintos do livro (真理と非真理...第三宗教) dentro de um único artigo \"序文\" monolítico, além de faltar 2 subitens de 信仰の種類 (（二）景場信心, （十一）鰹節信心) e a sessão 善人よ強くなれ. Reconstruído para 34 artigos, um por ensaio real do livro (kind=section, mesma convenção dos 8 livros irmãos do profile jikan_hen), preservando os 12 subitens de 信仰の種類 (kind=topic) já corretos. pt_anchor recalculado para todos a partir do texto real (vários estavam com posição herdada de interpolação incorreta, ex. item 十 apontava para \"9) Fé Instável\" em vez de \"(10) Fé Inconstante\").",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 14,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "自観説話集",
+   "title_pt": "",
+   "jp_anchor": "自観叢書12編『自観説話集』昭和25(1950)年1月30日発行",
+   "pt_anchor": "Coleção Jikan Volume 12 Coletânea de Narrativas Jikan",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "この著は、本教刊行の光新聞、及び雑誌地上天国に掲載した論文中から、取捨選択したもので、なるべく興味に富み、魂の糧として有意義なるもののみを抜いたのである。",
+   "pt_anchor": "Esta obra é uma seleção de artigos publicados no jornal Hikari Shimbun e na revista Tijotengoku, ambos editados por noss",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "真理と非真理",
+   "title_pt": "",
+   "jp_anchor": "昔から真理という事は誰も言うのであるが、非真理すなわち偽理という事は言わないようである。",
+   "pt_anchor": "Desde os tempos antigos, todos falam sobre a verdade, mas ninguém parece falar sobre a não-verdade, ou seja, a Falsa Verdade.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "五智を説く",
+   "title_pt": "",
+   "jp_anchor": "単に智慧といっても種々ある。今それを分類してみよう。",
+   "pt_anchor": "Mesmo quando se fala apenas em sabedoria, existem vários tipos. Vamos classificá-los agora. A mais elevada é a Sabedoria Divina",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "直観の哲学",
+   "title_pt": "",
+   "jp_anchor": "私は若い頃、当時持て囃（はや）されたフランスの哲学者、故アンリ・ベルグソン氏の学説に共鳴した事がある。",
+   "pt_anchor": "Quando jovem, simpatizei com a teoria do falecido filósofo francês Henri Bergson, muito elogiado na época.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "理屈の迷信",
+   "title_pt": "",
+   "jp_anchor": "今日、迷信という事を非難し軽蔑するが、これは考えものである。",
+   "pt_anchor": "Hoje em dia critica-se e despreza-se a superstição, mas isso merece reflexão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "真理の具現",
+   "title_pt": "",
+   "jp_anchor": "そもそも、宗教の真の目的は何であるかといえば、言うまでもなく真理の具現である。",
+   "pt_anchor": "Qual é, afinal, o verdadeiro propósito da religião? É, sem dúvida, a materialização da verdade.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音力とは何ぞや",
+   "title_pt": "",
+   "jp_anchor": "昔から、妙智力または観音力というが、もちろん妙智力は観音力と同意味である。",
+   "pt_anchor": "Desde os tempos antigos fala-se em \"poder maravilhoso da sabedoria\" ou \"Poder Kannon\".",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "主の字",
+   "title_pt": "",
+   "jp_anchor": "私は常に、順序を正しくせよと言うが、この順序をタッタ一字で表わしたのが「主」の字である。",
+   "pt_anchor": "Sempre digo que é preciso corrigir a ordem. O caractere \"senhor\" (shu) expressa essa ordem num único caractere.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "五六七世界の建設",
+   "title_pt": "",
+   "jp_anchor": "吾らが唱える五六七（みろく）世界の実相は目下執筆中で、いずれ発表するつもりであるが、ここでは五六七世界建設までの過程についていささか述べようとするのである。",
+   "pt_anchor": "A verdadeira forma do mundo de cinco-seis-sete (Miroku) que proclamamos está atualmente sendo escrita, e pretendo publicá-la em breve",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "超宗教",
+   "title_pt": "",
+   "jp_anchor": "本教のモットーとする、病貧争絶無の世界、地上天国建設などという事は、まず大抵の人は痴人の夢としか受取れないであろう。",
+   "pt_anchor": "O lema de nossa Igreja — um mundo sem doença, pobreza e conflito, a construção do Paraíso Terrestre",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "本教と大道主義",
+   "title_pt": "",
+   "jp_anchor": "今日世の中を見ると、ヤレ左翼だとか、ヤレ右翼だとか、否俺の方は左派でも右派でもない中道だとか言って騒いでいるが",
+   "pt_anchor": "Ao olhar para a sociedade de hoje, vemos uma agitação: uns se dizem de esquerda, outros de direita",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大乗宗教",
+   "title_pt": "",
+   "jp_anchor": "宗教、特に仏教に、大乗、小乗の区別のあるのは遍（あまね）く人の知るところであるが、どうも今日まで、徹底されない恨みがあったようである。",
+   "pt_anchor": "Na religião, especialmente no budismo, a distinção entre Daijo e Shojo é amplamente conhecida, mas parece que, até hoje,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "神秘の扉は開かれたり",
+   "title_pt": "",
+   "jp_anchor": "私が解くところの多くの説は、そのほとんどが前人未踏のものばかりといってもよかろう。",
+   "pt_anchor": "Pode-se dizer que a maioria das muitas teorias que exponho são inéditas. Acho que muitas pessoas terão dúvidas, num bom ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "学問のズレ",
+   "title_pt": "",
+   "jp_anchor": "一口に学問と言うが、学問にも生きた学問と死んだ学問とがある。",
+   "pt_anchor": "Fala-se em conhecimento, mas há conhecimento vivo e conhecimento morto. Pode parecer estranho, mas, para simplificar, o ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "日と月",
+   "title_pt": "",
+   "jp_anchor": "宗教上より見たる日と月について説明してみるが、これははなはだ神秘幽玄にして、コジツケとみらるる節なきに非ず、しかしこれは真理である以上、心を潜めて判読されたいのである。",
+   "pt_anchor": "Explicarei o Sol e a Lua do ponto de vista religioso. Isso é extremamente misterioso e profundo, e pode haver quem veja ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "自然無視の文化",
+   "title_pt": "",
+   "jp_anchor": "今日、日本における文化が進歩しつつあるにかかわらず、ある面には種々の行詰りが生じ、予期のごとくにゆかないのはなぜであろうか。",
+   "pt_anchor": "Hoje em dia, embora a cultura no Japão esteja progredindo, por que será que, em certos aspectos, surgem vários impasses ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "智慧の光",
+   "title_pt": "",
+   "jp_anchor": "世の中で一口に智慧というが、智慧にも種々あり、浅い深いもある、それらについて解説してみよう。",
+   "pt_anchor": "No mundo, fala-se genericamente em sabedoria, mas há vários tipos, algumas superficiais e outras profundas.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "低気圧は人災なり",
+   "title_pt": "",
+   "jp_anchor": "昔から台風や暴雨、洪水等はすべて天災といい不可避の現象として諦めていた事は誰も知るところであるが、吾らから言えば実は天災ではなく人災である。",
+   "pt_anchor": "Desde os tempos antigos, tufões, tempestades, inundações etc. eram todos considerados desastres naturais",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "第三宗教",
+   "title_pt": "",
+   "jp_anchor": "本教が宗教として、既成宗教並に見られているのは致し方ないとしても、実は既存宗教と比較にならない程の著しい異いさのある事である。",
+   "pt_anchor": "Embora seja inevitável que esta Doutrina seja vista como uma religião ao lado das religiões estabelecidas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "信仰の種類",
+   "title_pt": "",
+   "jp_anchor": "単に信仰といってもいろいろ種類がある。ざっと書いてみるが、（一）お陰信心。（二）景場（けいば）信心。",
+   "pt_anchor": "Mesmo quando se fala simplesmente em fé, há vários tipos. Vou listá-los resumidamente: (1) Fé que visa a graça. (2) Fé d",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（一）お陰信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（一）お陰信心は――。",
+   "pt_anchor": "(1) Fé que visa a graça é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（二)景場信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（二)景場信心は――。",
+   "pt_anchor": "(2) Fé de Ocasião é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（三）有難信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（三）有難信心は――。",
+   "pt_anchor": "(3) Fé de Agradecimento é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（四）利用信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（四）利用信心は――。",
+   "pt_anchor": "(4) Fé Aproveitadora é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（五）神憑信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（五）神憑信心は――。",
+   "pt_anchor": "(5) Fé de Possessão por divindades é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（六）身欲信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（六）身欲信心は――。",
+   "pt_anchor": "(6) Fé que visa o Interesse Pessoal é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（七）たがる信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（七）たがる信心は――。",
+   "pt_anchor": "(7) Fé do 'Querer' é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（八）御無沙汰信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（八）御無沙汰信心は――。",
+   "pt_anchor": "(8) Fé de quem se ausenta é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（九）浮気信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（九）浮気信心は――。",
+   "pt_anchor": "(9) Fé Instável é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（十）気紛れ信心は――。",
+   "title_pt": "",
+   "jp_anchor": "（十）気紛れ信心は――。",
+   "pt_anchor": "(10) Fé Inconstante é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（十一)鰹節信心――。",
+   "title_pt": "",
+   "jp_anchor": "（十一)鰹節信心――。",
+   "pt_anchor": "(11) Fé de Aparência é:",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（十二）贋信心は――",
+   "title_pt": "",
+   "jp_anchor": "（十二）贋信心は――",
+   "pt_anchor": "(12) Fé Falsa é:",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "善人よ強くなれ",
+   "title_pt": "",
+   "jp_anchor": "つくづく今日の世相を観るに、悪い奴があまりにノサばり過ぎている。",
+   "pt_anchor": "Observando atentamente a situação social de hoje, vejo que os maus estão se pavoneando demais.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "私の観た私",
+   "title_pt": "",
+   "jp_anchor": "この題をみて読者は不思議に思うであろうが、順次読むに従ってなる程とうなずくであろう。",
+   "pt_anchor": "Ao ver este título, o leitor deve achá-lo estranho, mas, à medida que ler, certamente concordará com um \"é mesmo\".",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "私というもの",
+   "title_pt": "",
+   "jp_anchor": "さきに、「私の観た私」という論文を書いたが、先の客観論と違い、今度は主観的にありのままの心境を描いてみようと思う。",
+   "pt_anchor": "Anteriormente escrevi um artigo intitulado \"O Eu que Eu Vi\". Diferente daquela visão objetiva",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "科学が迷信を作る",
+   "title_pt": "",
+   "jp_anchor": "相変らずジャーナリストは、馬鹿の一つ覚えのように新宗教は残らず迷信邪教と決めている。",
+   "pt_anchor": "Como sempre, os jornalistas, como um papagaio, rotulam todas as novas religiões como religiões malignas e supersticiosas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "方法論と結果論",
+   "title_pt": "",
+   "jp_anchor": "今日、本教によって行われている病気浄霊療法は、とかく世間から誤解されやすい憾みがあるから、ここにその点を詳説してみよう。",
+   "pt_anchor": "Atualmente, a terapia de Johrei para doenças, praticada por nossa Igreja, tem a desvantagem de ser facilmente mal compreendida pelo mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "進歩的宗教",
+   "title_pt": "",
+   "jp_anchor": "つくづく現在社会を見る時、日進月歩の今日いかなるものといえども、進歩から外れているものは一つもない。",
+   "pt_anchor": "Ao observar a sociedade atual, vejo que, nestes dias de progresso acelerado, não há nada que esteja fora dele.",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,33 @@
+{
+ "filename": "19531115 - Gosuiji-roku nº 26.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 2→2. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 2,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』26号、昭和28(1953)年11月15日発行",
+   "pt_anchor": "Gosuiji-roku nº 26",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［十一月一日］",
+   "title_pt": "1 de novembro",
+   "jp_anchor": "［十一月一日］\n\nMeishu-Sama: 今年の自然農法は馬鹿に成績が良いです。特に岐阜県が良いです。早くも成績が分かりました。いつもは佐渡方面が成績が良いのですが、もっとも、はっきり分かるのは春になってからでしょう。",
+   "pt_anchor": "[1º de novembro]",
+   "notes": "",
+   "pt_prefix": "1 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

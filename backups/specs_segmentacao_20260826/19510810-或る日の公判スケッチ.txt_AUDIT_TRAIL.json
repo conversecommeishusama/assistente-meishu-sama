@@ -1,0 +1,68 @@
+{
+  "filename": "19510810-或る日の公判スケッチ.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (livro curto, JP 45 linhas de conteúdo dentro de um único bloco === ARTIGO ===, 5 trechos por spec: prefácio/título + 4 seções). Todo o JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, sem amostragem.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 5,
+    "articles_reviewed": 5,
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "linha 25 do PT (antiga linha única gigante cobrindo do início do prefácio até o meio do diálogo com o promotor sobre o dinheiro de suborno)",
+      "problema": "GRAVE: colapso estrutural de paragrafação — cerca de 19 parágrafos distintos do JP (P1-P9, correspondentes a linhas 27, 28, 35-44 do JP: prefácio de Okada, cabeçalhos 'Em Substituição ao Prefácio'/'Mokichi Okada', 'Palavras do Editor'/'Kaichiro Kosaka', a longa nota do editor Kosaka, a data, o título interno 'Esboço de um Dia de Julgamento', e os parágrafos P4-P9 do relato do julgamento) estavam todos amassados em uma única linha de texto corrido no PT, sem nenhuma quebra de parágrafo. Isto é a mesma classe de bug (\"monolito residual\") já catalogada em outros livros desta era da Fase Inicial. Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 7 (títulos/cabeçalhos) do checklist.",
+      "correcao": "Reestruturado com quebras de parágrafo em linha própria para cada um dos ~15 pontos de corte correspondentes às fronteiras reais de parágrafo/cabeçalho do JP (identificados por leitura direta, não por script). Nenhum conteúdo foi removido, reordenado ou reescrito nesta etapa — apenas re-segmentado por fatiamento de string exato nos pontos de fronteira confirmados contra o JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "linha 34 do PT (antiga linha única gigante cobrindo do fim do diálogo até o encarte final)",
+      "problema": "Mesmo bug do item 1: parágrafos P11-P19 do JP (linhas 46-54, incluindo a reflexão sobre o incidente de Mitaka, a fabricação de provas, a política doutrinária final 'doença, pobreza e conflito') e o título/data do encarte final estavam amassados em uma única linha corrida.",
+      "correcao": "Reestruturado da mesma forma que o item 1, com quebras de parágrafo restaurando a paragrafação 1:1 do JP, incluindo separar o título do encarte final ('Esboço de um Dia de Julgamento') da data de publicação ('Publicado em 10 de agosto de 1951'), que também estavam fundidos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "fronteira entre o fim do diálogo (antiga linha 32) e o início do parágrafo seguinte (antiga linha 34)",
+      "problema": "Desalinhamento de fronteira de parágrafo: a frase 'Isso provavelmente se tornou uma das razões fortes para a acusação.' (tradução de '恐らくこれも起訴の有力な理由となったものであろう。', JP linha 45) pertence ao final do parágrafo do diálogo (P10), mas estava posicionada no início do parágrafo seguinte (P11, JP linha 46), do lado errado da quebra.",
+      "correcao": "Movida para o final do parágrafo do diálogo, logo após 'Ele então disse: \"Então você concordou com o suborno, não é?\"', restaurando o alinhamento correto com o JP. Nenhuma palavra foi alterada, apenas reposicionada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "linha 41 do PT (dentro do diálogo promotor/Okada sobre 'dinheiro para suborno')",
+      "problema": "Troca de falante: o trecho JP '私は考えていると、いわく「君運動費ってものよはね、酒を呑ましたり、芸者を招んだりする事なんだよ」' estava atribuído a 'Eu' (Okada) no PT ('Eu, pensando, disse: \"Bem, dinheiro para suborno é dar bebidas alcoólicas...\"'). Lendo o diálogo completo, isso não faz sentido narrativo: o promotor pergunta o que é 'dinheiro para suborno', e a resposta seguinte de Okada é apenas 'Eu: É, provavelmente' — uma concordância que só faz sentido se alguém *outro* (o promotor) tiver fornecido a definição antes, técnica de indução de testemunha coerente com o tema central do ensaio (promotor manipulador). O verbo clássico 'いわく' após '私は考えていると' (enquanto eu pensava) indica um segundo falante completando a frase, não o próprio Okada.",
+      "correcao": "Reatribuído ao promotor: 'Enquanto eu pensava em como responder, ele mesmo completou: \"Bem, isso de \\'dinheiro para suborno\\' é dar bebidas alcoólicas, contratar gueixas, esse tipo de coisa.\"' — mantendo a próxima linha ('Eu: \"É, provavelmente.\"') como resposta de Okada a essa definição fornecida pelo promotor.",
+      "confianca": "média-alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "linha 35 do PT (abertura do relato do julgamento)",
+      "problema": "Pequena imprecisão: '強力犯係兼智能犯係のＭ警察官' (o policial M, [pertencente] à seção de crimes violentos e também à seção de crimes intelectuais/fraude) foi traduzido como 'chefe da seção de crimes violentos e de crimes de colarinho branco' — o JP não indica que M era chefe de seção (isso seria 係長), apenas que pertencia a ambas as seções.",
+      "correcao": "Corrigido para 'da seção de crimes violentos e também da seção de crimes de má-fé (fraude)', removendo o título de chefia não presente no original.",
+      "confianca": "média-alta"
+    }
+  ],
+  "outras_verificacoes": {
+    "titulo_pt_corrompido_no_jp": "O campo de metadado 'title_pt' no cabeçalho do arquivo JP (reports/livros_trabalho/jp/19510810-...txt) continha uma linha de diálogo copiada por engano ('Eu, pensando, disse: \"Bem, dinheiro para suborno...\"') em vez do título real. Corrigido para 'Esboço de um Dia de Julgamento', igual ao title_pt correto já presente no cabeçalho do arquivo PT.",
+    "cjk_residual": "Nenhum ideograma encontrado no corpo do PT (verificado por varredura de regex após a correção).",
+    "romanizacao_mokichi_okada": "O nome do fundador aparecia como 'Mokiti Okada' (romanização Kunrei-shiki) neste arquivo, enquanto glossario_traducao.json estabelece 'Mokichi Okada' (Hepburn) em suas entradas (ex.: '岡田茂吉全集著述': 'Obras Completas de Mokichi Okada'). Corrigido neste arquivo para 'Mokichi Okada'. NOTA: a variante 'Mokiti' ainda aparece em ~5 outros arquivos do corpus (ex. 19530101-アメリカを救う.txt) — trata-se de uma inconsistência de romanização mais ampla no acervo, fora do escopo desta revisão pontual; não alterada em outros arquivos."
+  },
+  "checklist_por_bloco": [
+    {"bloco": "Título + prefácio de Okada ('Em Substituição ao Prefácio')", "jp_linhas": "20-28", "decisao": "ok, com correção de paragrafação (item 1)", "confianca": "alta"},
+    {"bloco": "Palavras do Editor (Kosaka) + data", "jp_linhas": "32-36", "decisao": "ok, com correção de paragrafação (item 1)", "confianca": "alta"},
+    {"bloco": "Relato do julgamento — abertura até início do diálogo sobre suborno", "jp_linhas": "37-44", "decisao": "ok, com correções de paragrafação (item 1) e terminologia (item 5)", "confianca": "alta"},
+    {"bloco": "Diálogo promotor/Okada sobre 'dinheiro para suborno'", "jp_linhas": "45", "decisao": "corrigido — troca de falante (item 4) e frase deslocada (item 3)", "confianca": "média-alta"},
+    {"bloco": "Continuação do relato até o encarte editorial final", "jp_linhas": "46-64", "decisao": "ok, com correção de paragrafação (item 2)", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Todas as divergências encontradas (colapso estrutural de paragrafação, frase deslocada, troca de falante, imprecisão terminológica, metadado corrompido) foram corrigidas inline com confiança alta ou média-alta. Nenhum conteúdo do JP ficou sem par no PT."
+  }
+}

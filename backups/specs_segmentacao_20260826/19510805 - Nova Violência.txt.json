@@ -1,0 +1,25 @@
+{
+ "filename": "19510805 - Nova Violência.txt",
+ "profile": "monolith",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_no_split",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "法難手記 はしがき",
+   "title_pt": "Nova Violência",
+   "jp_anchor": "法難手記 はしがき",
+   "pt_anchor": "Nova Violência",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

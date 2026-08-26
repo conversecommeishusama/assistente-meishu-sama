@@ -1,0 +1,143 @@
+{
+  "filename": "19521015-御教え集14号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 208 linhas / PT 91 linhas após correções), 11 sessões diárias (5, 6, 7, 15, 16, 17, 23, 24, 25, 26, 27 de setembro de 1952). JP está todo dentro de um único bloco '=== ARTIGO ===' (profile mioshie_shu); as 11 sessões foram lidas integralmente contra o PT correspondente na mesma ordem, transição de data por transição de data, conforme alerta específico desta família (御教え集) recebido no início da tarefa.",
+  "pre_existing_context": "Spec (19521015-御教え集14号.txt.json) listava apenas 1 'preface' + 10 sessões (6,7,15,16,17,23,24,25,26,27 de setembro) — não incluía 5 de setembro como sessão própria; o campo 'preface' tinha jp_anchor apontando só para o título do volume e pt_anchor apontando (incorretamente) para o início do conteúdo de 6 de setembro. Isso mascarava o fato de que a sessão de 5 de setembro (JP linhas 24-45, ~4 artigos citados: 'O Mundo do Mal', 'A Terceira Guerra Realmente Existirá?', 'A Criação da Civilização: O Salvador e o Redentor', 'Fragmentos sobre Terapia') estava totalmente ausente do ficheiro de trabalho PT. Confirma a regra do projeto de que specs/scripts são auxiliares de triagem, nunca prova de fecho.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessoes_no_jp": 11,
+    "sessoes_revisadas": 11,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0,
+    "padrao_bug_confirmado": "monólito residual com cauda duplicada / cabeça duplicada em transições de data — confirmado em 5 das 11 sessões (16, 23, 25, 26, 27 de setembro), sempre no mesmo formato: quando a tradução de um dia longo precisou de mais de um parágrafo de nível superior, o segundo parágrafo reabre repetindo (com fraseado ligeiramente diferente) o final do parágrafo anterior antes de finalmente prosseguir com conteúdo novo. Confirma o alerta recebido no início da tarefa sobre esta família de livros."
+  },
+  "achado_grave_pt_em_falta": {
+    "localizacao": "sessão de 5 de setembro de 1952 (JP linhas 24-45), entre o cabeçalho do volume e '6 de setembro'",
+    "problema": "Sessão inteira ausente do ficheiro de trabalho PT (o ficheiro saltava diretamente do cabeçalho para '6 de setembro'). Conteúdo: introdução aos artigos 'O Mundo do Mal' [Eikō 174], 'A Terceira Guerra Realmente Existirá?' [Paraíso na Terra 40], 'A Criação da Civilização: O Salvador e o Redentor', 'Fragmentos sobre Terapia: Tudo que tem o nome de remédio é entorpecente' [Eikō 174], e o parágrafo sobre a esposa do Sr. Taga possuída por monges (Hōnen, Dengyō Daishi).",
+    "busca_realizada": "Antes de traduzir, busquei no acervo conforme protocolo 'PT em falta': grep por título dos artigos JP e por termos PT candidatos em reports/livros_trabalho/pt/ e textos_portugues/. Encontrei o monólito de produção 'textos_portugues/19521015-御教え集14号.txt', que contém a sessão de 5 de setembro completa, coerente com o JP, sem truncamento nem CJK residual.",
+    "resolucao": "Conteúdo copiado verbatim do monólito de produção (textos_portugues/) para o ficheiro de trabalho, reformatado com quebras de parágrafo (header + 5 parágrafos, um por citação/artigo) seguindo a convenção do resto do ficheiro de trabalho. Nenhuma retradução foi necessária.",
+    "nota_importante": "Ao verificar as sessões de 16, 23, 25, 26 e 27 de setembro no MESMO monólito de produção (textos_portugues/), confirmei que ele contém EXATAMENTE os mesmos bugs de duplicação encontrados no ficheiro de trabalho (contagens de frases-assinatura como 'todos os aspectos mudarão', 'Kobo Daishi', 'Priest', 'fico sem saber o que responder' aparecem 2x tanto na produção quanto no ficheiro de trabalho antes da correção). Ou seja, os bugs de duplicação não foram introduzidos nesta revisão nem em nenhuma etapa do pipeline de trabalho — já estavam na tradução original / já promovida à produção. Isto é relevante para decisões futuras de promoção/re-promoção deste volume (fora do escopo desta tarefa, que só cobre o ficheiro de trabalho).",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "entre cabeçalho do volume e '6 de setembro'",
+      "problema": "Sessão inteira de 5 de setembro ausente (ver achado_grave_pt_em_falta acima).",
+      "correcao": "Inserida a partir do monólito de produção textos_portugues/19521015-御教え集14号.txt, verbatim.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "sessão '16 de setembro', parágrafo sobre Nichiren/Meiji/Taishō/Shōwa/esposa do Sr. Taga",
+      "problema": "Parágrafo duplicado: o trecho '— há dezenas de anos, realizamos o sexcentésimo quinquagésimo aniversário [...] Kobo Daishi [...] todos os aspectos mudarão' repetia (com fraseado diferente) conteúdo já traduzido linhas antes no mesmo parágrafo, antes de finalmente introduzir o conteúdo novo sobre Zuiunkyo/Atami. Confirma o padrão de 'monólito residual com cauda duplicada' já visto nos volumes irmãos.",
+      "correcao": "Removido o trecho duplicado; o parágrafo passa a ir direto de '[...] todos os aspectos mudarão.' (primeira ocorrência) para 'A verdadeira mudança ocorrerá quando Zuiunkyo, em Atami, estiver concluído [...]' sem repetição. Verificado contra JP (um único trecho equivalente no original, não dois).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "sessão '23 de setembro', trecho sobre Kyoto/lago/museu/seitas Nichiren",
+      "problema": "Duplicação: o trecho sobre lago/montanha ('Porém, como há uma grande lagoa...'), sobre o museu em Saga, e sobre a introdução das seitas Nichiren/Ryūkō-ji/32 mil fiéis repetia conteúdo já presente no parágrafo anterior (que termina truncado em 'De todo modo,'), antes de introduzir o conteúdo genuinamente novo ('foi a primeira vez desde a fundação do Templo Ryukuji... cinquenta ônibus... Tokyo Nichi Nichi Shimbun').",
+      "correcao": "Removido o trecho duplicado; texto passa direto de 'De todo modo,' para 'Dizem que foi a primeira vez desde a fundação do Templo Ryukuji [...]'. Verificado contra JP (parágrafos 162-164 do bloco JP, conteúdo único).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "sessão '25 de setembro', trecho sobre aquisição do terreno em Saga/Kyoto",
+      "problema": "Duas anomalias no mesmo ponto: (a) um parágrafo inteiro ('Desta vez, conseguimos adquirir um terreno... visitei o Salão de Shaka... No ano passado') estava truncado no meio de uma frase e duplicava (com fraseado diferente) o parágrafo seguinte, que continha a versão completa e correta; (b) um fragmento corrompido/sem sentido ('… não se sabe.') encabeçava o parágrafo seguinte, seguido de uma repetição de 'Deixemos o assunto da Terra Divina por aqui' (frase que já fechava o parágrafo anterior, sobre o tema do modelo do Paraíso na Terra).",
+      "correcao": "Removido o parágrafo truncado/duplicado inteiro e o fragmento corrompido '… não se sabe. Deixemos o assunto da Terra Divina por aqui.'; o texto passa direto de '[...] Deixemos o assunto da Terra Divina por aqui.' (única ocorrência, no fecho do parágrafo teórico) para 'Agora, consegui adquirir um terreno exatamente como imaginava em um lugar chamado Saga, em Quioto [...]' (início da narrativa da aquisição do terreno, sem truncamento). Verificado contra JP (um único relato da aquisição do terreno, JP linha 184).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "sessão '26 de setembro', trecho sobre cultura de Kyoto/daimyos/Genroku/chá/Sr. Priest",
+      "problema": "Parágrafo cortado no meio da frase '[...] mas a cultura japonesa unificada —' e o parágrafo seguinte reabria repetindo desde 'Em seguida, veio a cultura dos daimiôs [...]' todo o conteúdo sobre Genroku, Momoyama, chá e o Sr. Priest do Metropolitan Museum já traduzido no parágrafo anterior, antes de finalmente completar a frase original com '[...] isso não existe em Quioto.'",
+      "correcao": "Removida a repetição; a frase truncada foi reunida diretamente com seu complemento: '[...] mas a cultura japonesa unificada — isso não existe em Quioto. Também não há algo que possa ser apreciado pelo público em geral.' Verificado contra JP (um único trecho sobre daimyos/Genroku/chá/Priest, sem repetição no original).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "sessão '27 de setembro', trecho final sobre Johrei sem esforço / exposições de pintura (Inten, Seiryū)",
+      "problema": "Um parágrafo inteiro sobre 'não fazer o Johrei com força', a exposição Inten/Seiryū e a superstição de que sofrimento aparece na pintura foi traduzido duas vezes seguidas (fraseado ligeiramente diferente em cada), antes de finalmente introduzir o conteúdo novo sobre a publicação da crítica na revista 'Eikō' e o artigo sobre salvar a América.",
+      "correcao": "Removida a segunda ocorrência (duplicada) do parágrafo; texto passa direto de '[...] isso aparece na pintura.' (primeira ocorrência) para 'Em breve, publicarei uma crítica sobre essas exposições na revista \"Eikō\" [...]'. Verificado contra JP (JP linhas 206-208, conteúdo único, sem repetição).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "5 de setembro",
+      "decisao": "corrigido - PT ausente, restaurado do monólito de produção",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "6 de setembro",
+      "decisao": "ok, sem correções",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "7 de setembro",
+      "decisao": "ok, sem correções",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "15 de setembro",
+      "decisao": "ok, sem correções (parágrafo único, sem sinal de duplicação apesar do tamanho)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "16 de setembro",
+      "decisao": "corrigido - duplicação removida (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "17 de setembro",
+      "decisao": "ok, sem correções",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "23 de setembro",
+      "decisao": "corrigido - duplicação removida (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "24 de setembro",
+      "decisao": "ok, sem correções (múltiplos parágrafos, quebras coincidem com o JP, sem duplicação)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "25 de setembro",
+      "decisao": "corrigido - truncamento + duplicação + fragmento corrompido removidos (item 4)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "26 de setembro",
+      "decisao": "corrigido - duplicação removida (item 5)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "27 de setembro",
+      "decisao": "corrigido - duplicação removida (item 6)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual": "grep por caracteres CJK no corpo do PT (excluindo linhas de cabeçalho/metadados 1-20) — nenhuma ocorrência após as correções.",
+    "cabecalhos_datas": "grep '^[0-9]* de setembro' confirma as 11 sessões na ordem correta (5,6,7,15,16,17,23,24,25,26,27), sem cabeçalho duplicado ou fora de ordem.",
+    "romanizacao_nomes": "Nomes próprios (Tatematsu Bunji, Hallman, Nichiren, Hōnen, Shinran, Rennyo, Kōbō Daishi, Susanoo no Mikoto, Amaterasu Ōmikami, Kannon/Amida/Shaka, Kamiyama, etc.) conferidos contra o JP e consistentes ao longo do ficheiro; nenhuma corrupção de nome própria encontrada (diferente do padrão '18 de novembro' relatado em outros volumes irmãos)."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 208 linhas / PT 92 linhas), todas as transicoes de data (5,6,7,15,16,17 de setembro) confirmadas presentes e na ordem correta. Conteudo extenso sobre Hallman/aumento de temperatura, aquisicao do terreno de Saga/Quioto, e \"Luz do Oriente\" fielmente traduzido, sem truncamento, sem CJK residual, sem duplicacao. Nenhuma correcao necessaria."
+  }
+}

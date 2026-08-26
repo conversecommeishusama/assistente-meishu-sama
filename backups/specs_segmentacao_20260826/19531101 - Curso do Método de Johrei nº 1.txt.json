@@ -1,0 +1,78 @@
+{
+ "filename": "19531101 - Curso do Método de Johrei nº 1.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 9→7 (2026-07-15: どんどん強くなる菌/罪はアメや食品にも eram subtítulos internos da citação de jornal dentro do artigo 六, não seções próprias; title_pt corrigido, template 'Aula' incorreto substituído).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座(一)",
+   "pt_anchor": "Curso do Método de Johrei nº 1",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　病気とは何ぞや　『結核の革命的療法』",
+   "title_pt": "O que é a Doença — \"A Terapia Revolucionária da Tuberculose\"",
+   "jp_anchor": "一　病気とは何ぞや　『結核の革命的療法』",
+   "pt_anchor": "I — O que é a Doença — \"A Terapia Revolucionária da Tuberculose\"",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　黴菌の発生　『結核信仰療法』",
+   "title_pt": "A Geração dos Micróbios — \"Terapia de Fé para a Tuberculose\"",
+   "jp_anchor": "二　黴菌の発生　『結核信仰療法』",
+   "pt_anchor": "II — A Geração dos Micróbios — \"Terapia de Fé para a Tuberculose\"",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三　健康の真理『神示の健康法』",
+   "title_pt": "A Verdade da Saúde — \"O Método de Saúde da Revelação Divina\"",
+   "jp_anchor": "三　健康の真理『神示の健康法』",
+   "pt_anchor": "III — A Verdade da Saúde — “O Método de Saúde da Revelação Divina”",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四　人間は健康の器『神示の健康法』",
+   "title_pt": "O Ser Humano é um Vaso da Saúde — \"O Método de Saúde da Revelação Divina\"",
+   "jp_anchor": "四　人間は健康の器『神示の健康法』",
+   "pt_anchor": "IV — O Ser Humano é um Vaso da Saúde — “O Método de Saúde da Revelação Divina”",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五　浄霊の原理　『光号外』（昭和二十四年五月三十日発行）",
+   "title_pt": "O Princípio do Johrei — Hikari, edição extra (Publicado em 30 de maio de 1949)",
+   "jp_anchor": "五　浄霊の原理　『光号外』（昭和二十四年五月三十日発行）",
+   "pt_anchor": "V — O Princípio do Johrei — Hikari, edição extra (Publicado em 30 de maio de 1949)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "六　薬が効かなくなった　『栄光」一九六号",
+   "title_pt": "Os Remédios Deixaram de Fazer Efeito — \"Eikō\" nº 196",
+   "jp_anchor": "六　薬が効かなくなった　『栄光」一九六号",
+   "pt_anchor": "VI — Os Remédios Deixaram de Fazer Efeito — \"Eikō\" nº 196",
+   "notes": "",
+   "pt_prefix": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,51 @@
+{
+ "filename": "19481208 - Gokōwa-roku nº 1.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 4→4. Pareamento PT fechado manualmente 2026-07-14 (PROTOCOLO_CHUNK_TURNAWARE.md Secao 1+2): pt_anchor do art.1 (prefacio) corrigido -- audit --fix --repair-pt tinha casado com o marcador da sessao seguinte (ratio 0.04); pt_anchor dos arts. 2-4 (sessoes) ajustado para incluir o colchete completo do marcador de data PT ('[DD de mes (dia da semana)]'), pois o valor sem colchete produzido pelo audit casa no MEIO do colchete e corrompe o texto (colchete truncado sobrando no artigo anterior). Corte turn-aware (Secao 2) verificado por codigo: 94 unidades de turno Interlocutor:/Meishu-Sama: (JP+PT, 4 artigos) inteiras dentro de um unico chunk, 0 violacoes, 0 unidades >3200 chars. ATENCAO: qualquer re-execucao futura de audit_manual_livros_segmentacao.py --fix --repair-pt neste arquivo vai reverter os 4 pt_anchor de volta ao valor sem colchete (bug sistemico confirmado na logica gokowa_roku_qa/ochishiji_roku/mioshie_shu do audit script: 'new_anchor = title_pt_new' ignora se o PT usa colchete em volta da data) -- nao rodar --fix neste arquivo sem primeiro corrigir esse bug no motor ou proteger este spec.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』1号、昭和23(1948)年12月8日発行",
+   "pt_anchor": "Gokōwa-roku nº 1",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十八日（木）",
+   "title_pt": "28 de outubro",
+   "jp_anchor": "十月二十八日（木）",
+   "pt_anchor": "[28 de outubro (quinta-feira)]",
+   "notes": "",
+   "pt_prefix": "28 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月八日（月）",
+   "title_pt": "8 de novembro",
+   "jp_anchor": "十一月八日（月）",
+   "pt_anchor": "[8 de novembro (segunda-feira)]",
+   "notes": "",
+   "pt_prefix": "8 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十八日（木）",
+   "title_pt": "18 de novembro",
+   "jp_anchor": "十一月十八日（木）",
+   "pt_anchor": "[18 de novembro (quinta-feira)]",
+   "notes": "",
+   "pt_prefix": "18 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,84 @@
+{
+  "filename": "19510115-自然農法解説.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 338 linhas / PT reformatado de 96 para 379 linhas), 43 trechos por spec, do prefácio ao encarte final. JP tem um único bloco === ARTIGO === (não pré-dividido); os 43 trechos do spec foram conferidos por conteúdo (jp_anchor/pt_anchor) dentro desse bloco único. Não é amostragem: todo o corpo do JP foi lido integralmente (duas passagens de leitura, offset 1-258 e 259-339) e confrontado frase a frase com o PT correspondente na mesma ordem.",
+  "sinal_de_alerta_investigado": "Razão JP/PT de linhas (~3.5:1) citada como sinal de alerta: causa real confirmada foi colapso de formatação (PT inteiro escrito em ~90 parágrafos-monólito por seção/testemunho, sem quebra 1:1 com os parágrafos do JP), NÃO perda de conteúdo generalizada — mas a verificação frase a frase encontrou 2 perdas de conteúdo reais e pontuais (ver correções 2 e 5 abaixo), confirmando que 'é só formatação' não podia ser presumido sem checar.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura (Δ=0 quando aplicável) deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 43,
+    "articles_reviewed": 43,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0,
+    "reformatacao_paragrafos_aplicada": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Ensaio teórico inicial (序文/はしがき/自然農法解説/土の偉力/虫害/風水害/寄生虫問題/浄霊の偉効/素人菜園について/結論), JP linhas 20-81",
+      "problema": "Colapso de formatação: ~34 parágrafos distintos do JP (incluindo 8 títulos de seção) estavam comprimidos em 4 linhas monolíticas no PT, com os títulos de seção (Prefácio, O Grande Poder do Solo, Pragas, etc.) marcados só em negrito inline, sem quebra de parágrafo. Conteúdo em si já estava completo (verificado frase a frase) — o problema era exclusivamente de paragrafação (checklist ponto 6).",
+      "correcao": "Reformatado com quebra de parágrafo 1:1 correspondente ao JP e títulos de seção em linha própria (Prefácio / O Grande Poder do Solo / Pragas / Danos Causados pelo Vento e pela Água / O Problema dos Parasitas / A Grande Eficácia do Johrei / Sobre a Horta para Amadores / Conclusão). Nenhuma palavra de conteúdo foi alterada nesta correção, só a segmentação.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Testemunho de Ukai Fūichi ('Graças a este método em campos e arrozais em más condições'), cabeçalho antes do corpo do relato, JP linhas 90-91",
+      "problema": "PERDA REAL DE CONTEÚDO: a linha de metadado 'Prefeitura de Aichi, Distrito de Higashi-Kasugai, Vila Sakashita / Igreja Miroku, Igreja Shinkō Chūō' (愛知県東春日井郡坂下町 / 五六七大教会神光中教会) estava totalmente ausente do PT — o texto saltava diretamente da citação da revista para 'Ueki Fūichi Agradeço...', sem local nem igreja de origem do autor.",
+      "correcao": "Linha de metadado reconstituída e inserida antes do corpo do relato: 'Vila Sakashita, Distrito de Higashi-Kasugai, Província de Aichi / Igreja Miroku, Igreja Shinkō Chūō, Fūichi Ukai'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Mesmo testemunho — nome do autor, 鵜飼楓一",
+      "problema": "Nome próprio errado: '鵜飼' (leitura padrão e praticamente única 'Ukai', cf. 鵜飼い/cormorant fishing, termo de amplo conhecimento) estava romanizado como 'Ueki' (que corresponde a um kanji diferente, 植木).",
+      "correcao": "Corrigido para 'Ukai Fūichi' em todas as ocorrências do nome neste testemunho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Testemunho de Kusugaya Tatsuo ('Colheita de mais de nove fardos por tan...'), cabeçalho, JP linhas 110-111",
+      "problema": "Dois nomes próprios errados: '楠ケ谷' (leitura padrão 'Kusugaya' — 楠 lido 'kusu' é virtualmente universal em nomes, cf. 楠木正成/Kusunoki) estava romanizado como 'Kutsugaya'; e '土方村' (leitura padrão 'Hijikata', cf. Hijikata Toshizō) estava com erro de digitação como 'Hijkata'.",
+      "correcao": "Corrigido para 'Tatsuo Kusugaya' e 'Vila Hijikata' em todas as ocorrências.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Testemunho de Ochiai Masao ('O cultivo natural é o verdadeiro método agrícola...'), JP linhas 184-189",
+      "problema": "GRAVE — padrão 'monólito residual' com duplicação de cauda (mesma assinatura de bug já catalogada em outros livros da mesma família): o PT continha DUAS traduções sobrepostas do mesmo trecho JP (da 'segunda purificação' das mudas até a visita dos nove agricultores de Shimotsuma) — uma primeira passagem (terminando em '...pôde ajudar tanto essas pessoas.') e, logo a seguir, uma segunda passagem recomeçando a meio de frase em minúscula ('passados seis dias, tornou-se novamente muito escuro...') que repetia o mesmo conteúdo com fraseado ligeiramente diferente antes de finalmente continuar para o trecho novo (resultado da colheita e fechamento do testemunho). A duplicata também usava dois nomes diferentes para a mesma pessoa ('Professor Eada' na primeira passagem vs 'professor Namieda' na segunda) — confirmado por pesquisa (nome de família 波江田, ~20 pessoas no Japão, leitura registrada 'Namieda') que a forma correta é 'Namieda'.",
+      "correcao": "Removida a passagem duplicada; mantida uma única passagem contínua e completa (da primeira purificação das mudas até o fechamento 'Muito obrigado por toda a proteção divina.'), com paragrafação restaurada 1:1 ao JP. Nome do professor padronizado para 'Namieda' em todas as ocorrências deste testemunho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Testemunho de Kitamura Shirō ('Aumento da produção de vegetais pela agricultura natural'), lista de culturas, JP linhas 288-290 (二、大豆 / 三、小豆)",
+      "problema": "PERDA REAL DE CONTEÚDO + item mal rotulado: a numeração da lista pulava de '2. Soja' direto para '4. Taro' (sem '3.'). Ao conferir o conteúdo, o item rotulado '2. Soja' continha na verdade os dados do item 3 do JP (小豆/feijão azuki: canteiro 2 shaku 5 sun, 2-3 grãos por cova, colheita 28 de outubro, 1 fardo em 4 se, grãos grandes e cor admirada) — ou seja, o conteúdo genuíno do item 2 (大豆/soja: semeadura início de julho, colheita 26 de outubro, 2 to 2 shō por se, raízes/caules mais grossos, mais do dobro da colheita adubada) estava totalmente ausente, e o item 3 (feijão azuki) não existia como entrada própria.",
+      "correcao": "Reconstituídos os dois itens separadamente, traduzidos do JP: '2. Soja' com o conteúdo correto (JP linha 288-289) e novo item '3. Feijão azuki' com o conteúdo que estava indevidamente sob o rótulo '2.' (JP linha 290). Nenhum conteúdo foi inventado — ambos os parágrafos foram traduzidos diretamente do JP fonte, usando glossario_traducao.json onde aplicável (nenhum termo do glossário conflitava com este trecho).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + ensaio teórico (序文/はしがき/土の偉力/虫害/風水害/寄生虫問題/浄霊の偉効/素人菜園について/結論)", "jp_linhas": "20-81", "decisao": "ok, com 1 correção de formatação (paragrafação 1:1 restaurada, item 1)", "confianca": "alta", "notas": "Conteúdo já estava completo antes da correção; verificado frase a frase contra o JP nas duas passagens de leitura."},
+    {"bloco": "Testemunho Ukai Fūichi (悪条件の田畑で此御蔭)", "jp_linhas": "86-101", "decisao": "corrigido - metadado de local/igreja ausente (item 2) e nome próprio errado (item 3)", "confianca": "alta"},
+    {"bloco": "Testemunho Kusugaya Tatsuo (台風にも倒伏せず反当り九俵余の収穫), incluindo tabela de dados", "jp_linhas": "105-136", "decisao": "corrigido - dois nomes próprios errados (item 4)", "confianca": "alta"},
+    {"bloco": "Testemunho Ogawa Eitarō (自然耕作で超過供出する信徒)", "jp_linhas": "140-166", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Ochiai Masao (自然栽培こそ真の農法)", "jp_linhas": "170-189", "decisao": "corrigido - monólito residual com duplicação de cauda e nome de professor inconsistente (item 5), GRAVE", "confianca": "alta"},
+    {"bloco": "Testemunho Imai Shigeo (大豆は三倍、米は一表半の増収)", "jp_linhas": "193-201", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Tanaka Nobuyoshi (水害絶無の自然農法)", "jp_linhas": "205-213", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Inoue Chiyoshi (水稲自然栽培第一年目御報告), incluindo tabela grande", "jp_linhas": "217-255", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Shimizu Yasuyoshi (自然栽培による本年度耕作状況の報告)", "jp_linhas": "259-274", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Kitamura Shirō (自然栽培による野菜の増収), lista de 7 culturas", "jp_linhas": "278-297", "decisao": "corrigido - item 2/3 (soja/feijão azuki) com conteúdo trocado e item 3 ausente (item 6), GRAVE", "confianca": "alta"},
+    {"bloco": "Testemunho Sakata Kurao (不思議な玉葱)", "jp_linhas": "301-309", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Testemunho Saitō Tetsujirō (一粒、一万五千倍の奇蹟) + colofão final", "jp_linhas": "313-338", "decisao": "ok", "confianca": "alta"}
+  ],
+  "verificacoes_negativas": {
+    "cjk_residual": "Nenhum CJK residual no corpo do PT (verificado por regex sobre todo o ficheiro, excluindo os campos de metadado title_jp/nome do ficheiro no cabeçalho, que são esperados).",
+    "duplicacao_alem_do_item_5": "Nenhuma outra duplicação de bloco encontrada nos demais 10 testemunhos + ensaio + colofão.",
+    "titulos_dos_43_trechos_do_spec": "Os 43 pt_anchor/jp_anchor do spec foram localizados e conferem com o texto reformatado, na mesma ordem."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. As 2 perdas de conteúdo reais (metadado de local/igreja de Ukai Fūichi; item soja/feijão-azuki de Kitamura Shirō) e a duplicação grave (Ochiai Masao) foram corrigidas inline com confiança alta, traduzindo diretamente do JP fonte. Nomes próprios corrigidos (Ukai, Kusugaya, Hijikata, Namieda) com confiança alta, incluindo confirmação externa da leitura de 波江田 (Namieda) via pesquisa de registo de sobrenomes japoneses."
+  }
+}

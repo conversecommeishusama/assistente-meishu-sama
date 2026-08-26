@@ -1,0 +1,191 @@
+{
+  "filename": "19511225-御垂示録5号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 870 linhas / PT originalmente 149 linhas, agora 395 após correção), 4 artigos por spec (prefácio + sessões de 1, 6 e 8 de dezembro de 1951). Alerta inicial: razão de linhas JP/PT ~5.8:1, a mais alta já vista na família 御垂示録 nesta sessão. Hipótese de monólito(s) confirmada e corrigida.",
+  "pre_existing_context": "Mesma família e mesmo padrão de bug já catalogado em 御垂示録1号 (monólito de 135 turnos) e 4号/24号 (monólitos com cauda duplicada, ver GOSHINSHO.md). Este arquivo tinha DOIS monólitos gigantes, um deles com duplicação parcial real (não apenas cauda, mas também lead duplicado/truncado).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 4,
+    "monolitos_encontrados": 2,
+    "monolitos_resolvidos": 2,
+    "turnos_novos_segmentados": "110 (sessão 1 de dezembro) + 1 cabeçalho de sessão (6 de dezembro, já com par existente) + 75 (sessão 8 de dezembro, até o ponto onde a segmentação já existente retoma) = 186 quebras de parágrafo inseridas",
+    "conteudo_perdido_encontrado": "Nenhum de fato perdido — todo o conteúdo do monólito já estava traduzido, apenas amassado em poucas linhas físicas sem quebra de parágrafo por turno",
+    "duplicacao_real_encontrada_e_removida": "Sim — ver correção 2 abaixo (duplicação parcial do fim do JP410 e duplicação integral de JP704-728)",
+    "items_escalated_to_pendencias": 2,
+    "correcoes_terminologicas_aplicadas": 3
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "PT linha 25 original (arquivo antes da correção) — sessão '1 de dezembro' inteira",
+      "problema": "MONÓLITO GRAVE: toda a sessão de 1º de dezembro (JP linhas 26-273, ~55 pares de pergunta/resposta) estava amassada em UMA única linha física de PT, incluindo também o cabeçalho da sessão seguinte '[6 de dezembro]' e a primeira pergunta dessa sessão (JP linha 279), sem nenhuma quebra de parágrafo entre falantes. Viola os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist. O conteúdo em si, ao ser lido, mostrou-se uma tradução completa e coerente de toda a sessão — não havia perda de conteúdo, apenas ausência de segmentação.",
+      "correcao": "Reconstruído com 110 quebras de parágrafo individuais (uma por turno de pergunta/resposta), conferido trecho a trecho contra o JP na mesma ordem, mais o cabeçalho '1 de dezembro' isolado em linha própria e o cabeçalho '6 de dezembro' isolado antes da pergunta que o segue (que já tinha resposta corretamente segmentada na linha seguinte do arquivo original). Nenhum conteúdo foi reescrito ou retraduzido — apenas resegmentado, com verificação linha a linha contra o JP em cada ponto de quebra.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "PT linhas 84-86 originais — final da resposta longa sobre '一厘' (JP410) + sessão '8 de dezembro' inteira até JP linha 708",
+      "problema": "MONÓLITO GRAVE COM DUPLICAÇÃO REAL: (a) a linha 84 original continha uma resposta longa (tradução de um único parágrafo JP genuinamente extenso, JP410) mas estava TRUNCADA no meio de uma frase ('...quando a purificação ocorre, surge febre, e'); (b) a linha 86 seguinte reiniciava a tradução a partir de um ponto ANTERIOR dessa mesma resposta ('É isso que significa. A salvação da noite...'), ou seja, duplicava um trecho já traduzido na linha 84, desta vez de forma completa; (c) na sequência, a linha 86 engolia inteira a sessão '8 de dezembro' (JP414-728, ~40 pares de pergunta/resposta) como um único bloco de texto corrido, sem quebras de parágrafo; (d) o final desse bloco (JP704-728, sobre dor na perna/parto/purificação/sonho do 'dragão de madeira') estava DUPLICADO — o mesmo conteúdo já aparecia corretamente segmentado turno a turno nas linhas 88-96 do arquivo original (formato com travessão '—', provavelmente resquício de um reparo parcial anterior).",
+      "correcao": "(1) Unificada a resposta sobre '一厘' em um único parágrafo completo e não duplicado (a versão completa da linha 86 substituiu a versão truncada da linha 84, mantendo-a como parágrafo único por corresponder a um único parágrafo genuíno no JP); (2) inserido o cabeçalho de sessão '8 de dezembro' em linha própria; (3) resegmentados 75 turnos individuais de pergunta/resposta cobrindo JP416 até JP708, conferidos um a um contra o JP; (4) a segmentação parou exatamente no ponto (JP708, pergunta 'Não tenho força na perna.') que já enlaçava sem lacuna nem sobreposição com o conteúdo já correto da linha 88 original (JP710 em diante) — verificado que a junção não deixou buraco nem repetição.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Turno sobre a oração recitada antes da visão do perfil de Kannon (dentro da sessão de 1º de dezembro)",
+      "problema": "Nome da oração '天津祝詞' (Amatsu Norito) havia sido romanizado incorretamente como 'Tenchi-kamunorito' no rascunho de tradução recuperado do monólito — não corresponde à leitura do termo japonês.",
+      "correcao": "Corrigido para 'Amatsu Norito'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Turno sobre estudiosos do kotodama (sessão 8 de dezembro)",
+      "problema": "'平田篤胤' (Hirata Atsutane, estudioso de kokugaku bem conhecido) romanizado como 'Hira Atsutane' (faltando a sílaba 'ta') em duas ocorrências consecutivas.",
+      "correcao": "Corrigido para 'Hirata Atsutane' nas duas ocorrências.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Turno sobre Daijo/Shojo e a Deusa do meio (sessão 8 de dezembro)",
+      "problema": "'伊都能売' (Izunome) traduzido como 'Deusa Izunome', atribuindo gênero feminino não presente no texto japonês nem sustentado pela doutrina (Izunome é tipicamente descrita como unificação/neutra, não uma divindade feminina). O glossário (`glossario_traducao.json`) só tem entrada para a forma completa '伊都能売之大御神' → 'Izunome-Ōmikami', sem indicar gênero.",
+      "correcao": "Removido o prefixo de gênero: 'o centro é Izunome' (sem 'Deusa').",
+      "confianca": "média-alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + data de publicação)",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Sem alterações — já correto."
+    },
+    {
+      "bloco": "Sessão 1 de dezembro (~55 pares P&R)",
+      "jp_linhas": "26-273",
+      "decisao": "corrigido — monólito grave resegmentado (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Transição para sessão 6 de dezembro (cabeçalho + primeira pergunta)",
+      "jp_linhas": "277-279",
+      "decisao": "corrigido — cabeçalho isolado em linha própria (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 6 de dezembro (corpo, já segmentado corretamente no arquivo original)",
+      "jp_linhas": "281-399",
+      "decisao": "ok, sem alterações estruturais — apenas correção terminológica pontual (correções 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Resposta longa sobre 一厘 / Ofudesaki Oomoto (parágrafo JP genuinamente extenso)",
+      "jp_linhas": "406-410",
+      "decisao": "corrigido — duplicação removida, unificado em parágrafo único completo (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 8 de dezembro, primeira metade (até JP708)",
+      "jp_linhas": "414-708",
+      "decisao": "corrigido — monólito grave resegmentado, sem perda nem duplicação residual (correção 2, correções 4-5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 8 de dezembro, segunda metade (já segmentada corretamente no arquivo original, formato com travessão)",
+      "jp_linhas": "710-870",
+      "decisao": "ok, sem alterações — verificado que a junção com o bloco anterior não deixou lacuna nem repetição",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [
+    "Romanização de '高木定次' (mantida como 'Sadaji Takagi') e '清友' (mantido como 'Kiyoto') — leitura de nome próprio ambígua sem furigana no JP, registrado em PENDENCIAS_REVISAO.json, não bloqueante.",
+    "Varredura de '五六七→Miroku' mencionada no handoff geral da sessão não foi repetida especificamente para este arquivo (o termo 'Miroku' aparece uma vez neste volume, na sessão de 6 de dezembro, já traduzido de forma direta como 'Miroku' sem romanização alternativa — não há inconsistência a corrigir aqui, mas a decisão de forma canônica geral do termo permanece pendente de autorização, como já registrado no handoff).",
+    "NOVO (2026-07-08, ver rotulagem_interlocutor_meishu): dentro do trecho da sessão '8 de dezembro' que esta trilha havia marcado como 'ok, sem alterações' (JP756-870, formato com travessão, pré-existente), a rotulagem turno-a-turno encontrou aproximadamente 10 perguntas curtas do Interlocutor (JP764, 773, 778, 782, 786, 795, 799, 814, 819, 858) e 1 resposta do Meishu-Sama (JP811) sem parágrafo correspondente no PT — não são perdas de sentido (a resposta seguinte é autoexplicativa), mas são turnos do JP sem contrapartida física no PT. Não corrigido nesta passada (rotulagem não deve reescrever/inserir conteúdo novo); registrar para decisão futura se vale a pena completar a tradução desses turnos curtos."
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true. Dado o histórico grave desta família (achados reais em praticamente todos os volumes já revisados: 4号, 5号, 7号, 8号, 9号, 11号, 14号, 17号, 補, 19号, 24号), esta revisão readequou estruturalmente o arquivo e não encontrou perda de conteúdo real (apenas amassamento e duplicação parcial, ambos corrigidos), mas exige uma segunda auditoria independente antes de fechar, conforme 'revisao-paralela-jp-pt.mdc' § 'Δ=0 é necessário, nunca suficiente'. Pendências leves de romanização (ver acima) não bloqueiam a segunda auditoria, mas devem ser revisadas junto."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (aspas «」»=Interlocutor, prosa corrida=Meishu-Sama no JP)",
+    "etapa_a": "Mapa de turnos construído linha a linha sobre todo o JP (871 linhas): sessão 1º de dezembro = 113 turnos (54 I / 59 M); 6 de dezembro = 62 turnos (29 I / 33 M); 8 de dezembro = 211 turnos (103 I / 108 M). Total JP = 386 turnos.",
+    "etapa_b": "PT antes da rotulagem usava aspas para marcar falas do Interlocutor (convenção já correta, herdada da resegmentação de 2026-07-07) em quase todo o volume, exceto um bloco pré-existente na segunda metade da sessão '8 de dezembro' (JP756-870 / PT antigo a partir do trecho 'Não tenho força na perna') que usava travessão '—' genérico como separador de parágrafo em vez de aspas — esse bloco já havia sido validado como estruturalmente correto ('sem alterações') na auditoria de 2026-07-07, mas o travessão não indica por si só o papel do falante (proibido rotular só pelo travessão, conforme regra). Cada uma das 62 linhas com travessão foi mapeada individualmente contra o JP correspondente (JP700-870) para decidir Interlocutor/Meishu-Sama por conteúdo, não pela formatação. Achado: nesse mesmo bloco, ~10 perguntas curtas do Interlocutor e 1 resposta do Meishu-Sama não têm parágrafo PT correspondente (ver pendencias_abertas acima) — contagem final PT: 176 Interlocutor / 191 Meishu-Sama (367 turnos rotulados) contra 386 no JP, diferença concentrada nesse trecho específico, não introduzida por esta rotulagem.",
+    "etapa_c": "Aplicado 'Interlocutor: ' (mantendo as aspas originais onde já existiam) e 'Meishu-Sama: ' a cada parágrafo existente do PT, incluindo o bloco de travessão (travessão removido, rótulo aplicado por conteúdo). Cabeçalhos de sessão '1 de dezembro', '6 de dezembro' e '8 de dezembro' preservados textualmente e colocados entre colchetes. Nenhum conteúdo foi reescrito, reordenado ou retraduzido; apenas rótulos e formatação (colchetes, linha em branco entre turnos) foram adicionados.",
+    "resultado": "367 parágrafos rotulados (176 Interlocutor + 191 Meishu-Sama) + 3 cabeçalhos de sessão. approved mantido em false, conforme instrução (pendência doutrinária de romanização não resolvida)."
+  },
+  "correcao_turnos_ausentes_8_dezembro": {
+    "data": "2026-07-08",
+    "autorizacao": "Correção pontual explicitamente autorizada pelo usuário (pacote de 3 correções pequenas e bem delimitadas), conforme authorization-workflow.mdc.",
+    "escopo": "Os ~10 pares faltando identificados em pendencias_abertas (bloco JP756-870, segunda metade da sessão '8 de dezembro', antigo formato com travessão) foram relocalizados linha a linha contra o JP (linhas exatas: 764, 773, 778, 782, 786, 795, 799, 809-819, 858) e as falas curtas ausentes traduzidas e inseridas nas posições corretas.",
+    "insercoes_aplicadas": [
+      {
+        "jp_linha": 764,
+        "jp": "浄霊はどこをいたしましたら――",
+        "pt_inserido": "Interlocutor: Onde devo fazer o Johrei?"
+      },
+      {
+        "jp_linha": 773,
+        "jp": "仏壇はどの位置に置きましたらよろしいでしょうか",
+        "pt_inserido": "Interlocutor: Onde devo colocar o altar budista?"
+      },
+      {
+        "jp_linha": 778,
+        "jp": "お額のお祀りのしかたもございますのでしょうか",
+        "pt_inserido": "Interlocutor: Há também uma forma correta de venerar os quadros emoldurados?"
+      },
+      {
+        "jp_linha": 782,
+        "jp": "順序は――",
+        "pt_inserido": "Interlocutor: E quanto à ordem?"
+      },
+      {
+        "jp_linha": 786,
+        "jp": "今度いただきました『大浄力』はどこにいたしましたらよろしいでしょうか",
+        "pt_inserido": "Interlocutor: Onde devo colocar o \"Grande Poder de Purificação\" que recebi agora?"
+      },
+      {
+        "jp_linha": 795,
+        "jp": "奥さんの里の先祖代々の位牌は、主人の兄弟とかより上に――",
+        "pt_inserido": "Interlocutor: As placas ancestrais da família da esposa ficam acima dos irmãos do marido?"
+      },
+      {
+        "jp_linha": 799,
+        "jp": "大きさも小さく",
+        "pt_inserido": "Interlocutor: O tamanho também deve ser menor?"
+      },
+      {
+        "jp_linha": 811,
+        "jp": "それは鳥居を直してやんなさい。先祖代々――古いんですね。",
+        "pt_inserido": "Meishu-Sama: Conserte o torii. É um Inari ancestral antigo, não é? (resposta à pergunta sobre o torii do Inari quebrado, linha 809 — antes ausente, fazendo o PT saltar direto para a resposta de uma pergunta diferente)"
+      },
+      {
+        "jp_linha": 814,
+        "jp": "絵画、彫刻等で、観音様のお姿を画く場合に、み魂相応の者でない場合は罰ということは――",
+        "pt_inserido": "Interlocutor: Ao pintar ou esculpir a figura de Kannon, se a pessoa não tiver a estatura espiritual correspondente, há algum castigo? (pergunta que faltava antes de 'Meishu-Sama: Isso não existe.')"
+      },
+      {
+        "jp_linha": 819,
+        "jp": "子供が書を稽古したいために、明主様のお文字をまねて書いてもよろしいでしょうか",
+        "pt_inserido": "Interlocutor: Posso deixar meu filho, que quer praticar caligrafia, copiar os caracteres de Meishu-Sama?"
+      },
+      {
+        "jp_linha": 858,
+        "jp": "どこでいたしましたら――",
+        "pt_inserido": "Interlocutor: Onde devo fazer isso?"
+      }
+    ],
+    "total_insercoes": 11,
+    "achado_adicional": "Ao confrontar linha a linha, confirmou-se que o gap na linha JP809-816 era mais sério do que uma simples pergunta curta ausente: faltava também a resposta de Meishu-Sama sobre consertar o torii (JP811), fazendo o PT antigo saltar diretamente da pergunta sobre o torii quebrado (JP809) para a resposta 'Isso não existe.' (JP816), que na verdade responde a uma pergunta totalmente diferente (pintar/esculpir Kannon sem estatura espiritual, JP814) que também estava ausente. Ambas as lacunas foram corrigidas nesta passada.",
+    "verificacao": "Cada inserção confrontada individualmente contra o JP fonte antes de aplicar; nenhum conteúdo pré-existente foi reescrito, reordenado ou removido — apenas as 11 falas curtas ausentes foram acrescentadas.",
+    "pendencia_resolvida": true,
+    "approved_nao_alterado": "O campo approved do spec permanece false, conforme condicao em 'aprovacao' acima (segunda auditoria independente ainda pendente, além da pendência leve de romanização de nomes)."
+  },
+  "segunda_auditoria_independente": {
+    "data": "2026-07-09",
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc)",
+    "metodo": "Verificacao direta por amostragem contra o JP das 11 falas curtas inseridas em 2026-07-08 (correcao_turnos_ausentes_8_dezembro) — confirmadas presentes e no ponto correto do PT. Contagem de turnos pos-insercao (186 Interlocutor / 192 Meishu-Sama) confere com a base pre-insercao (176/191) + 11 novas falas. Pendencia de romanizacao de nomes (Sadaji Takagi/Kiyoto) permanece resolvida como decisao do usuario (manter). Varredura de cabecalhos de data duplicados (bug catalogado em outros volumes desta Fase E): nenhum encontrado. CJK residual: nenhum.",
+    "resultado": "Confirmado sem residuo. approved:true aplicado no spec."
+  }
+}

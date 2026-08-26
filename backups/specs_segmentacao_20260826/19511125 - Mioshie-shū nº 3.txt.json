@@ -1,0 +1,108 @@
+{
+ "filename": "19511125 - Mioshie-shū nº 3.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": true,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-03. Trechos: 10→10. PT pairing pendente. | Segunda auditoria independente (orquestrador, 2026-07-07): confirmado Gotō Yūzō sem duplicação residual, transições de data limpas. approved:true. | Fase C (orquestrador batch Gosuiji-roku/Mioshie-shū, 2026-07-08): pt_anchor ambíguo/órfão corrigido — estendido para trecho único confirmado no PT de trabalho. | Fase C (orquestrador batch Gosuiji-roku/Mioshie-shū, 2026-07-08): pt_anchor ambíguo/órfão corrigido — estendido para trecho único confirmado no PT de trabalho. | Fase C (orquestrador batch Gosuiji-roku/Mioshie-shū, 2026-07-08): pt_anchor ambíguo/órfão corrigido — estendido para trecho único confirmado no PT de trabalho. | Fase C (orquestrador batch Gosuiji-roku/Mioshie-shū, 2026-07-08): pt_anchor ambíguo/órfão corrigido — estendido para trecho único confirmado no PT de trabalho.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』3号、昭和26(1951)年11月25日発行",
+   "pt_anchor": "Mioshie-shū nº 3",
+   "notes": "",
+   "_old_pt_anchor": "1. Quando alguém se afoga e perde a consciência."
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月一日",
+   "title_pt": "1 de outubro",
+   "jp_anchor": "十月一日\n\n（お伺）本年二十歳の女、三年ほど前アブに眼の縁を刺され、五、六時間ほとんど失明状態でしたが、放任しているうちにだんだん良くなり、一週間後の視力 は、左眼で直線の物を見ると曲がって見え、小さな黒点がいつも眼の前をちらちらしております。発病一週",
+   "pt_anchor": "1º de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[1º de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "1º de outubro",
+   "_old_pt_anchor": "1 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月五日",
+   "title_pt": "5 de outubro",
+   "jp_anchor": "十月五日\n\n（お伺）昭和十七年祈願詣りの帰途目まいを感じ、医師の診察を受けましたが病名判らず、続いて三年ほどして血清検査を受けましたが異状なしとのことでし た。しかし気分は少しも変わりませんので、十カ所余りの医師、鍼灸、指圧などの治療を受けました。ある",
+   "pt_anchor": "5 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[5 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "5 de outubro",
+   "_old_pt_anchor": "5 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月八日",
+   "title_pt": "8 de outubro",
+   "jp_anchor": "十月八日\n\n（お伺）四十五歳の信者でございますが、四十一歳の二月、子宮癌の手術を受け、以来便秘に悩んでおりましたが、翌年七月入信、爾来健康にさせていただきま したが、だんだんと尿が近くなり、終には十五分おきくらいとなり、時々は自覚せずに漏らすこともあり",
+   "pt_anchor": "8 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[8 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "8 de outubro",
+   "_old_pt_anchor": "8 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十一日",
+   "title_pt": "11 de outubro",
+   "jp_anchor": "十月十一日\n\n（お伺）妻チエ子（三十五歳）、昨年七月肺浸潤と診断され、弟栄（三十二歳）も昨年二月肺門淋巴腺および肋膜と診断され、いろいろと療養いたしましたが、 思うように快復の見込みもなく、本体二月七日大本教に入信、大本教の御神体も祖霊神もお祀りいたしま",
+   "pt_anchor": "11 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[11 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "11 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十五日",
+   "title_pt": "15 de outubro",
+   "jp_anchor": "十月十五日\n\n（お伺）袴田隆次（五十二才）昭和二十五年三月入信いたしました者でございます。長男浩司（十二歳）が九月十五日ごろ左足踵（かかと）の魚の目をメスにて 疵（きず）をつけました。そのため二十日より急に発熱し、左足の大腿部がだいぶ腫れ、非常な激痛を感",
+   "pt_anchor": "15 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月十八日",
+   "title_pt": "18 de outubro",
+   "jp_anchor": "十月十八日\n\n（お伺）六十才の婦人（未入信）三十四歳の時、産後「血脚気」を病み、乳児は血脚気の母体の乳のために死亡いたし、当時より体が弱くなり、現在まで医薬に 頼っており、医者の診察では神経衰弱と言われたそうです。三十年近く、あらゆる宗教を信仰し、多くの",
+   "pt_anchor": "18 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[18 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "18 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十一日",
+   "title_pt": "21 de outubro",
+   "jp_anchor": "十月二十一日\n\n（お伺）信者後藤祐三（七十才）以前蓄膿を患ったことがございましたところ、本年三月ごろより血膿が出ましたけれども、たいしたこともないと思い、かつ家 にも病人がありましたゆえ、そのまま過ごしておりましたところ、四月ごろよりだんだん悪くなり体もだ",
+   "pt_anchor": "21º de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[21º de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "21º de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十五日",
+   "title_pt": "25 de outubro",
+   "jp_anchor": "十月二十五日\n\n（お伺）愛媛新聞紙上に「幼児のお腹に子供」として左記のような記事が出ておりました。すなわち、",
+   "pt_anchor": "25 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de outubro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十月二十八日",
+   "title_pt": "28 de outubro",
+   "jp_anchor": "十月二十八日\n\n（お伺）私の子供（五歳）発育が悪く、三歳くらいの体格で歩行できず、周囲の事情により、医師のレントゲン診断の結果、左足脱臼とのことでギブスをはめれ ば治ると申しますが、本年八月より御浄霊をいただいております。現在は腹が膨って、体を左右にゆりな",
+   "pt_anchor": "28 de outubro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[28 de outubro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "28 de outubro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

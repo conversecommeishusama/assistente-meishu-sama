@@ -1,0 +1,122 @@
+{
+ "filename": "19531215 - Mioshie-shū nº 28.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 13→9. PT pairing pendente. | 2026-07-15: inseridas 3 sessoes ausentes (8/10/11 nov, Nagoya/Quioto/Osaka) fundidas no art 7nov; pt_anchor corrigido.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十八号",
+   "pt_anchor": "Mioshie-shū nº 28",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月六日",
+   "title_pt": "6 de novembro",
+   "jp_anchor": "この前話した農業特集号ですが、あれからよく調べてみると、肝腎な中京方面が数量にまだ予想が多いのです。予想ではおもしろくないので、やっぱり正確な 数量が出ないといけないのです。なんだかんだ言って本当に分かるのは、どうしても今月いっぱい過ぎなけ",
+   "pt_anchor": "Sobre a edição especial de agricultura de que falei da última vez, após investigar mais a fundo, percebi que ainda há mu",
+   "notes": "",
+   "pt_prefix": "6 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月七日",
+   "title_pt": "7 de novembro",
+   "jp_anchor": "この前農業特集号を出すという話をしましたが、肝腎な中京方面の報告に推定が多いので、それでは正確を欠きますから、やはり何俵何斗何升という数字が正 確でないと具合が悪いのです。それには来月にならなければ正確に分からないそうですから、特集号は延ば",
+   "pt_anchor": "Da última vez, falei sobre publicar uma edição especial sobre agricultura, mas como os relatórios da importante região d",
+   "notes": "",
+   "pt_prefix": "7 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月八日",
+   "title_pt": "8 de novembro",
+   "jp_anchor": "今日は少し変わった話をしようと思います。御承知のようにわが救世教も順調に育ちつつあります。それについて各方面からいろいろ注目をされるようになり つつあります。なにしろ今までの宗教と違って、非常に変わってますから……といってもこっちが変わって",
+   "pt_anchor": "Hoje, falarei sobre algo um pouco diferente. Como sabem, nossa Igreja Messiânica está crescendo de forma constante. Com ",
+   "notes": "",
+   "pt_prefix": "8 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十日",
+   "title_pt": "10 de novembro",
+   "jp_anchor": "京都には今度で五回目になりますが、京都の特色の仏教美術をはじめ、いろいろな所はあらかた見ました。その感想を申しますといろいろな美術品とか、そう いう物は立派な物がたくさんありますが、ただ私として非常に物足りないのは庭園です。遠慮なく言えば、",
+   "pt_anchor": "Esta é a quinta vez que venho a Quioto. Já vi quase todos os lugares, começando pelas características artes budistas de ",
+   "notes": "",
+   "pt_prefix": "10 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十一日",
+   "title_pt": "11 de novembro",
+   "jp_anchor": "今までに四回関西方面に来まして、四回とも名古屋と京都では講話をしましたが、今度は五回目で大阪で初めてやるわけで、進出というとおおげさですが、話 をするわけです。だいたい今までは京都に別院を造るについて、地上天国と美術館というような目的が主だ",
+   "pt_anchor": "Até agora, vim quatro vezes à região de Kansai e, em todas as quatro vezes, fiz palestras em Nagoya e Quioto. Desta vez,",
+   "notes": "",
+   "pt_prefix": "11 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十五日",
+   "title_pt": "15 de novembro",
+   "jp_anchor": "今度京都に行っていろいろなお寺を見てきました。今度であらかたお寺は見てしまったような気がします。一番見たかったのは正倉院です。ちょうど奈良博物 館に陳列されてあったので非常に落ち着いて見られました。前に東京の博物館の時にはたいへんな人で、と",
+   "pt_anchor": "Desta vez, fui a Quioto e visitei vários templos. Sinto que, desta vez, vi quase todos os templos. O que mais queria ver",
+   "notes": "",
+   "pt_prefix": "15 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十六日",
+   "title_pt": "16 de novembro",
+   "jp_anchor": "自然栽培のことですが、いろいろの報告や今までのやり方からみて、結論としては、この間中言った、つまり天地返しが必要ですが、それだけでは少しまずい ところがあるのです。というのは天地返しをしても、壁のようになっている肥毒の層が、やはり壁土が混る",
+   "pt_anchor": "Sobre o cultivo natural, considerando vários relatos e os métodos até agora, a conclusão é o que eu disse durante este p",
+   "notes": "",
+   "pt_prefix": "16 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十七日",
+   "title_pt": "17 de novembro",
+   "jp_anchor": "この間話をしたシカゴ・トリビューンですが、もう新聞に出したそうです。近日中に送ってくるだろうと思います。その前に、やっぱり同じ系統だろうと思い ますが、日本の東京イヴニング・ニューズという外人が読む新聞に写真入りで出てました。今翻訳してます",
+   "pt_anchor": "Sobre o Chicago Tribune, de que falei outro dia, parece que já saiu no jornal. Acho que o enviarão em breve. Antes disso",
+   "notes": "",
+   "pt_prefix": "17 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十五日",
+   "title_pt": "25 de novembro",
+   "jp_anchor": "昨日アメリカの人で、ＮＨＫの外国放送の主任の妻君で、日本タイムスという外字新聞の記者であり、美術評論家――美術についてはだいぶ深いようです―― である婦人に昨日箱根美術館を見せたのですが、なかなか頭が良いのです。とにかく私が思っていることと",
+   "pt_anchor": "Ontem, mostrei o Museu de Arte de Hakone a uma senhora americana, esposa do chefe da transmissão estrangeira da NHK, jor",
+   "notes": "",
+   "pt_prefix": "25 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十六日",
+   "title_pt": "26 de novembro",
+   "jp_anchor": "ついこの間、日展を見ましたが、それについて感想を書いてみたので読ませます。",
+   "pt_anchor": "Outro dia, vi a Nitten e escrevi minhas impressões sobre ela; vou deixá-los ler.",
+   "notes": "",
+   "pt_prefix": "26 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十七日",
+   "title_pt": "27 de novembro",
+   "jp_anchor": "この間上野の日展を見ましたが、その感想を書いてみたので読ませます。",
+   "pt_anchor": "Recentemente, fui ver a Nitten, em Ueno, e escrevi minhas impressões. Vou lê-las.",
+   "notes": "",
+   "pt_prefix": "27 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

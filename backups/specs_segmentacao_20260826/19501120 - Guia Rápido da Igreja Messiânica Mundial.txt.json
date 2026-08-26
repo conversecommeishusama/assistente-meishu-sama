@@ -1,0 +1,95 @@
+{
+ "filename": "19501120 - Guia Rápido da Igreja Messiânica Mundial.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": true,
+ "editor_notes": "Pareamento PT corrigido manualmente 2026-07-14 (leitura direta JP/PT); needle-matching automático não cobre ensaio sem bylines de idade/data/nome. Verificado via apply_manual_livros_segmentacao.py --dry-run. | 2026-08-06 revisão rigorosa (redo lotes 3/4): anchors dos indices 1,3-9 movidos do primeiro sentence do corpo para a própria linha de título (bug sistêmico de título vazando pro fim do artigo anterior, confirmado em todas as 8 fronteiras estruturais do livro); conteúdo de bibliografia da linha 3 do JP (data de publicação alternativa) traduzido e inserido no artigo 0; 'A Origem das Espécies' (invenção) corrigido para 'Teoria da Evolução' no artigo 4; 'nesta vida'->'nessa vida' (forma fixa do glossário) corrigido 2x no artigo 3.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "世界救世教早わかり",
+   "pt_anchor": "Guia Rápido da Igreja Messiânica Mundial",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "はしがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "　　　はしがき",
+   "pt_anchor": "Prefácio",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "一九五○年一○月",
+   "title_pt": "Outubro de 1950",
+   "jp_anchor": "一九五○年一○月",
+   "pt_anchor": "Outubro de 1950\nO Autor",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "本教の誕生",
+   "title_pt": "O Nascimento da Nossa Igreja",
+   "jp_anchor": "　　　本教の誕生",
+   "pt_anchor": "O Nascimento da Nossa Igreja",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人間",
+   "title_pt": "O Ser Humano",
+   "jp_anchor": "人間\n\n　一体、人間というものは",
+   "pt_anchor": "O Ser Humano",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "天地創造記",
+   "title_pt": "Registro da Criação do Céu e da Terra",
+   "jp_anchor": "　　　天地創造記",
+   "pt_anchor": "Registro da Criação do Céu e da Terra",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人は健康の器",
+   "title_pt": "O Ser Humano é um Vaso da Saúde",
+   "jp_anchor": "人は健康の器\n\n　昔から、よく人は病の器という",
+   "pt_anchor": "O Ser Humano é um Vaso da Saúde",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "自然農法",
+   "title_pt": "O Método da Agricultura Natural",
+   "jp_anchor": "自然農法\n\n　今日、日本人ならみんな知っている事だが",
+   "pt_anchor": "O Método da Agricultura Natural",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "道理に従う",
+   "title_pt": "Seguir o Caminho Perfeito",
+   "jp_anchor": "道理に従う\n\n　信仰の妙諦（みょうてい）は",
+   "pt_anchor": "Seguir o Caminho Perfeito",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "救世主",
+   "title_pt": "O Messias",
+   "jp_anchor": "救世主\n\n　そもそも、救世主とは何か",
+   "pt_anchor": "O Messias",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

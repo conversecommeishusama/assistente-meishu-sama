@@ -1,0 +1,25 @@
+{
+ "filename": "19520000 - HAKONE ART MUSEUM.txt",
+ "profile": "monolith",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_no_split",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "HAKONE ART MUSEUM",
+   "title_pt": "MUSEU DE ARTE DE HAKONE",
+   "jp_anchor": "HAKONE ART MUSEUM",
+   "pt_anchor": "MUSEU DE ARTE DE HAKONE",
+   "notes": "line_no_split; ratio PT/JP=1.01"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

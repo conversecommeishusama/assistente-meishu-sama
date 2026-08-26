@@ -1,0 +1,150 @@
+{
+  "filename": "19521015-御垂示録14号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 264 linhas físicas / PT 24 linhas físicas antes da correção, 130 depois), 2 artigos por spec (prefácio + sessão única de 1º de outubro de 1952). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do início ao fim.",
+  "pre_existing_context": "Mesma família de 御垂示録/Gokōwa já revisada nesta sessão com achados graves recorrentes. Alerta inicial do orquestrador: razão JP/PT de 11:1 (264 linhas JP vs 24 linhas PT), a mais alta já encontrada em toda a família nesta sessão (segunda mais alta era 5.8:1) - suspeita máxima de monólito catastrófico com perda grave de conteúdo ou grandes blocos nunca desmembrados.",
+  "gate_mecanico": "scripts/gate_gokowa_linha.py --file 19521015-御垂示録14号.txt reporta ok:true mas com jp_interlocutor=0/pt_interlocutor=0/pt_meishu=0 - o script conta rótulos explícitos 'Interlocutor:'/'Meishu-Sama:' (convenção Gokōwa), que este volume nunca usou (convenção Gosuiji-roku é aspas '\"...\"' para o Interlocutor e parágrafo simples para Meishu-Sama, igual aos volumes 12号/13号 já revisados). O gate não é aplicável/discriminante para esta família de ficheiros; não substitui a leitura linha a linha feita aqui.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 1,
+    "monolito_catastrofico": true,
+    "nota_monolito": "CONFIRMADO monólito catastrófico (razão 11:1 explicada): a totalidade do conteúdo (título de sessão '[1º de outubro]' até o encerramento 'Isso é excelente.') estava comprimida em UMA única linha física de 34.351 caracteres no ficheiro de trabalho PT, contra 264 linhas físicas no JP (cada parágrafo/turno JP é uma linha física separada). ACHADO CENTRAL, contrário ao pior receio do alerta: apesar do monólito, NENHUM conteúdo estava faltando. Todos os 53 turnos do Interlocutor (frases entre aspas no JP) e as 53 respostas correspondentes de Meishu-Sama foram localizados na tradução, na ordem correta, com o conteúdo integral e sem truncamento - confirmado por extração automática dos limites de citação (aspas retas/curvas) no PT e comparação sequência-a-sequência com os 53 pares pergunta/resposta lidos manualmente no JP (linhas 32-264). O problema real era 100% estrutural (parágrafo nunca desmembrado), não perda de conteúdo."
+  },
+  "metodo_verificacao_estrutural": {
+    "descricao": "Leitura completa do JP linha a linha (264 linhas) enumerando manualmente os 53 turnos Interlocutor (texto entre 「」) e as 53 respostas de Meishu-Sama na ordem em que aparecem. Em paralelo, extração programática (regex sobre aspas retas '\"...\"' e curvas '“...”') de todos os 107 trechos entre aspas do parágrafo único do PT, classificando cada um como (a) abertura real de turno do Interlocutor (53 casos, sempre em posição e conteúdo correspondente ao próximo 「」 do JP) ou (b) citação incorporada dentro de uma resposta de Meishu-Sama (ex.: 'ohineri'/'omamori'/'Chi'/'kara'/nomes entre aspas/citações reportadas dentro do próprio discurso de Meishu-Sama - 54 casos). Os dois levantamentos (manual JP e automático PT) foram cruzados turno a turno; todos os 53 pares bateram em conteúdo e ordem.",
+    "resultado": "100% de correspondência 1:1 entre os 53 turnos JP e os 53 turnos PT recuperados do monólito. Nenhum turno ausente, nenhum duplicado, nenhuma troca de falante.",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "colapso_estrutural_grave",
+      "localizacao_pt": "linha física única (linha 24 do ficheiro de trabalho antes da correção)",
+      "problema": "Todo o corpo do volume (prefácio + sessão de 1º de outubro de 1952, 53 turnos Interlocutor/Meishu-Sama) estava fundido em um único parágrafo gigante de 34.351 caracteres, sem nenhuma quebra de linha entre turnos. Viola os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 8 (outros - ordem/estrutura) do checklist de revisao-paralela-jp-pt.mdc.",
+      "correcao": "Reestruturado em 107 linhas físicas: 1 parágrafo de abertura (monólogo de Meishu-Sama antes da primeira pergunta, replicando a convenção já usada em 12号/13号 de manter o monólogo inicial como bloco único) + 53 pares alternados (linha com a pergunta do Interlocutor entre aspas / linha com a resposta de Meishu-Sama sem aspas), na mesma ordem e com o mesmo texto já traduzido - nenhuma palavra de tradução foi alterada, apenas inseridas quebras de linha nos limites exatos de cada citação identificados pela extração automática, com verificação manual de cada um dos 53 pontos de corte contra o JP correspondente.",
+      "verificacao_adicional": "Comprimento total de caracteres do texto (excluindo apenas espaços em branco nos 106 pontos de corte) preservado: 34.351 → 34.245 caracteres úteis + 106 espaços de borda removidos = sem perda de conteúdo, apenas de espaçamento redundante entre segmentos.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "erro_semantico_data_e_idade_espuria",
+      "jp_linha": 167,
+      "jp_texto": "西躰（にしたい）一三、二十年一月入信。三男は現在小児麻痺であり、長男は二十年前に小児麻痺で死亡しております。",
+      "localizacao_pt": "abertura do testemunho da família Nishitai (linha 85 do ficheiro corrigido)",
+      "problema": "'二十年一月入信' (convertido em janeiro do ano de era 20, sem prefixo 昭和) foi mistraduzido como '13 anos, converteu-se em janeiro de 20' - uma idade de '13 anos' foi inserida sem base no JP (o número 13 no JP só aparece depois, na linha 171, como resposta à pergunta separada sobre a idade do filho com paralisia infantil, referente ao FILHO, não ao pai Nishitai Kazumi). Mesmo padrão de erro de notação de ano de era já catalogado e corrigido no volume irmão 13号 (ver correções 18 e 19 do AUDIT_TRAIL de 13号: '十九年'→'1944 (Showa 19)', '二十五年'→'1950 (Showa 25)').",
+      "correcao": "'Nishitai Kazumi, convertido em janeiro de 1945 (Showa 20). O terceiro filho tem paralisia infantil atualmente, e o filho mais velho morreu de paralisia infantil há vinte anos. Recebemos o Imagem da Luz Divina e a Kannon do biombo.' - a idade espúria '13 anos' foi removida da abertura do testemunho (o '13' correto permanece, corretamente, na resposta 'Treze.' duas linhas depois, respondendo à pergunta sobre a idade do filho).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/prefácio (título, fonte, data de publicação)",
+      "jp_linhas": "20-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Monólogo de abertura (eleições, Tago Ichimin, Tsurumi Yusuke, Yoshida, Coreia, URSS/China comunista, comunismo)",
+      "jp_linhas": "26-29",
+      "decisao": "ok - íntegro, mantido como parágrafo único (mesma convenção de 12号/13号)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Política japonesa/eleições (votação, grupo dos depurados, Kuhara/Narahashi/Fukushima)",
+      "jp_linhas": "32-43",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Incidente de 26 de fevereiro / facções imperiais / Tokugawa / Matsudaira",
+      "jp_linhas": "45-51",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro, nomes próprios conferidos (Matsudaira Tsuneo, Príncipe Chichibu, Setsuko/Shizuko, Princesa Kikuko)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Questão coreana / prisioneiros de guerra / democracia / proteção divina",
+      "jp_linhas": "54-77",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Reminiscência de Oomoto (adaga de Okada, 'omamori'/'ohineri', Mestre Sagrado, tigre e urso, Izunome)",
+      "jp_linhas": "77-92",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro incluindo as citações internas ('Eu não consigo fazer isso.', 'Vai parar?...', etc.)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Reiyūkai/Risshō Kōsei Kai/seita Nichiren/brasão da tangerina/etimologia de kanji",
+      "jp_linhas": "95-109",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro incluindo os termos entre aspas (tatsu, tachibana, Risshō Ankoku Ron, 立, 主, etc.)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Flor de lótus / filho viciado em mahjong e Hiropon / carimbo de nome / furo no Goshintai",
+      "jp_linhas": "112-134",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cemitério da família Ishikawa (mudança de templo, sepultura do lado da esposa)",
+      "jp_linhas": "137-164",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunho da família Nishitai (paralisia infantil, reencarnação de cobra/dragão da árvore)",
+      "jp_linhas": "167-219",
+      "decisao": "corrigido - desmembrado do monólito + 1 erro semântico de data/idade corrigido (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Critério de nomes / adivinhação do nome",
+      "jp_linhas": "221-231",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Amuleto ensanguentado / manchas no Goshintai / Johrei coletivo / mobiliário do santuário / agricultura natural de Fukui",
+      "jp_linhas": "234-264",
+      "decisao": "corrigido - desmembrado do monólito, conteúdo íntegro",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas": [
+    "Troca de falante (Interlocutor/Meishu-Sama invertidos): não encontrada em nenhum dos 53 turnos.",
+    "Duplicação de blocos inteiros: não encontrada.",
+    "Perda de conteúdo mascarada por Δ=0 coincidente: não aplicável - não houve perda de conteúdo detectada em nenhum ponto (todos os 53 turnos JP têm par PT íntegro).",
+    "Corrupção de nomes próprios: não encontrada (Tago Ichimin, Tsurumi Yusuke, Yoshida, Matsudaira Tsuneo, Nishitai Kazumi/Masaki, Taniyama Ryuhi conferidos contra o JP).",
+    "CJK residual no corpo PT: nenhum encontrado."
+  ],
+  "pendencias_abertas": [
+    "Ver reports/livros_trabalho/segmentacao_manual/PENDENCIAS_REVISAO.json - item sobre terminologia '御守'/'御守様' traduzido como 'amuleto' genérico em vez do termo do glossário ('Omamori (Ohikari)') nos turnos sobre o amuleto ensanguentado (JP linhas 234-244). Baixa severidade (não é erro de sentido, é preferência terminológica), não corrigido nesta passada - decisão de glossário, não decidida unilateralmente."
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true. Aguardando segunda auditoria independente conforme revisao-paralela-jp-pt.mdc. Recomendação do revisor: volume está estruturalmente correto e semanticamente completo após as 2 correções aplicadas; apenas a pendência leve de terminologia de glossário fica em aberto."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (aspas 「」 = Interlocutor, prosa sem aspas = Meishu-Sama)",
+    "etapa_a_mapa_jp": "JP (264 linhas físicas) lido linha a linha, integralmente. Identificados 53 parágrafos iniciados por 「 (aspas de abertura em início de linha, confirmado por contagem programática: 53 ocorrências de linha iniciando com 「) = 53 turnos do Interlocutor. Cada um seguido por 1 parágrafo de resposta de Meishu-Sama, incluindo respostas curtíssimas de uma frase/palavra (ex.: linha 60 'いや、負けるのです。', linha 72 '立派です。', linha 82 'そうですか。') e turnos do Interlocutor igualmente curtos (ex.: linha 171 '「十三でございます」', linha 207 '「西躰雅紀と申します」', linha 211 '「普通でございます」') - nenhum destes turnos curtos foi omitido do mapa. Antes de qualquer pergunta, linhas 28-29 são monólogo de abertura de Meishu-Sama (sessão de 1º de outubro), sem interlocutor prévio.",
+    "etapa_b_confirmacao": "PT (já estruturado em 107 linhas físicas por correção estrutural anterior desta mesma auditoria) conferido bloco a bloco contra o mapa JP: alternância estrita Interlocutor/Meishu-Sama confirmada nas 107 linhas, sem blocos consecutivos do mesmo falante. Contagem final: 53 Interlocutor (= 53 linhas JP iniciadas por 「) e 54 Meishu-Sama (53 respostas + 1 monólogo de abertura) = Δ=0. Nenhum turno faltando; nenhuma inserção necessária.",
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados às 107 linhas de diálogo do PT, script determinístico por alternância de linha (nenhuma reordenação, nenhuma reescrita de texto já traduzido). Cabeçalho de sessão '[1º de outubro]' separado do parágrafo de abertura (que antes estava colado na mesma linha física) e mantido sem rótulo, como bloco de data isolado. Cabeçalhos de título/publicação (linhas 21-23) preservados intocados.",
+    "resultado": "107/107 linhas rotuladas corretamente, verificado por script (contagem de prefixos + checagem de alternância sem repetição de falante consecutivo). Nenhum problema novo encontrado nesta etapa; pendência leve de terminologia de glossário ('Omamori (Ohikari)') já registrada anteriormente permanece em aberto, não tratada nesta passada.",
+    "approved_inalterado": true
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [
+      "Metadados title_pt/Title inconsistentes entre JP e PT: o ficheiro JP de trabalho registra title_pt = \"Então, fui arrastado pelos militares.\" (frase extraída do corpo, JP linha correspondente a 「それで軍部に引ずり込まれたのです」) mas o ficheiro PT de trabalho ainda usava o titulo generico de fallback \"19521015 - Gosuiji-roku no 14\" tanto no campo title_pt quanto no campo Title do cabecalho. Corrigido: title_pt e Title do PT atualizados para \"Então, fui arrastado pelos militares.\", consistente com o JP."
+    ],
+    "notas": "Leitura completa linha a linha (JP 264 linhas / PT 131 linhas). Conteudo fielmente traduzido, sem truncamento, sem CJK residual. Confirma que a correcao anterior (idade espuria '13 anos' family Nishitai, JP linha 167) permanece aplicada corretamente. Confirma que a pendencia leve de terminologia (御守/Omamori) ja foi resolvida -- PT atual usa \"Omamori (Ohikari)\" consistente com o glossario nos 3 pontos onde o termo aparece (linhas 118,120,122 do PT)."
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "gerado_por": "sessao interativa Claude Code, shard B",
+  "gerado_em": "2026-07-20T00:39:31Z",
+  "fase": "revisao_editorial_publicacao",
+  "protocol_file": "livros_publicacao_pt_revisado/PROTOCOLO_REVISAO_EDITORIAL.md",
+  "pending": [],
+  "in_progress": [],
+  "done": [
+    {
+      "ficheiro": "19510225-御教え集6号.txt",
+      "at": "2026-07-20T18:45:00Z",
+      "nota": "- tipo: livro (Mioshie-shu no 6, secao inicial [Ensinamento] em monologo continuo por data 1-14 de janeiro, seguida de secao de diálogo Interlocutor:/Meishu-Sama: 15-27 de janeiro, ja corretamente alternada turno a turno no original, sem rotulo repetido a fundir)\n- correções principais: quebra mecânica de 55 parágrafos-monólito (1300-8977 chars) em unidades menores nos limites de frase (verificado por igualdade normalizada de espaços contra o original); padronização de aspas retas para curvas (240→0, alternância abertura/fechamento verificada balanceada) e de en-dash para em-dash (212 ocorrências) em todo o arquivo; variação de 10 conectivos repetidos em sequência próxima (Além disso/Portanto/No entanto)\n- glossário: innen recebeu o gloss \"(afinidade espiritual)\" na 1ª ocorrência (convenção explica-na-1ª-ocorrência já estabelecida, forma de busca == forma de publicação, sem novo registro no jsonl); demais termos (Komyo-Nyorai, Kannon do biombo, Imagem da Luz Divina, Daijo, Shojo, Johrei) já conformes glossario_traducao.json; sem ocorrência de 教修 neste livro\n- tamanho: 221832 chars original -> 222440 chars revisado (+0,27%; verificado: 51/51 turnos Interlocutor e 51/51 Meishu-Sama idênticos, 16/16 cabeçalhos de data, 6/6 marcadores [Ensinamento], sequência completa de 237/237 números idêntica original x revisado)"
+    },
+    {
+      "ficheiro": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "at": "2026-07-20T13:05:00Z",
+      "nota": "- tipo: livro (livreto doutrinário curto, sem diálogo, para conversão de estrangeiros)\n- correções principais: quebra de 14 parágrafos-monólito muito longos (500-3000 chars, ex. \"Método da Agricultura Natural\" ~3000 chars) em unidades por virada de tópico; forte variação de conectivos repetidos (29 ocorrências de \"Além disso\" e 27 de \"No entanto\" no original, redistribuídas com Ademais/Outrossim/Contudo/Todavia/Da mesma forma/etc.); fix de calque \"estaria a revelar\" (EU-PT) -> \"estaria revelando\" (2 ocorrências); typo de maiúscula \"Dissolver\" -> \"dissolver\" (meio de frase)\n- glossário: 教修 (kyoshu) forma completa mantida na 1ª ocorrência, \"curso de iniciação\" nas 3 seguintes (registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl); innen (afinidade espiritual) explicado na 1ª ocorrência, forma curta na 2ª (convenção já estabelecida, sem novo registro); Ga (ego) explicado na única ocorrência (mesma convenção)\n- tamanho: 76847 chars original -> 76652 chars revisado (verificado: sequência completa de números/datas/percentuais idêntica original x revisado, 4/4 blocos [Nota] preservados incluindo 1 caso colado por \\n simples ao parágrafo anterior que quase se perdeu na primeira passada e foi restaurado antes de aceitar, 224/224 aspas, colofão final intacto)"
+    },
+    {
+      "ficheiro": "19530315-御垂示録18号.txt",
+      "at": "2026-07-20T11:35:00Z",
+      "nota": "- tipo: livro\n- correções principais: fusão de rótulos \"Meishu-Sama:\" repetidos em 4 turnos contínuos sem interrupção do interlocutor (linhas 5-11 do original, virada de assunto religião/Nichiren/Moriyama/Hakone; e mais 3 pontos: sericicultura, Sado, tsuki/Izunome), regra 5 do protocolo; quebra do monólogo-comparação de novas religiões (~7900 chars) em 6 parágrafos temáticos (Seicho-no-Ie, Rissho Kosei-kai, PL, Oomoto, Igreja Messiânica, conclusão), sem repetir rótulo; variação de conectivos repetidos (Portanto/Além disso em excesso, 22 e 7 ocorrências no original)\n- glossário: nenhuma (Daijo, Shojo, Eikō já conformes glossario_traducao.json; sem ocorrência de 教修 neste livro)\n- tamanho: 38127 chars original -> 38033 chars revisado (verificado: 37 turnos Meishu-Sama + 36 Interlocutor = 73 turnos reais após fusão de 7 rótulos redundantes; todos os 44 nomes próprios/termos e 9 números conferidos idênticos em contagem entre original e revisado)"
+    },
+    {
+      "ficheiro": "19520815-御教え集12号.txt",
+      "at": "2026-07-20T10:30:00Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de vários parágrafos-monólogo longos de [Ensinamento] (5, 6, 7, 15, 16, 17, 26, 27 de julho) em unidades por virada de assunto, sem repetir rótulo; conectivos repetitivos variados (Portanto/Além disso em cadeia -> Por isso/Já/Assim); calque suavizado (\"Contando, a Igreja Messiânica\" -> \"Para se ter uma ideia, a Igreja Messiânica\")\n- glossário: 教修 (única ocorrência, fala sobre o clã Otowaya) -> \"curso de iniciação (Kyoshu)\", registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 77633 chars original -> 77678 chars revisado (verificado: 9/9 cabeçalhos de data, 27/27 citações de artigo, 20/20 referências a Eikō, sequência completa de números/datas/percentuais idêntica entre original e revisado)"
+    },
+    {
+      "ficheiro": "19520715-御垂示録11号.txt",
+      "at": "2026-07-20T09:15:00Z",
+      "nota": "- tipo: livro\n- correções principais: diálogo já tinha sido revisado por invocação anterior interrompida sem atualização da fila (encontrado pronto em livros_publicacao_pt_revisado/, verificado por contagem de turnos e checksum de números idêntico ao original antes de aceitar); completado o que faltava: fusão do único par de rótulos \"Meishu-Sama:\" consecutivos sem interlocutor entre eles (regra 5 do protocolo, linhas 58-59 do original, sobre a exposição Rinpa/senhor Fujikawa); variação de conectivo repetido em 4 parágrafos (Portanto->Assim/Daí, Além disso->Aliás, Por isso->É por isso que)\n- glossário: nenhuma (innen (afinidade espiritual), Kannon do biombo, Imagem da Luz Divina, Igreja Média já conformes glossario_traducao.json, sem forma de publicação alternativa necessária)\n- tamanho: 33142 chars original -> 33163 chars revisado (turnos Interlocutor/Meishu-Sama 102/103, checksum de números idêntico ao original)"
+    },
+    {
+      "ficheiro": "19520615-御垂示録10号.txt",
+      "at": "2026-07-20T08:45:00Z",
+      "nota": "- tipo: livro\n- correções principais: rótulo de falante repetido removido em 5 turnos contínuos (regra 5 do protocolo, achado incompleto de uma tentativa anterior interrompida sem atualização da fila — arquivo já existia parcialmente revisado mas sem separação por linha em branco nem fusão de rótulos, refeito integralmente); aspas retas padronizadas para curvas (\"...\" -> \"...\", a partir da metade do arquivo o original mudava de estilo); en-dash padronizado para em-dash; quebra dos 2 monólogos-lista de diretores/conselheiros do museu em parágrafos por nome, sem repetir rótulo; fusão de fragmentos telegráficos de fala (ex. \"Uma um pouco grande\" -> \"Uma, um pouco maior\")\n- glossário: nenhuma divergência nova (Ohikari, Johrei, Komyo-Nyorai, Daikōmyō Nyorai, Kannon do biombo, Guse-Kannon, Oração Zengen-Sandji já conformes glossario_traducao.json)\n- tamanho: 36617 chars original -> 36843 chars revisado (+0,6%, verificado por checagem numérica: sequência completa de 17/17 números/datas idêntica entre original e revisado)"
+    },
+    {
+      "ficheiro": "19510115-自然農法解説.txt",
+      "at": "2026-07-20T04:20:00Z",
+      "nota": "- tipo: livro\n- correções principais: calques do JP suavizados no ensaio doutrinário (\"Sendo esse o caso\"/\"Mesmo esse problema difícil\" em vez de traduções literais mais rígidas), quebra de frases-cadeia repetitivas (\"No entanto...No entanto\") em orações com travessão/ponto-e-vírgula, redução de conectivos redundantes (\"Portanto\"/\"Além disso\" em excesso) ao longo dos 8 capítulos temáticos e dos ~14 relatos de testemunho de agricultores\n- glossário: nenhuma (Johrei, Ohikari, Komyo-Nyorai, 'curso (aula) de preparação para receber o Ohikari (kyoshu)', Eikō, Paraíso na Terra, método da agricultura natural já batiam com glossario_traducao.json, sem necessidade de forma de publicação alternativa)\n- tamanho: 85249 chars original -> 84719 chars revisado (-0,6%, verificado por checagem numérica automatizada: sequência completa de 376 números/datas/quantidades idêntica entre original e revisado, nomes/idades/citações entre aspas conferidos)"
+    },
+    {
+      "ficheiro": "19500120-御光話録16号.txt",
+      "at": "2026-07-20T04:05:00Z",
+      "nota": "- tipo: livro\n- correções principais: quebra dos 3 monólogos gigantes de Meishu-Sama (Fenollosa/arte japonesa, Kōrin/Goya, cuidados pré/pós-parto) em parágrafos por virada de assunto, sem repetir rótulo; normalizadas 2 continuações de turno que usavam indentação de 4 espaços em vez de linha em branco (padrão do protocolo); fix de concordância real (\"não vi nenhuma obra de arte que pensasse\" -> \"da qual eu pensasse\"); redundâncias removidas (\"quedas ou quedas de lugares altos\", \"Além disso...também...Portanto\" duplicado em faixa abdominal)\n- glossário: 1 decisão registrada em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (教修: \"curso de iniciação (Kyoshu)\" na 1ª ocorrência, \"Kyoshu\" na 2ª, 2 ocorrências no arquivo)\n- tamanho: 54270 chars original -> 54227 chars revisado"
+    },
+    {
+      "ficheiro": "19490208-御光話録3号.txt",
+      "at": "2026-07-20T03:30:00Z",
+      "nota": "- tipo: livro\n- correções principais: calques suavizados em diálogo Q&A extenso (ex. \"É estranho chamar isso de autointoxicação\" corrigindo confusão intoxicação alimentar/urticária), fusão de frases curtas repetitivas com travessão/ponto-e-vírgula, variação de conectivos repetidos (Mesmo que/Além disso)\n- glossário: 1 decisão registrada em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (教修: \"curso de iniciação (Kyoshu)\" na 1ª ocorrência, \"Kyoshu\" na 2ª, 2 ocorrências no arquivo)\n- tamanho: 46102 chars original -> 46147 chars revisado"
+    },
+    {
+      "ficheiro": "19480101-御光話録（補）.txt",
+      "at": "2026-07-20T01:18:12Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de parágrafos-monólogo gigantes de Meishu-Sama (múltiplos subtemas) em unidades legíveis sem repetir rótulo de falante; conectivos repetitivos e pontuação; padronização de grafia de Amaterasu Ōmikami e Susanoo no Mikoto (3 e 2 variantes ortográficas no original, respectivamente)\n- glossário: 2 decisões registradas em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (padronização Amaterasu Ōmikami e Susanoo no Mikoto contra glossario_traducao.json; Kakuriyo Ōkami/Ōmikami e Omiroku Ōomikami NÃO tocados por serem conteúdo doutrinário distinto discutido no próprio texto)\n- tamanho: 373244 chars original -> 373421 chars revisado"
+    },
+    {
+      "ficheiro": "19481208-御光話録1号.txt",
+      "at": "2026-07-20T01:28:05.716381Z",
+      "nota": "- tipo: livro\n- correções principais: calques suavizados (ex. investigações policiais/promotores -> Ministério Público), pontuação/conectivos ajustados em diálogo longo (turno sobre inércia de casal), fusão de frases soltas em orações mais fluidas ao longo de todo o Q&A\n- glossário: nenhuma (innen aplicado com a forma de busca \"innen (afinidade espiritual)\" só na 1ª ocorrência, conforme convenção já documentada no protocolo, sem divergência a registrar)\n- tamanho: 34493 chars original -> 35673 chars revisado"
+    },
+    {
+      "ficheiro": "19490000-御光話録5号.txt",
+      "at": "2026-07-20T01:34:02Z",
+      "nota": "- tipo: livro\n- correções principais: 'não consigo evitar' -> 'não consigo evitá-lo'; 'Isso é que é verdade' -> 'Isso sim é verdade'; 'As fontes termais são por isso' -> 'É por isso que existem fontes termais'\n- glossário: nenhuma (termos já batiam com glossario_traducao.json: Daikōmyō Nyorai, Kannon-Sama, Yachimata, tengu, Sabedoria Sagrada/Astuta, Sagacidade)\n- tamanho: 42489 chars original -> 42514 chars revisado"
+    },
+    {
+      "ficheiro": "19490821-御光話録11号.txt",
+      "at": "2026-07-20T02:21:01Z",
+      "nota": "- tipo: livro\n- correções principais: calques suavizados em diálogo longo Q&A (ex. \"culturada\"->\"cultuada\", corrigido erro de grafia real), fusão de frases curtas repetitivas em orações com travessão/ponto-e-vírgula, redução de conectivos repetitivos (\"E\"/\"Isso\" no início de frase)\n- glossário: 教修 padronizado para \"curso de iniciação\" nas 5 ocorrências (linhas com Kyoshu), alinhado à decisão já exemplificada no protocolo (aplicado sem parênteses explicativos por já não haver ambiguidade dentro do livro); demais termos (Ohikari, Johrei, Komyo-Nyorai, Kannon-Sama, innen) mantidos na forma de glossario_traducao.json\n- tamanho: 61593 chars original -> 61828 chars revisado"
+    },
+    {
+      "ficheiro": "19490522-御光話録7号.txt",
+      "tipo": "livro",
+      "at": "2026-07-20T02:28:36.116941Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de 4 parágrafos-monólogo longos em unidades menores nos pontos de virada de assunto (história do oftalmologista de Honjo/Sr. N., ética de desconfiar dos outros, obstrução espiritual no Johrei, carta de protesto à emissora); calques suavizados (\"pela lógica\" -> \"com lógica\", \"ignorando completamente Deus\" -> \"e ignora completamente Deus\"); redundância removida (\"meios realmente engenhosos\" repetido 2x seguidas)\n- glossário: 教修 padronizado para \"curso de iniciação (Kyoshu)\" na 1ª ocorrência e \"Kyoshu\" nas 3 seguintes (registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl); Amaterasu-Ōmikami (grafia hifenizada no fonte) corrigido para Amaterasu Ōmikami conforme glossario_traducao.json (registrado)\n- tamanho: 44808 chars original -> 44842 chars revisado"
+    },
+    {
+      "ficheiro": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "at": "2026-07-20T02:32:19Z",
+      "nota": "- tipo: livro\n- correções principais: reduzida repetição mecânica de conectivos dentro do mesmo parágrafo (Além disso/No entanto x2-3 seguidos -> variados p/ Também/Mas/Ainda assim/Por outro lado/Já), simplificado \"Johrei (Jōrei)\" redundante para \"Johrei\"\n- glossário: nenhuma (Johrei já na forma do glossário de busca, só removida duplicação de grafia)\n- tamanho: 104489 chars original -> 104393 chars revisado"
+    },
+    {
+      "ficheiro": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "at": "2026-07-20T03:00:10.523700+00:00",
+      "nota": "- tipo: livro\n- correcoes principais: quebra de paragrafos longos em unidades legiveis (ex. narrativa da fotografia espiritual de Kannon de Mil Bracos dividida em 5 paragrafos; testemunho \"Quantas vezes ultrapassei a linha da morte\" dividido em ~15 paragrafos); remocao de conectivos repetitivos (Portanto/Alem disso em excesso) e calques do japones; correcao de frases-cadeia (\"No entanto... No entanto...\") por pontuacao mais natural em portugues\n- glossario: 1 decisao registrada (kyoshu: forma completa \"curso (aula) de preparacao para receber o Ohikari (kyoshu)\" mantida na 1a ocorrencia do livro, forma curta \"curso de iniciacao\" usada nas 14 ocorrencias seguintes, aplicando a convencao ja adotada no projeto) -- ver GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 153574 chars original -> 151985 chars revisado (-1,0%, compativel; nenhuma frase de sentido adicionada ou removida, so quebra de paragrafo e fluidez)"
+    },
+    {
+      "ficheiro": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "at": "2026-07-20T03:07:52Z",
+      "nota": "- tipo: livro\n- correções principais: elipse quebrando frase em prosa corrida ('Os ensinamentos de amor de Cristo... a influência...') reconstruída sem alterar conteúdo; redundância 'avanço...progrediu' e 'Se assim for, a questão é' suavizadas; ~9 repetições de conectivo 'Além disso'/'Portanto' em parágrafos adjacentes variadas (ademais, por sua vez, note-se ainda, por isso, etc.)\n- glossário: nenhuma (termos já alinhados: Jikan, Kannon, Paraíso na Terra, Kamunagara)\n- tamanho: 89133 chars original -> 89047 chars revisado"
+    },
+    {
+      "ficheiro": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "at": "2026-07-20T03:18:51Z",
+      "nota": "- tipo: livro\n- correções principais: prefácio (calque \"abrange desde\"->\"abrange o período de\", gerúndio \"sendo rica\"->\"e é rica\", artigo faltante \"encerram profundo mistério\"->\"encerram um profundo mistério\"); diacrítico \"Saigyo\"->\"Saigyō\" (poema 101)\n- glossário: nenhuma (termos já batiam com glossario_traducao.json: Kamunagara com regra de 1ª ocorrência já seguida, Komyo-Nyorai, Miroku)\n- tamanho: 71483 chars original -> 71498 chars revisado (coletânea de 486 poemas curtos já bem traduzidos, corpo dos poemas manteve-se praticamente intacto por já estar gramaticalmente sólido e estilisticamente consistente; edição concentrada no prefácio em prosa)"
+    },
+    {
+      "ficheiro": "19491223-山と水.txt",
+      "at": "2026-07-20T03:23:08Z",
+      "nota": "- tipo: livro\n- correções principais: nota editorial inicial (\"etc.\" -> \"e outros elementos\", pontuação); prefácio: removida redundância (\"e também fazer\"), quebrada frase longa em duas (crítica ao Man'yōshū/Kokinshū vs. estilo moderno), corrigido calque de tempo verbal (\"pretendo ter manifestado\" -> \"creio ter manifestado\")\n- glossário: nenhuma (coletânea de 1239 tanka numerados, sem termos doutrinários; poemas mantidos byte-idênticos ao original, já em português fluente)\n- tamanho: 145236 chars original -> 145275 chars revisado"
+    },
+    {
+      "ficheiro": "19500228-御光話録17号.txt",
+      "at": "2026-07-20T03:52:31.987007+00:00",
+      "nota": "- tipo: livro\n- correções principais: quebra de parágrafos longos em unidades menores (cosmologia/espíritos-partícula, universo, casamento/mudança de casa); fix de concordância verbal (\"arranjar\"->\"arranje\"); redução de conectivos repetitivos (Além disso/Portanto em excesso)\n- glossário: 教修 (Kyoshu) -> \"curso de iniciação (Kyoshu)\" na 1ª ocorrência, \"Kyoshu\" nas demais (5 ocorrências), registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl; innen -> \"innen (afinidade espiritual)\" só na 1ª ocorrência (convenção geral já registrada, sem nova entrada); Ubusunagami -> \"Ubusunagami (Deus da Terra Natal)\" na única ocorrência\n- tamanho: 63700 chars original -> 64158 chars revisado"
+    },
+    {
+      "ficheiro": "19511225-御垂示録5号.txt",
+      "at": "2026-07-20T07:03:35Z",
+      "nota": "- tipo: livro\n- correções principais: travessão \"–\" padronizado para \"—\" em todo o arquivo; rótulo de falante repetido removido em 5 parágrafos de continuação do mesmo turno (linhas 233, 335, 337, 733, 739 do original); polimento de gramática/fluidez em ~14 parágrafos longos de Meishu-Sama (economia, Daijo/Shojo, Divindades malignas, agricultura)\n- glossário: nenhuma (innen recebeu a explicação \"(afinidade espiritual)\" na 1ª ocorrência, já prevista pelo glossário de busca — não é divergência de publicação)\n- tamanho: 88267 chars original -> 88243 chars revisado"
+    },
+    {
+      "ficheiro": "19520310-御垂示録7号.txt",
+      "at": "2026-07-20T08:12:56Z",
+      "nota": "- tipo: livro\n- correções principais: parágrafo único de ~7500 chars (monólogo sobre arte/museu) quebrado em parágrafos coerentes sem repetir rótulo de falante; fragmentos de frase e infinitivos soltos consertados (\"vou fazer... e construir\" -> \"farei... e construirei\"); en-dash (–) padronizado para em-dash (—); repetições removidas (\"eles serão conectados\", \"É realmente... É impressionante\")\n- glossário: nenhuma\n- tamanho: 42056 chars original -> 42084 chars revisado"
+    },
+    {
+      "ficheiro": "19520420-御教え集8号.txt",
+      "at": "2026-07-20T08:20:46Z",
+      "nota": "- tipo: livro\n- correções principais: 27 parágrafos-monólogo gigantes (discursos de festival sobre museu/Hakone/Atami/mina, 2000-7500 chars cada) quebrados em unidades legíveis por assunto, sem alterar nenhuma palavra; typo de nome 'Kame masa'->'Kamemasa'\n- glossário: 教修->\"curso de iniciação\" (1 ocorrência, convenção já estabelecida) registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl; pendência nova registrada em PENDENCIAS_STAGING_revisao_editorial_executor_b.json sobre glosa inconsistente de ス(Su) ('Mestre' vs 'centro') no mesmo arquivo, não decidida sozinho\n- tamanho: 225521 chars original -> 225533 chars revisado (conteúdo idêntico, verificado por diff normalizado; diferença é só as 2 correções de conteúdo)"
+    },
+    {
+      "ficheiro": "19520925-御垂示録13号.txt",
+      "at": "2026-07-20T09:33:22Z",
+      "nota": "- tipo: livro\n- correções principais: quebra do monólogo inicial de Meishu-Sama (China/MacArthur/Coreia/subversão interna/purificação, ~5800 chars) em 5 parágrafos temáticos, rótulo só no primeiro; suavização de conectivos repetidos (Portanto/Por isso encadeados); Ubusunagami \"(Deus do local de nascimento)\" -> \"(Deus da Terra Natal)\", alinhado à forma já estabelecida na mesma série (御垂示録2号/4号)\n- glossário: nenhuma divergência nova registrada (Buda Shakyamuni mantido, ambas as formas já convivem no corpus)\n- tamanho: 37326 chars original -> 37344 chars revisado"
+    },
+    {
+      "ficheiro": "19521015-御垂示録14号.txt",
+      "at": "2026-07-20T09:43:10Z",
+      "nota": "- tipo: livro\n- correções principais: quebra do monólogo inicial de Meishu-Sama (eleições/Yoshida/comunismo) em parágrafos por tópico; ajuste de concordância (\"um discípulo meu\"); remoção de repetições redundantes em falas curtas\n- glossário: 教修 -> \"curso de iniciação (Kyoshu)\" na 1ª ocorrência, \"Kyoshu\" nas seguintes (registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl)\n- tamanho: 37386 chars original -> 37056 chars revisado"
+    },
+    {
+      "ficheiro": "19521115-御教え集15号.txt",
+      "at": "2026-07-20T10:06:45Z",
+      "nota": "- tipo: livro\n- correções principais: parágrafos gigantes (alguns de 3000-5000 chars) quebrados em unidades legíveis sem alterar conteúdo/ordem; conectivos repetitivos (Portanto/Além disso/De qualquer forma) reduzidos onde se acumulavam em sequência; padronizado \"o deus Konjin da direção do nordeste (ushitora)\" para \"Ushitora no Konjin (Deus Dourado do Nordeste)\" (forma fixa do glossário, convenção explica-na-1a-ocorrência)\n- glossário: 1 decisão registrada em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (艮の金神 / Ushitora no Konjin, correção para forma já convencionada, não divergência)\n- tamanho: 105837 chars original -> 102825 chars revisado"
+    },
+    {
+      "ficheiro": "19530215-御垂示録17号.txt",
+      "at": "2026-07-20T11:21:35.175504Z",
+      "nota": "- tipo: livro\n- correções principais: fusão de rótulos de falante repetidos em turnos consecutivos do mesmo falante (14 pontos, ex. linhas 17/22/95/109 do original), pequenos ajustes de fluidez em conectivos repetidos, sem alteração de sentido/números/nomes\n- glossário: nenhuma (Ohikari/Johrei/nomes próprios já na forma padrão, sem divergência a registrar)\n- tamanho: 37976 chars original -> 37907 chars revisado"
+    },
+    {
+      "ficheiro": "19530415-御垂示録19号.txt",
+      "at": "2026-07-20T11:42:07Z",
+      "nota": "- tipo: livro\n- correções principais: fusão de rótulo repetido em turnos consecutivos de Meishu-Sama sem interrupção do interlocutor (5 pontos, ex. linhas 21+23, 31+33+35, 63+65+67); quebra de parágrafos gigantes em unidades temáticas (arte antiga/Egito-Grécia-Pérsia, filiais/dinheiro/Daijo-Shojo, agricultura/kyakudo); correção de concordância de gênero (\"harmonizá-los\"->\"harmonizá-las\", urdidura/trama)\n- glossário: nenhuma (Johrei, Daijo, Shojo, Kannon, Igreja Messiânica, Inari, Miroku, innen conferidos contra glossario_traducao.json, todos já na forma padrão)\n- tamanho: 41416 chars original -> 41217 chars revisado"
+    },
+    {
+      "ficheiro": "19530515-御教え集21号.txt",
+      "at": "2026-07-20T11:54:03Z",
+      "nota": "- tipo: livro\n- correções principais: parágrafos gigantes por seção de data (até 15,5 mil chars, um único bloco de texto corrido por dia) quebrados em unidades legíveis em fronteiras de frase (sem alterar nenhuma palavra, verificado por normalização de espaço em branco == original); cabeçalho, marcadores (Artigo \"...\") [Eikō nº ...] e colofão preservados intactos\n- glossário: nenhuma (Daijo/Shojo/Johrei/Kannon-Sama/o Senhor Shaka já batem com glossario_traducao.json, forma de busca == forma de publicação aqui)\n- tamanho: 148879 chars original -> 148960 chars revisado (diferença é só quebras de parágrafo)"
+    },
+    {
+      "ficheiro": "19510920-御教え集1号.txt",
+      "at": "2026-07-20T12:54:59.112797+00:00",
+      "nota": "- tipo: livro\n- correções principais: 49 parágrafos-monólito (>900 chars) quebrados em unidades legíveis por limite de sentença (fidelidade de conteúdo verificada por igualdade normalizada texto-a-texto); 14 ocorrências do rótulo \"Meishu-Sama:\" isolado em linha própria fundidas com o parágrafo de resposta seguinte, por consistência de formatação; ~18 casos de \"Além disso\"/\"Portanto\" repetidos no mesmo parágrafo variados por sinônimo (Também/Ademais/Assim/Por isso/Logo/Por fim)\n- glossário: nenhuma (termos já batem com glossario_traducao.json; \"Omamori\" mantido onde aparece no original por ser o termo histórico de 1951, distinto de \"Ohikari\" e não uma divergência de forma de publicação)\n- tamanho: 146791 chars original -> 146704 chars revisado"
+    },
+    {
+      "ficheiro": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "at": "2026-07-20T13:27:18Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de frases longas em unidades menores (prefácio); remoção de calques (\"não é necessário\"->\"não é preciso\", \"eu, através de\"->\"através de\"); pontuação/concordância ao longo dos depoimentos\n- glossário: 教修->\"curso de iniciação (Kyoshu)\" na 1ª ocorrência, \"Kyoshu\" nas 10 demais (já registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl)\n- tamanho: 164219 chars original -> 161183 chars revisado"
+    },
+    {
+      "ficheiro": "19530815-御教え集24号.txt",
+      "at": "2026-07-20T13:46:12Z",
+      "nota": "- tipo: livro (Mioshie-shu no 24, serie de dialogo com data/sessao, mas sem falas rotuladas Interlocutor:/Meishu-Sama: neste volume -- e' monologo continuo de Meishu-Sama por sessao)\n- correcoes principais: quebra de ~35 paragrafos-monolito muito longos (2000-7700 chars, ex. paragrafo unico sobre enchente de Kyushu/Ryujin/Miroku, ~6700 chars) em unidades por virada de topico (ombro->pescoco->derrame->cintura; arte->agricultura->dividas); variacao de conectivos repetidos (Portanto/Assim/Dessa forma em sequencia); normalizado colchete solto '<A medicina de Deus tambem e...>' para frase comum (nao e marcador estrutural do protocolo)\n- glossario: Chieshokaku -> gloss \"(Inteligencia da Percepcao Verdadeira)\" adicionado na 1a ocorrencia (convencao ja estabelecida, sem forma de publicacao divergente); \"Haraedo no Shihashin (Quatro Deuses da Purificacao)\" -> \"(Quatro Divindades da Purificacao)\" para bater com a entrada do glossario de busca (nao e divergencia, e alinhamento, sem novo registro no jsonl); Ryujin/Karyu/Suiryu mantidos romanizados com gloss ja presente no original, condizente com a convencao de explicar na 1a ocorrencia\n- tamanho: 142964 chars original -> 139746 chars revisado (verificado: todos os numeros/percentuais identicos original x revisado via extracao automatica, todos os 16 marcadores 'Artigo' e 12 referencias 'Eiko no' preservados, 9 cabecalhos de data na mesma ordem, colofao final intacto, nomes proprios e topônimos conferidos um a um sem divergencia)"
+    },
+    {
+      "ficheiro": "19510815-結核の革命的療法.txt",
+      "at": "2026-07-20T13:48:49Z",
+      "nota": "- tipo: livro\n- reabertura: corrigido corte de conteudo apontado pelo auditor externo (achado unico, confirmado real)\n- correcao: restaurada a frase omitida no reflow do paragrafo-monolito do depoimento de Sadayuki (\"Sua ansiedade nao diminuia, e eu tinha que cuidar dele 24 horas por dia, passando dias apenas de sofrimento junto com ele.\"), reinserida entre \"...nao conseguia se mover.\" e \"Alem de todo o seu sofrimento, o medico sempre dizia:\"\n- verificacao: conferido paragrafo a paragrafo o bloco orig[184:191] vs rev[204:227] (mesmo trecho apontado pelo auditor como area de maior risco); frase confirmada presente no arquivo apos a correcao; resto do livro (glossario Ohikari/Johrei/Komyo-Nyorai/Daikomyo Nyorai/Miroku Okami/Paraiso na Terra, correcoes de genero) ja havia sido validado pelo auditor como correto, nao alterado nesta rodada\n- glossario: nenhuma decisao nova\n- tamanho: 595589 chars original -> 590315 chars revisado (pos-correcao)"
+    },
+    {
+      "ficheiro": "19520115-御教え集5号.txt",
+      "at": "2026-07-20T14:08:53Z",
+      "nota": "- tipo: livro\n- correções principais: arquivo já revisado corretamente em execução anterior sem atualização da fila (mesmo bug de auto-referência/corrida já catalogado no projeto); verificado antes de fechar: 55/55 turnos Interlocutor e 55/55 Meishu-Sama idênticos original x revisado, início/meio/fim conferidos, pontuação/travessões ajustados sem alterar sentido\n- glossário: nenhuma decisão nova registrada (sem entrada para este arquivo em GLOSSARIO_PUBLICACAO_DECISOES.jsonl)\n- tamanho: 163808 chars original -> 163719 chars revisado"
+    },
+    {
+      "ficheiro": "19501030-法難手記.txt",
+      "at": "2026-07-20T14:09:52Z",
+      "nota": "- tipo: livro\n- correções principais: pontuação/vírgulas em orações intercaladas (\"desde o início do incidente, em 8 de maio...\"), reformulação de calque (\"para influenciar favoravelmente meu julgamento, atualmente em curso\" -> \"o julgamento a que atualmente respondo\"), travessões no lugar de vírgulas duplas para clareza\n- glossário: nenhuma\n- tamanho: 138009 chars original -> 137876 chars revisado"
+    },
+    {
+      "ficheiro": "19530915-御垂示録24号.txt",
+      "at": "2026-07-20T14:24:03Z",
+      "nota": "- tipo: livro\n- correções principais: pontuação/conectivos combinados com travessão/dois-pontos em vez de frases curtas repetidas (\"Isso é...\", \"Portanto...\"), parágrafos gigantes de fala única quebrados em unidades legíveis (itens 34-37, 49-50, 78, 82, 98, 104) sem repetir rótulo de falante dentro do mesmo turno (regra 5 do protocolo)\n- glossário: nenhuma (Johrei, Ohikari, espírito protetor primordial/guardião/secundário, Kamunagara-relacionados já batiam com glossario_traducao.json)\n- tamanho: 41761 chars original -> 41140 chars revisado"
+    },
+    {
+      "ficheiro": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "at": "2026-07-20T15:07:19Z",
+      "nota": "- tipo: livro\n- correções principais: fusão de frases curtas redundantes em orações com dois-pontos/ponto-e-vírgula, redução de repetição de \"Além disso\"/\"Portanto\" no início de frase, remoção de repetição de sujeito (ex. \"a força espiritual\"/\"sabedoria e iluminação correta\") mantendo sentido\n- glossário: nenhuma (Johrei, Igreja Messiânica, Komyo-Nyorai, Mundo de Miroku mantidos na forma de busca)\n- tamanho: 59224 chars -> 58468 chars"
+    },
+    {
+      "ficheiro": "19531015-御教え集26号.txt",
+      "at": "2026-07-20T15:31:53Z",
+      "nota": "- tipo: livro (Mioshie-shu, monologo continuo por data, sem falas rotuladas Interlocutor:/Meishu-Sama:)\n- correcoes principais: quebra mecanica de 44 paragrafos-monolito (2000-7500 chars cada) em unidades legiveis nos limites de frase, verificado por igualdade byte-a-byte apos normalizacao de espacos (garantia formal de que nenhuma palavra foi alterada); demais estrutura (11 cabecalhos de data, 12 marcadores 'Artigo'/[Eiko], lista de topicos em estilo noticiario, colofao final) preservada intacta\n- glossario: 1 decisao registrada em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (kyoshu: forma completa do glossario de busca -> \"curso de iniciacao (Kyoshu)\" na 1a ocorrencia, \"Kyoshu\" na 2a, 2 ocorrencias no arquivo)\n- tamanho: 175225 chars original -> 168938 chars revisado (diferenca e so as 2 substituicoes de kyoshu, verificado por comparacao normalizada de espacos em branco contra o original: identica em todo o resto)\n- nota de processo: fila com atividade concorrente real detectada durante esta invocacao (loop tmux revisao_editorial_executor_b, PID vivo ha >23min na mesma fila) reintroduzindo itens ja concluidos em pending (ex. 19521215-御垂示録16号.txt, 19530101-アメリカを救う.txt como string malformada) entre minha leitura e escrita; nao mexi nesses outros itens, so removi meu proprio alvo de pending e anexei este registro em done, para nao competir com a escrita do processo concorrente"
+    },
+    {
+      "ficheiro": "19530505-革命的増産の自然農法解説.txt",
+      "at": "2026-07-20T15:33:13Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de ~104 parágrafos monolíticos em unidades legíveis, erro de conjugação verbal, duas nominalizações agramaticais corrigidas\n- glossário: nenhuma\n- tamanho: 310932 chars original -> 311233 chars revisado"
+    },
+    {
+      "ficheiro": "19531115-御垂示録26号.txt",
+      "at": "2026-07-20T18:10:00Z",
+      "nota": "- tipo: livro\n- correções principais: fusão de rótulo Meishu-Sama: repetido em 3 pontos de turnos consecutivos sem interlocutor entre eles (regra 5 do protocolo — turnos sobre remédios/drogas, testemunhos da Rissho Kosei Kai + agricultura mundial, e Príncipe Herdeiro); parágrafo-monólogo final (~7000 chars, sobre Daijo/Shojo/iluminação/purificação) quebrado em 4 unidades temáticas sem repetir rótulo; conectivos repetidos (Portanto 30x, Por isso 22x, No entanto 11x no original) variados ao longo do arquivo\n- glossário: nenhuma (Daijo, Shojo já conformes glossario_traducao.json; sem ocorrência de 教修 neste livro)\n- tamanho: 38108 chars original -> 37599 chars revisado (verificado: sequência completa de 20/20 números idênticos original x revisado, 134/134 aspas, todos os 25 nomes próprios/topônimos conferidos sem divergência de contagem, 42 turnos Meishu-Sama + 41 Interlocutor = 83 turnos reais após fusão de 4 rótulos redundantes)"
+    },
+    {
+      "ficheiro": "19500423-御光話録18号.txt",
+      "at": "2026-07-20T16:21:10.626980+00:00",
+      "nota": "- tipo: livro\n- correções principais: fusão de frases curtas em travessão/dois-pontos, redução de conectivos repetitivos (\"Além disso\"/\"Portanto\"), normalização de aspas retas, pontuação e concordância ao longo de todo o diálogo Q&A\n- glossário: nenhuma divergência (Komyo-Nyorai, Kamunagara, Chieshōkaku, Yachimata já na forma padrão)\n- tamanho: 60374 -> 60252 chars"
+    },
+    {
+      "ficheiro": "19511210-御垂示録4号.txt",
+      "at": "2026-07-20T16:25:35Z",
+      "nota": "- tipo: livro\n- correções principais: ajustes de fluidez/pontuação (ex. \"deu um souvenir\"->\"me daria uma lembrança\", travessão em vez de vírgula, quebra de frase longa com dois pontos)\n- glossário: nenhuma\n- tamanho: 106653 chars original -> 106912 chars revisado"
+    },
+    {
+      "ficheiro": "19531215-御垂示録27号.txt",
+      "at": "2026-07-20T16:35:28Z",
+      "nota": "- tipo: livro\n- correções principais: rótulo Meishu-Sama consolidado em 6 turnos com múltiplos parágrafos consecutivos (labels repetidos removidos, mantidos só no 1º parágrafo, separados por linha em branco); quebra dos 6 monólogos mais longos (possessão espiritual, capitalismo/comunismo, bem/mal, Daikōmyō/Komyo-Nyorai, física nuclear/Johrei, fecho sobre Cristo/Buda) em parágrafos menores sem adicionar/remover conteúdo; polimento leve de 2-3 frases com calque.\n- glossário: 1 decisão registrada (\"doomamori (Ohikari)\" -> \"Ohikari\", artefato de romanização redundante sem forma reconhecida no glossário nem uso em outro arquivo do corpus)\n- tamanho: 40640 chars original -> 40513 chars revisado (-0,31%)"
+    },
+    {
+      "ficheiro": "19520515-御垂示録9号.txt",
+      "at": "2026-07-20T16:46:43.547707Z",
+      "nota": "- tipo: livro\n- correções principais: fluidez em falas longas (quebra de frases-rio), remoção de repetição redundante (\"Isso porque\"/\"Por isso\"), pontuação em diálogo curto\n- glossário: 教修 -> \"curso de iniciação (Kyoshu)\" em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 36018 -> 35588 chars\n- nota_operacional: trabalho já estava salvo em disco (mtime anterior), apenas ponteiro pending->done avançado nesta invocação (bug de auto-referência já catalogado, ver memória project_revisao_editorial_self_reference_stall)"
+    },
+    {
+      "ficheiro": "19540115-御教え集29号.txt",
+      "at": "2026-07-20T16:50:41Z",
+      "nota": "- tipo: livro\n- correções principais: 30 parágrafos-monolito (até 12344 chars) quebrados em unidades de ~900-1500 chars em pontos de fronteira de frase real (sem alterar palavra alguma); typo \"Es tal Okada\" -> \"Esse tal Okada\"\n- glossário: nenhuma (termos Guse-Kannon, Chieshōkaku, innen, Palácio de Cristal já conferidos contra glossario_traducao.json, sem divergência)\n- tamanho: 135977 -> 136071 chars (+0,07%)"
+    },
+    {
+      "ficheiro": "19530101-アメリカを救う.txt",
+      "at": "2026-07-20T19:55:55Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de parágrafos longos em unidades menores, pontuação (dois-pontos/travessão em vez de vírgula encadeada), pequenos ajustes de fluidez preservando sentido\n- glossário: 2 decisões já registradas em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (教修->\"curso de iniciação\"; 念->\"vontade\")\n- tamanho: 379302 chars original -> 376742 chars revisado\n- nota: item já processado e salvo em disco anteriormente (bug sistêmico conhecido de perda de escrita pending->done deste laço, ver memória project_revisao_editorial_self_reference_stall); revisão íntegra reverificada (cabeçalho, rodapé, amostra de meio, glossário) antes de avançar o ponteiro manualmente, sem reprocessar"
+    },
+    {
+      "ficheiro": "19530715-御垂示録22号.txt",
+      "at": "2026-07-20T19:57:09Z",
+      "nota": "- tipo: livro\n- correções principais: reabertura 3x já resolvida (achados 1/2 confirmados corrigidos em rodada anterior); esta rodada corrigiu só linha 115: \"mas\" (adversativo) -> \"e\" (aditivo), fiel ao conectivo JP そうして, não altera fato/sentido geral\n- glossário: nenhuma\n- tamanho: 31829 -> 32290 chars (arquivo já revisado antes desta correção pontual)"
+    },
+    {
+      "ficheiro": "19511125-御垂示録3号.txt",
+      "at": "2026-07-20T19:58:53Z",
+      "nota": "- tipo: livro\n- correção manual (4ª rodada, fora do laço automático): 2 achados que sobreviveram a 3 reaberturas anteriores (ver REABERTURAS_B.json) corrigidos diretamente -- linha 91 \"têm nomes insignificantes, sem valor aparente\" -> \"têm nomes ruins, insignificantes, sem valor\" (JP tem 3 qualificadores categóricos, sem hedge de aparência); linha 557 \"fiquei possessa\" -> \"fiquei possesso\" (JP não marca gênero, interlocutor anônimo sem base para mudar)\n- glossário: nenhuma\n- tamanho: sem alteração de tamanho relevante (2 correções pontuais de poucas palavras)"
+    },
+    {
+      "ficheiro": "19521215-御垂示録16号.txt",
+      "at": "2026-07-20T20:02:16Z",
+      "nota": "- tipo: livro\n- correções principais: revertido erro de número introduzido em rodada anterior (\"os setenta ou oitenta restantes\" -> \"os vinte ou trinta restantes\", linha 51; JP-fonte repete literalmente 二十とか三十, confirmado 4x pelo auditor); demais edições de rodadas anteriores (fusão de rótulos Meishu-Sama repetidos, pontuação) já confirmadas corretas pelo auditor e mantidas\n- glossário: nenhuma (confirmado pelo auditor em rodada anterior)\n- tamanho: 40852 chars original -> 41185 chars revisado"
+    },
+    {
+      "ficheiro": "19540215-御教え集30号.txt",
+      "at": "2026-07-20T20:07:43Z",
+      "nota": "- tipo: livro (Mioshie-shu no 30, monologo continuo de Meishu-Sama por data, 1-27 de janeiro de Showa 29, sem falas rotuladas Interlocutor:/Meishu-Sama:)\n- correções principais: quebra mecânica de 40 parágrafos-monólito (1400-10645 chars, incluindo um de 10645 chars em 7 de janeiro) em unidades de ~700-1600 chars nos limites de frase, verificado por igualdade normalizada de espaços contra o original (nenhuma palavra alterada); 3 casos de conectivo repetido em sequência imediata corrigidos (Portanto->Por isso, no trecho sobre o Vaticano; Portanto->Assim, no trecho sobre urdidura/trama; Além disso->Da mesma forma, no trecho sobre jornais/Ministério da Agricultura)\n- glossário: nenhuma divergência (Eikō, Kannon-Sama, Daijo, Shojo, religião Oomoto já conformes glossario_traducao.json; sem ocorrência de 教修 neste livro)\n- tamanho: 155415 chars original -> 155527 chars revisado (verificado: 13/13 cabeçalhos de data, 16/16 marcadores 'Artigo', 5/5 grupos de referência Eikō com contagem idêntica por número de edição, sequência completa de 88/88 números e 60/60 nomes próprios idêntica entre original e revisado)"
+    },
+    {
+      "ficheiro": "19490710-御光話録10号.txt",
+      "at": "2026-07-20T22:10:00Z",
+      "nota": "- tipo: livro\n- correções principais: já revisado em execução anterior (arquivo em disco desde 20/07 21:53); fila não avançou por bug sistêmico ja catalogado (perda de escrita pending->done). Verificado nesta invocação, não reprocessado: cabeçalho/rodapé só com ajustes de fluidez (ex. \"não podemos assumir responsabilidade\"->\"não conseguimos nos responsabilizar\"), correção prévia do auditor (\"casamenteiras\"->\"casamenteiros\", linha 9) presente e confirmada\n- glossário: nenhuma\n- tamanho: 56960 chars original -> 56013 chars revisado"
+    },
+    {
+      "ficheiro": "19511010-御垂示録2号.txt",
+      "at": "2026-07-20T20:11:24Z",
+      "nota": "- tipo: livro\n- correções principais: cláusula \"porque só tem teoria. Teoria não é interessante.\" restaurada no parágrafo de abertura (tinha sumido numa revisão anterior, achado do auditor externo e já corrigido em iteração anterior); demais correções da rodada original mantidas (fusão de rótulo, 教修/Kyoshu e 右進左退/左進右退 já registrados em GLOSSARIO_PUBLICACAO_DECISOES.jsonl)\n- glossário: nenhuma decisão nova (já registradas em rodada anterior)\n- tamanho: 84162 chars original -> 83745 chars revisado"
+    },
+    {
+      "ficheiro": "19540315-御教え集31号.txt",
+      "at": "2026-07-25T18:20:44Z",
+      "nota": "- tipo: livro\n- correcoes principais: quebra de paragrafos gigantes (fala continua por data, sem paragrafacao no original) em unidades legiveis por tema/data, preservando cabecalhos de data e marcadores (Artigo...) [Eiko no...] intactos; normalizacao de aspas curvas para retas (inconsistentes no original); sem reescrita de frases/vocabulario\n- glossario: nenhuma (Kunitokotachi-no-mikoto, Ushitora no Konjin, Enma Daio, Kanzeon-Bosatsu, religiao Oomoto ja conformes glossario_traducao.json)\n- tamanho: 129050 -> 128989 chars (auto-checagem: 10/10 cabecalhos de data, 24/24 citacoes de artigo/Eiko incl. variante aspas curvas, 59/59 numeros identicos, 21059/21057 palavras)"
+    },
+    {
+      "ficheiro": "19530615-御垂示録21号.txt",
+      "at": "2026-07-25T18:23:28Z",
+      "nota": "- tipo: livro\n- correções principais: item já revisado em sessão anterior (mtime 20/jul); reaberto 2x pelo mesmo achado (regra 5 do protocolo, rótulo de diálogo repetido dentro do mesmo turno) sem correção efetiva nas 2 rodadas do executor; corrigido manualmente nesta invocação nos 3 pontos apontados pela auditoria (linhas ~39, ~109, ~111 do revisado: removido rótulo 'Meishu-Sama:' repetido sem Interlocutor entre os turnos)\n- glossário: nenhuma\n- tamanho: 42285 chars -> 42246 chars revisado (varredura completa: 0 M-M consecutivo restante, Interlocutor: 62/62 idêntico ao original)"
+    },
+    {
+      "ficheiro": "19540825-天国の福音書.txt",
+      "at": "2026-07-25T19:01:59Z",
+      "nota": "- tipo: livro\n- correções principais: quebra de ~15 parágrafos excessivamente longos em unidades mais legíveis (seções 'Manifestação da Verdade', 'Inferno', 'O Segredo da Felicidade', 'Bem e Mal', 'Elo Espiritual', 'Conhecer as Coisas', 'Espere o Momento Certo', 'Não Erres a Ordem', 'Fisionomia e Direção da Casa'); nenhuma frase adicionada/removida\n- glossário: 教修 'curso (aula) de preparação para receber o Ohikari (kyoshu)' -> 'curso de iniciação (kyoshu)' (única ocorrência, seção 'O Ábaco e a Eficiência'), registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 271198 -> 271184 chars (diff word-level confirma: só a substituição de glossário muda palavras; resto é só quebra de parágrafo)"
+    },
+    {
+      "ficheiro": "19540415-御教え集32号.txt",
+      "at": "2026-07-25T19:23:51Z",
+      "nota": "- tipo: livro\n- correções principais: removida frase contaminada de outra passagem quase-duplicada (linha 171, visita \"ontem\" da pesquisadora recebeu por engano trecho que pertence à visita \"anteontem\", linha 203 — achado confirmado pelo auditor externo, iter_0392); revertida glosa não-registrada \"Buda da Medicina\" inserida junto a Yakushi Nyorai (sem base no JP nem no PT original) de volta à repetição literal do termo\n- glossário: nenhuma nova decisão (Kenshinjitsu e Ujigami já registrados em passada anterior)\n- tamanho: 164621 -> 163461 chars"
+    },
+    {
+      "ficheiro": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "at": "2026-07-25T19:29:34Z",
+      "nota": "- tipo: livro\n- correções principais: padronização de aspas retas em todo o arquivo (mistura de aspas retas/curvas no original); variação de conectivo em 9 parágrafos com \"Além disso\" repetido no mesmo bloco (ex. testemunho linha 215, 3 ocorrências -> 1); prefácio reescrito levemente para fluidez (\"para o caso mais notável disso\" -> \"foi ao caso mais notável desse fenômeno que\")\n- glossário: 教修 -> \"curso de iniciação (kyoshu)\" (forma de publicação já padrão no protocolo), registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 89478 chars original -> 89304 chars revisado"
+    },
+    {
+      "ficheiro": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "at": "2026-07-25T19:32:05Z",
+      "nota": "- tipo: livro\n- correções principais: fixed reopened finding (dor de dente/apendicite passage) — removed hedge \"pode estar\" -> categorical \"é\"; \"válida em qualquer lugar do mundo\" (geographic universality) -> \"reconhecida mundialmente\" (matches JP 世界的の大発見, global significance not geographic scope); rest of file already verified exhaustively by auditor (51/51 subsection headers, numeric sequences, quotes) in prior reopening note\n- glossário: nenhuma (auditor já confirmara ausência de divergência de glossário)\n- tamanho: 65474 chars -> 65455 chars (targeted single-sentence fix, no other change)"
+    },
+    {
+      "ficheiro": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "at": "2026-07-25T21:45:00Z",
+      "nota": "- tipo: livro\n- correções principais: pontuação (travessão de aposto -> vírgula em toda a série de perguntas), remoção de duplicação real \"seres vivos vivos\", calque \"tremia finamente\"->\"vibrava levemente\", quebra de parágrafos gigantes (respostas do Koza) em unidades menores sem alterar conteúdo\n- glossário: nenhuma (termo Lógica de glossario_traducao.json 理屈 mantido em maiúscula nas 3 ocorrências)\n- tamanho: 113209 chars original -> 113097 chars revisado"
+    },
+    {
+      "ficheiro": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "at": "2026-07-25T19:50:27Z",
+      "nota": "- tipo: livro\n- correções principais: 4 títulos de item colados ao corpo do texto sem quebra de linha (itens 2/olhos, e itens 4/10/11 de odontologia) separados em título+corpo; ~18 parágrafos de depoimento excessivamente longos (300-1800 chars numa só linha) quebrados em unidades menores sem alterar frase alguma; 2 cabeçalhos de secao (4. Garganta, 5. Odontologia) sem linha em branco antes, corrigido para consistência com as demais seções\n- glossário: innen -> \"innen (afinidade espiritual)\" na 1ª ocorrência do livro (linha ~89), demais 3 ocorrências mantidas curtas; já é regra geral existente em GLOSSARIO_PUBLICACAO_DECISOES.jsonl (entrada tipo geral 因縁), nenhuma entrada nova necessária\n- tamanho: 113766 chars original -> 113809 chars revisado (+43, integralmente explicado pela extensão do glossário e por marcadores de quebra de parágrafo; verificado por diff normalizado por espaço em branco que nenhuma outra palavra foi adicionada/removida)"
+    },
+    {
+      "ficheiro": "Keiko.txt",
+      "at": "2026-07-25T22:05:00Z",
+      "nota": "- tipo: periodico\n- correções principais: variação de conectivo repetido (\"Então\"/\"Além disso\" em cadeia), clareza de sujeito em 2 frases ambíguas (\"ela era evitada\"), remoção de framing redundante no fechamento do discurso citado\n- glossário: nenhuma\n- tamanho: 5584 chars original -> 5598 chars revisado"
+    },
+    {
+      "ficheiro": "Medicina_do_Amanha.txt",
+      "at": "2026-07-25T22:40:00Z",
+      "nota": "- tipo: periodico\n- correções principais: quebra de ~25 parágrafos excessivamente longos (a maioria no excerto histórico-filosófico \"Teoria do Ki Vital\" sobre Hipócrates/Galeno/Descartes/Stahl/Galvani, e nos artigos \"Conclusão\", \"IV. Esclarecimento dos Sintomas das Doenças\", \"A Tragédia da Ignorância da Realidade\", \"A Causa das Doenças e a Impureza do Pecado\", \"A Verdadeira Natureza da Doença é a Alma\", \"Terapia Natural\" e \"Doenças Estomacais\") em unidades mais legíveis, sem alterar nenhuma palavra; 1 remoção de conectivo redundante (\"Além disso, certa vez\" -> \"Certa vez\", 2 parágrafos seguidos já usavam \"Além disso\" logo antes)\n- sumário/tabela de conteúdos (artigo de 28/09/1942, \"O Alicerce do Céu - Johrei, Volume 2\", ~230 linhas de títulos de capítulo) preservado linha a linha, sem reescrita, conforme instrução do protocolo\n- glossário: nenhuma ocorrência de termos do glossário de busca (教修/Kyoshu, innen, Daijo/Shojo) neste periódico; nenhuma decisão registrada em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 226982 chars original -> 226999 chars revisado (diferença de +17 chars é integralmente explicada pelas quebras de parágrafo; verificado por diff de palavras word-a-word entre original e revisado: única mudança de conteúdo real é a remoção do conectivo \"Além disso,\" mencionada acima, 33/33 artigos e todos os campos de metadado por artigo -- entry_id/paired_id/source_file/sort_date/title_jp/title_pt/Publication source/Original publication reference/Collection ID/Paired JP entry -- byte-idênticos em contagem, 33/33 delimitadores === ARTIGO === preservados)"
+    },
+    {
+      "ficheiro": "Hikari.txt",
+      "at": "2026-07-25T23:00:00Z",
+      "nota": "- tipo: periodico\n- correções principais: revisão feita em iter_0369 (5 lotes paralelos), quebra de calque/redundância; reentrada em pending foi bug de escrita concorrente da fila (já revisado, não reprocessado)\n- glossário: 教修 -> curso de iniciação (Kyoshu), já registrado em GLOSSARIO_PUBLICACAO_DECISOES.jsonl\n- tamanho: 543517 chars original -> 540113 chars revisado"
+    },
+    {
+      "ficheiro": "Revista_Asahi.txt",
+      "at": "2026-07-25T21:00:26.550864+00:00",
+      "nota": "- tipo: periodico\n- correções principais: fusão de frases curtas/choppy (traço/vírgula em vez de ponto), correção de calque \"também\" em posição final de frase, remoção de \"Ou seja\"/\"também\" repetidos no trecho narrativo final\n- glossário: nenhuma (mundo espiritual/energia espiritual já batem com glossario_traducao.json)\n- tamanho: 4530 chars original -> 4502 chars revisado"
+    },
+    {
+      "ficheiro": "Ensinamentos_diversos.txt",
+      "at": "2026-07-25T21:09:55Z",
+      "nota": "- tipo: periodico\n- correcoes principais: fluidez/pontuacao no ensaio \"Um Mundo Sem Doenca, Pobreza e Conflitos\" (frases longas reorganizadas sem alterar conteudo); \"e uma beleza\"/\"tao bem quanto\" (erros de gramatica no dialogo NHK); \"Para alguem como nos\" -> \"Para nos\" (concordancia, ensaio Transicao Dia-Noite); paragrafos longos de Sr. Hioki/Meishu-Sama quebrados em unidades menores sem repetir rotulo\n- glossario: nenhuma\n- tamanho: 79205 chars original -> 79147 chars revisado"
+    }
+  ],
+  "failed": []
+}

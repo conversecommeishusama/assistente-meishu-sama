@@ -1,0 +1,110 @@
+{
+  "filename": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 627 linhas / PT reestruturado de 224 para 672 linhas, 47 artigos por spec: 1 prefácio + 2 capítulos-guarda-chuva (一 e 二, este com 6 itens numerados) + 38 capítulos temáticos numerados 三-四十/III-X+11-40). Não é amostragem: todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, incluindo verificação de contaminação do spec e reconstrução estrutural completa do PT (praticamente 100% do arquivo estava colapsado em parágrafos gigantes).",
+  "pre_existing_context": "Alertado previamente (mesma tarefa) que os volumes irmãos 浄霊法講座1-6号 (mesmo profile koza_lectures) tiveram o spec contaminado com título/âncoras de outro livro (aparentemente uma série de 'Aulas' sobre o Deus Principal, os três mundos, Kannon, a missão do Japão etc.), a maioria já corrigidos (1-6号 têm AUDIT_TRAIL). Alertado também que colapso estrutural (parágrafos gigantes escondendo títulos de capítulo/item) apareceu em quase todos os volumes desta subsérie, e que âncoras não são confiáveis por posição/ratio.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta a leitura semântica linha a linha e as correções estruturais/de conteúdo aplicadas.",
+  "summary": {
+    "articles_in_spec": 47,
+    "articles_reviewed": 47,
+    "spec_estava_contaminado": true,
+    "spec_corrigido": true,
+    "colapso_estrutural_encontrado": true,
+    "colapso_estrutural_corrigido": true,
+    "real_content_bugs_found": 3,
+    "real_content_bugs_fixed": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "contaminacao_spec": {
+    "achado": "Todos os 47 registros do spec tinham title_pt, pt_anchor e pt_prefix preenchidos com conteúdo de outro livro: 'Primeira Aula — O Propósito do Deus Principal e a Verdade da Ordem Celestial e Terrestre', 'Segunda Aula — A Origem da Religião e o Advento do Salvador', 'Terceira Aula — A Essência do Bodhisattva Kannon', etc. até 'Aula 47 Aula'. Isso não tem nenhuma relação temática com este volume (Curso de Johrei nº 7, casos clínicos de ginecologia/obstetrícia em formato Pergunta/Resposta). jp_anchor e title_jp não estavam contaminados (continuavam corretos, derivados do JP real).",
+    "verificacao": "Confirmado por leitura completa do PT work file real: nenhum dos títulos 'Primeira Aula...', 'Aula N Aula' aparece em lugar nenhum do texto real, nem tem relação temática com o conteúdo real (ginecologia/obstetrícia: gravidez, parto, aleitamento, útero, ovário). Os pt_anchor também não existiam no PT real na posição indicada (eram trechos literais de outro livro/série).",
+    "correcao": "title_pt recalculado como tradução real de cada title_jp, verificada contra o conteúdo real do PT (mantendo numeração romana/arábica e citação de fonte tal como aparecem no PT: 'Mioshie-shū nº X, p. Y', 'Paraíso na Terra nº X, p. Y', 'Gosuiji-roku nº X, p. Y', '(Mioshie)', '(Ensino)'). pt_anchor recalculado extraindo diretamente do PT work file real, já reestruturado: para o prefácio, a linha de publicação; para capítulos com subitens (二), o title_pt do primeiro item do capítulo; para os demais 44 capítulos/itens, os primeiros ~110 caracteres do texto que efetivamente segue o título no PT real (mesmo padrão usado nos specs já corrigidos de 1-6号). pt_prefix esvaziado em todos os 47 registros (os antigos 'Primeira Aula'/'Aula N Aula' eram inventados, sem qualquer correspondência real no PT ou no JP - este volume é organizado por capítulo temático numerado (I-X romano, depois 11-40 arábico, com os 2 primeiros capítulos guarda-chuva 一/二 contendo itens 1-6 só dentro de 二), não por 'aula').",
+    "confianca": "alta - cada title_pt foi conferido contra o JP e contra o PT real; cada pt_anchor foi extraído programaticamente do PT work file já reestruturado, na posição real do título correspondente (não por posição/ratio no arquivo bruto antigo)."
+  },
+  "colapso_estrutural": {
+    "achado": "PT work file tinha 224 linhas contra 627 do JP (razão ~2,8:1, conforme alerta inicial). Verificação programática (todos os 46 títulos de capítulo/item após o primeiro, mais 25 citações de retomada mid-capítulo tipo '(Mioshie-shū nº X, p. Y)') confirmou que NENHUM desses marcadores estava no início de um parágrafo - todos apareciam soterrados no meio de parágrafos gigantes de texto corrido (ex.: 'VII — Sobre a Inseminação Artificial' aparecia colado ao final da resposta do capítulo VI, sem nenhuma quebra). Isso tornava impossível localizar onde um capítulo/item terminava e o próximo começava, e escondia os títulos dentro do corpo do texto - mesmo padrão de bug já catalogado para esta subsérie (koza_lectures) e para Gokōwa.",
+    "correcao": "Reestruturado o PT work file inteiro: cada um dos 47 títulos de capítulo/item foi isolado em parágrafo próprio (verificado por busca de substring única antes de cada inserção de quebra); cada citação de retomada mid-capítulo (25 ocorrências, ex. '(Mioshie-shū nº 22, p. 4)', '(Paraíso na Terra nº 11, p. 16)') isolada em parágrafo próprio usando âncoras de contexto únicas para distinguir citações repetidas (ex. '(Mioshie)' aparece em vários capítulos, cada ocorrência localizada pelo texto imediatamente anterior); todo par (Pergunta)/(Resposta) (83 perguntas + 86 respostas, incluindo casos legítimos de duas Respostas consecutivas com réplica citada do informante entre elas, confirmados contra o JP) isolado em parágrafo próprio. Verificação automática pós-reestruturação: zero espaços duplos residuais (sinal de corte malfeito), zero CJK residual, zero rótulos duplicados consecutivos, contagem de headers/anchors 100% batendo com o spec corrigido.",
+    "verificacao_zero_perda": "A reestruturação foi feita por inserção cirúrgica de quebras de parágrafo em pontos identificados e verificados individualmente (não reflow automático por posição/proporção) - cada uma das ~110 posições de quebra foi localizada por substring literal única (contexto textual, não offset numérico) extraída do próprio texto já lido linha a linha. Nenhuma palavra de conteúdo real foi alterada, removida ou reordenada pela reestruturação em si; as únicas mudanças de conteúdo são exatamente as documentadas em 'correcoes_reais_aplicadas' abaixo.",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "item": "27 (二十七 産後の出血、おりものに関連して／御教え) - duplicação rascunho+versão final",
+      "problema": "GRAVE - mesmo padrão catalogado em revisao-paralela-jp-pt.mdc (achado #6) e já confirmado nos volumes 無肥料栽培法 e 浄霊法講座6号: o item 27 aparecia DUAS vezes no PT. A primeira ocorrência ('27. Sobre hemorragia e corrimento pós-parto') é um rascunho truncado: cobre a citação principal completa, a sub-citação '(Paraíso na Terra nº 15, p. 11)' completa, mas a terceira sub-citação '(Mioshie-shū nº 8, p. 28)' termina abruptamente no meio do relato clínico, sem nenhuma resposta de Meishu-Sama. A segunda ocorrência (rotulada erroneamente '17.' em vez de '27.', e usando terminologia 'Consulta'/'Revelação Divina' em vez de 'Pergunta'/'Resposta' usada no resto do livro) é a versão completa e correta, com a resposta integral de Meishu-Sama ao caso da trombose/infarto cerebral.",
+      "verificacao": "Confirmado contra o JP (linhas 613-628, capítulo 二十七, fonte única): o JP tem uma única ocorrência do item 27, sem duplicação. Confirmado que o conteúdo da versão truncada é estritamente um subconjunto (prefixo) do conteúdo da versão completa - nenhuma frase exclusiva foi encontrada no rascunho que não estivesse também na versão completa.",
+      "correcao": "Removido o rascunho truncado (1533 caracteres). Mantida apenas a versão completa e correta, renumerada de '17.' para '27.' (numeração correta conforme JP 二十七) e com terminologia normalizada de 'Consulta'/'Revelação Divina' para 'Pergunta'/'Resposta' (única seção do livro, capítulos 27-40, que usava a terminologia alternativa - normalizado para consistência com os capítulos 1-26, todos 'Pergunta'/'Resposta', e com o padrão '（御伺）/（御垂示）' do JP, que é invariável em todo o volume). Também normalizada a formatação de citação em todo o capítulo 28-40: 'Fonte: X, nº Y' e 'X, nº Y' (com vírgula antes de 'nº', inconsistente) padronizados para 'X nº Y' (sem vírgula), igual ao padrão já usado nos capítulos 1-26.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "item": "X (十 死産流産の霊的体的な原因) - frase real ausente",
+      "problema": "O JP diz: '弱くなった胎児は出産の時窒息死する。流産も霊的と体的あり、体的原因は化膿性腹膜である。' (o feto enfraquecido morre por asfixia no parto; o aborto espontâneo TAMBÉM TEM CAUSAS ESPIRITUAIS E MATERIAIS; a causa material é a peritonite purulenta). O PT pulava direto de 'O feto enfraquecido morre por asfixia durante o parto.' para 'A causa material é a peritonite purulenta.', com um espaço duplo no ponto do corte (sinal de edição malfeita, mesmo padrão descrito nos achados de 無肥料栽培法 e 浄霊法講座6号) - a cláusula inteira sobre o aborto ter causas espirituais E materiais (preparando a distinção que o texto faz duas frases depois, '霊的の方は...') havia sumido.",
+      "correcao": "Inserida a tradução da cláusula ausente: 'O aborto espontâneo também tem causas espirituais e materiais; a causa material é a peritonite purulenta.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "item": "40 (四十 多量の出血に関連して／御教え) - pergunta de confirmação ausente",
+      "problema": "O JP tem Meishu-Sama confirmando um fato antes da réplica citada do informante: '（御垂示）　これは出血したからなんでしょう。「はい、左様でございます。」　これは何ですよ。...'. O PT tinha apenas '(Resposta) \"Sim, senhor.\" Isso é o quê...' - a pergunta de confirmação de Meishu-Sama ('Essa hemorragia foi por causa daquilo que ela já tinha tido antes, não é?') estava ausente, fazendo a réplica '\"Sim, senhor.\"' aparecer sem contexto (confirmando o quê?).",
+      "correcao": "Inserida a tradução da pergunta de confirmação ausente antes da réplica citada.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Título + prefácio implícito (sem conteúdo próprio, o capítulo 一 começa direto)",
+      "jp_linhas": "1-23",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Não há prefácio textual separado neste volume - '序文' no spec é só um marcador estrutural para as linhas de título/fonte, sem conteúdo próprio a verificar."
+    },
+    {
+      "bloco": "Capítulo I / 一 (Patologia das Doenças Femininas) - 5 citações Mioshie-shū encadeadas",
+      "jp_linhas": "24-39",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Conteúdo completo e fiel contra o JP; reestruturado de 1 parágrafo gigante para 5 parágrafos (um por citação), matching a estrutura do JP."
+    },
+    {
+      "bloco": "Capítulo II / 二 (Sobre a Gravidez) - itens 1-6",
+      "jp_linhas": "42-124",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Todos os 6 itens e suas sub-perguntas conferidos frase a frase contra o JP; reestruturado título por título, Pergunta/Resposta por Pergunta/Resposta."
+    },
+    {
+      "bloco": "Capítulos III-X (Julgamento de gravidez, gravidez imaginária, feto morto, gravidez ectópica, inseminação artificial, contracepção, controle de natalidade, natimorto/aborto)",
+      "jp_linhas": "126-217",
+      "decisao": "ok, com 1 correção pontual (item 2 de correcoes_reais_aplicadas)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulos 11-26 (cirurgias, purificação na gravidez, feto fraco, enjoo do marido, cordão umbilical, cinta abdominal, cuidados pré/pós-parto, placenta, contração uterina)",
+      "jp_linhas": "220-464",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "16 capítulos, cada um com suas sub-citações e sub-perguntas conferidos integralmente contra o JP; nenhuma perda de conteúdo encontrada além da reestruturação."
+    },
+    {
+      "bloco": "Capítulo 27 (hemorragia/corrimento pós-parto) - duplicação rascunho+final",
+      "jp_linhas": "613-628 (fonte real), aparecia também duplicado a partir da posição pós-item-26 no PT",
+      "decisao": "corrigido - duplicação removida (item 1 de correcoes_reais_aplicadas)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Capítulos 28-40 (aborto espontâneo, leite materno, kekkakke, flacidez uterina, pseudo-câncer, mioma, prolapso uterino, cisto/abscesso ovariano, purificação pós-ooforectomia, irregularidade menstrual, hemorragia abundante)",
+      "jp_linhas": "466-627",
+      "decisao": "ok, com 1 correção pontual (item 3 de correcoes_reais_aplicadas) + normalização de terminologia Consulta/Revelação Divina -> Pergunta/Resposta + normalização de formatação de citação",
+      "confianca": "alta"
+    }
+  ],
+  "spec_contaminado_e_corrigido": true,
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

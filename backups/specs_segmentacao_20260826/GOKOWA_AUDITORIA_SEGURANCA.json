@@ -1,0 +1,354 @@
+{
+  "provenance": {
+    "match_prod": 0,
+    "match_mass": 0,
+    "match_p2": 0,
+    "match_none": 20,
+    "only_livros": 0
+  },
+  "prov_detail": [
+    {
+      "file": "19480101-御光話録（補）.txt",
+      "livros": "905dfc74484b84ff",
+      "prod": "d4255023dfa09f80",
+      "mass": "2f903bf97de8b9eb",
+      "p2": "6d6e8c3d0c7b7853",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19481208-御光話録1号.txt",
+      "livros": "6eb93bfa7e5efa4d",
+      "prod": "3afc4f0d2afae56e",
+      "mass": "af29c5495f81ed8f",
+      "p2": "6e2f5d462c517fdb",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490000-御光話録4号.txt",
+      "livros": "0411c6479fe24425",
+      "prod": "02ec051680e12315",
+      "mass": "ea7d4fc6709c2024",
+      "p2": "e43ba5741333f1ca",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490000-御光話録5号.txt",
+      "livros": "41a364c162545895",
+      "prod": "16b44449b3f8c595",
+      "mass": "63be75247b73ecd2",
+      "p2": "263c35955b750428",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490108-御光話録2号.txt",
+      "livros": "c025cae39f7f9453",
+      "prod": "175c1c29a68fd58a",
+      "mass": "b2d16acc6367049b",
+      "p2": "821f2e14cf633216",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490208-御光話録3号.txt",
+      "livros": "c7aaa6484c841ad3",
+      "prod": "658a6e0afd42e425",
+      "mass": "df9fb1b5dc5de18e",
+      "p2": "c76b345336ec4d31",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490423-御光話録6号.txt",
+      "livros": "a047b175c2517fcd",
+      "prod": "68b34d23cb9e660b",
+      "mass": "88b313bc6366aa7b",
+      "p2": "1d9a9604b753eb76",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490522-御光話録7号.txt",
+      "livros": "2c2f31b638d01eb8",
+      "prod": "5f589c158372b50b",
+      "mass": "0b715f3575370998",
+      "p2": "d4919f22d8c8368d",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490530-御光話録8号.txt",
+      "livros": "76bf01251fac905d",
+      "prod": "39bd385a931de662",
+      "mass": "e5741dc10426e134",
+      "p2": "79881ac244559e62",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490710-御光話録10号.txt",
+      "livros": "61711cb823f41d4a",
+      "prod": "6c9ee3a6b218bf27",
+      "mass": "92a51e9362aa8275",
+      "p2": "ec998f83a6e87906",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490730-御光話録9号.txt",
+      "livros": "b102d63f6a86510b",
+      "prod": "43bf1e8d068bcfb9",
+      "mass": "b2aaf5c54e2d5b13",
+      "p2": "daa22d378dc8179c",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490821-御光話録11号.txt",
+      "livros": "5e6b52cd2a2bcfb3",
+      "prod": "cf890acc24c6a8e0",
+      "mass": "623f745d4a58e82b",
+      "p2": "6ba648c911d1f732",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19490921-御光話録12号.txt",
+      "livros": "570a15dd61f6a780",
+      "prod": "17278becf3f8f725",
+      "mass": "ae62013cbd543e43",
+      "p2": "a03a1dba44744527",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19491021-御光話録13号.txt",
+      "livros": "882baabb50030ae5",
+      "prod": "3f5cfa7bbe3c9524",
+      "mass": "0f185150371ff6fc",
+      "p2": "5d3a4ab68825b01e",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19491120-御光話録14号.txt",
+      "livros": "540228c72ec645f3",
+      "prod": "2c123b08784ab70c",
+      "mass": "b726e84818be0d07",
+      "p2": "7aacad185e1299dd",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19491220-御光話録15号.txt",
+      "livros": "98303646158f4976",
+      "prod": "67dd2528eb5cca07",
+      "mass": "ab203aeeb23b9aaf",
+      "p2": "c7aa355402aa9bab",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19500120-御光話録16号.txt",
+      "livros": "37e6b95f7a5fc7a7",
+      "prod": "b830904f8c512beb",
+      "mass": "413d59e524a89c0e",
+      "p2": "2a8b3f34de696b89",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19500228-御光話録17号.txt",
+      "livros": "8150369daef15249",
+      "prod": "e110a18aebf2c507",
+      "mass": "c97cd1b498276430",
+      "p2": "0760e86de0543d42",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19500423-御光話録18号.txt",
+      "livros": "5d43a64ce1072d4e",
+      "prod": "d2e97e24191b73d8",
+      "mass": "e867d5675a4dfa3c",
+      "p2": "196096bda2cc03f5",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    },
+    {
+      "file": "19500613-御光話録19号.txt",
+      "livros": "1315ef50ee744609",
+      "prod": "dc733acf792c0965",
+      "mass": "90038c7031a89666",
+      "p2": "4167596fd864980f",
+      "closest": "textos_portugues (derived, edited)",
+      "same_as_prod": false,
+      "same_as_mass": false
+    }
+  ],
+  "audit_issues": [
+    {
+      "file": "19481208-御光話録1号.txt",
+      "delta": 0,
+      "I": "47/47",
+      "M": "48/47",
+      "dashes": 1,
+      "mi": 1.021,
+      "qa": [
+        "perguntas JP=47 vs PT=62"
+      ]
+    },
+    {
+      "file": "19490108-御光話録2号.txt",
+      "delta": 0,
+      "I": "88/88",
+      "M": "86/86",
+      "dashes": 0,
+      "mi": 0.977,
+      "qa": [
+        "perguntas JP=88 vs PT=89"
+      ]
+    },
+    {
+      "file": "19490208-御光話録3号.txt",
+      "delta": 0,
+      "I": "87/87",
+      "M": "87/87",
+      "dashes": 0,
+      "mi": 1.0,
+      "qa": [
+        "perguntas JP=87 vs PT=86"
+      ]
+    },
+    {
+      "file": "19490423-御光話録6号.txt",
+      "delta": 0,
+      "I": "42/42",
+      "M": "42/42",
+      "dashes": 0,
+      "mi": 1.0,
+      "qa": [
+        "perguntas JP=42 vs PT=41"
+      ]
+    }
+  ],
+  "legacy_hits": {
+    "\\breligião maligna\\b": [
+      "19490522-御光話録7号.txt"
+    ],
+    "\\bespíritos malignos\\b": [
+      "19490000-御光話録5号.txt",
+      "19490108-御光話録2号.txt",
+      "19500228-御光話録17号.txt"
+    ],
+    "\\bmaus espíritos\\b": [
+      "19500423-御光話録18号.txt"
+    ],
+    "\\bJohrei\\b(?!\\s*\\()": [
+      "19480101-御光話録（補）.txt",
+      "19481208-御光話録1号.txt",
+      "19490000-御光話録4号.txt",
+      "19490000-御光話録5号.txt",
+      "19490108-御光話録2号.txt",
+      "19490208-御光話録3号.txt",
+      "19490423-御光話録6号.txt",
+      "19490522-御光話録7号.txt",
+      "19490530-御光話録8号.txt",
+      "19490710-御光話録10号.txt",
+      "19490730-御光話録9号.txt",
+      "19490821-御光話録11号.txt",
+      "19490921-御光話録12号.txt",
+      "19491021-御光話録13号.txt",
+      "19491120-御光話録14号.txt",
+      "19491220-御光話録15号.txt",
+      "19500228-御光話録17号.txt",
+      "19500423-御光話録18号.txt",
+      "19500613-御光話録19号.txt"
+    ]
+  },
+  "good_marker_totals": {
+    "\\bDivindade maligna\\b": 15,
+    "\\bDivindades malignas\\b": 14,
+    "\\bculto maligno\\b": 2,
+    "\\bOmamori\\b": 47,
+    "\\bKannon-Sama\\b": 69,
+    "\\bGrande Caminho\\b": 2,
+    "\\binnen\\b": 19,
+    "\\bDaijo\\b": 19,
+    "\\bShojo\\b": 23,
+    "\\bMakyo\\b": 0,
+    "\\bEspírito do Mal\\b": 1
+  },
+  "cjk_vols": [
+    [
+      "19480101-御光話録（補）.txt",
+      32
+    ],
+    [
+      "19490000-御光話録5号.txt",
+      102
+    ],
+    [
+      "19490530-御光話録8号.txt",
+      47
+    ],
+    [
+      "19490710-御光話録10号.txt",
+      81
+    ],
+    [
+      "19490730-御光話録9号.txt",
+      45
+    ],
+    [
+      "19490821-御光話録11号.txt",
+      128
+    ],
+    [
+      "19490921-御光話録12号.txt",
+      120
+    ],
+    [
+      "19491021-御光話録13号.txt",
+      252
+    ],
+    [
+      "19491220-御光話録15号.txt",
+      168
+    ],
+    [
+      "19500120-御光話録16号.txt",
+      157
+    ],
+    [
+      "19500228-御光話録17号.txt",
+      7
+    ],
+    [
+      "19500423-御光話録18号.txt",
+      61
+    ]
+  ]
+}

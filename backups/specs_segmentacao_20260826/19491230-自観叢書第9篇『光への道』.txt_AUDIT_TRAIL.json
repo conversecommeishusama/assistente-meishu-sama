@@ -1,0 +1,76 @@
+{
+  "filename": "19491230-自観叢書第9篇『光への道』.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 219 linhas / PT reformatado de 42 para 254 linhas, 23 trechos por spec, incluindo prefácio, 'はしがき' e colofão final). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, trecho a trecho.",
+  "pre_existing_context": "Alerta de entrada: razão de linhas JP/PT de mais de 5:1 (219 vs 42), sinalizada como suspeita de conteúdo faltando em escala, por analogia com o padrão de perda de parágrafo já confirmado em outros livros desta família (御教え集/御垂示録/法難手記) e em Gokōwa. A hipótese foi tratada com máxima desconfiança, não com benefício da dúvida.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 23,
+    "articles_reviewed": 23,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0,
+    "razao_5_para_1_causa_confirmada": "predominantemente_formatacao_reflow_mais_uma_perda_real_de_conteudo_pontual"
+  },
+  "diagnostico_razao_linhas": {
+    "achado": "O PT de trabalho estava inteiramente achatado: cada uma das ~21 secções do livro (título + todos os seus parágrafos JP) havia sido colapsada em UM único parágrafo/linha gigante, sem nenhuma quebra de parágrafo 1:1 com o JP (viola ponto 6 do checklist). Isto por si só explica quase toda a razão de 5:1 nas linhas — não é amostragem de formatação leve (~2:1 esperado por convenção), é o mesmo padrão de 'colapso estrutural' já catalogado no livro de referência 19490701-無肥料栽培法 (item 9 da sua trilha de auditoria, lá restrito às últimas páginas; aqui presente no volume inteiro).",
+    "verificacao_conteudo": "Comparação parágrafo a parágrafo (usando os limites de linha física do JP, confirmados via script que extraiu os blocos delimitados por linha em branco do ficheiro JP) confirmou que a esmagadora maioria do conteúdo estava de facto presente no PT, apenas sem quebra de parágrafo — não era perda de conteúdo disfarçada de formatação. Cada um dos 23 trechos do spec foi conferido frase a frase contra o parágrafo JP correspondente.",
+    "excecao_real_encontrada": "Na secção 大本教脱退の埋由 (trecho 7 do spec), o PT saltava diretamente de 'ela o chamou à sua cabeceira e' para 'do Imperador Kumazawa, isso não seria nada' — omitindo por completo a citação direta da confissão da mãe de Deguchi (que ele seria filho ilegítimo do Príncipe Arisugawa Taruhito) e o início da frase seguinte sobre a mudança de comportamento de Deguchi após esse episódio. Isto É uma perda real de conteúdo doutrinal/histórico relevante (não formatação), confirmada por leitura direta do JP (linha 75-76) contra o PT.",
+    "conclusao": "A razão de linhas de 5:1 tem duas causas sobrepostas: (1) reflow estrutural generalizado no PT inteiro (responsável pela quase totalidade da discrepância numérica), corrigido nesta revisão; (2) uma perda real e localizada de conteúdo (um parágrafo, ~150 palavras JP) numa única secção, também corrigida. Não há evidência de perda de conteúdo em escala nas demais 22 secções."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Secção 大本教脱退の埋由 (Razões para o Desligamento da Religião Oomoto), JP linhas 75-76",
+      "problema": "GRAVE - perda de conteúdo: a citação direta da mãe de Deguchi confessando no leito de morte que ele era filho ilegítimo do Príncipe Arisugawa Taruhito (nascido de um caso dela com o príncipe quando o servia em Kyoto) estava totalmente ausente do PT, que saltava diretamente para 'do Imperador Kumazawa, isso não seria nada' sem nenhuma transição, perdendo também o início da frase sobre a mudança de comportamento de Deguchi.",
+      "correcao": "Traduzido e inserido a partir do JP (fonte de verdade): a citação completa da mãe ('Quando eu era jovem, meu pai foi o mestre de estudos nacionais (kokugaku) do Príncipe Arisugawa Taruhito...') e a frase de transição sobre a mudança de Deguchi ('A partir desse acontecimento, o Mestre mudou repentinamente...') até o ponto onde o PT existente retomava corretamente ('...isso não seria nada, mas naquela época era um grande problema').",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Todo o corpo do volume (23 trechos)",
+      "problema": "Colapso estrutural: paragrafação do PT inteiramente achatada (cada secção = 1 parágrafo gigante), sem quebras correspondentes aos parágrafos do JP (ponto 6 do checklist); títulos de secção embutidos no meio do texto corrido sem linha própria (ponto 7); título da secção 'はしがき' (Prefácio) estava totalmente ausente do PT (não só desalinhado - inexistente).",
+      "correcao": "Reformatado o ficheiro inteiro com quebra de parágrafo 1:1 confirmada contra os limites de linha física do JP (verificados via extração script dos blocos delimitados por linha em branco), títulos de secção movidos para linha própria em formato '**Título**' (consistindo com a convenção já usada no livro de referência 19490701-無肥料栽培法), e título 'Prefácio' adicionado para a secção はしがき. Nenhum conteúdo textual foi removido ou reordenado - apenas reintroduzidas as quebras de parágrafo e cabeçalhos; todas as frases foram reaproveitadas do PT existente (já traduzido corretamente), exceto a inserção do item 1 acima.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Secção ある婦人の話 (A história de uma senhora), próximo ao relato da peritonite do marido",
+      "problema": "Pequeno erro gramatical pré-existente: frase teve o sujeito comido - 'Controlando minha imensa relutância, fui à sua casa. que estava deitado de costas, disse: ...' (frase começando com minúscula, sem sujeito, sinal de fragmento perdido no reflow anterior).",
+      "correcao": "Restaurado o pronome do sujeito a partir do JP (彼は仰向けになっていたが): 'Controlando minha imensa relutância, fui à sua casa. Ele, que estava deitado de costas, disse: ...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Final do ficheiro (colofão), JP linhas 209-219",
+      "problema": "O colofão editorial final do livro (自観叢書第９篇 / título / data e formato de publicação / autor / editor / editora) presente no JP estava totalmente ausente do PT.",
+      "correcao": "Traduzido e adicionado ao final do PT, seguindo o mesmo padrão de tradução usado no colofão do livro de referência 19490701-無肥料栽培法 ('Série Jikan, Volume 9' / título / data / formato / autor Jikan Okada / editor Morinosuke Koizumi / editora Igreja Nihon Go-Roku-Shichi).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio (título+publicação) + はしがき", "jp_linhas": "20-29", "decisao": "ok, título はしがき ausente foi adicionado", "confianca": "alta"},
+    {"bloco": "入信以前の私 / 入信の動機 / 入信以後", "jp_linhas": "32-52", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "大森時代", "jp_linhas": "55-63", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "麹町時代", "jp_linhas": "66-70", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "大本教脱退の埋由", "jp_linhas": "73-78", "decisao": "corrigido - perda real de conteúdo (item 1)", "confianca": "alta"},
+    {"bloco": "玉川時代 (incl. poema 玉川郷)", "jp_linhas": "81-86", "decisao": "ok, poema preservado corretamente, só reformatado", "confianca": "alta"},
+    {"bloco": "豚箱入り (incl. diálogo com o主任)", "jp_linhas": "89-107", "decisao": "ok, diálogo já estava correto por turno; narrativa reformatada", "confianca": "alta"},
+    {"bloco": "三度目のプタ箱入り (incl. poema 汝と吾との力試さん)", "jp_linhas": "110-127", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "運命の転換 (Ise/Kashima-Katori/Zenkoji)", "jp_linhas": "130-138", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "宗教となるまで (Shinzanso/Tozanso/fim da guerra)", "jp_linhas": "141-149", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "ある婦人の話", "jp_linhas": "152-157", "decisao": "corrigido - pronome ausente (item 3)", "confianca": "alta"},
+    {"bloco": "天理教", "jp_linhas": "160-163", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "死人に鞭つ / 霊的肺患", "jp_linhas": "166-173", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "間違い信仰", "jp_linhas": "176-180", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "龍神の憑依 / 癲癇 / 精神病", "jp_linhas": "183-198", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "死線を越えた話", "jp_linhas": "201-205", "decisao": "ok, conteúdo completo, só reformatado", "confianca": "alta"},
+    {"bloco": "Colofão final", "jp_linhas": "209-219", "decisao": "corrigido - ausente no PT (item 4)", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. A causa da razão de linhas 5:1 foi diagnosticada com rigor (reflow estrutural generalizado, não perda de conteúdo em escala) e corrigida integralmente; a única perda real de conteúdo encontrada foi traduzida e inserida a partir do JP. Recomenda-se, se o tempo permitir futuramente, uma segunda auditoria independente (mesmo princípio de 'Δ=0 nunca é suficiente'), mas não é bloqueante dado o nível de confiança alta em todas as correções."
+  }
+}

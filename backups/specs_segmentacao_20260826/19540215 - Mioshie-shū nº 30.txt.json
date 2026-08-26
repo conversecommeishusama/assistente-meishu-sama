@@ -1,0 +1,130 @@
+{
+ "filename": "19540215 - Mioshie-shū nº 30.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 13→12. PT pairing pendente. | 2026-07-15: inserida sessão 一月一日 ausente (absorvida em 序文); 13 artigos restaurados.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 13,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』30号、昭和29(1954)年2月15日発行",
+   "pt_anchor": "Mioshie-shū nº 30",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和二十九年一月一日",
+   "title_pt": "1 de janeiro de Showa 29 (1954)",
+   "jp_anchor": "昭和二十九年一月一日\n\n　去年の栄光の正月号には「世界夢物語」というのを書きました。あれはおもしろいことがあるのです。最初は「これからの世界」という題で書いたのです",
+   "pt_anchor": "1º de janeiro de Showa 29 (1954)\nNo número de Ano Novo da revista Eikō do ano passado, escrevi algo int",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二日",
+   "title_pt": "2 de janeiro",
+   "jp_anchor": "一月二日\n\n　去年の栄光の新年号に「世界夢物語」というのを出しました。最初は「これからの世界」という題で書いたのです。そうすると「夢物語」とつけなければ",
+   "pt_anchor": "2 de janeiro\nNa edição de Ano Novo da revista Eikō do ano passado, publiquei \"Sonho",
+   "notes": "",
+   "pt_prefix": "2 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月三日",
+   "title_pt": "3 de janeiro",
+   "jp_anchor": "一月三日\n\n　誰も知らるるとおり、今年は世界的にだいぶ明るくなったような気がします。私は去年の正月の栄光の新年号に「世界夢物語」というのを書きましたが、",
+   "pt_anchor": "3 de janeiro\n\nComo todos sabem, sinto que este ano o mundo se tornou consideravelmen",
+   "notes": "",
+   "pt_prefix": "3 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月五日",
+   "title_pt": "5 de janeiro",
+   "jp_anchor": "一月五日\n\n　農業特集号を延ばしてましたが、その後報告が二、三十通来たようです。全部は見てないが、初年度から五割増産というのがだいぶあるようです。この特",
+   "pt_anchor": "5 de janeiro\n\nA edição especial sobre agricultura estava atrasada, mas parece que de",
+   "notes": "",
+   "pt_prefix": "5 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月六日",
+   "title_pt": "6 de janeiro",
+   "jp_anchor": "一月六日\n\n　自然農法の報告がだいぶ来ましたから、もうじき特集号は出せると思いますが、だいたいを見た具合ですと、初年度からたいてい二、三割の増産になって",
+   "pt_anchor": "6 de janeiro\n\nChegaram muitos relatórios sobre o método da agricultura natural, entã",
+   "notes": "",
+   "pt_prefix": "6 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月七日",
+   "title_pt": "7 de janeiro",
+   "jp_anchor": "一月七日\n\n　浄霊の原理については、今までも随分書いたり話してありますが、最初ぜんぜん知らない人に言うのは、なかなか分かりにくいのです。しかも知識階級の",
+   "pt_anchor": "7 de janeiro\n\nSobre o princípio do Johrei, já escrevi e falei bastante até agora, ma",
+   "notes": "",
+   "pt_prefix": "7 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十五日",
+   "title_pt": "15 de janeiro",
+   "jp_anchor": "一月十五日\n\n　農業特集号は、だいぶ報告も集まりましたから、この次に出します。その論文を書いたので読ませます。今までとはだいぶ変わった点があります。",
+   "pt_anchor": "15 de janeiro\n\nQuanto à edição especial sobre agricultura, como muitos relatórios for",
+   "notes": "",
+   "pt_prefix": "15 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十六日",
+   "title_pt": "16 de janeiro",
+   "jp_anchor": "一月十六日\n\n　自然栽培の報告がだいたい集まったので、特集号を出します。言いたいことはだいたいみんなここに書いたつもりですから、これをよく読めば、どんな人",
+   "pt_anchor": "16 de janeiro\n\nComo os relatos do cultivo natural foram quase todos reunidos, publica",
+   "notes": "",
+   "pt_prefix": "16 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十七日",
+   "title_pt": "17 de janeiro",
+   "jp_anchor": "一月十七日\n\n　やっと特集号が出るようになりました。今その論文を読ませますが、報告は五十通ぐらい出すつもりです。これはかなり骨折って書きましたが、だいたい",
+   "pt_anchor": "17 de janeiro\n\nFinalmente, a edição especial está prestes a ser publicada. Agora fare",
+   "notes": "",
+   "pt_prefix": "17 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十五日",
+   "title_pt": "25 de janeiro",
+   "jp_anchor": "一月二十五日\n\n　二、三日前に聞いた話ですが、ニホン・タイムスのエリス・グリリというアメリカの新聞記者が、この間日本の大新聞の記者を数人集めて、救世教という",
+   "pt_anchor": "25 de janeiro\n\nOuvi uma história há dois ou três dias. Uma jornalista americana do Ja",
+   "notes": "",
+   "pt_prefix": "25 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十六日",
+   "title_pt": "26 de janeiro",
+   "jp_anchor": "一月二十六日\n\n　ついこの間、例のエリス・グリリというアメリカの新聞記者の人が、東京都内の主な新聞の記者を呼んで、私の宣伝をしたわけです。それを聞きましたが",
+   "pt_anchor": "26 de janeiro\n\nHá pouco, aquela jornalista americana, Elise Grilli, chamou os jornali",
+   "notes": "",
+   "pt_prefix": "26 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十七日",
+   "title_pt": "27 de janeiro",
+   "jp_anchor": "一月二十七日\n\n　この間、例のアメリカの新聞記者でエリス・グリリという人が、日本の主な新聞記者を呼んで私の宣伝をしてくれたわけです。その時に“救世教の岡田茂",
+   "pt_anchor": "27 de janeiro\n\nOutro dia, aquela jornalista americana chamada Elise Grilli convocou o",
+   "notes": "",
+   "pt_prefix": "27 de janeiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

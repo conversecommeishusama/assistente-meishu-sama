@@ -1,0 +1,1551 @@
+{
+ "filename": "19510815 - Terapia Revolucionária da Tuberculose.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 178→194. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 178,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "結核の革命的療法",
+   "pt_anchor": "A Revolucionária Terapia da Tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序　文",
+   "title_pt": "",
+   "jp_anchor": "この著は、私が目下執筆中の、「文明の創造」の第一章「科学篇」中の、医学の一項目から結核に関したもののみを抜萃（ばっすい）したのである。という訳 は、近来結核問題が非常に喧（やかま）しくなって来たからで、結核漸増の傾向は、このままでは到底済ま",
+   "pt_anchor": "Esta obra é um extrato de um dos itens de medicina do primeiro capítulo, \"Ciência\", de \"A Criação da Civilização\", que atualmente estou escrevendo — aqui tratando apenas da tuberculose. A razão é que, ultimamente, a questão da tuberculose tornou-se um tema muito debatido, e a tendência de aumento gra",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "医学の解剖",
+   "title_pt": "",
+   "jp_anchor": "　　　　医学の解剖\n\n　私は前項までに、医学の誤謬を大体かいたつもりであるが、なお進んでこれから鋭いメスを入れて、徹底的に解剖してみよう。といっても別段医学を誹謗する 考えは毫末（ごうまつ）もない。ただ誤りは誤りとして、ありのまま指摘するまでの事であるから、虚心坦",
+   "pt_anchor": "Até a seção anterior, procurei escrever, em linhas gerais, os erros da medicina; agora vou mais além",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "病気とは何ぞや",
+   "title_pt": "",
+   "jp_anchor": "病気とは何ぞや",
+   "pt_anchor": "O que é a Doença?\n\nResfriado comum",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "寒　冒",
+   "title_pt": "",
+   "jp_anchor": "人体を物質と見做(みな)して、唯物療法を進歩させて来た医学は、どの点に最も欠陥があるかを、順を逐うてかいてみるが、それについてはまず、実際の病気を取上げて説明してみるのが、最も判り易いからそういう事にする。",
+   "pt_anchor": "A medicina, que considera o corpo humano como matéria e avança pela via da terapia materialista, em que ponto apresenta a sua maior falha?",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "肺炎と結核",
+   "title_pt": "",
+   "jp_anchor": "　　　　　肺炎と結核\n\n　 寒冒と最も密接な関係ある病気としては、言うまでもなく肺炎と結核であろう。特に現在日本において、最も悩みとされているものはこれであるから、充分解説 する必要があろう。そもそも肺炎と結核という病気の初因は、もちろん寒冒からである。というのは前項",
+   "pt_anchor": "As doenças mais intimamente relacionadas ao resfriado comum são, sem dúvida, a pneumonia e a tuberculose. Especialmente ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "肺患と薬毒",
+   "title_pt": "",
+   "jp_anchor": "　　　　肺患と薬毒\n\n　現在の結核療法について注意すべき事は、今最も有効とされているものに気胸（ききょう）療法がある。これは肺に空洞のある場合、肺胞を萎縮させて出来る だけ縮小させようとして肺の活動を鈍らせる。つまり肺の安静法で、そのため空洞の原因である濃度の喀痰",
+   "pt_anchor": "Sobre a terapia atual da tuberculose, merece atenção a terapia do pneumotórax, considerada hoje a mais eficaz.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核と精神面",
+   "title_pt": "",
+   "jp_anchor": "　　　　結核と精神面\n\n　 結核について、割合関心を持たれていないものに精神面がある。ところが事実これ程重要なものはない。誰も知るごとく一度結核の宣告を受けるや、いかなる者 でも精神的に一大衝撃を受け、前途の希望を失い、世の中が真っ暗になってしまう。言わば執行日を定め",
+   "pt_anchor": "Sobre a tuberculose, há um aspecto que recebe relativamente pouca atenção: o aspecto mental. No entanto, não há nada tão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "自然を尊重せよ",
+   "title_pt": "",
+   "jp_anchor": "　　　　自然を尊重せよ\n\n　医学では、安静を最も重要とされているが、これは前にも述べたごとく大変な間違いである。ではどうするのが一番いいかというと、何よりも自然である。自 然とは自分の身体を拘束する事なく、無理のないよう気儘（きまま）にする事である。例えば熱があって大",
+   "pt_anchor": "Na medicina, o repouso é considerado o mais importante, mas isso, como já disse, é um grande erro.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核と特効薬",
+   "title_pt": "",
+   "jp_anchor": "　　　　結核と特効薬\n\n　結核の薬くらい、次々と出るものはあるまい。近年になってセファランチン、ペニシリン、ストレプトマイシン等々随分もてはやされた。ちょうど何かの流行 のようである。このようにそれからそれへと新薬が出るという事は、もちろん前に出たものより効き目がよ",
+   "pt_anchor": "Dificilmente haverá remédios que surjam um após o outro como os da tuberculose.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "栄　養",
+   "title_pt": "",
+   "jp_anchor": "私は前項までに、薬剤の恐るべきものである事を、詳説したから最早判ったであろうが、ここに見逃す事の出来ないのは、栄養に関する一大誤謬である。まず 結核の項に動物性蛋白の不可である事を述べたが、こればかりではない、全般にわたってはなはだしい錯誤",
+   "pt_anchor": "Até aqui, expliquei em detalhes o quanto os remédios são temíveis; mas o que não se pode ignorar é o grande erro em relação à nutrição.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "病原としての細菌",
+   "title_pt": "",
+   "jp_anchor": "病原としての細菌",
+   "pt_anchor": "Os Micróbios como Agentes Patogênicos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無機質界",
+   "title_pt": "",
+   "jp_anchor": "　　　　無機質界\n\n　ここで、いよいよ細菌発生の順序をかくが、そもそも細菌という有機物は、現在最も進歩した原〔電〕子顕微鏡でも、六万倍までしか見えないとされている。 これが現在までの限度ではあるが、無論極点ではない。としたらいずれの日か顕微鏡の発達は、超微生物を",
+   "pt_anchor": "Aqui, finalmente, escreverei sobre a ordem de surgimento dos micróbios. Diz-se, em primeiro lugar, que os micróbios",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "霊主体従",
+   "title_pt": "",
+   "jp_anchor": "　　　　霊主体従\n\n　前項に説いたごとき、無機質界と人間の病気との関係をかいてみるが、すなわち無機質界とは吾々のいう霊界である。そうして人間は体と霊との密合一致に よって成立っているものであって、言うまでもなく体とは眼に見ゆる物質で誰にも判るが、霊は眼には見えな",
+   "pt_anchor": "Escreverei agora sobre a relação entre o Mundo Inorgânico e as doenças humanas, conforme explicado no item anterior.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "無機から有機へ",
+   "title_pt": "Do Inorgânico ao Orgânico",
+   "jp_anchor": "前項に述べたごとく、病気の本体は霊の曇りであり、この曇りから黴菌は発生するという、その順序を詳しくかいてみるが、初め透明体である人霊に曇りが発 生するか、または濁血の移写によって曇りが出来る訳は、既にかいた通りであるが、しからば曇りからなぜ",
+   "pt_anchor": "Como mencionei na seção anterior, a essência da doença são as nuvens espirituais, e os micróbios surgem dessas nuvens es",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "付録（おかげ話百例）",
+   "title_pt": "",
+   "jp_anchor": "付録（おかげ話百例）",
+   "pt_anchor": "Apêndice (Cem Exemplos de Graças)",
+   "notes": "pt_anchor removido 2026-07-14, apontava para testemunho seguinte (Keinosuke) por spec incompleta; ratio PT/JP=452.40; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=24.80"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "療養所の名物男――医者の言を守らぬ男",
+   "title_pt": "",
+   "jp_anchor": "療養所の名物男――医者の言を守らぬ男",
+   "pt_anchor": "O Homem Famoso do Sanatório — O Homem que Não Obedecia ao Médico",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/byline do artigo anterior; corrigido para o titulo proprio. Tambem corrigido \"Igreja Kōhō Daikyōkai\" para \"Igreja Grande Kōhō\" (forma dominante no resto do arquivo)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一家五人を斃した結核",
+   "title_pt": "",
+   "jp_anchor": "一家五人を斃した結核",
+   "pt_anchor": "A Tuberculose que Derrotou Cinco Pessoas de uma Família",
+   "notes": "line_author_structure; ratio PT/JP=180.10; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=11.80"
+  },
+  {
+   "kind": "section",
+   "title_jp": "死の一歩手前に救わる",
+   "title_pt": "",
+   "jp_anchor": "死の一歩手前に救わる",
+   "pt_anchor": "Salvo a um Passo da Morte",
+   "notes": " [batch15 20260805] pt_anchor corrigido: apontava para meio do byline (\"Yutaka (21 anos)...\"), causando vazamento do byline entre art17/art18; corrigido para o titulo proprio, alinhado com a convencao de testemunho (titulo abre o proprio artigo, ver art idx16)."
+  },
+  {
+   "kind": "section",
+   "title_jp": "長き世の夢は実となりぬらむ",
+   "title_pt": "",
+   "jp_anchor": "長き世の夢は実となりぬらむ",
+   "pt_anchor": "O sonho do longo mundo tornou-se realidade,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "それの徴しのはや見え初めぬ",
+   "title_pt": "",
+   "jp_anchor": "それの徴しのはや見え初めぬ",
+   "pt_anchor": "Seus sinais já começam a aparecer.",
+   "notes": "line_author_structure; ratio PT/JP=174.62; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=8.54"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "生命ある日　愚かなる者の手記",
+   "title_pt": "",
+   "jp_anchor": "生命ある日　愚かなる者の手記",
+   "pt_anchor": "A Vida que Existe: O Manuscrito de um Tolo",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: apontava para meio do byline (Izumi Tatsuoki), causando vazamento do titulo+igreja entre art20/art21; corrigido para o titulo proprio (convencao de testemunho: titulo abre o proprio artigo)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "急性肺炎より救わる",
+   "title_pt": "",
+   "jp_anchor": "急性肺炎より救わる",
+   "pt_anchor": "Salvo de Pneumonia Aguda",
+   "notes": " [batch15 20260805] pt_anchor corrigido: apontava para meio do byline (Mitsuyoshi), causando vazamento do titulo+endereco+igreja entre art21/art22; corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治と宣告さる肺結核治る",
+   "title_pt": "",
+   "jp_anchor": "不治と宣告さる肺結核治る",
+   "pt_anchor": "Tuberculose Pulmonar, Declarada Incurável, é Curada",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/byline do artigo anterior; corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "光明如来様に救われ、苦悩のドン底より、歓喜に満ちた生活へ転換さして頂いた私の尊い体験を、御報告さして頂きます。",
+   "title_pt": "",
+   "jp_anchor": "光明如来様に救われ、苦悩のドン底より、歓喜に満ちた生活へ転換さして頂いた私の尊い体験を、御報告さして頂きます。",
+   "pt_anchor": "Relatarei minha preciosa experiência de ser salva pelo Komyo-Nyorai e transformada",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の境地より救われた喜び",
+   "title_pt": "",
+   "jp_anchor": "絶望の境地より救われた喜び",
+   "pt_anchor": "A Alegria de Ter Sido Salva de um Estado de Desespero",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/byline do artigo anterior; corrigido para o titulo proprio."
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "\"Se não fosse a salvação de Kannon, eu agora*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき昭に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき昭に悩みつづけむ",
+   "pt_anchor": "*Continuaria a sofrer no abismo sem fundo.\"*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "健やかに今我在るはおほけなくも",
+   "title_pt": "",
+   "jp_anchor": "健やかに今我在るはおほけなくも",
+   "pt_anchor": "*\"Estar saudável agora é algo que não mereço,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "世尊があつき恵みとぞ思ふ",
+   "title_pt": "",
+   "jp_anchor": "世尊があつき恵みとぞ思ふ",
+   "pt_anchor": "*Penso ser a profunda graça do Buda.\"*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "あな嬉し望みを絶ちし世にしあれど",
+   "title_pt": "",
+   "jp_anchor": "あな嬉し望みを絶ちし世にしあれど",
+   "pt_anchor": "*\"Oh, que alegria! Embora o mundo tivesse cortado minhas esperanças,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音知りてゆ希望み芽生えぬ",
+   "title_pt": "",
+   "jp_anchor": "観音知りてゆ希望み芽生えぬ",
+   "pt_anchor": "*Conhecendo Kannon, novas esperanças brotaram.\"*",
+   "notes": "line_author_structure; ratio PT/JP=16.53; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=7.91"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "入信し忽ち肺病全治",
+   "title_pt": "",
+   "jp_anchor": "入信し忽ち肺病全治",
+   "pt_anchor": "Cura Completa da Tuberculose Pulmonar Imediatamente Após a Conversão",
+   "notes": "line_author_structure; ratio PT/JP=7.53 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/byline do artigo anterior (art31); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核、自家中毒症にも御守護戴く",
+   "title_pt": "",
+   "jp_anchor": "肺結核、自家中毒症にも御守護戴く",
+   "pt_anchor": "Proteção divina contra a Tuberculose Pulmonar e a Intoxicação Autógena",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art32); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "*\"Se não fosse a salvação de Kannon, eu agora*",
+   "notes": "PAREADO MANUALMENTE 2026-07-17 -- NAO rodar audit --fix neste livro (colisao de idade 33/33 entre art.34 e 37 faz o algoritmo sobrescrever com posicao errada, ver investigacao na sessao)"
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき沼に悩みつづけむ",
+   "pt_anchor": "*Continuaria a sofrer no pântano sem fundo.\"*",
+   "notes": "PAREADO MANUALMENTE 2026-07-17 -- NAO rodar audit --fix neste livro (colisao de idade 33/33 entre art.34 e 37 faz o algoritmo sobrescrever com posicao errada, ver investigacao na sessao)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "腸結核より救われ光明一家に",
+   "title_pt": "",
+   "jp_anchor": "腸結核より救われ光明一家に",
+   "pt_anchor": "Salvo da Tuberculose Intestinal, uma Família da Luz",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art35); corrigido para o titulo proprio. Tambem corrigido \"Igreja de Ohara-naka\" (traducao errada de 大原中教会, kanji mal interpretado) para \"Igreja Média Ohara\" (forma ja estabelecida em 結核信仰療法/アメリカを救う/世界救世教奇蹟集, inclusive no mesmo depoimento duplicado em 結核信仰療法)."
+  },
+  {
+   "kind": "section",
+   "title_jp": "御恵に報ひ奉らでおくべきや",
+   "title_pt": "",
+   "jp_anchor": "御恵に報ひ奉らでおくべきや",
+   "pt_anchor": "*Como poderia deixar de retribuir a graça recebida,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "生きし此身の幸を思へば",
+   "title_pt": "",
+   "jp_anchor": "生きし此身の幸を思へば",
+   "pt_anchor": "*Quando penso na felicidade de estar vivo agora.*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "罪深き此身も尤め給はずて",
+   "title_pt": "",
+   "jp_anchor": "罪深き此身も尤め給はずて",
+   "pt_anchor": "*Este corpo pecaminoso, sem ser repreendido,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大いなる幸豊に恵まう",
+   "title_pt": "",
+   "jp_anchor": "大いなる幸豊に恵まう",
+   "pt_anchor": "*É abundantemente agraciado com grande felicidade.*",
+   "notes": "line_author_structure; ratio PT/JP=565.30; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=41.70; ratio PT/JP=5.10"
+  },
+  {
+   "kind": "section",
+   "title_jp": "魂機張る生命賜ひし御仏に",
+   "title_pt": "",
+   "jp_anchor": "魂機張る生命賜ひし御仏に",
+   "pt_anchor": "*Ao Buda que me concedeu a vida que expande a alma,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "酬はでおかむ我世の限り",
+   "title_pt": "",
+   "jp_anchor": "酬はでおかむ我世の限り",
+   "pt_anchor": "*Como poderia deixar de retribuir enquanto eu viver?*",
+   "notes": "line_author_structure; ratio PT/JP=513.91; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=37.82; ratio PT/JP=18.09"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "難症にも此御守護",
+   "title_pt": "",
+   "jp_anchor": "難症にも此御守護",
+   "pt_anchor": "Esta Proteção Divina Mesmo para Doenças Difíceis",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art42); corrigido para o titulo proprio. Tambem corrigido \"Igreja de Seirei-chu\" (traducao errada de 清霊中教会) para \"Igreja Média Seirei\" (forma ja usada no resto do mesmo arquivo, ex. idx linhas 1022/1327)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "死の結核より救わる",
+   "pt_anchor": "Salva da Tuberculose Mortal",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art43); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "働きつつ肺患を救われて",
+   "title_pt": "Salvo da Doença Pulmonar Enquanto Trabalhava",
+   "jp_anchor": "働きつつ肺患を救われて",
+   "pt_anchor": "Salvo da Doença Pulmonar Enquanto Trabalhava",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核に次ぐ喘息病の不安ない一家",
+   "title_pt": "",
+   "jp_anchor": "結核に次ぐ喘息病の不安ない一家",
+   "pt_anchor": "Uma Família Sem Ansiedade de Asma Após a Tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art45); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望から感謝の喜びへ　自殺まで計った主人救わる",
+   "title_pt": "",
+   "jp_anchor": "絶望から感謝の喜びへ　自殺まで計った主人救わる",
+   "pt_anchor": "Da Desesperança à Alegria da Gratidão – Meu Marido, que Tentou o Suicídio, Foi Salvo",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo/endereco do artigo anterior (art46); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を　顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を　顧みすれば恐ろしも",
+   "pt_anchor": "Quando olho para trás, para aquela época, é assustador,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "Eu vagava sem cajado na estrada escura.\"",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "薬毒を如実に体験　肺病、胃病治る",
+   "title_pt": "",
+   "jp_anchor": "薬毒を如実に体験　肺病、胃病治る",
+   "pt_anchor": "Experiência real da toxina medicamentosa: Cura de tuberculose pulmonar e doença do estômago",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art49); corrigido para o titulo proprio. Tambem corrigido \"Ishinchu Kyokai\" (traducao errada de 一心中教会) para \"Igreja Média Isshin\" (forma ja usada no resto do mesmo arquivo/結核信仰療法)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺門浸潤全治",
+   "title_pt": "",
+   "jp_anchor": "肺門浸潤全治",
+   "pt_anchor": "Cura Completa da Infiltração do Hilo Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] jp_anchor e pt_anchor corrigidos: ambos apontavam para o meio do bloco (endereco/nome), pulando o titulo proprio -- unico caso nesta faixa de testemunhos onde ate a ancora JP pulava o titulo (todas as outras testemunhas do arquivo tem convencao title-abre-o-proprio-artigo). Corrigido para alinhar com essa convencao, verificado unico no corpo JP e PT."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核治り商売繁昌する",
+   "title_pt": "",
+   "jp_anchor": "肺結核治り商売繁昌する",
+   "pt_anchor": "Cura da Tuberculose Pulmonar e Prosperidade nos Negócios",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art51); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "医師も驚くほど短期間に肺浸潤全快",
+   "title_pt": "",
+   "jp_anchor": "医師も驚くほど短期間に肺浸潤全快",
+   "pt_anchor": "Cura Completa da Infiltração Pulmonar em um Período Tão Curto que Surpreendeu o Médico",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art52); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "section",
+   "title_jp": "◎お縋りした動機",
+   "title_pt": "",
+   "jp_anchor": "◎お縋りした動機",
+   "pt_anchor": "◎ Motivo para me Apoiar",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "◎全快後のエピソード",
+   "title_pt": "",
+   "jp_anchor": "◎全快後のエピソード",
+   "pt_anchor": "◎ Episódio Após a Cura Completa",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "わが入信の記",
+   "title_pt": "",
+   "jp_anchor": "わが入信の記",
+   "pt_anchor": "Meu Registro de Ingresso na Fé",
+   "notes": " [batch15 20260805] jp_anchor e pt_anchor corrigidos: pulavam o titulo proprio (JP) e vazavam titulo do artigo anterior/art55 (PT); corrigidos para o titulo proprio de cada lado, alinhado a convencao title-abre-o-artigo. Tambem corrigido \"Igreja Kōhō\" (sem \"Grande\") para \"Igreja Grande Kōhō\" (forma dominante no resto do arquivo, 8 ocorrencias) -- mesmo fix aplicado em idx16. [correcao de erro proprio: pt_anchor tinha sido erroneamente setado para o titulo do art57 em vez do art56; corrigido para \"Meu Registro de Ingresso na Fé\" (o titulo real deste artigo, encontrado vazado no final do art55)."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "生を怨んだ病の身感謝歓喜の日々と変ず",
+   "title_pt": "",
+   "jp_anchor": "生を怨んだ病の身感謝歓喜の日々と変ず",
+   "pt_anchor": "De um Corpo Doente que Amaldiçoava a Vida a Dias de Alegria e Gratidão",
+   "notes": " [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art56); corrigido para o titulo proprio. Tambem corrigido \"Igreja Kōrinchū\" para \"Igreja Média Kōrin\" e um erro de unidade (十五貫/15 kan traduzido como \"quinze quilos\" em vez de ~56kg -- confirmado por texto irmao em 結核信仰療法, que usa a mesma testemunha e diz explicitamente \"cerca de cinquenta e seis quilos\")."
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "Se não fosse pela salvação de Kannon,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき沼に悩みつづけむ",
+   "pt_anchor": "Continuaria sofrendo no pântano sem fundo.",
+   "notes": "line_author_structure; ratio PT/JP=38.24; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=82.15; ratio PT/JP=5.07"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤より救わる",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤より救わる",
+   "pt_anchor": "Salvo da Infiltração Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art59); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の寸前を救わる",
+   "title_pt": "",
+   "jp_anchor": "死の寸前を救わる",
+   "pt_anchor": "Salva à Beira da Morte",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art60); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺門淋巴腺二週間で救わる",
+   "title_pt": "",
+   "jp_anchor": "肺門淋巴腺二週間で救わる",
+   "pt_anchor": "Gânglios Linfáticos Hilares Pulmonares Curados em Duas Semanas",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art61); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核の苦悩より甦った私",
+   "title_pt": "",
+   "jp_anchor": "結核の苦悩より甦った私",
+   "pt_anchor": "Eu, que Ressuscitei da Agonia da Tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art62); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核一カ月にして全快",
+   "title_pt": "",
+   "jp_anchor": "肺結核一カ月にして全快",
+   "pt_anchor": "Tuberculose Pulmonar Curada Completamente em Um Mês",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art63); corrigido para o titulo proprio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病、貧の苦しみから救われた数々",
+   "title_pt": "",
+   "jp_anchor": "病、貧の苦しみから救われた数々",
+   "pt_anchor": "Vários relatos de quem foi salvo do sofrimento da doença e da pobreza",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17 [batch15 20260805] pt_anchor corrigido: vazamento de titulo do artigo anterior (art64); corrigido para o titulo proprio. Tambem removida duplicacao \"Igreja Jukko\" que precedia a linha de endereco (institucion ja aparece corretamente na linha seguinte como \"Igreja Média Jikkō\"); nome romanizado da igreja 十光中教会 permanece inconsistente entre arquivos do corpus (Jukko/Nikko[Jukko]/Jikkō) -- nao decidido, ver relatorio."
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不治の肺浸潤其上心臓弁膜症三日で治る",
+   "title_pt": "",
+   "jp_anchor": "不治の肺浸潤其上心臓弁膜症三日で治る",
+   "pt_anchor": "Infiltração pulmonar incurável e, além disso, valvopatia cardíaca curada em três dias",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "闘病生活より光明生活へ",
+   "title_pt": "",
+   "jp_anchor": "闘病生活より光明生活へ",
+   "pt_anchor": "Da Vida de Luta Contra a Doença à Vida Luminosa",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "疑った私がお光に浴して",
+   "title_pt": "",
+   "jp_anchor": "疑った私がお光に浴して",
+   "pt_anchor": "Eu, que Duvidava, Fui Banhada pela Luz",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の宣告を受けし肺結核より救われ更生の道へ再起",
+   "title_pt": "",
+   "jp_anchor": "死の宣告を受けし肺結核より救われ更生の道へ再起",
+   "pt_anchor": "Salvo da Tuberculose Pulmonar com Diagnóstico de Morte e Reerguido para o Caminho da Regeneração",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自殺を思った私だった",
+   "title_pt": "",
+   "jp_anchor": "自殺を思った私だった",
+   "pt_anchor": "Eu, que pensei em suicídio",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "数々の算え切れぬ御守護を頂き、無き生命をお救い頂きました感激を、そのままここに御報告さして頂きました。",
+   "title_pt": "",
+   "jp_anchor": "数々の算え切れぬ御守護を頂き、無き生命をお救い頂きました感激を、そのままここに御報告さして頂きました。",
+   "pt_anchor": "Apresento aqui, como está, a gratidão por ter recebido inúmeras proteções divinas incontá",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核が救われるまで",
+   "title_pt": "",
+   "jp_anchor": "肺結核が救われるまで",
+   "pt_anchor": "Até a Cura da Tuberculose Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私は昭和二十五年肺病全快と共に入信さして戴きました歓びを御礼申上げます。",
+   "title_pt": "",
+   "jp_anchor": "私は昭和二十五年肺病全快と共に入信さして戴きました歓びを御礼申上げます。",
+   "pt_anchor": "Apresento minha gratidão pela alegria de ter me filiado à fé junto com a cura comp",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核忽ち治癒子宝まで授かる",
+   "title_pt": "",
+   "jp_anchor": "結核忽ち治癒子宝まで授かる",
+   "pt_anchor": "Tuberculose Curada Instantaneamente e Ainda Ganhei um Filho",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私の幸福",
+   "title_pt": "",
+   "jp_anchor": "私の幸福",
+   "pt_anchor": "Minha Felicidade",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二十四年の一月から三月の二カ月間、私は肺浸潤の病名に地獄の道を横須賀の某病院に過していました。",
+   "title_pt": "",
+   "jp_anchor": "二十四年の一月から三月の二カ月間、私は肺浸潤の病名に地獄の道を横須賀の某病院に過していました。",
+   "pt_anchor": "Durante dois meses, de janeiro a março de 1949, passei pelo inferno com um diagnó",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "被害妄想狂と結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "被害妄想狂と結核より救わる",
+   "pt_anchor": "Salva da Paranoia Persecutória e da Tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御縋りする者の歓喜",
+   "title_pt": "",
+   "jp_anchor": "御縋りする者の歓喜",
+   "pt_anchor": "A Alegria de Quem se Apega ao Senhor",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "転禍移福",
+   "title_pt": "",
+   "jp_anchor": "転禍移福",
+   "pt_anchor": "Transformando a Desgraça em Bênção",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病気の問屋のような私でした",
+   "title_pt": "",
+   "jp_anchor": "病気の問屋のような私でした",
+   "pt_anchor": "Eu Era Como um Atacadista de Doenças",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二期の肺結核一週間にて",
+   "title_pt": "",
+   "jp_anchor": "二期の肺結核一週間にて",
+   "pt_anchor": "Tuberculose pulmonar de segundo estágio curada em uma semana",
+   "notes": "PAREADO manualmente 2026-07-17 (alinhamento automatico errou, nome nao batia)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核を救われた幸福",
+   "title_pt": "",
+   "jp_anchor": "結核を救われた幸福",
+   "pt_anchor": "A felicidade de ser salvo da tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私は昭和二十五年八月二十九日入信さして戴きました。",
+   "title_pt": "",
+   "jp_anchor": "私は昭和二十五年八月二十九日入信さして戴きました。",
+   "pt_anchor": "Fui agraciado com a entrada na fé em 29 de agosto de 1950.",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "唯一回の浄霊で救われる",
+   "title_pt": "",
+   "jp_anchor": "唯一回の浄霊で救われる",
+   "pt_anchor": "Salvo com apenas uma sessão de Johrei",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死線を越えて再生の喜びに浸る",
+   "title_pt": "",
+   "jp_anchor": "死線を越えて再生の喜びに浸る",
+   "pt_anchor": "Atravessando a linha da morte, imerso na alegria do renascimento",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも",
+   "pt_anchor": "*Ao recordar aquela época, sinto medo,*",
+   "notes": "line_author_structure; ratio PT/JP=12.08; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=452.25"
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "*eu, que vaguei sem cajado na escuridão.*",
+   "notes": "PAREADO manualmente 2026-07-17 (janela delimitada por 87/89)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "此御道を知らなかったら",
+   "title_pt": "",
+   "jp_anchor": "此御道を知らなかったら",
+   "pt_anchor": "Se eu não conhecesse este Caminho",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核性皮膚炎と肺浸潤を救われて",
+   "title_pt": "",
+   "jp_anchor": "結核性皮膚炎と肺浸潤を救われて",
+   "pt_anchor": "Curada de Dermatite Tuberculosa e Infiltração Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "世紀の奇蹟この感激の事実を見よ",
+   "title_pt": "",
+   "jp_anchor": "世紀の奇蹟この感激の事実を見よ",
+   "pt_anchor": "Vejam o milagre do século, este fato emocionante",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "十年間の結核が全治した喜び",
+   "title_pt": "",
+   "jp_anchor": "十年間の結核が全治した喜び",
+   "pt_anchor": "A alegria de ter me curado completamente de dez anos de tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "病床時を顧みて",
+   "title_pt": "",
+   "jp_anchor": "病床時を顧みて",
+   "pt_anchor": "Recordando os Dias de Enfermidade",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも",
+   "pt_anchor": "*\"Quando olho para aqueles dias, que medo,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "*eu, que vaguei sem cajado na escuridão.\"*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "再生の喜び",
+   "title_pt": "",
+   "jp_anchor": "再生の喜び",
+   "pt_anchor": "A Alegria do Renascimento",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "罪深き身をも今は許されて",
+   "title_pt": "",
+   "jp_anchor": "罪深き身をも今は許されて",
+   "pt_anchor": "Mesmo este corpo pecador, agora perdoado,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "御恵み豊かに生くる嬉しさ",
+   "title_pt": "",
+   "jp_anchor": "御恵み豊かに生くる嬉しさ",
+   "pt_anchor": "*a alegria de viver abundantemente em Tua graça.*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "身も魂も捧げまつりて御教への",
+   "title_pt": "",
+   "jp_anchor": "身も魂も捧げまつりて御教への",
+   "pt_anchor": "Oferecendo corpo e alma, no Caminho do Ensino,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "道ひとすじに吾は行かなむ",
+   "title_pt": "",
+   "jp_anchor": "道ひとすじに吾は行かなむ",
+   "pt_anchor": "*seguirei numa só direção.*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "あな楽し心は澄みて身は軽し",
+   "title_pt": "",
+   "jp_anchor": "あな楽し心は澄みて身は軽し",
+   "pt_anchor": "Oh, que alegria! A mente está clara, o corpo leve,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "ただひたむきにつとめはげまむ",
+   "title_pt": "",
+   "jp_anchor": "ただひたむきにつとめはげまむ",
+   "pt_anchor": "*com dedicação total, me esforçarei.*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤の治癒に喜びの一家",
+   "title_pt": "",
+   "jp_anchor": "肺浸潤の治癒に喜びの一家",
+   "pt_anchor": "Uma família alegre pela cura da infiltração pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喉頭結核より救われた私",
+   "title_pt": "",
+   "jp_anchor": "喉頭結核より救われた私",
+   "pt_anchor": "Salva da Tuberculose Laríngea",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核治癒体験記",
+   "title_pt": "",
+   "jp_anchor": "肺結核治癒体験記",
+   "pt_anchor": "Relato de Cura da Tuberculose Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "再発の肺浸潤が全快",
+   "title_pt": "",
+   "jp_anchor": "再発の肺浸潤が全快",
+   "pt_anchor": "Infiltração Pulmonar Recidivante Completamente Curada",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "電車中で聞いた話から救わる",
+   "title_pt": "",
+   "jp_anchor": "電車中で聞いた話から救わる",
+   "pt_anchor": "Salva por uma História Ouvida no Trem",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一家死滅の肺結核より救われし喜び",
+   "title_pt": "",
+   "jp_anchor": "一家死滅の肺結核より救われし喜び",
+   "pt_anchor": "A Alegria de Ser Salva da Tuberculose Pulmonar que Dizimaria uma ",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "更生の喜び",
+   "title_pt": "",
+   "jp_anchor": "更生の喜び",
+   "pt_anchor": "A Alegria da Regeneração",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "知らぬ間に救はれにけり観音の",
+   "title_pt": "",
+   "jp_anchor": "知らぬ間に救はれにけり観音の",
+   "pt_anchor": "Fui salva sem perceber, desde que ouvi",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "真の御教吾聴きてより",
+   "title_pt": "",
+   "jp_anchor": "真の御教吾聴きてより",
+   "pt_anchor": "*Desde que ouvi o verdadeiro ensinamento*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大前に額く毎に涙しぬ",
+   "title_pt": "",
+   "jp_anchor": "大前に額く毎に涙しぬ",
+   "pt_anchor": "Toda vez que me prosterno diante do altar, choro",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "救はれたりし此身思へば",
+   "title_pt": "",
+   "jp_anchor": "救はれたりし此身思へば",
+   "pt_anchor": "*ao pensar neste corpo que foi salvo.*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "暗黒の前途も光明の世界へ",
+   "title_pt": "",
+   "jp_anchor": "暗黒の前途も光明の世界へ",
+   "pt_anchor": "Das trevas do futuro para o mundo da luz",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私の闘病記",
+   "title_pt": "",
+   "jp_anchor": "私の闘病記",
+   "pt_anchor": "Meu Diário de Luta Contra a Doença",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺病筋より健康一家へ",
+   "title_pt": "",
+   "jp_anchor": "肺病筋より健康一家へ",
+   "pt_anchor": "De uma família de tuberculosos a uma família saudável",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の廃人も造りかえられた健康体",
+   "title_pt": "",
+   "jp_anchor": "絶望の廃人も造りかえられた健康体",
+   "pt_anchor": "O inválido desesperado transformado em corpo saudável",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "暗澹たる結核地獄より救わる",
+   "title_pt": "",
+   "jp_anchor": "暗澹たる結核地獄より救わる",
+   "pt_anchor": "Salvo do sombrio inferno da tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "罪深き此身も尤め給はずて",
+   "title_pt": "",
+   "jp_anchor": "罪深き此身も尤め給はずて",
+   "pt_anchor": "Sem me condenar, este corpo tão pecaminoso",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "section",
+   "title_jp": "大いなる幸豊に恵まふ",
+   "title_pt": "",
+   "jp_anchor": "大いなる幸豊に恵まふ",
+   "pt_anchor": "Tu me abençoas com grande felicidade e abundância",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺病と痔瘻より救われ今は更生の道へ",
+   "title_pt": "",
+   "jp_anchor": "肺病と痔瘻より救われ今は更生の道へ",
+   "pt_anchor": "Salvo da Tuberculose Pulmonar e da Fístula Anal, Agora no Caminho da Regeneração",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死神につかれた一家に光明",
+   "title_pt": "",
+   "jp_anchor": "死神につかれた一家に光明",
+   "pt_anchor": "Luz para uma Família Acometida pela Morte",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも",
+   "pt_anchor": "*Ao recordar aquela época, sinto medo,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "*eu, que vagava sem cajado na escuridão.*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核完治の歓び",
+   "title_pt": "",
+   "jp_anchor": "肺結核完治の歓び",
+   "pt_anchor": "A Alegria da Cura Completa da Tuberculose Pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "諦めた肺浸潤二十日で全快",
+   "title_pt": "",
+   "jp_anchor": "諦めた肺浸潤二十日で全快",
+   "pt_anchor": "Infiltração Pulmonar Desenganada Curada em Vinte Dias",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私がこの尊い御道に入信さして頂き、光明如来様におすがりするようになりました動機を謹んで申上げます。",
+   "title_pt": "",
+   "jp_anchor": "私がこの尊い御道に入信さして頂き、光明如来様におすがりするようになりました動機を謹んで申上げます。",
+   "pt_anchor": "Apresento, com respeito, o motivo que me levou a acreditar neste precioso Caminho",
+   "notes": "PAREADO manualmente 2026-07-17 (corpo do depoimento apos byline)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "見放された結核二カ月で健康体",
+   "title_pt": "",
+   "jp_anchor": "見放された結核二カ月で健康体",
+   "pt_anchor": "Tuberculose Abandonada Curada em Dois Meses, Corpo Saudável",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一家救われるまで",
+   "title_pt": "",
+   "jp_anchor": "一家救われるまで",
+   "pt_anchor": "Até que uma família inteira fosse salva",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "奇びなり噫奇びなり願言の",
+   "title_pt": "",
+   "jp_anchor": "奇びなり噫奇びなり願言の",
+   "pt_anchor": "Que maravilha! Ah, que maravilha!",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "section",
+   "title_jp": "正しかりせば叶へますなり",
+   "title_pt": "",
+   "jp_anchor": "正しかりせば叶へますなり",
+   "pt_anchor": "Se a prece for sincera, ela se realizará.",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御救いなくば",
+   "title_pt": "",
+   "jp_anchor": "御救いなくば",
+   "pt_anchor": "Se não fosse a Salvação",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望のドン底より光明へ",
+   "title_pt": "Do Fundo do Desespero para a Luz",
+   "jp_anchor": "絶望のドン底より光明へ",
+   "pt_anchor": "Do Fundo do Desespero para a Luz",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御浄霊の絶対に随喜　急性肺炎三日で全快",
+   "title_pt": "Alegria Absoluta com o Johrei: Pneumonia Aguda Curada em Três Dias",
+   "jp_anchor": "御浄霊の絶対に随喜　急性肺炎三日で全快",
+   "pt_anchor": "Alegria Absoluta com o Johrei: Pneumonia Aguda Curada em Três Dias",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "絶望の腸結核より救わる",
+   "title_pt": "Salva da Tuberculose Intestinal Desesperadora",
+   "jp_anchor": "絶望の腸結核より救わる",
+   "pt_anchor": "Salva da Tuberculose Intestinal Desesperadora",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五年間の肺病と腎臓病が快癒",
+   "title_pt": "Cura de Cinco Anos de Doença Pulmonar e Renal",
+   "jp_anchor": "五年間の肺病と腎臓病が快癒",
+   "pt_anchor": "Cura de Cinco Anos de Doença Pulmonar e Renal",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "危うかった肺浸潤救わる",
+   "title_pt": "Salvo de uma infiltração pulmonar perigosa",
+   "jp_anchor": "危うかった肺浸潤救わる",
+   "pt_anchor": "Salvo de uma infiltração pulmonar perigosa",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤より救われて",
+   "title_pt": "Salva da infiltração pulmonar",
+   "jp_anchor": "肺浸潤より救われて",
+   "pt_anchor": "Salva da infiltração pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死の寸前の肺結核とリウマチスより救わる",
+   "title_pt": "Salvo da tuberculose pulmonar e do reumatismo à beira da morte",
+   "jp_anchor": "死の寸前の肺結核とリウマチスより救わる",
+   "pt_anchor": "Salvo da tuberculose pulmonar e do reumatismo à beira da morte",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "醜き姿より光明の徒",
+   "title_pt": "De uma forma feia, um seguidor da Luz",
+   "jp_anchor": "醜き姿より光明の徒",
+   "pt_anchor": "De uma forma feia, um seguidor da Luz",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死期の肺結核僅か四カ月で治る",
+   "title_pt": "Tuberculose Pulmonar Terminal Curada em Apenas Quatro Meses",
+   "jp_anchor": "死期の肺結核僅か四カ月で治る",
+   "pt_anchor": "Tuberculose Pulmonar Terminal Curada em Apenas Quatro Meses",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "気胸四十本の肺結核一カ月足らずで全治す",
+   "title_pt": "Tuberculose Pulmonar com Quarenta Sessões de Pneumotórax Curada Completamente em Menos de Um Mês",
+   "jp_anchor": "気胸四十本の肺結核一カ月足らずで全治す",
+   "pt_anchor": "Tuberculose Pulmonar com Quarenta Sessões de Pneumotórax Curada Completamente em Menos de Um Mês",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺浸潤、喉頭結核治る",
+   "title_pt": "Infiltração Pulmonar e Tuberculose Laríngea Curadas",
+   "jp_anchor": "肺浸潤、喉頭結核治る",
+   "pt_anchor": "Infiltração Pulmonar e Tuberculose Laríngea Curadas",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "博愛の道よそにして観音の",
+   "title_pt": "",
+   "jp_anchor": "博愛の道よそにして観音の",
+   "pt_anchor": "O caminho do amor universal é deixado de lado;",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "section",
+   "title_jp": "行はあらじな心せよみな",
+   "title_pt": "",
+   "jp_anchor": "行はあらじな心せよみな",
+   "pt_anchor": "não há ação de Kannon sem coração, todos, atentai.",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao dividido em 2 linhas)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "入信一カ年の回顧",
+   "title_pt": "Retrospecto de Um Ano de Filiação",
+   "jp_anchor": "入信一カ年の回顧",
+   "pt_anchor": "Retrospecto de Um Ano de Filiação",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "\"Se não fosse pela salvação de Kannon, eu agora",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき昭に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき昭に悩みつづけむ",
+   "pt_anchor": "*continuaria sofrendo no abismo sem fundo.\"*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "神を力に誠の杖もて進む身は",
+   "title_pt": "",
+   "jp_anchor": "神を力に誠の杖もて進む身は",
+   "pt_anchor": "Avançando com a força de Deus e o bastão da verdade,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "世に恐るものなきを知りけり",
+   "title_pt": "",
+   "jp_anchor": "世に恐るものなきを知りけり",
+   "pt_anchor": "*sei que não há nada no mundo a temer.*",
+   "notes": "line_author_structure; ratio PT/JP=10.31; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=102.08; ratio PT/JP=14.85"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "闘病五年間の肺浸潤より救わる",
+   "title_pt": "",
+   "jp_anchor": "闘病五年間の肺浸潤より救わる",
+   "pt_anchor": "Salva da Infiltração Pulmonar Após Cinco Anos de Luta contra a Doença",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "最後の救い",
+   "title_pt": "A Salvação Final",
+   "jp_anchor": "最後の救い\n\n　　　岐阜県土岐郡肥田村中",
+   "pt_anchor": "A Salvação Final",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核と心臓病癒やさる",
+   "title_pt": "Curada da Tuberculose e Doença Cardíaca",
+   "jp_anchor": "結核と心臓病癒やさる",
+   "pt_anchor": "Curada da Tuberculose e Doença Cardíaca",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "死をのみ想うた肺浸潤から救われて",
+   "title_pt": "Salva da Infiltração Pulmonar, Pensando Apenas na Morte",
+   "jp_anchor": "死をのみ想うた肺浸潤から救われて",
+   "pt_anchor": "Salva da Infiltração Pulmonar, Pensando Apenas na Morte",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核より救わる看護婦だった私",
+   "title_pt": "Eu, que era enfermeira, fui salva da tuberculose pulmonar",
+   "jp_anchor": "肺結核より救わる看護婦だった私",
+   "pt_anchor": "Eu, que era enfermeira, fui salva da tuberculose pulmonar",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "生を怖れざる迄",
+   "title_pt": "A ponto de não temer a vida",
+   "jp_anchor": "生を怖れざる迄\n\n　　　福岡県三井郡太刀洗旧航空廠正門内",
+   "pt_anchor": "A ponto de não temer a vida",
+   "notes": "ratio PT/JP=0.24"
+  },
+  {
+   "kind": "section",
+   "title_jp": "雪の原",
+   "title_pt": "",
+   "jp_anchor": "　　　雪の原\n　かつての軍国調華やかなりし頃、「ああ特幹の……」で名高い旧太刀洗飛行場の一望の雪の原の一本道を、久方振りに降った雪の美を賞でつつ、走らす自転車 のペダル踏む足は軽かった。軽い咳と共に出た一種異様な啖を吐いた瞬間、瞳を射た白銀一色の中にパッと",
+   "pt_anchor": "Campo de neve",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結核菌と共に",
+   "title_pt": "",
+   "jp_anchor": "　　　結核菌と共に\n　ひびの入った壷は簡単に割れてしまった。遂に来るべき時が来た。ああとうとう遂に！私の肉体は無傷では無かった、結核菌と共に歩いて来た道はもう永いの だ、南朝鮮の地に生れ、日本は中等学校の五箇年しか知らなかった私は、釜山府立病院で昭和十五年七月肺",
+   "pt_anchor": "Junto com o bacilo da tuberculose",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "病苦より生活苦",
+   "title_pt": "",
+   "jp_anchor": "　　　病苦より生活苦\n　二十四年一年間、私は完全に医師を、現代医学を信頼し、医師も私の境遇に同情し、医師と患者との心は最も効果的に合致し、全額補助のため、何ら気懸りに ならず、注射、投薬等安心して医師の意志通り与えてもらい服用した。そのため病気に対する処置はほとん",
+   "pt_anchor": "Do sofrimento da doença ao sofrimento da vida",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "心の糧を求めて",
+   "title_pt": "",
+   "jp_anchor": "　　　心の糧を求めて\n　何故に俺はかく迄しいたげられなければならないか？「血を吐く思い」とは形容詞だが現実に血を吐き続ける苦悩は、何故に次から次に繰返して迫って来るの だろうか？　これでもかこれでもかと言わんばかりの悲境の連続は何故か？　神は何を知らしめようとなさ",
+   "pt_anchor": "Buscando o alimento para o espírito",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "余りにおかげが多過ぎる",
+   "title_pt": "",
+   "jp_anchor": "余りにおかげが多過ぎる",
+   "pt_anchor": "São bênçãos demais",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "唯心論と唯物論",
+   "title_pt": "",
+   "jp_anchor": "　　　唯心論と唯物論\n　素晴らしい法悦と歓喜の中に日は流れ、肉体又加速度的に改造されて行った。万物の流転も、瞬間の人生も、直感の意識もだんだんと判り出した。総ての事が ら、物の観方に光明面を見得る心構えも出来出した。しかし金銭的の悩みでなお一抹の疑心をどうする事も",
+   "pt_anchor": "Idealismo e Materialismo",
+   "notes": "line_author_structure; ratio PT/JP=0.15; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=6.91; ratio PT/JP=6.90"
+  },
+  {
+   "kind": "section",
+   "title_jp": "胸に抱く白光はなお薄けれど",
+   "title_pt": "",
+   "jp_anchor": "胸に抱く白光はなお薄けれど",
+   "pt_anchor": "A luz branca que guardo no peito ainda é tênue.",
+   "notes": "PAREADO manualmente 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核と腸結核より救わる",
+   "title_pt": "",
+   "jp_anchor": "肺結核と腸結核より救わる",
+   "pt_anchor": "Salva da Tuberculose Pulmonar e Intestinal",
+   "notes": "PAREADO manualmente 2026-07-17 (titulo em negrito, corrigido de contaminacao do 165)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "疑いつつも結核腎臓炎まで救わる",
+   "title_pt": "Salvo da Tuberculose e Nefrite, Mesmo Duvidando",
+   "jp_anchor": "疑いつつも結核腎臓炎まで救わる",
+   "pt_anchor": "Salvo da Tuberculose e Nefrite, Mesmo Duvidando",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "五カ年間の結核苦も一カ月にて救わる",
+   "title_pt": "Cinco Anos de Sofrimento com Tuberculose Curados em Um Mês",
+   "jp_anchor": "五カ年間の結核苦も一カ月にて救わる",
+   "pt_anchor": "Cinco Anos de Sofrimento com Tuberculose Curados em Um Mês",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "肺結核と慢性胃腸病忽ち好転",
+   "title_pt": "Tuberculose Pulmonar e Gastrenterite Crônica Melhoram Repentinamente",
+   "jp_anchor": "肺結核と慢性胃腸病忽ち好転",
+   "pt_anchor": "Tuberculose Pulmonar e Gastrenterite Crônica Melhoram Repentinamente",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "七年間の重患癒えて",
+   "title_pt": "Cura de Grave Doença de Sete Anos",
+   "jp_anchor": "七年間の重患癒えて",
+   "pt_anchor": "Cura de Grave Doença de Sete Anos",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "法衣をまとう身の肺結核救わる",
+   "title_pt": "",
+   "jp_anchor": "法衣をまとう身の肺結核救わる",
+   "pt_anchor": "Uma Freira Salva da Tuberculose Pulmonar",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核地獄と信仰地獄より救われて",
+   "title_pt": "Salva do Inferno da Tuberculose e do Inferno da Fé",
+   "jp_anchor": "結核地獄と信仰地獄より救われて",
+   "pt_anchor": "Salva do Inferno da Tuberculose e do Inferno da Fé",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも",
+   "pt_anchor": "*\"Quando olho para aquela época, é terrível,*",
+   "notes": "line_author_structure; ratio PT/JP=11.17; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=348.75; ratio PT/JP=348.08"
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "*eu, que vagava sem cajado na estrada escura.\"*",
+   "notes": "PAREADO manualmente 2026-07-17 (poema-citacao, 2a linha)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "私の結核克服記",
+   "title_pt": "Meu Relato de Superação da Tuberculose",
+   "jp_anchor": "私の結核克服記\n\n　　　宮崎県宮崎郡清武町船引七五五",
+   "pt_anchor": "Meu Relato de Superação da Tuberculose",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "救はれし幸を思へば身を竭（つく）し",
+   "title_pt": "",
+   "jp_anchor": "救はれし幸を思へば身を竭（つく）し",
+   "pt_anchor": "Ao pensar na felicidade de ser salvo,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "心砕きて酬はでおかめや",
+   "title_pt": "",
+   "jp_anchor": "心砕きて酬はでおかめや",
+   "pt_anchor": "*como não dedicar corpo e alma?*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二カ年間絶対安静の肺結核　四回の浄霊にて起き上る",
+   "title_pt": "Tuberculose Pulmonar com Repouso Absoluto por Dois Anos: Levantei-me Após Quatro Johrei",
+   "jp_anchor": "二カ年間絶対安静の肺結核　四回の浄霊にて起き上る",
+   "pt_anchor": "Tuberculose Pulmonar com Repouso Absoluto por Dois Anos: Levantei-me Após Quatro Johrei",
+   "notes": "PAREADO manualmente 2026-07-17 (so o byline, corrigido de contaminacao)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "二年間の結核治り不安なき日々を送る",
+   "title_pt": "",
+   "jp_anchor": "二年間の結核治り不安なき日々を送る",
+   "pt_anchor": "Vila Nibu, Distrito de Fufu, Província de Toyama",
+   "notes": "PAREADO manualmente 2026-07-17 -- corrigido de contaminacao (estava roubando conteudo do 181)"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "御浄霊により九年間療養の結核より救わる",
+   "title_pt": "Salva da tuberculose, após nove anos de tratamento, pelo Johrei",
+   "jp_anchor": "御浄霊により九年間療養の結核より救わる",
+   "pt_anchor": "Salva da tuberculose, após nove anos de tratamento, pelo Johrei",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喀血に喘いだ私の厚生記",
+   "title_pt": "Meu relato de saúde, sufocando em hemoptise",
+   "jp_anchor": "喀血に喘いだ私の厚生記",
+   "pt_anchor": "Meu relato de saúde, sufocando em hemoptise",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "結核始め全身的病気僅か二週間で救わる",
+   "title_pt": "Tuberculose e doenças sistêmicas curadas em apenas duas semanas",
+   "jp_anchor": "結核始め全身的病気僅か二週間で救わる",
+   "pt_anchor": "Tuberculose e doenças sistêmicas curadas em apenas duas semanas",
+   "notes": "PAREADO manualmente 2026-07-17 -- correcao de erro anterior (183 estava roubando conteudo de 182/Hirose)"
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "Se não fosse a salvação de Kannon,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき沼に悩みつづけむ",
+   "pt_anchor": "*sofrendo sem fim no pântano sem fundo.*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "今更に過ぎにし事ども言はざらむ",
+   "title_pt": "",
+   "jp_anchor": "今更に過ぎにし事ども言はざらむ",
+   "pt_anchor": "Não falarei mais do passado,*",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "我愚さの尤にありせば",
+   "title_pt": "",
+   "jp_anchor": "我愚さの尤にありせば",
+   "pt_anchor": "*pois se a minha tolice é a causa,*",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "喀血し絶望の肺結核全治し明るく暮らす我家",
+   "title_pt": "",
+   "jp_anchor": "喀血し絶望の肺結核全治し明るく暮らす我家",
+   "pt_anchor": "Hemoptise e tuberculose pulmonar desesperadora completamente curadas; minha casa vive com alegria",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "闘病十三年間を顧みて",
+   "title_pt": "Refletindo sobre os Treze Anos de Luta contra a Doença",
+   "jp_anchor": "闘病十三年間を顧みて",
+   "pt_anchor": "Refletindo sobre os Treze Anos de Luta contra a Doença",
+   "notes": "PAREADO por alinhamento de sequencia de idade (JP<->PT), verificado 2026-07-17"
+  },
+  {
+   "kind": "section",
+   "title_jp": "其頃を顧みすれば恐ろしも",
+   "title_pt": "",
+   "jp_anchor": "其頃を顧みすれば恐ろしも",
+   "pt_anchor": "\"Quando olho para aquela época, é assustador",
+   "notes": "line_author_structure; ratio PT/JP=11.17; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=52.00"
+  },
+  {
+   "kind": "section",
+   "title_jp": "闇路杖なく彷ひし吾",
+   "title_pt": "",
+   "jp_anchor": "闇路杖なく彷ひし吾",
+   "pt_anchor": "eu, que vagava sem cajado na estrada escura.",
+   "notes": "CORRIGIDO 2026-08-05 (revisão rigorosa 132-195): pt_anchor anterior apontava por engano para o colofão do livro (\"A Revolucionária Terapia da Tuberculose\"), não para a tradução real desta linha do poema, que já estava presente no corpo do artigo 189/190. Verificado por split_by_anchors. Nota antiga preservada para rastreabilidade: line_author_structure; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=1.10"
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音の御救ひなくば吾は今",
+   "title_pt": "",
+   "jp_anchor": "観音の御救ひなくば吾は今",
+   "pt_anchor": "Se não fosse pela salvação de Kannon,",
+   "notes": "CORRIGIDO 2026-08-05 (revisão rigorosa 132-195): pt_anchor anterior apontava por engano para o colofão do livro (\"Publicado em 15 de agosto...\"), não para a tradução real desta linha do poema. Verificado por split_by_anchors."
+  },
+  {
+   "kind": "section",
+   "title_jp": "底なき沼に悩みつづけむ",
+   "title_pt": "",
+   "jp_anchor": "底なき沼に悩みつづけむ",
+   "pt_anchor": "eu agora estaria sofrendo continuamente em um pântano sem fundo.",
+   "notes": "CORRIGIDO 2026-08-05 (revisão rigorosa 132-195): pt_anchor anterior apontava por engano para o colofão do livro (\"Formato B6, 255 páginas\"), não para a tradução real desta linha do poema. Verificado por split_by_anchors. Nota antiga preservada para rastreabilidade: line_author_structure; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=0.52"
+  },
+  {
+   "kind": "section",
+   "title_jp": "ゆきくれて道に迷へる小手を",
+   "title_pt": "",
+   "jp_anchor": "ゆきくれて道に迷へる小手を",
+   "pt_anchor": "Para a mãozinha que se perdeu no caminho ao anoitecer,",
+   "notes": "CORRIGIDO 2026-08-05 (revisão rigorosa 132-195): pt_anchor anterior apontava por engano para o colofão do livro (\"Autor: Jikan / Editora:...\"), não para a tradução real desta linha do poema. Verificado por split_by_anchors. Nota antiga preservada para rastreabilidade: ratio PT/JP=0.92"
+  },
+  {
+   "kind": "section",
+   "title_jp": "救はせ玉ふ観音の御手",
+   "title_pt": "",
+   "jp_anchor": "救はせ玉ふ観音の御手",
+   "pt_anchor": "que a mão de Kannon a salve.",
+   "notes": "CORRIGIDO 2026-08-05 (revisão rigorosa 132-195): pt_anchor anterior apontava por engano para o colofão do livro (\"Editora:...\"), não para a tradução real desta linha do poema; como é o último artigo do spec, o chunk agora se estende corretamente até o fim do arquivo, incluindo o colofão real (título/data de publicação/formato/autor/editora). Verificado por split_by_anchors. Nota antiga preservada para rastreabilidade: line_author_structure; ratio PT/JP=0.99; PAREAMENTO_NAO_RESOLVIDO: needle e heading falharam para este trecho (posição não confiável, não gravada) -- requer investigação manual; ratio PT/JP=0.62"
+  }
+ ],
+ "audited_at": "2026-07-17T01:58:47Z",
+ "audit_method": "jp_first_content_pair"
+}

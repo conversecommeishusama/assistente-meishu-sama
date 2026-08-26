@@ -1,0 +1,108 @@
+{
+  "filename": "19531015-御垂示録25号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 410 linhas / PT 185→211 linhas após correções), 2 artigos por spec (prefácio + sessão única '1º de outubro'). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, sem amostragem.",
+  "alerta_inicial": "JP 410 linhas / PT 185 linhas (razão ~2.2:1) — sinalizado no pedido como possível indício de monólitos, troca de falante, turnos curtos sem aspas nunca traduzidos ou duplicação mascarando perda.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 26,
+    "items_escalated_to_pendencias": 2,
+    "spec_contamination_check": "pt_anchor/title_pt de ambos os artigos (Prefácio; '1 de outubro') conferidos contra o conteúdo real do arquivo — sem contaminação de outro livro, ao contrário do caso encontrado em 浄霊法講座（二）2号 nesta sessão."
+  },
+  "achado_principal": {
+    "tipo": "turno_curto_sem_aspas_nunca_traduzido (variante do padrão 'monólito residual' já catalogado em revisao-paralela-jp-pt.mdc)",
+    "descricao": "25 perguntas/observações curtas de Meishu-Sama (1-2 frases, sem aspas) estavam ausentes do ficheiro de trabalho, cada uma embutida entre dois turnos entre-aspas do Interlocutor sem alternância visível de falante — sinal de alerta explícito do checklist da regra (§ 'Δ=0 nunca é suficiente', item 1). A razão JP/PT de 2.2:1 refletia largamente este padrão, não apenas diferença de formatação/parágrafo.",
+    "metodo_de_verificacao": "Leitura linha a linha do JP completo (410 linhas) confrontada com o PT do ficheiro de trabalho, localizando cada ponto onde dois turnos entre-aspas do Interlocutor apareciam consecutivos sem resposta de Meishu-Sama entre eles. Cada suspeita foi então cruzada contra textos_portugues/19531015-御垂示録25号.txt (produção) via diff completo — confirmou-se que todas as 25 linhas estavam intactas na produção e ausentes apenas no ficheiro de trabalho (reports/livros_trabalho/pt/), permitindo restauração direta sem necessidade de retradução.",
+    "confianca": "alta - confirmado por diff completo contra produção, não apenas inferência de leitura"
+  },
+  "correcoes_reais_aplicadas": [
+    {"n": 1, "jp_linha": 28, "pt_restaurado": "Hoje não preparei nenhum assunto especial, então vamos direto às perguntas.", "confianca": "alta"},
+    {"n": 2, "jp_linha": 33, "pt_restaurado": "Quando essa pessoa se tornou crente?", "confianca": "alta"},
+    {"n": 3, "jp_linha": 41, "pt_restaurado": "O que quer dizer com isso?", "confianca": "alta"},
+    {"n": 4, "jp_linha": 45, "pt_restaurado": "Quantas pessoas morreram depois que ele entrou na fé?", "confianca": "alta"},
+    {"n": 5, "jp_linha": 49, "pt_restaurado": "E antes de entrar na fé?", "confianca": "alta"},
+    {"n": 6, "jp_linha": 53, "pt_restaurado": "Ele fez convertidos depois de entrar na fé?", "confianca": "alta"},
+    {"n": 7, "jp_linha": 57, "pt_restaurado": "E antes de se tornar chefe de filial?", "confianca": "alta"},
+    {"n": 8, "jp_linha": 65, "pt_restaurado": "Onde?", "confianca": "alta"},
+    {"n": 9, "jp_linha": 69, "pt_restaurado": "Você está na região atual há muito tempo?", "confianca": "alta"},
+    {"n": 10, "jp_linha": 73, "pt_restaurado": "Vou encontrar essa pessoa. Ela está aqui hoje?", "confianca": "alta"},
+    {"n": 11, "jp_linha": 77, "pt_restaurado": "Ela vem uma vez por mês, não vem?", "confianca": "alta"},
+    {"n": 12, "jp_linha": 81, "pt_restaurado": "Por quê?", "confianca": "alta"},
+    {"n": 13, "jp_linha": 102, "pt_restaurado": "Quando você entrou na fé?", "confianca": "alta"},
+    {"n": 14, "jp_linha": 106, "pt_restaurado": "E ainda não entende isso? Está completamente equivocado. Você lê os Escritos Divinos?", "confianca": "alta"},
+    {"n": 15, "jp_linha": 187, "pt_restaurado": "Sim. Está escrito em vários dos meus livros que devemos deixar tudo nas mãos de Deus. Você não lê os Escritos Divinos?", "confianca": "alta"},
+    {"n": 16, "jp_linha": 216, "pt_restaurado": "Tem febre?", "confianca": "alta"},
+    {"n": 17, "jp_linha": 220, "pt_restaurado": "É espiritual. Tem relação com a limpeza que fizeram. Um espírito se apossou. Você lê os Escritos Divinos?", "confianca": "alta"},
+    {"n": 18, "jp_linha": 278, "pt_restaurado": "O que o irmão mais velho está fazendo?", "confianca": "alta"},
+    {"n": 19, "jp_linha": 282, "pt_restaurado": "Então, ele a transferiu para o centro de pregação? O irmão mais velho é chefe de filial?", "confianca": "alta"},
+    {"n": 20, "jp_linha": 286, "pt_restaurado": "Ele continua na fé?", "confianca": "alta"},
+    {"n": 21, "jp_linha": 303, "pt_restaurado": "Como você soube que era tifo? O médico disse?", "confianca": "alta"},
+    {"n": 22, "jp_linha": 329, "pt_restaurado": "De que forma estava enganado?", "confianca": "alta"},
+    {"n": 23, "jp_linha": 341, "pt_restaurado": "Desde o início?", "confianca": "alta"},
+    {"n": 24, "jp_linha": 371, "pt_restaurado": "Esse aviso é da sede?", "confianca": "alta"},
+    {"n": 25, "jp_linha": 388, "pt_restaurado": "O verdadeiramente dourado é melhor. Você não sabe a diferença? O que é melhor, o original ou uma imitação de diamante?", "confianca": "alta", "nota": "Sem esta linha, o PT tinha duas perguntas do Interlocutor consecutivas entre aspas sem resposta de Meishu-Sama entre elas — sinal de alerta explícito da regra revisao-paralela-jp-pt.mdc."},
+    {
+      "n": 26,
+      "jp_linha": 125,
+      "tipo": "mistraducao_sentido_invertido",
+      "problema": "JP: 「明主様は、入用の金については“金儲けに余念がない”とおっしゃいました」 — '金儲けに余念がない' é idiom para 'totalmente absorto/sem outro pensamento senão X'. PT (produção e trabalho, antes da correção): 'Meishu-Sama disse: Não há tempo para pensar em ganhar dinheiro' — sentido invertido (nega o foco em dinheiro, quando o original afirma foco total nisso).",
+      "correcao_aplicada_no_trabalho": "Meishu-Sama disse: 'Não tenho outro pensamento senão o de ganhar dinheiro'.",
+      "escopo": "Corrigido apenas no ficheiro de trabalho. Erro também presente em textos_portugues/ (produção) — NÃO alterado ali (fora de escopo, precisa autorização) — escalado em PENDENCIAS_REVISAO.json.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Cabeçalho/título (3 variantes JP: 御垂示録25号 / 『御垂示録』25号昭和28年10月15日発行 / 御垂示録第二十五号（昭和二十八年）)", "jp_linhas": "20-24", "decisao": "ok", "confianca": "alta", "notas": "PT tem as 2 primeiras variantes; a 3ª é repetição redundante do título, sem conteúdo novo — não considerado perda real."},
+    {"bloco": "Caso Aoyagi/filial Aiwa (interrogatório sobre mortes na família e afastamento)", "jp_linhas": "26-97", "decisao": "corrigido - 12 turnos curtos de Meishu-Sama restaurados (itens 1-12)", "confianca": "alta"},
+    {"bloco": "Purificação/正守護神 e doença como veneno de remédio", "jp_linhas": "100-118", "decisao": "corrigido - 2 turnos restaurados (itens 13-14)", "confianca": "alta"},
+    {"bloco": "Dinheiro/mina de Minakami/Salão Messiânico/奉仕 vs 奉職/伊都能売", "jp_linhas": "120-192", "decisao": "corrigido - 1 turno restaurado (item 15) + 1 mistradução corrigida (item 26)", "confianca": "alta"},
+    {"bloco": "Fotografias/tufão nº13/telegramas de proteção/força no Johrei", "jp_linhas": "195-211", "decisao": "ok, sem perdas", "confianca": "alta"},
+    {"bloco": "Árvores/bambuzal cortados, dor na coluna, espírito de dragão", "jp_linhas": "214-230", "decisao": "corrigido - 2 turnos restaurados (itens 16-17)", "confianca": "alta"},
+    {"bloco": "Cor roxa, pintor Yoshida Hiroshi, hierarquia de cores", "jp_linhas": "233-264", "decisao": "ok, sem perdas", "confianca": "alta"},
+    {"bloco": "Artigos doutrinários (大三災小三災, 文明の創造, アメリカを救う)", "jp_linhas": "267-273", "decisao": "ok, sem perdas", "confianca": "alta"},
+    {"bloco": "Ohikari do irmão / centro de pregação / fotografia vs Ohikari", "jp_linhas": "276-298", "decisao": "corrigido - 3 turnos restaurados (itens 18-20)", "confianca": "alta"},
+    {"bloco": "Sintomas de tifo e Johrei", "jp_linhas": "301-320", "decisao": "corrigido - 1 turno restaurado (item 21)", "confianca": "alta"},
+    {"bloco": "Agricultura natural (Gifu/Toyohashi, solo, palha)", "jp_linhas": "323-365", "decisao": "corrigido - 2 turnos restaurados (itens 22-23)", "confianca": "alta"},
+    {"bloco": "Saquinho de brocado dourado do amuleto", "jp_linhas": "368-392", "decisao": "corrigido - 2 turnos restaurados (itens 24-25)", "confianca": "alta"},
+    {"bloco": "Testemunho Azabu Nobu (Fujin Seikatsu)", "jp_linhas": "395-397", "decisao": "ok, sem perdas", "confianca": "alta"},
+    {"bloco": "Flores/ikebana no altar (bambu, corte rápido, museus de arte)", "jp_linhas": "400-410", "decisao": "ok, sem perdas", "confianca": "alta"}
+  ],
+  "verificacao_final": "diff completo entre textos_portugues/19531015-御垂示録25号.txt (produção) e reports/livros_trabalho/pt/19531015-御垂示録25号.txt (trabalho, pós-correção) mostra paridade total de conteúdo — únicas diferenças remanescentes são o cabeçalho/metadados do formato 'ficheiro de trabalho' (esperado) e a correção da mistradução do item 26 (deliberada, só no trabalho).",
+  "pendencias_abertas": [
+    "Mistradução '金儲けに余念がない' também presente em produção (textos_portugues/) — não corrigida lá, fora de escopo; ver PENDENCIAS_REVISAO.json.",
+    "Padrão de turno curto sem aspas ausente pode recorrer noutros volumes 御垂示録/御教え集/法難手記 ainda não auditados individualmente para este padrão específico — ver PENDENCIAS_REVISAO.json."
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "NÃO marcar approved:true — aguardando segunda auditoria independente conforme exigido por revisao-paralela-jp-pt.mdc § 'Δ=0 é necessário, nunca suficiente'. Nenhuma pendência bloqueante impede a segunda auditoria de prosseguir (as 2 pendências abertas são de escopo mais amplo que este arquivo, não itens de incerteza sobre o conteúdo deste arquivo).",
+    "segunda_auditoria_independente": {
+      "data": "2026-07-09",
+      "revisor": "agente (lote 11, Fase E, sessão separada da que produziu a trilha original)",
+      "metodo": "Leitura completa do ficheiro de trabalho PT (397 linhas) do início ao fim, conferida contra a descrição turno-a-turno desta trilha e contra a rotulagem Interlocutor/Meishu-Sama de 2026-07-08. Spot-check direto JP vs PT em 2 pontos de maior risco: JP linhas 121-131 (mistradução do idiom '金儲けに余念がない', item 26) e JP linhas 380-392 (pergunta sobre brocado dourado/diamante, item 25) — ambos conferem exatamente com o PT atual, sem discrepância. CJK residual: 0 ocorrências no corpo (verificado por regex). Nenhuma ellipsis suspeita de truncamento encontrada (2 ocorrências, ambas pausas retóricas legítimas). Estrutura Interlocutor:/Meishu-Sama: alternando corretamente, sem rótulos trocados, sem monólito residual.",
+      "resultado": "Confirmadas as 26 correções da auditoria original e a rotulagem de falantes (Δ=0). Nenhum problema novo encontrado. approved:true aplicado no spec."
+    }
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku — Etapa A (mapa JP linha a linha, 410 linhas) → Etapa B (contagem/formatação) → Etapa C (rótulos aplicados no PT)",
+    "etapa_a": "JP inteiro (410 linhas) lido linha a linha e classificado: 「」 = Interlocutor, prosa sem aspas = Meishu-Sama, incluindo a fala de abertura (linha 28, sem aspas, antes de qualquer pergunta) e os poucos turnos de Meishu-Sama fragmentados em 2 parágrafos consecutivos sem interrupção do Interlocutor (linhas 191-192, 210-211, 224-225, 370-371, 375-376).",
+    "etapa_b_contagem": {
+      "interlocutor_jp_aspas": 90,
+      "interlocutor_pt_aspas_bruto": 91,
+      "falso_positivo_identificado": "linha 143 do PT ('\"Nas costas\" está um pouco errado...') começa com aspas por citar o termo questionado, mas é resposta de Meishu-Sama (corresponde à linha 269 do JP, sem aspas) — não é turno do Interlocutor.",
+      "interlocutor_pt_real": 90,
+      "delta": 0,
+      "meishu_sama_pt": 96,
+      "razao_m_i": 1.07,
+      "cruzamento_sequencial": "ordem dos 90 turnos-aspas do PT conferida 1:1 contra a ordem dos 90 turnos 「」 do JP, incluindo todos os pontos de troca de subtema (blocos separados por linha em branco no JP) — sem furos, sem inversão de ordem."
+    },
+    "etapa_c_aplicacao": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a cada parágrafo do ficheiro de trabalho PT na ordem existente, sem reescrever ou reordenar texto. Cabeçalho de sessão '[1º de outubro]' preservado (sessão única no volume). Linha em branco inserida entre parágrafos para bater com o formato-alvo já usado noutros volumes de Gosuiji-roku já rotulados (ex.: 19520125-御垂示録6号.txt).",
+    "problemas_encontrados": "Nenhum turno em falta. As 25 restaurações de turnos curtos já registadas em 'correcoes_reais_aplicadas' (2026-07-07) já estavam presentes no ficheiro de trabalho antes desta rotulagem e foram confirmadas de novo durante a Etapa A/B — nenhuma pendência nova.",
+    "travessao_residual": "1 ocorrência de '—' no corpo do turno de Meishu-Sama (linha ~211, bloco sobre força no Johrei) — é pontuação de ênfase dentro da frase ('\"como se pensa\" — isso também é um pouco estranho...'), não um marcador de fala não rotulado; deixado como está, sem reescrita de conteúdo.",
+    "approved_alterado": false
+  }
+}

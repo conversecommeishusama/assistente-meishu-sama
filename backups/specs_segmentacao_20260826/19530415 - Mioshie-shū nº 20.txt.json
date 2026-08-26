@@ -1,0 +1,113 @@
+{
+ "filename": "19530415 - Mioshie-shū nº 20.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 12→11. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 12,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十号",
+   "pt_anchor": "Mioshie-shū nº 20",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月六日",
+   "title_pt": "6 de março",
+   "jp_anchor": "今臨時ニュースがありましたが、スターリンは今朝、死んだそうです。あとはどうなるかということは、これは世界中の人が関心を持っている問題ですが、去 年ですか二十四人の幹部をつくり、大きな問題は幹部会議にかけるということをスターリンがつくったので",
+   "pt_anchor": "Houve um noticiário de última hora agora: Stalin morreu esta manhã, ao que parece. O que acontecerá a seguir é uma quest",
+   "notes": "",
+   "pt_prefix": "6 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月七日",
+   "title_pt": "7 de março",
+   "jp_anchor": "スターリンが死んで、新聞やラジオでいろんな批評がありますが、べつにたいした批評の必要もありません。今日のニュースではさっそく内閣ができたよう で、やっぱりマレンコフが首相でモロトフが副首相ということになりましたが、これはもう前からすっかりで",
+   "pt_anchor": "Com a morte de Stalin, há várias críticas em jornais e rádio, mas não há necessidade de críticas especiais. Nas notícias",
+   "notes": "",
+   "pt_prefix": "7 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十五日",
+   "title_pt": "15 de março",
+   "jp_anchor": "時局談を少し話します。とうとう吉田内閣も解散になりました。これについてちょっと変に思うのは、吉田という人は年もとっているし、そうとうに世の中の 経験もある人ですが、私はよほど前からおかしいと思っていたのです。というのは、もうだいぶ前からガタ",
+   "pt_anchor": "Vou falar um pouco sobre a situação política. Finalmente, o gabinete Yoshida foi dissolvido. Sobre isso, acho um pouco e",
+   "notes": "",
+   "pt_prefix": "15 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十六日",
+   "title_pt": "16 de março",
+   "jp_anchor": "今の問題は吉田内閣の瓦解ですが、これで思い出したことは、昔笑い冠句をやっている時に、一番傑作だと思ったのは“馬鹿野郎、良く考えりゃオレのこと” というのがありましたが、これは笑の泉に出てます。これが今度の吉田さんに実によく当てはまっていると",
+   "pt_anchor": "O problema atual é o colapso do gabinete Yoshida. Isso me fez lembrar de algo: antigamente, quando se faziam kyōku cômic",
+   "notes": "",
+   "pt_prefix": "16 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十七日",
+   "title_pt": "17 de março",
+   "jp_anchor": "今度吉田内閣がああいうことになって、ちょっと思い出したことは、笑の泉にありますが、古い笑い冠句で“馬鹿野郎、良く考えりゃオレのこと”というのが ありますが、今度の吉田さんによく合っているのです。なんといっても“馬鹿野郎”問題が直接の動機とな",
+   "pt_anchor": "Com o ocorrido com o gabinete Yoshida, lembrei-me de algo que está em \"Fonte do Riso\": um antigo kanku cômico que diz: \"Seu idiota, pensando bem, sou eu\". Isso se encaixa perfeitamente no Sr. Yoshida desta vez. Afinal, o problema do \"seu idiota\" foi o motivo direto que levou ao voto de desconfiança",
+   "notes": "",
+   "pt_prefix": "17 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十三日",
+   "title_pt": "23 de março",
+   "jp_anchor": "今日は随分大勢ですね。人間というものはよく融通がつくものと思います。やっぱり弾力性があるのでしょう。",
+   "pt_anchor": "Hoje há bastante gente, não é? Acho que os seres humanos são muito flexíveis. Deve ser por causa da elasticidade.",
+   "notes": "",
+   "pt_prefix": "23 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十四日",
+   "title_pt": "24 de março",
+   "jp_anchor": "救世教も今までは長い間、邪神との戦いだったのです。それでやっと、戦いなら勝ち戦の時期に一歩はいってきたという形なのです。それでこれからだんだん勝ち戦になって行きますから、日がたつに従ってだんだん発展して行くという時期になってきたわけです。",
+   "pt_anchor": "Até agora, a Igreja Messiânica tem sido uma longa batalha contra as Divindades malignas. Finalmente, entramos em uma fas",
+   "notes": "",
+   "pt_prefix": "24 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十五日",
+   "title_pt": "25 de março",
+   "jp_anchor": "もうたいていな人は見たでしょうが、「結核信仰療法」はまだいくらにもならないが、だいぶ出そうです。あれを関係者の人が見たら、随分驚くだろうと思い ます。御神業というものは、やはり霊的の戦なのですから、今まで長い間、なにしろ敵はなかなか大きいし",
+   "pt_anchor": "A maioria das pessoas já deve ter visto, mas a “Terapia pela Fé na Tuberculose” ainda não vendeu muito, mas parece q",
+   "notes": "",
+   "pt_prefix": "25 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十六日",
+   "title_pt": "26 de março",
+   "jp_anchor": "「アメリカを救う」「結核信仰療法」と次々に出ましたが、つまりこれから、言葉は弱いが、いろいろな文化的のものを根本的に壊してしまうのです。そうし て本当のものを知らせるということです。これを一口に言うと、今までの文明は夜の文明です。つまり医学",
+   "pt_anchor": "\"Salvando a América\" e \"Terapia pela Fé na Tuberculose\" foram publicados um após o outro. Em suma, a partir de agora, em",
+   "notes": "",
+   "pt_prefix": "26 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十七日",
+   "title_pt": "27 de março",
+   "jp_anchor": "春の大祭は今日でおしまいになりますが、大体去年より三割くらい増えてます。これでまだ制限しているのだそうですから、ふつうならもっとずっと多いわけ です。この分で行けば来年はもっとずっと増えますから、そこであのメシヤ会館がちょうど良いというわけ",
+   "pt_anchor": "O Culto Especial da Primavera termina hoje, e, em geral, houve um aumento de cerca de trinta por cento em relação ao an",
+   "notes": "",
+   "pt_prefix": "27 de março"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,137 @@
+{
+  "filename": "19491223-山と水.txt",
+  "method": "linha_a_linha_jp_fonte_verdade + verificação de sequência numérica completa (1-1239) como apoio estrutural, nunca como critério isolado de fecho",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Leitura completa do JP (3270 linhas / 1239 poemas numerados, formato furigana+kanji por poema) e leitura completa do PT (arquivo inteiro, do prefácio ao colofão final, todas as ~890 linhas de trabalho após correções). Este livro tem perfil 'poem_collection' com 224 'artigos' no spec correspondendo a sessões datadas (não a poemas individuais) — dentro de cada sessão há de 1 a dezenas de poemas curtos numerados sequencialmente de 1 a 1239 ao longo do livro inteiro. Método usado: (1) leitura linear de todo o JP e todo o PT; (2) extração determinística da numeração de poemas presente no corpo do PT (script de apoio, não como prova de correção — apenas para localizar exatamente onde reler) para cruzar contra a numeração 1-1239 do JP e detectar buracos/duplicações reais; (3) releitura manual JP↔PT de cada anomalia localizada para decidir se era problema real ou artefacto de formatação; (4) tradução direta do JP para cada poema confirmado ausente; (5) remoção de blocos confirmados como tradução duplicada da mesma poesia; (6) nova varredura de verificação após cada lote de correções. Cobertura: 100% das 224 sessões do spec foram lidas (todas as datas/títulos de sessão conferidos em sequência, sem pular nenhuma); os 72 índices previamente sinalizados por auditoria de ratio (AUDIT_REPORT.json) foram todos localizados e mapeados para o número de poema correspondente e verificados em detalhe — todos caíram dentro de zonas onde defeitos reais foram encontrados e corrigidos (índices 15-31: zona 189-320; 59-115: zona 486-608, a mais grave do livro; 144-171: zona 930-1053; 207: poema 1169; 222-224: poemas 1225-1239, cauda final). Além dos índices sinalizados, foi feita verificação spot-check adicional em pontos não sinalizados ao longo de todo o livro (ex. poemas 661, 668, 709, 718, 754, 757, 776, 778, 785, 1187, 1188, 1211, 1213) para confirmar que a lista de 72 sinalizações não era exaustiva das divergências reais — não era: 14 lacunas adicionais fora da lista sinalizada foram encontradas por essa verificação extra.",
+  "gate_mecanico": "Não substituído por esta trilha. Script de apoio (não gate oficial do projeto) foi usado internamente pelo agente só para localizar exatamente onde reler manualmente; a decisão sobre cada anomalia (real vs. artefacto) foi sempre tomada por leitura humana-equivalente do JP e do PT lado a lado, nunca pela métrica isolada.",
+  "causa_real_da_razao_3_6_1_linhas_jp_pt": "Confirmado por leitura direta: a razão de linhas JP:PT (3270:907 antes da revisão) é majoritariamente uma convenção de formatação, não perda de conteúdo em escala. Três fatores explicam quase toda a diferença: (1) cada poema no JP ocupa DUAS linhas físicas (uma em hiragana de leitura + uma em kanji/ortografia), enquanto o PT traduz cada poema uma única vez — isso já reduz a razão para ~1,8:1 antes de qualquer outra coisa; (2) o PT concatena dezenas de poemas curtos por parágrafo/linha física em vários trechos do livro (especialmente do poema ~480 em diante), enquanto o JP mantém 1 poema = 1 linha de leitura + 1 linha de kanji; (3) numerosas linhas de cabeçalho/separador no JP (linhas de data, linhas em branco, marcadores de sessão) não têm equivalente de linha própria no PT. Dito isso, a auditoria confirmou que a causa NÃO era só formatação: havia também um problema estrutural genuíno e sério — o arquivo de trabalho PT continha, intercalados ao longo de boa parte do livro, RESTOS DE MÚLTIPLAS PASSAGENS DE TRADUÇÃO SOBREPOSTAS da mesma faixa de poemas (aparentemente de duas ou três tentativas de tradução/formatação diferentes que foram concatenadas no arquivo em vez de uma substituir a outra), criando blocos de duplicação genuína em pelo menos 7 pontos de costura ao longo do livro, e — separadamente — 23 poemas individuais genuinamente ausentes (nunca traduzidos), mais 1 poema truncado no meio da frase. Ou seja: a causa real é uma combinação de (a) convenção de formatação inofensiva (maior parte do gap numérico) + (b) duplicação real por fusão de múltiplas passagens de tradução (bloat, não perda) + (c) um número pequeno mas genuíno de poemas individuais nunca traduzidos ou truncados (perda real, agora corrigida).",
+  "summary": {
+    "articles_in_spec": 224,
+    "articles_reviewed": 224,
+    "poemas_total_no_livro": 1239,
+    "poemas_confirmados_com_leitura_real": 1239,
+    "real_corrections_applied": 30,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "categoria": "poema ausente traduzido do zero (JP → PT)",
+      "poemas": [
+        68,
+        86,
+        124,
+        140,
+        161,
+        186,
+        213,
+        226,
+        244,
+        668,
+        709,
+        718,
+        754,
+        757,
+        776,
+        778,
+        785,
+        1169,
+        1187,
+        1188,
+        1211,
+        1213,
+        1239
+      ],
+      "detalhe": "23 poemas individuais que existem no JP (numeração 1-1239 contínua e confirmada no JP) mas nunca haviam sido traduzidos no PT de trabalho — a numeração simplesmente pulava esses números em todas as passagens de tradução presentes no arquivo. Cada um foi traduzido diretamente do JP nesta sessão, inserido na posição correta (entre o poema anterior e o seguinte confirmados), mantendo o registo/estilo do restante do livro. O poema 1239 é especialmente notável: é o ÚLTIMO poema do livro (橋にゐて... sobre observar o rio de uma ponte e os peixes ayu), mas o PT saltava direto do poema 1238 para o colofão final ('Total de 1239 poemas registrados') sem nunca traduzir o poema 1239 propriamente — o colofão estava sendo confundido com o poema final.",
+      "confianca": "alta (poemas curtos, tanka/haiku de tema natural direto, sem ambiguidade doutrinária) exceto poema 213, ver nota específica abaixo",
+      "nota_poema_213": "JP: 大神の深き心のいと小さき人の眼になど映らめや. O termo 大神 (Ōkami) não tem entrada isolada em glossario_traducao.json (só combinado, ex. 弥勒大神→'Miroku Ōkami'); dado que o poema é de 1931 (pré-formalização doutrinária tardia do movimento) e o contexto não deixa claro se se refere a uma divindade específica ou ao conceito genérico de 'grande divindade', optei por traduzir como 'o Grande Deus' (genérico, sem comprometer com um nome próprio de glossário). Decisão resolvida com confiança razoável — não escalada como pendência bloqueante, mas registada aqui para reconferência se o usuário quiser revisar a terminologia."
+    },
+    {
+      "categoria": "truncamento corrigido",
+      "poema": 243,
+      "detalhe": "PT cortava a meio da palavra ('243, As folhas amar') e o poema 244 seguinte estava totalmente ausente; o poema 245 aparecia duplicado (uma vez como fragmento solto sem número, iniciando 'Não passam de cada um dos degraus...', e uma vez completo com número). Reconstruído: 243 completo (plátano/folhas amarelas), 244 traduzido do zero (verso livre sobre Marx/Mussolini como 'fantasmas nas duas pontas do balanço' — este é um poema de forma livre política, não tanka clássico, consistente com outros da mesma seção de 1931), 245 mantido em versão única (removida a duplicata solta).",
+      "confianca": "alta"
+    },
+    {
+      "categoria": "bloco de tradução duplicada removido (costura entre passagens de tradução sobrepostas)",
+      "faixas": [
+        "poemas 120-126",
+        "cauda do poema 371 (368-371) reduplicada após já ter aparecido num parágrafo anterior",
+        "poemas 486-492 (duplicados no início de um parágrafo gigante que também continha 493-602, conteúdo único e mantido) e 603-608 (duplicados no final do mesmo parágrafo gigante)",
+        "poemas 720-726",
+        "poemas 833-838",
+        "poemas ~942-949 (reformulação sem número que repetia o mesmo conteúdo já numerado)"
+      ],
+      "detalhe": "Em 6 pontos de costura ao longo do livro, o arquivo de trabalho continha a MESMA faixa de poemas traduzida duas vezes, em estilos/formatação ligeiramente diferentes (frequentemente uma passagem com número-prefixo tipo 'NNN. texto' e outra com número-sufixo tipo 'texto NNN', ou uma versão numerada e uma versão em prosa sem número) — sinal de que o arquivo foi montado a partir de múltiplas tentativas de tradução/formatação concatenadas em vez de uma substituir a outra. Em cada caso, mantive a versão mais completa/bem formatada e removi a redundante, sem perder nenhum conteúdo (conferido poema a poema antes de cada remoção — nenhuma das duas versões continha conteúdo que a outra não tivesse, exceto o parágrafo gigante 486-608 cujo MEIO, poemas 493-602, só existia numa única cópia e foi integralmente preservado).",
+      "confianca": "alta — cada remoção foi confirmada comparando o texto exato das duas cópias antes de apagar uma delas"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + poemas 1-127 (viagem a Awa, Monte Kenkon, amor, chuva de maio, Kasumigaura)",
+      "poemas_jp": "1-127",
+      "decisao": "ok, com 3 poemas ausentes inseridos (68, 86, 124) e 1 duplicação removida (120-126)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Relâmpagos, vaga-lumes, luar, mar, Tanabata, gansos, insetos (verão-outono 1931)",
+      "poemas_jp": "128-226",
+      "decisao": "ok, com 4 poemas ausentes inseridos (140, 161, 186, 213, 226)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sociedade/ídolos/política (poemas de verso livre, 1931), lua, Nikko, Musashino, Tsukuba, folhas caídas, pardal, ano novo, galo, noite fria (out-dez 1931)",
+      "poemas_jp": "227-384",
+      "decisao": "ok, com truncamento do poema 243 corrigido, poema 244 inserido, e duplicação de 366-371 removida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sentimento, neve, primavera, mar, Atami/fontes termais, sino, musgo, cerejeiras (jan-mar 1932)",
+      "poemas_jp": "385-485",
+      "decisao": "ok — nenhuma anomalia encontrada",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Estrelas, névoa, Atami, vagando, sino, musgo, cerejeiras II, pêssegos de Futako, Noto, trem noturno, ervas de outono, automóvel, Shinjuku, brasa (fev-nov 1932) — ZONA MAIS GRAVE DO LIVRO",
+      "poemas_jp": "486-608",
+      "decisao": "corrigido — parágrafo gigante duplicava integralmente o início (486-492) e o fim (603-608) de conteúdo já presente em formatação própria; miolo (493-602) preservado por ser cópia única; removida também uma 3ª repetição residual do poema 602/cabeçalho",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Céu claro de outono, cachoeira, Nikko interior, sapo, Hitler, mulheres do verão, cravina, incidente 15 de maio, cigarra (nov 1932 - set 1933)",
+      "poemas_jp": "609-948",
+      "decisao": "ok, com duplicação de ~942-949 removida",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Vento de outono, libélula vermelha, céu de outono, Musashino, cosmos, inverno se aproxima, Momogusa-en, tempos de emergência, matsutake, garça branca, Japão, ano novo, jogo de peteca, narciso (set 1933 - jan 1934) — ZONA SEM NUMERAÇÃO EMBUTIDA",
+      "poemas_jp": "949-1053",
+      "decisao": "ok — confirmado por leitura direta linha a linha (não apenas por contagem); spot-checks cruzados contra o JP nos poemas 980, 1000 e 1020 confirmam correspondência exata de conteúdo; 8 poemas individualmente ausentes nesta faixa (668, 709, 718, 754, 757, 776, 778, 785 — nota: estes 8 na verdade caem um pouco antes desta faixa numerada, na transição 609-830) foram encontrados e inseridos",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Diante do outro, situação do momento, rouxinol, fim de século, salgueiro, cerejeiras noturnas, calma primaveril, pomba, alvorada, pensando, abril 1934, esperança, fonte termal, cidade de maio, verde, dinheiro, pescaria, coração, feira, paraíso, contemplando a mim mesmo, corvos do crepúsculo (fev-nov 1934)",
+      "poemas_jp": "1054-1163",
+      "decisao": "corrigido — duplicação da transição 1054-1060 entre a zona sem numeração e o parágrafo gigante seguinte removida; truncamento do número '1054' (aparecia como '54') corrigido",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Vento de outono, noite fria, sonho, primavera ainda não chegou, nandim, jogo de peteca, narciso, início do ano, primavera, religião Hitonomichi, lua de inverno, mulher, depois da chuva, água de primavera, poemas do cotidiano, nova residência, novos brotos, Rio Tama (dez 1934 - jul 1935, até o fim do livro)",
+      "poemas_jp": "1164-1239",
+      "decisao": "ok, com 5 poemas ausentes inseridos (1169, 1187, 1188, 1211, 1213) e o poema final 1239 traduzido do zero (estava totalmente ausente, substituído pelo colofão de contagem total)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Sequência completa de 1239 poemas confirmada íntegra e sem duplicação após as correções (verificado por varredura automática de apoio + releitura manual de cada anomalia). Todos os 72 índices previamente sinalizados pela auditoria de ratio, mais 14 lacunas adicionais fora dessa lista, foram localizados, lidos e corrigidos quando necessário. Nenhuma pendência doutrinária bloqueante — a única observação terminológica (poema 213, 'Grande Deus') foi resolvida com confiança razoável e documentada acima, não bloqueia aprovação conforme a regra de escalonamento não-bloqueante."
+  },
+  "addendum_2026_07_09_fase_e_pareamento_anchor": {
+    "escopo": "Reparo do pareamento pt_anchor do spec (19491223-山と水.txt.json), separado da leitura semantica ja concluida em 2026-07-06 acima. Nao houve nenhuma alteracao ao texto PT em si nesta etapa.",
+    "achado": "32 indices do spec (145-169,171,189,192,194,201,207,222) tinham pt_anchor quebrado (substring rotativo da mesma frase, nao localizavel a partir do cursor sequencial); 2 indices adicionais (170, 223) passavam no validador mecanico mas apontavam para o poema ERRADO (idx170 pulava os poemas 1052-1066; idx223/222 tinha numero de poema truncado colidindo com poema muito anterior do livro) -- confirma a regra do projeto de que o gate mecanico nunca e suficiente sozinho.",
+    "correcao": "Reconstruidos todos os 34 anchors com base cruzada JP/PT (lista ordenada de 86 marcadores de topico/data reais extraida do JP, casada 1:1 por ordem com os cabecalhos e numeros de poema reais no PT), cada um verificado por unicidade (count==1) e ordem monotona.",
+    "validacao": "scripts/apply_manual_livros_segmentacao.py --file '19491223-山と水.txt' --dry-run agora passa integralmente: 224/224 artigos, sem excecao de anchor, todos os chunks JP e PT de tamanho plausivel (minimos 27/28 caracteres, nenhum degenerado).",
+    "pendencia_relacionada": "PENDENCIAS_REVISAO.json, entrada 19491223-山と水.txt, estado atualizado para 'resolvido'."
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "filename": "19530515-御教え集21号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 208 linhas / PT originalmente 88 linhas, razão ~2.4:1 alertada como suspeita). JP tem 1 bloco === ARTIGO === único contendo 9 trechos (spec 'mioshie_shu', preface + 8 sessões datadas: 6,7,15,16,17,25,26,27 de abril), mas o conteúdo textual do JP cobre na verdade 11 marcadores de data (5,6,7,8,10,15,16,17,25,26,27 de abril) — os de 5, 8 e 10 ficam agrupados dentro do trecho 'preface' do spec. Todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data, conforme o alerta da família 御教え集/御垂示録/法難手記.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "date_headings_jp": 11,
+    "date_headings_pt_before": "11 presentes mas quase todas malformadas (deslocadas, duplicadas ou fundidas em bloco único)",
+    "date_headings_pt_after": 11,
+    "real_corrections_applied": 15,
+    "items_escalated_to_pendencias": 0,
+    "padrao_bug_familia_confirmado": true
+  },
+  "padroes_de_bug_confirmados": [
+    "Cabeçalho de data deslocado para o fim do parágrafo anterior em vez de anteceder o parágrafo correto (padrão sistemático, ocorreu em quase toda transição de data do volume).",
+    "Cabeçalho de data duplicado (aparece tanto no fim do parágrafo anterior quanto no início do parágrafo seguinte, às vezes em formas diferentes — dígito vs. por extenso).",
+    "Cabeçalho de data com data ERRADA e posição errada logo no início do ficheiro (antes até do título).",
+    "Monólito residual: quatro sessões distintas (7, 8, 10 de abril + transição para 15) fundidas num único parágrafo gigante, com os cabeçalhos '8 de abril (Nagoya)' e '10 de abril (Kyoto)' enterrados no meio do texto corrido, sem quebra de parágrafo.",
+    "Truncamento seguido de duplicação: trecho cortado a meio de frase, seguido por uma repetição já traduzida anteriormente na íntegra (mesmo padrão do achado Gokōwa/RUN1 'rascunho truncado seguido da versão completa').",
+    "Corrupção grave tipo caractere-a-caractere: um bloco de ~24 linhas com uma palavra cortada ('Vinte e'), letras soltas isoladas em linhas próprias ('s','e','t','e','d') intercaladas com SEIS cabeçalhos de data repetidos/errados (7,15,16,17,26,27 de abril, todos já usados corretamente noutros pontos do ficheiro) — nenhuma perda de conteúdo real, mas um lixo estrutural que precisou remoção total.",
+    "Frase truncada com palavra/oração ausente (não relacionada a cabeçalho de data): 'ofensiva de paz' perdeu a palavra 'paz' e a oração seguinte; '覚りで行くよりしかたがありません' (só resta seguir pela intuição espiritual) ficou cortada a meio, deixando frase pendurada.",
+    "Recapitulação duplicada de meio parágrafo (não relacionada a cabeçalho de data): o trecho sobre artistas serem mais valiosos que ministros e o incidente de Kosaburō Yoshizumi foi contado duas vezes seguidas quase palavra por palavra.",
+    "Corrupção de nomes próprios no encarte final (colofão): nome do editor e do impressor garbled/truncados, e data de impressão trocada por outra data (28 em vez de 10) que aparece coincidentemente no corpo do texto poucas linhas antes."
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "início do ficheiro, antes do título",
+      "problema": "'6 de abril' aparecia como cabeçalho antes até do título 'Mioshie-shū nº 21', com data errada (o conteúdo que se segue é do dia 5, JP 昭和二十八年四月五日) e posição errada (JP tem título → info de publicação → cabeçalho de data, nesta ordem).",
+      "correcao": "Removido o '6 de abril' errado do início; inserido '5 de abril' na posição correta, depois do título e da info de publicação, antes do parágrafo sobre eleições/URSS/Buda.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "transição 5→6 de abril",
+      "problema": "'6 de abril' colado ao fim do parágrafo do dia 5 em vez de anteceder o parágrafo do dia 6.",
+      "correcao": "Separado em linha própria antes do parágrafo correto.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "transição 6→7 de abril",
+      "problema": "Mesmo padrão: '7 de abril' colado ao fim do parágrafo anterior.",
+      "correcao": "Separado em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "sessões de 7, 8 e 10 de abril",
+      "problema": "GRAVE: as três sessões (continuação de 7, mais 8 no Ginásio Kanayama/Nagoya, mais 10 no Teatro de Quioto) e a transição para 15 estavam todas fundidas num único parágrafo corrido, com '8 de abril (no Ginásio Kanayama, cidade de Nagoya)' e '10 de abril (no Teatro de Quioto, cidade de Quioto)' enterrados no meio do texto sem quebra — viola checklist itens 1 (subdivisão), 6 (paragrafação) e 7 (cabeçalhos).",
+      "correcao": "Reestruturado em 4 parágrafos com cabeçalhos próprios: '7 de abril' / '8 de abril (no Ginásio Kanayama, cidade de Nagoya)' / '10 de abril (no Teatro de Quioto, cidade de Quioto)' / '15 de abril', cada um antecedendo o respectivo conteúdo. Nenhum conteúdo removido, apenas resegmentado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "dentro do conteúdo de 10 de abril, análise sobre Stalin/comunismo",
+      "problema": "Frase truncada: '...Deus também mostrou isso claramente através de um modelo, mas não posso dizer claramente agora. Só podemos confiar na  Então, quando o comunismo desaparecer...' — falta o complemento de 'confiar na' (JP: 覚りで行くよりしかたがありません, 'não há outro caminho senão seguir pela intuição/percepção espiritual').",
+      "correcao": "Completado: '...Não há outro caminho senão seguir pela intuição espiritual. Então, quando o comunismo desaparecer...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "transição 16 de abril (fim da sessão do dia 15 + tópico 'nova religião' + doenças femininas)",
+      "problema": "'16 de abril' colado ao fim do parágrafo anterior em vez de anteceder o parágrafo seguinte.",
+      "correcao": "Separado em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "logo após a correção nº 6, início do conteúdo de 16 de abril",
+      "problema": "GRAVE (mesma assinatura do bug Gokōwa 'rascunho truncado + versão completa'): imediatamente após o cabeçalho '16 de abril', havia um fragmento truncado a meio de frase ('...Como Kyoto e Nara são a origem do budismo, e a origem está prestes a ruir,') seguido por uma repetição quase literal de um trecho (frigidez/vaginismo/hipertricose) já traduzido por completo alguns parágrafos antes (fim da sessão de 15 de abril). Nenhum conteúdo novo nesses dois blocos — só truncamento e duplicata.",
+      "correcao": "Removidos os dois blocos espúrios (fragmento truncado + duplicata), mantendo apenas a versão completa e correta do início da sessão de 16 de abril ('Desta vez, percorri os templos das regiões de Quioto e Nara...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "transição 16→17 de abril",
+      "problema": "'17 de abril' duplicado: aparecia tanto colado ao fim do parágrafo anterior (forma numérica) quanto como cabeçalho próprio poucas linhas depois (forma por extenso, 'Dezessete de abril.').",
+      "correcao": "Removida a duplicata colada ao parágrafo anterior; normalizada a forma por extenso para o formato numérico consistente com o resto do ficheiro ('17 de abril').",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao": "dentro do conteúdo de 17 de abril, análise sobre a ofensiva de paz soviética",
+      "problema": "Frase truncada com palavra e oração ausentes: '...a União Soviética mudou repentinamente. É a chamada ofensiva de  Talvez nem eles saibam claramente...' — falta 'paz' e a oração 'mas por que mudou dessa forma não é muito bem explicado pelos jornais/rádio' (JP: いわゆる平和攻勢ですが、どうしてこう変わったかということは、新聞やラジオではあんまり説いてありません).",
+      "correcao": "Completado: '...É a chamada ofensiva de paz, mas por que mudou dessa forma não é muito bem explicado pelos jornais nem pelo rádio. Ou talvez nem eles saibam claramente...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao": "transição 17→25 de abril",
+      "problema": "'25 de abril' duplicado: colado ao fim do parágrafo anterior E repetido no início do parágrafo seguinte.",
+      "correcao": "Removida a duplicata do fim do parágrafo anterior, mantido o cabeçalho correto antes do parágrafo do dia 25.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao": "transição 25→26 de abril",
+      "problema": "Mesmo padrão de duplicação de '26 de abril'.",
+      "correcao": "Removida a duplicata, mantido o cabeçalho correto em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao": "transição 26→27 de abril",
+      "problema": "GRAVÍSSIMO: bloco de ~24 linhas de corrupção estrutural entre o fim do conteúdo de 26 de abril e o início do de 27. Uma palavra cortada a meio ('Vinte e') seguida de uma sequência caótica de linhas com um único caractere solto cada ('s', 'e', 't', 'e', 'd'), intercaladas com SEIS cabeçalhos de data repetidos/deslocados (7, 15, 16, 17, 26 e 27 de abril — todos já usados corretamente em outros pontos do ficheiro) e um fragmento final ('e abril.'). Não representa perda de conteúdo (o texto correto de 27 de abril segue integralmente logo depois), mas é lixo estrutural puro.",
+      "correcao": "Bloco inteiro removido; substituído por um único cabeçalho limpo '27 de abril' antecedendo o parágrafo correto ('Ontem e anteontem falei sobre Daijo e Shojo...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "localizacao": "dentro do conteúdo de 27 de abril, trecho sobre artistas/Kosaburō Yoshizumi",
+      "problema": "Recapitulação duplicada: o argumento 'artistas e literatos são mais valiosos que ministros, não há substituto para eles, gabinete Yoshida nomeou quase 100 ministros, frase do inglês famoso sobre sortear ministros, atores de kabuki' foi contado por completo duas vezes seguidas quase palavra por palavra (a segunda vez terminando em 'Nesse sentido, Kosaburo deve ser amplamente favorecido').",
+      "correcao": "Removida a primeira metade duplicada, mantendo a continuação única a partir de 'Kosaburo deve ser amplamente favorecido. Por essas e outras, ele vem sempre à minha casa...' até o fim do volume (Tanigawa Tetsuzō, museu de Hakone, exposição de ukiyo-e, etc.) — conteúdo integralmente preservado, apenas sem a repetição espúria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao": "colofão final",
+      "problema": "Data de impressão errada: PT dizia '28 de maio de 1953 — Impresso', mas o JP diz claramente 昭和二十八年五月十日 (10 de maio), distinto da data de publicação (15 de maio, já correta na linha seguinte). O '28' parece ter vindo por contaminação de outra menção de '28' no corpo do texto (calendário de exposição em Hakone, dias 28-31).",
+      "correcao": "Corrigido para '10 de maio de 1953 — Impresso'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "localizacao": "colofão final, nomes próprios do editor e do impressor",
+      "problema": "Corrupção de nome próprio (padrão já confirmado noutros volumes irmãos): editor 阿部晴三 traduzido como 'Haru Abe' (nome incompleto, terceiro caractere 三 nunca romanizado, ordem invertida); impressor 小山梅野 traduzido como 'Ume Koama' (sobrenome e nome próprio mesclados incorretamente — deveria ser Koyama [sobrenome] Umeno [nome]).",
+      "correcao": "Editor corrigido para 'Abe Seizō', confirmando romanização já estabelecida no corpus para a mesma pessoa/kanji em '19541211-明主様御言葉 水晶殿御遷座.txt' e '19530910-世界救世教奇蹟集.txt'. Impressor corrigido para 'Koyama Umeno' (romanização direta e correta dos kanji, sem precedente direto encontrado no corpus mas sem ambiguidade de leitura).",
+      "confianca": "alta (editor, por precedente no corpus) / média-alta (impressor, sem precedente direto mas leitura direta sem ambiguidade)"
+    }
+  ],
+  "observacoes_nao_corrigidas_por_serem_do_jp_ou_fora_de_escopo": [
+    {
+      "observacao": "A citação '（御論文「英雄の死について」）【栄光二〇五号】' aparece inserida a meio da palavra 国家 ('kokka', nação) no JP linha 155, dentro do parágrafo sobre tribunais americanos — claro artefacto de digitação/OCR do próprio ficheiro JP fonte, não uma instrução de nova citação. O PT (corretamente) não reproduziu essa inserção espúria, traduzindo a frase como uma unidade coerente. Não é bug do PT; é anomalia do JP, fora do escopo desta revisão (não se edita o JP fonte de verdade)."
+    },
+    {
+      "observacao": "Repetições genuínas do JP, confirmadas por releitura, que NÃO são bugs de duplicação do PT: a citação 【栄光二〇五号】'英雄の死について' aparece 3x no JP (após 15, 16 e 17 de abril) e o PT reflete corretamente as 3 ocorrências; a citação 二〇四号 '結核信仰療法について' e a citação (sem número) '公明選挙を嗤う' aparecem 3x cada no JP, também refletidas corretamente 3x no PT. O tema Daijo/Shojo, os resultados eleitorais e o incidente de Kosaburō Yoshizumi são recontados pelo próprio Meishu-Sama em três dias consecutivos (25, 26 e 27 de abril) no JP — confirmado por leitura direta do JP nas três sessões — portanto as três versões no PT são corretas e não devem ser fundidas ou removidas."
+    },
+    {
+      "observacao": "O ficheiro de trabalho PT tem o marcador '=== ARTIGO ===' duplicado nas linhas 5-6 (o JP tem só uma ocorrência). É metadado estrutural do pipeline, não conteúdo; não foi alterado por estar fora do escopo desta revisão (não mexer em specs/estrutura do YOLO_QUEUE) e por risco de quebrar o parsing do pipeline sem entender a causa."
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "5 de abril (eleições, URSS/Coreia, TB, motivo da viagem a Kyoto, doença mental)",
+      "jp_linhas": "24-42",
+      "decisao": "ok após correção nº1/2",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "6 de abril (correspondência elemental Hakone/Atami/Kyoto, URSS/Eisenhower, Hideyoshi, eleições)",
+      "jp_linhas": "46-62",
+      "decisao": "ok após correção nº2/3",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7, 8, 10 de abril (museu budista, Shaka/Saga, Stalin/comunismo, Izunome)",
+      "jp_linhas": "65-97",
+      "decisao": "corrigido - monólito residual grave (correção nº4/5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de abril (peregrinação a templos, salvação dos Budas, deuses-dragão, arte)",
+      "jp_linhas": "101-107",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "novas religiões + doenças femininas (fim da sessão de 15)",
+      "jp_linhas": "109-114",
+      "decisao": "ok após correção nº6",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de abril (templos Kyoto/Nara, deuses-dragão, Izunome-shinryū)",
+      "jp_linhas": "118-126",
+      "decisao": "corrigido - truncamento+duplicação grave (correção nº7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "remédios sem base científica, cosméticos, Johrei feminino (fim de 16→17)",
+      "jp_linhas": "128-137",
+      "decisao": "ok após correção nº8",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de abril (economia dos templos, salvação dos Budas, Tsukuyomi/Susanoo)",
+      "jp_linhas": "141-149",
+      "decisao": "ok após correção nº8/9/10",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de abril (Daijo/Shojo, tribunal americano, Ofudesaki, Kosaburō Yoshizumi 1ª menção)",
+      "jp_linhas": "153-158",
+      "decisao": "ok após correção nº10/11",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de abril (Daijo/Shojo 2ª vez, eleições, Kosaburō Yoshizumi 2ª vez, museu)",
+      "jp_linhas": "169-177",
+      "decisao": "ok após correção nº11/12",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de abril (Daijo/Shojo 3ª vez, Kosaburō Yoshizumi 3ª vez, Tanigawa Tetsuzō, Hakone, colofão)",
+      "jp_linhas": "181-190 + colofão 198-208",
+      "decisao": "corrigido - duplicação parcial (correção nº13) + colofão (nº14/15)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 15 correções. approved:true."
+  },
+  "correcao_estrutural_spec_2026_07_09": {
+    "reviewer": "agente (instância independente, lote 9, Fase E, 2026-07-09)",
+    "achado": "PENDENCIAS_REVISAO.json continha item 'pendente_fase2_alta' (2026-07-08, não coberto pela auditoria semântica desta trilha, que valida o corpo de trabalho já materializado, não o spec .txt.json usado para a futura divisão em artigos): artigo[0] (序文) do spec tinha pt_anchor apontando para posição ~4985 do corpo PT ('8 de abril é o aniversário do Senhor Shaka...'), o que descartaria silenciosamente ao aplicar o spec de facto todo o texto anterior — título/ficha e a sessão inteira '5 de abril' (~4700 caracteres JP), cabeçalho JP 昭和二十八年四月五日 sem artigo próprio. Mesmo padrão já catalogado e corrigido nos volumes irmãos 19530415-御教え集20号.txt e 19530315-御教え集19号.txt.",
+    "correcao": "pt_anchor do preface[0] corrigido para '5 de abril' (cabeçalho, posição real). Inserido artigo novo [1] (session, 四月五日) com jp_anchor/pt_anchor no conteúdo real após o cabeçalho de data e pt_prefix='5 de abril'. Validado com apply_manual_livros_segmentacao.py --dry-run: 10 artigos (era 9), sem erro, sem perda de conteúdo.",
+    "nota": "Distinto da auditoria semântica linha-a-linha acima (que já cobria o conteúdo do ficheiro de trabalho tal como está, incluindo a sessão '5 de abril' dentro do corpo contínuo) — este era um risco latente no spec de segmentação para uma futura aplicação/divisão em artigos, não um erro de tradução ou conteúdo."
+  }
+}

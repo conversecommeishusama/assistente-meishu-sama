@@ -1,0 +1,295 @@
+{
+ "filename": "19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 37→37. PT pairing pendente. | 2026-07-15: removidos 2 falsos-positivos (art18 citação de waka embutida em art17; art25 frase de abertura de art24 tratada como artigo); jp_anchor corrigido em 16 artigos (apontava para linha após o título, órfão no artigo anterior); pt_anchor resolvido para todos (heading real lido diretamente no PT). 37->35.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 35,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "自観叢書第4編『奇蹟物語』昭和24(1949)年10月5日発行",
+   "pt_anchor": "Coleção Jikan Volume 4 – Histórias de Milagres",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "O que sempre digo é que a essência da religião reside no milagre.",
+   "jp_anchor": "私が常に言う事は、宗教の真髄は奇蹟に在る。宗教即奇蹟といってもいいとする。何となればいか程深淵な理論を並べても、病気一つ治し得ないではなんらの 価値がないからである。よく現当利益を非難する人があるが、これは大いに間違っている。はなはだ失礼だ",
+   "pt_anchor": "Como sempre digo, a essência da religião está no milagre — a rigor, pode-se dizer que religião é milagre.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観世音菩薩と私",
+   "title_pt": "Kanzeon-Bosatsu e Eu",
+   "jp_anchor": "観世音菩薩と私",
+   "pt_anchor": "Kanzeon-Bosatsu e Eu",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "私の告白",
+   "title_pt": "Minha Confissão",
+   "jp_anchor": "私の告白",
+   "pt_anchor": "Minha Confissão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "本教救いの特異性",
+   "title_pt": "A Singularidade da Salvação desta Religião",
+   "jp_anchor": "本教救いの特異性",
+   "pt_anchor": "A Singularidade da Salvação desta Religião",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "入信後の神懸り",
+   "title_pt": "Possessão por Divindades Após a Conversão",
+   "jp_anchor": "入信後の神懸り",
+   "pt_anchor": "Possessão por Divindades Após a Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "霊写真",
+   "title_pt": "Fotografia Espiritual",
+   "jp_anchor": "霊写真",
+   "pt_anchor": "Fotografia Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "黄泉比良坂の戦",
+   "title_pt": "A Batalha de Yomotsu Hirasaka",
+   "jp_anchor": "黄泉比良坂の戦",
+   "pt_anchor": "A Batalha de Yomotsu Hirasaka",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "紅蓮の直中より救はる",
+   "title_pt": "Salva do Meio das Chamas Carmesim",
+   "jp_anchor": "紅蓮の直中より救はる",
+   "pt_anchor": "Salva do Meio das Chamas Carmesim",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "屋根から落ちても無事",
+   "title_pt": "Caiu do Telhado, mas Ficou Ilesa",
+   "jp_anchor": "屋根から落ちても無事",
+   "pt_anchor": "Caiu do Telhado, mas Ficou Ilesa",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "九死に一生を得て",
+   "title_pt": "Escapando por um Fio",
+   "jp_anchor": "九死に一生を得て",
+   "pt_anchor": "Escapando por um Fio",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "列車に激突――微傷一つ負わず救はる――",
+   "title_pt": "Colidiu com o trem – salvo sem um único arranhão –",
+   "jp_anchor": "列車に激突――微傷一つ負わず救はる――",
+   "pt_anchor": "Colidiu com o trem – salvo sem um único arranhão –",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "軒先迄燃え焼失を免る",
+   "title_pt": "Queimou até a beira do telhado, mas escapou de ser consumido pelo fogo",
+   "jp_anchor": "軒先迄燃え焼失を免る",
+   "pt_anchor": "Queimou até a beira do telhado, mas escapou de ser consumido pelo fogo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "水禍より逃れて",
+   "title_pt": "Escapando da calamidade das águas",
+   "jp_anchor": "水禍より逃れて",
+   "pt_anchor": "Escapando da calamidade das águas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "震禍を免る",
+   "title_pt": "Livre da calamidade do terremoto",
+   "jp_anchor": "震禍を免る",
+   "pt_anchor": "Livre da calamidade do terremoto",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "交通事故の奇蹟",
+   "title_pt": "O milagre do acidente de trânsito",
+   "jp_anchor": "交通事故の奇蹟",
+   "pt_anchor": "O milagre do acidente de trânsito",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "漁の不思議",
+   "title_pt": "A estranheza da pesca",
+   "jp_anchor": "漁の不思議",
+   "pt_anchor": "A estranheza da pesca",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "瓦カマドに浄霊――等外品なしの上成績得る――",
+   "title_pt": "Johrei em um forno de telhas de barro – obteve resultados excelentes, sem produtos de segunda linha",
+   "jp_anchor": "瓦カマドに浄霊――等外品なしの上成績得る――",
+   "pt_anchor": "Johrei em um forno de telhas de barro – obteve resultados excelentes, sem produtos fora de classe\n\nHiroko Hosono (23), Associação Seirei Kai da Igreja Miroku do Japão, Endereço: Yamato-mura, Ibi-gun, Província de Gifu\n\nOlhando para trás: em agosto de 1946, minha mãe, tomada por uma cólica estoma",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "林産物の御利益",
+   "title_pt": "O benefício material dos produtos florestais",
+   "jp_anchor": "林産物の御利益",
+   "pt_anchor": "O benefício material dos produtos florestais",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "病貧の御救い――今は明るく感謝の生活――",
+   "title_pt": "O salvamento da doença e da pobreza – Agora uma vida de gratidão e luz –",
+   "jp_anchor": "病貧の御救い――今は明るく感謝の生活――",
+   "pt_anchor": "O salvamento da doença e da pobreza – Agora uma vida de gratidão e luz –",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "斯んな事までも",
+   "title_pt": "Até mesmo coisas assim",
+   "jp_anchor": "斯んな事までも",
+   "pt_anchor": "Até mesmo coisas assim",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "盗難品が出た御利益",
+   "title_pt": "O benefício material de um objeto roubado ter aparecido",
+   "jp_anchor": "盗難品が出た御利益",
+   "pt_anchor": "O benefício material de um objeto roubado ter aparecido",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "観音心と盗心",
+   "title_pt": "O Coração de Kannon e o coração de ladrão",
+   "jp_anchor": "観音心と盗心",
+   "pt_anchor": "O Coração de Kannon e o coração de ladrão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "感謝の毎日",
+   "title_pt": "Dias de gratidão",
+   "jp_anchor": "感謝の毎日",
+   "pt_anchor": "Dias de gratidão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "返ったリヤカー",
+   "title_pt": "A carroça que voltou",
+   "jp_anchor": "返ったリヤカー",
+   "pt_anchor": "A carroça que voltou",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "危機一髪盗難を救はる",
+   "title_pt": "Salvo de um roubo por um triz",
+   "jp_anchor": "危機一髪盗難を救はる",
+   "pt_anchor": "Salvo de um roubo por um triz",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "反抗の力空しく",
+   "title_pt": "A força da rebeldia em vão",
+   "jp_anchor": "反抗の力空しく",
+   "pt_anchor": "A força da rebeldia em vão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "死線を超える事幾度",
+   "title_pt": "Quantas vezes ultrapassei a linha da morte",
+   "jp_anchor": "死線を超える事幾度",
+   "pt_anchor": "Quantas vezes ultrapassei a linha da morte",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "カリエスが治る――現代医学を超えた御力――",
+   "title_pt": "A cárie óssea se cura — Um poder que supera a medicina moderna",
+   "jp_anchor": "カリエスが治る――現代医学を超えた御力――",
+   "pt_anchor": "A cárie óssea se cura — Um poder que supera a medicina moderna",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "六年間のカリエス救はる",
+   "title_pt": "Curada de cárie óssea após seis anos",
+   "jp_anchor": "六年間のカリエス救はる",
+   "pt_anchor": "Curada de cárie óssea após seis anos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "精神病が全快す――人生を取戻した復員者――",
+   "title_pt": "Doença mental completamente curada — Um ex-combatente que recuperou a vida",
+   "jp_anchor": "精神病が全快す――人生を取戻した復員者――",
+   "pt_anchor": "Doença mental completamente curada — Um ex-combatente que recuperou a vida",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "小児麻痺より救はれて",
+   "title_pt": "Salva da paralisia infantil",
+   "jp_anchor": "小児麻痺より救はれて",
+   "pt_anchor": "Salva da paralisia infantil",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "御力に死者蘇る",
+   "title_pt": "Pelo poder divino, um morto revive",
+   "jp_anchor": "御力に死者蘇る",
+   "pt_anchor": "Pelo poder divino, um morto revive",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "萬人に一人の病――リチャード氏病がなほる――",
+   "title_pt": "Uma doença rara em um milhão de pessoas – a doença de Richard é curada",
+   "jp_anchor": "萬人に一人の病――リチャード氏病がなほる――",
+   "pt_anchor": "Uma doença rara em dez mil pessoas – a doença de Richard é curada\n\nGoichi Asano, Associação Senshin Kai da Igreja Miroku do Japão,",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "御教えに深き感謝――病名不明の「けいれん」より救はる――",
+   "title_pt": "Profunda gratidão pelos ensinamentos – salva de \"convulsões\" de causa desconhecida",
+   "jp_anchor": "御教えに深き感謝――病名不明の「けいれん」より救はる――",
+   "pt_anchor": "Profunda gratidão pelos ensinamentos – salva de \"convulsões\" sem diagnóstico\n\nTake Uchiyama, Filial Futamata da Associação Taisei Kai da Igreja Kannon do Japão, Endereço: Akasa-mura, Hamana-gun, Shizuoka\n\nOntem e hoje, minha irmã mais nova queixou-se de dor de cabeça e,",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

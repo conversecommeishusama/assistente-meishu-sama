@@ -1,0 +1,113 @@
+{
+ "filename": "19540115 - Mioshie-shū nº 29.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→10. PT pairing pendente. | 2026-07-15: inserida sessão 十二月五日 (10→11), ausente na spec original, causava cascata de anchor_diff em PT (art1-4).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第二十九号",
+   "pt_anchor": "Mioshie-shū nº 29",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月五日",
+   "title_pt": "5 de dezembro",
+   "jp_anchor": "この間ちょっと話しましたが、ニホン・タイムスという外字新聞の記者が、箱根美術館を見た感想を翻訳した記事を読ませます。日本人とは見方が違うところ がおもしろいです。この中に出ているルーヴルというのはフランスの有名な美術館で、ヴァチカンというのはイタリアにあるものですが、この美術館は有名なも のです。",
+   "pt_anchor": "Outro dia, comentei brevemente sobre isso, mas vou ler um artigo traduzido com as impressões de um repórter do jornal es",
+   "notes": "",
+   "pt_prefix": "5 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月六日",
+   "title_pt": "6 de dezembro",
+   "jp_anchor": "この間のニホン・タイムスという外字新聞に、箱根美術館の紹介のようなものを写真入りで書いてます。外人の見方は日本人とは変わった点があるので読ませます。",
+   "pt_anchor": "No outro dia, no jornal estrangeiro Nippon Times, saiu uma espécie de apresentação do Museu de Hakone com fotos. Como a ",
+   "notes": "",
+   "pt_prefix": "6 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月七日",
+   "title_pt": "7 de dezembro",
+   "jp_anchor": "最近のニホン・タイムスという外字新聞に、箱根美術館の写真と記事が出てますが、これは、この間話したアメリカの婦人の新聞記者が書いたのです。その翻訳したのを読ませます。",
+   "pt_anchor": "Recentemente, no jornal estrangeiro Nippon Times, saiu uma foto e um artigo sobre o Museu de Hakone, escritos pela repórter a",
+   "notes": "",
+   "pt_prefix": "7 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十五日",
+   "title_pt": "15 de dezembro",
+   "jp_anchor": "いつも言うことですが、今の世の中と言いますか、特に日本はそういう状態ですが、つまり正義感が実に少ないのです。本当に正義感のある人というのは、な いと言ってもよいくらいです。と言ったところで、正義感というものは表に出すものではないので、心の底",
+   "pt_anchor": "Como sempre digo, o mundo de hoje, especialmente o Japão está nesse estado, ou seja, o senso de justiça é realmente esca",
+   "notes": "",
+   "pt_prefix": "15 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十六日",
+   "title_pt": "16 de dezembro",
+   "jp_anchor": "今の世の中を見ると、世界中が非常に正義感というものがなくなったのです。なんでも算盤ずくでやっているのです。理屈だけでは、こうやればこうなる、こ うやる方がよいということを、世界中、特に日本の政治でも経済でも、みんなそうなってます。ところがイ",
+   "pt_anchor": "Olhando para o mundo de hoje, a consciência de justiça desapareceu enormemente em todo o mundo. Tudo é feito com base no",
+   "notes": "",
+   "pt_prefix": "16 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十七日",
+   "title_pt": "17 de dezembro",
+   "jp_anchor": "世間一般の人を相手にした話ですが、とにかく今日、どこからどこまでなにごとも、うまくゆかないのです。うまくゆくということはめったにないので、政治 でも、ほかのいろいろなことでも、みんな失敗の連続です。以前ある人は“人生は後悔の連続だ”というこ",
+   "pt_anchor": "Falando para o público em geral, hoje em dia, tudo, do começo ao fim, não dá certo. É raro algo dar certo; na política e",
+   "notes": "",
+   "pt_prefix": "17 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十三日（御誕生祭御教え）",
+   "title_pt": "23 de dezembro",
+   "jp_anchor": "十二月二十三日（御誕生祭御教え）",
+   "pt_anchor": "Hoje completo setenta e um anos. E hoje também é o aniversário do Príncipe Herdeiro, o que me faz pensar que há um innen",
+   "notes": "",
+   "pt_prefix": "23 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十五日",
+   "title_pt": "25 de dezembro",
+   "jp_anchor": "浄霊で病気がよく治るということを、初めて浄霊を受けて治った場合によく聞かれます。そこで“なるほど”と思うように説明してやらなければならないので すが、それをできるだけ分かりやすく書いてみましたが、まだ少し物足りないところがありますが、だいた",
+   "pt_anchor": "É comum ouvir de pessoas que, ao receberem Johrei pela primeira vez e se curarem, dizem que a doença melhora com Johrei.",
+   "notes": "",
+   "pt_prefix": "25 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十六日",
+   "title_pt": "26 de dezembro",
+   "jp_anchor": "メシヤ会館の建築について、これをやっている椎野という人に、事務所の酒見という人が対談して、椎野の言うことにおもしろいことがあるので読ませます。そうしてその説明をします。",
+   "pt_anchor": "Sobre a construção do Templo Messiânico, uma pessoa do escritório, o Sr. Sakemi, entrevistou o Sr. Shiino, que está enca",
+   "notes": "",
+   "pt_prefix": "26 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十七日",
+   "title_pt": "27 de dezembro",
+   "jp_anchor": "いよいよ今年ももうおしまいですが、ちょうど去年の暮れの二十四日に裁判が片づいて、それから明るくなったわけで、今年に入ってからハワイ、アメリカに クワを入れたわけです。それに箱根の地上天国も完成したし、熱海のメシヤ会館もとにかく形だけはできま",
+   "pt_anchor": "Finalmente, este ano também está terminando. Exatamente no dia 24 do fim do ano passado, o julgamento foi resolvido, e a",
+   "notes": "",
+   "pt_prefix": "27 de dezembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

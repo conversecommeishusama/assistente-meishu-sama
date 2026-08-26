@@ -1,0 +1,54 @@
+{
+  "filename": "19490000-御光話録4号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 487 linhas / PT 408 linhas), do prefácio (poemas do Risshun) ao colofão final (nota sobre sarna). JP lido linha a linha e confrontado com o PT correspondente na mesma ordem, turno a turno (86 perguntas do Interlocutor / 87 falas de Meishu-Sama). Alerta prévio do orquestrador: este arquivo tinha histórico de Δ=1 (JP=86 vs PT=87 perguntas) numa auditoria anterior a 2026-07-04/05, hoje mostrando Δ=0 (86/86) — tratado como não confirmado até esta sessão verificar pessoalmente.",
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19490000-御光話録4号.txt\"",
+    "resultado_antes_das_correcoes": "PASS I=86/86 Δ=0 CJK=0",
+    "resultado_depois_das_correcoes": "PASS I=86/86 Δ=0 CJK=0",
+    "nota": "As duas correções reais aplicadas nesta sessão são de terminologia/metadado, não alteram contagem de turnos nem de linhas relevantes ao gate."
+  },
+  "investigacao_do_delta_historico": {
+    "achado": "O gate hoje mostra 86 marcadores '――' no JP, 86 'Interlocutor:' no PT e 87 'Meishu-Sama:' no PT — uma assimetria aparente entre falas de Meishu-Sama e perguntas do Interlocutor.",
+    "verificacao": "Localizada a única ocorrência de duas falas consecutivas de Meishu-Sama sem Interlocutor entre elas (linhas ~390 e ~394 do PT, por volta do trecho sobre o nome do jornal 'Hikari'). Conferido contra o JP (linhas ~472-477): a estrutura é legítima — no JP, após 'ああ、煙草にはありましたね。（笑声）' (fala de Meishu-Sama), há uma rubrica narrativa sem falante ('（「発刊の辞」を井上先生朗読）' — 'o Sr. Inoue lê o Prefácio da Publicação'), e só depois Meishu-Sama continua falando ('それから今度、飛騨の高山で……') sem que o Interlocutor tenha feito uma nova pergunta no meio. O PT reproduz exatamente essa estrutura (fala de Meishu-Sama → rubrica não-dialógica → nova fala de Meishu-Sama).",
+    "conclusao": "NÃO é o resíduo do bug antigo de Δ=1, nem perda de conteúdo mascarada, nem turno duplicado. É a contagem natural e correta do JP: 86 perguntas do Interlocutor mas 87 falas de Meishu-Sama, porque uma delas é uma continuação pós-rubrica sem pergunta nova. Nenhuma correção necessária neste ponto — o Δ=1 antigo (87 perguntas do Interlocutor no PT, não 87 falas de Meishu-Sama) parece ter sido efetivamente corrigido em sessão anterior sem deixar vestígio de perda ou duplicação mascarada; não foi encontrado nenhum sinal de bloco extra, turno duplicado, mesclagem indevida, cauda migrada ou perda de conteúdo em nenhum ponto do arquivo.",
+    "confianca": "alta — confirmado por leitura direta de ambos os trechos (JP e PT) ao redor do ponto exato, não por inferência de contagem"
+  },
+  "checklist_por_secao": [
+    {"secao": "Metadados/cabeçalho + poemas do Risshun (8 waka)", "jp_linhas": "1-32", "decisao": "ok — 8 poemas presentes, em ordem, sem perda (spec já havia corrigido em 2026-07-08 o anchor que antes descartava os poemas silenciosamente); corrigida inconsistência de metadado (ver correção 2)", "confianca": "alta"},
+    {"secao": "Sessão 8 de fevereiro — Johrei, Taiseikai, Dragão Divino/Japão-dragão, Espírito Secundário/crime Hirasawa, esquerda-direita, mancha espiritual (histórias da empregada/Hana Kame/Keigin), tuberculose, febre de crescimento, amamentação, ancestrais/túmulos, remédios e Johrei, soluço, descrença espiritual", "jp_linhas": "35-178", "decisao": "ok — todos os ~20 pares P&R conferidos, conteúdo completo, sem troca de falante, sem duplicação; corrigido erro de terminologia em 'montador de pinturas' (ver correção 1)", "confianca": "alta"},
+    {"secao": "Sessão 18 de fevereiro — espíritos divididos, altar budista (Oomoto/Daikomyo Nyorai/Mitsukoshi/Imperador Meiji), crescimento e espíritos, resfriado, leite materno, reprodução/prazer, infertilidade, Dragão Divino em mulheres, Hitonomichi, esperma/óvulo, hermafroditismo, gêmeos/trigêmeos, casamento consanguíneo, Ohikari ao deitar, masturbação, educação escolar/universitária, Truman/Dewey, Extinção do Budismo, discriminação/igualdade, constipação, meteoro, estrelas, pesadelos/cabelo branco/morte durante Johrei/gripe da Manchúria, Hinamatsuri/Tango no Sekku, Shichi-Go-San", "jp_linhas": "182-384", "decisao": "ok — todos os ~46 pares P&R conferidos; corrigido erro de terminologia grave em '中性' (ver correção 1, principal achado desta sessão)", "confianca": "alta"},
+    {"secao": "Sessão 28 de fevereiro — censo/longevidade feminina, sexto sentido, participação social da mulher, igualdade de direitos, idosos/jovens casais, ego/apego, Shinkō Zatsuwa, casos clínicos (transtorno mental, tuberculose, meningite infantil, espírito de rancor alimentar, gagueira, lábio leporino, icterícia), lançamento do jornal 'Hikari', debate radiofônico em Hida-Takayama, ensaios 'Sobre a religião maligna e supersticiosa' e 'Sobre a sarna'", "jp_linhas": "387-487", "decisao": "ok — todos os ~20 pares P&R conferidos, ambos os ensaios finais completos e com datas de colofão corretas (28 de fevereiro de 1949 = Showa 24, conversão correta), sem truncamento", "confianca": "alta"}
+  ],
+  "verificacao_terminologia_glossario": {
+    "termos_conferidos_ok": ["副霊→Espírito Secundário", "本霊→Espírito Primordial", "天狗→tengu", "五六七→Miroku", "御守り→Omamori (Ohikari)", "教修→Kyoshu", "信仰雑話→Shinkō Zatsuwa", "地上天国→Paraíso na Terra", "八衢→Yachimata (encruzilhada de oito direções)", "仏滅→Extinção do Budismo"],
+    "nota_curiosidade_jp": "Na fala sobre副霊/木霊 (linha ~75 do JP, '副霊ですね。勿論木霊は止めようとするけれども止まらないのです。'), '木霊' (kodama, espírito de árvore) não faz sentido no contexto — é quase certamente erro de OCR do JP para '本霊' (honrei, Espírito Primordial), termo que contrasta com 副霊 e é usado consistentemente no resto do livro. O PT já traduzia corretamente como 'Espírito Primordial', ou seja, interpretou o sentido pretendido apesar da corrupção no arquivo-fonte JP. Não é erro do PT; não se alterou o arquivo JP (fora do escopo desta tarefa) — apenas registrado para conhecimento."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "PT, dentro da sessão de 18 de fevereiro, item numerado (7) sobre 中性 (chuusei)",
+      "problema": "GRAVE — erro de terminologia teológica/médica: '中性' foi traduzido como 'bissexualidade', mas o conteúdo da resposta ('ter ambos os sexos, masculino e feminino... o médico pergunta se a pessoa quer ser homem ou mulher e remove o outro sexo') descreve claramente hermafroditismo/intersexo (uma condição física), não orientação sexual. 'Bissexualidade' em português é um conceito totalmente diferente (orientação sexual), conflando dois assuntos distintos. Viola o ponto 3 do checklist de verificação de terminologia teológica.",
+      "correcao": "Substituído 'bissexualidade'/'A bissexualidade é...' por 'hermafroditismo'/'O hermafroditismo é...' nas duas ocorrências (pergunta do Interlocutor e resposta de Meishu-Sama). Termo não constava em glossario_traducao.json (verificado); não foi adicionado ao glossário por não ter sido pedida essa decisão — apenas corrigida a tradução no arquivo de trabalho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Metadados de cabeçalho do ficheiro JP de trabalho (campo 'title_pt' na linha 11)",
+      "problema": "Inconsistência de metadado: o campo 'title_pt' do cabeçalho do ficheiro JP dizia 'Goshinsho nº 4', enquanto o ficheiro PT correspondente (title_pt e Title:) usa 'Gokōwa-roku nº 4' — conferido contra os outros 18 volumes da série 御光話録 (1号-19号 + Suplemento), todos com 'Gokōwa-roku nº N' de forma unânime nos dois ficheiros (JP e PT). 'Goshinsho nº 4' era um resíduo isolado, não usado em nenhum outro volume da série. Viola o ponto 7 do checklist (títulos/cabeçalhos/metadados consistentes).",
+      "correcao": "Campo 'title_pt' do cabeçalho JP corrigido de 'Goshinsho nº 4' para 'Gokōwa-roku nº 4', alinhando com a convenção usada em todos os outros 18 volumes da série e com o próprio ficheiro PT.",
+      "confianca": "alta"
+    }
+  ],
+  "correcao_formatacao_menor": {
+    "descricao": "'経師屋' (hyōgushi — artesão que monta pinturas/caligrafias em pergaminhos/quadros, na história de Keigin) estava traduzido como 'encadernador' (bookbinder), profissão diferente. Corrigido para 'montador de pinturas', mais fiel ao ofício descrito no contexto (envelhecer pinturas artificialmente com incenso para vendê-las caro). Não é erro teológico, apenas imprecisão de vocabulário de ofício histórico.",
+    "confianca": "média-alta"
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro (487 linhas JP / 408 linhas PT, 86 perguntas, 87 falas de Meishu-Sama) revisto linha a linha contra o JP, incluindo checagem específica do ponto exato do Δ=1 histórico (confirmado como estrutura legítima do JP, não bug remanescente). Nenhuma troca de falante, cláusula migrada, perda de conteúdo mascarada, corrupção textual ou duplicação de blocos encontrada em nenhum ponto do arquivo. Duas correções reais aplicadas (terminologia 中性→hermafroditismo; metadado title_pt do cabeçalho JP), mais uma correção menor de vocabulário de ofício (経師屋→montador de pinturas). Gate mecânico PASS antes e depois das correções (I=86/86 Δ=0 CJK=0). Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

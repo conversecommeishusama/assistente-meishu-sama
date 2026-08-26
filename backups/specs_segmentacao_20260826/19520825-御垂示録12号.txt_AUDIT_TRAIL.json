@@ -1,0 +1,263 @@
+{
+  "filename": "19520825-御垂示録12号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 487 linhas / PT 218→268 linhas após correções), 2 artigos por spec (prefácio + sessão única [1º de agosto]). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente, turno a turno, na mesma ordem, do início ao fim.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: a razão bruta JP 487/PT 218 (~2.2:1) mencionada no alerta inicial refletia principalmente quebras de linha por parágrafo no JP (parágrafos longos do JP quebrados em várias linhas de arquivo) vs. PT já fluido por parágrafo — não era, por si só, evidência de perda. A perda real encontrada foi por leitura de conteúdo, não pela razão.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 25,
+    "items_escalated_to_pendencias": 0
+  },
+  "achado_principal": {
+    "descricao": "Padrão sistemático e disseminado por todo o volume: falas curtas de Meishu-Sama (perguntas de esclarecimento de uma linha, sem aspas no JP, intercaladas entre falas mais longas do Interlocutor entre aspas) foram sistematicamente omitidas do PT. O PT preservava a resposta do Interlocutor à pergunta, mas não a pergunta curta de Meishu-Sama que a provocou — um padrão de perda que não altera a contagem de turnos citados (aspas), porque as falas removidas eram justamente as não-citadas, tornando o problema invisível a qualquer gate por contagem de parágrafos entre aspas.",
+    "consequencia": "24 turnos de Meishu-Sama (23 perguntas curtas + 1 troca inicial de abertura com 4 turnos) estavam ausentes do PT antes desta revisão, distribuídos ao longo de todo o arquivo (não concentrados em um só trecho), confirmando que leitura por amostragem não teria pego a maioria dos casos."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Abertura da sessão [1º de agosto], antes do primeiro parágrafo longo sobre 'A Criação da Civilização'",
+      "problema": "Troca inicial inteira ausente do PT: 4 turnos (Interlocutor: 'este ano está sendo o mais quente'; Meishu: confirma e cita aumento de disenteria; Interlocutor: 'recorde todo ano'; Meishu: comentário sobre Olimpíadas vs. recordes mundiais de epidemia). Além disso, o cabeçalho '御垂示録第十二号（昭和二十七年）' (repetição do título antes do corpo, presente no JP linha 24) também estava ausente, e o marcador de data '[1º de agosto]' vinha colado ao parágrafo seguinte sem quebra de linha.",
+      "correcao": "Inserido o cabeçalho repetido 'Registro de Divina Inspiração nº 12 (ano 27 da Era Showa)' em linha própria, separado o marcador '[1º de agosto]' em linha própria, e traduzidos e inseridos os 4 turnos da troca inicial (JP linhas 28-34).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "JP linha 92 (episódio da família Mori / Hachidai Ryuo)",
+      "problema": "Pergunta de Meishu-Sama ausente: '二人が出て、残っているほうが、そうなったのですか。' (Os dois saíram, foi o que ficou quem adoeceu?)",
+      "correcao": "Traduzida e inserida antes do turno do Interlocutor 'Sim. Agora a irmã mais nova...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "JP linha 96",
+      "problema": "Pergunta de Meishu-Sama ausente: '親父はいつ入信したのですか。'",
+      "correcao": "Inserida: 'Existem casas assim. Quando foi que o pai se converteu?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "JP linha 104",
+      "problema": "Pergunta de Meishu-Sama ausente sobre esposa do convertido.",
+      "correcao": "Inserida: 'Deve haver algo bastante espiritual aí. Ele tem esposa?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "JP linha 108",
+      "problema": "Pergunta ausente sobre número de filhos.",
+      "correcao": "Inserida: 'Quantos filhos mais há?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "JP linha 112",
+      "problema": "Pergunta ausente sobre número de doentes.",
+      "correcao": "Inserida: 'Há apenas uma pessoa doente?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "JP linha 116",
+      "problema": "Pergunta ausente sobre adoção do filho falecido.",
+      "correcao": "Inserida: 'O anterior também era filho adotivo?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "JP linha 128",
+      "problema": "Pergunta ausente ('いつからですか。') sobre desde quando o Hachidai Ryuo está no altar.",
+      "correcao": "Inserida: 'Desde quando?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao": "JP linha 132",
+      "problema": "Fala de Meishu-Sama ausente sobre descarte dos objetos e paradeiro dos filhos que saíram de casa.",
+      "correcao": "Inserida: 'Então já se passou mais de um ano. Nesse caso, pode-se descartá-los. E quanto aos que saíram de casa, sabem o paradeiro deles?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao": "JP linha 136",
+      "problema": "Fala de Meishu-Sama ausente confirmando morte do irmão em setembro e perguntando sobre a irmã.",
+      "correcao": "Inserida: 'O irmão mais novo faleceu em setembro, e a irmã mais nova dele veio ajudar. Isso também é estranho?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao": "JP linha 149 (caso da pessoa não convertida com dormência)",
+      "problema": "Pergunta ausente sobre injeções prévias.",
+      "correcao": "Inserida: 'Já tomou injeções até agora?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao": "JP linha 153",
+      "problema": "Comentário/pergunta ausente de Meishu-Sama.",
+      "correcao": "Inserida: 'Nunca ouvi falar disso. Só fica vermelho, sem dor nem coceira?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "localizacao": "JP linha 207 (caso de hidrocefalia)",
+      "problema": "Pergunta ausente sobre tamanho da cabeça.",
+      "correcao": "Inserida: 'A cabeça é grande?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao": "JP linha 243 (caso do gato que traz cobra)",
+      "problema": "Comentário/pergunta ausente de Meishu-Sama.",
+      "correcao": "Inserida: 'Ou seja, gosta de cobras. Esse gato não come a cobra?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "localizacao": "JP linha 247",
+      "problema": "Comentário/pergunta ausente de Meishu-Sama sobre a cobra estar morta.",
+      "correcao": "Inserida: 'Deve realmente comer. Não é que apenas mate a cobra, não é? Nessa hora a cobra estava morta?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "localizacao": "JP linha 298 (estátua de Kannon)",
+      "problema": "Pergunta ausente sobre material/idade da estátua.",
+      "correcao": "Inserida: 'É esculpida em madeira? É bem antiga?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 17,
+      "localizacao": "JP linha 333 (caso dos 9 filhos cegos)",
+      "problema": "Fala grave de Meishu-Sama ausente ('それはたいへんだ。怨みどころではない。祖先がたいへんな罪を犯している。どっちの目ですか。') — conteúdo doutrinariamente relevante (atribuição de pecado ancestral), não apenas formalidade.",
+      "correcao": "Inserida: 'Isso é grave. Não se trata apenas de rancor. Um antepassado cometeu um pecado muito grande. Qual dos olhos?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 18,
+      "localizacao": "JP linha 374 (caso da bucha vegetal / Hachidai Ryuo da família Mori)",
+      "problema": "Pergunta ausente.",
+      "correcao": "Inserida: 'É a árvore que cresce?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 19,
+      "localizacao": "JP linha 395 (biombos que tremem)",
+      "problema": "Pergunta ausente sobre horário fixo e desde quando.",
+      "correcao": "Inserida: 'Que estranho. O horário é fixo? Desde quando, aproximadamente?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 20,
+      "localizacao": "JP linha 426 (espíritos animais ocidentais)",
+      "problema": "Pergunta ausente sobre tengu.",
+      "correcao": "Inserida: 'Deve ser isso. É basicamente igual ao Japão. E quanto ao tengu?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 21,
+      "localizacao": "PT ~linha 171 (estátua de Kannon, 1 sun 8 bu, ouro)",
+      "problema": "Truncamento pré-existente (não relacionado às faltas de turno acima): 'a maioria é de ouro de 1 sol e 8  As de madeira são raras.' — a unidade 'bu' e o ponto final da frase haviam sido cortados, fundindo duas frases (JP linha 294: '一寸八分の金のが多いです。木のは少ないです。').",
+      "correcao": "Corrigido para: 'a maioria é de ouro de 1 sol e 8 bu. As de madeira são raras.'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + título repetido",
+      "jp_linhas": "1-24",
+      "decisao": "corrigido - cabeçalho repetido estava ausente, restaurado",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão [1º de agosto], abertura (troca sobre calor/disenteria/Olimpíadas + monólogo sobre 'A Criação da Civilização')",
+      "jp_linhas": "26-39",
+      "decisao": "corrigido - 4 turnos iniciais ausentes, inseridos",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Diálogo sobre luz da palavra, médicos, Hidrazida, Dr. Yokochi",
+      "jp_linhas": "41-87",
+      "decisao": "ok - nenhuma correção necessária",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Caso da família Mori / Hachidai Ryuo / Fushimi Inari",
+      "jp_linhas": "90-144",
+      "decisao": "corrigido - 9 turnos curtos de Meishu-Sama ausentes, todos restaurados (o trecho mais afetado do arquivo)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Casos médicos diversos (dormência, metanol, icterícia, sarna, dores, hidrocefalia, gagueira/'sa', conversão religiosa, andar para trás)",
+      "jp_linhas": "147-238",
+      "decisao": "corrigido - 3 turnos ausentes restaurados (injeções, vermelhidão, tamanho da cabeça)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Gato que come cobra, serraria/árvores, oferendas",
+      "jp_linhas": "241-280",
+      "decisao": "corrigido - 2 turnos ausentes restaurados",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ofertas no altar, estátua de Kannon/Asakusa",
+      "jp_linhas": "283-315",
+      "decisao": "corrigido - 1 turno ausente restaurado + 1 truncamento pré-existente corrigido",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Tipo sanguíneo/linhagem espiritual, 9 filhos cegos, maldição de 7 gerações, ausência de pelos, leque com serpente/falência",
+      "jp_linhas": "318-365",
+      "decisao": "corrigido - 1 turno grave ausente restaurado (caso dos filhos cegos)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Bucha vegetal/Hachidai Ryuo, biombos que tremem, espíritos travessos, tengu, ave ootori",
+      "jp_linhas": "372-452",
+      "decisao": "corrigido - 3 turnos ausentes restaurados",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Deus da terra, cores dos deuses, Koumanjikai, Partido Comunista, Príncipe Kaya, cor branca/dourada (fechamento)",
+      "jp_linhas": "455-487",
+      "decisao": "ok - nenhuma correção necessária, conferido linha a linha até o final do arquivo",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_negativas": {
+    "duplicacao_atsuta": "Não encontrada neste arquivo (padrão citado na regra para outros volumes 9号/13号/17号 e Gokōwa 12号 — não se aplica a este Gosuiji-roku 12号; buscado '熱田' no JP, zero ocorrências).",
+    "troca_de_falante": "Não encontrada — em todos os pontos revisados, a atribuição Interlocutor (aspas) / Meishu-Sama (sem aspas) do PT corresponde à do JP.",
+    "corrupcao_de_nomes_proprios": "Não encontrada — nomes conferidos: 森譲治/Joji Mori, 中島久萬吉/Nakashima Kumakichi, 玉村方久斗/Tamamura Hokuto, 賀陽宮/Príncipe Kaya, 至聖先天老祖/Shisei Senten Roso, 国常立尊/Kunitokotachi-no-mikoto — todos consistentes JP↔PT.",
+    "cjk_residual": "Nenhum encontrado no corpo do PT após as correções.",
+    "monolito": "Não havia monólito estrutural neste arquivo — a segmentação turno-a-turno (aspas=Interlocutor, sem aspas=Meishu-Sama) já estava correta; o problema era omissão seletiva de turnos curtos de Meishu-Sama, não fusão de parágrafos."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 25 correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "date": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado ao family Gosuiji-roku: no JP deste family, `「pergunta entre aspas」` = Interlocutor; prosa corrida sem aspas = Meishu-Sama. Etapa A: mapa de turnos construído lendo o JP inteiro (linhas 26-487, sessão única `［八月一日］`) linha a linha por script de apoio, com verificação manual dos pontos de dúvida. Etapa B: confirmação por contagem/alinhamento parágrafo a parágrafo contra o PT antes de tocar no arquivo. Etapa C: prefixos aplicados programaticamente preservando texto e ordem.",
+    "etapa_a_mapa_jp": {
+      "metodo_deteccao": "parágrafo (linha não vazia) iniciado por `「` = Interlocutor; caso contrário = Meishu-Sama",
+      "total_paragrafos_jp": 217,
+      "jp_interlocutor": 106,
+      "jp_meishu_sama": 111,
+      "observacao": "5 turnos de Meishu-Sama se estendem por mais de um parágrafo físico consecutivo (JP linhas 34-39, 4 parágrafos — troca sobre Olimpíadas/epidemias seguida do monólogo sobre 'A Criação da Civilização'/Bíblia de Jeová/Bramanismo/mundo do dia; linhas 310-311, 2 parágrafos — história do Kannon de Asakusa/bisavô penhorista; linhas 359-360, 2 parágrafos — falência e espíritos que se apossam de pinturas de serpente; linhas 364-365, 2 parágrafos — luz de Komyo-Nyorai e desejo de reencarnar; linhas 434-435, 2 parágrafos — tengu no Japão/China e ausência de travessuras de raposa no Ocidente); cada parágrafo físico recebeu seu próprio prefixo `Meishu-Sama:`, conforme convenção já estabelecida na série (precedente: 19520515-御垂示録9号.txt). Também há uma sequência de 3 parágrafos consecutivos de Interlocutor sem resposta intercalada de Meishu-Sama (JP linhas 428-432, sobre o nome 'tengu' no Ocidente) — mantida como está por refletir o próprio JP (turnos distintos, não fusão de parágrafo)."
+    },
+    "etapa_b_confirmacao": {
+      "total_paragrafos_pt_pre_rotulagem": 217,
+      "delta_vs_jp": "217=217, paridade exata de parágrafos, mesma ordem. Heurística automática por caractere de abertura (aspas retas \" ou curvas “) classificou 1 parágrafo do PT como falso positivo Interlocutor (PT linha 38: parágrafo de Meishu-Sama que abre citando o título 'A Criação da Civilização' entre aspas, sem ser fala do Interlocutor) — divergência não estrutural, resolvida usando o mapa JP (linha correspondente 今度の「文明の創造」は..., que não abre com 「, logo Meishu-Sama) como fonte de verdade; confirmado por leitura do parágrafo completo antes de rotular.",
+      "decisao": "Mapa JP confirmado 1:1 com a estrutura já existente no PT (a auditoria semântica linha a linha registrada acima neste ficheiro já havia corrigido as divergências reais de conteúdo em 2026-07-07); nenhuma correção estrutural adicional foi necessária para a rotulagem, apenas a resolução do único falso positivo da heurística de detecção."
+    },
+    "etapa_c_aplicacao": {
+      "acao": "Prefixo `Interlocutor: ` ou `Meishu-Sama: ` aplicado programaticamente a cada um dos 217 parágrafos de diálogo existentes no PT (linha 29 em diante), na ordem em que já se encontravam, sem reordenar nem reescrever conteúdo. Cabeçalho de sessão `[1º de agosto]` (linha 27) e bloco de metadados/título/prefácio (linhas 1-25) preservados sem rótulo.",
+      "resultado": "Interlocutor: 106 parágrafos; Meishu-Sama: 111 parágrafos. Nenhum travessão `—` sobrando no início de linha (checado)."
+    },
+    "problemas_estruturais_encontrados_nesta_etapa": "Nenhum problema novo além do falso positivo de heurística já descrito na Etapa B (resolvido sem alteração de conteúdo). Estrutura já validada pela auditoria semântica anterior (25 correções registradas acima); a rotulagem apenas confirmou a paridade parágrafo a parágrafo e aplicou os prefixos.",
+    "approved_alterado": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "filename": "19510805-新しき暴力.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 89 linhas / PT — 1 artigo único, profile monolith, 'はしがき' de 法難手記 reaproveitado como prefácio do livro 新しき暴力). Todo o corpo do JP foi lido e confrontado sentença a sentença com o PT correspondente, na mesma ordem.",
+  "pre_existing_context": "Sinal de alerta inicial: JP com 89 linhas físicas vs PT com 25 linhas físicas (razão ~3.5:1), padrão associado em livros irmãos a colapso de formatação com perda real de conteúdo. Investigado a fundo antes de qualquer correção.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "diagnostico_razao_linhas": {
+    "causa_real": "Falso positivo de métrica agregada, exatamente o tipo de armadilha que a regra 'Δ=0 nunca é suficiente' descreve. O JP tem 89 'linhas' porque o ficheiro de origem é texto com quebra de linha física curta (tipo OCR, ~20-30 caracteres/linha) e ainda contém 2 linhas de número de página soltas ('1997', '1998') no meio do corpo — não são 89 unidades de conteúdo, é uma única peça de prosa contínua (o prefácio 'はしがき' de 法難手記, republicado como prefácio do livro 新しき暴力) com ~6 parágrafos reais. O PT, por outro lado, tinha o corpo inteiro colapsado em UMA única linha física (0 quebras de parágrafo), o que gerou as 25 linhas do ficheiro (na maioria cabeçalho/metadados) contra as 89 do JP. Não há relação entre a razão de linhas e conteúdo perdido neste caso — verificado por comparação frase a frase completa (ver checklist_por_bloco).",
+    "conteudo": "Confirmado que TODO o conteúdo do JP (6 parágrafos temáticos: A-propósito do registro e apelo às autoridades; B-a investigação de 22 dias e o princípio da lei; C-conclusão do incidente e recriminação/gratidão; D-por que 'Hōnan' remete ao budismo, não à lei atual; E-por que este caso é '法律難' e não '法難', com o exemplo de Nakayama Miki; F-o propósito de corrigir a cobertura jornalística e fechamento com a data) está presente e completo no PT, sem truncamento, sem frase cortada, sem cauda em falta.",
+    "defeito_real_encontrado": "Paragrafação (checklist ponto 6): o PT estava inteiramente colapsado numa única linha/parágrafo corrido, sem nenhuma quebra correspondente às 6 divisões temáticas do JP (confirmadas pelos mesmos marcadores de início de parágrafo usados no livro irmão 19501030-法難手記.txt, que preserva a indentação: 今度、私が.../ しかるに.../ この著の... — o ficheiro de trabalho do JP em 19510805 perdeu essa indentação na extração, mas os mesmos marcadores de conteúdo aparecem intactos)."
+  },
+  "summary": {
+    "articles_in_spec": 1,
+    "articles_reviewed": 1,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "corpo inteiro do artigo (linha 25 original, agora linhas 25-37)",
+      "problema": "Colapso de paragrafação: as 6 divisões temáticas do JP (checklist ponto 1 - subdivisão, e ponto 6 - paragrafação 1:1) estavam todas amassadas num único parágrafo/linha corrida no PT, sem nenhuma quebra.",
+      "correcao": "Reformatado em 6 parágrafos com quebra de linha em branco entre eles, nos mesmos pontos de transição temática do JP (confirmados por comparação com os marcadores de parágrafo preservados no livro irmão 19501030-法難手記.txt: 今度、私が二十二日間... / しかるに、今回の事件に当って... / 此著の題名を『法難手記』としたが... / そうして私の今回の事件は... / 次に、本著の目的に就て...), e a data final 'Agosto de 1950' isolada em linha própria, como assinatura, correspondendo à linha 89 do JP ('昭和二十五年八月') separada do corpo. Nenhuma palavra do texto já traduzido foi alterada nesta correção — apenas a estrutura de parágrafo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "parágrafo F (agora linha 35), 'como uma furo jornalístico'",
+      "problema": "Erro de concordância de género: 'furo' é substantivo masculino em português ('o furo', 'um furo jornalístico' = furo de reportagem/exclusiva), mas estava com artigo feminino 'uma'.",
+      "correcao": "'como um furo jornalístico'.",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_sem_correcao": [
+    {
+      "item": "Bloco de citação bibliográfica entre divisores (JP linhas 21-26: 『法難手記』,昭和二十五年十月三十日... p142～ ... 『新しき暴力...』(杉並書房,19510805))",
+      "verificacao": "Não é conteúdo autoral (prosa do Mestre), é nota editorial/bibliográfica de referência cruzada. O PT reflete a mesma convenção usada no livro irmão 19501030-法難手記.txt (linha de subtítulo 'Outras Fontes, publicado em 30 de outubro do ano 25 da Era Showa (1950)'), e a informação de data/fonte do livro atual já está capturada nos campos de metadados do próprio ficheiro (sort_date, Date, title_jp). Não tratado como conteúdo em falta.",
+      "decisao": "ok, sem alteração"
+    },
+    {
+      "item": "CJK residual no corpo PT",
+      "verificacao": "Varredura automática (script) confirmou zero caracteres CJK no corpo do PT após a correção de paragrafação.",
+      "decisao": "ok"
+    },
+    {
+      "item": "Título/cabeçalho do artigo (title_pt: '19510805 - Nova Violencia')",
+      "verificacao": "Título de trabalho (placeholder convencional para ficheiros monolith), consistente com o padrão usado noutros volumes monolith do acervo. Não é o título formal do prefácio JP ('法難手記 はしがき'), mas segue a mesma convenção de nomeação de ficheiro de trabalho já em uso no corpus — não alterado."
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Parágrafo A — propósito do registro, apelo às autoridades (JP linhas 27-38)", "decisao": "ok, sem perda de conteúdo", "confianca": "alta"},
+    {"bloco": "Parágrafo B — a investigação de 22 dias e o princípio da lei (JP linhas 39-49)", "decisao": "ok, sem perda de conteúdo", "confianca": "alta"},
+    {"bloco": "Parágrafo C — conclusão do incidente, autocrítica e gratidão (JP linhas 50-65)", "decisao": "ok, sem perda de conteúdo", "confianca": "alta"},
+    {"bloco": "Parágrafo D — por que 'Hōnan' (法難) remete ao budismo, não à lei atual (JP linhas 66-72)", "decisao": "ok, sem perda de conteúdo", "confianca": "alta"},
+    {"bloco": "Parágrafo E — por que este caso é '法律難' e não '法難'; exemplo de Nakayama Miki (JP linhas 73-80)", "decisao": "ok, sem perda de conteúdo", "confianca": "alta"},
+    {"bloco": "Parágrafo F — propósito de corrigir a cobertura jornalística; fechamento e data (JP linhas 81-89)", "decisao": "ok, corrigido erro de concordância ('um furo' vs 'uma furo')", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Conteúdo integral confirmado por comparação frase a frase com o JP. Único defeito real era estrutural (paragrafação colapsada em parágrafo único), corrigido reformatando em 6 parágrafos correspondentes ao JP, mais uma correção pontual de concordância de género. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

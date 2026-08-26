@@ -1,0 +1,122 @@
+{
+ "filename": "19510225 - Mioshie-shū nº 6.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 12→12. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 12,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』6号、昭和27(1952)年2月25日発行",
+   "pt_anchor": "Mioshie-shū nº 6",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二日",
+   "title_pt": "2 de janeiro",
+   "jp_anchor": "お正月ですから、今日は話だけにしようと思います。今年は去年と違って、何だか穏やかな――あんまり心配になるような事がないような気分がするようです。 まあ――誰も、そういうような感じがするようですけれども、第一そういう気分がするという事は――時",
+   "pt_anchor": "[2 de janeiro]",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[2º de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "[2 de janeiro]"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月三日",
+   "title_pt": "3 de janeiro",
+   "jp_anchor": "正月だけは、原稿なしにして話だけにしようと思って、昨日も一昨日も、別に決まらない話で、思いついたままを話しました。今日も思いついたままのお話をし ようと思ってます。何だか今年のお正月は明るいほどにはいかなくても、何かのんびりしたような気分が",
+   "pt_anchor": "[3 de janeiro]",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[3º de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "[3 de janeiro]"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月五日",
+   "title_pt": "5 de janeiro",
+   "jp_anchor": "今日は割に新しい信者さんが多いようですから、そういった話をしようと思ってます――メシヤ教というのは、単に宗教とは言えないんですね。宗教よりも、 ずっと大きなものです。つまり、宗教はメシヤ教の一部にあるわけですね。だから、今までの宗教でも、こ",
+   "pt_anchor": "5 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[5 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "5 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月六日",
+   "title_pt": "6 de janeiro",
+   "jp_anchor": "話をする前にちょっと、今車の中で気のついたことがあるので――あまり、滅多に話をしないことを――ちょっと為になる話と思うので、その話を先にしますが ――私はよく映画を見ますが、その時に――アメリカ映画ですね。その言葉が字幕に書いてありますね、",
+   "pt_anchor": "6 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[6 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "6 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月七日",
+   "title_pt": "7 de janeiro",
+   "jp_anchor": "五、六、七は比較的新しい人が多いそうですから、そのように――適当したお話をしようと思ってます。メシヤ教信者になって、一番知っておかなければならな い事は、メシヤ教というから、ちょっと宗教のように思いますけれども、本当から言うと、宗教だけとも",
+   "pt_anchor": "7 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[7 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "7 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十五日",
+   "title_pt": "15 de janeiro",
+   "jp_anchor": "Interlocutor: （お伺）淋巴の機能と血液および毒素との関係につき御教えをお願い申し上げます。心臓と肝臓というような密接な関係があるように想像されますが。",
+   "pt_anchor": "15 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十六日",
+   "title_pt": "16 de janeiro",
+   "jp_anchor": "今日は六ずくめです。十六日で、質問事項が六名六項。参拝者が三百六十六名。六でもないじゃなくて、六〔碌〕でもあるんだから良いがね。",
+   "pt_anchor": "16 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[16 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "16 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十七日",
+   "title_pt": "17 de janeiro",
+   "jp_anchor": "（お伺）笠井末男。昭和二十四年十二月、精神分裂症にて入院し、電撃療法を行ない一度は収まりましたが、翌年再発し再入院いたし、頭が変でありましたが、 電撃療法はいたしませず、自然に任せておりましたところ、やや快方に向かいましたが、赤痢を併発し衰",
+   "pt_anchor": "17 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[17 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "17 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十五日",
+   "title_pt": "25 de janeiro",
+   "jp_anchor": "Interlocutor: （お伺）西本文子（三十五歳）の姑（六十二歳）は、昨年二月ごろより胃が悪く、内仕事は悪いながらもボツボツいたしておりましたが、だんだん痛みを感ずる ようになり、食欲もなくなりましたので、四月に病院に行き、レントゲン",
+   "pt_anchor": "25 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十六日",
+   "title_pt": "26 de janeiro",
+   "jp_anchor": "（お伺）本年二十七歳の女、昨年十二月、左手人差し指にひょう疽の御浄化をいただき、あまりの激痛苦に御霊紙をいただき、四日間教会にて御浄霊いただき、 御守護のお願いをいたしましてより、漸次快方に向かいました。一月になり第一関節より爪もろともに取",
+   "pt_anchor": "26 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[26 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "26 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十七日",
+   "title_pt": "27 de janeiro",
+   "jp_anchor": "Interlocutor: （お伺）長井ハルエ（未入信。六十一歳）昭和二十四年子宮癌で入院、手遅れとのことで手術せず、ラジウム十回、レントゲン二十回、入院六十五日間にペニ シリン百三十本、ホルモン二十本を注射し、退院後約一カ年間にビタミン注",
+   "pt_anchor": "27 de janeiro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[27 de janeiro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "27 de janeiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

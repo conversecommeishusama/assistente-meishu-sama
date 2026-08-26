@@ -1,0 +1,122 @@
+{
+ "filename": "19530215 - Mioshie-shū nº 18.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 13→12. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 13,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第十八号",
+   "pt_anchor": "Mioshie-shū nº 18",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二日",
+   "title_pt": "2 de janeiro",
+   "jp_anchor": "知ってのとおり、私の事件も暮れの二十四日にようやく片づいたので、久しぶりに晴れ晴れしたお正月を迎えたような気がしました。気持ちがいいのと、それからいろいろな御神業の模様も、ちょうど春になってこれからそういう具合になっていくのも時節のためです",
+   "pt_anchor": "Como vocês sabem, meu caso finalmente foi resolvido no dia 24 do mês passado, e por isso senti como se estivesse recebendo, depois de muito tempo, um Ano Novo radiante.",
+   "notes": "",
+   "pt_prefix": "2 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月三日",
+   "title_pt": "3 de janeiro",
+   "jp_anchor": "私は今年のお正月は久しぶりで朗らかです。というのは、去年の正月も一昨年の正月もまだ裁判が決定してなかったので、それが始終胸にかたまりみたいに なって、なんだか晴れ晴れしなかったのです。私もこの年になるまで苦しいこともいろいろありましたが、今",
+   "pt_anchor": "Este Ano Novo, pela primeira vez em muito tempo, sinto-me alegre. No Ano Novo passado e no anterior, o julgamento ainda não havia sido decidido,",
+   "notes": "",
+   "pt_prefix": "3 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月五日",
+   "title_pt": "5 de janeiro",
+   "jp_anchor": "秩父宮様がお亡くなりになったことについて思い出されることは、私は確か二度か三度頼まれたことがあるのです。それで一度は話がほとんど決まったのです が、フッと消えてしまったのです。それはああいう人は周囲がなかなか警戒してますから、医学以外のこと",
+   "pt_anchor": "Lembrando-me do falecimento do Príncipe Chichibu, recordo que fui procurado, se não me engano, duas ou três vezes. Em uma ocasião o acordo estava quase fechado, mas de repente tudo se desfez — pessoas como ele têm uma grande vigilância ao redor, e por isso são extremamente cautelosas com qualquer coisa que não seja da medicina. Eu já achava que não daria certo, e de fato não deu. Pessoas com uma posição social tão elevada são, nesse sentido, infelizes: aqueles que poderiam ser salvos acabam não sendo salvos. Quanto à doença do Príncipe, no",
+   "notes": "",
+   "pt_prefix": "5 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月六日",
+   "title_pt": "6 de janeiro",
+   "jp_anchor": "今度秩父宮様がお亡くなりになったことで、私は思い出したのは、あの方に二度か三度頼まれたことがあるのです。無論私は快諾して、話はかなり進んだとこ ろまでいきましたが、それっきり音沙汰がなくなったのです。そういうことがよくあるのです。かなり話が",
+   "pt_anchor": "Por ocasião do falecimento do Príncipe Chichibu, lembrei-me de que fui procurado por Sua Alteza duas ou três vezes.",
+   "notes": "",
+   "pt_prefix": "6 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月七日",
+   "title_pt": "7 de janeiro",
+   "jp_anchor": "最初にちょっと注意したいことは、浄霊のやり方にどうもまだ力がはいるようなのです。その力がはいるというのは「一生懸命」にやるからです。この「一生 懸命」がいけないのです。しかも急病とか患者が苦しんでいる場合には早くなおしてやろうとしてよけいに",
+   "pt_anchor": "Primeiramente, quero chamar a atenção para o seguinte: ainda parece haver força sendo colocada na maneira de fazer o Johrei.",
+   "notes": "",
+   "pt_prefix": "7 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十五日",
+   "title_pt": "15 de janeiro",
+   "jp_anchor": "社会的にそうとう立派なある人が、この間の判決をみて“なぜ控訴しないか”と言うのです。それで私は“控訴してもどうせ勝てるわけではないし、勝ったとし たところで、たいしたおもしろ味がないから止した。私はもっと大きく仇を討ってやろうと思っている”",
+   "pt_anchor": "Uma pessoa socialmente bastante distinta, ao ver a sentença do outro dia, perguntou: \"Por que você não apela?\"",
+   "notes": "",
+   "pt_prefix": "15 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十六日",
+   "title_pt": "16 de janeiro",
+   "jp_anchor": "今非常に風邪がはやってますが、私も四、五日前から風邪を引いて一晩かなり苦しみました。今度の私の風邪は非常に水洟（みずっぱな）になるのです。どこ から出たかというと、頭全体に薬毒が残っているのですが、これは前の歯の薬です。三十七年前に歯につけ",
+   "pt_anchor": "Atualmente há uma grande epidemia de resfriados. Também peguei um resfriado há quatro ou cinco dias",
+   "notes": "",
+   "pt_prefix": "16 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月十七日",
+   "title_pt": "17 de janeiro",
+   "jp_anchor": "私が今度の判決で控訴しなかったので、この間そうとうの偉い人が“どういうわけか、した方がいいではありませんか”と言うのです。それで私は“控訴した ところで駄目だし、万一勝ったところで小さな問題であって、それよりかほうっておいた方が、仇討ちにし",
+   "pt_anchor": "Como não recorri da sentença desta vez, uma pessoa bastante importante veio me perguntar: \"Por que não? Não seria melhor",
+   "notes": "",
+   "pt_prefix": "17 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十五日",
+   "title_pt": "25 de janeiro",
+   "jp_anchor": "随分風邪が流行してますが、特に信者の人は溶けやすいから風邪を引きやすいのです。ところで今風邪を引かない人は、健康でもなんでもないので、つまりよ く固まっている人なのです。こういう人の方が、溶け始めると急激ですから、かえって危ないのです。です",
+   "pt_anchor": "A gripe está bastante disseminada, mas os seguidores, por serem mais \"derretíveis\", pegam gripe com mais facilidade.",
+   "notes": "",
+   "pt_prefix": "25 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十六日",
+   "title_pt": "26 de janeiro",
+   "jp_anchor": "風邪がはやってますが、私も流行の仲間はずれにはなれないので、十二日から風邪を引いてまだすっかりなおりません。しかしもうあらかたよくなってます。 今度の風邪のしつこいのには驚いてしまいました。しかし私は風邪を引いても、仕事や生活の方はべつに変",
+   "pt_anchor": "Os resfriados estão grassando, e eu também não pude ficar de fora da onda: peguei um no dia 12 e ainda não me recuperei completamente",
+   "notes": "",
+   "pt_prefix": "26 de janeiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "一月二十七日",
+   "title_pt": "27 de janeiro",
+   "jp_anchor": "今風邪で大騒ぎをやってますが、私も十二日から風邪を引いて、まだすっかりとはいきません。けれども、することはふだんと違いません。一晩だけは仕事も しないでゴロゴロしてましたが、あとはふだんと変わりません。だから、信者でない人は驚いてますが、こ",
+   "pt_anchor": "Agora há um grande alvoroço com a gripe, e eu também a peguei no dia 12, ainda sem me recuperar completamente.",
+   "notes": "",
+   "pt_prefix": "27 de janeiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:54Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,51 @@
+{
+  "filename": "19500921-地上天国出来るまで.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 85 linhas / PT ~35 linhas, spec profile 'monolith', 1 artigo único). Todo o JP foi lido linha a linha (cabeçalho, 10 poemas/waka do festival, ensaio em prosa, colofão) e confrontado com o PT correspondente na mesma ordem.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha, conforme 'Δ=0 é necessário, nunca suficiente'.",
+  "summary": {
+    "articles_in_spec": 1,
+    "articles_reviewed": 1,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_jp": "linhas 27-37 (waka 1 a 4, antes do trecho '事し思ほゆ')",
+      "localizacao_pt_antes": "início do corpo do PT (linha 25 antiga), que começava abruptamente em 'isso me faz refletir.'",
+      "problema": "GRAVE — completude (checklist ponto 2/4): os 3 primeiros waka inteiros do poema cerimonial ('地上天国 弥々成りて目出度も...', 'いと小さき 型にしあれど大神の...', '世を挙げて 讃えん時ぞ待たるなり...') e a primeira metade do 4º waka ('天をます 大樹も双葉のいと小さき...') estavam completamente ausentes da tradução. O PT pulava direto para a cauda do 4º waka ('事し思ほゆ' = 'isso me faz refletir'), como se o poema começasse ali.",
+      "correcao": "Traduzidos e inseridos os 3 waka faltantes mais o início do 4º, no mesmo registro estilístico já usado nos waka 5-10 existentes (frase descritiva única por waka, sem 1ª pessoa): 'O Paraíso na Terra, finalmente concretizado, é motivo de júbilo; celebra-se e festeja-se o festival de hoje. Ainda que seja um modelo muito pequeno, pela bênção e graça do Grande Deus, o paraíso veio a se concretizar. Aguarda-se o tempo em que o mundo inteiro há de louvar, quando esta Obra Divina se tornar conhecida no mundo. Até a grande árvore que se ergue aos céus foi, um dia, um broto de duas folhas tão pequeno — isso me faz refletir.' (a cauda final já existente foi preservada, apenas prefixada com a abertura correta do waco 4).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_jp": "linha 25 ('明麿', assinatura/pseudônimo poético que antecede a sequência de waka, distinta de '自観'/Jikan que assina o ensaio em prosa e o colofão)",
+      "localizacao_pt_antes": "ausente — o PT ia direto da data de publicação para o texto dos poemas",
+      "problema": "Checklist ponto 7 (títulos/cabeçalhos): faltava a linha de assinatura do poema. Verificado romanização já estabelecida no corpus: '明麿' = 'Akimaro' (confirmado em 19481208-御光話録1号.txt / 19480101-御光話録（補）.txt, onde Meishu-Sama explica que 'Akimaro' é o nome de suas composições poéticas, homenagem ao nome 'Akihito' do Príncipe Herdeiro). Também existe um volume inteiro '自観叢書第8篇『明麿近詠集』' usando a mesma grafia.",
+      "correcao": "Inserida a linha 'Akimaro' como assinatura autônoma antes do bloco de poemas, espelhando a posição estrutural do JP (entre a data de publicação e o primeiro waka).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "abertura do ensaio em prosa ('...única obra da nossa nossa Igreja.')",
+      "problema": "Checklist ponto 8 (outros/erro de digitação): palavra duplicada 'nossa nossa' sem correspondente na estrutura do JP (que tem apenas '本教' = 'nossa/esta religião', uma única vez).",
+      "correcao": "Removida a duplicação: '...única obra da nossa Igreja.'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Cabeçalho/título/data de publicação (JP linhas 1-24)", "decisao": "ok", "confianca": "alta", "notas": "Título, subtítulo Hakone Gōra Shinsenkyō, assinatura Jikan e data de publicação todos presentes e corretos no PT."},
+    {"bloco": "Assinatura do poema '明麿' (JP linha 25)", "decisao": "corrigido (item 2)", "confianca": "alta"},
+    {"bloco": "10 waka do poema cerimonial de Outono (JP linhas 27-56)", "decisao": "corrigido (item 1) — waka 1-3 e metade do 4 estavam ausentes; waka 4(cauda)-10 já presentes e corretos, incl. '五六七の御代' já vertido como 'era de Miroku', consistente com convenção do corpus", "confianca": "alta"},
+    {"bloco": "Ensaio em prosa '地上天国出来るまで' (JP linhas 58-71, história da construção de Hakone Gōra/Shinsenkyō)", "decisao": "ok, com 1 correção pontual (item 3)", "confianca": "alta", "notas": "Comparado parágrafo a parágrafo: todos os nomes próprios (Fujiyama Raita, Yoshida Isoya, Kimura Seibei), topônimos (Monte Kamiyama, Monte Sōun, Monte Asama, Baía de Sagami, Península de Miura/Awa, Monte Nokogiri, Monte Komagatake, Miyagino, Ōwakudani), medidas (tsubo, ken, shaku, kan, koku) e datas/anos Shōwa (18=1943, 19=1944, 20=1945, 21=1946) conferem com o JP. Sem truncamento, sem CJK residual, sem duplicação de blocos, ordem correta."},
+    {"bloco": "Colofão final (JP linhas 75-86)", "decisao": "ok", "confianca": "alta", "notas": "Título repetido, data, formato B6/15P/não comercializável, autor Jikan, impressor Oyama Masao, gráfica Taiyō Insatsu KK, editora Eikōsha Shuppanbu — todos corretos e completos."}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. As 3 divergências reais encontradas (waka 1-4 ausentes, assinatura 'Akimaro' ausente, palavra duplicada 'nossa nossa') foram corrigidas inline com confiança alta, verificadas contra o JP linha a linha e contra convenção de romanização já estabelecida no corpus (Akimaro)."
+  }
+}

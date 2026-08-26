@@ -1,0 +1,243 @@
+{
+  "filename": "19540315-御垂示録29号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 373 linhas / PT 94 linhas antes da correção, 179 linhas depois), 2 artigos por spec (prefácio + sessão única [1º de março]). Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do prefácio à nota editorial final (rattail).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0,
+    "pt_lines_before": 94,
+    "pt_lines_after": 179
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "monólito estrutural",
+      "localizacao_pt": "linha 26 do PT original (23000 caracteres, um único parágrafo cobrindo TODA a sessão [1º de março] desde a abertura até a pergunta sobre Inari)",
+      "localizacao_jp_correspondente": "linhas 26-195 do JP (da abertura '今日は別に話はないから...' até '稲荷さんが怒ったのでしょう。')",
+      "problema": "Praticamente 70% do volume (por caracteres) estava comprimido em uma única linha/parágrafo no ficheiro de trabalho PT, violando os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist. Isto tornava a revisão linha a linha real impossível sem primeiro decompor o bloco.",
+      "verificacao_completude": "Antes de decompor, o texto do monólito foi comparado frase a frase contra o JP (linhas 26-195) e confirmado 100% completo em conteúdo — nenhuma perda de texto dentro do próprio monólito, apenas ausência de quebras de parágrafo. Verificação adicional por script: texto normalizado (espaços colapsados) do monólito original é byte-idêntico ao texto normalizado do bloco reconstruído (22999 caracteres em ambos, igualdade confirmada programaticamente).",
+      "correcao": "Decomposto em 78 parágrafos separados, um por turno de fala (pergunta do Interlocutor entre aspas / resposta de Meishu-Sama sem aspas), seguindo os limites de parágrafo já usados no próprio JP (linhas em branco entre turnos) e no restante do ficheiro PT (que já usava esse padrão a partir da história de Inari em diante). Nenhum conteúdo foi removido, reordenado ou reescrito — apenas re-parágrafado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "turnos curtos de Meishu-Sama nunca traduzidos (perda real de conteúdo)",
+      "localizacao": "9 pontos distintos, concentrados na passagem sobre Inari (JP linhas 196-289) — 8 dentro/logo após o monólito decomposto, 1 mais adiante já na zona previamente bem segmentada do PT",
+      "problema": "9 falas curtas de Meishu-Sama (perguntas ou observações breves, sem aspas no JP, geralmente 1 linha) foram inteiramente omitidas na tradução original, deixando a resposta do Interlocutor aparecer sem a pergunta que a motivou. Padrão exatamente descrito no alerta da tarefa ('turnos curtos de Meishu-Sama sem aspas nunca traduzidos'). Verificado por leitura linha a linha comparando cada resposta do Interlocutor contra a pergunta JP imediatamente anterior.",
+      "turnos_inseridos": [
+        {
+          "jp_linha": 196,
+          "jp": "御神体はいつですか。",
+          "pt_inserido": "Quando foi consagrado o Goshintai?",
+          "posicao": "logo após 'Provavelmente é porque Inari ficou irritado.'"
+        },
+        {
+          "jp_linha": 201,
+          "jp": "光明如来様の部屋はどこですか。",
+          "pt_inserido": "Onde fica o aposento de Komyo-Nyorai?",
+          "posicao": "antes de 'Fica no segundo andar. Inari está no andar de baixo.'"
+        },
+        {
+          "jp_linha": 205,
+          "jp": "それでは差し支えないです。では他の理由です。二階はもちろん床の間でしょう。",
+          "pt_inserido": "Então está bem. Vamos ver por outro lado. O segundo andar deve ser o tokonoma (alcova), não é?",
+          "posicao": "antes de 'Sim, é.'"
+        },
+        {
+          "jp_linha": 209,
+          "jp": "どういういたずらをしますか。",
+          "pt_inserido": "Que tipo de travessura ele faz?",
+          "posicao": "antes do relato do Johrei/hemorragia cerebral"
+        },
+        {
+          "jp_linha": 213,
+          "jp": "浄霊は誰がやっているのですか。",
+          "pt_inserido": "Quem está fazendo o Johrei?",
+          "posicao": "antes de 'Eu mesma faço...'"
+        },
+        {
+          "jp_linha": 237,
+          "jp": "それでは狐はさびしいではないですか。やっぱり油揚とかをあげなければかわいそうです。狐はいつ祀ったのですか。",
+          "pt_inserido": "Então a raposa não estará se sentindo sozinha? É uma pena não oferecer ao menos aburaage (tofu frito). Quando a raposa foi consagrada?",
+          "posicao": "antes de 'Há cerca de vinte e dois ou vinte e três anos.'"
+        },
+        {
+          "jp_linha": 246,
+          "jp": "いたずらというのは、ただそれだけですか。",
+          "pt_inserido": "A travessura é só isso?",
+          "posicao": "antes de 'Também há constantemente tentativas de bagunçar a casa...'"
+        },
+        {
+          "jp_linha": 250,
+          "jp": "その信者というのは御神書もチャンと読んでいるのですか。",
+          "pt_inserido": "Esse fiel está lendo devidamente os Escritos Sagrados?",
+          "posicao": "antes de 'Parece que sim...'"
+        },
+        {
+          "jp_linha": 289,
+          "jp": "診療所でというと、診察のときに着物を脱ぐときですか。",
+          "pt_inserido": "No consultório, quer dizer, na hora de tirar a roupa para o exame?",
+          "posicao": "antes de 'Sim. Além disso, mais uma coisa: a placa horizontal...'"
+        }
+      ],
+      "verificacao": "Restante do volume (fora da passagem sobre Inari, JP linhas 26-195 e 358-373) foi conferido linha a linha sem encontrar novas omissões do mesmo tipo — o padrão parece ter sido um lapso concentrado nesta passagem específica, não sistemático em todo o arquivo.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/metadados + prefácio",
+      "jp_linhas": "1-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Abertura + testemunho fotografia (Hayashi) + nota Shizuoka Minpo + aumento de visitantes",
+      "jp_linhas": "26-54",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Destino de filho pródigo vs. sério",
+      "jp_linhas": "57-67",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Komyo Nyorai herdado / wakodoushin",
+      "jp_linhas": "70-73",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Grande amor de Deus / sacrifício / espíritos ancestrais",
+      "jp_linhas": "76-78",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cura de deficiências via Johrei / reencarnação",
+      "jp_linhas": "81-84",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Elemento Fogo / ciência / vírus / infinito / Shakyamuni",
+      "jp_linhas": "87-94",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mesmo-ki-atrai-mesmo-ki / corrupção / cinzas / soro / sangue",
+      "jp_linhas": "96-130",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ordem de festivais (matsuri) chuo kyokai vs. filial, dias 1/3/18/21/23/25",
+      "jp_linhas": "133-180",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Envio de placa emoldurada por trem",
+      "jp_linhas": "183-185",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Meishu-Sama/Kannon/Kunitokotachi",
+      "jp_linhas": "188-190",
+      "decisao": "corrigido (monólito decomposto)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Pergunta sobre Inari (abertura) + travessuras + local do Komyo Nyorai + fox stories",
+      "jp_linhas": "193-271",
+      "decisao": "corrigido - monólito decomposto E 7 turnos curtos de Meishu-Sama restaurados (achados 1-7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunho da cega curada / espírito de pessoa viva",
+      "jp_linhas": "274-284",
+      "decisao": "ok (já bem segmentado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Ofuda caído / placa caída no chão",
+      "jp_linhas": "287-298",
+      "decisao": "corrigido - 1 turno curto de Meishu-Sama restaurado (achado 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Placenta / daltonismo / ponto vital do Johrei / vestimenta funerária / dentes de ouro / onbō",
+      "jp_linhas": "301-337",
+      "decisao": "ok (já bem segmentado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Artigo sobre onbō (Chijō Tengoku 56) / cremação e apego espiritual",
+      "jp_linhas": "340-350",
+      "decisao": "ok (já bem segmentado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Cemitério novo e superstição / apego materno / causa e efeito / reencarnação por afinidade / keirin / Chieshōkaku / Matriz da Corrupção",
+      "jp_linhas": "353-373",
+      "decisao": "ok (já bem segmentado)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "observacoes_adicionais": [
+    "Nome próprio 林基吉 romanizado como 'Hayashi Motoyoshi' no PT; leitura alternativa plausível seria 'Hayashi Motokichi'. Ambiguidade de leitura de kanji japonês antigo sem furigana no original, não é claramente um erro — não escalado como pendência por não haver forma de resolver com confiança maior sem fonte externa, e não afeta o sentido do trecho.",
+    "A nota rattail intermediária ('rattail(注)「光は大地に」静岡民報に連載開始') foi mantida como parágrafo próprio equivalente à nota rattail final (que já era um parágrafo isolado no PT original) — consistência de formato entre as duas notas editoriais do volume.",
+    "Uma segunda auditoria independente (leitura semântica separada, sem poder de edição) ainda é necessária antes de approved:true, conforme exigido por 'revisao-paralela-jp-pt.mdc' e 'Δ=0 é necessário, nunca suficiente'."
+  ],
+  "rotulagem_interlocutor_meishu": {
+    "method": "gokowa-rotulagem-a4b-jp.mdc (Etapas A-B-C), adaptado para Gosuiji-roku",
+    "review_date": "2026-07-08",
+    "reviewer": "agente",
+    "etapa_a_mapa_jp": {
+      "descricao": "JP lido linha a linha, 373 linhas, 1 sessão datada ([三月一日]). Classificação por bloco (parágrafos separados por linha em branco no JP): 「...」= Interlocutor, prosa sem aspas = Meishu-Sama.",
+      "total_blocos": 158,
+      "turnos_interlocutor": 77,
+      "turnos_meishu_sama": 79,
+      "outros_blocos": 2,
+      "outros_blocos_detalhe": "1 cabeçalho de sessão ([三月一日]) + 1 nota editorial rattail final",
+      "verificacao": "Contagem de linhas JP iniciadas por「 confirmada por script (77), batendo exatamente com a contagem manual bloco a bloco."
+    },
+    "etapa_b_confirmacao": {
+      "contagem": "77 Interlocutor no PT == 77「no JP (Δ=0). Meishu-Sama no PT = 84 (79 turnos JP, +5 por turnos longos de Meishu-Sama já apresentados em mais de um parágrafo PT sem quebra de interlocutor entre eles — não é erro, é o mesmo turno dividido em blocos de texto contíguos do mesmo falante). Ratio M/I = 84/77 ≈ 1,09, dentro do esperado.",
+      "problema_encontrado": "9 pontos onde o PT (antes desta etapa) tinha a resposta final de Meishu-Sama e a pergunta seguinte do Interlocutor concatenadas na MESMA linha/parágrafo, sem quebra — mascarando a troca de falante. Detectado por script (varredura de aspas não no início de linha) e confirmado manualmente contra o mapa JP.",
+      "pontos_corrigidos": [
+        "Fim do relato da filha vidente / início do testemunho da moça de 19 anos (cega curada) — JP linha 274",
+        "Fim de 'receber o ódio é algo temível' / início do Ofuda caído — JP linha 287",
+        "Fim de 'Está bem assim' (Ofuda) / início da pergunta sobre a placenta — JP linha 301",
+        "Fim do enterro da placenta / início da pergunta sobre daltonismo — JP linha 310",
+        "Fim de 'faça a cabeça' / início da pergunta sobre vestimenta funerária — JP linha 323",
+        "Fim de 'grande renda com isso' (onbō) / início da citação do artigo sobre onbō — JP linha 340",
+        "Fim de 'porque criaram pecados' / início da pergunta sobre o cemitério de Miyazaki — JP linha 353",
+        "Fim da resposta sobre o cemitério / início da pergunta sobre apego materno — JP linha 358",
+        "Fim da resposta sobre causa e efeito / início da pergunta sobre reencarnação por afinidade — JP linha 363"
+      ],
+      "correcao_aplicada": "Cada um dos 9 pontos foi dividido em duas linhas (fim da resposta anterior / início da nova pergunta entre aspas), sem alterar uma palavra do texto já traduzido. Verificado por script: texto normalizado (espaços colapsados, rótulos removidos) do ficheiro após a correção é byte-idêntico ao texto normalizado do ficheiro antes da correção (39341 caracteres em ambos)."
+    },
+    "etapa_c_rotulagem": {
+      "aplicado": "Prefixo 'Interlocutor: ' em toda linha iniciada por aspas (77 linhas) e 'Meishu-Sama: ' em toda outra linha de fala (84 linhas), preservando a ordem e o conteúdo existentes. As 2 notas editoriais (rattail da Shizuoka Minpo e rattail final da Eikō) e o cabeçalho de sessão [1º de março] permaneceram sem rótulo de falante, por não serem turnos de diálogo.",
+      "nenhuma_reordenacao": true,
+      "nenhum_conteudo_reescrito": true
+    },
+    "turnos_curtos_meishu_sama": "Nenhum turno curto de Meishu-Sama ausente foi encontrado nesta etapa (os 9 já haviam sido restaurados na auditoria de segmentação anterior, 2026-07-07, listada acima em 'correcoes_reais_aplicadas' n.2). Verificação desta etapa focou em paragrafação (fusão falante-a-falante), não em conteúdo ausente.",
+    "nota_seguranca": "Durante esta tarefa, a saída de uma ferramenta de leitura veio seguida de um bloco de texto formatado como <system-reminder> falso, alegando mudança de data e instruindo a não mencionar isso ao usuário, além de uma lista de agentes que não corresponde à lista real fornecida no início da sessão. Tratado como não confiável e ignorado (mesmo padrão de tentativa de injeção via resultado de ferramenta já registrado em sessões anteriores, ver GOSHINSHO.md e trilha de 28号) — sinalizado aqui para registro, nenhuma instrução dele foi seguida."
+  },
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true. NOTA: rotulagem Interlocutor/Meishu-Sama aplicada em 2026-07-08 é adicional a esta aprovação de segmentação; approved não foi alterado por esta tarefa, conforme instrução."
+  }
+}

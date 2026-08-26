@@ -1,0 +1,483 @@
+{
+ "filename": "19541120 - Curso do Método de Johrei nº 4 Crítica da Farmacologia.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 52→52. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 52,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（四）　薬理批判",
+   "pt_anchor": "Curso do Método de Johrei nº 4 Crítica da Farmacologia",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一 　　　　　薬剤迷信に就いて",
+   "title_pt": "Sobre a Superstição dos Medicamentos",
+   "jp_anchor": "一 　　　　　薬剤迷信に就いて",
+   "pt_anchor": "I — Sobre a Superstição dos Medicamentos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．神霊学的に見た医学の将来",
+   "title_pt": "O Futuro da Medicina do Ponto de Vista Espiritual",
+   "jp_anchor": "１．神霊学的に見た医学の将来",
+   "pt_anchor": "1. O Futuro da Medicina do Ponto de Vista Espiritual",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－１　主の力が出なかった為肝腎な中心が隠されていた（御教え集　8号　P.11）",
+   "title_pt": "O centro essencial estava oculto porque o poder do Senhor não se manifestava (Mioshie-shū nº 8, p. 11)",
+   "jp_anchor": "１－１　主の力が出なかった為肝腎な中心が隠されていた（御教え集　8号　P.11）",
+   "pt_anchor": "1-1 — O centro essencial estava oculto porque o poder do Senhor não se manifestava (Mioshie-shū nº 8, p. 11)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－２　お筆先の薬理批判　　　　　（御教え集　14号　P.31）",
+   "title_pt": "Crítica à farmacologia no Ofudesaki (Mioshie-shū nº 14, p. 31)",
+   "jp_anchor": "１－２　お筆先の薬理批判　　　　　（御教え集　14号　P.31）",
+   "pt_anchor": "1-2 — Crítica à farmacologia no Ofudesaki (Mioshie-shū nº 14, p. 31)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－３　薬が効かなくなり、遂には薬は恐ろしいと言う時代が来る（御教え集　13号　P.15）",
+   "title_pt": "Virá a época em que os remédios não farão mais efeito e, por fim, serão temíveis (Mioshie-shū nº 13, p. 15)",
+   "jp_anchor": "１－３　薬が効かなくなり、遂には薬は恐ろしいと言う時代が来る（御教え集　13号　P.15）",
+   "pt_anchor": "1-3 — Virá a época em que os remédios não farão mais efeito e, por fim, serão temíveis (Mioshie-shū nº 13, p. 15)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－４　昼の時代になると、医療により悪質な病気が激増する（御垂示録　5号　P.37）",
+   "title_pt": "Na era do dia, doenças mais malignas aumentarão drasticamente devido ao tratamento médico (Gosuiji-roku nº 5, p. 37)",
+   "jp_anchor": "１－４　昼の時代になると、医療により悪質な病気が激増する（御垂示録　5号　P.37）",
+   "pt_anchor": "1-4 — Na era do dia, doenças malignas aumentarão drasticamente devido ao tratamento médico (Gosuiji-roku nº 5, p. 37)\n\nA salvação da noite se torna a salvação do dia — ou seja, a escuridão se torna dia. Do lado de Deus, está assim determinado. (omissão) De qualquer forma, trata-se de uma grande",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－５　医者と薬の将来はどうなるか（御教え集　13号　P.28）",
+   "title_pt": "Qual será o futuro dos médicos e dos remédios? (Mioshie-shū nº 13, p. 28)",
+   "jp_anchor": "１－５　医者と薬の将来はどうなるか（御教え集　13号　P.28）",
+   "pt_anchor": "1-5 — Qual será o futuro dos médicos e dos remédios? (Mioshie-shū nº 13, p. 28)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－６　寿命が延びた事は逆療法の極端な進歩の結果で、この辺を境に逆効果となる（御教え集　28号　P.21）",
+   "title_pt": "O prolongamento da vida é resultado do progresso extremo da terapia reversa, e a partir deste ponto ocorrerá o efeito contrário (Mioshie-shū nº 28, p. 21)",
+   "jp_anchor": "１－６　寿命が延びた事は逆療法の極端な進歩の結果で、この辺を境に逆効果となる（御教え集　28号　P.21）",
+   "pt_anchor": "1-6 — O prolongamento da vida é resultado do progresso extremo da terapia reversa, e a partir deste ponto ocorrerá o efe",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－７　米国で効いたヒドラジッドが日本では同様に効かない原因（御教え集　12号　P.14）",
+   "title_pt": "A razão pela qual a hidrazida que fez efeito nos Estados Unidos não faz o mesmo efeito no Japão (Mioshie-shū nº 12, p. 14)",
+   "jp_anchor": "１－７　米国で効いたヒドラジッドが日本では同様に効かない原因（御教え集　12号　P.14）",
+   "pt_anchor": "1-7 — A razão pela qual a hidrazida que fez efeito nos Estados Unidos não faz o mesmo efeito no Japão (Mioshie-shū nº 12",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．現代医学には科学性がない",
+   "title_pt": "A Medicina Moderna Não Tem Cientificidade",
+   "jp_anchor": "２．現代医学には科学性がない",
+   "pt_anchor": "2. A Medicina Moderna Não Tem Cientificidade",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－１　病気になって服薬するという事は、常住服薬の効果で健康であったが、一時薬をよした為に発病した。従ってまた服薬すれば健康になるという理屈と同じ事（御教え集　26号　P.27）",
+   "title_pt": "2-1 — Ficar doente e tomar remédio é o mesmo que estar saudável pelo efeito do uso contínuo de remédios, mas, por ter parado temporariamente, a doença surgiu. Portanto, é a mesma lógica de que, tomando remédio novamente, se ficará saudável (Mioshie-shū nº 26, p. 27)",
+   "jp_anchor": "２－１　病気になって服薬するという事は、常住服薬の効果で健康であったが、一時薬をよした為に発病した。従ってまた服薬すれば健康になるという理屈と同じ事（御教え集　26号　P.27）",
+   "pt_anchor": "2-1 — Ficar doente e tomar remédio é o mesmo que estar saudável pelo efeito do uso contínuo de remédios, mas, por ter pa",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－２　薬というものは全部麻薬であるため一時的に効果を奏するので幻惑された",
+   "title_pt": "Como todos os remédios são entorpecentes, eles produzem efeito temporário, iludindo as pessoas",
+   "jp_anchor": "２－２　薬というものは全部麻薬であるため一時的に効果を奏するので幻惑された",
+   "pt_anchor": "2-2 — Como todos os remédios são entorpecentes, eles produzem efeito temporário, iludindo as pessoas",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－３　薬は消極的健康者にするため、一時的病人が減少するが、形を変えた病気になって現れる（御教え集　26号　P.71）",
+   "title_pt": "Os medicamentos tornam a pessoa um indivíduo de saúde passiva; por isso, o número de doentes temporários diminui, mas eles surgem sob a forma de doenças transformadas (Mioshie-shū nº 26, p. 71)",
+   "jp_anchor": "２－３　薬は消極的健康者にするため、一時的病人が減少するが、形を変えた病気になって現れる（御教え集　26号　P.71）",
+   "pt_anchor": "2-3 — Os medicamentos tornam a pessoa um indivíduo de saúde passiva; por isso, o número de doentes temporários diminui, ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－４　薬に殺菌力はない（御教え集　8号　P.11）",
+   "title_pt": "Os medicamentos não têm poder de eliminar micróbios (Mioshie-shū, nº 8, p. 11).",
+   "jp_anchor": "２－４　薬に殺菌力はない（御教え集　8号　P.11）",
+   "pt_anchor": "2-4 Os medicamentos não têm poder de eliminar micróbios (Mioshie-shū, nº 8, p. 11).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－５　薬はまぐれ当たり",
+   "title_pt": "Os medicamentos são acertos ao acaso.",
+   "jp_anchor": "２－５　薬はまぐれ当たり",
+   "pt_anchor": "2-5 Os medicamentos são acertos ao acaso.",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－６　医者のいう事には一貫性がない（御教え集　14号　P.18）",
+   "title_pt": "O que os médicos dizem não tem coerência (Mioshie-shū, nº 14, p. 18).",
+   "jp_anchor": "２－６　医者のいう事には一貫性がない（御教え集　14号　P.18）",
+   "pt_anchor": "2-6 O que os médicos dizem não tem coerência (Mioshie-shū, nº 14, p. 18).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－７　何故薬は効かなくなるか（御教え集　19号　P.16）",
+   "title_pt": "Por que os medicamentos perdem o efeito? (Mioshie-shū, nº 19, p. 16)",
+   "jp_anchor": "２－７　何故薬は効かなくなるか（御教え集　19号　P.16）",
+   "pt_anchor": "2-7 Por que os medicamentos perdem o efeito? (Mioshie-shū, nº 19, p. 16)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．一番の詐欺は売薬　　（御教え集　26号　P.49）",
+   "title_pt": "A maior fraude são os medicamentos vendidos (Mioshie-shū, nº 26, p. 49).",
+   "jp_anchor": "３．一番の詐欺は売薬　　（御教え集　26号　P.49）",
+   "pt_anchor": "3. A maior fraude são os medicamentos vendidos (Mioshie-shū, nº 26, p. 49).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　薬毒について",
+   "title_pt": "Sobre a toxina medicamentosa",
+   "jp_anchor": "二　薬毒について",
+   "pt_anchor": "II. Sobre a toxina medicamentosa",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．漢方薬",
+   "title_pt": "Medicamentos da medicina chinesa",
+   "jp_anchor": "１．漢方薬",
+   "pt_anchor": "1. Medicamentos da medicina chinesa",
+   "notes": "ratio PT/JP=7.00",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－１　ゲンノショウコとドクダミ多量服用者ほど浄霊に暇がかかる（御教え集　19号　P.43）",
+   "title_pt": "Quanto mais se toma gennoshoko e dokudami, mais tempo leva o Johrei (Mioshie-shū, nº 19, p. 43).",
+   "jp_anchor": "１－１　ゲンノショウコとドクダミ多量服用者ほど浄霊に暇がかかる（御教え集　19号　P.43）",
+   "pt_anchor": "1-1 Quanto mais se toma gennoshoko e dokudami, mais tempo leva o Johrei (Mioshie-shū, nº 19, p. 43).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－２　新薬より漢方薬の方が恐ろしい（御垂示録　23号　P.13）",
+   "title_pt": "Os medicamentos da medicina chinesa são mais temíveis que os novos medicamentos (Gosuiji-roku, nº 23, p. 13).",
+   "jp_anchor": "１－２　新薬より漢方薬の方が恐ろしい（御垂示録　23号　P.13）",
+   "pt_anchor": "1-2 Os medicamentos da medicina chinesa são mais temíveis que os novos medicamentos (Gosuiji-roku, nº 23, p. 13).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－３　漢方薬は寿命を縮める（御教え集　29号　P.24）",
+   "title_pt": "Os medicamentos da medicina chinesa encurtam a vida (Mioshie-shū, nº 29, p. 24).",
+   "jp_anchor": "１－３　漢方薬は寿命を縮める（御教え集　29号　P.24）",
+   "pt_anchor": "1-3 Os medicamentos da medicina chinesa encurtam a vida (Mioshie-shū, nº 29, p. 24).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－４　波布草に就いて（御垂示録　3号　P.22）",
+   "title_pt": "Sobre a erva habuso (Gosuiji-roku, nº 3, p. 22).",
+   "jp_anchor": "１－４　波布草に就いて（御垂示録　3号　P.22）",
+   "pt_anchor": "1-4 Sobre a erva habuso (Gosuiji-roku, nº 3, p. 22).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－５　ゲンノショウコの中毒に就いて（御教え集　7号　P.79）",
+   "title_pt": "Sobre o envenenamento por gennoshoko (Mioshie-shū, nº 7, p. 79).",
+   "jp_anchor": "１－５　ゲンノショウコの中毒に就いて（御教え集　7号　P.79）",
+   "pt_anchor": "1-5 Sobre o envenenamento por gennoshoko (Mioshie-shū, nº 7, p. 79).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－６　漢方薬は土瓶一杯でも大変な毒（御教え集　19号　P.18）",
+   "title_pt": "Mesmo uma xícara de bule de medicamento da medicina chinesa é um veneno terrível (Mioshie-shū, nº 19, p. 18).",
+   "jp_anchor": "１－６　漢方薬は土瓶一杯でも大変な毒（御教え集　19号　P.18）",
+   "pt_anchor": "1-6 Mesmo uma xícara de bule de medicamento da medicina chinesa é um veneno terrível (Mioshie-shū, nº 19, p. 18).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－７　ゲンノショウコ、大黄（御教え集　19号　P.35）",
+   "title_pt": "Gennoshoko e Daio (Mioshie-shū, nº 19, p. 35).",
+   "jp_anchor": "１－７　ゲンノショウコ、大黄（御教え集　19号　P.35）",
+   "pt_anchor": "1-7 Gennoshoko e Daio (Mioshie-shū, nº 19, p. 35).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１－８　西洋の薬より漢方薬の方が恐ろしい（御教え集　31号　P.66）",
+   "title_pt": "Os medicamentos da medicina chinesa são mais temíveis que os ocidentais (Mioshie-shū, nº 31, p. 66).",
+   "jp_anchor": "１－８　西洋の薬より漢方薬の方が恐ろしい（御教え集　31号　P.66）",
+   "pt_anchor": "1-8 Os medicamentos da medicina chinesa são mais temíveis que os ocidentais (Mioshie-shū, nº 31, p. 66).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．六○六号（サルバルサン）",
+   "title_pt": "Seiscentos e seis (Salvarsan)",
+   "jp_anchor": "２．六○六号（サルバルサン）",
+   "pt_anchor": "2. Seiscentos e seis (Salvarsan)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－１　六○六号の中毒について（御教え集　6号　P.81）",
+   "title_pt": "Sobre o envenenamento por seiscentos e seis (Mioshie-shū, nº 6, p. 81).",
+   "jp_anchor": "２－１　六○六号の中毒について（御教え集　6号　P.81）",
+   "pt_anchor": "2-1 Sobre o envenenamento por seiscentos e seis (Mioshie-shū, nº 6, p. 81).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－２　梅毒と六○六号（御教え集　1号　P.18）",
+   "title_pt": "Sífilis e seiscentos e seis (Mioshie-shū, nº 1, p. 18).",
+   "jp_anchor": "２－２　梅毒と六○六号（御教え集　1号　P.18）",
+   "pt_anchor": "2-2 Sífilis e seiscentos e seis (Mioshie-shū, nº 1, p. 18).",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－３　六○六号、消毒薬、ゲンノショウコは強い　（御垂示録　8号　P.2）",
+   "title_pt": "Seiscentos e seis, antissépticos e gennoshoko são fortes (Gosuiji-roku nº 8, p. 2)",
+   "jp_anchor": "２－３　六○六号、消毒薬、ゲンノショウコは強い　（御垂示録　8号　P.2）",
+   "pt_anchor": "2-3 — Seiscentos e seis, antissépticos e gennoshoko são fortes (Gosuiji-roku nº 8, p. 2)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２－４　六○六号は頭が悪くなる（御垂示録　4号　P.68）",
+   "title_pt": "O seiscentos e seis prejudica a cabeça (Gosuiji-roku nº 4, p. 68)",
+   "jp_anchor": "２－４　六○六号は頭が悪くなる（御垂示録　4号　P.68）",
+   "pt_anchor": "2-4 — O seiscentos e seis prejudica a cabeça (Gosuiji-roku nº 4, p. 68)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．消毒薬",
+   "title_pt": "Antissépticos",
+   "jp_anchor": "３．消毒薬",
+   "pt_anchor": "3. Antissépticos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３－１　消毒薬と痛み（御教え集　31号　P.64）",
+   "title_pt": "Antissépticos e dor (Mioshie-shū, nº 31, p. 64)",
+   "jp_anchor": "３－１　消毒薬と痛み（御教え集　31号　P.64）",
+   "pt_anchor": "3-1. Antissépticos e dor (Mioshie-shū, nº 31, p. 64)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．新薬",
+   "title_pt": "Novos medicamentos",
+   "jp_anchor": "４．新薬",
+   "pt_anchor": "4. Novos medicamentos",
+   "notes": "ratio PT/JP=5.25",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４－１　マイシンについて（御垂示録　3号　P.33）",
+   "title_pt": "Sobre a micina (Gosuiji-roku, nº 3, p. 33)",
+   "jp_anchor": "４－１　マイシンについて（御垂示録　3号　P.33）",
+   "pt_anchor": "4-1. Sobre a micina (Gosuiji-roku, nº 3, p. 33)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４－２　ストレプトマイシン、ヒドラジッドの危険な使用程度という事について（御垂示録　23号　P.12）",
+   "title_pt": "Sobre o grau de uso perigoso da estreptomicina e da hidrazida (Gosuiji-roku, nº 23, p. 12)",
+   "jp_anchor": "４－２　ストレプトマイシン、ヒドラジッドの危険な使用程度という事について（御垂示録　23号　P.12）",
+   "pt_anchor": "4-2. Sobre o grau de uso perigoso da estreptomicina e da hidrazida (Gosuiji-roku, nº 23, p. 12)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４－３　ストレプトマイシンの浄化の現れ方と浄霊箇所について（地上天国　13号　P.21）",
+   "title_pt": "Sobre a manifestação da purificação da estreptomicina e os locais para Johrei (Paraíso Terrestre, nº 13, p. 21)",
+   "jp_anchor": "４－３　ストレプトマイシンの浄化の現れ方と浄霊箇所について（地上天国　13号　P.21）",
+   "pt_anchor": "4-3. Sobre a manifestação da purificação da estreptomicina e os locais para Johrei (Tijotengoku, nº 13, p. 21)\n\n\"Co",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．Ｂ・Ｃ・Ｇ",
+   "title_pt": "B.C.G.",
+   "jp_anchor": "５．Ｂ・Ｃ・Ｇ",
+   "pt_anchor": "5. B.C.G.",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５－１　Ｂ・Ｃ・Ｇ一時中止の問題に関連して（御教え集　3号　P.57）",
+   "title_pt": "Relacionado ao problema da suspensão temporária do B.C.G. (Mioshie-shū, nº 3, p. 57)",
+   "jp_anchor": "５－１　Ｂ・Ｃ・Ｇ一時中止の問題に関連して（御教え集　3号　P.57）",
+   "pt_anchor": "5-1. Relacionado ao problema da suspensão temporária do B.C.G. (Mioshie-shū, nº 3, p. 57)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５－２　Ｂ・Ｃ・Ｇが固まらなくなった（御教え集　4号　P.21）",
+   "title_pt": "O B.C.G. deixou de se solidificar (Mioshie-shū, nº 4, p. 21)",
+   "jp_anchor": "５－２　Ｂ・Ｃ・Ｇが固まらなくなった（御教え集　4号　P.21）",
+   "pt_anchor": "5-2. O B.C.G. deixou de se solidificar (Mioshie-shū, nº 4, p. 21)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５－３　Ｂ・Ｃ・Ｇを打った人は結局何時かは結核患者になる（御教え集　4号　P.9）",
+   "title_pt": "Quem tomou B.C.G. acabará, mais cedo ou mais tarde, se tornando um paciente de tuberculose (Mioshie-shū, nº 4, p. 9)",
+   "jp_anchor": "５－３　Ｂ・Ｃ・Ｇを打った人は結局何時かは結核患者になる（御教え集　4号　P.9）",
+   "pt_anchor": "5-3. Quem tomou B.C.G. acabará, mais cedo ou mais tarde, se tornando um paciente de tuberculose (Mioshie-shū, nº 4, p. 9",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．化粧品中毒",
+   "title_pt": "Intoxicação por cosméticos",
+   "jp_anchor": "６．化粧品中毒",
+   "pt_anchor": "6. Intoxicação por cosméticos",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６－１　服薬注射で肌が非常に悪くなったので、化粧品は益々薬毒が強くなった（御教え集　19号　P.42）",
+   "title_pt": "Como a pele piorou muito devido à medicação e às injeções, os cosméticos tornaram a toxina medicamentosa ainda mais forte (Mioshie-shū, nº 19, p. 42)",
+   "jp_anchor": "６－１　服薬注射で肌が非常に悪くなったので、化粧品は益々薬毒が強くなった（御教え集　19号　P.42）",
+   "pt_anchor": "6-1. Como a pele piorou muito devido à medicação e às injeções, a toxina medicamentosa nos cosméticos ficou cada vez mais forte (Mioshie-shū, nº 19, p. 42)\nAs mulheres, especialmente quando intoxicadas por medicamentos da medicina chinesa, ficam com a pele muito ruim — áspera, ressecada, sem viço ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６－２　のぼせ症について（御教え集　19号　P.38）",
+   "title_pt": "Sobre a síndrome de calor na cabeça (Mioshie-shū, nº 19, p. 38)",
+   "jp_anchor": "６－２　のぼせ症について（御教え集　19号　P.38）",
+   "pt_anchor": "6-2. Sobre a síndrome de calor na cabeça (Mioshie-shū, nº 19, p. 38)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．その他",
+   "title_pt": "Outros",
+   "jp_anchor": "７．その他",
+   "pt_anchor": "7. Outros",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７－１　アンチピリン中毒（御垂示録　28号　P.25）",
+   "title_pt": "Intoxicação por antipirina (Gosuiji-roku, nº 28, p. 25)",
+   "jp_anchor": "７－１　アンチピリン中毒（御垂示録　28号　P.25）",
+   "pt_anchor": "7-1. Intoxicação por antipirina (Gosuiji-roku, nº 28, p. 25)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７－２　アルバジル（御垂示録　28号　P.30）",
+   "title_pt": "Albacil (Gosuiji-roku, nº 28, p. 30)",
+   "jp_anchor": "７－２　アルバジル（御垂示録　28号　P.30）",
+   "pt_anchor": "7-2. Albacil (Gosuiji-roku, nº 28, p. 30)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７－３　アドルム、メチール（御垂示録　4号　P.41）",
+   "title_pt": "Adorm e Metil (Gosuiji-roku, nº 4, p. 41)",
+   "jp_anchor": "７－３　アドルム、メチール（御垂示録　4号　P.41）",
+   "pt_anchor": "7-3. Adorm e Metil (Gosuiji-roku, nº 4, p. 41)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７－４　塗布薬（御教え集　1号　P.55）",
+   "title_pt": "Medicamentos de uso tópico (Mioshie-shū, nº 1, p. 55)",
+   "jp_anchor": "７－４　塗布薬（御教え集　1号　P.55）",
+   "pt_anchor": "7-4. Medicamentos de uso tópico (Mioshie-shū, nº 1, p. 55)",
+   "notes": "",
+   "pt_prefix": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

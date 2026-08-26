@@ -1,0 +1,51 @@
+{
+ "filename": "19510915 - Gosuiji-roku nº 1.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14; corrigido 2026-07-15: sessão 5-agosto ausente da spec (fundida a 1-agosto), pt_anchor de 1-agosto e 8-agosto corrigidos (chunk_turnaware shard B).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 3,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』1号、昭和26(1951)年9月15日発行",
+   "pt_anchor": "Gosuiji-roku nº 1",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［八月一日］",
+   "title_pt": "1 de agosto",
+   "jp_anchor": "［八月一日］",
+   "pt_anchor": "[1º de agosto]",
+   "notes": "",
+   "pt_prefix": "1 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［八月五日］",
+   "title_pt": "5 de agosto",
+   "jp_anchor": "［八月五日］　　（本日に限り速記によらず）",
+   "pt_anchor": "[5 de agosto] (Somente neste dia, não foi por estenografia)",
+   "notes": "",
+   "pt_prefix": "5 de agosto"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［八月八日］",
+   "title_pt": "8 de agosto",
+   "jp_anchor": "［八月八日］",
+   "pt_anchor": "[8 de agosto]",
+   "notes": "",
+   "pt_prefix": "8 de agosto"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

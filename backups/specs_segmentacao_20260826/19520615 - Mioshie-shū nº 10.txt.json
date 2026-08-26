@@ -1,0 +1,104 @@
+{
+ "filename": "19520615 - Mioshie-shū nº 10.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→9 (bug, 五月五日 fundido ao序文) →10 (corrigido). PT pairing refeito.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』10号、昭和27(1952)年6月15日発行",
+   "pt_anchor": "Mioshie-shū nº 10",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月五日",
+   "title_pt": "5 de maio",
+   "jp_anchor": "昭和二十七年五月五日\n\n【御教え】\n　この間奈良の方に行って仏教美術を調べ、研究して大いに参考になったんですがね。それをちょっと書いてみたんで、今読ませます。",
+   "pt_anchor": "5 de maio de 1952 (Showa 27)\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "5 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月六日",
+   "title_pt": "6 de maio",
+   "jp_anchor": "五月六日\n\n【御教え】\n　この間奈良から京都方面の仏教美術ですね。たいへん良いけれども、まあお寺巡回ですね。まあ大いに得るところがあったんです。それをざっと書いてみたんですが、今読ませます。",
+   "pt_anchor": "6 de maio\n[Ensinamento]\nRecentemente, sobre a arte budista de Nara e Quioto: é uma visita aos templos, mas muito boa.",
+   "notes": "",
+   "pt_prefix": "6 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月七日",
+   "title_pt": "7 de maio",
+   "jp_anchor": "五月七日\n\n【御教え】\n　この間奈良、京都の方に旅行したそれを、今簡単に書いてみたんですが、今読ませます。",
+   "pt_anchor": "7 de maio\n\n[Ensinamento] Sobre a viagem que fiz recentemente a Nara e Quioto, escrevi resumidamente agora. Vou ler para vocês.",
+   "notes": "",
+   "pt_prefix": "7 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十五日",
+   "title_pt": "15 de maio",
+   "jp_anchor": "五月十五日\n\n【御教え】\n　 明明後日（しあさって）箱根に移ることになってます。いつもは六月一日ですけれども、早くして十八日ということにしたんです。なにしろ来月の十五日に美術 館の開館式をやろうと思ってますから、まあこれから一カ月間大車輪でいろんな飾りつけや、準備をやっ",
+   "pt_anchor": "15 de maio\n\n[Ensinamento] Estou programado para me mudar para Hakone daqui a três dias. Normalmente seria no dia primeiro de junho, mas adiantei para o dia dezoito. Como pretendo realizar a cerimônia de inauguração do museu no dia quinze do mês que vem, vou me dedic",
+   "notes": "",
+   "pt_prefix": "15 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十六日",
+   "title_pt": "16 de maio",
+   "jp_anchor": "五月十六日\n\n【御教え】\n　 いよいよ熱海も明日きりで、明後日箱根に越すつもりです。四、五日前に行ってみたところ、大体美術館は壁ができるだけで完成します。壁も半分くらいはでき てました。すべて私の思う通りにできたんで非常に気持ちが良いんです。それでこれからどんな建築でも",
+   "pt_anchor": "16 de maio\n[Ensinamento]",
+   "notes": "",
+   "pt_prefix": "16 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月十七日",
+   "title_pt": "17 de maio",
+   "jp_anchor": "五月十七日\n\n【御教え】\n　 近ごろよく御守護電報が来るんですが、それに書いてあるのを見ると、「長い間胃が痛んだ」とか「頭が痛んだ」――そういうような電報がよくあるんです。大 体痛みというのはわけなく治るものなんですよ。浄化作用では、一番激しい浄化作用だからして治りも良",
+   "pt_anchor": "17 de maio\n[Ensinamento] Ultimamente chegam muitos telegramas pedindo proteção divina, e, quando vejo o que está escrito,",
+   "notes": "",
+   "pt_prefix": "17 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十五日",
+   "title_pt": "25 de maio",
+   "jp_anchor": "五月二十五日\n\n【御教え】\n　 もう一息でここもできあがって面目一新というわけですが、美術館も来月の十日までに造る予定で夜業してやってます。あらかたできると思いますがね。聞いた でしょうけれども、来月の十五日に開館式をやることになってます。それについて、今までの経路ですね",
+   "pt_anchor": "25 de maio\n[Ensinamento] Falta pouco para que este lugar também fique pronto e se renove completamente. O Museu de Arte está sendo",
+   "notes": "",
+   "pt_prefix": "25 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十六日",
+   "title_pt": "26 de maio",
+   "jp_anchor": "五月二十六日\n\n【御教え】\n　ようやく美術館もできましたが、まだ形だけで中はちょっと見られません。私が予想したよりも具合良くできたので非常に満足しているんです。それともう一つは、非常に早くできたんですね。それについて今までの経緯(いきさつ)を書いてみたんですがね。読ませ",
+   "pt_anchor": "26 de maio\n[Ensinamento] Finalmente o museu ficou pronto, mas ainda é só a forma; o interior não pode ser visto. Ficou melhor do qu",
+   "notes": "",
+   "pt_prefix": "26 de maio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "五月二十七日",
+   "title_pt": "27 de maio",
+   "jp_anchor": "五月二十七日\n\n【御教え】\n　あの通り、美術館ももうじきできあがるんで、まあ――みんな昼夜兼行でやってます。つまり突貫工事というんですね。それについて、今までの経路を一通り書いてみたんですが、それを読ませます。",
+   "pt_anchor": "27 de maio\n[Ensinamento] Como foi dito, o museu está quase ficando pronto — todos estão trabalhando dia e noite,",
+   "notes": "",
+   "pt_prefix": "27 de maio"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

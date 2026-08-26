@@ -1,0 +1,104 @@
+{
+ "filename": "19511215 - Mioshie-shū nº 4.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→10. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』4号、昭和26(1951)年12月15日発行",
+   "pt_anchor": "Mioshie-shū nº 4",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月一日",
+   "title_pt": "1 de novembro",
+   "jp_anchor": "十一月一日\n\nInterlocutor: （お伺）信者、本山あやめ（五十四歳）産婆をいたしておりますが、本年九月十日より御浄化いただき、腰より膝まで浮腫にて動けなくなりました。続いて御浄 霊させていただいておりますが、十月二十日ごろよりだんだん発作が起き",
+   "pt_anchor": "1º de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[1º de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "1º de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月五日",
+   "title_pt": "5 de novembro",
+   "jp_anchor": "十一月五日\n\nInterlocutor: （お伺）今年一月風邪を引き発熱し、トリアノン注射五本ばかりで熱は下がりました。その後ずっと食が進まず、だんだん痩せて血色がなくなってきましたが、 どこにも苦痛を感じませんので、仕事は相変わらず農事を続けておりまし",
+   "pt_anchor": "5 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[5 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "5 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月八日",
+   "title_pt": "8 de novembro",
+   "jp_anchor": "十一月八日\n\nInterlocutor: （お伺）大光明如来様、御屏風観音様を御奉斎の家（家族七人のうち、祖母、父、母が入信）。三男晃三（満九歳）は生来智能低く、今でも涎（よだれ）を垂ら しております。赤子の時より御浄霊にて育ち、薬毒はございません。三週",
+   "pt_anchor": "8 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[8 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "8 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十一日",
+   "title_pt": "11 de novembro",
+   "jp_anchor": "十一月十一日\n\nInterlocutor: （お伺）昭和十九年一月、娘たちに奨められるままに、なんとなく講習を受けましたものの、生来の無信仰者（電気技師で、なにごとも科学的に理解するため） で、お守様もおかけいたさずおりますうち、昭和二十四年二月風邪にかか",
+   "pt_anchor": "11 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[11 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "11 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十五日",
+   "title_pt": "15 de novembro",
+   "jp_anchor": "十一月十五日\n\nInterlocutor: （お伺）私の家にて現在世話をしております教師山下暉弘（五十二歳）は、十三歳の時右眼の手術をしてより、三回右眼の手術をし、十九歳の時に脳を患い医師 の治療で治り、二十九歳の時に米俵を抱える機勢（はずみ）に、腸にひび",
+   "pt_anchor": "15 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月十八日",
+   "title_pt": "18 de novembro",
+   "jp_anchor": "十一月十八日\n\nInterlocutor: （お伺）沢田敬哉（二十六歳）六年前肋膜にて入院、三方月後医師の診断の結果、異状なく会社に復職、一年半後に脊髄カリエスとなり灸、鍼にてだいぶ楽にな り、二カ月間休んだだけで、一年六カ月勤務しておりますうちに、右腎臓",
+   "pt_anchor": "18 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[18 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "18 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十一日",
+   "title_pt": "21 de novembro",
+   "jp_anchor": "十一月二十一日\n\n　今日は病気の質問がないですから、早速論文の方を読ませます。",
+   "pt_anchor": "21º de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[21º de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "21º de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十五日",
+   "title_pt": "25 de novembro",
+   "jp_anchor": "十一月二十五日\n\n（お伺）本年六月より腸が悪く、医療を受けまして、直腸癌となり手術より方法がないとのことで入院の準備中に、お道のことを聞き十月一日より御浄霊をいた だき、一時経過も良く血便も通じも出るようになり、十二日に入信させていただきました。十一月中ごろ",
+   "pt_anchor": "25 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de novembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十一月二十八日",
+   "title_pt": "28 de novembro",
+   "jp_anchor": "十一月二十八日\n\n（お伺）辰巳芳子（昭和二十三年二月入信。二十七才）昭和二十二年十二月より左肺浸潤のため御浄霊をいただき、大学へ通学できるほどに良くなりました。し かるに本年四月ごろより咳（息を吸う時ヒューと音がいたします）が続いたり良くなったりを繰り返し、",
+   "pt_anchor": "28 de novembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[28 de novembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "28 de novembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

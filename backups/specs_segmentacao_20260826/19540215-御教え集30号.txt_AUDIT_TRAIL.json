@@ -1,0 +1,162 @@
+{
+  "filename": "19540215-御教え集30号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 216 linhas / PT ~87 linhas após correções — o PT usa parágrafos muito mais longos que o JP, um por sessão de data na maioria dos casos), 12 sessões de data (一月一日, 二日, 三日, 五日, 六日, 七日, 十五日, 十六日, 十七日, 二十五日, 二十六日, 二十七日) mais o bloco de título/colofão e o colofão final de publicação. Não é amostragem: todo o corpo do JP foi lido e confrontado frase a frase, transição de data por transição de data, com o PT correspondente na mesma ordem.",
+  "pre_existing_context": "Spec original (2026-07-03, jp_line_v2) listava 12 'articles', mas o primeiro item ('preface') apontava para o mesmo anchor de título usado no bloco de título/colofão, deixando a sessão 一月一日 (1º de janeiro) sem entrada própria no spec, embora o conteúdo PT dessa sessão já existisse integralmente no ficheiro de trabalho. Corrigido nesta passada (ver segmentacao_manual/19540215-御教え集30号.txt.json).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: qualquer gate baseado em contagem de parágrafos teria Δ=0 tanto antes quanto depois das correções de duplicação/truncamento aplicadas aqui, porque cada bug de 'monólito residual com cauda duplicada' compensava a contagem (texto duplicado depois removido, mas o parágrafo-container já existia antes) — confirma o alerta de 'Δ=0 nunca é suficiente'.",
+  "summary": {
+    "sessoes_no_jp": 12,
+    "sessoes_no_spec_original": 11,
+    "sessoes_no_spec_apos_correcao": 12,
+    "sessoes_revisadas_linha_a_linha": 12,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "padroes_confirmados_familia_mioshie_shu": {
+    "cabecalho_de_data_duplicado_no_corpo": "Confirmado em 10 das 12 sessões (todas exceto 1º e 2 de janeiro): o parágrafo de conteúdo de cada sessão começava repetindo a data por extenso ('3 de janeiro Como todos sabem...', '25 de janeiro. Ouvi...', 'Dezesseis de janeiro.\\nComo os relatos...' etc.), além da linha de cabeçalho de secção já existente logo acima. É o mesmo padrão de 'cabeçalhos de data duplicados/corrompidos' já visto nos volumes irmãos e no próprio Gokōwa.",
+    "monolito_residual_com_cauda_duplicada": "Confirmado 2 vezes neste volume — em '2 de janeiro' (bloco inteiro sobre daimyos/bushido/espírito de Yamato/vingança repetido; a 1ª ocorrência era truncada, cortando a frase de transição para o Paraíso na Terra a meio: '...terá uma enorme reputação. Agora, como está inacabado, é assim, mas') e em '17 de janeiro' (história de Nao/Ōmoto sobre ir ao exterior com 5 ienes, repetida por inteiro; a 1ª ocorrência truncava numa citação aberta sem fechar: 'Isso mesmo, \\\"Meishu-Sama'). Em ambos os casos a 2ª ocorrência (mais adiante no texto) era a versão completa e correta; a 1ª era o resíduo truncado. Mesma assinatura de bug dos '6 livros monolith' da Fase Inicial e da família Gokōwa, mas aqui manifestada dentro de uma única sessão de data, não entre sessões inteiras.",
+    "cabecalho_glued_sem_quebra_de_paragrafo": "Confirmado no colofão final: 'Provavelmente nunca houve alguém com essa sensação antes. 10 de fevereiro de 1954 (Showa 29) — Impresso' — a data de impressão/colofão editorial estava colada ao fim do último parágrafo de conteúdo (27 de janeiro), sem quebra de parágrafo. Também confirmado no topo do ficheiro: um cabeçalho solto '2 de janeiro' aparecia ANTES do bloco de título/colofão e ANTES do conteúdo real de 1º de janeiro — ou seja, a etiqueta da 2ª sessão vazou para o início do ficheiro, antes até da 1ª sessão existir no texto. Também uma linha de colofão de publicação duplicada ('Coletanea de Ensinamentos, publicado em...' e 'Mioshie-shū nº 30, publicado em...' diziam a mesma coisa duas vezes)."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "topo do ficheiro, antes do bloco de título/colofão (linhas ~21-29 antes da correção)",
+      "problema": "Cabeçalho de secção '2 de janeiro' aparecia solto antes do título 'Mioshie-shū nº 30' e antes do conteúdo real de '1º de janeiro' — fora de ordem e sem conteúdo próprio ali.",
+      "correcao": "Removido o cabeçalho espúrio. A sessão '2 de janeiro' real (com o seu conteúdo) permanece intacta mais adiante, no lugar correto.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "bloco de título/colofão, topo do ficheiro",
+      "problema": "Duas frases quase idênticas repetindo a mesma informação de publicação ('Coletanea de Ensinamentos, publicado em 15 de fevereiro do ano 29 da Era Showa (1954)' e, logo a seguir, 'Mioshie-shū nº 30, publicado em 15 de fevereiro de 1954 (Showa 29)') — o JP fonte tem só uma frase equivalente.",
+      "correcao": "Removida a segunda ocorrência (redundante); mantida a primeira, seguida diretamente do cabeçalho '1º de janeiro de Showa 29 (1954)'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "sessão '2 de janeiro', transição para o parágrafo sobre a reputação mundial do Paraíso na Terra de Atami (correspondente a JP linhas 36-37, trecho '仇討ち思想というものはとんでもないものです。そこで、地上天国は熱海が完成すると...')",
+      "problema": "Monólito residual com cauda duplicada e truncada: depois do parágrafo correto terminando em '...Nesse sentido, a ideia de vingança é algo terrível.', havia um parágrafo truncado ('Portanto, quando o Paraíso na Terra de Atami estiver completo, terá uma enorme reputação. Agora, como está inacabado, é assim, mas' — cortado a meio, sem continuação) seguido de outro parágrafo que REPETIA por inteiro o bloco anterior sobre daimyos/bushido/espírito de Yamato/vingança antes de finalmente continuar corretamente com 'Então, quando o Paraíso na Terra em Atami estiver completo, causará uma enorme repercussão...'.",
+      "correcao": "Removidos o parágrafo truncado e o bloco duplicado (daimyos/bushido/Yamato/vingança repetido), preservando o parágrafo original completo (que já tinha essa informação) e emendando diretamente com a continuação correta 'Então, quando o Paraíso na Terra em Atami estiver completo, causará uma enorme repercussão. Agora ainda está inacabado, por isso é assim, mas quando estiver pronto...'. Nenhum conteúdo genuíno foi perdido — verificado que a frase 'espírito de Yamato'/'vingança' agora ocorre exatamente 1x (antes 2x) e que o conteúdo da 2ª ocorrência (mantida) é idêntico ao da 1ª (removida), exceto a continuação nova.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "10 cabeçalhos de sessão (3, 5, 6, 7, 15, 16, 17, 25, 26, 27 de janeiro)",
+      "problema": "Em cada uma dessas 10 sessões, o parágrafo de conteúdo começava repetindo a data por extenso logo após o cabeçalho de secção já existente (ex.: cabeçalho '3 de janeiro' seguido de parágrafo iniciando 'Como todos sabem'... — mas o parágrafo repetia '3 de janeiro Como todos sabem'). Nas sessões 16 e 17 a duplicação vinha por extenso ('Dezesseis de janeiro.', 'Dezessete de janeiro.') em vez do numeral, e na transição de 7→15 de janeiro a etiqueta '15 de janeiro' chegou a vazar também para o final do parágrafo anterior (7 de janeiro), antes do próprio cabeçalho de secção.",
+      "correcao": "Removida a repetição da data dentro de cada parágrafo de conteúdo, mantendo apenas o cabeçalho de secção. Na transição 7→15 de janeiro, a etiqueta que havia vazado para o fim do parágrafo de 7 de janeiro foi removida de lá e mantida apenas como cabeçalho de secção da sessão seguinte.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "sessão '17 de janeiro', trecho sobre a fundadora do Ōmoto (Deguchi Nao) indo ao exterior com 5 ienes (correspondente a JP linha 149, citação do Ofudesaki '何事も神の申す事に間違いはないから、素直が一等であるぞよ' até '...非常に結構です。')",
+      "problema": "Monólito residual com cauda duplicada e truncada: a história de Nao/Ōmoto (ordem de Deus para ir ao exterior com 5 ienes, teste de obediência) era contada por inteiro DUAS vezes seguidas — a 1ª vez terminava truncada em citação aberta e sem fechar ('Isso mesmo, \\\"Meishu-Sama'), a 2ª vez (idêntica em conteúdo, variando só a pontuação de aspas) estava completa e terminava corretamente no ponto que corresponde ao fim do parágrafo JP.",
+      "correcao": "Removida a 1ª ocorrência truncada; mantida a 2ª ocorrência completa, emendada diretamente ao final do parágrafo anterior ('...ainda hoje há consideravelmente quem use fertilizantes...'). Verificado que a frase-chave 'A fundadora respondeu' /'A fundadora perguntou' agora ocorre 1x (não 2x) e que nenhum conteúdo da versão completa foi alterado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "colofão final, após o último parágrafo de conteúdo (27 de janeiro)",
+      "problema": "A data de impressão/publicação e a ficha técnica editorial ('10 de fevereiro de 1954 (Showa 29) — Impresso', '15 de fevereiro...', editor, gráfica, etc.) estavam coladas sem quebra de parágrafo ao final da última frase de conteúdo doutrinário ('...Provavelmente nunca houve alguém com essa sensação antes.'), misturando texto de ensinamento com metadado editorial no mesmo bloco.",
+      "correcao": "Inserida quebra de parágrafo antes do colofão, e entre os elementos do próprio colofão (datas / editor / gráfica / distribuidor), espelhando a separação em linhas do JP fonte (linhas 206-215).",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "título/colofão + 1º de janeiro",
+      "jp_linhas": "20-29",
+      "decisao": "corrigido (itens 1, 2)",
+      "confianca": "alta",
+      "notas": "Conteúdo de 1º de janeiro completo e fiel; só o cabeçalho/colofão em volta tinha os problemas de duplicação/ordem."
+    },
+    {
+      "sessao": "2 de janeiro",
+      "jp_linhas": "35-42",
+      "decisao": "corrigido (item 3)",
+      "confianca": "alta",
+      "notas": "Depois de removida a duplicação, conteúdo bate integralmente com o JP: Stálin/Malenkov, reputação do Paraíso na Terra, Chushingura/vingança, comparação com Nara/Kyoto/Vaticano/Hideyoshi, bomba atômica vs Johrei."
+    },
+    {
+      "sessao": "3 de janeiro",
+      "jp_linhas": "46-53",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Conteúdo completo: recapitulação do 'Sonho do Mundo', exposições de arte, comparação Vaticano/Louvre/Hakone, urdidura e trama (経緯), Havaí, bomba atômica espiritual."
+    },
+    {
+      "sessao": "5 de janeiro",
+      "jp_linhas": "56-67",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Artigos 'Johrei é uma Terapia Científica' [Eikō 243/247] presentes e referenciados corretamente; conteúdo sobre o museu de Atami completo."
+    },
+    {
+      "sessao": "6 de janeiro",
+      "jp_linhas": "71-84",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Conteúdo sobre agricultura natural, urdidura/trama, comparação com Vaticano/Louvre/Nikkō completo."
+    },
+    {
+      "sessao": "7 de janeiro",
+      "jp_linhas": "88-97",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Repetição da narrativa de Ellis Grilli/jornalistas japoneses e do museu de Atami, coerente com o JP (Meishu-Sama repete deliberadamente o mesmo assunto para quem não veio nos dias anteriores)."
+    },
+    {
+      "sessao": "15 de janeiro",
+      "jp_linhas": "101-112",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Inclui referência ao artigo 'Bramanismo e Maomé' [Paraíso na Terra nº 56], presente e correta."
+    },
+    {
+      "sessao": "16 de janeiro",
+      "jp_linhas": "116-131",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Relato de graça do campeão de produção (5 koku 1 to 3 shō 6 gō) presente e correto [Eikō 245]."
+    },
+    {
+      "sessao": "17 de janeiro",
+      "jp_linhas": "135-149",
+      "decisao": "corrigido (itens 4, 5)",
+      "confianca": "alta",
+      "notas": "Após remoção da duplicação/truncamento (item 5), citações do Ofudesaki do Ōmoto e a história de Nao presentes uma única vez, completas e na ordem correta."
+    },
+    {
+      "sessao": "25 de janeiro",
+      "jp_linhas": "153-165",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Artigo 'O Segredo da Boa Sorte' [Eikō 246] e 'A Relação entre Deus e Eu' [Paraíso na Terra nº 57] presentes e corretos."
+    },
+    {
+      "sessao": "26 de janeiro",
+      "jp_linhas": "168-180",
+      "decisao": "corrigido (item 4)",
+      "confianca": "alta",
+      "notas": "Artigo 'Novamente, Desejo a Consideração dos Jornalistas' [Eikō 249] presente e correto; conteúdo sobre comunismo/rearmamento completo."
+    },
+    {
+      "sessao": "27 de janeiro + colofão",
+      "jp_linhas": "184-215",
+      "decisao": "corrigido (itens 4, 6)",
+      "confianca": "alta",
+      "notas": "Conteúdo doutrinário completo; colofão final (datas de impressão/publicação, editor, gráfica, distribuidor) confere integralmente com o JP após a correção de quebra de parágrafo."
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual": "Nenhum encontrado no corpo do PT (grep por faixas Unicode de hiragana/katakana/kanji, excluindo o bloco de metadados no topo do ficheiro, que legitimamente contém o título em japonês).",
+    "truncamento_com_reticencias": "Nenhuma linha do PT termina em '...' ou '…' após as correções.",
+    "repeticoes_legitimas_nao_confundir_com_duplicacao": "Ellis Grilli e o Sr. Higuchi são mencionados em múltiplas sessões de data diferentes (2, 3, 7, 25, 26 de janeiro para Grilli; 1º e 3 de janeiro para Higuchi) — confirmado como repetição legítima do próprio JP (Meishu-Sama conta a mesma anedota em dias diferentes para públicos diferentes), não duplicação de bug."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

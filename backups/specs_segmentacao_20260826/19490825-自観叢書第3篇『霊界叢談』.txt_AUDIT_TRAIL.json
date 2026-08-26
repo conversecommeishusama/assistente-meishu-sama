@@ -1,0 +1,283 @@
+{
+  "ficheiro": "19490825-自観叢書第3篇『霊界叢談』.txt",
+  "metodo": "jp_line_by_line — revisão paralela JP (fonte de verdade) x PT (arquivo de trabalho), trecho a trecho, conforme .cursor/rules/revisao-paralela-jp-pt.mdc",
+  "data": "2026-07-06",
+  "perfil_livro": "jikan_hen — ensaio doutrinário em prosa contínua (não é diálogo P&R como Gokōwa/Ochishijiroku), escrito por Okada Mokichi (Meishu-Sama) em primeira pessoa sobre a estrutura do mundo espiritual",
+  "jp_linhas_totais": 303,
+  "pt_linhas_antes": 79,
+  "pt_linhas_depois": 79,
+  "nota_linhas": "O ficheiro PT usa poucas linhas porque cada 'linha' de trabalho é um parágrafo gigante fundindo dezenas de parágrafos JP (padrão pré-existente deste livro, não introduzido nesta sessão). Não foi feito reflow em massa por script — as correções abaixo foram inseridas por edição direta, ponto a ponto, após leitura linha a linha completa do JP contra o PT.",
+  "resumo_executivo": "Confirmado o padrão de risco já conhecido desta série (自観叢書/Jikan Sosho): o PT de trabalho começava a meio do livro, com prefácio e duas secções inteiras (霊界の存在, 霊界と現界) completamente ausentes (~15% do livro, incluindo as referências a Oliver Lodge, Maeterlinck e Dr. Ward, a explicação do tribunal de Enma e das nove camadas do mundo espiritual). Busca exaustiva localizou a tradução completa e correta desse trecho num monólito de um pass de tradução anterior do pipeline (reports/translation_review/retranslate_mass/20260619T142344Z/corpus/textos_portugues/19490825-...txt), confirmando que a tradução já existia — não foi preciso gerar texto novo via API. O trecho foi restaurado a partir dessa fonte, com títulos de secção em negrito no mesmo padrão já usado no resto do ficheiro. Também foi corrigida uma perda de conteúdo real na transição Inferno das Formigas → Inferno da Colmeia (a anedota da cobra/pardais e a introdução da história da cabeleireira/gueixa estavam ausentes, substituídas por um fragmento truncado e gramaticalmente solto) — reconstruída por tradução directa do JP, com apoio do mesmo monólito de referência para verificação. Por fim, foi encontrada e corrigida uma duplicação real: a história da velha possuída por espíritos-raposa (episódios da urina, da comida e dos caroços/nódulos) estava contada duas vezes seguidas, a primeira versão cortada a meio de uma frase; a segunda (completa) foi absorvida na primeira para fechar a frase truncada, e o resto da repetição foi removido. Também corrigido o campo de título (Title/title_pt), que continha por engano uma linha de diálogo do meio do livro em vez do título da obra.",
+  "correcoes_reais_aplicadas": [
+    {
+      "id": 1,
+      "tipo": "PT em falta (conteúdo inteiro ausente) — prefácio + 2 secções",
+      "jp_ref": "linhas 20-49 (título 霊界叢談, ficha de publicação, 序文 completo, 霊界の存在 completo com nota de rodapé sobre 泰西, 霊界と現界 completo)",
+      "descricao": "Prefácio e as duas primeiras secções doutrinárias do livro estavam completamente ausentes do PT de trabalho — o texto começava direto na secção 祖霊と死後の準備 (nem o título desta secção estava presente). Busca exaustiva (grep por '霊界叢談', 'Oliver Lodge', 'Maeterlinck' em reports/acervo_revision/snapshots/, reports/translation_review/, reports/periodicos_trabalho/) confirmou que a tradução completa já existia em reports/translation_review/retranslate_mass/20260619T142344Z/corpus/textos_portugues/19490825-自観叢書第3篇『霊界叢談』.txt (um monólito de um pass de tradução anterior). Conferido esse texto parágrafo a parágrafo contra o JP (Oliver Lodge/'A Sobrevivência Humana', Maeterlinck/'O Pássaro Azul', Dr. Ward/'Exploração do Mundo Espiritual', rio dos três caminhos, tribunal do Enma, cores da mortalha, nove camadas do mundo espiritual, cores do rosto do falecido) — tradução fiel e completa. Inserido no PT de trabalho com títulos '**Prefácio**', '**A Existência do Mundo Espiritual**', '**O Mundo Espiritual e o Mundo Material**' e, por fim, o título que já devia preceder o texto pré-existente, '**Espíritos Ancestrais e a Preparação para a Morte**' (que também estava ausente).",
+      "confianca": "alta — texto recuperado de fonte local já traduzida (não gerado de novo), conferido parágrafo a parágrafo contra o JP correspondente antes de inserir"
+    },
+    {
+      "id": 2,
+      "tipo": "Perda de conteúdo + fragmento truncado/agramatical",
+      "jp_ref": "linhas 248-249 (fim de 蟻地獄: anedota da cobra atacada por pardais que se torna colónia de formigas; início de 蜂室地獄: cabeleireira, amiga possuída, investigação espiritual, gueixa cliente morta no Inferno da Colmeia)",
+      "descricao": "PT saltava de 'Há uma história sobre isso.' directamente para o fragmento solto e gramaticalmente incompleto 'na época, seguidora de uma certa seita, por isso se agarrou a ela.' — perdendo por completo a anedota da cobra/pardais/formigas e toda a introdução da história da cabeleireira (amiga possuída, chamada de um mestre religioso, gueixa cliente morta e caída no Inferno da Colmeia). Reconstruído por tradução directa do trecho JP ausente, com apoio do mesmo monólito de referência (que continha esta mesma passagem, embora com um problema de duplicação próprio nesse ficheiro-fonte, não copiado para o PT de trabalho) para verificação terminológica ('Inferno da Colmeia', 'abelhas', mantendo consistência com a nomeação já usada mais acima no mesmo ficheiro em 'Paraíso e Inferno').",
+      "confianca": "alta — confirmado por leitura directa do JP; termos alinhados com uso já existente no resto do ficheiro"
+    },
+    {
+      "id": 3,
+      "tipo": "Duplicação de bloco + frase truncada",
+      "jp_ref": "linha 181 (老婆に憑いた狐霊: episódios da urina, da comida, dos caroços/nódulos sob a pele)",
+      "descricao": "O PT contava a mesma sequência de episódios (as raposas param a urina da velha; as raposas impedem-na de comer; caroços do tamanho de grãos de feijão sob a pele, cada um um espírito-raposa) DUAS vezes seguidas. A primeira versão terminava cortada a meio da fala final do espírito-raposa ('...dizia: \"Ah, droga, fui descoberto' sem fechar a citação nem concluir a frase); a segunda versão (completa) repetia tudo desde a cena da família reunida até concluir correctamente a fala e a acção ('...um a um, eles iam saindo. Deviam ser uns vinte ou trinta.'). Mantida a primeira versão (mais próxima do JP, que só narra a sequência uma vez) e usada apenas a conclusão da segunda para fechar a frase truncada; removida a repetição integral.",
+      "confianca": "alta — comparação directa confirma que é a mesma sequência de eventos contada duas vezes, sem nenhum conteúdo novo na repetição além do fecho da frase"
+    },
+    {
+      "id": 4,
+      "tipo": "Metadado de título incorrecto",
+      "jp_ref": "linha 20 (título da obra: 霊界叢談)",
+      "descricao": "Os campos 'title_pt' e 'Title:' do cabeçalho, e a primeira linha do corpo do PT, continham por engano uma linha de diálogo do meio do livro ('Eu: \"Afinal, qual é a sua relação com este corpo?\"') em vez do título da obra — sintoma colateral do mesmo bug de pareamento/segmentação que causou a perda de conteúdo do item 1 (o script de pareamento não encontrou o prefácio ausente e agarrou uma âncora errada mais adiante no ficheiro). Corrigido para 'Conversas sobre o Mundo Espiritual' (tradução já estabelecida no monólito de referência usado no item 1).",
+      "confianca": "alta para o corpo do ficheiro de trabalho; nota-se que o spec de segmentação (19490825-...txt.json) ainda tem o mesmo title_pt errado nos seus artigos e pt_anchor apontando para trechos deslocados — não corrigido nesta sessão porque re-gerar o spec/pareamento está fora do escopo pedido (só o ficheiro de trabalho PT), fica registado aqui para quando o spec deste livro for reprocessado"
+    }
+  ],
+  "trechos_verificados_sem_alteracao": [
+    "Secções 死後の種々相, 天国と地獄 (incl. listagem dos infernos), 広吉の霊, 化人形, 狐霊と老婆 (restante), グロ的憑依霊, 憑依霊の種々相, 精神変質症, 夢と邪霊, 生霊, 地獄界の続き (restante), 天狗界, 龍神界, 神霊と仏霊・人霊, 霊層界 — todas lidas linha a linha contra o JP, sem truncamento adicional, sem CJK residual, sem inversão de ordem, sem eco/duplicação além dos itens já listados",
+    "Nomes próprios e citações estrangeiras (Oliver Lodge, Maeterlinck, Dr. Ward, Sarutahiko-no-Mikoto, Konohana-Sakuya-Hime, Sugawara no Michizane, Fujiwara no Tokihira, Taira no Masakado, Hirata Atsutane/Torakichi, Ushiwakamaru/Benkei, Miyamoto Musashi) — conferidos por leitura directa contra o JP, romanização plausível e consistente",
+    "CJK residual — varredura regex confirmou zero ideogramas no corpo do texto PT (só nos metadados de cabeçalho title_jp, que é esperado)",
+    "Verificação estrutural cruzada: contagem de caracteres JP por secção comparada à contagem PT por secção (20 secções, delimitadas pelos títulos em negrito já existentes/agora inseridos) — todas as razões PT/JP ficaram entre 2.06 e 2.90, sem outlier que sugerisse conteúdo ainda em falta. Esta verificação é só corroborativa (script), não substitui a leitura linha a linha já feita — conforme a regra de que métricas agregadas nunca são prova de fecho sozinhas"
+  ],
+  "checklist_por_secao": {
+    "nota": "Livro em prosa contínua sem falantes alternados (não se aplica rótulo Interlocutor/Meishu-Sama). Checklist de 8 pontos aplicado por secção em vez de por turno.",
+    "secoes": [
+      {
+        "secao": "Prefácio",
+        "subdivisao": "ok (restaurado)",
+        "existencia_pt": "restaurado nesta sessão",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok (restaurado)",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "A Existência do Mundo Espiritual",
+        "subdivisao": "ok (restaurado)",
+        "existencia_pt": "restaurado nesta sessão",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok (restaurado)",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "O Mundo Espiritual e o Mundo Material",
+        "subdivisao": "ok (restaurado)",
+        "existencia_pt": "restaurado nesta sessão",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok (restaurado)",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Espíritos Ancestrais e a Preparação para a Morte",
+        "subdivisao": "ok",
+        "existencia_pt": "ok (título restaurado; corpo já existia)",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "restaurado nesta sessão",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Vários Aspectos Após a Morte",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Paraíso e Inferno",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "O Espírito de Hirokichi",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "A Boneca Assombrada",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "O Espírito da Raposa e a Velha Senhora",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "corrigida (frase truncada)",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "duplicação corrigida"
+      },
+      {
+        "secao": "Espíritos Possessores Grotescos",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Vários Aspectos dos Espíritos Possessores",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Psicose de Alteração de Personalidade",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Sonhos e Divindades Malignas",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Espíritos de Pessoas Vivas",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Continuação do Mundo do Inferno",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "corrigida (anedota cobra/pardais + início da história da cabeleireira restaurados)",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Reino dos Tengu",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Reino dos Deuses Dragão",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Espíritos de Divindades, Espíritos de Budas e Espíritos Humanos",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      },
+      {
+        "secao": "Camadas do Mundo Espiritual",
+        "subdivisao": "ok",
+        "existencia_pt": "ok",
+        "alinhamento": "ok",
+        "completude": "ok",
+        "cjk": "ok",
+        "paragrafacao": "ok",
+        "titulos": "ok",
+        "outros": "nenhum"
+      }
+    ]
+  },
+  "pendencias_registadas": [
+    "Nenhuma em PENDENCIAS_REVISAO.json — todas as correcções desta sessão tiveram confiança alta, sem ambiguidade doutrinária/editorial genuína.",
+    "Nota (não é pendência de decisão, é item técnico): o spec de segmentação (19490825-自観叢書第3篇『霊界叢談』.txt.json) ainda reflecte o estado anterior à correcção (title_pt errado nos artigos, pt_anchor de vários artigos apontando para pontos deslocados dentro do parágrafo único que existia antes da correcção desta sessão) — precisa ser re-gerado/reprocessado antes de qualquer promoção, mas isso está fora do escopo desta revisão (só o ficheiro de trabalho PT foi corrigido, conforme pedido)."
+  ],
+  "seguranca": "Nenhuma tentativa de prompt injection identificada durante esta revisão.",
+  "segunda_auditoria_independente": {
+    "executor": "subagente Explore (sem ferramentas de edição), sessão separada, sem contexto prévio desta revisão",
+    "data": "2026-07-06",
+    "escopo": "Verificação independente dos 4 itens de correcção listados acima + varredura própria de ponta a ponta do livro (todas as 19 fronteiras de secção), conforme exigido por .cursor/rules/revisao-paralela-jp-pt.mdc § 'Δ=0 é necessário, nunca suficiente'",
+    "resultado": "Confirmou os 4 itens como correctos (incluindo corroboração cruzada via reports/translation_review/.../data/publication_sources/pt/jikan-sosho/25-de-agosto-de-1948-prefacio-de-conversas-sobre-o-mundo-espiritual-...txt para o item 1, e via registo 'Paired Portuguese title' para o item 4). Não encontrou nenhum problema novo na varredura completa das 19 fronteiras de secção. Parágrafo final do livro (JP linha 302) conferido como fielmente presente no fim do PT. Sem CJK residual, sem truncamento suspeito.",
+    "veredito": "approved: true — nenhum bloqueio encontrado"
+  },
+  "approved": true,
+  "motivo_approved": "Volume inteiro revisado linha a linha sem pendências abertas de decisão, correcções de confiança alta aplicadas, e segunda auditoria independente (subagente sem poder de edição, sem contexto prévio) confirmou o resultado sem encontrar problemas novos, conforme exigido pela regra 'Δ=0 é necessário, nunca suficiente'. Nota: o spec de segmentação (19490825-自観叢書第3篇『霊界叢談』.txt.json) ainda reflecte o estado anterior à correcção (title_pt errado, pt_anchor de vários artigos deslocado) e precisa ser reprocessado antes de qualquer promoção — isso é uma tarefa de pareamento/spec, não uma pendência de conteúdo, e não bloqueia approved:true no ficheiro de trabalho PT em si.",
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Sem CJK residual. Sem duplicação de linha/frase. Sem termos de risco do glossário. Restauração do prefácio e das 2 secções antes ausentes (sessão anterior) confirmada presente no ficheiro atual. Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

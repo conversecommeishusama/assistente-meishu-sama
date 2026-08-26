@@ -1,0 +1,25 @@
+{
+ "filename": "19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt",
+ "profile": "monolith",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_no_split",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "■■明主様御言葉 水晶殿御遷座■■",
+   "title_pt": "",
+   "jp_anchor": "■■明主様御言葉 水晶殿御遷座■■",
+   "pt_anchor": "Palestra proferida no Palácio de Cristal em 11 de dezembro de 1954",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,334 @@
+{
+  "filename": "19480101 - Gokōwa-roku (Suplemento).txt",
+  "profile": "gokowa_roku_qa",
+  "method": "jp_line_by_line",
+  "approved": false,
+  "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 30→30; corrigido para 33 em 2026-07-14 (fila CHUNK_TURNAWARE, 3 sessões ausentes: 28/1, 8/2, 28/2). Pareamento PT corrigido (pt_anchor de 3 sessões estava ancorado dentro do diálogo, não no cabeçalho de data). Corrigido novamente 2026-07-14 (protocolo PROTOCOLO_CHUNK_TURNAWARE.md, seção 1): mais 3 sessões ausentes encontradas por varredura completa de cabeçalhos de data no .txt JP bruto (35 datas reais no corpo do livro vs 32 sessões na spec) — 8/8, 8/18 (fundidas em 28/7) e 10/8 (fundida em 28/9) — 33→36 artigos (1 preface + 35 sessões).",
+  "segmentation_pass": "consolidado_estrutura_jp_20260816T211544Z",
+  "previous_article_count": 33,
+  "split_method": "line_gokowa_date",
+  "bootstrap_warnings": [],
+  "articles": [
+    {
+      "kind": "preface",
+      "title_jp": "序文",
+      "title_pt": "Prefácio",
+      "jp_anchor": "『御光話録』発行年月日不明、推定昭和26年頃。",
+      "pt_anchor": "Gokōwa-roku (Suplemento)",
+      "notes": "",
+      "pt_prefix": "序文"
+    },
+    {
+      "kind": "session",
+      "title_jp": "昭和二十三年一月一日",
+      "title_pt": "1 de janeiro de Showa 23 (1948)",
+      "jp_anchor": "昭和二十三年一月一日",
+      "pt_anchor": "1º de janeiro do ano 23 da Era Showa (1948)",
+      "notes": ""
+    },
+    {
+      "kind": "session",
+      "title_jp": "昭和二十三年一月十八日",
+      "title_pt": "18 de janeiro de Showa 23 (1948)",
+      "jp_anchor": "昭和二十三年一月十八日",
+      "pt_anchor": "18 de janeiro do ano 23 da Era Showa (1948)",
+      "notes": ""
+    },
+    {
+      "kind": "session",
+      "title_jp": "昭和二十三年一月二十八日（水）",
+      "title_pt": "28 de janeiro de Showa 23 (1948)",
+      "jp_anchor": "昭和二十三年一月二十八日（水）",
+      "pt_anchor": "28 de janeiro do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": ""
+    },
+    {
+      "kind": "session",
+      "title_jp": "昭和二十三年二月八日（日）",
+      "title_pt": "8 de fevereiro de Showa 23 (1948)",
+      "jp_anchor": "昭和二十三年二月八日（日）",
+      "pt_anchor": "8 de fevereiro do ano 23 da Era Showa (1948) (domingo)",
+      "notes": ""
+    },
+    {
+      "kind": "session",
+      "title_jp": "二月十八日（水）",
+      "title_pt": "18 de fevereiro (quarta-feira)",
+      "jp_anchor": "二月十八日（水）",
+      "pt_anchor": "18 de fevereiro do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- estava em '(Poema do dia do Risshun)', que é conteúdo real do artigo mas não seu início; o cabeçalho de data 'PT: 18 de fevereiro (quarta-feira)' estava preso ao final do artigo anterior (idx=4). Corrigido para abrir o próprio artigo, consistente com os irmãos idx=1,2,3,4,6 que sempre abrem com a própria data.]",
+      "pt_prefix": "18 de fevereiro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "昭和二十三年二月二十八日（土）",
+      "title_pt": "28 de fevereiro de Showa 23 (1948)",
+      "jp_anchor": "昭和二十三年二月二十八日（土）",
+      "pt_anchor": "28 de fevereiro do ano 23 da Era Showa (1948) (sábado)",
+      "notes": ""
+    },
+    {
+      "kind": "session",
+      "title_jp": "三月八日（月）",
+      "title_pt": "8 de março (segunda-feira)",
+      "jp_anchor": "三月八日（月）",
+      "pt_anchor": "8 de março do ano 23 da Era Showa (1948) (segunda-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de março"
+    },
+    {
+      "kind": "session",
+      "title_jp": "三月二十八日（日）",
+      "title_pt": "28 de março (domingo)",
+      "jp_anchor": "三月二十八日（日）",
+      "pt_anchor": "28 de março do ano 23 da Era Showa (1948) (domingo)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de março"
+    },
+    {
+      "kind": "session",
+      "title_jp": "四月八日（木）",
+      "title_pt": "8 de abril (quinta-feira)",
+      "jp_anchor": "四月八日（木）",
+      "pt_anchor": "8 de abril do ano 23 da Era Showa (1948) (quinta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de abril"
+    },
+    {
+      "kind": "session",
+      "title_jp": "四月十八日（日）",
+      "title_pt": "18 de abril (domingo)",
+      "jp_anchor": "四月十八日（日）",
+      "pt_anchor": "18 de abril do ano 23 da Era Showa (1948) (domingo)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de abril"
+    },
+    {
+      "kind": "session",
+      "title_jp": "四月二十八日（水）",
+      "title_pt": "28 de abril (quarta-feira)",
+      "jp_anchor": "四月二十八日（水）",
+      "pt_anchor": "28 de abril do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de abril"
+    },
+    {
+      "kind": "session",
+      "title_jp": "五月八日（土）",
+      "title_pt": "8 de maio (sábado)",
+      "jp_anchor": "五月八日（土）",
+      "pt_anchor": "8 de maio do ano 23 da Era Showa (1948) (sábado)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de maio"
+    },
+    {
+      "kind": "session",
+      "title_jp": "五月十八日",
+      "title_pt": "18 de maio",
+      "jp_anchor": "五月十八日",
+      "pt_anchor": "18 de maio do ano 23 da Era Showa (1948)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de maio"
+    },
+    {
+      "kind": "session",
+      "title_jp": "五月二十八日（金）",
+      "title_pt": "28 de maio (sexta-feira)",
+      "jp_anchor": "五月二十八日（金）",
+      "pt_anchor": "28 de maio do ano 23 da Era Showa (1948) (sexta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de maio"
+    },
+    {
+      "kind": "session",
+      "title_jp": "六月八日（火）",
+      "title_pt": "8 de junho (terça-feira)",
+      "jp_anchor": "六月八日（火）",
+      "pt_anchor": "8 de junho do ano 23 da Era Showa (1948) (terça-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de junho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "六月十八日（金）",
+      "title_pt": "18 de junho (sexta-feira)",
+      "jp_anchor": "六月十八日（金）",
+      "pt_anchor": "18 de junho do ano 23 da Era Showa (1948) (sexta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de junho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "六月二十八日",
+      "title_pt": "28 de junho",
+      "jp_anchor": "六月二十八日",
+      "pt_anchor": "28 de junho do ano 23 da Era Showa (1948)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de junho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "七月八日（木）",
+      "title_pt": "8 de julho (quinta-feira)",
+      "jp_anchor": "七月八日（木）",
+      "pt_anchor": "8 de julho do ano 23 da Era Showa (1948) (quinta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de julho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "七月十八日（日）",
+      "title_pt": "18 de julho (domingo)",
+      "jp_anchor": "七月十八日（日）",
+      "pt_anchor": "18 de julho do ano 23 da Era Showa (1948) (domingo)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de julho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "七月二十八日（水）",
+      "title_pt": "28 de julho (quarta-feira)",
+      "jp_anchor": "七月二十八日（水）",
+      "pt_anchor": "28 de julho do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de julho"
+    },
+    {
+      "kind": "session",
+      "title_jp": "八月八日（日）　新道場早雲寮にて初の御面会",
+      "title_pt": "8 de agosto (domingo)",
+      "jp_anchor": "八月八日（日）　新道場早雲寮にて初の御面会",
+      "pt_anchor": "8 de agosto do ano 23 da Era Showa (1948) (domingo)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de agosto"
+    },
+    {
+      "kind": "session",
+      "title_jp": "八月十八日(水)　新道場早雲寮仮落成式",
+      "title_pt": "18 de agosto (quarta-feira)",
+      "jp_anchor": "八月十八日(水)　新道場早雲寮仮落成式",
+      "pt_anchor": "18 de agosto do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de agosto"
+    },
+    {
+      "kind": "session",
+      "title_jp": "八月二十八日",
+      "title_pt": "28 de agosto",
+      "jp_anchor": "八月二十八日",
+      "pt_anchor": "28 de agosto do ano 23 da Era Showa (1948)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de agosto"
+    },
+    {
+      "kind": "session",
+      "title_jp": "九月八日（水）",
+      "title_pt": "8 de setembro (quarta-feira)",
+      "jp_anchor": "九月八日（水）",
+      "pt_anchor": "8 de setembro do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de setembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "九月十八日（土）",
+      "title_pt": "18 de setembro (sábado)",
+      "jp_anchor": "九月十八日（土）",
+      "pt_anchor": "18 de setembro do ano 23 da Era Showa (1948) (sábado)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de setembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "九月二十八日（火）",
+      "title_pt": "28 de setembro (terça-feira)",
+      "jp_anchor": "九月二十八日（火）",
+      "pt_anchor": "28 de setembro do ano 23 da Era Showa (1948) (terça-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de setembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十月八日（金）　熱海別院にて",
+      "title_pt": "8 de outubro (sexta-feira)",
+      "jp_anchor": "十月八日（金）　熱海別院にて",
+      "pt_anchor": "8 de outubro do ano 23 da Era Showa (1948) (sexta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de outubro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十月十八日（月）",
+      "title_pt": "18 de outubro (segunda-feira)",
+      "jp_anchor": "十月十八日（月）",
+      "pt_anchor": "18 de outubro do ano 23 da Era Showa (1948) (segunda-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de outubro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十月二十八日（木）",
+      "title_pt": "28 de outubro (quinta-feira)",
+      "jp_anchor": "十月二十八日（木）",
+      "pt_anchor": "28 de outubro do ano 23 da Era Showa (1948) (quinta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de outubro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十一月八日（月）",
+      "title_pt": "8 de novembro (segunda-feira)",
+      "jp_anchor": "十一月八日（月）",
+      "pt_anchor": "8 de novembro do ano 23 da Era Showa (1948) (segunda-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de novembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十一月十八日（木）",
+      "title_pt": "18 de novembro (quinta-feira)",
+      "jp_anchor": "十一月十八日（木）",
+      "pt_anchor": "18 de novembro do ano 23 da Era Showa (1948) (quinta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de novembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十一月二十八日",
+      "title_pt": "28 de novembro",
+      "jp_anchor": "十一月二十八日",
+      "pt_anchor": "28 de novembro do ano 23 da Era Showa (1948)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de novembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十二月八日（水）",
+      "title_pt": "8 de dezembro (quarta-feira)",
+      "jp_anchor": "十二月八日（水）",
+      "pt_anchor": "8 de dezembro do ano 23 da Era Showa (1948) (quarta-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "8 de dezembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十二月十八日（日）",
+      "title_pt": "18 de dezembro (domingo)",
+      "jp_anchor": "十二月十八日（日）",
+      "pt_anchor": "18 de dezembro do ano 23 da Era Showa (1948) (domingo)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "18 de dezembro"
+    },
+    {
+      "kind": "session",
+      "title_jp": "十二月二十八日（火）",
+      "title_pt": "28 de dezembro (terça-feira)",
+      "jp_anchor": "十二月二十八日（火）",
+      "pt_anchor": "28 de dezembro do ano 23 da Era Showa (1948) (terça-feira)",
+      "notes": " [revisão rigorosa 2026-08-05: pt_anchor corrigido -- o cabeçalho de data em PT estava preso ao final do artigo anterior em vez de abrir este artigo (mesmo bug sistêmico achado e corrigido em idx=5, confirmado por padrão: idx=1,2,3,4,6 sempre abrem com a própria data). Corrigido para apontar para o início real, verificado por split_by_anchors.]",
+      "pt_prefix": "28 de dezembro"
+    }
+  ],
+  "audited_at": "2026-07-17T10:42:51Z",
+  "audit_method": "jp_first_content_pair"
+}

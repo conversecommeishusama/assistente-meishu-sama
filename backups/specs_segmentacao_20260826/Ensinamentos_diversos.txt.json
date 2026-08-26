@@ -1,0 +1,47 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Ensinamentos_diversos",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "病貧争絶無の世界",
+   "title_pt": "Um Mundo Sem Doença, Pobreza e Conflitos",
+   "jp_anchor": "病貧争絶無の世界\n\n病貧争絶無の世界などといえば、それは",
+   "pt_anchor": "Um Mundo Sem Doença, Pobreza e Conflitos\n\nMovimento Kannon, publicado em 15 de s",
+   "notes": "entry_id=publication-jp-1435 sort_date=15 de setembro de 1935"
+  },
+  {
+   "kind": "article",
+   "title_jp": "ＮＨＫアナウンサーとの御対談",
+   "title_pt": "Diálogo com um locutor da NHK",
+   "jp_anchor": "ＮＨＫアナウンサーとの御対談\n\n（本日、日本放送協会より録音班が出張して来て、御面会の御模様を録音した）",
+   "pt_anchor": "Diálogo com um locutor da NHK\n\nEnsinamentos diversos, publicado em 17",
+   "notes": "entry_id=publication-jp-1051 sort_date=17 de julho de 1949"
+  },
+  {
+   "kind": "article",
+   "title_jp": "实談・虚談 神がかりな話日置昌一氏との対談続き",
+   "title_pt": "Histórias Reais e Fictícias: Diálogo sobre o Sobrenatural (continuação, com Hioki Shōichi)",
+   "jp_anchor": "実談・虚談 神がかりな話日置昌一氏との対談続き\n\n口寄せに頑固だったスターリン\n日置氏",
+   "pt_anchor": "Histórias Reais e Fictícias: Diálogo sobre o Sobrenatural (continuação, com Hioki Shōichi)\n\nEnsinamentos diversos, publicado em 15",
+   "notes": "entry_id=publication-jp-1057 sort_date=15 de outubro de 1952"
+  },
+  {
+   "kind": "article",
+   "title_jp": "吊刀を作る",
+   "title_pt": "Forjar uma Espada Famosa",
+   "jp_anchor": "名刀を作る\n\n昔名刀を作るには火で焼きを入れ、鎚で",
+   "pt_anchor": "Forjar uma Espada Famosa\n\nEnsinamentos diversos, publicado no an",
+   "notes": "entry_id=publication-jp-1147 sort_date="
+  },
+  {
+   "kind": "article",
+   "title_jp": "婦人病",
+   "title_pt": "Doenças Femininas",
+   "jp_anchor": "婦人病\n\n一口に婦人病といっても、種類の多いの",
+   "pt_anchor": "Doenças Femininas\n\nEnsinamentos diversos, publicado no an",
+   "notes": "entry_id=publication-jp-1366 sort_date="
+  }
+ ],
+ "filename": "Ensinamentos_diversos.txt"
+}

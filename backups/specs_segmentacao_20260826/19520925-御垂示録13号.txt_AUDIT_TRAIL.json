@@ -1,0 +1,322 @@
+{
+  "filename": "19520925-御垂示録13号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-06",
+  "scope": "Revisão completa do volume inteiro (JP 476 linhas / PT 194 linhas antes da correção, 210 depois), 2 artigos por spec (prefácio + sessão única de 1º de setembro de 1952). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do início ao fim.",
+  "pre_existing_context": "Mesma família de 御垂示録/Gokōwa já revisada nesta sessão com achados graves recorrentes (monólitos, turnos ausentes com Δ intacto, duplicação mascarando perda, nomes corrompidos). Alerta inicial: razão JP/PT ~2.5:1, suspeita de turnos curtos sem aspas (falas de Meishu-Sama) nunca traduzidos - confirmado como padrão dominante neste volume.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 19,
+    "items_escalated_to_pendencias": 0,
+    "monolito_catastrofico": false,
+    "nota_monolito": "Não é um monólito catastrófico ao estilo Gokōwa (0 divisão). A segmentação em 194→210 linhas já preservava a maior parte das quebras de turno JP; o problema real e sistemático encontrado foi a omissão de 16 falas curtas sem aspas de Meishu-Sama (perguntas/comentários de retorno), não a ausência de segmentação estrutural."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "turno_ausente",
+      "jp_linha": 138,
+      "jp_texto": "その人は何という人ですか。",
+      "localizacao_pt": "entre a testemunha de Motosugi Kazuomi (possessão espiritual) e a resposta 'Chama-se Kazuomi Motosugi.'",
+      "problema": "Pergunta curta de Meishu-Sama sem aspas ('Como se chama essa pessoa?') omitida - a resposta ficava órfã, sem a pergunta que a motiva.",
+      "correcao": "Inserido: 'Como se chama essa pessoa?' antes de 'Chama-se Kazuomi Motosugi.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "turno_ausente",
+      "jp_linha": 147,
+      "jp_texto": "そうすると複雑性癌もあるのかな。",
+      "localizacao_pt": "entre a testemunha do carcinoma simples e a continuação sobre a cirurgia",
+      "problema": "Comentário/piada curta de Meishu-Sama omitido ('Então também existe câncer complexo?').",
+      "correcao": "Inserido antes de 'Foi submetida a cirurgia...'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "turno_ausente",
+      "jp_linha": 160,
+      "jp_texto": "今衰弱のような傾向はありませんか。",
+      "localizacao_pt": "entre 'Desde abril.' e 'Ela está muito magra.'",
+      "problema": "Pergunta de Meishu-Sama omitida ('Há sinais de fraqueza agora?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "turno_ausente",
+      "jp_linha": 164,
+      "jp_texto": "元から痩せてますか。",
+      "localizacao_pt": "entre 'Ela está muito magra.' e 'Está mais magra do que antes...'",
+      "problema": "Pergunta de Meishu-Sama omitida ('Ela já era magra desde o início?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "turno_ausente_substancial",
+      "jp_linha": 168,
+      "jp_texto": "それは良いです。もう少しやってみるのです。で、だんだんはっきり分かって来ます。二回目はどこの手術をしたのですか。",
+      "localizacao_pt": "entre '...recentemente ela diz que quer comer.' e 'Foi transplantado na parte externa da coxa direita.'",
+      "problema": "Turno inteiro de Meishu-Sama omitido (não é só uma pergunta curta - inclui avaliação clínica e pergunta sobre a segunda cirurgia). Conteúdo real perdido, não trivial.",
+      "correcao": "Inserido: 'Isso é bom. Vamos continuar tentando um pouco mais. Assim, aos poucos ficará mais claro. Onde foi feita a segunda cirurgia?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "tipo": "turno_ausente",
+      "jp_linha": 234,
+      "jp_texto": "先祖代々の墓は作るよりないではないですか。墓がないのですか。",
+      "localizacao_pt": "entre a pergunta sobre o túmulo da família ramificada e 'Como o Professor Takagaki faleceu...'",
+      "problema": "Turno de Meishu-Sama omitido.",
+      "correcao": "Inserido: 'Não há outro jeito senão construir o túmulo dos antepassados de todas as gerações, não é? Não há túmulo?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "tipo": "turno_ausente",
+      "jp_linha": 260,
+      "jp_texto": "中はどうなってますか。",
+      "localizacao_pt": "entre 'Só foi suturado, não fizeram mais nada por dentro.' e 'O interior está triangular e vazio.'",
+      "problema": "Pergunta de Meishu-Sama omitida ('Como está por dentro?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "tipo": "turno_ausente_substancial",
+      "jp_linha": 282,
+      "jp_texto": "痛みだけを取るのはやっても良いです。しかし結核患者が痛むというのは、どこが痛むのですか。",
+      "localizacao_pt": "entre 'Estão surgindo dores em vários lugares...' e 'No peito...'",
+      "problema": "Turno de Meishu-Sama omitido (autorização de aliviar a dor + pergunta sobre localização).",
+      "correcao": "Inserido: 'Tirar apenas a dor está bem. Mas, quando um paciente de tuberculose sente dor, onde é que dói?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "tipo": "turno_ausente",
+      "jp_linha": 371,
+      "jp_texto": "くっつき方はどういう風にですか。",
+      "localizacao_pt": "entre 'O médico diz que seria bom operar.' e 'É a partir da articulação.'",
+      "problema": "Pergunta de Meishu-Sama omitida ('De que jeito estão unidos?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "tipo": "turno_ausente",
+      "jp_linha": 408,
+      "jp_texto": "座敷に置いた犬ですか。",
+      "localizacao_pt": "entre '...tocou a Imagem da Luz Divina...' e 'Na relojoaria ao lado...'",
+      "problema": "Pergunta de Meishu-Sama omitida ('É um cachorro que fica na sala de estar?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "tipo": "turno_ausente",
+      "jp_linha": 412,
+      "jp_texto": "隣の時計屋の人が犬を連れて来たというわけですか。その犬は座敷に住んでいる犬ですか。",
+      "localizacao_pt": "entre '...caractere \"kuru\" (vir).' e 'Mora na sala de estar.'",
+      "problema": "Turno de Meishu-Sama omitido.",
+      "correcao": "Inserido: 'Então foi a pessoa da relojoaria ao lado que trouxe o cachorro? Esse cachorro mora na sala de estar?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "tipo": "turno_ausente",
+      "jp_linha": 416,
+      "jp_texto": "それは、見て気がつかないくらいですか。",
+      "localizacao_pt": "entre 'Mora na sala de estar.' e 'Sim.'",
+      "problema": "Pergunta de Meishu-Sama omitida ('Isso é ao ponto de não se notar olhando?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "tipo": "turno_ausente",
+      "jp_linha": 429,
+      "jp_texto": "それが元の人とできたのですか。",
+      "localizacao_pt": "entre '...herdeira da família Wakamatsu...' e 'Sim. Ela é minha irmã...'",
+      "problema": "Pergunta de Meishu-Sama omitida ('Foi com a pessoa original que ela teve esse relacionamento?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "tipo": "turno_ausente",
+      "jp_linha": 437,
+      "jp_texto": "鈴木家の墓地ですか。",
+      "localizacao_pt": "entre '...gostaria de transferi-lo...' e 'Há os dois, o da família Wakamatsu e o da família Suzuki...'",
+      "problema": "Pergunta de Meishu-Sama omitida ('É o cemitério da família Suzuki?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "tipo": "turno_ausente",
+      "jp_linha": 441,
+      "jp_texto": "その近くの町ですか。遠くはないのですか。",
+      "localizacao_pt": "entre '...Gostaria de transferi-los para perto...' e 'Não é longe...'",
+      "problema": "Pergunta de Meishu-Sama omitida ('É na cidade próxima? Não é longe?').",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "tipo": "turno_ausente_substancial",
+      "jp_linha": 445,
+      "jp_texto": "手続だけで良いでしょう。何年くらい経ってますか。",
+      "localizacao_pt": "entre '...Ou basta apenas a papelada?' e 'Não sei quando a família Wakamatsu se extinguiu...'",
+      "problema": "Turno de Meishu-Sama omitido (resposta + pergunta sobre tempo decorrido).",
+      "correcao": "Inserido: 'Só a papelada deve bastar. Quanto tempo faz mais ou menos?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 17,
+      "tipo": "truncamento",
+      "jp_linha": 136,
+      "jp_texto": "その後支部の月並祭の帰りに",
+      "localizacao_pt": "testemunho de Motosugi Kazuomi",
+      "problema": "Frase cortada no meio: 'na volta da cerimônia mensal do,' - '支部' (filial/sucursal) ausente, deixando a frase incompleta e sem sentido.",
+      "correcao": "'na volta do festival mensal da filial,' - termo 'filial' confirmado como tradução padrão de 支部 já usada em outros volumes do mesmo acervo (ex. 御光話録14号).",
+      "confianca": "alta"
+    },
+    {
+      "n": 18,
+      "tipo": "erro_semantico_data",
+      "jp_linha": 136,
+      "jp_texto": "十九年に入信の三十二才の男",
+      "localizacao_pt": "início do testemunho de Motosugi Kazuomi",
+      "problema": "'十九年' (ano de referência de era, sem prefixo 昭和) traduzido como 'convertido há 19 anos' (= ~1933), o que é cronologicamente impossível - a Igreja Messiânica/movimento de Meishu-Sama nem existia antes de 1935. É notação de ano de era (Showa 19 = 1944), confirmada pelo padrão idêntico já usado noutro volume do mesmo acervo (御光話録9号: '十九年' → '1944 (Showa 19)').",
+      "correcao": "'Um homem de 32 anos, convertido em 1944 (Showa 19).'",
+      "confianca": "alta"
+    },
+    {
+      "n": 19,
+      "tipo": "erro_semantico_data",
+      "jp_linha": 145,
+      "jp_texto": "二十五年左乳房にしこりができ",
+      "localizacao_pt": "início do testemunho da mulher de 35 anos com carcinoma",
+      "problema": "Mesmo padrão do item 18: '二十五年' traduzido como 'há 25 anos' quando é notação de ano de era (Showa 25 = 1950, apenas 2 anos antes da data do documento, 1952), coerente com o restante do relato (cirurgia, radioterapia e Johrei desde abril, tudo em andamento recente).",
+      "correcao": "'Em 1950 (Showa 25), apareceu um nódulo na mama esquerda...'",
+      "confianca": "media-alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + cabeçalho de publicação",
+      "jp_linhas": "20-26",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Título, fonte e data batem; 御垂示録第十三号（昭和二十七年） é redundante com a linha anterior e não precisa de tradução separada."
+    },
+    {
+      "bloco": "Monólogo político (EUA/China/URSS/Japão, bomba atômica) + introdução das pinturas de Dunhuang",
+      "jp_linhas": "28-30",
+      "decisao": "ok, com merge de parágrafo cosmético (sem perda de conteúdo)",
+      "confianca": "alta",
+      "notas": "As duas primeiras seções JP (parágrafo político + intro Dunhuang) aparecem fundidas em um único parágrafo PT sem quebra - defeito de paragrafação (checklist item 6), mas sem perda de conteúdo. Não corrigido nesta passada (baixa severidade); registrado para eventual limpeza formal."
+    },
+    {
+      "bloco": "Diálogo sobre as pinturas de Dunhuang / Tenrikyo / Oomoto",
+      "jp_linhas": "32-107",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Todos os turnos presentes e alinhados, sem omissão."
+    },
+    {
+      "bloco": "Agricultura natural / sulfato de amônio",
+      "jp_linhas": "111-133",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos médicos (possessão, câncer de mama, transplante ósseo)",
+      "jp_linhas": "136-176",
+      "decisao": "corrigido - 5 turnos ausentes + 1 truncamento + 1 erro de data (itens 1,2,3,4,5,17,18)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos diversos (nervos, orquite, sepultura, espíritos, raposas)",
+      "jp_linhas": "179-403",
+      "decisao": "corrigido - 5 turnos ausentes + 1 erro de data (itens 6,7,8,9,19)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Medicina/origem dos remédios/Judeus/Pangu/vermes/dedos unidos/percevejos/cupim",
+      "jp_linhas": "319-403",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Verificado especificamente que a passagem sobre Pangu e origem dos remédios (JP 319) aparece uma única vez no PT (linha 138), não duplicada - suspeita inicial de duplicação descartada após conferência byte a byte."
+    },
+    {
+      "bloco": "Cachorro no santuário / relojoaria vizinha",
+      "jp_linhas": "406-424",
+      "decisao": "corrigido - 3 turnos ausentes (itens 10,11,12)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Família Wakamatsu/Suzuki - reconstituição e mudança de sepultura",
+      "jp_linhas": "427-461",
+      "decisao": "corrigido - 4 turnos ausentes (itens 13,14,15,16)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Arrotos/criança com deformidade/primeira visita ao santuário",
+      "jp_linhas": "464-476",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Final do volume íntegro, sem truncamento."
+    }
+  ],
+  "verificacoes_negativas": [
+    "Troca de falante (Interlocutor/Meishu-Sama invertidos): não encontrada em nenhum ponto do volume.",
+    "Duplicação de blocos inteiros (padrão Atsuta/pesca de outros volumes desta família): não encontrada.",
+    "Corrupção de nomes próprios: não encontrada (Motosugi Kazuomi, Deguchi Onisaburo, Hirokawa, Wakamatsu/Suzuki, Takagaki conferidos contra o JP).",
+    "CJK residual no corpo PT: nenhum encontrado."
+  ],
+  "pendencias_abertas": [],
+  "nota_paragrafacao": "Cerca de 22 pontos de transição entre o fechamento de uma resposta de Meishu-Sama e a abertura de um novo testemunho ficaram fundidos na mesma linha PT sem quebra de parágrafo (o JP tem linha em branco separando-os). Nenhum desses pontos envolve perda de conteúdo - todos os turnos estão presentes e na ordem correta, apenas sem a quebra visual. Não corrigido nesta passada por ser de baixa severidade (item 6 do checklist, mas não afeta o sentido) frente ao custo de mais ~22 edições; registrado aqui para decisão futura sobre limpeza de formatação, não como bloqueio de conteúdo. NOTA (2026-07-08): resolvido como efeito colateral da rotulagem Interlocutor/Meishu-Sama abaixo - todos os pontos de fusão foram divididos em parágrafos próprios, cada um com seu rótulo.",
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (aspas 「」 = Interlocutor, prosa corrida sem aspas = Meishu-Sama)",
+    "etapa_A_mapa_jp": "JP percorrido linha a linha (parágrafo físico = unidade de turno, separado por linha em branco no ficheiro fonte). Classificação automatizada por script + conferência manual: parágrafo inicia com 「 = Interlocutor; caso contrário = Meishu-Sama; ［data］ = cabeçalho de sessão. Detectados e excluídos da contagem de turnos os seguintes falsos positivos - citações/termos entre aspas usados pelo próprio Meishu-Sama dentro da sua fala, não perguntas do interlocutor: 「湯女」(nome de gravura ukiyo-e), 「文明の創造」(título de livro, citado 2x), 「結核信仰療法」(título de livro), e a citação do Ofudesaki da Oomoto dentro do parágrafo JP 99.",
+    "contagem_jp": {
+      "cabecalho_data": 1,
+      "turnos_interlocutor": 103,
+      "paragrafos_meishu_sama": 107,
+      "total_paragrafos_corpo": 211,
+      "runs_meishu_consecutivo_sem_interlocutor_entre": [
+        "JP linhas 28+30 (abertura do volume, antes do primeiro turno de Interlocutor - política EUA/China/URSS + introdução das pinturas de Dunhuang)",
+        "JP linhas 316+319 (fecho do tópico do Ofuda na praia + novo tópico não solicitado sobre origem dos remédios em 'A Criação da Civilização')",
+        "JP linhas 353+354 (já preservado como 2 linhas distintas no PT antes desta rotulagem)"
+      ]
+    },
+    "etapa_B_confirmacao": {
+      "delta_interlocutor": "103 PT = 103 JP (Δ=0)",
+      "delta_meishu_sama": "107 PT = 107 JP (Δ=0)",
+      "travessoes_no_corpo": 0,
+      "alternancia": "I/M coerente em toda a extensão; nenhum bloco I->I consecutivo; 3 blocos M->M consecutivos correspondem exatamente aos 3 runs JP listados acima."
+    },
+    "etapa_C_ajuste_pt": "26 pontos de fusão de parágrafo no PT (parágrafos que continham 2 turnos concatenados na mesma linha, sem quebra) foram divididos nos pontos de transição correspondentes ao mapa JP, preservando literalmente o texto PT já existente (nenhuma palavra reescrita ou reordenada) - apenas inserida a quebra de parágrafo e o rótulo. O cabeçalho '[1º de setembro]' foi isolado em linha própria (antes fundido com o primeiro parágrafo de Meishu-Sama).",
+    "turnos_curtos_verificados": "Conferidos especificamente os turnos de uma só palavra/frase curta de Meishu-Sama (classe de bug já detectada em volumes anteriores da série) - 'Sim.', 'そうです。', 'そうでしょう。', 'Cortar está bem.', 'Isso é bom.', etc. - todos presentes e no rótulo correto; nenhuma omissão nova encontrada nesta passada (as omissões anteriores já haviam sido corrigidas na revisão de 2026-07-06 registrada acima).",
+    "problemas_corrigidos_nesta_passada": "Nenhum turno faltando encontrado (o conteúdo já havia sido fechado pela auditoria de 2026-07-06/07). Único problema era de formatação/rotulagem, resolvido integralmente.",
+    "approved_alterado": false
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [],
+    "notas": "Leitura completa linha a linha (JP 476 linhas / PT 235 linhas) confrontando cada trecho e cada turno Interlocutor/Meishu-Sama contra o JP fonte. Conteudo integro, sem truncamento, sem CJK residual, sem duplicacao, paragrafacao 1:1 com o JP. Titulo descritivo (\"Foi tudo o Sr. Otani quem trouxe?\") consistente entre metadados JP e PT. Confirmada ocorrencia adicional (linha JP 314-317, mamori de banho de mar) de 御守様 traduzido como \"Ofuda\" -- mesma inconsistencia terminologica ja documentada como padrao sistemico no volume irmao 14号/16号 (decisao de glossario pendente de autorizacao do usuario, nao e bug deste volume isolado). Nomes proprios em ordem ocidental (nome+sobrenome) aplicados consistentemente. Nenhuma correcao adicional necessaria."
+  }
+}

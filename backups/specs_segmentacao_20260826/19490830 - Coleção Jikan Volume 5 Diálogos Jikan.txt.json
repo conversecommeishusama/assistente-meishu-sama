@@ -1,0 +1,191 @@
+{
+ "filename": "19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+ "profile": "jikan_hen",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14; pareamento PT reconstruído 2026-07-15 (22/22, leitura direta, sem interpolação).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 22,
+ "split_method": "line_jikan_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio de Jikan",
+   "jp_anchor": "自観叢書第5篇『自観隨談』昭和24(1949)年8月30日発行",
+   "pt_anchor": "Coleção Jikan Volume 5 Diálogos Jikan",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "人が恐ろしい",
+   "title_pt": "O Medo das Pessoas",
+   "jp_anchor": "　人が恐ろしい\n\n　今日、私の仕事をみる人がよくいう言葉に、先生は実に大胆で何をやっても構想が大きいと驚いているが、全くそうであろう。全人類を救い病貧争絶無の世界を造り、現世を天国化するというのであるから、まず普通人から見たら誇大妄想以外の何物でもあるまい。否",
+   "pt_anchor": "O Medo das Pessoas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "馬鹿正直",
+   "title_pt": "Honestidade Ingênua",
+   "jp_anchor": "　　　馬鹿正直\n\n　こういう事があった。私は二十五歳の時に世帯を持ったが、その時親戚の中に苦労人がいた。その人のいわく。「お前のような馬鹿正直の人間は世の中へ出たところで成功しっこない。なぜなら、今の世の中で成功する奴は嘘をうまく吐き、三角流でなくては駄目だ」",
+   "pt_anchor": "Honestidade Ingênua",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "正直と嘘",
+   "title_pt": "Honestidade e Mentira",
+   "jp_anchor": "　　　正直と嘘\n\n　正直にする方がいいか嘘をつく方がいいかといえば、正直にする方がいいという事は余りにも明らかである。しかしながら世の中の事はそう単純ではないから正直でなければならない場合もあり、嘘をつかねばならない場合もある。この区別の判り得る人が偉いとか利",
+   "pt_anchor": "Honestidade e Mentira",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "借金",
+   "title_pt": "Dívidas",
+   "jp_anchor": "私が中年頃から二十余年間は、実に借金との苦闘史時代といってもよかろう。忘れもしない私が三十五、六歳の時大失敗をして、借金と縁を結んでしまった。しかしそれから何とかして借金と手を切ろうと焦ってはみたが、焦れば焦る程反って借金を殖やすという結果",
+   "pt_anchor": "Dívidas\n\nDos meus trinta e poucos anos até os sessenta, durante mais de vinte anos, pode-se dizer que foi uma era de luta contra ",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "順序",
+   "title_pt": "Ordem",
+   "jp_anchor": "「神は順序なり」という事が昔からいわれているがこれは全くそうであると思う。何事においてもそれが滑らかに運ばないという原因は、全く順序が紊（みだ）れているからで、特に人事においてそうである。支那の諺に「夫婦別あり、老幼序あり」というが全く至言",
+   "pt_anchor": "Ordem\n\nDesde os tempos antigos, diz-se que \"Deus é ordem\", e acredito que seja verdade. A razão pela qual algo não funciona sua",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "柔道",
+   "title_pt": "Judô",
+   "jp_anchor": "私は若い頃柔道を習った事がある。元来柔道なるものは徹頭徹尾敵の力を利用して勝つので、決して敵の向かって来る力を押し返すのではない。出来るだけ敵に力を発揮させそれを利用するのである。私は処世の上においても柔道の理を参考にする事がある。それは私",
+   "pt_anchor": "Judô\n\nQuando jovem, aprendi judô. Originalmente, o judô consiste em usar a força do oponente para vencer, do início ao fim, nu",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "逆手の法",
+   "title_pt": "O Método da Mão Inversa",
+   "jp_anchor": "　　　逆手の法\n\n　およそ人間が世に処して行く以上、千差万別種々の問題にブツかるが、その場合適切な対応策が立ち所に頭に浮ぶとすればはなはだ結構であるが、中々そうはゆかないものである。問題によってはいくら考慮しても解決策の発見出来ない事がある。そういう時にこの逆",
+   "pt_anchor": "O Método da Mão Inversa",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "強盗の訴え",
+   "title_pt": "A Acusação de Roubo",
+   "jp_anchor": "　　　強盗の訴え\n\n　私は強盗の訴えをされた事があった――と聞いたら吃驚しない者はあるまい。ところが事実であって、忘れもしない大正八年の暮のある日、私は検事局へ喚び出されたがそれはこういう訳だ。",
+   "pt_anchor": "A Acusação de Roubo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "団十郎の芸",
+   "title_pt": "A Arte de Danjūrō",
+   "jp_anchor": "　　　団十郎の芸\n\n　昔から世の中には多くの名人が出ているが名人になるには実に容易なものではない事は名人なるものが洵（まこと）に少ないという事実によっても明らかであろう。私は常にこう思っている。ある意味において名人が人類に対する功績はすこぶる大きなものがあり、全",
+   "pt_anchor": "A Arte de Danjūrō",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浪花亭愛造",
+   "title_pt": "Naniwatei Aizō",
+   "jp_anchor": "　　　浪花亭愛造\n\n　俳優以外の名人について語りたい人は二、三に止まらないが私は若い時から浪曲が非常に好きであったからここに書いてみよう。私の浪曲好きは関東節に限るので、今もって関西節に興味は持てない。従って、関東節を主としてかくのである。",
+   "pt_anchor": "Naniwatei Aizō\n\nNão são apenas duas ou três as pessoas sobre as quais gostaria de falar como mestres fora do mundo dos a",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "音曲",
+   "title_pt": "Música (Ongyoku)",
+   "jp_anchor": "音曲（おんぎょく）についても少し書いてみよう。音曲といえば以前大阪では浄瑠璃といい東京では義太夫という、それが王座を占めていた事は衆知の事で、忘れもしない大正の初め頃彼の有名な豊竹呂昇が大阪から毎月のように来ては、その頃の有楽座の名人会へ出",
+   "pt_anchor": "Música (Ongyoku)",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "映画",
+   "title_pt": "Cinema",
+   "jp_anchor": "私が映画の好きな事は私を知る限りの人はみんな知っている。忘れもしない私が映画を観初めたのは十六、七の時だから、今から五十年位前でまず最古のファンといえよう。その頃が映画が日本へ入った最初であった。もちろん一巻物で波の動きや犬が駈け出す所、人",
+   "pt_anchor": "Cinema\n\nTodos que me conhecem sabem que gosto de cinema. Não posso esquecer que comecei a assistir filmes aos dezesseis ou dezes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "二人の盲の話",
+   "title_pt": "A História de Dois Cegos",
+   "jp_anchor": "　　　二人の盲の話\n\n　私が十二、三の頃浅草の千束町に住んでいた事がある。父は古道具屋をしていたのでその仲間であった、当時浅草一といわれた道具屋で花亀という人があった（この名は花川戸の亀さんだからである）。この人は六十位の時に両眼つぶれ完全な盲目となってしまった。",
+   "pt_anchor": "A História de Dois Cegos",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "アルプス紀行",
+   "title_pt": "Crônica dos Alpes",
+   "jp_anchor": "　　　アルプス紀行\n\n　今から二十数年以前私は登山熱の上っていた頃、日本アルプスの槍ケ嶽を目標にある年の八月半ば妻を連れ、汽車でまず信州松本に着き大町を通って中房温泉に行き着いた。おもしろい事には中房の一里くらい手前から妻は女の事とて山間（やまあい）の険路を登るの",
+   "pt_anchor": "Crônica dos Alpes",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "奥日光から塩原へ",
+   "title_pt": "De Oku-Nikko a Shiobara",
+   "jp_anchor": "奥日光から塩原へ",
+   "pt_anchor": "De Oku-Nikko a Shiobara",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "湯西川温泉",
+   "title_pt": "Yunishigawa Onsen",
+   "jp_anchor": "　　　湯西川温泉\n\n　私は、ある年の夏であった、目的は以前行き損なった奥日光と塩原の中間にある湯西川温泉に遊ぶべく、途中上州の川治温泉で昼食をなし、そこから一里半山に入り、渓流に懸った橋を渡り、かねて用意さしておいて牛車に乗り、全く牛の歩みの通り四里の途を六時間",
+   "pt_anchor": "Yunishigawa Onsen\n\nFoi no verão de um certo ano. Meu objetivo era visitar a fonte termal de Yunishigawa, no meio do cami",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "馬鹿肥りは病的だ",
+   "title_pt": "A obesidade exagerada é doentia",
+   "jp_anchor": "馬鹿肥りは病的だ",
+   "pt_anchor": "A obesidade exagerada é doentia",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "尾形光琳",
+   "title_pt": "Ogata Korin",
+   "jp_anchor": "　　　尾形光琳\n\n　私は苦い頃から絵が非常に好きであった。そうして古今を通じて私の一番好きな画家は何といっても彼の光琳である。光琳派の中では光悦も宗達も光甫（こうほ）も乾山（けんざん）も、それぞれ良いところはあるが、何といっても光琳は断然傑出している。彼の絵ほ",
+   "pt_anchor": "Ogata Korin\n\nDesde jovem, sempre gostei muito de pintura. E, entre todos os pintores, antigos e modernos, o meu favorito",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "日本美術とその将来",
+   "title_pt": "A Arte Japonesa e seu Futuro",
+   "jp_anchor": "日本美術とその将来",
+   "pt_anchor": "A Arte Japonesa e seu Futuro",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "狂信",
+   "title_pt": "Fanatismo",
+   "jp_anchor": "私が大本教へ入信後聞いた話であるが、大本教発祥の頃例のお筆先が信仰の中心であったため、お筆先の一字一句も見逃さないで、それを直訳的に実行した連中があったから堪らない。その結果実に笑うにも笑えない喜劇が生まれたのである。",
+   "pt_anchor": "Fanatismo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "大本信者時代の私",
+   "title_pt": "Eu na época de membro da religião Oomoto",
+   "jp_anchor": "大本信者時代の私",
+   "pt_anchor": "Eu na época de membro da religião Oomoto",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

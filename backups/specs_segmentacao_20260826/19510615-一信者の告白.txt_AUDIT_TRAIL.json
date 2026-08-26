@@ -1,0 +1,88 @@
+{
+  "filename": "19510615-一信者の告白.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 142 linhas / PT 166 linhas antes das correções), 16 trechos por spec (prefácio + 14 secções + waka final), do título ao colofão editorial. Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, parágrafo a parágrafo.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 16,
+    "articles_reviewed": 16,
+    "real_corrections_applied": 7,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linhas 23-25 (abertura do prefácio, antes de 'Recentemente, li um manuscrito...')",
+      "problema": "GRAVE (checklist pontos 2 e 7 - existência PT e títulos/cabeçalhos): o cabeçalho 'はしがき' (Foreword/Prefácio) e a assinatura do autor do prefácio '自　観' (pseudônimo do fundador, 'Jikan' - conforme glossario_traducao.json entrada '自観': 'Jikan', e conforme precedente de formatação em 'reports/livros_trabalho/pt/19490830-自観叢書第5篇『自観隨談』.txt') estavam totalmente ausentes do PT. O texto do prefácio (escrito por Jikan, apresentando o testemunho de Miyamoto Kinji) começava direto no corpo, sem indicar autoria nem que se tratava de um prefácio distinto do testemunho principal.",
+      "correcao": "Inserido 'Prefácio' (tradução padrão de はしがき, confirmada em vários outros volumes do acervo) seguido de 'Jikan' em linha própria recuada, antes do corpo do prefácio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "linha ~114 (waka/poema após a citação sobre a visão invertida de beleza/verdade, JP linha 88-89 '正神の　鏡によらで如何にして／百の逆事解らざらめや')",
+      "problema": "GRAVE (checklist ponto 4 - completude PT): o segundo verso do waka '百の逆事解らざらめや' estava totalmente ausente do PT - só o primeiro verso aparecia, e cortado incompleto ('Sem o espelho do Deus Verdadeiro, como'), sem terminar a frase nem trazer o segundo verso. Confirmado por busca cross-acervo: o mesmo waka aparece integralmente traduzido em reports/livros_trabalho/pt/19480701-御讃歌集.txt linha 77 ('Como poderia compreender as cem coisas contrárias sem me espelhar no espelho das divindades corretas?').",
+      "correcao": "Reescritos os dois versos, alinhados à tradução já estabelecida no acervo (御讃歌集) para manter consistência terminológica: 'Sem me espelhar no espelho das divindades corretas, como / poderia compreender as cem coisas contrárias?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "trecho sobre a correção da visão invertida de verdade/beleza/bondade (JP linha 94 '芸術尊貴の教義と実践、治病実績、自然農法実績、その他諸々の現当利益')",
+      "problema": "Corrupção por duplicação de texto: 'os resultados da método da método da agricultura natural' - fragmento 'da método' duplicado, quebrando a gramática e não correspondendo a nada no JP (que tem simplesmente 自然農法実績 = 'resultados da agricultura natural').",
+      "correcao": "Removida a duplicação: 'os resultados da agricultura natural'. Aproveitada a mesma edição para unificar uma quebra de parágrafo espúria no meio de uma única frase do JP (linha 94), que cortava 'a visão completamente invertida sobre eles' de 'enquanto não for completamente corrigida...' sem motivo correspondente no original.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "linha ~64 (testemunho sobre o filho mais velho, JP linha 55 '東京帝大の呉内科で肺浸潤と診断され')",
+      "problema": "Erro de nome próprio: '呉内科' (Departamento de Clínica Médica Interna do Professor Kure, na Universidade Imperial de Tóquio - 呉 é sobrenome, lido 'Kure', não a leitura chinesa do caractere) foi romanizado incorretamente como 'Wu' (leitura chinesa/pinyin do caractere, incorreta para um nome próprio japonês).",
+      "correcao": "'Departamento de Clínica Médica de Wu' → 'Departamento de Clínica Médica Kure'.",
+      "confianca": "média-alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "linhas 56, 62 (5 ocorrências: prédio de onde o narrador saiu por atraso de aluguel, JP linha 50 '海上ビルを出て...海上ビルを出て...当時の海上ビルの藤岡館長さん')",
+      "problema": "Inconsistência de nome próprio: o mesmo edifício (海上ビル, abreviação de 東京海上ビルディング) foi traduzido corretamente como 'Edifício Tokyo Marine' na linha 51 (primeira menção), mas nas linhas 56 e 62 (mesma entidade, mesmo prédio) apareceu como 'Edifício Kaiun' - nome diferente e sem correspondência no JP (não existe 'Kaiun' em nenhuma parte deste texto; parece confusão com 海運, palavra distinta de 海上).",
+      "correcao": "Todas as 5 ocorrências de 'Edifício Kaiun' corrigidas para 'Edifício Tokyo Marine', restaurando a consistência com a primeira menção do mesmo prédio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "linhas 28 e 33 (dividers em torno do primeiro waka de abertura, JP linhas 32 e 37 '―――――――――・――――――――――')",
+      "problema": "Inconsistência de formatação: as duas primeiras linhas divisórias do arquivo estavam grafadas como '*―・―――――――――・――――――――――*' (com asteriscos de itálico e um prefixo '―・' espúrio, sem correspondência no JP), enquanto as 4 divisórias seguintes (em torno das citações de 'Conversas sobre a Fé') seguem o padrão correto e uniforme do JP, sem asteriscos nem prefixo extra.",
+      "correcao": "Normalizadas as duas divisórias para o mesmo padrão das demais: '―――――――――・――――――――――', sem asteriscos nem prefixo extra.",
+      "confianca": "média (correção cosmética/estrutural, sem perda de conteúdo)"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "final do arquivo, após a repetição do poema de encerramento (JP linhas 132-142: título repetido, data de publicação, formato, '非売品', autor, editor responsável, editora)",
+      "problema": "GRAVE (checklist ponto 2 - existência PT): todo o colofão editorial de encerramento do JP (título '一信者の告白' repetido, '昭和26年6月15日発行', 'Ａ６版　53P', '非売品', '著者　宮本謹爾', '発行者　小山正男', '発行所　世界救世教出版部') estava completamente ausente do PT, que terminava abruptamente após o poema final.",
+      "correcao": "Adicionado o colofão traduzido, seguindo o padrão já estabelecido em outros volumes do mesmo selo editorial (ex.: reports/livros_trabalho/pt/19510601-世界救世教教義解説.txt, que usa exatamente 'Autor:', 'Editor responsável: Koyama Masao', 'Editora: Departamento de Publicações da Igreja Messiânica Mundial' para a mesma equipe editorial/小山正男/世界救世教出版部): título repetido 'Confissão de um Crente', 'Publicado em 15 de junho do ano 26 da Era Showa (1951)', 'Formato A6, 53 páginas, não à venda', 'Autor: Kinji Miyamoto', 'Editor responsável: Koyama Masao', 'Editora: Departamento de Publicações da Igreja Messiânica Mundial'.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título + publicação + prefácio (自観/Jikan)", "jp_linhas": "20-28", "decisao": "corrigido - cabeçalho e assinatura ausentes (correção 1)", "confianca": "alta"},
+    {"bloco": "Waka de abertura ('奇びなり...') + divisórias", "jp_linhas": "32-37", "decisao": "corrigido - divisórias inconsistentes (correção 6), conteúdo do poema já estava completo e correto", "confianca": "alta"},
+    {"bloco": "Diálogo Eu/Masatake/Yoko (confissão da espada)", "jp_linhas": "39-41", "decisao": "ok, tradução completa e fiel", "confianca": "alta"},
+    {"bloco": "Narrativa de guerra, vizinhança, rádio Kagawa/Yamamuro", "jp_linhas": "43-45", "decisao": "ok", "confianca": "alta"},
+    {"bloco": "Reflexão sobre veracidade + biografia (Wakayama, Nagasaki, Meiji Seito)", "jp_linhas": "46-48", "decisao": "ok, completo e fiel, nomes e datas conferidos (1898, 1921, Showa 9/10)", "confianca": "alta"},
+    {"bloco": "Movimento do Espírito Japonês (Shingon, Ketsumeidan, Inoue Nissho, parábola de Ikkyū, Imaizumi, Hirata, Kamunaobi/Ōnaobi)", "jp_linhas": "49-50", "decisao": "corrigido - nome do edifício inconsistente (correção 5); demais nomes próprios (Imaizumi Teisuke, Hirata Isao, Kamunaobi, Oonaobi) conferidos corretos", "confianca": "alta"},
+    {"bloco": "Morte da mãe (1920), Shibusawa/Mêncio, ruptura com primo, falência da empresa, Xintoísmo Imperial, cena de 16 de agosto no Nijūbashi", "jp_linhas": "51-54", "decisao": "corrigido - mesma inconsistência de nome de edifício (correção 5, linha 62)", "confianca": "alta"},
+    {"bloco": "Falência do poço, conversão da família, cura do filho (呉内科), atração de jovens, curas instantâneas", "jp_linhas": "55-56", "decisao": "corrigido - erro de nome próprio 'Wu'→'Kure' (correção 4); paragrafação consolidada em relação ao JP (vários parágrafos JP vertidos em um só bloco PT) mas sem perda de conteúdo - aceito por precedente (ver AUDIT_TRAIL de 無肥料栽培法)", "confianca": "alta"},
+    {"bloco": "Agricultura natural, jornal da Igreja, filha na Nihon Joshi Daigaku, devoção da família", "jp_linhas": "57-60", "decisao": "ok, completo", "confianca": "alta"},
+    {"bloco": "Citação de 'Conversas sobre a Fé' - seção 'Bom Senso' (常識)", "jp_linhas": "62-66", "decisao": "ok, tradução completa e fiel, divisórias corretas", "confianca": "alta"},
+    {"bloco": "Citação de 'Conversas sobre a Fé' - seção 'A Fé Correta' (正しき信仰)", "jp_linhas": "69-73", "decisao": "ok, completo", "confianca": "alta"},
+    {"bloco": "Reflexão sobre Kodo Shinto, tribunal de guerra, proibição de tutela, dever de não fanatizar", "jp_linhas": "77-79", "decisao": "ok, completo", "confianca": "alta"},
+    {"bloco": "Interpelação a filósofos, cientistas (Hiraga Gennai, Einstein, Kagawa), moralistas, artistas (Rodin, Sōseki)", "jp_linhas": "80-86", "decisao": "ok, nomes próprios conferidos corretos", "confianca": "alta"},
+    {"bloco": "Waka '正神の鏡...' + reflexão sobre inversão de verdade/beleza/bondade + waka 千手観音/世尊", "jp_linhas": "88-100", "decisao": "corrigido - segundo verso do waka ausente (correção 2), duplicação de texto e quebra de parágrafo espúria (correção 3)", "confianca": "alta"},
+    {"bloco": "Interpelação a jornalistas, juízes, PM Yoshida, sobre reportagem 'branco como preto' e prisão do fundador", "jp_linhas": "101-111", "decisao": "ok, completo, nomes próprios (Qin Shi Huang, Nero, Hitler, Tōjō, Yoshida) conferidos corretos", "confianca": "alta"},
+    {"bloco": "Encerramento (súplica final, choro, aparência de lar celestial) + poema repetido + colofão editorial", "jp_linhas": "112-142", "decisao": "corrigido - colofão editorial inteiro ausente (correção 7); poema repetido já estava completo e correto", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro. Todas as 7 divergências encontradas (2 delas graves: cabeçalho/assinatura do prefácio ausentes, e colofão editorial final ausente) foram corrigidas inline com confiança alta ou média-alta, incluindo verificação cross-acervo para restaurar a tradução exata de um waka já traduzido em outro volume (御讃歌集)."
+  }
+}

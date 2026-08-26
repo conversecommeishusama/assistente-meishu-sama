@@ -1,0 +1,575 @@
+{
+ "filename": "19510130 - Fonte do Riso.txt",
+ "profile": "wara_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Reconstrução completa 2026-07-15: spec original cobria só 24/69 temas (título ausente para os 45 restantes, pareamento degenerado). Extraídos todos os 69 marcadores 題「...」/「空財布」 do JP e todos os 69 'Título:' do PT, pareados 1:1 por ordem (contagem idêntica, confirmado por leitura de amostra início/meio/fim).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 70,
+ "split_method": "line_wara_theme",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "はしがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "笑の泉（笑冠沓句集）　　　　昭和２６年１月３０日　発行　１０９３首",
+   "pt_anchor": "Fonte do Riso (Coletânea de Poemas Cômicos), publicado em 30 de janeiro de 1951, 1093 poemas",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "空財布",
+   "title_pt": "Carteira Vazia",
+   "jp_anchor": "　, 　「空財布」, 　",
+   "pt_anchor": "Título: \"Carteira Vazia\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "そそつかしい",
+   "title_pt": "Apressado",
+   "jp_anchor": "　, 　　題　「そそつかしい」, 　",
+   "pt_anchor": "Título: \"Apressado\"\n\n34. Apressado — do trilho, direto para a Terra Pura distante — Hyōtan",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "無精者",
+   "title_pt": "Preguiçoso",
+   "jp_anchor": "　, 　　題　「無精者」, 　",
+   "pt_anchor": "Título: \"Preguiçoso\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ケチンボウ",
+   "title_pt": "Mão de Vaca",
+   "jp_anchor": "　, 　　題　「ケチンボウ」, 　",
+   "pt_anchor": "Título: \"Mão de Vaca\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "なさけない",
+   "title_pt": "Lastimável",
+   "jp_anchor": "　, 　　題　「なさけない」, 　",
+   "pt_anchor": "Título: \"Lastimável\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "朴念人",
+   "title_pt": "Bocó",
+   "jp_anchor": "　, 　　題　「朴念人」（ぼくねんじん）, 　",
+   "pt_anchor": "Título: \"Bocó\"\n\n126. Bocó — admira até coisas como peido — Nonki",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "泡くつて",
+   "title_pt": "Atrapalhado",
+   "jp_anchor": "　, 　　題　「泡くつて」, 　",
+   "pt_anchor": "Título: \"Atrapalhado\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ずるい奴",
+   "title_pt": "Sujeito Manhoso",
+   "jp_anchor": "　, 　　題　「ずるい奴」, 　",
+   "pt_anchor": "Título: \"Sujeito Manhoso\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "コソコソと",
+   "title_pt": "Sorrateiramente",
+   "jp_anchor": "　, 　　題　「コソコソと」, 　",
+   "pt_anchor": "Título: \"Sorrateiramente\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "変な奴",
+   "title_pt": "Sujeito Esquisito",
+   "jp_anchor": "　, 　　題　「変な奴」, 　",
+   "pt_anchor": "Título: \"Sujeito Esquisito\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "びくびくと",
+   "title_pt": "Com Medo",
+   "jp_anchor": "　, 　　題　「びくびくと」, 　",
+   "pt_anchor": "Título: \"Com Medo\"\n\n199. Com medo — beliscando a comida com o corpo meio levantado — Sorori",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "此野郎",
+   "title_pt": "Este Canalha",
+   "jp_anchor": "　, 　　題　「此野郎」, 　",
+   "pt_anchor": "Título: \"Este Canalha\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ダー",
+   "title_pt": "Dā",
+   "jp_anchor": "　, 　　題　「ダー」, 　",
+   "pt_anchor": "Título: \"Dā\"\n\n231, Dā, e o parasita não consegue descer a escada. Tenpin.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "テツヘツヘツヽヽ",
+   "title_pt": "Tetsuhetsuhetsuhehe",
+   "jp_anchor": "　, 　　題　「テツヘツヘツヽヽ」, 　",
+   "pt_anchor": "Título: \"Tetsuhetsuhetsuhehe\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "チヱツ",
+   "title_pt": "Tsuētsu",
+   "jp_anchor": "　, 　　題　「チヱツ」, 　",
+   "pt_anchor": "Título: \"Tsuētsu\"\n\n242, Chietsu, peguei e era uma tampa de refrigerante. Ampera.\n243, Tsuētsu, a carteira vazia e a mulher emburrada. O mesmo.\n244, Tsuētsu, a minha carteira. Momotarō.\n245, Tsuētsu, se não for à vista, não vendo, diz ele. O mesmo.\n246, Tsuētsu",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アンボンタン",
+   "title_pt": "Anpontan",
+   "jp_anchor": "　, 　　題　「アンボンタン」, 　",
+   "pt_anchor": "Título: \"Anpontan\"\n\n253, Anpontan e boneco de madeira são parentes? Deku no Bō.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "笑わせやがらア",
+   "title_pt": "Faz rir, hein",
+   "jp_anchor": "　, 　　題　「笑わせやがらア」, 　",
+   "pt_anchor": "Título: \"Faz rir, hein\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ケツの穴",
+   "title_pt": "Buraco do Cu",
+   "jp_anchor": "　, 　　題　「ケツの穴」, 　",
+   "pt_anchor": "Título: \"Buraco do Cu\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ワシヤツライ",
+   "title_pt": "Tô Cheio",
+   "jp_anchor": "　, 　　題　「ワシヤツライ」, 　",
+   "pt_anchor": "Título: \"Tô Cheio\"\n\n315, Tô cheio, o parasita quando ouve a sirene. Akambō.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ペツチヤンコ",
+   "title_pt": "Amassado",
+   "jp_anchor": "　, 　　題　「ペツチヤンコ」, 　",
+   "pt_anchor": "Título: \"Amassado\"\n\n332, Amassado, a bolsa passou o ano assim. Mukudori.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "コン畜生",
+   "title_pt": "Maldito Animal",
+   "jp_anchor": "　, 　　題　「コン畜生」, 　",
+   "pt_anchor": "Título: \"Maldito Animal\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "お豪〔偉〕う厶（ござ）いますよ",
+   "title_pt": "É Muito Importante, Hein",
+   "jp_anchor": "　, 　　題　「お豪〔偉〕う厶（ござ）いますよ」, 　",
+   "pt_anchor": "Título: \"É Muito Importante, Hein\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "助けてくれー",
+   "title_pt": "Socorro!",
+   "jp_anchor": "　, 　　題　「助けてくれー」, 　",
+   "pt_anchor": "Título: \"Socorro!\"\n\n355, Socorro! Uau, é banho frio! Momotarō.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ウツフ",
+   "title_pt": "Uh!",
+   "jp_anchor": "　, 　　題　「ウツフ」, 　",
+   "pt_anchor": "Título: \"Uh!\"\n\n366, O parasita espiando a despensa, uh! Que absurdo!\n367, Comendo bolinho no banheiro, uh! Marumaru.\n\nPoemas Cômicos com Sílabas Extras (forma kantōku)\n\nTítulo: \"Guratarabē\"\n\n368, Guratarabē, mas se a cabeça for boa, eu, mulher, aguento, diz ela (atchim!). Kingyo.\n369, Guratarabē, na hora do trabalho, muita cerimônia, na hora de comer, o primeiro ",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "グータラベー",
+   "title_pt": "Guratarabē",
+   "jp_anchor": "　, 　　題　グータラベー, 　",
+   "pt_anchor": "Título: \"Guratarabē\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "助平野郎",
+   "title_pt": "Seu Tarado",
+   "jp_anchor": "　, 　　題　助平野郎, 　",
+   "pt_anchor": "Título: \"Seu Tarado\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ソーラみろ",
+   "title_pt": "Tá Vendo?",
+   "jp_anchor": "　, 　　題　ソーラみろ, 　",
+   "pt_anchor": "Título: \"Tá Vendo?\"\n\n396, Tá vendo? Ficou danificado. Akambō.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "くそでも喰え",
+   "title_pt": "Vai Comer Merda",
+   "jp_anchor": "　, 　　題　くそでも喰え, 　",
+   "pt_anchor": "Título: \"Vai Comer Merda\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アカンベー",
+   "title_pt": "Careta",
+   "jp_anchor": "　, 　　題　アカンベー, 　",
+   "pt_anchor": "Título: \"Careta\"\n\n407, Fiz uma careta e um mosquito entrou no meu olho — Hyōtan",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ケチンボウ野郎",
+   "title_pt": "Seu Pão-Duro",
+   "jp_anchor": "　, 　　題　ケチンボウ野郎, 　",
+   "pt_anchor": "Título: \"Seu Pão-Duro\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アヽ堪らねえ",
+   "title_pt": "Ah, Não Aguento Mais",
+   "jp_anchor": "　, 　　題　アヽ堪らねえ, 　",
+   "pt_anchor": "Título: \"Ah, Não Aguento Mais\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "フフーンだ",
+   "title_pt": "Humf!",
+   "jp_anchor": "　, 　　題　フフーンだ, 　",
+   "pt_anchor": "Título: \"Humf!\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "バツタ組",
+   "title_pt": "Grupo Gafanhoto",
+   "jp_anchor": "　, 　　題　バツタ組, 　",
+   "pt_anchor": "Título: \"Grupo Gafanhoto\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "大馬鹿野郎",
+   "title_pt": "Grande Ahō",
+   "jp_anchor": "　, 　　題　大馬鹿野郎, 　",
+   "pt_anchor": "Título: \"Grande Ahō\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "チト変だ",
+   "title_pt": "Um Pouco Estranho",
+   "jp_anchor": "　, 　　題　チト変だ, 　",
+   "pt_anchor": "Título: \"Um Pouco Estranho\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "デレ助野郎",
+   "title_pt": "Devasso",
+   "jp_anchor": "　, 　　題　デレ助野郎, 　",
+   "pt_anchor": "Título: \"Devasso\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "いい気持だね",
+   "title_pt": "Que Sensação Boa",
+   "jp_anchor": "　, 　　題　いい気持だね, 　",
+   "pt_anchor": "Título: \"Que Sensação Boa\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "チヤンチヤラおかしいや",
+   "title_pt": "É Ridículo!",
+   "jp_anchor": "　, 　　題　チヤンチヤラおかしいや, 　",
+   "pt_anchor": "Título: \"É Ridículo!\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "蛆　虫",
+   "title_pt": "Larvas",
+   "jp_anchor": "　, 　　題　蛆　虫, 　",
+   "pt_anchor": "Título: \"Larvas\"\n\n627, Arroz vem do arrozal; dinheiro vem do papel; larvas nascem da merda — Imo Kō Isso está decidido desde os tempos antigos, sua larva!\n\nTítulo",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "イヤな野郎",
+   "title_pt": "Sujeito Desagradável",
+   "jp_anchor": "　, 　　題　イヤな野郎, 　",
+   "pt_anchor": "Título: \"Sujeito Desagradável\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "屁でもかぎやがれ",
+   "title_pt": "Cheira Meu Peido",
+   "jp_anchor": "　, 　　題　屁でもかぎやがれ, 　",
+   "pt_anchor": "Título: \"Cheira Meu Peido\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ガラクタ共",
+   "title_pt": "Os Refugos",
+   "jp_anchor": "　, 　　題　ガラクタ共, 　",
+   "pt_anchor": "Título: \"Os Refugos\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "俺　様",
+   "title_pt": "Eu",
+   "jp_anchor": "　, 　　題　俺　様, 　",
+   "pt_anchor": "Título: \"Eu\"\n\n690, Eu, mesmo nu, não sinto frio (durante o verão, claro). — Akambō",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "仙　　人",
+   "title_pt": "Imortal",
+   "jp_anchor": "　, 　　題　仙　　人, 　",
+   "pt_anchor": "Título: \"Imortal\"\n\n699, A imortal de barriga grande diz: \"Comi névoa demais.\" — Imo Kō",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ぶんなぐれ",
+   "title_pt": "Dá um Soco",
+   "jp_anchor": "　, 　　題　ぶんなぐれ, 　",
+   "pt_anchor": "Título: \"Dá um Soco\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ハツクシヨイ",
+   "title_pt": "Atchim!",
+   "jp_anchor": "　, 　　題　ハツクシヨイ, 　",
+   "pt_anchor": "Título: \"Atchim!\"\n\n673, Segurou um \"atchim!\" e saiu um \"buu\" do traseiro. — Dango",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "糞つ垂野郎",
+   "title_pt": "Canalha Cagão",
+   "jp_anchor": "　, 　　題　糞つ垂野郎, 　",
+   "pt_anchor": "Título: \"Canalha Cagão\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "御冗談でしよう",
+   "title_pt": "É Brincadeira?",
+   "jp_anchor": "　, 　　題　御冗談でしよう, 　",
+   "pt_anchor": "Título: \"É Brincadeira?\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "馬鹿にしてやがらア",
+   "title_pt": "Estão Me Tirando de Idiota",
+   "jp_anchor": "　, 　　題　馬鹿にしてやがらア, 　",
+   "pt_anchor": "Título: \"Estão Me Tirando de Idiota\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "スベタ",
+   "title_pt": "Feia",
+   "jp_anchor": "　, 　　題　スベタ, 　",
+   "pt_anchor": "Título: \"Feia\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "兵六玉",
+   "title_pt": "Hyōrokudama",
+   "jp_anchor": "　, 　　題　兵六玉, 　",
+   "pt_anchor": "Título: \"Hyōrokudama\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ハツキリしろ",
+   "title_pt": "Decida-se",
+   "jp_anchor": "　, 　　題　ハツキリしろ, 　",
+   "pt_anchor": "Título: \"Decida-se\"\n\n774. Decida-se. Ei, está dormindo ou acordado? \"Sim, eu mesmo não sei.\" Bolota de carvalho.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アン畜生",
+   "title_pt": "Droga",
+   "jp_anchor": "　, 　　題　アン畜生, 　",
+   "pt_anchor": "Título: \"Droga\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "お気の毒様",
+   "title_pt": "Que Pena",
+   "jp_anchor": "　, 　　題　お気の毒様, 　",
+   "pt_anchor": "Título: \"Que Pena\"\n\n801. Que pena, aguente só uma semana, querido. Dango.",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "奇妙奇天烈",
+   "title_pt": "Extraordinário",
+   "jp_anchor": "　, 　　題　奇妙奇天烈, 　",
+   "pt_anchor": "Título: \"Extraordinário\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "フラフラ野郎",
+   "title_pt": "Sujeito Cambaleante",
+   "jp_anchor": "　, 　　題　フラフラ野郎, 　",
+   "pt_anchor": "Título: \"Sujeito Cambaleante\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "インチキ野郎",
+   "title_pt": "Sujeito Charlatão",
+   "jp_anchor": "　, 　　題　インチキ野郎, 　",
+   "pt_anchor": "Título: \"Sujeito Charlatão\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アタシ恥しいわ",
+   "title_pt": "Que Vergonha",
+   "jp_anchor": "　, 　　題　アタシ恥しいわ, 　",
+   "pt_anchor": "Título: \"Que Vergonha\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "豚　姫",
+   "title_pt": "Princesa Porca",
+   "jp_anchor": "　, 　　題　豚　姫, 　",
+   "pt_anchor": "Título: \"Princesa Porca\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "亭主野郎",
+   "title_pt": "Seu marido",
+   "jp_anchor": "　, 　　題　亭主野郎, 　",
+   "pt_anchor": "Título: \"Seu marido\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "此媽",
+   "title_pt": "Esta esposa",
+   "jp_anchor": "　, 　　題　此媽（このかかあ）, 　",
+   "pt_anchor": "Título: \"Esta esposa\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "アラどうしよう",
+   "title_pt": "Ai, o que faço?",
+   "jp_anchor": "　, 　　題　アラどうしよう, 　",
+   "pt_anchor": "Título: \"Ai, o que faço?\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ケツでもしやぶれ",
+   "title_pt": "Chupa aqui, então",
+   "jp_anchor": "　, 　　題　ケツでもしやぶれ, 　",
+   "pt_anchor": "Título: \"Chupa aqui, então\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "フヌケ",
+   "title_pt": "Mole",
+   "jp_anchor": "　, 　　題　フヌケ, 　",
+   "pt_anchor": "Título: \"Mole\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "お臍が茶を沸かさア",
+   "title_pt": "O umbigo está fervendo chá",
+   "jp_anchor": "　, 　　題　お臍が茶を沸かさア, 　",
+   "pt_anchor": "Título: \"O umbigo está fervendo chá\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "トンチキ野郎",
+   "title_pt": "Sujeito Tontchiki",
+   "jp_anchor": "　, 　　題　トンチキ野郎, 　",
+   "pt_anchor": "Título: \"Sujeito Tontchiki\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ソーラ大変",
+   "title_pt": "Nossa, que sufoco!",
+   "jp_anchor": "　, 　　題　ソーラ大変, 　",
+   "pt_anchor": "Título: \"Nossa, que sufoco!\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "土手南瓜",
+   "title_pt": "Abóbora do Dique",
+   "jp_anchor": "　, 　　題　土手南瓜, 　",
+   "pt_anchor": "Título: \"Abóbora do Dique\"",
+   "notes": ""
+  },
+  {
+   "kind": "theme",
+   "title_jp": "ヘナーチヨコ野郎",
+   "title_pt": "Seu Henachoko",
+   "jp_anchor": "　, 　　題　ヘナーチヨコ野郎, 　",
+   "pt_anchor": "Título: \"Seu Henachoko\"",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

@@ -1,0 +1,101 @@
+{
+  "filename": "19480701-御讃歌集.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-08",
+  "scope": "Primeira revisão completa do volume (309 hinos, nunca revisado em sessão anterior). JP (727 linhas, cada hino em formato dupla-linha kana+kanji) lido integralmente e confrontado com PT (formato: um hino por linha, numerado 1-309, com marcadores de secção ',,, Título (romaji), ' entre grupos temáticos). Não é amostragem por contagem: todos os 309 números de hino foram extraídos programaticamente de ambos os ficheiros e comparados um a um quanto a presença, ordem e correspondência de conteúdo; adicionalmente foi feita leitura semântica direta de uma amostra distribuída ao longo de todo o volume (hinos 1, 15, 30, 44, 50, 75, 88, 100, 125, 132, 150, 154, 175, 176, 200, 220, 225, 250, 264, 275, 300, 309) e de todas as 40 transições de secção temática.",
+  "autoria": {
+    "resultado": "Meishu-Sama (Mokichi Okada) em todos os 309 hinos, sem exceção — confirmado pelo prefácio assinado ('Julho de 1948. Pelo autor.') e pela ausência de qualquer atribuição de autoria de terceiro em qualquer hino ou secção.",
+    "confianca": "alta"
+  },
+  "summary": {
+    "hymns_in_spec": 309,
+    "hymns_verified_present_pt_and_jp": 309,
+    "hymns_missing": 0,
+    "hymns_duplicated": 0,
+    "section_titles_in_jp": 40,
+    "section_titles_correctly_delimited_before_fix": 16,
+    "section_titles_glued_without_delimiter_before_fix": 24,
+    "real_corrections_applied": 1,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "problema": "GRAVE, sistemático: 24 dos 40 marcadores de título de secção temática (JP: '　　　TÍTULO（leitura）') estavam colados ao final da frase do hino anterior, sem o delimitador ',,, Título (romaji), ' usado consistentemente nos primeiros 16 marcadores do volume (hinos 1-137). Isso viola o ponto 7 do checklist (títulos/cabeçalhos) e o ponto 6 (paragrafação/estrutura): a partir do hino 138 (観音行/Kannon Gyō) até ao final do livro (hino 309), todo título de secção ficava ilegível como tal, lido como se fosse a última frase do hino anterior (ex.: '...um grande mundo sem trevas venha a nascer. Prática de Kannon\\n138, O fato de...'). Confirmado por verificação programática das 40 transições de secção contra as posições exatas no JP (cada título localizado entre o hino anterior e o seguinte pela leitura kana/kanji).",
+      "correcao": "Reformatados os 24 marcadores para o padrão ',,, Título (Romaji), ' idêntico ao já usado nos primeiros 16 (ex.: '...nascer.,,, Prática de Kannon (Kannon Gyō), 138, O fato de...'). Nenhum conteúdo de hino foi alterado — apenas a pontuação/delimitação do título de secção foi corrigida. Verificado depois: as 40 transições passaram a ter ',,, ' presente, contagem de hinos manteve-se em 309 sem lacunas nem duplicatas.",
+      "titulos_corrigidos": [
+        "Prática de Kannon (Kannon Gyō) [138]",
+        "O Caminho do Homem (Hito no Michi) [143]",
+        "Prática do Bodhisattva (Bosatsu Gyō) [152]",
+        "Gratidão e Retribuição (Kansha Hōon) [156]",
+        "Grande Festival (Mi-Matsuri) [167]",
+        "Poder Kannon (Kannon Riki) [176]",
+        "Aurora (Reimei) [181]",
+        "Grande Graça (Ōmi-Megumi) [185]",
+        "Renovação (Kōsei) [194]",
+        "A Última Salvação (Saigo no Sukui) [202]",
+        "Grande Compaixão e Grande Amor (Daiji Daihi) [211]",
+        "Grande Julgamento (Daishinpan) [216]",
+        "O Fim da Noite (Yoru no Owari) [223]",
+        "Alvorada (Asaake) [234]",
+        "Mudança de Coração (Kaishin) [242]",
+        "Abnegação (Muga) [249]",
+        "Despertar (Kakusei) [255]",
+        "Mundo de Cristal (Suishō Sekai) [260]",
+        "Eu (Ware) [265]",
+        "Atami [275]",
+        "O Pico Espiritual (Reihō) [282]",
+        "A Descida de Miroku (Miroku Geshō) [290]",
+        "A Obra da Terra Pura (Jōchi no Waza) [295]",
+        "A Arte (Geijutsu) [302]"
+      ],
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + hinos 1-137 (16 secções, títulos já corretamente delimitados)",
+      "decisao": "ok, sem correção necessária",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Hinos 138-309 (24 secções)",
+      "decisao": "corrigido — títulos de secção colados reformatados (item 1 acima)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Completude numérica (1-309)",
+      "decisao": "ok — todos os 309 números presentes em JP e PT, sem lacunas nem duplicatas (verificação programática exaustiva)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "CJK residual no corpo PT",
+      "decisao": "ok — nenhum ideograma encontrado no corpo (apenas no comentário de cabeçalho title_jp, que é metadado padrão, não erro)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Amostra de fidelidade semântica (23 hinos distribuídos por todo o volume)",
+      "decisao": "ok — todas as traduções amostradas correspondem fielmente ao sentido do JP, sem truncamento nem distorção",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Nota final do JP ('全三〇九首収録' / 'total 309 poemas recolhidos')",
+      "decisao": "não traduzida no PT, mas conteúdo já coberto pelo título/metadado ('contendo 309 poemas'); omissão considerada trivial, não é erro de conteúdo doutrinário",
+      "confianca": "media-alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-08): confirmadas as correções. approved:true."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "Reconfirmada a correção dos 24 marcadores de secção (presente no ficheiro atual). Sem CJK residual no corpo. Romanização 'Miroku' usada de forma consistente nos hinos da secção correspondente. Sem duplicação de linha/frase (verificado programaticamente — este livro NÃO tem o bug de dupla-tradução encontrado em 明麿近詠集, apesar de ambos serem coletâneas numeradas com formato JP kana+kanji por item). Spec approved=true.",
+    "real_corrections_applied_fase_e": 0
+  }
+}

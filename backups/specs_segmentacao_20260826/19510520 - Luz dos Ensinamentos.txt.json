@@ -1,0 +1,1223 @@
+{
+ "filename": "19510520 - Luz dos Ensinamentos.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 162→162. PT pairing resolvido 2026-07-14 (leitura bilíngue direta, todos os 162 pt_anchor localizados verbatim no PT, ordem crescente confirmada por script). Correcao adicional 2026-07-14: merge de 5->1 entrada em '長寿の秘訣' (over-split de tabela embutida numa unica pergunta); pt_anchor de '過去帳や繰位牌を祀ること' trocado para anchor curto ('Kakocho') pra evitar falso-positivo do heuristico _anchor_corrupt (lowercase-start) que zerava o anchor correto a cada --fix. Total de artigos agora 158 (era 162). Correcao adicional: merge 2->1 em '正月について' (enumeracao (一)-(六) e parte da mesma pergunta, nao titulo proprio). Total de artigos agora 157.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 162,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "『教えの光』昭和26(1951)年5月20日発行",
+   "pt_anchor": "Luz dos Ensinamentos",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "序　文",
+   "title_pt": "",
+   "jp_anchor": "本冊子は、かつて機関誌地上天国に毎号掲載した「妙智之光」の一部を、多数信徒の要望に応え、集録せるものである。",
+   "pt_anchor": "Este livreto é uma coletânea de partes da série \"Luz da Maravilhosa Sabedoria\", publicada em todas as edições",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗教、科学、哲学、芸術の問題",
+   "title_pt": "",
+   "jp_anchor": "宗教、科学、哲学、芸術の問題",
+   "pt_anchor": "Problemas de Religião, Ciência, Filosofia e Arte",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "真　理",
+   "title_pt": "",
+   "jp_anchor": "御伺い　真理について。",
+   "pt_anchor": "A Verdade\n\nPergunta: Sobre a verdade.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "悪と苦の存在",
+   "title_pt": "",
+   "jp_anchor": "悪と苦の存在\n\n　御伺い　人類にはいかなるわけで悪があり、苦がありましょうか。",
+   "pt_anchor": "A Existência do Mal e do Sofrimento",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗教と科学",
+   "title_pt": "",
+   "jp_anchor": "宗教と科学\n\n　御伺い　宗教と科学の関係、および両者とも永久に必要でしょうか、どちらか不要になるときが来るでしょうか。",
+   "pt_anchor": "Religião e Ciência",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "原子力時代の一考察",
+   "title_pt": "",
+   "jp_anchor": "原子力時代の一考察",
+   "pt_anchor": "Uma Reflexão sobre a Era Atômica",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊子について",
+   "title_pt": "",
+   "jp_anchor": "霊子について\n\n　御伺い　霊子が人間生活にいかなる関係があるでしょうか。",
+   "pt_anchor": "Sobre o Reishi (Espírito-Partícula)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "脳波とは",
+   "title_pt": "",
+   "jp_anchor": "脳波とは\n\n　御伺い　昭和二四年六月九日の『中部日本新聞』に次のごとき記事が掲載されましたが、文中「脳波」とありますのはいかなるものでしょうか。",
+   "pt_anchor": "O que são as Ondas Cerebrais",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "脳波で交通安全",
+   "title_pt": "",
+   "jp_anchor": "　　　脳波で交通安全\n　なぜかということはまだ判らないが、人間の脳から脳波（一種の電波）が外部に発散する。一秒間に二つ波うつのである。この波をしらべるとなにか考え事をしているときには波の高さが小さくなるし、眼をつぶってボンヤリしていると波は大きい。しかも眠気をもよ",
+   "pt_anchor": "Segurança no Trânsito com Ondas Cerebrais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "現在の哲学とは",
+   "title_pt": "",
+   "jp_anchor": "現在の哲学とは\n\n　御伺い　現在の哲学が唯物主観的立場にある以上、迷学というべきではないでしょうか。",
+   "pt_anchor": "O que é a Filosofia Atual",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗教、芸術、文化の誠",
+   "title_pt": "",
+   "jp_anchor": "宗教、芸術、文化の誠",
+   "pt_anchor": "A Sinceridade na Religião, Arte e Cultura",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "芸術の極致",
+   "title_pt": "",
+   "jp_anchor": "芸術の極致\n\n　御伺い　絵画、彫刻など、人工芸術の極致とは誤らざる自然の描写でありましょうか。また芸術は実の追究であると考えますが、真善を具えればまったきというべきでしょうか。",
+   "pt_anchor": "O Ápice da Arte",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "音楽奏者の想念および声の働き",
+   "title_pt": "",
+   "jp_anchor": "音楽奏者の想念および声の働き",
+   "pt_anchor": "O Pensamento do Executor Musical e a Ação da Voz",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "世界平和への途",
+   "title_pt": "",
+   "jp_anchor": "世界平和への途\n\n　御伺い　世界平和への途は社会主義、資本主義によるべきでしょうか。",
+   "pt_anchor": "O Caminho para a Paz Mundial",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗教教育とは",
+   "title_pt": "",
+   "jp_anchor": "宗教教育とは\n\n　御伺い　宗教教育とは魂の啓発でしょうか。",
+   "pt_anchor": "O que é Educação Religiosa?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "大宗教の予言について",
+   "title_pt": "",
+   "jp_anchor": "大宗教の予言について",
+   "pt_anchor": "Sobre as Profecias das Grandes Religiões",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "既成宗教の救い",
+   "title_pt": "",
+   "jp_anchor": "既成宗教の救い\n\n　御伺い　過去の宗教でなぜ霊は救われなかったのですか。",
+   "pt_anchor": "A Salvação das Religiões Estabelecidas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "キリストと十二人の弟子について",
+   "title_pt": "",
+   "jp_anchor": "キリストと十二人の弟子について",
+   "pt_anchor": "Sobre Cristo e os Doze Discípulos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "神力、金剛力、観音力について",
+   "title_pt": "",
+   "jp_anchor": "神力、金剛力、観音力について",
+   "pt_anchor": "Sobre o Poder Divino (Shinriki), o Poder Adamantino (Kongōriki) e o Poder Kannon (Kannonriki)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "千手観音御頭のお顔",
+   "title_pt": "",
+   "jp_anchor": "千手観音御頭のお顔",
+   "pt_anchor": "O Rosto no Topo da Cabeça de Kannon de Mil Braços",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "法身、報身、応身について",
+   "title_pt": "",
+   "jp_anchor": "法身、報身、応身について",
+   "pt_anchor": "Sobre Dharmakāya, Saṃbhogakāya e Nirmāṇakāya",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "神龍、天龍、金龍、銀龍について",
+   "title_pt": "",
+   "jp_anchor": "神龍、天龍、金龍、銀龍について",
+   "pt_anchor": "Sobre o Dragão Divino, Dragão Celestial, Dragão Dourado e Dragão Prateado",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "神龍のお働き",
+   "title_pt": "",
+   "jp_anchor": "神龍のお働き\n\n　御伺い　神龍のお働きをお聞かせください。",
+   "pt_anchor": "Sobre o Trabalho do Dragão Divino",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "大神、神、尊、命について",
+   "title_pt": "",
+   "jp_anchor": "大神、神、尊、命について",
+   "pt_anchor": "Sobre Ōkami, Kami, Mikoto e Myōto",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "分霊と化身について",
+   "title_pt": "",
+   "jp_anchor": "分霊と化身について",
+   "pt_anchor": "Sobre Bunrei e Keshin",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "明神、天王、天神とは",
+   "title_pt": "",
+   "jp_anchor": "明神、天王、天神とは",
+   "pt_anchor": "Sobre Myōjin, Ten'nō e Tenjin",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "七福神について",
+   "title_pt": "",
+   "jp_anchor": "七福神について\n\n　御伺い　七福神について。",
+   "pt_anchor": "Sobre os Sete Deuses da Sorte",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "御簾の由来について",
+   "title_pt": "",
+   "jp_anchor": "御簾の由来について",
+   "pt_anchor": "Sobre a Origem do Misu",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "鳥居と賽の河原",
+   "title_pt": "",
+   "jp_anchor": "鳥居と賽の河原\n\n　御伺い　神様の鳥居はなんの役目ですか。また賽の河原とはいかなるものでしょうか。",
+   "pt_anchor": "Torii e o Rio dos Seixos (Sai no Kawara)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "珠数の意味",
+   "title_pt": "",
+   "jp_anchor": "珠数の意味\n\n　御伺い　珠数はいかなる意味がございましょうか。",
+   "pt_anchor": "Significado do Rosário (Juzu)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "お　盆",
+   "title_pt": "",
+   "jp_anchor": "御伺い　お盆の意味についてお伺いいたします。",
+   "pt_anchor": "O Bon (Obon)\n\nPergunta: Gostaria de perguntar sobre o significado do Bon (Obon).",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "道祖神とは",
+   "title_pt": "",
+   "jp_anchor": "道祖神とは\n\n　御伺い　道祖神（どうそじん）について。",
+   "pt_anchor": "O que é Dōsojin (Deus da Estrada)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "断食の功罪",
+   "title_pt": "",
+   "jp_anchor": "断食の功罪\n\n　御伺い　断食の功罪。",
+   "pt_anchor": "Méritos e Deméritos do Jejum",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "天文、地文、易学、人事などの問題",
+   "title_pt": "",
+   "jp_anchor": "天文、地文、易学、人事などの問題",
+   "pt_anchor": "Problemas de Astronomia, Geografia, Adivinhação, Assuntos Humanos, etc.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "虹について",
+   "title_pt": "",
+   "jp_anchor": "虹について\n\n　御伺い　虹が七色になり丸くなって出るのはどういうわけでしょうか。",
+   "pt_anchor": "Sobre o Arco-Íris\n\nPergunta: Por que o arco-íris tem sete cores e aparece em forma de círculo?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "雷の原理",
+   "title_pt": "",
+   "jp_anchor": "雷の原理\n\n　御伺い　雷はいかなる現象ですか。",
+   "pt_anchor": "O Princípio do Trovão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "二百十日、二十日について",
+   "title_pt": "",
+   "jp_anchor": "二百十日、二十日について",
+   "pt_anchor": "Sobre os Dias 210 e 220",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "気候の暖化と植え付け",
+   "title_pt": "",
+   "jp_anchor": "気候の暖化と植え付け",
+   "pt_anchor": "Aquecimento do Clima e Plantio",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "潮の満干と人の生死",
+   "title_pt": "",
+   "jp_anchor": "潮の満干と人の生死",
+   "pt_anchor": "Marés e Vida e Morte Humanas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "物価の動きと月",
+   "title_pt": "",
+   "jp_anchor": "物価の動きと月\n\n　御伺い　三日月が下落型になると、物価が下落すると言われていますが、真実でしょうか。",
+   "pt_anchor": "Movimento dos Preços e a Lua",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "易学の将来",
+   "title_pt": "",
+   "jp_anchor": "易学の将来\n\n　御伺い　五六七時代における易学の価値について御説明をお願いいたします。",
+   "pt_anchor": "O Futuro da Adivinhação (Ekigaku)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "生年月は運勢、性格に影響するか",
+   "title_pt": "",
+   "jp_anchor": "生年月は運勢、性格に影響するか",
+   "pt_anchor": "A Data de Nascimento Influencia a Sorte e o Caráter?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "姓名の良し悪し",
+   "title_pt": "",
+   "jp_anchor": "姓名の良し悪し\n\n　御伺い　人間は姓名の良し悪しにて幸不幸があるそうですが、その良し悪しを正しく知るにはどうすればよいでしょうか。",
+   "pt_anchor": "A Qualidade do Nome (Sobrenome e Prenome)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "三隣亡は迷信",
+   "title_pt": "",
+   "jp_anchor": "三隣亡は迷信\n\n　御伺い　「三隣亡」に家を建てますと風などで倒れやすいと申しますが、いかがでしょうか。",
+   "pt_anchor": "Sanrinbō (Três Vizinhos Perdem) é Superstição",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "催眠術の原理",
+   "title_pt": "",
+   "jp_anchor": "催眠術の原理\n\n　御伺い　催眠術の原理。",
+   "pt_anchor": "O Princípio da Hipnose",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "自由主義の本義",
+   "title_pt": "",
+   "jp_anchor": "自由主義の本義\n\n　御伺い　自由主義の本義について。",
+   "pt_anchor": "O Verdadeiro Significado do Liberalismo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "今後の婦人の在り方",
+   "title_pt": "",
+   "jp_anchor": "今後の婦人の在り方",
+   "pt_anchor": "O Papel da Mulher no Futuro",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "女の第六感",
+   "title_pt": "",
+   "jp_anchor": "女の第六感\n\n　御伺い　女の信仰心は第六感によると聞いてますが、なにゆえに女は第六感が多分に働くものでしょうか。",
+   "pt_anchor": "O Sexto Sentido da Mulher",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "祖先への結婚報告",
+   "title_pt": "",
+   "jp_anchor": "祖先への結婚報告",
+   "pt_anchor": "Comunicando o Casamento aos Antepassados",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "老人と若夫婦の同居と別居",
+   "title_pt": "",
+   "jp_anchor": "老人と若夫婦の同居と別居",
+   "pt_anchor": "Coabitação e Separação entre Idosos e Jovens Casais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "夫婦は浄化を引き受け合うことがある",
+   "title_pt": "",
+   "jp_anchor": "夫婦は浄化を引き受け合うことがある",
+   "pt_anchor": "Cônjuges Podem Assumir a Purificação Um do Outro**",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "血統、霊統と血族結婚",
+   "title_pt": "",
+   "jp_anchor": "血統、霊統と血族結婚",
+   "pt_anchor": "Linhagem de Sangue, Linhagem Espiritual e Casamento Consanguíneo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "紋所の由来",
+   "title_pt": "",
+   "jp_anchor": "紋所の由来\n\n　御伺い　紋所の発生した由来。",
+   "pt_anchor": "A Origem dos Brasões de Família",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "父の乱行をいかにすべきや",
+   "title_pt": "",
+   "jp_anchor": "父の乱行をいかにすべきや",
+   "pt_anchor": "Como Lidar com a Conduta Desregrada do Pai",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "謝罪による減罪",
+   "title_pt": "",
+   "jp_anchor": "謝罪による減罪\n\n　御伺い　自己の不徳のため、相手に迷惑を及ぼしたのでこれを謝罪し、相手も許してはくれたものの、なおかつ自己の良心に責められる場合、安心を得られる悟りにつき御垂示ください。",
+   "pt_anchor": "Redução do Pecado Através do Pedido de Desculpas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "天才とは",
+   "title_pt": "",
+   "jp_anchor": "天才とは\n\n　御伺い　二六歳の男（信者）、全国珠算競技に第一位を得た人ですが、「七桁」までの暗算は会話をしながら隣の部屋で読み上げたのを違いなく寄せ「八桁」になると耳を澄まさないといけないそうです。実にすばらしい才能と存じます。霊的になにか原因がありまし",
+   "pt_anchor": "O Que é um Gênio",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "屍　化",
+   "title_pt": "",
+   "jp_anchor": "御伺い　多くの動物とか鳥類の死体を見受けませんが、これはなにかわけがあることでしょうか。",
+   "pt_anchor": "Mumificação (Shike)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "正月について",
+   "title_pt": "",
+   "jp_anchor": "正月について\n\n　御伺い　正月について。",
+   "pt_anchor": "Sobre o Ano Novo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "四十手、五十手",
+   "title_pt": "",
+   "jp_anchor": "四十手、五十手\n\n　御伺い　四十手、五十手とは。",
+   "pt_anchor": "Quarenta mãos, cinquenta mãos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "夜泣きと刃物",
+   "title_pt": "",
+   "jp_anchor": "夜泣きと刃物\n\n　御伺い　世間よく夜泣きをする子供の寝床に刃物を置くと夜泣きをしなくなるようですが、この場合刃物は霊的に意味がございましょうか。",
+   "pt_anchor": "Choro noturno e objetos cortantes",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "四棟の住家は不運か",
+   "title_pt": "",
+   "jp_anchor": "四棟の住家は不運か",
+   "pt_anchor": "Casas com quatro alas trazem azar?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "魚釣り",
+   "title_pt": "",
+   "jp_anchor": "魚釣り\n\n　御伺い　趣味として魚釣りをすることは差し支えないことでしょうか。",
+   "pt_anchor": "Pergunta: Não há problema em praticar a pesca como passatempo?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊および霊界の問題",
+   "title_pt": "",
+   "jp_anchor": "霊および霊界の問題",
+   "pt_anchor": "Problemas do Espírito e do Mundo Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "幽世の大神とは",
+   "title_pt": "",
+   "jp_anchor": "幽世の大神とは\n\n　御伺い　幽世の大神とはいかなる大神様でしょうか。",
+   "pt_anchor": "Quem é o Grande Deus do Mundo Oculto (Kakuriyo)?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "昼夜転換による地獄の変化",
+   "title_pt": "",
+   "jp_anchor": "昼夜転換による地獄の変化",
+   "pt_anchor": "Mudanças no Inferno com a Transição para o Mundo Diurno",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "東洋と西洋の霊界の相違",
+   "title_pt": "",
+   "jp_anchor": "東洋と西洋の霊界の相違",
+   "pt_anchor": "Diferenças entre os Mundos Espirituais do Oriente e do Ocidente",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗教人と無信仰者の死後",
+   "title_pt": "",
+   "jp_anchor": "宗教人と無信仰者の死後",
+   "pt_anchor": "A Morte de Religiosos e Não Crentes",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "宗祖、開祖の死後",
+   "title_pt": "",
+   "jp_anchor": "宗祖、開祖の死後",
+   "pt_anchor": "Após a Morte dos Fundadores de Seitas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊界における年齢",
+   "title_pt": "",
+   "jp_anchor": "霊界における年齢",
+   "pt_anchor": "Idade no Mundo Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊視能力について",
+   "title_pt": "",
+   "jp_anchor": "霊視能力について",
+   "pt_anchor": "Sobre a Capacidade de Visão Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "人霊の分霊",
+   "title_pt": "",
+   "jp_anchor": "人霊の分霊\n\n　御伺い　人の生まれ代わりにつき、ある霊の申すのに「前生の人の性格中類似の特質（例えば一〇の特質ありとせばそのうちの五ないし六種）を具えて生まれる場合もある」と申しますが、右は本当なのでございましょうか。この場合に霊の分霊と憑依について。",
+   "pt_anchor": "Divisão de Espíritos Humanos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊界の脱出霊",
+   "title_pt": "",
+   "jp_anchor": "霊界の脱出霊\n\n　御伺い　憑依した霊は霊界を脱出するでしょうか。また霊界に帰り神様に処罰されるでしょうか。",
+   "pt_anchor": "Espíritos que Fogem do Mundo Espiritual",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "再生の場合の副霊について",
+   "title_pt": "",
+   "jp_anchor": "再生の場合の副霊について",
+   "pt_anchor": "Sobre o Espírito Secundário no Caso de Renascimento",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "憑依霊について",
+   "title_pt": "",
+   "jp_anchor": "憑依霊について\n\n　御伺い　憑依霊は副霊の働きの強いときに憑依するでしょうか。また憑依する霊は先祖に関係あるでしょうか。",
+   "pt_anchor": "Sobre Espíritos Possessores",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "動物霊の憑依順位",
+   "title_pt": "",
+   "jp_anchor": "動物霊の憑依順位",
+   "pt_anchor": "Ordem de possessão espiritual dos Espíritos Animais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "赤ん坊の霊について",
+   "title_pt": "",
+   "jp_anchor": "赤ん坊の霊について",
+   "pt_anchor": "Sobre o Espírito de Bebê",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "北枕の意義",
+   "title_pt": "",
+   "jp_anchor": "北枕の意義\n\n　御伺い　人間往生すると北枕に寝かし、着物を左前にしたり、逆に掛けたり、逆さ屏風にしたり、死体の上に刀を置いたりする習慣になっていますが、これはいかなるわけでしょうか。",
+   "pt_anchor": "O Significado do Travesseiro Voltado para o Norte",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "墓石について",
+   "title_pt": "",
+   "jp_anchor": "墓石について\n\n　御伺い　墓石に自然石を用いるのは墓相学上よくないと聞いておりますが、墓相というものはあるものでしょうか。",
+   "pt_anchor": "Sobre as Lápides",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "印形、墓相",
+   "title_pt": "",
+   "jp_anchor": "印形、墓相\n\n　御伺い　印形や墓相によって人間の運命が左右されると聞きますが、事実でしょうか。",
+   "pt_anchor": "Selo Pessoal e Fisionomia do Túmulo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "墓碑建立の常識",
+   "title_pt": "",
+   "jp_anchor": "墓碑建立の常識\n\n　御伺い　墓碑建立につきて常識的に留意すべき事項、例えば方向、形状、盛り土の高さ、石の種類、植樹の可否などにつき。",
+   "pt_anchor": "Conhecimento Comum sobre Erguer Lápides",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "異宗への墓地移転",
+   "title_pt": "",
+   "jp_anchor": "異宗への墓地移転",
+   "pt_anchor": "Transferência de Túmulo para Outra Seita",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "戒名の取り替えの可否",
+   "title_pt": "",
+   "jp_anchor": "戒名の取り替えの可否",
+   "pt_anchor": "Sobre a Possibilidade de Trocar o Nome Póstumo (Kaimyo)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "過去帳や繰位牌を祀ること",
+   "title_pt": "",
+   "jp_anchor": "過去帳や繰位牌を祀ること",
+   "pt_anchor": "Sufragar com o Livro de Registro dos Falecidos (Kakocho) ou com a Tábua Rotatória (Kuriihai)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "亡夫の祀りと遺言",
+   "title_pt": "",
+   "jp_anchor": "亡夫の祀りと遺言",
+   "pt_anchor": "Culto ao Falecido Marido e Testamento",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "夫婦と離婚の親の位牌の位置",
+   "title_pt": "",
+   "jp_anchor": "夫婦と離婚の親の位牌の位置",
+   "pt_anchor": "Posição das Tábuas Mortuárias de Cônjuges e Pais Divorciados",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "伐木と災難",
+   "title_pt": "",
+   "jp_anchor": "伐木と災難\n\n　御伺い　古墳、墓地、神社などの跡を道路などに改修工事を行なった場合、木を伐るとその関係者に災難があるのですが、いかがいたしましたらよろしいでしょうか。",
+   "pt_anchor": "Corte de Árvores e Desastres",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "火柱について",
+   "title_pt": "",
+   "jp_anchor": "火柱について\n\n　御伺い　昔から火柱が立つと火事があり、その倒れた方向に燃えると言い、またそれを見た人もそうとうありますが、いかなる理由によるのでしょうか。",
+   "pt_anchor": "Sobre os Pilares de Fogo (Hi-bashira)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "稲荷の祭り替え",
+   "title_pt": "",
+   "jp_anchor": "稲荷の祭り替え\n\n　御伺い　稲荷を部屋の内に祭ることはよろしくないように伺っていますが、いままで部屋の内に祭ってあった稲荷を庭に祭らせていただく場合の方法を御教示願います。",
+   "pt_anchor": "Mudança de Culto de Inari",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "家畜の供養",
+   "title_pt": "",
+   "jp_anchor": "家畜の供養\n\n　御伺い　自家で飼育した家畜を殺して食べることは罪悪になりましょうか。",
+   "pt_anchor": "Ofertório para Animais Domésticos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "銀杏の木について",
+   "title_pt": "",
+   "jp_anchor": "銀杏の木について",
+   "pt_anchor": "Sobre a Árvore de Ginkgo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "銀杏の神秘",
+   "title_pt": "",
+   "jp_anchor": "銀杏の神秘\n\n　御伺い　銀杏の木を切ったら一里四方くらい実が成らなかったが（男の銀杏の木）いかなるわけでしょうか。",
+   "pt_anchor": "O Mistério do Ginkgo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "短冊の不思議",
+   "title_pt": "",
+   "jp_anchor": "短冊の不思議\n\n　御伺い　ある信者が大光明如来様をお祭りさせていただきましたところ、その部屋に貼り交ぜ屏風がございまして、出口王仁三郎師の万年青（おもと）の短冊がありましたが、一夜にして葉の色が褪（あ）せて枯葉色になってしまいました。いかが解釈しましたらよろ",
+   "pt_anchor": "O Mistério do TANZAKU (Tira de Papel)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "ある理髪店の話",
+   "title_pt": "",
+   "jp_anchor": "ある理髪店の話\n\n　御伺い　大阪市のある理髪店で奥の間の御神体に対し善言讃詞をお唱えしますと、店の客が絶えます。ある霊憑りが表をたくさんの亡者がうろうろしていて、お唱えの声が聞こえるとその家の前に立ちふさがり、現界人も出入りができなくなる。入口の戸を開けお入り",
+   "pt_anchor": "A História de uma Barbearia",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "蒟蒻について",
+   "title_pt": "",
+   "jp_anchor": "蒟蒻について\n\n　御伺い　栃木県Ｈ郡Ｓ村のある家で「蒟蒻（こんにゃく）」の花が咲くごとに家人が死亡いたしておりますが、なにか関係がございましょうか。また「蒟蒻玉」を盗んで栽培いたしましても育たず、なお他人の土地へは繁殖しませんが、なにか原因がありましょうか。",
+   "pt_anchor": "Sobre o Konjac (Konnyaku)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "浄霊および信仰上の問題",
+   "title_pt": "",
+   "jp_anchor": "浄霊および信仰上の問題",
+   "pt_anchor": "Problemas Relacionados ao Johrei (Jōrei) e à Fé",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "御神体の不思議",
+   "title_pt": "",
+   "jp_anchor": "御神体の不思議\n\n　御伺い　先日光明如来様の御書体の前で患者を浄霊いたしておりますと、急に家族の者が御書体が動くと言い出しました。振り返ってみますと左右に静かに一定の速度で揺れています。それと同時に私の左肩がつよくしめつけられるようになり、左手が動かなくなって",
+   "pt_anchor": "O Mistério do Objeto de Culto (Imagem da Luz Divina)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "光る御文字",
+   "title_pt": "",
+   "jp_anchor": "光る御文字\n\n　御伺い　光明の御軸を拝んでると床の左壁に光明の文字が白く浮き出します。そのわけをお教えください。",
+   "pt_anchor": "Caracteres Luminosos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "神霊の匂い",
+   "title_pt": "",
+   "jp_anchor": "神霊の匂い\n\n　御伺い　光明如来様をお祭りしてあるお部屋へ入ると、麝香（じゃこう）よりも、線香よりもずっとよい匂いがする。特に立派な先生のお宅の御奉斎の間へ入るといっそう強く感じますが、いかなるわけでしょうか。",
+   "pt_anchor": "O Aroma dos espíritos de divindades",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "観音力、観音行、観音心",
+   "title_pt": "",
+   "jp_anchor": "観音力、観音行、観音心",
+   "pt_anchor": "O Poder Kannon, a Prática de Kannon, o Coração de Kannon",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "善人悪人の別",
+   "title_pt": "",
+   "jp_anchor": "善人悪人の別\n\n　御伺い　浄霊によって善人と思われる人が助からぬ場合があるのに、まったく悪人としか思えない人で助かる場合がありますのはいかなる理由でしょうか。",
+   "pt_anchor": "A Distinção entre Pessoas Boas e Más",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "邪神の特色",
+   "title_pt": "",
+   "jp_anchor": "邪神の特色\n\n　御伺い　邪神はことさら正神らしく見せかけるように思われますが、いかがでしょうか。",
+   "pt_anchor": "Características das Divindades malignas (Jashin)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "真を行なうには",
+   "title_pt": "",
+   "jp_anchor": "真を行なうには\n\n　御伺い　真を行なうにはいかがいたしたらよいでしょう。",
+   "pt_anchor": "Para Praticar a Verdade",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "言葉と言霊について",
+   "title_pt": "",
+   "jp_anchor": "言葉と言霊について",
+   "pt_anchor": "Sobre as Palavras e o Espírito da Palavra",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "自己の行いは小乗的に律すべきか",
+   "title_pt": "",
+   "jp_anchor": "自己の行いは小乗的に律すべきか",
+   "pt_anchor": "Deve-se Regular as Próprias Ações pelo Shojo?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "入信後の苦しみについて",
+   "title_pt": "",
+   "jp_anchor": "入信後の苦しみについて",
+   "pt_anchor": "Sobre o Sofrimento Após a Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "入信後の不幸について",
+   "title_pt": "",
+   "jp_anchor": "入信後の不幸について",
+   "pt_anchor": "Sobre a Infelicidade Após a Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "罪と信仰",
+   "title_pt": "",
+   "jp_anchor": "罪と信仰\n\n　御伺い　神は浄化をくだし給うて御救いくださる反面、苦痛をも与え給うのは罪業の許しの意味でしょうか。また浄化と関連して死が与えられるということは、いかに考えるべきでありますか。",
+   "pt_anchor": "Pecado e Fé",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "入信後の災害",
+   "title_pt": "",
+   "jp_anchor": "入信後の災害\n\n　御伺い　私は自動車のタイヤ修理工場を経営している者であります。去る五月二七日午前一〇時ごろ、ちょうど私が浄霊に出かけた後でしたが、階下より突然発火し、ガソリンタンクに引火して手のつけようもなく、五分間ばかりの間に建坪四二坪を全焼し、畏れ多い",
+   "pt_anchor": "Desastre Após a Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "信仰と厄払い",
+   "title_pt": "",
+   "jp_anchor": "信仰と厄払い\n\n　御伺い　光明如来様を祭った某氏が四二歳の厄払いのお祝いの夜、倉庫の中の衣類箪笥（たんす）二竿全部盗られました。いかなるわけでしょう。",
+   "pt_anchor": "Fé e Purificação de Infortúnios",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "祝詞と願い事",
+   "title_pt": "",
+   "jp_anchor": "祝詞と願い事\n\n　御伺い　祝詞とお願い事とはいずれを先にすべきでしょうか。",
+   "pt_anchor": "Preces e Pedidos\n\nPergunta: Entre o norito e o pedido, qual deve vir primeiro?\n\nRespos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "参葬の後の用足しなど",
+   "title_pt": "",
+   "jp_anchor": "参葬の後の用足しなど",
+   "pt_anchor": "Sobre Ir ao Banheiro Após Participar de um Funeral",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "浄霊の閑なとき",
+   "title_pt": "",
+   "jp_anchor": "浄霊の閑なとき\n\n　御伺い　浄霊が比較的忙しくない場合は、一時的に他の職業と兼ねてもよいものでしょうか。",
+   "pt_anchor": "Quando o Johrei Está Ocioso",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "布教、開拓上の心得",
+   "title_pt": "",
+   "jp_anchor": "布教、開拓上の心得",
+   "pt_anchor": "Dicas para Proselitismo e Expansão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "入信後既斎の神々の処分法",
+   "title_pt": "",
+   "jp_anchor": "入信後既斎の神々の処分法",
+   "pt_anchor": "Método de Descarte das Divindades Já Consagradas Após a Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（イ）井戸神様――井戸の傍にあり、毎年一回氏神様よりへイシンの入れ替えをする。",
+   "title_pt": "",
+   "jp_anchor": "（イ）井戸神様――井戸の傍にあり、毎年一回氏神様よりへイシンの入れ替えをする。",
+   "pt_anchor": "(a) Deus do Poço – ao lado do poço, a cada ano a imagem é trocada pelo Ujigami (Deus do Clã).",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ロ）荒神様――屋内。",
+   "title_pt": "",
+   "jp_anchor": "（ロ）荒神様――屋内。",
+   "pt_anchor": "(b) Deus da Cozinha – dentro de casa.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "（ハ）神明様――屋外、鏡の裏は天照大神の文字を記してある。など合計十一神あるが略す。",
+   "title_pt": "",
+   "jp_anchor": "（ハ）神明様――屋外、鏡の裏は天照大神の文字を記してある。など合計十一神あるが略す。",
+   "pt_anchor": "(c) Deusa da Luz – do lado de fora, no verso do espelho está escrito o nome de Amaterasu Ōmikami. Totalizando 11 divindades, mas ",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "入信の奨めについて",
+   "title_pt": "",
+   "jp_anchor": "入信の奨めについて",
+   "pt_anchor": "Sobre o Incentivo à Conversão",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "物事が順調に行かぬのは",
+   "title_pt": "",
+   "jp_anchor": "物事が順調に行かぬのは",
+   "pt_anchor": "Quando as Coisas Não Correm Bem",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "親の反対をいかにすべきや",
+   "title_pt": "",
+   "jp_anchor": "親の反対をいかにすべきや",
+   "pt_anchor": "Como Lidar com a Oposição dos Pais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "夫婦不和の問題",
+   "title_pt": "",
+   "jp_anchor": "夫婦不和の問題\n\n　御伺い　連れ子をして再婚した者ですが、夫に愛情がなくこのお道も理解してくれません。離婚したほうがよいか迷っております。御指導願います。",
+   "pt_anchor": "O problema da discórdia conjugal",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "夫が信仰に理解なき場合について",
+   "title_pt": "",
+   "jp_anchor": "夫が信仰に理解なき場合について",
+   "pt_anchor": "Sobre o caso de o marido não compreender a fé",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "病気が早く治るには",
+   "title_pt": "",
+   "jp_anchor": "病気が早く治るには",
+   "pt_anchor": "Para a doença sarar rapidamente",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "先生を浄霊すること",
+   "title_pt": "",
+   "jp_anchor": "先生を浄霊すること",
+   "pt_anchor": "Sobre um mestre receber Johrei de um discípulo",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "御浄霊の際の親切",
+   "title_pt": "",
+   "jp_anchor": "御浄霊の際の親切",
+   "pt_anchor": "Sobre a gentileza durante o Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "症状が映る理由",
+   "title_pt": "",
+   "jp_anchor": "症状が映る理由\n\n　御伺い　教師中に、浄霊をしている患者の悪い部分と同じ場所に、痛みなどを感ずる人がありますのは、どんなわけでしょう。",
+   "pt_anchor": "Razão pela qual os sintomas se refletem",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "臨終を知る法",
+   "title_pt": "",
+   "jp_anchor": "臨終を知る法\n\n　御伺い　重病人で脈拍以外に臨終を知る方法を御教示ください。",
+   "pt_anchor": "Método para saber a hora da morte",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "長寿の秘訣",
+   "title_pt": "",
+   "jp_anchor": "長寿の秘訣",
+   "pt_anchor": "Segredo da longevidade",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "婦人が長命の理由",
+   "title_pt": "",
+   "jp_anchor": "婦人が長命の理由",
+   "pt_anchor": "Razão pela qual as mulheres vivem mais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "睡眠時間",
+   "title_pt": "",
+   "jp_anchor": "睡眠時間\n\n　御伺い　睡眠時間はだいたいどのくらいが適当でしょうか。また睡眠と健康について。",
+   "pt_anchor": "Tempo de sono\n\nPergunta: Qual é, em geral, o tempo de sono adequado? E qual é a relação entre o sono e a saúde?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "白血球と赤血球の関係について",
+   "title_pt": "",
+   "jp_anchor": "白血球と赤血球の関係について",
+   "pt_anchor": "Sobre a relação entre glóbulos brancos e glóbulos vermelhos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "白米と玄米の適否",
+   "title_pt": "",
+   "jp_anchor": "白米と玄米の適否",
+   "pt_anchor": "Conveniência do arroz branco e do arroz integral",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "動植物の病気",
+   "title_pt": "",
+   "jp_anchor": "動植物の病気\n\n　御伺い　動植物の病気もやはりそれぞれの霊の曇りの浄化作用なのでしょうか。また動物の霊界においては霊の向上などにより変動があるものでしょうか。",
+   "pt_anchor": "Doenças de animais e plantas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "動物の浄霊",
+   "title_pt": "",
+   "jp_anchor": "動物の浄霊\n\n　御伺い　動物の浄霊を頼まれますが、もったいないような気がいたしますが、いかがでしょうか。",
+   "pt_anchor": "Sobre o Johrei em animais",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊問答は必要か",
+   "title_pt": "",
+   "jp_anchor": "霊問答は必要か\n\n　御伺い　憑霊と問答を自由にできねば御浄霊施術上不完全ではないでしょうか。また憑霊と問答なし得ることを体得するには、いかがしたらよろしいでしょうか。",
+   "pt_anchor": "É necessário o diálogo espiritual?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "霊界の夜と薬",
+   "title_pt": "",
+   "jp_anchor": "霊界の夜と薬\n\n　御伺い　ある人の一一代前の方で納棺いたしましたところ、蘇（よみがえ）られ、そうして「私は薬師如来の所へ行ってきました。そこは現界でみられないなんとも言えない美しい所であり、お前は私の所へ来るのはまだ早い、もう一度現界に帰りなさい。向こう三カ",
+   "pt_anchor": "A Noite no Mundo Espiritual e os Medicamentos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "二枚舌の患者",
+   "title_pt": "",
+   "jp_anchor": "二枚舌の患者\n\n　御伺い　ある男でいつの間にか舌が二つに裂け、いっぽうが感じがなくなり、食事の際邪魔になると申し、自分で鋏で切り取り、その後なにごともないそうですが、なにか霊的にわけがありましょうか。",
+   "pt_anchor": "O Paciente de Língua Dupla",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "八重歯は治るか",
+   "title_pt": "",
+   "jp_anchor": "八重歯は治るか\n\n　御伺い　歯の生え代わるとき、前の歯が抜けないで八重歯ができたとき、そのままにしておくと口の格好が悪くなりますが、御浄霊により古い歯が抜けるでしょうか。",
+   "pt_anchor": "Os Dentes Duplos (Dentes de Leite e Permanentes) Podem Ser Curados?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "死産、流産について",
+   "title_pt": "",
+   "jp_anchor": "死産、流産について",
+   "pt_anchor": "Sobre Natimortos e Abortos Espontâneos",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "胎盤の処理について",
+   "title_pt": "",
+   "jp_anchor": "胎盤の処理について",
+   "pt_anchor": "Sobre o Tratamento da Placenta",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "避妊と堕胎",
+   "title_pt": "",
+   "jp_anchor": "避妊と堕胎\n\n　御伺い　最近人口問題に関し、政府においても避妊薬などの販売を許可するようですが、",
+   "pt_anchor": "Contracepção e Aborto",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "妊娠の方法について",
+   "title_pt": "",
+   "jp_anchor": "妊娠の方法について",
+   "pt_anchor": "Sobre o Método de Engravidar",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "神経痛、頭痛、および尿量と天候",
+   "title_pt": "",
+   "jp_anchor": "神経痛、頭痛、および尿量と天候",
+   "pt_anchor": "Sobre Nevralgia, Dor de Cabeça, Volume Urinário e Clima",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "感冒の黴菌",
+   "title_pt": "",
+   "jp_anchor": "感冒の黴菌\n\n　御伺い　流行性感冒が流行しつつあるようですが、これは黴菌による誘発でしょうか。",
+   "pt_anchor": "Os micróbios da Gripe",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "カリエスの膿",
+   "title_pt": "",
+   "jp_anchor": "カリエスの膿\n\n　御伺い　脊髄カリエスは巫子（みこ）などにより先祖の因縁を調べたほうがよろしいでしょうか。",
+   "pt_anchor": "O Pus da Cárie Óssea (Mal de Pott)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "偏食の小児",
+   "title_pt": "",
+   "jp_anchor": "偏食の小児\n\n　御伺い　当年三歳の男子、乳離れしたときからごはんや野菜を嫌い、魚および肉類のみしかいただきません。一日中肉類か魚をやりませんとヒイヒイ泣きます。どういうわけですか。",
+   "pt_anchor": "A Criança que Come Apenas Carne e Peixe",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "歯　石",
+   "title_pt": "",
+   "jp_anchor": "御伺い　歯石が早くできる人と遅い人とがありますが、どんな原因でしょうか。",
+   "pt_anchor": "Tártaro Dentário (Cálculo Dental)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "脳水腫",
+   "title_pt": "",
+   "jp_anchor": "脳水腫\n\n　御伺い　俗に福助、医学上では脳水腫といわれる者は霊的のものと存じますが、いかなる原因によるのでしょうか。",
+   "pt_anchor": "Hidrocefalia (Cérebro D'Água)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "脱臼は治る",
+   "title_pt": "",
+   "jp_anchor": "脱臼は治る\n\n　御伺い　生まれたときは気のつかない程度ですが、大きくなって脱臼していることが判った場合、ふつうはギブスを嵌（は）めれば治ると申しますが、御浄霊により治るでしょうか。",
+   "pt_anchor": "Luxação tem cura",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "熱気による奇病",
+   "title_pt": "",
+   "jp_anchor": "熱気による奇病\n\n　御伺い　四一歳の男子、太陽の直射は勿論、傘などで光線を遮（さ）けても、熱気のため全身がだんだん熱くなり苦痛が増し、特に直射の箇所は腫れ、後に薄皮とともに血の固まりがはげます。夏季は特にその病状がはなはだしく、また七、八年前よりは火にあたりま",
+   "pt_anchor": "Doença rara causada pelo calor",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

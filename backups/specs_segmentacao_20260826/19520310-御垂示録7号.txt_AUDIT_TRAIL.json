@@ -1,0 +1,171 @@
+{
+  "filename": "19520310-御垂示録7号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 425 linhas / PT reconstruído para 216 linhas, de um estado inicial de 96 linhas dominado por dois blocos monolíticos). Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente, turno a turno, na mesma ordem, do prefácio à última pergunta sobre a bomba atômica.",
+  "pre_existing_context": "Nota histórica do próprio ficheiro-fonte: um bug de detecção de sessão (formato de colchete '［面会日不明］（推定二月一日頃）' não reconhecido pelo script de segmentação) já havia sido corrigido estruturalmente em fase anterior. Esta revisão confirma que, apesar da correção estrutural, o CONTEÚDO dessa sessão nunca havia sido inserido no PT de trabalho — ver achado nº 1.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "jp_interlocutor_turns_total": 91,
+    "pt_interlocutor_turns_antes": 34,
+    "pt_interlocutor_turns_depois": 91,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 1,
+    "verificacao_paridade": "Confirmado por script: contagem de turnos do Interlocutor (linhas que abrem com aspas) bate exatamente 91=91 entre JP e PT após as correções, e a ordem/conteúdo de cada turno foi conferida individualmente contra o JP (não só a contagem agregada — ver 'Δ=0 nunca é suficiente')."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Abertura do arquivo (JP linhas 24-46; PT antes do que era a linha 25)",
+      "problema": "GRAVE - perda de conteúdo real: faltavam por completo (a) o título de segunda linha 'Gosuiji-roku nº 7 (ano 27 da Era Showa)', (b) o cabeçalho de sessão com data incerta '［面会日不明］（推定二月一日頃）' — exatamente o trecho que já teve um bug de segmentação corrigido numa fase anterior, mas cujo conteúdo nunca havia sido efetivamente inserido no PT — e (c) os primeiros 8 turnos de diálogo (4 perguntas do Interlocutor + 4 respostas de Meishu-Sama) sobre a cerimônia de levantamento da estrutura (jōtō-shiki) do museu de Hakone e o telhado de telhas. O PT saltava diretamente da linha de publicação para o meio da resposta sobre o Salão de Atami (JP linha 46), sem qualquer sinal de corte.",
+      "correcao": "Traduzido e inserido: título de sessão, marcador de data incerta, e os 8 turnos faltantes (JP linhas 28-44), usando o mesmo registro/estilo do restante do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "JP linha 185 (resposta sobre a moral bushido de 'pais e filhos uma vida, marido e mulher duas vidas, senhor e servo três vidas'); PT no que era a linha 94",
+      "problema": "GRAVE - truncamento mascarado por duplicação: a resposta de Meishu-Sama, que no JP é um parágrafo longo e completo sobre a origem bushido (não budista) dessa hierarquia moral, invertendo qual relação é 'mais profunda', estava reduzida no PT a uma única frase truncada ('Isso é absurdo. Não é budismo.') — o resto do conteúdo real dessa resposta só reaparecia, de forma redundante, dentro do bloco monolítico mais adiante no mesmo arquivo (ver achado nº 3). Padrão idêntico ao 'achado nº 6' já catalogado em revisao-paralela-jp-pt.mdc (rascunho truncado seguido da versão completa da mesma passagem).",
+      "correcao": "Substituída a frase truncada pela tradução completa e fiel ao JP 185 (reaproveitando o texto correto que já existia, de forma redundante, no bloco monolítico).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Bloco final do arquivo (o que era a linha 96 inteira do PT — um único parágrafo de ~17.000 caracteres cobrindo JP linhas ~171 a 425)",
+      "problema": "GRAVE - monólito gigante com cauda duplicando conteúdo já traduzido: o restante inteiro do livro (mais da metade do volume: educadores que morrem, Terapia pela Fé para Tuberculose, mandala, Komyo-Nyorai, costumes de Niigata/Sado, mudança de sobrenome/seita, sepulturas, a cobra de Kisogawa, Gosuiji-roku nº5/Oração Zengen-Sandji, casos de possessão espiritual, Johrei, cultivo sem fertilizante/minhocas, sobrevivência à bomba atômica em Hiroshima) estava amassado em um único parágrafo corrido, sem nenhuma quebra entre os 54 pares de pergunta/resposta que o compõem — violando os pontos 1 (subdivisão), 6 (paragrafação 1:1) e 8 (duplicação) do checklist. Além disso, o início desse bloco (~2000 caracteres) duplicava, com fraseado ligeiramente diferente, conteúdo que já estava correto (embora truncado, achado nº 2) nas linhas anteriores do PT (JP 171-185).",
+      "correcao": "Bloco inteiro desmembrado programaticamente em 108 parágrafos individuais (54 perguntas do Interlocutor + 54 respostas de Meishu-Sama), na ordem correta, verificados um a um contra os 54 turnos correspondentes do JP (linhas 188-425). A cauda duplicada (repetição do conteúdo de JP 171-185) foi removida, mantendo apenas a versão já corrigida no início do arquivo (achado nº 2). Nenhum conteúdo genuíno foi perdido — verificado por contagem exata de turnos do Interlocutor: JP=91, PT=91 após a correção, com cada turno conferido individualmente (não apenas a contagem agregada).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Dentro do bloco desmembrado (achado nº3): a citação retórica 'ああ、これはたいしたものだと...' (JP linha 203, dentro da resposta sobre a guerra/liberdade de expressão)",
+      "problema": "Esta citação NÃO está entre colchetes 「」 no JP (é uma exclamação retórica dentro da própria fala de Meishu-Sama, não um novo turno do Interlocutor), mas o script de separação automática por aspas tipográficas tratou-a inicialmente como se fosse um turno de diálogo separado, o que teria introduzido uma quebra de turno espúria.",
+      "correcao": "Identificado e tratado como texto inline dentro do parágrafo de Meishu-Sama (mantendo as aspas apenas como citação retórica, sem quebra de parágrafo), conforme o JP.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Cabeçalho/título/publicação",
+      "jp_linhas": "20-24",
+      "decisao": "corrigido - achado nº1 (título de sessão faltava)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão de data incerta - abertura sobre o museu de Hakone (jōtō-shiki, telhas, prazo)",
+      "jp_linhas": "26-44",
+      "decisao": "corrigido - achado nº1 (8 turnos inteiros faltavam, incluindo o marcador de data incerta)",
+      "confianca": "alta",
+      "notas": "Verificado especificamente por ser o trecho que já teve bug de segmentação corrigido numa fase anterior - confirmado agora presente e completo no PT."
+    },
+    {
+      "bloco": "Salão de Atami, mirante, estilo Corbusier, cinema/música/orquestra, azaleias",
+      "jp_linhas": "46-73",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Museu de arte japonesa - história da arte, cerâmica, ukiyo-e, coleções, Fenollosa/Pigot",
+      "jp_linhas": "75-139",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Fechamento do tema do museu (Hashiguchi Kōyō, Kōrin/Sōtatsu no mundo espiritual)",
+      "jp_linhas": "141-161",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Espíritos de artistas, morte súbita/destino, extensão de vida, moral bushido",
+      "jp_linhas": "164-185",
+      "decisao": "corrigido - achado nº2 (truncamento mascarado)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Educadores que morrem, Terapia pela Fé para Tuberculose, soldado de Deus, guerra/bomba",
+      "jp_linhas": "188-204",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito) + achado nº4 (citação retórica)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mandala, Komyo-Nyorai, costumes funerários de Niigata/Sado, 'não salvos'",
+      "jp_linhas": "207-233",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Mudança de sobrenome/seita, sepulturas, a cobra de Kisogawa/lagoas",
+      "jp_linhas": "236-260",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Gosuiji-roku nº5/Oração Zengen-Sandji, culto ao Komyo-Nyorai, altar/tokonoma de convertidos estrangeiros",
+      "jp_linhas": "263-303",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito); pendência de grafia escalada (ver PENDENCIAS_REVISAO.json)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Meiji Jingu, Yachihiko no Mikoto, casos de casamento/divórcio (Todoroki/Shima), nervosismo cardíaco/Johrei",
+      "jp_linhas": "306-361",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Espírito no tokonoma, cultivo sem fertilizante/minhocas, bomba atômica em Hiroshima, fertilidade da terra",
+      "jp_linhas": "364-425",
+      "decisao": "corrigido - achado nº3 (fazia parte do monólito)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_terminologica": {
+    "termos_checados": [
+      "光明如来 -> Komyo-Nyorai",
+      "大光明如来 -> Daikomyo-Nyorai",
+      "幽世大神 -> Deus do Mundo Oculto/Oculta",
+      "善言讃詞 -> Oração Zengen-Sandji"
+    ],
+    "神界_vs_幽界": "Não aplicável a este volume - os termos 神界/幽界 (confundidos no 6号) não ocorrem em 7号; usa-se 'mundo espiritual' de forma consistente para 霊界, sem ambiguidade de origem japonesa dupla.",
+    "resultado": "Sem corrupção terminológica encontrada além da pendência de grafia Zengen-Sanji/Sandji já escalada."
+  },
+  "pendencias_abertas": [
+    {
+      "ref": "ver PENDENCIAS_REVISAO.json, entrada 19520310-御垂示録7号.txt",
+      "resumo": "Divergência de grafia 'Zengen-Sanji' (glossário) vs 'Zengen-Sandji' (uso consistente em 9 arquivos do corpus, incluindo este) - decisão de nomenclatura pendente de autorização, não decidida unilateralmente."
+    }
+  ],
+  "aprovacao": {
+    "approved_recomendado": false,
+    "condicao": "NÃO marcar approved:true - conforme instrução explícita da tarefa, aguardando segunda auditoria independente. Há também uma pendência leve aberta em PENDENCIAS_REVISAO.json (grafia Zengen-Sanji/Sandji) que não bloqueia a leitura semântica mas deve ser resolvida antes do fechamento formal do volume."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "date": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado ao family Gosuiji-roku: no JP deste family, `「pergunta entre aspas」` = Interlocutor; prosa corrida sem aspas = Meishu-Sama (não usa o sinal `――`/`（お伺）` do Gokōwa). Etapa A: mapa de turnos construído lendo o JP inteiro linha a linha (única sessão no volume, cabeçalho `［面会日不明］（推定二月一日頃）`, sem subsessões por data). Etapa B: confirmação por script antes de tocar no PT.",
+    "etapa_a_mapa_jp": {
+      "metodo_deteccao": "parágrafo (linha não vazia) iniciado por `「` = Interlocutor; caso contrário = Meishu-Sama",
+      "jp_paragrafos_totais": 188,
+      "jp_interlocutor": 91,
+      "jp_meishu_sama": 97,
+      "observacao": "2 pares de parágrafos consecutivos do mesmo falante (Meishu-Sama) aparecem no JP como linhas físicas separadas sem linha em branco entre si, mesmo turno contínuo (ex.: resposta sobre estilo Corbusier seguida da resposta sobre o palco; resposta sobre 'não há morte em combate' seguida da resposta sobre salvação da humanidade) - tratados como parágrafos distintos no mapa, conforme convenção já estabelecida na série (cada parágrafo físico de uma resposta longa recebe seu próprio prefixo)."
+    },
+    "etapa_b_confirmacao": {
+      "pt_paragrafos_antes_da_rotulagem": 187,
+      "delta_vs_jp": "188 JP vs 187 PT = 1 parágrafo a menos, integralmente explicado por uma única fusão benigna já existente no PT (os 2 parágrafos consecutivos de Meishu-Sama sobre 'não há morte em combate / salvação da humanidade', JP linhas 203-204, já vinham unidos em um só parágrafo no PT) - confirmado programaticamente comparando as sequências I/M de JP e PT após colapsar repetições consecutivas do mesmo papel (run-length encode): sequências idênticas (182 blocos de ambos os lados).",
+      "contagem_interlocutor": "JP=91, PT=91 (heurística de aspas de abertura no PT) - paridade exata, turno a turno, na mesma ordem.",
+      "decisao": "Mapa JP confirmado 1:1 com a estrutura já existente no PT (nenhuma correção estrutural adicional foi necessária além da já registrada nas correções nº1-4 acima, que antecederam esta rotulagem)."
+    },
+    "etapa_c_aplicacao": {
+      "acao": "Prefixo `Interlocutor: ` ou `Meishu-Sama: ` aplicado a cada um dos 187 parágrafos existentes no PT, na ordem em que já se encontravam, sem reordenar ou reescrever conteúdo. Cabeçalho de sessão `[Data do encontro desconhecida] (Estimada em torno de 1º de fevereiro)` preservado sem rótulo. Parágrafos de prefácio/publicação (antes do cabeçalho de sessão) não rotulados.",
+      "resultado": "Interlocutor: 91 parágrafos; Meishu-Sama: 96 parágrafos (a diferença de 1 frente aos 97 do JP é a fusão benigna já descrita na Etapa B, não uma perda de conteúdo)."
+    },
+    "problemas_estruturais_encontrados_nesta_etapa": "Nenhum problema novo. A fusão de 2 parágrafos consecutivos de Meishu-Sama (Etapa B) é preexistente e inofensiva (mesmo papel em ambos os lados), não fragmenta um turno do Interlocutor nem mistura papéis - não foi desfeita.",
+    "approved_alterado": false
+  },
+  "segunda_auditoria_independente": {
+    "data": "2026-07-09",
+    "reviewer": "agente (Fase E, revisao-paralela-jp-pt.mdc)",
+    "metodo": "Verificacao direta contra o JP dos 8 turnos de abertura restaurados (achado 1), contagem de turnos rotulados (91/96, confere com etapa_c_aplicacao), confirmacao da resolucao da pendencia de grafia Zengen-Sanji/Sandji (glossario atualizado para Sandji por decisao do usuario, consistente com uso do arquivo). CJK residual: nenhum. Sem cabecalhos de data duplicados.",
+    "resultado": "Confirmado sem residuo. approved:true aplicado no spec."
+  }
+}

@@ -1,0 +1,438 @@
+{
+ "filename": "19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 47->47. PT pairing corrigido 2026-07-15 (title_pt era placeholder de outro livro; pt_anchor ausente para itens numerados e capitulos 11-40, PT usa numeral romano I-X depois arabico 11-40 - convencao de traducao, jp mantem kanji em todo o livro).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 47,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（七）婦人科",
+   "pt_anchor": "Curso do Método de Johrei nº 7 — Ginecologia",
+   "notes": "ratio PT/JP=5.32; ratio PT/JP=7.61",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　婦人病病理（御教え集22号　P.3）",
+   "title_pt": "I — Patologia das Doenças Femininas (Mioshie-shū nº 22, p. 3)",
+   "jp_anchor": "一　婦人病病理（御教え集22号　P.3）",
+   "pt_anchor": "Outro dia, falei um pouco sobre as doenças das mulheres. Segundo ouvi, elas ficaram muito contentes: dizem que ensinar algo assim é de grande ajuda",
+   "notes": "",
+   "pt_prefix": "I — Patologia das Doenças Femininas (Mioshie-shū nº 22, p. 3)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二 妊娠について",
+   "title_pt": "II — Sobre a Gravidez",
+   "jp_anchor": "二 妊娠について",
+   "pt_anchor": "II — Sobre a Gravidez\n\n1. Método para Engravidar (Tijotengoku nº 7, p. 11)",
+   "notes": "ratio PT/JP=7.00",
+   "pt_prefix": "II — Sobre a Gravidez"
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．妊娠の方法（地上天国　7号　P.11）",
+   "title_pt": "1. Método para Engravidar (Paraíso na Terra nº 7, p. 11)",
+   "jp_anchor": "１．妊娠の方法（地上天国　7号　P.11）",
+   "pt_anchor": "(Pergunta)\nSobre o método para engravidar, novamente.",
+   "notes": "",
+   "pt_prefix": "1. Método para Engravidar (Paraíso na Terra nº 7, p. 11)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．夫婦仲が妊娠に影響を及ぼすか（御教え）",
+   "title_pt": "2. A Harmonia Conjugal Influencia a Gravidez? (Mioshie-shū)",
+   "jp_anchor": "２．夫婦仲が妊娠に影響を及ぼすか（御教え）",
+   "pt_anchor": "2. A Harmonia Conjugal Influencia a Gravidez? (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "2. A Harmonia Conjugal Influencia a Gravidez? (Ensino)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．夫婦共健康者であって、子供のない理由（御教え）",
+   "title_pt": "3. Razão para Casais Saudáveis Não Terem Filhos (Mioshie-shū)",
+   "jp_anchor": "３．夫婦共健康者であって、子供のない理由（御教え）",
+   "pt_anchor": "3. Razão para Casais Saudáveis Não Terem Filhos (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "3. Razão para Casais Saudáveis Não Terem Filhos (Ensino)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．子宮発育不全の為、内膜掻爬をした婦人の可能性に就いて（御教え）",
+   "title_pt": "4. Sobre a Possibilidade de Gravidez em Mulheres que Fizeram Curetagem Endometrial por Desenvolvimento Insuficiente do Útero (Mioshie-shū)",
+   "jp_anchor": "４．子宮発育不全の為、内膜掻爬をした婦人の可能性に就いて（御教え）",
+   "pt_anchor": "4. Sobre a Possibilidade de Gravidez em Mulheres que Fizeram Curetagem Endometrial por Desenvolvimento Insuficiente do Ú",
+   "notes": "",
+   "pt_prefix": "4. Sobre a Possibilidade de Gravidez em Mulheres que Fizeram Curetagem Endometrial por Desenvolvimento Insuficiente do Útero (Ensino)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．卵巣、ラッパ管、子宮（一部分）除去後、月経のある場合の妊娠について（御垂示録　19号　P.24）",
+   "title_pt": "5. Sobre a Gravidez com Menstruação Após a Remoção do Ovário, Trompa e Parte do Útero (Gosuiji-roku nº 19, p. 24)",
+   "jp_anchor": "５．卵巣、ラッパ管、子宮（一部分）除去後、月経のある場合の妊娠について（御垂示録　19号　P.24）",
+   "pt_anchor": "5. Sobre a Gravidez no Caso de Haver Menstruação Após a Remoção do Ovário, Trompa e Parte do Útero (Gosuiji-roku nº 19, p. 24)\n\n(Pergunta)\nA pessoa foi operada por causa de uma ",
+   "notes": "",
+   "pt_prefix": "5. Sobre a Gravidez com Menstruação Após a Remoção do Ovário, Trompa e Parte do Útero (Gosuiji-roku nº 19, p. 24)"
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．骨盤狭少の妊娠について（地上天国　17号　P.11）",
+   "title_pt": "6. Sobre a Gravidez com Bacia Estreita (Tijotengoku nº 17, p. 11)",
+   "jp_anchor": "６．骨盤狭少の妊娠について（地上天国　17号　P.11）",
+   "pt_anchor": "6. Sobre a Gravidez com Bacia Estreita (Tijotengoku nº 17, p. 11)\n\n(Pe",
+   "notes": "",
+   "pt_prefix": "6. Sobre a Gravidez com Bacia Estreita (Paraíso na Terra nº 17, p. 11)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三 妊娠、不妊娠の判断には　（御教え集　6号　P.112）",
+   "title_pt": "III — Como Julgar a Gravidez ou Não Gravidez (Mioshie-shū nº 6, p. 112)",
+   "jp_anchor": "三 妊娠、不妊娠の判断には　（御教え集　6号　P.112）",
+   "pt_anchor": "III — Como Julgar a Gravidez ou Não Gravidez (Mioshie-shū nº 6, p. 112)",
+   "notes": "",
+   "pt_prefix": "III — Como Julgar a Gravidez ou Não Gravidez (Mioshie-shū nº 6, p. 112)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四 想像妊娠について　（御教え）",
+   "title_pt": "IV — Sobre a Gravidez Imaginária (Mioshie-shū)",
+   "jp_anchor": "四 想像妊娠について　（御教え）",
+   "pt_anchor": "IV — Sobre a Gravidez Imaginária (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "IV — Sobre a Gravidez Imaginária (Ensino)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "五 死亡胎児に関して　　　（御教え）",
+   "title_pt": "V — Sobre o Feto Morto (Mioshie-shū)",
+   "jp_anchor": "五 死亡胎児に関して　　　（御教え）",
+   "pt_anchor": "V — Sobre o Feto Morto (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "V — Sobre o Feto Morto (Ensino)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "六 子宮外妊娠の霊的原因　　（地上天国　15号　P.10）",
+   "title_pt": "VI — Causa Espiritual da Gravidez Ectópica (Tijotengoku nº 15, p. 10)",
+   "jp_anchor": "六 子宮外妊娠の霊的原因　　（地上天国　15号　P.10）",
+   "pt_anchor": "VI — Causa Espiritual da Gravidez Ectópica (Tijotengoku nº 15, p. 10)",
+   "notes": "",
+   "pt_prefix": "VI — Causa Espiritual da Gravidez Ectópica (Paraíso na Terra nº 15, p. 10)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "七 人工妊娠に関して　　（御垂示録　22号　P.18）",
+   "title_pt": "VII — Sobre a Inseminação Artificial (Gosuiji-roku nº 22, p. 18)",
+   "jp_anchor": "七 人工妊娠に関して　　（御垂示録　22号　P.18）",
+   "pt_anchor": "VII — Sobre a Inseminação Artificial (Gosuiji-roku nº 22, p. 18)",
+   "notes": "",
+   "pt_prefix": "VII — Sobre a Inseminação Artificial (Gosuiji-roku nº 22, p. 18)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "八 避妊は罪を構成するか",
+   "title_pt": "VIII — A Contracepção Constitui Pecado?",
+   "jp_anchor": "八 避妊は罪を構成するか",
+   "pt_anchor": "VIII — A Contracepção Constitui Pecado?",
+   "notes": "",
+   "pt_prefix": "VIII — A Contracepção Constitui Pecado?"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "九 産児制限と堕胎の軽重について（地上天国　7号　P.11）",
+   "title_pt": "IX — Sobre a Gravidade Relativa do Controle de Natalidade e do Aborto (Tijotengoku nº 7, p. 11)",
+   "jp_anchor": "九 産児制限と堕胎の軽重について（地上天国　7号　P.11）",
+   "pt_anchor": "IX — Sobre a Gravidade Relativa do Controle de Natalidade e do Aborto (Tijotengoku nº 7, p. 11)",
+   "notes": "",
+   "pt_prefix": "IX — Sobre a Gravidade Relativa do Controle de Natalidade e do Aborto (Paraíso na Terra nº 7, p. 11)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十 死産流産の霊的体的な原因",
+   "title_pt": "X — Causas Espirituais e Materiais do Natimorto e do Aborto",
+   "jp_anchor": "十 死産流産の霊的体的な原因",
+   "pt_anchor": "X — Causas Espirituais e Materiais do Natimorto e do Aborto",
+   "notes": "",
+   "pt_prefix": "X — Causas Espirituais e Materiais do Natimorto e do Aborto"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十一 早期出産手術の被害に関して（御垂示録　5号　P.11）",
+   "title_pt": "11. Sobre os danos de cirurgias de parto prematuro (Gosuiji-roku nº 5, p. 11)",
+   "jp_anchor": "十一 早期出産手術の被害に関して（御垂示録　5号　P.11）",
+   "pt_anchor": "11. Sobre os danos de cirurgias de parto prematuro (Gosuiji-roku nº 5, p. 11)",
+   "notes": "",
+   "pt_prefix": "11. Sobre os danos de cirurgias de parto prematuro (Gosuiji-roku nº 5, p. 11)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十二 既往手術が妊娠時に及ぼす影響　（御教え）",
+   "title_pt": "12. A influência de cirurgias anteriores na gravidez (Mioshie-shū)",
+   "jp_anchor": "十二 既往手術が妊娠時に及ぼす影響　（御教え）",
+   "pt_anchor": "12. A influência de cirurgias anteriores na gravidez (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "12. A influência de cirurgias anteriores na gravidez (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十三 妊娠で心臓の鼓動が激しくなった人について　　（御教え）",
+   "title_pt": "13. Sobre uma pessoa cujas batidas do coração se tornaram violentas durante a gravidez (Mioshie-shū)",
+   "jp_anchor": "十三 妊娠で心臓の鼓動が激しくなった人について　　（御教え）",
+   "pt_anchor": "13. Sobre uma pessoa cujas batidas do coração se tornaram violentas durante a gravidez (Mioshie-shū)\n\n(Pergunta)\nHá uma pessoa cujas batidas do coração se tornam extremamente violentas durante a gravidez. Por que isso ac",
+   "notes": "",
+   "pt_prefix": "13. Sobre uma pessoa cujas batidas do coração se tornaram violentas durante a gravidez (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十四 妊娠時の浄化について　　（御教え）",
+   "title_pt": "14. Sobre a purificação durante a gravidez (Mioshie-shū)",
+   "jp_anchor": "十四 妊娠時の浄化について　　（御教え）",
+   "pt_anchor": "14. Sobre a purificação durante a gravidez (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "14. Sobre a purificação durante a gravidez (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十五 胎児衰弱の原因　（御教え）",
+   "title_pt": "15. Causas da fraqueza fetal (Mioshie-shū)",
+   "jp_anchor": "十五 胎児衰弱の原因　（御教え）",
+   "pt_anchor": "15. Causas da fraqueza fetal (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "15. Causas da fraqueza fetal (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十六 胎児が妊娠していた記事について（御教え）",
+   "title_pt": "16. Sobre a notícia de um feto dentro de outro feto (Mioshie-shū)",
+   "jp_anchor": "十六 胎児が妊娠していた記事について（御教え）",
+   "pt_anchor": "16. Sobre a notícia de um feto dentro de outro feto (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "16. Sobre a notícia de um feto dentro de outro feto (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十七 夫がつわり悪阻の状態をする理由（地上天国　10号　P.11）",
+   "title_pt": "17. Razão pela qual o marido apresenta sintomas de enjoo matinal (Tijotengoku nº 10, p. 11)",
+   "jp_anchor": "十七 夫がつわり悪阻の状態をする理由（地上天国　10号　P.11）",
+   "pt_anchor": "17. Razão pela qual o marido apresenta sintomas de enjoo matinal (Tijotengoku nº 10, p. 11)\n\n(Pe",
+   "notes": "",
+   "pt_prefix": "17. Razão pela qual o marido apresenta sintomas de enjoo matinal (Paraíso na Terra nº 10, p. 11)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十八 妊娠時の嗜好の変化について（御教え）",
+   "title_pt": "18. Sobre mudanças de paladar durante a gravidez (Mioshie-shū)",
+   "jp_anchor": "十八 妊娠時の嗜好の変化について（御教え）",
+   "pt_anchor": "18. Sobre mudanças de paladar durante a gravidez (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "18. Sobre mudanças de paladar durante a gravidez (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "十九 胎児に及ぼす両親の容貌、性格について（御教え）",
+   "title_pt": "19. Sobre a influência da aparência e do caráter dos pais no feto (Mioshie-shū)",
+   "jp_anchor": "十九 胎児に及ぼす両親の容貌、性格について（御教え）",
+   "pt_anchor": "19. Sobre a influência da aparência e do caráter dos pais no feto (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "19. Sobre a influência da aparência e do caráter dos pais no feto (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十 袈裟懸子と花咲子について（御教え）",
+   "title_pt": "20. Sobre crianças com cordão umbilical enrolado no pescoço e crianças \"Hanasaki-ko\" (Mioshie-shū)",
+   "jp_anchor": "二十 袈裟懸子と花咲子について（御教え）",
+   "pt_anchor": "20. Sobre crianças com cordão umbilical enrolado no pescoço e crianças \"Hanasaki-ko\" (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "20. Sobre crianças com cordão umbilical enrolado no pescoço e crianças \"Hanasaki-ko\" (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十一 腹帯の良否について（御垂示録　4号　P.67）",
+   "title_pt": "21. Sobre a qualidade da cinta abdominal (Gosuiji-roku nº 4, p. 67)",
+   "jp_anchor": "二十一 腹帯の良否について（御垂示録　4号　P.67）",
+   "pt_anchor": "21. Sobre a qualidade da cinta abdominal (Gosuiji-roku nº 4, p. 67)",
+   "notes": "",
+   "pt_prefix": "21. Sobre a qualidade da cinta abdominal (Gosuiji-roku nº 4, p. 67)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十二 産前、産後に注意すべき事項（御垂示録　4号　P.67）",
+   "title_pt": "22. Itens a serem observados antes e depois do parto (Gosuiji-roku nº 4, p. 67)",
+   "jp_anchor": "二十二 産前、産後に注意すべき事項（御垂示録　4号　P.67）",
+   "pt_anchor": "22. Itens a serem observados antes e depois do parto (Gosuiji-roku nº 4, p. 67)",
+   "notes": "",
+   "pt_prefix": "22. Itens a serem observados antes e depois do parto (Gosuiji-roku nº 4, p. 67)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十三 産後の処理について（地上天国　12号　P.14）",
+   "title_pt": "23. Sobre o tratamento da placenta (Tijotengoku nº 12, p. 14)",
+   "jp_anchor": "二十三 産後の処理について（地上天国　12号　P.14）",
+   "pt_anchor": "23. Sobre o tratamento da placenta (Tijotengoku nº 12, p. 14)\n\n(Pe",
+   "notes": "",
+   "pt_prefix": "23. Sobre o tratamento da placenta (Paraíso na Terra nº 12, p. 14)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十四 へその緒の取れ方の遅速に関して（御教え）",
+   "title_pt": "24. Sobre a rapidez com que o cordão umbilical cai (Mioshie-shū)",
+   "jp_anchor": "二十四 へその緒の取れ方の遅速に関して（御教え）",
+   "pt_anchor": "24. Sobre a rapidez com que o cordão umbilical cai (Mioshie-shū)\n\n(Pergunta)\nNo parto, quando o cordão umbilical do bebê cai, costuma-se dizer desde os tempos antigos que as crianças c",
+   "notes": "",
+   "pt_prefix": "24. Sobre a rapidez com que o cordão umbilical cai (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十五 産後の子宮の収縮について（御垂示録　3号　P.27）",
+   "title_pt": "25. Sobre a contração do útero após o parto (Gosuiji-roku nº 3, p. 27)",
+   "jp_anchor": "二十五 産後の子宮の収縮について（御垂示録　3号　P.27）",
+   "pt_anchor": "25. Sobre a contração do útero após o parto (Gosuiji-roku nº 3, p. 27)",
+   "notes": "",
+   "pt_prefix": "25. Sobre a contração do útero após o parto (Gosuiji-roku nº 3, p. 27)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十六 産後に留意すべき事項に関して（御教え集　5号　P.32）",
+   "title_pt": "26. Sobre itens a serem observados após o parto (Mioshie-shū nº 5, p. 32)",
+   "jp_anchor": "二十六 産後に留意すべき事項に関して（御教え集　5号　P.32）",
+   "pt_anchor": "26. Sobre itens a serem observados após o parto (Mioshie-shū nº 5, p. 32)",
+   "notes": "",
+   "pt_prefix": "26. Sobre itens a serem observados após o parto (Mioshie-shū nº 5, p. 32)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十七 産後の出血、おりものに関連して（御教え）",
+   "title_pt": "27. Sobre hemorragia pós-parto e corrimento (Mioshie-shū)",
+   "jp_anchor": "二十七 産後の出血、おりものに関連して（御教え）",
+   "pt_anchor": "27. Sobre hemorragia pós-parto e corrimento (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "27. Sobre hemorragia pós-parto e corrimento (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十八 流産による手術後の浄化について（御教え集　2号　P.18）",
+   "title_pt": "28. Sobre a purificação após cirurgia devido a aborto espontâneo (Mioshie-shū nº 2, p. 18)",
+   "jp_anchor": "二十八 流産による手術後の浄化について（御教え集　2号　P.18）",
+   "pt_anchor": "28. Sobre a purificação após cirurgia devido a aborto espontâneo (Mioshie-shū nº 2, p. 18)",
+   "notes": "",
+   "pt_prefix": "28. Sobre a purificação após cirurgia devido a aborto espontâneo (Mioshie-shū nº 2, p. 18)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二十九 母乳は血から変るものか（御教え）",
+   "title_pt": "29. O leite materno se transforma a partir do sangue? (Mioshie-shū)",
+   "jp_anchor": "二十九 母乳は血から変るものか（御教え）",
+   "pt_anchor": "29. O leite materno se transforma a partir do sangue? (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "29. O leite materno se transforma a partir do sangue? (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十 母乳不足の原因（御教え）",
+   "title_pt": "30. Causa da insuficiência de leite materno (Mioshie-shū)",
+   "jp_anchor": "三十 母乳不足の原因（御教え）",
+   "pt_anchor": "30. Causa da insuficiência de leite materno (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "30. Causa da insuficiência de leite materno (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十一 血脚気と、その母乳を与える事の可否　（御教え集　3号　P.58）",
+   "title_pt": "31. Sobre o \"kekkakke\" (beribéri sanguíneo) e se é permitido amamentar com esse leite (Mioshie-shū nº 3, p. 58)",
+   "jp_anchor": "三十一 血脚気と、その母乳を与える事の可否　（御教え集　3号　P.58）",
+   "pt_anchor": "31. Sobre o \"kekkakke\" (beribéri sanguíneo) e se é permitido amamentar com esse leite (Mioshie-shū nº 3, p. 58)",
+   "notes": "",
+   "pt_prefix": "31. Sobre o \"kekkakke\" (beribéri sanguíneo) e se é permitido amamentar com esse leite (Mioshie-shū nº 3, p. 58)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十二 余剰母乳の捨て場について（御教え）",
+   "title_pt": "32. Sobre o local para descartar o excesso de leite materno (Mioshie-shū)",
+   "jp_anchor": "三十二 余剰母乳の捨て場について（御教え）",
+   "pt_anchor": "32. Sobre o local para descartar o excesso de leite materno (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "32. Sobre o local para descartar o excesso de leite materno (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十三 子宮弛緩の原因（御教え）",
+   "title_pt": "33. Causa da flacidez uterina (Mioshie-shū)",
+   "jp_anchor": "三十三 子宮弛緩の原因（御教え）",
+   "pt_anchor": "33. Causa da flacidez uterina (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "33. Causa da flacidez uterina (Mioshie)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十四 子宮疑似癌について（御教え集　5号　P.25）",
+   "title_pt": "34. Sobre o pseudo-câncer de útero (Mioshie-shū nº 5, p. 25)",
+   "jp_anchor": "三十四 子宮疑似癌について（御教え集　5号　P.25）",
+   "pt_anchor": "34. Sobre o pseudo-câncer de útero (Mioshie-shū nº 5, p. 25)",
+   "notes": "",
+   "pt_prefix": "34. Sobre o pseudo-câncer de útero (Mioshie-shū nº 5, p. 25)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十五 子宮筋腫の誤診に関して（御垂示録　1号　P.22）",
+   "title_pt": "35. Sobre o diagnóstico errôneo de mioma uterino (Gosuiji-roku nº 1, p. 22)",
+   "jp_anchor": "三十五 子宮筋腫の誤診に関して（御垂示録　1号　P.22）",
+   "pt_anchor": "35. Sobre o diagnóstico errôneo de mioma uterino (Gosuiji-roku nº 1, p. 22)",
+   "notes": "",
+   "pt_prefix": "35. Sobre o diagnóstico errôneo de mioma uterino (Gosuiji-roku nº 1, p. 22)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十六 子宮脱出に関して（御教え集　1号　P.20）",
+   "title_pt": "36. Sobre o prolapso uterino (Mioshie-shū nº 1, p. 20)",
+   "jp_anchor": "三十六 子宮脱出に関して（御教え集　1号　P.20）",
+   "pt_anchor": "36. Sobre o prolapso uterino (Mioshie-shū nº 1, p. 20)",
+   "notes": "",
+   "pt_prefix": "36. Sobre o prolapso uterino (Mioshie-shū nº 1, p. 20)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十七 卵巣水腫、卵巣膿腫に関して（御教え集　7号　P.48）",
+   "title_pt": "37. Sobre o cisto e abscesso ovarianos (Mioshie-shū nº 7, p. 48)",
+   "jp_anchor": "三十七 卵巣水腫、卵巣膿腫に関して（御教え集　7号　P.48）",
+   "pt_anchor": "37. Sobre o cisto e abscesso ovarianos (Mioshie-shū nº 7, p. 48)",
+   "notes": "",
+   "pt_prefix": "37. Sobre o cisto e abscesso ovarianos (Mioshie-shū nº 7, p. 48)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十八 卵巣摘出後の浄化について（地上天国　15号　P.11）",
+   "title_pt": "38. Sobre a purificação após a remoção dos ovários (Tijotengoku nº 15, p. 11)",
+   "jp_anchor": "三十八 卵巣摘出後の浄化について（地上天国　15号　P.11）",
+   "pt_anchor": "38. Sobre a purificação após a remoção dos ovários (Tijotengoku nº 15, p. 11)",
+   "notes": "",
+   "pt_prefix": "38. Sobre a purificação após a remoção dos ovários (Paraíso na Terra nº 15, p. 11)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三十九 月経不順に関して（御教え集　5号　P.27）",
+   "title_pt": "39. Sobre a irregularidade menstrual (Mioshie-shū nº 5, p. 27)",
+   "jp_anchor": "三十九 月経不順に関して（御教え集　5号　P.27）",
+   "pt_anchor": "39. Sobre a irregularidade menstrual (Mioshie-shū nº 5, p. 27)",
+   "notes": "",
+   "pt_prefix": "39. Sobre a irregularidade menstrual (Mioshie-shū nº 5, p. 27)"
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四十 多量の出血に関連して（御教え）",
+   "title_pt": "40. Sobre a hemorragia abundante (Mioshie-shū)",
+   "jp_anchor": "四十 多量の出血に関連して（御教え）",
+   "pt_anchor": "40. Sobre a hemorragia abundante (Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": "40. Sobre a hemorragia abundante (Mioshie)"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

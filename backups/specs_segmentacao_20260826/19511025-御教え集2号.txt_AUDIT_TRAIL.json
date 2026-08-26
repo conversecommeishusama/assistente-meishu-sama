@@ -1,0 +1,184 @@
+{
+  "filename": "19511025-御教え集2号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume (JP 484 linhas / PT 526→524 linhas após correções), 13 trechos por spec (1 prefácio + 12 sessões datadas de setembro/1951), profile 'mioshie_shu'. JP não vem pré-dividido em === ARTIGO === (bloco único); os 13 trechos foram localizados e conferidos dentro desse bloco único, na ordem do spec. Não é amostragem: o corpo inteiro do JP foi lido e confrontado com o PT correspondente na mesma ordem, com atenção extra às transições de data/seção por causa do histórico da família de livros (御教え集1号/6号, 御垂示録1号/2号).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: contagem de parágrafos e ratio PT/JP foram usados apenas como triagem inicial (todas as 12 sessões datadas mostraram ratio de caracteres PT/JP uniforme, 2.5x-2.7x, sem outlier) — não como prova de fecho, conforme a proibição da regra.",
+  "summary": {
+    "articles_in_spec": 13,
+    "articles_reviewed": 13,
+    "real_corrections_applied": 4,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linha ~385 (sessão 21 de setembro, item (2) da pergunta múltipla sobre 3 crianças, resposta sobre tabuinha memorial de madeira crua - branca -, correspondente ao JP linha 379 '白木の位牌は長く置いてはいけないですよ...それからはふつうの位牌で、それから先は、霊が嫌がります。お気付けがありますよ。')",
+      "problema": "GRAVE - mistradução com frase cortada: o PT terminava a frase em reticências com a palavra órfã 'Ou' no fim da linha, e o parágrafo seguinte começava com um sentido completamente diferente do JP: 'Os espíritos comuns são representados por esses tabletes...' (algo não dito no original). O JP diz que, passado o 49º dia, deve-se TROCAR para uma tabuinha comum, e que manter a de madeira crua além do prazo desagrada o espírito - instrução prática perdida e substituída por uma frase sem correspondência no texto-fonte. Viola os pontos 2 (completude) e 8 (outros/corrupção de texto) do checklist.",
+      "correcao": "Reescrito para refletir o JP: 'Depois disso, deve-se trocar por uma tabuinha comum; se continuar com a de madeira crua além desse prazo, o espírito fica descontente. Haverá sinais de advertência.' As duas linhas fragmentadas foram unificadas em uma só, eliminando a quebra de parágrafo espúria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "linha ~370 (sessão 21 de setembro, primeira resposta 〔御垂示〕, sobre o crente com raposa do sul, JP linha 361 'この霊は御守りが恐いんです')",
+      "problema": "Duplicação/glitch de aplicação do glossário: '御守り' foi vertido como 'omamori (Omamori (Ohikari))' - parêntese aninhado duplicado (a mesma palavra em minúsculo e depois repetida via termo de glossário maiúsculo entre parênteses), diferente da forma usada duas linhas antes no mesmo trecho ('amuleto protetor'). Viola o ponto 7 do checklist (consistência terminológica) e produz uma frase gramaticalmente estranha.",
+      "correcao": "Alinhado à forma já usada no parágrafo anterior do mesmo trecho: 'Esse espírito tem medo do amuleto protetor (Ohikari).'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "linha ~400 (sessão 23 de setembro, Ensinamento do Grande Festival de Outono, JP '天国篇と言うのは五六七の世に色々な構想ですね')",
+      "problema": "CJK residual não traduzido, colado sem espaço à palavra anterior: 'para o mundo do五六七 (go-roku-shichi)'. Todas as outras 6 ocorrências do mesmo conceito no volume usam a forma romanizada/numérica estabelecida ('5, 6 e 7', '5-6-7', 'Cinco-Seis-Sete', 'mundo de Miroku'), nunca o kanji. Viola o ponto 5 do checklist (CJK no PT) e o ponto 7 (consistência).",
+      "correcao": "'para o mundo de 5, 6 e 7' - alinhado à convenção já estabelecida no resto do volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "linhas 71, 76, 81 (sessão 5 de setembro, 3 perguntas consecutivas)",
+      "problema": "Inconsistência de rótulo: essas 3 perguntas usavam '(Consulta)' enquanto as outras 23 perguntas do volume (mesmo marcador JP '（お伺）') usam '(Pergunta)'. Não é erro de sentido, mas quebra a consistência de cabeçalho/metadado (ponto 7 do checklist) dentro do mesmo volume.",
+      "correcao": "Padronizado para '(Pergunta)' nas 3 ocorrências, alinhando ao resto do volume (agora 26/26 usam a mesma forma).",
+      "confianca": "alta"
+    },
+    {
+      "n": "nota adicional",
+      "localizacao_pt": "linhas 124, 133, 144, 149 (sessão 5 de setembro / trecho sobre medicina/religião)",
+      "problema": "4 ocorrências de '〔Ensinamento〕' usando colchetes japoneses (〔〕) em vez do padrão '[Ensinamento]' (colchetes latinos) usado nas outras 10 ocorrências do mesmo marcador no volume. Puramente tipográfico, sem impacto de sentido.",
+      "correcao": "Padronizado para '[Ensinamento]' nas 4 ocorrências.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (título + data de publicação)",
+      "jp_linhas": "1-23",
+      "pt_linhas": "1-30",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Título JP/PT, fonte e data de publicação (25/10/1951, Showa 26) conferem."
+    },
+    {
+      "bloco": "1 de setembro (6 perguntas + 1 Ensinamento longo)",
+      "jp_linhas": "24-64",
+      "pt_linhas": "30-68",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Todas as 2 perguntas sobre câncer, mais o Ensinamento longo sobre medicina/civilização e guerras, conferidos frase a frase. Nenhum turno faltando."
+    },
+    {
+      "bloco": "5 de setembro (5 perguntas + 1 Ensinamento)",
+      "jp_linhas": "65-109",
+      "pt_linhas": "69-111",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Caso do Sr. Ko Gin Seiichiro (tuberculose), urticária, dedos roxos (com sub-diálogo pergunta/resposta curto), e Ensinamento sobre medicina/religião - todos presentes e na ordem certa. Rótulo '(Consulta)'→'(Pergunta)' corrigido (item 4)."
+    },
+    {
+      "bloco": "8 de setembro (7 perguntas + 1 Ensinamento)",
+      "jp_linhas": "110-213",
+      "pt_linhas": "113-215",
+      "decisao": "corrigido - 2 problemas pontuais",
+      "confianca": "alta",
+      "notas": "Casos do aborto/cirurgia, olhos, taquicardia/possessão, terçol, filha com convulsões/dragão de nove cabeças, esposa no norte da China, mandíbula. Diálogos curtos pergunta/resposta dentro dos casos (aspas) todos presentes. Correções 1 e 2 (tabuinha memorial, amuleto/Ohikari) aplicadas aqui."
+    },
+    {
+      "bloco": "11 de setembro (1 pergunta + 1 Ensinamento longo)",
+      "jp_linhas": "215-239",
+      "pt_linhas": "217-249",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Caso do fiel de 51 anos com dores/calafrios, seguido do Ensinamento longo sobre o tratado de paz, Oomoto/Deguchi, Tohoku, Estados Unidos. Conferido inteiro, sem corte."
+    },
+    {
+      "bloco": "15 de setembro (2 perguntas + 1 Ensinamento)",
+      "jp_linhas": "241-276",
+      "pt_linhas": "250-286",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Mola hidatiforme/espírito de sapo, caso de Fujiwara Fumi, e Ensinamento sobre a origem do budismo e 'shin-yū-gen'. Conferido."
+    },
+    {
+      "bloco": "18 de setembro (3 perguntas + 1 Ensinamento)",
+      "jp_linhas": "277-355",
+      "pt_linhas": "287-364",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Hidrocefalia do bebê, esposa com sintomas pulmonares/médium, caso de Nagano com ujigami vendido (diálogo pergunta/resposta extenso com 'oquestão'/'resposta' verificado frase a frase), conferido sem perda."
+    },
+    {
+      "bloco": "21 de setembro (5 perguntas + 1 Ensinamento)",
+      "jp_linhas": "357-383",
+      "pt_linhas": "365-388",
+      "decisao": "corrigido - 2 problemas pontuais",
+      "confianca": "alta",
+      "notas": "Raposa do sul (correção 2 aplicada), ronco/sinusite, pergunta tripla sobre 3 crianças (Konpira, tabuinha memorial - correção 1 aplicada -, cobra), todas as 3 sub-respostas (1)(2)(3) presentes e na ordem certa."
+    },
+    {
+      "bloco": "Ensinamento do Grande Festival de Outono - 23 de setembro (discurso corrido, sem pergunta)",
+      "jp_linhas": "384-411",
+      "pt_linhas": "389-425",
+      "decisao": "corrigido - 1 problema pontual",
+      "confianca": "alta",
+      "notas": "Discurso sobre Shinsenkyo, museu, tsutsuji, agricultura natural, tuberculose e Terceira Guerra Mundial. Correção 3 (五六七 residual) aplicada aqui."
+    },
+    {
+      "bloco": "24 de setembro (discurso corrido)",
+      "jp_linhas": "413-425",
+      "pt_linhas": "426-442",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Continuação do discurso sobre museus de arte (Nezu, Hakutsuru, Ohara) e planos de Hakone/Atami. Conteúdo extenso mas integralmente presente."
+    },
+    {
+      "bloco": "25 de setembro (discurso corrido)",
+      "jp_linhas": "427-443",
+      "pt_linhas": "443-468",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Continuação sobre construção do museu, tsutsuji, cerejeiras, budismo/shin-yū-gen. Conferido."
+    },
+    {
+      "bloco": "26 de setembro (discurso corrido)",
+      "jp_linhas": "445-465",
+      "pt_linhas": "469-496",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Chuva em Hakone/Atami, método de Johrei sem sacudir a mão, agricultura natural, tuberculose, Terceira Guerra Mundial. Conferido."
+    },
+    {
+      "bloco": "27 de setembro (discurso corrido, encerramento do volume)",
+      "jp_linhas": "466-484",
+      "pt_linhas": "497-524",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Encerramento com museu de Hakone/Atami, método de Johrei, origem do budismo. Último parágrafo do JP ('日本人がお釈迦さんに教えたんです。') corresponde ao último parágrafo do PT. Sem truncamento no fim do volume."
+    }
+  ],
+  "verificacoes_estruturais_de_apoio": {
+    "nota": "Usadas só como triagem para saber onde olhar com mais rigor, nunca como prova de fecho (proibido pela regra).",
+    "secoes_datadas": "12/12 cabeçalhos de data presentes em JP e PT, na mesma ordem (九月一日..九月二十七日), nenhuma seção faltando ou fora de ordem.",
+    "pares_pergunta_resposta": "26 marcadores de pergunta （お伺）no JP == 26 marcadores (Pergunta) no PT (após correção do item 4). 31 marcadores de resposta (26 〔御垂示〕 + 5 【御教え】) no JP == 31 marcadores de resposta no PT.",
+    "ratio_caracteres_pt_jp_por_secao": "Uniforme entre 2.5x e 2.7x em todas as 12 seções datadas, sem outlier que sugerisse bloco ausente ou duplicado (mas isso por si só não prova nada — a leitura linha a linha é que confirmou ausência de perda, exceto os 4 pontos corrigidos)."
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 4 correções aplicadas, sem resíduo dos erros anteriores. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado aos marcadores deste volume: （お伺）abre pergunta do Interlocutor, 〔御垂示〕abre resposta de Meishu-Sama. Etapa A (mapa JP linha a linha, incluindo diálogos embutidos nas respostas, marcados no JP por parênteses simples sem （お伺）) feita antes de tocar no PT. Etapa B: contagem cruzada JP×PT. Etapa C: rótulos aplicados no PT na ordem existente, sem reordenar conteúdo.",
+    "escopo_rotulado": "Apenas os pares diálogo （お伺）/〔御垂示〕, incluindo sub-diálogos embutidos dentro de uma resposta (perguntas de esclarecimento do próprio Meishu-Sama respondidas em parênteses pelo interlocutor, e vice-versa). Os blocos 【御教え】 (5 no volume) e o discurso corrido de 'Ensinamento do Grande Festival de Outono' (23-27 de setembro) são monólogo sem marcador de pergunta - NÃO receberam rótulo de falante, por não se encaixarem no par （お伺）/〔御垂示〕 que define o escopo desta tarefa.",
+    "contagem_pares": {
+      "pares_principais_お伺_御垂示": 26,
+      "pares_embutidos_dentro_de_respostas": 18,
+      "total_interlocutor": 44,
+      "total_meishu_sama": 44,
+      "bate_1_a_1": true
+    },
+    "achado_importante": "O PT já continha, em dois trechos, micro-rótulos do próprio tradutor ('Pergunta:'/'Resposta:') para os sub-diálogos embutidos (caso Sakaki/ujigami, linhas ~294-325 JP, e caso Yaguchi/vacina, linhas ~330-339 JP). Esses micro-rótulos se mostraram INCONSISTENTES e não podiam ser usados como guia: em alguns pontos 'Pergunta:' correspondia a Meishu-Sama perguntando ao interlocutor, em outros ao interlocutor perguntando a Meishu-Sama. Cada ocorrência foi resolvida individualmente contra o JP (não pelo rótulo do PT), conforme exige a Etapa A/B da regra ('nunca começar pelo PT'). Todas as 18 ocorrências foram conferidas e substituídas pelo rótulo correto.",
+    "correcao_formatacao": "Os cabeçalhos estruturais '(Pergunta)' e '[Orientação Divina]'/'[Divina Instrução]'/'[Orientação]'/'[Graciosa Instrução]'/'[Ensinamento]' (quando correspondentes a 〔御垂示〕) foram substituídos pelos rótulos-padrão, fundindo a linha de cabeçalho com o parágrafo de conteúdo (mesmo formato-alvo usado em 御光話録/御垂示録). Um 'Pergunta:' residual do tradutor no meio de um turno único de Meishu-Sama (caso Sakaki, pergunta retórica 'e os antepassados?') foi removido por ser rótulo redundante do mesmo falante, não uma mudança de turno.",
+    "nenhuma_alteracao_de_conteudo": "Nenhuma frase foi reescrita, reordenada ou traduzida novamente; apenas cabeçalhos/rótulos estruturais foram normalizados para Interlocutor:/Meishu-Sama:.",
+    "campo_approved_do_spec": "Não alterado, conforme instrução."
+  }
+}

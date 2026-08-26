@@ -1,0 +1,95 @@
+{
+ "filename": "19520515 - Mioshie-shū nº 9.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→9. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』9号、昭和27(1952)年5月15日発行",
+   "pt_anchor": "Mioshie-shū nº 9",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月六日",
+   "title_pt": "6 de abril",
+   "jp_anchor": "四月六日",
+   "pt_anchor": "6 de abril",
+   "notes": "",
+   "pt_prefix": "6 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月七日",
+   "title_pt": "7 de abril",
+   "jp_anchor": "四月七日",
+   "pt_anchor": "7 de abril",
+   "notes": "",
+   "pt_prefix": "7 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十五日",
+   "title_pt": "15 de abril",
+   "jp_anchor": "四月十五日",
+   "pt_anchor": "15 de abril",
+   "notes": "",
+   "pt_prefix": "15 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十六日",
+   "title_pt": "16 de abril",
+   "jp_anchor": "四月十六日",
+   "pt_anchor": "16 de abril",
+   "notes": "",
+   "pt_prefix": "16 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十七日",
+   "title_pt": "17 de abril",
+   "jp_anchor": "四月十七日",
+   "pt_anchor": "17 de abril",
+   "notes": "",
+   "pt_prefix": "17 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十五日",
+   "title_pt": "25 de abril",
+   "jp_anchor": "四月二十五日",
+   "pt_anchor": "25 de abril",
+   "notes": "",
+   "pt_prefix": "25 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十六日",
+   "title_pt": "26 de abril",
+   "jp_anchor": "四月二十六日",
+   "pt_anchor": "26 de abril",
+   "notes": "",
+   "pt_prefix": "26 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十七日",
+   "title_pt": "27 de abril",
+   "jp_anchor": "四月二十七日",
+   "pt_anchor": "27 de abril",
+   "notes": "",
+   "pt_prefix": "27 de abril"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

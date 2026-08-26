@@ -1,0 +1,95 @@
+{
+ "filename": "19540515 - Mioshie-shū nº 33.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 9→7. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 9,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第三十三号",
+   "pt_anchor": "Mioshie-shū nº 33",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月五日",
+   "title_pt": "5 de abril",
+   "jp_anchor": "昭和二十九年四月五日\n\n　この間のキリストが憑った婦人に、三月十三日から数回神懸りがあったのですが、これはなかなかおもしろいことと、割合正確なので、ほとんど違ったところはないのです。それを読ませます。",
+   "pt_anchor": "5 de abril\n\nA mulher que estava possuída por Cristo, sobre a qual falei outro dia, teve possessões divinas várias vezes a partir de",
+   "notes": "",
+   "pt_prefix": "5 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月六日",
+   "title_pt": "6 de abril",
+   "jp_anchor": "四月六日\n\n　昨日おもしろいことがありました。この間の春季大祭のときに“今まで五六七のミロクだったのが、今度は三六九になる”と言いました。ところが昨日の参拝 者が三百六十九名なのです。春季大祭の後は昨日が初めてですから、そこにそういう数字が出たということ",
+   "pt_anchor": "6 de abril\n\nOntem aconteceu algo interessante. Durante o Culto Especial da Primavera, eu disse: \"Até agora era Miroku de cinco-seis",
+   "notes": "",
+   "pt_prefix": "6 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月七日",
+   "title_pt": "7 de abril",
+   "jp_anchor": "四月七日\n\n　大祭のときに“今までのミロクは五六七で、これからは三六九になる”ということを言いましたが、五日の参拝者が三百六十九名なのです。神様は“ヘン、ド ンナモンジャイ”というところをお見せになったのだろうと思います。神様は自由自在ですから、時々そう",
+   "pt_anchor": "7 de abril\nDurante o Culto Especial, eu disse: \"Até agora, Miroku era cinco-seis-sete, mas de agora em diante será três-seis-nove.",
+   "notes": "",
+   "pt_prefix": "7 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十一日（名古屋市金山体育会館において）",
+   "title_pt": "11 de abril",
+   "jp_anchor": "四月十一日（名古屋市金山体育会館において）",
+   "pt_anchor": "11 de abril (no Ginásio Kanayama, cidade de Nagoya)\n\nHoje, tenho várias coisas que gostaria de falar, mas o tempo é muito curto, então falarei apenas o essencial. Primeiro,",
+   "notes": "",
+   "pt_prefix": "11 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十二日　（奈良県公会堂において）",
+   "title_pt": "12 de abril",
+   "jp_anchor": "四月十二日　（奈良県公会堂において）\n\n　時間がないため言いたいことを全部話すのは無理なような感じがするので、ごく要点だけをお話ししましょう。",
+   "pt_anchor": "12 de abril (no Salão Público da Prefeitura de Nara)\n\nComo não há tempo, sinto que é impossível dizer tudo o que quero, então falarei apenas os pontos principais. Atualmente,",
+   "notes": "",
+   "pt_prefix": "12 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十五日",
+   "title_pt": "15 de abril",
+   "jp_anchor": "四月十五日\n\n　今度奈良に行ったことは、奈良に神様、仏様の霊が一番たくさんいるのです。まあ日本では奈良に集中されていると言ってよいくらいな所なのです。それがみ んな龍神になっているのです。それで龍神が元の神、仏……といったところで、いったんは人間に生まれた",
+   "pt_anchor": "15 de abril\nDesta vez, fui a Nara porque é onde há a maior concentração de espíritos de deuses e budas. Pode-se dizer que, no Japão,",
+   "notes": "",
+   "pt_prefix": "15 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十六日",
+   "title_pt": "16 de abril",
+   "jp_anchor": "四月十六日\n\n　今度の奈良行きはお天気都合が非常によかったのですが、ほうぼうの龍神さんが大いに喜んで出迎えたわけです。それで一生懸命にお天気都合を努力したとみ えて、そういう点がよく現われています。それから京都方面の信者がだいぶ増えたとみえて、帰りの見送り",
+   "pt_anchor": "16 de abril\n\nDesta vez, a viagem a Nara teve condições climáticas muito boas, e os deuses dragão de várias regiões vieram me receber c",
+   "notes": "",
+   "pt_prefix": "16 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十七日",
+   "title_pt": "17 de abril",
+   "jp_anchor": "四月十七日\n\n　あなた方は見られたでしょうが、三越の浮世絵展は予想外の盛況で、たいてい一万二、三千から、多いときは一万八千ぐらいです。それでああいった催し物で 今度の浮世絵展は三越始まって以来初めてだそうです。とても見られないです。よくもあれだけの良い物が",
+   "pt_anchor": "17 de abril\n\nVocês devem ter visto, a exposição de ukiyo-e da Mitsukoshi foi um sucesso além do esperado, com cerca de doze a treze m",
+   "notes": "",
+   "pt_prefix": "17 de abril"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

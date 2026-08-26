@@ -1,0 +1,33 @@
+{
+ "filename": "19520615 - Gosuiji-roku nº 10.txt",
+ "profile": "ochishiji_roku",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 2→2. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 2,
+ "split_method": "line_ochishiji_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御垂示録』10号、昭和27(1952)年6月15日発行",
+   "pt_anchor": "Gosuiji-roku nº 10",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "［六月一日］",
+   "title_pt": "1 de junho",
+   "jp_anchor": "［六月一日］\n\nMeishu-Sama: 美術館はまだ中に入って見ないですか。皆見ないでしょう。",
+   "pt_anchor": "[1º de junho]",
+   "notes": "",
+   "pt_prefix": "1 de junho"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

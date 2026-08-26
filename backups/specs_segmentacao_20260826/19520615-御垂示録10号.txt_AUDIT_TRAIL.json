@@ -1,0 +1,215 @@
+{
+  "filename": "19520615-御垂示録10号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 410 linhas / PT 194 linhas antes da correção, 213 linhas depois), spec com 2 artigos (prefácio + sessão única '［六月一日］'), do prefácio ao encerramento (diálogo sobre o Kannon Salvador / Guse Kannon). Não é amostragem: todo o corpo do JP foi lido linha a linha e confrontado com o PT correspondente na mesma ordem.",
+  "pre_existing_context": "Uma auditoria ad-hoc anterior (mais leve, sem o método de 'caça a monólitos/turnos curtos sem aspas' estabelecido nesta sessão) havia concluído que este arquivo estava 'limpo'. Esta reconfirmação NÃO tomou essa conclusão como válida e leu o arquivo inteiro do zero. Conclusão: a auditoria anterior estava ERRADA — havia perda real de conteúdo (não apenas desvio de contagem) em múltiplos pontos, incluindo um bloco inicial inteiro (4 turnos de pergunta/resposta) e um bloco de duplicação de ~6 parágrafos mascarando o padrão que a regra 'Δ=0 nunca é suficiente' descreve.",
+  "gate_mecanico": "Não substituído por esta trilha — o gate de contagem/estrutura (ratio JP/PT ~2.1:1 citado no pedido) é cego a exatamente os problemas encontrados aqui (turnos curtos sem aspas nunca traduzidos, e duplicação com Δ líquido ~0 porque a duplicata tem o mesmo número de linhas removidas em outro ponto). Esta trilha documenta a leitura semântica linha a linha, que é a que efetivamente valida o arquivo.",
+  "summary": {
+    "conclusao_anterior_de_limpo": "NAO_CONFIRMADA - havia problemas reais, agora corrigidos",
+    "articles_in_spec": 2,
+    "real_corrections_applied": 20,
+    "items_escalated_to_pendencias": 0,
+    "categorias_de_achado": [
+      "bloco inicial inteiro (4 turnos P&R) ausente na abertura da sessão de 1º de junho",
+      "6+ turnos curtos de Meishu-Sama sem aspas (perguntas/interjeições breves) nunca traduzidos, espalhados pelo corpo do arquivo",
+      "1 bloco de duplicação de ~6 parágrafos (repetição literal de um trecho já traduzido ~7 turnos antes), inserido bem no meio do arquivo, mascarando a mesma classe de problema descrita em 'Δ=0 é necessário, nunca suficiente' item 5/6",
+      "1 perda de conteúdo substancial (não apenas turno curto) dentro de uma resposta de Meishu-Sama sobre 'amamentação cega'",
+      "2 desvios terminológicos frente ao glossário (善言讃詞 grafado 'Zengen-Sandji' em vez de 'Zengen-Sanji'; 御守様 traduzido 'Ofuda' em vez de 'Omamori (Ohikari)')"
+    ]
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "abertura da sessão '[1º de junho]', logo após o cabeçalho",
+      "localizacao_jp": "linhas 26-42 do JP (『美術館はまだ中に入って見ないですか』 até 『図面で見ましたのより、建ててみますと立派でございます』)",
+      "problema": "GRAVE: o PT pulava diretamente do marcador de data '[1º de junho]' para o meio da conversa (JP linha 44, '思ったより立派ですね'), sem nenhum espaço/parágrafo. Faltavam 4 turnos completos de pergunta/resposta no início da sessão: (1) Meishu-Sama perguntando se já entraram no museu; (2) interlocutor respondendo que só viram por fora; (3) Meishu-Sama convidando a entrar, dizendo que já está 70-80% pronto; (4) interlocutor comentando que ficou melhor do que imaginava; e mais dois turnos curtos antes da fala já presente no PT.",
+      "correcao": "Traduzidos e inseridos os 4 turnos ausentes (8 falas), com quebra de linha própria para o marcador '[1º de junho]', seguindo a convenção de aspas curvas já usada no restante deste trecho do arquivo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "entre 'O médico disse que tenho câncer de garganta...' e 'Recentemente, cinco vezes por semana, sai cerca de um go.'",
+      "localizacao_jp": "linha 155: 『穴が開くというのは、膿でもあったんですか。』",
+      "problema": "Turno curto de Meishu-Sama (pergunta sobre se havia pus no buraco) ausente — o PT tinha duas falas seguidas do interlocutor sem a pergunta de Meishu-Sama entre elas.",
+      "correcao": "Inserido: 'O buraco que abriu, havia pus?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "entre 'Todos os dias, pus se acumula nesse buraco.' e a resposta sobre a febre",
+      "localizacao_jp": "linha 163: 『それは結構です。熱は――。』",
+      "problema": "Turno curto de Meishu-Sama ('Isso é bom. E a febre?') ausente antes da resposta do interlocutor sobre a febre de duas semanas atrás.",
+      "correcao": "Inserido: 'Isso é bom. E a febre?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "entre 'Estou fazendo isso.' e a fala longa sobre a filha de 60 anos",
+      "localizacao_jp": "linha 171: 『いくつですか。』",
+      "problema": "Pergunta curta de Meishu-Sama ('Quantos anos tem?') ausente — o PT ia direto para a resposta já contendo a idade.",
+      "correcao": "Inserido: 'Quantos anos tem?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "entre 'Foi o que ele disse...' e 'Foi um subordinado meu.'",
+      "localizacao_jp": "linha 188: 『誰が言って来た。』",
+      "problema": "Pergunta curta de Meishu-Sama ('Quem foi que disse isso?') ausente.",
+      "correcao": "Inserido: 'Quem foi que disse isso?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "logo após 'Então, tem relação com a avó.', antes de 'Nós o sufragamos.'",
+      "localizacao_jp": "n/a — bloco espúrio, não corresponde a nenhum trecho JP neste ponto",
+      "problema": "GRAVE: bloco de ~6 parágrafos duplicado literalmente do trecho já traduzido poucas falas antes (o mesmo texto sobre cóccix/coxa, sobre a dificuldade de se alimentar, sobre o desmaio/crise de março e a possessão espiritual, incluindo uma variante de aspas do turno do 'gato, gato'/'eu, eu'). Isto é exatamente o padrão de 'artefacto de duplicação' descrito em revisao-paralela-jp-pt.mdc (§ Δ=0 nunca é suficiente, item 5/6) — o bloco duplicado tem quase o mesmo número de linhas que os turnos curtos ausentes noutros pontos deste mesmo arquivo, de forma que a contagem total ficou proxima do esperado apesar da corrupção.",
+      "correcao": "Bloco duplicado removido por completo (7 linhas). Conteúdo real já estava corretamente traduzido antes dele; nada foi perdido com a remoção — conferido que cada frase do bloco removido tem uma cópia idêntica ou quase idêntica mais acima no mesmo arquivo (linhas correspondentes a 'cóccix/coxa', 'alimentação', 'desmaio de março', 'possessão espiritual', 'gato/eu').",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "sequência 'Em 23.' → 'Ela é membro.' (bloco da neta/avó com epilepsia)",
+      "localizacao_jp": "linhas 236, 240, 244, 248, 252, 256 do JP: 『お婆さんは――。』／『じゃ信仰がねぼけているんじゃないか。』／『続けているといっても、働かなければです。拝むだけじゃ駄目ですよ。今子供の状態は――』／『癲癇だな。それは調べるのは面倒臭いからね。お婆さんはいくつです。』／『何をしているんですか。』／『信仰は――。』",
+      "problema": "6 turnos curtos de Meishu-Sama (perguntas breves de acompanhamento) ausentes em sequência dentro do mesmo diálogo sobre a criança com convulsões e a avó — o PT tinha só as respostas do interlocutor encadeadas, sem as perguntas que as provocam.",
+      "correcao": "Inseridos os 6 turnos: 'E a avó?'; 'Então a fé dela está adormecida?'; 'Mesmo continuando, é preciso agir — só rezar não basta. Como está a criança agora?'; 'É epilepsia. Verificar isso dá trabalho. Quantos anos tem a avó?'; 'O que ela faz?'; 'E a fé dela?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "'Ela recebeu o Ofuda, mas não é fervorosa.'",
+      "localizacao_jp": "linha 258: 『御守様をいただいておりますが、熱心でありません』",
+      "problema": "Desvio de glossário: 御守様 traduzido como 'Ofuda' (que corresponde a お札, item diferente), quando glossario_traducao.json define 御守/御守り como 'Omamori (Ohikari)'.",
+      "correcao": "Corrigido para 'Ela recebeu o Omamori (Ohikari), mas não é fervorosa.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "'ouve a Oração Zengen-Sandji com calma' / 'Faça-a ouvir a Oração Zengen-Sandji'",
+      "localizacao_jp": "linhas 274/276: 善言讃詞",
+      "problema": "Desvio de glossário: grafado 'Zengen-Sandji' (com 'd'); glossario_traducao.json define 善言讃詞 = 'Oração Zengen-Sanji'.",
+      "correcao": "Corrigidas as 2 ocorrências para 'Zengen-Sanji'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao_pt": "entre '\"O que é a chamada amamentação cega?\"' e '\"Sim, é isso.\"'",
+      "localizacao_jp": "linha 281: 『よく言いますね。二つともないんですか。』",
+      "problema": "Pergunta curta de Meishu-Sama ausente ('Ouve-se falar nisso. Ela não tem nenhum dos dois?').",
+      "correcao": "Inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao_pt": "entre '\"Pode ser curado com Johrei?\"' e '\"Tenho.\"'",
+      "localizacao_jp": "linha 289: 『これは浄霊じゃ駄目だね。そういうのはしょうがないから、人工で育てるよりしょうがないでしょう。子供があるんですか。』",
+      "problema": "GRAVE (não é só turno curto): resposta substancial de Meishu-Sama ausente por completo — ele explica que Johrei não resolve esse caso, que não há alternativa senão criar artificialmente, e pergunta se ela tem filho. O PT pulava direto de 'Pode ser curado com Johrei?' para 'Tenho.' (resposta à pergunta que estava faltando), o que também tornava a resposta seguinte ('Crie com leite de vaca...') sem contexto claro.",
+      "correcao": "Inserido: 'Com Johrei, isso não se resolve. Não há o que fazer — só criando artificialmente. Ela tem filho?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao_pt": "entre '\"Quando há duas imagens, a oração é feita apenas a Daikoku-Sama...\"' e '\"Na hora de rezar, apenas a Daikoku-Tenjin...\"'",
+      "localizacao_jp": "linha 302: 『お誓とは――。』",
+      "problema": "Pergunta curta de Meishu-Sama ausente, pedindo esclarecimento sobre o termo 'o-chikai' (voto/juramento ritual mencionado pelo interlocutor).",
+      "correcao": "Inserido: 'O que é o \"o-chikai\" (voto/juramento)?' — tradução do termo mantida literal por não haver entrada específica no glossário; confiança média-alta quanto ao sentido geral (voto ritual recitado nas orações), alta quanto à necessidade de inserir o turno.",
+      "confianca": "media-alta"
+    },
+    {
+      "n": 13,
+      "localizacao_pt": "entre 'um som estrondoso veio do sudeste...' e 'Supondo que tenha entrado, ao tirar a tampa...'",
+      "localizacao_jp": "linha 326: 『音を入れたというのはどういうことです。』",
+      "problema": "Pergunta curta de Meishu-Sama ausente ('O que quer dizer com \"o som entrou\"?').",
+      "correcao": "Inserido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao_pt": "sequência 'Existe alguma tradição de envolver o som...' → 'Faz um ano e meio.' → 'Havia muitos, os oitocentos mil...' → 'Havia Inari...'",
+      "localizacao_jp": "linhas 342, 346, 350 do JP: 『とにかく話がどうも変ですがね。光明如来様をお祀りしたのは――。』／『その間いろんな神様を以前のままで――。』／『たくさんはよく分かった。その後は――。』",
+      "problema": "3 turnos curtos de transição de Meishu-Sama ausentes em sequência, cada um puxando a resposta seguinte do interlocutor (quando o Komyo-Nyorai foi consagrado; o que aconteceu com os outros deuses da casa nesse meio-tempo; o que veio depois).",
+      "correcao": "Inseridos os 3 turnos: 'De qualquer forma, a história é mesmo estranha. Quando o senhor sufragou Komyo-Nyorai?'; 'E, nesse meio-tempo, os outros deuses ficaram como estavam antes?'; 'Entendi que havia muitos. E depois disso?'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + cabeçalho de data '[1º de junho]'",
+      "jp_linhas": "20-26",
+      "decisao": "corrigido - marcador de data estava colado ao corpo do texto sem quebra de linha",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Diálogo sobre o Museu de Hakone (entrada, cores, projeto)",
+      "jp_linhas": "26-127",
+      "decisao": "corrigido - bloco inicial de 4 turnos ausente (achado 1); restante conferido linha a linha, completo e fiel, incluindo as longas listas de nomes de diretores/conselheiros da Associação de Arte Oriental (linhas 111-119), todas presentes e corretas",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Perguntas de saúde/espiritual (língua, espíritos salvos em maio, dragão, Inari, câncer de garganta)",
+      "jp_linhas": "129-181",
+      "decisao": "ok, com 1 correção pontual (achado 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Continuação do caso de câncer de garganta + caso da filha/genro + cego que toca em Johrei + olhos",
+      "jp_linhas": "181-206",
+      "decisao": "corrigido - achados 3, 4, 5",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Coluna/cóccix, alimentação, criança com convulsões e avó",
+      "jp_linhas": "208-276",
+      "decisao": "GRAVE - corrigido: bloco de duplicação inteiro removido (achado 6) e 6 turnos curtos ausentes na sequência avó/epilepsia inseridos (achado 7); 2 desvios de glossário corrigidos (achados 8, 9)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Amamentação cega, Daikoku/Ebisu, casamento da filha, sucessão familiar",
+      "jp_linhas": "279-321",
+      "decisao": "corrigido - achados 10, 11 (este último com perda de conteúdo substancial, não só turno curto), 12",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Som estranho de 1931/1933, Inari da casa",
+      "jp_linhas": "324-354",
+      "decisao": "corrigido - achados 13, 14",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Unha do bebê, museu (azulejos/musgo), Templo do Musgo, tipos de musgo/bambu",
+      "jp_linhas": "357-400",
+      "decisao": "ok, conferido linha a linha sem divergência",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Horyu-ji (disposição pagode/salão, suástica) e Kannon Salvador (Guse Kannon) - encerramento do volume",
+      "jp_linhas": "403-410",
+      "decisao": "ok, conferido linha a linha, tradução completa e fiel, sem truncamento no final do arquivo",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 14 correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado para Gosuiji-roku (「」 = Interlocutor; prosa corrida sem aspas = Meishu-Sama)",
+    "etapa_a": "Mapa de turnos construído a partir do JP linha a linha inteiro (410 linhas): 88 turnos 「」 (Interlocutor), 100 parágrafos de prosa corrida (Meishu-Sama), 1 cabeçalho de sessão '［六月一日］'.",
+    "etapa_b": {
+      "contagem": "88 「」 no JP == 88 Interlocutor no PT (Δ=0). Meishu-Sama no PT = 101 (100 do mapa JP + 1 turno reinserido, ver achado abaixo). M/I = 101/88 = 1,148 (dentro do esperado).",
+      "formatacao": "0 travessões '—' usados como marcador de fala no corpo PT; alternância I/M coerente em todo o arquivo; nenhum bloco I->I ou M->M indevido (o único bloco M->M consecutivo, linhas 44-45 do PT, corresponde a um único turno de Meishu-Sama do JP dividido em dois parágrafos físicos consecutivos no PT — sem interlocutor entre eles — logo cada parágrafo recebeu seu próprio prefixo 'Meishu-Sama:', conforme a regra)."
+    },
+    "achado_novo_durante_rotulagem": {
+      "localizacao_jp": "linha 392 do JP: 「そうですか。」 (resposta curta de Meishu-Sama, entre a fala do interlocutor sobre caldeira interna/externa do vulcão de Aso e a fala seguinte sobre o musgo se multiplicar)",
+      "localizacao_pt": "entre 'Dizem que a caldeira interna tem muita grama, mas a externa tem áreas de floresta virgem.' e 'O musgo se multiplica...'",
+      "problema": "Turno curto de Meishu-Sama ausente no PT (o bloco 'Unha do bebê, museu (azulejos/musgo), Templo do Musgo, tipos de musgo/bambu', jp_linhas 357-400, havia sido marcado 'ok, sem divergência' na auditoria de conteúdo de 2026-07-07 — este turno de uma só palavra havia escapado a essa leitura). Antes da correção, o PT tinha duas falas do interlocutor seguidas sem resposta de Meishu-Sama entre elas.",
+      "correcao": "Inserido o turno 'Meishu-Sama: É mesmo?' (tradução literal e mínima de そうですか, no mesmo registo curto usado alhures no arquivo).",
+      "confianca": "alta"
+    },
+    "etapa_c": "Rótulos aplicados diretamente no PT (reports/livros_trabalho/pt/19520615-御垂示録10号.txt), sem reordenar nem reescrever conteúdo existente; cabeçalho de sessão '[1º de junho]' preservado sem prefixo.",
+    "resultado": "213 -> 214 linhas de conteúdo (após inserção do turno de achado_novo). 88 Interlocutor + 101 Meishu-Sama + 1 cabeçalho de sessão."
+  }
+}

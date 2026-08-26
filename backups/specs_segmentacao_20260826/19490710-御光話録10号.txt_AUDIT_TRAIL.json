@@ -1,0 +1,93 @@
+{
+  "filename": "19490710-御光話録10号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 441 linhas / PT 337 linhas), do prefácio ao editorial final (編輯後記), 3 sessões datadas (5 de maio, 13 de maio, 23 de maio), 74 turnos de pergunta/resposta. JP lido linha a linha e confrontado com o PT correspondente na mesma ordem, turno a turno.",
+  "gate_mecanico": {
+    "antes_das_correcoes": "PASS I=74/74 Δ=0 CJK=0 (já estava assim ao iniciar a sessão)",
+    "depois_das_correcoes": "PASS I=74/74 Δ=0 CJK=0 (correções aplicadas não alteraram a contagem de turnos)"
+  },
+  "investigacao_discrepancia_GOKOWA_LABEL_AUDIT": {
+    "sinal_reportado": "GOKOWA_LABEL_AUDIT.json reporta jp_q=74, pt_i=71, pt_m=71, delta=-3, status=warn, gerado em 2026-07-04T01:41:21Z.",
+    "resultado_investigacao": "Discrepância CONFIRMADA como histórica/já resolvida, não como problema aberto. O ficheiro PT de trabalho tem mtime 2026-07-07 22:24 — 3 dias depois do relatório de auditoria — e o próprio spec (19490710-御光話録10号.txt.json) documenta em editor_notes correções aplicadas em sessões posteriores (2026-07-04/05/06/08, incluindo sincronização de approved e correção de pt_anchor). Ou seja: o relatório GOKOWA_LABEL_AUDIT.json ficou desatualizado (stale) depois que 3 turnos de Interlocutor em falta foram corrigidos numa sessão posterior; a contagem atual bate exatamente com o JP (74/74) e com o gate mecânico. Não se trata de metodologia diferente nem de bug ainda não detectado — é histórico resolvido antes desta sessão.",
+    "verificacao_adicional_pt_m_75_vs_pt_i_74": "pt_m=75 (um turno Meishu-Sama a mais que Interlocutor) é esperado e correto, não é bug: após a nota narrativa '（「花による天国化運動」のお原稿拝聴後続いて次のお言葉をいただく）' (JP linha 421, sem marcador ――), Meishu-Sama continua falando em monólogo sem nova pergunta do Interlocutor — um único turno 'Meishu-Sama:' seguido de parágrafos de continuação sem novo rótulo. Confirmado por leitura direta do JP e do PT nesse ponto; é a única origem do Δ=+1 entre I e M.",
+    "confianca": "alta — confirmado por comparação de timestamps, pelo texto do editor_notes do spec, e por leitura direta do trecho que explica o M/I=75/74"
+  },
+  "summary": {
+    "turnos_jp": 74,
+    "turnos_pt_interlocutor": 74,
+    "turnos_pt_meishu": 75,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "clausula_migrada_confirmada": false,
+    "perda_de_conteudo_mascarada_confirmada": false,
+    "corrupcao_textual_confirmada": true,
+    "duplicacao_confirmada": false
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "27 turnos de Meishu-Sama ao longo da primeira metade do ficheiro (linhas ~26 a ~152 do PT, dentro das sessões '3 de maio' e '13 de maio'; para a partir daí, nenhuma ocorrência no resto do ficheiro)",
+      "problema": "Artefacto de formatação: cada um desses 27 parágrafos 'Meishu-Sama:' terminava com um travessão solto ' —' sem função (não corresponde a nada no JP nem à produção). Confirmado como anomalia exclusiva deste ficheiro — os outros 19 volumes Gokōwa do corpus (grep em reports/livros_trabalho/pt/*御光話録*.txt) têm 0 ocorrências deste padrão. Não é o mesmo bug do 'travessão no corpo' que o gate bloqueia (esse é travessão no INÍCIO de linha, marcando pergunta; este era travessão sobrando no FIM de parágrafos de resposta) — por isso passava despercebido pelo gate mecânico.",
+      "correcao": "Removido o travessão solto ' —' do fim das 27 linhas afetadas (sed determinístico ' —$' → '', verificado por diff que nenhuma outra alteração ocorreu). Nenhum conteúdo textual foi perdido — o travessão não carregava informação.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Sessão '23 de maio', turno sobre a Sociedade da Cruz Suástica Vermelha (紅卍字教) — pergunta sobre 'exército Fu-ji' (扶乩/フーチ)",
+      "problema": "GRAVE — corrupção/perda de conteúdo: a frase que explica a etimologia do caractere chinês 'miko' (巫) ficou com dois buracos gramaticais. JP: '支那って所では、ごく古い昔から丁の形をした棒を使い...「ミコ」っていう字は丁に人を二つ書いて、「巫」と書くでしょう' (usava-se uma vareta em forma do caractere 丁; o caractere 'miko' é escrito combinando 丁 com dois radicais 人 [pessoa], formando 巫). O PT antes da correção dizia: 'usava-se uma vareta em forma de. [...] O caractere \"miko\" [...] é escrito com o e dois \"pessoas\", formando.' — os três caracteres-chave (丁, 人 implícito, 巫) tinham sido removidos, deixando frases sintaticamente quebradas ('em forma de.' / 'escrito com o e dois'). Provavelmente um efeito colateral de alguma passagem de limpeza de CJK residual que removeu caracteres que na verdade eram necessários (citação/explicação de caracteres chineses, não japonês residual de tradução incompleta).",
+      "correcao": "Restaurados os caracteres entre aspas, sem quebrar o gate de CJK (aspas excluem da checagem de resíduo): '...usava-se uma vareta em forma do caractere \"丁\" (chō). [...] O caractere \"miko\" (sacerdotisa) é escrito combinando \"丁\" com dois radicais \"人\" (pessoa), formando \"巫\". Isso já existia na antiguidade.'",
+      "confianca": "alta — sentido reconstituído diretamente a partir do JP, gate confirmado PASS depois da correção"
+    },
+    {
+      "n": 3,
+      "localizacao": "Mesmo turno da correção 2 (紅卍字教)",
+      "problema": "Inconsistência de romanização do nome do fundador: PT tinha 'Okada Mokiti' (com 't'), enquanto o resto do corpus usa consistentemente 'Okada Mokichi' (confirmado em 19501030-法難手記.txt e dezenas de outras ocorrências em reports/livros_trabalho/pt/*.txt — nenhuma outra usa 'Mokiti').",
+      "correcao": "'Okada Mokiti' → 'Okada Mokichi'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Sessão '13 de maio', turno sobre pedido de funeral por um fiel falecido",
+      "problema": "Termo teológico trocado: JP diz '観音教団' (nome da organização religiosa nesta época, 1949 — antes da fundação formal como 世界メシヤ教/世界救世教). O PT traduzia como 'A Igreja Messiânica', mas essa não é a convenção do corpus: confirmado em volumes irmãos da mesma série e época (19490208-御光話録3号.txt e 19490000-御光話録4号.txt) que '観音教団' é traduzido consistentemente como 'Igreja Kannon' (ex.: '仏教信者が観音教団に入ることはかまいませんよ' → 'Um budista entrar na Igreja Kannon não tem problema'; '五六七教会は日本観音教団の中に含まるべきものでございましょうか' → 'A Igreja Miroku deve ser incluída na Igreja Kannon do Japão?'). Usar 'Igreja Messiânica' aqui é anacrônico e inconsistente com o resto do corpus para o mesmo termo japonês na mesma época.",
+      "correcao": "'A Igreja Messiânica ainda não estabeleceu rituais...' → 'A Igreja Kannon ainda não estabeleceu rituais...'.",
+      "confianca": "média-alta — termo não está no glossario_traducao.json isoladamente, mas o padrão de tradução é claro e consistente em pelo menos 2 outros volumes da mesma série/época; escalado aqui como correção aplicada, não como pendência, por confiança razoável"
+    },
+    {
+      "n": 5,
+      "localizacao": "Metadados do ficheiro de trabalho JP (cabeçalho, campo title_pt)",
+      "problema": "Inconsistência de metadado: o cabeçalho do ficheiro JP (reports/livros_trabalho/jp/19490710-御光話録10号.txt) tinha title_pt: 'Registro de Luz de Meishu-Sama nº 10', que não corresponde nem ao título usado no próprio ficheiro PT de trabalho ('Gokōwa-roku nº 10') nem à convenção do corpus (confirmado: 16 dos 19 outros volumes Gokōwa usam o padrão 'Gokōwa-roku nº N').",
+      "correcao": "title_pt no cabeçalho do ficheiro JP corrigido para 'Gokōwa-roku nº 10', alinhado com o PT e com a convenção do corpus.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Sessão '13 de maio', turno sobre morte/tempo de vida, citação atribuída a Meishu-Sama",
+      "problema": "Menor — ordem de cláusulas invertida numa citação direta: JP '嘘を言うと本当にし、本当を言うと嘘にする' (mentira→verdade, depois verdade→mentira); PT tinha a ordem invertida ('Quando se diz a verdade, ela se torna mentira; quando se mente, torna-se verdade'). O sentido agregado do aforismo simétrico não muda, mas por ser citação direta a ordem das cláusulas foi realinhada com o JP.",
+      "correcao": "'Quando se diz a verdade, ela se torna mentira; quando se mente, torna-se verdade' → 'Quando se mente, isso se torna verdade; quando se diz a verdade, isso se torna mentira'.",
+      "confianca": "alta, porém marcado como correção de baixo impacto (não altera o sentido geral do aforismo)"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Prefácio + sessão '3 de maio' (turnos 1-27, matchmaking até vibração da mão no Johrei)", "jp_linhas": "20-133", "decisao": "ok, conteúdo completo e ordem correta; 11 ocorrências do travessão solto removidas (correção 1)", "confianca": "alta"},
+    {"bloco": "Sessão '13 de maio' (turnos 28-63, tempo de vida até sereias)", "jp_linhas": "136-289", "decisao": "ok após correções 3, 4 e 6; 16 ocorrências do travessão solto removidas (correção 1); nenhuma perda de conteúdo, nenhuma troca de falante", "confianca": "alta"},
+    {"bloco": "Sessão '23 de maio' (turnos 64-74, tatuagem até rins/Johrei)", "jp_linhas": "293-419", "decisao": "corrigido — corrupção textual grave no turno do Fu-ji/Cruz Suástica Vermelha (correção 2), demais turnos ok, todos os nomes próprios e números conferidos (Shaka/Cristo/Kannon/Miroku/Confúcio/Maomé/Shariputra; 5.670.000.000 anos; graus de parentesco)", "confianca": "alta"},
+    {"bloco": "Monólogo final sobre o 'Paraíso das Flores' (terreno, plantas, projeto turístico)", "jp_linhas": "421-432", "decisao": "ok — verificados todos os valores numéricos (1,5 milhão de ienes, 30.000+ tsubo, 400.000 ienes, distâncias em chō, quantidades de mudas) e nomes próprios (Ichikawa, Miyajima, Príncipe Fushimi, Príncipe Kan'in) contra o JP, todos corretos; confirma também por que pt_meishu=75 (um turno a mais que Interlocutor, ver investigação da discrepância acima)", "confianca": "alta"},
+    {"bloco": "Editorial final (編輯後記)", "jp_linhas": "437-441", "decisao": "ok, conteúdo completo e fiel", "confianca": "alta"}
+  ],
+  "terminologia_verificada_contra_glossario": [
+    "本守護神/副守護神/正守護神 → espírito protetor primordial/secundário/guardião (confere)",
+    "五六七 / 五六七の世 → Miroku / Mundo de Miroku (confere, sem inconsistência de romanização neste ficheiro)",
+    "火素 → Elemento Fogo (confere)",
+    "御守り → Omamori (Ohikari) (confere)",
+    "観音教団 → corrigido de 'Igreja Messiânica' para 'Igreja Kannon' (correção 4, ver acima)",
+    "Nenhuma ocorrência de 'Gohikari' (glossário já corrigido para Ohikari em sessão anterior, mantido)"
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Todos os 74 turnos revistos linha a linha contra o JP, nas 3 sessões datadas mais prefácio e editorial final. Discrepância do GOKOWA_LABEL_AUDIT.json investigada e explicada (histórica, já resolvida antes desta sessão). Confirmadas e corrigidas: artefacto de travessão solto em 27 turnos (formatação), corrupção textual no turno do Fu-ji (caracteres 丁/巫 ausentes), romanização inconsistente de Okada Mokichi, termo teológico trocado (観音教団 → Igreja Kannon), metadado title_pt do JP desalinhado, ordem de cláusulas numa citação direta. Gate mecânico PASS (I=74/74 Δ=0 CJK=0) depois de todas as correções. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

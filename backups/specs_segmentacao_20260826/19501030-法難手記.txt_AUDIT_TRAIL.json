@@ -1,0 +1,80 @@
+{
+  "filename": "19501030-法難手記.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 229 linhas / PT reformatado de 3 blocos monolíticos para ~150 parágrafos, 34 trechos por spec), do prefácio ao colofão final. JP inteiro lido linha a linha (via leitura sequencial completa do ficheiro de trabalho) e confrontado com o PT correspondente na mesma ordem. Alerta prévio: razão de linhas JP:PT de quase 8:1 (229 vs 29) sinalizava fortemente o padrão de monólito residual já confirmado em 6 livros da Fase Inicial e em Gokōwa 4号/24号.",
+  "gate_mecanico": "Não substituído por esta trilha. Nota: o gate de contagem de linhas ficará agora muito diferente (PT passou de 29 para ~300 linhas) porque o PT estava genuinamente colapsado em blocos monolíticos sem quebras de parágrafo — a mudança de contagem reflete reformatação estrutural corretiva, não perda/ganho de conteúdo. Recomenda-se rodar o gate de qualquer forma como checagem objetiva adicional, mas o resultado antigo (Δ baseado nas 29 linhas) não é comparável.",
+  "summary": {
+    "articles_in_spec": 34,
+    "articles_reviewed": 34,
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0,
+    "monolito_residual_confirmado": true,
+    "duplicacao_confirmada": true
+  },
+  "confirmacao_alerta_monolito_residual": {
+    "resultado": "CONFIRMADO — dois problemas distintos da mesma família de bugs, ambos corrigidos nesta sessão",
+    "achado_1_preface_ausente": "O prefácio inteiro (はしがき, JP linhas 27-32, 6 parágrafos, mais a data de assinatura 'Showa 25年8月' e o subscrito '記録者識') estava totalmente ausente do PT. Confirmado por ausência de qualquer menção a Nichiren/Hōnen/Shinran/Tenrikyo/Nakayama Miki (termos exclusivos desse trecho) em todo o corpo do PT antes da correção. O parágrafo seguinte do JP ('大手入れ', linha 42) começa com 'はしがき中にもあるごとく' ('como também mencionei no prefácio'), confirmando que o JP pressupõe a existência do prefácio anterior — mais uma prova de que faltava.",
+    "achado_2_duplicacao_na_transicao": "Na transição entre o antigo bloco monolítico 2 (fim) e bloco monolítico 3 (início) do PT original, o mesmo conteúdo JP (linhas 179-180, sobre o estado psicológico do réu e a descrição da cela) foi traduzido DUAS VEZES, com fraseado ligeiramente diferente em cada versão. A primeira ocorrência (fim do bloco 2) parava abruptamente a meio da descrição da cela ('...A cela tem uma pequena janela...'); a segunda ocorrência (início do bloco 3) retraduzia o mesmo trecho desde o início e continuava corretamente até ao fim do livro. Mantida a segunda versão (mais completa); removida a primeira (truncada) — sem perda de conteúdo, já que a versão mantida cobre tudo e mais.",
+    "confianca": "alta — confirmado por leitura direta de ambos os trechos, não por inferência de contagem"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Início do corpo do PT, logo após o título/metadados (antes da secção 大手入れ)",
+      "problema": "GRAVE — prefácio inteiro (はしがき) ausente do PT: 6 parágrafos sobre o motivo de escrever o registo, a distinção entre 'hōnan' (perseguição legal) e 'junan' (sofrimento/paixão) usando os exemplos de Cristo/Nichiren/Hōnen/Shinran/fundadora da Tenrikyo, e o propósito de corrigir notícias sensacionalistas da imprensa. Viola os pontos 2 (existência PT) e 4 (completude) do checklist.",
+      "correcao": "Traduzido integralmente a partir do JP (linhas 20-34) e inserido sob o cabeçalho '**Prefácio**', com a data 'Agosto de 1950 (Showa 25)' e o subscrito 'Anotado pelo registrador' ao final, antes da secção 'Origem'/'A Grande Batida'. Termos teológicos (Tenrikyo, Nakayama Miki, Oomoto, Hitonomichi) mantidos consistentes com o resto do volume e com glossario_traducao.json.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Transição entre o fim do 2º bloco monolítico original e o início do 3º (por volta do trecho sobre o estado psicológico do réu / descrição da cela de detenção)",
+      "problema": "GRAVE — duplicação: o mesmo parágrafo JP (linhas 179-180) traduzido duas vezes com fraseado diferente, a primeira versão truncada a meio de frase. Corresponde exatamente ao padrão de bug já confirmado noutros volumes desta família (御教え集/御垂示録/法難手記).",
+      "correcao": "Removida a primeira versão truncada; mantida a segunda versão (completa, que segue corretamente até ao fim do livro).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Corpo inteiro do PT",
+      "problema": "GRAVE — paragrafação colapsada: os ~185 parágrafos do JP (um por linha no ficheiro de trabalho JP) estavam comprimidos em apenas 3 linhas gigantes no PT (uma de ~50.700, uma de ~44.000 e uma de ~34.250 carateres), sem nenhuma quebra de parágrafo, com títulos de secção ora embutidos como texto corrido sem qualquer marcação, ora marcados com negrito markdown de forma inconsistente. Viola os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist.",
+      "correcao": "Ficheiro inteiro reformatado: cada parágrafo do PT foi colocado em bloco próprio seguindo a ordem e as fronteiras de parágrafo do JP; todos os títulos de secção (Origem, A Grande Batida, O Grupo de Chantagistas, Detalhes do Interrogatório, O Primeiro Interrogatório, A Fabricação da Memória, A Tortura do Cérebro, Rumo à Prisão, A Armadilha, Relato por Escrito — Inoue Fukuo, Atestado Médico, Relato por Escrito — Kanehira, Registro da Prisão, Após o Retorno para Casa, O que se Espera das Autoridades, Violação dos Direitos Humanos, Prisão, Bobagens, Conclusão) padronizados em negrito markdown; nenhuma frase traduzida foi alterada no processo (apenas reorganizada em parágrafos e, no caso da duplicação, uma cópia removida) — reflow feito por leitura e comparação direta com o JP, não por script automático.",
+      "confianca": "alta para a ordem e integridade do conteúdo; média-alta para a exatidão milimétrica de cada fronteira de parágrafo em meio a ~185 pontos de quebra (não há indício de qualquer conteúdo perdido, reordenado ou duplicado remanescente após a correção)"
+    },
+    {
+      "n": 4,
+      "localizacao": "Título do corpo, próximo ao colofão final",
+      "problema": "Inconsistência de título: o cabeçalho do ficheiro usa 'Memórias da Perseguição Legal' como title_pt, mas o corpo do PT, perto do fim, traduzia o mesmo título JP (法難手記, repetido como fecho do livro) como 'Registro das Perseguições pela Fé' — duas traduções diferentes do mesmo título dentro do mesmo documento. Viola o ponto 7 do checklist (títulos/cabeçalhos consistentes).",
+      "correcao": "Harmonizado para 'Memórias da Perseguição Legal' também no fecho do corpo, igual ao cabeçalho.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Fim do ficheiro (colofão editorial)",
+      "problema": "PT em falta: o colofão final do JP (linhas 219-229: repetição do título, data de publicação, formato B6, 94 páginas, 'não à venda', autor 自観/Jikan, editor responsável Koyama Masao, impressor em branco no original, editora Eikōsha) nunca havia sido traduzido — o PT parava exatamente na última frase da Conclusão.",
+      "correcao": "Traduzido e adicionado ao final do ficheiro, usando 'Jikan' (já presente em glossario_traducao.json para 自観).",
+      "confianca": "alta"
+    }
+  ],
+  "correcao_formatacao_menor": {
+    "descricao": "7 ocorrências do marcador enumerativo japonês '一、' (usado no JP como bullet repetido, não numeração sequencial) dentro da lista de motivos do relato de Inoue Fukuo foram substituídas por numeração arábica '1.'–'7.' para eliminar todo CJK residual do corpo traduzido (ponto 5 do checklist). Não afeta o conteúdo, apenas a marcação da lista.",
+    "confianca": "alta"
+  },
+  "checklist_por_bloco": [
+    {"bloco": "Título/metadados + Prefácio (はしがき)", "jp_linhas": "1-34", "decisao": "corrigido — prefácio inteiro ausente, traduzido e inserido (correção 1)", "confianca": "alta"},
+    {"bloco": "Origem/Okada Mokichi + A Grande Batida + O Grupo de Chantagistas", "jp_linhas": "37-53", "decisao": "ok após reformatação (correção 3); cabeçalhos 発端/大手入れ ausentes, inseridos", "confianca": "alta"},
+    {"bloco": "Detalhes do Interrogatório (Primeiro Interrogatório → A Fabricação da Memória → A Tortura do Cérebro → Rumo à Prisão → A Armadilha)", "jp_linhas": "57-93", "decisao": "ok após reformatação (correção 3), conteúdo completo e em ordem", "confianca": "alta"},
+    {"bloco": "Relato por Escrito — Inoue Fukuo (incl. itens de valores e os 7 motivos numerados)", "jp_linhas": "95-121", "decisao": "ok — conteúdo completo (7 motivos presentes, spec só nomeia 5 como artigos próprios — anotado, não bloqueante)", "confianca": "alta"},
+    {"bloco": "Atestado Médico + Relato por Escrito — Kanehira", "jp_linhas": "124-145", "decisao": "ok após reformatação", "confianca": "alta"},
+    {"bloco": "Registro da Prisão (Kanehira) + Após o Retorno para Casa (Okada)", "jp_linhas": "146-161", "decisao": "ok — confirmado que a secção 'Após o Retorno para Casa' pertence à narrativa de Okada (帰宅後), não a Kanehira; transição correta no PT", "confianca": "alta"},
+    {"bloco": "O que se Espera das Autoridades + Violação dos Direitos Humanos", "jp_linhas": "164-182", "decisao": "corrigido — duplicação de parágrafo na transição (correção 2), removida", "confianca": "alta"},
+    {"bloco": "Prisão + Bobagens + Conclusão", "jp_linhas": "185-213", "decisao": "ok após reformatação (correção 3)", "confianca": "alta"},
+    {"bloco": "Colofão final", "jp_linhas": "217-229", "decisao": "corrigido — ausente, traduzido e inserido (correção 5); título harmonizado (correção 4)", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "observacao_nao_bloqueante": "O spec (19501030-法難手記.txt.json) modela apenas 5 dos 7 motivos numerados ('一、...') do relato de Inoue Fukuo como artigos 'chapter' próprios (faltam os itens 3 e 4 do JP como artigos separados). O conteúdo dos 7 está integralmente presente e correto no PT (lista numerada 1-7); trata-se de uma imprecisão de granularidade do spec, não de perda de conteúdo. Registado para eventual refinamento futuro do spec, sem impedir a aprovação deste volume.",
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Todos os 34 trechos do spec foram revistos linha a linha contra o JP. Confirmados e corrigidos: prefácio ausente (inserido), duplicação de parágrafo na transição pós-'estado psicológico do réu' (removida), paragrafação colapsada em 3 blocos monolíticos (reformatada parágrafo a parágrafo), inconsistência de título (harmonizada), colofão final ausente (inserido), CJK residual em marcadores de lista (substituído). Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

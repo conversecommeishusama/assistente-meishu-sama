@@ -1,0 +1,51 @@
+{
+ "filename": "19490000 - Gokōwa-roku nº 5.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 3→4 (sessão 三月十三日（日） ausente da spec JP original, confirmada por grep de datas no .txt e adicionada em 2026-07-14 CHUNK_TURNAWARE). PT pairing corrigido manualmente (o --repair-pt automático atribuiu erradamente a data de abertura da 1ª sessão ao pt_anchor do prefácio, deixando o pt_anchor da sessão em si com string curta ambígua que falhava no --dry-run); anchors validados por apply_manual_livros_segmentacao.py --dry-run (4 artigos, chars batem com posições reais no .txt PT) e por contagem de caracteres calculada independentemente. Reconfirmação independente 2026-07-14 (PROTOCOLO_CHUNK_TURNAWARE.md Seção 1+2): jp_anchor do art.2 (三月八日（火）) corrigido de 'Interlocutor: ――民族の平均年齢について、' para o próprio cabeçalho de data '三月八日（火）' -- estava usando a 1ª fala como âncora em vez do título (único e isolado no .txt, confirmado por busca), causando o cabeçalho de data vazar para o final do corpo JP do prefácio (art.1); consistente agora com os arts. 3 e 4, que já usavam o cabeçalho de data como jp_anchor. jp_chars/pt_chars recontados via --dry-run: [26, 6815, 5661, 5475] / [46, 15058, 13243, 12793], 4 artigos, todos os 3 marcadores de data do .txt bruto (grep) presentes na spec (nenhuma sessão fundida). anchor_diff reportado pelo audit script (sem --fix) é esperado e não deve ser aplicado: a recomputação automática (pair_positions) devolve pt_anchor sem parênteses de dia-da-semana/contexto, que é ambíguo/pior que o já validado manualmente -- não rodar --fix --repair-pt neste arquivo sem antes proteger os 4 pt_anchor atuais. Corte turn-aware (Seção 2) verificado por código: 123 unidades de turno (JP+PT, 4 artigos), 0 violações (toda unidade ≤3200 chars inteira dentro de 1 chunk), 0 unidades >3200 chars. Durante essa verificação encontrado e corrigido um bug sistêmico adicional no motor genérico (scripts/build_clean_large_indexes.py, split_chunks_by_size): rótulo do overlap carregado para o próximo chunk usava o rótulo da unidade de turno NOVA (ainda não anexada) em vez do rótulo real da cauda do texto já acumulado, produzindo overlap rotulado 'Interlocutor:' quando na verdade era continuação de 'Meishu-Sama:' -- 15/20 chunks deste livro afetados antes da correção, 0/20 depois; regressão verificada (19491223-山と水.txt, sem diálogo, byte-a-byte idêntico) e amostra adicional (19481208-御光話録1号.txt, 19490108-御光話録2号.txt: 0 mismatches, fix anterior desse motor preservado). Detalhe completo em PENDENCIAS_REVISAO.json (estado corrigido_motor_generico_com_regressao_verificada). Nenhum artefato de produção (chunks*.pkl/indice*.faiss/metadados*.pkl) tocado.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 4,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』5号、昭和24(1949)年＊月＊日発行",
+   "pt_anchor": "Gokōwa-roku nº 5",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月八日（火）",
+   "title_pt": "8 de março",
+   "jp_anchor": "三月八日（火）",
+   "pt_anchor": "8 de março (terça-feira)",
+   "notes": "2026-08-05 revisao rigorosa: cabecalho de data do JP estava ausente no PT (art1 三月八日（火）, art3 三月二十三日（水）) enquanto o art2 tinha o seu — inconsistencia interna. Cabecalhos restaurados no mesmo formato do art2 e pt_anchor repontado para eles.",
+   "pt_prefix": "8 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十三日（日）",
+   "title_pt": "13 de março",
+   "jp_anchor": "三月十三日（日）（本日は光陽会、日本会とともに御面会をいただく）",
+   "pt_anchor": "13 de março (domingo) (Hoje, tivemos audiência juntamente com a Kōyōkai e a Nihon-kai)",
+   "notes": "",
+   "pt_prefix": "13 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十三日（水）",
+   "title_pt": "23 de março",
+   "jp_anchor": "三月二十三日（水）",
+   "pt_anchor": "23 de março (quarta-feira)",
+   "notes": "2026-08-05 revisao rigorosa: cabecalho de data do JP estava ausente no PT (art1 三月八日（火）, art3 三月二十三日（水）) enquanto o art2 tinha o seu — inconsistencia interna. Cabecalhos restaurados no mesmo formato do art2 e pt_anchor repontado para eles.",
+   "pt_prefix": "23 de março"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

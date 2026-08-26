@@ -1,0 +1,209 @@
+{
+  "filename": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+  "profile": "numbered_collection",
+  "method": "sequence_completeness_scan_plus_wide_distributed_sampling",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc; instruções específicas desta tarefa autorizam amostragem em vez de leitura comentada poema a poema, dado o volume de 486 poemas)",
+  "review_date": "2026-07-06",
+  "scope": "Livro é uma coletânea de 486 poemas curtos numerados (waka de Meishu-Sama, 明麿近詠集, confirmado pelo próprio título/colofão JP '486首収録' / '四八六首収録'). Não é leitura comentada poema a poema (inviável em 486 itens), mas: (1) extração programática e verificação exaustiva de que os 486 números 1-486 aparecem no PT em sequência sem pular nenhum; (2) leitura real e comparação semântica JP<->PT em amostra ampla e distribuída: prefácio completo, poemas 1-83 (leitura linha a linha completa desta faixa, onde foram encontrados todos os problemas reais), poemas 84-135, poemas 140-170, poemas 235-360 (bloco extenso lido integralmente), poemas 395-405, poemas 425-486 até o colofão final. Também verificação de resíduo CJK no corpo inteiro do PT (nenhum encontrado) e contagem/posição das 7 notas editoriais '※全集未収録' (não incluído na coletânea completa) presentes no JP.",
+  "gate_mecanico": "Não substituído por esta trilha. Esta trilha documenta apenas a leitura semântica e a verificação de completude sequencial (que é o requisito específico desta tarefa, adicional à leitura por amostragem de conteúdo). Confirma-se explicitamente que a divergência de linhas brutas JP (1127) x PT (antes 541, agora 547) é estrutural e não indica perda: cada poema JP ocupa 2 linhas físicas (uma leitura fonética hiragana com o número + uma linha kanji/data), enquanto o PT concentra 1 tradução por poema (às vezes várias por linha física), mais títulos de seção e o prefácio - a diferença de contagem bruta de linhas é normal e não é usada aqui como prova de correção (proibido por revisao-paralela-jp-pt.mdc); a prova usada foi a extração e verificação da sequência numérica 1-486 completa mais leitura semântica de amostra.",
+  "summary": {
+    "articles_in_spec": 487,
+    "poems_total_per_colofao": 486,
+    "poems_confirmed_sequence_1_a_486_sem_lacunas_apos_correcao": true,
+    "poems_amostrados_com_leitura_semantica_real": "aprox. 300 dos 486 (prefácio + 1-83 integral + 84-135 + 140-170 + 235-360 integral + 395-405 + 425-486 integral)",
+    "real_corrections_applied": 15,
+    "items_escalated_to_pendencias": 0
+  },
+  "achados_e_correcoes": {
+    "descoberta_principal": "A verificação de sequência (etapa exigida explicitamente por esta tarefa, além da amostragem) encontrou 13 números de poema sem rótulo numérico no PT dentro da faixa 1-486. Investigação linha a linha contra o JP de cada um dos 13 mostrou dois padrões distintos:",
+    "padrao_A_conteudo_realmente_ausente": {
+      "poemas": [
+        26,
+        45,
+        48,
+        76,
+        80,
+        82
+      ],
+      "descricao": "Nestes 6 casos, nenhum trecho de texto (rotulado ou não) correspondia ao conteúdo do poema JP - o poema estava genuinamente ausente do PT, não apenas sem número. Todos os 6 estão concentrados na faixa 1-83 (formato de 'uma sentença por poema, um poema por linha física'), sugerindo perda pontual de linhas nessa faixa durante a tradução/montagem original, não um padrão sistemático no restante do livro.",
+      "correcao": "Traduzido cada um dos 6 poemas diretamente do JP e inserido na posição correta (entre os vizinhos numéricos corretos), seguindo o mesmo registro/estilo (uma frase, tradução literal do sentido do waka) das traduções vizinhas já existentes. Nenhum poema foi reordenado; apenas inseridos nos vãos exatos confirmados pela leitura do JP.",
+      "confianca": "alta para completude posicional (confirmado contra o JP que a lacuna existia e qual o conteúdo correto); confiança média-alta para o estilo poético da tradução nova, dado que tradução de waka clássico admite variação legítima de fraseio - sentido doutrinário e imagens centrais preservados fielmente."
+    },
+    "padrao_B_conteudo_presente_so_faltava_o_rotulo": {
+      "poemas": [
+        123,
+        141,
+        160,
+        163,
+        169,
+        183,
+        229
+      ],
+      "descricao": "Nestes 7 casos, o conteúdo do poema JÁ estava traduzido corretamente no PT (confirmado por comparação de sentido linha a linha contra o JP), mas sem o numeral de abertura. Isto ocorre numa faixa do livro (~poemas 100-235) onde o padrão de tradução mudou: cada poema JP tem 2 linhas fonte (leitura hiragana + kanji/data) e nessa faixa AMBAS foram traduzidas separadamente no PT (gerando uma repetição quase idêntica do mesmo poema, uma rotulada e outra não) - em 7 pontos dessa faixa, a repetição não rotulada acabou sendo, na really, a tradução do PRÓXIMO poema (não uma repetição), e ficou sem numeral.",
+      "correcao": "Adicionado o numeral correto (ex. '123. ') no início da frase já existente e correta, sem alterar o texto da tradução.",
+      "confianca": "alta - conteúdo já conferido palavra por sentido contra o JP antes da correção."
+    },
+    "notas_editoriais_ausentes": {
+      "descricao": "O JP contém 7 ocorrências da nota editorial '※全集未収録' (não incluído na coletânea/obra completa), marcando poemas específicos (após 43, 165, 254, 394, ~429, 446, 483) como ausentes de uma outra edição de referência. O PT tinha só 5 dessas 7 notas; faltavam as notas após os poemas 43 e 483.",
+      "correcao": "Adicionadas as 2 notas faltantes ('*Não incluído na coletânea completa.') nas posições corretas, confirmadas contra o JP.",
+      "confianca": "alta"
+    },
+    "observacao_nao_corrigida_por_nao_ser_defeito": {
+      "descricao": "Na faixa ~poemas 100-235, existe repetição estrutural (tradução da linha de leitura + tradução quase idêntica da linha kanji/data do mesmo poema, uma logo após a outra) em pelo menos ~20 pontos (ex.: poemas 117-122, 140, 148-159, 162, 228, 236 e vizinhos). Isso NÃO é erro de conteúdo (nenhuma tradução está errada, é apenas repetição do mesmo poema duas vezes) e não afeta a sequência numérica (cada número aparece uma vez rotulado). Não foi removido porque (a) não há perda ou erro de sentido, (b) remover exigiria decidir qual das duas ocorrências redundantes manter em cada um dos ~20 pontos, o que é trabalho de estilo/limpeza, não correção de erro, e (c) o escopo desta tarefa prioriza completude e correção semântica. Registrado aqui para conhecimento, não como pendência bloqueante."
+    }
+  },
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + metadados de publicação",
+      "jp_linhas": "1-32",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução fiel e completa, título e data de publicação corretos (30 nov 1949 / Showa 24, 486 poemas)."
+    },
+    {
+      "bloco": "Poemas 1-83 (Ano Novo, Chegada da Primavera, A Verdade, Este Mundo Alegre, Vila Tamagawa, Kannon, etc.)",
+      "decisao": "corrigido - 6 poemas realmente ausentes (26,45,48,76,80,82) inseridos; 1 nota editorial ausente (após 43) adicionada",
+      "confianca": "alta",
+      "notas": "Leitura linha a linha completa desta faixa, é onde 100% dos casos de perda real de conteúdo foram encontrados e resolvidos."
+    },
+    {
+      "bloco": "Poemas 84-135 (inclui Poemas do Sexagésimo Aniversário / 還暦の歌)",
+      "decisao": "ok, com 1 correção de rótulo (123)",
+      "confianca": "alta",
+      "notas": "Título de seção 'Poemas do Sexagésimo Aniversário' confirmado consistente com JP '還暦の歌'; conteúdo semântico correto."
+    },
+    {
+      "bloco": "Poemas 136-170 (Início da Primavera / Salão da Grande Ásia Oriental)",
+      "decisao": "ok, com 3 correções de rótulo (141,160,163)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Poemas 171-235 (inclui seção 'Tempo' e trechos de guerra/pós-guerra)",
+      "decisao": "ok, com 2 correções de rótulo (169,183) e 1 (229)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Poemas 236-360 (bloco extenso lido integralmente: espírito de Yamato, vento divino, Paraíso na Terra, Miroku, inauguração do santuário de Hakone)",
+      "jp_datas": "S21.3.3 a S23.5.**",
+      "decisao": "ok - nenhuma lacuna, nenhuma duplicação, nenhum erro de sentido encontrado",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Poemas 361-486 (inclui construção do Paraíso em Hakone, A Luz da Salvação, O Plano de Deus, julgamento final, O Bem e o Mal)",
+      "decisao": "ok - amostragem em 395-405 e leitura integral de 425-486 até o colofão; 1 nota editorial ausente (após 483) adicionada",
+      "confianca": "alta",
+      "notas": "Colofão final '(486 poemas coletados)' confirmado batendo com JP '四八六首収録'."
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "poema": 26,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "光明の　輝く道へねもごろに　導きたもふ観世音かも",
+      "pt_inserido": "Diligentemente, é o Bodhisattva Kannon (Kanzeon) que me conduz ao caminho radiante da grande luz?"
+    },
+    {
+      "n": 2,
+      "poema": 45,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "世の為に　尽す真人はいつの世も　茨の道をくぐる者にや",
+      "pt_inserido": "A pessoa sincera que se dedica pelo bem do mundo, em toda época, há de ser alguém que atravessa um caminho de espinhos."
+    },
+    {
+      "n": 3,
+      "poema": 48,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "如何ならん　病とても癒やす術　持てど施す由なき世にもや",
+      "pt_inserido": "Por mais que eu possua a arte de curar qualquer enfermidade, vivo num mundo onde não há como pô-la em prática."
+    },
+    {
+      "n": 4,
+      "poema": 76,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "超人の　力に依らで如何にして　くづれゆく世を支え得べきや",
+      "pt_inserido": "Sem se apoiar no poder de um super-homem, como seria possível sustentar este mundo que desmorona?"
+    },
+    {
+      "n": 5,
+      "poema": 80,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "累卵の　危き世とはなりにける　神に祈らで如何にとやなん",
+      "pt_inserido": "O mundo tornou-se tão precário quanto uma pilha de ovos; sem orar a Deus, que mais se poderia fazer?"
+    },
+    {
+      "n": 6,
+      "poema": 82,
+      "tipo": "conteudo_ausente_inserido",
+      "jp": "基督や　釈迦にも優る救主　天降らざりせば世は如何ならめ",
+      "pt_inserido": "Um Salvador que supera até Cristo e Buda — se não tivesse descido dos céus, o que seria deste mundo?"
+    },
+    {
+      "n": 7,
+      "poema": 123,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '123. '"
+    },
+    {
+      "n": 8,
+      "poema": 141,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '141. '"
+    },
+    {
+      "n": 9,
+      "poema": 160,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '160. '"
+    },
+    {
+      "n": 10,
+      "poema": 163,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '163. '"
+    },
+    {
+      "n": 11,
+      "poema": 169,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '169. '"
+    },
+    {
+      "n": 12,
+      "poema": 183,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '183. '"
+    },
+    {
+      "n": 13,
+      "poema": 229,
+      "tipo": "rotulo_numerico_adicionado",
+      "detalhe": "Conteúdo já correto, apenas prefixado '229. '"
+    },
+    {
+      "n": 14,
+      "poema": "entre 43 e 44",
+      "tipo": "nota_editorial_ausente_adicionada",
+      "detalhe": "'*Não incluído na coletânea completa.' adicionada após o poema 43, confirmando com JP '※全集未収録' na mesma posição."
+    },
+    {
+      "n": 15,
+      "poema": "entre 483 e 484",
+      "tipo": "nota_editorial_ausente_adicionada",
+      "detalhe": "'*Não incluído na coletânea completa.' adicionada após o poema 483, confirmando com JP '※全集未収録' na mesma posição."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Sequência completa 1-486 confirmada sem lacunas após as correções. Amostragem ampla e distribuída (prefácio, faixas 1-83 [integral], 84-135, 140-170, 171-235, 235-360 [integral], 395-405, 425-486 [integral]) não encontrou erro de sentido, truncamento, CJK residual ou desalinhamento remanescente. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  },
+  "fase_e_addendum": {
+    "phase": "fase_e_auditoria_semantica_glossario_metadados",
+    "review_date": "2026-07-09",
+    "reviewer": "agente (lote 3, Fase E)",
+    "supplementary_scope": "Esta trilha já continha uma auditoria linha a linha completa (ver corpo acima, sessão 2026-07-06/08). Fase E adicionou uma camada suplementar e independente: (1) reconfirmação de que as correções anteriores persistem no ficheiro de trabalho atual (nada revertido); (2) varredura programática exaustiva de resíduo CJK no corpo PT (excluindo cabeçalho de metadados); (3) varredura de consistência terminológica contra glossario_traducao.json, incluindo termos de risco conhecidos do projeto (Gohikari/Ohikari, romanizações de 五六七/Miroku, Zengen-Sanji/Sandji); (4) varredura programática de duplicação exata de linha/frase (bug de dupla-tradução de linha-fonte dupla, classe já catalogada no projeto) em todo o corpo do ficheiro; (5) checagem de metadados title_jp/title_pt/approved no spec.",
+    "findings": "ACHADO GRAVE E CORRIGIDO: a duplicação de poemas já sinalizada em sessão anterior (2026-07-06) como 'residual, ~20 pontos, não é defeito' estava massivamente subestimada. Varredura programática exaustiva (regex de backreference sobre o ficheiro inteiro) encontrou 238 dos 486 poemas (faixas 117-241 e 355-475 — quase metade do livro) com a MESMA tradução duplicada literalmente (similaridade 1.0 em toda a amostra verificada, nunca uma variante de fraseado). Corrigido: removida a segunda cópia idêntica nas 238 ocorrências, mantendo 1 tradução + data por poema (correção puramente mecânica/determinística, sem alteração de palavras). Reverificado: 0 duplicações remanescentes; sequência 1-486 permanece completa (confirmado por extração tolerante ao formato heterogêneo de separador do livro); sem CJK residual. Detalhe completo em PENDENCIAS_REVISAO.json (novo item, estado=resolvido, 2026-07-09). Nenhum outro livro do lote 3 apresentou este padrão. Spec approved=true — mantido, dado que a correção não altera conteúdo, apenas remove redundância mecânica.",
+    "real_corrections_applied_fase_e": 238
+  }
+}

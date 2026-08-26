@@ -1,0 +1,168 @@
+{
+  "filename": "19511125-御教え集3号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura completa do JP (617 linhas) e do PT (313 linhas originais, 305 após correções), volume inteiro, do prefácio aos 9 trechos datados (1, 5, 8, 11, 15, 18, 21, 25, 28 de outubro de 1951), conforme os 10 artigos do spec (profile mioshie_shu). JP tem 1 único bloco === ARTIGO === (não pré-dividido); todo o corpo foi confrontado frase a frase contra o PT na mesma ordem, com atenção extra às transições de data/seção e turnos de pergunta/resposta sem aspas, por ser família de livro (御教え集1/2/6号, 御垂示録1/2/3号) com histórico confirmado de monólitos residuais, trechos nunca traduzidos, cabeçalhos de data duplicados e troca de falante.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha. Nota: a razão JP 617 / PT ~313 linhas citada no alerta reflete o formato de arquivo (PT usa parágrafos longos por linha; JP tem quebras curtas por sentença/turno), não perda de conteúdo por si só — confirmado por leitura completa, não presumido.",
+  "summary": {
+    "articles_in_spec": 10,
+    "articles_reviewed": 10,
+    "real_corrections_applied": 8,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "transição para a seção '11 de outubro' (antiga linha ~103-110 do PT)",
+      "problema": "GRAVE — corrupção estrutural: o cabeçalho de data '11 de outubro' aparecia correto, mas era seguido por fragmentos de cabeçalhos de outras datas embaralhados e sobrepostos caractere a caractere sobre o início da palavra '(Consulta)': '(5 de outubro' / 'C8 de outubro' / 'o11 de outubro' / 'nsulta) Minha esposa, Chieko...' — ou seja, pedaços de 'C' + 'o' + 'nsulta)' ficaram intercalados com resíduos dos cabeçalhos '5 de outubro' e '8 de outubro', quebrando a palavra em três fragmentos e duplicando parcialmente cabeçalhos já usados antes no arquivo (checklist pontos 7 e 8).",
+      "correcao": "Removidos os fragmentos de cabeçalho embaralhados; restaurado texto limpo: '11 de outubro' (cabeçalho único) seguido de '(Consulta) Minha esposa, Chieko (35 anos)...'. Conteúdo do parágrafo em si (já presente após o fragmento 'nsulta)') foi conferido contra o JP linha 213 e está completo — apenas o cabeçalho estava corrompido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "início da pergunta de '5 de outubro' (JP linha 74)",
+      "problema": "PT truncado: '...durante a viagem de volta de uma peregrinação de oração em  Cerca de três anos depois...' (nota o espaço duplo, marca de corte). Faltava a tradução de '昭和十七年...目まいを感じ、医師の診察を受けましたが病名判らず、続いて' — ou seja, o ano (Showa 17 = 1942), o sintoma inicial de tontura e a consulta médica sem diagnóstico. Achado via busca de espaços duplos no corpo do PT.",
+      "correcao": "Inserido: 'no ano Showa 17 (1942), senti tontura, consultei um médico, mas ele não conseguiu diagnosticar a doença.' entre 'peregrinação de oração' e 'Cerca de três anos depois'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "seção '18 de outubro', 1ª pergunta (JP linha 317)",
+      "problema": "GRAVE — perda de conteúdo real: PT saltava de '...disse que era neurastenia. Por quase 30 anos,  No início de setembro deste ano...' (espaço duplo, marca de corte), omitindo uma frase inteira do JP com múltiplos sintomas: ter praticado várias religiões e sido vista por muitos médicos que disseram 'você não tem doença, é dos nervos'; desde a morte do filho, tensão muscular da cintura à cabeça; sensação de afrouxamento muscular tipo 'zuru-zuru'; mal-estar noturno com frio/calor; sensação de ser puxada para dentro ao fechar os olhos; sensação de algo caindo da testa ao coração; palpitação forte; dor como se a artéria fosse torcida ao se mover.",
+      "correcao": "Traduzido e inserido o trecho completo do JP entre 'Por quase 30 anos,' e 'No início de setembro deste ano', usando glossário quando aplicável (Johrei já padronizado).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "【御教え】 sobre o artigo 'Ōya Sōichi', seção 18 de outubro (JP linha 252)",
+      "problema": "Perda de conteúdo: '...as Divindades malignas miram principalmente  Todos os líderes...' (espaço duplo). Faltava '官憲、役人と新聞ですね' (órgãos governamentais, funcionários públicos e jornais) — o objeto direto da frase, elemento central do ensinamento (o que as divindades más mais visam).",
+      "correcao": "Inserido 'os órgãos governamentais, os funcionários públicos e os jornais' no ponto exato da omissão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "transição para '21 de outubro' + pergunta de Gotō Yūzō + pergunta de Masako (JP linhas 366-378)",
+      "problema": "GRAVÍSSIMO — o padrão de bug mais sério da família (mesma classe do achado Gokōwa #3/#5: duplicação + truncamento compensando a contagem). Sequência corrompida encontrada: (a) cabeçalho '21 de outubro' colado sem quebra de linha ao fim do parágrafo anterior; (b) logo a seguir, um SEGUNDO cabeçalho redundante 'Vinte e um de outubro' por extenso; (c) a pergunta e resposta de Gotō Yūzō (sinusite/suspeita de câncer) traduzidas corretamente na íntegra; (d) a pergunta seguinte sobre a irmã Masako começava e era truncada no meio de uma data ('...deu à luz Aiko (em 1944'); (e) imediatamente depois, um bloco DUPLICADO reafirmando o final da pergunta de Gotō Yūzō (inchaço na boca, prognóstico médico de dois meses de vida) e repetindo a MESMA resposta divina já dada em (c), antes de finalmente retomar — desta vez completa — a pergunta de Masako. Ou seja, a pergunta de Masako aparecia truncada uma vez e a de Gotō Yūzō aparecia duplicada por inteiro, mascarando a perda.",
+      "correcao": "Removidos: o cabeçalho duplicado 'Vinte e um de outubro' (mantido apenas '21 de outubro', com quebra de parágrafo correta); o fragmento truncado da pergunta de Masako; e o bloco inteiro duplicado (fim da pergunta de Gotō Yūzō + resposta divina repetida). Mantida uma única ocorrência limpa de cada Q&A, na ordem correta do JP: Gotō Yūzō (completo) → Masako (completo, conforme já estava na segunda cópia, que era a integral).",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "resposta sobre prolapso uterino, seção 28 de outubro (JP linha 581)",
+      "problema": "Pequena perda de conteúdo: '...Se está grávida, não ocorre  Ora, a abertura tem o mesmo tamanho...' (espaço duplo). Faltava 'prolapso uterino. Ora,' — a conclusão da frase anterior ('não ocorre [prolapso uterino]') antes de iniciar a justificativa.",
+      "correcao": "Inserido 'prolapso uterino. Ora,' no ponto da omissão.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "transição para '25 de outubro' (JP linha 434)",
+      "problema": "Cabeçalho de data duplicado: '25 de outubro' aparecia em linha própria e, logo a seguir, repetido novamente colado ao início da pergunta ('25 de outubro (Pergunta) No jornal Ehime Shimbun...').",
+      "correcao": "Removida a repetição do cabeçalho colado ao início da pergunta; mantido apenas o cabeçalho em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "transição para '28 de outubro' (JP linha 535)",
+      "problema": "Mesmo padrão do item 7: cabeçalho '28 de outubro' duplicado, uma vez em linha própria e outra colado ao início da pergunta seguinte.",
+      "correcao": "Removida a repetição colada; mantido apenas o cabeçalho em linha própria.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + 1 de outubro",
+      "jp_linhas": "1-68",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Tradução completa e fiel: casos do olho picado por mutuca, pontos de Johrei para emergências, pergunta sobre Izanagi/cronologia dos deuses, ensinos 'Encontro dos Três Miroku' e 'Divindades Malignas', relato sobre Atami. Sem perda de conteúdo encontrada."
+    },
+    {
+      "bloco": "5 de outubro",
+      "jp_linhas": "70-141",
+      "decisao": "corrigido (itens 2)",
+      "confianca": "alta",
+      "notas": "Casos do tumor cerebral/vertigem, toxina medicamentosa do pai (Gen Kakuho), esposa Miya, tremor da mão direita; ensinos sobre Kannon de Hase, religião do paraíso/inferno, superstição médica. Cabeçalho aparece colado ao parágrafo anterior (como '1 de outubro' também aparece no arquivo) — convenção já presente no documento, não alterado por não ser perda de conteúdo."
+    },
+    {
+      "bloco": "8 de outubro",
+      "jp_linhas": "141-208",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Casos do câncer de útero/orifícios de drenagem, esposa com derrame, Shukichi Akada (meningite), Kenji Takagi (glaucoma), ensino sobre Papel/Pomada de Luz Espiritual, ensino Miroku sanne (Izu/Mizu no mitama). Sem perda de conteúdo encontrada."
+    },
+    {
+      "bloco": "11 de outubro",
+      "jp_linhas": "209-256",
+      "decisao": "corrigido (item 1)",
+      "confianca": "alta",
+      "notas": "Caso Chieko/Sakae (tuberculose/toxina), relato do dentista (36 anos atrás), café Kobayashi (possessão de duas garçonetes, dragão entalhado), ensino Papel de Luz Espiritual (2ª ocorrência, distinta da de 8/10 no JP), ensino Ōya Sōichi, ensino Izunome/Miroku sanne (2ª variante, distinta — confirmado que é conteúdo genuíno repetido no JP, não duplicação de PT)."
+    },
+    {
+      "bloco": "15 de outubro",
+      "jp_linhas": "260-334",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Casos Hakama (filho com olho de peixe ferido), Oyanagi (Santuário Suwa/peixe de um olho), úlcera gástrica, Kazumi Nakaki (bagre branco/conjuntivite), paralisia dos membros, tuberculose com hemoptise (fator espiritual), ensino sobre táticas das Divindades Malignas. Sem perda de conteúdo encontrada."
+    },
+    {
+      "bloco": "18 de outubro",
+      "jp_linhas": "334-364",
+      "decisao": "corrigido (itens 3 e 4)",
+      "confianca": "alta",
+      "notas": "Casos beribéri sanguíneo (perda grave de conteúdo corrigida), Sadayoshi (hemorragia cerebral/espírito da árvore), ensino Shōjō/Daijō budismo, ensino Tenkokukai/Mirokukai (urdidura e trama) — confirmado como conteúdo genuinamente repetido no JP em 18 e 21 de outubro (dois dias distintos, mesmo tema retomado), não duplicação de PT."
+    },
+    {
+      "bloco": "21 de outubro",
+      "jp_linhas": "368-430",
+      "decisao": "corrigido (item 5) — achado mais grave do volume",
+      "confianca": "alta",
+      "notas": "Casos Gotō Yūzō (sinusite), Masako (possessão ancestral/raposa, diálogo longo), paciente pulmonar; ensino Tenkokukai/Mirokukai (2ª ocorrência genuína, ver nota acima). Duplicação+truncamento removidos conforme item 5."
+    },
+    {
+      "bloco": "25 de outubro",
+      "jp_linhas": "434-533",
+      "decisao": "corrigido (item 7)",
+      "confianca": "alta",
+      "notas": "Casos gravidez anormal de gêmeos (notícia de jornal), Sakuraki Kazuko (rins/peritônio), marido com pés inchados, Okawa Kasami (nevralgia intercostal), esposa com ooforectomia, bebê chorão + possessão espiritual, ensino Shōjō/Daijō (caligrafia zen). Sem perda de conteúdo além do cabeçalho duplicado."
+    },
+    {
+      "bloco": "28 de outubro",
+      "jp_linhas": "535-617",
+      "decisao": "corrigido (item 8)",
+      "confianca": "alta",
+      "notas": "Casos luxação de bebê, epilepsia (espíritos de bebês falecidos), doença nervosa da mão, filha surda, prolapso uterino (item 6), Fujiwara Ayako (câncer de mama, relato extenso), ensino B.C.G./vacinação (encerramento do volume). Confirmado que o volume termina de forma idêntica em JP e PT (trocadilho Jenner/'Mau-ner')."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 8 correções, sem resíduo de duplicação em 21/outubro. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "date": "2026-07-08",
+    "method": "gokowa-rotulagem-a4b-jp.mdc adaptado para marcadores （お伺）/〔御垂示〕 deste volume (Mioshie-Shu)",
+    "etapa_a": "Leitura linha a linha de todo o JP (617 linhas). Mapa construído por data: 1/10 (3 pares), 5/10 (4), 8/10 (4), 11/10 (2), 15/10 (6), 18/10 (2), 21/10 (3), 25/10 (6), 28/10 (6) = 36 pares （お伺）/〔御垂示〕 no total. Diálogos aninhados em citação direta （「」）dentro de uma mesma resposta formal (perguntas de acompanhamento do interlocutor durante a audiência, respondidas pelo Meishu-Sama sem novo marcador （お伺）) foram tratados como parte de um único turno Meishu-Sama, conforme a tabela do método (só （お伺）/〔御垂示〕 geram novo rótulo).",
+    "etapa_b": "PT já trazia marcador textual de cada turno em 100% dos 36 pares (variações: (Pergunta)/(Consulta) para pergunta; (Instrução Sagrada)/[Orientação Divina]/[Instrução Divina]/[Divina Instrução]/[Resposta Divina]/〔Orientação Divina〕 para resposta — nomenclatura inconsistente ao longo do arquivo, mas presente). Contagem final: 36 Interlocutor: e 36 Meishu-Sama: no PT, batendo 1:1 com o mapa JP. Nenhuma tradução faltante inserida nesta etapa (diferente do Gokōwa, aqui não foi necessário completar texto).",
+    "etapa_c": "Rótulos aplicados via script determinístico (busca sequencial por âncora de texto único, cursor avançando apenas para frente) — inseridos 'Interlocutor: ' e 'Meishu-Sama: ' imediatamente antes do marcador original de cada um dos 36 pares, com quebra de parágrafo (linha em branco) antes do rótulo. Nenhum conteúdo existente foi reordenado, removido ou reescrito; os marcadores (Pergunta)/(Instrução Divina)/etc. originais foram mantidos como estavam, apenas precedidos pelo novo rótulo de falante. Cabeçalhos de data preservados sem rótulo de falante.",
+    "achado_novo_nao_corrigido": "Duplicação de conteúdo encontrada na pergunta/resposta de Kenji Takagi (glaucoma, sessão '8 de outubro', JP linha 174) — não catalogada na auditoria anterior de 2026-07-07 (que classificou este bloco como 'ok, sem perda de conteúdo'). O PT traduz a mesma pergunta e resposta DUAS VEZES seguidas com fraseado ligeiramente diferente a cada vez: 1ª ocorrência (rotulada Interlocutor:/Meishu-Sama: nesta sessão) termina truncada no meio de uma frase ('...Faça ali — a toxina' seguido de linha em branco); imediatamente depois, um fragmento começando com reticências ('...fui ao médico em janeiro deste ano...') repete a mesma pergunta em primeira pessoa, seguida de um segundo bloco '[Instrução Divina]' com a MESMA resposta, desta vez completa e com fraseado distinto ('Isso tem cura' em vez de 'Isso vai curar' etc.). Mesma assinatura de bug já catalogada na família (ver correção nº 5 acima, 21/outubro). Por instrução explícita da tarefa de rotulagem ('documentar sem tentar resolver sozinho'), o fragmento duplicado NÃO recebeu rótulos de falante (não corresponde a um novo par （お伺）/〔御垂示〕 no JP) e o conteúdo NÃO foi removido nem mesclado — permanece exatamente como estava, apenas sem rótulo, para decisão futura do usuário sobre qual das duas traduções manter.",
+    "approved_nao_alterado": "Este bloco documenta apenas a rotulagem de falante; o campo approved:true do spec não foi alterado por esta tarefa."
+  },
+  "correcao_duplicacao_kenji_takagi": {
+    "data": "2026-07-08",
+    "autorizacao": "Correção pontual explicitamente autorizada pelo usuário (pacote de 3 correções pequenas e bem delimitadas), conforme authorization-workflow.mdc.",
+    "problema": "Confirmado contra o JP (linha 174, um único parágrafo de pergunta, e a resposta 〔御垂示〕 logo em seguida): o PT tinha a mesma pergunta/resposta de Kenji Takagi (glaucoma) traduzida DUAS vezes seguidas. 1ª ocorrência: Interlocutor completo + resposta 'Meishu-Sama: [Orientação Divina]' truncada no meio de uma frase ('...Faça ali — a toxina'). Logo em seguida: um fragmento sem rótulo de falante começando com reticências ('...fui ao médico em janeiro deste ano...'), repetindo a mesma pergunta em primeira pessoa, seguido de um segundo bloco '[Instrução Divina]' com a MESMA resposta, desta vez completa (incluindo o diálogo de acompanhamento 'Foi retirado o pus do olho...'/'Sim, era.'/'Uma única cirurgia não atrapalharia a cura?' que corresponde ao JP).",
+    "correcao": "Removida a 1ª ocorrência truncada (resposta incompleta 'Meishu-Sama: [Orientação Divina]...Faça ali — a toxina') e o fragmento duplicado da pergunta em primeira pessoa que a seguia. Mantida a pergunta original completa (Interlocutor, linha 122) seguida diretamente da resposta completa, agora rotulada 'Meishu-Sama: [Instrução Divina]' (era apenas '[Instrução Divina]', sem prefixo de falante, por ser o bloco duplicado deixado sem rótulo na rotulagem anterior). Nenhum outro conteúdo foi alterado.",
+    "verificacao": "Confirmado contra o JP que existe apenas UMA pergunta e UMA resposta para este caso (linha 174 e a resposta 〔御垂示〕 seguinte) — a versão mantida (completa, com o diálogo de acompanhamento) corresponde integralmente ao JP; a versão removida era redundante e truncada.",
+    "pendencia_resolvida": true,
+    "approved_nao_alterado": "O campo approved:true do spec não foi alterado por esta correção pontual."
+  },
+  "rotulagem_bug_citacao_interlocutor_absorvida_2026_07_15": {
+    "data": "2026-07-15",
+    "contexto": "Retomada da pendência ROTULAGEM_JP_BUG_CITACAO_INTERLOCUTOR_ABSORVIDA (2026-07-13). NOTA IMPORTANTE: uma entrada posterior em PENDENCIAS_REVISAO.json alegou que este livro tinha '12 seções [Instrução Divina]/[Orientação Divina] como placeholder, conteúdo nunca traduzido' -- essa alegação foi verificada agora e está INCORRETA: todas as 11 ocorrências de '[Instrução Divina]'/'〔Orientação Divina〕' têm conteúdo real e completo imediatamente após. Não havia lacuna de tradução nenhuma. A causa raiz real é idêntica à do 8号 (turnos de diálogo embutidos sem rótulo), só que classificada errado em algum momento anterior sem verificação direta do arquivo.",
+    "verificacao": "49 linhas JP no padrão '「...」' isolado mapeadas 1:1 em ordem contra 49 parágrafos PT já traduzidos como citação isolada, sem lacuna.",
+    "correcao": "Rotulagem mecânica aplicada (mesmo método do 8号): 49 'Interlocutor: ' + inicialmente 55 'Meishu-Sama: ' inseridos. Segunda verificação (busca por rótulos Meishu-Sama consecutivos sem Interlocutor entre eles) encontrou 5 falsos positivos genuínos: parágrafos que são CONTINUAÇÃO da pergunta do interlocutor em um segundo parágrafo (terminam em pergunta dirigida a Meishu-Sama, ex. 'Peço humildemente sua orientação sobre isso', com a tag [Instrução Divina] no FIM da pergunta -- mesma convenção do 8号), não fala de Meishu-Sama. Confirmado contra o JP (ex.: linha 72 do PT corresponde ao JP linhas 81-82, fechamento de（お伺）antes do marcador 〔御垂示〕 real). Os 5 rótulos indevidos (linhas 72, 167, 336, 416, 437) foram revertidos para parágrafo sem rótulo (continuação do turno Interlocutor já aberto), não para um novo rótulo Interlocutor -- mesma convenção de multi-parágrafo do resto do arquivo.",
+    "resultado": "85 Interlocutor: + 86 Meishu-Sama: = 171 rótulos totais. A assimetria de 1 é estrutural e legítima (linha 32: pergunta única respondida por Meishu-Sama em 2 blocos separados -- lista numerada rápida seguida de '(Instrução Sagrada)' detalhada -- confirmado sem Interlocutor entre eles, verificado como padrão original do texto, não bug). Conteúdo verificado byte-a-byte idêntico ao original após remover todos os rótulos (nenhuma palavra alterada).",
+    "pendencia_relacionada": "Corrige/substitui a alegação incorreta de '12 seções nunca traduzidas'. Segunda verificação independente ainda recomendada. Livro estava em reports/livros_trabalho/excluido_desta_promocao/ (excluído da Fase 5 por causa da alegação incorreta) -- reavaliar se pode voltar para reports/livros_trabalho/jp|pt/ agora que a causa real foi corrigida."
+  }
+}

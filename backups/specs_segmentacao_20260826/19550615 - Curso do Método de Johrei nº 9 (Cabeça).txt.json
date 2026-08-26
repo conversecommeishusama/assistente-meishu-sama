@@ -1,0 +1,463 @@
+{
+ "filename": "19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "2026-07-15 CHUNK_TURNAWARE: reconstrução completa 21->56 artigos. title_pt/pt_prefix da versão anterior eram lixo de outro livro (Kannon/'Aula'). Faltavam topicos (2)-(4),(6) cap1 e ~33 topicos cap2; secao (御伺) falsa removida (marcador de citacao inline, nao fronteira estrutural).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 56,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Curso do Método de Johrei (9) — (Cabeça)",
+   "jp_anchor": "浄 霊法講座（九）　　　　　（頭　部）",
+   "pt_anchor": "Curso do Método de Johrei nº 9 (Cabeça)",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一、頭部に関連した浄霊について",
+   "title_pt": "1. Sobre o Johrei relacionado à cabeça",
+   "jp_anchor": "一、頭部に関連した浄霊について",
+   "pt_anchor": "1. Sobre o Johrei relacionado à cabeça",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（２）頭の深い所の毒が溶けて出る時は非常に痛い",
+   "title_pt": "(2) Quando as toxinas das camadas profundas da cabeça se dissolvem e saem, a dor é muito intensa.",
+   "jp_anchor": "（２）頭の深い所の毒が溶けて出る時は非常に痛い",
+   "pt_anchor": "(2) Quando as toxinas das camadas profundas da cabeça se dissolvem e saem, a dor é muito intensa.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（３）後頭部（延髄）の固まりほど厄介なものはない",
+   "title_pt": "(3) Não há nada mais problemático do que o bloqueio na nuca (medula oblonga).",
+   "jp_anchor": "（３）後頭部（延髄）の固まりほど厄介なものはない",
+   "pt_anchor": "(3) Não há nada mais problemático do que o bloqueio na nuca (medula oblonga).",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（４）後頭部の浄霊に伴なう変化で、心得ておかなければならないこと",
+   "title_pt": "(4) Mudanças que acompanham o Johrei na nuca e o que se deve ter em mente",
+   "jp_anchor": "（４）後頭部の浄霊に伴なう変化で、心得ておかなければならないこと",
+   "pt_anchor": "(4) Mudanças que acompanham o Johrei na nuca e o que se deve ter em mente",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（５）前頭部の熱と浄霊について",
+   "title_pt": "(5) Sobre o calor na testa e o Johrei.",
+   "jp_anchor": "（５）前頭部の熱と浄霊について",
+   "pt_anchor": "(5) Sobre o calor na testa e o Johrei.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（６）こめかみ",
+   "title_pt": "(6) Têmporas",
+   "jp_anchor": "（６）こめかみ",
+   "pt_anchor": "(6) Têmporas",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（７）淋巴腺（頸部）",
+   "title_pt": "(7) Gânglios linfáticos (pescoço)",
+   "jp_anchor": "（７）淋巴腺（頸部）",
+   "pt_anchor": "(7) Gânglios linfáticos (pescoço)",
+   "notes": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二、頭部に関連した症状の解剖",
+   "title_pt": "2. Anatomia dos sintomas relacionados à cabeça",
+   "jp_anchor": "二、頭部に関連した症状の解剖",
+   "pt_anchor": "2. Anatomia dos sintomas relacionados à cabeça",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（１）頭が禿げるのは遺伝か",
+   "title_pt": "(1) A calvície é hereditária? (Pergunta)",
+   "jp_anchor": "（１）頭が禿げるのは遺伝か",
+   "pt_anchor": "(1) A calvície é hereditária? (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（２）頭髪が全部脱落してしまった娘",
+   "title_pt": "(2) Uma jovem que perdeu todo o cabelo (Pergunta) (Mioshie-shū nº 4, p. 51)",
+   "jp_anchor": "（２）頭髪が全部脱落してしまった娘",
+   "pt_anchor": "(2) Uma jovem que perdeu todo o cabelo (Pergunta) (Mioshie-shū nº 4, p. 51)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（３）台湾坊主になった人",
+   "title_pt": "(3) Uma pessoa que ficou com alopecia areata total (Taiwan bōzu) (Pergunta) (Tijotengoku nº 36, p. 15)",
+   "jp_anchor": "（３）台湾坊主になった人",
+   "pt_anchor": "(3) Uma pessoa que ficou com alopecia areata total (Taiwan bōzu) (Pergunta) (Tijotengoku nº 36, p. 15)\n\nA partir de outubro de 1950, ",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（４）頭髪が伸びず、柔らかく茶色な子供",
+   "title_pt": "(4) Uma criança cujo cabelo não cresce, é macio e castanho (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（４）頭髪が伸びず、柔らかく茶色な子供",
+   "pt_anchor": "(4) Uma criança cujo cabelo não cresce, é macio e castanho (Pergunta) (Mioshie-shū)\n\nMeu filho de quatorze anos. Um mês após o nascimento, surgiram erupções na cabeça; lavei-as com oxifluoreto e sar",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（５）禿頭病は霊的か",
+   "title_pt": "(5) A alopecia é espiritual? (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（５）禿頭病は霊的か",
+   "pt_anchor": "(5) A alopecia é espiritual? (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（６）頭髪を洗うと、一塊りにねばりつき、棒のようになる女性",
+   "title_pt": "(6) Uma mulher cujo cabelo, ao ser lavado, gruda em uma massa e fica como uma barra (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（６）頭髪を洗うと、一塊りにねばりつき、棒のようになる女性",
+   "pt_anchor": "(6) Uma mulher cujo cabelo, ao ser lavado, gruda em uma massa e fica como uma barra (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（７）極度の頭重で、仕事も出来なくなってしまった人",
+   "title_pt": "(7) Uma pessoa com peso extremo na cabeça, a ponto de não conseguir trabalhar (Pergunta) (Mioshie-shū nº 7, p. 25)",
+   "jp_anchor": "（７）極度の頭重で、仕事も出来なくなってしまった人",
+   "pt_anchor": "(7) Uma pessoa com peso extremo na cabeça, a ponto de não conseguir trabalhar (Pergunta) (Mioshie-shū nº 7, p. 25)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（８）頭の中心が吊上げられるような痛みで、感情が激しく変る女性",
+   "title_pt": "(8) Uma mulher com dor no centro da cabeça como se estivesse sendo puxada para cima e mudanças bruscas de humor (Pergunta) (Paraíso na Terra nº 41, p. 11)",
+   "jp_anchor": "（８）頭の中心が吊上げられるような痛みで、感情が激しく変る女性",
+   "pt_anchor": "(8) Uma mulher com dor no centro da cabeça como se estivesse sendo puxada para cima e mudanças bruscas de humor (Pergunt",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（９）頭の内部に腫物が出来た人",
+   "title_pt": "(9) Uma pessoa com um tumor interno na cabeça (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（９）頭の内部に腫物が出来た人",
+   "pt_anchor": "(9) Uma pessoa com um tumor interno na cabeça (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（10）脳癌と診断された娘",
+   "title_pt": "(10) Uma jovem diagnosticada com câncer cerebral (Pergunta) (Mioshie-shū nº 4, p. 84)",
+   "jp_anchor": "（10）脳癌と診断された娘",
+   "pt_anchor": "(10) Uma jovem diagnosticada com câncer cerebral (Pergunta) (Mioshie-shū nº 4, p. 84)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（11）脳水腫（福助）の原因について",
+   "title_pt": "(11) Sobre a causa da hidrocefalia (Fukusuke) (Pergunta) (Tijotengoku nº 6, p. 15)",
+   "jp_anchor": "（11）脳水腫（福助）の原因について",
+   "pt_anchor": "(11) Sobre a causa da hidrocefalia (Fukusuke) (Pergunta) (Tijotengoku nº 6, p. 15)\n\nAcredito que o que é pop",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（12）子供の頭に水が溜って大きくなる原因",
+   "title_pt": "(12) Causa do acúmulo de água na cabeça de crianças, fazendo-a aumentar (Pergunta) (Mioshie-shū)",
+   "jp_anchor": "（12）子供の頭に水が溜って大きくなる原因",
+   "pt_anchor": "(12) Causa do acúmulo de água na cabeça de crianças, fazendo-a aumentar (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（13）後頭部を強打失神してから､引付が頻発し､知能二、三歳程度という女児",
+   "title_pt": "(13) Uma menina que, após bater forte a nuca e desmaiar, passou a ter convulsões frequentes e inteligência equivalente a uma criança de dois ou três anos (Pergunta) (Mioshie-shū nº 7, p. 21)",
+   "jp_anchor": "（13）後頭部を強打失神してから､引付が頻発し､知能二、三歳程度という女児",
+   "pt_anchor": "(13) Uma menina que, após bater forte a nuca e desmaiar, passou a ter convulsões frequentes e inteligência equivalente a",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（14）癲癇症状で倒れた事あり､最近食欲なく､頭は痛く､ぼんやりし､呼吸苦しく､逆上せるという青年",
+   "title_pt": "(14) Um jovem que caiu com sintomas de epilepsia, recentemente sem apetite, com dor de cabeça, atordoado, dificuldade para respirar e com ondas de calor. (Pergunta) (Mioshie-shū nº 6, p. 72)",
+   "jp_anchor": "（14）癲癇症状で倒れた事あり､最近食欲なく､頭は痛く､ぼんやりし､呼吸苦しく､逆上せるという青年",
+   "pt_anchor": "(14) Um jovem que caiu com sintomas de epilepsia, recentemente sem apetite, com dor de cabeça, atordoado, dificuldade pa",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（15）生後六カ月で脳膜炎になり、以来十数年ダルマ同様寝た儘の娘",
+   "title_pt": "(15) Uma moça que, desde os seis meses de idade, teve meningite e, desde então, por mais de dez anos, ficou deitada como uma boneca de daruma. (Pergunta) (Mioshie-shū nº 8, p. 16)",
+   "jp_anchor": "（15）生後六カ月で脳膜炎になり、以来十数年ダルマ同様寝た儘の娘",
+   "pt_anchor": "(15) Uma moça que, desde os seis meses de idade, teve meningite e, desde então, por mais de dez anos, ficou deitada como",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（16）脳膜炎で眼が充血してくるのは、峠をこした状態",
+   "title_pt": "(16) Na meningite, os olhos ficarem congestionados é sinal de que o pior já passou. (Pergunta) (Mioshie-shū nº 4, p. 47)",
+   "jp_anchor": "（16）脳膜炎で眼が充血してくるのは、峠をこした状態",
+   "pt_anchor": "(16) Na meningite, os olhos ficarem congestionados é sinal de que o pior já passou. (Pergunta) (Mioshie-shū nº 4, p. 47)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（17）生後十カ月で脳膜炎になってから、口もきけず、耳も聞こえない子供",
+   "title_pt": "(17) Uma criança que, desde os dez meses de idade, teve meningite e, desde então, não fala nem ouve. (Pergunta) (Paraíso na Terra nº 23, p. 17)",
+   "jp_anchor": "（17）生後十カ月で脳膜炎になってから、口もきけず、耳も聞こえない子供",
+   "pt_anchor": "(17) Uma criança que, desde os dez meses de idade, teve meningite e, desde então, não fala nem ouve. (Pergunta) (Tijoten",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（18）四歳の時脳膜炎になってから、癲癇の発作が起るようになった子供",
+   "title_pt": "(18) Uma criança que, desde que teve meningite aos quatro anos, passou a ter crises de epilepsia. (Pergunta) (Mioshie-shū nº 4, p. 95)",
+   "jp_anchor": "（18）四歳の時脳膜炎になってから、癲癇の発作が起るようになった子供",
+   "pt_anchor": "(18) Uma criança que, desde que teve meningite aos quatro anos, passou a ter crises de epilepsia. (Pergunta) (Mioshie-sh",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（19）日本脳炎について",
+   "title_pt": "(19) Sobre a encefalite japonesa.",
+   "jp_anchor": "（19）日本脳炎について",
+   "pt_anchor": "(19) Sobre a encefalite japonesa.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（20）日本脳炎になった子供の浄化の経過と、その御伺い",
+   "title_pt": "(20) A evolução da purificação de uma criança que teve encefalite japonesa e a consulta sobre isso. (Pergunta) (Mioshie-shū nº 2, p. 41)",
+   "jp_anchor": "（20）日本脳炎になった子供の浄化の経過と、その御伺い",
+   "pt_anchor": "(20) A evolução da purificação de uma criança que teve encefalite japonesa e a consulta sobre isso. (Pergunta) (Mioshie-",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（21）頚部硬直、両眼充血し、高熱の出る老人",
+   "title_pt": "(21) Um idoso com rigidez no pescoço, congestão em ambos os olhos e febre alta. (Pergunta) (Mioshie-shū nº 1, p. 17)",
+   "jp_anchor": "（21）頚部硬直、両眼充血し、高熱の出る老人",
+   "pt_anchor": "(21) Um idoso com rigidez no pescoço, congestão em ambos os olhos e febre alta. (Pergunta) (Mioshie-shū nº 1, p. 17)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（22）発病後の記憶がなく、一時半身不随にまでなった中年の男子",
+   "title_pt": "(22) Um homem de meia-idade que não se lembra do período após o início da doença e ficou temporariamente hemiplégico. (Pergunta) (Mioshie)",
+   "jp_anchor": "（22）発病後の記憶がなく、一時半身不随にまでなった中年の男子",
+   "pt_anchor": "(22) Um homem de meia-idade que não se lembra do período após o início da doença e ficou temporariamente hemiplégico. (P",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（23）脳溢血及び中風について",
+   "title_pt": "(23) Sobre hemorragia cerebral e derrame.",
+   "jp_anchor": "（23）脳溢血及び中風について",
+   "pt_anchor": "(23) Sobre hemorragia cerebral e derrame.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（24）信者でも中風になるが､軽く治りいい",
+   "title_pt": "(24) Mesmo os fiéis têm derrame, mas é leve e a cura é boa. (Pergunta) (Mioshie, Gokōwa-roku nº 16)",
+   "jp_anchor": "（24）信者でも中風になるが､軽く治りいい",
+   "pt_anchor": "(24) Mesmo os fiéis têm derrame, mas é leve e a cura é boa. (Pergunta) (Mioshie-shū, Gokōwa-roku nº 16)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（25）中風で右肩が痛み、痰の排泄の激しい老人",
+   "title_pt": "(25) Um idoso com derrame, dor no ombro direito e forte excreção de catarro. (Pergunta) (Mioshie)",
+   "jp_anchor": "（25）中風で右肩が痛み、痰の排泄の激しい老人",
+   "pt_anchor": "(25) Um idoso com derrame, dor no ombro direito e forte excreção de catarro. (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（26）逆中風について",
+   "title_pt": "(26) Sobre o derrame reverso.",
+   "jp_anchor": "（26）逆中風について",
+   "pt_anchor": "(26) Sobre o derrame reverso.",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（27）逆中風の浄霊について",
+   "title_pt": "(27) Sobre o Johrei no derrame reverso. (Pergunta) (Tijotengoku nº 49, p. 9)",
+   "jp_anchor": "（27）逆中風の浄霊について",
+   "pt_anchor": "(27) Sobre o Johrei no derrame reverso. (Pergunta) (Tijotengoku nº 49, p. 9)\n\nUm homem de 55 anos. Com",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（28）中風で極度に震えるのは重いが、首だけ震えるのは中風に関係なく、頚部が凝っている",
+   "title_pt": "(28) Tremores extremos devido a derrame são graves, mas tremer apenas o pescoço não está relacionado ao derrame; é porque o pescoço está rígido. (Pergunta) (Gosuiji-roku nº 3, p. 45)",
+   "jp_anchor": "（28）中風で極度に震えるのは重いが、首だけ震えるのは中風に関係なく、頚部が凝っている",
+   "pt_anchor": "(28) Tremores extremos devido a derrame são graves, mas tremer apenas o pescoço não está relacionado ao derrame; é porqu",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（29）脳溢血にて急を要する場合の浄霊の急所",
+   "title_pt": "(29) Pontos vitais do Johrei em casos de emergência por hemorragia cerebral (Pergunta) (Mioshie-shū nº 3, p. 2)",
+   "jp_anchor": "（29）脳溢血にて急を要する場合の浄霊の急所",
+   "pt_anchor": "(29) Pontos vitais do Johrei em casos de emergência por hemorragia cerebral (Pergunta) (Mioshie-shū nº 3, p. 2)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（30）高血圧になる理由と、高血圧は脳溢血の原因とはならないこと",
+   "title_pt": "(30) A razão para a hipertensão e o fato de que a hipertensão não é a causa da hemorragia cerebral (Pergunta) (Mioshie)",
+   "jp_anchor": "（30）高血圧になる理由と、高血圧は脳溢血の原因とはならないこと",
+   "pt_anchor": "(30) A razão para a hipertensão e o fato de que a hipertensão não é a causa da hemorragia cerebral (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（31）脳溢血で倒れた時、頭を氷で冷すことは最も不可であること",
+   "title_pt": "(31) É extremamente errado resfriar a cabeça com gelo quando se cai devido a uma hemorragia cerebral (Pergunta) (Mioshie)",
+   "jp_anchor": "（31）脳溢血で倒れた時、頭を氷で冷すことは最も不可であること",
+   "pt_anchor": "(31) É extremamente errado resfriar a cabeça com gelo quando se cai devido a uma hemorragia cerebral (Pergunta) (Mioshie",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（32）脳溢血で意識不明、または痴呆状態になる時、毒はどこに固まるか",
+   "title_pt": "(32) Quando se fica inconsciente ou em estado de demência devido a uma hemorragia cerebral, onde a toxina se solidifica? (Pergunta) (Mioshie)",
+   "jp_anchor": "（32）脳溢血で意識不明、または痴呆状態になる時、毒はどこに固まるか",
+   "pt_anchor": "(32) Quando se fica inconsciente ou em estado de demência devido a uma hemorragia cerebral, onde a toxina se solidifica?",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（33）脳溢血と瀉血療法､その他について",
+   "title_pt": "(33) Sobre hemorragia cerebral, terapia de sangria e outros assuntos (Pergunta) (Mioshie)",
+   "jp_anchor": "（33）脳溢血と瀉血療法､その他について",
+   "pt_anchor": "(33) Sobre hemorragia cerebral, terapia de sangria e outros assuntos (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（34）脳溢血が治った後、左半身やや紅味を帶び、冷たいものに触れると熱く痛く感じる婦人",
+   "title_pt": "(34) Uma mulher que, após se curar de uma hemorragia cerebral, tem o lado esquerdo do corpo levemente avermelhado e sente calor e dor ao tocar em coisas frias (Pergunta) (Mioshie)",
+   "jp_anchor": "（34）脳溢血が治った後、左半身やや紅味を帶び、冷たいものに触れると熱く痛く感じる婦人",
+   "pt_anchor": "(34) Uma mulher que, após se curar de uma hemorragia cerebral, tem o lado esquerdo do corpo levemente avermelhado e sent",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（35）脳溢血の再発の原因",
+   "title_pt": "(35) Causa da recorrência da hemorragia cerebral",
+   "jp_anchor": "（35）脳溢血の再発の原因",
+   "pt_anchor": "(35) Causa da recorrência da hemorragia cerebral",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（36）脳溢血の再浄化と、信仰的な考え方について",
+   "title_pt": "(36) Sobre a Repurificação da hemorragia cerebral e a perspectiva da fé (Pergunta) (Mioshie-shū nº 4, p. 27)",
+   "jp_anchor": "（36）脳溢血の再浄化と、信仰的な考え方について",
+   "pt_anchor": "(36) Sobre a Repurificação da hemorragia cerebral e a perspectiva da fé (Pergunta) (Mioshie-shū nº 4, p. 27)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（37）脳貧血では死ぬものでない",
+   "title_pt": "(37) Não se morre de anemia cerebral (Pergunta) (Mioshie)",
+   "jp_anchor": "（37）脳貧血では死ぬものでない",
+   "pt_anchor": "(37) Não se morre de anemia cerebral (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（38）脳貧血で倒れて、医療を続けているうちに、心悸亢進、眩暈、頭重、肩の凝り、常に夢見ているような状態が続くという男",
+   "title_pt": "(38) Um homem que, após desmaiar de anemia cerebral e continuar o tratamento médico, apresenta palpitações, tonturas, peso na cabeça, rigidez nos ombros e um estado constante como se estivesse sonhando (Pergunta) (Mioshie-shū nº 5, p. 11)",
+   "jp_anchor": "（38）脳貧血で倒れて、医療を続けているうちに、心悸亢進、眩暈、頭重、肩の凝り、常に夢見ているような状態が続くという男",
+   "pt_anchor": "(38) Um homem que, após desmaiar de anemia cerebral e continuar o tratamento médico, apresenta palpitações, tonturas, pe",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（39）脳溢血後ロレツの廻らない原因、及び吃の原因に就いて",
+   "title_pt": "(39) Sobre a causa da fala enrolada após hemorragia cerebral e a causa da gagueira (Pergunta) (Mioshie)",
+   "jp_anchor": "（39）脳溢血後ロレツの廻らない原因、及び吃の原因に就いて",
+   "pt_anchor": "(39) Sobre a causa da fala enrolada após hemorragia cerebral e a causa da gagueira (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（40）ロレツが廻らないで舌のつる原因",
+   "title_pt": "(40) Causa da língua travar e da fala enrolada",
+   "jp_anchor": "（40）ロレツが廻らないで舌のつる原因",
+   "pt_anchor": "(40) Causa da língua travar e da fala enrolada",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（41）二歳の時河に落ち、現在耳は聞えるが、物を言う事が出来ない男",
+   "title_pt": "(41) Um homem que caiu no rio aos dois anos de idade, atualmente ouve, mas não consegue falar (Pergunta) (Mioshie)",
+   "jp_anchor": "（41）二歳の時河に落ち、現在耳は聞えるが、物を言う事が出来ない男",
+   "pt_anchor": "(41) Um homem que caiu no rio aos dois anos de idade, atualmente ouve, mas não consegue falar (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（42）人の首を振るのを見てから、首を振るようになった中年の女",
+   "title_pt": "(42) Uma mulher de meia-idade que começou a balançar a cabeça depois de ver outra pessoa balançando a cabeça (Pergunta) (Mioshie)",
+   "jp_anchor": "（42）人の首を振るのを見てから、首を振るようになった中年の女",
+   "pt_anchor": "(42) Uma mulher de meia-idade que começou a balançar a cabeça depois de ver outra pessoa balançando a cabeça (Pergunta) ",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（43）以前に六〇六号を打った事があり､現在顔面神経痛の人",
+   "title_pt": "(43) Uma pessoa que tomou injeção de Salvarsan no passado e atualmente tem neuralgia facial (Pergunta) (Gosuiji-roku nº 5, p. 54)",
+   "jp_anchor": "（43）以前に六〇六号を打った事があり､現在顔面神経痛の人",
+   "pt_anchor": "(43) Uma pessoa que tomou injeção de Salvarsan no passado e atualmente tem neuralgia facial (Pergunta) (Gosuiji-roku nº ",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（44）脳の神経が引締ってしまう病気と言われた、右手の動かなくなった婦人",
+   "title_pt": "(44) Uma mulher que ficou com a mão direita paralisada, diagnosticada com uma doença em que os nervos do cérebro se contraem (Pergunta) (Mioshie-shū nº 3, p. 100)",
+   "jp_anchor": "（44）脳の神経が引締ってしまう病気と言われた、右手の動かなくなった婦人",
+   "pt_anchor": "(44) Uma mulher que ficou com a mão direita paralisada, diagnosticada com uma doença em que os nervos do cérebro se cont",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（45）咽頭部が詰り、血痰排泄後、高熱が続いている婦人",
+   "title_pt": "(45) Uma mulher com obstrução na faringe e febre alta contínua após expelir escarro com sangue (Pergunta) (Mioshie-shū nº 7, p. 80)",
+   "jp_anchor": "（45）咽頭部が詰り、血痰排泄後、高熱が続いている婦人",
+   "pt_anchor": "(45) Uma mulher com obstrução na faringe e febre alta contínua após expelir escarro com sangue (Pergunta) (Mioshie-shū n",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（46）寝ると胸苦しく、頭、首が痛み、下痢がある娘",
+   "title_pt": "(46) Uma moça que, ao deitar, sente aperto no peito, dor de cabeça e no pescoço, e tem diarreia (Pergunta) (Mioshie-shū nº 4, p. 31)",
+   "jp_anchor": "（46）寝ると胸苦しく、頭、首が痛み、下痢がある娘",
+   "pt_anchor": "(46) Uma moça que, ao deitar, sente aperto no peito, dor de cabeça e no pescoço, e tem diarreia (Pergunta) (Mioshie-shū ",
+   "notes": ""
+  },
+  {
+   "kind": "topic",
+   "title_jp": "（47）足の悪いのも根本は頚部にある",
+   "title_pt": "(47) A causa de problemas nas pernas também está fundamentalmente no pescoço (Pergunta) (Mioshie)",
+   "jp_anchor": "（47）足の悪いのも根本は頚部にある",
+   "pt_anchor": "(47) A causa de problemas nas pernas também está fundamentalmente no pescoço (Pergunta) (Mioshie-shū)",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

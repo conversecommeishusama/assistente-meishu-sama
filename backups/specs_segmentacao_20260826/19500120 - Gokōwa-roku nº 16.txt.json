@@ -1,0 +1,26 @@
+{
+ "filename": "19500120 - Gokōwa-roku nº 16.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 1→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 1,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "御光話録16号",
+   "title_pt": "Gokōwa-roku nº 16",
+   "jp_anchor": "『御光話録』16号、昭和25(1950)年1月20日発行",
+   "pt_anchor": "Interlocutor: O Grão-Mestre já apareceu no passado como o guerreiro Yoshitsune. Qual seria a relação disso com o Grão-Me",
+   "notes": "",
+   "pt_prefix": "御光話録16号"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

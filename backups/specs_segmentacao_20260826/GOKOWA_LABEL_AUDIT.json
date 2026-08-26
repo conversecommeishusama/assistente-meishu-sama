@@ -1,0 +1,19 @@
+{
+  "at": "2026-07-04T01:41:21.502128+00:00",
+  "method": "A:jp_turns B:metrics C:relabel_pt_in_place",
+  "results": [
+    {
+      "file": "19490710-御光話録10号.txt",
+      "source": "livros",
+      "jp_q": 74,
+      "pt_i": 71,
+      "pt_m": 71,
+      "delta": -3,
+      "m_i_ratio": 1.0,
+      "i_i_blocks": 0,
+      "dash": 0,
+      "status": "warn",
+      "skip_reasons": []
+    }
+  ]
+}

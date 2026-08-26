@@ -1,0 +1,1808 @@
+{
+ "filename": "19491223 - Montanha e Água.txt",
+ "profile": "poem_collection",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 224→224. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 224,
+ "split_method": "line_yamamizu_date_session",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "はしがき",
+   "title_pt": "Prefácio",
+   "jp_anchor": "歌 集　山 と 水　　初版　昭和24年12月23日発行",
+   "pt_anchor": "Coletânea de Poemas: Montanha e Água — Primeira Edição, 23 de dezembro de 1949",
+   "notes": "",
+   "pt_prefix": "Prefácio"
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年五月十八日",
+   "title_pt": "(18 de maio de 1931)",
+   "jp_anchor": "1, あめはれて　つゆもしとどのたかむらの　したかげあおくこけのはなさく",
+   "pt_anchor": "1. Após a chuva, o orvalho ainda brilha; sob a sombra azul do bosque de bambus, o musgo floresce.\n2. Verdejante, na folha larga da bananeira, uma rã verde, sem ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年六月五日",
+   "title_pt": "(5 de junho de 1931)",
+   "jp_anchor": ", 　　　日　　月,",
+   "pt_anchor": "Sol e Lua\n\n14. A luz do sol e a bênção da lua; aguarda-se o tempo em que o povo crescerá vigorosamente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年六月三日",
+   "title_pt": "(3 de junho de 1931)",
+   "jp_anchor": ", 　　　富　　士,",
+   "pt_anchor": "Monte Fuji\n\n17. A planície de Musashi está coberta de folhas verdes até onde a vista alcança; no horizonte do céu, avista-se o Monte",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年六月十五日",
+   "title_pt": "(15 de junho de 1931)",
+   "jp_anchor": ", 　　　乾　坤　山　（けんこんざん）,",
+   "pt_anchor": "19. Atraído pelo nome do Templo Japonês, ao visitá-lo, vi uma árvore que nunca tinha visto antes, chamada shala (sarasōju).\n20. Aqui e ali, os budas de pedra, cobertos de musgo, erguem-se solitários no Monte Kenkon.\n21. Deitado sobre a grama verde no vale da montanha, ouvi o canto dos pássaros como se fosse um sonho.\n22. Só aqui é o Paraíso; os poetas, sobre a grama verde, todos tecem seus pensamentos.\n23. O mar levemente enevoado, com ilhas e montanhas, parece uma pintura; as plantas do jardim do Donkai-rō estão pisoteadas.\n24. Subindo o Monte Kenkon, olhando para o mar distante de Awa, a brisa do início do verão toca minhas mangas.\n25. No topo da montanha, o sol nascente se eleva; reverentemente, todos adoram o Monte Kenkon.\n26. Até mesmo o ato de compor poemas, não sei quando esqueci; meu coração foi roubado pela vista do mar.\n27. Deve haver uma ligação com o deus do sol celestial; o nome também é o templo do país do sol nascente. (Era Showa 6 — 1931, 15 de junho).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年六月十五日",
+   "title_pt": "(15 de junho de 1931)",
+   "jp_anchor": ", 　　　安房歌紀行,",
+   "pt_anchor": "Crônica de Viagem a Awa\n\n28. Com mais de trinta companheiros queridos, parto da capital em direção à província de Awa nesta manhã.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月一日",
+   "title_pt": "(1 de julho de 1931)",
+   "jp_anchor": ", 　　　恋　（仮想歌）,",
+   "pt_anchor": "Amor (Poemas Imaginários)\n\n62. Embora minha cabeça esteja coberta de geada, sou alguém que envolve pensamentos de fogo ardente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月一日",
+   "title_pt": "(1 de julho de 1931)",
+   "jp_anchor": ", 　　　梅　　雨,",
+   "pt_anchor": "Estação Chuvosa\n\n72. De madrugada, ao abrir a janela, hoje também a chuva de maio cai como se sufocasse.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月一日",
+   "title_pt": "(1 de julho de 1931)",
+   "jp_anchor": ", 　　水郷めぐり,",
+   "pt_anchor": "Passeio pela Região dos Lagos\n\n80. Água e céu; o vento sobre os juncos também era claro. É o Lago Kasumigaura no início do verão.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月六日",
+   "title_pt": "(6 de julho de 1931)",
+   "jp_anchor": ", 　　　五　月　雨,",
+   "pt_anchor": "Chuva de Maio\n\n98. A noite avança; há o sussurro das folhas. Ao abrir a janela, vejo o jardim sob a chuva de maio.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月十五日",
+   "title_pt": "(15 de julho de 1931)",
+   "jp_anchor": ", 　　　ハルナ登山,",
+   "pt_anchor": "Ascensão ao Monte Haruna\n\n106. Com mais de vinte pessoas, relaxando o espírito, subi hoje com os companheiros que se reuniram.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年八月六日",
+   "title_pt": "(6 de agosto de 1931)",
+   "jp_anchor": ", 　　　稲　　妻,",
+   "pt_anchor": "Relâmpagos\n\n128. Enquanto saio para refrescar-me, vez ou outra, na cidade, ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年八月六日",
+   "title_pt": "(6 de agosto de 1931)",
+   "jp_anchor": ", 　　　　蛍,",
+   "pt_anchor": "Vaga-lumes\n\n135. Na beira da varanda, as crianças estão quietas e, achando estranho, vejo que há uma pequena gaiola de vaga-lumes.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年七月六日",
+   "title_pt": "(6 de julho de 1931)",
+   "jp_anchor": ", 　　　　月　の　光,",
+   "pt_anchor": "Luar\n\n144. Batendo as asas lentamente, a garça-real faz tremer a luz da lua.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年八月十五日",
+   "title_pt": "(15 de agosto de 1931)",
+   "jp_anchor": ", 　　　　海,",
+   "pt_anchor": "Mar\n\n167. Entre os confins do Polo Sul e do Polo Norte, enchendo e vazando, o deus Watatsumi protege as oitenta ilhas.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年八月十日",
+   "title_pt": "(10 de agosto de 1931)",
+   "jp_anchor": ", 　　　　更　　生,",
+   "pt_anchor": "Renovação\n\n189. Tendo dado uma volta pelo céu e pela terra, a lua agora começa a emitir uma luz nova.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年八月二十日",
+   "title_pt": "(20 de agosto de 1931)",
+   "jp_anchor": ", 　　　　七　　夕,",
+   "pt_anchor": "Tanabata (Festa das Estrelas)\n\n191. Desejo que o costume de celebrar o Tanabata continue para sempre em nosso país.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月十日",
+   "title_pt": "(10 de setembro de 1931)",
+   "jp_anchor": "0200, うちかえす　はねしろじろとうみひくう　つきかげあみゆくかりがねのむれ",
+   "pt_anchor": "200. Batendo as asas, brancas e brancas, sobre o lago baixo, um bando de gansos selvagens banha-se na luz da lua. (Era S",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月十六日",
+   "title_pt": "(16 de setembro de 1931)",
+   "jp_anchor": "201, このちさき　むしにもたましいあるにもや　じっとみておりでんとうのかさ",
+   "pt_anchor": "201. Será que este pequeno inseto também tem alma? Fico olhando fixamente para o abajur.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月十六日",
+   "title_pt": "(16 de setembro de 1931)",
+   "jp_anchor": ", 　　　　或人達へ,",
+   "pt_anchor": "A Certas Pessoas\n\n211. Quem julga os outros, chamando uns de bom e outros de mau, está usurpando a posição divina.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月二十日",
+   "title_pt": "(20 de setembro de 1931)",
+   "jp_anchor": ", 　　　　秋（一）,",
+   "pt_anchor": "Outono (I)\n\n216. A estrada de terra vermelha, plana e vasta; a poeira se levanta, e a carruagem segue ao longe.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月二十日",
+   "title_pt": "(20 de setembro de 1931)",
+   "jp_anchor": ", 　　　　秋（二）,",
+   "pt_anchor": "Outono (II)\n\n234. Nuvens finas que nem parecem se mover estão fluindo; uma pipa, num movimento suave, desenha um círculo.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月二十日",
+   "title_pt": "(20 de setembro de 1931)",
+   "jp_anchor": ", 　　社会と思想,",
+   "pt_anchor": "Sociedade e Pensamento\n\n244. O que é Marx? O que é Mussolini? Não passam de fantasmas nas duas pontas do balanço.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月二十日",
+   "title_pt": "(20 de setembro de 1931)",
+   "jp_anchor": ", 　　社　　会,",
+   "pt_anchor": "Sociedade\n\n248. Rumo ao imponente edifício, calçando as meias que a esposa remendou de manhã, segue o assalariado.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年九月二十日",
+   "title_pt": "(20 de setembro de 1931)",
+   "jp_anchor": ", 　　日　本　よ,",
+   "pt_anchor": "Japão\n\n252. O mundo é uma pintura em constante transformação — o vermelho, o branco, o preto, todos são cores necessárias para ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月六日",
+   "title_pt": "(6 de outubro de 1931)",
+   "jp_anchor": "253, まどらなる　つきのおもわのとうとけれ　あおげばなやみのとけもするなり",
+   "pt_anchor": "253. Quão venerável é o rosto redondo da lua — se a contemplamos, as angústias se desfazem.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月十八日",
+   "title_pt": "(18 de outubro de 1931)",
+   "jp_anchor": ", 　　日光の秋,",
+   "pt_anchor": "Outono em Nikko\n\n269. Excepcional — Nikko, com montanhas púrpuras e águas cristalinas, será a montanha de Fudaraku onde habita Kannon?",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月二十日",
+   "title_pt": "(20 de outubro de 1931)",
+   "jp_anchor": ", 　　紅　　葉,",
+   "pt_anchor": "Folhas Outonais\n\n290. Resolutamente, o outono arde no auge das folhas outonais — e de repente, entra o inverno cinzento. (Era Showa 6 — 1",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月十八日",
+   "title_pt": "(18 de outubro de 1931)",
+   "jp_anchor": ", 　　偶　　像,",
+   "pt_anchor": "Ídolos\n\n291. Oh, ídolos! As massas respiram por vós, se alegram e dançam!",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月十八日",
+   "title_pt": "(18 de outubro de 1931)",
+   "jp_anchor": ", 　　世界の今,",
+   "pt_anchor": "O Mundo Agora\n\n300. Ruge, China! Os descendentes de Adão e Eva estão rindo de ti. (Era Showa 6 — 1931, 18 de outubro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月二十日",
+   "title_pt": "(20 de outubro de 1931)",
+   "jp_anchor": ", 　　古　　池,",
+   "pt_anchor": "Lago Velho\n\n301. As folhas verdes do lírio-d'água se transparentam na água do lago — pontilhadas, flutuam as flores amarelas.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十月二十日",
+   "title_pt": "(20 de outubro de 1931)",
+   "jp_anchor": ", 　　武蔵野の秋,",
+   "pt_anchor": "Outono em Musashino\n\n309. Encontro aqui Musashino — chego à beira do caminho que se estende até os campos de capim.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十一月一日",
+   "title_pt": "(1 de novembro de 1931)",
+   "jp_anchor": ", 　　筑波紀行,",
+   "pt_anchor": "Viagem a Tsukuba\n\n318. Um único vermelho brilha ao sol — destaca-se no meio do bosque de pinheiros novos.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十一月一日",
+   "title_pt": "(1 de novembro de 1931)",
+   "jp_anchor": ", 　　筑波根の秋,",
+   "pt_anchor": "Outono nas Raízes de Tsukuba\n\n331. O monte Tsukuba — seus dois picos traçam uma linha vermelha-clara no céu azul.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十一月六日",
+   "title_pt": "(6 de novembro de 1931)",
+   "jp_anchor": ", 　　初　　冬,",
+   "pt_anchor": "Início do Inverno\n\n341. Quando chega o inverno das árvores nuas, como é difícil esquecer as cores e aromas da primavera, do verão e do outo",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十一月十日",
+   "title_pt": "(10 de novembro de 1931)",
+   "jp_anchor": ", 　　落　　葉,",
+   "pt_anchor": "Folhas Caídas\n\n349. Se pego uma folha seca, ela, solene, fala da lei da reencarnação.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十一月十日",
+   "title_pt": "(10 de novembro de 1931)",
+   "jp_anchor": "366, ゆきのもに　うごくものありこたつから　はりどすかせばすずめなりける",
+   "pt_anchor": "366. Na superfície da neve, algo se move; da lareira, ao abrir a porta de vidro, vejo que são pardais.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月十六日",
+   "title_pt": "(16 de dezembro de 1931)",
+   "jp_anchor": ", 　　新　　春,",
+   "pt_anchor": "Ano Novo\n\n369. A luz do céu que envolve a terra também é renovada; neste dia em que nasce o que chamamos de \"este ano\". (Era Showa",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十三日",
+   "title_pt": "(23 de dezembro de 1931)",
+   "jp_anchor": ", 　　暁の鶏声,",
+   "pt_anchor": "O Canto do Galo na Aurora\n\n370. A escuridão tênue clareia, tornando-se cada vez mais luminosa; o canto do galo doméstico é estridente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十三日",
+   "title_pt": "(23 de dezembro de 1931)",
+   "jp_anchor": ", 　　寒　　夜,",
+   "pt_anchor": "Noite Fria\n\n375. O vento frio que penetra pelas frestas da porta fere o corpo; o papel da porta de correr range de vez em quando.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十三日",
+   "title_pt": "(23 de dezembro de 1931)",
+   "jp_anchor": ", 　　暮　近　し,",
+   "pt_anchor": "O Anoitecer se Aproxima\n\n385. Com a agitação do fim do ano, pensamentos se enredam; em cada coisa, há uma agitação vaga.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十三日",
+   "title_pt": "(23 de dezembro de 1931)",
+   "jp_anchor": ", 　　彼の横顔,",
+   "pt_anchor": "Seu Perfil\n\n390. Seja tolo ou sábio, de qualquer forma, vejo nele uma figura que não se alinha ao nível do mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十三日",
+   "title_pt": "(23 de dezembro de 1931)",
+   "jp_anchor": ", 　　彼女（若き日の頃）,",
+   "pt_anchor": "Ela (Na Época de Juventude)\n\n393. Decididamente, a fragrância da juventude é rica e parece sacudir meu coração.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十五日",
+   "title_pt": "(25 de dezembro de 1931)",
+   "jp_anchor": "403, かれきりし　えだふゆさればむつのはな　さくひとときのながめありける",
+   "pt_anchor": "403. Nos galhos completamente secos, quando chega o inverno, há um momento de contemplação em que desabrocham as flores ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和六年十二月二十五日",
+   "title_pt": "(25 de dezembro de 1931)",
+   "jp_anchor": ", 　　憤　　る,",
+   "pt_anchor": "Indignação\n\n418. A excitação acima da indignação esfriou de repente e se transformou em um sorriso de vazio.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月二十五日",
+   "title_pt": "(25 de dezembro de 1932)",
+   "jp_anchor": ", 　　感　　情,",
+   "pt_anchor": "Emoção\n\n423. Uma alegria sem causa surgiu sutilmente e, de repente, desapareceu.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十八日",
+   "title_pt": "(18 de janeiro de 1932)",
+   "jp_anchor": ", 　　雪　晴　れ,",
+   "pt_anchor": "Céu Limpo Após a Neve\n\n428. A neve nos galhos, prestes a cair suavemente, flutua no céu da aurora que clareou.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十八日",
+   "title_pt": "(18 de janeiro de 1932)",
+   "jp_anchor": ", 　　動　　く,",
+   "pt_anchor": "Movimento\n\n433. O jazz de ângulos, círculos, linhas, etc., agita o fundo dos olhos; é o trabalho mecânico.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十五日",
+   "title_pt": "(15 de janeiro de 1932)",
+   "jp_anchor": "442, ねむたげな　はるのうなもよなみのねの　あるかなきかにきしをうつなり",
+   "pt_anchor": "442. A superfície do mar sonolento da primavera; o som das ondas, quase imperceptível, bate na costa.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十五日",
+   "title_pt": "(15 de janeiro de 1932)",
+   "jp_anchor": ", 　　陽　　炎,",
+   "pt_anchor": "Calor Trêmulo\n\n451. Altas e baixas, as borboletas atravessam o calor trêmulo; fiquei observando seu destino.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十五日",
+   "title_pt": "(15 de janeiro de 1932)",
+   "jp_anchor": ", 　　梵　　鐘,",
+   "pt_anchor": "Sino do Templo\n\n455. O som do sino do templo, na cor púrpura do crepúsculo, ecoa e se reúne na floresta escura.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十六日",
+   "title_pt": "(16 de janeiro de 1932)",
+   "jp_anchor": ", 　　春の気はい,",
+   "pt_anchor": "Sinais da Primavera\n\n460. No sol que atravessa o vento frio do campo, embora o amolecimento não seja visível, é sutil.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月十六日",
+   "title_pt": "(16 de janeiro de 1932)",
+   "jp_anchor": ", 　　梅　　花,",
+   "pt_anchor": "Flor de Ameixeira\n\n470. Atravessando o bosque de ameixeiras cheio de flores, quase sufocado pela fragrância, finalmente saí. (Era Showa 7 —",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年一月二十日",
+   "title_pt": "(20 de janeiro de 1932)",
+   "jp_anchor": ", 　　春　の　山,",
+   "pt_anchor": "Montanha na Primavera\n\n471. Oh, dia ensolarado e radiante! As sombras das jovens colhendo brotos de samambaia se estendem sobre a grama macia.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月十日",
+   "title_pt": "(10 de fevereiro de 1932)",
+   "jp_anchor": ", 　　塵　　埃,",
+   "pt_anchor": "Poeira\n\n479. Que preciosa! A poeira que se acumula nos ombros de Buda Amida brilha em branco tremulando à luz da lâmpada.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月十日",
+   "title_pt": "(10 de fevereiro de 1932)",
+   "jp_anchor": "485, ぽっかり　なめらかなそらにひとつ　はるらしい　つき",
+   "pt_anchor": "485. Flutuando, uma no céu suave; uma lua que parece de primavera.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月十日",
+   "title_pt": "(10 de fevereiro de 1932)",
+   "jp_anchor": "489, うきが　いけいっぱいにひろがって　とりのこえが　うつつになりかけた",
+   "pt_anchor": "489. A bóia se espalhou por todo o lago; o canto dos pássaros começou a se tornar realidade.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月十日",
+   "title_pt": "(10 de fevereiro de 1932)",
+   "jp_anchor": "493, ほしがみんなこきゅうしている　いしきてきに",
+   "pt_anchor": "493. Todas as estrelas estão respirando, conscientemente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月十六日",
+   "title_pt": "(16 de fevereiro de 1932)",
+   "jp_anchor": ", 　　春　の　宵,",
+   "pt_anchor": "Noite de Primavera\n\n495. Naquela ocasião, conversei contigo sob a lua enevoada. Era uma noite em que as flores começavam a cair. (Era Showa ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年二月二十五日",
+   "title_pt": "(25 de fevereiro de 1932)",
+   "jp_anchor": "496, おおとねに　なむほゆらぎのみえぬまで　かわのながれのゆるくもあるかな",
+   "pt_anchor": "496. No grande Rio Tone, as velas alinhadas balançam a ponto de não serem vistas. Como é lenta a corrente do rio!",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月一日",
+   "title_pt": "(1 de março de 1932)",
+   "jp_anchor": ", 　　自分の今,",
+   "pt_anchor": "Meu Agora\n\n505. O tédio que se repete dia após dia. Revolvendo, revolvendo, de qualquer forma, cheguei até aqui.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十日",
+   "title_pt": "(10 de março de 1932)",
+   "jp_anchor": ", 　　熱　　海,",
+   "pt_anchor": "Atami\n\n512. Quantos anos se passaram? A cidade de Atami, que sigo agora, é nostálgica e indistinta.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十日",
+   "title_pt": "(10 de março de 1932)",
+   "jp_anchor": ", 　　さまよう,",
+   "pt_anchor": "Vagando\n\n519. No vagar pela cidade ao entardecer, quando as luzes se acendem, as luzes permanecem nos olhos do peixe de que gosto.\n520. Na escuridão do entardecer, a silhueta de uma jovem é bela. Sinto um pouco de vergonha por ter seguido com os olhos.\n521. As pessoas se dispersam da estação, negras silhuetas, e todas desaparecem na escuridão da noite.\n522. O caminho do subúrbio é primaveril. As árvores e as casas, em sua familiaridade, se curvam e se torcem.\n523. Diante de uma casa com uma boa cerca de estilo novo, sinto uma ponta de vergonha e espio para dentro. (Era Showa 7 — 1932, 10 de março).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十日",
+   "title_pt": "(10 de março de 1932)",
+   "jp_anchor": ", 　　鐘　の　音,",
+   "pt_anchor": "Som do Sino\n\n524. O som que se aproxima em ondas ondulantes torna-se ondas. Passa por meus ouvidos, é o eco do sino.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十日",
+   "title_pt": "(10 de março de 1932)",
+   "jp_anchor": "528, ふかぶかと　くつにしたしもあつごけの　はやしのしたのふるきにおいはも",
+   "pt_anchor": "528. Profundamente, o musgo espesso é familiar aos meus sapatos. O cheiro antigo sob a floresta.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十六日",
+   "title_pt": "(16 de março de 1932)",
+   "jp_anchor": ", 　　春はゆく,",
+   "pt_anchor": "A Primavera Passa\n\n531. O vento está agradavelmente quente e úmido. Ando sob as flores, com o céu nublado pela floração.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十六日",
+   "title_pt": "(16 de março de 1932)",
+   "jp_anchor": ", 　　春　　野,",
+   "pt_anchor": "Campo de Primavera\n\n536. Exausto, se descanso na grama, torno-me uma pessoa da primavera envolvida pela miragem de calor. (Era Showa 7 — 193",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年三月十六日",
+   "title_pt": "(16 de março de 1932)",
+   "jp_anchor": "537, みとうせぬ　までにしろじろさきみてる　さくらのうえのそらのまあおき",
+   "pt_anchor": "537. As cerejeiras florescem tão densamente que se tornam brancas a ponto de não se ver através. O céu acima delas é de ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年四月二十一日",
+   "title_pt": "(21 de abril de 1932)",
+   "jp_anchor": ", 　　　桜　ち　り,",
+   "pt_anchor": "Poema-Coroa Cerejeiras Caem\n\n550. As cerejeiras caíram. O céu está liso e azul. Como é refrescante a folhagem nova que acabou de brotar!",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年五月十二日",
+   "title_pt": "(12 de maio de 1932)",
+   "jp_anchor": ", 　　春　の　風,",
+   "pt_anchor": "Vento de Primavera\n\n561. Entregue ao vento suave, no banco do parque, os jacintos florescem. (Era Showa 7 — 1932, 12 de maio).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年五月十二日",
+   "title_pt": "(12 de maio de 1932)",
+   "jp_anchor": ", 　　二子の桃,",
+   "pt_anchor": "Os Pêssegos de Futako\n\n562. Quantos milhares de pés de pêssego existem? Quando florescem, tudo se tinge apenas da cor carmim.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年五月二十五日",
+   "title_pt": "(25 de maio de 1932)",
+   "jp_anchor": ", 　　能登近く,",
+   "pt_anchor": "Perto de Noto\n\n567. Com um som estrondoso, a janela do trem corre sonolenta. As cadeias de montanhas, azuis, fluem para trás.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年五月二十五日",
+   "title_pt": "(25 de maio de 1932)",
+   "jp_anchor": ", 　　夜　汽　車,",
+   "pt_anchor": "Trem Noturno\n\n576. Todos em silêncio, flutuando na luz fraca. Rostos, rostos, rostos completamente exaustos.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十月十日",
+   "title_pt": "(10 de outubro de 1932)",
+   "jp_anchor": ", 　　初　　秋,",
+   "pt_anchor": "Início do Outono\n\n585. Se piso na sombra das árvores, a umidade da terra aumenta aos poucos. Aqui, esqueço o calor do sol. (Era Showa 7 — ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十月十二日",
+   "title_pt": "(12 de outubro de 1932)",
+   "jp_anchor": ", 　　秋　　草,",
+   "pt_anchor": "Ervas do Outono\n\n586. Se paro diante de um pequeno grupo de hagi do outono, o vento do campo sopra em mim, fresco.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十月二十五日",
+   "title_pt": "(25 de outubro de 1932)",
+   "jp_anchor": ", 　　自動車は走る,",
+   "pt_anchor": "O Automóvel Corre\n\n596. Corre, corre. As linhas de luzes, muitas, muitas, fogem para trás, para trás.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十一月二十日",
+   "title_pt": "(20 de novembro de 1932)",
+   "jp_anchor": ", 　　新　　宿,",
+   "pt_anchor": "Shinjuku\n\n598. A intenção de dominar Ginza está dançando. A noite de Shinjuku.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十一月二十日",
+   "title_pt": "(20 de novembro de 1932)",
+   "jp_anchor": ", 　　炭　　火,",
+   "pt_anchor": "Brasas de Carvão\n\n603. A agradável sensação tátil do braseiro de Seto, o som crepitante do carvão em brasa.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十一月二十五日",
+   "title_pt": "(25 de novembro de 1932)",
+   "jp_anchor": ", 　　秋　晴　れ,",
+   "pt_anchor": "Céu Claro de Outono\n\n610. Radiante, é uma manhã ensolarada, céu de outono, as portas de vidro transparentes brilham todas.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月五日",
+   "title_pt": "(5 de dezembro de 1932)",
+   "jp_anchor": ", 　　蜻　　蛉,",
+   "pt_anchor": "Libélula\n\n616. As crianças, banhando-se no sol de outono, movem-se preguiçosamente, uma libélula pousa no canto da esteira estendi",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月十日",
+   "title_pt": "(10 de dezembro de 1932)",
+   "jp_anchor": ", 　　寒　　月,",
+   "pt_anchor": "Lua Fria\n\n625. Sobre a ponte, a geada noturna faz um som sussurrante, a lua fria brilha gélida no céu.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月十日",
+   "title_pt": "(10 de dezembro de 1932)",
+   "jp_anchor": ", 　　冬　　庭,",
+   "pt_anchor": "Jardim de Inverno\n\n631. Duas ou três folhas de bordo caídas sobre as folhas do pinheiro, vejo-as cobertas de geada branca pela manhã.\n632. Se paro no jardim ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月十日",
+   "title_pt": "(10 de dezembro de 1932)",
+   "jp_anchor": ", 　　このごろ,",
+   "pt_anchor": "Ultimamente\n\n638. Esmurro a intenção de querer romper a vida pacata.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月十日",
+   "title_pt": "(10 de dezembro de 1932)",
+   "jp_anchor": ", 　　冬　木　立,",
+   "pt_anchor": "Arvoredo de Inverno\n\n652. O céu de inverno, as árvores secas nas margens, tudo como está, a tarde no arrozal refletido é tranquila.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月二十日",
+   "title_pt": "(20 de dezembro de 1932)",
+   "jp_anchor": ", 　　　　○,",
+   "pt_anchor": "660. Estando fora do turbilhão do mundo anormal, desejo ter o lazer de compor poemas. (Era Showa 7 — 1932, 20 de dezembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月二十五日",
+   "title_pt": "(25 de dezembro de 1932)",
+   "jp_anchor": "661, すいせんの　めのすんばかりにさんぼん　しろしものなかにみいでしこのあさ",
+   "pt_anchor": "661. Brotos de narciso, de cerca de um sun (≈3 cm), dois ou três, encontrei-os nesta manhã no meio da geada branca. (Era Showa 7 — 1932, 25 de dezembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和七年十二月三十日",
+   "title_pt": "(30 de dezembro de 1932)",
+   "jp_anchor": "662, としせまり　ことしとれどもこころもえず　あたらしきとしまつこととせり",
+   "pt_anchor": "662. O ano se aproxima, embora eu tente fazer as coisas, meu coração não se anima, decidi esperar o ano novo.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年一月一日",
+   "title_pt": "(1 de janeiro de 1933)",
+   "jp_anchor": ", 　　勅題　朝　の　海,",
+   "pt_anchor": "Tema Imperial: O Mar pela Manhã\n\n668. A jovem luz da renovação ilumina a planície do mar; também nesta manhã contemplei o primeiro nascer do sol.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年一月十日",
+   "title_pt": "(10 de janeiro de 1933)",
+   "jp_anchor": ", 新東京を詠む,",
+   "pt_anchor": "Cantando a Nova Tóquio — Ōmori\n\n674. Se constroem degraus de pedra, portões de torre e templos se abrem diante dos olhos, com uma melancolia antiga (Hom",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月十日",
+   "title_pt": "(10 de fevereiro de 1933)",
+   "jp_anchor": ", 　　江戸川,",
+   "pt_anchor": "Edogawa\n\n709. Além dos arrozais, no dique já seco, a ponta de uma vela se move de leve — será o Rio Shiori?",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十日",
+   "title_pt": "(10 de março de 1933)",
+   "jp_anchor": ", 　　荒　川,",
+   "pt_anchor": "Arakawa\n\n722. Pela longa ponte sobre o Arakawa passam rangendo os carros carregados de daikon brancos.\n723. Tentando lembrar do Kozuka-ga-hara daquela época, mas o tempo é muito distante.\n724. Nas encostas e ladeiras de terra vermelha que se destacam, as casas se aglomeram nas redondezas de Nippori.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年一月十五日",
+   "title_pt": "(15 de janeiro de 1933)",
+   "jp_anchor": ", 　　冬　の　夜,",
+   "pt_anchor": "Noite de Inverno\n\n737. Na rua deserta, sem nada que obstrua a visão, a lua fria desenha as fileiras de casas. (Era Showa 8 — 1933, 15 de j",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月四日",
+   "title_pt": "(4 de fevereiro de 1933)",
+   "jp_anchor": ", 　　雪　の　日,",
+   "pt_anchor": "Dia de Neve\n\n738. Um bloco de neve cai com um baque, o grande galho do velho pinheiro treme por um instante.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月四日",
+   "title_pt": "(4 de fevereiro de 1933)",
+   "jp_anchor": ", 　　浅　　春,",
+   "pt_anchor": "Início da Primavera\n\n743. No riacho, há um eco de primavera, calmo e sereno, a terra da margem absorve o sol verdadeiro.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月五日",
+   "title_pt": "(5 de fevereiro de 1933)",
+   "jp_anchor": ", 　　時局と日本,",
+   "pt_anchor": "Situação Mundial e o Japão\n\n750. O fogo do fim do mundo, que queimará o mundo inteiro, agora está prestes a arder crepitando.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月八日",
+   "title_pt": "(8 de fevereiro de 1933)",
+   "jp_anchor": ", 　　春　の　空,",
+   "pt_anchor": "Céu de Primavera\n\n759. Céu de primavera que hesita entre a chuva e a claridade, em vão esperei o raio de sol e o dia se foi.\n760. Sob o céu que se torna perfeitamente claro de um azul celeste, a primavera transborda no grande Musashino.\n761. Deitado na grama, se olho para cima, só existem o céu e eu, o universo, sem o som de nada.\n762. O verde das novas folhas do caquizeiro brilha ao sol, tremendo no céu límpido como uma pedra de amolar.\n763. Ficar em casa é insuportável, o céu de primavera, com uma névoa na medida certa e a brisa suave. (Era Showa 8 — 1933, 8 de fevereiro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年二月十日",
+   "title_pt": "(10 de fevereiro de 1933)",
+   "jp_anchor": ", 　　冬　の　街,",
+   "pt_anchor": "Rua de Inverno\n\n764. Encolhendo o pescoço ao vento que sopra varrendo o grande edifício, entrei no ônibus como se voasse. (Era Showa 8 —",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月一日",
+   "title_pt": "(1 de março de 1933)",
+   "jp_anchor": ", 　　生　　む,",
+   "pt_anchor": "Dar à Luz\n\n765. As dores de parto da terra tornam-se mais rápidas, maiores. (Era Showa 8 — 1933, 1º de março).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月一日",
+   "title_pt": "(1 de março de 1933)",
+   "jp_anchor": "766, こはるびの　あかるきにわにおりんわれ　こはかけよりてせなにつかまる",
+   "pt_anchor": "766. Quando desço ao jardim claro do dia de primavera ameno, a criança corre e se agarra às minhas costas.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月六日",
+   "title_pt": "(6 de março de 1933)",
+   "jp_anchor": ", 　　わ　が　性,",
+   "pt_anchor": "Minha Natureza\n\n769. Evitar especialmente aqueles com quem não me entendo, essa é minha natureza, e às vezes lamento.\n770. Tenho a natureza fraca de querer evitar, à sombra das pessoas, os olhos frios que me perfuram.\n771. Com os amigos ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十日",
+   "title_pt": "(10 de março de 1933)",
+   "jp_anchor": ", 　　インテリ,",
+   "pt_anchor": "Intelectuais\n\n775. Os rostos pálidos dos intelectuais, ora viram para a direita, ora para a esquerda.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十日",
+   "title_pt": "(10 de março de 1933)",
+   "jp_anchor": ", 　　代議政体,",
+   "pt_anchor": "Sistema Representativo\n\n782. Os deputados, como soldados, são bem controlados pelo General Araki.\n783. O fabricante de robôs de Hibiya, Sua Excelência o General do Exército Araki.\n784. Algo como a política partidária, por mais que se procure, não existe. (Era Showa 8 — 1933, 10 de março).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十日",
+   "title_pt": "(10 de março de 1933)",
+   "jp_anchor": ", 　　世　　界,",
+   "pt_anchor": "Mundo\n\n785. Aquele olhar de Hitler e aquele olhar de Mussolini — qual dos dois será?",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十日",
+   "title_pt": "(10 de março de 1933)",
+   "jp_anchor": ", 　　桜　の　頃,",
+   "pt_anchor": "Época das Cerejeiras\n\n787. Sinto saudades de alguém, esta noite lá fora a chuva de primavera cai miudinha e está morno.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十二日",
+   "title_pt": "(12 de março de 1933)",
+   "jp_anchor": ", 　　浅春を惜しむ,",
+   "pt_anchor": "Lamentando o Fim do Início da Primavera\n\n795. Ir procurar as ameixeiras em flor é frio, e passar por elas sem as ver é uma pena, hesito, e hoje também anoitece.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十八日",
+   "title_pt": "(18 de março de 1933)",
+   "jp_anchor": ", 　　庭めぐむ,",
+   "pt_anchor": "O Jardim Floresce\n\n797. A janela redonda que desenha o bambuzal em negro, alegro-me em ver a claridade do meio-dia.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年三月十八日",
+   "title_pt": "(18 de março de 1933)",
+   "jp_anchor": ", 　　世を観る,",
+   "pt_anchor": "Observando o Mundo\n\n803. Algo mais irritante que uma mosca, o ○○ da cidade de Tóquio.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": ", 　　摘　　草,",
+   "pt_anchor": "Colhendo Ervas\n\n806. Lembro-me de repente da tranquilidade daqueles dias em que saía para colher ervas com minha esposa e as crianças. (Er",
+   "notes": "revisao_rigorosa_20260805_batch13: corrigido 妹(imo,\"esposa\" na poesia classica, confirmado por consistencia interna com poema 840 no mesmo livro)->estava \"irma\""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": "807, ひとこうる　なやみをしりてむねのとを　いかしくしめつわれはきにけり",
+   "pt_anchor": "807. Conhecendo a angústia de ansiar por alguém, fechei firmemente a porta do peito e vim até aqui. (Era Showa 8 — 1933,",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": ", 　　雨　の　日,",
+   "pt_anchor": "Dia de Chuva\n\n808. A chuva de maio fumega no céu, parece penetrar no peito através da porta de vidro.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": ", 　　青　　苔,",
+   "pt_anchor": "Musgo Verde\n\n817. ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": "822, ふかぎりを　すいつつあさのみちゆけば　とあるへいうえきんもくせいさく",
+   "pt_anchor": "822. Aspirando o nevoeiro profundo, enquanto caminho pela estrada matinal, em cima de um muro, floresce o osmanto.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十日",
+   "title_pt": "(10 de abril de 1933)",
+   "jp_anchor": ", 　　世　　相,",
+   "pt_anchor": "Aparência do Mundo\n\n827. Ouço friamente, erguendo as sobrancelhas, meu amigo não cessa de lamentar a situação do mundo.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年四月十六日",
+   "title_pt": "(16 de abril de 1933)",
+   "jp_anchor": "831, ちょうひとつ　わがへをすぎぬひらひらと　はなにかくらうまでをたちにつ",
+   "pt_anchor": "831. Uma borboleta passa perto de mim, esvoaçando, até se esconder atrás de uma flor. (Era Showa 8 — 1933, 16 de abril).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月十日",
+   "title_pt": "(10 de maio de 1933)",
+   "jp_anchor": ", 　　快　よ　き,",
+   "pt_anchor": "Sensação Agradável\n\n832. Voltando para casa, tiro rapidamente a camisa encharcada de suor e me volto para as folhas verdes. (Era Showa 8 — 1",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月十日",
+   "title_pt": "(10 de maio de 1933)",
+   "jp_anchor": ", 　　初　　夏,",
+   "pt_anchor": "Início do Verão\n\n833. Do lado de fora da janela redonda, a cerca de shii é verde e viçosa, o vento passa pelo meu quarto.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月十日",
+   "title_pt": "(10 de maio de 1933)",
+   "jp_anchor": ", 　　浴　　後,",
+   "pt_anchor": "Após o Banho\n\n839. Após o banho, com a pele leve, sento-me na varanda, contemplando as folhas verdes, absorto.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月十三日",
+   "title_pt": "(13 de maio de 1933)",
+   "jp_anchor": ", 　　長　　瀞,",
+   "pt_anchor": "Nagatoro\n\n842. O barco chega agora ao remanso onde a ponta verde se arredonda; sem parar, os corvos-marinhos trazem ayu no bico.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和五年五月十六日",
+   "title_pt": "(16 de maio de 1930)",
+   "jp_anchor": ", 　　春　の　夜,",
+   "pt_anchor": "Noite de Primavera\n\n844. Sob as cerejeiras em flor, numa noite de lua enevoada, quem vagueia é aquela pessoa de rosto branco. (Era Showa 5 —",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月十八日",
+   "title_pt": "(18 de maio de 1933)",
+   "jp_anchor": "845, ひのもとに　のみあることをききてより　こころしてみるふじのはなはも",
+   "pt_anchor": "845. Desde que ouvi que só existem no Japão, observo com atenção as flores de glicínia.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月二十日",
+   "title_pt": "(20 de maio de 1933)",
+   "jp_anchor": ", 　　朝　　月,",
+   "pt_anchor": "Lua Matutina\n\n849. As folhas novas do caquizeiro brilham com o orvalho, o ar é límpido; no céu, ainda pálida, resta a lua da manhã.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月二十日",
+   "title_pt": "(20 de maio de 1933)",
+   "jp_anchor": ", 　　夕　　月,",
+   "pt_anchor": "Lua Vespertina\n\n854. Quase não parece a lua; no fim da cidade, um grande círculo cor de laranja espreita.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年五月二十八日",
+   "title_pt": "(28 de maio de 1933)",
+   "jp_anchor": ", 　　ヒットラー,",
+   "pt_anchor": "Hitler\n\n859. Surge, pouco a pouco, no horizonte, um ídolo: Hitler.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十二日",
+   "title_pt": "(12 de junho de 1933)",
+   "jp_anchor": "863, とぎれとぎれ　かえるなくなりさなえだふく　かぜすこしありてゆうづきあわき",
+   "pt_anchor": "863. Intermitentemente, os sapos coaxam; um vento leve sopra sobre os campos de arroz, e a lua vespertina é pálida. (Era",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十六日",
+   "title_pt": "(16 de junho de 1933)",
+   "jp_anchor": ", 　　夏　の　月,",
+   "pt_anchor": "Lua de Verão\n\n864. Caminhando, pisando minha própria sombra, a lua de verão ilumina claramente o caminho ao longo do rio. (Era Showa 8",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十九日",
+   "title_pt": "(19 de junho de 1933)",
+   "jp_anchor": ", 　　夏　の　女,",
+   "pt_anchor": "Mulheres do Verão\n\n865. Na rua iluminada, uma mulher passa com seu yukata elegante; s",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十九日",
+   "title_pt": "(19 de junho de 1933)",
+   "jp_anchor": ", 　　河原撫子,",
+   "pt_anchor": "Cravina-dos-Muros\n\n871. No rio seco, a correnteza se torna fina; admiravelmente, as cravinas-dos-muros desabrocharam.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十九日",
+   "title_pt": "(19 de junho de 1933)",
+   "jp_anchor": ", 　　奥　日　光,",
+   "pt_anchor": "Interior de Nikko\n\n876. Lisa como a superfície de uma pedra de amolar, o lago está límpido; o céu e a floresta têm ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年六月十九日",
+   "title_pt": "(19 de junho de 1933)",
+   "jp_anchor": "882, とうとうと　はくえんたてつふりおつる　たきのしぶきにわがおもぬるる",
+   "pt_anchor": "882. Com um rugido, erguendo fumaça branca, a água cai; meu rosto se molha com os respingos da cachoeira.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月十日",
+   "title_pt": "(10 de julho de 1933)",
+   "jp_anchor": "887, よのつねの　ひとのさだめとあまりにも　へだたりのあるわがみなりけり",
+   "pt_anchor": "887. Meu ser está tão distante do destino das pessoas comuns. (Era Showa 8 — 1933, 10 de julho).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": ", 　　夏　来　る,",
+   "pt_anchor": "Chega o Verão\n\n888. Cartazes convidando para as montanhas e o mar são vistos até mesmo aqui, na estação; tornou-se o início do verão. (Era Showa 8 — 1933, 20 de julho).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": ", 　　朝　　顔,",
+   "pt_anchor": "Glória-da-manhã\n\n889. Diante da glória-da-manhã recém-desabrochada, estou eu; a umidade da névoa toca minha bochecha.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": ", 　　山寺の夏,",
+   "pt_anchor": "Verão no Templo da Montanha\n\n895. A barba branca do velho monge treme; voltado para o jardim do entardecer, ele apenas se mantém em silêncio.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": ", 　　白　　雨,",
+   "pt_anchor": "Chuva de Verão\n\n900. Há sinais de chuva de verão; todas as folhas das árvores sussurram e o vento sacode a janela.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": ", 　　日　盛　り,",
+   "pt_anchor": "Sol Escaldante\n\n906. A rua asfaltada ferve ao sol; apenas a sombra do plátano é fresca, e o movimento de pessoas cessou.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年七月二十日",
+   "title_pt": "(20 de julho de 1933)",
+   "jp_anchor": "911, なんぱはみはらやまへ　こうははしんぺいたいへしににゆく",
+   "pt_anchor": "911. Os fracos vão para o Monte Mihara; os fortes vão para a Shinpeitai (Tropa dos Soldados Divinos) para morrer.",
+   "notes": "revisao_rigorosa_20260805_batch13: 神兵隊 (Shinpeitai, incidente golpista real de jul/1933, confirmado por pesquisa) estava generico \"Tropa Divina\", perdendo a referencia ao nome proprio historico"
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月十日",
+   "title_pt": "(10 de agosto de 1933)",
+   "jp_anchor": "915, きぎのはを　ならしてゆきししらさめの　はやうるわしきにじとなりける",
+   "pt_anchor": "915. A chuva de verão, que fazia as folhas das árvores sussurrarem, logo se transformou num belo arco-íris.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十日",
+   "title_pt": "(20 de agosto de 1933)",
+   "jp_anchor": ", 　　小　春　日,",
+   "pt_anchor": "Pequeno Verão Indiano\n\n918. Mais alto que o muro de nandina, os frutos vermelhos brilham contra o céu azul.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十一日",
+   "title_pt": "(21 de agosto de 1933)",
+   "jp_anchor": ", 　　秋うごく,",
+   "pt_anchor": "O Outono se Move\n\n923. A brisa da tarde, que passa pelas folhas de shii, entra pela janela; a pele após o banho é refrescante.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十一日",
+   "title_pt": "(21 de agosto de 1933)",
+   "jp_anchor": "930, あかときを　けたたましくもひぐらしの　なけばいずらかとをくるおとする",
+   "pt_anchor": "930. Quando as cigarras-da-tarde cantam estridentemente na alvorada, ouve-se o som de alguém abrindo uma porta, como se ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十一日",
+   "title_pt": "(21 de agosto de 1933)",
+   "jp_anchor": "935, ゆうづきの　うすらあかりにみずうてば　にわべのこはぎぬれひかりけり",
+   "pt_anchor": "935. Sob a luz pálida da lua vespertina, ao jogar água, os pequenos hagi perto do jardim se molham e brilham.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十一日",
+   "title_pt": "(21 de agosto de 1933)",
+   "jp_anchor": ", 　　吾　と　人,",
+   "pt_anchor": "Eu e os Outros\n\n941. Encontrei uma pessoa que lamenta o mundo; minha voz, enquanto falo, acaba se elevando.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年八月二十一日",
+   "title_pt": "(21 de agosto de 1933)",
+   "jp_anchor": ", 　　五・一五事件,",
+   "pt_anchor": "Incidente de 15 de Maio\n\n945. Surgiu um bom livro-texto para a classe privilegiada: o registro do julgamento do Incidente de 15 de Maio.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十二日",
+   "title_pt": "(12 de setembro de 1933)",
+   "jp_anchor": "947, こはせみを　とりそこねたらしほちゅうあみ　ふりつつこのまをひたぬいゆくも",
+   "pt_anchor": "947. A criança parece ter errado ao tentar pegar a cigarra; balançando a rede de caçar insetos, ela avança, ziguezaguean",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十二日",
+   "title_pt": "(12 de setembro de 1933)",
+   "jp_anchor": "948, おおいなる　のぞみにいくるわれにして　なおいささかなことをしあんずる",
+   "pt_anchor": "948. Embora eu viva para uma grande esperança, ainda assim me preocupo com pequenas coisas. (Era Showa 8 — 1933, 12 de s",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十六日",
+   "title_pt": "(16 de setembro de 1933)",
+   "jp_anchor": ", 　　秋　　風,",
+   "pt_anchor": "Vento de Outono\n\n949. O vento da noite de outono, que adentra soprando pelo vidro do carro durante o passeio, penetra no corpo. (Era Show",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": "950, たかむらは　かさともいわずさにわべの　あきのまひるのものしずかなる",
+   "pt_anchor": "950. O bambu não diz se é guarda-chuva ou não; no pequeno jardim, a quietude das coisas na tarde de outono.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": ", 　　赤　蜻　蛉,",
+   "pt_anchor": "Libélula Vermelha\n\n958. Ao anoitecer, vejo o bando de libélulas vermelhas voando no céu, da ponta do telhado, erguendo o rosto.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": ", 　　秋　　空,",
+   "pt_anchor": "Céu de Outono\n\n963. A fumaça de assar o sanma (agulhão-do-Japão) vagueia sob os beirais e, no céu límpido, parece ser sugada.",
+   "notes": "revisao_rigorosa_20260805: corrigido poema 965 (estava dividido em 2 nºs), poema 966 (sentido invertido - nuvens SEM sinal de movimento, não 'se movem'), poema 969 (estava ausente por completo do PT), 963 peixe-sabre->sanma (furigana confirma さんま, não たちうお)"
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": ", 　　武蔵野をゆく,",
+   "pt_anchor": "Caminhando por Musashino\n\n970. Embora não seja uma paisagem que mereça menção especial, até mesmo nos arredores de Musashino o outono se faz notar",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": ", 　　五・一五事件から,",
+   "pt_anchor": "Do Incidente de 15 de Maio\n\n975. A sombra solitária da classe privilegiada é triste: o outono de tempos de emergência. (Era Showa 8 — 1933, 18 de se",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年九月十八日",
+   "title_pt": "(18 de setembro de 1933)",
+   "jp_anchor": "976, おどるひっとらー　なぐるひっとらー　けっとばすひっとらー",
+   "pt_anchor": "976. Hitler que dança, Hitler que golpeia, Hitler que chuta. (Era Showa 8 — 1933, 18 de setembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月十日",
+   "title_pt": "(10 de outubro de 1933)",
+   "jp_anchor": ", 　　コスモス,",
+   "pt_anchor": "Cosmos\n\n977. A chuva de outono cai sobre a profusão de flores de cosmos; a tarde no jardim é silenciosa.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月十日",
+   "title_pt": "(10 de outubro de 1933)",
+   "jp_anchor": ", 　　冬　近　し,",
+   "pt_anchor": "O Inverno se Aproxima\n\n983. De madrugada, ao sair da cama, a claridade da janela está ligeiramente fria; hoje também parece ser chuva.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月十六日",
+   "title_pt": "(16 de outubro de 1933)",
+   "jp_anchor": ", 　　秋　　風,",
+   "pt_anchor": "Vento de Outono\n\n990. Açoitado pelo vento de outono, a libélula é levada sobre o campo de milho.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月十八日",
+   "title_pt": "(18 de outubro de 1933)",
+   "jp_anchor": ", 　　武蔵野探秋,",
+   "pt_anchor": "Explorando o Outono em Musashino\n\n993. Quando, raramente, saio e entro em contato com a natureza, meu peito se alegra e meu espírito se ilumina.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月十九日",
+   "title_pt": "(19 de outubro de 1933)",
+   "jp_anchor": ", 　　折にふれて,",
+   "pt_anchor": "Conforme as Ocasiões\n\n1003. Parece que o fim do mundo se aproxima; apenas coisas desagradáveis aumentam, e este ano também se encerra.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十月二十日",
+   "title_pt": "(20 de outubro de 1933)",
+   "jp_anchor": ", 　　非　常　時,",
+   "pt_anchor": "Tempos de Emergência\n\n1008. Os partidos políticos deveriam apenas reconhecer os partidos políticos. E então, a época.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十一月十六日",
+   "title_pt": "(16 de novembro de 1933)",
+   "jp_anchor": ", 　　待　　つ,",
+   "pt_anchor": "Esperar\n\n1011. Esperando a chegada do tempo do céu, eis-me aqui, deitado na cabana em Omori.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十一月十八日",
+   "title_pt": "(18 de novembro de 1933)",
+   "jp_anchor": ", 　　冬　　枯,",
+   "pt_anchor": "Murchidão do Inverno\n\n1013. A lua que espreita a floresta de diversas árvores no inverno seco me acompanha por onde quer que eu vá.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十一月十八日",
+   "title_pt": "(18 de novembro de 1933)",
+   "jp_anchor": ", 　　冬　静　か,",
+   "pt_anchor": "Silêncio de Inverno\n\n1019. O silêncio atinge seu ápice aqui; no jardim do mosteiro ao meio-dia, nada se move.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十一月二十四日",
+   "title_pt": "(24 de novembro de 1933)",
+   "jp_anchor": "1024, いいわけにけんめいなせいとう　はさんまえのさいむしゃのよう",
+   "pt_anchor": "1024. Partidos políticos que se esforçam em dar desculpas, como devedores antes da falência.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十二月二十五日",
+   "title_pt": "(25 de dezembro de 1933)",
+   "jp_anchor": ", 　　白　　鷺,",
+   "pt_anchor": "Garça Branca\n\n1027. O edifício se ergue, negro; a lua de inverno, agora exatamente no zênite, brilha intensamente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和八年十二月二十九日",
+   "title_pt": "(29 de dezembro de 1933)",
+   "jp_anchor": ", 　　日　　本,",
+   "pt_anchor": "Japão\n\n1030. Dizem: \"Reforma fundamental\", \"Isso e aquilo fundamental\", mas na verdade é \"falta de planejamento fundamental\".",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月五日",
+   "title_pt": "(5 de janeiro de 1934)",
+   "jp_anchor": ", 　　初　　春,",
+   "pt_anchor": "Início da Primavera\n\n1035. Saudável, recebo mais um Ano Novo, e sinto uma alegria ainda mais comum.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月五日",
+   "title_pt": "(5 de janeiro de 1934)",
+   "jp_anchor": ", 　　わ　が　家,",
+   "pt_anchor": "Minha Casa\n\n1038. A solidão após a partida dos convidados da reunião: fico por um tempo a contemplar o tatame.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月五日",
+   "title_pt": "(5 de janeiro de 1934)",
+   "jp_anchor": ", 　　冬　　晴,",
+   "pt_anchor": "Céu Limpo de Inverno\n\n1043. Na porta de papel renovada e clara, um único galho de pinheiro se reflete, silenciosamente.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月十六日",
+   "title_pt": "(16 de janeiro de 1934)",
+   "jp_anchor": ", 　　追　羽　子,",
+   "pt_anchor": "Jogo de Peteca\n\n1049. Os tempos de emergência se aprofundam, e a primavera chega, mas não tenho ânimo para jogar peteca. (Era Showa 9 — ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月二十日",
+   "title_pt": "(20 de janeiro de 1934)",
+   "jp_anchor": ", 　　水　　仙,",
+   "pt_anchor": "Narciso\n\n1050. Seria uma pintura de Korin? A neve branca que cai e as flores de narciso que brilham com cores vibrantes. (Era Sho",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年一月二十九日",
+   "title_pt": "(29 de janeiro de 1934)",
+   "jp_anchor": ", 　　年の始め,",
+   "pt_anchor": "Início do Ano\n\n1051. Sinto algo luminoso neste ano; passo o início da primavera com alegria e entusiasmo. (Era Showa 9 — 1934, 29 de ja",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年二月六日",
+   "title_pt": "(6 de fevereiro de 1934)",
+   "jp_anchor": "1052, あさざめの　ふすまのぬくきふれごこち　したしまれぬるはるとなりけり",
+   "pt_anchor": "1052. Ao despertar, a sensação do acolchoado quente é agradável; tornou-se uma primavera que nos faz sentir aconchego.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年二月六日",
+   "title_pt": "(6 de fevereiro de 1934)",
+   "jp_anchor": ", 　　対　　座,",
+   "pt_anchor": "Diante do Outro\n\n1067. Sempre que rio, as lágrimas vêm; esse hábito, ainda assim, os anos se acumularam.\n1068. Viveria o suficiente? Sendo eu como sou agora, sinto o desejo de adentrar as montanhas. (Era Showa 9 — 1934, 6 de",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年二月六日",
+   "title_pt": "(6 de fevereiro de 1934)",
+   "jp_anchor": ", 　　時　　局,",
+   "pt_anchor": "A Situação do Momento\n\n1069. Construam uma escola que eduque os diretores de escola.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年二月十六日",
+   "title_pt": "(16 de fevereiro de 1934)",
+   "jp_anchor": "1074, ふとみたる　ささむらかげにうごくもの　うぐいすならめはつねきかばや",
+   "pt_anchor": "1074. O que vi se mover de repente na sombra do bambuzal; se for um rouxinol, queria ouvir seu primeiro canto. (Era Show",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年二月十六日",
+   "title_pt": "(16 de fevereiro de 1934)",
+   "jp_anchor": ", 　　世　紀　末,",
+   "pt_anchor": "Fim de Século\n\n1075. Tornou-se o mundo do fim dos tempos; em meus olhos, que veem friamente, reflete-se vívido.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年三月十六日",
+   "title_pt": "(16 de março de 1934)",
+   "jp_anchor": "1077, ようりゅうの　わかばのにおいすがしみつ　ゆくかたがわはおだのつづける",
+   "pt_anchor": "1077. O cheiro das folhas novas do salgueiro é refrescante; de um lado, o caminho segue por campos de arroz. (Era Showa ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年三月二日",
+   "title_pt": "(2 de março de 1934)",
+   "jp_anchor": ", 　　夜　　桜,",
+   "pt_anchor": "Cerejeiras Noturnas\n\n1078. Sob o luar, deslumbrado pelas flores, nesta noite, com saudade, vagueio com minha esposa.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年三月六日",
+   "title_pt": "(6 de março de 1934)",
+   "jp_anchor": ", 　　春　　閑,",
+   "pt_anchor": "Calma Primaveril\n\n1086. As crianças saíram para colher plantas; nenhum som. A tarde tranquila, o silêncio do quarto.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年三月六日",
+   "title_pt": "(6 de março de 1934)",
+   "jp_anchor": "1092, わがにわに　おりおりはとのまいきぬも　ひやしんすさくはなのあたりに",
+   "pt_anchor": "1092. Em meu jardim, de vez em quando, uma pomba vem dançar perto das flores de jacinto que desabrocham.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年三月十六日",
+   "title_pt": "(16 de março de 1934)",
+   "jp_anchor": ", 　　春　の　曙,",
+   "pt_anchor": "Alvorada Primaveril\n\n1095. No shoji que clareia suavemente, a sombra se projeta; num galho que brota, um passarinho se move. (Era Showa 9 — 1934, 16 de março).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年四月十六日",
+   "title_pt": "(16 de abril de 1934)",
+   "jp_anchor": ", 　　思　　ふ,",
+   "pt_anchor": "Pensando\n\n1096. A luz da aurora enche meu peito; convida lágrimas que não sei de onde vêm.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年四月十六日",
+   "title_pt": "(16 de abril de 1934)",
+   "jp_anchor": ", 　　昭和九年四月,",
+   "pt_anchor": "Abril de 1934\n\n1101. O dia de primavera é lento; o gabinete também prolonga sua vida.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年四月十六日",
+   "title_pt": "(16 de abril de 1934)",
+   "jp_anchor": ", 　　春の山路,",
+   "pt_anchor": "Caminho da Montanha na Primavera\n\n1107. O caminho da montanha na época em que os brotos brotam é agradável; alegre, sigo sozinho.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年五月十日",
+   "title_pt": "(10 de maio de 1934)",
+   "jp_anchor": ", 　　温　　泉,",
+   "pt_anchor": "Fonte Termal\n\n1110. Na névoa da fonte, a luz é tênue; na fonte termal da montanha, na quietude da noite, sozinho, estou na água. (Era ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年五月十六日",
+   "title_pt": "(16 de maio de 1934)",
+   "jp_anchor": ", 　　五月の街,",
+   "pt_anchor": "Cidade de Maio\n\n1111. Que claridade, cidade de maio! A luz das folhas novas brilha nas janelas dos automóveis. (Era Showa 9 — 1934, 16 d",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年五月十六日",
+   "title_pt": "(16 de maio de 1934)",
+   "jp_anchor": ", 　　こ　の　頃,",
+   "pt_anchor": "Nesta Época\n\n1112. Sinto como se quisesse perdoar tudo; o céu da manhã de maio é tão límpido.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年六月一日",
+   "title_pt": "(1 de junho de 1934)",
+   "jp_anchor": "1118, ろくがつの　そらににじめるろくしょうの　いろはあおばのふかきかさなり",
+   "pt_anchor": "1118. A cor do verdete que se espalha no céu de junho é o profundo entrelaçar das folhas verdes.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年六月十日",
+   "title_pt": "(10 de junho de 1934)",
+   "jp_anchor": ", 　　青　　葉,",
+   "pt_anchor": "Folhas Verdes\n\n1124. Raramente, ao sair, a visão penetra nos olhos; a cor profunda das folhas verdes e novas. (Era Showa 9 — 1934, 10 d",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年六月十日",
+   "title_pt": "(10 de junho de 1934)",
+   "jp_anchor": "1125, ひとのため　つくすにさえもかねのこと　こころづかいすよこそかなしき",
+   "pt_anchor": "1125. Mesmo para servir aos outros, preocupar-se com dinheiro; que mundo triste! (Era Showa 9 — 1934, 10 de junho).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年七月十日",
+   "title_pt": "(10 de julho de 1934)",
+   "jp_anchor": ", 　　釣　　魚,",
+   "pt_anchor": "Pescaria\n\n1126. Enchendo o peito com o ar do mar, o dia todo, pesquei gobis no largo de Odaiba. (Era Showa 9 — 1934, 10 de ju",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年七月二十三日",
+   "title_pt": "(23 de julho de 1934)",
+   "jp_anchor": "1127, ものをこわし　ここちよしとうひとのはなし　そのひとのこころつかめざるわれ",
+   "pt_anchor": "1127. Ouvir alguém dizer que é agradável quebrar coisas; eu, que não consigo entender o coração dessa pessoa.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年八月十日",
+   "title_pt": "(10 de agosto de 1934)",
+   "jp_anchor": "1137, いささかの　ことはじむればきもたまの　ちいさきひとびとでんぐりかえりし",
+   "pt_anchor": "1137. Quando algo pequeno começa, as pessoas de coragem diminuta caem de ponta-cabeça. (Era Showa 9 — 1934, 10 de agosto",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年八月十六日",
+   "title_pt": "(16 de agosto de 1934)",
+   "jp_anchor": ", 　　縁　　日,",
+   "pt_anchor": "Feira\n\n1138. Deixando para trás a voz de um mendigo que diz algo, misturo-me às luzes da feira. (Não incluído na coletânea comp",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年九月十日",
+   "title_pt": "(10 de setembro de 1934)",
+   "jp_anchor": ", 　　秋　近　し,",
+   "pt_anchor": "Aproxima-se o Outono\n\n1139. O outono se aproxima; o coração que quer trabalhar começa a brotar com ímpeto. (Era Showa 9 — 1934, 10 de setembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年九月十日",
+   "title_pt": "(10 de setembro de 1934)",
+   "jp_anchor": ", 　　天　　国,",
+   "pt_anchor": "Paraíso\n\n1140. Se não conhecesse o Caminho do Paraíso, eu agora estaria chorando e desabando diante da amargura do mundo. (Era Sh",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年九月十六日",
+   "title_pt": "(16 de setembro de 1934)",
+   "jp_anchor": ", 　　公園の秋,",
+   "pt_anchor": "Outono no Parque\n\n1141. Como se não soubessem do outono no parque, a maioria das pessoas se reúne para praticar esportes. (Era Showa 9 — 1",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十月十日",
+   "title_pt": "(10 de outubro de 1934)",
+   "jp_anchor": ", 　　秋　　陽,",
+   "pt_anchor": "Sol de Outono\n\n1142. O vaso de crisântemos na varanda parece frio; o sol de outono incide, tênue e fraco. (Era Showa 9 — 1934, 10 de ou",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十月十六日",
+   "title_pt": "(16 de outubro de 1934)",
+   "jp_anchor": ", 　　世　　外,",
+   "pt_anchor": "Fora do Mundo\n\n1143. Todas as coisas detestáveis do mundo estão a milhares de léguas de distância; pintei Kannon.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十月二十六日",
+   "title_pt": "(26 de outubro de 1934)",
+   "jp_anchor": ", 　　秋たけぬ,",
+   "pt_anchor": "O Outono Avança\n\n1145. Deitado, olhando para o teto, outubro; o gafanhoto na placa é verde.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十月二十六日",
+   "title_pt": "(26 de outubro de 1934)",
+   "jp_anchor": ", 　　吾を観る,",
+   "pt_anchor": "Contemplando a Mim Mesmo\n\n1150. Há alegrias maiores que as dos outros, há tristezas maiores que as dos outros; será este meu destino?",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十一月十日",
+   "title_pt": "(10 de novembro de 1934)",
+   "jp_anchor": ", 　　夕　　鴉,",
+   "pt_anchor": "Corvos do Crepúsculo\n\n1158. Na luz do crepúsculo, em bandos, os corvos passam; o dia se encerra. (Era Showa 9 — 1934, 10 de novembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十一月十日",
+   "title_pt": "(10 de novembro de 1934)",
+   "jp_anchor": "1159, わがために　こころくだきつつくすひとを　おもうこころのあかるさにおり",
+   "pt_anchor": "1159. Estou na claridade do coração que pensa naqueles que, com todo o empenho, me servem. (Era Showa 9 — 1934, 10 de novembro).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十二月十日",
+   "title_pt": "(10 de dezembro de 1934)",
+   "jp_anchor": ", 　　野　　分,",
+   "pt_anchor": "Vendaval de Outono\n\n1160. Os corvos em bando, soprados e soprados pelo vento de outono, desapareceram no céu da tarde. (Era Showa 9 — 1934, ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十二月十六日",
+   "title_pt": "(16 de dezembro de 1934)",
+   "jp_anchor": ", 　　寒　　夜,",
+   "pt_anchor": "Noite Fria\n\n1161. A carta que escrevo ainda não termina; a noite avança e o calor do braseiro está prestes a acabar. (Era Showa 9 — ",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和九年十二月十六日",
+   "title_pt": "(16 de dezembro de 1934)",
+   "jp_anchor": "1162, くうそうと　おもいしのぞみじっそうと　あらわるるゆめかかえひさなり",
+   "pt_anchor": "1162. O desejo que pensei ser fantasia, eis que se manifesta como verdadeira forma; há muito que abraço este sonho. (Era",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年一月十日",
+   "title_pt": "(10 de janeiro de 1935)",
+   "jp_anchor": ", 　　春未だし,",
+   "pt_anchor": "Primavera Ainda Não Chegou\n\n1163. O salgueiro seco de inverno não se agita; na margem do fosso, apenas automóveis vão e vêm em vão.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年一月十日",
+   "title_pt": "(10 de janeiro de 1935)",
+   "jp_anchor": "1169, うつりゆくの　なんぞはやきやわがさだめ　ひとつきたらずにかくもなりしか",
+   "pt_anchor": "1169. Como tudo muda depressa! Meu destino — em menos de um mês, chegou a ser assim.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年一月十日",
+   "title_pt": "(10 de janeiro de 1935)",
+   "jp_anchor": ", 　　人　の　道,",
+   "pt_anchor": "Caminho do Homem\n\n1176. Se se pisa o Caminho do Homem, é fácil; se não é fácil, é porque não se pisa o Caminho do Homem. (Era Showa 10 — 1",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年二月十日",
+   "title_pt": "(10 de fevereiro de 1935)",
+   "jp_anchor": ", 　　冬　の　月,",
+   "pt_anchor": "Lua de Inverno\n\n1177. No fundo do grande céu, a lua de inverno brilha nítida; vários fios elétricos brilham com a geada.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年二月十日",
+   "title_pt": "(10 de fevereiro de 1935)",
+   "jp_anchor": "1183, かたはりて　ものいうくせのかれなりき　そのかれいまはおみなのごとかり",
+   "pt_anchor": "1183. Ele tinha o hábito de falar com os ombros tensos; agora, aquele homem é como uma mulher.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年二月十八日",
+   "title_pt": "(18 de fevereiro de 1935)",
+   "jp_anchor": "1185, おみななれ　いかにけはいをこらすとて　さみしからずやほほえみなくば",
+   "pt_anchor": "1185. Mulher, por mais que te embelezes com maquiagem, não te sentirás solitária se não tiveres um sorriso?",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年三月十一日",
+   "title_pt": "(11 de março de 1935)",
+   "jp_anchor": ", 　　雨　　後,",
+   "pt_anchor": "Depois da Chuva\n\n1189. O verde renovado, realçado pela chuva, brilha molhado nas encostas do vale.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年三月十六日",
+   "title_pt": "(16 de março de 1935)",
+   "jp_anchor": ", 　　春　の　水,",
+   "pt_anchor": "Água de Primavera\n\n1197. O pescador, fitando a bóia, não se move; o pequeno rio de primavera, como se nem fluísse. (Era Showa 10 — 1935, 16",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年三月二十五日",
+   "title_pt": "(25 de março de 1935)",
+   "jp_anchor": ", 　　光　　明,",
+   "pt_anchor": "Luz Radiante\n\n1198. O espírito da palavra de quem habita na luz radiante tem uma ressonância muito agradável. (Era Showa 10 — 1935, 25",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十日",
+   "title_pt": "(10 de abril de 1935)",
+   "jp_anchor": ", 　　身辺詠（一）,",
+   "pt_anchor": "Poemas do Cotidiano (I)\n\n1199. Cada pensamento se move adiante; nessa alegria, eu vivo.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十日",
+   "title_pt": "(10 de abril de 1935)",
+   "jp_anchor": "1207, つまあるが　おかしとおもいぬいつもかも　せんにんぜんととりすますかれ",
+   "pt_anchor": "1207. Acho graça, sempre, naquele homem que, mesmo tendo esposa, se faz de imortal.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十日",
+   "title_pt": "(10 de abril de 1935)",
+   "jp_anchor": ", 　　新　　居,",
+   "pt_anchor": "Nova Residência\n\n1212. Recém-mudado, embora o quarto ainda não me seja familiar, sinto prazer em examiná-lo por toda parte.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十二日",
+   "title_pt": "(12 de abril de 1935)",
+   "jp_anchor": "1217, ささやかな　いえをかりしもえにうたに　いそしまんとてきょううつりける",
+   "pt_anchor": "1217. Aluguei uma casa modesta; para me dedicar à pintura e à poesia, mudei-me hoje. (Era Showa 10 — 1935, 12 de abril).",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十二日",
+   "title_pt": "(12 de abril de 1935)",
+   "jp_anchor": ", 　　新　　芽,",
+   "pt_anchor": "Novos Brotos\n\n1218. Os novos brotos de todas as árvores, molhados de orvalho, brilham; como é revigorante o passeio matinal! (Era Show",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年四月十六日",
+   "title_pt": "(16 de abril de 1935)",
+   "jp_anchor": ", 　　春　の　陽,",
+   "pt_anchor": "Sol de Primavera\n\n1219. No fundo da névoa arroxeada, a montanha de cerejeiras, recebendo o sol opaco, permanece imóvel. (Era Showa 10 — 19",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年六月十五日",
+   "title_pt": "(15 de junho de 1935)",
+   "jp_anchor": ", 　　六月の空,",
+   "pt_anchor": "Céu de Junho\n\n1220. No terraço da loja de departamentos, ao erguer os olhos para o céu de junho, a brisa é refrescante.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年六月十五日",
+   "title_pt": "(15 de junho de 1935)",
+   "jp_anchor": ", 　　身辺詠（二）,",
+   "pt_anchor": "Poemas do Cotidiano (II)\n\n1225. O dia inteiro, um único cartão-postal rompeu não sei que inquietação do coração.",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和十年七月十八日",
+   "title_pt": "(18 de julho de 1935)",
+   "jp_anchor": ", 　　玉　　川,",
+   "pt_anchor": "Rio Tama\n\n1231. A corrente do Rio Tama é branca; as colinas de verde novo, infinitas, unem-se ao céu.",
+   "notes": ""
+  },
+  {
+   "kind": "tail",
+   "title_jp": "末尾",
+   "title_pt": "Encerramento",
+   "jp_anchor": ", 　『山と水』　全一二三九首収録　,",
+   "pt_anchor": "\"Montanhas e Águas\" — Total de 1239 poemas registrados.",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

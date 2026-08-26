@@ -1,0 +1,26 @@
+{
+ "filename": "19500228 - Gokōwa-roku nº 17.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 2→1. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 2,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [
+  "line_scan: monolith_after_split"
+ ],
+ "articles": [
+  {
+   "kind": "monolith",
+   "title_jp": "御光話録17号",
+   "title_pt": "Gokōwa-roku nº 17",
+   "jp_anchor": "『御光話録』17号、昭和25(1950)年2月28日発行",
+   "pt_anchor": "Interlocutor: Ouvi dizer que a origem do costume de celebrar o Ano Novo comendo zoni está relacionada",
+   "notes": "",
+   "pt_prefix": "御光話録17号"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

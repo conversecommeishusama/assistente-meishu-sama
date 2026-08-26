@@ -1,0 +1,123 @@
+{
+  "filename": "19530915-御垂示録24号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 247 linhas / PT reestruturado de 63 para 95 linhas de trabalho, sem alteração de conteúdo semântico — apenas segmentação). Volume com 2 artigos no spec (profile ochishiji_roku): Prefácio + sessão única '[1º de setembro]'. Todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, do início ao fim.",
+  "pre_existing_context": "Bug já diagnosticado em auditoria anterior (mesma sessão, mesmo dia, ver GOSHINSHO.md): irmão exato do bug corrigido em 御垂示録4号. Um parágrafo gigante único (23556 caracteres, antiga linha 25 do ficheiro de trabalho) continha, sem quebra de turno, quase todo o conteúdo do artigo '[1º de setembro]' (do início até a pergunta sobre deformidades físicas), e sua cauda final duplicava — de forma truncada — conteúdo que já existia, completo e corretamente segmentado por turno, logo em seguida no ficheiro (antigas linhas 27-32).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha e a reestruturação de segmentação.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 2,
+    "items_escalated_to_pendencias": 0
+  },
+  "diagnostico_bug_paragrafo_gigante": {
+    "localizacao_original": "Antiga linha 25 do ficheiro de trabalho PT (23556 caracteres, um único bloco de texto corrido cobrindo desde 'Hoje não preparei nenhum assunto para falar' até o corte abrupto em 'Isso, afinal, sou eu no mundo').",
+    "metodo_de_verificacao": "Extração programática do parágrafo gigante e comparação por substring exata contra o conteúdo das antigas linhas 27-32 (já corretamente segmentadas por turno). Confirmado que a cauda do parágrafo gigante (a partir da pergunta 'Qual é a relação da alma com as deformidades físicas?', JP linha 164) sobrepõe integralmente o conteúdo das linhas 27-32 (JP linhas 172-182), mas de forma truncada/inacabada, cortando no meio da frase final ('sou eu no mundo' em vez de completar 'só eu compreendo isso').",
+    "conteudo_unico_recuperado": "Duas perguntas e respostas que estavam PRESENTES no parágrafo gigante mas AUSENTES nas linhas 27-32 (porque estas começavam já truncadas, com reticências, no meio da terceira pergunta da sequência): (1) 'Qual é a relação da alma com as deformidades físicas?' (JP linha 164) e (2) 'Quando se vai para o mundo espiritual, os três espíritos protetores se separam, em princípio?' (JP linha 168). Nenhum destes dois pares P&R existia em nenhum outro lugar do ficheiro — foram preservados e transformados em turnos próprios.",
+    "resolucao": "O parágrafo gigante foi desmembrado programaticamente em turnos individuais de pergunta/resposta (34 linhas), alinhados um a um contra o JP (linhas 28-168), verificando por comparação de texto exata (ignorando apenas espaços) que nenhuma palavra foi perdida ou alterada no processo — só a formatação (quebras de linha) mudou. A cauda duplicada e truncada (a partir da pergunta sobre deformidades, JP linha 172, já presente de forma completa nas antigas linhas 27-32) foi removida. A pergunta imediatamente seguinte no ficheiro (antiga linha 27) estava ela própria truncada com reticências ('...o espírito protetor guardião e o espírito protetor secundário também podem se apossar de alguém?'); foi substituída pelo texto completo e mais fiel ao JP, recuperado do próprio parágrafo gigante antes do corte ('Nesse caso, no caso de deformidades, pode acontecer de o mesmo espírito protetor guardião e espírito protetor secundário anteriores se apossarem novamente?').",
+    "verificacao_zero_perda": "Reconstrução programática: concatenação de todas as 34 linhas novas, normalizada (espaços colapsados, aspas retas), é IDÊNTICA caractere a caractere à antiga linha 25 completa até o ponto de corte escolhido (22139 caracteres em ambos os lados). Nenhuma palavra foi acrescentada, removida ou alterada — apenas reorganizada em turnos.",
+    "confianca": "alta"
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "Antiga linha 25 (parágrafo gigante) → novas linhas 25-58 do ficheiro de trabalho",
+      "problema": "Bug de 'monólito residual' (mesma classe dos 6 livros corrigidos na Fase Inicial e do 御垂示録4号): dezenas de turnos de pergunta/resposta (JP linhas 28-168, cobrindo o testemunho do acidente com serra, agricultura natural, mordida de cão raivoso, discurso sobre medicina/Shokusanjin, Iugoslávia/Hokkaido, memória, alma/nervos, instinto, talento especial, deformidades físicas) estavam todos amassados num único parágrafo corrido, sem quebra por turno, violando os pontos 1 (subdivisão) e 6 (paragrafação 1:1) do checklist. A cauda deste parágrafo duplicava (de forma truncada) conteúdo que já existia correto mais adiante no ficheiro.",
+      "correcao": "Desmembrado em 34 linhas, cada pergunta do Interlocutor e cada resposta de Meishu-Sama em sua própria linha, no mesmo formato usado no resto do ficheiro. Citações e aforismos embutidos dentro das respostas (títulos de obras como 'O Feudalismo da Medicina', 'O Livro da Revolução Médica', provérbios como 'o sapo no poço não conhece o grande oceano', poemas de Shokusanjin, falas citadas como 'fulano disse isso') foram mantidos embutidos na resposta correspondente (não são turnos de diálogo reais, são discurso direto citado dentro da fala de Meishu-Sama) — verificado contra a estrutura do JP, que também os apresenta como parte contínua do mesmo parágrafo do orador. Duas quebras de parágrafo adicionais foram inseridas dentro do antigo bloco monólogo (JP parágrafos 91→92 e 92→93, sobre medicina/feudalismo e Shokusanjin) para melhorar a correspondência 1:1 com os parágrafos do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "Antiga linha 27 (nova linha 59)",
+      "problema": "Pergunta do Interlocutor começava truncada com reticências no início: '...o espírito protetor guardião e o espírito protetor secundário também podem se apossar de alguém?' — sinal de que o texto tinha sido cortado no meio de uma frase (provavelmente remanescente do processo que gerou o parágrafo gigante duplicado).",
+      "correcao": "Substituída pela versão completa e mais fiel ao JP ('そういたしますと、奇形の場合には、また前の正守護神、副守護神が憑く場合もあるのでございましょうか'), recuperada do parágrafo gigante antes de este ser removido: 'Nesse caso, no caso de deformidades, pode acontecer de o mesmo espírito protetor guardião e espírito protetor secundário anteriores se apossarem novamente?'",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + cabeçalho de publicação",
+      "jp_linhas": "20-24",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão '[1º de setembro]': intro + testemunho do acidente de serra + agricultura natural + mordida de cão + Gifu/Inou + discurso medicina/Shokusanjin + Iugoslávia/Hokkaido + clima/purificação + nervos/memória + alma/mente + razão/emoção + instinto + espíritos protetores + talento especial + deformidades físicas + separação no mundo espiritual",
+      "jp_linhas": "28-168",
+      "decisao": "corrigido - bug de monólito residual (correção 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Continuação: deformidades (repetição corrigida) + Inferno + responsabilidade solidária + iluminação/Acharya",
+      "jp_linhas": "172-182",
+      "decisao": "ok, com correção pontual da pergunta truncada (correção 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Musashi, eliminar pensamentos impuros/jardineiro, cosméticos com chumbo, Enoken, suor no palco",
+      "jp_linhas": "185-208",
+      "decisao": "ok, sem duplicação nem truncamento",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Nomes/traços de caracteres, harmonia yin-yang, kotodama, maré baixa/alta, hora da morte",
+      "jp_linhas": "211-234",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Destino/sina, ocupação, felicidade (fecho do volume)",
+      "jp_linhas": "237-247",
+      "decisao": "ok",
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_padrao_repetido": "Verificado o ficheiro inteiro (95 linhas após a correção) em busca do mesmo padrão de 'parágrafo gigante'/monólito residual: nenhuma outra linha excede ~4000 caracteres (as maiores restantes, linhas 64/68/90, são respostas longas mas legítimas de um único turno de Meishu-Sama, sem sinal de sobreposição ou duplicação de conteúdo de outro trecho do ficheiro). Nenhuma outra ocorrência do bug foi encontrada neste arquivo.",
+  "pendencias_abertas": [],
+  "notas_menores_nao_bloqueantes": [
+    "A junção entre a resposta ao testemunho de Gifu/Hirokawa (JP linha 88) e o início do discurso sobre 'medicina feudal' (JP linha 91) permanece num único parágrafo PT (nova linha 39), embora o JP tenha uma quebra de parágrafo ali. Não é erro de conteúdo (nenhuma palavra falta), apenas uma imperfeição leve de paragrafação 1:1; não bloqueante e não registrada em PENDENCIAS_REVISAO.json por ser de baixíssimo risco editorial."
+  ],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmado desmembramento e correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "reviewer": "agente (delegação autorizada, gokowa-rotulagem-a4b-jp.mdc adaptado a Gosuiji-roku)",
+    "review_date": "2026-07-08",
+    "metodo": "Etapa A: leitura linha a linha de todo o JP (247 linhas), construindo mapa completo de turnos. Etapa B: contagem e cruzamento contra o PT (já reestruturado turno-a-turno pela auditoria anterior de 2026-07-07). Etapa C: aplicação dos rótulos 'Interlocutor:'/'Meishu-Sama:' preservando literalmente o texto existente, sem reordenar.",
+    "mapa_jp": {
+      "linhas_com_aspas_「」": 53,
+      "turnos_reais_interlocutor": 49,
+      "falsos_positivos_excluidos": "4 ocorrências de「」 em JP linhas 91, 92, 93 e 225 são citações de títulos/palavras dentro do discurso do próprio Meishu-Sama (ex.: 「医学封建」, 「医学革命の書」, 「アイウエオ」, 「オカダ」, 「モキチ」) — não são turnos de diálogo do interlocutor. Confirmado por leitura de contexto: nenhuma dessas linhas inicia com marcador de pergunta e todas continuam a mesma voz narrativa/monóloga.",
+      "turnos_meishu_sama": 54,
+      "explicacao_54_vs_49": "54 parágrafos de Meishu-Sama para 49 perguntas porque há 2 sequências de parágrafos consecutivos do próprio Meishu-Sama sem nova pergunta do interlocutor entre eles: (1) JP parágrafos 88→91→92→93 (resposta ao caso de Gifu, seguida de três parágrafos de monólogo sobre medicina/feudalismo/Shokusanjin, sem pergunta nova) e (2) JP parágrafos 120→121 (resposta sobre memória, seguida de continuação sobre o Marquês Okuma, sem pergunta nova)."
+    },
+    "cruzamento_pt": {
+      "estado_anterior": "PT já vinha reestruturado turno-a-turno pela auditoria de 2026-07-07 (bug de monólito residual corrigido), mas ainda sem nenhum rótulo de falante — todas as linhas eram texto corrido, algumas ainda mesclando 2-3 parágrafos JP numa única linha PT.",
+      "turnos_faltando": "Nenhum turno ausente encontrado — os 49 turnos de Interlocutor e os 54 parágrafos de Meishu-Sama do mapa JP têm correspondência 1:1 no PT, na mesma ordem, sem perda de conteúdo (verificado por comparação programática do texto normalizado antes/depois: idêntico caractere a caractere, ignorando apenas espaços)."
+    },
+    "correcoes_de_formatacao_aplicadas_durante_rotulagem": [
+      "Separado o cabeçalho de sessão '[1º de setembro]' (linha 25 original) do parágrafo de abertura de Meishu-Sama, que estava na mesma linha.",
+      "Dividida a antiga linha 39 (mesclava resposta de Gifu + monólogo sobre medicina, JP parágrafos 88+91) em dois parágrafos Meishu-Sama separados, no ponto 'Não há jeito enquanto não rompermos com essa superstição.' — nota que a auditoria de 2026-07-07 já havia sinalizado essa junção como imperfeição não bloqueante; corrigida agora como parte da rotulagem.",
+      "Dividida a antiga linha 47 (mesclava resposta sobre memória + anedota do Marquês Okuma, JP parágrafos 120+121) em dois parágrafos Meishu-Sama separados, no ponto 'pode ser problemático.'"
+    ],
+    "contagem_final_no_arquivo": {
+      "Interlocutor": 49,
+      "Meishu-Sama": 54,
+      "total_linhas_corpo": 103
+    },
+    "verificacao_zero_perda": "Reconstrução programática: concatenação de todo o texto do PT (ignorando os rótulos 'Interlocutor:'/'Meishu-Sama:' e colapsando espaços) antes e depois da rotulagem é IDÊNTICA caractere a caractere (39122 caracteres em ambos os lados). Nenhuma palavra foi acrescentada, removida ou alterada — apenas rotulada e, nos dois pontos acima, subdividida em parágrafos adicionais sem alterar o texto.",
+    "pendencias_abertas": [],
+    "nota": "approved do spec NÃO foi alterado por esta rotulagem, conforme instrução."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Releitura completa independente linha a linha (JP 247 linhas / PT 129 linhas) do zero, sessão única [1º de setembro], focada em fidelidade semântica + glossário + metadados.",
+    "achados_e_correcoes": "Nenhuma correção necessária. Releitura completa confirma fidelidade do PT ao JP em todos os trechos: caso do braço amputado/panarício, agricultura natural (espaçamento, Gifu/Inou-san, produção nacional/Hirokawa Kozen), 'O Feudalismo da Medicina', anedotas de Sorori Shinzaemon/Shokusanjin, Iugoslávia/Itália/Hokkaido, ação nervosa/espírito protetor secundário, memória (Conde Ōkuma), alma/corpo/nervos, instinto, deformidades físicas e lei do espírito primordial, sina (unmei) vs destino (shukumei), nomes e traços/espírito da palavra (Okada/Mokichi), maré e nascimento/morte, Miyamoto Musashi/monge Takuan, intoxicação por chumbo em cosméticos/Enoken. Nomes próprios (Tamaki Muramoto, Kōzen Hirokawa) e números (60/63 milhões de koku) conferidos sem distorção. Termos Johrei, espírito protetor primordial/guardião/secundário (honshugoshin/shōshugoshin/fukushugoshin) conferidos contra glossario_traducao.json — conformes. Sem CJK residual.",
+    "correcoes_reais_aplicadas": 0,
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — nenhuma nova correção necessária nesta passada."
+  }
+}

@@ -1,0 +1,139 @@
+{
+ "filename": "19500613 - Gokōwa-roku nº 19.txt",
+ "profile": "gokowa_roku_qa",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Reescrita 2026-07-15: sessão 四月二十八〔十八〕日 (18 de abril) estava ausente da spec (13→14 artigos); pt_anchor recalculado por cabeçalho de data em todos os artigos.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 14,
+ "split_method": "line_gokowa_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御光話録』19号、昭和25(1950)年6月13日発行",
+   "pt_anchor": "Gokōwa-roku nº 19",
+   "notes": "",
+   "pt_prefix": "序文"
+  },
+  {
+   "kind": "session",
+   "title_jp": "昭和二十五年二月十八日",
+   "title_pt": "18 de fevereiro de Showa 25 (1950)",
+   "jp_anchor": "昭和二十五年二月十八日\n\nInterlocutor: ――四年に一度あるという日食が今年は三月と十月に二度あるとのことですが、天体の動きが人間と密接な関係があるものと",
+   "pt_anchor": "18 de fevereiro de Showa 25 (1950)\n\nInterlocutor: Dizem que este ano haverá dois eclipses solares, um em m",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十八日",
+   "title_pt": "28 de fevereiro",
+   "jp_anchor": "二月二十八日\n\nInterlocutor: ――私は二十七年間鉄道に勤務しておりましたが、昨年七月家族全部が入信させていただきました。ところが、本月一二日妻",
+   "pt_anchor": "28 de fevereiro\n\nInterlocutor: Trabalhei na ferrovia por vinte e sete anos, mas em julh",
+   "notes": "",
+   "pt_prefix": "28 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月三日",
+   "title_pt": "3 de março",
+   "jp_anchor": "三月三日\n\nInterlocutor: ――医学では絶対不治とされている心臓弁膜症の原因および浄霊箇所について御教示ください。",
+   "pt_anchor": "3 de março\n\nInterlocutor: Por favor, ensine-nos a causa da doença valvar cardíaca,",
+   "notes": "",
+   "pt_prefix": "3 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月八日",
+   "title_pt": "8 de março",
+   "jp_anchor": "三月八日\n\nInterlocutor: ――数多くの聖者の中、阿弥陀如来だけは御事蹟がないようですが、これはなぜでしょうか。",
+   "pt_anchor": "8 de março\n\nInterlocutor: Entre os muitos santos, parece que apenas o Buda Amida n",
+   "notes": "",
+   "pt_prefix": "8 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月十八日",
+   "title_pt": "18 de março",
+   "jp_anchor": "三月十八日\n\nInterlocutor: ――御歌集『山と水』にある沙羅双樹とはいかなる樹でしょうか。",
+   "pt_anchor": "18 de março\n\nInterlocutor: O que é a árvore shara-sōju mencionada na coletânea de p",
+   "notes": "",
+   "pt_prefix": "18 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十三日",
+   "title_pt": "23 de março",
+   "jp_anchor": "三月二十三日\n\nInterlocutor: ――将来茶道は特殊な方々のみに親しまれるものでしょうか。あるいは大衆的なものになるのでしょうか。",
+   "pt_anchor": "23 de março\n\nInterlocutor: No futuro, a cerimônia do chá será apreciada apenas por ",
+   "notes": "",
+   "pt_prefix": "23 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "三月二十八日",
+   "title_pt": "28 de março",
+   "jp_anchor": "三月二十八日\n\nInterlocutor: ――私は昭和二十三年入信した者ですが、主人と長男がお道に反対し、特に長男はお写真や御神体に御無礼まで働き私を気狂",
+   "pt_anchor": "28 de março\n\nInterlocutor: Tornei-me membro em 1948, mas meu marido e meu filho mai",
+   "notes": "",
+   "pt_prefix": "28 de março"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月三日",
+   "title_pt": "3 de abril",
+   "jp_anchor": "四月三日\n\nInterlocutor: ――神様からご覧になって安楽死はいかがでしょうか。",
+   "pt_anchor": "3 de abril\n\nInterlocutor: Do ponto de vista de Deus, o que o senhor acha da eutaná",
+   "notes": "",
+   "pt_prefix": "3 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月八日",
+   "title_pt": "8 de abril",
+   "jp_anchor": "四月八日\n\nInterlocutor: ――信者の家に御奉斎してある大黒様にお祈りする場合「五六七大黒天守り給へ幸倍賜へ」と奏上してよろしいでしょうか。",
+   "pt_anchor": "8 de abril\n\nInterlocutor: Ao orar para Daikoku-Sama consagrado na casa de um membr",
+   "notes": "",
+   "pt_prefix": "8 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月十三日",
+   "title_pt": "13 de abril",
+   "jp_anchor": "四月十三日\n\nInterlocutor: ――観音講の連中がお道のことを聞き、光明如来様を新しい御堂に御奉斎申し上げたいと希望いたしておりますがよろしいで",
+   "pt_anchor": "13 de abril\n\nInterlocutor: Os membros do grupo Kannon ouviram falar deste Caminho e",
+   "notes": "",
+   "pt_prefix": "13 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十八〔十八〕日",
+   "title_pt": "28 de abril (18 de abril)",
+   "jp_anchor": "四月二十八〔十八〕日\n\n（熱海大火の際、一会員の家がただ御浄霊のみによって類焼を免れたことの御礼を申し上げる）",
+   "pt_anchor": "28 de abril (18 de abril)\n\n(Por ocasião do grande incêndio de Atami, um membro agradece por sua c",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十三日",
+   "title_pt": "23 de abril",
+   "jp_anchor": "四月二十三日\n\nInterlocutor: ――五十四歳の婦人（一昨年入信）、左右の手首が腫れ指先が曲がっており、また膝と手首も腫れて痛みます。本人の母親も",
+   "pt_anchor": "23 de abril\n\nInterlocutor: Uma senhora de cinquenta e quatro anos (converteu-se no ",
+   "notes": "",
+   "pt_prefix": "23 de abril"
+  },
+  {
+   "kind": "session",
+   "title_jp": "四月二十八日",
+   "title_pt": "28 de abril",
+   "jp_anchor": "四月二十八日\n\nInterlocutor: ――某雑誌に「大昔太陽と月の運行が一日停止した」との記事がありましたが事実でしょうか。またこれは日本における天の",
+   "pt_anchor": "28 de abril\n\nInterlocutor: Em certa revista, havia um artigo dizendo que \"há muito ",
+   "notes": "",
+   "pt_prefix": "28 de abril"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

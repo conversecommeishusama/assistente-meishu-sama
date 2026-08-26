@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-07-14T05:22:54Z",
+  "phase": "pt_pairing_yolo",
+  "summary": {
+    "files": 3,
+    "ok": 3,
+    "partial": 0,
+    "fail": 0,
+    "trechos_total": 105,
+    "trechos_paired_ok": 105
+  },
+  "segmentation_fixes": [],
+  "failures": [],
+  "partials": [],
+  "files": [
+    {
+      "filename": "19510920-御教え集1号.txt",
+      "status": "ok",
+      "articles": 10,
+      "paired_ok": 10,
+      "paired_warn": 5,
+      "ratio_warn": 5,
+      "anchored": 10,
+      "errors": [],
+      "profile": "mioshie_shu"
+    },
+    {
+      "filename": "19520125-御垂示録6号.txt",
+      "status": "ok",
+      "articles": 4,
+      "paired_ok": 4,
+      "paired_warn": 2,
+      "ratio_warn": 2,
+      "anchored": 4,
+      "errors": [],
+      "profile": "ochishiji_roku"
+    },
+    {
+      "filename": "19530101-アメリカを救う.txt",
+      "status": "ok",
+      "articles": 91,
+      "paired_ok": 91,
+      "paired_warn": 0,
+      "ratio_warn": 0,
+      "anchored": 91,
+      "errors": [],
+      "profile": "structured"
+    }
+  ]
+}

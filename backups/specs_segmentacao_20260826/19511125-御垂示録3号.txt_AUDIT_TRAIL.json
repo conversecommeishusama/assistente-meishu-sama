@@ -1,0 +1,255 @@
+{
+  "filename": "19511125-御垂示録3号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Leitura completa do JP (941 linhas) e do PT (838 linhas, antes das correções), 4 trechos do spec (prefácio + sessões de 1/5/8 de outubro de 1951), confrontados frase a frase. Método adicional aplicado: contagem de falas entre aspas (perguntas do Interlocutor) por sessão, JP vs PT, para localizar candidatos a fala silenciosa faltando entre duas citações consecutivas no PT — todas as ocorrências candidatas (21) foram verificadas manualmente contra o JP, não apenas contadas.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 4,
+    "articles_reviewed": 4,
+    "real_corrections_applied": 20,
+    "items_escalated_to_pendencias": 0
+  },
+  "padroes_confirmados_desta_familia": [
+    {
+      "padrao": "Perda real de conteúdo mascarada por divisão espúria (Δ 'bate por coincidência')",
+      "descricao": "Logo após o cabeçalho '[1º de outubro]', faltavam as duas primeiras trocas de turno inteiras (pergunta+resposta+pergunta) do JP (linhas 28-33). A contagem bruta de citações por sessão (37 JP vs 36 PT) escondia isso quase por completo, porque em outro ponto da mesma sessão um monólogo único do Meishu-Sama havia sido indevidamente partido em uma citação falsa (ver item seguinte), compensando a contagem quase exatamente — exatamente o mecanismo descrito na regra 'Δ=0 é necessário, nunca suficiente'."
+    },
+    {
+      "padrao": "Artefacto de formatação: monólogo do Meishu-Sama quebrado em pergunta fictícia",
+      "descricao": "Ocorreu 2 vezes: (1) o trecho sobre a Tenrikyo/amigdalite (JP linha 103, '...天理教なんかは、返答しないから扁桃腺になる。と、ずいぶん変なことを言いますよ。') foi partido em duas 'citações' no PT, como se fosse uma nova pergunta do Interlocutor; (2) o trecho sobre o grande festival do ano anterior (JP linha 465) teve uma citação interna (fala relatada, '...と言うようになりますからね') tratada como início de novo turno. Ambos eram discurso indireto/citado dentro da própria fala do Meishu-Sama, não uma pergunta nova."
+    },
+    {
+      "padrao": "Falas curtas não-citadas do Meishu-Sama omitidas sistematicamente (variante nova do padrão nº2 do catálogo, mas sem cauda migrada — a fala inteira desaparece)",
+      "descricao": "Confirmado repetidamente: perguntas curtas de esclarecimento do Meishu-Sama (texto plano, sem 「」, geralmente terminando em pergunta objetiva - 'どこをやっている。', '一号というのは。', '天地返しというのは――', '親父は信仰に入っているんですか。', 'アマとは何ですか。', '二階はどうなっている' + a sequência completa sobre o tamanho do Daikoku/base de Kannon, 'どんなのですか', '形式ですか', 'いつごろですか' etc.) foram silenciosamente descartadas em pelo menos 14 pontos do arquivo, sempre entre duas falas do Interlocutor que ficaram artificialmente consecutivas no PT. Como são falas curtas sem aspas no JP, não alteram a contagem de citações — por isso só apareceram ao verificar manualmente cada par de citações consecutivas no PT contra o JP correspondente."
+    },
+    {
+      "padrao": "Corrupção de texto (resíduo CJK / placeholder de glossário vazado)",
+      "descricao": "Dois pontos de corrupção literal: (1) '先祖が龍神に落ちる' virou 'os antepassado(s) caem para o nível de dragão divino' — placeholder de glossário '(s)' vazado sem resolução de número, com artigo minúsculo no meio da frase; (2) 'あれは教祖さんの霊が憑いてますからね' virou 'Aquilo é porque o espírito da fundadora está附いている (possesso)' — caracteres japoneses (附いている) deixados sem tradução no meio da frase PT."
+    },
+    {
+      "padrao": "Duplicação/erro de concordância pontual (qualidade, não estrutural)",
+      "descricao": "'espírito espírito protetor secundário/guardião' (palavra duplicada, 2 ocorrências), 'os Divindades malignas' (concordância de género errada, 2 ocorrências), 'os espírito ancestral' (falta de plural, 2 ocorrências), 'a método da método da agricultura natural' (duplicação + género errado)."
+    },
+    {
+      "padrao": "Troca sistemática de falante",
+      "descricao": "NÃO encontrado neste volume — todas as trocas Interlocutor/Meishu-Sama verificadas mantiveram atribuição correta em todo o texto."
+    },
+    {
+      "padrao": "Duplicação de blocos inteiros / monólito residual",
+      "descricao": "NÃO encontrado neste volume — nenhuma repetição de bloco P&R nem parágrafo monolítico remanescente."
+    }
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "linha ~25, logo após '[1º de outubro]'",
+      "problema": "Duas trocas de turno inteiras ausentes no início da sessão (JP linhas 28-34): pergunta sobre o princípio 'um para um' no Johrei + resposta 'あのときはね' + pergunta sobre purificação intensa feita por várias pessoas.",
+      "correcao": "Inseridas as duas perguntas e a resposta curta, traduzidas do JP, antes do parágrafo 'O tempo avança...' que já existia.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "entre 'durava cerca de duas horas' e 'Da cabeça até a medula oblonga'",
+      "problema": "Falta a pergunta do Meishu-Sama 'どこをやっている。' (Onde está sendo feito?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "trecho Oomoto/mutuca/amigdalite",
+      "problema": "Monólogo único do Meishu-Sama (JP linha 103) partido em duas citações falsas, como se o Interlocutor tivesse feito uma segunda pergunta.",
+      "correcao": "Reunido em um único parágrafo de fala contínua do Meishu-Sama.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "'Devemos fazer Johrei principalmente no ânus?'",
+      "problema": "Falta a resposta 'やはりそうです。お腹は柔らかいですか。' (Sim. E a barriga está mole?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "'Disseram que depois da coqueluche, ele não conseguia mais recolher.' → 'Sim, senhor.'",
+      "problema": "Falta a resposta do Meishu-Sama entre as duas falas do Interlocutor ('力んだためですね。百日咳の前はなかったのですね。').",
+      "correcao": "Inserida: 'É por causa do esforço. Antes da coqueluche, não havia isso, não é?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "'Recebi uma Kannon de número um...' → 'É a imagem de maior tamanho.'",
+      "problema": "Falta a pergunta de esclarecimento '一号というのは。' (O que seria 'número um'?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "início do trecho de agricultura natural",
+      "problema": "Erro de texto: 'Sobre a método da método da agricultura natural' (duplicação + concordância errada).",
+      "correcao": "Corrigido para 'Sobre o método da agricultura natural'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "mesmo trecho, duas perguntas subsequentes",
+      "problema": "Faltam duas perguntas curtas do Meishu-Sama: '一年目ですか、二年目ですか。' e '天地返しというのは――'.",
+      "correcao": "Inseridas: 'É o primeiro ano, ou o segundo?' e '\"Tenchigaeshi\" seria o quê --'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "trecho sobre o grande festival do ano anterior ('foi bom termos realizado...')",
+      "problema": "Citação interna (discurso relatado) tratada erroneamente como novo turno de fala, quebrando o parágrafo do Meishu-Sama em dois.",
+      "correcao": "Reunido em um único parágrafo, preservando a citação interna com aspas simples de discurso relatado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 10,
+      "localizacao_pt": "relato do altar/Ofuda rasgado pela criança, 'Isso foi há cerca de três anos.' → 'Sim.' → 'Como a família não se dava bem...'",
+      "problema": "Faltam duas perguntas do Meishu-Sama: '親父は信仰に入っているんですか。' e 'どういうわけで信仰に入ったんですか。'",
+      "correcao": "Inseridas: 'O pai está na fé?' e 'Por que motivo ele entrou na fé?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 11,
+      "localizacao_pt": "'Procurei no \"ama\" e encontrei...' → 'Nas casas de agricultores...'",
+      "problema": "Falta a pergunta '「アマ」とは何ですか。' (O que é 'ama'?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 12,
+      "localizacao_pt": "sequência 'É um depósito.' / 'Sim, mas não tem tokonoma.' / 'Cerca de um shaku.' / 'Há uma placa fina.' / 'Não tem.'",
+      "problema": "Faltam QUATRO perguntas curtas consecutivas do Meishu-Sama: '次の間はあるんですか。', '大黒さんの大きさは。', '台はないんですか。', '観音さんの台は。' — o bloco inteiro havia perdido a voz do Meishu-Sama, restando só as respostas do Interlocutor em sequência.",
+      "correcao": "Inseridas as quatro perguntas nos pontos correspondentes.",
+      "confianca": "alta"
+    },
+    {
+      "n": 13,
+      "localizacao_pt": "'A propriedade tem o formato de batata-doce...' → 'Originalmente era quadrada...'",
+      "problema": "Falta a pergunta '薩摩芋形というのは、どんなのですか。' (Que formato é esse, de batata-doce?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 14,
+      "localizacao_pt": "relato do negócio de abate de bois, 'Como devo proceder?' → 'Sim.'",
+      "problema": "Falta a pergunta '形式ですか。' (É uma formalidade?).",
+      "correcao": "Inserida.",
+      "confianca": "alta"
+    },
+    {
+      "n": 15,
+      "localizacao_pt": "relato da árvore de gingko cortada para escultura, 'Não houve nenhum problema.' → 'Cerca de sete a oito sun...' → 'Há cerca de três anos.'",
+      "problema": "Faltam duas falas do Meishu-Sama: 'ずいぶん乱暴だな。直径はどのくらいです。' e '仏像を造ったからまだ良かったが、さもなければ祟りますよ。いつごろですか。'",
+      "correcao": "Inseridas: 'Isso foi bastante imprudente. Qual é o diâmetro?' e 'Ainda bem que fizeram uma imagem de Buda com ela — senão traria maldição. Quando foi isso?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 16,
+      "localizacao_pt": "cobra verde / Ryujin",
+      "problema": "Corrupção: '先祖が龍神に落ちる' traduzido como 'os antepassado(s) caem para o nível de dragão divino' (placeholder de glossário vazado sem resolver número, artigo minúsculo no meio da frase).",
+      "correcao": "'Os antepassados caem para o nível de dragão divino.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 17,
+      "localizacao_pt": "'espírito da fundadora' (chuva em Izusan)",
+      "problema": "Resíduo CJK não traduzido no corpo do PT: 'está附いている (possesso)'.",
+      "correcao": "'Aquilo é porque o espírito da fundadora está possuindo aquilo.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 18,
+      "localizacao_pt": "trecho do espírito secundário/副霊",
+      "problema": "Palavra duplicada 'espírito espírito protetor secundário' / 'O espírito espírito protetor secundário' (2 ocorrências) e 'É o espírito espírito protetor guardião' (正守護神).",
+      "correcao": "Removida a duplicação nas 3 ocorrências, mantendo os termos do glossário de tradução ('espírito protetor secundário', 'espírito protetor guardião').",
+      "confianca": "alta"
+    },
+    {
+      "n": 19,
+      "localizacao_pt": "trecho sobre perder a razão / Divindades malignas",
+      "problema": "Erro de concordância de género: 'os Divindades malignas' (2 ocorrências) — 'Divindades' é feminino plural no glossário.",
+      "correcao": "'as Divindades malignas' nas duas ocorrências.",
+      "confianca": "alta"
+    },
+    {
+      "n": 20,
+      "localizacao_pt": "trecho da consagração da Kannon de mil braços / Daikoku",
+      "problema": "Falta de concordância de número: 'os espírito ancestral' (2 ocorrências) em vez de 'os espíritos ancestrais'.",
+      "correcao": "Corrigido nas duas ocorrências.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文)",
+      "jp_linhas": "1-25",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Cabeçalho e data de publicação correspondem; sem conteúdo próprio a revisar além do título."
+    },
+    {
+      "bloco": "Sessão 1º de outubro",
+      "jp_linhas": "26-213",
+      "decisao": "corrigido — 3 problemas reais (itens 1,2,3)",
+      "confianca": "alta",
+      "notas": "Contagem de citações do Interlocutor por sessão: 37 JP vs 37 PT após correção (era 36 antes, com uma citação falsa mascarando duas ausentes — confirma o padrão 'Δ bate por coincidência')."
+    },
+    {
+      "bloco": "Sessão 5 de outubro",
+      "jp_linhas": "214-494",
+      "decisao": "corrigido — 8 problemas reais (itens 4 a 9, mais parte do 10)",
+      "confianca": "alta",
+      "notas": "Inclui o bloco de perguntas/respostas em formato markdown ('**Pergunta:**'/'**Resposta:**') nas linhas finais da sessão — conteúdo íntegro, apenas formatação diferente do resto do arquivo; não tratado como erro, só observado (ver pendências)."
+    },
+    {
+      "bloco": "Sessão 8 de outubro",
+      "jp_linhas": "495-941",
+      "decisao": "corrigido — 9 problemas reais (itens 10 a 20)",
+      "confianca": "alta",
+      "notas": "Concentração alta de falas curtas do Meishu-Sama omitidas, especialmente no bloco de perguntas sobre altares/Daikoku/Kannon (item 12, 4 falas seguidas)."
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): normalizada a formatação markdown das 26 perguntas/respostas 5-8/outubro para o padrão do resto do arquivo; contagem residual de citações (58/57, 102/101) aceita como ruído do script de diagnóstico, não erro real (leitura linha a linha já confirmou ausência de mais divergências). approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "3 etapas (mesma metodologia §4.4-B do Gokōwa-roku, adaptada: convenção deste family usa 「pergunta entre aspas」 = Interlocutor / prosa corrida sem aspas = Meishu-Sama, em vez do marcador ―― do Gokōwa).",
+    "etapa_a": "JP (941 linhas) lido linha a linha pelo agente; mapa de turnos construído: parágrafo iniciando por 「 (sem contar o indent 　 que antecede algumas falas curtas do Meishu-Sama que também usam aspas para citar termos) = Interlocutor; prosa sem aspas = Meishu-Sama; cabeçalhos ［data］ preservados como separadores de sessão.",
+    "etapa_b": {
+      "contagem_jp_interlocutor_real": 195,
+      "nota_contagem": "Uma contagem ingénua por primeiro-caractere-após-strip() do JP dava 197, mas 2 desses parágrafos começam por 　「 (indent + aspas) — são falas curtas do Meishu-Sama citando um termo ('「波布草」のほうは...', '「アマ」とは何ですか。'), não perguntas novas do Interlocutor. Contagem correta (sem remover o indent antes de verificar) = 195.",
+      "contagem_pt_interlocutor_pos_rotulagem": 195,
+      "delta": 0,
+      "m_i_ratio": 1.067,
+      "i_i_blocos_consecutivos": 0,
+      "travessoes_no_corpo": 0
+    },
+    "problemas_estruturais_corrigidos_antes_de_rotular": [
+      {
+        "local_pt": "'Fizemos a inversão do solo (tenchigaeshi) –' seguido de '\"Tenchigaeshi\" seria o quê --'",
+        "problema": "Rotulagem automática ingénua (por parágrafo começar com aspas) marcou como Interlocutor uma fala do próprio Meishu-Sama perguntando o significado do termo (JP: '　天地返しというのは――', sem 「」, indent de resposta).",
+        "correcao": "Rerotulado para Meishu-Sama."
+      },
+      {
+        "local_pt": "'Ubusunagami mamori tamae sakiwai tamae.\" Isso é suficiente.'",
+        "problema": "Mesma causa: fala do Meishu-Sama citando o texto do norito entre aspas (JP: '　産土神守り給へ幸倍賜へ。で良いです。', sem 「」), rotulada erradamente como Interlocutor por começar com aspas no PT.",
+        "correcao": "Rerotulado para Meishu-Sama."
+      },
+      {
+        "local_pt": "'O que significa a passagem...天が六、中界が六、地が六...?' + 'Sim, é isso mesmo – ou seja, era o mundo da noite...'",
+        "problema": "Pergunta do Interlocutor (JP linha 322, 「」) e resposta do Meishu-Sama (JP linha 324, sem 「」, separada por linha em branco no JP) estavam coladas num único parágrafo físico no PT, sem linha em branco entre elas — turno fundido incorretamente.",
+        "correcao": "Separados em dois parágrafos distintos (Interlocutor + Meishu-Sama), inserida a linha em branco que faltava."
+      }
+    ],
+    "etapa_c": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados a todos os parágrafos de diálogo já existentes no PT (778, na ordem original, sem reescrever conteúdo). Prefácio (3 parágrafos: bloco de campos + título + linha de publicação) e os 3 cabeçalhos de sessão ([1º de outubro], [5 de outubro], [8 de outubro]) mantidos sem rótulo, como no padrão dos volumes 1 e 2.",
+    "contagem_final": {"interlocutor": 195, "meishu_sama": 208, "headers": 3, "preface": 3, "total_paragrafos": 409},
+    "approved_alterado": false
+  }
+}

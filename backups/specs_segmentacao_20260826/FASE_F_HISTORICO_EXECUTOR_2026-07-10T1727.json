@@ -1,0 +1,311 @@
+{
+  "descricao": "Extraído de reports/livros_trabalho/segmentacao_manual/../.. (na verdade de um snapshot antigo do dashboard, sessão 2c6c8ff6, salvo em disco às 2026-07-10T17:27 local) — notas do EXECUTOR sobre o que alegou ter corrigido em cada livro, com autoconferência interna própria ('aceite independente do processo pai', a mesma chamada claude -p revisando seu próprio subagente). NÃO é confirmação da auditoria externa independente — é só contexto para acelerar a reauditoria real (aponta onde olhar), não prova de que está correto. Ver FASE_F_AUDITORIA_EXTERNA_QUEUE.json para o que de fato já foi confirmado de forma independente.",
+  "criado_em": "2026-07-10T21:30:00+02:00",
+  "fonte": "/tmp/claude-0/-var-www-goshinsho/2c6c8ff6-7d91-48ce-b4b0-def0020b1f7e/scratchpad/dashboard_revisao.html (snapshot de 2026-07-10T17:27 local)",
+  "notas_por_livro": {
+    "19491005-自観叢書第4篇『奇蹟物語』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "35 cabeçalhos colados corrigidos (linha própria); processo pai restaurou 2 blocos que o subagente tinha removido por engano como \"duplicata\" (JP repete de fato); 2 anchors de spec corrigidos."
+    },
+    "19490825-自観叢書第3篇『霊界叢談』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Reconstrução estrutural total: 12 cabeçalhos colados dentro de 6 linhas-monólito (93→366 linhas); 3 reescritas de fluência verificadas contra o JP."
+    },
+    "19490701-自観叢書第2篇『無肥料栽培法』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções de texto (frase incompleta; \"tempo estava nuvens espirituais\"→\"nublado por dias seguidos\"); catálogo de romanizações de 五六七 completado (subagente perdeu 15 ocorrências de \"567\" numérico)."
+    },
+    "19480701-御讃歌集.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "10 correções do subagente (erro numérico 八百万 4x, Izunome, makurakotoba mal traduzido, conteúdo inventado \"caminho do inferno\" removido) + 1 erro ortográfico (\"Moderal\"→\"Moderai\") achado pelo processo pai."
+    },
+    "19490000-御光話録5号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "9 correções (verbo \"curar\" intransitivo x4, troca de termo teológico Komyo-Nyorai→Daikomyo-Nyorai, romanização Kōyōkai, \"juntar as mãos\"→\"mãos postas\"); cabeçalho de publicação com era Showa completado."
+    },
+    "19490000-御光話録4号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Apenas 1 correção pontual (ano de era sem nome \"Showa\"). Nota esclarece que o bug de \"monólito residual\" do handoff é de outro arquivo (confusão de nome de série)."
+    },
+    "19500120-御光話録16号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "6 correções (nota clínica deslocada, título de obra padronizado, 2 vírgulas/sintaxe, sintaxe encadeada, 2 avisos editoriais fundidos separados em 3)."
+    },
+    "19490821-御光話録11号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 frases de sintaxe calcada reescritas, 1 referente ambíguo corrigido, 2x anacronismo \"観音教団\"→\"Igreja Messiânica\" corrigido para \"Igreja Kannon\" (organização ainda não tinha esse nome em 1949)."
+    },
+    "19480101-御光話録（補）.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "1 concordância, 3 refs de era sem ano gregoriano, 5 duplicações de sufixo honorífico, 5 cabeçalhos de data normalizados; auditoria independente achou e corrigiu 4 erros extras de concordância de gênero."
+    },
+    "19490730-御光話録9号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "11 respostas com parágrafos fundidos separados; 1 termo de glossário (macron); 1 metadado de edição especial ausente; auditoria independente corrigiu +3 refs de era sem \"Showa\"."
+    },
+    "19490921-御光話録12号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "5 correções de terminologia/precisão (nome da série, Tenchi→Tentei, idiomatismo \"mil léguas\", cabeçalho de data) + bug estrutural real: matéria de jornal colada dentro da fala, marcador reposicionado."
+    },
+    "19491021-御光話録13号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 frases de fluência; cabeçalho de sessão \"3 de julho\" ausente inserido; \"Nota do Editor\" fundida separada em 3 itens; 2 citações internas padronizadas para \"Gokowa-roku\"."
+    },
+    "19491120-御光話録14号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções pontuais: ano de era sem ano gregoriano; 三方 (bandeja cerimonial) traduzido erradamente como \"altar de três painéis\", corrigido para \"sanpo\"."
+    },
+    "19491220-御光話録15号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções estruturais de formatação (indentação de parágrafos de continuação); nenhuma correção de fluência foi necessária."
+    },
+    "19500228-御光話録17号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Achado estrutural grave: rótulo \"Meishu-Sama:\" ausente fundia pergunta/resposta (descompasso 63x62 turnos), corrigido; cabeçalho \"Nota do Editor\" colado separado; 3 refs de era; 1 termo (Gokōwa-roku)."
+    },
+    "19500423-御光話録18号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "1 correção: \"天国会\" (organização distinta) estava traduzido erradamente como \"a Igreja Messiânica de hoje\" — corrigido para \"o Tengokukai\" (anacronismo/confusão de entidade)."
+    },
+    "19500613-御光話録19号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "3 correções: cabeçalho de publicação ausente inserido; parágrafo com 3 unidades temáticas fundidas dividido; \"Igreja Ômoto\"→\"religião Oomoto\" (grafia)."
+    },
+    "19481208-御光話録1号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções de fluência (reordenação sintática, sem perda de conteúdo)."
+    },
+    "19490522-御光話録7号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "6 correções de consistência terminológica (colchete→parênteses x4; \"Butsuritsuko\"→\"Butsuryu-ko\")."
+    },
+    "19490208-御光話録3号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "3 correções: 2 achados estruturais reais (2ª metade de pergunta composta atribuída erradamente à fala de Meishu-Sama, movida de volta); linha de abertura incompleta (reimpressão) completada."
+    },
+    "19490423-御光話録6号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "3 correções: concordância verbal; \"Yachimata\" sem glosa completado; \"Nota da Redação\" com 4 itens fundidos separada em parágrafos."
+    },
+    "19490710-御光話録10号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "5 correções: redundância removida, gerúndios reordenados, ordem origem/destino invertida corrigida, \"innen\" glosado, \"Nota do Editor\" fundida separada em parágrafos."
+    },
+    "19490108-御光話録2号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções: citação bíblica reposicionada (pertencia à pergunta, não à resposta) — achado estrutural real; grafia \"Omoto\"→\"Oomoto\"."
+    },
+    "19490530-御光話録8号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4 correções: colchetes de reticências→reticências normais (4x); frase reestruturada; \"edição especial\" ausente na linha de publicação; termo técnico reordenado."
+    },
+    "19350000-観音講座（１～７）.txt": {
+      "status_2026-07-10T17:27": "Desvio — reaberto reaberto pela auditoria externa em 2026-07-10 17:15, movido de volta para o início de pending com nota de instrução anexada (FASE_F_AUDITORIA_EXTERNA_REABERTURAS.json). Aguardando reprocessamento.",
+      "alteracoes_relatadas_executor": "1 correção de fluência (frase quebrada indevidamente por quebra de linha, unida). Nenhum outro problema encontrado."
+    },
+    "19480905-信仰雑話.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "9 correções: dividers/marcadores #E restaurados em 8-9 seções; era Showa completada; sintaxe/redundância; anacronismo \"Igreja Messiânica\"→\"Igreja Kannon\" (3x); nome próprio Buiei→Buei."
+    },
+    "19490625-自観叢書第1篇『結核と神霊療法』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "17 correções do subagente (6x era, 1 nome próprio errado, 10x ordem sobrenome/nome, termo de glossário, duplicação) + 1 correção extra (ano de era) achada pelo processo pai."
+    },
+    "19490830-自観叢書第5篇『自観隨談』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "1 correção de fluência; 1 ano de era completado; title_pt contaminado (\"Prefácio de Jikan\") corrigido para título correto; 2 grafias sem mácron uniformizadas (achado extra do processo pai)."
+    },
+    "19491025-自観叢書第7篇『基仏と観音教』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Mistradução do título \"基仏\" (Cristianismo+Budismo, não \"Buda Fundamental\") corrigida em 6 lugares; colofão bibliográfico ausente adicionado."
+    },
+    "19491130-自観叢書第8篇『明麿近詠集』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Pior corrupção estrutural da fila: ~44/48 cabeçalhos colados + 17 ausentes, datas perdidas, poemas fundidos/duplicados, prefácio ausente — reconstrução completa (292→683 linhas); nome do autor Meishu→Akimaro corrigido (era honorífico indevido)."
+    },
+    "19491223-山と水.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Bug \"monólito\": 1239 poemas fundidos em ~17 blocos gigantes, reestruturados por completo; 1 poema totalmente ausente recuperado; auditoria independente corrigiu 3 discrepâncias que o relatório do subagente não refletia."
+    },
+    "19491230-自観叢書第9篇『光への道』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Ano de era sem mês corrigido; cabeçalho espúrio \"**O fim da guerra**\" (criava 22ª seção inexistente no JP) removido; colofão com ordem de nome e editora corrigidos."
+    },
+    "19500130-自観叢書第12篇『自観説話集』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Concordância gramatical; erro numérico (5.676.000.000 vs correto 5.670.000.000, 2 de 4 ocorrências); unidade de medida solta completada (\"1 sun 8 bu\")."
+    },
+    "19500420-自観叢書第10篇『神示の健康法』.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "12 alterações: 9x \"Luz\"→\"Hikari\" (nome de periódico), 2 reescritas de fluência, 2 correções de nome/editora no colofão, 1 linha em branco duplicada removida."
+    },
+    "19500921-地上天国出来るまで.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Markdown \"**\" desbalanceado no título corrigido; bloco de 10 waka cerimoniais sem separação + cabeçalho colado corrigidos; 2 refs de era completadas; 1 sentença reescrita."
+    },
+    "19501030-法難手記.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Erro numérico sistemático de fator 10 (6 ocorrências, \"trinta mil\"→\"trezentos mil\" ienes etc.); 5 nomes próprios normalizados; correção quebrou 3 anchors da spec, também corrigidos nesta rodada."
+    },
+    "19501120-世界救世教早わかり.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções de fluência (ambiguidade de leitura, frase repetitiva). Duas datas de publicação divergentes no próprio JP preservadas corretamente (não \"corrigidas\" para concordarem)."
+    },
+    "19510115-自然農法解説.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "14 correções de fluência (sintaxe japonesa via vírgula); 1 erro de nome próprio (\"Kanemura Kinmatsu\"→\"Imamura Kinmatsu\")."
+    },
+    "19510130-笑の泉.txt": {
+      "status_2026-07-10T17:27": "Desvio — reaberto reaberto pela auditoria externa em 2026-07-10 17:15, movido de volta para o início de pending com nota de instrução anexada (FASE_F_AUDITORIA_EXTERNA_REABERTURAS.json). Aguardando reprocessamento.",
+      "alteracoes_relatadas_executor": "26 cabeçalhos colados + 1 par de poemas fundidos separados (1206→1328 linhas); colofão completado; 22 aspas padronizadas. Conferência semântica poema-a-poema dos 1093 poemas NÃO foi feita (só estrutural), admitido explicitamente."
+    },
+    "19510225-御教え集6号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "8 refs de era Showa sem ano gregoriano; sort_date corrigido de 1951 para 1952 (erro real, quebrava ordem cronológica da série); colchete explicativo sobre trocadilho corrigido (estava semanticamente errado)."
+    },
+    "19510520-教えの光.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Achado estrutural principal: 31 seções com a pergunta (\"御伺い\") perdida no pipeline, inseridas; Prefácio ausente adicionado; refs de era corrigidas; 1 erro fonético real (\"Isshaku\"→\"Ippaku\")."
+    },
+    "19510615-一信者の告白.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Metadado contaminado no corpo (\"Outras Fontes\" em vez do título) corrigido; 1 frase reescrita; 3 refs de era (Meiji/Taisho) completadas com ano gregoriano."
+    },
+    "19510805-新しき暴力.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4-5 trechos de sintaxe reescritos; erro real de referência de era (ano/data trocados por confusão entre duas fontes do cabeçalho); title_pt corrigido (prefixo de data removido, acento); \"Nitiren\"→\"Nichiren\"."
+    },
+    "19510810-或る日の公判スケッチ.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "9 correções de fluência (sintaxe japonesa via vírgula), verificadas linha a linha; nenhum achado estrutural ou de terminologia."
+    },
+    "19510815-結核の革命的療法.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Achado mais grave da fila: testemunho inteiro (Caso 1, ~1000+ caracteres) completamente ausente, reconstruído do JP; ~13 refs de era + 1 erro factual de era corrigido; 8 frases truncadas; 2 erros de gênero gramatical."
+    },
+    "19510915-御垂示録1号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "1ª frase do prefácio (ausente no PT) inserida; blocos do topo colados sem linha em branco separados; 1 duplicação mecânica de palavra corrigida."
+    },
+    "19510920-御教え集1号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "3 subtítulos numerados colados ao parágrafo separados; 2 refs de era completadas; \"[Glória]\"→\"[Eiko]\" (inconsistência de glossário)."
+    },
+    "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4 correções: parêntese de indecisão do tradutor removido; erro real de magnitude numérica (\"centenas de milhares\" deveria ser \"várias dezenas de milhões\"); frase longa dividida; calco de tópico corrigido."
+    },
+    "19511010-御垂示録2号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "5 correções (erro de sujeito, turno partido remesclado, fragmento reescrito, reflexão truncada reconstituída, terminologia duplicada uniformizada); auditoria independente corrigiu termo mal padronizado (Daikōmyō Nyorai, 7 ocorrências)."
+    },
+    "19511025-御教え集2号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "11 palavras duplicadas mecanicamente removidas; 2x \"Ofuda\"→\"Ohikari\" (termo errado); 3 grafias padronizadas; 2 erros de concordância de gênero; auditoria independente achou +1 ocorrência residual de \"Ofuda\" não corrigida pelo subagente."
+    },
+    "19511125-御垂示録3号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4 correções pontuais: palavra duplicada, 2x capitalização quebrada, grafia \"Komyo Nyorai\" uniformizada, parêntese redundante removido."
+    },
+    "19511125-御教え集3号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Marcador técnico duplicado removido; bloco de título duplicado no início removido; era corrigida; 2+4 cabeçalhos colados separados; 1 parágrafo duplicado mecanicamente removido (achado real, confirmado contra o JP)."
+    },
+    "19511210-御垂示録4号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Bug de \"monólito residual\" do handoff NÃO encontrado (já corrigido antes, confirmado ativamente). Nota editorial ausente inserida; 5x termo padronizado; auditoria independente achou fala inteira do Meishu-Sama faltando, reconstruída e inserida."
+    },
+    "19511215-御教え集4号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "13 refs de era corrigidas; conflação terminológica corrigida em 5 ocorrências (verificado que outras instâncias distintas estavam corretas); 6x termo padronizado; 1 frase reescrita."
+    },
+    "19511225-御垂示録5号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções: rótulo de fala errado (\"Meishu-Sama:\"→\"Interlocutor:\", citação partida em 2 parágrafos mal atribuída); 1 ano de era Meiji completado."
+    },
+    "19520000-HAKONE ART MUSEUM.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Caso especial (irmão em inglês, não JP): 3 ajustes de fluência aplicados e verificados parágrafo a parágrafo contra o texto original em inglês."
+    },
+    "19520115-御教え集5号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Marcador técnico duplicado removido; cabeçalho de seção colado (\"[Ensino]\" grafia divergente) corrigido para \"[Ensinamento]\" em linha própria."
+    },
+    "19520125-御垂示録6号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "5 referências de era Showa/Meiji sem ano gregoriano corrigidas; 1 erro real de terminologia (kanji lido errado): \"Dainichi-ten\"→\"Daijizaiten\"."
+    },
+    "19520310-御垂示録7号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4 correções: \"poço Kizaemon\"→\"tigela Kizaemon Ido\" (erro de leitura); topônimo \"Yamato\"→\"Mikawa\" (erro de leitura); concordância de gênero (2x); parágrafo fundido dividido em 2 turnos."
+    },
+    "19520320-御教え集7号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Marcador duplicado removido; repetição redundante de título/data removida; 2 colchetes normalizados; nome próprio \"Mayama\"→\"Mayuyama\" corrigido (2x, confirmado por furigana no JP)."
+    },
+    "19520420-御教え集8号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Marcador duplicado removido; title_pt padronizado; frase de publicação duplicada removida; 7 refs de era completadas; 2 colchetes normalizados; 5 tags \"[Divina Instrução]\" reposicionadas; 2 cabeçalhos de data soltos."
+    },
+    "19520425-御垂示録8号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Sintaxe com troca de sujeito no meio da frase reescrita (mesmo sujeito, sem perda); linha de cabeçalho título+ano (JP) ausente no PT desde sempre — identificada como perda de conteúdo real (não convenção) e inserida, espelhando o vol.7."
+    },
+    "19520515-御垂示録9号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Mesma correção estrutural do vol.8: linha de cabeçalho título+ano de era ausente no PT inserida, conferida contra o JP. Nenhuma outra alteração de conteúdo."
+    },
+    "19520515-御教え集9号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Marcador técnico duplicado removido; 4 grafias divergentes de \"[Ensinamento]\" unificadas (10 ocorrências); erro numérico real corrigido — \"duzentas e vinte\" → \"duas mil e duzentas\" cadeiras (2x, ordem de grandeza errada, JP 二千二百); 御守り padronizado para \"Omamori\" (3x, glossário)."
+    },
+    "19520615-御垂示録10号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Frase reescrita (verbo atrasado, trecho do museu de Ginza); 2 refs de era Showa sem ano gregoriano completadas; \"amuleto de proteção\"→\"Omamori (Ohikari)\" padronizado (2x); linha de diálogo ajustada para incluir \"o-chikai\", coerente com a resposta seguinte."
+    },
+    "19520615-御教え集10号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "1 ref de era Showa sem ano gregoriano completada; 2 citações-fonte mescladas numa única linha separadas (bug estrutural real, contra convenção do próprio arquivo); title_pt \"Mioshie-shu, Numero 10\"→\"Mioshie-shu no 10\" (padrão da série, 4 ocorrências)."
+    },
+    "19520715-御垂示録11号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "\"versos\"→\"linhas\" corrigido (5x, leitura errada de 行 = linha de sutra caligrafado, não verso poético); nome próprio \"Imperador Kiso\"→\"Imperador Huizong\" corrigido (kiso é a leitura fonética japonesa do kanji, não o nome em português)."
+    },
+    "19520715-御教え集11号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 refs de era Showa sem ano gregoriano corrigidas (22º ano→1947, 19º ano→1944), únicas alterações no arquivo inteiro (confirmado por diff completo); 3 blocos aparentemente duplicados (roteiro de museu) confirmados como repetição legítima do autor em dias diferentes, não bug."
+    },
+    "19520815-御教え集12号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "4 correções estruturais de formatação (marcadores \"[Ensinamento]\" colados/inconsistentes padronizados, 11 citações coladas isoladas, aspas retas uniformizadas) + 4 refs de era Showa/Meiji sem ano gregoriano corrigidas; diff palavra-a-palavra confirma que estas são as únicas mudanças de conteúdo."
+    },
+    "19520825-御垂示録12号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Erro de sentido invertido corrigido (\"espíritos animais tornam os humanos livres\"→\"passam a controlar os humanos livremente\", JP 自由にする = ter domínio livre, não libertar); nome próprio corrompido \"Daimyoko-Nyorai\"→\"Dai-Komyo-Nyorai\" (2x, letras transpostas)."
+    },
+    "19520925-御垂示録13号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 termos de glossário padronizados (\"Ofuda\"→\"Omamori (Ohikari)\"/\"Imagem da Luz Divina\", 3 ocorrências); fluência reescrita num parágrafo (cadeia longa de vírgulas com verbo atrasado, 7x \"E\" inicial removido/reescrito, 1 modificador ambíguo corrigido, sujeito confirmado contra o JP)."
+    },
+    "19520925-御教え集13号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "3 blocos de citação fundidos ao parágrafo seguinte separados (bug estrutural real, o pior fundia 4 parágrafos + 2 citações numa linha); 4 refs de era Showa sem ano gregoriano corrigidas; 1 erro de sentido (\"fui duas vezes sem jeito\"→\"mesmo sem poder recusar\", falso cognato de しかたなしに)."
+    },
+    "19521015-御垂示録14号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "7 correções de fluência (sintaxe japonesa via vírgula/gerúndio solto); 1 colchete de incerteza do tradutor removido; 1 erro factual corrigido — \"Setsuko [ou Shizuko]\"→\"Setsuko\" (confirmado que são duas grafias do mesmo nome, não nomes alternativos)."
+    },
+    "19521015-御教え集14号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Trecho duplicado/truncado removido (parágrafo cortado abruptamente e reiniciado do zero, bug real ausente no JP, confirmado por diff de tamanho); 12 citações coladas ao parágrafo seguinte separadas em blocos próprios; 1 erro numérico real corrigido (dois episódios distintos com \"7º/8º ano de Showa\" confundidos, JP mostra \"6º/7º\" para um deles); 3 refs de era Showa sem ano gregoriano resolvidas."
+    },
+    "19521115-御垂示録15号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "2 correções de sentido: \"através dos artigos\"→\"através daquele ensaio\" (御論文 singular, referência específica a um tratado nomeado antes); \"Eu os repreendo\"→\"Eu os aconselho a respeito disso\" (言い聞かせる = aconselhar com calma, tradução anterior invertia o tom)."
+    },
+    "19521115-御教え集15号.txt": {
+      "status_2026-07-10T17:27": "Conforme",
+      "alteracoes_relatadas_executor": "Título da obra citada \"Salvando os Estados Unidos\" uniformizado (3 variantes→forma canônica já usada no arquivo dedicado); 3 cabeçalhos de data com espaçamento padronizado; 1 frase de sintaxe calcada (vírgula encadeando orações) reescrita mantendo o sentido."
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "filename": "19530515-御垂示録20号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 401 linhas / PT ~218 linhas após correções — razão ~2:1 mantida, é dialogo denso perguntas curtas / respostas longas, não monólito), 2 artigos por spec (prefácio + sessão única de 1º de maio). Todo o corpo do JP foi lido linha a linha e confrontado com o PT na mesma ordem, do prefácio até o encarte final sobre cravos em estufa.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 2,
+    "articles_reviewed": 2,
+    "real_corrections_applied": 10,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "abertura da sessão, logo após '[1º de maio]', antes da primeira pergunta sobre o livro da tuberculose (JP linha 28)",
+      "problema": "Falta inteira do turno de abertura de Meishu-Sama — a frase que justifica o formato 'pergunta livre' da sessão inteira ('hoje não preparei nenhum assunto, então perguntem já') não tinha par em PT; o texto pulava direto de '[1º de maio]' para a primeira pergunta entre aspas.",
+      "correcao": "Traduzido e inserido: 'Hoje não preparei nenhum assunto para falar, então podem fazer perguntas imediatamente. Isso também fará surgir a conversa.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "seção da senhora de 46 anos / Inari de Fushimi (JP linhas 88, 92, 96)",
+      "problema": "Três perguntas curtas e sucessivas de Meishu-Sama (interrogatório objetivo: desde quando cultuam Inari; onde está agora; o cordão foi trocado?) estavam totalmente ausentes; o PT ia direto das respostas curtas do interlocutor ('Há dez anos.' / local / cordão novo) sem as perguntas que as provocam, o que lido isoladamente parece um monólogo do interlocutor sem propósito.",
+      "correcao": "Traduzidas e inseridas as três perguntas: 'Desde quando vocês cultuam Inari de Fushimi?', 'Onde está sendo cultuado agora?', 'O cordão foi cortado; agora está com um cordão novo e pendurado?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "seção do biombo Kannon que 'se move' (JP linha 179)",
+      "problema": "A pergunta esclarecedora de Meishu-Sama ('Como assim, se move?') estava ausente entre a pergunta do interlocutor e a resposta 'Ela sai do lugar no pedestal' — sem ela, a resposta parece deslocada.",
+      "correcao": "Inserida: 'Como assim, \"se move\"?' na posição correta (entre a pergunta original e a resposta 'Ela sai do lugar no pedestal').",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "mesma seção do altar de três níveis (JP linha 191)",
+      "problema": "Falta a fala de Meishu-Sama que antecipa o diagnóstico ('o pedestal não deveria ser necessário; os nomes póstumos estão no nível superior, não estão?') entre a descrição do altar pelo interlocutor e a réplica 'Os nomes póstumos estão ao lado.'",
+      "correcao": "Inserida: 'O pedestal não deveria ser necessário. Os nomes póstumos estão no nível superior dos três, não estão?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "seção do túmulo da família Moriyama (JP linha 218)",
+      "problema": "Resposta inteira de Meishu-Sama ausente entre a pergunta longa sobre o túmulo descoberto e a réplica 'Alguns nomes são conhecidos.' — sem ela, não fica claro por que o interlocutor responde sobre 'nomes conhecidos'.",
+      "correcao": "Traduzida e inserida: 'Isso não pode ser reunido junto; ou seja, deve-se tratá-los como colaterais. Os nomes descobertos desta vez, já se sabe quais são?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt_aprox": "seção sobre os 49 dias de luto em Osaka (JP linhas 245-259)",
+      "problema": "GRAVE — artefacto de duplicação com truncamento: depois da primeira pergunta/resposta sobre a regra dos 49 dias em Osaka, o PT continha uma frase cortada no meio ('Sou um fiel, e aconteceu isso. A data do casamento já' — parava aí), seguida de uma linha vazia, depois um fragmento solto e sem sentido ('e entram e, sendo perdoados de seus pecados, são sufragados.' — na verdade uma cauda residual da resposta *anterior*, sobre antepassados perdoados), e então a MESMA pergunta e resposta sobre os 49 dias reaparecia reformulada ('Na região de Osaka, nas casas onde houve uma desgraça...' / 'Isso mesmo.'), antes de finalmente prosseguir para a continuação completa e correta ('Sou seguidor, e ocorreu que a data do casamento já estava marcada...'). Conferido contra o JP: o tema ocorre uma única vez (linhas 245-259), portanto a duplicação era artefacto de reconstrução (rascunho truncado + cauda de outro trecho + repetição), não conteúdo real do JP.",
+      "correcao": "Removidos o fragmento truncado, a linha vazia, o fragmento residual solto e a segunda repetição da pergunta/resposta; mantida apenas a passagem completa e correta, preservando 100% do conteúdo semântico do JP sem duplicação nem perda.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt_aprox": "seção de descarte das imagens de Kobo-Daishi/Jizo/Kannon de Hase (JP linha 309)",
+      "problema": "Pergunta curta de Meishu-Sama ('De que tamanho são?') ausente entre 'Como devo descartá-las?' e a resposta 'Cerca de três sun.'",
+      "correcao": "Inserida: 'De que tamanho são?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt_aprox": "seção sobre comunismo/capitalismo 'ao contrário' (JP linha 368)",
+      "problema": "Fala de Meishu-Sama ausente entre a pergunta sobre a palestra em Quioto e a resposta do interlocutor 'Significa que estão desviados da verdade.' — no JP, Meishu responde primeiro com uma confirmação e devolve a pergunta ('o que você quer dizer com oposto?'), e só então o interlocutor esclarece.",
+      "correcao": "Inserida: 'Comparando, seria mesmo o oposto. Mas o que você quer dizer com \"oposto\"?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt_aprox": "linha 24 do JP ('御垂示録第二十号（昭和二十八年）') vs. cabeçalho do PT",
+      "problema": "Linha de cabeçalho redundante no JP (terceira repetição do título/ano, após 'Title:' e a linha de publicação) sem par direto no PT.",
+      "correcao": "Nenhuma correção aplicada — verificado que não carrega informação semântica além do que já está traduzido nas duas linhas de cabeçalho anteriores do PT (nº 20 + ano/data de publicação). Tratado como cosmético, não como perda de conteúdo.",
+      "confianca": "media"
+    },
+    {
+      "n": 10,
+      "localizacao_pt_aprox": "revisão geral de completude do corpo inteiro",
+      "problema": "Verificação de que, fora as lacunas acima, não há outros turnos ausentes, trocas de falante invertidas, CJK residual ou truncamento — checado explicitamente por ser exatamente a classe de erro que o gate Δ=0 não pega (ver 'Δ=0 é necessário, nunca suficiente').",
+      "correcao": "Nenhuma correção adicional necessária; demais ~75 pares de pergunta/resposta (temas: patologia/glóbulos brancos, Yamamoto Hisako, fotografia de Meishu-Sama, tokonoma rural, casamento internacional, biombo Kannon/Amida, hidrocefalia, política japonesa 1953, cultivo de junco/arroz/tulipas/cravos) conferem 1:1 com o JP, sem falante trocado, sem cauda perdida, sem duplicação adicional.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio (序文) + cabeçalho de publicação",
+      "jp_linhas": "1-24",
+      "decisao": "ok (item 9 é cosmético)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão única de 1º de maio — abertura + patologia/tuberculose/glóbulos brancos",
+      "jp_linhas": "26-79",
+      "decisao": "corrigido (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Testemunhos e casos de Gohonzon/Inari/tokonoma rural",
+      "jp_linhas": "81-146",
+      "decisao": "corrigido (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Culto budista, posições de altar, biombo Kannon/Amida",
+      "jp_linhas": "149-273",
+      "decisao": "corrigido (itens 3, 4, 5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Tabuletas mortuárias, 49 dias de luto, velório",
+      "jp_linhas": "276-296",
+      "decisao": "corrigido (item 6, grave)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Hitonomichi, imagens antigas, descarte, amuleto no banheiro",
+      "jp_linhas": "294-327",
+      "decisao": "corrigido (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Hidrocefalia, política japonesa (eleições 1953, EUA/URSS/China)",
+      "jp_linhas": "330-363",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Comunismo x capitalismo, cultivo sem fertilizante (junco, arroz, tulipas, cravos)",
+      "jp_linhas": "366-401",
+      "decisao": "corrigido (item 8)",
+      "confianca": "alta"
+    }
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 8 correções. approved:true."
+  },
+  "rotulagem_interlocutor_meishu": {
+    "data": "2026-07-08",
+    "metodo": "gokowa-rotulagem-a4b-jp.mdc adaptado a Gosuiji-roku (aspas curvas 「」= Interlocutor; texto corrido sem aspas = Meishu-Sama)",
+    "etapa_a": "JP lido linha a linha, todo o volume (sessão única de 1º de maio, JP linhas 26-401). Mapa de turnos construído por parágrafo: 83 turnos iniciados por 「 (Interlocutor) e 92 parágrafos em texto corrido (Meishu-Sama, incluindo a fala de abertura da sessão e vários casos de resposta em 2-3 parágrafos consecutivos, ex. JP 71-72, 104-105, 151-152, 272-273, 362-363, 389-391). Nenhum turno de uma só palavra/frase curta do Meishu-Sama foi perdido na contagem (ex. JP88/92/96/179/191/309, já restaurados na auditoria de completude anterior desta mesma trilha).",
+    "etapa_b": "Confirmado 1:1, turno a turno, entre o mapa JP (175 parágrafos após o cabeçalho de sessão, excluindo o próprio cabeçalho) e os 175 parágrafos do PT já revisado (auditoria de completude 2026-07-07 aplicada previamente, portanto sem lacunas remanescentes). Nenhum turno faltando encontrado nesta etapa — a auditoria de completude anterior já havia corrigido as lacunas de turnos curtos do Meishu-Sama. Alinhamento verificado por par completo (83 Interlocutor + 92 Meishu-Sama = 175), conferido trecho a trecho contra o conteúdo semântico do JP.",
+    "etapa_c": "Rótulos 'Interlocutor: ' / 'Meishu-Sama: ' aplicados diretamente no início de cada um dos 175 parágrafos do PT, na ordem existente, sem reordenar nem reescrever conteúdo. Aspas curvas do PT preservadas como estavam. Cabeçalho de sessão '[1º de maio]' preservado sem rótulo.",
+    "metricas_finais": {
+      "interlocutor_count_pt": 83,
+      "meishu_sama_count_pt": 92,
+      "total_paragrafos": 175,
+      "travessoes_no_corpo": 0,
+      "streak_maximo_interlocutor_consecutivo": 1,
+      "streak_maximo_meishu_consecutivo": 3,
+      "observacao_streak": "streak de 3 Meishu-Sama consecutivos corresponde a resposta genuína de 3 parágrafos no JP (linhas 389-391, sobre veneno de fertilizante em semente/solo e tulipas) — não é erro de rotulagem."
+    },
+    "backup": "reports/livros_trabalho/pt/19530515-御垂示録20号.txt.pre_label_backup",
+    "approved_alterado": false
+  }
+}

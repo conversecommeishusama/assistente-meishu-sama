@@ -1,0 +1,5713 @@
+{
+  "generated_at": "2026-06-28T12:44:19Z",
+  "method": "line_by_line_jp_scan_all",
+  "files_total": 132,
+  "files_multi_split": 74,
+  "files_monolith": 58,
+  "proposed_splits_total": 3113,
+  "files": [
+    {
+      "filename": "19350000-観音講座　（１～７）.txt",
+      "body_lines": 1091,
+      "marker_counts": {
+        "koza_lecture": 7,
+        "ochishiji_date": 2,
+        "koza_topic": 28,
+        "gokowa_date_full": 1,
+        "qa_question": 2
+      },
+      "proposed_splits": 7,
+      "split_kinds": [
+        "koza_lecture"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "koza_lecture",
+          "text": "第一講座"
+        },
+        {
+          "line": 72,
+          "kind": "ochishiji_date",
+          "text": "［イラスト省略］"
+        },
+        {
+          "line": 82,
+          "kind": "ochishiji_date",
+          "text": "［イラスト省略］"
+        },
+        {
+          "line": 144,
+          "kind": "koza_topic",
+          "text": "一、ナンダナーガラーシャ　　　（難陀）　　　観　喜　龍　王"
+        },
+        {
+          "line": 145,
+          "kind": "koza_topic",
+          "text": "一、ウバナンダナーガラーシャ　（跋難陀）　　善観喜龍王"
+        },
+        {
+          "line": 146,
+          "kind": "koza_topic",
+          "text": "一、サーガラナーガラーシャ　　（娑羯羅）　　海　龍　王"
+        },
+        {
+          "line": 147,
+          "kind": "koza_topic",
+          "text": "一、ワーシュキナーガラーシャ　（和修吉）　　多　頭　龍　王"
+        },
+        {
+          "line": 148,
+          "kind": "koza_topic",
+          "text": "一、タクシャカナーガラーシャ　（徳叉迦）　　視　毒　龍　王"
+        }
+      ],
+      "total_markers": 40
+    },
+    {
+      "filename": "19480101-御光話録（補）.txt",
+      "body_lines": 2653,
+      "marker_counts": {
+        "gokowa_date_full": 2,
+        "qa_question": 483,
+        "gokowa_date_md": 27,
+        "jikan_hen": 29
+      },
+      "proposed_splits": 29,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 8,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十三年一月一日"
+        },
+        {
+          "line": 19,
+          "kind": "qa_question",
+          "text": "――ハイドンもあります。"
+        },
+        {
+          "line": 23,
+          "kind": "qa_question",
+          "text": "――藤原さんがほとんど紹介してくれました。"
+        },
+        {
+          "line": 27,
+          "kind": "qa_question",
+          "text": "――どうも貧乏で困ります。"
+        },
+        {
+          "line": 31,
+          "kind": "qa_question",
+          "text": "――残したのは中山晋平です。"
+        },
+        {
+          "line": 35,
+          "kind": "qa_question",
+          "text": "――もぐり込んでるようです。"
+        },
+        {
+          "line": 41,
+          "kind": "qa_question",
+          "text": "――『越後獅子』や『カッポレ』はなかなか名曲です。"
+        },
+        {
+          "line": 45,
+          "kind": "qa_question",
+          "text": "――あれは酒と女の音楽です。"
+        }
+      ],
+      "total_markers": 541
+    },
+    {
+      "filename": "19480701-御讃歌集.txt",
+      "body_lines": 708,
+      "marker_counts": {
+        "preface": 1,
+        "numbered_csv": 309
+      },
+      "proposed_splits": 310,
+      "split_kinds": [
+        "numbered_csv_hymn"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 2,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 10,
+          "kind": "numbered_csv",
+          "text": "1, さんぜんせかい　たてなおさむとかしこくも　せんじゅかんのんとあれましにける"
+        },
+        {
+          "line": 12,
+          "kind": "numbered_csv",
+          "text": "2, じゆうむげ　せんじゅはおろかまんおくの　みてさしのべてすくいますらむ"
+        },
+        {
+          "line": 14,
+          "kind": "numbered_csv",
+          "text": "3, せんのみてに　ぶっかをさずけせんのみめに　ひかりめぐもうせそんとうとし"
+        },
+        {
+          "line": 16,
+          "kind": "numbered_csv",
+          "text": "4, たらちねの　ははのちぶさをしたうがに　よびとすがらんたまのおんてに"
+        },
+        {
+          "line": 18,
+          "kind": "numbered_csv",
+          "text": "5, かしこくも　せんじゅのみてをさしのべて　さんかいばんれいすくわせたもう"
+        },
+        {
+          "line": 20,
+          "kind": "numbered_csv",
+          "text": "6, せんようの　みてのちからにまがかみも　せそんのみまえにぬかづくなるらむ"
+        },
+        {
+          "line": 22,
+          "kind": "numbered_csv",
+          "text": "7, いとふかき　なぞをひめたるかんのんの　せんじゅのみてはひらかせますらむ"
+        }
+      ],
+      "total_markers": 310
+    },
+    {
+      "filename": "19480905-信仰雑話.txt",
+      "body_lines": 2536,
+      "marker_counts": {
+        "preface": 1,
+        "shinko_divider": 131,
+        "shinko_page": 39
+      },
+      "proposed_splits": 170,
+      "split_kinds": [
+        "shinko_dividers"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 1,
+          "kind": "preface",
+          "text": "信仰雑話 序文"
+        },
+        {
+          "line": 2,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 5,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 24,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 26,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 28,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 44,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 46,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        }
+      ],
+      "total_markers": 171
+    },
+    {
+      "filename": "19481208-御光話録1号.txt",
+      "body_lines": 249,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 47,
+        "jikan_hen": 6,
+        "koza_topic": 1
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "十月二十八日（木）"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――大浄化は来年あたりから急激に来るのでしょうか、または三、四年経ってから急激に来るのでございましょうか。"
+        },
+        {
+          "line": 12,
+          "kind": "qa_question",
+          "text": "――ひところ盛んでした会員の疥癬が最近あまり見られませんが……"
+        },
+        {
+          "line": 17,
+          "kind": "qa_question",
+          "text": "――そのときは急激でしょうか。"
+        },
+        {
+          "line": 22,
+          "kind": "qa_question",
+          "text": "――現在世界状勢は非常に険悪になり、第三次大戦の危険もみられますが？"
+        },
+        {
+          "line": 27,
+          "kind": "qa_question",
+          "text": "――御浄霊により肉体的に救われても、精神的に更生される方が少ないのはなぜでございましょうか。"
+        },
+        {
+          "line": 31,
+          "kind": "qa_question",
+          "text": "――例えばいつまでも夫婦喧嘩を続け、いっこう更生したように見えない方がよくございますが……"
+        },
+        {
+          "line": 36,
+          "kind": "qa_question",
+          "text": "――大先生様の御生誕遊ばされた十二月二十三日に、いまの皇太子殿下もお生まれですが、なにか御因縁がおありのように拝察いたしますがいかがでございましょうか。"
+        }
+      ],
+      "total_markers": 57
+    },
+    {
+      "filename": "19490000-御光話録4号.txt",
+      "body_lines": 468,
+      "marker_counts": {
+        "gokowa_date_md": 2,
+        "qa_question": 86,
+        "koza_topic": 1,
+        "jikan_hen": 12
+      },
+      "proposed_splits": 2,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 16,
+          "kind": "gokowa_date_md",
+          "text": "二月八日（火）"
+        },
+        {
+          "line": 18,
+          "kind": "qa_question",
+          "text": "――お伺いは左の事項中いずれを主とすべきでしょうか。"
+        },
+        {
+          "line": 19,
+          "kind": "koza_topic",
+          "text": "一、御浄霊のこと、二、開発のこと、三、社会生活のこと、四、霊界のこと、五、家庭生活のこと、六、将来の見通し、七、御著書のこと、八、教団内部のこと"
+        },
+        {
+          "line": 24,
+          "kind": "qa_question",
+          "text": "――支部にいただいた会名はどの程度に使わせていただいたらよろしいでしょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――（一）龍神の働きについて、"
+        },
+        {
+          "line": 30,
+          "kind": "jikan_hen",
+          "text": "（二）日本が龍型をしている意義について、"
+        },
+        {
+          "line": 32,
+          "kind": "jikan_hen",
+          "text": "（一）龍神にはいろいろな働きがありますが、だいたい天文現象が主で風雨雷霆を司り、また小さくは沼、川の守護をします。山は天狗が支配してますが川は龍神です。大中小いろんなのがいるんです。"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――龍神から化した人間にも善悪はあるものでしょうか。"
+        }
+      ],
+      "total_markers": 101
+    },
+    {
+      "filename": "19490000-御光話録5号.txt",
+      "body_lines": 302,
+      "marker_counts": {
+        "gokowa_date_md": 2,
+        "qa_question": 58,
+        "jikan_hen": 4
+      },
+      "proposed_splits": 2,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "三月八日（火）"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――民族の平均年齢について、"
+        },
+        {
+          "line": 13,
+          "kind": "qa_question",
+          "text": "――いろいろ苦労して頭を使うのはいかがでしょうか。"
+        },
+        {
+          "line": 19,
+          "kind": "qa_question",
+          "text": "――流行性感冒が流行しているようですが、これは黴菌によって誘発されるのでしょうか。"
+        },
+        {
+          "line": 26,
+          "kind": "qa_question",
+          "text": "――昼への転換につれて地獄はどのような様相を呈するのでしょうか。"
+        },
+        {
+          "line": 31,
+          "kind": "qa_question",
+          "text": "――昼の世界になっても地獄は存在するのでしょうか。"
+        },
+        {
+          "line": 36,
+          "kind": "qa_question",
+          "text": "――教導所の御軸はお姿より御書体の大光明如来様をお祀り申し上げるべきでしょうか。"
+        },
+        {
+          "line": 41,
+          "kind": "qa_question",
+          "text": "――発熱の場合額に熱が出やすいのはなぜでしょうか。"
+        }
+      ],
+      "total_markers": 64
+    },
+    {
+      "filename": "19490108-御光話録2号.txt",
+      "body_lines": 443,
+      "marker_counts": {
+        "gokowa_date_md": 4,
+        "qa_question": 88,
+        "koza_topic": 1
+      },
+      "proposed_splits": 4,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "十一月二十八日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――注射により死亡する人がだいぶ世間にありますが、これは注射薬の中にいわゆる毒素があるためでございましょうか。"
+        },
+        {
+          "line": 12,
+          "kind": "qa_question",
+          "text": "――注射直後、体が硬直することもございますが……"
+        },
+        {
+          "line": 17,
+          "kind": "qa_question",
+          "text": "――個人的または団体的悪宣伝に対し、私どもは宗教人としてよい宣伝をもってこれに報ゆるべきでしょうか。"
+        },
+        {
+          "line": 22,
+          "kind": "qa_question",
+          "text": "――悪宣伝の結果、悪い支障が次々と起ってくる心配がありますが……"
+        },
+        {
+          "line": 27,
+          "kind": "qa_question",
+          "text": "――悪宣伝に対して言い訳をすることはいかがでしょうか。"
+        },
+        {
+          "line": 32,
+          "kind": "qa_question",
+          "text": "――「恒産なき者は恒心なし」との格言がありますが、現在の世相においても当てはまるものでございましょうか。"
+        },
+        {
+          "line": 37,
+          "kind": "qa_question",
+          "text": "――大先生様の御人格と、日本の神国思想との関係についてお伺い申し上げます。"
+        }
+      ],
+      "total_markers": 93
+    },
+    {
+      "filename": "19490208-御光話録3号.txt",
+      "body_lines": 452,
+      "marker_counts": {
+        "qa_question": 87,
+        "jikan_hen": 6,
+        "gokowa_date_md": 2,
+        "koza_topic": 3,
+        "gokowa_date_full": 1
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――お伺いの仕方について、"
+        },
+        {
+          "line": 14,
+          "kind": "qa_question",
+          "text": "――新聞などにて拝見いたしました大先生様や御軸の御写真はいかがいたすべきでしょうか。"
+        },
+        {
+          "line": 19,
+          "kind": "qa_question",
+          "text": "――神様にお供えしてあるものをその場から信者にお分けするのはいかがでしょうか。"
+        },
+        {
+          "line": 24,
+          "kind": "qa_question",
+          "text": "――孟子の性善説、荀子の性悪説は、大先生様の本副守護神の一つの表現でしょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――姓名の呼び方で、例えば私の名前の光彦（てるひこ）を「ミツヒコ」と呼ぶ人もありますが、この場合言霊から言えばどういうふうになりましょうか。"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――性愛と恋愛について、"
+        },
+        {
+          "line": 35,
+          "kind": "jikan_hen",
+          "text": "（一）性教育はもっと徹底して子女に教育すべきかと存じますがいかがでしょうか。"
+        },
+        {
+          "line": 40,
+          "kind": "qa_question",
+          "text": "――（二）性問題を扱う雑誌も多く、また住宅欠乏のため性問題になにかと悩んでいる父兄も多いのですが、これはいかがいたすべきでしょうか。"
+        }
+      ],
+      "total_markers": 99
+    },
+    {
+      "filename": "19490423-御光話録6号.txt",
+      "body_lines": 225,
+      "marker_counts": {
+        "qa_question": 42,
+        "koza_topic": 4
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=42, koza_topic=4"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――霊界は想念の世界とのことですが、霊界ではどんな方法で意志の疎通をいたすのでしょうか。また、言葉はないでしょうか。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――霊界では脈拍、呼吸はどういうふうになりますでしょうか。"
+        },
+        {
+          "line": 15,
+          "kind": "qa_question",
+          "text": "――入信してから死んだ人の体が死後もたいへん温かいのはなぜでしょうか。"
+        },
+        {
+          "line": 20,
+          "kind": "qa_question",
+          "text": "――位牌の裏にその人の生前の官職などを彫ることはいかがでしょうか。"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――養子に行った次男が死亡いたしました。実家で祀ってやりたいと存じますが、この次男の弟妹の位牌より上位でよろしいでしょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――私の娘とその弟が死にました。弟は長男ですがどちらを上にすべきでしょう。"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――笑い上戸、笑い中気は狸の霊でしょうか。また、泣き上戸、泣き中気はいかなるものでございましょうか。"
+        },
+        {
+          "line": 39,
+          "kind": "qa_question",
+          "text": "――蝦（えび）子といって、生まれるとき「エビ」のように曲がって生まれて来る赤ん坊がありますが、なぜでしょうか。"
+        }
+      ],
+      "total_markers": 46
+    },
+    {
+      "filename": "19490522-御光話録7号.txt",
+      "body_lines": 326,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 57,
+        "jikan_hen": 1
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 28,
+          "kind": "gokowa_date_md",
+          "text": "四月四日（月）"
+        },
+        {
+          "line": 30,
+          "kind": "qa_question",
+          "text": "――自己の師事している先生の、お道に対する精進が足りないように感じられて尊敬の心が起きなくなったり、あるいは、より以上の立派な先生について、もっとお道のことを深く研究したい……という気持ちになったりし"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――そういう人がだいぶあります。"
+        },
+        {
+          "line": 39,
+          "kind": "qa_question",
+          "text": "――姓名や家相のよい人と、そういうことはまったく知らずにまじめに働いている人とは、どちらが神様の御加護をいただけるものでしょうか。"
+        },
+        {
+          "line": 44,
+          "kind": "qa_question",
+          "text": "――大浄化が迫るにつれて、神様の「裁き」のお働きのほうが「救い」のお働きより強くなるのでしょうか。あるいは両方ともに同じように強まる……と考えさせていただいてよろしいでしょうか。"
+        },
+        {
+          "line": 49,
+          "kind": "qa_question",
+          "text": "――観音様が逐次高い御位にお戻りになられるのと同様に、国常立尊もまた、逐次高くなられるのでしょうか。"
+        },
+        {
+          "line": 53,
+          "kind": "qa_question",
+          "text": "――そういたしますと、お名前も別になってゆかれるのでしょうか。"
+        },
+        {
+          "line": 58,
+          "kind": "qa_question",
+          "text": "――真理は発見さるべきでしょうか、発明さるべきでしょうか。"
+        }
+      ],
+      "total_markers": 61
+    },
+    {
+      "filename": "19490530-御光話録8号.txt",
+      "body_lines": 282,
+      "marker_counts": {
+        "qa_question": 55,
+        "jikan_hen": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=55, jikan_hen=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――教導所の発展しない理由をお伺い申し上げます。"
+        },
+        {
+          "line": 14,
+          "kind": "qa_question",
+          "text": "――私どもの地方では、死人が出たときに屍骸をその人の所有地の林に埋葬し、そこには墓碑を建てず寺の境内に墓を作る習慣がありますが、今度敷地がいっぱいになりましたので拡張いたしたいと存じますがいかがでしょ"
+        },
+        {
+          "line": 19,
+          "kind": "qa_question",
+          "text": "――私の親類の娘、他家へ縁づいて子供が三人できましたが、気違いとなり離縁されました。両親が御浄霊してもこれを受けようともせず、しかたなしに寝てるときに御浄霊しておりますがあまり変化いたしません。いかが"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――私（二十八歳）の主人は五年前戦死いたしました。主人は末子で、戸籍上は分家いたしておりますが、まだ分家の形はとっておりません。いま私は里へ帰っておりますが、主人の霊は主人の家で祀るべきでしょうか、あ"
+        },
+        {
+          "line": 31,
+          "kind": "qa_question",
+          "text": "――主人の遺言によれば、一生独身で分家を立てて行けというのですが、里の家ではこれに反対でございます。いかがいたすべきでしょうか。"
+        },
+        {
+          "line": 36,
+          "kind": "qa_question",
+          "text": "――私宅では去年と今年と二回子供が生まれましたが、二回とも生後すぐ死亡いたしました（いずれも三日目）。これはなにか因縁がありましょうか。"
+        },
+        {
+          "line": 41,
+          "kind": "qa_question",
+          "text": "――人間は宇宙の縮図と申しますが、人体の各部分は宇宙のある部分に当てはまるものでしょうか。"
+        },
+        {
+          "line": 46,
+          "kind": "qa_question",
+          "text": "――フイフイ教では救世主の資格を十六挙げていると申しますが、これについて御教示ください。"
+        }
+      ],
+      "total_markers": 56
+    },
+    {
+      "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "body_lines": 635,
+      "marker_counts": {
+        "section_title": 1,
+        "jikan_hen": 4,
+        "qa_question": 1
+      },
+      "proposed_splits": 4,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 14,
+          "kind": "section_title",
+          "text": "観音教の治療は医学上合理的なる生気療法也"
+        },
+        {
+          "line": 17,
+          "kind": "jikan_hen",
+          "text": "（一）序"
+        },
+        {
+          "line": 24,
+          "kind": "jikan_hen",
+          "text": "（二）生気とは何ぞや"
+        },
+        {
+          "line": 31,
+          "kind": "jikan_hen",
+          "text": "（三）医学上における生気の変遷"
+        },
+        {
+          "line": 42,
+          "kind": "jikan_hen",
+          "text": "（四）生気を人体に応用するは医学上合理的方法なり"
+        },
+        {
+          "line": 165,
+          "kind": "qa_question",
+          "text": "――急性肺炎より救わる――"
+        }
+      ],
+      "total_markers": 6
+    },
+    {
+      "filename": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "body_lines": 903,
+      "marker_counts": {
+        "koza_topic": 13,
+        "gokowa_date_full": 1,
+        "jikan_hen": 18
+      },
+      "proposed_splits": 18,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 29,
+          "kind": "koza_topic",
+          "text": "五、肥料購入肥料及び消毒薬の撒布等に要する手数と労力は非常なものである。"
+        },
+        {
+          "line": 31,
+          "kind": "koza_topic",
+          "text": "六、無肥料栽培の作物はすこぶる美味なること、発育がよく、有肥料のものより巨大で、数量も多いのである。"
+        },
+        {
+          "line": 111,
+          "kind": "koza_topic",
+          "text": "一、稲作について"
+        },
+        {
+          "line": 116,
+          "kind": "koza_topic",
+          "text": "一、麦作について"
+        },
+        {
+          "line": 147,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十三年九月一日"
+        },
+        {
+          "line": 274,
+          "kind": "jikan_hen",
+          "text": "（一）屋敷内のため風通し及び陽当りは田圃に比し悪い事"
+        },
+        {
+          "line": 275,
+          "kind": "jikan_hen",
+          "text": "（二）選定箇所は砂丘地にて稲作には不適なる事"
+        },
+        {
+          "line": 276,
+          "kind": "jikan_hen",
+          "text": "（三）一般の田植が全部完了の後始めた関係上約一カ月程植付がおくれた事"
+        }
+      ],
+      "total_markers": 32
+    },
+    {
+      "filename": "19490710-御光話録10号.txt",
+      "body_lines": 422,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 74,
+        "jikan_hen": 2,
+        "koza_topic": 2
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "五月三日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――仲人をいたします場合、結婚する二人に対し責任を持てないことがありますが、かかる際にはどのようにいたすべきでしょうか。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――昔から、仲人をするようにならねばいけないと申しますが、私自身どうも仲人がつとまらぬものですから、身が至らぬためかと存じますが……"
+        },
+        {
+          "line": 15,
+          "kind": "qa_question",
+          "text": "――色盲や夜盲症は御浄霊によりましてもそうとう永くかかるように存じますが、どのようにいたしますれば早くお救いをいただけましょうか。"
+        },
+        {
+          "line": 20,
+          "kind": "qa_question",
+          "text": "――老人になるに従って耳が遠くなるのはやはり毒素のためでしょうか。"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――二十八歳の娘、十年ほど前に中耳炎と眼を患い、そのころより両耳ともぜんぜん聞こえなくなりましたが、鼓膜さえ異状なければ聞こえるようになりましょうか。"
+        },
+        {
+          "line": 30,
+          "kind": "qa_question",
+          "text": "――三歳の女児、マッチの先の硫黄を食べたがり一日に大箱一個くらいも食べてしまいます。少しくらいのマッチでは泣き出して食べません。これはなぜでしょうか。"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――よく回虫が湧くと壁土を食べたりすると申しますが……"
+        }
+      ],
+      "total_markers": 81
+    },
+    {
+      "filename": "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "body_lines": 273,
+      "marker_counts": {
+        "koza_topic": 5
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=5"
+      ],
+      "sample_markers": [
+        {
+          "line": 29,
+          "kind": "koza_topic",
+          "text": "一、緒　言"
+        },
+        {
+          "line": 35,
+          "kind": "koza_topic",
+          "text": "二、岡田氏の信仰と奇蹟を批判す"
+        },
+        {
+          "line": 111,
+          "kind": "koza_topic",
+          "text": "三、岡田氏の宇宙観及び人生観を検討す"
+        },
+        {
+          "line": 155,
+          "kind": "koza_topic",
+          "text": "四、岡田氏の宗教事業を観る"
+        },
+        {
+          "line": 170,
+          "kind": "koza_topic",
+          "text": "五、岡田氏の信仰雑話を読みて"
+        }
+      ],
+      "total_markers": 5
+    },
+    {
+      "filename": "19490730-御光話録9号.txt",
+      "body_lines": 365,
+      "marker_counts": {
+        "qa_question": 68,
+        "koza_topic": 2
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=68, koza_topic=2"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――入信しても邪神の虜となり、また熱心な信者でも邪神に引かれる傾向があるように存じますが、このようなところでの教導師の心得について御教示をお願い申し上げます。"
+        },
+        {
+          "line": 12,
+          "kind": "qa_question",
+          "text": "――徳を積むとか、徳のある人とか申しますが、この「徳」とはなんでしょうか。また陰徳を積むとはなんのことでしょうか。"
+        },
+        {
+          "line": 19,
+          "kind": "qa_question",
+          "text": "――昭和十九年暮れに教修をいただいた二十七歳の学生、生来気が弱くて悩んでおります。いかがなものでございましょうか。"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――私はこの御教えを知りましてより、いろいろとたいへんな御利益をいただいておりまして早く専心お道に励みたいと思い、あれやこれや考えていまの仕事（仕立屋）も手につかずまた生活問題などもあって悩んでおりま"
+        },
+        {
+          "line": 32,
+          "kind": "qa_question",
+          "text": "――畏れ多いことながら、夏などにわか雨、夕立などで、御光りを濡らすことがございますが、こんな場合いかにいたしたらよろしいでしょうか。また濡れたりしますと、御光りの御力に違いがあるものでしょうか。"
+        },
+        {
+          "line": 37,
+          "kind": "qa_question",
+          "text": "――自由恋愛と見合結婚をめぐりいろいろと議論が交わされており、自由恋愛は新しい人の問にもてはやされ、見合結婚は昔気質（かたぎ）の人が主張するようですが、いずれも結局は産土神（うぶすながみ）のお取り次ぎ"
+        },
+        {
+          "line": 43,
+          "kind": "qa_question",
+          "text": "――生き霊が憑依する場合、その本人の状態および想念はどのようになりましょうか。"
+        },
+        {
+          "line": 50,
+          "kind": "qa_question",
+          "text": "――三人姉妹の長女（二十六歳）半年ほど前五十一歳の男のもとへ走りました。父母は八方手を尽くし娘を帰そうとしても、どうしても帰らず悩み抜いておりますが、いかがいたしたらよろしいでしょうか。"
+        }
+      ],
+      "total_markers": 70
+    },
+    {
+      "filename": "19490821-御光話録11号.txt",
+      "body_lines": 420,
+      "marker_counts": {
+        "qa_question": 81,
+        "koza_topic": 4
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=81, koza_topic=4"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――「大本教の「松の世」、天理教の「甘露台の世」、日蓮の「義農の世」などはすべて「地上天国」を指すのである」とのお言葉でございますが、その一々の字義について御教示をお願い申し上げます。"
+        },
+        {
+          "line": 16,
+          "kind": "qa_question",
+          "text": "――五六七の語源について御教えください。"
+        },
+        {
+          "line": 24,
+          "kind": "qa_question",
+          "text": "――馬頭（ばとう）観音、准胝（じゅんてい）観音、不空羂索（ふくうけんさく）観音、如意輪（にょいりん）観音、十一面観音、魚籃（ぎょらん）観音、揚柳（ようりゅう）観音のお働きにつき御教示ください。"
+        },
+        {
+          "line": 38,
+          "kind": "qa_question",
+          "text": "――極楽の図には蓮の花がありますが、蓮の花の霊的意味についてお伺い申し上げます。"
+        },
+        {
+          "line": 45,
+          "kind": "qa_question",
+          "text": "――聖者賢哲はふつうの人より再生する度合が少ないのでしょうか。"
+        },
+        {
+          "line": 51,
+          "kind": "qa_question",
+          "text": "――支那では野外に神様を祀る場合、南向きになっておりますが、これは根拠のあることでしょうか。"
+        },
+        {
+          "line": 56,
+          "kind": "qa_question",
+          "text": "――私の家は床の間に龍神、地蔵様、稲荷の三体を並べて祀ってありますが、このたび、光明如来様をお祀りすることになりましたので、地蔵様を仏壇に、お稲荷様を戸外に移そうと存じますがよろしゅうございましょうか"
+        },
+        {
+          "line": 60,
+          "kind": "qa_question",
+          "text": "――はあ、石でございます。"
+        }
+      ],
+      "total_markers": 85
+    },
+    {
+      "filename": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "body_lines": 283,
+      "marker_counts": {
+        "preface": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: preface=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "body_lines": 253,
+      "marker_counts": {
+        "koza_topic": 5
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=5"
+      ],
+      "sample_markers": [
+        {
+          "line": 172,
+          "kind": "koza_topic",
+          "text": "一、絵画"
+        },
+        {
+          "line": 191,
+          "kind": "koza_topic",
+          "text": "二、彫刻"
+        },
+        {
+          "line": 197,
+          "kind": "koza_topic",
+          "text": "三、蒔絵"
+        },
+        {
+          "line": 203,
+          "kind": "koza_topic",
+          "text": "四、陶器"
+        },
+        {
+          "line": 220,
+          "kind": "koza_topic",
+          "text": "五、書について"
+        }
+      ],
+      "total_markers": 5
+    },
+    {
+      "filename": "19490921-御光話録12号.txt",
+      "body_lines": 497,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 92,
+        "jikan_hen": 9
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "六月三日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――礼拝および祝詞奏上について、"
+        },
+        {
+          "line": 8,
+          "kind": "jikan_hen",
+          "text": "（一）霊的の病人に天津祝詞を上げてよいとうけたまわりましたが、祭事の際、御神体にも天津祝詞を奏上してよろしいでしょうか。"
+        },
+        {
+          "line": 13,
+          "kind": "qa_question",
+          "text": "――（二）霊的症状のときは天津祝詞だけでよろしいでしょうか。"
+        },
+        {
+          "line": 17,
+          "kind": "qa_question",
+          "text": "――（三）礼拝の際、"
+        },
+        {
+          "line": 23,
+          "kind": "qa_question",
+          "text": "――いままでは平伏のときにお願い事をさせていただいておりましたが、ただいまはその時間がございませんが、これは……"
+        },
+        {
+          "line": 28,
+          "kind": "qa_question",
+          "text": "――以前は一揖一拝でしたが、やはり二拝がよろしいでしょうか。"
+        },
+        {
+          "line": 32,
+          "kind": "qa_question",
+          "text": "――（四）天津祝詞奏上の場合、最後に、"
+        }
+      ],
+      "total_markers": 104
+    },
+    {
+      "filename": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "body_lines": 476,
+      "marker_counts": {
+        "preface": 1,
+        "qa_question": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: preface=1, qa_question=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 217,
+          "kind": "qa_question",
+          "text": "――素人で三十八俵の炭焼に成功――"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19491021-御光話録13号.txt",
+      "body_lines": 654,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 139,
+        "koza_topic": 3
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "七月三日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――伝道のため新しい土地にまいりました場合、その土地の氏神様に御挨拶すべきでしょうか。もしすべき場合は単に儀礼的にすればよろしいでしょうか。あるいは御守護をお願いすべきでしょうか。"
+        },
+        {
+          "line": 12,
+          "kind": "qa_question",
+          "text": "――性格の遺伝ということはあり得ることでしょうか。性格の遺伝は霊統と密接不離のものでしょうか。民族によっても性格に差異があるように感じられますが、これはやはり単に霊統というのみでなく、環境（例えば気候"
+        },
+        {
+          "line": 18,
+          "kind": "qa_question",
+          "text": "――禽獣虫魚にも霊位の上下はありましょうか。また、それらから人間に再生したものの見分けはふつうの人にも判るものでしょうか。人間が禽獣虫魚に再生する場合、その禽獣虫魚の種類はだいたい限られているものでし"
+        },
+        {
+          "line": 23,
+          "kind": "qa_question",
+          "text": "――禽獣虫魚の四つに分けた場合、その中での上下はありましょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――その逆に、人間が動物になった場合はいかがでしょうか。"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――三十五歳の女、神経衰弱と言われ四年前に教修をいただき、初めはさほどでもなかったのですが昨年ごろよりだんだん悪くなり、ほとんどしゃべらず、頭を軽く上下に振り口を動かし、いつも口に手を当ててうつむいて"
+        },
+        {
+          "line": 39,
+          "kind": "qa_question",
+          "text": "――はい、眠ります。"
+        }
+      ],
+      "total_markers": 145
+    },
+    {
+      "filename": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "body_lines": 260,
+      "marker_counts": {
+        "preface": 1,
+        "koza_topic": 12
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=12, preface=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 4,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 18,
+          "kind": "koza_topic",
+          "text": "一、緒　言"
+        },
+        {
+          "line": 27,
+          "kind": "koza_topic",
+          "text": "二、キリスト教の起源とその根本観念"
+        },
+        {
+          "line": 43,
+          "kind": "koza_topic",
+          "text": "三、キリスト教の発達と神格の変貌"
+        },
+        {
+          "line": 73,
+          "kind": "koza_topic",
+          "text": "四、キリスト教とパウロ"
+        },
+        {
+          "line": 94,
+          "kind": "koza_topic",
+          "text": "五、釈迦の生誕と仏教の発展"
+        },
+        {
+          "line": 119,
+          "kind": "koza_topic",
+          "text": "六、初期小乗仏教時代"
+        },
+        {
+          "line": 128,
+          "kind": "koza_topic",
+          "text": "七、大乗仏教の全盛時代"
+        }
+      ],
+      "total_markers": 13
+    },
+    {
+      "filename": "19491120-御光話録14号.txt",
+      "body_lines": 418,
+      "marker_counts": {
+        "gokowa_date_md": 3,
+        "qa_question": 80,
+        "jikan_hen": 1
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "八月三日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――知識の開発は霊魂の進化を促進させるのでしょうか。頭脳を使う者ほど永生きするのはそれによって霊魂が進化するため、現世に生存する価値が多いからでございましょうか。"
+        },
+        {
+          "line": 12,
+          "kind": "qa_question",
+          "text": "――他の分会より転入会した人の御守りを受けさせかえる分会がございますが、これはいかがでしょうか。"
+        },
+        {
+          "line": 17,
+          "kind": "qa_question",
+          "text": "――葬式のとき、神棚に半紙を貼って遮蔽（しゃへい）する習慣がありますが、これはいかがでしょうか。"
+        },
+        {
+          "line": 22,
+          "kind": "qa_question",
+          "text": "――睡眠不足のため気力減退の状態で御浄霊をさせていただいたとき、あるいは飲酒して御浄霊させていただいたときには効果がありましょうか。また、神様に対して失礼ではないでしょうか。"
+        },
+        {
+          "line": 28,
+          "kind": "qa_question",
+          "text": "――我と執着のない人は霊気が強いと言われる方がありますが、これはいかがでしょうか。"
+        },
+        {
+          "line": 33,
+          "kind": "qa_question",
+          "text": "――お道の偉大さを知りまた大浄化を信じられる私どもにとって、結婚はお道の方を希望いたしますが、不幸にもお道を信じられず、大浄化も信じられない人と恋愛が進みました場合、これは仮の結婚と思うべきでしょうか"
+        },
+        {
+          "line": 39,
+          "kind": "qa_question",
+          "text": "――夫婦仲が悪くてもよい子供ができたり、仲がよくても悪い子供ができたりいたしますが、これは霊的にどのように考察いたすべきでしょうか。"
+        }
+      ],
+      "total_markers": 84
+    },
+    {
+      "filename": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "body_lines": 1108,
+      "marker_counts": {
+        "numbered_csv": 486
+      },
+      "proposed_splits": 486,
+      "split_kinds": [
+        "numbered_csv_auto"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 14,
+          "kind": "numbered_csv",
+          "text": "1, ひんがしの　そらあかあかとにちりんは　くもをやぶりてのぼりそめける"
+        },
+        {
+          "line": 16,
+          "kind": "numbered_csv",
+          "text": "2, よのおわり　いよいよちかみおおいなる　ひかりはいましのぼらんとすも"
+        },
+        {
+          "line": 18,
+          "kind": "numbered_csv",
+          "text": "3, ふじのゆき　あかねにそめてにちりんは　いましみそらにかがやきそめける"
+        },
+        {
+          "line": 20,
+          "kind": "numbered_csv",
+          "text": "4, おおふじの　ゆきくれないにひはそめぬ　はじらうおとめのおもわにもにて"
+        },
+        {
+          "line": 24,
+          "kind": "numbered_csv",
+          "text": "5, かれのはら　てらすひざしにはるみえて　なんとはなしにのどけさのきょう"
+        },
+        {
+          "line": 26,
+          "kind": "numbered_csv",
+          "text": "6, あさけれど　はるはみえけりこみぞがわ　みずのせせらぎかそかながらも"
+        },
+        {
+          "line": 28,
+          "kind": "numbered_csv",
+          "text": "7, はるきぬる　はたけにのこんのゆきあれど　つめたからなくうすらかぎらう"
+        },
+        {
+          "line": 30,
+          "kind": "numbered_csv",
+          "text": "8, きさらぎの　すえともなればはるめきて　ふゆかればやしまひにあかるき"
+        }
+      ],
+      "total_markers": 486
+    },
+    {
+      "filename": "19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "body_lines": 347,
+      "marker_counts": {
+        "preface": 1,
+        "koza_topic": 16
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=16, preface=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 19,
+          "kind": "koza_topic",
+          "text": "一、成道前の釈迦"
+        },
+        {
+          "line": 40,
+          "kind": "koza_topic",
+          "text": "二、成道後の釈迦"
+        },
+        {
+          "line": 51,
+          "kind": "koza_topic",
+          "text": "一、哲人ソクラテスの思想略説"
+        },
+        {
+          "line": 62,
+          "kind": "koza_topic",
+          "text": "二、弟子エウテュデーモスとの神々の愛についての問答"
+        },
+        {
+          "line": 99,
+          "kind": "koza_topic",
+          "text": "三、ソクラテスのダイモニオン（神霊）と入神状態"
+        },
+        {
+          "line": 124,
+          "kind": "koza_topic",
+          "text": "一、イエスの誕生とその背景"
+        },
+        {
+          "line": 136,
+          "kind": "koza_topic",
+          "text": "二、イエスの洗礼及び復活をめぐる神秘"
+        }
+      ],
+      "total_markers": 17
+    },
+    {
+      "filename": "19491220-御光話録15号.txt",
+      "body_lines": 489,
+      "marker_counts": {
+        "qa_question": 99,
+        "koza_topic": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=99, koza_topic=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――「見真実」の地位には信仰が深くなればだれでも到達できるのでしょうか。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――主神が釈迦やキリストのごとき最高級の御霊を衆生済度のためにこの地上におつかわしになる場合、その肉体をいかなる血統（または霊統）の家におつかわしになるのでしょうか。また、それは勿論新生霊ではないと存"
+        },
+        {
+          "line": 15,
+          "kind": "qa_question",
+          "text": "――八大龍王は日本の近海や湖に御鎮りになって時を待たれた由ですが、それはどこどこでしょうか。"
+        },
+        {
+          "line": 20,
+          "kind": "qa_question",
+          "text": "――天津祝詞はいつごろ、だれによって作られたものでしょうか。また、言霊学上どんな意味がありましょうか。"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――木彫の観音様や大黒様をお祀りしてある場合、あとから立派なのが授かったときにはお取り替えしても差し支えありませんでしょうか。また、床の間の上に紫の幕を張ることは差し支えありませんでしょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――よくその家の定紋（じょうもん）のついたのを張ってありますが……"
+        },
+        {
+          "line": 34,
+          "kind": "qa_question",
+          "text": "――観音様の御本体は国常立尊と伺っておりますが、その御関係について御教示をお願いいたします。"
+        },
+        {
+          "line": 41,
+          "kind": "qa_question",
+          "text": "――御玉串として捧げる御金を一時立て替えてお納め申し上げることは差し支えないでしょうか。"
+        }
+      ],
+      "total_markers": 100
+    },
+    {
+      "filename": "19491223-山と水.txt",
+      "body_lines": 3251,
+      "marker_counts": {
+        "numbered_csv": 1239
+      },
+      "proposed_splits": 1240,
+      "split_kinds": [
+        "numbered_csv_poem"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 15,
+          "kind": "numbered_csv",
+          "text": "1, あめはれて　つゆもしとどのたかむらの　したかげあおくこけのはなさく"
+        },
+        {
+          "line": 17,
+          "kind": "numbered_csv",
+          "text": "2, あおあおし　ばしょうのひろはにあおがえる　さゆるぎもせであめにぬれおり"
+        },
+        {
+          "line": 19,
+          "kind": "numbered_csv",
+          "text": "3, さみだれの　はるるとみればおちかたに　くものみねなみうすらにじみゆ"
+        },
+        {
+          "line": 21,
+          "kind": "numbered_csv",
+          "text": "4, しげりあう　このしたやみにほのしろく　やまゆりのはないくつかうける"
+        },
+        {
+          "line": 23,
+          "kind": "numbered_csv",
+          "text": "5, たうえうた　のどかにきこえののいえの　どこもひとけのみえぬまひるま"
+        },
+        {
+          "line": 25,
+          "kind": "numbered_csv",
+          "text": "6, ゆうさりて　あおたをわたるかぜすずし　ゆくてのやみをほたるかすめぬ"
+        },
+        {
+          "line": 27,
+          "kind": "numbered_csv",
+          "text": "7, しんりょくの　きのかをのせてきょうかえし　ころものそでをかぜふきすぐる"
+        },
+        {
+          "line": 29,
+          "kind": "numbered_csv",
+          "text": "8, いけのもに　うつるまつかげくろぐろし　しんげつのかげかそけくもみゆ"
+        }
+      ],
+      "total_markers": 1239
+    },
+    {
+      "filename": "19491230-自観叢書第9篇『光への道』.txt",
+      "body_lines": 200,
+      "marker_counts": {
+        "qa_question": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 95,
+          "kind": "qa_question",
+          "text": "――という言訳を聞くどころではなく、彼は私を抱えるようにして留置場へ打（ぶ）ち込んだ。私は何が何だか判らない、すると三日目であった、主任は私を一室へ呼び訊問を始めたが、その時彼が言うには、"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19500120-御光話録16号.txt",
+      "body_lines": 479,
+      "marker_counts": {
+        "qa_question": 97,
+        "jikan_hen": 6
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=97, jikan_hen=6"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――大先生様がかつて義経という武将として御出現せられましたことは平和愛好者としての大先生とどのような御関係がございましょうか。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――誠に失礼なお伺いでございますが、「御光り」の御揮毫は地上天国完成の日までいつまでもいただけると信じてよろしいでしょうか。種々デマが飛んでおりますので謹しんでお伺い申し上げます。"
+        },
+        {
+          "line": 15,
+          "kind": "qa_question",
+          "text": "――床の間が二つございます家で、大光明如来様と光明如来様の御姿とそれぞれお祀りさせていただいてよろしいでしょうか。"
+        },
+        {
+          "line": 20,
+          "kind": "qa_question",
+          "text": "――まじめな一信者、あまり豊かでないのでだんだんに建て増すつもりで六坪ほどの小さい家を建てましたが、床の間だけは立派にして、大光明如来様を御奉斎申し上げたいと申しております。よろしゅうございましょうか"
+        },
+        {
+          "line": 25,
+          "kind": "qa_question",
+          "text": "――教修会のとき、教導所がせまいため旅館などを借ります場合、一時、大光明如来様を旅館の床の間にお祀りして教修会を開いておりますが、これはよろしゅうございましょうか。"
+        },
+        {
+          "line": 29,
+          "kind": "qa_question",
+          "text": "――それは旅館のときだけでしょうか。"
+        },
+        {
+          "line": 33,
+          "kind": "qa_question",
+          "text": "――御姿の場合はいかがでしょうか。"
+        },
+        {
+          "line": 37,
+          "kind": "qa_question",
+          "text": "――教導所の出張所に私のいただいた御神体を一時お貸ししてお祀りいたすことはいかがでしょうか。"
+        }
+      ],
+      "total_markers": 103
+    },
+    {
+      "filename": "19500125-自観叢書第15篇『基督と自観師』.txt",
+      "body_lines": 426,
+      "marker_counts": {
+        "preface": 1,
+        "koza_topic": 6,
+        "jikan_hen": 11,
+        "qa_question": 1
+      },
+      "proposed_splits": 11,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 6,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 18,
+          "kind": "koza_topic",
+          "text": "一、緒　言"
+        },
+        {
+          "line": 31,
+          "kind": "koza_topic",
+          "text": "二、山上の垂訓と自観師"
+        },
+        {
+          "line": 33,
+          "kind": "jikan_hen",
+          "text": "（１）「垂訓」の真理性"
+        },
+        {
+          "line": 38,
+          "kind": "qa_question",
+          "text": "――マタイ伝（第十二章）――"
+        },
+        {
+          "line": 54,
+          "kind": "jikan_hen",
+          "text": "（２）自観師の理念と「垂訓」の包摂関係"
+        },
+        {
+          "line": 102,
+          "kind": "jikan_hen",
+          "text": "（３）自観師の立場と「五戒」との対照"
+        },
+        {
+          "line": 125,
+          "kind": "koza_topic",
+          "text": "三、キリストの神と自観師の観音"
+        }
+      ],
+      "total_markers": 19
+    },
+    {
+      "filename": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "body_lines": 388,
+      "marker_counts": {
+        "preface": 1,
+        "jikan_hen": 10
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 269,
+          "kind": "jikan_hen",
+          "text": "（一）お陰信心は――。"
+        },
+        {
+          "line": 273,
+          "kind": "jikan_hen",
+          "text": "（三）有難信心は――。"
+        },
+        {
+          "line": 275,
+          "kind": "jikan_hen",
+          "text": "（四）利用信心は――。"
+        },
+        {
+          "line": 277,
+          "kind": "jikan_hen",
+          "text": "（五）神憑信心は――。"
+        },
+        {
+          "line": 279,
+          "kind": "jikan_hen",
+          "text": "（六）身欲信心は――。"
+        },
+        {
+          "line": 281,
+          "kind": "jikan_hen",
+          "text": "（七）たがる信心は――。"
+        },
+        {
+          "line": 283,
+          "kind": "jikan_hen",
+          "text": "（八）御無沙汰信心は――。"
+        }
+      ],
+      "total_markers": 11
+    },
+    {
+      "filename": "19500228-御光話録17号.txt",
+      "body_lines": 353,
+      "marker_counts": {
+        "qa_question": 63,
+        "jikan_hen": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=63, jikan_hen=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――正月に雑煮を食べて祝う由来について……昔、国常立尊を押し込めたことと関係があるとも聞いておりますがいかがでしょうか。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――正月に御供え餅を十一日までお供えしておくのはなぜでしょうか。"
+        },
+        {
+          "line": 15,
+          "kind": "qa_question",
+          "text": "――過日の御論文にて、もはや仏界がまったくなくなった由ですが、そうなりましても幽世大神様のお名前はそのままでよろしいのでしょうか。"
+        },
+        {
+          "line": 21,
+          "kind": "qa_question",
+          "text": "――恵方（えほう）詣りには大将軍を避けるようですが、大将軍についてお伺い申し上げます。"
+        },
+        {
+          "line": 27,
+          "kind": "qa_question",
+          "text": "――大将軍の方角は三年ずつとか申しますが。"
+        },
+        {
+          "line": 32,
+          "kind": "qa_question",
+          "text": "――朝鮮や支那でも大将軍ということを申すようですが、これは同じでしょうか。"
+        },
+        {
+          "line": 37,
+          "kind": "qa_question",
+          "text": "――賭博心理というものは生活を強く支配するように見られ、先進国でもさかんのようですし国内でも賭博は勿論、株や戦後の宝くじ、競馬、競輪などのスポーツもこの心理に左右されておりますし、さらに企業や、地位名"
+        },
+        {
+          "line": 42,
+          "kind": "qa_question",
+          "text": "――賭け事などはいかがでしょうか。"
+        }
+      ],
+      "total_markers": 64
+    },
+    {
+      "filename": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "body_lines": 346,
+      "marker_counts": {
+        "preface": 1,
+        "gokowa_date_full": 1,
+        "jikan_hen": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: preface=1, gokowa_date_full=1, jikan_hen=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 14,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十五年三月二十日"
+        },
+        {
+          "line": 305,
+          "kind": "jikan_hen",
+          "text": "（一）注射器の消毒不完全のためか（二）薬剤そのもののためか（三）薬剤に結核菌の混入せるためかこの三つの疑点以外考えようがあるまい、とはいっても （一）の注射器消毒不完全とは思われない、まさか二人か三人"
+        }
+      ],
+      "total_markers": 3
+    },
+    {
+      "filename": "19500423-御光話録18号.txt",
+      "body_lines": 359,
+      "marker_counts": {
+        "qa_question": 72
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "gokowa_qa_only_no_date_lines"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=72"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "qa_question",
+          "text": "――お祀りの場合の形式、殊に服装についてお伺い申し上げます。"
+        },
+        {
+          "line": 10,
+          "kind": "qa_question",
+          "text": "――「総領の甚六」と申しますが、夫婦が年も若く愛情もこまやかなときの子が甚六で、年を取り愛情も落ちついたころの末子によい子ができますのはいかなるわけでしょうか。"
+        },
+        {
+          "line": 14,
+          "kind": "qa_question",
+          "text": "――そういたしますと、親はたいへん助かりますが。"
+        },
+        {
+          "line": 18,
+          "kind": "qa_question",
+          "text": "――では子供には厳格に躾をしたほうがよろしいでしょうか。"
+        },
+        {
+          "line": 22,
+          "kind": "qa_question",
+          "text": "――しかし、親の愛情を知らぬ子供はどうも片意地の所があるように存じますが。"
+        },
+        {
+          "line": 28,
+          "kind": "qa_question",
+          "text": "――大転換に際し信者の子弟が上級学校に進学いたします場合、その学校選定にはどのようなことを規準にいたすべきでしょうか。"
+        },
+        {
+          "line": 33,
+          "kind": "qa_question",
+          "text": "――学校の科目選択上、近き将来ますますさかんになるべき学問、亡ぶべき学問につきお伺い申し上げます。"
+        },
+        {
+          "line": 38,
+          "kind": "qa_question",
+          "text": "――経済学はいかがでしょうか。"
+        }
+      ],
+      "total_markers": 72
+    },
+    {
+      "filename": "19500613-御光話録19号.txt",
+      "body_lines": 497,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "qa_question": 94,
+        "gokowa_date_md": 11
+      },
+      "proposed_splits": 12,
+      "split_kinds": [
+        "gokowa_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十五年二月十八日"
+        },
+        {
+          "line": 7,
+          "kind": "qa_question",
+          "text": "――四年に一度あるという日食が今年は三月と十月に二度あるとのことですが、天体の動きが人間と密接な関係があるものといたしますと、右のことにもなにか意味がございましょうか。"
+        },
+        {
+          "line": 12,
+          "kind": "gokowa_date_md",
+          "text": "二月二十八日"
+        },
+        {
+          "line": 14,
+          "kind": "qa_question",
+          "text": "――私は二十七年間鉄道に勤務しておりましたが、昨年七月家族全部が入信させていただきました。ところが、本月一二日妻に霊が憑り、地獄より天国へかけての霊界の様相を語りつづけ、早く鉄道をやめて御神業に専心せ"
+        },
+        {
+          "line": 20,
+          "kind": "qa_question",
+          "text": "――ある信者の知己である医学博士が会員の座談会に出席して、かなりの感銘を受け、自分の扱っている病人の浄霊を依頼してまいりました。この博士も痔瘻、神経痛、糖尿病を病んでおります。依頼を引き受けても差し支"
+        },
+        {
+          "line": 26,
+          "kind": "qa_question",
+          "text": "――私の家は寺でございますが、自宅を教会にしてもよろしいでしょうか。なお、寺の宗旨は曹洞宗で御本尊は十一面観音で、明主様の御開眼をいただいております。"
+        },
+        {
+          "line": 31,
+          "kind": "qa_question",
+          "text": "――「世の終わり」の様相を予言して、『聖書』では「其の時、その患難（なやみ）ののち直ちに日は暗く、月は光を発（はな）たず、星は空より隕（お）ち、天の万象、ふるひ動かん」などと表現されてありますが、これ"
+        },
+        {
+          "line": 38,
+          "kind": "gokowa_date_md",
+          "text": "三月三日"
+        }
+      ],
+      "total_markers": 106
+    },
+    {
+      "filename": "19500921-地上天国出来るまで.txt",
+      "body_lines": 66,
+      "marker_counts": {
+        "bracket_testimony": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: bracket_testimony=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 37,
+          "kind": "bracket_testimony",
+          "text": "〔秋季大祭御歌〕"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19501030-法難手記.txt",
+      "body_lines": 210,
+      "marker_counts": {
+        "koza_topic": 4,
+        "gokowa_date_full": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=4, gokowa_date_full=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 95,
+          "kind": "koza_topic",
+          "text": "一、刑事調査機構に全然無知であって、罪状さえ認めれば、直ちに解決するものと思っていました。"
+        },
+        {
+          "line": 96,
+          "kind": "koza_topic",
+          "text": "一、一日も早く、病気による恐怖からの自由を得たかった事。"
+        },
+        {
+          "line": 97,
+          "kind": "koza_topic",
+          "text": "一、相手方山田氏の供述に合致させる事が、調査官の事務の進捗を促し、速かに釈放される唯一の道と信じた事。"
+        },
+        {
+          "line": 99,
+          "kind": "koza_topic",
+          "text": "一、新しい罪状の供述を極めて歓迎されるので、何か自分にそのような材料があればよいと思った事さえありました。"
+        },
+        {
+          "line": 110,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十五年七月一日"
+        }
+      ],
+      "total_markers": 5
+    },
+    {
+      "filename": "19501120-世界救世教早わかり.txt",
+      "body_lines": 104,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19510115-自然農法解説.txt",
+      "body_lines": 319,
+      "marker_counts": {
+        "koza_topic": 15
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: koza_topic=15"
+      ],
+      "sample_markers": [
+        {
+          "line": 99,
+          "kind": "koza_topic",
+          "text": "一、品　　種　大正赤穫"
+        },
+        {
+          "line": 100,
+          "kind": "koza_topic",
+          "text": "二、苗　　代　イ、水田苗代"
+        },
+        {
+          "line": 103,
+          "kind": "koza_topic",
+          "text": "三、堆　　肥　反当七十貫打込（清水使用堆肥）"
+        },
+        {
+          "line": 104,
+          "kind": "koza_topic",
+          "text": "四、植　　付　イ、並木植、畦間一尺三寸、株間五寸"
+        },
+        {
+          "line": 107,
+          "kind": "koza_topic",
+          "text": "五、中耕除草　第一回七月三日、第二回七月二十二日"
+        },
+        {
+          "line": 108,
+          "kind": "koza_topic",
+          "text": "六、分　　蘖　イ、七月十八日十本－十三本"
+        },
+        {
+          "line": 110,
+          "kind": "koza_topic",
+          "text": "七、収　　穫　イ、坪当の粗量二升一合"
+        },
+        {
+          "line": 229,
+          "kind": "koza_topic",
+          "text": "八、六〇〇粒　　　　　　一、五〇〇粒　　　九、九〇〇粒"
+        }
+      ],
+      "total_markers": 15
+    },
+    {
+      "filename": "19510130-笑の泉.txt",
+      "body_lines": 1967,
+      "marker_counts": {
+        "numbered_csv": 1063,
+        "jikan_hen": 2
+      },
+      "proposed_splits": 2,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 14,
+          "kind": "numbered_csv",
+          "text": "1, 　　　世の中の　空財布みなづつしりと"
+        },
+        {
+          "line": 17,
+          "kind": "numbered_csv",
+          "text": "2, 空財布　アヽ空財布カラ財布　　　　　　　　　　　　　　　　芋　公,"
+        },
+        {
+          "line": 18,
+          "kind": "numbered_csv",
+          "text": "3, 美人も花も眼に入らない　空財布　　　　　　　　　　　　　　阿　呆,"
+        },
+        {
+          "line": 19,
+          "kind": "numbered_csv",
+          "text": "4, 三井三菱に見せでやりたい　空財布　　　　　　　　　　　　　桃太郎,"
+        },
+        {
+          "line": 20,
+          "kind": "numbered_csv",
+          "text": "5, マルクスの理論も元は　空財布　　　　　　　　　　　　　　　同,"
+        },
+        {
+          "line": 21,
+          "kind": "numbered_csv",
+          "text": "6, せがむ子も黙つてしまつた　空財布　　　　　　　　　　　　　同,"
+        },
+        {
+          "line": 22,
+          "kind": "numbered_csv",
+          "text": "7, 浮かれ出してみてもやつぱり　空財布　　　　　　　　　　　　ゝ　庵,"
+        },
+        {
+          "line": 23,
+          "kind": "numbered_csv",
+          "text": "8, こそこそと逃げる筈だよ　空財布　　　　　　　　　　　　　　同,"
+        }
+      ],
+      "total_markers": 1065
+    },
+    {
+      "filename": "19510225-御教え集6号.txt",
+      "body_lines": 526,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_section": 13,
+        "gokowa_date_md": 11,
+        "bracket_testimony": 32
+      },
+      "proposed_splits": 11,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年一月一日"
+        },
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 18,
+          "kind": "gokowa_date_md",
+          "text": "一月二日"
+        },
+        {
+          "line": 20,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 30,
+          "kind": "gokowa_date_md",
+          "text": "一月三日"
+        },
+        {
+          "line": 32,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 42,
+          "kind": "gokowa_date_md",
+          "text": "一月五日"
+        },
+        {
+          "line": 44,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        }
+      ],
+      "total_markers": 57
+    },
+    {
+      "filename": "19510520-教えの光.txt",
+      "body_lines": 1122,
+      "marker_counts": {
+        "preface": 1,
+        "jikan_hen": 11
+      },
+      "proposed_splits": 11,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 451,
+          "kind": "jikan_hen",
+          "text": "（一）一月を正月という意味　（二）松竹梅のお飾りの意味　（三）〆飾り　（四）お飾りに使用する裏白、昆布、橙、海老など　（五）小豆粥　（六）七草"
+        },
+        {
+          "line": 782,
+          "kind": "jikan_hen",
+          "text": "（一）こちらの発する言葉が相手を益する場合には嘘、怒り、泣き言の相槌（あいづち）などの言葉を発してもよろしいのでしょうか。"
+        },
+        {
+          "line": 783,
+          "kind": "jikan_hen",
+          "text": "（二）神様からご覧になった場合の良否は判らなくても、自己の所信を表現する場合の言霊はどうなりましょうか。"
+        },
+        {
+          "line": 784,
+          "kind": "jikan_hen",
+          "text": "（三）お世辞の言葉、虚勢を張るための言葉、あるいは自己を卑下する言葉はいかがなものでしょうか。"
+        },
+        {
+          "line": 785,
+          "kind": "jikan_hen",
+          "text": "（四）言葉は簡潔なほうがよろしいと存じますが、時と場合により空気をやわらげるために、雑談、冗談などを言う場合の言霊はどのようなものでしょうか。"
+        },
+        {
+          "line": 788,
+          "kind": "jikan_hen",
+          "text": "（一）嘘はいけないがやむを得ない嘘もある。また昔から天下国家のために怒るのは善いが、個人的の怒りはいけないとしている。怒りを行動にうつすことは勿論いけない。そうかといって怒りを抑えて精神病になる人もあ"
+        },
+        {
+          "line": 789,
+          "kind": "jikan_hen",
+          "text": "（二）神様のご覧になった場合といっても程度問題である。誠のあるほどいい智慧が出る。たいていは誠の心をもって、常識的に考えれば善悪はたいてい判る。ただ大乗と小乗は逆の場合があるから注意すべきだ。戒律宗教"
+        }
+      ],
+      "total_markers": 12
+    },
+    {
+      "filename": "19510601-世界救世教教義解説.txt",
+      "body_lines": 131,
+      "marker_counts": {
+        "preface": 1,
+        "gokowa_date_full": 1,
+        "section_title": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: preface=1, gokowa_date_full=1, section_title=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 9,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十六年五月十五日"
+        },
+        {
+          "line": 94,
+          "kind": "section_title",
+          "text": "霊主体従について"
+        }
+      ],
+      "total_markers": 3
+    },
+    {
+      "filename": "19510615-一信者の告白.txt",
+      "body_lines": 123,
+      "marker_counts": {
+        "qa_question": 6
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=6"
+      ],
+      "sample_markers": [
+        {
+          "line": 13,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        },
+        {
+          "line": 18,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        },
+        {
+          "line": 43,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        },
+        {
+          "line": 48,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        },
+        {
+          "line": 52,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        },
+        {
+          "line": 56,
+          "kind": "qa_question",
+          "text": "―――――――――・――――――――――"
+        }
+      ],
+      "total_markers": 6
+    },
+    {
+      "filename": "19510805-新しき暴力.txt",
+      "body_lines": 70,
+      "marker_counts": {
+        "shinko_divider": 2
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: shinko_divider=2"
+      ],
+      "sample_markers": [
+        {
+          "line": 2,
+          "kind": "shinko_divider",
+          "text": "────────────────────────────────"
+        },
+        {
+          "line": 7,
+          "kind": "shinko_divider",
+          "text": "────────────────────────────────"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19510810-或る日の公判スケッチ.txt",
+      "body_lines": 45,
+      "marker_counts": {
+        "section_title": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: section_title=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "section_title",
+          "text": "序文に代えて"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19510815-結核の革命的療法.txt",
+      "body_lines": 1415,
+      "marker_counts": {
+        "preface": 1,
+        "section_title": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: preface=1, section_title=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 115,
+          "kind": "section_title",
+          "text": "霊主体従"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19510915-御垂示録1号.txt",
+      "body_lines": 575,
+      "marker_counts": {
+        "preface": 1,
+        "ochishiji_date": 3
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 14,
+          "kind": "ochishiji_date",
+          "text": "［八月一日］"
+        },
+        {
+          "line": 131,
+          "kind": "ochishiji_date",
+          "text": "［八月五日］　　（本日に限り速記によらず）"
+        },
+        {
+          "line": 269,
+          "kind": "ochishiji_date",
+          "text": "［八月八日］"
+        }
+      ],
+      "total_markers": 4
+    },
+    {
+      "filename": "19510920-御教え集1号.txt",
+      "body_lines": 515,
+      "marker_counts": {
+        "gokowa_date_md": 9,
+        "bracket_testimony": 40,
+        "bracket_section": 8,
+        "jikan_hen": 6,
+        "koza_topic": 3
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "八月一日"
+        },
+        {
+          "line": 11,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 18,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 25,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 33,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 44,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 50,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 56,
+          "kind": "gokowa_date_md",
+          "text": "八月五日（本日に限り速記によらず）"
+        }
+      ],
+      "total_markers": 66
+    },
+    {
+      "filename": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "body_lines": 108,
+      "marker_counts": {
+        "preface": 1,
+        "jikan_hen": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 6,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 18,
+          "kind": "jikan_hen",
+          "text": "（一）　緒　　言"
+        },
+        {
+          "line": 26,
+          "kind": "jikan_hen",
+          "text": "（二）　地上天国について"
+        },
+        {
+          "line": 32,
+          "kind": "jikan_hen",
+          "text": "（三）　自然栽培の意義"
+        },
+        {
+          "line": 49,
+          "kind": "jikan_hen",
+          "text": "（四）　土壌と微生物界の神秘"
+        },
+        {
+          "line": 65,
+          "kind": "jikan_hen",
+          "text": "（五）　化学肥料の害"
+        },
+        {
+          "line": 71,
+          "kind": "jikan_hen",
+          "text": "（六）　食物からくる健康と病気"
+        },
+        {
+          "line": 83,
+          "kind": "jikan_hen",
+          "text": "（七）　自然栽培と増産"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19511010-御垂示録2号.txt",
+      "body_lines": 804,
+      "marker_counts": {
+        "ochishiji_date": 3
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［九月一日］"
+        },
+        {
+          "line": 165,
+          "kind": "ochishiji_date",
+          "text": "［九月五日］"
+        },
+        {
+          "line": 347,
+          "kind": "ochishiji_date",
+          "text": "［九月八日］"
+        }
+      ],
+      "total_markers": 3
+    },
+    {
+      "filename": "19511025-御教え集2号.txt",
+      "body_lines": 464,
+      "marker_counts": {
+        "gokowa_date_md": 12,
+        "bracket_testimony": 26,
+        "bracket_section": 5,
+        "jikan_hen": 7
+      },
+      "proposed_splits": 12,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "九月一日"
+        },
+        {
+          "line": 9,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 15,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 28,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 46,
+          "kind": "gokowa_date_md",
+          "text": "九月五日"
+        },
+        {
+          "line": 50,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 56,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 63,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        }
+      ],
+      "total_markers": 50
+    },
+    {
+      "filename": "19511125-御垂示録3号.txt",
+      "body_lines": 921,
+      "marker_counts": {
+        "ochishiji_date": 3
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十月一日］"
+        },
+        {
+          "line": 195,
+          "kind": "ochishiji_date",
+          "text": "［十月五日］"
+        },
+        {
+          "line": 476,
+          "kind": "ochishiji_date",
+          "text": "［十月八日］"
+        }
+      ],
+      "total_markers": 3
+    },
+    {
+      "filename": "19511125-御教え集3号.txt",
+      "body_lines": 598,
+      "marker_counts": {
+        "gokowa_date_md": 9,
+        "bracket_testimony": 36,
+        "koza_topic": 5,
+        "bracket_section": 9,
+        "jikan_hen": 3
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "十月一日"
+        },
+        {
+          "line": 9,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 14,
+          "kind": "koza_topic",
+          "text": "一、水に溺れ、気を失った場合。"
+        },
+        {
+          "line": 15,
+          "kind": "koza_topic",
+          "text": "二、ガスその他、感電等により昏睡状態の場合。"
+        },
+        {
+          "line": 16,
+          "kind": "koza_topic",
+          "text": "三、子宮癌や切傷等にて大出血し、脈が微弱になり苦悶の状態にある時。"
+        },
+        {
+          "line": 17,
+          "kind": "koza_topic",
+          "text": "四、狭心症、脳溢血等にて苦痛を訴えている場合。"
+        },
+        {
+          "line": 19,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 21,
+          "kind": "koza_topic",
+          "text": "二、ガスの方はここ（後頭部）です。鼻から嗅ぐんですから。嗅いだガスがここ（後頭部）に溜まりますから、後頭部をやれば良い。感電はやはり心臓ですね。"
+        }
+      ],
+      "total_markers": 62
+    },
+    {
+      "filename": "19511210-御垂示録4号.txt",
+      "body_lines": 1083,
+      "marker_counts": {
+        "ochishiji_date": 3
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十一月一日］"
+        },
+        {
+          "line": 423,
+          "kind": "ochishiji_date",
+          "text": "［十一月五日］"
+        },
+        {
+          "line": 671,
+          "kind": "ochishiji_date",
+          "text": "［十一月八日］"
+        }
+      ],
+      "total_markers": 3
+    },
+    {
+      "filename": "19511215-御教え集4号.txt",
+      "body_lines": 601,
+      "marker_counts": {
+        "gokowa_date_md": 9,
+        "bracket_testimony": 39,
+        "bracket_section": 8,
+        "koza_topic": 7
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "十一月一日"
+        },
+        {
+          "line": 9,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 27,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 33,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 37,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 60,
+          "kind": "gokowa_date_md",
+          "text": "十一月五日"
+        },
+        {
+          "line": 64,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 71,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        }
+      ],
+      "total_markers": 63
+    },
+    {
+      "filename": "19511225-御垂示録5号.txt",
+      "body_lines": 851,
+      "marker_counts": {
+        "ochishiji_date": 3,
+        "koza_topic": 1
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十二月一日］"
+        },
+        {
+          "line": 246,
+          "kind": "koza_topic",
+          "text": "二、三年辛抱したら、すばらしい物ができますね。やっぱり、神様はいろんなことをやるね。しかしそれは大した問題でないからね。結局、食糧が一番の問題です。"
+        },
+        {
+          "line": 258,
+          "kind": "ochishiji_date",
+          "text": "［十二月六日］"
+        },
+        {
+          "line": 395,
+          "kind": "ochishiji_date",
+          "text": "［十二月八日］"
+        }
+      ],
+      "total_markers": 4
+    },
+    {
+      "filename": "19520000-HAKONE ART MUSEUM.txt",
+      "body_lines": 40,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19520115-御教え集5号.txt",
+      "body_lines": 465,
+      "marker_counts": {
+        "gokowa_date_md": 9,
+        "bracket_testimony": 37,
+        "bracket_section": 9
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "十二月一日"
+        },
+        {
+          "line": 9,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 17,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 21,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 33,
+          "kind": "gokowa_date_md",
+          "text": "十二月六日"
+        },
+        {
+          "line": 37,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 43,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 54,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        }
+      ],
+      "total_markers": 55
+    },
+    {
+      "filename": "19520125-御垂示録6号.txt",
+      "body_lines": 581,
+      "marker_counts": {
+        "preface": 1,
+        "ochishiji_date": 3,
+        "koza_topic": 2
+      },
+      "proposed_splits": 3,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 220,
+          "kind": "ochishiji_date",
+          "text": "［五月一日］"
+        },
+        {
+          "line": 377,
+          "kind": "ochishiji_date",
+          "text": "［六月二日］"
+        },
+        {
+          "line": 429,
+          "kind": "koza_topic",
+          "text": "一、早期診断ということを言うが、いざ病気になったら治らない。"
+        },
+        {
+          "line": 430,
+          "kind": "koza_topic",
+          "text": "二、医者の診断に対して信頼がおけない。"
+        },
+        {
+          "line": 451,
+          "kind": "ochishiji_date",
+          "text": "［七月一日］"
+        }
+      ],
+      "total_markers": 6
+    },
+    {
+      "filename": "19520310-御垂示録7号.txt",
+      "body_lines": 406,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19520320-御教え集7号.txt",
+      "body_lines": 433,
+      "marker_counts": {
+        "bracket_section": 8,
+        "gokowa_date_md": 8,
+        "bracket_testimony": 25,
+        "koza_topic": 1
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 21,
+          "kind": "gokowa_date_md",
+          "text": "二月六日"
+        },
+        {
+          "line": 25,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 31,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 37,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 42,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 54,
+          "kind": "gokowa_date_md",
+          "text": "二月七日"
+        },
+        {
+          "line": 58,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        }
+      ],
+      "total_markers": 42
+    },
+    {
+      "filename": "19520420-御教え集8号.txt",
+      "body_lines": 689,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_testimony": 39,
+        "bracket_section": 6,
+        "gokowa_date_md": 10
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年三月五日"
+        },
+        {
+          "line": 9,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 15,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 21,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 39,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 47,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 53,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        },
+        {
+          "line": 63,
+          "kind": "bracket_testimony",
+          "text": "〔御垂示〕"
+        }
+      ],
+      "total_markers": 56
+    },
+    {
+      "filename": "19520425-御垂示録8号.txt",
+      "body_lines": 701,
+      "marker_counts": {
+        "ochishiji_date": 2
+      },
+      "proposed_splits": 2,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［三月一日］"
+        },
+        {
+          "line": 562,
+          "kind": "ochishiji_date",
+          "text": "［四月一日］"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19520515-御垂示録9号.txt",
+      "body_lines": 351,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［五月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19520515-御教え集9号.txt",
+      "body_lines": 213,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_section": 10,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年四月五日"
+        },
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 25,
+          "kind": "gokowa_date_md",
+          "text": "四月六日"
+        },
+        {
+          "line": 27,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 47,
+          "kind": "gokowa_date_md",
+          "text": "四月七日"
+        },
+        {
+          "line": 49,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 71,
+          "kind": "gokowa_date_md",
+          "text": "四月十五日"
+        },
+        {
+          "line": 73,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        }
+      ],
+      "total_markers": 19
+    },
+    {
+      "filename": "19520615-御垂示録10号.txt",
+      "body_lines": 391,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［六月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19520615-御教え集10号.txt",
+      "body_lines": 194,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_section": 9,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年五月五日"
+        },
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 27,
+          "kind": "gokowa_date_md",
+          "text": "五月六日"
+        },
+        {
+          "line": 29,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 48,
+          "kind": "gokowa_date_md",
+          "text": "五月七日"
+        },
+        {
+          "line": 50,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 71,
+          "kind": "gokowa_date_md",
+          "text": "五月十五日"
+        },
+        {
+          "line": 73,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        }
+      ],
+      "total_markers": 18
+    },
+    {
+      "filename": "19520715-御垂示録11号.txt",
+      "body_lines": 457,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［七月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19520715-御教え集11号.txt",
+      "body_lines": 161,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_section": 7,
+        "gokowa_date_md": 8,
+        "chapter": 1
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年六月五日"
+        },
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 26,
+          "kind": "gokowa_date_md",
+          "text": "六月六日"
+        },
+        {
+          "line": 28,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 39,
+          "kind": "gokowa_date_md",
+          "text": "六月七日"
+        },
+        {
+          "line": 41,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 60,
+          "kind": "bracket_section",
+          "text": "【神仙郷完成兼美術館開館記念祝賀式典御教え】"
+        },
+        {
+          "line": 62,
+          "kind": "gokowa_date_md",
+          "text": "六月十五日"
+        }
+      ],
+      "total_markers": 17
+    },
+    {
+      "filename": "19520815-御教え集12号.txt",
+      "body_lines": 191,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "bracket_section": 8,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年七月五日"
+        },
+        {
+          "line": 7,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 40,
+          "kind": "gokowa_date_md",
+          "text": "七月六日"
+        },
+        {
+          "line": 42,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 75,
+          "kind": "gokowa_date_md",
+          "text": "七月七日"
+        },
+        {
+          "line": 77,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        },
+        {
+          "line": 99,
+          "kind": "gokowa_date_md",
+          "text": "七月十五日"
+        },
+        {
+          "line": 101,
+          "kind": "bracket_section",
+          "text": "【御教え】"
+        }
+      ],
+      "total_markers": 17
+    },
+    {
+      "filename": "19520825-御垂示録12号.txt",
+      "body_lines": 468,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［八月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19520925-御垂示録13号.txt",
+      "body_lines": 457,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［九月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19520925-御教え集13号.txt",
+      "body_lines": 205,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年八月五日"
+        },
+        {
+          "line": 25,
+          "kind": "gokowa_date_md",
+          "text": "八月六日"
+        },
+        {
+          "line": 48,
+          "kind": "gokowa_date_md",
+          "text": "八月七日"
+        },
+        {
+          "line": 68,
+          "kind": "gokowa_date_md",
+          "text": "八月十五日"
+        },
+        {
+          "line": 91,
+          "kind": "gokowa_date_md",
+          "text": "八月十六日"
+        },
+        {
+          "line": 115,
+          "kind": "gokowa_date_md",
+          "text": "八月十七日"
+        },
+        {
+          "line": 137,
+          "kind": "gokowa_date_md",
+          "text": "八月二十五日"
+        },
+        {
+          "line": 157,
+          "kind": "gokowa_date_md",
+          "text": "八月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19521015-御垂示録14号.txt",
+      "body_lines": 245,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19521015-御教え集14号.txt",
+      "body_lines": 189,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 10,
+        "bracket_section": 1
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年九月五日"
+        },
+        {
+          "line": 28,
+          "kind": "gokowa_date_md",
+          "text": "九月六日"
+        },
+        {
+          "line": 46,
+          "kind": "gokowa_date_md",
+          "text": "九月七日"
+        },
+        {
+          "line": 66,
+          "kind": "gokowa_date_md",
+          "text": "九月十五日"
+        },
+        {
+          "line": 88,
+          "kind": "gokowa_date_md",
+          "text": "九月十六日"
+        },
+        {
+          "line": 116,
+          "kind": "gokowa_date_md",
+          "text": "九月十七日"
+        },
+        {
+          "line": 136,
+          "kind": "bracket_section",
+          "text": "【秋季大祭御教】"
+        },
+        {
+          "line": 138,
+          "kind": "gokowa_date_md",
+          "text": "九月二十三日"
+        }
+      ],
+      "total_markers": 12
+    },
+    {
+      "filename": "19521115-御垂示録15号.txt",
+      "body_lines": 200,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十一月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19521115-御教え集15号.txt",
+      "body_lines": 184,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年十月五日"
+        },
+        {
+          "line": 22,
+          "kind": "gokowa_date_md",
+          "text": "十月六日"
+        },
+        {
+          "line": 40,
+          "kind": "gokowa_date_md",
+          "text": "十月七日"
+        },
+        {
+          "line": 58,
+          "kind": "gokowa_date_md",
+          "text": "十月十五日"
+        },
+        {
+          "line": 72,
+          "kind": "gokowa_date_md",
+          "text": "十月十六日"
+        },
+        {
+          "line": 89,
+          "kind": "gokowa_date_md",
+          "text": "十月十七日"
+        },
+        {
+          "line": 131,
+          "kind": "gokowa_date_md",
+          "text": "十月二十五日"
+        },
+        {
+          "line": 157,
+          "kind": "gokowa_date_md",
+          "text": "十月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19521201-結核信仰療法.txt",
+      "body_lines": 1851,
+      "marker_counts": {
+        "preface": 1,
+        "section_title": 1,
+        "jikan_hen": 10,
+        "qa_question": 1,
+        "bracket_testimony": 13
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 6,
+          "kind": "preface",
+          "text": "序　文"
+        },
+        {
+          "line": 20,
+          "kind": "section_title",
+          "text": "医学が結核を作る"
+        },
+        {
+          "line": 110,
+          "kind": "jikan_hen",
+          "text": "（一）不眠の原因は右か左かの延髄部に、必ず毒結があり、これが脳の血管を圧迫するから、前頭部内に貧血を起こすためである。それが不眠の人は右側に多い もので、左側の方だと不快感、朦朧（もうろう）感等が多く"
+        },
+        {
+          "line": 111,
+          "kind": "jikan_hen",
+          "text": "（二）肥らない原因は、結核のみに限らないが、これは肩と後頭部の毒結が主である。そこを圧すると非常に固く、骨かと思う程なのもあるし、そこに微熱があ りよく分るが、これが食欲に大いに影響する。従ってこの毒"
+        },
+        {
+          "line": 112,
+          "kind": "jikan_hen",
+          "text": "（三）微熱というものは、医学ではほとんど肺自体からのように思っているが、これは大変な間違いで、肺炎、肋膜炎、肋間神経痛以外はほとんどないもので、 一番多いのが左右の頸部淋巴腺部で、どんなに健康な人でも"
+        },
+        {
+          "line": 114,
+          "kind": "jikan_hen",
+          "text": "（四）食欲不振は微熱による食物不味のためと、消化のいい物を食い、消化薬を服むためと、よくかむ等のため、胃を弱らすからであるが、何よりの原因は医師 から結核と言われたり、結核らしく扱われたりする等の神経"
+        },
+        {
+          "line": 115,
+          "kind": "jikan_hen",
+          "text": "（五）便秘の原因の第一は、食餌の少ない事と腸に浄化熱があるから乾くため等で、そういう人は腹に幾つかの固まりがあり、これが直腸を圧迫するからでも あって、この部をおすと痛みと固結があり、微熱があるからよ"
+        },
+        {
+          "line": 116,
+          "kind": "jikan_hen",
+          "text": "（六）下痢は健康時でも病気の時でも、これ程結構なものはないので、急性は食中りが多く、これは二、三日で治るが、慢性に至っては腹部はもちろん、後頭部 から延髄部を主とし、身体中にある各部の毒結が溶けて出る"
+        }
+      ],
+      "total_markers": 26
+    },
+    {
+      "filename": "19521215-御垂示録16号.txt",
+      "body_lines": 200,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十二月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19521215-御教え集16号.txt",
+      "body_lines": 188,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年十一月五日"
+        },
+        {
+          "line": 22,
+          "kind": "gokowa_date_md",
+          "text": "十一月六日"
+        },
+        {
+          "line": 40,
+          "kind": "gokowa_date_md",
+          "text": "十一月七日"
+        },
+        {
+          "line": 57,
+          "kind": "gokowa_date_md",
+          "text": "十一月十五日"
+        },
+        {
+          "line": 85,
+          "kind": "gokowa_date_md",
+          "text": "十一月十六日"
+        },
+        {
+          "line": 105,
+          "kind": "gokowa_date_md",
+          "text": "十一月十七日"
+        },
+        {
+          "line": 134,
+          "kind": "gokowa_date_md",
+          "text": "十一月二十五日"
+        },
+        {
+          "line": 155,
+          "kind": "gokowa_date_md",
+          "text": "十一月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19530101-アメリカを救う.txt",
+      "body_lines": 1067,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "qa_question": 3
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: qa_question=3, gokowa_date_full=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 82,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年九月二十日"
+        },
+        {
+          "line": 192,
+          "kind": "qa_question",
+          "text": "――　身を以て体験した医学の恐ろしさ　――"
+        },
+        {
+          "line": 472,
+          "kind": "qa_question",
+          "text": "――　迷って知る医学の誤謬　――"
+        },
+        {
+          "line": 630,
+          "kind": "qa_question",
+          "text": "――　浄霊の偉大さと医学の無能を知る　――"
+        }
+      ],
+      "total_markers": 4
+    },
+    {
+      "filename": "19530115-御教え集17号.txt",
+      "body_lines": 142,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 9
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十七年十二月五日"
+        },
+        {
+          "line": 20,
+          "kind": "gokowa_date_md",
+          "text": "十二月六日"
+        },
+        {
+          "line": 38,
+          "kind": "gokowa_date_md",
+          "text": "十二月七日"
+        },
+        {
+          "line": 50,
+          "kind": "gokowa_date_md",
+          "text": "十二月十五日"
+        },
+        {
+          "line": 71,
+          "kind": "gokowa_date_md",
+          "text": "十二月十六日"
+        },
+        {
+          "line": 84,
+          "kind": "gokowa_date_md",
+          "text": "十二月十七日"
+        },
+        {
+          "line": 101,
+          "kind": "gokowa_date_md",
+          "text": "十二月二十三日（御生誕祭御教え）"
+        },
+        {
+          "line": 114,
+          "kind": "gokowa_date_md",
+          "text": "十二月二十五日"
+        }
+      ],
+      "total_markers": 10
+    },
+    {
+      "filename": "19530215-御垂示録17号.txt",
+      "body_lines": 312,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［二月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530215-御教え集18号.txt",
+      "body_lines": 208,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 11
+      },
+      "proposed_splits": 11,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年一月一日"
+        },
+        {
+          "line": 16,
+          "kind": "gokowa_date_md",
+          "text": "一月二日"
+        },
+        {
+          "line": 31,
+          "kind": "gokowa_date_md",
+          "text": "一月三日"
+        },
+        {
+          "line": 48,
+          "kind": "gokowa_date_md",
+          "text": "一月五日"
+        },
+        {
+          "line": 70,
+          "kind": "gokowa_date_md",
+          "text": "一月六日"
+        },
+        {
+          "line": 86,
+          "kind": "gokowa_date_md",
+          "text": "一月七日"
+        },
+        {
+          "line": 104,
+          "kind": "gokowa_date_md",
+          "text": "一月十五日"
+        },
+        {
+          "line": 116,
+          "kind": "gokowa_date_md",
+          "text": "一月十六日"
+        }
+      ],
+      "total_markers": 12
+    },
+    {
+      "filename": "19530315-御垂示録18号.txt",
+      "body_lines": 173,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［三月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530315-御教え集19号.txt",
+      "body_lines": 182,
+      "marker_counts": {
+        "gokowa_date_md": 9
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_md",
+          "text": "二月五日（立春祭御教え）"
+        },
+        {
+          "line": 23,
+          "kind": "gokowa_date_md",
+          "text": "二月六日"
+        },
+        {
+          "line": 39,
+          "kind": "gokowa_date_md",
+          "text": "二月七日"
+        },
+        {
+          "line": 56,
+          "kind": "gokowa_date_md",
+          "text": "二月十五日"
+        },
+        {
+          "line": 74,
+          "kind": "gokowa_date_md",
+          "text": "二月十六日"
+        },
+        {
+          "line": 94,
+          "kind": "gokowa_date_md",
+          "text": "二月十七日"
+        },
+        {
+          "line": 112,
+          "kind": "gokowa_date_md",
+          "text": "二月二十五日"
+        },
+        {
+          "line": 131,
+          "kind": "gokowa_date_md",
+          "text": "二月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19530415-御垂示録19号.txt",
+      "body_lines": 262,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［四月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530415-御教え集20号.txt",
+      "body_lines": 182,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 10,
+        "section_title": 1
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年三月五日"
+        },
+        {
+          "line": 20,
+          "kind": "gokowa_date_md",
+          "text": "三月六日"
+        },
+        {
+          "line": 32,
+          "kind": "gokowa_date_md",
+          "text": "三月七日"
+        },
+        {
+          "line": 53,
+          "kind": "gokowa_date_md",
+          "text": "三月十五日"
+        },
+        {
+          "line": 60,
+          "kind": "section_title",
+          "text": "序文の次に一、二、三と概略の説明がありますが、その三を読ませます。"
+        },
+        {
+          "line": 71,
+          "kind": "gokowa_date_md",
+          "text": "三月十六日"
+        },
+        {
+          "line": 90,
+          "kind": "gokowa_date_md",
+          "text": "三月十七日"
+        },
+        {
+          "line": 109,
+          "kind": "gokowa_date_md",
+          "text": "三月二十三日"
+        }
+      ],
+      "total_markers": 12
+    },
+    {
+      "filename": "19530505-革命的増産の自然農法解説.txt",
+      "body_lines": 1778,
+      "marker_counts": {
+        "preface": 1,
+        "jikan_hen": 35,
+        "koza_topic": 57,
+        "gokowa_date_full": 1,
+        "bracket_testimony": 1
+      },
+      "proposed_splits": 35,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 54,
+          "kind": "jikan_hen",
+          "text": "（一）"
+        },
+        {
+          "line": 68,
+          "kind": "jikan_hen",
+          "text": "（一）肥料代が要らなくなる。"
+        },
+        {
+          "line": 69,
+          "kind": "jikan_hen",
+          "text": "（二）労力が半減する。"
+        },
+        {
+          "line": 70,
+          "kind": "jikan_hen",
+          "text": "（三）収穫が大増量する。"
+        },
+        {
+          "line": 71,
+          "kind": "jikan_hen",
+          "text": "（四）目方が増え、炊き減りがなく美味である。"
+        },
+        {
+          "line": 72,
+          "kind": "jikan_hen",
+          "text": "（五）虫害はほとんどなくなる。"
+        },
+        {
+          "line": 73,
+          "kind": "jikan_hen",
+          "text": "（六）現在最も悩みの種とされている蛔虫や、その他の寄生虫問題も完全に解決する。"
+        }
+      ],
+      "total_markers": 95
+    },
+    {
+      "filename": "19530515-御垂示録20号.txt",
+      "body_lines": 381,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［五月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530515-御教え集21号.txt",
+      "body_lines": 189,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年四月五日"
+        },
+        {
+          "line": 27,
+          "kind": "gokowa_date_md",
+          "text": "四月六日"
+        },
+        {
+          "line": 46,
+          "kind": "gokowa_date_md",
+          "text": "四月七日"
+        },
+        {
+          "line": 82,
+          "kind": "gokowa_date_md",
+          "text": "四月十五日"
+        },
+        {
+          "line": 99,
+          "kind": "gokowa_date_md",
+          "text": "四月十六日"
+        },
+        {
+          "line": 122,
+          "kind": "gokowa_date_md",
+          "text": "四月十七日"
+        },
+        {
+          "line": 134,
+          "kind": "gokowa_date_md",
+          "text": "四月二十五日"
+        },
+        {
+          "line": 150,
+          "kind": "gokowa_date_md",
+          "text": "四月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19530600-A Story of Ukiyo-e.txt",
+      "body_lines": 204,
+      "marker_counts": {
+        "numbered_csv": 29
+      },
+      "proposed_splits": 29,
+      "split_kinds": [
+        "numbered_csv_auto"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 164,
+          "kind": "numbered_csv",
+          "text": "2, (Portion) Screen-painting \"Women in Merriments.\" Artist unknown."
+        },
+        {
+          "line": 165,
+          "kind": "numbered_csv",
+          "text": "3, (Portion) Screen with paintings \"Various Professions.\" Artist unknown."
+        },
+        {
+          "line": 166,
+          "kind": "numbered_csv",
+          "text": "4, Beauty of Kambun Era. Artist Jlnknown."
+        },
+        {
+          "line": 167,
+          "kind": "numbered_csv",
+          "text": "5, Dancing Beauty of Kambun Era. Artist unknown."
+        },
+        {
+          "line": 168,
+          "kind": "numbered_csv",
+          "text": "6, Yang Kuei-fei (Chinese empress of T'ang Dynasty). By Iwasa Matabei."
+        },
+        {
+          "line": 169,
+          "kind": "numbered_csv",
+          "text": "7, (Portion) Scroll I of scroll-painting \"Horie Monogatari.\" Ascribed to Iwasa Matabei."
+        },
+        {
+          "line": 170,
+          "kind": "numbered_csv",
+          "text": "8, Street Scene at Yoshiwara. Woodcut print, by Hishiknwa Moronobu."
+        },
+        {
+          "line": 171,
+          "kind": "numbered_csv",
+          "text": "9, Kokonoe, girl of Nishida-ya House in gay quarters of Edo. Woodcut print, by Hagawa Chinju."
+        }
+      ],
+      "total_markers": 29
+    },
+    {
+      "filename": "19530615-御垂示録21号.txt",
+      "body_lines": 278,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［六月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530615-御教え集22号.txt",
+      "body_lines": 204,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年五月五日"
+        },
+        {
+          "line": 27,
+          "kind": "gokowa_date_md",
+          "text": "五月六日"
+        },
+        {
+          "line": 46,
+          "kind": "gokowa_date_md",
+          "text": "五月七日"
+        },
+        {
+          "line": 66,
+          "kind": "gokowa_date_md",
+          "text": "五月十五日"
+        },
+        {
+          "line": 86,
+          "kind": "gokowa_date_md",
+          "text": "五月十六日"
+        },
+        {
+          "line": 103,
+          "kind": "gokowa_date_md",
+          "text": "五月十七日"
+        },
+        {
+          "line": 124,
+          "kind": "gokowa_date_md",
+          "text": "五月二十五日"
+        },
+        {
+          "line": 145,
+          "kind": "gokowa_date_md",
+          "text": "五月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19530715-御垂示録22号.txt",
+      "body_lines": 299,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［七月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530715-御教え集23号.txt",
+      "body_lines": 187,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 7
+      },
+      "proposed_splits": 7,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年六月五日"
+        },
+        {
+          "line": 28,
+          "kind": "gokowa_date_md",
+          "text": "六月六日"
+        },
+        {
+          "line": 50,
+          "kind": "gokowa_date_md",
+          "text": "六月七日"
+        },
+        {
+          "line": 92,
+          "kind": "gokowa_date_md",
+          "text": "六月十六日"
+        },
+        {
+          "line": 109,
+          "kind": "gokowa_date_md",
+          "text": "六月十七日"
+        },
+        {
+          "line": 124,
+          "kind": "gokowa_date_md",
+          "text": "六月二十五日"
+        },
+        {
+          "line": 143,
+          "kind": "gokowa_date_md",
+          "text": "六月二十六日"
+        },
+        {
+          "line": 158,
+          "kind": "gokowa_date_md",
+          "text": "六月二十七日"
+        }
+      ],
+      "total_markers": 8
+    },
+    {
+      "filename": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "body_lines": 224,
+      "marker_counts": {
+        "section_title": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: section_title=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 73,
+          "kind": "section_title",
+          "text": "霊主体従の法則"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530815-御垂示録23号.txt",
+      "body_lines": 243,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［八月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530815-御教え集24号.txt",
+      "body_lines": 179,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年七月五日"
+        },
+        {
+          "line": 21,
+          "kind": "gokowa_date_md",
+          "text": "七月六日"
+        },
+        {
+          "line": 39,
+          "kind": "gokowa_date_md",
+          "text": "七月七日"
+        },
+        {
+          "line": 59,
+          "kind": "gokowa_date_md",
+          "text": "七月十五日"
+        },
+        {
+          "line": 78,
+          "kind": "gokowa_date_md",
+          "text": "七月十六日"
+        },
+        {
+          "line": 98,
+          "kind": "gokowa_date_md",
+          "text": "七月十七日"
+        },
+        {
+          "line": 116,
+          "kind": "gokowa_date_md",
+          "text": "七月二十五日"
+        },
+        {
+          "line": 129,
+          "kind": "gokowa_date_md",
+          "text": "七月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19530910-世界救世教奇蹟集.txt",
+      "body_lines": 2793,
+      "marker_counts": {
+        "preface": 1,
+        "section_title": 5,
+        "koza_topic": 9,
+        "qa_question": 3,
+        "gokowa_date_full": 1
+      },
+      "proposed_splits": 5,
+      "split_kinds": [
+        "miracle_markers"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "preface",
+          "text": "序文"
+        },
+        {
+          "line": 15,
+          "kind": "section_title",
+          "text": "奇蹟とは何ぞや"
+        },
+        {
+          "line": 22,
+          "kind": "section_title",
+          "text": "霊主体従"
+        },
+        {
+          "line": 28,
+          "kind": "section_title",
+          "text": "霊と体"
+        },
+        {
+          "line": 66,
+          "kind": "koza_topic",
+          "text": "二三、　一　全身立像　　　ベールを　　　　両手で巻物　　虹が出る"
+        },
+        {
+          "line": 68,
+          "kind": "koza_topic",
+          "text": "二三、　五　七分身像　　　同右　　　　　　左手に蓮華　　　同右"
+        },
+        {
+          "line": 70,
+          "kind": "koza_topic",
+          "text": "二四、一二　全身坐像　　　ベールを脱がれ　左手に蓮華　　虹次第に薄くなる"
+        },
+        {
+          "line": 85,
+          "kind": "koza_topic",
+          "text": "一、今回の御姿こそ、六月妄日の昼夜転換を期して、現われまされたる聖観音像なること。"
+        }
+      ],
+      "total_markers": 19
+    },
+    {
+      "filename": "19530915-御垂示録24号.txt",
+      "body_lines": 228,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［九月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19530915-御教え集25号.txt",
+      "body_lines": 186,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年八月五日"
+        },
+        {
+          "line": 19,
+          "kind": "gokowa_date_md",
+          "text": "八月六日"
+        },
+        {
+          "line": 36,
+          "kind": "gokowa_date_md",
+          "text": "八月七日"
+        },
+        {
+          "line": 52,
+          "kind": "gokowa_date_md",
+          "text": "八月十五日"
+        },
+        {
+          "line": 68,
+          "kind": "gokowa_date_md",
+          "text": "八月十六日"
+        },
+        {
+          "line": 85,
+          "kind": "gokowa_date_md",
+          "text": "八月十七日"
+        },
+        {
+          "line": 108,
+          "kind": "gokowa_date_md",
+          "text": "八月二十五日"
+        },
+        {
+          "line": 130,
+          "kind": "gokowa_date_md",
+          "text": "八月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "body_lines": 121,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19531015-御垂示録25号.txt",
+      "body_lines": 391,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19531015-御教え集26号.txt",
+      "body_lines": 194,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 10
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年九月五日"
+        },
+        {
+          "line": 22,
+          "kind": "gokowa_date_md",
+          "text": "九月六日"
+        },
+        {
+          "line": 41,
+          "kind": "gokowa_date_md",
+          "text": "九月七日"
+        },
+        {
+          "line": 58,
+          "kind": "gokowa_date_md",
+          "text": "九月十五日"
+        },
+        {
+          "line": 79,
+          "kind": "gokowa_date_md",
+          "text": "九月十六日"
+        },
+        {
+          "line": 96,
+          "kind": "gokowa_date_md",
+          "text": "九月十七日"
+        },
+        {
+          "line": 112,
+          "kind": "gokowa_date_md",
+          "text": "九月二十三日"
+        },
+        {
+          "line": 126,
+          "kind": "gokowa_date_md",
+          "text": "九月二十四日"
+        }
+      ],
+      "total_markers": 11
+    },
+    {
+      "filename": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "body_lines": 106,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19531115-御垂示録26号.txt",
+      "body_lines": 185,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十一月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19531115-御教え集27号.txt",
+      "body_lines": 213,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8,
+        "bracket_testimony": 2
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年十月五日"
+        },
+        {
+          "line": 23,
+          "kind": "gokowa_date_md",
+          "text": "十月六日"
+        },
+        {
+          "line": 34,
+          "kind": "bracket_testimony",
+          "text": "〔御論文「農業の大革命　飯米十割増産は易々たり」〕"
+        },
+        {
+          "line": 45,
+          "kind": "gokowa_date_md",
+          "text": "十月七日"
+        },
+        {
+          "line": 51,
+          "kind": "bracket_testimony",
+          "text": "〔御論文「農業の大革命　飯米十割増産は易々たり」〕"
+        },
+        {
+          "line": 74,
+          "kind": "gokowa_date_md",
+          "text": "十月十五日"
+        },
+        {
+          "line": 92,
+          "kind": "gokowa_date_md",
+          "text": "十月十六日"
+        },
+        {
+          "line": 110,
+          "kind": "gokowa_date_md",
+          "text": "十月十七日"
+        }
+      ],
+      "total_markers": 11
+    },
+    {
+      "filename": "19531215-御垂示録27号.txt",
+      "body_lines": 446,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［十二月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19531215-御教え集28号.txt",
+      "body_lines": 221,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 8
+      },
+      "proposed_splits": 8,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年十一月五日"
+        },
+        {
+          "line": 25,
+          "kind": "gokowa_date_md",
+          "text": "十一月六日"
+        },
+        {
+          "line": 44,
+          "kind": "gokowa_date_md",
+          "text": "十一月七日"
+        },
+        {
+          "line": 100,
+          "kind": "gokowa_date_md",
+          "text": "十一月十五日"
+        },
+        {
+          "line": 123,
+          "kind": "gokowa_date_md",
+          "text": "十一月十六日"
+        },
+        {
+          "line": 142,
+          "kind": "gokowa_date_md",
+          "text": "十一月十七日"
+        },
+        {
+          "line": 161,
+          "kind": "gokowa_date_md",
+          "text": "十一月二十五日"
+        },
+        {
+          "line": 179,
+          "kind": "gokowa_date_md",
+          "text": "十一月二十六日"
+        }
+      ],
+      "total_markers": 9
+    },
+    {
+      "filename": "19540115-御教え集29号.txt",
+      "body_lines": 199,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 9
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十八年十二月五日"
+        },
+        {
+          "line": 24,
+          "kind": "gokowa_date_md",
+          "text": "十二月六日"
+        },
+        {
+          "line": 52,
+          "kind": "gokowa_date_md",
+          "text": "十二月七日"
+        },
+        {
+          "line": 75,
+          "kind": "gokowa_date_md",
+          "text": "十二月十五日"
+        },
+        {
+          "line": 89,
+          "kind": "gokowa_date_md",
+          "text": "十二月十六日"
+        },
+        {
+          "line": 106,
+          "kind": "gokowa_date_md",
+          "text": "十二月十七日"
+        },
+        {
+          "line": 122,
+          "kind": "gokowa_date_md",
+          "text": "十二月二十三日（御誕生祭御教え）"
+        },
+        {
+          "line": 133,
+          "kind": "gokowa_date_md",
+          "text": "十二月二十五日"
+        }
+      ],
+      "total_markers": 10
+    },
+    {
+      "filename": "19540215-御垂示録28号.txt",
+      "body_lines": 298,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［二月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19540215-御教え集30号.txt",
+      "body_lines": 196,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 11
+      },
+      "proposed_splits": 11,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十九年一月一日"
+        },
+        {
+          "line": 14,
+          "kind": "gokowa_date_md",
+          "text": "一月二日"
+        },
+        {
+          "line": 27,
+          "kind": "gokowa_date_md",
+          "text": "一月三日"
+        },
+        {
+          "line": 37,
+          "kind": "gokowa_date_md",
+          "text": "一月五日"
+        },
+        {
+          "line": 52,
+          "kind": "gokowa_date_md",
+          "text": "一月六日"
+        },
+        {
+          "line": 69,
+          "kind": "gokowa_date_md",
+          "text": "一月七日"
+        },
+        {
+          "line": 82,
+          "kind": "gokowa_date_md",
+          "text": "一月十五日"
+        },
+        {
+          "line": 97,
+          "kind": "gokowa_date_md",
+          "text": "一月十六日"
+        }
+      ],
+      "total_markers": 12
+    },
+    {
+      "filename": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "body_lines": 16,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19540315-御垂示録29号.txt",
+      "body_lines": 354,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［三月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19540315-御教え集31号.txt",
+      "body_lines": 207,
+      "marker_counts": {
+        "gokowa_date_md": 9,
+        "koza_topic": 1
+      },
+      "proposed_splits": 9,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 12,
+          "kind": "gokowa_date_md",
+          "text": "二月五日"
+        },
+        {
+          "line": 29,
+          "kind": "gokowa_date_md",
+          "text": "二月六日"
+        },
+        {
+          "line": 51,
+          "kind": "gokowa_date_md",
+          "text": "二月七日"
+        },
+        {
+          "line": 62,
+          "kind": "koza_topic",
+          "text": "二、三日前にアメリカに行っている嵐さんから手紙が来ましたが、その中に、アメリカ人が非常に弱っていることが書いてありますが、参考になると思いますから読ませます。"
+        },
+        {
+          "line": 71,
+          "kind": "gokowa_date_md",
+          "text": "二月十五日"
+        },
+        {
+          "line": 86,
+          "kind": "gokowa_date_md",
+          "text": "二月十六日"
+        },
+        {
+          "line": 102,
+          "kind": "gokowa_date_md",
+          "text": "二月十七日"
+        },
+        {
+          "line": 120,
+          "kind": "gokowa_date_md",
+          "text": "二月二十五日"
+        }
+      ],
+      "total_markers": 10
+    },
+    {
+      "filename": "19540415-御垂示録30号.txt",
+      "body_lines": 287,
+      "marker_counts": {
+        "ochishiji_date": 1
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "ochishiji_bracket_date"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: ochishiji_date=1"
+      ],
+      "sample_markers": [
+        {
+          "line": 7,
+          "kind": "ochishiji_date",
+          "text": "［四月一日］"
+        }
+      ],
+      "total_markers": 1
+    },
+    {
+      "filename": "19540415-御教え集32号.txt",
+      "body_lines": 233,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 10
+      },
+      "proposed_splits": 10,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十九年三月五日"
+        },
+        {
+          "line": 28,
+          "kind": "gokowa_date_md",
+          "text": "三月六日"
+        },
+        {
+          "line": 49,
+          "kind": "gokowa_date_md",
+          "text": "三月七日"
+        },
+        {
+          "line": 66,
+          "kind": "gokowa_date_md",
+          "text": "三月十五日"
+        },
+        {
+          "line": 85,
+          "kind": "gokowa_date_md",
+          "text": "三月十六日"
+        },
+        {
+          "line": 101,
+          "kind": "gokowa_date_md",
+          "text": "三月十七日"
+        },
+        {
+          "line": 117,
+          "kind": "gokowa_date_md",
+          "text": "三月二十三日"
+        },
+        {
+          "line": 135,
+          "kind": "gokowa_date_md",
+          "text": "三月二十四日"
+        }
+      ],
+      "total_markers": 11
+    },
+    {
+      "filename": "19540515-御教え集33号.txt",
+      "body_lines": 188,
+      "marker_counts": {
+        "gokowa_date_full": 1,
+        "gokowa_date_md": 6
+      },
+      "proposed_splits": 6,
+      "split_kinds": [
+        "mioshie_session_date"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "gokowa_date_full",
+          "text": "昭和二十九年四月五日"
+        },
+        {
+          "line": 27,
+          "kind": "gokowa_date_md",
+          "text": "四月六日"
+        },
+        {
+          "line": 53,
+          "kind": "gokowa_date_md",
+          "text": "四月七日"
+        },
+        {
+          "line": 76,
+          "kind": "gokowa_date_md",
+          "text": "四月十一日（名古屋市金山体育会館において）"
+        },
+        {
+          "line": 95,
+          "kind": "gokowa_date_md",
+          "text": "四月十五日"
+        },
+        {
+          "line": 121,
+          "kind": "gokowa_date_md",
+          "text": "四月十六日"
+        },
+        {
+          "line": 148,
+          "kind": "gokowa_date_md",
+          "text": "四月十七日"
+        }
+      ],
+      "total_markers": 7
+    },
+    {
+      "filename": "19540825-天国の福音書.txt",
+      "body_lines": 3375,
+      "marker_counts": {
+        "shinko_divider": 159,
+        "qa_question": 1
+      },
+      "proposed_splits": 159,
+      "split_kinds": [
+        "shinko_style_dividers"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 40,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 42,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 45,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 81,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 83,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 86,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 131,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        },
+        {
+          "line": 133,
+          "kind": "shinko_divider",
+          "text": "──────────────────────────────────"
+        }
+      ],
+      "total_markers": 160
+    },
+    {
+      "filename": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "body_lines": 352,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "body_lines": 302,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "body_lines": 40,
+      "marker_counts": {
+        "shinko_divider": 2
+      },
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [
+        "monolith_mas_marcadores: shinko_divider=2"
+      ],
+      "sample_markers": [
+        {
+          "line": 2,
+          "kind": "shinko_divider",
+          "text": "────────────────────────────────"
+        },
+        {
+          "line": 6,
+          "kind": "shinko_divider",
+          "text": "────────────────────────────────"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "body_lines": 541,
+      "marker_counts": {},
+      "proposed_splits": 1,
+      "split_kinds": [
+        "monolith_no_dominant_marker"
+      ],
+      "notes": [],
+      "sample_markers": [],
+      "total_markers": 0
+    },
+    {
+      "filename": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "body_lines": 399,
+      "marker_counts": {
+        "koza_topic": 7
+      },
+      "proposed_splits": 7,
+      "split_kinds": [
+        "koza_internal_topics"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 91,
+          "kind": "koza_topic",
+          "text": "一、十八歳の時、柔道にて右肺部乾性肋膜。"
+        },
+        {
+          "line": 92,
+          "kind": "koza_topic",
+          "text": "二、二十三歳の時、中耳炎手術。"
+        },
+        {
+          "line": 93,
+          "kind": "koza_topic",
+          "text": "三、二十四歳の時、蓄膿症手術。"
+        },
+        {
+          "line": 94,
+          "kind": "koza_topic",
+          "text": "四、三十三歳の時、鼠蹊腺切開手術。"
+        },
+        {
+          "line": 95,
+          "kind": "koza_topic",
+          "text": "五、三十九歳の時、右肺部湿性肋膜にて一カ年療養。"
+        },
+        {
+          "line": 96,
+          "kind": "koza_topic",
+          "text": "六、四十二歳の時、右肺に空洞（直径三センチ）あるを以て、病院にて加療。"
+        },
+        {
+          "line": 97,
+          "kind": "koza_topic",
+          "text": "七、四十三歳の時、国鉄を休職、自宅にて療養。"
+        }
+      ],
+      "total_markers": 7
+    },
+    {
+      "filename": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "body_lines": 608,
+      "marker_counts": {
+        "jikan_hen": 2
+      },
+      "proposed_splits": 2,
+      "split_kinds": [
+        "jikan_hen_paren"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 184,
+          "kind": "jikan_hen",
+          "text": "（一）生活難の為に母体が健康なれどやむなく堕胎した場合、胎児の霊はどうなりますか。"
+        },
+        {
+          "line": 185,
+          "kind": "jikan_hen",
+          "text": "（二）又堕胎をした為両親は如何なる罪を神より受け、又胎児の霊により両親の将来はどうなるでしょう。"
+        }
+      ],
+      "total_markers": 2
+    },
+    {
+      "filename": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "body_lines": 801,
+      "marker_counts": {
+        "koza_topic": 5
+      },
+      "proposed_splits": 5,
+      "split_kinds": [
+        "koza_internal_topics"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "koza_topic",
+          "text": "一、胃疾患"
+        },
+        {
+          "line": 226,
+          "kind": "koza_topic",
+          "text": "十五、胃潰瘍の再浄化にて、毎晩胃部に激痛を覚え、食欲が減り、衰弱してきた中年の男子　（御教え集　七号　三十二頁）"
+        },
+        {
+          "line": 365,
+          "kind": "koza_topic",
+          "text": "二、腹部疾患"
+        },
+        {
+          "line": 760,
+          "kind": "koza_topic",
+          "text": "一、以前明主様御垂示の中に、チブス患者にサイダーを飲ませると死ぬとのお言葉がございましたが、食物はどのように選定したらよろしいのでございましょうか。"
+        },
+        {
+          "line": 761,
+          "kind": "koza_topic",
+          "text": "二、たまたま腸出血する事がございますが、医者は腸に穴があくためだと言いますが、これは頭の濁血が排泄されるのでございましょうか。"
+        }
+      ],
+      "total_markers": 5
+    },
+    {
+      "filename": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "body_lines": 598,
+      "marker_counts": {
+        "koza_topic": 2,
+        "jikan_hen": 53
+      },
+      "proposed_splits": 55,
+      "split_kinds": [
+        "koza_internal_topics"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "koza_topic",
+          "text": "一、頭部に関連した浄霊について"
+        },
+        {
+          "line": 21,
+          "kind": "jikan_hen",
+          "text": "（２）頭の深い所の毒が溶けて出る時は非常に痛い"
+        },
+        {
+          "line": 27,
+          "kind": "jikan_hen",
+          "text": "（３）後頭部（延髄）の固まりほど厄介なものはない"
+        },
+        {
+          "line": 39,
+          "kind": "jikan_hen",
+          "text": "（４）後頭部の浄霊に伴なう変化で、心得ておかなければならないこと"
+        },
+        {
+          "line": 54,
+          "kind": "jikan_hen",
+          "text": "（５）前頭部の熱と浄霊について"
+        },
+        {
+          "line": 72,
+          "kind": "jikan_hen",
+          "text": "（６）こめかみ"
+        },
+        {
+          "line": 77,
+          "kind": "jikan_hen",
+          "text": "（７）淋巴腺（頸部）"
+        },
+        {
+          "line": 96,
+          "kind": "koza_topic",
+          "text": "二、頭部に関連した症状の解剖"
+        }
+      ],
+      "total_markers": 55
+    },
+    {
+      "filename": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "body_lines": 840,
+      "marker_counts": {
+        "koza_topic": 9,
+        "jikan_hen": 80,
+        "bracket_testimony": 1
+      },
+      "proposed_splits": 89,
+      "split_kinds": [
+        "koza_internal_topics"
+      ],
+      "notes": [],
+      "sample_markers": [
+        {
+          "line": 5,
+          "kind": "koza_topic",
+          "text": "一、眼　科"
+        },
+        {
+          "line": 7,
+          "kind": "jikan_hen",
+          "text": "（１）目の浄霊に関連して"
+        },
+        {
+          "line": 25,
+          "kind": "jikan_hen",
+          "text": "（２）眼球注射について"
+        },
+        {
+          "line": 32,
+          "kind": "jikan_hen",
+          "text": "（３）星眼の原因について"
+        },
+        {
+          "line": 48,
+          "kind": "jikan_hen",
+          "text": "（４）薮睨みの霊的、体的な原因"
+        },
+        {
+          "line": 57,
+          "kind": "jikan_hen",
+          "text": "（５）乱視の原因について"
+        },
+        {
+          "line": 66,
+          "kind": "jikan_hen",
+          "text": "（６）数年前から視力が鈍り始め、現在全く見えなくなってしまった老人"
+        },
+        {
+          "line": 75,
+          "kind": "jikan_hen",
+          "text": "（７）眩暈の原因について"
+        }
+      ],
+      "total_markers": 90
+    }
+  ]
+}

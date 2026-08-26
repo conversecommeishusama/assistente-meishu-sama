@@ -1,0 +1,175 @@
+{
+ "filename": "19510115 - Explicação da Agricultura Natural.txt",
+ "profile": "structured",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 43→43. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 43,
+ "split_method": "line_author_structure",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "",
+   "jp_anchor": "昭和26(1951)年1月15日発行",
+   "pt_anchor": "Explicação da Agricultura Natural",
+   "notes": ""
+  },
+  {
+   "kind": "preface",
+   "title_jp": "はしがき",
+   "title_pt": "",
+   "jp_anchor": "　　　はしがき\n\n　今日、我国は戦争の創痍（そうい）いまだ癒えず、あらゆる部面に渉っての、種々なる困難はその解決たるや仲々容易ではない。いわく食糧難、税の苛斂誅求 （かれんちゅうきゅう）、金詰り、犯罪激増、住宅難、相変らずの病人の氾濫、特に結核患者の対策等々、",
+   "pt_anchor": "Prefácio\n\nHoje, nosso país ainda não se refez das feridas da guerra, e as dificuldades que se estendem por todas as áreas não têm solução fácil.",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "土の偉力",
+   "title_pt": "",
+   "jp_anchor": "　　　土の偉力",
+   "pt_anchor": "O Grande Poder do Solo",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "虫害",
+   "title_pt": "",
+   "jp_anchor": "　　　虫害",
+   "pt_anchor": "Pragas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "風水害",
+   "title_pt": "",
+   "jp_anchor": "風水害\n\n　次に、風水害であるが",
+   "pt_anchor": "Danos Causados pelo Vento e pela Água",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "寄生虫問題",
+   "title_pt": "",
+   "jp_anchor": "　　　寄生虫問題",
+   "pt_anchor": "O Problema dos Parasitas",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "浄霊の偉効",
+   "title_pt": "",
+   "jp_anchor": "　　　浄霊の偉効",
+   "pt_anchor": "A Grande Eficácia do Johrei",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "素人菜園について",
+   "title_pt": "",
+   "jp_anchor": "　　　素人菜園について",
+   "pt_anchor": "Sobre a Horta para Amadores",
+   "notes": ""
+  },
+  {
+   "kind": "section",
+   "title_jp": "結論",
+   "title_pt": "",
+   "jp_anchor": "　　　結論",
+   "pt_anchor": "Conclusão",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "悪条件の田畑で此御蔭",
+   "title_pt": "",
+   "jp_anchor": "悪条件の田畑で此御蔭",
+   "pt_anchor": "Com esta graça em campos e arrozais em más condições",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "台風にも倒伏せず反当り九俵余の収穫",
+   "title_pt": "",
+   "jp_anchor": "台風にも倒伏せず反当り九俵余の収穫",
+   "pt_anchor": "Colheita de mais de nove fardos por tan, sem acamar mesmo com tufão",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然耕作で超過供出する信徒",
+   "title_pt": "",
+   "jp_anchor": "自然耕作で超過供出する信徒",
+   "pt_anchor": "(Apresentado em 22 de novembro de 1950)\n\nCrente que excede a cota de fornecimento com cultivo natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培こそ真の農法　御光の絶対なるに驚嘆",
+   "title_pt": "",
+   "jp_anchor": "自然栽培こそ真の農法　御光の絶対なるに驚嘆",
+   "pt_anchor": "O cultivo natural é o verdadeiro método agrícola. Admiro a absolutez da Luz Divina",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "大豆は三倍、米は一表半の増収",
+   "title_pt": "",
+   "jp_anchor": "大豆は三倍、米は一表半の増収",
+   "pt_anchor": "A soja triplicou, o arroz aumentou um fardo e meio",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "水害絶無の自然農法",
+   "title_pt": "",
+   "jp_anchor": "水害絶無の自然農法",
+   "pt_anchor": "Método da agricultura natural: absolutamente livre de danos por inundação",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "水稲自然栽培第一年目御報告",
+   "title_pt": "",
+   "jp_anchor": "水稲自然栽培第一年目御報告",
+   "pt_anchor": "Relatório do primeiro ano de cultivo natural de arroz irrigado",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培による本年度耕作状況の報告",
+   "title_pt": "",
+   "jp_anchor": "自然栽培による本年度耕作状況の報告",
+   "pt_anchor": "Relatório da situação do cultivo deste ano pela agricultura natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "自然栽培による野菜の増収",
+   "title_pt": "",
+   "jp_anchor": "自然栽培による野菜の増収",
+   "pt_anchor": "Aumento da produção de legumes pela agricultura natural",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "不思議な玉葱",
+   "title_pt": "",
+   "jp_anchor": "不思議な玉葱",
+   "pt_anchor": "A cebola misteriosa",
+   "notes": ""
+  },
+  {
+   "kind": "testimony",
+   "title_jp": "一粒、一万五千倍の奇蹟",
+   "title_pt": "",
+   "jp_anchor": "一粒、一万五千倍の奇蹟",
+   "pt_anchor": "O milagre de um grão, 15.000 vezes",
+   "notes": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:52Z",
+ "audit_method": "jp_first_content_pair"
+}

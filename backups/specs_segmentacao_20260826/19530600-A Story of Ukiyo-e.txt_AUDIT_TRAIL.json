@@ -1,0 +1,106 @@
+{
+  "filename": "19530600-A Story of Ukiyo-e.txt",
+  "method": "linha_a_linha_fonte_verdade_ingles",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "special_case": "Fonte de verdade deste item é o INGLÊS, não japonês. É o ensaio original de Mokichi Okada (prefácio) + texto de Ichitaro Kondo sobre a história do Ukiyo-e, publicado em 1953 pelo Hakone Art Museum. Não há JP para comparar (mesmo caso já tratado nesta sessão em 19520000-HAKONE ART MUSEUM.txt). O princípio de revisao-paralela-jp-pt.mdc se aplica integralmente, com 'inglês' no lugar de 'JP'.",
+  "scope": "Leitura completa do arquivo inglês (223 linhas, mas na prática um texto corrido de ~5000 palavras com legendas de imagem intercaladas de forma irregular, refletindo uma extração OCR/PDF do livreto original) confrontado linha a linha / frase a frase com o PT correspondente (78 linhas originalmente, 92 após correção). Método: leitura completa de ambos os arquivos; em seguida validação estrutural automatizada (não como substituto da leitura, mas como conferência adicional) por contagem posicional de todos os anos (datas) e nomes próprios de artistas/escolas mencionados no ensaio, para detectar qualquer secção inteira ausente ou fora de ordem antes e depois das correções.",
+  "alerta_original": "Arquivo sinalizado por auditoria automática de ratio (EN 223 linhas vs PT 78 linhas, ~2.9:1), um dos mais desproporcionais do acervo (27º/30 mais sinalizados). A desconfiança era justificada: foram encontrados problemas reais.",
+  "achados_reais_confirmados": [
+    {
+      "n": 1,
+      "tipo": "perda_de_conteudo",
+      "localizacao": "Secção 'Origin of Ukiyo-e', parágrafo sobre Iwasa Matabei (EN ~linha 80). Seam correspondia a um corte de página/chunk no ficheiro PT de trabalho (limite de linha em branco).",
+      "problema": "Duas frases inteiras do EN ausentes do PT: 'There are quite a number of pictures portraying beauties in his peculiar style, with long, full cheeks, but they are all figures connected with ancient Japanese literature. He was an artist of the Tosa School, as he called himself in the inscription on two of his works.' O PT saltava diretamente de '...entre sua' para 'inscrição em duas de suas obras.', produzindo uma frase sem sentido.",
+      "correcao": "Traduzido e inserido o trecho em falta: 'Há um bom número de pinturas retratando belezas em seu estilo peculiar, com bochechas longas e cheias, mas todas são figuras ligadas à antiga literatura japonesa. Ele era um artista da Escola Tosa, como ele próprio se declarou na inscrição em duas de suas obras.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "perda_de_conteudo",
+      "localizacao": "Secção 'Development in the Form of Ukiyo-e', parágrafo sobre a invenção do Nishiki-e em 1765 e a inscrição de gravadores/impressores (EN ~linha 107). Mesmo padrão de corte de página/chunk.",
+      "problema": "Frase inteira ausente: 'This was an exceptional system at the time, and it meant that the new form of Nishiki-e was a great renovation not only in the artistic style but in the manners of engraving and printing as well.' PT saltava de '...Sicrano. Est' para 'impressão também.'",
+      "correcao": "Inserido: 'Este era um sistema excepcional para a época, e significava que a nova forma de Nishiki-e representava uma grande renovação não apenas no estilo artístico, mas também nas técnicas de gravação e impressão.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "perda_de_conteudo",
+      "localizacao": "Secção 'Styles and Subjects in Ukiyo-e', parágrafo sobre a pressão dos editores no estilo de Harunobu (EN ~linha 133). Mesmo padrão de corte de página/chunk.",
+      "problema": "Trecho ausente: 'shows the character of Ukiyo-e intrinsic in it. What was the cause that brought on this character? Presumably it was the pressure by publishers, and the lack of artistic conscience on the part of artists themselves. If Harunobu, for instance, gets great popularity...' PT saltava de '...estilo Harunobu, mos' para 'Por exemplo, Harunobu obtém grande popularidade...' perdendo a pergunta retórica e a explicação da causa.",
+      "correcao": "Inserido: 'mostra o caráter intrínseco do Ukiyo-e. Qual foi a causa que provocou esse caráter? Presumivelmente foi a pressão dos editores, e a falta de consciência artística por parte dos próprios artistas. Se, por exemplo, Harunobu obtém grande popularidade...'",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "tipo": "perda_de_conteudo",
+      "localizacao": "Abertura da secção 'Characteristics of Ukiyo-e' (EN ~linha 176-177). Mesmo padrão de corte de página/chunk.",
+      "problema": "Trecho ausente: '...reproduced on the wood-block with a knife and a rubbing implement. Sharp lines like wire, and delicate tones of colours deeply pressed into paper, were the two main factors that created the beauty of...' PT saltava de '...reproduzidas na xilog' para 'ukiyo-e, de um tipo jamais encontrado...', perdendo a explicação central do argumento da secção (as duas características que definem a beleza do Ukiyo-e).",
+      "correcao": "Inserido: 'ravura com uma faca e um instrumento de esfregar. Linhas nítidas como fio de arame e tons delicados de cores profundamente impressas no papel foram os dois principais fatores que criaram a beleza do [ukiyo-e]'",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "tipo": "perda_de_conteudo_estrutural",
+      "localizacao": "Duas colecções de legendas de imagem (plates 19-27 e plates 28-31), presentes no EN entre parágrafos de ensaio mas ausentes do corpo do PT (sobreviviam apenas na 'LISTA DE ILUSTRAÇÕES' final).",
+      "problema": "Confirmado por contagem de âncoras: cada legenda de imagem no EN aparece exactamente 2x (uma vez incorporada no corpo do ensaio, uma vez na lista final de pranchas) para as pranchas 1-18, mas para as pranchas 19,20,21,22,23,24,25,27(x2),28,29,30,31 só existia 1x no PT (apenas na lista final) — a instância incorporada no corpo tinha sido perdida por completo, provavelmente no mesmo processo de corte de página que causou os achados 1-4. Isto corresponde exactamente aos itens do spec (19530600-A Story of Ukiyo-e.txt.json) que a triagem automática já tinha sinalizado com rácios PT/JP absurdos (ex.: item 19 rácio=221.30, item 20 rácio=150.99) — o script não achava âncora PT porque o texto simplesmente não existia ali.",
+      "correcao": "Traduzidas e inseridas as 12 legendas em falta, nas duas posições corretas identificadas no EN: (a) entre '...era necessária.' e 'O gênio que se apresentou...' — 8 legendas (pranchas 19-25, e prancha 26/27 duplicada tal como no EN, que repete a legenda \"Actors on Stage\" duas vezes seguidas); (b) entre '...aperfeiçoada por Hiroshige.' e 'Características do Ukiyo-e' — 4 legendas (pranchas 28-31). Verificado depois: todos os nomes de artista (Kiyonaga, Utamaro, Eishi, Sharaku, Toyokuni, Hokusai, Hiroshige) passaram a ter a mesma contagem exacta no PT que no EN.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "tipo": "erro_de_traducao_nome_proprio",
+      "localizacao": "Secção 'Origin of Ukiyo-e' (EN ~linha 56): '...not of the traditional Kano School or of the conservative Toga School, but who sprang out of an entirely new soil.'",
+      "problema": "'Toga School' (uma escola distinta, mencionada 3x no EN, sempre traduzida corretamente como 'Escola Toga' nas outras 2 ocorrências) foi mistraduzida nesta primeira ocorrência como 'Escola Tosa' — confundindo-a com a Escola Tosa (escola diferente, mencionada 3x no EN, ligada a temas literários clássicos como Genji Monogatari). Confirmado por contagem: antes da correção EN tinha 'Tosa'=3/'Toga'=3 e PT tinha 'Tosa'=4/'Toga'=2.",
+      "correcao": "Corrigido 'conservadora Escola Tosa' para 'conservadora Escola Toga'. Após a correção, ambas as contagens (Tosa=3, Toga=3) batem exatamente entre EN e PT.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "tipo": "titulo_em_falta",
+      "localizacao": "Início do ficheiro, antes do prefácio de Mokichi Okada.",
+      "problema": "Todas as outras secções do livro têm cabeçalho traduzido e presente no PT (Origem do Ukiyo-e / Desenvolvimento na Forma do Ukiyo-e / Estilos e Temas / Características / Lista de Ilustrações), mas o cabeçalho 'FOREWORD' do EN não tinha equivalente em PT — o prefácio começava diretamente no corpo do texto.",
+      "correcao": "Adicionado cabeçalho 'PREFÁCIO' antes do texto do prefácio, para consistência com as restantes secções.",
+      "confianca": "media-alta (decisão editorial de formatação, não é erro de conteúdo)"
+    }
+  ],
+  "verificacoes_de_completude_pos_correcao": {
+    "metodo": "Contagem posicional de todos os anos de 4 dígitos (1500-1999) mencionados no ensaio: sequência EN e PT idêntica em ordem e quantidade (37 ocorrências cada, incluindo repetições de anos como 1765 e 1794/1795 nos parágrafos certos) — confirma que nenhuma secção inteira do argumento histórico foi omitida ou reordenada.",
+    "nomes_proprios_verificados": "Moronobu, Harunobu, Kiyonaga, Utamaro, Hokusai, Hiroshige, Kaigetsudo, Torii, Kano, Tosa, Toga, Sharaku, Toyokuni, Eishi, Shunsho, Koryusai, Matabei, Choshun, Shigenaga, Masanobu, Kunisada, Kuniyoshi, Eisen, Kondo, Okada — todos com contagem EN=PT após as correções (as pequenas diferenças encontradas inicialmente, ex. 'Kaigetsudo' 8 vs 9, explicam-se por um typo OCR no EN 'Kaigetsdo Doshin' silenciosamente corrigido no PT — não é erro).",
+    "duplicacao": "Nenhuma duplicação espúria encontrada além das legendas que o próprio EN duplica de propósito (corpo + lista final de pranchas), agora replicadas corretamente em ambas as instâncias no PT tal como no EN.",
+    "cjk_residual": "Nenhum. Não aplicável (fonte é inglês, não japonês, sem ideogramas)."
+  },
+  "checklist_por_secao": [
+    {"secao": "Título + Prefácio (Mokichi Okada)", "decisao": "ok apos correcao", "confianca": "alta", "notas": "Cabeçalho PREFÁCIO adicionado (achado 7); conteúdo do prefácio já estava completo e fiel."},
+    {"secao": "Sumário / lista de conteúdos", "decisao": "ok", "confianca": "alta", "notas": "5 entradas, títulos e páginas corretos."},
+    {"secao": "Origin of Ukiyo-e / Origem do Ukiyo-e", "decisao": "corrigido", "confianca": "alta", "notas": "Achados 1 e 6 corrigidos nesta secção; legendas de pranchas 1-11 já estavam completas (2x cada, corpo+lista)."},
+    {"secao": "Development in the Form of Ukiyo-e / Desenvolvimento na Forma", "decisao": "corrigido", "confianca": "alta", "notas": "Achado 2 corrigido nesta secção; legendas de pranchas 12-18 já completas."},
+    {"secao": "Styles and Subjects in Ukiyo-e / Estilos e Temas", "decisao": "corrigido", "confianca": "alta", "notas": "Achado 3 corrigido; achado 5(a) corrigido — 8 legendas de pranchas 19-27 restauradas no ponto correto (fim desta secção)."},
+    {"secao": "Transição para paisagens (Hokusai/Hiroshige)", "decisao": "corrigido", "confianca": "alta", "notas": "Achado 5(b) corrigido — 4 legendas de pranchas 28-31 restauradas no ponto correto (fim deste trecho, antes de 'Características')."},
+    {"secao": "Characteristics of Ukiyo-e / Características", "decisao": "corrigido", "confianca": "alta", "notas": "Achado 4 corrigido na abertura desta secção; resto da secção já estava completo e fiel."},
+    {"secao": "Lista de Ilustrações (Cover + 31 pranchas)", "decisao": "ok", "confianca": "alta", "notas": "Todas as 31 entradas presentes, na ordem correta, incluindo a entrada 26 sem legenda (tal como no EN, que também a deixa em branco)."},
+    {"secao": "Colofão final (editor, editora, preço)", "decisao": "ok", "confianca": "alta", "notas": "Título, Ichitaro Kondo, Hakone Art Museum, Ohtsuka Kogeisha Company, preço ¥150 — todos presentes e corretos."}
+  ],
+  "sobre_paragrafacao": "O ficheiro EN de origem é ele próprio uma extração OCR/PDF irregular do livreto original, com legendas de imagem intercaladas de forma inconsistente no meio do texto corrido (marcadores ', ' residuais, quebras de linha arbitrárias). O tradutor original optou por reagrupar o ensaio em blocos de parágrafo legíveis em vez de espelhar essa quebra de linha irregular do OCR — decisão editorial razoável dado o estado da fonte, mantida nesta revisão. O foco desta auditoria foi garantir zero perda/duplicação de conteúdo semântico (achados 1-6 acima), não impor uma paragrafação 1:1 artificial sobre um OCR já problemático.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved": false,
+    "motivo": "Não marcado approved:true por decisão própria, conforme exigido — este ficheiro foi um dos mais sinalizados do acervo por desproporção e teve achados reais confirmados (perda de conteúdo genuína, não falso positivo). Aguarda segunda auditoria independente antes de fecho, tal como determinado na tarefa.",
+    "recomendacao_para_segunda_auditoria": "Conferir especialmente os 4 pontos de emenda de frase (achados 1-4, todos em antigos limites de 'chunk'/página do ficheiro de trabalho) e a inserção das 12 legendas de pranchas (achado 5) contra o EN linha a linha; e confirmar a troca Toga/Tosa (achado 6)."
+  },
+  "fase_e_segunda_auditoria_independente": {
+    "data": "2026-07-09",
+    "reviewer": "agente (Fase E, sessão distinta da que aplicou as correções em 2026-07-07)",
+    "metodo": "Releitura completa e independente do EN (223 linhas) e do PT (92 linhas) inteiros, do zero, sem assumir os achados anteriores como corretos até verificação direta.",
+    "verificacao": [
+      "Confirmadas em campo as 4 emendas de frase (achados 1-4): texto agora presente e fiel ao EN em todos os 4 pontos.",
+      "Confirmadas as 12+ legendas de pranchas restauradas nos pontos corretos (achado 5), na ordem certa, incluindo a prancha 26 sem legenda em ambos EN e PT (não é erro, é lacuna original do livreto).",
+      "Confirmado cabeçalho 'PREFÁCIO' (achado 7) e troca Toga/Tosa (achado 6).",
+      "Verificação adicional própria: números conferidos (39cm x 26cm, 69 anos de Hokusai, 46 imagens, 140 retratos de Sharaku, datas 1765/1770/1791/1794-95/1804 etc.) — todos coincidem EN=PT. Colofão final (Ichitaro Kondo, Hakone Art Museum, Ohtsuka Kogeisha Company, ¥150) presente e correto. Sem CJK residual (não aplicável, fonte é inglês)."
+    ],
+    "correcoes_reais_aplicadas_nesta_fase": 0,
+    "pendencias_abertas": [],
+    "aprovacao_recomendada": true,
+    "nota": "Segunda auditoria independente exigida pela regra 'Δ=0 nunca é suficiente' agora satisfeita. Recomenda-se approved:true no spec."
+  }
+}

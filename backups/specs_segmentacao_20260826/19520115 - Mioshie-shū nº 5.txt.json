@@ -1,0 +1,104 @@
+{
+ "filename": "19520115 - Mioshie-shū nº 5.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 10→10. PT pairing pendente.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 10,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "『御教え集』5号、昭和27(1952)年1月15日発行",
+   "pt_anchor": "Mioshie-shū nº 5",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月一日",
+   "title_pt": "1 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）赤川山一（十月下旬入信。五十一才）十年ほど前両足首関節に激痛を覚え、骨接ぎに行きましたが病名不明と言われ、医師にかかり関節炎と診断され、 薬名不明の注射を四本打ち、だいぶ良くなり仕事をしておりました。昭和",
+   "pt_anchor": "1º de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[1º de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "1º de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月六日",
+   "title_pt": "6 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）田中ひで子（四才）教師の孫でございますが、先月二十八日より食欲が減退し、排泄も少なく、熱もふつうより低く、特に足は冷たく、たいへんにむず かります。毎日御浄霊いたしておりますが、あまり変化がありません。こ",
+   "pt_anchor": "6 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[6 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "6 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月八日",
+   "title_pt": "8 de dezembro",
+   "jp_anchor": "（お伺）丹久子（二十三才）六才の八月ごろに皮膚病（白アザ）で医診を受けましたところ、この病気には薬はないと言われ、太陽灯および紫外線を四、五カ月 ほどいたし、アザに薬名不明の注射を二カ月いたしましたが治らず、その後病気は拡がり、右捷毛（まつ",
+   "pt_anchor": "8 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[8 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "8 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十一日",
+   "title_pt": "11 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）入信以前に子宮癌を手術し、入信後（九月一日）お伺い申し上げまして、御守護をいただきその後順調にまいりましたところ、二月末より出血多く、十 二月初め御不浄にて拳大の毒血の固まりが二個出て、出血多く、御不浄内",
+   "pt_anchor": "11 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[11 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "11 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十五日",
+   "title_pt": "15 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）井上満之助（六十一才）去る九日突然腰が痛み、教師の浄霊をいただき治りましたが、シャックリが連続に出始め、四十度の高熱が出ましたので、浄霊 をいただきましたが、熱は下がらず、シャックリはやや軽くなりつつあり",
+   "pt_anchor": "15 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[15 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "15 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月十八日",
+   "title_pt": "18 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）連れ子をして柴家に再婚し、その末子（飯田朋子二十九歳）は昭和二十年の暮れごろより、失恋の結果神経衰弱となり、悪化して二十二年春ごろより完 全に精神病となり、二十四年九月武蔵野精神病院に入院、各種療法、電気",
+   "pt_anchor": "18 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[18 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "18 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十一日",
+   "title_pt": "21 de dezembro",
+   "jp_anchor": "今度、結核問題に対して本を作って、信者向きでなく、一般に――医学会に原子爆弾をぶつける――こういう考えなんですがね。何しろ、あんまり馬鹿馬鹿し い事をしてるんで、到底黙っちゃおられない状態になってますね。以前から、結核の間違いなんかを書いて",
+   "pt_anchor": "21º de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[21º de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "21º de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十五日",
+   "title_pt": "25 de dezembro",
+   "jp_anchor": "（お伺）藤川緑（三十四歳）未入信の男子。戦争中大鳥島にて、鳩くらいの渡り鳥をなぶり殺しにして食べたそうですが、その後栄養失調となり復員し、医療に ていったんは回復しましたが、二カ年後に時々食物を吐き、栄養失調のような状態になり、医療や鍼の治",
+   "pt_anchor": "25 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[25 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "25 de dezembro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "十二月二十八日",
+   "title_pt": "28 de dezembro",
+   "jp_anchor": "Interlocutor: （お伺）本年二月風邪の御浄化をいただき、三月中旬より自宅で静養しやや良くしていただき、布教させていただきました。九月上旬より、非常に寒気を催し、 咳が激しく、痰が多く、便通なく、十月よりふたたび自宅で静養し現在に",
+   "pt_anchor": "28 de dezembro",
+   "notes": "2026-08-20 adequacao estrutural: pt_anchor repontada para o cabecalho de data '[28 de dezembro]' (retraducao nova reescreveu o corpo).",
+   "pt_prefix": "28 de dezembro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:53Z",
+ "audit_method": "jp_first_content_pair"
+}

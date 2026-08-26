@@ -1,0 +1,133 @@
+{
+  "filename": "19530615-御教え集22号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 223 linhas / PT ~80 linhas de trabalho após correções, 9 artigos por spec: 1 prefácio + 8 sessões datadas 5/5-27 de maio de 1953 dentro de um único bloco === ARTIGO === no JP). Todo o corpo do JP foi lido do início ao fim e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data, conforme alerta de bug confirmado na família 御教え集 (monólitos residuais com cauda duplicada, cabeçalhos de data corrompidos/duplicados).",
+  "pre_existing_context": "Nenhuma correção prévia registrada para este volume antes desta sessão. Alerta da tarefa: JP 223 linhas / PT 85 linhas (razão ~2.6:1), família com bug estrutural confirmado em quase todos os volumes irmãos já revisados (御教え集1-21号).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 9,
+    "articles_reviewed": 9,
+    "real_corrections_applied": 5,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt_aprox": "seção '7 de maio', trecho sobre gânglios linfáticos/testa/têmpora/vértice + falta de ar (JP linha 71, transição 前頭部...淋巴腺...それから息切れ... até 息切れの原因というものは分かるし、その浄霊によってなおります)",
+      "problema": "GRAVE - duplicação de bloco inteiro (mesma classe de bug já confirmada nos volumes irmãos): o trecho JP sobre observar a testa/têmporas/vértice e depois a falta de ar (nevralgia intercostal + região lombar) foi traduzido DUAS VEZES no PT - uma versão truncada terminando abruptamente em '...surge a falta de ar. I' (artefacto de corte), seguida de uma segunda tradução completa e reformulada do mesmo trecho, que só então prosseguia corretamente para a explicação sobre os rins e a diferença homem/mulher. Nenhum conteúdo do JP estava de fato perdido, mas havia repetição integral de um parágrafo inteiro.",
+      "correcao": "Removida a segunda tradução redundante (a que repetia gânglios linfáticos/testa/têmpora/vértice/nevralgia intercostal/região lombar), mantendo a primeira ocorrência e emendando diretamente na continuação genuína ('Isso é mais comum em idosos do que em jovens. E a dor lombar, em última análise, é devida aos rins...'), que corresponde exatamente à frase JP seguinte (これは若い人より年取った人の方が多いです。そうしてその腰の痛いのは、結局腎臓ですから...). Conteúdo verificado 1:1 contra o JP após a fusão, sem perda.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt_aprox": "seção '26 de maio', trecho sobre a competição de arroz do Asahi Shimbun (JP linha 179+181+183)",
+      "problema": "GRAVE - mesma classe de bug: o parágrafo inteiro sobre a competição de arroz do Asahi Shimbun (primeiro lugar do ano passado, 15 sacas 3to3sho2go, excesso de fertilizante, comparação com o cultivo natural de ~18 sacas) foi traduzido DUAS VEZES dentro da mesma seção '26 de maio' - uma versão truncada no fim de um parágrafo maior e, logo em seguida (após quebra de parágrafo), uma segunda tradução completa do mesmo trecho, incluindo a citação do artigo do Asahi Shimbun de 21 de maio.",
+      "correcao": "Removida a primeira ocorrência (truncada e incompleta) do trecho da competição de arroz, mantendo a segunda versão (completa, incluindo a citação do jornal e a frase final). Verificado contra o JP: a competição de arroz aparece genuinamente em três seções distintas e independentes do volume (25, 26 e 27 de maio - confirmado por grep no JP mostrando três ocorrências textualmente diferentes, uma por data), portanto a existência de uma menção em cada uma dessas três seções do PT está correta; o problema era a repetição interna DENTRO da seção de 26 de maio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt_aprox": "cabeçalho do ficheiro de trabalho (linhas 5-6 e 21-22 originais)",
+      "problema": "Cabeçalho corrompido/duplicado: marcador '=== ARTIGO ===' duplicado (aparecia duas vezes seguidas, JP só tem uma vez) e uma linha órfã '6 de maio' inserida antes do título 'Mioshie-shū nº 22' e antes de qualquer conteúdo de 6 de maio (o volume começa em 5 de maio, não 6) - não corresponde a nada no JP nessa posição.",
+      "correcao": "Removida a duplicação do marcador '=== ARTIGO ===' e removida a linha órfã '6 de maio' do topo do ficheiro (o cabeçalho '6 de maio' genuíno já existe corretamente mais adiante, junto ao conteúdo real da sessão de 6 de maio).",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt_aprox": "início das seções '26 de maio' e '27 de maio'",
+      "problema": "Data duplicada colada ao início do próprio parágrafo de conteúdo ('26 de maio Vocês devem ter visto o museu...' e '27 de maio Vocês devem ter visto o museu...'), redundante com o cabeçalho de data já presente na linha imediatamente anterior.",
+      "correcao": "Removido o prefixo de data redundante do início de cada parágrafo, mantendo apenas o cabeçalho de data em linha própria.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt_aprox": "encarte editorial final (colofão)",
+      "problema": "Datas do colofão erradas: PT dizia '28 de junho de 1953' tanto para impressão quanto para publicação. O JP (linhas 214-215) diz claramente 昭和二十八年六月十日 印刷 (10 de junho, impressão) e 昭和二十八年六月十五日 発行 (15 de junho, publicação) - dia 28 não aparece em nenhuma das duas datas do JP.",
+      "correcao": "Corrigido para '10 de junho de 1953, impressão' e '15 de junho de 1953, publicação [Não comercializável]', conforme o JP.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Prefácio + sessão 5 de maio (correspondência dos EUA, doenças mentais, doenças femininas)",
+      "jp_linhas": "1-45",
+      "decisao": "ok após correção do cabeçalho (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 6 de maio (relatório de Arashi, EUA, doença mental, São Francisco/Sacramento/Havaí)",
+      "jp_linhas": "46-64",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 7 de maio (segunda carta de Arashi, medula/gânglios/testa/têmpora/vértice, falta de ar, doenças femininas)",
+      "jp_linhas": "65-84",
+      "decisao": "corrigido - duplicação grave de bloco (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 15 de maio (repurificação, Havaí, budismo/Dharma introdução)",
+      "jp_linhas": "85-104",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 16 de maio (Dharma/budismo, repurificação continuada, Havaí, falta de ar)",
+      "jp_linhas": "105-121",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 17 de maio (mudança para Hakone, repurificação, EUA/Havaí, crítica a novas religiões, terreno do Harubaradai)",
+      "jp_linhas": "122-142",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 25 de maio (museu de arte, ukiyo-e, biombos, competição de arroz Asahi, caso do aborto/pneumonia, coletânea de milagres)",
+      "jp_linhas": "143-163",
+      "decisao": "ok",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 26 de maio (museu de arte continuado, antiguidades estrangeiras, competição de arroz Asahi)",
+      "jp_linhas": "164-186",
+      "decisao": "corrigido - duplicação grave do trecho da competição de arroz (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "Sessão 27 de maio (museu de arte, estrada de Gōra, lógica da fé/Johrei, coletânea de milagres, competição de arroz Asahi) + colofão final",
+      "jp_linhas": "187-223",
+      "decisao": "corrigido - colofão com datas erradas (item 5)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_cruzadas": [
+    "Citação do Ofudesaki '灯台下は真暗がり' / 'candeeiro': 3 ocorrências no JP, 3 no PT - consistente.",
+    "Citação do Ofudesaki '遅れただけは' / 'atrasou': 2 ocorrências no JP, 2 no PT - consistente.",
+    "Menção à competição de arroz do Asahi Shimbun: 3 ocorrências genuínas e distintas no JP (25, 26 e 27 de maio) - confirmadas as 3 no PT, cada uma uma única vez após a correção do item 2.",
+    "Nenhum caractere CJK residual encontrado no corpo do PT (grep dedicado, só cabeçalho/metadados legítimos).",
+    "Nenhum marcador de truncamento ('...' ou '…' em fim de linha) remanescente no PT após as correções."
+  ],
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 5 correções. approved:true."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Releitura completa independente linha a linha (JP 223 linhas / PT 85 linhas), todas as 9 sessões, focada em fidelidade semântica + glossário + metadados, sem depender só da trilha anterior.",
+    "verificacoes": [
+      "Confirmadas em campo as 5 correções já registradas acima (colofão 10/15 de junho, sem datas duplicadas nos cabeçalhos de sessão, sem duplicação de bloco em '7 de maio' e '26 de maio').",
+      "Repetição genuína (não-bug) da anedota do concurso de arroz do Asahi Shimbun (Ōkawa Yoshinori, Kagawa, 15 sacas 3-to-3-sho-2-go) confirmada por grep no JP: ocorre nas sessões de 25, 26 e 27 de maio como narrativa autônoma repetida pelo próprio Meishu-Sama em dias consecutivos — PT replica corretamente 3 vezes, uma por sessão.",
+      "Termos de glossário conferidos: Johrei, Daijo/Shojo, Ohikari/Omamori ('enviar o Omamori (Ohikari)'), Chieshōkaku (Inteligência da Percepção Verdadeira) — todos conformes a glossario_traducao.json e ao uso no resto do corpus.",
+      "Sem CJK residual no corpo (grep dedicado). Colofão e metadados (title_jp/title_pt) consistentes."
+    ],
+    "correcoes_reais_aplicadas": 0,
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — nenhuma nova correção necessária nesta passada."
+  }
+}

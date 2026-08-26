@@ -1,0 +1,71 @@
+{
+  "filename": "19490000-御光話録5号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-09",
+  "scope": "Revisão semântica linha a linha completa do volume inteiro (JP 321 linhas / PT 262 linhas), do prefácio ao fim, 3 sessões (8 de março, 13 de março, 23 de março). Motivada por achado histórico (auditoria 2026-07-05/06, ver GOSHINSHO.md) que citava este arquivo entre os afetados por troca de rótulo de falante Interlocutor/Meishu-Sama. Gate ao vivo mostrava Δ=0/CJK=0 antes desta revisão, mas isso nunca havia sido confirmado por releitura semântica pós-correção — exatamente o cenário que 'Δ=0 é necessário, nunca suficiente' (revisao-paralela-jp-pt.mdc) adverte não ser prova de fecho.",
+  "verificacao_troca_de_falante": {
+    "resultado": "NÃO CONFIRMADA neste volume — toda a alternância Interlocutor/Meishu-Sama foi conferida do início ao fim contra o JP (cada pergunta ―― do JP corresponde a um turno 'Interlocutor:' no PT, na ordem correta, sem inversão de atribuição).",
+    "achado_relacionado": "Encontrados 2 pontos com dois turnos 'Meishu-Sama:' consecutivos sem alternância (ver correção 2) — o sinal de alerta descrito na tarefa (mesmo falante duas vezes seguidas) realmente ocorre neste arquivo, mas na investigação confirmou-se que NÃO é troca de rótulo nem perda de conteúdo: é um artefacto de segmentação (uma única resposta contínua do JP, sem nova pergunta ―― no meio, foi dividida em dois blocos PT com rótulo 'Meishu-Sama:' repetido). Conteúdo íntegro em ambos os casos, apenas rótulo duplicado indevidamente.",
+    "confianca": "alta"
+  },
+  "verificacao_cjk_residual": {
+    "resultado": "CONFIRMADO CJK=0 em todo o corpo PT — verificado por grep de intervalos Unicode Han/Hiragana/Katakana no ficheiro de trabalho inteiro, nenhuma ocorrência fora do cabeçalho de metadados (que já está em romaji/português). Gate mecânico confirma (CJK=0).",
+    "confianca": "alta"
+  },
+  "summary": {
+    "sessoes_no_arquivo": 3,
+    "turnos_interlocutor_jp": 58,
+    "turnos_interlocutor_pt_pos_gate": 58,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0,
+    "troca_de_falante_confirmada": false,
+    "perda_de_conteudo_confirmada": true,
+    "duplicacao_de_rotulo_confirmada": true
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Sessão 8 de março — resposta à pergunta sobre a base teórica dos ateus (無神論者の理論的根拠, JP linha 248, PT antiga linha ~200)",
+      "problema": "GRAVE — perda real de conteúdo mascarada (Δ=0 intacto): a segunda metade da resposta de Meishu-Sama estava totalmente ausente do PT. O JP contém, após a citação sobre 'selvagem e a existência do ar', mais um parágrafo inteiro sobre o espírito protetor secundário (副守護神) negar a crença mesmo quando a cura pelo Johrei é reconhecida, o sussurro 'que bobagem é essa', o enfraquecimento do espírito protetor secundário no mundo do dia, e a explicação de lugares que se desenvolvem/não se desenvolvem. O PT parava abruptamente na citação e ia direto para a próxima pergunta (mulher de 32 anos). Não afeta a contagem de turnos Interlocutor/Meishu-Sama (por isso Δ=0 nunca detectou isso) — exatamente o padrão de erro descrito em revisao-paralela-jp-pt.mdc item 3/4.",
+      "correcao": "Traduzido o trecho ausente a partir do JP e anexado ao final do mesmo parágrafo de Meishu-Sama, mantendo 'espírito protetor secundário' consistente com glossario_traducao.json (副守護神 → 'espírito protetor secundário').",
+      "confianca": "alta — confirmado por leitura direta do JP contra o PT, termos exclusivos do trecho (副守護神, 発展する所／発展しない所) ausentes em todo o resto do PT antes da correção"
+    },
+    {
+      "n": 2,
+      "localizacao": "Sessão 23 de março — resposta sobre easyologia/五六七の御代 e superstição (JP linha 281, PT antigas linhas ~226/228)",
+      "problema": "Artefacto de segmentação — rótulo 'Meishu-Sama:' duplicado sem turno 'Interlocutor:' intermediário. O JP tem uma única resposta contínua (sem nova ―― no meio, apenas reticências '……' indicando continuação do mesmo raciocínio, do mesmo modo que ocorre em outros pontos do arquivo, ex. linhas 152-153 e 166-168, corretamente mescladas em um único parágrafo PT nesses casos). Aqui, em vez disso, a mesma resposta foi dividida em dois blocos PT com rótulo repetido — o sinal de alerta 'dois turnos consecutivos do mesmo falante sem alternância' mencionado na tarefa. Conteúdo presente e correto nos dois blocos (nenhuma perda), mas a duplicação de rótulo é inconsistente com o padrão do resto do arquivo e sugere clivagem indevida.",
+      "correcao": "Mesclados os dois blocos em um único parágrafo sob um só rótulo 'Meishu-Sama:', removendo o rótulo duplicado, sem alterar nenhuma palavra do texto traduzido.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Sessão 23 de março — resposta sobre glóbulos brancos/vermelhos (白血球と赤血球, JP linha 316, PT antigas linhas ~256/258)",
+      "problema": "Mesmo padrão da correção 2: resposta única e contínua do JP (sem ―― no meio) dividida em dois blocos PT com rótulo 'Meishu-Sama:' repetido, sem turno Interlocutor intermediário.",
+      "correcao": "Mesclados os dois blocos em um único parágrafo sob um só rótulo, sem alterar o texto.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título/metadados + prefácio (序文)", "decisao": "ok — title_jp/title_pt/datas consistentes, prefácio presente", "confianca": "alta"},
+    {"bloco": "Sessão 8 de março (17 perguntas, idade média a aborto)", "decisao": "corrigido — perda de conteúdo na resposta sobre ateísmo (correção 1); demais turnos ok, alternância Interlocutor/Meishu-Sama correta em todo o bloco", "confianca": "alta"},
+    {"bloco": "Sessão 13 de março (20 perguntas, linhagem espiritual a relação Cristo/Jesus)", "decisao": "ok — sem trocas de rótulo, sem perda de conteúdo, terminologia (Yachimata, Elemento Fogo/Água, Espírito Primordial) consistente com glossario_traducao.json", "confianca": "alta"},
+    {"bloco": "Sessão 23 de março (21 perguntas, ekigaku a cultivo de flores)", "decisao": "corrigido — 2 duplicações de rótulo sem perda de conteúdo (correções 2 e 3); demais turnos ok", "confianca": "alta"}
+  ],
+  "verificacao_terminologia": {
+    "termos_conferidos_contra_glossario_traducao": ["八衢 → Yachimata", "火素 → Elemento Fogo", "水素 → Elemento Água", "本霊 → Espírito Primordial", "副守護神 → espírito protetor secundário"],
+    "resultado": "Todos usados no PT de forma consistente com glossario_traducao.json.",
+    "termos_sem_entrada_no_glossario_mas_traduzidos_de_forma_razoavel_e_consistente_internamente": ["大光明如来 → Komyo-Nyorai (Grande Tathagata da Luz)", "光陽会/日本会 → Koyokai/Nihonkai (nomes de organizações, mantidos como nomes próprios romanizados)", "光明界 → Mundo da Luz", "違い棚 → estante assimétrica (chigaidana)"]
+  },
+  "pendencias_abertas": [],
+  "observacao_nao_bloqueante": "O spec (19490000-御光話録5号.txt.json) modela apenas 3 artigos (preface, sessão 8 de março, sessão 23 de março) — a sessão de 13 de março existe como cabeçalho de data dentro do corpo de ambos os ficheiros JP e PT (conteúdo íntegro, nada perdido), mas não tem entrada própria na lista 'articles' do spec. É uma questão de granularidade de indexação/chunking, não de conteúdo ausente ou traduzido incorretamente — não corrigido aqui por estar fora do escopo desta auditoria semântica (não é PENDENCIAS_REVISAO.json nem decisão de glossário); sinalizado para eventual refinamento do spec.",
+  "gate_mecanico": {
+    "comando": "python3 scripts/gate_gokowa_linha.py --file \"19490000-御光話録5号.txt\"",
+    "resultado": "PASS I=58/58 Δ=0 CJK=0",
+    "nota": "Confirma ausência de erro de contagem; não substitui a revisão semântica acima (ver revisao-paralela-jp-pt.mdc)."
+  },
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Volume inteiro (3 sessões, 58 turnos Interlocutor) revisado linha a linha contra o JP. Suspeita histórica de troca de rótulo de falante investigada e NÃO confirmada. Confirmados e corrigidos: perda real de conteúdo em 1 resposta (inserida), 2 duplicações de rótulo de falante sem perda de conteúdo (mescladas). Gate PASS. Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}

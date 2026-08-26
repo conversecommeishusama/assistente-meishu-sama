@@ -1,0 +1,113 @@
+{
+ "filename": "19540315 - Mioshie-shū nº 31.txt",
+ "profile": "mioshie_shu",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 11→10. PT pairing pendente. | 2026-07-15: inserida sessão 二月四日（立春祭御教え） (10→11), ausente na spec original (fundida em 序文), causava cascata de anchor_diff em PT (art1,3-9). Corrigido também bug em derive_anchor (audit_manual_livros_segmentacao.py) que não pulava cabeçalho de data com sufixo de era sem dígito (\"de Showa 29\"), causando duplicação de data no pt_prefix.",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 11,
+ "split_method": "line_mioshie_date",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "御教え集第三十一号",
+   "pt_anchor": "Mioshie-shū nº 31",
+   "notes": ""
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月四日（立春祭御教え）",
+   "title_pt": "4 de fevereiro",
+   "jp_anchor": "今日は立春とともに旧の正月の元日になるそうです。いつも、立春というが、早いように思うのです。とにかく今年は大いに意味があるのです。まだ発表はで きませんが、昨日、今日すばらしいことがあったのです。いずれ話をしますが、それ",
+   "pt_anchor": "4 de fevereiro de Showa 29 (1954) (Festa do Início da Primavera)",
+   "notes": "",
+   "pt_prefix": "4 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月五日",
+   "title_pt": "5 de fevereiro",
+   "jp_anchor": "再びジャーナリストの考慮を望むというのを書いてみました。この間書きましたが、もういっそう徹底して書いたので、読ませます。",
+   "pt_anchor": "Escrevi novamente \"Desejando a Consideração dos Jornalistas\". Escrevi sobre isso outro dia, mas desta vez escrevi de for",
+   "notes": "",
+   "pt_prefix": "5 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月六日",
+   "title_pt": "6 de fevereiro",
+   "jp_anchor": "今年の節分は非常に意味があるのです。私としても非常に大きな奇蹟があったのですが、それはまだ言うわけにはゆきませんが、いずれ話をします。この節分 という意味は、大本教と非常に関係があるのです。ごく古い、神代というのですが、神代と言っても、空漠",
+   "pt_anchor": "O Setsubun deste ano tem um significado muito grande. Para mim também houve um milagre muito grande, mas ainda não posso",
+   "notes": "",
+   "pt_prefix": "6 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月七日",
+   "title_pt": "7 de fevereiro",
+   "jp_anchor": "今年の節分について、もう少し詳しく話をしてみます。前にも言ったことがありますが、節分というのは、古い時代に国常立尊という神様が、世界を支配して いたということになっているのですが、その時分のことだから、世界といったところで全部だかどうだか分",
+   "pt_anchor": "Falarei um pouco mais detalhadamente sobre o Setsubun deste ano. Como já disse antes, acredita-se que, em tempos antigos",
+   "notes": "",
+   "pt_prefix": "7 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十五日",
+   "title_pt": "15 de fevereiro",
+   "jp_anchor": "よく聞かれることですが、“これから世界はどうなるのだ。戦争はあるものか、ないものか。つまり原子爆弾の戦争、これはなくてすむものか、どうしてもあ るのか”ということを、時々聞かれるのです。それについてザッと話をします。一応は心得ていてよいと思",
+   "pt_anchor": "Muitas vezes me perguntam: \"O que será do mundo daqui para frente? Haverá guerra ou não? Ou seja, a guerra com bombas at",
+   "notes": "",
+   "pt_prefix": "15 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十六日",
+   "title_pt": "16 de fevereiro",
+   "jp_anchor": "今日は、世界の情勢について少しお話をしようと思います。世界はこれからどうなるのだ、というようなことを、時々聞かれることがあるのです。そこでだい たいの見当をつけるという程度で、お話ししようと思います。朝鮮問題も、片はつかないが、だいたい平和",
+   "pt_anchor": "Hoje, gostaria de falar um pouco sobre a situação mundial. De vez em quando, sou perguntado sobre como será o mundo daqu",
+   "notes": "",
+   "pt_prefix": "16 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月十七日",
+   "title_pt": "17 de fevereiro",
+   "jp_anchor": "今一番騒がれている問題は汚職問題です。今朝の新聞では、有田二郎という代議士が家宅捜索を受けたり、逮捕許諾請求問題で、政治界のほうに火がついたわ けです。そうするとまた大きな問題になるわけですが、とにかく霊界が明るくなったせいか、めちゃめちゃ",
+   "pt_anchor": "O problema que mais está causando alvoroço agora é a questão da corrupção. No jornal desta manhã, o deputado Jiro Arita ",
+   "notes": "",
+   "pt_prefix": "17 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十五日",
+   "title_pt": "25 de fevereiro",
+   "jp_anchor": "最近ハワイ教会の落成式について、あっちの新聞に出ていたのですが、よく書いてあります。「ハワイ報知」というのです。それを読ませます。",
+   "pt_anchor": "Recentemente, sobre a cerimônia de inauguração da igreja do Havaí, saiu em um jornal de lá, e estava bem escrito. É o \"H",
+   "notes": "",
+   "pt_prefix": "25 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十六日",
+   "title_pt": "26 de fevereiro",
+   "jp_anchor": "この間ハワイの本部の落成式があって、その時の模様が「ハワイ報知新聞」に出たのを読ませます。ハワイにある二つのしっかりした新聞のうちの一つですが、割によく書いてあります。",
+   "pt_anchor": "Outro dia, houve a cerimônia de inauguração da sede no Havaí, e vou deixar vocês lerem a reportagem que saiu no \"Hawaii ",
+   "notes": "",
+   "pt_prefix": "26 de fevereiro"
+  },
+  {
+   "kind": "session",
+   "title_jp": "二月二十七日",
+   "title_pt": "27 de fevereiro",
+   "jp_anchor": "ハワイ本部の落成式が「ハワイ報知」という新聞に出たのですが、なかなかよく書いてあります。ハワイに二つの新聞があるそうですが、その一つなので、信用はできる新聞です。",
+   "pt_anchor": "A cerimônia de inauguração da sede do Havaí saiu no jornal \"Hawaii Hōchi\", e está muito bem escrita.",
+   "notes": "",
+   "pt_prefix": "27 de fevereiro"
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:55Z",
+ "audit_method": "jp_first_content_pair"
+}

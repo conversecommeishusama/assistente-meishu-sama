@@ -1,0 +1,80 @@
+{
+  "filename": "19520925-御教え集13号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro. JP: 224 linhas físicas, 1 único bloco === ARTIGO === contendo 9 trechos de data internos (5, 6, 7, 15, 16, 17, 25, 26, 27 de agosto de 1952). PT (ficheiro de trabalho): lido por completo antes da revisão (114 linhas) e por completo depois de cada correção. Não é amostragem: todo o corpo do JP foi lido e confrontado com o PT correspondente na mesma ordem, transição de data por transição de data, conforme alerta da família 御教え集/御垂示録/法難手記.",
+  "pre_existing_context": "Ratio JP/PT reportado na tarefa (224/113, ~2:1) NÃO foi usado como critério de fecho - é apenas o sinal que motivou a leitura. A leitura linha a linha revelou que a causa do ratio distorcido era um monólito residual: um trecho inteiro de data (5 de agosto) tinha sido omitido do ficheiro de trabalho PT, e não corresponde a um problema de contagem compensada.",
+  "gate_mecanico": "Não substituído por esta trilha - gate de contagem/estrutura (Δ=0) deve ser rodado separadamente após esta correção; esta trilha documenta apenas a leitura semântica linha a linha e as correções de conteúdo aplicadas.",
+  "summary": {
+    "date_sections_jp": 9,
+    "date_sections_pt_before": 8,
+    "date_sections_pt_after": 9,
+    "real_corrections_applied": 3,
+    "items_escalated_to_pendencias": 0,
+    "citation_count_jp": 31,
+    "citation_count_pt_after_fix": 31,
+    "approved": false,
+    "approval_note": "NÃO marcado approved:true - aguardando segunda auditoria independente conforme regra 'Δ=0 é necessário, nunca suficiente' / authorization-workflow.mdc."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "tipo": "bloco_inteiro_ausente",
+      "localizacao_jp": "linhas 24-42 (cabeçalho '昭和二十七年八月五日', antes de '八月六日' na linha 44)",
+      "localizacao_pt_antes": "Ficheiro de trabalho começava diretamente em '6 de agosto' (linha 22 antiga) - a secção inteira de 5 de agosto (relato pessoal da grande purificação/diarreia, leitura do prefácio e resumo de 'A Criação da Civilização', mais 3 citações de artigo) estava totalmente ausente.",
+      "problema": "Bloco de data inteiro faltando no ficheiro de trabalho - não é erro de tradução, é omissão estrutural completa de um dos 9 trechos internos do spec 'mioshie_shu'.",
+      "busca_exaustiva_antes_de_traduzir": "Conforme protocolo 'PT em falta' (revisao-paralela-jp-pt.mdc), busquei no acervo antes de traduzir de novo: grep por '13号'/entry_id/paired_id em todo o repositório. Encontrado em textos_portugues/19520925-御教え集13号.txt (produção) - contém a secção completa de 5 de agosto já traduzida (linhas 2-9 desse ficheiro), incluindo as 3 citações. Verificado contra o JP linha 24-42: conteúdo bate integralmente (relato da grande purificação, tema pele/dentes/toxina, artigos 'A Criação da Civilização - Prefácio' [Eikō 170], 'Resumo', parágrafo longo sobre bem/mal e medicina, 'A Expulsão do Mal' [Eikō 173], 'Sermão' [Paraíso na Terra 39]).",
+      "correcao": "Portado o texto já traduzido de textos_portugues/19520925-御教え集13号.txt para o início do ficheiro de trabalho, como secção '5 de agosto', antes de '6 de agosto'. Nenhuma tradução nova via API foi necessária - o conteúdo já existia no acervo de produção.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "tipo": "perda_de_conteudo_mascarada",
+      "localizacao_jp": "linhas 160-172 (secção 25 de agosto, entre a citação '文明の創造 健康と寿命' e o início do parágrafo teológico sobre bem/mal)",
+      "localizacao_pt_antes": "PT saltava diretamente de '...vou ler agora um trecho sobre saúde e longevidade' para 'Isso porque os fundadores das religiões até hoje são deuses do lado do bem...' - um salto que suprimia 2 citações de artigo inteiras e as suas introduções, mais a abertura do parágrafo seguinte.",
+      "problema": "Conteúdo genuinamente perdido (não duplicado em outro lugar do mesmo trecho): (1) a citação do próprio artigo 'Saúde e Longevidade'; (2) parágrafo de introdução + citação de 'A Cultura do Círculo com Ponto' [Eikō 173]; (3) parágrafo de introdução + citação de 'Noventa e Nove por Cento e Um por Cento'; (4) as 3-4 frases de abertura do parágrafo teológico seguinte ('O que é preciso saber é que nenhuma religião até agora afirmava o mal...'). Confirmado como perda real e não desalinhamento: as mesmas 2 citações reaparecem legitimamente mais tarde no volume (secção de 26 de agosto, JP linha 183, e 27 de agosto, JP linha 218/183) - contagem total de citações no JP bate 3x/2x respectivamente, então a ocorrência da secção de 25 de agosto era uma terceira/segunda instância genuína, não uma duplicata a evitar.",
+      "correcao": "Traduzido e inserido inline o trecho ausente (citação 'A Criação da Civilização - Saúde e Longevidade', parágrafo + citação 'A Cultura do Círculo com Ponto' [Eikō nº 173], parágrafo + citação 'Noventa e Nove por Cento e Um por Cento', e a abertura do parágrafo teológico), usando terminologia já estabelecida no resto do próprio ficheiro (Deus Supremo = 主神, conforme glossario_traducao.json) para manter consistência interna.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "tipo": "duplicacao_traducao_dupla_concatenada",
+      "localizacao_jp": "Duas ocorrências no mesmo padrão de bug, ambas confirmadas contra parágrafo único no JP:",
+      "ocorrencias": [
+        {
+          "sub": "3a",
+          "descricao": "Secção 27 de agosto - anedota da maçã/senso comum (JP linha 214, parágrafo único). O PT tinha o mesmo trecho final (do ponto em que a maçã é mal interpretada como remédio, casa que deixa apodrecer maçãs, conclusão sobre bom senso) traduzido DUAS VEZES de forma independente e concatenado (primeira tentativa cortada a meio de frase, seguida de uma segunda tentativa completa e ligeiramente diferente na redação).",
+          "correcao": "Completada a frase cortada da primeira tentativa com um fecho equivalente ao conteúdo real do JP, e removida inteiramente a segunda tradução duplicada, preservando a continuação legítima ('A propósito, há algo interessante sobre nutrição... presidente do templo Yakushi-ji...')."
+        },
+        {
+          "sub": "3b",
+          "descricao": "Secção 7 de agosto - trecho sobre disenteria ser 'mais fácil' + caso de Ota (JP linha 69, parágrafo único, do 'だから下痢というものは、頭の病気である' até '...とみて良いです。'). Todo esse bloco (disenteria mais fácil / toxina nova vs antiga / peritônio / caso do Ota) estava traduzido duas vezes seguidas no PT, a primeira cortada a meio de frase ('...Então'), a segunda completa e incluindo o detalhe do tórax/nevralgia intercostal ausente da primeira tentativa.",
+          "correcao": "Removida a primeira tentativa (parcial) a partir do ponto de duplicação, mantendo apenas a segunda tradução (mais completa, com o detalhe da nevralgia intercostal e a transição correta para a Repurificação da tuberculose que seguia no JP)."
+        }
+      ],
+      "confianca": "alta"
+    }
+  ],
+  "verificacao_pos_correcao": {
+    "date_headers": "9/9 secções de data no PT, na mesma ordem e nomes que o JP (5,6,7,15,16,17,25,26,27 de agosto).",
+    "citation_count": "31 citações '御論文「...」' no JP == 31 citações '(Artigo \"...\")' no PT após as correções (contagem por grep, não usada como prova única - conferida em conjunto com a leitura linha a linha acima).",
+    "cjk_residual": "Nenhum ideograma no corpo do texto PT (grep confirmou ocorrências apenas no cabeçalho de metadados, que referencia o nome do ficheiro/título original - esperado e correto).",
+    "observacao_menor_nao_bloqueante": "Pequenas variações de tradução do mesmo título de artigo ao longo do ficheiro (ex.: 'Doença (Saúde) e Longevidade' vs 'Doença [Saúde] e Longevidade'; 'Advertindo os Profissionais da Medicina' vs 'Advertência aos Profissionais da Medicina'; 'Prefácio' com travessão em/— vs -) - são inconsistências estilísticas pré-existentes de tradução do mesmo título, não perda ou duplicação de conteúdo. Não corrigido nesta passada por ser cosmético e não afetar sentido; sinalizado aqui para eventual padronização futura de terminologia de títulos de artigo em todo o acervo."
+  },
+  "items_escalated_to_pendencias": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 3 correções. approved:true."
+  },
+  "segunda_auditoria_independente_2026_07_09": {
+    "reviewer": "agente (lote 8, fase E auditoria semantica/estrutural/glossario/metadados)",
+    "review_date": "2026-07-09",
+    "method": "linha_a_linha_jp_fonte_verdade",
+    "approved": true,
+    "correcoes_reais_aplicadas": [
+      "Turno de Meishu-Sama ausente entre duas perguntas do Interlocutor sobre nutricao (JP linha 202: 　栄養とはなんですか。 = \"O que é nutrição?\"). No PT de trabalho a resposta estava totalmente omitida entre a primeira pergunta (\"...alimentos nutritivos...\") e a segunda (\"Leite ou ovos...\"), fazendo a segunda pergunta parecer continuacao da primeira sem resposta intermediaria. Corrigido: inserida a linha \"O que é nutrição?\" entre as duas perguntas no arquivo de trabalho PT."
+    ],
+    "notas": "Leitura completa linha a linha (JP 224 linhas / PT 137 linhas), todas as 9 transicoes de data (5,6,7,15,16,17,25,26,27 de agosto) confirmadas presentes e na ordem correta -- a omissao do dia 5 de agosto relatada na auditoria anterior (2026-07-07) permanece corrigida. 1 correcao real nova encontrada e aplicada nesta sessao (turno ausente, ver acima). Resto do volume fielmente traduzido, sem truncamento, sem CJK residual, sem duplicacao. Nota cosmetica nao-bloqueante: cabecalho \"=== ARTIGO ===\" aparece duplicado nas linhas 5-6 do arquivo de trabalho PT (nao afeta parsing, confirmado pelo validador de anchors)."
+  }
+}

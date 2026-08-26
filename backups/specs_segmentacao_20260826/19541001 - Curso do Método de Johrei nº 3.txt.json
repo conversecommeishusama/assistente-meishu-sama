@@ -1,0 +1,438 @@
+{
+ "filename": "19541001 - Curso do Método de Johrei nº 3.txt",
+ "profile": "koza_lectures",
+ "method": "jp_line_by_line",
+ "approved": false,
+ "editor_notes": "Segmentação linha-a-linha JP 2026-07-14. Trechos: 47→47. PT pairing pendente. | 2026-07-15: pt_anchor/title_pt reconstruídos 1:1 via cabeçalhos reais em negrito do PT (Rota B).",
+ "segmentation_pass": "jp_line_v2",
+ "previous_article_count": 47,
+ "split_method": "line_johrei_koza_structural",
+ "bootstrap_warnings": [],
+ "articles": [
+  {
+   "kind": "preface",
+   "title_jp": "序文",
+   "title_pt": "Prefácio",
+   "jp_anchor": "浄霊法講座（三）",
+   "pt_anchor": "Curso do Método de Johrei nº 3",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "一　神霊医学教育の目的",
+   "title_pt": "Objetivo da Educação em Medicina do Espírito Divino",
+   "jp_anchor": "一　神霊医学教育の目的",
+   "pt_anchor": "I. Objetivo da Educação em Medicina do Espírito Divino",
+   "notes": "ratio PT/JP=5.27",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．本教発展の仕組と信徒の使命",
+   "title_pt": "Mecanismo do Desenvolvimento da Nossa Igreja e a Missão dos Fiéis",
+   "jp_anchor": "１．本教発展の仕組と信徒の使命",
+   "pt_anchor": "1. Mecanismo do Desenvolvimento da Nossa Igreja e a Missão dos Fiéis",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．薬剤迷信打破の為、力ある浄霊者育成の急務について（御教え集　11号　P.5）",
+   "title_pt": "Sobre a Urgência de Formar Praticantes de Johrei Poderosos para Erradicar a Superstição Medicamentosa",
+   "jp_anchor": "２．薬剤迷信打破の為、力ある浄霊者育成の急務について（御教え集　11号　P.5）",
+   "pt_anchor": "2. Sobre a Urgência de Formar Praticantes de Johrei Poderosos para Erradicar a Superstição Medicamentosa\n\n(Mioshie-shū nº 11, p. 5)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．神霊医学の知識と急所の発見の重要性について（御教え集　25号　P.5）",
+   "title_pt": "Sobre o Conhecimento da Medicina do Espírito Divino e a Importância de Descobrir os Pontos Vitais",
+   "jp_anchor": "３．神霊医学の知識と急所の発見の重要性について（御教え集　25号　P.5）",
+   "pt_anchor": "3. Sobre o Conhecimento da Medicina do Espírito Divino e a Importância de Descobrir os Pontos Vitais\n\n(Mioshie-shū nº 25, p. 5)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．神霊医学と天国的救いについて　（御教え集　15号　P.7）",
+   "title_pt": "Sobre a Medicina do Espírito Divino e a Salvação Paradisíaca",
+   "jp_anchor": "４．神霊医学と天国的救いについて　（御教え集　15号　P.7）",
+   "pt_anchor": "4. Sobre a Medicina do Espírito Divino e a Salvação Paradisíaca\n\n(Mioshie-shū nº 15, p. 7)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "二　浄霊の形式と方法",
+   "title_pt": "Forma e Método do Johrei",
+   "jp_anchor": "二　浄霊の形式と方法",
+   "pt_anchor": "II. Forma e Método do Johrei",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．浄霊医術習得の修行は力を抜くこと　（御教え集　10号　P.30）",
+   "title_pt": "O Treinamento para Aprender a Terapia do Johrei é Retirar a Força Física",
+   "jp_anchor": "１．浄霊医術習得の修行は力を抜くこと　（御教え集　10号　P.30）",
+   "pt_anchor": "1. O Treinamento para Aprender a Terapia do Johrei é Retirar a Força Física\n\n(Mioshie-shū nº 10, p. 30)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．早く治してやりたい時程「一生懸命」にならぬこと（御教え集　18号　P.43）",
+   "title_pt": "Quando se Quer Curar Rapidamente, Não se Deve Ficar com Empenho",
+   "jp_anchor": "２．早く治してやりたい時程「一生懸命」にならぬこと（御教え集　18号　P.43）",
+   "pt_anchor": "2. Quando se Quer Curar Rapidamente, Não se Deve Ficar com Empenho\n\n(Mioshie-shū nº 18, p. 43)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．手の力の抜き方と患部に対する直射について（地上天国　24号　P.15）",
+   "title_pt": "Sobre a Maneira de Retirar a Força Física da Mão e a Irradiação Direta sobre a Área Afetada",
+   "jp_anchor": "３．手の力の抜き方と患部に対する直射について（地上天国　24号　P.15）",
+   "pt_anchor": "3. Sobre a Maneira de Retirar a Força Física da Mão e a Irradiação Direta sobre a Área Afetada\n\n(Tijotengoku nº 24, p",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．腕の曲げ方について　　　（御垂示録　3号　P.64）",
+   "title_pt": "Sobre a Maneira de Dobrar o Braço",
+   "jp_anchor": "４．腕の曲げ方について　　　（御垂示録　3号　P.64）",
+   "pt_anchor": "4. Sobre a Maneira de Dobrar o Braço\n\n(Gosuiji-roku nº 3, p. 64) \"É melhor esticar o braço durante o Johrei?\" Se estica",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．浄霊の距離について　　　（地上天国　5号　P.11）",
+   "title_pt": "Sobre a Distância no Johrei",
+   "jp_anchor": "５．浄霊の距離について　　　（地上天国　5号　P.11）",
+   "pt_anchor": "5. Sobre a Distância no Johrei\n\n(Tijotengoku nº 5, p. 11) \"Durante o Johrei, a que distância a mão deve ficar para qu",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．患部と掌の距離について　（御垂示録　3号　P.63）",
+   "title_pt": "Sobre a Distância entre a Área Afetada e a Palma da Mão",
+   "jp_anchor": "６．患部と掌の距離について　（御垂示録　3号　P.63）",
+   "pt_anchor": "6. Sobre a Distância entre a Área Afetada e a Palma da Mão\n\n(Gosuiji-roku nº 3, p. 63) \"Qual é a distância ideal para o",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．如何なる場合でも、なるべく掌と患部とを離すのがよい　（御教え）",
+   "title_pt": "Em Qualquer Caso, é Melhor Manter a Palma da Mão Afastada da Área Afetada",
+   "jp_anchor": "７．如何なる場合でも、なるべく掌と患部とを離すのがよい　（御教え）",
+   "pt_anchor": "7. Em Qualquer Caso, é Melhor Manter a Palma da Mão Afastada da Área Afetada\n\n(Mioshie-shū) \"Podemos não nos preocupar tanto com a distância para afastar a mão?\" Não precisa se preocupar com isso. Ao fazer o Johrei nas costas de uma pessoa que está deitada de costas e não pode se mover, pode-se e",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．浄霊時は掌の指を開かない事、また場所によっては指による浄霊の方が効果がある（御教え集　17号　P.53）",
+   "title_pt": "Durante o Johrei, Não Abrir os Dedos da Palma; Além Disso, Dependendo do Local, o Johrei com os Dedos é Mais Eficaz",
+   "jp_anchor": "８．浄霊時は掌の指を開かない事、また場所によっては指による浄霊の方が効果がある（御教え集　17号　P.53）",
+   "pt_anchor": "8. Durante o Johrei, Não Abrir os Dedos da Palma; Além Disso, Dependendo do Local, o Johrei com os Dedos é Mais Eficaz",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．小さな固結の浄霊　　（御教え集　24号　P.6）",
+   "title_pt": "Johrei para Pequenas Solidificações",
+   "jp_anchor": "９．小さな固結の浄霊　　（御教え集　24号　P.6）",
+   "pt_anchor": "9. Johrei para Pequenas Solidificações\n\n(Mioshie-shū nº 24, p. 6)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．時と場合によっては寝かせて浄霊してもよい　　（御教え）",
+   "title_pt": "Dependendo da Ocasião e do Caso, Pode-se Fazer o Johrei com o Paciente Deitado",
+   "jp_anchor": "１０．時と場合によっては寝かせて浄霊してもよい　　（御教え）",
+   "pt_anchor": "10. Dependendo da Ocasião e do Caso, Pode-se Fazer o Johrei com o Paciente Deitado\n\n(Mioshie-shū) \"Podemos fazer o Jo",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１１．仰向けに寝たままの病人の浄霊について　（御教え集　4号　P24）",
+   "title_pt": "Sobre o Johrei em Pacientes Deitados de Costas",
+   "jp_anchor": "１１．仰向けに寝たままの病人の浄霊について　（御教え集　4号　P24）",
+   "pt_anchor": "11. Sobre o Johrei em Pacientes Deitados de Costas\n\n(Mioshie-shū nº 4, p. 24)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１２．浄霊時放射能感があるのは本当ではない　（地上天国　48号　P.11）",
+   "title_pt": "Sentir uma Sensação de Radioatividade Durante o Johrei Não é Verdadeiro",
+   "jp_anchor": "１２．浄霊時放射能感があるのは本当ではない　（地上天国　48号　P.11）",
+   "pt_anchor": "12. Sentir uma Sensação de Radioatividade Durante o Johrei Não é Verdadeiro\n\n(Tijotengoku nº 48, p. 11) \"Durante o Jo",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１３．自分より上位の資格者に対する浄霊　（地上天国　3号　P.15）",
+   "title_pt": "Johrei em Alguém de Qualificação Superior à Própria",
+   "jp_anchor": "１３．自分より上位の資格者に対する浄霊　（地上天国　3号　P.15）",
+   "pt_anchor": "13. Johrei em Alguém de Qualificação Superior à Própria\n\n(Tijotengoku nº 3, p. 15) \"Um discípulo pode fazer Johrei no",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．椅子を使う事について　（御垂示録　15号　P.12）",
+   "title_pt": "Sobre o Uso de Cadeiras",
+   "jp_anchor": "１４．椅子を使う事について　（御垂示録　15号　P.12）",
+   "pt_anchor": "14. Sobre o Uso de Cadeiras\n\n(Gosuiji-roku nº 15, p. 12) \"Pacientes graves se cansam, então os deitamos, mas os jovens ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１５．一人対一人と決めなくてもよい　（御垂示録　3号　P.1）",
+   "title_pt": "Não é Necessário Decidir que Seja Um para Um",
+   "jp_anchor": "１５．一人対一人と決めなくてもよい　（御垂示録　3号　P.1）",
+   "pt_anchor": "15. Não é Necessário Decidir que Seja Um para Um\n\n(Gosuiji-roku nº 3, p. 1) \"Pergunto sobre o Johrei. Antes, recebemos ",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１６．集団浄霊について　　　（御垂示録　14号　P.25）",
+   "title_pt": "Sobre o Johrei Coletivo",
+   "jp_anchor": "１６．集団浄霊について　　　（御垂示録　14号　P.25）",
+   "pt_anchor": "16. Sobre o Johrei Coletivo\n\n(Gosuiji-roku nº 14, p. 25) \"Quando há uma grande reunião no festival mensal, pode o presidente",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１７．正しい浄霊の戴き方について　（地上天国　22号　P.19）",
+   "title_pt": "Sobre a Maneira Correta de Receber o Johrei",
+   "jp_anchor": "１７．正しい浄霊の戴き方について　（地上天国　22号　P.19）",
+   "pt_anchor": "17. Sobre a Maneira Correta de Receber o Johrei\n\n(Tijotengoku nº 22, p. 19) \"Ouvi dizer que o Johrei deve ser feito a",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１８．重態の場合、体を診る時、先方の意志をつかんだ上臨機応変にやればよい",
+   "title_pt": "Em Casos Graves, ao Examinar o Corpo, Pode-se Agir de Acordo com as Circunstâncias, Após Captar a Vontade da Pessoa",
+   "jp_anchor": "１８．重態の場合、体を診る時、先方の意志をつかんだ上臨機応変にやればよい",
+   "pt_anchor": "18. Em Casos Graves, ao Examinar o Corpo, Pode-se Agir de Acordo com as Circunstâncias, Após Captar a Vontade da Pesso",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１９．急所の見当をつける方法　　（御教え）",
+   "title_pt": "Método para Localizar os Pontos Vitais",
+   "jp_anchor": "１９．急所の見当をつける方法　　（御教え）",
+   "pt_anchor": "19. Método para Localizar os Pontos Vitais\n\n(Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２０．急所が見つからぬ場合は一旦気を入れてすること（御教え集　11号　P.2）",
+   "title_pt": "Quando Não se Encontra o Ponto Vital, Deve-se Colocar a Força Mental uma Vez",
+   "jp_anchor": "２０．急所が見つからぬ場合は一旦気を入れてすること（御教え集　11号　P.2）",
+   "pt_anchor": "20. Quando Não se Encontra o Ponto Vital, Deve-se Colocar a Força Mental uma Vez\n\n(Mioshie-shū nº 11, p. 2)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "三　浄霊の順序を正しくする事について",
+   "title_pt": "Sobre a Correta Ordenação do Johrei",
+   "jp_anchor": "三　浄霊の順序を正しくする事について",
+   "pt_anchor": "III. Sobre a Correta Ordenação do Johrei",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．浄霊の合理性について　（御教え集　29号　P.5）",
+   "title_pt": "Sobre a Racionalidade do Johrei",
+   "jp_anchor": "１．浄霊の合理性について　（御教え集　29号　P.5）",
+   "pt_anchor": "1. Sobre a Racionalidade do Johrei\n\n(Mioshie-shū, nº 29, p. 5)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．浄霊する時は順序を正しくすること　（御教え集　20号　P.39）",
+   "title_pt": "Ao Fazer Johrei, Deve-se Seguir a Ordem Correta",
+   "jp_anchor": "２．浄霊する時は順序を正しくすること　（御教え集　20号　P.39）",
+   "pt_anchor": "2. Ao Fazer Johrei, Deve-se Seguir a Ordem Correta\n\n(Mioshie-shū, nº 20, p. 39)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．親切に公平であるべきこと　（地上天国　7号　P.12）",
+   "title_pt": "Deve-se Ser Gentil e Imparcial",
+   "jp_anchor": "３．親切に公平であるべきこと　（地上天国　7号　P.12）",
+   "pt_anchor": "3. Deve-se Ser Gentil e Imparcial\n\n(Tijotengoku, nº 7, p. 12)\n\n\"Ao",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "chapter",
+   "title_jp": "四　その他",
+   "title_pt": "Outros",
+   "jp_anchor": "四　その他",
+   "pt_anchor": "IV. Outros\n\n1. Deve-se Recitar a Oração Amatsu Norito antes do Johrei?\n\n(Gosuiji-roku, nº 2, p. 55)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１．浄霊前に天津祝詞を奏上すべきか　（御垂示録　2号　P.55）",
+   "title_pt": "Deve-se Recitar a Oração Amatsu Norito antes do Johrei?",
+   "jp_anchor": "１．浄霊前に天津祝詞を奏上すべきか　（御垂示録　2号　P.55）",
+   "pt_anchor": "1. Deve-se Recitar a Oração Amatsu Norito antes do Johrei?\n\n(Gosuiji-roku, nº 2, p. 55)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "２．浄霊と、祝詞、善言讃詞について　　（御垂示録　6号　P.23）",
+   "title_pt": "Sobre o Johrei, as Orações e a Oração Zengen-Sandji",
+   "jp_anchor": "２．浄霊と、祝詞、善言讃詞について　　（御垂示録　6号　P.23）",
+   "pt_anchor": "2. Sobre o Johrei, o norito e a Oração Zengen-Sandji\n\n(Gosuiji-roku, nº 6, p. 23)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "３．動物霊の時は幽世大神様にお願いの必要はない（御垂示録　2号　P.56）",
+   "title_pt": "No Caso de Espírito Animal, Não É Necessário Pedir ao Grande Deus do Mundo Oculto",
+   "jp_anchor": "３．動物霊の時は幽世大神様にお願いの必要はない（御垂示録　2号　P.56）",
+   "pt_anchor": "3. No Caso de Espírito Animal, Não É Necessário Pedir ao Grande Deus do Mundo Oculto\n\n(Gosuiji-roku, nº 2, p. 56)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "４．祝詞、善言讃詞を奏げることについて　（御垂示録　30号　P.19）",
+   "title_pt": "Sobre Recitar Norito e a Oração Zengen-Sandji",
+   "jp_anchor": "４．祝詞、善言讃詞を奏げることについて　（御垂示録　30号　P.19）",
+   "pt_anchor": "4. Sobre Recitar Norito e a Oração Zengen-Sandji\n\n(Gosuiji-roku, nº 30, p. 19)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "５．浄霊をする場合の信仰的想念について　　　（御教え）",
+   "title_pt": "Sobre o Pensamento de Fé ao Fazer Johrei",
+   "jp_anchor": "５．浄霊をする場合の信仰的想念について　　　（御教え）",
+   "pt_anchor": "5. Sobre o Pensamento de Fé ao Fazer Johrei\n\n(Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "６．場合によっては浄霊前の病歴をよく聞くべきである（御教え集　31号　P.64）",
+   "title_pt": "Dependendo do Caso, Deve-se Ouvir Bem o Histórico da Doença antes do Johrei",
+   "jp_anchor": "６．場合によっては浄霊前の病歴をよく聞くべきである（御教え集　31号　P.64）",
+   "pt_anchor": "6. Dependendo do Caso, Deve-se Ouvir Bem o Histórico da Doença antes do Johrei\n\n(Mioshie-shū, nº 31, p. 64)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "７．浄霊の際、掌の熱くなる事について　（御教え）",
+   "title_pt": "Sobre a Palma da Mão Ficar Quente durante o Johrei",
+   "jp_anchor": "７．浄霊の際、掌の熱くなる事について　（御教え）",
+   "pt_anchor": "7. Sobre a Palma da Mão Ficar Quente durante o Johrei\n\n(Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "８．浄霊を頂く人の曇りが体に感ずる事について",
+   "title_pt": "Sobre Sentir no Corpo as Nuvens Espirituais de Quem Recebe Johrei",
+   "jp_anchor": "８．浄霊を頂く人の曇りが体に感ずる事について",
+   "pt_anchor": "8. Sobre Sentir no Corpo as Nuvens Espirituais de Quem Recebe Johrei",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "９．人間の体質と浄霊について　（御垂示録　28号　P.27）",
+   "title_pt": "Sobre a Constituição Física Humana e o Johrei",
+   "jp_anchor": "９．人間の体質と浄霊について　（御垂示録　28号　P.27）",
+   "pt_anchor": "9. Sobre a Constituição Física Humana e o Johrei\n\n(Gosuiji-roku, nº 28, p. 27)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１０．憑霊も薬毒除去によって解決する　（御教え集　29号　P.30）",
+   "title_pt": "A Possessão Espiritual Também Se Resolve pela Remoção da Toxina Medicamentosa",
+   "jp_anchor": "１０．憑霊も薬毒除去によって解決する　（御教え集　29号　P.30）",
+   "pt_anchor": "10. A Possessão Espiritual Também Se Resolve pela Remoção da Toxina Medicamentosa\n\n(Mioshie-shū, nº 29, p. 30)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１１．動物の浄霊について　　（地上天国　3号　P.14）",
+   "title_pt": "Sobre o Johrei em Animais",
+   "jp_anchor": "１１．動物の浄霊について　　（地上天国　3号　P.14）",
+   "pt_anchor": "11. Sobre o Johrei em Animais\n\n(Tijotengoku, nº 3, p. 14)\n\n\"So",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１２．病院における浄霊について　（地上天国　13号　P.21）",
+   "title_pt": "Sobre o Johrei em Hospitais",
+   "jp_anchor": "１２．病院における浄霊について　（地上天国　13号　P.21）",
+   "pt_anchor": "12. Sobre o Johrei em Hospitais\n\n(Tijotengoku, nº 13, p. 21)\n\n\"Re",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１３．死体に触れぬ事　　（御教え）",
+   "title_pt": "Não Tocar em Cadáveres",
+   "jp_anchor": "１３．死体に触れぬ事　　（御教え）",
+   "pt_anchor": "13. Não Tocar em Cadáveres\n\n(Mioshie-shū)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１４．浄霊とは人間を美しくする根本的方法である（御教え集　29号　P.24）",
+   "title_pt": "O Johrei É o Método Fundamental para Embelezar o Ser Humano",
+   "jp_anchor": "１４．浄霊とは人間を美しくする根本的方法である（御教え集　29号　P.24）",
+   "pt_anchor": "14. O Johrei É o Método Fundamental para Embelezar o Ser Humano\n\n(Mioshie-shū, nº 29, p. 24)",
+   "notes": "",
+   "pt_prefix": ""
+  },
+  {
+   "kind": "item",
+   "title_jp": "１５．浄霊とは人類を救う神と人との共同作業である（御教え集　29号　P.21）",
+   "title_pt": "O Johrei É um Trabalho Conjunto entre Deus e o Ser Humano para Salvar a Humanidade",
+   "jp_anchor": "１５．浄霊とは人類を救う神と人との共同作業である（御教え集　29号　P.21）",
+   "pt_anchor": "15. O Johrei É um Trabalho Conjunto entre Deus e o Ser Humano para Salvar a Humanidade\n\n(Mioshie-shū, nº 29, p. 21)",
+   "notes": "",
+   "pt_prefix": ""
+  }
+ ],
+ "audited_at": "2026-07-17T10:42:56Z",
+ "audit_method": "jp_first_content_pair"
+}

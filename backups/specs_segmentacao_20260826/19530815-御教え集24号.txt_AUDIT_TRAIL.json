@@ -1,0 +1,161 @@
+{
+  "filename": "19530815-御教え集24号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 198 linhas / PT 81→90 linhas após correções), 9 trechos por spec (profile mioshie_shu: prefácio+5 de julho fundidos em um bloco no JP + sessões de 6, 7, 15, 16, 17, 25, 26, 27 de julho). Não é amostragem: todo o corpo do JP foi lido (ambas as metades do arquivo, offsets 1-141 e 82/142-199) e confrontado linha a linha com o PT correspondente na mesma ordem (offsets 1-49, 43-90), com atenção máxima a cada transição de data conforme alerta da família 御教え集.",
+  "alerta_familia": "Alerta recebido: JP 198 linhas / PT 80 linhas (~2.5:1), livros irmãos do 御教え集 mostraram monólitos residuais com cauda duplicada, blocos de data ausentes, cabeçalhos de data duplicados/corrompidos. CONFIRMADO neste volume: encontrados exatamente os padrões alertados (ver correções 2, 3, 4, 5, 7 abaixo), incluindo um bloco de data inteiro (6 de julho) ausente como cabeçalho por estar fundido dentro do parágrafo gigante do prefácio/5 de julho.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "articles_in_spec": 9,
+    "articles_reviewed": 9,
+    "real_corrections_applied": 8,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao_pt": "início do arquivo, entre 'Paired JP entry:' e o título 'Mioshie-shū nº 24' (antes da correção)",
+      "problema": "Cabeçalho de data '6 de julho' aparecia solto e fora de contexto logo no topo do arquivo, antes até do título do volume e da informação de publicação — resíduo de corrupção (mesmo padrão de 'cabeçalho de data deslocado' já confirmado em livros irmãos), sem nenhuma relação com o conteúdo ao redor.",
+      "correcao": "Removido o cabeçalho solto. O cabeçalho '6 de julho' correto foi restaurado no local certo (ver correção 2).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao_pt": "bloco único que cobria todo o prefácio + 5 de julho + 6 de julho (antiga linha 28, ~7000 palavras)",
+      "problema": "GRAVE, confirma o alerta da família: o conteúdo de '6 de julho' (JP linhas 40-53: enchente/incêndio de Kyushu,龍神, coleção de arte, solo/cultivo contínuo, dívida de 20 anos, ombro/saúde) estava todo fundido dentro do mesmo parágrafo gigante do prefácio e do dia 5 de julho, sem nenhum cabeçalho de data nem quebra de parágrafo — exatamente o padrão de 'bloco de data ausente' já visto em 御教え集4号/24号 (Gokōwa) e outros irmãos. O ponto de fusão foi localizado com precisão: '...já é suficiente.' (fim do trecho de 智慧証覚/急所 do dia 5, JP linha 36) emendado diretamente com 'Quanto à inundação em Kyushu desta vez...' (início do dia 6, JP linha 42), sem quebra.",
+      "correcao": "Inserido o cabeçalho '6 de julho' com quebra de parágrafo no ponto exato de transição JP (confirmado por tradução paralela linha a linha). Nenhum conteúdo foi removido ou reordenado — apenas restaurada a divisão estrutural que faltava.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao_pt": "dentro do bloco de 6 de julho, dois pontos",
+      "problema": "Duas citações de artigo (『Artigo de Meishu-Sama \"O Milagre da Coleção de Obras de Arte\" [Eikō nº 218]』 e 『Artigo de Meishu-Sama \"Vinte Anos de Dívidas\" [Eikō nº 217]』) estavam embutidas no meio do parágrafo corrido, quando no JP são parágrafos-citação próprios, isolados por linha em branco (mesma convenção usada em outros trechos do próprio arquivo, ex. 7 e 27 de julho).",
+      "correcao": "As duas citações foram destacadas em parágrafo próprio, sem alterar uma palavra do texto.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao_pt": "logo após o cabeçalho '7 de julho'",
+      "problema": "Cabeçalho duplicado: logo abaixo de '7 de julho' (correto, corresponde a JP 七月七日), havia uma segunda linha solta 'Sete de julho' antes do corpo do texto — cabeçalho de data duplicado por extenso, sem correspondente no JP (que só tem 七月七日 uma vez). Mesmo padrão de 'cabeçalho de data duplicado' do alerta da família.",
+      "correcao": "Removida a linha duplicada 'Sete de julho'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao_pt": "logo após o cabeçalho '15 de julho'",
+      "problema": "Mesmo padrão da correção 4: linha duplicada 'Quinze de julho' logo abaixo do cabeçalho '15 de julho', sem correspondente no JP (七月十五日 aparece uma única vez).",
+      "correcao": "Removida a linha duplicada 'Quinze de julho'.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao_pt": "início do corpo do trecho '16 de julho'",
+      "problema": "Mesmo padrão de duplicação de cabeçalho, mas embutido inline: o corpo do texto começava literalmente com '16 de julho Para fazer compreender o princípio do Johrei...', repetindo a data já anunciada no cabeçalho da linha anterior. Sem correspondente no JP.",
+      "correcao": "Removido o prefixo redundante '16 de julho ' do início do corpo do texto.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao_pt": "trecho '25 de julho', parágrafo sobre o jornal e a 'fortaleza da ciência' (JP: 新聞社の方は科学の城廓に閉じ籠もって、宗教という敵の利益になるようなことは絶対にやらないことになるからして、考えてみるとおかしな話です)",
+      "problema": "Truncamento real: a frase terminava abruptamente em '...que beneficie o inimigo, a  No entanto,' — um fragmento quebrado (artigo indefinido 'a' solto, espaço duplo) faltando o objeto da frase ('...o interesse do inimigo chamado religião') e a oração inteira '考えてみるとおかしな話です' ('pensando bem, é uma história estranha'), que não aparecia em lugar nenhum do trecho.",
+      "correcao": "Reconstruída a frase completa contra o JP: 'O jornal se fecha na fortaleza da ciência e definitivamente não faz nada que beneficie o interesse do inimigo chamado religião — pensando bem, é uma história estranha.'",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao_pt": "trecho '26 de julho', passagem sobre amolecer o ombro / anedota da massagem (JP linha 161, つまり肩の固いのを柔らかくするについて注意しなければならないこと...)",
+      "problema": "GRAVE, mesmo padrão do achado #6 da auditoria de Gokōwa (rascunho truncado seguido da versão completa da mesma passagem): a passagem inteira sobre 'tirar a força ao amolecer o ombro' + a anedota de ter sido massagista e ter piorado com a massagem + 'amolecer os ombros é o melhor' aparecia traduzida DUAS VEZES em sequência (duas versões com fraseado ligeiramente diferente cada vez), antes de finalmente continuar para o conteúdo genuinamente novo sobre a região do pescoço/língua presa. Conferido contra o JP: no original é um único parágrafo contínuo, sem repetição.",
+      "correcao": "Removida a primeira ocorrência duplicada (mantendo a versão que abre corretamente com a referência 'como disse outro dia' presente no JP), preservando a continuação não duplicada ('Em seguida, a região ao redor do pescoço, especialmente da medula oblonga até os gânglios linfáticos...'). Nenhum conteúdo genuíno foi perdido — apenas a repetição.",
+      "confianca": "alta"
+    },
+    {
+      "n": 9,
+      "localizacao_pt": "fim do trecho '27 de julho', antes da ficha técnica/colofão",
+      "problema": "Falta de quebra de parágrafo entre o fim do corpo do texto ('...Isso também é uma forma de salvação.') e o colofão de impressão ('Impresso em 10 de agosto de 1953'), que no JP está claramente separado por linhas em branco do corpo do texto (linha 189 em diante).",
+      "correcao": "Inserida quebra de parágrafo antes do colofão.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {
+      "bloco": "Título + informação de publicação + 5 de julho (fundido no mesmo parágrafo)",
+      "jp_linhas": "1-36",
+      "decisao": "ok, com 2 correções (cabeçalho solto removido, item 1; separação do dia 6, item 2)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "6 de julho",
+      "jp_linhas": "40-53",
+      "decisao": "corrigido - bloco de data inteiro estava sem cabeçalho/quebra (item 2) e com 2 citações embutidas (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "7 de julho",
+      "jp_linhas": "58-74",
+      "decisao": "corrigido - cabeçalho de data duplicado (item 4)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "15 de julho",
+      "jp_linhas": "78-93",
+      "decisao": "corrigido - cabeçalho de data duplicado (item 5)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "16 de julho",
+      "jp_linhas": "97-113",
+      "decisao": "corrigido - cabeçalho de data duplicado inline (item 6)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "17 de julho",
+      "jp_linhas": "117-131",
+      "decisao": "ok, nenhum problema de cabeçalho encontrado (único trecho sem duplicação de data)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "25 de julho",
+      "jp_linhas": "135-144",
+      "decisao": "corrigido - truncamento real de frase (item 7)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "26 de julho",
+      "jp_linhas": "148-162",
+      "decisao": "corrigido - duplicação real de passagem inteira (item 8)",
+      "confianca": "alta"
+    },
+    {
+      "bloco": "27 de julho + colofão",
+      "jp_linhas": "166-199",
+      "decisao": "corrigido - falta de quebra antes do colofão (item 9); corpo do trecho conferido linha a linha contra o JP, sem outras divergências de conteúdo encontradas",
+      "confianca": "alta"
+    }
+  ],
+  "cjk_residual": "Verificado com grep por caracteres CJK (\\u3040-\\u30FF, \\u4E00-\\u9FFF) no corpo do PT após as correções — nenhum encontrado (só aparecem nos metadados de cabeçalho do ficheiro, 'title_jp:' e no comentário de nome de arquivo, que são esperados).",
+  "nota_estrutural_nao_corrigida": "Ao longo do arquivo, diversas citações de artigo '(Artigo de Meishu-Sama \"...\")' aparecem embutidas dentro de parágrafos corridos em vez de destacadas em parágrafo próprio (convenção usada em '7 de julho' e '27 de julho', que estão corretos). Isso ocorre nos trechos de 15, 16, 17, 25 e 26 de julho. Nenhum conteúdo é perdido por isso — é uma questão de formatação/paragrafação, não de conteúdo. Dado que o próprio arquivo de referência usado como modelo (無肥料栽培法) trata consolidação de parágrafos sem perda de conteúdo como aceitável ('ok'), optei por não reformatar mecanicamente todas essas ocorrências (seria uma reflow de baixo valor dado o volume de texto), mas documento aqui para o caso de uma sessão futura decidir investir nisso. As duas citações do bloco '6 de julho' foram destacadas porque já estava editando aquele trecho para a correção crítica do item 2.",
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  },
+  "fase_e_auditoria_semantica_glossario": {
+    "data": "2026-07-09",
+    "metodo": "Releitura completa independente linha a linha (JP 198 linhas / PT 91 linhas) do zero, todas as 9 sessões (5,6,7,15,16,17,25,26,27 de julho), focada em fidelidade semântica + glossário + metadados.",
+    "achados_e_correcoes": [
+      {
+        "n": 1,
+        "tipo": "cabeçalho de arquivo corrompido/duplicado",
+        "localizacao": "PT linhas 5-6 (cabeçalho de metadados, antes do conteúdo)",
+        "problema": "Marcador '=== ARTIGO ===' duplicado (aparecia duas vezes seguidas); JP só tem uma vez. Mesmo padrão de bug já encontrado e corrigido em 19530615-御教え集22号.txt na mesma revisão Fase E.",
+        "correcao": "Removida a duplicação, mantendo um único marcador '=== ARTIGO ==='.",
+        "confianca": "alta"
+      }
+    ],
+    "verificacao_geral": "Releitura de todo o corpo (estética de coleção de ukiyo-e, 'Vinte Anos de Dívidas', ombro/coração/estômago, tufão de Kyushu, ryūjin/purificação, terra/cultivo contínuo, 'A Ciência Não Cura Doenças'/'Superciência', 'Dissecação do Espírito Divino', luz do ofuda vs raio-X, manchas solares, cosméticos/intoxicação, colofão) contra o JP; as 9 correções estruturais já registradas em 2026-07-07 reconferidas e corretas. Termos Chieshōkaku, Johrei, Daijo/Shojo (não citados nesta sessão), Dr. Yukawa, Ryūjin/Karyū/Suiryū, Haraedo no Shihashin conferidos — conformes. Sem CJK residual.",
+    "correcoes_reais_aplicadas": 1,
+    "pendencias_abertas": [],
+    "aprovacao": "approved:true mantido — 1 correção de cabeçalho duplicado aplicada diretamente no PT de trabalho."
+  }
+}

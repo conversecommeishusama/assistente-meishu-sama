@@ -1,0 +1,399 @@
+{
+  "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+  "profile": "jikan_hen",
+  "method": "jp_line_by_line",
+  "approved": false,
+  "editor_notes": "Reconstruido 2026-07-14: 51 entradas fragmentadas (titulo/endereco/corpo tratados como secoes separadas e inconsistentes) -> 48 entradas (14 preambulo/ensaio + 34 testemunhos, 1 por testemunho real). pt_anchor de todas as 48 entradas recalculado (estava com placeholder degenerado -- substring decrescente do titulo do livro -- em 100% das entradas). Pareamento por titulo verificado 1:1 sequencial (34 titulos JP e PT confirmados na mesma ordem, incluindo 3 testemunhos cujo titulo/endereco estava fundido em uma unica linha ou excedia filtros ingenuos de deteccao).",
+  "segmentation_pass": "jp_line_v2",
+  "previous_article_count": 51,
+  "split_method": "line_jikan_structural",
+  "bootstrap_warnings": [],
+  "articles": [
+    {
+      "kind": "preface",
+      "title_jp": "序文",
+      "title_pt": "",
+      "jp_anchor": "自観叢書第1篇『結核と神霊療法』昭和24(1949)年6月25日発行",
+      "pt_anchor": "Tuberculose e terapia dos espíritos de divindades",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "序　　文",
+      "title_pt": "",
+      "jp_anchor": "現在、日本の悩みの中最大なものとしては結核問題である事は今更言うまでもない。これに対し現代医学においての苦心努力、あらん限りの手段方法を尽すと いえども、その効果に至ってはなんら見るべきものはない。という事は、結核病の根本原因が全然判ってい",
+      "pt_anchor": "Atualmente, não é preciso dizer que o maior dos problemas que afligem o Japão é a questão da tuberculose.",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "観音教の治療は医学上合理的なる生気療法也",
+      "title_pt": "",
+      "jp_anchor": "観音教の治療は医学上合理的なる生気療法也",
+      "pt_anchor": "O tratamento da Igreja Kannon é uma Terapia de Energia Vital (Ki) racional do ponto de vista médico",
+      "notes": ""
+    },
+    {
+      "kind": "topic",
+      "title_jp": "（一）序",
+      "title_pt": "",
+      "jp_anchor": "最近爾光尊、お助け爺さん等の新興宗教又怪奇治療にて人心をまどわす類多し。又われら普通医学の領域においてわれらの治療する範囲を出ている新治療また 多し。これらの一部を排斥する同業者あれどもわれらはこれらについて研究しこれの長所を取り入れて医学",
+      "pt_anchor": "Recentemente, são muitas as seitas religiosas emergentes, como a Reverência Nikko e o \"Ajudante Vovô\", com seus tratamentos bizarros",
+      "notes": ""
+    },
+    {
+      "kind": "topic",
+      "title_jp": "（二）生気とは何ぞや",
+      "title_pt": "",
+      "jp_anchor": "（二）生気とは何ぞや",
+      "pt_anchor": "(II) O que é a Energia Vital?",
+      "notes": ""
+    },
+    {
+      "kind": "topic",
+      "title_jp": "（三）医学上における生気の変遷",
+      "title_pt": "",
+      "jp_anchor": "（三）医学上における生気の変遷",
+      "pt_anchor": "(III) A Transformação da Energia Vital na Medicina",
+      "notes": ""
+    },
+    {
+      "kind": "topic",
+      "title_jp": "（四）生気を人体に応用するは医学上合理的方法なり",
+      "title_pt": "",
+      "jp_anchor": "（四）生気を人体に応用するは医学上合理的方法なり",
+      "pt_anchor": "(IV) Aplicar a Energia Vital ao Corpo Humano é um Método Racional do Ponto de Vista Médico",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "結核は治る",
+      "title_pt": "",
+      "jp_anchor": "結核は治る\n　　　　　　　　　　　　　　　　　岡田自観",
+      "pt_anchor": "A Tuberculose Tem Cura",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "感冒",
+      "title_pt": "",
+      "jp_anchor": "これを説くに当って、本会〔ﾏﾏ〕からいえば霊体両面にわたって徹底すべきであるが、霊の方面は信仰者以外、全面的に理解し難い憾（うら）みがありその 点を考慮して第三者にも理解し得るよう書く事にしたため、幾分不徹底の嫌いなきにも非ず、しかしこれは",
+      "pt_anchor": "Do ponto de vista de nossa Associação, este tema deveria ser abordado de forma completa tanto no aspecto espiritual quanto no físico.",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "感冒と肺炎",
+      "title_pt": "",
+      "jp_anchor": "前項のごとく、感冒は実に簡易な浄化作用であるから、人間は出来るだけ感冒にかかるべきで、これほど有効な衛生法はない。全く天の与えた唯一の健康法で ある。しかるに今日までの病理学においては反対の解釈である。すなわちあらゆる疾患の前奏曲が感冒とし",
+      "pt_anchor": "Como dito no item anterior, o resfriado é, na verdade, uma ação de purificação simples; por isso, os humanos deveriam pegar resfriados o máximo possível",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "結核の原因",
+      "title_pt": "",
+      "jp_anchor": "これからいよいよ結核の説明にかかるが、今までに述べたごとく、感冒という浄化作用停止を繰返すため、ついに肺炎という猛烈な浄化作用を作り出した訳で あるが、この肺炎と同様の浄化が至極緩慢に発生する、これが肺結核の初期病状である。さきに述べたごと",
+      "pt_anchor": "A partir de agora, entrarei finalmente na explicação da tuberculose. Como exposto até aqui, a repetida interrupção da ação de purificação chamada resfriado",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "結論",
+      "title_pt": "",
+      "jp_anchor": "私は前項までに結核の原因を説くと共に、医学的解釈の誤謬も充分説明した積りである。これを読んだ大抵の人は納得が行ったと思うのであるが、今一層徹底しなければならない。",
+      "pt_anchor": "Acredito ter explicado suficientemente, nos itens anteriores, a causa da tuberculose e os erros da interpretação médica.",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "結核と神霊科学",
+      "title_pt": "",
+      "jp_anchor": "今日まで世に表われたところの数多い所説は、例外なく宗教と科学は一致し難いものとされていた。ところが今私の言わんとするのは、宗教と科学は決して別 個のものではなく、同一の線を歩むべきもので、将来ある時期に到れば必ず一致すべき事を信ずるのである",
+      "pt_anchor": "Até hoje, inúmeras teorias apresentadas ao mundo, sem exceção, consideravam religião e ciência difíceis de conciliar.",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "結核治癒の実例",
+      "title_pt": "",
+      "jp_anchor": "結核治癒の実例",
+      "pt_anchor": "Exemplos Reais de Cura da Tuberculose",
+      "notes": "pt_anchor reconstruido 2026-07-14 (era placeholder degenerado); ratio PT/JP=5.29"
+    },
+    {
+      "kind": "section",
+      "title_jp": "諦めた肺病治る",
+      "title_pt": "Doença Pulmonar Considerada Incurável é Curada",
+      "jp_anchor": "諦めた肺病治る",
+      "pt_anchor": "Doença Pulmonar Considerada Incurável é Curada",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "もし御光を知らなかったら",
+      "title_pt": "Se eu não conhecesse o Hikari",
+      "jp_anchor": "もし御光を知らなかったら",
+      "pt_anchor": "**Se eu não conhecesse o Hikari**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "偉大なる御力",
+      "title_pt": "O Poder Grandioso",
+      "jp_anchor": "偉大なる御力",
+      "pt_anchor": "**O Poder Grandioso**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "百日咳",
+      "title_pt": "Coqueluche",
+      "jp_anchor": "百日咳",
+      "pt_anchor": "**Coqueluche**\n**— Salvo de pneumonia aguda —**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "観音力を抱いて眠るが如き往生",
+      "title_pt": "Uma morte serena como adormecer abraçado ao poder de Kannon",
+      "jp_anchor": "観音力を抱いて眠るが如き往生",
+      "pt_anchor": "**Uma morte serena como adormecer abraçado ao poder de Kannon**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "迷路より光明へ",
+      "title_pt": "Do Labirinto para a Luz",
+      "jp_anchor": "迷路より光明へ",
+      "pt_anchor": "**Do Labirinto para a Luz**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "肋膜治る",
+      "title_pt": "A Pleurisia Cura",
+      "jp_anchor": "肋膜治る",
+      "pt_anchor": "**A Pleurisia Cura**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "偉大な御利益",
+      "title_pt": "A Grande Bênção",
+      "jp_anchor": "偉大な御利益",
+      "pt_anchor": "**A Grande Bênção**\n\nPrefeitura de Ehime, Distrito de Onsen, Vila de Kōno, Ōaza Sako",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "起死回生の喜び",
+      "title_pt": "A Alegria de Voltar à Vida",
+      "jp_anchor": "起死回生の喜び",
+      "pt_anchor": "**A Alegria de Voltar à Vida**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "半信半疑の内に病気全快",
+      "title_pt": "Cura Completa em Meio à Dúvida",
+      "jp_anchor": "半信半疑の内に病気全快",
+      "pt_anchor": "**Cura Completa em Meio à Dúvida**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "幾度か死を思って",
+      "title_pt": "Pensando na Morte Várias Vezes",
+      "jp_anchor": "幾度か死を思って",
+      "pt_anchor": "**Pensando na Morte Várias Vezes**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "恐ろしい過去",
+      "title_pt": "Um Passado Terrível",
+      "jp_anchor": "恐ろしい過去",
+      "pt_anchor": "**Um Passado Terrível**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "私の喜び",
+      "title_pt": "Minha Alegria",
+      "jp_anchor": "私の喜び",
+      "pt_anchor": "**Minha Alegria**\n\nPrefeitura de Oita, Distrito de Hokkai, Vila de Oozai, Subdistrito de Shimoshimura",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "死線を越えて",
+      "title_pt": "Superando a Linha da Morte",
+      "jp_anchor": "死線を越えて",
+      "pt_anchor": "**Superando a Linha da Morte**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "三年間の病床より救はれた歓び",
+      "title_pt": "A Alegria de Ser Salva de Três Anos no Leito de Doença",
+      "jp_anchor": "三年間の病床より救はれた歓び",
+      "pt_anchor": "**A Alegria de Ser Salva de Três Anos no Leito de Doença**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "一家が救われるまで",
+      "title_pt": "Até que Toda a Família Fosse Salva",
+      "jp_anchor": "一家が救われるまで",
+      "pt_anchor": "**Até que Toda a Família Fosse Salva**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "大いなる光明――悩みなき日々を迎う――",
+      "title_pt": "A Grande Luz – Recebendo Dias Sem Preocupações –",
+      "jp_anchor": "大いなる光明――悩みなき日々を迎う――",
+      "pt_anchor": "**A Grande Luz – Recebendo Dias Sem Preocupações –**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "私の体験",
+      "title_pt": "Minha Experiência",
+      "jp_anchor": "私の体験",
+      "pt_anchor": "**Minha Experiência**\n\nPrefeitura de Oita, Distrito de Hokkai, Vila de Oozai, Subdistrito de Shimoshimura",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "夢と消えた苦悩――肺結核の大出血も忘れる――",
+      "title_pt": "Sonhos e Sofrimentos Desfeitos – Até a Grande Hemorragia da Tuberculose Pulmonar é Esquecida",
+      "jp_anchor": "夢と消えた苦悩――肺結核の大出血も忘れる――",
+      "pt_anchor": "**Sonhos e Sofrimentos Desfeitos – Até a Grande Hemorragia da Tuberculose Pulmonar é Esquecida**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "肺浸潤が治る――医学三年が浄霊一ヶ月で――",
+      "title_pt": "A Infiltração Pulmonar é Curada – Três Anos de Medicina em Um Mês de Johrei",
+      "jp_anchor": "肺浸潤が治る――医学三年が浄霊一ヶ月で――",
+      "pt_anchor": "**A Infiltração Pulmonar é Curada – Três Anos de Medicina em Um Mês de Johrei**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "肺結核より救はる",
+      "title_pt": "Salvo da Tuberculose Pulmonar",
+      "jp_anchor": "肺結核より救はる",
+      "pt_anchor": "**Salvo da Tuberculose Pulmonar**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "救われた開放性結核",
+      "title_pt": "Salvo da Tuberculose Aberta",
+      "jp_anchor": "救われた開放性結核",
+      "pt_anchor": "**Salvo da Tuberculose Aberta**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "死人が感涙す",
+      "title_pt": "O Morto Chora de Emoção",
+      "jp_anchor": "死人が感涙す",
+      "pt_anchor": "**O Morto Chora de Emoção**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "光明の彼岸へ",
+      "title_pt": "Para a Margem da Luz",
+      "jp_anchor": "光明の彼岸へ",
+      "pt_anchor": "**Para a Margem da Luz**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "一家光明の喜び",
+      "title_pt": "A Alegria da Luz na Família",
+      "jp_anchor": "一家光明の喜び",
+      "pt_anchor": "**A Alegria da Luz na Família**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "死の宣告の思出",
+      "title_pt": "Recordação da Sentença de Morte",
+      "jp_anchor": "死の宣告の思出",
+      "pt_anchor": "**Recordação da Sentença de Morte**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "肺病より救はれて",
+      "title_pt": "Salva da Tuberculose Pulmonar",
+      "jp_anchor": "肺病より救はれて",
+      "pt_anchor": "**Salva da Tuberculose Pulmonar**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "働ける身体になった喜び",
+      "title_pt": "A Alegria de Ter um Corpo que Pode Trabalhar",
+      "jp_anchor": "働ける身体になった喜び",
+      "pt_anchor": "**A Alegria de Ter um Corpo que Pode Trabalhar**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "病の孤独より救はる",
+      "title_pt": "Salva da Solidão da Doença",
+      "jp_anchor": "病の孤独より救はる",
+      "pt_anchor": "**Salva da Solidão da Doença**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "肺浸潤が治る（２）",
+      "title_pt": "Cura de Infiltração Pulmonar (2)",
+      "jp_anchor": "肺浸潤が治る（２）",
+      "pt_anchor": "**Cura de Infiltração Pulmonar (2)**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "暗黒の肺結核より救はれて",
+      "title_pt": "Salvo da Escuridão da Tuberculose Pulmonar",
+      "jp_anchor": "暗黒の肺結核より救はれて",
+      "pt_anchor": "**Salvo da Escuridão da Tuberculose Pulmonar**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "三年間の療養生活から救わる",
+      "title_pt": "Salvo de Três Anos de Vida de Tratamento",
+      "jp_anchor": "三年間の療養生活から救わる",
+      "pt_anchor": "**Salvo de Três Anos de Vida de Tratamento**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "観音様の救いの御手に",
+      "title_pt": "Na Mão Salvadora de Kannon",
+      "jp_anchor": "観音様の救いの御手に",
+      "pt_anchor": "**Na Mão Salvadora de Kannon**",
+      "notes": ""
+    },
+    {
+      "kind": "section",
+      "title_jp": "生死を超越しての絶対の御守護",
+      "title_pt": "A proteção divina absoluta que transcende a vida e a morte",
+      "jp_anchor": "生死を超越しての絶対の御守護",
+      "pt_anchor": "**A proteção divina absoluta que transcende a vida e a morte**",
+      "notes": ""
+    }
+  ],
+  "audited_at": "2026-07-17T10:42:52Z",
+  "audit_method": "jp_first_content_pair"
+}

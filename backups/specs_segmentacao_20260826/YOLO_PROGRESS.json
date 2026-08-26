@@ -1,0 +1,14 @@
+{
+  "phase": "jp_first_segmentation",
+  "completed_at": "2026-07-14T01:52:01Z",
+  "summary": {
+    "files": 127,
+    "ok": 127,
+    "fail": 0,
+    "trechos_before": 3542,
+    "trechos_after": 3531,
+    "trechos_delta": -11,
+    "still_monolith": 13,
+    "expanded": 0
+  }
+}

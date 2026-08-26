@@ -1,0 +1,884 @@
+{
+  "total": 112,
+  "compared": 109,
+  "no_source": 3,
+  "results_by_divergence": [
+    {
+      "file": "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "status": "compared",
+      "similarity": 0.8999,
+      "cur_chars": 109945,
+      "run1_chars": 134407,
+      "size_ratio": 0.82
+    },
+    {
+      "file": "19510915-御垂示録1号.txt",
+      "status": "compared",
+      "similarity": 0.9263,
+      "cur_chars": 42121,
+      "run1_chars": 48821,
+      "size_ratio": 0.86
+    },
+    {
+      "file": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "status": "compared",
+      "similarity": 0.9278,
+      "cur_chars": 100526,
+      "run1_chars": 116142,
+      "size_ratio": 0.87
+    },
+    {
+      "file": "19540825-天国の福音書.txt",
+      "status": "compared",
+      "similarity": 0.9319,
+      "cur_chars": 157412,
+      "run1_chars": 180408,
+      "size_ratio": 0.87
+    },
+    {
+      "file": "19520925-御教え集13号.txt",
+      "status": "compared",
+      "similarity": 0.9449,
+      "cur_chars": 96656,
+      "run1_chars": 107930,
+      "size_ratio": 0.9
+    },
+    {
+      "file": "19530415-御教え集20号.txt",
+      "status": "compared",
+      "similarity": 0.9474,
+      "cur_chars": 144032,
+      "run1_chars": 160019,
+      "size_ratio": 0.9
+    },
+    {
+      "file": "19510815-結核の革命的療法.txt",
+      "status": "compared",
+      "similarity": 0.9528,
+      "cur_chars": 573197,
+      "run1_chars": 624196,
+      "size_ratio": 0.92
+    },
+    {
+      "file": "19501030-法難手記.txt",
+      "status": "compared",
+      "similarity": 0.954,
+      "cur_chars": 129118,
+      "run1_chars": 141564,
+      "size_ratio": 0.91
+    },
+    {
+      "file": "19501120-世界救世教早わかり.txt",
+      "status": "compared",
+      "similarity": 0.961,
+      "cur_chars": 52182,
+      "run1_chars": 56406,
+      "size_ratio": 0.93
+    },
+    {
+      "file": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "status": "compared",
+      "similarity": 0.9614,
+      "cur_chars": 59140,
+      "run1_chars": 63888,
+      "size_ratio": 0.93
+    },
+    {
+      "file": "19511010-御垂示録2号.txt",
+      "status": "compared",
+      "similarity": 0.9621,
+      "cur_chars": 75993,
+      "run1_chars": 79408,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19500125-自観叢書第15篇『基督と自観師』.txt",
+      "status": "compared",
+      "similarity": 0.9627,
+      "cur_chars": 88046,
+      "run1_chars": 94872,
+      "size_ratio": 0.93
+    },
+    {
+      "file": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "status": "compared",
+      "similarity": 0.9649,
+      "cur_chars": 2041,
+      "run1_chars": 2181,
+      "size_ratio": 0.94
+    },
+    {
+      "file": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "status": "compared",
+      "similarity": 0.965,
+      "cur_chars": 158676,
+      "run1_chars": 168118,
+      "size_ratio": 0.94
+    },
+    {
+      "file": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "status": "compared",
+      "similarity": 0.9651,
+      "cur_chars": 192199,
+      "run1_chars": 202906,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19530600-A Story of Ukiyo-e.txt",
+      "status": "compared",
+      "similarity": 0.9657,
+      "cur_chars": 40503,
+      "run1_chars": 43370,
+      "size_ratio": 0.93
+    },
+    {
+      "file": "19520825-御垂示録12号.txt",
+      "status": "compared",
+      "similarity": 0.9662,
+      "cur_chars": 39008,
+      "run1_chars": 41735,
+      "size_ratio": 0.93
+    },
+    {
+      "file": "19480701-御讃歌集.txt",
+      "status": "compared",
+      "similarity": 0.968,
+      "cur_chars": 31735,
+      "run1_chars": 33139,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19520125-御垂示録6号.txt",
+      "status": "compared",
+      "similarity": 0.9682,
+      "cur_chars": 57763,
+      "run1_chars": 61558,
+      "size_ratio": 0.94
+    },
+    {
+      "file": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "status": "compared",
+      "similarity": 0.9688,
+      "cur_chars": 104475,
+      "run1_chars": 110541,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19510615-一信者の告白.txt",
+      "status": "compared",
+      "similarity": 0.9691,
+      "cur_chars": 53462,
+      "run1_chars": 56268,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19530215-御垂示録17号.txt",
+      "status": "compared",
+      "similarity": 0.9709,
+      "cur_chars": 34106,
+      "run1_chars": 36153,
+      "size_ratio": 0.94
+    },
+    {
+      "file": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "status": "compared",
+      "similarity": 0.9709,
+      "cur_chars": 43490,
+      "run1_chars": 46095,
+      "size_ratio": 0.94
+    },
+    {
+      "file": "19530910-世界救世教奇蹟集.txt",
+      "status": "compared",
+      "similarity": 0.9712,
+      "cur_chars": 778602,
+      "run1_chars": 816621,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19510520-教えの光.txt",
+      "status": "compared",
+      "similarity": 0.9717,
+      "cur_chars": 144762,
+      "run1_chars": 149626,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19540315-御垂示録29号.txt",
+      "status": "compared",
+      "similarity": 0.9721,
+      "cur_chars": 38353,
+      "run1_chars": 40552,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19510920-御教え集1号.txt",
+      "status": "compared",
+      "similarity": 0.9725,
+      "cur_chars": 140676,
+      "run1_chars": 148583,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19530915-御教え集25号.txt",
+      "status": "compared",
+      "similarity": 0.9726,
+      "cur_chars": 111371,
+      "run1_chars": 117571,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19491230-自観叢書第9篇『光への道』.txt",
+      "status": "compared",
+      "similarity": 0.9733,
+      "cur_chars": 68717,
+      "run1_chars": 72478,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19350000-観音講座　（１～７）.txt",
+      "status": "compared",
+      "similarity": 0.9734,
+      "cur_chars": 159010,
+      "run1_chars": 161441,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19530415-御垂示録19号.txt",
+      "status": "compared",
+      "similarity": 0.9741,
+      "cur_chars": 37623,
+      "run1_chars": 39622,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19530715-御教え集23号.txt",
+      "status": "compared",
+      "similarity": 0.9743,
+      "cur_chars": 147274,
+      "run1_chars": 153797,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19540415-御教え集32号.txt",
+      "status": "compared",
+      "similarity": 0.9747,
+      "cur_chars": 158727,
+      "run1_chars": 166851,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19521015-御教え集14号.txt",
+      "status": "compared",
+      "similarity": 0.9751,
+      "cur_chars": 141861,
+      "run1_chars": 149057,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "status": "compared",
+      "similarity": 0.9757,
+      "cur_chars": 86996,
+      "run1_chars": 91335,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "status": "compared",
+      "similarity": 0.9759,
+      "cur_chars": 97605,
+      "run1_chars": 102405,
+      "size_ratio": 0.95
+    },
+    {
+      "file": "19511025-御教え集2号.txt",
+      "status": "compared",
+      "similarity": 0.9769,
+      "cur_chars": 176003,
+      "run1_chars": 182518,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "status": "compared",
+      "similarity": 0.977,
+      "cur_chars": 108193,
+      "run1_chars": 113276,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19511125-御垂示録3号.txt",
+      "status": "compared",
+      "similarity": 0.9775,
+      "cur_chars": 81510,
+      "run1_chars": 82029,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "status": "compared",
+      "similarity": 0.9778,
+      "cur_chars": 73674,
+      "run1_chars": 77013,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "status": "compared",
+      "similarity": 0.9778,
+      "cur_chars": 114644,
+      "run1_chars": 119850,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530505-革命的増産の自然農法解説.txt",
+      "status": "compared",
+      "similarity": 0.978,
+      "cur_chars": 310848,
+      "run1_chars": 324809,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530815-御垂示録23号.txt",
+      "status": "compared",
+      "similarity": 0.978,
+      "cur_chars": 42875,
+      "run1_chars": 44801,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19540515-御教え集33号.txt",
+      "status": "compared",
+      "similarity": 0.9787,
+      "cur_chars": 100896,
+      "run1_chars": 105217,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19531015-御教え集26号.txt",
+      "status": "compared",
+      "similarity": 0.9789,
+      "cur_chars": 170699,
+      "run1_chars": 178000,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19540315-御教え集31号.txt",
+      "status": "compared",
+      "similarity": 0.9789,
+      "cur_chars": 126630,
+      "run1_chars": 131977,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530315-御教え集19号.txt",
+      "status": "compared",
+      "similarity": 0.979,
+      "cur_chars": 108556,
+      "run1_chars": 113180,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530101-アメリカを救う.txt",
+      "status": "compared",
+      "similarity": 0.9791,
+      "cur_chars": 371147,
+      "run1_chars": 386979,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19510601-世界救世教教義解説.txt",
+      "status": "compared",
+      "similarity": 0.9792,
+      "cur_chars": 28180,
+      "run1_chars": 29376,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530815-御教え集24号.txt",
+      "status": "compared",
+      "similarity": 0.9794,
+      "cur_chars": 139645,
+      "run1_chars": 145449,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19511215-御教え集4号.txt",
+      "status": "compared",
+      "similarity": 0.9795,
+      "cur_chars": 168868,
+      "run1_chars": 175914,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19521015-御垂示録14号.txt",
+      "status": "compared",
+      "similarity": 0.981,
+      "cur_chars": 34466,
+      "run1_chars": 35799,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "status": "compared",
+      "similarity": 0.981,
+      "cur_chars": 96545,
+      "run1_chars": 100288,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "status": "compared",
+      "similarity": 0.9811,
+      "cur_chars": 86477,
+      "run1_chars": 89800,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19531015-御垂示録25号.txt",
+      "status": "compared",
+      "similarity": 0.9811,
+      "cur_chars": 30874,
+      "run1_chars": 32066,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19530115-御教え集17号.txt",
+      "status": "compared",
+      "similarity": 0.9815,
+      "cur_chars": 105077,
+      "run1_chars": 107889,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19521201-結核信仰療法.txt",
+      "status": "compared",
+      "similarity": 0.9818,
+      "cur_chars": 689569,
+      "run1_chars": 715089,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19521115-御教え集15号.txt",
+      "status": "compared",
+      "similarity": 0.9819,
+      "cur_chars": 103774,
+      "run1_chars": 107526,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19510225-御教え集6号.txt",
+      "status": "compared",
+      "similarity": 0.982,
+      "cur_chars": 216313,
+      "run1_chars": 224217,
+      "size_ratio": 0.96
+    },
+    {
+      "file": "19540115-御教え集29号.txt",
+      "status": "compared",
+      "similarity": 0.9828,
+      "cur_chars": 137263,
+      "run1_chars": 141991,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19530315-御垂示録18号.txt",
+      "status": "compared",
+      "similarity": 0.983,
+      "cur_chars": 36949,
+      "run1_chars": 38226,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19531115-御垂示録26号.txt",
+      "status": "compared",
+      "similarity": 0.9833,
+      "cur_chars": 36698,
+      "run1_chars": 37942,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19530515-御垂示録20号.txt",
+      "status": "compared",
+      "similarity": 0.9834,
+      "cur_chars": 37103,
+      "run1_chars": 38350,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "status": "compared",
+      "similarity": 0.9836,
+      "cur_chars": 151535,
+      "run1_chars": 156579,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19511125-御教え集3号.txt",
+      "status": "compared",
+      "similarity": 0.9836,
+      "cur_chars": 186459,
+      "run1_chars": 192619,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19531115-御教え集27号.txt",
+      "status": "compared",
+      "similarity": 0.9838,
+      "cur_chars": 102879,
+      "run1_chars": 106142,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19530515-御教え集21号.txt",
+      "status": "compared",
+      "similarity": 0.9839,
+      "cur_chars": 151230,
+      "run1_chars": 156104,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19530215-御教え集18号.txt",
+      "status": "compared",
+      "similarity": 0.984,
+      "cur_chars": 142886,
+      "run1_chars": 146071,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "status": "compared",
+      "similarity": 0.9849,
+      "cur_chars": 113969,
+      "run1_chars": 117471,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19531215-御教え集28号.txt",
+      "status": "compared",
+      "similarity": 0.9856,
+      "cur_chars": 161285,
+      "run1_chars": 165932,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "status": "compared",
+      "similarity": 0.9858,
+      "cur_chars": 74301,
+      "run1_chars": 76444,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19520420-御教え集8号.txt",
+      "status": "compared",
+      "similarity": 0.986,
+      "cur_chars": 227668,
+      "run1_chars": 234086,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19491223-山と水.txt",
+      "status": "compared",
+      "similarity": 0.9864,
+      "cur_chars": 140016,
+      "run1_chars": 143873,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19521215-御教え集16号.txt",
+      "status": "compared",
+      "similarity": 0.9864,
+      "cur_chars": 99815,
+      "run1_chars": 102508,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "status": "compared",
+      "similarity": 0.9867,
+      "cur_chars": 58309,
+      "run1_chars": 59867,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19520925-御垂示録13号.txt",
+      "status": "compared",
+      "similarity": 0.987,
+      "cur_chars": 32547,
+      "run1_chars": 33391,
+      "size_ratio": 0.97
+    },
+    {
+      "file": "19530615-御教え集22号.txt",
+      "status": "compared",
+      "similarity": 0.9876,
+      "cur_chars": 110167,
+      "run1_chars": 112863,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "status": "compared",
+      "similarity": 0.9877,
+      "cur_chars": 74464,
+      "run1_chars": 76321,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520815-御教え集12号.txt",
+      "status": "compared",
+      "similarity": 0.9878,
+      "cur_chars": 76785,
+      "run1_chars": 78618,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520320-御教え集7号.txt",
+      "status": "compared",
+      "similarity": 0.9879,
+      "cur_chars": 159373,
+      "run1_chars": 163207,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19540215-御教え集30号.txt",
+      "status": "compared",
+      "similarity": 0.9879,
+      "cur_chars": 159345,
+      "run1_chars": 163134,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19511225-御垂示録5号.txt",
+      "status": "compared",
+      "similarity": 0.988,
+      "cur_chars": 81591,
+      "run1_chars": 83578,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19510115-自然農法解説.txt",
+      "status": "compared",
+      "similarity": 0.9885,
+      "cur_chars": 83523,
+      "run1_chars": 85451,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520715-御教え集11号.txt",
+      "status": "compared",
+      "similarity": 0.989,
+      "cur_chars": 176156,
+      "run1_chars": 180017,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520115-御教え集5号.txt",
+      "status": "compared",
+      "similarity": 0.9898,
+      "cur_chars": 168902,
+      "run1_chars": 172327,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19530615-御垂示録21号.txt",
+      "status": "compared",
+      "similarity": 0.9899,
+      "cur_chars": 39393,
+      "run1_chars": 40190,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520515-御教え集9号.txt",
+      "status": "compared",
+      "similarity": 0.99,
+      "cur_chars": 116399,
+      "run1_chars": 118669,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19500921-地上天国出来るまで.txt",
+      "status": "compared",
+      "similarity": 0.9901,
+      "cur_chars": 18714,
+      "run1_chars": 19085,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "status": "compared",
+      "similarity": 0.9913,
+      "cur_chars": 102514,
+      "run1_chars": 104310,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "status": "compared",
+      "similarity": 0.9915,
+      "cur_chars": 80926,
+      "run1_chars": 82305,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520425-御垂示録8号.txt",
+      "status": "compared",
+      "similarity": 0.9918,
+      "cur_chars": 82762,
+      "run1_chars": 84125,
+      "size_ratio": 0.98
+    },
+    {
+      "file": "19520310-御垂示録7号.txt",
+      "status": "compared",
+      "similarity": 0.9925,
+      "cur_chars": 38763,
+      "run1_chars": 39352,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19520715-御垂示録11号.txt",
+      "status": "compared",
+      "similarity": 0.9926,
+      "cur_chars": 30002,
+      "run1_chars": 30451,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "status": "compared",
+      "similarity": 0.9927,
+      "cur_chars": 4703,
+      "run1_chars": 4665,
+      "size_ratio": 1.01
+    },
+    {
+      "file": "19530715-御垂示録22号.txt",
+      "status": "compared",
+      "similarity": 0.9932,
+      "cur_chars": 28544,
+      "run1_chars": 28930,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19510805-新しき暴力.txt",
+      "status": "compared",
+      "similarity": 0.9936,
+      "cur_chars": 6077,
+      "run1_chars": 6025,
+      "size_ratio": 1.01
+    },
+    {
+      "file": "19540215-御垂示録28号.txt",
+      "status": "compared",
+      "similarity": 0.9948,
+      "cur_chars": 37433,
+      "run1_chars": 37828,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19520000-HAKONE ART MUSEUM.txt",
+      "status": "compared",
+      "similarity": 0.9954,
+      "cur_chars": 8537,
+      "run1_chars": 8553,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "status": "compared",
+      "similarity": 0.9964,
+      "cur_chars": 37153,
+      "run1_chars": 37416,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19520515-御垂示録9号.txt",
+      "status": "compared",
+      "similarity": 0.9964,
+      "cur_chars": 33551,
+      "run1_chars": 33793,
+      "size_ratio": 0.99
+    },
+    {
+      "file": "19540415-御垂示録30号.txt",
+      "status": "compared",
+      "similarity": 0.9976,
+      "cur_chars": 32347,
+      "run1_chars": 32499,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19510810-或る日の公判スケッチ.txt",
+      "status": "compared",
+      "similarity": 0.9984,
+      "cur_chars": 24382,
+      "run1_chars": 24312,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19521115-御垂示録15号.txt",
+      "status": "compared",
+      "similarity": 0.9986,
+      "cur_chars": 25719,
+      "run1_chars": 25759,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19531215-御垂示録27号.txt",
+      "status": "compared",
+      "similarity": 0.9989,
+      "cur_chars": 38890,
+      "run1_chars": 38977,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19510130-笑の泉.txt",
+      "status": "compared",
+      "similarity": 0.9994,
+      "cur_chars": 116332,
+      "run1_chars": 116442,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19520615-御教え集10号.txt",
+      "status": "compared",
+      "similarity": 0.9995,
+      "cur_chars": 123531,
+      "run1_chars": 123406,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19521215-御垂示録16号.txt",
+      "status": "compared",
+      "similarity": 0.9995,
+      "cur_chars": 39667,
+      "run1_chars": 39704,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "status": "compared",
+      "similarity": 0.9998,
+      "cur_chars": 48074,
+      "run1_chars": 48076,
+      "size_ratio": 1.0
+    },
+    {
+      "file": "19480905-信仰雑話.txt",
+      "status": "compared",
+      "similarity": 1.0,
+      "cur_chars": 187502,
+      "run1_chars": 187501,
+      "size_ratio": 1.0
+    }
+  ],
+  "missing_run1_source": [
+    "19511210-御垂示録4号.txt",
+    "19520615-御垂示録10号.txt",
+    "19530915-御垂示録24号.txt"
+  ]
+}

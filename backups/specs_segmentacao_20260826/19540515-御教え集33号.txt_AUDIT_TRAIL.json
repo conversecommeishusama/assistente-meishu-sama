@@ -1,0 +1,180 @@
+{
+  "filename": "19540515-御教え集33号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 207 linhas / PT ~9 sessões datadas + prefácio + colofão). Todo o corpo do JP foi lido e confrontado com o PT correspondente, transição de data por transição de data, do prefácio ao colofão. Contexto: livro irmão da família 御教え集/御垂示録 com bug estrutural sistemático já confirmado em 32 volumes irmãos (monólitos residuais com cauda duplicada, sessões ausentes, nomes próprios corrompidos, cabeçalhos de data duplicados/corrompidos).",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessions_in_jp": 9,
+    "sessions_in_spec_original": 7,
+    "sessions_in_spec_corrigido": 9,
+    "sessions_reviewed": 9,
+    "real_corrections_applied": 8,
+    "items_escalated_to_pendencias": 0
+  },
+  "padroes_confirmados_da_familia": [
+    "Sessão inteira ausente do spec (spec tinha 7, JP tem 9 datas reais)",
+    "Monólito residual: duas sessões de data distinta fundidas sem quebra de parágrafo no meio do texto corrido, com o cabeçalho de data da segunda sessão sobrevivendo apenas embutido em uma frase no meio do bloco",
+    "Cabeçalho de data deslocado para posição errada no ficheiro (antes até do título da obra)",
+    "Nome próprio (topônimo de santuário) corrompido de forma diferente a cada repetição no mesmo volume",
+    "Rascunho truncado de um trecho seguido da versão completa do mesmo trecho mais adiante (duplicação parcial)",
+    "Colofão com data de impressão emendada ao parágrafo de conteúdo anterior, sem quebra"
+  ],
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Marcador estrutural do ficheiro PT, linhas 5-6 (antes da correção)",
+      "problema": "Marcador '=== ARTIGO ===' duplicado (aparecia duas vezes seguidas); o JP correspondente tem apenas uma ocorrência.",
+      "correcao": "Removida a linha duplicada.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Início do ficheiro de trabalho PT (antes mesmo do título 'Mioshie-shū nº 33')",
+      "problema": "GRAVE — cabeçalho de sessão '6 de abril' aparecia deslocado no topo absoluto do ficheiro, antes do título/ficha de publicação e antes até do conteúdo da sessão de 5 de abril (que vem cronologicamente antes). Ao mesmo tempo, a sessão de 5 de abril inteira (JP linhas 24-42, já traduzida corretamente) estava classificada no spec como se fosse 'prefácio/front-matter', sem cabeçalho próprio no PT.",
+      "correcao": "Cabeçalho '6 de abril' removido do topo e reinserido corretamente antes do conteúdo real da sessão de 6 de abril. Cabeçalho '5 de abril' criado e inserido antes do conteúdo real dessa sessão (que já existia e estava correto, só sem marcação própria). Spec corrigido para incluir '四月五日' como sessão própria (ver ficheiro .json).",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Linha de prefácio, imediatamente após a ficha de publicação",
+      "problema": "Frase eco/duplicada: 'Mioshie-shū nº 33, publicado em 15 de maio de 1954 (Showa 29) 5 de abril de 1954 (Showa 29)' repetia informação já dada (título + data de publicação) e ainda carregava embutida a data da primeira sessão (5 de abril), sem quebra própria.",
+      "correcao": "Linha removida por ser puramente redundante após a correção do item 2 (a data '5 de abril' já tem cabeçalho próprio; o resto da frase já estava dito nas duas linhas anteriores do prefácio). Nenhum conteúdo novo foi perdido — conferido que as únicas informações da linha (título, data de publicação, data da 1ª sessão) já constavam em outro lugar.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Fim do bloco de conteúdo da sessão de 5 de abril, antes do cabeçalho '6 de abril'",
+      "problema": "Texto '[Eikō nº 258] 6 de abril' — a data da sessão seguinte aparecia emendada ao final do parágrafo anterior, sem quebra.",
+      "correcao": "Removido o '6 de abril' solto do final da frase (já resolvido pela criação do cabeçalho próprio no item 2).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "GRAVE — sessões de 11 e 12 de abril, spec e PT work file",
+      "problema": "A sessão de 12 de abril (palestra no Salão Público da Prefeitura de Nara, JP linhas 105-110) estava completamente ausente do spec (7 trechos em vez de 9) e fundida sem nenhuma quebra de parágrafo dentro do bloco PT rotulado só como '11 de abril' — monólito residual de ~26.000 caracteres cobrindo duas datas e dois locais de palestra (Nagoya e Nara) como se fossem uma coisa só. O cabeçalho '12 de abril (no Salão Público da Prefeitura de Nara)' sobrevivia apenas embutido no meio do texto corrido.",
+      "correcao": "Verificada primeiro a completude do conteúdo (busca por âncoras únicas: Anami, Maria, João/2750 anos, Tiago, Kōbō Daishi/Shinran, Malenkov, Chūkyō/Chukyo, distintivo da Igreja Messiânica, discurso de Eisenhower) — confirmado que nada foi perdido, só faltava a quebra estrutural. Bloco dividido em duas sessões no PT work file, cada uma com cabeçalho de data próprio ('11 de abril' e '12 de abril'). Spec atualizado para incluir '四月十二日　（奈良県公会堂において）' como artigo próprio.",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Sessão de 16 de abril, relato sobre o santuário 今宮神社 (Imamiya Jinja)",
+      "problema": "Nome próprio corrompido: '今宮神社' (Imamiya Jinja, já traduzido corretamente como 'Santuário Imamiya' em 15 e 17 de abril) aparecia como 'Santuário Imagumano' nas duas menções desta sessão (4 ocorrências da palavra).",
+      "correcao": "Corrigido 'Imagumano' → 'Imamiya' (4 ocorrências), tornando consistente com as demais menções do mesmo santuário no volume.",
+      "confianca": "alta"
+    },
+    {
+      "n": 7,
+      "localizacao": "Sessão de 17 de abril, segunda menção do relato sobre 今宮神社",
+      "problema": "Mesmo nome próprio corrompido de forma diferente nesta sessão: 'Santuário Imagami' (2 ocorrências).",
+      "correcao": "Corrigido 'Imagami' → 'Imamiya' (2 ocorrências).",
+      "confianca": "alta"
+    },
+    {
+      "n": 8,
+      "localizacao": "GRAVE — sessão de 17 de abril, relato sobre espíritos diversos (狛犬/Nichiren/今宮神社/良寛)",
+      "problema": "Duplicação parcial com rascunho truncado: o bloco de conteúdo que abre com a exposição de ukiyo-e da Mitsukoshi continuava, sem quebra, com um rascunho do relatório de espíritos (Komainu, Nichiren completo, e o início do trecho de Imamiya/Ryōkan) que terminava abruptamente cortado no meio de uma frase ('...ele também estudava com muito empenho,'). Mais adiante no mesmo work file, um segundo bloco retomava o relatório repetindo Imamiya e Ryōkan (desta vez completo) e prosseguindo até Kōbō Daishi, Kinko Kyūbi, Stalin, os dragões do mundo e o segundo relatório (revista Scene). Isto é exatamente o padrão 'rascunho truncado + versão completa da mesma passagem' já catalogado para a família.",
+      "correcao": "Removido o trecho duplicado/truncado (a partir de 'Santuário Imamiya: O Santuário Imamiya...' até '...ele também estudava com muito empenho,') do primeiro bloco, mantendo apenas o conteúdo que não se repete no segundo bloco (Komainu + Nichiren completo, que não existiam em nenhum outro lugar do PT). O segundo bloco (com Imamiya, Ryōkan completo com a comparação Ikkyū/Takuan, Kōbō Daishi, Kinko Kyūbi, Stalin, dragões mundiais e o relatório da revista Scene) foi mantido integralmente por ser a versão completa e não truncada. Verificado que nenhum conteúdo único foi perdido — o trecho removido era estritamente redundante com o que já existia, de forma completa, no segundo bloco.",
+      "confianca": "alta"
+    },
+    {
+      "n": "9 (menor, terminologia)",
+      "localizacao": "Marcadores de citação '（御報告）' ao longo do volume",
+      "problema": "JP tem 9 ocorrências de '（御報告）'; PT tinha 7 traduzidas como '(Relato)' e 2 como '(Relatório)' — inconsistência terminológica para o mesmo marcador editorial (não é perda de conteúdo, as 9 citações estavam todas presentes).",
+      "correcao": "Padronizado '(Relatório)' → '(Relato)' nas 2 ocorrências, para consistência com o resto do volume.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "Prefácio (título + ficha de publicação)",
+      "jp_linhas": "20-23",
+      "decisao": "corrigido (removida frase eco duplicada, ver correção 3)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "5 de abril",
+      "jp_linhas": "24-42",
+      "decisao": "corrigido (cabeçalho ausente, spec ausente, ver correções 2)",
+      "confianca": "alta",
+      "notas": "Conteúdo em si já estava completo e correto; só faltava a estrutura (cabeçalho + entrada no spec)."
+    },
+    {
+      "sessao": "6 de abril",
+      "jp_linhas": "46-68",
+      "decisao": "corrigido (cabeçalho deslocado, ver correções 2 e 4)",
+      "confianca": "alta",
+      "notas": "Repetição do tema 'deuses que não são deuses' e da carta do Havaí em relação a 5 de abril é genuína no JP (Meishu-Sama reconta o mesmo episódio em relatos e datas diferentes) — não é bug de duplicação."
+    },
+    {
+      "sessao": "7 de abril",
+      "jp_linhas": "74-91",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Terceira recontagem do mesmo tema (números 369, 'oitavo santo', museu de Hakone) — genuína no JP. Marcador '（御報告）' da linha JP78 não tem equivalente '(Relato)' explícito no PT, mas o conteúdo do relato está integralmente traduzido e presente (confirmado por âncoras: João/2750 anos, Handel, Messias) — considerado aceitável, não é perda de conteúdo."
+    },
+    {
+      "sessao": "11 de abril (Ginásio Kanayama, Nagoya)",
+      "jp_linhas": "97-101",
+      "decisao": "corrigido (separado do monólito com 12 de abril, ver correção 5)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "12 de abril (Salão Público da Prefeitura de Nara)",
+      "jp_linhas": "107-110",
+      "decisao": "corrigido (sessão inteira estava ausente do spec e fundida com 11 de abril, ver correção 5)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "15 de abril",
+      "jp_linhas": "116-136",
+      "decisao": "ok",
+      "confianca": "alta",
+      "notas": "Vários parágrafos JP (Nichiren/Imamiya/Ryōkan/Konmō Kyūbi) vertidos em blocos PT maiores sem perda de conteúdo — aceitável, mesmo padrão já tratado como 'ok' em outros volumes da coleção."
+    },
+    {
+      "sessao": "16 de abril",
+      "jp_linhas": "140-163",
+      "decisao": "corrigido (nome próprio corrompido, ver correção 6)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "17 de abril",
+      "jp_linhas": "167-190",
+      "decisao": "corrigido (nome próprio corrompido + duplicação parcial com rascunho truncado, ver correções 7 e 8)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "Colofão",
+      "jp_linhas": "198-208",
+      "decisao": "corrigido (data de impressão estava emendada ao parágrafo de conteúdo anterior)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_de_completude": {
+    "cjk_residual": "nenhum encontrado no corpo do PT (varredura automática por faixa Unicode CJK)",
+    "ancoras_unicas_conferidas": [
+      "Anami",
+      "Maria",
+      "João/2750 anos",
+      "Tiago",
+      "Kōbō Daishi/Shinran",
+      "Malenkov",
+      "Eisenhower",
+      "Chukyo",
+      "distintivo da Igreja Messiânica",
+      "Komainu",
+      "Kinko Kyūbi",
+      "Stalin",
+      "revista Scene"
+    ],
+    "ordem_cronologica_cabecalhos": "5, 6, 7, 11, 12, 15, 16, 17 de abril — confirmada em ordem correta após correções",
+    "marcadores_de_citacao": "9 '（御報告）' no JP == 9 '(Relato)' no PT após padronização terminológica; 6 '御論文' no JP == 6 'Artigo' no PT"
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as correções. approved:true."
+  }
+}

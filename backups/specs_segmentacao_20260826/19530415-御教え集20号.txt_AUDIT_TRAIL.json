@@ -1,0 +1,133 @@
+{
+  "filename": "19530415-御教え集20号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc)",
+  "review_date": "2026-07-07",
+  "scope": "Revisão completa do volume inteiro (JP 202 linhas / PT originalmente 80 linhas, agora 85 após correções). Spec lista 11 trechos (profile mioshie_shu); o bloco JP inteiro é um único === ARTIGO === contendo 11 sessões por data (5, 6, 7, 15, 16, 17, 23, 24, 25, 26, 27 de março de Showa 28). Todo o corpo do JP foi lido e confrontado com o PT correspondente, transição de data por transição de data, incluindo os títulos citados entre parênteses (referências a artigos/ensaios do Meishu-Sama publicados em Eikō/Chijō Tengoku).",
+  "alerta_previo": "Tarefa avisava que os volumes irmãos (Mioshie-shū 1-19) mostraram repetidamente monólitos residuais com cauda duplicada, turnos ausentes, nomes próprios corrompidos e cabeçalhos de data duplicados. Confirmado neste volume: encontrados os padrões 'sessão inteira ausente' e 'duplicação de bloco' (achados #5 e #3 da lista de padrões confirmados em gokowa-gate-enforcement / revisao-paralela-jp-pt.mdc), apesar de o gate de contagem (Δ) não necessariamente acusar isso sozinho.",
+  "gate_mecanico": "Não substituído por esta trilha — gate de contagem/estrutura deve ser rodado separadamente; esta trilha documenta apenas a leitura semântica linha a linha.",
+  "summary": {
+    "sessoes_no_jp": 11,
+    "sessoes_revisadas": 11,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "severidade": "grave",
+      "localizacao": "sessão de 5 de março (JP linhas 24-38; PT — ausente)",
+      "problema": "A sessão inteira de 5 de março (JP: previsão da morte de Stalin, comparação Stalin/Hitler, crítica ao 'baka yaro' de Yoshida, divulgação dos livros 'Amerika o Sukuu', 'Kekkaku Shinkō Ryōhō' e 'Kyūseikyō Kiseki-shū', duas referências a artigos citados) não tinha nenhum par em PT. O ficheiro de trabalho pulava direto do título do volume para o conteúdo de 6 de março (spec chegava a rotular erroneamente esse trecho como 'preface' com jp_anchor apontando para o título, mas pt_anchor já apontando para o conteúdo de 6 de março — sinal de que o pareamento nunca detectou a sessão de 5 de março como unidade própria).",
+      "busca_realizada": "Localizada tradução completa e correta desta sessão já existente em textos_portugues/19530415-御教え集20号.txt (produção, mesma entry_id/paired_id), conferida frase a frase contra o JP nesta revisão antes de ser aceite.",
+      "correcao": "Inserida a sessão '5 de março' completa antes de '6 de março', com nota de revisão inline (NOTA_REVISAO) documentando a ausência original e a fonte da reconstituição, para trilha de auditoria futura.",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "severidade": "media",
+      "localizacao": "sessão de 7 de março (comparação de fisionomias Truman/Roosevelt/Eisenhower/Stalin/Churchill/Malenkov)",
+      "problema": "Duplicação de bloco: o mesmo parágrafo (fisionomia de Truman, Roosevelt, Eisenhower, Stalin, Churchill, 8 prisões/6 fugas, rosto obstinado) aparecia traduzido duas vezes seguidas com fraseado ligeiramente diferente, a primeira versão cortada a meio de frase ('Ele era obstinado e não ouvia') e a segunda reiniciando do zero ('é o que se vê pela fisionomia...'). O JP (linha 53) traz esse parágrafo uma única vez.",
+      "correcao": "Mantida uma única versão contínua do parágrafo, preservando a frase final sobre o rosto de Malenkov (presente só na segunda cópia) e eliminando a repetição integral do conteúdo já dito na primeira cópia.",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "severidade": "media",
+      "localizacao": "sessão de 24 de março ('Kekkaku Shinkō Ryōhō é uma bomba atômica')",
+      "problema": "Duplicação de bloco: o argumento 'medicina cria a tuberculose / tuberculose não é contagiosa → medicina terá de se render ou ficar em silêncio (o que equivale a concordar)' aparecia traduzido duas vezes seguidas (fraseado diferente), a primeira cortada a meio de frase ('e eles cairão em um dilema. E, então...'). O JP (linha 147) traz esse argumento uma única vez.",
+      "correcao": "Mantida uma única passagem contínua, unindo a frase cortada da primeira versão diretamente à continuação nova da segunda versão ('...e a medicina vai sendo pressionada aos poucos...'), sem repetir o argumento já enunciado.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "severidade": "grave",
+      "localizacao": "sessão de 25 de março (transição 'religião não pode interferir na política' → ensaio 'Escravos dos Túmulos')",
+      "problema": "Duplicação/mescla mais complexa: o parágrafo sobre a proibição histórica de a religião se envolver em política (jornal Hikari, adverência recebida, 'traduziram isso literalmente') e a frase de abertura do ensaio 'Escravos dos Túmulos' apareciam CADA UM duas vezes — uma primeira passagem cortada a meio de frase, seguida de uma segunda passagem completa reiniciando do zero — resultando numa sequência sem sentido gramatical no ponto de junção ('Pessoas que morreram há centenas ou milhares de anos' + linha em branco + 'até hoje não existia. Acho que, ao traduzirem isso literalmente...'). O JP (linhas 160-161) traz esse conteúdo uma única vez, como dois parágrafos consecutivos.",
+      "correcao": "Eliminada a repetição completa do parágrafo 'religião/política/ciência' e a abertura truncada do ensaio 'Escravos dos Túmulos' na primeira passagem, mantendo apenas a versão completa e gramatical de cada um (a política/ciência termina em '...também é uma dessas coisas.'; o ensaio 'Escravos dos Túmulos' segue directamente e por completo a partir da segunda passagem).",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "severidade": "media",
+      "localizacao": "sessão de 15 de março (ordem de atendimento no Johrei)",
+      "problema": "Truncamento: a frase 'Os pacientes graves têm prioridade especial; depois, é [...] Se não se desviar dessa ordem, a cura é muito boa' tinha um vazio (frase cortada) no meio, correspondente a uma oração inteira do JP (linha 84: ordem de chegada como princípio, pedir licença aos que esperam quando há dor grave, depois familiares por idade, depois casais marido-antes-da-esposa).",
+      "correcao": "Traduzido e inserido o trecho em falta ('...depois, segue-se a ordem de chegada. Isso é por uma questão de justiça... atende-se primeiro os mais velhos. E, no caso de um casal, se não houver grande sofrimento, atende-se primeiro o marido e depois a esposa. Se não se desviar dessa ordem...'), completando a frase sem alterar o sentido das partes já existentes. (Nota: o mesmo ensinamento reaparece, de forma mais desenvolvida, na sessão de 17 de março — isso É repetição genuína do orador em datas diferentes, confirmada contra o JP, não um artefacto a corrigir.)",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "severidade": "leve",
+      "localizacao": "cabeçalhos de data: '23 de março' (duplicado consecutivo), '24 de março' (duplicado consecutivo), '27 de março' (ausente)",
+      "problema": "Os cabeçalhos '23 de março' e '24 de março' apareciam repetidos duas vezes seguidas sem motivo (uma vez isolados, outra vez colados ao início do parágrafo seguinte). O cabeçalho '27 de março' estava totalmente ausente — o texto pulava de '...essas pessoas estão muito expectantes.' diretamente para 'geral, houve um aumento de cerca de trinta por cento...', sem o título da sessão nem a tradução da frase de abertura do JP ('春の大祭は今日でおしまいになりますが' = 'o grande festival da primavera termina hoje').",
+      "correcao": "Removidas as duplicações de '23 de março' e '24 de março' (mantido um único cabeçalho cada). Inserido o cabeçalho '27 de março' e traduzida a frase de abertura em falta ('O grande festival da primavera termina hoje, e, em geral, houve um aumento de cerca de trinta por cento em relação ao ano passado.').",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_sessao": [
+    {
+      "sessao": "5 de março",
+      "decisao": "corrigido - sessão inteira estava ausente (item 1)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "6 de março",
+      "decisao": "ok - completo, sem duplicação ou truncamento",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "7 de março",
+      "decisao": "corrigido - duplicação de parágrafo (item 2)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "15 de março",
+      "decisao": "corrigido - truncamento na regra de ordem do Johrei (item 5)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "16 de março",
+      "decisao": "ok - completo, sem duplicação ou truncamento",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "17 de março",
+      "decisao": "ok - repetição do ensinamento sobre ordem do Johrei é do próprio orador (confirmada contra JP), não artefacto",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "23 de março (Ensinamento da Grande Festa da Primavera)",
+      "decisao": "corrigido - cabeçalho duplicado (item 6)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "24 de março",
+      "decisao": "corrigido - cabeçalho duplicado (item 6) e duplicação de parágrafo (item 3)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "25 de março",
+      "decisao": "corrigido - mescla/duplicação grave (item 4)",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "26 de março",
+      "decisao": "ok - completo, sem duplicação ou truncamento",
+      "confianca": "alta"
+    },
+    {
+      "sessao": "27 de março",
+      "decisao": "corrigido - cabeçalho e frase de abertura ausentes (item 6)",
+      "confianca": "alta"
+    }
+  ],
+  "verificacoes_adicionais": {
+    "cjk_residual_no_corpo_pt": "nenhum encontrado (verificado por varredura de caracteres CJK em todo o ficheiro; a única ocorrência é o nome do próprio ficheiro no cabeçalho de metadados, pré-existente e fora do corpo traduzido)",
+    "colofão_final": "conferido contra JP linhas 191-202 (datas de impressão/publicação, editor, gráfica, endereço, impressor, editora) - completo e correto",
+    "nomes_proprios": "Stalin, Malenkov, Molotov, Bulganin, Truman, Roosevelt, Eisenhower, Churchill, MacArthur, Hitler, Mussolini, Tojo, Yoshida, Hirokawa, Fukunaga, Shigemitsu, Tagō Kazumi, Higuchi, Bloom, Nakajima, Deguchi Nao, Kunitokotachi-no-mikoto, Azabu, Haida Katsuhiko - conferidos linha a linha contra o JP, nenhuma corrupção encontrada"
+  },
+  "pendencias_abertas": [],
+  "aprovacao": {
+    "approved_recomendado": true,
+    "condicao": "Segunda auditoria independente pelo orquestrador (2026-07-07): confirmadas as 6 correções. approved:true."
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "method": "manual_jp_first",
+  "updated_at": "2026-07-14T01:52:01Z",
+  "files": [
+    {
+      "filename": "19350000-観音講座　（１～７）.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19350000-観音講座　（１～７）.txt.json"
+    },
+    {
+      "filename": "19480101-御光話録（補）.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19480101-御光話録（補）.txt.json"
+    },
+    {
+      "filename": "19480701-御讃歌集.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19480701-御讃歌集.txt.json"
+    },
+    {
+      "filename": "19480905-信仰雑話.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19480905-信仰雑話.txt.json"
+    },
+    {
+      "filename": "19481208-御光話録1号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19481208-御光話録1号.txt.json"
+    },
+    {
+      "filename": "19490000-御光話録4号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490000-御光話録4号.txt.json"
+    },
+    {
+      "filename": "19490000-御光話録5号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490000-御光話録5号.txt.json"
+    },
+    {
+      "filename": "19490108-御光話録2号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490108-御光話録2号.txt.json"
+    },
+    {
+      "filename": "19490208-御光話録3号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490208-御光話録3号.txt.json"
+    },
+    {
+      "filename": "19490423-御光話録6号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490423-御光話録6号.txt.json"
+    },
+    {
+      "filename": "19490522-御光話録7号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490522-御光話録7号.txt.json"
+    },
+    {
+      "filename": "19490530-御光話録8号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490530-御光話録8号.txt.json"
+    },
+    {
+      "filename": "19490625-自観叢書第1篇『結核と神霊療法』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490625-自観叢書第1篇『結核と神霊療法』.txt.json"
+    },
+    {
+      "filename": "19490701-自観叢書第2篇『無肥料栽培法』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490701-自観叢書第2篇『無肥料栽培法』.txt.json"
+    },
+    {
+      "filename": "19490710-御光話録10号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490710-御光話録10号.txt.json"
+    },
+    {
+      "filename": "19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490715-自観叢書第6篇『怪物か聖者か』.txt.json"
+    },
+    {
+      "filename": "19490730-御光話録9号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490730-御光話録9号.txt.json"
+    },
+    {
+      "filename": "19490821-御光話録11号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490821-御光話録11号.txt.json"
+    },
+    {
+      "filename": "19490825-自観叢書第3篇『霊界叢談』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490825-自観叢書第3篇『霊界叢談』.txt.json"
+    },
+    {
+      "filename": "19490830-自観叢書第5篇『自観隨談』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490830-自観叢書第5篇『自観隨談』.txt.json"
+    },
+    {
+      "filename": "19490921-御光話録12号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19490921-御光話録12号.txt.json"
+    },
+    {
+      "filename": "19491005-自観叢書第4篇『奇蹟物語』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491005-自観叢書第4篇『奇蹟物語』.txt.json"
+    },
+    {
+      "filename": "19491021-御光話録13号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491021-御光話録13号.txt.json"
+    },
+    {
+      "filename": "19491025-自観叢書第7篇『基仏と観音教』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491025-自観叢書第7篇『基仏と観音教』.txt.json"
+    },
+    {
+      "filename": "19491120-御光話録14号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491120-御光話録14号.txt.json"
+    },
+    {
+      "filename": "19491130-自観叢書第8篇『明麿近詠集』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491130-自観叢書第8篇『明麿近詠集』.txt.json"
+    },
+    {
+      "filename": "19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491205-自観叢書第13篇『世界の六大神秘家』.txt.json"
+    },
+    {
+      "filename": "19491220-御光話録15号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491220-御光話録15号.txt.json"
+    },
+    {
+      "filename": "19491223-山と水.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491223-山と水.txt.json"
+    },
+    {
+      "filename": "19491230-自観叢書第9篇『光への道』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19491230-自観叢書第9篇『光への道』.txt.json"
+    },
+    {
+      "filename": "19500120-御光話録16号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500120-御光話録16号.txt.json"
+    },
+    {
+      "filename": "19500125-自観叢書第15篇『基督と自観師』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500125-自観叢書第15篇『基督と自観師』.txt.json"
+    },
+    {
+      "filename": "19500130-自観叢書第12篇『自観説話集』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500130-自観叢書第12篇『自観説話集』.txt.json"
+    },
+    {
+      "filename": "19500228-御光話録17号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500228-御光話録17号.txt.json"
+    },
+    {
+      "filename": "19500420-自観叢書第10篇『神示の健康法』.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500420-自観叢書第10篇『神示の健康法』.txt.json"
+    },
+    {
+      "filename": "19500423-御光話録18号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500423-御光話録18号.txt.json"
+    },
+    {
+      "filename": "19500613-御光話録19号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500613-御光話録19号.txt.json"
+    },
+    {
+      "filename": "19500921-地上天国出来るまで.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19500921-地上天国出来るまで.txt.json"
+    },
+    {
+      "filename": "19501030-法難手記.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19501030-法難手記.txt.json"
+    },
+    {
+      "filename": "19501120-世界救世教早わかり.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19501120-世界救世教早わかり.txt.json"
+    },
+    {
+      "filename": "19510115-自然農法解説.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510115-自然農法解説.txt.json"
+    },
+    {
+      "filename": "19510130-笑の泉.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510130-笑の泉.txt.json"
+    },
+    {
+      "filename": "19510225-御教え集6号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510225-御教え集6号.txt.json"
+    },
+    {
+      "filename": "19510520-教えの光.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510520-教えの光.txt.json"
+    },
+    {
+      "filename": "19510601-世界救世教教義解説.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510601-世界救世教教義解説.txt.json"
+    },
+    {
+      "filename": "19510615-一信者の告白.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510615-一信者の告白.txt.json"
+    },
+    {
+      "filename": "19510805-新しき暴力.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510805-新しき暴力.txt.json"
+    },
+    {
+      "filename": "19510810-或る日の公判スケッチ.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510810-或る日の公判スケッチ.txt.json"
+    },
+    {
+      "filename": "19510815-結核の革命的療法.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510815-結核の革命的療法.txt.json"
+    },
+    {
+      "filename": "19510915-御垂示録1号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510915-御垂示録1号.txt.json"
+    },
+    {
+      "filename": "19510920-御教え集1号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19510920-御教え集1号.txt.json"
+    },
+    {
+      "filename": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511010-世界救世教教義（地上天国と自然栽培の巻）.txt.json"
+    },
+    {
+      "filename": "19511010-御垂示録2号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511010-御垂示録2号.txt.json"
+    },
+    {
+      "filename": "19511025-御教え集2号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511025-御教え集2号.txt.json"
+    },
+    {
+      "filename": "19511125-御垂示録3号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511125-御垂示録3号.txt.json"
+    },
+    {
+      "filename": "19511125-御教え集3号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511125-御教え集3号.txt.json"
+    },
+    {
+      "filename": "19511210-御垂示録4号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511210-御垂示録4号.txt.json"
+    },
+    {
+      "filename": "19511215-御教え集4号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511215-御教え集4号.txt.json"
+    },
+    {
+      "filename": "19511225-御垂示録5号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19511225-御垂示録5号.txt.json"
+    },
+    {
+      "filename": "19520000-HAKONE ART MUSEUM.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520000-HAKONE ART MUSEUM.txt.json"
+    },
+    {
+      "filename": "19520115-御教え集5号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520115-御教え集5号.txt.json"
+    },
+    {
+      "filename": "19520125-御垂示録6号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520125-御垂示録6号.txt.json"
+    },
+    {
+      "filename": "19520310-御垂示録7号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520310-御垂示録7号.txt.json"
+    },
+    {
+      "filename": "19520320-御教え集7号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520320-御教え集7号.txt.json"
+    },
+    {
+      "filename": "19520420-御教え集8号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520420-御教え集8号.txt.json"
+    },
+    {
+      "filename": "19520425-御垂示録8号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520425-御垂示録8号.txt.json"
+    },
+    {
+      "filename": "19520515-御垂示録9号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520515-御垂示録9号.txt.json"
+    },
+    {
+      "filename": "19520515-御教え集9号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520515-御教え集9号.txt.json"
+    },
+    {
+      "filename": "19520615-御垂示録10号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520615-御垂示録10号.txt.json"
+    },
+    {
+      "filename": "19520615-御教え集10号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520615-御教え集10号.txt.json"
+    },
+    {
+      "filename": "19520715-御垂示録11号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520715-御垂示録11号.txt.json"
+    },
+    {
+      "filename": "19520715-御教え集11号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520715-御教え集11号.txt.json"
+    },
+    {
+      "filename": "19520815-御教え集12号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520815-御教え集12号.txt.json"
+    },
+    {
+      "filename": "19520825-御垂示録12号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520825-御垂示録12号.txt.json"
+    },
+    {
+      "filename": "19520925-御垂示録13号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520925-御垂示録13号.txt.json"
+    },
+    {
+      "filename": "19520925-御教え集13号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19520925-御教え集13号.txt.json"
+    },
+    {
+      "filename": "19521015-御垂示録14号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521015-御垂示録14号.txt.json"
+    },
+    {
+      "filename": "19521015-御教え集14号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521015-御教え集14号.txt.json"
+    },
+    {
+      "filename": "19521115-御垂示録15号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521115-御垂示録15号.txt.json"
+    },
+    {
+      "filename": "19521115-御教え集15号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521115-御教え集15号.txt.json"
+    },
+    {
+      "filename": "19521201-結核信仰療法.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521201-結核信仰療法.txt.json"
+    },
+    {
+      "filename": "19521215-御垂示録16号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521215-御垂示録16号.txt.json"
+    },
+    {
+      "filename": "19521215-御教え集16号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19521215-御教え集16号.txt.json"
+    },
+    {
+      "filename": "19530101-アメリカを救う.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530101-アメリカを救う.txt.json"
+    },
+    {
+      "filename": "19530115-御教え集17号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530115-御教え集17号.txt.json"
+    },
+    {
+      "filename": "19530215-御垂示録17号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530215-御垂示録17号.txt.json"
+    },
+    {
+      "filename": "19530215-御教え集18号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530215-御教え集18号.txt.json"
+    },
+    {
+      "filename": "19530315-御垂示録18号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530315-御垂示録18号.txt.json"
+    },
+    {
+      "filename": "19530315-御教え集19号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530315-御教え集19号.txt.json"
+    },
+    {
+      "filename": "19530415-御垂示録19号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530415-御垂示録19号.txt.json"
+    },
+    {
+      "filename": "19530415-御教え集20号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530415-御教え集20号.txt.json"
+    },
+    {
+      "filename": "19530505-革命的増産の自然農法解説.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530505-革命的増産の自然農法解説.txt.json"
+    },
+    {
+      "filename": "19530515-御垂示録20号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530515-御垂示録20号.txt.json"
+    },
+    {
+      "filename": "19530515-御教え集21号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530515-御教え集21号.txt.json"
+    },
+    {
+      "filename": "19530600-A Story of Ukiyo-e.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530600-A Story of Ukiyo-e.txt.json"
+    },
+    {
+      "filename": "19530615-御垂示録21号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530615-御垂示録21号.txt.json"
+    },
+    {
+      "filename": "19530615-御教え集22号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530615-御教え集22号.txt.json"
+    },
+    {
+      "filename": "19530715-御垂示録22号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530715-御垂示録22号.txt.json"
+    },
+    {
+      "filename": "19530715-御教え集23号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530715-御教え集23号.txt.json"
+    },
+    {
+      "filename": "19530811-世界メシヤ教手引（海外入信者のために）.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530811-世界メシヤ教手引（海外入信者のために）.txt.json"
+    },
+    {
+      "filename": "19530815-御垂示録23号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530815-御垂示録23号.txt.json"
+    },
+    {
+      "filename": "19530815-御教え集24号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530815-御教え集24号.txt.json"
+    },
+    {
+      "filename": "19530910-世界救世教奇蹟集.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530910-世界救世教奇蹟集.txt.json"
+    },
+    {
+      "filename": "19530915-御垂示録24号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530915-御垂示録24号.txt.json"
+    },
+    {
+      "filename": "19530915-御教え集25号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19530915-御教え集25号.txt.json"
+    },
+    {
+      "filename": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531001-浄霊法講座（二）『浄霊法講座』2号.txt.json"
+    },
+    {
+      "filename": "19531015-御垂示録25号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531015-御垂示録25号.txt.json"
+    },
+    {
+      "filename": "19531015-御教え集26号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531015-御教え集26号.txt.json"
+    },
+    {
+      "filename": "19531101浄霊法講座(一)『浄霊法講座』1号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531101浄霊法講座(一)『浄霊法講座』1号.txt.json"
+    },
+    {
+      "filename": "19531115-御垂示録26号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531115-御垂示録26号.txt.json"
+    },
+    {
+      "filename": "19531115-御教え集27号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531115-御教え集27号.txt.json"
+    },
+    {
+      "filename": "19531215-御垂示録27号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531215-御垂示録27号.txt.json"
+    },
+    {
+      "filename": "19531215-御教え集28号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19531215-御教え集28号.txt.json"
+    },
+    {
+      "filename": "19540115-御教え集29号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540115-御教え集29号.txt.json"
+    },
+    {
+      "filename": "19540215-御垂示録28号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540215-御垂示録28号.txt.json"
+    },
+    {
+      "filename": "19540215-御教え集30号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540215-御教え集30号.txt.json"
+    },
+    {
+      "filename": "19540226-ハワイ教会落成式に賜った御言葉.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540226-ハワイ教会落成式に賜った御言葉.txt.json"
+    },
+    {
+      "filename": "19540315-御垂示録29号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540315-御垂示録29号.txt.json"
+    },
+    {
+      "filename": "19540315-御教え集31号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540315-御教え集31号.txt.json"
+    },
+    {
+      "filename": "19540415-御垂示録30号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540415-御垂示録30号.txt.json"
+    },
+    {
+      "filename": "19540415-御教え集32号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540415-御教え集32号.txt.json"
+    },
+    {
+      "filename": "19540515-御教え集33号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540515-御教え集33号.txt.json"
+    },
+    {
+      "filename": "19540825-天国の福音書.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19540825-天国の福音書.txt.json"
+    },
+    {
+      "filename": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19541001-浄霊法講座（三）『浄霊法講座』3号.txt.json"
+    },
+    {
+      "filename": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19541120-浄霊法講座（四）薬理批判『浄霊法講座』4号.txt.json"
+    },
+    {
+      "filename": "19541211-明主様御言葉 水晶殿御遷座.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19541211-明主様御言葉 水晶殿御遷座.txt.json"
+    },
+    {
+      "filename": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550210-浄霊法講座（五）（結核、喘息、心臓関係の症状について）『浄霊法講座』5号.txt.json"
+    },
+    {
+      "filename": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550401-浄霊法講座（六）薬毒病について『浄霊法講座』6号.txt.json"
+    },
+    {
+      "filename": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550425-浄霊法講座（七）婦人科『浄霊法講座』7号.txt.json"
+    },
+    {
+      "filename": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550501-浄霊法講座（八）胃・腸疾患  『浄霊法講座』8号.txt.json"
+    },
+    {
+      "filename": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550615-浄 霊法講座（九）（頭　部）  『浄霊法講座』9号.txt.json"
+    },
+    {
+      "filename": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt",
+      "status": "jp_first_rebuilt",
+      "spec": "19550625-浄霊法講座（十）（眼・耳・鼻・咽喉・歯科）  『浄霊法講座』10号.txt.json"
+    }
+  ]
+}

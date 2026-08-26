@@ -1,0 +1,39 @@
+{
+ "profile": "periodico_publicacao",
+ "source": "Jornais",
+ "articles": [
+  {
+   "kind": "article",
+   "title_jp": "法話（三） 浄霊術で完全に治癒",
+   "title_pt": "Palestra (3): Cura Completa com Johrei",
+   "jp_anchor": "法話（三） 浄霊術で完全に治癒\n\n薬毒による病気のなかで一番多いのは胃",
+   "pt_anchor": "Palestra (3): Cura Completa com Johrei\n\nJornais, publicado em 26 de fevereiro ",
+   "notes": "entry_id=publication-jp-1639 sort_date=26 de fevereiro de 1953"
+  },
+  {
+   "kind": "article",
+   "title_jp": "法話（一） すべてこの世は毒",
+   "title_pt": "Palestra (1): Tudo Neste Mundo É Veneno",
+   "jp_anchor": "法話（一） すべてこの世は毒\n\n五月中旬に強羅にある箱根美術館で、浮",
+   "pt_anchor": "Palestra (1): Tudo Neste Mundo É Veneno\n\nJornais, publicado em 24 de fevereiro ",
+   "notes": "entry_id=publication-jp-1637 sort_date=24 de fevereiro de 1953"
+  },
+  {
+   "kind": "article",
+   "title_jp": "法 話",
+   "title_pt": "Palestra",
+   "jp_anchor": "法 話\n\n私は宗教の根底に必ず美術の存在を忘れ",
+   "pt_anchor": "Palestra\n\nJornais, publicado em 24 de fevereiro ",
+   "notes": "entry_id=publication-jp-1795 sort_date=24 de fevereiro de 1953"
+  },
+  {
+   "kind": "article",
+   "title_jp": "法話（二） 毒素は頭脳に集中",
+   "title_pt": "Palestra (2): As Toxinas Concentram-se no Cérebro",
+   "jp_anchor": "法話（二） 毒素は頭脳に集中\n\n薬毒の溜る場所は必ず神経を使うところ",
+   "pt_anchor": "Palestra (2): As Toxinas Concentram-se no Cérebro\n\nJornais, publicado em 25 de fevereiro ",
+   "notes": "entry_id=publication-jp-1638 sort_date=25 de fevereiro de 1953"
+  }
+ ],
+ "filename": "Jornais.txt"
+}

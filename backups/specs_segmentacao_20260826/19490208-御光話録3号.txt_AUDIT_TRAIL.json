@@ -1,0 +1,82 @@
+{
+  "filename": "19490208-御光話録3号.txt",
+  "method": "linha_a_linha_jp_fonte_verdade",
+  "reviewer": "agente (delegação autorizada 2026-07-03, revisao-paralela-jp-pt.mdc) — Fase E",
+  "review_date": "2026-07-09",
+  "scope": "Revisão completa do volume inteiro (JP 471 linhas / PT 372→382 linhas após correções), do título/metadados à nota editorial final (編輯後記). JP inteiro lido linha a linha (leitura sequencial completa do ficheiro de trabalho, todas as 471 linhas) e confrontado com o PT correspondente na mesma ordem, turno a turno (Interlocutor/Meishu-Sama). Atenção redobrada dada, conforme instrução, à secção de 12 itens numerados sobre amor sexual/romântico e à região tabaco/tengu/kappa/cultivo sem fertilizante, ambas historicamente problemáticas neste volume ou na versão de produção.",
+  "gate_mecanico": "PASS antes de qualquer correção (I=87/87 Δ=0 CJK=0) — mas ver achado crítico abaixo: esse PASS inicial escondia um erro real de estrutura mascarado por um excesso de subdivisão compensador em outro ponto do arquivo (padrão já catalogado em gokowa-gate-enforcement.mdc, achado #3). Após as 6 correções reais aplicadas (que se cancelam mutuamente em contagem líquida), gate final também PASS: I=87/87 Δ=0 CJK=0 — desta vez um PASS genuíno, confirmado por leitura completa, não por coincidência de contagem.",
+  "summary": {
+    "articles_in_spec": 4,
+    "turnos_jp_interlocutor_dash": 87,
+    "real_corrections_applied": 6,
+    "items_escalated_to_pendencias": 0,
+    "secao_12_itens_amor_sexual_romantico": "CONFIRMADA CORRETA — os 12 itens (1)-(12) estão todos presentes, na ordem certa, sem item faltando, duplicado ou trocado de posição. Confirmado por correspondência direta de cada item numerado JP↔PT (item a item, ver checklist_por_bloco). O único problema real encontrado nesta secção foi semântico, não estrutural (achado 1 abaixo).",
+    "regiao_tabaco_tengu_kappa_cultivo_sem_fertilizante": "Ficheiro de TRABALHO confirmado LIMPO do defeito catalogado em 2026-07-03 no ficheiro de PRODUÇÃO (frase cortada a meio 'cavam um buraco grande para' / 'passa bem. O nariz e a cabeça...' sem conexão, e bloco de perguntas quase duplicado). Nenhuma frase cortada, nenhuma duplicação de bloco encontrada nesta região do ficheiro de trabalho. Porém, um problema diferente e não catalogado antes foi encontrado exatamente nesta região: cláusula migrada na pergunta sobre cultivo sem fertilizante (achado 2 abaixo)."
+  },
+  "achado_critico_mascaramento_de_contagem": {
+    "descricao": "Antes de qualquer correção, o gate mecânico já mostrava Δ=0 (I=87/87). A leitura linha a linha revelou que esse Δ=0 era coincidência de dois erros que se cancelavam: (a) a pergunta 'Sobre o amor sexual e o amor romântico' + item (1) estava indevidamente dividida em DOIS turnos de Interlocutor no PT, quando o JP tem apenas UM '――' cobrindo o cabeçalho da secção e o item (1) juntos (excesso de subdivisão, +1 turno); (b) a resposta curta do Interlocutor 'Antes, tomei Gennoshoko' (que no JP tem seu próprio '――' na linha 377) estava fundida dentro do turno de Meishu-Sama usando um travessão em vez de um rótulo 'Interlocutor:' próprio (perda de um turno, -1). O saldo líquido era zero, produzindo Δ=0 falso-negativo — exatamente o padrão #3 catalogado em gokowa-gate-enforcement.mdc ('perda real de conteúdo/estrutura mascarada por divisão espúria em outro ponto do mesmo arquivo'). Ambos os erros foram corrigidos nesta sessão (achados 5 e 3 abaixo); o Δ=0 final foi reconfirmado depois das duas correções, desta vez genuíno.",
+    "confianca": "alta — confirmado por contagem exata de '――' no JP (87) vs 'Interlocutor:' no PT antes/depois de cada correção isolada."
+  },
+  "correcoes_reais_aplicadas": [
+    {
+      "n": 1,
+      "localizacao": "Item (6) da secção de amor sexual/romântico (pergunta sobre casamento com mulher com deficiência não revelada)",
+      "problema": "GRAVE — erro semântico sistemático: JP '不具の女' (mulher com deficiência/incapacidade física — termo genérico, não relacionado a fertilidade) foi traduzido como 'mulher estéril' (infertilidade) nas 2 ocorrências deste item (pergunta e resposta). Confirmado como erro por comparação interna: a mesma palavra JP '不具' aparece de novo mais adiante no mesmo arquivo (secção sobre compaixão, '軍国主義のため強制されて不具になった人') e ali FOI corretamente traduzida como 'pessoas... se tornarem deficientes' — provando que o erro do item (6) é uma tradução inconsistente e incorreta do mesmo termo, não uma escolha estilística. Muda o sentido da pergunta/resposta sobre divórcio de 'incapacidade física não revelada' para 'infertilidade não revelada', um tópico distinto.",
+      "correcao": "'mulher é estéril' → 'mulher tem uma deficiência' e 'sabia que ela era estéril' → 'sabia que ela tinha uma deficiência', nas duas ocorrências (pergunta e resposta) do item (6).",
+      "confianca": "alta"
+    },
+    {
+      "n": 2,
+      "localizacao": "Pergunta sobre cultivo sem fertilizante ('平野の中の田畑では草木の葉が手に入り難い... また不要になる人糞はどう処理すべきでしょうか')",
+      "problema": "GRAVE — cláusula migrada: a segunda metade da pergunta do Interlocutor no JP ('また不要になる人糞はどう処理すべきでしょうか' — 'e como devemos tratar os dejetos humanos que se tornam desnecessários?') aparecia deslocada para dentro do turno de resposta de Meishu-Sama no PT, reformulada como pergunta retórica ('Além disso, como devemos tratar os dejetos humanos...?') no início da resposta, em vez de permanecer no turno do Interlocutor. Padrão exatamente catalogado em revisao-paralela-jp-pt.mdc/gokowa-gate-enforcement.mdc (cauda de pergunta longa migrada para o turno de Meishu-Sama).",
+      "correcao": "Cláusula 'Além disso, como devemos fazer com os dejetos humanos...' movida de volta para o final do turno do Interlocutor; turno de Meishu-Sama passou a começar diretamente pela resposta real ('Mesmo que seja um pouco longe, vão às montanhas...').",
+      "confianca": "alta"
+    },
+    {
+      "n": 3,
+      "localizacao": "Pergunta sobre o menino afogado e o fantasma que atormenta a mãe (região próxima a tabaco/tengu/kappa, um pouco mais adiante)",
+      "problema": "GRAVE — dois problemas na mesma passagem: (a) cláusula migrada — a segunda parte da pergunta do Interlocutor ('また亡霊はいかがいたすべきでしょうか' — 'e o que devemos fazer quanto ao fantasma?') aparecia deslocada para o início da resposta de Meishu-Sama ('E o que devemos fazer com o fantasma?'), mesmo padrão do achado 2; (b) turno de Interlocutor fundido sem rótulo — a resposta curta do Interlocutor no JP ('以前「ゲンノショウコ」を飲みました' — que tem seu próprio '――' no JP, linha 377) estava fundida dentro do parágrafo de Meishu-Sama usando um travessão em vez de aparecer como turno próprio de Interlocutor, mascarando uma troca real de falante.",
+      "correcao": "Cláusula do fantasma devolvida ao turno do Interlocutor original; parágrafo dividido em 4 turnos (Interlocutor pergunta completa → Meishu-Sama primeira parte da resposta → Interlocutor 'Antes, tomei Gennoshoko' como turno próprio → Meishu-Sama conclusão), replicando a estrutura de 4 turnos do JP.",
+      "confianca": "alta"
+    },
+    {
+      "n": 4,
+      "localizacao": "Terminologia — Kōmyō Nyorai / Komyo-Nyorai (3 ocorrências)",
+      "problema": "Inconsistência terminológica: glossario_traducao.json define '光明如来' → 'Komyo-Nyorai' (sem mácron, com hífen), forma usada corretamente em 2 ocorrências deste arquivo, mas outras 3 ocorrências (secção sobre Fudō/tokonoma, x2, e secção sobre casas em frente a santuários, x1) usavam 'Kōmyō Nyorai' (com mácron, sem hífen) — grafia divergente dentro do mesmo documento.",
+      "correcao": "As 3 ocorrências de 'Kōmyō Nyorai' padronizadas para 'Komyo-Nyorai', igual ao glossário e ao resto do arquivo.",
+      "confianca": "alta"
+    },
+    {
+      "n": 5,
+      "localizacao": "Cabeçalho de amor sexual/romântico + item (1) (início da secção dos 12 itens)",
+      "problema": "Sobre-subdivisão estrutural: JP tem um único '――性愛と恋愛について、（一）性教育は...' (cabeçalho da secção e item 1 sob o mesmo e único marcador de turno), mas o PT apresentava isso como DOIS turnos de Interlocutor separados ('Sobre o amor sexual e o amor romântico:' isolado, depois '(1) Acho que a educação sexual...' em turno próprio). Esta divisão extra foi a causa raiz do mascaramento de contagem descrito acima (achado crítico).",
+      "correcao": "Os dois turnos fundidos de volta em um único turno de Interlocutor, replicando a estrutura JP: 'Sobre o amor sexual e o amor romântico: (1) Acho que a educação sexual deveria ser mais completa para os filhos. O que o senhor acha?'",
+      "confianca": "alta"
+    },
+    {
+      "n": 6,
+      "localizacao": "Nota editorial final (編輯後記 / Nota da Redação)",
+      "problema": "Paragrafação colapsada: a nota editorial final do JP (cabeçalho 編輯後記, 3 itens numerados '一、' cada um em linha própria, mais a data de reimpressão 昭和二十四年四月九日) estava fundida na mesma linha/parágrafo da última resposta de Meishu-Sama, sem quebra de parágrafo, sem cabeçalho próprio destacado e sem separação entre os 3 itens (tudo em texto corrido). Viola o ponto 6 do checklist (paragrafação 1:1) e o ponto 7 (títulos/cabeçalhos).",
+      "correcao": "Nota editorial separada em bloco próprio: cabeçalho 'Nota da Redação' isolado, os 3 itens numerados '1.'/'2.'/'3.' cada um em linha própria, e a data '9 de abril de 1949' isolada no final — replicando a estrutura de parágrafo do JP.",
+      "confianca": "alta"
+    }
+  ],
+  "checklist_por_bloco": [
+    {"bloco": "Título/metadados + prefácio (data de publicação/reimpressão)", "jp_linhas": "1-22", "decisao": "ok — sem alteração; título_jp/título_pt e datas de publicação (8/fev/1949, reimpressão 9/abr/1949) corretos e consistentes com o cabeçalho do ficheiro", "confianca": "alta"},
+    {"bloco": "Sessão 8 de janeiro de 1949 (sábado) — perguntas gerais (modo de perguntar, fotos, oferendas, Mêncio/Xunzi, nomes)", "jp_linhas": "24-51", "decisao": "ok — conteúdo, ordem e datas (dia da semana conferido contra calendário real) corretos", "confianca": "alta"},
+    {"bloco": "Secção de 12 itens sobre amor sexual/romântico", "jp_linhas": "53-131", "decisao": "CONFIRMADO estruturalmente correto — 12 itens presentes, em ordem, sem falta/duplicação/troca de posição (reconfirmação direta pedida na instrução). Corrigidos: erro semântico item 6 (correção 1), sobre-subdivisão cabeçalho+item1 (correção 5)", "confianca": "alta"},
+    {"bloco": "Perguntas gerais restantes da sessão de 8/jan (mundo do dia, provações, north-pillow, Fudō/Komyo-Nyorai)", "jp_linhas": "134-152", "decisao": "ok após correção 4 (Komyo-Nyorai)", "confianca": "alta"},
+    {"bloco": "Sessão 18 de janeiro (terça) — bandeira, oração, Risshun, primeiro sonho, doenças de primavera, saburra, urticária, omamori, posição mortuária, tatames, fusuma, casas/santuários/cemitérios, Amida/Kannon, Tríade de Amida", "jp_linhas": "155-241", "decisao": "ok — conteúdo completo, ordem correta; correção 4 aplicada onde Komyo-Nyorai reaparece", "confianca": "alta"},
+    {"bloco": "Neve/relâmpagos e boa colheita; chá/tabaco/tengu/dragões; fumar; Yoshitsune/tengu de Kurama; natação/kappa; cultivo sem fertilizante", "jp_linhas": "243-278", "decisao": "região de atenção redobrada conforme instrução — CONFIRMADO limpo do defeito de produção (frase cortada / bloco duplicado); corrigida cláusula migrada na pergunta do cultivo sem fertilizante (correção 2)", "confianca": "alta"},
+    {"bloco": "Henjō nanshi/nyoshi, espírito secundário, cicatrizes entre sobrancelhas", "jp_linhas": "276-291", "decisao": "ok — sem alteração", "confianca": "alta"},
+    {"bloco": "Sessão 28 de janeiro (sexta) — compatibilidade de casamento, casamento xintoísta, nomes divinos, idade/ano de sorte, anos de calamidade, casamento com mulher mais velha, entrega a Deus, Igreja Miroku/Kannon", "jp_linhas": "293-341", "decisao": "ok — terminologia '五六七'→'Miroku' consistente com glossário (glossario_traducao.json: 五六七→Miroku) em toda a secção", "confianca": "alta"},
+    {"bloco": "Oração em voz alta, altar doméstico, foto do Grão-Mestre, ordem de saudação, casos clínicos (peritonite, câncer de bochecha, fantasma do afogado/Gennoshoko)", "jp_linhas": "343-379", "decisao": "corrigido — pergunta+turno fundidos no caso do fantasma/Gennoshoko (correção 3)", "confianca": "alta"},
+    {"bloco": "Calvície (5 itens), ranger de dentes, mancha azul do bebê, mudança de religião, Nichiren/Yamamuro Gunpei, linhagem espiritual masculina/feminina, legítima defesa, incêndio do Hōryū-ji/Nihon-ji, arte budista, compaixão, oferenda, citação bíblica (Mateus), pergunta sobre falso Cristo, nota editorial final", "jp_linhas": "382-471", "decisao": "ok após correção 6 (Nota da Redação separada em parágrafo próprio); citação bíblica conferida como tradução fiel do texto clássico japonês (文語訳) do Novo Testamento", "confianca": "alta"}
+  ],
+  "pendencias_abertas": [],
+  "observacao_nao_bloqueante": "O spec (19490208-御光話録3号.txt.json) mantém o campo title_pt do artigo kind='preface' como '序文' (não traduzido, seria 'Prefácio'). É um detalhe cosmético do spec, não do corpo do texto (que não expõe esse cabeçalho ao leitor); não foi alterado nesta sessão para não mexer na estrutura do spec fora do escopo desta revisão de conteúdo JP/PT. Registado para eventual refinamento futuro, sem impedir a aprovação deste volume.",
+  "aprovacao": {
+    "approved": true,
+    "condicao": "Todo o volume (87 turnos de Interlocutor, JP fonte de verdade) revisto linha a linha contra o PT. Confirmada estruturalmente correta a secção de 12 itens sobre amor sexual/romântico (nenhum item faltando, duplicado ou fora de ordem). Confirmado que a região tabaco/tengu/kappa/cultivo sem fertilizante do ficheiro de TRABALHO está livre do defeito catalogado em 2026-07-03 no ficheiro de PRODUÇÃO. Corrigidos: erro semântico 不具→'estéril' (deveria ser 'deficiência'), duas ocorrências de cláusula de pergunta migrada para o turno de Meishu-Sama, um turno de Interlocutor fundido sem rótulo próprio, inconsistência de romanização Komyo-Nyorai/Kōmyō Nyorai, sobre-subdivisão de um turno (causa raiz de um Δ=0 mascarado antes da correção), e paragrafação colapsada da nota editorial final. Gate mecânico final: PASS (I=87/87 Δ=0 CJK=0), desta vez genuíno (não mascarado). Nenhuma pendência aberta em PENDENCIAS_REVISAO.json referente a este livro."
+  }
+}
