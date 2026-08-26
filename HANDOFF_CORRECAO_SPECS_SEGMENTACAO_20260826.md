@@ -53,9 +53,31 @@ vezes anteriormente").
 - **Estratégia de ancoragem**: o conteúdo PT preserva o paralelismo 1:1 por **turnos de Interlocutor** (478 = 478). Cada sessão foi mapeada para o Interlocutor de início (via posição da data no JP → índice do Interlocutor → mesmo índice no PT). As âncoras das 33 sessões sem data foram repontadas para o **texto do Interlocutor de início** (primeiras ~100 chars).
 - **Resultado**: PT segmenta 36/36, JP segmenta 36/36. Nenhum chunk vazio.
 
-## Estado ATUAL (26/08, fim da sessão 2)
-- **PT: 118 segmentam** (era 107 no fim da sessão 1). **Falham 19** (14 são `spec_poucos_artigos` = esperado).
-- **JP: 109 segmentam**, falham 28 (14 `spec_poucos_artigos`).
+## Estado ATUAL (26/08, fim da sessão 3)
+- **PT: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
+- **JP: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
+- Nenhuma quebra real restante em PT ou JP.
+
+## Opção D (RESTAURAÇÃO RÓTULOS JAPONESES) — COMPLETA
+Ver `HANDOFF_OPCAO_D_RESTAURACAO_JP_20260826.md`. JP restaurado para o formato
+original japonês (お伺/御垂示, 「」, ――); build adaptado (`_turn_class`).
+
+## Opção C (AGRUPAÇÃO POR SEÇÃO TEMÁTICA) — EM ANDAMENTO
+### ✅ Salmos (FEITO)
+- Reestruturado de 309 poemas individuais → **41 artigos** (1 prefácio + 40 seções
+  temáticas). PT e JP **41/41** segmentam, pareamento mantido.
+- Seções < 3200 chars (máx ~1221) — nenhuma subdivisão necessária.
+- Técnica: detectar títulos de seção no corpo (parágrafo não-numerado seguido de
+  poema `N.`), usar como âncoras. Backup `bak_pre_opcaoC_20260826`.
+
+### ⏳ Akemaro (PENDENTE)
+- Corpo PT tem **49 seções temáticas** (não 33 como estimado).
+- Corpo JP tem ~49 seções alinhadas (com marcadores `○` a limpar).
+- Reestruturar de 487 poemas → ~50 artigos (seções), PT+JP.
+
+### ⏳ Montanha e Água (PENDENTE)
+- Corpo PT tem ~40 seções temáticas por TEMA (A Primavera Passou, Sol e Lua...).
+- Atualmente 222 `session` por data → reestruturar por tema.
 
 ### Corrigidos nesta sessão (26 arquivos PT):
 Mioshie nº 11, 6, 2, 20, 26, 32, 33 | Fonte do Riso | Jikan Vol 4, 7 |
