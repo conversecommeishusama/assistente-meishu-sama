@@ -109,6 +109,50 @@ referência do Zenshū/Rokkan estão em
     aberta), classe de reversões silenciosas de 11/08 (investigar), revisão
     final do lote completo.
 
+## 6. MARCO 2026-08-26/27 — CORPUS REVISADO EM PRODUÇÃO + PRONTIDÃO PARA ESCALADA
+
+### 6.1 Fase 0 concluída (corpus revisado no ar)
+- **Índices novos instalados** (`experiments/uploaded_indexes/`, 27/08 00:29):
+  **PT 5.820 / JP 4.009** (modelo e5-large). Antes: PT 6.466 / JP 4.076 (14/08).
+- **Corpus revisado promovido**: 137 obras (83 orais retraduzidos + 54 escritas
+  revistas literariamente). Segmentação **123/123 PT e JP** (14 = spec_poucos_artigos,
+  esperado).
+- **Serviço reiniciado** (27/08 00:58, autorizado) → app serve o corpus novo.
+- **Validação subjetiva do usuário: "excelente"** (27/08).
+- **Teste de respostas no app** (27/08): 20/20 OK, 0 erros, tempos 15-39s
+  (`reports/respostas_app_corpus_atual.json`, `reports/RESPOSTAS_APP_CORPUS_ATUAL.md`).
+- Opção C (poemas por seção temática: Salmos 41, Akemaro 51, Montanha e Água 246)
+  e Opção D (rótulos JP originais お伺/御垂示/――/「」) concluídas.
+
+### 6.2 Correções de código (27/08, commit `025afbf`)
+- **Bug real corrigido** em `scripts/translation_protocol_core.py`: padrão genérico
+  de falante `palavra:` quebrava ~1.265 pontos indevidos no Eiko. Substituído por
+  lista explícita `PT_NAMED_SPEAKERS` (falantes reais de entrevistas).
+- **Preferência por republicação mais recente** (`teaching_article_service.py`):
+  quando título exato existe em arquivos distintos, escolhe a versão mais recente
+  (decisão do usuário 26/08 — republicação com ajustes). Ex.: "Caminho do Casal" →
+  Evangelho 1954 (não Conversas 1948).
+- **Testes**: test_layout 13/13, test_teaching 5/5, test_work_search 4/4, +46 sem
+  regressão.
+
+### 6.3 Limpeza de disco (27/08) — 83% → 59%
+- **~46 GB liberados**. Backups diários antigos (54 GB) migrados ao Google Drive.
+- Google Drive: `gdrivebackup:goshinsho-backup-2026` (rclone, ~1.78 TiB livres).
+- Projeto antigo (`goshinsho_backup_antigo`) em migração. Detalhes em
+  `HANDOFF_LIMPEZA_DISCO_20260827.md`.
+
+### 6.4 PRONTIDÃO PARA ESCALADA CONTROLADA (avaliação 27/08)
+- **Nota do aplicativo: 8,0/10.** Pronto para escalada com 3 condições:
+  1. ✅ Disco liberado (83% → 59%)
+  2. ⏳ Fórum/Leitura validado pelos colaboradores (decisão do usuário)
+  3. ⏳ Definir métricas de custo por usuário (DeepSeek) antes de divulgar
+- **Base atual: ~60 usuários** (crescimento orgânico). Teste de carga anterior do
+  Claude (6 perguntas simultâneas contra produção, 4 workers): 6/6 sem erro.
+  Produção hoje: **6 workers gunicorn**, `--preload`, timeout 180.
+- **Recomendação**: escalada piloto com 10-20 usuários adicionais para medir
+  custo/latência real (tempos atuais 15-39s por pergunta), enquanto o Fórum
+  termina de ser ajustado.
+
 ## 7. VERIFICAÇÕES DE INTEGRIDADE (2026-08-12)
 
 ### OCR do japonês (verificação #2)

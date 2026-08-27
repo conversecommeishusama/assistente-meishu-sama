@@ -21,79 +21,9 @@ vezes anteriormente").
   - `/tmp/inspecionar_ancoras.py <arq> --todas` → mostra âncoras quebradas.
   - `/tmp/comparar_todas.py <arq>` → mostra TODAS as divergências de um arquivo de uma vez.
 
-## Estado ATUAL (26/08, fim da sessão 2)
-- **PT: 117 segmentam** (era 107 no fim da sessão 1). **Falham 20** (14 são `spec_poucos_artigos` = esperado).
+## Estado ATUAL (26/08, fim da sessão)
+- **PT: 107 segmentam** (era 83 no início). **Falham 30** (14 são `spec_poucos_artigos` = esperado).
 - **JP: 109 segmentam**, falham 28 (14 `spec_poucos_artigos`).
-
-### Corrigidos na SESSÃO 2 (11 arquivos PT, +10 na contagem):
-| Arquivo | Quebradas | Observações |
-|---|---|---|
-| Luz dos Ensinamentos | 5 | `trechos` vs `partes`; `deles`; em-dash `—`; `São 11 divindades...` |
-| Tijotengoku | 5 | separador `―――――――・―――――――` entre título e cabeçalho (3x); título `Fragmentos Médicos (10)` RESTAURADO no texto PT (tinha sumido na retradução, fundido ao fim do art. 9) |
-| Terapia Rev. Tuberculose | 6 | `o pneumotórax, considerado hoje o método`; `ter-me filiado... juntamente`; aspas curvas `*“Quando olho...` |
-| Johrei nº 6 | 6 | `1. Cabeça\n1. Insônia` (sem `\n\n`); `prisão de ventre`; `(a criança tem os mesmos sintomas)`; `(nº 39, p. 11)` |
-| Jikan Vol 1 | 7 | `tratado por inteiro`; `Como se disse`; `entrarei, enfim`; **Conclusão** (título novo) |
-| Jikan Vol 5 | 7 | reescritas de prosa |
-| Johrei nº 3 | 11 | aspas curvas `“”` (muitas); `19. Método para Localizar os Pontos Vitais`; `20. Quando Não Se Encontra` (Se maiúsculo) |
-| Jikan Vol 9 | 14 | reescritas; **overlap de âncoras** (idx 14 e 15 idênticas) → repontado: idx 14 = `A Religião Tenri`, idx 15 = `Açoitar os Mortos` |
-| Jikan Vol 3 | 15 | títulos de seção AUSENTES das âncoras (ex.: `A Existência do Mundo Espiritual`, `Vários Aspectos Após a Morte`, `Espíritos Possessores Grotescos`, etc.); `Paraíso e Inferno` (sem "O") |
-| Jikan Vol 12 | 22 | reescritas + blocos `(Publicado na edição nº...)` / `(Texto acrescido...)` entre título e corpo → âncoras montadas a partir do corpo real |
-| **Suplemento (Gokōwa-roku)** | 34 | ✅ RESOLVIDO na sessão 2 (ver seção dedicada abaixo) |
-
-### Backups criados na sessão 2:
-- 12 specs: `*.txt.json.bak_manual_20260826`
-- Texto Tijotengoku: `textos_portugues/Tijotengoku.txt.bak_manual_20260826` (antes de restaurar o título)
-- Texto Suplemento: `textos_portugues/19480101 - Gokōwa-roku (Suplemento).txt.bak_manual_20260826` (antes de inserir a sessão 08/18)
-
-## ✅ SUPLEMENTO (Gokōwa-roku) — RESOLVIDO (34 quebradas)
-- As 34 âncoras eram **datas** (`18 de janeiro do ano 23 da Era Showa (1948) (quarta-feira)`).
-- No corpo PT **as datas foram REMOVIDAS na retradução em massa** — só restava `1º de janeiro` (idx 1) de 46 datas do backup de 06/07.
-- **Diagnóstico**: o backup `reports/livros_trabalho/gokowa.bak_20260706T002000Z/pt/19480101-御光話録（補）.txt` tem as datas; o texto atual não.
-- **Sessão 08/18 AUSENTE do PT** (cerimônia provisória do Sōun-ryō, 2831 chars no JP): traduzida do JP (Opção 2) e inserida no texto PT entre o fim do 08/08 e o início do 08/28. Formato: `**18 de agosto... Cerimônia Provisória de Fundação do Novo Dojô Sōun-ryō**`.
-- **Estratégia de ancoragem**: o conteúdo PT preserva o paralelismo 1:1 por **turnos de Interlocutor** (478 = 478). Cada sessão foi mapeada para o Interlocutor de início (via posição da data no JP → índice do Interlocutor → mesmo índice no PT). As âncoras das 33 sessões sem data foram repontadas para o **texto do Interlocutor de início** (primeiras ~100 chars).
-- **Resultado**: PT segmenta 36/36, JP segmenta 36/36. Nenhum chunk vazio.
-
-## Estado ATUAL (26/08, fim da sessão 3)
-- **PT: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
-- **JP: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
-- Nenhuma quebra real restante em PT ou JP.
-
-## Opção D (RESTAURAÇÃO RÓTULOS JAPONESES) — COMPLETA
-Ver `HANDOFF_OPCAO_D_RESTAURACAO_JP_20260826.md`. JP restaurado para o formato
-original japonês (お伺/御垂示, 「」, ――); build adaptado (`_turn_class`).
-
-## Opção C (AGRUPAÇÃO POR SEÇÃO TEMÁTICA) — EM ANDAMENTO
-### ✅ Salmos (FEITO)
-- Reestruturado de 309 poemas individuais → **41 artigos** (1 prefácio + 40 seções
-  temáticas). PT e JP **41/41** segmentam, pareamento mantido.
-- Seções < 3200 chars (máx ~1221) — nenhuma subdivisão necessária.
-- Técnica: detectar títulos de seção no corpo (parágrafo não-numerado seguido de
-  poema `N.`), usar como âncoras. Backup `bak_pre_opcaoC_20260826`.
-
-### ✅ Akemaro (FEITO)
-- Reestruturado de 486 poemas → **51 artigos** (1 prefácio + 50 seções temáticas).
-- 49 seções temáticas alinhadas PT↔JP por faixa de poemas (perfeito).
-- Seção 'Vila Tamagawa' (>3200 chars) subdividida em 2 partes.
-- PT e JP **51/51** segmentam, pareamento mantido.
-
-### ✅ Montanha e Água (FEITO)
-- Reestruturado de 224 sessões (por data) → **246 artigos** (245 seções temáticas).
-- JP como referência (247 títulos); seção "Luz" do PT subdividida (Luz + 乾坤山).
-- Seção 'Crônica de Viagem a Awa' (>3200 chars) subdividida em 2 partes.
-- PT e JP **246/246** segmentam, pareamento mantido.
-
-## ✅ OPÇÃO C COMPLETA (3 poemas)
-| Livro | Artigos | PT | JP |
-|---|---|---|---|
-| Salmos | 41 | 41/41 | 41/41 |
-| Akemaro | 51 | 51/51 | 51/51 |
-| Montanha e Água | 246 | 246/246 | 246/246 |
-
-## Estado FINAL (26/08, fim da sessão 3)
-- **PT: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
-- **JP: 123 segmentam / 14 falham** (14 = spec_poucos_artigos, esperado).
-- **Nenhuma quebra real restante em PT ou JP.**
-- Próximo passo: rebuild final `build_clean_large_indexes.py --lang both`.
 
 ### Corrigidos nesta sessão (26 arquivos PT):
 Mioshie nº 11, 6, 2, 20, 26, 32, 33 | Fonte do Riso | Jikan Vol 4, 7 |
@@ -112,25 +42,23 @@ Aplicação da Nossa Terapia` + RECRIAÇÃO do #20 `Fatos Espantosos` a partir d
 ### 1. Continuar triviais/moderados PT (16 corrigíveis restantes)
 | Arquivo | Quebradas |
 |---|---|
-| Luz dos Ensinamentos | 5 | ✅ FEITO na sessão 2 |
-| Tijotengoku | 5 | ✅ FEITO na sessão 2 |
-| Terapia Revolucionária da Tuberculose | 6 | ✅ FEITO na sessão 2 |
-| Johrei nº 6 | 6 | ✅ FEITO na sessão 2 |
-| Jikan Vol 1 | 7 | ✅ FEITO na sessão 2 |
-| Jikan Vol 5 | 7 | ✅ FEITO na sessão 2 |
-| Johrei nº 3 | 11 | ✅ FEITO na sessão 2 |
-| Jikan Vol 9 | 14 | ✅ FEITO na sessão 2 |
-| Jikan Vol 3 | 15 | ✅ FEITO na sessão 2 |
-| Jikan Vol 12 | 22 | ✅ FEITO na sessão 2 |
-| Suplemento | 34 | ✅ FEITO na sessão 2 (com tradução do 08/18) |
+| Luz dos Ensinamentos | 5 |
+| Tijotengoku | 5 |
+| Terapia Revolucionária da Tuberculose | 6 |
+| Johrei nº 6 | 6 |
+| Jikan Vol 1 | 7 |
+| Jikan Vol 5 | 7 |
+| Johrei nº 3 | 11 |
+| Jikan Vol 9 | 14 |
+| Jikan Vol 3 | 15 |
+| Jikan Vol 12 | 22 |
+| Suplemento | 34 |
 
 ### 2. Orais com datas colapsadas (decisão A: ajustar datas e ancorar no conteúdo)
 - **Gosuiji-roku nº 3**: PT só tem `[1º de outubro]`; JP tem 3 datas
   (`［十月一日/五日/八日］`). Datas 5 e 8 sumiram na retradução → ancorar no conteúdo
   (mapeando JP→PT onde cada dia começa).
 - **Gosuiji-roku nº 5**: PT só tem `[1 de dezembro]`; JP tem mais datas.
-- Dica: mesma técnica usada no Suplemento — alinhar por turnos de Interlocutor
-  (contagens iguais entre JP e PT), mapear data JP → índice do turno → texto PT.
 
 ### 3. Poemas (Opção C: agrupar por seção temática)
 - **Salmos** (136 quebradas, 310 arts): 31 seções temáticas.
