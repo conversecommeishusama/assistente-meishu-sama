@@ -17,15 +17,41 @@
 | Produto (auth/pagamento) | 8/10 | Supabase + Stripe + Sentry configurados |
 | Comunidade (Fórum/Leitura) | 6/10 | Em teste com colaboradores, ainda não promovido |
 
-## 2. EVIDÊNCIAS DE CAPACIDADE (teste de carga)
+## 2. EVIDÊNCIAS DE CAPACIDADE (teste de carga do Claude)
 
-- **Teste de carga anterior (Claude, em HISTORICO.md ~linha 8162)**: 6 perguntas
-  simultâneas contra produção com **4 workers**: **6/6 sem erro**, 36-92s cada,
-  fila degradou bem (sem timeout/500/503) — pool aguenta pico moderado.
-- **Produção atual**: **6 workers gunicorn** (`--preload`, timeout 180, porta 8000).
+### 2.1 Teste de carga real (antes do soft launch — HISTORICO.md, seção "teste de carga confirmados")
+- **Executado pelo Claude** contra produção, quando o app rodava com **4 workers**
+  gunicorn (`--workers 4 --timeout 180`, confirmado via `systemctl cat`).
+- **Método**: **6 perguntas simultâneas** (acima dos 4 workers — propositalmente,
+  para forçar fila).
+- **Resultado**: **6/6 sem erro**; tempos 36-92s cada; **fila degradou bem** — sem
+  timeout/500/503. Confirmou que o pool de workers aguenta um pico moderado de
+  concorrência sem quebrar.
+- **Decisão tomada após o teste**: subir o gunicorn de **4 para 6 workers**
+  (servidor tem 6 núcleos e RAM de sobra; `--preload` compartilha os modelos via
+  copy-on-write). Registrado em HISTORICO.md ~linha 8343: "o teste de carga de
+  mais cedo, com só 4 workers, já mostrava fila real acima de 4 simultâneas".
+- **Conclusão do teste**: a fila (não erro) é o comportamento esperado acima do
+  nº de workers; o app degrada graciosamente. Com 6 workers, a capacidade subiu
+  50% em relação ao teste.
+
+### 2.2 Estado atual (27/08)
+- **Produção**: **6 workers gunicorn** (`--preload`, timeout 180, porta 8000).
 - **Teste de respostas no corpus novo** (27/08): 20/20 OK, 0 erros, tempos 15-39s
   por pergunta (`reports/respostas_app_corpus_atual.json`).
 - **Servidor**: 6 núcleos, 11 GB RAM (2,7 GB usados pelo app), disco 59% (80 GB livres).
+- **Base**: ~60 usuários ativos (crescimento orgânico).
+
+### 2.3 Implicação para escalada
+- Com **6 workers** e tempos reais de **15-39s/pergunta** (a maioria ~20-30s), o
+  sistema aguenta **~6 perguntas simultâneas** sem fila, e mais que isso com fila
+  graciosa (sem erro).
+- Para **~60 usuários ativos**, se nem todos perguntam ao mesmo tempo, a folga é
+  confortável. Um pico de 10-20 usuários simultâneos geraria fila (não erro),
+  com aumento de latência — aceitável, mas **monitorar**.
+- **Recomendação**: o próximo marco de escalada deve incluir um **novo teste de
+  carga com 6 workers** (ex.: 10-12 simultâneas) para validar a capacidade real
+  antes de crescimento maior.
 
 ## 3. CONDIÇÕES PARA ESCALAR (checklist)
 

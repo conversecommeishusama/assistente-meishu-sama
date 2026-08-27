@@ -146,12 +146,15 @@ referência do Zenshū/Rokkan estão em
   1. ✅ Disco liberado (83% → 59%)
   2. ⏳ Fórum/Leitura validado pelos colaboradores (decisão do usuário)
   3. ⏳ Definir métricas de custo por usuário (DeepSeek) antes de divulgar
-- **Base atual: ~60 usuários** (crescimento orgânico). Teste de carga anterior do
-  Claude (6 perguntas simultâneas contra produção, 4 workers): 6/6 sem erro.
-  Produção hoje: **6 workers gunicorn**, `--preload`, timeout 180.
+- **Base atual: ~60 usuários** (crescimento orgânico). **Teste de carga do Claude**
+  (HISTORICO.md, seção "teste de carga confirmados"): **6 perguntas simultâneas**
+  contra produção com 4 workers → **6/6 sem erro**, fila degradou bem (sem
+  timeout/500/503). Após o teste, subiu de 4 para **6 workers**. Produção hoje:
+  **6 workers gunicorn**, `--preload`, timeout 180.
 - **Recomendação**: escalada piloto com 10-20 usuários adicionais para medir
   custo/latência real (tempos atuais 15-39s por pergunta), enquanto o Fórum
-  termina de ser ajustado.
+  termina de ser ajustado. Detalhes e implicações em
+  `docs/20-PRONTIDAO-ESCALADA.md` §2 (teste de carga completo).
 
 ## 7. VERIFICAÇÕES DE INTEGRIDADE (2026-08-12)
 

@@ -14,8 +14,9 @@ Released: 2026-08-27
   no layout; preferência por republicação mais recente na busca de artigos.
 - **Limpeza de disco**: 83% → 59% (~46 GB liberados); backups antigos migrados
   ao Google Drive.
-- **Prontidão para escalada**: nota 8,0/10; ~60 usuários; plano de escalada
-  controlada documentado (`docs/20-PRONTIDAO-ESCALADA.md`).
+- **Prontidão para escalada**: nota 8,0/10; ~60 usuários; teste de carga do Claude
+  (6 simultâneas OK, 4 workers → depois 6 workers); plano de escalada controlada
+  documentado (`docs/20-PRONTIDAO-ESCALADA.md`).
 
 ## Indexes
 
