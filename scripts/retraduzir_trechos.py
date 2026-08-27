@@ -34,7 +34,9 @@ load_dotenv(RAIZ / ".env")
 
 from retraducao_completa_gokowa import (
     CONTEXTO_OBRA,
+    CONTEXTO_OBRA_PROSA,
     EXEMPLO_REFERENCIA,
+    EXEMPLO_REFERENCIA_PROSA,
     PROMPT,
     carregar_glossario_completo,
 )  # noqa: E402
@@ -50,6 +52,20 @@ INSTRUCAO_TRADUCAO = (
     "mudança de falante). Traduza o texto inteiro para o português de forma "
     "contínua e natural, preservando TODOS os sentidos e a ordem das falas. "
     "Não é necessário manter os rótulos no texto traduzido."
+)
+
+# Instrução para PROSA CONTÍNUA (Mioshie 9-33) — sem diálogo, sem rótulos
+INSTRUCAO_TRADUCAO_PROSA = (
+    "\n\nEste texto é PROSA CONTÍNUA de Meishu-Sama (um ensinamento em prosa, "
+    "não um diálogo). Pode conter datas de sessão (ex: '昭和二十七年四月五日') "
+    "e referências a artigos ('【御教え】', '（御論文「...」）【栄光 一XX号】'). "
+    "Traduza o texto inteiro para o português de forma contínua e natural, "
+    "preservando TODOS os sentidos, os números, os nomes, as datas e a ordem "
+    "das ideias. Mantenha os marcadores de sessão/data traduzidos quando forem "
+    "cabeçalhos de seção (ex: '5 de abril do ano 27 da Era Showa'). Os títulos "
+    "de artigos referenciados ('（御論文「...」）') devem ser traduzidos e "
+    "mantidos como referência, e a fonte entre colchetes ('【栄光 一XX号】') "
+    "deve ser preservada."
 )
 
 
@@ -105,16 +121,22 @@ def extrair_por_marcadores(texto: str, indices: list[int]) -> dict[str, str] | N
     return resultado
 
 
-def traduzir_continuo(falas: list[tuple[str, str]], indices: list[int]) -> str:
-    """ETAPA 1: traduz o trecho como texto contínuo (chamada direta)."""
+def traduzir_continuo(falas: list[tuple[str, str]], indices: list[int], instrucao: str = INSTRUCAO_TRADUCAO,
+                      contexto_obra: str | None = None, exemplo: str | None = None) -> str:
+    """ETAPA 1: traduz o trecho como texto contínuo (chamada direta).
+
+    `instrucao`: INSTRUCAO_TRADUCAO (diálogo) ou INSTRUCAO_TRADUCAO_PROSA.
+    `contexto_obra`/`exemplo`: contexto e exemplo da obra (para prosa, passam-se
+    os específicos da prosa contínua, se definidos).
+    """
     trecho = montar_trecho(falas, indices)
     prompt_base = PROMPT.format(
-        contexto=CONTEXTO_OBRA,
-        exemplo=EXEMPLO_REFERENCIA,
+        contexto=contexto_obra or CONTEXTO_OBRA,
+        exemplo=exemplo or EXEMPLO_REFERENCIA,
         glossario_completo=carregar_glossario_completo(),
         jp=trecho,
-        quem="o diálogo",
-    ) + INSTRUCAO_TRADUCAO
+        quem="o texto",
+    ) + instrucao
 
     reforcos = [
         "",
@@ -264,7 +286,7 @@ def liberar_lock(arquivo: Path) -> None:
 
 def main() -> None:
     if len(sys.argv) < 3:
-        print("uso: .venv/bin/python scripts/retraduzir_trechos.py <gokowa|gosuiji|mioshie> <arquivo_jp>")
+        print("uso: .venv/bin/python scripts/retraduzir_trechos.py <gokowa|gosuiji|mioshie|mioshie_prosa> <arquivo_jp>")
         sys.exit(1)
     colecao = sys.argv[1]
     arquivo = sys.argv[2]
@@ -272,6 +294,8 @@ def main() -> None:
         print(f"coleção inválida: {colecao}")
         sys.exit(1)
     extrator = EXTRATORES[colecao]
+    modo_prosa = (colecao == "mioshie_prosa")
+    instrucao = INSTRUCAO_TRADUCAO_PROSA if modo_prosa else INSTRUCAO_TRADUCAO
 
     # LOCK: impede que 2 instâncias processem o MESMO arquivo ao mesmo tempo
     arq_path = Path(arquivo)
@@ -297,22 +321,53 @@ def main() -> None:
     print(f"[{colecao}] {Path(arquivo).name}: {len(falas)} falas → {len(trechos)} trechos (~{LIMITE_TRECHO} chars)")
 
     for n_trecho, indices in enumerate(trechos):
-        # pula trecho já concluído (todas as falas com pt_contextual)
-        if all(str(i) in dados["falas"] and dados["falas"][str(i)].get("pt_contextual") for i in indices):
-            print(f"  [trecho {n_trecho+1}/{len(trechos)}] já concluído — pulando", flush=True)
-            continue
+        if modo_prosa:
+            chave_trecho = f"t{n_trecho}"
+            if dados["falas"].get(chave_trecho, {}).get("pt_contextual"):
+                print(f"  [trecho {n_trecho+1}/{len(trechos)}] já concluído — pulando", flush=True)
+                continue
+        else:
+            # pula trecho já concluído (todas as falas com pt_contextual)
+            if all(str(i) in dados["falas"] and dados["falas"][str(i)].get("pt_contextual") for i in indices):
+                print(f"  [trecho {n_trecho+1}/{len(trechos)}] já concluído — pulando", flush=True)
+                continue
 
         print(f"  [trecho {n_trecho+1}/{len(trechos)}] falas {indices[0]}-{indices[-1]} "
               f"({len(montar_trecho(falas, indices))} chars)...", flush=True)
         inicio = time.time()
 
         # ETAPA 1
-        pt_continuo = traduzir_continuo(falas, indices)
+        pt_continuo = traduzir_continuo(
+            falas, indices,
+            instrucao=instrucao,
+            contexto_obra=CONTEXTO_OBRA_PROSA if modo_prosa else None,
+            exemplo=EXEMPLO_REFERENCIA_PROSA if modo_prosa else None,
+        )
         if not pt_continuo:
             print(f"    ERRO: tradução contínua falhou no trecho {n_trecho+1} — tentando no próximo", flush=True)
             continue
 
-        # ETAPA 2
+        if modo_prosa:
+            # PROSA CONTÍNUA: não há falas rotuladas — o trecho inteiro é uma
+            # unidade de prosa. Salva o PT contínuo como um único item do
+            # checkpoint (concatenando os blocos JP do trecho como referência).
+            jp_trecho = montar_trecho(falas, indices)
+            chave = f"t{n_trecho}"
+            dados["falas"][chave] = {
+                "indice": chave,
+                "quem": "Meishu-Sama",
+                "jp": jp_trecho,
+                "pt_contextual": pt_continuo,
+                "status": "retraduzido",
+                "trecho": n_trecho,
+            }
+            OUT.mkdir(parents=True, exist_ok=True)
+            ckpt.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")
+            tempo = time.time() - inicio
+            print(f"    -> {tempo:.1f}s | prosa (blocos {indices[0]}-{indices[-1]})", flush=True)
+            continue
+
+        # ETAPA 2 (diálogo)
         trecho_str = montar_trecho(falas, indices)
         traducoes = rotular_falas(trecho_str, pt_continuo, indices)
         if traducoes is None:
@@ -337,7 +392,11 @@ def main() -> None:
         print(f"    -> {tempo:.1f}s | {len(indices)} falas | rel. glossário: {len(relatorio)}", flush=True)
 
     n_ok = sum(1 for f in dados["falas"].values() if f.get("pt_contextual"))
-    print(f"\n[{saida_nome}] {n_ok}/{len(falas)} falas com pt_contextual")
+    if modo_prosa:
+        n_trechos_total = len(trechos)
+        print(f"\n[{saida_nome}] {n_ok}/{n_trechos_total} trechos de prosa com pt_contextual")
+    else:
+        print(f"\n[{saida_nome}] {n_ok}/{len(falas)} falas com pt_contextual")
 
     # libera o lock ao concluir
     liberar_lock(arq_path)

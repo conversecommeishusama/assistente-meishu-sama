@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn for Goshinsho web (chat, admin, landing)
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/goshinsho
+Environment=GOSHINSHO_PRELOAD_AI=1
+ExecStart=/var/www/goshinsho/venv/bin/gunicorn --preload --workers 4 --timeout 180 --bind 127.0.0.1:8000 goshinsho.web_app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

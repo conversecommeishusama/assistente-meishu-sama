@@ -1,0 +1,15 @@
+[Unit]
+Description=Acervo Studio worker (revisão Gokōwa)
+After=network.target goshinsho.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/goshinsho
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/var/www/goshinsho/venv/bin/python -u scripts/acervo_studio_worker.py
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

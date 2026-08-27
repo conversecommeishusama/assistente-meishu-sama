@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 from urllib.parse import urlencode
 
+import logging
 import requests
 from flask import has_request_context, session
 from supabase import create_client
@@ -372,7 +373,23 @@ def describe_user_access(user, now=None):
 
 
 def refresh_user_profile(user_id):
-    response = get_supabase().table("usuarios").select("*").eq("id", user_id).limit(1).execute()
+    """Busca o perfil atualizado no Supabase.
+
+    Resiliente a indisponibilidade do Supabase: se a consulta falhar (ex.:
+    degradação do provedor), retorna None em vez de estourar -- os callers
+    usam `... or user`/`... or profile` e caem no fallback da sessão (cookie),
+    mantendo o app utilizável durante a queda. Falhas reais (perfil inexistente)
+    continuam retornando None como antes.
+    """
+    try:
+        response = get_supabase().table("usuarios").select("*").eq("id", user_id).limit(1).execute()
+    except Exception as exc:
+        # 2026-08-14: Supabase em degradação (503 "upstream connect error").
+        # Sem este guard, o app estoura 500 no carregamento. Usa a sessão.
+        logging.getLogger(__name__).warning(
+            "refresh_user_profile: Supabase indisponível (%s) -- usando sessão", exc
+        )
+        return None
     if not response.data:
         return None
     profile = response.data[0]

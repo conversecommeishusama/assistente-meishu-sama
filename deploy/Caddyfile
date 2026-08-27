@@ -1,0 +1,18 @@
+www.goshinsho.com.br {
+	redir https://goshinsho.com.br{uri} permanent
+}
+
+goshinsho.com.br {
+	handle /cristao* {
+		reverse_proxy localhost:8001
+	}
+	handle /studio* {
+		reverse_proxy localhost:8002
+	}
+	handle /api/studio* {
+		reverse_proxy localhost:8002
+	}
+	handle {
+		reverse_proxy localhost:8000
+	}
+}

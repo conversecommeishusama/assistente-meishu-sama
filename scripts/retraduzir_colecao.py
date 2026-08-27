@@ -168,10 +168,115 @@ def extrair_falas_mioshie(texto: str) -> list[tuple[str, str]]:
     return falas
 
 
+# ---------------------------------------------------------------------------
+# Extrator de PROSA CONTÍNUA para Mioshie 9-33 (御教え集 9号-33号)
+#
+# Os Mioshie 9-33 NÃO são diálogo: são prosa contínua de Meishu-Sama, com
+# sessões datadas (ex: 昭和二十七年四月五日) e parágrafos contínuos. Não há
+# rótulos Interlocutor:/Meishu-Sama: nem 〔御垂示〕.
+#
+# Estratégia (fiel ao documento e simples):
+#   1. Remove o cabeçalho de metadados (# Ficheiro... / === ARTIGO === / entry_id...).
+#   2. Detecta sessões por DATA (padrão 昭和XX年X月X日 no início de linha).
+#   3. Cada sessão vira uma sequência de "falas" (quem="Meishu-Sama", pois é a
+#      prosa do Mestre) quebradas em blocos de até LONGO_MAX chars por quebra de
+#      frase (。！？), preservando a data da sessão no primeiro bloco.
+#   4. O restante do arquivo (antes da 1ª data, se houver prosa) também é
+#      capturado como um bloco de abertura.
+# ---------------------------------------------------------------------------
+def extrair_prosa_mioshie(texto: str) -> list[tuple[str, str]]:
+    """Divide a prosa contínua dos Mioshie 9-33 em blocos por sessão datada."""
+    LONGO_MAX = 400
+    linhas = [l.rstrip("\n") for l in texto.splitlines()]
+
+    # 1. Remove cabeçalho de metadados até a linha em branco após 'Collection ID'
+    inicio_conteudo = 0
+    for i, l in enumerate(linhas):
+        if l.startswith("Collection ID"):
+            inicio_conteudo = i + 1
+            break
+    # pula linhas em branco iniciais e o título/ficha da edição que seguem o
+    # cabeçalho (linhas não-japonesas até a primeira sessão datada ou 1º parágrafo)
+    while inicio_conteudo < len(linhas) and not linhas[inicio_conteudo].strip():
+        inicio_conteudo += 1
+    # se as primeiras linhas são só o título da edição (ex: 御教え集第九号) e a
+    # ficha (『御教え集』9号...発行), pula-as (são metadados, não prosa da sessão)
+    if inicio_conteudo < len(linhas):
+        s = linhas[inicio_conteudo].strip()
+        # título simples da edição (sem pontuação de frase)
+        if re.fullmatch(r"御教え集第[一二三四五六七八九十百]+号", s):
+            inicio_conteudo += 1
+            while inicio_conteudo < len(linhas) and not linhas[inicio_conteudo].strip():
+                inicio_conteudo += 1
+        # ficha da edição 『御教え集』N号、昭和...発行
+        if inicio_conteudo < len(linhas) and re.match(r"^『御教え集』", linhas[inicio_conteudo].strip()):
+            inicio_conteudo += 1
+            while inicio_conteudo < len(linhas) and not linhas[inicio_conteudo].strip():
+                inicio_conteudo += 1
+
+    # data de sessão: 昭和XX年X月X日 (no início da linha, possivelmente com
+    # espaços de formatação antes)
+    DATA_SESSAO = re.compile(r"^\s*(昭和[一二三四五六七八九十]+年[一二三四五六七八九十]+月[一二三四五六七八九十]+日)")
+
+    def quebrar_prosa(texto_bruto: str) -> list[str]:
+        """Quebra um trecho de prosa em blocos por quebras de frase (。！？)."""
+        texto_bruto = re.sub(r"\s+", " ", texto_bruto).strip()
+        if not texto_bruto:
+            return []
+        if len(texto_bruto) <= LONGO_MAX:
+            return [texto_bruto]
+        partes = re.split(r"(?<=[。！？])", texto_bruto)
+        blocos, buf = [], ""
+        for p in partes:
+            buf += p
+            if len(buf) >= LONGO_MAX * 0.6:
+                blocos.append(buf.strip())
+                buf = ""
+        if buf.strip():
+            blocos.append(buf.strip())
+        return [b for b in blocos if b]
+
+    falas: list[tuple[str, str]] = []
+    bloco_atual: list[str] = []
+    sessao_atual = ""
+
+    def flush_bloco():
+        nonlocal bloco_atual
+        if bloco_atual:
+            prosa = "".join(bloco_atual).strip()
+            # junta a data da sessão ao primeiro bloco (marcador)
+            blocos = quebrar_prosa(prosa)
+            if blocos and sessao_atual:
+                blocos[0] = f"{sessao_atual} {blocos[0]}"
+                sessao_atual_ = sessao_atual
+            for b in blocos:
+                falas.append(("Meishu-Sama", b))
+            bloco_atual = []
+
+    for l in linhas[inicio_conteudo:]:
+        s = l.strip()
+        if not s:
+            continue
+        # linha de data = início de nova sessão
+        m = DATA_SESSAO.match(l)
+        if m:
+            flush_bloco()
+            sessao_atual = m.group(1)
+            continue
+        # ignora marcadores puramente tipográficos de separação
+        if re.fullmatch(r"[―\-＝=·・\s]+", s):
+            continue
+        bloco_atual.append(s)
+
+    flush_bloco()
+    return falas
+
+
 EXTRATORES = {
     "gokowa": extrair_falas_gokowa,
     "gosuiji": extrair_falas_gosuiji,
     "mioshie": extrair_falas_mioshie,
+    "mioshie_prosa": extrair_prosa_mioshie,
 }
 
 

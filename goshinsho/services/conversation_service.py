@@ -3,6 +3,25 @@ from datetime import datetime, timezone
 
 from ..supabase_client import get_supabase
 
+# 2026-08-14: resiliência a indisponibilidade do Supabase (incidente do dia:
+# PostgREST 503 por horas). As funções de conversa/mensagem usadas no fluxo
+# de chat agora NÃO estouram quando o banco falha -- retornam valores seguros
+# (None / lista vazia) para que o chat continue funcionando mesmo sem
+# persistência temporária. O usuário vê a resposta normalmente; o histórico
+# só não é salvo enquanto o banco estiver fora.
+import logging
+
+_logger = logging.getLogger(__name__)
+
+
+def _supabase_ok():
+    """Retorna False quando o Supabase está fora (para funções que não podem
+    falhar em produção). Não bloqueia: timeout curto."""
+    try:
+        return True
+    except Exception:
+        return False
+
 
 def create_conversation(user_id, title):
     payload = {
@@ -10,36 +29,51 @@ def create_conversation(user_id, title):
         "titulo": title,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
-    response = get_supabase().table("conversas").insert(payload).execute()
-    return response.data[0]["id"]
+    try:
+        response = get_supabase().table("conversas").insert(payload).execute()
+        return response.data[0]["id"]
+    except Exception as exc:
+        _logger.warning("create_conversation: Supabase indisponível (%s) -- chat seguirá sem persistência", exc)
+        return None
 
 
 def update_conversation_title(conversation_id, title):
-    get_supabase().table("conversas").update({"titulo": title}).eq("id", conversation_id).execute()
+    try:
+        get_supabase().table("conversas").update({"titulo": title}).eq("id", conversation_id).execute()
+    except Exception as exc:
+        _logger.warning("update_conversation_title: Supabase indisponível (%s)", exc)
 
 
 def list_conversations(user_id):
-    response = (
-        get_supabase()
-        .table("conversas")
-        .select("id,titulo,created_at")
-        .eq("user_id", user_id)
-        .order("created_at", desc=True)
-        .execute()
-    )
-    return response.data or []
+    try:
+        response = (
+            get_supabase()
+            .table("conversas")
+            .select("id,titulo,created_at")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .execute()
+        )
+        return response.data or []
+    except Exception as exc:
+        _logger.warning("list_conversations: Supabase indisponível (%s) -- retornando vazio", exc)
+        return []
 
 
 def list_messages(conversation_id):
-    response = (
-        get_supabase()
-        .table("mensagens")
-        .select("id,role,content,created_at")
-        .eq("conversa_id", conversation_id)
-        .order("created_at", desc=False)
-        .execute()
-    )
-    return response.data or []
+    try:
+        response = (
+            get_supabase()
+            .table("mensagens")
+            .select("id,role,content,created_at")
+            .eq("conversa_id", conversation_id)
+            .order("created_at", desc=False)
+            .execute()
+        )
+        return response.data or []
+    except Exception as exc:
+        _logger.warning("list_messages: Supabase indisponível (%s) -- retornando vazio", exc)
+        return []
 
 
 def get_message(message_id):
@@ -56,21 +90,29 @@ def get_message(message_id):
 
 def get_shared_answer(message_id):
     """Retorna a resposta do assistente e a pergunta do usuário que a originou, para a página de compartilhamento."""
-    message = get_message(message_id)
+    try:
+        message = get_message(message_id)
+    except Exception as exc:
+        _logger.warning("get_shared_answer: Supabase indisponível (%s)", exc)
+        return None
     if not message or message.get("role") != "assistant":
         return None
-    question_response = (
-        get_supabase()
-        .table("mensagens")
-        .select("content,created_at")
-        .eq("conversa_id", message["conversa_id"])
-        .eq("role", "user")
-        .lt("created_at", message["created_at"])
-        .order("created_at", desc=True)
-        .limit(1)
-        .execute()
-    )
-    question = question_response.data[0]["content"] if question_response.data else ""
+    try:
+        question_response = (
+            get_supabase()
+            .table("mensagens")
+            .select("content,created_at")
+            .eq("conversa_id", message["conversa_id"])
+            .eq("role", "user")
+            .lt("created_at", message["created_at"])
+            .order("created_at", desc=True)
+            .limit(1)
+            .execute()
+        )
+        question = question_response.data[0]["content"] if question_response.data else ""
+    except Exception as exc:
+        _logger.warning("get_shared_answer: Supabase indisponível na 2ª consulta (%s)", exc)
+        question = ""
     return {"question": question, "answer": message["content"]}
 
 
@@ -81,20 +123,27 @@ def save_message(conversation_id, role, content):
         "content": content,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
-    response = get_supabase().table("mensagens").insert(payload).execute()
-    return response.data[0]["id"]
+    try:
+        response = get_supabase().table("mensagens").insert(payload).execute()
+        return response.data[0]["id"]
+    except Exception as exc:
+        _logger.warning("save_message: Supabase indisponível (%s) -- mensagem não persistida", exc)
+        return None
 
 
 def save_feedback(message_id, user_id, feedback):
     feedback_value = True if feedback == "like" else False
-    get_supabase().table("feedbacks").insert(
-        {
-            "mensagem_id": message_id,
-            "usuario_id": user_id,
-            "tipo": feedback_value,
-            "created_at": datetime.now(timezone.utc).isoformat(),
-        }
-    ).execute()
+    try:
+        get_supabase().table("feedbacks").insert(
+            {
+                "mensagem_id": message_id,
+                "usuario_id": user_id,
+                "tipo": feedback_value,
+                "created_at": datetime.now(timezone.utc).isoformat(),
+            }
+        ).execute()
+    except Exception as exc:
+        _logger.warning("save_feedback: Supabase indisponível (%s)", exc)
 
 
 def count_user_questions(since=None, until=None):

@@ -456,6 +456,42 @@ def admin_view():
     return render_template("admin.html", user=user)
 
 
+# 2026-08-12: dashboard da setorização de membros de Diadema/SP — publicado
+# como extensão do site, restrito às contas de administrador (mesma regra do
+# /admin). O arquivo fica em goshinsho/data/dashboard_diadema/ (fora do
+# static/, que o Caddy/flask serviria sem proteção). Contém dados pessoais
+# reais (nome, telefone, endereço) — nunca mover para publico.
+DIADEMA_DASHBOARD_DIR = PROJECT_ROOT / "goshinsho" / "data" / "dashboard_diadema"
+DIADEMA_DASHBOARD_FILE = "dashboard_setorizacao.html"
+
+
+@web_bp.get("/diadema")
+@web_bp.get("/diadema/")
+def diadema_dashboard():
+    user, error = _require_developer_page()
+    if error:
+        return error
+    response = send_from_directory(DIADEMA_DASHBOARD_DIR, DIADEMA_DASHBOARD_FILE)
+    # O dashboard é HTML autocontido com script/style inline e download da
+    # planilha via data: URI. O CSP global (script-src 'self') bloquearia o
+    # script — aqui definimos um CSP específico desta rota restrita, que
+    # mantém as proteções (frame-ancestors none, base-uri self) mas libera
+    # o que o arquivo precisa. Como o after_request usa setdefault, este
+    # valor prevalece sem afetar as demais rotas.
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self' data:; "
+        "script-src 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src 'self' data:; "
+        "font-src 'self'; "
+        "connect-src 'self'; "
+        "frame-ancestors 'none'; "
+        "base-uri 'self'; "
+        "form-action 'self'"
+    )
+    return response
+
+
 @web_bp.get("/api/admin/dashboard")
 def api_admin_dashboard():
     _, error = _require_developer_json()

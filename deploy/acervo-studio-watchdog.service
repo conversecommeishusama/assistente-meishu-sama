@@ -1,0 +1,18 @@
+[Unit]
+Description=Acervo Studio watchdog (anti-loop + monitorização)
+After=network.target acervo-studio-agent.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/goshinsho
+Environment=PYTHONUNBUFFERED=1
+Environment=ACERVO_WATCHDOG_INTERVAL=300
+Environment=ACERVO_LOOP_THRESHOLD=8
+Environment=ACERVO_LOOP_COOLDOWN=900
+ExecStart=/var/www/goshinsho/venv/bin/python -u scripts/acervo_studio_watchdog.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

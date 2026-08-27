@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn for Acervo Studio (UI e API)
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/goshinsho
+ExecStart=/var/www/goshinsho/venv/bin/gunicorn --workers 3 --timeout 120 --bind 127.0.0.1:8002 studio_app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

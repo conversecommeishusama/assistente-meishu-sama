@@ -36,6 +36,26 @@ CONTEXTO_OBRA = """CONTEXTO DA OBRA (Gokōwa-roku Suplemento, 1º de janeiro de 
 - A conversa é sobre música: koto (instrumento japonês), canções de ninar, Beethoven, Chopin, Schubert, Mozart, jazz, nagauta.
 """
 
+
+CONTEXTO_OBRA_PROSA = """CONTEXTO DA OBRA (Mioshie-shū / 御教え集, edições 9-33 — PROSA CONTÍNUA):
+- São os ensinamentos de Meishu-Sama em PROSA CONTÍNUA (não diálogo), publicados
+  na coleção Mioshie-shū (Coletânea de Ensinamentos), edições mensais.
+- Cada edição tem UMA ou MAIS sessões datadas (ex: '昭和二十七年四月五日' =
+  5 de abril do ano 27 da Era Showa / 1952). Cada sessão é um discurso contínuo.
+- Meishu-Sama fala sobre: o Plano Divino (経綸), a construção do Paraíso Terrestre,
+  a arte (museus, esculturas budistas), a medicina (a medicina cria doenças; o
+  Johrei cura), a agricultura natural, o mundo espiritual (espíritos, possessão),
+  a Igreja Messiânica e sua missão, a mineração (a mina de Mizukami), etc.
+- Termos recorrentes: 地上天国 (Paraíso Terrestre), 光明如来 (Komyo-Nyorai),
+  浄霊 (Johrei), 信者 (fiel), 経綸 (Plano Divino), 罪穢 (pecados e impurezas),
+  邪神 (deuses malignos), 霊 (espírito), メシヤ教 (Igreja Messiânica).
+- O tom é o de um mestre falando a seus fiéis: didático, às vezes coloquial,
+  com repetições e ênfases próprias da fala — mas em prosa contínua, não diálogo.
+- Há referências intercaladas a artigos do mestre: （御論文「...」）【栄光 一XX号】
+  (artigo do mestre, publicado na revista Eikō nº XX). Essas referências devem
+  ser mantidas (título traduzido + fonte preservada), pois indicam o que foi lido.
+"""
+
 EXEMPLO_REFERENCIA = """EXEMPLO DE TRADUÇÃO IDEAL (feita por um leitor experiente da obra):
 
 FALA 1:
@@ -145,6 +165,37 @@ PT: Agora está começando o Grande Acerto de Contas.
   Correto: "Não se pode dizer que seja assombração, nem que seja pecado profundo."
 - すまされる (sumasareru) = "resolver-se/livrar-se com" (ex: 二人か三人ですまされる =
   "resolve-se com duas ou três [pessoas]" — NÃO inverter para "morrem").
+"""
+
+
+EXEMPLO_REFERENCIA_PROSA = """EXEMPLO DE TRADUÇÃO IDEAL PARA PROSA CONTÍNUA (feita por um leitor experiente):
+
+TRECHO JP:
+昭和二十七年四月五日
+【御教え】
+　ここにある鉱石は見ましたか。これは鉱山の知識がない者が見ると、本当に判りませんが、少しでも鉱山の知識がある人が見ると、驚くべきものなんです。これは、神岡鉱山の技師が、日本一という折り紙をつけたんですからね。おそらくこんな鉱石というものは、今までに日本になかっただろうと思いますね。
+
+PT (tradução ideal):
+5 de abril do ano 27 da Era Showa (1952)
+[Ensinamento]
+Vocês viram este minério que está aqui? Quem não tem conhecimento de mineração não consegue perceber, de fato, o que é; mas quem tem ao menos um pouco de conhecimento de mineração vê que é algo surpreendente. É que o engenheiro da Mina de Kamioka lhe deu um atestado de que é o melhor do Japão. Provavelmente, um minério assim nunca existiu no Japão até hoje.
+
+O que o exemplo ensina (prosa contínua):
+- A DATA da sessão é um cabeçalho: traduza-a por extenso e em linha própria
+  ("5 de abril do ano 27 da Era Showa (1952)"). Não a omita.
+- O marcador 【御教え】 (bloco de ensinamento) pode ser traduzido como [Ensinamento].
+- Traduza como PROSA CONTÍNUA e natural em português, preservando TODOS os fatos,
+  números e nomes (Mina de Kamioka, "melhor do Japão").
+- O registro é de fala (Meishu-Sama falando a fiéis): mantenha a naturalidade oral
+  ("Vocês viram...?", "É que...", "de fato"), mas em parágrafos de prosa.
+- Referências a artigos （御論文「...」）【栄光 一XX号】 → "(artigo '...') [Eikō nº XX]".
+- NUNCA omita conteúdo; NUNCA acrescente fato novo. Reconstrua só o que o japonês
+  telegráfico/coloquial deixa implícito, usando [colchetes] apenas para esclarecer
+  o que o contexto JÁ estabelece.
+
+EXEMPLO de referência de artigo:
+JP: （御論文「宗教と病院」）【栄光　一八一号】
+PT: (artigo "Religião e Hospitais") [Eikō nº 181]
 """
 
 PROMPT = """{contexto}

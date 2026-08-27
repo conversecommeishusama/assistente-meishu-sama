@@ -5,7 +5,7 @@ removidas de `goshinsho.services.search_service` no commit `eb36886`
 (2026-07-18, arquitetura jp_direct/pt_direct) sem substituto -- não é uma
 renomeação, é funcionalidade deliberadamente descontinuada junto com o
 resto do pipeline `pt_first` daquela era. `retrieve()` (pipeline v2)
-continua ativo como fallback interno (ver CLAUDE.md), por isso esse teste
+continua ativo como fallback interno (ver GOSHINSHO.md), por isso esse teste
 permanece.
 """
 

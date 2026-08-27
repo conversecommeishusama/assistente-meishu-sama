@@ -23,6 +23,8 @@ mkdir -p "$LOG_DIR"
 DIR_PATHS=(
   "reports/livros_trabalho"
   "reports/periodicos_trabalho"
+  "reports/retraducao_colecoes"
+  "reports/teste_comparativo_segmentacao"
   "textos_japones"
   "data"
   "experiments/uploaded_indexes"

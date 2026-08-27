@@ -142,7 +142,7 @@ function renderDashboard(data) {
         <p>Custo total no período: <strong>${moneyUsd(cost.total_usd)} / ${moneyBrl(cost.total_brl)}</strong></p>
         <p>Custo médio por pergunta: <strong>${moneyUsd(cost.per_answer_usd)} / ${moneyBrl(cost.per_answer_brl)}</strong></p>
         <p>Respostas contabilizadas: <strong>${number(cost.answer_count)}</strong></p>
-        <p class="policy-note">Taxa aplicada: US$ ${(cost.rate_usd_per_1m_tokens || 0).toFixed(4)} / 1M tokens -- recalibrada contra a fatura real da DeepSeek em 30/07/2026 (ver CLAUDE.md).</p>
+        <p class="policy-note">Taxa aplicada: US$ ${(cost.rate_usd_per_1m_tokens || 0).toFixed(4)} / 1M tokens -- recalibrada contra a fatura real da DeepSeek em 30/07/2026 (ver GOSHINSHO.md).</p>
         ${capLine}
     `;
 
