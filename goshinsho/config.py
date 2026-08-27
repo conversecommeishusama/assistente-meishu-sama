@@ -35,6 +35,12 @@ class Config:
     # API REST do Supabase para as tabelas novas. Configurada no .env
     # pelo usuário (scripts/definir_connection_string.sh).
     POSTGRES_CONNECTION_STRING = _env("POSTGRES_CONNECTION_STRING")
+    # 2026-08-27: Fórum + Leitura Colaborativa — NOVAS ferramentas em fase de
+    # teste com colaboradores no protótipo (/versao2). DESATIVADAS na produção
+    # por padrão (default=False). Ativar SOMENTE no ambiente de teste via
+    # GOSHINSHO_FORUM_ENABLED=1 (ex.: .env do /var/www/goshinsho-teste).
+    # Decisão do usuário: aguardar retorno dos colaboradores antes de promover.
+    FORUM_ENABLED = _env_bool("GOSHINSHO_FORUM_ENABLED", default=False)
     DEEPSEEK_API_KEY = _env("DEEPSEEK_API_KEY")
     STRIPE_SECRET_KEY = _env("STRIPE_SECRET_KEY")
     STRIPE_WEBHOOK_SECRET = _env("STRIPE_WEBHOOK_SECRET")
