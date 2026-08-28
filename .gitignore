@@ -30,6 +30,11 @@ exports/
 textos_portugues/
 textos_japones/
 
+# Base editável da Leitura Colaborativa (29/08/2026) -- corpus de textos,
+# editado gradualmente com usuários; mesmo padrão de textos_portugues/japones
+# (conteúdo de corpus fora do git; documentado em STORAGE_LAYOUT.md §2).
+textos_leitura_colaborativa/
+
 static/downloads/*.apk
 
 *.tmp

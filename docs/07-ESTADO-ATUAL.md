@@ -105,6 +105,20 @@ integrados); auditoria Claude dividida em 6 lotes — lote 6 auditado
 (151 OK / 6 erros), lotes 1–5 pendentes; depois, expandir para outros
 orais com o mesmo perfil de truncamento.
 
+## Revisão completa do Gokōwa-roku (Suplemento) — CONCLUÍDA (28-29/08/2026)
+
+> Atualização à fotografia: a revisão **completa** (tradução + glossário +
+> estilo) do Suplemento foi executada manualmente e concluída. Detalhes em
+> `HANDOFF_REVISAO_SUPLEMENTO_20260828.md` e GOSHINSHO.md §8.
+
+- **44 casos tratados** (trilha: `reports/livros_trabalho/AUDIT_REVISAO_SUPLEMENTO_20260828.md`).
+- **34 cabeçalhos de data em negrito** inseridos (protocolo A2).
+- **Parágrafos omitidos recuperados** do JP + **1 corrupção reparada** (silabário 18/10).
+- **Validação**: âncoras PT 36/36 e JP 36/36; CJK residual 0 indevido; 2ª auditoria independente.
+- **Leitura Colaborativa**: criada pasta separada
+  `textos_leitura_colaborativa/` (135 textos) — Suplemento revisado já lá;
+  protótipo `/versao2` aponta para ela. Produção (textos_portugues + FAISS) intacta.
+
 ## Onde ler mais
 
 `GOSHINSHO.md` na raiz — histórico completo, sessão a sessão, desde 3/jul.

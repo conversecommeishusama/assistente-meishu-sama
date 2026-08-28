@@ -378,3 +378,66 @@ registrada).
   microphone + connect-src.
 - **Painel de moderação** para a equipe (rotas de API existem; UI no admin
   pendente).
+
+---
+
+## 8. REVISÃO COMPLETA DO GOKŌWA-ROKU (SUPLEMENTO) + PASTA SEPARADA DA LEITURA (28-29/08/2026)
+
+### 8.1 Revisão do Suplemento — CONCLUÍDA (28/08/2026)
+- **Pedido do usuário**: revisar **completamente** o Gokōwa-roku (Suplemento) —
+  tradução + glossário + estilo — para o mesmo nível dos Gokōwa numerados.
+- **Método**: 100% manual, linha a linha, semântico (JP ↔ PT ↔ glossário),
+  conforme `GOSHINSHO.md` §2. Um caso por vez; sem scripts para editar.
+- **Base**: versão atual (produção), NÃO a antiga. Staging sincronizado com a
+  produção antes de revisar (36/36 âncoras PT e JP).
+- **Resultado**: 44 casos tratados (trilha em
+  `reports/livros_trabalho/AUDIT_REVISAO_SUPLEMENTO_20260828.md`):
+  - **34 cabeçalhos de data em negrito** inseridos (protocolo A2) — antes só
+    1º de janeiro e 18 de agosto tinham.
+  - **Parágrafos omitidos recuperados** (fidelidade ao JP): prefácios
+    editoriais, poemas do início da primavera, trecho sobre cólera, texto
+    "O Caminho do Casal", trecho sobre artistas japoneses (Kumoemon/Saneatsu/
+    Hōgetsu/Sumako), parágrafos sobre kotodama, Deus Supremo, etc.
+  - **1 corrupção reparada**: a pergunta do silabário (18/10) tinha a resposta
+    errada (texto da Grande Purificação) — substituída pela resposta correta do JP.
+  - **Protocolo §10**: "caráter negro" (jazz) → "sonoridade negra"; 土人 → "povos originários".
+  - **Validação**: âncoras PT 36/36 e JP 36/36 (`split_by_anchors`); CJK
+    residual 0 indevido (40 legítimos §5.1-b); 2ª auditoria independente feita.
+  - Arquivo de trabalho: `reports/livros_trabalho/pt/19480101 - Gokōwa-roku (Suplemento).txt`
+    (2020 → 2155 linhas). Backups em `backups/suplemento_lote1_20260828/` e
+    `backups/suplemento_pre_revisao_estilo_20260828/`.
+
+### 8.2 PASTA SEPARADA PARA A LEITURA COLABORATIVA (29/08/2026 — decisão do usuário)
+- **Decisão**: os textos da Leitura Colaborativa ficam em **pasta separada** da
+  produção, pois serão **editados gradualmente com a ajuda dos usuários** e
+  **promovidos de uma só vez** futuramente.
+- **Pasta nova**: `/var/www/goshinsho/textos_leitura_colaborativa/` — contém os
+  **135 textos** do escopo da Leitura (exclui `Medicina_do_Amanha.txt` e
+  `19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt`, decisão 24/08).
+- **Suplemento revisado já está lá** (md5 `96607131...`), com backup
+  `*.bak_pre_revisao` da versão anterior.
+- **Protótipo `/versao2`** (porta 5091) aponta para essa pasta via
+  `GOSHINSHO_TEXTOS_PT=/var/www/goshinsho/textos_leitura_colaborativa` no `.env`
+  do protótipo. `leitura_service.py` lê de `TEXTOS_DIR` (env `GOSHINSHO_TEXTOS_PT`,
+  default `/var/www/goshinsho/textos_portugues`).
+- **Produção INTACTA**: `textos_portugues/` + índices FAISS **não foram
+  tocados** — a busca/chat continua servindo a versão anterior.
+- **Fluxo futuro**: quando os textos da pasta separada estiverem prontos (após
+  edições colaborativas), o usuário autoriza a **promoção única** → copiar para
+  `textos_portugues/` + reindexar FAISS.
+
+### Diagrama do fluxo
+```mermaid
+flowchart LR
+    A[textos_leitura_colaborativa/] -->|GOSHINSHO_TEXTOS_PT| B[Protótipo /versao2 · 5091]
+    B --> C[Leitura Colaborativa]
+    C -->|edições graduais| A
+    A -->|promoção única autorizada| D[textos_portugues/ produção]
+    D --> E[Busca/Chat FAISS]
+```
+
+### Observações
+- `reports/` continua fora do git (convenção do projeto); a trilha de auditoria
+  da revisão está em `reports/livros_trabalho/`.
+- A pasta `textos_leitura_colaborativa/` é **nova e versionável** (não está no
+  `.gitignore`) — ela passa a ser a base editável da Leitura Colaborativa.

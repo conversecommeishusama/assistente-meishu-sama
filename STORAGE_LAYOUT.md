@@ -1,6 +1,6 @@
 # Goshinsho — Organização de Arquivos (Storage Layout)
 
-> **Atualizado em 16/08/2026.** Este documento define a hierarquia de
+> **Atualizado em 29/08/2026.** Este documento define a hierarquia de
 > **produção vs. staging vs. histórico** e o papel de cada pasta. É o mapa
 > para qualquer chat/agente: **não mexer em nada sem ler esta seção**.
 >
@@ -16,6 +16,9 @@
 PRODUÇÃO  (o app lê daqui — fonte de verdade do que é servido)
   textos_portugues/  textos_japones/  experiments/uploaded_indexes/
   glossario.json     glossario_sinonimos_busca_agente.json
+
+LEITURA COLABORATIVA  (base editável, separada da produção — 29/08/2026)
+  textos_leitura_colaborativa/   <- editada gradualmente com usuários
 
 STAGING   (trabalho em andamento — editável, gerado por scripts)
   reports/livros_trabalho/           <- fonte de trabalho (Fase G)
@@ -45,6 +48,7 @@ explícita do usuário** — ver `GOSHINSHO.md` §3 e `.cursor/rules/confirmacao
 | --- | --- | --- |
 | `textos_portugues/` | **138** arquivos .txt, nomes em português (ex.: `19480101 - Gokōwa-roku (Suplemento).txt`) | Corpus PT servido. O app busca **direto daqui** (`goshinsho/services/agentic_search.py` → `TEXTOS_DIR`). |
 | `textos_japones/` | **137** arquivos .txt, nomes originais em japonês (ex.: `19480101-御光話録（補）.txt`) | Corpus JP original. Usado pela busca agenciada para conferência/citações. |
+| `textos_leitura_colaborativa/` | **135** arquivos .txt (escopo da Leitura; exclui `Medicina_do_Amanha.txt` e `19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt`) | **Base editável da Leitura Colaborativa** (29/08/2026). Separada da produção; editada gradualmente com usuários e promovida de uma só vez. O protótipo `/versao2` lê daqui via `GOSHINSHO_TEXTOS_PT`. |
 | `experiments/uploaded_indexes/` | `chunks_pt.pkl`, `metadados_pt.pkl`, `indice_pt.faiss`, idem `_jp`, `build_report.json` | **Índices FAISS ativos** — o app os carrega em runtime (`goshinsho/routes.py` → `_runtime_health`). Gerados por `scripts/build_clean_large_indexes.py`. |
 | `glossario.json` | Glossário de **busca/chat** (variantes para retrieval) | Lido por `agentic_search.py`. **NUNCA confundir** com `glossario_traducao.json`. |
 | `glossario_sinonimos_busca_agente.json` | Sinônimos para a busca agenciada | Lido por `agentic_search.py`. |

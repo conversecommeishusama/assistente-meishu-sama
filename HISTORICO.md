@@ -7,6 +7,52 @@
 
 ---
 
+## 28-29/08 — Revisão completa do Gokōwa-roku (Suplemento) + pasta separada da Leitura Colaborativa
+
+> **Decisão do usuário (28/08)**: revisar **completamente** o Gokōwa-roku
+> (Suplemento) — tradução + glossário + estilo — para o mesmo nível dos Gokōwa
+> numerados. Método 100% manual, linha a linha, semântico. Detalhes:
+> `HANDOFF_REVISAO_SUPLEMENTO_20260828.md`.
+>
+> **Decisão do usuário (29/08)**: os textos da Leitura Colaborativa ficam em
+> **pasta separada** da produção, pois serão editados gradualmente com a ajuda
+> dos usuários e promovidos de uma só vez futuramente.
+
+### Revisão do Suplemento — executada e concluída
+- **44 casos tratados** manualmente (trilha: `reports/livros_trabalho/AUDIT_REVISAO_SUPLEMENTO_20260828.md`).
+- **34 cabeçalhos de data em negrito** inseridos (protocolo A2) nos artigos 2-35.
+- **Parágrafos omitidos recuperados** do JP: prefácios editoriais, poemas do
+  início da primavera, trecho sobre cólera (28/04), texto "O Caminho do Casal"
+  (28/05), trecho sobre artistas japoneses (28/12), parágrafos sobre kotodama/
+  Deus Supremo, etc.
+- **1 corrupção reparada**: pergunta do silabário (18/10) tinha a resposta errada
+  (texto da Grande Purificação) — substituída pela resposta correta do JP.
+- **Protocolo §10**: "caráter negro" → "sonoridade negra"; 土人 → "povos originários".
+- **Validação**: âncoras PT 36/36, JP 36/36 (`split_by_anchors`); CJK residual 0
+  indevido; 2ª auditoria independente concluída.
+- Arquivo: `reports/livros_trabalho/pt/19480101 - Gokōwa-roku (Suplemento).txt`
+  (2020 → 2155 linhas).
+
+### Pasta separada da Leitura Colaborativa
+- Criada `/var/www/goshinsho/textos_leitura_colaborativa/` com os **135 textos**
+  do escopo da Leitura (excluídos `Medicina_do_Amanha.txt` e `Palavras de
+  Meishu-Sama no Palácio de Cristal` — decisão 24/08).
+- **Suplemento revisado** colocado lá (md5 `96607131...`), com backup
+  `*.bak_pre_revisao`.
+- Protótipo `/versao2` (porta 5091) apontado para a pasta via
+  `GOSHINSHO_TEXTOS_PT` no `.env`. Leitura Colaborativa servindo o texto revisado.
+- **Produção INTACTA**: `textos_portugues/` + índices FAISS não tocados.
+
+### Lições
+- O terminal persistente fica fixo em `/var/www/goshinsho-teste` — `cd` não
+  persiste entre comandos; usar **caminhos absolutos** (criei a pasta no lugar
+  errado por causa disso e precisei mover).
+- O Suplemento tinha **muitas omissões** (parágrafos inteiros do JP sem par no
+  PT) e **1 corrupção** (resposta errada colada em pergunta de outro artigo) —
+  só a comparação JP↔PT por artigo detecta; âncoras e contagem de turnos não pegam.
+
+---
+
 ## 26/08 — Correção manual das specs de segmentação (rebuild PT/JP)
 
 > **Decisão do usuário**: corrigir as specs de segmentação (que estavam

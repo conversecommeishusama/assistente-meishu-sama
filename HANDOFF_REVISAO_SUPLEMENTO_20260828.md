@@ -7,6 +7,43 @@
 
 ---
 
+## ✅ RESULTADO — REVISÃO CONCLUÍDA (28-29/08/2026)
+
+A revisão completa do Suplemento foi **executada e concluída** nesta retomada.
+Resumo do que ficou pronto:
+
+### O que foi feito
+- **44 casos tratados** manualmente (trilha completa em
+  `reports/livros_trabalho/AUDIT_REVISAO_SUPLEMENTO_20260828.md`).
+- **34 cabeçalhos de data em negrito** inseridos (protocolo A2) nos artigos 2-35
+  (antes só 1º de janeiro e 18 de agosto tinham cabeçalho).
+- **Parágrafos omitidos recuperados** do JP (fidelidade): prefácios editoriais,
+  poemas do início da primavera, trecho sobre cólera, texto "O Caminho do Casal",
+  trecho sobre artistas japoneses (Kumoemon/Saneatsu/Hōgetsu/Sumako), parágrafos
+  sobre kotodama, Deus Supremo, etc.
+- **1 corrupção reparada**: pergunta do silabário (18/10) tinha resposta errada
+  (texto da Grande Purificação) — substituída pela resposta correta do JP.
+- **Protocolo §10**: "caráter negro" (jazz) → "sonoridade negra"; 土人 → "povos originários".
+- **Validação**: âncoras PT 36/36 e JP 36/36 (`split_by_anchors`); CJK residual
+  0 indevido (40 legítimos §5.1-b); 2ª auditoria independente concluída.
+
+### Promoção PARCIAL (autorizada 29/08) — Leitura Colaborativa
+- Criada **pasta separada** `/var/www/goshinsho/textos_leitura_colaborativa/`
+  (135 textos do escopo da Leitura) — decisão do usuário: os textos da Leitura
+  serão editados gradualmente e promovidos de uma só vez depois.
+- **Suplemento revisado** colocado nessa pasta (md5 `96607131...`), com backup
+  `*.bak_pre_revisao`.
+- Protótipo `/versao2` (porta 5091) apontado para a pasta via
+  `GOSHINSHO_TEXTOS_PT` no `.env`. Leitura Colaborativa servindo o texto revisado.
+- **Produção INTACTA**: `textos_portugues/` + índices FAISS não tocados
+  (busca/chat continua com a versão anterior).
+
+### Não feito (requer autorização)
+- **Promover para produção** (`textos_portugues/`) + **reindexar FAISS** — só
+  quando os textos da pasta separada estiverem prontos (promoção única).
+
+---
+
 ## 1. O QUE FOI PEDIDO (usuário, 28/08)
 Revisar **completamente** o **Gokōwa-roku (Suplemento)** — não só estilo, mas
 **tradução E glossário** (a versão atual ainda tem erros). Deixar no **mesmo
