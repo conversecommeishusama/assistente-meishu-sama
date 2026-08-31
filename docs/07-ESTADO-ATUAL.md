@@ -125,6 +125,27 @@ orais com o mesmo perfil de truncamento.
   (md5 `b129a8766fb0a09b85574b821437474c` após 2ª passada); protótipo `/versao2`
   aponta para ela. Produção (textos_portugues + FAISS) intacta.
 
+## Leitura Colaborativa — ajustes de 31/08-01/09/2026
+
+> Sequência à revisão: análise de sugestão de leitor, auditoria de texto e
+> áudio. Todas as mudanças de código são **só no protótipo `/versao2`**
+> (`/var/www/goshinsho-teste`, porta 5091); produção intacta.
+
+- **Sugestão do leitor aplicada**: "Na ocasião de cultuar [os espíritos],
+  ofereça-o." → **"Na ocasião de cultuar, recite-o."** (glosa `[os espíritos]`
+  indevida + `上げる` = recitar; distinção norito × Zengen-Sandji confirmada no JP).
+- **Auditoria de colchetes**: 257 pares balanceados; 5 formatos padronizados
+  para parênteses (`Ubusunagami (Deus da Terra Natal)`, `innen (afinidade
+  espiritual)`, `kotodama`).
+- **Asteriscos `*...*`**: não vazam mais — `forum_routes._conteudo_leitura_html()`
+  converte `**negrito**`→`<strong>` e `*itálico*`→`<em>` (8 títulos de obra);
+  template usa `|safe`.
+- **Áudio**: leitura começa do texto (não dos `🔊`); voz neural Microsoft
+  (edge-tts Antônio) também nas respostas do chat via `GoshinshoLeituraEdge`.
+  Versões: `app.js?v=159`, `leitura_tts.js?v=4`.
+- **Arquivo do Suplemento** sincronizado com a Leitura (md5 `f4f84a6f...`);
+  âncoras PT 36/36, JP 36/36.
+
 ## Onde ler mais
 
 `GOSHINSHO.md` na raiz — histórico completo, sessão a sessão, desde 3/jul.

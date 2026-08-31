@@ -7,6 +7,53 @@
 
 ---
 
+## 31/08-01/09 — Leitura Colaborativa: análise da sugestão, auditoria de colchetes/asteriscos e áudio
+
+> Sequência à sessão anterior (31/08). Três frentes: (1) analisar e aplicar a
+> sugestão de um leitor no Suplemento; (2) auditar colchetes `[...]` e asteriscos
+> `*...*` do texto; (3) corrigir o áudio (início da leitura + voz neural no chat).
+
+### 1. Sugestão do leitor (espíritos × Zengen-Sandji) — analisada e aplicada
+- **Sugestão recebida** (2 colaborações pendentes na tabela `leitura_colaboracoes`,
+  ambas sobre o Suplemento, 31/08): "para espíritos deve-se fazer a **zengen sanji**
+  e não norito", referindo-se ao trecho "Na ocasião de cultuar [os espíritos], ofereça-o."
+- **Análise (procedente)**: o JP (`お祀りのときは上げなさい`) não menciona "espíritos"
+  (glosa indevida); `上げる` = recitar (não "oferecer"); a distinção norito (deuses) ×
+  Zengen-Sandji (espíritos) está documentada no próprio texto (JP 265/600/2134).
+- **Correção aplicada** (linha 101): "Na ocasião de cultuar [os espíritos], ofereça-o."
+  → **"Na ocasião de cultuar, recite-o."**
+
+### 2. Auditoria de colchetes `[...]` (257 pares, balanceados) e asteriscos
+- Analisados todos os colchetes do Suplemento. Corrigidas **5 inconsistências de
+  formato** (colchetes/travessões → parênteses, seguindo glossário e outros Gokōwa):
+  - `[Deus da Terra Natal]` → `(Deus da Terra Natal)` — 2x (Ubusunagami)
+  - `[afinidade espiritual]` e `— a afinidade espiritual —` → `(afinidade espiritual)` — 2x (innen)
+  - `[kotodama]` → `(kotodama)` — 1x
+- **Asteriscos** `*...*` vazavam literalmente na Leitura (texto renderizado bruto).
+  Criada `_conteudo_leitura_html()` em `forum_routes.py`: converte `**negrito**` →
+  `<strong>` e `*itálico*` → `<em>` (8 títulos de obra), com `|safe` no template.
+  `[trecho ilegível]` confirmado fiel (JP tem `（この所不明）`); `[jissō shinnyo]` ×
+  `[shinnyo jissō]` é inversão doutrinária intencional do original.
+
+### 3. Áudio: início da leitura + voz neural Microsoft no chat
+- **Bug**: a leitura começava pelos emojis `🔊` dos botões inseridos pelo `speech.js`
+  (o `leitura_tts.js` extraía `cloneNode.textContent` incluindo os botões).
+  **Correção**: remove `.audio-btn/.mic-btn/button/[aria-label]` do clone + regex de
+  emojis, preservando quebras de linha (necessárias ao `quebrarEmFrases`).
+- **Voz neural Microsoft no chat**: antes o chat usava só Web Speech API. Agora
+  `leitura_tts.js` (edge-tts, voz Antônio) é carregado também no `app.html`;
+  `app.js` chama `GoshinshoLeituraEdge.substituirBotaoEm(bubble, actions)` ao criar
+  resposta. `substituirBotao` refatorado com `opts.botaoDestino`; `MutationObserver`
+  cobre respostas dinâmicas. Versões bumpeadas (`app.js?v=159`, `leitura_tts.js?v=4`).
+
+### Fatos importantes
+- Todas as correções de código são **só no protótipo `/versao2`** (`/var/www/goshinsho-teste`,
+  porta 5091). **Produção (porta 8000) intacta** — não tem nem `leitura_tts.js`.
+- Arquivo do Suplemento corrigido sincronizado com a Leitura (md5 `f4f84a6f...`).
+- Âncoras revalidadas: PT 36/36, JP 36/36.
+
+---
+
 ## 31/08 — Leitura Colaborativa: correção do fluxo login × cadastro
 
 > **Problema relatado**: ao enviar sugestão de ajuste no Suplemento (Leitura
