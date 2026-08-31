@@ -38,6 +38,27 @@ Resumo do que ficou pronto:
 - **Produção INTACTA**: `textos_portugues/` + índices FAISS não tocados
   (busca/chat continua com a versão anterior).
 
+### 2ª PASSADA — REVISÃO PROFUNDA DE ESTILO/TRADUÇÃO (29/08)
+O usuário avaliou a 1ª passada como **superficial** ("quase uma perda de tempo") e
+determinou a **revisão completa frase a frase** de TODO o texto. Executado nesta sessão:
+
+- **Erros de referência corrigidos**: "Aquilo não tem sido feito..." → "Ele não tem
+  composto muito ultimamente" (Nakayama, pessoa); + verificação exaustiva de todos os
+  "Aquilo/Isso/Ele/Ela" no início de fala (todos os demais tinham referente correto).
+- **Coloquialismos reduzidos a praticamente zero**: 67 "não é?" → **1** (citação
+  interna legítima "vão para a Índia, não é?"); "não é mesmo?" (7) → 0; "sabe?"/"sabia?"
+  (21) → 0; "viu?" (6) → 0; "veja" coloquial (10) → 0; "sabe,"/"sabia," intercalados → 0.
+- **Erro semântico corrigido**: "não é verdade?" → "não é possível?" (JP
+  `...できるのではないでしょうか`).
+- **Nenhum truncamento real**: triagem de finais de linha sem pontuação retornou só
+  cabeçalhos de data e citações fechando com `”`/`»`.
+- **Validação**: âncoras PT 36/36 e JP 36/36; CJK residual 40 (todos legítimos §5.1-b);
+  consistência de glossário confirmada (Johrei 29x, Ohikari 25x, Daikōmyō 6x, sem variantes).
+- **Arquivo final sincronizado** com `textos_leitura_colaborativa/` (md5
+  `b129a8766fb0a09b85574b821437474c`).
+- Trilha completa dos casos da 2ª passada em `AUDIT_REVISAO_SUPLEMENTO_20260828.md`
+  (seção "2ª PASSADA").
+
 ### Não feito (requer autorização)
 - **Promover para produção** (`textos_portugues/`) + **reindexar FAISS** — só
   quando os textos da pasta separada estiverem prontos (promoção única).

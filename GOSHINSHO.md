@@ -407,6 +407,22 @@ registrada).
     (2020 → 2155 linhas). Backups em `backups/suplemento_lote1_20260828/` e
     `backups/suplemento_pre_revisao_estilo_20260828/`.
 
+### 8.1.1 REVISÃO PROFUNDA DE ESTILO/TRADUÇÃO — 2ª PASSADA (29/08/2026)
+O usuário avaliou a 1ª passada como superficial e determinou a **revisão completa
+frase a frase** de todo o texto (erros de tradução + referência + estilo).
+- **Erros de referência corrigidos**: "Aquilo não tem sido feito..." → "Ele não
+  tem composto muito ultimamente" (referia-se a Shinpei Nakayama, pessoa).
+- **Coloquialismos**: 67 "não é?" → 1 (citação interna legítima); "não é mesmo?"
+  (7) → 0; "sabe?"/"sabia?" (21) → 0; "viu?" (6) → 0; "veja" coloquial (10) → 0.
+- **Erro semântico**: "não é verdade?" → "não é possível?" (JP `できるのではないでしょうか`).
+- **Sem truncamentos**: triagem de finais de linha sem pontuação retornou só
+  cabeçalhos de data e citações fechando com `”`/`»`.
+- **Validação**: âncoras PT 36/36 e JP 36/36; CJK residual 40 (legítimos §5.1-b);
+  consistência de glossário confirmada.
+- Arquivo final sincronizado com `textos_leitura_colaborativa/` (md5
+  `b129a8766fb0a09b85574b821437474c`). Trilha completa em
+  `reports/livros_trabalho/AUDIT_REVISAO_SUPLEMENTO_20260828.md` (seção 2ª PASSADA).
+
 ### 8.2 PASTA SEPARADA PARA A LEITURA COLABORATIVA (29/08/2026 — decisão do usuário)
 - **Decisão**: os textos da Leitura Colaborativa ficam em **pasta separada** da
   produção, pois serão **editados gradualmente com a ajuda dos usuários** e
@@ -414,8 +430,8 @@ registrada).
 - **Pasta nova**: `/var/www/goshinsho/textos_leitura_colaborativa/` — contém os
   **135 textos** do escopo da Leitura (exclui `Medicina_do_Amanha.txt` e
   `19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt`, decisão 24/08).
-- **Suplemento revisado já está lá** (md5 `96607131...`), com backup
-  `*.bak_pre_revisao` da versão anterior.
+- **Suplemento revisado já está lá** (md5 `b129a8766fb0a09b85574b821437474c`
+  após a 2ª passada), com backup `*.bak_pre_revisao` da versão anterior.
 - **Protótipo `/versao2`** (porta 5091) aponta para essa pasta via
   `GOSHINSHO_TEXTOS_PT=/var/www/goshinsho/textos_leitura_colaborativa` no `.env`
   do protótipo. `leitura_service.py` lê de `TEXTOS_DIR` (env `GOSHINSHO_TEXTOS_PT`,

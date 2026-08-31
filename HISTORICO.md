@@ -43,6 +43,26 @@
   `GOSHINSHO_TEXTOS_PT` no `.env`. Leitura Colaborativa servindo o texto revisado.
 - **Produção INTACTA**: `textos_portugues/` + índices FAISS não tocados.
 
+### 2ª PASSADA — revisão profunda de estilo/tradução (29/08)
+> **Feedback do usuário**: a 1ª passada foi avaliada como **superficial**
+> ("melhorou muito pouco o estilo... texto truncado... vários problemas
+> tradutórios... quase uma perda de tempo"). Decisão: **revisão completa frase
+> a frase** de TODO o texto. Executado nesta sessão:
+- **Erros de referência**: "Aquilo não tem sido feito muito ultimamente, não é?"
+  → "Ele não tem composto muito ultimamente" (referia-se a Shinpei Nakayama,
+  pessoa). Demais "Aquilo/Isso/Ele/Ela" verificados — referentes corretos.
+- **Coloquialismos eliminados**: 67 "não é?" → **1** (citação interna legítima
+  "vão para a Índia, não é?"); "não é mesmo?" (7) → 0; "sabe?"/"sabia?" (21) → 0;
+  "viu?" (6) → 0; "veja" coloquial (10) → 0; "sabe," intercalado → 0.
+- **Erro semântico**: "não é verdade?" → "não é possível?" (JP
+  `...できるのではないでしょうか`).
+- **Sem truncamentos**: triagem de finais de linha sem pontuação retornou só
+  cabeçalhos de data e citações fechando com `”`/`»`.
+- **Validação**: âncoras PT 36/36, JP 36/36; CJK residual 40 (legítimos §5.1-b);
+  consistência de glossário confirmada (Johrei 29x, Ohikari 25x, Daikōmyō 6x).
+- **Arquivo final sincronizado** com a Leitura Colaborativa (md5
+  `b129a8766fb0a09b85574b821437474c`).
+
 ### Lições
 - O terminal persistente fica fixo em `/var/www/goshinsho-teste` — `cd` não
   persiste entre comandos; usar **caminhos absolutos** (criei a pasta no lugar

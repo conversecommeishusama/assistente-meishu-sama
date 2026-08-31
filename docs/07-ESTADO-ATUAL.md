@@ -115,9 +115,15 @@ orais com o mesmo perfil de truncamento.
 - **34 cabeçalhos de data em negrito** inseridos (protocolo A2).
 - **Parágrafos omitidos recuperados** do JP + **1 corrupção reparada** (silabário 18/10).
 - **Validação**: âncoras PT 36/36 e JP 36/36; CJK residual 0 indevido; 2ª auditoria independente.
+- **2ª passada (29/08) — revisão profunda de estilo/tradução** (após feedback de
+  que a 1ª era superficial): corrigidos erros de referência ("Aquilo"→"Ele" —
+  Nakayama), erro semântico ("não é verdade?"→"não é possível?"), e eliminados
+  os coloquialismos (67 "não é?"→1 legítimo; "não é mesmo?", "sabe?"/"sabia?",
+  "viu?", "veja" → 0). Sem truncamentos. Revalidado 36/36.
 - **Leitura Colaborativa**: criada pasta separada
-  `textos_leitura_colaborativa/` (135 textos) — Suplemento revisado já lá;
-  protótipo `/versao2` aponta para ela. Produção (textos_portugues + FAISS) intacta.
+  `textos_leitura_colaborativa/` (135 textos) — Suplemento revisado já lá
+  (md5 `b129a8766fb0a09b85574b821437474c` após 2ª passada); protótipo `/versao2`
+  aponta para ela. Produção (textos_portugues + FAISS) intacta.
 
 ## Onde ler mais
 
