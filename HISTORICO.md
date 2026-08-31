@@ -7,6 +7,47 @@
 
 ---
 
+## 31/08 — Leitura Colaborativa: correção do fluxo login × cadastro
+
+> **Problema relatado**: ao enviar sugestão de ajuste no Suplemento (Leitura
+> Colaborativa) sem estar logado, o usuário era enviado para a página de
+> **cadastro** mesmo já sendo cadastrado (sessão caída). A sugestão NUNCA
+> chegava ao servidor — ficava como rascunho no localStorage.
+>
+> **Decisão do usuário**: (1) verificar o que acontece quando a sessão cai;
+> (2) qualquer ação deve direcionar para a página de **login** (não cadastro)
+> quando a pessoa já é cadastrada.
+
+### Causa raiz
+- `leitura_texto.html` marca `data-requer-login="1"` fixo (sem login).
+- `leitura_texto.js` e `app.js` redirecionavam SEMPRE para `panel=register`
+  (cadastro) quando `!isLoggedIn`, sem distinguir quem já tem conta.
+
+### Correção (PROTÓTIPO `/var/www/goshinsho-teste` — onde a Leitura roda)
+- **Flag local** `goshinsho-teve-conta` (localStorage): marcada quando a página
+  carrega com `data-logged-in="true"`. Se existe → **login**; senão → cadastro.
+- `leitura_texto.js`: `redirecionarParaAuth(arquivo)` decide login/cadastro e
+  preserva `colab_arquivo` na URL.
+- `app.js`: `openAuthPanel()` usado no chat, citações, premium grant e fluxos de
+  "cadastro necessário".
+- `routes.py`: `_colab_arquivo_destino()` redireciona de volta à página de leitura
+  após login/cadastro (com validação anti path-traversal). Login/cadastro salvam
+  `colab_arquivo` na sessão. Login falho com contexto → volta ao app com
+  `panel=login&colab_arquivo=...`.
+- `app.html`: hidden field `colab_arquivo` nos forms de login/cadastro + link
+  "Já tenho cadastro — entrar" no painel de cadastro.
+- `_guest_quota_status`: mensagem neutra ("entre na sua conta ou crie uma gratuita").
+
+### Fatos importantes
+- **Protótipo NÃO é repo git**; código da Leitura Colaborativa (`leitura_texto.js`,
+  `leitura_texto.html`, `forum_routes.py`, etc.) é **exclusivo do protótipo**.
+- `app.js`/`app.html` da **produção são diferentes** (versão antiga) — NÃO foram
+  tocados (regra: não alterar produção sem autorização).
+- Aprendizado: `replace_string_in_file` em funções longas do `routes.py` duplicou
+  a função `cadastro()` (AssertionError ao subir gunicorn) — sempre conferir.
+
+---
+
 ## 28-29/08 — Revisão completa do Gokōwa-roku (Suplemento) + pasta separada da Leitura Colaborativa
 
 > **Decisão do usuário (28/08)**: revisar **completamente** o Gokōwa-roku
