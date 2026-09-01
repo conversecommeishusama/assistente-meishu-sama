@@ -61,6 +61,56 @@
 
 ---
 
+## 01/09 — PROMOÇÃO DO CORPUS DA LEITURA PARA O APP (Suplemento + Salvando os EUA)
+
+> **Decisão do usuário**: "basta promover o texto que está atualmente em uso na
+> leitura colaborativa. Junto com o japonês que também foi alterado hoje. ... Só
+> verifique se as âncoras, specs e segmentações estão corretas. Bom trabalho."
+
+### Contexto
+- O **Suplemento (Gokōwa-roku)** na Leitura (2155 linhas, versão canônica com
+  orações transliteradas `mamoritamae sakihae-tamae`, `Kamu nagara tamachi
+  haemase`, macrons, colchetes padronizados, "recite-o") estava desatualizado na
+  produção (`textos_portugues/`, 2020 linhas).
+- O **japonês alterado hoje** (limpeza de marcadores Zenshū em `信仰雑話`,
+  `天国の福音書`, `新しき暴力`) **já estava aplicado** em `textos_japones/`
+  (produção) desde a sessão anterior — não precisou de ação.
+- **Salvando os Estados Unidos**: a produção JÁ tinha o `haemase` (31/08 17:36);
+  a Leitura tinha a versão antiga `waemase` (29/08). O usuário pediu para
+  atualizar a Leitura com a versão da produção.
+
+### O que foi feito
+1. **Backup** (`backups/promocao_texto_leitura_20260901/`): Suplemento produção,
+   Salvando os EUA (leitura e produção), e tar.gz dos índices FAISS.
+2. **Verificação de âncoras/specs/segmentação** (via `split_by_anchors`):
+   - Suplemento PT: **36/36** (produção e leitura) ✅
+   - Suplemento JP: **36/36** ✅
+   - Salvando os EUA PT: **84/84** (produção e leitura) ✅
+   - Revalidadas após a promoção: 36/36, 36/36, 84/84 ✅
+3. **Promoção**:
+   - Suplemento (Leitura → produção): `textos_portugues/19480101 - Gokōwa-roku (Suplemento).txt` agora = versão canônica (md5 `77abcc87...`)
+   - Salvando os EUA (produção → Leitura): `textos_leitura_colaborativa/19530101 - Salvando os Estados Unidos.txt` agora = `haemase` (md5 `0e426ec4...`)
+   - Staging PT (`reports/livros_trabalho/pt/`) sincronizado com a versão canônica (2 arquivos).
+4. **Rebuild dos índices FAISS** (`build_clean_large_indexes.py`, ~3h40):
+   - PT: **5830 chunks** (era 5820) | JP: **3419** (era 4009 — redução esperada pela limpeza dos marcadores Zenshū).
+   - `clean_corpus` regenerado (5998 entradas; 3299 PT / 2699 JP); `validation.json` vazio (sem problemas).
+   - Instalado via `install_rebuilt_indexes.py --apply` (backup automático em `uploaded_indexes_backup_20260901T042311Z`).
+5. **Reinício da produção** (autorizado pelo usuário).
+6. **Validação**:
+   - `/` 200, `/app-pt` 200, `/forum/leitura` 200.
+   - Leitura: Suplemento com `mamoritamae sakihae-tamae` ✅ e `Kamu nagara tamachi haemase` ✅; Salvando os EUA com `haemase` ✅.
+   - Índice: 9 chunks com `mamoritamae sakihae-tamae` (todos do Suplemento), 4 com `Kamu nagara tamachi haemase`.
+   - Busca encontra os termos atualizados no índice novo.
+
+### Lições
+- O rebuild de índices FAISS é longo (~3h40 com 6 cores) — planejar como job de
+  longa duração e monitorar, sem tentar otimizar no meio.
+- O `install_rebuilt_indexes.py --apply` faz backup automático do diretório alvo.
+- As specs/âncoras do Suplemento e Salvando os EUA já estavam corretas — a
+  promoção não as quebrou (validadas antes e depois).
+
+---
+
 ## 31/08-01/09 — Leitura Colaborativa: análise da sugestão, auditoria de colchetes/asteriscos e áudio
 
 > Sequência à sessão anterior (31/08). Três frentes: (1) analisar e aplicar a

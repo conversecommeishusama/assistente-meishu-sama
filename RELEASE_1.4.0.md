@@ -7,6 +7,9 @@ Released: 2026-09-01
 - **Leitura Colaborativa em produção (v2)**: todas as funcionalidades da
   Leitura Colaborativa foram promovidas do protótipo `/versao2` para a
   produção (raiz). O Fórum fica para a próxima versão (continua desativado).
+- **Corpus da Leitura promovido para o app**: Suplemento (Gokōwa-roku) com as
+  orações transliteradas (`mamoritamae sakihae-tamae`, `Kamu nagara tamachi
+  haemase`) e Salvando os Estados Unidos atualizado; índices FAISS rebuildados.
 - **Escopo da promoção** (decisão do usuário):
   - Leitura ativa na raiz: `https://goshinsho.com.br/forum/leitura`
   - Fórum desativado (blueprint `forum_bp` NÃO registrado; `GOSHINSHO_FORUM_ENABLED` segue off)
@@ -43,6 +46,21 @@ Released: 2026-09-01
 - Segurança: `media-src 'self' blob:` no CSP (áudio edge-tts) e
   `microphone=(self)` no Permissions-Policy (digitação por voz).
 
+## Promoção do corpus da Leitura para o app
+
+- **Suplemento (Gokōwa-roku)**: versão canônica da Leitura (com orações
+  transliteradas `mamoritamae sakihae-tamae`, `Kamu nagara tamachi haemase`,
+  macrons, colchetes padronizados, "recite-o") promovida para
+  `textos_portugues/`. Âncoras: PT 36/36, JP 36/36.
+- **Salvando os Estados Unidos**: versão da produção (`Kamunagara tamachi
+  haemase`) sincronizada para a Leitura. Âncoras: PT 84/84.
+- **Rebuild dos índices FAISS**: PT **5830** / JP **3419** chunks (modelo
+  e5-large). Redução do JP esperada pela remoção dos marcadores/números da
+  Zenshū (31/08). `clean_corpus` regenerado (5998 entradas; validation vazio).
+- **JP limpo** (31/08): `信仰雑話`, `天国の福音書`, `新しき暴力` sem marcadores
+  Zenshū — já em produção desde a sessão anterior; rebuild agora reflete.
+- Staging PT (`reports/livros_trabalho/pt/`) sincronizado com a versão canônica.
+
 ## Dependências novas
 
 - `edge-tts` (áudio MP3 neural)
@@ -68,3 +86,7 @@ Released: 2026-09-01
 - `backups/promocao_leitura_20260901/goshinsho_codigo_pre_promocao.tar.gz`
 - `backups/promocao_leitura_20260901/.env.pre_promocao`
 - Caddyfile: `/etc/caddy/Caddyfile.bak_pre_leitura_promocao_20260901`
+- Promoção do corpus: `backups/promocao_texto_leitura_20260901/` (Suplemento
+  produção, Salvando os EUA leitura+produção, `indices_faiss_antes.tar.gz`)
+- Índices antigos: `experiments/uploaded_indexes_backup_20260901T042311Z/`
+  (backup automático do `install_rebuilt_indexes.py --apply`)
