@@ -77,6 +77,11 @@ referência do Zenshū/Rokkan estão em
 
 ## 5. Estado ATIVO (o que está em andamento agora — ver `HISTORICO.md` para o detalhe completo)
 
+- **✅ LEITURA COLABORATIVA EM PRODUÇÃO (01/09, v1.4.0)**: promovida com todas as
+  funcionalidades. Disponível em `https://goshinsho.com.br/forum/leitura`
+  (blueprint `leitura_bp`, lê de `textos_leitura_colaborativa/` via
+  `GOSHINSHO_TEXTOS_PT`). O **Fórum fica para a próxima versão** (desativado).
+  Protótipo `/versao2` desligado. Detalhes em `RELEASE_1.4.0.md`.
 - **Correção dos 213 erros de tradução** identificados pela verificação
   semântica (`reports/varredura_padronizacao/CORRECOES_213_PROPOSTAS.json`):
   trabalho **manual, um caso por vez**, lendo JP+PT, decidindo e aplicando com
@@ -156,23 +161,20 @@ referência do Zenshū/Rokkan estão em
   termina de ser ajustado. Detalhes e implicações em
   `docs/20-PRONTIDAO-ESCALADA.md` §2 (teste de carga completo).
 
-### 6.5 FÓRUM + LEITURA COLABORATIVA — DESATIVADOS NA PRODUÇÃO (27/08)
-- **Decisão do usuário**: aguardar o retorno dos colaboradores do protótipo
-  `/versao2` antes de promover as novas ferramentas (Fórum + Leitura Colaborativa).
-- **Flag de controle**: `GOSHINSHO_FORUM_ENABLED` (`Config.FORUM_ENABLED`, default
-  **False**). O `forum_bp` só é registrado quando a flag está `=1`.
-- **Produção**: sem a flag → fórum **desativado** (as ferramentas não aparecem
-  para os ~60 usuários da versão em uso).
-- **Protótipo `/versao2`** (`/var/www/goshinsho-teste`, porta 5091): `.env` com
-  `GOSHINSHO_FORUM_ENABLED=1` → fórum **ativo** para os colaboradores.
-- **Código separado**: o protótipo tem cópia própria do código (não é o mesmo da
-  produção) — a flag foi adicionada no repo principal; o protótipo continua com o
-  fórum ativo mesmo antes de sincronizar.
-- ⚠️ **PENDENTE**: a produção precisa ser **reiniciada** para o processo em memória
-  deixar de servir `/forum` (o código já está desativado, mas o processo atual
-  ainda tem o blueprint registrado). Reinício exige autorização explícita do usuário.
-- **Quando promover**: após o retorno dos colaboradores, remover a necessidade da
-  flag (ou setá-la `=1` na produção) e reiniciar — decisão do usuário.
+### 6.5 FÓRUM + LEITURA COLABORATIVA (27/08 → 01/09) — LEITURA PROMOVIDA, FÓRUM PENDENTE
+- **Decisão do usuário (01/09)**: a **Leitura Colaborativa** foi promovida para a
+  produção com todas as funcionalidades; o **Fórum fica para a próxima versão**.
+- **LEITURA ATIVA na produção** (`https://goshinsho.com.br/forum/leitura`): blueprint
+  próprio `leitura_routes.py` (`leitura_bp`, prefixo `/forum`), isolado do Fórum.
+  Lê da base editável `textos_leitura_colaborativa/` (135 textos) via
+  `GOSHINSHO_TEXTOS_PT` no `.env` da produção.
+- **FÓRUM DESATIVADO**: `forum_bp` não é registrado na produção. A flag
+  `GOSHINSHO_FORUM_ENABLED` (`Config.FORUM_ENABLED`, default **False**) controla o
+  registro — quando o Fórum for promovido (próxima versão), basta habilitar.
+- **Protótipo `/versao2` DESLIGADO** (porta 5091 parada; bloco removido do Caddy,
+  backup `/etc/caddy/Caddyfile.bak_pre_leitura_promocao_20260901`). O código da
+  Leitura agora vive no repo principal.
+- Detalhes em `RELEASE_1.4.0.md`.
 
 ## 7. VERIFICAÇÕES DE INTEGRIDADE (2026-08-12)
 

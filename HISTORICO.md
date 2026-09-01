@@ -7,6 +7,60 @@
 
 ---
 
+## 01/09 — PROMOÇÃO DA LEITURA COLABORATIVA PARA PRODUÇÃO (v1.4.0)
+
+> **Decisão do usuário**: "vamos fazer o update para a versão 2 do aplicativo,
+> colocar em produção a Leitura Colaborativa com todas as funcionalidades. O
+> Fórum vai ficar para uma outra etapa (nova versão)."
+
+### O que foi feito
+- **Backup** dos arquivos a alterar (`backups/promocao_leitura_20260901/`):
+  tar.gz do código + `.env.pre_promocao`.
+- **Criado `goshinsho/leitura_routes.py`** (`leitura_bp`, prefixo `/forum`) com
+  **apenas** as rotas da Leitura (páginas, TTS, obras, colaborações, progresso) —
+  isolado do Fórum. Namespace de endpoint `leitura.*` (não `forum.*`).
+- **Copiados os 3 serviços novos**: `leitura_service.py`,
+  `leitura_progresso_service.py`, `tts_service.py`.
+- **`routes.py`**: `_colab_arquivo_destino()` + fluxo de login/cadastro que
+  volta ao texto da Leitura após autenticar + mensagem de guest neutra.
+- **`__init__.py`**: registra `leitura_bp` sempre; `forum_bp` segue atrás da
+  flag `GOSHINSHO_FORUM_ENABLED` (off na produção). CSP `media-src 'self' blob:`
+  (áudio) + Permissions-Policy `microphone=(self)`.
+- **Templates**: `leitura.html` (novo, com categorias), `leitura_texto.html`
+  (novo), `app.html` (hero/sidebar com Leitura, sem Fórum; `speech.js` +
+  `leitura_tts.js`).
+- **Estáticos**: `leitura.js`, `leitura_texto.js`, `leitura_tts.js`, `speech.js`
+  novos; `app.js` (v159), `app.css` (v160), `forum.css` (v15), `admin.css`
+  atualizados; cache-busters atualizados nos templates.
+- **`.env` produção**: `GOSHINSHO_TEXTOS_PT=/var/www/goshinsho/textos_leitura_colaborativa`.
+- **`requirements.txt`**: adicionados `edge-tts` e `psycopg2-binary`; instalados
+  no venv da produção.
+- **Testes**: 128 rodados; 127 OK + 1 falha **pré-existente** (`test_ohikari_filter`,
+  confirmado que falha também no código original via `git stash`) + 1 skip.
+  Relevantes (layout/teaching/work_search): 9/9 OK.
+- **Validação no navegador** (raiz, sem `/versao2`): `/forum/leitura` 200 com
+  categorias (83 orais + 52 escritas), página de texto com áudio/progresso/
+  colaboração, `POST /forum/api/tts` → audio/mpeg 200, APIs de obras/progresso/
+  colaborações OK, `/forum` → 404 (Fórum off). Chat `/app-pt` OK com link da
+  Leitura no hero/sidebar (sem Fórum).
+- **Reinício da produção**: `systemctl restart goshinsho.service` (autorizado).
+- **Protótipo `/versao2` desligado**: porta 5091 parada; bloco removido do
+  Caddy (backup `/etc/caddy/Caddyfile.bak_pre_leitura_promocao_20260901`).
+- **VERSION 1.3.0 → 1.4.0**; `RELEASE_1.4.0.md` criado; `GOSHINSHO.md` e
+  `HISTORICO.md` atualizados; commit.
+
+### Lições / fatos
+- O terminal persistente fica fixo em `/var/www/goshinsho-teste` — `cd` não
+  persiste entre comandos; usar **caminhos absolutos** (o `cp` de estáticos
+  falhou com "same file" por causa disso).
+- A falha do `test_ohikari_filter` é pré-existente (não relacionada à Leitura);
+  validar sempre com `git stash` antes de atribuir regressão.
+- As rotas da Leitura usavam `forum.*` no protótipo; na produção foram isoladas
+  em `leitura.*` — o front-end usa caminhos relativos (`/forum/...`) com
+  `API_PREFIX`, então não precisou mudar os JS.
+
+---
+
 ## 31/08-01/09 — Leitura Colaborativa: análise da sugestão, auditoria de colchetes/asteriscos e áudio
 
 > Sequência à sessão anterior (31/08). Três frentes: (1) analisar e aplicar a

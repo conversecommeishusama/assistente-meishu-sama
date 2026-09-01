@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ titulo }} — Leitura Colaborativa Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=160">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=15">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Leitura Colaborativa</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+                <a href="{{ url_for('leitura.leitura_pagina') }}" class="forum-nav-link active">📖 Leitura Colaborativa</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% else %}
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="login">Login</button>
+                    <button type="button" onclick="window.location.href='{{ url_for('web.app_view_pt') }}'" data-i18n="register">Cadastro</button>
+                    <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <section class="forum-container leitura-container">
+            <!-- Barra de leitura fixa (sempre acessível) -->
+            <div class="leitura-barra" id="leitura-barra">
+                <div class="leitura-barra-botoes">
+                    <a href="{{ url_for('leitura.leitura_pagina') }}" class="back-link leitura-barra-voltar">← Textos</a>
+                    <button type="button" class="btn-primary leitura-barra-audio" id="leitura-barra-play" aria-label="Ouvir o texto">🔊 Ouvir</button>
+                    <button type="button" class="btn-secondary leitura-barra-editar" id="leitura-barra-editar" aria-label="Sugerir edição do texto">💬 Sugerir edição</button>
+                </div>
+                <div class="leitura-barra-voz">
+                    <label for="leitura-voz-select">Voz:</label>
+                    <select id="leitura-voz-select" aria-label="Escolher voz da leitura em áudio">
+                        <option value="">Automática</option>
+                    </select>
+                </div>
+                <div class="leitura-barra-progresso" id="leitura-barra-progresso" aria-label="Progresso da leitura">0%</div>
+            </div>
+
+            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+                <a class="community-link" href="{{ url_for('leitura.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+            </nav>
+
+            <div class="forum-header leitura-texto-header">
+                <a href="{{ url_for('leitura.leitura_pagina') }}" class="back-link">← Voltar aos textos</a>
+                <h1>{{ titulo }}</h1>
+                {% if data %}<p class="muted leitura-texto-data">{{ data }}</p>{% endif %}
+            </div>
+
+            <div class="leitura-aviso">
+                <p>⚠️ <strong>Uso exclusivo do Goshinsho:</strong> não autorizamos a reprodução deste conteúdo sem autorização expressa. Tradução em revisão — pode conter erros.</p>
+            </div>
+
+            <div class="leitura-texto" data-audio-ler data-audio-rate="0.95" data-audio-chave="goshinsho-leitura:{{ nome_arquivo }}">
+                {{ conteudo|safe }}
+            </div>
+
+            {% if user %}
+            <!-- Colaboração: o leitor seleciona um trecho e envia observação -->
+            <div class="leitura-colaboracao" id="leitura-colaboracao" data-arquivo="{{ nome_arquivo }}">
+                <h2>💬 Contribua com a tradução</h2>
+                <p class="muted">
+                    Encontrou algo estranho ou que pode ser melhorado? Selecione o trecho no texto
+                    (ou escreva abaixo) e envie sua observação. A equipe Goshinsho analisará cada indicação.
+                </p>
+                <label class="composer-apelido">
+                    <span class="muted">Seu nome/apelido (opcional — seu e-mail nunca é exibido):</span>
+                    <input type="text" id="leitura-colab-nome" maxlength="60" placeholder="Ex.: João, Maria, Estudioso do Johrei..." autocomplete="nickname">
+                </label>
+                <textarea id="leitura-colab-trecho" rows="2" placeholder="Trecho selecionado (preenchido ao selecionar texto acima) — opcional" maxlength="1000"></textarea>
+                <textarea id="leitura-colab-obs" rows="3" placeholder="Escreva sua observação/sugestão de melhoria do texto..." maxlength="2000"></textarea>
+                <div class="composer-actions">
+                    <button type="button" class="btn-primary" id="leitura-colab-enviar">Enviar observação</button>
+                </div>
+                <p class="muted form-error" id="leitura-colab-error" hidden></p>
+                <p class="muted form-ok" id="leitura-colab-ok" hidden></p>
+            </div>
+            {% else %}
+            <!-- Colaboração visível também sem login: o envio exige login -->
+            <div class="leitura-colaboracao" id="leitura-colaboracao" data-arquivo="{{ nome_arquivo }}" data-requer-login="1">
+                <h2>💬 Contribua com a tradução</h2>
+                <p class="muted">
+                    Encontrou algo estranho ou que pode ser melhorado? Selecione o trecho no texto
+                    (ou escreva abaixo) e envie sua observação. A equipe Goshinsho analisará cada indicação.
+                    Para enviar, será necessário <strong>fazer login</strong>.
+                </p>
+                <label class="composer-apelido">
+                    <span class="muted">Seu nome/apelido (opcional — seu e-mail nunca é exibido):</span>
+                    <input type="text" id="leitura-colab-nome" maxlength="60" placeholder="Ex.: João, Maria, Estudioso do Johrei..." autocomplete="nickname">
+                </label>
+                <textarea id="leitura-colab-trecho" rows="2" placeholder="Trecho selecionado (preenchido ao selecionar texto acima) — opcional" maxlength="1000"></textarea>
+                <textarea id="leitura-colab-obs" rows="3" placeholder="Escreva sua observação/sugestão de melhoria do texto..." maxlength="2000"></textarea>
+                <div class="composer-actions">
+                    <button type="button" class="btn-primary" id="leitura-colab-enviar">Enviar observação</button>
+                </div>
+                <p class="muted form-error" id="leitura-colab-error" hidden></p>
+                <p class="muted form-ok" id="leitura-colab-ok" hidden></p>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <!-- Diálogo "Sugerir edição" (aberto pelo botão da barra fixa) -->
+    <div class="leitura-modal-overlay" id="leitura-modal-edicao" hidden>
+        <div class="leitura-modal" role="dialog" aria-modal="true" aria-labelledby="leitura-modal-titulo">
+            <div class="leitura-modal-header">
+                <h2 id="leitura-modal-titulo">💬 Sugerir edição do texto</h2>
+                <button type="button" class="leitura-modal-fechar" id="leitura-modal-fechar" aria-label="Fechar">✕</button>
+            </div>
+            <p class="muted">
+                Encontrou algo estranho ou que pode ser melhorado? Selecione o trecho no texto
+                (ou escreva abaixo) e envie sua observação. A equipe Goshinsho analisará cada indicação.
+            </p>
+            <label class="composer-apelido">
+                <span class="muted">Seu nome/apelido (opcional — seu e-mail nunca é exibido):</span>
+                <input type="text" id="leitura-colab-nome-modal" maxlength="60" placeholder="Ex.: João, Maria, Estudioso do Johrei..." autocomplete="nickname">
+            </label>
+            <textarea id="leitura-colab-trecho-modal" rows="2" placeholder="Trecho selecionado (preenchido ao selecionar texto acima) — opcional" maxlength="1000"></textarea>
+            <textarea id="leitura-colab-obs-modal" rows="3" placeholder="Escreva sua observação/sugestão de melhoria do texto..." maxlength="2000"></textarea>
+            <div class="composer-actions">
+                <button type="button" class="btn-primary" id="leitura-colab-enviar-modal">Enviar observação</button>
+            </div>
+            <p class="muted form-error" id="leitura-colab-error-modal" hidden></p>
+            <p class="muted form-ok" id="leitura-colab-ok-modal" hidden></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
+    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=4"></script>
+    <script src="{{ url_for('static', filename='js/leitura_texto.js') }}?v=20"></script>
+    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=6"></script>
+</body>
+</html>

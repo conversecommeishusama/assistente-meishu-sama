@@ -248,6 +248,30 @@ def _default_app_endpoint(user=None):
     return "web.app_view_pt"
 
 
+def _colab_arquivo_destino():
+    """Se o usuário veio de uma sugestão na Leitura Colaborativa (com
+    ?colab_arquivo=... na URL ou salvo na sessão), devolve a URL da página
+    de leitura desse texto, para voltar após o login/cadastro. Valida o
+    nome para evitar path traversal. Retorna None se não houver arquivo
+    válido.
+    """
+    nome = (
+        request.form.get("colab_arquivo")
+        or request.args.get("colab_arquivo")
+        or session.pop("colab_arquivo", "")
+        or ""
+    ).strip()
+    if not nome:
+        return None
+    # Só nomes simples de arquivo (sem barras / separadores de caminho).
+    if "/" in nome or "\\" in nome or nome in (".", ".."):
+        return None
+    try:
+        return url_for("leitura.leitura_texto_pagina", nome_arquivo=nome, _external=True)
+    except Exception:
+        return None
+
+
 def _require_developer_json():
     user = current_user()
     if not user:
@@ -307,8 +331,9 @@ def _guest_quota_status():
         "requires_login": True,
         "show_signup_link": True,
         "message": (
-            "Para fazer perguntas, crie sua conta gratuita -- o acesso é premium gratuito, "
-            "com perguntas ilimitadas, sem necessidade de assinatura paga."
+            "Para usar o Goshinsho, entre na sua conta ou crie uma gratuita -- "
+            "o acesso é premium gratuito, com perguntas ilimitadas, sem "
+            "necessidade de assinatura paga."
         ),
     }
 
@@ -777,18 +802,39 @@ def login():
         flash("Muitas tentativas de login. Tente novamente mais tarde.", "error")
         return redirect(session.pop("next_url", url_for("web.app_view")))
 
+    # Preserva o contexto da Leitura Colaborativa (se o usuário veio de uma
+    # sugestão) mesmo se o login falhar — para ele tentar de novo no painel.
+    colab_arquivo = (request.form.get("colab_arquivo") or "").strip()
+    if colab_arquivo and "/" not in colab_arquivo and "\\" not in colab_arquivo:
+        session["colab_arquivo"] = colab_arquivo
+
     email = request.form.get("email", "").strip().lower()
     password = request.form.get("password", "").strip()
+    login_ok = False
     try:
         login_user(email, password, remember=request.form.get("remember") == "on")
         flash("Login realizado com sucesso.", "success")
+        login_ok = True
     except Exception as exc:
         flash(_friendly_error(exc), "error")
+    # Se o usuário veio de uma sugestão na Leitura Colaborativa, volta para o
+    # texto depois de autenticar; senão segue o next_url (se houver) ou o app.
+    colab_destino = _colab_arquivo_destino() if login_ok else None
+    if colab_destino:
+        return redirect(colab_destino)
+    # Login falhou e o usuário veio da Leitura: devolve ao app já com o
+    # painel de login aberto e o contexto preservado para tentar de novo.
+    if not login_ok and session.get("colab_arquivo"):
+        nome = session["colab_arquivo"]
+        if "/" not in nome and "\\" not in nome:
+            session.pop("colab_arquivo", None)
+            return redirect(url_for("web.app_view_pt", panel="login", colab_arquivo=nome))
     # só afeta o destino padrão quando não há next_url (ex.: login vindo de
     # um link específico continua indo pra lá). Usa o e-mail do formulário
     # (não current_user()) pra não depender de timing de leitura da sessão
     # logo após login_user().
     return redirect(session.pop("next_url", url_for(_default_app_endpoint({"email": email}))))
+
 
 
 @web_bp.post("/cadastro")
@@ -837,7 +883,13 @@ def cadastro():
             signup_succeeded = True
         else:
             flash(_friendly_error(exc), "error")
-    destination = session.pop("next_url", url_for("web.app_view"))
+    # Se o usuário veio de uma sugestão na Leitura Colaborativa, volta para o
+    # texto após o cadastro (com o aviso de confirmação de e-mail).
+    colab_destino = _colab_arquivo_destino()
+    if colab_destino:
+        destination = colab_destino
+    else:
+        destination = session.pop("next_url", url_for("web.app_view"))
     if signup_succeeded:
         separator = "&" if "?" in destination else "?"
         destination = f"{destination}{separator}signup=1"

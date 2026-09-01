@@ -40,6 +40,11 @@
             <span>Fórum de Estudos</span>
         </a>
         {% endif %}
+        <div class="sidebar-section-title">Comunidade</div>
+        <a class="conversation-link forum-sidebar-link" href="{{ url_for('leitura.leitura_pagina') }}">
+            <span>📖</span>
+            <span>Leitura Colaborativa</span>
+        </a>
         <div class="favorites-box" id="favorites-box">
             <strong data-i18n="favorites">Favoritos</strong>
             <div id="favorites-list" class="favorites-list"></div>
@@ -315,12 +320,10 @@
         </section>
 
         <section class="hero {% if messages %}compact{% endif %}">
-            {% if config.FORUM_ENABLED %}
             <nav class="hero-features" aria-label="Funcionalidades da comunidade">
-                <a class="hero-feature-link" href="{{ url_for('forum.forum_pagina') }}">Fórum</a>
-                <a class="hero-feature-link" href="{{ url_for('forum.leitura_pagina') }}">Leitura Colaborativa</a>
+                <a class="hero-feature-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+                <a class="hero-feature-link" href="{{ url_for('leitura.leitura_pagina') }}">📖 Leitura Colaborativa</a>
             </nav>
-            {% endif %}
             <h1 data-i18n="heroTitle">Como posso ajudar?</h1>
             <p data-i18n="heroSubtitle">Faça uma pergunta sobre os escritos de Meishu-Sama.</p>
         </section>
@@ -442,6 +445,8 @@
 
     <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=154"></script>
+    <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
+    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=6"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=159"></script>
 </body>
 </html>

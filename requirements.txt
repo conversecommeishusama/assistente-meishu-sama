@@ -11,3 +11,7 @@ numpy
 requests
 boto3
 sentry-sdk[flask]
+# 2026-09-01: Leitura Colaborativa — áudio edge-tts (MP3) e acesso direto ao
+# Postgres (progresso de leitura + colaborações).
+edge-tts
+psycopg2-binary

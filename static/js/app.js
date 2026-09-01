@@ -36,6 +36,20 @@ const quotaPricingNote = document.querySelector("#quota-pricing-note");
 const isLoggedIn = document.body.dataset.loggedIn === "true";
 const subscriptionIntroStorageKey = "goshinsho-subscription-intro-seen";
 
+// Marca localmente que o usuário já esteve logado (conta existente) para,
+// quando a sessão cair, direcioná-lo ao LOGIN em vez de ao cadastro.
+if (isLoggedIn) {
+    try { localStorage.setItem("goshinsho-teve-conta", "1"); } catch (e) { /* ignora */ }
+}
+
+// Abre o painel de autenticação correto: login se a pessoa já teve conta
+// (sessão caiu/expirada), cadastro se nunca teve conta no Goshinsho.
+function openAuthPanel() {
+    let temConta = false;
+    try { temConta = localStorage.getItem("goshinsho-teve-conta") === "1"; } catch (e) { /* ignora */ }
+    openPanel(temConta ? "login-panel" : "register-panel");
+}
+
 const languageStorageKey = "goshinsho-language";
 const favoritesStorageKey = "goshinsho-favorites";
 const languageLabels = {
@@ -133,6 +147,11 @@ const uiTranslations = {
         shareEmail: "E-mail",
         shareCopied: "Copiado",
         shareError: "Erro",
+        listen: "Ouvir resposta",
+        stopListening: "Parar",
+        resumeListening: "Continuar",
+        speak: "Falar",
+        stopSpeak: "Parar de ouvir",
     },
     "English": {
         quotaRequiredTitle: "Registration required",
@@ -212,6 +231,11 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Copied",
         shareError: "Error",
+        listen: "Listen to answer",
+        stopListening: "Stop",
+        resumeListening: "Resume",
+        speak: "Speak",
+        stopSpeak: "Stop listening",
     },
     "Español": {
         quotaRequiredTitle: "Registro necesario",
@@ -291,6 +315,11 @@ const uiTranslations = {
         shareEmail: "Correo",
         shareCopied: "Copiado",
         shareError: "Error",
+        listen: "Escuchar respuesta",
+        stopListening: "Detener",
+        resumeListening: "Reanudar",
+        speak: "Hablar",
+        stopSpeak: "Dejar de escuchar",
     },
     "日本語": {
         quotaRequiredTitle: "登録が必要です",
@@ -369,6 +398,11 @@ const uiTranslations = {
         shareEmail: "メール",
         shareCopied: "コピーしました",
         shareError: "エラー",
+        listen: "回答を聞く",
+        stopListening: "停止",
+        resumeListening: "再開",
+        speak: "話す",
+        stopSpeak: "聞くのをやめる",
     },
     "中文": {
         quotaRequiredTitle: "需要注册",
@@ -447,6 +481,11 @@ const uiTranslations = {
         shareEmail: "邮件",
         shareCopied: "已复制",
         shareError: "出错了",
+        listen: "收听回答",
+        stopListening: "停止",
+        resumeListening: "继续",
+        speak: "说话",
+        stopSpeak: "停止聆听",
     },
     "हिन्दी": {
         quotaRequiredTitle: "पंजीकरण आवश्यक है",
@@ -525,6 +564,11 @@ const uiTranslations = {
         shareEmail: "ईमेल",
         shareCopied: "कॉपी हो गया",
         shareError: "त्रुटि",
+        listen: "उत्तर सुनें",
+        stopListening: "रोकें",
+        resumeListening: "जारी रखें",
+        speak: "बोलें",
+        stopSpeak: "सुनना बंद करें",
     },
     "العربية": {
         quotaRequiredTitle: "التسجيل مطلوب",
@@ -603,6 +647,11 @@ const uiTranslations = {
         shareEmail: "البريد الإلكتروني",
         shareCopied: "تم النسخ",
         shareError: "خطأ",
+        listen: "استمع إلى الإجابة",
+        stopListening: "إيقاف",
+        resumeListening: "استئناف",
+        speak: "تحدث",
+        stopSpeak: "التوقف عن الاستماع",
     },
     "Français": {
         quotaRequiredTitle: "Inscription requise",
@@ -682,6 +731,11 @@ const uiTranslations = {
         shareEmail: "E-mail",
         shareCopied: "Copié",
         shareError: "Erreur",
+        listen: "Écouter la réponse",
+        stopListening: "Arrêter",
+        resumeListening: "Reprendre",
+        speak: "Parler",
+        stopSpeak: "Arrêter d'écouter",
     },
     "বাংলা": {
         quotaRequiredTitle: "নিবন্ধন প্রয়োজন",
@@ -760,6 +814,11 @@ const uiTranslations = {
         shareEmail: "ইমেইল",
         shareCopied: "কপি হয়েছে",
         shareError: "ত্রুটি",
+        listen: "উত্তর শুনুন",
+        stopListening: "বন্ধ করুন",
+        resumeListening: "চালিয়ে যান",
+        speak: "বলুন",
+        stopSpeak: "শোনা বন্ধ করুন",
     },
     "Русский": {
         quotaRequiredTitle: "Требуется регистрация",
@@ -838,6 +897,11 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Скопировано",
         shareError: "Ошибка",
+        listen: "Прослушать ответ",
+        stopListening: "Остановить",
+        resumeListening: "Продолжить",
+        speak: "Говорить",
+        stopSpeak: "Прекратить слушать",
     },
     "اردو": {
         quotaRequiredTitle: "رجسٹریشن درکار ہے",
@@ -916,6 +980,11 @@ const uiTranslations = {
         shareEmail: "ای میل",
         shareCopied: "کاپی ہو گیا",
         shareError: "خرابی",
+        listen: "جواب سنیں",
+        stopListening: "روکیں",
+        resumeListening: "جاری رکھیں",
+        speak: "بولیں",
+        stopSpeak: "سننا بند کریں",
     },
     "Indonesia": {
         quotaRequiredTitle: "Pendaftaran diperlukan",
@@ -994,6 +1063,11 @@ const uiTranslations = {
         shareEmail: "Email",
         shareCopied: "Disalin",
         shareError: "Terjadi kesalahan",
+        listen: "Dengarkan jawaban",
+        stopListening: "Berhenti",
+        resumeListening: "Lanjutkan",
+        speak: "Bicara",
+        stopSpeak: "Berhenti mendengarkan",
     },
     "Deutsch": {
         quotaRequiredTitle: "Registrierung erforderlich",
@@ -1072,6 +1146,11 @@ const uiTranslations = {
         shareEmail: "E-Mail",
         shareCopied: "Kopiert",
         shareError: "Fehler",
+        listen: "Antwort anhören",
+        stopListening: "Stoppen",
+        resumeListening: "Fortsetzen",
+        speak: "Sprechen",
+        stopSpeak: "Zuhören beenden",
     },
 };
 
@@ -1320,6 +1399,28 @@ function appendMessage(role, content, messageId = null, { pending = false } = {}
         actions.setAttribute("aria-label", "Ações da resposta");
         actions.innerHTML = messageActionsHtml();
         article.appendChild(actions);
+
+        // 2026-08-25: botão de leitura em voz alta (Web Speech API) nas
+        // respostas do assistente.
+        if (window.GoshinshoAudio && window.GoshinshoAudio.SYNTH_SUPPORTED) {
+            const lerBtn = window.GoshinshoAudio.criarBotaoLeitura(bubble, {
+                classe: "audio-btn",
+                icone: "🔊",
+                iconeParar: "⏹",
+                iconePausado: "▶️",
+                titleLer: uiText("listen") || "Ouvir resposta",
+                titleParar: uiText("stopListening") || "Parar",
+                titleRetomar: uiText("resumeListening") || "Continuar",
+            });
+            actions.appendChild(lerBtn);
+            // 2026-08-31: usa a VOZ NEURAL MICROSOFT (edge-tts via servidor)
+            // também nas respostas do chat — substitui o botão Web Speech
+            // pelo mesmo ledor da Leitura Colaborativa. Extrai o texto do
+            // bubble e insere o botão no container de ações.
+            if (window.GoshinshoLeituraEdge && window.GoshinshoLeituraEdge.substituirBotaoEm) {
+                window.GoshinshoLeituraEdge.substituirBotaoEm(bubble, actions);
+            }
+        }
     }
 
     chat.appendChild(article);
@@ -1414,14 +1515,14 @@ function showSignupRequiredMessage(bubble, message) {
     if (!bubble) return;
     bubble.innerHTML = `
         <p class="quota-limit-text">${escapeHtml(message)}</p>
-        <button type="button" class="inline-signup-btn" data-panel="register-panel">Criar conta gratuita</button>
+        <button type="button" class="inline-signup-btn" data-panel="auth">Entrar / Criar conta</button>
     `;
-    bubble.querySelector("[data-panel='register-panel']")?.addEventListener("click", () => openPanel("register-panel"));
+    bubble.querySelector("[data-panel='auth']")?.addEventListener("click", () => openAuthPanel());
 }
 
 function maybePromptSignup(data) {
     if (!data?.signup_recommended && !data?.requires_login && data?.quota_status?.plan !== "cadastro_necessario") return;
-    openPanel("register-panel");
+    openAuthPanel();
 }
 
 function loadFavorites() {
@@ -1808,7 +1909,7 @@ chatForm?.addEventListener("submit", async (event) => {
     if (!message) return;
 
     if (!isLoggedIn) {
-        openPanel("register-panel");
+        openAuthPanel();
         return;
     }
 
@@ -1872,7 +1973,7 @@ chatForm?.addEventListener("submit", async (event) => {
 
 async function requestCiteSources(button) {
     if (!isLoggedIn) {
-        openPanel("register-panel");
+        openAuthPanel();
         return;
     }
     button.disabled = true;
@@ -2072,7 +2173,7 @@ supportReplyButton?.addEventListener("click", async () => {
 premiumGrantPanel?.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!isLoggedIn) {
-        openPanel("register-panel");
+        openAuthPanel();
         return;
     }
     const formData = new FormData(premiumGrantPanel);
@@ -2136,6 +2237,32 @@ if (quotaCard?.dataset.quota) {
 document.querySelectorAll(".message.assistant .bubble").forEach((bubble) => {
     setBubbleContent(bubble, bubble.dataset.rawContent || bubble.textContent, "assistant");
 });
+
+// 2026-08-25: áudio — reconhecimento de voz no composer (data-audio-mic) e
+// leitura de texto nas respostas (data-audio-ler). O speech.js expõe
+// GoshinshoAudio; o microfone precisa estar liberado no Permissions-Policy.
+if (window.GoshinshoAudio) {
+    window.GoshinshoAudio.initAudioControls({
+        onError: function (erro) {
+            if (erro === "not-allowed" || erro === "service-not-allowed") {
+                showTransientNotice(
+                    "Permita o acesso ao microfone para usar a digitação por voz (ícone ao lado do navegador).",
+                    "error"
+                );
+            } else if (erro === "no-speech") {
+                showTransientNotice("Não capturei nenhuma fala. Tente novamente.", "error");
+            } else if (erro && erro !== "aborted") {
+                showTransientNotice("Não foi possível usar o microfone agora. Tente novamente.", "error");
+            }
+        },
+        onUnsupported: function () {
+            showTransientNotice(
+                "Seu navegador não suporta digitação por voz. Tente usar Chrome, Edge ou Safari.",
+                "error"
+            );
+        },
+    });
+}
 
 if (!localStorage.getItem(languageStorageKey)) {
     openLanguageDialog();

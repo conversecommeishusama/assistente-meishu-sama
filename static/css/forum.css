@@ -16,6 +16,523 @@
     margin: 0 0 16px;
 }
 
+/* ---------- Leitura Colaborativa: lista de obras (2026-08-25) ---------- */
+.leitura-obras {
+    margin-top: 20px;
+}
+
+.leitura-obras-header h2 {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+}
+
+.leitura-obras-header p {
+    margin: 0 0 14px;
+    color: var(--muted, #666);
+}
+
+.leitura-obras-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.leitura-obra-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e3e3e3);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.leitura-obra-card:hover {
+    border-color: rgba(139, 105, 20, 0.6);
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.leitura-obra-ano {
+    font-size: .75rem;
+    color: var(--muted, #888);
+    font-weight: 700;
+}
+
+.leitura-obra-titulo {
+    font-weight: 600;
+    font-size: .98rem;
+    line-height: 1.3;
+}
+
+.leitura-obra-tipo {
+    font-size: .72rem;
+    color: #8b6914;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+/* ---------- Leitura Colaborativa: categorias + coleções (2026-08-25) ---------- */
+.leitura-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.leitura-categoria-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 22px 20px;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e3e3e3);
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    transition: border-color .15s, box-shadow .15s, transform .1s;
+}
+
+.leitura-categoria-card:hover {
+    border-color: rgba(139, 105, 20, 0.6);
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    transform: translateY(-1px);
+}
+
+.leitura-categoria-icone {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.leitura-categoria-titulo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #8b6914;
+}
+
+.leitura-categoria-desc {
+    font-size: .9rem;
+    line-height: 1.5;
+    color: var(--muted, #666);
+}
+
+.leitura-categoria-meta {
+    font-size: .78rem;
+    color: var(--muted, #888);
+}
+
+/* Coleções (Palavra Oral) */
+.leitura-subview {
+    margin-top: 18px;
+}
+
+.leitura-subview-titulo {
+    margin: 8px 0 14px;
+    font-size: 1.2rem;
+}
+
+.leitura-colecoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.leitura-colecao-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 20px;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e3e3e3);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.leitura-colecao-card:hover {
+    border-color: rgba(139, 105, 20, 0.6);
+    box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+
+.leitura-colecao-jp {
+    font-size: .85rem;
+    color: var(--muted, #888);
+}
+
+.leitura-colecao-titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #8b6914;
+}
+
+.leitura-colecao-meta {
+    font-size: .78rem;
+    color: var(--muted, #888);
+}
+
+/* Barra de progresso nos cards de livro */
+.leitura-obra-progresso {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.progresso-barra {
+    flex: 1;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--border, #e3e3e3);
+    overflow: hidden;
+}
+
+.progresso-preenchido {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: #8b6914;
+    transition: width .3s ease;
+}
+
+.progresso-texto {
+    font-size: .75rem;
+    color: var(--muted, #888);
+    min-width: 32px;
+    text-align: right;
+}
+
+.leitura-obra-continuar {
+    display: none;
+    font-size: .78rem;
+    color: #8b6914;
+    font-weight: 600;
+}
+
+.leitura-obra-card.tem-progresso .leitura-obra-continuar {
+    display: inline-block;
+}
+
+/* ---------- Leitura: seletor de voz (2026-08-25) ---------- */
+.leitura-seletor-voz {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    font-size: .85rem;
+    color: var(--muted, #666);
+    flex-wrap: wrap;
+}
+
+.leitura-seletor-voz select {
+    padding: 6px 10px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    background: var(--surface, #fff);
+    color: inherit;
+    max-width: 100%;
+}
+
+.leitura-voz-nota {
+    font-size: .78rem;
+    flex-basis: 100%;
+}
+
+/* Barra fixa de navegação na lista da Leitura Colaborativa */
+.leitura-nav-fixa {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(248, 250, 253, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border, #e3e3e3);
+    border-radius: 0 0 12px 12px;
+    padding: 8px 10px;
+    margin: 0 -20px 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+/* ---------- Modal "Sugerir edição" (2026-08-25) ---------- */
+.leitura-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+/* Garante que o atributo hidden funcione (o display:flex acima vence o
+   hidden padrão do navegador se não for sobrescrito). */
+.leitura-modal-overlay[hidden] {
+    display: none !important;
+}
+
+.leitura-modal {
+    background: #fff;
+    border-radius: 18px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 24px 28px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.25);
+}
+
+.leitura-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.leitura-modal-header h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #8b6914;
+}
+
+.leitura-modal-fechar {
+    background: transparent;
+    border: 1px solid var(--border, #ddd);
+    border-radius: 999px;
+    color: var(--muted, #666);
+    cursor: pointer;
+    font-size: .9rem;
+    line-height: 1;
+    padding: 6px 10px;
+}
+
+.leitura-modal-fechar:hover {
+    background: var(--surface-strong, #f1f3f4);
+}
+
+.leitura-modal p.muted {
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.leitura-modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: #fff;
+    color: inherit;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.leitura-modal .composer-apelido {
+    margin-bottom: 10px;
+}
+
+.leitura-modal .composer-apelido input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 1rem;
+    background: #fff;
+    color: inherit;
+}
+
+.leitura-modal p.muted {
+    font-size: .95rem;
+}
+
+/* ---------- Leitura: colaboração (2026-08-25) ---------- */
+.leitura-colaboracao {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px dashed rgba(139, 105, 20, 0.55);
+    border-radius: 14px;
+    background: rgba(139, 105, 20, 0.04);
+}
+
+.leitura-colaboracao h2 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #8b6914;
+}
+
+.leitura-colaboracao p.muted {
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.leitura-colaboracao textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    background: var(--surface, #fff);
+    color: inherit;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.leitura-colaboracao .composer-apelido {
+    margin-bottom: 10px;
+}
+
+.leitura-colaboracao .composer-apelido input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    background: var(--surface, #fff);
+    color: inherit;
+}
+
+.leitura-colaboracao-login {
+    text-align: center;
+}
+
+.leitura-texto-data {
+    font-size: .8rem;
+    margin-top: 2px;
+}
+
+/* ---------- Leitura: barra fixa de leitura (2026-08-25) ---------- */
+.leitura-barra {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 10px 14px;
+    margin: 0 -20px 14px;
+    background: rgba(248, 250, 253, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border, #e3e3e3);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.leitura-barra-botoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.leitura-barra-voltar {
+    margin-bottom: 0;
+}
+
+.leitura-barra-audio {
+    padding: 8px 14px;
+    font-size: .9rem;
+}
+
+.leitura-barra-editar {
+    padding: 8px 14px;
+    font-size: .9rem;
+}
+
+.leitura-barra-voz {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    color: var(--muted, #666);
+}
+
+.leitura-barra-voz select {
+    padding: 5px 8px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    font: inherit;
+    background: var(--surface, #fff);
+    color: inherit;
+    max-width: 220px;
+    font-size: .82rem;
+}
+
+.leitura-barra-progresso {
+    margin-left: auto;
+    font-size: .82rem;
+    font-weight: 600;
+    color: #8b6914;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Destaque do trecho que está sendo lido */
+.leitura-texto .trecho-lido {
+    background: rgba(184, 134, 11, 0.18);
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.25);
+}
+
+/* Destaque da PALAVRA exata sendo lida (acompanhamento fino, por palavra) */
+.leitura-texto .palavra-lida {
+    background: rgba(139, 105, 20, 0.55);
+    color: #3a2e0a;
+    border-radius: 3px;
+    padding: 0 1px;
+    box-shadow: 0 0 0 1px rgba(139, 105, 20, 0.35);
+}
+
+.leitura-texto .trecho-alvo {
+    background: rgba(139, 105, 20, 0.35);
+    border-radius: 4px;
+}
+
+/* ---------- Leitura Colaborativa: texto (2026-08-25) ---------- */
+.leitura-texto {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e3e3e3);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-top: 18px;
+    line-height: 1.75;
+    font-size: 1.02rem;
+    white-space: pre-wrap;
+    max-width: 760px;
+}
+
+.leitura-texto-header {
+    margin-top: 14px;
+}
+
+/* Textos explicativos sempre justificados (2026-08-24) */
+.forum-header p,
+.topico-header p,
+.leitura-intro p,
+.leitura-aviso p,
+.regras-card p,
+.regras-rodape,
+.fli-assunto,
+.forum-objetivo,
+.forum-moderacao {
+    text-align: justify;
+}
+
 .topicos-list {
     display: flex;
     flex-direction: column;
@@ -160,13 +677,6 @@
 .regras-rodape {
     margin-top: 16px;
     text-align: center;
-}
-
-@media (prefers-color-scheme: dark) {
-    .regras-card {
-        background: #1e2228;
-        border-color: #343a42;
-    }
 }
 
 .novo-topico-form {
@@ -345,16 +855,6 @@
     color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-    .topico-card, .forum-msg, .forum-composer, .novo-topico-form {
-        background: #1e2228;
-        border-color: #343a42;
-    }
-    .topico-card:hover {
-        border-color: #4a7dbd;
-    }
-}
-
 /* ---------- Leitura Colaborativa (protótipo versão 2) ---------- */
 .leitura-intro {
     background: var(--surface, #fff);
@@ -483,15 +983,5 @@
 @media (max-width: 720px) {
     .forum-layout {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .forum-sidebar-col, .forum-list-item {
-        background: #1e2228;
-        border-color: #343a42;
-    }
-    .forum-list-item:hover {
-        border-color: rgba(139, 105, 20, 0.7);
     }
 }

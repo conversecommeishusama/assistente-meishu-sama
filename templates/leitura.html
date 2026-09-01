@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Leitura Colaborativa — Goshinsho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=160">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=15">
 </head>
-<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}"
+      data-estrutura='{{ estrutura | tojson | forceescape }}'>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span data-i18n="menu">Menu</span>
@@ -17,8 +18,7 @@
             <strong>Navegação</strong>
             <div class="forum-nav-links">
                 <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
-                <a href="{{ url_for('forum.forum_pagina') }}" class="forum-nav-link">🗨️ Fórum</a>
-                <a href="{{ url_for('forum.leitura_pagina') }}" class="forum-nav-link active">📖 Leitura Colaborativa</a>
+                <a href="{{ url_for('leitura.leitura_pagina') }}" class="forum-nav-link active">📖 Leitura Colaborativa</a>
             </div>
         </div>
     </aside>
@@ -52,9 +52,10 @@
         </header>
 
         <section class="forum-container leitura-container">
-            <nav class="community-links" aria-label="Funcionalidades da comunidade">
+            <!-- Barra fixa de navegação da Leitura Colaborativa (sempre acessível) -->
+            <nav class="community-links leitura-nav-fixa" aria-label="Funcionalidades da comunidade">
                 <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
-                <a class="community-link" href="{{ url_for('forum.forum_pagina') }}">🗨️ Fórum</a>
+                <a class="community-link" href="{{ url_for('leitura.leitura_pagina') }}">📖 Leitura Colaborativa</a>
             </nav>
 
             <div class="forum-header">
@@ -73,20 +74,75 @@
                     a fidelidade ao texto original japonês.
                 </p>
                 <p>
-                    E é exatamente por isso que ela pode ser melhorada com a sua ajuda:
-                    você pode <strong>selecionar trechos</strong> que considerar que precisam ser
-                    avaliados pela <strong>equipe Goshinsho</strong>, indicando o que achou estranho,
-                    e nós analisaremos cada indicação.
+                    Escolha uma das duas grandes categorias abaixo para navegar pelos textos.
+                    Cada texto tem um botão 🔊 para ouvir em voz alta, e seu progresso de leitura
+                    é salvo automaticamente neste dispositivo.
                 </p>
-
-                <div class="leitura-acoes">
-                    {% if user %}
-                        <a class="btn-primary" href="{{ url_for('forum.leitura_pagina') }}">📚 Explorar os livros</a>
-                    {% else %}
-                        <p class="muted">Faça <a href="{{ url_for('web.app_view_pt') }}">login</a> para começar a colaborar com a leitura.</p>
-                    {% endif %}
-                </div>
             </div>
+
+            {% if flash_msg %}
+                <section class="flash error"><div class="flash error">{{ flash_msg }}</div></section>
+            {% endif %}
+
+            {% if estrutura %}
+                <!-- ============ VISÃO INICIAL: 2 categorias ============ -->
+                <div class="leitura-categorias" id="leitura-categorias">
+                    <button type="button" class="leitura-categoria-card" data-categoria="oral">
+                        <span class="leitura-categoria-icone">🗣️</span>
+                        <span class="leitura-categoria-titulo">Palavra Oral</span>
+                        <span class="leitura-categoria-desc">Registros das conversas e ensinamentos transmitidos oralmente por Meishu-Sama: Gokōwa-roku, Gosuiji-roku e Mioshie-shū.</span>
+                        <span class="leitura-categoria-meta">{{ estrutura.palavra_oral.colecoes | map(attribute='obras') | map('length') | sum }} textos · 3 coleções</span>
+                    </button>
+                    <button type="button" class="leitura-categoria-card" data-categoria="escrita">
+                        <span class="leitura-categoria-icone">📖</span>
+                        <span class="leitura-categoria-titulo">Palavra Escrita</span>
+                        <span class="leitura-categoria-desc">Livros e periódicos publicados por Meishu-Sama, organizados por ordem de data.</span>
+                        <span class="leitura-categoria-meta">{{ estrutura.palavra_escrita.obras | length }} textos</span>
+                    </button>
+                </div>
+
+                <!-- ============ VISÃO PALAVRA ORAL: coleções ============ -->
+                <div class="leitura-subview" id="leitura-oral-colecoes" hidden>
+                    <button type="button" class="back-link leitura-voltar" data-voltar="categorias">← Voltar às categorias</button>
+                    <h2 class="leitura-subview-titulo">🗣️ Palavra Oral — escolha a coleção</h2>
+                    <div class="leitura-colecoes">
+                        {% for col in estrutura.palavra_oral.colecoes %}
+                            <button type="button" class="leitura-colecao-card" data-colecao="{{ col.chave }}">
+                                <span class="leitura-colecao-jp">{{ col.jp }}</span>
+                                <span class="leitura-colecao-titulo">{{ col.titulo }}</span>
+                                <span class="leitura-colecao-meta">{{ col.obras | length }} volumes</span>
+                            </button>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- ============ VISÃO PALAVRA ORAL: livros de uma coleção ============ -->
+                <div class="leitura-subview" id="leitura-oral-livros" hidden>
+                    <button type="button" class="back-link leitura-voltar" data-voltar="colecoes">← Voltar às coleções</button>
+                    <h2 class="leitura-subview-titulo" id="leitura-oral-livros-titulo">🗣️ Coleção</h2>
+                    <div class="leitura-obras-list" id="leitura-oral-livros-list"></div>
+                </div>
+
+                <!-- ============ VISÃO PALAVRA ESCRITA: livros ============ -->
+                <div class="leitura-subview" id="leitura-escrita-livros" hidden>
+                    <button type="button" class="back-link leitura-voltar" data-voltar="categorias">← Voltar às categorias</button>
+                    <h2 class="leitura-subview-titulo">📖 Palavra Escrita — todos os textos por data</h2>
+                    <div class="leitura-obras-list" id="leitura-escrita-list">
+                        {% for obra in estrutura.palavra_escrita.obras %}
+                            <a class="leitura-obra-card" href="{{ url_for('leitura.leitura_texto_pagina', nome_arquivo=obra.arquivo) }}" data-arquivo="{{ obra.arquivo }}">
+                                <span class="leitura-obra-ano">{{ obra.data or '—' }}</span>
+                                <span class="leitura-obra-titulo">{{ obra.titulo }}</span>
+                                <span class="leitura-obra-tipo">{{ {'livro': 'Livro', 'periodico': 'Periódico'}.get(obra.tipo, '') }}</span>
+                                <span class="leitura-obra-progresso"><span class="progresso-barra"><span class="progresso-preenchido" data-progresso></span></span><span class="progresso-texto">0%</span></span>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="leitura-acoes">
+                    <p class="muted">Nenhum texto disponível no momento.</p>
+                </div>
+            {% endif %}
 
             <div class="leitura-aviso">
                 <p>
@@ -101,15 +157,13 @@
                     É exatamente por isso que contamos com a sua colaboração para apontar trechos que precisam
                     ser avaliados.
                 </p>
-                <p>
-                    📌 Esta é a <strong>versão de teste</strong> da Leitura Colaborativa. O conteúdo completo
-                    dos livros será liberado em breve, após a promoção do novo corpus.
-                </p>
             </div>
         </section>
     </main>
 
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+
     <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
+    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=4"></script>
 </body>
 </html>

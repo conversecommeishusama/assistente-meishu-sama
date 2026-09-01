@@ -35,13 +35,26 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
 
     if include_web:
         app.register_blueprint(web_bp)
+        # 2026-09-01: Leitura Colaborativa PROMOVIDA para produção (decisão do
+        # usuário). Blueprint próprio, separado do Fórum — a Leitura fica
+        # ativa na produção; o Fórum continua desativado (fica para a próxima
+        # versão). As rotas da Leitura usam prefixo /forum (mesmos caminhos do
+        # front-end), mas o namespace de endpoint é `leitura.*`.
+        try:
+            from .leitura_routes import leitura_bp
+
+            app.register_blueprint(leitura_bp)
+        except Exception as exc:  # pragma: no cover - defensivo
+            import logging
+
+            logging.getLogger(__name__).warning("Não foi possível registrar a Leitura Colaborativa: %s", exc)
+
         # 2026-08-21: Fórum da comunidade (piloto) -- blueprint separado.
         # 2026-08-27: só é registrado quando GOSHINSHO_FORUM_ENABLED=1
-        # (Config.FORUM_ENABLED, default False). As novas ferramentas
-        # (Fórum + Leitura Colaborativa) estão em teste com colaboradores no
-        # protótipo /versao2 — NÃO devem aparecer na produção até o retorno
-        # deles. Se o banco/fórum estiver indisponível, as rotas retornam
-        # erros seguros; o app principal não quebra.
+        # (Config.FORUM_ENABLED, default False). O Fórum fica para a próxima
+        # versão — NÃO ativar na produção por enquanto. Se o banco/fórum
+        # estiver indisponível, as rotas retornam erros seguros; o app
+        # principal não quebra.
         if Config.FORUM_ENABLED:
             try:
                 from .forum_routes import forum_bp
@@ -83,10 +96,12 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
         response.headers.setdefault("X-Content-Type-Options", "nosniff")
         response.headers.setdefault("X-Frame-Options", "DENY")
         response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
-        response.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()")
+        response.headers.setdefault("Permissions-Policy", "camera=(), microphone=(self), geolocation=(), payment=()")
         response.headers.setdefault(
             "Content-Security-Policy",
-            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com",
+            # 2026-08-27: media-src 'self' blob: necessário para o áudio do
+            # edge-tts (a Leitura usa <audio> com blob URL do MP3 do servidor).
+            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com",
         )
         return response
 
