@@ -1,0 +1,18 @@
+[Unit]
+Description=Goshinsho pré-geração TTS voz Meishu-Sama (textos orais)
+After=network.target goshinsho.service
+Wants=goshinsho.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/goshinsho
+ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 5
+Restart=on-failure
+RestartSec=30
+# Log para arquivo (journald também captura)
+StandardOutput=append:/var/www/goshinsho/logs/tts_pre_geracao.log
+StandardError=append:/var/www/goshinsho/logs/tts_pre_geracao.log
+
+[Install]
+WantedBy=multi-user.target
