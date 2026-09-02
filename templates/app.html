@@ -331,7 +331,7 @@
         <section class="chat" id="chat" data-conversation-id="{{ active_conversation_id or '' }}">
             {% for message in messages %}
                 <article class="message {{ message.role }}" {% if message.id %}data-message-id="{{ message.id }}"{% endif %} {% if message.role == "assistant" %}data-sources="{{ (message.sources or []) | tojson | forceescape }}"{% endif %}>
-                    <div class="bubble">{{ message.content }}</div>
+                    <div class="bubble" {% if message.role == "assistant" %}data-audio-ler{% endif %}>{{ message.content }}</div>
                     {% if message.role == "assistant" %}
                         <div class="message-actions" aria-label="Ações da resposta">
                             <button type="button" data-feedback="like" aria-label="Gostei" title="Gostei">👍</button>
@@ -379,7 +379,7 @@
                 <option>Indonesia</option>
                 <option>Deutsch</option>
             </select>
-            <textarea id="message-input" placeholder="Digite sua pergunta..." data-i18n-placeholder="chatPlaceholder" rows="1"></textarea>
+            <textarea id="message-input" placeholder="Digite sua pergunta..." data-i18n-placeholder="chatPlaceholder" rows="1" data-audio-mic></textarea>
             <button type="button" class="language-chip" id="language-button">Idioma: Português</button>
             <button type="submit" data-i18n="send">Enviar</button>
         </form>
@@ -447,6 +447,6 @@
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
     <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=6"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=159"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=160"></script>
 </body>
 </html>

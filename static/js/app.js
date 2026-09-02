@@ -1390,6 +1390,10 @@ function appendMessage(role, content, messageId = null, { pending = false } = {}
 
     const bubble = document.createElement("div");
     bubble.className = "bubble";
+    // 2026-09-02: marca o bubble do assistente com data-audio-ler (mesmo
+    // atributo do template) — o speech.js cria o botão e o leitura_tts.js
+    // (edge-tts) o substitui, inclusive via MutationObserver.
+    if (role === "assistant") bubble.dataset.audioLer = "";
     setBubbleContent(bubble, content, role);
     article.appendChild(bubble);
 
@@ -1413,17 +1417,20 @@ function appendMessage(role, content, messageId = null, { pending = false } = {}
                 titleRetomar: uiText("resumeListening") || "Continuar",
             });
             actions.appendChild(lerBtn);
-            // 2026-08-31: usa a VOZ NEURAL MICROSOFT (edge-tts via servidor)
-            // também nas respostas do chat — substitui o botão Web Speech
-            // pelo mesmo ledor da Leitura Colaborativa. Extrai o texto do
-            // bubble e insere o botão no container de ações.
-            if (window.GoshinshoLeituraEdge && window.GoshinshoLeituraEdge.substituirBotaoEm) {
-                window.GoshinshoLeituraEdge.substituirBotaoEm(bubble, actions);
-            }
         }
     }
 
     chat.appendChild(article);
+
+    // 2026-09-02: substitui pelo edge-tts DEPOIS do appendChild — antes, o
+    // alvo ainda não estava conectado ao DOM e o substituirSeExistir
+    // abortava na 1ª tentativa (early-return em !alvo.isConnected), deixando
+    // o botão do Google (Web Speech) no lugar.
+    if (role === "assistant" && window.GoshinshoLeituraEdge && window.GoshinshoLeituraEdge.substituirBotaoEm) {
+        const actions = article.querySelector(".message-actions");
+        window.GoshinshoLeituraEdge.substituirBotaoEm(bubble, actions);
+    }
+
     article.scrollIntoView({ behavior: "smooth", block: "start" });
     return bubble;
 }

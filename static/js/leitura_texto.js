@@ -731,6 +731,22 @@
             var btn = texto.querySelector(".audio-btn");
             if (!btn) return;
 
+            // 2026-09-02: se o edge-tts (voz neural do servidor) substituiu o
+            // botão padrão, o clique em parágrafo é tratado pelo próprio
+            // leitura_tts.js (configurarCliqueParagrafos). Aqui apenas
+            // destacamos o parágrafo alvo e deixamos o edge cuidar do pulo —
+            // senão a lógica do speech.js (pularParaTexto) disparava JUNTO
+            // com a do edge → LEITURA DUPLA.
+            if (texto.dataset.edgeTts) {
+                limparDestaque();
+                paragrafo.classList.add("trecho-alvo");
+                trechoAtual = [paragrafo];
+                window.setTimeout(function () {
+                    paragrafo.classList.remove("trecho-alvo");
+                }, 1500);
+                return;
+            }
+
             // Texto do parágrafo clicado (início) para localizar o trecho.
             var textoPar = (paragrafo.textContent || "").replace(/\s+/g, " ").trim();
 
