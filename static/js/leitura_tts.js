@@ -30,6 +30,9 @@
         "antonio": { nome: "Antônio (masculino)", server: "pt-BR-AntonioNeural" },
         "francisca": { nome: "Francisca (feminino)", server: "pt-BR-FranciscaNeural" },
         "thalita": { nome: "Thalita (feminino, multilíngue)", server: "pt-BR-ThalitaMultilingualNeural" },
+        // Voz clonada de Meishu-Sama (ElevenLabs, cross-lingual JP→PT).
+        // Só aparece no seletor quando o servidor confirma que está ativa.
+        "meishu": { nome: "Meishu-Sama (voz original)", server: "__elevenlabs_meishu__", clonada: true },
     };
     var VOZ_SELECT_KEY = "goshinsho-leitura-voz-edge";
 
@@ -155,9 +158,37 @@
         }
     }
 
+    // Consulta o servidor para saber se a voz 'meishu' (clonada) está ativa.
+    // Só adiciona a opção no seletor quando estiver disponível de verdade.
+    function verificarVozMeishu() {
+        fetch(apiUrl("/forum/api/tts/vozes"))
+            .then(function (r) { return r.json(); })
+            .then(function (dados) {
+                var meishu = (dados.vozes || []).filter(function (v) { return v.id === "meishu"; })[0];
+                if (!meishu || !meishu.disponivel) return;
+                var select = document.getElementById("leitura-voz-select");
+                if (!select) return;
+                // Já existe (adicionado no preencherSeletorVozEdge)? Se não, adiciona.
+                var jaTem = Array.prototype.some.call(select.options, function (o) { return o.value === "meishu"; });
+                if (!jaTem) {
+                    var opt = document.createElement("option");
+                    opt.value = "meishu";
+                    opt.textContent = "Meishu-Sama (voz original)";
+                    select.appendChild(opt);
+                }
+                // Se o usuário já tinha escolhido meishu (localStorage), reaplica.
+                var escolhida = vozEscolhidaEdge();
+                if (escolhida === "meishu") select.value = "meishu";
+            })
+            .catch(function () { /* offline — mantém só as vozes edge */ });
+    }
+
     // Inicializa: procura o .leitura-texto[data-audio-ler] e substitui.
     function init() {
         preencherSeletorVozEdge();
+        // Consulta o servidor (assíncrono) para saber se a voz 'meishu'
+        // clonada está ativa e, se estiver, adiciona a opção no seletor.
+        verificarVozMeishu();
         var alvo = document.querySelector(".leitura-texto[data-audio-ler]");
         if (!alvo) return;
 

@@ -104,7 +104,13 @@ def api_tts():
     de mídia do bluetooth (carro) — diferente do speechSynthesis do navegador,
     que no Android não roteia para o bluetooth (fica mudo no carro).
 
-    Body: {"texto": "...", "voz": "antonio|francisca|thalita", "rate": "+0%"}
+    Vozes:
+      - "antonio" | "francisca" | "thalita": edge-tts (Microsoft, gratuitas).
+      - "meishu": voz clonada de Meishu-Sama (ElevenLabs, cross-lingual JP→PT).
+        Se a voz clonada não estiver configurada/disponível, faz fallback
+        automático para o Antonio (edge-tts) — nunca deixa o usuário sem áudio.
+
+    Body: {"texto": "...", "voz": "antonio|francisca|thalita|meishu", "rate": "+0%"}
     Retorna: o MP3 (audio/mpeg) com cache em disco.
     """
     try:
@@ -132,6 +138,28 @@ def api_tts():
     except Exception as exc:  # pragma: no cover - defensivo
         _logger.warning("TTS falhou: %s", exc)
         return jsonify({"error": "falha ao gerar áudio"}), 500
+
+
+@leitura_bp.get("/api/tts/vozes")
+def api_tts_vozes():
+    """Lista as vozes de TTS disponíveis e se a voz 'meishu' está ativa.
+
+    O front usa para decidir se exibe a opção "Meishu-Sama" no seletor
+    (só mostra quando a voz clonada está configurada no servidor).
+    """
+    from .services import tts_service
+
+    vozes = [
+        {"id": "antonio", "nome": "Antônio (masculino)", "disponivel": True},
+        {"id": "francisca", "nome": "Francisca (feminino)", "disponivel": True},
+        {"id": "thalita", "nome": "Thalita (feminino, multilíngue)", "disponivel": True},
+        {
+            "id": "meishu",
+            "nome": "Meishu-Sama (voz clonada)",
+            "disponivel": tts_service.voz_meishu_disponivel(),
+        },
+    ]
+    return jsonify({"vozes": vozes})
 
 
 @leitura_bp.get("/api/leitura/obras")
