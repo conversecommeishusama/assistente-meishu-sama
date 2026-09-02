@@ -1,5 +1,5 @@
 """Serviço de TTS (texto → fala): edge-tts (vozes neurais gratuitas) + voz
-clonada de Meishu-Sama via ElevenLabs (cross-lingual japonês → português).
+clonada de Meishu-Sama via XTTS local (cross-lingual japonês → português).
 
 2026-08-27: implementado para a Leitura Colaborativa do protótipo (/versao2).
 Motivo: o speechSynthesis do navegador não roteia o áudio pelo perfil de
@@ -11,14 +11,24 @@ Edge TTS usa o serviço gratuito de síntese da Microsoft (vozes neurais).
 Não requer API key. As vozes pt-BR: pt-BR-AntonioNeural (masc),
 pt-BR-FranciscaNeural (fem), pt-BR-ThalitaMultilingualNeural (fem).
 
-2026-09-01: voz 'meishu' — voz clonada de Meishu-Sama (amostra de áudio
-histórica) via ElevenLabs, falando PORTUGUÊS (cross-lingual). Quando a
-chave/voice_id não estiverem configurados (ou a API falhar), faz fallback
-para o Antonio (edge-tts) para nunca deixar o usuário sem áudio.
+2026-09-01/02: voz 'meishu' — voz clonada de Meishu-Sama (amostra de áudio
+histórica de 1952) falando PORTUGUÊS (cross-lingual) via XTTS v2 LOCAL
+(Coqui, roda no próprio servidor — sem custo de API). O XTTS roda num venv
+isolado (venv_xtts) via subprocess, porque o ambiente de produção (venv) não
+tem o coqui-tts (evita conflito de transformers).
+
+DIÁLOGO (2026-09-02): quando a voz escolhida é 'meishu' e o trecho começa com
+um rótulo de fala, o falante decide o provedor:
+  - "Meishu-Sama: ..."  → voz clonada (XTTS local)
+  - "Interlocutor: ..." e demais rótulos que não são Meishu-Sama → Antônio
+    (edge-tts, voz neural masculina) — para diferenciar os interlocutores.
+  - texto corrido (sem rótulo) → voz clonada (XTTS), padrão da opção.
 
 Config (via .env):
-  GOSHINSHO_ELEVENLABS_API_KEY=sk_...
-  GOSHINSHO_MEISHU_VOICE_ID=<voice_id da ElevenLabs>
+  GOSHINSHO_XTTS_PYTHON=/var/www/goshinsho/venv_xtts/bin/python
+  GOSHINSHO_XTTS_AMOSTRA=/var/www/goshinsho/amostras_voz/amostra_meishu_30s_limpa.wav
+  GOSHINSHO_XTTS_MODELO=tts_models/multilingual/multi-dataset/xtts_v2
+  GOSHINSHO_XTTS_CACHE=/var/www/goshinsho/data/tts_xtts_cache
 """
 
 from __future__ import annotations
@@ -26,85 +36,249 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import os
+import re
+import subprocess
+import tempfile
 import time
 
 VOZES_PT_BR = {
     "antonio": "pt-BR-AntonioNeural",
     "francisca": "pt-BR-FranciscaNeural",
     "thalita": "pt-BR-ThalitaMultilingualNeural",
-    # "meishu" é sentinela: encaminha para a ElevenLabs (voz clonada).
-    "meishu": "__elevenlabs_meishu__",
+    # "meishu" é sentinela: encaminha para o XTTS local (voz clonada).
+    "meishu": "__xtts_meishu__",
 }
 VOZ_PADRAO = "pt-BR-AntonioNeural"
 VOZ_MEISHU = "meishu"
+VOZ_INTERLOCUTOR = "pt-BR-AntonioNeural"  # edge-tts (Antônio) p/ não-Meishu
 
-# Modelo multilíngue da ElevenLabs — voz treinada em japonês falando PT.
-_ELEVENLABS_MODELO = "eleven_multilingual_v2"
+# Rótulos de fala nos diálogos (início de parágrafo). "Meishu-Sama" é a voz
+# clonada; qualquer outro rótulo (Interlocutor, Alguém, Mestre...) é o
+# interlocutor → Antônio.
+_LABEL_MEISHU = re.compile(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", re.IGNORECASE)
+_LABEL_DIALOGO = re.compile(r"^\s*([^:]{2,40}):\s*")
 
 
-def _chave_elevenlabs() -> str:
-    return os.environ.get("GOSHINSHO_ELEVENLABS_API_KEY", "").strip()
+def _xtts_python() -> str:
+    return os.environ.get(
+        "GOSHINSHO_XTTS_PYTHON", "/var/www/goshinsho/venv_xtts/bin/python"
+    ).strip()
 
 
-def _voice_id_meishu() -> str:
-    return os.environ.get("GOSHINSHO_MEISHU_VOICE_ID", "").strip()
+def _xtts_amostra() -> str:
+    return os.environ.get(
+        "GOSHINSHO_XTTS_AMOSTRA",
+        "/var/www/goshinsho/amostras_voz/amostra_meishu_30s_limpa.wav",
+    ).strip()
+
+
+def _xtts_modelo() -> str:
+    return os.environ.get(
+        "GOSHINSHO_XTTS_MODELO", "tts_models/multilingual/multi-dataset/xtts_v2"
+    ).strip()
 
 
 def voz_meishu_disponivel() -> bool:
-    """True se a voz clonada de Meishu-Sama pode ser usada agora."""
-    return bool(_chave_elevenlabs() and _voice_id_meishu())
+    """True se a voz clonada de Meishu-Sama pode ser usada agora (XTTS pronto)."""
+    return bool(_xtts_python() and os.path.exists(_xtts_python()) and _xtts_amostra()
+                and os.path.exists(_xtts_amostra()))
 
 
-def _sintetizar_elevenlabs(texto: str, destino: str, *, rate: str = "+0%") -> None:
-    """Gera o áudio via ElevenLabs (voz clonada) e salva em `destino`.
+def _identificar_falante(texto: str) -> str:
+    """Identifica o falante de um trecho de diálogo (início do parágrafo).
 
-    Usa a voz 'meishu' (GOSHINSHO_MEISHU_VOICE_ID) com o modelo multilíngue,
-    que permite a voz treinada em japonês falar português.
+    Retorna:
+      - "meishu"  → fala de Meishu-Sama (voz clonada)
+      - "outro"   → fala de interlocutor (não-Meishu) → Antônio
+      - ""        → texto corrido (sem rótulo de fala)
     """
-    import requests
+    t = (texto or "").lstrip()
+    if _LABEL_MEISHU.match(t):
+        return "meishu"
+    m = _LABEL_DIALOGO.match(t)
+    if m:
+        return "outro"
+    return ""
 
-    chave = _chave_elevenlabs()
-    voice_id = _voice_id_meishu()
-    if not chave or not voice_id:
-        raise RuntimeError("ElevenLabs não configurado (chave/voice_id)")
 
-    # rate: o parâmetro da edge-tts é "+0%"/"-10%" — converte para o formato
-    # da ElevenLabs ("speed" é multiplicador: 1.0 = normal, 0.9 = -10%).
-    speed = 1.0
-    if rate:
-        try:
-            speed = 1.0 + (float(rate.replace("%", "").replace("+", "")) / 100.0)
-        except ValueError:
-            speed = 1.0
-    speed = max(0.5, min(2.0, speed))
+def _sanitizar_xtts(texto: str) -> str:
+    """Prepara o texto para o XTTS ler sem vocalizar pontuação.
 
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
-    resp = requests.post(
-        url,
-        headers={
-            "xi-api-key": chave,
-            "Accept": "audio/mpeg",
-            "Content-Type": "application/json",
-        },
-        json={
-            "text": texto,
-            "model_id": _ELEVENLABS_MODELO,
-            "voice_settings": {
-                "stability": 0.5,
-                "similarity_boost": 0.75,
-                "style": 0.3,
-                "use_speaker_boost": True,
-            },
-        },
-        params={"output_format": "mp3_44100_128"},
-        timeout=90,
-    )
-    if resp.status_code != 200:
-        raise RuntimeError(
-            f"ElevenLabs HTTP {resp.status_code}: {resp.text[:200]}"
+    O XTTS tende a ler ponto final como "ponto" e dois-pontos como "dois
+    pontos". Troca pontuação problemática por pausas naturais:
+    - ponto final ". " → vírgula (pausa curta que o XTTS respeita)
+    - ";" e ":" → vírgula
+    - remove notas editoriais [entre colchetes] / (entre parênteses)
+    """
+    out = texto
+    # Remove o rótulo de fala (Meishu-Sama:/Interlocutor:) — já foi usado
+    # para decidir a voz; não deve ser lido em voz alta.
+    out = re.sub(r"^\s*[^:]{2,40}:\s*", "", out)
+    out = out.replace(";", ",")
+    out = out.replace(":", ",")
+    # Ponto final → vírgula (quando seguido de espaço+maúscula ou fim).
+    out = re.sub(r"\.(?=\s+[A-ZÀ-Ú])", ",", out)
+    out = re.sub(r"\.\s*$", ",", out)
+    # Notas editoriais.
+    out = re.sub(r"\s*\[[^\]]*\]\s*", " ", out)
+    out = re.sub(r"\s*\([^)]*\)\s*", " ", out)
+    out = re.sub(r"\s+", " ", out).strip()
+    return out
+
+
+def _quebrar_segmentos_xtts(texto: str, limite: int = 200) -> list[str]:
+    """Quebra o texto em segmentos <= limite chars (limite do XTTS p/ pt-BR).
+
+    O XTTS v2 TRUNCA áudio acima de ~203 chars por chamada na língua 'pt'.
+    Divide em fronteiras de vírgula/ponto (pausas naturais) e depois por
+    espaço se um segmento ainda for longo.
+    """
+    if len(texto) <= limite:
+        return [texto]
+    segs: list[str] = []
+    atual = ""
+    partes = re.split(r"(?<=[,;:.…])\s+", texto)
+    for parte in partes:
+        if len(atual) + len(parte) + 1 <= limite:
+            atual = (atual + " " + parte).strip() if atual else parte
+        else:
+            if atual:
+                segs.append(atual.strip())
+            if len(parte) > limite:
+                palavras = parte.split()
+                atual = ""
+                for palavra in palavras:
+                    if len(atual) + len(palavra) + 1 <= limite:
+                        atual = (atual + " " + palavra).strip() if atual else palavra
+                    else:
+                        segs.append(atual.strip())
+                        atual = palavra
+            else:
+                atual = parte
+    if atual.strip():
+        segs.append(atual.strip())
+    return segs
+
+
+# Script helper que roda no venv_xtts (que tem o coqui-tts). Recebe o texto
+# via stdin e grava o áudio no destino. O venv de produção NÃO tem o coqui-tts,
+# então o tts_service chama este script via subprocess.
+_XTTS_HELPER = r"""
+import sys, os, time, re, subprocess
+
+def quebrar(t, limite=200):
+    if len(t) <= limite:
+        return [t]
+    segs = []
+    atual = ""
+    for parte in re.split(r"(?<=[,;:.…])\s+", t):
+        if len(atual) + len(parte) + 1 <= limite:
+            atual = (atual + " " + parte).strip() if atual else parte
+        else:
+            if atual:
+                segs.append(atual.strip())
+            if len(parte) > limite:
+                palavras = parte.split()
+                atual = ""
+                for p in palavras:
+                    if len(atual) + len(p) + 1 <= limite:
+                        atual = (atual + " " + p).strip() if atual else p
+                    else:
+                        segs.append(atual.strip())
+                        atual = p
+            else:
+                atual = parte
+    if atual.strip():
+        segs.append(atual.strip())
+    return segs
+
+def main():
+    texto = sys.stdin.read()
+    destino = sys.argv[1]
+    amostra = sys.argv[2]
+    modelo = sys.argv[3] if len(sys.argv) > 3 else "tts_models/multilingual/multi-dataset/xtts_v2"
+    t0 = time.time()
+    from TTS.api import TTS
+    tts = TTS(modelo).to("cpu")
+    segs = quebrar(texto)
+    tmp_dir = os.path.dirname(os.path.abspath(destino))
+    os.makedirs(tmp_dir, exist_ok=True)
+    tmp_files = []
+    try:
+        for i, seg in enumerate(segs):
+            tmp = os.path.join(tmp_dir, f"_xtts_seg_{os.getpid()}_{i}.wav")
+            tts.tts_to_file(text=seg, speaker_wav=amostra, language="pt", file_path=tmp)
+            # 2026-09-02: remove silêncio nas bordas de cada segmento para a
+            # concatenação não criar "gap" (parada) entre os segmentos. O
+            # XTTS costuma deixar ~0,3-0,5s de silêncio no início/fim.
+            # start_silence=0.15 remove pausas de até ~0,15s nas bordas (mais
+            # agressivo que o default) para a junção ficar contínua.
+            subprocess.run(
+                ["ffmpeg", "-y", "-i", tmp,
+                 "-af", ("silenceremove=start_periods=1:start_threshold=-40dB:"
+                         "start_silence=0.15,areverse,"
+                         "silenceremove=start_periods=1:start_threshold=-40dB:"
+                         "start_silence=0.15,areverse"),
+                 "-ar", "24000", "-ac", "1", tmp + ".c.wav"],
+                check=True, capture_output=True,
+            )
+            os.replace(tmp + ".c.wav", tmp)
+            tmp_files.append(tmp)
+        lista = os.path.join(tmp_dir, f"_xtts_lista_{os.getpid()}.txt")
+        with open(lista, "w") as f:
+            for t in tmp_files:
+                f.write(f"file '{t}'\n")
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lista,
+             "-c:a", "libmp3lame", "-q:a", "2", destino],
+            check=True, capture_output=True,
         )
-    with open(destino, "wb") as f:
-        f.write(resp.content)
+        try:
+            os.remove(lista)
+        except OSError:
+            pass
+    finally:
+        for t in tmp_files:
+            try:
+                os.remove(t)
+            except OSError:
+                pass
+    sys.stderr.write(f"XTTS ok em {time.time()-t0:.0f}s, {len(segs)} seg(s)\n")
+
+main()
+"""
+
+
+def _sintetizar_xtts(texto: str, destino: str, *, rate: str = "+0%") -> None:
+    """Gera áudio via XTTS local (Coqui) rodando no venv_xtts (subprocess).
+
+    O XTTS clona a voz a partir da amostra (amostra_meishu_30s_limpa.wav) e
+    sintetiza o texto em português (cross-lingual: voz treinada em japonês
+    falando PT). Cada chamada carrega o modelo (~30s na 1ª; o cache em disco
+    do Flask evita regenerar o mesmo trecho).
+    """
+    python = _xtts_python()
+    amostra = _xtts_amostra()
+    modelo = _xtts_modelo()
+    if not python or not os.path.exists(python):
+        raise RuntimeError("XTTS não configurado (GOSHINSHO_XTTS_PYTHON)")
+    if not amostra or not os.path.exists(amostra):
+        raise RuntimeError(f"Amostra de voz não encontrada: {amostra}")
+
+    os.makedirs(os.path.dirname(destino) or ".", exist_ok=True)
+    proc = subprocess.run(
+        [python, "-c", _XTTS_HELPER, destino, amostra, modelo],
+        input=texto.encode("utf-8"),
+        capture_output=True,
+        timeout=900,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(
+            f"XTTS falhou (rc={proc.returncode}): "
+            f"{proc.stderr.decode('utf-8', 'replace')[-500:]}"
+        )
+    if not os.path.exists(destino) or os.path.getsize(destino) == 0:
+        raise RuntimeError("XTTS não gerou o áudio")
 
 
 # Cache em disco dos áudios gerados (evita regerar o mesmo texto).
@@ -144,8 +318,12 @@ def _limpar_cache_antigo() -> None:
 def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     """Gera o áudio MP3 do texto e retorna o caminho do arquivo (com cache).
 
-    - voz "meishu": usa a ElevenLabs (voz clonada de Meishu-Sama, cross-lingual).
-      Se a voz não estiver configurada/disponível, faz fallback para o Antonio.
+    - voz "meishu": voz clonada de Meishu-Sama (XTTS local). Quando o trecho
+      é um diálogo (começa com rótulo de fala), o falante decide o provedor:
+        * "Meishu-Sama:" → XTTS (voz clonada)
+        * "Interlocutor:" e outros rótulos → Antônio (edge-tts)
+        * texto corrido (sem rótulo) → XTTS (voz clonada, padrão da opção)
+      Se o XTTS não estiver disponível, faz fallback para o Antônio.
     - demais vozes (antonio/francisca/thalita): edge-tts (gratuito).
     """
     texto = (texto or "").strip()
@@ -153,19 +331,27 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
         raise ValueError("texto vazio")
 
     voz_origem = (voz or "").lower()
-    usando_meishu = voz_origem == VOZ_MEISHU and voz_meishu_disponivel()
-
-    if voz_origem == VOZ_MEISHU and not usando_meishu:
-        # Fallback transparente: voz clonada indisponível → Antonio.
-        voz_origem = "antonio"
-    voz_real = VOZES_PT_BR.get(voz_origem, VOZ_PADRAO)
-
     if (rate or "").strip() == "":
         rate = "+0%"
 
-    # A chave de cache precisa incluir o provedor (evita colisão de cache
-    # entre edge-tts e ElevenLabs para o mesmo texto).
-    provedor = "el" if usando_meishu else "edge"
+    # Decide o provedor real com base na voz pedida + falante do diálogo.
+    if voz_origem == VOZ_MEISHU:
+        if not voz_meishu_disponivel():
+            # Fallback transparente: XTTS indisponível → Antônio (edge).
+            return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+        falante = _identificar_falante(texto)
+        if falante == "outro":
+            # Interlocutor (não-Meishu) → Antônio (edge-tts).
+            return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
+        # Meishu-Sama ou texto corrido → XTTS (voz clonada).
+        return _sintetizar_com_cache("xtts", "meishu", texto, rate)
+
+    voz_real = VOZES_PT_BR.get(voz_origem, VOZ_PADRAO)
+    return _sintetizar_com_cache("edge", voz_real, texto, rate)
+
+
+def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -> str:
+    """Gera o áudio (edge-tts ou XTTS) com cache em disco, conforme o provedor."""
     chave = _chave_cache(f"{provedor}:{voz_real}", texto, rate)
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
@@ -173,21 +359,24 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
 
     _limpar_cache_antigo()
 
-    if usando_meishu:
-        # ElevenLabs — chamada HTTP síncrona simples.
+    if provedor == "xtts":
+        # Voz clonada (Meishu-Sama) via XTTS local. O texto vai sanitizado
+        # (sem rótulo de fala, pontuação ajustada) para o XTTS não ler
+        # "ponto"/"dois pontos".
+        texto_tts = _sanitizar_xtts(texto)
+        if not texto_tts:
+            raise ValueError("texto vazio após sanitizar")
         try:
-            _sintetizar_elevenlabs(texto, destino, rate=rate)
+            _sintetizar_xtts(texto_tts, destino, rate=rate)
         except Exception:
-            # Fallback para o edge-tts se a ElevenLabs falhar.
+            # Fallback: se o XTTS falhar, tenta o Antônio (edge-tts).
             if os.path.exists(destino):
                 try:
                     os.remove(destino)
                 except OSError:
                     pass
-            voz_real = VOZ_PADRAO
-            chave = _chave_cache("edge:" + voz_real, texto, rate)
-            destino = os.path.join(_cache_dir(), f"{chave}.mp3")
-            _gerar_edge(texto, voz_real, rate, destino)
+            destino_fb = _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+            return destino_fb
     else:
         _gerar_edge(texto, voz_real, rate, destino)
 

@@ -155,7 +155,7 @@ def api_tts_vozes():
         {"id": "thalita", "nome": "Thalita (feminino, multilíngue)", "disponivel": True},
         {
             "id": "meishu",
-            "nome": "Meishu-Sama (voz clonada)",
+            "nome": "Meishu-Sama (voz clonada; diálogo: Interlocutor = Antônio)",
             "disponivel": tts_service.voz_meishu_disponivel(),
         },
     ]
