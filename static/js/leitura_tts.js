@@ -36,36 +36,6 @@
     };
     var VOZ_SELECT_KEY = "goshinsho-leitura-voz-edge";
 
-    // Correção de pronúncia para o edge-tts (o texto na tela mantém a grafia
-    // correta; aqui ajustamos só o que vai para o TTS).
-    // Decisão do usuário (2026-08-27): "johrei" deve soar como "jyorei"
-    // (não "djo rei"/"djiorei"). O som do じょ (jyo) em português é "jio/jyo".
-    // Outros termos messiânicos também são ajustados para a leitura natural.
-    var PRONUNCIAS = [
-        // [termo no texto, pronúncia para o TTS] — ordem: mais longo primeiro
-        ["Meishu-Sama", "Meichu-Sama"],
-        ["Meishu Sama", "Meichu Sama"],
-        ["Meishu", "Meichu"],
-        ["Johrei", "Jyorei"],
-        ["Ohikari", "Oricari"],
-        ["Ohikari-Sama", "Oricari-Sama"],
-        ["Gokōwa-roku", "Gocoua-roku"],
-        ["Gokowa-roku", "Gocoua-roku"],
-        ["Mioshie-shū", "Miochie-shu"],
-        ["Mioshie", "Miochie"],
-        ["Daikōmyō", "Daicomio"],
-        ["Kōmyō", "Comio"],
-        ["Nyorai", "Niorai"],
-        ["Jikan", "Jicã"],
-        ["Tijotengoku", "Tijotengoku"],
-        ["Shinsei", "Chinsei"],
-        ["Hannya", "Rania"],
-        ["Shukumei", "Chukumei"],
-        ["Shinrei", "Chinrei"],
-        ["Ōmikami", "Omicami"],
-        ["Omikami", "Omicami"],
-    ];
-
     // Sanitiza o texto para o edge-tts com voz PT-BR. O edge-tts da
     // Microsoft FALHA (NoAudioReceived → HTTP 500) quando o texto contém
     // parênteses japoneses, aspas japonesas ou blocos de kanji — que são
@@ -75,6 +45,11 @@
     // processa (e removemos os kanji residuais). O texto NA TELA não muda.
     // 2026-08-31: causa raiz do "áudio parou de funcionar" — um trecho com
     // esses caracteres quebrava a leitura ao chegar nele.
+    //
+    // 2026-09-05: a transformação de pronúncias/sanitização para o TTS foi
+    // MOVIDA para o servidor (tts_service). Esta função agora é usada APENAS
+    // localmente para detectar trechos que ficariam VAZIOS após remover kanji
+    // (e então pulá-los sem chamar o servidor).
     function sanitizarParaTTS(texto) {
         var out = texto;
         // Parênteses japoneses → ascii (o TTS PT processa normalmente).
@@ -93,21 +68,6 @@
         out = out.replace(/\s{2,}/g, " ");
         out = out.replace(/\(\s*\)/g, "");
         return out.trim();
-    }
-
-    // Aplica as pronúncias ao texto (para o TTS). Mantém o original na tela.
-    function aplicarPronuncias(texto) {
-        var out = texto;
-        for (var i = 0; i < PRONUNCIAS.length; i++) {
-            var termo = PRONUNCIAS[i][0];
-            var pron = PRONUNCIAS[i][1];
-            // Substituição case-insensitive preservando o texto.
-            out = out.replace(new RegExp(termo.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), pron);
-        }
-        // Sanitiza caracteres que quebram o edge-tts (parênteses/aspas
-        // japonesas e kanji). Deve vir DEPOIS das pronúncias (as pronúncias
-        // trabalham com texto em português).
-        return sanitizarParaTTS(out);
     }
 
     // Lê a voz edge escolhida (localStorage) ou a padrão.
@@ -285,15 +245,16 @@
 
     // Pré-busca o áudio do trecho `indice` (para a transição ser instantânea).
     // Dispara e esquece — se o usuário pular, o cache já tem o áudio.
+    // 2026-09-05: envia o texto CRU (sem aplicarPronuncias) — a transformação
+    // (pronúncias + macrons + sanitização) agora é feita no servidor.
     function prefetchTrecho(indice, fila, opts) {
         if (!fila || indice >= fila.length) return;
         var textoTrecho = fila[indice];
-        var textoParaTTS = aplicarPronuncias(textoTrecho);
         var vozAtual = opts.voz || vozEscolhidaEdge();
         var rate = opts.rate || "+0%";
-        var chave = _chaveAudio(textoParaTTS, vozAtual, rate);
+        var chave = _chaveAudio(textoTrecho, vozAtual, rate);
         if (_cacheAudio[chave]) return; // já tem
-        buscarAudio(textoParaTTS, vozAtual, rate).catch(function () {
+        buscarAudio(textoTrecho, vozAtual, rate).catch(function () {
             // prefetch falhou (offline) — o tocarTrecho tentará de novo.
         });
     }
@@ -316,14 +277,13 @@
 
         var textoTrecho = fila[indice];
         var rate = opts.rate || "+0%";
-        // Aplica as pronúncias dos termos messiânicos (ex.: Johrei → Jyorei)
-        // ANTES de enviar ao servidor — o TTS lê o texto com a grafia correta.
-        var textoParaTTS = aplicarPronuncias(textoTrecho);
 
-        // Se após a sanitização o trecho ficou vazio (ex.: uma data só com
-        // kanji （昭和二十三年一月一日）, que a voz PT não lê), pula para o
-        // próximo em vez de tentar gerar áudio vazio (que falharia no
-        // servidor e pararia a leitura).
+        // 2026-09-05: envia o texto CRU ao servidor (que agora aplica as
+        // pronúncias/macrons/sanitização). Usamos a sanitização local APENAS
+        // para detectar trechos que ficariam VAZIOS (ex.: uma data só com
+        // kanji （昭和二十三年一月一日）, que a voz PT não lê) — nesse caso
+        // pulamos para o próximo em vez de chamar o servidor (que falharia).
+        var textoParaTTS = sanitizarParaTTS(textoTrecho);
         if (!textoParaTTS) {
             salvarProgresso(indice + 1, opts);
             tocarTrecho(indice + 1, opts);
@@ -348,7 +308,10 @@
 
         // Usa a voz escolhida no seletor (padrão: antonio).
         var vozAtual = opts.voz || vozEscolhidaEdge();
-        buscarAudio(textoParaTTS, vozAtual, rate).then(function (url) {
+        // Envia o texto CRU (textoTrecho) ao servidor — é ele que define a
+        // chave do cache e o roteamento de voz. O `textoParaTTS` acima serviu
+        // apenas para detectar trecho vazio.
+        buscarAudio(textoTrecho, vozAtual, rate).then(function (url) {
             if (!leituraEdge) return; // foi parado enquanto buscava
             if (leituraEdge.indice !== indice || leituraEdge.geracao !== geracao) return; // pulou enquanto buscava
 
@@ -591,6 +554,14 @@
     }
 
     // Configura o clique nos parágrafos: pula a leitura para o clicado.
+    // 2026-09-05: reescrito para eliminar a dupla leitura ao "recomeçar o
+    // trecho lido". ANTES: quando leituraEdge era null (leitura anterior
+    // terminou), o clique chamava botao.click() (que inicia a leitura e
+    // dispara o carregarProgresso ASSÍNCRONO) E um setInterval chamava
+    // pularParaParagrafo. O carregarProgresso (fetch ao servidor) podia
+    // resolver DEPOIS do pulo e chamar tocarTrecho de novo → 2 áudios
+    // sobrepostos / reinício no meio. AGORA: quando não está lendo, monta a
+    // fila e toca DIRETO o trecho clicado (sem passar pelo progresso).
     function configurarCliqueParagrafos(alvo, opts) {
         if (!alvo || alvo.dataset.cliqueEdge) return;
         alvo.dataset.cliqueEdge = "1";
@@ -600,34 +571,60 @@
             var textoPar = (paragrafo.textContent || "").replace(/\s+/g, " ").trim();
             if (!textoPar) return;
 
-            // Se ainda não está lendo, inicia a leitura primeiro.
+            // Se ainda não está lendo, inicia a leitura DIRETO no trecho
+            // clicado — sem passar por botao.click()/carregarProgresso, que
+            // causavam a dupla leitura ao recomeçar.
             if (!leituraEdge) {
+                // Se o botão está num estado "lendo"/"pausado" mas o
+                // leituraEdge é null (dessincronização), reseta o estado.
                 var botao = alvo.querySelector(".audio-btn");
-                if (botao) {
-                    // 2026-08-31: se o botão está num estado "lendo"/"pausado"
-                    // (Pausar/Continuar) mas o leituraEdge é null, há uma
-                    // dessincronização (a leitura terminou/anulou por fora sem
-                    // resetar o botão). Nesse caso, clicar no botão PAUSARIA em
-                    // vez de iniciar. Resetamos o estado para "parado" antes.
-                    var titulo = botao.title;
-                    if (titulo === "Pausar" || titulo === "Continuar") {
-                        if (botao._goshinshoResetParado) botao._goshinshoResetParado();
-                    }
-                    if (botao.click) botao.click();
-                }
-                // Aguarda a fila ser montada e então pula.
-                var tentativas = 0;
-                var timer = window.setInterval(function () {
-                    tentativas++;
-                    if (leituraEdge || tentativas >= 20) {
-                        window.clearInterval(timer);
-                        pularParaParagrafo(textoPar, opts);
-                    }
-                }, 120);
+                if (botao && botao._goshinshoResetParado) botao._goshinshoResetParado();
+                iniciarLeituraEmParagrafo(textoPar, opts);
                 return;
             }
             pularParaParagrafo(textoPar, opts);
         });
+    }
+
+    // Monta a fila de trechos a partir do texto do alvo (remove botões,
+    // emojis residuais e divide em frases — mesma lógica do botão ▶).
+    function montarFilaDoAlvo(alvo) {
+        var clone = alvo.cloneNode(true);
+        clone.querySelectorAll(".audio-btn, .mic-btn, button, [aria-label]")
+            .forEach(function (el) { el.parentNode && el.parentNode.removeChild(el); });
+        var texto = (clone.textContent || "").trim();
+        if (!texto) return null;
+        texto = texto.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu, "");
+        var fila = quebrarEmFrases(texto);
+        return fila.length ? fila : null;
+    }
+
+    // Inicia a leitura (ou recomeça) a partir do parágrafo clicado, sem
+    // depender do carregarProgresso assíncrono (evita dupla leitura).
+    function iniciarLeituraEmParagrafo(textoPar, opts) {
+        var fila = montarFilaDoAlvo(opts.alvo);
+        if (!fila) return;
+        leituraEdge = { fila: fila, indice: 0, audio: null, pausado: false };
+        // Marca o botão como "lendo" para refletir o estado real (e evitar que
+        // um clique no botão durante esta leitura inicie OUTRA por engano).
+        if (opts && opts.alvo) {
+            var b = opts.alvo.querySelector && opts.alvo.querySelector(".audio-btn");
+            if (b && b._goshinshoSetLendo) b._goshinshoSetLendo();
+            else if (opts.alvo._goshinshoSetLendo) opts.alvo._goshinshoSetLendo();
+        }
+        // Localiza o trecho do parágrafo clicado e toca direto.
+        var idx = acharIndicePorTextoParagrafo(textoPar);
+        if (idx === null) idx = 0;
+        leituraEdge.indice = idx;
+        var novoOpts = Object.assign({}, opts, {
+            onFim: function () {
+                if (opts && opts.alvo) {
+                    var b = opts.alvo.querySelector && opts.alvo.querySelector(".audio-btn");
+                    if (b && b._goshinshoResetParado) b._goshinshoResetParado();
+                }
+            },
+        });
+        tocarTrecho(idx, novoOpts);
     }
 
     // Pula a leitura para o trecho que contém o parágrafo clicado.
@@ -714,8 +711,24 @@
             estado = "parado";
             atualizar();
         }
+        // 2026-09-05: expõe setters de estado para que a leitura iniciada por
+        // clique no parágrafo (iniciarLeituraEmParagrafo) mantenha o botão
+        // sincronizado (sem isso o botão ficava "parado" durante uma leitura
+        // ativa iniciada por clique → clicar nele iniciava OUTRA leitura =
+        // dupla leitura).
+        function setLendo() { estado = "lendo"; atualizar(); }
+        function setPausado() { estado = "pausado"; atualizar(); }
+        function getEstado() { return estado; }
         botao._goshinshoResetParado = resetarParaParado;
-        if (alvo) alvo._goshinshoResetParado = resetarParaParado;
+        botao._goshinshoSetLendo = setLendo;
+        botao._goshinshoSetPausado = setPausado;
+        botao._goshinshoEstado = getEstado;
+        if (alvo) {
+            alvo._goshinshoResetParado = resetarParaParado;
+            alvo._goshinshoSetLendo = setLendo;
+            alvo._goshinshoSetPausado = setPausado;
+            alvo._goshinshoEstado = getEstado;
+        }
 
         botaoParar.addEventListener("click", function (ev) {
             ev.preventDefault();

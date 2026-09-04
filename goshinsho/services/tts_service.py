@@ -52,11 +52,129 @@ VOZ_PADRAO = "pt-BR-AntonioNeural"
 VOZ_MEISHU = "meishu"
 VOZ_INTERLOCUTOR = "pt-BR-AntonioNeural"  # edge-tts (Antônio) p/ não-Meishu
 
+# Versão da amostra de voz usada na clonagem XTTS. Incluída na CHAVE do cache
+# para que, ao trocar a amostra (ex.: para a remasterizada), os áudios antigos
+# NÃO sejam reutilizados — força regeneração com a voz nova.
+# 2026-09-05: v1 = amostra antiga (amostra_meishu_30s_limpa); v2 = remasterizada
+# (amostra_meishu_oficial.wav, aprovada). Manter em sincronia com o gerador GPU
+# (scripts/gerar_gpu.py → VOZ_MEISHU_CACHE).
+VOZ_MEISHU_CACHE = "meishu:v2"
+
 # Rótulos de fala nos diálogos (início de parágrafo). "Meishu-Sama" é a voz
 # clonada; qualquer outro rótulo (Interlocutor, Alguém, Mestre...) é o
 # interlocutor → Antônio.
 _LABEL_MEISHU = re.compile(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", re.IGNORECASE)
 _LABEL_DIALOGO = re.compile(r"^\s*([^:]{2,40}):\s*")
+
+# ---------------------------------------------------------------------------
+# Transformação do texto para o TTS (2026-09-05)
+#
+# ANTES (bug): o front (leitura_tts.js) aplicava as pronúncias + sanitização e
+# só então enviava o texto ao servidor. Isso (1) quebrava o roteamento — a fala
+# "Meishu-Sama:" virava "Meichu-Sama:" e o servidor a classificava como
+# Interlocutor → Antônio (em vez da voz clonada); e (2) fazia a chave do cache
+# divergir da usada pelo gerador GPU (que usa o texto CRU).
+#
+# AGORA: o front envia o texto CRU; o servidor decide o falante pelo CRU e
+# aplica a transformação (pronúncias + remoção de macrons + sanitização) aqui,
+# de forma consistente para o app e para o gerador GPU.
+# ---------------------------------------------------------------------------
+
+# Tabela de pronúncias para o TTS. MESMA do leitura_tts.js (PRONUNCIAS) — ao
+# alterar uma, altere a outra (e o gerador GPU scripts/gerar_gpu.py).
+# Ordem importa: termos mais longos/compostos PRIMEIRO (senão "Meishu" "come"
+# "Meishu-Sama").
+PRONUNCIAS_TTS: list[tuple[str, str]] = [
+    ("Meishu-Sama", "Meichu-Sama"),
+    ("Meishu Sama", "Meichu Sama"),
+    ("Meishu", "Meichu"),
+    ("Johrei", "Jyorei"),
+    ("Ohikari-Sama", "Oricari-Sama"),
+    ("Ohikari", "Oricari"),
+    ("Gokōwa-roku", "Gocoua-roku"),
+    ("Gokowa-roku", "Gocoua-roku"),
+    ("Mioshie-shū", "Miochie-shu"),
+    ("Mioshie", "Miochie"),
+    ("Daikōmyō", "Daicomio"),
+    ("Kōmyō", "Comio"),
+    ("Nyorai", "Niorai"),
+    ("Jikan", "Jicã"),
+    ("Tijotengoku", "Tijotengoku"),
+    ("Shinsei", "Chinsei"),
+    ("Hannya", "Rania"),
+    ("Shukumei", "Chukumei"),
+    ("Shinrei", "Chinrei"),
+    ("Ōmikami", "Omicami"),
+    ("Omikami", "Omicami"),
+]
+
+# Regra geral de macron (decisão 2026-09-05): o TTS não deve "ler" as vogais
+# longas japonesas (ō/ū/ā/ē/ī) — remove o acento (vogal "normal") para qualquer
+# palavra não coberta pela tabela acima (ex.: Byōbu → Byobu, Shōwa → Showa).
+# NÃO afeta o texto da tela (só a cópia enviada ao TTS).
+_MACRON_MAP = str.maketrans({
+    "ā": "a", "ē": "e", "ī": "i", "ō": "o", "ū": "u",
+    "Ā": "A", "Ē": "E", "Ī": "I", "Ō": "O", "Ū": "U",
+})
+
+
+def _normalizar_caracteres(texto: str) -> str:
+    """Converte caracteres japoneses que quebram o TTS PT-BR para formas ASCII.
+
+    O edge-tts FALHA (NoAudioReceived) com parênteses/aspas japonesas e blocos
+    de kanji; o XTTS também não os lê. O texto da TELA não muda — só a cópia
+    que vai para o sintetizador.
+    """
+    out = (texto or "")
+    out = out.replace("（", "(").replace("）", ")")
+    out = out.replace("「", '"').replace("」", '"')
+    out = out.replace("『", '"').replace("』", '"')
+    out = out.replace("【", "[").replace("】", "]")
+    out = re.sub(r"[〜～]", " ", out)
+    out = re.sub(r"[\u4e00-\u9fff]+", "", out)  # remove kanji
+    out = re.sub(r"\s{2,}", " ", out)
+    out = re.sub(r"\(\s*\)", "", out)
+    return out.strip()
+
+
+def _aplicar_pronuncias(texto: str) -> str:
+    """Aplica a tabela de pronúncias (termo → pronúncia), case-insensitive.
+
+    Mesma lógica do leitura_tts.js (aplicarPronuncias). Ordem preservada:
+    mais longo primeiro, substituição global.
+    """
+    out = texto or ""
+    for termo, pron in PRONUNCIAS_TTS:
+        out = re.sub(re.escape(termo), pron, out, flags=re.IGNORECASE)
+    return out
+
+
+def _remover_macrons(texto: str) -> str:
+    """Remove o acento das vogais longas japonesas (ō→o, ū→u, ā→a, ē→e, ī→i)."""
+    return (texto or "").translate(_MACRON_MAP)
+
+
+def _preparar_texto_xtts(texto: str) -> str:
+    """Prepara o texto CRU para o XTTS (voz clonada) sintetizar.
+
+    Aplica: normalização de caracteres → pronúncias → remoção de macrons →
+    sanitização de pontuação (vírgulas, remove rótulo de fala e notas).
+    """
+    t = _normalizar_caracteres(texto)
+    t = _aplicar_pronuncias(t)
+    t = _remover_macrons(t)
+    return _sanitizar_xtts(t)
+
+
+def _preparar_texto_edge(texto: str) -> str:
+    """Prepara o texto CRU para o edge-tts (Antônio/Francisca/Thalita).
+
+    O edge lê a pontuação normalmente (não precisa virar vírgula), mas precisa
+    das pronúncias e da remoção de kanji/macrons.
+    """
+    t = _normalizar_caracteres(texto)
+    t = _aplicar_pronuncias(t)
+    return _remover_macrons(t)
 
 
 def _xtts_python() -> str:
@@ -109,6 +227,10 @@ def _sanitizar_xtts(texto: str) -> str:
     - ponto final ". " → vírgula (pausa curta que o XTTS respeita)
     - ";" e ":" → vírgula
     - remove notas editoriais [entre colchetes] / (entre parênteses)
+
+    NOTA (2026-09-05): esta função recebe o texto JÁ transformado (pronúncias
+    aplicadas + macrons removidos + caracteres normalizados), vindo de
+    _preparar_texto_xtts.
     """
     out = texto
     # Remove o rótulo de fala (Meishu-Sama:/Interlocutor:) — já foi usado
@@ -325,6 +447,12 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
         * texto corrido (sem rótulo) → XTTS (voz clonada, padrão da opção)
       Se o XTTS não estiver disponível, faz fallback para o Antônio.
     - demais vozes (antonio/francisca/thalita): edge-tts (gratuito).
+
+    2026-09-05: o `texto` recebido é o CRU (como está no arquivo). O falante é
+    decidido pelo CRU (corrige o bug em que a pronúncia do front "Meichu-Sama:"
+    era classificada como Interlocutor). A transformação de pronúncia/macron/
+    sanitização acontece AQUI no servidor, e a chave do cache usa o texto CRU
+    (alinhado com o gerador GPU).
     """
     texto = (texto or "").strip()
     if not texto:
@@ -335,6 +463,7 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
         rate = "+0%"
 
     # Decide o provedor real com base na voz pedida + falante do diálogo.
+    # O falante é identificado no texto CRU (sem pronúncias aplicadas).
     if voz_origem == VOZ_MEISHU:
         if not voz_meishu_disponivel():
             # Fallback transparente: XTTS indisponível → Antônio (edge).
@@ -344,14 +473,21 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
             # Interlocutor (não-Meishu) → Antônio (edge-tts).
             return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
         # Meishu-Sama ou texto corrido → XTTS (voz clonada).
-        return _sintetizar_com_cache("xtts", "meishu", texto, rate)
+        return _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
 
     voz_real = VOZES_PT_BR.get(voz_origem, VOZ_PADRAO)
     return _sintetizar_com_cache("edge", voz_real, texto, rate)
 
 
 def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -> str:
-    """Gera o áudio (edge-tts ou XTTS) com cache em disco, conforme o provedor."""
+    """Gera o áudio (edge-tts ou XTTS) com cache em disco, conforme o provedor.
+
+    `texto` é sempre o CRU (como no arquivo). A chave do cache é calculada
+    sobre o texto cru — é o que permite ao gerador GPU (scripts/gerar_gpu.py)
+    produzir arquivos com o MESMO nome que o app procura. Para o XTTS,
+    `voz_real` carrega a versão da amostra (ex.: "meishu:v2") para forçar
+    regeneração ao trocar a amostra.
+    """
     chave = _chave_cache(f"{provedor}:{voz_real}", texto, rate)
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
@@ -360,12 +496,11 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
     _limpar_cache_antigo()
 
     if provedor == "xtts":
-        # Voz clonada (Meishu-Sama) via XTTS local. O texto vai sanitizado
-        # (sem rótulo de fala, pontuação ajustada) para o XTTS não ler
-        # "ponto"/"dois pontos".
-        texto_tts = _sanitizar_xtts(texto)
+        # Voz clonada (Meishu-Sama) via XTTS local. Prepara o texto no servidor:
+        # normaliza caracteres, aplica pronúncias, remove macrons e sanitiza.
+        texto_tts = _preparar_texto_xtts(texto)
         if not texto_tts:
-            raise ValueError("texto vazio após sanitizar")
+            raise ValueError("texto vazio após preparar")
         try:
             _sintetizar_xtts(texto_tts, destino, rate=rate)
         except Exception:
@@ -378,7 +513,12 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
             destino_fb = _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
             return destino_fb
     else:
-        _gerar_edge(texto, voz_real, rate, destino)
+        # Edge-tts: também recebe o texto preparado (pronúncias + sem kanji/
+        # macron), pois precisa ler "Meichu-Sama", "Jyorei", etc. corretamente.
+        texto_edge = _preparar_texto_edge(texto)
+        if not texto_edge:
+            raise ValueError("texto vazio após preparar")
+        _gerar_edge(texto_edge, voz_real, rate, destino)
 
     if not os.path.exists(destino):
         raise RuntimeError("TTS não gerou o áudio")
