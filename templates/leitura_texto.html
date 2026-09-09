@@ -25,6 +25,7 @@
     <div class="overlay" id="overlay"></div>
 
     <main class="app-shell">
+        <div class="leitura-flutuante" id="leitura-flutuante">
         <header class="topbar">
             <div class="brand">
                 <button class="hamburger" id="menu-button" aria-label="Abrir menu">
@@ -50,30 +51,31 @@
             </nav>
         </header>
 
-        <section class="forum-container leitura-container">
-            <!-- Barra de leitura fixa (sempre acessível) -->
-            <div class="leitura-barra" id="leitura-barra">
-                <div class="leitura-barra-botoes">
-                    <a href="{{ url_for('leitura.leitura_pagina') }}" class="back-link leitura-barra-voltar">← Textos</a>
-                    <button type="button" class="btn-primary leitura-barra-audio" id="leitura-barra-play" aria-label="Ouvir o texto">🔊 Ouvir</button>
-                    <button type="button" class="btn-secondary leitura-barra-editar" id="leitura-barra-editar" aria-label="Sugerir edição do texto">💬 Sugerir edição</button>
-                </div>
-                <div class="leitura-barra-voz">
-                    <label for="leitura-voz-select">Voz:</label>
-                    <select id="leitura-voz-select" aria-label="Escolher voz da leitura em áudio">
-                        <option value="">Automática</option>
-                    </select>
-                </div>
-                <div class="leitura-barra-progresso" id="leitura-barra-progresso" aria-label="Progresso da leitura">0%</div>
+        <div class="leitura-barra" id="leitura-barra">
+            <div class="leitura-barra-botoes">
+                {% set cat_label = 'Palavra Oral' if cat_origem == 'oral' else 'Palavra Escrita' %}
+                <a href="{{ url_for('leitura.leitura_pagina', cat=cat_origem) }}" class="back-link leitura-barra-voltar" title="Voltar à {{ cat_label }}">← {{ cat_label }}</a>
+                <button type="button" class="btn-primary leitura-barra-audio" id="leitura-barra-play" aria-label="Ouvir o texto">🔊 Ouvir</button>
+                <button type="button" class="btn-secondary leitura-barra-editar" id="leitura-barra-editar" aria-label="Sugerir edição do texto">💬 Sugerir edição</button>
             </div>
+            <div class="leitura-barra-voz">
+                <label for="leitura-voz-select">Voz:</label>
+                <select id="leitura-voz-select" aria-label="Escolher voz da leitura em áudio">
+                    <option value="">Automática</option>
+                </select>
+            </div>
+            <div class="leitura-barra-progresso" id="leitura-barra-progresso" aria-label="Progresso da leitura">0%</div>
+        </div>
 
-            <nav class="community-links" aria-label="Funcionalidades da comunidade">
-                <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
-                <a class="community-link" href="{{ url_for('leitura.leitura_pagina') }}">📖 Leitura Colaborativa</a>
-            </nav>
+        <nav class="community-links" aria-label="Funcionalidades da comunidade">
+            <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
+            <a class="community-link" href="{{ url_for('leitura.leitura_pagina') }}">📖 Leitura Colaborativa</a>
+        </nav>
+        </div><!-- /.leitura-flutuante -->
 
+        <section class="forum-container leitura-container">
             <div class="forum-header leitura-texto-header">
-                <a href="{{ url_for('leitura.leitura_pagina') }}" class="back-link">← Voltar aos textos</a>
+                <a href="{{ url_for('leitura.leitura_pagina', cat=cat_origem) }}" class="back-link">← Voltar à {{ cat_label }}</a>
                 <h1>{{ titulo }}</h1>
                 {% if data %}<p class="muted leitura-texto-data">{{ data }}</p>{% endif %}
             </div>

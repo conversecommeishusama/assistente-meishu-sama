@@ -259,14 +259,31 @@
         });
     }
 
+    // Abre a Leitura direto na categoria indicada por ?cat=oral|escrita
+    // (usado pelo botão "voltar" da página de texto — 2026-09-09).
+    function abrirCategoriaDaUrl() {
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var cat = params.get("cat");
+            if (cat === "oral") {
+                mostrarVisao("colecoes");
+            } else if (cat === "escrita") {
+                aplicarProgressoNaLista(document.getElementById("leitura-escrita-list"));
+                mostrarVisao("escritaLivros");
+            }
+        } catch (e) { /* URLSearchParams indisponível — ignora */ }
+    }
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", function () {
             initNavegacao();
             initProgressoTexto();
+            abrirCategoriaDaUrl();
         });
     } else {
         initNavegacao();
         initProgressoTexto();
+        abrirCategoriaDaUrl();
     }
 
     // Expõe funções úteis para o leitura_texto.html (salvar progresso).

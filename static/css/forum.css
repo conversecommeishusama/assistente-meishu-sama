@@ -415,6 +415,47 @@
     margin-top: 2px;
 }
 
+/* ---------- Leitura: topo flutuante conjunto (2026-09-09) ----------
+ * Na página de texto da Leitura, o topbar (Goshinsho/login/apoiar), a barra
+ * de leitura (controles de áudio + voz) e os links da comunidade (Chat /
+ * Leitura Colaborativa) ficam num wrapper sticky ÚNICO — flutuam juntos ao
+ * rolar, sempre acessíveis. */
+.leitura-flutuante {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border, #e3e3e3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 14px 14px;
+    margin: 0 -6px 18px;
+    padding: 4px 6px 2px;
+}
+/* Dentro do wrapper, o topbar não precisa ser sticky individualmente. */
+.leitura-flutuante .topbar {
+    position: static;
+    box-shadow: none;
+    border-bottom: none;
+    padding: 8px 6px 10px;
+    background: transparent;
+    backdrop-filter: none;
+}
+/* Barra de leitura e links da comunidade: sem sticky próprio (empilham). */
+.leitura-flutuante .leitura-barra {
+    position: static;
+    margin: 0 0 6px;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px dashed var(--border, #e3e3e3);
+    border-radius: 0;
+    padding: 8px 8px 10px;
+}
+.leitura-flutuante .community-links {
+    margin: 2px 0 6px;
+    padding: 0 4px;
+}
+
 /* ---------- Leitura: barra fixa de leitura (2026-08-25) ---------- */
 .leitura-barra {
     position: sticky;

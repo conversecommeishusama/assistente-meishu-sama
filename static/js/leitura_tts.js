@@ -108,11 +108,21 @@
             select.dataset.edgeVozesListener = "1";
             select.addEventListener("change", function () {
                 guardarVozEdge(select.value);
-                // Reinicia a leitura com a nova voz (se estiver lendo).
-                if (leituraEdge) {
-                    pararLeitura({});
-                    // O usuário recomeça do início (ou mantém o progresso?).
-                    // Mantemos simples: para e o usuário clica de novo.
+                // Troca de voz DURANTE a leitura (lendo ou pausado): reinicia
+                // do trecho atual com a nova voz, sem perder a posição.
+                // (Antes: parava a leitura e o "Continuar" não tocava — bug.)
+                if (leituraEdge && _optsLeitura) {
+                    var indiceAtual = leituraEdge.indice;
+                    var opts = _optsLeitura;
+                    cancelarAudioAtual();
+                    leituraEdge.indice = indiceAtual;
+                    leituraEdge.pausado = false;
+                    // Sincroniza o estado visual do botão p/ "lendo".
+                    var alvoAtivo = opts.alvo;
+                    if (alvoAtivo && alvoAtivo._goshinshoSetLendo) alvoAtivo._goshinshoSetLendo();
+                    var b = alvoAtivo && alvoAtivo.querySelector(".audio-btn");
+                    if (b && b._goshinshoSetLendo) b._goshinshoSetLendo();
+                    tocarTrecho(indiceAtual, opts);
                 }
             });
         }
@@ -181,6 +191,10 @@
 
     // Estado da leitura edge-tts.
     var leituraEdge = null; // { fila, indice, audio, pausado, mapa }
+    // Guarda os `opts` da leitura ativa (alvo, rate, chaveProgresso) para que
+    // ações externas (ex.: troca de voz no seletor) possam re-tocar o trecho
+    // atual com a nova voz sem perder a posição. 2026-09-09.
+    var _optsLeitura = null;
 
     // Fila de trechos (frases) — mesma lógica do quebrarTexto do speech.js,
     // mas SEM cortar no meio de frase por contagem (edge-tts aceita frases
@@ -262,6 +276,9 @@
     // Toca o trecho no índice `indice` usando <audio>.
     function tocarTrecho(indice, opts) {
         if (!leituraEdge) return;
+        // Guarda os opts da leitura ativa (p/ troca de voz reiniciar do trecho
+        // atual com a nova voz). 2026-09-09.
+        if (opts) _optsLeitura = opts;
         var fila = leituraEdge.fila;
         if (indice >= fila.length) {
             // Terminou
@@ -390,6 +407,7 @@
     function pararLeitura(opts) {
         cancelarAudioAtual();
         leituraEdge = null;
+        _optsLeitura = null;
         limparCacheAudio();
         if (opts && opts.onFim) opts.onFim();
     }
@@ -674,6 +692,16 @@
         if (botaoOriginal) {
             botaoOriginal.style.display = "none"; // esconde o padrão (fallback via clique)
         }
+        // 2026-09-09: também esconde os botões de áudio do speech.js que
+        // estejam DENTRO do alvo (texto) — quando os controles edge foram
+        // movidos para a barra fixa, o botão original dentro do texto não é
+        // o `botaoOriginal` (que agora é procurado na barra/destino).
+        if (alvo && opts.botaoDestino && alvo !== opts.botaoDestino) {
+            var botoesNoTexto = alvo.querySelectorAll(".audio-btn");
+            for (var bi = 0; bi < botoesNoTexto.length; bi++) {
+                botoesNoTexto[bi].style.display = "none";
+            }
+        }
 
         var botao = document.createElement("button");
         botao.type = "button";
@@ -825,6 +853,23 @@
             var artigo = alvo.closest ? alvo.closest(".message.assistant") : null;
             var acoes = artigo ? artigo.querySelector(".message-actions") : null;
             if (acoes) botaoDestino = acoes;
+        }
+        // 2026-09-09: na página da Leitura Colaborativa (texto com
+        // data-audio-chave "goshinsho-leitura:..."), os controles de áudio
+        // ficam na BARRA FIXA (#leitura-barra, position: sticky) para ficarem
+        // sempre visíveis/flutuantes durante a leitura — junto com o seletor
+        // de voz. O botão "Ouvir" original da barra (#leitura-barra-play) é
+        // escondido (o edge-tts assume).
+        var chaveProgresso = alvo.dataset.audioChave || "";
+        var isLeitura = chaveProgresso.indexOf("goshinsho-leitura:") === 0;
+        var barraLeitura = isLeitura ? document.getElementById("leitura-barra") : null;
+        if (barraLeitura && !botaoDestino) {
+            botaoDestino = barraLeitura.querySelector(".leitura-barra-botoes");
+            if (botaoDestino) {
+                // Esconde o botão "Ouvir" original da barra (o edge-tts assume).
+                var btnBarra = document.getElementById("leitura-barra-play");
+                if (btnBarra) btnBarra.style.display = "none";
+            }
         }
         var opts = {
             alvo: alvo,

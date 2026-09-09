@@ -60,11 +60,70 @@ VOZ_INTERLOCUTOR = "pt-BR-AntonioNeural"  # edge-tts (Antônio) p/ não-Meishu
 # (scripts/gerar_gpu.py → VOZ_MEISHU_CACHE).
 VOZ_MEISHU_CACHE = "meishu:v2"
 
+# ---------------------------------------------------------------------------
+# Fish Audio — voz clonada do Meishu-Sama (2026-09-09, APROVADA pelo usuário)
+#
+# Depois de testar XTTS, ElevenLabs e Fish Audio, o usuário APROVOU a voz
+# clonada via Fish Audio S2.1 (modelo free `s2.1-pro-free`, US$ 0) com:
+#   - voz: kikivoice REMASTERIZADA (amostra_meishu_kikivoice_remaster.wav)
+#   - voice_id persistente na Fish: ac0db2ec3d054298ad1e8bd26848588b
+#   - tag de dicção híbrida (pt-BR padrão + dicção clara, sem sotaque JP)
+#   - velocidade 0.75 (leitura pausada/digna)
+# A voz 'meishu' passa a usar a Fish quando configurada (GOSHINSHO_FISH_API_KEY),
+# com fallback p/ XTTS (v2) e depois edge/Antônio.
+# ---------------------------------------------------------------------------
+_FISH_VOICE_ID = os.environ.get("GOSHINSHO_FISH_VOICE_ID", "ac0db2ec3d054298ad1e8bd26848588b")
+_FISH_MODELO = os.environ.get("GOSHINSHO_FISH_MODELO", "s2.1-pro-free")
+_FISH_SPEED = float(os.environ.get("GOSHINSHO_FISH_SPEED", "0.75"))
+_FISH_TAG = ("[standard Brazilian Portuguese, clear diction, no foreign accent, "
+             "precise articulation, careful speech] ")
+# Versão da voz Fish no cache (bump p/ forçar regeneração se a config mudar).
+FISH_MEISHU_CACHE = "meishu-hybrid"
+
+
+def _fish_chave() -> str:
+    return os.environ.get("GOSHINSHO_FISH_AUDIO_API_KEY") or os.environ.get("FISH_API_KEY", "").strip()
+
+
+def _fish_disponivel() -> bool:
+    return bool(_fish_chave())
+
 # Rótulos de fala nos diálogos (início de parágrafo). "Meishu-Sama" é a voz
 # clonada; qualquer outro rótulo (Interlocutor, Alguém, Mestre...) é o
 # interlocutor → Antônio.
 _LABEL_MEISHU = re.compile(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", re.IGNORECASE)
 _LABEL_DIALOGO = re.compile(r"^\s*([^:]{2,40}):\s*")
+
+# ---------------------------------------------------------------------------
+# Detecção de METADADOS (cabeçalho/data) — 2026-09-09
+#
+# Os textos orais têm blocos que NÃO são fala: título do livro, data da
+# reunião ("[1º de agosto]", "1 de setembro", "1º de janeiro do ano 23 da Era
+# Showa (1948)") e notas editoriais de topo. Decisão do usuário: esses blocos
+# devem ser lidos com a voz do INTERLOCUTOR (narrador/Antônio), NÃO do Meishu.
+# Fala corrida real (poemas, texto doutrinário sem rótulo) continua sendo Meishu.
+# ---------------------------------------------------------------------------
+_LABEL_METADADO = [
+    # Nome de arquivo com data inicial: "19520825 - Gosuiji..."
+    re.compile(r"^\d{6,8}\s*-\s*"),
+    # Título do livro (curto): "Gokōwa-roku (Suplemento)", "Gosuiji-roku nº 12"
+    re.compile(r"^(?:Gok[ōo]wa|Gosuiji|Mioshie)[^:\n]{0,80}$"),
+    # Data: "1º de agosto", "[1º de agosto]", "1 de setembro",
+    #       "28 de outubro (quinta-feira)", "1º de janeiro do ano 23 da Era Showa (1948)"
+    re.compile(r"^\[?\s*\d{1,2}[º°]?\s+de\s+[a-záéíóúçãõ]+", re.IGNORECASE),
+    # Nota editorial curta entre parênteses: "(Poemas do Grão-Mestre...)"
+    re.compile(r"^\([^)]{5,90}\)\s*$"),
+]
+
+
+def _eh_metadado(texto: str) -> bool:
+    """True se o trecho é um metadado (título/data/nota) → voz de narrador."""
+    t = (texto or "").strip()
+    if not t or len(t) > 120:
+        return False
+    if _LABEL_DIALOGO.match(t):  # tem rótulo de fala → não é metadado
+        return False
+    return any(p.match(t) for p in _LABEL_METADADO)
 
 # ---------------------------------------------------------------------------
 # Transformação do texto para o TTS (2026-09-05)
@@ -440,19 +499,18 @@ def _limpar_cache_antigo() -> None:
 def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     """Gera o áudio MP3 do texto e retorna o caminho do arquivo (com cache).
 
-    - voz "meishu": voz clonada de Meishu-Sama (XTTS local). Quando o trecho
-      é um diálogo (começa com rótulo de fala), o falante decide o provedor:
-        * "Meishu-Sama:" → XTTS (voz clonada)
+    - voz "meishu": voz clonada de Meishu-Sama. Provedor preferido: FISH AUDIO
+      (2026-09-09, aprovada). Quando o trecho é um diálogo, o falante decide:
+        * "Meishu-Sama:" → Fish (voz clonada aprovada)
         * "Interlocutor:" e outros rótulos → Antônio (edge-tts)
-        * texto corrido (sem rótulo) → XTTS (voz clonada, padrão da opção)
-      Se o XTTS não estiver disponível, faz fallback para o Antônio.
+        * texto corrido (sem rótulo) → Fish (voz clonada, padrão)
+        * metadado (título/data do texto) → Antônio (narrador)
+      Fallback: se Fish indisponível → XTTS local (v2); se falhar → Antônio.
     - demais vozes (antonio/francisca/thalita): edge-tts (gratuito).
 
     2026-09-05: o `texto` recebido é o CRU (como está no arquivo). O falante é
-    decidido pelo CRU (corrige o bug em que a pronúncia do front "Meichu-Sama:"
-    era classificada como Interlocutor). A transformação de pronúncia/macron/
-    sanitização acontece AQUI no servidor, e a chave do cache usa o texto CRU
-    (alinhado com o gerador GPU).
+    decidido pelo CRU. A transformação de pronúncia/macron/sanitização acontece
+    AQUI no servidor, e a chave do cache usa o texto CRU.
     """
     texto = (texto or "").strip()
     if not texto:
@@ -465,28 +523,66 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     # Decide o provedor real com base na voz pedida + falante do diálogo.
     # O falante é identificado no texto CRU (sem pronúncias aplicadas).
     if voz_origem == VOZ_MEISHU:
-        if not voz_meishu_disponivel():
-            # Fallback transparente: XTTS indisponível → Antônio (edge).
-            return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
         falante = _identificar_falante(texto)
         if falante == "outro":
             # Interlocutor (não-Meishu) → Antônio (edge-tts).
             return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
-        # Meishu-Sama ou texto corrido → XTTS (voz clonada).
-        return _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
+        if falante == "" and _eh_metadado(texto):
+            # Metadado (título/data do texto) → narrador (Antônio), decisão
+            # do usuário 09/09 — não é fala do Meishu.
+            return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
+        # Meishu-Sama ou texto corrido → Fish (preferido), senão XTTS (v2).
+        if _fish_disponivel():
+            return _sintetizar_com_cache("fish", FISH_MEISHU_CACHE, texto, rate)
+        if voz_meishu_disponivel():
+            return _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
+        # Fallback transparente: nada disponível → Antônio (edge).
+        return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
 
     voz_real = VOZES_PT_BR.get(voz_origem, VOZ_PADRAO)
     return _sintetizar_com_cache("edge", voz_real, texto, rate)
 
 
+def _sintetizar_fish(texto_cru: str, destino: str) -> None:
+    """Gera áudio via Fish Audio API (voz clonada aprovada do Meishu-Sama).
+
+    `texto_cru` é o texto CRU (como no arquivo). Prepara no servidor
+    (pronúncias + remoção de kanji/macron — igual ao XTTS), prefixa a tag de
+    dicção híbrida e aplica a velocidade 0.75 via prosody.
+    """
+    texto_tts = _preparar_texto_xtts(texto_cru)
+    if not texto_tts:
+        raise ValueError("texto vazio após preparar")
+
+    chave = _fish_chave()
+    if not chave:
+        raise RuntimeError("Fish Audio não configurado (GOSHINSHO_FISH_AUDIO_API_KEY)")
+    try:
+        from fishaudio import FishAudio
+    except Exception as exc:
+        raise RuntimeError(f"SDK fishaudio não instalado: {exc}")
+
+    client = FishAudio(api_key=chave)
+    texto_final = _FISH_TAG + texto_tts
+    audio = client.tts.convert(
+        text=texto_final,
+        reference_id=_FISH_VOICE_ID,
+        format="mp3",
+        speed=_FISH_SPEED,
+        model=_FISH_MODELO,
+    )
+    os.makedirs(os.path.dirname(destino) or ".", exist_ok=True)
+    with open(destino, "wb") as f:
+        f.write(audio)
+
+
 def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -> str:
-    """Gera o áudio (edge-tts ou XTTS) com cache em disco, conforme o provedor.
+    """Gera o áudio (edge-tts, XTTS ou Fish) com cache em disco.
 
     `texto` é sempre o CRU (como no arquivo). A chave do cache é calculada
-    sobre o texto cru — é o que permite ao gerador GPU (scripts/gerar_gpu.py)
-    produzir arquivos com o MESMO nome que o app procura. Para o XTTS,
-    `voz_real` carrega a versão da amostra (ex.: "meishu:v2") para forçar
-    regeneração ao trocar a amostra.
+    sobre o texto cru — permite ao gerador em lote produzir arquivos com o
+    MESMO nome que o app procura. Para XTTS/Fish, `voz_real` carrega a versão
+    (ex.: "meishu:v2", "meishu-hybrid") para forçar regeneração ao trocar voz.
     """
     chave = _chave_cache(f"{provedor}:{voz_real}", texto, rate)
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
@@ -495,7 +591,25 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
 
     _limpar_cache_antigo()
 
-    if provedor == "xtts":
+    if provedor == "fish":
+        try:
+            _sintetizar_fish(texto, destino)
+        except Exception:
+            # Fallback: se a Fish falhar, tenta XTTS local e depois Antônio.
+            if os.path.exists(destino):
+                try:
+                    os.remove(destino)
+                except OSError:
+                    pass
+            if voz_meishu_disponivel():
+                try:
+                    destino_xtts = _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
+                    return destino_xtts
+                except Exception:
+                    pass
+            destino_fb = _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+            return destino_fb
+    elif provedor == "xtts":
         # Voz clonada (Meishu-Sama) via XTTS local. Prepara o texto no servidor:
         # normaliza caracteres, aplica pronúncias, remove macrons e sanitiza.
         texto_tts = _preparar_texto_xtts(texto)

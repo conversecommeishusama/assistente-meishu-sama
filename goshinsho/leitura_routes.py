@@ -65,6 +65,9 @@ def leitura_texto_pagina(nome_arquivo):
         ), 404
     # Título limpo a partir do nome do arquivo
     data, titulo, numero = leitura_service._parse_nome(nome_arquivo)
+    # Categoria de origem (para o botão "voltar" retornar à Palavra Oral ou
+    # Escrita — 2026-09-09). Oral = Gokōwa/Gosuiji/Mioshie; senão Escrita.
+    cat = "oral" if leitura_service._chave_colecao(nome_arquivo) else "escrita"
     return render_template(
         "leitura_texto.html",
         user=user,
@@ -72,6 +75,7 @@ def leitura_texto_pagina(nome_arquivo):
         nome_arquivo=nome_arquivo,
         titulo=titulo or nome_arquivo,
         data=data.isoformat() if data else None,
+        cat_origem=cat,
         conteudo=_conteudo_leitura_html(texto),
     )
 
