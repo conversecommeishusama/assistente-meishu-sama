@@ -835,8 +835,13 @@
             destino.insertBefore(botaoParar, botao);
         }
 
-        // Clique num parágrafo → pula a leitura para lá (só na Leitura).
-        if (!opts.botaoDestino) {
+        // Clique num parágrafo → pula a leitura para lá. Aplica na Leitura
+        // (alvo com .leitura-paragrafo) MESMO quando os botões estão na barra
+        // fixa (botaoDestino presente). 2026-09-09: antes só registrava quando
+        // NÃO havia botaoDestino — ao mover os controles p/ a barra, o clique
+        // em parágrafo deixou de funcionar.
+        var temParagrafos = alvo && alvo.querySelector(".leitura-paragrafo");
+        if (temParagrafos) {
             configurarCliqueParagrafos(alvo, opts);
         }
     }
