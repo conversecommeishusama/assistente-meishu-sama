@@ -550,7 +550,26 @@ def _sintetizar_xtts(texto: str, destino: str, *, rate: str = "+0%") -> None:
 
 # Cache em disco dos áudios gerados (evita regerar o mesmo texto).
 _CACHE_DIR = None
-_CACHE_TTL_S = 60 * 60 * 24 * 30  # 30 dias
+
+# TTL do cache em disco.
+#
+# 2026-09-10: era 30 dias FIXO e apagava a biblioteca de áudios
+# automaticamente. Com a voz clonada aprovada, o cache deixou de ser
+# "temporário" e passou a ser ACERVO permanente — apagar significa regerar
+# (horas de API) e perder o áudio já aprovado. Agora:
+#   - 0 (default) = NUNCA expira (acervo permanente)
+#   - >0 = expira em N dias (configurável via GOSHINSHO_TTS_CACHE_TTL_DIAS)
+_CACHE_TTL_DIAS_DEFAULT = 0
+
+
+def _cache_ttl_s() -> int:
+    """TTL do cache em segundos (0 = sem expiração / acervo permanente)."""
+    try:
+        dias = float(os.environ.get("GOSHINSHO_TTS_CACHE_TTL_DIAS",
+                                    _CACHE_TTL_DIAS_DEFAULT))
+    except (TypeError, ValueError):
+        dias = _CACHE_TTL_DIAS_DEFAULT
+    return int(dias * 24 * 60 * 60) if dias > 0 else 0
 
 
 def _cache_dir() -> str:
@@ -568,13 +587,21 @@ def _chave_cache(provedor_voz: str, texto: str, rate: str) -> str:
 
 
 def _limpar_cache_antigo() -> None:
-    """Remove arquivos de cache mais antigos que o TTL (chamado a cada geração)."""
+    """Remove arquivos de cache mais antigos que o TTL.
+
+    IMPORTANTE (2026-09-10): o TTL default é 0 = NUNCA expira. Os áudios da voz
+    clonada são acervo permanente (aprovados pelo usuário), não cache
+    descartável. Só há remoção se GOSHINSHO_TTS_CACHE_TTL_DIAS > 0.
+    """
+    ttl = _cache_ttl_s()
+    if ttl <= 0:
+        return  # acervo permanente — nada expira
     try:
         agora = time.time()
         for nome in os.listdir(_cache_dir()):
             caminho = os.path.join(_cache_dir(), nome)
             try:
-                if os.path.isfile(caminho) and agora - os.path.getmtime(caminho) > _CACHE_TTL_S:
+                if os.path.isfile(caminho) and agora - os.path.getmtime(caminho) > ttl:
                     os.remove(caminho)
             except OSError:
                 pass
