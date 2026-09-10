@@ -77,6 +77,22 @@ referência do Zenshū/Rokkan estão em
 
 ## 5. Estado ATIVO (o que está em andamento agora — ver `HISTORICO.md` para o detalhe completo)
 
+- **📚 CICLO DE ESTUDOS "MUNDO ESPIRITUAL E ANTEPASSADOS" (09-10/09)** — material
+  para o Culto às Almas (02/11, Guarapiranga). Plano de 8 encontros + apostila de
+  leituras na íntegra (`docs/leituras_integrais/`) + versões Word para impressão
+  (`docs/leituras_word/`, geradas por `scripts/gerar_docx_leituras.py`). Revisão
+  literária das 8 aulas concluída. Detalhes em `HISTORICO.md` (09-10/09).
+- **CORREÇÕES NA LEITURA COLABORATIVA (regra do usuário, 10/09)**: as correções
+  de conteúdo vão **somente** para `textos_leitura_colaborativa/` (base editável,
+  fora do git) — a promoção para produção acontece depois, em bloco. Não editar
+  `livros_publicacao_pt_revisado/` (staging), `textos_portugues/` (produção) nem
+  `livros_publicacao_pt/` (baseline) diretamente.
+  - **`Kakuriyo no Ōkami`**: `幽世大御神`/`幽世大神` devem estar **transliterados**
+    (`Kakuriyo no Ōkami (o Grande Deus do Mundo Oculto)` na 1ª menção).
+    Pendente na promoção: produção (20) e baseline (9).
+  - **`se se` proibido**: nunca deixar "se se" duplo; trocar por "caso se X"/
+    "quando se X"/voz passiva. Pendente na promoção: staging (51), produção (41),
+    baseline (40).
 - **✅ LEITURA COLABORATIVA EM PRODUÇÃO (01/09, v1.4.0)**: promovida com todas as
   funcionalidades. Disponível em `https://goshinsho.com.br/forum/leitura`
   (blueprint `leitura_bp`, lê de `textos_leitura_colaborativa/` via

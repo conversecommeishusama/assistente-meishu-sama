@@ -7,6 +7,82 @@
 
 ---
 
+## 09-10/09 — Ciclo de estudos "Mundo Espiritual e Antepassados" + revisão literária das leituras + "Kakuriyo no Ōkami" + "se se"
+
+> **Pedido do usuário**: preparar um ciclo de 8 encontros temáticos (leitura de
+> ensinamento → explicação → perguntas) com vistas ao **Culto às Almas dos
+> Antepassados (02/11, Solo Sagrado de Guarapiranga)**.
+
+### 1. Organização do ciclo (8 encontros)
+- **Ordem definida**: a aula do **Culto às Almas (Obon)** foi trazida para a
+  **fase inicial (Aula 3)**, como "aula-âncora" (a meta do ciclo é a cerimônia
+  de 02/11).
+  1. A Existência do Mundo Espiritual · 2. A Constituição do Mundo Espiritual ·
+  **3. O Culto às Almas dos Antepassados (Obon)** · 4. Elo Espiritual e Destino ·
+  5. Morte, Julgamento e Destino · 6. Vida no Mundo Espiritual e Reencarnação ·
+  7. A Influência dos Antepassados · 8. O Culto na Prática (preparação 02/11).
+- **Documentos**:
+  - `docs/ciclo_mundo_espiritual_antepassados.md` (plano de apoio).
+  - `docs/PLANOS_DE_AULA_Ciclo_Mundo_Espiritual_Antepassados.md` (documento
+    final: objetivo, ensinamento a ler, roteiro, pontos centrais, perguntas).
+  - `docs/leituras_integrais/Aula_01..08_*.md` — **apostila**: o texto dos
+    ensinamentos principais **na íntegra**, um arquivo por aula (cópia de uso do
+    ciclo; não toca o corpus canônico).
+  - `docs/leituras_word/Encontro_01..08_*.docx` — versões **Word para impressão**
+    (A4, cabeçalho, numeração, fonte serifada, diálogos com rótulo em negrito,
+    parágrafos quebrados em blocos ≤850 chars). Geradas por
+    `scripts/gerar_docx_leituras.py` (usa `python-docx` no `.venv`).
+
+### 2. Revisão literária das 8 aulas (padrão de editora)
+- **Calibragem** (definida pelo usuário): norma culta; alternar
+  "seres humanos/as pessoas/humanos" (evitar "homem" como humanidade);
+  capitalização conforme norma; "shugyō" → **aprimoramento**; sem acréscimos
+  fora do original; diálogos também ajustáveis.
+- **Aula 1** revisada pelo próprio usuário (referência). **Aulas 2-8**
+  revisadas a partir dela (backups em `backups/revisao_ciclo_20260909/`).
+  Alta fidelidade (redução de 0,5%-4,6%, só cortes de redundância).
+- **"anjos"**: confirmado no JP (`エンゼル（天使）`) para os deuses do 3º Paraíso
+  — mantido. **"frígidez"** mantido (termo usual no Brasil).
+- **"fulana"** (Aula 2): investigado no JP (`よく世間何々女史といい…`) →
+  reformulado para "mulheres do tipo 'Sra. Fulana'".
+- **"mundo espiritual"**: padrão do corpus = **minúsculo no corpo** (1.187 vs
+  50 maiúsculas, estas só em títulos); uniformizado nas aulas.
+
+### 3. "Grande Deus do Mundo Oculto" → transliteração (Kakuriyo no Ōkami)
+- **Regra** (`glossario_traducao.json`): `幽世大御神`/`幽世大神` →
+  **`Kakuriyo no Ōkami (o Grande Deus do Mundo Oculto)`**. Meishu-Sama distingue
+  `幽世大御神` (Ōmikami, com 御 honorífico) de `幽世大神` (Ōkami) — distinção
+  preservada onde o texto a discute (Suplemento).
+- **Correção feita APENAS em `textos_leitura_colaborativa/`** (decisão do
+  usuário: "todas as correções devem ser feitas apenas na leitura colaborativa
+  para depois ser promovida"). Staging (`livros_publicacao_pt_revisado/`) foi
+  **revertido**; produção e baseline não tocados.
+- Arquivos: Suplemento, Volume 3, Luz dos Ensinamentos, Gosuiji nº 3/5/7,
+  Johrei nº 3 (+ Aula 2 do ciclo). Backups:
+  `backups/transliteracao_mundo_oculto_20260910/`.
+- Relatório: `docs/LEVANTAMENTO_GRANDE_DEUS_MUNDO_OCULTO_20260910.md`.
+- **Pendente**: `textos_portugues/` (produção, 20) e `livros_publicacao_pt/`
+  (baseline, 9) ainda têm a forma traduzida — só na promoção futura.
+
+### 4. "se se" — eliminado (39 ocorrências)
+- **Decisão do usuário**: "'se se' de forma dupla não se utiliza no português."
+- Eliminadas as **39 ocorrências** de `se se` na Leitura Colaborativa
+  (30 arquivos) + 1 na Aula 2 do ciclo. Soluções caso a caso: "caso se X",
+  "quando se X", voz passiva, ou remoção do reflexivo redundante.
+- Δlinhas = 0; Δpalavras = −3 (só o "se" removido). Verificação final: **0**.
+- Backups: `backups/se_se_20260910/`.
+- **Pendente**: staging (51), produção (41) e baseline (40) ainda têm "se se" —
+  só na promoção.
+
+### 5. Lições
+- Correções de conteúdo vão **somente** para `textos_leitura_colaborativa/`
+  (base editável da Leitura), que é promovida depois em bloco. **Nunca** editar
+  staging/produção/baseline diretamente.
+- Revisão literária em massa via subagentes exige **auditoria de fidelidade**
+  (o subagente pode registrar "decisões" equivocadas — ex.: capitalização).
+
+---
+
 ## 01/09 — PROMOÇÃO DA LEITURA COLABORATIVA PARA PRODUÇÃO (v1.4.0)
 
 > **Decisão do usuário**: "vamos fazer o update para a versão 2 do aplicativo,
