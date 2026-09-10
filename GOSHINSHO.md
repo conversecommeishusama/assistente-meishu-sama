@@ -77,7 +77,26 @@ referência do Zenshū/Rokkan estão em
 
 ## 5. Estado ATIVO (o que está em andamento agora — ver `HISTORICO.md` para o detalhe completo)
 
-- **📚 CICLO DE ESTUDOS "MUNDO ESPIRITUAL E ANTEPASSADOS" (09-10/09)** — material
+- **� ÁUDIOS DA VOZ MEISHU-SAMA (Fish Audio) — 10/09** — a voz clonada foi
+  aprovada e os **83 textos ORAIS estão 100% cobertos** (21.986 trechos; 15.644
+  Fish + 6.342 edge). Custo: **US$ 0** (pacote free do Fish).
+  - **⛔ AGUARDANDO REVISÃO GERAL DOS TEXTOS**: o usuário vai revisar **todos**
+    os textos (inclusive os orais) antes de gerar os **escritos**. **Não gerar
+    áudio até ele avisar.**
+  - **Retomar com UM comando** (gera só o que mudou, por conteúdo/hash):
+    `bash scripts/sincronizar_audios.sh`
+  - **Handoff completo**: `HANDOFF_GERACAO_AUDIOS_ESCRITOS_20260910.md`
+  - Ferramentas: `scripts/sincronizar_audios.py` (sincronização à prova de
+    edição), `scripts/auditar_cobertura_fish.py` (cobertura real — o log do
+    gerador pode mentir), `scripts/sincronizar_audios.sh` (wrapper p/ timer).
+  - **Decisões pendentes**: (a) escopo dos escritos (proposta: as 38 obras do
+    Meishu-Sama, ~6 h, ~11,7 GB; exclui Manual/Guia/revistas); (b) voz para
+    diálogos de terceiros nos escritos (`Sr. Mayama:`, `Repórter:`, `Resposta:`
+    — 2.706 trechos hoje sairiam com a voz do Meishu).
+  - **Regras críticas**: não usar checkpoint por índice (edição desloca índices e
+    deixa trechos mudos); não confiar no log (auditar o cache); modo estrito
+    `GOSHINSHO_TTS_STRICT=1`; TTL do cache = **nunca expirar** (acervo).
+- **�📚 CICLO DE ESTUDOS "MUNDO ESPIRITUAL E ANTEPASSADOS" (09-10/09)** — material
   para o Culto às Almas (02/11, Guarapiranga). Plano de 8 encontros + apostila de
   leituras na íntegra (`docs/leituras_integrais/`) + versões Word para impressão
   (`docs/leituras_word/`, geradas por `scripts/gerar_docx_leituras.py`). Revisão

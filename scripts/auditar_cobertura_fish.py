@@ -55,6 +55,7 @@ def auditar() -> dict:
     resumo = {"fish_ok": 0, "fish_falta": 0, "edge_ok": 0, "edge_falta": 0}
     pendentes: list[list] = []
     detalhe_falta: list[tuple] = []
+    nao_narraveis = 0
 
     for o in obras:
         arquivo = o["arquivo"]
@@ -62,6 +63,11 @@ def auditar() -> dict:
         if not texto:
             continue
         for i, tr in enumerate(glf.quebrar_como_front(texto)):
+            # Trechos só de pontuação/símbolos não têm o que narrar — o
+            # edge-tts recusa (NoAudioReceived). Não são pendência de áudio.
+            if tts_service._sem_conteudo_narravel(tr):
+                nao_narraveis += 1
+                continue
             tipo, ch = chave_esperada(tr)
             if existe(ch):
                 resumo[f"{tipo}_ok"] += 1
@@ -70,11 +76,14 @@ def auditar() -> dict:
                 pendentes.append([arquivo, i])
                 detalhe_falta.append((arquivo, i, tipo, len(tr), tr[:70]))
 
+    resumo["nao_narraveis"] = nao_narraveis
     resumo["total_falta"] = resumo["fish_falta"] + resumo["edge_falta"]
     resumo["total_trechos"] = (resumo["fish_ok"] + resumo["edge_ok"]
                                + resumo["total_falta"])
-    total = resumo["total_trechos"] or 1
-    resumo["cobertura_pct"] = round(100 * (total - resumo["total_falta"]) / total, 3)
+    narraveis = resumo["total_trechos"] - nao_narraveis
+    resumo["narraveis"] = narraveis
+    resumo["cobertura_pct"] = (round(100 * (narraveis - resumo["total_falta"])
+                                     / narraveis, 3) if narraveis else 100.0)
     return {"resumo": resumo, "pendentes": pendentes, "detalhe": detalhe_falta}
 
 
@@ -90,6 +99,8 @@ def main() -> int:
     s = r["resumo"]
     print("=== COBERTURA DOS ÁUDIOS (orais) ===")
     print(f"Trechos totais ....: {s['total_trechos']}")
+    print(f"  não narráveis ...: {s['nao_narraveis']} (só pontuação — pulados)")
+    print(f"  narráveis .......: {s['narraveis']}")
     print(f"  Fish (Meishu) ...: {s['fish_ok']} ok | {s['fish_falta']} FALTANDO")
     print(f"  Edge (narrador) .: {s['edge_ok']} ok | {s['edge_falta']} FALTANDO")
     print(f"Cobertura .........: {s['cobertura_pct']}%")

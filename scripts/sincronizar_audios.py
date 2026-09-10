@@ -108,6 +108,7 @@ def diagnostico(obras) -> dict:
     pendentes: list[tuple] = []
     por_arquivo: dict[str, dict] = {}
     total = ok = 0
+    nao_narraveis = 0
 
     for o in obras:
         arq = o["arquivo"]
@@ -116,9 +117,16 @@ def diagnostico(obras) -> dict:
             continue
         trechos = glf.quebrar_como_front(texto)
         info = {"titulo": o.get("titulo") or arq, "tipo": o["tipo"],
-                "trechos": len(trechos), "faltando": 0}
+                "trechos": len(trechos), "faltando": 0, "nao_narraveis": 0}
         for i, tr in enumerate(trechos):
             total += 1
+            # Trechos só de pontuação/símbolos (separadores "───", "| | |") não
+            # têm o que narrar: o edge-tts recusa (NoAudioReceived) e falhariam
+            # para sempre. Contam como "não narráveis", não como pendência.
+            if tts_service._sem_conteudo_narravel(tr):
+                nao_narraveis += 1
+                info["nao_narraveis"] += 1
+                continue
             fl = tts_service._identificar_falante(tr)
             if fl == "outro" or (fl == "" and tts_service._eh_metadado(tr)):
                 ch = tts_service._chave_cache("edge:pt-BR-AntonioNeural", tr, "+0%")
@@ -132,12 +140,16 @@ def diagnostico(obras) -> dict:
                 pendentes.append((arq, i, tr))
         por_arquivo[arq] = info
 
+    # A cobertura considera só o que É narrável (senão nunca chega a 100%).
+    narraveis = total - nao_narraveis
     return {
         "total": total,
+        "narraveis": narraveis,
+        "nao_narraveis": nao_narraveis,
         "ok": ok,
         "pendentes": pendentes,
         "por_arquivo": por_arquivo,
-        "cobertura": round(100 * ok / total, 3) if total else 100.0,
+        "cobertura": round(100 * ok / narraveis, 3) if narraveis else 100.0,
     }
 
 
@@ -185,6 +197,9 @@ def main() -> int:
 
     d = diagnostico(obras)
     print(f"Trechos no texto ......: {d['total']:,}")
+    print(f"  não narráveis .......: {d['nao_narraveis']:,} "
+          f"(só pontuação/símbolos — pulados)")
+    print(f"  narráveis ...........: {d['narraveis']:,}")
     print(f"Já com áudio correto ..: {d['ok']:,}")
     print(f"Desatualizados ........: {len(d['pendentes']):,}")
     print(f"Cobertura .............: {d['cobertura']}%")

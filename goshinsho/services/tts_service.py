@@ -100,6 +100,24 @@ def _modo_estrito() -> bool:
     """
     return os.environ.get("GOSHINSHO_TTS_STRICT", "").strip() in ("1", "true", "yes")
 
+
+# Trechos SEM conteúdo narrável: só pontuação/símbolos (ex.: o separador
+# "──────────", ou "| | |" de tabela). Não há o que sintetizar — o edge-tts
+# recusa e devolve NoAudioReceived ("No audio was received"), o que gera falha
+# permanente e retentativa eterna no lote (75 erros em 2026-09-10).
+# São 198 trechos no acervo (181 em livros, 17 em periódicos).
+_SO_PONTUACAO = re.compile(r"^[^\w]+$", re.UNICODE)
+
+
+def _sem_conteudo_narravel(texto: str) -> bool:
+    """True se o trecho não tem NADA pronunciável (vazio ou só pontuação/símbolos).
+
+    Use ANTES de chamar `sintetizar()`: esses trechos devem ser PULADOS (não
+    gerados), senão falham para sempre e poluem a cobertura.
+    """
+    t = (texto or "").strip()
+    return (not t) or bool(_SO_PONTUACAO.match(t))
+
 # Rótulos de fala nos diálogos (início de parágrafo). "Meishu-Sama" é a voz
 # clonada; "Interlocutor" é o outro falante → Antônio.
 #

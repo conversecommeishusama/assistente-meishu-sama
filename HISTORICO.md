@@ -7,6 +7,89 @@
 
 ---
 
+## 10/09 — ÁUDIOS DA VOZ MEISHU-SAMA: orais 100% + sincronização à prova de edição
+
+> **Pedido do usuário**: (1) "seria possível fazer a voz de Meishu-Sama para
+> todos os escritos dele?" e (2) "precisa ver uma forma de ir atualizando os
+> áudios à medida que os textos da leitura colaborativa vão melhorando".
+> Depois: "vou fazer uma revisão geral, inclusive das palavras orais, por isso é
+> necessário a função de identificar mudanças nos textos e fazer ajustes dos
+> áudios. Deixa tudo preparado para fazermos os áudios quando essa revisão acabar."
+
+### 1. Resultado
+
+- **Orais: 100% cobertos** — 21.986 trechos (15.644 Fish + 6.342 edge), 13,9 GB.
+- **Escritos: preparados, aguardando a revisão** — 38 obras do Meishu-Sama
+  (18.909 trechos, ~6 h, ~11,7 GB). Custo Fish: **US$ 0** (pacote free).
+- **Handoff da nova sessão**: `HANDOFF_GERACAO_AUDIOS_ESCRITOS_20260910.md`.
+
+### 2. Três defeitos graves encontrados (todos corrigidos)
+
+**(a) Fallback silencioso mascarava falhas.** Quando o Fish falhava,
+`_sintetizar_com_cache` caía para XTTS/edge e **retornava sucesso** — o lote
+contava "ok" e gravava no checkpoint, mas a chave Fish nunca era criada. O log
+dizia 48 erros; a auditoria real apontou **427 trechos** sem áudio correto.
+→ Novo **modo estrito** (`GOSHINSHO_TTS_STRICT=1`): a exceção sobe.
+
+**(b) Checkpoint por índice corrompia a sincronização.** Retomava por
+(arquivo, índice). Ao editar o texto, os índices deslizam: o gerador considera
+feito e **pula**, deixando o trecho mudo para sempre. Já causou **25 órfãos**
+nos orais. → Novo `scripts/sincronizar_audios.py`, que compara **conteúdo**
+(chave de cache = sha256 do texto cru): idempotente e à prova de edição.
+
+**(c) TTL de 30 dias apagava a biblioteca.** `_limpar_cache_antigo()` (rodava a
+cada geração) removia tudo com mais de 30 dias. Com a voz aprovada, o cache
+virou **acervo permanente**. → TTL default agora é **0 (nunca expira)**,
+configurável por `GOSHINSHO_TTS_CACHE_TTL_DIAS`. Validado com arquivo de 400 dias.
+
+### 3. Bug de roteamento de voz (qualidade)
+
+O detector de diálogo aceitava **qualquer** `palavra:`, então narração como
+`"Outra coisa: minha teoria..."` ou `"Naquela época aconteceu algo misterioso:"`
+era lida com a **voz do Antônio** em vez do Meishu — **390 trechos**. Agora só
+rótulos explícitos contam (`Meishu-Sama:`, `Interlocutor:`). Créditos
+editoriais (`Editor:`, `Gráfica:`) viraram metadado (narrador).
+
+### 4. Bug do clique na leitura (Gosuiji-roku nº 12)
+
+O pedido do usuário ("não está mudando a leitura quando clicamos em um ponto")
+tinha causa **diferente** do esperado: `audio.onended` revogava a blob URL mas
+**deixava a entrada no cache**. No replay de um trecho, o player recebia um URL
+inválido (`ERR_FILE_NOT_FOUND`) e caía no `speechSynthesis`. → Nova
+`liberarAudioDoCache()` (revoga **e** remove). Validado no navegador: cliques nos
+parágrafos 10, 50 e 150 caem todos no parágrafo correto. JS bumpado para `?v=8`.
+
+### 5. Outros ajustes técnicos
+
+- Timeouts: `FishAudio(timeout=90s)` (o default de 240s causava **travamento de
+  ~2 h** no lote), XTTS 900s → 300s, workers 4 → 3-9.
+- Trechos só-pontuação (separadores `─────`, `| | |`; 198 no acervo) eram
+  recusados pelo edge-tts (`NoAudioReceived`, 75 erros) → agora identificados
+  por `_sem_conteudo_narravel()` e **pulados**.
+- Trechos que eram só nota editorial (`(Relato)`, `[Ensinamento]`) ficavam
+  vazios na sanitização → falha permanente (27 casos). Rede de segurança.
+- Material de apoio: `scripts/gerar_lote_fish.py`, `monitorar_geracao_fish.sh`.
+
+### 6. Medições (registrar para não remedir)
+
+- Throughput Fish: **32-37 trechos/min em 6-9 workers**; degrada acima de 12.
+- Áudio Fish ≈ 488 KB/arquivo; edge ≈ 61 KB/arquivo.
+- Cache: ~37 mil arquivos / 13,9 GB. Órfãos: 15.799 (42%, ~4,8 GB).
+- Disco livre: 1,1 TB.
+
+### 7. Pendências registradas
+
+- **⛔ Não gerar áudio** até o usuário concluir a revisão geral dos textos.
+- Decidir: escopo dos escritos (38 do Meishu propostos) e voz para diálogos de
+  terceiros nos escritos (2.706 trechos).
+- `textos_leitura_colaborativa/` está no `.gitignore` → **sem versionamento nem
+  histórico das edições**. Sem backup automático. Vale discutir um snapshot.
+- Instalar o systemd timer de sincronização (esqueleto no handoff) — o usuário
+  preferiu a revisão primeiro.
+- Não apagar os áudios antigos (XTTS v2) nem os órfãos sem autorização.
+
+---
+
 ## 09-10/09 — Ciclo de estudos "Mundo Espiritual e Antepassados" + revisão literária das leituras + "Kakuriyo no Ōkami" + "se se"
 
 > **Pedido do usuário**: preparar um ciclo de 8 encontros temáticos (leitura de
