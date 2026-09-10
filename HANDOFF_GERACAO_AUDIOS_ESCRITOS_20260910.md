@@ -55,39 +55,70 @@ Depois de rodar, medir cobertura:
 
 ## 3. Decisões pendentes com o usuário
 
-### 3.1 Escopo dos escritos — PROPOSTA (confirmar)
-Sugestão: **38 obras do Meishu-Sama** (~5,1 M chars, 18.909 trechos, ~6 h).
-O filtro padrão de `--tipo escrita` **já exclui** material que não é escrito dele:
+### 3.1 Escopo dos escritos — ✅ RESOLVIDO (2026-09-10)
+**Decisão do usuário: `Eiko` e `Hikari` ENTRAM** (ele as considera escritos do
+Meishu-Sama). Saíram da constante `NAO_MEISHU` em `scripts/sincronizar_audios.py`.
 
-- Institucional: `Manual da Igreja`, `Guia Rápido`, `Relatos de Milagres`,
-  `Doutrina da Igreja`, `HAKONE ART MUSEUM`, `A Story of Ukiyo-e`, `Jornais`,
-  `Revista_Asahi`
-- Revistas: `Eiko` (1,6 M chars!), `Hikari`, `Tijotengoku`, `Kyusei`,
-  `Ensinamentos_diversos`, `Esboco_da_Medicina`
+| | Obras | Chars | Trechos | Áudio |
+|---|---|---|---|---|
+| Antes (proposta) | 38 | 5,07 M | 18.909 | ~8,2 GB |
+| **Agora** | **40** | **7,11 M** | **25.344** | **~11,4 GB** |
+| Delta | +2 | +2,04 M | +6.435 | +3,2 GB |
 
-Se o usuário quiser incluir: `--incluir-institucional`.
-A lista está na constante `NAO_MEISHU` em `scripts/sincronizar_audios.py` (fácil de editar).
+- `Eiko.txt` — 1,59 M chars, 5.100 trechos
+- `Hikari.txt` — 0,46 M chars, 1.493 trechos
 
-### 3.2 Vozes nos diálogos dos escritos — DECISÃO PENDENTE
-Os escritos têm **muito mais diálogo de terceiros** que os orais:
+**Continuam FORA (12 obras)** — institucional e revistas:
+`Manual da Igreja`, `Guia Rápido`, `Relatos de Milagres`, `Doutrina da Igreja`,
+`HAKONE ART MUSEUM`, `A Story of Ukiyo-e`, `Jornais`, `Revista_Asahi`,
+`Tijotengoku`, `Kyusei`, `Ensinamentos_diversos`, `Esboco_da_Medicina`.
 
-| Rótulo | Ocorrências |
+> Nota: `Relatos de Milagres` (2.639 trechos) e `Kyusei`/`Tijotengoku` são
+> cartas/relatos de TERCEIROS publicados pela Igreja — coerente mantê-los fora.
+> Se o usuário quiser incluí-los depois: `--incluir-institucional`.
+
+### 3.2 Vozes nos diálogos dos escritos — ✅ RESOLVIDO (opção A)
+**Decisão do usuário: opção “A”** — fala de terceiro vai para o NARRADOR
+(Antônio), igual aos orais.
+
+Antes de implementar, medi os **898 rótulos distintos** dos 40 escritos. Isto
+mudou o desenho da solução:
+
+1. **A maioria dos rótulos NÃO é fala de terceiro — é narração do próprio
+   Meishu-Sama** (`Pensei:`, `Vejam:`, `Eu:`, `Não só isso:`, `Perguntei:`,
+   `Recordando:`) ou **rótulo de tabela** (`Título:`, `Arroz:`, `Endereço:`,
+   `Variedade:`, `Nome:`).
+2. Um rótulo genérico (`^([^:]{2,40}):`) mandaria **193+ trechos da fala do
+   Mestre** para o narrador — **a mesma classe do bug dos 390 trechos de
+   2026-09-10**. Por isso a lista é **FECHADA e conservadora**.
+
+**Resultado:** `fish → edge` em **525 trechos** (não os 2.706 estimados —
+a estimativa antiga contava narração e tabelas como fala de terceiro).
+
+| Rótulo | Trechos |
 |---|---|
-| `Sr. Mayama:` `Tanikawa:` `Sr. Hioki:` `Ino:` `Sr. Nakamura:` `Sr. Cartier:` | ~331 |
-| `Repórter:` `Moderador:` `Jornalista:` | ~120 |
-| `Madame David:` `Dr. Braden:` `Sr. Tamesato:` `Sr. Kondō:` | ~80 |
-| `Resposta:` | 132 |
-| `Eu:` | 39 |
+| `Sr. Mayama:` | 80 |
+| `Repórter:` | 58 |
+| `Tanikawa:` + `Sr. Tanikawa:` | 95 |
+| `Moderador:` | 54 |
+| `Sr. Cartier:` `Sr. Nakamura:` `Sr. Musei:` `Sr. Hioki:` | 123 |
+| `Dr. Braden:` `Sr. Tamesato:` `Sr. H:` `Sr. Kondō:` `Sr. Kosaka:` … | 82 |
+| `Pergunta:` | 133 |
+| `Político:` `Médico:` `Chefe:` `Promotor:` | 20 |
+| `Esposa:` `Pai:` `Mãe:` `Todos:` `Participantes:` | 11 |
 
-Hoje `_identificar_falante()` só reconhece `Meishu-Sama`, `Interlocutor`,
-`Grão-Mestre`, `Mestre`. **Tudo o mais cai na voz do Meishu** (2.706 trechos).
+**Casos especiais decididos na implementação:**
+- `Resposta:` (132) → **voz do Meishu**: é a resposta DELE (par
+  `Pergunta:`/`Resposta:` em “Luz dos Ensinamentos”).
+- `Eu:` (35) → **voz do Meishu**: em “Conversas sobre a Fé”, o “Eu” é o próprio
+  Mestre narrando (`Eu: "Quem é o senhor?"` / `Ela: "Este aqui é um deus."`).
+- `Tanikawa` sem tratamento (55) → **narrador**, para não alternar duas vozes
+  para a mesma pessoa (40 ocorrências vêm com “Sr.”).
+- `Dragão — Deus — …` (tabela) **não** é fala: a 1ª versão da regra capturava
+  “**Dr**agão” com o título `Dr.` (falso positivo real, medido e corrigido).
 
-Opções:
-- **(A)** Tratar como narrador (Antônio) — simples, resolve entrevistas.
-- **(B)** Mapear voz por pessoa (2-3 vozes) — mais natural, mais trabalho.
-- **(C)** Deixar tudo com a voz do Meishu — não recomendado.
-
-> ⚠️ Se mudar o mapeamento, **ver §5 (regeração)** — o roteamento entra na chave.
+**Impacto nos ORAIS: ZERO.** Nenhum dos 21.986 trechos muda de rota —
+confirmado pelo auditor (100% mantido). A mudança só afeta os escritos.
 
 ### 3.3 Textos só-pontuação — JÁ RESOLVIDO
 198 trechos são só símbolos (separadores `─────`, `| | |`). O edge-tts os recusa
@@ -105,6 +136,27 @@ Opções:
 | `scripts/auditar_cobertura_fish.py` | **NOVO** — cobertura real (fonte de verdade; o log pode mentir) |
 | `goshinsho/services/tts_service.py` | Correções: TTL, modo estrito, rótulos, metadados, timeouts, `_sem_conteudo_narravel` |
 | `static/js/leitura_tts.js` | v8 — clique em parágrafo (blob revogado) |
+| `tests/test_tts_roteamento_voz.py` | **NOVO (2026-09-10)** — 19 testes + 58 subtestes do roteamento de voz |
+
+### Alterações de 2026-09-10 (decisões do usuário)
+
+| Arquivo | Mudança |
+|---|---|
+| `scripts/sincronizar_audios.py` | `Eiko` e `Hikari` removidas de `NAO_MEISHU` → escopo 38 → **40 obras** |
+| `goshinsho/services/tts_service.py` | `_LABEL_TERCEIRO` + `_LABEL_TERCEIRO_TRATAMENTO` (opção A); `resposta` em `_LABEL_MEISHU` |
+| `tests/test_tts_roteamento_voz.py` | **NOVO** — trava o roteamento (inclui os casos-fantasma que já causaram bugs) |
+
+**Rodar os testes do roteamento** (rápido, sem rede):
+
+```bash
+cd /var/www/goshinsho
+PYTHONPATH=/var/www/goshinsho .venv/bin/python -m pytest tests/test_tts_roteamento_voz.py -q
+```
+
+> Nota: `módulo goshinsho` exige `PYTHONPATH=/var/www/goshinsho` quando o pytest
+> é invocado de outro diretório. E use o caminho **absoluto** do python do venv
+> (`/var/www/goshinsho/.venv/bin/python`) — um `cd` na mesma linha pode ser
+> normalizado e o `.venv/bin/python` relativo deixar de resolver.
 
 ### Comandos de referência
 
@@ -138,6 +190,10 @@ nohup bash scripts/sincronizar_audios.sh > logs/sincronizacao_console.log 2>&1 &
    quê **invalida os áudios afetados** (viram órfãos silenciosos).
    → Depois de mexer em `_identificar_falante`/`_eh_metadado`: rode o
    sincronizador e confira a cobertura.
+   → Antes de commitar a mudança, rode `tests/test_tts_roteamento_voz.py` e
+   **meça o impacto**: quantos trechos mudam de rota e em quais obras.
+   ⚠️ Mudanças de roteamento **não podem afetar os orais** (já aprovados).
+   Nas decisões de 2026-09-10 o impacto nos orais foi **0** (medido).
 
 2. **Nunca confiar no log do gerador — auditar o cache.**
    O "fallback silencioso" já fez o log dizer "48 erros" quando havia **427**
@@ -159,6 +215,12 @@ nohup bash scripts/sincronizar_audios.sh > logs/sincronizacao_console.log 2>&1 &
 7. **Ao mexer em JS:** `node --check` + **bumpar o `?v=`** do template
    (o navegador cacheia agressivamente).
 
+8. **Não "simplificar" o rótulo de fala para uma regex genérica.** Já custou
+   390 trechos com voz errada. Nos escritos há **898 rótulos distintos** e a
+   maioria é narração do próprio Meishu (`Pensei:`, `Vejam:`, `Eu:`) ou
+   cabeçalho de tabela (`Título:`, `Arroz:`). A lista é fechada de propósito —
+   `tests/test_tts_roteamento_voz.py` quebra se alguém a abrir.
+
 ---
 
 ## 6. Parâmetros medidos (não precisa remedir)
@@ -169,13 +231,18 @@ nohup bash scripts/sincronizar_audios.sh > logs/sincronizacao_console.log 2>&1 &
 | Throughput Fish (3 workers) | 22/min |
 | Throughput Fish (12-16 workers) | 24-26/min (⚠️ degrada) |
 | **Workers recomendados** | **6 a 9** |
-| Áudio Fish | ~488 KB/arquivo (~1,4 MB por 1000 chars) |
+| Áudio Fish | ~484 KB/arquivo (medido em 29.633 arquivos) |
 | Áudio edge | ~61 KB/arquivo |
-| Escritos (38 obras) | 18.909 trechos, 5,1 M chars → **~11,7 GB**, **~6 h** |
+| **Escritos (40 obras)** | 25.344 trechos, 7,11 M chars → **~11,4 GB**, **~11-13 h** |
+| Orais (83 obras) | 21.986 trechos — já gerados |
 | Acervo total | 135 obras, 52.935 trechos, 16,1 M chars |
-| Cache atual | ~37 mil arquivos / 13,9 GB |
+| Cache atual | 40.739 arquivos / **14,2 GB** (média 365 KB) |
 | Disco livre | 1,1 TB |
 | Custo Fish | **US$ 0** (pacote free, 8.000 créditos — não são consumidos) |
+
+> Tempo: 25.186 trechos ÷ 35/min ≈ **12 h** (6-9 workers). O `--limite` de
+> 21.600 s (6 h) do wrapper faz a execução parar e **retomar na próxima**
+> (idempotente) — ou rode em `nohup` sem se preocupar.
 
 ---
 
@@ -184,12 +251,24 @@ nohup bash scripts/sincronizar_audios.sh > logs/sincronizacao_console.log 2>&1 &
 | | Obras | Trechos | Cobertura |
 |---|---|---|---|
 | **Orais** | 83 | 21.986 | **100%** ✅ |
-| Escritos do Meishu | 38 | 18.909 | 0,1% (aguarda revisão) |
-| Revistas + institucional | 14 | 12.040 | 0% (fora do escopo) |
+| Escritos do Meishu | **40** | **25.502** (25.344 narráveis) | 0,1% (aguarda revisão) |
+| Revistas + institucional | 12 | 5.447 | 0% (fora do escopo) |
+| **Total** | **135** | **52.935** | 48,92% |
+
+Cobertura geral (todas as 135 obras): **48,92%** — 25.799 de 52.737 trechos
+narráveis já com áudio correto. `--tipo todos --dry-run` confirma.
 
 **Parcialmente gerado:** ~3.574 trechos dos escritos foram gerados por engano
 (um teste que não repassou `--dry-run`) — **sem problema**: ficarão corretos se
 o texto não mudar, e o sincronizador só regera o que mudar.
+
+> ⚠️ **Atenção para a próxima sessão:** ao confirmar as decisões 3.1/3.2, o
+> `--dry-run` passou a apontar **21.686 trechos** pendentes nos escritos
+> (era 18.909 na medição anterior). A diferença vem de (a) Eiko+Hikari entrarem
+> no escopo, (b) o novo roteamento invalidar os 525 trechos de terceiro e
+> (c) nomes próprios com tratamento (`Sr. H:`) que antes eram contados na rota
+> Fish e agora vão para o edge. O volume é maior do que o handoff antigo indicava
+> — por isso a estimativa de tempo subiu para **~12 h**.
 
 **Órfãos:** 15.799 arquivos (42% do cache, ~4,8 GB) de trechos que mudaram ou
 foram removidos. Não são usados. **Não apagar** sem autorização (o usuário vai

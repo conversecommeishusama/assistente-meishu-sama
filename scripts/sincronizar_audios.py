@@ -58,12 +58,16 @@ VOZ = "meishu"
 
 # Coleções/obras que NÃO são escritos do Meishu-Sama (decisão do usuário):
 # material institucional e revistas. Excluídas de --tipo escrita por padrão.
+#
+# 2026-09-10: `Eiko` e `Hikari` SAÍRAM desta lista — decisão do usuário (ele as
+# considera escritos do Meishu). São 2 obras, 2,04 M chars, 6.593 trechos
+# (~3,2 GB). O escopo dos escritos passou de 38 para 40 obras.
 NAO_MEISHU = (
     "Manual da Igreja", "Guia Rápido", "Relatos de Milagres",
     "Doutrina da Igreja", "HAKONE ART MUSEUM", "A Story of Ukiyo-e",
     "Jornais", "Revista_Asahi",
     # revistas institucionais
-    "Eiko", "Hikari", "Tijotengoku", "Kyusei", "Ensinamentos_diversos",
+    "Tijotengoku", "Kyusei", "Ensinamentos_diversos",
     "Esboco_da_Medicina",
 )
 

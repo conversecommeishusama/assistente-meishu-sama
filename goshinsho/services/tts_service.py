@@ -128,12 +128,78 @@ def _sem_conteudo_narravel(texto: str) -> bool:
 #   "Naquela época aconteceu algo misterioso: havia uma estátua de Kannon..."
 #   "Nichiren: O mestre Nichiren tornou-se uma raposa..." (Meishu relatando)
 # São 390 trechos nos textos orais. Agora só rótulos EXPLÍCITOS contam.
-_LABEL_MEISHU = re.compile(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", re.IGNORECASE)
+_LABEL_MEISHU = re.compile(
+    r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre|resposta)\s*:",
+    re.IGNORECASE)
 _LABEL_INTERLOCUTOR = re.compile(
     r"^\s*(?:interlocutor(?:a)?|algu[ée]m|entrevistador(?:a)?|"
     r"perguntador(?:a)?|pergunta)\s*:", re.IGNORECASE)
 # Rótulo de fala genérico — mantido apenas para reconhecer um "Nome:" qualquer.
 _LABEL_DIALOGO = re.compile(r"^\s*([^:]{2,40}):\s*")
+
+# ---------------------------------------------------------------------------
+# FALA DE TERCEIROS nos ESCRITOS (2026-09-10)
+#
+# Decisão do usuário: opção "A" — o diálogo de terceiros (`Sr. Mayama:`,
+# `Repórter:`, `Pergunta:`) é lido com a voz do NARRADOR (Antônio), como já é
+# feito nos orais com `Interlocutor:`. Sem isso, 2.706 trechos dos escritos —
+# entrevistas, mesas-redondas e cartas — sairiam com a voz clonada do
+# Meishu-Sama. (`Resposta:` é exceção: é a resposta DELE, então fica com a voz
+# dele — ver `_LABEL_MEISHU`.)
+#
+# ⚠️ NÃO trocar isto por um rótulo genérico (`^([^:]{2,40}):`). Medição nos 40
+# escritos (25.344 trechos): há 898 rótulos distintos, e a esmagadora maioria
+# NÃO é fala de terceiro — é narração do PRÓPRIO Meishu-Sama (`Pensei:`,
+# `Vejam:`, `Eu:`, `Não só isso:`, `Perguntei:`, `Recordando:`, `Resposta:`) ou
+# rótulo de tabela (`Título:`, `Arroz:`, `Endereço:`, `Variedade:`). Um teste
+# com a regra genérica devolveria 193+ trechos da fala do Mestre para o
+# narrador — exatamente a classe do bug dos 390 trechos de 2026-09-10. Por isso
+# a lista abaixo é FECHADA e conservadora: só o inequivocamente terceiro.
+#
+# `Resposta:` entra em `_LABEL_MEISHU` (2026-09-10): nos 132 trechos de "Luz dos
+# Ensinamentos" o par é `Pergunta:` (terceiro) / `Resposta:` (o Mestre
+# respondendo). Isto NÃO muda a rota — antes caía em "texto corrido", que já
+# ia para o Fish; apenas torna a intenção explícita e protege contra uma futura
+# "simplificação" da regra. Por isso a 1ª diretiva do bloco é meishu.
+#
+# Forma de tratamento + nome ("Sr. Mayama", "Sra. Cartier", "Srta. Tazuke",
+# "Dr. Braden", "Sr. H"). Exige ESPAÇO + letra após o título: sem isso,
+# "Dragão — Deus — ..." (de uma tabela) era capturado como fala de terceiro
+# (falso positivo real, medido). Compilado SEM `IGNORECASE` DE PROPÓSITO — com
+# `IGNORECASE`, `dr` voltaria a casar dentro de "Dragão".
+_LABEL_TERCEIRO_TRATAMENTO = re.compile(
+    r"^(?:[Ss]r|[Ss]ra|[Ss]rta|[Dd]r|[Dd]ra)\.?\s+[A-Za-zÀ-ÿ]"
+)
+
+# Demais rótulos de terceiro: funções de mídia, papel de quem pergunta,
+# coletivo/plateia, parentesco, ocupação anonimizada e "Voz".
+_LABEL_TERCEIRO = re.compile(
+    r"^\s*(?:" + "|".join((
+        # mídia / entrevista
+        r"rep[óo]rter(?:es)?|jornalista(?:s)?|moderador(?:a|es)?|"
+        r"entrevistador(?:a|es)?|apresentador(?:a|es)?|locutor(?:a|es)?|"
+        r"comentarista",
+        # papel de quem pergunta
+        r"pergunta(?:s)?|quest[ãa]o|indaga[çc][ãa]o|entrevista",
+        # interlocutor explícito (mesma lista dos orais)
+        r"interlocutor(?:a|es)?|algu[ée]m",
+        # coletivo / plateia
+        r"todos|participantes?|presentes|assistentes|plateia|membros?|"
+        r"alunos?|ouvintes?|leitores?",
+        # parentesco
+        r"esposa|marido|filhos?|filhas?|m[ãa]e|pai|irm[ãa]o|irm[ãa]|"
+        r"av[óo]|av[ôo]",
+        # ocupação anonimizada (fala citada por Meishu-Sama)
+        r"m[ée]dico|pol[íi]tico|chefe|promotor|advogado|juiz|"
+        r"professor(?:a)?|sacerdote|empregado|empregada|enfermeiro|"
+        r"enfermeira",
+        # nome próprio que aparece COM e SEM tratamento NO MESMO documento.
+        # Se "Sr. Tanikawa:" vai para o narrador e "Tanikawa:" fica com a voz
+        # do Meishu, a MESMA pessoa alterna duas vozes na mesma conversa.
+        r"tanikawa",
+        # "Voz de X" / "Voz"
+        r"voz(?:es)?(?:\s+de\s+.+)?",
+    )) + r")\s*:\s*\S", re.IGNORECASE)
 
 # ---------------------------------------------------------------------------
 # Detecção de METADADOS (cabeçalho/data) — 2026-09-09
@@ -357,17 +423,23 @@ def _identificar_falante(texto: str) -> str:
 
     Retorna:
       - "meishu"  → fala de Meishu-Sama (voz clonada)
-      - "outro"   → fala de interlocutor explícito → Antônio
+      - "outro"   → fala de interlocutor/terceiro → Antônio (narrador)
       - ""        → texto corrido/narração (sem rótulo de fala)
 
     Só rótulos EXPLÍCITOS contam (auditoria 2026-09-10): narração com
     dois-pontos ("Outra coisa: ...") é texto corrido do Meishu, não fala do
     interlocutor. Antes, 390 trechos saíam com a voz do Antônio por engano.
+
+    2026-09-10 (opção "A"): além de `Interlocutor:`, os rótulos de TERCEIRO
+    dos escritos (`Sr. Mayama:`, `Repórter:`, `Pergunta:`, `Tanikawa:`) também
+    vão para o narrador (ver `_LABEL_TERCEIRO*`). `Resposta:` NÃO entra — é a
+    resposta do próprio Meishu-Sama. A ordem importa: `_LABEL_MEISHU` primeiro.
     """
     t = (texto or "").lstrip()
     if _LABEL_MEISHU.match(t):
         return "meishu"
-    if _LABEL_INTERLOCUTOR.match(t):
+    if (_LABEL_INTERLOCUTOR.match(t) or _LABEL_TERCEIRO_TRATAMENTO.match(t)
+            or _LABEL_TERCEIRO.match(t)):
         return "outro"
     return ""
 
@@ -632,8 +704,11 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
 
     - voz "meishu": voz clonada de Meishu-Sama. Provedor preferido: FISH AUDIO
       (2026-09-09, aprovada). Quando o trecho é um diálogo, o falante decide:
-        * "Meishu-Sama:" → Fish (voz clonada aprovada)
-        * "Interlocutor:" e outros rótulos → Antônio (edge-tts)
+        * "Meishu-Sama:" / "Mestre:" / "Grão-Mestre:" → Fish (voz clonada)
+        * "Interlocutor:" e rótulos de TERCEIRO (`Sr. Mayama:`, `Repórter:`,
+          `Pergunta:`, `Tanikawa:`) → Antônio (edge-tts). Opção "A" de
+          2026-09-10 — antes esses 327+ trechos saíam com a voz do Meishu.
+        * "Resposta:" → Fish: é a resposta do próprio Meishu-Sama.
         * texto corrido (sem rótulo) → Fish (voz clonada, padrão)
         * metadado (título/data do texto) → Antônio (narrador)
       Fallback: se Fish indisponível → XTTS local (v2); se falhar → Antônio.
