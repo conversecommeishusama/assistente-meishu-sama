@@ -257,6 +257,19 @@
         });
     }
 
+    // Libera a blob URL de UM trecho: revoga o URL e REMOVE do cache.
+    // BUG CORRIGIDO (2026-09-10): antes o `onended` revogava o URL mas deixava
+    // a entrada no `_cacheAudio`. Na próxima vez que o mesmo trecho fosse
+    // tocado (ex.: clicar de novo no mesmo parágrafo, ou voltar a um trecho já
+    // lido), `buscarAudio` devolvia o URL REVOGADO do cache — o <audio> falhava
+    // com "ERR_FILE_NOT_FOUND" / NotSupportedError e a leitura caía no
+    // fallback speechSynthesis, ou simplesmente não começava. Era por isso que
+    // "o texto não mudava a leitura ao clicar num ponto".
+    function liberarAudioDoCache(chave, url) {
+        try { URL.revokeObjectURL(url); } catch (e) {}
+        if (chave && _cacheAudio[chave] === url) delete _cacheAudio[chave];
+    }
+
     // Pré-busca o áudio do trecho `indice` (para a transição ser instantânea).
     // Dispara e esquece — se o usuário pular, o cache já tem o áudio.
     // 2026-09-05: envia o texto CRU (sem aplicarPronuncias) — a transformação
@@ -328,9 +341,15 @@
         // Envia o texto CRU (textoTrecho) ao servidor — é ele que define a
         // chave do cache e o roteamento de voz. O `textoParaTTS` acima serviu
         // apenas para detectar trecho vazio.
+        var chaveAudio = _chaveAudio(textoTrecho, vozAtual, rate);
         buscarAudio(textoTrecho, vozAtual, rate).then(function (url) {
             if (!leituraEdge) return; // foi parado enquanto buscava
-            if (leituraEdge.indice !== indice || leituraEdge.geracao !== geracao) return; // pulou enquanto buscava
+            // Pulo durante a busca: libera o blob recém-criado (se não houver
+            // ninguém usando) para não vazar memória.
+            if (leituraEdge.indice !== indice || leituraEdge.geracao !== geracao) {
+                if (_cacheAudio[chaveAudio] !== url) liberarAudioDoCache(null, url);
+                return;
+            }
 
             var audio = new Audio();
             leituraEdge.audio = audio;
@@ -348,7 +367,9 @@
             prefetchTrecho(indice + 2, fila, opts);
 
             audio.onended = function () {
-                URL.revokeObjectURL(url);
+                // Libera o blob E remove do cache (senão um replay usaria um
+                // URL revogado → ERR_FILE_NOT_FOUND).
+                liberarAudioDoCache(chaveAudio, url);
                 if (!leituraEdge || leituraEdge.pausado) return;
                 // Só avança se esta ainda é a geração atual (não houve pulo/parada).
                 if (leituraEdge.geracao !== geracao) return;
@@ -359,7 +380,7 @@
                 tocarTrecho(indice + 1, opts);
             };
             audio.onerror = function () {
-                URL.revokeObjectURL(url);
+                liberarAudioDoCache(chaveAudio, url);
                 fallbackParaSpeechSynthesis(opts);
             };
         }).catch(function (err) {

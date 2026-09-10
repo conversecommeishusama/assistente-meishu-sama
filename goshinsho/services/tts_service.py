@@ -88,10 +88,33 @@ def _fish_chave() -> str:
 def _fish_disponivel() -> bool:
     return bool(_fish_chave())
 
+
+def _modo_estrito() -> bool:
+    """True quando NÃO se deve usar fallback silencioso.
+
+    Usado pela geração em lote (GOSHINSHO_TTS_STRICT=1): se o provedor
+    preferido (Fish) falhar, a exceção sobe em vez de cair para XTTS/edge.
+    Isso evita o bug de 2026-09-10: o fallback retornava "sucesso" com voz
+    errada, o lote contava como ok e o áudio do Meishu saía com voz antiga
+    (ou faltava) sem que o log acusasse erro.
+    """
+    return os.environ.get("GOSHINSHO_TTS_STRICT", "").strip() in ("1", "true", "yes")
+
 # Rótulos de fala nos diálogos (início de parágrafo). "Meishu-Sama" é a voz
-# clonada; qualquer outro rótulo (Interlocutor, Alguém, Mestre...) é o
-# interlocutor → Antônio.
+# clonada; "Interlocutor" é o outro falante → Antônio.
+#
+# IMPORTANTE (auditoria 2026-09-10): antes o rótulo era genérico
+# (`^\s*([^:]{2,40}):`), então QUALQUER narração com dois-pontos era tratada
+# como fala do interlocutor e saía com a voz do Antônio. Exemplos reais:
+#   "Outra coisa: minha teoria sobre mineração é bastante diferente..."
+#   "Naquela época aconteceu algo misterioso: havia uma estátua de Kannon..."
+#   "Nichiren: O mestre Nichiren tornou-se uma raposa..." (Meishu relatando)
+# São 390 trechos nos textos orais. Agora só rótulos EXPLÍCITOS contam.
 _LABEL_MEISHU = re.compile(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", re.IGNORECASE)
+_LABEL_INTERLOCUTOR = re.compile(
+    r"^\s*(?:interlocutor(?:a)?|algu[ée]m|entrevistador(?:a)?|"
+    r"perguntador(?:a)?|pergunta)\s*:", re.IGNORECASE)
+# Rótulo de fala genérico — mantido apenas para reconhecer um "Nome:" qualquer.
 _LABEL_DIALOGO = re.compile(r"^\s*([^:]{2,40}):\s*")
 
 # ---------------------------------------------------------------------------
@@ -113,15 +136,65 @@ _LABEL_METADADO = [
     re.compile(r"^\[?\s*\d{1,2}[º°]?\s+de\s+[a-záéíóúçãõ]+", re.IGNORECASE),
     # Nota editorial curta entre parênteses: "(Poemas do Grão-Mestre...)"
     re.compile(r"^\([^)]{5,90}\)\s*$"),
+    # Nota/bloco editorial INTEIRO entre parênteses, de qualquer tamanho:
+    # "(Relato)", "(O poema acima foi cantado pelo compositor Sr. ... acompanhado
+    # ao piano por sua esposa ...)". Sem esta regra, o trecho ia para o Fish e a
+    # sanitização removia os parênteses, esvaziando o texto ("texto vazio após
+    # preparar" — 27 falhas no lote de 2026-09-10).
+    re.compile(r"^\([^()]{1,400}\)\s*\.?$", re.DOTALL),
+    # Créditos editoriais do expediente ("Editor: ...", "Gráfica: ...").
+    # Sem esta regra, virariam "texto corrido" e seriam lidos com a voz do
+    # Meishu-Sama — não são fala dele (são expediente da revista).
+    re.compile(r"^(?:editor(?:a)?(?:\s+respons[áa]vel)?|gr[áa]fica|impressor(?:a)?"
+               r"|imprensa|reda[çc][ãa]o|publica[çc][ãa]o)\s*:", re.IGNORECASE),
 ]
+
+# Blocos editoriais: remove iterativamente (...) e [...] (inclusive aninhados).
+_RE_PAREN = re.compile(r"\([^()]*\)")
+_RE_COLCH = re.compile(r"\[[^\[\]]*\]")
+# O que "sobra" e ainda conta como conteúdo real (letra/dígito).
+_RE_CONTEUDO_REAL = re.compile(r"[^\s\.\,\;\:\!\?\-–—\(\)\[\]\"'“”‘’/·|]*[0-9A-Za-zÀ-ÿ]")
+
+
+def _so_blocos_editoriais(t: str) -> bool:
+    """True se o trecho é composto APENAS por blocos editoriais.
+
+    Casos reais do corpus: "[Ensinamento]", "[Relato]", "(Relato)",
+    "(Artigo "Lendo os Relatos de Graças") [Eikō nº 151]",
+    "[Data do encontro desconhecida] (Estimada em torno de 1º de fevereiro)",
+    "(Após ouvir o manuscrito do "Movimento..." ...)".
+
+    Esses blocos NÃO são fala do Meishu-Sama (são títulos/notas do editor) e,
+    além de saírem com a voz errada, quebravam a geração: a sanitização removia
+    os parênteses, o texto ficava vazio e o trecho falhava para sempre
+    ("texto vazio após preparar" — 408 falhas no lote de 2026-09-10).
+
+    A remoção é iterativa para lidar com aninhamento (ex.: "(Artigo ... [x] ...)").
+    """
+    if not t:
+        return False
+    anterior = None
+    while anterior != t:
+        anterior = t
+        t = _RE_PAREN.sub(" ", t)
+        t = _RE_COLCH.sub(" ", t)
+    return _RE_CONTEUDO_REAL.search(t) is None
 
 
 def _eh_metadado(texto: str) -> bool:
     """True se o trecho é um metadado (título/data/nota) → voz de narrador."""
     t = (texto or "").strip()
-    if not t or len(t) > 120:
+    if not t:
         return False
-    if _LABEL_DIALOGO.match(t):  # tem rótulo de fala → não é metadado
+    # Fala explícita (Meishu-Sama:/Interlocutor:) NUNCA é metadado. Note que
+    # narração com dois-pontos ("Outra coisa: ...") NÃO é fala — antes o teste
+    # usava o rótulo genérico e isso marcava narração como fala.
+    if _LABEL_MEISHU.match(t) or _LABEL_INTERLOCUTOR.match(t):
+        return False
+    # Blocos editoriais puros (qualquer tamanho, com aninhamento).
+    if _so_blocos_editoriais(t):
+        return True
+    if len(t) > 120:
         return False
     return any(p.match(t) for p in _LABEL_METADADO)
 
@@ -266,14 +339,17 @@ def _identificar_falante(texto: str) -> str:
 
     Retorna:
       - "meishu"  → fala de Meishu-Sama (voz clonada)
-      - "outro"   → fala de interlocutor (não-Meishu) → Antônio
-      - ""        → texto corrido (sem rótulo de fala)
+      - "outro"   → fala de interlocutor explícito → Antônio
+      - ""        → texto corrido/narração (sem rótulo de fala)
+
+    Só rótulos EXPLÍCITOS contam (auditoria 2026-09-10): narração com
+    dois-pontos ("Outra coisa: ...") é texto corrido do Meishu, não fala do
+    interlocutor. Antes, 390 trechos saíam com a voz do Antônio por engano.
     """
     t = (texto or "").lstrip()
     if _LABEL_MEISHU.match(t):
         return "meishu"
-    m = _LABEL_DIALOGO.match(t)
-    if m:
+    if _LABEL_INTERLOCUTOR.match(t):
         return "outro"
     return ""
 
@@ -304,6 +380,16 @@ def _sanitizar_xtts(texto: str) -> str:
     out = re.sub(r"\s*\[[^\]]*\]\s*", " ", out)
     out = re.sub(r"\s*\([^)]*\)\s*", " ", out)
     out = re.sub(r"\s+", " ", out).strip()
+
+    # REDE DE SEGURANÇA (2026-09-10): se a remoção das notas editoriais esvaziou
+    # o texto (trecho que ERA só uma nota), não devolve vazio — senão o trecho
+    # falha para sempre ("texto vazio após preparar"). Nesse caso, mantém o
+    # conteúdo lido como está, apenas sem os parênteses/colchetes externos.
+    if not out:
+        alt = re.sub(r"[\[\]()]", " ", texto)
+        alt = re.sub(r"\s+", " ", alt).strip()
+        if alt:
+            return alt
     return out
 
 
@@ -451,7 +537,7 @@ def _sintetizar_xtts(texto: str, destino: str, *, rate: str = "+0%") -> None:
         [python, "-c", _XTTS_HELPER, destino, amostra, modelo],
         input=texto.encode("utf-8"),
         capture_output=True,
-        timeout=900,
+        timeout=300,
     )
     if proc.returncode != 0:
         raise RuntimeError(
@@ -562,7 +648,7 @@ def _sintetizar_fish(texto_cru: str, destino: str) -> None:
     except Exception as exc:
         raise RuntimeError(f"SDK fishaudio não instalado: {exc}")
 
-    client = FishAudio(api_key=chave)
+    client = FishAudio(api_key=chave, timeout=90.0)
     texto_final = _FISH_TAG + texto_tts
     audio = client.tts.convert(
         text=texto_final,
@@ -595,12 +681,17 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
         try:
             _sintetizar_fish(texto, destino)
         except Exception:
-            # Fallback: se a Fish falhar, tenta XTTS local e depois Antônio.
             if os.path.exists(destino):
                 try:
                     os.remove(destino)
                 except OSError:
                     pass
+            # Em modo estrito (lote), NÃO mascara a falha: sobe a exceção para
+            # o trecho ser retentado e auditado. Sem isso, o áudio sairia com
+            # voz errada (fallback) e o lote contaria como sucesso.
+            if _modo_estrito():
+                raise
+            # Fallback: se a Fish falhar, tenta XTTS local e depois Antônio.
             if voz_meishu_disponivel():
                 try:
                     destino_xtts = _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
