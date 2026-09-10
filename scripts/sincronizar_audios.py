@@ -153,6 +153,18 @@ def diagnostico(obras) -> dict:
     }
 
 
+def _salvar_estado(obras: int, gerados: int, erros: int, pendentes: int) -> None:
+    """Registra o resultado da execução (para auditoria/observabilidade)."""
+    try:
+        os.makedirs(os.path.dirname(ESTADO), exist_ok=True)
+        with open(ESTADO, "w", encoding="utf-8") as f:
+            json.dump({"ultima_sincronizacao": time.strftime("%Y-%m-%d %H:%M:%S"),
+                       "obras": obras, "gerados": gerados, "erros": erros,
+                       "pendentes": pendentes}, f, ensure_ascii=False)
+    except OSError:
+        pass
+
+
 def gerar_trecho(args) -> tuple:
     """Gera UM trecho com retry + backoff. Retorna (ok, arquivo, indice, detalhe)."""
     arquivo, indice, trecho = args
@@ -216,6 +228,7 @@ def main() -> int:
         print("\nTudo sincronizado — nada a fazer.")
         if not args.auto:
             print("(Use --dry-run para auditar sem gerar.)")
+        _salvar_estado(len(obras), 0, 0, 0)
         return 0
 
     if args.dry_run:
@@ -266,11 +279,7 @@ def main() -> int:
     print(f"\nCobertura final: {d2['cobertura']}% "
           f"({len(d2['pendentes']):,} ainda pendentes)")
 
-    os.makedirs(os.path.dirname(ESTADO), exist_ok=True)
-    with open(ESTADO, "w", encoding="utf-8") as f:
-        json.dump({"ultima_sincronizacao": time.strftime("%Y-%m-%d %H:%M:%S"),
-                   "obras": len(obras), "gerados": ok, "erros": erros,
-                   "pendentes": len(d2["pendentes"])}, f, ensure_ascii=False)
+    _salvar_estado(len(obras), ok, erros, len(d2["pendentes"]))
 
     return 0 if not d2["pendentes"] else 1
 
