@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Avaliação{% endblock %} — Goshinsho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=160">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=15">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/avaliacao.css') }}?v=1">
+</head>
+<body data-logged-in="{% if user %}true{% else %}false{% endif %}"
+      data-api-prefix="{{ request.script_root }}">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span data-i18n="menu">Menu</span>
+            <strong>Avaliação de Textos</strong>
+        </div>
+        <div class="favorites-box">
+            <strong>Navegação</strong>
+            <div class="forum-nav-links">
+                <a href="{{ url_for('avaliacao.avaliacao_pagina') }}" class="forum-nav-link">📝 Avaliação</a>
+                <a href="{{ url_for('web.admin_view') }}" class="forum-nav-link">⚙️ Admin</a>
+                <a href="{{ url_for('web.app_view_pt') }}" class="forum-nav-link">💬 Conversar</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <button class="hamburger" id="menu-button" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="brand-link brand-home" href="{{ url_for('web.app_view_pt') }}">
+                    <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+                    <span>Goshinsho</span>
+                </a>
+            </div>
+            <nav class="top-actions">
+                {% if user %}
+                    <span class="user-pill">{{ user.email }}</span>
+                    <form action="{{ url_for('web.logout') }}" method="post">
+                        <button type="submit" data-i18n="logout">Sair</button>
+                    </form>
+                {% endif %}
+            </nav>
+        </header>
+
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

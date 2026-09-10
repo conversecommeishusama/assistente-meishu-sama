@@ -49,6 +49,20 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
 
             logging.getLogger(__name__).warning("Não foi possível registrar a Leitura Colaborativa: %s", exc)
 
+        # 2026-09-10: AVALIAÇÃO DE TEXTOS — sistema de leitura INDEPENDENTE,
+        # restrito ao login de administrador, para revisar os textos em uma
+        # pasta de trabalho própria (`textos_avaliacao/`) sem tocar no que é
+        # servido ao usuário final. Blueprint próprio (namespace `avaliacao.*`),
+        # com cache de áudio separado. Ver goshinsho/avaliacao_routes.py.
+        try:
+            from .avaliacao_routes import avaliacao_bp
+
+            app.register_blueprint(avaliacao_bp)
+        except Exception as exc:  # pragma: no cover - defensivo
+            import logging
+
+            logging.getLogger(__name__).warning("Não foi possível registrar a Avaliação de Textos: %s", exc)
+
         # 2026-08-21: Fórum da comunidade (piloto) -- blueprint separado.
         # 2026-08-27: só é registrado quando GOSHINSHO_FORUM_ENABLED=1
         # (Config.FORUM_ENABLED, default False). O Fórum fica para a próxima

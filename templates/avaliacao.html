@@ -1,0 +1,53 @@
+{% extends "avaliacao_base.html" %}
+
+{% block titulo %}Avaliação de Textos{% endblock %}
+
+{% block conteudo %}
+    <section class="forum-container leitura-container">
+        <div class="forum-header">
+            <h1>📝 Avaliação de Textos</h1>
+            <p class="muted">
+                Sistema de leitura <strong>independente</strong> da Leitura Colaborativa.
+                Lê os textos da pasta de trabalho <code>{{ pasta }}</code> — nenhuma
+                alteração aqui afeta o conteúdo servido ao usuário final.
+            </p>
+        </div>
+
+        <div class="leitura-aviso">
+            <p>
+                🔒 <strong>Área restrita ao administrador.</strong> As correções feitas
+                aqui são material de trabalho; a promoção para a Leitura Colaborativa é
+                um passo posterior e explícito.
+            </p>
+            <p>
+                🎧 O áudio usa as vozes neurais da <strong>Microsoft</strong> (gratuitas),
+                com cache próprio — separado do acervo de áudio da Leitura Colaborativa.
+            </p>
+        </div>
+
+        {% if flash_msg %}
+            <section class="flash error"><div class="flash error">{{ flash_msg }}</div></section>
+        {% endif %}
+
+        {% if obras %}
+            <div class="leitura-obras-list">
+                {% for obra in obras %}
+                    <a class="leitura-obra-card"
+                       href="{{ url_for('avaliacao.avaliacao_texto_pagina', nome_arquivo=obra.arquivo) }}"
+                       data-arquivo="{{ obra.arquivo }}">
+                        <span class="leitura-obra-titulo">{{ obra.titulo }}</span>
+                        <span class="leitura-obra-tipo">{{ obra.palavras }} palavras</span>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="leitura-acoes">
+                <p class="muted">
+                    Nenhum texto na pasta de avaliação. Rode
+                    <code>scripts/preparar_textos_avaliacao.py</code> para preparar os
+                    arquivos a partir da apostila.
+                </p>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

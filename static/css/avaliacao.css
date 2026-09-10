@@ -1,0 +1,72 @@
+/* Avaliação de Textos — estilos próprios (2026-09-10)
+ *
+ * Sistema de leitura INDEPENDENTE da Leitura Colaborativa (/avaliacao).
+ * Reaproveita o CSS do projeto (app.css/forum.css) e ajusta só o que difere:
+ * aqui o texto é renderizado no SERVIDOR como <p>, enquanto a Leitura monta os
+ * parágrafos por JavaScript. O `.leitura-texto` do projeto usa
+ * `white-space: pre-wrap` (para preservar as quebras do arquivo original), e
+ * isso faria a INDENTAÇÃO do HTML do template aparecer como espaço na tela.
+ * Por isso os blocos da avaliação voltam a `white-space: normal`.
+ */
+
+/* Os blocos da avaliação são <p>/<h2> de verdade — o pre-wrap do container
+ * não deve valer dentro deles. */
+.leitura-texto .avl-paragrafo,
+.leitura-texto .avl-titulo,
+.leitura-texto .avl-fonte {
+    white-space: normal;
+}
+
+/* Título do encontro (o primeiro bloco do texto). */
+.leitura-texto .avl-titulo {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    color: var(--text, #23272f);
+}
+
+/* Parágrafos do ensinamento: leitura confortável, justificada. */
+.leitura-texto .avl-paragrafo {
+    margin: 0 0 1rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Linha de fonte ("**Fonte:** ...") — nota de metadado, menor e discreta. */
+.leitura-texto .avl-fonte {
+    margin: 1rem 0 .6rem;
+    font-size: .9rem;
+    line-height: 1.5;
+    color: var(--muted, #6b7280);
+    border-left: 3px solid var(--border, #e3e3e3);
+    padding-left: .7rem;
+    text-align: left;
+}
+
+/* Trecho em leitura (o áudio destaca o bloco atual). */
+.leitura-texto .avl-paragrafo.trecho-lido,
+.leitura-texto .avl-titulo.trecho-lido,
+.leitura-texto .avl-fonte.trecho-lido {
+    background: rgba(184, 134, 11, 0.18);
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.25);
+}
+
+/* O título não deve ficar com o fundo "esticado" até a margem. */
+.leitura-texto .avl-titulo.trecho-lido {
+    display: inline-block;
+    padding: .1rem .3rem;
+}
+
+/* Botão "Parar" fica ao lado do "Ouvir". */
+#avl-barra .leitura-barra-botoes {
+    gap: .5rem;
+}
+
+/* Aviso de pasta de trabalho: leve destaque. */
+.leitura-aviso code {
+    background: rgba(0, 0, 0, .06);
+    padding: .05rem .3rem;
+    border-radius: 4px;
+    font-size: .92em;
+}

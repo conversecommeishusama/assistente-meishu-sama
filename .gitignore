@@ -71,3 +71,12 @@ livros_publicacao_pt_revisado/
 # Índices FAISS/pkl legados na raiz (o app usa experiments/uploaded_indexes/).
 /*.pkl
 /*.faiss
+
+# Avaliação de Textos (2026-09-10) -- pasta de TRABALHO da revisão, lida pelo
+# sistema independente /avaliacao (restrito ao administrador). É cópia editável
+# da apostila; o original versionado continua em docs/leituras_integrais/.
+textos_avaliacao/
+
+# Cache de áudio da avaliação (MP3 gerados pelas vozes Microsoft) -- artefato
+# local, regenerável; não versionar.
+data/tts_cache_avaliacao/

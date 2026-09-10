@@ -1,0 +1,66 @@
+{% extends "avaliacao_base.html" %}
+
+{% block titulo %}{{ titulo }}{% endblock %}
+
+{% block conteudo %}
+    <div class="leitura-flutuante">
+        <div class="leitura-barra" id="avl-barra">
+            <div class="leitura-barra-botoes">
+                <a href="{{ url_for('avaliacao.avaliacao_pagina') }}" class="back-link leitura-barra-voltar">← Avaliação</a>
+                <button type="button" class="btn-primary leitura-barra-audio" id="avl-play" aria-label="Ouvir o texto">🔊 Ouvir</button>
+                <button type="button" class="btn-secondary" id="avl-parar" aria-label="Parar a leitura" hidden>⏹ Parar</button>
+            </div>
+            <div class="leitura-barra-voz">
+                <label for="avl-voz">Voz:</label>
+                <select id="avl-voz" aria-label="Escolher a voz da leitura">
+                    {% for voz in vozes %}
+                        <option value="{{ voz.id }}" {% if voz.id == voz_padrao %}selected{% endif %}>{{ voz.nome }}</option>
+                    {% endfor %}
+                </select>
+                <label for="avl-rate" style="margin-left:.6rem">Velocidade:</label>
+                <select id="avl-rate" aria-label="Escolher a velocidade da leitura">
+                    <option value="-15%">Mais lenta</option>
+                    <option value="+0%" selected>Normal</option>
+                    <option value="+15%">Mais rápida</option>
+                </select>
+            </div>
+            <div class="leitura-barra-progresso" id="avl-progresso" aria-label="Progresso da leitura">—</div>
+        </div>
+    </div>
+
+    <span hidden data-arquivo-avaliacao="{{ arquivo }}"></span>
+
+    <section class="forum-container leitura-container">
+        <div class="forum-header leitura-texto-header">
+            <a href="{{ url_for('avaliacao.avaliacao_pagina') }}" class="back-link">← Voltar à avaliação</a>
+            <h1>{{ titulo }}</h1>
+            <p class="muted leitura-texto-data">
+                {{ arquivo }} · {{ estrutura.blocos | length }} blocos · {{ total_trechos }} trechos de áudio
+            </p>
+        </div>
+
+        <div class="leitura-aviso">
+            <p>
+                🔒 <strong>Pasta de trabalho:</strong> este texto é uma <strong>cópia de
+                avaliação</strong>. Editar aqui não altera o que o usuário final lê — a
+                promoção é um passo posterior e explícito.
+            </p>
+        </div>
+
+        <div class="leitura-texto" id="avl-texto" data-audio-ler>
+            {% for bloco in estrutura.blocos %}
+                {% if bloco.tipo == 'titulo' %}
+                    <h2 class="avl-titulo" data-bloco="{{ bloco.indice }}">{{ bloco.texto }}</h2>
+                {% elif bloco.tipo == 'fonte' %}
+                    <p class="avl-fonte" data-bloco="{{ bloco.indice }}">{{ bloco.html | safe }}</p>
+                {% else %}
+                    <p class="avl-paragrafo leitura-paragrafo" data-bloco="{{ bloco.indice }}">{{ bloco.html | safe }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/avaliacao.js') }}?v=1"></script>
+{% endblock %}
