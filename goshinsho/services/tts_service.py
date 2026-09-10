@@ -347,7 +347,15 @@ def _normalizar_caracteres(texto: str) -> str:
     out = out.replace("『", '"').replace("』", '"')
     out = out.replace("【", "[").replace("】", "]")
     out = re.sub(r"[〜～]", " ", out)
-    out = re.sub(r"[\u4e00-\u9fff]+", "", out)  # remove kanji
+    # Remove kanji E kana — a voz pt-BR não lê nenhum dos dois.
+    #
+    # ⚠️ O kana (hiragana/katakana) faltava aqui (corrigido em 2026-09-11).
+    # Sem removê-lo, sobra lixo quando o kanji AO LADO sai:
+    #   "(五大州を結ぶ)" → "(をぶ)" → o edge recusa (NoAudioReceived) → HTTP 500
+    #   → a leitura cai para a voz do NAVEGADOR.
+    # Medido: 4 trechos no acervo (3 orais + 1 escrito). Como a chave do cache
+    # usa o texto CRU, isto NÃO invalida áudio já gerado.
+    out = re.sub(r"[\u4e00-\u9fff\u3040-\u30ff\uff66-\uff9f]+", "", out)
     out = re.sub(r"\s{2,}", " ", out)
     out = re.sub(r"\(\s*\)", "", out)
     return out.strip()
@@ -726,6 +734,23 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     if (rate or "").strip() == "":
         rate = "+0%"
 
+    # Trecho SEM nada pronunciável (separador de seção "─────", "---", linha de
+    # tabela "| | |"): não há o que sintetizar.
+    #
+    # ⚠️ BUG CORRIGIDO (2026-09-11): antes isto chegava aos provedores, que
+    # recusavam (NoAudioReceived no edge) → HTTP 500 → o front chamava
+    # `fallbackParaSpeechSynthesis` e a leitura INTEIRA caía para a voz do
+    # NAVEGADOR ("voz do Google"). Um único separador matava a leitura neural:
+    # em "Conversas sobre a Fé" o 1º está no trecho 6 (são 84 no total), então
+    # a leitura morria logo no início. Ao todo: 200 trechos em 18 obras.
+    # Note que o gerador em lote JÁ pulava estes trechos; só o caminho do app
+    # (sob demanda) falhava.
+    #
+    # Agora devolvemos uma PAUSA SILENCIOSA — que é exatamente o que um
+    # separador significa na leitura, e nunca deixa o usuário sem áudio.
+    if _sem_conteudo_narravel(texto):
+        return _pausa_silenciosa(texto)
+
     # Decide o provedor real com base na voz pedida + falante do diálogo.
     # O falante é identificado no texto CRU (sem pronúncias aplicadas).
     if voz_origem == VOZ_MEISHU:
@@ -782,6 +807,75 @@ def _sintetizar_fish(texto_cru: str, destino: str) -> None:
         f.write(audio)
 
 
+def _preparar_por_provedor(provedor: str, texto: str) -> str:
+    """Aplica a preparação do provedor (edge é mais simples que Fish/XTTS).
+
+    Usado para decidir se o trecho tem algo pronunciável DEPOIS da preparação.
+    """
+    if provedor == "edge":
+        return _preparar_texto_edge(texto)
+    return _preparar_texto_xtts(texto)
+
+
+def _trecho_sem_fala(texto: str) -> bool:
+    """True se o trecho não tem NADA pronunciável em NENHUMA rota.
+
+    Fonte única de verdade para "este trecho não vira áudio de fala". Cobre:
+
+    1. texto CRU só de pontuação/símbolos — separador `─────`, `---`,
+       linha de tabela `| | |`;
+    2. texto cru COM conteúdo, mas que a **preparação** esvazia — ex.
+       `観 — 世 — 音` → `— —` (kanji removido) ou `(五大州を結ぶ)` → `(をぶ)`
+       (kana removido).
+
+    O caso 2 era o furo de 2026-09-11: `_sem_conteudo_narravel()` olhava só o
+    texto CRU, então o trecho seguia para o provedor, que o recusava
+    (`NoAudioReceived`) → HTTP 500 → a leitura caía para a voz do NAVEGADOR.
+
+    Use isto (não `_sem_conteudo_narravel`) nas ferramentas de auditoria, para
+    que a cobertura bata com o que o app realmente entrega.
+    """
+    if _sem_conteudo_narravel(texto):
+        return True
+    # Se QUALQUER rota consegue produzir fala, o trecho é narrável.
+    for prep in (_preparar_texto_edge(texto), _preparar_texto_xtts(texto)):
+        if not _sem_conteudo_narravel(prep):
+            return False
+    return True
+
+
+def _gerar_silencio(destino: str, segundos: float = 0.7) -> None:
+    """Escreve um MP3 de silêncio com a duração pedida (via ffmpeg).
+
+    Usado para trechos sem nada pronunciável (separadores). O MP3 gerado serve
+    como uma pausa natural na leitura, em vez de um erro.
+    """
+    os.makedirs(os.path.dirname(destino) or ".", exist_ok=True)
+    subprocess.run(
+        ["ffmpeg", "-y", "-loglevel", "error",
+         "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono",
+         "-t", f"{segundos:.2f}",
+         "-c:a", "libmp3lame", "-q:a", "9", destino],
+        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+    )
+    if not os.path.exists(destino):
+        raise RuntimeError("ffmpeg não gerou a pausa silenciosa")
+
+
+def _pausa_silenciosa(texto: str, segundos: float = 0.7) -> str:
+    """Devolve o caminho de um MP3 de pausa para um trecho sem fala (com cache).
+
+    A chave inclui a duração e o texto, então trocar a duração no futuro não
+    reaproveita um arquivo com tamanho errado.
+    """
+    chave = _chave_cache(f"pausa:{segundos:.2f}", texto, "+0%")
+    destino = os.path.join(_cache_dir(), f"{chave}.mp3")
+    if os.path.exists(destino):
+        return destino
+    _gerar_silencio(destino, segundos)
+    return destino
+
+
 def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -> str:
     """Gera o áudio (edge-tts, XTTS ou Fish) com cache em disco.
 
@@ -794,6 +888,16 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
         return destino
+
+    # Rede de segurança CENTRAL (2026-09-11): se, APÓS a preparação da voz, não
+    # sobra nada pronunciável, o provedor recusaria (NoAudioReceived) → HTTP 500
+    # → o front cai para a voz do NAVEGADOR. Devolve uma pausa silenciosa.
+    #
+    # Isto cobre o caso em que o texto CRU *parece* ter conteúdo, mas a
+    # preparação o esvazia — ex.: "観 — 世 — 音" → "— —". A checagem em
+    # `sintetizar()` só vê o texto cru e não pega este caso.
+    if _sem_conteudo_narravel(_preparar_por_provedor(provedor, texto)):
+        return _pausa_silenciosa(texto)
 
     _limpar_cache_antigo()
 

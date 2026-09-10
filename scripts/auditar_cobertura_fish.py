@@ -63,9 +63,10 @@ def auditar() -> dict:
         if not texto:
             continue
         for i, tr in enumerate(glf.quebrar_como_front(texto)):
-            # Trechos só de pontuação/símbolos não têm o que narrar — o
-            # edge-tts recusa (NoAudioReceived). Não são pendência de áudio.
-            if tts_service._sem_conteudo_narravel(tr):
+            # Trechos sem nada pronunciável (separadores, ou texto que a
+            # preparação esvazia) são entregues como PAUSA pelo app — não são
+            # pendência de áudio. Ver tts_service._trecho_sem_fala (2026-09-11).
+            if tts_service._trecho_sem_fala(tr):
                 nao_narraveis += 1
                 continue
             tipo, ch = chave_esperada(tr)

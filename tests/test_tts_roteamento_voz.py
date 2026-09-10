@@ -204,5 +204,76 @@ class SemConteudoNarravelTests(unittest.TestCase):
                 self.assertFalse(tts_service._sem_conteudo_narravel(t))
 
 
+class TrechoSemFalaTests(unittest.TestCase):
+    """`_trecho_sem_fala`: união do caso cru + o que a PREPARAÇÃO esvazia.
+
+    Esta é a checagem que o app usa para entregar uma PAUSA em vez de HTTP 500.
+
+    ⚠️ CONTEXTO DO BUG (2026-09-11)
+    A checagem anterior (`_sem_conteudo_narravel`) olhava só o texto CRU. Então
+    `観 — 世 — 音` passava (tem kanji!), seguia para o provedor, que o recusava
+    (`NoAudioReceived`) → **HTTP 500** → o front chamava
+    `fallbackParaSpeechSynthesis` e a leitura INTEIRA caía para a voz do
+    NAVEGADOR ("voz do Google"). Um separador de seção bastava para matar a
+    leitura neural: em "Conversas sobre a Fé" o 1º está no trecho 6 (são 84).
+    Ao todo: 200 trechos em 18 obras.
+    """
+
+    def test_separadores_e_tabelas(self):
+        for t in ("──────────────────────────────────", "---",
+                  "―――――――――・――――――――――", "| | |", "|:--- |:--- |", "|", "/"):
+            with self.subTest(texto=t[:20]):
+                self.assertTrue(tts_service._trecho_sem_fala(t))
+
+    def test_kanji_que_vira_travessao(self):
+        """Kanji removido na preparação deixa só travessão → nada a falar."""
+        for t in ("観 — 世 — 音", "立 — 正 — 安 — 国"):
+            with self.subTest(texto=t):
+                self.assertTrue(tts_service._trecho_sem_fala(t))
+
+    def test_kana_residual(self):
+        """O kana (hiragana/katakana) também é removido — sobrava '(をぶ)'."""
+        self.assertTrue(tts_service._trecho_sem_fala("(五大州を結ぶ)"))
+
+    def test_fala_real_nunca_e_sem_fala(self):
+        casos = ("Meishu-Sama: Pratico há cerca de vinte anos.",
+                 "Sr. Mayama: Ouvi dizer que o senhor foi de automóvel a Kyoto.",
+                 "Resposta: A verdade difere conforme o ponto de vista.",
+                 "1º de agosto",
+                 "A gratidão é a base de tudo.")
+        for t in casos:
+            with self.subTest(texto=t[:34]):
+                self.assertFalse(tts_service._trecho_sem_fala(t))
+
+    def test_kanji_isolado_sem_travessao_ainda_narra(self):
+        """Se a preparação deixa texto, o trecho NÃO é tratado como sem fala.
+
+        `(五大州を結ぶ)` vira vazio, mas um título com kanji E palavras
+        latinas continua narrável — não pode virar pausa por engano.
+        """
+        t = "O Sutra do Lótus (法華経) é recitado"
+        self.assertFalse(tts_service._trecho_sem_fala(t))
+
+
+class KanaNaPreparacaoTests(unittest.TestCase):
+    """A preparação remove kana E kanji (a voz pt-BR não lê nenhum dos dois)."""
+
+    def test_kana_removido(self):
+        # antes: "(五大州を結ぶ)" → "(をぶ)"  (kana ficava órfão)
+        out = tts_service._preparar_texto_edge("(五大州を結ぶ)")
+        self.assertNotIn("を", out)
+        self.assertNotIn("ぶ", out)
+
+    def test_kanji_removido(self):
+        out = tts_service._preparar_texto_edge("観 — 世 — 音")
+        self.assertNotIn("観", out)
+        self.assertNotIn("世", out)
+
+    def test_texto_latino_preservado(self):
+        out = tts_service._preparar_texto_edge("Meishu-Sama: A gratidão é a base.")
+        self.assertIn("gratidão", out)
+        self.assertIn("base", out)
+
+
 if __name__ == "__main__":
     unittest.main()

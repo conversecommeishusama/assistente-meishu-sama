@@ -125,9 +125,11 @@ def diagnostico(obras) -> dict:
         for i, tr in enumerate(trechos):
             total += 1
             # Trechos só de pontuação/símbolos (separadores "───", "| | |") não
-            # têm o que narrar: o edge-tts recusa (NoAudioReceived) e falhariam
-            # para sempre. Contam como "não narráveis", não como pendência.
-            if tts_service._sem_conteudo_narravel(tr):
+            # Trechos sem NADA pronunciável não têm o que narrar: separadores
+            # ("─────", "---", "| | |") e textos que a preparação esvazia
+            # ("観 — 世 — 音" → "— —"). São narrados como PAUSA pelo app e não
+            # contam como pendência (2026-09-11).
+            if tts_service._trecho_sem_fala(tr):
                 nao_narraveis += 1
                 info["nao_narraveis"] += 1
                 continue
