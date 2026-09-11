@@ -22,6 +22,7 @@ from ..services.conversation_mode import (
     is_definitional_question,
     is_thematic_continuation,
 )
+from ..services.site_info import is_site_help_question
 from ..services.conversation_topic import (
     anchor_terms_covered,
     is_deictic_followup,
@@ -31,6 +32,7 @@ from ..services.deepseek_usage_service import record_deepseek_usage
 from ..services.llm_term_fallback import suggest_search_terms
 from ..services.retrieval_fallback import augment_with_legacy_fallback, needs_legacy_motor_fallback
 from ..services.search_ranking import build_chunk_usage_instructions, expand_query_for_retry
+from ..services import site_info
 from .context import build_context
 from .format import strip_academic_opening
 from .prompts import build_source_manifest, doctrinal_instructions, full_article_instructions
@@ -245,6 +247,83 @@ use-as só para entender referências. Os trechos da **mensagem final** são a b
     )
 
 
+def _answer_site_help(
+    question: str,
+    *,
+    history,
+    effective_language: str,
+) -> str:
+    """Responde dúvidas sobre o PRÓPRIO SITE — sem busca no acervo doutrinário.
+
+    Caminho separado de `generate_from_retrieval` de propósito:
+      - não há trechos a recuperar (o assunto não está nos Escritos);
+      - o contexto é fixo (`site_info.site_help_context()`), então injetá-lo
+        como "TRECHOS RECUPERADOS" seria enganoso — daí um prompt próprio.
+
+    Se o LLM indisponível, devolve uma resposta mínima correta a partir do
+    próprio `site_info` (nunca uma negativa do tipo "isso não existe").
+    """
+    fallback = site_info.site_help_fallback(effective_language)
+    try:
+        history_lines = []
+        for q in recent_user_questions(history or [], limit=3, current_question=question):
+            if q.strip() != question.strip():
+                history_lines.append(f"- {q}")
+        dialogue_block = format_recent_dialogue_block(history or [], current_question=question)
+
+        system_prompt = f"""
+{_language_instruction(effective_language)}
+
+Você responde dúvidas sobre o funcionamento DESTE SITE (o Goshinsho). Isto NÃO
+é uma consulta ao acervo dos Escritos — o assunto é o próprio produto: como usar,
+o que existe em cada seção, e o que dizem os documentos institucionais.
+
+### PERGUNTAS RECENTES (contexto; não use como fonte):
+{chr(10).join(history_lines) if history_lines else "(primeira pergunta do fio)"}
+
+### DIÁLOGO RECENTE (contexto):
+{dialogue_block if dialogue_block else "(sem turnos anteriores nesta conversa)"}
+""".strip()
+
+        final_user_prompt = f"""
+{site_info.site_help_instructions()}
+
+### PERGUNTA ACTUAL:
+{question}
+
+{_language_instruction(effective_language)}
+
+**RESPOSTA:**
+""".strip()
+
+        messages = build_answer_chat_messages(
+            system_content=system_prompt,
+            history=history or [],
+            current_question=question,
+            final_user_content=final_user_prompt,
+        )
+        response = _client().chat.completions.create(
+            model="deepseek-v4-flash",
+            messages=messages,
+            temperature=0.2,
+            max_tokens=1200,
+        )
+        record_deepseek_usage(response, "answer_site_help")
+        texto = (response.choices[0].message.content or "").strip()
+        if texto:
+            return strip_academic_opening(
+                fix_messianic_terms(texto, language=effective_language)
+            )
+    except Exception as exc:  # pragma: no cover - defensivo
+        import logging
+
+        logging.getLogger(__name__).warning("_answer_site_help falhou: %s", exc)
+    # Rede de segurança: NUNCA devolver vazio (nem string em branco). Uma
+    # resposta vazia deixaria o usuário sem nada — e pior, sem saber que o
+    # recurso existe.
+    return fallback or site_info.site_help_fallback("Português")
+
+
 def _query_terms_covered(
     chunks: list[str], query: str, *, pastoral: bool, japanese: bool = False
 ) -> bool:
@@ -388,6 +467,21 @@ def answer(
     identity_answer = assistant_identity_response(question, language=effective_language)
     if identity_answer and not expand:
         return identity_answer
+
+    # 2026-09-11: pergunta sobre o PRÓPRIO SITE (uso, funcionalidades,
+    # documentos institucionais, dados). Antes estas perguntas caíam no
+    # pipeline doutrinário: o modelo buscava o termo no acervo, não encontrava
+    # (obviamente) e respondia que "não existe" / "nada nas instruções fala
+    # disso". Achado real: uma usuária viu "Leitura Colaborativa" no menu e o
+    # chat negou que o recurso existisse. Aqui o contexto do site SUBSTITUI o
+    # acervo — não há o que buscar nos Escritos, e a resposta é gerada por um
+    # caminho próprio (ver `_answer_site_help`).
+    if is_site_help_question(question) and not expand:
+        return _answer_site_help(
+            question,
+            history=history,
+            effective_language=effective_language,
+        )
 
     if state.needs_search_clarification and not state.scoped_article and not state.full_article:
         return search_clarification_message(language=effective_language)
