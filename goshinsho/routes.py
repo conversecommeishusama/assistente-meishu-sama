@@ -536,6 +536,90 @@ def api_admin_dashboard():
     )
 
 
+@web_bp.get("/admin/perguntas")
+@web_bp.get("/admin/perguntas/")
+def admin_perguntas_view():
+    """Consulta das perguntas dos usuários (restrito a desenvolvedores).
+
+    Motivação (2026-09-11): há membros estudiosos dos escritos cujas perguntas
+    orientam o desenvolvimento do projeto — lacunas do corpus, temas que
+    merecem material novo, dúvidas recorrentes entre leitores.
+    """
+    user, error = _require_developer_page()
+    if error:
+        return error
+    return render_template("admin_perguntas.html", user=user)
+
+
+@web_bp.get("/admin/leitura")
+@web_bp.get("/admin/leitura/")
+def admin_leitura_view():
+    """Acompanhamento do uso da Leitura Colaborativa (restrito)."""
+    user, error = _require_developer_page()
+    if error:
+        return error
+    return render_template("admin_leitura.html", user=user)
+
+
+@web_bp.get("/api/admin/perguntas")
+def api_admin_perguntas():
+    """Lista perguntas dos usuários (com filtros de período, conta e texto)."""
+    _, error = _require_developer_json()
+    if error:
+        return error
+    from .services import admin_perguntas_service as svc
+    from .services.admin_service import resolve_range
+
+    since, until = resolve_range(
+        request.args.get("range", "all"),
+        request.args.get("from"),
+        request.args.get("to"),
+    )
+    dados = svc.listar_perguntas(
+        since=since,
+        until=until,
+        user_id=(request.args.get("user_id") or "").strip() or None,
+        busca=(request.args.get("busca") or "").strip() or None,
+        limite=min(int(request.args.get("limite") or 300), 1000),
+        somente_sem_resposta=request.args.get("sem_resposta") == "1",
+    )
+    dados["contas"] = svc.listar_usuarios_com_perguntas(since=since, until=until)
+    dados["range"] = {
+        "key": request.args.get("range", "all"),
+        "since": since.isoformat() if since else None,
+        "until": until.isoformat() if until else None,
+    }
+    return jsonify(dados)
+
+
+@web_bp.get("/api/admin/leitura")
+def api_admin_leitura():
+    """Uso da Leitura Colaborativa por conta + baseline histórica."""
+    _, error = _require_developer_json()
+    if error:
+        return error
+    from .services import leitura_uso_service as svc
+    from .services.admin_service import resolve_range
+
+    since, until = resolve_range(
+        request.args.get("range", "all"),
+        request.args.get("from"),
+        request.args.get("to"),
+    )
+    return jsonify({
+        "por_usuario": svc.resumo_por_usuario(since=since, until=until),
+        "geral": svc.resumo_geral(since=since, until=until),
+        "baseline": svc.baseline_historica(),
+        "colaboracoes": svc.resumo_colaboracoes(),
+        "janela_minutos": svc.JANELA_MINUTOS,
+        "range": {
+            "key": request.args.get("range", "all"),
+            "since": since.isoformat() if since else None,
+            "until": until.isoformat() if until else None,
+        },
+    })
+
+
 @web_bp.get("/api/admin/support/tickets")
 def api_admin_support_tickets():
     _, error = _require_developer_json()

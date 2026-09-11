@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uso da Leitura — Goshinsho Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=perguntas1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_perguntas.css') }}?v=perguntas1">
+</head>
+<body>
+    <main class="admin-shell">
+        <header class="admin-topbar">
+            <div>
+                <p class="eyebrow">Goshinsho Admin</p>
+                <h1>Acompanhamento da Leitura Colaborativa</h1>
+                <span>{{ user.email }}</span>
+            </div>
+            <nav class="admin-nav">
+                {% include "_developer_nav.html" %}
+            </nav>
+        </header>
+
+        <p class="perguntas-nota">
+            <strong>Como ler estes números.</strong> A coluna
+            <em>tempo estimado</em> vem de batimentos de atividade gravados a cada
+            janela de <span id="janela-min">5</span> minutos enquanto a leitura toca —
+            é uma <em>estimativa</em>, não o tempo exato de áudio.
+            A seção <em>Histórico acumulado</em> vem da tabela de progresso (anterior a
+            11/09/2026) e mostra <em>quem leu o quê</em>, mas não o tempo.
+        </p>
+
+        <section class="range-bar" id="range-bar">
+            <div class="range-options" role="group" aria-label="Filtrar por período">
+                <button type="button" data-range="all" class="range-option active">Desde o início</button>
+                <button type="button" data-range="6m" class="range-option">Últimos 6 meses</button>
+                <button type="button" data-range="1m" class="range-option">Último mês</button>
+                <button type="button" data-range="7d" class="range-option">Última semana</button>
+                <button type="button" data-range="today" class="range-option">Hoje</button>
+                <button type="button" data-range="custom" class="range-option">Personalizado</button>
+            </div>
+            <div class="range-custom" id="range-custom" hidden>
+                <label>De <input type="date" id="range-from"></label>
+                <label>Até <input type="date" id="range-to"></label>
+                <button type="button" id="range-custom-apply">Aplicar</button>
+            </div>
+            <span class="range-note" id="range-note"></span>
+        </section>
+
+        <section class="metric-grid">
+            <article class="metric-card"><span>Leitores no período</span><strong id="metric-leitores">-</strong></article>
+            <article class="metric-card"><span>Tempo estimado</span><strong id="metric-tempo">-</strong></article>
+            <article class="metric-card"><span>Obras distintas</span><strong id="metric-obras">-</strong></article>
+            <article class="metric-card"><span>Observações enviadas</span><strong id="metric-colab">-</strong></article>
+            <article class="metric-card"><span>Contas que já leram</span><strong id="metric-baseline-leitores">-</strong></article>
+            <article class="metric-card"><span>Obras com leitura</span><strong id="metric-baseline-obras">-</strong></article>
+        </section>
+
+        <section class="admin-grid">
+            <article class="admin-card admin-card-wide">
+                <h2>Tempo estimado por conta <small>(janelas de atividade)</small></h2>
+                <div id="uso-box" class="details-box">Carregando...</div>
+            </article>
+
+            <article class="admin-card">
+                <h2>Obras mais lidas</h2>
+                <div id="top-obras-box" class="details-box">Carregando...</div>
+            </article>
+
+            <article class="admin-card">
+                <h2>Histórico acumulado por conta</h2>
+                <div id="baseline-box" class="details-box">Carregando...</div>
+            </article>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/admin_leitura.js') }}?v=perguntas1"></script>
+</body>
+</html>

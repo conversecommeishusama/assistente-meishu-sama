@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perguntas dos usuários — Goshinsho Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}?v=perguntas1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_perguntas.css') }}?v=perguntas1">
+</head>
+<body>
+    <main class="admin-shell">
+        <header class="admin-topbar">
+            <div>
+                <p class="eyebrow">Goshinsho Admin</p>
+                <h1>Perguntas dos usuários</h1>
+                <span>{{ user.email }}</span>
+            </div>
+            <nav class="admin-nav">
+                {% include "_developer_nav.html" %}
+            </nav>
+        </header>
+
+        <p class="perguntas-nota">
+            Perguntas gravadas no histórico (tabela <code>mensagens</code>).
+            Use para identificar lacunas do corpus e temas que merecem material novo.
+        </p>
+
+        <section class="range-bar" id="range-bar">
+            <div class="range-options" role="group" aria-label="Filtrar por período">
+                <button type="button" data-range="all" class="range-option active">Desde o início</button>
+                <button type="button" data-range="6m" class="range-option">Últimos 6 meses</button>
+                <button type="button" data-range="1m" class="range-option">Último mês</button>
+                <button type="button" data-range="7d" class="range-option">Última semana</button>
+                <button type="button" data-range="today" class="range-option">Hoje</button>
+                <button type="button" data-range="custom" class="range-option">Personalizado</button>
+            </div>
+            <div class="range-custom" id="range-custom" hidden>
+                <label>De <input type="date" id="range-from"></label>
+                <label>Até <input type="date" id="range-to"></label>
+                <button type="button" id="range-custom-apply">Aplicar</button>
+            </div>
+            <span class="range-note" id="range-note"></span>
+        </section>
+
+        <section class="metric-grid">
+            <article class="metric-card"><span>Perguntas no período</span><strong id="metric-total">-</strong></article>
+            <article class="metric-card"><span>Contas que perguntaram</span><strong id="metric-contas">-</strong></article>
+            <article class="metric-card"><span>Sem resposta salva</span><strong id="metric-sem-resposta">-</strong></article>
+            <article class="metric-card"><span>Exibindo</span><strong id="metric-exibindo">-</strong></article>
+        </section>
+
+        <section class="admin-grid">
+            <article class="admin-card admin-card-wide">
+                <h2>Filtros</h2>
+                <div class="users-filter-bar">
+                    <select id="filtro-conta">
+                        <option value="">Todas as contas</option>
+                    </select>
+                    <input type="search" id="filtro-busca" placeholder="Buscar no texto da pergunta...">
+                    <label class="perguntas-check">
+                        <input type="checkbox" id="filtro-sem-resposta">
+                        Somente sem resposta salva
+                    </label>
+                    <button type="button" id="filtro-aplicar">Aplicar</button>
+                    <button type="button" id="filtro-limpar" class="btn-limpar">Limpar</button>
+                </div>
+                <p class="perguntas-dica">
+                    Dica: "sem resposta salva" costuma indicar pergunta que ficou sem
+                    par no histórico (útil para achar lacuna de corpus).
+                </p>
+            </article>
+
+            <article class="admin-card admin-card-wide">
+                <h2>Contas que mais perguntaram</h2>
+                <div id="contas-box" class="details-box">Carregando...</div>
+            </article>
+
+            <article class="admin-card admin-card-wide">
+                <h2>Perguntas</h2>
+                <div id="perguntas-box" class="perguntas-lista">Carregando...</div>
+                <button type="button" id="carregar-mais" class="btn-mais" hidden>Carregar mais</button>
+            </article>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/admin_perguntas.js') }}?v=perguntas1"></script>
+</body>
+</html>

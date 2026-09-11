@@ -1,0 +1,193 @@
+/* Painel admin — consulta de perguntas e acompanhamento da leitura (2026-09-11).
+   Complementa admin.css (não substitui). Reaproveita .admin-card,
+   .metric-grid, .details-box, .users-filter-bar e .range-*.
+   Cores: usa as variáveis de :root definidas em admin.css
+   (--primary:#1a73e8, --soft, --border, --muted) para ficar igual ao painel. */
+
+.admin-shell {
+    --accent: var(--primary, #1a73e8);
+    --accent-soft: var(--soft, #e8f0fe);
+}
+
+.perguntas-nota {
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--accent, #1a73e8);
+    background: var(--accent-soft, #e8f0fe);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.perguntas-nota code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.08);
+    font-size: 0.88em;
+}
+
+.perguntas-dica {
+    margin: 10px 0 0;
+    font-size: 0.86rem;
+    color: var(--muted, #5f6368);
+}
+
+.perguntas-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-limpar,
+.btn-mais,
+#filtro-aplicar {
+    padding: 8px 14px;
+    border: 1px solid var(--border, #d2e3fc);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text, #1f1f1f);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#filtro-aplicar {
+    background: var(--accent, #1a73e8);
+    border-color: var(--accent, #1a73e8);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-mais {
+    display: block;
+    margin: 16px auto 0;
+    min-width: 200px;
+}
+
+/* ---------------- lista de perguntas ---------------- */
+
+.perguntas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.pergunta-item {
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.pergunta-item.sem-resposta {
+    border-left: 3px solid #d97706;
+    background: rgba(217, 119, 6, 0.05);
+}
+
+.pergunta-cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 12px;
+    margin-bottom: 6px;
+    font-size: 0.82rem;
+    color: var(--muted, #5f6368);
+}
+
+.pergunta-email {
+    font-weight: 600;
+    color: var(--text, #1f1f1f);
+}
+
+.pergunta-plano {
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: var(--soft, #e8f0fe);
+    color: var(--primary, #1a73e8);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.pergunta-marca {
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: rgba(217, 119, 6, 0.18);
+    color: #92400e;
+    font-weight: 600;
+}
+
+.pergunta-texto {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.pergunta-conversa {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--muted, #5f6368);
+}
+
+/* ---------------- uso da leitura ---------------- */
+
+.uso-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.uso-tabela th,
+.uso-tabela td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.uso-tabela th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted, #5f6368);
+    z-index: 1;
+}
+
+.uso-tabela td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.uso-tabela tr.expandivel {
+    cursor: pointer;
+}
+
+.uso-tabela tr.expandivel:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.uso-detalhe {
+    margin: 0;
+    padding: 8px 0 4px 18px;
+    font-size: 0.85rem;
+    color: var(--muted, #5f6368);
+}
+
+.uso-detalhe li {
+    margin-bottom: 3px;
+}
+
+.uso-vazio {
+    padding: 20px;
+    text-align: center;
+    color: var(--muted, #5f6368);
+    font-size: 0.9rem;
+}

@@ -68,10 +68,27 @@ def salvar_progresso(autor_id: str, arquivo: str, posicao_audio: int) -> bool:
                     (autor_id, arquivo, int(posicao_audio or 0)),
                 )
                 conn.commit()
-                return True
+        # 2026-09-11: batimento de USO para o painel admin. O progresso guarda
+        # só a última posição, então não permite medir "quanto" cada conta leu.
+        # Fica aqui (e não no front) porque este é o único caminho que grava
+        # leitura. A deduplicação por janela de tempo está dentro do serviço,
+        # e ele nunca levanta exceção — observabilidade não pode quebrar a
+        # leitura (por isso a chamada vem DEPOIS do commit e fora do try).
+        _registrar_uso(autor_id, arquivo, posicao_audio)
+        return True
     except Exception as exc:
         _logger.warning("leitura_progresso: falha ao salvar (%s)", exc)
         return False
+
+
+def _registrar_uso(autor_id: str, arquivo: str, posicao_audio: int) -> None:
+    """Registra o batimento de uso sem nunca propagar erro."""
+    try:
+        from . import leitura_uso_service
+
+        leitura_uso_service.registrar_uso(autor_id, arquivo, posicao_audio)
+    except Exception as exc:  # pragma: no cover - defensivo
+        _logger.warning("leitura_progresso: falha ao registrar uso (%s)", exc)
 
 
 def carregar_progresso(autor_id: str, arquivo: str) -> dict | None:
