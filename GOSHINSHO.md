@@ -494,3 +494,30 @@ flowchart LR
   da revisão está em `reports/livros_trabalho/`.
 - A pasta `textos_leitura_colaborativa/` é **nova e versionável** (não está no
   `.gitignore`) — ela passa a ser a base editável da Leitura Colaborativa.
+
+## 9. BUG: "Failed to fetch" no chat — worker do gunicorn travado (14/09/2026)
+
+- **Sintoma reportado pelo usuário**: pergunta no chat retorna "Failed to fetch"
+  no navegador.
+- **Diagnóstico** (não era falta de memória, apesar da mensagem enganosa nos
+  logs): `journalctl -u goshinsho` mostrava `CRITICAL WORKER TIMEOUT` seguido de
+  `SIGKILL! Perhaps out of memory?` em `POST /api/chat` — 4 ocorrências em 2h.
+  A máquina tinha 38 GB livres; não era OOM real.
+- **Causa raiz**: `goshinsho/services/ai_service.py:_client()` criava o cliente
+  DeepSeek (`OpenAI(...)`) sem `timeout` explícito → herdava o default do SDK
+  openai de **600s de leitura**. A rede de segurança por tempo decorrido do
+  laço agêntico (`LIMITE_SEGURANCA_SEGUNDOS=100` em `agentic_search.py`) só é
+  checada **entre rodadas**, nunca durante uma chamada `client.chat.completions
+  .create()` em andamento — então uma única chamada travada (instabilidade da
+  API DeepSeek) bloqueava a thread worker do Flask muito além do timeout de
+  180s do gunicorn (`--timeout 180`), que então mata o processo no meio da
+  requisição de streaming.
+- **Fix**: `timeout=30.0, max_retries=1` no cliente `OpenAI(...)` em
+  `_client()` — pior caso ~60s por chamada lógica, cabe dentro do orçamento de
+  100s de busca + margem de síntese. Uma chamada travada agora levanta exceção
+  tratável (cai no `except Exception` do worker em `routes.py`, gera evento
+  `error` amigável) em vez de matar o worker do gunicorn inteiro.
+- **Commit**: `20066bf6`. Cobre os dois caminhos (`responder_agentico_deepseek`
+  PT e `responder_agentico_deepseek_jp`, que delega para o mesmo `_client()`).
+- **Restart do serviço**: pendente confirmação do usuário (roda com
+  `--preload`, workers já carregados não pegam o fix até restart).
