@@ -98,7 +98,24 @@ def _client():
     if not Config.DEEPSEEK_API_KEY:
         raise RuntimeError("Configure DEEPSEEK_API_KEY no .env.")
 
-    return OpenAI(api_key=Config.DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
+    # 2026-09-14: achado real em produção -- sem `timeout`, o SDK openai usa
+    # o default de leitura de 600s. A rede de segurança por tempo decorrido
+    # em agentic_search.py (LIMITE_SEGURANCA_SEGUNDOS) só é checada ENTRE
+    # rodadas, não durante uma chamada em andamento -- uma única chamada
+    # travada (instabilidade da API DeepSeek) bloqueava o worker do gunicorn
+    # muito além do seu timeout de 180s (--timeout 180), matando o processo
+    # no meio da requisição (WORKER TIMEOUT + SIGKILL nos logs) e o usuário
+    # via "Failed to fetch" no navegador. 30s por chamada (~4x a média
+    # medida de ~7s/rodada) com 1 retry (pior caso 60s por chamada lógica)
+    # cabe com folga dentro do orçamento de 100s de busca + margem de
+    # síntese, e transforma o travamento em erro tratável (cai no
+    # `except Exception` do worker) em vez de matar o worker inteiro.
+    return OpenAI(
+        api_key=Config.DEEPSEEK_API_KEY,
+        base_url="https://api.deepseek.com/v1",
+        timeout=30.0,
+        max_retries=1,
+    )
 
 
 @lru_cache(maxsize=1)
