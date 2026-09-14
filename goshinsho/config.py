@@ -42,6 +42,11 @@ class Config:
     # Decisão do usuário: aguardar retorno dos colaboradores antes de promover.
     FORUM_ENABLED = _env_bool("GOSHINSHO_FORUM_ENABLED", default=False)
     DEEPSEEK_API_KEY = _env("DEEPSEEK_API_KEY")
+    # 2026-09-14: chave do fallback do laço agenciado (ver
+    # services/llm_fallback.py). Só usada quando a DeepSeek falha por erro
+    # transitório de infraestrutura -- sem a chave, o fallback se declara
+    # indisponível e o erro original da DeepSeek é preservado.
+    ANTHROPIC_API_KEY = _env("ANTHROPIC_API_KEY")
     STRIPE_SECRET_KEY = _env("STRIPE_SECRET_KEY")
     STRIPE_WEBHOOK_SECRET = _env("STRIPE_WEBHOOK_SECRET")
     SEARCH_ROUTING = (_env("GOSHINSHO_SEARCH_ROUTING") or "hybrid").lower()

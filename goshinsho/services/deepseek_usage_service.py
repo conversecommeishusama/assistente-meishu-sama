@@ -26,6 +26,42 @@ _USAGE_CONTEXT = contextvars.ContextVar("deepseek_usage_context", default={})
 DEEPSEEK_BLENDED_USD_PER_1M_TOKENS = 0.59 / 13_923_984 * 1_000_000
 USD_TO_BRL = 5.4
 
+# 2026-09-14: taxa POR MODELO. Antes, `_cost_usd()` aplicava a taxa blended
+# da DeepSeek a todas as entradas do log, ignorando o campo "model" -- com
+# o fallback para a Anthropic (services/llm_fallback.py), o gasto com
+# Claude ficaria subnotificado em ~24x (US$ 1,00-5,00/1M contra
+# US$ 0,0424/1M), e o teto diário (Config.DAILY_COST_CAP_USD) não conteria
+# o fallback. Os valores da DeepSeek continuam vindo da taxa única
+# calibrada contra a fatura real (o cache de contexto em disco não é
+# detalhado por chamada no log, então a forma honesta de reportar segue
+# sendo o blended); os da Anthropic são preço de tabela público.
+PRECOS_POR_MODELO = {
+    "deepseek-v4-flash": {
+        "entrada": DEEPSEEK_BLENDED_USD_PER_1M_TOKENS,
+        "saida": DEEPSEEK_BLENDED_USD_PER_1M_TOKENS,
+    },
+    "deepseek-v4-pro": {
+        "entrada": DEEPSEEK_BLENDED_USD_PER_1M_TOKENS,
+        "saida": DEEPSEEK_BLENDED_USD_PER_1M_TOKENS,
+    },
+    "claude-haiku-4-5-20251001": {"entrada": 1.0, "saida": 5.0},
+    "claude-sonnet-5": {"entrada": 3.0, "saida": 15.0},
+}
+
+
+def _cost_usd(prompt_tokens, completion_tokens, model=None):
+    """Custo em USD a partir dos tokens, usando a taxa do MODELO quando
+    conhecida. Modelo desconhecido cai na taxa blended da DeepSeek (o motor
+    de longe mais usado) em vez de assumir custo zero -- subestimar gasto é
+    pior que superestimar para a finalidade de freio de mão."""
+    if model and model in PRECOS_POR_MODELO:
+        preco = PRECOS_POR_MODELO[model]
+        return (
+            int(prompt_tokens or 0) * preco["entrada"]
+            + int(completion_tokens or 0) * preco["saida"]
+        ) / 1_000_000
+    return (int(prompt_tokens or 0) + int(completion_tokens or 0)) * DEEPSEEK_BLENDED_USD_PER_1M_TOKENS / 1_000_000
+
 # Purposes que representam uma resposta real entregue a um usuário (para o
 # cálculo de "custo médio por pergunta") -- exclui "translation"/
 # "term_fallback", que são chamadas auxiliares dentro do atendimento de uma
@@ -107,10 +143,6 @@ def _parse_timestamp(value):
         return None
 
 
-def _cost_usd(prompt_tokens, completion_tokens):
-    return (int(prompt_tokens or 0) + int(completion_tokens or 0)) * DEEPSEEK_BLENDED_USD_PER_1M_TOKENS / 1_000_000
-
-
 def summarize_deepseek_usage(limit=20000, since=None, until=None):
     """`since`/`until`: datetime com timezone, ou None para não limitar
     aquele lado do intervalo -- usado pelo filtro de período do dashboard
@@ -133,25 +165,34 @@ def summarize_deepseek_usage(limit=20000, since=None, until=None):
         entries.append(raw)
 
     def grouped(field):
-        totals = defaultdict(lambda: {"calls": 0, "total_tokens": 0, "prompt_tokens": 0, "completion_tokens": 0, "answers": 0})
+        totals = defaultdict(lambda: {"calls": 0, "total_tokens": 0, "prompt_tokens": 0, "completion_tokens": 0, "answers": 0, "cost_usd": 0.0})
         for entry in entries:
             key = entry.get(field) or "unknown"
+            prompt = int(entry.get("prompt_tokens") or 0)
+            completion = int(entry.get("completion_tokens") or 0)
             totals[key]["calls"] += 1
             totals[key]["total_tokens"] += int(entry.get("total_tokens") or 0)
-            totals[key]["prompt_tokens"] += int(entry.get("prompt_tokens") or 0)
-            totals[key]["completion_tokens"] += int(entry.get("completion_tokens") or 0)
+            totals[key]["prompt_tokens"] += prompt
+            totals[key]["completion_tokens"] += completion
+            # custo acumulado por entrada, com a taxa do MODELO de cada uma
+            # -- não uma taxa única aplicada ao total do grupo (um mesmo
+            # usuário/pergunta pode ter rodado nos dois provedores).
+            totals[key]["cost_usd"] += _cost_usd(prompt, completion, entry.get("model"))
             if entry.get("purpose") in ANSWER_PURPOSES:
                 totals[key]["answers"] += 1
         result = []
         for key, value in sorted(totals.items(), key=lambda item: item[1]["total_tokens"], reverse=True):
-            cost_usd = _cost_usd(value["prompt_tokens"], value["completion_tokens"])
+            cost_usd = value.pop("cost_usd")
             result.append({"name": key, **value, "cost_usd": cost_usd, "cost_brl": cost_usd * USD_TO_BRL})
         return result
 
     prompt_tokens = sum(int(entry.get("prompt_tokens") or 0) for entry in entries)
     completion_tokens = sum(int(entry.get("completion_tokens") or 0) for entry in entries)
     answer_count = sum(1 for entry in entries if entry.get("purpose") in ANSWER_PURPOSES) or 1
-    total_usd = _cost_usd(prompt_tokens, completion_tokens)
+    total_usd = sum(
+        _cost_usd(entry.get("prompt_tokens"), entry.get("completion_tokens"), entry.get("model"))
+        for entry in entries
+    )
 
     return {
         "entries": len(entries),

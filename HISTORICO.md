@@ -7,6 +7,171 @@
 
 ---
 
+## 14/09 — FALLBACK DO AGÊNTICO PARA A ANTHROPIC (CLAUDE): sobreviver à queda da DeepSeek
+
+> **Correção de rota no início da sessão**: o sintoma era "Failed to fetch" no
+> chat e o primeiro diagnóstico apontou OOM nos workers do gunicorn. O usuário
+> corrigiu — o que caiu foi a **própria DeepSeek**, e ela **não comunicou o
+> incidente** nos canais oficiais. Pedido explícito: *"procure fora da deepseek,
+> pois a deepseek não relatou o erro oficialmente"*.
+
+### 1. Confirmação externa (não-oficial, a pedido do usuário)
+
+| Fonte | Status reportado |
+|---|---|
+| Downdetector (global) | Pico de **377 relatos** em 24h |
+| Downdetector Brasil | Pico de **122 relatos**, "enfrenta problemas" |
+| Entireweb Status | **1.042 relatos** em 24h, "appears to be down right now" |
+| Hacker News | "DeepSeek down for API/app and web" |
+
+`status.deepseek.com` dizia "Everything is running smoothly"; histórico de
+setembro registrava **só um incidente, em 02/09**. Comentário de usuário no HN
+resume: *"when companies don't post actual outages on their status page this is
+all I can do"*.
+
+**Pista decisiva** (Downdetector BR): a versão **`pro` seguia funcionando** e só
+a **`flash`** caiu — exatamente o modelo do laço agenciado.
+
+### 2. O `SIGKILL` era consequência, não causa
+
+Os `CRITICAL WORKER TIMEOUT` + `SIGKILL! Perhaps out of memory?` nos logs (4
+ocorrências em 2h) não eram OOM (a máquina tinha 38 GB livres): o worker travava
+esperando a API instável e estourava o `--timeout 180`. O fix de timeout do
+cliente (`20066bf6`, `timeout=30.0, max_retries=1`) já havia reduzido a janela,
+mas não resolvia a indisponibilidade em si — qualquer chamada ainda falhava.
+
+### 3. Decisão do modelo — Haiku, com evidência real
+
+Usuário lembrou que o Haiku tinha ido melhor que o Sonnet. **Confirmado nos
+registros do projeto** (`reports/piloto_agentico_3vias.json`, 4 casos):
+
+| modelo | tok. entrada | tok. saída | rodadas | custo |
+|---|---|---|---|---|
+| **haiku** | **73.498** | 7.707 | **11** | US$ 0,112 |
+| sonnet | 104.761 | 10.081 | 13 | US$ 0,466 |
+| deepseek | 111.806 | 10.024 | 16 | US$ 0,036 |
+
+`HISTORICO.md` linha 5059 já dizia: *"Haiku, achou tanto ou mais conteúdo que o
+Sonnet"*. O Haiku foi também o **único dos três a recusar corretamente** a
+pergunta especulativa sobre Covid-19 (§3.5 de `docs/13-ESTUDO-...`). Seu defeito
+conhecido (inventar rótulo de fonte, §3.4) já é coberto por `validar_citacoes()`
+em produção.
+
+### 4. Escopo: rede de segurança, não segundo motor
+
+Preocupação do usuário: *"só me preocupa o aplicativo dar fallback em qualquer
+situação devido a bug"*. Classificador `_erro_transitorio()` testado com 18
+cenários — dispara só para falha de infraestrutura (timeout, conexão, 429,
+5xx, "server busy"); **não** dispara para bug nosso (`KeyError`,
+`AttributeError`, `TypeError`, `ValueError`, `IndexError`, `JSONDecodeError`)
+nem para 400/401/403/404/422.
+
+### 5. Tempo-box — a armadilha que reintroduziria o bug original
+
+Fallback roda **depois** do primário ter gasto tempo. Sem teto: falha lenta da
+DeepSeek (~100s) + fallback cheio (~90s) > `--timeout 180` → `SIGKILL` → o mesmo
+"Failed to fetch". `LIMITE_TOTAL_AGENTICO_SEGUNDOS = 150`; o fallback recebe
+`max(15.0, 150 - tempo_já_gasto)`.
+
+### 6. Custo: bug de subnotificação de 25x (corrigido)
+
+`_cost_usd()` aplicava a taxa blended da DeepSeek a todas as entradas,
+ignorando o campo `model`. Com o Claude, o gasto ficaria **25x** subnotificado e
+o `DAILY_COST_CAP_USD` **não conteria o fallback** — o freio de mão de custo
+falharia justamente quando mais importa. Corrigido com `PRECOS_POR_MODELO`;
+modelo desconhecido cai no blended (nunca zero).
+
+### 7. Bugs reais que os testes pegaram antes de produção
+
+1. **Ordem do histórico invertida** — histórico era anexado *depois* da pergunta
+   atual. A pergunta agora vai por último.
+2. **`app.logger` → `NameError`** — `routes.py` é `Blueprint`, não tem `app` em
+   escopo. O erro estourava **dentro** do fluxo de fallback, convertendo erro
+   recuperável em falha fatal. Trocado por `current_app.logger` com `try/except`.
+
+**Lição**: o teste unitário não pegou esses dois; o teste de **integração pelo
+endpoint real** (`test_client`) pegou.
+
+### 8. Arquivos e validação
+
+- **Novo**: `goshinsho/services/llm_fallback.py` (PT e JP, mesmo contrato do laço
+  DeepSeek).
+- **Novo**: `tests/test_llm_fallback.py` — 19 testes, **sem rede**.
+- `goshinsho/routes.py`, `goshinsho/config.py`,
+  `goshinsho/services/deepseek_usage_service.py`, `static/js/app.js` (aviso em
+  13 idiomas), `requirements.txt`.
+
+**Validação**: 503 simulado no endpoint real → HTTP 200 + evento
+`provider_fallback` + resposta entregue. Teste real com o Claude no acervo:
+47s, 4 rodadas, US$ 0,043, zero citações suspeitas. Suíte: **221 passed, 1
+failed** — falha de `test_ohikari_filter.py` **preexistente** (confirmada via
+`git stash` com o código original), não toca nenhum arquivo desta mudança.
+
+**Serviço reiniciado** e verificado (`/health` e `/` → 200).
+
+### Onde continuar
+1. **Investigar a falha preexistente** de `tests/test_ohikari_filter.py` (falha
+   com o código original também — não é regressão desta sessão).
+2. Considerar aviso proativo quando a DeepSeek estiver instável (o fallback hoje
+   é reativo, só entra depois da falha).
+
+---
+
+## 10/09 — SISTEMA DE AVALIAÇÃO DE TEXTOS (`/avaliacao`): leitura independente para revisão
+
+> **Pedido do usuário**: "vc pode criar um link no meu login de administrador
+> para a avaliação dos textos no mesmo perfil da leitura colaborativa, mas
+> totalmente independente do sistema servido ao usuário atualmente" e "teria que
+> criar uma pasta nova com os arquivos que vamos trabalhar e um sistema de
+> leitura separado; não precisa ser com o audio de meishu-sama, pode ser com o
+> audio da microsoft."
+
+### 1. O que foi feito
+- Rota **`/avaliacao`**, restrita ao login de administrador (mesma regra do
+  `/admin`), com o mesmo tipo de leitura da Leitura Colaborativa — mas
+  **totalmente separada** do que é servido ao usuário final.
+- **Pasta nova de trabalho**: `textos_avaliacao/` (8 arquivos, gerados da
+  apostila por `scripts/preparar_textos_avaliacao.py`).
+- **Cache de áudio próprio**: `data/tts_cache_avaliacao/`. O acervo de 16 GB da
+  voz clonada **não é tocado**.
+- **Áudio da Microsoft** (edge-tts: Antônio, Francisca, Thalita) — decisão do
+  usuário. Sem Fish/XTTS.
+- **Link** "Avaliação de Textos" no menu do desenvolvedor
+  (`templates/_developer_nav.html`), ao lado de Admin.
+
+### 2. Peças
+`goshinsho/avaliacao_routes.py` (blueprint), `goshinsho/services/avaliacao_service.py`
+(pasta de trabalho + blocos/trechos + HTML seguro), `scripts/preparar_textos_avaliacao.py`,
+`templates/avaliacao*.html`, `static/css/avaliacao.css`, `static/js/avaliacao.js`
+(fila de áudio com prefetch, destaque do trecho, clique no parágrafo).
+Commit `44ef7f11`. Handoff: `HANDOFF_AVALIACAO_TEXTOS_20260910.md`.
+
+### 3. Isolamento — verificado na prática
+- MP3 gerado na avaliação **não** aparece no cache de produção, e vice-versa
+  (testado nos dois sentidos, pela chave de cache).
+- Sem login: página `302`, API `401`. Com login comum (não-admin): `403`.
+- Rotas públicas intactas após a ativação: `/app-pt/` 200, `/forum/leitura` 200.
+
+### 4. Detalhes técnicos que custaram tempo
+- `tts_service` guarda o diretório de cache num **global do módulo**; a troca é
+  feita num context manager que **cria o diretório** antes de trocar (sem isso,
+  a síntese falhava com "No such file or directory") e **restaura** no `finally`.
+- O `.leitura-texto` do projeto usa `white-space: pre-wrap` (a Leitura monta os
+  parágrafos via JS). Como aqui o HTML já vem pronto do servidor, a indentação
+  do template apareceria como espaço — resolvido com `avaliacao.css` devolvendo
+  `white-space: normal` dentro dos blocos.
+- O servidor **precisa subir com o preload** (6 workers, ~7 GB de modelos): na
+  primeira checagem pós-restart deu **502** em todas as rotas por alguns
+  segundos — é só aguardar, não é erro do código.
+
+### 5. Pendências (decisões do usuário)
+- A página é **somente leitura** (a edição é no arquivo). Próximo passo natural:
+  edição inline + marcação de "arquivo conferido".
+- O áudio da Microsoft **lê colchetes** (`[de morrer]`) e parênteses; a voz
+  clonada os removia. Conferir se é o comportamento desejado.
+
+---
+
 ## 10/09 — ÁUDIOS DA VOZ MEISHU-SAMA: orais 100% + sincronização à prova de edição
 
 > **Pedido do usuário**: (1) "seria possível fazer a voz de Meishu-Sama para

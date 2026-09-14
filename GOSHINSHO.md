@@ -521,3 +521,133 @@ flowchart LR
   PT e `responder_agentico_deepseek_jp`, que delega para o mesmo `_client()`).
 - **Restart do serviço**: pendente confirmação do usuário (roda com
   `--preload`, workers já carregados não pegam o fix até restart).
+
+## 10. FALLBACK DO AGÊNTICO PARA A ANTHROPIC (CLAUDE) — 14/09/2026
+
+### 10.1. Como este trabalho começou (correção de um diagnóstico errado)
+
+O sintoma relatado foi "Failed to fetch" no chat. O primeiro diagnóstico
+apontou OOM nos workers do gunicorn (`SIGKILL! Perhaps out of memory?`).
+**O usuário corrigiu**: o que ficou fora do ar naquele momento foi a própria
+**DeepSeek** — não só a API do app, mas também a sessão do assistente no
+editor. E o agravante: a DeepSeek **não registrou o incidente** nos canais
+oficiais.
+
+Confirmado com fontes **terceiras** (a pedido explícito do usuário, já que a
+DeepSeek não comunicou nada):
+
+| Fonte | Status reportado |
+|---|---|
+| Downdetector (global) | Pico de **377 relatos** em 24h |
+| Downdetector Brasil | Pico de **122 relatos**, status "enfrenta problemas" |
+| Entireweb Status | **1.042 relatos** em 24h, "appears to be down right now" |
+| Hacker News | Post "DeepSeek down for API/app and web" |
+
+A página oficial `status.deepseek.com` dizia "Everything is running smoothly",
+e o histórico de setembro de 2026 registrava **um único incidente, em 02/09**.
+
+**Pista decisiva** nos comentários do Downdetector Brasil: usuários relataram
+que a versão **`pro` continuava funcionando** e só a **`flash`** havia caído.
+O laço agenciado usa exatamente `deepseek-v4-flash` (`agentic_search.py`).
+O `SIGKILL` dos logs era **consequência**, não causa: o worker travava
+esperando a API instável e estourava o `--timeout 180`.
+
+### 10.2. Decisão do modelo do fallback — Haiku, com base em evidência
+
+O usuário lembrou que **o Haiku tinha tido resultado superior ao Sonnet** nos
+testes da época. Verificado nos registros reais do projeto, não na memória:
+
+`reports/piloto_agentico_3vias.json` (4 casos, 2026-07-29):
+
+| modelo | tok. entrada | tok. saída | rodadas | custo | citações suspeitas |
+|---|---|---|---|---|---|
+| **haiku** | **73.498** | 7.707 | **11** | US$ 0,112 | 0 |
+| sonnet | 104.761 | 10.081 | 13 | US$ 0,466 | 0 |
+| deepseek | 111.806 | 10.024 | 16 | US$ 0,036 | 0 |
+
+`HISTORICO.md` (linha 5059) já registrava: *"Haiku, achou tanto ou mais
+conteúdo que o Sonnet"*. E `docs/13-ESTUDO-MIGRACAO-BUSCA-AGENTICA.md` §3.5
+registra que o Haiku foi **o único dos três a recusar corretamente** a
+pergunta especulativa sobre Covid-19 (evento posterior à morte de
+Meishu-Sama).
+
+O defeito conhecido do Haiku — **inventar rótulo de fonte** (§3.4 do mesmo
+estudo: citou "Hikari nº 5" para arquivos que são 御光話録) — já é coberto
+programaticamente por `validar_citacoes()` em produção, que confere todo nome
+de arquivo citado contra o que as ferramentas realmente devolveram.
+
+**Modelo escolhido: `claude-haiku-4-5-20251001`.**
+
+### 10.3. Escopo: rede de segurança, não segundo motor
+
+Preocupação explícita do usuário: *"só me preocupa o aplicativo dar fallback
+em qualquer situação devido a bug"*. O fallback só entra quando o erro é
+**falha transitória de infraestrutura** do provedor:
+
+- **Dispara** (testado): `TimeoutError`, `ConnectionError`, `OSError`,
+  `APITimeoutError`, `APIConnectionError`, `InternalServerError`,
+  `RateLimitError`, e textos com 502/503/504/429, "server busy",
+  "overloaded", "connection reset".
+- **NÃO dispara** (testado): `KeyError`, `AttributeError`, `TypeError`,
+  `ValueError`, `IndexError`, `JSONDecodeError`, `ZeroDivisionError` (bugs
+  nossos) e 400/401/403/404/422 (chave inválida / payload malformado) —
+  repetir a mesma pergunta quebrada no outro provedor esconderia o defeito e
+  gastaria dinheiro sem consertar nada.
+
+### 10.4. Tempo-box — a armadilha que quase reintroduziu o bug original
+
+O fallback roda **depois** do primário já ter gasto tempo. Sem teto, uma falha
+lenta da DeepSeek (~100s) somada a um fallback cheio (~90s) estouraria o
+`--timeout 180` do gunicorn → `SIGKILL` → exatamente o **"Failed to fetch"**
+que este trabalho existe para eliminar.
+
+`LIMITE_TOTAL_AGENTICO_SEGUNDOS = 150` (em `routes.py`, deixa ~30s de margem
+para síntese + streaming + overhead de fila). O fallback recebe
+`max(15.0, 150 - tempo_já_gasto)`.
+
+### 10.5. Correção de custo no dashboard (consequência obrigatória)
+
+`_cost_usd()` em `deepseek_usage_service.py` aplicava a taxa *blended* da
+DeepSeek a **todas** as entradas do log, ignorando o campo `model`. Com o
+Claude no caminho, o gasto ficaria subnotificado em **25x** (medido) e o
+`Config.DAILY_COST_CAP_USD` **não conteria** o fallback — o freio de mão
+automático de custo deixaria de funcionar justamente quando mais importa.
+
+Corrigido com `PRECOS_POR_MODELO` (DeepSeek segue na taxa calibrada contra a
+fatura real; Anthropic com preço de tabela). Modelo desconhecido cai na taxa
+blended da DeepSeek — **nunca zero**, porque subestimar gasto é pior que
+superestimar para a finalidade de freio de mão.
+
+### 10.6. Bugs reais que os testes pegaram ANTES de ir a produção
+
+1. **Ordem do histórico invertida**: o histórico era anexado *depois* da
+   pergunta atual, fazendo o modelo ler a pergunta nova como início da
+   conversa. A pergunta agora vai por último, como no laço DeepSeek.
+2. **`app.logger` → `NameError`**: `routes.py` é um `Blueprint` e não tem o
+   objeto `app` em escopo. O erro estourava **dentro** do fluxo de fallback,
+   convertendo um erro recuperável da DeepSeek em falha fatal para o usuário.
+   Trocado por `current_app.logger`, envolto em `try/except`.
+
+O segundo caso é a lição da sessão: **teste unitário não pegou, o teste de
+integração pelo endpoint real (`test_client`) pegou.**
+
+### 10.7. Arquivos e validação
+
+- **Novo**: `goshinsho/services/llm_fallback.py` — laço Claude espelhando o
+  contrato de `responder_agentico_deepseek` (mesmas chaves de retorno, PT e JP).
+- **Novo**: `tests/test_llm_fallback.py` — 19 testes, **sem chamada de rede**.
+- `goshinsho/routes.py` — `try/except` no worker + tempo-box + evento
+  `provider_fallback`.
+- `goshinsho/config.py` — `ANTHROPIC_API_KEY`.
+- `goshinsho/services/deepseek_usage_service.py` — custo por modelo.
+- `static/js/app.js` — aviso `providerFallbackNotice` nos **13 idiomas**.
+- `requirements.txt` — `anthropic` (já estava nos venvs; faltava declarar).
+
+**Validação**: teste de ponta a ponta pelo endpoint real, simulando 503 da
+DeepSeek → HTTP 200, evento `provider_fallback` emitido, resposta do Claude
+entregue. Teste real com busca no acervo: 47s, 4 rodadas, US$ 0,043, zero
+citações suspeitas. Suíte: **221 passed, 1 failed** — a falha
+(`test_ohikari_filter.py`) é **preexistente**, confirmada via `git stash` com
+o código original, e não toca nenhum arquivo desta mudança.
+
+**Serviço reiniciado** e verificado (`/health` e `/` → 200).

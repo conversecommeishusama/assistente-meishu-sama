@@ -12,6 +12,7 @@ from flask import (
     Blueprint,
     Response,
     copy_current_request_context,
+    current_app,
     flash,
     jsonify,
     make_response,
@@ -91,6 +92,14 @@ web_bp = Blueprint("web", __name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 stripe.api_key = Config.STRIPE_SECRET_KEY
 RATE_LIMIT_BUCKETS = defaultdict(deque)
+
+# 2026-09-14: orçamento total de uma resposta agêntica, incluindo um
+# eventual fallback para a Anthropic. O gunicorn roda com --timeout 180;
+# 150s deixa ~30s de margem para a síntese, o streaming e o overhead de
+# fila/thread do worker -- sem essa margem, o worker é morto no meio da
+# requisição (WORKER TIMEOUT + SIGKILL) e o usuário vê "Failed to fetch",
+# que é justamente o sintoma que o fallback existe para evitar.
+LIMITE_TOTAL_AGENTICO_SEGUNDOS = 150.0
 
 SUBSCRIPTION_EXPLANATION = (
     "Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, "
@@ -1332,6 +1341,12 @@ def api_chat():
             responder_agentico_deepseek_jp,
         )
         from .services.conversation_context import strip_source_marker
+        from .services.llm_fallback import (
+            fallback_disponivel,
+            responder_agentico_claude,
+            responder_agentico_claude_jp,
+            _erro_transitorio,
+        )
 
         search_variant = "agentic_pt" if retrieval_mode == "pt_agentic" else "agentic_jp"
         responder_fn = responder_agentico_deepseek if retrieval_mode == "pt_agentic" else responder_agentico_deepseek_jp
@@ -1452,7 +1467,58 @@ def api_chat():
                 else:
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 extra_kwargs["on_deep_search"] = aviso_busca_profunda
-                r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
+                inicio_busca = time()
+                try:
+                    r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
+                except Exception as exc:
+                    # 2026-09-14: rede de segurança contra indisponibilidade
+                    # da API DeepSeek (ver services/llm_fallback.py). Só cai
+                    # para o Claude quando o erro é transitório de
+                    # infraestrutura -- erro de programação/dados sobe
+                    # intacto, para não esconder bug nosso nem gastar com
+                    # outro provedor na mesma pergunta quebrada.
+                    if not (_erro_transitorio(exc) and fallback_disponivel()):
+                        raise
+                    tempo_gasto = time() - inicio_busca
+                    # Tempo-box: o fallback roda DEPOIS do primário já ter
+                    # gasto tempo. Sem este teto, uma falha lenta da DeepSeek
+                    # (~100s) + um fallback cheio (~90s) estouraria o
+                    # --timeout 180 do gunicorn e o worker seria morto no
+                    # meio -- reproduzindo exatamente o "Failed to fetch"
+                    # que esta camada existe para evitar.
+                    restante = max(15.0, LIMITE_TOTAL_AGENTICO_SEGUNDOS - tempo_gasto)
+                    # `current_app` (não `app`): routes.py é um Blueprint e
+                    # não tem o objeto app em escopo -- usar `app.logger`
+                    # aqui levantava NameError DENTRO do fluxo de fallback,
+                    # transformando um erro recuperável da DeepSeek em erro
+                    # fatal para o usuário. Pego pelo teste de integração.
+                    try:
+                        current_app.logger.warning(
+                            "agêntico DeepSeek falhou (%s); caindo para o fallback Claude "
+                            "com %.0fs restantes: %s",
+                            type(exc).__name__, restante, exc,
+                        )
+                    except Exception:
+                        pass  # log nunca deve derrubar a recuperação
+                    event_queue.put({"event": "status", "code": "provider_fallback"})
+                    if retrieval_mode == "jp_agentic":
+                        fallback_kwargs = {
+                            "idioma": language,
+                            "com_citacoes": com_citacoes,
+                            "on_deep_search": aviso_busca_profunda,
+                            "limite_segundos": restante,
+                        }
+                        r = responder_agentico_claude_jp(
+                            pergunta_agentico, historico_agentico, **fallback_kwargs
+                        )
+                    else:
+                        r = responder_agentico_claude(
+                            pergunta_agentico,
+                            historico_agentico,
+                            system_prompt=extra_kwargs["system_prompt"],
+                            on_deep_search=aviso_busca_profunda,
+                            limite_segundos=restante,
+                        )
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
                 # 2026-07-31: sem isso, o modo agenciado (motor único desde

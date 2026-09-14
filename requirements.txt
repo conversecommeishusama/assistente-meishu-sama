@@ -2,6 +2,10 @@ flask
 python-dotenv
 supabase
 openai
+# 2026-09-14: fallback do laço agenciado quando a API DeepSeek cai
+# (services/llm_fallback.py). Já estava instalado nos venvs, mas faltava
+# aqui -- sem declarar, um rebuild do ambiente quebraria o fallback.
+anthropic
 stripe
 sentence-transformers
 faiss-cpu
