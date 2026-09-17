@@ -651,3 +651,84 @@ citações suspeitas. Suíte: **221 passed, 1 failed** — a falha
 o código original, e não toca nenhum arquivo desta mudança.
 
 **Serviço reiniciado** e verificado (`/health` e `/` → 200).
+
+## 11. SEGUNDO FIX DO MESMO SINTOMA: orçamento de tempo do laço agenciado (17/09/2026)
+
+### 11.1. O sintoma voltou, com outro nome
+
+Em 17/09 o usuário relatou **"network error"** (mensagem do axios, diferente do
+"Failed to fetch" de 14/09). Investigação: serviço e Caddy ativos, `/health`,
+`/` e `https://goshinsho.com.br` todos **200**. O problema estava só no
+`/api/chat`, e os logs mostraram que **o fallback da seção 10 estava
+funcionando** — e mesmo assim o worker morria:
+
+```
+WARNING in routes: agêntico DeepSeek falhou (APITimeoutError); caindo para o
+  fallback Claude com 15s restantes: Request timed out.
+CRITICAL WORKER TIMEOUT (pid:323550)
+ERROR Worker (pid:323550) was sent SIGKILL! Perhaps out of memory?
+```
+
+4 ocorrências entre 15 e 17/09 (dois deles com `WORKER TIMEOUT` 2-9s depois do
+aviso de fallback).
+
+### 11.2. Causa raiz — o teto de tempo era checado, não cumprido
+
+O laço tinha `LIMITE_SEGURANCA_SEGUNDOS = 100`, mas a checagem rodava **só
+ENTRE rodadas**:
+
+```python
+while True:
+    if time.time() - t0 >= 100: break        # checagem
+    resp = client.chat.completions.create(...)  # pode levar 60s (30s x 1 retry)
+```
+
+Se a checagem passasse em t=99s, a chamada seguinte rodava até ~159s. Somando
+síntese forçada e overhead, o laço ultrapassava os `--timeout 180` do gunicorn.
+**O teto era uma intenção, não um limite.**
+
+### 11.3. Segundo problema — o fallback entrava sem tempo de rodar
+
+Com o teto total em 150s e o laço gastando até ~140s (100s busca + 40s
+síntese), sobrava ~10s para o Claude — **menos que o piso de 15s do
+`max(15.0, ...)`**. Ou seja: o fallback era acionado exatamente quando já não
+havia tempo para ele, pendurando o usuário até o SIGKILL e entregando o mesmo
+erro. Além disso, o `tempo_gasto` era medido a partir de `inicio_busca`, não da
+entrada da requisição, ignorando o pré-busca no Supabase.
+
+### 11.4. Correções
+
+1. **`_orcamento_restante(t0, limite)`** + **`_criar_com_orcamento()`** em
+   `agentic_search.py`: o **timeout de cada chamada** agora é limitado ao que
+   resta do teto, via `client.with_options(timeout=...)`. O `max_retries` do
+   cliente base é **preservado** de propósito — sem retry, uma instabilidade
+   momentânea faria o fallback pago disparar à toa.
+2. **`LIMITE_SINTESE_SEGUNDOS = 40`**: a síntese roda depois do laço; sem teto
+   próprio ela herdava o orçamento já consumido. Total do laço: 140s.
+3. **`RESERVA_MINIMA_FALLBACK_SEGUNDOS = 45`** em `routes.py`: abaixo disso,
+   **não** cair para o Claude. Devolver erro claro na hora é melhor que abrir
+   uma busca que não cabe (a busca real do laço Claude levou 47s para 4
+   rodadas). Falha cedo → fallback ajuda; falha tarde → erro imediato.
+4. **`inicio_request`** substitui `inicio_busca` no cálculo do tempo gasto,
+   incluindo o pré-busca no Supabase.
+5. **`_friendly_error()`**: erros técnicos do provedor chegavam ao usuário como
+   `"Request timed out."` em inglês. Agora viram *"O serviço de IA está
+   instável neste momento e a resposta não pôde ser concluída. Tente novamente
+   em alguns instantes."*
+
+### 11.5. Validação
+
+- **Medição real** com pergunta multi-tema no acervo: 75,8s, 6 rodadas,
+  resposta de 6.281 chars, sem esgotar o teto.
+- **Laço de ferramentas infinito** (dublê que nunca para): orçamentos por
+  chamada decrescentes `[100, 72, 60]`, duração 64,9s, resposta entregue —
+  **nunca vazia**.
+- **Caminho "fallback não cabe"**: aviso correto no log, HTTP 200 e mensagem
+  amigável para o usuário em vez de worker morto.
+- **26 testes** em `tests/test_llm_fallback.py` (era 19), incluindo
+  `OrcamentoPorChamadaTests` e `ReservaMinimaFallbackTests`.
+- Suíte: **221 passed, 1 failed** — mesma falha preexistente de
+  `test_ohikari_filter.py` (confirmada com `git stash` na seção 10), sem
+  relação com esta mudança.
+
+**Serviço reiniciado** e verificado (local e externo → 200).

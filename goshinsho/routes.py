@@ -95,11 +95,26 @@ RATE_LIMIT_BUCKETS = defaultdict(deque)
 
 # 2026-09-14: orçamento total de uma resposta agêntica, incluindo um
 # eventual fallback para a Anthropic. O gunicorn roda com --timeout 180;
-# 150s deixa ~30s de margem para a síntese, o streaming e o overhead de
-# fila/thread do worker -- sem essa margem, o worker é morto no meio da
-# requisição (WORKER TIMEOUT + SIGKILL) e o usuário vê "Failed to fetch",
-# que é justamente o sintoma que o fallback existe para evitar.
+# a diferença é margem para o pré-busca (Supabase/quota), o streaming e o
+# overhead de fila/thread do worker -- sem margem, o worker é morto no meio
+# da requisição (WORKER TIMEOUT + SIGKILL) e o usuário vê "Network error"/
+# "Failed to fetch".
+#
+# 2026-09-17: a versão anterior deste teto (150s) subestimava a soma real
+# do caminho PT/JP. O laço DeepSeek tem orçamento próprio de busca (100s)
+# + síntese (40s) = 140s, então o fallback só podia começar depois disso --
+# com 150s havia apenas 10s, menos que o piso de 15s, e o worker morria do
+# mesmo jeito. Mantido em 150s, mas agora COM a reserva explícita abaixo,
+# que é o que de fato corrige o comportamento: cair para o Claude quando já
+# não há tempo útil só pendura o usuário até o SIGKILL.
 LIMITE_TOTAL_AGENTICO_SEGUNDOS = 150.0
+
+# 2026-09-17: tempo MÍNIMO para valer a pena tentar o fallback. Abaixo
+# disto, é melhor devolver um erro claro imediatamente do que abrir uma
+# busca completa no Claude que o orçamento não permite terminar -- o
+# usuário já esperou o laço inteiro da DeepSeek. Medido: no laço Claude,
+# uma busca real no acervo (4 rodadas) levou 47s; 45s cobre isso.
+RESERVA_MINIMA_FALLBACK_SEGUNDOS = 45.0
 
 SUBSCRIPTION_EXPLANATION = (
     "Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, "
@@ -302,6 +317,20 @@ def _require_developer_page():
 def _friendly_error(exc):
     message = str(exc)
     normalized = message.lower()
+    # 2026-09-17: falha do provedor de IA chegava ao usuário como texto
+    # técnico em inglês ("Request timed out."), exposto direto pelo
+    # `generate_agentic` quando o fallback não cabia no orçamento. O usuário
+    # não tem o que fazer com isso -- a mensagem precisa dizer o que
+    # aconteceu e o que tentar.
+    if any(p in normalized for p in (
+        "request timed out", "timed out", "timeout", "connection", "connection reset",
+        "service unavailable", "server busy", "overloaded", "rate limit", "too many requests",
+        "bad gateway", "gateway timeout", "internal server error",
+    )):
+        return (
+            "O serviço de IA está instável neste momento e a resposta não pôde ser concluída. "
+            "Tente novamente em alguns instantes."
+        )
     if "invalid login credentials" in normalized or "invalid_grant" in normalized:
         return "E-mail ou senha incorretos. Verifique os dados e tente novamente."
     if "email not confirmed" in normalized:
@@ -1201,6 +1230,12 @@ def api_message_feedback(message_id):
 
 @web_bp.post("/api/chat")
 def api_chat():
+    # 2026-09-17: marco do INICIO REAL da requisição. O orçamento do fallback
+    # precisa contar daqui, não de `inicio_busca`: entre os dois há chamadas
+    # ao Supabase (current_user, quota, conversa) que já consomem parte dos
+    # 180s do gunicorn. Medir só a partir da busca fazia o tempo-box
+    # subestimar o gasto e autorizar um fallback que não cabia mais.
+    inicio_request = time()
     user = current_user()
     payload = request.get_json(silent=True) or {}
     expand_previous = bool(payload.get("expand_previous"))
@@ -1467,7 +1502,6 @@ def api_chat():
                 else:
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 extra_kwargs["on_deep_search"] = aviso_busca_profunda
-                inicio_busca = time()
                 try:
                     r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 except Exception as exc:
@@ -1479,14 +1513,30 @@ def api_chat():
                     # outro provedor na mesma pergunta quebrada.
                     if not (_erro_transitorio(exc) and fallback_disponivel()):
                         raise
-                    tempo_gasto = time() - inicio_busca
+                    # Conta da ENTRADA da requisição (inclui o pré-busca no
+                    # Supabase), não só do laço -- ver nota em `inicio_request`.
+                    tempo_gasto = time() - inicio_request
                     # Tempo-box: o fallback roda DEPOIS do primário já ter
                     # gasto tempo. Sem este teto, uma falha lenta da DeepSeek
                     # (~100s) + um fallback cheio (~90s) estouraria o
                     # --timeout 180 do gunicorn e o worker seria morto no
                     # meio -- reproduzindo exatamente o "Failed to fetch"
                     # que esta camada existe para evitar.
-                    restante = max(15.0, LIMITE_TOTAL_AGENTICO_SEGUNDOS - tempo_gasto)
+                    restante = LIMITE_TOTAL_AGENTICO_SEGUNDOS - tempo_gasto
+                    if restante < RESERVA_MINIMA_FALLBACK_SEGUNDOS:
+                        # 2026-09-17: achado em produção -- quando a DeepSeek
+                        # falha no FIM do orçamento (caso real: APITimeoutError
+                        # aos 135s), não sobra tempo para o Claude e a tentativa
+                        # só pendura o usuário até o SIGKILL, entregando o mesmo
+                        # "Network error". Melhor devolver o erro AGORA, com
+                        # mensagem útil, do que abrir uma busca que não cabe.
+                        current_app.logger.warning(
+                            "agêntico DeepSeek falhou (%s) apos %.0fs -- restavam apenas %.0fs, "
+                            "abaixo da reserva de %.0fs; nao caindo para o fallback: %s",
+                            type(exc).__name__, tempo_gasto, restante,
+                            RESERVA_MINIMA_FALLBACK_SEGUNDOS, exc,
+                        )
+                        raise
                     # `current_app` (não `app`): routes.py é um Blueprint e
                     # não tem o objeto app em escopo -- usar `app.logger`
                     # aqui levantava NameError DENTRO do fluxo de fallback,

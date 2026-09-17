@@ -11,6 +11,8 @@ import unittest
 from types import SimpleNamespace
 from unittest.mock import patch
 
+import time
+
 from goshinsho.services.llm_fallback import (
     _erro_transitorio,
     _tools_formato_anthropic,
@@ -285,6 +287,103 @@ class LacoClaudeTests(unittest.TestCase):
         cliente = _ClienteFalso([_resposta_texto("ok", entrada=1_000_000, saida=0)])
         r = self._rodar(cliente)
         self.assertAlmostEqual(r["custo"], 1.0, places=2)
+
+
+class OrcamentoPorChamadaTests(unittest.TestCase):
+    """2026-09-17: o worker continuava morrendo ('Network error') porque a
+    checagem de tempo do laço só rodava ENTRE rodadas -- uma chamada em voo
+    podia levar o laço a ~160s e estourar o --timeout 180 do gunicorn."""
+
+    def test_orcamento_restante_desconta_tempo_decorrido(self):
+        from goshinsho.services.agentic_search import _orcamento_restante
+
+        agora = time.time()
+        self.assertAlmostEqual(_orcamento_restante(agora - 30, 100), 70, delta=2)
+        self.assertAlmostEqual(_orcamento_restante(agora, 100), 100, delta=2)
+
+    def test_orcamento_restante_nunca_e_negativo(self):
+        """Devolve o piso, não um valor inviável para o SDK."""
+        from goshinsho.services.agentic_search import (
+            _orcamento_restante,
+            TIMEOUT_MINIMO_CHAMADA,
+        )
+
+        self.assertEqual(_orcamento_restante(time.time() - 9999, 100), TIMEOUT_MINIMO_CHAMADA)
+
+    def test_chamada_recebe_timeout_limitado_e_preserva_retry(self):
+        """O timeout é limitado ao orçamento, mas o `max_retries` do cliente
+        base é preservado -- sem retry, uma instabilidade momentânea faria o
+        fallback PAGO disparar à toa."""
+        from goshinsho.services.agentic_search import _criar_com_orcamento
+
+        recebido = {}
+
+        class _Criacoes:
+            def create(self, **kwargs):
+                return "resposta"
+
+        class _ComOpcoes:
+            def __init__(self, **kw):
+                recebido.update(kw)
+
+            def chat(self):
+                return None
+
+        class _Cliente:
+            def with_options(self, **kw):
+                recebido.update(kw)
+                return SimpleNamespace(chat=SimpleNamespace(completions=_Criacoes()))
+
+        resultado = _criar_com_orcamento(_Cliente(), 42.0, model="m", messages=[])
+        self.assertEqual(resultado, "resposta")
+        self.assertEqual(recebido.get("timeout"), 42.0)
+        # NÃO passa max_retries -- herda o 1 do cliente base de propósito
+        self.assertNotIn("max_retries", recebido)
+
+    def test_cliente_sem_with_options_nao_quebra(self):
+        """Dublês de teste (e SDKs antigos) não têm `with_options`."""
+        from goshinsho.services.agentic_search import _criar_com_orcamento
+
+        class _Completions:
+            def create(self, **kwargs):
+                return "ok"
+
+        cliente = SimpleNamespace(chat=SimpleNamespace(completions=_Completions()))
+        self.assertEqual(_criar_com_orcamento(cliente, 10.0, model="m"), "ok")
+
+
+class ReservaMinimaFallbackTests(unittest.TestCase):
+    """Quando a DeepSeek falha no FIM do orçamento (caso real: timeout aos
+    135s), não sobra tempo para o Claude -- tentar só pendura o usuário até o
+    SIGKILL. Melhor devolver erro claro na hora."""
+
+    def test_constante_e_coerente_com_o_pior_caso_do_gunicorn(self):
+        from goshinsho.routes import (
+            LIMITE_TOTAL_AGENTICO_SEGUNDOS,
+            RESERVA_MINIMA_FALLBACK_SEGUNDOS,
+        )
+
+        # O gunicorn roda com --timeout 180.
+        self.assertLess(LIMITE_TOTAL_AGENTICO_SEGUNDOS, 180)
+        # A reserva precisa cobrir uma busca real do laço Claude (medida: 47s
+        # para 4 rodadas no acervo), senão "cair para o fallback" é teatro.
+        self.assertGreaterEqual(RESERVA_MINIMA_FALLBACK_SEGUNDOS, 45)
+
+    def test_erro_tecnico_vira_mensagem_amigavel(self):
+        """O usuário recebia 'Request timed out.' em inglês, direto."""
+        from goshinsho.routes import _friendly_error
+
+        for texto in ("Request timed out.", "503 Service Unavailable", "Server busy, please try again later"):
+            with self.subTest(texto=texto):
+                mensagem = _friendly_error(Exception(texto))
+                self.assertIn("instável", mensagem)
+                self.assertNotIn("timed out", mensagem.lower())
+                self.assertNotIn("503", mensagem)
+
+    def test_erros_de_login_continuam_com_mensagem_propria(self):
+        from goshinsho.routes import _friendly_error
+
+        self.assertIn("senha", _friendly_error(Exception("invalid login credentials")).lower())
 
 
 class FallbackDesligadoTests(unittest.TestCase):

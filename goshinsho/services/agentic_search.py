@@ -109,7 +109,27 @@ LIMITE_SEGURANCA_RODADAS = 40
 # ainda permite ~14 rodadas de busca real antes de cortar -- suficiente
 # pra a maioria das perguntas difíceis já testadas no projeto -- e deixa
 # ~80s de margem sob os 180s do gunicorn para síntese + streaming.
+#
+# 2026-09-17: ESTE TETO SOZINHO NÃO BASTAVA -- o worker continuou morrendo
+# ("Network error" para o usuário) em 16-17/09. Causa: a checagem de tempo
+# só roda ENTRE rodadas, nunca durante uma chamada em voo. Se ela passasse
+# em t=99s, a chamada seguinte ainda rodava até 60s (timeout=30 x 1 retry),
+# levando o laço a ~160s + síntese + overhead > 180s do gunicorn. Correção:
+# `_orcamento_restante()` limita o TIMEOUT DE CADA CHAMADA ao que resta do
+# teto, então o orçamento é cumprido de verdade, não só checado.
 LIMITE_SEGURANCA_SEGUNDOS = 100
+
+# 2026-09-17: teto PRÓPRIO da síntese final, somado ao da busca. A síntese
+# roda DEPOIS do laço de busca, então usar o mesmo teto de 100s daria a ela
+# quase nada (o tempo já tinha sido consumido) e cortaria respostas longas
+# no meio. 100 + 40 = 140s, que somado ao pré-busca (~10s) e ao streaming
+# fica com ~25s de margem sob os 180s do gunicorn.
+LIMITE_SINTESE_SEGUNDOS = 40
+
+# Piso de tempo para uma chamada ainda valer a pena. Abaixo disso, cortar e
+# sintetizar com o que já foi encontrado é melhor que abrir uma chamada que
+# quase certamente não terminaria dentro do orçamento.
+TIMEOUT_MINIMO_CHAMADA = 5.0
 
 # §3.9: quantas rodadas CONSECUTIVAS de chamada de ferramenta sem nenhum
 # fragmento de texto genuinamente novo (fingerprint de conteúdo) contam como
@@ -967,6 +987,37 @@ def _client():
     return _deepseek_client()
 
 
+def _orcamento_restante(t0: float, limite: float = LIMITE_SEGURANCA_SEGUNDOS) -> float:
+    """Segundos que ainda restam do teto de tempo informado.
+
+    2026-09-17: existe para o timeout de CADA chamada poder ser limitado ao
+    que resta -- sem isso, a checagem de tempo só acontecia ENTRE rodadas e
+    uma chamada em voo podia levar o laço a ~160s (100s do teto + até 60s de
+    uma chamada já iniciada), estourando os 180s do gunicorn.
+
+    Devolve no mínimo `TIMEOUT_MINIMO_CHAMADA` para que o chamador não peça
+    um timeout negativo/inviável ao SDK; quem decide se ainda vale abrir uma
+    chamada é a checagem de tempo do laço, que roda antes."""
+    return max(TIMEOUT_MINIMO_CHAMADA, limite - (time.time() - t0))
+
+
+def _criar_com_orcamento(client, orcamento: float, **kwargs):
+    """`client.chat.completions.create(...)` com o timeout limitado ao
+    orçamento restante.
+
+    O `max_retries` do cliente base (1) é PRESERVADO de propósito: sem ele,
+    uma instabilidade momentânea da API DeepSeek faria o fallback PAGO para a
+    Anthropic disparar à toa -- o retry local resolve blips sem trocar de
+    provedor. O que garante o orçamento é o `timeout`, que agora é por
+    chamada: mesmo um retry só pode gastar, no total, o tempo que resta."""
+    try:
+        return client.with_options(timeout=orcamento).chat.completions.create(**kwargs)
+    except AttributeError:
+        # Cliente dublê em teste (ou SDK antigo) sem `with_options` -- segue
+        # com o cliente como está, sem orçamento por chamada.
+        return client.chat.completions.create(**kwargs)
+
+
 def responder_agentico_deepseek(
     pergunta: str,
     historico: list[dict] | None = None,
@@ -1039,7 +1090,9 @@ def responder_agentico_deepseek(
                 on_deep_search()
             except Exception:
                 pass  # aviso de UX nunca deve derrubar a busca em si
-        resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema)
+        resp = _criar_com_orcamento(
+            client, _orcamento_restante(t0), model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema
+        )
         usage = resp.usage
         total_in += usage.prompt_tokens
         total_out += usage.completion_tokens
@@ -1106,7 +1159,13 @@ def responder_agentico_deepseek(
                 ),
             }
         )
-        resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages)
+        resp = _criar_com_orcamento(
+            client,
+            _orcamento_restante(t0, LIMITE_SEGURANCA_SEGUNDOS + LIMITE_SINTESE_SEGUNDOS),
+            model=modelo,
+            max_tokens=max_tokens,
+            messages=messages,
+        )
         usage = resp.usage
         total_in += usage.prompt_tokens
         total_out += usage.completion_tokens
@@ -1138,7 +1197,13 @@ def responder_agentico_deepseek(
                 ),
             }
         )
-        resp = client.chat.completions.create(model=modelo, max_tokens=max_tokens, messages=messages)
+        resp = _criar_com_orcamento(
+            client,
+            _orcamento_restante(t0, LIMITE_SEGURANCA_SEGUNDOS + LIMITE_SINTESE_SEGUNDOS),
+            model=modelo,
+            max_tokens=max_tokens,
+            messages=messages,
+        )
         usage = resp.usage
         total_in += usage.prompt_tokens
         total_out += usage.completion_tokens

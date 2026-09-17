@@ -7,6 +7,85 @@
 
 ---
 
+## 17/09 — SEGUNDO FIX DO MESMO SINTOMA: o orçamento de tempo era checado, não cumprido
+
+> **Relato do usuário**: *"verifique a saúde do aplicativo, ele está dando
+> network error"*. Mensagem diferente do "Failed to fetch" de 14/09, mas o
+> mesmo sintoma de fundo.
+
+### 1. O app estava de pé — o problema era só o `/api/chat`
+
+`goshinsho.service` e `caddy` ativos; `/health`, `/` e
+`https://goshinsho.com.br` todos **200**. Nos logs, o achado importante: **o
+fallback da sessão anterior (14/09) estava funcionando** — e o worker morria
+assim mesmo:
+
+```
+WARNING: agêntico DeepSeek falhou (APITimeoutError); caindo para o fallback
+         Claude com 15s restantes: Request timed out.
+CRITICAL WORKER TIMEOUT (pid:323550)
+ERROR Worker (pid:323550) was sent SIGKILL!
+```
+
+4 ocorrências entre 15 e 17/09.
+
+### 2. Causa raiz — teto de tempo que não limitava nada
+
+`LIMITE_SEGURANCA_SEGUNDOS = 100` era checado **só ENTRE rodadas**:
+
+```python
+while True:
+    if time.time() - t0 >= 100: break            # checagem
+    resp = client.chat.completions.create(...)   # pode levar 60s (30s x retry)
+```
+
+Checagem passando em t=99s → chamada seguinte até ~159s → + síntese + overhead
+> `--timeout 180` do gunicorn. **O teto era uma intenção, não um limite.**
+
+### 3. Segundo problema — o fallback entrava quando já não havia tempo
+
+Teto total 150s, laço gastando até ~140s ⇒ sobravam ~10s para o Claude, menos
+que o piso de 15s do `max(15.0, ...)`. O fallback era acionado exatamente
+quando não podia mais rodar, pendurando o usuário até o SIGKILL. Agravante: o
+`tempo_gasto` media só a partir de `inicio_busca`, ignorando o pré-busca no
+Supabase.
+
+### 4. Correções
+
+1. `_orcamento_restante()` + `_criar_com_orcamento()`: o **timeout de cada
+   chamada** passa a ser limitado ao que resta do teto
+   (`client.with_options(timeout=...)`). **`max_retries` preservado de
+   propósito** — sem retry, um blip momentâneo faria o fallback pago disparar
+   à toa.
+2. `LIMITE_SINTESE_SEGUNDOS = 40` — a síntese roda depois do laço; sem teto
+   próprio herdava orçamento já consumido.
+3. `RESERVA_MINIMA_FALLBACK_SEGUNDOS = 45` — abaixo disso **não** cai para o
+   Claude; devolver erro claro na hora é melhor que abrir busca que não cabe.
+   **Falha cedo → fallback ajuda. Falha tarde → erro imediato.**
+4. `inicio_request` no lugar de `inicio_busca` no cálculo do tempo gasto.
+5. `_friendly_error()`: `"Request timed out."` (inglês, técnico) virava texto
+   exposto ao usuário; agora é mensagem clara em português.
+
+### 5. Validação
+
+- Pergunta multi-tema real no acervo: **75,8s**, 6 rodadas, 6.281 chars.
+- Laço de ferramentas infinito (dublê): orçamentos `[100, 72, 60]`,
+  64,9s, resposta entregue — **nunca vazia**.
+- Caminho "fallback não cabe": log correto + HTTP 200 + mensagem amigável.
+- **26 testes** (era 19). Suíte: 221 passed, 1 failed — falha preexistente de
+  `test_ohikari_filter.py`, sem relação.
+
+**Serviço reiniciado**; local e externo → 200.
+
+### 6. Lição
+
+Consertar o *sintoma* (queda do provedor → fallback) não bastou: o
+**orçamento de tempo** era o defeito estrutural por trás dos dois incidentes.
+Vale desconfiar de qualquer "rede de segurança" cujo valor só é **checado** e
+nunca **imposto** ao recurso que ela deveria limitar.
+
+---
+
 ## 14/09 — FALLBACK DO AGÊNTICO PARA A ANTHROPIC (CLAUDE): sobreviver à queda da DeepSeek
 
 > **Correção de rota no início da sessão**: o sintoma era "Failed to fetch" no

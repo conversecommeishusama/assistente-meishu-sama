@@ -205,6 +205,17 @@ def responder_agentico_claude(
     def tempo_restante() -> float:
         return limite_segundos - (time.time() - t0)
 
+    def criar(**kwargs):
+        """Chamada com o timeout limitado ao que resta do orçamento e SEM
+        retry (2026-09-17) -- mesmo motivo de `agentic_search._criar_com_orcamento`:
+        a checagem de tempo só roda ENTRE chamadas, então uma chamada em voo
+        podia ultrapassar o orçamento e estourar o --timeout do gunicorn."""
+        orcamento = max(5.0, tempo_restante())
+        try:
+            return client.with_options(timeout=orcamento, max_retries=0).messages.create(**kwargs)
+        except AttributeError:
+            return client.messages.create(**kwargs)  # dublê de teste sem with_options
+
     while True:
         if rodadas_busca >= max_rodadas_busca:
             esgotou_orcamento_busca = True
@@ -220,7 +231,7 @@ def responder_agentico_claude(
             except Exception:
                 pass  # aviso de UX nunca deve derrubar a busca
 
-        resp = client.messages.create(
+        resp = criar(
             model=modelo,
             max_tokens=max_tokens,
             system=system_prompt,
@@ -289,9 +300,7 @@ def responder_agentico_claude(
             }
         )
         try:
-            resp = client.messages.create(
-                model=modelo, max_tokens=max_tokens, system=system_prompt, messages=messages
-            )
+            resp = criar(model=modelo, max_tokens=max_tokens, system=system_prompt, messages=messages)
             total_in += resp.usage.input_tokens
             total_out += resp.usage.output_tokens
             resposta_final = _texto_da_resposta(resp) or (
@@ -319,9 +328,7 @@ def responder_agentico_claude(
             }
         )
         try:
-            resp = client.messages.create(
-                model=modelo, max_tokens=max_tokens, system=system_prompt, messages=messages
-            )
+            resp = criar(model=modelo, max_tokens=max_tokens, system=system_prompt, messages=messages)
             total_in += resp.usage.input_tokens
             total_out += resp.usage.output_tokens
             nova = _texto_da_resposta(resp)
