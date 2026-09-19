@@ -1382,7 +1382,10 @@ def api_chat():
             responder_agentico_claude_jp,
             _erro_transitorio,
         )
+        from .services.question_triage import resposta_de_triagem
 
+        # Definido ANTES da triagem, que também devolve `search_variant` no
+        # payload -- o front usa esse campo para telemetria da resposta.
         search_variant = "agentic_pt" if retrieval_mode == "pt_agentic" else "agentic_jp"
         responder_fn = responder_agentico_deepseek if retrieval_mode == "pt_agentic" else responder_agentico_deepseek_jp
         historico_agentico = [
@@ -1390,6 +1393,44 @@ def api_chat():
             for h in history
             if isinstance(h, dict) and h.get("role") in ("user", "assistant") and h.get("content")
         ]
+
+        # 2026-09-19: TRIAGEM INICIAL -- responde sem tocar no acervo o que
+        # comprovadamente não precisa dele (saudação, agradecimento, nome do
+        # assistente, dúvida sobre o próprio site). Antes disto, "Olá
+        # Goshinsho" custava 4.539 tokens e 21,8s (o system prompt inteiro,
+        # regras 1-10, reenviado) para devolver "Olá! Que bom ter você por
+        # aqui".
+        #
+        # Condições para triar (todas necessárias):
+        #   - nenhum histórico na conversa: "sim"/"ok" no MEIO de um diálogo
+        #     são continuações, não cortesia (ver `_PALAVRAS_AMBIGUAS`);
+        #   - não é "Aprofundar" nem "Refazer com citações": esses têm
+        #     semântica própria e dependem do turno anterior.
+        #
+        # A triagem devolve None para tudo que não for inequívoco, então
+        # perguntas de conteúdo seguem o caminho normal sem alteração.
+        if not historico_agentico and not expand_previous and not cite_sources:
+            resposta_triagem = resposta_de_triagem(question, language=language)
+            if resposta_triagem:
+                remaining_questions = consume_question_quota(user)
+                assistant_message_id = (
+                    save_message(conversation_id, "assistant", resposta_triagem)
+                    if user and conversation_id
+                    else None
+                )
+                return jsonify(
+                    {
+                        "answer": resposta_triagem,
+                        "sources": [],
+                        "conversation_id": conversation_id,
+                        "assistant_message_id": assistant_message_id,
+                        "remaining_questions": remaining_questions,
+                        "quota_status": _quota_status(user),
+                        "search_variant": search_variant,
+                        "triaged": True,
+                    }
+                )
+
         if cite_sources:
             # 2026-08-03: atalho sem chamada nova ao modelo -- se a resposta
             # anterior já foi dada em modo "Com citações", ela já tem

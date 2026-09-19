@@ -147,7 +147,33 @@ LIMITE_ESTAGNACAO_RODADAS = 3
 # (routes.py) é avisado uma vez via `on_deep_search`, pra poder mostrar
 # "ainda pesquisando" ao usuário -- não muda em nada o que o agente busca
 # nem quando ele decide parar, só quando um aviso é disparado.
-RODADAS_AVISO_BUSCA_PROFUNDA = 3
+#
+# 2026-09-19: 3 -> 6. Relato do usuário: "qualquer pergunta que se faz ao
+# aplicativo ... acaba caindo na mensagem de múltiplas fontes". Medido nesta
+# sessão: 3 rodadas é o comportamento NORMAL, não o excepcional que este
+# aviso deveria marcar (ver a distribuição real em SEGUNDOS_AVISO abaixo).
+# Este valor agora é um TETO -- o gatilho principal passou a ser o TEMPO.
+RODADAS_AVISO_BUSCA_PROFUNDA = 6
+
+# 2026-09-19: gatilho por TEMPO DECORRIDO, que é o que o usuário de fato
+# percebe. Motivo de existir, medido nesta sessão (perguntas reais, acervo de
+# produção):
+#
+#   pergunta            rodadas   tempo
+#   asma                      3    13,5s
+#   quem é kannon             4    22,2s
+#   ikebana                   4    41,1s   <- 4 rodadas, 41s
+#   o que é johrei            5    26,2s
+#   câncer                    6    52,7s
+#   o que é ohikari           7    29,1s
+#   hora das bruxas           8    45,0s
+#
+# A contagem de RODADAS não se correlaciona com o tempo (4 rodadas tanto fazem
+# 22s quanto 41s -- cada rodada é uma chamada de API com latência variável).
+# Como o objetivo do aviso é a experiência de espera, o sinal certo é o tempo.
+# 25s: acima do que uma pergunta curta leva, então "vai demorar um pouco mais"
+# é verdade quando aparece.
+SEGUNDOS_AVISO_BUSCA_PROFUNDA = 25.0
 JANELA_PROXIMIDADE = 400
 # 2026-08-07: 8000 -> 20000, medido em teste ISOLADO (12 execuções
 # sequenciais, 3 perguntas x 2 caps x 2 repetições, tudo o mais idêntico à
@@ -1063,6 +1089,7 @@ def responder_agentico_deepseek(
     esgotou_orcamento_busca = False
     parou_por_estagnacao = False
     esgotou_tempo_busca = False
+    avisou_busca_profunda = False
     t0 = time.time()
     resposta_final = ""
     truncada = False
@@ -1085,11 +1112,19 @@ def responder_agentico_deepseek(
             break
 
         rodadas_busca += 1
-        if rodadas_busca == RODADAS_AVISO_BUSCA_PROFUNDA and on_deep_search is not None:
-            try:
-                on_deep_search()
-            except Exception:
-                pass  # aviso de UX nunca deve derrubar a busca em si
+        # 2026-09-19: aviso por TEMPO decorrido (principal) OU por rodadas
+        # (teto), o que vier primeiro -- ver SEGUNDOS_AVISO_BUSCA_PROFUNDA.
+        # `avisou_busca_profunda` é estado do laço (não variável local da
+        # iteração), então o aviso dispara UMA única vez.
+        if not avisou_busca_profunda and on_deep_search is not None:
+            passou_tempo = (time.time() - t0) >= SEGUNDOS_AVISO_BUSCA_PROFUNDA
+            passou_rodadas = rodadas_busca >= RODADAS_AVISO_BUSCA_PROFUNDA
+            if passou_tempo or passou_rodadas:
+                avisou_busca_profunda = True
+                try:
+                    on_deep_search()
+                except Exception:
+                    pass  # aviso de UX nunca deve derrubar a busca em si
         resp = _criar_com_orcamento(
             client, _orcamento_restante(t0), model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema
         )

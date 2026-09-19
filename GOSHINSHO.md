@@ -732,3 +732,106 @@ entrada da requisição, ignorando o pré-busca no Supabase.
   relação com esta mudança.
 
 **Serviço reiniciado** e verificado (local e externo → 200).
+
+## 12. TRIAGEM INICIAL DA PERGUNTA + AVISO DE PESQUISA PROFUNDA (19/09/2026)
+
+### 12.1. O relato
+
+> *"Qualquer pergunta que se faz ao aplicativo, ele faz todo o processo de ciclos
+> de pesquisa agêntico e acaba caindo na mensagem de múltiplas fontes. Se a
+> pessoa falar 'Olá Goshinsho', vai fazer todo o ciclo de buscas e mostrar a
+> mensagem o que é estranho."*
+
+### 12.2. Causa raiz: a triagem existia, mas ficou órfã
+
+`conversation_mode.py` já tinha `is_assistant_identity_question()`,
+`assistant_identity_response()` e `is_definitional_question()`; `site_info.py`
+já tinha `is_site_help_question()`. **Mas só o pipeline antigo as chamava**
+(`pipeline/answer.py`, `ai_service.answer_question`). Quando o agêntico foi
+promovido a motor único (30/07), essa triagem ficou sem uso — todo mundo passou
+a entrar no laço completo.
+
+Medições antes do fix:
+
+| pergunta | tempo | rodadas | tokens |
+|---|---|---|---|
+| `"Olá Goshinsho"` | 21,8s | 1 | **4.539** |
+| `"obrigado!"` | 1,2s | 1 | 4.537 |
+| `"o que é johrei"` | 42,8s | 5 | 79.969 |
+| `"asma"` | 13,5s | 3 | 31.378 |
+
+A saudação não chamava ferramenta, mas enviava o system prompt inteiro (regras
+1-10 + 8a-8d) e pagava ~22s.
+
+### 12.3. Camada 1 — `services/question_triage.py` (novo)
+
+Resposta imediata, sem API, para o que **inequivocamente** não precisa do
+acervo: cortesia pura, agradecimento, nome do assistente, ajuda genérica e
+dúvidas sobre o próprio site (esta reusa `site_info`).
+
+**Condições para triar** (todas necessárias): nenhum histórico na conversa,
+não é "Aprofundar", não é "Refazer com citações". Isso porque `"sim"`/`"ok"`
+no meio de um diálogo são **continuações**, não cortesia.
+
+**Decisão de segurança que os testes pegaram:** a primeira versão incluía
+`"sim"` na lista de cortesia — e `"sim"` é a **2ª mensagem mais frequente da
+base real (30 ocorrências)**, sempre respondendo a *"quer que eu aprofunde?"*.
+Triá-lo devolveria *"Olá! Sou o Goshinsho..."* a quem acabou de pedir
+aprofundamento, quebrando o fio da conversa. `"sim"`, `"ok"`, `"entendi"`,
+`"certo"` foram movidos para `_PALAVRAS_AMBIGUAS`, que **nunca** é triado.
+
+**Princípio adotado:** na dúvida entre triar e não triar, **não triar**. Errar
+para o lado da triagem perde uma pergunta doutrinária; errar para o lado da
+busca custa só uma chamada de API a mais.
+
+### 12.4. Camada 2 — aviso de pesquisa profunda por TEMPO
+
+`RODADAS_AVISO_BUSCA_PROFUNDA` era 3, mas a distribuição medida mostrou que
+**3 rodadas é o comportamento normal**:
+
+| pergunta | rodadas | tempo |
+|---|---|---|
+| asma | 3 | 13,5s |
+| quem é kannon | 4 | 22,2s |
+| ikebana | 4 | 41,1s |
+| o que é johrei | 5 | 26,2s |
+| câncer | 6 | 52,7s |
+| hora das bruxas | 8 | 45,0s |
+
+Achado que mudou a solução: **a contagem de rodadas não se correlaciona com o
+tempo** (4 rodadas tanto fazem 22s quanto 41s — cada rodada é uma chamada com
+latência variável). Como o objetivo do aviso é a experiência de espera, o
+gatilho passou a ser **tempo decorrido** (`SEGUNDOS_AVISO_BUSCA_PROFUNDA = 25`),
+com a contagem de rodadas como teto secundário (6). O aviso continua disparando
+**uma única vez** (estado `avisou_busca_profunda` do laço, não variável local).
+
+### 12.5. Validação
+
+- **Triagem**: 0,0001s vs 21,8s antes; zero tokens. Testado nos dois sentidos:
+  14 mensagens que devem ser triadas e 13 que **nunca** podem (incluindo
+  `"sim"`, `"ok"`, `"o que é johrei"`, `"Olá, o que Meishu-Sama fala sobre
+  Johrei?"`). **Zero falhas críticas.**
+- **Aviso**: medido disparando a ~65% da espera (momento útil); `"asma"` e
+  `"ikebana"` não disparam mais.
+- **19 testes** em `tests/test_question_triage.py` (72 subtestes).
+- Suíte: **245 passed, 1 failed** — a falha de `test_ohikari_filter.py` segue
+  sendo a preexistente das seções 10 e 11.
+- Corrigida de passagem uma lacuna real de `conversation_mode`: a regex não
+  cobria `"como você se chama?"`, que por isso seguia para o ciclo completo.
+
+**Serviço reiniciado**; local e externo → 200, 0 erros no boot.
+
+### 12.6. Decisão adiada: cache de respostas
+
+O usuário optou por **não** implementar cache agora. Dados levantados para
+quando a decisão voltar (base Supabase, 2.184 perguntas):
+
+- 1.692 distintas; **178 repetem ≥2x, cobrindo 670 (31%)**
+- Top: `johrei` 65x, `sim` 30x, `ikebana` 19x, `hora das bruxas` 15x
+- **Não existe nenhum cache de resposta hoje**
+
+Ressalva registrada na época: o ganho **financeiro** é pequeno (~US$ 6,6 no
+histórico inteiro a ~US$ 0,0424/1M); o ganho real é de **latência** (42s → <1s).
+Vender como economia de custo seria enganoso. Armadilha: as mais repetidas
+incluem `"sim"` (continuação) e `"quais são as fontes dessa resposta"`
+(depende do turno anterior) — cache só serve para perguntas **autocontidas**.

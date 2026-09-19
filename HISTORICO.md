@@ -7,6 +7,90 @@
 
 ---
 
+## 19/09 — TRIAGEM INICIAL DA PERGUNTA + AVISO DE PESQUISA PROFUNDA
+
+> **Relato do usuário**: *"Qualquer pergunta que se faz ao aplicativo, ele faz
+> todo o processo de ciclos de pesquisa agêntico e acaba caindo na mensagem de
+> múltiplas fontes. Se a pessoa falar 'Olá Goshinsho', vai fazer todo o ciclo
+> de buscas e mostrar a mensagem o que é estranho. Seria importante uma triagem
+> inicial da pergunta para analisar se há necessidade de fazer o ciclo
+> agentico."*
+
+### 1. Achado central — a triagem já existia, órfã desde 30/07
+
+`conversation_mode.py` tinha `is_assistant_identity_question()`,
+`assistant_identity_response()`, `is_definitional_question()`;
+`site_info.py` tinha `is_site_help_question()`. **Só o pipeline antigo as
+chamava.** Quando o agêntico virou motor único, essa lógica ficou sem uso.
+
+Medições (não estimativas):
+
+| pergunta | tempo | rodadas | tokens |
+|---|---|---|---|
+| `"Olá Goshinsho"` | 21,8s | 1 | 4.539 |
+| `"obrigado!"` | 1,2s | 1 | 4.537 |
+| `"o que é johrei"` | 42,8s | 5 | 79.969 |
+| `"asma"` | 13,5s | 3 | 31.378 |
+
+A saudação não chamava ferramenta, mas enviava o system prompt inteiro
+(regras 1-10 + 8a-8d) e pagava ~22s.
+
+### 2. O aviso de "múltiplas fontes" disparava em quase tudo
+
+`RODADAS_AVISO_BUSCA_PROFUNDA = 3`, mas a distribuição real mostrou que **3
+rodadas é o normal**: asma 3, ikebana 4, kannon 4, johrei 5, câncer 6, hora
+das bruxas 8.
+
+**Achado que mudou a solução**: a contagem de rodadas **não se correlaciona com
+o tempo** — 4 rodadas tanto fazem 22,2s (kannon) quanto 41,1s (ikebana), porque
+cada rodada é uma chamada com latência variável. Como o aviso existe para a
+experiência de espera, o gatilho passou a ser **tempo decorrido** (25s), com a
+contagem de rodadas como teto secundário (6).
+
+### 3. Bug de segurança que os testes pegaram antes de produção
+
+A primeira versão da lista de cortesia incluía `"sim"`. Mas `"sim"` é a **2ª
+mensagem mais frequente da base real (30 ocorrências)** e **sempre** é
+continuação de *"quer que eu aprofunde?"*. Triá-lo devolveria *"Olá! Sou o
+Goshinsho..."* a quem acabou de pedir aprofundamento — quebraria o fio da
+conversa. `"sim"`, `"ok"`, `"entendi"`, `"certo"` foram para
+`_PALAVRAS_AMBIGUAS`, que **nunca** é triado.
+
+**Princípio adotado**: na dúvida entre triar e não triar, **não triar**. Errar
+triando perde uma pergunta doutrinária; errar não triando custa uma chamada de
+API a mais.
+
+Também corrigida de passagem uma lacuna de `conversation_mode`: a regex não
+cobria `"como você se chama?"`, que por isso ia ao ciclo completo.
+
+### 4. Resultado
+
+- **Triagem**: `"Olá Goshinsho"` de 21,8s/4.539 tokens para **0,0001s/0 tokens**.
+- **Aviso**: dispara a ~65% da espera (medido) — momento útil, não tardio.
+- **19 testes** novos (`tests/test_question_triage.py`), cobrindo os DOIS lados:
+  14 mensagens que devem ser triadas e 13 que nunca podem (incluindo as
+  cortesias coladas em pergunta: *"Olá, o que Meishu-Sama fala sobre Johrei?"*).
+- Suíte: **245 passed, 1 failed** (falha preexistente de `test_ohikari_filter.py`).
+- Serviço reiniciado; local e externo → 200, 0 erros no boot.
+
+### 5. Cache de respostas — decisão ADIADA pelo usuário
+
+Dados levantados para quando a decisão voltar (base Supabase, 2.184 perguntas):
+1.692 distintas, **178 repetem ≥2x cobrindo 670 (31%)**; top `johrei` 65x,
+`sim` 30x, `ikebana` 19x. **Não existe cache de resposta hoje.**
+
+Ressalva registrada: o ganho **financeiro** é pequeno (~US$ 6,6 no histórico
+inteiro); o ganho é de **latência** (42s → <1s). E as mais repetidas incluem
+`"sim"` e `"quais são as fontes dessa resposta"`, que **não são cacheáveis**
+( dependem do turno anterior) — cache só serve para perguntas autocontidas.
+
+### Onde continuar
+1. **Cache de respostas** (decisão adiada): implementar só para perguntas
+   autocontidas, com chave por idioma e invalidação quando o corpus mudar.
+2. **Investigar a falha preexistente** de `tests/test_ohikari_filter.py`.
+
+---
+
 ## 17/09 — SEGUNDO FIX DO MESMO SINTOMA: o orçamento de tempo era checado, não cumprido
 
 > **Relato do usuário**: *"verifique a saúde do aplicativo, ele está dando
