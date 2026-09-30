@@ -111,13 +111,17 @@ referência do Zenshū/Rokkan estão em
     motivo do recorte (nunca é descartado). `glob("Aula_*.md")` nos scripts
     **não é recursivo** — o subdiretório fica fora dos pipelines, de propósito.
   - **Aula 4** (30/09): renomeada `Aula_04_Elo_Espiritual_e_Antepassados.md`,
-    com foco na ligação vivos↔antepassados nos dois sentidos (6 fontes, 2.199
+    com foco na ligação vivos↔antepassados nos dois sentidos (6 fontes, 2.819
     pal): o capítulo do elo, Gokōwa-roku nº 6 e nº 11, a lei da redenção do
     Curso Kannon (os resíduos da purificação fluem para os descendentes pela
-    linha "ancestrais – cabeça – medula espinhal – cauda") e 4 exemplos de
+    linha "ancestrais – cabeça – medula espinhal – cauda") e 5 exemplos de
     sofrimento por herança espiritual/encosto ancestral (Eiko nº 104,
-    Gosuiji-roku nº 6, Mioshie-shū nº 7, Gokōwa Suplemento). Ver pendência da
-    correção recíproca da Aula 6 no `HISTORICO.md` (30/09), seção 8.
+    Gosuiji-roku nº 6, Mioshie-shū nº 7, Gokōwa Suplemento, Mioshie-shū nº 3).
+    Ver pendência da correção recíproca da Aula 6 no `HISTORICO.md` (30/09), §8.
+  - **NÃO confundir as obras periódicas homônimas**: `御教え集` → **Mioshie-shū**
+    e `御垂示録` → **Gosuiji-roku**. Publicadas na mesma data e com o mesmo
+    número de fascículo (ex.: n. 3 de 25/11/1951), o mesmo caso pode estar em uma
+    e não na outra — conferir sempre o **kanji do título**, não só data e número.
 - **CORREÇÕES NA LEITURA COLABORATIVA (regra do usuário, 10/09)**: as correções
   de conteúdo vão **somente** para `textos_leitura_colaborativa/` (base editável,
   fora do git) — a promoção para produção acontece depois, em bloco. Não editar

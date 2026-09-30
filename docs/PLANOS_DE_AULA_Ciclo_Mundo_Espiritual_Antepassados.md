@@ -259,7 +259,11 @@ Mundo Oculto)?" e "Mudanças no Inferno".
    *Gosuiji-roku nº 6* (o acidente como chamado ao mérito) ·
    *Mioshie-shū nº 7* (a dor de cabeça como advertência) ·
    *Gokōwa-roku (Suplemento)* (o antepassado que passa a receber sufrágio e
-   parte agradecido — "vivíamos como vagabundos").
+   parte agradecido — "vivíamos como vagabundos") ·
+   *Mioshie-shū nº 3*, item de [15 de outubro] de 1951 (o antepassado que morreu
+   com os membros bambos apossa-se do descendente **porque quer ser salvo**:
+   "é exatamente como se você estivesse prestando um serviço ao espírito
+   ancestral").
 
 **Apoio (opcional):** *Gosuiji-roku nº 29* (15/03/1954) — o descendente
 escolhido como representante para eliminar os pecados dos ancestrais ·
@@ -293,9 +297,12 @@ purificação uns dos outros (o elo espiritual do casal é o mais denso).
    méritos — e, assim, poder ascender. Ele faz adoecer (Eiko nº 104, sobretudo
    as crianças), provoca um acidente (Gosuiji nº 6) ou adverte com a dor
    (Mioshie-shū nº 7). É a pedagogia do antepassado sobre o descendente.
-   O outro lado disso está em Gokōwa (Suplemento): quando finalmente recebe
-   sufrágio, o antepassado se manifesta **agradecido** — antes "vivíamos como
-   vagabundos".
+   No caso mais comovente (Mioshie-shū nº 3), o antepassado **se apossa do
+   descendente porque quer ser salvo**, e Meishu-Sama diz que o descendente
+   doente está, na verdade, **prestando um serviço ao antepassado** — é algo
+   "excelente". O outro lado disso está em Gokōwa (Suplemento): quando
+   finalmente recebe sufrágio, o antepassado se manifesta **agradecido** — antes
+   "vivíamos como vagabundos".
 6. **A responsabilidade é nossa:** se a oferenda e a virtude dos descendentes
    salvam os antepassados, a negligência os mantém sofrendo.
 

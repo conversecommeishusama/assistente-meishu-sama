@@ -146,6 +146,52 @@ depois agradece). Não incluído na apostila por tender ao tema de Aula 5/7.
 Aula 6 de outra forma). Duplicação com a Aula 7: **zero**. Integridade conferida
 (8 trechos-chave presentes; 0 fora de escopo).
 
+**7.3 — Fonte 5 ampliada: quinto exemplo (correção de um erro meu).** Eu havia
+afirmado que o caso de `御教え集3号` (o antepassado que morreu com os membros
+bambos) **não estava publicado** em português, e que seria preciso traduzi-lo.
+**Errado** — eu procurei no arquivo `Gosuiji-roku nº 3` (o JP 御教示録3号) quando
+o item está no **`Mioshie-shū nº 3`** (o JP 御教え集3号), no item de
+**[15 de outubro]**. O texto já estava traduzido no acervo.
+
+	Lição: 御教え集 → **Mioshie-shū**; 御垂示録 → Gosuiji-roku. A mesma data
+	(19511125) tem os dois arquivos, e o número do fascículo coincide (nº 3) —
+	conferir o kanji do título, não só a data e o número.
+
+**Mesmo assim, o item tinha duas omissões** em relação ao JP, corrigidas no
+acervo (`textos_leitura_colaborativa/`) e já refletidas na apostila:
+
+1. `（この時娘入信）` — "(nesta ocasião, a filha se converteu)"
+2. `（家族の者はそれほど悪く思っておらず、先生および他人に頼っており、農繁期にて仕事にのみ出ておりました）`
+	 — "(os familiares não o consideravam tão grave e, confiando no Ministro e nos
+	 demais, saíam apenas para o trabalho, pois era época de grande movimento na
+	 lavoura)"
+
+O segundo é doutrinariamente importante: é justamente o **"deixar tudo por conta
+dos outros"** que o próprio antepassado, ao se apossar do fiel, veio admoestar.
+
+**O caso (Fonte 5.5)**: o marido perde os movimentos das mãos e dos pés; um
+espírito ancestral se apossa de um fiel e adverte a família. Meishu-Sama explica:
+
+> "Isto é: um espírito ancestral que morreu com as mãos e os pés bambos está
+> possesso nessa pessoa porque quer ser salvo. [...] é exatamente como se você
+> estivesse prestando um serviço ao espírito ancestral — é algo excelente."
+
+E acrescenta o princípio geral:
+
+> "É muito comum surgirem doenças espirituais depois da conversão, mas é porque o
+> espírito ancestral se apega querendo ser ajudado. [...] As doenças após a
+> conversão são as duas coisas: a purificação, em que a toxina medicamentosa se
+> dissolve, e o espírito ancestral querer ser ajudado."
+
+É o exemplo mais completo do ciclo: mostra o **encosto**, o **sofrimento do
+descendente** e o sentido redentor dele — o descendente, adoecendo, **serve** ao
+antepassado. Complementa o 5.1 (que mostra o antepassado agindo para *despertar*)
+com um caso em que ele age para *ser salvo*.
+
+**Resultado:** 2.199 → **2.819 palavras** (~9 min). **Atenção ao tempo**: a aula
+passou do alvo de ~5 min; se preferir, o 5.5 (≈500 palavras) pode ir para leitura
+de apoio, mantendo na apostila só o trecho da resposta de Meishu-Sama.
+
 ### 8. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
 
 A Aula 6 mantém **325 palavras** duplicadas (3 parágrafos):
