@@ -7,6 +7,116 @@
 
 ---
 
+## 30/09 — AULA 4 DO CICLO: FOCO NO ELO ESPIRITUAL ↔ ANTEPASSADOS
+
+> **Pedido do usuário**: *"vamos trabalhar a aula 4 do ciclo de palestras
+> antepassados e mundo espiritual"* → depois: *"na aula 4 deveríamos focar nos
+> elos espirituais e como isso afeta ao ser humano, principalmente na relação com
+> os antepassados, que transmitem e recebem influências positivas e negativas de
+> seus descendentes"*.
+
+### 1. Diagnóstico da aula (estado herdado do commit `d064046d`)
+
+Três problemas medidos, não estimados:
+
+| Achado | Medida |
+|---|---|
+| **Duplicata literal com a Aula 6** | 7 parágrafos idênticos (ratio 1.000) = 940 palavras = **41% da aula** |
+| **Fora de escopo** | astros/astrologia/I Ching/Marte = 436 palavras = **19%** |
+| **Título sem sustentação** | o plano prometia "a alma sobe e desce (fardo dos pecados)" — texto **ausente** do arquivo (estava na Aula 2) |
+
+Causa da duplicata: as Aulas 4 e 6 recortaram **a mesma parte** do mesmo
+capítulo (*Conversas sobre a Fé*, "Sobre o Elo Espiritual"). A Aula 6 declara
+"parte da reencarnação humana", mas levou também os parágrafos de guardiões,
+hierarquia e deuses e budas — que são o núcleo da Aula 4.
+
+Verificado também: o *Evangelho do Reino dos Céus* **não** traz "versão
+ampliada" do capítulo (o plano afirmava isso). É reescrita tipográfica do mesmo
+texto — 2 variantes de kanji (`寂寥`→`寂蓼`).
+
+### 2. Decisão do usuário — mudança de foco
+
+A aula deixou de ser "Elo Espiritual e Destino" e passou a **"O Elo Espiritual:
+a Ligação entre Vivos e Antepassados"**, focando a ligação nos **dois sentidos**.
+
+Para evitar nova duplicata com a Aula 7 (que já abre com o parágrafo "antepassados
+e descendentes estão ligados por um fio invisível... se influenciam mutuamente"),
+a divisão foi feita **por fonte e por sentido da corrente**:
+
+| Aula | Corrente | Fonte |
+|---|---|---|
+| 3 | descendentes → antepassados (+) | Jikan 3 (oferendas elevam) |
+| **4** | **bidirecional, em 1ª pessoa** | **Gokōwa-roku nº 6 e nº 11** |
+| 7 | antepassados → descendentes (−) | Manual 1953 (doenças espirituais) |
+
+Três fontes distintas, zero repetição.
+
+### 3. Fontes acrescentadas (todas inéditas no ciclo)
+
+1. **Gokōwa-roku nº 6** (23/04/1949) — a purificação dos pais alcança os filhos:
+   *"como pais e filhos estão ligados pelo elo espiritual, a filha também
+   melhorará... essa luz alcançará sua filha."*
+2. **Gokōwa-roku nº 11** (21/08/1949) — o antepassado **reage** à conduta do
+   descendente: *"mudar de seita dessa forma irrita os antepassados, e por isso
+   não haverá nada de bom para essa família principal: eles ficarão furiosos e
+   farão algo."* É a corrente de baixo para cima em palavras do próprio
+   Meishu-Sama (a Aula 3 a tem em registro litúrgico, não moral).
+3. **Curso Kannon (1~7)** — a herança espiritual entre gerações e o que a
+   interrompe: *"se surgir entre eles uma pessoa notável que acumule méritos
+   (toku), esse mérito remove o pecado, **interrompe a transmissão e a herança
+   cessa**."* É o argumento mais direto do ciclo em favor do sufrágio.
+
+**Apoio opcional:** *Luz dos Ensinamentos* (1951) — marido/esposa/filhos podem
+assumir a purificação uns dos outros.
+
+### 4. Renomeação (4 artefatos + 1 script)
+
+`Aula_04_Elo_Espiritual_e_Destino` → **`Aula_04_Elo_Espiritual_e_Antepassados`**
+
+- `scripts/gerar_docx_leituras.py` (l.328) → `Encontro_04_Elo_Espiritual_e_Antepassados.docx`
+- `docs/PLANOS_DE_AULA_...md` (índice + Encontro 4 reescrito, 5 pontos e 4 perguntas)
+- `docs/ciclo_mundo_espiritual_antepassados.md` (índice + corpo da Aula 4)
+- `HISTORICO.md` (índice dos 8 temas)
+
+### 5. Cortes preservados (nada descartado)
+
+`docs/leituras_integrais/complementar/Aula_04_Elo_Espiritual_Material_Complementar.md`
+— com o motivo de cada recorte:
+1. reencarnação (já é a Aula 6) · 2. corpos celestes (fora de escopo) ·
+3. trechos de foco: caso do suicídio homossexual, moralização política do bloco
+   de hierarquia, e a revista americana dos objetos.
+
+### 6. Resultado
+
+| | Antes | Depois |
+|---|---|---|
+| Palavras | 2.287 | **1.641** (~5 min) |
+| Fontes | 1 | **4** |
+| Duplicata c/ Aula 6 | 940 pal (41%) | **595 pal** (ver pendência) |
+| Fora de escopo | 436 pal (19%) | 0 |
+
+Backup: `backups/aula04_foco_antepassados_20260930/` — sha256 do original
+`465faf229dedf91a19f7ef94d1503db8bf6939c3f5a886d3e00af1f6f25fc775`.
+
+### 7. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
+
+Trabalho autorizado era "renomear e incluir"; a correção da Aula 6 **não** foi
+autorizada e não foi feita. Restam **595 palavras** duplicadas (5 parágrafos):
+
+| Parágrafo | Palavras | Pertence a |
+|---|---|---|
+| guardiões / mundo espiritual | 158 | **Aula 4** (tema) |
+| hierarquia social | 209 | **Aula 4** (tema) |
+| religiosos | 64 | **Aula 4** (tema) |
+| deuses e budas / luz | 103 | **Aula 4** (tema) |
+| nascidos com deficiências | 61 | indiferente |
+
+A Aula 6 declara ter tomado "*parte da reencarnação humana*" — mas levou 4
+parágrafos a mais. A correção natural é devolvê-los à Aula 4 e deixar a Aula 6
+com os parágrafos 5-7 (reencarnação, 406 palavras). **Aguardando decisão.**
+
+---
+
 ## 19/09 — TRIAGEM INICIAL DA PERGUNTA + AVISO DE PESQUISA PROFUNDA
 
 > **Relato do usuário**: *"Qualquer pergunta que se faz ao aplicativo, ele faz
@@ -429,7 +539,8 @@ parágrafos 10, 50 e 150 caem todos no parágrafo correto. JS bumpado para `?v=8
   **fase inicial (Aula 3)**, como "aula-âncora" (a meta do ciclo é a cerimônia
   de 02/11).
   1. A Existência do Mundo Espiritual · 2. A Constituição do Mundo Espiritual ·
-  **3. O Culto às Almas dos Antepassados (Obon)** · 4. Elo Espiritual e Destino ·
+  **3. O Culto às Almas dos Antepassados (Obon)** · 4. O Elo Espiritual e os
+  Antepassados ·
   5. Morte, Julgamento e Destino · 6. Vida no Mundo Espiritual e Reencarnação ·
   7. A Influência dos Antepassados · 8. O Culto na Prática (preparação 02/11).
 - **Documentos**:

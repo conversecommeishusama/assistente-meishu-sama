@@ -16,7 +16,7 @@
 > dirigente → perguntas e respostas.
 >
 > **Lógica do ciclo:** o estudo converge para o Culto de 02/11. Por isso a aula
-> sobre o **Culto às Almas (Obon)** foi antecipada para a **Aula 3**, como
+> sobre o **Culto às Almas (dia de finados)** foi antecipada para a **Aula 3**, como
 > "aula-âncora" que dá o propósito a todo o ciclo.
 
 ---
@@ -27,8 +27,8 @@
 |----------|------|----------------|
 | 1 | A Existência do Mundo Espiritual | Fundamento: o invisível é real |
 | 2 | A Constituição do Mundo Espiritual | Fundamento: como é o mundo invisível |
-| 3 | ⭐ O Culto às Almas dos Antepassados (Obon) | Âncora: a meta do ciclo (02/11) |
-| 4 | Elo Espiritual e Destino | Como o invisível age no visível |
+| 3 | ⭐ O Culto às Almas dos Antepassados (dia de finados) | Âncora: a meta do ciclo (02/11) |
+| 4 | O Elo Espiritual e os Antepassados | Como o invisível liga vivos e mortos |
 | 5 | Morte, Julgamento e Destino | A jornada da alma (1) |
 | 6 | Vida no Mundo Espiritual e Reencarnação | A jornada da alma (2) |
 | 7 | A Influência dos Antepassados sobre os Descendentes | Por que cultuar importa |
@@ -47,7 +47,7 @@ preparação".
 | 1 | `docs/leituras_integrais/Aula_01_Existencia_do_Mundo_Espiritual.md` |
 | 2 | `docs/leituras_integrais/Aula_02_Constituicao_do_Mundo_Espiritual.md` |
 | 3 | `docs/leituras_integrais/Aula_03_Culto_às_Almas_Obon.md` |
-| 4 | `docs/leituras_integrais/Aula_04_Elo_Espiritual_e_Destino.md` |
+| 4 | `docs/leituras_integrais/Aula_04_Elo_Espiritual_e_Antepassados.md` |
 | 5 | `docs/leituras_integrais/Aula_05_Morte_Julgamento_e_Destino.md` |
 | 6 | `docs/leituras_integrais/Aula_06_Vida_no_Mundo_Espiritual_e_Reencarnacao.md` |
 | 7 | `docs/leituras_integrais/Aula_07_Influencia_dos_Antepassados.md` |
@@ -111,10 +111,19 @@ Material" (não incluídos na apostila; ler apenas se o tempo permitir).
 📖 **Texto integral:** `docs/leituras_integrais/Aula_02_Constituicao_do_Mundo_Espiritual.md`
 
 **Fonte:** *Coleção Jikan Volume 3 — Conversas sobre o Mundo Espiritual* (1949) —
-capítulos **"Paraíso e Inferno"**, **"Continuação do Mundo do Inferno"**,
-**"Reino dos Tengu"**, **"Reino dos Deuses Dragão"**, **"Espíritos de
-Divindades, Espíritos de Budas e Espíritos Humanos"** e **"Camadas do Mundo
-Espiritual"**. O arquivo acima traz o texto completo.
+capítulos **"Camadas do Mundo Espiritual"**, **"Paraíso e Inferno"** e
+**"Continuação do Mundo do Inferno"**. O arquivo acima traz o texto integral
+desses capítulos, na ordem acima.
+
+> **Recorte de 16/09/2026:** por extensão do encontro (o material completo
+> daria ~47 min só de leitura), ficaram **fora da apostila** os capítulos
+> "Reino dos Tengu", "Reino dos Deuses Dragão" e "Espíritos de Divindades,
+> Espíritos de Budas e Espíritos Humanos", além da descrição dos planos
+> superiores (Paraíso do Extremo Ocidente e Jodo/Terra Pura). Nada foi
+> descartado: o material está preservado em
+> `docs/leituras_integrais/complementar/Aula_02_Reinos_e_Especies_de_Espiritos.md`
+> para consulta. "Camadas do Mundo Espiritual" passou a **abrir** o encontro,
+> por dar a visão de conjunto e emendar direto na Aula 1.
 
 **Apoio (opcional):** *Curso Kannon (1~7)* — "Quarta Aula: A Realidade dos Três
 Mundos"; *Luz dos Ensinamentos* — "Quem é Kakuriyo no Ōkami (o Grande Deus do
@@ -140,77 +149,143 @@ Mundo Oculto)?" e "Mudanças no Inferno".
 
 ---
 
-# ENCONTRO 3 — ⭐ O Culto às Almas dos Antepassados (Obon)
+# ENCONTRO 3 — ⭐ O Culto às Almas dos Antepassados (dia de finados)
 
 > **Aula-âncora.** Trazida para a fase inicial porque é a **meta do ciclo**: o
 > Culto às Almas no Solo Sagrado (02/11). Explica o que é, por que existe e para
 > quem se dirige o Culto.
 
 - **Objetivo:** compreender o significado do Culto às Almas dos Antepassados
-  (equivalente ao Obon do Japão) e sua centralidade para o dia 02/11.
+  (equivalente ao *Obon* do Japão, aqui chamado **dia de finados**) e sua
+  centralidade para o dia 02/11.
 - **Duração sugerida:** 75–90 min (aula rica; considerar leitura em duas partes).
+
+> **Nota de terminologia (24/09/2026):** nos ensinamentos lidos, o termo japonês
+> *Obon* foi substituído por **dia de finados** — mesma data e mesmo sentido no
+> Brasil. O nome original fica registrado apenas nas referências de fonte.
 
 ## Ensinamento a ser lido
 
 📖 **Texto integral:** `docs/leituras_integrais/Aula_03_Culto_às_Almas_Obon.md`
 
 **Fontes (todas incluídas na íntegra no arquivo acima):**
-1. *Luz dos Ensinamentos* (1951), seção **"O Bon (Obon)"**;
-2. *Gokōwa-roku nº 5* — significado do Equinócio (Ohigan) e do Obon;
-3. *Gosuiji-roku nº 23* — diálogo sobre o Obon.
+1. *Luz dos Ensinamentos* (1951), seção **"O Bon (Obon)"** — o dia de finados, quem pode vir, o ogara, todos os filhos devem sufragar, as placas;
+2. *Curso Kannon* — os que não recebem oferendas vão para o Caminho dos Fantasmas Famintos; os famintos comem os alimentos expostos e por isso eles ficam sem gosto;
+3. *Gokōwa-roku nº 3* — os que caíram no Reino dos Espíritos Famintos vêm pedir comida; venerar Komyo-Nyorai gera mérito;
+4. *Coleção Jikan Volume 3* — os espíritos do Inferno elevam-se pelas próprias penitências **ou pelas oferendas dos descendentes**;
+5. *Coleção Jikan Volume 3* — a sobra da oferenda do butsudan é dada aos famintos do Inferno e, **por esse mérito, os antepassados se elevam**;
+6. *Gokōwa-roku nº 5* — significado do Equinócio (Ohigan) e do dia de finados;
+7. *Gosuiji-roku nº 23* — diálogo sobre o dia de finados;
+8. *Gokōwa-roku nº 6* — o que se oferece no altar (Komyo-Nyorai tem forma humana).
 
-O arquivo traz os três textos completos, sem cortes.
+> **Ampliação de 24/09/2026:** a aula passou de 3 para 8 fontes (816 → 1.221
+> palavras, ~4 min de leitura). As fontes 2 a 5 e 8 foram acrescentadas para
+> responder às perguntas centrais da aula-âncora: *por que* os antepassados
+> sofrem, *como* o sufrágio chega até eles e *o que* se oferece.
 
 ## Pontos centrais da explicação
 
-1. O Culto às Almas dos Antepassados equivale ao Obon: por permissão especial, os
-   espíritos do Inferno podem voltar ao convívio dos descendentes e receber
-   oferendas.
+1. O Culto às Almas dos Antepassados equivale ao dia de finados: por permissão
+   especial, os espíritos do Inferno podem voltar ao convívio dos descendentes e
+   receber oferendas.
 2. Quem pode vir: os que estão acima do Yachimata vêm livremente; os do Inferno,
    apenas nessa época (permissão de Shakyamuni).
-3. Finalidade: consolar os espíritos que sofrem, alimentá-los espiritualmente e
-   oferecer sufrágio.
-4. Ligação com 02/11: o Culto no Solo Sagrado é oportunidade extraordinária de
+3. **Por que eles precisam das oferendas:** os que não as recebem caem no Caminho
+   dos Fantasmas Famintos — um estado de fome permanente. Não conseguem saciar-se
+   e acabam por furtar o espírito dos alimentos expostos nas lojas (daí a comida
+   "sem gosto"; nos cemitérios, "vêm pedir comida").
+4. **Como o sufrágio chega até eles:** os espíritos do Inferno elevam-se aos
+   poucos **pelas próprias penitências ou pelas oferendas dos descendentes** —
+   "estes, portanto, não devem negligenciá-las". E a própria sobra da oferenda do
+   butsudan é dada aos famintos do Inferno; **por esse mérito, os antepassados se
+   elevam**.
+5. Finalidade: consolar os espíritos que sofrem, alimentá-los espiritualmente e
+   oferecer sufrágio. **Só nessa época podem comer à vontade.**
+6. **O que se oferece:** Komyo-Nyorai tem forma humana — oferece-se o que os
+   humanos comem (peixe levemente assado; legumes cozidos; evitar carne bovina e
+   suína). Sal, água e arroz lavado são oferendas do xintoísmo / dos deuses
+   dragões, não de Komyo-Nyorai.
+7. Ligação com 02/11: o Culto no Solo Sagrado é oportunidade extraordinária de
    sufrágio; **todos os descendentes devem sufragar**, não só o filho mais velho.
-5. Preparação prática (já): organizar placas (ihai) — individuais para os
+8. Preparação prática (já): organizar placas (ihai) — individuais para os
    conhecidos; uma única para "todos os antepassados de todas as gerações".
 
 ## Perguntas para o debate
 
-- Por que o Obon é "principalmente para consolar os espíritos do Inferno"?
+- Por que o dia de finados é "principalmente para consolar os espíritos do
+  Inferno"?
+- Se os antepassados se elevam "pelas oferendas dos descendentes", o que isso
+  diz sobre a nossa responsabilidade hoje?
 - O que podemos fazer, desde já, para nos prepararmos para o Culto de 02/11?
 
 ---
 
-# ENCONTRO 4 — A Relação entre os Dois Mundos: Elo Espiritual e Destino
+# ENCONTRO 4 — O Elo Espiritual: a Ligação entre Vivos e Antepassados
 
-- **Objetivo:** entender como o mundo invisível governa o visível e o papel do
-  elo espiritual na relação entre vivos e mortos.
+- **Objetivo:** compreender que o elo espiritual é o que liga vivos e mortos, e
+  que essa ligação funciona **nos dois sentidos** — os descendentes influenciam
+  os antepassados e os antepassados influenciam os descendentes. É a base
+  doutrinária de todo o Culto.
 - **Duração sugerida:** 60–90 min.
+
+> **Reestruturação de 30/09/2026:** a aula era "Elo Espiritual e Destino"
+> (arquivo `Aula_04_Elo_Espiritual_e_Destino.md`) e tratava o tema de forma
+> genérica. Passou a focar **o elo na relação com os antepassados**, nos dois
+> sentidos. O material que saiu (reencarnação → Aula 6; astros/astrologia;
+> trechos de foco) está preservado em
+> `docs/leituras_integrais/complementar/Aula_04_Elo_Espiritual_Material_Complementar.md`
+> e o original em `backups/aula04_foco_antepassados_20260930/`.
 
 ## Ensinamento a ser lido
 
-📖 **Texto integral:** `docs/leituras_integrais/Aula_04_Elo_Espiritual_e_Destino.md`
+📖 **Texto integral:** `docs/leituras_integrais/Aula_04_Elo_Espiritual_e_Antepassados.md`
 
-**Fonte:** *Conversas sobre a Fé* (1948), capítulo **"Sobre o Elo Espiritual"**
-(texto completo no arquivo acima). O mesmo ensinamento, em versão ampliada, está
-também em *Evangelho do Reino dos Céus* (capítulo homônimo) — não incluído na
-apostila; usar apenas como referência complementar do dirigente.
+**Fontes (todas na íntegra no arquivo acima):**
+
+1. *Conversas sobre a Fé* (1948) — capítulo **"Sobre o Elo Espiritual"**: a
+   natureza do elo, sua hierarquia (casal → pais e filhos → irmãos → demais),
+   a ligação com os espíritos após a morte e os espíritos guardiões.
+2. *Gokōwa-roku nº 6* (23/04/1949) — **a purificação dos pais alcança os
+   filhos** pelo elo ("essa luz alcançará sua filha").
+3. *Gokōwa-roku nº 11* (21/08/1949) — **a conduta dos descendentes afeta os
+   antepassados**, que reagem ("mudar de seita dessa forma irrita os
+   antepassados").
+4. *Curso Kannon (1~7)* — "Os pecados dos pais lhe são transferidos": a
+   **herança espiritual** entre gerações, que só o mérito (toku) interrompe.
+
+**Apoio (opcional):** *Curso Kannon (1~7)* — "Os pecados dos pais lhe são
+transferidos" · *Luz dos Ensinamentos* (1951) — marido, esposa e filhos podem
+assumir a purificação uns dos outros (o elo espiritual do casal é o mais denso).
 
 ## Pontos centrais da explicação
 
-1. O elo espiritual liga as pessoas — e liga **vivos e mortos** (base do Culto).
-2. Influência recíproca: os atos dos vivos afetam os antepassados e vice-versa —
-   **base doutrinária do sufrágio**.
-3. Espíritos guardiões: antepassados já purificados protegem os descendentes.
-4. A alma sobe e desce ("fardo dos pecados" × leveza da virtude) — por que
-   precisamos purificar a nós e aos antepassados.
+1. **O elo espiritual é o "fio invisível"** que liga as pessoas. Sua espessura
+   segue o grau de parentesco — e **não se corta entre consanguíneos**, o que
+   explica por que a ligação com os antepassados é permanente.
+2. **A ligação atravessa a morte:** o elo não se limita aos parentes vivos;
+   estende-se aos espíritos no mundo espiritual. **Esta é a base do Culto.**
+3. **A corrente vai nos dois sentidos.** De baixo para cima: os descendentes
+   influenciam os antepassados — a oferenda os eleva (Aula 3) e a conduta
+   leviana os irrita (Gokōwa nº 11). De cima para baixo: os antepassados
+   influenciam os descendentes — os já purificados atuam como **espíritos
+   guardiões**, advertindo e protegendo.
+4. **A herança espiritual entre gerações** ("vêm dos antepassados" — as nuvens
+   espirituais que causam doença). Não é hereditariedade de sangue: é elo
+   espiritual. E **só o mérito o interrompe** — "se surgir entre eles uma pessoa
+   notável que acumule méritos, esse mérito remove o pecado, interrompe a
+   transmissão e a herança cessa". Aqui está o porquê do nosso sufrágio.
+5. **A responsabilidade é nossa:** se a oferenda e a virtude dos descendentes
+   salvam os antepassados, a negligência os mantém sofrendo.
 
 ## Perguntas para o debate
 
 - De que forma vocês já sentiram a proteção ou a influência de um antepassado?
+- *"Se surgir uma pessoa notável que acumule méritos, a herança cessa"* — o que
+  isso revela sobre a responsabilidade de cada um nesta família espiritual?
+- Se os antepassados reagem à nossa conduta (como os que se irritaram com a
+  mudança de seita), o que isso muda na forma de vivermos o dia a dia?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa
-  para nossa conduta diária?
+  para a nossa conduta diária?
 
 ---
 

@@ -96,11 +96,23 @@ referência do Zenshū/Rokkan estão em
   - **Regras críticas**: não usar checkpoint por índice (edição desloca índices e
     deixa trechos mudos); não confiar no log (auditar o cache); modo estrito
     `GOSHINSHO_TTS_STRICT=1`; TTL do cache = **nunca expirar** (acervo).
-- **�📚 CICLO DE ESTUDOS "MUNDO ESPIRITUAL E ANTEPASSADOS" (09-10/09)** — material
-  para o Culto às Almas (02/11, Guarapiranga). Plano de 8 encontros + apostila de
-  leituras na íntegra (`docs/leituras_integrais/`) + versões Word para impressão
+- **📚 CICLO DE ESTUDOS "MUNDO ESPIRITUAL E ANTEPASSADOS" (09-10/09; Aulas 2-4
+  reestruturadas em 16/09-30/09)** — material para o Culto às Almas (02/11,
+  Guarapiranga). Plano de 8 encontros + apostila de leituras na íntegra
+  (`docs/leituras_integrais/`) + versões Word para impressão
   (`docs/leituras_word/`, geradas por `scripts/gerar_docx_leituras.py`). Revisão
-  literária das 8 aulas concluída. Detalhes em `HISTORICO.md` (09-10/09).
+  literária das 8 aulas concluída. Detalhes em `HISTORICO.md` (09-10/09, 16/09,
+  24/09, 30/09).
+  - **Convenção das apostilas**: cada arquivo é o texto a ser lido em voz alta;
+    o `.txt` de `textos_avaliacao/` e o `.docx` de `docs/leituras_word/` são
+    **derivados** — ao editar a apostila, apagar o `.txt` antes de rodar
+    `scripts/preparar_textos_avaliacao.py` (ele nunca sobrescreve).
+  - **Material cortado** vai para `docs/leituras_integrais/complementar/` com o
+    motivo do recorte (nunca é descartado). `glob("Aula_*.md")` nos scripts
+    **não é recursivo** — o subdiretório fica fora dos pipelines, de propósito.
+  - **Aula 4** (30/09): renomeada `Aula_04_Elo_Espiritual_e_Antepassados.md`,
+    com foco na ligação vivos↔antepassados nos dois sentidos (4 fontes). Ver
+    pendência da correção recíproca da Aula 6 no `HISTORICO.md` (30/09).
 - **CORREÇÕES NA LEITURA COLABORATIVA (regra do usuário, 10/09)**: as correções
   de conteúdo vão **somente** para `textos_leitura_colaborativa/` (base editável,
   fora do git) — a promoção para produção acontece depois, em bloco. Não editar

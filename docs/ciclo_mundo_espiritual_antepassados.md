@@ -26,7 +26,7 @@
 | 1 | A Existência do Mundo Espiritual | Fundamento — o invisível é real |
 | 2 | A Constituição do Mundo Espiritual | Fundamento — como é o mundo invisível |
 | 3 | **O Culto às Almas dos Antepassados (Obon)** ⭐ | **Âncora — o porquê de todo o ciclo (meta: 02/11)** |
-| 4 | A Relação entre os Dois Mundos: Elo Espiritual e Destino | Ponte — como o invisível age no visível |
+| 4 | O Elo Espiritual: a Ligação entre Vivos e Antepassados | Ponte — como o invisível age no visível |
 | 5 | O Retorno ao Mundo Espiritual: Morte, Julgamento e Destino | A jornada da alma (1) |
 | 6 | A Vida no Mundo Espiritual e a Reencarnação | A jornada da alma (2) |
 | 7 | A Influência dos Antepassados sobre os Descendentes | Aplicação — por que cultuar importa |
@@ -238,50 +238,67 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 
 ---
 
-# AULA 4 — A Relação entre os Dois Mundos: Elo Espiritual e Destino
+# AULA 4 — O Elo Espiritual: a Ligação entre Vivos e Antepassados
 
 ## 📜 Ensinamento (leitura)
 
-**Fonte**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
-Espiritual"** (versão completa também em *Evangelho do Reino dos Céus*).
+**Fontes**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
+Espiritual"**; *Gokōwa-roku nº 6* (19490423) e *nº 11* (19490821); *Curso
+Kannon (1~7)*, seção "Os pecados dos pais lhe são transferidos".
 
-> "A palavra 'elo espiritual' parece não ter sido muito usada até hoje. Isso
-> porque ainda não se conhecia sua importância — era algo mais rarefeito que o ar,
-> invisível aos olhos. No entanto, em todos os assuntos humanos, sua influência é
-> algo que não se pode menosprezar; para o ser humano, é a causa da felicidade e
-> da infelicidade e, em grande escala, chega a influenciar a própria história.
+> "A expressão 'elo espiritual' parece ter sido pouco usada até hoje. Isso porque
+> sua importância ainda não era conhecida — trata-se de algo mais rarefeito que o
+> ar e invisível aos olhos. Sua influência, porém, não pode ser menosprezada em
+> nenhum assunto humano: para o ser humano, ela é a causa da felicidade e da
+> infelicidade e, em grande escala, chega a influenciar a própria história.
 >
-> Aqui está um ser humano — pode-se pensar que é o próprio leitor. Esse 'eu'
-> possui elos espirituais que o conectam em número incalculável. [...] Entre eles,
-> o elo que conecta marido e mulher é o mais espesso; o de pais e filhos vem em
-> seguida; irmãos, tios, sobrinhos, primos, amigos e conhecidos tornam-se
-> progressivamente mais finos.
+> [...] O elo espiritual não se limita aos parentes vivos; estende-se também aos
+> espíritos do mundo espiritual, depois da morte. [...] Os que foram purificados
+> até certo ponto no mundo espiritual são escolhidos como espíritos guardiões e,
+> pelo elo espiritual, protegem as pessoas."
+
+**A ligação funciona nos dois sentidos.** De baixo para cima (Gokōwa-roku nº 11):
+
+> "Pelo elo espiritual, a família principal também mudará com o tempo. No
+> entanto, mudar de seita dessa forma irrita os antepassados, e por isso não
+> haverá nada de bom para essa família principal: eles ficarão furiosos e farão
+> algo, e assim acabarão percebendo."
+
+De cima para baixo (Gokōwa-roku nº 6) — a purificação dos pais alcança os filhos:
+
+> "Quando a mãe melhorar e se purificar, como pais e filhos estão ligados pelo
+> elo espiritual, a filha também melhorará. Primeiro, você mesma deve acumular
+> mérito; com isso, sua alma brilhará, e essa luz alcançará sua filha."
+
+**A herança espiritual e o que a interrompe** (Curso Kannon):
+
+> "Entre os antepassados e as pessoas de hoje há uma conexão por um elo
+> espiritual (reisen). A medicina chama isso de hereditariedade, mas, como há
+> casos em que essa hereditariedade de fato não ocorre, a teoria hereditária não
+> se tornou absoluta.
 >
-> O elo espiritual não se limita aos parentes vivos do ser humano; estende-se
-> também aos espíritos do mundo espiritual, após a morte. [...] Os que foram
-> purificados até certo ponto no mundo espiritual são selecionados como espíritos
-> guardiões e, por meio do elo espiritual, protegem os seres humanos."
-
-**Sobre o destino** (Evangelho do Reino dos Céus, "Camadas do Mundo Espiritual"):
-
-> "A posição da alma, originalmente, não é fixa: ela sobe e desce sem cessar. Por
-> quê? Porque quanto mais leve, mais sobe, e quanto mais pesada, mais desce. E
-> qual é a causa dessa leveza e desse peso? A bondade ou a maldade das ações
-> humanas. [...] Desde os tempos antigos se diz 'o fardo dos pecados'."
+> Ainda assim, trata-se de algo absoluto; se, porém, surgir entre eles uma pessoa
+> notável que acumule méritos (toku), esse mérito remove o pecado, interrompe a
+> transmissão e a herança cessa."
 
 ## 📝 Observações para o dirigente
 
 **O que abordar:**
 1. **O elo espiritual**: o "fio invisível" que liga as pessoas — e que **liga
    vivos e mortos** (fundamental para entender o Culto).
-2. **A influência recíproca**: os pensamentos e atos dos vivos afetam os
-   antepassados e vice-versa. **Isto é a base doutrinária do sufrágio.**
+2. **A influência recíproca, nos dois sentidos**: os atos dos descendentes
+   afetam os antepassados (a oferenda os eleva; a conduta leviana os irrita) e
+   os antepassados afetam os descendentes (espíritos guardiões; as nuvens
+   espirituais que causam doença). **Isto é a base doutrinária do sufrágio.**
 3. **Espíritos guardiões**: antepassados já purificados protegem os descendentes.
-4. **A alma que sobe e desce**: o "fardo dos pecados" e a leveza da virtude —
-   ligação direta com o porquê de purificarmos nossos antepassados (e a nós).
+4. **A herança espiritual entre gerações** — e que **só o mérito a interrompe**.
+   É o argumento mais direto do ciclo em favor do Culto: a pessoa que acumula
+   méritos corta a transmissão do sofrimento para toda a linhagem.
 
 **Perguntas sugeridas:**
 - De que forma vocês já sentiram a "proteção" ou a "influência" de um antepassado?
+- Se uma pessoa que acumula méritos interrompe a herança do sofrimento da
+  linhagem, o que isso revela sobre a nossa responsabilidade hoje?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa
   para a nossa conduta diária?
 
