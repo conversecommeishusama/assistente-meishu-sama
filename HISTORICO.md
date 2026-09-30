@@ -232,6 +232,16 @@ e aplicada onde havia desvio:
   não 祭り; e o nome brasileiro já estava decidido desde 24/09).
 - Aula 8: *"festival de 50 dias"* → **"Culto de 50 dias"** (JP: 五十日祭 — 祭
   explícito).
+- Aula 4, **Fonte 2**: *"não foi mais aos festivais"* → **"não foi mais aos
+  Cultos"** (JP: `お祭りにも行かず` — 祭り explícito). O mesmo desvio foi corrigido
+  no corpus publicado (`textos_leitura_colaborativa/19490423 - Gokōwa-roku nº 6.txt`).
+
+**Conflito com regra antiga resolvido.** O `HANDOFF_REVSEM_ORAIS_20260824.md`
+registrava uma convenção anterior em que `お祭り` **genérico** podia ficar como
+"festival/festividade" (só os nomes compostos — 大祭, 月並祭, 例祭 — viravam
+"Culto"). A decisão de 30/09 é mais ampla e **substitui** aquela: `祭`/`祭り` em
+qualquer contexto → **Culto**. Verificado nas 8 apostilas: zero ocorrências
+residuais de "festival"/"festa".
 
 **10.3 — Fonte 3 removida (Gokōwa-roku nº 11, a mudança de seita).** Retirada por
 ser confusa ao leitor brasileiro: depende de contexto de seitas japonesas

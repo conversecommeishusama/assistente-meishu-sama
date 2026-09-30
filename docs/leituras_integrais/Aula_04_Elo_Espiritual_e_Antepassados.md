@@ -29,7 +29,7 @@ Mesmo entre os deuses e budas há o correto e o maligno. O elo espiritual das di
 
 **Fonte 2:** Gokōwa-roku nº 6 (23/04/1949) — a purificação dos pais alcança os filhos pelo elo.
 
-Interlocutor: Minha filha (19 anos) recebeu Johrei em julho do ano retrasado. Depois disso, não foi mais aos festivais nem recebeu Johrei. Minha esposa até tenta impedi-la de receber Johrei. O que devo fazer?
+Interlocutor: Minha filha (19 anos) recebeu Johrei em julho do ano retrasado. Depois disso, não foi mais aos Cultos nem recebeu Johrei. Minha esposa até tenta impedi-la de receber Johrei. O que devo fazer?
 
 Meishu-Sama: Ah, um espírito estranho a possuiu. Nesse caso, é a mãe que deve acumular mérito ajudando muitas pessoas. Quando a mãe melhorar e se purificar, como pais e filhos estão ligados pelo elo espiritual, a filha também melhorará. Primeiro, você mesma deve acumular mérito; com isso, sua alma brilhará, e essa luz alcançará sua filha. O espírito que está atrapalhando irá gradualmente se encolher e, por fim, se afastará. Em todos os casos, mesmo que alguém na família se oponha, está tudo bem.
 
