@@ -47,9 +47,9 @@ Na hora das refeições, os espíritos ancestrais absorvem o espírito da comida
 
 ---
 
-**Fonte 6:** Gokōwa-roku nº 5 — significado do Equinócio (Ohigan) e do Festival dos Mortos (dia de finados).
+**Fonte 6:** Gokōwa-roku nº 5 — significado do Equinócio (Ohigan) e do dia de finados.
 
-Interlocutor: Pergunto sobre o significado espiritual do Equinócio (Ohigan) e do Festival dos Mortos (dia de finados).
+Interlocutor: Pergunto sobre o significado espiritual do Equinócio (Ohigan) e do dia de finados.
 
 Meishu-Sama: No Equinócio, o sol se encontra no ponto médio entre o solstício de inverno e o de verão, época equilibrada. Esse "equilíbrio" é o Paraíso, a Terra Pura, ou seja, o mundo ideal. "A margem oposta" deve significar "a terra ideal". Nessa época, visitam-se os túmulos; não há um significado muito específico, mas é uma boa ação cultuar os antepassados numa ocasião equilibrada, sem necessidade de lógica. Quanto ao dia de finados, os espíritos que estão no Inferno sofrem constantemente, e é uma pena; por isso, uma vez por ano, podem voltar. Tanto o Equinócio quanto o dia de finados devem ter sido criados por Buda Shakyamuni.
 

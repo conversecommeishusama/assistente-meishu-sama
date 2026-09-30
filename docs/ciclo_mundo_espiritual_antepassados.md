@@ -243,9 +243,10 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 ## 📜 Ensinamento (leitura)
 
 **Fontes**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
-Espiritual"**; *Gokōwa-roku nº 6* (19490423) e *nº 11* (19490821); *Curso
-Kannon (1~7)*, seção "Os pecados dos pais lhe são transferidos"; *Eiko nº 104*,
-*Gosuiji-roku nº 6*, *Mioshie-shū nº 7* e *Gokōwa-roku (Suplemento)* (exemplos).
+Espiritual"**; *Gokōwa-roku nº 6* (19490423); *Medicina do Amanhã* (13/04/1936,
+a lei redentora); *Curso Kannon (1~7)*, seção "Os pecados dos pais lhe são
+transferidos"; *Eiko nº 104*, *Gosuiji-roku nº 6*, *Mioshie-shū nº 7* e
+*Gokōwa-roku (Suplemento)* (exemplos).
 
 > "A expressão 'elo espiritual' parece ter sido pouco usada até hoje. Isso porque
 > sua importância ainda não era conhecida — trata-se de algo mais rarefeito que o
@@ -258,20 +259,43 @@ Kannon (1~7)*, seção "Os pecados dos pais lhe são transferidos"; *Eiko nº 10
 > até certo ponto no mundo espiritual são escolhidos como espíritos guardiões e,
 > pelo elo espiritual, protegem as pessoas."
 
-**A ligação funciona nos dois sentidos.** De baixo para cima (Gokōwa-roku nº 11):
-
-> "Pelo elo espiritual, a família principal também mudará com o tempo. No
-> entanto, mudar de seita dessa forma irrita os antepassados, e por isso não
-> haverá nada de bom para essa família principal: eles ficarão furiosos e farão
-> algo, e assim acabarão percebendo."
-
-De cima para baixo (Gokōwa-roku nº 6) — a purificação dos pais alcança os filhos:
+**A ligação funciona nos dois sentidos.** De cima para baixo (Gokōwa-roku nº 6) —
+a purificação dos pais alcança os filhos:
 
 > "Quando a mãe melhorar e se purificar, como pais e filhos estão ligados pelo
 > elo espiritual, a filha também melhorará. Primeiro, você mesma deve acumular
 > mérito; com isso, sua alma brilhará, e essa luz alcançará sua filha."
 
-**A herança espiritual, a lei da redenção e o que a interrompe** (Curso Kannon):
+De baixo para cima — o descendente afeta o antepassado. É o que mostra a lei
+redentora, abaixo, e os exemplos: o antepassado sofre enquanto espera, age sobre
+o descendente para despertá-lo, e se alegra quando o sufrágio finalmente chega.
+
+> **Nota:** o diálogo de *Gokōwa-roku nº 11* (a mudança de seita que "irrita os
+> antepassados") foi **retirado da apostila em 30/09/2026** a pedido do usuário,
+> por ser confuso ao leitor brasileiro — depende de contexto de seitas japonesas
+> (Shingon, Reiyukai) que não faz parte da experiência dele. O princípio que
+> ilustrava permanece sustentado pelas outras fontes. O texto está preservado em
+> `docs/leituras_integrais/complementar/Aula_04_Elo_Espiritual_Material_Complementar.md`
+> §4.
+
+**A lei redentora** (Medicina do Amanhã, 13/04/1936):
+
+> "Os espíritos que caíram no Inferno avançam passo a passo, ainda que
+> lentamente, através das dificuldades das punições de seus pecados. Nessa
+> ocasião, **os elementos espirituais impuros — que poderiam ser chamados de
+> resíduos da purificação das impurezas dos pecados — recaem sobre os
+> descendentes que vivem neste mundo material, fluindo incessantemente. Trata-se
+> de uma espécie de lei de expiação cármica, pela qual o descendente, síntese dos
+> ancestrais, compartilha as impurezas dos pecados.** Como isso é uma lei divina
+> do Deus Supremo na constituição de todas as coisas, é inevitável, e o ser
+> humano nada pode fazer senão submeter-se a ela.
+>
+> Esses elementos espirituais impuros recaem sobre o encéfalo e a medula espinhal
+> do ser humano e fluem incessantemente. No momento em que entram no espírito
+> humano, materializam-se instantaneamente; essa materialização é o pus. Isso se
+> torna a causa de todas as doenças."
+
+**A herança espiritual e o que a interrompe** (Curso Kannon):
 
 > "Entre os antepassados e as pessoas de hoje há uma conexão por um elo
 > espiritual (reisen). A medicina chama isso de hereditariedade, mas, como há

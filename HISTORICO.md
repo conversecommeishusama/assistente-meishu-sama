@@ -192,7 +192,62 @@ com um caso em que ele age para *ser salvo*.
 passou do alvo de ~5 min; se preferir, o 5.5 (≈500 palavras) pode ir para leitura
 de apoio, mantendo na apostila só o trecho da resposta de Meishu-Sama.
 
-### 8. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
+### 10. 4º pedido (mesma sessão) — a lei redentora, remoção da Fonte 3 e a convenção matsuri
+
+> **Pedidos do usuário**: *"existe um ensinamento em que Meishu-Sama fala que os
+> resíduos da purificação dos antepassados fluem incessantemente para os
+> descendentes e que isso é como se fosse uma lei redentora. Encontre ele."* ·
+> *"Matsuri = Culto"* · *"Retire a fonte 3 que fica confusa para os brasileiros."*
+
+**10.1 — O ensinamento encontrado: Medicina do Amanhã (13/04/1936).** A
+formulação exata existe e usa o próprio termo "lei redentora":
+
+> "Nessa ocasião, os elementos espirituais impuros — que poderiam ser chamados de
+> resíduos da purificação das impurezas dos pecados — recaem sobre os descendentes
+> que vivem neste mundo material, **fluindo incessantemente**. Trata-se de uma
+> espécie de **lei de expiação cármica** [因果律的贖罪法], pela qual o descendente,
+> síntese dos ancestrais, compartilha as impurezas dos pecados. Como isso é uma lei
+> divina do Deus Supremo na constituição de todas as coisas, é inevitável, e o ser
+> humano nada pode fazer senão submeter-se a ela."
+
+O parágrafo seguinte fecha o mecanismo (e coincide com o Curso Kannon): os
+elementos impuros recaem sobre o **encéfalo e a medula espinhal**, fluindo
+incessantemente; ao entrar no espírito, **materializam-se em pus** — "a causa de
+todas as doenças".
+
+**Onde estava:** `textos_portugues/Medicina_do_Amanha.txt` (linha 1232), capítulo
+sobre as impurezas dos pecados dos ancestrais. A busca por `贖罪` no JP foi o que
+localizou — eu vinha procurando por "lei da redenção" em português e no Curso
+Kannon, e o ensinamento estava numa obra **de 1936**, anterior a todo o resto do
+corpus. É a fonte mais antiga do ciclo.
+
+**Correção de foco:** até aqui a Fonte 4 do Curso Kannon era apresentada como "a
+lei da redenção"; ela descreve o **mecanismo**, mas quem **nomeia** a lei é a
+Medicina do Amanhã. As duas se completam e agora são fontes separadas.
+
+**10.2 — Convenção `matsuri` = Culto.** Registrada no `glossario_traducao.json`
+(`祭り`, `祭典`, `祭事` → Culto, com a proibição explícita de "festival"/"festa")
+e aplicada onde havia desvio:
+- Aula 3, Fonte 6: *"Festival dos Mortos"* → **"dia de finados"** (o JP usa お盆,
+  não 祭り; e o nome brasileiro já estava decidido desde 24/09).
+- Aula 8: *"festival de 50 dias"* → **"Culto de 50 dias"** (JP: 五十日祭 — 祭
+  explícito).
+
+**10.3 — Fonte 3 removida (Gokōwa-roku nº 11, a mudança de seita).** Retirada por
+ser confusa ao leitor brasileiro: depende de contexto de seitas japonesas
+(Shingon, Reiyukai, família principal × secundária) que não faz parte da
+experiência dele. **Preservada** em
+`complementar/Aula_04_Elo_Espiritual_Material_Complementar.md` §4, com o motivo.
+
+O princípio que ela ilustrava (a corrente de baixo para cima) **não se perdeu** —
+continua sustentado pela lei redentora (Medicina do Amanhã) e pelos exemplos. O
+plano foi ajustado: o ponto 3 e a pergunta correspondente não citam mais a
+mudança de seita.
+
+**Estrutura final da Aula 4:** 5 fontes (Conversas sobre a Fé; Gokōwa nº 6;
+Medicina do Amanhã; Curso Kannon; 5 exemplos) · **3.073 palavras** (~10 min).
+
+### 11. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
 
 A Aula 6 mantém **325 palavras** duplicadas (3 parágrafos):
 

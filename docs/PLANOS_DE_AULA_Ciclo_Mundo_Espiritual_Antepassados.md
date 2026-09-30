@@ -247,9 +247,10 @@ Mundo Oculto)?" e "Mudanças no Inferno".
    a ligação com os espíritos após a morte e os espíritos guardiões.
 2. *Gokōwa-roku nº 6* (23/04/1949) — **a purificação dos pais alcança os
    filhos** pelo elo ("essa luz alcançará sua filha").
-3. *Gokōwa-roku nº 11* (21/08/1949) — **a conduta dos descendentes afeta os
-   antepassados**, que reagem ("mudar de seita dessa forma irrita os
-   antepassados").
+3. *Medicina do Amanhã* (13/04/1936) — **a lei redentora**: os resíduos da
+   purificação dos antepassados fluem incessantemente para os descendentes —
+   *"Trata-se de uma espécie de lei de expiação cármica, pela qual o descendente,
+   síntese dos ancestrais, compartilha as impurezas dos pecados."*
 4. *Curso Kannon (1~7)* — "Os pecados dos pais lhe são transferidos": a
    **herança espiritual** entre gerações, quem a interrompe (o mérito) e por
    onde ela flui (a medula espinhal — "a fonte de todas as doenças").
@@ -265,6 +266,13 @@ Mundo Oculto)?" e "Mudanças no Inferno".
    "é exatamente como se você estivesse prestando um serviço ao espírito
    ancestral").
 
+> **Fonte removida em 30/09/2026:** *Gokōwa-roku nº 11* (a mudança de seita que
+> irrita os antepassados) — retirada a pedido do usuário por ser confusa para o
+> leitor brasileiro (contexto de seitas japonesas). Preservada em
+> `docs/leituras_integrais/complementar/Aula_04_Elo_Espiritual_Material_Complementar.md`
+> §4. O princípio que ilustrava (a corrente de baixo para cima) continua
+> sustentado pelas Fontes 3 e 5.
+
 **Apoio (opcional):** *Gosuiji-roku nº 29* (15/03/1954) — o descendente
 escolhido como representante para eliminar os pecados dos ancestrais ·
 *Curso Kannon (1~7)* — "Os pecados dos pais lhe são transferidos" ·
@@ -278,20 +286,21 @@ purificação uns dos outros (o elo espiritual do casal é o mais denso).
    explica por que a ligação com os antepassados é permanente.
 2. **A ligação atravessa a morte:** o elo não se limita aos parentes vivos;
    estende-se aos espíritos no mundo espiritual. **Esta é a base do Culto.**
-3. **A corrente vai nos dois sentidos.** De baixo para cima: os descendentes
-   influenciam os antepassados — a oferenda os eleva (Aula 3) e a conduta
-   leviana os irrita (Gokōwa nº 11). De cima para baixo: os antepassados
+3. **A corrente vai nos dois sentidos.** De cima para baixo: os antepassados
    influenciam os descendentes — os já purificados atuam como **espíritos
-   guardiões**, advertindo e protegendo.
-4. **A lei da redenção — a herança espiritual entre gerações.** As nuvens
-   espirituais "vêm dos antepassados"; não é hereditariedade de sangue, é elo
-   espiritual. Os antepassados são julgados e purificados no mundo espiritual,
-   **e os resíduos dessa purificação fluem constantemente pelos descendentes**
-   ("ancestrais – cabeça – medula espinhal – cauda – descendentes"). E **só o
-   mérito interrompe a transmissão**: "se surgir entre eles uma pessoa notável
-   que acumule méritos (toku), esse mérito remove o pecado, interrompe a
-   transmissão e a herança cessa". **Aqui está o porquê do nosso sufrágio** — e
-   a razão de a medula espinhal ser "a fonte de todas as doenças".
+   guardiões**, advertindo e protegendo; e a purificação dos pais alcança os
+   filhos (Gokōwa nº 6). De baixo para cima: os descendentes influenciam os
+   antepassados — a oferenda os eleva (Aula 3) e o mérito interrompe a
+   transmissão da herança espiritual (Curso Kannon).
+4. **A lei redentora — a herança espiritual entre gerações.** Os antepassados são
+   julgados e purificados no mundo espiritual, **e os resíduos dessa purificação
+   fluem incessantemente para os descendentes** — "uma espécie de lei de expiação
+   cármica, pela qual o descendente, síntese dos ancestrais, compartilha as
+   impurezas dos pecados" (Medicina do Amanhã, 1936). O caminho é a linha
+   "ancestrais – cabeça – medula espinhal – cauda – descendentes", até
+   materializar-se em pus — "a causa de todas as doenças". Não é hereditariedade
+   de sangue: é elo espiritual. **E só o mérito interrompe a transmissão**
+   (Curso Kannon). **Aqui está o porquê do nosso sufrágio.**
 5. **Por que o descendente sofre (os exemplos).** Nem todo sofrimento é castigo:
    o antepassado age **para despertar** o descendente e levá-lo a acumular
    méritos — e, assim, poder ascender. Ele faz adoecer (Eiko nº 104, sobretudo
@@ -313,8 +322,8 @@ purificação uns dos outros (o elo espiritual do casal é o mais denso).
   isso revela sobre a responsabilidade de cada um nesta família espiritual?
 - Olhando para trás em situações difíceis da família, é possível ver nelas um
   chamado ao mérito, como diz o ensinamento? (Eiko nº 104, Gosuiji nº 6)
-- Se os antepassados reagem à nossa conduta (como os que se irritaram com a
-  mudança de seita), o que isso muda na forma de vivermos o dia a dia?
+- Se o sofrimento do descendente pode ser um chamado do antepassado que quer ser
+  salvo, o que isso muda na forma de encararmos as dificuldades da família?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa
   para a nossa conduta diária?
 

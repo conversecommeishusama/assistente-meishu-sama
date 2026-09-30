@@ -70,3 +70,22 @@ Por isso, o primeiro-ministro de um país, por exemplo, precisa ser pessoa de gr
 > (casa, objetos, roupas; quanto mais se estima, mais espesso o elo).
 
 Há uma história a respeito: um registro de uma revista espiritual dos Estados Unidos. Certa senhora tinha uma habilidade misteriosa — dizia-se que, através dos objetos, podia saber a fisionomia, a idade e as ações recentes do dono. Ao olhar fixamente para o objeto, a imagem aparecia em sua superfície como uma fotografia; era o elo espiritual que a imprimia. Vê-se, assim, quão profundo e sutil é o movimento do elo espiritual.
+
+---
+
+## 4. Os antepassados reagem à conduta dos descendentes (mudança de seita)
+
+> **Gokōwa-roku nº 11** (21/08/1949) — **Fonte 3 removida da apostila em
+> 30/09/2026 a pedido do usuário**: *"Retire a fonte 3 que fica confusa para os
+> brasileiros."* O diálogo depende de contexto japonês (seitas Shingon e Reiyukai,
+> família principal × secundária, templos budistas) que não faz parte da
+> experiência do leitor brasileiro, e a menção às seitas desviava o foco.
+>
+> **O princípio doutrinário que ele ilustrava continua na apostila por outro
+> caminho** — a corrente de baixo para cima (os antepassados afetados pela
+> conduta dos descendentes) é sustentada pela Fonte 3 (lei redentora) e pela
+> Fonte 5 (os exemplos, em que o antepassado age sobre o descendente).
+
+Interlocutor: A família principal, que era da seita Shingon desde tempos antigos, mudou recentemente para a Reiyukai. A família secundária tornou-se seguidora desta Doutrina e cultua Komyo-Nyorai. Isso pode continuar assim?
+
+Meishu-Sama: Sim, pode. Pelo elo espiritual, a família principal também mudará com o tempo. No entanto, mudar de seita dessa forma irrita os antepassados, e por isso não haverá nada de bom para essa família principal: eles ficarão furiosos e farão algo, e assim acabarão percebendo.

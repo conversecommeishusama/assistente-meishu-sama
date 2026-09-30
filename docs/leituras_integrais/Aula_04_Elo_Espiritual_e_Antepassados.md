@@ -35,15 +35,19 @@ Meishu-Sama: Ah, um espírito estranho a possuiu. Nesse caso, é a mãe que deve
 
 ──────────────────────────────────
 
-**Fonte 3:** Gokōwa-roku nº 11 (21/08/1949) — os antepassados recebem e reagem à conduta dos descendentes.
+**Fonte 3:** Medicina do Amanhã (13/04/1936) — a lei redentora: os resíduos da purificação dos antepassados fluem incessantemente para os descendentes.
 
-Interlocutor: A família principal, que era da seita Shingon desde tempos antigos, mudou recentemente para a Reiyukai. A família secundária tornou-se seguidora desta Doutrina e cultua Komyo-Nyorai. Isso pode continuar assim?
+O indivíduo que vive hoje não é um ser surgido de repente, sem relação alguma com nada. Na verdade, é um ser vivo que existe e respira no ápice da síntese de centenas ou milhares de ancestrais fundidos em um só. Ele é a existência de uma individualidade temporal, de uma vida intermediária que se herda infinitamente. Visto em sentido amplo, é um elo na corrente que liga ancestrais e descendentes; visto em sentido restrito, é também o vínculo que une pais e filhos.
 
-Meishu-Sama: Sim, pode. Pelo elo espiritual, a família principal também mudará com o tempo. No entanto, mudar de seita dessa forma irrita os antepassados, e por isso não haverá nada de bom para essa família principal: eles ficarão furiosos e farão algo, e assim acabarão percebendo.
+Como o corpo físico pertence ao mundo material e o corpo espiritual ao mundo espiritual, quando o corpo físico se deteriora por doença ou velhice e já não pode mais ser usado, o espírito abandona esse corpo — que se tornou matéria inútil — e vai para o mundo espiritual. Lá, deve preparar-se para nascer novamente neste mundo material; essa preparação é o processo espiritual do Johrei. No entanto, a maioria dos seres humanos carrega impurezas consideráveis, decorrentes de atos pecaminosos durante a vida, e, ao enfrentar o julgamento justo e imparcial no mundo espiritual, acaba caindo no mundo do Inferno. Os espíritos que caíram no Inferno avançam passo a passo, ainda que lentamente, através das dificuldades das punições de seus pecados.
+
+Nessa ocasião, **os elementos espirituais impuros — que poderiam ser chamados de resíduos da purificação das impurezas dos pecados — recaem sobre os descendentes que vivem neste mundo material, fluindo incessantemente. Trata-se de uma espécie de lei de expiação cármica, pela qual o descendente, síntese dos ancestrais, compartilha as impurezas dos pecados.** Como isso é uma lei divina do Deus Supremo na constituição de todas as coisas, é inevitável, e o ser humano nada pode fazer senão submeter-se a ela.
+
+Esses elementos espirituais impuros recaem sobre o encéfalo e a medula espinhal do ser humano e fluem incessantemente. No momento em que entram no espírito humano, materializam-se instantaneamente; essa materialização é o pus. Isso se torna a causa de todas as doenças.
 
 ──────────────────────────────────
 
-**Fonte 4:** Curso Kannon (1~7), seção "Os pecados dos pais lhe são transferidos" — a herança espiritual entre gerações e a lei da redenção.
+**Fonte 4:** Curso Kannon (1~7), seção "Os pecados dos pais lhe são transferidos" — a herança espiritual e o que a interrompe.
 
 De onde vêm as nuvens espirituais de todo o corpo humano? Vêm dos antepassados.
 

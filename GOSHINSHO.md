@@ -122,6 +122,11 @@ referência do Zenshū/Rokkan estão em
     e `御垂示録` → **Gosuiji-roku**. Publicadas na mesma data e com o mesmo
     número de fascículo (ex.: n. 3 de 25/11/1951), o mesmo caso pode estar em uma
     e não na outra — conferir sempre o **kanji do título**, não só data e número.
+  - **Convenção `祭`/`祭り` (matsuri) = "Culto"** (decisão do usuário, 30/09/2026):
+    nunca "festival" nem "festa", em nenhum contexto. Registrado no
+    `glossario_traducao.json` (`祭り`, `祭典`, `祭事` → Culto). Já aplicado nas
+    Aulas 3 e 8 do ciclo. Exceção: quando o nome consagrado brasileiro já é
+    "dia de finados" (Obon), mantém-se — só o nome japonês sai.
 - **CORREÇÕES NA LEITURA COLABORATIVA (regra do usuário, 10/09)**: as correções
   de conteúdo vão **somente** para `textos_leitura_colaborativa/` (base editável,
   fora do git) — a promoção para produção acontece depois, em bloco. Não editar
