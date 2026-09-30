@@ -251,11 +251,21 @@ Mundo Oculto)?" e "Mudanças no Inferno".
    antepassados**, que reagem ("mudar de seita dessa forma irrita os
    antepassados").
 4. *Curso Kannon (1~7)* — "Os pecados dos pais lhe são transferidos": a
-   **herança espiritual** entre gerações, que só o mérito (toku) interrompe.
+   **herança espiritual** entre gerações, quem a interrompe (o mérito) e por
+   onde ela flui (a medula espinhal — "a fonte de todas as doenças").
+5. **Exemplos** — o sofrimento do descendente causado pelo antepassado:
+   *Eiko nº 104* (o antepassado faz o descendente adoecer para chegar à fé;
+   "nesses casos, na maioria das vezes, utilizam-se das crianças") ·
+   *Gosuiji-roku nº 6* (o acidente como chamado ao mérito) ·
+   *Mioshie-shū nº 7* (a dor de cabeça como advertência) ·
+   *Gokōwa-roku (Suplemento)* (o antepassado que passa a receber sufrágio e
+   parte agradecido — "vivíamos como vagabundos").
 
-**Apoio (opcional):** *Curso Kannon (1~7)* — "Os pecados dos pais lhe são
-transferidos" · *Luz dos Ensinamentos* (1951) — marido, esposa e filhos podem
-assumir a purificação uns dos outros (o elo espiritual do casal é o mais denso).
+**Apoio (opcional):** *Gosuiji-roku nº 29* (15/03/1954) — o descendente
+escolhido como representante para eliminar os pecados dos ancestrais ·
+*Curso Kannon (1~7)* — "Os pecados dos pais lhe são transferidos" ·
+*Luz dos Ensinamentos* (1951) — marido, esposa e filhos podem assumir a
+purificação uns dos outros (o elo espiritual do casal é o mais denso).
 
 ## Pontos centrais da explicação
 
@@ -269,12 +279,24 @@ assumir a purificação uns dos outros (o elo espiritual do casal é o mais dens
    leviana os irrita (Gokōwa nº 11). De cima para baixo: os antepassados
    influenciam os descendentes — os já purificados atuam como **espíritos
    guardiões**, advertindo e protegendo.
-4. **A herança espiritual entre gerações** ("vêm dos antepassados" — as nuvens
-   espirituais que causam doença). Não é hereditariedade de sangue: é elo
-   espiritual. E **só o mérito o interrompe** — "se surgir entre eles uma pessoa
-   notável que acumule méritos, esse mérito remove o pecado, interrompe a
-   transmissão e a herança cessa". Aqui está o porquê do nosso sufrágio.
-5. **A responsabilidade é nossa:** se a oferenda e a virtude dos descendentes
+4. **A lei da redenção — a herança espiritual entre gerações.** As nuvens
+   espirituais "vêm dos antepassados"; não é hereditariedade de sangue, é elo
+   espiritual. Os antepassados são julgados e purificados no mundo espiritual,
+   **e os resíduos dessa purificação fluem constantemente pelos descendentes**
+   ("ancestrais – cabeça – medula espinhal – cauda – descendentes"). E **só o
+   mérito interrompe a transmissão**: "se surgir entre eles uma pessoa notável
+   que acumule méritos (toku), esse mérito remove o pecado, interrompe a
+   transmissão e a herança cessa". **Aqui está o porquê do nosso sufrágio** — e
+   a razão de a medula espinhal ser "a fonte de todas as doenças".
+5. **Por que o descendente sofre (os exemplos).** Nem todo sofrimento é castigo:
+   o antepassado age **para despertar** o descendente e levá-lo a acumular
+   méritos — e, assim, poder ascender. Ele faz adoecer (Eiko nº 104, sobretudo
+   as crianças), provoca um acidente (Gosuiji nº 6) ou adverte com a dor
+   (Mioshie-shū nº 7). É a pedagogia do antepassado sobre o descendente.
+   O outro lado disso está em Gokōwa (Suplemento): quando finalmente recebe
+   sufrágio, o antepassado se manifesta **agradecido** — antes "vivíamos como
+   vagabundos".
+6. **A responsabilidade é nossa:** se a oferenda e a virtude dos descendentes
    salvam os antepassados, a negligência os mantém sofrendo.
 
 ## Perguntas para o debate
@@ -282,6 +304,8 @@ assumir a purificação uns dos outros (o elo espiritual do casal é o mais dens
 - De que forma vocês já sentiram a proteção ou a influência de um antepassado?
 - *"Se surgir uma pessoa notável que acumule méritos, a herança cessa"* — o que
   isso revela sobre a responsabilidade de cada um nesta família espiritual?
+- Olhando para trás em situações difíceis da família, é possível ver nelas um
+  chamado ao mérito, como diz o ensinamento? (Eiko nº 104, Gosuiji nº 6)
 - Se os antepassados reagem à nossa conduta (como os que se irritaram com a
   mudança de seita), o que isso muda na forma de vivermos o dia a dia?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa

@@ -98,22 +98,77 @@ assumir a purificação uns dos outros.
 Backup: `backups/aula04_foco_antepassados_20260930/` — sha256 do original
 `465faf229dedf91a19f7ef94d1503db8bf6939c3f5a886d3e00af1f6f25fc775`.
 
-### 7. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
+### 7. Ampliação (mesma sessão) — a lei da redenção e os exemplos de encosto
 
-Trabalho autorizado era "renomear e incluir"; a correção da Aula 6 **não** foi
-autorizada e não foi feita. Restam **595 palavras** duplicadas (5 parágrafos):
+> **Pedido do usuário**: *"seria interessante colocar o ensinamento em que ele
+> fala sobre a lei da redenção em que os resíduos da purificação dos antepassados
+> fluem constantemente para os seus descendentes. Coloque também exemplo de
+> outros kowas em que o sofrimento do descendente é causado por herança espiritual
+> ou encosto de algum antepassado."*
+
+**7.1 — A lei da redenção (ampliação da Fonte 4, Curso Kannon).** O "flui
+constantemente" já estava na Fonte 4; faltava o **mecanismo**. Acrescentados:
+
+- os resíduos da purificação dos antepassados **fluem para os descendentes**:
+  *"Essa herança flui constantemente do mundo espiritual. Os antepassados são
+  julgados e purificados ali, e os pecados julgados e lavados fluem para as
+  pessoas do mundo material."*
+- a **linha de transmissão**: *"Ancestrais – cabeça – medula espinhal – cauda –
+  descendentes. Nós, descendentes atuais, somos a cauda."*
+- o desfecho: *"A impureza dos pecados que flui para essa medula espinhal desce e
+  se espalha por várias partes: vai para a cabeça, os olhos, o nariz, o coração,
+  os rins, para qualquer lugar. **A medula espinhal é a fonte de todas as
+  doenças.**"*
+
+**7.2 — Fonte 5 (nova): exemplos de sofrimento do descendente causado pelo
+antepassado.** Quatro kowas, todos inéditos no ciclo:
+
+| Fonte | Data | O que ilustra |
+|---|---|---|
+| **Eiko nº 104**, "Espíritos Ancestrais e a Doença" | 16/05/1951 | O antepassado **faz o descendente adoecer** para chegar à fé: *"apossando-se de algum dos descendentes, fazem-no adoecer. Nesses casos, na maioria das vezes, utilizam-se das crianças."* |
+| **Gosuiji-roku nº 6** | 25/01/1952 | O acidente como **chamado ao mérito**: *"o espírito ancestral, para poder ascender, precisa que os descendentes acumulem méritos com empenho. Então, ele pensa: 'Preciso fazer este cara acordar para isso'."* |
+| **Mioshie-shū nº 7** | 20/03/1952 | A dor de cabeça como **advertência**: *"A forte dor de cabeça foi o espírito ancestral que a advertiu."* |
+| **Gokōwa-roku (Suplemento)** | 01/01/1948 | O antepassado que passa a receber sufrágio **parte agradecido**: antes *"vivíamos como vagabundos, o que era realmente penoso"*; agora, *"estamos verdadeiramente felizes"*. |
+
+Os três primeiros mostram o antepassado **agindo para despertar** o descendente
+(pedagogia: faz adoecer, provoca acidente, adverte com a dor) — e o quarto mostra
+o **desfecho**: quando o sufrágio chega, ele se manifesta agradecido. Fecha o
+arco doutrinário da aula.
+
+**Apoio registrado no plano:** *Gosuiji-roku nº 29* (15/03/1954) — quando os
+pecados dos ancestrais são numerosos, **um descendente é escolhido como
+representante** para eliminá-los rapidamente (a criança que morre e a mãe que
+depois agradece). Não incluído na apostila por tender ao tema de Aula 5/7.
+
+**Resultado da ampliação:** 1.641 → **2.199 palavras** (~7 min); 4 → **6 fontes**
+(a Fonte 5 agrupa 4 exemplos). Duplicação com a Aula 6 caiu de 595 → **325 pal**
+(porque a poda política da Fonte 1 alinhou o parágrafo de hierarquia com o da
+Aula 6 de outra forma). Duplicação com a Aula 7: **zero**. Integridade conferida
+(8 trechos-chave presentes; 0 fora de escopo).
+
+### 8. ⚠️ PENDÊNCIA — a correção recíproca da Aula 6
+
+A Aula 6 mantém **325 palavras** duplicadas (3 parágrafos):
 
 | Parágrafo | Palavras | Pertence a |
 |---|---|---|
 | guardiões / mundo espiritual | 158 | **Aula 4** (tema) |
-| hierarquia social | 209 | **Aula 4** (tema) |
 | religiosos | 64 | **Aula 4** (tema) |
 | deuses e budas / luz | 103 | **Aula 4** (tema) |
-| nascidos com deficiências | 61 | indiferente |
 
-A Aula 6 declara ter tomado "*parte da reencarnação humana*" — mas levou 4
+A Aula 6 declara ter tomado "*parte da reencarnação humana*" — mas levou 3
 parágrafos a mais. A correção natural é devolvê-los à Aula 4 e deixar a Aula 6
 com os parágrafos 5-7 (reencarnação, 406 palavras). **Aguardando decisão.**
+
+### 9. Commits
+
+- `f7846b2a` — reestruturação e renomeação da Aula 4 (8 arquivos)
+- `c888bd17` — consolidação das Aulas 2/3 + revisão literária + 8 DOCX
+  (trabalho de 10/09, 16/09 e 24/09 que estava staged mas nunca foi commitado)
+- Ampliação (seção 7): apostila, plano, `docs/ciclo...`, `textos_avaliacao/` e DOCX
+
+Backup: `backups/aula04_foco_antepassados_20260930/` — sha256 do original
+`465faf229dedf91a19f7ef94d1503db8bf6939c3f5a886d3e00af1f6f25fc775`.
 
 ---
 

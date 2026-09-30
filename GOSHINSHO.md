@@ -111,8 +111,13 @@ referência do Zenshū/Rokkan estão em
     motivo do recorte (nunca é descartado). `glob("Aula_*.md")` nos scripts
     **não é recursivo** — o subdiretório fica fora dos pipelines, de propósito.
   - **Aula 4** (30/09): renomeada `Aula_04_Elo_Espiritual_e_Antepassados.md`,
-    com foco na ligação vivos↔antepassados nos dois sentidos (4 fontes). Ver
-    pendência da correção recíproca da Aula 6 no `HISTORICO.md` (30/09).
+    com foco na ligação vivos↔antepassados nos dois sentidos (6 fontes, 2.199
+    pal): o capítulo do elo, Gokōwa-roku nº 6 e nº 11, a lei da redenção do
+    Curso Kannon (os resíduos da purificação fluem para os descendentes pela
+    linha "ancestrais – cabeça – medula espinhal – cauda") e 4 exemplos de
+    sofrimento por herança espiritual/encosto ancestral (Eiko nº 104,
+    Gosuiji-roku nº 6, Mioshie-shū nº 7, Gokōwa Suplemento). Ver pendência da
+    correção recíproca da Aula 6 no `HISTORICO.md` (30/09), seção 8.
 - **CORREÇÕES NA LEITURA COLABORATIVA (regra do usuário, 10/09)**: as correções
   de conteúdo vão **somente** para `textos_leitura_colaborativa/` (base editável,
   fora do git) — a promoção para produção acontece depois, em bloco. Não editar

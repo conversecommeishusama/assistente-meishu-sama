@@ -244,7 +244,8 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 
 **Fontes**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
 Espiritual"**; *Gokōwa-roku nº 6* (19490423) e *nº 11* (19490821); *Curso
-Kannon (1~7)*, seção "Os pecados dos pais lhe são transferidos".
+Kannon (1~7)*, seção "Os pecados dos pais lhe são transferidos"; *Eiko nº 104*,
+*Gosuiji-roku nº 6*, *Mioshie-shū nº 7* e *Gokōwa-roku (Suplemento)* (exemplos).
 
 > "A expressão 'elo espiritual' parece ter sido pouco usada até hoje. Isso porque
 > sua importância ainda não era conhecida — trata-se de algo mais rarefeito que o
@@ -270,7 +271,7 @@ De cima para baixo (Gokōwa-roku nº 6) — a purificação dos pais alcança os
 > elo espiritual, a filha também melhorará. Primeiro, você mesma deve acumular
 > mérito; com isso, sua alma brilhará, e essa luz alcançará sua filha."
 
-**A herança espiritual e o que a interrompe** (Curso Kannon):
+**A herança espiritual, a lei da redenção e o que a interrompe** (Curso Kannon):
 
 > "Entre os antepassados e as pessoas de hoje há uma conexão por um elo
 > espiritual (reisen). A medicina chama isso de hereditariedade, mas, como há
@@ -279,7 +280,27 @@ De cima para baixo (Gokōwa-roku nº 6) — a purificação dos pais alcança os
 >
 > Ainda assim, trata-se de algo absoluto; se, porém, surgir entre eles uma pessoa
 > notável que acumule méritos (toku), esse mérito remove o pecado, interrompe a
-> transmissão e a herança cessa."
+> transmissão e a herança cessa. **Essa herança flui constantemente do mundo
+> espiritual. Os antepassados são julgados e purificados ali, e os pecados
+> julgados e lavados fluem para as pessoas do mundo material.**
+>
+> Ancestrais – cabeça – medula espinhal – cauda – descendentes. Nós, descendentes
+> atuais, somos a cauda. [...] A impureza dos pecados que flui para essa medula
+> espinhal desce e se espalha por várias partes: vai para a cabeça, os olhos, o
+> nariz, o coração, os rins, para qualquer lugar. A medula espinhal é a fonte de
+> todas as doenças."
+
+**Exemplos — o sofrimento do descendente causado pelo antepassado** (Eiko nº 104):
+
+> "Os espíritos ancestrais de cada família vão gradualmente compreendendo que,
+> exceto a nossa Igreja, não existe religião que verdadeiramente salve. Por isso,
+> pensam em agarrar-se à nossa Igreja de qualquer maneira [...] Assim, apossando-se
+> de algum dos descendentes, fazem-no adoecer. Nesses casos, na maioria das vezes,
+> utilizam-se das crianças."
+
+(Gosuiji-roku nº 6): "Coisas assim acontecem porque o espírito ancestral, para poder
+ascender, precisa que os descendentes acumulem méritos com empenho. Então, ele
+pensa: 'Preciso fazer este cara acordar para isso', e por isso acontece."
 
 ## 📝 Observações para o dirigente
 
@@ -291,14 +312,23 @@ De cima para baixo (Gokōwa-roku nº 6) — a purificação dos pais alcança os
    os antepassados afetam os descendentes (espíritos guardiões; as nuvens
    espirituais que causam doença). **Isto é a base doutrinária do sufrágio.**
 3. **Espíritos guardiões**: antepassados já purificados protegem os descendentes.
-4. **A herança espiritual entre gerações** — e que **só o mérito a interrompe**.
-   É o argumento mais direto do ciclo em favor do Culto: a pessoa que acumula
-   méritos corta a transmissão do sofrimento para toda a linhagem.
+4. **A lei da redenção — os resíduos fluem constantemente.** Os antepassados são
+   julgados e purificados no mundo espiritual, e **os pecados julgados e lavados
+   fluem para os descendentes**, pela linha "ancestrais – cabeça – medula
+   espinhal – cauda – descendentes". Daí "a medula espinhal é a fonte de todas as
+   doenças". E **só o mérito interrompe a transmissão** — o argumento mais direto
+   do ciclo em favor do Culto.
+5. **Por que o descendente sofre**: o antepassado age **para despertá-lo** e
+   levá-lo a acumular méritos, e assim poder ascender — fazendo adoecer (Eiko
+   nº 104), provocando um acidente (Gosuiji nº 6) ou advertindo com a dor
+   (Mioshie-shū nº 7).
 
 **Perguntas sugeridas:**
 - De que forma vocês já sentiram a "proteção" ou a "influência" de um antepassado?
 - Se uma pessoa que acumula méritos interrompe a herança do sofrimento da
   linhagem, o que isso revela sobre a nossa responsabilidade hoje?
+- Olhando para trás em situações difíceis da família, é possível ver nelas um
+  chamado ao mérito, como diz o ensinamento?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa
   para a nossa conduta diária?
 

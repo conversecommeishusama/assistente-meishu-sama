@@ -43,12 +43,36 @@ Meishu-Sama: Sim, pode. Pelo elo espiritual, a família principal também mudar�
 
 ──────────────────────────────────
 
-**Fonte 4:** Curso Kannon (1~7), seção "Os pecados dos pais lhe são transferidos" — a herança espiritual entre gerações.
+**Fonte 4:** Curso Kannon (1~7), seção "Os pecados dos pais lhe são transferidos" — a herança espiritual entre gerações e a lei da redenção.
 
 De onde vêm as nuvens espirituais de todo o corpo humano? Vêm dos antepassados.
 
 Entre os antepassados e as pessoas de hoje há uma conexão por um elo espiritual (reisen). A medicina chama isso de hereditariedade, mas, como há casos em que essa hereditariedade de fato não ocorre, a teoria hereditária não se tornou absoluta.
 
 Ainda assim, trata-se de algo absoluto; se, porém, surgir entre eles uma pessoa notável que acumule méritos (toku), esse mérito remove o pecado, interrompe a transmissão e a herança cessa. Essa herança flui constantemente do mundo espiritual. Os antepassados são julgados e purificados ali, e os pecados julgados e lavados fluem para as pessoas do mundo material. Quando os antepassados saem do mundo espiritual e se apegam, é porque, por não terem tido fé em vida, mesmo indo para o mundo espiritual não têm grupo ao qual pertencer nem para onde ir e, sem alternativa, saem e se apegam aos próprios filhos, causando doenças.
+
+Ancestrais – cabeça – medula espinhal – cauda – descendentes. Nós, descendentes atuais, somos a cauda. Tanto homens quanto mulheres são descendentes, e é daí que ela vem. A impureza dos pecados que flui para essa medula espinhal desce e se espalha por várias partes: vai para a cabeça, os olhos, o nariz, o coração, os rins, para qualquer lugar. A medula espinhal é a fonte de todas as doenças.
+
+──────────────────────────────────
+
+**Fonte 5:** Exemplos — o sofrimento do descendente causado pelo antepassado.
+
+**5.1 — Eiko nº 104 (16/05/1951), "Espíritos Ancestrais e a Doença": o antepassado faz o descendente adoecer para chegar à fé.**
+
+Que a causa da doença reside, por vezes, na interferência do espírito ancestral, compreende-se claramente pelo relatório abaixo transcrito: "A disenteria bacilar grave foi curada com algumas sessões de Johrei". Atualmente, no mundo espiritual, os espíritos ancestrais de cada família vão gradualmente compreendendo que, exceto a nossa Igreja, não existe religião que verdadeiramente salve. Por isso, pensam em agarrar-se à nossa Igreja de qualquer maneira, empregando os mais diversos meios. Para isso, precisam primeiro salvar a família de seus próprios descendentes. Assim, apossando-se de algum dos descendentes, fazem-no adoecer. Nesses casos, na maioria das vezes, utilizam-se das crianças.
+
+**5.2 — Gosuiji-roku nº 6 (25/01/1952): o antepassado provoca o sofrimento para despertar o descendente.**
+
+Interlocutor: "Há algum tempo, um seguidor meu estava tentando derramar metal fundido em um molde e, devido à umidade no recipiente, houve uma explosão repentina. O metal saltou para o olho dele e solidificou-se atrás da pálpebra."
+
+Meishu-Sama: Isso vai sarar, completamente. Se tivesse ido ao médico, não teria jeito nenhum. Coisas assim acontecem porque o espírito ancestral, para poder ascender, precisa que os descendentes acumulem méritos com empenho. Então, ele pensa: "Preciso fazer este cara acordar para isso", e por isso acontece.
+
+**5.3 — Mioshie-shū nº 7 (20/03/1952): a dor de cabeça como advertência do antepassado.**
+
+Meishu-Sama: Se a própria pessoa se desculpar de todo o coração, isso a cura. O Johrei é excelente, mas isto é a repreensão. Já que ela se tornou fiel — não, já que ela foi salva pelo Johrei da Igreja Messiânica —, ou seja: eu apresento o meu método; se ela não o seguir exatamente, não há como ser salva. Por isso é que ela precisa se desculpar. **A forte dor de cabeça foi o espírito ancestral que a advertiu.** Como ela não percebeu nem assim, o ventre acabou inchando. Mas, se a própria pessoa não se desculpar de coração, não adianta.
+
+**5.4 — Gokōwa-roku (Suplemento), 01/01/1948: a alegria do antepassado que passa a receber sufrágio.**
+
+Interlocutor: Aconteceu o seguinte. Uma mulher que, outro dia, em Beppu, recebeu o Ohikari passou, desde então, a cultuar os antepassados com todo o coração. Cerca de um mês depois, em certo dia, enquanto recitava os sutras, um espírito a possuiu. Nesse exato momento, o marido dela subiu do andar de baixo; assim que ele perguntou ao espírito, viu-se que era a mãe. Ela disse o seguinte: "Nós, até agora, não recebíamos sufrágios adequados e, no mundo espiritual, vivíamos como vagabundos, o que era realmente penoso. Desta vez, recebemos o valioso Ohikari e vocês nos sufragaram muito bem; estamos verdadeiramente felizes. De agora em diante, peço que continuem a nos sufragar, sem nunca se afastarem deste Caminho." Tendo dito isso, ela partiu, segundo consta.
 
 ──────────────────────────────────
