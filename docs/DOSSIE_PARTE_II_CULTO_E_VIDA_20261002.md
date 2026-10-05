@@ -185,18 +185,45 @@ e a quietude do coração.
 
 ### 14.3 Vestimenta dos oficiantes
 
-A única norma que o acervo registra é a doutrina da cor, não um vestuário
-diferenciado por tipo de unidade. Explicando a simbólica tradicional num
-questionário de 1949:
+Havia veste ritual prescrita, e ela exige correção do que a primeira versão deste
+levantamento registrava. A fonte mais direta é uma consulta de 1948 sobre o rito de
+fundação do terreno, em que Meishu-Sama responde de forma imperativa:
 
-> 「白は清浄の色で、**神主の着る白衣は浄衣という**。」
+> 「――地鎮祭はどういたしましょうか。
+> 地鎮祭の祝詞はできてます。**これはやったほうがよい**。これをやれば霊界で神の
+> 許しをうけることになり、浄められて障りが消える。**祭服を着てやる。習う必要が
+> あります。**」
+> — 「質問応答 御光話」, `search1/situmon/m230218.html`
 
-*"O branco é a cor da pureza; a veste branca que o sacerdote xintoísta usa chama-se
-veste de purificação (jōe)."*
+*"— E quanto ao rito de fundação do terreno? — O norito do rito já está pronto.
+**É melhor fazê-lo.** Fazendo-o, recebe-se no mundo espiritual a permissão de Deus,
+e a impureza é removida. **Faz-se vestindo a veste ceremonial (祭服). É preciso
+aprender.**"*
 
-Não há no acervo prescrição de paramento próprio para oficiantes por tipo de
-unidade, nem menção a 祭服, 狩衣 ou 袴 como obrigação. As descrições de culto de
-que dispomos mencionam os oficiantes por nome e função, não por traje.
+Três informações: o rito deve ser celebrado; usa-se **veste ceremonial**; e o
+paramento exige **aprendizado** — não era de conhecimento comum. Isso qualifica
+materialmente o que a Parte I registrou sobre a formação: o "saber ler o manual em
+voz alta" não esgotava a instrução, havia protocolo ritual a transmitir.
+
+Sobre a cor, a doutrina é de **escala**, não de uniformidade:
+
+> 「白装束、白頭巾っていうのはね、**神主の服装**なんです。そして神主もそうですが、
+> **白が一番下で、だんだん青、紫っていうふうになって行く**んです。**霊界でも
+> そうなんですね、一番上は紫**なんです。」
+> — 「質問応答」, `search1/situmon/m240799.html`
+
+*"A veste branca com capuz branco é a indumentária do sacerdote xintoísta. E também
+para o sacerdote, **o branco é o grau mais baixo, e vai passando ao azul, ao
+violeta**. **No mundo espiritual também é assim: o mais alto é o violeta.**"*
+
+O contexto é notável: a resposta explica um sonho em que um ancestral, tendo
+alcançado divindade menor, aparece de 白装束 e 白頭巾. A cor, portanto, não era
+ornamento — **indicava grau**, e o código valia tanto no ritual quanto na hierarquia
+espiritual.
+
+**O que permanece em aberto:** não há inventário exaustivo de paramentos por tipo de
+unidade, nem menção a 狩衣 ou 袴. Há veste prescrita, com escala cromática por grau
+e exigência de aprendizado; não há catálogo.
 
 ### 14.4 Configuração do tokonoma
 
@@ -401,7 +428,63 @@ salvos); e o estado dos ancestrais determina, por correspondência especular, o
 estado dos vivos — o que faz do sufrágio uma operação de interesse direto da
 família, e não um dever de piedade.
 
-### 16.5 A festa no dia 15 de agosto
+### 16.5 Correção: são dois ritos, não um
+
+A primeira versão desta seção registrava que o rito de sufrágio não tinha
+documentação. **Estava errado**, e a razão do erro é instrutiva: eu procurava o
+conceito ("rito de sufrágio") em vez do nome. O acervo usa **dois termos distintos**,
+para duas cerimônias distintas, e ambos estão bem documentados.
+
+**`御霊祭` — a entronização da Imagem.** As 16 ocorrências estão invariavelmente
+ligadas ao ato de receber o objeto de culto:
+
+> 「去る六月の十一日に**光明如来様を迎える事となり**、宗宮先生に来て戴き、
+> **御霊祭をして戴きました**。ちょうど祝詞をお唱え致している時……全身にふるえが来て
+> 手は合掌致し、口を開き始めました。」
+> — 「祖霊との交わり」, `search1/so/sorei05.html`
+
+> 「**経緯の御書体を御迎え致し**、岐阜から清水先生を迎え賑かに**御霊祭を執行
+> 致しました**。」
+> — 「不治の喘息快癒す」『地上天国』3号, 20 de abril de 1949 ·
+> `search2/okage/haho/qhujino4.html`
+
+É, portanto, o **rito de consagração do objeto**, ministrado por um dirigente no
+momento em que a família recebe a Imagem — não o sufrágio dos ancestrais.
+
+**`先祖祭` — o sufrágio dos antepassados.** 40 ocorrências, e a natureza é outra:
+é **recorrente** e acontece **no altar doméstico**:
+
+> 「八月八日には中教会に参拝して屏風観音様を戴き、十日に小柳先生に**先祖祭りも
+> 頂き、九月十日第二回の先祖祭を頂き**、種々**先祖の霊の向上と供養**の重大な
+> お話を聞かせて貰い」
+> — `search1/ka/kantan.html`, 28 de novembro de 1951
+
+Duas coisas importam. A primeira é a **repetição** — a segunda ocorrência vem um mês
+depois da primeira; não é rito de uma só vez. A segunda é a **finalidade**: "elevação
+e sufrágio dos ancestrais", exatamente o que a pergunta buscava. E o lugar é o altar
+da casa:
+
+> 「長崎市小瀬町信徒杉本暎弘さん方**仏壇に向かい、先祖祭の際**、後方参拝中の前記
+> 暎弘さんに神霊らしき憑霊あり、次のごとき問答および処置を採りましたが……」
+> — 『御垂示』, `search1/situmon/situmo35.html`
+
+Este documento merece atenção: descreve um fenômeno espiritual ocorrido **durante** um
+`先祖祭`, com o protocolo que se adotou e a instrução que Meishu-Sama deu a respeito.
+Não é apenas o rito que está documentado — está documentado também o procedimento
+para um caso anômalo dentro dele.
+
+**O quadro correto:**
+
+| Rito | Japonês | O que é | Quando | Onde | Evidência |
+|---|---|---|---|---|---|
+| Entronização | **御霊祭** | instalação do objeto de culto | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
+| Sufrágio | **先祖祭** | elevação dos ancestrais | **recorrente** | altar doméstico | 40 ocorrências |
+
+**O que continua sem fonte:** que o `先祖祭` fosse celebrado **na Sede Geral**. As
+evidências apontam para o altar doméstico e para a intervenção de um dirigente
+local. Mas agora a pergunta pode ser formulada com precisão — e é outra pergunta.
+
+### 16.6 A festa no dia 15 de agosto
 
 Um dado institucional que merece registro: a igreja escolheu deliberadamente o 15 de
 agosto para um de seus cultos, explorando a coincidência com o Bon. O mesmo texto
@@ -1204,28 +1287,40 @@ proporcional com verificação.**
 
 Para que o levantamento não confunda ausência de fonte com ausência de prática,
 registro o que **não** foi encontrado no acervo consultado. Não são conclusões
-negativas; são pontos em que o corpus não se pronuncia:
+negativas; são pontos em que o corpus não se pronuncia.
+
+> **Revisão de 05/10/2026.** Voltei a estas lacunas com o índice completo
+> reconstruído e vocabulário alternativo. **Duas estavam erradas** e uma tem
+> reviravolta — ver `NOTA_FECHAMENTO_LACUNAS_20261005.md` para o detalhamento.
+> O quadro abaixo já reflete a revisão.
 
 | Pergunta | Situação no acervo |
 |---|---|
 | Desenho da Imagem por tipo de unidade | Sem fonte. Só há o critério de **tamanho** (大中小) por proporção ao tokonoma |
 | Imagem escrita por terceiro | Sem fonte direta. Resposta **inferida** de dois princípios (representação e escrita como Luz) |
-| Água, sal e arroz lavado como oferendas | Sem fonte. Nem o regulamento nem os relatos de culto os mencionam |
+| Água, sal e arroz lavado como oferendas | **Reviravolta.** Meishu-Sama **criticava** a forma crua e arcaica de ofertar arroz e água (御講話, 07/12/1953); mas **instruía** oferecer água diante do altar dos espíritos. O **sal** não aparece em nenhum contexto |
 | Oferendas no culto diante da caligrafia Komyo | Sem fonte. Há fonte para o culto matinal e vesperal; não para oferendas |
-| Oratório de antepassados nas unidades | Sem fonte. Todas as ocorrências são de altar **doméstico** |
+| Oratório de antepassados nas unidades | Sem fonte. As 577 ocorrências de 仏壇 são todas de altar **doméstico** |
 | Lugar de consagração usado por Meishu-Sama | Sem fonte |
-| Rito de sufrágio na Sede Geral | Sem fonte |
-| Vestimenta própria dos oficiantes | Sem fonte. Só a doutrina da cor branca e o 白衣/浄衣 do sacerdote xintoísta |
+| ~~Rito de sufrágio na Sede Geral~~ | ❌ **Corrigido:** o rito **existe e está documentado** — é o `先祖祭`, distinto da entronização da Imagem. Ver §16.6 |
+| ~~Vestimenta própria dos oficiantes~~ | ❌ **Corrigido:** há **祭服** prescrita para o 地鎮祭, com exigência de aprendizado, e escala cromática branco→azul→violeta por grau. Ver §14.5 |
 | Regras de orientação do tokonoma | Sem fonte. Só o critério de proporção e o uso litúrgico |
-| Remuneração dos ministros de dedicação integral | Sem fonte |
-| Dízimo | Sem fonte. Termo ausente do acervo em contexto religioso |
-| Glúten, trigo, intolerâncias | Sem fonte |
+| Remuneração dos ministros de dedicação integral | Sem fonte. `給料`/`俸給`/`月給` ocorrem, mas **todas em contexto de emprego secular** |
+| Dízimo | Sem fonte. As 149 ocorrências de `十分の一` são todas medidas de temperatura, proporções ou legislação — **nenhuma religiosa** |
+| Glúten, trigo, intolerâncias | Sem fonte. As 134 ocorrências de `小麦` são todas de **lavoura**, nunca de alimentação |
 
 Duas dessas lacunas merecem comentário. A ausência de documentação sobre **remuneração
 dos ministros** é a mais séria, porque sem ela não se pode descrever a economia da
-dedicação integral. E a ausência de **dízimo** é a mais significativa em termos
-doutrinários, porque, sendo o dízimo a forma mais difundida de financiamento
-religioso, sua ausência num corpus desta extensão indica escolha, não descuido.
+dedicação integral — e a exigência de dedicação exclusiva, documentada na Parte I
+(§5.7), fica sem explicação material. E o silêncio sobre **dízimo** é mais forte do
+que eu havia registrado: não é apenas que Meishu-Sama não falasse do assunto, é que
+a palavra, no sentido religioso, **não existe** num corpus de 18.832 páginas que
+inclui regulamento financeiro e centenas de relatos com valores em ienes. Isso indica
+escolha deliberada, não descuido.
+
+Vale registrar também o que **não é** lacuna: a pergunta sobre o que Meishu-Sama
+acharia de oferecer arroz cru e água tem resposta, e ela é negativa. A dificuldade
+não estava na ausência de fonte, mas no vocabulário com que eu a procurei.
 
 ---
 
@@ -1272,3 +1367,12 @@ seguem o formato `veículo, número, data · caminho`, conforme convenção defi
 | 観音教団とは何ぞや | 1948-09-05 | `search1/ka/kannon12.html` |
 | 秋季大祭の記 | 1952-10-08 | `search2/kikou2/syukitai.html` |
 | 自観大先生の御日常 (井上茂登吉) | 1949-05-30 | `search2/kikou2/jikan02.html` |
+| 御講話 (sobre o formalismo xintoista) | 1953-12-07 | `search1/kouwa/s281207.html` |
+| 質問応答 御光話 (地鎮祭, 祭服) | 1948-02-18 | `search1/situmon/m230218.html` |
+| 質問応答 (escala de cores da veste) | s/d | `search1/situmon/m240799.html` |
+| 祖霊との交わり | s/d | `search1/so/sorei05.html` |
+| 不治の喘息快癒す | 1949-04-20 | `search2/okage/haho/qhujino4.html` |
+| 病根絶つ観音力 | 1949-05-14 | `search2/okage/haho/qbyokon1.html` |
+| 先祖祭 (relato) | 1951-11-28 | `search1/ka/kantan.html` |
+| 御垂示 (先祖祭, caso anômalo) | s/d | `search1/situmon/situmo35.html` |
+| 神の御教え (oferta de água) | 1952-05-25 | `search2/kikou2/kami07.html` |

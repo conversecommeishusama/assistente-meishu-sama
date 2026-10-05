@@ -1,6 +1,29 @@
 # A difusão na época de Meishu-Sama — estrutura das unidades, formação e hierarquia
 
-**Data:** 2026-09-30
+> ## ⚠️ DOCUMENTO SUPERADO — REGISTRO HISTÓRICO
+>
+> **Esta é a primeira versão do levantamento, mantida apenas como histórico do
+> desenvolvimento do trabalho.** Ela foi escrita em formato de tópicos e com
+> referências ao 岡田茂吉全集, o que contraria a orientação de direitos autorais
+> adotada depois.
+>
+> **Para uso atual, consulte:**
+> - **Parte I** — `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md`
+> - **Parte II** — `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md`
+> - **Volume único para impressão** — `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf`
+> - **Índice geral** — `DOSSIE_DIFUSAO_INDICE.md`
+>
+> A Parte I preserva todo o conteúdo factual verificado nesta versão,
+> converteu as 59 referências do 全集 para o acervo rattail, reescreveu o texto
+> em prosa e corrigiu três erros de transcrição. As seções de método e corpus
+> abaixo (seção 0) foram substituídas — ver a Parte I, "Nota de método".
+>
+> **O que só existe aqui:** o percurso da pesquisa — as hipóteses que se
+> mostraram erradas, as lacunas que depois se resolveram (a substituição das
+> duas nomenclaturas de grau) e as que permanecem. É útil para entender *por
+> que* o levantamento final tem a forma que tem.
+
+**Data:** 2026-09-30 (primeira versão)
 **Pergunta de pesquisa:** como era a difusão na época de Meishu-Sama, sobretudo no
 pós-guerra (período de liberdade religiosa); como abriam e se estruturavam as unidades
 religiosas (próprias, alugadas, casa de fiéis); quais os tipos de unidade e suas
@@ -9,9 +32,8 @@ estrutura funcional e hierárquica; como se formavam novos membros; e como eram 
 atividades em torno de Meishu-Sama e dos Paraísos Terrestres.
 
 > **Aviso de licenciamento.** Os documentos citados são material de terceiros
-> protegido por direitos autorais. Este dossiê é **nota de pesquisa interna** — não é
-> publicação. Ver `docs/02_decisoes_pendentes.md` e
-> `referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/`.
+> protegido por direitos autorais. Este levantamento é **nota de pesquisa interna**
+> — não é publicação.
 
 ---
 

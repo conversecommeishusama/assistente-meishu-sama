@@ -3,9 +3,42 @@
 > **Data:** 05/10/2026 (trabalho executado em 02/10/2026)
 > **Pedido original:** *"gostaria de produzir um material sobre como era a difusão
 > na época de Meishu-Sama como o que fez sobre Meishu-Sama e a Arte"* — depois
-> ampliado com **8 apontamentos** corretivos e **28 perguntas de pesquisa novas.
-> **Estado:** ✅ **concluído e verificado**. O que resta são decisões suas
-> (seção 5) e caminhos opcionais (seção 6).
+> ampliado com **8 apontamentos** corretivos e **28 perguntas de pesquisa novas**.
+> **Estado:** ✅ **concluído e verificado**, e revisado em 05/10 (v. seção 9).
+
+---
+
+## 9. Revisão de 05/10/2026
+
+Quatro decisões foram tomadas pelo usuário e executadas:
+
+1. **Documento de 30/09 mantido** como histórico do desenvolvimento. Recebeu um
+   aviso no cabeçalho apontando para as versões atuais.
+2. **PDF versionado** — exceção à convenção do repositório, por ser o artefato de
+   impressão com fontes embutidas.
+3. **As 12 lacunas foram exploradas.** Resultado em
+   `docs/NOTA_FECHAMENTO_LACUNAS_20261005.md`: **duas lacunas estavam erradas**.
+   - `先祖祭` (sufrágio dos antepassados) **existe**: 40 ocorrências, recorrente,
+     no altar doméstico — e é distinto de `御霊祭` (entronização da Imagem, 16
+     ocorrências).
+   - Há **`祭服`** prescrita para o 地鎮祭, com exigência de aprendizado, e
+     escala cromática branco→azul→violeta por grau.
+   - Reviravolta: sobre oferecer arroz cru e água, Meishu-Sama **criticava**
+     essa forma arcaica (07/12/1953) — mas **instruía** oferecer água ao altar
+     dos espíritos.
+   A Parte II ganhou as subseções §14.3 e §16.5, e a §22 foi reescrita.
+4. **`/var/www/rattail/` virou repositório git.** Política: preserva-se o trabalho
+   intelectual (4,1 MB), não os corpos documentais (8,3 GB, reconstruíveis das
+   URLs).
+
+Nessa passagem descobriu-se que o **índice base não tinha script de geração** —
+`rattail.json` era um artefato órfão. Foi escrito o `work/construir_indice.py`,
+conferido contra o anterior: 0 entradas perdidas, 3 recuperadas.
+
+**Lição registrada:** as duas lacunas erradas nasceram do mesmo defeito — buscar
+*o termo que eu supunha* e concluir pela ausência do assunto. Um termo ausente não
+é um assunto ausente. E contar ocorrências não basta: `十分の一` tem 149, nenhuma
+no sentido de dízimo.
 
 ---
 

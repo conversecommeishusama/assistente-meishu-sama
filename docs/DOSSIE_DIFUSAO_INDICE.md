@@ -112,4 +112,61 @@ antes de qualquer publicação.
 `LEVANTAMENTO_DIFUSAO_POS_GUERRA_20260930.md` é a **primeira versão**, em formato
 de tópicos e com referências ao 全集. Está **superada** pela Parte I, que preserva
 todo o conteúdo factual verificado, converte as referências e reescreve em prosa.
-Mantida apenas como registro do percurso da pesquisa.
+
+**Mantida deliberadamente como registro histórico do desenvolvimento do trabalho**
+(decisão do usuário, 05/10/2026). Seu valor hoje é o percurso da pesquisa: as
+hipóteses que se mostraram erradas, as lacunas que depois se resolveram e as que
+permanecem. Quem for usar o material deve começar pela Parte I.
+
+O cabeçalho do arquivo traz um aviso nesse sentido.
+
+## Decisões registradas (05/10/2026)
+
+| Item | Decisão |
+|---|---|
+| Documento de 30/09 | **Mantido** como histórico do desenvolvimento |
+| PDF no repositório | **Mantido** — exceção à convenção, por ser o artefato de impressão com fontes embutidas |
+| Explorar as 12 lacunas | **Feito** — ver `NOTA_FECHAMENTO_LACUNAS_20261005.md` |
+| Acervo rattail como repo git | **Feito** — `/var/www/rattail/` é repositório git desde 05/10/2026 |
+
+---
+
+## Fechamento das lacunas (05/10/2026)
+
+`NOTA_FECHAMENTO_LACUNAS_20261005.md` revisita as 12 lacunas da Parte II com o
+índice completo reconstruído. Resultado: **duas estavam erradas** e uma tem
+reviravolta doutrinária.
+
+**As duas correções:**
+
+| Lacuna que eu registrava | O que o acervo tem |
+|---|---|
+| Rito de sufrágio dos antepassados — "sem fonte" | Existe e tem nome: **`先祖祭`**, 40 ocorrências, recorrente, no altar doméstico. Distinto de **`御霊祭`**, que é a entronização da Imagem (16 ocorrências) |
+| Vestimenta dos oficiantes — "sem fonte" | Há **`祭服`** prescrita para o 地鎮祭, com exigência de aprendizado, e escala cromática branco→azul→violeta por grau |
+
+**A reviravolta:** sobre oferecer arroz cru e água, Meishu-Sama **criticava**
+precisamente essa forma arcaica (御講話, 07/12/1953) — mas **instruía** oferecer
+água diante do altar dos espíritos. A dificuldade nunca foi falta de fonte: era
+eu procurar o conceito em vez do nome.
+
+Por isso a Parte II ganhou as subseções **§14.3** (vestimenta) e **§16.5** (os
+dois ritos), e a §22 foi reescrita.
+
+---
+
+## O acervo rattail agora é repositório git
+
+`/var/www/rattail/` passou a ser versionado em 05/10/2026. A política: **preserva-se
+o trabalho intelectual, não os corpos documentais**.
+
+| Versionado (4,1 MB) | Ignorado (8,3 GB, reconstruível) |
+|---|---|
+| `work/*.py` — 17 ferramentas | `pdf_rattail/` — 307 fac-símiles |
+| `indice/kyoshu_yoko_ocr2.txt` | `textos_rattail/estruturado/`, `paginas/` |
+| `pesquisa/` — 17 relatórios | `work/rattail.json` (129 MB) |
+| `textos_rattail/urls_*.txt` | `work/rattail_datas.json` (1,8 MB) |
+
+Uma lacuna grave foi fechada nessa passagem: **o índice base não tinha script de
+geração**. `rattail.json` era um artefato órfão — não podia ser reconstruído nem
+auditado. Escrevi o `work/construir_indice.py`, conferido contra o índice
+anterior: **0 entradas perdidas, 3 recuperadas**.
