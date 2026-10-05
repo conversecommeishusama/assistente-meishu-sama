@@ -7,6 +7,151 @@
 
 ---
 
+## 02/10 — DOSSIÊ: A DIFUSÃO NA ÉPOCA DE MEISHU-SAMA (Partes I e II)
+
+> **Pedido do usuário**: *"gostaria de produzir um material sobre como era a
+> difusão na época de Meishu-Sama"* — depois corrigido com **8 apontamentos** e
+> ampliado com **28 perguntas de pesquisa novas**.
+> **Entregável**: `docs/DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` (55 páginas A4).
+> **Handoff**: `HANDOFF_DOSSIE_DIFUSAO_20261002.md`.
+
+### 1. Os 8 apontamentos do usuário — o que exigiam
+
+O primeiro rascunho foi rejeitado por oito motivos. Vale registrá-los, porque
+definem o padrão de qualidade que o projeto exige de material de pesquisa:
+
+| # | Pedido | Como foi resolvido |
+|---|---|---|
+| 1 | Traduzir todo o japonês | Todo bloco japonês tem tradução ao lado |
+| 2 | Fonte + data em cada referência | Formato `『veículo』nº, data · caminho` |
+| 3 | Escrever **em prosa**, não em tópicos | Reescrito inteiro; tabelas só como apoio |
+| 4 | Verificar todo o conteúdo | Dois verificadores automáticos (§4) |
+| 5 | **Nunca citar o Zenshu** (direitos autorais) | 59/59 referências convertidas |
+| 6 | Fonte do rattail em pasta própria | `/var/www/rattail/` com `README.md` |
+| 7 | Não usar OCR corrompido | OCR refeito + fallback por HTML limpo (§5) |
+| 8 | Responder 28 perguntas novas | Parte II, seções 13–21 |
+
+O apontamento 5 tinha uma premissa do usuário — *"as referências usadas do
+Zenshu possuem correspondência no rattail"* — que **se confirmou**: o mapa de
+correspondência chegou a 95% de cobertura.
+
+### 2. Descoberta estrutural: a conversão semântica de referências
+
+Converter 59 referências de um corpus para outro é trivial se houver mapa de
+datas — mas o mapa direto falhou em 13 casos, e a razão foi instrutiva: o
+Zenshu data cada seção pela **data da palestra**; o acervo rattail indexa pela
+**data de publicação**. São datas diferentes.
+
+A solução foi inverter a abordagem: em vez de mapear data→arquivo, **localizar
+o próprio texto citado no acervo**. Para cada citação datada, o bloco japonês
+que a antecede é extraído e procurado no corpus. Isso é exato — não depende de
+o arquivo estar datado corretamente.
+
+Estratégia final, em ordem de confiabilidade:
+1. **conteúdo** — localiza o trecho citado (28 casos)
+2. **mapa cronológico** — data da palestra → arquivo (27 casos)
+3. **data de publicação** da página (2 casos)
+4. **granularidade mensal** — para datas só com mês (2 casos)
+
+Resultado: **59 de 59**, zero resíduo.
+
+### 3. Achados principais da pesquisa
+
+1. **A difusão começava pela cura, não pela doutrina.** Sequência fixa e
+   obrigatória: conversa → material impresso → Kyoshu → cura → entronização da
+   Imagem da Luz Divina.
+2. **As duas nomenclaturas de grau são uma substituição, não duas séries.**
+   `教導師` cede lugar a `中教師` entre ago/1951 e fev/1952, com **três meses de
+   sobreposição**. Resolve uma lacuna que o primeiro rascunho registrava sem
+   resolver.
+3. **O Fundador não era o Superintendente.** Separação formal entre autoridade
+   carismática e autoridade jurídica (Regulamento de 1951, art. 3º). Quem
+   respondia legalmente era 大草直好.
+4. **A expansão imobiliária foi toda local e comunitária** — não há um único
+   registro de compra de imóvel pela sede central. Isso explica a gravidade da
+   ruptura de 1955: quem rompeu ficou com as unidades que os fiéis construíram.
+5. **Não há dízimo no corpus.** As categorias eram 教費, 分担金, 会費, 献金,
+   寄付 — nenhuma proporcional à renda.
+
+### 4. Verificação automatizada — a lição metodológica
+
+Não confiei em releitura. Escrevi dois verificadores em
+`/var/www/rattail/work/`:
+
+- **`verificar.py`** — extrai cada caminho citado do `.md` e confere se existe
+  no acervo. Resultado: **81/81** (Parte I) e **33/33** (Parte II).
+- **`verif_cit.py`** — extrai cada citação japonesa e procura no texto do
+  acervo, normalizando espaços. Resultado: **84/86** e **51/52**.
+
+O verificador de citações **encontrou um erro real de transcrição meu** (não do
+OCR): eu havia escrito `一カ所/二カ所`, mas o original usa `一ヵ所/二ヵ所` (ヵ
+pequeno). Nenhuma releitura humana teria pego isso.
+
+As três citações não localizadas automaticamente estão explicadas: duas são
+leituras do fac-símile do 教修要綱 (o manual nunca foi digitalizado em texto) e
+uma é artefato de aspas aninhadas.
+
+### 5. O 教修要綱 — OCR corrompido e a solução em duas frentes
+
+O único manual curricular do período (3ª ed., out/1954) existe no acervo
+**apenas como fac-símile**, sem camada de texto. O OCR histórico era ilegível
+("これから才修を始めさせて吉ミさます").
+
+Duas providências:
+
+1. **OCR refeito** a partir do fac-símile — 400 dpi, binarizado, motor japonês
+   vertical (`jpn_vert`), modo de segmentação 5. De 118 páginas, ~25 min.
+   Resultado em `indice/kyoshu_yoko_ocr2.txt`, muito superior ao anterior. A
+   diferença foi medida, não suposta: o texto passou de ilegível a citação
+   verificável.
+2. **Fallback por HTML limpo** — descoberta melhor. Um relato de fiel de 1953,
+   em `search2/okage/tato/qtsune01.html`, **transcreve na íntegra o encerramento
+   do manual**. Ou seja: o conteúdo do 教修要綱 circula citado dentro de outros
+   documentos do acervo, em HTML limpo. É uma via de acesso que vale explorar
+   para outros fac-símiles.
+
+### 6. Geração de PDF — três armadilhas do reportlab
+
+Não havia pandoc nem LibreOffice na máquina, então escrevi o gerador
+(`scripts/gerar_pdf_dossie_difusao.py`). Três defeitos apareceram, todos
+silenciosos:
+
+1. **Helvetica não embutida** entrava nos recursos de *todas* as páginas, mesmo
+   sem ser usada — a `TableStyle` do reportlab a usa por padrão. Numa gráfica,
+   isso faria o RIP substituir a fonte. Corrigido com
+   `("FONTNAME", (0,0), (-1,-1), "Corpo")` em cada `TableStyle`.
+2. **`**` saía impresso** em 187 lugares. O negrito abre numa linha e fecha
+   noutra; o regex não atravessava linhas. Faltava `re.S`.
+3. **Erro "saw `</para>` instead of expected `</b>`"** — aplicar a marcação
+   inline e depois dividir o texto em parágrafos **parte a tag `<b>` ao meio**.
+   Corrigido aplicando a marcação ao bloco inteiro e trocando `\n` por `<br/>`.
+
+Verificação final: 55 páginas A4, **9 fontes, todas embutidas**, 17.214
+caracteres japoneses renderizando, zero resíduo de marcação.
+
+**Regra que ficou:** a contagem de `**` em cada `.md` deve ser **par**. Ímpar
+indica defeito real de marcação — foi assim que se achou um `**` desbalanceado
+no §19.2, presente em três arquivos.
+
+### 7. Proteção do acervo
+
+`/var/www/rattail/` tem **8,6 GB** e não é repositório git. Também não estava
+no `.gitignore` do goshinsho — ou seja, um `git add -A` na raiz tentaria
+absorver 8,6 GB. Acrescentado ao `.gitignore` com comentário explicativo.
+
+### 8. Estado e pendências
+
+Trabalho **concluído e verificado**. Decisões deixadas para o usuário:
+- remover a versão antiga (`LEVANTAMENTO_DIFUSAO_POS_GUERRA_20260930.md`)?
+- versionar o PDF (o repositório hoje versiona `.docx` mas nenhum PDF)?
+- explorar as **12 lacunas** documentadas? As duas principais: remuneração dos
+  ministros de dedicação integral e rito de sufrágio na Sede Geral.
+- o acervo rattail deve virar repositório git próprio?
+
+Commit: `3f4e9554` (15 arquivos, 13.402 linhas).
+
+---
+
 ## 30/09 — AULA 4 DO CICLO: FOCO NO ELO ESPIRITUAL ↔ ANTEPASSADOS
 
 > **Pedido do usuário**: *"vamos trabalhar a aula 4 do ciclo de palestras
