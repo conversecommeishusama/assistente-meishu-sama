@@ -80,3 +80,11 @@ textos_avaliacao/
 # Cache de áudio da avaliação (MP3 gerados pelas vozes Microsoft) -- artefato
 # local, regenerável; não versionar.
 data/tts_cache_avaliacao/
+
+# uploads do projeto do filme (temporario; o material real fica em /var/www/filme_meishu_sama)
+filme_meishu_sama/
+
+# Acervo textual rattail — 8,6 GB, mora em /var/www/rattail (fora do repositorio,
+# compartilhado com o filme). NUNCA versionar aqui: se alguem rodar `git add -A`
+# na raiz, o git tentaria absorver 8,6 GB. Ver HANDOFF_DOSSIE_DIFUSAO_20261002.md
+/var/www/rattail/
