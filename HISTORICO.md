@@ -7,6 +7,133 @@
 
 ---
 
+## 05/10 — FECHAMENTO DAS LACUNAS DO DOSSIÊ: DUAS ESTAVAM ERRADAS
+
+> **Pedido do usuário**: quatro decisões de continuidade — manter o documento
+> antigo como histórico, versionar o PDF, explorar as 12 lacunas e transformar o
+> acervo rattail em repositório git.
+> **Entregável**: `docs/NOTA_FECHAMENTO_LACUNAS_20261005.md` + Parte II revisada.
+> **Commits**: `9a27e4fe` (goshinsho) e `d1707f4`/`7458268` (rattail).
+
+### 1. Duas lacunas eram falsas — e o erro foi de método
+
+A Parte II registrava 12 pontos "sem fonte". Ao revisitar todos com o índice
+completo e vocabulário alternativo, **dois caíram**, e a razão do erro é a mesma
+nos dois: eu procurei o **conceito** e concluí pela ausência do **assunto**.
+
+| Lacuna que eu registrava | O que existia |
+|---|---|
+| "Rito de sufrágio — sem fonte" | `先祖祭`, **40 ocorrências** |
+| "Vestimenta dos oficiantes — sem fonte" | `祭服` prescrita, com escala de cor |
+
+Ambas existiam com o **nome próprio**, que eu não havia tentado. Um termo ausente
+não é um assunto ausente.
+
+### 2. O achado que reorganiza o culto: são dois ritos, não um
+
+Eu tratava `御霊祭` e o sufrágio dos antepassados como a mesma coisa. São dois:
+
+- **`御霊祭`** (16 ocorrências) — **entronização da Imagem**. Sempre no ato de
+  receber o objeto de culto: "光明如来様を迎える事となり、宗宮先生に来て戴き、
+  御霊祭をして戴きました".
+- **`先祖祭`** (40 ocorrências) — **sufrágio dos ancestrais**. **Recorrente** —
+  um relato menciona "先祖祭りも頂き、**九月十日第二回の先祖祭**を頂き" — e
+  celebrado no **altar doméstico**, com a finalidade expressa de "elevação e
+  sufrágio dos ancestrais".
+
+Há até um documento que descreve um fenômeno espiritual ocorrido **durante** um
+`先祖祭`, com o protocolo adotado e a instrução que Meishu-Sama deu a respeito
+(`search1/situmon/situmo35.html`). Não é só o rito que está documentado — é
+também o procedimento para um caso anômalo dentro dele.
+
+### 3. Vestimenta: havia prescrição, e a cor indicava grau
+
+Numa consulta de 1948 sobre a fundação do terreno, Meishu-Sama é imperativo:
+「地鎮祭の祝詞はできてます。これはやったほうがよい。……**祭服を着てやる。習う
+必要があります。**」 — isto é: o rito se faz **vestindo a veste ceremonial**, e o
+paramento **exige aprendizado**. Isso qualifica o que a Parte I dizia sobre
+formação: "saber ler o manual em voz alta" não esgotava a instrução.
+
+E a veste não era uniforme — a **cor indicava grau**:
+
+> 「白が一番下で、だんだん青、紫っていうふうになって行くんです。**霊界でも
+> そうなんですね、一番上は紫**なんです。」
+
+Branco → azul → violeta, e o violeta no topo tanto no ritual quanto na hierarquia
+espiritual. O contexto é um sonho em que um ancestral, tendo alcançado divindade
+menor, aparece de `白装束`.
+
+### 4. A reviravolta: Meishu-Sama criticava a oferenda crua
+
+Sobre oferecer água, sal e arroz, a resposta existe — e é negativa quanto à forma
+arcaica. Numa prédica de **07/12/1953** ele descreve e **critica** exatamente esse
+costume:
+
+> 「なにしろ**お祭りと言えば千年から二千年ぐらい前の形式**なのです。**素焼の
+> 入れ物に生米を入れたり、水を入れたりし、浄衣なども**……相変わらずこれを
+> 採っているのです。どうしても**小さい頭にできあがっている**のです。」
+
+Mas **instruía** oferecer água em outro contexto — diante do altar dos espíritos:
+「一つに**御霊前によくお水を上げるよう明主様からも御垂示戴いておりました**」.
+A distinção: a oferenda **fria e formal** ele criticava; a **oferta de água a quem
+partiu** ele recomendava. O **sal** continua sem fonte.
+
+### 5. As lacunas confirmadas, agora com razão precisa
+
+- **Remuneração dos ministros** — `給料`/`俸給`/`月給` ocorrem, mas **todas em
+  contexto de emprego secular**. Continua o vazio mais sério: a exigência de
+  dedicação exclusiva está documentada, o meio material de sustentá-la não.
+- **Dízimo** — as **149** ocorrências de `十分の一` são todas medidas de
+  temperatura, proporções comparativas ou legislação. **Nenhuma religiosa.** Num
+  corpus de 18.832 páginas que inclui regulamento financeiro e centenas de relatos
+  com valores em ienes, isso é escolha deliberada.
+- **Glúten** — as **134** ocorrências de `小麦` são todas de **lavoura**: cultivo
+  sem adubo, pragas, produtividade. Nunca de alimentação.
+
+### 6. A lição que fica
+
+**Contar ocorrências não basta.** Se eu tivesse olhado só o número, `十分の一` (149)
+teria virado "há material sobre dízimo" — o oposto do correto. O que resolve é
+**ler amostras de contexto**.
+
+E antes de declarar lacuna: **variar o vocabulário**. Foi a mesma falha nas duas
+lacunas erradas.
+
+### 7. O acervo rattail agora é repositório git
+
+`/var/www/rattail/` tinha 8,6 GB e **não era versionado em lugar nenhum**. Passou a
+ser, com política explícita: **preserva-se o trabalho intelectual, não os corpos
+documentais**.
+
+| Versionado (4,1 MB) | Ignorado (8,3 GB, reconstruível) |
+|---|---|
+| `work/*.py` — 17 ferramentas | `pdf_rattail/` — 307 fac-símiles |
+| `indice/kyoshu_yoko_ocr2.txt` | `textos_rattail/estruturado/`, `paginas/` |
+| `pesquisa/` — 17 relatórios | `work/rattail.json` (129 MB) |
+| `textos_rattail/urls_*.txt` | `work/rattail_datas.json` (1,8 MB) |
+
+**Lacuna grave fechada nessa passagem:** o índice base **não tinha script de
+geração**. `rattail.json` era um artefato órfão — não podia ser reconstruído nem
+auditado, e todo o trabalho de pesquisa dependia dele. Escrevi o
+`work/construir_indice.py`, conferido contra o índice anterior: **0 entradas
+perdidas, 3 recuperadas** (arquivos que existiam no HTML e faltavam no índice).
+
+Duas descobertas no caminho: `paginas/` não é só espelho de `search1/` — tem
+~4.950 arquivos próprios, e indexar só uma das árvores perde metade do acervo. E o
+`pesq.py` corrompia consultas com espaço no rótulo, o que produziu um diagnóstico
+falso durante a investigação das lacunas.
+
+### 8. Estado
+
+Dossiê em três formatos (`.md`, `.pdf` de 57 páginas com fontes embutidas,
+`.docx`), verificado: **81/81** e **42/42** caminhos citados existem no acervo;
+paridade de marcadores conferida em todos os documentos. Restam lacunas reais
+(sal, lugar de consagração, remuneração) e uma pergunta reformulada: se o
+`先祖祭` era celebrado **na Sede Geral** — agora é possível perguntar isso com
+precisão, porque o rito tem nome.
+
+---
+
 ## 02/10 — DOSSIÊ: A DIFUSÃO NA ÉPOCA DE MEISHU-SAMA (Partes I e II)
 
 > **Pedido do usuário**: *"gostaria de produzir um material sobre como era a
