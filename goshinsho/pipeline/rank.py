@@ -19,6 +19,7 @@ def rank_pool_fast(
 
     weighted = extrair_termos_busca(query, pastoral=pastoral)
     tier_bonus = {"ensinamento_foco": 1.0, "complementar": 0.3}
+    from .recency import recency_bonus
 
     scored: list[tuple[float, str, dict]] = []
     for chunk, meta in zip(chunks, metadados):
@@ -27,6 +28,8 @@ def rank_pool_fast(
             continue
         score = score_chunk_tokens(weighted, chunk) + quality
         score += tier_bonus.get(meta.get("search_tier"), 0.0)
+        # 2026-10-05: precedência temporal (ver pipeline/recency.py).
+        score += recency_bonus(meta)
         scored.append((score, chunk, meta))
 
     scored.sort(key=lambda item: (-item[0], item[2].get("fonte", "")))

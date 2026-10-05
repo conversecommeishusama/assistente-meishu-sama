@@ -99,6 +99,13 @@ def _chunk_rank_score(
     bonus = tier_bonus.get(meta.get("search_tier") or "", 0.0)
     if meta.get("rank_priority") == "alta":
         bonus += 0.35
+    # 2026-10-05: precedência temporal na admissão do pool (ver
+    # pipeline/recency.py) -- o texto mais recente sobre o mesmo tema é a
+    # formulação mais amadurecida; sem isso, o antigo entra e o recente fica
+    # de fora antes mesmo do rerank final.
+    from .recency import recency_bonus
+
+    bonus += recency_bonus(meta)
     if japanese_scoring:
         # 2026-07-20: mesma preferência escrito>oral do lado PT (pedido
         # explícito do usuário) -- content_score é agnóstico de idioma

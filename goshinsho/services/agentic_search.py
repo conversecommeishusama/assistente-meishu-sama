@@ -418,6 +418,53 @@ def _melhor_posicao_no_arquivo(termos_busca: list[str], arquivo: str) -> dict | 
     return {"posicao": melhor_pos, "score": melhor_score}
 
 
+def _data_iso(nome: str) -> str:
+    """Data (AAAA-MM-DD) do nome do arquivo, ou "" se não houver.
+
+    Convenção do acervo: o nome começa por 8 dígitos (ex.
+    `19521201-結核信仰療法.txt`); agregados (Eiko.txt, Tijotengoku.txt...) não
+    têm data no nome e retornam "". Exposta no resultado da ferramenta para o
+    modelo poder aplicar a regra 8d/8e (precedência temporal).
+    """
+    m = re.match(r"(\d{4})(\d{2})(\d{2})", nome or "")
+    if not m:
+        return ""
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+
+
+def _data_ordinal(nome: str) -> int:
+    """Data do nome do arquivo como inteiro AAAAMMDD; 0 se não houver data.
+
+    0 (sem data) é usado como "menos preferido" no desempate: com a chave
+    negativa em `_ordena_resultados`, os com data ficam antes e os agregados
+    (Eiko.txt, Tijotengoku.txt...) vão para o fim.
+    """
+    m = re.match(r"(\d{4})(\d{2})(\d{2})", nome or "")
+    if not m:
+        return 0
+    return int(m.group(1) + m.group(2) + m.group(3))
+
+
+def _ordena_resultados(candidatos: list[dict]) -> None:
+    """Ordena candidatos por score desc, depois por data DESC (mais recente
+    primeiro) e arquivo.
+
+    2026-10-05: a ordenação anterior desempatava por `arquivo` com string
+    crescente -- e como o nome começa pela data, isso listava o texto MAIS
+    ANTIGO antes do mais recente. A regra do projeto é o oposto (texto mais
+    recente prevalece sobre o mais antigo; ver pipeline/recency.py e
+    docs/LEVANTAMENTO_PRE_GUERRA_E_PERSEGUICAO_20261005.md). O sinal negativo
+    em `_data_ordinal` inverte a data; sem data (0) vai para o fim.
+    """
+    candidatos.sort(
+        key=lambda c: (
+            -c["score"],
+            -_data_ordinal(c["arquivo"]),
+            c["arquivo"],
+        )
+    )
+
+
 def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
     """Busca literal (tolerante a acento/maiúscula) do termo/frase em todo o
     acervo, ordenada por relevância -- corrige achados do estudo original:
@@ -450,7 +497,7 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
             if melhor and melhor["score"] > 0:
                 candidatos.append({"arquivo": arquivo, "posicao": melhor["posicao"], "score": melhor["score"]})
 
-    candidatos.sort(key=lambda c: (-c["score"], c["arquivo"], c["posicao"]))
+    _ordena_resultados(candidatos)
 
     dedup: list[dict] = []
     vistos: set[tuple[str, int]] = set()
@@ -462,7 +509,12 @@ def buscar_termo(termo: str, max_resultados: int = 12) -> list[dict]:
         texto_original = _corpus_pt()[c["arquivo"]][0]
         ini = max(0, c["posicao"] - 200)
         fim = min(len(texto_original), c["posicao"] + len(termo) + 300)
-        dedup.append({"arquivo": c["arquivo"], "posicao": c["posicao"], "trecho": texto_original[ini:fim].strip()})
+        dedup.append({
+            "arquivo": c["arquivo"],
+            "data": _data_iso(c["arquivo"]),
+            "posicao": c["posicao"],
+            "trecho": texto_original[ini:fim].strip(),
+        })
         if len(dedup) >= max_resultados:
             break
     return dedup
@@ -620,7 +672,7 @@ def buscar_termo_jp(termo: str, max_resultados: int = 12) -> list[dict]:
             candidatos.append({"arquivo": arquivo, "posicao": pos, "score": score})
             inicio = pos + len(termo)
 
-    candidatos.sort(key=lambda c: (-c["score"], c["arquivo"], c["posicao"]))
+    _ordena_resultados(candidatos)
 
     dedup: list[dict] = []
     vistos: set[tuple[str, int]] = set()
@@ -632,7 +684,12 @@ def buscar_termo_jp(termo: str, max_resultados: int = 12) -> list[dict]:
         texto = _corpus_jp()[c["arquivo"]]
         ini = max(0, c["posicao"] - 200)
         fim = min(len(texto), c["posicao"] + len(termo) + 300)
-        dedup.append({"arquivo": c["arquivo"], "posicao": c["posicao"], "trecho": texto[ini:fim].strip()})
+        dedup.append({
+            "arquivo": c["arquivo"],
+            "data": _data_iso(c["arquivo"]),
+            "posicao": c["posicao"],
+            "trecho": texto[ini:fim].strip(),
+        })
         if len(dedup) >= max_resultados:
             break
     return dedup
@@ -724,6 +781,7 @@ REGRAS OBRIGATÓRIAS:
 8a. HIERARQUIA ENTRE PALAVRA ESCRITA E PALAVRA ORAL: todo o acervo é doutrina estabelecida (é só o que Meishu-Sama escolheu publicar em vida). Mas quando uma pergunta encontra trechos de fontes ESCRITAS (ensaios, artigos de periódico, livros doutrinários) e de fontes ORAIS (diálogos registrados -- coletâneas de perguntas e respostas) sobre o MESMO assunto, com enquadramentos diferentes: trate a fonte ESCRITA como a base doutrinária central, e a fonte ORAL como complemento/ampliação dela -- a fala oral está presa ao contexto do momento e do interlocutor específico, enquanto o texto escrito é a formulação mais deliberada e permanente do ensinamento. Isso NÃO muda a regra 10 (nunca fundir sem base textual) -- os enquadramentos continuam em temas/subtítulos separados -- mas ao decidir COM QUAL TEMA ABRIR a resposta e ao apresentar os temas, coloque a fonte escrita primeiro/como referência central, e enquadre a oral explicitamente como complementando/detalhando a partir dela, não como uma visão alternativa de peso igual. Se só existir um dos dois tipos sobre o assunto (só escrito, ou só oral), esse é a doutrina soberana por padrão, sem necessidade de aplicar essa hierarquia.
 8b. DISCIPLINA DA FRASE DE ABERTURA: a abertura da resposta pesa mais do que o resto do texto -- muitos leitores só leem essa parte e param. NUNCA abra com uma afirmação categórica (ex. "Sim, ..."/"Não, ..." ou equivalente em {idioma}) decidida antes de você ter processado todos os trechos que vai usar -- isso é comum em geração de texto sequencial: começa-se a escrever com uma primeira impressão, e uma nuance ou contradição só aparece depois, no meio ou no fim da resposta, sem a abertura ser corrigida para refletir isso. Antes de escrever a primeira frase, finalize mentalmente qual é a síntese completa (incluindo qualquer nuance, exceção ou tensão entre trechos que você vai apresentar mais adiante) e só então escreva a abertura de acordo com essa síntese final -- nunca de acordo com a primeira impressão. Se a resposta plena for mista ou matizada (não um "sim" ou "não" limpo), a abertura já deve refletir essa complexidade, não simplificar para depois complicar.
 8c. NUNCA DÊ RESPOSTA DETERMINÍSTICA EM CASO DE AMBIGUIDADE EXPLÍCITA OU IMPLÍCITA: se os trechos encontrados, tomados em conjunto, sustentam leituras diferentes ou aparentemente contraditórias sobre a mesma pergunta -- ambiguidade EXPLÍCITA (os próprios trechos discordam entre si) ou IMPLÍCITA (um termo da pergunta ou de um trecho admite mais de uma interpretação plausível, e a resposta muda dependendo de qual interpretação se usa) -- NUNCA feche a resposta com um "Sim" ou "Não" categórico (ou equivalente em {idioma}), nem na abertura (regra 8b) nem na conclusão. Apresente os enquadramentos como a regra 10 já pede (temas/subtítulos separados, cada um com sua citação), e feche reconhecendo abertamente que a resposta depende de como se interpreta o termo ou a pergunta, ou que o acervo sustenta mais de uma leitura -- sem escolher uma delas como "a resposta certa" por conta própria. Isso só deixa de valer quando um trecho específico resolve a ambiguidade de forma explícita (nesse caso, cite esse trecho como o que resolve, e a regra 8a sobre precedência escrita/oral se aplica quando for o caso).
+8d. PRECEDÊNCIA TEMPORAL -- O TEXTO MAIS RECENTE PREVALECE SOBRE O MAIS ANTIGO: o acervo cobre 1930 a 1955 e, quando você encontra trechos de datas diferentes sobre o MESMO tema, o mais recente é a formulação mais amadurecida e definitiva do ensinamento -- dê a ele o papel central. Isso vale com força especial para os textos anteriores ao fim da perseguição religiosa (1945): nesse período Meishu-Sama registrou que não podia falar abertamente (ele mesmo disse que 『明日の医術』 foi escrito "por verso", com "裏表", e que só pôde escrever "com clareza" no pós-guerra). Então: se um trecho antigo e um recente tratam do mesmo ponto, apresente o recente como a formulação vigente e, se citar o antigo, enquadre-o como etapa anterior desse mesmo ensinamento -- nunca como uma versão de peso igual ou como visão alternativa. Isso NÃO autoriza descartar o texto antigo nem inventar relação entre trechos que tratam de assuntos diferentes; é princípio de ORDENAÇÃO entre trechos do mesmo assunto, e não muda a regra 10 (nunca fundir sem base textual). Se apenas um dos trechos existir, ele é a doutrina soberana, sem aplicar esta regra.
 """
 
 SYSTEM_PROMPT_JP_REGRA9_CITACOES_TEMPLATE = """9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória: divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO em {idioma}, com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal traduzida (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.
@@ -985,6 +1043,7 @@ REGRAS OBRIGATÓRIAS:
 8b. HIERARQUIA ENTRE PALAVRA ESCRITA E PALAVRA ORAL: todo o acervo é doutrina estabelecida (é só o que Meishu-Sama escolheu publicar em vida). Mas quando uma pergunta encontra trechos de fontes ESCRITAS (ensaios, artigos de periódico, livros doutrinários) e de fontes ORAIS (diálogos registrados -- coletâneas de perguntas e respostas) sobre o MESMO assunto, com enquadramentos diferentes: trate a fonte ESCRITA como a base doutrinária central, e a fonte ORAL como complemento/ampliação dela -- a fala oral está presa ao contexto do momento e do interlocutor específico, enquanto o texto escrito é a formulação mais deliberada e permanente do ensinamento. Isso NÃO muda a regra 10 (nunca fundir sem base textual) -- os enquadramentos continuam em temas/subtítulos separados -- mas ao decidir COM QUAL TEMA ABRIR a resposta e ao apresentar os temas, coloque a fonte escrita primeiro/como referência central, e enquadre a oral explicitamente como complementando/detalhando a partir dela, não como uma visão alternativa de peso igual. Se só existir um dos dois tipos sobre o assunto (só escrito, ou só oral), esse é a doutrina soberana por padrão, sem necessidade de aplicar essa hierarquia.
 8c. DISCIPLINA DA FRASE DE ABERTURA: a abertura da resposta pesa mais do que o resto do texto -- muitos leitores só leem essa parte e param. NUNCA abra com uma afirmação categórica (ex. "Sim, ..."/"Não, ...") decidida antes de você ter processado todos os trechos que vai usar -- isso é comum em geração de texto sequencial: começa-se a escrever com uma primeira impressão, e uma nuance ou contradição só aparece depois, no meio ou no fim da resposta, sem a abertura ser corrigida para refletir isso. Antes de escrever a primeira frase, finalize mentalmente qual é a síntese completa (incluindo qualquer nuance, exceção ou tensão entre trechos que você vai apresentar mais adiante) e só então escreva a abertura de acordo com essa síntese final -- nunca de acordo com a primeira impressão. Se a resposta plena for mista ou matizada (não um "sim" ou "não" limpo), a abertura já deve refletir essa complexidade, não simplificar para depois complicar.
 8d. NUNCA DÊ RESPOSTA DETERMINÍSTICA EM CASO DE AMBIGUIDADE EXPLÍCITA OU IMPLÍCITA: se os trechos encontrados, tomados em conjunto, sustentam leituras diferentes ou aparentemente contraditórias sobre a mesma pergunta -- ambiguidade EXPLÍCITA (os próprios trechos discordam entre si) ou IMPLÍCITA (um termo da pergunta ou de um trecho admite mais de uma interpretação plausível, e a resposta muda dependendo de qual interpretação se usa) -- NUNCA feche a resposta com um "Sim" ou "Não" categórico, nem na abertura (regra 8c) nem na conclusão. Apresente os enquadramentos como a regra 10 já pede (temas/subtítulos separados, cada um com sua citação), e feche reconhecendo abertamente que a resposta depende de como se interpreta o termo ou a pergunta, ou que o acervo sustenta mais de uma leitura -- sem escolher uma delas como "a resposta certa" por conta própria. Isso só deixa de valer quando um trecho específico resolve a ambiguidade de forma explícita (nesse caso, cite esse trecho como o que resolve, e a regra 8b sobre precedência escrita/oral se aplica quando for o caso).
+8e. PRECEDÊNCIA TEMPORAL -- O TEXTO MAIS RECENTE PREVALECE SOBRE O MAIS ANTIGO: o acervo cobre 1930 a 1955 e, quando você encontra trechos de datas diferentes sobre o MESMO tema, o mais recente é a formulação mais amadurecida e definitiva do ensinamento -- dê a ele o papel central. Isso vale com força especial para os textos anteriores ao fim da perseguição religiosa (1945): nesse período Meishu-Sama registrou que não podia falar abertamente (ele mesmo disse que 『明日の医術』 foi escrito "por verso", com "裏表", e que só pôde escrever "com clareza" no pós-guerra). Então: se um trecho antigo e um recente tratam do mesmo ponto, apresente o recente como a formulação vigente e, se citar o antigo, enquadre-o como etapa anterior desse mesmo ensinamento -- nunca como uma versão de peso igual ou como visão alternativa. Isso NÃO autoriza descartar o texto antigo nem inventar relação entre trechos que tratam de assuntos diferentes; é princípio de ORDENAÇÃO entre trechos do mesmo assunto, e não muda a regra 10 (nunca fundir sem base textual). Se apenas um dos trechos existir, ele é a doutrina soberana, sem aplicar esta regra.
 """
 
 SYSTEM_PROMPT_REGRA9_CITACOES = """9. FORMATO DA RESPOSTA -- explicação por tema, com citação confirmatória (não se aplica ao modo "na íntegra" da regra 5, que é reprodução literal): divida a resposta nos temas/aspectos distintos que os trechos sustentam, cada um com um subtítulo curto (###). Em cada tema, explique PRIMEIRO com suas próprias palavras (fiel ao sentido dos trechos) -- essa explicação é o conteúdo principal, nunca a citação. Logo depois da explicação de cada tema, inclua ao menos uma citação literal (entre aspas, com o nome do arquivo entre colchetes) que CONFIRME o que acabou de ser explicado -- a citação serve para comprovar, nunca para abrir o tema ou substituir a explicação. Um trecho de apoio já basta por tema. Proibido reunir todas as citações numa seção separada ao final.

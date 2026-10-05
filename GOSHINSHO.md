@@ -73,6 +73,24 @@ referência do Zenshū/Rokkan estão em
 "Zenshū"/"Rokkan" como fonte em texto final; sempre citar a fonte original
 (período + edição + data, ou livro oficial).
 
+### 4.1 Critérios de escopo fixados em 05/out/2026 (ver `docs/LEVANTAMENTO_PRE_GUERRA_E_PERSEGUICAO_20261005.md`)
+
+1. **Canônico = autoria, não gênero.** Testemunhos e experiências de fé
+   publicados **por** Meishu-Sama **são canônicos** — representam o ensinamento
+   na prática. Sai do escopo apenas o que é de **terceiro** (~3% dos periódicos;
+   lista nominal no dossiê).
+2. **Período de perseguição (1937-1945): fora.** Os textos foram escritos "por
+   verso" (『明日の医術』) por necessidade de se ajustar à censura, e a doutrina
+   foi **reescrita com clareza no pós-guerra** (que é o que o acervo já tem).
+3. **Pré-guerra sem censura grave (1930-1936): dentro.** Material original e não
+   substituído. O corte é 1937 (início da lacuna de publicação — ver dossiê §3).
+4. **Temas seculares** (política, economia, arte) escritos por ele: **incluir**
+   — salvo notícia factual/datada (会報, censo, cobertura de evento).
+5. **Precedência temporal no app (regra 8d/8e do system prompt + pipeline):** o
+   texto **mais recente prevalece** sobre o mais antigo do mesmo assunto.
+   Implementado em `pipeline/recency.py` (bônus ≤0.10, só desempate) e no
+   desempate do caminho agêntico. **Não é descarte do antigo** — é ordenação.
+
 ---
 
 ## 5. Estado ATIVO (o que está em andamento agora — ver `HISTORICO.md` para o detalhe completo)

@@ -62,8 +62,19 @@ def rerank_by_content(
 ) -> tuple[list[str], list[dict]]:
     if not chunks:
         return [], []
+    from .recency import recency_bonus
+
     scored = [
-        (float(meta.get("rank_score", 0.0)) + content_score(chunk, meta, query=query), chunk, meta)
+        (
+            float(meta.get("rank_score", 0.0))
+            + content_score(chunk, meta, query=query)
+            # 2026-10-05: precedência temporal -- texto mais recente é a
+            # formulação mais amadurecida do ensinamento (ver
+            # pipeline/recency.py). Desempata; não sobrescreve relevância.
+            + recency_bonus(meta),
+            chunk,
+            meta,
+        )
         for chunk, meta in zip(chunks, metadados)
     ]
     scored.sort(key=lambda item: (-item[0], item[2].get("fonte", "")))

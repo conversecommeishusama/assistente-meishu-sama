@@ -23,17 +23,33 @@ por data: Gokōwa-roku, Gosuiji-roku e Mioshie-shū).
 
 **O que fica explicitamente fora, e por quê:**
 
-- **Publicações do período de perseguição religiosa.** Segundo o próprio
-  Meishu-Sama, esses textos têm viés/distorção (registrado pelo fundador
+- **Publicações do período de perseguição religiosa (1937-1945).** Segundo o
+  próprio Meishu-Sama, esses textos têm viés/distorção (registrado pelo fundador
   como "verso") introduzido pela necessidade de se ajustar à perseguição
   dos militares na época — não são fonte confiável do ensinamento
-  original e por isso não entram no corpus.
+  original e por isso não entram no corpus. A **lista nominal das obras** deste
+  bloco (明日の医術 em todas as variantes, 結核の正体, 結核問題と其解決策) está
+  em `LEVANTAMENTO_PRE_GUERRA_E_PERSEGUICAO_20261005.md` §5 — e a evidência de
+  que a doutrina foi **reescrita com clareza no pós-guerra** está no §2 daquele
+  documento (as versões pós-guerra já são o que o acervo tem).
 - **Coletâneas publicadas pela Igreja depois da morte de Meishu-Sama** —
   nomeadamente *Tengoku no Ishizue*, *Tengoku no Ishizue Rokan*, *Mokichi
   Okada Zenshū* — e **traduções feitas pela Igreja do Brasil ou de
   qualquer outra parte do mundo**. Isso vale mesmo que essas fontes sejam
   amplamente usadas e reconhecidas dentro da comunidade messiânica: para
   os efeitos deste projeto, **não são a base do corpus**.
+
+**O que ENTRA, e não entrava antes (decisão de 05/out/2026):**
+
+- **O período pré-guerra sem censura grave (1930-1936)** — 227 páginas em 17
+  obras (光明世界, 東方の光, 内外公論, 瑞光, 松風, 観音の光, 健康, 新日本医術書,
+  日本医術講義録, 岡田先生療病術講義録, 病貧争絶無…観音運動とは何?, 宇宙,
+  天国の花, 応神堂開業ビラ, 紫苑, 明日の医術・岡田式療病法; 観音講座 já
+  incluído). É material original e não substituído. Ver dossiê §4 e folha §8.
+- **Canônico = autoria, não gênero.** Testemunhos e experiências de fé
+  publicados por Meishu-Sama **são canônicos** — representam o ensinamento na
+  prática. Sai apenas o que é de **terceiro** (~3% dos periódicos).
+
 
 **A régua é estrita, e resolve uma ambiguidade que poderia passar
 despercebida:** a base de todo o corpus são *apenas* as publicações da

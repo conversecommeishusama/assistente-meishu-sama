@@ -86,6 +86,8 @@ def rerank_by_japanese(
     if not chunks:
         return [], []
     weighted = japanese_weighted_terms(query, pastoral=pastoral)
+    from .recency import recency_bonus
+
     scored = [
         (
             # 2026-07-20: mesma preferência escrito>oral do lado PT
@@ -93,7 +95,10 @@ def rerank_by_japanese(
             # agnóstico de idioma (rótulos Meishu-Sama:/Interlocutor: são
             # os mesmos em latim nos dois corpora desde a rotulagem JP
             # Fase 5; `fonte` do JP também já vem em PT).
-            score_chunk_japanese(weighted, chunk, query=query) + content_score(chunk, meta, query=query),
+            score_chunk_japanese(weighted, chunk, query=query)
+            + content_score(chunk, meta, query=query)
+            # 2026-10-05: precedência temporal (ver pipeline/recency.py).
+            + recency_bonus(meta),
             chunk,
             meta,
         )
