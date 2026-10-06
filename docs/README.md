@@ -56,6 +56,9 @@ foram tocados nesta reorganização.
     (Gokōwa-roku Suplemento e demais). Mapa do trabalho em andamento:
     arquitetura em 4 papéis, estado dos lotes de auditoria, termos fixos,
     próximos passos. É o handoff entre chats.
+13. **[21-HANDOFF-RETOMADA-SESSOES_20261006.md](21-HANDOFF-RETOMADA-SESSOES_20261006.md)**
+    — handoff consolidado das três linhas em retomada: Kyoshu Yōkō,
+    comparação Goshinsho × Rattail e difusão na época de Meishu-Sama.
 
 > **Nota de prioridade:** se o trabalho for sobre retradução/auditoria dos
 > orais, leia `14-RETOMADA-RETRADUCAO-ORAIS.md` ANTES dos demais — ele

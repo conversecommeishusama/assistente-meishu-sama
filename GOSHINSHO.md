@@ -93,6 +93,27 @@ referência do Zenshū/Rokkan estão em
 
 ---
 
+## 4.2 Handoff das 3 sessões em retomada (06/10/2026)
+
+As três linhas de trabalho prioritárias foram consolidadas e estão prontas para
+retomar sem reinício do zero:
+
+1. **Aulas de iniciação com base no Kyoshu Yōkō** — material de formação e
+   sequência de entrada, já documentado no dossiê de difusão e em fontes do
+   acervo Rattail.
+2. **Comparação entre Goshinsho e Rattail** — o critério de escopo já foi
+   estabilizado: o acervo do Rattail serve como contexto documental, enquanto o
+   Goshinsho continua sendo a base canônica do que foi publicado em vida por
+   Meishu-Sama.
+3. **Difusão na época de Meishu-Sama** — o dossiê completo e revisado já está
+   em `docs/DOSSIE_DIFUSAO_COMPLETO_20261002.md`, com o fechamento de lacunas em
+   `docs/NOTA_FECHAMENTO_LACUNAS_20261005.md`.
+
+O handoff completo desta retomada está em
+`docs/21-HANDOFF-RETOMADA-SESSOES_20261006.md`.
+
+---
+
 ## 5. Estado ATIVO (o que está em andamento agora — ver `HISTORICO.md` para o detalhe completo)
 
 - **� ÁUDIOS DA VOZ MEISHU-SAMA (Fish Audio) — 10/09** — a voz clonada foi

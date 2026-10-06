@@ -7,6 +7,53 @@
 
 ---
 
+## 06/10 — RETOMADA DAS TRÊS SESSÕES DE TRABALHO EM CURSO
+
+> **Consolidação de retomada**: três linhas de trabalho foram reabertas e
+> priorizadas como fluxos que já tinham contexto validado antes: (1) novas aulas
+> de iniciação baseadas no Kyoshu Yōkō; (2) comparação de conteúdo entre
+> Goshinsho e Rattail; (3) estudo da difusão na época de Meishu-Sama.
+>
+> **Estado**: as três linhas não precisam ser recomeçadas; o que falta agora é
+> retomar a redação, a seleção de material didático e o registro do próximo
+> handoff para a próxima sessão.
+
+### 1. Kyoshu Yōkō e as novas aulas de iniciação
+
+- O material do Kyoshu Yōkō é a base documental da formação inicial.
+- A sequência está estabilizada: conversa → material impresso → Kyoshu → cura →
+  concessão do Ohikari → integração ao culto e à vida da comunidade.
+- O documento útil para retomar a linha é o dossiê de difusão em
+  `docs/DOSSIE_DIFUSAO_COMPLETO_20261002.md`, sem repetir o levantamento bruto.
+
+### 2. Goshinsho vs Rattail: diferenciação de escopo
+
+- O Rattail continua sendo um acervo de pesquisa e arquivo documental, com valor
+  histórico e bibliográfico.
+- O Goshinsho permanece a base de escopo canônico: o que foi publicado por
+  Meishu-Sama em vida e passou a fazer parte da linha de ensino do projeto.
+- A correção metodológica desta etapa foi a chave: procurar o termo correto e o
+  contexto de publicação antes de concluir ausência de material.
+
+### 3. Difusão na época de Meishu-Sama
+
+- O dossiê de difusão foi concluído, revisado e documentado em três formatos.
+- Os achados principais já foram consolidados: a difusão começava pela cura,
+  a formação era local e intensiva, a expansão era comunitária, e o Kyoshu era
+  a porta de entrada do processo institucional.
+- O material definitivo está em `docs/DOSSIE_DIFUSAO_COMPLETO_20261002.md` e em
+  `docs/NOTA_FECHAMENTO_LACUNAS_20261005.md`.
+
+### 4. Handoff pronto para seguir
+
+- O próximo passo não é reabrir a investigação do zero.
+- A prioridade é retomar a produção de aula, redação e desenvolvimento
+  específico a partir do material já validado.
+- O handoff consolidado desta retomada está em
+  `docs/21-HANDOFF-RETOMADA-SESSOES_20261006.md`.
+
+---
+
 ## 05/10 — FECHAMENTO DAS LACUNAS DO DOSSIÊ: DUAS ESTAVAM ERRADAS
 
 > **Pedido do usuário**: quatro decisões de continuidade — manter o documento
