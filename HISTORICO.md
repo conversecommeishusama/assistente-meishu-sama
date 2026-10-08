@@ -7,6 +7,100 @@
 
 ---
 
+## 08/10 — CURSO DE PREPARAÇÃO (KYŌSHU YŌKŌ): 3 AULAS CONSOLIDADAS
+
+> **Pedido do usuário**: continuar o curso de formação de novos membros baseado no
+> Kyōshu Yōkō, com uma aula sobre as práticas da fé (johrei, alimentação e
+> agricultura natural, o belo, cultos, leitura dos escritos, dedicação, donativo,
+> Sorei-Saishi, cuidados com o Ohikari). Depois: consolidar em 3 aulas e incluir a
+> missão do homem como representante de Deus na construção do Paraíso Terrestre.
+> **Entregável**: `docs/aulas_kyoshu_yoko/` (fontes `.md` + TXT/DOCX/PDF).
+> **Origem**: `/var/www/rattail/work/kyoshu_yoko/aulas_simples/` (trabalho em
+> separado do projeto Goshinsho — não usa as aulas do projeto como base).
+
+### 1. Qual versão do material é a correta
+
+Existem três conjuntos de aulas no diretório de trabalho, e é fácil confundir:
+
+- `aulas/` — trechos **verbatim** das obras (antologia "Fonte 1, Fonte 2…").
+- `aulas_explicadas/` — primeira versão explicativa, descartada.
+- `aulas_simples/` — **a versão que o usuário quer**: texto explicativo em
+  linguagem simples, para ler e explicar em encontros de ~1 hora.
+
+Confirmado no histórico de sessões (06/10): o usuário pediu duas versões, e a
+"versão simples" é a segunda. A Aula 4 chegou a ser criada e depois foi
+**dissolvida** nas Aulas 2 e 3, a pedido ("consolidar essas quatro aulas em 3").
+
+### 2. Resultado — 3 aulas equilibradas
+
+| Aula | Palavras | Leitura | Págs |
+|---|---|---|---|
+| 1 — Como o universo funciona | 1.728 | ~12 min | 5 |
+| 2 — Por que adoecemos e o que é o Johrei | 1.934 | ~13 min | 6 |
+| 3 — O que vem depois, e a vida de fé | 2.221 | ~15 min | 7 |
+
+Distribuição do tema "práticas da fé": a **Aula 2** ficou com o que é saúde do
+corpo (como se ministra o Johrei, cuidado com o Ohikari, alimentação e Agricultura
+Natural); a **Aula 3** com a vida de fé (cultos e Solo Sagrado, leitura dos
+Escritos Divinos, dedicação e donativo, sufrágio dos antepassados). O **belo**
+(Verdade, Bem e Belo; as flores) e a **missão do ser humano** foram para a
+**Aula 1**, onde explicam por que existe a obra — e a Aula 1 é a menor das três,
+então o rebalanceamento também nivelou os encontros.
+
+### 3. Regra de fidelidade × direitos autorais
+
+- Os trechos de leitura das aulas devem ser **palavras escritas do próprio
+  Meishu-Sama**, com referência de fonte (obra + data). O Kyōshu Yōkō **não serve
+  como fonte de citação** — é transcrição de aulas feita por um discípulo (fala de
+  Meishu-Sama na 3ª pessoa), não palavra própria dele.
+- Mas nesta versão "simples" o texto é **paráfrase explicativa** redigida pelo
+  agente. Regra aplicada: expor a doutrina com palavras próprias, sem reproduzir
+  trechos longos do livro.
+- **Cuidado obrigatório**: o manual litúrgico da IMMB
+  (`referencia_manuais/Manual Litúrgico...pdf` e `Manual do Sorei Saishi 2023.pdf`)
+  tem **direitos autorais da IMMB** — foi usado apenas para conferir fatos do
+  Sorei-Saishi e do Santuário dos Antepassados, nunca citado como fonte nem
+  reproduzido.
+
+### 4. Fontes usadas
+
+- **Kyōshu Yōkō** (tradução PT): "O Propósito da Vida", "Espírito Divino", "Vida e
+  Morte", "As Camadas do Mundo Espiritual", "Sobre o Johrei" + apêndice
+  "(Advertências sobre o Johrei)", "O que é a doença (processo de purificação)",
+  "Sobre a nutrição", "O verdadeiro método da saúde", "A Agricultura Natural", "A
+  Organização e a Administração da Nossa Igreja", "A Admoestação dos Espíritos
+  Ancestrais", "Não Falar Mal dos Mortos", "Conclusão".
+- **Corpus de Meishu-Sama** (`textos_portugues/`): `19500613 Gokōwa-roku nº 19`
+  (o Ohikari só se tira no banho), `Hikari` (os três tipos de beleza),
+  `19530415 Mioshie-shū nº 20` (flores, ordem, tokonoma),
+  `19521201 Terapia de Fé para Tuberculose` + `19490821 Gokōwa-roku nº 11` +
+  `19541001 Curso do Método de Johrei nº 3` (quem ministra Johrei age como
+  representante de Deus).
+
+### 5. Como regerar os artefatos
+
+```bash
+cd /var/www/goshinsho/docs/aulas_kyoshu_yoko
+/var/www/goshinsho/.venv/bin/python gerar_aulas.py        # TXT + PDF (impressão)
+/var/www/goshinsho/.venv/bin/python gerar_docx_editavel.py # DOCX editável (Word)
+```
+
+`gerar_aulas.py` gera TXT + PDF (A4, 11,5 pt, para impressão) de todo `Aula_0*.md`
+em `saida/`. Usa `reportlab`; para kanji no PDF registra o
+`DroidSansFallbackFull.ttf` (DejaVu não tem CJK — some silenciosamente).
+
+`gerar_docx_editavel.py` gera a versão **editável** em `docx/` (uma por aula +
+`Curso_Kyoshu_Yoko_3_aulas.docx` consolidado), usando os estilos nativos do Word
+(Título, Título 1/2/3, lista) — útil para editar, navegar pelo Painel de
+Navegação e gerar sumário automático.
+
+### 6. Histórico do material (arquivos descartados)
+
+`_antigo/Aula_04_As_praticas_da_fe.md` é o rascunho da aula que foi dissolvida nas
+Aulas 2 e 3 — guardado só como registro.
+
+---
+
 ## 06/10 — RETOMADA DAS TRÊS SESSÕES DE TRABALHO EM CURSO
 
 > **Consolidação de retomada**: três linhas de trabalho foram reabertas e
@@ -15273,3 +15367,74 @@ amplo da obra antes de "normalizar" qualquer coisa.
    dos 4 arquivos.
 3. PASSO 4 (consolidação/chunk estrutural/promoção) e PASSO 5 (Leitura
    Colaborativa) — ver handoffs.
+
+---
+
+# SESSÃO 2026-10-07 — Verificação dos textos de Meishu-Sama nos periódicos
+
+## 1. Objetivo
+Verificar, item a item, quais textos **de autoria de Meishu-Sama** publicados nos
+periódicos **栄光 (Eiko), 光 (Hikari), 救世 (Kyusei)** e **地上天国
+(Tijotengoku)** estão **ausentes** do acervo do Goshinsho.
+
+## 2. Método (corrigido — a auditoria anterior estava errada)
+A auditoria por n-grama exato (n=15) **inflava os "ausentes"**: o texto do app é
+**normalizado/degradado** (実→实, `事実`→`事实`, OCR: `生〄しい`, `吉様`). Exemplo:
+o artigo 「人間の死後と畜生道」 (Eiko 81) ESTÁ no `Eiko.txt` (linha 71) mas dava
+cobertura 0,14.
+
+Critério adotado — **3 sinais independentes**:
+1. **Título como cabeçalho** (linha isolada no acervo), com normalização
+   NFKC/katakana→hiragana/variantes 旧字-新字 e fuzzy ≥0,90;
+2. **Cobertura** de n-gramas (n=15) contra **todo** o acervo (inclusive
+   `textos_japones/` e compilações);
+3. **Sondas de corpo** (6 trechos exatos de 20 chars).
+
+Autoria: no rattail, `search1/` = textos dele; `search2/` = terceiros
+(okage=御蔭話, jorei=浄霊日記, kikou/kikou2=寄稿, kihara, sanko) → fora do escopo.
+
+## 3. Resultado — 1.187 textos de Meishu-Sama
+| decisão | n |
+|---|---:|
+| presente | **770** |
+| **ausente (lacuna)** | **415** |
+| a_revisar | 2 |
+| **total** | **1.187** |
+
+Lacunas (415 itens · **694.625 chars JP**) por veículo:
+Eiko 211 · Tijotengoku 82 · Hikari 86 · Kyusei 36.
+Por tipo: artigos avulsos 216 · **寸鉄/寸鉄活人 134** · **質問応答 38** ·
+**巻頭言 27**.
+
+## 4. Achados
+- **寸鉄** (assinada pelo pseudônimo **白光生**) é de Meishu-Sama — está no
+  Zenshū **著述篇** (289×). Encaixa no critério do projeto (autoria, não gênero).
+- Os **質問応答** (妙智之光/教えの光/叡智の光) **NÃO** estão nas orais do app
+  (`御教え集`/`御垂示録`/`御光話録`) — verificado por sonda de corpo (0/468).
+  Estão no Zenshū **講話篇** (`kowa_full.txt`), que é a coleção-mãe das orais.
+- Os **巻頭言** (27) estão no Zenshū **著述篇**.
+- O livro **「教えの光」** (`reports/livros_trabalho/jp/19510520-教えの光.txt`) é
+  a compilação dos **妙智之光 地上天国 1–10号** (cobertura 0,43–0,69) — por isso
+  esses são presentes. **Lição**: procurar a compilação antes de declarar ausente.
+- **ミカエルの吾** (地上天国 29号) confirmado ausente (rattail
+  `search1/situmon/situmo35.html`).
+
+## 5. Entrega
+`reports/periodicos_trabalho/`:
+- `PERIODICOS_MEISHU_SAMA_FINAL.{csv,json}` — lista completa (1.187).
+- `PERIODICOS_MEISHU_SAMA_LACUNAS.csv` — os 415 ausentes.
+- `FILA_TRADUCAO_PERIODICOS.{csv,json}` — fila de tradução (415, com texto JP).
+- `PERIODICOS_MEISHU_SAMA_ZENSHU.csv` — bloco Zenshū (1.332 entradas).
+- `README_PERIODICOS_MEISHU_SAMA.md` — método e resultado.
+Scripts: `confirmar_ausentes_periodicos.py`, `conferir_presenca_periodicos.py`,
+`finalizar_periodicos_meishu_sama.py`, `consolidar_periodicos_meishu_sama.py`,
+`montar_fila_traducao_periodicos.py`.
+
+## 6. Correção de documento anterior
+`docs/COMPARATIVO_PERIODICOS_MIOSHIE_ZENSHU_20261006.md` concluía "periódicos
+reais ausentes: 0" — **errado**: media séries/arquivos, não artigos. Corrigido
+(aviso no topo + §4). A lacuna real é de **415 artigos**.
+
+## Onde continuar
+1. Tradução da fila (`FILA_TRADUCAO_PERIODICOS.json`) — ver orçamento.
+2. Rever os 2 itens `a_revisar` restantes.
