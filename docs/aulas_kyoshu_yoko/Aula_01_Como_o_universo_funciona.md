@@ -1,0 +1,233 @@
+# Aula 1 — Como o universo funciona
+
+*Encontro 1 de 3 — Curso de Preparação*
+
+---
+
+## O que vamos ver hoje
+
+Vamos começar entendendo como o universo funciona. Parece um assunto distante, mas
+não é: é a base de tudo o que veremos nos três encontros, inclusive do porquê
+adoecemos e de como se cura.
+
+Ao final desta hora, você terá entendido cinco coisas: que o universo tem três
+mundos, que tudo é feito de três elementos, que existe uma lei que liga o espírito
+ao corpo, que a vida tem uma missão — a construção do Paraíso Terrestre —, e que a
+beleza faz parte dessa obra.
+
+---
+
+## Os três mundos
+
+Do que o universo é feito?
+
+Segundo Meishu-Sama, o universo se compõe de três mundos: o mundo espiritual, o
+mundo atmosférico e o mundo material.
+
+O mundo material é o que vemos e tocamos: as casas, as árvores, o nosso próprio
+corpo. É o mundo da matéria.
+
+O mundo atmosférico é o ar. Durante muito tempo, o ser humano achou que o espaço
+vazio não fosse nada. Depois descobriu que havia o ar.
+
+E o mundo espiritual é o que não vemos, mas existe. Durante muito tempo foi
+tratado como superstição. Foi Meishu-Sama quem ensinou, com clareza, que esse
+mundo existe de verdade.
+
+O importante é isto: os três não estão separados. Existem ao mesmo tempo, e o que
+acontece em um reflete no outro.
+
+---
+
+## Os três elementos
+
+Do que as coisas são feitas?
+
+Meishu-Sama diz que tudo o que existe no universo — todos os fenômenos da natureza,
+todas as coisas — constitui-se a partir de três elementos, e não há um único ser
+que exista à parte deles.
+
+Quais são? O Elemento Fogo, o Elemento Água e o Elemento Terra. E de onde vêm? Das
+energias espirituais do Sol, da Lua e da Terra. O Sol tem como origem o Elemento
+Fogo, a Lua tem como origem o Elemento Água, e a Terra tem como origem o Elemento
+Terra.
+
+Meishu-Sama diz também que a força desses três está intimamente unida em duas
+direções: na vertical, que vai do céu à terra — do Sol à Lua e à Terra —, e na
+horizontal, que é este mundo em que vivemos.
+
+Pense num tecido. Os fios correm na vertical e na horizontal, e é o entrelaçamento
+dos dois que forma o pano. Assim é o universo, feito do entrelaçamento dessas
+forças.
+
+Guarde a ordem: Fogo, Água e Terra. Vamos voltar a ela no próximo encontro.
+
+---
+
+## A lei que governa tudo
+
+Agora a parte mais importante desta aula.
+
+Existe uma lei que governa a relação entre o que não vemos e o que vemos. Meishu-
+Sama a chama assim: o espírito é o principal, e a matéria é o secundário.
+
+O que isso quer dizer? Quer dizer que, quando algo acontece no corpo, já aconteceu
+antes no espírito. O visível é o reflexo do invisível — e não o contrário.
+
+Um exemplo simples. Se você quer mudar o que aparece na sua fotografia, não
+adianta retocar a foto. Precisa mudar a sua aparência. A foto é o reflexo; você é
+a origem.
+
+É assim que Meishu-Sama entende o corpo humano. O corpo é o reflexo. O espírito é
+a origem.
+
+E é por isso que ele diz algo que soa estranho para a medicina comum: a doença
+surge primeiro no espírito, e só depois se transfere para o corpo.
+
+Se isso é verdade, então tratar apenas o corpo é tratar o efeito. Nunca a causa. E
+é exatamente aí que entra o ensinamento do próximo encontro.
+
+---
+
+## O mundo está mudando
+
+Agora, uma ideia que muda tudo.
+
+Meishu-Sama ensina que o mundo espiritual passa por ciclos, como o dia tem manhã
+e tarde. E diz que estamos vivendo justamente a passagem de uma era para outra.
+
+Ele chama essas eras de Mundo da Noite e Mundo do Dia.
+
+O Mundo da Noite foi o tempo longo em que a humanidade viveu com pouca luz
+espiritual. Meishu-Sama compara essa luz ao luar: ilumina, mas não aquece; mostra,
+mas não transforma.
+
+O Mundo do Dia é o tempo que agora começa. A luz dele é a do sol — luz que
+dissolve, que aquece, que faz as coisas amadurecerem.
+
+Por que isso importa para nós? Porque a maneira de curar doenças também depende
+disso. No Mundo da Noite, as curas eram limitadas e passageiras. No Mundo do Dia,
+tornou-se possível algo novo: uma cura que vai à raiz.
+
+Meishu-Sama é claro: sem entender essa passagem, não se entende o princípio de
+cura das doenças. Entender a transição não é curiosidade — é a chave.
+
+---
+
+## A missão do ser humano
+
+Agora a pergunta maior: para que existimos?
+
+Meishu-Sama responde com uma clareza que surpreende. O fato de o ser humano nascer
+neste mundo se deve à ordem de Deus. E qual é a intenção de Deus? Construir neste
+mundo o mundo ideal — o Paraíso Terrestre: o mundo onde não há doença, pobreza nem
+conflito.
+
+E, para isso, Deus concede a cada pessoa a sua respectiva missão. Dá a cada uma a
+sua característica, e faz com que, renascendo e morrendo, avancem passo a passo em
+direção a esse objetivo.
+
+Repare no que isso significa. A vida não é uma repetição sem sentido: cada
+encarnação é um passo, e cada pessoa tem a sua parte. Ninguém está aqui por
+acaso.
+
+Meishu-Sama chega a dizer algo que reabilita tudo o que veio antes: a cultura
+material que a humanidade construiu até hoje, com todo o seu esforço, não foi em
+vão — foi o trabalho fundamental, o alicerce, para a construção do Paraíso
+Terrestre.
+
+E o ser humano ocupa nessa obra um lugar especial: sendo o senhor espiritual de
+todas as coisas, não deve existir no mundo nada que lhe seja desnecessário.
+
+**De que forma isso toca cada um?** Aqui está o ponto que muda a vida prática:
+essa missão não é só de Meishu-Sama nem só dos ministros. É de cada fiel.
+
+Meishu-Sama diz que quem ministra o Johrei age como representante de Deus. E
+despede o curso pedindo que os fiéis vivam com a consciência e o orgulho de serem
+apóstolos da construção do Paraíso Terrestre.
+
+Ou seja: o trabalho de cada um — a sua dedicação, o seu culto, o seu Johrei, o seu
+dia comum — é parte da construção. Não se trata de esperar que o Paraíso apareça:
+trata-se de construí-lo, cada um no seu lugar.
+
+Guarde esta ideia. Ela é a razão de tudo o que vem depois: por que se cuida do
+corpo, por que se cultua, por que se dedica, por que se sufragam os antepassados.
+
+---
+
+## A beleza também faz parte
+
+E há uma dimensão dessa obra de que quase ninguém fala: o belo.
+
+O mundo que Deus quer construir tem três dimensões — Verdade, Bem e Belo. Não
+basta ser correto e ser bom: é preciso também cultivar o belo.
+
+E Meishu-Sama explica o motivo: a apreciação da arte, da natureza e da beleza
+purifica e eleva a alma. Foi por isso que a Igreja construiu museus de arte e
+jardins nos seus modelos do Paraíso Terrestre — para que, ao ver o que é belo, a
+alma das pessoas se eleve.
+
+As flores têm aí um lugar especial. Meishu-Sama dizia que as flores não devem ser
+mortas ao serem arranjadas: a arte de arranjar flores é aproveitar e expressar o
+que há de melhor na natureza, e não submetê-la a um modelo fixo. É a mesma ideia
+da Agricultura Natural — deixar a natureza ser o mais natural possível. Ele ia
+além: o vaso, a flor, a parede e o kakemono devem combinar, de modo que todo o
+conjunto do tokonoma se torne uma obra de arte.
+
+Há também a beleza das pessoas. Ele distingue três: a beleza artificial, que vem
+do pó e do batom; a beleza natural, que é a da saúde, do sangue purificado; e a
+beleza sensorial, que nasce de um coração belo e desperta respeito e afeição. E
+ensina onde está a verdadeira: na saúde e no coração, não no cosmético.
+
+Para quem está começando, a consequência é simples: cuidar de flores e de beleza
+não é distração nem luxo — é uma forma de purificação, e faz parte da construção.
+
+---
+
+## Morte e vida
+
+Vamos fechar com duas perguntas: o que é morrer? O que é nascer?
+
+Morrer é o espírito deixar o corpo. O corpo é como uma roupa: pertence ao mundo
+material, e quando deixa de funcionar o espírito se desprende e segue para o mundo
+espiritual.
+
+Mas aqui está o ponto que muda tudo: morrer não é o fim.
+
+Meishu-Sama ensina que, no mundo espiritual, o espírito vive por um tempo e depois
+volta a nascer neste mundo. Não uma vez só — muitas vezes. A vida é um movimento
+contínuo: nasce, vive, parte, volta.
+
+Voltaremos a isso no terceiro encontro. Por ora, basta guardar: a vida continua
+depois da morte, e há retorno.
+
+E por isso a doença não é apenas um acidente do corpo. Tem a ver com o espírito. E
+o espírito tem história.
+
+---
+
+## O que levar deste encontro
+
+Seis ideias, se você guardar apenas seis:
+
+Primeira: o universo tem três mundos — espiritual, atmosférico e material. Eles
+existem juntos, e um reflete o outro.
+
+Segunda: tudo é feito de três elementos — Fogo, Água e Terra.
+
+Terceira: existe uma lei — o espírito é principal, a matéria é secundária. A
+doença começa no espírito e só depois aparece no corpo.
+
+Quarta: o mundo passou do Mundo da Noite para o Mundo do Dia. E é por isso que uma
+forma nova de cura se tornou possível.
+
+Quinta: a vida tem uma missão. Deus concede a cada pessoa a sua parte na
+construção do Paraíso Terrestre — o mundo sem doença, pobreza nem conflito. E
+quem ministra o Johrei age como representante de Deus nessa obra. Ninguém está
+aqui por acaso.
+
+Sexta: a beleza faz parte. O Paraíso Terrestre é Verdade, Bem e Belo — e cuidar de
+flores e de beleza é uma forma de purificação.
+
+No próximo encontro vamos entrar no como disso tudo: de onde vêm as doenças, o que
+a febre realmente significa e o que é o Johrei.

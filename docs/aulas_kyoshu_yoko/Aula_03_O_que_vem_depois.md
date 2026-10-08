@@ -1,0 +1,293 @@
+# Aula 3 — O que vem depois, e a vida de fé
+
+*Encontro 3 de 3 — Curso de Preparação*
+
+---
+
+## O que vimos até aqui
+
+No primeiro encontro vimos que o universo tem três mundos, que tudo é feito de três
+elementos, e que o espírito é principal e a matéria é secundária.
+
+No segundo, vimos que a doença é limpeza do corpo, que a febre e a dor são
+instrumentos dessa limpeza, e que o Johrei dissolve as nuvens espirituais — a causa
+real.
+
+Mas ficou uma pergunta. Se a doença tem a ver com o espírito, e o espírito tem
+história, de onde vem essa história? O que acontece quando alguém morre? E por que
+isso afeta quem ainda está vivo?
+
+É disso que trata este último encontro. E, ao fim dele, vamos ver também o que
+essa ligação nos pede: as práticas com que vivemos a fé.
+
+---
+
+## O que acontece quando morremos
+
+Vamos começar pela pergunta mais antiga da humanidade.
+
+O ser humano é composto de duas partes: o corpo físico e o corpo espiritual.
+Quando a pessoa morre, o espírito se desprende do corpo e entra no mundo
+espiritual. Ali começa outra vida — não o fim de tudo.
+
+Vale afastar um medo. Muitas pessoas ouvem «mundo espiritual» e pensam em castigo.
+Mas o que acontece lá não é uma sentença arbitrária — é consequência. E o mundo
+espiritual tem uma estrutura: três planos, que correspondem a três estados.
+
+O Paraíso, onde a luz e o calor são os mais intensos. O mundo intermediário, que
+corresponde a este mundo em que vivemos. E o Inferno, que o curso descreve como o
+mundo das trevas e da ausência de calor.
+
+Quanto mais luz, mais alto. Quanto menos luz, mais baixo.
+
+---
+
+## A vida continua
+
+Um ponto importante: a vida continua, e há retorno.
+
+O mundo espiritual não é um lugar de espera passiva. É um lugar de continuidade.
+Quem parte continua, e há um momento em que volta a nascer neste mundo.
+
+Meishu-Sama diz que nascer significa que o espírito que partiu, após certo tempo,
+renasce novamente no mundo material. E conclui: o espírito é um corpo vivo
+infinito, e o corpo físico é algo finito.
+
+Guarde esta frase: o espírito é infinito; o corpo é finito. É por isso que a morte
+não interrompe a vida — apenas muda o lugar onde ela acontece.
+
+---
+
+## O que decide a posição da alma
+
+Agora a pergunta prática: o que decide onde a alma está?
+
+A resposta usa uma imagem muito clara. O espírito puro, por ser leve, está nas
+camadas superiores. O espírito com nuvens espirituais, por ser pesado, está nas
+camadas inferiores.
+
+Leve sobe. Pesado desce.
+
+E o que torna a alma leve ou pesada? Meishu-Sama é direto: é crer ou não no que
+não se vê.
+
+Ele diz que o método pelo qual se pode saber se o ser humano se tornará um deus ou
+um demônio é justamente esse: se ele crê ou não no que não se vê. Quem crê no que
+não se vê eleva-se até se tornar um deus. O contrário corre o risco de decair.
+
+E conclui, sem hesitar: somente quem crê no que não se vê é verdadeiramente um
+homem bom.
+
+---
+
+## Bem e mal
+
+O critério, então, não é uma lista de coisas proibidas. É uma atitude de fundo:
+você age sabendo que existe algo acima de você, ou age como se não existisse nada?
+
+Meishu-Sama explica por que isso faz toda a diferença. O fato de o ser humano não
+praticar o mal deve-se à noção de que Deus, que não se vê, está observando. E o
+fato de praticar o mal decorre do pensamento de que o que não se vê não pode
+existir — e da noção de que, se ninguém vê, pode-se fazer qualquer coisa.
+
+Ele também é realista sobre quem faz o bem apenas por conveniência. Chama essa
+pessoa de homem bom disfarçado: quem age bem só para preservar a confiança, ou por
+medo de ser exposto.
+
+A diferença, portanto, é de dentro para fora. Não de fora para dentro.
+
+---
+
+## O elo que nos liga
+
+Falta a peça que explica tudo o que vimos.
+
+No encontro passado, dissemos que as toxinas podem ser congênitas — vir dos
+antepassados. Isso parecia estranho. Agora vamos entender por quê.
+
+Existe uma ligação real entre as pessoas. Meishu-Sama a chama de elo espiritual.
+Não é uma metáfora: é uma ligação que existe, embora não se veja.
+
+Ele diz que antepassados e descendentes estão ligados por um fio invisível de
+afinidade chamado elo espiritual.
+
+É por esse elo que o que acontece com um alcança o outro. O que o antepassado
+viveu repercute no descendente. E o que o descendente faz repercute no
+antepassado.
+
+E é por isso que isso aparece num curso sobre saúde: se estamos ligados, a
+purificação de um não é assunto apenas dele.
+
+---
+
+## Os antepassados e nós
+
+Por causa desse elo, os espíritos ancestrais aparecem com respeito — e com uma
+observação prática.
+
+Meishu-Sama diz que o espírito ancestral, naturalmente, deseja a felicidade dos
+descendentes e a prosperidade de sua casa. Está sempre em vigilância para que eles
+não tomem o caminho errado.
+
+E, sobre os cultos, ele observa algo simples: os espíritos ancestrais se alegram
+imensamente com os cultos feitos com o coração humano, e não se alegram muito com
+os que são apenas de forma.
+
+A ideia, então, não é medo dos antepassados. É reconhecimento: eles fazem parte da
+nossa história, e nós fazemos parte da deles.
+
+---
+
+## Os cultos e o Solo Sagrado
+
+A fé também se vive em conjunto.
+
+O ensinamento prevê que os fiéis compareçam à igreja em dia determinado de cada
+mês para receber a transmissão dos ensinamentos e cultuar. O culto não é uma
+reunião administrativa: é um ato de agradecimento e de comunhão.
+
+Um detalhe que Meishu-Sama repete muito é a ordem. Seja no assento do Johrei,
+seja no culto, existe uma ordem — o lugar de honra, quem vem primeiro, quem se
+atende primeiro. E ele explica por que isso importa: porque a ordem pertence ao
+mundo espiritual, e, quando ela é perturbada, as coisas não andam bem. A ordem não
+é etiqueta vazia. É aprender com a grande natureza, onde a flor de ameixeira nunca
+desabrocha antes da de cerejeira.
+
+E há o Solo Sagrado. O ensinamento fala da construção de lugares que sejam modelo
+do Paraíso Terrestre: em Hakone, Atami e Kyoto, no Japão — e hoje também no Brasil,
+no Solo Sagrado do Guarapiranga. São lugares onde se combinam templos, jardins e
+museus, para purificar e elevar a alma de quem os visita.
+
+Para o fiel, participar do culto na unidade e visitar o Solo Sagrado são formas
+concretas de se colocar onde a obra divina está sendo construída.
+
+---
+
+## A leitura dos Escritos Divinos
+
+Uma prática que aparece centenas de vezes nos ensinamentos: a leitura dos
+Escritos Divinos.
+
+E Meishu-Sama diz por quê. Ele ensina que, pela leitura, a alma se eleva de
+dentro, através dos olhos. E mais: a leitura desenvolve o Chieshōkaku, a
+Inteligência da Percepção Verdadeira.
+
+Isso importa muito para quem ministra Johrei. Quando Meishu-Sama explica como
+reconhecer o ponto vital do doente, ele diz que o primeiro passo não é a técnica:
+é a leitura dos Escritos Divinos. É ela que aguça a percepção; a experiência faz o
+resto.
+
+E, nos casos de doença espiritual, a orientação se repete: que se leia os Escritos
+Divinos para o doente o máximo possível, porque isso purifica espiritualmente e
+faz a pessoa se curar mais depressa.
+
+Ou seja, a leitura não é estudo para saber mais. É prática: é limpeza, é remédio,
+é treino da percepção.
+
+---
+
+## Dedicação e o donativo de gratidão
+
+Chegamos às duas práticas que traduzem a fé em ato: o que se faz e o que se
+oferta.
+
+No curso original, Meishu-Sama diz que o segundo modo de remover as nuvens
+espirituais é auxiliar na construção do Paraíso Terrestre. Isso é a dedicação: o
+trabalho oferecido à obra divina.
+
+E ele mostra como ela se realiza. Ao falar das grandes construções, registra que
+foram levadas adiante pelo serviço voluntário dos fiéis — pessoas que trabalharam
+sem interesse próprio. E observa que, por causa disso, as obras caminhavam muito
+mais rápido do que uma construção comum.
+
+A dedicação, portanto, não é taxa nem obrigação burocrática. É retribuição: tempo
+e trabalho oferecidos em gratidão.
+
+E é aqui que a missão do primeiro encontro deixa de ser teoria. Se Deus concede a
+cada pessoa uma parte na construção do Paraíso Terrestre, a dedicação é o momento
+em que essa parte é entregue. Não se dedica por medo nem por cobrança: dedica-se
+porque há um lugar na obra que só aquele fiel pode ocupar.
+
+A outra forma de retribuir é o donativo de gratidão, aquilo que se oferece diante
+do altar.
+
+Aqui Meishu-Sama faz uma observação que vale guardar. Ele diz que, quando alguém é
+salvo de uma doença grave ou escapa de uma calamidade, é natural agradecer. Mas,
+nos dias tranquilos, em que não há ansiedade nem doença, tendemos a esquecer a
+gratidão — e é justamente aí que ela falta mais.
+
+E ele compara: mais digno de gratidão do que ter sido salvo depois de ser
+atropelado por um carro é não ter sido sequer tocado por ele. O dia comum e
+tranquilo já é a maior das graças.
+
+A conclusão é a imagem da semente: receber graças sem retribuir é como esperar
+colheita sem plantar. E, diz ele, na medida exata do serviço prestado a Deus, tudo
+retorna, multiplicado.
+
+---
+
+## Sufragar os antepassados
+
+Falta a prática que olha para trás, para quem veio antes de nós.
+
+Vimos que antepassados e descendentes estão ligados por um fio invisível de
+afinidade. Por causa desse elo, o que fazemos alcança quem partiu — e o que eles
+vivem nos alcança. Se é assim, cuidar dos antepassados não é curiosidade: é
+retribuição.
+
+O ensinamento é claro sobre dois pontos práticos.
+
+O primeiro: os antepassados naturalmente desejam a felicidade dos descendentes, e
+estão em vigilância para que não se tome o caminho errado. Quando os descendentes
+não os cultuam — ou quando acumulam desvios —, eles podem usar a purificação como
+meio de chamar de volta ao caminho. Isso não é castigo: é advertência de quem quer
+bem.
+
+O segundo: não se deve falar mal dos mortos. Falar mal de quem partiu faz seu
+espírito sofrer, e ele pode se encostar em quem falou.
+
+É para isso que existe o Sorei-Saishi: o ofício de assentamento e sagração dos
+ancestrais e antepassados. Por meio dele, os antepassados da família são
+registrados e passam a ser sufragados de modo permanente.
+
+Há também o ciclo que acompanha o falecimento: os ofícios iniciais, os
+aniversários de falecimento — que valem por qualquer número de anos e que, segundo
+Meishu-Sama, beneficiam também os vivos ligados à linhagem — e o culto dedicado às
+almas, na data que, no Brasil, corresponde ao dia de finados.
+
+No Brasil, esse sufrágio se faz no Santuário dos Antepassados, no Solo Sagrado do
+Guarapiranga; no Japão, em Atami. O fiel pode também ter, em casa, um altar
+dedicado aos antepassados.
+
+E vale afastar um medo. A prática não é para agradar espíritos irritados. É
+reconhecimento e gratidão — e, como vimos, os antepassados se alegram imensamente
+com os cultos feitos com coração humano, e não se alegram com os que são apenas de
+forma.
+
+---
+
+## Fechando o curso
+
+Vamos reunir tudo, porque as três aulas formam uma só ideia.
+
+Aula 1 — Como o universo funciona. Três mundos, três elementos, e uma lei central:
+o espírito é principal e a matéria é secundária. A doença começa no espírito e só
+depois aparece no corpo. E ficamos sabendo para que existimos: construir o Paraíso
+Terrestre, cada um com a sua missão — e a beleza faz parte disso.
+
+Aula 2 — Por que adoecemos e como nos curamos. A doença é limpeza; a febre e a dor
+são instrumentos dessa limpeza, não inimigos. As toxinas do corpo correspondem a
+nuvens espirituais no espírito, e o Johrei dissolve essas nuvens — por isso alcança
+a causa. E a prática tem suas condições: a humildade de quem ministra, o cuidado
+com o Ohikari, e o respeito à natureza no alimento e na terra.
+
+Aula 3 — O que vem depois, e a vida de fé. A morte não é o fim: o espírito segue e
+volta a nascer. A posição da alma não é fixa — ela sobe ou desce conforme seja leve
+ou pesada, e o que a torna leve é crer no que não se vê. Estamos ligados pelo elo
+espiritual, e por isso o que fazemos não termina em nós. Daí as práticas que
+cumprem a missão: o culto e o Solo Sagrado, a leitura dos Escritos Divinos, a
+dedicação e o donativo de gratidão, e o sufrágio dos antepassados.
+
+Vista de conjunto, é uma visão de mundo em que o que fazemos importa — e importa
+para além de nós. E o que se entende termina em conduta: o ensinamento não é um
+conjunto de ideias a serem acreditadas, mas um caminho a ser percorrido.

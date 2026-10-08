@@ -1,0 +1,264 @@
+# Aula 2 — Por que adoecemos e o que é o Johrei
+
+*Encontro 2 de 3 — Curso de Preparação*
+
+---
+
+## De onde paramos
+
+No encontro passado vimos que o universo tem três mundos, que tudo é feito de três
+elementos, que o espírito é principal e a matéria é secundária, e que o mundo
+passou do Mundo da Noite para o Mundo do Dia.
+
+Hoje vamos responder à pergunta que ficou no ar: se a doença começa no espírito, o
+que acontece ali? E o que é o Johrei?
+
+E vamos dar um passo adiante. Saber o que é o Johrei não basta: é preciso saber
+como se ministra, como se cuida do Ohikari que o torna possível, e o que o
+ensinamento diz sobre o alimento — porque o corpo se constrói do que entra nele.
+
+---
+
+## A doença é limpeza
+
+A primeira ideia deste encontro é surpreendente. Meishu-Sama diz, com todas as
+letras: a doença é a limpeza do corpo humano.
+
+Isso é o contrário do que costumamos pensar. Normalmente vemos a doença como uma
+invasão, algo que vem de fora e ataca. O ensinamento diz que é o oposto: é o corpo
+se limpando por dentro.
+
+Meishu-Sama usa comparações do dia a dia. Uma casa precisa ser varrida todas as
+manhãs, e de vez em quando precisa de uma limpeza maior. Relógios e máquinas
+também precisam de limpeza.
+
+E, entre o céu e a terra, também há limpeza: a chuva lava, o sol seca, o vento
+varre, a neve cai. Tudo isso é limpeza.
+
+Assim é o corpo humano. Ele acumula impurezas ao longo da vida e, de tempos em
+tempos, precisa eliminá-las. Quando isso acontece, chamamos de doença.
+
+---
+
+## A limpeza tem duas etapas
+
+Entender esse mecanismo é o coração deste encontro.
+
+Primeira etapa. As toxinas vão se acumulando e se endurecendo em pontos do corpo.
+Isso acontece aos poucos, e sem sintoma. Meishu-Sama diz que essa primeira etapa
+não vem acompanhada de febre, de modo que a dor não é sentida e não se tem
+sensação de doença.
+
+Ou seja: o corpo já está trabalhando, e a pessoa não sente nada. É por isso que
+muita gente se considera saudável sem estar — as impurezas estão lá, apenas ainda
+não se manifestaram.
+
+Segunda etapa. Chega o momento em que o corpo decide expulsar o que acumulou. Mas
+há um problema: as toxinas estão endurecidas, e não se pode expulsar o que está
+endurecido. É preciso primeiro dissolver.
+
+E o que dissolve? O calor. Meishu-Sama explica que, para que ocorra essa segunda
+etapa, é preciso dissolver e liquefazer as toxinas; por isso, é necessária a
+febre.
+
+Aí está o ponto. A febre não é a doença. A febre é o instrumento da limpeza.
+
+---
+
+## A febre e a dor
+
+Vamos olhar para os dois sintomas que mais assustam.
+
+A febre. O coração absorve o Elemento Fogo e mantém a temperatura do corpo. Quando
+é preciso dissolver toxinas, o corpo precisa de mais calor do que o normal. Por
+isso o coração bate mais rápido, o pulso acelera e a temperatura sobe.
+
+A dor. Depois que as toxinas se dissolvem, elas viram líquido e precisam sair. Elas
+procuram uma direção, e esse movimento estimula os nervos. É isso que dói.
+
+E Meishu-Sama resume tudo numa frase: na Igreja Messiânica, a doença é vista como a
+dor temporária que vai desde a dissolução das toxinas pela febre até a sua saída
+para o exterior.
+
+Repare na palavra: temporária. A doença, vista assim, tem começo, meio e fim. Não é
+um estado permanente — é um processo que se completa.
+
+---
+
+## De onde vêm as toxinas
+
+Se o corpo acumula toxinas, de onde elas vêm?
+
+As toxinas se dividem em congênitas e adquiridas.
+
+As congênitas são as que vêm dos antepassados. Vamos tratar disso com mais cuidado
+no próximo encontro, porque depende de entender o que é o elo espiritual.
+
+As adquiridas são as que a própria pessoa acumula. E aqui Meishu-Sama aponta uma
+fonte principal: o medicamento. Ele explica o motivo. O corpo humano está
+constituído de modo que não consegue processar completamente os corpos estranhos
+ao organismo que não sejam os alimentos a ele destinados. Por isso, o medicamento
+permanece no corpo.
+
+O corpo sabe processar alimento. O que não é alimento, ele não consegue eliminar
+por completo — e aquilo fica.
+
+Sobre o que comer, a orientação do curso é simples: basta ingerir os alimentos
+conforme a natureza os pede.
+
+---
+
+## O que é o Johrei
+
+Chegamos ao centro do encontro.
+
+Vimos que as doenças vêm de toxinas acumuladas. E vimos que toda toxina do corpo
+tem uma correspondente no espírito: são as nuvens espirituais.
+
+Meishu-Sama explica a relação: a parte de toxinas que existe no corpo físico tem,
+tal como está, as nuvens espirituais correspondentes na alma. E diz que essas
+nuvens não são matéria — são algo espiritual, invisível aos olhos.
+
+Então, por onde começa a cura? Não pelo corpo. Pelo espírito. Ele é direto: basta
+que se dissolvam as nuvens espirituais, pois essas nuvens se tornam acúmulo
+endurecido de toxinas no corpo físico; assim, elas se dissolvem e a doença se cura.
+
+E o que dissolve as nuvens? A radiação do Elemento Fogo.
+
+E é isso que o Johrei faz. Pela emissão do poder divino — isto é, do Elemento Fogo
+— quando as nuvens espirituais se dissolvem, as toxinas do corpo físico são
+excretadas para fora do organismo.
+
+Acompanhe a sequência, devagar:
+
+Primeiro, no espírito existem nuvens espirituais.
+Depois, essas nuvens se materializam no corpo como toxinas acumuladas.
+Dissolvendo as nuvens no espírito, as toxinas se dissolvem no corpo.
+E a doença então se desfaz.
+
+Por isso o Johrei alcança a raiz. Ele não age apenas sobre o corpo — age onde a
+causa está.
+
+---
+
+## Como se ministra o Johrei
+
+Já sabemos o que o Johrei é. Agora, como se pratica?
+
+A primeira coisa é a postura. Quem ministra senta-se no lugar de honra e tem a
+consciência de ser representante de Deus. Dirige a palma da mão ao corpo do
+doente, a uma distância natural, e não coloca força nas mãos.
+
+E não é uma comparação, é literal: Meishu-Sama diz que, ao ministrar o Johrei, a
+pessoa está agindo como representante de Deus. Lembrem-se do que vimos no
+primeiro encontro — a missão de cada um na construção do Paraíso Terrestre. O
+Johrei é essa missão em ação concreta: a mão estendida é a mão da obra.
+
+Isso não é detalhe. Meishu-Sama explica que quanto mais se retira a força física,
+mais forte fica a emissão. Quem cura é Deus, não nós. É por isso que quem começa,
+com medo e hesitação, às vezes tem um resultado surpreendente — e quem depois se
+acostuma e passa a achar que cura com a própria força deixa de curar. A humildade
+não é modéstia: é condição de funcionamento.
+
+O segundo ponto é ouvir. Deve-se perguntar ao doente onde ele sente dor e
+observar onde há calor, dureza ou mau aspecto. Os sintomas não são iguais em todas
+as pessoas, e a gratidão de quem recebe influencia muito o resultado.
+
+O terceiro ponto é a ordem dos lugares. Começa-se pela cabeça, que é o centro
+principal do ser humano, e depois a nuca, o pescoço e os ombros. E há um ponto que
+não se pode esquecer: quando se divide o corpo em espírito e matéria, a parte
+dorsal corresponde ao espírito. Por isso, se não se fizer bem o Johrei nas costas,
+a doença não melhora verdadeiramente. As costas — e em especial a região dos rins
+— são importantes em qualquer doença.
+
+Nas doenças espirituais ou graves, pode-se entoar o norito ou a Oração
+Zengen-Sandji.
+
+E há um modo simples de perceber a saúde de alguém: apalpar os ombros. Ombro mole,
+em que o dedo afunda um pouco, é sinal de saúde; ombro duro, de toxinas
+acumuladas. Por isso Meishu-Sama recomenda cuidar dos próprios ombros no dia a
+dia.
+
+---
+
+## O cuidado com o Ohikari
+
+Falta falar do que torna o Johrei possível.
+
+O Ohikari é a Luz recebida. É por meio dele que a força divina passa a quem o
+porta, e é ele que permite ministrar o Johrei. No curso original, é entregue no
+terceiro e último dia.
+
+Recebê-lo não é o fim do caminho: é o começo da prática. E, por ser algo sagrado,
+usa-se sempre junto ao corpo.
+
+Sobre isso Meishu-Sama responde com muita clareza: o Ohikari não se tira nunca,
+só ao entrar no banho — nem por um minuto. E, ao ministrar o Johrei, esquecê-lo é
+falta de respeito e, acima de tudo, sinal de que a atenção se ausentou.
+
+Em resumo: o Ohikari não é um objeto de sorte que se guarda numa gaveta. É um
+compromisso que se traz junto, e que se cuida.
+
+---
+
+## Alimentação e Agricultura Natural
+
+Se o corpo se limpa por dentro, o que entra nele importa.
+
+Sobre a alimentação, a orientação é simples e não tem receita complicada: basta
+ingerir os alimentos conforme a natureza os pede. A base é o arroz; os
+acompanhamentos existem para que se coma o arroz com prazer, e o ideal é ter as
+hortaliças como principal e o peixe e a carne como secundários.
+
+Meishu-Sama acrescenta algo que contraria a lógica comum: quanto mais frugal a
+alimentação, mais forte se torna o ser humano. Porque o corpo, recebendo menos,
+ativa a própria função digestiva para produzir o que precisa. E forçar-se a comer
+o que se detesta, abrindo mão do que se gosta, é tolice.
+
+Para os doentes, a recomendação é deixá-los comer o que desejam. E, nos casos
+graves, dar preferência à alimentação vegetariana, que purifica o sangue mais
+depressa.
+
+A mesma lei vale para a terra. Da mesma forma que o ensinamento combate a toxina
+medicamentosa, ele combate o fertilizante e o agrotóxico. Meishu-Sama chama a
+Agricultura Natural — o cultivo sem fertilizantes nem produtos químicos — de
+grande boa-nova no campo da agricultura.
+
+O raciocínio é o mesmo da medicina. O que é antinatural não se processa: acumula e
+adoece. Uma terra tratada com veneno dá alimentos que também prejudicam. A
+Agricultura Natural busca, ao mesmo tempo, o aumento da produção e o alimento
+verdadeiramente puro.
+
+Vale notar: é a mesma lei vista em dois lugares. O que se faz com a terra e o que
+se faz com o corpo seguem o mesmo princípio — respeitar a natureza, em vez de
+forçá-la.
+
+---
+
+## O que levar deste encontro
+
+Sete ideias para guardar.
+
+Primeira: a doença é limpeza do corpo — não uma invasão que vem de fora.
+
+Segunda: a limpeza tem duas etapas. Na primeira, as toxinas se acumulam sem
+sintoma. Na segunda, o corpo as dissolve, e aí aparecem a febre e a dor — que são
+instrumentos da limpeza.
+
+Terceira: toda toxina do corpo corresponde a nuvens espirituais no espírito.
+
+Quarta: o Johrei dissolve essas nuvens. Por isso alcança a causa, e não apenas o
+efeito.
+
+Quinta: o Johrei não é técnica nem talento. Quem cura é Deus, e a humildade é
+condição de funcionamento. Começa-se pela cabeça, e as costas não podem ser
+esquecidas.
+
+Sexta: o Ohikari, recebido no fim do curso, acompanha o fiel sempre junto ao
+corpo.
+
+Sétima: o corpo e a terra seguem a mesma lei. Alimentação simples e agricultura
+sem veneno: respeitar a natureza, em vez de forçá-la.
+
+No próximo encontro vamos olhar para o que vem depois desta vida — e para o que
+essa ligação nos pede no dia a dia.
