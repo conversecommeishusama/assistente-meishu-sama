@@ -167,12 +167,27 @@ purifica e eleva a alma. Foi por isso que a Igreja construiu museus de arte e
 jardins nos seus modelos do Paraíso Terrestre — para que, ao ver o que é belo, a
 alma das pessoas se eleve.
 
-As flores têm aí um lugar especial. Meishu-Sama dizia que as flores não devem ser
-mortas ao serem arranjadas: a arte de arranjar flores é aproveitar e expressar o
-que há de melhor na natureza, e não submetê-la a um modelo fixo. É a mesma ideia
-da Agricultura Natural — deixar a natureza ser o mais natural possível. Ele ia
-além: o vaso, a flor, a parede e o kakemono devem combinar, de modo que todo o
-conjunto do tokonoma se torne uma obra de arte.
+As flores têm aí um lugar especial — tão especial que Meishu-Sama criou um
+movimento só para elas: o Movimento de Formação do Paraíso por meio das Flores.
+
+O raciocínio dele parte de uma observação simples. A beleza que entra pelos
+ouvidos — a música — já estava ao alcance de quase todos, graças ao rádio e aos
+discos. Mas a beleza que entra pelos olhos dependia de teatro e cinema, sempre
+limitados pelo tempo, pelo dinheiro e pela distância. Faltava algo simples,
+próximo e sem hora marcada: uma beleza que qualquer pessoa pudesse ter diante de
+si, todos os dias.
+
+A solução foram as flores. Meishu-Sama propôs cultivar e distribuir flores em
+grande quantidade, para que toda casa — de qualquer classe, em qualquer lugar —
+pudesse tê-las. Uma única flor no canto de um escritório, ou sobre a mesa de
+estudo, já renova o ambiente e o coração. Ele sonhava até em levar flores às
+celas das prisões, tamanho o efeito que acreditava terem sobre quem as vê.
+
+E a visão final é bela: se o mundo chegasse ao ponto em que, onde houvesse gente,
+houvesse flores, a própria aparência do mundo — tão dura, tão parecida com um
+inferno — se suavizaria. As flores, portanto, não são enfeite: são um caminho
+escolhido por Meishu-Sama para elevar a alma da humanidade e construir, aos
+poucos, o Paraíso Terrestre.
 
 Há também a beleza das pessoas. Ele distingue três: a beleza artificial, que vem
 do pó e do batom; a beleza natural, que é a da saúde, do sangue purificado; e a
