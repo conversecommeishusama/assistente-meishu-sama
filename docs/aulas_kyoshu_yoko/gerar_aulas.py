@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Gera as 3 aulas do Kyōshu Yōkō (versão simples) em TXT, DOCX e PDF.
+"""Gera as aulas do Kyōshu Yōkō (versão simples) em TXT e PDF — para IMPRESSÃO.
 
 Formato de impressão: A4, margem de encadernação, corpo 11,5 pt / entrelinha 1,45,
 cabeçalho com o título da aula e rodapé com número de página.
+
+O DOCX **não** sai daqui. Para a versão editável em Word (com estilos de Título,
+painel de navegação e sumário automático), use `gerar_docx_editavel.py`, que
+escreve em `docx/`.
 
 Uso:
   python3 gerar_aulas.py
@@ -246,7 +250,7 @@ def gerar_txt(md: Path, destino: Path):
 if __name__ == "__main__":
     for md in sorted(BASE.glob("Aula_0*.md")):
         print(f"{md.stem}:")
-        for ext, fn in ((".txt", gerar_txt), (".docx", gerar_docx), (".pdf", gerar_pdf)):
+        for ext, fn in ((".txt", gerar_txt), (".pdf", gerar_pdf)):
             d = SAIDA / f"{md.stem}{ext}"
             fn(md, d)
             print(f"   {d.name:52} {d.stat().st_size/1024:6.0f} KB")
