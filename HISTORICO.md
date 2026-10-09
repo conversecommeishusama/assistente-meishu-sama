@@ -85,7 +85,55 @@ corrigidas antes de pedir a promoção:
 - **Amostra** para verificação: `reports/amostra_periodicos/` (5 textos, JP+PT).
 - Relatório: `reports/RELATORIO_QUALIDADE_PERIODICOS_20261009.md`.
 
-### 5. O que ficou pendente
+### 5. Decisões do glossário aplicadas (09/10, noite)
+
+Aprovadas pelo usuário (as recomendações do relatório de decisões), com dois
+ajustes dele:
+
+| # | Ponto | Decisão |
+|---|---|---|
+| 1 | 祀る / 祭る | **por objeto** — divindade→cultuar · espírito→sufragar · altar/imagem→consagrar *(já estava no glossário)* |
+| 2 | 経綸 | **por sujeito** — Deus→Plano Divino · humano→grande obra *(já estava)* |
+| 3 | 心 | **mente/consciência**; "coração" só em afeto *(já estava; entrada 心 criada)* |
+| 4 | 御軸 | **diferenciar** consagrada × caligrafia *(já estava; ver nota abaixo)* |
+| 5 | 玉串 | **"Ofertório"** *(decisão do usuário; era "Oferenda de Gratidão")* |
+| 6 | 癩病 | registro definido *(já estava no glossário)* |
+| 7 | 地所位 | "posição no mundo" *(já estava)* |
+| 8 | 1ª ocorrência | **implementar** o modo *(já existe em `primeira_ocorrencia`)* |
+| — | 光明一家 | **NOVO** — "lar messiânico (kōkyō-ikka)" *(sugestão do usuário)* |
+
+- `glossario_traducao.json`: **844 entradas** (era 833).
+- `glossario_regras.json`: unidade **石 (koku)** acrescentada; **proibição NOVA** —
+  `唯心` não pode ser "idealismo".
+
+### 6. Achados e correções de qualidade (noite de 09/10)
+
+**a) 唯心 ≠ "idealismo"** (apontado pelo usuário): o par 唯物/唯心 é
+materialismo/**espiritualismo**; "idealismo" é o sentido filosófico kantiano.
+- 1 erro real (`Eiko 124_135`: 唯心論 → "o idealismo") + 1 no corpus antigo
+  (`19510815 Terapia Revolucionária...`: 唯物唯心 → "materialismo e idealismo").
+- Ambos corrigidos para "espiritualismo" (item, `textos_portugues/` e
+  `reports/livros_trabalho/pt/`). Os demais 10 itens com 唯心 já estavam certos.
+
+**b) Erro de conversão de líquidos (×10)**: o tradutor confundiu 合 (gō = 180 mL)
+com 升 (shō = 1,8 L) e escreveu "1,8 L" onde devia ser **180 mL**; o glossário
+acrescentava o valor correto entre colchetes, criando pares contraditórios.
+- Corrigidos **7 casos** em 5 itens (Eiko 124/168/182, Kyusei 56, Hikari 20),
+  usando o colchete correto como referência.
+- Ex.: «cerca de 3,6 L [aproximadamente 360 ml]» → **«cerca de 360 mL»**.
+
+**c) Redundâncias e número truncado** (3 casos): colchete duplicado idêntico
+(Eiko 112, 235) e número truncado pelo corretor anterior
+(Hikari 42: «de cerca de cento e ~~cerca de 3310 m²~~» → **«120 mil tsubo
+(cerca de 397 mil m²)»**).
+
+**d) Quantidades de volume (koku/to/shō)** — apontado pelo usuário (bebida ficou
+transliterada). Script pronto **NÃO aplicado**: `scripts/converter_quantidades_periodicos.py`
+(19 conversões em 17 itens, com guarda que exige a medida no japonês). Fica
+pendente porque números compostos («cem mil koku», «trinta mil tsubo») exigem
+parser próprio — a primeira tentativa produziu erros e foi revertida.
+
+### 7. O que ficou pendente
 
 1. **Promoção para a Leitura Colaborativa** — os 415 estão em
    `textos_portugues/`, que o app **não** lê (`GOSHINSHO_TEXTOS_PT` aponta para
@@ -99,7 +147,7 @@ corrigidas antes de pedir a promoção:
    (`reports/livros_trabalho/{jp,pt}`) e no `data/clean_corpus`. Já há casos
    conhecidos fora dos 415: `possesso` 2× no `Tijotengoku.txt` original.
 
-### 6. Arquivos/scripts desta entrega
+### 8. Arquivos/scripts desta entrega
 
 `glossario_regras.json` · `scripts/glossario_core.py` ·
 `scripts/auditar_acervo_glossario.py` · `scripts/aplicar_ajuste_glossario_20261008.py` ·
@@ -108,6 +156,7 @@ corrigidas antes de pedir a promoção:
 `scripts/{montar_fila_traducao_periodicos,conferir_presenca_periodicos,confirmar_ausentes_periodicos,consolidar_periodicos_meishu_sama,finalizar_periodicos_meishu_sama}.py` ·
 `scripts/{run_traducao_periodicos,refazer_traducao_periodicos_antigos}.sh` ·
 `scripts/reparar_eco_jp_periodicos.py` ·
+`scripts/converter_quantidades_periodicos.py` ·
 `docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md` ·
 `docs/22-HANDOFF-RETOMADA-SESSOES_20261008.md` ·
 `docs/{ANALISE_GLOSSARIO_QUESTOES,ANALISE_GLOSSARIO_ISSUES,REVISAO_KOWA_TRADUCAO,REVISAO_ACHADOS_KOWA_POR_TEMA,ORCAMENTO_TRADUCAO_PERIODICOS,COMPARATIVO_PERIODICOS_MIOSHIE_ZENSHU,ANALISE_SUGESTOES_LEITURA}_2026100*.md`
