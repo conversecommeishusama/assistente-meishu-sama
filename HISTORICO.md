@@ -7,6 +7,87 @@
 
 ---
 
+## 09/10 — PERIÓDICOS: 415 TEXTOS TRADUZIDOS, AUDITADOS E INSERIDOS NO ACERVO
+
+> **Objetivo**: fechar a lacuna dos textos de Meishu-Sama publicados nos
+> periódicos 栄光 (Eiko), 光 (Hikari), 救世 (Kyusei) e 地上天国 (Tijotengoku),
+> traduzi-los e aplicar o glossário de tradução com rigor.
+
+### 1. Tradução — 415/415 (erro=0)
+
+- Fila de 415 artigos ausentes (ver sessão 07/10), traduzidos por DeepSeek
+  (16 workers, tmux `trad_periodicos`).
+- Última execução: `FIM: ok=7 | pula=408 | erro=0` — ou seja, **415/415
+  concluídos** (os 408 "pula" são os já traduzidos em execuções anteriores).
+- Logs: `logs/trad_periodicos_*.log`. Scripts: `traduzir_periodicos_meishu_sama.py`,
+  `montar_fila_traducao_periodicos.py`, `run_traducao_periodicos.sh`.
+- Bug corrigido: timeout de 30 s da API → 240 s (retradução dos 3 pendentes).
+- Plano do Contabo confirmado: **14 vCPU / 49 GB RAM**.
+
+### 2. Ajuste do glossário (árvore de decisão)
+
+- Entrada do trabalho documentada em
+  `docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md` (1.190 achados do Claude,
+  649 termos, 11 temas A–J+Z, 9 pontos de decisão).
+- **`glossario_traducao.json`**: 833 entradas (era 791).
+- **`glossario_regras.json`** (NOVO): decisões registradas — medidas
+  **SEMPRE** no sistema métrico; `possesso` **proibido**; modo "1ª ocorrência".
+- **`scripts/glossario_core.py`** (NOVO) — motor único do glossário;
+  `auditar_acervo_glossario.py`, `aplicar_ajuste_glossario_20261008.py`,
+  `triar_regras_glossario.py`.
+- Correção de 6 defeitos de aplicação (linhas de cabeçalho vazando para o
+  prompt; notas editoriais `(...)` virando "forma exigida" — causa dos 73 itens
+  de 御守護 falhando).
+
+### 3. Auditoria + correção + inserção (madrugada de 09/10)
+
+Ordem executada (importante: a correção veio **antes** da inserção, por isso o
+texto no acervo já está corrigido):
+
+| Hora | Ação | Resultado |
+|---|---|---|
+| 01:31 | Auditoria do glossário nos 415 | 1.185 achados · 223 itens |
+| 01:37 | Triagem (real × falso positivo) | **562 reais** · 623 FP · 157 itens |
+| 01:47–01:50 | Correção mecânica | `possesso`→`possuído` + medidas JP→métrico |
+| 01:51 | **Inserção** no acervo | +415 em `textos_portugues/{Tijotengoku,Hikari,Eiko,Kyusei}.txt` |
+| 01:51 | Reauditoria | 1.051 achados (proibição 217→129 · medida 79→33) |
+
+- Correção mecânica: `scripts/corrigir_violacoes_periodicos.py`
+  (log `reports/corrigir_violacoes_log.json`). Não toca em unidades ambíguas
+  (分/町/升/斗/勺) nem em falsos positivos (`Shō-Kannon`, `Taishidō-chō`).
+- Inserção: `scripts/inserir_periodicos_traduzidos.py` — backup timestamped por
+  veículo (`.bak_insercao_periodicos_20261009T015101Z`), dedup por título,
+  ordenação (ano, número, ordem).
+- Auditoria final: `reports/auditoria_glossario_periodicos_pos/`.
+
+### 4. O que ficou pendente
+
+1. **Promoção para a Leitura Colaborativa** — os 415 estão em
+   `textos_portugues/`, que o app **não** lê (`GOSHINSHO_TEXTOS_PT` aponta para
+   `textos_leitura_colaborativa/`). Exige autorização + rebuild de índice.
+2. **Violações residuais nos 415**: `forma` 777+62, `proibicao` 129 (todas
+   transliterações sem numeral → idiomatismos, ex. 尺進寸退), `medida` 33
+   (intervalos/unidades ambíguas), `1ª ocorrência` 50.
+3. **7 decisões abertas** do glossário (§4 do doc de decisões): 祀る/祭る,
+   経綸 por sujeito, 心, 御軸, 玉串, 癩病, 地所位 (+ nº9, modo 1ª ocorrência).
+4. **Entradas ainda ausentes**: 経, 緯, 心, 御経綸.
+5. **Revisão de todo o acervo** — rodar a trava nos 140 pares JP/PT dos livros
+   (`reports/livros_trabalho/{jp,pt}`) e no `data/clean_corpus`.
+
+### 5. Arquivos/scripts desta entrega
+
+`glossario_regras.json` · `scripts/glossario_core.py` ·
+`scripts/auditar_acervo_glossario.py` · `scripts/aplicar_ajuste_glossario_20261008.py` ·
+`scripts/triar_regras_glossario.py` · `scripts/inserir_periodicos_traduzidos.py` ·
+`scripts/corrigir_violacoes_periodicos.py` · `scripts/traduzir_periodicos_meishu_sama.py` ·
+`scripts/{montar_fila_traducao_periodicos,conferir_presenca_periodicos,confirmar_ausentes_periodicos,consolidar_periodicos_meishu_sama,finalizar_periodicos_meishu_sama}.py` ·
+`scripts/{run_traducao_periodicos,refazer_traducao_periodicos_antigos}.sh` ·
+`docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md` ·
+`docs/22-HANDOFF-RETOMADA-SESSOES_20261008.md` ·
+`docs/{ANALISE_GLOSSARIO_QUESTOES,ANALISE_GLOSSARIO_ISSUES,REVISAO_KOWA_TRADUCAO,REVISAO_ACHADOS_KOWA_POR_TEMA,ORCAMENTO_TRADUCAO_PERIODICOS,COMPARATIVO_PERIODICOS_MIOSHIE_ZENSHU,ANALISE_SUGESTOES_LEITURA}_2026100*.md`
+
+---
+
 ## 08/10 — CURSO DE PREPARAÇÃO (KYŌSHU YŌKŌ): 3 AULAS CONSOLIDADAS
 
 > **Pedido do usuário**: continuar o curso de formação de novos membros baseado no

@@ -1,0 +1,296 @@
+{
+  "decisoes_usuario": {
+    "demais": "seguir as recomendações do relatório de decisões",
+    "medidas": "converter SEMPRE para o sistema métrico ocidental"
+  },
+  "medidas": {
+    "丈": {
+      "exemplo": "一丈 → cerca de 3 m",
+      "fator": 3.0303,
+      "translit": [
+        "jō",
+        "jo"
+      ],
+      "unidade": "m"
+    },
+    "分": {
+      "contexto": [
+        "尺",
+        "寸",
+        "丈",
+        "尋"
+      ],
+      "exemplo": "一寸八分 → cerca de 5,4 cm",
+      "fator": 0.0030303,
+      "nota": "分 (bu) só é comprimento quando há 尺/寸/丈/尋 perto; fora disso (三十分, 二十分) é MINUTO e não é medida",
+      "translit": [
+        "bu"
+      ],
+      "unidade": "m"
+    },
+    "勺": {
+      "exemplo": "二合五勺 → cerca de 450 mL",
+      "fator": 0.018039,
+      "translit": [
+        "shaku"
+      ],
+      "unidade": "L"
+    },
+    "匁": {
+      "exemplo": "一匁 → cerca de 3,75 g",
+      "fator": 0.00375,
+      "translit": [
+        "monme"
+      ],
+      "unidade": "kg"
+    },
+    "升": {
+      "exemplo": "一升 → cerca de 1,8 L",
+      "fator": 1.8039,
+      "translit": [
+        "shō",
+        "sho"
+      ],
+      "unidade": "L"
+    },
+    "合": {
+      "exemplo": "五、六合 → cerca de 1 L",
+      "fator": 0.18039,
+      "translit": [
+        "gō",
+        "go"
+      ],
+      "unidade": "L"
+    },
+    "坪": {
+      "exemplo": "七千五百坪 → cerca de 24.800 m²",
+      "fator": 3.3058,
+      "translit": [
+        "tsubo"
+      ],
+      "unidade": "m²"
+    },
+    "寸": {
+      "exemplo": "一寸 → cerca de 3 cm",
+      "fator": 0.030303,
+      "translit": [
+        "sun"
+      ],
+      "unidade": "m"
+    },
+    "尋": {
+      "exemplo": "一尋 → cerca de 1,8 m",
+      "fator": 1.8182,
+      "translit": [
+        "hiro"
+      ],
+      "unidade": "m"
+    },
+    "尺": {
+      "exemplo": "三尺 → cerca de 90 cm",
+      "fator": 0.30303,
+      "translit": [
+        "shaku"
+      ],
+      "unidade": "m"
+    },
+    "斗": {
+      "exemplo": "二斗三升 → cerca de 41 L",
+      "fator": 18.039,
+      "translit": [
+        "to"
+      ],
+      "unidade": "L"
+    },
+    "町": {
+      "exemplo": "一町 → cerca de 109 m",
+      "fator": 109.09,
+      "translit": [
+        "chō",
+        "cho"
+      ],
+      "unidade": "m"
+    },
+    "貫": {
+      "exemplo": "一貫 → cerca de 3,75 kg",
+      "fator": 3.75,
+      "translit": [
+        "kan"
+      ],
+      "unidade": "kg"
+    },
+    "里": {
+      "exemplo": "一〇里四方 → uns 39 km de lado",
+      "fator": 3927.27,
+      "translit": [
+        "ri"
+      ],
+      "unidade": "m"
+    },
+    "間": {
+      "exemplo": "二、三十間 → de 36 a 54 m",
+      "fator": 1.8182,
+      "translit": [
+        "ken"
+      ],
+      "unidade": "m"
+    }
+  },
+  "medidas_excecoes": [
+    "十分",
+    "十二分",
+    "五分五分",
+    "九分九厘",
+    "節分",
+    "大分",
+    "多分",
+    "気分",
+    "分不相応",
+    "分際",
+    "分解",
+    "分析",
+    "分類",
+    "分離",
+    "分配",
+    "分割",
+    "分散",
+    "分岐",
+    "分譲",
+    "分け",
+    "分かる",
+    "当分",
+    "充分",
+    "半分",
+    "一分一秒"
+  ],
+  "nao_verificar": [
+    "俵",
+    "儂",
+    "咳",
+    "型",
+    "層",
+    "心（霊・心・魂の区別）",
+    "念",
+    "想",
+    "我",
+    "曇",
+    "棒",
+    "横",
+    "熱",
+    "疑",
+    "痔",
+    "癌",
+    "祭",
+    "経（緯と対で使われた場合）",
+    "緯（経と対で使われた場合）",
+    "縦",
+    "胃",
+    "艮",
+    "血",
+    "道",
+    "魂"
+  ],
+  "origem": "docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md — 1.190 achados do Claude (kowa_full.txt, 88 lotes) + 6 questões do usuário",
+  "primeira_ocorrencia": {
+    "三隣亡": {
+      "completa": "Santanbō (três vizinhos arruinados)",
+      "curta": "Santanbō"
+    },
+    "伊都能売": {
+      "completa": "Izunome",
+      "curta": "Izunome"
+    },
+    "位牌": {
+      "completa": "tabuleta mortuária (ihai)",
+      "curta": "tabuleta"
+    },
+    "大乗": {
+      "completa": "Daijo (o Grande Veículo)",
+      "curta": "Daijo"
+    },
+    "大将軍": {
+      "completa": "Daijōgun (a divindade dos oito pontos)",
+      "curta": "Daijōgun"
+    },
+    "天津祝詞": {
+      "completa": "Amatsu Norito (Norito Celestial)",
+      "curta": "Norito"
+    },
+    "家相": {
+      "completa": "geomancia da casa (kasō)",
+      "curta": "geomancia da casa"
+    },
+    "御霊紙": {
+      "completa": "Papel Sagrado (Goreishi)",
+      "curta": "Goreishi"
+    },
+    "散花結実": {
+      "completa": "A flor cai, o fruto amadurece (sanka-kekijitsu)",
+      "curta": "A flor cai, o fruto amadurece"
+    },
+    "時所位": {
+      "completa": "Jishoi (tempo, local e posição)",
+      "curta": "Jishoi"
+    },
+    "智慧証覚": {
+      "completa": "Chieshōkaku (Inteligência da Percepção Verdadeira)",
+      "curta": "Chieshōkaku"
+    },
+    "言霊": {
+      "completa": "espírito da palavra",
+      "curta": "espírito da palavra"
+    }
+  },
+  "proibicoes": [
+    {
+      "gatilho_jp": [],
+      "gravidade": "erro",
+      "motivo": "Em português 'possesso' significa 'raivoso/irritado', não 'possuído por espírito'. Usar 'possuído', 'sob possessão espiritual' ou 'encostado'.",
+      "proibido_pt": [
+        "possesso",
+        "possessos",
+        "possessa",
+        "possessas"
+      ]
+    },
+    {
+      "gatilho_jp": [
+        "尺",
+        "寸",
+        "間",
+        "丈",
+        "尋",
+        "町",
+        "里",
+        "坪",
+        "升",
+        "斗",
+        "合",
+        "勺",
+        "貫",
+        "匁"
+      ],
+      "gravidade": "medida",
+      "motivo": "Decisão do projeto: medidas japonesas devem ser SEMPRE convertidas ao sistema métrico ocidental (cm/m/km/m²/L/kg), sem transliteração da unidade.",
+      "proibido_pt": [
+        "shaku",
+        "sun",
+        "ken",
+        "chō",
+        "cho",
+        "ri",
+        "tsubo",
+        "shō",
+        "sho",
+        "gō",
+        "go",
+        "kan",
+        "monme",
+        "hiro",
+        "jō",
+        "jo"
+      ]
+    }
+  ],
+  "versao": "2026-10-08"
+}
