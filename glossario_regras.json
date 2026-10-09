@@ -261,6 +261,14 @@
   "言霊": {
    "completa": "espírito da palavra",
    "curta": "espírito da palavra"
+  },
+  "運命": {
+   "completa": "destino mutável",
+   "curta": "destino"
+  },
+  "御利益": {
+   "completa": "benefício material",
+   "curta": "benefício"
   }
  },
  "proibicoes": [
@@ -326,7 +334,7 @@
    "motivo": "唯心 (yuishin) NÃO é 'idealismo' (sentido filosófico kantiano). O par 唯物/唯心 = materialismo/espiritualismo. Usar 'espiritualismo'/'espiritual'. 'idealismo' só é legítimo para 理想論 (ideal, utopia)."
   }
  ],
- "versao": "2026-10-09d",
+ "versao": "2026-10-10b",
  "proibicoes_isencao": [
   "avançar um shaku e recuar um sun",
   "Taishidō-chō",
@@ -355,5 +363,77 @@
   "que ri muito",
   "medição em tsubo",
   "três chō"
+ ],
+ "nomes_proprios_jp": {
+  "_leia_me": "Grafia japonesa (katakana) fixada para nomes próprios de localidades/instituições fora do Japão. Decisão do usuário; usar sempre esta forma ao produzir texto em japonês. Não confundir com glossario_traducao.json (que é JP→PT).",
+  "Diadema (Brasil)": {
+   "grafia_jp": "ディアデマ",
+   "leitura": "Diadema",
+   "nota": "Município de São Paulo, Brasil. Grafia moderna (ディ), não a pré-guerra (ヂ, como em ブリヂストン). Decisão do usuário em 2026-10-10.",
+   "alternativa_descartada": "ヂアデマ",
+   "backup": "glossario_regras.json.bak_nomes_proprios_jp_20261009T233129Z"
+  }
+ },
+ "forma_raiz_aceita": [
+  "御浄化",
+  "位牌",
+  "一生懸命",
+  "気持ち",
+  "神霊",
+  "浄化作用",
+  "曇り",
+  "供養",
+  "御神徳",
+  "死霊",
+  "祖霊",
+  "急所",
+  "本教",
+  "御神体",
+  "薬毒",
+  "御守護",
+  "頭痛",
+  "御霊紙",
+  "死の宣告",
+  "善言讃詞",
+  "清算",
+  "転生",
+  "道理",
+  "散花結実",
+  "自然農法",
+  "先祖代々",
+  "地上天国",
+  "死亡",
+  "心配",
+  "入信",
+  "自然",
+  "幸福",
+  "御教",
+  "不安",
+  "祭り",
+  "狐霊",
+  "発展",
+  "再生",
+  "固結",
+  "国家",
+  "身魂",
+  "教修",
+  "頭脳",
+  "執着",
+  "説明",
+  "帰幽",
+  "浄化",
+  "憑る",
+  "排泄",
+  "天国",
+  "迷信",
+  "先祖",
+  "奏上",
+  "光明",
+  "注射",
+  "祝詞",
+  "観音様",
+  "龍神",
+  "滅罪",
+  "経文"
  ]
 }

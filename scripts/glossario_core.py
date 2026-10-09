@@ -526,8 +526,20 @@ def violacoes_forma(jp: str, pt: str) -> list[dict]:
     if not jp or not pt:
         return []
     nao_verificar = set(carregar_regras().get("nao_verificar", []))
+    # termos em que basta a RAIZ (a palavra-cabeça) da forma exigida:
+    # o modificador é descritivo, não faz parte do sentido (decisão 10/10/2026:
+    # 御浄化 = purificação, 一生懸命 = empenho/esforço, 位牌 = tabuleta/ihai…).
+    raiz_ok = set(carregar_regras().get("forma_raiz_aceita", []))
     glossario = carregar_glossario()
     out = []
+
+    def _cauda_ok(formas: list[str]) -> bool:
+        """True se a palavra-cabeça de alguma forma aparece no PT."""
+        for f in formas:
+            toks = _tokens(f)
+            if toks and _forma_presente(pt, [toks[0]]):
+                return True
+        return False
 
     # 3a) TERMOS_FIXOS (críticos — sempre exigidos)
     for termo, formas in TERMOS_FIXOS.items():
@@ -542,6 +554,8 @@ def violacoes_forma(jp: str, pt: str) -> list[dict]:
         # fallback: forma do glossário
         v = glossario.get(termo)
         if v and _forma_presente(pt, variantes(v)):
+            continue
+        if termo in raiz_ok and _cauda_ok(list(formas) + variantes(v)):
             continue
         out.append({
             "termo_jp": termo,
@@ -564,6 +578,8 @@ def violacoes_forma(jp: str, pt: str) -> list[dict]:
         if not formas:
             continue
         if _forma_presente(pt, formas):
+            continue
+        if termo in raiz_ok and _cauda_ok(formas):
             continue
         out.append({
             "termo_jp": termo,
