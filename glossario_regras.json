@@ -169,7 +169,21 @@
   "当分",
   "充分",
   "半分",
-  "一分一秒"
+  "一分一秒",
+  "一石",
+  "裸一貫",
+  "千里",
+  "二間",
+  "三斗",
+  "五六合",
+  "一〇里",
+  "数丈",
+  "一貫",
+  "六合",
+  "一尺余り",
+  "一寸ほど",
+  "二、三町",
+  "一里の道"
  ],
  "nao_verificar": [
   "俵",
@@ -312,5 +326,34 @@
    "motivo": "唯心 (yuishin) NÃO é 'idealismo' (sentido filosófico kantiano). O par 唯物/唯心 = materialismo/espiritualismo. Usar 'espiritualismo'/'espiritual'. 'idealismo' só é legítimo para 理想論 (ideal, utopia)."
   }
  ],
- "versao": "2026-10-09"
+ "versao": "2026-10-09d",
+ "proibicoes_isencao": [
+  "avançar um shaku e recuar um sun",
+  "Taishidō-chō",
+  "Taishido-cho",
+  "Atae-cho",
+  "Shō-Kannon",
+  "Shō-Kanzeon",
+  "Shō-Kanzeon-Bosatsu",
+  "ra-ri-ru-re-ro",
+  "vários jō",
+  "dez mil milhas",
+  "quatro ou cinco kan",
+  "Sun Yat-sen",
+  "Chō Densu",
+  "Naka-Jūjō",
+  "quarteirões",
+  "a três ou quatro ken",
+  "ra, ri, ru, re, ro",
+  "go, shogi",
+  "légua",
+  "Sun-Tetsu",
+  "Mokusei-gō",
+  "Sakakibara Ken",
+  "Ryūgū-jō",
+  "Shaku Ekei",
+  "que ri muito",
+  "medição em tsubo",
+  "três chō"
+ ]
 }

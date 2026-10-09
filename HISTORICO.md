@@ -128,10 +128,21 @@ acrescentava o valor correto entre colchetes, criando pares contraditórios.
 (cerca de 397 mil m²)»**).
 
 **d) Quantidades de volume (koku/to/shō)** — apontado pelo usuário (bebida ficou
-transliterada). Script pronto **NÃO aplicado**: `scripts/converter_quantidades_periodicos.py`
-(19 conversões em 17 itens, com guarda que exige a medida no japonês). Fica
-pendente porque números compostos («cem mil koku», «trinta mil tsubo») exigem
-parser próprio — a primeira tentativa produziu erros e foi revertida.
+transliterada). RESOLVIDO em 09/10 (noite) com
+`scripts/converter_quantidades_periodicos.py`: parser de números compostos
+(«cento e vinte mil», «noventa e sete milhões»), guarda que exige a medida no
+japonês, tratamento de intervalos («quatro ou cinco kan») e de unidades
+imperiais herdadas do tradutor («três polegadas», «cinco pés» → métrico).
+- **11 conversões** (8 itens) na rodada final; total de 29 + 11.
+- **Camada `medida` zerada** e **`proibicao` 217 → 42**.
+- Isenções registradas em `glossario_regras.json` → `proibicoes_isencao` (27) e
+  `medidas_excecoes` (39): idiomatismos (一貫, 六合, 尺進寸退), topónimos
+  (Taishidō-chō), nomes próprios (Sun-Tetsu, Sakakibara Ken, Ryūgū-jō), kotodama
+  (ra-ri-ru-re-ro).
+- Suporte novo no motor: `proibicoes_isencao` (glossario_core.py).
+
+**Evolução da auditoria dos 415:** 1.185 → 1.051 → 980 → 942 → 926 → **899**
+(`proibicao` 217→42 · `medida` 79→**0** · `forma` 839→805 · `1ª ocorrência` 50→49).
 
 ### 7. O que ficou pendente
 

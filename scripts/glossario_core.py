@@ -425,9 +425,14 @@ def proibicoes_violadas(jp: str, pt: str) -> list[dict]:
 
     Ex.: "possesso" (em português = "raivoso", não "possuído").
     Regras com `gatilho_jp` só disparam se o JP contiver um dos gatilhos.
+
+    `proibicoes_isencao` (em glossario_regras.json) lista trechos em que o uso é
+    legítimo (idiomatismos, topónimos, nomes próprios, kotodama) — se o trecho
+    aparecer na vizinhança do achado, ele não é reportado.
     """
     if not pt:
         return []
+    isencoes = carregar_regras().get("proibicoes_isencao", [])
     achados = []
     for regra in carregar_regras().get("proibicoes", []):
         gatilhos = regra.get("gatilho_jp") or []
@@ -439,11 +444,14 @@ def proibicoes_violadas(jp: str, pt: str) -> list[dict]:
             for m in re.finditer(padrao, pt_norm):
                 ini = max(0, m.start() - 45)
                 fim = min(len(pt), m.end() + 45)
+                contexto = pt[ini:fim].replace("\n", " ")
+                if any(_norm(e) in _norm(contexto) for e in isencoes):
+                    continue
                 achados.append({
                     "palavra": palavra,
                     "motivo": regra.get("motivo", ""),
                     "gravidade": regra.get("gravidade", "erro"),
-                    "contexto": pt[ini:fim].replace("\n", " "),
+                    "contexto": contexto,
                 })
     return achados
 
