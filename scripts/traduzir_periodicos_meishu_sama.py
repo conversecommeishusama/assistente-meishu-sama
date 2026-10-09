@@ -47,7 +47,10 @@ ITENS = OUT / "itens"
 RATTAIL = Path("/var/www/rattail")
 
 LIMITE_CHUNK = 4000          # chars JP por chamada
-MAX_TOKENS = 16000
+# 2026-10-09: era 16000. O modelo é de RACIOCÍNIO e os tokens de reasoning
+# consomem o mesmo orçamento da resposta — itens longos estouravam o teto e o
+# PT saía truncado no meio da frase (Eiko 194/250/256, Tijotengoku 46).
+MAX_TOKENS = 32000
 TIMEOUT_API = 240.0          # s — modelo de raciocínio precisa de mais tempo
 
 VEIC_PT = {"Eiko": "Eikō", "Hikari": "Hikari",
@@ -186,6 +189,10 @@ def _chamar(jp: str, quem: str, extra: str = "") -> str:
             jp=jp, quem=quem) + extra}],
         temperature=0.2,
     )
+    fr = resp.choices[0].finish_reason
+    if fr == "length":
+        print(f"  [AVISO] finish_reason=length (possível truncamento) "
+              f"| jp={len(jp)} chars", flush=True)
     return (resp.choices[0].message.content or "").strip().strip('"')
 
 

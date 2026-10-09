@@ -60,21 +60,46 @@ texto no acervo já está corrigido):
   ordenação (ano, número, ordem).
 - Auditoria final: `reports/auditoria_glossario_periodicos_pos/`.
 
-### 4. O que ficou pendente
+### 4. Reparos de qualidade (tarde de 09/10)
+
+A verificação por amostragem + varredura dos 415 achou três classes de defeito,
+corrigidas antes de pedir a promoção:
+
+| Defeito | Itens | Correção |
+|---|---|---|
+| **Eco do japonês** no corpo PT | 7 | `scripts/reparar_eco_jp_periodicos.py` — 160 linhas removidas |
+| **Medida com conversão quebrada** | 2 | correção pontual (`reports/reparo_medidas_log.json`) |
+| **Tradução truncada** | 6 | retradução (`erro=0`) |
+
+- **Causa raiz do truncamento:** `MAX_TOKENS=16000` e o modelo é de
+  **raciocínio** — os tokens de reasoning consomem o mesmo orçamento da resposta.
+  Itens longos estouravam o teto e o PT saía cortado **sem aviso** (não se
+  checava `finish_reason`). Corrigido: teto **32.000** + aviso de
+  `finish_reason == "length"`.
+- **Reinserção:** restaurado o pré-inserção e reinserido — 413 + 2 já presentes
+  = **415**. Backup `.bak_insercao_periodicos_20261009T181616Z`.
+- **Validação final:** JP residual 8→**0**; eco 191→**0** (resta 1 citação
+  legítima, `舌代`); truncamentos 6→**0**; defeitos de medida 2→**0**.
+- **Auditoria do glossário reprocessada:** 1.051 → **1.016** achados
+  (`reports/auditoria_glossario_periodicos_pos2/`).
+- **Amostra** para verificação: `reports/amostra_periodicos/` (5 textos, JP+PT).
+- Relatório: `reports/RELATORIO_QUALIDADE_PERIODICOS_20261009.md`.
+
+### 5. O que ficou pendente
 
 1. **Promoção para a Leitura Colaborativa** — os 415 estão em
    `textos_portugues/`, que o app **não** lê (`GOSHINSHO_TEXTOS_PT` aponta para
    `textos_leitura_colaborativa/`). Exige autorização + rebuild de índice.
-2. **Violações residuais nos 415**: `forma` 777+62, `proibicao` 129 (todas
-   transliterações sem numeral → idiomatismos, ex. 尺進寸退), `medida` 33
-   (intervalos/unidades ambíguas), `1ª ocorrência` 50.
+2. **Violações de glossário nos 415**: `forma` 800, `proibicao` 132, `medida` 35,
+   `1ª ocorrência` 49 (auditoria `pos2`). Bloco 3, em aberto.
 3. **7 decisões abertas** do glossário (§4 do doc de decisões): 祀る/祭る,
    経綸 por sujeito, 心, 御軸, 玉串, 癩病, 地所位 (+ nº9, modo 1ª ocorrência).
 4. **Entradas ainda ausentes**: 経, 緯, 心, 御経綸.
 5. **Revisão de todo o acervo** — rodar a trava nos 140 pares JP/PT dos livros
-   (`reports/livros_trabalho/{jp,pt}`) e no `data/clean_corpus`.
+   (`reports/livros_trabalho/{jp,pt}`) e no `data/clean_corpus`. Já há casos
+   conhecidos fora dos 415: `possesso` 2× no `Tijotengoku.txt` original.
 
-### 5. Arquivos/scripts desta entrega
+### 6. Arquivos/scripts desta entrega
 
 `glossario_regras.json` · `scripts/glossario_core.py` ·
 `scripts/auditar_acervo_glossario.py` · `scripts/aplicar_ajuste_glossario_20261008.py` ·
@@ -82,6 +107,7 @@ texto no acervo já está corrigido):
 `scripts/corrigir_violacoes_periodicos.py` · `scripts/traduzir_periodicos_meishu_sama.py` ·
 `scripts/{montar_fila_traducao_periodicos,conferir_presenca_periodicos,confirmar_ausentes_periodicos,consolidar_periodicos_meishu_sama,finalizar_periodicos_meishu_sama}.py` ·
 `scripts/{run_traducao_periodicos,refazer_traducao_periodicos_antigos}.sh` ·
+`scripts/reparar_eco_jp_periodicos.py` ·
 `docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md` ·
 `docs/22-HANDOFF-RETOMADA-SESSOES_20261008.md` ·
 `docs/{ANALISE_GLOSSARIO_QUESTOES,ANALISE_GLOSSARIO_ISSUES,REVISAO_KOWA_TRADUCAO,REVISAO_ACHADOS_KOWA_POR_TEMA,ORCAMENTO_TRADUCAO_PERIODICOS,COMPARATIVO_PERIODICOS_MIOSHIE_ZENSHU,ANALISE_SUGESTOES_LEITURA}_2026100*.md`
