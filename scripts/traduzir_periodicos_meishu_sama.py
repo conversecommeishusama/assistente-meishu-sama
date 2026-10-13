@@ -433,11 +433,22 @@ def processar(item: dict) -> str:
     alertas += [dict(a, onde="titulo") for a in al]
 
     partes = []
-    for ch in divide_chunks(corpo):
+    falhas: list[int] = []
+    chunks = divide_chunks(corpo)
+    for i, ch in enumerate(chunks):
         pt, al = traduzir_com_alertas(ch, quem)
+        if not pt:
+            # BUG HISTÓRICO (corrigido 2026-10-13): um chunk vazio era
+            # descartado em silêncio pelo join e o artigo era gravado com
+            # status "ok" — resultando em artigos que começavam no meio.
+            falhas.append(i + 1)
         partes.append(pt)
         alertas += [dict(a, onde="corpo") for a in al]
     texto_pt = "\n\n".join(p for p in partes if p)
+    if falhas:
+        print(f"  [FALHA] chunk(s) {falhas} de {len(chunks)} voltaram VAZIOS "
+              f"em {item['veiculo']} n{item['numero']} — gravando como 'erro' "
+              f"para retradução", flush=True)
 
     # verificação FINAL do artigo inteiro (pega termos que aparecem em
     # qualquer parte e confirma que a forma aprovada está no PT final)
@@ -454,14 +465,17 @@ def processar(item: dict) -> str:
         "texto_jp": corpo, "texto_pt": texto_pt,
         "glossario_alertas": alertas + [dict(a, onde="final") for a in criticos],
         "glossario_ok": not (alertas or criticos),
-        "status": "ok" if (titulo_pt and texto_pt) else "erro",
+        "chunks_falhos": falhas,
+        "status": "ok" if (titulo_pt and texto_pt and not falhas) else "erro",
     }
     ITENS.mkdir(parents=True, exist_ok=True)
     destino.write_text(json.dumps(reg, ensure_ascii=False, indent=1),
                        encoding="utf-8")
     tag = "ok" if reg["status"] == "ok" else "ERRO"
     gl = "" if reg["glossario_ok"] else f" [{len(reg['glossario_alertas'])} gl.]"
-    return f"[{tag}] {item['veiculo']} n{item['numero']} {item['titulo_jp'][:24]}{gl}"
+    ch = f" [chunks vazios: {falhas}]" if falhas else ""
+    return (f"[{tag}] {item['veiculo']} n{item['numero']} "
+            f"{item['titulo_jp'][:24]}{gl}{ch}")
 
 
 def reprocessar_glossario(reg: dict) -> dict:

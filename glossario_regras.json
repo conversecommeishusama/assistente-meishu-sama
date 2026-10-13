@@ -103,8 +103,9 @@
    "unidade": "L"
   },
   "町": {
-   "exemplo": "一町 → cerca de 109 m",
+   "exemplo": "一町（面積）→ cerca de 1 ha；一町（距離）→ cerca de 109 m",
    "fator": 109.09,
+   "fator_area": 9917.36,
    "translit": [
     "chō",
     "cho"
@@ -142,6 +143,14 @@
     "koku"
    ],
    "unidade": "L"
+  },
+  "反": {
+   "exemplo": "一反 → cerca de 990 m²",
+   "fator": 991.7,
+   "translit": [
+    "tan"
+   ],
+   "unidade": "m²"
   }
  },
  "medidas_excecoes": [
@@ -183,7 +192,11 @@
   "一尺余り",
   "一寸ほど",
   "二、三町",
-  "一里の道"
+  "一里の道",
+  "一反",
+  "一段落",
+  "一段の覚悟",
+  "一段と"
  ],
  "nao_verificar": [
   "俵",
