@@ -9,9 +9,9 @@
 
 | Volume | Arquivo | Extensão | Conteúdo |
 |---|---|---|---|
-| **Parte I** | `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md` | 1.952 linhas, 13 seções | Cronologia da institucionalização · método, instrumentos e escala da difusão · tipos de unidade e atribuições · como se abria uma unidade · formação sacerdotal e níveis · estrutura funcional · o Kyoshu · atividades em torno de Meishu-Sama · atividades em torno dos Paraísos Terrestres · lacunas · síntese |
-| **Parte II** | `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md` | 1.274 linhas, 11 seções | Imagens da Luz Divina e critério de proporção · como eram os cultos · oferendas e ofertório · sufrágio dos antepassados · presidência da igreja · difusão da Agricultura Natural · o Johrei · nutrição · economia da igreja · lacunas · nota de método |
-| **Parte III** | `DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md` | 9 seções (§24–§32) | As duas grades de unidades e a composição de cada nível · organograma · atribuições e cotidiano dos dirigentes · culto por tipo de unidade · a salvação e o Ohikari · o ofertório · os Paraísos Terrestres e a mineração · a perseguição de 1950 e a reforma de 1951 · as oferendas diante do objeto de culto |
+| **Parte I** | `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md` | 1.964 linhas, 13 seções | Cronologia da institucionalização · método, instrumentos e escala da difusão · tipos de unidade e atribuições · como se abria uma unidade · formação sacerdotal e níveis · estrutura funcional · o Kyoshu · atividades em torno de Meishu-Sama · atividades em torno dos Paraísos Terrestres · lacunas · síntese |
+| **Parte II** | `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md` | 1.444 linhas, 11 seções | Imagens da Luz Divina e critério de proporção · como eram os cultos · oferendas e ofertório · sufrágio dos antepassados · presidência da igreja · difusão da Agricultura Natural · o Johrei · nutrição · economia da igreja · lacunas · nota de método |
+| **Parte III** | `DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md` | 1.142 linhas, 9 seções (§24–§32) | As duas grades de unidades e a composição de cada nível · organograma · atribuições e cotidiano dos dirigentes · culto por tipo de unidade · a salvação e o Ohikari · o ofertório · os Paraísos Terrestres e a mineração · a perseguição de 1950 e a reforma de 1951 · as oferendas diante do objeto de culto |
 
 A **Parte III** foi acrescentada em 13 de outubro de 2026 e responde aos
 apontamentos de revisão daquele mês; as decisões editoriais e o estado do
@@ -24,9 +24,15 @@ paginado e cabeçalho:
 
 | Formato | Arquivo | Extensão |
 |---|---|---|
-| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 74 páginas A4 (Partes I–III) |
-| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções |
-| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 33 seções |
+| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 87 páginas A4, 11 fac-símiles |
+| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções, 9 fac-símiles |
+| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 4.564 linhas, 33 seções |
+
+Os fac-símiles vêm de `docs/facsimiles/` e foram extraídos do acervo por
+`scripts/extrair_facsimiles.py`, que localiza a página pelo OCR corrido e depois
+**relê a imagem gerada** para confirmar que ela contém o trecho citado. Onde a
+confirmação não foi possível, a legenda declara que se trata da capa ou da
+primeira página do número, e não da página do artigo.
 
 O PDF já vem com **todas as fontes embutidas** — inclusive a japonesa —, de modo
 que imprimirá corretamente em qualquer sistema, sem depender de fonte instalada
@@ -67,6 +73,16 @@ integralmente convertidas para o acervo rattail.
 caractere não pôde ser lido com segurança na fonte, ele aparece entre colchetes —
 por exemplo `教修が終ら〔れ〕た` —, e o texto-base não é alterado.
 
+**Citação legal.** O Regulamento de 1951 grafa os artigos com o caractere antigo
+**條** e nunca com o moderno **条**; as citações legais reproduzem a forma da
+fonte (第二十九條, 第三十條).
+
+**Fontes pessoais.** Nenhuma passagem do dossiê tem como fonte única a produção
+própria de um dirigente que se afastou da igreja e escreveu depois contra ela.
+Onde havia cópia institucional equivalente, a citação foi reancorada nela;
+onde não havia, o trecho foi retirado e a retirada está registrada na lista de
+lacunas.
+
 **Datas.** Quando o documento de origem declara apenas mês e ano, o dossiê também
 declara apenas mês e ano. Não se atribui dia que a fonte não informa.
 
@@ -79,17 +95,18 @@ como declarações da instituição — sem lhes atribuir natureza estatística.
 
 ## Como o material foi verificado
 
-Dois verificadores automáticos, em `/var/www/rattail/work/`:
+Dois verificadores automáticos, em `/var/www/rattail/work/`. Execução de
+13 de outubro de 2026, cobrindo as **três** partes:
 
-- `verificar.py <doc.md>` — confere se cada caminho citado existe no acervo.
-  Resultado: Parte I 81/81, Parte II 33/33.
-- `verif_cit.py <doc.md>` — procura cada citação japonesa no texto do acervo.
-  Resultado: Parte I 84/86, Parte II 51/52.
+| Verificador | O que confere | Parte I | Parte II | Parte III |
+|---|---|---|---|---|
+| `verificar.py <doc.md>` | se cada caminho citado existe no acervo | 83/83 | 37/37 | 46/46 |
+| `verif_cit.py <doc.md>` | se cada citação aparece no texto do acervo | 76/78 | 56/56 | 39/39 |
 
-As três citações não localizadas automaticamente estão explicadas: duas são
-leituras do fac-símile do 教修要綱 (texto que não existe no acervo HTML por
-natureza — o manual nunca foi digitalizado em texto) e uma é artefato de aspas
-aninhadas, com o texto confirmado por verificação direta.
+Nenhum caminho citado está ausente do acervo. As **duas** citações que o
+verificador não localiza são ambas leituras do fac-símile do 教修要綱 — texto
+que por natureza não existe no acervo digitalizado; ambas estão declaradas no
+próprio dossiê (Parte I, §11.1).
 
 ---
 

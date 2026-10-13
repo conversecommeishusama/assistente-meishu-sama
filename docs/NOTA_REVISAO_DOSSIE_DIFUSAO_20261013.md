@@ -158,41 +158,74 @@ caso de: o organograma de fato de 1954, a reforma de 1951 e a ordem dos cultos �
 todos agora ancorados em `sanko/kikoseib.html`, `kikou2/kanto21.html` e
 `kikou2/sekai03.html`.
 
-**Pendente:** as Partes I e II ainda têm **29 ocorrências** de `search2/kihara/`.
-A substituição exige, para cada uma, localizar fonte equivalente — trabalho a
-executar na próxima rodada, com o mesmo método.
+**Executado em 13/10/2026.** As **29 ocorrências** de `search2/kihara/` foram
+eliminadas das Partes I e II; as três partes estão agora com **0 ocorrências**.
+Onde existia cópia institucional equivalente no acervo — e existia em vários
+casos, porque a pasta `search2/kihara/` mistura produção própria do dirigente
+com **documentos institucionais** (atas, regulamentos, ordens) — a citação foi
+reancorada nessa cópia. O caso exemplar: as atas citadas na Parte I §7.1
+existem também em `search2/sanko/teirei3.html`. Onde não havia equivalente, o
+trecho foi **retirado**, e a retirada está registrada na lista de lacunas da
+Parte I §10 como *"Material excluído por política de citação"* — para que um
+leitor futuro saiba que a ausência não é fortuita.
+
+Nenhuma passagem do dossiê tem agora como fonte única a produção própria daquele
+que se afastou da igreja e escreveu depois contra ela.
 
 ---
 
-## 6. O que falta
+## 6. Estado ao fim da rodada de 13 de outubro de 2026
 
-Ordenado por dependência:
+Os cinco itens abaixo **foram executados**.
 
-1. **Substituir as 29 fontes Kihara nas Partes I e II** (item 4). Exige pesquisa
-   de equivalentes; é a tarefa mais delicada, porque algumas passagens — o
-   organograma local, os níveis anunciados em dezembro de 1954 — têm naquela
-   pasta sua única fonte conhecida. Se não houver equivalente, a decisão passa a
-   ser entre **suprimir a passagem** ou **atribuí-la ao documento institucional
-   sem nomear o autor**.
-2. **Fechar as traduções faltantes das Partes I e II** (item 1): 135 blocos
-   japoneses para 110 linhas de tradução.
-3. **Ajustar o tom nas Partes I e II** (item 6). Os trechos apontados são dois:
-   o tratamento dos números de fiéis como "propaganda" (§2.3) e o enquadramento
-   do Paraíso Terrestre como "projeto econômico" (§9.6). O critério a aplicar,
-   agora firmado pela Parte III, é distinguir **o que a instituição declarou**
-   do que o levantamento conclui — e apresentar as declarações da casa como
-   declarações, sem juízo de intenção.
-4. **Inserir os fac-símiles** (item 5). Requer: (a) acrescentar suporte a imagens
-   aos dois geradores; (b) mapear cada citação ao PDF correspondente em
-   `pdf_rattail/` e à página; (c) recortar a página como imagem. Os 307
-   fac-símiles existem em `pdf_rattail/` (8,1 GB), mas só uma parte menor tem
-   correspondência direta com as citações em texto.
-5. **Rever o conjunto à luz da Parte III.** A Parte III corrige e amplia pontos
-   das Partes I e II (§26.2, §31) que hoje ainda dizem o contrário.
+1. **Fontes Kihara — concluído** (item 4). Ver §5 acima.
+2. **Traduções — concluídas** (item 1). Verificação automática: **0 blocos
+   japoneses sem tradução vizinha** nas três partes. Foram 22 traduções
+   inseridas nesta rodada.
+3. **Tom — ajustado** (item 6). Os dois trechos apontados foram reescritos: a
+   Parte I §2.3 deixou de tratar os números de fiéis como "propaganda" e passou
+   a registrá-los como declarações da instituição; a §9.6 foi retitulada **"A
+   dimensão material das obras"** e abandonou o enquadramento do Paraíso
+   Terrestre como "projeto econômico". Uma afirmação falsa foi corrigida no
+   caminho: a mina **não** era "a principal fonte de receita própria" — o
+   resultado financeiro dela é, na verdade, uma lacuna documental.
+4. **Fac-símiles — inseridos** (item 5). Nove imagens em `docs/facsimiles/`
+   (5,3 MB), suporte a imagens nos dois geradores, **11 fac-símiles no PDF** e
+   **9 no Word**. O método está declarado na Parte I §11.2.
+5. **Revisão cruzada — feita.** A Parte III §26.2 corrigiu o que a Parte II
+   §14.2 dizia, e a Parte III §31 corrigiu a lacuna sobre as oferendas diante do
+   objeto de culto. Ambas as partes ganharam remissões cruzadas.
+
+### Resultado da verificação (13/10/2026)
+
+| Verificador | Parte I | Parte II | Parte III |
+|---|---|---|---|
+| `verificar.py` (caminhos) | 83/83 | 37/37 | 46/46 |
+| `verif_cit.py` (citações) | 76/78 | 56/56 | 39/39 |
+
+As duas citações não localizadas na Parte I são leituras do fac-símile do
+教修要綱, que não tem camada de texto — caso já declarado no dossiê.
+
+### Duas lições de método
+
+**Um termo ausente não é um assunto ausente.** A lacuna das oferendas (água, sal,
+arroz) caiu duas vezes: primeiro por não existir a palavra 御神饌, depois por não
+existir a fórmula do período. O assunto existe; o vocabulário do pesquisador é
+que estava errado. Antes de declarar lacuna, vale procurar a **descrição da
+prática** — "o que se levava ao altar" — em vez do **nome do objeto**.
+
+**Pastas temáticas misturam naturezas documentais.** `search2/kihara/` não é "a
+pasta do Kihara": é uma pasta temática que contém desde texto assinado por ele
+até atas e regulamentos institucionais. Tratar a pasta pela etiqueta teria
+jogado fora documento oficial. A triagem precisa ser feita documento a
+documento, não pasta a pasta.
 
 ---
 
-## 7. Divergências a corrigir no índice
+## 7. Divergências de índice — resolvidas
 
-`docs/DOSSIE_DIFUSAO_INDICE.md` declara 55 páginas para o PDF; o arquivo real
-tem agora **74**. O índice precisa ainda registrar a Parte III e a nova nota.
+`docs/DOSSIE_DIFUSAO_INDICE.md` declarava 55 páginas para o PDF; o arquivo real
+tem agora **87**. O índice foi atualizado e passou a registrar: as três partes
+com as contagens reais de linha, os fac-símiles, a convenção de citação legal em
+**條**, e a política de não usar fonte pessoal isolada. A Parte III e esta nota
+estão referidas nele.

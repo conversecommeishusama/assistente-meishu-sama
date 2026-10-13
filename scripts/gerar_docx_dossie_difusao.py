@@ -384,6 +384,40 @@ def mermaid_para_lista(doc, bloco):
             desce(no, 0)
 
 
+def imagem(doc, caminho, legenda):
+    """Fac-símile com legenda, centralizado e limitado à largura da página."""
+    if not os.path.isabs(caminho):
+        caminho = os.path.join(DOCS, caminho)
+    if not os.path.exists(caminho):
+        return
+    largura_max = Cm(11.5)
+    try:
+        from PIL import Image as _PILImage
+        with _PILImage.open(caminho) as im:
+            larg, alt = im.size
+        altura = largura_max * alt / larg
+        if altura > Cm(19):
+            altura = Cm(19)
+            largura_max = altura * larg / alt
+    except Exception:
+        altura = None
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.space_before = Pt(6)
+    p.paragraph_format.space_after = Pt(2)
+    r = p.add_run()
+    if altura is not None:
+        r.add_picture(caminho, width=largura_max, height=altura)
+    else:
+        r.add_picture(caminho, width=largura_max)
+    if legenda:
+        lp = doc.add_paragraph()
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        lp.paragraph_format.space_after = Pt(10)
+        lr = lp.add_run(legenda)
+        set_font(lr, tamanho=8.4, italico=True, cor=COR_META)
+
+
 def capa(doc, secoes, resumo):
     """Folha de rosto + índice + resumo executivo."""
     for _ in range(5):
@@ -509,6 +543,13 @@ def converte():
                     set_font(r, tamanho=TT_MONO, mono=True)
                     p.paragraph_format.space_after = Pt(0)
                     p.paragraph_format.line_spacing = 1.0
+            continue
+
+        # ---- imagem (fac-símile) ----
+        mi = re.match(r"^!\[(.*?)\]\((.+?)\)$", s)
+        if mi:
+            imagem(doc, mi.group(2).strip(), mi.group(1).strip())
+            i += 1
             continue
 
         # ---- tabela ----

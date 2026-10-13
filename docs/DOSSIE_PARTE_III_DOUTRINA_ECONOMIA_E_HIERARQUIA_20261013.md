@@ -218,6 +218,8 @@ Daí um **limite superior prático de trinta filiais por Igreja Média** — nã
 estatuto, mas por aritmética de calendário. A estrutura não era desenhada no
 papel: era deduzida da capacidade física de supervisão.
 
+![『御垂示録』29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
 ### 25.2 O cotidiano do dirigente de base
 
 A documentação sobre a rotina diária vem sobretudo dos **relatos de fiel** e dos
@@ -401,6 +403,11 @@ pobreza, sem conflito":
 > 本当ではない。肉体の健康と共に精神的健康たり得なくてはならない。いわゆる、
 > **霊肉一致の完全人間**を作ることである。このような完全人間の増加によって、
 > ここに地上天国は形成されるのである。」
+
+*"Nosso propósito final é construir o mundo ideal do Paraíso Terrestre; por isso, a mera
+saúde do corpo não basta. Junto com a saúde do corpo, é preciso haver saúde do espírito.
+É criar o que se chama o **ser humano completo, de espírito e carne em unidade**. Pelo
+aumento desses seres humanos completos é que o Paraíso Terrestre se forma aqui."*
 > — 「一人対一人では駄目だ」 · `search1/hi/hitorita.html`
 
 Daí decorre a resposta à pergunta proposta. **Outorgar o Ohikari não é, em si,
@@ -464,12 +471,22 @@ Caminho."*
 
 O acervo **não descreve** um rito formal de imposição do Ohikari com oração
 própria — nem no Regulamento de 1951, nem nos relatos. O que se documenta é a
-entrega ao término do curso, no contexto do culto. Sobre a existência de um
-**donativo obrigatório pela outorga do Ohikari**, o acervo é silencioso: o que
-ele documenta são as categorias **教費**, **分担金** e **会費** (v. §28), e a
-declaração explícita de que as contribuições eram **voluntárias** — o que torna
-improvável, mas não impossível, a existência de um valor fixo atrelado ao
-Ohikari. **Lacuna que se registra.**
+entrega ao término do curso, no contexto do culto.
+
+**Sobre o valor, porém, não há lacuna: o Ohikari tinha preço fixo.** Em 1935,
+Meishu-Sama o explica aos presentes:
+
+> 「いままでの御守りは**一円**でお頒（わか）ちしていたんですが、今度のは**十円**で
+> お頒ちいたしています。」
+> — 「御講話」, 11 de maio de 1935 · `search1/kouwa/s100511.html`
+
+*"O Ohikari de até agora era distribuído por **um iene**; este novo é distribuído
+por **dez ienes**."*
+
+O valor não era, portanto, oferta espontânea, e sim **preço** — e a diferença
+entre as duas coisas é doutrinariamente importante, como mostra o aviso formal de
+1953 (v. §28.4). O mesmo se aplica às demais peças que Meishu-Sama traçava: a
+caligrafia entronizada e a Imagem.
 
 Há, contudo, um dado que ilumina o estatuto do objeto: o Ohikari era tratado
 como **pertencente à pessoa**, e não à instituição. Perguntado sobre o que fazer
@@ -497,10 +514,17 @@ que converge com o que a Parte II (§13) registra sobre a Imagem: também ela n�
 O Regulamento de 1951, capítulo IV (「財務」), nomeia as categorias. O art. 29
 autoriza a cobrança em dois níveis, e o art. 30 classifica as receitas:
 
-> 「（教費の賦課徴収）第二十九条　この法人は、その目的達成の経費に充てるため、
+> 「（教費の賦課徴収）第二十九條　この法人は、その目的達成の経費に充てるため、
 > **教会及び会員に対し、教費を賦課徴収する**」
-> 「（資産の区分）第三十条　……３　**普通財産は、基本財産以外の財産、財産から
+> 「（資産の区分）第三十條　……３　**普通財産は、基本財産以外の財産、財産から
 > 生ずる果実、教会分担金、会費及び一般の収入**とする」
+
+*"(Arrecadação da taxa religiosa) Art. 29 — Esta pessoa jurídica, para cobrir as despesas
+necessárias à consecução de seus fins, **cobra taxa religiosa (教費) das igrejas e dos
+membros**. (Classificação do patrimônio) Art. 30 — […] 3. O **patrimônio comum compreende
+os bens que não sejam patrimônio básico, os frutos desses bens, a contribuição das igrejas
+(教会分担金), as quotas dos membros (会費) e as receitas gerais**."*
+
 > — 『栄光』125号, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
 
 | Categoria | Japonês | Natureza | Incide sobre |
@@ -604,6 +628,50 @@ segunda é de **doutrina**: quem contribuía com dinheiro não comprava nada;
 quem contribuía com trabalho também não. O que se dava era **報恩** — retribuição
 de benefício recebido.
 
+### 28.4 O preço fixo e a oferta livre
+
+O regime financeiro do período distingue com nitidez **duas naturezas de
+contribuição**, e a distinção é doutrinária, não contábil.
+
+De um lado, as peças que Meishu-Sama traçava — o **Ohikari**, a caligrafia
+entronizável, a **Imagem** — tinham **preço fixo**. Em 1935 ele o declara ao
+anunciar a nova geração do Ohikari, que passa de um iene para dez (§27.3). E em
+1953 o princípio é formalizado num **aviso** publicado em 『栄光』:
+
+> 「御守はじめその他の私のかいたものの値は**一定している**にかかわらず、少しでも
+> 多い金を得るとしたら、**その分だけは盗みの罪を犯す事になる**から、何程一生懸命
+> 信仰しても、それだけ御蔭は減る事になるからよく心得べきである。」
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
+
+*"Embora o valor do Ohikari e das demais coisas que eu escrevi seja **fixo**, se
+alguém obtiver um pouco mais de dinheiro, **essa diferença constitui crime de
+furto**; por mais que se empenhe na fé, a graça diminuirá na mesma proporção —
+convém compreendê-lo bem."*
+
+Três coisas decorrem disso. Primeiro, o Ohikari **não era dado em troca de oferta
+livre**: tinha valor, e o valor era o mesmo para todos. Segundo, cobrar acima do
+fixado era **furto** — a palavra é dele. Terceiro, o acréscimo indevido **reduzia
+a graça do próprio fiel**, e não apenas o erário da instituição. É, de novo, um
+juízo sobre o que a cobrança faz com a fé.
+
+De outro lado, o **serviço espiritual** — o Johrei — tinha oferenda **livre**. A
+ata de uma reunião de difusão de 1953, publicada no mesmo número de 『栄光』,
+registra a resposta dada a um assistido que perguntou quanto deveria depositar:
+
+> 「あれは神様への御玉串なんで、**幾らと言うのは決っておらん**が、医者に行っても、
+> 初診料と言うのを取られるんだから、**三百でも五百でも、あなたの気持次第**ですたい」
+> — idem
+
+*"Aquilo é a oferenda a Deus; **não há valor determinado**; já que no médico também
+se cobra a consulta inicial, trezentos ou quinhentos, **conforme o seu sentimento**."*
+
+O quadro é, portanto, de duas colunas que não se confundem: **preço** para o objeto,
+**oferta** para o serviço. Cobrar a mais na primeira era falta grave; na segunda, o
+valor era assunto da consciência de quem recebia. Não há, no corpus, indício de que
+as duas coisas tenham sido jamais unificadas numa tabela única de "tributos".
+
+![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
 ---
 
 ## 29. Os Paraísos Terrestres e a mineração
@@ -660,6 +728,10 @@ por dois membros — um deles, **小野松造**, era presidente da 光陽会 e
 
 > 「昭和十九年十一月二十九日、秋田県仙北郡檜木内村所在の**森吉鉱山**の地質鉱床
 > 調査のため箱根別院の原清作氏と同行当地に出張しました。」
+
+*"Em 29 de novembro de 1944 fui em missão ao local, acompanhado do Sr. Hara Seisaku, do
+Templo Anexo de Hakone, para a **inspeção geológica e de jazidas do 森吉鉱山**, situado em
+Hikinai, distrito de Senboku, província de Akita."*
 > — 「奇蹟」, 『地上天国』3号, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
 
 Nos relatos de 1951, a mina aparece **em plena operação**, e como **obra da
@@ -668,6 +740,11 @@ igreja**:
 > 「御鉱山を**光映中教会の経営**で初める光栄に浴した吾々会員は、やり通さねばの
 > 意気でおりましたところ、……十五坪の選鉱工場建築を責任持ってやらせて頂く事と
 > なり」
+
+*"Nós, membros que tivemos a honra de iniciar **a mina sob a administração da Igreja Média
+Kōei**, estávamos com o ânimo de levar isso até o fim; […] e assim ficou decidido que eu
+me encarregaria da construção de uma usina de concentração de minério de quinze tsubo."*
+
 > — 「鉱山においての奇蹟の数々」, 『栄光』109号, 20 de junho de 1951 ·
 > `search2/okage/ko/qkozan02.html`
 
@@ -715,6 +792,12 @@ relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法
 > 建物六ケ所、小田原一ケ所、合計七ケ所に対し、一大**家宅捜索**が行われた。その際
 > 動員された警官、**無慮八十名**と言うのであるから、いかに大仕掛であったかが判る
 > のである。」
+
+*"Na madrugada de 8 de maio de 1950, como um raio em céu azul, realizou-se uma grande
+**busca domiciliar** em seis imóveis ligados a esta religião em Atami e um em Odawara —
+sete ao todo. Os policiais mobilizados na ocasião foram, ao que se diz, **nada menos de
+oitenta**; e por aí se vê quão grande foi a operação."*
+
 > — 「発端」, 『法難手記』, 30 de outubro de 1950 · `search1/ho/hottan.html`
 
 Foram detidos, entre outros, o secretário **井上福夫** e o responsável da
@@ -722,6 +805,8 @@ construção em Atami, **金久平** (造営部熱海主任). Meishu-Sama ficou 
 interrogatório por vinte e dois dias; o episódio "chegou a um termo" em **12 de
 julho** de 1950. Em 30 de maio, cinquenta policiais fizeram nova busca no
 Templo Anexo de Hakone-Gōra — "eu estava detido, por isso soube depois" (同).
+
+![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
 
 A acusação era **econômica**: evasão fiscal (脱税), suborno (贈賄, de
 ¥300.000), ocultação de patrimônio (財産隠匿). **Nada religioso.** É o próprio
@@ -744,6 +829,13 @@ o ex-ministro da Justiça **鵜澤総明** e **小原直**. Uma nota que a cober
 > 「過去において、宗教家の裁判と云えば、不敬罪、治安維持法違反等、今は無い罪名で
 > あったが、今回の受難にしても、霊友会の事件にしても、脱税、財産隠匿であって、
 > **宗教の内容に関した事は、起訴状に一言、一句もないのである。**」
+
+*"No passado, quando se falava em julgamento de religiosos, eram crimes como
+lesa-majestade ou violação da Lei de preservação da ordem, hoje inexistentes; mas, quer no
+caso desta provação, quer no caso do incidente da Reiyūkai, trata-se de evasão fiscal e
+ocultação de patrimônio — **e sobre o conteúdo religioso não há uma palavra, uma frase
+sequer na denúncia.**"*
+
 > — 「法難裁判傍聴記（下）」, 『栄光』76号, 1 de novembro de 1950 ·
 > `search2/kikou2/honan02.html`
 
@@ -1041,8 +1133,10 @@ documentação institucional do período era conhecida apenas por essa via, a
 citação foi substituída por fonte equivalente em `search2/sanko/`,
 `search2/kikou2/` ou `search1/`.
 
-As **lacunas** que esta Parte III registra são três: (1) não há documentação
-sobre donativo obrigatório pela outorga do Ohikari; (2) não há documento que
-fixe percentuais de remessa das unidades para a Sede; (3) não há balanço,
-produção ou prestação de contas da mineração (事業部). Todas as três são
-lacunas **documentais**, e não conclusões negativas.
+As **lacunas** que esta Parte III registra são **duas**: (1) não há documento que
+fixe percentuais de remessa das unidades para a Sede; (2) não há balanço,
+produção ou prestação de contas da mineração (事業部). A terceira lacuna que uma
+versão anterior registrava — a ausência de documentação sobre donativo pela
+outorga do Ohikari — **caiu**: o Ohikari tinha preço fixo, documentado desde 1935
+(§27.3) e formalizado no aviso de 1953 (§28.4). As duas remanescentes são lacunas
+**documentais**, e não conclusões negativas.

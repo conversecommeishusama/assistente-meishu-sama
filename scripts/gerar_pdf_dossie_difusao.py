@@ -35,7 +35,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     BaseDocTemplate, Frame, PageTemplate, Paragraph, Spacer, Table, TableStyle,
-    PageBreak, KeepTogether, CondPageBreak, NextPageTemplate,
+    PageBreak, KeepTogether, CondPageBreak, NextPageTemplate, Image,
 )
 
 # ---------------------------------------------------------------- caminhos
@@ -137,6 +137,10 @@ ESTILOS = {
     "sum": ParagraphStyle("sum", fontName="Corpo", fontSize=9.2, leading=13.2,
                           leftIndent=3 * mm, spaceAfter=1.2,
                           bulletFontName="Corpo"),
+    "legenda": ParagraphStyle("legenda", fontName="Corpo", fontSize=8.2,
+                              leading=11.2, textColor=COR_META,
+                              alignment=TA_CENTER, leftIndent=8 * mm,
+                              rightIndent=8 * mm),
 }
 
 # numeração de página do sumário, preenchida na primeira passagem
@@ -255,6 +259,13 @@ def ler_blocos(caminho):
         if m:
             nivel = len(m.group(1))
             blocos.append(("h%d" % nivel, m.group(2).strip()))
+            i += 1
+            continue
+
+        # imagens: ![legenda](caminho) — usadas para os fac-símiles do acervo
+        m = re.match(r"^!\[(.*?)\]\((.+?)\)$", s)
+        if m:
+            blocos.append(("imagem", (m.group(2).strip(), m.group(1).strip())))
             i += 1
             continue
 
@@ -509,7 +520,34 @@ def monta_flow(blocos):
             out.append(Spacer(1, 1.6 * mm))
             out.append(tabela_flow(dado))
             out.append(Spacer(1, 3.4 * mm))
+        elif tipo == "imagem":
+            out.extend(imagem_flow(*dado))
     return out
+
+
+def imagem_flow(caminho, legenda):
+    """Fac-símile + legenda, mantidos juntos na mesma página."""
+    if not os.path.isabs(caminho):
+        caminho = os.path.join(DOCS, caminho)
+    if not os.path.exists(caminho):
+        return []
+    from PIL import Image as _PILImage
+    with _PILImage.open(caminho) as im:
+        larg, alt = im.size
+    disp = LARGURA * 0.72
+    altura = disp * alt / larg
+    maxalt = 150 * mm
+    if altura > maxalt:
+        altura = maxalt
+        disp = altura * larg / alt
+    marca = Image(caminho, width=disp, height=altura)
+    marca.hAlign = "CENTER"
+    partes = [Spacer(1, 3 * mm), marca]
+    if legenda:
+        partes.append(Spacer(1, 1.4 * mm))
+        partes.append(Paragraph(para_inline(legenda), ESTILOS["legenda"]))
+    partes.append(Spacer(1, 3.5 * mm))
+    return [KeepTogether(partes)]
 
 
 def main():

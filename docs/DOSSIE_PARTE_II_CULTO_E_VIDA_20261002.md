@@ -41,26 +41,14 @@ segunda é que o critério hierárquico real, na estrutura da igreja, não passa
 tamanho da imagem, e sim pelo **tipo de objeto de culto admitido em cada nível**
 (tratado na Parte I, §5.2).
 
-A esse critério de proporção somava-se uma exigência de subordinação. Numa prédica
-de 1955, o próprio Meishu-Sama censurou a prática de colocar sua fotografia ao lado
-da Imagem, em igualdade de posição:
+A esse critério de proporção somava-se uma exigência de **ordem**. A hierarquia dos
+objetos de culto já a estabelecia — a caligrafia acima da figura (Parte I, §5.2) —, e a
+ela corresponde a disposição no nicho: a Imagem ocupa o lugar próprio, sem que nada a
+iguale ou se sobreponha a ela. A ordem é ela mesma o critério.
 
-> 「御神体を前に戴いていた観音様のお姿というものと明主様のお写真と、同じ所に
-> 二つ並べてというようなやり方になっているそうですが、これは吾々から考えて
-> みるとご無礼もご無礼、大御無礼なんです。……『あの、それは間違っている。
-> わしが今治してあげたのに観音様のほうに先にお辞儀した。それは順序が違う。
-> あの観音様はわしが描いたんだ』とこうおっしゃった。」
-
-*"Dizem que se está colocando lado a lado, no mesmo lugar, a figura da Kannon que
-se tinha diante da Imagem e a fotografia de Meishu-Sama — o que, do nosso ponto de
-vista, é uma descortesia e mais que descortesia, uma enorme descortesia. […] 'Não,
-isso está errado. Fui eu que curei agora, e você se curvou primeiro à Kannon. A
-ordem está trocada. Aquela Kannon fui eu que pintei.'"*
-
-O princípio subjacente é enunciado no mesmo passo: a Imagem foi feita por
-Meishu-Sama **como seu representante**, porque seu corpo físico não podia estar em
-todos os lugares ao mesmo tempo. Segue-se que uma Imagem não pode ser venerada acima
-de quem a instituiu. É esse mesmo princípio que responde à pergunta seguinte.
+Segue-se desse conjunto que a Imagem não é um objeto sagrado autônomo, mas o
+representante de quem a instituiu — e é isso que permite afirmar que ela não pode ser
+venerada acima dele. É esse mesmo princípio que responde à pergunta seguinte.
 
 ### 13.1 O que Meishu-Sama diria de uma Imagem escrita por outra pessoa
 
@@ -136,6 +124,15 @@ completo da sequência ritual disponível no acervo:
 > 一、撤饌　祭員一同ニテ再出座
 > 以上　御祭典終了後　明主様　御出座」
 
+*"Ordem do Culto Especial de Outono: 1. Relatório (chefe dos oficiantes); 2. Oferenda de
+alimentos (do chefe das oferendas, cinco pessoas até o altar); 3. Retirada após a oração;
+4. Recitação da oração (norito); 5. Retirada; 6. Oferta do ramo sagrado (tamagushi) — do
+Superintendente ao representante dos fiéis, cinco pessoas; 7. Recitação conjunta das
+Orações Tenjin e Zengen-Sanji — de todos, do Superintendente aos fiéis; 8. Canto do poema
+sagrado — dirigido pelo Superintendente; 9. Retirada dos oficiantes; 10. Retirada das
+oferendas — todos os oficiantes reaparecem em conjunto. Encerrado o culto, Meishu-Sama
+toma assento."*
+
 Ou seja: **relatório → oferenda de alimentos → oração do oficiante (norito) →
 oferta do ramo sagrado (tamagushi) → recitação conjunta das Orações Tenjin e
 Zengen-Sandji → canto do poema sagrado → retirada dos oficiantes → retirada das
@@ -163,6 +160,10 @@ obrigação de celebrar culto em data fixa**, questão tratada na Parte I (§3) 
 do censo e das atribuições de cada nível: o Culto Mensal e o Culto Regular eram
 incumbência de filiais, postos avançados e igrejas; unidades menores limitavam-se ao
 culto doméstico diante da Imagem.
+
+A **escala do culto** em três degraus — o 大祭 da Sede, o 例祭 e o 月並祭 das
+igrejas, e o culto doméstico — está sistematizada na Parte III (§26), que também
+trata do que caracteriza cada degrau.
 
 Quanto ao culto doméstico, a documentação mais direta vem de um relato de fiel
 publicado em 『浄霊と医学との比較』, no qual a autora descreve sua rotina antes de
@@ -244,11 +245,6 @@ altura do objeto de culto. Não há, no entanto, conjunto de regras de orientaç
 litúrgico do nicho como lugar da oferenda — no caso da agricultura natural, era ali
 que se dispunham as sementes antes do plantio (v. seção 18).
 
-Registre-se um testemunho de 1955 sobre a posição hierárquica das imagens no nicho,
-em que Meishu-Sama lamenta que a fotografia dele tivesse sido colocada sobre um
-suporte de oito pés (*八そうの上*) no tokonoma — combinação que ele considerou
-desordenada, pela razão já exposta na seção 13.
-
 ---
 
 ## 15. As oferendas
@@ -256,7 +252,10 @@ desordenada, pela razão já exposta na seção 13.
 ### 15.1 O que se oferecia
 
 O acervo permite datar com precisão uma **mudança de prática**. Na descrição do
-Culto de Outono de 1954, lemos que a igreja abandonou o costume tradicional:
+Culto de Outono de 1954, lemos que a igreja abandonou o costume tradicional: (a
+transformação é a mesma que a Parte III (§31) examina a partir da consulta de abril de
+1949, em que Meishu-Sama nomeia os três elementos da oferenda xintoísta — peixe cru,
+arroz lavado e sal — e os substitui pela comida humana.)
 
 > 「ところで献饌物ですが、これも**今までの生米生魚…という風習を破って、
 > すべて口に入れられる物に料理して御供えした**のですが、極めて常識的に行った
@@ -441,10 +440,19 @@ ligadas ao ato de receber o objeto de culto:
 > 「去る六月の十一日に**光明如来様を迎える事となり**、宗宮先生に来て戴き、
 > **御霊祭をして戴きました**。ちょうど祝詞をお唱え致している時……全身にふるえが来て
 > 手は合掌致し、口を開き始めました。」
+
+*"Em 11 de junho passado **passou-se a entronizar o Kōmyō Nyorai**; fizemos vir o Sr.
+Sōmiya e **recebemos o 御霊祭**. Justamente quando se recitava a oração… veio um tremor
+por todo o corpo, as mãos se juntaram e a boca começou a falar."*
+
 > — 「祖霊との交わり」, `search1/so/sorei05.html`
 
 > 「**経緯の御書体を御迎え致し**、岐阜から清水先生を迎え賑かに**御霊祭を執行
 > 致しました**。」
+
+*"**Recebemos a caligrafia keiki**, fizemos vir o Sr. Shimizu de Gifu e **executamos
+com solenidade o 御霊祭**."*
+
 > — 「不治の喘息快癒す」『地上天国』3号, 20 de abril de 1949 ·
 > `search2/okage/haho/qhujino4.html`
 
@@ -457,6 +465,11 @@ momento em que a família recebe a Imagem — não o sufrágio dos ancestrais.
 > 「八月八日には中教会に参拝して屏風観音様を戴き、十日に小柳先生に**先祖祭りも
 > 頂き、九月十日第二回の先祖祭を頂き**、種々**先祖の霊の向上と供養**の重大な
 > お話を聞かせて貰い」
+
+*"Em 8 de agosto fui à Igreja Média e recebi a Kannon de biombo; no dia 10 recebi do Sr.
+Koyanagi **também o 先祖祭, e em 10 de setembro recebi o segundo 先祖祭**, e ouvi diversas
+palestras importantes sobre **a elevação e o sufrágio dos espíritos ancestrais**."*
+
 > — `search1/ka/kantan.html`, 28 de novembro de 1951
 
 Duas coisas importam. A primeira é a **repetição** — a segunda ocorrência vem um mês
@@ -466,6 +479,11 @@ da casa:
 
 > 「長崎市小瀬町信徒杉本暎弘さん方**仏壇に向かい、先祖祭の際**、後方参拝中の前記
 > 暎弘さんに神霊らしき憑霊あり、次のごとき問答および処置を採りましたが……」
+
+*"Na casa do fiel Sugimoto Eikō, em Kose, Nagasaki, **diante do oratório, durante o
+先祖祭**, o referido Eikō, que assistia atrás, teve um fenômeno de possessão por um
+espírito aparentemente divino; adotaram-se o seguinte diálogo e as seguintes medidas…"*
+
 > — 『御垂示』, `search1/situmon/situmo35.html`
 
 Este documento merece atenção: descreve um fenômeno espiritual ocorrido **durante** um
@@ -503,13 +521,13 @@ O Regulamento da pessoa jurídica religiosa, publicado em 『栄光』125号, 10
 outubro de 1951, define com precisão. O artigo quinto fixa onze diretores
 responsáveis (*責任役員*), um dos quais é o representante. O artigo sexto dá o nome:
 
-> 「第六条　**代表役員を「管長」と卜い、その他の責任役員を「理事」という**」
+> 「第六條　**代表役員を「管長」と卜い、その他の責任役員を「理事」という**」
 
 E o sétimo define como se ocupa o cargo e o oitavo, por quanto tempo:
 
-> 「第七条　**管長は、理事の互選によって定める**。２　理事は、総会において
+> 「第七條　**管長は、理事の互選によって定める**。２　理事は、総会において
 > 選出した者のうちから管長が選任する」
-> 「第八条　**管長及び理事の任期は、各々三年とする**、但し、再任を妨げない」
+> 「第八條　**管長及び理事の任期は、各々三年とする**、但し、再任を妨げない」
 
 *"Art. 6º — O representante chama-se **Superintendente (管長)**; os demais
 diretores responsáveis chamam-se **diretores (理事)**. Art. 7º — O Superintendente
@@ -547,39 +565,14 @@ O mesmo documento cria **dezessete sedes regionais**, cada uma com chefe nomeado
 Naoyuki), 山陰 (Hiramoto Naoko), 山陽 (Yashiro Osamu), 四国 (Moriyama
 Satarō), 九州東部 (Ōnishi Hidekichi), 九州西部 (Kihara Yoshihiko).
 
-**Este é o dado decisivo para a pergunta sobre a presidência**: 木原義彦 (Kihara
-Yoshihiko) — o homem que romperia com a igreja em 1º de março de 1955 e fundaria a
-世界明主教, ficando com a maior parte do acervo de Meishu-Sama — aparece em 1951
-como **chefe da sede regional do Kyushu Ocidental**, e em 1952 como diretor
-encarregado de conduzir os dezoito poemas do Culto de Outono. Sua ascensão na
-estrutura foi, portanto, regular e documentada.
+**Este é o dado decisivo para a pergunta sobre a presidência**: 木原義彦 aparece em 1951
+como **chefe da sede regional do Kyushu Ocidental**, e em 1952 como diretor encarregado de
+conduzir os dezoito poemas do Culto de Outono. A posição que ocupava na estrutura da
+igreja era, portanto, regular e documentada.
 
-Quanto à sucessão após a morte de Meishu-Sama, o acervo — pela boca do próprio
-Kihara, já em ruptura, e, portanto, com o interesse que isso implica — descreve a
-disputa:
-
-> 「御在世中はいいが、今後はどうするかという時に**諸説紛々**だったのです。
-> と言いますのは、水晶殿での明主様のお言葉に、**この後は段差が出来て来る**。
-> 一、神様のことがよく解って信仰が深い。　二、お導きをよくした人。
-> 三、御奉仕の面で御用ができた人。　というようなことで、**それを基調として
-> 会長が選挙によって役員何名かを選出して、そのなかからまた選んで**……という
-> 事が一番いいじゃないかという説が出た訳です。」
-
-*"Enquanto ele vivia, tudo bem; mas quando chegou o momento de decidir o futuro,
-**as opiniões se dividiram em muitas direções**. É que, nas palavras que Meishu-Sama
-deixou no Palácio de Cristal, **daqui em diante surgirão degraus**. Primeiro, quem
-entende bem as coisas de Deus e tem fé profunda. Segundo, quem conduziu bem as
-pessoas. Terceiro, quem prestou serviço na obra. Com base nisso, surgiu a proposta
-de que **o presidente fosse eleito, que escolhesse alguns diretores e que se
-escolhesse entre eles**… o que seria o melhor."*
-
-E, sobre a resistência dos quadros a essa proposta, ele acrescenta que o argumento
-decisivo dos dirigentes foi que uma eleição verdadeira mudaria a composição da
-direção, ao que se preferiu conservar o esquema existente nomeando os diretores
-dentre os membros do comitê permanente. É uma descrição da **captura do processo
-sucessório pelos quadros**, escrita por um dos que dele se beneficiaram — o que
-obriga a lê-la com cautela, mas também a registrá-la, porque é o único registro
-interno da disputa existente no acervo.
+Quanto à sucessão após a morte de Meishu-Sama, **o acervo não oferece fonte citável**: os
+relatos existentes partem de quem participou do processo, são de assistência unilateral e
+não podem ser usados como testemunho. O levantamento registra o ponto como **lacuna**.
 
 ---
 
@@ -630,6 +623,10 @@ E o substantivo da proposta: **só composto**.
 > 「我無肥栽培によれば、何より助かるのは**人糞を用いない事**であるのみか
 > **他の肥料も必要がない、ただ堆肥だけで充分である**にもかかわらず、その成果
 > たるや素晴しいのである」
+
+*"Com a minha cultura sem adubo, o que mais ajuda não é apenas **não usar esterco
+humano**, mas o fato de que **nenhum outro adubo é necessário — só composto basta**; e,
+apesar disso, os resultados são esplêndidos."*
 
 Meishu-Sama enumera então seis vantagens, que valem ser reproduzidas porque são a
 matéria-prima da difusão: (1) não requer esterco nem outros adubos; (2) elimina o
@@ -696,6 +693,14 @@ demográfica, chegando a opor o cultivo sem adubo ao controle de natalidade:
 > ないし五割の増収**は易々たるもので……本年の米の収穫高六千三百万石であるから
 > 三割増とすれば八千百九十万石となり、五割増とすれば九千四百五十万石となり、
 > いとも簡単に問題は解決するのである」
+
+*"Guiar as pessoas para um mundo assim… **se se passar à cultura sem adubo, não há
+problema**; por cegueira quanto a isso, e por se dedicar exclusivamente à cultura com
+adubo, **as terras do Japão hoje ficaram extremamente esgotadas**; ao passo que,
+convertendo-se à cultura sem adubo que eu defendo, **um aumento de trinta a cinquenta por
+cento** é coisa fácil… A colheita de arroz deste ano é de sessenta e três milhões de koku;
+com trinta por cento de aumento serão oitenta e um milhões; com cinquenta por cento,
+noventa e quatro milhões — o problema se resolve com toda a facilidade."*
 
 A cifra — aumento de 30% a 50% — é uma estimativa de Meishu-Sama, não um dado
 verificado. Registro-a como o que é: **a promessa com que a Agricultura Natural era
@@ -799,6 +804,8 @@ faz-se desde o início só naquele lugar.** Depois, **quando não é assim — q
 corpo está debilitado como um todo, ou quando não se identifica bem o ponto — faz-se
 naquela ordem.**"*
 
+![『御垂示録』15号, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/suiji15_johrei.jpg)
+
 A doutrina dos pontos vitais, portanto, **não era dispensável**: era uma das duas
 modalidades, a modalidade de urgência. E os pontos eram objeto de instrução
 específica. Numa prédica de 7 de abril de 1953, Meishu-Sama anuncia que detalharia o
@@ -833,6 +840,14 @@ consecutivas de maio de 1952 tratam disso, e o texto é inequívoco:
 > ですね。それで、力を抜いてその霊ができるだけ向こうに通るようにね。そうする
 > と非常に治るんです**。ですから、つまり**力を抜く稽古をする**んですね。」
 
+*"Se se ministra Johrei, é de um grau que qualquer outro fiel cura sem dificuldade. E
+mandam-no a mim porque não consegue ser curado de jeito nenhum — **é que o modo de
+ministrar Johrei ainda está errado. Entra força. A maior parte das dores, se se ministrar
+de fato relaxando a força, cura relativamente rápido. Com força, não cura. Por isso, eu
+gostaria que se esforçassem ainda mais em relaxar a força. E assim, relaxando a força, para
+que o espírito do outro passe o mais adiante possível — desse modo cura muito.** Portanto,
+isto é, **pratica-se o relaxar da força**."*
+
 E, no dia seguinte, a explicação do mecanismo:
 
 > 「よく、**一生懸命にやる**ということを言いますがね。お蔭話なんかにも書いて
@@ -859,6 +874,10 @@ Aprofundando, ele descreve o que ocorre quando a força se acumula:
 > 「ところが、苦しがったり痛がったりすると、**かえって一生懸命になる**んですね。
 > 一生懸命になると力が入るんです。だからむしろ**一生懸命にならないようにする
 > 方が良い**ですね。苦しがって七転八倒すると、かえってボン…」
+
+*"Mas quando [o paciente] sofre e sente dor, **ele acaba se empenhando ainda mais**. Ao
+se empenhar, entra força. Por isso, é melhor **não se empenhar**. Quando ele se debate de
+dor, ao contrário…"*
 
 O quadro é de uma inversão perversa: quanto maior o sofrimento do paciente, maior o
 empenho do ministrante, e portanto menor a eficácia.
@@ -1030,6 +1049,13 @@ O dia começava às 7h30, e começava **pelo rádio**:
 > 世界の動きにいかに大なる関心を有たれいるかを知るので、**変転する時の動きは
 > 驚くべき的確さを以て握っておられ**、常に最良の時に最良の施策をとられる」
 
+*"Levanta-se às 7h30 e, primeiro, **liga o rádio: é assim que o dia começa.** […] Sobretudo
+**não se deixa escapar nenhuma notícia**; nós mantemos silêncio rigoroso, e vê-se o quanto
+ele tem grande interesse no movimento do mundo hora a hora — **apreende o desenrolar dos
+tempos com espantosa exatidão**, e toma sempre a melhor medida no melhor momento."*
+
+![「自観大先生の御日常」 — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/jikan02_rotina.jpg)
+
 O relato insiste num traço que contraria a imagem de um mestre apartado do mundo:
 ele ouvia rádio durante todo o trabalho, e acompanhava **novelas, política, religião
 e teatro** — "em todos os campos", espanta-se o secretário. A rotina seguia com
@@ -1039,6 +1065,10 @@ flexível, aproveitada sobretudo **em campo**:
 > 「好日はよく外出。季節が織りなす景勝の美を賞でられつつ、**現在進捗中の農園、
 > 花園の準備作業や熱海会館敷地工事の現場へ赴かれ御指図をなされ**」
 
+*"Em dias bons, sai com frequência. Gozando a beleza dos sítios que as estações tecem,
+**dirige-se aos trabalhos preparatórios das hortas e jardins em andamento e ao canteiro de
+obras do terreno do Salão de Atami, e ali dá instruções.**"*
+
 Às 17h, após o noticiário, o banho. E aqui há um dado que só se compreende pela
 doutrina, e que o secretário explica com precisão:
 
@@ -1047,6 +1077,13 @@ doutrina, e que o secretário explica com precisão:
 > **寒中といえども全裸か浴衣一枚でしばらく涼をとられる**……それは「妙智の光」に
 > 説かれたごとく、**大先生の御身体は腹部に光の玉があって、常に強大な光明が
 > 充満している**」
+
+*"O Mestre **prefere água morna, de temperatura tão baixa que quase se aproxima da água
+fria**; é que, se se imerge na água quente, o corpo esquenta anormalmente e, sobretudo
+depois do banho, sente um calor como de queimadura — **e mesmo em pleno inverno fica por um
+tempo a refrescar-se completamente nu ou com uma única yukata**. […] É o que 'Luz da
+Sabedoria Maravilhosa' explica: **o corpo do Mestre tem no abdômen uma esfera de luz, e
+nela há sempre uma luz forte e plena.**"*
 
 Após o jantar, a produção caligráfica — e o relato é de uma concretude que
 surpreende:
@@ -1058,6 +1095,14 @@ surpreende:
 > られるが、全く百文字単位の一気呵成の早業である、「**自分はアメリカ式能率
 > 主義**」とおっしゃっている」
 
+*"Depois da refeição, caligrafa imediatamente as obras e as 御光 solicitadas pela
+organização e pela Igreja 五六七. Escreve **com a mão direita, cujo dedo indicador não
+consegue flexionar-se; mas a velocidade é verdadeiramente supersônica: no caso dos 'Luz',
+seiscentas folhas por hora** […] quando escreve cem caracteres '光' com a direita,
+acrescenta com a esquerda o traço do 落款 […] diz **'isto é produção em série'**; é de
+fato um trabalho de um só fôlego, em unidades de cem caracteres; e acrescenta: **'eu sou
+do tipo eficiência-americana'.**"*
+
 E às 20h, o encerramento: Johrei aos doentes. O secretário observa que ele atendia
 "em qualquer momento", sem poupar-se, e registra a máxima que resumia sua pedagogia
 disso — uma máxima que vale por si:
@@ -1068,6 +1113,13 @@ disso — uma máxima que vale por si:
 > **そのために要務に差支えたり、能率を殺いだりする故に、結果としては大きい
 > 罪悪を犯す事となる**を意味されたものである。」
 
+*"O Mestre **detestava extremamente a cerimônia [de hesitação]; chegou a criar o lema 'a
+hesitação é pecado'**, e afirmava que, em qualquer momento em que alguém sofresse na
+purificação, ele o curaria. […] suportar dores que pelo seu poder são removidas com toda a
+facilidade não só é praticamente sem sentido, como — **por atrapalhar as tarefas urgentes
+e matar a eficiência — resulta em cometer, ao fim, um grande pecado**; foi isso que ele
+quis dizer."*
+
 Sobre a alimentação, o documento dá um dado concreto — e é o único que dá. Ele
 **não podia comer alimentos duros**, por causa de problema dentário ligado à
 purificação do veneno medicamentoso:
@@ -1075,6 +1127,10 @@ purificação do veneno medicamentoso:
 > 「青年の頃長い歯痛苦のため自殺をさえ想われたと承わっているが、その薬毒の
 > 浄化のため、今も悩まれる事があられる模様で、**特に硬食物を摂られぬ**のは
 > お傷わしい限りである。」
+
+*"Ouvi dizer que, na juventude, por causa de uma longa dor de dentes, chegou a pensar em
+suicídio; e parece que, pela purificação daquele veneno medicinal, ainda hoje sofre às
+vezes — **sobretudo não ingerir alimentos duros** é de doer o coração."*
 
 **Não há, no documento, qualquer prescrição dietética.** O que há é uma limitação
 física, anotada pelo secretário com pesar. As três refeições são mencionadas
@@ -1115,7 +1171,7 @@ seria invenção.
 A resposta mais precisa está no Regulamento de 1951, capítulo IV, 「財務」. O
 primeiro artigo do capítulo é também o mais importante:
 
-> 「（教費の賦課徴収）第二十九条　この法人は、その目的達成の経費に充てるため、
+> 「（教費の賦課徴収）第二十九條　この法人は、その目的達成の経費に充てるため、
 > **教会及び会員に対し、教費を賦課徴収する**」
 
 *"(Arrecadação da taxa religiosa) Art. 29 — Esta pessoa jurídica, para cobrir as
@@ -1127,7 +1183,7 @@ membros**. A distinção interessa porque responde à pergunta sobre remessas: a
 estrutura legal previa explicitamente que as unidades contribuíssem com a Sede. O
 artigo seguinte, ao classificar o patrimônio, nomeia as receitas:
 
-> 「（資産の区分）第三十条　……３　**普通財産は、基本財産以外の財産、財産から
+> 「（資産の区分）第三十條　……３　**普通財産は、基本財産以外の財産、財産から
 > 生ずる果実、教会分担金、会費及び一般の収入**とする」
 
 *"Art. 30 — […] O patrimônio comum compreende os bens que não sejam patrimônio
@@ -1154,7 +1210,7 @@ prestação de contas anual.
 
 O regulamento trata das igrejas no capítulo III, e o artigo 28 fixa a nomeação:
 
-> 「第二十八条　**教会の会長及びその代務者は、当該教会の規則で定めるところに
+> 「第二十八條　**教会の会長及びその代務者は、当該教会の規則で定めるところに
 > よって選定された者を管長が任命する**」
 
 *"Art. 28 — O presidente da igreja e seu substituto são **nomeados pelo
@@ -1165,8 +1221,11 @@ O desenho é hierárquico em dois movimentos: a unidade local escolhe por suas p
 regras, mas quem **nomeia** é o Superintendente. E o artigo 27 subordina à
 autorização do Superintendente uma lista de atos de consequência:
 
-> 「第二十七条　教会は、左に掲げる行為をしようとするときは、管長の承認を受けなけ
+> 「第二十七條　教会は、左に掲げる行為をしようとするときは、管長の承認を受けなけ
 > ればならない」
+
+*"Art. 27 — Quando a igreja pretender praticar os atos enumerados abaixo, deverá obter a
+aprovação do Superintendente."*
 
 compreendendo: constituir-se em pessoa jurídica religiosa ou estabelecer relação de
 inclusão; alterar seu regulamento; fundir-se ou dissolver-se; e — o mais relevante
@@ -1218,36 +1277,41 @@ igrejas (art. 29). Isso estabelece que **as unidades contribuíam** com a Sede. 
 regulamento não fixa valores, percentuais nem periodicidade — deixa isso para as
 normas de execução, que o art. 46 atribui aos diretores responsáveis.
 
-Há, porém, uma referência de época que permite qualificar o clima dessas cobranças.
-Numa prédica de 1955, Meishu-Sama responde a uma consulta sobre o atraso deliberado
-de quotas e contribuições:
+Há, porém, um documento de época que qualifica com precisão o regime dessas cobranças
+— e ele não é uma prédica, mas um **aviso formal de Meishu-Sama**, publicado em 『栄光』
+de janeiro de 1953 sob o título 「注意」. O aviso trata dos valores das peças que ele
+próprio escrevia — Ohikari, Imagem, caligrafias — e estabelece três coisas:
 
-> 「み教えの中に支部、中教会あたりで**故意に会費を遅らすとか、献金を……とかの
-> 問題**についてお伺いした時でさえ、『**何もそんなこと心配することはないじゃ
-> ないか。神様に任しておけ、神様がおやりになっているのだから…。**』とのみ
-> 教えのもとに、我々は進んで行かなければならんのが本当なのに」
+> 「御守はじめその他の私のかいたものの値は**一定している**にかかわらず、少しでも
+> 多い金を得るとしたら、**その分だけは盗みの罪を犯す事になる**から、何程一生懸命
+> 信仰しても、それだけ御蔭は減る事になるからよく心得べきである。」
 
-*"Mesmo quando se perguntou sobre o problema de **filiais e igrejas médias atrasarem
-deliberadamente as quotas, ou as contribuições** […], o ensino foi apenas: '**Não há
-por que se preocupar com isso. Deixe com Deus, pois é Deus quem está fazendo…**'. E
-é sob esse ensino que nós devemos caminhar."*
+*"Embora o valor do Ohikari e das demais coisas que eu escrevi seja **fixo**, se alguém
+obtiver um pouco mais de dinheiro, **essa diferença constitui crime de furto**; por mais
+que se empenhe na fé, a graça diminuirá na mesma proporção — convém compreendê-lo bem."*
+— 「注意」, 『栄光』191号, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
 
-A passagem mostra que a inadimplência interna era um problema real — e que a
-orientação recebida era a de **não transformar a cobrança em conflito**. Coerente com
-isso, Meishu-Sama, noutro momento, diagnostica o risco de inverter a natureza da
-adesão:
+1. Havia **valor fixo** para as peças escritas por Meishu-Sama — o que responde à pergunta
+   sobre a existência de um donativo pelo Ohikari (v. Parte III, §27.3).
+2. Cobrar acima do fixado era qualificado como **furto** — não como irregularidade
+   administrativa.
+3. O acréscimo indevido **reduzia a graça** do próprio fiel, e não apenas o erário da
+   instituição.
 
-> 「今はまだ、まあ会費だけは払わなければ信者じゃないといわれるから、やはり
-> 信者さんでも……**会費も払わないんじゃ具合悪いから、会費だけは続けておこうか
-> というような事でいるような人がうんと多い**んじゃないかと思います。」
+A **oferenda do Johrei**, em contrapartida, não era tabelada. A página ao lado do mesmo
+número traz a ata de uma reunião de difusão em que se pergunta quanto se deve depositar,
+e a resposta registrada é: 「あれは神様への御玉串なんで、**幾らと言うのは決っておらん**が、
+医者に行っても、初診料と言うのを取られるんだから、**三百でも五百でも、あなたの気持
+次第**ですたい」 — *"aquilo é a oferenda a Deus; **não há valor determinado**; já que no
+médico também se cobra a consulta inicial, trezentos ou quinhentos, **conforme o seu
+sentimento**"* (`search1/ti/tyui02.html`).
 
-*"Ainda agora, se não pagar a quota não é fiel, dizem; e entre os próprios fiéis […]
-**não pagar a quota é constrangedor, então vou continuar só com a quota — não será
-assim que pensa muita gente?**"*
+O quadro que emerge é, portanto, de duas naturezas distintas de contribuição: **preço
+fixo** para os objetos que Meishu-Sama traçava, e **oferta livre** para o serviço
+espiritual recebido. Cobrar a mais no primeiro caso era furto; no segundo, o valor era
+assunto da consciência do fiel.
 
-Ou seja: o próprio Meishu-Sama identificava a quota como o **último laço a se
-romper** na desafeição, e via nisso um sintoma, não uma solução. Não é uma posição
-contábil; é um juízo sobre o que a cobrança faz com a fé.
+![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
 
 ### 21.4 A remuneração dos ministros de dedicação integral
 
@@ -1359,16 +1423,7 @@ seguem o formato `veículo, número, data · caminho`, conforme convenção defi
 | 御講話 | 1943-10-23 | `search1/re/reikai05.html`, `search1/ri/rinne.html` |
 | 御講話 | 1952-06-15 | `search1/kouwa/s270516.html` |
 | 御講話 | 1953-04-07 | `search1/kouwa/s280407.html` |
-| 御講話 | 1955-10-12 | `search2/kihara/kikouwa/301012.html` |
-| 御講話 | 1955-11-01 | `search2/kihara/kikouwa/301101B.html` |
-| 御講話 | 1955-03-21 | `search2/kihara/kikouwa/300321.html` |
-| 御講話 | 1955-04-21 | `search2/kihara/kikouwa/300421.html` |
-| 御講話 | 1955-04-25 | `search2/kihara/kikouwa/300425.html` |
-| 御講話 | 1955-06-05 | `search2/kihara/kikouwa/300605.html` |
 | 無肥料稲作報告 | 1949-12-10 | `search2/kikou2/honnen2.html` |
-| 秋季大祭お導き | s/d | `search2/kihara/bunsyo/kami09.html` |
-| 平和記念祭御導き | s/d | `search2/kihara/bunsyo/kami22.html` |
-| 教長様お導き集 | s/d | `search2/kihara/bunsyo/omichi1.html` |
 | 浄霊と医学との比較 | s/d | `search1/English/ejorei12.html` |
 | 岡田先生療病術講義録 | 1936-07-01 | `search1/o/okada05.html` |
 | 霊界の審判 | 1943-10-23 | `search1/re/reikai07.html` |

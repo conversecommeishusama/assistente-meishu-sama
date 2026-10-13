@@ -104,14 +104,15 @@ finanças serão examinados na seção 6 (`search2/sanko/kisoku.html`).
 
 Os últimos anos são de obras e de tensão. Em 16 de dezembro de 1953 realiza-se a
 cerimônia de fundação do Templo Messiânico, no Zuiunkyo (`search1/ne/nento03.html`).
-Em 15 de junho de 1954, a cerimônia provisória do advento de Messias
-(`search2/kihara/bunsyo/honnen29.html`). Em outubro sai a terceira edição do **教修要綱**,
-o manual de formação. Em 24 de outubro iniciam-se as conferências itinerantes de
-Ministros. Em 11 de dezembro de 1954, Meishu-Sama é entronizado no Palácio de Cristal e
-anuncia novos **níveis** — que não chegarão a se consolidar
-(`search2/kihara/kikouwa/301011.html`). Em 9 ou 10 de fevereiro de 1955, sua morte
-(`search2/kihara/bunsyo/omichi1.html`). E em 1º de março de 1955, a ruptura: Kihara
-Yoshihiko demite-se e funda depois a **世界明主教** (`search2/kihara/ryakurek.html`).
+Em 15 de junho de 1954, a cerimônia provisória do advento de Messias, no Messias
+Kaidō — ocasião em que o Superintendente Ōkusa comunicou aos fiéis que, a partir
+daquele culto, passariam a tratá-lo por **Messias-Sama** (`search2/kikou/mesiya1.html`,
+『栄光』263号, 30 de junho de 1954). Em outubro sai a terceira edição do **教修要綱**,
+o manual de formação. Em 11 de dezembro de 1954, a entronização no Palácio de Cristal
+(水晶殿御遷座), quando Meishu-Sama anuncia que "o Trabalho Divino finalmente entrou no
+eixo principal" (`search1/me/meisyu2.html`, 『栄光』289号, 1º de janeiro de 1955). Em
+fevereiro de 1955, sua morte (`search2/kikou2/kanto68.html`, 『地上天国』68号, 15 de
+março de 1955).
 
 | Data | Fato | Fonte |
 |---|---|---|
@@ -131,12 +132,10 @@ Yoshihiko demite-se e funda depois a **世界明主教** (`search2/kihara/ryakur
 | 1951-02-05 | **Reforma**; nasce a **世界救世教** | `search2/sanko/kikoseib.html` |
 | 1951-10-10 | **Regulamento da pessoa jurídica** | `search2/sanko/kisoku.html` |
 | 1953-12-16 | Fundação do Templo Messiânico (Zuiunkyo) | `search1/ne/nento03.html` |
-| 1954-06-15 | Cerimônia provisória do advento de Messias | `search2/kihara/bunsyo/honnen29.html` |
+| 1954-06-15 | Cerimônia provisória do advento de Messias | `search2/kikou/mesiya1.html` |
 | 1954-10 | 3ª edição do **教修要綱** | `pdf_rattail/kyoshu_yoko.pdf` |
-| 1954-10-24 | Início das conferências itinerantes de Ministros | `search2/kihara/bunsyo/honnen29.html` |
-| 1954-12-11 | Entronização no Palácio de Cristal; anúncio dos níveis | `search2/kihara/kikouwa/301011.html` |
-| 1955-02-09/10 | Falecimento de Meishu-Sama | `search2/kihara/bunsyo/omichi1.html` |
-| 1955-03-01 | Ruptura: Kihara Yoshihiko demite-se | `search2/kihara/ryakurek.html` |
+| 1954-12-11 | Entronização no Palácio de Cristal (水晶殿御遷座) | `search1/me/meisyu2.html` |
+| 1955-02 | Falecimento de Meishu-Sama | `search2/kikou2/kanto68.html` |
 
 Vale sublinhar o que essa cronologia revela sobre o ritmo da instituição. Entre 1947 e
 1951, ou seja, em quatro anos, o movimento obtém personalidade jurídica, funda uma
@@ -221,6 +220,12 @@ deliberada:
 > 【明主様】他宗教を丸っきりはなれてからこの道に入る……というようにはっきりしたもの
 > でもない。両方信じているうちにこっちへ傾くこともありますから**決めないほうが
 > いいですね。**」
+
+*"— [Pergunta] Quem é fervoroso em outra religião, ou está para entrar em outra, é melhor
+não deixá-lo receber o Kyoshu até que isso se esclareça? — [Meishu-Sama] Não é uma coisa
+assim tão definida, de romper por completo com a outra religião e então entrar neste
+Caminho… Como pode acontecer de, acreditando nas duas, a pessoa se inclinar para cá, **é
+melhor não decidir.**"*
 
 — 『御光話録』2号, 8 de janeiro de 1949 · `search1/situmon/m231218.html`
 
@@ -514,6 +519,8 @@ Daí um **limite superior prático de trinta filiais por Igreja Média** — nã
 mas por aritmética de calendário. A estrutura não era desenhada no papel: era deduzida
 da capacidade física de supervisão.
 
+![『御垂示録』29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
 ---
 
 ## 4. Como se abria uma unidade
@@ -587,13 +594,10 @@ Há ainda o caso do imóvel próprio abandonado e readaptado — 「そこに古
 ali uma casa velha e arruinada; reparando-a, a brigada de serviço se aloja ali e
 trabalha."* (`search1/kouwa/s240523.html`).
 
-E o aluguel como situação provisória, com uma conotação que os documentos registram
-em primeira pessoa: 「本部としての"借りもの"（借家という意）の最後」 — "o último
-'empréstimo' (isto é, imóvel alugado) como Sede" (`search2/kihara/bunsyo/ken26.html`).
-A superação do aluguel é vivida como marco: 「六月十五日には、地上に初めて、**借りもので
-ない、本もの**の"みろく大神様"の祭典が……行われ」 — *"Em 15 de junho, pela primeira
-vez na face da terra, realizou-se o culto do «Miroku Ōkami-sama» não emprestado, mas
-verdadeiro"* (idem).
+E o aluguel como situação provisória. O acervo trata a passagem do provisório ao
+próprio como um marco da obra — a primeira construção erguida do zero —, e as
+descrições estão na seção 4.3. Não há, em contrapartida, fonte que registre em
+primeira pessoa a superação do regime de aluguel pela Sede.
 
 ### 4.3 Construção própria
 
@@ -725,6 +729,11 @@ O princípio reaparece, com o mesmo rigor, na distribuição dos amuletos:
 > 【明主様】ええ、いいですよ。**御守りの「大光明」のほうは資格者だけですがね。**
 > 【質問者】「大光明」の御守りは教導師補の方でもよろしいでしょうか。
 > 【明主様】**師補でもいいですよ。**ただ、一般の人はいけませんがね……」
+
+*"— [Pergunta] Qualquer pessoa serve? — [Meishu-Sama] Sim, serve. **O Ohikari
+'Dai-Kōmyō' é só para portadores de qualificação.** — [Pergunta] O Ohikari 'Dai-Kōmyō'
+pode ser dado também a um Assistente de Ministro? — [Meishu-Sama] **Assistente também
+pode.** Apenas pessoa comum, não…"*
 
 — 『御光話録』12号, 21 de setembro de 1949 · `search1/situmon/m240613.html`
 
@@ -968,14 +977,14 @@ Reunindo as evidências em uma lista consolidada:
 | **分会長** | líder de Associação | `search1/situmon/m240613.html` |
 | **教会長 / 会長** | presidente de igreja — **nomeado pelo Superintendente** | 規則 art. 28 |
 | **中教会長** | presidente de Igreja Média | `search1/situmon/m260401.html` |
-| **大教会長** | presidente de Igreja Grande | `search2/sanko/teirei2.html`; `search2/kihara/bunsyo/ken26.html` |
+| **大教会長** | presidente de Igreja Grande | `search2/sanko/teirei2.html` |
 | **地方本部長** | responsável de Sede Regional | lista de 17 em `search2/sanko/kikoseib.html` |
 | **管長** | Superintendente | 規則 arts. 5–9 |
 | **理事 / 理事長 / 副理事長** | Diretor / Diretor-Presidente / Vice-Presidente | 規則 arts. 5–7 |
 | **監事** | Auditor | 規則 art. 24 |
-| **執事** | mordomo / administrador-executivo | `search2/kihara/bunsyo/honnen29.html` |
-| **部長 / 事務局長 / 次長** | chefe de departamento / secretário-geral / vice | idem |
-| **常任理事** | Diretor Permanente | idem |
+| **執事** | mordomo / administrador-executivo | `search1/me/meisyu2.html` (御取次 執事 阿部晴三) |
+| **部長 / 事務局長 / 次長** | chefe de departamento / secretário-geral / vice | `search2/sanko/kikoseib.html`; `search2/sanko/kisoku.html` |
+| **常任理事** | Diretor Permanente | `search2/kikou2/hibiya01.html` |
 | **資格者** | portador de qualificação (genérico) | 382 ocorrências no acervo |
 
 Vale registrar o organograma completo de uma igreja local — o único do corpus —, que
@@ -989,50 +998,28 @@ vinte e um diretores, sob dois ministros japoneses como conselheiros:
 > 村上 俉三 古関久仁於 △理 事 綾川 新一 …
 — 「ハワイ通信」, `search2/kikou2/hawai18.html`
 
-### 5.7 Os níveis anunciados em dezembro de 1954 — e abortados
+### 5.7 A reforma anunciada no fim de 1954 — e interrompida
 
-O único documento em que Meishu-Sama anuncia publicamente uma estruturação formal de
-níveis é de dezembro de 1954, e ela **não chegou a ser implementada**: ele faleceu dois
-meses depois.
+Na entronização no Palácio de Cristal, em 11 de dezembro de 1954, Meishu-Sama anuncia
+aos presentes uma mudança de etapa:
 
-> 「それはこの二十九年の末に、水晶殿の出来上がった時……その時の御言葉に「いよいよ
-> 御神業も本筋に入ってきた」というお言葉があった。その時の御言葉に、**資格者、それから
-> 幹部を、段階を定めると、たとえばたくさんお導きができた方とか、あるいは非常に
-> 御奉仕が強かった方とか、神様のことが良く分かる人とかというふうに、段階を定める**
-> というお言葉もあったんです。
-> そういうお言葉を戴いた後で、**突然にも御昇天に吾々は遭遇した**んですが」
+> 「ただ一言だけ言いますが、**いよいよ御神業の本スジに入って来たわけです。**ですから
+> これから色んな変った事が沢山出て来ますから、まごつかないように……。」
 
-*"Foi no fim do vigésimo nono ano [1954], quando o Palácio de Cristal ficou pronto… Naquelas
-palavras havia esta: 'Finalmente o Trabalho Divino entrou no eixo principal'. Nessas
-palavras também estava: determinar níveis — para os portadores de qualificação e para os
-dirigentes — por exemplo, aqueles que conduziram muitas pessoas, ou aqueles cujo serviço foi
-muito intenso, ou aqueles que compreendem bem as coisas de Deus; assim, determinar níveis.
-Após recebermos essas palavras, de repente nos deparamos com a Ascensão…"*
-— 「講話」, 11 de outubro de 1955 · `search2/kihara/kikouwa/301011.html`
+*"Direi apenas uma palavra: **finalmente o Trabalho Divino entrou no eixo principal.**
+Por isso, daqui em diante aparecerão muitas coisas diferentes; não se perturbem…"*
+— 「明主様御言葉 水晶殿御遷座」, 『栄光』289号, 1º de janeiro de 1955 ·
+`search1/me/meisyu2.html`
 
-Note-se que os três critérios anunciados — **número de pessoas conduzidas**, **intensidade
-de serviço**, **compreensão da doutrina** — são a mesma lógica de mérito-serviço (功労)
-vigente desde 1948. Não há, em nenhum momento, introdução de critério acadêmico.
+![『栄光』289号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
 
-A preparação que de fato ocorreu nos dois meses finais foram as **conferências de
-Ministros** itinerantes, iniciadas em 24 de outubro de 1954 e conduzidas pelo
-Diretor-Presidente Kihara Yoshihiko por todo o país, com objetivo declarado de preparar
-interiormente os portadores de qualificação. O Departamento de Doutrina explicou a
-urgência:
+O anúncio é o de uma etapa nova — e dois meses depois Meishu-Sama falece, sem que ela
+se consolidasse. **O que a reforma anunciada continha em concreto, o acervo não
+documenta em fonte que este levantamento possa citar**; registra-se como lacuna (§10).
 
-> 「川合 この事につきましては、メシヤ教はこれから段々大きくなるというのに**内面的に
-> 見て、何かバラバラなものがあるようにも思われ**、また時期いよいよ迫って来た今日、
-> **何としても我々の心の改革をしなければならない**という事も痛感しましてお願いした
-> わけであります。」
-
-*"Quanto a isso: embora a Igreja Messiânica vá se tornar cada vez maior, visto por dentro
-parece haver algo disperso; e hoje, com o momento se aproximando, temos de realizar de
-qualquer modo a reforma de nosso coração — foi sentindo isso intensamente que fiz o
-pedido."*
-— 川合尚行, chefe do Departamento de Doutrina · `search2/kihara/bunsyo/honnen29.html`
-
-E a exigência mais radical do novo modelo de ministro — **dedicação exclusiva**, que
-rompia com a figura do dirigente que mantinha sua atividade profissional:
+A exigência mais radical do período, em contrapartida, está documentada — e não vinha de
+anúncio, mas de comunicação interna: **dedicação exclusiva**, que rompia com a figura do
+dirigente que mantinha sua atividade profissional:
 
 > 「先般教団からの通達事項の中に「**資格者は職業を持っていてはならない、純粋な御奉仕者
 > であらねばならない**」という事項を伺って感一入のものがあった。形は前職を打切って、
@@ -1162,40 +1149,12 @@ estavam todos na mesma sede:
 Note-se que em 1950 existem **保健部** (Saúde) e **宣伝部** (Divulgação), enquanto o
 regulamento de 1951 fala em 総務 e 事業 — a estrutura mudou entre um documento e outro.
 
-Em dezembro de 1954 a lista de participantes de uma reunião de diretores fornece o
-**organograma de fato** daquele momento:
-
-> **管長** 大草直好 / **理事長** 木原義彦 / **副理事長** 藤枝 茂 / **執事** 阿部晴三 /
-> **財務部長** 坂井多賀男 / **自然農法普及部長** 渡辺勝市 / **総務部長** 石原幸作 /
-> **造営部長** 中村海老治 / **企画部長** 竹田光生 / **出版部長** 森山実太郎 /
-> **教務部長** 川合尚行 / **常任理事** 荒屋乙松・大沼光彦・岩松 栄 /
-> **事務局長** 百海聖一 / **事務局次長** 水取 実
-— 「本年を顧みて『役員による座談会』」『栄光』288号, 22 de dezembro de 1954 ·
-`search2/kihara/bunsyo/honnen29.html`
-
-Dois departamentos são novos em relação a 1951 — **自然農法普及部** (Difusão da
-Agricultura Natural) e **企画部** (Planejamento) —, e há um terceiro criado no ano:
-
-> 「教団内部でも**外国部が設立され**、阿部先生から藤枝先生にバトンが引継がれ、邦文和文の
-> 両海外版の栄光紙が新たに発行された事も、本年の特筆すべき事と存じます。」
-
-*"Dentro da organização também se estabeleceu o Departamento do Exterior, o bastão passou
-do Sr. Abe para o Sr. Fujieda, e passaram a ser publicadas novas edições ultramarinas em
-japonês e em inglês do jornal Eikō — creio que este também é um fato digno de nota deste
-ano."*
-— idem
-
-Vale registrar, por fim, um dado que mostra como a instituição dependia de uma pessoa. Até
-1954, a edição das publicações era feita por Meishu-Sama **pessoalmente**:
-
-> 「よくも今日まで**長年の間、繁忙を極める編集を明主様御一人でおやり遊ばされた**という
-> 事であります。突然の御使命ではありましたが、諸先生方から非常なる御後援を戴きまして、
-> どうやら務めさせて戴けて参りました。」
-
-*"É de espantar que, até hoje, por tantos anos, Meishu-Sama sozinho tenha realizado a
-edição, que era de extrema intensidade. Foi uma incumbência súbita, mas com o enorme apoio
-dos senhores consegui de algum modo desempenhá-la."*
-— 森山実太郎, chefe do Departamento de Publicações · idem
+A estrutura departamental foi ampliada pela reforma de 1951, que criou os departamentos
+de **企画** (Planejamento) e **自然農法普及** (Difusão da Agricultura Natural) ao lado
+dos já existentes, conforme o art. 5º do comunicado de Ōkusa
+(`search2/sanko/kikoseib.html`). O **外国部** (Departamento do Exterior) veio depois, com
+a difusão ultramarina. **Como se compunha a chefia de cada departamento em 1954–1955, o
+acervo não documenta em fonte citável** — registra-se como lacuna (§10).
 
 ### 6.3 Organograma reconstruído
 
@@ -1232,18 +1191,21 @@ formal documentada no art. 3º do regulamento e no comentário de 『地上天�
 
 ### 6.4 Como as decisões eram tomadas
 
-Meishu-Sama descreveu o método e, no mesmo passo, recusou explicitamente o modelo
-parlamentar:
+Sobre o modo de decidir, o acervo guarda uma resposta de 1951 a um fiel que propunha, para
+a igreja, o modelo do "governo divino" — em que as decisões dispensariam partidos,
+assembleias e contagem de votos. Meishu-Sama recusou o modelo:
 
-> 「**役員会というものは、今の議会のように頭数でいくのではない、それが道理に添えば
-> 勝つのです。それが神様の世界であります。**……馬鹿ばかり千人寄っても馬鹿が千になる
-> だけ、一人の利口者がいなければ石垣積みとは違いますから……」
+> 「右は少し極端な考え方である。**英雄政治は専制政治になるから、無論いけない。やはり
+> いまのところ、アメリカ式民主政治がいいのである。**帰するところ、人民が幸福になる
+> 政治がいいのだから、それには専制政治より、民主政治のほうがそれにかなうわけで
+> ある。」
 
-*"O conselho de diretores não funciona por contagem de cabeças, como o parlamento atual;
-aquele que se conforma à razão vence. Esse é o mundo de Deus. … Ainda que mil tolos se
-reúnam, mil tolos serão apenas mil; sem um sábio no meio é diferente de empilhar pedras de
-muro…"*
-— 「教長様お導き集第１集」, `search2/kihara/bunsyo/omichi1.html`
+*"O acima é um modo de pensar um tanto extremado. **O governo heroico degenera em
+despotismo, por isso é inadmissível, naturalmente. No estado atual, a democracia de tipo
+americano é que é boa.** Afinal, o que importa é o governo que faça o povo feliz; e para
+isso a democracia convém mais do que o despotismo."*
+— 「質問応答 教えの光」, 『地上天国』21号, 25 de fevereiro de 1951 ·
+`search1/situmon/situmo25.html`
 
 E sobre a gestão financeira corrente, o princípio declarado era o da suficiência
 providencial — que, note-se, é também uma escolha de método:
@@ -1270,72 +1232,46 @@ necessário; às vezes ficamos apreensivos, mas de modo hábil conseguimos o pro
 
 O **御教修 (Kyoshu)** era um curso intensivo de admissão, ministrado localmente por um
 portador de qualificação, ao fim do qual o participante recebia o **Ohikari** e passava a
-ser fiel. A **duração canônica era de três dias**, e a obstinação com que se defendia esse
-número mostra que não era detalhe administrativo:
+ser fiel. A **duração canônica era de três dias**, e Meishu-Sama o afirma mais de uma vez,
+tratando a brevidade como prova da eficácia do método — e não como detalhe
+administrativo:
 
-> 「その一つとして耳にした事で、**御神力様御取次（当時は"教修"と言った）は三日間
-> 行われるという神定**にもかかわらず、**一日で済ませ信者にして回っている人がある**
-> というのである。……それから間もなく『明主様』に御伺いする機会を賜わったので、
-> その事を申し上げたところ、**きつい御叱責を戴いた**のである。そうして――
-> 『そんな事を私に聞くなんて……**あなたが一日教修をしているのだろう。**私に聞く以上は、
-> そう言われても仕方がない事になる……**なぜ、そんな事は絶対にないと、はっきり
-> 言えなかったのだ。**私はそんな事は教えてないはずじゃないか』
-> 『**間違った事、嘘をすると、後になって良い結果にはならないから、決して嘘をするん
-> じゃないよ。私が教えた通りに実行していれば、絶対に大丈夫だから**……』」
+> 「その一つとして今現に超人的力を発揮しつつある。その一例としては、**僅か三日間の
+> 教修によって、キリストと同様の奇蹟を現わし得る力を人々に与えている。**その弟子
+> すでに数十万に及んでおり……」
 
-*"Entre as coisas que ouvi, havia isto: embora o rito de intercessão (na época chamado de
-'Kyoshu') fosse determinação divina realizada em três dias, havia quem o completasse em um
-dia e saísse convertendo fiéis… Pouco depois recebi a oportunidade de perguntar a
-Meishu-Sama e relatei o caso, e recebi severa repreensão. E assim: 'Ouvir de mim uma coisa
-dessas… é você que está fazendo Kyoshu de um dia. Se pergunta a mim, a conclusão é essa…
-Por que você não disse claramente que tal coisa absolutamente não existe? Não fui eu que
-ensinei isso.' — 'Quando se faz o errado, quando se mente, depois não dá bom resultado;
-nunca minta. Se executar exatamente o que eu ensinei, absolutamente não haverá problema.'"*
-— 「宗教即正義」『神の光』11号, `search2/kihara/bunsyo/kami14.html`
+*"Como uma de suas manifestações, exibe hoje poder sobre-humano. Como exemplo: **por meio de
+apenas três dias de Kyoshu, concede às pessoas a capacidade de manifestar milagres
+idênticos aos de Cristo.** Seus discípulos já somam centenas de milhares…"*
+— 「新宗教と世界の年齢」 · `search1/English/esinsyu2.html`
 
-O relato é notável por dois motivos. Primeiro, porque a repreensão não é dirigida ao
-infrator, mas a **quem sabia e não denunciou** — a omissão é tratada como cumplicidade.
-Segundo, porque a autoridade do "três dias" é atribuída a **神定**, determinação divina,
-e não a uma decisão de governo.
+O mesmo argumento reaparece em dois textos escritos em 1953 para a *Revolução da
+Medicina*: num caso, "mediante apenas **três dias de Kyoshu**, aquele pai passou a curar
+uma enfermidade que nenhum tratamento conseguia curar" (`search1/shi/jorei08.html`); no
+outro, a observação de que "o que um profissional de décadas de prática não cura, o leigo
+recém-feito em **três dias de aprendizado** cura" (`search1/na/nanto.html`).
 
-O formato, porém, era flexível quanto ao horário e acumulável quanto ao cômputo. Numa
-mesa-redonda de dirigentes, a solução encontrada para quem não podia comparecer
-integralmente:
+A autoridade dos três dias, portanto, não vem de norma administrativa: o acervo a
+apresenta como eficácia demonstrada.
 
-> 「木原 それは**忙がしい人もあるでしょうから、どうしても来れないという人は二時間でも
-> 結構**でしょう。
-> 湯本 午前と午後にわけても宜しいものでございましょうか。
-> 木原 午前と午後に一回ずつ済まして二日分とするのでなければいいでしょうそれで
-> **二日目から坐った人は、二日目三日目と済まして、次の第一日目にはいって三日間を
-> 済ませる**といいでしょうね。」
+O formato, porém, era flexível quanto ao horário e acumulável quanto ao cômputo. A ata da
+**terceira reunião periódica de difusão** — registrada em 『栄光』195号, de 11 de fevereiro
+de 1953 — fixa as regras operacionais: quem não pudesse comparecer integralmente podia
+cumprir **duas horas por sessão**, e quem começasse pelo segundo dia completava o segundo
+e o terceiro e depois entrava no primeiro dia seguinte, fechando assim os três dias
+(`search2/sanko/teirei3.html`). Ou seja: **a regra dos três dias era sobre o conteúdo,
+não sobre a sequência**.
 
-*"— Como há pessoas ocupadas, para quem de modo algum pode vir, duas horas também serve.
-— Dividir entre manhã e tarde também é válido?
-— Se não for para cumprir dois dias fazendo uma sessão pela manhã e outra à tarde, está
-bem; e assim quem começa a assistir a partir do segundo dia completa o segundo e o terceiro,
-e depois entra no primeiro dia seguinte, cumprindo assim os três dias."*
-— 「定例布教座談会（第三回）」, `search2/kihara/bunsyo/teirei3.html`
+A mesma ata registra duas normas de conduta do instrutor. A primeira proíbe ministrar
+Johrei durante as aulas — se necessário, faz-se em sala contígua. A segunda trata da
+competência de quem ensina e fixa, na prática, **toda a exigência de formação
+documentada**: o instrutor devia **saber ler o manual em voz alta**; não se admitia que
+outro lesse por ele, pois, nesse caso, quem devia dar o curso era o leitor (idem).
 
-Ou seja: **a regra dos três dias era sobre o conteúdo, não sobre a sequência**. Havia
-ainda duas orientações operacionais reveladoras. A primeira proíbe fazer Johrei durante as
-aulas:
+**Não há, em nenhum documento localizado, menção a formação doutrinária prévia do
+instrutor.** O requisito é a leitura do manual.
 
-> 「木原 私は**御浄霊しながら教修をするという事はやめた方がいい**と思います。もし
-> 御浄霊をさせていただくとすれば**隣の部屋でいい**でしょう。」
-— idem
-
-A segunda trata da competência do instrutor, e estabelece um requisito de letramento que
-é, na prática, toda a exigência de formação:
-
-> 「【質問者】教修をさせていただく先生が字を読めないとか、上手に読めないという場合には
-> 読ませるだけを代理の人にというのはいかがでございましょうか。
-> 木原 **あのくらい読めないなら教修させていただく資格はありませんよ。**大体代理に
-> 読ませるという性質のものではありません。**代理の人が読むなら、その人が教修させて
-> いただけばいい**です。」
-— idem
-
-**Não há sequer menção a formação doutrinária prévia do instrutor.** O requisito é saber
-ler o manual em voz alta.
+![『栄光』195号, 11 de fevereiro de 1953 — o número que traz a ata da terceira reunião periódica de difusão, com as regras de duração e de conduta do Kyoshu. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/eiko195_ata_kyoshu.jpg)
 
 ### 7.2 O conteúdo do curso
 
@@ -1343,6 +1279,8 @@ O **教修要綱** — "Compêndio do Kyoshu" — é o único documento curricul
 terceira edição, de outubro de 1954. Trata-se de um livreto de 118 páginas, formato A5,
 marcado como **「非売品」** (não vendido), impresso pelo Departamento de Publicações da
 Sede.
+
+![教修要綱, 3ª edição, outubro de 1954 — capa do único manual curricular do período. O acervo o tem apenas como fac-símile, sem camada de texto; foi preciso refazer o OCR a partir dele. [Fac-símile: capa do número.](facsimiles/kyoshu_yoko.jpg)
 
 Sua estrutura, conforme o sumário: a **Primeira Lição** trata de "o que é a morte"; a
 **Segunda** percorre sintomas mórbidos — febre, dor, mal-estar, vômito, diarreia, edema,
@@ -1572,18 +1510,27 @@ renascimento:
 estava a se acomodar; ele fez o re-Kyoshu e se alegra como se tivesse ressuscitado."*
 — `search2/okage/yarawa/qwasure4.html`
 
-Havia, por fim, um uso do manual que não estava previsto: os próprios dirigentes passaram a
-lê-lo como reciclagem, transformando-o em instrumento de formação continuada:
+Havia, por fim, um uso do manual que se generalizou: os próprios dirigentes passaram a
+lê-lo como reciclagem, transformando-o em instrumento de formação continuada. Em abril de
+1953, 『地上天国』 publica o relato de um **再教修** — "re-Kyoshu" — realizado numa filial
+de Oita: o dirigente da Igreja Média transmitiu a orientação aos seus encarregados, e o
+curso de três dias foi reaberto para quem já recebera o Ohikari anos antes, tendo o
+**教修要綱** por base de estudo.
 
-> 「また、今度**教修要綱も戴きましたからには、私共も再教修のつもりで読まして頂く**と
-> 同時に、ただ読むばかりでなく**行いに現し**「さすがは救世教の信者さんは違う」と
-> いわれるようにならなければいけないと強く感じたのでございます。」
+> 「再教修を頂くまでは、どんな御教えなのかしらと考えては楽しみにしておりました。……
+> 今まで、御明主様から頂いた数々の御教えも、あることは実行し、またあることは忘れ
+> 勝ちのことが多々あり、……結局は自分が分らなかったのです。」
 
-*"E, já que recebemos o Kyoshu Yōkō desta vez, que o leiamos nós mesmos com a intenção de
-um re-Kyoshu; e ao mesmo tempo senti fortemente que, não apenas lendo, devemos
-manifestá-lo na conduta, de modo que se diga 'de fato os fiéis da Igreja Messiânica são
-diferentes'."*
-— 「地方の『座談会』に随行して」, `search2/kihara/bunsyo/tihono.html`
+*"Até receber o re-Kyoshu, ficava a imaginar que ensinamento seria, e o aguardava com
+alegria. […] Dos muitos ensinamentos que recebi de Meishu-Sama até hoje, alguns eu
+praticava, e outros, muitas vezes, ia esquecendo… no fim, era eu que não havia
+compreendido."*
+— 「再教修を戴きました感謝の報告」, 『地上天国』47号, 25 de abril de 1953 ·
+`search2/kikou2/saikyosh.html`
+
+O relato confirma, de passagem, dois traços do funcionamento do curso: a duração de
+**três dias consecutivos** e o uso do 教修要綱 como texto-base — "a explicação do Kyoshu
+Yōkō foi deveras comovente", diz um dos participantes.
 
 ---
 
@@ -1617,6 +1564,9 @@ mês eram **特別御面会** (audiência especial), e havia ainda a visita a ca
 
 > 「【質問者】一日は**特別御面会**でありますし、また**毎旬の御参拝**がありますから、
 > そこのところは合理的に考えさせていただいております。」
+
+*"— [Pergunta] Como o primeiro dia é a **Audiência Especial** e há também a **visita
+a cada dez dias**, esses pontos eu os tenho considerado racionalmente."*
 — 『御垂示録』29号, 15 de março de 1954 · `search1/situmon/m290301.html`
 
 A frequência efetiva, nos relatos, era alta — "desde minha conversão já recebi cinco
@@ -1655,12 +1605,10 @@ primavera e o outono são em Kyoto". Essa itinerância tinha função de governo
 as regiões que o Fundador mantinha contato com uma estrutura que crescia mais rápido do que
 a capacidade de supervisão.
 
-E, no fim da vida, a itinerância se converteu em **formação direta de portadores de
-qualificação**: 「昭和29年-30年 (1954-5年) **世界救世教幹部を伴なわれ、全国各地で資格者を
-教導さる。**」 — "Anos 29–30 de Shōwa (1954-55): acompanhado dos dirigentes, orientou os
-portadores de qualificação por todo o país" (`search2/kihara/ryakurek.html`). É o único
-registro de formação conduzida por Meishu-Sama em pessoa, e coincide com o anúncio dos
-níveis (seção 5.7).
+E, no fim da vida, a itinerância de Meishu-Sama aproxima-se da formação de portadores de
+qualificação — movimento que coincide com o anúncio da etapa nova, em dezembro de 1954
+(seção 5.7). **A documentação desse período final, no entanto, não é citável neste
+levantamento**; registra-se como lacuna (§10).
 
 ### 8.4 O gênero documental dominante
 
@@ -1768,6 +1716,10 @@ Paraísos eram concebidos como equipamento cultural de escala:
 > 「**美術館というのは、ゾロゾロ後々来ては落ちついて見られない**んです。……そこで、
 > あそこに**待合所を作って二、三百人腰掛けられるような所**を作って、人を計ってやろうと
 > 思う。」
+
+*"**O museu, com gente chegando em fila, uma atrás da outra, não se consegue
+contemplar com calma.** […] Por isso, penso em **fazer ali uma sala de espera, um lugar
+onde duzentas ou trezentas pessoas possam sentar-se**, e regular a entrada."*
 — `search1/kouwa/s270316.html`
 
 ### 9.4 O calendário ritual
@@ -1851,6 +1803,8 @@ produtividade usados como prova pública — e há instituições satélites cri
 o 農林省自然農法研究会 (『栄光』256号, 14 de abril de 1954 · `search2/sanko/norinsyo.html`)
 e o 自然農法普及会 (『栄光』, 5 de maio de 1953 · `search2/sanko/syui.html`).
 
+![『栄光』256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/eiko256_norinsyo.jpg)
+
 ### 9.7 O serviço social
 
 Além da construção, havia obras assistenciais, tratadas simultaneamente como missão e como
@@ -1896,13 +1850,24 @@ saiba disso.
 inferencial. A cronologia que o sustenta é objetiva; a correspondência entre termos apoia-se
 na magnitude das faixas do censo. Não há documento que a afirme textualmente.
 
-**A questão da sucessão.** Sobre o processo sucessório de 1955, os relatos internos
-disponíveis partem de um dos protagonistas da ruptura, escritos depois dela. São fontes
-interessadas, e o levantamento as trata como tais — registrando o fato sem nelas apoiar
-conclusão. Por decisão editorial de 6 de outubro de 2026 (v.
-`NOTA_REVISAO_DOSSIE_DIFUSAO_20261013.md`, §5), este dossiê **não cita a produção
-individual do Rev. Kihara Yoshihiko**, para não citar um reverendo em detrimento dos
-demais.
+**A reforma de 1954–1955 e a sucessão.** O anúncio de uma etapa nova, feito por
+Meishu-Sama no Palácio de Cristal em 11 de dezembro de 1954, está documentado (§5.7); o
+seu conteúdo programático, não. E o processo sucessório do ano seguinte aparece, no
+acervo, apenas em relatos de participantes — fontes interessadas e de assistência
+unilateral, que este levantamento não cita, por decisão editorial de 6 de outubro de 2026
+(v. `NOTA_REVISAO_DOSSIE_DIFUSAO_20261013.md`, §5). Ambos os pontos permanecem **lacunas**.
+
+**Material excluído por política de citação.** Por decisão editorial de 6 de outubro de
+2026, este levantamento não cita a produção individual do Rev. Kihara Yoshihiko — nem a de
+nenhum outro reverendo em particular —, e portanto **todo trecho cuja única fonte
+disponível fosse dele foi retirado**. A medida afetou, entre outros pontos: a narrativa
+da entronização no Palácio de Cristal e do anúncio de uma etapa nova; a rotina diária de
+Meishu-Sama no período final; o quadro nominal da direção em dezembro de 1954; a composição
+da chefia departamental; e o relato da disputa sucessória. Onde havia fonte equivalente no
+acervo — o mesmo conteúdo em `search2/sanko/`, `search2/kikou2/` ou `search1/` —, a
+citação foi substituída e o conteúdo permaneceu; o caso mais notório é a ata da terceira
+reunião de difusão, que existe tanto na pasta dele quanto em `search2/sanko/teirei3.html`.
+Onde não havia equivalente, o conteúdo saiu, e o ponto entra nesta lista de lacunas.
 
 ---
 
@@ -1928,6 +1893,37 @@ citação.
 **Recomendação de uso:** para o 教修要綱, citar preferencialmente as passagens que aparecem
 transcritas em páginas HTML do acervo, e tratar as demais como leitura de fac-símile.
 
+### 11.1 Verificação automática (13 de outubro de 2026)
+
+Dois verificadores em `/var/www/rattail/work/` conferiram o material:
+
+| Verificador | O que faz | Parte I | Parte II | Parte III |
+|---|---|---|---|---|
+| `verificar.py` | confere se cada caminho citado existe | 83/83 | 37/37 | 46/46 |
+| `verif_cit.py` | procura cada citação no texto do acervo | 76/78 | 56/56 | 39/39 |
+
+As **duas citações** que o verificador não localiza na Parte I são ambas leituras do
+**fac-símile do 教修要綱**, que não tem camada de texto — o caso descrito acima. Não há
+nessa Parte nenhuma citação a fonte ausente do acervo.
+
+### 11.2 Fac-símiles
+
+Nove fac-símiles acompanham o dossiê, em `docs/facsimiles/`, extraídos do acervo por
+`scripts/extrair_facsimiles.py`. O método é declarado porque os fac-símiles **não têm
+camada de texto**: a página é localizada pelo OCR corrido do acervo, e depois a
+**imagem gerada é relida por OCR** para confirmar que contém de fato o trecho. Quando a
+confirmação falha, a legenda diz que se trata da **capa do número**, e não da página do
+artigo — nenhuma legenda afirma o que não foi verificado. Dois alvos foram confirmados na
+página do trecho (『栄光』191号 e 『御垂示録』29号); os demais aparecem como capa do
+número ou primeira página, com a ressalva.
+
+### 11.3 Uma normalização de caracteres, declarada
+
+O Regulamento de 1951, no acervo, grafa os artigos com o caractere antigo **條** (70
+ocorrências) e nunca com o moderno **条**. As citações legais deste dossiê reproduzem a
+forma do acervo — 第二十九條, 第三十條 e assim por diante. Registro a escolha porque a
+convenção do próprio dossiê é não alterar o texto-base.
+
 ---
 
 ## 12. Síntese em treze assertivas
@@ -1949,7 +1945,8 @@ transcritas em páginas HTML do acervo, e tratar as demais como leitura de fac-s
    carismática e autoridade jurídica, e o cargo legalmente responsável era ocupado por outra
    pessoa.
 8. **A expansão imobiliária foi integralmente local e comunitária.** Não há registro de
-   compra de imóvel pela sede central — o que explica a gravidade da ruptura de 1955.
+   compra de imóvel pela sede central — o que ajuda a compreender a vulnerabilidade da
+   instituição a partir de 1955.
 9. **A Imagem da Luz Divina podia ser itinerante no curso, mas não no objeto**: o Kyoshu
    podia ser dado em hotel; a Imagem não podia ser movida.
 10. **A economia dependia de três fontes**: contribuições das igrejas e quotas dos membros
