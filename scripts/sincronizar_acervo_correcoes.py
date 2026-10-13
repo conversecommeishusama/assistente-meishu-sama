@@ -41,6 +41,8 @@ VEIC_ARQ = {
 
 TIPOS_AUDITORIA = {
     "lacuna", "media", "baixa", "suntetsu", "meshiya", "inv", "stripEN", "pan",
+    "r3", "marc_r3", "nota_r3", "marc", "purif", "titulo", "inversao_causa",
+    "dedup", "nota", "uniformizar",
 }
 
 

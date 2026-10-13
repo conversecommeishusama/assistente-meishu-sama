@@ -38,6 +38,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-chars", type=int, default=22000,
                     help="orçamento de caracteres (JP+PT) por lote")
+    ap.add_argument("--saida", type=Path, default=SAIDA,
+                    help="pasta de destino dos lotes")
+    ap.add_argument("--priorizar", choices=("alterados", "reparos", "nenhum"),
+                    default="alterados",
+                    help="critério de ordenação (o que se audita primeiro)")
     args = ap.parse_args()
 
     atuais = _carregar(ITENS)
@@ -45,6 +50,13 @@ def main() -> int:
 
     ordem: list[tuple[int, str]] = []
     for nome, d in atuais.items():
+        if args.priorizar == "nenhum":
+            ordem.append((0, nome))
+            continue
+        if args.priorizar == "reparos":
+            # 0 = mais intervenções (maior risco de regressão)
+            ordem.append((-len(d.get("reparos") or []), nome))
+            continue
         # prioridade 0 = reparado (mudou desde o snapshot de 10/10)
         velho = antigos.get(nome)
         mudou = (
@@ -55,8 +67,8 @@ def main() -> int:
         ordem.append((0 if mudou else 1, nome))
     ordem.sort()
 
-    SAIDA.mkdir(parents=True, exist_ok=True)
-    for f in SAIDA.glob("LOTE_*.json"):
+    args.saida.mkdir(parents=True, exist_ok=True)
+    for f in args.saida.glob("LOTE_*.json"):
         f.unlink()
 
     lotes: list[list[dict]] = []
@@ -88,19 +100,21 @@ def main() -> int:
         lotes.append(atual)
 
     for i, lote in enumerate(lotes, 1):
-        (SAIDA / f"LOTE_{i:03d}.json").write_text(
+        (args.saida / f"LOTE_{i:03d}.json").write_text(
             json.dumps(lote, ensure_ascii=False, indent=1), encoding="utf-8"
         )
 
-    n_rep = sum(1 for p, _ in ordem if p == 0)
-    print(f"artigos: {len(ordem)} (reparados={n_rep}, controlo={len(ordem) - n_rep})")
-    print(f"lotes gerados: {len(lotes)} em {SAIDA}")
+    n_rep = sum(1 for d in atuais.values() if d.get("reparos"))
+    print(f"artigos: {len(ordem)} (com reparos={n_rep}, "
+          f"sem reparos={len(ordem) - n_rep}) | priorização={args.priorizar}")
+    print(f"lotes gerados: {len(lotes)} em {args.saida}")
     print(f"média de artigos/lote: {len(ordem) / max(len(lotes), 1):.1f}")
     tam = sorted(
         sum(len(a['texto_jp'] or '') + len(a['texto_pt'] or '') for a in l)
         for l in lotes
     )
-    print(f"tamanho por lote (chars): min={tam[0]} mediana={tam[len(tam)//2]} max={tam[-1]}")
+    print(f"tamanho por lote (chars): min={tam[0]} mediana={tam[len(tam)//2]} "
+          f"max={tam[-1]}")
     return 0
 
 

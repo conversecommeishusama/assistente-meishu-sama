@@ -43,6 +43,24 @@ LOGS = BASE / "logs_deepseek"
 PROTOCOLO = BASE / "PROTOCOLO_AUDITORIA.md"
 CONSOLIDADO = BASE / "AUDITORIA_CONSOLIDADA_DEEPSEEK.json"
 
+
+def _configurar(rotulo: str) -> None:
+    """Aponta LOTES/RESULTADOS/LOGS/PROTOCOLO/CONSOLIDADO para uma ronda.
+
+    `rotulo` vazio = ronda 1 (pastas originais); caso contrário usa sufixo
+    `_<rotulo>` (ex.: `--rotulo r2` -> `lotes_r2/`, `resultados_deepseek_r2/`,
+    `PROTOCOLO_AUDITORIA_R2.md`). Evita sobrepor rondas de auditoria.
+    """
+    global LOTES, RESULTADOS, LOGS, PROTOCOLO, CONSOLIDADO
+    if not rotulo:
+        return
+    sufo = f"_{rotulo}"
+    LOTES = BASE / f"lotes{sufo}"
+    RESULTADOS = BASE / f"resultados_deepseek{sufo}"
+    LOGS = BASE / f"logs_deepseek{sufo}"
+    PROTOCOLO = BASE / f"PROTOCOLO_AUDITORIA{sufo.upper()}.md"
+    CONSOLIDADO = BASE / f"AUDITORIA_CONSOLIDADA_DEEPSEEK{sufo.upper()}.json"
+
 MODELO = os.environ.get("DEEPSEEK_AUDIT_MODEL", "deepseek-v4-flash")
 MAX_TOKENS = 32768
 TIMEOUT_S = 900.0
@@ -223,8 +241,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--lote", type=int)
+    ap.add_argument("--rotulo", default="",
+                    help="identificador da ronda (ex.: r2) — cria pastas _r2")
     ap.add_argument("--consolidar", action="store_true")
     args = ap.parse_args()
+
+    _configurar(args.rotulo)
 
     if args.consolidar:
         return consolidar()
@@ -233,7 +255,8 @@ def main() -> int:
     alvo = todos if args.lote is None else [args.lote]
     pendentes = [n for n in alvo if not (RESULTADOS / f"LOTE_{n:03d}.json").is_file()]
     print(f"lotes: {len(todos)} | a processar: {len(pendentes)} | "
-          f"workers: {args.workers} | modelo: {MODELO}", flush=True)
+          f"workers: {args.workers} | modelo: {MODELO} | "
+          f"ronda: {args.rotulo or '1'} | lotes em {LOTES.name}", flush=True)
     if not pendentes:
         return consolidar()
 
