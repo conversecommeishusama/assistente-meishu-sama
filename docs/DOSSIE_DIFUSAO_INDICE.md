@@ -25,8 +25,12 @@ paginado e cabeçalho:
 | Formato | Arquivo | Extensão |
 |---|---|---|
 | **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 87 páginas A4, 11 fac-símiles |
-| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções, 9 fac-símiles |
+| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções, 11 fac-símiles |
 | Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 4.564 linhas, 33 seções |
+
+São 11 inserções, com 9 **imagens distintas** — duas delas aparecem em duas
+partes cada. O Word guarda uma cópia por arquivo, e por isso o `.docx` traz 9
+arquivos de mídia para 11 posicionamentos.
 
 Os fac-símiles vêm de `docs/facsimiles/` e foram extraídos do acervo por
 `scripts/extrair_facsimiles.py`, que localiza a página pelo OCR corrido e depois
