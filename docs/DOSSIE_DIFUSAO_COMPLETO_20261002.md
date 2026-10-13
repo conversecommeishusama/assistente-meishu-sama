@@ -511,7 +511,7 @@ do censo.
 | Abrigar doentes em purificação | Sede da Igreja Média | `『御教え集』1号, 20 de setembro de 1951 · search1/situmon/m260828.html` |
 | Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | §8.1 |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `search2/kikou2/sekai03.html` |
-| Administração e finanças próprias, sob supervisão central | Igreja | 規則 arts. 26–30 |
+| Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 Uma restrição operacional merece registro, porque mostra como a estrutura era pensada
 a partir da capacidade real de uma pessoa. Perguntado sobre quem preside os cultos das
@@ -1099,6 +1099,14 @@ revela um desenho institucional deliberado.
 | 34º | Inventário patrimonial anual, com auditoria e aprovação da Assembleia |
 | 43º | A pessoa jurídica **opera mineração**, gerida pelo Departamento de Empreendimentos |
 | 45º | Dissolução exige dois terços dos membros e unanimidade dos diretores |
+
+Uma advertência de leitura, antes dos destaques: **o capítulo III (arts. 26–28)
+não institui fiscalização das igrejas pela Sede, e os arts. 24 e 34 mandam auditar
+a própria pessoa jurídica** — cuja assembleia aprovadora, pelo art. 17, é o
+colégio dos presidentes de igreja. O que a Sede exerce sobre as unidades é
+**aprovação prévia de atos**, além dos ritos e das reuniões periódicas de
+dirigentes. O exame do que existia disso, do que não existia e da lacuna que
+explica a ausência está na **Parte III, §25.3**.
 
 Dois artigos merecem destaque. O **art. 3º define a educação e formação dos fiéis como
 fim estatutário** do corpo jurídico — isto é, a formação não era uma prática informal,
@@ -3182,6 +3190,14 @@ pessoa jurídica religiosa**, o que por si esclarece a natureza da administraç�
 igreja no período: uma estrutura formal, com três auditores eleitos (art. 24) e
 prestação de contas anual.
 
+Convém notar a direção da auditoria, para que a leitura não a inverta: os três
+監事 do art. 24 auditam **as finanças da pessoa jurídica**, e o inventário do art.
+34 vai, após a auditoria, «à **aprovação da Assembleia**» — que pelo art. 17 é o
+colégio dos presidentes de igreja. Quem tem de prestar contas à assembleia dos
+presidentes é a Sede. O que esta exerce sobre as unidades é aprovação prévia de
+atos, não exame de escrituração — o tratamento completo está na **Parte III,
+§25.3**.
+
 ### 21.2 A administração de cada unidade
 
 O regulamento trata das igrejas no capítulo III, e o artigo 28 fixa a nomeação:
@@ -3617,7 +3633,12 @@ dramática — já estava no papel desde o começo.
 | Abrigar doentes em purificação | Sede da Igreja Média | 『御教え集』1号, 20 de setembro de 1951 · `search1/situmon/m260828.html` |
 | Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | Parte I, §8.1 |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `search2/kikou2/sekai03.html` |
-| Administração e finanças próprias, sob supervisão central | Igreja | 規則 arts. 26–30 |
+| Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
+
+A última linha tem uma contrapartida que convém não deixar implícita: a auditoria
+instituída pelo Regulamento corre na direção contrária — quem audita é a Sede, mas
+quem examina e aprova as contas da Sede é a assembleia dos presidentes de igreja.
+O ponto está desenvolvido em **§25.3**.
 
 Uma restrição operacional merece registro, porque mostra como a estrutura era
 pensada a partir da capacidade real de uma pessoa. Perguntado sobre quem preside
@@ -3695,6 +3716,155 @@ A razão é de método, e Meishu-Sama a enuncia: a difusão agrícola devia anda
 difusão fica muito lenta, e a salvação do Japão fica mais lenta". É a mesma
 lógica da sequência obrigatória da difusão descrita na Parte I (§2.1): a cura
 primeiro, a doutrina depois.
+
+### 25.3 Como a Sede acompanhava as igrejas
+
+A pergunta admite três respostas, e a primeira inverte a intuição.
+
+**O Regulamento manda auditar a Sede, não as igrejas.** A palavra 監査 aparece
+duas vezes no texto integral do Regulamento de 1951 — e nos dois casos quem é
+examinado é a própria pessoa jurídica:
+
+> 「（監事）第二十四條　この法人に三人の監事を置き、**財務を監査させる**」
+> 「（財産目録の作成）第三十四條　財産目録は、毎会計年度終了後一月以内に、
+> 前年度末現在によって作成し、**監事の監査を経て、総会の承認を受けなければ
+> ならない**」
+
+*"(Auditores) Art. 24 — Esta pessoa jurídica terá três auditores e fará com que
+**auditem as finanças**. (Elaboração do inventário patrimonial) Art. 34 — O
+inventário patrimonial será elaborado dentro de um mês após o término de cada
+exercício fiscal, com base na posição no fim do exercício anterior, e **deverá
+passar pela auditoria dos auditores e receber a aprovação da Assembleia**."*
+— 『栄光』125号, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
+
+O art. 17 define quem compõe essa Assembleia, e a definição é decisiva:
+
+> 「（議員）第十七條　**総会は、議員で組織し、議員は、教会の会長たる者を
+> もって充てる**」
+
+*"(Membros) Art. 17 — A Assembleia é composta de membros, e são membros
+**precisamente os que são presidentes de igreja**."*
+— idem
+
+A Assembleia que aprova o inventário da Sede é, portanto, **o colégio dos
+presidentes de igreja**. Some-se o art. 23, que obriga o Superintendente a
+reportar à Assembleia as matérias de 「事務及び経理」 — administração e
+contabilidade —, e o desenho fica claro: **o estatuto prevê as igrejas
+examinando e aprovando as contas da Sede**, não o contrário. A auditoria
+instituída é garantia dos membros contra a direção, e não instrumento da direção
+sobre os membros.
+
+**O que a Sede controlava era o ato, não o livro.** O capítulo III (arts. 26–28)
+não institui fiscalização contábil: institui **regime de autorização prévia**. A
+igreja depende de 承認 do Superintendente para uma lista fechada de atos:
+
+| Art. | Ato sujeito à **aprovação prévia** do Superintendente |
+|---|---|
+| 26 | tornar-se pessoa jurídica religiosa; **alterar o próprio regulamento**; fundir-se ou dissolver-se |
+| 27 | alienar ou dar em garantia imóveis e bens do inventário; tomar empréstimo ou prestar fiança; obra maior na sede da igreja; alteração do uso dos edifícios |
+| 28 | o presidente da igreja — ainda que **escolhido pelas regras da própria igreja** — é **nomeado** pelo Superintendente |
+
+O art. 27 abre exceções estreitas: o ato 「緊急の必要に基くもの」 (por
+necessidade urgente) ou 「軽微のもの」 (de pequena monta) dispensa a aprovação.
+Não há, em contrapartida, nenhum artigo que mande a Sede examinar caixa, livro ou
+conta de uma igreja.
+
+**A forma que de fato existia: reunião periódica, taquigrafada e publicada.** O
+acervo não guarda formulário de inspeção, mas guarda as atas — e elas são
+abundantes, porque saíam impressas em 『栄光』 e 『地上天国』. O instrumento real
+de acompanhamento era a **reunião de dirigentes**, presidida ou orientada por um
+diretor da Sede:
+
+| Série e data | Veículo | Composição |
+|---|---|---|
+| 「布教定例座談会」(1ª) · 04/09/1952 | 『地上天国』42号 · `search2/sanko/teirei1.html` | **um 理事 da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
+| 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』195号 · `search2/sanko/teirei3.html` | **orientação do 理事長**; seis presidentes de Igreja Média |
+| 「布教座談会」 · 03/10/1952 | 『栄光』191号 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
+| 「支部長懇談会」 · 28/04/1952 | 『地上天国』37号 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
+
+A natureza das atas diz o que nelas se tratava. Não é contabilidade: é
+procedimento, preço e conduta. É numa delas que os próprios dirigentes relatam,
+sem eufemismo, as variações que encontravam nas regiões — a oferta de cinco e de
+sete mil ienes pelo mesmo Byōbu, o "Kyoshu de dez dias" que era apenas o número
+de dias de Johrei recebidos, a região em que não se fazia Kyoshu de modo algum, a
+esposa do ministro que adivinhava se o caso sarava. O quadro completo está
+transcrito na Parte I, §7.5. E depois da reunião vinha **a norma escrita**: o
+aviso 「注意」, publicado na mesma 『栄光』191号, começa exatamente por
+「別項座談会にもあるごとく……」 — *"conforme a mesa-redonda em outra seção"*.
+
+A própria direção descreve o método como duas coisas somadas:
+
+> 「最近御本部では、**教修要綱も御作り下され**、頻りに**幹部の先生方の密接な
+> 懇談**も多くなりつつ有りますから、御神示に帰一し奉る日も間近に迫りつつある
+> ようです。」
+
+*"Ultimamente, na Sede, **o Kyoshu Yōkō foi elaborado**, e os **encontros
+estreitos entre os dirigentes** vêm se multiplicando; parece aproximar-se o dia
+de retornar à unidade com a Revelação Divina."*
+— 会長 坂井多賀男, 「布教座談会」『栄光』191号, 14 de janeiro de 1953 ·
+`search2/sanko/hukyo.html`
+
+Padronizar por documento escrito e multiplicar reuniões: eis a resposta à
+variação regional — não a auditoria.
+
+A isso soma-se, em 1951, a **grade territorial**. O comunicado do Superintendente
+Ōkusa de 7 de março de 1951 (`search2/sanko/kikoseib.html`, 『栄光』94号) dissolve
+as quatro grandes igrejas e divide o país em dezessete sedes regionais, com
+titulares nomeados um a um:
+
+| Sede regional | Províncias |
+|---|---|
+| 北海道東部 · 北海道西部 | Leste e Oeste de Hokkaidō |
+| 東北 · 奥羽 | Iwate, Miyagi, Fukushima · Aomori, Akita, Yamagata |
+| 関東東部 · 関東西部 | Tōkyō, Ibaraki, Chiba, Saitama, Yamanashi · Tochigi, Gunma |
+| 神静 | Kanagawa, Shizuoka |
+| 中京 | Aichi, Gifu, Mie |
+| 信越 | Niigata, Nagano |
+| 北陸 | Toyama, Ishikawa, Fukui |
+| 近畿 · 関西 | Shiga, Kyōto, Nara · Ōsaka, Hyōgo, Wakayama |
+| 山陰 · 山陽 | Tottori, Shimane, Yamaguchi (Suō) · Okayama, Hiroshima, Yamaguchi (Nagato) |
+| 四国 | Tokushima, Kagawa, Ehime, Kōchi |
+| 九州東部 · 九州西部 | Ōita, Miyazaki, Kagoshima · Fukuoka, Saga, Nagasaki, Kumamoto |
+
+O mesmo comunicado cria o **評議員制** — 「評議員制を設け、**地方本部長等を以って
+これに充てること**」, isto é, os responsáveis regionais passam a formar um colégio
+consultivo — e restringe a difusão à própria jurisdição:
+
+> 「数地方本部に渉っての布教は**当分（一年間）は許さるる**も、出来るだけ早く
+> 同一の地方本部内においてのみ布教する様にし、**布教費の節減その他布教の合理化
+> を図ること**」
+
+*"A difusão que abranja várias sedes regionais fica **permitida por ora (um
+ano)**; mas, o quanto antes, que se difunda somente dentro da mesma sede regional,
+para **reduzir a despesa de difusão e racionalizar a difusão**."*
+— `search2/sanko/kikoseib.html`
+
+O que aí se controla é o circuito — quem difunde onde, e a que custo —, não a
+escrituração.
+
+**O que não existe no acervo.** Não há procedimento de exame de contas de igreja
+pela Sede; não há formulário, periodicidade nem regulamento de 監査. E há uma
+razão documental precisa para essa ausência: o art. 46 do Regulamento remete os
+procedimentos às **施行細則** — 「この規則の施行に関する細則は、**責任役員が
+定める**」 —, e as 施行細則 **não estão no acervo**. É ali que qualquer rotina de
+fiscalização estaria escrita. A ausência é, portanto, **lacuna documental
+declarada**, e não conclusão negativa: não se pode afirmar que não havia
+fiscalização; pode-se afirmar que o acervo não a documenta.
+
+Vale registrar onde a palavra "fiscalização" aparece no corpus, porque o achado é
+significativo: **査察**, a forma corrente de inspeção de contas no período, é
+sempre do Estado, nunca da igreja — 「税務査察官」, 「**査察部**の脱税摘発で気が
+立っている」, 「弁護士に査察景気」. A única "auditoria" que o acervo descreve
+como ameaça à instituição é a do fisco, e foi por ali que veio a persecução de
+1950 (§30).
+
+Uma última nota, sobre a direção da auditoria *dentro* das igrejas. A auditoria
+interna que o acervo documenta é a **da própria unidade sobre si mesma**: no
+organograma da igreja do Havaí (§25.1) há **seis 監査** ao lado do tesoureiro, e a
+assembleia anual aprova o 「会計報告」 — o relatório contábil do exercício
+(`search2/kikou2/hawai18.html`). O padrão é antigo: já no 会則 da 日本浄化療法
+普及会, 「監事は会の財務を監査す」 (`search1/ni/nihon12.html`). A igreja auditava
+as próprias contas e as submetia à sua assembleia; a Sede aprovava seus atos.
 
 ---
 
@@ -3954,8 +4124,51 @@ os bens que não sejam patrimônio básico, os frutos desses bens, a contribuiç
 | Taxa religiosa | **教費** | cobrança institucional | igrejas **e** membros |
 | Rateio entre igrejas | **分担金** | repartição de despesa | igreja → Sede |
 | Quota do membro | **会費** | contribuição periódica | membro → sua unidade |
+| Oferta pela graça recebida | **御守護御礼** | oferta interna, pela prática | fiel → quem ministrou |
+| Oferta por Johrei a terceiros | **御奉謝金** | oferta interna, pela prática | beneficiado → quem ministrou |
 | Contribuição de gratidão | **献金** | **voluntária** | quem quiser |
 | Doação | **寄付** | **voluntária** | quem quiser |
+
+As duas rubricas de natureza **interna à prática** merecem registro, porque não
+decorrem do Regulamento e só aparecem nas atas. A primeira é a **御守護御礼**, a
+oferta pela graça recebida; a segunda é a **御奉謝金**, definida na própria fonte
+com o seu âmbito exato:
+
+> 「最近は目立って**御守護御礼**も、**御奉謝金（信者さんが他人を御浄霊した
+> 場合に受ける御礼及び家族を御浄霊させて戴いた場合の御礼）**も増えて来ました
+> が、ある中教会長が『**御守護御礼を、自分で使わして戴いても宜敷う御座いま
+> しょうか**』と御伺いしたと聞きましたが、まるで世界が違うような気がします
+> ね。」
+
+*"Ultimamente têm aumentado visivelmente tanto a **御守護御礼** quanto a
+**御奉謝金 (a oferta recebida quando o fiel ministra Johrei a outra pessoa, e a
+oferta quando faz ministrar Johrei a um familiar)**; ouvi dizer que certo
+presidente de Igreja Média perguntou: **'a 御守護御礼, posso usá-la para mim?'**
+— é como se fosse outro mundo."*
+— 会長 坂井多賀男, 「布教座談会」『栄光』191号, 14 de janeiro de 1953 ·
+`search2/sanko/hukyo.html`
+
+A pergunta é precisa, e a resposta do próprio presidente da igreja que a ouviu
+fixa o critério. O que o dirigente não podia era vender a graça como mercadoria:
+
+> 「それはできない、高い安いの売物買物ではないので、事実に御蔭を戴き、解ら
+> して戴く毎に、その尊さ有難さが身にしみその御礼が高いと言う事は、決してな
+> いのですが、だからと言っておきめ戴いたことは、そのまま御取次さして戴けば
+> 良いことなんで、**教師が中間搾取する事は、品物として扱ったも同然で、それ
+> は先生に相応のお裁きが必ずあることなんです**。」
+
+*"Isso não se pode; não é mercadoria de alto e baixo preço. Cada vez que se
+recebe de fato a graça e se compreende, a preciosidade e a gratidão se gravam no
+corpo, e a oferta nunca é alta. Mas, uma vez recebido, basta transmitir tal e
+qual: **que o ministro retenha parte no meio é o mesmo que tratar a coisa como
+mercadoria, e por isso haverá certamente para o senhor o julgamento
+correspondente**."*
+— idem
+
+Fica assim uma terceira natureza de contribuição, ao lado do **preço fixo** dos
+objetos (§28.4) e da **oferta livre** pelo serviço espiritual: a **oferta
+interna à unidade**, que circulava entre o fiel e quem o atendia, e cujo destino
+— retê-la ou repassá-la — era objeto de correção expressa.
 
 A terminologia é reveladora: **分担金** é *repartição de despesa* — a igreja local
 rateia o custo da Sede —, enquanto **会費** é *quota* — a contribuição periódica

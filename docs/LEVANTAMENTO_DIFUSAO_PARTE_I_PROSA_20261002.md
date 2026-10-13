@@ -498,7 +498,7 @@ do censo.
 | Abrigar doentes em purificação | Sede da Igreja Média | `『御教え集』1号, 20 de setembro de 1951 · search1/situmon/m260828.html` |
 | Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | §8.1 |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `search2/kikou2/sekai03.html` |
-| Administração e finanças próprias, sob supervisão central | Igreja | 規則 arts. 26–30 |
+| Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 Uma restrição operacional merece registro, porque mostra como a estrutura era pensada
 a partir da capacidade real de uma pessoa. Perguntado sobre quem preside os cultos das
@@ -1086,6 +1086,14 @@ revela um desenho institucional deliberado.
 | 34º | Inventário patrimonial anual, com auditoria e aprovação da Assembleia |
 | 43º | A pessoa jurídica **opera mineração**, gerida pelo Departamento de Empreendimentos |
 | 45º | Dissolução exige dois terços dos membros e unanimidade dos diretores |
+
+Uma advertência de leitura, antes dos destaques: **o capítulo III (arts. 26–28)
+não institui fiscalização das igrejas pela Sede, e os arts. 24 e 34 mandam auditar
+a própria pessoa jurídica** — cuja assembleia aprovadora, pelo art. 17, é o
+colégio dos presidentes de igreja. O que a Sede exerce sobre as unidades é
+**aprovação prévia de atos**, além dos ritos e das reuniões periódicas de
+dirigentes. O exame do que existia disso, do que não existia e da lacuna que
+explica a ausência está na **Parte III, §25.3**.
 
 Dois artigos merecem destaque. O **art. 3º define a educação e formação dos fiéis como
 fim estatutário** do corpo jurídico — isto é, a formação não era uma prática informal,

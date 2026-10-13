@@ -1206,6 +1206,14 @@ pessoa jurídica religiosa**, o que por si esclarece a natureza da administraç�
 igreja no período: uma estrutura formal, com três auditores eleitos (art. 24) e
 prestação de contas anual.
 
+Convém notar a direção da auditoria, para que a leitura não a inverta: os três
+監事 do art. 24 auditam **as finanças da pessoa jurídica**, e o inventário do art.
+34 vai, após a auditoria, «à **aprovação da Assembleia**» — que pelo art. 17 é o
+colégio dos presidentes de igreja. Quem tem de prestar contas à assembleia dos
+presidentes é a Sede. O que esta exerce sobre as unidades é aprovação prévia de
+atos, não exame de escrituração — o tratamento completo está na **Parte III,
+§25.3**.
+
 ### 21.2 A administração de cada unidade
 
 O regulamento trata das igrejas no capítulo III, e o artigo 28 fixa a nomeação:

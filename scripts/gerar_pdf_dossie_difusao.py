@@ -339,6 +339,73 @@ def ler_blocos(caminho):
 
 
 # ---------------------------------------------------------------- flowables
+def _largura_visual(t):
+    """Largura aproximada de um texto, contando CJK como dois caracteres."""
+    t = re.sub(r"\[(.*?)\]\(.*?\)", r"\1", t)
+    t = re.sub(r"[*`~]", "", t)
+    return sum(2 if CJK_RE.match(c) else 1 for c in t)
+
+
+def _token_longo(t):
+    """Maior trecho que a quebra de linha não consegue dividir bem.
+
+    O japonês quebra a cada ideograma, e é o que se espera dele numa tabela;
+    o latino só quebra em espaço, barra ou hífen. Medir esse trecho evita o
+    caso que saía impresso antes — 「Realizaçã / o」, com a palavra partida ao
+    meio e um caractere órfão na linha de baixo.
+    """
+    t = re.sub(r"\[(.*?)\]\(.*?\)", r"\1", t)
+    t = re.sub(r"[*`~]", "", t)
+    maior = 0
+    for parte in re.split(r"[\s/\u2013\u2014-]+", t):
+        for pedaco in re.findall(r"[\u3000-\u30ff\u4e00-\u9fff]+|[\x00-\x7f]+",
+                                parte):
+            if CJK_RE.match(pedaco):
+                maior = max(maior, 2)
+            else:
+                maior = max(maior, len(pedaco))
+    return maior
+
+
+UNID_MM = 1.32   # largura média de uma unidade de _largura_visual, em mm
+
+
+def _col_widths(grade, ncol):
+    """Distribui a largura da mancha conforme o conteúdo de cada coluna.
+
+    A atribuição igualitária — LARGURA/ncol — espremia as colunas de texto
+    longo e desperdiçava espaço nas de uma palavra; numa tabela de quatro
+    colunas com um caminho de fonte, o resultado saía ilegível. Aqui cada
+    coluna recebe peso proporcional ao seu conteúdo, com piso calculado pelo
+    maior trecho inquebrável, e a sobra é redistribuída entre as colunas que
+    ainda têm folga.
+    """
+    MIN, MAX = 18 * mm, LARGURA * 0.55
+    pesos = [max(max(_largura_visual(r[c]) for r in grade), 8)
+             for c in range(ncol)]
+    pisos = [max(MIN,
+                 max(_token_longo(r[c]) for r in grade) * UNID_MM + 2.6 * mm)
+             for c in range(ncol)]
+    tot = sum(pesos) or ncol
+    larg = [max(LARGURA * p / tot, pisos[i]) for i, p in enumerate(pesos)]
+    for _ in range(8):
+        dif = LARGURA - sum(larg)
+        if abs(dif) < 0.5:
+            break
+        if dif > 0:
+            idx = [i for i in range(ncol) if larg[i] < MAX - 0.01]
+        else:
+            idx = [i for i in range(ncol) if larg[i] > pisos[i] + 0.01]
+        if not idx:
+            break
+        for i in idx:
+            larg[i] += dif / len(idx)
+    total = sum(larg)
+    if abs(total - LARGURA) > 0.5 and total > 0:
+        larg = [w * LARGURA / total for w in larg]
+    return larg
+
+
 def tabela_flow(grade):
     """Converte uma grade Markdown em Table com largura ajustada."""
     ncol = max(len(r) for r in grade)
@@ -347,7 +414,7 @@ def tabela_flow(grade):
     for j, linha in enumerate(grade):
         est = ESTILOS["celb"] if j == 0 else ESTILOS["cel"]
         dados.append([Paragraph(para_inline(c), est) for c in linha])
-    t = Table(dados, colWidths=[LARGURA / ncol] * ncol, repeatRows=1,
+    t = Table(dados, colWidths=_col_widths(grade, ncol), repeatRows=1,
               hAlign="LEFT")
     t.setStyle(TableStyle([
         # a TableStyle do reportlab usa Helvetica por padrão; forçar a fonte

@@ -225,7 +225,71 @@ documento, não pasta a pasta.
 ## 7. Divergências de índice — resolvidas
 
 `docs/DOSSIE_DIFUSAO_INDICE.md` declarava 55 páginas para o PDF; o arquivo real
-tem agora **87**. O índice foi atualizado e passou a registrar: as três partes
+tem agora **90**. O índice foi atualizado e passou a registrar: as três partes
 com as contagens reais de linha, os fac-símiles, a convenção de citação legal em
 **條**, e a política de não usar fonte pessoal isolada. A Parte III e esta nota
 estão referidas nele.
+
+---
+
+## 8. Rodada de 14 de outubro de 2026 — o acompanhamento das igrejas
+
+Uma consulta levantou a pergunta: a Sede auditava as igrejas, e como? O rastro
+estava no dossiê — a Parte I §3 e §6.1 e a Parte II §21.1 citavam os arts. 24 e
+34 do Regulamento como "auditoria" —, mas o texto justapunha auditoria e
+supervisão central de um modo que permitia ler o contrário do que o estatuto diz.
+
+O que a leitura do Regulamento **na íntegra** (`search2/sanko/kisoku.html`, 『栄光』
+125号) mostrou:
+
+- **監査 aparece duas vezes, e nos dois casos quem é auditado é a própria pessoa
+  jurídica** (arts. 24 e 34). O art. 17 define que a assembleia que aprova o
+  inventário é o **colégio dos presidentes de igreja**. O estatuto prevê as
+  igrejas examinando as contas da Sede — não o contrário.
+- O que a Sede exerce sobre as unidades é **aprovação prévia de atos**
+  (arts. 26–28), além da nomeação do presidente (art. 28).
+- A forma que **de fato** existia é outra: **reunião periódica de dirigentes,
+  taquigrafada e publicada** — as séries 「布教定例座談会」, 「定例布教座談会」,
+  「布教座談会」 e 「支部長懇談会」, presididas ou orientadas por diretor da Sede —
+  com o aviso 「注意」 publicado em seguida como conclusão normativa.
+- A lacuna é precisa e localizável: o art. 46 remete os procedimentos às
+  **施行細則**, que **não estão no acervo**. É ali que qualquer rotina de
+  fiscalização estaria escrita.
+
+Também se acrescentou ao §28.1 o par de rubricas de oferta **interna à unidade**
+que o dossiê não registrava, ambas definidas em ata de 1953: **御守護御礼** (oferta
+pela graça recebida) e **御奉謝金** (oferta recebida quando o fiel ministra Johrei
+a terceiro ou a familiar) — com a pergunta, feita ao 会長, de se o dirigente
+poderia retê-la para si, e a resposta de que reter é **中間搾取**.
+
+**Onde ficou:** Parte III, **§25.3 — "Como a Sede acompanhava as igrejas"**;
+rubricas novas em Parte III §28.1; e remissões em Parte I §6.1 e Parte II §21.1,
+para desfazer a ambiguidade na origem. A Parte III §25.1 também foi ajustada
+("com os atos sujeitos a aprovação prévia da Sede", em lugar de "sob supervisão
+central").
+
+### Um defeito corrigido no gerador de PDF
+
+A seção nova trouxe uma tabela de quatro colunas, e ela saiu **ilegível**: o
+gerador distribuía a largura da mancha **igualmente** entre as colunas
+(`LARGURA / ncol`). Numa tabela com um caminho de fonte e um texto longo, isso
+espremia o texto — 「Realizaçã / o」, com a palavra partida ao meio — e
+desperdiçava espaço nas colunas de uma palavra.
+
+A largura passou a ser **proporcional ao conteúdo**, com piso calculado pelo
+maior trecho inquebrável de cada coluna (o japonês pode quebrar a cada ideograma;
+o latino, não). O defeito afetava **todas** as tabelas do dossiê — a tabela de
+artigos do §6.1, por exemplo, gastava metade da mancha na coluna do rótulo "Art."
+—, e a correção vale para as três partes. O gerador de Word já usava critério
+proporcional e não precisou de ajuste.
+
+### Verificação (14/10/2026)
+
+| Verificador | Parte I | Parte II | Parte III |
+|---|---|---|---|
+| `verificar.py` (caminhos) | 83/83 | 37/37 | 51/51 |
+| `verif_cit.py` (citações) | 76/78 | 56/56 | 48/48 |
+
+A Parte III ganhou **9 citações** e **5 caminhos** nesta rodada, todos
+confirmados. As duas não localizadas na Parte I continuam sendo as leituras do
+fac-símile do 教修要綱, declaradas em §11.1.

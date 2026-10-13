@@ -9,9 +9,9 @@
 
 | Volume | Arquivo | Extensão | Conteúdo |
 |---|---|---|---|
-| **Parte I** | `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md` | 1.964 linhas, 13 seções | Cronologia da institucionalização · método, instrumentos e escala da difusão · tipos de unidade e atribuições · como se abria uma unidade · formação sacerdotal e níveis · estrutura funcional · o Kyoshu · atividades em torno de Meishu-Sama · atividades em torno dos Paraísos Terrestres · lacunas · síntese |
-| **Parte II** | `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md` | 1.444 linhas, 11 seções | Imagens da Luz Divina e critério de proporção · como eram os cultos · oferendas e ofertório · sufrágio dos antepassados · presidência da igreja · difusão da Agricultura Natural · o Johrei · nutrição · economia da igreja · lacunas · nota de método |
-| **Parte III** | `DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md` | 1.142 linhas, 9 seções (§24–§32) | As duas grades de unidades e a composição de cada nível · organograma · atribuições e cotidiano dos dirigentes · culto por tipo de unidade · a salvação e o Ohikari · o ofertório · os Paraísos Terrestres e a mineração · a perseguição de 1950 e a reforma de 1951 · as oferendas diante do objeto de culto |
+| **Parte I** | `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md` | 1.972 linhas, 13 seções | Cronologia da institucionalização · método, instrumentos e escala da difusão · tipos de unidade e atribuições · como se abria uma unidade · formação sacerdotal e níveis · estrutura funcional · o Kyoshu · atividades em torno de Meishu-Sama · atividades em torno dos Paraísos Terrestres · lacunas · síntese |
+| **Parte II** | `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md` | 1.452 linhas, 11 seções | Imagens da Luz Divina e critério de proporção · como eram os cultos · oferendas e ofertório · sufrágio dos antepassados · presidência da igreja · difusão da Agricultura Natural · o Johrei · nutrição · economia da igreja · lacunas · nota de método |
+| **Parte III** | `DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md` | 1.339 linhas, 9 seções (§24–§32) | As duas grades de unidades e a composição de cada nível · organograma · atribuições e cotidiano dos dirigentes · **como a Sede acompanhava as igrejas** · culto por tipo de unidade · a salvação e o Ohikari · o ofertório · os Paraísos Terrestres e a mineração · a perseguição de 1950 e a reforma de 1951 · as oferendas diante do objeto de culto |
 
 A **Parte III** foi acrescentada em 13 de outubro de 2026 e responde aos
 apontamentos de revisão daquele mês; as decisões editoriais e o estado do
@@ -24,9 +24,9 @@ paginado e cabeçalho:
 
 | Formato | Arquivo | Extensão |
 |---|---|---|
-| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 87 páginas A4, 11 fac-símiles |
+| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 90 páginas A4, 11 fac-símiles |
 | Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções, 11 fac-símiles |
-| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 4.564 linhas, 33 seções |
+| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 4.777 linhas, 33 seções |
 
 São 11 inserções, com 9 **imagens distintas** — duas delas aparecem em duas
 partes cada. O Word guarda uma cópia por arquivo, e por isso o `.docx` traz 9
@@ -104,8 +104,8 @@ Dois verificadores automáticos, em `/var/www/rattail/work/`. Execução de
 
 | Verificador | O que confere | Parte I | Parte II | Parte III |
 |---|---|---|---|---|
-| `verificar.py <doc.md>` | se cada caminho citado existe no acervo | 83/83 | 37/37 | 46/46 |
-| `verif_cit.py <doc.md>` | se cada citação aparece no texto do acervo | 76/78 | 56/56 | 39/39 |
+| `verificar.py <doc.md>` | se cada caminho citado existe no acervo | 83/83 | 37/37 | 51/51 |
+| `verif_cit.py <doc.md>` | se cada citação aparece no texto do acervo | 76/78 | 56/56 | 48/48 |
 
 Nenhum caminho citado está ausente do acervo. As **duas** citações que o
 verificador não localiza são ambas leituras do fac-símile do 教修要綱 — texto
