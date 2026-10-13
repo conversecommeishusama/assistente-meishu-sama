@@ -50,22 +50,53 @@ RE_MARCADOR = re.compile(
     rf"\s*(?:[\)\uff09])?\s*:?\s*\*{{0,2}}$"
 )
 
+# Marcador em qualquer posição: parentetizado, em negrito, ou precedido de quebra
+# de linha. Serve para o separar quando vem colado ao texto (ex.: `(Pergunta) — …`
+# ou `… está correta. (Indagação) Em relação…`).
+RE_INLINE = re.compile(
+    rf"(?:[\(\uff08]\s*(?:{PERGUNTA}|{RESPOSTA})\s*[\)\uff09]"
+    rf"|\*\*\s*(?:{PERGUNTA}|{RESPOSTA})\s*\*\*\s*:?"
+    rf"|^[ \t]*(?:{PERGUNTA}|{RESPOSTA})\s*:)",
+    re.MULTILINE,
+)
+
+
+def _classificar(nome: str) -> str:
+    return CANON_Q if re.fullmatch(PERGUNTA, nome.strip()) else CANON_A
+
+
+UPPER = re.compile(
+    r"^[ \t]*(?P<nome>CONSULTA|PERGUNTA|INSTRUÇÃO DIVINA|RESPOSTA DIVINA)"
+    r"[ \t]*:?[ \t]*$",
+    re.MULTILINE,
+)
+UPPER_MAP = {
+    "CONSULTA": CANON_Q, "PERGUNTA": CANON_Q,
+    "INSTRUÇÃO DIVINA": CANON_A, "RESPOSTA DIVINA": CANON_A,
+}
+
 
 def normalizar(texto: str) -> tuple[str, int, int]:
-    linhas = texto.split("\n")
+    # 0) formas em maiúsculas usadas em alguns relatos (CONSULTA /
+    #    INSTRUÇÃO DIVINA) → forma parentetizada canónica
+    texto = UPPER.sub(lambda m: UPPER_MAP[m.group("nome")], texto)
+    # 1) separar todos os marcadores em linha própria
+    novo = RE_INLINE.sub(lambda m: f"\n\n{m.group(0).strip()}\n\n", texto)
+    # 2) canonicalizar as linhas que são só marcador
+    linhas = novo.split("\n")
     nq = na = 0
     for i, linha in enumerate(linhas):
         m = RE_MARCADOR.match(linha)
         if not m:
             continue
-        nome = m.group("nome")
-        if re.fullmatch(PERGUNTA, nome):
-            linhas[i] = CANON_Q
-            nq += 1
-        else:
-            linhas[i] = CANON_A
-            na += 1
-    return "\n".join(linhas), nq, na
+        canon = _classificar(m.group("nome"))
+        linhas[i] = canon
+        nq += canon == CANON_Q
+        na += canon == CANON_A
+    novo = "\n".join(linhas)
+    # 3) colapsar linhas em branco repetidas
+    novo = re.sub(r"\n{3,}", "\n\n", novo)
+    return novo.strip() + "\n", nq, na
 
 
 def main() -> int:

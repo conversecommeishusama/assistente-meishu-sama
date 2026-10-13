@@ -50,13 +50,17 @@ def carregar(p: Path) -> list[dict]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--a", type=Path, default=R1, help="consolidado da ronda anterior")
+    ap.add_argument("--b", type=Path, default=R2, help="consolidado da ronda nova")
     ap.add_argument("--limiar", type=float, default=0.42,
                     help="semelhança mínima para considerar 'o mesmo achado'")
     ap.add_argument("--detalhar", action="store_true")
     args = ap.parse_args()
+    saida_json = args.b.with_name(f"COMPARACAO_{args.a.stem}_x_{args.b.stem}.json")
 
-    a1, a2 = carregar(R1), carregar(R2)
-    print(f"ronda 1: {len(a1)} achados | ronda 2: {len(a2)} achados\n")
+    a1, a2 = carregar(args.a), carregar(args.b)
+    print(f"ronda A ({args.a.name}): {len(a1)} achados | "
+          f"ronda B ({args.b.name}): {len(a2)} achados\n")
 
     usados: set[int] = set()
     nao_corrigidos: list[tuple[dict, dict]] = []
@@ -112,13 +116,14 @@ def main() -> int:
             print("   MO:", re.sub(r"\s+", " ", y.get("motivo") or "")[:260])
 
     # grava a comparação
-    saida = BASE / "COMPARACAO_R1_R2.json"
-    saida.write_text(json.dumps({
+    saida_json.write_text(json.dumps({
+        "ronda_a": args.a.name,
+        "ronda_b": args.b.name,
         "resolvidos": resolvidos,
         "nao_corrigidos": [b for _, b in nao_corrigidos],
-        "novos_r2": regressoes,
+        "novos_b": regressoes,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"\ngravado: {saida}")
+    print(f"\ngravado: {saida_json}")
     return 0
 
 
