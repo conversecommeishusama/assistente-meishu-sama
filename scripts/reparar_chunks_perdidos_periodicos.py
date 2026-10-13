@@ -175,10 +175,22 @@ def ponto_insercao(pt: str, chunks: list[str], perdidos: list[int]) -> int | Non
     return offs[melhor_k - 1] if melhor_k else None
 
 
-def classificar(chunks: list[str], pt: str) -> list[bool]:
-    """Para cada chunk, True se a tradução parece PERDIDA."""
+def classificar(chunks: list[str], pt: str,
+                limiar_ruim: float | None = None,
+                limiar_bom: float | None = None) -> list[bool]:
+    """Para cada chunk, True se a tradução parece PERDIDA.
+
+    Os limiares podem ser impostos pelo chamador: a cobertura por sondas
+    SUBESTIMA a perda quando o chunk partilha termos comuns com o resto do
+    artigo (ex.: 39_70, cujo 1.º chunk tem 38% de sondas ausentes mas perdeu
+    cinco blocos inteiros). Nesses casos, uma varredura com limiar mais baixo
+    (accionada pelo rácio PT/JP do artigo) recupera a perda.
+    """
     ratio_ruim = len(pt) / max(len("".join(chunks)), 1) < RATIO_MINIMO_OK
-    limiar = LIMIAR_PERDIDO_RATIO_RUIM if ratio_ruim else LIMIAR_PERDIDO
+    if limiar_ruim is not None:
+        limiar = limiar_ruim
+    else:
+        limiar = LIMIAR_PERDIDO_RATIO_RUIM if ratio_ruim else LIMIAR_PERDIDO
     perdidos: list[bool] = []
     for ch in chunks:
         total, ausentes = cobertura(ch, pt)
@@ -189,7 +201,8 @@ def classificar(chunks: list[str], pt: str) -> list[bool]:
     return perdidos
 
 
-def reparar(arquivo: Path, aplicar: bool) -> dict | None:
+def reparar(arquivo: Path, aplicar: bool,
+            limiar: float | None = None) -> dict | None:
     dados = json.loads(arquivo.read_text(encoding="utf-8"))
     jp = dados.get("texto_jp") or ""
     pt = dados.get("texto_pt") or ""
@@ -197,7 +210,7 @@ def reparar(arquivo: Path, aplicar: bool) -> dict | None:
         return None
 
     chunks = divide_chunks(jp)
-    flags = classificar(chunks, pt)
+    flags = classificar(chunks, pt, limiar_ruim=limiar)
     perdidos = [i for i, f in enumerate(flags) if f]
     if not perdidos:
         return None
@@ -283,12 +296,15 @@ def main() -> int:
     ap.add_argument("--item", help="reparar apenas este item (stem do JSON)")
     ap.add_argument("--workers", type=int, default=1,
                     help="itens em paralelo (só com --aplicar)")
+    ap.add_argument("--limiar", type=float,
+                    help="força o limiar de perda (0-1); útil quando a cobertura "
+                         "por sondas subestima a perda)")
     args = ap.parse_args()
 
     if args.item:
         arquivos = [ITENS / f"{args.item}.json"]
     else:
-        # `Path.glob("*.json")` casa também ficheiros ocultos (.bak_chunk_*.json)
+        # NB: `Path.glob("*.json")` casa também ficheiros ocultos (.bak_chunk_*.json)
         # — foi o que fez o 1.º lote reprocessar backups. Excluir explicitamente.
         arquivos = sorted(p for p in ITENS.glob("*.json") if not p.name.startswith("."))
 
@@ -296,7 +312,7 @@ def main() -> int:
 
     def _um(arq: Path) -> dict | None:
         try:
-            return reparar(arq, args.aplicar)
+            return reparar(arq, args.aplicar, limiar=args.limiar)
         except Exception as e:  # noqa: BLE001
             return {"item": arq.name, "erro": f"exceção: {e}"}
 
