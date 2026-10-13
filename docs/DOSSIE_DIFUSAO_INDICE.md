@@ -5,23 +5,28 @@
 
 ---
 
-## Os dois volumes
+## Os três volumes
 
 | Volume | Arquivo | Extensão | Conteúdo |
 |---|---|---|---|
 | **Parte I** | `LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md` | 1.952 linhas, 13 seções | Cronologia da institucionalização · método, instrumentos e escala da difusão · tipos de unidade e atribuições · como se abria uma unidade · formação sacerdotal e níveis · estrutura funcional · o Kyoshu · atividades em torno de Meishu-Sama · atividades em torno dos Paraísos Terrestres · lacunas · síntese |
 | **Parte II** | `DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md` | 1.274 linhas, 11 seções | Imagens da Luz Divina e critério de proporção · como eram os cultos · oferendas e ofertório · sufrágio dos antepassados · presidência da igreja · difusão da Agricultura Natural · o Johrei · nutrição · economia da igreja · lacunas · nota de método |
+| **Parte III** | `DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md` | 9 seções (§24–§32) | As duas grades de unidades e a composição de cada nível · organograma · atribuições e cotidiano dos dirigentes · culto por tipo de unidade · a salvação e o Ohikari · o ofertório · os Paraísos Terrestres e a mineração · a perseguição de 1950 e a reforma de 1951 · as oferendas diante do objeto de culto |
+
+A **Parte III** foi acrescentada em 13 de outubro de 2026 e responde aos
+apontamentos de revisão daquele mês; as decisões editoriais e o estado do
+trabalho estão em `NOTA_REVISAO_DOSSIE_DIFUSAO_20261013.md`.
 
 ## Versão para impressão
 
-O **volume único** reúne as duas partes em sequência contínua, com capa, sumário
+O **volume único** reúne as três partes em sequência contínua, com capa, sumário
 paginado e cabeçalho:
 
 | Formato | Arquivo | Extensão |
 |---|---|---|
-| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 55 páginas A4 |
-| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 17 tabelas |
-| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 3.238 linhas |
+| **PDF** (recomendado para impressão) | `DOSSIE_DIFUSAO_COMPLETO_20261002.pdf` | 74 páginas A4 (Partes I–III) |
+| Word | `DOSSIE_DIFUSAO_COMPLETO_20261002.docx` | 33 seções |
+| Fonte única | `DOSSIE_DIFUSAO_COMPLETO_20261002.md` | 33 seções |
 
 O PDF já vem com **todas as fontes embutidas** — inclusive a japonesa —, de modo
 que imprimirá corretamente em qualquer sistema, sem depender de fonte instalada
@@ -30,8 +35,8 @@ na gráfica.
 ### Como regerar
 
 ```
-# volume único (a partir das duas partes)
-.venv/bin/python /tmp/juntar.py
+# volume único (a partir das três partes)
+.venv/bin/python scripts/juntar_dossie_difusao.py
 
 # PDF para impressão
 .venv/bin/python scripts/gerar_pdf_dossie_difusao.py \
@@ -67,8 +72,8 @@ declara apenas mês e ano. Não se atribui dia que a fonte não informa.
 
 **Números.** O censo de unidades e ministros (outubro de 1950) é documento
 administrativo e sustenta as contas estruturais. Os totais de fiéis aparecem
-apenas em textos de propaganda ou defesa institucional, e o dossiê os trata como
-declarações, não como estatística.
+em textos de divulgação e de defesa institucional, e o dossiê os registra
+como declarações da instituição — sem lhes atribuir natureza estatística.
 
 ---
 

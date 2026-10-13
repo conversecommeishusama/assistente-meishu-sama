@@ -1293,18 +1293,23 @@ negativas; são pontos em que o corpus não se pronuncia.
 > reconstruído e vocabulário alternativo. **Duas estavam erradas** e uma tem
 > reviravolta — ver `NOTA_FECHAMENTO_LACUNAS_20261005.md` para o detalhamento.
 > O quadro abaixo já reflete a revisão.
+>
+> **Revisão de 13/10/2026.** Voltando de novo, com o vocabulário da própria
+> consulta de época, **mais duas linhas caem**: água/sal/arroz **têm** resposta
+> direta, e as regras de orientação **têm** resposta direta. Ambas foram
+> reescritas abaixo, e o desenvolvimento está na **Parte III, §31**.
 
 | Pergunta | Situação no acervo |
 |---|---|
 | Desenho da Imagem por tipo de unidade | Sem fonte. Só há o critério de **tamanho** (大中小) por proporção ao tokonoma |
 | Imagem escrita por terceiro | Sem fonte direta. Resposta **inferida** de dois princípios (representação e escrita como Luz) |
-| Água, sal e arroz lavado como oferendas | **Reviravolta.** Meishu-Sama **criticava** a forma crua e arcaica de ofertar arroz e água (御講話, 07/12/1953); mas **instruía** oferecer água diante do altar dos espíritos. O **sal** não aparece em nenhum contexto |
+| ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — 「生魚、洗米、塩などの正式のお供えの仕方」, 『御光話録』6号, 23/04/1949 (`search1/situmon/m240499.html`): são as 御神饌 do Xintó e **comida de deus-dragão**; ao Kōmyō Nyorai oferta-se comida humana. **御洗米 ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
 | Oferendas no culto diante da caligrafia Komyo | Sem fonte. Há fonte para o culto matinal e vesperal; não para oferendas |
 | Oratório de antepassados nas unidades | Sem fonte. As 577 ocorrências de 仏壇 são todas de altar **doméstico** |
 | Lugar de consagração usado por Meishu-Sama | Sem fonte |
 | ~~Rito de sufrágio na Sede Geral~~ | ❌ **Corrigido:** o rito **existe e está documentado** — é o `先祖祭`, distinto da entronização da Imagem. Ver §16.6 |
 | ~~Vestimenta própria dos oficiantes~~ | ❌ **Corrigido:** há **祭服** prescrita para o 地鎮祭, com exigência de aprendizado, e escala cromática branco→azul→violeta por grau. Ver §14.5 |
-| Regras de orientação do tokonoma | Sem fonte. Só o critério de proporção e o uso litúrgico |
+| ~~Regras de orientação do tokonoma~~ | ❌ **Corrigido em 13/10:** **não há regra de orientação; há regra de proeminência** — 「方角は東西南北いずれでもよろしいが、位置はその部屋の一番上座に当たる所がよろしい」, 『地上天国』21号, 25/02/1951 (`search1/situmon/situmo25.html`). Ver Parte III, §31.3 |
 | Remuneração dos ministros de dedicação integral | Sem fonte. `給料`/`俸給`/`月給` ocorrem, mas **todas em contexto de emprego secular** |
 | Dízimo | Sem fonte. As 149 ocorrências de `十分の一` são todas medidas de temperatura, proporções ou legislação — **nenhuma religiosa** |
 | Glúten, trigo, intolerâncias | Sem fonte. As 134 ocorrências de `小麦` são todas de **lavoura**, nunca de alimentação |
@@ -1319,8 +1324,14 @@ inclui regulamento financeiro e centenas de relatos com valores em ienes. Isso i
 escolha deliberada, não descuido.
 
 Vale registrar também o que **não é** lacuna: a pergunta sobre o que Meishu-Sama
-acharia de oferecer arroz cru e água tem resposta, e ela é negativa. A dificuldade
-não estava na ausência de fonte, mas no vocabulário com que eu a procurei.
+acharia de oferecer arroz cru e água tem resposta — e a resposta está em duas
+partes, cronologicamente distintas: em 1949 ele **reconhece** a prática como a
+oferenda xintoísta e lhe dá lugar doutrinário (comida de deus-dragão),
+substituindo-a pela comida humana; em 1953 ele ainda **critica** a forma arcaica,
+porque a nova forma do culto, que ele mesmo anunciara em 1949, **ainda não fora
+fixada**. A dificuldade, nas duas vezes, não estava na ausência de fonte, mas no
+vocabulário com que eu a procurei — primeiro faltou 御神饌, depois faltou a própria
+pergunta da época, 「生魚、洗米、塩」.
 
 ---
 

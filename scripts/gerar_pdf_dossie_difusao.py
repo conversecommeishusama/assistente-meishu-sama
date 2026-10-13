@@ -164,9 +164,72 @@ def para_inline(t, negrito_extra=False):
     return t
 
 
+def mermaid_arvore(texto):
+    """Converte um bloco mermaid `graph` numa árvore de bullets Markdown.
+
+    O PDF é destinado à impressão: um diagrama mermaid não sobrevive à
+    conversão. Até 13/10/2026 o bloco era simplesmente APAGADO, de modo que o
+    organograma do §6.3 não existia no volume impresso. Aqui ele é
+    reconstruído como lista hierárquica indentada, que imprime corretamente.
+
+    Aceita uma linha opcional `%% caption: <texto>` como título do bloco.
+    Devolve (titulo, markdown) — titulo pode ser None.
+    """
+    nos, titulo, arestas = {}, None, []
+    for ln in texto.split("\n"):
+        c = re.match(r"^\s*%%\s*caption\s*:\s*(.+)$", ln)
+        if c:
+            titulo = c.group(1).strip()
+            continue
+        # 1) colhe TODAS as definições de nó da linha: numa linha como
+        #    B["…"] --> C["…"] havia duas, e a leitura ancorada só via a
+        #    primeira — era a causa do organograma sair amputado.
+        for m in re.finditer(r'(\w+)\s*\["(.*?)"\]', ln):
+            rot = m.group(2)
+            rot = re.sub(r"<br\s*/?>", " — ", rot)
+            rot = re.sub(r"<[^>]+>", "", rot)
+            nos[m.group(1)] = rot.replace("\\", "").strip()
+        # 2) remove os rótulos e lê as arestas da linha simplificada
+        simpl = re.sub(r'\[".*?"\]', "", ln)
+        for m in re.finditer(
+                r"(\w+)\s*(?:-->|-.->)\s*(?:\|[^|]*\|\s*)?(\w+)", simpl):
+            arestas.append((m.group(1), m.group(2)))
+
+    filhos, tem_pai = {}, set()
+    for a, b in arestas:
+        filhos.setdefault(a, []).append(b)
+        tem_pai.add(b)
+
+    linhas, vistos = [], set()
+
+    def desce(no, nivel):
+        if no in vistos:
+            return
+        vistos.add(no)
+        linhas.append("  " * nivel + "- " + nos[no])
+        for f in filhos.get(no, []):
+            desce(f, nivel + 1)
+
+    for no in nos:
+        if no not in tem_pai:
+            desce(no, 0)
+    for no in nos:
+        if no not in vistos:
+            desce(no, 0)
+    return titulo, "\n".join(linhas)
+
+
 def limpa_markdown_extra(t):
     """Remove marcações que não fazem sentido na impressão."""
-    t = re.sub(r"```mermaid.*?```", "", t, flags=re.S)
+    def _mermaid(m):
+        titulo, arvore = mermaid_arvore(m.group(1))
+        partes = []
+        if titulo:
+            partes += ["**%s**" % titulo, ""]
+        partes.append(arvore)
+        return "\n".join(partes)
+
+    t = re.sub(r"```mermaid\s*\n(.*?)```", _mermaid, t, flags=re.S)
     t = re.sub(r"^---+$", "", t, flags=re.M)
     return t
 

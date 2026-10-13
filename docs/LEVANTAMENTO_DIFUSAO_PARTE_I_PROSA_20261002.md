@@ -341,11 +341,14 @@ Ministros Intermediários; para cada igreja, aproximadamente três Ministros. **
 não é uma carreira paralela à estrutura: ele acompanha a unidade que a pessoa dirige.**
 Isso será decisivo na seção 5.
 
-A segunda leitura é uma cautela. Os números de **fiéis** — cem mil em março de 1949,
-"mais de mil" no Havaí em um ano — aparecem sempre em textos de propaganda ou de defesa
-institucional, e devem ser tratados como **declarações**, não como estatística. É uma
-distinção que este levantamento mantém: o censo de unidades e Ministros é documento
-administrativo; os números de fiéis são retórica.
+A segunda leitura é uma cautela de método, e convém enunciá-la com precisão. Os números
+de **fiéis** — cem mil em março de 1949, "mais de mil" no Havaí em um ano — aparecem em
+textos de divulgação e de defesa institucional, não em peça de levantamento. O censo de
+unidades e de Ministros, ao contrário, é documento administrativo: tem data, categoria e
+contagem fechada. As duas coisas não são da mesma natureza, e este levantamento as trata
+de modo distinto — o censo sustenta as contas estruturais; os totais de fiéis registram-se
+como **declaração da instituição**, que é o que de fato são no acervo. Não se trata de pôr
+em dúvida a informação, e sim de não lhe atribuir uma natureza documental que ela não tem.
 
 ---
 
@@ -1100,8 +1103,10 @@ revela um desenho institucional deliberado.
 Dois artigos merecem destaque. O **art. 3º define a educação e formação dos fiéis como
 fim estatutário** do corpo jurídico — isto é, a formação não era uma prática informal,
 mas um objetivo declarado na lei constitutiva da entidade. E o **art. 43º** revela algo
-que dificilmente se suporia: a principal fonte de recursos próprios do 教団 era uma
-**mina** (a de 水上), não a coleta de ofertas. Meishu-Sama explica a razão:
+que dificilmente se suporia numa instituição religiosa: o estatuto contempla expressamente
+a **operação de mineração** (鉱業) entre as atividades da pessoa jurídica, a cargo do
+Departamento de Empreendimentos. A mina em questão, a de 水上, ocupava lugar próprio na
+economia da obra. Meishu-Sama situa a mina no horizonte das construções:
 
 > 「そうなるのは秋あたりからと思いますがね。それでいろんな……**箱根、熱海の経綸が
 > たくさんありますから、それをやらなければならない。**」
@@ -1195,6 +1200,7 @@ dos senhores consegui de algum modo desempenhá-la."*
 ### 6.3 Organograma reconstruído
 
 ```mermaid
+%% caption: Organograma reconstruído — 1951–1955
 graph TD
     A["教主: 岡田自観師 (Meishu-Sama)<br/><i>autoridade carismática</i>"] -.->|orienta a fé e a doutrina| B
     B["管長 (Superintendente)<br/><i>autoridade jurídica</i>: 大草直好"] --> C["理事会<br/>11 理事 + 理事長 + 副理事長"]
@@ -1816,11 +1822,16 @@ alcance dos olhos — diante dessa administração divina incompreensível à sa
 eu apenas ficava extasiado."*
 — `search2/okage/yarawa/qwasure4.html`
 
-### 9.6 O Paraíso Terrestre como projeto econômico
+### 9.6 A dimensão material das obras
 
-A construção dos Paraísos tinha também dimensão econômica, em três frentes.
+As obras dos Paraísos Terrestres tinham também uma dimensão material, documentada em três
+frentes.
 
-A **mina de 水上** fornecia a receita destinada às obras, conforme visto na seção 6.1.
+A **mina de 水上**, prevista no próprio estatuto da pessoa jurídica (art. 43º), aparece no
+acervo ligada à obra — e o seu traço mais documentado é o **trabalho**, não a receita: a
+mão de obra vinha da mesma brigada de serviço que construía os jardins (v. seção 6.1).
+Quanto ao que a mina rendeu, é matéria que o corpus não documenta; a Parte III (§29)
+examina a questão em detalhe.
 
 O **mercado de arte** era operado com critério declaradamente econômico, e Meishu-Sama
 descreve sua vantagem com franqueza:
@@ -1876,7 +1887,7 @@ são de gêneros diferentes — regra geral contra descrição de culto específ
 elemento no corpus que permita decidir qual reflete a prática constante. Registro a
 divergência sem resolvê-la.
 
-**Números que são retórica.** Os totais de fiéis aparecem apenas em textos de propaganda ou
+**Números de fiéis e números de unidades.** Os totais de fiéis aparecem em textos de
 defesa institucional. O censo de unidades e ministros, em contrapartida, é documento
 administrativo. Este levantamento tratou os dois de modo diferente, e convém que o leitor
 saiba disso.
@@ -1885,9 +1896,13 @@ saiba disso.
 inferencial. A cronologia que o sustenta é objetiva; a correspondência entre termos apoia-se
 na magnitude das faixas do censo. Não há documento que a afirme textualmente.
 
-**A questão da sucessão.** Sobre o processo sucessório de 1955, o único relato interno
-disponível é de Kihara Yoshihiko — isto é, de um dos protagonistas da ruptura, escrevendo
-depois dela. É uma fonte interessada, e o levantamento a trata como tal.
+**A questão da sucessão.** Sobre o processo sucessório de 1955, os relatos internos
+disponíveis partem de um dos protagonistas da ruptura, escritos depois dela. São fontes
+interessadas, e o levantamento as trata como tais — registrando o fato sem nelas apoiar
+conclusão. Por decisão editorial de 6 de outubro de 2026 (v.
+`NOTA_REVISAO_DOSSIE_DIFUSAO_20261013.md`, §5), este dossiê **não cita a produção
+individual do Rev. Kihara Yoshihiko**, para não citar um reverendo em detrimento dos
+demais.
 
 ---
 

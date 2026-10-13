@@ -324,26 +324,40 @@ def regua(doc):
 
 
 def mermaid_para_lista(doc, bloco):
-    """O organograma em mermaid vira lista hierárquica (imprimível)."""
+    """O organograma em mermaid vira lista hierárquica (imprimível).
+
+    O título vem da linha opcional `%% caption: <texto>`; sem ela, usa
+    'Organograma'.
+    """
+    titulo = "Organograma"
+    for ln in bloco:
+        c = re.match(r"\s*%%\s*caption\s*:\s*(.+)$", ln)
+        if c:
+            titulo = c.group(1).strip()
+            break
+
     p = doc.add_paragraph()
-    r = p.add_run("Organograma (1951–1955)")
+    r = p.add_run(titulo)
     set_font(r, tamanho=10, negrito=True)
     p.paragraph_format.space_after = Pt(4)
 
-    nos = {}
+    nos, arestas = {}, []
     for ln in bloco:
-        m = re.match(r'\s*(\w+)\s*\["(.+?)"\]', ln)
-        if m:
+        # colhe TODAS as definições de nó: antes, a leitura ancorada no início
+        # da linha só via a primeira de cada linha — numa linha como
+        # B["…"] --> C["…"] o nó C era perdido e o organograma saía amputado.
+        for m in re.finditer(r'(\w+)\s*\["(.*?)"\]', ln):
             rotulo = m.group(2)
             rotulo = re.sub(r"<br\s*/?>", " — ", rotulo)
             rotulo = re.sub(r"<[^>]+>", "", rotulo)
             rotulo = rotulo.replace("\\", "")
             nos[m.group(1)] = rotulo.strip()
-    arestas = []
     for ln in bloco:
-        m = re.match(r"\s*(\w+)\s*(?:-->|-.->)\s*(?:\|[^|]*\|\s*)?(\w+)", ln)
-        if m and m.group(1) in nos and m.group(2) in nos:
-            arestas.append((m.group(1), m.group(2)))
+        simpl = re.sub(r'\[".*?"\]', "", ln)
+        for m in re.finditer(
+                r"(\w+)\s*(?:-->|-.->)\s*(?:\|[^|]*\|\s*)?(\w+)", simpl):
+            if m.group(1) in nos and m.group(2) in nos:
+                arestas.append((m.group(1), m.group(2)))
 
     filhos = {}
     tem_pai = set()

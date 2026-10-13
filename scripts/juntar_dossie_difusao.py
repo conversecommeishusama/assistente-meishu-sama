@@ -14,10 +14,16 @@ D = '/var/www/goshinsho/docs/'
 saida = D + 'DOSSIE_DIFUSAO_COMPLETO_20261002.md'
 p1 = open(D + 'LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md', encoding='utf-8').read()
 p2 = open(D + 'DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md', encoding='utf-8').read()
+p3 = open(D + 'DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md',
+          encoding='utf-8').read()
 
 # Remove o cabeçalho próprio de cada parte e renumera a Parte II
 p2 = re.sub(r'^#\s.*?\n', '', p2, count=1)
 p2 = re.sub(r'^\*\*Data:.*?\n(\*\*.*\n)*', '', p2, count=1, flags=re.M)
+# Parte III: remove o título e o bloco de metadados, e o separador de abertura
+p3 = re.sub(r'^#\s.*?\n', '', p3, count=1)
+p3 = re.sub(r'^\*\*.*?\n(\*\*.*\n)*', '', p3, count=1, flags=re.M)
+p3 = re.sub(r'^\s*---\s*\n', '', p3, count=1)
 # desloca as seções 13..23 -> continuam (a Parte I vai até 12)
 corpo = (
     "# A difusão na época de Meishu-Sama\n\n"
@@ -34,6 +40,8 @@ corpo = (
 corpo += p1.split('\n', 1)[1].lstrip('\n')
 corpo += "\n\n---\n\n# PARTE II — culto, vida religiosa e administração\n\n"
 corpo += p2.lstrip('\n')
+corpo += "\n\n---\n\n# PARTE III — hierarquia, doutrina e economia\n\n"
+corpo += p3.lstrip('\n')
 open(saida, 'w', encoding='utf-8').write(corpo)
 print('gravado:', saida)
 print('linhas:', corpo.count(chr(10)))
