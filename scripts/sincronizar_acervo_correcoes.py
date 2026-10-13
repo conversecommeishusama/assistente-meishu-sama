@@ -43,7 +43,8 @@ TIPOS_AUDITORIA = {
     "lacuna", "media", "baixa", "suntetsu", "meshiya", "inv", "stripEN", "pan",
     "r3", "marc_r3", "nota_r3", "marc", "purif", "titulo", "inversao_causa",
     "dedup", "nota", "uniformizar", "r4", "marcins", "marcdel", "r3b",
-    "rotulos_fala", "termo_obscuro", "inserir_marcadores",
+    "rotulos_fala", "termo_obscuro", "inserir_marcadores", "r5", "r5b",
+    "goshintai",
 }
 
 
