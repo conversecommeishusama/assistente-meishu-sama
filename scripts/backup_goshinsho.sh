@@ -49,6 +49,10 @@ tar \
     --warning=no-file-changed \
     --exclude="${PROJECT_NAME}/venv" \
     --exclude="${PROJECT_NAME}/.venv" \
+    --exclude="${PROJECT_NAME}/venv_xtts" \
+    --exclude="${PROJECT_NAME}/.hf_cache" \
+    --exclude="${PROJECT_NAME}/.local" \
+    --exclude="${PROJECT_NAME}/.cache" \
     --exclude="${PROJECT_NAME}/**/__pycache__" \
     --exclude="${PROJECT_NAME}/.pytest_cache" \
     --exclude="${PROJECT_NAME}/.cleanup_quarantine" \

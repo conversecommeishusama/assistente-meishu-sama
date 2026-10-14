@@ -185,8 +185,21 @@ class LimiarDoAvisoTests(unittest.TestCase):
         self.assertLess(RODADAS_AVISO_BUSCA_PROFUNDA, LIMITE_SEGURANCA_RODADAS)
 
     def test_aviso_dispara_uma_unica_vez(self):
-        """Repetir o aviso a cada rodada poluiria a tela."""
-        import time
+        """Repetir o aviso a cada rodada poluiria a tela.
+
+        2026-10-14: este teste era FLAKY e falhava com 0 disparos. O gatilho
+        real do aviso e' o TEMPO decorrido (SEGUNDOS_AVISO_BUSCA_PROFUNDA,
+        25s) e o laco termina sozinho ao sintetizar, tipicamente em 4 rodadas.
+        O teste simulava 6s de latencia por rodada contando com 5 rodadas
+        (30s > 25s), mas com o cache de embeddings ja' quente o laco acaba em
+        4x6s = 24s -- logo abaixo do limiar -- e o aviso nao dispara. Ou seja:
+        o resultado dependia de o cache estar frio ou quente (a 1a rodada com
+        cache frio leva ~22s so' carregando pesos), nao da logica que o teste
+        quer proteger. Aqui o limiar e' forcado a 0 para o disparo ocorrer na
+        1a rodada, sem depender de relogio, de sleep ou de aquecimento -- e o
+        laco continua por varias rodadas, que e' o que prova o ponto
+        (disparar UMA vez, nao a cada rodada).
+        """
         from unittest.mock import patch
 
         from goshinsho.services import agentic_search as A
@@ -215,13 +228,15 @@ class LimiarDoAvisoTests(unittest.TestCase):
             )
 
         def fake_criar(client, orcamento, **kw):
-            time.sleep(6)  # 6s por rodada: cruza os 25s do gatilho na 5ª
+            # Sem `tools` = rodada de sintese = fim do laco. Sem sleep: o
+            # gatilho do aviso e' o limiar forcado a 0 abaixo, nao o relogio.
             return resp_sintese() if "tools" not in kw else resp_tool()
 
         with patch.object(A, "_criar_com_orcamento", side_effect=fake_criar), \
              patch.object(A, "_client", return_value=object()), \
              patch.object(A, "executar_ferramenta", return_value={"resultados": []}), \
-             patch.object(A, "_fingerprints_da_ferramenta", return_value=set()):
+             patch.object(A, "_fingerprints_da_ferramenta", return_value=set()), \
+             patch.object(A, "SEGUNDOS_AVISO_BUSCA_PROFUNDA", 0.0):
             A.responder_agentico_deepseek(
                 "pergunta", None, system_prompt="x", on_deep_search=lambda: chamadas.append(1)
             )
