@@ -69,8 +69,9 @@ RE_UNIDADE = re.compile(
 # no acervo («dez ri (aproximadamente quarenta quilómetros)», «noventa
 # centímetros [três shaku]», «um ou dois sun [cerca de 3 a 6 cm]»).
 RE_METRICA = re.compile(
-    r"\b\d[\d.,]*\s*(?:mm|cm|km|kg|mg|ml|m|g|L|l)\b|\b(?:centímetros|"
-    r"metros|quilômetros|quilos|litros|gramas|milímetros|mililitros)\b", re.I)
+    r"\b\d[\d.,]*\s*(?:mm|cm|km|kg|mg|ml|m|g|L|l)\b|\b(?:centímetros?|"
+    r"metros?|quilômetros?|quilos?|litros?|gramas?|milímetros?|mililitros?)\b",
+    re.I)
 PROIBIDOS = [(r"\bpossesso\b", "usar «possessão»"),
              (r"\bidealismo\b", "para 唯心 usar «espiritualismo»")]
 

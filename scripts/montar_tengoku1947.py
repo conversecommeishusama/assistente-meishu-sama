@@ -40,9 +40,9 @@ NOME_PT = "19470205 - O Evangelho do Paraíso.txt"
 NOME_JP = "19470205-天国の福音.txt"
 
 CABECALHO = (
-    "O Evangelho do Paraíso\n\n"
-    "Tengoku no Fukuin — 天国の福音\n\n"
-    "Publicado em 5 de fevereiro do ano 22 da Era Showa (1947)\n"
+    "O Evangelho do Paraíso\n"
+    "Publicado em 5 de fevereiro do ano 22 da Era Showa (1947)\n\n"
+    "――― Obra do Mestre Meishu-Sama ―――\n"
 )
 
 
@@ -72,7 +72,10 @@ def main() -> int:
         if not corpo:
             continue
         blocos.append(f"{titulo}\n\n{corpo}")
-    texto = CABECALHO + "\n" + "\n\n".join(blocos) + "\n"
+    indice = "Índice\n\n" + "\n".join(
+        (d.get("titulo_pt") or d["titulo_jp"]).strip()
+        for d in regs if d.get("texto_pt")) + "\n"
+    texto = CABECALHO + "\n" + indice + "\n" + "\n\n".join(blocos) + "\n"
 
     print(f"montagem: {len(blocos)} secções | {len(texto)} caracteres")
     TRABALHO.mkdir(parents=True, exist_ok=True)
