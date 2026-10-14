@@ -93,6 +93,12 @@ data/tts_cache_avaliacao/
 .hf_cache/
 .cache/
 
+# HOME do serviço (ExecStart/Environment=HOME=/var/www/goshinsho). Guarda o
+# cache do modelo XTTS (coqui-tts, 1,8 GB) em .local/share/tts -- migrado de
+# /root/.local/share/tts em 2026-10-14, porque o de-root trocou o HOME e o
+# modelo não era mais encontrado (forçaria re-download de 1,8 GB na 1ª síntese).
+.local/
+
 # Ambiente virtual do TTS (voz meishu/XTTS) -- 1,8 GB. Mesmo padrão de venv/.
 venv_xtts/
 
