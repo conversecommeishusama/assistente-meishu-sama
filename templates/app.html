@@ -185,6 +185,11 @@
             <form class="floating-panel support-panel" id="contact-panel">
                 <h2 data-i18n="contactTitle">Suporte</h2>
                 <p class="panel-note">Abra um atendimento para login, assinatura, erro no app, resposta da IA ou sugestões.</p>
+                <div class="signup-shield" aria-hidden="true">
+                    <label for="contact-website">Website</label>
+                    <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="form_started" id="contact-started" value="">
+                </div>
                 {% if not user %}
                     <input name="name" type="text" placeholder="Nome" data-i18n-placeholder="name" required>
                     <input name="email" type="email" placeholder="E-mail" required>
@@ -199,6 +204,14 @@
                 </select>
                 <input name="subject" type="text" placeholder="Resumo do problema" required>
                 <textarea name="message" placeholder="Descreva o que aconteceu..." data-i18n-placeholder="messageLabel" required></textarea>
+                <label class="checkbox-field human-check-field">
+                    <input name="human_check" type="checkbox" value="1" required>
+                    <span data-i18n="humanCheck">Sou humano</span>
+                </label>
+                {% if config.TURNSTILE_SITE_KEY %}
+                <div class="cf-turnstile" data-sitekey="{{ config.TURNSTILE_SITE_KEY }}" data-theme="auto"></div>
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                {% endif %}
                 <button type="submit" data-i18n="send">Abrir atendimento</button>
                 <p class="panel-note" id="support-message"></p>
                 <div class="support-ticket-list" id="support-ticket-list"></div>
@@ -446,7 +459,7 @@
     <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
-    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=8"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=160"></script>
+    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=6"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=161"></script>
 </body>
 </html>

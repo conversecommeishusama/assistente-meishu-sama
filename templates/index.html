@@ -99,9 +99,18 @@
 
             <form class="floating-panel" id="contact-panel" action="{{ url_for('web.contato') }}" method="post">
                 <h2>Contato</h2>
+                <div class="signup-shield" aria-hidden="true">
+                    <label for="contact-website-index">Website</label>
+                    <input id="contact-website-index" name="website" type="text" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="form_started" id="contact-started" value="">
+                </div>
                 <input name="name" type="text" placeholder="Nome" required>
                 <input name="email" type="email" placeholder="E-mail" required>
                 <textarea name="message" placeholder="Mensagem" required></textarea>
+                <label class="checkbox-field human-check-field">
+                    <input name="human_check" type="checkbox" value="1" required>
+                    <span>Sou humano</span>
+                </label>
                 <button type="submit">Enviar</button>
             </form>
         </section>
@@ -134,6 +143,6 @@
         {% endif %}
     </main>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=161"></script>
 </body>
 </html>

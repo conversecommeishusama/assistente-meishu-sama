@@ -81,10 +81,30 @@ textos_avaliacao/
 # local, regenerável; não versionar.
 data/tts_cache_avaliacao/
 
-# uploads do projeto do filme (temporario; o material real fica em /var/www/filme_meishu_sama)
+# ============================================================================
+# 2026-10-14 -- blindagem: proteções RESTAURADAS + artefatos locais novos.
+# Contexto: o de-root moveu /root/.cache para dentro do repo (.hf_cache, 9,2 GB)
+# e as entradas abaixo tinham sido removidas por engano. Sem elas, um
+# `git add -A` na raiz tentaria absorver ~20 GB. Ver HANDOFF_SEGURANCA_20261013.md.
+# ============================================================================
+
+# Caches de modelos de IA (Hugging Face / sentence-transformers), movidos de
+# /root/.cache no de-root -- 9,2 GB. Regenerável, NUNCA versionar.
+.hf_cache/
+.cache/
+
+# Ambiente virtual do TTS (voz meishu/XTTS) -- 1,8 GB. Mesmo padrão de venv/.
+venv_xtts/
+
+# Ferramentas/artefatos locais de auditoria (não são código do projeto).
+# (.cursor/ NÃO entra: contém .cursor/rules/*.mdc versionados de propósito.)
+.scratch_audit/
+.continue/
+
+# RESTAURADO: uploads do projeto do filme (o material real mora em
+# /var/www/filme_meishu_sama, fora do repositório).
 filme_meishu_sama/
 
-# Acervo textual rattail — 8,6 GB, mora em /var/www/rattail (fora do repositorio,
-# compartilhado com o filme). NUNCA versionar aqui: se alguem rodar `git add -A`
-# na raiz, o git tentaria absorver 8,6 GB. Ver HANDOFF_DOSSIE_DIFUSAO_20261002.md
+# RESTAURADO: acervo textual rattail -- 8,6 GB em /var/www/rattail (fora do
+# repositório, compartilhado com o filme). NUNCA versionar aqui.
 /var/www/rattail/

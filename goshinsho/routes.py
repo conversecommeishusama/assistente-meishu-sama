@@ -12,7 +12,6 @@ from flask import (
     Blueprint,
     Response,
     copy_current_request_context,
-    current_app,
     flash,
     jsonify,
     make_response,
@@ -67,7 +66,7 @@ from .services.deepseek_usage_service import (
 from .services.cost_guard_service import cost_cap_status, maybe_send_cap_alert, maybe_send_warning_alert
 from .services.donation_service import create_billing_portal_session
 from .services.email_service import is_email_configured, send_contact_emails
-from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_submission, is_email_blocked, is_human_confirmed
+from .services.signup_protection import HUMAN_CHECK_REQUIRED, SIGNUP_GENERIC_ERROR, is_bot_form, is_bot_submission, is_email_blocked, is_human_confirmed, verify_turnstile
 from .services.support_service import (
     SUPPORT_CATEGORIES,
     add_ticket_message,
@@ -92,29 +91,6 @@ web_bp = Blueprint("web", __name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 stripe.api_key = Config.STRIPE_SECRET_KEY
 RATE_LIMIT_BUCKETS = defaultdict(deque)
-
-# 2026-09-14: orçamento total de uma resposta agêntica, incluindo um
-# eventual fallback para a Anthropic. O gunicorn roda com --timeout 180;
-# a diferença é margem para o pré-busca (Supabase/quota), o streaming e o
-# overhead de fila/thread do worker -- sem margem, o worker é morto no meio
-# da requisição (WORKER TIMEOUT + SIGKILL) e o usuário vê "Network error"/
-# "Failed to fetch".
-#
-# 2026-09-17: a versão anterior deste teto (150s) subestimava a soma real
-# do caminho PT/JP. O laço DeepSeek tem orçamento próprio de busca (100s)
-# + síntese (40s) = 140s, então o fallback só podia começar depois disso --
-# com 150s havia apenas 10s, menos que o piso de 15s, e o worker morria do
-# mesmo jeito. Mantido em 150s, mas agora COM a reserva explícita abaixo,
-# que é o que de fato corrige o comportamento: cair para o Claude quando já
-# não há tempo útil só pendura o usuário até o SIGKILL.
-LIMITE_TOTAL_AGENTICO_SEGUNDOS = 150.0
-
-# 2026-09-17: tempo MÍNIMO para valer a pena tentar o fallback. Abaixo
-# disto, é melhor devolver um erro claro imediatamente do que abrir uma
-# busca completa no Claude que o orçamento não permite terminar -- o
-# usuário já esperou o laço inteiro da DeepSeek. Medido: no laço Claude,
-# uma busca real no acervo (4 rodadas) levou 47s; 45s cobre isso.
-RESERVA_MINIMA_FALLBACK_SEGUNDOS = 45.0
 
 SUBSCRIPTION_EXPLANATION = (
     "Cada pergunta no Goshinsho usa inteligência artificial e servidores em nuvem, "
@@ -322,6 +298,14 @@ def _friendly_error(exc):
     # `generate_agentic` quando o fallback não cabia no orçamento. O usuário
     # não tem o que fazer com isso -- a mensagem precisa dizer o que
     # aconteceu e o que tentar.
+    #
+    # 2026-10-14: RESTAURADO. Este bloco foi removido junto com o maquinário
+    # de orçamento agêntico (LIMITE_TOTAL_AGENTICO_SEGUNDOS/_erro_transitorio),
+    # mas ele não pertence àquele orçamento: é tradução de erro genérica do
+    # helper, usada por TODA rota que chama _friendly_error (inclusive o
+    # emissor de `event: error` do streaming em /api/chat). Sem ele, o usuário
+    # volta a ver "Request timed out." cru em inglês. Coberto por
+    # tests/test_llm_fallback.py::ReservaMinimaFallbackTests::test_erro_tecnico_vira_mensagem_amigavel.
     if any(p in normalized for p in (
         "request timed out", "timed out", "timeout", "connection", "connection reset",
         "service unavailable", "server busy", "overloaded", "rate limit", "too many requests",
@@ -1020,6 +1004,17 @@ def cadastro():
 
 @web_bp.post("/reenviar-confirmacao")
 def reenviar_confirmacao():
+    # 2026-10-13: rate limit para evitar spam/bombing de e-mail nesta rota.
+    limited = _rate_limit_response(
+        "reenviar_confirmacao",
+        limit=5,
+        window_seconds=3600,
+        message="Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.",
+    )
+    if limited:
+        flash("Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.", "error")
+        return redirect(url_for("web.app_view", panel="login"))
+
     email = request.form.get("email", "").strip().lower()
     if not email and current_user():
         email = (current_user().get("email") or "").strip().lower()
@@ -1088,6 +1083,17 @@ def confirmar_email_concluir():
 
 @web_bp.post("/recuperar-senha")
 def recuperar_senha():
+    # 2026-10-13: rate limit para evitar spam/bombing de e-mail nesta rota.
+    limited = _rate_limit_response(
+        "recuperar_senha",
+        limit=5,
+        window_seconds=3600,
+        message="Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.",
+    )
+    if limited:
+        flash("Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.", "error")
+        return redirect(url_for("web.app_view"))
+
     email = request.form.get("email", "").strip()
     if not email:
         flash("Digite seu e-mail para recuperar a senha.", "error")
@@ -1127,11 +1133,29 @@ def logout():
 
 @web_bp.post("/contato")
 def contato():
+    # 2026-10-13: hardening anti-abuso. Esta rota (form do contato no index)
+    # tambem aceitava envio sem limite; agora tem rate limit + filtro anti-bot.
+    limited = _rate_limit_response(
+        "contato",
+        limit=5,
+        window_seconds=3600,
+        message="Muitas mensagens em pouco tempo. Tente novamente mais tarde.",
+    )
+    if limited:
+        flash("Muitas mensagens em pouco tempo. Tente novamente mais tarde.", "error")
+        return redirect(url_for("web.app_view"))
+
     name = request.form.get("name", "").strip()
     email = request.form.get("email", "").strip()
     message = request.form.get("message", "").strip()
     if not name or not email or not message:
         flash("Preencha todos os campos.", "error")
+        return redirect(url_for("web.app_view"))
+    # Anti-bot: onde o robo cai, damos isca de sucesso sem gravar/enviar e-mail.
+    if is_bot_form(request.form, started_field="form_started") or not verify_turnstile(
+        request.form.get("cf-turnstile-response"), _client_ip()
+    ):
+        flash("Mensagem recebida com sucesso! Responderemos em breve.", "success")
         return redirect(url_for("web.app_view"))
     if is_email_blocked(email):
         flash("Mensagem recebida com sucesso! Responderemos em breve.", "success")
@@ -1146,6 +1170,39 @@ def contato():
     return redirect(url_for("web.app_view"))
 
 
+@web_bp.get("/robots.txt")
+def robots_txt():
+    # 2026-10-13: higiene basica. Desencoraja indexacao de areas sensiveis.
+    from flask import Response
+
+    body = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /admin\n"
+        "Disallow: /api/\n"
+        "Disallow: /portal/api/\n"
+        "Disallow: /forum/\n"
+    )
+    return Response(body, mimetype="text/plain")
+
+
+@web_bp.get("/.well-known/security.txt")
+def security_txt():
+    # 2026-10-13: canal para reporte de vulnerabilidades.
+    from flask import Response
+
+    from .config import Config
+
+    contato = getattr(Config, "SES_CONTACT_TO_EMAIL", None) or "contato@goshinsho.com.br"
+    body = (
+        f"Contact: mailto:{contato}\n"
+        "Expires: 2027-10-13T00:00:00.000Z\n"
+        "Preferred-Languages: pt, en\n"
+        "Canonical: https://goshinsho.com.br/.well-known/security.txt\n"
+    )
+    return Response(body, mimetype="text/plain")
+
+
 @web_bp.get("/api/support/tickets")
 def api_support_tickets():
     user = current_user()
@@ -1156,8 +1213,34 @@ def api_support_tickets():
 
 @web_bp.post("/api/support/tickets")
 def api_support_create_ticket():
+    # 2026-10-13: hardening anti-abuso. Rate limit por IP (5 tickets/hora) +
+    # filtro anti-bot (honeypot/tempo/"sou humano"). O endpoint vinha recebendo
+    # envios automatizados (scanners de SQLi) sem nenhum limite.
+    limited = _rate_limit_response(
+        "support_ticket",
+        limit=5,
+        window_seconds=3600,
+        message="Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.",
+    )
+    if limited:
+        return limited
+
     user = current_user()
     payload = request.get_json(silent=True) or {}
+
+    # Bots recebem uma resposta-isca de "sucesso", mas nada é gravado.
+    if is_bot_form(payload, started_field="form_started") or not verify_turnstile(
+        payload.get("cf_turnstile_response"), _client_ip()
+    ):
+        return jsonify({
+            "ticket": {
+                "id": None,
+                "subject": (payload.get("subject") or "").strip(),
+                "status": "open",
+                "messages": [],
+            }
+        }), 201
+
     name = (payload.get("name") or "").strip()
     email = (payload.get("email") or (user or {}).get("email") or "").strip()
     subject = (payload.get("subject") or "").strip()
@@ -1230,12 +1313,6 @@ def api_message_feedback(message_id):
 
 @web_bp.post("/api/chat")
 def api_chat():
-    # 2026-09-17: marco do INICIO REAL da requisição. O orçamento do fallback
-    # precisa contar daqui, não de `inicio_busca`: entre os dois há chamadas
-    # ao Supabase (current_user, quota, conversa) que já consomem parte dos
-    # 180s do gunicorn. Medir só a partir da busca fazia o tempo-box
-    # subestimar o gasto e autorizar um fallback que não cabia mais.
-    inicio_request = time()
     user = current_user()
     payload = request.get_json(silent=True) or {}
     expand_previous = bool(payload.get("expand_previous"))
@@ -1376,16 +1453,7 @@ def api_chat():
             responder_agentico_deepseek_jp,
         )
         from .services.conversation_context import strip_source_marker
-        from .services.llm_fallback import (
-            fallback_disponivel,
-            responder_agentico_claude,
-            responder_agentico_claude_jp,
-            _erro_transitorio,
-        )
-        from .services.question_triage import resposta_de_triagem
 
-        # Definido ANTES da triagem, que também devolve `search_variant` no
-        # payload -- o front usa esse campo para telemetria da resposta.
         search_variant = "agentic_pt" if retrieval_mode == "pt_agentic" else "agentic_jp"
         responder_fn = responder_agentico_deepseek if retrieval_mode == "pt_agentic" else responder_agentico_deepseek_jp
         historico_agentico = [
@@ -1393,44 +1461,6 @@ def api_chat():
             for h in history
             if isinstance(h, dict) and h.get("role") in ("user", "assistant") and h.get("content")
         ]
-
-        # 2026-09-19: TRIAGEM INICIAL -- responde sem tocar no acervo o que
-        # comprovadamente não precisa dele (saudação, agradecimento, nome do
-        # assistente, dúvida sobre o próprio site). Antes disto, "Olá
-        # Goshinsho" custava 4.539 tokens e 21,8s (o system prompt inteiro,
-        # regras 1-10, reenviado) para devolver "Olá! Que bom ter você por
-        # aqui".
-        #
-        # Condições para triar (todas necessárias):
-        #   - nenhum histórico na conversa: "sim"/"ok" no MEIO de um diálogo
-        #     são continuações, não cortesia (ver `_PALAVRAS_AMBIGUAS`);
-        #   - não é "Aprofundar" nem "Refazer com citações": esses têm
-        #     semântica própria e dependem do turno anterior.
-        #
-        # A triagem devolve None para tudo que não for inequívoco, então
-        # perguntas de conteúdo seguem o caminho normal sem alteração.
-        if not historico_agentico and not expand_previous and not cite_sources:
-            resposta_triagem = resposta_de_triagem(question, language=language)
-            if resposta_triagem:
-                remaining_questions = consume_question_quota(user)
-                assistant_message_id = (
-                    save_message(conversation_id, "assistant", resposta_triagem)
-                    if user and conversation_id
-                    else None
-                )
-                return jsonify(
-                    {
-                        "answer": resposta_triagem,
-                        "sources": [],
-                        "conversation_id": conversation_id,
-                        "assistant_message_id": assistant_message_id,
-                        "remaining_questions": remaining_questions,
-                        "quota_status": _quota_status(user),
-                        "search_variant": search_variant,
-                        "triaged": True,
-                    }
-                )
-
         if cite_sources:
             # 2026-08-03: atalho sem chamada nova ao modelo -- se a resposta
             # anterior já foi dada em modo "Com citações", ela já tem
@@ -1543,73 +1573,7 @@ def api_chat():
                 else:
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 extra_kwargs["on_deep_search"] = aviso_busca_profunda
-                try:
-                    r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
-                except Exception as exc:
-                    # 2026-09-14: rede de segurança contra indisponibilidade
-                    # da API DeepSeek (ver services/llm_fallback.py). Só cai
-                    # para o Claude quando o erro é transitório de
-                    # infraestrutura -- erro de programação/dados sobe
-                    # intacto, para não esconder bug nosso nem gastar com
-                    # outro provedor na mesma pergunta quebrada.
-                    if not (_erro_transitorio(exc) and fallback_disponivel()):
-                        raise
-                    # Conta da ENTRADA da requisição (inclui o pré-busca no
-                    # Supabase), não só do laço -- ver nota em `inicio_request`.
-                    tempo_gasto = time() - inicio_request
-                    # Tempo-box: o fallback roda DEPOIS do primário já ter
-                    # gasto tempo. Sem este teto, uma falha lenta da DeepSeek
-                    # (~100s) + um fallback cheio (~90s) estouraria o
-                    # --timeout 180 do gunicorn e o worker seria morto no
-                    # meio -- reproduzindo exatamente o "Failed to fetch"
-                    # que esta camada existe para evitar.
-                    restante = LIMITE_TOTAL_AGENTICO_SEGUNDOS - tempo_gasto
-                    if restante < RESERVA_MINIMA_FALLBACK_SEGUNDOS:
-                        # 2026-09-17: achado em produção -- quando a DeepSeek
-                        # falha no FIM do orçamento (caso real: APITimeoutError
-                        # aos 135s), não sobra tempo para o Claude e a tentativa
-                        # só pendura o usuário até o SIGKILL, entregando o mesmo
-                        # "Network error". Melhor devolver o erro AGORA, com
-                        # mensagem útil, do que abrir uma busca que não cabe.
-                        current_app.logger.warning(
-                            "agêntico DeepSeek falhou (%s) apos %.0fs -- restavam apenas %.0fs, "
-                            "abaixo da reserva de %.0fs; nao caindo para o fallback: %s",
-                            type(exc).__name__, tempo_gasto, restante,
-                            RESERVA_MINIMA_FALLBACK_SEGUNDOS, exc,
-                        )
-                        raise
-                    # `current_app` (não `app`): routes.py é um Blueprint e
-                    # não tem o objeto app em escopo -- usar `app.logger`
-                    # aqui levantava NameError DENTRO do fluxo de fallback,
-                    # transformando um erro recuperável da DeepSeek em erro
-                    # fatal para o usuário. Pego pelo teste de integração.
-                    try:
-                        current_app.logger.warning(
-                            "agêntico DeepSeek falhou (%s); caindo para o fallback Claude "
-                            "com %.0fs restantes: %s",
-                            type(exc).__name__, restante, exc,
-                        )
-                    except Exception:
-                        pass  # log nunca deve derrubar a recuperação
-                    event_queue.put({"event": "status", "code": "provider_fallback"})
-                    if retrieval_mode == "jp_agentic":
-                        fallback_kwargs = {
-                            "idioma": language,
-                            "com_citacoes": com_citacoes,
-                            "on_deep_search": aviso_busca_profunda,
-                            "limite_segundos": restante,
-                        }
-                        r = responder_agentico_claude_jp(
-                            pergunta_agentico, historico_agentico, **fallback_kwargs
-                        )
-                    else:
-                        r = responder_agentico_claude(
-                            pergunta_agentico,
-                            historico_agentico,
-                            system_prompt=extra_kwargs["system_prompt"],
-                            on_deep_search=aviso_busca_profunda,
-                            limite_segundos=restante,
-                        )
+                r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
                 # 2026-07-31: sem isso, o modo agenciado (motor único desde

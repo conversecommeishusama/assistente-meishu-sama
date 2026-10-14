@@ -94,3 +94,9 @@ class Config:
     # Vazio desativa -- o script (cookie_consent.js) só carrega o Pixel de
     # verdade com consentimento explícito do usuário, nunca antes disso.
     META_PIXEL_ID = _env("META_PIXEL_ID")
+    # 2026-10-13: Cloudflare Turnstile (anti-bot). Inativo por padrão -- só
+    # liga quando TURNSTILE_SECRET_KEY (servidor) e TURNSTILE_SITE_KEY (cliente)
+    # estiverem no .env. Sem as chaves, o app funciona exatamente como antes.
+    TURNSTILE_SECRET_KEY = _env("TURNSTILE_SECRET_KEY")
+    TURNSTILE_SITE_KEY = _env("TURNSTILE_SITE_KEY")
+    TURNSTILE_ENABLED = bool(_env("TURNSTILE_SECRET_KEY"))

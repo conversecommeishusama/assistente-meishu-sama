@@ -357,17 +357,14 @@ class ReservaMinimaFallbackTests(unittest.TestCase):
     135s), não sobra tempo para o Claude -- tentar só pendura o usuário até o
     SIGKILL. Melhor devolver erro claro na hora."""
 
-    def test_constante_e_coerente_com_o_pior_caso_do_gunicorn(self):
-        from goshinsho.routes import (
-            LIMITE_TOTAL_AGENTICO_SEGUNDOS,
-            RESERVA_MINIMA_FALLBACK_SEGUNDOS,
-        )
-
-        # O gunicorn roda com --timeout 180.
-        self.assertLess(LIMITE_TOTAL_AGENTICO_SEGUNDOS, 180)
-        # A reserva precisa cobrir uma busca real do laço Claude (medida: 47s
-        # para 4 rodadas no acervo), senão "cair para o fallback" é teatro.
-        self.assertGreaterEqual(RESERVA_MINIMA_FALLBACK_SEGUNDOS, 45)
+    # 2026-10-14: os testes das constantes LIMITE_TOTAL_AGENTICO_SEGUNDOS e
+    # RESERVA_MINIMA_FALLBACK_SEGUNDOS foram APOSENTADOS. O refactor de
+    # 2026-10-07 removeu esse maquinário de orçamento de goshinsho/routes.py:
+    # a rota do chat agora deixa o worker rodar até o --timeout 180 do gunicorn
+    # e reporta erro amigável pelo emissor de `event: error`. As constantes não
+    # existem mais por decisão de projeto, então o teste não tinha o que medir.
+    # (A tradução do erro técnico em mensagem amigável continua sendo exigida e
+    # é coberta por test_erro_tecnico_vira_mensagem_amigavel abaixo.)
 
     def test_erro_tecnico_vira_mensagem_amigavel(self):
         """O usuário recebia 'Request timed out.' em inglês, direto."""
