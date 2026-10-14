@@ -44,7 +44,7 @@ TIPOS_AUDITORIA = {
     "r3", "marc_r3", "nota_r3", "marc", "purif", "titulo", "inversao_causa",
     "dedup", "nota", "uniformizar", "r4", "marcins", "marcdel", "r3b",
     "rotulos_fala", "termo_obscuro", "inserir_marcadores", "r5", "r5b",
-    "goshintai",
+    "goshintai", "r6", "r6b", "r6c", "fix_auditoria_r6",
 }
 
 
@@ -142,6 +142,12 @@ def main() -> int:
             if antigo == "###INICIO###":
                 ambiguas += 1
                 pendentes.append(f"{item}.{campo}: parágrafo novo no início sem âncora")
+                continue
+            # IDEMPOTÊNCIA: nas transições de inserção o "antigo" é o parágrafo
+            # anterior, que continua a existir como prefixo do bloco já
+            # inserido — reaplicar duplicaria o bloco. Se o resultado já lá
+            # estiver, não há nada a fazer.
+            if novo and novo in texto:
                 continue
             n = texto.count(antigo)
             if n == 2:

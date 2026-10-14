@@ -114,8 +114,11 @@ def main() -> int:
             continue
         d = json.loads(f.read_text(encoding="utf-8"))
         jp = d.get("texto_jp") or ""
-        jq = len(re.findall(r"（お伺）", jp))
-        ja = len(re.findall(r"（御垂示）", jp))
+        # Duas famílias de perguntas/respostas no japonês, ambas com o mesmo
+        # valor: （お伺）/（御垂示） (canónica) e （問）/（答） (diálogos, ex.:
+        # registo de espírito). Somam-se para a validação de contagem.
+        jq = len(re.findall(r"（お伺）|（問）", jp))
+        ja = len(re.findall(r"（御垂示）|（答）", jp))
         if not (jq or ja):
             continue
 
