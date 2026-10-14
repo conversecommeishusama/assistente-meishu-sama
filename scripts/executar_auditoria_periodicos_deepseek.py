@@ -44,25 +44,32 @@ PROTOCOLO = BASE / "PROTOCOLO_AUDITORIA.md"
 CONSOLIDADO = BASE / "AUDITORIA_CONSOLIDADA_DEEPSEEK.json"
 
 
-def _configurar(rotulo: str) -> None:
+def _configurar(rotulo: str, base: Path | None = None,
+                sufixo: str | None = None) -> None:
     """Aponta LOTES/RESULTADOS/LOGS/PROTOCOLO/CONSOLIDADO para uma ronda.
 
     `rotulo` vazio = ronda 1 (pastas originais); caso contrário usa sufixo
     `_<rotulo>` (ex.: `--rotulo r2` -> `lotes_r2/`, `resultados_deepseek_r2/`,
     `PROTOCOLO_AUDITORIA_R2.md`). Evita sobrepor rondas de auditoria.
+
+    `base` permite auditar outro corpus (ex.: o livro de 1947) mantendo o mesmo
+    executor; `sufixo` substitui o nome do ficheiro do protocolo/consolidado
+    quando o rótulo não é o adequado.
     """
     global LOTES, RESULTADOS, LOGS, PROTOCOLO, CONSOLIDADO
-    if not rotulo:
-        return
-    sufo = f"_{rotulo}"
+    if base is not None:
+        BASE = base
+    sufo = f"_{rotulo}" if rotulo else ""
+    nom = sufixo if sufixo is not None else (rotulo.upper() if rotulo else "")
     LOTES = BASE / f"lotes{sufo}"
     RESULTADOS = BASE / f"resultados_deepseek{sufo}"
     LOGS = BASE / f"logs_deepseek{sufo}"
-    PROTOCOLO = BASE / f"PROTOCOLO_AUDITORIA{sufo.upper()}.md"
-    CONSOLIDADO = BASE / f"AUDITORIA_CONSOLIDADA_DEEPSEEK{sufo.upper()}.json"
+    PROTOCOLO = BASE / (f"PROTOCOLO_{nom}.md" if nom else "PROTOCOLO_AUDITORIA.md")
+    CONSOLIDADO = BASE / (f"AUDITORIA_CONSOLIDADA_{nom}.json" if nom
+                          else "AUDITORIA_CONSOLIDADA_DEEPSEEK.json")
 
 MODELO = os.environ.get("DEEPSEEK_AUDIT_MODEL", "deepseek-v4-flash")
-MAX_TOKENS = 32768
+MAX_TOKENS = 64000
 TIMEOUT_S = 900.0
 TRAVA = threading.Lock()
 
@@ -243,10 +250,18 @@ def main() -> int:
     ap.add_argument("--lote", type=int)
     ap.add_argument("--rotulo", default="",
                     help="identificador da ronda (ex.: r2) — cria pastas _r2")
+    ap.add_argument("--base", type=Path, default=None,
+                    help="pasta de trabalho da auditoria (por omissão, os "
+                         "periódicos); ex.: reports/auditoria_tengoku1947")
+    ap.add_argument("--protocolo", default=None,
+                    help="nome do protocolo/consolidado quando não há rótulo "
+                         "(ex.: 'LIVRO1947' -> PROTOCOLO_LIVRO1947.md)")
     ap.add_argument("--consolidar", action="store_true")
     args = ap.parse_args()
 
-    _configurar(args.rotulo)
+    _configurar(args.rotulo, args.base,
+                f"{args.protocolo}_{args.rotulo.upper()}" if (args.protocolo and args.rotulo)
+                else args.protocolo)
 
     if args.consolidar:
         return consolidar()

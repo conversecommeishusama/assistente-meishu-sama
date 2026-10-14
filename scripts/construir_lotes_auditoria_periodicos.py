@@ -40,13 +40,17 @@ def main() -> int:
                     help="orçamento de caracteres (JP+PT) por lote")
     ap.add_argument("--saida", type=Path, default=SAIDA,
                     help="pasta de destino dos lotes")
+    ap.add_argument("--itens-dir", type=Path, default=ITENS,
+                    help="pasta dos itens a auditar (por omissão, os periódicos)")
+    ap.add_argument("--snapshot", type=Path, default=SNAPSHOT,
+                    help="snapshot de comparação para --priorizar alterados")
     ap.add_argument("--priorizar", choices=("alterados", "reparos", "nenhum"),
                     default="alterados",
                     help="critério de ordenação (o que se audita primeiro)")
     args = ap.parse_args()
 
-    atuais = _carregar(ITENS)
-    antigos = _carregar(SNAPSHOT) if SNAPSHOT.is_dir() else {}
+    atuais = _carregar(args.itens_dir)
+    antigos = _carregar(args.snapshot) if args.snapshot.is_dir() else {}
 
     ordem: list[tuple[int, str]] = []
     for nome, d in atuais.items():
@@ -82,12 +86,12 @@ def main() -> int:
             atual, peso = [], 0
         registo = {
             "arquivo": nome,
-            "veiculo": d.get("veiculo"),
+            "veiculo": d.get("veiculo") or d.get("obra"),
             "numero": d.get("numero"),
             "ordem": d.get("ordem"),
             "titulo_jp": d.get("titulo_jp"),
             "titulo_pt": d.get("titulo_pt"),
-            "fonte_pt": d.get("fonte_pt"),
+            "fonte_pt": d.get("fonte_pt") or d.get("referencia"),
             "texto_jp": d.get("texto_jp"),
             "texto_pt": d.get("texto_pt"),
             "reparos": d.get("reparos") or [],
