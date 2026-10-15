@@ -334,6 +334,11 @@ segue o ciclo já estabelecido (ver `HANDOFF_LIVRO_1947_EVANGELHO.md` §4-6).
 
 ### 10.3 Item 4 — premissas verificadas, com divergências
 
+> ⚠️ **Correcção (16/10).** A leitura abaixo foi feita com
+> `GOSHINSHO_TEXTOS_PT` forçado para `textos_portugues/`. O valor **real** (no
+> `.env`) é `textos_leitura_colaborativa/` — **outro directório**, com 137
+> obras. A conclusão «o Shizuoka já está na leitura» era **falsa**: ver §11.1.
+
 Verificado **no código**, não no documento:
 
 - **A §5 está desactualizada.** `19500801 - Primeira palestra após o Incidente de
@@ -365,3 +370,134 @@ reconstrução dos índices.
 - **Item 5** (revisão global: 137 ficheiros, 15,7 M caracteres): inalterado.
   Fechado o item 1, a auditoria de coerência JP↔PT deixa de estar «cega em três
   quartos do texto» nos quatro periódicos.
+
+---
+
+## 11. Execução — sessão 3 (16/10/2026)
+
+Pedido do usuário nesta sessão: *dendo no tebiki* na leitura **e** no Chat; fazer
+o OCR das duas obras em PDF; verificar no *zenshū* as obras ausentes do acervo;
+`Asu no Ijutsu` fora dos dois; **fazer o gate** entre só-leitura e os dois;
+orçamento de tradução; e conferir se o glossário está actualizado.
+
+### 11.1 O gate — implementado, e ele já existia de facto (por directório)
+
+**Descoberta que corrige a §10.3:** os dois canais não partilham directório.
+
+| Canal | Directório | Conteúdo |
+|---|---|---|
+| Leitura Colaborativa | `textos_leitura_colaborativa/` (`GOSHINSHO_TEXTOS_PT` no `.env`) | 137 obras — já é uma **selecção curada** |
+| Chat Goshinsho | `textos_portugues/` + `textos_japones/` | 140 PT + 141 JP |
+
+Ou seja: **a existência nos dois directórios já é, na prática, o gate**. O que
+faltava era (a) uma **declaração** única da intenção e (b) **encerrar o furo** do
+`leitura_service.obter_texto()`, que servia qualquer `.txt` do directório mesmo
+sem estar na lista — dava para pedir `/leitura/Medicina_do_Amanha.txt` por URL.
+
+**Implementado:**
+
+- `escopo_corpus.json` (raiz, versionado) — a política, por obra, com `leitura` e
+  `chat` independentes e motivo. Regra de ouro: **fail-open** (obra não declarada
+  ⇒ entra nos dois; JSON inválido ⇒ tudo entra).
+- `goshinsho/services/escopo_corpus.py` — o leitor único.
+- `leitura_service.py` — `FORA_LEITURA` deixou de ser código; `obter_texto()`
+  passou a aplicar o gate (era o furo).
+- `build_clean_large_indexes.py` — `collect_entries()` salta as obras com
+  `chat=false`, e reporta quais.
+- `scripts/verificar_escopo_corpus.py` — compara **declaração × realidade**.
+
+**Divergências actuais (3), todas acção pendente:**
+
+| Obra | Declarado | Realidade | Acção |
+|---|---|---|---|
+| `Medicina_do_Amanha.txt` (明日の医術) | leitura=F **chat=F** | F / **V** | tirar do corpus do Chat (rebuild) |
+| `Esboco_da_Medicina.txt` (§3.3) | leitura=V **chat=F** | V / **V** | idem |
+| `…Incidente de Shizuoka.txt` (§5) | **leitura=V** chat=F | **F** / V | copiar para `textos_leitura_colaborativa/` + tirar do Chat |
+
+⚠️ **O gate só passa a valer depois de reconstruir** `data/clean_corpus` + índices
+FAISS (`build_clean_large_indexes.py --install`). Hoje o Chat continua a servir as
+obras excluídas, porque os índices são de antes do gate.
+
+### 11.2 OCR dos dois PDF — feito (método novo, paralelo)
+
+Não existia OCR utilizável: o de `indice/ocr_txt/` (de um run antigo) está
+corrompido. Ferramenta nova `rattail/work/reocr_pdf_facsimile.py`, a partir do
+método validado de `work/reocr.py` (o do 教修要綱), com duas mudanças:
+
+- **extrai a imagem embutida** (`pdfimages`) em vez de rasterizar — nos dois
+  casos o PDF é digitalização e a imagem *é* o original (`goshinsho.pdf` a
+  2700×3900 bitonal; `igaku_kankei.pdf` a 1022×1434 JPEG);
+- **paraleliza por página** com `OMP_THREAD_LIMIT=1` e **timeout por página**.
+  Sem isto, uma única página de ilustração consumiu 32 min de CPU e travava o
+  progresso (que era reportado em ordem) — o run inteiro ficou preso até se
+  diagnosticar.
+
+### 11.3 Verificação no *zenshū* das obras ausentes do acervo
+
+O `zenshū` (岡田茂吉全集, `referencia_zenshu_rokkan_…/chosaku_full.txt` e
+`kowa_full.txt`) tem cabeçalhos `■■título■■` e linha de fonte com data e volume.
+
+| Obra (§4.4) | No acervo | No *zenshū* | Decisão |
+|---|---|---|---|
+| 浄霊法講座 補 / 浄霊医術略解 | não | **não** | **deixada de lado** (pedido do usuário) |
+| 箱根美術館 特別展 | não | **não** (só artigos afins sobre o museu) | **deixada de lado** |
+| 神智之光 講話集（補） | **sim** (`situmo22/23`) | **sim** (`神智の光`, 地天 18–19, 29 secções) | **sem lacuna** — já no corpus |
+
+O `神智の光` é a série publicada em 『地上天国』18–19; existe no acervo
+(`search1/situmon/situmo22.html` e `situmo23.html`), foi completado pelo item 1 e
+está a **100%** no corpus. O *zenshū* confirma ser a mesma obra.
+
+### 11.4 `dendo` — o achado que muda o orçamento
+
+O `dendo` Ⅰ·Ⅱ **não é texto novo: é compilação de citações**. 521 citações de
+fonte nos 2 volumes (『御教え集』212, 『御垂示録』181, 『御光話録』105, 『栄光』13,
+『地上天国』4, 『救世』2), e **100% dos números citados** — 77 distintos
+(教え集 32 · 垂示録 28 · 光話録 17) — **já estão no corpus do Chat**.
+
+Consequência: o **conteúdo** já é recuperável; o que falta é a **estrutura do
+manual** (869 cabeçalhos de capítulo/secção). Traduzir os 375.978 chars JP por
+inteiro duplicaria citações; traduzir só a camada estrutural dá o mapa tópico que
+o usuário quer, por centavos. As duas opções estão orçamentadas em
+`docs/ORCAMENTO_TRADUCAO_LACUNAS_20261016.md` §7 — **precisa de decisão**.
+
+### 11.5 Glossário — conferido e completado
+
+`glossario_traducao.json` = **852 entradas**; `glossario_regras.json` = versão
+**2026-10-16b**. Estavam presentes todos os ajustes do commit de 15/10
+(`きれいにする`/`なる`, `清潔にする`, `清くする`, `美にする`/`美しくする`) e as 13
+entradas marcadas como invenção (12 de 13; `霊的医術` não existe).
+
+**Faltavam 3 regras sensíveis ao contexto**, agora aplicadas
+(`scripts/anotar_glossario_contexto_20261016.py`):
+
+- `道理` — 'Caminho Perfeito' **ou** 'razão/conclusão lógica', conforme o
+  contexto (era pendência declarada no handoff do livro 1947 §5/§8);
+- `凝り` — 'Nódulo' (toxina solidificada) **ou** 'rigidez' (enumeração de achaques);
+- `光明` — 'Kōmyō' **só** para o amuleto; substantivo comum = 'luz/Luz'.
+
+A aplicação **rigorosa** na tradução é a etapa 2 do pipeline
+(`scripts/trava_glossario.py`), que verifica a saída — não é pedido no prompt.
+
+### 11.6 Orçamento
+
+`docs/ORCAMENTO_TRADUCAO_LACUNAS_20261016.md`. Resumo (sem o OCR):
+
+| | chars JP | PT est. | Tokens (2–3 passadas) | Custo blended | Tempo @10 w |
+|---|---:|---:|---:|---:|---:|
+| A §4.4 (Meishu-Sama) | 16.824 | 38.695 | | | |
+| B `dendo` Ⅰ·Ⅱ | 375.978 | 864.749 | | | |
+| C 自観叢書 06/13/15 | 118.187 | 271.830 | | | |
+| **total** | **510.989** | **1.175.275** | 0,81–1,87 M | **R$ 0,24–0,43** | **~3,1 h** |
+
+Mais as duas OCR (御神書 + 医学関係), cujo volume se mede quando a OCR terminar.
+
+### 11.7 Pendente desta sessão
+
+1. **OCR em curso** (goshinsho 534 p. + igaku 543 p.) → medir chars, juntar ao
+   orçamento, e inserir no corpus.
+2. **Decisão sobre o `dendo`** (§11.4): traduzir inteiro ou só a estrutura.
+3. **Reconstruir `clean_corpus` + índices** para o gate valer (§11.1) — exige
+   autorização.
+4. **Confirmar a §5 (Shizuoka)**: a decisão registada manda pô-lo **na** leitura
+   colaborativa, o que o expõe publicamente. Está declarado, não materializado.
+5. Tradução (A, B conforme decisão, C) + promoção + rebuild.
