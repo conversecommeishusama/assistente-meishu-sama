@@ -299,11 +299,69 @@ ficaram com 86–91% do esperado).
 acervo, enquanto o resto do corpus está modernizado. Uniformizar seria operação
 editorial à parte. Fica assinalado, não resolvido.
 
-### 10.2 Itens 2–5 — por fazer
+### 10.2 Item 2 (parcial) — lacunas da §4.4, com verificação de duplicação
 
-Nada feito ainda nos itens 2 (lacunas §4.4), 3 (volumes §4.3), 4 (§5/§3.3) e 5
-(ondas de revisão). Nota de alcance para quem continuar: as obras da §4.4 estão
-em japonês e a leitura colaborativa é em português — o item 2 implica
-**tradução**, não só inserção, tal como o item 3 (§4.3 são 自観叢書 não escritos
-por Meishu-Sama). O item 1, que era pré-requisito da auditoria JP↔PT do item 5,
-está fechado.
+A §4.4 listava as obras como «texto disponível, fora do corpus» sem medir se o
+texto era **novo** ou **recompilado**. Medido agora por amostragem de 60-meros
+de cada fonte contra o corpus japonês já completado:
+
+| Obra (§4.4) | Fonte | chars | duplic. | decisão |
+|---|---|---|---|---|
+| 世界救世教教義解説（病貧争の巻） | `kyogi1.html` | 10.559 | **0%** | ✅ extraído |
+| 初めて浄霊を受ける方の為に | `hajimete.html` | 6.259 | **0%** | ✅ extraído |
+| 伝道の手引き Ⅰ·Ⅱ | `dendo1/2.epub` | 181.420 | **73%** | ⛔ compilação — não somar |
+| 御神書（宗教篇） | `goshinsho.pdf` (139 MB) | — | — | precisa OCR |
+| 医学関係御論文集 | `igaku_kankei.pdf` (128 MB) | — | — | precisa OCR |
+| 浄霊法講座 補 / 浄霊医術略解 | — | — | — | não está no acervo |
+| 神智之光 講話集（補） | — | — | — | não está no acervo |
+| 箱根美術館 特別展 | — | — | — | não está no acervo |
+
+Ferramenta: `scripts/extrair_lacunas_acervo.py` (`--aplicar` grava; por omissão
+relata). Verifica duplicação (**≥ 60% → pula**) e escreve no formato
+`título / referência / corpo` dos restantes ficheiros de trabalho JP. Criados:
+
+- `textos_japones/19510601-世界救世教教義解説（病貧争の巻）.txt` (10.654 chars)
+- `textos_japones/19541210-初めて浄霊を受ける方の為に.txt` (6.356 chars)
+
+O `kyogi2` (地上天国と自然栽培の巻) já estava no corpus a **100%** — o `kyogi1`
+é o volume irmão em falta. O `dendo` reproduz a 73% texto já coberto (compila
+御教え集 etc.), pelo que **não** deve ser somado: é a mesma lição do relatório
+do rattail de 14/10 — «baixar não é o mesmo que ganhar acervo».
+
+**Falta para fechar o item 2:** (a) OCR dos dois PDF e nova medição; (b)
+**tradução** dos textos extraídos (a leitura colaborativa é em PT). A tradução
+segue o ciclo já estabelecido (ver `HANDOFF_LIVRO_1947_EVANGELHO.md` §4-6).
+
+### 10.3 Item 4 — premissas verificadas, com divergências
+
+Verificado **no código**, não no documento:
+
+- **A §5 está desactualizada.** `19500801 - Primeira palestra após o Incidente de
+  Shizuoka.txt` **já está** na leitura colaborativa — `listar_obras()` devolve
+  138 obras e inclui-o; não está em `FORA_LEITURA`.
+- **A §3.3 contradiz a decisão do item 4.** A decisão manda `Medicina_do_Amanha`
+  e `Esboco_da_Medicina` para a leitura colaborativa (e fora do Chat). Hoje
+  `Esboco_da_Medicina` está na leitura, mas `Medicina_do_Amanha` **não** —
+  continua em `FORA_LEITURA` (`leitura_service.py:35`), por decisão de 24/08.
+- **O lado «não no Chat» não tem gate.** O corpus do Chat
+  (`data/clean_corpus/entries.jsonl`, 5.998 entradas) é gerado por
+  `scripts/build_clean_large_indexes.py`, que indexa **tudo** o que está em
+  `textos_portugues/` + `textos_japones/` + `data/publication_sources/`. Os três
+  textos estão indexados hoje (Shizuoka 1, Esboço 7, Medicina_do_Amanha 4
+  entradas). Excluí-los exige um filtro no `collect_entries()` **e** reconstruir
+  `clean_corpus` + índices FAISS — não é alteração de runtime.
+
+Por isso o item 4 ficou **por aplicar**: fazer só metade (tirar de
+`FORA_LEITURA`) deixaria o `Medicina_do_Amanha` na leitura **e** no Chat — nem o
+estado antigo nem o decidido. Precisa de confirmação da regra e de agendar a
+reconstrução dos índices.
+
+### 10.4 Itens 3 e 5
+
+- **Item 3** (§4.3: sosyo06/13/15, não escritos por Meishu-Sama → só leitura
+  colaborativa): mesma natureza do item 2 — os textos existem
+  (`sosyo06/13/15.html`) mas precisam de **tradução**, e têm de ser medidos
+  contra o corpus antes de somar, como o `dendo`.
+- **Item 5** (revisão global: 137 ficheiros, 15,7 M caracteres): inalterado.
+  Fechado o item 1, a auditoria de coerência JP↔PT deixa de estar «cega em três
+  quartos do texto» nos quatro periódicos.
