@@ -241,3 +241,69 @@ git log --oneline -6    # HEAD: bf70ca01
 - A referência `referencia_zenshu_rokkan_DIREITOS_AUTORAIS_APAGAR_DEPOIS/` está
   fora do git e a apagar por direitos autorais — **nunca citar como fonte**.
 - Estado anterior do livro de 1947: ver `HANDOFF_LIVRO_1947_EVANGELHO.md`.
+
+---
+
+## 10. Execução — sessão 2 (15/10/2026)
+
+### 10.1 Item 1 ✅ — corpus japonês dos periódicos completado
+
+**O defeito não era corrupção difusa: era omissão.** O corpus japonês
+(`textos_japones/{Tijotengoku,Eiko,Hikari,Kyusei}.txt`) é a **edição
+modernizada** dos escritos de Meishu-Sama, mas ficou parado em 07/08/2026: os
+**415 escritos** traduzidos e promovidos recentemente para o português nunca
+foram acrescentados ao japonês. Dois indícios independentes confirmam-no:
+
+- o próprio `reports/periodicos_trabalho/PERIODICOS_MEISHU_SAMA_FINAL.json`
+  marca 415 itens como `ausente` (0% de coincidência) e 770 como `presente` —
+  e os 415 `ausente` são exactamente os 415 artigos em
+  `reports/traducao_periodicos/itens/`;
+- a razão de caracteres PT/JP saía 7,65 · 5,83 · 3,79 · 3,77.
+
+⚠️ **Correção de §3.1/§3.2.** O texto do corpus **não está truncado**: é uma
+edição modernizada (kana moderna, kanji de uso corrente) da **mesma** obra do
+acervo. Por isso os 60-meros dão ~4% de coincidência nos itens `presente`, mas
+os **15-meros dão ~48%** — a mesma obra, grafia diferente; não é conteúdo
+em falta. A corrupção `朩`/`〄` de §3.2 existe, mas é herdada da edição, não
+impede o uso e não foi tocada nesta sessão.
+
+**Correção aplicada.** Ferramenta nova `scripts/completar_jp_periodicos.py`
+(`--aplicar` grava, com backup; sem ele é dry-run). Acrescenta ao fim de cada
+ficheiro JP os itens ainda ausentes, com o corpo extraído do acervo do rattail
+(`arquivo` da lista), **preservando parágrafos** — ao contrário de
+`montar_fila_traducao_periodicos.corpo_rattail`, que colapsa tudo numa linha —
+dedup por título, linha de referência («『栄光』75号、昭和25(1950)年10月25日発行»)
+e refluído a 50 colunas como o resto do corpus. O espelho
+`reports/livros_trabalho/jp/` é mantido em sincronia.
+
+| Periódico | artigos + | chars JP + | JP antes | JP depois | razão PT/JP antes → depois |
+|---|---|---|---|---|---|
+| Tijotengoku | 82 | 247.667 | 117.595 | 377.866 | 7,65 → **2,43** |
+| Eiko | 211 | 300.485 | 556.249 | 873.951 | 3,77 → **2,42** |
+| Hikari | 86 | 69.582 | 150.414 | 225.257 | 3,79 → **2,56** |
+| Kyusei | 37 | 82.528 | 65.616 | 152.243 | 5,83 → **2,55** |
+| **total** | **416** | **700.262** | 889.874 | 1.629.317 | — |
+
+Os quatro entraram na faixa esperada (mediana dos 91 pares obra-a-obra = 2,22;
+ficaram com 86–91% do esperado).
+
+**Validação independente** (`scripts/diagnosticar_jp_periodicos.py` + amostragem
+60-meros do acervo contra o corpus completado):
+
+- itens `ausente`: **0% → 91–96%** de coincidência; 409 dos 416 acima de 80%;
+- itens `presente`: ~4% (60-meros) / ~48% (15-meros), como esperado;
+- razão extraído/esperado por item (contra o campo `chars` da lista): mediana
+  **1,00** (p90 1,02, máx 1,10) — a extração **não** puxa texto vizinho.
+
+**Limitação registada.** Os blocos novos entram na grafia **histórica** do
+acervo, enquanto o resto do corpus está modernizado. Uniformizar seria operação
+editorial à parte. Fica assinalado, não resolvido.
+
+### 10.2 Itens 2–5 — por fazer
+
+Nada feito ainda nos itens 2 (lacunas §4.4), 3 (volumes §4.3), 4 (§5/§3.3) e 5
+(ondas de revisão). Nota de alcance para quem continuar: as obras da §4.4 estão
+em japonês e a leitura colaborativa é em português — o item 2 implica
+**tradução**, não só inserção, tal como o item 3 (§4.3 são 自観叢書 não escritos
+por Meishu-Sama). O item 1, que era pré-requisito da auditoria JP↔PT do item 5,
+está fechado.
