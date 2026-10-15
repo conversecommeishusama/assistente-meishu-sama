@@ -1,0 +1,42 @@
+{
+  "_comentario": "Escopo do corpus por obra: separa o que entra na Leitura Colaborativa do que entra no corpo de pesquisa do Chat Goshinsho. Por omissão TODA a obra entra nos DOIS canais. Só é preciso declarar aqui o que foge à regra. Lido por goshinsho/services/escopo_corpus.py, que é usado por goshinsho/services/leitura_service.py (canal 'leitura') e por scripts/build_clean_large_indexes.py (canal 'chat'). Ausência do ficheiro, JSON inválido ou obra não declarada = obra nos dois canais (fail-open): nunca se perde conteúdo por falha técnica. Ver HANDOFF_ACERVO_LACUNAS_20261015.md §10.",
+
+  "_canais": {
+    "leitura": "Leitura Colaborativa (área da comunidade, goshinsho/services/leitura_service.py)",
+    "chat": "Corpo de pesquisa do Chat Goshinsho (data/clean_corpus + índices FAISS, scripts/build_clean_large_indexes.py)"
+  },
+
+  "por_obra": {
+    "Medicina_do_Amanha.txt": {
+      "leitura": false,
+      "chat": false,
+      "motivo": "明日の医術 (Asu no Ijutsu) — decisão do usuário de 16/10/2026: fica fora da Leitura Colaborativa E do Chat Goshinsho."
+    },
+    "19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt": {
+      "leitura": false,
+      "chat": true,
+      "motivo": "Decisão de 24/08/2026: fora da Leitura Colaborativa, permanece no corpus do Chat."
+    },
+    "19500801 - Primeira palestra após o Incidente de Shizuoka.txt": {
+      "leitura": true,
+      "chat": false,
+      "motivo": "HANDOFF_ACERVO §5 + §6 item 4: registo histórico de palestra (não texto doutrinário publicado) — leitura colaborativa, fora do corpo de pesquisa."
+    },
+    "Esboco_da_Medicina.txt": {
+      "leitura": true,
+      "chat": false,
+      "motivo": "HANDOFF_ACERVO §3.3 + §6 item 4: proveniência por esclarecer — leitura colaborativa, fora do corpo de pesquisa."
+    }
+  },
+
+  "_exemplo_volumes_sosyo": {
+    "_nota": "Quando entrarem os volumes do 自観叢書 não escritos por Meishu-Sama (§4.3), declaram-se aqui como só-leitura, por serem conteúdo histórico e não doutrinário.",
+    "_modelo": {
+      "19490715 - Coleção Jikan Volume 6 Perfil de Okada Jikan.txt": {
+        "leitura": true,
+        "chat": false,
+        "motivo": "自観叢書 第6篇 — conteúdo histórico, não doutrinário (§4.3)."
+      }
+    }
+  }
+}

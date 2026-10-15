@@ -19,6 +19,19 @@ from apply_manual_livros_segmentacao import split_by_anchors  # noqa: E402
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+# Gate do escopo do corpus (goshinsho/services/escopo_corpus.py): separa o que
+# entra no corpo de pesquisa do Chat do que é só Leitura Colaborativa. A
+# política mora em escopo_corpus.json, não no código. Fail-open: se o import
+# falhar, tudo entra no Chat (como antes do gate existir).
+sys.path.insert(0, str(PROJECT_ROOT))
+try:
+    from goshinsho.services.escopo_corpus import obra_no_canal as _obra_no_canal
+except Exception:  # pragma: no cover - fail-open
+    def _obra_no_canal(nome_arquivo, canal):
+        return True
+
+
 PT_DIR = PROJECT_ROOT / "textos_portugues"
 JP_DIR = PROJECT_ROOT / "textos_japones"
 PUBLICATION_SOURCES_DIR = PROJECT_ROOT / "data" / "publication_sources"
@@ -799,8 +812,12 @@ def publication_source_entries():
 
 def collect_entries():
     entries = []
+    excluidas = []
     for lang, directory, paired_directory in (("pt", PT_DIR, JP_DIR), ("jp", JP_DIR, PT_DIR)):
         for path in sorted(directory.glob("*.txt")):
+            if not _obra_no_canal(path.name, "chat"):
+                excluidas.append(f"{lang}/{path.name}")
+                continue
             # Emparelhamento PT<->JP via mapeamento de renomeação (PT tem nomes
             # novos, JP mantém nomes originais). Fallback: nome igual.
             paired_path = _par_emparelhado(lang, path.name)
@@ -811,6 +828,9 @@ def collect_entries():
             else:
                 entries.append(file_entry(path, lang, paired_path))
     entries.extend(publication_source_entries())
+    if excluidas:
+        print(f"gate do escopo: {len(excluidas)} ficheiro(s) fora do corpo do Chat: "
+              + ", ".join(excluidas))
     return entries
 
 
