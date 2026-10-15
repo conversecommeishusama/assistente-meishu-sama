@@ -152,12 +152,27 @@ registo da fase inicial de 自観.
 (21 kB, registo de palestra) está **fora da leitura colaborativa** sem estar na
 lista de exclusões declaradas `FORA_LEITURA` de
 `goshinsho/services/leitura_service.py` (que só contém `Medicina_do_Amanha` e
-`19541211 - Palavras de Meishu-Sama no Palácio de Cristal`). **Decisão pendente
-do usuário:** incluir ou declarar a exclusão.
+`19541211 - Palavras de Meishu-Sama no Palácio de Cristal`).
+
+**Decisão (15/10/2026, item 4):** as obras em causa entram na **leitura
+colaborativa** mas **não** no corpo de pesquisa do Chat Goshinsho — mesma regra
+das obras de proveniência por esclarecer (§3.3). Aplicado por inferência ao
+ficheiro de Shizuoka, por ser registo histórico de palestra e não texto
+doutrinário publicado; **confirmar** se se pretende o contrário.
 
 ---
 
-## 6. Ordem de trabalho acordada
+## 6. Decisões do usuário (15/10/2026)
+
+| # | Item | Decisão |
+|---|---|---|
+| 1 | Corrigir o corpus japonês dos periódicos | **Ok** — fazer |
+| 2 | Inserir as lacunas reais (§4.4) | **Ok** — leitura colaborativa **e** Chat Goshinsho |
+| 3 | 自観叢書 não escritos por Meishu-Sama (§4.3) | **só leitura colaborativa**, como conteúdo histórico; as restantes obras também no Chat |
+| 4 | §5 (Shizuoka) + §3.3 (proveniência) | **leitura colaborativa, não no Chat Goshinsho** |
+| 5 | Voltar às ondas de revisão depois de inserir | **Ok** |
+
+## 7. Ordem de trabalho confirmada
 
 1. **Corrigir o corpus japonês dos periódicos** — Tijotengoku a 29% é o caso pior.
    Sem isto, qualquer auditoria de coerência JP↔PT fica cega em três quartos do
@@ -166,12 +181,50 @@ do usuário:** incluir ou declarar a exclusão.
    leitura colaborativa **e** no corpo de pesquisa.
 3. **Inserir os volumes da §4.3** (自観叢書 não de Meishu-Sama) **só** na leitura
    colaborativa, como conteúdo histórico.
-4. Resolver a §5 e a §3.3.
+4. Resolver a §5 e a §3.3 com a regra do item 4 da tabela acima.
 5. Só então voltar às ondas de revisão do que foi inserido.
 
 ---
 
-## 7. Convenções operacionais (para a sessão nova)
+## 8. Trabalho pendente de maior alcance — revisão global do acervo
+
+Declarado pelo usuário em 15/10/2026: *"Está pendente fazer a revisão de todo o
+acervo baseado nos ajustes que fizemos no glossário e nos outros pontos como o
+padrão ocidental nas medidas."*
+
+**Dimensão:** 137 ficheiros, **15.695.988 caracteres** (mediana 61.351; os
+maiores: Eiko 2,07 M, Tijotengoku 891 k, Relatos de Milagres 642 k, Hikari
+564 k). É o mesmo tipo de trabalho que se fez nos periódicos e no livro de 1947,
+mas em todo o corpus.
+
+Unidades japonesas em romaji ainda por converter ao padrão métrico (contagem no
+acervo): `sun` 378 · `koku` 286 · `shaku` 285 · `tan` 277 · `tsubo` 162 ·
+`shō` 160 · `gō` 157 · `ken` 153 · `ri` 133 · `kan` 128 · `monme` 24.
+⚠️ Várias são falsos positivos (`sun` em nomes ingleses, `go` = jogo de tabuleiro,
+`ri` = verbo rir) — ver o teste afinado em
+`scripts/verificar_tengoku1947_mecanico.py`, que só acusa com **numeral antes** e
+aceita a equivalência métrica antes **ou** depois do termo.
+
+**Ajustes a aplicar nesta revisão** (consolidados nesta sessão):
+- entradas novas do glossário para `きれいにする` / `きれいになる` / `清潔にする` /
+  `清くする` / `美にする` / `美しくする` (§9 do handoff do livro 1947);
+- `道理` sensível ao contexto (Caminho Perfeito vs razão/conclusão lógica);
+- `凝り` = «Nódulo» no sentido de toxina solidificada, «rigidez» em enumeração de
+  achaques;
+- `光明` = «Kōmyō» só para o amuleto; substantivo comum = «luz/Luz»;
+- as 13 entradas do glossário que a auditoria denuncia como invenção
+  (`然毒`, `運命`, `逆理`, `理屈`, `叡智`, `経綸`, `御利益`, `同化霊`,
+  `正守護神`, `大光明世界`, `下熱`, `再浄化`, `霊的医術`) — **não corrigir**;
+- padrão ocidental nas medidas, marcadores de diálogo, uniformização de títulos.
+
+Método a usar (já validado): revisão em ondas — ronda de correcções mecânicas
+por tipo (`scripts/corrigir_*.py` com `--aplicar` e backup), auditoria por LLM em
+lotes, convergência medida ronda a ronda. Ver
+`HANDOFF_LIVRO_1947_EVANGELHO.md` §4-6 para o ciclo completo.
+
+---
+
+## 9. Convenções operacionais (para a sessão nova)
 
 ```bash
 cd /var/www/goshinsho

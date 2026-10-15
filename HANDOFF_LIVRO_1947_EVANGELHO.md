@@ -128,3 +128,53 @@ sem sentido («chegar-se-ia ao seguinte Caminho Perfeito»). Corrigido nos quatr
    histórico das ondas importar, preservar à parte.
 3. O livro de 1947 **não** entrou no índice do projecto `/var/www/rattail`
    (é outro projecto, com o seu próprio índice).
+
+---
+
+## 9. Ajuste do glossário: `きれいにする` e `美にする` (15/10/2026)
+
+Ponto levantado pelo usuário: *"«Kirei ni suru» está sendo traduzido como
+embelezar, mas em japonês essa expressão tem o sentido de limpar, principalmente
+quando nos referimos ao Johrei, que tem a missão de purificar, limpar o
+espírito."*
+
+**Confirmação (medida no corpus):**
+
+| forma | ocorrências | sentido |
+|---|---|---|
+| `きれいにする` | 16 | **limpar, purificar** |
+| `清潔にする` | 2 | limpar, higienizar |
+| `清くする` | 2 | tornar puro |
+| `きれいになる` | 18 | ficar limpo / ficar bom |
+
+Nenhum caso de `きれいにする` traduzido por «embelezar»: o PT já usava «limpar»
+(ex.: 《a água fica limpa》 para `水がきれいになります`). **O problema real era
+`美にする`/`美しくする`** — o mesmo fenómeno que o usuário detectou. No
+ensinamento do Belo (`真善美`) aplicado ao **interior do corpo**, o autor usa `美`
+com sentido de limpeza e glosa-o ele próprio:
+
+> 「浄霊というものは、つまり**美にする**働きです。汚いものを**きれいにする**
+> というわけです。」
+
+> 「人間の美というものも体の中が**きれいにならなければ**、本当の美ではない」
+
+«Embelezar» em português evoca cosmética e inverte o sentido.
+
+**Ajustes feitos:**
+
+1. **Glossário** — 6 entradas novas (845 → 852): `きれいにする`, `きれいになる`,
+   `きれいに治る`, `清潔にする`, `清くする`, `美にする`/`美しくする`. As duas
+   últimas com a regra explícita: **tornar limpo** no contexto do Johrei e do
+   interior do corpo; **tornar belo** só para a beleza visível/artística.
+2. **Acervo — 9 correcções** (`scripts/corrigir_kirei_ni_suru.py`):
+   `19540115 - Mioshie-shū nº 29` (7 lugares) e
+   `19541001 - Curso do Método de Johrei nº 3` (2 lugares), as duas versões do
+   mesmo ensinamento. Aplicado em `textos_portugues/` e
+   `textos_leitura_colaborativa/`, com backup `.bak_kirei_<stamp>`.
+3. **Deixado como está** (beleza genuína — «embelezar» correto): `Eiko`,
+   `Gokōwa-roku nº 4/5` (casas, templos), `Montanha e Água` (poema), `Jikan 10` e
+   `Johrei nº 1` (musgo embeleza pedras e terra), `Memórias` (relato embelezado),
+   `Mioshie-shū nº 13/33` (discurso embelezado), `Hikari`.
+
+Este ajuste entra na **revisão global do acervo** pendente — ver
+`HANDOFF_ACERVO_LACUNAS_20261015.md` §8.
