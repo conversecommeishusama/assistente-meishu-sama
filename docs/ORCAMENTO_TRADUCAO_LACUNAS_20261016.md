@@ -20,9 +20,19 @@ Três blocos, com destinos diferentes (ver `escopo_corpus.json`).
 |---|---:|---|---|
 | 世界救世教教義解説（病貧争の巻） | 10.563 | `sasshi/kyogi1.html` | ✅ extraído |
 | 初めて浄霊を受ける方の為に | 6.261 | `sasshi/hajimete.html` | ✅ extraído |
-| 御神書（宗教篇） | *a medir* | OCR de `goshinsho.pdf` (534 p.) | ⏳ OCR em curso |
-| 医学関係御論文集 | *a medir* | OCR de `igaku_kankei.pdf` (543 p.) | ⏳ OCR em curso |
-| **subtotal sem OCR** | **16.824** | | |
+| 御神書（宗教篇） | 594.217 | OCR de `goshinsho.pdf` (534 p.) | ✅ OCR feito |
+| 医学関係御論文集 | 358.566 | OCR de `igaku_kankei.pdf` (543 p.) | ✅ OCR feito |
+| **subtotal** | **969.607** | | |
+
+> O OCR está em `rattail/indice/goshinsho_ocr2.txt` e
+> `rattail/indice/igaku_kankei_ocr2.txt` (método `work/reocr_pdf_facsimile.py`:
+> `pdfimages` + `tesseract jpn_vert --psm 5`, 8 workers, timeout 180 s/página; 0
+> páginas perderam-se por timeout, 1.060 das 1.077 têm texto útil).
+> Os valores são o **texto total das páginas**, incluindo cabeçalhos de página,
+> marcadores `===== p.N =====` e ruído de OCR — o texto traduzível é algo menor.
+> **Limitação de qualidade:** em parte das páginas o `jpn_vert` intercala duas
+> colunas de linhas verticais, pelo que a ordem de leitura fica trocada; o
+> texto tem de ser conferido no PDF. É a regra que já vale para o 教修要綱.
 
 ### Bloco B — 伝道の手引き Ⅰ·Ⅱ (`dendo`) → **Leitura Colaborativa + Chat**
 
@@ -58,11 +68,11 @@ usuário que pergunte sobre assuntos constante ali."*
 
 | | chars JP | PT estimado (×2,3) |
 |---|---:|---:|
-| Bloco A (sem OCR) | 16.824 | 38.695 |
+| Bloco A (Meishu-Sama, incl. OCR) | 969.607 | 2.230.096 |
 | Bloco B (`dendo`) | 375.978 | 864.749 |
 | Bloco C (自観叢書) | 118.187 | 271.830 |
-| **total sem OCR** | **510.989** | **1.175.275** |
-| Bloco A — OCR (a medir) | *pendente* | *pendente* |
+| **total** | **1.463.772** | **3.366.676** |
+| *do qual OCR (fac-símile, ruidoso)* | *952.783* | *2.191.401* |
 
 ---
 
@@ -89,8 +99,8 @@ Razão medida no projecto: **0,79–1,22 tok/char JP** por passada
 
 | Cenário | chars JP | Tokens/passada | 2 passadas | 3 passadas |
 |---|---:|---:|---:|---:|
-| Só A+C | 135.011 | 0,11–0,16 M | 0,21–0,33 M | 0,32–0,49 M |
-| A+B+C (sem OCR) | 510.989 | **0,40–0,62 M** | **0,81–1,25 M** | **1,21–1,87 M** |
+| Só A (Meishu-Sama) + C | 1.087.794 | 0,86–1,33 M | 1,72–2,65 M | 2,58–3,98 M |
+| A+B+C (tudo) | 1.463.772 | **1,16–1,79 M** | **2,31–3,57 M** | **3,47–5,36 M** |
 
 ---
 
@@ -101,15 +111,15 @@ efectiva de run R$ 1,15/M · tabela alta R$ 2,50/M.
 
 | Cenário | Tokens | Blended | Efectiva | Tabela |
 |---|---:|---:|---:|---:|
-| Só A+C, 2 passadas | 0,27 M | R$ 0,06 | R$ 0,31 | R$ 0,68 |
-| A+B+C, 2 passadas | 1,03 M | **R$ 0,24** | R$ 1,18 | R$ 2,58 |
-| A+B+C, 3 passadas | 1,54 M | **R$ 0,35** | R$ 1,77 | R$ 3,85 |
+| A+C (sem `dendo`), 2 passadas | 2,19 M | R$ 0,50 | R$ 2,51 | R$ 5,46 |
+| A+B+C, 2 passadas | 2,94 M | **R$ 0,67** | R$ 3,38 | R$ 7,35 |
+| A+B+C, 3 passadas | 4,41 M | **R$ 1,01** | R$ 5,07 | R$ 11,03 |
 
-**Faixa realista: R$ 0,24 a R$ 3,85** · teto pessimista (tabela, 3 passadas) **~R$ 4**.
+**Faixa realista: R$ 0,67 a R$ 11,03** · caso base (2 passadas, blended) **~R$ 0,67**.
 
 > Como no run anterior: **o custo de API é irrelevante**. O trabalho é feito pelo
 > agente na sessão (plano de assinatura). O custo real é **tempo** (§5) e
-> **revisão**.
+> **revisão** — e, no caso do OCR, a conferência contra o fac-símile.
 
 ---
 
@@ -120,11 +130,11 @@ Vazão **medida** no projecto: **6.113 chars JP/min com 10 workers**
 
 | workers | chars JP/h | A+B+C, 1 passada | ×2,2 (tradução+auditoria+ajuste) |
 |---:|---:|---:|---:|
-| 10 | 366.790 | 1,4 h | **3,1 h** |
-| 16 | 586.864 | 0,9 h | **1,9 h** |
-| 24 | 880.297 | 0,6 h | **1,3 h** |
-| **32** | 1.173.729 | 0,4 h | **1,0 h** |
-| 48 | 1.760.593 | 0,3 h | **0,6 h** |
+| 10 | 366.790 | 4,0 h | **8,8 h** |
+| 16 | 586.864 | 2,5 h | **5,5 h** |
+| 24 | 880.297 | 1,7 h | **3,7 h** |
+| **32** | 1.173.729 | 1,2 h | **2,7 h** |
+| 48 | 1.760.593 | 0,8 h | **1,8 h** |
 
 > Com `--jobs 8` na mesma máquina que serve o app (o padrão da sessão de hoje),
 > contar com a coluna de 10 workers com margem. Subir para 24–32 só fora do
@@ -137,12 +147,16 @@ Vazão **medida** no projecto: **6.113 chars JP/min com 10 workers**
 | Fase | Bloco | chars JP | PT est. | Função |
 |---|---|---:|---:|---|
 | **P1** | A — Meishu-Sama (2 obras extraídas) | 16.824 | 38.695 | doutrina, entra no Chat |
-| **P2** | A — OCR (御神書 + 医学関係) | *a medir* | *a medir* | idem |
-| **P3** | B — `dendo` Ⅰ·Ⅱ | 375.978 | 864.749 | ver §7 (decisão) |
-| **P4** | C — 自観叢書 06/13/15 | 118.187 | 271.830 | só Leitura (histórico) |
-| **P5** | Auditoria + promoção + rebuild | — | — | ⚠️ sob autorização |
+| **P2** | A — OCR 御神書（宗教篇） | 594.217 | 1.366.699 | idem, requer conferência |
+| **P3** | A — OCR 医学関係御論文集 | 358.566 | 824.702 | idem |
+| **P4** | B — `dendo` Ⅰ·Ⅱ | 375.978 | 864.749 | ver §7 (decisão) |
+| **P5** | C — 自観叢書 06/13/15 | 118.187 | 271.830 | só Leitura (histórico) |
+| **P6** | Auditoria + promoção + rebuild | — | — | ⚠️ sob autorização |
 
-A ordem P1→P4 é por valor/vínculo doutrinário, não por tamanho.
+A ordem é por valor/vínculo doutrinário e por risco (P1 é limpo; P2/P3 herdam
+erro de OCR). Sugestão: **P1 → P5 → P4 (conforme decisão) → P2 → P3**, deixando
+o OCR — que é o maior volume e o mais ruidoso — para quando o ciclo estiver
+oleado.
 
 ---
 
@@ -195,8 +209,11 @@ tradução. Verifique se o glossário de tradução está atualizado."*
 
 1. Vazão extrapolada de medição com 10 workers; 24–48 workers assumem que a API
    DeepSeek não estrangula (fazer **teste de rampa** antes do run definitivo).
-2. OCR de fac-símile é leitura automática, com erro — as traduções do bloco A-OCR
-   herdam esse erro. Confere-se no PDF antes de citar.
+2. OCR de fac-símile é leitura automática, com erro — e neste caso com um defeito
+   conhecido: parte das páginas sai com **duas colunas de linhas verticais
+   intercaladas**. As traduções do bloco A-OCR herdam esse erro. Confere-se no
+   PDF antes de citar; e as páginas de OCR devem ser **conferidas contra o
+   fac-símile** antes da tradução, não depois.
 3. Os volumes do bloco C não são de Meishu-Sama: vão **só** para a Leitura
    Colaborativa, como conteúdo histórico (§4.3).
 4. O rebuild de `data/clean_corpus` + índices FAISS é **obrigatório** para que

@@ -431,7 +431,23 @@ método validado de `work/reocr.py` (o do 教修要綱), com duas mudanças:
   Sem isto, uma única página de ilustração consumiu 32 min de CPU e travava o
   progresso (que era reportado em ordem) — o run inteiro ficou preso até se
   diagnosticar.
+**Resultado** (8 workers, timeout 180 s/página, 0 páginas perdidas por timeout):
 
+| Obra | Páginas | chars | chars/pág | páginas úteis |
+|---|---:|---:|---:|---:|
+| 御神書（宗教篇） | 534 | 594.217 | 1.112 | 524 |
+| 医学関係御論文集 | 543 | 358.566 | 660 | 536 |
+| **total** | **1.077** | **952.783** | | **1.060** |
+
+Gravado em `rattail/indice/goshinsho_ocr2.txt` e
+`rattail/indice/igaku_kankei_ocr2.txt`.
+
+⚠️ **Limitação registada:** em parte das páginas o `jpn_vert` **intercala duas
+colunas de linhas verticais**, pelo que a ordem de leitura fica trocada. Foram
+tentadas alternativas (psm 3/4, binarização, corte em 2 e 4 colunas, rotação do
+fácil para OCR horizontal com `jpn`) e nenhuma melhorou de forma consistente —
+psm 5 continua a ser o melhor disponível. Consequência: o texto do OCR **tem de
+ser conferido no fac-símile** antes de traduzir (não só antes de citar).
 ### 11.3 Verificação no *zenshū* das obras ausentes do acervo
 
 O `zenshū` (岡田茂吉全集, `referencia_zenshu_rokkan_…/chosaku_full.txt` e
@@ -480,21 +496,22 @@ A aplicação **rigorosa** na tradução é a etapa 2 do pipeline
 
 ### 11.6 Orçamento
 
-`docs/ORCAMENTO_TRADUCAO_LACUNAS_20261016.md`. Resumo (sem o OCR):
+`docs/ORCAMENTO_TRADUCAO_LACUNAS_20261016.md`. Resumo:
 
 | | chars JP | PT est. | Tokens (2–3 passadas) | Custo blended | Tempo @10 w |
 |---|---:|---:|---:|---:|---:|
-| A §4.4 (Meishu-Sama) | 16.824 | 38.695 | | | |
+| A §4.4 Meishu-Sama | 969.607 | 2.230.096 | | | |
 | B `dendo` Ⅰ·Ⅱ | 375.978 | 864.749 | | | |
 | C 自観叢書 06/13/15 | 118.187 | 271.830 | | | |
-| **total** | **510.989** | **1.175.275** | 0,81–1,87 M | **R$ 0,24–0,43** | **~3,1 h** |
+| **total** | **1.463.772** | **3.366.676** | 2,31–5,36 M | **R$ 0,67–1,01** | **~8,8 h** |
 
-Mais as duas OCR (御神書 + 医学関係), cujo volume se mede quando a OCR terminar.
+O OCR (御神書 + 医学関係) é **952.783 chars** — a maior parte do bloco A. O tempo
+com 32 workers cai para ~2,7 h.
 
 ### 11.7 Pendente desta sessão
 
-1. **OCR em curso** (goshinsho 534 p. + igaku 543 p.) → medir chars, juntar ao
-   orçamento, e inserir no corpus.
+1. **OCR feito** (goshinsho 534 p. · igaku 543 p.) — falta **inserir os dois no
+   corpus** e **conferir contra o fac-símile** as passagens a traduzir (§11.2).
 2. **Decisão sobre o `dendo`** (§11.4): traduzir inteiro ou só a estrutura.
 3. **Reconstruir `clean_corpus` + índices** para o gate valer (§11.1) — exige
    autorização.
