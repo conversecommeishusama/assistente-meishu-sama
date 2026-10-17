@@ -518,3 +518,157 @@ com 32 workers cai para ~2,7 h.
 4. **Confirmar a §5 (Shizuoka)**: a decisão registada manda pô-lo **na** leitura
    colaborativa, o que o expõe publicamente. Está declarado, não materializado.
 5. Tradução (A, B conforme decisão, C) + promoção + rebuild.
+
+---
+
+## 12. Execução — sessão 4 (17/10/2026)
+
+### 12.1 Shizuoka: resolvido — **não foi publicado em vida**
+
+Pergunta do usuário: *"se shizuoka for a primeira palestra após o incidente, pelo
+que eu saiba ela não foi publicada, é acervo interno (verifique isso). Se ela
+tiver sido publicada utilize, se não, ela está fora o escopo."*
+
+**Verificado na fonte primária**, não por inferência. O cabeçalho de
+`rattail/textos_rattail/estruturado/search1/kouwa/s250801.html` diz literalmente:
+
+```
+御講話 s250801
+未発表、昭和25(1950)年8月1日、速記録
+```
+
+**未発表 = «não publicado»**; 速記録 = registo taquigráfico. Só apareceu
+postumamente na 岡田茂吉全集講話篇第三巻 p348-357.
+
+Contraprova: não está em nenhuma das coleções orais publicadas (御垂示録
+começou em 1951-09, 御教え集 em 1951-09, 御光話録 parou no 19号 em 1950-06 —
+todas posteriores ou anteriores, nunca a cobrem), nem na 発行誌一覧, nem no
+`autoria.json`.
+
+**Decisão aplicada:** fora dos **dois** canais (`escopo_corpus.json`:
+`leitura=false, chat=false`), como as restantes 332 secções 未発表 (§4.6).
+
+**É o único 未発表 no corpus.** Verificação sistemática: dos 435 ficheiros do
+acervo marcados 未発表, só este foi traduzido. Os 3 ficheiros PT sem par JP são
+`O Evangelho do Paraíso` e `Kyōshu Yōkō` (falhas do mapa de renomeação, ambos
+têm JP) e o próprio Shizuoka.
+
+### 12.2 O rebuild estava a falhar em silêncio — 150 âncoras ausentes
+
+⚠️ **Este é o achado que impede o rebuild.** Criado
+`scripts/validar_segmentacao_pre_rebuild.py` (read-only) que espelha
+`article_entries_from_spec()`. Duas armadilhas encontradas:
+
+1. **`approved` não é filtro no rebuild.** Só **2 das 137 specs** têm
+   `approved=true`, mas `build_clean_large_indexes.py` usa **todas**. Validar
+   pelas aprovadas daria «está tudo bem» com 135 por validar.
+2. **A falha é silenciosa.** Âncora que não resolve ⇒ `article_entries_from_spec`
+   devolve `None` ⇒ cai em `file_entry()` ⇒ **o livro inteiro vira 1 chunk**.
+   Sem erro, sem aviso.
+
+**Estado medido antes de qualquer alteração: 150 âncoras ausentes.**
+
+| Onde | Âncoras ausentes | Causa |
+|---|---:|---|
+| JP Eiko | 87 | corrupção OCR |
+| JP Hikari | 36 | corrupção OCR |
+| JP Kyusei | 17 | corrupção OCR |
+| JP Medicina_do_Amanha | 5 | corrupção OCR |
+| JP Mioshie nº 6 | 3 | `jp_anchor` com prefixo PT |
+| PT Eiko | 2 | **2 artigos desaparecidos do ficheiro** |
+
+**Em produção isto já estava partido desde 1/Set** — verificado no
+`clean_corpus`: `jp Eiko.txt` = **1 entrada**, `jp Hikari.txt` = **1 entrada**,
+`jp Kyusei.txt` = **1 entrada** (contra 369/122/68 no PT e 69 no Tijotengoku).
+Os três periódicos JP nunca foram segmentados no índice do Chat.
+
+### 12.3 O que foi reparado
+
+**(a) Corrupção OCR — §3.2 do handoff, agora com consequência medida.**
+As âncoras das specs foram escritas com o texto limpo; o texto tem os glifos
+corrompidos. Ex.: a âncora diz `前人未説`, o texto tem `前人朩説`; a âncora diz
+`雨後の筍`, o texto tem `雤後の筍`. **É a causa de 145 das 150 falhas.**
+
+Corrido `scripts/corrige_ocr_jp.py` (ferramenta do projecto, com o mapa de
+glifos conferido contexto a contexto) — **6.709 caracteres emendados em 9
+obras**. A ele foi acrescentado `--espelhar`: o script só escrevia em
+`reports/livros_trabalho/jp/`, mas **o rebuild lê `textos_japones/`** — sem
+espelhar, a correcção não chegava ao corpus do Chat. Backup duplo
+(`.bak_ocr_<stamp>` em cada sítio + `backups/pre_correcao_ocr_20261017/`).
+
+**(b) Dois artigos desapareceram de `textos_portugues/Eiko.txt`.** Não é
+corrupção: é **perda de conteúdo** entre 13/Out 19:05 e 14/Out 17:35. Existem em
+**todos** os backups, inclusive o imediatamente anterior
+(`.bak_stub252_20261013T190545Z`), e não no ficheiro actual:
+
+| Artigo | JP | Estado |
+|---|---|---|
+| `医学の本体` / «A verdadeira face da medicina» | Eikō 195, 1953-02-11 | restaurado (1.005 chars) |
+| `御神体奉斎について` / «Sobre a Devoção à Imagem da Luz Divina» | Eikō 255, 1954 | restaurado (2.984 chars) |
+
+Restaurados do backup na posição da spec, por inserção antes da âncora do
+artigo seguinte. Backup `.bak_pre_restauracao_20261017T185607Z`.
+
+**(c) Mioshie nº 6:** 3 `jp_anchor` começavam por `Interlocutor: ` — rótulo de
+turno em **português** dentro de uma âncora **japonesa**. Removido o prefixo
+(backup `.bak_prefixo_pt_<stamp>`).
+
+**Resultado: 150 → 0 falhas.** 123 specs segmentam em PT e 123 em JP; as 14
+restantes têm ≤1 artigo (monólito por desenho).
+
+### 12.4 🛑 O que ainda impede o rebuild: ~400 artigos fora das specs
+
+Depois de as âncoras resolverem, o validador mostra o problema seguinte — e é
+grande. Os artigos acrescentados ao acervo em 09–14/Out (traduções) e em 15/Out
+(JP, §10.1) **entraram no fim dos ficheiros, depois da última âncora da spec**.
+Como a spec tem N artigos e o ficheiro tem N+X, os X novos caem todos **dentro
+do último chunk**:
+
+| Periódico | Cabeçalhos PT | Artigos na spec | Fora da spec | Cauda (chars) |
+|---|---:|---:|---:|---:|
+| Tijotengoku | 144 | 69 | **75** | 737.357 |
+| Eiko | 580 | 369 | **211** | 916.270 |
+| Hikari | 199 | 122 | **77** | 229.908 |
+| Kyusei | 105 | 68 | **37** | 258.937 |
+| **total** | 1.028 | 628 | **400** | **2.142.472** |
+
+Consequência se o rebuild correr assim: **2,14 M caracteres de tradução ficam num
+único chunk por periódico**. O `pode_cortar_por_tamanho()` devolve `False` para
+`periodico_publicacao`, e o embedding e5-large trunca a 512 tokens (≈3.200
+chars) — ou seja, desses 2,14 M só ~12.800 chars seriam indexados. Os 400
+artigos ficariam **presentes no ficheiro e invisíveis na busca**.
+
+**Portanto o rebuild NÃO deve correr antes de as specs cobrirem esses 400
+artigos.** É trabalho de spec (o ponto que o usuário marcou como delicado), não
+de rebuild.
+
+### 12.5 Como fazer a extensão das specs (proposta, por validar)
+
+Os artigos novos têm formato **uniforme e determinístico**, ao contrário dos
+antigos (que exigiram correcção manual semântica):
+
+- PT: `<título>\n\n<Veículo> nº N, publicado em <data>\n\n<corpo>`;
+- JP: `<título>\n『<obra>』N号、昭和NN(NNNN)年M月D日発行\n\n<corpo>`.
+
+Logo, a âncora pode ser **derivada do cabeçalho**, sem heurística. O trabalho
+real é o **pareamento PT↔JP** e a **ordem**: a spec é uma lista ordenada e as
+duas âncoras têm de resolver pela mesma ordem. Medido: os totais não batem
+exactamente (Tijotengoku PT 144 vs JP 84 cabeçalhos — a PT repete o número da
+edição por artigo, a JP tem um bloco por artigo), pelo que o pareamento tem de
+ser por **(veículo, número, título)**, com validação de que as duas listas
+resolvem em ordem.
+
+**Não fazer** com `bootstrap_manual_livros_segmentacao.py --force`: ele regenera
+a spec inteira por heurística e destruiria as correcções manuais que custaram a
+sessão de 26/08 e as de hoje.
+
+### 12.6 Pendente desta sessão
+
+1. **Estender as specs** dos 4 periódicos com os ~400 artigos (§12.5) — **bloqueia
+   o rebuild**.
+2. Subdividir os artigos > 3.200 chars (119 ficheiros; maior 916 k) — sem isso
+   truncam no embedding.
+3. Só depois: `build_clean_large_indexes.py --lang both` e `--install`.
+4. **dendo opção B** (§11.4) — o usuário decidiu: montar o livro com as traduções
+   existentes para a leitura colaborativa. Por fazer.
+5. Verificação do glossário em todo o corpus (§4 do pedido) — por fazer.
