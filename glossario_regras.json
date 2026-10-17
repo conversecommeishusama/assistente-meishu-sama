@@ -347,7 +347,7 @@
    "motivo": "唯心 (yuishin) NÃO é 'idealismo' (sentido filosófico kantiano). O par 唯物/唯心 = materialismo/espiritualismo. Usar 'espiritualismo'/'espiritual'. 'idealismo' só é legítimo para 理想論 (ideal, utopia)."
   }
  ],
- "versao": "2026-10-10b",
+ "versao": "2026-10-16b",
  "proibicoes_isencao": [
   "avançar um shaku e recuar um sun",
   "Taishidō-chō",
@@ -448,5 +448,10 @@
   "龍神",
   "滅罪",
   "経文"
- ]
+ ],
+ "notas_contexto": {
+  "道理": "HANDOFF_LIVRO_1947_EVANGELHO.md §5 e §8 item 1 (pendente desde 15/10)",
+  "凝り": "HANDOFF_ACERVO_LACUNAS_20261015.md §8",
+  "光明": "HANDOFF_ACERVO_LACUNAS_20261015.md §8"
+ }
 }
