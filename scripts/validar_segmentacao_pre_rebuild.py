@@ -19,6 +19,12 @@ justificam este script:
 Para cada spec, o script corta PT e JP com a MESMA `split_by_anchors` do rebuild e
 classifica o resultado. Não escreve nada.
 
+⚠️ **O corte é feito sobre `clean_body()`, não sobre o texto cru.** O rebuild
+chama `clean_body(read_text(path))`; âncoras que parecem "erradas" no texto cru
+podem estar certas no texto limpo (que remove `#T/#K/#W`/separadores e normaliza
+as quebras de linha 4→3). Ver `GOSHINSHO.md` §"Integridade PT vs JP": "NUNCA
+corrigir uma âncora sem rodar a validação contra o texto limpo primeiro".
+
 Uso:
     .venv/bin/python scripts/validar_segmentacao_pre_rebuild.py
     .venv/bin/python scripts/validar_segmentacao_pre_rebuild.py --detalhe
@@ -32,8 +38,10 @@ from pathlib import Path
 
 RAIZ = Path("/var/www/goshinsho")
 sys.path.insert(0, str(RAIZ / "scripts"))
+sys.path.insert(0, str(RAIZ))
 
 from apply_manual_livros_segmentacao import split_by_anchors  # noqa: E402
+from build_clean_large_indexes import clean_body  # noqa: E402
 
 SPECS = RAIZ / "reports" / "livros_trabalho" / "segmentacao_manual"
 PT = RAIZ / "textos_portugues"
@@ -52,6 +60,11 @@ def _mapa() -> dict[str, str]:
         return {}
 
 
+def _texto(caminho: Path) -> str:
+    """Texto como o rebuild o vê: `clean_body(read_text())`."""
+    return clean_body(caminho.read_text(encoding="utf-8", errors="replace"))
+
+
 def _valida(caminho: Path, anchors: list[str]) -> str:
     """Devolve '' se segmenta; senão a razão (mesma regra do rebuild)."""
     if not caminho.exists():
@@ -60,9 +73,7 @@ def _valida(caminho: Path, anchors: list[str]) -> str:
         vazias = sum(1 for a in anchors if not a.strip())
         return f"{vazias} âncora(s) vazia(s) -> rebuild cai para arquivo inteiro"
     try:
-        chunks = split_by_anchors(
-            caminho.read_text(encoding="utf-8", errors="replace"),
-            anchors, label=caminho.name)
+        chunks = split_by_anchors(_texto(caminho), anchors, label=caminho.name)
     except ValueError as exc:
         return f"âncora não resolve: {str(exc)[:150]}"
     if len(chunks) != len(anchors):
@@ -106,10 +117,8 @@ def main() -> int:
             elif rot == "PT":
                 ok_pt += 1
                 try:
-                    chunks = split_by_anchors(
-                        (PT / nome_arq).read_text(encoding="utf-8",
-                                                  errors="replace"),
-                        anchors, label="pt")
+                    chunks = split_by_anchors(_texto(PT / nome_arq), anchors,
+                                              label="pt")
                     gordos = [len(c) for c in chunks
                               if len(c) > LIMITE_EMBEDDING]
                     if gordos:

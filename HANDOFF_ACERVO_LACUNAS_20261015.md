@@ -672,3 +672,116 @@ sessão de 26/08 e as de hoje.
 4. **dendo opção B** (§11.4) — o usuário decidiu: montar o livro com as traduções
    existentes para a leitura colaborativa. Por fazer.
 5. Verificação do glossário em todo o corpus (§4 do pedido) — por fazer.
+
+---
+
+## 13. Levantamento das regras de spec (17/10/2026) — **aguarda confirmação**
+
+Antes de estender as specs dos periódicos, o usuário pediu: *"estenda os specs
+baseado nas regras do projeto. Antes de começar confirme comigo as regras."*
+Segue o que foi apurado **no código e na documentação**, não por suposição.
+
+### 13.1 Onde a spec mora e como se grava
+
+| Regra | Fonte |
+|---|---|
+| `reports/livros_trabalho/segmentacao_manual/<ficheiro>.txt.json` | `apply_manual_livros_segmentacao.py` |
+| **`reports/` é gitignored** — `git add` na spec não faz nada. Único backup é externo | `HANDOFF_CORRECAO_SPECS_SEGMENTACAO_20260826.md` (PROTOCOLO) |
+| Copiar `.bak_<razão>_<stamp>` **antes** de editar cada spec | idem |
+| Validar após cada correcção: `split_by_anchors` e `len(chunks) == len(articles)` | idem |
+| **`approved` NÃO é filtro do rebuild** — só do `apply_manual_livros_segmentacao.py`. O `build_clean_large_indexes.py` usa qualquer spec | medido hoje: 2 `true`, 126 `false`, 9 ausente; o rebuild usa as 137 |
+
+**Schema.** Topo: `filename`, `profile`, `articles`, `method`, `approved`,
+`editor_notes`, `segmentation_pass`, `previous_article_count`, `split_method`,
+`bootstrap_warnings`, `audited_at`, `audit_method` (+ `source` em 9).
+Cada artigo: `kind`, `title_jp`, `title_pt`, `jp_anchor`, `pt_anchor`, `notes`
+(obrigatórios) e `pt_prefix` (opcional, 794 usos). `kind` dos periódicos: `article`.
+
+### 13.2 Âncoras — as cinco regras que decidem tudo
+
+1. **Âncora é texto literal de `clean_body()`, não do ficheiro cru.** O rebuild
+   faz `clean_body(read_text(path))`; o `clean_body` remove `#T/#K/#W`/separadores
+   e normaliza quebras de linha (4→3 `\n`). `GOSHINSHO.md` §"Integridade PT vs
+   JP": *"NUNCA corrigir uma âncora sem rodar a validação contra o texto limpo
+   primeiro (cometi esse erro 2× nesta sessão e reverti)"*.
+   → ⚠️ **O validador da sessão 4 usava texto cru.** Corrigido hoje;
+   re-medido: os números não mudaram (282 vs 282 no Eiko antes da emenda), mas a
+   ferramenta estava errada e passou a usar `clean_body`.
+2. **Multilinha casa exactamente.** Monolinha ≥ 6 chars tem *fallback* para a
+   primeira linha (`_find_anchor`).
+3. **A lista da spec tem de estar na MESMA ordem nos dois ficheiros** —
+   `split_by_anchors` procura sequencialmente a partir do cursor.
+4. **Convenção observada:** PT = `título\n\n<Veículo> nº N, publicado em <data>`;
+   JP antigo = `título\n\n<início do corpo>`; JP novo = `título\n『obra』N号、昭和…発行`.
+5. **A derivação é determinística:** título + linha de cabeçalho (PT) ou título +
+   início do corpo (JP). Não é heurística.
+
+### 13.3 Escopo da segmentação
+
+| Regra | Fonte |
+|---|---|
+| Segmentar pela **divisão do autor**; corte por tamanho **só** nas 3 séries orais (`gokowa_roku_qa`, `ochishiji_roku`, `mioshie_shu`) | `build_clean_large_indexes.py` §"Determinação do usuário, 2026-07-14" |
+| `profile` dos periódicos = `periodico_publicacao` ⇒ `pode_cortar_por_tamanho()` devolve **False** | idem |
+| **Proibido** o fallback de interpolação proporcional no pareamento; o pareamento é por conteúdo (needles/headings) e falha = erro a investigar | `livros_segmentacao_pairing.py` + PROTOCOLO §2 |
+| **Não** regenerar a spec com `bootstrap_manual_livros_segmentacao.py --force` — destrói as correcções manuais | `HANDOFF_CORRECAO_SPECS_SEGMENTACAO_20260826.md` |
+| Critério de aceitação: ratio PT/JP ∈ **[1.15, 4.8]** (fora = `ratio_warn`, sinal de pareamento errado) | `audit_manual_livros_segmentacao.py` `RATIO_OK` |
+| A **fonte canónica é o japonês**; o PT é a tradução de trabalho | `docs/04-ACERVO.md` |
+
+### 13.4 🔴 O que as regras NÃO cobrem e exige decisão
+
+**(a) As duas regiões anexadas estão em ordens diferentes.**
+
+Medido: o PT segue a ordem do registo de tradução — `(ano, numero, ordem)`,
+cronológica; o JP seguiu `(ano, numero-como-texto)` — artefacto do meu
+`completar_jp_periodicos.py`, que ordenou por `str(numero)`.
+
+| Periódico | Artigos novos | Divergências de ordem |
+|---|---:|---:|
+| Eiko | 211 | **111** |
+| Hikari | 86 | 76 |
+| Tijotengoku | 82 | 46 |
+| Kyusei | 36 | 21 |
+
+Como `split_by_anchors` exige a mesma ordem nos dois ficheiros, **uma spec única
+não consegue segmentar as duas regiões como estão**. Testado: falha em todos os
+quatro.
+
+***Opções:***
+- **A (recomendada)** — reordenar a **região anexada do JP** para a ordem
+  canónica do registo. É reordenação de blocos inteiros, não altera conteúdo; e
+  corrige um artefacto do meu script (a ordem por texto não tem significado).
+- **B** — reordenar o PT. Mas o PT já está na ordem cronológica correta; seria
+  estragar o que está certo.
+- **C** — duas specs por periódico (uma por região). **Não serve:** o rebuild
+  carrega uma spec por ficheiro.
+
+**(b) Um artigo órfão.** `Kyusei nº 62 — 盲目は治る` (1.253 chars) foi anexado ao
+JP mas **nunca foi traduzido** (era `a_revisar`, não entrou nos 415). Sem par PT
+não pode entrar na spec.
+→ Traduzir agora (é 1 artigo), ou deixá-lo de fora como `tail`.
+
+**(c) Confirmar o `kind` e o `notes`.** Proposta: `kind = "article"` (igual aos
+existentes) e `notes` com a proveniência (`entry_id=` / `sort_date=`) como já se
+faz.
+
+### 13.5 Volume da extensão
+
+| Periódico | Artigos hoje | + novos | Total | Saem do monólito |
+|---|---:|---:|---:|---:|
+| Tijotengoku | 69 | 82 | 151 | 2.140.744 → ~10.000/chunk |
+| Eiko | 369 | 211 | 580 | |
+| Hikari | 122 | 86 | 208 | |
+| Kyusei | 68 | 37 | 105 | |
+| **total** | **628** | **416** | **1.044** | 2,14 M chars |
+
+### 13.6 Plano de execução proposto (a confirmar)
+
+1. Backup de cada spec (`.bak_extensao_<stamp>`).
+2. Reordenar a região anexada do JP para `(ano, numero, ordem)` do registo.
+3. Acrescentar ao fim de `articles` os 415 novos, com `jp_anchor` e `pt_anchor`
+   derivados literalmente; `title_jp`/`title_pt` do registo.
+4. Validar nos dois idiomas: `split_by_anchors` → `len(chunks) == len(articles)`;
+   ratio por artigo ∈ [1.15, 4.8].
+5. `audit_manual_livros_segmentacao.py` como segunda conferência (dry-run, sem
+   `--fix`, para não reescrever âncoras antigas).
+6. Só então o rebuild.
