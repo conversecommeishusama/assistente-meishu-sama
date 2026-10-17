@@ -228,6 +228,7 @@ def conta(t: str) -> Counter:
 
 def main() -> None:
     ensaio = "--ensaio" in sys.argv
+    espelhar = "--espelhar" in sys.argv
     carimbo = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
     total = Counter()
     tocadas = revertidas = 0
@@ -289,6 +290,18 @@ def main() -> None:
             continue
         shutil.copy(f, f.with_suffix(f".txt.bak_ocr_{carimbo}"))
         f.write_text(depois, encoding="utf-8")
+        # 2026-10-17: o rebuild lê textos_japones/, não reports/livros_trabalho/jp/.
+        # Sem espelhar, a correcção não chegaria ao corpus do Chat e as âncoras
+        # continuariam a falhar lá. Só espelha ficheiros que existam nos dois
+        # lados e fossem idênticos antes da emenda.
+        if espelhar:
+            espelho = RAIZ / "textos_japones" / f.name
+            if espelho.exists():
+                if espelho.read_text(encoding="utf-8", errors="replace") == antes:
+                    shutil.copy(espelho, espelho.with_suffix(f".txt.bak_ocr_{carimbo}"))
+                    espelho.write_text(depois, encoding="utf-8")
+                else:
+                    print(f"  !! {f.name[:40]:<42} espelho DIVERGE — não copiado")
         if d is not None and anc_novas is not None:
             for a, nova in zip(d["articles"], anc_novas):
                 if a.get("jp_anchor") and a["jp_anchor"] != nova:

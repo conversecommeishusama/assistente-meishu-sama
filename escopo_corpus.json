@@ -18,9 +18,9 @@
       "motivo": "Decisão de 24/08/2026: fora da Leitura Colaborativa, permanece no corpus do Chat."
     },
     "19500801 - Primeira palestra após o Incidente de Shizuoka.txt": {
-      "leitura": true,
+      "leitura": false,
       "chat": false,
-      "motivo": "HANDOFF_ACERVO §5 + §6 item 4: registo histórico de palestra (não texto doutrinário publicado) — leitura colaborativa, fora do corpo de pesquisa."
+      "motivo": "NÃO PUBLICADO EM VIDA (未発表). A fonte japonesa — rattail textos_rattail/estruturado/search1/kouwa/s250801.html — traz no cabeçalho 「未発表、昭和25(1950)年8月1日、速記録」: é registo taquigráfico de palestra interna, publicado só postumamente na 岡田茂吉全集講話篇第三巻 p348-357. Verificado em 17/10/2026 a pedido do usuário: fora de ambos os canais, como as restantes 332 secções 未発表 (HANDOFF_ACERVO §4.6). É o ÚNICO 未発表 no corpus — os restantes 434 ficheiros 未発表 do acervo nunca foram traduzidos."
     },
     "Esboco_da_Medicina.txt": {
       "leitura": true,
