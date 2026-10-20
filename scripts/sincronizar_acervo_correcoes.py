@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Propaga para `textos_portugues/*.txt` as correções feitas aos itens.
+"""Verifica (e propaga) as correções dos itens para os dois corpus PT.
 
 O acervo PT guarda o bloco de cada artigo de periódico como
 `titulo_pt + fonte_pt + texto_pt`. Quando os itens são corrigidos (auditoria),
@@ -8,14 +8,28 @@ o `.txt` fica desatualizado.
 
 O método reconstrói a cadeia de estados de cada item a partir dos backups de
 `backups_auditoria/` (cada backup é o estado ANTERIOR a uma correção) e aplica
-a cada `.txt` as transições antigo→novo, exigindo que o texto antigo ocorra
-EXATAMENTE uma vez no ficheiro. Transições cujo texto antigo já não esteja
-presente (artigo cujo `.txt` tem versão anterior à do backup) são ignoradas e
-reportadas.
+a cada `.txt` as transições antigo→novo. Vale para `textos_portugues/` e
+`textos_leitura_colaborativa/` — cada um recebe as transições sobre o **seu
+próprio** texto.
+
+**Falha alto.** Antes, uma transição impossível de aplicar era apenas somada a
+um contador chamado «já ausentes» e o script saía com 0 — foi assim que 14
+correções se perderam entre 13 e 14/10/2026. Agora:
+
+* `já aplicadas` — a forma nova já está lá (comparação sem espaços, porque
+  `\\n` e `\\n\\n` variam entre item e acervo);
+* `variantes` — parágrafo presente com outra forma (quebra/marcador);
+* `PERDIDAS` — não encontrado de nenhuma forma: **é o que importa**;
+* `recusadas` — a aplicação criaria aspas repetidas ou parágrafo duplicado
+  (aconteceu a 20/10: 8 kB repetidos na Kyusei; revertido).
+
+Sai com código 1 se houver PERDIDAS ou recusadas, a menos que `--tolerar`.
+A reparação autoritativa é `scripts/reconciliar_acervo_itens.py`.
 
 Uso:
     python scripts/sincronizar_acervo_correcoes.py            # dry-run
     python scripts/sincronizar_acervo_correcoes.py --aplicar
+    python scripts/sincronizar_acervo_correcoes.py --tolerar  # só relatório
 """
 from __future__ import annotations
 
@@ -32,6 +46,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 ITENS = RAIZ / "reports" / "traducao_periodicos" / "itens"
 BACKUPS = RAIZ / "reports" / "traducao_periodicos" / "backups_auditoria"
 ACERVO = RAIZ / "textos_portugues"
+LEITURA = RAIZ / "textos_leitura_colaborativa"
 VEIC_ARQ = {
     "Tijotengoku": "Tijotengoku.txt",
     "Hikari": "Hikari.txt",
@@ -112,94 +127,209 @@ def diff_paragrafos(antigo: str, novo: str) -> list[tuple[str, str, str]]:
     return out
 
 
+def sem_espaco(s: str) -> str:
+    return re.sub(r"\s+", "", s or "")
+
+
+def em_sincronia(flat_corpus: str, final: str, minimo: float = 0.98) -> bool:
+    """O texto final do item está representado no ficheiro?
+
+    Compara por parágrafos: o corpo não tem de aparecer como um bloco contíguo
+    (o acervo tem marcadores e quebras diferentes), mas quase todos os
+    parágrafos têm de estar lá.
+    """
+    paras = [p for p in re.split(r"\n\s*\n", final) if len(p) >= 40]
+    if not paras:
+        return final in flat_corpus
+    achados = sum(1 for p in paras if p in flat_corpus)
+    return achados / len(paras) >= minimo
+
+
+def paragrafos_iguais_seguidos(t: str) -> int:
+    ps = [re.sub(r"\s+", " ", p).strip() for p in re.split(r"\n\s*\n", t)]
+    return sum(1 for a, b in zip(ps, ps[1:]) if a and a == b)
+
+
+def seguro(antes: str, depois: str, extra: str = "") -> str:
+    """Devolve o motivo da recusa, ou "" se a transição for segura.
+
+    As correcções vieram de diffs entre backups do item; aplicadas a um `.txt`
+    que já divergiu, algumas produzem artefactos — foi o que aconteceu a
+    20/10: aspas a mais em títulos e 8 kB de parágrafos repetidos na Kyusei.
+    """
+    if depois.count('""') > antes.count('""'):
+        return "duplicaria aspas"
+    if paragrafos_iguais_seguidos(depois) > paragrafos_iguais_seguidos(antes):
+        return "duplicaria parágrafo"
+    if extra and extra.strip() and extra.strip() in antes:
+        return "conteúdo já presente no ficheiro"
+    return ""
+
+
+def variante(texto: str, antigo: str) -> bool:
+    """O parágrafo existe no ficheiro mas com outra forma (quebra, marcador)?
+
+    Depois da reconciliação, o que resta não são omissões: é o mesmo parágrafo
+    com formatação diferente (o tradutor fundiu ou dividiu, e a normalização de
+    marcadores acrescentou `(Pergunta)`, `**título**`). Tratar isso como
+    perda de conteúdo tornaria o gate inútil.
+    """
+    flat = re.sub(r"\s+", "", texto)
+    a = re.sub(r"\s+", "", antigo)
+    if len(a) < 80:
+        return a in flat or (len(a) >= 40 and a[:40] in flat)
+    meio = len(a) // 2
+    return (a[:80] in flat or a[-80:] in flat
+            or a[max(0, meio - 40):meio + 40] in flat)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--aplicar", action="store_true")
+    ap.add_argument("--tolerar", action="store_true",
+                    help="sair com 0 mesmo havendo transições não aplicadas")
     args = ap.parse_args()
+    tolerar = args.tolerar
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    aplicadas = puladas = ambiguas = 0
     pendentes: list[str] = []
-    novos: dict[str, str] = {}
+    graves: list[str] = []
 
+    # transições por veículo, calculadas uma vez a partir dos itens
+    por_veiculo: dict[str, list[tuple[str, str, str, str]]] = {}
+    FINAL: dict[str, str] = {}
     for f in sorted(ITENS.glob("*.json")):
         if f.name.startswith("."):
             continue
         d = json.loads(f.read_text(encoding="utf-8"))
         item = f.stem
         veic = d.get("veiculo")
-        arq = VEIC_ARQ.get(veic)
-        if not arq:
+        if veic not in VEIC_ARQ:
             continue
-        caminho = ACERVO / arq
-        if arq not in novos:
-            novos[arq] = caminho.read_text(encoding="utf-8")
-        texto = novos[arq]
+        FINAL[item] = sem_espaco(d.get("texto_pt") or "")
+        por_veiculo.setdefault(veic, []).extend(
+            (item, *t) for t in transicoes(item, d))
 
-        for campo, antigo, novo in transicoes(item, d):
-            if antigo == novo:
+    totais: dict[str, dict[str, int]] = {}
+    plano: dict[tuple[str, str], str] = {}
+    for destino, rotulo in ((ACERVO, "producao"), (LEITURA, "leitura")):
+        contagem = {"aplicadas": 0, "ja": 0, "nao": 0, "amb": 0, "var": 0}
+        for veic, arq in VEIC_ARQ.items():
+            caminho = destino / arq
+            if not caminho.exists():
                 continue
-            if antigo == "###INICIO###":
-                ambiguas += 1
-                pendentes.append(f"{item}.{campo}: parágrafo novo no início sem âncora")
-                continue
-            # IDEMPOTÊNCIA: nas transições de inserção o "antigo" é o parágrafo
-            # anterior, que continua a existir como prefixo do bloco já
-            # inserido — reaplicar duplicaria o bloco. Se o resultado já lá
-            # estiver, não há nada a fazer.
-            if novo and novo in texto:
-                continue
-            n = texto.count(antigo)
-            if n == 2:
-                # ocorrência ambígua: tentar com delimitadores de linha
-                antigo2 = f"\n{antigo}\n"
-                novo2 = f"\n{novo}\n"
-                if texto.count(antigo2) == 1:
-                    texto = texto.replace(antigo2, novo2)
-                    aplicadas += 1
+            original = caminho.read_text(encoding="utf-8")
+            texto = original
+            flat: str | None = sem_espaco(texto)
+
+            for item, item_campo, antigo, novo in por_veiculo.get(veic, []):
+                if antigo == novo:
                     continue
-                ambiguas += 1
-                pendentes.append(f"{item}.{campo}: 2 ocorrências (ambíguo)")
-                continue
-            if n == 1:
-                texto = texto.replace(antigo, novo)
-                aplicadas += 1
-                continue
-            if n == 0:
-                puladas += 1
-                pendentes.append(f"{item}.{campo}: antigo não encontrado "
-                                 f"({len(antigo)}c)")
-                continue
-            ambiguas += 1
-            pendentes.append(f"{item}.{campo}: {n} ocorrências (ambíguo)")
-        novos[arq] = texto
+                # Se o texto final auditado do item já está inteiro no
+                # ficheiro, o item está em sincronia e as transições
+                # intermédias não dizem nada (a cadeia A→B→C com C aplicado
+                # faria B parecer perdido).
+                final = FINAL.get(item, "")
+                if final and flat and em_sincronia(flat, final):
+                    contagem["ja"] += 1
+                    continue
+                if antigo == "###INICIO###":
+                    contagem["amb"] += 1
+                    graves.append(f"{item}.{item_campo}: parágrafo novo no início "
+                                  f"sem âncora [{rotulo}]")
+                    continue
+                # IDEMPOTÊNCIA: o estado final pode já estar lá. Compara-se
+                # sem espaços porque `\n` e `\n\n` variam entre item e acervo.
+                # Não se exige que a forma antiga não exista: ela pode
+                # legitimamente sobreviver noutro artigo.
+                if novo and sem_espaco(novo) in sem_espaco(texto):
+                    contagem["ja"] += 1
+                    continue
+                n = texto.count(antigo)
+                extra = novo[len(antigo):] if novo.startswith(antigo) else ""
+                if n == 1:
+                    cand = texto.replace(antigo, novo, 1)
+                    motivo = seguro(texto, cand, extra)
+                    if motivo:
+                        contagem["amb"] += 1
+                        graves.append(f"{item}.{item_campo}: recusada — {motivo} "
+                                      f"[{rotulo}]")
+                        continue
+                    texto = cand
+                    contagem["aplicadas"] += 1
+                    continue
+                if n == 2:
+                    antigo2, novo2 = f"\n{antigo}\n", f"\n{novo}\n"
+                    if texto.count(antigo2) == 1:
+                        cand = texto.replace(antigo2, novo2, 1)
+                        motivo = seguro(texto, cand, extra)
+                        if motivo:
+                            contagem["amb"] += 1
+                            graves.append(f"{item}.{item_campo}: recusada — "
+                                          f"{motivo} [{rotulo}]")
+                            continue
+                        texto = cand
+                        contagem["aplicadas"] += 1
+                        continue
+                    contagem["amb"] += 1
+                    graves.append(f"{item}.{item_campo}: 2 ocorrências "
+                                  f"(ambíguo) [{rotulo}]")
+                    continue
+                if n == 0:
+                    if variante(texto, antigo):
+                        contagem["var"] += 1
+                        continue
+                    contagem["nao"] += 1
+                    pendentes.append(f"{item}.{item_campo}: antigo não "
+                                     f"encontrado ({len(antigo)}c) [{rotulo}]")
+                    continue
+                contagem["amb"] += 1
+                graves.append(f"{item}.{item_campo}: {n} ocorrências "
+                              f"(ambíguo) [{rotulo}]")
 
-    print(f"transições aplicadas: {aplicadas} | já ausentes: {puladas} | "
-          f"ambíguas: {ambiguas}")
+            if texto != original:
+                if args.aplicar:
+                    shutil.copy2(caminho,
+                                 BACKUPS / f"{arq}.bak_sync_{rotulo}_{stamp}")
+                    caminho.write_text(texto, encoding="utf-8")
+                print(f"  {arq} [{rotulo}]: {len(original)} -> {len(texto)} "
+                      f"({len(texto) - len(original):+d})")
+                plano[(rotulo, arq)] = texto
+        totais[rotulo] = contagem
+
+    for rotulo, c in totais.items():
+        print(f"{rotulo:9} aplicadas={c['aplicadas']:>4} | já aplicadas={c['ja']:>4} "
+              f"| variantes={c['var']:>4} | PERDIDAS={c['nao']:>3} "
+              f"| recusadas/ambíguas={c['amb']:>3}")
+
+    nao_total = sum(c["nao"] for c in totais.values())
+
     if pendentes:
-        print("\nnão aplicadas (o .txt tem versão anterior à do backup):")
+        print("\nALERTA — transições que o .txt não permite aplicar "
+              "(o acervo pode estar a servir texto não corrigido):")
         for p in pendentes[:60]:
             print("   -", p)
         if len(pendentes) > 60:
             print(f"   ... +{len(pendentes) - 60}")
+    if graves:
+        print("\nALERTA — transições ambíguas ou sem âncora:")
+        for p in graves[:40]:
+            print("   -", p)
+        if len(graves) > 40:
+            print(f"   ... +{len(graves) - 40}")
 
-    if args.aplicar:
-        for arq, conteudo in novos.items():
-            caminho = ACERVO / arq
-            original = caminho.read_text(encoding="utf-8")
-            if conteudo == original:
-                continue
-            shutil.copy2(caminho, BACKUPS / f"{arq}.bak_sync_{stamp}")
-            caminho.write_text(conteudo, encoding="utf-8")
-            print(f"  {arq}: {len(original)} -> {len(conteudo)} "
-                  f"({len(conteudo) - len(original):+d})")
-    else:
-        for arq, conteudo in novos.items():
-            origem = (ACERVO / arq).read_text(encoding="utf-8")
-            if conteudo != origem:
-                print(f"  [dry] {arq}: {len(origem)} -> {len(conteudo)} "
-                      f"({len(conteudo) - len(origem):+d})")
+    if not args.aplicar:
         print("(use --aplicar para gravar)")
+
+    # FALHAR ALTO: uma transição que não se aplica significa que o acervo está
+    # a servir texto que já não é o auditado. Antes isto era só um aviso e o
+    # script saía com 0 — foi assim que 14 correcções se perderam em 13–14/10.
+    if nao_total or graves:
+        print(f"\nERRO: {nao_total} transições não encontradas + "
+              f"{len(graves)} ambíguas. Rever com "
+              "`scripts/reconciliar_acervo_itens.py` antes de publicar.")
+        if not tolerar:
+            return 1
     return 0
 
 
