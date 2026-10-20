@@ -131,6 +131,32 @@ def sem_espaco(s: str) -> str:
     return re.sub(r"\s+", "", s or "")
 
 
+try:  # normalização das convenções (御神体, Interlocutor/Meishu-Sama)
+    from normalizar_goshintai_dialogos import converte as _converte
+
+    def canon(s: str) -> str:
+        """Texto com as convenções actuais aplicadas.
+
+        Os backups de `backups_auditoria/` são anteriores à decisão de
+        20/10/2026 (御神体 = «Imagem da Luz Divina»; diálogos sempre
+        «Interlocutor:»/«Meishu-Sama:»). Sem isto, o gate confunde uma
+        mudança de convenção com perda de conteúdo.
+        """
+        return sem_espaco(_converte(s or ""))
+
+    def canon_texto(s: str) -> str:
+        return _converte(s or "")
+
+    def sem_espaco_bruto(s: str) -> str:
+        return sem_espaco(s)
+    pergunta_marcas = None
+except Exception:  # pragma: no cover
+    canon = sem_espaco
+    canon_texto = lambda s: s or ""
+    sem_espaco_bruto = sem_espaco
+    pergunta_marcas = None
+
+
 def em_sincronia(flat_corpus: str, final: str, minimo: float = 0.98) -> bool:
     """O texto final do item está representado no ficheiro?
 
@@ -143,12 +169,12 @@ def em_sincronia(flat_corpus: str, final: str, minimo: float = 0.98) -> bool:
     quebra de linha porque alguns itens separam parágrafos com um `\n` simples
     e, sem isto, dois parágrafos fundidos dariam um bloco inexistente no acervo.
     """
-    blocos = [sem_espaco(p) for p in re.split(r"\n+", final or "")]
-    blocos = [p for p in blocos if len(p) >= 40]
-    if not blocos:
-        return sem_espaco(final) in flat_corpus
-    achados = sum(1 for p in blocos if p in flat_corpus)
-    return achados / len(blocos) >= minimo
+    paras = [canon(p) for p in re.split(r"\n+", final or "")]
+    paras = [p for p in paras if len(p) >= 40]
+    if not paras:
+        return canon(final) in flat_corpus
+    achados = sum(1 for p in paras if p in flat_corpus)
+    return achados / len(paras) >= minimo
 
 
 def paragrafos_iguais_seguidos(t: str) -> int:
@@ -180,8 +206,8 @@ def variante(texto: str, antigo: str) -> bool:
     marcadores acrescentou `(Pergunta)`, `**título**`). Tratar isso como
     perda de conteúdo tornaria o gate inútil.
     """
-    flat = re.sub(r"\s+", "", texto)
-    a = re.sub(r"\s+", "", antigo)
+    flat = canon(texto)
+    a = canon(antigo)
     if len(a) < 80:
         return a in flat or (len(a) >= 40 and a[:40] in flat)
     meio = len(a) // 2
@@ -226,10 +252,18 @@ def main() -> int:
                 continue
             original = caminho.read_text(encoding="utf-8")
             texto = original
-            flat: str | None = sem_espaco(texto)
+            flat: str | None = canon(texto)
 
             for item, item_campo, antigo, novo in por_veiculo.get(veic, []):
                 if antigo == novo:
+                    continue
+                # o histórico pode usar convenções anteriores; compara-se
+                # sempre em forma canónica
+                antigo, novo = canon_texto(antigo), canon_texto(novo)
+                # transição que só diferia por convenção: em forma canónica é
+                # vazia, logo já está aplicada
+                if antigo == novo:
+                    contagem["ja"] += 1
                     continue
                 # Se o texto final auditado do item já está inteiro no
                 # ficheiro, o item está em sincronia e as transições
@@ -249,6 +283,9 @@ def main() -> int:
                 # Não se exige que a forma antiga não exista: ela pode
                 # legitimamente sobreviver noutro artigo.
                 if novo and sem_espaco(novo) in sem_espaco(texto):
+                    contagem["ja"] += 1
+                    continue
+                if novo and canon(novo) in flat:
                     contagem["ja"] += 1
                     continue
                 n = texto.count(antigo)

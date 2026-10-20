@@ -187,6 +187,12 @@ def funde(corpo: str, novo: str) -> tuple[str, list[str], list[str]]:
     if not pend:
         return corpo, inseridos, conflitos
 
+    # bloco vazio no corpus (acontece no corpus de leitura, cuja cópia do artigo
+    # pode estar vazia): não há âncora possível — devolve tudo no fim
+    if not cp:
+        corpo_novo = "\n\n".join(t for _, _, _, t in sorted(pend))
+        return corpo_novo, inseridos, conflitos
+
     # agrupa por âncora e aplica de trás para a frente, mantendo a ordem do item
     por_ancora: dict[tuple[int, int], list[tuple[int, str]]] = {}
     for idx, lado, k, txt in pend:

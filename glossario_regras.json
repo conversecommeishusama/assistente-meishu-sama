@@ -1,7 +1,8 @@
 {
  "decisoes_usuario": {
   "demais": "seguir as recomendações do relatório de decisões",
-  "medidas": "converter SEMPRE para o sistema métrico ocidental"
+  "medidas": "converter SEMPRE para o sistema métrico ocidental",
+  "dialogos": "Em diálogos, o padrão é SEMPRE «Interlocutor:» / «Meishu-Sama:» (decisão de 20/10/2026). Não usar (Pergunta)/(Resposta Divina)/(Consulta)/(Indagação)/(Revelação Divina)/(Instrução Divina)/(Orientação)."
  },
  "medidas": {
   "丈": {
@@ -345,9 +346,75 @@
    ],
    "gravidade": "erro",
    "motivo": "唯心 (yuishin) NÃO é 'idealismo' (sentido filosófico kantiano). O par 唯物/唯心 = materialismo/espiritualismo. Usar 'espiritualismo'/'espiritual'. 'idealismo' só é legítimo para 理想論 (ideal, utopia)."
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao, 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao, 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao, 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao; 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao; 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
+  },
+  {
+   "gatilho_jp": [
+    "御神体"
+   ],
+   "gravidade": "erro",
+   "motivo": "御神体 = «Imagem da Luz Divina» (glossario_traducao; 462 ocorrências no acervo). A ronda R5 da auditoria dos periódicos impôs «objeto sagrado de culto (goshintai)» em 83 lugares, contra o glossário; revertido em 20/10/2026 por decisão do usuário.",
+   "proibido_pt": [
+    "objeto sagrado de culto",
+    "objetos sagrados de culto"
+   ]
   }
  ],
- "versao": "2026-10-16b",
+ "versao": "2026-10-20",
  "proibicoes_isencao": [
   "avançar um shaku e recuar um sun",
   "Taishidō-chō",
