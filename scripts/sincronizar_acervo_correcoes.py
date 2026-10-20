@@ -137,12 +137,18 @@ def em_sincronia(flat_corpus: str, final: str, minimo: float = 0.98) -> bool:
     Compara por parágrafos: o corpo não tem de aparecer como um bloco contíguo
     (o acervo tem marcadores e quebras diferentes), mas quase todos os
     parágrafos têm de estar lá.
+
+    `final` é o texto CRU do item — normaliza-se aqui, bloco a bloco;
+    recebê-lo já sem espaços colapsaria tudo num bloco só. Corta em qualquer
+    quebra de linha porque alguns itens separam parágrafos com um `\n` simples
+    e, sem isto, dois parágrafos fundidos dariam um bloco inexistente no acervo.
     """
-    paras = [p for p in re.split(r"\n\s*\n", final) if len(p) >= 40]
-    if not paras:
-        return final in flat_corpus
-    achados = sum(1 for p in paras if p in flat_corpus)
-    return achados / len(paras) >= minimo
+    blocos = [sem_espaco(p) for p in re.split(r"\n+", final or "")]
+    blocos = [p for p in blocos if len(p) >= 40]
+    if not blocos:
+        return sem_espaco(final) in flat_corpus
+    achados = sum(1 for p in blocos if p in flat_corpus)
+    return achados / len(blocos) >= minimo
 
 
 def paragrafos_iguais_seguidos(t: str) -> int:
@@ -206,7 +212,7 @@ def main() -> int:
         veic = d.get("veiculo")
         if veic not in VEIC_ARQ:
             continue
-        FINAL[item] = sem_espaco(d.get("texto_pt") or "")
+        FINAL[item] = d.get("texto_pt") or ""
         por_veiculo.setdefault(veic, []).extend(
             (item, *t) for t in transicoes(item, d))
 
