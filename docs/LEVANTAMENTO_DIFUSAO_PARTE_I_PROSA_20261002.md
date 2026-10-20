@@ -38,8 +38,7 @@ publicação, este texto também declara apenas mês e ano — não se inventou 
 ## 1. A cronologia da institucionalização (1934–1955)
 
 A história institucional do movimento começa em outubro de 1934, quando Meishu-Sama
-inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会**, a partir do
-応神堂. O que ele próprio dirá depois sobre esse começo é revelador do modo como
+inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会** (Dai-Nippon Kannon-kai), a partir do 応神堂 (Ōjin-dō). O que ele próprio dirá depois sobre esse começo é revelador do modo como
 entendia a relação entre carisma e instituição:
 
 > 「顧みれば昭和九年一〇月私は大日本観音会なる名称のもとに、観音運動を始め、その
@@ -54,10 +53,10 @@ pobreza e conflito. Sucede que a orientação das autoridades da época era a de
 indiscriminadamente as religiões análogas; por isso a Dai-Nippon Kannon-kai não escapou
 e sofreu repressão radical. Desde então, afastado por completo da religião, cheguei até
 hoje desenvolvendo-me exclusivamente como terapeuta."*
-— Discurso na fundação da 日本観音教団, `novembro de 1947 · search1/kouwa/s221199.html`
+— Discurso na fundação da 日本観音教団 (Igreja Kannon do Japão), `novembro de 1947 · search1/kouwa/s221199.html`
 
-Três anos depois vem a fundação oficial, em 1º de janeiro de 1935, em Kōjimachi
-Hanzōmon, num 分所 do Oomoto que ele utilizava (`search1/ko/kojimach.html`). A década
+Três meses depois vem a fundação oficial, em 1º de janeiro de 1935, em Kōjimachi
+Hanzōmon, num 分所 (subsede) do Oomoto que ele utilizava (`search1/ko/kojimach.html`). A década
 seguinte é a da repressão: em novembro de 1941 encerra-se a atividade religiosa e o
 movimento passa formalmente à terapia, com a proibição da cura "sem tocar"
 (`search1/taidan/taidan39.html`). É essa passagem pela medicina não-oficial que explica
@@ -65,7 +64,7 @@ um traço persistente de toda a estrutura posterior — o **Johrei como porta de
 e não a doutrina.
 
 A reorganização pós-guerra é rápida e se faz por camadas. Em 1946 constitui-se a
-**日本浄化療法普及会**, associação civil com estatuto próprio
+**日本浄化療法普及会** (Nihon Jōka Ryōhō Fukyū-kai), associação civil com estatuto próprio
 (`search1/ni/nihon12.html`). Em 1º de julho de 1947 aparece o **日本観音教団講習要項**,
 primeiro currículo de formação do movimento (`search1/ni/nihon07.html`). Em agosto de
 1947 vem a personalidade jurídica religiosa:
@@ -78,9 +77,9 @@ segundo ano [1947] obtivemos a personalidade jurídica e finalmente pudemos anda
 cabeça erguida."*
 — 「私とサタンとの闘争史」, `search1/wa/watasi05.html`
 
-Em 11 de novembro de 1947 celebra-se a cerimônia de fundação da **日本観音教団**
+Em 11 de novembro de 1947 celebra-se a cerimônia de fundação da **日本観音教団** (Nihon Kannon Kyōdan)
 (`search1/kouwa/s221199.html`). No ano seguinte há a cisão interna que leva à
-denominação **五六七教会**, em 1º de novembro de 1948
+denominação **五六七教会** (Igreja Mutsumi), em 1º de novembro de 1948
 (`search1/kouwa/s231101.html`), seguida em 1º de dezembro pela criação da sede em
 Odawara, com Tóquio (Kaminoge) passando a sede regional de Kantō
 (`search2/sanko/ren01.html`). Em 8 de dezembro de 1948, Meishu-Sama enuncia a
@@ -89,8 +88,8 @@ seção 3.1, porque é o mais explícito de todo o corpus sobre como se subia na
 
 O auge institucional do período vem depois. Em 8 de março de 1949 sai o primeiro número
 do jornal **『光』**, com cem mil fiéis declarados (`search1/ho/honkyo20.html`). Em
-fevereiro de 1950 a 教団 passa por **発展的解消** — dissolução-e-desenvolvimento — e
-renasce como **世界救世教会** (`search1/ka/kantou13.html`). Em outubro de 1950 temos o
+fevereiro de 1950 a instituição (教団) passa por **発展的解消** — dissolução-e-desenvolvimento — e
+renasce como **世界救世教会** (Igreja Mundial Messiânica) (`search1/ka/kantou13.html`). Em outubro de 1950 temos o
 **censo oficial** que serve de base a todas as contas deste levantamento: 4 Igrejas
 Grandes, 78 Igrejas Médias, 710 igrejas, com 56, 430 e 2.244 Ministros respectivamente
 (`search1/mo/mondai.html`).
@@ -129,7 +128,7 @@ março de 1955).
 | 1949-03-08 | Primeiro número do jornal **『光』** | `search1/ho/honkyo20.html` |
 | 1950-02 | **世界救世教会** — 発展的解消 da 教団 | `search1/ka/kantou13.html` |
 | 1950-10 | **Censo oficial** (v. §5.4) | `search1/mo/mondai.html` |
-| 1951-02-05 | **Reforma**; nasce a **世界救世教** | `search2/sanko/kikoseib.html` |
+| 1951-02-05 | **Reforma**; nasce a **世界救世教** (Kyūseikyō) | `search2/sanko/kikoseib.html` |
 | 1951-10-10 | **Regulamento da pessoa jurídica** | `search2/sanko/kisoku.html` |
 | 1953-12-16 | Fundação do Templo Messiânico (Zuiunkyo) | `search1/ne/nento03.html` |
 | 1954-06-15 | Cerimônia provisória do advento de Messias | `search2/kikou/mesiya1.html` |
@@ -286,14 +285,14 @@ sucesso de público provavelmente sem precedentes."*
 
 **A missão externa.** O Havaí, a partir de fevereiro de 1953, foi obra de duas pessoas
 destacadas da liderança interna — a Ministra Higuchi Kiyoko e o Ministro Assistente
-Anshoku Haruhiko —, não de um seminário missionário:
+Ajiki Haruhiko —, não de um seminário missionário:
 
 > 「昨年二月十一日世界メシヤ教海外布教のため、**樋口喜代子教師が助教師安食晴彦氏を
 > 帯同して来布され**」
 
 *"Em 11 de fevereiro do ano passado [1953], para a difusão ultramarina da Igreja Mundial
 Messiânica, a Ministra Higuchi Kiyoko veio ao Havaí acompanhada do Ministro Assistente
-Anshoku Haruhiko."*
+Ajiki Haruhiko."*
 — 「ハワイ通信」『栄光』264号, 7 de julho de 1954 · `search2/kikou2/hawai20.html`
 
 **A publicação em massa.** Aqui a difusão agrícola e a difusão religiosa se confundem
@@ -393,7 +392,7 @@ Três critérios de ascensão aparecem aqui, e nenhum deles é acadêmico: **nú
 pessoas conduzidas** (cem ou mais), **valor ofertado** (trinta mil ienes ou mais), ou
 **recomendação do superior imediato**. Não há prova, não há tempo mínimo de casa, não
 há formação escolar exigida. A justificativa é explícita — "é justo que aqueles com
-méritos estejam no topo" —, e a palavra usada é **功労**, mérito-serviço.
+méritos estejam no topo" —, e a palavra usada é **功労** (mérito-serviço), mérito-serviço.
 
 A escala de unidades fica assim: Sede (本部) › Subsede (分所) › Associação (分会) ›
 filial (支部) › Centro de Ensino (教導所).
@@ -748,7 +747,7 @@ Reunindo as evidências dispersas, o corpus permite reconstruir uma progressão 
 
 | Degrau | Objeto | Quem recebe | Fonte |
 |---|---|---|---|
-| 1 | **Ohikari 「Kōmyō」** | todo fiel, ao fim do Kyoshu | §7.1 |
+| 1 | **Ohikari 「Kōmyō」** | todo fiel, ao fim do Kyoshu | — |
 | 2 | **Byōbu Kannon** (Kannon do biombo) | o fiel, quando a fé amadurece | `『御光話録』12号, 21 de setembro de 1949 · search1/situmon/m240613.html` |
 | 3 | **Imagem da Luz Divina 「Komyo-Nyorai」** | idem — **não** no ato da conversão | `『地上天国』9号, 25 de outubro de 1949 · search1/situmon/situmo11.html` |
 | 4 | **Imagem da Luz Divina 「Daikōmyō Nyorai」** | membro comum, com critério de casa | `『御光話録』12号, 21 de setembro de 1949 · search1/situmon/m240613.html` |
@@ -956,7 +955,7 @@ Duas ressalvas de honestidade intelectual sobre este mapeamento. A primeira é q
 **inferencial, não textual** — nenhum documento localizado diz "o 教導師 passou a se
 chamar 中教師". O que existe é a cronologia, que é objetiva, e a correspondência de
 magnitude entre as faixas. A segunda é que o termo **助教師 não pertence a esta série**:
-ele ocorre em apenas três documentos, todos sobre o Havaí, designando Anshoku Haruhiko
+ele ocorre em apenas três documentos, todos sobre o Havaí, designando Ajiki Haruhiko
 ao lado de Higuchi Kiyoko, que é 教師. Trata-se do auxiliar de um Ministro **já formado**,
 no contexto de missão externa — uma terceira linha, externa ao Japão, que não deve ser
 confundida com 教導師補.
@@ -1015,7 +1014,7 @@ Por isso, daqui em diante aparecerão muitas coisas diferentes; não se perturbe
 
 O anúncio é o de uma etapa nova — e dois meses depois Meishu-Sama falece, sem que ela
 se consolidasse. **O que a reforma anunciada continha em concreto, o acervo não
-documenta em fonte que este levantamento possa citar**; registra-se como lacuna (§10).
+documenta em fonte que este levantamento possa citar**; registra-se como ponto não documentado.
 
 A exigência mais radical do período, em contrapartida, está documentada — e não vinha de
 anúncio, mas de comunicação interna: **dedicação exclusiva**, que rompia com a figura do
@@ -1162,7 +1161,7 @@ de **企画** (Planejamento) e **自然農法普及** (Difusão da Agricultura N
 dos já existentes, conforme o art. 5º do comunicado de Ōkusa
 (`search2/sanko/kikoseib.html`). O **外国部** (Departamento do Exterior) veio depois, com
 a difusão ultramarina. **Como se compunha a chefia de cada departamento em 1954–1955, o
-acervo não documenta em fonte citável** — registra-se como lacuna (§10).
+acervo não documenta em fonte citável** — registra-se como ponto não documentado.
 
 ### 6.3 Organograma reconstruído
 
@@ -1283,7 +1282,7 @@ instrutor.** O requisito é a leitura do manual.
 
 ### 7.2 O conteúdo do curso
 
-O **教修要綱** — "Compêndio do Kyoshu" — é o único documento curricular localizado, na
+O **教修要綱** (Kyōshu Yōkō) — "Compêndio do Kyoshu" — é o único documento curricular localizado, na
 terceira edição, de outubro de 1954. Trata-se de um livreto de 118 páginas, formato A5,
 marcado como **「非売品」** (não vendido), impresso pelo Departamento de Publicações da
 Sede.
@@ -1590,7 +1589,7 @@ construiu. Um fiel encerra seu período e registra: 「無事に**一カ月の�
 **建設奉仕隊に約半期**」.
 
 Foi essa mão de obra que permitiu mover as rochas dos jardins de Hakone, construir o
-Nikkōden, abrir a mina de 水上 e erguer o Zuiunkyo — com o financiamento monetário vindo
+Nikkōden, abrir a mina de 水上 (Minakami) e erguer o Zuiunkyo — com o financiamento monetário vindo
 dos fiéis em dinheiro, e o trabalho vindo dos fiéis em tempo.
 
 ### 8.3 O ministério itinerante
@@ -1616,7 +1615,7 @@ a capacidade de supervisão.
 E, no fim da vida, a itinerância de Meishu-Sama aproxima-se da formação de portadores de
 qualificação — movimento que coincide com o anúncio da etapa nova, em dezembro de 1954
 (seção 5.7). **A documentação desse período final, no entanto, não é citável neste
-levantamento**; registra-se como lacuna (§10).
+levantamento**; registra-se como ponto não documentado.
 
 ### 8.4 O gênero documental dominante
 

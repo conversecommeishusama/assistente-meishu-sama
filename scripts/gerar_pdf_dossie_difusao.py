@@ -514,10 +514,11 @@ def capa(blocos_capa, subtitulo):
     out.append(Paragraph(para_inline(subtitulo), ESTILOS["capa_s"]))
     out.append(Spacer(1, 16 * mm))
     out.append(Paragraph(
-        "Pesquisa interna · 2 de outubro de 2026", ESTILOS["capa_s"]))
+        "Pesquisa interna · outubro de 2026", ESTILOS["capa_s"]))
     out.append(Spacer(1, 5 * mm))
     out.append(Paragraph(
-        "Fonte: acervo textual rattail — textos_rattail", ESTILOS["capa_s"]))
+        "Fontes: escritos, palavras e documentos oficiais da época",
+        ESTILOS["capa_s"]))
     out.append(NextPageTemplate("corpo"))
     out.append(PageBreak())
     return out
@@ -630,7 +631,7 @@ def main():
     Dossie("/tmp/_passe1.pdf").build(provisorio)
 
     # Segunda passagem: sumário definitivo, já com os números.
-    flow = capa([TITULO], "Parte I e Parte II · edição para impressão")
+    flow = capa([TITULO], "Volume único · edição para impressão")
     flow.extend(monta_sumario(blocos, dict(PAGINAS)))
     flow.extend(monta_flow(blocos))
 

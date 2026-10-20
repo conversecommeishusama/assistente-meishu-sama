@@ -193,14 +193,14 @@ dramática — já estava no papel desde o começo.
 | Distribuir o jornal | Centro de Ensino, filial | `search1/hi/hikari03.html` |
 | Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `search2/sanko/teirei1.html` e ss. |
 | Abrigar doentes em purificação | Sede da Igreja Média | 『御教え集』1号, 20 de setembro de 1951 · `search1/situmon/m260828.html` |
-| Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | Parte I, §8.1 |
+| Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | — |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `search2/kikou2/sekai03.html` |
 | Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 A última linha tem uma contrapartida que convém não deixar implícita: a auditoria
 instituída pelo Regulamento corre na direção contrária — quem audita é a Sede, mas
 quem examina e aprova as contas da Sede é a assembleia dos presidentes de igreja.
-O ponto está desenvolvido em **§25.3**.
+O ponto está desenvolvido no **capítulo 13**.
 
 Uma restrição operacional merece registro, porque mostra como a estrutura era
 pensada a partir da capacidade real de uma pessoa. Perguntado sobre quem preside
@@ -350,7 +350,7 @@ sem eufemismo, as variações que encontravam nas regiões — a oferta de cinco
 sete mil ienes pelo mesmo Byōbu, o "Kyoshu de dez dias" que era apenas o número
 de dias de Johrei recebidos, a região em que não se fazia Kyoshu de modo algum, a
 esposa do ministro que adivinhava se o caso sarava. O quadro completo está
-transcrito na Parte I, §7.5. E depois da reunião vinha **a norma escrita**: o
+transcrito no capítulo 4. E depois da reunião vinha **a norma escrita**: o
 aviso 「注意」, publicado na mesma 『栄光』191号, começa exatamente por
 「別項座談会にもあるごとく……」 — *"conforme a mesa-redonda em outra seção"*.
 
@@ -418,11 +418,11 @@ significativo: **査察**, a forma corrente de inspeção de contas no período,
 sempre do Estado, nunca da igreja — 「税務査察官」, 「**査察部**の脱税摘発で気が
 立っている」, 「弁護士に査察景気」. A única "auditoria" que o acervo descreve
 como ameaça à instituição é a do fisco, e foi por ali que veio a persecução de
-1950 (§30).
+1950 (capítulo 26).
 
 Uma última nota, sobre a direção da auditoria *dentro* das igrejas. A auditoria
 interna que o acervo documenta é a **da própria unidade sobre si mesma**: no
-organograma da igreja do Havaí (§25.1) há **seis 監査** ao lado do tesoureiro, e a
+organograma da igreja do Havaí (capítulo 10) há **seis 監査** ao lado do tesoureiro, e a
 assembleia anual aprova o 「会計報告」 — o relatório contábil do exercício
 (`search2/kikou2/hawai18.html`). O padrão é antigo: já no 会則 da 日本浄化療法
 普及会, 「監事は会の財務を監査す」 (`search1/ni/nihon12.html`). A igreja auditava
@@ -588,7 +588,7 @@ pescoço. O acervo descreve sua natureza e sua função com precisão:
 > され、霊の曇りは解消し病は治るのである。」
 > — 「浄霊とは何か」 · `search1/English/ejorei16.html`
 
-*"Primeiro escrevo o caráter 'Luz' numa folha de papel, dobro-o e o entrego ao
+*"Primeiro escrevo o caractere 「光」 (Hikari) numa folha de papel, dobro-o e o entrego ao
 convertido como **Ohikari**; quando ele o põe no peito e ergue a mão, da palma
 irradia-se luz, a mácula do espírito se desfaz e a doença se cura."*
 
@@ -599,14 +599,14 @@ Havia **três graus** de Ohikari, conforme a caligrafia nele traçada:
 > 掌を透して放射されるのである。」
 > — 「黴菌の発生」 · `search1/English/ebaikin5.html`
 
-*"Esse Ohikari é a caligrafia que eu escrevi, e há **três espécies: Luz, Kōmyō e
+*"Esse Ohikari é a caligrafia que eu escrevi, e há **três espécies: Hikari, Kōmyō e
 Dai-Kōmyō**; o espírito divino do Deus Senhor (Jeová) transmite-se ao Ohikari
 tendo meu corpo espiritual como intermediário, e do Ohikari irradia-se através
 da palma do fiel."*
 
 Isso estabelece uma **hierarquia própria do Ohikari**, paralela — mas não
 idêntica — à hierarquia dos objetos de culto entronizados (大光明如来 › 光明如来
-› お姿), que a §31 examina.
+› お姿), que o capítulo 17 examina.
 
 ### 27.3 A outorga
 
@@ -627,20 +627,40 @@ O acervo **não descreve** um rito formal de imposição do Ohikari com oração
 própria — nem no Regulamento de 1951, nem nos relatos. O que se documenta é a
 entrega ao término do curso, no contexto do culto.
 
-**Sobre o valor, porém, não há lacuna: o Ohikari tinha preço fixo.** Em 1935,
-Meishu-Sama o explica aos presentes:
+**Sobre o valor, porém, não há dúvida: o Ohikari tinha preço fixo.** O valor de
+1935 — dez ienes, contra um iene do modelo anterior — não serve, porém, para o
+período de que trata este volume. A moeda de antes da guerra não é a de depois, e
+projetar aquele número sobre 1950 seria erro de método. O que a documentação
+pós-guerra permite afirmar é a **ordem de grandeza**:
 
-> 「いままでの御守りは**一円**でお頒（わか）ちしていたんですが、今度のは**十円**で
-> お頒ちいたしています。」
-> — 「御講話」, 11 de maio de 1935 · `search1/kouwa/s100511.html`
+> 「お話を伺ってみると**千円のお礼でお守様が頂ける**、しかもたったそれだけで
+> 自分の病気も治せると聞き、それなら一万円でも安いことだと思って」
 
-*"O Ohikari de até agora era distribuído por **um iene**; este novo é distribuído
-por **dez ienes**."*
+*"Ao ouvir a explicação, soube que **por mil ienes de oferta se recebe o
+Ohikari**, e que só com isso a própria doença se pode curar; achei que, mesmo por
+dez mil ienes, seria barato."*
+— 「重症の筋炎治る」『光』6号, 25 de abril de 1949
 
-O valor não era, portanto, oferta espontânea, e sim **preço** — e a diferença
-entre as duas coisas é doutrinariamente importante, como mostra o aviso formal de
-1953 (v. §28.4). O mesmo se aplica às demais peças que Meishu-Sama traçava: a
-caligrafia entronizada e a Imagem.
+No mesmo ano, um pregador adversário denuncia o valor como exorbitante:
+
+> 「それから「御守」だって**二千円も出して買っている**という。あんなものを二千円も
+> 出して全くべら棒な銭取主義のものである。」
+
+*"E dizem que até o Ohikari **se compra pagando dois mil ienes**. Pagar dois mil
+ienes por uma coisa daquelas é puro e descarado mercantilismo."*
+— 「説教者が本教罵倒」『光』36号, 19 de novembro de 1949
+
+A cifra vem de fonte hostil e é registrada como o que é — afirmação alheia,
+provável exagero —, mas confirma a ordem de grandeza. Em 1954, uma menina de
+catorze anos compara o Ohikari ao custo de uma viagem escolar, "cerca de dois mil
+ienes", ao explicar por que a mãe só podia pagar um dos dois. E em 1950 uma
+mulher entra num plano de poupança diária de trinta ienes para poder recebê-lo.
+
+**A tabela de 1953 não está documentada.** O aviso daquele ano fixa o princípio
+— o valor é fixo —, não o número. O que se pode afirmar com segurança é que o
+Ohikari tinha preço fixo, e que esse preço, no período pós-guerra, era da ordem
+de **milhares de ienes**, e não de dezenas. O mesmo se aplica às demais peças que
+Meishu-Sama traçava: a caligrafia entronizada e a Imagem.
 
 Há, contudo, um dado que ilumina o estatuto do objeto: o Ohikari era tratado
 como **pertencente à pessoa**, e não à instituição. Perguntado sobre o que fazer
@@ -656,7 +676,7 @@ o Ohikari posto no corpo.**"*
 
 Nenhum objeto de culto coletivo recebe esse tratamento. É um indício de que o
 Ohikari não era um **objeto sagrado autônomo**, mas um vínculo **pessoal** — o
-que converge com o que a Parte II (§13) registra sobre a Imagem: também ela não
+que converge com o que o capítulo 15 registra sobre a Imagem: também ela não
 é sagrada por si, e sim por ser representante de quem a traçou.
 
 ---
@@ -728,7 +748,7 @@ correspondente**."*
 — idem
 
 Fica assim uma terceira natureza de contribuição, ao lado do **preço fixo** dos
-objetos (§28.4) e da **oferta livre** pelo serviço espiritual: a **oferta
+objetos (capítulo 18) e da **oferta livre** pelo serviço espiritual: a **oferta
 interna à unidade**, que circulava entre o fiel e quem o atendia, e cujo destino
 — retê-la ou repassá-la — era objeto de correção expressa.
 
@@ -804,7 +824,7 @@ financeira, mas de trabalho:
 > 受けず、手銭手弁当で、朝から晩まで**えいえい汗して働いているその崇高なる態度を
 > 見れば、何人といえども感激胸に迫るものがあろう」
 
-*"Também por isso esta religião está hoje erguendo, nos sítios cênicos de Hakone
+*"Também por isso esta religião está hoje erguendo, nas paragens de grande beleza natural de Hakone
 e Atami, uma construção de grande escala, para fazer o modelo do Paraíso
 Terrestre — e **em sua maior parte por serviço voluntário dos fiéis, sem receber
 auxílio de ninguém, com recursos e refeição próprios, suando de manhã à noite**;
@@ -831,9 +851,8 @@ O regime financeiro do período distingue com nitidez **duas naturezas de
 contribuição**, e a distinção é doutrinária, não contábil.
 
 De um lado, as peças que Meishu-Sama traçava — o **Ohikari**, a caligrafia
-entronizável, a **Imagem** — tinham **preço fixo**. Em 1935 ele o declara ao
-anunciar a nova geração do Ohikari, que passa de um iene para dez (§27.3). E em
-1953 o princípio é formalizado num **aviso** publicado em 『栄光』:
+entronizável, a **Imagem** — tinham **preço fixo**. O valor, no período pós-guerra, era da ordem de milhares de ienes
+(capítulo 19). E em 1953 o princípio é formalizado num **aviso** publicado em 『栄光』:
 
 > 「御守はじめその他の私のかいたものの値は**一定している**にかかわらず、少しでも
 > 多い金を得るとしたら、**その分だけは盗みの罪を犯す事になる**から、何程一生懸命
@@ -1126,6 +1145,13 @@ havia uma **campanha articulada** para provocar a repressão:
 > — 「読売紙の記事に就て」, 『光』31号, 15 de outubro de 1949 ·
 > `search1/yo/yomiuri3.html`
 
+*"Por esses meios, era um conluio para fazer crer que esta religião espalha
+veneno pela sociedade, mover as autoridades e provocar a repressão; e, ao mesmo
+tempo, vinha gente do mesmo grupo dizer que em breve surgiriam problemas em duas
+províncias — Saitama e Fukushima —, e que disso resultaria uma grande repressão,
+e que era perigoso não agir logo, deixando escapar, com esse tom, a ideia de que
+seriam necessárias despesas de movimento."*
+
 E a reportagem avançava um número que Meishu-Sama considerou absurdo:
 
 > 「本教収入一日**一千万円以上**と出ていた、この計算でゆくと一ケ年**三十六億五千万円**
@@ -1174,12 +1200,10 @@ o início de uma etapa nova, sob "novo organismo".
 
 ## 31. As oferendas diante do objeto de culto
 
-Esta seção corrige, mais uma vez, o que a Parte II registrava. A §22 daquele
-volume declarava lacuna a pergunta sobre "água, sal e arroz lavado como
-oferendas", e a revisão de 5 de outubro a reclassificara como "parcial, com
-reviravolta doutrinária", com base numa prédica de 1953 que critica a forma
-arcaica. **Havia, no entanto, uma resposta direta e anterior, de 1949** — e ela
-resolve a questão.
+Água, sal e arroz lavado são as três oferendas que a tradição xintoísta coloca
+diante do altar. A pergunta que se fez a Meishu-Sama foi se elas valiam também
+para a Imagem da Luz Divina, e a resposta — de 23 de abril de 1949 — é direta, e
+distingue dois destinatários: o deus-dragão e o ser humano.
 
 ### 31.1 A instrução de 23 de abril de 1949
 
@@ -1225,10 +1249,9 @@ A resposta é completa, e tem três partes que importam:
 E acrescenta um dado que fecha a questão editorial: **"tenho intenção de, em
 breve, criar a nova forma do culto"**. A nova forma não existia ainda em abril de
 1949; a instrução era provisória — "até então, fazendo de modo apropriado, está
-bem". Isso explica, sem contradição, a prédica de 7 de dezembro de 1953 que a
-Parte II registrou: em 1953 Meishu-Sama ainda **criticava** a forma arcaica
-porque a nova forma **ainda não fora fixada**. As duas falas não se opõem — são
-dois momentos do mesmo processo.
+bem". Isso explica, sem contradição, a prédica de 7 de dezembro de 1953: em 1953
+Meishu-Sama ainda **criticava** a forma arcaica porque a nova forma **ainda não
+fora fixada**. As duas falas não se opõem — são dois momentos do mesmo processo.
 
 ### 31.2 O que de fato se ofertava
 
@@ -1274,8 +1297,8 @@ fazer um tokonoma provisório. Para que direção devemos orientá-lo? — **A d
 pode ser qualquer uma, leste, oeste, sul ou norte; mas a posição deve ser o lugar
 mais alto — o assento superior (上座) — do cômodo.**"*
 
-Isso **fecha a lacuna** que a Parte II (§22) registrava como "regras de orientação
-do tokonoma": não há regra de orientação; há regra de **proeminência**.
+Isso **fecha a questão** das "regras de orientação do tokonoma": não há regra de
+orientação; há regra de **proeminência**.
 
 **A disposição.** As oferendas voltam-se para o humano, para que ele as veja; os
 palitos (箸) do objeto de culto põem-se do lado do objeto, e os dos antepassados,
@@ -1302,10 +1325,9 @@ Nyorai, no lugar mais alto. Depois Kōmyō Nyorai, e depois a figura (お姿). T
 o que é escrita está acima. Refiro-me ao caso dos objetos de culto (御神体).
 A escrita é espírito, a pintura é corpo.**"*
 
-É a formulação mais nítida de um princípio que a Parte II já registrara em outras
-passagens (「文字は霊、絵は体」): **a hierarquia dos objetos de culto segue a
-natureza do suporte** — a escrita é espírito e por isso prevalece; a pintura é
-corpo. Segue-se que a figura pintada **nunca** se sobrepõe à caligrafia, e que
+É a formulação mais nítida de um princípio já registrado em outras passagens
+(「文字は霊、絵は体」): **a hierarquia dos objetos de culto segue a natureza do
+suporte** — a escrita é espírito e por isso prevalece; a pintura é corpo. Segue-se que a figura pintada **nunca** se sobrepõe à caligrafia, e que
 uma casa sem lugar para ambas deve **guardar** a que não couber, em lugar de
 rebaixá-la:
 
