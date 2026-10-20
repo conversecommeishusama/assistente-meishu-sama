@@ -76,6 +76,11 @@ GOSHINTAI = [
     ("um objeto sagrado de culto (goshintai)", "uma Imagem da Luz Divina"),
     ("O objeto sagrado de culto (goshintai)", "A Imagem da Luz Divina"),
     ("o objeto sagrado de culto (goshintai)", "a Imagem da Luz Divina"),
+    # forma sem artigo — aparece nas transições dos backups (a R5 substituía o
+    # termo isolado) e tem de ser reconhecida senão o sincronizador reaplica a
+    # convenção abolida
+    ("Objeto sagrado de culto (goshintai)", "Imagem da Luz Divina"),
+    ("objeto sagrado de culto (goshintai)", "Imagem da Luz Divina"),
 ]
 
 # Particípios que concordavam com «objeto» (masculino) e têm de concordar com

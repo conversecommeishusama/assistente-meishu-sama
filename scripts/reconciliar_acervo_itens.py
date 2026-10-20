@@ -57,6 +57,7 @@ sys.path.insert(0, str(RAIZ))
 
 import estender_specs_periodicos as E  # noqa: E402
 from sincronizar_acervo_correcoes import transicoes  # noqa: E402
+from normalizar_goshintai_dialogos import converte  # noqa: E402
 
 PT = RAIZ / "textos_portugues"
 LC = RAIZ / "textos_leitura_colaborativa"
@@ -310,6 +311,12 @@ def main() -> int:
                     continue
                 fundido, n = sub_flexivel(fundido, antigo, novo)
                 cor += n
+
+            # O histórico inclui rondas anteriores à decisão de 20/10 (a R5
+            # impunha «objeto sagrado de culto»; os marcadores antigos vêm de
+            # rondas dos dias 13-14). Reaplicá-las em cadeia reintroduziria a
+            # convenção abolida — canoniza-se o resultado.
+            fundido = converte(fundido)
 
             if fundido != corpo and sq(fundido) != sq(corpo):
                 pt = pt[:ini] + cab + "\n\n" + fundido.strip() + "\n\n" + pt[fim:]
