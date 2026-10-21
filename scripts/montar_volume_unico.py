@@ -214,6 +214,7 @@ GLOSAS = [
 
 
 TITULOS_FEITOS = set()
+TABELAS_FEITOS = set()
 
 
 def glosar(t):
@@ -263,6 +264,46 @@ def glosar(t):
         return lin
 
     t = re.sub(r'(?m)^((?:—|>).*)$', lambda m: ajustar_ref(m.group(1)), t)
+    # Células de tabela: os quadros cronológicos e comparativos são o
+    # primeiro lugar em que o leitor encontra o nome de uma instituição ou de
+    # uma unidade. A glosa entra uma única vez no volume inteiro, para não
+    # alargar as colunas a cada linha.
+    def glosar_celula(tok, cel, fim):
+        if tok in TABELAS_FEITOS or tok not in TAB or not TAB[tok] or tok in IGN:
+            return tok
+        # a célula já explica o termo entre parênteses: (Kyūseikyō), (v. §15.1)
+        if re.match(r"\**\s*[（(]", cel[fim:fim + 4]):
+            return tok
+        TABELAS_FEITOS.add(tok)
+        return tok + " (%s)" % TAB[tok]
+
+    def ajustar_linha_tabela(lin):
+        partes = lin.split("|")
+        for k, cel in enumerate(partes):
+            if k == 0 or cel.strip() in ("", "---", "—"):
+                continue
+            placas = []
+
+            def guardar_tit(m):
+                abre, cont, fecha = m.group(1), m.group(2), m.group(3)
+                if (cont in TAB and cont not in TITULOS_FEITOS and TAB[cont]
+                        and len(cont) <= 60):
+                    TITULOS_FEITOS.add(cont)
+                    placas.append(abre + cont + fecha + " (%s)" % TAB[cont])
+                else:
+                    placas.append(m.group(0))
+                return "\x02%d\x02" % (len(placas) - 1)
+
+            cel = re.sub(r"([『「])([^『「」』]{1,80})([」』])", guardar_tit, cel)
+            cel = re.sub(r"[\u3040-\u30ff\u4e00-\u9fff]+",
+                         lambda mm, c=cel: glosar_celula(mm.group(0), c, mm.end()), cel)
+            for i, pl in enumerate(placas):
+                cel = cel.replace("\x02%d\x02" % i, pl)
+            partes[k] = cel
+        return "|".join(partes)
+
+    t = re.sub(r"(?m)^\|.*$", lambda m: ajustar_linha_tabela(m.group(0)), t)
+
     t = re.sub(r'(?m)^(?:>|—|\||#|!\[|```).*$', guardar, t)
 
     # pares que só têm romaji: a tradução entra no próprio parêntese
