@@ -48,39 +48,170 @@ def load_boundary_file(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _find_anchor(body: str, anchor: str, start: int, label: str) -> int:
+# Caracteres que, entre o início da linha e a âncora, não impedem que ela seja
+# considerada início de bloco: indentação ideográfica do japonês, pontuação e
+# marcadores de citação/poema. Sem tolerá-los, todo título JP indentado com
+# \u3000 e toda data entre [ ] seriam lidos como "meio de linha".
+ENCHIMENTO_INICIO = set(
+    " \t\u3000、,。．.・…‥（）()「」『』[]*\"'“”‘’«»—–-⁃=#>+《》〔〕【】●○▪~"
+)
+
+# Campos do cabeçalho que `format_article`/`build_multi` geram no topo dos
+# ficheiros do acervo. Não são texto do autor e `clean_body` não os remove.
+CAMPOS_CABECALHO = (
+    "# Ficheiro de trabalho:", "# Segmento:", "# entry_id:",
+    "=== ARTIGO ===", "---",
+    "entry_id:", "paired_id:", "source_file:", "sort_date:",
+    "title_jp:", "title_pt:",
+    "Title:", "Publication source:", "Original publication reference:",
+    "Date:", "Language:", "Collection ID:",
+)
+
+
+def _eh_inicio_de_bloco(body: str, pos: int) -> bool:
+    """True se da última quebra de linha até `pos` só há enchimento."""
+    if pos <= 0:
+        return True
+    ini = body.rfind("\n", 0, pos) + 1
+    return all(c in ENCHIMENTO_INICIO for c in body[ini:pos])
+
+
+def _find_em_inicio(body: str, anchor: str, start: int) -> int:
+    """1.ª ocorrência de `anchor` a partir de `start` em início de bloco."""
+    pos = body.find(anchor, start)
+    while pos >= 0:
+        if _eh_inicio_de_bloco(body, pos):
+            return pos
+        pos = body.find(anchor, pos + 1)
+    return -1
+
+
+def inicio_do_corpo(texto: str) -> int:
+    """Offset do 1.º carácter de conteúdo, saltando o cabeçalho gerado.
+
+    Devolve 0 quando o ficheiro não começa por esse bloco de metadados.
+    """
+    i, encontrou, n = 0, False, len(texto)
+    while i < n:
+        fim = texto.find("\n", i)
+        if fim < 0:
+            fim = n
+        linha = texto[i:fim].strip()
+        if linha and any(linha.startswith(c) for c in CAMPOS_CABECALHO):
+            encontrou = True
+            i = fim + 1
+        elif not linha and encontrou:
+            i = fim + 1
+        else:
+            break
+    return i if encontrou else 0
+
+
+def _localiza(body: str, anchor: str, start: int, *,
+              preferir_inicio: bool) -> int:
+    """Posição da âncora a partir de `start`, ou -1. -2 para âncora vazia."""
     anchor = anchor.strip()
     if not anchor:
-        raise ValueError(f"{label}: anchor vazio")
+        return -2
+    if preferir_inicio:
+        pos = _find_em_inicio(body, anchor, start)
+        if pos >= 0:
+            return pos
     pos = body.find(anchor, start)
-    if pos < 0:
-        first = anchor.strip().splitlines()[0]
-        if "\n" in anchor.strip():
-            raise ValueError(
-                f"{label}: anchor multiline não encontrado a partir de {start}: {anchor[:80]!r}"
-            )
-        if len(first) >= 6:
-            pos = body.find(first, start)
+    if pos >= 0:
+        return pos
+    if "\n" in anchor:
+        return -1
+    first = anchor.splitlines()[0]
+    if len(first) < 6:
+        return -1
+    if preferir_inicio:
+        pos = _find_em_inicio(body, first, start)
+        if pos >= 0:
+            return pos
+    return body.find(first, start)
+
+
+def _posicoes(body: str, anchors: list[str], inicio: int, label: str, *,
+              preferir_inicio: bool) -> list[int]:
+    positions: list[int] = []
+    cursor = inicio
+    for i, anc in enumerate(anchors):
+        pos = _localiza(body, anc, cursor, preferir_inicio=preferir_inicio)
+        if pos < 0 and positions:
+            # A âncora deste artigo pode começar dentro da primeira linha da
+            # âncora anterior -- acontece quando a âncora anterior é o corpo do
+            # artigo (parágrafo longo) e a deste é o título, que fica no fim do
+            # bloco anterior. Nesse caso o cursor, que avançou a linha inteira
+            # da anterior, já passou do título. Recuar até imediatamente depois
+            # da âncora anterior não reabre a possibilidade de reencontrar a
+            # mesma âncora (as posições continuam estritamente crescentes, o
+            # que `split_by_anchors` verifica).
+            pos = _localiza(body, anc, positions[-1] + 1,
+                            preferir_inicio=preferir_inicio)
+        if pos == -2:
+            raise ValueError(f"{label}[{i + 1}]: anchor vazio")
+        if pos < 0:
+            raise ValueError(f"{label}[{i + 1}]: anchor não encontrado: "
+                             f"{anc.strip()[:80]!r}")
+        if positions and pos < positions[-1]:
+            raise ValueError(f"{label}: anchors fora de ordem no índice {i + 1}")
+        positions.append(pos)
+        cursor = pos + max(1, len(anc.strip().splitlines()[0]))
+    return positions
+
+
+def posicoes_das_ancoras(body: str, anchors: list[str], *, label: str,
+                         inicio: int = 0) -> list[int]:
+    """Posições das âncoras, preferindo as que estão em início de bloco.
+
+    A preferência por início de bloco corrige o corte a meio de frase (31
+    casos em 2026-10-20), mas não pode ser incondicional: há obras em que a
+    âncora 1 aparece citada no cabeçalho e a ocorrência "em início de bloco"
+    está para lá da âncora 2, o que empurraria o cursor e faria falhar a
+    divisão. Nesses casos -- e só neles -- volta-se ao comportamento
+    histórico (primeira ocorrência literal), que é o que já estava publicado.
+    """
+    inicio = max(0, min(inicio, len(body)))
+    erro: ValueError | None = None
+    for preferir in (True, False):
+        try:
+            return _posicoes(body, anchors, inicio, label,
+                             preferir_inicio=preferir)
+        except ValueError as exc:
+            erro = exc
+    assert erro is not None
+    raise erro
+
+
+def _find_anchor(body: str, anchor: str, start: int, label: str) -> int:
+    pos = _localiza(body, anchor, start, preferir_inicio=True)
+    if pos == -2:
+        raise ValueError(f"{label}: anchor vazio")
     if pos < 0:
         raise ValueError(f"{label}: anchor não encontrado: {anchor[:80]!r}")
     return pos
 
 
-def split_by_anchors(body: str, anchors: list[str], *, label: str) -> list[str]:
+def split_by_anchors(body: str, anchors: list[str], *, label: str,
+                     inicio: int = 0) -> list[str]:
+    """Divide `body` pelas âncoras; o 1.º bloco começa em `inicio`.
+
+    `inicio` é o offset do conteúdo depois do cabeçalho gerado (ver
+    `inicio_do_corpo`). Sem ele, tudo o que está entre o fim do cabeçalho e a
+    1.ª âncora -- prefácio, nota editorial, linha de título -- ficava fora de
+    todos os blocos e nunca chegava ao índice (9 obras, 2.617 caracteres,
+    medido em 2026-10-20).
+    """
     if not anchors:
         return [body.strip()] if body.strip() else []
-    positions: list[int] = []
-    cursor = 0
-    for i, anc in enumerate(anchors):
-        pos = _find_anchor(body, anc, cursor, f"{label}[{i + 1}]")
-        if positions and pos < positions[-1]:
-            raise ValueError(f"{label}: anchors fora de ordem no índice {i + 1}")
-        positions.append(pos)
-        cursor = pos + max(1, len(anc.strip().splitlines()[0]))
+    inicio = max(0, min(inicio, len(body)))
+    positions = posicoes_das_ancoras(body, anchors, label=label, inicio=inicio)
     chunks: list[str] = []
     for i, pos in enumerate(positions):
+        start = inicio if i == 0 else pos
         end = positions[i + 1] if i + 1 < len(positions) else len(body)
-        chunks.append(body[pos:end].strip())
+        chunks.append(body[start:end].strip())
     return chunks
 
 

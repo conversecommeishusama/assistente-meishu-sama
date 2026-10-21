@@ -15,7 +15,10 @@ from sentence_transformers import SentenceTransformer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from translation_header_parser import enrich_entry_from_header, parse_translation_header  # noqa: E402
-from apply_manual_livros_segmentacao import split_by_anchors  # noqa: E402
+from apply_manual_livros_segmentacao import (  # noqa: E402
+    inicio_do_corpo,
+    split_by_anchors,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -690,7 +693,13 @@ def article_entries_from_spec(path: Path, lang: str, paired_path: Path | None, s
         return None
     text = clean_body(read_text(path))
     try:
-        chunks = split_by_anchors(text, anchors, label=path.name)
+        # `inicio_do_corpo` salta o cabeçalho gerado (`# Ficheiro de trabalho`,
+        # `=== ARTIGO ===`, `title_pt:`…). Tudo o que fica entre esse cabeçalho
+        # e a 1.ª âncora passa a pertencer ao artigo 1 em vez de se perder --
+        # era o caso do prefácio de `A Story of Ukiyo-e` (1.470 caracteres) e
+        # de mais oito obras (2.617 caracteres no total, medido em 2026-10-20).
+        chunks = split_by_anchors(
+            text, anchors, label=path.name, inicio=inicio_do_corpo(text))
     except ValueError:
         return None
     if len(chunks) != len(articles):
@@ -722,6 +731,9 @@ def article_entries_from_spec(path: Path, lang: str, paired_path: Path | None, s
             "has_parallel": bool(paired_path),
             "body": body,
             "cortar_por_tamanho": pode_cortar_por_tamanho(spec.get("profile")),
+            # Unidade da divisão do autor: um artigo da spec nunca é descartado
+            # pelo piso de 40 caracteres de `build_chunks`.
+            "autoral": True,
         }
         entries.append(enrich_entry_from_header(entry))
     return entries
@@ -888,10 +900,15 @@ def build_chunks(entries, lang):
         if entry["lang"] != lang:
             continue
         cortar = entry.get("cortar_por_tamanho", True)
-        for chunk_index, chunk in enumerate(
-            split_chunks(entry["body"], cortar_por_tamanho=cortar), start=1
-        ):
-            if len(chunk.strip()) < 40:
+        partes = split_chunks(entry["body"], cortar_por_tamanho=cortar)
+        # O piso de 40 caracteres existe para fragmentos criados pelo corte por
+        # tamanho, não para unidades autorais. Um artigo da spec que produz um
+        # único bloco curto (título de secção, poema de um verso, colofão) é a
+        # divisão do próprio autor e tem de entrar no índice; sem esta excepção
+        # 152 artigos desapareciam em silêncio (medido em 2026-10-20).
+        piso = 1 if entry.get("autoral") and len(partes) == 1 else 40
+        for chunk_index, chunk in enumerate(partes, start=1):
+            if len(chunk.strip()) < piso:
                 continue
             chunks.append(chunk)
             metadata.append(
