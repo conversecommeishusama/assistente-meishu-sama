@@ -156,6 +156,33 @@ Regras de uso: legenda com veículo, número e data; dizer se a página foi
 confirmada por OCR do fac-símile ou se é só a capa do número; não repetir a mesma
 imagem em dois capítulos (hoje `suiji29` aparece nos caps. 20 e 21 — unificar).
 
+**Feito em 21/10: as fotografias de Meishu-Sama.** O acervo de fotografias do
+rattail tem 164 imagens datadas e legendadas, de 1930 a 1955. Oito entraram no
+volume, cada uma no capítulo que trata do assunto, em `docs/fotografias/`:
+
+| Cap. | Fotografia | O que documenta |
+|---|---|---|
+| 1 | `retrato_1950` | retrato de Meishu-Sama, c. 1950 |
+| 2 | `karihakkai_1934` | fundação provisória da 大日本観音会, 23/12/1934, no 応神堂 |
+| 10 | `hibiya_1951` | conferência no 日比谷公会堂, 22/5/1951 |
+| 13 | `johrei_nikkoden` | Johrei ministrado numa audiência no 日光殿 |
+| 17 | `mennkai_sinsenkyo_1950` | a caminho da audiência em 神仙郷, 9/1950 |
+| 17 | `honenin_1951` | 法然院, primeira excursão ao Kansai, 30/5/1951 |
+| 25 | `kohann_shizuoka_1950` | primeira audiência de julgamento, 11/10/1950 |
+| 28 | `zuisenkyo_1953` | inspeção do canteiro do 瑞雲郷, 1953, área do 水晶殿 |
+
+Cada legenda declara o que é (fotografia da época) e o que a legenda original
+informa — data confirmada ou apenas aproximada. A que não tem data (o Johrei no
+日光殿) diz que não tem.
+
+Duas decisões técnicas tomadas nesta passagem: as fotografias de origem pequena
+(300 a 500 px) passaram a ser impressas com largura calculada para 100 dpi, em
+vez dos 12 cm fixos que as punham a 63 dpi; e o `suiji29`, que aparecia nos
+capítulos 16 e 20, ficou só no 16, onde o argumento é feito pela primeira vez.
+
+**Falta ainda:** as imagens de documento (não de fotografia) da tabela acima —
+`pdf_rattail/`, com o `reocr_pdf_facsimile.py`.
+
 ### Fase 5 — Anexos
 
 **Decisão do autor, 21/10: circulação interna, sem problema de direito autoral.**

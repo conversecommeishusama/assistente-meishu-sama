@@ -55,6 +55,8 @@ e sofreu repressão radical. Desde então, afastado por completo da religião, c
 hoje desenvolvendo-me exclusivamente como terapeuta."*
 — Discurso na fundação da 日本観音教団 (Igreja Kannon do Japão), `novembro de 1947 · search1/kouwa/s221199.html`
 
+![大日本観音会の仮発会式, 23 de dezembro de 1934, no 応神堂 — a cerimônia que antecede em nove dias a fundação oficial de 1º de janeiro de 1935. [Fotografia da época; data e local conforme a legenda original.]](fotografias/karihakkai_1934.jpg)
+
 Três meses depois vem a fundação oficial, em 1º de janeiro de 1935, em Kōjimachi
 Hanzōmon, num 分所 (subsede) do Oomoto que ele utilizava (`search1/ko/kojimach.html`). A década
 seguinte é a da repressão: em novembro de 1941 encerra-se a atividade religiosa e o
@@ -282,6 +284,8 @@ convertidos:
 Kōkaidō, e ainda por cima mais de sessenta por cento serem pessoas não convertidas, é um
 sucesso de público provavelmente sem precedentes."*
 — 「編集後記（地上天国36号）」, `search2/kikou2/koki36.html`
+
+![Conferência no 日比谷公会堂 (Hibiya Kōkaidō) sobre a civilização verdadeira, 22 de maio de 1951 — a palestra pública de massa de que trata esta seção. [Fotografia da época; data e local conforme a legenda original.]](fotografias/hibiya_1951.jpg)
 
 **A missão externa.** O Havaí, a partir de fevereiro de 1953, foi obra de duas pessoas
 destacadas da liderança interna — a Ministra Higuchi Kiyoko e o Ministro Assistente
@@ -1580,6 +1584,8 @@ A frequência efetiva, nos relatos, era alta — "desde minha conversão já rec
 audiências", escreve um fiel em 1949 (`search1/English/ewata29.html`); outro menciona
 "ao menos cinco por mês" (`search2/okage/nano/qnijusa1.html`).
 
+![A caminho da audiência aos fiéis no 神仙郷 de Hakone, setembro de 1950. [Fotografia da época; data e local conforme a legenda original.]](fotografias/mennkai_sinsenkyo_1950.jpg)
+
 ### 8.2 O serviço voluntário como base econômica
 
 A economia do movimento no período não se explica sem o sistema de **御奉仕** — o serviço
@@ -1605,6 +1611,8 @@ apreciação artística. O relato de 1951 sobre a visita a Quioto e Nara é o ma
 doutrina com a apreciação artística… percorreu templos e museus de toda Nara…; compareceu
 à reunião de fiéis no teatro de Kyoto e concedeu uma alocução a mais de três mil fiéis."*
 — `search2/kikou2/koki36.html`
+
+![No 法然院, em Quioto, 30 de maio de 1951 — a primeira excursão de proclamação ao Kansai. [Fotografia da época; data e local conforme a legenda original.]](fotografias/honenin_1951.jpg)
 
 Havia até uma alternância sazonal entre as sedes — 「夏は箱根、冬は熱海、それで**春と秋は
 京都**です」 (`search1/kouwa/s270923.html`): "o verão é em Hakone, o inverno em Atami; e a
@@ -1785,6 +1793,8 @@ eu apenas ficava extasiado."*
 
 As obras dos Paraísos Terrestres tinham também uma dimensão material, documentada em três
 frentes.
+
+![Inspeção do canteiro de obras do 瑞雲郷, em Atami, em 1953 — a área do atual 水晶殿, o Palácio de Cristal. [Fotografia da época; data e local conforme a legenda original.]](fotografias/zuisenkyo_1953.jpg)
 
 A **mina de 水上**, prevista no próprio estatuto da pessoa jurídica (art. 43º), aparece no
 acervo ligada à obra — e o seu traço mais documentado é o **trabalho**, não a receita: a

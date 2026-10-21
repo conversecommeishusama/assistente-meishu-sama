@@ -7,6 +7,8 @@ doutrina: é a reconstrução de **como a difusão funcionava** — por que meio
 pessoas eram alcançadas, que unidades se abriam, quem as dirigia, como se
 formavam os que dirigiam, e como tudo isso se sustentava materialmente.
 
+![Meishu-Sama, cerca de 1950. [Fotografia da época; a data é a que consta da legenda original, por aproximação.]](fotografias/retrato_1950.jpg)
+
 As fontes são de três naturezas. A primeira é o **escrito de Meishu-Sama**: os
 artigos e ensaios que ele publicou. A segunda é a **palavra oral registrada**:
 as palestras e, sobretudo, as respostas a perguntas de fiéis e de dirigentes,

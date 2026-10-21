@@ -13,6 +13,8 @@ doutrina: é a reconstrução de **como a difusão funcionava** — por que meio
 pessoas eram alcançadas, que unidades se abriam, quem as dirigia, como se
 formavam os que dirigiam, e como tudo isso se sustentava materialmente.
 
+![Meishu-Sama, cerca de 1950. [Fotografia da época; a data é a que consta da legenda original, por aproximação.]](fotografias/retrato_1950.jpg)
+
 As fontes são de três naturezas. A primeira é o **escrito de Meishu-Sama**: os
 artigos e ensaios que ele publicou. A segunda é a **palavra oral registrada**:
 as palestras e, sobretudo, as respostas a perguntas de fiéis e de dirigentes,
@@ -68,6 +70,8 @@ indiscriminadamente as religiões análogas; por isso a Dai-Nippon Kannon-kai n�
 e sofreu repressão radical. Desde então, afastado por completo da religião, cheguei até
 hoje desenvolvendo-me exclusivamente como terapeuta."*
 — Discurso na fundação da 日本観音教団 (Igreja Kannon do Japão)
+
+![大日本観音会の仮発会式, 23 de dezembro de 1934, no 応神堂 — a cerimônia que antecede em nove dias a fundação oficial de 1º de janeiro de 1935. [Fotografia da época; data e local conforme a legenda original.]](fotografias/karihakkai_1934.jpg)
 
 Três meses depois vem a fundação oficial, em 1º de janeiro de 1935, em Kōjimachi
 Hanzōmon, num 分所 (subsede) do Oomoto que ele utilizava. A década
@@ -1174,6 +1178,8 @@ Kōkaidō, e ainda por cima mais de sessenta por cento serem pessoas não conver
 sucesso de público provavelmente sem precedentes."*
 — 「編集後記（地上天国36号）」
 
+![Conferência no 日比谷公会堂 (Hibiya Kōkaidō) sobre a civilização verdadeira, 22 de maio de 1951 — a palestra pública de massa de que trata esta seção. [Fotografia da época; data e local conforme a legenda original.]](fotografias/hibiya_1951.jpg)
+
 **A missão externa.** O Havaí, a partir de fevereiro de 1953, foi obra de duas pessoas
 destacadas da liderança interna — a Ministra Higuchi Kiyoko e o Ministro Assistente
 Ajiki Haruhiko —, não de um seminário missionário:
@@ -1804,6 +1810,8 @@ naquela ordem.**"*
 
 ![『御垂示録』15号, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR dos documentos.]](facsimiles/suiji15_johrei.jpg)
 
+![Meishu-Sama ministrando Johrei (ご浄霊) numa audiência no 日光殿, o Salão da Luz do Sol, em Hakone. [Fotografia da época; a legenda original identifica a cena e o local, sem data.]](fotografias/johrei_nikkoden.jpg)
+
 A doutrina dos pontos vitais, portanto, **não era dispensável**: era uma das duas
 modalidades, a modalidade de urgência. E os pontos eram objeto de instrução
 específica. Numa prédica de 7 de abril de 1953, Meishu-Sama anuncia que detalharia o
@@ -2371,6 +2379,8 @@ A frequência efetiva, nos relatos, era alta — "desde minha conversão já rec
 audiências", escreve um fiel em 1949; outro menciona
 "ao menos cinco por mês".
 
+![A caminho da audiência aos fiéis no 神仙郷 de Hakone, setembro de 1950. [Fotografia da época; data e local conforme a legenda original.]](fotografias/mennkai_sinsenkyo_1950.jpg)
+
 ### 17.2 O serviço voluntário como base econômica
 
 A economia do movimento no período não se explica sem o sistema de **御奉仕 (serviço voluntário)** — o serviço
@@ -2396,6 +2406,8 @@ apreciação artística. O relato de 1951 sobre a visita a Quioto e Nara é o ma
 doutrina com a apreciação artística… percorreu templos e museus de toda Nara…; compareceu
 à reunião de fiéis no teatro de Kyoto e concedeu uma alocução a mais de três mil fiéis."*
 — 
+
+![No 法然院, em Quioto, 30 de maio de 1951 — a primeira excursão de proclamação ao Kansai. [Fotografia da época; data e local conforme a legenda original.]](fotografias/honenin_1951.jpg)
 
 Havia até uma alternância sazonal entre as sedes — 「夏は箱根、冬は熱海、それで**春と秋は
 京都**です」 : "o verão é em Hakone, o inverno em Atami; e a
@@ -2836,9 +2848,7 @@ Média é que vem primeiro."*
 — 『御垂示録』29号, 15 de março de 1954
 
 Daí um **limite prático de trinta filiais por Igreja Média** — não por estatuto,
-mas por calendário.
-
-![『御垂示録』29号, 15 de março de 1954 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+mas por calendário, conforme a resposta transcrita no capítulo 16.
 
 ## 21. O que é cada unidade
 
@@ -3248,7 +3258,7 @@ regulamento de 1951 fala em 総務 (Assuntos Gerais) e 事業 (Empreendimentos) 
 A estrutura departamental foi ampliada pela reforma de 1951, que criou os departamentos
 de **企画** (Planejamento) e **自然農法普及** (Difusão da Agricultura Natural) ao lado
 dos já existentes, conforme o art. 5º do comunicado de Ōkusa. O **外国部** (Departamento do Exterior) veio depois, com
-a difusão ultramarina. **Como se compunha a chefia de cada departamento em 1954–1955, o
+a difusão ultramarina. **Como se compunha a chefia de cada departamento em 1954–1955, a
 documentação não cobre em fonte citável** — registra-se como ponto não documentado.
 
 ### 23.3 Organograma reconstruído
@@ -3500,6 +3510,8 @@ julho** de 1950. Em 30 de maio, cinquenta policiais fizeram nova busca no
 Templo Anexo de Hakone-Gōra — "eu estava detido, por isso soube depois" (同).
 
 ![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
+
+![11 de outubro de 1950 — abertura da primeira audiência de julgamento no Tribunal Distrital de Shizuoka (静岡地方裁判所). [Fotografia da época; data e local conforme a legenda original.]](fotografias/kohann_shizuoka_1950.jpg)
 
 A acusação era **econômica**: evasão fiscal (脱税), suborno (贈賄, de
 ¥300.000), ocultação de patrimônio (財産隠匿). **Nada religioso.** É o próprio
@@ -4049,7 +4061,7 @@ própria vida não era doutrinária, era dentária.
 
 ### 27.3 Aplicação às dietas contemporâneas
 
-Posta a questão em termos do que ele diria, a resposta mais defensável a partir do
+Posta a questão em termos do que ele diria, a resposta mais defensável a partir da
 documentação é uma distinção. Ele **não** endossaria nenhum dos regimes que operam por
 classificação de nutrientes — low carb, "bicho e planta", exclusão do glúten —,
 porque todos partem da premissa que ele explicitamente recusou, a de que o valor do
@@ -4184,7 +4196,9 @@ eu apenas ficava extasiado."*
 As obras dos Paraísos Terrestres tinham também uma dimensão material, documentada em três
 frentes.
 
-A **mina de 水上 (Minakami)**, prevista no próprio estatuto da pessoa jurídica (art. 43º), aparece no
+![Inspeção do canteiro de obras do 瑞雲郷, em Atami, em 1953 — a área do atual 水晶殿, o Palácio de Cristal. [Fotografia da época; data e local conforme a legenda original.]](fotografias/zuisenkyo_1953.jpg)
+
+A **mina de 水上 (Minakami)**, prevista no próprio estatuto da pessoa jurídica (art. 43º), aparece na
 documentação ligada à obra — e o seu traço mais documentado é o **trabalho**, não a receita: a
 mão de obra vinha da mesma brigada de serviço que construía os jardins (v. seção 6.1).
 Quanto ao que a mina rendeu, é matéria que a documentação não cobre; o §28

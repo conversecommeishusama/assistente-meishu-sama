@@ -39,10 +39,10 @@ culto** — o que explica por que uma unidade grande e uma unidade pequena podia
 imagens de porte diferente sem que isso constituísse graduação hierárquica. A
 segunda é que o critério hierárquico real, na estrutura da igreja, não passava pelo
 tamanho da imagem, e sim pelo **tipo de objeto de culto admitido em cada nível**
-(tratado na Parte I, §5.2).
+(tratado no capítulo 11).
 
 A esse critério de proporção somava-se uma exigência de **ordem**. A hierarquia dos
-objetos de culto já a estabelecia — a caligrafia acima da figura (Parte I, §5.2) —, e a
+objetos de culto já a estabelecia — a caligrafia acima da figura (capítulo 11) —, e a
 ela corresponde a disposição no nicho: a Imagem ocupa o lugar próprio, sem que nada a
 iguale ou se sobreponha a ela. A ordem é ela mesma o critério.
 
@@ -162,7 +162,7 @@ incumbência de filiais, postos avançados e igrejas; unidades menores limitavam
 culto doméstico diante da Imagem.
 
 A **escala do culto** em três degraus — o 大祭 da Sede, o 例祭 e o 月並祭 das
-igrejas, e o culto doméstico — está sistematizada na Parte III (§26), que também
+igrejas, e o culto doméstico — está sistematizada no capítulo 16, que também
 trata do que caracteriza cada degrau.
 
 Quanto ao culto doméstico, a documentação mais direta vem de um relato de fiel
@@ -186,8 +186,7 @@ e a quietude do coração.
 
 ### 14.3 Vestimenta dos oficiantes
 
-Havia veste ritual prescrita, e ela exige correção do que a primeira versão deste
-levantamento registrava. A fonte mais direta é uma consulta de 1948 sobre o rito de
+Havia veste ritual prescrita. A fonte mais direta é uma consulta de 1948 sobre o rito de
 fundação do terreno, em que Meishu-Sama responde de forma imperativa:
 
 > 「――地鎮祭はどういたしましょうか。
@@ -203,7 +202,7 @@ aprender.**"*
 
 Três informações: o rito deve ser celebrado; usa-se **veste ceremonial**; e o
 paramento exige **aprendizado** — não era de conhecimento comum. Isso qualifica
-materialmente o que a Parte I registrou sobre a formação: o "saber ler o manual em
+materialmente o que se registrou sobre a formação: o "saber ler o manual em
 voz alta" não esgotava a instrução, havia protocolo ritual a transmitir.
 
 Sobre a cor, a doutrina é de **escala**, não de uniformidade:
@@ -243,7 +242,7 @@ altura do objeto de culto. Não há, no entanto, conjunto de regras de orientaç
 (frente, direção auspiciosa) específicas por tipo de unidade. O critério documentado
 é o de proporção (proporção entre Imagem e tokonoma, visto na seção 13) e o uso
 litúrgico do nicho como lugar da oferenda — no caso da agricultura natural, era ali
-que se dispunham as sementes antes do plantio (v. seção 18).
+que se dispunham as sementes antes do plantio (capítulo 22).
 
 ---
 
@@ -427,12 +426,11 @@ salvos); e o estado dos ancestrais determina, por correspondência especular, o
 estado dos vivos — o que faz do sufrágio uma operação de interesse direto da
 família, e não um dever de piedade.
 
-### 16.5 Correção: são dois ritos, não um
+### 16.5 Os dois nomes do rito
 
-A primeira versão desta seção registrava que o rito de sufrágio não tinha
-documentação. **Estava errado**, e a razão do erro é instrutiva: eu procurava o
-conceito ("rito de sufrágio") em vez do nome. O acervo usa **dois termos distintos**,
-para duas cerimônias distintas, e ambos estão bem documentados.
+O rito de sufrágio tem, no vocabulário da época, **dois nomes distintos**, para
+duas cerimônias distintas — e é por isso que a busca pelo conceito ("rito de
+sufrágio") não o encontrava. Ambos estão documentados.
 
 **`御霊祭` — a entronização da Imagem.** As 16 ocorrências estão invariavelmente
 ligadas ao ato de receber o objeto de culto:
@@ -805,6 +803,8 @@ corpo está debilitado como um todo, ou quando não se identifica bem o ponto �
 naquela ordem.**"*
 
 ![『御垂示録』15号, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/suiji15_johrei.jpg)
+
+![Meishu-Sama ministrando Johrei (ご浄霊) numa audiência no 日光殿, o Salão da Luz do Sol, em Hakone. [Fotografia da época; a legenda original identifica a cena e o local, sem data.]](fotografias/johrei_nikkoden.jpg)
 
 A doutrina dos pontos vitais, portanto, **não era dispensável**: era uma das duas
 modalidades, a modalidade de urgência. E os pontos eram objeto de instrução

@@ -395,6 +395,8 @@ def imagem(doc, caminho, legenda):
         from PIL import Image as _PILImage
         with _PILImage.open(caminho) as im:
             larg, alt = im.size
+        # Fotografia de origem pequena: reduz a largura impressa até 100 dpi.
+        largura_max = min(largura_max, Cm(larg / 100.0 * 2.54))
         altura = largura_max * alt / larg
         if altura > Cm(19):
             altura = Cm(19)

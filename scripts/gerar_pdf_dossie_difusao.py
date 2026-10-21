@@ -603,6 +603,10 @@ def imagem_flow(caminho, legenda):
     with _PILImage.open(caminho) as im:
         larg, alt = im.size
     disp = LARGURA * 0.72
+    # Fotografia de origem pequena impressa em 12 cm sai abaixo de 70 dpi e
+    # fica sem definição. Abaixo disso, a imagem encolhe até o mínimo de
+    # 100 dpi — o fac-símile, que vem em 1.500 px, não é afetado.
+    disp = min(disp, larg / 100.0 * 25.4 * mm)
     altura = disp * alt / larg
     maxalt = 150 * mm
     if altura > maxalt:

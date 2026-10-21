@@ -165,6 +165,14 @@ def limpar(t):
     t = re.sub(r"\bque a §(\d+(?:\.\d+)?)\)", r"que o §\1", t)
     t = re.sub(r"\bna §(\d+(?:\.\d+)?)\)", r"no §\1", t)
     t = re.sub(r"\bda §(\d+(?:\.\d+)?)\)", r"do §\1", t)
+    # "acervo" e "corpus" são masculinos e "documentação" é feminino: a troca
+    # deixava "no documentação", "do documentação" — e a regra específica não
+    # pegava quando havia negrito entre o artigo e o substantivo.
+    CONC = {"no": "na", "do": "da", "ao": "à", "o": "a", "um": "uma",
+            "este": "esta", "esse": "essa", "nos": "na", "dos": "da"}
+    t = re.sub(
+        r"\b(no|do|ao|o|um|este|esse|nos|dos)(\s+\*{0,2})documentação\b",
+        lambda m: CONC[m.group(1)] + m.group(2) + "documentação", t)
     t = re.sub(r"\bO corpus\b", "A documentação", t)
     t = re.sub(r"\bdo corpus\b", "da documentação", t)
     t = re.sub(r"\bno corpus\b", "na documentação", t)

@@ -1092,6 +1092,8 @@ Templo Anexo de Hakone-Gōra — "eu estava detido, por isso soube depois" (同)
 
 ![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
 
+![11 de outubro de 1950 — abertura da primeira audiência de julgamento no Tribunal Distrital de Shizuoka (静岡地方裁判所). [Fotografia da época; data e local conforme a legenda original.]](fotografias/kohann_shizuoka_1950.jpg)
+
 A acusação era **econômica**: evasão fiscal (脱税), suborno (贈賄, de
 ¥300.000), ocultação de patrimônio (財産隠匿). **Nada religioso.** É o próprio
 Meishu-Sama quem o classifica, e com uma distinção que vale registrar:
