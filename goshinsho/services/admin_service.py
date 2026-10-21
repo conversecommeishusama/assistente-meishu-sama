@@ -1,4 +1,7 @@
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
+from threading import Lock
+import time
 
 from ..config import Config
 from .access_service import summarize_access
@@ -11,6 +14,19 @@ from .support_service import support_summary
 from ..supabase_client import get_supabase
 
 RANGE_CHOICES = ("all", "6m", "1m", "7d", "today", "custom")
+
+# 2026-10-21: cache curto do dashboard. O painel admin era a rota mais lenta
+# depois de /api/chat (146-180s observados no access log). Medido directamente
+# no servidor: build_admin_dashboard = 5,2s (supabase_users 1,9s +
+# count_user_questions 3,3s + summarize_donations 2,6s, sequenciais). Parte
+# desses 146-180s era fila do gunicorn (sync, 6 workers) atrás de chats lentos,
+# já resolvida com gthread; o resto é trabalho real que se repete a cada F5.
+# 60s é curto o bastante para o número de usuários/doações parecer "ao vivo" e
+# longo o bastante para o painel abrir instantaneamente em uso normal.
+DASHBOARD_CACHE_TTL = 60.0
+_DASHBOARD_CACHE: dict[tuple, tuple[float, dict]] = {}
+_DASHBOARD_CACHE_LOCK = Lock()
+_DASHBOARD_CACHE_MAX = 16  # range_key finito + algumas combinações "custom"
 
 
 def _safe_supabase_users():
@@ -73,20 +89,58 @@ def _enrich_user(user, question_counts, donations_by_email):
 
 
 def build_admin_dashboard(range_key="all", date_from=None, date_to=None):
+    chave = (range_key, date_from, date_to)
+    agora = time.monotonic()
+
+    with _DASHBOARD_CACHE_LOCK:
+        entrada = _DASHBOARD_CACHE.get(chave)
+        if entrada is not None and (agora - entrada[0]) < DASHBOARD_CACHE_TTL:
+            return entrada[1]
+
+    dados = _build_admin_dashboard(range_key, date_from, date_to)
+
+    with _DASHBOARD_CACHE_LOCK:
+        _DASHBOARD_CACHE[chave] = (time.monotonic(), dados)
+        if len(_DASHBOARD_CACHE) > _DASHBOARD_CACHE_MAX:
+            # Descarta a entrada mais antiga (dict pequeno: custo irrelevante).
+            mais_antiga = min(_DASHBOARD_CACHE, key=lambda k: _DASHBOARD_CACHE[k][0])
+            _DASHBOARD_CACHE.pop(mais_antiga, None)
+    return dados
+
+
+def _build_admin_dashboard(range_key, date_from, date_to):
     since, until = resolve_range(range_key, date_from, date_to)
 
     raw_users = _safe_supabase_users()
-    question_counts = count_user_questions(since=since, until=until)
-    donations = summarize_donations(since=since, until=until, users_by_email={
-        (u.get("email") or "").strip().lower(): u for u in raw_users
-    })
+    # 2026-10-21: as seis fontes abaixo são independentes entre si (Stripe,
+    # Supabase e ficheiros locais, sem estado partilhado -- get_supabase() cria
+    # um cliente novo por chamada) e antes corriam em série. Em paralelo, o
+    # tempo total do painel passa a ser o da fonte mais lenta (~3s) em vez da
+    # soma (~5s), e o cache de 60s elimina a repetição.
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        f_questoes = pool.submit(count_user_questions, since=since, until=until)
+        f_doacoes = pool.submit(
+            summarize_donations,
+            since=since,
+            until=until,
+            users_by_email={(u.get("email") or "").strip().lower(): u for u in raw_users},
+        )
+        f_uso = pool.submit(summarize_deepseek_usage, since=since, until=until)
+        f_acesso = pool.submit(summarize_access, since=since, until=until)
+        f_stripe = pool.submit(_stripe_active_subscriptions_count)
+        f_suporte = pool.submit(support_summary)
+
+        question_counts = f_questoes.result()
+        donations = f_doacoes.result()
+        usage = f_uso.result()
+        access = f_acesso.result()
+        active_subscriptions = f_stripe.result()
+        support = f_suporte.result()
+
     donations_by_email = {row["email"]: row for row in donations.get("by_user", [])}
 
     users = [_enrich_user(user, question_counts, donations_by_email) for user in raw_users]
     premium_users = [user for user in users if is_premium_user(user)]
-    usage = summarize_deepseek_usage(since=since, until=until)
-    access = summarize_access(since=since, until=until)
-    active_subscriptions = _stripe_active_subscriptions_count()
 
     return {
         "range": {
@@ -132,5 +186,5 @@ def build_admin_dashboard(range_key="all", date_from=None, date_to=None):
             "by_user": donations.get("by_user", [])[:20],
             "active_recurring": active_subscriptions,
         },
-        "support": support_summary(),
+        "support": support,
     }

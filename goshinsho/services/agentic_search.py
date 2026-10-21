@@ -1116,6 +1116,7 @@ def responder_agentico_deepseek(
     arquivos_extractor_fn=_arquivos_da_ferramenta,
     validador_citacoes_fn=validar_citacoes,
     on_deep_search=None,
+    on_progress=None,
 ) -> dict:
     """Laço agenciado real. Decisão do usuário (2026-07-29): NÃO existe mais
     orçamento de busca como limite de trabalho normal -- é o próprio modelo
@@ -1136,7 +1137,15 @@ def responder_agentico_deepseek(
     (2026-07-31) quando a busca passa de `RODADAS_AVISO_BUSCA_PROFUNDA`
     rodadas sem resposta pronta -- só para o chamador avisar o usuário que
     a pesquisa vai continuar mais a fundo. Não influencia em nada a busca
-    em si (mesma decisão de parar/continuar de sempre)."""
+    em si (mesma decisão de parar/continuar de sempre).
+
+    `on_progress`: callback opcional de UX (2026-10-21), chamado a cada
+    rodada e ao iniciar a síntese, com um dict descritivo
+    ({"fase", "rodada", "segundos", "ferramentas"}). Serve APENAS para o
+    cliente saber que a busca está viva -- como `on_deep_search`, não
+    influencia nenhuma decisão do laço, nenhum orçamento de tempo/rodada
+    nem nenhuma chamada ao modelo. Qualquer exceção do callback é engolida:
+    aviso de UX nunca pode derrubar a busca."""
     client = _client()
     messages = [{"role": "system", "content": system_prompt}] + list(historico or []) + [{"role": "user", "content": pergunta}]
     total_in = total_out = 0
@@ -1184,6 +1193,18 @@ def responder_agentico_deepseek(
                     on_deep_search()
                 except Exception:
                     pass  # aviso de UX nunca deve derrubar a busca em si
+        if on_progress is not None:
+            try:
+                on_progress(
+                    {
+                        "fase": "busca",
+                        "rodada": rodadas_busca,
+                        "segundos": round(time.time() - t0, 1),
+                        "ferramentas": chamadas_ferramenta[-1:] or [],
+                    }
+                )
+            except Exception:
+                pass  # aviso de UX nunca deve derrubar a busca em si
         resp = _criar_com_orcamento(
             client, _orcamento_restante(t0), model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema
         )
@@ -1233,6 +1254,20 @@ def responder_agentico_deepseek(
         break
 
     if esgotou_orcamento_busca or parou_por_estagnacao or esgotou_tempo_busca:
+        # 2026-10-21: avisa o cliente que a fase mudou (busca -> síntese).
+        # É o período de espera mais longo sem nenhum sinal de vida.
+        if on_progress is not None:
+            try:
+                on_progress(
+                    {
+                        "fase": "sintese",
+                        "rodada": rodadas_busca,
+                        "segundos": round(time.time() - t0, 1),
+                        "ferramentas": [],
+                    }
+                )
+            except Exception:
+                pass
         # Força síntese com o que já foi encontrado, nunca resposta vazia --
         # mesmo mecanismo para as três causas (teto de rodadas, teto de
         # tempo OU estagnação detectada). Achado real ao testar: só remover "tools" da
@@ -1346,6 +1381,7 @@ def responder_agentico_deepseek_jp(
     idioma: str = "Português",
     com_citacoes: bool = True,
     on_deep_search=None,
+    on_progress=None,
 ) -> dict:
     """Mesmo laço agenciado, mas buscando no acervo ORIGINAL japonês
     (`textos_japones/*.txt`) em vez do PT -- cobre o item explicitamente
@@ -1375,4 +1411,5 @@ def responder_agentico_deepseek_jp(
         arquivos_extractor_fn=_arquivos_da_ferramenta_jp,
         validador_citacoes_fn=validar_citacoes_jp,
         on_deep_search=on_deep_search,
+        on_progress=on_progress,
     )

@@ -1340,13 +1340,43 @@ function getCitationMode() {
 }
 
 function handleChatStatusEvent(loading, event) {
-    if (event.event !== "status" || !event.code) return;
-    if (event.code === "checking_japanese") {
-        setBubbleContent(loading, uiText("checkingJapanese"), "assistant");
+    if (!loading || !event) return;
+
+    if (event.event === "status" && event.code) {
+        if (event.code === "checking_japanese") {
+            loading.dataset.chatStatus = "checking_japanese";
+            setBubbleContent(loading, uiText("checkingJapanese"), "assistant");
+        }
+        if (event.code === "deep_search") {
+            loading.dataset.chatStatus = "deep_search";
+            setBubbleContent(loading, uiText("deepSearchNotice"), "assistant");
+        }
+        return;
     }
-    if (event.code === "deep_search") {
-        setBubbleContent(loading, uiText("deepSearchNotice"), "assistant");
-    }
+
+    // 2026-10-21: `progress` (a cada rodada do laço agêntico) e `heartbeat`
+    // (a cada 5s, de routes.py) existem para o usuário ver que a busca está
+    // VIVA. Antes desta mudança o bubble ficava parado até 170s, e 41% dos
+    // pedidos passavam de 60s -- era indistinguível de um app travado.
+    // São puramente informativos: não alteram a resposta em nada.
+    if (event.event !== "progress" && event.event !== "heartbeat") return;
+
+    let segundos = event.elapsed;
+    if (segundos === undefined || segundos === null) segundos = event.segundos;
+    segundos = Math.round(Number(segundos) || 0);
+    if (!segundos) return;
+
+    const base = loading.dataset.chatStatus === "deep_search"
+        ? uiText("deepSearchNotice")
+        : uiText("loading");
+    const rodada = Number(event.rodada) || 0;
+    const detalhe = rodada > 1 ? `${rodada} · ${segundos}s` : `${segundos}s`;
+
+    // Escreve direto no innerHTML em vez de usar setBubbleContent: aquela
+    // função sobrescreve dataset.rawContent, que guarda a resposta anterior
+    // usada por "Aprofundar"/"Refazer". Este texto é só um estado
+    // transitório -- a resposta final substitui o bubble inteiro.
+    loading.innerHTML = renderAssistantMarkdown(`${base} (${detalhe})`);
 }
 
 function enterChatMode() {

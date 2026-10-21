@@ -5,7 +5,7 @@ import threading
 from collections import defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
-from time import time
+from time import monotonic, time
 
 import stripe
 from flask import (
@@ -89,6 +89,14 @@ from .services.premium_grant_service import (
 
 web_bp = Blueprint("web", __name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+# 2026-10-21: intervalo do heartbeat do stream NDJSON de /api/chat. Enquanto o
+# laço agêntico trabalha, o cliente não recebe nada por 30-170s (só um aviso
+# opcional aos 25s) -- o browser desiste antes e o usuário interpreta como
+# "não responde". 5s é folgado sobre qualquer proxy e imperceptível no tráfego
+# (≈40 bytes por evento).
+HEARTBEAT_CHAT_SEGUNDOS = 5.0
+
 stripe.api_key = Config.STRIPE_SECRET_KEY
 RATE_LIMIT_BUCKETS = defaultdict(deque)
 
@@ -1544,12 +1552,21 @@ def api_chat():
             # nenhuma UI. Dispara UMA vez, quando a busca passa de
             # RODADAS_AVISO_BUSCA_PROFUNDA rodadas sem resposta pronta.
             #
-            # Motivo (medido nesta sessão): perguntas em que as fontes do
+            # Motivo (medido naquela sessão): perguntas em que as fontes do
             # acervo se contradizem levam 6-9 rodadas e 130-175s -- não
             # estão travadas, estão pesquisando. Perguntas comuns respondem
             # em 27-57s. Sem aviso, o usuário não tem como distinguir uma
             # coisa da outra. Não influencia a busca em nada.
             event_queue.put({"event": "status", "code": "deep_search"})
+
+        def aviso_progresso(payload: dict) -> None:
+            # 2026-10-21: progresso por rodada. Medido antes desta mudança:
+            # 41% dos /api/chat passavam de 60s e o cliente recebia UM único
+            # evento (deep_search) + a resposta no fim -- para o usuário, era
+            # indistinguível de um app travado. Este callback só reporta
+            # estado; não mexe em orçamento, rodada nem chamada ao modelo
+            # (ver `on_progress` em agentic_search.py).
+            event_queue.put({"event": "progress", **(payload or {})})
 
         @copy_current_request_context
         def worker() -> None:
@@ -1573,6 +1590,7 @@ def api_chat():
                 else:
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 extra_kwargs["on_deep_search"] = aviso_busca_profunda
+                extra_kwargs["on_progress"] = aviso_progresso
                 r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
@@ -1594,8 +1612,26 @@ def api_chat():
         threading.Thread(target=worker, daemon=True).start()
 
         def generate_agentic():
+            # 2026-10-21: heartbeat. Antes, este laço fazia
+            # `event_queue.get()` sem timeout -- entre o aviso de busca
+            # profunda e a resposta final podiam passar 140s sem NENHUM byte
+            # enviado, e o browser/Proxy intermédio tratava a ligação como
+            # morta (era a causa dos "Network error" relatados em 16-17/09).
+            # Agora, cada 5s sem evento envia um heartbeat, que serve também
+            # para manter viva a ligação HTTP ociosa.
+            inicio = monotonic()
             while True:
-                item = event_queue.get()
+                try:
+                    item = event_queue.get(timeout=HEARTBEAT_CHAT_SEGUNDOS)
+                except queue.Empty:
+                    yield json.dumps(
+                        {
+                            "event": "heartbeat",
+                            "elapsed": round(monotonic() - inicio, 1),
+                        },
+                        ensure_ascii=False,
+                    ) + "\n"
+                    continue
                 if item is None:
                     break
                 yield json.dumps(item, ensure_ascii=False) + "\n"
@@ -1675,8 +1711,23 @@ def api_chat():
         threading.Thread(target=worker, daemon=True).start()
 
         def generate():
+            # 2026-10-21: mesmo heartbeat do generate_agentic() (ver nota lá).
+            # Este caminho não é o padrão (PIPELINE=="v2"); recebe o mesmo
+            # tratamento para não voltar a ter um buraco silencioso de 140s
+            # se o pipeline antigo for reativado.
+            inicio = monotonic()
             while True:
-                item = event_queue.get()
+                try:
+                    item = event_queue.get(timeout=HEARTBEAT_CHAT_SEGUNDOS)
+                except queue.Empty:
+                    yield json.dumps(
+                        {
+                            "event": "heartbeat",
+                            "elapsed": round(monotonic() - inicio, 1),
+                        },
+                        ensure_ascii=False,
+                    ) + "\n"
+                    continue
                 if item is None:
                     break
                 yield json.dumps(item, ensure_ascii=False) + "\n"
