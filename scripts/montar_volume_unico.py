@@ -126,6 +126,9 @@ def pegar(src, num, keep=None, drop=None):
 def limpar(t):
     # caminhos do acervo
     t = re.sub(r"`[^`\n]*(?:search\d|pdf_rattail|/var/www)[^`\n]*`", "", t)
+    # o caminho costumava abrir a referência entre parênteses: "(caminho, 『光』3号)"
+    # ficava "(, 『光』3号)"
+    t = re.sub(r"\(\s*,\s*", "(", t)
     t = re.sub(r"\([^)\n]*(?:search\d|pdf_rattail)[^)\n]*\)", "", t)
     t = re.sub(r"\s*[·›]\s*(?:search\d|pdf_rattail)[^\s]*", "", t)
     t = re.sub(r"(?:search\d|pdf_rattail)/[\w./-]+", "", t)
@@ -149,6 +152,11 @@ def limpar(t):
     t = re.sub(r"\bo documentação\b", "a documentação", t)
     t = re.sub(r"\bno documentação\b", "na documentação", t)
     t = re.sub(r"\bdo documentação\b", "da documentação", t)
+    # o substantivo mudou de gênero quando "acervo" virou "documentação"
+    t = re.sub(r"\btodo a documentação\b", "toda a documentação", t)
+    t = re.sub(r"\beste documentação\b", "esta documentação", t)
+    t = re.sub(r"\besse documentação\b", "essa documentação", t)
+    t = re.sub(r"\bum documentação\b", "uma documentação", t)
     t = re.sub(r"\bao documentação\b", "à documentação", t)
     t = re.sub(r"\bpel[oa] documentação\b", "pela documentação", t)
     t = re.sub(r"documentação não documenta", "documentação não cobre", t)
@@ -260,6 +268,7 @@ def glosar(t):
     def ajustar_ref(lin):
         lin = re.sub(r"([『「])([^『「」』]{1,60})([」』])", glosar_titulo, lin)
         lin = re.sub(r"(?<=[）)])(?=[『「])", " ", lin)
+        lin = re.sub(r"(?<=[）)])(?=[0-9]+号)", " ", lin)
         lin = re.sub(r"(?<=[）)]) +(?=[,.;])", "", lin)
         return lin
 
@@ -369,6 +378,7 @@ def glosar(t):
     saida.append(glosar_trecho(t[pos:]))
     t = "".join(saida)
     t = re.sub(r"(?<=[）)])(?=[『「])", " ", t)
+    t = re.sub(r"(?<=[）)])(?=[0-9]+号)", " ", t)
     t = re.sub(r"(?<=[）)]) +(?=[,.;])", "", t)
     # a restauração precisa ser iterativa: uma linha protegida pode conter
     # o marcador de um trecho protegido antes dela

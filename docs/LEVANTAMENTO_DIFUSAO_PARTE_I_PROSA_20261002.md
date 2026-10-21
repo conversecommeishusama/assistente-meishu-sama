@@ -79,7 +79,7 @@ cabeça erguida."*
 
 Em 11 de novembro de 1947 celebra-se a cerimônia de fundação da **日本観音教団** (Nihon Kannon Kyōdan)
 (`search1/kouwa/s221199.html`). No ano seguinte há a cisão interna que leva à
-denominação **五六七教会** (Igreja Mutsumi), em 1º de novembro de 1948
+denominação **五六七教会**, em 1º de novembro de 1948
 (`search1/kouwa/s231101.html`), seguida em 1º de dezembro pela criação da sede em
 Odawara, com Tóquio (Kaminoge) passando a sede regional de Kantō
 (`search2/sanko/ren01.html`). Em 8 de dezembro de 1948, Meishu-Sama enuncia a
@@ -88,8 +88,8 @@ seção 3.1, porque é o mais explícito de todo o corpus sobre como se subia na
 
 O auge institucional do período vem depois. Em 8 de março de 1949 sai o primeiro número
 do jornal **『光』**, com cem mil fiéis declarados (`search1/ho/honkyo20.html`). Em
-fevereiro de 1950 a instituição (教団) passa por **発展的解消** — dissolução-e-desenvolvimento — e
-renasce como **世界救世教会** (Igreja Mundial Messiânica) (`search1/ka/kantou13.html`). Em outubro de 1950 temos o
+fevereiro de 1950 a instituição (教団) passa por **発展的解消** e renasce como
+**世界救世教会** (Igreja Messiânica Mundial) (`search1/ka/kantou13.html`). Em outubro de 1950 temos o
 **censo oficial** que serve de base a todas as contas deste levantamento: 4 Igrejas
 Grandes, 78 Igrejas Médias, 710 igrejas, com 56, 430 e 2.244 Ministros respectivamente
 (`search1/mo/mondai.html`).

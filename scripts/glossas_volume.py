@@ -403,7 +403,7 @@ ROMAJI = {
     ("日本観音教団", "Nihon Kannon Kyōdan"): "Igreja Kannon do Japão",
     ("世界救世教", "Kyūseikyō"): "Igreja Messiânica Mundial",
     ("教修要綱", "Kyōshu Yōkō"): "Manual do Curso",
-    ("五六七教会", "Igreja Mutsumi"): "Igreja Iso-roku",
+    ("五六七教会", "Iso-roku Kyōkai"): "Igreja Iso-roku",
     ("御教修", "Kyoshu"): "o curso",
     ("応神堂", "Ōjin-dō"): "santuário de Ōjin",
     ("岡田自観師", "Meishu-Sama"): "o mestre fundador",

@@ -90,15 +90,15 @@ cabeça erguida."*
 — 「私とサタンとの闘争史」 (História da minha luta com Satanás)
 
 Em 11 de novembro de 1947 celebra-se a cerimônia de fundação da **日本観音教団** (Nihon Kannon Kyōdan, "Igreja Kannon do Japão"). No ano seguinte há a cisão interna que leva à
-denominação **五六七教会** (Igreja Mutsumi, "Igreja Iso-roku"), em 1º de novembro de 1948, seguida em 1º de dezembro pela criação da sede em
+denominação **五六七教会 (Igreja Iso-roku)**, em 1º de novembro de 1948, seguida em 1º de dezembro pela criação da sede em
 Odawara, com Tóquio (Kaminoge) passando a sede regional de Kantō. Em 8 de dezembro de 1948, Meishu-Sama enuncia a
 **primeira grade organizacional completa** — documento que veremos em detalhe na
-seção 3.1, porque é o mais explícito de todo a documentação sobre como se subia na estrutura.
+seção 3.1, porque é o mais explícito de toda a documentação sobre como se subia na estrutura.
 
 O auge institucional do período vem depois. Em 8 de março de 1949 sai o primeiro número
 do jornal **『光』**, com cem mil fiéis declarados. Em
-fevereiro de 1950 a instituição (教団) passa por **発展的解消 (dissolução por desenvolvimento)** — dissolução-e-desenvolvimento — e
-renasce como **世界救世教会** (Igreja Mundial Messiânica). Em outubro de 1950 temos o
+fevereiro de 1950 a instituição (教団) passa por **発展的解消 (dissolução por desenvolvimento)** e renasce como
+**世界救世教会** (Igreja Messiânica Mundial). Em outubro de 1950 temos o
 **censo oficial** que serve de base a todas as contas deste levantamento: 4 Igrejas
 Grandes, 78 Igrejas Médias, 710 igrejas, com 56, 430 e 2.244 Ministros respectivamente.
 
@@ -113,12 +113,11 @@ Os últimos anos são de obras e de tensão. Em 16 de dezembro de 1953 realiza-s
 cerimônia de fundação do Templo Messiânico, no Zuiunkyo.
 Em 15 de junho de 1954, a cerimônia provisória do advento de Messias, no Messias
 Kaidō — ocasião em que o Superintendente Ōkusa comunicou aos fiéis que, a partir
-daquele culto, passariam a tratá-lo por **Messias-Sama** (,
-『栄光』 (Glória)263号, 30 de junho de 1954). Em outubro sai a terceira edição do **教修要綱 (Manual do Curso)**,
+daquele culto, passariam a tratá-lo por **Messias-Sama** (『栄光』 (Glória) 263号, 30 de junho de 1954). Em outubro sai a terceira edição do **教修要綱 (Manual do Curso)**,
 o manual de formação. Em 11 de dezembro de 1954, a entronização no Palácio de Cristal
 (水晶殿御遷座), quando Meishu-Sama anuncia que "o Trabalho Divino finalmente entrou no
-eixo principal" (, 『栄光』289号, 1º de janeiro de 1955). Em
-fevereiro de 1955, sua morte (, 『地上天国』 (Paraíso Terrestre)68号, 15 de
+eixo principal" (『栄光』289号, 1º de janeiro de 1955). Em
+fevereiro de 1955, sua morte (『地上天国』 (Paraíso Terrestre) 68号, 15 de
 março de 1955).
 
 | Data | Fato |
@@ -189,7 +188,7 @@ O princípio reaparece, com o mesmo rigor, na distribuição dos amuletos:
 pode ser dado também a um Assistente de Ministro? — [Meishu-Sama] **Assistente também
 pode.** Apenas pessoa comum, não…"*
 
-— 『御光話録』 (Registro das Palavras de Luz)12号, 21 de setembro de 1949
+— 『御光話録』 (Registro das Palavras de Luz) 12号, 21 de setembro de 1949
 
 A escala, portanto, não era honorífica. Controlava **acesso a objetos sagrados**, e esse
 acesso era escalonado com precisão.
@@ -250,7 +249,7 @@ A isso soma-se uma regra de unicidade que organiza o espaço doméstico:
 
 *"[Meishu-Sama] A Imagem da Luz Divina não pode estar em dois lugares de uma mesma casa.
 Tem de ser em um só lugar."*
-— 『御垂示録』 (Registro das Instruções)6号, 25 de janeiro de 1952
+— 『御垂示録』 (Registro das Instruções) 6号, 25 de janeiro de 1952
 
 
 ### 3.3 O Ohikari
@@ -1044,7 +1043,7 @@ mortos, em vez de contra ele.
 
 ### 10.1 A sequência obrigatória
 
-O documento mais importante de todo a documentação para esta pergunta não é um regulamento:
+O documento mais importante de toda a documentação para esta pergunta não é um regulamento:
 é uma resposta de Meishu-Sama a uma pergunta sobre como abrir um novo Centro de Ensino.
 Nela ele enuncia uma **sequência de aproximação** e a justifica por analogia com o
 crescimento natural:
@@ -2307,7 +2306,7 @@ ficou espantado. **Logo, o modo de agir do líder de filial estava completamente
 errado.** Ainda assim, se ele tivesse percebido isso, pedido perdão de coração e
 **feito o pai ou a mãe ministrar Johrei na criança**, não teria havido caso em
 que não se salvasse…"*
-— 「御講話」 (palestra), 『御教え集』 (Coletânea de Ensinamentos)22号, 15 de junho de 1953
+— 「御講話」 (palestra), 『御教え集』 (Coletânea de Ensinamentos) 22号, 15 de junho de 1953
 
 A lição é precisa: o erro do dirigente foi **ter feito ele mesmo**, em lugar de
 **ter ensinado a família a fazer**. A difusão não se sustentava na capacidade do
@@ -3415,7 +3414,7 @@ Padronizar por documento escrito e multiplicar reuniões: eis a resposta à
 variação regional — não a auditoria.
 
 A isso soma-se, em 1951, a **grade territorial**. O comunicado do Superintendente
-Ōkusa de 7 de março de 1951 (, 『栄光』94号) dissolve
+Ōkusa de 7 de março de 1951 (『栄光』94号) dissolve
 as quatro grandes igrejas e divide o país em dezessete sedes regionais, com
 titulares nomeados um a um:
 

@@ -129,13 +129,15 @@ a divisão antiga, e sobreposições entre capítulos vizinhos — 16 e 17, e 5 
 
 **Japonês em prosa — resolvido.** `scripts/glossas_volume.py` reúne cerca de 270
 termos e a função `glosar()`, em `montar_volume_unico.py`, insere a tradução
-entre parênteses na primeira ocorrência de cada capítulo: 213 glosas no volume.
+entre parênteses na primeira ocorrência de cada capítulo. A mesma glosa vale para
+as células de tabela e para os títulos de artigo nas linhas de referência, uma
+única vez no volume: 404 glosas.
 Nenhuma citação longa em 「」 ou 『』 ficou sem tradução ao lado. A glosa não
 entra dentro de citação, de tradução em itálico, de tabela, de organograma, de
 título nem de parêntese já existente; títulos de artigo recebem a glosa uma única
 vez no volume inteiro.
 
-**Verificação.** O volume tem 4.632 linhas, 31 capítulos, 86 páginas e 9 imagens,
+**Verificação.** O volume tem 4.631 linhas, 31 capítulos, 87 páginas e 9 imagens,
 em PDF e em DOCX. `verificar.py` deixa de se aplicar ao volume, porque as citações
 não indicam caminho. `verif_cit.py` continua aplicável e foi rodado sobre a Parte
 III após a reescrita: 52 citações confirmadas, nenhuma não localizada; 54
