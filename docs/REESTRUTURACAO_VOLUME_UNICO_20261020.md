@@ -127,11 +127,16 @@ remissões e ausência do rastro de versões, mas não reescreve o estilo dos tr
 herdados. Uma leitura corrida ainda encontrará frases de transição que pressupõem
 a divisão antiga, e sobreposições entre capítulos vizinhos — 16 e 17, e 5 e 6.
 
-**Japonês em prosa.** Títulos e periódicos estão traduzidos em Títulos citados;
-termos técnicos, no Glossário. Restam nomes próprios e designações institucionais
-em caracteres sem tradução junto ao primeiro uso — a próxima varredura é manual.
+**Japonês em prosa — resolvido.** `scripts/glossas_volume.py` reúne cerca de 270
+termos e a função `glosar()`, em `montar_volume_unico.py`, insere a tradução
+entre parênteses na primeira ocorrência de cada capítulo: 213 glosas no volume.
+Nenhuma citação longa em 「」 ou 『』 ficou sem tradução ao lado. A glosa não
+entra dentro de citação, de tradução em itálico, de tabela, de organograma, de
+título nem de parêntese já existente; títulos de artigo recebem a glosa uma única
+vez no volume inteiro.
 
-**Verificação.** `verificar.py` deixa de se aplicar ao volume, porque as citações
+**Verificação.** O volume tem 4.632 linhas, 31 capítulos, 86 páginas e 9 imagens,
+em PDF e em DOCX. `verificar.py` deixa de se aplicar ao volume, porque as citações
 não indicam caminho. `verif_cit.py` continua aplicável e foi rodado sobre a Parte
 III após a reescrita: 52 citações confirmadas, nenhuma não localizada; 54
 caminhos, nenhum ausente.

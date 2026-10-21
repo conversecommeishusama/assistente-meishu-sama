@@ -213,33 +213,130 @@ GLOSAS = [
 ]
 
 
+TITULOS_FEITOS = set()
+
+
 def glosar(t):
     """Acrescenta a tradução ao primeiro uso de cada termo japonês.
 
-    A regra é conservadora: só a primeira ocorrência, só em linha de prosa
-    (nunca em título, citação ou tradução), e nunca quando o termo já vem
-    seguido de parêntese — sinal de que o texto já o explicou ali.
+    Trabalha sobre o texto inteiro, e não linha a linha, porque há citações
+    que atravessam linhas: glosar por linha inseria a tradução no meio de uma
+    citação japonesa e destruía o trecho. A regra é: fora das citações, glosa;
+    dentro delas, nunca — a tradução vem em bloco, logo depois. Exceção para
+    『...』 curto, que é título de obra e recebe a tradução ao lado.
     """
-    linhas = t.split("\n")
+    import importlib.util as _iu
+    _spec = _iu.spec_from_file_location(
+        "glossas", os.path.join(BASE, "glossas_volume.py"))
+    _m = _iu.module_from_spec(_spec)
+    _spec.loader.exec_module(_m)
+    TAB, IGN, ROM = _m.TERMOS, _m.IGNORAR, _m.ROMAJI
+
     usados = set()
-    for i, ln in enumerate(linhas):
-        s = ln.strip()
-        if (not s or s[0] in "#>|!" or s.startswith('*"')
-                or s.startswith("—")):
-            continue
-        for jp, pt in GLOSAS:
-            if jp in usados or jp not in ln:
-                continue
-            # já glosado neste ponto?
-            pos = ln.find(jp)
-            depois = ln[pos + len(jp):pos + len(jp) + 2]
-            if depois.startswith(("（", "(")):
-                usados.add(jp)
-                continue
-            ln = ln[:pos + len(jp)] + " (%s)" % pt + ln[pos + len(jp):]
-            usados.add(jp)
-        linhas[i] = ln
-    return "\n".join(linhas)
+
+    # Citações, traduções e linhas de referência ficam fora da glosa — sem
+    # isso o termo era traduzido dentro da própria citação. A proteção é por
+    # trecho, e não por estado de linha: uma tradução que não fecha na mesma
+    # linha deixava o resto do capítulo inteiro protegido.
+    guardadas = {}
+
+    def guardar(m):
+        chave = "\x01%d\x01" % len(guardadas)
+        guardadas[chave] = m.group(0)
+        return chave
+
+    t = re.sub(r'\*".*?"\*', guardar, t, flags=re.S)
+
+    # Títulos de artigos nas linhas de referência: a linha inteira fica
+    # protegida, mas o título em 「」 ou 『』 recebe a glosa.
+    def glosar_titulo(m):
+        abre, cont, fecha = m.group(1), m.group(2), m.group(3)
+        if cont in TAB and cont not in TITULOS_FEITOS and TAB[cont] and len(cont) <= 60:
+            TITULOS_FEITOS.add(cont)
+            return abre + cont + fecha + " (%s)" % TAB[cont]
+        return m.group(0)
+
+    def ajustar_ref(lin):
+        lin = re.sub(r"([『「])([^『「」』]{1,60})([」』])", glosar_titulo, lin)
+        lin = re.sub(r"(?<=[）)])(?=[『「])", " ", lin)
+        lin = re.sub(r"(?<=[）)]) +(?=[,.;])", "", lin)
+        return lin
+
+    t = re.sub(r'(?m)^((?:—|>).*)$', lambda m: ajustar_ref(m.group(1)), t)
+    t = re.sub(r'(?m)^(?:>|—|\||#|!\[|```).*$', guardar, t)
+
+    # pares que só têm romaji: a tradução entra no próprio parêntese
+    for (jp, ro), tr in ROM.items():
+        t = re.sub(re.escape(jp) + r"(\**\s*)" + re.escape("(" + ro + ")"),
+                   lambda m, j=jp, r=ro, x=tr:
+                   j + m.group(1) + '(%s, "%s")' % (r, x), t)
+
+    def dentro_de_glosa(trecho, pos):
+        """O termo já está dentro de parênteses ou de código?
+
+        Boa parte do texto já glosa no sentido inverso — "**O Culto Regular**
+        (例祭)" —, e acrescentar a tradução ali produzia parênteses aninhados
+        do mesmo termo. Dentro de parênteses ou de crase, o termo não recebe
+        glosa.
+        """
+        antes = trecho[:pos]
+        if antes.count("`") % 2 == 1:
+            return True
+        abre = max(antes.rfind("("), antes.rfind("（"))
+        fecha = max(antes.rfind(")"), antes.rfind("）"))
+        return abre > fecha
+
+    def glosar_trecho(trecho):
+        def sub(m):
+            tok = m.group(0)
+            if tok in usados or tok in IGN or tok not in TAB:
+                return tok
+            if dentro_de_glosa(trecho, m.start()):
+                usados.add(tok)
+                return tok
+            # se já vem glosa logo depois — em português, romaji ou o que
+            # for —, não se acrescenta outra: era o defeito da primeira
+            # versão, que produzia "termo (glosa) (glosa)"
+            resto = trecho[m.end():m.end() + 6]
+            usados.add(tok)
+            if re.match(r"\*{0,2}\s*[（(]", resto):
+                return tok
+            trad = TAB[tok]
+            return tok + (" (%s)" % trad if trad else "")
+        return re.sub(r"[\u3040-\u30ff\u4e00-\u9fff]+", sub, trecho)
+
+    # divide em segmentos: citação | fora de citação
+    saida = []
+    pos = 0
+    for m in re.finditer(r"([『「])([^『「」』]{1,400})([」』])", t):
+        # o texto entre a posição anterior e esta citação é prosa
+        saida.append(glosar_trecho(t[pos:m.start()]))
+        abre, cont, fecha = m.group(1), m.group(2), m.group(3)
+        if abre in "『「" and len(cont) <= 60 and "\n" not in cont:
+            if cont in TAB and cont not in TITULOS_FEITOS:
+                TITULOS_FEITOS.add(cont)
+                usados.add(cont)
+                saida.append(abre + cont + fecha)
+                if TAB[cont]:
+                    saida.append(" (%s)" % TAB[cont])
+            else:
+                usados.add(cont)
+                saida.append(abre + cont + fecha)
+        else:
+            saida.append(abre + cont + fecha)
+        pos = m.end()
+    saida.append(glosar_trecho(t[pos:]))
+    t = "".join(saida)
+    t = re.sub(r"(?<=[）)])(?=[『「])", " ", t)
+    t = re.sub(r"(?<=[）)]) +(?=[,.;])", "", t)
+    # a restauração precisa ser iterativa: uma linha protegida pode conter
+    # o marcador de um trecho protegido antes dela
+    anterior = None
+    while anterior != t:
+        anterior = t
+        for chave, original in guardadas.items():
+            t = t.replace(chave, original)
+    return t
 
 
 def polir(t):
@@ -387,7 +484,8 @@ PLANO = [
 
     ("titulo", "Temas conexos"),
     ("sec", "II", "20"),
-    ("merge", [("I", "9", None), ("III", "29", None)], "Os Paraísos Terrestres e a mineração"),
+    ("merge", [("I", "9", ["1", "2", "3", "5", "6", "7"]), ("III", "29", None)],
+     "Os Paraísos Terrestres e a mineração"),
     ("sec", "I", "12"),
     ("novo", "29b_titulos.md"),
     ("novo", "30_glossario.md"),
@@ -413,7 +511,8 @@ def emitir():
             corpo = limpar(corpo)
         elif tipo == "sec":
             _, src, num = item[:3]
-            corpo = limpar(pegar(src, num))
+            keep = item[3] if len(item) > 3 else None
+            corpo = limpar(pegar(src, num, keep=keep))
             titulo = item[4] if len(item) > 4 and item[4] else SEC[src][num][0]
             corpo = re.sub(r"^\s*##\s*\d+\.\s*.*\n", "", corpo)
         else:
@@ -426,9 +525,10 @@ def emitir():
                 pedacos.append(p)
             corpo = "\n".join(pedacos)
             corpo = limpar(corpo)
-        corpo = polir(podar_coluna_vazia(remapear_refs(corpo)))
-        # vírgulas e separadores órfãos no fim das linhas de citação
-        corpo = re.sub(r"[ \t]*[,·][ \t]*$", "", corpo, flags=re.M)
+        corpo = glosar(polir(podar_coluna_vazia(remapear_refs(corpo))))
+        # vírgulas e separadores órfãos, apenas nas linhas de referência —
+        # nas de prosa a vírgula final é legítima e a regra a destruía
+        corpo = re.sub(r"(?m)^([>—|].*?)[ \t]*[,·][ \t]*$", r"\1", corpo)
 
         # renumera as subseções deste capítulo
         k = 0
