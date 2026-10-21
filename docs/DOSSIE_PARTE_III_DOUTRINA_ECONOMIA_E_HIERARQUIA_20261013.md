@@ -627,11 +627,26 @@ O acervo **não descreve** um rito formal de imposição do Ohikari com oração
 própria — nem no Regulamento de 1951, nem nos relatos. O que se documenta é a
 entrega ao término do curso, no contexto do culto.
 
-**Sobre o valor, porém, não há dúvida: o Ohikari tinha preço fixo.** O valor de
-1935 — dez ienes, contra um iene do modelo anterior — não serve, porém, para o
-período de que trata este volume. A moeda de antes da guerra não é a de depois, e
-projetar aquele número sobre 1950 seria erro de método. O que a documentação
-pós-guerra permite afirmar é a **ordem de grandeza**:
+**O que se cobrava, e a quem.** A questão do valor do Ohikari não se resolve
+com uma cifra, porque o objeto não era vendido: era conferido ao fim de um
+curso, e o que se pagava era o curso. É o que a própria instituição explica, em
+1949, ao responder a uma acusação de rádio:
+
+> 「次に教修料に関してであるが、**千三百円は講師の手当、入信料、維持会員の会費、
+> バッジ代、書籍代、出張旅費、旅館宿泊費等含まれており**、最近は物価の値上りの
+> ため遠近共相当の増額になっている。」
+> — 「放送に対する抗議文」, 23 de abril de 1949 · `search1/ho/hosoni.html`
+
+*"Quanto à taxa do curso: os mil e trezentos ienes **compreendem o honorário do
+instrutor, a taxa de admissão, a quota de membro mantenedor, o distintivo, os
+livros, as despesas de deslocamento e a hospedagem**, e ultimamente, com a alta
+dos preços, tanto perto quanto longe o valor subiu consideravelmente."*
+
+A lista é decisiva: o Ohikari **não aparece como item**. O que se cobrava era a
+realização do curso — o instrutor, o material, o distintivo, a viagem e a
+pousada —, e o Ohikari vinha ao fim, como conclusão. É por isso que os relatos
+dizem "por mil ienes de oferta se recebe o Ohikari": o valor é do curso, e o
+Ohikari é o que se recebe ao completá-lo.
 
 > 「お話を伺ってみると**千円のお礼でお守様が頂ける**、しかもたったそれだけで
 > 自分の病気も治せると聞き、それなら一万円でも安いことだと思って」
@@ -641,26 +656,79 @@ Ohikari**, e que só com isso a própria doença se pode curar; achei que, mesmo
 dez mil ienes, seria barato."*
 — 「重症の筋炎治る」『光』6号, 25 de abril de 1949
 
-No mesmo ano, um pregador adversário denuncia o valor como exorbitante:
+O mesmo valor aparece, distorcido, na acusação de um pregador adversário, que
+fala em "dois mil ienes" pelo amuleto — cifra de fonte hostil, registrada apenas
+como indício da ordem de grandeza (`search2/kikou2/sekkyo01.html`).
 
-> 「それから「御守」だって**二千円も出して買っている**という。あんなものを二千円も
-> 出して全くべら棒な銭取主義のものである。」
+**A doutrina: a oferta é de quem transmite, não de Deus.** Perguntado, no mesmo
+período, sobre o que fazer quando alguém nada tem a oferecer, Meishu-Sama
+responde com a distinção que resolve a questão:
 
-*"E dizem que até o Ohikari **se compra pagando dois mil ienes**. Pagar dois mil
-ienes por uma coisa daquelas é puro e descarado mercantilismo."*
-— 「説教者が本教罵倒」『光』36号, 19 de novembro de 1949
+> 「教導師が人を浄霊してあげた場合、生活に費用がかかるんだから、御礼をもらうの
+> はあたりまえです。そして余裕があれば神様にお上げするのが本当ですよ。……
+> 以前、**ただで治療しろって言う人がいましたが、勿論、観音様は御礼なんかいら
+> ないが、取り次ぎする人は家に住んでいるんだし、まさかカスミを食って生きる
+> わけには行かない**ですからね。……金持ちはうんと御礼を出したらいいんです。」
+> — 『御光話録』15号, 20 de dezembro de 1949 · `search1/situmon/m2409.html`
 
-A cifra vem de fonte hostil e é registrada como o que é — afirmação alheia,
-provável exagero —, mas confirma a ordem de grandeza. Em 1954, uma menina de
-catorze anos compara o Ohikari ao custo de uma viagem escolar, "cerca de dois mil
-ienes", ao explicar por que a mãe só podia pagar um dos dois. E em 1950 uma
-mulher entra num plano de poupança diária de trinta ienes para poder recebê-lo.
+*"Quando o ministro faz Johrei em alguém, há despesas de vida, e é natural que
+receba a oferta. E, se houver folga, o certo é oferecê-la a Deus. […] Antes
+havia quem dissesse que se devia tratar de graça; **naturalmente, Kannon não
+precisa de oferta alguma, mas quem intercede mora numa casa, e não vai viver
+comendo névoa**."*
 
-**A tabela de 1953 não está documentada.** O aviso daquele ano fixa o princípio
-— o valor é fixo —, não o número. O que se pode afirmar com segurança é que o
-Ohikari tinha preço fixo, e que esse preço, no período pós-guerra, era da ordem
-de **milhares de ienes**, e não de dezenas. O mesmo se aplica às demais peças que
-Meishu-Sama traçava: a caligrafia entronizada e a Imagem.
+A frase é a chave: **a divindade não cobra; quem cobra é o homem que intercede,
+e cobra para viver.** A oferta não é preço de uma graça — é sustento de quem a
+transmite.
+
+O princípio tem formulação doutrinária anterior. Num texto de 1943 sobre os
+falsos deuses, Meishu-Sama diz por que a venda da graça é sinal de falsidade:
+
+> 「金を上げれば病気を治すという事は**一種の交換条件**であって、いわば**神対人間
+> の取引**のようなもので**御利益を売る**訳であり、実に浅間しき限りである。……
+> 正神は、人間からの報酬や条件などに関わらず、**無我愛に**救わせ給う」
+> — 「神と悪魔」, 23 de outubro de 1943 · `search1/ka/kami08.html`
+
+*"Aquilo de 'se der dinheiro, curo a doença' é **uma espécie de condição de
+troca**, uma **transação entre Deus e o homem**, é **vender a graça**, e é de uma
+baixeza extrema. […] O deus verdadeiro salva por **amor sem eu**,
+independentemente de recompensa ou condição vinda do homem."*
+
+**O que não se faz com o objeto: comércio de troco exato.** O objeto tinha valor
+de referência, mas tratá-lo como mercadoria era falta grave — nos dois sentidos.
+O aviso de 1953 fixa o princípio (§28.4): o valor é certo, e cobrar acima dele é
+furto. E há o caso inverso, que Meishu-Sama relata como erro:
+
+> 「以前、ある熱心な婦人で人を大勢やってたんですが、その**御札が一円のところを
+> 二、三円多いからって返しに行った**んだそうです。……しかし、これなんか
+> **とんでもない間違い**ですよ。**神様を侮辱することはなはだしい**。」
+> — 『御光話録』15号, 20 de dezembro de 1949
+
+*"Antes, uma senhora dedicada, que atendia muita gente, foi devolver dois ou três
+ienes que recebera a mais, porque **o papel sagrado era de um iene**. […] Isso é
+um **erro completo**: é **insultar gravemente a Deus**."*
+
+Devolver o troco é tratar a coisa como compra e venda — e é justamente o que não
+se pode fazer com o que é de Deus.
+
+**O quadro, em resumo.**
+
+| Questão | O que a documentação mostra |
+|---|---|
+| O Ohikari tinha valor de referência? | **Sim** — unitário e uniforme: em 1935, um iene e depois dez (cem para o modelo do terapeuta); em 1953, "o valor é fixo" |
+| O Ohikari era vendido? | **Não** — cobrar acima do valor é furto; devolver o troco é insulto a Deus |
+| O que se cobrava no pós-guerra? | A **realização do curso** (教修): 1.300 ienes em 1949, com instrutor, material, distintivo, viagem e pousada — e o Ohikari não é item da lista |
+| A quem pertence a oferta? | Ao **homem que transmite**, não à divindade: "Kannon não precisa de oferta alguma" |
+
+**A leitura que se sustenta, portanto, é esta.** No pós-guerra, o que se cobrava
+era o **Kyoshu** — a taxa do curso, com rubricas explícitas e finalidade
+declarada —, e não o objeto; e a doutrina afirma que a divindade não cobra nada,
+cabendo a oferta a quem intercede. Mas não é exato dizer que o Ohikari passou a
+ser gratuito: ele manteve **valor de referência fixo**, e em 1953 Meishu-Sama
+ainda fala desse valor. O que mudou não foi a gratuidade do objeto, e sim **a
+natureza da cobrança** — do preço da peça para a taxa do curso, e do pagamento à
+divindade para o sustento do intermediário. O valor numérico de 1953 continua
+não documentado: o aviso daquele ano fixa o princípio, não a quantia.
 
 Há, contudo, um dado que ilumina o estatuto do objeto: o Ohikari era tratado
 como **pertencente à pessoa**, e não à instituição. Perguntado sobre o que fazer

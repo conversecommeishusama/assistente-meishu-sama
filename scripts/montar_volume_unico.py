@@ -26,42 +26,57 @@ FONTES = {
 }
 
 # --------------------------------------------------------------- remissões
-# Referência antiga -> referência nova. As mais longas primeiro, para que
-# "§5.2" não seja lido como "§5" seguido de ".2".
-REFS = {
-    "24.5": "8", "24.4": "8", "24.3": "7", "24.2": "6", "24.1": "7",
-    "19.4": "23.4", "19.3": "23.3", "19.2": "23.2", "19.1": "23.1",
-    "20.3": "24.3", "20.2": "24.2", "20.1": "24.1",
-    "21.5": "21.5", "21.4": "21.4", "21.3": "21.3", "21.2": "21.2",
-    "21.1": "21.1",
-    "3.5": "11.1", "3.4": "8", "3.3": "8", "3.2": "7", "3.1": "6", "3": "8",
-    "2.3": "3.3", "2.2": "3.2", "2.1": "3.1", "2": "3",
-    "12": "29",
-    "9": "25", "8.4": "25.4", "8.3": "25.3", "8.2": "25.2", "8.1": "25.1", "8": "25",
-    "7.6": "4.6", "7.5": "4.5", "7.4": "4.4", "7.3": "4.3", "7.2": "4.2",
-    "7.1": "4.1", "7": "4",
-    "6.4": "13.4", "6.3": "13.3", "6.2": "13.2", "6.1": "13.1", "6": "13",
-    "5.8": "10.5", "5.7": "10.4", "5.6": "10.4", "5.5": "10.3", "5.4": "10.1",
-    "5.3": "12.2", "5.2": "12.2", "5.1": "12.1", "5": "12",
-    "4.5": "5.5", "4.4": "5.4", "4.3": "5.3", "4.2": "5.2", "4.1": "5.1", "4": "5",
-    "1": "2",
-    "13.1": "15.1", "13": "15",
-    "14.5": "16.3", "14.4": "16.3", "14.3": "16.2", "14.2": "17", "14.1": "16.1",
-    "14": "16",
-    "15.2": "18.2", "15.1": "18.1", "15": "18",
-    "16.6": "20.5", "16.5": "20.4", "16.4": "20.3", "16.3": "20.2",
-    "16.2": "20.1", "16.1": "20.1", "16": "20",
-    "17.2": "13.5", "17.1": "13.5", "17": "13",
-    "18": "22", "19": "23", "20": "24", "21": "21",
-    "24": "8", "25.3": "14", "25.2": "11.2", "25.1": "11.1", "25": "11",
-    "26.3": "17", "26.2": "17", "26.1": "17", "26": "17",
-    "27.3": "19.3", "27.2": "19.2", "27.1": "19.1", "27": "19",
-    "28.4": "21.4", "28.3": "21.3", "28.2": "21.2", "28.1": "21.1", "28": "21",
-    "29": "26", "30": "27",
-    "31.3": "28.3", "31.2": "28.2", "31.1": "28.1", "31": "28",
+# Mapa do capítulo da parte de origem para o capítulo do volume único.
+# A ordem de leitura do volume foi refeita por importância de conteúdo:
+# primeiro a Imagem e o culto, depois a difusão, a formação dos sacerdotes,
+# as unidades, as ofertas, a administração e, por fim, os temas conexos.
+CAP_MAP = {
+    # Parte I
+    "1": "2",     # cronologia
+    "2": "10",    # difusão pós-guerra
+    "3": "21",    # tipos de unidade -> o que é cada unidade
+    "4": "18",    # como se abria uma unidade
+    "5": "14",    # formação sacerdotal e níveis
+    "6": "23",    # estrutura funcional e hierárquica
+    "7": "11",    # o Kyoshu
+    "8": "17",    # atividades em torno de Meishu-Sama
+    "9": "28",    # Paraísos Terrestres
+    "12": "29",   # síntese
+    # Parte II
+    "13": "4",    # imagens da Luz Divina
+    "14": "5",    # como eram os cultos
+    "15": "7",    # as oferendas
+    "16": "9",    # sufrágio dos antepassados
+    "17": "23",   # presidência da igreja
+    "18": "26",   # agricultura natural
+    "19": "13",   # o Johrei
+    "20": "27",   # nutrição
+    "21": "22",   # economia da igreja
+    # Parte III
+    "24": "19",   # hierarquia das unidades
+    "25": "16",   # atribuições e cotidiano (25.3 vai à administração)
+    "26": "6",    # culto por tipo de unidade
+    "27": "12",   # salvação e Ohikari
+    "28": "22",   # ofertório
+    "29": "28",   # Paraísos Terrestres e mineração
+    "30": "25",   # perseguição de 1950 e reforma
+    "31": "8",    # oferendas diante do objeto de culto
 }
-# capítulos suprimidos: a remissão é retirada, não redirecionada
-REFS_MORTAS = ("10", "11", "22", "23", "32")
+
+# Remissões com destino próprio, quando o capítulo de origem foi dividido.
+REF_EXCECOES = {
+    "3.1": "19.1",   # a grade de 1948 foi para as unidades até 1951
+    "5.1": "3.1",    # o axioma pertence aos objetos de culto
+    "5.2": "3.2",    # a escada dos objetos de culto
+    "5.4": "15.1",   # o censo de 1950 é o quadro dos ministros de 1951-55
+    "5.7": "14.4",   # a reforma anunciada no fim de 1954
+    "14.5": "5.3",   # a vestimenta dos oficiantes
+    "24.3": "20.3",  # a grade de 1951
+    "25.3": "24",    # como a Sede acompanhava as igrejas
+}
+
+# Capítulos das partes de origem que não entram no volume.
+CAPS_MORTOS = ("10", "11", "22", "23", "32")
 
 
 def ler_secoes(caminho):
@@ -293,27 +308,30 @@ def podar_coluna_vazia(t):
 
 
 def remapear_refs(t):
-    """Troca as remissões numa única passagem.
+    """Troca as remissões do capítulo de origem pelo capítulo do volume.
 
-    A substituição direta remapearia duas vezes: "§3.1" vira "§6" e, na
-    passagem seguinte, "§6" vira "§13". Por isso cada alvo vai para um
-    marcador temporário e só no fim é liberado.
+    A troca é feita numa única passagem, com marcador temporário: sem isso,
+    "§3" viraria "§21" e depois "§21" seria relido como outra coisa. A
+    subseção é preservada — como a numeração interna dos capítulos segue a
+    ordem de leitura, a segunda subseção continua sendo a segunda.
     """
-    # remissões a capítulos suprimidos: retiradas
-    for morta in REFS_MORTAS:
-        t = re.sub(r"\(§%s\)" % re.escape(morta), "", t)
-        t = re.sub(r"§%s(?![.\d])" % re.escape(morta), "\x00X\x00", t)
+    def troca(m):
+        cap, resto = m.group(1), m.group(2) or ""
+        chave = cap + resto
+        if chave in REF_EXCECOES:
+            return "\x00" + REF_EXCECOES[chave] + "\x00"
+        if cap in CAPS_MORTOS:
+            return ""
+        if cap in CAP_MAP:
+            return "\x00" + CAP_MAP[cap] + resto + "\x00"
+        return m.group(0)
 
-    alvos = list(REFS.items())
-    alvos.sort(key=lambda kv: len(kv[0]), reverse=True)
-    for velho, novo in alvos:
-        t = re.sub(r"§%s(?![.\d])" % re.escape(velho),
-                   "\x00" + novo + "\x00", t)
-    t = t.replace("\x00X\x00", "")
+    t = re.sub(r"§(\d+)((?:\.\d+)?)", troca, t)
 
     def liberar(m):
         return "§" + m.group(1) if m.group(1) else ""
     t = re.sub(r"\x00([\d.]*)\x00", liberar, t)
+
     # limpa artefatos deixados pela retirada
     t = re.sub(r"§\s*,", "", t)
     t = re.sub(r"\(\s*§\s*\)", "", t)
@@ -327,40 +345,49 @@ def remapear_refs(t):
 # (tipo, dados) — tipo "novo" inclui arquivo; "sec" extrai seção; "merge" junta
 PLANO = [
     ("novo", "01_fontes.md"),
-    ("titulo", "Primeira parte: a estrutura"),
     ("sec", "I", "1"),
+
+    ("titulo", "A Imagem, o culto e as oferendas"),
+    ("merge", [("I", "5", ["1", "2"]), ("III", "27", ["2"])], "Os objetos de culto"),
+    ("sec", "II", "13"),
+    ("merge", [("II", "14", ["1", "3", "4"])], "A ordem do culto"),
+    ("novo", "16b_cultos.md"),
+    ("sec", "II", "15", None, "As oferendas do culto"),
+    ("sec", "III", "31"),
+    ("sec", "II", "16"),
+
+    ("titulo", "O trabalho de difusão"),
     ("sec", "I", "2"),
     ("sec", "I", "7"),
+    ("sec", "III", "27"),
+    ("sec", "II", "19"),
+
+    ("titulo", "A formação do elemento humano"),
+    ("novo", "09_ministros_1948_1951.md"),
+    ("novo", "10_ministros_1952_1955.md"),
+    ("merge", [("III", "25", ["1", "2"])], "As atribuições e o cotidiano dos dirigentes"),
+    ("sec", "I", "8"),
+
+    ("titulo", "As unidades"),
     ("sec", "I", "4"),
     ("novo", "06_grade1948.md"),
     ("novo", "07_grade1951.md"),
     ("novo", "08_quadro_unidades.md"),
-    ("novo", "09_ministros_1948_1951.md"),
-    ("novo", "10_ministros_1952_1955.md"),
-    ("merge", [("III", "25", ["1", "2"])], "As atribuições e o cotidiano dos dirigentes"),
-    ("merge", [("I", "5", ["1", "2"]), ("III", "27", ["2"])], "Os objetos de culto"),
+
+    ("titulo", "As ofertas e as dedicações"),
+    ("sec", "II", "21", None, "As ofertas e as dedicações"),
+
+    ("titulo", "A estrutura administrativa"),
     ("sec", "I", "6", None, "A governança e a estrutura funcional"),
     ("merge", [("III", "25", ["3"])], "Como a Sede acompanhava as igrejas"),
-
-    ("titulo", "Segunda parte: o culto"),
-    ("sec", "II", "13"),
-    ("merge", [("II", "14", ["1", "3", "4"])], "A ordem do culto"),
-    ("novo", "16b_cultos.md"),
-    ("sec", "II", "15"),
-    ("sec", "III", "27"),
-    ("sec", "II", "16"),
-    ("sec", "III", "28"),
-
-    ("titulo", "Terceira parte: a vida e a economia"),
-    ("novo", "22_agricultura.md"),
-    ("sec", "II", "19"),
-    ("sec", "II", "20"),
-    ("sec", "I", "8"),
-    ("merge", [("I", "9", None), ("III", "29", None)], "Os Paraísos Terrestres e a mineração"),
     ("sec", "III", "30"),
-    ("sec", "III", "31"),
 
-    ("titulo", "Quarta parte: síntese e referência"),
+    ("titulo", "A Agricultura Natural"),
+    ("novo", "22_agricultura.md"),
+
+    ("titulo", "Temas conexos"),
+    ("sec", "II", "20"),
+    ("merge", [("I", "9", None), ("III", "29", None)], "Os Paraísos Terrestres e a mineração"),
     ("sec", "I", "12"),
     ("novo", "29b_titulos.md"),
     ("novo", "30_glossario.md"),

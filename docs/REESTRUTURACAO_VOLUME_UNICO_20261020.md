@@ -1,19 +1,17 @@
-# Reestruturação do estudo — 20 de outubro de 2026
+# Reestruturação do estudo — 20 e 21 de outubro de 2026
 
-O estudo passou a ser **um volume único, organizado por tema**. As três partes
-de trabalho que o compunham (Parte I, Parte II, Parte III) foram dissolvidas e
-os seus capítulos redistribuídos pela ordem temática, com numeração nova e
-contínua.
+O estudo é **um volume único, organizado por tema**, e a ordem dos capítulos
+segue a **importância do conteúdo**.
 
-**Arquivos finais**
+## Arquivos finais
 
 | Formato | Arquivo |
 |---|---|
-| PDF para impressão | `DOSSIE_DIFUSAO_20261020.pdf` — 84 páginas, fontes embutidas |
+| PDF para impressão | `DOSSIE_DIFUSAO_20261020.pdf` — 87 páginas, fontes embutidas |
 | Word | `DOSSIE_DIFUSAO_20261020.docx` |
-| Fonte única | `DOSSIE_DIFUSAO_20261020.md` — 4.616 linhas, 31 capítulos |
+| Fonte única | `DOSSIE_DIFUSAO_20261020.md` — 4.666 linhas, 31 capítulos |
 
-**Como regerar**
+## Como regerar
 
 ```
 .venv/bin/python scripts/montar_volume_unico.py
@@ -24,120 +22,116 @@ DOCX_CABECALHO="A difusão na época de Meishu-Sama" \
 ```
 
 Os capítulos novos estão em `docs/volume_novo/`; a montagem lê esses arquivos e
-os capítulos aproveitados das partes antigas, aplica a limpeza, renumera e
-grava o volume. Nada é editado à mão no arquivo final.
+os capítulos aproveitados das partes antigas, aplica a limpeza, renumera,
+remapeia as remissões e grava o volume. Nada é editado à mão no arquivo final.
 
 ---
 
-## O que mudou
+## A ordem de leitura
 
-**Hierarquias separadas por período.** As unidades e os ministros deixaram de ser
-tratados num capítulo só. Agora há `6.` unidades até 1951 (grade decimal),
-`7.` unidades de 1951 a 1955 (grade territorial), `8.` o que é cada unidade,
-`9.` ministros até 1951, `10.` ministros de 1951 a 1955. O capítulo 8 responde
-às perguntas que ficavam implícitas — o que é uma associação, se ela tem a mesma
-hierarquia de uma igreja, e a diferença entre Centro de Johrei, Centro de Ensino
-e filial —, com um quadro comparativo e uma tabela de conjunto de todas as
-unidades.
+Os capítulos 1 e 2 são abertura: o período, as fontes e a cronologia. Do 3 em
+diante, a sequência segue os sete blocos de importância.
 
-**Culto mensal e culto regular.** Capítulo 17 distingue as quatro espécies de
-culto e explica a diferença: o mensal pertence ao ciclo comum a todas as
-unidades e acompanha a vida da casa; o regular é o culto **daquela igreja**.
-
-**Agricultura Natural num só contexto.** Capítulo 22 reúne a doutrina de 1950 e
-a configuração atual — a horta caseira entre os membros, a produção de proteína
-animal orgânica, e o insumo biológico vendido ao produtor convencional como
-condicionador de solo. A separação entre os três planos é o que evita confundir
-a promessa dos anos 1950 com a prática de hoje.
-
-**Oferendas diante do objeto de culto.** Capítulo 28 apresenta a instrução de 23
-de abril de 1949 como o que ela é: uma resposta direta, que reconhece a prática
-xintoísta (sal, água, arroz lavado como 御神饌), dá-lhe um destinatário — o
-deus-dragão — e substitui a forma pela comida humana.
-
-**Fim do rastro das versões.** Nenhuma passagem compara o texto com edições
-anteriores; não há menção a "primeira versão", a revisões datadas, nem a notas de
-trabalho. O leitor recebe apenas o texto final.
-
-**Fim da trilha do acervo.** As citações passaram a indicar somente veículo,
-número e data. Não se nomeia a coleção nem se indica de onde vieram os
-documentos: são escritos, palavras registradas e documentos oficiais da época,
-públicos e conservados por diversas instituições messiânicas.
-
-**Capítulos suprimidos.** As antigas listas de lacunas e a nota sobre o acervo
-saíram do volume; o que nelas era essencial foi incorporado ao texto dos
-capítulos correspondentes. O volume termina com a síntese, a lista de títulos
-citados e o glossário.
-
-**Correções pontuais.** "Três anos depois" passou a "três meses depois" (outubro
-de 1934 a janeiro de 1935); o nome do local em Atami passou de *Seijōdai* a
-**Seiseidai**; o ministro assistente da ministra Higuchi passou a **Ajiki
-Haruhiko**; "caráter" passou a "caractere"; as três caligrafias do Ohikari
-passaram a **Hikari, Kōmyō e Dai-Kōmyō**; "sítios cênicos" passou a "paragens de
-grande beleza"; a caligrafia 日光 ficou identificada como **Nikkō, "luz do sol"**.
-
-**Valor do Ohikari.** O capítulo 19 não usa mais o preço de 1935 para explicar o
-período estudado. Os valores documentados são de 1949 (mil ienes pelo curso com
-o Ohikari; a cifra de dois mil ienes vem de fonte adversária) e, para 1953, o
-aviso oficial fixa o **princípio** — o valor é fixo e cobrar acima dele é furto —
-sem declarar a quantia. O valor de 1953, portanto, não está documentado, e o
-texto diz isso.
+| Bloco | Capítulos |
+|---|---|
+| **A Imagem, o culto e as oferendas** | 3. Os objetos de culto · 4. As imagens da Luz Divina · 5. A ordem do culto · 6. Os tipos de culto · 7. As oferendas do culto · 8. As oferendas diante do objeto de culto · 9. O sufrágio dos antepassados |
+| **O trabalho de difusão** | 10. A difusão pós-guerra · 11. A formação de novos membros: o Kyoshu · 12. A salvação e o Ohikari · 13. O Johrei |
+| **A formação do elemento humano** | 14. Os ministros até 1951 · 15. Os ministros de 1951 a 1955 · 16. As atribuições e o cotidiano dos dirigentes · 17. As atividades em torno de Meishu-Sama |
+| **As unidades** | 18. Como se abria uma unidade · 19. As unidades até 1951 · 20. As unidades de 1951 a 1955 · 21. O que é cada unidade |
+| **As ofertas e as dedicações** | 22. As ofertas e as dedicações |
+| **A estrutura administrativa** | 23. A governança e a estrutura funcional · 24. Como a Sede acompanhava as igrejas · 25. A perseguição de 1950 e a reforma de 1951 |
+| **A Agricultura Natural** | 26. A Agricultura Natural |
+| **Temas conexos** | 27. Nutrição · 28. Os Paraísos Terrestres e a mineração · 29. Síntese · 30. Títulos citados · 31. Glossário |
 
 ---
 
-## Estrutura do volume
+## O valor do Ohikari — o que a documentação mostra
 
-1. O período e as fontes
-2. A cronologia da institucionalização (1934–1955)
-3. A difusão pós-guerra: método, instrumentos e escala
-4. A formação de novos membros: o Kyoshu
-5. Como se abria uma unidade
-6. As unidades até 1951: a grade decimal
-7. As unidades de 1951 a 1955: a grade territorial
-8. O que é cada unidade
-9. Os ministros até 1951
-10. Os ministros de 1951 a 1955
-11. As atribuições e o cotidiano dos dirigentes
-12. Os objetos de culto
-13. A governança e a estrutura funcional
-14. Como a Sede acompanhava as igrejas
-15. As imagens da Luz Divina e o critério de proporção
-16. A ordem do culto
-17. Os tipos de culto
-18. As oferendas
-19. A salvação e o Ohikari
-20. O sufrágio dos antepassados
-21. O ofertório: ofertas, quotas e taxas
-22. A Agricultura Natural
-23. O Johrei: prática, compreensão e desvios
-24. Nutrição
-25. As atividades em torno de Meishu-Sama
-26. Os Paraísos Terrestres e a mineração
-27. A perseguição de 1950 e a reforma de 1951
-28. As oferendas diante do objeto de culto
-29. Síntese em treze assertivas
-30. Títulos citados
-31. Glossário
+A hipótese de trabalho era: depois da guerra o Ohikari deixou de ser cobrado, e
+passou-se a cobrar o Kyoshu; haveria uma passagem em que Meishu-Sama diz que não
+se pode cobrar pelo que é de Deus. A pesquisa confirmou **a substância** e
+corrigiu **um ponto**.
+
+**O que se cobrava era o curso, com rubricas declaradas.** Em 1949, ao responder
+a uma acusação de rádio, a instituição detalha a taxa de 1.300 ienes: honorário
+do instrutor, taxa de admissão, quota de membro mantenedor, distintivo, livros,
+despesas de deslocamento e hospedagem. **O Ohikari não é item da lista.** Ele era
+conferido ao fim do curso — é por isso que os relatos dizem "por mil ienes de
+oferta se recebe o Ohikari": o valor é do curso.
+
+**A fala sobre não cobrar o que é de Deus existe, e é esta.** Em 『御光話録』15号,
+de 20 de dezembro de 1949: 「以前、ただで治療しろって言う人がいましたが、
+**勿論、観音様は御礼なんかいらないが、取り次ぎする人は家に住んでいるんだし、
+まさかカスミを食って生きるわけには行かない**ですからね」 — *"antes havia quem
+dissesse que se devia tratar de graça; naturalmente, **Kannon não precisa de
+oferta alguma**, mas quem intercede mora numa casa e não vai viver comendo
+névoa"*. A oferta é de quem transmite, não da divindade.
+
+O princípio tem formulação anterior, de 1943, em 「神と悪魔」: "se der dinheiro,
+curo a doença" é **condição de troca**, **transação entre Deus e o homem**,
+**venda da graça** — e é por isso que o deus verdadeiro salva "por amor sem eu",
+independentemente de recompensa.
+
+**O que não se pode fazer com o objeto.** Cobrar acima do valor fixo é furto
+(aviso de 1953). E o inverso também é falta: uma senhora devolveu dois ou três
+ienes que recebera a mais, porque o papel sagrado era de um iene — e Meishu-Sama
+qualifica o gesto como «insultar gravemente a Deus». Tratar a coisa como compra e
+venda, nos dois sentidos, é o erro.
+
+**A correção.** Não é exato dizer que o Ohikari passou a ser gratuito: ele manteve
+**valor de referência fixo**, e em 1953 Meishu-Sama ainda fala desse valor
+(「御守はじめその他の私のかいたものの値は一定している」). O que mudou não foi a
+gratuidade do objeto, e sim **a natureza da cobrança**: do preço da peça para a
+taxa do curso, e do pagamento à divindade para o sustento do intermediário. O
+valor numérico de 1953 continua não documentado — o aviso fixa o princípio, não a
+quantia.
+
+O tratamento completo está no capítulo 12.3, com quadro-resumo das quatro
+evidências.
+
+---
+
+## Outras mudanças
+
+**Hierarquias separadas por período.** Capítulos 19 e 20 tratam as unidades de
+1948 e de 1951; 14 e 15, os ministros de cada período. O capítulo 21 define cada
+unidade, com quadro comparativo entre igreja e associação, e a distinção entre
+Centro de Johrei, Centro de Ensino e filial.
+
+**Tipos de culto.** O capítulo 6 distingue as quatro espécies e explica a
+diferença entre Culto Mensal (ciclo comum, acompanha a vida da casa) e Culto
+Regular (o culto próprio de cada igreja).
+
+**Agricultura Natural num só contexto.** O capítulo 26 reúne a doutrina de 1950,
+a horta caseira entre os membros, a produção de proteína animal orgânica e o
+insumo biológico vendido ao produtor convencional como condicionador de solo.
+
+**Água, sal e arroz.** O capítulo 8 apresenta a instrução de 23 de abril de 1949
+como resposta direta: são a oferenda xintoísta (御神饌), são comida de
+deus-dragão, e ao Kōmyō Nyorai oferta-se comida humana.
+
+**Sem rastro de versões e sem trilha do acervo.** Nenhuma comparação com edições
+anteriores; as citações indicam apenas veículo, número e data.
+
+**Correções pontuais.** "Três anos" → "três meses"; Seijōdai → **Seiseidai**;
+Anshoku → **Ajiki Haruhiko**; "caráter" → "caractere"; as três caligrafias do
+Ohikari → **Hikari, Kōmyō e Dai-Kōmyō**; "sítios cênicos" → "paragens de grande
+beleza"; 日光 identificada como **Nikkō, "luz do sol"**.
 
 ---
 
 ## O que ainda não foi feito
 
-**Revisão de língua, capítulo a capítulo.** A montagem garante a ordem, a
-numeração, as remissões e a ausência do rastro de versões, mas não reescreve o
-estilo de cada trecho herdado. Uma leitura corrida ainda encontrará frases de
-transição que pressupõem a divisão antiga, e repetições entre capítulos que hoje
-tratam do mesmo assunto por ângulos próximos — os capítulos 11 e 12, e os
-capítulos 16 e 17.
+**Revisão de língua, capítulo a capítulo.** A montagem garante ordem, numeração,
+remissões e ausência do rastro de versões, mas não reescreve o estilo dos trechos
+herdados. Uma leitura corrida ainda encontrará frases de transição que pressupõem
+a divisão antiga, e sobreposições entre capítulos vizinhos — 16 e 17, e 5 e 6.
 
-**Japonês em prosa.** Os títulos dos ensinamentos e dos periódicos estão
-traduzidos na lista de Títulos citados, e os termos de organização e de culto,
-no Glossário. Restam, no corpo do texto, nomes próprios e designações
-institucionais em caracteres que não receberam tradução junto ao primeiro uso.
-Uma varredura manual desses casos é o trabalho seguinte.
+**Japonês em prosa.** Títulos e periódicos estão traduzidos em Títulos citados;
+termos técnicos, no Glossário. Restam nomes próprios e designações institucionais
+em caracteres sem tradução junto ao primeiro uso — a próxima varredura é manual.
 
-**Verificação automática.** O verificador de caminhos não se aplica ao volume,
-porque as citações deixaram de indicar caminho. O verificador de citações
-(`verif_cit.py`) continua aplicável e deve ser rodado sobre os arquivos de
-origem em `docs/volume_novo/` e sobre as partes antigas, que seguem sendo a
-matéria-prima.
+**Verificação.** `verificar.py` deixa de se aplicar ao volume, porque as citações
+não indicam caminho. `verif_cit.py` continua aplicável e foi rodado sobre a Parte
+III após a reescrita: 52 citações confirmadas, nenhuma não localizada; 54
+caminhos, nenhum ausente.
