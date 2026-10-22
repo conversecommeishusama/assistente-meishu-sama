@@ -82,7 +82,12 @@ FISH_MEISHU_CACHE = "meishu-hybrid"
 
 
 def _fish_chave() -> str:
-    return os.environ.get("GOSHINSHO_FISH_AUDIO_API_KEY") or os.environ.get("FISH_API_KEY", "").strip()
+    # O .strip() aplica-se à chave escolhida — antes só limpava a segunda
+    # variável, e uma chave com quebra de linha (cola em ficheiro .env) subia
+    # para a API com espaços e falhava com erro opaco.
+    return (os.environ.get("GOSHINSHO_FISH_AUDIO_API_KEY")
+            or os.environ.get("FISH_API_KEY")
+            or "").strip()
 
 
 def _fish_disponivel() -> bool:
@@ -876,10 +881,72 @@ def _pausa_silenciosa(texto: str, segundos: float = 0.7) -> str:
     return destino
 
 
+def _chaves_historicas(provedor: str, voz_real: str) -> tuple[tuple[str, str], ...]:
+    """Chaves de cache ANTIGAS que ainda servem para o mesmo texto.
+
+    O acervo de voz foi construído em etapas e cada etapa gravou o mp3 sob uma
+    chave diferente:
+
+      · 2026-09 — campanha paga no Fish Audio → `fish:meishu-hybrid` (62 mil)
+      · 2026-09/10 — geradores GPU/lote locais → `xtts:meishu`   (sem versão)
+
+    Nenhum desses áudios foi apagado (o TTL default é 0: acervo permanente),
+    mas o app só procurava a chave canónica — `xtts:meishu:v2` — e por isso
+    deixou de os encontrar: regerava (ou caía no Antônio) o que já estava em
+    disco, e o trabalho dispendioso ficava inacessível.
+
+    A compatibilidade é só de LEITURA: se o mp3 existe sob a chave antiga e o
+    texto do trecho é o mesmo (a chave é o sha256 do texto), o áudio é o certo.
+    A chave canónica continua a ser a preferida, e o que faltar é gerado
+    normalmente.
+
+    2026-10-22.
+    """
+    if provedor == "fish":
+        # Já é a chave canónica do Fish; nada a acrescentar.
+        return ()
+    if provedor == "xtts":
+        return (
+            ("xtts", "meishu"),          # geradores GPU/lote (sem versão)
+            ("fish", FISH_MEISHU_CACHE),  # Fish pago, se disponível em disco
+        )
+    return ()
+
+
+def caminho_em_cache(texto: str, rate: str = "+0%") -> str | None:
+    """Caminho do mp3 JÁ existente para este trecho, ou None.
+
+    Aplica a MESMA escolha de provedor que `sintetizar()` (falante → edge/
+    fish/xtts) e aceita as chaves históricas via `_chaves_historicas`. Existe
+    para que os utilitários (sincronização, relatórios) não reimplementem a
+    regra — três cópias divergentes foi exactamente o que deixou 1.784 áudios
+    inacessíveis em 2026-10-22.
+    """
+    texto = (texto or "").strip()
+    if not texto:
+        return None
+    if _trecho_sem_fala(texto):
+        return None  # separador/símbolos: vira pausa, não tem ficheiro
+    falante = _identificar_falante(texto)
+    if falante == "outro" or (falante == "" and _eh_metadado(texto)):
+        provedor, voz = "edge", VOZ_INTERLOCUTOR
+    elif _fish_disponivel():
+        provedor, voz = "fish", FISH_MEISHU_CACHE
+    else:
+        provedor, voz = "xtts", VOZ_MEISHU_CACHE
+
+    for prov, nome in ((provedor, voz),) + _chaves_historicas(provedor, voz):
+        ch = _chave_cache(f"{prov}:{nome}", texto, rate)
+        p = os.path.join(_cache_dir(), f"{ch}.mp3")
+        if os.path.exists(p) and os.path.getsize(p) > 0:
+            return p
+    return None
+
+
 def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -> str:
     """Gera o áudio (edge-tts, XTTS ou Fish) com cache em disco.
 
-    `texto` é sempre o CRU (como no arquivo). A chave do cache é calculada
+    `texto` é sempre o CRU (como está no arquivo). A chave do cache é calculada
     sobre o texto cru — permite ao gerador em lote produzir arquivos com o
     MESMO nome que o app procura. Para XTTS/Fish, `voz_real` carrega a versão
     (ex.: "meishu:v2", "meishu-hybrid") para forçar regeneração ao trocar voz.
@@ -888,6 +955,14 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
         return destino
+
+    # Compatibilidade com as chaves históricas (ver `_chaves_historicas`).
+    for prov_antigo, voz_antiga in _chaves_historicas(provedor, voz_real):
+        ch = _chave_cache(f"{prov_antigo}:{voz_antiga}", texto, rate)
+        antigo = os.path.join(_cache_dir(), f"{ch}.mp3")
+        if os.path.exists(antigo) and os.path.getsize(antigo) > 0:
+            return antigo
+
 
     # Rede de segurança CENTRAL (2026-09-11): se, APÓS a preparação da voz, não
     # sobra nada pronunciável, o provedor recusaria (NoAudioReceived) → HTTP 500

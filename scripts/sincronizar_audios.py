@@ -106,9 +106,6 @@ def diagnostico(obras) -> dict:
     """Compara texto atual × cache. NÃO gera nada."""
     cache = tts_service._cache_dir()
 
-    def existe(ch: str) -> bool:
-        return os.path.exists(os.path.join(cache, ch + ".mp3"))
-
     pendentes: list[tuple] = []
     por_arquivo: dict[str, dict] = {}
     total = ok = 0
@@ -133,13 +130,11 @@ def diagnostico(obras) -> dict:
                 nao_narraveis += 1
                 info["nao_narraveis"] += 1
                 continue
-            fl = tts_service._identificar_falante(tr)
-            if fl == "outro" or (fl == "" and tts_service._eh_metadado(tr)):
-                ch = tts_service._chave_cache("edge:pt-BR-AntonioNeural", tr, "+0%")
-            else:
-                ch = tts_service._chave_cache(
-                    f"fish:{tts_service.FISH_MEISHU_CACHE}", tr, "+0%")
-            if existe(ch):
+            # 2026-10-22: quem decide a chave (e aceita as chaves históricas) é
+            # o serviço — ver `tts_service.caminho_em_cache`. Antes esta função
+            # só via `fish:meishu-hybrid`, pelo que reportava 15 mil trechos
+            # "em falta" quando o áudio existia sob outra chave.
+            if tts_service.caminho_em_cache(tr):
                 ok += 1
             else:
                 info["faltando"] += 1

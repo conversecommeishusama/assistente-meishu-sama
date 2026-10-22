@@ -29,73 +29,12 @@ SAIDA_DIR = os.path.join(AQUI, "saida")
 MODELO = "tts_models/multilingual/multi-dataset/xtts_v2"
 RATE = "+0%"
 
-# Versão da amostra de voz (MESMA do tts_service.py → VOZ_MEISHU_CACHE).
-# Incluída na chave do cache para forçar regeneração quando a amostra mudar.
-# v1 = amostra antiga (30s_limpa); v2 = remasterizada (oficial, aprovada).
-VOZ_MEISHU_CACHE = "meishu:v2"
-
 COLECOES_ORAIS = ["gokowa", "gosuiji", "mioshie"]
 
 
 def _normalizar(s: str) -> str:
     import unicodedata
     return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower()
-
-
-# Tabela de pronúncias — MESMA do tts_service.py (PRONUNCIAS_TTS) e do antigo
-# leitura_tts.js. Ao alterar uma, altere todas.
-PRONUNCIAS_TTS: list[tuple[str, str]] = [
-    ("Meishu-Sama", "Meichu-Sama"),
-    ("Meishu Sama", "Meichu Sama"),
-    ("Meishu", "Meichu"),
-    ("Johrei", "Jyorei"),
-    ("Ohikari-Sama", "Oricari-Sama"),
-    ("Ohikari", "Oricari"),
-    ("Gokōwa-roku", "Gocoua-roku"),
-    ("Gokowa-roku", "Gocoua-roku"),
-    ("Mioshie-shū", "Miochie-shu"),
-    ("Mioshie", "Miochie"),
-    ("Daikōmyō", "Daicomio"),
-    ("Kōmyō", "Comio"),
-    ("Nyorai", "Niorai"),
-    ("Jikan", "Jicã"),
-    ("Tijotengoku", "Tijotengoku"),
-    ("Shinsei", "Chinsei"),
-    ("Hannya", "Rania"),
-    ("Shukumei", "Chukumei"),
-    ("Shinrei", "Chinrei"),
-    ("Ōmikami", "Omicami"),
-    ("Omikami", "Omicami"),
-]
-
-_MACRON_MAP = str.maketrans({
-    "ā": "a", "ē": "e", "ī": "i", "ō": "o", "ū": "u",
-    "Ā": "A", "Ē": "E", "Ī": "I", "Ō": "O", "Ū": "U",
-})
-
-
-def _normalizar_caracteres(texto: str) -> str:
-    out = (texto or "")
-    out = out.replace("（", "(").replace("）", ")")
-    out = out.replace("「", '"').replace("」", '"')
-    out = out.replace("『", '"').replace("』", '"')
-    out = out.replace("【", "[").replace("】", "]")
-    out = re.sub(r"[〜～]", " ", out)
-    out = re.sub(r"[\u4e00-\u9fff]+", "", out)
-    out = re.sub(r"\s{2,}", " ", out)
-    out = re.sub(r"\(\s*\)", "", out)
-    return out.strip()
-
-
-def _aplicar_pronuncias(texto: str) -> str:
-    out = texto or ""
-    for termo, pron in PRONUNCIAS_TTS:
-        out = re.sub(re.escape(termo), pron, out, flags=re.IGNORECASE)
-    return out
-
-
-def _remover_macrons(texto: str) -> str:
-    return (texto or "").translate(_MACRON_MAP)
 
 
 def listar_textos(todos: bool = False) -> list[str]:
@@ -150,6 +89,14 @@ def _sanitizar_xtts(texto: str) -> str:
 def chave_cache(provedor_voz: str, texto: str, rate: str) -> str:
     raw = f"{provedor_voz}|{rate}|{texto}"
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+# Versão da amostra de voz, IGUAL à canónica do serviço (`tts_service.
+# VOZ_MEISHU_CACHE`). 2026-10-22: este gerador gravava sob "xtts:meishu" (sem
+# versão) enquanto o app procurava "xtts:meishu:v2" — 1.784 áudios produzidos em
+# Outubro (3 dias de CPU) ficaram invisíveis para o serviço. Ao trocar a amostra,
+# mudar AQUI e no serviço, no mesmo commit.
+VOZ_MEISHU_CACHE = "meishu:v2"
 
 
 def _quebrar_segs(t: str, limite: int = 200) -> list[str]:
@@ -212,23 +159,13 @@ def main() -> int:
                 # Vamos gerar edge localmente depois; aqui pulamos.
                 # (Na verdade, geramos edge no servidor depois — rápido.)
                 continue
-
-            # 2026-09-05: a CHAVE usa o texto CRU + versão da amostra, MESMA
-            # fórmula do tts_service (que recebe o texto cru do front). O texto
-            # SINTETIZADO é o cru transformado (pronúncias + macrons + pontos
-            # → vírgulas), idêntico ao que o servidor gera.
+            texto_tts = _sanitizar_xtts(trecho)
+            if not texto_tts:
+                continue
             chave = chave_cache(f"xtts:{VOZ_MEISHU_CACHE}", trecho, RATE)
             destino = os.path.join(SAIDA_DIR, f"{chave}.mp3")
             if os.path.exists(destino):
                 total_pulados += 1
-                continue
-
-            # Prepara o texto para o XTTS (mesma lógica do servidor):
-            # normaliza caracteres → pronúncias → remove macrons → sanitiza.
-            texto_tts = _sanitizar_xtts(
-                _remover_macrons(_aplicar_pronuncias(_normalizar_caracteres(trecho)))
-            )
-            if not texto_tts:
                 continue
             # Gera (quebra em segs e concatena).
             segs = _quebrar_segs(texto_tts)

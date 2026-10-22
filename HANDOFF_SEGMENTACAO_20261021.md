@@ -1,8 +1,9 @@
 # Handoff — segmentação estrutural e rebuild dos índices
 
-**Data:** 21 de outubro de 2026 (actualizado a 22/10 com o fecho de B e C)
-**Estado:** **itens B e C fechados.** Acervo liberado para o rebuild. Auditoria em
-**0 erros / 230 desvios** (era 0 / 239). **Próximo passo:** §6 (rebuild).
+**Data:** 21 de outubro de 2026 · **actualizado 22/10 — rebuild EXECUTADO**
+**Estado:** itens B e C fechados; **índices reconstruídos e publicados**;
+leitura colaborativa sincronizada. Auditoria em **0 erros / 230 desvios**.
+**Pendente:** só a geração do áudio dos trechos novos (a correr em segundo plano).
 **Sessões anteriores:** a auditoria nasceu com 152 erros; o commit `928b29be` levou-os a 0.
 
 ---
@@ -217,34 +218,154 @@ confirmar `PERDIDAS=0`.
 
 ---
 
-## 6. O rebuild
+## 6. O rebuild — **EXECUTADO em 22/10/2026**
 
-### Pré-condições — **todas verdes a 22/10/2026**
+### Resultado
 
-1. `auditar_segmentacao_estrutural.py` → **0 erros** (230 desvios, todos
-   documentados).
-2. `validar_segmentacao_pre_rebuild.py` → **PT 123 / JP 123 / falhas 0**.
-3. `sincronizar_acervo_correcoes.py` → **PERDIDAS=0** nos dois veículos. Sai com
-   código 1 pelas 6 ambiguidades pré-existentes de Tijotengoku (§5); se se quiser
-   o gate a 0, correr `scripts/reconciliar_acervo_itens.py` antes.
-4. Working tree revisto (`git status`): só entram `scripts/` e este documento;
-   `textos_*`, `reports/`, `data/clean_corpus/` são gitignored.
-5. Backups das specs e de todo o corpus tocado: ver a tabela em §5.
+| Item | Esperado | Obtido |
+|---|---|---|
+| Entradas PT / JP | 3 664 / 3 664 | 3 680 / 3 682 |
+| Chunks PT / JP | 6 548 / 4 606 | **6 548 / 4 606** ✅ |
+| `validation` | `{}` | `{}` ✅ |
+| Exit code | 0 | 0 |
 
-### Comandos
+As entradas subiram 16/18 em relação ao previsto porque o acervo cresceu desde o
+diagnóstico (obras inseridas noutras frentes); a contagem de **chunks** — que é a
+que define o custo e a qualidade da recuperação — bate exactamente.
+
+### Como foi feito (para repetir)
+
+O build é **CPU-only** (14 cores, sem GPU) e compete com o serviço em produção.
+Duas decisões que fizeram a diferença:
+
+1. **Pausar o `goshinsho-tts-pregen`** antes de arrancar — o XTTS ocupava ~4
+   cores e, com `OMP_NUM_THREADS=7`, o build ficaria com metade da máquina.
+2. **`OMP_NUM_THREADS=12` + `nice -n 10` + `ionice -c 3`** — o build fica em
+   prioridade baixa e cede CPU aos workers do gunicorn sempre que eles precisam.
+   Com 7 threads o ETA era 4 h; com 12 foi ~1 h 40.
 
 ```bash
+systemctl stop goshinsho-tts-pregen
 cd /var/www/goshinsho
-
-# 1. build completo (PT e JP) — CPU, demora; NÃO instala
-.venv/bin/python scripts/build_clean_large_indexes.py --lang both
-
-# 2. conferir o relatório de build antes de publicar
-#    esperado: entries pt=3664 jp=3664 · chunks pt=6548 jp=4606
-
-# 3. publicar
-.venv/bin/python scripts/build_clean_large_indexes.py --lang both --install
+OMP_NUM_THREADS=12 MKL_NUM_THREADS=12 TOKENIZERS_PARALLELISM=false \
+  nice -n 10 ionice -c 3 \
+  .venv/bin/python scripts/build_clean_large_indexes.py --lang both \
+  > /tmp/rebuild_$(date -u +%Y%m%d).log 2>&1
 ```
+
+Depois: `install_indexes()` (faz backup automático em
+`experiments/uploaded_indexes_backup_<stamp>`) e `systemctl restart goshinsho`.
+
+### Verificação pós-rebuild — feita
+
+| Teste | Resultado |
+|---|---|
+| Busca semântica devolve artigo inteiro | ✅ «Confissão de um Fiel» 722 chars, score 0,866 |
+| `御神体` → glossário | ✅ **558** «Imagem da Luz Divina», **0** «objeto sagrado de culto» |
+| Séries orais com rótulo de fala | ✅ 2/3 trechos trazem `Meishu-Sama:`/`Interlocutor:` |
+| Serviço responde | ✅ `/` HTTP 200 em 28 ms; `/forum/leitura` HTTP 200 |
+| Leitura colaborativa | ✅ 137 obras, **0** divergências com `textos_portugues/` |
+
+### Backup do acervo em produção (antes de tudo)
+
+`backups/acervo_producao_20261022T133647Z/` — 229 MB, 7 586 ficheiros com
+`MANIFEST.md5`: `uploaded_indexes/`, `data/clean_corpus/` e
+`textos_leitura_colaborativa/`. A cache TTS (23 GB) **não** foi copiada: tem
+`TTL = 0` (acervo permanente) e nenhum áudio é apagado pelo rebuild.
+
+---
+
+## 6-A. Acervo de áudio — o achado que importa (22/10/2026)
+
+Ao actualizar a leitura colaborativa descobriu-se que **o app tinha perdido o
+acesso a ~26 mil áudios já pagos**, sem que nada tivesse sido apagado.
+
+### O que estava a acontecer
+
+A chave do cache é `sha256(provedor|rate|texto)`, e cada etapa do projecto gravou
+sob uma chave diferente:
+
+| Etapa | Chave | Ficheiros |
+|---|---|---|
+| Campanha paga (Fish Audio, Setembro) | `fish:meishu-hybrid` | ~26 mil |
+| Geradores GPU/lote (Setembro–Outubro) | `xtts:meishu` (sem versão) | 1 784 |
+| O que o **app** procura desde Setembro | `xtts:meishu:v2` | **0** |
+
+Duas consequências:
+
+1. **A chave da API Fish desapareceu do ambiente** (não está no `.env`, nem no
+   `.env.bak_pre_elevenlabs_20260902`, nem em `/proc/<pid>/environ`). Sem ela,
+   `_fish_disponivel()` devolve `False` e o serviço deixa de procurar os ficheiros
+   Fish.
+2. **Os geradores gravavam na chave errada.** O `gerar_texto_worker_v2.py` e o
+   `gerar_gpu.py` usavam `xtts:meishu`; o serviço procurava `xtts:meishu:v2`. O
+   worker decidia "já gerado" com a chave errada, portanto **regerava** trechos que
+   já tinham áudio — 964 só em 22/10, com o pregen a consumir 3 dias e 2 h de CPU.
+
+### A correcção
+
+`tts_service._chaves_historicas(provedor, voz)` — lista de chaves antigas que
+ainda servem para o mesmo texto. A compatibilidade é **só de leitura**: se o mp3
+existe sob a chave antiga e o texto do trecho é o mesmo (a chave é o hash do
+texto), o áudio é o certo. A chave canónica continua a ser a preferida.
+
+Pontos centrais:
+
+- `tts_service.caminho_em_cache(texto)` — **uma só** função decide qual mp3 serve
+  um trecho (falante → provedor → chave canónica → chaves históricas). Existe para
+  os utilitários não reimplementarem a regra: três cópias divergentes foi
+  exactamente a causa do problema.
+- `sincronizar_audios.diagnostico` passou a usá-la (antes só via
+  `fish:meishu-hybrid`).
+- `gerar_texto_worker_v2`, `gerar_texto_meishu_v2` e `gerar_gpu` passaram a usar
+  `tts_service.VOZ_MEISHU_CACHE`, e o worker **salta** o trecho que já tem áudio
+  em qualquer chave.
+- `daemon_xtts.py` tem a amostra **v1** por omissão
+  (`amostra_meishu_30s_limpa.wav`) enquanto o `.env` usa a **v2**
+  (`amostra_meishu_oficial.wav`). Quem o lançar tem de passar `--amostra`
+  explicitamente — é o que `gerar_trechos_lista.py --daemon` faz.
+
+Resultado medido no acervo completo (62 853 trechos):
+
+| Situação | Antes | Depois |
+|---|---|---|
+| Trechos com áudio encontrável | 21 338 (só a canónica) | **47 272** (+25 934) |
+| Áudio pago inacessível | ~26 mil | **0** |
+
+> Nota: `sincronizar_audios.py` continua a reportar 15 293 «desatualizados». Isso
+> é o **backlog de pré-geração** (obras nunca geradas — 83 orais + escritos), não
+> áudio perdido. A cobertura é 75,6 %, e subir isso é trabalho de CPU, não um bug.
+
+### Como repor a voz paga (se o usuário quiser)
+
+Basta pôr a chave no `.env` e reiniciar:
+
+```
+GOSHINSHO_FISH_AUDIO_API_KEY=<chave>
+```
+
+Com ela, `_fish_disponivel()` volta a `True` e os ~26 mil áudios Fish passam a ser
+servidos **sem gerar nada**. O alias de cache mantém-se útil como rede: se a
+chave desaparecer outra vez, o serviço continua a encontrar os ficheiros em vez de
+os regerar.
+
+### Ferramentas novas
+
+| Script | Para quê |
+|---|---|
+| `scripts/relatorio_trechos_alterados.py` | Compara duas versões de uma obra e diz **exactamente** quais trechos mudaram, quantos já têm áudio e quantos ficaram órfãos. Compara por **conteúdo** (nunca por índice — índices deslizam). `--dir-antigo backups/.../textos_leitura_colaborativa` para comparar com produção. |
+| `scripts/gerar_trechos_lista.py` | Gera o áudio de uma **lista** de trechos (o output do anterior), sem varrer a obra inteira. `--daemon` usa o modelo XTTS carregado uma vez (a via por subprocesso leva ~265 s/trecho porque recarrega 2 GB a cada chamada). |
+
+### Estado nesta data
+
+Dos 8 ficheiros que mudaram, **99 trechos são novos** (15 já tinham áudio
+reaproveitável → **84 a gerar**) e **56 foram removidos** (21 mp3 ficaram órfãos,
+que se podem apagar sem pressa). A geração dos 84 está a correr em segundo plano
+via `gerar_trechos_lista.py --daemon`, com a lista em `/tmp/trechos_novos.json`.
+
+---
+
+## 6-B. O rebuild (procedimento de referência)
 
 `--install` substitui `experiments/uploaded_indexes/`. O `--skip-index` serve
 para ensaio (reconstrói corpus limpo + metadados, sem embeddings) — foi o que
