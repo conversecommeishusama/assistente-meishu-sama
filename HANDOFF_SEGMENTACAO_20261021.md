@@ -363,6 +363,84 @@ reaproveitável → **84 a gerar**) e **56 foram removidos** (21 mp3 ficaram ór
 que se podem apagar sem pressa). A geração dos 84 está a correr em segundo plano
 via `gerar_trechos_lista.py --daemon`, com a lista em `/tmp/trechos_novos.json`.
 
+**Concluído:** 84/84 trechos com áudio (159 min via daemon). Os 2 últimos
+(Pergunta/Interlocutor) falharam na primeira tentativa — foram enfileirados no
+XTTS quando o serviço os narra com o edge; regerados após corrigir a causa (ver
+`provedor_canonico` abaixo).
+
+---
+
+## 6-C. Duas armadilhas encontradas a 22/10 (importantes)
+
+### 1. Existem DOIS serviços a servir a mesma aplicação
+
+`goshinsho.service` (porta 8000) e `goshinsho-portal.service` (porta 5092)
+arrancam **o mesmo módulo**: `goshinsho.web_app:app`. O Caddy encaminha
+`/portal*` para o segundo; tudo o resto vai para o primeiro.
+
+Consequência: **reiniciar só o `goshinsho` deixa o portal a servir o índice
+ANTIGO**. O `search_service.carregar_indices_pt()` é `@lru_cache` — o processo
+que arrancou antes de `install_indexes()` guarda em memória os chunks e o FAISS
+velhos. Apanhado nesta sessão: o portal estava de pé desde 21/10 20:52, ou seja
+com o índice anterior ao rebuild.
+
+**Regra:** depois de instalar índices, `systemctl restart goshinsho
+goshinsho-portal`. Verificar com `ps -o lstart= -p <pid>` que o arranque é
+POSTERIOR ao `ctime` dos ficheiros em `experiments/uploaded_indexes/`.
+
+### 2. Uma só regra para decidir o provedor de voz
+
+`tts_service.provedor_canonico(texto)` devolve `(provedor, voz)` para um trecho:
+falante `outro`/metadado → `edge` (narrador); senão Fish (se ligado) → XTTS.
+
+Existe porque em 22/10 **três implementações da mesma regra divergiram**:
+`caminho_em_cache`, `sintetizar` e o gerador em lote. O resultado foi o gerador
+enfileirar falas de interlocutor no XTTS — voz do Meishu numa fala de terceiro, e
+invisível para o app, que procura a chave do edge. Se for preciso mudar a
+política de voz, mudar **aqui** e em mais sítio nenhum.
+
+---
+
+## 6-D. Limites de CPU — deixar o app com folga (22/10/2026)
+
+O pedido foi: terminar o trabalho deixando 4 workers livres e saudáveis para o
+aplicativo. O `Nice=10`/`CPUWeight=20` dão prioridade, mas **não limitam** o
+consumo total — com 14 núcleos o XTTS podia ir além do previsto quando o torch
+abria threads intra-op.
+
+Solução: quota de cgroup, num drop-in versionado em
+`deploy/goshinsho-tts-pregen.service.d/10-limites-cpu.conf`:
+
+| Parâmetro | Valor | Efeito |
+|---|---|---|
+| `CPUQuota` | `600%` | tecto rígido de **6 núcleos** de 14 |
+| `MemoryHigh` / `MemoryMax` | `6G` / `8G` | protege o web de OOM (pico medido 9,7 GB com 5 daemons) |
+| `CPUWeight` / `IOWeight` | `20` | em disputa, o app tem ~5× mais CPU |
+
+Instalação:
+
+```bash
+mkdir -p /etc/systemd/system/goshinsho-tts-pregen.service.d
+cp deploy/goshinsho-tts-pregen.service.d/10-limites-cpu.conf \
+   /etc/systemd/system/goshinsho-tts-pregen.service.d/
+systemctl daemon-reload && systemctl restart goshinsho-tts-pregen
+```
+
+**Medido com tudo a correr:** pregen a **200%** (2 de 14 núcleos, tecto 600%),
+load 1,3–1,9, app a **3–8 ms** no `/`, memória do lote 3,5 GB. Sobram 12 núcleos.
+
+⚠️ A cópia da unidade em `deploy/` estava **desactualizada** (`--workers 5`,
+`User=root`): reinstalá-la reintroduzia o load 45 de 21/10. Foi sincronizada com
+`/etc` nesta data.
+
+### Sobre o alerta do monitor
+
+`monitor_saude.log` mantém `p95 /api/chat 130,9s > 90s`. **Não é regressão**
+desta sessão: os pedidos lentos estão espalhados pelas 24 h da janela
+(101,7 s às 17:02; 126,5 s às 21:39; 130,9 s às 22:03 — com a máquina ociosa) e
+é o comportamento conhecido do pipeline (100 s de busca + 40 s de síntese,
+orçamento documentado em §7). O último pedido medido no fim da sessão foi 22,6 s.
+
 ---
 
 ## 6-B. O rebuild (procedimento de referência)

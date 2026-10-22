@@ -759,21 +759,14 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     # Decide o provedor real com base na voz pedida + falante do diálogo.
     # O falante é identificado no texto CRU (sem pronúncias aplicadas).
     if voz_origem == VOZ_MEISHU:
-        falante = _identificar_falante(texto)
-        if falante == "outro":
-            # Interlocutor (não-Meishu) → Antônio (edge-tts).
-            return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
-        if falante == "" and _eh_metadado(texto):
-            # Metadado (título/data do texto) → narrador (Antônio), decisão
-            # do usuário 09/09 — não é fala do Meishu.
-            return _sintetizar_com_cache("edge", VOZ_INTERLOCUTOR, texto, rate)
-        # Meishu-Sama ou texto corrido → Fish (preferido), senão XTTS (v2).
-        if _fish_disponivel():
-            return _sintetizar_com_cache("fish", FISH_MEISHU_CACHE, texto, rate)
-        if voz_meishu_disponivel():
-            return _sintetizar_com_cache("xtts", VOZ_MEISHU_CACHE, texto, rate)
-        # Fallback transparente: nada disponível → Antônio (edge).
-        return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+        # Uma só regra de decisão (ver `provedor_canonico`) — o gerador em lote
+        # usa a mesma, para não gravar com voz diferente da que o app procura.
+        provedor, voz_real = provedor_canonico(texto, rate)
+        if provedor == "xtts" and not voz_meishu_disponivel():
+            # XTTS não configurado → narrador, em vez de falhar.
+            return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+        return _sintetizar_com_cache(provedor, voz_real, texto, rate)
+
 
     voz_real = VOZES_PT_BR.get(voz_origem, VOZ_PADRAO)
     return _sintetizar_com_cache("edge", voz_real, texto, rate)
@@ -913,27 +906,38 @@ def _chaves_historicas(provedor: str, voz_real: str) -> tuple[tuple[str, str], .
     return ()
 
 
+def provedor_canonico(texto: str, rate: str = "+0%") -> tuple[str, str]:
+    """(provedor, voz) que o serviço usa para este trecho.
+
+    Uma só fonte de verdade: `caminho_em_cache` e `sintetizar` decidem com esta
+    função, e os geradores em lote também. Em 2026-10-22 houve três
+    implementações desta regra a divergir — a consequência foi gerar com a voz
+    do Meishu uma fala de interlocutor (e gastar XTTS onde o edge resolvia em
+    segundos) porque o gerador não sabia que o falante era outro.
+    """
+    falante = _identificar_falante((texto or "").strip())
+    if falante == "outro" or (falante == "" and _eh_metadado(texto)):
+        return "edge", VOZ_INTERLOCUTOR
+    if _fish_disponivel():
+        return "fish", FISH_MEISHU_CACHE
+    return "xtts", VOZ_MEISHU_CACHE
+
+
 def caminho_em_cache(texto: str, rate: str = "+0%") -> str | None:
     """Caminho do mp3 JÁ existente para este trecho, ou None.
 
-    Aplica a MESMA escolha de provedor que `sintetizar()` (falante → edge/
-    fish/xtts) e aceita as chaves históricas via `_chaves_historicas`. Existe
-    para que os utilitários (sincronização, relatórios) não reimplementem a
-    regra — três cópias divergentes foi exactamente o que deixou 1.784 áudios
-    inacessíveis em 2026-10-22.
+    Aplica a MESMA escolha de provedor que `sintetizar()` e aceita as chaves
+    históricas via `_chaves_historicas`. Existe para que os utilitários
+    (sincronização, relatórios) não reimplementem a regra — três cópias
+    divergentes foi exactamente o que deixou 1.784 áudios inacessíveis em
+    2026-10-22.
     """
     texto = (texto or "").strip()
     if not texto:
         return None
     if _trecho_sem_fala(texto):
         return None  # separador/símbolos: vira pausa, não tem ficheiro
-    falante = _identificar_falante(texto)
-    if falante == "outro" or (falante == "" and _eh_metadado(texto)):
-        provedor, voz = "edge", VOZ_INTERLOCUTOR
-    elif _fish_disponivel():
-        provedor, voz = "fish", FISH_MEISHU_CACHE
-    else:
-        provedor, voz = "xtts", VOZ_MEISHU_CACHE
+    provedor, voz = provedor_canonico(texto, rate)
 
     for prov, nome in ((provedor, voz),) + _chaves_historicas(provedor, voz):
         ch = _chave_cache(f"{prov}:{nome}", texto, rate)

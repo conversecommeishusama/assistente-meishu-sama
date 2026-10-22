@@ -2,17 +2,46 @@
 Description=Goshinsho pré-geração TTS voz Meishu-Sama (textos orais)
 After=network.target goshinsho.service
 Wants=goshinsho.service
+# 2026-10-21: um lote travado não pode reiniciar em loop a queimar CPU. Sem
+# isto, o systemd levanta o serviço indefinidamente (o lote "trava" sem sair,
+# por isso Restart=on-failure não bastava).
+StartLimitIntervalSec=1800
+StartLimitBurst=3
 
 [Service]
 Type=simple
-User=root
+User=goshinsho
+Group=goshinsho
 WorkingDirectory=/var/www/goshinsho
-ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 5
+Environment=HOME=/var/www/goshinsho
+Environment=HF_HOME=/var/www/goshinsho/.hf_cache
+# 2026-10-21: limite de CPU. Antes: --workers 5, cada daemon pedindo todos os
+# 14 cores (~70 threads em 14 cores) -> load average 45 e lote travado em
+# [17/71] por 13h. Agora: 2 workers x 2 threads = ~4 cores de 14, deixando
+# folga real para o gunicorn atender o /api/chat.
+Environment=OMP_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
+Environment=OPENBLAS_NUM_THREADS=2
+Environment=NUMEXPR_NUM_THREADS=2
+Environment=XTTS_THREADS=2
+ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 2
 Restart=on-failure
 RestartSec=30
-# Log para arquivo (journald também captura)
+TimeoutStartSec=300
 StandardOutput=append:/var/www/goshinsho/logs/tts_pre_geracao.log
 StandardError=append:/var/www/goshinsho/logs/tts_pre_geracao.log
+
+# Hardening (2026-10-13)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+# 2026-10-21: o lote é trabalho de fundo -- nunca deve competir de igual para
+# igual com o serviço web. Sem isto, o CPU do TTS estrangula o /api/chat, que
+# já é naturalmente lento (30-170s) e passaria a estourar o timeout.
+Nice=10
+CPUWeight=20
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
 
 [Install]
 WantedBy=multi-user.target

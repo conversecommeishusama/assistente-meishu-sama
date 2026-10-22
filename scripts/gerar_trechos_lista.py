@@ -48,9 +48,14 @@ SPOOL = RAIZ / "data" / "tts_spool_lista"
 
 
 def _destino_canonico(trecho: str) -> str:
-    """Caminho de cache que o SERVIÇO vai procurar para este trecho."""
-    ch = tts_service._chave_cache(
-        f"xtts:{tts_service.VOZ_MEISHU_CACHE}", trecho, "+0%")
+    """Caminho de cache que o SERVIÇO vai procurar para este trecho.
+
+    Usa `tts_service.provedor_canonico`: um trecho de interlocutor vai para o
+    edge (narrador), não para o XTTS. Em 22/10 enfileirei tudo como XTTS e as
+    falas de interlocutor saíram com a voz do Meishu e invisíveis para o app.
+    """
+    prov, voz = tts_service.provedor_canonico(trecho)
+    ch = tts_service._chave_cache(f"{prov}:{voz}", trecho, "+0%")
     return os.path.join(tts_service._cache_dir(), f"{ch}.mp3")
 
 
@@ -60,6 +65,24 @@ def gerar_com_daemon(itens: list[dict], limite_min: int = 240) -> int:
                  if not tts_service.caminho_em_cache(x["trecho"])]
     if not pendentes:
         print("nada a gerar: todos os trechos já têm áudio")
+        return 0
+
+    # Falas de interlocutor e metadados vão para o edge (rápido, ~1 s): não
+    # podem entrar na fila do XTTS, que levaria minutos cada uma.
+    edge = [t for t in pendentes
+            if tts_service.provedor_canonico(t)[0] == "edge"]
+    if edge:
+        print(f"{len(edge)} trecho(s) pelo narrador (edge)", flush=True)
+        for i, tr in enumerate(edge, 1):
+            try:
+                tts_service.sintetizar(tr, voz="meishu")
+            except Exception as exc:
+                print(f"  [{i}/{len(edge)}] FALHOU: {exc}", file=sys.stderr,
+                      flush=True)
+    pendentes = [t for t in pendentes
+                 if tts_service.provedor_canonico(t)[0] != "edge"]
+    if not pendentes:
+        print("nada mais a gerar no XTTS")
         return 0
 
     spool = SPOOL
@@ -79,7 +102,6 @@ def gerar_com_daemon(itens: list[dict], limite_min: int = 240) -> int:
             json.dumps({"texto": tts_service._preparar_texto_xtts(tr),
                         "destino": destino}, ensure_ascii=False),
             encoding="utf-8")
-
     if not destinos:
         print("nada a gerar: todos já resolvidos no enfileiramento")
         return 0
