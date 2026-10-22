@@ -126,6 +126,8 @@ const uiTranslations = {
         languageNote: "O site será ajustado para o idioma escolhido e sua preferência ficará salva neste dispositivo.",
         back: "Voltar",
         continue: "Continuar",
+        searchRoundSingular: "rodada de pesquisa",
+        searchRoundPlural: "rodadas de pesquisa",
         loading: "Consultando os escritos...",
         deepSearchNotice: "Estamos aprofundando a pesquisa — este tema aparece em fontes que precisam ser comparadas. Isso pode demorar um pouco mais.",
         checkingJapanese:
@@ -210,6 +212,8 @@ const uiTranslations = {
         languageNote: "The site will adjust to the chosen language and save your preference on this device.",
         back: "Back",
         continue: "Continue",
+        searchRoundSingular: "research round",
+        searchRoundPlural: "research rounds",
         loading: "Consulting the writings...",
         deepSearchNotice: "We're going deeper into the research — this topic appears in sources that need to be compared. It may take a little longer.",
         checkingJapanese:
@@ -294,6 +298,8 @@ const uiTranslations = {
         languageNote: "El sitio se ajustará al idioma elegido y guardará tu preferencia en este dispositivo.",
         back: "Volver",
         continue: "Continuar",
+        searchRoundSingular: "ronda de investigación",
+        searchRoundPlural: "rondas de investigación",
         loading: "Consultando los escritos...",
         deepSearchNotice: "Estamos profundizando la investigación — este tema aparece en fuentes que deben compararse. Puede tardar un poco más.",
         checkingJapanese:
@@ -378,6 +384,8 @@ const uiTranslations = {
         languageNote: "サイトは選択された言語に切り替わり、この端末に設定が保存されます。",
         back: "戻る",
         continue: "続ける",
+        searchRoundSingular: "回の調査",
+        searchRoundPlural: "回の調査",
         loading: "教えを確認しています...",
         deepSearchNotice: "調査を深めています — このテーマは比較が必要な複数の資料に現れます。もう少し時間がかかる場合があります。",
         checkingJapanese: "翻訳されたテキストでは適切な回答が見つかりませんでした。日本語の原文を確認しています — 最大2分ほどかかる場合があります。",
@@ -461,6 +469,8 @@ const uiTranslations = {
         languageNote: "网站将切换为所选语言，并在此设备上保存您的偏好设置。",
         back: "返回",
         continue: "继续",
+        searchRoundSingular: "轮检索",
+        searchRoundPlural: "轮检索",
         loading: "正在查阅教诲...",
         deepSearchNotice: "正在深入检索——这个主题出现在需要相互比对的多处文献中，可能还需要一点时间。",
         checkingJapanese: "未能在译文中找到合适的答案。正在查阅日文原文——这可能需要长达2分钟。",
@@ -544,6 +554,8 @@ const uiTranslations = {
         languageNote: "साइट चुनी गई भाषा में समायोजित हो जाएगी और आपकी पसंद इस डिवाइस पर सहेजी जाएगी।",
         back: "वापस",
         continue: "जारी रखें",
+        searchRoundSingular: "शोध दौर",
+        searchRoundPlural: "शोध दौर",
         loading: "शिक्षाओं की जांच की जा रही है...",
         deepSearchNotice: "हम शोध को गहरा कर रहे हैं — यह विषय ऐसे स्रोतों में आता है जिनकी तुलना आवश्यक है। इसमें थोड़ा और समय लग सकता है।",
         checkingJapanese: "अनुवादित पाठ में उचित उत्तर नहीं मिला। मूल जापानी पाठ की जांच की जा रही है — इसमें 2 मिनट तक लग सकते हैं।",
@@ -627,6 +639,8 @@ const uiTranslations = {
         languageNote: "سيتم ضبط الموقع باللغة المختارة وسيُحفظ تفضيلك على هذا الجهاز.",
         back: "رجوع",
         continue: "متابعة",
+        searchRoundSingular: "جولة بحث",
+        searchRoundPlural: "جولات بحث",
         loading: "جارٍ الاطّلاع على التعاليم...",
         deepSearchNotice: "نحن نعمّق البحث — يظهر هذا الموضوع في مصادر تحتاج إلى مقارنة. قد يستغرق الأمر وقتًا أطول قليلاً.",
         checkingJapanese: "لم أجد إجابة مناسبة في النصوص المترجمة. أتحقّق الآن من الأصل الياباني — قد يستغرق ذلك حتى دقيقتين.",
@@ -710,6 +724,8 @@ const uiTranslations = {
         languageNote: "Le site s'adaptera à la langue choisie et enregistrera votre préférence sur cet appareil.",
         back: "Retour",
         continue: "Continuer",
+        searchRoundSingular: "tour de recherche",
+        searchRoundPlural: "tours de recherche",
         loading: "Consultation des écrits...",
         deepSearchNotice: "Nous approfondissons la recherche — ce sujet apparaît dans des sources qui doivent être comparées. Cela peut prendre un peu plus de temps.",
         checkingJapanese:
@@ -794,6 +810,8 @@ const uiTranslations = {
         languageNote: "সাইটটি নির্বাচিত ভাষায় সমন্বিত হবে এবং আপনার পছন্দ এই ডিভাইসে সংরক্ষিত থাকবে।",
         back: "পিছনে",
         continue: "চালিয়ে যান",
+        searchRoundSingular: "অনুসন্ধান রাউন্ড",
+        searchRoundPlural: "অনুসন্ধান রাউন্ড",
         loading: "শিক্ষা পর্যালোচনা করা হচ্ছে...",
         deepSearchNotice: "আমরা অনুসন্ধান আরও গভীর করছি — এই বিষয়টি এমন উৎসে রয়েছে যেগুলির তুলনা প্রয়োজন। এতে আরও কিছুটা সময় লাগতে পারে।",
         checkingJapanese: "অনূদিত পাঠ্যে উপযুক্ত উত্তর পাওয়া যায়নি। মূল জাপানি পাঠ্য পরীক্ষা করা হচ্ছে — এতে ২ মিনিট পর্যন্ত সময় লাগতে পারে।",
@@ -877,6 +895,8 @@ const uiTranslations = {
         languageNote: "Сайт переключится на выбранный язык, и настройка сохранится на этом устройстве.",
         back: "Назад",
         continue: "Продолжить",
+        searchRoundSingular: "раунд поиска",
+        searchRoundPlural: "раундов поиска",
         loading: "Изучаю тексты...",
         deepSearchNotice: "Мы углубляем поиск — эта тема встречается в источниках, которые нужно сопоставить. Это может занять чуть больше времени.",
         checkingJapanese: "Не удалось найти подходящий ответ в переведённых текстах. Проверяю оригинал на японском — это может занять до 2 минут.",
@@ -960,6 +980,8 @@ const uiTranslations = {
         languageNote: "سائٹ منتخب کردہ زبان کے مطابق ایڈجسٹ ہو جائے گی اور آپ کی ترجیح اس ڈیوائس پر محفوظ ہو جائے گی۔",
         back: "واپس",
         continue: "جاری رکھیں",
+        searchRoundSingular: "تلاش کا مرحلہ",
+        searchRoundPlural: "تلاش کے مراحل",
         loading: "تعلیمات کا جائزہ لیا جا رہا ہے...",
         deepSearchNotice: "ہم تحقیق کو گہرا کر رہے ہیں — یہ موضوع ایسے مآخذ میں آتا ہے جن کا موازنہ ضروری ہے۔ اس میں کچھ اور وقت لگ سکتا ہے۔",
         checkingJapanese: "ترجمہ شدہ متن میں مناسب جواب نہیں ملا۔ اصل جاپانی متن کی جانچ کی جا رہی ہے — اس میں 2 منٹ تک لگ سکتے ہیں۔",
@@ -1043,6 +1065,8 @@ const uiTranslations = {
         languageNote: "Situs akan disesuaikan dengan bahasa yang dipilih dan preferensi Anda akan disimpan di perangkat ini.",
         back: "Kembali",
         continue: "Lanjutkan",
+        searchRoundSingular: "putaran pencarian",
+        searchRoundPlural: "putaran pencarian",
         loading: "Memeriksa tulisan-tulisan...",
         deepSearchNotice: "Kami sedang memperdalam pencarian — topik ini muncul dalam sumber-sumber yang perlu dibandingkan. Ini mungkin memakan waktu sedikit lebih lama.",
         checkingJapanese: "Saya tidak menemukan jawaban yang memadai dalam teks terjemahan. Sedang memeriksa naskah asli bahasa Jepang — ini bisa memakan waktu hingga 2 menit.",
@@ -1126,6 +1150,8 @@ const uiTranslations = {
         languageNote: "Die Website wird an die gewählte Sprache angepasst, und Ihre Einstellung wird auf diesem Gerät gespeichert.",
         back: "Zurück",
         continue: "Weiter",
+        searchRoundSingular: "Suchrunde",
+        searchRoundPlural: "Suchrunden",
         loading: "Schriften werden durchsucht...",
         deepSearchNotice: "Wir vertiefen die Recherche — dieses Thema erscheint in Quellen, die verglichen werden müssen. Es kann etwas länger dauern.",
         checkingJapanese: "In den übersetzten Texten wurde keine passende Antwort gefunden. Das japanische Original wird geprüft — dies kann bis zu 2 Minuten dauern.",
@@ -1369,8 +1395,17 @@ function handleChatStatusEvent(loading, event) {
     const base = loading.dataset.chatStatus === "deep_search"
         ? uiText("deepSearchNotice")
         : uiText("loading");
-    const rodada = Number(event.rodada) || 0;
-    const detalhe = rodada > 1 ? `${rodada} · ${segundos}s` : `${segundos}s`;
+    // 2026-10-22: o número da rodada sozinho ("3 · 42s") não dizia o que
+    // era. Agora vem acompanhado do rótulo, e no singular na primeira
+    // ("1 rodada de pesquisa · 8s"). O heartbeat não traz `rodada`; guardar
+    // a última no próprio bubble evita o rótulo sumir a cada 5s.
+    const rodadaEvento = Number(event.rodada) || 0;
+    if (rodadaEvento > 0) loading.dataset.chatRodada = String(rodadaEvento);
+    const rodada = Number(loading.dataset.chatRodada) || 0;
+    const rotuloRodada = rodada === 1
+        ? uiText("searchRoundSingular")
+        : uiText("searchRoundPlural");
+    const detalhe = rodada > 0 ? `${rodada} ${rotuloRodada} · ${segundos}s` : `${segundos}s`;
 
     // Escreve direto no innerHTML em vez de usar setBubbleContent: aquela
     // função sobrescreve dataset.rawContent, que guarda a resposta anterior
