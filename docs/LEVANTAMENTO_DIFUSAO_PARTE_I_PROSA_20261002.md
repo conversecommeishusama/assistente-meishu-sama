@@ -85,8 +85,8 @@ denominação **五六七教会**, em 1º de novembro de 1948
 (`search1/kouwa/s231101.html`), seguida em 1º de dezembro pela criação da sede em
 Odawara, com Tóquio (Kaminoge) passando a sede regional de Kantō
 (`search2/sanko/ren01.html`). Em 8 de dezembro de 1948, Meishu-Sama enuncia a
-**primeira grade organizacional completa** — documento que veremos em detalhe na
-seção 3.1, porque é o mais explícito de todo o corpus sobre como se subia na estrutura.
+**primeira grade organizacional completa** — documento que veremos em detalhe no
+capítulo 19, porque é o mais explícito de todo o corpus sobre como se subia na estrutura.
 
 O auge institucional do período vem depois. Em 8 de março de 1949 sai o primeiro número
 do jornal **『光』**, com cem mil fiéis declarados (`search1/ho/honkyo20.html`). Em
@@ -101,7 +101,7 @@ que extingue as quatro Igrejas Grandes existentes e cria dezessete Sedes Regiona
 conforme o comunicado do Superintendente Ōkusa Naoyoshi (`search2/sanko/kikoseib.html`).
 Em 10 de outubro publica-se o **Regulamento da pessoa jurídica religiosa「世界救世教」**,
 o documento legal mais completo do período, cujos capítulos sobre administração e
-finanças serão examinados na seção 6 (`search2/sanko/kisoku.html`).
+finanças serão examinados no capítulo 23 (`search2/sanko/kisoku.html`).
 
 Os últimos anos são de obras e de tensão. Em 16 de dezembro de 1953 realiza-se a
 cerimônia de fundação do Templo Messiânico, no Zuiunkyo (`search1/ne/nento03.html`).
@@ -126,7 +126,7 @@ março de 1955).
 | 1947-11-11 | **日本観音教団** — cerimônia de fundação | `novembro de 1947 · search1/kouwa/s221199.html` |
 | 1948-11-01 | **五六七教会** — cisão interna | `1 de novembro de 1948 · search1/kouwa/s231101.html` |
 | 1948-12-01 | Sede em Odawara; Tóquio passa a sede regional | `search2/sanko/ren01.html` |
-| 1948-12-08 | **Primeira grade organizacional completa** (v. §3.1) | `『御光話録』2号, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+| 1948-12-08 | **Primeira grade organizacional completa** (v. capítulo 19) | `『御光話録』2号, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
 | 1949-03-08 | Primeiro número do jornal **『光』** | `search1/ho/honkyo20.html` |
 | 1950-02 | **世界救世教会** — 発展的解消 da 教団 | `search1/ka/kantou13.html` |
 | 1950-10 | **Censo oficial** (v. §5.4) | `search1/mo/mondai.html` |
@@ -347,7 +347,7 @@ três de Ministro formam pares, e a razão entre elas é aproximadamente constan
 cada Igreja Grande, quatorze Ministros Seniores; para cada Igreja Média, cerca de cinco
 Ministros Intermediários; para cada igreja, aproximadamente três Ministros. **O grau
 não é uma carreira paralela à estrutura: ele acompanha a unidade que a pessoa dirige.**
-Isso será decisivo na seção 5.
+Isso será decisivo no capítulo 14.
 
 A segunda leitura é uma cautela de método, e convém enunciá-la com precisão. Os números
 de **fiéis** — cem mil em março de 1949, "mais de mil" no Havaí em um ano — aparecem em
@@ -599,7 +599,7 @@ trabalha."* (`search1/kouwa/s240523.html`).
 
 E o aluguel como situação provisória. O acervo trata a passagem do provisório ao
 próprio como um marco da obra — a primeira construção erguida do zero —, e as
-descrições estão na seção 4.3. Não há, em contrapartida, fonte que registre em
+descrições estão no capítulo 18.3. Não há, em contrapartida, fonte que registre em
 primeira pessoa a superação do regime de aluguel pela Sede.
 
 ### 4.3 Construção própria
@@ -1622,7 +1622,7 @@ a capacidade de supervisão.
 
 E, no fim da vida, a itinerância de Meishu-Sama aproxima-se da formação de portadores de
 qualificação — movimento que coincide com o anúncio da etapa nova, em dezembro de 1954
-(seção 5.7). **A documentação desse período final, no entanto, não é citável neste
+(capítulo 15.5). **A documentação desse período final, no entanto, não é citável neste
 levantamento**; registra-se como ponto não documentado.
 
 ### 8.4 O gênero documental dominante
@@ -1798,7 +1798,8 @@ frentes.
 
 A **mina de 水上**, prevista no próprio estatuto da pessoa jurídica (art. 43º), aparece no
 acervo ligada à obra — e o seu traço mais documentado é o **trabalho**, não a receita: a
-mão de obra vinha da mesma brigada de serviço que construía os jardins (v. seção 6.1).
+mão de obra vinha da mesma brigada de serviço que construía os jardins (v. capítulo
+17.2).
 Quanto ao que a mina rendeu, é matéria que o corpus não documenta; a Parte III (§29)
 examina a questão em detalhe.
 

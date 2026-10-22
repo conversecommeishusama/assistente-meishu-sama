@@ -193,14 +193,14 @@ dramática — já estava no papel desde o começo.
 | Distribuir o jornal | Centro de Ensino, filial | `search1/hi/hikari03.html` |
 | Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `search2/sanko/teirei1.html` e ss. |
 | Abrigar doentes em purificação | Sede da Igreja Média | 『御教え集』1号, 20 de setembro de 1951 · `search1/situmon/m260828.html` |
-| Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | — |
+| Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | — (v. capítulo 17.1) |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `search2/kikou2/sekai03.html` |
 | Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 A última linha tem uma contrapartida que convém não deixar implícita: a auditoria
 instituída pelo Regulamento corre na direção contrária — quem audita é a Sede, mas
 quem examina e aprova as contas da Sede é a assembleia dos presidentes de igreja.
-O ponto está desenvolvido no **capítulo 13**.
+O ponto está desenvolvido no **capítulo 23.1**.
 
 Uma restrição operacional merece registro, porque mostra como a estrutura era
 pensada a partir da capacidade real de uma pessoa. Perguntado sobre quem preside
@@ -350,7 +350,7 @@ sem eufemismo, as variações que encontravam nas regiões — a oferta de cinco
 sete mil ienes pelo mesmo Byōbu, o "Kyoshu de dez dias" que era apenas o número
 de dias de Johrei recebidos, a região em que não se fazia Kyoshu de modo algum, a
 esposa do ministro que adivinhava se o caso sarava. O quadro completo está
-transcrito no capítulo 4. E depois da reunião vinha **a norma escrita**: o
+transcrito no capítulo 11. E depois da reunião vinha **a norma escrita**: o
 aviso 「注意」, publicado na mesma 『栄光』191号, começa exatamente por
 「別項座談会にもあるごとく……」 — *"conforme a mesa-redonda em outra seção"*.
 
@@ -418,11 +418,11 @@ significativo: **査察**, a forma corrente de inspeção de contas no período,
 sempre do Estado, nunca da igreja — 「税務査察官」, 「**査察部**の脱税摘発で気が
 立っている」, 「弁護士に査察景気」. A única "auditoria" que o acervo descreve
 como ameaça à instituição é a do fisco, e foi por ali que veio a persecução de
-1950 (capítulo 26).
+1950 (capítulo 25).
 
 Uma última nota, sobre a direção da auditoria *dentro* das igrejas. A auditoria
 interna que o acervo documenta é a **da própria unidade sobre si mesma**: no
-organograma da igreja do Havaí (capítulo 10) há **seis 監査** ao lado do tesoureiro, e a
+organograma da igreja do Havaí (capítulo 15) há **seis 監査** ao lado do tesoureiro, e a
 assembleia anual aprova o 「会計報告」 — o relatório contábil do exercício
 (`search2/kikou2/hawai18.html`). O padrão é antigo: já no 会則 da 日本浄化療法
 普及会, 「監事は会の財務を監査す」 (`search1/ni/nihon12.html`). A igreja auditava
@@ -606,7 +606,7 @@ da palma do fiel."*
 
 Isso estabelece uma **hierarquia própria do Ohikari**, paralela — mas não
 idêntica — à hierarquia dos objetos de culto entronizados (大光明如来 › 光明如来
-› お姿), que o capítulo 17 examina.
+› お姿), que o capítulo 3.2 examina.
 
 ### 27.3 A outorga
 
@@ -696,7 +696,7 @@ independentemente de recompensa ou condição vinda do homem."*
 
 **O que não se faz com o objeto: comércio de troco exato.** O objeto tinha valor
 de referência, mas tratá-lo como mercadoria era falta grave — nos dois sentidos.
-O aviso de 1953 fixa o princípio (§28.4): o valor é certo, e cobrar acima dele é
+O aviso de 1953 fixa o princípio no capítulo 22: o valor é certo, e cobrar acima dele é
 furto. E há o caso inverso, que Meishu-Sama relata como erro:
 
 > 「以前、ある熱心な婦人で人を大勢やってたんですが、その**御札が一円のところを
@@ -744,7 +744,7 @@ o Ohikari posto no corpo.**"*
 
 Nenhum objeto de culto coletivo recebe esse tratamento. É um indício de que o
 Ohikari não era um **objeto sagrado autônomo**, mas um vínculo **pessoal** — o
-que converge com o que o capítulo 15 registra sobre a Imagem: também ela não
+que converge com o que o capítulo 4.1 registra sobre a Imagem: também ela não
 é sagrada por si, e sim por ser representante de quem a traçou.
 
 ---
@@ -1199,7 +1199,7 @@ organismo**.
 
 **Terceira — o comunicado de Ōkusa**, de 7 de março de 1951, que registra a data
 exata: "no dia 5 de fevereiro deste ano, **houve palavras de Meishu-Sama sobre a
-reforma da igreja**" (Parte III, §24.3). É a reforma que dissolveria as quatro
+reforma da igreja**" (capítulo 20). É a reforma que dissolveria as quatro
 Igrejas Grandes e criaria as dezessete Sedes Regionais.
 
 ### 30.4 O contexto que não se pode omitir: a campanha de imprensa

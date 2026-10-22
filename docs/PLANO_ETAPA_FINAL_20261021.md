@@ -220,9 +220,60 @@ de controle e de marcadores; commitar.
 
 ---
 
-## 5. Armadilhas já pagas
+## 6. Estado ao fim de 21/10/2026
 
-- O wrapper do terminal **descarta** `cd`; usar caminhos absolutos.
+As seis fases foram executadas. O que ficou feito, e onde conferir:
+
+**Fase 1 — feita.** `docs/NOTAS_SACRALIDADE_DOS_ESCRITOS_20261021.md`: 11 citações,
+todas verificadas literalmente contra o corpus (o teste de substring está descrito
+no fim do arquivo), em quatro blocos — a natureza do escrito, a alteração como
+causa da decadência, o dever de quem transmite, e o que a documentação **não** diz.
+Os pontos centrais são 「私は真理を書く」 (『地上天国』28号, 25/9/1951) e 「真理を説く」
+(『救世』58号, 15/4/1950). Achado importante para a honestidade do volume: **não há
+passagem em que ele proíba, em termos, alterar o escrito** — a proibição é
+consequência, não citação; e **não há nada sobre tradução**. A introdução diz isso.
+
+**Fase 2 — feita.** `docs/volume_novo/01_fontes.md` ganhou quatro subseções (1.1 a
+1.4), antes das convenções: o que ele diz do que escreve; o que diz de quem altera;
+por que este volume cita tanto e interpreta tão pouco; e a declaração de método.
+Inclui a contrapartida que impede a bibliolatria — 「本教は教えは第二第三で、浄霊に
+よって人を善化する」 (『地上天国』39号, 25/8/1952).
+
+**Fase 3 — feita.** Duas ocorrências de "para Meishu-Sama" reescritas como
+afirmação. Renumeração das subseções sem número corrigida no montador (era o defeito
+que deixava 「O calendário ritual」 solto no capítulo). Sobreposição 5/6 resolvida por
+remissão. **Oito remissões erradas** corrigidas na fonte — entre elas uma que
+apontava para o capítulo do Johrei quando o assunto era auditoria, e três que
+apontavam para capítulos onde o assunto não está. A 5.7 (reforma de fim de 1954),
+que **havia ficado de fora do volume**, entrou como 15.5, com um tipo novo de item
+no montador (`sub`).
+
+**Fase 4 — feita em parte, e o resto está bloqueado pela fonte.** Entrou o fac-símile
+da capa de 『自然農法』1号 (novembro de 1954), no capítulo 26. Os outros candidatos da
+tabela do §3 **não existem como documento isolado no acervo de PDFs**: não há
+講習要項 de 1947, censo de 1950, grade de 1948, regulamento de 1951 nem comunicado
+de 1951 entre os 756 PDFs de `pdf_rattail/`. Eles existem como texto (e por isso
+estão nos anexos), não como fac-símile. Tentou-se localizar o comunicado de 1951 no
+『栄光』94号 por OCR: as páginas são fotografia de jornal e o OCR não devolve texto
+confiável. **Registra-se como não feito, com a razão.**
+
+**Fase 5 — feita.** Oito anexos, traduções integrais, ao fim do volume (caps. 32-39):
+A, Programa do Curso (1947); B, estatuto da 日本浄化療法普及会 (1946); C, Regulamento
+da pessoa jurídica (1951), os 46 artigos e a lista dos primeiros dirigentes; D, o
+aviso 「注意」 (1953) com o trecho da mesa-redonda a que remete; E, a grade de 1948;
+F, o censo de outubro de 1950; G, o comunicado de reorganização de 1951, com as
+dezessete sedes e responsáveis; H, o 教修要綱 na íntegra. Circulação interna.
+
+**Fase 6 — feita.** Volume com 39 capítulos, 161 páginas, 18 imagens, sem marcador
+de controle. PDF e DOCX regerados da mesma fonte.
+
+**O que continua aberto:** os fac-símiles de documento do §3, que dependem de
+digitalização que o acervo não tem; e a revisão tipográfica dos anexos, que nesta
+passagem foi feita por leitura de trechos, não de ponta a ponta.
+
+---
+
+## 7. Armadilhas já pagas
 - `!` e `\[` dentro de aspas duplas disparam expansão de histórico — usar aspas
   simples.
 - A montagem roda várias funções em cadeia: `glosar(polir(podar_coluna_vazia(

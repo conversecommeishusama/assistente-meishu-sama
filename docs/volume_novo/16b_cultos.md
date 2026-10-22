@@ -6,10 +6,11 @@ mudava era quem celebrava, para quantos, e com que frequência.
 
 **O Grande Culto** (大祭) — as grandes festas sazonais, de primavera e de outono,
 celebradas nos recintos da Sede. A descrição mais completa é a do Culto Especial
-de Outono de 1950, cuja ordem está na seção anterior. Duas notas sobre esse
-degrau. A primeira é **quem oficia**: Meishu-Sama não presidia o rito;
-comparecia depois, como o venerando diante de quem a assembleia se curvava. A
-condução cabia ao Superintendente e aos oficiantes nomeados. A segunda é a
+de Outono de 1950, cuja ordem está no capítulo 5. Duas notas sobre esse degrau. A
+primeira é **quem oficia**: o rito não era presidido por Meishu-Sama, que
+comparecia depois, como o venerando diante de quem a assembleia se curvava
+(capítulo 5.1); a condução cabia ao Superintendente e aos oficiantes nomeados. A
+segunda é a
 **natureza da oferenda**: no grande culto ela era solene e codificada — oferendas
 de mar e montanha (海山のお供物), dispostas diante do objeto de culto, e o
 **fruto da ameixeira** como oferenda que encarnava o sentido do rito, *散花結実*,
@@ -52,7 +53,7 @@ pensamos nisso com profundidade e o fomos adiando, e assim ficou por cerca de
 meio ano."*
 — 「光明如来様御奉斎で盗難免る」『栄光』70号, 20 de setembro de 1950
 
-O mesmo relato acrescenta um dado que interessa ao capítulo 17: as oferendas
+O mesmo relato acrescenta um dado que interessa ao capítulo 8: as oferendas
 diante da Imagem incluíam arroz lavado. Diz a autora que os ratos roíam flores e
 oferendas no oratório dos antepassados, mas "das oferendas do Kōmyō Nyorai no
 tokonoma, **nem um único grão do arroz lavado ofertado** (御洗米一粒も) foi
@@ -124,14 +125,14 @@ e ali sozinha aquietava o coração perturbado."*
 
 A caligrafia em questão é a que traz os dois caracteres **日光** — *nikkō*, "luz
 do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明,
-大光明, tratadas no capítulo 19). Era um objeto de culto doméstico, pendurado no
+大光明, tratadas no capítulo 3.3). Era um objeto de culto doméstico, pendurado no
 tokonoma, que funcionava explicitamente como **substituto** (*御神体代り*) da
 Imagem enquanto a família não a recebia. Sobre oferendas nesse caso específico a
 documentação não se pronuncia; o relato menciona apenas a visita e a quietude do
 coração.
 
 Ao culto doméstico pertence ainda, com estatuto próprio, o **sufrágio dos
-antepassados** (先祖祭, tratado no capítulo 20) — rito recorrente, celebrado no
+antepassados** (先祖祭, tratado no capítulo 9) — rito recorrente, celebrado no
 oratório doméstico, distinto do rito de entronização da Imagem. Meishu-Sama chega
 a enunciar como dever da casa nova a instalação do oratório:
 

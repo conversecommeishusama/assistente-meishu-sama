@@ -39,10 +39,10 @@ culto** — o que explica por que uma unidade grande e uma unidade pequena podia
 imagens de porte diferente sem que isso constituísse graduação hierárquica. A
 segunda é que o critério hierárquico real, na estrutura da igreja, não passava pelo
 tamanho da imagem, e sim pelo **tipo de objeto de culto admitido em cada nível**
-(tratado no capítulo 11).
+(tratado no capítulo 3).
 
 A esse critério de proporção somava-se uma exigência de **ordem**. A hierarquia dos
-objetos de culto já a estabelecia — a caligrafia acima da figura (capítulo 11) —, e a
+objetos de culto já a estabelecia — a caligrafia acima da figura (capítulo 3) —, e a
 ela corresponde a disposição no nicho: a Imagem ocupa o lugar próprio, sem que nada a
 iguale ou se sobreponha a ela. A ordem é ela mesma o critério.
 
@@ -95,10 +95,9 @@ estatuto desse juízo: trata-se de **inferência a partir de dois princípios
 documentados**, não de uma declaração textual sobre o caso. O acervo não contém
 nenhuma passagem em que Meishu-Sama seja perguntado sobre Imagens de terceiros.
 Quanto a "outra divindade expressa na escrita", o acervo também é silencioso; o que
-se pode afirmar com segurança é que, para Meishu-Sama, a Imagem não era um objeto
-sagrado autônomo, mas o representante de uma pessoa — donde a impropriedade
-doutrinária de se venerar, sob o nome da mesma devoção, uma figura que não fosse a
-dele.
+se pode afirmar com segurança é que a Imagem não é um objeto sagrado autônomo, mas o
+representante de uma pessoa — donde a impropriedade doutrinária de se venerar, sob o
+nome da mesma devoção, uma figura que não fosse a dele.
 
 ---
 
@@ -240,9 +239,9 @@ ien."*
 Isto é, o nicho era requisito arquitetônico de primeira ordem, dimensionado à
 altura do objeto de culto. Não há, no entanto, conjunto de regras de orientação
 (frente, direção auspiciosa) específicas por tipo de unidade. O critério documentado
-é o de proporção (proporção entre Imagem e tokonoma, visto na seção 13) e o uso
+é o de proporção (proporção entre Imagem e tokonoma, visto no capítulo 4) e o uso
 litúrgico do nicho como lugar da oferenda — no caso da agricultura natural, era ali
-que se dispunham as sementes antes do plantio (capítulo 22).
+que se dispunham as sementes antes do plantio (capítulo 26).
 
 ---
 
@@ -922,10 +921,9 @@ sistema**, e o fazia em termos de diagnóstico invertido:
 fora. **No fim, é o oposto do médico**; por isso, se for receber Johrei daqui em
 diante, abandone as injeções e os remédios."*
 
-E a razão de fundo é que o sintoma, para Meishu-Sama, **é a cura em curso** — a
-febre, a dor, a erupção são a purificação acontecendo, não a doença a ser suprimida.
-Suprimi-las com medicação é interromper o processo. A obra doutrinária é explícita
-sobre a febre:
+E a razão de fundo é que o sintoma **é a cura em curso** — a febre, a dor, a erupção
+são a purificação acontecendo, não a doença a ser suprimida. Suprimi-las com medicação
+é interromper o processo. A obra doutrinária é explícita sobre a febre:
 
 > 「右のごとくであるから**体温器による計熱法は不完全である**というのである。
 > しかるに、私が行う計熱法は、いかなる微熱といえども発見し得らるるのである。
@@ -1141,7 +1139,7 @@ só faz sentido se não houvesse dieta a registrar.
 
 Do ponto de vista biográfico, portanto, Meishu-Sama **não era prescritor de regime
 alimentar**. Ele tinha uma doutrina da alimentação — a da energia espiritual e do
-primitivo, exposta na seção anterior — mas ela operava como **princípio de
+primitivo, exposta na subseção anterior — mas ela operava como **princípio de
 sensibilidade** ("coma o que tem vitalidade e não estrague o solo"), não como
 programa nutricional a ser seguido por tabela. A única restrição documentada em sua
 própria vida não era doutrinária, era dentária.

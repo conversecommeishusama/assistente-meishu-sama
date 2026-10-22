@@ -122,6 +122,15 @@ def pegar(src, num, keep=None, drop=None):
     return "\n".join(out)
 
 
+def subsecao(src, num, sub):
+    """Uma subseção isolada, sem o preâmbulo e sem as irmãs."""
+    corpo = SEC[src][num][1]
+    for pref, txt in subsecoes(corpo)[1:]:
+        if pref.rsplit(".", 1)[-1] == sub:
+            return txt
+    raise SystemExit("subseção %s.%s não encontrada em %s" % (num, sub, src))
+
+
 # --------------------------------------------------------------- limpeza
 def limpar(t):
     # caminhos do acervo
@@ -520,7 +529,8 @@ PLANO = [
 
     ("titulo", "A formação do elemento humano"),
     ("novo", "09_ministros_1948_1951.md"),
-    ("novo", "10_ministros_1952_1955.md"),
+    ("merge", [("file", "10_ministros_1952_1955.md"), ("sub", "I", "5", "7")],
+     "Os ministros de 1951 a 1955: Ministro, Intermediário e Sênior"),
     ("merge", [("III", "25", ["1", "2"])], "As atribuições e o cotidiano dos dirigentes"),
     ("sec", "I", "8"),
 
@@ -548,6 +558,18 @@ PLANO = [
     ("sec", "I", "12"),
     ("novo", "29b_titulos.md"),
     ("novo", "30_glossario.md"),
+
+    # Anexos: traduções integrais dos documentos institucionais. Circulação
+    # interna (decisão de 21/10/2026). Ficam depois do glossário para não
+    # deslocar a numeração dos capítulos citados no texto.
+    ("novo", "40_anexo_programa_1947.md"),
+    ("novo", "41_anexo_estatuto_1946.md"),
+    ("novo", "42_anexo_regulamento_1951.md"),
+    ("novo", "43_anexo_aviso_1953.md"),
+    ("novo", "44_anexo_grade_1948.md"),
+    ("novo", "45_anexo_censo_1950.md"),
+    ("novo", "46_anexo_reforma_1951.md"),
+    ("novo", "47_anexo_kyoshu_yoko.md"),
 ]
 
 
@@ -577,10 +599,21 @@ def emitir():
         else:
             _, itens, titulo = item
             pedacos = []
-            for src, num, keep in itens:
-                p = pegar(src, num, keep=keep)
-                p = re.sub(r"^\s*##\s*\d+\.\s*.*\n", "", p)
-                # tira a primeira subseção mantida do seu papel de título
+            for peca in itens:
+                if peca[0] == "file":
+                    # o merge passou a aceitar um capítulo escrito para o volume
+                    p = open(os.path.join(NOVO, peca[1]), encoding="utf-8").read()
+                    p = re.sub(r"^\s*#\s+.*\n", "", p)
+                    p = re.sub(r"^\s*##\s*(?:\d+\.\s*)?.*\n", "", p, count=1)
+                elif peca[0] == "sub":
+                    # uma única subseção, sem o preâmbulo da seção de origem:
+                    # é assim que a 5.7 entra sob o capítulo dos ministros de
+                    # 1951-1955, onde o assunto pertence, sem duplicar texto.
+                    p = subsecao(peca[1], peca[2], peca[3])
+                else:
+                    src, num, keep = peca
+                    p = pegar(src, num, keep=keep)
+                    p = re.sub(r"^\s*##\s*\d+\.\s*.*\n", "", p)
                 pedacos.append(p)
             corpo = "\n".join(pedacos)
             corpo = limpar(corpo)
@@ -589,14 +622,17 @@ def emitir():
         # nas de prosa a vírgula final é legítima e a regra a destruía
         corpo = re.sub(r"(?m)^([>—|].*?)[ \t]*[,·][ \t]*$", r"\1", corpo)
 
-        # renumera as subseções deste capítulo
+        # renumera as subseções deste capítulo. O número de origem é opcional:
+        # os capítulos escritos diretamente para o volume (volume_novo/*.md) e os
+        # títulos de agrupamento não trazem numeração, e sem isto apareciam como
+        # "### O calendário ritual" no meio de um capítulo numerado.
         k = 0
         linhas = []
         for linha in corpo.split("\n"):
-            m = re.match(r"###\s*[\d.]+\s*(.*)", linha)
+            m = re.match(r"###\s*(?:[\d.]+\s*)?(.*)", linha)
             if m:
                 k += 1
-                linha = "### %d.%d %s" % (cap, k, m.group(1))
+                linha = "### %d.%d %s" % (cap, k, m.group(1).strip())
             linhas.append(linha)
         corpo = "\n".join(linhas).strip()
 
