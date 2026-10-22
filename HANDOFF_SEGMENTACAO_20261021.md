@@ -1,8 +1,9 @@
 # Handoff — segmentação estrutural e rebuild dos índices
 
-**Data:** 21 de outubro de 2026
-**Estado:** acervo liberado para o rebuild. Auditoria pré-rebuild em **0 erros**.
-**Próxima sessão:** tratar os itens **B** e **C** abaixo; aprovados, executar o rebuild (§6).
+**Data:** 21 de outubro de 2026 (actualizado a 22/10 com o fecho de B e C)
+**Estado:** **itens B e C fechados.** Acervo liberado para o rebuild. Auditoria em
+**0 erros / 230 desvios** (era 0 / 239). **Próximo passo:** §6 (rebuild).
+**Sessões anteriores:** a auditoria nasceu com 152 erros; o commit `928b29be` levou-os a 0.
 
 ---
 
@@ -123,7 +124,8 @@ passed, 1 skipped, 1 xfailed**).
 
 O auditor separa **ERRO** (viola a regra ou perde conteúdo) de **DESVIO
 PREVISTO** (consequência de decisão documentada, ou medida de outra natureza).
-Hoje: **0 erros, 239 desvios previstos**.
+Estado após o fecho de B e C (22/10): **0 erros, 230 desvios previstos**
+(era 239 — menos os 4 `corte-em-limite` e 5 dos `volume-pt-jp`).
 
 | Categoria | N | Natureza |
 |---|---|---|
@@ -131,14 +133,14 @@ Hoje: **0 erros, 239 desvios previstos**.
 | `cabecalho-saltado` | 78 | `# Ficheiro de trabalho`, `=== ARTIGO ===`, `title_pt:` — metadados gerados, não texto do autor |
 | `obra-inteira` | 34 | Obras sem divisão autoral (§2) |
 | `ancora-repetida` | 16 | Títulos de poema repetidos (`春`, `月`, `Japão`); o cursor resolve a enésima ocorrência e a cobertura prova a ordem |
-| `volume-pt-jp` | 15 | **Item B** — medida editorial, não de fronteira |
+| `volume-pt-jp` | 10 | **Item B** — tradução abreviada, verificada (§5) |
 | `obra-sem-par` | 6 | Obras só em PT ou só em JP |
-| `corte-em-limite` | 4 | **Item C** — formatação do corpus |
+| `corte-em-limite` | 0 | **Item C fechado** (eram 4) |
 | `rotulo-curto` | 3 | Fragmentos <40 chars já contidos no campo `title` |
 
 ---
 
-## 5. Pendências para a próxima sessão
+## 5. Pendências — B e C **FECHADOS** em 22/10/2026
 
 ### Item A — obras sem spec: **FECHADO**
 
@@ -146,53 +148,67 @@ Hoje: **0 erros, 239 desvios previstos**.
 Decisão do usuário (21/10): **não mexer no Gokowa** — foi uma frente difícil e o
 estado actual está aceite. Fica como está: 1 entrada + corte por tamanho.
 
-### Item B — 15 volumes PT/JP fora da mediana da obra
+### Item B — 15 volumes PT/JP fora da mediana: **FECHADO** (15 → 10)
 
-Não é erro de segmentação: a fronteira está certa (a cobertura prova-o). É sinal
-de que a tradução ocupa muito mais ou muito menos espaço que o original naquele
-artigo. Precisa de leitura humana. Levantei já a hipótese de deslocamento,
-comparando `PT[i]/JP[i]`, `PT[i]/JP[i-1]` e `PT[i]/JP[i+1]` contra a mediana da
-obra:
+As hipóteses do diagnóstico anterior estavam **parcialmente certas**: havia
+defeito real em 5 casos, mas **nenhum era ordem trocada de artigos**. Em todos, a
+fronteira estava correcta; o que estava errado era o **conteúdo** do ficheiro.
 
-| Obra | Art. | PT | JP | i−1 | **i** | i+1 | Mediana | Hipótese |
-|---|---|---|---|---|---|---|---|---|
-| Tijotengoku | 85 | 1 739 | 13 483 | 2.24 | **0.13** | 1.07 | 2.98 | PT 85 ↔ JP 86; PT 86 ↔ JP 85 — `PT86/JP85 = 2.89 ≈ mediana`. **Ordem dos artigos 85–86 difere entre PT e JP** |
-| Tijotengoku | 86 | 38 929 | 1 628 | 2.89 | **23.91** | 69.15 | 2.98 | idem |
-| Tijotengoku | 93 | 1 224 | 1 610 | 0.18 | **0.76** | 0.97 | 2.98 | Vizinhança inteira baixa — PT condensado nessa secção |
-| Fonte do Riso | 42 | 6 362 | 720 | 4.57 | **8.84** | 8.52 | 1.75 | **PT deslocado −2**: o corpo do art. 42 abre nos versos 616–617, que o JP tem no art. 40. Colecção de haiku com numeração contínua |
-| Hikari | 146 | 3 583 | 4 326 | 7.03 | **0.83** | 12.48 | 3.12 | Vizinhança PT enorme vs art. 146 pequeno → fronteira PT em falta nessa zona |
-| Coleção Jikan vol. 4 | 6 | 444 | 3 378 | 0.30 | **0.13** | 0.15 | 2.78 | PT muito curto em toda a vizinhança → tradução truncada |
-| Coleção Jikan vol. 4 | 7 | 617 | 2 986 | 0.18 | **0.21** | 0.29 | 2.78 | idem |
-| Coleção Jikan vol. 7 | 7 | 532 | 4 277 | 0.15 | **0.12** | 0.47 | 2.43 | PT muito curto |
-| Coleção Jikan vol. 7 | 3 | 586 | 710 | 1.17 | **0.83** | 0.21 | 2.43 | local |
-| Coleção Jikan vol. 7 | 14 | 2 666 | 4 532 | 1.82 | **0.59** | — | 2.43 | local |
-| Coleção Jikan vol. 2 | 58 | 614 | 2 481 | 0.63 | **0.25** | 1.11 | 2.95 | PT muito curto |
-| Eiko | 10 | 1 987 | 2 195 | 2.39 | **0.91** | 1.47 | 2.95 | local |
-| Eiko | 84 | 1 040 | 1 424 | 1.14 | **0.73** | 1.04 | 2.95 | local |
-| Mioshie-shū nº 22 | 9 | 3 520 | 6 137 | 0.58 | **0.57** | 0.52 | 2.25 | local (vizinhança toda baixa) |
-| ~~Gokōwa-roku (Suplemento)~~ | 6 | 2 599 | 2 475 | 1.23 | **1.05** | 0.88 | 2.76 | **fora de escopo** por decisão do usuário |
-
-**Ordem sugerida:** `Tijotengoku` 85–86 (parece ordem trocada, resolve dois de
-uma vez) → `Fonte do Riso` 42 (deslocamento −2 na numeração dos versos) →
-`Hikari` 146 (fronteira em falta) → os de tradução curta (leitura literária).
-
-### Item C — 4 cortes "em limite" (formatação do corpus)
-
-Nos quatro, o corte cai no lugar semântico certo, mas o **cabeçalho está colado
-à frase anterior, sem quebra de linha**. O texto não muda de artigo; falta o
-parágrafo. Correção mínima, nos ficheiros de `textos_portugues/` (**gitignored —
-fazer backup antes**):
-
-| # | Ficheiro | Linha | Art. | Correção |
+| # | Obra / art. | Causa real | Correção | Rácio antes → depois |
 |---|---|---|---|---|
-| C1 | `19520115 - Mioshie-shū nº 5.txt` | 225 (23 313 chars; marcador no offset 7 848) | 8 | inserir `\n\n` antes de `[21º de dezembro]` |
-| C2 | `19530101 - Salvando os Estados Unidos.txt` | 71 | 4 | inserir `\n\n` entre `grande erudito.` e `Sobre a Cirurgia` |
-| C3 | `19530505 - Explicação do Método da Agricultura Natural...txt` | 400 (208 chars) | 9 | inserir `\n\n` depois de `Rodale.`, antes de `Registrado em 18 de novembro de 1951` |
-| C4 | `19530910 - Relatos de Milagres da Igreja Messiânica Mundial.txt` | 1818 | 80 | **não é só quebra**: a citação e a fonte estão na mesma linha (`"Ferimento de quatro sun…" — Da revista "Eikou" nº 155…`). O `pt_anchor` do art. 80 é a **fonte**, que pertence à citação. Mover a âncora para o título da linha 1816: `Queimadura causada pela radiação atômica curada pelo Johrei` (distinto do título do art. 79, `Queimadura por Radiação Atômica Curada pelo Johrei` — ambos existem, 1 ocorrência cada) |
+| B1 | Tijotengoku 85–86 | **Artigo duplicado no JP**: `転向者の悩みに応う` existia 3× (@21 713, @129 159 com a carta, @142 065). A âncora do art. 86 resolvia na 3.ª cópia, sem par em PT, e o art. 85 engolia a edição com a carta | Removidas 1 630 chars em @142 065 (byte-idênticas a @21 713); âncora do art. 86 → `転向者の悩みに応う\n『地上天国』11号…` | 0,13 / 23,91 → **3,01 / 3,02** |
+| B2 | Fonte do Riso 42 | **Duas inserções no PT** (12 linhas) duplicavam versos e títulos: `627,`+`Título: "Sujeito Desagradável"`+`645,`+`Título: "Cheira Meu Peido"` depois de `Título: "Larvas"`; e `820.`+`Título: "Sujeito Cambaleante"` depois de `Título: "Extraordinário"` | Removidas as 12 linhas (confronto com `livros_publicacao_pt/19510130-笑の泉.txt`, 69 blocos, cada verso 1×); âncora do art. 40 → `Título: "Larvas"` | 8,84 → **1,72** (art. 40–44 e 56–58: 1,60–2,04; mediana 1,75) |
+| B3 | Hikari 146 | **Bloco de tradução inglesa embebido no JP** (linhas 2147–2296, 3 146 chars), entre o fim do japonês e `寸鉄(光12号)` | Removido o bloco `TO … hisownaccord.` | 0,83 → **3,04** |
+| B4 | Tijotengoku 93 | Idem (linhas 2742–2804, 1 207 chars, `YAKUSHI / NYORAI:THEMEDICINEBUDDHA …`) | Removido | 0,76 → **3,04** |
 
-**Depois de C:** re-correr a auditoria. Se C1–C3 forem feitas por inserção de
-`\n\n`, as âncoras continuam válidas; C4 exige `corrigir_ancoras_bloco.py` (ou
-edição directa da spec, com backup).
+**Os 10 restantes não são erro.** Verificados por leitura do início e do fim de
+cada artigo nas duas línguas: as fronteiras estão alinhadas e o PT **condensa** o
+JP (ex.: Jikan v4 art. 6 — 3 378 chars de JP reduzidos a 444 chars, com o mesmo
+princípio e o mesmo remate). É matéria editorial (tradução abreviada), não
+segmentação.
+
+**Padrões novos, úteis para futuros varrimentos:**
+1. *Bloco EN embebido no JP* — detecta-se por linhas contíguas só latinas no
+   ficheiro japonês; o texto vem sem espaços (`herhagiu…`). Marcador de início:
+   título em maiúsculas também sem espaços. Só restam `A Story of Ukiyo-e` (obra
+   legítima em inglês) e cabeçalhos gerados.
+2. *Versos/títulos duplicados no PT* — `profile: wara_collection` só tem o Fonte
+   do Riso; detecta-se por `Counter` de linhas `^\d+[,.]` e de `^Título: "…"`.
+3. *Artigo repetido na mesma obra* — contagem de ocorrências do título JP dentro
+   do próprio ficheiro.
+
+### Item C — 4 cortes "em limite": **FECHADO** (4 → 0)
+
+| # | Ficheiro | Correção aplicada |
+|---|---|---|
+| C1 | `19520115 - Mioshie-shū nº 5.txt` | `\n\n` antes de `[21º de dezembro]` — o art. 8 abre no marcador |
+| C2 | `19530101 - Salvando os Estados Unidos.txt` | `\n\n` entre `grande erudito.` e `Sobre a Cirurgia` — o art. 4 abre no título |
+| C3 | `19530505 - Explicação do Método da Agricultura Natural…txt` | `\n\n` entre `Rodale.` e `Registrado em 18 de novembro de 1951` |
+| C4 | `19530910 - Relatos de Milagres da Igreja Messiânica Mundial.txt` | Âncora do art. 80 movida da fonte (`Da revista "Eikou" nº 155…`, colada à citação) para o título da linha 1816: `Queimadura causada pela radiação atômica curada pelo Johrei` |
+
+C1–C3 por inserção de `\n\n` mantiveram as âncoras válidas; C4 foi feito por
+`scripts/corrigir_ancoras_bloco.py`. Gates confirmados depois: `PERDIDAS=0`.
+Rácios do Relatos arts. 78–81: 2,78–2,97.
+
+### Backups criados (todos ao lado do original, gitignored)
+
+| Ficheiro | Sufixo |
+|---|---|
+| `textos_japones/Tijotengoku.txt` | `.bak_dedup_20261021T233733Z`, `.bak_en_embed_20261022T001326Z` |
+| `textos_japones/Hikari.txt` | `.bak_en_embed_20261022T001012Z` |
+| `textos_portugues/19510130 - Fonte do Riso.txt` | `.bak_duplicados_20261022T000124Z` |
+| `textos_portugues/19520115 - Mioshie-shū nº 5.txt` | `.bak_paragrafo_20261022T001759Z` |
+| `textos_portugues/19530101 - Salvando os Estados Unidos.txt` | `.bak_paragrafo_20261022T001759Z` |
+| `textos_portugues/19530505 - Explicação do Método…txt` | `.bak_paragrafo_20261022T001759Z` |
+| specs de Tijotengoku / Fonte do Riso / Relatos de Milagres | `.bak_ancoras_20261021T234028Z`, `.bak_ancoras_20261022T000250Z`, `.bak_ancoras_20261022T002107Z` |
+
+### Nota sobre o gate de sincronização
+
+`sincronizar_acervo_correcoes.py` sai com código 1 por **6 transições ambíguas de
+Tijotengoku** (`P1_Tijotengoku_25_54`, `_44_75`, `_48_78`, em `producao` e
+`leitura`). **São pré-existentes** — confirmado repondo o ficheiro original: o
+resultado é idêntico. `PERDIDAS=0` em ambos os veículos. A reparação autoritativa,
+se se quiser fechar o gate, é `scripts/reconciliar_acervo_itens.py`.
 
 **Atenção:** inserir parágrafos muda o texto do acervo. O gate
 `sincronizar_acervo_correcoes.py` compara por parágrafos dividindo em `\n+`
@@ -201,16 +217,19 @@ confirmar `PERDIDAS=0`.
 
 ---
 
-## 6. O rebuild — só depois de B e C aprovados
+## 6. O rebuild
 
-### Pré-condições
+### Pré-condições — **todas verdes a 22/10/2026**
 
-1. `auditar_segmentacao_estrutural.py` → **0 erros**.
-2. `validar_segmentacao_pre_rebuild.py` → falhas 0.
-3. Working tree revisto (`git status`): só entram `scripts/`; `textos_*`,
-   `reports/`, `data/clean_corpus/` são gitignored.
-4. Backup das specs tocadas (já existem `.bak_ancoras_*` / `.bak_titulos_*`) e
-   dos 4 ficheiros de corpus do item C, se alterados.
+1. `auditar_segmentacao_estrutural.py` → **0 erros** (230 desvios, todos
+   documentados).
+2. `validar_segmentacao_pre_rebuild.py` → **PT 123 / JP 123 / falhas 0**.
+3. `sincronizar_acervo_correcoes.py` → **PERDIDAS=0** nos dois veículos. Sai com
+   código 1 pelas 6 ambiguidades pré-existentes de Tijotengoku (§5); se se quiser
+   o gate a 0, correr `scripts/reconciliar_acervo_itens.py` antes.
+4. Working tree revisto (`git status`): só entram `scripts/` e este documento;
+   `textos_*`, `reports/`, `data/clean_corpus/` são gitignored.
+5. Backups das specs e de todo o corpus tocado: ver a tabela em §5.
 
 ### Comandos
 
@@ -260,3 +279,16 @@ usei para validar.
 - Validador antigo (`validar_segmentacao_pre_rebuild.py`) só verifica que as
   âncoras resolvem e a contagem bate. **Não** verifica estrutura — é a auditoria
   nova que verifica.
+- **Um rácio PT/JP anómalo pode ser defeito de conteúdo, não de fronteira.**
+  Antes de mexer em âncoras, verificar, por esta ordem: (1) o título/1.º verso do
+  artigo aparece mais de uma vez no ficheiro? (2) há blocos de texto latino
+  embebidos no ficheiro JP? (3) há versos ou títulos repetidos no PT? (4) o
+  ficheiro do corpus difere da versão publicada em `livros_publicacao_pt/` ou
+  `publicacao_livros/`? Os quatro casos reais desta sessão foram todos
+  encontrados por um destes testes — nenhum era âncora.
+- Bloco de tradução inglesa embebido no JP: o texto vem **sem espaços**
+  (`theKannonPowerwhich…`) e o título em maiúsculas também. Um detector simples
+  é listar linhas só latinas contíguas no ficheiro japonês; guardar o ficheiro
+  `A Story of Ukiyo-e.txt` (obra legítima em inglês) das exclusões.
+- `_par_emparelhado('jp', obra)` devolve o par **PT**, não o JP — é o inverso do
+  que o nome sugere. Para ir de PT→JP usar `RENOMEACAO_PT_PARA_JP[obra]`.

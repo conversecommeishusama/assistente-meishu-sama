@@ -70,6 +70,36 @@ CORRECOES = [
      'O Espírito da Raposa e a Velha Senhora'),
     ('19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt',
      'pt', 15, 'Pessoas Vivas', 'Espíritos de Pessoas Vivas'),
+    # JP — Tijotengoku, `転向者の悩みに応う` (art. 86). O artigo existia três
+    # vezes no ficheiro: a cópia de Tijotengoku (com `投書（省略）`) em @21713 e
+    # em @142065, e a edição que restaura a carta do convertido em @129159.
+    # A cópia de @142065 (byte-idêntica à de @21713) foi removida do corpus a
+    # 21/10/2026, e o art. 86 passa a ancorar na edição com a carta — que é a
+    # que o PT art. 86 traduz. Sem isto, o art. 85 (Prefácio nº 10) absorvia o
+    # artigo inteiro e a carta (13 483 chars) e o art. 86 ficava com uma
+    # segunda cópia sem par (1 628 chars).
+    ('Tijotengoku.txt', 'jp', 86, None,
+     '転向者の悩みに応う\n『地上天国』11号、昭和24(1949)年12月20日発行'),
+    # PT — Fonte do Riso. O ficheiro tinha duas inserções que duplicavam versos e
+    # deslocavam os títulos: (a) depois de `Título: "Larvas"` vinham os versos
+    # 627 e 645 seguidos dos títulos `Sujeito Desagradável` e `Cheira Meu Peido`,
+    # de modo que os versos 616-631 (Larvas) ficavam sob o título «Cheira Meu
+    # Peido»; (b) depois de `Título: "Extraordinário"` vinha o verso 820 e um
+    # segundo `Título: "Sujeito Cambaleante"`, deslocando 816-826. As 12 linhas
+    # foram removidas do corpus a 21/10/2026, contra a versão publicada em
+    # `livros_publicacao_pt/19510130-笑の泉.txt` (69 blocos, cada verso uma vez).
+    # A âncora do art. 40 passa a apontar para o 1.º verso real do bloco.
+    ('19510130 - Fonte do Riso.txt', 'pt', 40, None,
+     'Título: "Larvas"'),
+    # PT — Relatos de Milagres, art. 80 (C4 do handoff de 21/10). A âncora era a
+    # própria fonte da citação (`Da revista "Eikou" nº 155…`), que está na MESMA
+    # linha da citação; o artigo abria, portanto, a meio do próprio cabeçalho e o
+    # título ficava no artigo anterior. Passa a abrir no título (linha 1816), que
+    # é distinto do título do art. 79 (`Queimadura por Radiação Atômica Curada
+    # pelo Johrei)` — este é `Queimadura causada pela radiação atômica…`; cada um
+    # tem 1 ocorrência no ficheiro.
+    ('19530910 - Relatos de Milagres da Igreja Messiânica Mundial.txt', 'pt', 80,
+     None, 'Queimadura causada pela radiação atômica curada pelo Johrei'),
 ]
 
 
