@@ -6,7 +6,7 @@
 
 **Natureza:** aviso de Meishu-Sama, publicado na abertura do número, e que remete
 à mesa-redonda de difusão realizada na mesma edição. É o documento que fixa o
-princípio econômico do objeto de culto: valor determinado, e cobrança acima dele
+princípio econômico dos escritos de Meishu-Sama: valor determinado, e cobrança acima dele
 qualificada como furto.
 **Alcance:** a regra vale para "a Imagem e as demais coisas que escrevi" — isto é,
 para todos os objetos que saíam de sua mão, não apenas para a Imagem.

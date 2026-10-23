@@ -29,7 +29,7 @@ Terrestre de Momoyama, Seiseidai, em Atami, e promover o mais rapidamente possí
 a construção do Salão de Salvação (救世会館) como centro mundial.
 
 **Segundo.** Estabelecer a Sede da Igreja Messiânica Mundial em Odawara-shi,
-Midori-chō (sede da Grande Igreja Iso-roku), e ir progressivamente assumindo a
+Midori-chō (sede da Grande Igreja Miroku), e ir progressivamente assumindo a
 forma de sede da comunidade. Os dirigentes passam ao sistema de Superintendente,
 diretores e auditores: Superintendente, o Sr. Ōkusa; diretores, em número de onze
 — Ōkusa, Momomi (diretor-presidente), Iwamatsu, Watanabe, Koizumi, Moriyama,

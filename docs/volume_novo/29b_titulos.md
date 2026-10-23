@@ -100,7 +100,7 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | 森吉鉱山 | Moriyoshi kōzan | mina de Moriyoshi |
 | 水上 | Minakami | Minakami |
 | 応神堂 | Ōjindō | "santuário de Ōjin" |
-| 五六七 | Iso-roku | "cinco, seis, sete" — série numérica usada em nomes da igreja |
+| 五六七 | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
 | 大日本観音会 | Dai-Nippon Kannon-kai | "Grande Associação Kannon do Japão" |
 | 日本観音教団 | Nippon Kannon Kyōdan | "Igreja Kannon do Japão" |
 | 日本浄化療法普及会 | Nippon Jōka Ryōhō Fukyūkai | "Associação de Difusão da Terapêutica de Purificação do Japão" |
@@ -109,7 +109,7 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | 天国大教会 | Tengoku daikyōkai | Igreja Grande do Paraíso |
 | 大成大教会 | Taisei daikyōkai | Igreja Grande da Grande Realização |
 | 光宝大教会 | Kōhō daikyōkai | Igreja Grande do Tesouro da Luz |
-| 五六七大教会 | Iso-roku daikyōkai | Igreja Grande Iso-roku |
+| 五六七大教会 | Iso-roku daikyōkai | Igreja Grande Miroku (romaji: Iso-roku daikyōkai) |
 | 光映中教会 | Kōei chūkyōkai | Igreja Média do Reflexo da Luz |
 | 長生中教会 | Chōsei chūkyōkai | Igreja Média da Longa Vida |
 | 光陽中教会 | Kōyō chūkyōkai | Igreja Média do Sol da Luz |

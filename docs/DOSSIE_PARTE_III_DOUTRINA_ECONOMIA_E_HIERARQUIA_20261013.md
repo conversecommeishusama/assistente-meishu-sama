@@ -604,9 +604,31 @@ Dai-Kōmyō**; o espírito divino do Deus Senhor (Jeová) transmite-se ao Ohikar
 tendo meu corpo espiritual como intermediário, e do Ohikari irradia-se através
 da palma do fiel."*
 
-Isso estabelece uma **hierarquia própria do Ohikari**, paralela — mas não
-idêntica — à hierarquia dos objetos de culto entronizados (大光明如来 › 光明如来
-› お姿), que o capítulo 3.2 examina.
+Isso estabelece uma **hierarquia própria do Ohikari**, que é preciso ler na ordem
+certa, porque é aqui que a terminologia corrente mais se confunde. **O primeiro
+Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia 「光」
+(Hikari)**; o 「光明」 (Kōmyō) vem depois, e é a ele que corresponde a designação
+**Ohikari Kōmyō**; o 「大光明」 (Daikōmyō) é o terceiro, e é o único reservado a
+portadores de qualificação. Dizer que «o Ohikari Kōmyō é recebido quando a pessoa
+ingressa na fé» é, portanto, duplo erro: o que se recebe no ingresso é o Ohikari
+「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
+
+Essa hierarquia do Ohikari é **distinta** da hierarquia das Imagens entronizadas
+(大光明如来 › 光明如来 › お姿), que o capítulo 3.2 examina: são dois objetos
+diferentes, com duas escadas diferentes. E o grau do Ohikari não é apenas
+honorífico — ele mede proteção, como Meishu-Sama responde a quem perguntou se um
+portador do Ohikari comum podia fazer Johrei em um portador do Daikōmyō:
+
+> 「――弟子が先生を、またふつうの御守りの人が「大光明」の御守りの人を御浄め
+> してもよろしいでしょうか。
+> **差し支えありません。されるほうが霊的に変わってしまう。御浄めするほうが
+> 御守護が上になるのです。**それからいかなる場合でも御守りを外してはいけませんよ。」
+> — 『御光話録』, 8 de julho de 1948
+
+*"— Um discípulo pode fazer Johrei no mestre, ou quem tem o Ohikari comum pode
+fazer Johrei em quem tem o Ohikari 'Daikōmyō'? — **Não há impedimento. O que
+recebe é que muda espiritualmente. Quem faz o Johrei é que fica com a proteção
+maior.** E, em qualquer caso, não se deve tirar o Ohikari."*
 
 ### 27.3 A outorga
 
@@ -742,10 +764,180 @@ junto com o corpo**:
 *"— Quando o cursista falece, o que se faz com o Ohikari? — **Basta cremá-lo com
 o Ohikari posto no corpo.**"*
 
-Nenhum objeto de culto coletivo recebe esse tratamento. É um indício de que o
-Ohikari não era um **objeto sagrado autônomo**, mas um vínculo **pessoal** — o
+Nenhuma Imagem coletiva recebe esse tratamento. É um indício de que o
+Ohikari não era um **objeto de sacralidade autônoma**, mas um vínculo **pessoal** — o
 que converge com o que o capítulo 4.1 registra sobre a Imagem: também ela não
 é sagrada por si, e sim por ser representante de quem a traçou.
+
+### 27.4 A doutrina do preço: Deus não cobra, e o que se cobra não é o objeto
+
+Esta é a pergunta que mais confusão produz, e ela se resolve com uma distinção que
+a documentação faz com precisão: **há um valor, e não um preço**. O objeto tem
+valor fixo — mas o que se paga não é o objeto, e o que a divindade concede não tem
+equivalente em dinheiro. As quatro afirmações abaixo são as que sustentam a
+doutrina, e vêm de quatro lugares diferentes.
+
+**Primeira: a divindade não precisa de oferta alguma.** A frase é de Meishu-Sama,
+e é a formulação mais direta do princípio:
+
+> 「以前、ただで治療しろって言う人がいましたが、**勿論、観音様は御礼なんか
+> いらない**が、**取り次ぎする人は家に住んでいるんだし、まさかカスミを食って
+> 生きるわけには行かない**ですからね。……金持ちはうんと御礼を出したらいいんです。」
+> — 『御光話録』15号, 20 de dezembro de 1949
+
+*"Antes havia quem dissesse que se devia tratar de graça; **naturalmente, Kannon não
+precisa de oferta alguma**, mas **quem intercede mora numa casa, e não vai viver
+comendo névoa**. […] Os ricos podem dar bastante oferta."*
+
+A estrutura da frase é decisiva. Há **dois sujeitos** e **duas economias**: a
+divindade, que não cobra nada; e o homem que intercede, que precisa viver. A oferta
+pertence ao segundo, não ao primeiro. Cobrar *para Deus* é impossível, porque Deus
+não recebe; cobrar *para o intermediário* é legítimo, porque o intermediário come.
+
+**Segunda: vender a graça é próprio dos falsos deuses.** A formulação doutrinária é
+de 1943, e é ainda mais severa:
+
+> 「金を上げれば病気を治すという事は**一種の交換条件**であって、いわば**神対人間
+> の取引**のようなもので**御利益を売る**訳であり、実に浅間しき限りである。……
+> 正神は、人間からの報酬や条件などに関わらず、**無我愛に**救わせ給う。」
+> — 「神と悪魔」, 23 de outubro de 1943
+
+*"Aquilo de 'se der dinheiro, curo a doença' é **uma espécie de condição de troca**,
+uma **transação entre Deus e o homem**, é **vender a graça**, e é de uma baixeza
+extrema. […] O deus verdadeiro salva por **amor sem eu**, independentemente de
+recompensa ou condição vinda do homem."*
+
+Aqui está o que se quer dizer quando se diz que «Deus não tem preço»: o
+estabelecimento de uma equivalência entre dinheiro e graça **converte a relação
+religiosa em comércio**, e é isso que define o falso. Não é a existência de uma
+oferenda que é condenada; é a sua transformação em **contraprestação**.
+
+**Terceira: o que dinheiro nenhum pode pagar.** A consequência prática está
+enunciada na mesa-redonda de difusão de 1953, ao tratar da oferta pelo Johrei:
+
+> 「**浄霊の御礼というものは、過去現在未来の悪縁を許して幸福に転換して戴くと
+> いう、これは金で出来るものではない。**」
+> — 布教座談会, 『栄光』191号, 14 de janeiro de 1953
+
+*"**A oferta de gratidão pelo Johrei — o perdoar as más afinidades do passado,
+presente e futuro e convertê-las em felicidade — isso não é algo que se possa fazer
+com dinheiro.**"*
+
+É a frase que faltava: o que se recebe **não tem preço possível**, porque não há
+operação financeira que produza o seu equivalente. A oferta não compra a graça;
+reconhece-a. Quem confunde as duas coisas não está sendo generoso — está
+subestimando o que recebeu.
+
+**Quarta: o valor é fixo, e passar dele é furto.** A contrapartida indispensável —
+e é ela que impede que a gratuidade de Deus se converta em arbítrio do homem:
+
+> 「別項座談会にもあるごとく、**御守はじめその他の私のかいたものの値は一定して
+> いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
+> 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
+> よく心得べきである。」
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+
+*"Como se vê na mesa-redonda publicada em outra seção, **embora o valor do Ohikari e
+dos demais escritos meus seja fixo**, se alguém obtiver um pouco mais de dinheiro,
+**essa quantia constitui o pecado de furto**; portanto, por mais que se empenhe na
+fé, a graça diminuirá na mesma proporção."*
+
+O aviso estabelece os dois lados de uma mesma regra. **De um lado**, o valor é
+fixo — não é preço de mercado, não se negocia, não varia com a condição do
+comprador. **De outro**, cobrar acima dele é furto — e o critério do furto é
+exatamente o excesso sobre o valor fixado. Não há, portanto, «preço» do Ohikari:
+há **um valor fixo**, que não é o preço da graça, e cujo excesso é crime.
+
+**A síntese, e por que a formulação corrente está errada.** Dizer que «o Ohikari é
+vendido» é falso: vender supõe preço livre e lucro, e aqui há valor fixo e o
+excesso é furto. Dizer que «o Ohikari é gratuito» também é falso: há um valor, ele
+é cobrado, e Meishu-Sama o mantém em 1953. A formulação exata é a terceira: **o
+Ohikari tem valor fixo, que não é preço; a graça que ele transmite não tem preço
+algum; e a oferta que se faz não é pagamento, é reconhecimento.** É por isso que
+devolver o troco — como fez a senhora do relato de 1949 — é insulto a Deus: o gesto
+trata como compra e venda o que não é comércio. E é por isso que cobrar a mais é
+furto: o gesto trata como mercadoria o que tem valor determinado.
+
+**Uma precisão sobre a história, que o estudo não pode omitir.** Em 1935, Meishu-Sama
+diz, em prédica, que os Ohikari «se vendem» por cem ienes — «そういうものを一つ
+百円で売ります» (『御講話』, 1º de maio de 1935). A palavra está lá. O que muda,
+entre 1935 e 1953, não é a existência de um valor cobrado, e sim **o regime da
+cobrança**: do preço da peça, com o vocabulário do comércio, para o valor fixo dos
+escritos, cujo excesso é furto. Quem cita 1935 para justificar a venda do Ohikari
+cita a etapa que a própria instituição superou; quem cita 1953 para afirmar a
+gratuidade ignora que o aviso pressupõe valor cobrado. O estudo sustenta as duas
+coisas ao mesmo tempo, porque as duas estão documentadas.
+
+### 27.5 A outorga a quem ainda não fez o curso
+
+A sequência que os relatos mostram — **cura → Kyoshu → Ohikari → Imagem** — é a
+praxe documentada, e não a doutrina da outorga. Confundir as duas coisas é o erro
+que produz a pergunta: se o Ohikari só se entrega a quem fez o curso, então a
+instrução passa a ser condição do dom. A doutrina não diz isso, e diz o contrário
+em três pontos.
+
+**Primeiro: o curso ensina o método, não confere o poder.** É a formulação mais
+direta que existe sobre o que o Kyoshu é:
+
+> 「つまりね、**人を助ける最善の方法を教わるのが教修なんですからね、教修を
+> 受けただけで、人を助けなければなんにもなりませんよ。**」
+> — 『御光話録』7号, 23 de abril de 1949
+
+*"Quer dizer: **o Kyoshu é onde se aprende o melhor método de ajudar as pessoas;
+e só ter recebido o Kyoshu, sem ajudar ninguém, não é nada.**"*
+
+O que se aprende no curso é **como usar**. O que se recebe com o Ohikari é **o
+que usar**. São duas coisas distintas, e a primeira não é a causa da segunda.
+
+**Segundo: o efeito não depende da fé nem da instrução do recipiente.** Perguntado
+diretamente se a cura exige crer, Meishu-Sama responde:
+
+> 「**いや、信じなくても治ります。**ところが神様のほうは、信仰にはいらないうちは
+> 信じなくても治るわけです。」
+> — 『御垂示録』23号, 15 de agosto de 1953
+
+*"**Não — cura-se mesmo sem crer.** Do lado de Deus, enquanto a pessoa ainda não
+entrou na fé, ela cura ainda que não creia."*
+
+Se a cura não depende nem da fé, com maior razão não depende de um curso. E a
+mesma lógica aparece quanto a quem não é membro: 「信者じゃなくてもいい行いをして
+正しい心の人は救われますよ」 — *"mesmo quem não é fiel, se faz o bem e tem o
+coração reto, é salvo"* (『御光話録』7号, 23 de abril de 1949). A salvação não é
+privilégio de instruídos.
+
+**Terceiro: o Ohikari é dado para que a pessoa salve outras — e é nisso que ele
+se completa.** É o que o capítulo 12.1 estabeleceu: o Ohikari não faz do fiel um
+assistido do dirigente, faz dele agente da cura. Ora, se a razão de ser da outorga
+é tornar a pessoa capaz de ajudar, **reter o Ohikari até o curso é reter a
+capacidade de ajudar** — e é precisamente o que o próprio Meishu-Sama censura em
+quem recebeu o curso e não ajuda: «só ter recebido o Kyoshu, sem ajudar ninguém,
+não é nada».
+
+**O que se pode concluir, e com que estatuto.** A conclusão que os três pontos
+sustentam é esta: **o curso é o meio normal de instrução, não a condição de
+validade da outorga.** Quem recebe o Ohikari sem o curso recebe o mesmo objeto e a
+mesma capacidade; o que lhe falta é o aprendizado do uso — e isso se supre depois.
+O que não se pode fazer é inverter a ordem dos valores e negar o Ohikari a quem
+tem necessidade e fé por lhe faltar instrução, porque seria fazer da escola a
+porta da graça.
+
+**O acompanhamento posterior é, aliás, prática documentada, e não expediente de
+emergência.** A instituição o fazia de três modos, todos registrados neste volume:
+o **re-Kyoshu** (再教修), para quem rompia o Ohikari ou precisava de requalificação
+(capítulo 11.6); as **conferências periódicas de difusão**, que reuniam os
+dirigentes para corrigir rumos (capítulo 24); e a **audiência e a visita do
+dirigente**, que eram o instrumento ordinário de formação continuada (capítulo
+17.1). Nada disso, porém, pode ser **vendido como se fosse o objeto**: o que tem
+valor fixo são os escritos, e cobrar acima do fixado é furto (capítulo 22.4); o
+acompanhamento é serviço, e o serviço se sustenta por oferta, não por preço.
+
+**A ressalva de honestidade.** Não há, na documentação consultada, passagem em que
+Meishu-Sama autorize expressamente a outorga sem curso, nem passagem em que a
+proíba. O que há é a praxe (que ligava a outorga ao curso) e a doutrina (que
+separa o método do poder). A conclusão acima é **consequência dos três princípios
+citados**, e é apresentada como tal — não como texto. Quem preferir manter a praxe
+pode fazê-lo; não pode, porém, invocá-la como doutrina, porque a doutrina diz
+outra coisa.
 
 ---
 
@@ -1027,7 +1219,7 @@ igreja**:
 
 *"Nós, membros que tivemos a honra de iniciar **a mina sob a administração da Igreja Média
 Kōei**, estávamos com o ânimo de levar isso até o fim; […] e assim ficou decidido que eu
-me encarregaria da construção de uma usina de concentração de minério de quinze tsubo."*
+me encarregaria da construção de uma usina de concentração de minério de cerca de 50 m²."*
 
 > — 「鉱山においての奇蹟の数々」, 『栄光』109号, 20 de junho de 1951 ·
 > `search2/okage/ko/qkozan02.html`
@@ -1084,11 +1276,20 @@ oitenta**; e por aí se vê quão grande foi a operação."*
 
 > — 「発端」, 『法難手記』, 30 de outubro de 1950 · `search1/ho/hottan.html`
 
-Foram detidos, entre outros, o secretário **井上福夫** e o responsável da
+Foram detidos, entre outros, o secretário **井上茂登吉 (Inoue Motokichi)** e o responsável da
 construção em Atami, **金久平** (造営部熱海主任). Meishu-Sama ficou sob
 interrogatório por vinte e dois dias; o episódio "chegou a um termo" em **12 de
 julho** de 1950. Em 30 de maio, cinquenta policiais fizeram nova busca no
 Templo Anexo de Hakone-Gōra — "eu estava detido, por isso soube depois" (同).
+
+**Nota sobre o nome.** O mesmo secretário aparece na documentação com duas
+grafias: **井上茂登吉**, editor de 『栄光』 preso em 8 de maio de 1950, e
+**井上福夫**, "meu secretário", preso na onda de outubro do mesmo ano. Não há
+documento que declare tratar-se da mesma pessoa, mas a coincidência de função,
+de casa e de período é total, e a hipótese de duas pessoas distintas com o mesmo
+cargo no mesmo ano é implausível. Adota-se aqui a forma **井上茂登吉 (Inoue
+Motokichi)**, que é a que assina os textos da época, registrando-se a variante
+tal como aparece em 『法難手記』.
 
 ![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
 

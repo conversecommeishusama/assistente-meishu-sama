@@ -13,8 +13,8 @@ O acervo não descreve um desenho diferente para cada tipo de unidade. O que ele
 documenta é um critério de **escala**, e a razão disso é doutrinária antes de ser
 estética. Numa prédica de 1935, Meishu-Sama foi questionado sobre por que a Imagem
 da Luz Divina existia em três tamanhos — grande, médio e pequeno — e não em um só.
-A resposta é uma regra de correspondência (*sōō* 相応, "proporção adequada") entre o
-objeto de culto e o nicho que o recebe:
+A resposta é uma regra de correspondência (*sōō* 相応, "proporção adequada") entre a
+Imagem e o nicho que a recebe:
 
 > 「御神体に大中小とあるが、あれは一つにしてもいいじゃないかと言われることが
 > よくあります。……すべてのことは**相当ということが肝腎**で、その家に相当した
@@ -38,66 +38,119 @@ variável decisiva não era o tipo de unidade religiosa, mas o tamanho do lugar 
 culto** — o que explica por que uma unidade grande e uma unidade pequena podiam ter
 imagens de porte diferente sem que isso constituísse graduação hierárquica. A
 segunda é que o critério hierárquico real, na estrutura da igreja, não passava pelo
-tamanho da imagem, e sim pelo **tipo de objeto de culto admitido em cada nível**
+tamanho da imagem, e sim pelo **tipo de Imagem admitido em cada nível**
 (tratado no capítulo 3).
 
-A esse critério de proporção somava-se uma exigência de **ordem**. A hierarquia dos
-objetos de culto já a estabelecia — a caligrafia acima da figura (capítulo 3) —, e a
+A esse critério de proporção somava-se uma exigência de **ordem**. A hierarquia das
+Imagens já a estabelecia — a caligrafia acima da figura (capítulo 3) —, e a
 ela corresponde a disposição no nicho: a Imagem ocupa o lugar próprio, sem que nada a
 iguale ou se sobreponha a ela. A ordem é ela mesma o critério.
 
-Segue-se desse conjunto que a Imagem não é um objeto sagrado autônomo, mas o
-representante de quem a instituiu — e é isso que permite afirmar que ela não pode ser
-venerada acima dele. É esse mesmo princípio que responde à pergunta seguinte.
+Segue-se desse conjunto que a Imagem não é um objeto dotado de sacralidade
+própria, mas o representante de quem a instituiu — e é isso que permite afirmar que ela não
+pode ser venerada acima dele. É esse mesmo princípio que responde à pergunta seguinte.
 
 ### 13.1 O que Meishu-Sama diria de uma Imagem escrita por outra pessoa
 
-Esta é uma pergunta contrafactual e o acervo não a responde diretamente. O que ele
-oferece são duas linhas de raciocínio convergentes.
+Esta é uma pergunta contrafactual: o acervo não contém nenhuma passagem em que
+Meishu-Sama seja perguntado sobre uma Imagem traçada por terceiro. Mas, ao contrário
+do que parecia à primeira vista, **a doutrina responde**, e responde por três
+princípios que se encadeiam. O que falta não é o princípio: é a aplicação literal do
+princípio ao caso, e essa aplicação se faz aqui às claras.
 
-A primeira é a linhagem da subordinação, já vista: a Imagem não é sagrada por si —
-é sagrada porque **foi feita por Meishu-Sama como seu representante**. Numa prédica
-posterior, o mesmo tema aparece ligado à eficácia espiritual: imitar o modo externo
-de culto sem o fundamento gera purificação intensa, isto é, agrava o quadro em vez
-de resolvê-lo. Ao comentar que a igreja passara a entronizar a fotografia de
-Meishu-Sama no tokonoma,
+**Primeiro princípio: a divindade assenta no objeto, e assenta segundo o autor.** A
+doutrina da relação entre espírito e matéria é explícita quanto a isso. Os deuses e
+budas não pairam no vazio: apossam-se de um suporte material, e a qualidade do
+espírito que se apossa do suporte depende da qualidade de quem o produziu:
 
-> 「明主様のお姿を奉斎するというと、お光が強くなりますから、浄化起こります
-> よ、必ず浄化は旺盛になる、ちゃんとしなけりゃならんです。お祭りの方法だけ
-> ま……」
+> 「例えばキリストは十字架へ、諸神諸仏は文字、御鏡、絵画、彫像等へ懸り給い……
+> 右の場合**高級の神霊仏霊は、其作者の人格に関係する**ので、昔から名僧智識や
+> 名人等の絵画彫刻は貴重な物とされた訳である。」
 
-*"Quando se passa a entronizar a imagem de Meishu-Sama, como a Luz se intensifica,
-ocorre purificação — a purificação certamente se torna intensa; é preciso fazer as
-coisas com propriedade. Se for apenas a forma externa do culto…"*
+*"Por exemplo, Cristo se manifesta na cruz; os diversos deuses e budas, nos
+caracteres escritos, nos espelhos, nas pinturas e nas esculturas […] Nesses casos,
+**os espíritos elevados dos deuses e budas estão relacionados à personalidade de
+seu autor**; é por isso que, desde a Antiguidade, as pinturas e esculturas de monges
+famosos, sábios e artistas renomados eram consideradas tesouros."*
+— 『信仰雑話』 (Conversas sobre a Fé), 5 de setembro de 1948
 
-A segunda linha é a **doutrina da escrita como veículo de força espiritual**. Num
-artigo de 1954 sobre os escritos de Meishu-Sama, o autor — escrevendo para uma
-publicação da própria igreja, e portanto sem testemunho neutro, mas refletindo a
-compreensão interna da época — afirma que os caracteres que ele traçava não se
-limitavam a expor a doutrina:
+A frase é decisiva para a pergunta, e é preciso ler nela a consequência que ela
+contém. **O que se venera na Imagem não é o papel nem o traço: é o espírito que ali
+assenta — e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita
+por outra pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro
+suporte, para outro espírito. A doutrina não diz que ela seja inerte; diz algo mais
+grave — diz que o espírito que a ela se ligar será o que corresponde ao seu autor.
 
-> 「明主様の書かれた文字、文章は、単に教えを説き、真理を開明されるに止まる
-> ものではなく、**活字となったそのものが光となって読む者の心奥に透達し**、
-> 人間を不幸に陥いれている根源霊の汚醜を浄めてこれを向上させる。という大神力
-> をともなっているのである。」
+**Segundo princípio: o espírito do autor permanece no objeto.** A permanência não é
+simbólica. Meishu-Sama descreve a própria experiência de sentir, séculos depois, a
+presença do artesão:
 
-*"Os caracteres e os textos que Meishu-Sama escreveu não se limitam a expor o
-ensino e a revelar a verdade: esses próprios caracteres, uma vez impressos, tornam-se
-Luz que penetra o fundo do coração de quem lê, e possuem o grande poder divino de
-purificar a sujeira do espírito-origem que faz a humanidade cair na infelicidade e
-de elevá-la."*
+> 「私のところに宋の青磁があるんです。九百年前のですね。それを見ると疲れる
+> んです。**名人の霊が入っているんです。それがいつまでも入っているんです。**
+> ……」（…）「**鋳物の仏像に作者の霊が入っているものでございましょうか**」
+> ――「**同じことですよ。**鋳物だって、あとで磨いたり、いろいろしますからね。」
 
-Conjugando as duas linhas, a resposta inferencial é que uma caligrafia **escrita por
-outra pessoa** não poderia desempenhar a função que a Imagem desempenha, porque a
-força da Imagem deriva de quem a traçou, e porque a Imagem funciona como
-*representante* de uma pessoa determinada. Mas convém registrar com clareza o
-estatuto desse juízo: trata-se de **inferência a partir de dois princípios
-documentados**, não de uma declaração textual sobre o caso. O acervo não contém
-nenhuma passagem em que Meishu-Sama seja perguntado sobre Imagens de terceiros.
-Quanto a "outra divindade expressa na escrita", o acervo também é silencioso; o que
-se pode afirmar com segurança é que a Imagem não é um objeto sagrado autônomo, mas o
-representante de uma pessoa — donde a impropriedade doutrinária de se venerar, sob o
-nome da mesma devoção, uma figura que não fosse a dele.
+*"Tenho aqui uma celadon da dinastia Song. É de novecentos anos atrás. Quando a olho,
+fico cansado. **O espírito do mestre está dentro dela. E permanece lá
+indefinidamente.** […] — **O espírito do autor entra também numa imagem de buda
+fundida?** — **É a mesma coisa.** Mesmo a fundida é depois polida, trabalhada de
+vários modos…"*
+— 『御垂示録』4号, 10 de dezembro de 1951
+
+Se o espírito do autor permanece no objeto, então o autor é parte da definição do
+objeto — e não um detalhe de execução. É por isso que a mesma doutrina distingue
+radicalmente o original da reprodução:
+
+> 「なんとしても、**版画というものはつまり印刷で、何枚もできるのですから、
+> 作者の魂が抜けている**わけです。**肉筆こそ本当に作者の魂がこもってます**から、
+> まるっきり違います。」
+
+*"De todo modo, **a gravura é, no fundo, impressão: como se tiram muitas cópias, o
+espírito do autor está ausente**. **É na pintura feita à mão que o espírito do autor
+realmente está presente** — é completamente diferente."*
+— 『御教え集』32号, 15 de abril de 1954 (prédica de 15 de março de 1954)
+
+**Terceiro princípio: a Imagem é o representante de Meishu-Sama.** É o que este
+volume já estabeleceu: a Imagem não é sagrada por si, e sim porque foi traçada por
+ele como seu representante. A própria prática da igreja o confirma pelo lado
+inverso: quando alguém ainda não podia entronizar a Imagem, o substituto aceito era
+uma **caligrafia dele** — «御神体代りに» —, e não a imagem de outra procedência:
+
+> 「まだ御神体は御奉斎致しておりませんので、**御神体代りに朝夕お参りさせて
+> 頂いております「日光」の御文字の前で**、乱れる心を独り鎮めておりました。」
+
+*"Como ainda não havíamos entronizado a Imagem da Luz Divina, **em lugar dela fazia a
+saudação matinal e vesperal diante dos caracteres 「日光」 (Nikkō)**, e ali sozinha
+aquietava o coração perturbado."*
+— 『浄霊と医学との比較』
+
+**A conclusão, então, não é uma inferência frágil: é a aplicação dos três
+princípios.** Uma Imagem escrita por outra pessoa não poderia ser a Imagem da Luz
+Divina, por três razões que se somam:
+
+1. **Pelo autor.** O espírito que assenta no objeto guarda relação com a
+   personalidade de quem o produziu. Quem escreve não é Meishu-Sama; logo, o
+   espírito que se liga àquele traço não é o que se liga ao traço dele.
+2. **Pela permanência.** O espírito do autor fica no objeto. Não se trata de uma
+   bênção que se possa transferir depois, por consagração ou por uso: o que fica é o
+   que foi posto por quem escreveu.
+3. **Pela representação.** A Imagem vale como representante de uma pessoa — e uma
+   Imagem de terceiro representa outra pessoa. Venerá-la sob o nome da mesma devoção
+   seria venerar, com o nome dele, uma figura que não é ele.
+
+A consequência prática é tão simples quanto severa: uma Imagem de terceiro pode ser,
+no melhor caso, uma **pintura religiosa** — objeto de arte, de devoção privada, do
+que se quiser —, mas não é um objeto sagrado do mesmo gênero, e não pode ocupar o
+lugar da Imagem no tokonoma. A diferença não está na qualidade do desenho nem no
+material: está em quem escreveu, porque é o autor que determina o espírito que ali
+assenta.
+
+**O que a documentação não diz — e não se deve fingir que diz.** Não há passagem em
+que Meishu-Sama seja perguntado sobre o caso, e ele não formulou uma proibição
+expressa a respeito. O que existe é a doutrina geral, aqui citada, e a sua
+consequência lógica. Quem lê deve poder distinguir as duas coisas: **os três
+princípios são texto; a aplicação ao caso de uma Imagem de terceiro é conclusão
+necessária deles** — e é apresentada como tal, não como citação.
 
 ---
 
@@ -127,13 +180,13 @@ completo da sequência ritual disponível no acervo:
 alimentos (do chefe das oferendas, cinco pessoas até o altar); 3. Retirada após a oração;
 4. Recitação da oração (norito); 5. Retirada; 6. Oferta do ramo sagrado (tamagushi) — do
 Superintendente ao representante dos fiéis, cinco pessoas; 7. Recitação conjunta das
-Orações Tenjin e Zengen-Sanji — de todos, do Superintendente aos fiéis; 8. Canto do poema
+Orações Amatsu Norito e Zengen-Sanji — de todos, do Superintendente aos fiéis; 8. Canto do poema
 sagrado — dirigido pelo Superintendente; 9. Retirada dos oficiantes; 10. Retirada das
 oferendas — todos os oficiantes reaparecem em conjunto. Encerrado o culto, Meishu-Sama
 toma assento."*
 
 Ou seja: **relatório → oferenda de alimentos → oração do oficiante (norito) →
-oferta do ramo sagrado (tamagushi) → recitação conjunta das Orações Tenjin e
+oferta do ramo sagrado (tamagushi) → recitação conjunta do Amatsu Norito e do
 Zengen-Sandji → canto do poema sagrado → retirada dos oficiantes → retirada das
 oferendas.** Só então Meishu-Sama tomava assento. Note-se a posição de Meishu-Sama:
 ele **não presidia** o rito. O culto era conduzido pelo Superintendente e pelos
@@ -174,7 +227,7 @@ possuir a Imagem:
 
 *"Em nossa casa só eu me converti e, por diversas circunstâncias, ainda não
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
-visita matinal e vesperal diante da caligrafia 'Nikkō'**, e ali sozinha aquietava o
+saudação matinal e vesperal diante da caligrafia 'Nikkō'**, e ali sozinha aquietava o
 coração perturbado."*
 
 É a resposta direta à pergunta sobre quem pendurava a caligrafia Komyo em vez da
@@ -233,11 +286,11 @@ ao procurar casa para o templo, a condição especificada foi
 
 > 「**九尺の床の間があって**門構えの家で、家賃は七、八十円の家」
 
-*"uma casa com tokonoma de nove shaku, com portal, e aluguel de setenta ou oitenta
+*"uma casa com tokonoma de cerca de 2,7 m, com portal, e aluguel de setenta ou oitenta
 ien."*
 
 Isto é, o nicho era requisito arquitetônico de primeira ordem, dimensionado à
-altura do objeto de culto. Não há, no entanto, conjunto de regras de orientação
+altura da Imagem. Não há, no entanto, conjunto de regras de orientação
 (frente, direção auspiciosa) específicas por tipo de unidade. O critério documentado
 é o de proporção (proporção entre Imagem e tokonoma, visto no capítulo 4) e o uso
 litúrgico do nicho como lugar da oferenda — no caso da agricultura natural, era ali
@@ -339,8 +392,8 @@ não na prédica oral. Explicando a geografia do mundo espiritual:
 > 数百人の祖霊が居並ぶ事も出来得る**のである。その場合、順序、段階、服装等は
 > 頗る厳格であって、ことごとく相応の秩序が保たれているのである。」
 
-*"O espírito é elástico segundo o pensamento. Por isso **num butsudan de cerca de um
-shaku de largura podem enfileirar-se dezenas ou mesmo centenas de espíritos
+*"O espírito é elástico segundo o pensamento. Por isso **num butsudan de cerca de
+30 cm de largura podem enfileirar-se dezenas ou mesmo centenas de espíritos
 ancestrais**. Nesse caso, a ordem, o grau e a vestimenta são extremamente rigorosos,
 e toda uma hierarquia correspondente é mantida."*
 
@@ -431,8 +484,8 @@ O rito de sufrágio tem, no vocabulário da época, **dois nomes distintos**, pa
 duas cerimônias distintas — e é por isso que a busca pelo conceito ("rito de
 sufrágio") não o encontrava. Ambos estão documentados.
 
-**`御霊祭` — a entronização da Imagem.** As 16 ocorrências estão invariavelmente
-ligadas ao ato de receber o objeto de culto:
+**`御霊祭` (Festa dos Espíritos) — a entronização da Imagem.** As 16 ocorrências
+estão invariavelmente ligadas ao ato de receber a Imagem:
 
 > 「去る六月の十一日に**光明如来様を迎える事となり**、宗宮先生に来て戴き、
 > **御霊祭をして戴きました**。ちょうど祝詞をお唱え致している時……全身にふるえが来て
@@ -492,7 +545,7 @@ para um caso anômalo dentro dele.
 
 | Rito | Japonês | O que é | Quando | Onde | Evidência |
 |---|---|---|---|---|---|
-| Entronização | **御霊祭** | instalação do objeto de culto | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
+| Entronização | **御霊祭** (Festa dos Espíritos) | instalação da Imagem | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
 | Sufrágio | **先祖祭** | elevação dos ancestrais | **recorrente** | altar doméstico | 40 ocorrências |
 
 **O que continua sem fonte:** que o `先祖祭` fosse celebrado **na Sede Geral**. As
@@ -959,6 +1012,75 @@ nominalmente. A leitura mais exata é: **tolerância pastoral com o indivíduo,
 intransigência doutrinária com o método.** Ele não exigia que o fiel rompesse com o
 médico para receber Johrei, mas não admitia que a cura fosse atribuída ao médico.
 
+### 19.5 A intensidade: quando, quantas vezes e por quê
+
+A pergunta que chega hoje com mais frequência — se é lícito receber Johrei muitas
+vezes, de modo intensivo, sem estar em purificação declarada, e se isso pode ser
+tratado como prática cotidiana de fé — não se resolve com uma regra de calendário.
+Resolve-se com **três critérios distintos**, que a documentação enuncia
+separadamente e que a praxe costuma misturar.
+
+**Critério 1 — o Johrei é para o que está doente, e não é rito diário.** A
+resposta é seca, e é de Meishu-Sama:
+
+> 「なんで浄霊したんです。**病気でないとき浄霊してはいけません。**」
+> — 『御垂示録』2号, 10 de outubro de 1951
+
+*"Por que você fez Johrei? **Quando não há doença, não se deve fazer Johrei.**"*
+
+A frase desfaz, de uma vez, as duas confusões simétricas: o Johrei **não é
+devocional** — não substitui a saudação matinal e vesperal diante da Imagem
+(capítulo 6.2), e não é oferecido como se fosse oração; e **não é automático** —
+não se faz «por fazer», nem como rotina de piedade. O critério de sua
+ministração é a existência de um padecimento a tratar, e não a hora do dia.
+
+**Critério 2 — a intensidade é lícita, e a técnica prefere sessões freqüentes a
+uma sessão longa.** Sobre a duração, a instrução é explícita:
+
+> 「浄霊なんかの場合も、つまり**三十分なら三十分、一時間なら一時間やる場合にも、
+> 続けてやらないで、いったん気を入れて、そうしてやると効果がある**んです。……
+> ですから私は一つ事を長くやらないようにする。たいていなことは最近一時間以上
+> やることはめったにない。」
+> — 『御教え集』11号, 15 de julho de 1952
+
+*"Também no caso do Johrei: **quer sejam trinta minutos, quer uma hora, não se
+deve fazer continuamente; põe-se atenção de novo, e assim se obtém efeito.** […]
+Por isso procuro não fazer uma mesma coisa por muito tempo; ultimamente raras
+vezes passo de uma hora."*
+
+A consequência é contraintuitiva e importante: **a intensidade não se mede pela
+duração da sessão, e sim pela freqüência com que se retoma o trabalho com atenção
+nova.** O que a doutrina desaconselha é a sessão interminável e mecânica; o que ela
+admite — e a prática mostra — é a repetição.
+
+**Critério 3 — receber muitas vezes não depende de estar em purificação.** A
+documentação registra o uso intensivo como prática corrente, e o registra sem
+censura, num texto em que a autora descreve irmãs que iam à igreja todos os dias:
+
+> 「御明主様の御仰せのままに**一回でも多く御浄霊を頂きたくて御浄化でなくても
+> 毎日のように教会へ行かれる**のであるが、素直な人は、幸である。」
+> — 「御浄霊と女性美」, 『地上天国』55号, 25 de dezembro de 1953
+
+*"Conforme a palavra de Meishu-Sama, **querendo receber o Johrei uma vez mais,
+mesmo sem estar em purificação iam à igreja quase todos os dias**; e os que são
+assim dóceis são felizes."*
+
+Aqui está, documentado, exatamente o que a pergunta supõe: **o recebimento
+intensivo, «uma vez mais», sem purificação declarada.** É texto de fiel, e não de
+Meishu-Sama; mas é texto publicado pela igreja, e apresenta a prática como
+conforme «a palavra de Meishu-Sama». O que ele não autoriza é transformar essa
+prática em **norma devocional**: receber Johrei não é o mesmo que cultuar, e a
+assiduidade à igreja não substitui a saudação diante da Imagem.
+
+**O que fica, então, como doutrina e o que fica como praxe.** Como doutrina: o
+Johrei trata o padecimento, não santifica a rotina; sua eficácia não depende da fé
+do recipiente (『御垂示録』23号, 15 de agosto de 1953: 「信じなくても治ります」);
+e a intensidade se faz por retomadas, não por sessões prolongadas. Como praxe
+documentada: o recebimento freqüente, inclusive sem purificação, foi praticado e
+elogiado como docilidade. Quem hoje orienta o fiel deve distinguir as duas coisas
+— e não apresentar como mandamento o que é costume, nem como costume o que é
+mandamento.
+
 ---
 
 ## 20. Nutrição
@@ -1035,7 +1157,8 @@ empurra para ela. É uma inversão completa do enquadramento moderno: a dieta n�
 prescreve por proibição, corrige-se o solo, e o paladar se encarrega do resto.
 
 **Quanto ao tipo de vida que Meishu-Sama levava**, o acervo tem uma fonte direta e
-detalhada: o relato de Inoue Motokichi, secretário que o acompanhava de perto,
+detalhada: o relato de **井上茂登吉 (Inoue Motokichi)**, secretário e editor de
+『栄光』 que o acompanhava de perto,
 publicado na 『光』号外 de 30 de maio de 1949 sob o título 「自観大先生の御日常」. É
 um documento de valor excepcional, e convém apresentá-lo pelo que ele efetivamente
 registra.
@@ -1321,16 +1444,70 @@ assunto da consciência do fiel.
 
 ### 21.4 A remuneração dos ministros de dedicação integral
 
-O acervo consultado **não contém** documentação sobre salários, subsídios ou
-remuneração dos ministros de dedicação integral. A busca por termos específicos
-(*報酬*, *月給*, *給料*, *手当*, *生活費*) não retornou material pertinente: as
-ocorrências de *月謝* referem-se a aulas de arte, e as demais, a contextos alheios à
-administração eclesiástica. Nem o regulamento de 1951 nem os relatórios de
-reorganização tratam do assunto. É uma lacuna documental, e convém registrá-la como
-tal: a pergunta não é respondível com o corpus atual. Vale observar que o
-regulamento estabelece órgãos e patrimônio da pessoa jurídica, mas **não menciona
-vínculo empregatício com oficiantes ou ministros** — o que, por si, não prova
-ausência de remuneração, apenas que ela não era objeto do estatuto.
+A pergunta tem três respostas distintas, e é preciso não as confundir: o que está
+documentado, o que se pode inferir com segurança e o que não está documentado de
+modo algum.
+
+**O que está documentado.** Primeiro, a existência de pagamento por serviço
+prestado. A resposta da instituição à acusação de rádio, em 1949, discrimina a
+taxa do curso e inclui nela, expressamente, o **手当 do instrutor**:
+
+> 「次に教修料に関してであるが、**千三百円は講師の手当、入信料、維持会員の会費、
+> バッジ代、書籍代、出張旅費、旅館宿泊費等含まれており**、最近は物価の値上りの
+> ため遠近共相当の増額になっている。」
+> — 「放送に対する抗議文」, 23 de abril de 1949
+
+Segundo, a existência de renda própria do ministro, distinta da oferta ao altar: a
+**御奉謝金** — a oferta que o fiel faz a quem lhe ministrou Johrei — e a
+**御守護御礼**. É o que a mesa-redonda de 1953 registra como receita corrente dos
+dirigentes:
+
+> 「最近は目立って**御守護御礼**も、**御奉謝金**（信者さんが他人を御浄霊した場合に
+> 受ける御礼及び家族を御浄霊させて戴いた場合の御礼）も増えて来ましたが……」
+> — 布教座談会, 『栄光』191号, 14 de janeiro de 1953
+
+Terceiro, e é o ponto que fecha a questão doutrinariamente: **os objetos que
+Meishu-Sama escrevia tinham valor fixo, e cobrar acima dele era furto.** O aviso de
+1953 não fala de taxa de curso, e sim do valor dos escritos:
+
+> 「別項座談会にもあるごとく、**御守はじめその他の私のかいたものの値は一定して
+> いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
+> 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
+> よく心得べきである。」
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+
+Quarto, a contrapartida da dedicação integral. O portador de qualificação não devia
+ter profissão — o que, na prática, significava que vivia do exercício do ministério:
+
+> 「**資格者は職業を持っていてはならない、純粋な御奉仕者であらねばならない**」
+> — comunicação interna citada em 「先生」, 『地上天国』54号, 25 de novembro de 1953
+
+**O que se pode inferir com segurança.** Se o ministro de dedicação integral não
+tinha profissão, e se a instituição lhe pagava 手当 por curso e ele recebia 御奉謝金
+por Johrei, então a remuneração existia **por serviço e por oferta**, e não como
+salário fixo pago pela Sede. A inferência é corroborada pelo vocabulário que o
+artigo de 1953 põe na boca do dirigente corrompido — **昇格、昇給、待遇**,
+"promoção, aumento de salário, tratamento" —: só se pede aumento de salário onde
+salário existe, e o artigo o apresenta justamente como a linguagem que a reforma
+queria extirpar.
+
+**O que não está documentado.** Não há, na documentação consultada, tabela de
+vencimentos, contrato de trabalho, critério de fixação de 手当 por grau, nem
+registro de pagamento mensal pela Sede a ministros. As buscas por *給料*, *月給*,
+*俸給*, *給与* e *手当* não devolvem material administrativo pertinente: as
+ocorrências de *月謝* referem-se a aulas de arte, e as demais, a contextos alheios
+à administração eclesiástica. Nem o Regulamento de 1951 nem os relatórios de
+reorganização tratam de vínculo empregatício com oficiantes ou ministros — o que,
+por si, não prova ausência de remuneração, apenas que ela não era objeto do
+estatuto.
+
+**A leitura que se sustenta, portanto, é esta.** O ministro de dedicação integral
+não era assalariado pela Sede: vivia do que recebia por serviços prestados — a taxa
+do curso, com o 手当 do instrutor explicitamente incluído, e a oferta de gratidão
+pelo Johrei ministrado. O que a doutrina proíbe não é a remuneração do trabalho:
+é **transformar em comércio o que é de Deus** — cobrar acima do valor fixado para
+os escritos é furto, e a própria oferta ao altar não pertence ao intermediário como
+preço, mas como sustento de quem intercede (capítulo 12.3).
 
 ### 21.5 O dízimo
 

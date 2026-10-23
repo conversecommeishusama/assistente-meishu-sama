@@ -401,6 +401,23 @@ méritos estejam no topo" —, e a palavra usada é **功労** (mérito-serviço
 A escala de unidades fica assim: Sede (本部) › Subsede (分所) › Associação (分会) ›
 filial (支部) › Centro de Ensino (教導所).
 
+Lida com cuidado, porém, a frase não descreve três degraus de agregação, e sim
+**quatro**, e a diferença importa para não se ler a grade como uma escada de
+pessoas. A célula é o **Centro de Ensino (教導所)**. Os Centros de Ensino
+reunidos sob um mesmo Ministro Responsável formam a **filial (支部)** — que não é
+contada, é o agrupamento natural de centros sob um ministro. A **Associação
+(分会)** é a unidade que *possui dez ou mais Centros de Ensino*; a ela pertencem
+as filiais, como o próprio texto diz. A **Subsede (分所)** reúne dez ou mais
+Associações. Acima de todas, a Sede (本部).
+
+Duas consequências se seguem, e as duas corrigem leituras correntes. A primeira:
+**a Associação compõe-se de filiais, e não de centros avulsos** — o fator dez
+conta Centros de Ensino, mas a vinculação administrativa passa pela filial, que é
+o nível a que o fiel pertence e a que o Ministro Responsável dirige. A segunda: a
+grade é **territorial desde 1948**, e não apenas a partir da reforma de 1951; o
+que 1951 muda é a *base* do território (a região, em lugar da rede de centros) e
+a extinção das quatro Igrejas Grandes, não a natureza territorial da vinculação.
+
 ### 3.2 A reforma de 1951
 
 Em 5 de fevereiro de 1951 Meishu-Sama substitui essa grade por uma outra, de base
@@ -566,9 +583,11 @@ Ensino; mas desta vez preciso sair de lá, e penso em alugar o depósito de barr
 um parente para fazer Johrei…"*
 — 『御光話録』10号, 10 de julho de 1949 · `search1/situmon/m240503.html`
 
-Havia também a prática de usar hotéis para o Kyoshu quando o Centro de Ensino era
-pequeno — prática que Meishu-Sama **proíbe**, e a razão da proibição é doutrinária, não
-prática:
+Havia também o uso de hotéis para o Kyoshu quando o Centro de Ensino era pequeno.
+**O hotel não é o que Meishu-Sama proíbe.** O que ele proíbe é o deslocamento da
+Imagem da Luz Divina, e a distinção é a chave do trecho: alugar o salão para o curso é
+lícito; entronizar nele, ainda que provisoriamente, a Imagem que não pode ser movida,
+não é.
 
 > 「――教修会のとき、教導所がせまいため旅館などを借ります場合、一時、大光明如来様を
 > 旅館の床の間にお祀りして教修会を開いておりますが、これはよろしゅうございましょうか。
@@ -590,7 +609,7 @@ nem menos."*
 — 「質問応答 御光話」, `search1/situmon/m2411.html`
 
 A regra é notável porque cria um problema prático em nome de um princípio: o curso pode
-ser itinerante, **a Imagem não**. O objeto de culto é que fixa o lugar.
+ser itinerante, **a Imagem não**. É a Imagem da Luz Divina que fixa o lugar.
 
 Há ainda o caso do imóvel próprio abandonado e readaptado — 「そこに古い壊れた家が
 あったので、それを修繕して**そこに奉仕隊が泊まって作業をしています。**」 — *"Havia
@@ -709,8 +728,9 @@ ficou com as unidades que os fiéis haviam construído.
 
 Esta seção é a mais delicada do levantamento, porque exige distinguir **duas escalas**
 que a linguagem corrente confunde. A primeira é a dos **cargos administrativos** — quem
-preside uma igreja, quem chefia uma sede regional. A segunda é a dos **objetos de culto**
-— que Imagem cada pessoa pode entronizar em casa, que amuleto pode portar. A segunda era
+preside uma igreja, quem chefia uma sede regional. A segunda é a das **Imagens da Luz
+Divina e dos amuletos** — que Imagem cada pessoa pode entronizar em casa, que Ohikari
+pode portar. A segunda era
 o eixo real da vida religiosa dos fiéis, e é por ela que se deve começar.
 
 ### 5.1 O axioma: a hierarquia não é democrática
@@ -740,23 +760,38 @@ pode.** Apenas pessoa comum, não…"*
 
 — 『御光話録』12号, 21 de setembro de 1949 · `search1/situmon/m240613.html`
 
-A escala, portanto, não era honorífica. Controlava **acesso a objetos sagrados**, e esse
-acesso era escalonado com precisão.
+A escala, portanto, não era honorífica. Controlava **acesso às Imagens e aos amuletos**,
+e esse acesso era escalonado com precisão.
 
-### 5.2 A escada dos objetos de culto
+### 5.2 As duas escadas: o Ohikari e a Imagem
 
-Reunindo as evidências dispersas, o corpus permite reconstruir uma progressão que corre
-**paralelamente** aos cargos, e que era na prática o que os fiéis experimentavam como
-"subir":
+Reunindo as evidências dispersas, o corpus permite reconstruir não uma, mas **duas
+progressões paralelas**, que a linguagem corrente confunde porque ambas usam os mesmos
+nomes divinos. A primeira é a do **Ohikari**, a caligrafia portátil que se leva ao
+pescoço; a segunda é a da **Imagem da Luz Divina**, o pergaminho que se entroniza no
+tokonoma. Elas não são o mesmo objeto, não se recebem no mesmo ato e não seguem a mesma
+ordem.
 
-| Degrau | Objeto | Quem recebe | Fonte |
-|---|---|---|---|
-| 1 | **Ohikari 「Kōmyō」** | todo fiel, ao fim do Kyoshu | — |
-| 2 | **Byōbu Kannon** (Kannon do biombo) | o fiel, quando a fé amadurece | `『御光話録』12号, 21 de setembro de 1949 · search1/situmon/m240613.html` |
-| 3 | **Imagem da Luz Divina 「Komyo-Nyorai」** | idem — **não** no ato da conversão | `『地上天国』9号, 25 de outubro de 1949 · search1/situmon/situmo11.html` |
-| 4 | **Imagem da Luz Divina 「Daikōmyō Nyorai」** | membro comum, com critério de casa | `『御光話録』12号, 21 de setembro de 1949 · search1/situmon/m240613.html` |
-| 5 | **Ohikari 「Daikōmyō」** | **apenas portadores de qualificação** | idem |
-| 6 | **Imagem 「Daikōmyō Nyorai」 nova**, escrita à mão por Meishu-Sama | **apenas Ministro Responsável** | `18 de maio de 1948 · search1/situmon/m230518.html` |
+**Primeira escada — o Ohikari.** Há três graus, e a ordem é fixa: primeiro o 「光」
+(Hikari), que é *o* Ohikari propriamente dito; depois o 「光明」 (Kōmyō); por último o
+「大光明」 (Daikōmyō). A sequência é a que Meishu-Sama enuncia ao descrever as três
+caligrafias, e é a que os relatos confirmam: ninguém recebe o Kōmyō antes do Hikari.
+
+| Grau | Ohikari | Quem recebe |
+|---|---|---|
+| 1 | **「光」 (Hikari)** — o Ohikari | todo convertido, no ato da conversão ou ao fim do Kyoshu |
+| 2 | **「光明」 (Kōmyō)** — o Ohikari Kōmyō | o fiel, quando a fé amadurece |
+| 3 | **「大光明」 (Daikōmyō)** — o Ohikari Daikōmyō | **apenas portadores de qualificação** |
+
+**Segunda escada — a Imagem entronizada.** Também tem três degraus, mas o critério não
+é a qualificação do portador, e sim a **casa** que recebe a Imagem:
+
+| Degrau | Imagem | Quem recebe |
+|---|---|---|
+| 1 | **御屏風観音 (Byōbu Kannon)** — a Kannon do biombo | o fiel, quando a fé amadurece |
+| 2 | **Imagem da Luz Divina 「Kōmyō Nyorai」** | idem — **não** no ato da conversão |
+| 3 | **Imagem da Luz Divina 「Daikōmyō Nyorai」** | membro comum, com critério de casa |
+| — | **Imagem 「Daikōmyō Nyorai」 nova**, escrita à mão por Meishu-Sama | **apenas Ministro Responsável** |
 
 O degrau 4 tem um critério explícito de adequação à casa, que é simultaneamente
 doutrinário e prático:
@@ -1003,8 +1038,8 @@ vinte e um diretores, sob dois ministros japoneses como conselheiros:
 
 ### 5.7 A reforma anunciada no fim de 1954 — e interrompida
 
-Na entronização no Palácio de Cristal, em 11 de dezembro de 1954, Meishu-Sama anuncia
-aos presentes uma mudança de etapa:
+Na entronização no Palácio de Cristal (水晶殿), em 11 de dezembro de 1954, Meishu-Sama
+anuncia aos presentes uma mudança de etapa:
 
 > 「ただ一言だけ言いますが、**いよいよ御神業の本スジに入って来たわけです。**ですから
 > これから色んな変った事が沢山出て来ますから、まごつかないように……。」
@@ -1016,11 +1051,49 @@ Por isso, daqui em diante aparecerão muitas coisas diferentes; não se perturbe
 
 ![『栄光』289号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
 
-O anúncio é o de uma etapa nova — e dois meses depois Meishu-Sama falece, sem que ela
-se consolidasse. **O que a reforma anunciada continha em concreto, o acervo não
-documenta em fonte que este levantamento possa citar**; registra-se como ponto não documentado.
+**O conteúdo da reforma, no mesmo número.** A palavra pública foi breve; o conteúdo foi
+transmitido pelo secretário-executivo, e é ele que diz o que a reforma era. O texto tem
+três partes, e as três importam:
 
-A exigência mais radical do período, em contrapartida, está documentada — e não vinha de
+> 「本日、明主様が水晶殿に御入りになられますにつきまして、仰せられました「御言葉」を
+> 御取次させて戴きます。……**水晶殿は地上天国の一部の雛形として、神様が御造りになる
+> ようさせられたものであって、これを神様はメシヤ教に造らせるようになされたもので
+> ある。**また、**今後教団の組織にも多少の変革があるものと思う。**」
+
+*"Hoje, a respeito da entrada de Meishu-Sama no Palácio de Cristal, transmito as
+palavras que ele pronunciou. […] **O Palácio de Cristal é, como modelo de uma parte do
+Paraíso Terrestre, aquilo que Deus fez construir; e Deus fez com que a Igreja Messiânica
+o construísse.** Além disso, **penso que daqui em diante haverá também alguma
+transformação na organização da igreja.**"*
+— 御取次 de 阿部晴三 (Abe Seizō), 『栄光』289号, 1º de janeiro de 1955 ·
+`search1/o/otori.html`
+
+O mesmo texto registra o sentido público da obra e, logo depois, o critério da
+reorganização que viria:
+
+> 「『**この水晶殿は決して独占的のものではないので、一人でも多くの人々に天与の
+> 景勝地を楽しんでもらいたい**』と仰せられてますので……　また教団の組織の事に
+> つきましては、明主様には、**段階――階級を設けられるような御模様**でございました。
+> その標準としましては、一つには、**最も御浄霊の優れた人**、また、**信者を沢山
+> お導きになられた方**、また、**神様に対して非常に御奉仕の強い方**、こういった点を
+> 考えまして教団で決めるように、という意味の御言葉を仰言っておられました。」
+
+*"'**Este Palácio de Cristal não é de modo algum algo exclusivo; quer que o maior
+número possível de pessoas desfrute da paisagem que Deus deu**' — assim disse ele […]
+E quanto à organização da igreja, Meishu-Sama dava mostras de querer **instituir
+graus — uma hierarquia**. E o critério seria: primeiro, **quem tem o Johrei mais
+excelente**; segundo, **quem conduziu muitas pessoas à fé**; terceiro, **quem tem o
+serviço mais forte diante de Deus** — que a igreja decidisse considerando esses pontos."*
+— idem
+
+A reforma, portanto, não é um vazio documental: ela é **a passagem de uma hierarquia
+administrativa a uma hierarquia de realização espiritual**, medida por três provas — a
+eficácia do Johrei, a capacidade de conduzir pessoas e a dedicação ao serviço divino —,
+e decidida pela própria igreja. É o oposto exato do critério que a grade de 1948
+aplicava, em que o grau decorria do número de membros da unidade. Dois meses depois
+Meishu-Sama falece, e a reforma não se consolida.
+
+**O que a reforma queria corrigir.** A exigência mais radical do período não vinha do
 anúncio, mas de comunicação interna: **dedicação exclusiva**, que rompia com a figura do
 dirigente que mantinha sua atividade profissional:
 
@@ -1036,21 +1109,31 @@ tenha cortado a profissão anterior e se tenha assumido a figura de mestre, se n
 permanece refletida a antiga consciência profissional e se nos tornamos mestres do tipo
 'dono de loja', acabamos sendo portadores de qualificação que ainda penduram a profissão de
 um lado — não é assim?"*
-— 「先生」, `search2/kikou2/sensei02.html`
+— 「先生」, 『地上天国』54号, 25 de novembro de 1953 · `search2/kikou2/sensei02.html`
 
-O mesmo artigo nomeia três vícios internos que a reforma visava a corrigir: o mestre
-**ゴロツキ先生** (arruaceiro), o **ドラ息子先生** (filho pródigo) e aquele que fala
-sempre de **昇格、昇給、待遇、経営、拡張、縮少** — promoção, aumento, tratamento, gestão,
-expansão, redução (idem). São críticas de dentro, e por isso valem como retrato dos
-problemas reais do período.
+O mesmo artigo nomeia **três tipos de mestre** que a reforma visava a extirpar, e não são
+adjetivos soltos: são três modos concretos de a instituição se corromper por dentro.
+
+| Tipo | Japonês | O que é |
+|---|---|---|
+| **O mestre-dono de loja** | 何々屋的先生 | Aquele que transferiu para o cargo a mentalidade do comércio anterior: pensa a igreja como empresa e a si mesmo como proprietário dela. É o vício de origem, e o artigo o aponta primeiro — foi cortada a profissão na forma, mas não no desejo. |
+| **O mestre-arruaceiro** | ゴロツキ先生 | Aquele que, a qualquer problema, responde com voz alta, punho na mesa e manga arregaçada. O autor observa que não são os iletrados que o fazem, mas sobretudo os que escrevem e discursam — os «intelectuais» do clero. |
+| **O mestre-filho pródigo** | ドラ息子先生 | Aquele que parece bom e é o mais difícil de resolver: vive do que a instituição lhe dá, sem contrapartida de trabalho espiritual. |
+
+O vocabulário que o artigo põe na boca do primeiro tipo é o diagnóstico do conjunto —
+**昇格、昇給、待遇、経営、拡張、縮少** — "promoção, aumento de salário, tratamento,
+gestão, expansão, redução". É a linguagem de quem administra uma empresa, não de quem
+serve a Deus; e o texto acrescenta que foi essa mentalidade que levou a instituição, no
+período, a acabar nas mãos do fisco. As três figuras são críticas feitas de dentro, por
+um dirigente, e por isso valem como retrato dos problemas reais do período.
 
 ### 5.8 O que não existia
 
 A busca em todo o corpus não localizou: seminário, escola sacerdotal ou internato de
 formação; prova escrita, exame ou banca; título de 神職, 僧侶 ou 神主 no sentido de clero
 consagrado; celibato, votos monásticos ou noviciado; distinção entre "clero" e "leigos"
-por outra via que não o grau de qualificação, o acesso a objetos de culto e a posição na
-grade territorial; e formação teológica formal de qualquer espécie.
+por outra via que não o grau de qualificação, o acesso às Imagens e aos amuletos e a
+posição na grade territorial; e formação teológica formal de qualquer espécie.
 
 **A formação era, portanto:** curso curto de admissão (seção 7) somado a prática de campo
 ao lado de um Ministro, recomendação e conferências periódicas de reciclagem. O peso
@@ -1501,7 +1584,7 @@ enrolei no dedo. Contando logo ao mestre, ele disse 'foi uma grande proteção d
 'como você rompeu o Ohikari, faça o re-Kyoshu', e assim o fiz."*
 — `search2/okage/o/qoyayu01.html`
 
-O segundo é a promoção a um novo objeto de culto, e aqui o re-Kyoshu funciona como
+O segundo é a promoção a uma nova Imagem, e aqui o re-Kyoshu funciona como
 requalificação:
 
 > 「昨年四月には、**再教修のお許しを戴き、八月には、メシヤ様御写真と大光明如来様を
@@ -1642,6 +1725,74 @@ das quais este levantamento tenta reconstruir a lógica.
 ---
 
 ## 9. As atividades em torno dos Paraísos Terrestres
+
+**Por que as obras importam para este estudo.** É fácil ler a construção dos
+Paraísos Terrestres como obra de prestígio, ou como cenário para a difusão. Para
+Meishu-Sama ela era outra coisa: era **o Plano Divino tomando corpo**. E a chave
+dessa leitura está na distinção que ele mesmo faz entre o espírito e o corpo do
+projeto, e entre o modelo e a cópia:
+
+> 「いつも言うとおり、**箱根は霊で熱海は体**ですから、熱海ができあがるということは
+> 体的に大きくなるというわけです。**御神業というものは、すべて型でやってゆく**
+> のですから、本元ができ、また形が大きくなるということは、全体的にそうなる
+> わけです。」
+> — 『御教え集』29号, 15 de janeiro de 1954 (prédica de 27 de dezembro de 1953)
+
+*"Como sempre digo, **Hakone é o espírito e Atami é o corpo**; portanto, Atami
+ficar pronto significa que se cresce corporalmente. **O Trabalho Divino se faz
+todo por tipos** — o original se estabelece, e a forma crescer significa que o
+conjunto cresce."*
+
+Dessa lógica se seguem três consequências que o estudo não pode omitir.
+
+**Primeira: as obras são «tipo» (型), e não ornamento.** O que se constrói num
+lugar é modelo do que deve ocorrer no mundo. É o que ele diz do Paraíso de Atami:
+
+> 「**熱海の地上天国ができるということは、世界的の地上天国のごく根本の型**なのです
+> から、これができると霊界ではたいへんなことになるのです。」
+> — 『御教え集』32号, 15 de abril de 1954 (Grande Culto da Primavera, 25 de março de 1954)
+
+*"**O Paraíso Terrestre de Atami ficar pronto é o tipo fundamental do Paraíso
+Terrestre mundial**; por isso, quando ele se completa, no mundo espiritual
+acontece algo enorme."*
+
+**Segunda: a sequência das obras é doutrinária, e não cronológica por acaso.**
+Primeiro Hakone — o espírito: o jardim, o 日光殿 (Nikkōden, «Palácio da Luz
+Solar»), que servia de salão de audiência e de Johrei, e o museu. Depois Atami — o
+corpo: o メシヤ会館 (Templo Messiânico), o Salão da Salvação e, no alto do mirante,
+o 水晶殿 (Palácio de Cristal), que ele mesmo descreve antes de existir:
+
+> 「来年は会館と展望台ですが、**展望台のガラスの家は「水晶殿」という名前をつけた**
+> のです。……これは予定よりか大きくして、百人ぐらいが一度に腰掛けて景色の鑑賞が
+> できるわけです。……**美術館のほうは箱根のちょうど倍の大きさに**して、いろいろな
+> 点において箱根の経験でよく分かりましたから、すばらしいものを造るつもりです。」
+> — 『御教え集』29号, 15 de janeiro de 1954
+
+*"No ano que vem, o Salão e o mirante; **à casa de vidro do mirante dei o nome de
+«Palácio de Cristal»**. […] Fiz maior do que o previsto, e cerca de cem pessoas
+podem sentar-se de uma vez para contemplar a paisagem. […] **O museu, faço com o
+dobro exato do tamanho do de Hakone**, e, como a experiência de Hakone me
+ensinou muito em vários pontos, pretendo construir algo esplêndido."*
+
+**Terceira: o museu não é ornamento cultural, é instrumento de elevação.** A
+finalidade declarada é a formação do gosto como via de aperfeiçoamento humano:
+
+> 「**日本美術のすばらしい芸術的効果を、多くの人に見せて楽しませて品性を向上
+> させる**ということと、今の文明というものは……美によって文明に役立つという
+> ことが、今まで非常に閑却されていたわけです。……**欠点を補うという意味で
+> 立派なものを造る**ということが根本ですから」
+> — 『御教え集』29号, 15 de janeiro de 1954
+
+*"**Mostrar a muitas pessoas o maravilhoso efeito artístico da arte japonesa,
+fazê-las desfrutar e elevar o caráter** — e, quanto à civilização atual […] o
+fato de a beleza servir à civilização foi até hoje extremamente negligenciado.
+[…] A raiz é **construir coisas excelentes no sentido de suprir essa falta**."*
+
+É essa a razão pela qual as obras de Hakone e de Atami entram num estudo sobre a
+**difusão**: elas são, no esquema de Meishu-Sama, o próprio conteúdo do que se
+difunde — o Paraíso Terrestre que se mostra antes de se pregar. Quem lê a década de
+1950 sem elas perde o eixo: vê uma instituição construindo sedes, quando o que se
+construía era o **modelo do mundo**.
 
 ### 9.1 Os sítios
 
@@ -1833,7 +1984,7 @@ demonstração pública:
 > 目下勤労奉仕隊員数十名が努力中である。**」
 
 *"Também o Departamento Social desta organização, desta vez num ponto a algumas centenas de
-metros do Parque de Amoreiras de Atami, desenvolve um terreno de dez mil tsubo, reúne todos
+metros do Parque de Amoreiras de Atami, desenvolve um terreno de cerca de 33 mil m², reúne todos
 os tipos de flores do Japão, visa a um jardim florido exemplar, e está prestes a iniciar o
 cultivo em larga escala; no momento, várias dezenas de membros da brigada de serviço estão
 se empenhando."*
@@ -1953,7 +2104,7 @@ convenção do próprio dossiê é não alterar o texto-base.
    ler o manual em voz alta.
 3. **A ascensão na estrutura dependia de mérito-serviço** — número de pessoas conduzidas,
    valor ofertado, recomendação —, nunca de formação acadêmica.
-4. **O eixo real da hierarquia eram os objetos de culto**, não os cargos: a progressão do
+4. **O eixo real da hierarquia eram as Imagens e os amuletos**, não os cargos: a progressão do
    fiel se media pelo que ele podia entronizar em casa e portar consigo.
 5. **As duas nomenclaturas de grau são uma substituição, não duas séries**: 教導師 cede
    lugar a 中教師 entre agosto de 1951 e fevereiro de 1952, com três meses de sobreposição.

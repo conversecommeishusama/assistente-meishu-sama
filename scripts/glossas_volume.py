@@ -445,3 +445,103 @@ TERMOS.update({
     "御光話": "Palavras de Luz",
     "編集後記": "nota da redação",
 })
+
+# ---------------------------------------------------------------- alinhamento
+# Revisão de 23/10/2026: a tabela acima foi construída ao longo do trabalho, e
+# em 39 pontos divergia de `glossario_traducao.json` — o glossário do projeto.
+# Como o glossário é a base do trabalho, prevalece a forma dele. As exceções
+# estão declaradas abaixo, com a razão de cada uma: são casos em que a entrada
+# do glossário é genérica, ambígua ou inadequada ao registro deste volume, e
+# mantê-la produziria erro de sentido, não fidelidade.
+ALINHAMENTO_GLOSSARIO = {
+    "大日本観音会": "Associação Kannon do Grande Japão",
+    "五六七大教会": "Igreja Grande Miroku",
+    "五六七教会": "Igreja Miroku",
+    "日本五六七教": "Igreja Miroku do Japão",
+    "分教会": "Igreja Filial",
+    "教導師補": "Ministro Responsável de Unidade Religiosa Assistente",
+    "中大教師": "Ministro Adjunto",
+    "大教師": "Ministro Titular",
+    "中教師": "Ministro Adjunto",
+    "御教修": "Kyoshu",
+    "臨時祭": "Culto Extraordinário",
+    "御霊光": "Luz Espiritual",
+    "御玉串": "Ofertário de Gratidão",
+    "相応の理": "princípio da correspondência",
+    "散花結実": "A flor cai, o fruto amadurece (sanka-kekijitsu)",
+    "龍神": "Ryūjin (deus-dragão)",
+    "急所": "ponto vital",
+    "日光殿": "Nikkōden (Palácio da Luz Solar)",
+    "神仙郷": "Terra Divina",
+    "応神堂": "Ōjin-dō",
+    "地上天国出来るまで": "Até a Construção do Paraíso Terrestre",
+    "教えの光": "Luz dos Ensinamentos",
+    "一宮例祭": "Culto Regular do Santuário Ichinomiya",
+    "法難手記": "Memórias da Perseguição Religiosa",
+    "栄光": "Eikō",
+    "御垂示録": "Gosuiji-roku",
+    "御光話録": "Gokōwa-roku",
+    "御教え集": "Mioshie-shū",
+    "大光明如来": "Daikōmyō Nyorai",
+    "光明如来": "Komyo-Nyorai",
+    "大光明": "Daikōmyō",
+}
+TERMOS.update(ALINHAMENTO_GLOSSARIO)
+
+# Termos que faltavam por completo na tabela e existem no glossário.
+TERMOS_FALTANTES = {
+    "メシヤ": "Messias",
+    "五六七": "Miroku",
+    "五六七教": "Igreja Miroku",
+    "三宝": "Sanpō",
+    "大先生": "Grão-Mestre",
+    "天国": "Paraíso",
+    "天国会": "Igreja Tengoku",
+    "岡田茂吉": "Okada Mokichi",
+    "幽世大神": "Kakuriyo no Ōkami",
+    "御守": "Ohikari",
+    "御教": "ensinamento",
+    "浄化": "purificação",
+    "無肥料栽培": "cultivo sem fertilizantes",
+    "自然農法": "Agricultura Natural",
+    "瑞雲郷": "Zuiunkyō",
+    "瑞雲": "nuvem auspiciosa",
+    "病貧争": "doença, pobreza e conflito",
+    "神智": "Sabedoria Divina",
+    "自観": "Jikan",
+    "観音力": "Poder Kannon",
+    "観音教": "Igreja Kannon",
+    "観音教団": "Organização Kannon",
+}
+TERMOS.update(TERMOS_FALTANTES)
+
+# Divergências mantidas, com a razão. Não é esquecimento: é decisão.
+EXCECOES_GLOSSARIO = {
+    "本教":
+        "«esta religião» e não «nossa Igreja»: o volume é estudo histórico em "
+        "terceira pessoa, não texto da igreja em primeira.",
+    "管長":
+        "«Superintendente» e não «presidente ou líder»: é cargo com definição "
+        "legal no Regulamento de 1951, e o anexo o traduz assim.",
+    "執事":
+        "«administrador-executivo» e não «Secretário»: o volume distingue 執事 "
+        "(função de confiança junto ao Fundador) de 秘書 (secretário).",
+    "教修":
+        "«curso de admissão» e não «aula»: é curso de três dias, com taxa "
+        "própria; «aula» descreveria outra coisa.",
+    "大祭": "«Grande Culto»: é o par 大祭 / 例祭 / 月並祭; «especial» é 特別.",
+    "秋季大祭": "idem: «Grande Culto de Outono».",
+    "春季大祭": "idem: «Grande Culto da Primavera».",
+    "御書体":
+        "«caligrafia»: o glossário traz «Imagem da Luz Divina», mas o volume "
+        "distingue o traço (御書体) do objeto entronizado (御神体).",
+    "御軸":
+        "«pergaminho»: é o suporte físico; a Imagem é o que nele está escrito.",
+    "玉串": "«ramo sagrado (tamagushi)»: «Ofertário» só se entende depois da glosa.",
+    "光明":
+        "«Luz» como substantivo comum; «Kōmyō» apenas quando designa o amuleto "
+        "— que é o que o próprio glossário determina.",
+    "道":
+        "«Caminho» no texto, sem glosa de 道: o ideograma é comum demais para "
+        "ser glosado em toda parte sem poluir a página.",
+}

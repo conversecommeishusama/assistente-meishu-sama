@@ -12,7 +12,7 @@ comparecia depois, como o venerando diante de quem a assembleia se curvava
 (capítulo 5.1); a condução cabia ao Superintendente e aos oficiantes nomeados. A
 segunda é a
 **natureza da oferenda**: no grande culto ela era solene e codificada — oferendas
-de mar e montanha (海山のお供物), dispostas diante do objeto de culto, e o
+de mar e montanha (海山のお供物), dispostas diante da Imagem da Luz Divina, e o
 **fruto da ameixeira** como oferenda que encarnava o sentido do rito, *散花結実*,
 "flor dispersa, fruto realizado":
 
@@ -59,8 +59,8 @@ oferendas no oratório dos antepassados, mas "das oferendas do Kōmyō Nyorai no
 tokonoma, **nem um único grão do arroz lavado ofertado** (御洗米一粒も) foi
 danificado".
 
-**O culto doméstico** — a visita matinal e vesperal diante da Imagem, na própria
-casa. É o degrau de base, tratado adiante.
+**O culto doméstico** — a saudação matinal e vesperal (朝夕の御挨拶) diante da
+Imagem, na própria casa. É o degrau de base, tratado adiante.
 
 A diferença entre o Culto Mensal e o Culto Regular, em resumo: o **mensal**
 pertence ao ciclo do calendário comum a todas as unidades, e é o que acompanha a
@@ -119,16 +119,16 @@ ainda não possuía a Imagem:
 
 *"Em nossa casa só eu me converti e, por diversas circunstâncias, ainda não
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
-visita matinal e vesperal diante da caligrafia 「日光」 (Nikkō, "Luz do Sol")**,
+saudação matinal e vesperal diante da caligrafia 「日光」 (Nikkō, "Luz do Sol")**,
 e ali sozinha aquietava o coração perturbado."*
 — 「浄霊と医学との比較」
 
 A caligrafia em questão é a que traz os dois caracteres **日光** — *nikkō*, "luz
 do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明,
-大光明, tratadas no capítulo 3.3). Era um objeto de culto doméstico, pendurado no
+大光明, tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
 tokonoma, que funcionava explicitamente como **substituto** (*御神体代り*) da
 Imagem enquanto a família não a recebia. Sobre oferendas nesse caso específico a
-documentação não se pronuncia; o relato menciona apenas a visita e a quietude do
+documentação não se pronuncia; o relato menciona apenas a saudação e a quietude do
 coração.
 
 Ao culto doméstico pertence ainda, com estatuto próprio, o **sufrágio dos

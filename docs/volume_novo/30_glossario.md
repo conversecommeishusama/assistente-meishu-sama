@@ -50,7 +50,7 @@ capítulo em que cada um é tratado.
 | 講習要項 | kōshū yōkō | programa de curso de 1947 | 4 |
 | 光明 | kōmyō | "Luz", segundo grau de Ohikari e de Imagem | 12, 19 |
 | 光明如来 | Kōmyō Nyorai | Tathāgata da Luz | 12 |
-| 五十六七 | Iso-roku | grafia numérica usada em nomes próprios | 2 |
+| 五十六七 | Iso-roku | "cinco, seis, sete" — romaji *iso-roku*; vertido como Miroku | 2 |
 | 座談会 | zadankai | mesa-redonda | 14 |
 | 師補 | shiho | abreviatura de 教導師補 | 9 |
 | 支部 | shibu | filial, degrau de base da difusão | 6, 8 |
