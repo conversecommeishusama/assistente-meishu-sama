@@ -57,9 +57,14 @@ NPROC = os.cpu_count() or 4
 MAX_LOAD = float(os.environ.get("MONITOR_MAX_LOAD", 8.0))
 
 # p95 de /api/chat. Referência medida: perguntas normais levam 27-57s; as
-# difíceis (fontes que se contradizem) 130-175s. 90s no p95 significa que a
-# maioria está a demorar como as difíceis -- ou que há fila.
-MAX_P95_CHAT = float(os.environ.get("MONITOR_MAX_P95_CHAT", 90.0))
+# difíceis (fontes que se contradizem) 130-175s. O p95 real desta instalação
+# anda em 100-131s mesmo com a máquina ociosa -- é o pipeline conhecido
+# (~100s de busca + ~40s de síntese), não fila nem regressão. Um limite de 90s
+# disparava sempre, o que treina quem lê o log a ignorar o alerta. 140s fica
+# acima do p95 observado e abaixo do timeout de 300s: só alerta se o pipeline
+# sair do envelope documentado. Baixar para 90-100s só faz sentido se o
+# pipeline encolher.
+MAX_P95_CHAT = float(os.environ.get("MONITOR_MAX_P95_CHAT", 140.0))
 
 # Janela da análise do access log. 24h (e não minutos) porque o volume real de
 # /api/chat é baixo: 111 pedidos em 7 dias = ~0,7/hora. Uma janela curta quase

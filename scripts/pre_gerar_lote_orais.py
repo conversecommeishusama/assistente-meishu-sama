@@ -40,7 +40,14 @@ def _normalizar(s: str) -> str:
     return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower()
 
 
-def listar_arquivos(todos: bool = False) -> list[str]:
+def listar_arquivos(todos: bool = False, lista: str | None = None) -> list[str]:
+    if lista:
+        # Lista explícita: um nome de obra por linha. Permite limitar o lote ao
+        # âmbito aprovado (ex.: só escritos do Meishu, sem material
+        # institucional) sem duplicar aqui a política de autoria.
+        with open(lista, encoding="utf-8") as f:
+            nomes = [l.strip() for l in f if l.strip()]
+        return nomes
     nomes = [f for f in os.listdir(ARQUIVOS_DIR) if f.endswith(".txt") and ".bak" not in f]
     if not todos:
         nomes = [f for f in nomes if any(c in _normalizar(f) for c in COLECOES_ORAIS)]
@@ -68,13 +75,19 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=5)
     ap.add_argument("--todos", action="store_true")
+    ap.add_argument(
+        "--lista",
+        help="Ficheiro com a lista de obras (uma por linha). Ignora o "
+             "checkpoint `feitos`: o cache por trecho é a fonte de verdade, "
+             "por isso obras já tocadas mas com trechos novos são reprocessadas.",
+    )
     args = ap.parse_args()
     n = args.workers
 
-    arquivos = listar_arquivos(todos=args.todos)
+    arquivos = listar_arquivos(todos=args.todos, lista=args.lista)
     estado = carregar_estado()
     feitos = set(estado.get("feitos", []))
-    fila = [f for f in arquivos if f not in feitos]
+    fila = arquivos if args.lista else [f for f in arquivos if f not in feitos]
     print(f"Total: {len(arquivos)} | feitos: {len(feitos)} | fila: {len(fila)}", flush=True)
     if not fila:
         print("Nada a fazer.", flush=True)
@@ -111,6 +124,12 @@ def main() -> int:
     # Sobe N workers, cada um ligado ao seu daemon (spool via env).
     procs = {}
     idx = 0
+    # Progresso honesto: o numerador é "obras já despachadas" e o denominador
+    # é o total da lista. Antes o denominador era `len(fila)` mas o numerador
+    # somava `feitos` (checkpoint antigo), o que produzia "[84/15]" num lote
+    # de 15 obras.
+    total_obras = len(arquivos)
+    concluidas = total_obras - len(fila)
 
     def lancar(arquivo, daemon_idx):
         env = dict(os.environ)
@@ -129,7 +148,8 @@ def main() -> int:
                 p = lancar(arquivo, daemon_idx)
                 procs[p] = arquivo
                 idx += 1
-                print(f"[{len(feitos)+idx}/{len(fila)}] {arquivo} (daemon {daemon_idx})", flush=True)
+                print(f"[{concluidas + idx}/{total_obras}] {arquivo} "
+                      f"(daemon {daemon_idx})", flush=True)
 
             terminados = [pp for pp in procs if pp.poll() is not None]
             if not terminados:
@@ -140,7 +160,9 @@ def main() -> int:
                 feitos.add(arquivo)
                 estado["feitos"] = sorted(feitos)
                 salvar_estado(estado)
-                print(f"[{len(feitos)}/{len(fila)}] concluído: {arquivo} (rc={p.returncode})", flush=True)
+                concluidas += 1
+                print(f"[{concluidas}/{total_obras}] concluído: {arquivo} "
+                      f"(rc={p.returncode})", flush=True)
     except KeyboardInterrupt:
         print("\nInterrompido. Estado salvo — reexecute para retomar.", flush=True)
         for p in list(procs):

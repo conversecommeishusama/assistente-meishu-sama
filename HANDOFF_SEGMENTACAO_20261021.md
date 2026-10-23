@@ -491,3 +491,107 @@ usei para validar.
   `A Story of Ukiyo-e.txt` (obra legítima em inglês) das exclusões.
 - `_par_emparelhado('jp', obra)` devolve o par **PT**, não o JP — é o inverso do
   que o nome sugere. Para ir de PT→JP usar `RENOMEACAO_PT_PARA_JP[obra]`.
+
+---
+
+## 6-E. Retoma do lote de áudio (23/10/2026)
+
+### O que se encontrou ao retomar
+
+| Item | Estado |
+|---|---|
+| Cobertura de áudio | **47 379 / 62 565 trechos = 75,73 %** |
+| Backlog (`--tipo todos`) | **15 186 trechos** em 27 obras |
+| `goshinsho-tts-pregen` | inactive desde 23/10 00:35 (exit 0: fila dos orais esgotada) |
+| Chave Fish | ausente do `.env` → os 84 trechos de 22/10 ficaram em XTTS |
+| mp3 de 0 bytes | **corrigidos** nesta data (ver `9a27f5a6`) |
+
+Os 83 ficheiros orais estavam **todos** no checkpoint — o pregen não tinha nada
+a fazer sem `--todos`.
+
+### O problema do `--todos`: autoria
+
+`--todos` varre as 137 obras da leitura, e isso inclui obras que **não são
+dele**: Manual/Guia/Doutrina/HAKONE, e os periódicos que misturam artigos dele
+com texto institucional (Tijotengoku 3 440, Kyusei 1 648, Relatos 2 507 em
+falta). Narrar esses ficheiros com a voz clonada **atribui-lhe texto alheio** —
+é um problema de atribuição, não de CPU.
+
+Solução: a política de autoria já existe no serviço (`sincronizar_audios.
+NAO_MEISHU` + `filtrar_obras('escrita')`). Em vez de a reescrever, o novo
+`scripts/montar_lista_audio.py` reutiliza-a e escreve a lista que o lote
+consome via `--lista`.
+
+| Âmbito | Obras | Trechos em falta |
+|---|---|---|
+| Escritos do Meishu (`--tipo escrita`) | 15 | **6 725** |
+| Periódicos + institucional | 12 | **8 461** |
+
+**O lote está a correr só o primeiro.** Os 8 461 dos periódicos ficam à espera de
+decisão (ver §6-F).
+
+### O que foi feito
+
+1. `scripts/montar_lista_audio.py` (**novo**) — monta a lista pelo âmbito
+   aprovado, ordenada por pendência, e imprime as contagens por obra.
+2. `scripts/pre_gerar_lote_orais.py` — novo `--lista` (uma obra por linha).
+   Com `--lista` o checkpoint `feitos` **não** filtra: o cache por trecho é a
+   fonte de verdade, pelo que uma obra já tocada mas com trechos novos é
+   reprocessada (era exactamente o furo do checkpoint por obra).
+   Corrigido também o progresso do log: `[84/15]` → `[n/15]`.
+3. Unidade `goshinsho-tts-pregen.service` passa a
+   `--workers 2 --lista /var/www/goshinsho/data/tts_lista_escrita.txt`
+   (em `/etc` e em `deploy/`, sincronizados).
+
+> A lista fica em `data/` porque a unidade tem `PrivateTmp=true`: um ficheiro em
+> `/tmp` não seria visível ao serviço.
+
+### Desempenho medido (com o app a responder)
+
+| Métrica | Valor |
+|---|---|
+| Taxa de geração | **~6 trechos/min** (2 daemons XTTS) |
+| ETA dos 6 725 | **~19 h** |
+| Load average | 3,2–3,5 de 14 núcleos |
+| `GET /` no app | **3,5 ms** |
+| Tecto de CPU do lote | 600 % (drop-in `10-limites-cpu.conf`) |
+
+### Como acompanhar
+
+```bash
+tail -f /var/www/goshinsho/logs/tts_pre_geracao.log
+.venv/bin/python scripts/sincronizar_audios.py --dry-run --tipo escrita
+.venv/bin/python scripts/montar_lista_audio.py            # regenera a lista
+systemctl stop goshinsho-tts-pregen                        # parar
+```
+
+### Monitor de saúde
+
+`MAX_P95_CHAT` passou de **90 s para 140 s** (`scripts/monitorar_saude_producao.py`).
+O p95 real desta instalação anda em 100–131 s **com a máquina ociosa** — é o
+pipeline conhecido (~100 s de busca + ~40 s de síntese), não fila. A 90 s o
+alerta disparava sempre, o que treina quem lê o log a ignorá-lo. 140 s fica acima
+do p95 observado e abaixo do timeout de 300 s.
+
+---
+
+## 6-F. Pendente de decisão: áudio dos periódicos (8 461 trechos)
+
+Tijotengoku, Kyusei e Relatos de Milagres são publicações **mistas**: contêm
+artigos dele e texto da instituição no mesmo ficheiro. A voz clonada no ficheiro
+inteiro atribui-lhe o que não é dele.
+
+Caminhos possíveis:
+
+1. **Não narrar** os periódicos (ficam só em texto).
+2. **Narrar com o narrador** (edge), sem a voz dele — honesto, mas perde a
+   vantagem da voz.
+3. **Segmentar por autoria** antes de gerar, usando a lista já existente
+   `reports/periodicos_trabalho/PERIODICOS_MEISHU_SAMA_FINAL.json` (1 187 itens
+   com `arquivo`, `decisao`, `chars`, `cobertura`): só os artigos atribuídos a
+   ele levam a voz clonada; o resto, narrador. É a via que preserva o trabalho
+   já feito sem inventar autoria.
+
+O material institucional (Manual, Guia, Doutrina, HAKONE, Ukiyo-e, Jornais,
+Asahi, Ensinamentos diversos, Esboço da Medicina) não tem essa ambiguidade: não
+é dele, logo o narrador é a única voz defensável.

@@ -114,3 +114,8 @@ filme_meishu_sama/
 # RESTAURADO: acervo textual rattail -- 8,6 GB em /var/www/rattail (fora do
 # repositório, compartilhado com o filme). NUNCA versionar aqui.
 /var/www/rattail/
+# Cópia pública do volume único (o original versionado está em docs/)
+static/downloads/dossie-*.pdf
+
+# Lista de obras do lote de áudio (gerada por scripts/montar_lista_audio.py)
+data/tts_lista_*.txt
