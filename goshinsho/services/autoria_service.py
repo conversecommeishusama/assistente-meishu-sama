@@ -58,10 +58,10 @@ PRIOR_DAS_MISTAS = {
 
 # Material de terceiros: não é texto dele, em nenhum trecho.
 #
-# ⚠️ Esta lista está VAZIA de propósito, e o resultado é uma correção, não uma
-# omissão. Em 23/10/2026 verificou-se uma a uma as obras que a política antiga
-# (`sincronizar_audios.NAO_MEISHU`) tratava como "institucionais" e concluiu-se
-# que TODAS são escritas por ele, em primeira pessoa:
+# ⚠️ A lista é curta de propósito. Em 23/10/2026 verificou-se uma a uma as obras
+# que a política antiga (`sincronizar_audios.NAO_MEISHU`) tratava como
+# "institucionais" e concluiu-se que quase todas são escritas por ele, em
+# primeira pessoa:
 #
 #   · Manual da Igreja ......... "Este pequeno livreto foi compilado por mim"
 #   · Doutrina da Igreja ....... "Prefácio — Okada Jikan" (assinado)
@@ -71,9 +71,16 @@ PRIOR_DAS_MISTAS = {
 #   · Guia Rápido, Jornais, Revista Asahi, Ensinamentos diversos,
 #     Esboço da Medicina ...... doutrina e palestras dele
 #
-# Manter a lista vazia é o que evita narrar as próprias palavras dele com voz
-# de narrador. Se aparecer uma obra de terceiros, acrescenta-se aqui.
-OBRAS_DE_OUTROS: set[str] = set()
+# Excluí-las tirava-lhe as próprias palavras — foi o erro que esta lista veio
+# corrigir. Só entra aqui obra cujo REGISTO não é dele.
+OBRAS_DE_OUTROS: set[str] = {
+    # Decisão do usuário (23/10/2026): "no ítem 2 pode manter tudo na voz
+    # normal". As palavras são dele (curso ditado em 1935), mas o registo é de
+    # um discípulo — o ficheiro abre com "Transcrição do curso feita por um
+    # discípulo". Narrar a transcrição na voz dele faria passar por fala
+    # directa o que é apontamento de terceiro.
+    "19350000 - Curso Kannon (1~7).txt",
+}
 
 # Sobreposições explícitas por artigo: {ficheiro: {índice do artigo: autor}}.
 #
@@ -92,6 +99,28 @@ SOBREPOSICOES: dict[str, dict[int, str]] = {
         3: "outro",   # narrativa do fiel ("Eu: …")
         4: "outro",   # "Povo do Japão"
         5: "outro",   # Ficha Técnica (奥付)
+    },
+
+    # 自観叢書 第4篇『奇蹟物語』 — decisão do usuário (23/10/2026): "o formato é
+    # de relato do milagre com comentários de Meishu-Sama. O relato pode ser
+    # deixado na voz normal e o comentário de Meishu-Sama na voz dele."
+    #
+    # Estrutura verificada (spec de 35 artigos):
+    #   0–7   ensaios dele, em 1.ª pessoa — 序文, 観世音菩薩と私, 私の告白,
+    #         本教救いの特異性, 入信後の神懸り, 霊写真, 黄泉比良坂の戦.
+    #         («Como todos desejam saber do innen entre Kanzeon-Bosatsu e mim…»,
+    #          «escreverei aqui as circunstâncias em que o vivenciei»)
+    #   8–34  relatos assinados por fiéis — nome, idade, igreja e endereço.
+    #
+    # Ressalva registada: neste volume NÃO há comentário intercalado nos
+    # relatos. Verificado no original japonês, que não tem nenhum marcador
+    # (御教え/御垂示/（お伺）/明主/自観) a meio dos relatos — a única ocorrência
+    # de `御教え` é o título do art. 34. Se aparecer comentário dele, o ponto
+    # certo para o marcar é aqui (passa a ser preciso dividir DENTRO do artigo,
+    # o que a estrutura actual de spans não faz — ver §6-G do handoff).
+    "19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt": {
+        **{i: "meishu" for i in range(0, 8)},   # ensaios e prefácio dele
+        **{i: "outro" for i in range(8, 35)},   # relatos assinados por fiéis
     },
 }
 
