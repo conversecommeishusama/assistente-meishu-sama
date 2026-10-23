@@ -134,7 +134,9 @@ def diagnostico(obras) -> dict:
             # o serviço — ver `tts_service.caminho_em_cache`. Antes esta função
             # só via `fish:meishu-hybrid`, pelo que reportava 15 mil trechos
             # "em falta" quando o áudio existia sob outra chave.
-            if tts_service.caminho_em_cache(tr):
+            # 2026-10-23: `arquivo` entra para a autoria entrar na conta — sem
+            # ele, um testemunho de fiel "tem áudio" na voz dele.
+            if tts_service.caminho_em_cache(tr, arquivo=arq):
                 ok += 1
             else:
                 info["faltando"] += 1
@@ -172,7 +174,8 @@ def gerar_trecho(args) -> tuple:
     ultimo = ""
     for tentativa in range(1, TENTATIVAS + 1):
         try:
-            caminho = tts_service.sintetizar(trecho, voz=VOZ, rate="+0%")
+            caminho = tts_service.sintetizar(trecho, voz=VOZ, rate="+0%",
+                                             arquivo=arquivo)
             return (True, arquivo, indice, os.path.basename(caminho)[:16])
         except Exception as exc:
             ultimo = f"{type(exc).__name__}: {str(exc)[:100]}"

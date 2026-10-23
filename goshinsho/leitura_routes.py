@@ -114,8 +114,14 @@ def api_tts():
         Se a voz clonada não estiver configurada/disponível, faz fallback
         automático para o Antonio (edge-tts) — nunca deixa o usuário sem áudio.
 
-    Body: {"texto": "...", "voz": "antonio|francisca|thalita|meishu", "rate": "+0%"}
+    Body: {"texto": "...", "voz": "antonio|francisca|thalita|meishu", "rate": "+0%",
+           "arquivo": "Eiko.txt"}
     Retorna: o MP3 (audio/mpeg) com cache em disco.
+
+    `arquivo` é o que permite a voz clonada ficar SÓ nos trechos dele: com o
+    nome da obra, o serviço consulta `autoria_service` e manda texto de
+    terceiros (testemunho de fiel, material institucional) para o narrador.
+    O campo é opcional — sem ele mantém-se a regra antiga (só o rótulo de fala).
     """
     try:
         from .services import tts_service
@@ -130,6 +136,7 @@ def api_tts():
             texto,
             voz=dados.get("voz") or "antonio",
             rate=dados.get("rate") or "+0%",
+            arquivo=(dados.get("arquivo") or None),
         )
         from flask import send_file
 

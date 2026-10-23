@@ -76,12 +76,24 @@ def main() -> int:
     with open(caminho) as f:
         texto = f.read()
     trechos = quebrar_como_front(texto)
+    arquivo = os.path.basename(caminho)
 
     t0 = time.time()
     n_edge = 0
     n_xtts = 0
 
     for i, trecho in enumerate(trechos):
+        # 2026-10-23: a autoria vem ANTES do falante. Um trecho de obra de
+        # terceiros (testemunho de fiel, manual institucional) não pode sair na
+        # voz do Meishu-Sama, mesmo sem rótulo de fala.
+        if tts_service.provedor_canonico(trecho, arquivo=arquivo)[0] == "edge":
+            try:
+                tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
+                n_edge += 1
+            except Exception:
+                pass
+            continue
+
         falante = tts_service._identificar_falante(trecho)
         if falante == "outro":
             # Interlocutor -> Antônio (edge-tts), direto (rápido, ~1s).

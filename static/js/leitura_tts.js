@@ -23,6 +23,11 @@
         return API_PREFIX + path;
     }
 
+    // Obra em leitura. Vai no pedido de TTS para o servidor poder aplicar a
+    // regra de autoria: a voz clonada do Meishu-Sama só nos trechos dele —
+    // testemunhos de fiéis e material institucional vão para o narrador.
+    var ARQUIVO = document.body.getAttribute("data-arquivo") || "";
+
     // Voz padrão (Antonio, masculino neural). O usuário pode trocar depois.
     var VOZ = "antonio";
     // Vo zes edge-tts disponíveis (do servidor).
@@ -232,7 +237,7 @@
     var _cacheAudio = {};
 
     function _chaveAudio(texto, voz, rate) {
-        return (voz || VOZ) + "|" + (rate || "+0%") + "|" + texto;
+        return (voz || VOZ) + "|" + (rate || "+0%") + "|" + ARQUIVO + "|" + texto;
     }
 
     // Busca o MP3 de um trecho no servidor (com cache em disco do servidor e
@@ -246,7 +251,8 @@
         return fetch(apiUrl("/forum/api/tts"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ texto: texto, voz: voz || VOZ, rate: rate || "+0%" }),
+            body: JSON.stringify({ texto: texto, voz: voz || VOZ,
+                                   rate: rate || "+0%", arquivo: ARQUIVO }),
         }).then(function (resp) {
             if (!resp.ok) throw new Error("TTS falhou: " + resp.status);
             return resp.blob();

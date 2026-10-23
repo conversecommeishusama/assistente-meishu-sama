@@ -29,7 +29,7 @@ Environment=XTTS_THREADS=2
 # sem periódicos nem material institucional (narrá-los na voz dele seria
 # atribuir-lhe texto que não é dele).
 # A lista é regenerada com: .venv/bin/python scripts/montar_lista_audio.py
-ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 2 --lista /var/www/goshinsho/data/tts_lista_escrita.txt
+ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 2 --lista /var/www/goshinsho/data/tts_lista_todos.txt
 Restart=on-failure
 RestartSec=30
 TimeoutStartSec=300

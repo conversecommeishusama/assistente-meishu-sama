@@ -712,7 +712,8 @@ def _limpar_cache_antigo() -> None:
         pass
 
 
-def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
+def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%", *,
+               arquivo: str | None = None) -> str:
     """Gera o áudio MP3 do texto e retorna o caminho do arquivo (com cache).
 
     - voz "meishu": voz clonada de Meishu-Sama. Provedor preferido: FISH AUDIO
@@ -761,7 +762,7 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%") -> str:
     if voz_origem == VOZ_MEISHU:
         # Uma só regra de decisão (ver `provedor_canonico`) — o gerador em lote
         # usa a mesma, para não gravar com voz diferente da que o app procura.
-        provedor, voz_real = provedor_canonico(texto, rate)
+        provedor, voz_real = provedor_canonico(texto, rate, arquivo=arquivo)
         if provedor == "xtts" and not voz_meishu_disponivel():
             # XTTS não configurado → narrador, em vez de falhar.
             return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
@@ -906,7 +907,24 @@ def _chaves_historicas(provedor: str, voz_real: str) -> tuple[tuple[str, str], .
     return ()
 
 
-def provedor_canonico(texto: str, rate: str = "+0%") -> tuple[str, str]:
+def _autor_do_trecho(arquivo: str | None, texto: str) -> str | None:
+    """De quem é o trecho ("meishu"/"outro"), ou None se não se sabe.
+
+    Defensiva de propósito: a autoria é uma camada editorial, não pode derrubar
+    a geração de áudio. Qualquer falha devolve None e o comportamento anterior
+    mantém-se.
+    """
+    if not arquivo:
+        return None
+    try:
+        from . import autoria_service
+        return autoria_service.autor_do_trecho(arquivo, texto)
+    except Exception:
+        return None
+
+
+def provedor_canonico(texto: str, rate: str = "+0%", *,
+                     arquivo: str | None = None) -> tuple[str, str]:
     """(provedor, voz) que o serviço usa para este trecho.
 
     Uma só fonte de verdade: `caminho_em_cache` e `sintetizar` decidem com esta
@@ -914,7 +932,15 @@ def provedor_canonico(texto: str, rate: str = "+0%") -> tuple[str, str]:
     implementações desta regra a divergir — a consequência foi gerar com a voz
     do Meishu uma fala de interlocutor (e gastar XTTS onde o edge resolvia em
     segundos) porque o gerador não sabia que o falante era outro.
+
+    2026-10-23: a PRIMEIRA pergunta deixou de ser "que falante é este?" e passou
+    a ser "de quem é este texto?". Com `arquivo`, a voz clonada só é usada em
+    trecho atribuído a ele; material institucional e testemunhos de fiéis vão
+    para o narrador. Sem `arquivo` (chamadores antigos) mantém-se a regra
+    antiga, que só olhava o rótulo de fala.
     """
+    if _autor_do_trecho(arquivo, texto) == "outro":
+        return "edge", VOZ_INTERLOCUTOR
     falante = _identificar_falante((texto or "").strip())
     if falante == "outro" or (falante == "" and _eh_metadado(texto)):
         return "edge", VOZ_INTERLOCUTOR
@@ -923,7 +949,8 @@ def provedor_canonico(texto: str, rate: str = "+0%") -> tuple[str, str]:
     return "xtts", VOZ_MEISHU_CACHE
 
 
-def caminho_em_cache(texto: str, rate: str = "+0%") -> str | None:
+def caminho_em_cache(texto: str, rate: str = "+0%", *,
+                    arquivo: str | None = None) -> str | None:
     """Caminho do mp3 JÁ existente para este trecho, ou None.
 
     Aplica a MESMA escolha de provedor que `sintetizar()` e aceita as chaves
@@ -937,7 +964,7 @@ def caminho_em_cache(texto: str, rate: str = "+0%") -> str | None:
         return None
     if _trecho_sem_fala(texto):
         return None  # separador/símbolos: vira pausa, não tem ficheiro
-    provedor, voz = provedor_canonico(texto, rate)
+    provedor, voz = provedor_canonico(texto, rate, arquivo=arquivo)
 
     for prov, nome in ((provedor, voz),) + _chaves_historicas(provedor, voz):
         ch = _chave_cache(f"{prov}:{nome}", texto, rate)

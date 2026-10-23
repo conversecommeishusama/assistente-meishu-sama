@@ -50,26 +50,37 @@ def _carregar_sincronizador():
     return mod
 
 
-def contar(obras) -> list[tuple[int, int, str]]:
-    """[(faltando, com_audio, arquivo)] — mesma segmentação do front."""
-    sa = _carregar_sincronizador()
-    quebrar = sa.glf.quebrar_como_front
-    linhas: list[tuple[int, int, str]] = []
+def contar(obras) -> list[dict]:
+    """Contagens por obra, separando o que é dele do que não é.
+
+    A separação não é cosmética: trecho de terceiros sai pelo edge em ~1 s,
+    trecho dele exige XTTS (~30 s). Como a correção pedida é "tirar a voz dele
+    do que não é dele", a fila é ordenada para os de terceiros saírem
+    primeiro — sem isso, 3 440 trechos caros de Tijotengoku atrasariam em mais
+    de um dia os 2 553 testemunhos que se resolvem numa hora.
+    """
+    from goshinsho.services import autoria_service
+
+    linhas: list[dict] = []
     for o in obras:
         arq = o["arquivo"]
         texto = leitura_service.obter_texto(arq)
         if not texto:
             continue
-        falta = ok = 0
-        for trecho in quebrar(texto):
+        ok = falta_dele = falta_outro = 0
+        for trecho, autor in autoria_service.trechos_com_autor(arq, texto):
             if tts_service._trecho_sem_fala(trecho):
                 continue
-            if tts_service.caminho_em_cache(trecho):
+            if tts_service.caminho_em_cache(trecho, arquivo=arq):
                 ok += 1
+            elif autor == autoria_service.OUTRO:
+                falta_outro += 1
             else:
-                falta += 1
-        linhas.append((falta, ok, arq))
-    linhas.sort(reverse=True)
+                falta_dele += 1
+        linhas.append({"arquivo": arq, "ok": ok, "dele": falta_dele,
+                       "outro": falta_outro,
+                       "falta": falta_dele + falta_outro})
+    linhas.sort(key=lambda x: (-x["outro"], -x["falta"]))
     return linhas
 
 
@@ -87,21 +98,26 @@ def main() -> int:
     obras = sa.filtrar_obras(args.tipo, None, args.incluir_institucional)
     linhas = contar(obras)
 
-    total_falta = sum(l[0] for l in linhas)
-    total_ok = sum(l[1] for l in linhas)
-    com_pendencia = [l for l in linhas if l[0] > 0]
+    total_falta = sum(l["falta"] for l in linhas)
+    total_ok = sum(l["ok"] for l in linhas)
+    falta_outro = sum(l["outro"] for l in linhas)
+    falta_dele = sum(l["dele"] for l in linhas)
+    com_pendencia = [l for l in linhas if l["falta"] > 0]
 
     print(f"Âmbito: tipo={args.tipo} institucional={'sim' if args.incluir_institucional else 'nao'}")
     print(f"Obras no âmbito: {len(linhas)} | com pendência: {len(com_pendencia)}")
     print(f"Trechos com áudio: {total_ok} | pendentes: {total_falta}")
-    for falta, ok, arq in com_pendencia:
-        print(f"  {falta:6d} em falta   {ok:6d} ok   {arq}")
+    print(f"   voz dele (XTTS, ~30 s cada): {falta_dele}")
+    print(f"   narrador (edge, ~1 s cada):  {falta_outro}")
+    for l in com_pendencia:
+        print(f"  {l['falta']:6d} em falta ({l['dele']:5d} dele + {l['outro']:5d} narrador)"
+              f"   {l['ok']:6d} ok   {l['arquivo']}")
 
     if not args.mostrar:
         os.makedirs(os.path.dirname(args.saida), exist_ok=True)
         with open(args.saida, "w", encoding="utf-8") as f:
-            for _falta, _ok, arq in com_pendencia:
-                f.write(arq + "\n")
+            for l in com_pendencia:
+                f.write(l["arquivo"] + "\n")
         print(f"\nLista escrita em {args.saida} ({len(com_pendencia)} obras)")
     return 0
 

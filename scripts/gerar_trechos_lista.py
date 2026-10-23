@@ -47,40 +47,48 @@ from goshinsho.services import tts_service  # noqa: E402
 SPOOL = RAIZ / "data" / "tts_spool_lista"
 
 
-def _destino_canonico(trecho: str) -> str:
+def _destino_canonico(trecho: str, arquivo: str | None = None) -> str:
     """Caminho de cache que o SERVIÇO vai procurar para este trecho.
 
     Usa `tts_service.provedor_canonico`: um trecho de interlocutor vai para o
     edge (narrador), não para o XTTS. Em 22/10 enfileirei tudo como XTTS e as
     falas de interlocutor saíram com a voz do Meishu e invisíveis para o app.
+
+    2026-10-23: `arquivo` entra na conta — trecho de obra de terceiros também
+    vai para o edge (ver `autoria_service`). Sem isso o destino calculado não
+    seria o que o app procura.
     """
-    prov, voz = tts_service.provedor_canonico(trecho)
+    prov, voz = tts_service.provedor_canonico(trecho, arquivo=arquivo)
     ch = tts_service._chave_cache(f"{prov}:{voz}", trecho, "+0%")
     return os.path.join(tts_service._cache_dir(), f"{ch}.mp3")
 
 
 def gerar_com_daemon(itens: list[dict], limite_min: int = 240) -> int:
     """Enfileira os trechos e deixa um único daemon XTTS processá-los."""
-    pendentes = [x["trecho"] for x in itens
-                 if not tts_service.caminho_em_cache(x["trecho"])]
+    pendentes = [x for x in itens
+                 if not tts_service.caminho_em_cache(x["trecho"],
+                                                     arquivo=x.get("arquivo"))]
     if not pendentes:
         print("nada a gerar: todos os trechos já têm áudio")
         return 0
 
-    # Falas de interlocutor e metadados vão para o edge (rápido, ~1 s): não
-    # podem entrar na fila do XTTS, que levaria minutos cada uma.
-    edge = [t for t in pendentes
-            if tts_service.provedor_canonico(t)[0] == "edge"]
+    # Falas de interlocutor, metadados e texto de TERCEIROS vão para o edge
+    # (rápido, ~1 s): não podem entrar na fila do XTTS, que levaria minutos cada.
+    def _eh_edge(x: dict) -> bool:
+        return tts_service.provedor_canonico(
+            x["trecho"], arquivo=x.get("arquivo"))[0] == "edge"
+
+    edge = [x for x in pendentes if _eh_edge(x)]
     if edge:
         print(f"{len(edge)} trecho(s) pelo narrador (edge)", flush=True)
-        for i, tr in enumerate(edge, 1):
+        for i, item in enumerate(edge, 1):
             try:
-                tts_service.sintetizar(tr, voz="meishu")
+                tts_service.sintetizar(item["trecho"], voz="meishu",
+                                       arquivo=item.get("arquivo"))
             except Exception as exc:
                 print(f"  [{i}/{len(edge)}] FALHOU: {exc}", file=sys.stderr,
                       flush=True)
-    pendentes = [t for t in pendentes
-                 if tts_service.provedor_canonico(t)[0] != "edge"]
+    pendentes = [x for x in pendentes if not _eh_edge(x)]
     if not pendentes:
         print("nada mais a gerar no XTTS")
         return 0
@@ -93,8 +101,9 @@ def gerar_com_daemon(itens: list[dict], limite_min: int = 240) -> int:
     print(f"{len(pendentes)} trecho(s) a enfileirar em {spool}", flush=True)
 
     destinos: dict[str, str] = {}
-    for i, tr in enumerate(pendentes):
-        destino = _destino_canonico(tr)
+    for i, item in enumerate(pendentes):
+        tr = item["trecho"]
+        destino = _destino_canonico(tr, item.get("arquivo"))
         if os.path.exists(destino) and os.path.getsize(destino) > 0:
             continue
         destinos[f"tarefa_{i:04d}"] = destino
@@ -160,16 +169,17 @@ def main() -> int:
     t0 = time.time()
     for i, item in enumerate(itens, 1):
         tr = item["trecho"]
-        rotulo = f'[{i}/{len(itens)}] {item.get("arquivo", "?")[:34]}'
+        arq = item.get("arquivo")
+        rotulo = f'[{i}/{len(itens)}] {str(arq or "?")[:34]}'
         # Já existe nalguma chave (histórica inclusive)? Não vale regerar.
-        if tts_service.caminho_em_cache(tr):
+        if tts_service.caminho_em_cache(tr, arquivo=arq):
             reaproveitados += 1
             continue
         if args.dry_run:
             print(f"{rotulo}: geraria  {tr[:70]!r}", flush=True)
             continue
         try:
-            tts_service.sintetizar(tr, voz="meishu", rate="+0%")
+            tts_service.sintetizar(tr, voz="meishu", rate="+0%", arquivo=arq)
             gerados += 1
         except Exception as exc:
             falhas += 1

@@ -606,3 +606,100 @@ Caminhos possíveis:
 O material institucional (Manual, Guia, Doutrina, HAKONE, Ukiyo-e, Jornais,
 Asahi, Ensinamentos diversos, Esboço da Medicina) não tem essa ambiguidade: não
 é dele, logo o narrador é a única voz defensável.
+
+---
+
+## 6-G. "Voz dele só nos trechos Dele" (23/10/2026)
+
+Pedido: a voz clonada de Meishu-Sama apenas no texto que é dele. Implementado
+como uma camada editorial ANTES da decisão de voz.
+
+### O que a investigação mostrou (e corrigiu)
+
+A hipótese de partida era que os periódicos e o "material institucional" eram
+de terceiros. **A verificação contradisse-a em parte — e isso mudou o desenho.**
+
+| Verificação | Resultado |
+|---|---|
+| Testemunhos (おかげばなし) do acervo que estão nas specs | **0 de 2.506** |
+| Contribuições (寄稿) que estão nas specs | **10 de 514** |
+| "Manual da Igreja" | «Este pequeno livreto foi compilado **por mim**» |
+| "Doutrina da Igreja" | «Prefácio — **Okada Jikan**» (assinado) |
+| "HAKONE ART MUSEUM" | «**Sou Mokichi Okada**, fundador da Igreja» |
+| "A Story of Ukiyo-e" | «Sou um amante da pintura… **construí** um pequeno museu» |
+| "Ensinamentos diversos" / "Esboço da Medicina" | doutrina dele, 1.ª pessoa |
+
+Conclusão: **os periódicos PT já vinham só com artigos dele** (os testemunhos e
+as contribuições nunca foram traduzidos para a leitura), e as obras ditas
+institucionais foram escritas ou compiladas por ele. A política anterior
+(`NAO_MEISHU`) excluía-as da geração — o que, aplicada à voz, lhe tirava as
+próprias palavras.
+
+O que **de facto** não é dele — e é onde a regra incide:
+
+| Obra | Artigos | Trechos |
+|---|---|---|
+| `Relatos de Milagres` | 135 de 141 são testemunhos assinados (igreja + nome + idade) | **~2.346** |
+| `Confissão de um Fiel` | o manuscrito de Kinji Miyamoto; só o Prefácio (JP `自 観`) é dele | **~124** |
+
+### Como ficou
+
+`goshinsho/services/autoria_service.py` (**novo**) decide de QUEM é o trecho,
+antes de `tts_service.provedor_canonico` decidir com que voz se lê:
+
+- obra de um só autor → essa autoria;
+- obra mista → localiza o trecho no artigo (âncoras PT da spec) e herda a
+  classificação do artigo;
+- trecho não localizável → **prior da obra** (periódico = dele; colectânea de
+  testemunhos = narrador).
+
+`scripts/classificar_autoria_periodicos.py` (**novo**) produz a classificação
+artigo a artigo, com evidência registada (`autor:自観`, `secao:御論文`,
+`assinatura-de-fiel`, `bloco-prefacial`, …) em
+`reports/autoria_periodicos/AUTORIA_ARTIGOS.json` (gitignored — regenerável).
+Se o ficheiro faltar, o serviço degrada para o prior, que manda os testemunhos
+para o narrador: o erro cai para o lado seguro.
+
+`Confissão de um Fiel` usa uma **sobreposição explícita** por índice de artigo
+(`autoria_service.SOBREPOSICOES`), com teste que falha se a spec deixar de
+bater com o mapa — um mapa lê-se e audita-se; uma heurística sobre títulos
+inventaria autoria.
+
+### Onde a regra entra
+
+| Ponto | Mudança |
+|---|---|
+| `sintetizar` / `caminho_em_cache` / `provedor_canonico` | novo parâmetro `arquivo` |
+| `/forum/api/tts` | aceita `arquivo` no corpo |
+| `leitura_tts.js` + `leitura_texto.html` | enviam `data-arquivo` |
+| `gerar_texto_worker_v2`, `gerar_trechos_lista`, `sincronizar_audios` | passam `arquivo` |
+| `montar_lista_audio` | conta separando dele / narrador |
+
+Sem `arquivo` o comportamento antigo mantém-se (só o rótulo de fala) — os
+chamadores antigos não mudam de voz.
+
+### Efeito medido
+
+| | Antes | Depois |
+|---|---|---|
+| Trechos que saem na voz dele | 62.565 (todos) | **59.886** |
+| Trechos de terceiros em voz de narrador | 0 | **2.679** |
+| Backlog | 15.186 | 14.820 (12.350 dele + 2.470 narrador) |
+
+A fila do lote é ordenada para os trechos de **narrador saírem primeiro**
+(~1 s cada, contra ~30 s do XTTS): a correção pedida fica feita em ~1 h em vez
+de esperar dias atrás de Tijotengoku.
+
+### Testes
+
+`tests/test_autoria_audio.py` (novo) — 15 casos: obra dele, obra mista,
+sobreposição, prior no trecho desconhecido, e política que não pode silenciar
+(um nome de ficheiro renomeado faz o teste falhar). Suite de voz: 45 passed.
+
+### Dívida assumida
+
+- `Coleção Jikan Volume 4 (Histórias de Milagres)` também mistura ensaios dele
+  com relatos de seguidores; **não** foi classificada. Continua com a voz dele
+  nos relatos alheios.
+- `Curso Kannon (1~7)` é «transcrição do curso feita por um discípulo» — as
+  palavras são dele, mas o registo é de terceiro. Mantido como dele.
