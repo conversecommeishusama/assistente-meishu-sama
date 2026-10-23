@@ -548,13 +548,24 @@ decisão (ver §6-F).
 
 ### Desempenho medido (com o app a responder)
 
+Uma primeira medição por janela deslizante deu «6 trechos/min» — **estava
+errada**: a janela contava ficheiros que saíam dela, não só os que entravam.
+A medição correcta usa marcador absoluto de tempo (`find -newermt "@$mark"`).
+
 | Métrica | Valor |
 |---|---|
-| Taxa de geração | **~6 trechos/min** (2 daemons XTTS) |
-| ETA dos 6 725 | **~19 h** |
-| Load average | 3,2–3,5 de 14 núcleos |
-| `GET /` no app | **3,5 ms** |
+| Taxa de geração | **116 trechos/h** (87 em 45 min, já com o arranque incluído) |
+| ETA dos 6 725 | **~58 h (≈2,4 dias)** |
+| Load average | 3,8–4,9 de 14 núcleos |
+| Memória do cgroup | **4,86 GB** (2 daemons de 2,4–2,5 GB + 2 workers) |
+| `GET /` no app | **3,5 ms** · `/forum/leitura` **27 ms** |
+| Busca semântica sob carga | `ikebana` 18 s · `ohikari` 33 s |
 | Tecto de CPU do lote | 600 % (drop-in `10-limites-cpu.conf`) |
+
+Os trechos de `Eiko` são artigos longos (mp3 de até 488 KB), o que explica a
+taxa ser menor do que a de séries orais. Não vale subir para 3 workers: 3
+daemons ≈ 7 GB e o `MemoryHigh` está em 6 GB — trocar 2× de velocidade por
+risco de OOM no serviço web não compensa.
 
 ### Como acompanhar
 
