@@ -958,7 +958,16 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
     chave = _chave_cache(f"{provedor}:{voz_real}", texto, rate)
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
-        return destino
+        # 2026-10-23: um mp3 de 0 bytes é servido como válido para sempre — o
+        # utilizador ouve silêncio e o trecho nunca é regerado. Aconteceu com 9
+        # ficheiros (8 de Setembro, 1 de Outubro). Zero bytes = falha de
+        # geração, não cache: apagar e refazer.
+        if os.path.getsize(destino) > 0:
+            return destino
+        try:
+            os.remove(destino)
+        except OSError:
+            pass
 
     # Compatibilidade com as chaves históricas (ver `_chaves_historicas`).
     for prov_antigo, voz_antiga in _chaves_historicas(provedor, voz_real):
@@ -1028,7 +1037,13 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
             raise ValueError("texto vazio após preparar")
         _gerar_edge(texto_edge, voz_real, rate, destino)
 
-    if not os.path.exists(destino):
+    if not os.path.exists(destino) or os.path.getsize(destino) == 0:
+        # Igual ao teste de existência: um ficheiro vazio é falha, não sucesso.
+        if os.path.exists(destino):
+            try:
+                os.remove(destino)
+            except OSError:
+                pass
         raise RuntimeError("TTS não gerou o áudio")
     return destino
 

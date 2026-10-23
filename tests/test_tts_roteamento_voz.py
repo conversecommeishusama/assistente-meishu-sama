@@ -11,7 +11,11 @@ a voz do Antônio por engano. Os casos abaixo (`Pensei:`, `Vejam:`, `Eu:`,
 a voz do Meishu-Sama. Se alguém "simplificar" a regex para um rótulo genérico,
 estes testes quebram — é intencional.
 """
+import os
+import shutil
+import tempfile
 import unittest
+from unittest import mock
 
 from goshinsho.services import tts_service
 
@@ -273,6 +277,75 @@ class KanaNaPreparacaoTests(unittest.TestCase):
         out = tts_service._preparar_texto_edge("Meishu-Sama: A gratidão é a base.")
         self.assertIn("gratidão", out)
         self.assertIn("base", out)
+
+
+class CacheFicheiroVazioTests(unittest.TestCase):
+    """Um mp3 de 0 bytes NÃO é cache válido.
+
+    ⚠️ CONTEXTO DO BUG (2026-10-23)
+    `_sintetizar_com_cache` só testava `os.path.exists(destino)`. Quando a
+    geração falhava deixando um ficheiro vazio (9 casos reais: 8 em Setembro,
+    1 em Outubro), esse ficheiro era servido para sempre: o utilizador ouvia
+    silêncio e o trecho nunca era regerado. Estes testes fixam a regra
+    "zero bytes = falha de geração, não cache".
+    """
+
+    TEXTO = "Meishu-Sama: A gratidão é a base de tudo."
+    VOZ = "pt-BR-AntonioNeural"
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="tts_cache_test_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        patcher = mock.patch.object(tts_service, "_cache_dir", return_value=self.tmp)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def _destino(self):
+        chave = tts_service._chave_cache(f"edge:{self.VOZ}", self.TEXTO, "+0%")
+        return os.path.join(self.tmp, f"{chave}.mp3")
+
+    def test_ficheiro_vazio_e_regerado(self):
+        destino = self._destino()
+        open(destino, "wb").close()  # simula a falha que deixou 0 bytes
+        chamadas = []
+
+        def gerar(texto, voz, rate, dest):
+            chamadas.append(dest)
+            with open(dest, "wb") as f:
+                f.write(b"MP3")
+
+        with mock.patch.object(tts_service, "_gerar_edge", side_effect=gerar):
+            saida = tts_service._sintetizar_com_cache(
+                "edge", self.VOZ, self.TEXTO, "+0%")
+
+        self.assertEqual(saida, destino)
+        self.assertEqual(len(chamadas), 1, "o ficheiro vazio devia ser regerado")
+        self.assertGreater(os.path.getsize(destino), 0)
+
+    def test_ficheiro_valido_nao_e_regerado(self):
+        destino = self._destino()
+        with open(destino, "wb") as f:
+            f.write(b"MP3")
+
+        with mock.patch.object(tts_service, "_gerar_edge") as gerar:
+            saida = tts_service._sintetizar_com_cache(
+                "edge", self.VOZ, self.TEXTO, "+0%")
+
+        self.assertEqual(saida, destino)
+        gerar.assert_not_called()
+
+    def test_geracao_vazia_falha_e_nao_deixa_lixo(self):
+        destino = self._destino()
+
+        def gerar(texto, voz, rate, dest):
+            open(dest, "wb").close()  # "gerou" 0 bytes
+
+        with mock.patch.object(tts_service, "_gerar_edge", side_effect=gerar):
+            with self.assertRaises(RuntimeError):
+                tts_service._sintetizar_com_cache(
+                    "edge", self.VOZ, self.TEXTO, "+0%")
+
+        self.assertFalse(os.path.exists(destino), "o ficheiro vazio devia ser removido")
 
 
 if __name__ == "__main__":
