@@ -122,6 +122,100 @@ Zencho local (`textos_japones/`). Cada item traz o que mudou e onde.
 
 ---
 
+---
+
+## 3.5 Verificação item a item dos onze pontos pedidos
+
+Feita em 24/10, por medição no volume montado — **não** por memória. É a resposta
+honesta à pergunta «ficou alguma coisa fora?». **Três itens ficaram.**
+
+| # | Pedido | Estado | Prova |
+|---|---|---|---|
+| 1 | Ohikari de primeira vez, sem aula | ✅ feito | §12.5, com três princípios citados |
+| 2 | Johrei intensivo, fora da purificação | ✅ feito | §13.5, com doutrina e praxe separadas |
+| 3 | Ensinamento de que Deus não tem preço | ⚠️ feito, mas **com a fonte errada** — ver §3.6 | §12.4 |
+| 4 | Trechos só em japonês | ❌ **pendente** | 32 linhas de prosa com 12+ CJK (§4.2) |
+| 5 | Uso do glossário como base | ⚠️ parcial | montador alinhado (39 termos); **prosa não** (§4.1) |
+| 6 | «objeto de culto» → «Imagem da Luz Divina» | ✅ feito | 0 ocorrências nas fontes |
+| 7 | Ohikari × Kōmyō (o primeiro é o 「光」) | ✅ feito | §3.2 e §12.2 |
+| 8 | Obras dos anos 50 (Hakone, museu, Nikkōden) | ✅ feito | abertura de I §9 |
+| 9 | Imagem de terceiros, com o argumento do autor | ⚠️ feito com fonte mais fraca — ver §3.6 | §4.1 |
+| 10 | Tenjin → Amatsu Norito; «saudação matinal» | ✅ feito | 0 ocorrências de Tenjin e de «visita matinal» |
+| 11 | 御霊祭 e demais termos sem tradução | ⚠️ parcial | §9.5 traz «(Festa dos Espíritos)», mas o corpo ainda cita o japonês |
+| 12 | Fontes não traduzidas (`『御光話録』`, «jornal *Kō*») | ❌ **pendente** | «jornal *Kō*» persiste em 2 lugares; falta convenção (§4.2) |
+| 13 | 15.5 com o texto do Palácio de Cristal + 3 vícios | ✅ feito | §15.5, com o 御取次 de Abe Seizō |
+| 14 | Hotéis: a proibição é da Imagem, não do hotel | ✅ feito | I §4.2 e §18.2 |
+| 15 | 19.1: filiais dentro das Associações + ligação das classificações | ✅ feito | §19.1 e §19.3 |
+| 16 | 22.4: configuração e texto | ✅ feito | reescrito; declara o que falta |
+| 17 | 井上福夫 = Inoue Motokichi | ✅ feito | unificado, com a variante registada |
+| 18 | Anexos em ondas e por ordem cronológica | ❌ **pendente** | ordem atual: 1947, 1946, 1951, 1953, 1948, 1950, 1951, 1954 (§4.3) |
+| 19 | Kyoshu Yoko no fim, sem revisão | ✅ feito | é o Anexo H; excluído do verificador |
+
+**Resumo:** 13 concluídos, 3 parciais, 3 pendentes. Os três pendentes e os três
+parciais estão detalhados em §4.
+
+---
+
+## 3.6 Achado importante: o ensinamento que faltava citar
+
+Isto é o ponto mais relevante desta verificação, e ele **corrige uma escolha minha**.
+
+Você indicou o ensinamento **「Mistério do Mundo Espiritual」**, em que Meishu-Sama
+afirma que a divindade que assenta no objeto de culto é conforme a qualificação
+espiritual do artista que o produziu. Eu usei, em §4.1, a formulação de
+『信仰雑話』 (1948) — «高級の神霊仏霊は、其作者の人格に関係する». É verdadeira e
+serve ao argumento, mas **é a versão fraca**.
+
+O texto que você tinha em mente é outro, e é muito mais forte. Está em
+**「霊界の不思議」, 『地上天国』9号, 25 de outubro de 1949**
+(`search1/re/reikai11.html`):
+
+> 「その例としてここに絵画彫刻等によって神仏の本尊が作られるとする。ところが
+> **その作者の人格によって、憑給う神霊仏霊に自ら高下を生ずる**。すなわち作者の
+> 人格がしからしめるので、**最も高い場合はそれに相応する高級神霊が降臨される**。
+> 故に**形は同一であっても、作者の人格が低い場合はそれに相応した代理神霊、または
+> 分神霊が懸られる**のである。」
+
+*"Tomemos como exemplo a feitura de uma imagem de deus ou buda por pintura ou
+escultura. **Conforme a personalidade do autor, surge por si mesma uma diferença
+de nível nos espíritos divinos e búdicos que ali se manifestam.** Isto é, é a
+personalidade do autor que o determina: no caso mais elevado, desce o espírito
+divino superior que lhe corresponde. Portanto, **ainda que a forma seja idêntica,
+se a personalidade do autor é baixa, o que ali se manifesta é um espírito divino
+substituto ou um espírito divino derivado**, correspondente a ela."*
+
+Três razões pelas quais isto é decisivo para a pergunta sobre imagem de terceiro:
+
+1. **Diz explicitamente «形は同一であっても»** — «ainda que a forma seja
+   idêntica». É a resposta exata ao caso: mesma figura, mesmo traço aparente,
+   **espírito diferente**, porque o autor é outro.
+2. **Nomeia o que acontece no caso inferior**: não um objeto inerte, mas um
+   **代理神霊 (espírito substituto) ou 分神霊 (espírito derivado)**. Ou seja: a
+   imagem de terceiro não fica vazia — fica com outro espírito. Isso é mais grave
+   e mais preciso do que «não poderia desempenhar a função».
+3. **O próprio artigo, três parágrafos adiante, explica o 「鰯の頭も信心から」** —
+   «qualquer um faz uma imagem, e pela fé dos frequentadores forma-se no mundo
+   espiritual a figura do deus» — e conclui que «não é o verdadeiro: é provisório
+   e fictício, e um dia se extingue». É o complemento que fecha o argumento: o
+   objeto feito sem qualificação pode até funcionar por algum tempo, **e é
+   justamente isso que o distingue do verdadeiro**.
+
+**Tarefa da próxima sessão:** reescrever o primeiro princípio de §4.1 para usar
+esta citação como fonte principal, mantendo 『信仰雑話』 como confirmação
+posterior. A estrutura de três princípios permanece; o que muda é a força da
+prova do primeiro. O texto de 『地上天国』9号 já está traduzido no acervo PT
+(`Tijotengoku.txt`, entrada «霊界の不思議»), e pode ser conferido contra o
+original em `textos_japones/Tijotengoku.txt`.
+
+**Nota sobre o nome.** «Mistério do Mundo Espiritual» corresponde, no acervo, a
+dois objetos diferentes: a obra 『霊界叢談』 (Coleção Jikan vol. 3, 25/8/1949 —
+`textos_japones/19490825-自観叢書第3篇『霊界叢談』.txt`) e o artigo 「霊界の不思議»
+(『地上天国』9号). O ensinamento que você descreveu é o **artigo**; a obra trata da
+constituição do mundo espiritual. Verificar qual dos dois você quer citado como
+referência — provavelmente ambos, com papéis distintos.
+
+---
+
 ## 4. O que falta — em ordem de prioridade
 
 ### 4.1 Terminar o alinhamento do glossário (prioridade máxima)
@@ -147,13 +241,51 @@ Trabalho a fazer, nesta ordem:
 
 ### 4.2 Japonês residual e fontes não traduzidas
 
-- Trechos que ainda estão **só em japonês** no corpo do volume.
+- Trechos que ainda estão **só em japonês** no corpo do volume. Medição de 24/10:
+  **32 linhas de prosa com 12 ou mais caracteres CJK**. Boa parte é legítima —
+  citação seguida de tradução em bloco, ou romaji entre parênteses —, mas é
+  preciso ler as 32 e separar o que é citação do que ficou sem tradução. Comando
+  que gerou a lista:
+
+  ```
+  python3 - <<'EOF'
+  import re
+  t = open('docs/DOSSIE_DIFUSAO_20261020.md', encoding='utf-8').read()
+  for i, l in enumerate(t.split('\n'), 1):
+      s = l.strip()
+      if not s or s.startswith(('>','|','#','—','!','*"','「')):
+          continue
+      if len(re.findall(r'[\u3040-\u30ff\u4e00-\u9fff]', s)) >= 12:
+          print(i, s[:110])
+  EOF
+  ```
+
 - Referências de fonte não traduzidas: `『御光話録』`, `『栄光』`, `『地上天国』`
   aparecem em japonês nas linhas de referência. Decidir uma convenção única
   (japonês + tradução na primeira, só japonês depois, ou o inverso) e aplicá-la em
   todo o volume.
-- Verificar se ainda há «jornal Kō» ou equivalente: a forma correta é **『光』
-  (Hikari)**; «Kō» era leitura errada.
+
+- **«jornal *Kō*» — confirmado pendente.** Persiste em **2 lugares**, e é erro de
+  leitura, não escolha estilística:
+
+  ```
+  docs/DOSSIE_DIFUSAO_20261020.md:1436  (A ampliação do jornal *Kō* é o fortalecimento…)
+  docs/DOSSIE_DIFUSAO_20261020.md:5265  | … (A ampliação do jornal *Kō* …) | Hikari shinbun no kakudai…
+  ```
+
+  A linha `5265` mostra o erro às claras: a coluna de romaji diz **Hikari**, e a
+  tradução ao lado diz **Kō**. A forma correta é **『光』 (Hikari)**. A origem está
+  em `scripts/glossas_volume.py`, entrada
+  `"光新聞の拡大は教線の強化"` → «…jornal *Kō*…» — corrigir **lá**, senão a
+  montagem reintroduz o erro.
+
+- **`御霊祭` — parcialmente resolvido.** Aparece 6 vezes. A primeira traz
+  «(Festa dos Espíritos)» e o quadro do §9.5 explica o rito, mas o corpo do texto
+  continua citando o japonês em passagens que o leitor comum não decifra. Decidir:
+  ou se traduz nas ocorrências de prosa, mantendo o japonês só na citação, ou se
+  declara no §9.5 que o termo fica em japonês de propósito. O que não se pode
+  manter é o meio-termo atual.
+
 
 ### 4.3 Anexos — ondas e ordem cronológica
 
@@ -198,10 +330,26 @@ Glossário:   845 entradas com forma curta utilizável, 4 proibições
 Verificador: 127 achados tipo A nas FONTES (superestimado — ver §4.1)
              0 achados tipo B
              0 achados tipo C (após excluir endereços e nomes próprios)
+Prosa com japonês residual: 32 linhas com 12+ CJK (triagem em §4.2)
+Pedidos do autor: 13 concluídos · 3 parciais · 3 pendentes (§3.5)
 ```
 
 Nenhum achado tipo B nem C significa que **nenhuma glosa está errada e nenhuma
 proibição está violada** — é o resultado mais importante desta passagem.
+
+---
+
+## 6. Comece por aqui (ordem sugerida para a nova sessão)
+
+1. **§3.6** — trocar o primeiro princípio de §4.1 pela citação de
+   「霊界の不思議」, 『地上天国』9号. É o pedido explícito do autor e o texto é
+   muito mais forte do que o que está lá.
+2. **§4.2** — corrigir «jornal *Kō*» em `scripts/glossas_volume.py` (a montagem
+   reintroduz o erro a cada execução), depois nos 2 pontos do volume.
+3. **§4.1** — calibrar o verificador para ler o volume montado, não as fontes.
+4. **§4.3** — reordenar os anexos no `PLANO` de `montar_volume_unico.py`.
+5. **§4.4** — regerar volume, PDF e DOCX só no fim.
+
 
 ---
 
