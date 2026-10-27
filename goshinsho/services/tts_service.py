@@ -439,6 +439,54 @@ def voz_meishu_disponivel() -> bool:
                 and os.path.exists(_xtts_amostra()))
 
 
+def _textos_da_leitura_dir() -> str:
+    """Directório das obras da Leitura Colaborativa.
+
+    Mesma variável que `leitura_service` usa (`GOSHINSHO_TEXTOS_PT`), para não
+    haver duas noções de "onde estão as obras".
+    """
+    return os.environ.get("GOSHINSHO_TEXTOS_PT",
+                          "/var/www/goshinsho/textos_leitura_colaborativa")
+
+
+def obra_da_leitura(arquivo: str | None) -> str | None:
+    """Nome do ficheiro, se for uma obra real da Leitura Colaborativa.
+
+    Devolve None quando não é: vazio, com caminho (tentativa de travessia),
+    sem `.txt`, ou simplesmente inexistente no corpus. É a prova de que o
+    pedido de voz clonada veio da Leitura.
+    """
+    nome = (arquivo or "").strip()
+    if not nome or not nome.endswith(".txt"):
+        return None
+    if os.path.basename(nome) != nome:
+        return None  # caminho embutido: nunca é uma obra do corpus
+    if not os.path.isfile(os.path.join(_textos_da_leitura_dir(), nome)):
+        return None
+    return nome
+
+
+def voz_clonada_autorizada(arquivo: str | None) -> bool:
+    """A voz clonada do Meishu-Sama só é usada na Leitura Colaborativa.
+
+    Regra do usuário (2026-10-27): a voz clonada é uma OPÇÃO apenas nos escritos
+    e nas palavras orais da Leitura Colaborativa. No Chat do Goshinsho não
+    existe: ali quem responde é o assistente, mesmo quando cita Meishu-Sama —
+    citar não é ser. A mesma regra vale para qualquer outro cliente HTTP.
+
+    O que distingue uma coisa da outra é `arquivo`: só a Leitura sabe (e diz)
+    de que obra está a ler um trecho. Sem essa prova, a resposta sai na voz do
+    narrador (Antônio).
+
+    O Chat já teve a voz clonada por acidente: a preferência de voz da Leitura
+    fica no `localStorage` do mesmo domínio (`goshinsho-leitura-voz-edge`), e o
+    botão "Ouvir resposta" do chat a lia. Escolher Meishu-Sama na Leitura
+    mudava, sem aviso, a voz do chat. Por isso a regra também é imposta aqui,
+    no servidor — não apenas no botão do front, que um cliente pode contornar.
+    """
+    return obra_da_leitura(arquivo) is not None
+
+
 def _identificar_falante(texto: str) -> str:
     """Identifica o falante de um trecho de diálogo (início do parágrafo).
 

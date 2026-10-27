@@ -30,6 +30,14 @@
 
     // Voz padrão (Antonio, masculino neural). O usuário pode trocar depois.
     var VOZ = "antonio";
+    // Voz do CHAT. Fixa, e nunca lida do `localStorage`: a preferência de voz
+    // (`goshinsho-leitura-voz-edge`) é da Leitura Colaborativa, na mesma
+    // origem, e o botão "Ouvir resposta" do chat lia-a. Quem escolhia
+    // Meishu-Sama na Leitura passava a ouvir o chat na voz clonada, sem nunca
+    // o ter pedido ali — e o chat não é Meishu-Sama a falar, é o assistente.
+    // A voz clonada é opção apenas nos escritos e nas palavras orais.
+    // 2026-10-27.
+    var VOZ_CHAT = "antonio";
     // Vo zes edge-tts disponíveis (do servidor).
     var VOZES_EDGE = {
         "antonio": { nome: "Antônio (masculino)", server: "pt-BR-AntonioNeural" },
@@ -135,14 +143,19 @@
 
     // Consulta o servidor para saber se a voz 'meishu' (clonada) está ativa.
     // Só adiciona a opção no seletor quando estiver disponível de verdade.
+    //
+    // 2026-10-27: só corre na Leitura Colaborativa. O seletor de voz
+    // (`#leitura-voz-select`) existe apenas em `leitura_texto.html`; sem ele
+    // não há opção a acrescentar e o pedido ao servidor era inútil em todas as
+    // outras páginas (o chat, por exemplo).
     function verificarVozMeishu() {
+        var select = document.getElementById("leitura-voz-select");
+        if (!select) return;
         fetch(apiUrl("/forum/api/tts/vozes"))
             .then(function (r) { return r.json(); })
             .then(function (dados) {
                 var meishu = (dados.vozes || []).filter(function (v) { return v.id === "meishu"; })[0];
                 if (!meishu || !meishu.disponivel) return;
-                var select = document.getElementById("leitura-voz-select");
-                if (!select) return;
                 // Já existe (adicionado no preencherSeletorVozEdge)? Se não, adiciona.
                 var jaTem = Array.prototype.some.call(select.options, function (o) { return o.value === "meishu"; });
                 if (!jaTem) {
@@ -909,6 +922,11 @@
             chaveProgresso: alvo.dataset.audioChave || null,
             rate: alvo.dataset.audioRate ? "+0%" : "+0%",
         };
+        // 2026-10-27: fora da Leitura Colaborativa (o chat), a voz é o
+        // narrador e não se negocia. Sem isto, `tocarTrecho` caía em
+        // `vozEscolhidaEdge()` — a preferência da Leitura guardada no mesmo
+        // `localStorage` — e o chat podia falar na voz clonada.
+        if (!isLeitura) opts.voz = VOZ_CHAT;
         // Espera o speech.js criar o botão padrão (para substituir).
         var tentativas = 0;
         function tentar() {

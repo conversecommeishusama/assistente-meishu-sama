@@ -31,6 +31,18 @@ _logger = logging.getLogger(__name__)
 
 leitura_bp = Blueprint("leitura", __name__, url_prefix="/forum")
 
+# Um pedido de voz clonada sem obra da Leitura é um cliente a tentar o que a
+# regra proíbe (o chat, tipicamente). Avisa-se UMA vez por processo: o chat faz
+# prefetch de um pedido por trecho e, sem o guarda, o log enchia-se. Como o
+# nível efectivo da app é WARNING, um `info` nunca chegaria a ser lido — e um
+# aviso que não se vê não serve de nada (2026-10-27).
+# Um pedido de voz clonada sem obra da Leitura é um cliente a tentar o que a
+# regra proíbe (o chat, tipicamente). Avisa-se UMA vez por processo: o chat faz
+# prefetch de um pedido por trecho e, sem o guarda, o log enchia-se. Como o
+# nível efectivo da app é WARNING, um `info` nunca chegaria a ser lido — e um
+# aviso que não se vê não serve de nada (2026-10-27).
+_avisou_voz_clonada = False
+
 
 # ---------------------------------------------------------------------------
 # Páginas
@@ -110,9 +122,10 @@ def api_tts():
 
     Vozes:
       - "antonio" | "francisca" | "thalita": edge-tts (Microsoft, gratuitas).
-      - "meishu": voz clonada de Meishu-Sama (ElevenLabs, cross-lingual JP→PT).
-        Se a voz clonada não estiver configurada/disponível, faz fallback
-        automático para o Antonio (edge-tts) — nunca deixa o usuário sem áudio.
+      - "meishu": voz clonada de Meishu-Sama (Fish/XTTS local). Só é aceita com
+        uma obra real da Leitura em `arquivo` (ver abaixo). Se a voz clonada não
+        estiver disponível, cai para o Antonio (edge-tts) — nunca deixa o
+        usuário sem áudio.
 
     Body: {"texto": "...", "voz": "antonio|francisca|thalita|meishu", "rate": "+0%",
            "arquivo": "Eiko.txt"}
@@ -121,7 +134,14 @@ def api_tts():
     `arquivo` é o que permite a voz clonada ficar SÓ nos trechos dele: com o
     nome da obra, o serviço consulta `autoria_service` e manda texto de
     terceiros (testemunho de fiel, material institucional) para o narrador.
-    O campo é opcional — sem ele mantém-se a regra antiga (só o rótulo de fala).
+
+    2026-10-27: `arquivo` deixou de ser dispensável para a voz "meishu". A voz
+    clonada é uma opção da Leitura Colaborativa (escritos e palavras orais) e
+    NÃO existe no Chat do Goshinsho — ali quem fala é o assistente, mesmo
+    quando cita Meishu-Sama. Como o chat usa esta mesma rota, um pedido sem
+    `arquivo` (ou com um nome que não é obra do corpus) passa a sair no
+    narrador. O corte é feito AQUI, no servidor: o botão do chat também foi
+    corrigido, mas a voz não pode depender de JS do cliente.
     """
     try:
         from .services import tts_service
@@ -132,11 +152,25 @@ def api_tts():
             return jsonify({"error": "texto vazio"}), 400
         if len(texto) > 4000:
             return jsonify({"error": "texto muito longo (máx 4000 chars)"}), 400
+
+        arquivo = (dados.get("arquivo") or "").strip() or None
+        voz = (dados.get("voz") or "antonio").strip().lower()
+        if voz == tts_service.VOZ_MEISHU and not tts_service.voz_clonada_autorizada(arquivo):
+            global _avisou_voz_clonada
+            if not _avisou_voz_clonada:
+                _avisou_voz_clonada = True
+                _logger.warning(
+                    "TTS: voz 'meishu' pedida sem obra da Leitura (arquivo=%r) — "
+                    "a partir daqui responde o narrador. A voz clonada é opção "
+                    "só nos escritos e nas palavras orais da Leitura.",
+                    arquivo)
+            voz = "antonio"
+
         caminho = tts_service.sintetizar(
             texto,
-            voz=dados.get("voz") or "antonio",
+            voz=voz,
             rate=dados.get("rate") or "+0%",
-            arquivo=(dados.get("arquivo") or None),
+            arquivo=arquivo,
         )
         from flask import send_file
 
