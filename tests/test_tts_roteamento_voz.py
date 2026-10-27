@@ -14,6 +14,8 @@ estes testes quebram — é intencional.
 import os
 import shutil
 import tempfile
+import time
+import types
 import unittest
 from unittest import mock
 
@@ -346,6 +348,92 @@ class CacheFicheiroVazioTests(unittest.TestCase):
                     "edge", self.VOZ, self.TEXTO, "+0%")
 
         self.assertFalse(os.path.exists(destino), "o ficheiro vazio devia ser removido")
+
+
+class EdgeTtsComLimiteTests(unittest.TestCase):
+    """O edge-tts NUNCA pode bloquear indefinidamente.
+
+    ⚠️ CONTEXTO DO BUG (2026-10-27)
+    `_gerar_edge` chamava `asyncio.run` directamente, sem limite; o `timeout`
+    existia só no ramo de recurso (para quando já havia um loop a correr). Um
+    websocket da Microsoft que ficou pendurado prendeu um worker do lote dentro
+    de `asyncio.run` durante 11 h, sem log nem excepção — e o daemon XTTS
+    associado a esse worker ficou ocioso todo esse tempo. Estes testes fixam a
+    regra "pendura = excepção dentro de EDGE_TIMEOUT_S".
+    """
+
+    TEXTO = "Meishu-Sama: A gratidão é a base de tudo."
+    VOZ = "pt-BR-AntonioNeural"
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="tts_edge_timeout_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.destino = os.path.join(self.tmp, "saida.mp3")
+
+    def _modulo_falso(self, save):
+        modulo = types.ModuleType("edge_tts")
+        modulo.Communicate = lambda *a, **k: types.SimpleNamespace(save=save)
+        return modulo
+
+    def _com_save(self, save):
+        patcher = mock.patch.dict("sys.modules",
+                                  {"edge_tts": self._modulo_falso(save)})
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_sintese_pendurada_levanta_em_vez_de_bloquear(self):
+        async def save(caminho):
+            # Escreve parcial e espera para sempre: é o que o websocket faz.
+            with open(caminho, "wb") as f:
+                f.write(b"PARCIAL")
+            import asyncio
+            await asyncio.Event().wait()
+
+        self._com_save(save)
+        with mock.patch.object(tts_service, "EDGE_TIMEOUT_S", 1):
+            inicio = time.time()
+            with self.assertRaises(RuntimeError):
+                tts_service._gerar_edge(self.TEXTO, self.VOZ, "+0%", self.destino)
+            decorrido = time.time() - inicio
+
+        self.assertLess(decorrido, 15, "devia desistir pelo limite, não esperar")
+        self.assertFalse(os.path.exists(self.destino),
+                         "mp3 parcial não pode sobreviver ao timeout")
+
+    def test_sintese_normal_grava_o_ficheiro(self):
+        async def save(caminho):
+            with open(caminho, "wb") as f:
+                f.write(b"MP3")
+
+        self._com_save(save)
+        tts_service._gerar_edge(self.TEXTO, self.VOZ, "+0%", self.destino)
+        self.assertGreater(os.path.getsize(self.destino), 0)
+
+    def test_funciona_dentro_de_um_loop_a_correr(self):
+        """Chamado de código async: a thread própria evita o loop do chamador."""
+        import asyncio
+
+        async def save(caminho):
+            with open(caminho, "wb") as f:
+                f.write(b"MP3")
+
+        self._com_save(save)
+
+        async def chamar():
+            return tts_service._gerar_edge(self.TEXTO, self.VOZ, "+0%",
+                                           self.destino)
+
+        asyncio.run(chamar())
+        self.assertGreater(os.path.getsize(self.destino), 0)
+
+    def test_erro_da_api_propaga(self):
+        async def save(caminho):
+            raise ValueError("voz inválida")
+
+        self._com_save(save)
+        with self.assertRaises(ValueError):
+            tts_service._gerar_edge(self.TEXTO, self.VOZ, "+0%", self.destino)
+        self.assertFalse(os.path.exists(self.destino))
 
 
 if __name__ == "__main__":

@@ -39,6 +39,7 @@ import os
 import re
 import subprocess
 import tempfile
+import threading
 import time
 
 VOZES_PT_BR = {
@@ -51,6 +52,13 @@ VOZES_PT_BR = {
 VOZ_PADRAO = "pt-BR-AntonioNeural"
 VOZ_MEISHU = "meishu"
 VOZ_INTERLOCUTOR = "pt-BR-AntonioNeural"  # edge-tts (Antônio) p/ não-Meishu
+
+# Tempo máximo de UMA síntese edge-tts. O websocket da Microsoft pode ficar
+# pendurado sem devolver erro (visto em 27/10/2026: um worker do lote ficou 11 h
+# dentro de `asyncio.run` a esperar resposta, sem log e sem excepção). Sem este
+# limite uma síntese travada bloqueia o worker — e, no lote, também o daemon
+# XTTS que lhe está associado — indefinidamente.
+EDGE_TIMEOUT_S = int(os.environ.get("GOSHINSHO_EDGE_TIMEOUT_S", "120"))
 
 # Versão da amostra de voz usada na clonagem XTTS. Incluída na CHAVE do cache
 # para que, ao trocar a amostra (ex.: para a remasterizada), os áudios antigos
@@ -1076,7 +1084,16 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
 
 
 def _gerar_edge(texto: str, voz_real: str, rate: str, destino: str) -> None:
-    """Gera áudio via edge-tts (async) salvando em `destino`."""
+    """Gera áudio via edge-tts (async) salvando em `destino`.
+
+    A síntese corre sempre numa thread própria, esperada com limite
+    (`EDGE_TIMEOUT_S`). Antes, o caminho principal chamava `asyncio.run`
+    directo, sem limite nenhum: o `timeout` existia só no ramo de recurso (para
+    quando já havia um loop a correr). Quando o websocket da Microsoft ficava
+    pendurado — visto em 27/10/2026, um worker do lote passou 11 h dentro de
+    `asyncio.run` — a chamada nunca voltava, sem log e sem excepção. Um mp3
+    parcial é sempre removido, para não ser confundido com áudio válido.
+    """
 
     async def _gerar() -> None:
         import edge_tts
@@ -1085,27 +1102,25 @@ def _gerar_edge(texto: str, voz_real: str, rate: str, destino: str) -> None:
         # Salva direto no destino (edge-tts aceita path).
         await communicate.save(destino)
 
-    try:
-        asyncio.run(_gerar())
-    except RuntimeError:
-        # Loop já rodando (ex.: chamado de dentro de um async context) — usa
-        # um loop novo em thread.
-        import threading
+    erros: list[BaseException] = []
 
-        resultado: list[str] = []
-        def _run() -> None:
+    def _correr() -> None:
+        try:
             asyncio.run(_gerar())
-            resultado.append(destino)
-        t = threading.Thread(target=_run, daemon=True)
-        t.start()
-        t.join(timeout=60)
-        if not resultado:
-            raise RuntimeError("edge-tts timeout")
-    except Exception:
-        # Em caso de erro, remove arquivo parcial.
+        except BaseException as e:  # noqa: BLE001 — reerguido abaixo
+            erros.append(e)
+
+    t = threading.Thread(target=_correr, name="edge-tts", daemon=True)
+    t.start()
+    t.join(timeout=EDGE_TIMEOUT_S)
+
+    if t.is_alive() or erros:
+        # Em caso de erro/timeout, remove arquivo parcial.
         if os.path.exists(destino):
             try:
                 os.remove(destino)
             except OSError:
                 pass
-        raise
+        if erros:
+            raise erros[0]
+        raise RuntimeError(f"edge-tts timeout após {EDGE_TIMEOUT_S}s")

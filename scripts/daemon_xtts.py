@@ -69,11 +69,20 @@ def quebrar(t: str, limite: int = 200) -> list[str]:
 
 
 def sintetizar_texto(tts, texto: str, destino: str, amostra: str) -> None:
-    """Sintetiza o texto (com quebra em segmentos + concat) no destino."""
+    """Sintetiza o texto (com quebra em segmentos + concat) no destino.
+
+    O mp3 é escrito num ficheiro `.part` e só passa a `destino` por
+    `os.replace`, no fim. Antes, o ffmpeg escrevia directamente no destino: um
+    daemon interrompido (restart do serviço, OOM, timeout) deixava um mp3
+    truncado que passava a verificação de "tem bytes" e era servido como se
+    fosse áudio válido — e o worker que esperava pelo ficheiro dava-o por
+    concluído (2026-10-27).
+    """
     segs = quebrar(texto)
     tmp_dir = os.path.dirname(os.path.abspath(destino)) or "."
     os.makedirs(tmp_dir, exist_ok=True)
     tmp_files = []
+    parte = destino + ".part.mp3"
     try:
         for i, seg in enumerate(segs):
             tmp = os.path.join(tmp_dir, f"_dxtts_{os.getpid()}_{i}.wav")
@@ -96,9 +105,10 @@ def sintetizar_texto(tts, texto: str, destino: str, amostra: str) -> None:
                 f.write(f"file '{t}'\n")
         subprocess.run(
             ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lista,
-             "-c:a", "libmp3lame", "-q:a", "2", destino],
+             "-c:a", "libmp3lame", "-q:a", "2", parte],
             check=True, capture_output=True,
         )
+        os.replace(parte, destino)
         try:
             os.remove(lista)
         except OSError:
@@ -107,6 +117,13 @@ def sintetizar_texto(tts, texto: str, destino: str, amostra: str) -> None:
         for t in tmp_files:
             try:
                 os.remove(t)
+            except OSError:
+                pass
+        # Um `.part` sobrevivente é um áudio incompleto: nunca deve ser
+        # confundido com cache válido.
+        if os.path.exists(parte):
+            try:
+                os.remove(parte)
             except OSError:
                 pass
 

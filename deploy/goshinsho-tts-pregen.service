@@ -29,7 +29,14 @@ Environment=XTTS_THREADS=2
 # sem periódicos nem material institucional (narrá-los na voz dele seria
 # atribuir-lhe texto que não é dele).
 # A lista é regenerada com: .venv/bin/python scripts/montar_lista_audio.py
-ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 2 --lista /var/www/goshinsho/data/tts_lista_todos.txt
+# 2026-10-27: `--daemons 2` desliga o nº de obras em paralelo do nº de
+# daemons. Antes eram 2 workers e 2 daemons, um para um: enquanto uma obra só
+# precisava de narrador (edge) — o caso dos Relatos, primeiro da lista — um
+# daemon ficava parado e o lote andava a metade. Com 4 obras em paralelo sobre
+# 2 daemons (cada daemon tira as tarefas do spool uma a uma) os dois ficam
+# sempre ocupados. Os workers de reserva são leves (~100 MB) e o tecto de
+# memória continua a ser o do drop-in.
+ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 4 --daemons 2 --lista /var/www/goshinsho/data/tts_lista_todos.txt
 Restart=on-failure
 RestartSec=30
 TimeoutStartSec=300

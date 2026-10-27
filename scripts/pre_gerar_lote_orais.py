@@ -3,15 +3,19 @@
 
 Arquitetura otimizada (modelo XTTS persistente):
 - Sobe N daemons XTTS (subprocessos do venv_xtts), cada um com spool dedicado
-  (data/tts_spool_dN). Cada daemon carrega o modelo UMA vez e fica residente.
-- Sobe N workers (subprocessos do venv prod), cada um ligado ao seu daemon.
+  (data/tts_spool/dN). Cada daemon carrega o modelo UMA vez e fica residente.
+- Sobe M workers (subprocessos do venv prod), cada um ligado a um spool.
   Cada worker processa um texto por vez: trechos Interlocutor -> edge direto,
   trechos Meishu/corrido -> envia ao seu daemon (sem recarregar o modelo).
+  M pode ser maior que N: o daemon tira as tarefas do spool uma a uma, por isso
+  vários workers no mesmo spool não se estorvam — e assim uma obra que só
+  precisa de narrador (edge) não deixa um daemon parado.
 - Checkpoint em data/tts_geracao_estado.json (retoma de onde parou).
 - O cache (data/tts_cache) evita regenerar o que já existe.
 
 Uso:
-    <venv_prod>/bin/python scripts/pre_gerar_lote_orais.py [--workers N] [--todos]
+    <venv_prod>/bin/python scripts/pre_gerar_lote_orais.py [--workers N]
+        [--daemons N] [--todos]
 """
 from __future__ import annotations
 
@@ -73,7 +77,14 @@ def salvar_estado(estado: dict) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--workers", type=int, default=5)
+    ap.add_argument("--workers", type=int, default=5,
+                    help="Obras processadas em paralelo (uma por worker).")
+    ap.add_argument("--daemons", type=int, default=None,
+                    help="Daemons XTTS residentes. Por omissão igual a "
+                         "--workers. Um daemon processa as tarefas do seu "
+                         "spool UMA a uma, por isso ter mais workers do que "
+                         "daemons é seguro e evita daemon ocioso enquanto uma "
+                         "obra só precisa de narrador (edge).")
     ap.add_argument("--todos", action="store_true")
     ap.add_argument(
         "--lista",
@@ -83,6 +94,7 @@ def main() -> int:
     )
     args = ap.parse_args()
     n = args.workers
+    n_daemons = args.daemons or n
 
     arquivos = listar_arquivos(todos=args.todos, lista=args.lista)
     estado = carregar_estado()
@@ -107,7 +119,7 @@ def main() -> int:
 
     # Sobe N daemons XTTS (modelo residente, spool dedicado cada).
     daemons = []  # (processo, spool_dir)
-    for i in range(n):
+    for i in range(n_daemons):
         spool = os.path.join(SPOOL_BASE, f"d{i}")
         os.makedirs(spool, exist_ok=True)
         p = subprocess.Popen(
@@ -121,9 +133,10 @@ def main() -> int:
     print("Aguardando daemons carregarem o modelo (~75s)...", flush=True)
     time.sleep(75)
 
-    # Sobe N workers, cada um ligado ao seu daemon (spool via env).
-    procs = {}
+    # Sobe N workers, cada um ligado a um spool de daemon (env).
+    procs = {}  # processo -> (arquivo, daemon_idx)
     idx = 0
+    ultimo_progresso = time.time()
     # Progresso honesto: o numerador é "obras já despachadas" e o denominador
     # é o total da lista. Antes o denominador era `len(fila)` mas o numerador
     # somava `feitos` (checkpoint antigo), o que produzia "[84/15]" num lote
@@ -144,19 +157,39 @@ def main() -> int:
         while idx < len(fila) or procs:
             while len(procs) < n and idx < len(fila):
                 arquivo = fila[idx]
-                daemon_idx = len(procs) % n
+                # Rodízio simples entre os spools dos daemons. Vários workers
+                # podem partilhar o mesmo spool sem conflito: o daemon tira as
+                # tarefas uma a uma e cada worker espera pelo SEU mp3 (a chave
+                # é o sha256 do texto). Era `len(procs) % n`, que com slots
+                # exclusivos colidia quando os workers terminavam fora de ordem
+                # (dois no mesmo spool, um daemon ocioso) — 2026-10-27.
+                daemon_idx = idx % n_daemons
                 p = lancar(arquivo, daemon_idx)
-                procs[p] = arquivo
+                procs[p] = (arquivo, daemon_idx)
                 idx += 1
                 print(f"[{concluidas + idx}/{total_obras}] {arquivo} "
                       f"(daemon {daemon_idx})", flush=True)
 
             terminados = [pp for pp in procs if pp.poll() is not None]
             if not terminados:
+                # Batimento: sem isto um worker pendurado (edge-tts sem
+                # timeout, 27/10/2026) deixava o log mudo durante horas e
+                # parecia que o lote estava bem.
+                decorrido = time.time() - ultimo_progresso
+                if decorrido >= 300:
+                    ultimo_progresso = time.time()
+                    print(
+                        f"... {len(procs)} worker(s) activo(s) | "
+                        f"{decorrido / 60:.0f} min sem concluir obra | "
+                        f"{idx}/{len(fila)} despachadas | "
+                        f"{concluidas}/{total_obras} concluídas",
+                        flush=True,
+                    )
                 time.sleep(10)
                 continue
             for p in terminados:
-                arquivo = procs.pop(p)
+                arquivo, _daemon_idx = procs.pop(p)
+                ultimo_progresso = time.time()
                 feitos.add(arquivo)
                 estado["feitos"] = sorted(feitos)
                 salvar_estado(estado)

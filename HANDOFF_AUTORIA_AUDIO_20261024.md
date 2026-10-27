@@ -237,3 +237,75 @@ for tr,au in a.trechos_com_autor(arq,txt)[:3]:
   (a janela desliza). Usar marcador absoluto: `mark=$(( $(date +%s) - 1 ))`.
 - **`reports/` é gitignored.** A classificação de autoria é regenerável por
   `scripts/classificar_autoria_periodicos.py`; não a versionar.
+
+---
+
+## 9. 27/10/2026 — o lote estava parado a metade, em silêncio
+
+Três dias depois deste handoff, o lote continuava `active` e o log dizia
+«tudo bem». Não estava.
+
+### 9.1 O que se encontrou
+
+| Sintoma | Causa |
+|---|---|
+| Log sem uma linha desde as 13:45, 4 h antes | o pai só escreve ao despachar/concluir obra |
+| Daemon `d0` com **0 tarefas em 11 h** | o worker que lhe estava associado nunca chegou a pedir XTTS |
+| Worker dos `Relatos` com 11 h de vida e 0 % CPU | **`_gerar_edge` sem timeout** |
+
+A stack não deixava dúvidas:
+
+```
+_gerar_edge (tts_service.py:1089) → asyncio.run → run_forever → select
+```
+
+O `_gerar_edge` chamava `asyncio.run` **directamente, sem limite**. O
+`timeout` que lá estava só cobria o ramo de recurso (para quando já havia um
+loop a correr) — o caminho normal, que é o dos workers, não tinha nenhum. Um
+websocket da Microsoft pendurado prendeu o worker dentro do `asyncio.run` para
+sempre: sem excepção, sem log, sem `rc`. Como o `Relatos` é o **primeiro** da
+lista e é todo narrador, o worker ficou preso nele e o daemon `d0` ficou
+ocioso — o lote andava com metade da máquina.
+
+### 9.2 O que foi corrigido
+
+1. **`tts_service._gerar_edge`** — a síntese corre sempre numa thread própria,
+   esperada com `EDGE_TIMEOUT_S` (120 s, `GOSHINSHO_EDGE_TIMEOUT_S`). Pendura =
+   `RuntimeError`, não bloqueio. Um mp3 parcial é sempre removido.
+2. **`daemon_xtts.sintetizar_texto`** — o ffmpeg escrevia **directamente** no
+   destino. Um daemon interrompido deixava um mp3 truncado com bytes, que
+   passava a verificação de cache e era servido como áudio válido. Agora
+   escreve em `.part.mp3` e só aparece em `destino` por `os.replace`, no fim.
+3. **`pre_gerar_lote_orais` — `--daemons`** — o nº de obras em paralelo deixou
+   de estar preso ao nº de daemons. Antes era 1 worker : 1 daemon, e o
+   `daemon_idx = len(procs) % n` ainda colidia quando dois workers terminavam
+   fora de ordem (dois no mesmo spool, um daemon parado). Agora a unidade corre
+   `--workers 4 --daemons 2`: cada daemon tira as tarefas do seu spool uma a
+   uma, por isso vários workers no mesmo spool não se estorvam, e uma obra
+   só-narrador já não deixa um daemon ocioso.
+4. **Batimento no log** — a cada 5 min sem concluir obra o pai escreve
+   `... N worker(s) activo(s) | X min sem concluir obra`. É o que faltava para
+   distinguir «a gerar» de «pendurado».
+
+### 9.3 Medição
+
+| | Antes (27/10, 06:30–17:43) | Depois |
+|---|---|---|
+| mp3 por minuto | ~1 (um daemon) | **~7,7** (dois daemons, 163 %/157 % CPU) |
+| daemons ocupados | 1 de 2 | 2 de 2 |
+| memória do serviço | 4,3 GB | 4,2 GB (4 workers + 2 daemons) |
+
+Testes novos em `tests/test_tts_roteamento_voz.py` (`EdgeTtsComLimiteTests`):
+pendura → excepção dentro do limite, escrita normal, chamada de dentro de um
+loop a correr, e erro da API propagado. Total da frente: **49 casos**.
+
+### 9.4 Ainda em aberto
+
+- Um worker continua a poder **perder** um trecho: se o edge-tts estourar o
+  limite, o `gerar_texto_worker_v2` engole a excepção (`except Exception:
+  pass`) e conta o trecho como falhado sem o registar. Falta um contador de
+  falhas por obra no fim da linha.
+- O `--lista` ignora o checkpoint `feitos` (por desenho): a cada reinício as 28
+  obras são revisitadas. É barato com o cache quente, mas o log engana —
+  mostra «concluído» para obras que só fizeram *cache hit*.
+
