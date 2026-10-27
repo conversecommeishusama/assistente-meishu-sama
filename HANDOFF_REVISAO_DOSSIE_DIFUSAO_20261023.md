@@ -152,12 +152,12 @@ honesta à pergunta «ficou alguma coisa fora?». **Três itens ficaram.**
 | 15 | 19.1: filiais dentro das Associações + ligação das classificações | ✅ feito | §19.1 e §19.3 |
 | 16 | 22.4: configuração e texto | ✅ feito | reescrito; declara o que falta |
 | 17 | 井上福夫 = Inoue Motokichi | ✅ feito | unificado, com a variante registada |
-| 18 | Anexos em ondas e por ordem cronológica | ⚠️ ordem ✅ · ondas parciais | ordem A=1946…H=1954 feita; a ronda R→M foi feita **sobre o volume inteiro**, não ficheiro a ficheiro — ver §9.8 |
+| 18 | Anexos em ondas e por ordem cronológica | ✅ feito | ordem A=1946…H=1954; ondas A–G contra o original em 27/10 — 5 achados, 5 corrigidos (§9.9) |
 | 19 | Kyoshu Yoko no fim, sem revisão | ✅ feito | é o Anexo H; excluído do verificador |
 
-**Resumo final: 18 concluídos, 1 parcial** (item 18, na parte das ondas por
-ficheiro). O parcial está explicado em §9.8, com o que já foi medido e o que
-falta.
+**Resumo final: 19 concluídos.** A verificação de 27/10 mediu cada item no volume
+montado, e a última pendência — as ondas nos anexos — foi fechada por pedido do
+autor (§9.9).
 
 ---
 
@@ -599,6 +599,33 @@ inteiro:** fazer as ondas nos anexos **com fac-símile disponível** — A (Esta
 1953, 『栄光』191号) — e declarar no volume, como já se faz noutros pontos, que os
 restantes foram traduzidos sem confronto de imagem. O Anexo H não entra: revisão
 encerrada por decisão do autor.
+
+### 9.9 As ondas nos anexos A–G — feitas em 27/10
+
+Pedido do autor: «faça as ondas de revisão nos anexos que estão no dossiê,
+exceto o Kyoshu Yoko». Feitas. O confronto foi **contra o original japonês no
+acervo**, e não contra a tradução existente. Onde o original não existe no
+acervo, o que se fez foi verificação estrutural, e está declarado.
+
+| Anexo | Original japonês usado | Achados | O que foi |
+|---|---|---:|---|
+| **A** — Estatuto 1946 | **não existe no acervo** (só a referência de índice à Zenshu, que não se cita) | 0 | verificação estrutural: 16 artigos, ordem dos cargos, exercício abril–março |
+| **B** — Programa 1947 | `search1/ni/nihon07.html` (1/7/1947) | 0 | conferidos os 8 itens (一–八) e as 8 alíneas (イ–チ); item 6, o 「光」 como sinal, igual ao original |
+| **C** — Grade 1948 | `search1/situmon/m231208.html` (『御光話録』2号) | 0 | critérios numéricos conferem: 100 fiéis / 30.000 ienes / recomendação; 10 Centros de Ensino → Associação; 10 Associações → Subsede. Referência do cabeçalho confirmada (a variante 補 tem data desconhecida; a citada é a de 2号) |
+| **D** — Censo 1950 | `search1/mo/mondai.html` | **1** | 東京別院 上野毛 estava «Uenoge» → **Kaminoge** (leitura correta, e a que o resto do volume já usava) |
+| **E** — Regulamento 1951 | `search2/sanko/kisoku.html` (『栄光』125号) | **1** | nota de fidelidade: o índice impresso no original fecha o cap. IV no art. 41.º, mas o corpo traz ali o art. 42.º (exercício); a tradução segue o corpo e agora declara a inconsistência da fonte. Nomes e artigos 43–46 conferidos |
+| **F** — Comunicado 1951 | `search2/sanko/kikoseib.html` (『栄光』94号) | **2** | 大西秀吉 estava «Hidekichi» → **Hideyoshi**; e a lista das 17 sedes repetida no cap. 18 estava com 4 leituras divergentes (Ōkubo Shōji, Nakajima Kiyoko, Irie Tojirō, Moriyama Satarō) → alinhada ao original (Masaharu, Teruko, Fujijirō, Sanetarō) |
+| **G** — Aviso 1953 | `search2/sanko/hukyo.html` (『栄光』191号, mesa-redonda de 3/10/1952) | **1** | 光宝大教会 estava «Hōhō» → **Kōhō** (2 ocorrências); data, local, valores (10.000 / 5.000 / 7.000 / 300 ienes) e os 10 nomes de intervenientes conferem |
+
+**Total: 5 achados, 5 corrigidos, e a R2 do verificador a zero.** Ganho real: a
+ronda apanhou erros de **romanização de nomes próprios** que nenhum verificador
+automático deteta — é exatamente o que as ondas de 1947 faziam e que a
+verificação de superfície (§9.8) não cobria.
+
+**Sobre o Anexo A.** O original não está no acervo acessível: existe apenas a
+entrada de índice («日本浄化療法普及会主旨及会則, 岡田茂吉全集 5-92»), e a
+Zenshu não se cita. A tradução atual não pôde ser confrontada. Se o autor quiser
+fechar esse ponto, é preciso localizar o fac-símile do folheto de 1946.
 
 
 

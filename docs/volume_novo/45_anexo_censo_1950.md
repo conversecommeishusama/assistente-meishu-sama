@@ -30,7 +30,7 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 | Templo Anexo de Hakone | Kanagawa-ken, Ashigara-shimo-gun, Miyagino-mura |
 | Templo Anexo de Odawara | Kanagawa-ken, Odawara-shi, Midori |
 | Templo Anexo de Atami | Shizuoka-ken, Atami-shi, Izusan |
-| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Uenoge |
+| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Kaminoge |
 | Templo Anexo de Kyoto | Kyoto-fu, Kyoto-shi, Sakyo-ku, Yoshida, Kaguraoka |
 | Templo Anexo de Osaka | Osaka-fu, Senboku-gun, Takaishi-chō |
 

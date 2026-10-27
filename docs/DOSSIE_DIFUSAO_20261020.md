@@ -620,6 +620,14 @@ desenvolvimento. O que o artigo de 1949 acrescenta — e é o que aqui decide �
 duas precisões que faltam ao resumo: que a forma pode ser a mesma, e que ao caso
 inferior corresponde um espírito substituto, não o silêncio.
 
+A obra que o mesmo autor publicou um mês antes trata de outra coisa, e a
+distinção importa para não se citar uma pelo que a outra diz. 『霊界叢談』
+(Conversas sobre o Mundo Espiritual, 25 de agosto de 1949) é a exposição da
+**constituição do mundo espiritual** — como se organiza, como se relaciona com o
+mundo visível, o que sucede após a morte. Não é nela que está o princípio sobre o
+autor da imagem; está no artigo. O artigo é a prova do princípio; a obra é o
+quadro em que o princípio se situa.
+
 **O que se venera na Imagem não é o papel nem o traço: é o espírito que ali assenta —
 e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita por outra
 pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro suporte, para
@@ -3439,7 +3447,7 @@ Havia ainda duas categorias de sede que não se encaixam na escala decimal. Os
 próprio e pessoal residente; em 1950 eram seis: 箱根別院 (Kanagawa, Miyagino),
 小田原別院 (Kanagawa, Odawara), 熱海別院 (Shizuoka, Izusan), 東京別院 (Tóquio,
 Setagaya, Tamagawa Kaminoge), 京都別院 (Quioto, Sakyō, Yoshida Kaguraoka) e
-大阪別院 (Osaka, Sennan, Takaishi). As **Filiais Regionais** (分院) eram
+大阪別院 (Osaka, Senboku, Takaishi). As **Filiais Regionais** (分院) eram
 subdivisões territoriais, em número de sete.
 
 Nenhuma das duas aparece na escala de ascensão: não se "subia" a Templo Anexo.
@@ -5831,7 +5839,7 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 | Templo Anexo de Hakone | Kanagawa-ken, Ashigara-shimo-gun, Miyagino-mura |
 | Templo Anexo de Odawara | Kanagawa-ken, Odawara-shi, Midori |
 | Templo Anexo de Atami | Shizuoka-ken, Atami-shi, Izusan |
-| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Uenoge |
+| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Kaminoge |
 | Templo Anexo de Kyoto | Kyoto-fu, Kyoto-shi, Sakyo-ku, Yoshida, Kaguraoka |
 | Templo Anexo de Osaka | Osaka-fu, Senboku-gun, Takaishi-chō |
 
@@ -5889,6 +5897,12 @@ e por isso fala a linguagem do direito civil — representação, mandato, orça
 exercício fiscal. É a fonte primária do capítulo 23 e de boa parte do capítulo 24.
 **Estrutura:** seis capítulos e quarenta e seis artigos, mais as disposições
 transitórias com a lista dos primeiros dirigentes.
+
+**Nota de fidelidade.** O índice impresso no original encerra o capítulo IV no
+artigo 41.º, mas o corpo do texto traz ali o artigo 42.º (exercício fiscal). A
+tradução segue o corpo, e o índice deste volume acompanha: finanças, arts. 29.º a
+42.º. O original não numera nenhum artigo 42.º fora do capítulo IV — a
+inconsistência é do próprio documento.
 
 Tradução integral, com a numeração de artigos do original.
 
@@ -6279,7 +6293,7 @@ já o responsável de cada sede, conforme a situação atual.
 | San'in | Tottori, Shimane, Yamaguchi (Suō) | Hiramoto Naoko |
 | San'yō | Okayama, Hiroshima, Yamaguchi (Nagato) | Yashiro Osamu |
 | Shikoku | Tokushima, Kagawa, Ehime, Kōchi | Moriyama Sanetarō |
-| Leste de Kyūshū | Ōita, Miyazaki, Kagoshima | Ōnishi Hidekichi |
+| Leste de Kyūshū | Ōita, Miyazaki, Kagoshima | Ōnishi Hideyoshi |
 | Oeste de Kyūshū | Fukuoka, Saga, Nagasaki, Kumamoto | Kihara Yoshihiko |
 
 **Quarto.** Nas sedes regionais, instituir a organização em três graus — grande
@@ -6316,7 +6330,7 @@ para todos os objetos que saíam de sua mão, não apenas para a Imagem.
 
 Tradução integral do aviso. O texto é uma única frase, e é reproduzido aqui na
 íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere
-(『栄光』191号, 3 de outubro de 1952, Igreja Grande Hōhō, Tosu, província de Saga),
+(『栄光』191号, 3 de outubro de 1952, Igreja Grande Kōhō, Tosu, província de Saga),
 na parte que trata do valor das ofertas.
 
 ---
@@ -6377,7 +6391,7 @@ não são mercadoria, não se pode falar em maior ou menor oferta — e houve ca
 perplexidade.
 
 **Nagatomo:** — Em certa igreja da minha região, a oferenda pelo Byōbu foi de cinco
-mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Hōhō-kai, na
+mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Kōhō-kai, na
 época, a oferenda era de trezentos ienes. Quanto ao Kyoshu, parece que se
 indicavam os dias em que se havia recebido Johrei: falava-se em "Kyoshu de dez
 dias", "Kyoshu de vinte dias".

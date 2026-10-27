@@ -63,7 +63,7 @@ já o responsável de cada sede, conforme a situação atual.
 | San'in | Tottori, Shimane, Yamaguchi (Suō) | Hiramoto Naoko |
 | San'yō | Okayama, Hiroshima, Yamaguchi (Nagato) | Yashiro Osamu |
 | Shikoku | Tokushima, Kagawa, Ehime, Kōchi | Moriyama Sanetarō |
-| Leste de Kyūshū | Ōita, Miyazaki, Kagoshima | Ōnishi Hidekichi |
+| Leste de Kyūshū | Ōita, Miyazaki, Kagoshima | Ōnishi Hideyoshi |
 | Oeste de Kyūshū | Fukuoka, Saga, Nagasaki, Kumamoto | Kihara Yoshihiko |
 
 **Quarto.** Nas sedes regionais, instituir a organização em três graus — grande

@@ -124,6 +124,14 @@ desenvolvimento. O que o artigo de 1949 acrescenta — e é o que aqui decide �
 duas precisões que faltam ao resumo: que a forma pode ser a mesma, e que ao caso
 inferior corresponde um espírito substituto, não o silêncio.
 
+A obra que o mesmo autor publicou um mês antes trata de outra coisa, e a
+distinção importa para não se citar uma pelo que a outra diz. 『霊界叢談』
+(Conversas sobre o Mundo Espiritual, 25 de agosto de 1949) é a exposição da
+**constituição do mundo espiritual** — como se organiza, como se relaciona com o
+mundo visível, o que sucede após a morte. Não é nela que está o princípio sobre o
+autor da imagem; está no artigo. O artigo é a prova do princípio; a obra é o
+quadro em que o princípio se situa.
+
 **O que se venera na Imagem não é o papel nem o traço: é o espírito que ali assenta —
 e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita por outra
 pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro suporte, para
@@ -660,11 +668,11 @@ Superintendente Ōkusa Naoyoshi. A lista:
 
 O mesmo documento cria **dezessete sedes regionais**, cada uma com chefe nomeado e
 área definida —北海道東部 (Sawada Hidetaka), 北海道西部 (Nishimura Yoshimitsu),
-東北 (Araya Otomatsu), 奥羽 (Ōkubo Shōji), 関東東部 (Ōnuma Mitsuhiko), 関東西部
-(Koizumi Morinosuke), 神静 (Nakajima Kiyoko), 中京 (Watanabe Katsuichi), 信越
-(Tomura Hiroyuki), 北陸 (Irie Tojirō), 近畿 (Iwamatsu Sakae), 関西 (Kawai
+東北 (Araya Otomatsu), 奥羽 (Ōkubo Masaharu), 関東東部 (Ōnuma Mitsuhiko), 関東西部
+(Koizumi Morinosuke), 神静 (Nakajima Teruko), 中京 (Watanabe Katsuichi), 信越
+(Tomura Hiroyuki), 北陸 (Irie Fujijirō), 近畿 (Iwamatsu Sakae), 関西 (Kawai
 Naoyuki), 山陰 (Hiramoto Naoko), 山陽 (Yashiro Osamu), 四国 (Moriyama
-Satarō), 九州東部 (Ōnishi Hidekichi), 九州西部 (Kihara Yoshihiko).
+Sanetarō), 九州東部 (Ōnishi Hideyoshi), 九州西部 (Kihara Yoshihiko).
 
 **Este é o dado decisivo para a pergunta sobre a presidência**: 木原義彦 aparece em 1951
 como **chefe da sede regional do Kyushu Ocidental**, e em 1952 como diretor encarregado de

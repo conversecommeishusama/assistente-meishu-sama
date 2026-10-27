@@ -13,6 +13,12 @@ exercício fiscal. É a fonte primária do capítulo 23 e de boa parte do capít
 **Estrutura:** seis capítulos e quarenta e seis artigos, mais as disposições
 transitórias com a lista dos primeiros dirigentes.
 
+**Nota de fidelidade.** O índice impresso no original encerra o capítulo IV no
+artigo 41.º, mas o corpo do texto traz ali o artigo 42.º (exercício fiscal). A
+tradução segue o corpo, e o índice deste volume acompanha: finanças, arts. 29.º a
+42.º. O original não numera nenhum artigo 42.º fora do capítulo IV — a
+inconsistência é do próprio documento.
+
 Tradução integral, com a numeração de artigos do original.
 
 ---

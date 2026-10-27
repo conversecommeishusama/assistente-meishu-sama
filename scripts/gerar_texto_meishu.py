@@ -65,24 +65,14 @@ def main() -> int:
 
     # Pré-computa o nome do arquivo de cache de cada trecho para pular os que
     # já existem (o cache é por provedor+voz+texto+rate).
-    rate = "+0%"
-    pendentes = []
-    for t in trechos:
-        # Identifica provedor (igual ao tts_service): xtts p/ meishu/corrido,
-        # edge p/ interlocutor. Usamos o mesmo _chave_cache.
-        voz_origem = "meishu"
-        if not tts_service.voz_meishu_disponivel():
-            provedor, voz_real = "edge", "pt-BR-AntonioNeural"
-        else:
-            falante = tts_service._identificar_falante(t)
-            if falante == "outro":
-                provedor, voz_real = "edge", tts_service.VOZ_INTERLOCUTOR
-            else:
-                provedor, voz_real = "xtts", "meishu"
-        chave = tts_service._chave_cache(f"{provedor}:{voz_real}", t, rate)
-        destino = os.path.join(tts_service._cache_dir(), f"{chave}.mp3")
-        if not os.path.exists(destino):
-            pendentes.append(t)
+    # 2026-10-27: esta pré-computação era uma QUARTA cópia da regra de
+    # roteamento (junto com provedor_canonico, caminho_em_cache e o worker do
+    # lote) e não passava `arquivo`, por isso ignorava a autoria: texto de
+    # terceiros saía na voz clonada. Agora usa o serviço.
+    def _ja_existe(t: str) -> bool:
+        return tts_service.caminho_em_cache(t, arquivo=nome) is not None
+
+    pendentes = [t for t in trechos if not _ja_existe(t)]
 
     print(f"[{nome}] {len(trechos)} trechos, {len(pendentes)} a gerar", file=sys.stderr)
     t0 = time.time()
@@ -90,21 +80,10 @@ def main() -> int:
     n_erro = 0
     for i, trecho in enumerate(trechos):
         # Já está no cache? (pode ter sido gerado por outro worker)
-        voz_origem = "meishu"
-        if not tts_service.voz_meishu_disponivel():
-            provedor, voz_real = "edge", "pt-BR-AntonioNeural"
-        else:
-            falante = tts_service._identificar_falante(trecho)
-            if falante == "outro":
-                provedor, voz_real = "edge", tts_service.VOZ_INTERLOCUTOR
-            else:
-                provedor, voz_real = "xtts", "meishu"
-        chave = tts_service._chave_cache(f"{provedor}:{voz_real}", trecho, rate)
-        destino = os.path.join(tts_service._cache_dir(), f"{chave}.mp3")
-        if os.path.exists(destino):
+        if _ja_existe(trecho):
             continue
         try:
-            tts_service.sintetizar(trecho, voz="meishu")
+            tts_service.sintetizar(trecho, voz="meishu", arquivo=nome)
             n_ok += 1
             if n_ok % 5 == 0:
                 print(f"  [{nome}] {i+1}/{len(trechos)} (+{n_ok}) {time.time()-t0:.0f}s", file=sys.stderr)

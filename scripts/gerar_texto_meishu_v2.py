@@ -1,60 +1,39 @@
 #!/usr/bin/env python3
-"""Worker de pré-geração (v2) que usa o DAEMON XTTS persistente.
+"""Gera o áudio de UMA obra usando o daemon XTTS persistente.
 
-Em vez de lançar um subprocess XTTS por trecho (que recarrega o modelo a cada
-vez — lento), este worker envia os trechos XTTS (falas do Meishu-Sama) para o
-spool do daemon_xtts.py (que mantém o modelo carregado). Os trechos do
-Interlocutor (edge-tts) são gerados direto (rápidos, ~1s).
+Atalho manual para uma obra: os trechos XTTS (voz do Meishu-Sama) vão para o
+spool do `daemon_xtts.py` (que mantém o modelo carregado — lançar um subprocess
+por trecho recarregaria 2 GB a cada vez) e os trechos do narrador são gerados
+directo pelo edge-tts (~1 s).
+
+⚠️ Este ficheiro ERA uma segunda implementação do laço de geração, e divergiu:
+
+  · tinha a sua própria `_sanitizar()` — sem pronúncias nem remoção de macrons,
+    mas com a MESMA chave de cache do `tts_service`, por isso o mesmo trecho
+    saía diferente conforme tivesse sido gerado aqui ou no app;
+  · chamava `sintetizar()` sem `arquivo`, ignorando a autoria (texto de
+    terceiros saía na voz clonada);
+  · engolia as excepções (`except Exception: pass`) e saía com 0.
+
+Desde 2026-10-27 delega no worker do lote, que é a única implementação. Se
+precisar de mudar o comportamento, mude `gerar_texto_worker_v2.py` — não
+duplique aqui.
 
 Uso:
   <venv_prod>/bin/python scripts/gerar_texto_meishu_v2.py "<arquivo.txt>"
+  # ou, para a lista completa e em paralelo:
+  <venv_prod>/bin/python scripts/pre_gerar_lote_orais.py --lista <lista.txt>
 """
 from __future__ import annotations
 
-import json
 import os
-import re
 import sys
-import time
-import uuid
 
 RAIZ = "/var/www/goshinsho"
 SPOOL = os.path.join(RAIZ, "data", "tts_spool")
-SPOOL_DONE = os.path.join(SPOOL, "done")
-SPOOL_ERRO = os.path.join(SPOOL, "erro")
 
-
-def quebrar_como_front(texto: str) -> list[str]:
-    trechos = []
-    paragrafos = [re.sub(r"\s+", " ", p).strip()
-                  for p in re.split(r"\n+", texto) if p.strip()]
-    for par in paragrafos:
-        partes = re.split(r"(?<=[.!?…])\s+", par)
-        if len(partes) <= 1:
-            trechos.append(par)
-        else:
-            bloco = ""
-            for parte in partes:
-                if len(bloco) + len(parte) + 1 > 700 and bloco:
-                    trechos.append(bloco.strip())
-                    bloco = parte
-                else:
-                    bloco = (bloco + " " + parte).strip() if bloco else parte
-            if bloco:
-                trechos.append(bloco.strip())
-    return trechos
-
-
-def _sanitizar(texto: str) -> str:
-    """Sanitiza para o XTTS (mesma lógica do tts_service._sanitizar_xtts)."""
-    out = re.sub(r"^\s*[^:]{2,40}:\s*", "", texto)
-    out = out.replace(";", ",").replace(":", ",")
-    out = re.sub(r"\.(?=\s+[A-ZÀ-Ú])", ",", out)
-    out = re.sub(r"\.\s*$", ",", out)
-    out = re.sub(r"\s*\[[^\]]*\]\s*", " ", out)
-    out = re.sub(r"\s*\([^)]*\)\s*", " ", out)
-    out = re.sub(r"\s+", " ", out).strip()
-    return out
+sys.path.insert(0, os.path.join(RAIZ, "scripts"))
+from gerar_texto_worker_v2 import processar_obra  # noqa: E402
 
 
 def main() -> int:
@@ -73,58 +52,11 @@ def main() -> int:
     load_dotenv(os.path.join(RAIZ, ".env"))
     from goshinsho.services import tts_service
 
-    with open(caminho) as f:
-        texto = f.read()
-    trechos = quebrar_como_front(texto)
-
-    # Separa: XTTS (Meishu/corrido) vão pro daemon; edge (Interlocutor) direto.
-    pend_xtts = []   # lista de (texto_original)
-    t0 = time.time()
-    n_ok_edge = 0
-    for trecho in trechos:
-        falante = tts_service._identificar_falante(trecho)
-        if falante == "outro":
-            # Interlocutor -> Antonio (edge-tts), rápido e direto.
-            try:
-                tts_service.sintetizar(trecho, voz="meishu")
-                n_ok_edge += 1
-            except Exception:
-                pass
-        else:
-            # Meishu/corrido -> XTTS (via daemon). Checa cache primeiro.
-            texto_tts = _sanitizar(trecho)
-            if not texto_tts:
-                continue
-            # Verifica se já está no cache (mesma chave do tts_service).
-            chave = tts_service._chave_cache(
-                f"xtts:{tts_service.VOZ_MEISHU_CACHE}", trecho, "+0%")
-            destino = os.path.join(tts_service._cache_dir(), f"{chave}.mp3")
-            if not os.path.exists(destino):
-                pend_xtts.append((trecho, texto_tts, destino))
-
-    print(f"[{nome}] {len(trechos)} trechos | {n_ok_edge} Interlocutor(edge) | {len(pend_xtts)} XTTS p/ daemon",
-          file=sys.stderr, flush=True)
-
-    # Envia os XTTS para o daemon e aguarda cada um (em ordem).
-    for i, (trecho_orig, texto_tts, destino) in enumerate(pend_xtts):
-        os.makedirs(os.path.dirname(destino) or ".", exist_ok=True)
-        tarefa_id = f"{os.getpid()}_{i}_{uuid.uuid4().hex[:8]}"
-        tarefa = os.path.join(SPOOL, f"tarefa_{tarefa_id}.json")
-        with open(tarefa, "w") as f:
-            json.dump({"texto": texto_tts, "destino": destino}, f)
-        # Aguarda o daemon processar (polling no arquivo destino).
-        espera = 0
-        while not os.path.exists(destino) and espera < 900:
-            time.sleep(5)
-            espera += 5
-        if not os.path.exists(destino):
-            print(f"[{nome}] timeout trecho XTTS {i}", file=sys.stderr, flush=True)
-        elif (i + 1) % 5 == 0:
-            print(f"[{nome}] XTTS {i+1}/{len(pend_xtts)} em {time.time()-t0:.0f}s",
-                  file=sys.stderr, flush=True)
-
-    print(f"[{nome}] FIM em {time.time()-t0:.0f}s", file=sys.stderr, flush=True)
-    return 0
+    spool = os.environ.get("XTTS_SPOOL") or SPOOL
+    os.makedirs(spool, exist_ok=True)
+    # Devolve 0 só se tudo saiu; 1 se algum trecho ficou sem áudio (o relatório
+    # fica em data/tts_falhas/).
+    return processar_obra(caminho, spool, tts_service)
 
 
 if __name__ == "__main__":

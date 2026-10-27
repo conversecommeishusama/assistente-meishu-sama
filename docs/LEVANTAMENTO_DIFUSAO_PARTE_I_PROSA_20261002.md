@@ -496,7 +496,7 @@ centralizada na Sede.
 Os seis Templos Anexos, com endereços completos, conforme o censo de 1950
 (`search1/mo/mondai.html`): 箱根別院 (Kanagawa, Miyagino), 小田原別院 (Kanagawa,
 Odawara), 熱海別院 (Shizuoka, Izusan), 東京別院 (Tóquio, Setagaya, Tamagawa
-Kaminoge), 京都別院 (Quioto, Sakyo, Yoshida Kaguraoka) e 大阪別院 (Osaka, Sennan,
+Kaminoge), 京都別院 (Quioto, Sakyo, Yoshida Kaguraoka) e 大阪別院 (Osaka, Senboku,
 Takaishi).
 
 Vale observar a expressão **浄霊所** — "Centro de Johrei". Ela aparece num relato de

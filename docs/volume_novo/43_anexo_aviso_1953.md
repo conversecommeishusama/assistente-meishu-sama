@@ -13,7 +13,7 @@ para todos os objetos que saíam de sua mão, não apenas para a Imagem.
 
 Tradução integral do aviso. O texto é uma única frase, e é reproduzido aqui na
 íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere
-(『栄光』191号, 3 de outubro de 1952, Igreja Grande Hōhō, Tosu, província de Saga),
+(『栄光』191号, 3 de outubro de 1952, Igreja Grande Kōhō, Tosu, província de Saga),
 na parte que trata do valor das ofertas.
 
 ---
@@ -74,7 +74,7 @@ não são mercadoria, não se pode falar em maior ou menor oferta — e houve ca
 perplexidade.
 
 **Nagatomo:** — Em certa igreja da minha região, a oferenda pelo Byōbu foi de cinco
-mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Hōhō-kai, na
+mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Kōhō-kai, na
 época, a oferenda era de trezentos ienes. Quanto ao Kyoshu, parece que se
 indicavam os dias em que se havia recebido Johrei: falava-se em "Kyoshu de dez
 dias", "Kyoshu de vinte dias".
