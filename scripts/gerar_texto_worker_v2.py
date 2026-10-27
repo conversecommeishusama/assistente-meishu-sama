@@ -31,10 +31,16 @@ FALHAS_DIR = os.path.join(RAIZ, "data", "tts_falhas")
 # como para uma que só fez cache hit (2026-10-27).
 RESUMOS_DIR = os.path.join(RAIZ, "data", "tts_resumos")
 
-# Tempo máximo de espera pelo mp3 de um trecho XTTS. Um trecho tem ~30 s de
-# áudio; 300 s já é folga de 10x. Era 600 s e, quando o daemon morria, o worker
-# esperava os 600 s inteiros antes de desistir.
-LIMITE_XTTS_S = int(os.environ.get("GOSHINSHO_XTTS_ESPERA_S", "300"))
+# Tempo máximo de espera pelo mp3 de um trecho XTTS.
+#
+# ⚠️ NÃO é «tempo de síntese de um trecho»: é o tempo de ESPERA NA FILA do
+# spool. Quando dois workers partilham o mesmo daemon, um trecho pode ter de
+# esperar pelo trecho do vizinho antes de começar. Em 2026-10-27 pus 300 s
+# (assumindo ~30 s por trecho) e as obras longas — Eiko, Kyōshu Yōkō — passaram
+# a falhar por timeout sem nada estar errado. O orquestrador define o valor
+# conforme quantos workers partilham cada spool (`GOSHINSHO_XTTS_ESPERA_S`);
+# 600 s é o tempo de UM trecho, medido com o lote 1:1.
+LIMITE_XTTS_S = int(os.environ.get("GOSHINSHO_XTTS_ESPERA_S", "600"))
 TENTATIVAS_XTTS = 2
 
 
@@ -220,11 +226,13 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
         if os.path.exists(destino) and os.path.getsize(destino) > 0:
             n_xtts_cache += 1
             continue  # já gerado
-        # Já existe noutra chave (Fish pago ou XTTS antigo)? Não vale a pena
-        # regerar: o áudio do mesmo texto é o mesmo.
-        if any(os.path.exists(os.path.join(tts_service._cache_dir(),
-                                          tts_service._chave_cache(f"{p}:{v}", trecho, "+0%") + ".mp3"))
-               for p, v in tts_service._chaves_historicas("xtts", tts_service.VOZ_MEISHU_CACHE)):
+        # QUALQUER áudio que o app sirva para este trecho já resolve: a voz
+        # APROVADA (Fish), a chave antiga do XTTS… A 27/10 o worker só olhava
+        # a chave canónica e as históricas por conta própria; com a regra da
+        # voz aprovada a viver no serviço, isto passa a ser uma pergunta só.
+        # E importa: gerar XTTS sobre um trecho que já tem o áudio pago em
+        # disco é trabalho perdido que ainda por cima tapa o aprovado.
+        if tts_service.caminho_em_cache(trecho, arquivo=arquivo):
             n_xtts_cache += 1
             continue
 
@@ -246,11 +254,16 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
                 break
             # Uma tarefa que não chegou a ser consumida (timeout) não deve
             # ficar no spool para ser gerada mais tarde, sem ninguém à espera.
-            if estado == "timeout" and os.path.exists(tarefa):
+            if os.path.exists(tarefa):
                 try:
                     os.remove(tarefa)
                 except OSError:
                     pass
+            # Não se repete um TIMEOUT: o daemon pode estar simplesmente a
+            # acabar (ou a tarefa ainda na fila), e uma segunda tarefa igual
+            # faria o mesmo trabalho outra vez. Só se repete uma recusa.
+            if estado == "timeout":
+                break
             if tentativa < TENTATIVAS_XTTS:
                 print(f"[{arquivo}] trecho {i}: {motivo} — a repetir "
                       f"({tentativa}/{TENTATIVAS_XTTS - 1})", file=sys.stderr,

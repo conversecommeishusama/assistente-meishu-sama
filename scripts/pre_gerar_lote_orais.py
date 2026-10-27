@@ -91,6 +91,23 @@ def salvar_estado(estado: dict) -> None:
     os.replace(tmp, ESTADO_PATH)
 
 
+def _amostra_do_servico() -> str:
+    """A amostra de voz que o SERVIÇO usa (a do `.env`).
+
+    Lida do `tts_service` para não haver duas noções de "qual é a voz". O
+    daemon tem uma omissão própria, mais antiga, e é por isso que ele precisa
+    de receber esta por argumento.
+    """
+    try:
+        sys.path.insert(0, RAIZ)
+        from goshinsho.services import tts_service
+        return tts_service._xtts_amostra()
+    except Exception as e:
+        print(f"AVISO: não foi possível ler a amostra do serviço ({e})",
+              flush=True)
+        return ""
+
+
 def _resumo_da_obra(arquivo: str) -> str:
     """« | 12 novos, 340 em cache» — para o "concluído" não enganar.
 
@@ -168,6 +185,9 @@ def main() -> int:
     args = ap.parse_args()
     n = args.workers
     n_daemons = args.daemons or n
+    # Quantos workers partilham cada daemon. Com --workers 4 --daemons 2 são 2:
+    # a espera de um trecho tem de contar com o trecho do vizinho à frente.
+    por_daemon = max(1, -(-n // n_daemons))
 
     arquivos = listar_arquivos(todos=args.todos, lista=args.lista)
     estado = carregar_estado()
@@ -178,18 +198,28 @@ def main() -> int:
         print("Nada a fazer.", flush=True)
         return 0
 
-    # Os relatórios de falhas do lote anterior vão para o lado: o resumo final
-    # tem de falar só deste lote. Nada é apagado — só arquivado.
+    # Os relatórios do lote anterior vão para o lado: o resumo final tem de
+    # falar só deste. Nada é apagado.
+    #
+    # ⚠️ Arquivar é contabilidade e NÃO pode derrubar o lote. A 27/10 este
+    # bloco usava `os.replace(pasta, pasta + "_anterior")` e rebentou com
+    # ENOTEMPTY (diretório de destino ainda com ficheiros), matando o serviço
+    # no arranque. Agora: nome único com data, e qualquer falha é só um aviso.
     for pasta in (FALHAS_DIR, RESUMOS_DIR):
-        anterior = pasta + "_anterior"
-        if os.path.isdir(pasta):
-            shutil.rmtree(anterior, ignore_errors=True)
-            os.replace(pasta, anterior)
-            n_ant = len(os.listdir(anterior)) if os.path.isdir(anterior) else 0
-            if n_ant:
-                print(f"Relatórios do lote anterior em {anterior}: {n_ant}",
+        if os.path.isdir(pasta) and os.listdir(pasta):
+            destino = f"{pasta}_anterior_{time.strftime('%Y%m%dT%H%M%S')}"
+            try:
+                shutil.move(pasta, destino)
+                print(f"Relatórios do lote anterior arquivados em {destino}",
                       flush=True)
-        os.makedirs(pasta, exist_ok=True)
+            except (OSError, shutil.Error) as e:
+                print(f"AVISO: não foi possível arquivar {pasta} ({e}) — a "
+                      f"continuar; o resumo final pode incluir o lote anterior.",
+                      flush=True)
+        try:
+            os.makedirs(pasta, exist_ok=True)
+        except OSError as e:
+            print(f"AVISO: não foi possível criar {pasta} ({e})", flush=True)
 
     # A chave Fish não é usada pelo lote (o daemon só fala XTTS). Sem este
     # aviso, um lote gerado com a chave no `.env` dava a impressão de ter saido
@@ -214,12 +244,29 @@ def main() -> int:
                 pass
 
     # Sobe N daemons XTTS (modelo residente, spool dedicado cada).
+    #
+    # ⚠️ A AMOSTRA TEM DE SER PASSADA. O `daemon_xtts.py` tem por omissão a
+    # amostra ANTIGA (`amostra_meishu_30s_limpa.wav`), que NÃO é a do `.env`
+    # (`amostra_meishu_oficial.wav`). Enquanto este Popen não a passava, o lote
+    # sintetizava com a voz errada e gravava sob a chave certa
+    # (`xtts:meishu:v2`) — arquivos que o app serve, indistinguíveis dos bons.
+    # Em 27/10 o usuário ouviu o resultado e reconheceu a voz que já tinha
+    # descartado. Uma amostra explícita é a única forma de garantir qual voz
+    # está a falar.
+    amostra = _amostra_do_servico()
+    if not amostra or not os.path.exists(amostra):
+        print(f"ERRO: amostra do XTTS não encontrada ({amostra!r}). A geração "
+              f"com outra voz produziria arquivos válidos na chave errada — "
+              f"a abortar.", flush=True)
+        return 1
+    print(f"Amostra de voz: {amostra}", flush=True)
+
     daemons = []  # (processo, spool_dir)
     for i in range(n_daemons):
         spool = os.path.join(SPOOL_BASE, f"d{i}")
         os.makedirs(spool, exist_ok=True)
         p = subprocess.Popen(
-            [PYTHON_XTTS, DAEMON, "--spool", spool],
+            [PYTHON_XTTS, DAEMON, "--spool", spool, "--amostra", amostra],
             env=dict(os.environ),
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         )
@@ -245,6 +292,12 @@ def main() -> int:
         env = dict(os.environ)
         env["XTTS_SPOOL"] = daemons[daemon_idx][1]
         env["XTTS_DAEMON_IDX"] = str(daemon_idx)
+        # Espera por trecho = 600 s (tempo de UM trecho, medido com o lote 1:1)
+        # × quantos workers partilham este daemon. Sem isto, o segundo worker do
+        # spool desistia enquanto o primeiro ainda sintetizava — e as obras de
+        # artigos longos (Eiko, Kyōshu Yōkō) falhavam por timeout sem avaria
+        # nenhuma (2026-10-27).
+        env["GOSHINSHO_XTTS_ESPERA_S"] = str(600 * por_daemon)
         return subprocess.Popen(
             [PYTHON_PROD, WORKER, arquivo],
             env=env,

@@ -963,6 +963,25 @@ def _chaves_historicas(provedor: str, voz_real: str) -> tuple[tuple[str, str], .
     return ()
 
 
+def _caminho_voz_aprovada(texto: str, rate: str) -> str | None:
+    """mp3 da voz APROVADA (Fish Audio, kikivoice) para este texto, se existir.
+
+    A voz aprovada pelo usuário em 2026-09-09 é a do Fish Audio. Sem a chave no
+    `.env`, `provedor_canonico` devolve XTTS — e o XTTS passava a ser procurado
+    ANTES do áudio aprovado que já estava em disco. Resultado: 13.906 trechos
+    que tinham o áudio aprovado (pago) passaram a ser servidos pela voz local,
+    porque a chave canónica do XTTS tem prioridade.
+
+    Aprovado ganha. Este áudio já foi pago e já foi aprovado; gerar outro por
+    cima dele é pior em todos os sentidos.
+    """
+    chave = _chave_cache(f"fish:{FISH_MEISHU_CACHE}", texto, rate)
+    caminho = os.path.join(_cache_dir(), f"{chave}.mp3")
+    if os.path.exists(caminho) and os.path.getsize(caminho) > 0:
+        return caminho
+    return None
+
+
 def _autor_do_trecho(arquivo: str | None, texto: str) -> str | None:
     """De quem é o trecho ("meishu"/"outro"), ou None se não se sabe.
 
@@ -1022,6 +1041,12 @@ def caminho_em_cache(texto: str, rate: str = "+0%", *,
         return None  # separador/símbolos: vira pausa, não tem ficheiro
     provedor, voz = provedor_canonico(texto, rate, arquivo=arquivo)
 
+    # A voz aprovada ganha a qualquer chave local (ver `_caminho_voz_aprovada`).
+    if provedor in ("xtts", "fish"):
+        aprovado = _caminho_voz_aprovada(texto, rate)
+        if aprovado:
+            return aprovado
+
     for prov, nome in ((provedor, voz),) + _chaves_historicas(provedor, voz):
         ch = _chave_cache(f"{prov}:{nome}", texto, rate)
         p = os.path.join(_cache_dir(), f"{ch}.mp3")
@@ -1038,6 +1063,13 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
     MESMO nome que o app procura. Para XTTS/Fish, `voz_real` carrega a versão
     (ex.: "meishu:v2", "meishu-hybrid") para forçar regeneração ao trocar voz.
     """
+    # A voz aprovada (Fish pago) ganha a qualquer chave local: se o áudio
+    # aprovado existe, serve-se esse e não se gasta CPU a regerar.
+    if provedor in ("xtts", "fish"):
+        aprovado = _caminho_voz_aprovada(texto, rate)
+        if aprovado:
+            return aprovado
+
     chave = _chave_cache(f"{provedor}:{voz_real}", texto, rate)
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
     if os.path.exists(destino):
