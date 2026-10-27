@@ -407,7 +407,65 @@ com a mensagem errada. Nesta máquina há sessões concorrentes a escrever no
 `main`: **indexar e commitar no mesmo passo**, ou aceitar que um `git add`
 isolado é uma janela aberta.
 
-### 10.8 Verificação
+### 10.8 27/10 — o usuário ouviu a voz errada (e tinha razão)
+
+> «Eu estive escutando o audio de Meishu-Sama e ele está com o padrão do audio
+> com voz afeminada que eu já havia descartada no início desse trabalho. […]
+> Eu estava escutando o Gokowa roku 14.»
+
+**Não, não estavam todos.** Mas o que ele ouviu não era impressão. Duas causas,
+independentes:
+
+#### a) A voz aprovada era tapada pela voz local
+
+A voz aprovada (Fish Audio, 09/09) está em disco para 38.404 trechos. Sem a
+chave Fish no `.env`, o provedor canónico é XTTS — e a **ordem de procura no
+cache** punha a chave do XTTS primeiro. O áudio aprovado vinha em último, entre
+as chaves históricas. Resultado: **13.906 trechos com áudio aprovado eram
+servidos pela voz local**, sem nada que o denunciasse.
+
+No `Gokōwa-roku nº 14` isso era quase a obra inteira:
+
+| Gokōwa nº 14 (198 trechos) | Antes | Depois |
+|---|---|---|
+| servido pela voz aprovada (Fish) | 0 | **113** |
+| servido por XTTS (voz local) | 117 | 4 |
+| sem áudio | 81 | 81 |
+
+Provado contra o servidor real: o mesmo trecho devolvia 461.685 bytes (XTTS) e
+passa a devolver **880.639 bytes** — o ficheiro aprovado, byte a byte.
+
+Correção: `_caminho_voz_aprovada()` é consultado **antes** de qualquer chave
+local, em `caminho_em_cache` e em `_sintetizar_com_cache`. O narrador não a
+herda (a voz aprovada é da voz clonada, não de texto de terceiros).
+
+#### b) O lote sintetizava com a amostra ERRADA
+
+`daemon_xtts.py` tem por omissão `amostra_meishu_30s_limpa.wav`; o `.env` diz
+`amostra_meishu_oficial.wav`. O `pre_gerar_lote_orais.py` lançava o daemon
+**sem `--amostra`** — logo, o lote gravava com a voz antiga e escrevia sob a
+chave `xtts:meishu:v2`: ficheiros que o app serve, indistinguíveis dos bons.
+Foram **6.985 mp3** assim desde 24/10.
+
+Correção: a amostra é lida do serviço (`_xtts_amostra()`), passada
+explicitamente, impressa no arranque, e o lote **aborta** se ela não existir.
+Gerar com outra voz é pior do que não gerar: o ficheiro parece válido.
+
+#### c) O que continua a sair em XTTS
+
+4.074 trechos da voz clonada não têm áudio aprovado e só podem ser XTTS
+enquanto a chave Fish não estiver no `.env`; 8.105 não têm áudio nenhum. A
+única forma de estes saírem na voz aprovada é (§6.4) pôr
+`GOSHINSHO_FISH_AUDIO_API_KEY` no `.env`.
+
+#### Armadilha
+
+**Duas omissões diferentes para a mesma coisa.** O daemon e o serviço têm cada
+um o seu `AMOSTRA_PADRAO` / `GOSHINSHO_XTTS_AMOSTRA`, com valores diferentes.
+Qualquer processo que lance o daemon tem de passar `--amostra`; sem isso a voz
+muda em silêncio e o cache não distingue.
+
+### 10.9 Verificação
 
 ```bash
 .venv/bin/python -m pytest tests/test_lote_audio_resiliencia.py -q   # 15 casos
