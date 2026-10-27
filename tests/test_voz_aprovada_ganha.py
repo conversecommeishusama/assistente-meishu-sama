@@ -34,6 +34,9 @@ from goshinsho.services import tts_service
 
 TEXTO = "Meishu-Sama: A gratidão é a base de tudo."
 RATE = "+0%"
+# Obra real do corpus: desde 27/10 a voz clonada só existe na Leitura, e é
+# `arquivo` que o prova. Sem isto, a resposta passa a ser o narrador.
+OBRA = "19510520 - Luz dos Ensinamentos.txt"
 
 
 class VozAprovadaGanhaTests(unittest.TestCase):
@@ -62,7 +65,7 @@ class VozAprovadaGanhaTests(unittest.TestCase):
         aprovado = self._criar("fish", tts_service.FISH_MEISHU_CACHE)
         self._criar("xtts", tts_service.VOZ_MEISHU_CACHE)
 
-        self.assertEqual(tts_service.caminho_em_cache(TEXTO), aprovado)
+        self.assertEqual(tts_service.caminho_em_cache(TEXTO, arquivo=OBRA), aprovado)
 
     def test_aprovado_ganha_no_sintetizar_sem_regerar(self):
         aprovado = self._criar("fish", tts_service.FISH_MEISHU_CACHE)
@@ -70,7 +73,7 @@ class VozAprovadaGanhaTests(unittest.TestCase):
 
         with mock.patch.object(tts_service, "_sintetizar_xtts") as xtts, \
              mock.patch.object(tts_service, "_gerar_edge") as edge:
-            saida = tts_service.sintetizar(TEXTO, voz="meishu")
+            saida = tts_service.sintetizar(TEXTO, voz="meishu", arquivo=OBRA)
 
         self.assertEqual(saida, aprovado)
         xtts.assert_not_called()
@@ -79,18 +82,18 @@ class VozAprovadaGanhaTests(unittest.TestCase):
     def test_sem_aprovado_usa_o_xtts_existente(self):
         """Sem áudio aprovado, um mp3 local válido continua a servir."""
         local = self._criar("xtts", tts_service.VOZ_MEISHU_CACHE)
-        self.assertEqual(tts_service.caminho_em_cache(TEXTO), local)
+        self.assertEqual(tts_service.caminho_em_cache(TEXTO, arquivo=OBRA), local)
 
     def test_mp3_aprovado_de_zero_bytes_nao_conta(self):
         """Zero bytes é falha de geração, não cache (regra de 2026-10-23)."""
         self._criar("fish", tts_service.FISH_MEISHU_CACHE, b"")
-        self.assertIsNone(tts_service.caminho_em_cache(TEXTO))
+        self.assertIsNone(tts_service.caminho_em_cache(TEXTO, arquivo=OBRA))
 
     def test_narrador_nao_recebe_voz_aprovada(self):
         """O áudio aprovado é da voz clonada; o narrador não o pode herdar."""
         self._criar("fish", tts_service.FISH_MEISHU_CACHE)
         with mock.patch.object(tts_service, "_autor_do_trecho", return_value="outro"):
-            caminho = tts_service.caminho_em_cache(TEXTO)
+            caminho = tts_service.caminho_em_cache(TEXTO, arquivo=OBRA)
         self.assertIsNone(caminho, "texto de terceiros não pode servir voz clonada")
 
     def test_o_lote_nao_regera_sobre_o_aprovado(self):

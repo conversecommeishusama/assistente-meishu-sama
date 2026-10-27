@@ -176,10 +176,13 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
               f"{limpo[:70]}", file=sys.stderr, flush=True)
 
     if tts_service._fish_disponivel():
-        # A chave Fish não entra no lote: o daemon só fala XTTS. Dizer isto uma
-        # vez evita a conclusão errada de que o áudio saiu na voz aprovada.
-        print(f"[{arquivo}] AVISO: chave Fish presente; o lote gera em XTTS "
-              f"local (o daemon não usa Fish).", file=sys.stderr, flush=True)
+        # ⚠️ Isto era só um aviso. Com a chave Fish presente, o lote TEM de
+        # gerar na voz aprovada — o daemon só fala XTTS, e gravar a voz local
+        # sob `xtts:meishu:v2` produz ficheiros que o app serve e que o usuário
+        # já rejeitou (2026-10-27). O ramo abaixo trata disso; aqui fica dito
+        # no log qual voz vai falar.
+        print(f"[{arquivo}] voz aprovada (Fish Audio) — o lote vai usá-la",
+              file=sys.stderr, flush=True)
 
     for i, trecho in enumerate(trechos):
         # 2026-10-23: a autoria vem ANTES do falante. Um trecho de obra de
@@ -206,6 +209,30 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
                 n_edge_cache += 1
             else:
                 n_edge_novo += 1
+            continue
+
+        # Voz do Meishu-Sama -> Fish Audio (voz aprovada), se a chave existir.
+        #
+        # ⚠️ ANTES este trecho caía SEMPRE no daemon XTTS, mesmo com a chave
+        # presente: `provedor_canonico` dizia "fish", o worker ignorava e
+        # gravava a voz LOCAL sob `xtts:meishu:v2`. O resultado tinha o nome
+        # certo e a voz errada — foi assim que a voz rejeitada voltou ao ar.
+        #
+        # Aqui o pedido vai pelo caminho do serviço, que já sabe usar Fish.
+        # Se falhar, registra-se como falha em vez de cair para XTTS: gerar a
+        # voz rejeitada "para não deixar em branco" é pior do que deixar em
+        # branco, porque ninguém distingue depois.
+        if provedor == "fish":
+            ja = tts_service.caminho_em_cache(trecho, arquivo=arquivo)
+            try:
+                tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
+            except Exception as e:
+                falhou(i, trecho, "fish", f"{type(e).__name__}: {e}")
+                continue
+            if ja:
+                n_xtts_cache += 1
+            else:
+                n_xtts_novo += 1
             continue
 
         # Voz do Meishu-Sama -> XTTS (via daemon).

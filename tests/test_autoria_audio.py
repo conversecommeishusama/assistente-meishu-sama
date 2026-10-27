@@ -160,10 +160,17 @@ class VozSegueAutoriaTests(unittest.TestCase):
         # trecho de abertura, que é o título do manuscrito.
         self.assertIn(prov, ("edge", "xtts", "fish"))
 
-    def test_sem_arquivo_mantem_comportamento_antigo(self):
-        """Chamadores antigos (sem contexto de obra) não mudam de voz."""
+    def test_sem_arquivo_o_chat_nao_recebe_voz_clonada(self):
+        """Sem obra da Leitura, a resposta é o narrador (regra de 2026-10-27).
+
+        ANTES este teste exigia o contrário («chamadores antigos não mudam de
+        voz»): sem `arquivo`, a voz clonada era o padrão. Quando o usuário
+        restringiu a voz clonada aos escritos e às palavras orais da Leitura, o
+        chat — que não tem obra — passou a ter de sair no narrador. Manter a
+        regra antiga aqui seria manter o chat a falar como ele.
+        """
         prov, voz = tts_service.provedor_canonico(self.outro)
-        self.assertNotEqual((prov, voz), ("edge", tts_service.VOZ_INTERLOCUTOR))
+        self.assertEqual((prov, voz), ("edge", tts_service.VOZ_INTERLOCUTOR))
 
     def test_autoria_indisponivel_nao_derruba_a_geracao(self):
         """`arquivo` desconhecido não pode provocar excepção."""

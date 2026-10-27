@@ -187,7 +187,8 @@ def main() -> int:
     n_daemons = args.daemons or n
     # Quantos workers partilham cada daemon. Com --workers 4 --daemons 2 são 2:
     # a espera de um trecho tem de contar com o trecho do vizinho à frente.
-    por_daemon = max(1, -(-n // n_daemons))
+    # Sem daemons (voz aprovada por Fish), ninguém tem de esperar por XTTS.
+    por_daemon = max(1, -(-n // n_daemons)) if n_daemons else n
 
     arquivos = listar_arquivos(todos=args.todos, lista=args.lista)
     estado = carregar_estado()
@@ -226,8 +227,14 @@ def main() -> int:
     # na voz aprovada.
     if (os.environ.get("GOSHINSHO_FISH_AUDIO_API_KEY")
             or os.environ.get("FISH_API_KEY")):
-        print("AVISO: chave Fish presente, mas o lote gera em XTTS local "
-              "(o daemon não usa Fish).", flush=True)
+        # Com a chave, o lote gera na VOZ APROVADA e não precisa de daemons.
+        # Isso liberta ~4 GB de RAM e os 6 núcleos do tecto de CPU para o
+        # gunicorn — que é o que mantém o chat do Goshinsho com a mesma
+        # qualidade e latência durante a geração (2026-10-27).
+        n_daemons = 0
+        print("Voz aprovada (Fish Audio) disponível: o lote gera na voz "
+              "aprovada e NÃO sobe daemons XTTS (CPU e memória ficam para o "
+              "chat).", flush=True)
     else:
         print("Chave Fish ausente: o lote gera em XTTS local.", flush=True)
 
@@ -253,13 +260,15 @@ def main() -> int:
     # Em 27/10 o usuário ouviu o resultado e reconheceu a voz que já tinha
     # descartado. Uma amostra explícita é a única forma de garantir qual voz
     # está a falar.
-    amostra = _amostra_do_servico()
-    if not amostra or not os.path.exists(amostra):
-        print(f"ERRO: amostra do XTTS não encontrada ({amostra!r}). A geração "
-              f"com outra voz produziria arquivos válidos na chave errada — "
-              f"a abortar.", flush=True)
-        return 1
-    print(f"Amostra de voz: {amostra}", flush=True)
+    amostra = ""
+    if n_daemons:
+        amostra = _amostra_do_servico()
+        if not amostra or not os.path.exists(amostra):
+            print(f"ERRO: amostra do XTTS não encontrada ({amostra!r}). A "
+                  f"geração com outra voz produziria arquivos válidos na "
+                  f"chave errada — a abortar.", flush=True)
+            return 1
+        print(f"Amostra de voz: {amostra}", flush=True)
 
     daemons = []  # (processo, spool_dir)
     for i in range(n_daemons):
@@ -273,8 +282,9 @@ def main() -> int:
         daemons.append((p, spool))
         print(f"daemon XTTS [{i}] iniciado", flush=True)
 
-    print("Aguardando daemons carregarem o modelo (~75s)...", flush=True)
-    time.sleep(75)
+    if daemons:
+        print("Aguardando daemons carregarem o modelo (~75s)...", flush=True)
+        time.sleep(75)
 
     # Sobe N workers, cada um ligado a um spool de daemon (env).
     procs = {}  # processo -> (arquivo, daemon_idx)
@@ -290,8 +300,14 @@ def main() -> int:
 
     def lancar(arquivo, daemon_idx):
         env = dict(os.environ)
-        env["XTTS_SPOOL"] = daemons[daemon_idx][1]
-        env["XTTS_DAEMON_IDX"] = str(daemon_idx)
+        # Sem daemons (voz aprovada por Fish), o spool é só um directório
+        # inerte: o worker nunca lá põe tarefas. Não indexar `daemons[0]`.
+        if daemons:
+            env["XTTS_SPOOL"] = daemons[daemon_idx][1]
+            env["XTTS_DAEMON_IDX"] = str(daemon_idx)
+        else:
+            env["XTTS_SPOOL"] = os.path.join(SPOOL_BASE, "fish")
+            env["XTTS_DAEMON_IDX"] = "0"
         # Espera por trecho = 600 s (tempo de UM trecho, medido com o lote 1:1)
         # × quantos workers partilham este daemon. Sem isto, o segundo worker do
         # spool desistia enquanto o primeiro ainda sintetizava — e as obras de
@@ -318,12 +334,13 @@ def main() -> int:
                 # é o sha256 do texto). Era `len(procs) % n`, que com slots
                 # exclusivos colidia quando os workers terminavam fora de ordem
                 # (dois no mesmo spool, um daemon ocioso) — 2026-10-27.
-                daemon_idx = idx % n_daemons
+                daemon_idx = idx % n_daemons if n_daemons else 0
                 p = lancar(arquivo, daemon_idx)
                 procs[p] = (arquivo, daemon_idx)
                 idx += 1
+                onde = f"daemon {daemon_idx}" if n_daemons else "Fish"
                 print(f"[{concluidas + idx}/{total_obras}] {arquivo} "
-                      f"(daemon {daemon_idx})", flush=True)
+                      f"({onde})", flush=True)
 
             terminados = [pp for pp in procs if pp.poll() is not None]
             if not terminados:

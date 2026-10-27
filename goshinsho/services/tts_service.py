@@ -816,6 +816,15 @@ def sintetizar(texto: str, voz: str | None = None, rate: str = "+0%", *,
     # Decide o provedor real com base na voz pedida + falante do diálogo.
     # O falante é identificado no texto CRU (sem pronúncias aplicadas).
     if voz_origem == VOZ_MEISHU:
+        # Defesa em profundidade (2026-10-27): a voz clonada só existe na
+        # Leitura Colaborativa. A rota já a recusa no chat, mas com a chave
+        # Fish instalada uma chamada antiga `sintetizar(voz="meishu")` sem obra
+        # passaria a GASTAR a API paga — e a falar como ele no chat, que é
+        # exactamente o que foi proibido. O corte fica aqui, no último ponto
+        # antes do provedor.
+        if not voz_clonada_autorizada(arquivo):
+            return _sintetizar_com_cache("edge", VOZ_PADRAO, texto, rate)
+
         # Uma só regra de decisão (ver `provedor_canonico`) — o gerador em lote
         # usa a mesma, para não gravar com voz diferente da que o app procura.
         provedor, voz_real = provedor_canonico(texto, rate, arquivo=arquivo)
@@ -1013,7 +1022,15 @@ def provedor_canonico(texto: str, rate: str = "+0%", *,
     trecho atribuído a ele; material institucional e testemunhos de fiéis vão
     para o narrador. Sem `arquivo` (chamadores antigos) mantém-se a regra
     antiga, que só olhava o rótulo de fala.
+
+    2026-10-27: a voz clonada passou a existir SÓ na Leitura Colaborativa (os
+    escritos e as palavras orais). Sem uma obra real da Leitura em `arquivo`,
+    a resposta é o narrador — mesmo que o rótulo de fala diga "Meishu-Sama:".
+    Isto vive aqui, e não só na rota, para que nenhum chamador (script, teste,
+    cliente antigo) gaste a API paga a falar como ele no chat.
     """
+    if not voz_clonada_autorizada(arquivo):
+        return "edge", VOZ_INTERLOCUTOR
     if _autor_do_trecho(arquivo, texto) == "outro":
         return "edge", VOZ_INTERLOCUTOR
     falante = _identificar_falante((texto or "").strip())

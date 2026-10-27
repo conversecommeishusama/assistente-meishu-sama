@@ -172,5 +172,43 @@ class BotaoDoChatNaoHerdaVozDaleituraTests(unittest.TestCase):
         self.assertIn("return", antes_do_fetch)
 
 
+class ChaveFishNaoMexeNoChatTests(unittest.TestCase):
+    """Com a chave Fish instalada, o chat continua no narrador.
+
+    ⚠️ 2026-10-27: a chave Fish foi copiada para o `.env` principal (vinha só
+    do `.env` do portal). A partir daí, QUALQUER chamada
+    `sintetizar(voz="meishu")` sem obra encontraria a chave e gastaria a API
+    paga a falar como ele — no chat. A guarda passou para `provedor_canonico`,
+    a fonte única, para não depender do front nem da rota.
+    """
+
+    TEXTO = "Meishu-Sama: A gratidão é a base de tudo."
+
+    def test_sem_obra_o_provedor_e_o_narrador(self):
+        prov, voz = tts_service.provedor_canonico(self.TEXTO)
+        self.assertEqual((prov, voz), ("edge", tts_service.VOZ_INTERLOCUTOR))
+
+    def test_arquivo_que_nao_e_obra_nao_autoriza(self):
+        for falso in ("chat", "../.env", "resposta.txt", ""):
+            with self.subTest(arquivo=falso):
+                prov, _ = tts_service.provedor_canonico(self.TEXTO, arquivo=falso)
+                self.assertEqual(prov, "edge")
+
+    def test_obra_real_autoriza(self):
+        prov, voz = tts_service.provedor_canonico(self.TEXTO, arquivo=OBRA)
+        self.assertIn(prov, ("fish", "xtts"),
+                      "a Leitura perdeu a voz clonada")
+        self.assertNotEqual(voz, tts_service.VOZ_INTERLOCUTOR)
+
+    def test_sintetizar_sem_obra_nao_usa_voz_clonada(self):
+        """O corte tem de ser no serviço, não só na rota."""
+        with mock.patch.object(tts_service, "_sintetizar_com_cache") as cache:
+            cache.return_value = "/tmp/x.mp3"
+            tts_service.sintetizar(self.TEXTO, voz="meishu")
+        provedor = cache.call_args.args[0]
+        self.assertEqual(provedor, "edge",
+                         "voz clonada sem obra da Leitura")
+
+
 if __name__ == "__main__":
     unittest.main()
