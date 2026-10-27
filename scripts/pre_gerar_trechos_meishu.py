@@ -60,12 +60,15 @@ def main() -> int:
 
     tempos = []
     for i, trecho in enumerate(trechos[:LIMITE_TRECHOS]):
+        # 2026-10-27: `arquivo=` — sem ele a autoria era ignorada e texto de
+        # terceiros saía na voz clonada.
+        arquivo = os.path.basename(ARQUIVO)
         # Mostra de quem é a fala
         m = re.match(r"^\s*([^:]{2,40}):", trecho)
         falante = m.group(1) if m else "(corrido)"
         t0 = time.time()
         try:
-            caminho = tts_service.sintetizar(trecho, voz="meishu")
+            caminho = tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
             dt = time.time() - t0
             tempos.append(dt)
             print(f"[{i+1}/{LIMITE_TRECHOS}] {falante[:25]:25s} -> {dt:6.1f}s  {os.path.getsize(caminho)} bytes")

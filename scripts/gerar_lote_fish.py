@@ -94,7 +94,11 @@ def gerar_trecho(args) -> tuple:
     ultimo_erro = ""
     for tentativa in range(1, TENTATIVAS + 1):
         try:
-            caminho = tts_service.sintetizar(trecho, voz="meishu", rate="+0%")
+            # 2026-10-27: `arquivo=` — a tarefa já sabe de que obra é o trecho,
+            # mas não o passava, por isso a autoria era ignorada e texto de
+            # terceiros saía na voz clonada.
+            caminho = tts_service.sintetizar(trecho, voz="meishu", rate="+0%",
+                                             arquivo=arquivo)
             return (True, arquivo, indice, os.path.basename(caminho)[:16])
         except Exception as exc:
             ultimo_erro = str(exc)[:100]

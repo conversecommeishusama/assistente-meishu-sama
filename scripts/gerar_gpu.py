@@ -67,6 +67,12 @@ def quebrar_como_front(texto: str) -> list[str]:
 
 
 def _identificar_falante(texto: str) -> str:
+    """⚠️ Já não decide nada — a autoria e o falante são do serviço.
+
+    Fica só como documentação do que aqui se fazia: um teste de rótulo de fala
+    que mandava para a voz clonada todo trecho sem rótulo, inclusive os de obra
+    de terceiros (testemunhos assinados, por exemplo). Ver `preparar_texto`.
+    """
     t = texto.lstrip()
     if re.match(r"^\s*(?:meishu[- ]sama|gr[ãa]o[- ]mestre|mestre)\s*:", t, re.IGNORECASE):
         return "meishu"
@@ -76,6 +82,15 @@ def _identificar_falante(texto: str) -> str:
 
 
 def _sanitizar_xtts(texto: str) -> str:
+    """Fragmento final da preparação do XTTS (fallback sem o app importável).
+
+    ⚠️ NÃO é a preparação completa: falta a normalização de caracteres, as
+    pronúncias e a remoção de macrons que o serviço aplica. Usar isto para
+    gerar áudio com a chave de cache do serviço produz um ficheiro com o MESMO
+    nome e conteúdo diferente do que o app geraria — foi o que aconteceu em
+    2026-10-27, quando o worker do lote e este gerador tinham cada um a sua
+    cópia. `preparar_texto()` abaixo usa a do serviço quando ela existe.
+    """
     out = re.sub(r"^\s*[^:]{2,40}:\s*", "", texto)
     out = out.replace(";", ",").replace(":", ",")
     out = re.sub(r"\.(?=\s+[A-ZÀ-Ú])", ",", out)
@@ -84,6 +99,47 @@ def _sanitizar_xtts(texto: str) -> str:
     out = re.sub(r"\s*\([^)]*\)\s*", " ", out)
     out = re.sub(r"\s+", " ", out).strip()
     return out
+
+
+def _servico():
+    """Importa o `tts_service` do repositório, ou None se não estiver aqui.
+
+    Procura a raiz do repositório a partir do directório deste ficheiro (e um
+    nível acima, para o caso de correr a partir de `data/pacote_gpu/`). Só assim
+    há uma única fonte de verdade para a preparação do texto e para a autoria.
+    """
+    candidato = AQUI
+    for _ in range(3):
+        if os.path.isdir(os.path.join(candidato, "goshinsho", "services")):
+            if candidato not in sys.path:
+                sys.path.insert(0, candidato)
+            try:
+                from goshinsho.services import tts_service
+                return tts_service
+            except Exception:
+                return None
+        candidato = os.path.dirname(candidato)
+    return None
+
+
+def preparar_texto(texto: str, arquivo: str, servico) -> str | None:
+    """Texto que o XTTS vai ler — a preparação do SERVIÇO, não uma cópia.
+
+    Devolve None quando o trecho não é do Meishu-Sama (autoria) ou quando não
+    sobra nada pronunciável. Antes, este gerador só olhava o rótulo de fala:
+    testemunhos sem rótulo, dentro de obra de terceiros, eram gerados na voz
+    clonada — trabalho perdido e ficheiros que o serviço nunca serve.
+    """
+    if servico is not None:
+        try:
+            if servico.provedor_canonico(texto, RATE, arquivo=arquivo)[0] != "xtts":
+                return None
+            return servico._preparar_texto_xtts(texto)
+        except Exception as e:
+            print(f"AVISO: falha na preparação do serviço ({e}) — a usar o "
+                  f"fallback local, que NÃO aplica pronúncias nem macrons.",
+                  file=sys.stderr, flush=True)
+    return _sanitizar_xtts(texto)
 
 
 def chave_cache(provedor_voz: str, texto: str, rate: str) -> str:
@@ -146,6 +202,16 @@ def main() -> int:
     total_pulados = 0
     t_inicio = time.time()
 
+    # Uma só fonte de verdade para a preparação e a autoria (ver `preparar_texto`).
+    servico = _servico()
+    if servico is None:
+        print("AVISO: `goshinsho.services.tts_service` não é importável a partir "
+              "daqui. A preparação do texto e a autoria caem num fallback LOCAL "
+              "que não é equivalente ao que o app gera — os mp3 terão o nome "
+              "certo e o texto preparado de outra forma. Para evitar isso, "
+              "corra este script a partir de uma cópia do repositório.",
+              file=sys.stderr, flush=True)
+
     for nome in textos:
         with open(os.path.join(TEXTOS_DIR, nome)) as f:
             conteudo = f.read()
@@ -153,13 +219,10 @@ def main() -> int:
         t_txt = time.time()
         n_txt = 0
         for trecho in trechos:
-            falante = _identificar_falante(trecho)
-            if falante == "outro":
-                # Interlocutor -> edge-tts NAO roda aqui (sem edge na GPU?).
-                # Vamos gerar edge localmente depois; aqui pulamos.
-                # (Na verdade, geramos edge no servidor depois — rápido.)
-                continue
-            texto_tts = _sanitizar_xtts(trecho)
+            # Autoria + preparação: uma só decisão, a do serviço.
+            # (Aqui havia um teste de rótulo de fala que gerava na voz clonada
+            # todo trecho sem rótulo — inclusive os de obra de terceiros.)
+            texto_tts = preparar_texto(trecho, nome, servico)
             if not texto_tts:
                 continue
             chave = chave_cache(f"xtts:{VOZ_MEISHU_CACHE}", trecho, RATE)

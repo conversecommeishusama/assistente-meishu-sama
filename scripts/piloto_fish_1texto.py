@@ -109,7 +109,8 @@ def main() -> int:
             continue
         # Chama o servidor (mesma rota do app). Ele decide o falante e o provedor.
         try:
-            caminho = tts_service.sintetizar(texto_front, voz="meishu", rate="+0%")
+            caminho = tts_service.sintetizar(texto_front, voz="meishu", rate="+0%",
+                                             arquivo=os.path.basename(ARQUIVO))
         except Exception as exc:
             print(f"  [{i}] ERRO: {str(exc)[:80]}")
             n_erro += 1
