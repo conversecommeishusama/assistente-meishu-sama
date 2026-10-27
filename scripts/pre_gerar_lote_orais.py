@@ -150,7 +150,12 @@ def main() -> int:
         env["XTTS_DAEMON_IDX"] = str(daemon_idx)
         return subprocess.Popen(
             [PYTHON_PROD, WORKER, arquivo],
-            env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            env=env,
+            # 2026-10-27: antes era DEVNULL e o worker perdia tudo o que tinha
+            # para dizer — «timeout XTTS trecho N», «FIM: N edge + M xtts»,
+            # excepções do edge. Herdar os descritores do pai leva isso para o
+            # mesmo log do serviço (StandardOutput/StandardError da unidade).
+            stdout=None, stderr=None,
         )
 
     try:
