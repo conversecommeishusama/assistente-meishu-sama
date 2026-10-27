@@ -465,7 +465,52 @@ um o seu `AMOSTRA_PADRAO` / `GOSHINSHO_XTTS_AMOSTRA`, com valores diferentes.
 Qualquer processo que lance o daemon tem de passar `--amostra`; sem isso a voz
 muda em silêncio e o cache não distingue.
 
-### 10.9 Verificação
+### 10.9 28/10 — os dois itens fechados
+
+#### a) A voz rejeitada saiu do serviço (reversível)
+
+`scripts/quarentenar_xtts.py` — move (não apaga) os mp3 do XTTS local.
+`--restaurar` devolve tudo; `--dry-run` ensaia.
+
+Inventário antes de mexer, nos 50.583 trechos com voz clonada:
+
+| família | trechos | disco |
+|---|---|---|
+| `fish:meishu-hybrid` (aprovada) | 40 278 | 18,5 GB |
+| `xtts:meishu:v2` | 18 743 | 5,3 GB |
+| `xtts:meishu` | 1 749 | 0,4 GB |
+
+Dos 50.583: **14.360 tinham as duas versões** (o XTTS era lixo que tapava a
+aprovada), 24.485 só a aprovada, 3.716 só XTTS, 8.022 sem áudio.
+
+Movidos **19.551 ficheiros, 5,70 GB, 0 falhas** para
+`data/tts_cache_quarentena_xtts_20261028T001937/`. Depois disso, nenhum trecho
+é servido pelo XTTS.
+
+#### b) A configuração passou a viver num só sítio
+
+| | Antes | Agora |
+|---|---|---|
+| Variáveis duplicadas | 28 nos dois `.env` | 0 |
+| `.env` do portal | 31 variáveis | **3** (as próprias) |
+| Comuns | copiadas à mão em dois sítios | `EnvironmentFile` no systemd |
+
+O `goshinsho-portal.service` ganhou
+`EnvironmentFile=/var/www/goshinsho/.env`. O `load_dotenv()` do portal corre
+em `/var/www/goshinsho-portal` e nunca encontraria o ficheiro comum (o dotenv
+sobe só dois níveis, até `/var/www`); com o `EnvironmentFile` o systemd
+carrega-o antes do processo arrancar, e o dotenv não sobrepõe o que já existe
+no ambiente.
+
+**`GOSHINSHO_FORUM_ENABLED=1` ficou de fora do ficheiro comum, de propósito**:
+activa as rotas do Fórum, desligadas na produção. Verificado depois:
+
+```
+principal: forum=False | fish=True | deepseek=True
+portal   : forum=True  | fish=True | deepseek=True
+```
+
+### 10.10 Verificação
 
 ```bash
 .venv/bin/python -m pytest tests/test_lote_audio_resiliencia.py -q   # 15 casos
