@@ -74,6 +74,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import time
 from functools import lru_cache
@@ -209,6 +210,36 @@ PRECOS = {
     "claude-sonnet-5": {"entrada": 3.0, "saida": 15.0},
     "claude-haiku-4-5-20251001": {"entrada": 1.0, "saida": 5.0},
 }
+
+# 2026-10-27: ESFORÇO DE RACIOCÍNIO POR FASE.
+#
+# O `deepseek-v4-flash` é um modelo de raciocínio e a API expõe `effort` com
+# três níveis (`low`/`high`/`max`; omissão `high`, ver GET /v1/models). Medido
+# neste servidor, mesma pergunta e mesmas ferramentas:
+#
+#   omissão (high) -> 2,72s / 1,00s / 0,90s de latência (3 amostras)
+#   effort=low     -> 1,00s / 0,90s
+#
+# A diferença é pequena por chamada curta, mas o laço faz 4-6 rodadas de
+# ferramenta, e nessas rodadas a decisão é estrutural (que termo buscar, se
+# ler mais contexto) -- não é síntese doutrinária. Já a SÍNTESE final é onde
+# o raciocínio pesado aparece de fato (medido: 458-751 reasoning_tokens numa
+# única chamada) e é ela que carrega as regras 8c/8d/10 do SYSTEM_PROMPT
+# (abertura matizada, ambiguidade, nunca fundir fontes).
+#
+# Por isso o padrão usa `low` SÓ nas rodadas de busca e mantém o default do
+# provedor na síntese: ganha-se latência onde ela é segura e não se arrisca
+# qualidade no texto que o usuário lê. Qualquer um dos dois pode ser
+# sobreposto por ambiente (`GOSHINSHO_EFFORT_BUSCA`/`_SINTESE`), inclusive
+# para `""` (= não enviar o parâmetro, comportamento anterior).
+ESFORCO_RODADAS_BUSCA = os.environ.get("GOSHINSHO_EFFORT_BUSCA", "low").strip()
+ESFORCO_SINTESE = os.environ.get("GOSHINSHO_EFFORT_SINTESE", "").strip()
+
+
+def _kwargs_esforco(nivel: str) -> dict:
+    """Parâmetro `effort` no formato que a API aceita (`extra_body`).
+    Nível vazio -> dict vazio, ou seja, o provedor usa o default dele."""
+    return {"extra_body": {"effort": nivel}} if nivel else {}
 
 
 # --------------------------------------------------------------------------
@@ -1086,6 +1117,36 @@ def _orcamento_restante(t0: float, limite: float = LIMITE_SEGURANCA_SEGUNDOS) ->
     return max(TIMEOUT_MINIMO_CHAMADA, limite - (time.time() - t0))
 
 
+def _erro_de_provedor(exc: Exception) -> bool:
+    """`True` só para falha transitória de infraestrutura do provedor.
+
+    2026-10-27: espelha a mesma distinção de `llm_fallback._erro_transitorio`
+    (não importável daqui -- `llm_fallback` importa este módulo, seria
+    circular). Serve para o laço decidir entre degradar (sintetizar com o que
+    já foi encontrado) e propagar (bug nosso).
+
+    Motivo de existir: um timeout de chamada no meio da busca derrubava a
+    resposta inteira. Falha de conexão/timeout/429/5xx é o provedor; 400/401/
+    403/404/422 é contrato nosso e NUNCA deve ser mascarado por uma síntese
+    degradada."""
+    if isinstance(exc, (TimeoutError, ConnectionError, OSError)):
+        return True
+    nome = type(exc).__name__.lower()
+    for tipo in ("timeout", "connection", "apiconnection", "apistatus", "internalserver", "ratelimit"):
+        if tipo in nome:
+            return True
+    texto = str(exc).lower()
+    padroes = (
+        "timeout", "timed out", "connection", "connection reset", "connection aborted",
+        "temporarily unavailable", "service unavailable", "bad gateway", "gateway timeout",
+        "internal server error", "server busy", "overloaded", "rate limit", "too many requests",
+        "502", "503", "504", "429", "read timed out", "remote end closed",
+    )
+    if any(padrao in texto for padrao in padroes):
+        return True
+    return False
+
+
 def _criar_com_orcamento(client, orcamento: float, **kwargs):
     """`client.chat.completions.create(...)` com o timeout limitado ao
     orçamento restante.
@@ -1158,6 +1219,7 @@ def responder_agentico_deepseek(
     parou_por_estagnacao = False
     esgotou_tempo_busca = False
     avisou_busca_profunda = False
+    erro_provedor: Exception | None = None
     t0 = time.time()
     resposta_final = ""
     truncada = False
@@ -1205,9 +1267,41 @@ def responder_agentico_deepseek(
                 )
             except Exception:
                 pass  # aviso de UX nunca deve derrubar a busca em si
-        resp = _criar_com_orcamento(
-            client, _orcamento_restante(t0), model=modelo, max_tokens=max_tokens, messages=messages, tools=tools_schema
-        )
+        try:
+            resp = _criar_com_orcamento(
+                client,
+                _orcamento_restante(t0),
+                model=modelo,
+                max_tokens=max_tokens,
+                messages=messages,
+                tools=tools_schema,
+                **_kwargs_esforco(ESFORCO_RODADAS_BUSCA),
+            )
+        except Exception as exc:
+            # 2026-10-27: achado real em producao -- uma unica falha do
+            # provedor no meio da busca anulava a resposta INTEIRA: o erro
+            # subia para `responder_agentico_deepseek` -> `routes.api_chat`
+            # emitia `event: error`, nenhuma resposta era gravada, e o
+            # usuario recebia "o servico de IA esta instavel" mesmo tendo
+            # sido pesquisado 40-100s de acervo (13,7% das perguntas nos
+            # ultimos 14 dias terminaram assim, sem nenhuma resposta).
+            #
+            # A causa da falha era o proprio orcamento: quando a busca
+            # chegava perto do teto de `LIMITE_SEGURANCA_SEGUNDOS`,
+            # `_orcamento_restante()` entregava 5-10s de timeout para uma
+            # chamada que, sendo o modelo de raciocinio, precisa de 8-15s.
+            #
+            # Politica daqui em diante: falha transitoria do provedor NAO e
+            # motivo para perder o trabalho ja feito -- ela cai no MESMO
+            # mecanismo da estagnacao e do teto (forcar sintese com o que
+            # ja foi encontrado, nunca resposta vazia). Erro que nao e do
+            # provedor (bug nosso: KeyError, TypeError...) continua subindo,
+            # porque esconder bug atras de uma sintese degradada e pior.
+            if not _erro_de_provedor(exc):
+                raise
+            erro_provedor = exc
+            esgotou_tempo_busca = True
+            break
         usage = resp.usage
         total_in += usage.prompt_tokens
         total_out += usage.completion_tokens
@@ -1294,6 +1388,7 @@ def responder_agentico_deepseek(
             model=modelo,
             max_tokens=max_tokens,
             messages=messages,
+            **_kwargs_esforco(ESFORCO_SINTESE),
         )
         usage = resp.usage
         total_in += usage.prompt_tokens
@@ -1364,6 +1459,7 @@ def responder_agentico_deepseek(
         "rodadas": rodadas_busca,
         "chamadas_ferramenta": chamadas_ferramenta,
         "citacoes_suspeitas": citacoes_suspeitas,
+        "erro_provedor": (type(erro_provedor).__name__ if erro_provedor else None),
         "tokens_entrada": total_in,
         "tokens_saida": total_out,
         "custo": round(custo, 5),

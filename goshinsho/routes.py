@@ -12,6 +12,7 @@ from flask import (
     Blueprint,
     Response,
     copy_current_request_context,
+    current_app,
     flash,
     jsonify,
     make_response,
@@ -96,6 +97,30 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 # "não responde". 5s é folgado sobre qualquer proxy e imperceptível no tráfego
 # (≈40 bytes por evento).
 HEARTBEAT_CHAT_SEGUNDOS = 5.0
+
+# 2026-10-27: TEMPO-BOX DO FALLBACK PARA A ANTHROPIC.
+#
+# O fallback para o Claude (services/llm_fallback.py) foi desligado em
+# 2026-10-14 (commit 324f762f), quando o maquinário de orçamento agêntico foi
+# removido -- as constantes dele saíram junto ("a rota passou a usar o
+# --timeout 300 do gunicorn como guarda externa"). Só que a guarda externa
+# do gunicorn NÃO substitui esta: ela mata o worker (SIGKILL) em vez de
+# entregar resposta, que é exatamente o "Failed to fetch" que o fallback
+# existe para evitar. As primeiras perguntas sem resposta no banco são de
+# 14/10 -- o dia do commit.
+#
+# Reintroduzido com valores readequados ao --timeout 300 de hoje (era 180):
+# 240s deixa 60s de margem para o pré-busca no Supabase, streaming e
+# fecho da ligação. O primário gasta no pior caso 100s de busca + 40s de
+# síntese = 140s, sobrando ~100s para o fallback -- suficiente para o Claude
+# responder com o orçamento próprio dele (90s).
+LIMITE_TOTAL_AGENTICO_SEGUNDOS = 240.0
+
+# Abaixo disto não vale a pena abrir o fallback: uma falha da DeepSeek perto
+# do fim do orçamento (caso real de 17/09: APITimeoutError aos 135s) só
+# penduraria o usuário até o SIGKILL, entregando o mesmo erro que o fallback
+# deveria evitar. Melhor devolver o erro agora, com mensagem útil.
+RESERVA_MINIMA_FALLBACK_SEGUNDOS = 45.0
 
 stripe.api_key = Config.STRIPE_SECRET_KEY
 RATE_LIMIT_BUCKETS = defaultdict(deque)
@@ -1321,6 +1346,12 @@ def api_message_feedback(message_id):
 
 @web_bp.post("/api/chat")
 def api_chat():
+    # 2026-10-27: marco do INICIO REAL da requisição. O orçamento do fallback
+    # conta daqui, não do início da busca: entre os dois há chamadas ao
+    # Supabase (current_user, quota, conversa) que já consomem parte do
+    # --timeout do gunicorn. Medir só a partir da busca fazia o tempo-box
+    # subestimar o gasto e autorizar um fallback que não cabia mais.
+    inicio_request = time()
     user = current_user()
     payload = request.get_json(silent=True) or {}
     expand_previous = bool(payload.get("expand_previous"))
@@ -1591,9 +1622,103 @@ def api_chat():
                     extra_kwargs = {"system_prompt": SYSTEM_PROMPT if com_citacoes else SYSTEM_PROMPT_DIRETO}
                 extra_kwargs["on_deep_search"] = aviso_busca_profunda
                 extra_kwargs["on_progress"] = aviso_progresso
-                r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
+                try:
+                    r = responder_fn(pergunta_agentico, historico_agentico, **extra_kwargs)
+                except Exception as exc:
+                    # 2026-10-27: rede de segurança contra indisponibilidade
+                    # do provedor (services/llm_fallback.py) -- restaurada.
+                    #
+                    # Ela tinha sido desligada em 2026-10-14 junto com o
+                    # maquinário de orçamento agêntico. Sem ela, uma falha da
+                    # DeepSeek no fim da busca é TERMINAL para o usuário: o
+                    # `event: error` sobe, nada é gravado, e a pesquisa já
+                    # paga (40-100s de acervo) é jogada fora.
+                    #
+                    # Só cai para o Claude quando o erro é transitório de
+                    # infraestrutura. Erro de programação/dados (KeyError,
+                    # TypeError, 400/401/403) sobe intacto: não se gasta outro
+                    # provedor na mesma pergunta quebrada nem se esconde bug
+                    # nosso atrás de uma resposta degradada.
+                    from .services.llm_fallback import _erro_transitorio, fallback_disponivel
+
+                    if not (_erro_transitorio(exc) and fallback_disponivel()):
+                        raise
+                    # Conta da ENTRADA da requisição (inclui o pré-busca no
+                    # Supabase), não só do laço -- ver nota em `inicio_request`.
+                    tempo_gasto = time() - inicio_request
+                    restante = LIMITE_TOTAL_AGENTICO_SEGUNDOS - tempo_gasto
+                    if restante < RESERVA_MINIMA_FALLBACK_SEGUNDOS:
+                        # Falha no FIM do orçamento: abrir o fallback agora só
+                        # penduraria o usuário até o SIGKILL do gunicorn,
+                        # entregando o mesmo erro. Melhor devolver já, com
+                        # mensagem útil (`_friendly_error` traduz).
+                        try:
+                            current_app.logger.warning(
+                                "agêntico DeepSeek falhou (%s) após %.0fs -- restavam apenas %.0fs, "
+                                "abaixo da reserva de %.0fs; não caindo para o fallback: %s",
+                                type(exc).__name__, tempo_gasto, restante,
+                                RESERVA_MINIMA_FALLBACK_SEGUNDOS, exc,
+                            )
+                        except Exception:
+                            pass  # log nunca deve derrubar a recuperação
+                        raise
+                    # `current_app` (não `app`): routes.py é um Blueprint e
+                    # não tem o objeto app em escopo -- usar `app.logger` aqui
+                    # levantava NameError DENTRO do fluxo de fallback,
+                    # transformando um erro recuperável da DeepSeek em erro
+                    # fatal para o usuário. Pego pelo teste de integração.
+                    try:
+                        current_app.logger.warning(
+                            "agêntico DeepSeek falhou (%s); caindo para o fallback Claude "
+                            "com %.0fs restantes: %s",
+                            type(exc).__name__, restante, exc,
+                        )
+                    except Exception:
+                        pass  # log nunca deve derrubar a recuperação
+                    event_queue.put({"event": "status", "code": "provider_fallback"})
+                    from .services.llm_fallback import (
+                        responder_agentico_claude,
+                        responder_agentico_claude_jp,
+                    )
+
+                    if retrieval_mode == "jp_agentic":
+                        r = responder_agentico_claude_jp(
+                            pergunta_agentico,
+                            historico_agentico,
+                            idioma=language,
+                            com_citacoes=com_citacoes,
+                            on_deep_search=aviso_busca_profunda,
+                            on_progress=aviso_progresso,
+                            limite_segundos=restante,
+                        )
+                    else:
+                        r = responder_agentico_claude(
+                            pergunta_agentico,
+                            historico_agentico,
+                            system_prompt=extra_kwargs["system_prompt"],
+                            on_deep_search=aviso_busca_profunda,
+                            on_progress=aviso_progresso,
+                            limite_segundos=restante,
+                        )
                 result_holder["answer"] = r.get("resposta", "")
                 result_holder["meta"] = r
+                # 2026-10-27: A RESPOSTA É GRAVADA AQUI, na thread de
+                # trabalho -- não no gerador do stream.
+                #
+                # Antes, `save_message(... \"assistant\" ...)` corria em
+                # `generate_agentic`, DEPOIS do streaming: se o cliente
+                # desistisse (browser móvel que abandona a página após 1-2
+                # min, que é o normal num chat de 60-100s), o gerador era
+                # descartado e a resposta -- já gerada e já paga -- perdia-se
+                # por completo. O usuário voltava e não via nada; a pergunta
+                # dele ficava órfã na base. Este é o segundo mecanismo por
+                # trás das 13,7% de perguntas sem resposta medidas em
+                # 27/10/2026, independente de o provedor falhar ou não.
+                result_holder["assistant_message_id"] = (
+                    save_message(conversation_id, "assistant", result_holder["answer"])
+                    if user and conversation_id
+                    else None
+                )
                 # 2026-07-31: sem isso, o modo agenciado (motor único desde
                 # 30/07) nunca aparecia em logs/deepseek_usage.jsonl -- o
                 # dashboard admin ficava cego pra quase todo o tráfego real.
@@ -1645,9 +1770,11 @@ def api_chat():
 
             answer = result_holder.get("answer", "")
             remaining_questions = consume_question_quota(user)
-            assistant_message_id = (
-                save_message(conversation_id, "assistant", answer) if user and conversation_id else None
-            )
+            # 2026-10-27: o id vem da thread de trabalho, que já gravou a
+            # resposta antes de o stream terminar -- ver a nota em `worker`.
+            # Não gravar de novo aqui: seria uma segunda inserção da mesma
+            # resposta sempre que o cliente ainda estivesse conectado.
+            assistant_message_id = result_holder.get("assistant_message_id")
             yield json.dumps(
                 {
                     "event": "done",
@@ -1702,6 +1829,14 @@ def api_chat():
                     on_japanese_fallback=notify_japanese_fallback,
                     base_pool_fn=base_pool_fn,
                 )
+                # 2026-10-27: mesma razão do `worker` agêntico -- gravar
+                # ANTES de o stream terminar, para a resposta não se perder
+                # se o cliente desistir no meio.
+                result_holder["assistant_message_id"] = (
+                    save_message(conversation_id, "assistant", result_holder["answer"])
+                    if conversation_id
+                    else None
+                )
             except Exception as exc:
                 error_holder["error"] = exc
             finally:
@@ -1746,9 +1881,9 @@ def api_chat():
             # a versão COMPLETA (com marcador) no banco, pra "me dê a fonte
             # na íntegra" num turno seguinte poder resolver por consulta
             # directa; mostra ao usuário só a versão limpa.
-            assistant_message_id = (
-                save_message(conversation_id, "assistant", answer) if user and conversation_id else None
-            )
+            # 2026-10-27: a gravação passou para a thread de trabalho (ver
+            # nota lá); aqui só se lê o id já gravado.
+            assistant_message_id = result_holder.get("assistant_message_id")
             from .services.conversation_context import extract_source_marker, strip_source_marker
             from .pipeline.retrieve import resolve_source_titles
 

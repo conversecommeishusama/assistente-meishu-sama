@@ -7,6 +7,81 @@
 
 ---
 
+---
+
+## 27/10 — CHAT: "FALHAS CONSTANTES" COM CAUSA FORA DO MODELO (threads do torch)
+
+> **Relato**: "o chat está tendo falhas constantes ao dar as respostas ao
+> usuário, o que está atrapalhando a experiência". Nenhum erro no
+> `journalctl`; `/health` 200; API da DeepSeek a responder em 0,6 s. A
+> investigação começou pelos **dados**, não pelos logs.
+
+### 1. O que os dados diziam
+Tabela `mensagens`, 14 dias: **25 de 183 perguntas (13,7%) sem NENHUMA
+resposta** (mensagem do utilizador sem a do assistente a seguir). Latência das
+que respondiam: **mediana 67 s, p75 98 s, p90 131 s**; 57% acima de 60 s.
+Padrão de retentativa visível: "Plaquetas baixas" → "Baixa de plaquetas" →
+"Linfoma" (15:47, 15:48, 15:51), as três órfãs.
+
+### 2. Causa raiz — `torch` a usar 14 threads para 10 tokens
+`search_service.py` não limitava threads; `torch.get_num_threads()==14`.
+Medido no servidor, mesmo processo e mesma consulta:
+
+```
+threads=14 -> 9,80s / 10,50s / 10,82s     <- padrão
+threads= 4 -> 0,37s /  0,21s /  0,21s
+threads= 2 -> 0,31s /  0,30s /  0,32s
+```
+
+~9 s **por chamada de ferramenta** (toda busca por termo chama
+`buscar_por_significado`) × 4–6 rodadas = 40–60 s de CPU por resposta. A nota
+de 06/08 ("80–87% do tempo é API, 13–19% local") inverteu-se por mudança de
+máquina, não de código.
+
+### 3. Dois mecanismos de resposta perdida
+1. **Timeout por orçamento**: a busca consumia 90–99 s do teto de 100 s e
+   `_orcamento_restante()` passava a dar 5–10 s de timeout a uma chamada que
+   precisa de 8–15 s → exceção → `event: error` → nada gravado.
+2. **Gravação depois do stream**: `save_message("assistant")` corria no
+   gerador; browser móvel que abandona a página ao fim de 1–2 min descarta o
+   gerador e a resposta (já paga) nunca chegava ao banco.
+
+### 4. Correções
+- `search_service.py`: `_limitar_threads_torch()` → **2 threads**
+  (`GOSHINSHO_TORCH_THREADS`).
+- `agentic_search.py`: `_erro_de_provedor()` — falha transitória **degrada**
+  para síntese com o que já foi encontrado; bug nosso (4xx, `KeyError`)
+  continua a subir. `ESFORCO_RODADAS_BUSCA="low"` / síntese no default do
+  provedor (`GOSHINSHO_EFFORT_BUSCA`/`_SINTESE`).
+- `routes.py`: gravação movida para a **thread de trabalho**; **fallback para a
+  Anthropic restaurado** (desligado em 14/10 junto com o orçamento antigo), com
+  `LIMITE_TOTAL_AGENTICO_SEGUNDOS=240` / `RESERVA_MINIMA_FALLBACK_SEGUNDOS=45`
+  readequados ao `--timeout 300` atual.
+- `llm_fallback.py`: aceita `on_progress` (contrato igual ao do laço DeepSeek).
+- `static/js/app.js`: aviso `providerFallbackNotice` nos 13 idiomas,
+  preservado entre eventos `progress`.
+- **Novo** `tests/test_chat_resiliencia.py` (7 testes, sem rede).
+
+**Medido depois**: 68–99 s → **21–36 s** por resposta. **Serviços
+reiniciados**; `/health` e `/app-pt/` → 200.
+
+### 5. Lição de método (dois falsos caminhos)
+- **`duration:0` no log do Caddy não é aborto** — é artefacto de registo;
+  a duração real obtém-se comparando o header `Date` da resposta com o `ts`.
+- **`test_client().close()` não simula cliente que abandona**: o test client do
+  Werkzeug consome o gerador de qualquer forma, e o teste passava com o código
+  antigo. A simulação correta é chamar a view dentro de `test_request_context`
+  e descartar a `Response` sem iterar — aí sim o teste falha no código antigo
+  (confirmado por `git checkout` do ficheiro).
+
+### 6. Pendente / decisão futura
+- A rota `/api/chat` **não escreve log nenhum** — foi o que manteve 13,7% de
+  falhas sem diagnóstico. Um log por pedido (resultado, rodadas, tempo,
+  `erro_provedor`) está por decidir.
+- Cache de respostas continua adiado (ver §12.6 do `GOSHINSHO.md`).
+
+---
+
 ## 09/10 — PERIÓDICOS: 415 TEXTOS TRADUZIDOS, AUDITADOS E INSERIDOS NO ACERVO
 
 > **Objetivo**: fechar a lacuna dos textos de Meishu-Sama publicados nos

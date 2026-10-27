@@ -22,6 +22,52 @@ from .search_ranking import (
 )
 
 
+# 2026-10-27: LIMITE DE THREADS DO TORCH -- achado real em producao, causa
+# da lentidao que derrubava respostas do chat.
+#
+# `modelo.encode([uma_pergunta])` (usado por
+# `agentic_search.buscar_por_significado`, chamado em TODA busca por termo)
+# levava 9,8s medidos neste servidor (14 nucleos) com o padrao do torch
+# (`torch.get_num_threads() == 14`). Numa consulta curta -- lote de 1, ~10
+# tokens -- o custo de sincronizar 14 threads intra-op e maior que o
+# trabalho em si. Mesmo processo, mesma consulta:
+#
+#   threads=14 -> 9,80s / 10,50s / 10,82s
+#   threads= 4 -> 0,37s /  0,21s /  0,21s
+#   threads= 2 -> 0,31s /  0,30s /  0,32s
+#   threads= 1 -> 0,29s /  0,27s /  0,27s
+#
+# Sao ~9s POR CHAMADA DE FERRAMENTA e o laco agentico faz 4-6 rodadas, o
+# que somava 40-60s de CPU por resposta (a nota de 2026-08-06 em
+# `buscar_termo_enriquecido` dizia que 80-87% do tempo era a API -- a
+# proporcao se inverteu). Com o teto de 100s do laco
+# (`LIMITE_SEGURANCA_SEGUNDOS`), as ultimas rodadas ficavam com 5-10s de
+# timeout de chamada, estouravam, e o usuario recebia `event: error` sem
+# NENHUMA resposta (ver o tratamento em
+# `agentic_search.responder_agentico_deepseek`).
+#
+# 2 threads: praticamente o mesmo tempo de 1 thread e ainda aproveita
+# paralelismo quando o lote e maior (rerank do cross-encoder). Vale para
+# todo processo que importe este modulo -- inclusive com `--preload`, porque
+# a configuracao e feita antes do fork. Ajustavel por
+# `GOSHINSHO_TORCH_THREADS` para quem quiser recalibrar.
+
+def _limitar_threads_torch() -> None:
+    try:
+        import torch
+    except Exception:  # pragma: no cover - torch so falta em ambiente sem IA
+        return
+    try:
+        limite = int(os.environ.get("GOSHINSHO_TORCH_THREADS", "2"))
+    except ValueError:
+        limite = 2
+    if limite > 0:
+        torch.set_num_threads(limite)
+
+
+_limitar_threads_torch()
+
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 UPLOADED_INDEX_DIR = PROJECT_ROOT / "experiments" / "uploaded_indexes"
 # Limita trabalho CPU em buscas literais muito amplas (ex.: "daijo", "depressão").

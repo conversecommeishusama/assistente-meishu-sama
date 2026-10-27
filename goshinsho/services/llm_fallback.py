@@ -165,6 +165,7 @@ def responder_agentico_claude(
     arquivos_extractor_fn=_arquivos_da_ferramenta,
     validador_citacoes_fn=validar_citacoes,
     on_deep_search=None,
+    on_progress=None,
     limite_segundos: float = LIMITE_SEGURANCA_SEGUNDOS_CLAUDE,
 ) -> dict:
     """Laço agenciado sobre a API da Anthropic, espelhando o contrato de
@@ -228,6 +229,25 @@ def responder_agentico_claude(
         if rodadas_busca == 3 and on_deep_search is not None:
             try:
                 on_deep_search()
+            except Exception:
+                pass  # aviso de UX nunca deve derrubar a busca
+        # 2026-10-27: mesmo `on_progress` do laço DeepSeek (ver
+        # `agentic_search.responder_agentico_deepseek`), para o contrato das
+        # duas camadas ser idêntico e o utilizador continuar a ver que a
+        # pesquisa está VIVA quando o fallback assume -- sem isto o bubble
+        # ficaria parado até 90s, exactamente o problema que o heartbeat de
+        # routes.py veio resolver. Nunca influencia a busca.
+        if on_progress is not None:
+            try:
+                on_progress(
+                    {
+                        "fase": "busca",
+                        "rodada": rodadas_busca,
+                        "segundos": round(time.time() - t0, 1),
+                        "ferramentas": chamadas_ferramenta[-1:] or [],
+                        "provedor": "anthropic",
+                    }
+                )
             except Exception:
                 pass  # aviso de UX nunca deve derrubar a busca
 

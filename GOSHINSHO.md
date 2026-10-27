@@ -900,3 +900,96 @@ histórico inteiro a ~US$ 0,0424/1M); o ganho real é de **latência** (42s → 
 Vender como economia de custo seria enganoso. Armadilha: as mais repetidas
 incluem `"sim"` (continuação) e `"quais são as fontes dessa resposta"`
 (depende do turno anterior) — cache só serve para perguntas **autocontidas**.
+
+## 13. RESPOSTAS PERDIDAS E LENTIDÃO DO CHAT — CAUSA RAIZ FORA DO MODELO (27/10/2026)
+
+### 13.1. O relato e a medição
+
+**Relato**: "o chat está tendo falhas constantes ao dar as respostas". Não
+havia erro no `journalctl` (a rota não escreve log) e o `/health` estava 200,
+por isso a investigação começou pelos dados, não pelos logs.
+
+**Medição na base** (tabela `mensagens`, 14 dias): **25 de 183 perguntas (13,7%)
+sem NENHUMA resposta** — a mensagem do utilizador ficava sem a do assistente
+logo a seguir. Latência das que respondiam: **mediana 67 s, p75 98 s, p90
+131 s**, 57% acima de 60 s. Havia sequências de retentativa claras
+("Plaquetas baixas" → "Baixa de plaquetas" → "Linfoma", as três órfãs).
+
+### 13.2. Causa raiz da lentidão: threads do PyTorch (não é o modelo)
+
+`search_service.py` importa `torch` sem configurar nada → `torch.get_num_threads()
+== 14` (nº de núcleos). O encode de **uma** pergunta curta (lote de 1, ~10
+tokens) gastava todo o ganho em sincronização. Mesmo processo, mesma consulta:
+
+| threads | latência do `encode` |
+|---|---|
+| 14 (padrão) | 9,80 s / 10,50 s / 10,82 s |
+| 4 | 0,37 s / 0,21 s / 0,21 s |
+| 2 | 0,31 s / 0,30 s / 0,32 s |
+| 1 | 0,29 s / 0,27 s / 0,27 s |
+
+São **~9 s por chamada de ferramenta** (toda busca por termo chama
+`buscar_por_significado`, ver a nota de 06/08 em `buscar_termo_enriquecido`)
+**× 4–6 rodadas** = 40–60 s de CPU por resposta. A nota de 06/08 que dizia
+"80–87% do tempo é API, 13–19% é local" inverteu-se — não por mudança de código,
+mas por mudança de máquina/núcleos.
+
+Correção: `_limitar_threads_torch()` no topo de `search_service.py`, **2
+threads** por omissão (sobreponível por `GOSHINSHO_TORCH_THREADS`). Vale para
+todo processo que importe o módulo, inclusive com `--preload` (a configuração é
+feita antes do fork).
+
+### 13.3. Como a lentidão virava resposta perdida (dois mecanismos)
+
+1. **Timeout por orçamento no fim do laço.** A busca consumia 90–99 s do teto
+   de 100 s (`LIMITE_SEGURANCA_SEGUNDOS`); `_orcamento_restante()` então
+   entregava **5–10 s** de timeout à chamada seguinte — insuficiente para um
+   modelo de raciocínio (8–15 s). A exceção subia, `routes.py` emitia
+   `event: error` e **nada era gravado**. Reproduzido: última rodada iniciada
+   aos 90,8 s com 9,3 s de orçamento, levou 8,2 s (passou por sorte).
+2. **Gravação depois do stream.** `save_message(..., "assistant", ...)` corria
+   dentro de `generate_agentic`, **depois** do streaming. Um browser móvel que
+   abandona a página ao fim de 1–2 min descarta o gerador e a resposta — já
+   gerada e já paga — nunca chegava ao banco.
+
+### 13.4. Correções (todas em produção)
+
+| Onde | O quê |
+|---|---|
+| `search_service.py` | `_limitar_threads_torch()` — 2 threads |
+| `agentic_search.py` | `_erro_de_provedor()`: falha transitória do provedor **degrada** (síntese com o que já foi encontrado) em vez de anular; bug nosso (`KeyError`, 4xx) continua a subir |
+| `agentic_search.py` | `ESFORCO_RODADAS_BUSCA="low"` nas rodadas de ferramenta, síntese no default do provedor (env `GOSHINSHO_EFFORT_BUSCA`/`_SINTESE`) |
+| `routes.py` | gravação do assistente movida para a **thread de trabalho** (antes do fim do stream); `assistant_message_id` vem por `result_holder` |
+| `routes.py` | **fallback para a Anthropic restaurado** (tinha sido desligado em 14/10 junto com o orçamento antigo) com `LIMITE_TOTAL_AGENTICO_SEGUNDOS=240` e `RESERVA_MINIMA_FALLBACK_SEGUNDOS=45`, medidos contra o `--timeout 300` de hoje |
+| `llm_fallback.py` | aceita e propaga `on_progress` (contrato idêntico ao laço DeepSeek) |
+| `static/js/app.js` | aviso `providerFallbackNotice` nos 13 idiomas (removido em 14/10, restaurado), com o estado preservado entre eventos `progress` |
+
+**Medido depois**: 68–99 s → **21–36 s** por resposta; três perguntas reais
+voltaram com secções, sem citações suspeitas.
+
+### 13.5. Testes de regressão (`tests/test_chat_resiliencia.py`, 7 testes)
+
+- Falha transitória no meio da busca → resposta entregue, `erro_provedor`
+  registado, texto já encontrado presente no prompt da síntese.
+- `KeyError` e `BadRequestError` (400) → **propagam** (não se mascara bug nem
+  se paga outro provedor).
+- **Resposta gravada com o stream nunca iterado** — este teste falha no código
+  anterior; foi verificado por `git checkout` do `routes.py` antigo. Nota de
+  método: simular abandono com `test_client().close()` **não serve** — o test
+  client do Werkzeug consome o gerador de qualquer forma. A chamada tem de ser
+  feita à view, dentro de `test_request_context`, e a `Response` descartada.
+- Fallback dispara e a resposta do Claude é gravada; sem reserva de tempo
+  suficiente devolve `event: error` em vez de pendurar até o SIGKILL.
+
+### 13.6. Lições
+
+- **"Falha do chat" sem erro no log não é falha do modelo.** Os três sintomas
+  da mesma família (14/09, 17/09, 27/10) tinham causas em camadas diferentes:
+  worker morto, orçamento não cumprido, e — agora — CPU local desperdiçada em
+  sincronização de threads. A ordem de investigação que funcionou: base de
+  dados (órfãs e latência) → reprodução do laço com cronometragem **por
+  chamada** → isolar a ferramenta → isolar o `encode`.
+- **A rota `/api/chat` não escreve log nenhum.** Isso não é neutro: foi o que
+  fez 13,7% de falhas passarem meses sem diagnóstico.
+- **Configuração de `torch` é global ao processo** — vale a pena fixá-la onde o
+  modelo é carregado, não em cada chamador.
