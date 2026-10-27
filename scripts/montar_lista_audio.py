@@ -86,7 +86,12 @@ def contar(obras) -> list[dict]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--tipo", choices=["oral", "escrita", "todos"], default="escrita")
+    ap.add_argument("--tipo", default="escrita",
+                    help="oral | escrita | todos, ou uma combinação separada "
+                         "por vírgulas (ex.: 'oral,escrita'). 2026-10-28: a "
+                         "combinação existe porque o pedido do usuário foi "
+                         "'tudo o que faltar dos escritos e dos orais' — um "
+                         "tipo de cada vez deixava sempre metade de fora.")
     ap.add_argument("--incluir-institucional", action="store_true",
                     help="Não aplica a exclusão de periódicos/material institucional.")
     ap.add_argument("--saida", default=os.path.join(RAIZ, "data", "tts_lista_escrita.txt"),
@@ -94,8 +99,21 @@ def main() -> int:
     ap.add_argument("--mostrar", action="store_true", help="Só mostrar; não escrever.")
     args = ap.parse_args()
 
+    tipos = [t.strip() for t in args.tipo.split(",") if t.strip()]
+    invalidos = [t for t in tipos if t not in ("oral", "escrita", "todos")]
+    if invalidos:
+        ap.error(f"tipo inválido: {', '.join(invalidos)}")
+
     sa = _carregar_sincronizador()
-    obras = sa.filtrar_obras(args.tipo, None, args.incluir_institucional)
+    obras: list = []
+    vistos: set = set()
+    for tipo in tipos:
+        for o in sa.filtrar_obras(tipo, None, args.incluir_institucional):
+            arq = o["arquivo"] if isinstance(o, dict) else o
+            if arq in vistos:
+                continue
+            vistos.add(arq)
+            obras.append(o)
     linhas = contar(obras)
 
     total_falta = sum(l["falta"] for l in linhas)
@@ -107,7 +125,11 @@ def main() -> int:
     print(f"Âmbito: tipo={args.tipo} institucional={'sim' if args.incluir_institucional else 'nao'}")
     print(f"Obras no âmbito: {len(linhas)} | com pendência: {len(com_pendencia)}")
     print(f"Trechos com áudio: {total_ok} | pendentes: {total_falta}")
-    print(f"   voz dele (XTTS, ~30 s cada): {falta_dele}")
+    # 2026-10-28: o rótulo dizia "XTTS, ~30 s" porque era o único provedor da
+    # voz clonada. Com a chave Fish instalada, o caminho por omissão é a voz
+    # APROVADA — e o tempo por trecho é da chamada remota, não do daemon local.
+    # Um rótulo errado aqui já fez alguém estimar dias onde havia horas.
+    print(f"   voz dele (aprovada/Fish; XTTS só sem chave): {falta_dele}")
     print(f"   narrador (edge, ~1 s cada):  {falta_outro}")
     for l in com_pendencia:
         print(f"  {l['falta']:6d} em falta ({l['dele']:5d} dele + {l['outro']:5d} narrador)"

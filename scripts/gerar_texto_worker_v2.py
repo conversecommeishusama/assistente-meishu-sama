@@ -181,8 +181,19 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
         # sob `xtts:meishu:v2` produz ficheiros que o app serve e que o usuário
         # já rejeitou (2026-10-27). O ramo abaixo trata disso; aqui fica dito
         # no log qual voz vai falar.
-        print(f"[{arquivo}] voz aprovada (Fish Audio) — o lote vai usá-la",
-              file=sys.stderr, flush=True)
+        #
+        # 2026-10-28: o aviso passa a olhar para a OBRA, não só para a chave.
+        # Antes dizia "voz aprovada" mesmo numa obra que a autoria manda narrar
+        # do início ao fim (o dossiê da difusão é o caso real: 2.788 trechos,
+        # todos em `edge`) — e um aviso que promete uma voz que não vai falar é
+        # exactamente o tipo de mensagem que já enganou neste projecto.
+        if any(tts_service.provedor_canonico(tr, arquivo=arquivo)[0] == "fish"
+               for tr in trechos[:40]):
+            print(f"[{arquivo}] voz aprovada (Fish Audio) — o lote vai usá-la",
+                  file=sys.stderr, flush=True)
+        else:
+            print(f"[{arquivo}] obra narrada (o texto não é dele) — vai em "
+                  f"António/edge", file=sys.stderr, flush=True)
 
     for i, trecho in enumerate(trechos):
         # 2026-10-23: a autoria vem ANTES do falante. Um trecho de obra de

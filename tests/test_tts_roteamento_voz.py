@@ -281,6 +281,44 @@ class KanaNaPreparacaoTests(unittest.TestCase):
         self.assertIn("base", out)
 
 
+class CitacaoJaponesaTests(unittest.TestCase):
+    """Citação japonesa longa não pode virar falha de geração.
+
+    ⚠️ CONTEXTO DO BUG (2026-10-28)
+
+    O dossiê da difusão cita documentos da época em japonês. Depois de sair o
+    kanji/kana, sobrava `"〇、、。` — e o `〇` (U+3007) NÃO é "pontuação" para
+    `_sem_conteudo_narravel`, por isso o texto passava o teste, ia para o
+    edge-tts, e o edge recusava com `NoAudioReceived`. O lote registava mais um
+    trecho sem áudio e seguia.
+
+    A pontuação CJK e as formas de largura total passaram a ser removidas na
+    normalização, junto com o kanji/kana.
+    """
+
+    JAPAO = ("「顧みれば昭和九年一〇月私は大日本観音会なる名称のもとに、"
+             "観音運動を始め、その目的は病貧争絶無の世界をつくるというにある。")
+
+    def test_citacao_pura_fica_sem_conteudo(self):
+        """Só japonês → nada pronunciável → pausa, não chamada ao provedor."""
+        out = tts_service._preparar_texto_edge(self.JAPAO)
+        self.assertTrue(tts_service._sem_conteudo_narravel(out),
+                        f"sobraria {out!r} para o edge-tts, que recusaria")
+
+    def test_zero_ideografico_e_removido(self):
+        """`〇` (U+3007) não é `\\w` latin nem pontuação — escapava aos dois."""
+        out = tts_service._preparar_texto_edge("昭和九年一〇月")
+        self.assertNotIn("〇", out)
+        self.assertTrue(tts_service._sem_conteudo_narravel(out))
+
+    def test_texto_misto_continua_narraval(self):
+        """Uma citação no meio de português não pode matar o trecho inteiro."""
+        out = tts_service._preparar_texto_edge(
+            'Ele escreveu 明主様 e explicou a doutrina.')
+        self.assertIn("explicou a doutrina", out)
+        self.assertFalse(tts_service._sem_conteudo_narravel(out))
+
+
 class CacheFicheiroVazioTests(unittest.TestCase):
     """Um mp3 de 0 bytes NÃO é cache válido.
 

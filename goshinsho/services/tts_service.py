@@ -368,7 +368,16 @@ def _normalizar_caracteres(texto: str) -> str:
     #   → a leitura cai para a voz do NAVEGADOR.
     # Medido: 4 trechos no acervo (3 orais + 1 escrito). Como a chave do cache
     # usa o texto CRU, isto NÃO invalida áudio já gerado.
-    out = re.sub(r"[\u4e00-\u9fff\u3040-\u30ff\uff66-\uff9f]+", "", out)
+    #
+    # 2026-10-28: entram também a PONTUAÇÃO CJK (`\u3000-\u303f`, inclui 、。〇)
+    # e as formas de largura total. Foi revelado por uma citação japonesa longa
+    # no dossiê da difusão: depois de sair o kanji/kana, sobrava `"〇、、。`, o
+    # `〇` (U+3007) não é "pontuação" para `_sem_conteudo_narravel`, e o edge
+    # recusava com NoAudioReceived — falha que o lote registava como trecho sem
+    # áudio. A conversão de 「」『』【】 para ASCII acontece ACIMA, por isso
+    # removê-las aqui não as perde.
+    out = re.sub(r"[\u4e00-\u9fff\u3040-\u30ff\u3000-\u303f"
+                 r"\uff01-\uff60\uff66-\uff9f]+", "", out)
     out = re.sub(r"\s{2,}", " ", out)
     out = re.sub(r"\(\s*\)", "", out)
     return out.strip()

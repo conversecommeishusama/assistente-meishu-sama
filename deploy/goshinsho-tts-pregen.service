@@ -36,7 +36,14 @@ Environment=XTTS_THREADS=2
 # 2 daemons (cada daemon tira as tarefas do spool uma a uma) os dois ficam
 # sempre ocupados. Os workers de reserva são leves (~100 MB) e o tecto de
 # memória continua a ser o do drop-in.
-ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 4 --daemons 2 --lista /var/www/goshinsho/data/tts_lista_todos.txt
+# 2026-10-28: a lista passou a cobrir TUDO o que a Leitura serve e que ainda
+# não tem áudio — orais e escritos (126 obras). Antes era só 'escrita', e os
+# orais ficavam de fora por omissão: o comando que os gerou em Setembro não
+# deixou lista nenhuma.
+# Regenerar (apenas as obras com pendência entram na lista):
+#   .venv/bin/python scripts/montar_lista_audio.py --tipo oral,escrita \
+#       --saida data/tts_lista_leitura_completa.txt
+ExecStart=/var/www/goshinsho/venv/bin/python /var/www/goshinsho/scripts/pre_gerar_lote_orais.py --workers 4 --daemons 2 --lista /var/www/goshinsho/data/tts_lista_leitura_completa.txt
 Restart=on-failure
 RestartSec=30
 TimeoutStartSec=300
