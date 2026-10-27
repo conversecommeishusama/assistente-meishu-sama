@@ -370,7 +370,44 @@ com a chave parecia ter saído na voz aprovada. O `.env` passou também a ser
 carregado no **pai** (o systemd não usa `EnvironmentFile`, por isso o
 orquestrador não via nenhuma variável do `.env`).
 
-### 10.6 Verificação
+### 10.6 Os geradores antigos deixam de ter regra própria
+
+Sobravam cinco implementações paralelas da mesma decisão — e todas tinham
+divergido. O padrão que já custou caro neste projecto (três cópias da regra de
+provedor em 22/10, duas da sanitização em 27/10):
+
+| Ficheiro | O que fazia de errado | Agora |
+|---|---|---|
+| `gerar_texto_meishu.py` | 4.ª cópia da regra de roteamento; sem `arquivo` | `caminho_em_cache` + `sintetizar(arquivo=…)` |
+| `gerar_texto_meishu_v2.py` | 2.ª implementação do laço; `_sanitizar()` própria | wrapper de 3 linhas sobre `processar_obra` |
+| `pre_gerar_trechos_meishu.py` | sem `arquivo` | `arquivo=` |
+| `piloto_fish_1texto.py` | sem `arquivo` | `arquivo=` |
+| `gerar_lote_fish.py` | sem `arquivo` (a tarefa já tinha o nome) | `arquivo=` |
+| `gerar_gpu.py` + `data/pacote_gpu/` | preparação local, sem pronúncias | `_preparar_texto_xtts` + `provedor_canonico` |
+
+O caso do GPU era o mais grave porque o resultado **não** é órfão: a chave de
+cache é a mesma, por isso o ficheiro é servido. Provado:
+
+```
+serviço : 'Pratico o Jyorei e recebi o Oricari,'
+local   : 'Pratico o Johrei e recebi o Ohikari,'    ← o que saía antes
+```
+
+As duas cópias do gerador GPU estavam também dessincronizadas: a de
+`data/pacote_gpu/` ficou em Setembro e ainda gravava sob `xtts:meishu` (sem
+versão) — o bug dos 1.784 áudios invisíveis voltaria a aparecer em qualquer
+pacote montado a partir dela. Ficaram idênticas.
+
+### 10.7 Uma armadilha nova: `git add` sem commit imediato
+
+A 27/10 os dois primeiros ficheiros desta secção foram indexados e, enquanto o
+trabalho continuava, **outra sessão** fez um commit que os levou consigo
+(`0c87af47`, da frente do dossiê). O código está correcto — só foi registado
+com a mensagem errada. Nesta máquina há sessões concorrentes a escrever no
+`main`: **indexar e commitar no mesmo passo**, ou aceitar que um `git add`
+isolado é uma janela aberta.
+
+### 10.8 Verificação
 
 ```bash
 .venv/bin/python -m pytest tests/test_lote_audio_resiliencia.py -q   # 15 casos
