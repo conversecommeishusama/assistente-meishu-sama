@@ -36,7 +36,23 @@ DAEMON = os.path.join(RAIZ, "scripts", "daemon_xtts.py")
 WORKER = os.path.join(RAIZ, "scripts", "gerar_texto_worker_v2.py")
 SPOOL_BASE = os.path.join(RAIZ, "data", "tts_spool")
 
+# O worker grava aqui o relatório de falhas de cada obra; o orquestrador lê o
+# mesmo directório no fim. A constante vem do worker para não haver duas
+# definições do mesmo caminho. `sys.path[0]` é o directório do script, por isso
+# o import funciona quando isto é executado como `python scripts/<nome>.py`.
+from gerar_texto_worker_v2 import FALHAS_DIR, RESUMOS_DIR  # noqa: E402
+
 COLECOES_ORAIS = ["gokowa", "gosuiji", "mioshie"]
+
+# O `.env` é carregado aqui (e não só no worker) para que o aviso sobre a chave
+# Fish reflicta a realidade e para que daemons e workers herdem o mesmo
+# ambiente. Sem isto, o pai — lançado pelo systemd, sem `EnvironmentFile` — não
+# via nenhuma variável do `.env`.
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(RAIZ, ".env"))
+except Exception:  # dotenv ausente ou .env ilegível: seguir com o ambiente
+    pass
 
 
 def _normalizar(s: str) -> str:
@@ -75,6 +91,63 @@ def salvar_estado(estado: dict) -> None:
     os.replace(tmp, ESTADO_PATH)
 
 
+def _resumo_da_obra(arquivo: str) -> str:
+    """« | 12 novos, 340 em cache» — para o "concluído" não enganar.
+
+    Sem isto, o log escrevia exactamente o mesmo para uma obra que gerou 1.200
+    trechos e para uma que só revisitou o cache (2026-10-27).
+    """
+    caminho = os.path.join(RESUMOS_DIR, f"{arquivo}.json")
+    try:
+        with open(caminho, encoding="utf-8") as f:
+            d = json.load(f)
+    except (OSError, ValueError):
+        return " | sem contagens (o worker não terminou)"
+    novos = d.get("novos", 0)
+    em_cache = (d.get("edge_cache", 0) + d.get("xtts_cache", 0))
+    extra = f", {d['falhas']} falhas" if d.get("falhas") else ""
+    return f" | {novos} novos, {em_cache} em cache{extra}"
+
+
+def _resumir_falhas(com_falhas: list[str]) -> None:
+    """Diz, no fim do lote, o que ficou sem áudio.
+
+    Sem isto, o lote terminava com a mesma cara quer tivesse gerado tudo quer
+    tivesse deixado trechos em branco: as falhas eram engolidas no worker e o
+    orquestrador só olhava para `rc` (que era sempre 0). 2026-10-27.
+    """
+    relatorios = {}
+    if os.path.isdir(FALHAS_DIR):
+        for nome in sorted(os.listdir(FALHAS_DIR)):
+            if not nome.endswith(".json"):
+                continue
+            try:
+                with open(os.path.join(FALHAS_DIR, nome), encoding="utf-8") as f:
+                    relatorios[nome] = json.load(f)
+            except (OSError, ValueError):
+                continue
+
+    if not relatorios and not com_falhas:
+        print("Lote terminado: nenhuma falha registada.", flush=True)
+        return
+
+    total = sum(len(d.get("falhas", [])) for d in relatorios.values())
+    print("=" * 70, flush=True)
+    print(f"LOTE TERMINADO COM FALHAS: {total} trecho(s) sem áudio em "
+          f"{len(relatorios)} obra(s)", flush=True)
+    for nome, dados in relatorios.items():
+        print(f"  {len(dados.get('falhas', [])):>5}  {dados.get('arquivo', nome)}",
+              flush=True)
+    for nome in com_falhas:
+        if not any(d.get("arquivo") == nome for d in relatorios.values()):
+            # O worker saiu com erro sem deixar relatório (ex.: morreu a meio).
+            print(f"  {'?':>5}  {nome} (sem relatório — o worker não terminou)",
+                  flush=True)
+    print(f"Detalhe por trecho em: {FALHAS_DIR}", flush=True)
+    print("Reexecutar: systemctl restart goshinsho-tts-pregen", flush=True)
+    print("=" * 70, flush=True)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=5,
@@ -104,6 +177,29 @@ def main() -> int:
     if not fila:
         print("Nada a fazer.", flush=True)
         return 0
+
+    # Os relatórios de falhas do lote anterior vão para o lado: o resumo final
+    # tem de falar só deste lote. Nada é apagado — só arquivado.
+    for pasta in (FALHAS_DIR, RESUMOS_DIR):
+        anterior = pasta + "_anterior"
+        if os.path.isdir(pasta):
+            shutil.rmtree(anterior, ignore_errors=True)
+            os.replace(pasta, anterior)
+            n_ant = len(os.listdir(anterior)) if os.path.isdir(anterior) else 0
+            if n_ant:
+                print(f"Relatórios do lote anterior em {anterior}: {n_ant}",
+                      flush=True)
+        os.makedirs(pasta, exist_ok=True)
+
+    # A chave Fish não é usada pelo lote (o daemon só fala XTTS). Sem este
+    # aviso, um lote gerado com a chave no `.env` dava a impressão de ter saido
+    # na voz aprovada.
+    if (os.environ.get("GOSHINSHO_FISH_AUDIO_API_KEY")
+            or os.environ.get("FISH_API_KEY")):
+        print("AVISO: chave Fish presente, mas o lote gera em XTTS local "
+              "(o daemon não usa Fish).", flush=True)
+    else:
+        print("Chave Fish ausente: o lote gera em XTTS local.", flush=True)
 
     # Limpa spools antigos.
     os.makedirs(SPOOL_BASE, exist_ok=True)
@@ -137,6 +233,7 @@ def main() -> int:
     procs = {}  # processo -> (arquivo, daemon_idx)
     idx = 0
     ultimo_progresso = time.time()
+    com_falhas: list[str] = []
     # Progresso honesto: o numerador é "obras já despachadas" e o denominador
     # é o total da lista. Antes o denominador era `len(fila)` mas o numerador
     # somava `feitos` (checkpoint antigo), o que produzia "[84/15]" num lote
@@ -195,12 +292,21 @@ def main() -> int:
             for p in terminados:
                 arquivo, _daemon_idx = procs.pop(p)
                 ultimo_progresso = time.time()
-                feitos.add(arquivo)
-                estado["feitos"] = sorted(feitos)
-                salvar_estado(estado)
+                if p.returncode == 0:
+                    feitos.add(arquivo)
+                    estado["feitos"] = sorted(feitos)
+                    salvar_estado(estado)
+                else:
+                    # 2026-10-27: uma obra com trechos sem áudio NÃO entra no
+                    # checkpoint — senão o modo sem `--lista` nunca a voltava a
+                    # tentar e a falha ficava escondida para sempre. O relatório
+                    # do worker fica em `data/tts_falhas/`.
+                    com_falhas.append(arquivo)
                 concluidas += 1
-                print(f"[{concluidas}/{total_obras}] concluído: {arquivo} "
-                      f"(rc={p.returncode})", flush=True)
+                rotulo = "concluído" if p.returncode == 0 else "COM FALHAS"
+                print(f"[{concluidas}/{total_obras}] {rotulo}: {arquivo} "
+                      f"(rc={p.returncode}){_resumo_da_obra(arquivo)}",
+                      flush=True)
     except KeyboardInterrupt:
         print("\nInterrompido. Estado salvo — reexecute para retomar.", flush=True)
         for p in list(procs):
@@ -209,6 +315,7 @@ def main() -> int:
             except Exception:
                 pass
     finally:
+        _resumir_falhas(com_falhas)
         for p, _spool in daemons:
             try:
                 p.terminate()

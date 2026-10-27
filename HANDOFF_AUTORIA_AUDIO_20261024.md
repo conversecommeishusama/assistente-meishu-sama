@@ -299,13 +299,81 @@ Testes novos em `tests/test_tts_roteamento_voz.py` (`EdgeTtsComLimiteTests`):
 pendura → excepção dentro do limite, escrita normal, chamada de dentro de um
 loop a correr, e erro da API propagado. Total da frente: **49 casos**.
 
-### 9.4 Ainda em aberto
+### 9.4 O que ficou por fechar em 9.x — **fechado a 27/10**
 
-- Um worker continua a poder **perder** um trecho: se o edge-tts estourar o
+Os três pontos abaixo eram a lista de pendências; foram todos resolvidos no
+mesmo dia (ver §10).
+
+- ~~Um worker continua a poder **perder** um trecho: se o edge-tts estourar o
   limite, o `gerar_texto_worker_v2` engole a excepção (`except Exception:
-  pass`) e conta o trecho como falhado sem o registar. Falta um contador de
-  falhas por obra no fim da linha.
-- O `--lista` ignora o checkpoint `feitos` (por desenho): a cada reinício as 28
-  obras são revisitadas. É barato com o cache quente, mas o log engana —
-  mostra «concluído» para obras que só fizeram *cache hit*.
+  pass`) e conta o trecho como falhado sem o registar.~~
+- ~~O `--lista` ignora o checkpoint `feitos` (por desenho): a cada reinício as
+  28 obras são revisitadas. É barato com o cache quente, mas o log engana —
+  mostra «concluído» para obras que só fizeram *cache hit*.~~
+- ~~Falta um relatório de falhas legível.~~
+
+---
+
+## 10. 27/10/2026 — o que faltava para o lote ser honesto
+
+### 10.1 Falhas deixam de desaparecer
+
+O ramo do narrador fazia `except Exception: pass`. Um trecho ficava sem áudio,
+o worker saía com `rc=0` e o orquestrador escrevia «concluído» — indistinguível
+de sucesso. Agora:
+
+- cada falha vai para `data/tts_falhas/<obra>.json` (índice, provedor, motivo,
+  excerto) e para o log, uma linha por falha;
+- o worker sai com `rc=1` se houve falhas, e o orquestrador **não** põe essa
+  obra no checkpoint (`feitos`) — senão uma execução sem `--lista` nunca a
+  voltava a tentar;
+- no fim do lote, `_resumir_falhas()` imprime o total por obra e termina com a
+  ordem de reexecução. Uma obra cujo worker morreu sem deixar relatório
+  aparece como «sem relatório — o worker não terminou», em vez de passar.
+
+### 10.2 «Concluído» passa a dizer o que fez
+
+`data/tts_resumos/<obra>.json` guarda as contagens por obra, e a linha do lote
+passa a ser:
+
+```
+[3/28] concluído: Tijotengoku.txt (rc=0) | 12 novos, 340 em cache
+```
+
+`novos` = trechos realmente sintetizados agora; `em cache` = já existiam. Sem
+isto, uma obra que gerou 1.200 trechos e uma que só revisitou o cache
+produziam exactamente a mesma linha.
+
+### 10.3 O worker deixou de ter a sua própria sanitização
+
+O worker aplicava `_sanitizar_xtts()` local e **não** aplicava pronúncias nem
+removia macrons. O app aplica `_preparar_texto_xtts()` (normalização +
+pronúncias + macrons + sanitização) — com a **mesma** chave de cache. Ou seja:
+o mesmo trecho saía diferente conforme tivesse sido gerado em lote ou sob
+demanda, e o resultado era imprevisível. Agora o worker chama a preparação do
+serviço. (Segunda vez que uma cópia local da regra do TTS divergiu — a primeira
+foi a do provedor, em 22/10.)
+
+### 10.4 Espera e repetição no XTTS
+
+`_esperar_mp3` já não espera 600 s cegos: vigia a tarefa no spool e distingue
+«o daemon recusou» (foi para `erro/`), «concluiu mas o mp3 não existe» e
+«desapareceu». O limite passou a 300 s (`GOSHINSHO_XTTS_ESPERA_S`) com uma
+repetição. Uma tarefa que ninguém espera é removida do spool, para não ser
+gerada depois, sozinha.
+
+### 10.5 A chave Fish deixa de iludir
+
+O lote gera sempre em XTTS (o daemon só fala XTTS). Desde que a chave Fish
+exista no `.env`, o arranque imprime um aviso explícito — antes, um lote feito
+com a chave parecia ter saído na voz aprovada. O `.env` passou também a ser
+carregado no **pai** (o systemd não usa `EnvironmentFile`, por isso o
+orquestrador não via nenhuma variável do `.env`).
+
+### 10.6 Verificação
+
+```bash
+.venv/bin/python -m pytest tests/test_lote_audio_resiliencia.py -q   # 15 casos
+```
+
 
