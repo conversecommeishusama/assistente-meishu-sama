@@ -8,7 +8,7 @@ capítulo em que cada um é tratado.
 | 相応の理 | sōō no ri | razão da correspondência entre objeto e lugar | 15 |
 | 大教会 | daikyōkai | Igreja Grande (mil membros ou mais) | 7, 8 |
 | 大教会長 | daikyōkaichō | presidente de Igreja Grande | 10 |
-| 大教師 | daikyōshi | Ministro Sênior | 10 |
+| 大教師 | daikyōshi | Ministro Titular | 10 |
 | 大祭 | taisai | Grande Culto, sazonal, na Sede | 17 |
 | 大光明 | dai-kōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
 | 大光明如来 | Dai-Kōmyō Nyorai | Tathāgata da Grande Luz | 12 |
@@ -80,7 +80,7 @@ capítulo em que cada um é tratado.
 | 地鎮祭 | jichinsai | rito de fundação do terreno | 16 |
 | 中教会 | chūkyōkai | Igreja Média (trezentos membros ou mais) | 7, 8 |
 | 中教会長 | chūkyōkaichō | presidente de Igreja Média | 10 |
-| 中教師 | chūkyōshi | Ministro Intermediário | 10 |
+| 中教師 | chūkyōshi | Ministro Adjunto | 10 |
 | 追善 | tsuizen | sufrágio em favor do falecido | 20 |
 | 定例布教座談会 | teirei fukyō zadankai | mesa-redonda periódica de difusão | 14 |
 | 天津祝詞 | Amatsu Norito | oração recitada nos cultos | 16 |

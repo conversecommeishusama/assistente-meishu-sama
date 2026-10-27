@@ -58,10 +58,55 @@ do que parecia à primeira vista, **a doutrina responde**, e responde por três
 princípios que se encadeiam. O que falta não é o princípio: é a aplicação literal do
 princípio ao caso, e essa aplicação se faz aqui às claras.
 
-**Primeiro princípio: a divindade assenta no objeto, e assenta segundo o autor.** A
-doutrina da relação entre espírito e matéria é explícita quanto a isso. Os deuses e
-budas não pairam no vazio: apossam-se de um suporte material, e a qualidade do
-espírito que se apossa do suporte depende da qualidade de quem o produziu:
+**Primeiro princípio: a divindade assenta no objeto, e assenta segundo o autor.** Os
+deuses e budas não pairam no vazio: apossam-se de um suporte material — a cruz, os
+caracteres, o espelho, a pintura, a escultura —, e o grau do espírito que se apossa
+do suporte é dado pela qualidade de quem o produziu. É a formulação mais explícita
+que o acervo conserva, e ela responde ao caso por antecipação:
+
+> 「その例としてここに絵画彫刻等によって神仏の本尊が作られるとする。ところが
+> **その作者の人格によって、懸り給う神霊仏霊に自ら高下を生ずる**。すなわち作者の
+> 人格がしからしめるので、**最も高い場合はそれに相応する高級神霊が降臨される**。
+> ゆえに**形は同一であっても、作者の人格が低い場合はそれに相応した代理神霊、
+> または分神霊が懸られる**のである。」
+
+*"Suponhamos, por exemplo, que imagens de divindades e budas sejam feitas por pintura
+ou escultura. **Conforme a personalidade do autor, surge por si mesma uma diferença
+de nível entre os espíritos de divindades e budas que ali se manifestam.** É a
+personalidade do autor que o determina: no caso mais elevado, desce o espírito
+divino superior que lhe corresponde. Por isso, **mesmo quando a forma exterior é a
+mesma, se a personalidade do autor é inferior, manifesta-se um espírito divino
+substituto, ou um espírito divino parcial**, correspondente a esse nível."*
+— 「霊界の不思議」, 『地上天国』 (Paraíso Terrestre) 9号, 25 de outubro de 1949
+
+Três coisas importam nesta passagem. A primeira é a expressão «mesmo quando a forma
+exterior é a mesma»: a figura idêntica, o traço aparente idêntico, e no entanto
+**outro espírito**, porque o autor é outro. A segunda é o que se diz do caso
+inferior: não um objeto inerte, mas um **代理神霊** (espírito substituto) ou um
+**分神霊** — uma porção destacada de um espírito superior, e não o espírito pleno. A
+imagem feita por terceiro não fica vazia: fica com outro espírito. É mais grave, e
+mais preciso, do que dizer que ela «não poderia desempenhar a função». A terceira é
+o desfecho que o próprio artigo dá, pouco adiante, ao explicar o provérbio
+「鰯の頭も信心から」:
+
+> 「何ら資格もない下根の者が御神体を作り、巧妙なる手段をもって宣伝をすると、
+> 一時は相当多数の参拝者が礼拝するとすれば、参拝者の想念によって、霊界に神仏の
+> 形が造られるのである。……しかしこれらはある期間は繁昌するが、**それは本物では
+> ない。一時的架空のものであるから、いつかは消滅する**のである。」
+
+*"Se uma pessoa sem qualquer qualificação faz uma Imagem e a divulga por meios
+hábeis, e se por algum tempo um número considerável de adoradores a venera, pelo
+pensamento desses adoradores forma-se no mundo espiritual uma figura de deus ou
+buda. […] No entanto, essas coisas prosperam por algum tempo, mas **não são o
+verdadeiro: são temporárias e fabricadas, e um dia se extinguem**."*
+— mesma obra
+
+O objeto feito sem qualificação pode, portanto, até funcionar por algum tempo — pela
+fé de quem o venera —, e é justamente isso que o distingue do verdadeiro: o que nele
+opera é 一時的架空のもの, temporário e fabricado, e tem fim.
+
+A doutrina não começou aí. 『信仰雑話』 (Conversas sobre a Fé), publicada um ano
+antes, resume-a num só período, e o resumo concorda com o artigo:
 
 > 「例えばキリストは十字架へ、諸神諸仏は文字、御鏡、絵画、彫像等へ懸り給い……
 > 右の場合**高級の神霊仏霊は、其作者の人格に関係する**ので、昔から名僧智識や
@@ -74,12 +119,16 @@ seu autor**; é por isso que, desde a Antiguidade, as pinturas e esculturas de m
 famosos, sábios e artistas renomados eram consideradas tesouros."*
 — 『信仰雑話』 (Conversas sobre a Fé), 5 de setembro de 1948
 
-A frase é decisiva para a pergunta, e é preciso ler nela a consequência que ela
-contém. **O que se venera na Imagem não é o papel nem o traço: é o espírito que ali
-assenta — e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita
-por outra pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro
-suporte, para outro espírito. A doutrina não diz que ela seja inerte; diz algo mais
-grave — diz que o espírito que a ela se ligar será o que corresponde ao seu autor.
+Não são duas doutrinas: é o mesmo princípio, dito primeiro em resumo e depois em
+desenvolvimento. O que o artigo de 1949 acrescenta — e é o que aqui decide — são as
+duas precisões que faltam ao resumo: que a forma pode ser a mesma, e que ao caso
+inferior corresponde um espírito substituto, não o silêncio.
+
+**O que se venera na Imagem não é o papel nem o traço: é o espírito que ali assenta —
+e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita por outra
+pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro suporte, para
+outro espírito. A doutrina não diz que ela seja inerte; diz algo mais grave — diz que
+o espírito que a ela se ligar será o que corresponde ao seu autor.
 
 **Segundo princípio: o espírito do autor permanece no objeto.** A permanência não é
 simbólica. Meishu-Sama descreve a própria experiência de sentir, séculos depois, a
@@ -484,7 +533,9 @@ O rito de sufrágio tem, no vocabulário da época, **dois nomes distintos**, pa
 duas cerimônias distintas — e é por isso que a busca pelo conceito ("rito de
 sufrágio") não o encontrava. Ambos estão documentados.
 
-**`御霊祭` (Festa dos Espíritos) — a entronização da Imagem.** As 16 ocorrências
+**`御霊祭` (Culto de Entronização) — a entronização da Imagem.** O nome diz
+literalmente «festa dos espíritos»; o que a documentação mostra é sempre a
+consagração do objeto. As 16 ocorrências
 estão invariavelmente ligadas ao ato de receber a Imagem:
 
 > 「去る六月の十一日に**光明如来様を迎える事となり**、宗宮先生に来て戴き、
@@ -492,7 +543,7 @@ estão invariavelmente ligadas ao ato de receber a Imagem:
 > 手は合掌致し、口を開き始めました。」
 
 *"Em 11 de junho passado **passou-se a entronizar o Kōmyō Nyorai**; fizemos vir o Sr.
-Sōmiya e **recebemos o 御霊祭**. Justamente quando se recitava a oração… veio um tremor
+Sōmiya e **recebemos o Culto de Entronização**. Justamente quando se recitava a oração… veio um tremor
 por todo o corpo, as mãos se juntaram e a boca começou a falar."*
 
 > — 「祖霊との交わり」, `search1/so/sorei05.html`
@@ -501,7 +552,7 @@ por todo o corpo, as mãos se juntaram e a boca começou a falar."*
 > 致しました**。」
 
 *"**Recebemos a caligrafia keiki**, fizemos vir o Sr. Shimizu de Gifu e **executamos
-com solenidade o 御霊祭**."*
+com solenidade o Culto de Entronização**."*
 
 > — 「不治の喘息快癒す」『地上天国』3号, 20 de abril de 1949 ·
 > `search2/okage/haho/qhujino4.html`
@@ -534,7 +585,7 @@ da casa:
 先祖祭**, o referido Eikō, que assistia atrás, teve um fenômeno de possessão por um
 espírito aparentemente divino; adotaram-se o seguinte diálogo e as seguintes medidas…"*
 
-> — 『御垂示』, `search1/situmon/situmo35.html`
+> — 『御垂示』 (Instruções Diretas), `search1/situmon/situmo35.html`
 
 Este documento merece atenção: descreve um fenômeno espiritual ocorrido **durante** um
 `先祖祭`, com o protocolo que se adotou e a instrução que Meishu-Sama deu a respeito.
@@ -545,7 +596,7 @@ para um caso anômalo dentro dele.
 
 | Rito | Japonês | O que é | Quando | Onde | Evidência |
 |---|---|---|---|---|---|
-| Entronização | **御霊祭** (Festa dos Espíritos) | instalação da Imagem | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
+| Entronização | **御霊祭** (Culto de Entronização) | instalação da Imagem | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
 | Sufrágio | **先祖祭** | elevação dos ancestrais | **recorrente** | altar doméstico | 40 ocorrências |
 
 **O que continua sem fonte:** que o `先祖祭` fosse celebrado **na Sede Geral**. As
@@ -1217,7 +1268,7 @@ surpreende:
 > 主義**」とおっしゃっている」
 
 *"Depois da refeição, caligrafa imediatamente as obras e as 御光 solicitadas pela
-organização e pela Igreja 五六七. Escreve **com a mão direita, cujo dedo indicador não
+organização e pela Igreja Miroku. Escreve **com a mão direita, cujo dedo indicador não
 consegue flexionar-se; mas a velocidade é verdadeiramente supersônica: no caso dos 'Luz',
 seiscentas folhas por hora** […] quando escreve cem caracteres '光' com a direita,
 acrescenta com a esquerda o traço do 落款 […] diz **'isto é produção em série'**; é de
@@ -1474,7 +1525,7 @@ Meishu-Sama escrevia tinham valor fixo, e cobrar acima dele era furto.** O aviso
 > いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
 > 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
 > よく心得べきである。」
-> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
 
 Quarto, a contrapartida da dedicação integral. O portador de qualificação não devia
 ter profissão — o que, na prática, significava que vivia do exercício do ministério:

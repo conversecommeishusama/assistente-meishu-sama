@@ -1,4 +1,4 @@
-## 37. Anexo F — O censo de outubro de 1950
+## 35. Anexo D — O censo de outubro de 1950
 
 **Documento:** 「本教教勢現在（昭和二十五年十月）」 — "Situação atual da Igreja
 (outubro de 1950)", publicado no folheto 「問題の世界救世教とは何か」 ("O que é,
@@ -62,14 +62,14 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 | Igrejas Grandes (大教会) | 4 |
 | Igrejas Médias (中教会) | 78 |
 | igrejas (分教会) | 710 |
-| Ministros Seniores (大教師) | 56 |
-| Ministros Intermediários (中教師) | 430 |
+| Ministros Titulares (大教師) | 56 |
+| Ministros Adjuntos (中教師) | 430 |
 | Ministros (教師) | 2.244 |
 
 **Nota de leitura.** O documento não traz, ao lado dos números, a data de
 fechamento de cada contagem nem o critério de inclusão das unidades em formação.
 A simetria entre as três categorias de igreja e as três de ministro — quatro
-Igrejas Grandes para cinquenta e seis Ministros Seniores, setenta e oito Igrejas
-Médias para quatrocentos e trinta Ministros Intermediários, setecentas e dez
+Igrejas Grandes para cinquenta e seis Ministros Titulares, setenta e oito Igrejas
+Médias para quatrocentos e trinta Ministros Adjuntos, setecentas e dez
 igrejas para dois mil duzentos e quarenta e quatro Ministros — é o dado que
 sustenta a leitura do capítulo 10: o grau acompanhava a unidade dirigida.

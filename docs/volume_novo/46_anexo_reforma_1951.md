@@ -1,4 +1,4 @@
-## 38. Anexo G — O comunicado da reorganização de 1951
+## 37. Anexo F — O comunicado da reorganização de 1951
 
 **Documento:** 「世界救世教の機構整備について」 (*Sekai Kyūseikyō no Kikō Seibi ni
 tsuite*), "Sobre a montagem da estrutura da Igreja Messiânica Mundial".

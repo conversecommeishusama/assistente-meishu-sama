@@ -67,7 +67,7 @@ texto não está nele:
 > ある。すなわち**学ばずして知るという神智**であって」
 
 *"Ora, a capacidade de romper absolutamente essa dificuldade **foi-me dada por
-Deus**: é o que se chama 神智, o saber sem ter aprendido."*
+Deus**: é o que se chama 神智 (Sabedoria Divina), o saber sem ter aprendido."*
 — 「私の文章とその他」, 『栄光』 (Eikō) 238号, 9 de dezembro de 1953
 
 A clareza da escrita, por sua vez, não é estilo: é decisão contra a interpretação.
@@ -186,7 +186,7 @@ citada, não reformulada.
 
 **Porque a história é falível e o ensinamento não é.** Aqui os dois regimes do
 volume se separam, e não se misturam. O conteúdo doutrinário — o mundo espiritual,
-a salvação, os objetos de culto, a Agricultura Natural, a doença e a pobreza — é
+a salvação, a Imagem da Luz Divina, a Agricultura Natural, a doença e a pobreza — é
 exposto como é: afirma-se, não se relativiza, não se contrasta com a ciência da
 época, não se atribui a contexto histórico. O fato histórico — datas, números,
 cargos, normas, o que a instituição fez — é apurado e conferido, e traz sempre
@@ -232,7 +232,7 @@ lhes atribua natureza estatística.
 ## 2. A cronologia da institucionalização (1934–1955)
 
 A história institucional do movimento começa em outubro de 1934, quando Meishu-Sama
-inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会** (Dai-Nippon Kannon-kai, "Grande Associação Kannon do Japão"), a partir do 応神堂 (Ōjin-dō, "santuário de Ōjin"). O que ele próprio dirá depois sobre esse começo é revelador do modo como
+inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会** (Dai-Nippon Kannon-kai, Associação Kannon do Grande Japão), a partir do 応神堂 (Ōjin-dō, "santuário de Ōjin"). O que ele próprio dirá depois sobre esse começo é revelador do modo como
 entendia a relação entre carisma e instituição:
 
 > 「顧みれば昭和九年一〇月私は大日本観音会なる名称のもとに、観音運動を始め、その
@@ -322,7 +322,7 @@ março de 1955).
 | 1953-12-16 | Fundação do Templo Messiânico (Zuiunkyo) |
 | 1954-06-15 | Cerimônia provisória do advento de Messias |
 | 1954-10 | 3ª edição do **教修要綱 (Manual do Curso)** |
-| 1954-12-11 | Entronização no Palácio de Cristal (水晶殿御遷座 (entronização no Palácio de Cristal)) |
+| 1954-12-11 | Entronização no Palácio de Cristal (水晶殿御遷座) |
 | 1955-02 | Falecimento de Meishu-Sama |
 
 Vale sublinhar o que essa cronologia revela sobre o ritmo da instituição. Entre 1947 e
@@ -337,7 +337,7 @@ de 1952, ao programa de construção dos Paraísos Terrestres.
 
 ---
 
-## 3. Os objetos de culto
+## 3. As Imagens da Luz Divina e os Ohikari
 
 Esta seção é a mais delicada do levantamento, porque exige distinguir **duas escalas**
 que a linguagem corrente confunde. A primeira é a dos **cargos administrativos** — quem
@@ -486,7 +486,8 @@ ingressa na fé» é, portanto, duplo erro: o que se recebe no ingresso é o Ohi
 「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
 
 Essa hierarquia do Ohikari é **distinta** da hierarquia das Imagens entronizadas
-(大光明如来 › 光明如来 › お姿), que o capítulo 3.2 examina: são dois objetos
+(大光明如来 › 光明如来 › お姿 — Daikōmyō Nyorai › Kōmyō Nyorai › a figura), que
+o capítulo 3.2 examina: são dois objetos
 diferentes, com duas escadas diferentes. E o grau do Ohikari não é apenas
 honorífico — ele mede proteção, como Meishu-Sama responde a quem perguntou se um
 portador do Ohikari comum podia fazer Johrei em um portador do Daikōmyō:
@@ -553,10 +554,55 @@ do que parecia à primeira vista, **a doutrina responde**, e responde por três
 princípios que se encadeiam. O que falta não é o princípio: é a aplicação literal do
 princípio ao caso, e essa aplicação se faz aqui às claras.
 
-**Primeiro princípio: a divindade assenta no objeto, e assenta segundo o autor.** A
-doutrina da relação entre espírito e matéria é explícita quanto a isso. Os deuses e
-budas não pairam no vazio: apossam-se de um suporte material, e a qualidade do
-espírito que se apossa do suporte depende da qualidade de quem o produziu:
+**Primeiro princípio: a divindade assenta no objeto, e assenta segundo o autor.** Os
+deuses e budas não pairam no vazio: apossam-se de um suporte material — a cruz, os
+caracteres, o espelho, a pintura, a escultura —, e o grau do espírito que se apossa
+do suporte é dado pela qualidade de quem o produziu. É a formulação mais explícita
+que a documentação conserva, e ela responde ao caso por antecipação:
+
+> 「その例としてここに絵画彫刻等によって神仏の本尊が作られるとする。ところが
+> **その作者の人格によって、懸り給う神霊仏霊に自ら高下を生ずる**。すなわち作者の
+> 人格がしからしめるので、**最も高い場合はそれに相応する高級神霊が降臨される**。
+> ゆえに**形は同一であっても、作者の人格が低い場合はそれに相応した代理神霊、
+> または分神霊が懸られる**のである。」
+
+*"Suponhamos, por exemplo, que imagens de divindades e budas sejam feitas por pintura
+ou escultura. **Conforme a personalidade do autor, surge por si mesma uma diferença
+de nível entre os espíritos de divindades e budas que ali se manifestam.** É a
+personalidade do autor que o determina: no caso mais elevado, desce o espírito
+divino superior que lhe corresponde. Por isso, **mesmo quando a forma exterior é a
+mesma, se a personalidade do autor é inferior, manifesta-se um espírito divino
+substituto, ou um espírito divino parcial**, correspondente a esse nível."*
+— 「霊界の不思議」, 『地上天国』 (Paraíso Terrestre) 9号, 25 de outubro de 1949
+
+Três coisas importam nesta passagem. A primeira é a expressão «mesmo quando a forma
+exterior é a mesma»: a figura idêntica, o traço aparente idêntico, e no entanto
+**outro espírito**, porque o autor é outro. A segunda é o que se diz do caso
+inferior: não um objeto inerte, mas um **代理神霊** (espírito substituto) ou um
+**分神霊** — uma porção destacada de um espírito superior, e não o espírito pleno. A
+imagem feita por terceiro não fica vazia: fica com outro espírito. É mais grave, e
+mais preciso, do que dizer que ela «não poderia desempenhar a função». A terceira é
+o desfecho que o próprio artigo dá, pouco adiante, ao explicar o provérbio
+「鰯の頭も信心から」:
+
+> 「何ら資格もない下根の者が御神体を作り、巧妙なる手段をもって宣伝をすると、
+> 一時は相当多数の参拝者が礼拝するとすれば、参拝者の想念によって、霊界に神仏の
+> 形が造られるのである。……しかしこれらはある期間は繁昌するが、**それは本物では
+> ない。一時的架空のものであるから、いつかは消滅する**のである。」
+
+*"Se uma pessoa sem qualquer qualificação faz uma Imagem e a divulga por meios
+hábeis, e se por algum tempo um número considerável de adoradores a venera, pelo
+pensamento desses adoradores forma-se no mundo espiritual uma figura de deus ou
+buda. […] No entanto, essas coisas prosperam por algum tempo, mas **não são o
+verdadeiro: são temporárias e fabricadas, e um dia se extinguem**."*
+— mesma obra
+
+O objeto feito sem qualificação pode, portanto, até funcionar por algum tempo — pela
+fé de quem o venera —, e é justamente isso que o distingue do verdadeiro: o que nele
+opera é 一時的架空のもの, temporário e fabricado, e tem fim.
+
+A doutrina não começou aí. 『信仰雑話』 (Conversas sobre a Fé), publicada um ano
+antes, resume-a num só período, e o resumo concorda com o artigo:
 
 > 「例えばキリストは十字架へ、諸神諸仏は文字、御鏡、絵画、彫像等へ懸り給い……
 > 右の場合**高級の神霊仏霊は、其作者の人格に関係する**ので、昔から名僧智識や
@@ -569,12 +615,16 @@ seu autor**; é por isso que, desde a Antiguidade, as pinturas e esculturas de m
 famosos, sábios e artistas renomados eram consideradas tesouros."*
 — 『信仰雑話』 (Conversas sobre a Fé), 5 de setembro de 1948
 
-A frase é decisiva para a pergunta, e é preciso ler nela a consequência que ela
-contém. **O que se venera na Imagem não é o papel nem o traço: é o espírito que ali
-assenta — e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita
-por outra pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro
-suporte, para outro espírito. A doutrina não diz que ela seja inerte; diz algo mais
-grave — diz que o espírito que a ela se ligar será o que corresponde ao seu autor.
+Não são duas doutrinas: é o mesmo princípio, dito primeiro em resumo e depois em
+desenvolvimento. O que o artigo de 1949 acrescenta — e é o que aqui decide — são as
+duas precisões que faltam ao resumo: que a forma pode ser a mesma, e que ao caso
+inferior corresponde um espírito substituto, não o silêncio.
+
+**O que se venera na Imagem não é o papel nem o traço: é o espírito que ali assenta —
+e esse espírito guarda relação com o autor do traço.** Uma Imagem escrita por outra
+pessoa não é, portanto, a mesma coisa com outra caligrafia: é outro suporte, para
+outro espírito. A doutrina não diz que ela seja inerte; diz algo mais grave — diz que
+o espírito que a ela se ligar será o que corresponde ao seu autor.
 
 **Segundo princípio: o espírito do autor permanece no objeto.** A permanência não é
 simbólica. Meishu-Sama descreve a própria experiência de sentir, séculos depois, a
@@ -799,7 +849,7 @@ própria da unidade, distinta do culto mensal. Os relatos são abundantes: famí
 que levam o doente ao 例祭 e obtêm ali a cura; fiéis que recebem o Ohikari num
 例祭日 (dia do Culto Regular); e a série que opõe 「一宮例祭、当地の例祭、臨時祭」 — *"o 例祭 de
 Ichinomiya, o 例祭 local e os cultos ocasionais"* —, o que mostra que o 例祭
-convivia com o **culto ocasional** (臨時祭), celebrado por motivo extraordinário.
+convivia com o **Culto Extraordinário** (臨時祭), celebrado por motivo extraordinário.
 
 **O Culto Mensal** (月並祭, também grafado 月例祭) — o culto do ciclo mensal, em
 data fixa de cada unidade. Era incumbência das unidades com instalação própria:
@@ -837,14 +887,14 @@ igreja**.
 
 | Rito | Quando | Escala |
 |---|---|---|
-| **春季大祭 (Grande Culto da Primavera)** — Grande Culto da Primavera | março | nacional |
-| **秋季大祭 (Grande Culto de Outono)** — Grande Culto de Outono | setembro (equinócio) | nacional, **7 dias**, rotativo por igreja |
-| **御生誕祭 (Festa do Nascimento)** — Festa do Nascimento | 23 de dezembro | no Templo Messiânico |
-| **月並祭 (Culto Mensal)** — Culto Mensal | mensal, em cada unidade | data fixa por unidade |
-| **例祭 (Culto Regular)** — Culto Regular | no calendário de cada igreja | próprio da unidade |
-| **臨時祭 (Culto Extraordinário)** — culto ocasional | por motivo extraordinário | conforme o caso |
-| **特別御面会 (Audiência Especial)** — Audiência Especial | 1º e 5º de cada mês | Sede |
-| **毎旬の御参拝 (visita a cada dez dias)** — visita a cada dez dias | a cada dez dias | Sede |
+| **春季大祭** — Grande Culto da Primavera | março | nacional |
+| **秋季大祭** — Grande Culto de Outono | setembro (equinócio) | nacional, **7 dias**, rotativo por igreja |
+| **御生誕祭** — Festa do Nascimento | 23 de dezembro | no Templo Messiânico |
+| **月並祭** — Culto Mensal | mensal, em cada unidade | data fixa por unidade |
+| **例祭** — Culto Regular | no calendário de cada igreja | próprio da unidade |
+| **臨時祭** — culto ocasional | por motivo extraordinário | conforme o caso |
+| **特別御面会** — Audiência Especial | 1º e 5º de cada mês | Sede |
+| **毎旬の御参拝** — visita a cada dez dias | a cada dez dias | Sede |
 
 A **disciplina do calendário** era levada a sério, e sua violação tratada como
 inversão de ordem:
@@ -888,8 +938,8 @@ e ali sozinha aquietava o coração perturbado."*
 — 「浄霊と医学との比較」
 
 A caligrafia em questão é a que traz os dois caracteres **日光** — *nikkō*, "luz
-do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明,
-大光明, tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
+do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明
+(Kōmyō), 大光明 (Daikōmyō), tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
 tokonoma, que funcionava explicitamente como **substituto** (*御神体代り*) da
 Imagem enquanto a família não a recebia. Sobre oferendas nesse caso específico a
 documentação não se pronuncia; o relato menciona apenas a saudação e a quietude do
@@ -966,7 +1016,7 @@ oficiante precede a oferta dos fiéis. Registro a divergência sem resolvê-la.
 
 ---
 
-## 8. As oferendas diante do objeto de culto
+## 8. As oferendas diante da Imagem da Luz Divina
 
 Água, sal e arroz lavado são as três oferendas que a tradição xintoísta coloca
 diante do altar. A pergunta que se fez a Meishu-Sama foi se elas valiam também
@@ -1008,7 +1058,8 @@ A resposta é completa, e tem três partes que importam:
  uma prática real, que os fiéis de fato seguiam — e que Meishu-Sama **conhecia
  e nomeia**.
 2. **Dá-lhes um lugar doutrinário preciso**, e não uma simples recusa: são
- **comida de deus-dragão** (龍神の食べるもの), e os "deuses" dos altares
+ **comida de deus-dragão** (龍神の食べるもの — «o que o deus-dragão come»; 龍神,
+ Ryūjin), e os "deuses" dos altares
  anteriores eram, em sua maioria, dragões. A recusa não é estética — é
  **cosmológica**.
 3. **Substitui a forma**: oferta-se **o que o humano come** — peixe levemente
@@ -1069,7 +1120,7 @@ Isso **fecha a questão** das "regras de orientação do tokonoma": não há reg
 orientação; há regra de **proeminência**.
 
 **A disposição.** As oferendas voltam-se para o humano, para que ele as veja; os
-palitos (箸) do objeto de culto põem-se do lado do objeto, e os dos antepassados,
+palitos (箸) da Imagem da Luz Divina põem-se do lado da Imagem, e os dos antepassados,
 do outro lado. E não é preciso conservá-las
 longo tempo: "dez ou quinze minutos bastam; ofertado e feita a reverência, pode-se
 recolher em seguida".
@@ -1090,11 +1141,11 @@ objeto não grosseiro (`m240499.html`).
 *"(c) Quando o tokonoma tem vários lugares, em que ordem se devem entronizar as
 caligrafias Dai-Kōmyō Nyorai, Kōmyō Nyorai, Unjō Kannon etc.? — **Dai-Kōmyō
 Nyorai, no lugar mais alto. Depois Kōmyō Nyorai, e depois a figura (お姿). Tudo
-o que é escrita está acima. Refiro-me ao caso dos objetos de culto (御神体).
+o que é escrita está acima. Refiro-me ao caso da Imagem da Luz Divina (御神体).
 A escrita é espírito, a pintura é corpo.**"*
 
 É a formulação mais nítida de um princípio já registrado em outras passagens
-(「文字は霊、絵は体」 (a escrita é espírito, a pintura é corpo)): **a hierarquia dos objetos de culto segue a natureza do
+(「文字は霊、絵は体」 (a escrita é espírito, a pintura é corpo)): **a hierarquia das Imagens da Luz Divina segue a natureza do
 suporte** — a escrita é espírito e por isso prevalece; a pintura é corpo. Segue-se que a figura pintada **nunca** se sobrepõe à caligrafia, e que
 uma casa sem lugar para ambas deve **guardar** a que não couber, em lugar de
 rebaixá-la:
@@ -1233,7 +1284,9 @@ O rito de sufrágio tem, no vocabulário da época, **dois nomes distintos**, pa
 duas cerimônias distintas — e é por isso que a busca pelo conceito ("rito de
 sufrágio") não o encontrava. Ambos estão documentados.
 
-**`御霊祭` (Festa dos Espíritos) — a entronização da Imagem.** As 16 ocorrências
+**`御霊祭` (Culto de Entronização) — a entronização da Imagem.** O nome diz
+literalmente «festa dos espíritos»; o que a documentação mostra é sempre a
+consagração do objeto. As 16 ocorrências
 estão invariavelmente ligadas ao ato de receber a Imagem:
 
 > 「去る六月の十一日に**光明如来様を迎える事となり**、宗宮先生に来て戴き、
@@ -1241,7 +1294,7 @@ estão invariavelmente ligadas ao ato de receber a Imagem:
 > 手は合掌致し、口を開き始めました。」
 
 *"Em 11 de junho passado **passou-se a entronizar o Kōmyō Nyorai**; fizemos vir o Sr.
-Sōmiya e **recebemos o 御霊祭**. Justamente quando se recitava a oração… veio um tremor
+Sōmiya e **recebemos o Culto de Entronização**. Justamente quando se recitava a oração… veio um tremor
 por todo o corpo, as mãos se juntaram e a boca começou a falar."*
 
 > — 「祖霊との交わり」
@@ -1250,7 +1303,7 @@ por todo o corpo, as mãos se juntaram e a boca começou a falar."*
 > 致しました**。」
 
 *"**Recebemos a caligrafia keiki**, fizemos vir o Sr. Shimizu de Gifu e **executamos
-com solenidade o 御霊祭**."*
+com solenidade o Culto de Entronização**."*
 
 > — 「不治の喘息快癒す」『地上天国』3号, 20 de abril de 1949
 > 
@@ -1283,7 +1336,7 @@ da casa:
 先祖祭**, o referido Eikō, que assistia atrás, teve um fenômeno de possessão por um
 espírito aparentemente divino; adotaram-se o seguinte diálogo e as seguintes medidas…"*
 
-> — 『御垂示』
+> — 『御垂示』 (Instruções Diretas)
 
 Este documento merece atenção: descreve um fenômeno espiritual ocorrido **durante** um
 `先祖祭`, com o protocolo que se adotou e a instrução que Meishu-Sama deu a respeito.
@@ -1294,7 +1347,7 @@ para um caso anômalo dentro dele.
 
 | Rito | Japonês | O que é | Quando | Onde | Evidência |
 |---|---|---|---|---|---|
-| Entronização | **御霊祭** (Festa dos Espíritos) | instalação da Imagem | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
+| Entronização | **御霊祭** (Culto de Entronização) | instalação da Imagem | no ato de receber a Imagem | casa do fiel / unidade | 16 ocorrências |
 | Sufrágio | **先祖祭 (sufrágio dos antepassados)** | elevação dos ancestrais | **recorrente** | altar doméstico | 40 ocorrências |
 
 **O que continua sem fonte:** que o `先祖祭` fosse celebrado **na Sede Geral**. As
@@ -1412,7 +1465,7 @@ tuberculose, mais ainda… Nos casos com risco de vida, deve-se converter depois
 Quatro instrumentos aparecem documentados como motores da difusão.
 
 **O jornal.** A sequência de títulos é 『光』 (de março de 1949) → 『救世』 → 『栄光』 →
-『神の光』 (A Luz de Deus) (de 1955), e Meishu-Sama lia essa rotatividade como sinal de orientação
+『神の光』 (de 1955), e Meishu-Sama lia essa rotatividade como sinal de orientação
 superior, não como problema de marketing:
 
 > 「新聞も、最初『光』それから『救世』それから『栄光』と、こんなに題名が変わるのなんか
@@ -1433,7 +1486,7 @@ A função do jornal como motor da unidade está declarada na primeira página d
 de Ensino que se desenvolvem são sempre aqueles que se empenham na distribuição do jornal
 Hikari. Naturalmente, essas filiais distribuem gratuitamente o máximo possível, para fins
 de divulgação."*
-— 「光新聞の拡大は教線の強化」 (A ampliação do jornal *Kō* é o fortalecimento da linha de ensino) 『光』33号, 29 de outubro de 1949
+— 「光新聞の拡大は教線の強化」 (A ampliação do jornal Hikari é o fortalecimento da linha de ensino) 『光』33号, 29 de outubro de 1949
 
 **A palestra pública de massa.** A conferência no Hibiya Kōkaidō impressiona o cronista
 não pela lotação, mas pela composição do público — mais de sessenta por cento de não
@@ -1445,7 +1498,7 @@ convertidos:
 *"O fato de uma conferência religiosa ter reunido lotação esgotada de público no Hibiya
 Kōkaidō, e ainda por cima mais de sessenta por cento serem pessoas não convertidas, é um
 sucesso de público provavelmente sem precedentes."*
-— 「編集後記（地上天国36号）」
+— 「編集後記（地上天国36号）」 (Nota da Redação, 『地上天国』36号)
 
 ![Conferência no 日比谷公会堂 (Hibiya Kōkaidō) sobre a civilização verdadeira, 22 de maio de 1951 — a palestra pública de massa de que trata esta seção. [Fotografia da época; data e local conforme a legenda original.]](fotografias/hibiya_1951.jpg)
 
@@ -1496,8 +1549,8 @@ categorias simultaneamente, e por isso sustenta as contas deste levantamento:
 | 大教会 (Igrejas Grandes) | **4** |
 | 中教会 (Igrejas Médias) | **78** |
 | 分教会 (igrejas) | **710** |
-| 大教師 (Ministros Seniores) | **56** |
-| 中教師 (Ministros Intermediários) | **430** |
+| 大教師 (Ministros Titulares) | **56** |
+| 中教師 (Ministros Adjuntos) | **430** |
 | 教師 (Ministros) | **2.244** |
 | 別院 (Templos Anexos) | 6 |
 | 分院 (Filiais Regionais) | 7 |
@@ -1506,8 +1559,8 @@ Fonte:
 
 Duas leituras importam. A primeira é a **simetria**: as três categorias de igreja e as
 três de Ministro formam pares, e a razão entre elas é aproximadamente constante — para
-cada Igreja Grande, quatorze Ministros Seniores; para cada Igreja Média, cerca de cinco
-Ministros Intermediários; para cada igreja, aproximadamente três Ministros. **O grau
+cada Igreja Grande, quatorze Ministros Titulares; para cada Igreja Média, cerca de cinco
+Ministros Adjuntos; para cada igreja, aproximadamente três Ministros. **O grau
 não é uma carreira paralela à estrutura: ele acompanha a unidade que a pessoa dirige.**
 Isso será decisivo no capítulo 14.
 
@@ -1572,7 +1625,7 @@ instrutor.** O requisito é a leitura do manual.
 
 O **教修要綱** (Kyōshu Yōkō, "Manual do Curso") — "Compêndio do Kyoshu" — é o único documento curricular localizado, na
 terceira edição, de outubro de 1954. Trata-se de um livreto de 118 páginas, formato A5,
-marcado como **「非売品」 (não se vende)** (não vendido), impresso pelo Departamento de Publicações da
+marcado como **「非売品」** (não vendido), impresso pelo Departamento de Publicações da
 Sede.
 
 ![教修要綱, 3ª edição, outubro de 1954 — capa do único manual curricular do período. A documentação o tem apenas como fac-símile, sem camada de texto; foi preciso refazer o OCR a partir dele. [Fac-símile: capa do número.](facsimiles/kyoshu_yoko.jpg)
@@ -1918,7 +1971,8 @@ ingressa na fé» é, portanto, duplo erro: o que se recebe no ingresso é o Ohi
 「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
 
 Essa hierarquia do Ohikari é **distinta** da hierarquia das Imagens entronizadas
-(大光明如来 › 光明如来 › お姿), que o capítulo 3.2 examina: são dois objetos
+(大光明如来 › 光明如来 › お姿 — Daikōmyō Nyorai › Kōmyō Nyorai › a figura), que
+o capítulo 3.2 examina: são dois objetos
 diferentes, com duas escadas diferentes. E o grau do Ohikari não é apenas
 honorífico — ele mede proteção, como Meishu-Sama responde a quem perguntou se um
 portador do Ohikari comum podia fazer Johrei em um portador do Daikōmyō:
@@ -2138,7 +2192,7 @@ e é ela que impede que a gratuidade de Deus se converta em arbítrio do homem:
 > いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
 > 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
 > よく心得べきである。」
-> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
 
 *"Como se vê na mesa-redonda publicada em outra seção, **embora o valor do Ohikari e
 dos demais escritos meus seja fixo**, se alguém obtiver um pouco mais de dinheiro,
@@ -2501,8 +2555,8 @@ mandamento.
 ## 14. Os ministros até 1951: Ministro Responsável e Assistente
 
 Os graus do período anterior à reforma são dois, e a linguagem documental é
-constante: **教導師補** (Ministro Responsável Assistente) e **教導師** (Ministro
-Responsável de Unidade Religiosa). Não são títulos honoríficos. Controlam
+constante: **教導師補** (Ministro Responsável de Unidade Religiosa Assistente) e
+**教導師** (Ministro Responsável de Unidade Religiosa). Não são títulos honoríficos. Controlam
 **acesso a objetos sagrados**, e esse acesso é escalonado com precisão.
 
 ### 14.1 O princípio: a hierarquia não é democrática
@@ -2539,8 +2593,8 @@ e entronizar. O capítulo 3 reúne a escada completa dos objetos.
 | Grau | Japonês | Tradução | O que distingue |
 |---|---|---|---|
 | 1 | **教導師補 (Ministro Responsável de Unidade Religiosa Assistente)** | Ministro Responsável Assistente | primeira qualificação; pode receber o Ohikari Dai-Kōmyō |
-| 2 | **教導師 (Ministro Responsável)** | Ministro Responsável de Unidade Religiosa | dirige uma filial; é o grau exigido para chefiar 支部 (filial) |
-| — | **助教師 (Ministro Assistente)** | Ministro Assistente | linha externa, só em missão no exterior |
+| 2 | **教導師** | Ministro Responsável de Unidade Religiosa | dirige uma filial; é o grau exigido para chefiar 支部 |
+| — | **助教師** | Ministro Assistente | linha externa, só em missão no exterior |
 
 O **助教師 (Ministro Assistente)** não pertence a esta série e não deve ser confundido com ela. O
 termo ocorre em poucos documentos, todos sobre o Havaí, designando **Ajiki
@@ -2586,7 +2640,7 @@ Segundo caso, com a mesma estrutura e uma informação adicional — a rapidez:
 
 *"Converti-me no fim do ano passado e em agosto deste ano recebi a qualificação
 de Ministro Responsável Assistente; dedico-me de corpo e alma ao desenvolvimento
-da Igreja 五六七 do Japão."*
+da Igreja Miroku do Japão."*
 — relato de fiel
 
 **Porta 2 — o coroamento de uma cura.** A qualificação podia vir depois de uma
@@ -2633,7 +2687,7 @@ pedagogia (capítulo 17.1).
 
 A partir da reforma, os graus passam a ser três, e a série acompanha
 exatamente a série das igrejas: **教師** (Ministro), **中教師** (Ministro
-Intermediário) e **大教師** (Ministro Sênior).
+Adjunto) e **大教師** (Ministro Titular).
 
 ### 15.1 O quadro numérico
 
@@ -2645,20 +2699,20 @@ numerada:
 > **大教師 五六、中教師 四三〇、教師 二二四四**」
 
 *"V. Igrejas e corpo docente: Igrejas Grandes: quatro; Igrejas Médias: setenta
-e oito; igrejas subordinadas: setecentas e dez. Ministros Seniores: cinquenta e
-seis; Ministros Intermediários: quatrocentos e trinta; Ministros: dois mil
+e oito; igrejas subordinadas: setecentas e dez. Ministros Titulares: cinquenta e
+seis; Ministros Adjuntos: quatrocentos e trinta; Ministros: dois mil
 duzentos e quarenta e quatro."*
 — 「問題の世界救世教とは何か」, panfleto de palestra, outubro de 1950
 
 | Grau | Japonês | Quantidade |
 |---|---|---|
-| 1 | **大教師 (Ministro Titular)** — Ministro Sênior | 56 |
-| 2 | **中教師 (Ministro Adjunto)** — Ministro Intermediário | 430 |
-| 3 | **教師 (ministro)** — Ministro | 2.244 |
+| 1 | **大教師** — Ministro Titular | 56 |
+| 2 | **中教師** — Ministro Adjunto | 430 |
+| 3 | **教師** — Ministro | 2.244 |
 
 A proporção é piramidal — 1 : 7,7 : 40 — e corresponde com proximidade notável
-aos três tipos de igreja: 56 Ministros Seniores para 4 Igrejas Grandes; 430
-Ministros Intermediários para 78 Igrejas Médias; 2.244 Ministros para 710
+aos três tipos de igreja: 56 Ministros Titulares para 4 Igrejas Grandes; 430
+Ministros Adjuntos para 78 Igrejas Médias; 2.244 Ministros para 710
 igrejas. **O grau acompanha a unidade que a pessoa dirige.** Não é uma carreira
 paralela à estrutura organizacional: é a expressão dela em termos pessoais.
 
@@ -2674,8 +2728,8 @@ coletivo, por exemplo, era reservado ao topo:
 
 *"[Pergunta] Quando muitas pessoas se reúnem, nos Cultos Mensais etc., os
 presidentes de igreja podem receber permissão para Johrei coletivo?
-[Meishu-Sama] Vejamos: sendo Ministro Sênior, pode. Exclusivamente o Ministro
-Sênior —. Daqui em diante, já pode."*
+[Meishu-Sama] Vejamos: sendo Ministro Titular, pode. Exclusivamente o Ministro
+Titular —. Daqui em diante, já pode."*
 — 『御垂示録』14号, 15 de outubro de 1952
 
 E havia uma fronteira operacional precisa, que distinguia quem podia dirigir-se
@@ -2709,11 +2763,11 @@ do censo, é este:
 | Grau antigo | Grau novo | Quantidade em 1950 |
 |---|---|---|
 | 教導師補 (Assistente) | 教師 (Ministro) | 2.244 |
-| 教導師 (Ministro Responsável) | 中教師 (Ministro Intermediário) | 430 |
-| — | 大教師 (Ministro Sênior) | 56 |
+| 教導師 (Ministro Responsável) | 中教師 (Ministro Adjunto) | 430 |
+| — | 大教師 (Ministro Titular) | 56 |
 
 O **大教師** é grau sem correspondente anterior, e é o que explica por que o
-Johrei coletivo aparece em 1952 como prerrogativa "do Ministro Sênior": era um
+Johrei coletivo aparece em 1952 como prerrogativa "do Ministro Titular": era um
 grau recém-criado.
 
 Uma ressalva de honestidade sobre este quadro: ele é **inferencial, não
@@ -2725,24 +2779,24 @@ entre as faixas.
 
 Ao lado dos graus — que medem qualificação — há os **cargos**, que medem
 responsabilidade sobre uma unidade. Os dois eixos não se confundem: um homem
-podia ser Ministro Sênior sem presidir igreja alguma, e um presidente de Igreja
-Média podia não ser Ministro Sênior.
+podia ser Ministro Titular sem presidir igreja alguma, e um presidente de Igreja
+Média podia não ser Ministro Titular.
 
 | Cargo | Japonês | Função |
 |---|---|---|
-| Superintendente | 管長 (Superintendente) | representante legal da pessoa jurídica (capítulo 23) |
-| Diretor / Diretor-Presidente | 理事 (diretor) / 理事長 (diretor-presidente) | membros do conselho |
-| Auditor | 監事 (auditor) | três, para as finanças |
-| Presidente de igreja | 教会長 (presidente de igreja) / 会長 (presidente) | nomeado pelo Superintendente |
-| Presidente de Igreja Média | 中教会長 (presidente de Igreja Média) | dirige Igreja Média |
-| Presidente de Igreja Grande | 大教会長 (presidente de Igreja Grande) | dirige Igreja Grande |
-| Líder de filial | 支部長 (líder de filial) | é um Ministro Responsável |
-| Líder de Associação | 分会長 (líder de Associação) | dirige 分会 (1948–1951) |
-| Responsável de Sede Regional | 地方本部長 (responsável de Sede Regional) | um dos dezessete |
-| Chefe de departamento | 部長 (chefe de departamento) | um dos seis departamentos |
-| Secretário-geral / vice | 事務局長 (secretário-geral) / 次長 (vice-chefe) | direção do expediente |
-| Administrador-executivo | 執事 (administrador-executivo) | função de confiança junto ao Fundador |
-| Portador de qualificação | 資格者 (portador de qualificação) | designação genérica |
+| Superintendente | 管長 | representante legal da pessoa jurídica (capítulo 23) |
+| Diretor / Diretor-Presidente | 理事 / 理事長 | membros do conselho |
+| Auditor | 監事 | três, para as finanças |
+| Presidente de igreja | 教会長 / 会長 | nomeado pelo Superintendente |
+| Presidente de Igreja Média | 中教会長 | dirige Igreja Média |
+| Presidente de Igreja Grande | 大教会長 | dirige Igreja Grande |
+| Líder de filial | 支部長 | é um Ministro Responsável |
+| Líder de Associação | 分会長 | dirige 分会 (1948–1951) |
+| Responsável de Sede Regional | 地方本部長 | um dos dezessete |
+| Chefe de departamento | 部長 | um dos seis departamentos |
+| Secretário-geral / vice | 事務局長 / 次長 (vice-chefe) | direção do expediente |
+| Administrador-executivo | 執事 | função de confiança junto ao Fundador |
+| Portador de qualificação | 資格者 | designação genérica |
 
 Vale registrar o organograma completo de uma igreja local — o único de que há
 registro —, que mostra uma estrutura administrativa **eleita em assembleia**,
@@ -2876,7 +2930,7 @@ um dirigente, e por isso valem como retrato dos problemas reais do período.
 | Abrigar doentes em purificação | Sede da Igreja Média | 『御教え集』1号, 20 de setembro de 1951 · |
 | Sediar **御面会** (audiências) | Sede (Atami, Hakone, Odawara) | — (v. capítulo 17.1) |
 | Presidir os ritos sazonais em rodízio | Igreja Grande |  |
-| Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 (regulamento) arts. 26–30 |
+| Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 A última linha tem uma contrapartida que convém não deixar implícita: a auditoria
 instituída pelo Regulamento corre na direção contrária — quem audita é a Sede, mas
@@ -3280,9 +3334,9 @@ diz que **à Associação pertencem as filiais**.
 
 | Nível | Japonês | Compõe-se de | Piso |
 |---|---|---|---|
-| Sede | 本部 (Sede) | — | — |
-| Subsede | 分所 (Subsede) | 10 ou mais Associações | 分会 (Associação) ×10 |
-| Associação | 分会 | **filiais (支部)** — e possui 10 ou mais Centros de Ensino | 教導所 (Centro de Ensino) ×10 |
+| Sede | 本部 | — | — |
+| Subsede | 分所 | 10 ou mais Associações | 分会 (Associação) ×10 |
+| Associação | 分会 | **filiais (支部 (filial))** — e possui 10 ou mais Centros de Ensino | 教導所 (Centro de Ensino) ×10 |
 | Filial | 支部 | Centros de Ensino sob um Ministro Responsável | dirigida por 教導師 |
 | Centro de Ensino | 教導所 | casa ou sala de atendimento | degrau mínimo |
 
@@ -3319,7 +3373,7 @@ conduzidas, não a preparação de quem conduzia.
 ### 19.3 A classificação das igrejas — e por que ela não é paralela
 
 O período usava, além da grade, uma classificação por **tamanho da igreja**:
-Igreja Grande (大教会), Igreja Média (中教会) e igreja (教会 / 分教会). A primeira
+Igreja Grande (大教会), Igreja Média (中教会) e igreja (教会 / 分教会, Igreja Filial). A primeira
 leitura — a de que se trata de duas instituições diferentes, ou de duas escalas que
 correm lado a lado sem tocar-se — é a que o texto desmente. **As duas classificações
 descrevem a mesma estrutura por dois ângulos: a grade diz a posição na cadeia; a
@@ -3344,8 +3398,8 @@ a ser a qualificação jurídica da unidade dentro da região.
 
 | Classificação | O que mede | Como se liga à grade |
 |---|---|---|
-| Igreja Grande (大教会 (Igreja Grande)) | porte: 1.000+ membros cooperadores | topo da hierarquia de igrejas da Sede Regional |
-| Igreja Média (中教会 (Igreja Média)) | porte: 300+ membros cooperadores | nível intermediário |
+| Igreja Grande (大教会) | porte: 1.000+ membros cooperadores | topo da hierarquia de igrejas da Sede Regional |
+| Igreja Média (中教会) | porte: 300+ membros cooperadores | nível intermediário |
 | Igreja / 分教会 (Igreja Filial) | porte: abaixo de 300 | base jurídica — pode ser filial ou Associação, conforme a cadeia |
 
 O censo de outubro de 1950 é o retrato dessa dupla leitura, e é por isso que ele
@@ -3429,7 +3483,7 @@ ergueram **dezessete Sedes Regionais**, com nome e jurisdição definidos um a u
 
 | Sede regional | Províncias |
 |---|---|
-| 北海道東部 (Leste de Hokkaidō) · 北海道西部 (Oeste de Hokkaidō) | Leste e Oeste de Hokkaidō |
+| 北海道東部 · 北海道西部 | Leste e Oeste de Hokkaidō |
 | 東北 (Tōhoku) · 奥羽 (Ōu) | Iwate, Miyagi, Fukushima · Aomori, Akita, Yamagata |
 | 関東東部 (Leste de Kantō) · 関東西部 (Oeste de Kantō) | Tōkyō, Ibaraki, Chiba, Saitama, Yamanashi · Tochigi, Gunma |
 | 神静 (Shinsei) | Kanagawa, Shizuoka |
@@ -3481,9 +3535,9 @@ dela que a difusão concreta dependia:
 | Degrau | Japonês | Função |
 |---|---|---|
 | Filial | 支部 | unidade chefiada por um Ministro Responsável |
-| Posto avançado | 出張所 (posto avançado) | menor que a filial; criado pelo deslocamento de um ministro |
+| Posto avançado | 出張所 | menor que a filial; criado pelo deslocamento de um ministro |
 | Centro de Ensino | 教導所 | unidade mínima institucional: casa ou sala de atendimento |
-| Centro de Johrei | 浄霊所 (Centro de Johrei) | unidade de fato: a casa de uma família que passou a atender |
+| Centro de Johrei | 浄霊所 | unidade de fato: a casa de uma família que passou a atender |
 | Local do Kyoshu | 教修会場 (local do curso) | casa ou salão cedido para o curso |
 
 O **Centro de Johrei** é o degrau zero, e não consta de nenhum censo. A
@@ -3566,10 +3620,10 @@ Sobre a sede própria, o documento não exige nada: a associação é definida p
 agregação de unidades, não por um edifício. O que se pode afirmar é que **a
 associação não é uma igreja em escala menor**. As diferenças são de natureza:
 
-|  | Igreja (教会 (igreja)) | Associação (分会) |
+|  | Igreja (教会) | Associação (分会) |
 |---|---|---|
 | Personalidade jurídica | própria, com regulamento | não tem |
-| Presidente | 会長 nomeado pelo Superintendente | 分会長, sem nomeação estatutária |
+| Presidente | 会長 nomeado pelo Superintendente | 分会長 (líder de Associação), sem nomeação estatutária |
 | Patrimônio | próprio, sujeito a aprovação da Sede | não previsto |
 | Assembleia e contas | anual, com aprovação | não previsto |
 | Critério de existência | reconhecimento e nomeação | **dez ou mais Centros de Ensino** |
@@ -3610,11 +3664,11 @@ curso. Não é unidade hierárquica: é um endereço de atividade.
 
 | Unidade | Japonês | Vigência | Hierarquia |
 |---|---|---|---|
-| Sede Central | 総本部 (Sede Central) | 1951– | topo |
+| Sede Central | 総本部 | 1951– | topo |
 | Sede | 本部 | 1948– | topo administrativo |
-| Sede Regional | 地方本部 (Sede Regional) | 1951– | entre Sede e igrejas |
-| Templo Anexo | 別院 (Templo Anexo) | 1948–1950 (seis) | função, não degrau |
-| Filial Regional | 分院 (Filial Regional) | 1948–1950 (sete) | função, não degrau |
+| Sede Regional | 地方本部 | 1951– | entre Sede e igrejas |
+| Templo Anexo | 別院 | 1948–1950 (seis) | função, não degrau |
+| Filial Regional | 分院 | 1948–1950 (sete) | função, não degrau |
 | Igreja Grande | 大教会 | 1948– | topo das igrejas |
 | Igreja Média | 中教会 | 1948– | intermediária |
 | Igreja | 教会 / 分教会 | 1948– | base jurídica |
@@ -3814,7 +3868,7 @@ Meishu-Sama escrevia tinham valor fixo, e cobrar acima dele era furto.** O aviso
 > いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
 > 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
 > よく心得べきである。」
-> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
 
 Quarto, a contrapartida da dedicação integral. O portador de qualificação não devia
 ter profissão — o que, na prática, significava que vivia do exercício do ministério:
@@ -3880,7 +3934,7 @@ revela um desenho institucional deliberado.
 
 | Art. | Conteúdo |
 |---|---|
-| 1º | Nome: **世界救世教 (Igreja Messiânica Mundial)**, pessoa jurídica religiosa (宗教法人法 (Lei das Pessoas Jurídicas Religiosas)) |
+| 1º | Nome: **世界救世教**, pessoa jurídica religiosa (宗教法人法 (Lei das Pessoas Jurídicas Religiosas)) |
 | 2º | Sede: **静岡県熱海市字大久保二三一番の一** |
 | 3º | Objetivo: ter **岡田自観師 (o mestre Okada Jikan) como 教主 (Fundador)**; "difundir a doutrina, realizar ritos, **educar e formar os fiéis**, **abarcar as igrejas**" |
 | 4º | Publicidade oficial: uma vez em 『栄光』 + afixação por 10 dias na sede |
@@ -4001,8 +4055,8 @@ graph TD
  B --> Q["総本部 (Sede Central): Atami / Zuiunkyo"]
  B --> R["本部 (Sede): Odawara"]
  R --> S["17 地方本部 (Sedes Regionais)"]
- S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Sênior"]
- T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Intermediário"]
+ S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Titular"]
+ T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Adjunto"]
  U --> V["教会 (Igreja) — Ministro"]
  V --> W["支部 (filial) — Ministro Responsável"]
  W --> X["出張所 (posto avançado) / 教導所 (Centro de Ensino)<br/>Centro de Ensino — Assistente"]
@@ -4097,8 +4151,8 @@ igreja depende de 承認 (aprovação) do Superintendente para uma lista fechada
 | 27 | alienar ou dar em garantia imóveis e bens do inventário; tomar empréstimo ou prestar fiança; obra maior na sede da igreja; alteração do uso dos edifícios |
 | 28 | o presidente da igreja — ainda que **escolhido pelas regras da própria igreja** — é **nomeado** pelo Superintendente |
 
-O art. 27 abre exceções estreitas: o ato 「緊急の必要に基くもの」 (por necessidade urgente) (por
-necessidade urgente) ou 「軽微のもの」 (de pequena monta) (de pequena monta) dispensa a aprovação.
+O art. 27 abre exceções estreitas: o ato 「緊急の必要に基くもの」 (por
+necessidade urgente) ou 「軽微のもの」 (de pequena monta) dispensa a aprovação.
 Não há, em contrapartida, nenhum artigo que mande a Sede examinar caixa, livro ou
 conta de uma igreja.
 
@@ -4110,8 +4164,8 @@ diretor da Sede:
 
 | Série e data | Veículo | Composição |
 |---|---|---|
-| 「布教定例座談会」 (mesa-redonda periódica de difusão)(1ª) · 04/09/1952 | 『地上天国』42号 · | **um 理事 da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
-| 「定例布教座談会」 (mesa-redonda periódica de difusão)(3ª) · 05/01/1953 | 『栄光』195号 · | **orientação do 理事長**; seis presidentes de Igreja Média |
+| 「布教定例座談会」 (mesa-redonda periódica de difusão)(1ª) · 04/09/1952 | 『地上天国』42号 · | **um 理事 (diretor) da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
+| 「定例布教座談会」 (mesa-redonda periódica de difusão)(3ª) · 05/01/1953 | 『栄光』195号 · | **orientação do 理事長 (diretor-presidente)**; seis presidentes de Igreja Média |
 | 「布教座談会」 · 03/10/1952 | 『栄光』191号 · | presidente da igreja local e cerca de vinte dirigentes e fiéis |
 | 「支部長懇談会」 (encontro de líderes de filial) · 28/04/1952 | 『地上天国』37号 · | presidentes de filial, **dez minutos cada um** |
 
@@ -4206,7 +4260,8 @@ as próprias contas e as submetia à sua assembleia; a Sede aprovava seus atos.
 
 Na madrugada de **8 de maio de 1950**, seis imóveis em Atami e um em Odawara —
 sete ao todo — foram objeto de busca domiciliar simultânea. Meishu-Sama deixou o
-relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』:
+relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』
+(Hōnan Shuki, Notas da Perseguição):
 
 > 「昭和二十五年五月八日未明、突如として青天の霹靂のごとく、本教関係の熱海所在の
 > 建物六ケ所、小田原一ケ所、合計七ケ所に対し、一大**家宅捜索**が行われた。その際
@@ -4424,7 +4479,7 @@ agrícola é endereçado à **horta caseira**, não à lavoura comercial. Essa p
 entrada — barata, ao alcance do membro comum, com efeito visível no prato — é o
 que explica a capilaridade do método.
 
-![『自然農法』1号, novembro de 1954 — capa do primeiro número da revista que a instituição passou a dedicar exclusivamente ao método. [Fac-símile: capa do número; conferida na imagem, sem OCR da página de abertura, que é manuscrita.]](facsimiles/shizen_noho01_capa.jpg)
+![『自然農法』 (Shizen Nōhō, *Agricultura Natural*) 1号, novembro de 1954 — capa do primeiro número da revista que a instituição passou a dedicar exclusivamente ao método. [Fac-símile: capa do número; conferida na imagem, sem OCR da página de abertura, que é manuscrita.]](facsimiles/shizen_noho01_capa.jpg)
 
 ### 26.2 O argumento
 
@@ -4738,7 +4793,7 @@ surpreende:
 > 主義**」とおっしゃっている」
 
 *"Depois da refeição, caligrafa imediatamente as obras e as 御光 solicitadas pela
-organização e pela Igreja 五六七. Escreve **com a mão direita, cujo dedo indicador não
+organização e pela Igreja Miroku. Escreve **com a mão direita, cujo dedo indicador não
 consegue flexionar-se; mas a velocidade é verdadeiramente supersônica: no caso dos 'Luz',
 seiscentas folhas por hora** […] quando escreve cem caracteres '光' com a direita,
 acrescenta com a esquerda o traço do 落款 […] diz **'isto é produção em série'**; é de
@@ -4899,7 +4954,7 @@ Meishu-Sama o justificou explicitamente contra o sermão:
 bem apenas pelo ouvido, por meio de sermões, tem pouco efeito. Deve-se, através dos olhos,
 purificar o coração das pessoas pela beleza natural e pela beleza artificial, conduzi-las
 ao bem, despertar a fé e fazer conhecer o grande amor de Deus.'"*
-— 『編集後記（地上天国36号）』
+— 『編集後記（地上天国36号）』 (Nota da Redação, 『地上天国』36号)
 
 E as três categorias de beleza — 天然美 (natural), 人工美 (construída) e as artes:
 
@@ -5017,8 +5072,11 @@ excelentes entram a baixo preço. Esse é o poder da jóia que realiza os desejo
 
 A **agricultura natural** operou como ponte para o mundo rural, com números de
 produtividade usados como prova pública — e há instituições satélites criadas para isso:
-o 農林省自然農法研究会 (『栄光』256号, 14 de abril de 1954 · )
-e o 自然農法普及会 (『栄光』, 5 de maio de 1953 · ).
+o 農林省自然農法研究会 (Nōrinshō Shizen Nōhō Kenkyū-kai, Grupo de Estudo de
+Agricultura Natural do Ministério da Agricultura e Florestas; 『栄光』256号,
+14 de abril de 1954 · )
+e o 自然農法普及会 (Shizen Nōhō Fukyū-kai, Associação de Difusão da Agricultura
+Natural; 『栄光』, 5 de maio de 1953 · ).
 
 ![『栄光』256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR dos documentos.]](facsimiles/eiko256_norinsyo.jpg)
 
@@ -5158,8 +5216,8 @@ alguma.
  fiel se media pelo que ele podia entronizar em casa e portar consigo.
 5. **As duas nomenclaturas de grau são uma substituição, não duas séries**: 教導師 (Ministro Responsável) cede
  lugar a 中教師 (Ministro Adjunto) entre agosto de 1951 e fevereiro de 1952, com três meses de sobreposição.
-6. **O grau acompanhava a unidade dirigida** — 56 Ministros Seniores para 4 Igrejas Grandes,
- 430 Ministros Intermediários para 78 Igrejas Médias, 2.244 Ministros para 710 igrejas.
+6. **O grau acompanhava a unidade dirigida** — 56 Ministros Titulares para 4 Igrejas Grandes,
+ 430 Ministros Adjuntos para 78 Igrejas Médias, 2.244 Ministros para 710 igrejas.
 7. **O Fundador não era o Superintendente.** Havia separação formal entre autoridade
  carismática e autoridade jurídica, e o cargo legalmente responsável era ocupado por outra
  pessoa.
@@ -5209,92 +5267,92 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | Japonês | Romanizado | Tradução |
 |---|---|---|
 | 一人対一人では駄目だ | Hitori tai hitori de wa dame da | "Um a um não serve" |
-| 家庭菜園と無肥料栽培 (A horta doméstica e o cultivo sem adubo) | Katei saien to muhiryō saibai | "A horta doméstica e o cultivo sem adubo" |
-| 花による天国化運動 (O movimento de fazer do mundo um paraíso pelas flores) | Hana ni yoru tengoku-ka undō | "O movimento de fazer do mundo um paraíso pelas flores" |
+| 家庭菜園と無肥料栽培 | Katei saien to muhiryō saibai | "A horta doméstica e o cultivo sem adubo" |
+| 花による天国化運動 | Hana ni yoru tengoku-ka undō | "O movimento de fazer do mundo um paraíso pelas flores" |
 | 奇蹟 | Kiseki | "Milagre" |
 | 記事 | Kiji | "Reportagem" |
 | 教修 | Kyōshu | "O curso" |
-| 浄霊と医学との比較 (O Johrei comparado à medicina) | Jōrei to igaku to no hikaku | "O Johrei comparado à medicina" |
+| 浄霊と医学との比較 | Jōrei to igaku to no hikaku | "O Johrei comparado à medicina" |
 | 浄霊とは何か | Jōrei to wa nani ka | "O que é o Johrei" |
 | 黴菌の発生 | Baikin no hassei | "A origem dos micróbios" |
-| 光明如来様御奉斎で盗難免る (A entronização da Imagem do Kōmyō Nyorai livra dos roubos) | Kōmyō Nyorai-sama go-busai de tōnan manugareru | "Livre de um roubo pela entronização do Kōmyō Nyorai" |
+| 光明如来様御奉斎で盗難免る | Kōmyō Nyorai-sama go-busai de tōnan manugareru | "Livre de um roubo pela entronização do Kōmyō Nyorai" |
 | 鉱山においての奇蹟の数々 | Kōzan ni oite no kiseki no kazukazu | "Os muitos milagres na mina" |
-| 御浄化物語 (Histórias de purificação) | Go-jōka monogatari | "Histórias de purificação" |
-| 御講話 (palestra) | Go-kōwa | "Palestra" |
-| 再教修を戴きました感謝の報告 (Relato de gratidão por haver recebido novo curso) | Saikyōshu o itadakimashita kansha no hōkoku | "Relato de gratidão por ter recebido o re-Kyoshu" |
-| 私とサタンとの闘争史 (História da minha luta com Satanás) | Watashi to Satan to no tōsōshi | "História da minha luta com Satanás" |
-| 自観大先生の御日常 (O dia a dia do grande mestre Jikan) | Jikan daisensei no go-nichijō | "O dia a dia do grande mestre Jikan" |
-| 質問応答 (perguntas e respostas) 御光話 (Palavras de Luz) | Shitsumon ōtō go-kōwa | "Perguntas e respostas: palavras de luz" |
-| 質問応答 教えの光 (Luz dos Ensinamentos) | Shitsumon ōtō oshie no hikari | "Perguntas e respostas: a luz do ensinamento" |
-| 重症の筋炎治る (Cura de uma miosite grave) | Jūshō no kin'en naoru | "Cura de uma miosite grave" |
+| 御浄化物語 | Go-jōka monogatari | "Histórias de purificação" |
+| 御講話 | Go-kōwa | "Palestra" |
+| 再教修を戴きました感謝の報告 | Saikyōshu o itadakimashita kansha no hōkoku | "Relato de gratidão por ter recebido o re-Kyoshu" |
+| 私とサタンとの闘争史 | Watashi to Satan to no tōsōshi | "História da minha luta com Satanás" |
+| 自観大先生の御日常 | Jikan daisensei no go-nichijō | "O dia a dia do grande mestre Jikan" |
+| 質問応答 御光話 | Shitsumon ōtō go-kōwa | "Perguntas e respostas: palavras de luz" |
+| 質問応答 教えの光 | Shitsumon ōtō oshie no hikari | "Perguntas e respostas: a luz do ensinamento" |
+| 重症の筋炎治る | Jūshō no kin'en naoru | "Cura de uma miosite grave" |
 | 出発 | Shuppatsu | "Partida" |
-| 新宗教と世界の年齢 (As novas religiões e a idade do mundo) | Shin shūkyō to sekai no nenrei | "As novas religiões e a idade do mundo" |
-| 世界救世教秋季大祭に参拝して (Ao visitar o Grande Culto de Outono da Igreja Messiânica Mundial) | Sekai Kyūseikyō shūki taisai ni sanpai shite | "Visitando o Grande Culto de Outono da Igreja Messiânica Mundial" |
-| 世界救世教の機構整備について (Sobre a montagem da estrutura da Igreja Messiânica Mundial) | Sekai Kyūseikyō no kikō seibi ni tsuite | "Sobre a organização da estrutura da Igreja Messiânica Mundial" |
+| 新宗教と世界の年齢 | Shin shūkyō to sekai no nenrei | "As novas religiões e a idade do mundo" |
+| 世界救世教秋季大祭に参拝して | Sekai Kyūseikyō shūki taisai ni sanpai shite | "Visitando o Grande Culto de Outono da Igreja Messiânica Mundial" |
+| 世界救世教の機構整備について | Sekai Kyūseikyō no kikō seibi ni tsuite | "Sobre a organização da estrutura da Igreja Messiânica Mundial" |
 | 説教者が本教罵倒 | Sekkyōsha ga honkyō badō | "Um pregador difama esta religião" |
 | 祖霊との交わり | Sorei to no majiwari | "O convívio com os espíritos ancestrais" |
-| 大祭式典に参加して (Participando da cerimônia do Grande Culto) | Taisai shikiten ni sanka shite | "Participando da cerimônia do Grande Culto" |
+| 大祭式典に参加して | Taisai shikiten ni sanka shite | "Participando da cerimônia do Grande Culto" |
 | 地上天国建設の土台 | Chijō tengoku kensetsu no dodai | "O fundamento da construção do Paraíso Terrestre" |
-| 地上天国出来るまで (Até a Construção do Paraíso Terrestre) | Chijō tengoku dekiru made | "Até que o Paraíso Terrestre se realize" |
-| 泥棒に入られて (Assaltado por um ladrão) | Dorobō ni ira rete | "Assaltado por um ladrão" |
-| 布教座談会 (mesa-redonda de difusão) | Fukyō zadankai | "Mesa-redonda de difusão" |
-| 布教定例座談会 (mesa-redonda periódica de difusão) | Fukyō teirei zadankai | "Mesa-redonda periódica de difusão" |
-| 定例布教座談会 (mesa-redonda periódica de difusão) | Teirei fukyō zadankai | "Mesa-redonda periódica de difusão" |
-| 支部の現状と発展の為に (Pela situação e o desenvolvimento das filiais) | Shibu no genjō to hatten no tame ni | "Pela situação e o desenvolvimento das filiais" |
-| 支部長懇談会 (encontro de líderes de filial) | Shibuchō kondankai | "Encontro de líderes de filial" |
-| 発端 (O começo) | Hottan | "O começo" |
+| 地上天国出来るまで | Chijō tengoku dekiru made | "Até que o Paraíso Terrestre se realize" |
+| 泥棒に入られて | Dorobō ni ira rete | "Assaltado por um ladrão" |
+| 布教座談会 | Fukyō zadankai | "Mesa-redonda de difusão" |
+| 布教定例座談会 | Fukyō teirei zadankai | "Mesa-redonda periódica de difusão" |
+| 定例布教座談会 | Teirei fukyō zadankai | "Mesa-redonda periódica de difusão" |
+| 支部の現状と発展の為に | Shibu no genjō to hatten no tame ni | "Pela situação e o desenvolvimento das filiais" |
+| 支部長懇談会 | Shibuchō kondankai | "Encontro de líderes de filial" |
+| 発端 | Hottan | "O começo" |
 | 八王子の奇蹟 | Hachiōji no kiseki | "O milagre de Hachiōji" |
-| 非売品 (não se vende) | Hibaihin | "Não se vende" |
+| 非売品 | Hibaihin | "Não se vende" |
 | 布教 | Fukyō | "Difusão" |
 | 法難裁判傍聴記 | Hōnan saiban bōchōki | "Crônica das audiências do processo" |
-| 放送に対する抗議文 (Protesto contra a emissão) | Hōsō ni taisuru kōgibun | "Protesto contra a emissão" |
-| 本教の収入に就て (Sobre a receita desta religião) | Honkyō no shūnyū ni tsuite | "Sobre a receita desta religião" |
+| 放送に対する抗議文 | Hōsō ni taisuru kōgibun | "Protesto contra a emissão" |
+| 本教の収入に就て | Honkyō no shūnyū ni tsuite | "Sobre a receita desta religião" |
 | 妙智の光 | Myōchi no hikari | "A luz da sabedoria sutil" |
-| 明暗の隔り (A distância entre luz e trevas) | Meian no hedatari | "A distância entre luz e trevas" |
-| 問題の世界救世教とは何か (O que é, afinal, a Igreja Messiânica Mundial) | Mondai no Sekai Kyūseikyō to wa nani ka | "Que é, afinal, a Igreja Messiânica Mundial?" |
-| 本部事務所奉仕者座談会 (Mesa-redonda dos servidores do escritório central) | Honbu jimusho hōshisha zadankai | "Mesa-redonda dos servidores do escritório central" |
+| 明暗の隔り | Meian no hedatari | "A distância entre luz e trevas" |
+| 問題の世界救世教とは何か | Mondai no Sekai Kyūseikyō to wa nani ka | "Que é, afinal, a Igreja Messiânica Mundial?" |
+| 本部事務所奉仕者座談会 | Honbu jimusho hōshisha zadankai | "Mesa-redonda dos servidores do escritório central" |
 | 村一番の悪田良化す | Mura ichiban no akuda ryōka su | "A pior lavoura da aldeia se recupera" |
 | 黙示 | Mokushi | "Apocalipse" |
-| やはり功労のある人が上に行くのが本当ですから (afinal, é justo que os que têm méritos estejam no topo) | Yahari kōrō no aru hito ga ue ni iku no ga hontō desu kara | "Afinal, é justo que os que têm méritos estejam no topo" |
-| 注意 (Aviso) | Chūi | "Aviso" |
-| 献金に就て (Sobre a contribuição) | Kenkin ni tsuite | "Sobre a contribuição" |
-| 救世と自観明主様 (A salvação e Meishu-Sama Jikan) | Kyūsei to Jikan Meishu-Sama | "A salvação e Meishu-Sama Jikan" |
+| やはり功労のある人が上に行くのが本当ですから | Yahari kōrō no aru hito ga ue ni iku no ga hontō desu kara | "Afinal, é justo que os que têm méritos estejam no topo" |
+| 注意 | Chūi | "Aviso" |
+| 献金に就て | Kenkin ni tsuite | "Sobre a contribuição" |
+| 救世と自観明主様 | Kyūsei to Jikan Meishu-Sama | "A salvação e Meishu-Sama Jikan" |
 | 交通事故から救わる | Kōtsū jiko kara sukuwaru | "Salvo de um acidente de trânsito" |
-| 光明 (Luz) | Kōmyō | "Luz" |
+| 光明 | Kōmyō | "Luz" |
 | 真善美 | Shinzenbi | "Verdade, bem e beleza" |
-| 光新聞の拡大は教線の強化 (A ampliação do jornal *Kō* é o fortalecimento da linha de ensino) | Hikari shinbun no kakudai wa kyōsen no kyōka | "Ampliar o jornal Hikari é fortalecer a linha da fé" |
+| 光新聞の拡大は教線の強化 | Hikari shinbun no kakudai wa kyōsen no kyōka | "Ampliar o jornal Hikari é fortalecer a linha da fé" |
 | 今上天皇 | Kinjō tennō | "o imperador reinante" |
-| ハワイ通信 (Correspondência do Havaí) | Hawai tsūshin | "Correspondência do Havaí" |
+| ハワイ通信 | Hawai tsūshin | "Correspondência do Havaí" |
 
 ### 30.3 Nomes de lugares e de instituições
 
 | Japonês | Romanizado | Tradução |
 |---|---|---|
 | 晴々台 | Seiseidai | "terra do céu claro" (planalto em Atami) |
-| 桃山 (Momoyama) | Momoyama | "montanha do pêssego" (em Atami) |
+| 桃山 | Momoyama | "montanha do pêssego" (em Atami) |
 | 強羅 | Gōra | Gōra (em Hakone) |
 | 熱海 | Atami | Atami |
 | 小田原 | Odawara | Odawara |
 | 箱根 | Hakone | Hakone |
-| 瑞雲山 (monte Zuiun) | Zuiunzan | "montanha da nuvem auspiciosa" |
-| 神仙郷 (Terra Divina) | Shinsenkyō | "pátria dos imortais" |
-| 水晶殿 (Palácio de Cristal) | Suishōden | "Palácio de Cristal" |
-| 日光殿 (Nikkōden (Palácio da Luz Solar)) | Nikkōden | "Salão da Luz do Sol" |
+| 瑞雲山 | Zuiunzan | "montanha da nuvem auspiciosa" |
+| 神仙郷 | Shinsenkyō | "pátria dos imortais" |
+| 水晶殿 | Suishōden | "Palácio de Cristal" |
+| 日光殿 | Nikkōden | "Salão da Luz do Sol" |
 | 救世会館 | Kyūsei Kaikan | "Salão da Salvação do Mundo" |
-| 森吉鉱山 (mina de Moriyoshi) | Moriyoshi kōzan | mina de Moriyoshi |
-| 水上 (Minakami) | Minakami | Minakami |
-| 応神堂 (Ōjin-dō) | Ōjindō | "santuário de Ōjin" |
-| 五六七 (Miroku) | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
-| 大日本観音会 | Dai-Nippon Kannon-kai | "Grande Associação Kannon do Japão" |
+| 森吉鉱山 | Moriyoshi kōzan | mina de Moriyoshi |
+| 水上 | Minakami | Minakami |
+| 応神堂 | Ōjindō | "santuário de Ōjin" |
+| 五六七 | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
+| 大日本観音会 | Dai-Nippon Kannon-kai | "Associação Kannon do Grande Japão" |
 | 日本観音教団 | Nippon Kannon Kyōdan | "Igreja Kannon do Japão" |
 | 日本浄化療法普及会 | Nippon Jōka Ryōhō Fukyūkai | "Associação de Difusão da Terapêutica de Purificação do Japão" |
 | 世界救世教 | Sekai Kyūseikyō | Igreja Messiânica Mundial |
 | 世界救世教会 | Sekai Kyūseikyōkai | Igreja Messiânica Mundial (grafia de 1950) |
-| 天国大教会 (Igreja Grande Tengoku) | Tengoku daikyōkai | Igreja Grande do Paraíso |
-| 大成大教会 (Igreja Grande Taisei) | Taisei daikyōkai | Igreja Grande da Grande Realização |
-| 光宝大教会 (Igreja Grande Kōhō) | Kōhō daikyōkai | Igreja Grande do Tesouro da Luz |
-| 五六七大教会 (Igreja Grande Miroku) | Iso-roku daikyōkai | Igreja Grande Miroku (romaji: Iso-roku daikyōkai) |
-| 光映中教会 (Igreja Média Kōei) | Kōei chūkyōkai | Igreja Média do Reflexo da Luz |
+| 天国大教会 | Tengoku daikyōkai | Igreja Grande do Paraíso |
+| 大成大教会 | Taisei daikyōkai | Igreja Grande da Grande Realização |
+| 光宝大教会 | Kōhō daikyōkai | Igreja Grande do Tesouro da Luz |
+| 五六七大教会 | Iso-roku daikyōkai | Igreja Grande Miroku (romaji: Iso-roku daikyōkai) |
+| 光映中教会 | Kōei chūkyōkai | Igreja Média do Reflexo da Luz |
 | 長生中教会 | Chōsei chūkyōkai | Igreja Média da Longa Vida |
 | 光陽中教会 | Kōyō chūkyōkai | Igreja Média do Sol da Luz |
 | 更生中教会 | Kōsei chūkyōkai | Igreja Média da Regeneração |
@@ -5314,82 +5372,82 @@ capítulo em que cada um é tratado.
 
 | Japonês | Romanizado | Português | Cap. |
 |---|---|---|---|
-| 相応の理 (princípio da correspondência) | sōō no ri | razão da correspondência entre objeto e lugar | 15 |
+| 相応の理 | sōō no ri | razão da correspondência entre objeto e lugar | 15 |
 | 大教会 | daikyōkai | Igreja Grande (mil membros ou mais) | 7, 8 |
 | 大教会長 | daikyōkaichō | presidente de Igreja Grande | 10 |
-| 大教師 | daikyōshi | Ministro Sênior | 10 |
-| 大祭 (Grande Culto) | taisai | Grande Culto, sazonal, na Sede | 17 |
-| 大光明 (Daikōmyō) | dai-kōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
-| 大光明如来 (Daikōmyō Nyorai) | Dai-Kōmyō Nyorai | Tathāgata da Grande Luz | 12 |
-| 会費 (quota do membro) | kaihi | quota periódica do membro | 21 |
+| 大教師 | daikyōshi | Ministro Titular | 10 |
+| 大祭 | taisai | Grande Culto, sazonal, na Sede | 17 |
+| 大光明 | dai-kōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
+| 大光明如来 | Dai-Kōmyō Nyorai | Tathāgata da Grande Luz | 12 |
+| 会費 | kaihi | quota periódica do membro | 21 |
 | 会長 | kaichō | presidente de igreja, nomeado pelo Superintendente | 10, 13 |
-| 会則 (estatuto) | kaisoku | estatuto de associação civil | 13 |
-| 外国部 (Departamento do Exterior) | gaikokubu | Departamento do Exterior | 13 |
+| 会則 | kaisoku | estatuto de associação civil | 13 |
+| 外国部 | gaikokubu | Departamento do Exterior | 13 |
 | 管長 | kanchō | Superintendente, representante legal | 13 |
-| 監査 (auditoria) | kansa | auditoria | 13, 14 |
+| 監査 | kansa | auditoria | 13, 14 |
 | 監事 | kanji | auditor | 13, 14 |
-| 企画 (Planejamento) | kikaku | Planejamento (departamento) | 13 |
+| 企画 | kikaku | Planejamento (departamento) | 13 |
 | 教団 | kyōdan | o corpo da igreja, a comunidade | 2 |
 | 教導師 | kyōdōshi | Ministro Responsável de Unidade Religiosa | 9 |
 | 教導師補 | kyōdōshi-ho | Ministro Responsável Assistente | 9 |
 | 教導所 | kyōdōsho | Centro de Ensino, unidade mínima institucional | 8 |
-| 教費 (taxa religiosa) | kyōhi | taxa religiosa cobrada pela pessoa jurídica | 21 |
-| 教務 (Doutrina) | kyōmu | Doutrina (departamento) | 13 |
+| 教費 | kyōhi | taxa religiosa cobrada pela pessoa jurídica | 21 |
+| 教務 | kyōmu | Doutrina (departamento) | 13 |
 | 教修 | kyōshu | curso de admissão | 4 |
 | 教修会場 | kyōshu kaijō | local onde o curso é ministrado | 8 |
 | 教修要綱 | Kyōshu Yōkō | Manual do Curso | 4 |
 | 極め塩 | kime-shiō | sal de purificação | 28 |
 | 供養 | kuyō | sufrágio | 20 |
 | 供物 | kumotsu | oferenda | 17, 28 |
-| 玉串 (ramo sagrado) | tamagushi | ramo sagrado ofertado; a oferenda de gratidão | 18 |
+| 玉串 | tamagushi | ramo sagrado ofertado; a oferenda de gratidão | 18 |
 | 月並祭 | tsukinami-sai | Culto Mensal | 17 |
-| 月例祭 (Culto Mensal) | getsurei-sai | variante gráfica de 月並祭 | 17 |
-| 御光話録 (Gokōwa-roku) | Gokōwa-roku | coletânea de respostas orais | 3 |
-| 御教え集 (Mioshie-shū) | Oshie-shū | coletânea de ensinamentos | 3 |
-| 御玉串 (Ofertário de Gratidão) | o-tamagushi | oferenda de gratidão | 18 |
-| 御神体 (Imagem da Luz Divina) | goshintai | Imagem da Luz Divina entronizada | 12, 15 |
-| 御神饌 (oferendas sagradas) | go-shinsen | oferendas sagradas do Xintó | 28 |
-| 御垂示録 (Gosuiji-roku) | Gosurei-roku | coletânea de instruções | 3 |
-| 御洗米 (arroz lavado ofertado) | o-senmai | arroz lavado, oferenda | 28 |
-| 御奉仕 (serviço voluntário) | go-hōshi | serviço voluntário | 25 |
-| 御奉謝金 (oferta por Johrei ministrado) | gohōsha-kin | oferta por Johrei ministrado a terceiro ou familiar | 21 |
-| 御面会 (audiência) | go-menkai | audiência com Meishu-Sama | 25 |
-| 御守 (Ohikari) | o-mamori | Ohikari | 19 |
-| 御守護御礼 (oferta pela graça recebida) | goshugo-rei | oferta pela graça recebida | 21 |
+| 月例祭 | getsurei-sai | variante gráfica de 月並祭 | 17 |
+| 御光話録 | Gokōwa-roku | coletânea de respostas orais | 3 |
+| 御教え集 | Oshie-shū | coletânea de ensinamentos | 3 |
+| 御玉串 | o-tamagushi | oferenda de gratidão | 18 |
+| 御神体 | goshintai | Imagem da Luz Divina entronizada | 12, 15 |
+| 御神饌 | go-shinsen | oferendas sagradas do Xintó | 28 |
+| 御垂示録 | Gosurei-roku | coletânea de instruções | 3 |
+| 御洗米 | o-senmai | arroz lavado, oferenda | 28 |
+| 御奉仕 | go-hōshi | serviço voluntário | 25 |
+| 御奉謝金 | gohōsha-kin | oferta por Johrei ministrado a terceiro ou familiar | 21 |
+| 御面会 | go-menkai | audiência com Meishu-Sama | 25 |
+| 御守 | o-mamori | Ohikari | 19 |
+| 御守護御礼 | goshugo-rei | oferta pela graça recebida | 21 |
 | 講習要項 | kōshū yōkō | programa de curso de 1947 | 4 |
 | 光明 | kōmyō | "Luz", segundo grau de Ohikari e de Imagem | 12, 19 |
-| 光明如来 (Komyo-Nyorai) | Kōmyō Nyorai | Tathāgata da Luz | 12 |
+| 光明如来 | Kōmyō Nyorai | Tathāgata da Luz | 12 |
 | 五十六七 | Iso-roku | "cinco, seis, sete" — romaji *iso-roku*; vertido como Miroku | 2 |
 | 座談会 | zadankai | mesa-redonda | 14 |
 | 師補 | shiho | abreviatura de 教導師補 | 9 |
 | 支部 | shibu | filial, degrau de base da difusão | 6, 8 |
 | 支部長 | shibuchō | líder de filial | 9, 10 |
 | 施し | sashi | dádiva, esmola | 21 |
-| 自然農法 (Agricultura Natural) | shizen nōhō | Agricultura Natural | 22 |
-| 自観 (Jikan) | Jikan | nome religioso do Fundador | 2 |
+| 自然農法 | shizen nōhō | Agricultura Natural | 22 |
+| 自観 | Jikan | nome religioso do Fundador | 2 |
 | 祝詞 | norito | oração ritual | 16 |
 | 出張所 | shutchōjo | posto avançado | 8 |
 | 集団御浄霊 | shūdan go-jōrei | Johrei coletivo | 10 |
 | 巡教 | junkō | missão itinerante de ensino | 25 |
 | 助教師 | jo-kyōshi | Ministro Assistente, linha externa | 9 |
-| 浄化 (purificação) | jōka | purificação | 23 |
-| 浄霊 (Johrei) | jōrei | Johrei, transmissão de luz pela palma | 23 |
+| 浄化 | jōka | purificação | 23 |
+| 浄霊 | jōrei | Johrei, transmissão de luz pela palma | 23 |
 | 浄霊所 | jōrei-sho | Centro de Johrei, unidade de fato | 8 |
-| 神饌 (oferenda de alimentos) | shinsen | oferenda de alimentos | 17, 28 |
-| 神饌長 (chefe das oferendas) | shinsen-chō | chefe das oferendas no culto | 16 |
+| 神饌 | shinsen | oferenda de alimentos | 17, 28 |
+| 神饌長 | shinsen-chō | chefe das oferendas no culto | 16 |
 | 神道 | Shintō | Xintó | 28 |
 | 神示 | jinshi | revelação divina | 4 |
 | 寸志 | sunshi | pequena oferta, gorjeta | 21 |
 | 世界救世教 | Sekai Kyūseikyō | Igreja Messiânica Mundial | 2 |
-| 総会 (Assembleia Geral) | sōkai | Assembleia Geral dos presidentes de igreja | 13 |
+| 総会 | sōkai | Assembleia Geral dos presidentes de igreja | 13 |
 | 総本部 | sōhonbu | Sede Central | 8 |
-| 総務 (Assuntos Gerais) | sōmu | Assuntos Gerais (departamento) | 13 |
-| 相談役 (consultor) | sōdanyaku | conselheiro | 13 |
-| 造営 (Construção) | zōei | Construção (departamento) | 13 |
+| 総務 | sōmu | Assuntos Gerais (departamento) | 13 |
+| 相談役 | sōdanyaku | conselheiro | 13 |
+| 造営 | zōei | Construção (departamento) | 13 |
 | 地鎮祭 | jichinsai | rito de fundação do terreno | 16 |
 | 中教会 | chūkyōkai | Igreja Média (trezentos membros ou mais) | 7, 8 |
 | 中教会長 | chūkyōkaichō | presidente de Igreja Média | 10 |
-| 中教師 | chūkyōshi | Ministro Intermediário | 10 |
+| 中教師 | chūkyōshi | Ministro Adjunto | 10 |
 | 追善 | tsuizen | sufrágio em favor do falecido | 20 |
 | 定例布教座談会 | teirei fukyō zadankai | mesa-redonda periódica de difusão | 14 |
 | 天津祝詞 | Amatsu Norito | oração recitada nos cultos | 16 |
@@ -5402,154 +5460,46 @@ capítulo em que cada um é tratado.
 | 仏壇 | butsudan | oratório doméstico dos antepassados | 20 |
 | 別院 | betsuin | Templo Anexo | 8 |
 | 分院 | bungyō | Filial Regional | 8 |
-| 奉仕隊 (brigada de serviço) | hōshitai | brigada de serviço voluntário | 25, 26 |
+| 奉仕隊 | hōshitai | brigada de serviço voluntário | 25, 26 |
 | 奉唱 | hōshō | canto ritual | 16 |
-| 報恩 (retribuição) | hōon | retribuição do benefício recebido | 21 |
+| 報恩 | hōon | retribuição do benefício recebido | 21 |
 | 本殿 | honden | salão principal de um templo | 8 |
 | 毎旬 | maijun | a cada dez dias | 17 |
-| 分担金 (rateio de despesa) | buntankin | rateio de despesa entre igrejas | 21 |
+| 分担金 | buntankin | rateio de despesa entre igrejas | 21 |
 | 分会 | bunkai | Associação (1948–1951) | 6, 8 |
 | 分会長 | bunkaichō | líder de Associação | 10 |
 | 分教会 | bunkyōkai | igreja subordinada | 6, 8 |
 | 分所 | bunsho | Subsede (1948–1951) | 6 |
-| 無肥料 (sem adubo) | muhiryō | sem adubo | 22 |
+| 無肥料 | muhiryō | sem adubo | 22 |
 | 明主様 | Meishu-Sama | forma de tratamento do Fundador | — |
 | 弥勒 | Miroku | Maitreya | 2 |
 | 役員 | yakuin | dirigentes, membros da direção | 13 |
 | 予算 | yosan | orçamento | 13, 21 |
-| 寄付 (doação) | kifu | doação | 21 |
+| 寄付 | kifu | doação | 21 |
 | 理事 | riji | diretor | 13 |
 | 理事長 | rijichō | diretor-presidente | 13 |
 | 臨時祭 | rinji-sai | culto ocasional | 17 |
 | 例祭 | reisai | Culto Regular, próprio de cada igreja | 17 |
 | 霊界 | reikai | mundo espiritual | 20 |
-| 霊肉一致 (unidade de espírito e corpo) | reiniku itchi | unidade de espírito e corpo | 19 |
+| 霊肉一致 | reiniku itchi | unidade de espírito e corpo | 19 |
 | 和歌 | waka | poema japonês de trinta e uma sílabas | 16 |
-| 献金 (contribuição) | kenkin | contribuição voluntária | 21 |
+| 献金 | kenkin | contribuição voluntária | 21 |
 | 地方本部 | chihō honbu | Sede Regional | 7, 8 |
 | 地方本部長 | chihō honbuchō | responsável de Sede Regional | 10 |
 | 常任理事 | jōnin riji | diretor permanente | 10 |
 | 資格者 | shikakusha | portador de qualificação | 9 |
 | 御用 | goyō | serviço à obra divina | 3 |
 | 御軸 | go-jiku | pergaminho suspenso | 28 |
-| 御書体 (caligrafia) | go-shotai | caligrafia de Meishu-Sama | 12 |
+| 御書体 | go-shotai | caligrafia de Meishu-Sama | 12 |
 | 御屏風 | go-byōbu | biombo com a figura de Kannon | 12 |
 | 御讃歌 | go-sanka | canto de louvor | 16 |
 | 御神前 | go-shinzen | diante do altar | 28 |
-| 御霊光 (Luz Espiritual) | go-reikō | água espiritualizada | 28 |
-| 御光 (a Luz Divina) | go-hikari | a Luz Divina | 23 |
-| 御蔭 (graça) | go-kage | graça, proteção recebida | 18 |
-| 御浄霊 (Johrei) | go-jōrei | Johrei, forma respeitosa | 23 |
+| 御霊光 | go-reikō | água espiritualizada | 28 |
+| 御光 | go-hikari | a Luz Divina | 23 |
+| 御蔭 | go-kage | graça, proteção recebida | 18 |
+| 御浄霊 | go-jōrei | Johrei, forma respeitosa | 23 |
 
-## 32. Anexo A — Programa do Curso da Igreja Kannon do Japão (1947)
-
-**Documento:** 日本観音教団講習要項 (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
-Curso da Igreja Kannon do Japão".
-**Data:** 1º de julho de 1947.
-
-**Natureza:** norma interna de formação. Não é exposição doutrinária: é o
-regulamento que diz como se realiza o curso, quem responde por ele e o que se
-deve ensinar. É o primeiro currículo escrito do movimento, anterior em sete anos
-ao 教修要綱 (Manual do Curso).
-**Publicação:** o texto foi reproduzido na coletânea de escritos de Meishu-Sama,
-sem indicação de veículo periódico.
-
-O documento é curto, e vale por três coisas: mostra que a formação já era
-**normatizada antes da personalidade jurídica de agosto de 1947**; define o
-conteúdo mínimo da pregação em oito pontos; e declara que o curso confere o
-direito de portar o 「光」, tratado explicitamente como sinal — comparado à cruz
-do cristianismo.
-
-Tradução integral. A numeração é a do original (一 a 八, mais o parágrafo final).
-
----
-
-**1.** As conferências de difusão e as práticas de terapia previstas no artigo
-17.º das Normas de Tratamento de Assuntos desta Igreja obedecerão ao presente
-Programa.
-
-**2.** Para cada curso designam-se um responsável de curso e um professor
-orientador. O professor orientador pode ser, ao mesmo tempo, o responsável do
-curso.
-
-O responsável do curso deve, imediatamente após a realização, relatar à Sede
-Central da Igreja, por intermédio da igreja filial ou da filial da Igreja, o
-seguinte:
-
-&nbsp;&nbsp;&nbsp;&nbsp;**a.** data e local de realização;
-&nbsp;&nbsp;&nbsp;&nbsp;**b.** nomes do responsável do curso e do professor
-orientador;
-&nbsp;&nbsp;&nbsp;&nbsp;**c.** panorama geral do curso.
-
-**3.** A ordem do curso, conduzida pelo professor orientador, é a seguinte:
-
-&nbsp;&nbsp;&nbsp;&nbsp;**a.** conferência de difusão;
-&nbsp;&nbsp;&nbsp;&nbsp;**b.** orientação e estudo da terapia.
-
-**4.** O conteúdo essencial da conferência de difusão tem por eixo a doutrina da
-Igreja e deve apoiar-se nos seguintes pontos:
-
-&nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon (観世音), e o
-texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*, o 「普門品」. A fé
-consiste em que Kannon é o criador de todos os fenômenos e a própria Luz.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**b.** Kannon está sempre vivo, dentro de nós, e trabalha
-conosco.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**c.** Kannon compadece-se deste mundo de ilusão e de
-nossa condição desordenada e, para nos conduzir à forma correta, começou a obra
-da salvação. Esse coração de compaixão pura de Kannon finalmente se manifestou e
-demonstrou o poder de extinguir as três grandes calamidades.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**d.** Cremos que é quando essas três grandes
-calamidades forem erradicadas — isto é, quando desaparecer a doença, que é a raiz
-das três — que se abrirá o verdadeiro Paraíso Terrestre. Aqui se abre de uma vez
-o caminho pelo qual o Paraíso Terrestre se realiza de fato, e nós temos a
-convicção de haver sido escolhidos como seus apóstolos sob a Luz. É isto a
-concretização da prática de Kannon.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**e.** Não somos, é claro, pessoas de forma plenamente
-correta. Mas, felizmente, o 「念彼観音力」 — o poder de invocar Kannon — conduz-nos
-a ser bons condutores da força espiritual que realiza a prática de Kannon, e nos
-torna concretizadores da maravilhosa sabedoria de Kannon.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**f.** Cremos que nossa terapia é a sabedoria mostrada
-por Kannon e o caminho correto do despertar que Kannon concede. Por isso é
-natural que seja verdadeiramente simples, direta e produza efeitos que o senso
-comum não pode sequer imaginar: nada há de espantoso no alcance do poder de
-Kannon.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**g.** Gravemos com clareza que nos basta seguir em
-silêncio a missão de expressar esse poder augusto e essa compaixão de Kannon.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**h.** Cremos sempre no ensino mostrado por Kannon e
-empenhamo-nos, dia a dia, na prática pessoal (勤行), para a expansão do 「念彼観音力」.
-
-**5.** A terapia é a concretização dos pontos doutrinários acima, e qualquer
-pessoa pode praticá-la. Tem a propriedade de ser útil em qualquer circunstância:
-não faz diagnóstico da doença, não orienta o uso de medicamentos e não emite
-juízo sobre o grau de cura. Isto é, é o percurso de erradicação da doença e do
-infortúnio, e pratica-se vivendo apenas da fé firme de que o fim desse percurso é
-a libertação desse infortúnio. E o resultado último de praticarmos nossa terapia
-— a cura radical da doença e do infortúnio — está nas mãos de Kannon e no coração
-de Kannon: tenhamos isto firmemente, e não nos afastemos deste ponto nem na
-orientação nem no âmbito do estudo, lembrando sempre que não passamos de servos
-fiéis de Kannon.
-
-**6.** O 「光」 entregue no curso é o sinal de Kannon, nosso objeto de fé — isto é,
-do Kōmyō Nyorai —, e porta-se como prova de conclusão do curso, exatamente como
-a cruz no cristianismo.
-
-**7.** A duração do curso tem por meta transmitir o sentido verdadeiro da difusão
-e da terapia acima descritos, e é fixada em cada caso pelo professor orientador,
-conforme lhe parecer adequado.
-
-**8.** Quando se deseje realizar um curso e não haja professor orientador
-disponível, deve-se solicitar à Sede Central o envio de um.
-
-**Disposição final.** O presente Programa entra em vigor em 1º de julho de 1947.
-
-## 33. Anexo B — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946)
+## 32. Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946)
 
 **Documento:** 日本浄化療法普及会主旨及会則 (*Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
 Kaisoku*), "Propósito e estatuto da Associação de Difusão da Terapêutica de
@@ -5561,7 +5511,7 @@ religiosa. Este é o documento que mostra a instituição **antes** de ela ser
 religião: uma associação de difusão terapêutica, com finalidade declarada de
 "bem-estar nacional", e uma cláusula expressa de não ingerência na fé dos
 assócios.
-**Assinatura:** Okada Shigeyoshi (岡田茂吉), em Atami.
+**Assinatura:** Okada Shigeyoshi (岡田茂吉, Okada Mokichi), em Atami.
 
 Tradução integral. O original traz primeiro o propósito, assinado por Okada, e
 depois o estatuto, em dezesseis artigos.
@@ -5700,7 +5650,232 @@ Yoshihiko, Kawakami Yoshiko, Naitō Raku, Takatō Nobumasa, Ōnuma Mitsuhiko e
 Ogawa Masayasu. Os consultivos e os membros da secretaria serão anunciados em
 breve. (1946)
 
-## 34. Anexo C — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
+## 33. Anexo B — Programa do Curso da Igreja Kannon do Japão (1947)
+
+**Documento:** 日本観音教団講習要項 (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
+Curso da Igreja Kannon do Japão".
+**Data:** 1º de julho de 1947.
+
+**Natureza:** norma interna de formação. Não é exposição doutrinária: é o
+regulamento que diz como se realiza o curso, quem responde por ele e o que se
+deve ensinar. É o primeiro currículo escrito do movimento, anterior em sete anos
+ao 教修要綱 (Manual do Curso).
+**Publicação:** o texto foi reproduzido na coletânea de escritos de Meishu-Sama,
+sem indicação de veículo periódico.
+
+O documento é curto, e vale por três coisas: mostra que a formação já era
+**normatizada antes da personalidade jurídica de agosto de 1947**; define o
+conteúdo mínimo da pregação em oito pontos; e declara que o curso confere o
+direito de portar o 「光」, tratado explicitamente como sinal — comparado à cruz
+do cristianismo.
+
+Tradução integral. A numeração é a do original (一 a 八, mais o parágrafo final).
+
+---
+
+**1.** As conferências de difusão e as práticas de terapia previstas no artigo
+17.º das Normas de Tratamento de Assuntos desta Igreja obedecerão ao presente
+Programa.
+
+**2.** Para cada curso designam-se um responsável de curso e um professor
+orientador. O professor orientador pode ser, ao mesmo tempo, o responsável do
+curso.
+
+O responsável do curso deve, imediatamente após a realização, relatar à Sede
+Central da Igreja, por intermédio da igreja filial ou da filial da Igreja, o
+seguinte:
+
+&nbsp;&nbsp;&nbsp;&nbsp;**a.** data e local de realização;
+&nbsp;&nbsp;&nbsp;&nbsp;**b.** nomes do responsável do curso e do professor
+orientador;
+&nbsp;&nbsp;&nbsp;&nbsp;**c.** panorama geral do curso.
+
+**3.** A ordem do curso, conduzida pelo professor orientador, é a seguinte:
+
+&nbsp;&nbsp;&nbsp;&nbsp;**a.** conferência de difusão;
+&nbsp;&nbsp;&nbsp;&nbsp;**b.** orientação e estudo da terapia.
+
+**4.** O conteúdo essencial da conferência de difusão tem por eixo a doutrina da
+Igreja e deve apoiar-se nos seguintes pontos:
+
+&nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon (観世音), e o
+texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*, o 「普門品」. A fé
+consiste em que Kannon é o criador de todos os fenômenos e a própria Luz.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**b.** Kannon está sempre vivo, dentro de nós, e trabalha
+conosco.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**c.** Kannon compadece-se deste mundo de ilusão e de
+nossa condição desordenada e, para nos conduzir à forma correta, começou a obra
+da salvação. Esse coração de compaixão pura de Kannon finalmente se manifestou e
+demonstrou o poder de extinguir as três grandes calamidades.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**d.** Cremos que é quando essas três grandes
+calamidades forem erradicadas — isto é, quando desaparecer a doença, que é a raiz
+das três — que se abrirá o verdadeiro Paraíso Terrestre. Aqui se abre de uma vez
+o caminho pelo qual o Paraíso Terrestre se realiza de fato, e nós temos a
+convicção de haver sido escolhidos como seus apóstolos sob a Luz. É isto a
+concretização da prática de Kannon.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**e.** Não somos, é claro, pessoas de forma plenamente
+correta. Mas, felizmente, o 「念彼観音力」 — o poder de invocar Kannon — conduz-nos
+a ser bons condutores da força espiritual que realiza a prática de Kannon, e nos
+torna concretizadores da maravilhosa sabedoria de Kannon.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**f.** Cremos que nossa terapia é a sabedoria mostrada
+por Kannon e o caminho correto do despertar que Kannon concede. Por isso é
+natural que seja verdadeiramente simples, direta e produza efeitos que o senso
+comum não pode sequer imaginar: nada há de espantoso no alcance do poder de
+Kannon.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**g.** Gravemos com clareza que nos basta seguir em
+silêncio a missão de expressar esse poder augusto e essa compaixão de Kannon.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**h.** Cremos sempre no ensino mostrado por Kannon e
+empenhamo-nos, dia a dia, na prática pessoal (勤行), para a expansão do 「念彼観音力」.
+
+**5.** A terapia é a concretização dos pontos doutrinários acima, e qualquer
+pessoa pode praticá-la. Tem a propriedade de ser útil em qualquer circunstância:
+não faz diagnóstico da doença, não orienta o uso de medicamentos e não emite
+juízo sobre o grau de cura. Isto é, é o percurso de erradicação da doença e do
+infortúnio, e pratica-se vivendo apenas da fé firme de que o fim desse percurso é
+a libertação desse infortúnio. E o resultado último de praticarmos nossa terapia
+— a cura radical da doença e do infortúnio — está nas mãos de Kannon e no coração
+de Kannon: tenhamos isto firmemente, e não nos afastemos deste ponto nem na
+orientação nem no âmbito do estudo, lembrando sempre que não passamos de servos
+fiéis de Kannon.
+
+**6.** O 「光」 entregue no curso é o sinal de Kannon, nosso objeto de fé — isto é,
+do Kōmyō Nyorai —, e porta-se como prova de conclusão do curso, exatamente como
+a cruz no cristianismo.
+
+**7.** A duração do curso tem por meta transmitir o sentido verdadeiro da difusão
+e da terapia acima descritos, e é fixada em cada caso pelo professor orientador,
+conforme lhe parecer adequado.
+
+**8.** Quando se deseje realizar um curso e não haja professor orientador
+disponível, deve-se solicitar à Sede Central o envio de um.
+
+**Disposição final.** O presente Programa entra em vigor em 1º de julho de 1947.
+
+## 34. Anexo C — A primeira grade organizacional (1948)
+
+**Documento:** resposta de Meishu-Sama na 御光話 (Palavras de Luz) de 8 de dezembro de 1948.
+
+**Publicação:** 『御光話録』2号, 8 de janeiro de 1949.
+
+**Natureza:** não é regulamento nem ata: é a resposta oral a uma pergunta de fiel
+sobre mudança de vínculo, e nela Meishu-Sama anuncia a grade inteira. É o
+documento mais explícito de toda a documentação sobre **como se subia na estrutura** —
+porque diz, na mesma frase, o critério de agregação e o critério de mérito.
+**Ponto de atenção:** a grade de 1948 não foi promulgada em texto normativo; foi
+anunciada de passagem. É por isso que a documentação posterior a supõe, sem
+repeti-la.
+
+Tradução integral da pergunta e da resposta. O restante da mesma sessão trata de
+Johrei e não pertence a este anexo.
+
+---
+
+**Pergunta.** — Entendo que respeitar a cortesia e a ordem é o espírito deste
+caminho. Mas, quando um membro ou um portador de qualificação muda facilmente de
+vínculo, como se deve proceder?
+
+**Meishu-Sama.** — A questão do vínculo ficará clara agora. Aquilo de aderir a um
+mestre porque se gostou dele, ou de dele se afastar porque não gostou, é um erro
+enorme e, aos olhos de Deus, algo inadmissível. Até hoje eu silenciosamente
+perdoava quem me vinha falar dessas coisas... Assim, **desta vez decidi determinar
+o vínculo por região**.
+
+Há a Sede Central e três Subsedes; às Subsedes pertencem as Associações, e às
+Associações pertencem as filiais.
+
+O líder de filial é um Ministro Responsável; e Ministro Responsável é quem tenha
+conduzido cem ou mais fiéis, ou ofertado trinta mil ienes ou mais, ou por
+recomendação do líder de filial.
+
+Aquilo que tiver dez ou mais Centros de Ensino será considerado uma Associação, e
+o que tiver dez ou mais Associações será considerado uma Subsede.
+
+Afinal, é justo que aqueles com méritos estejam no topo.
+
+## 35. Anexo D — O censo de outubro de 1950
+
+**Documento:** 「本教教勢現在（昭和二十五年十月）」 — "Situação atual da Igreja
+(outubro de 1950)", publicado no folheto 「問題の世界救世教とは何か」 ("O que é,
+afinal, a Igreja Messiânica Mundial?").
+**Publicação:** folheto de divulgação institucional, outubro de 1950.
+
+**Natureza:** recenseamento administrativo reproduzido em material de
+esclarecimento público. É o único documento do período que traz, ao mesmo tempo, a
+lista das sedes e dos templos e a contagem fechada de unidades e de ministros por
+grau.
+**Estatuto da prova:** por ser documento administrativo com data e contagem
+fechada, é a base das contas estruturais do volume (caps. 10 e 15). Os totais de
+fiéis, que não constam deste documento, têm outro estatuto — são declaração
+institucional, e assim se registram.
+
+Tradução integral. A ordem é a do original.
+
+---
+
+### 35.1 Situação atual da Igreja — outubro de 1950
+
+**1. Sede provisória da Igreja Messiânica Mundial**
+Shizuoka-ken, Atami-shi, Sakimichō.
+
+**2. Templos Anexos (別院)**
+
+| Templo Anexo | Localização |
+|---|---|
+| Templo Anexo de Hakone | Kanagawa-ken, Ashigara-shimo-gun, Miyagino-mura |
+| Templo Anexo de Odawara | Kanagawa-ken, Odawara-shi, Midori |
+| Templo Anexo de Atami | Shizuoka-ken, Atami-shi, Izusan |
+| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Uenoge |
+| Templo Anexo de Kyoto | Kyoto-fu, Kyoto-shi, Sakyo-ku, Yoshida, Kaguraoka |
+| Templo Anexo de Osaka | Osaka-fu, Senboku-gun, Takaishi-chō |
+
+**3. Filiais Regionais (分院)**
+
+| Filial | Localização |
+|---|---|
+| Filial de Sapporo | Hokkaidō, Sapporo-shi |
+| Filial de Iwate | Iwate-ken, Ichinoseki-shi |
+| Filial de Toyama | Toyama-ken, Toyama-shi |
+| Filial de Nagoya | Aichi-ken, Nagoya-shi, Higashi-ku |
+| Filial de Kagawa | Kagawa-ken, Sakaide-shi |
+| Filial de Beppu | Ōita-ken, Beppu-shi |
+| Filial de Saga | Saga-ken, Miyaki-gun, Tosu-chō |
+
+**4. Escritórios** — Shizuoka-ken, Atami-shi, Momoyama 50.
+
+&nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Ensino — Shizuoka-ken, Atami-shi, Momoyama 50
+&nbsp;&nbsp;&nbsp;&nbsp;(b) Departamento de Saúde — Shizuoka-ken, Atami-shi, Momoyama 50
+&nbsp;&nbsp;&nbsp;&nbsp;(c) Departamento de Publicação — Kanagawa-ken, Odawara-shi, Midori 4-589
+&nbsp;&nbsp;&nbsp;&nbsp;(d) Departamento de Propaganda — Shizuoka-ken, Atami-shi, Momoyama 50
+&nbsp;&nbsp;&nbsp;&nbsp;(e) Departamento de Construção — Shizuoka-ken, Atami-shi, Momoyama 33
+&nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obra Social — Shizuoka-ken, Atami-shi, Momoyama 50
+
+**5. Igrejas e ministros**
+
+| Categoria | Quantidade |
+|---|---|
+| Igrejas Grandes (大教会 (Igreja Grande)) | 4 |
+| Igrejas Médias (中教会 (Igreja Média)) | 78 |
+| igrejas (分教会) | 710 |
+| Ministros Titulares (大教師 (Ministro Titular)) | 56 |
+| Ministros Adjuntos (中教師 (Ministro Adjunto)) | 430 |
+| Ministros (教師) | 2.244 |
+
+**Nota de leitura.** O documento não traz, ao lado dos números, a data de
+fechamento de cada contagem nem o critério de inclusão das unidades em formação.
+A simetria entre as três categorias de igreja e as três de ministro — quatro
+Igrejas Grandes para cinquenta e seis Ministros Titulares, setenta e oito Igrejas
+Médias para quatrocentos e trinta Ministros Adjuntos, setecentas e dez
+igrejas para dois mil duzentos e quarenta e quatro Ministros — é o dado que
+sustenta a leitura do capítulo 10: o grau acompanhava a unidade dirigida.
+
+## 36. Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
 
 **Documento:** 宗教法人 (pessoa jurídica religiosa) 「世界救世教」規則 (*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
 "Regulamento da pessoa jurídica religiosa Igreja Messiânica Mundial".
@@ -5719,7 +5894,7 @@ Tradução integral, com a numeração de artigos do original.
 
 ---
 
-### 34.1 Índice
+### 36.1 Índice
 
 Capítulo I — Disposições gerais (arts. 1.º a 4.º)
 Capítulo II — Dirigentes e outros órgãos
@@ -5736,7 +5911,7 @@ Capítulo V — Atividades (art. 43.º)
 Capítulo VI — Disposições complementares (arts. 44.º a 46.º)
 Disposições transitórias
 
-### 34.2 Capítulo I — Disposições gerais
+### 36.2 Capítulo I — Disposições gerais
 
 **Art. 1.º (Denominação)** Esta comunidade religiosa é pessoa jurídica religiosa
 nos termos da Lei das Pessoas Jurídicas Religiosas e denomina-se 「Igreja
@@ -5757,15 +5932,15 @@ desta comunidade religiosa.
 mediante uma inserção no órgão 「栄光」 e afixação por dez dias no quadro de
 avisos do escritório.
 
-### 34.3 Capítulo II — Dirigentes e outros órgãos
+### 36.3 Capítulo II — Dirigentes e outros órgãos
 
-### 34.4 # Seção 1 — Dirigentes representantes e dirigentes responsáveis
+### 36.4 # Seção 1 — Dirigentes representantes e dirigentes responsáveis
 
 **Art. 5.º (Número)** Esta pessoa jurídica tem onze dirigentes responsáveis, dos
 quais um é o dirigente representante.
 
-**Art. 6.º (Denominação)** O dirigente representante denomina-se 「管長」 (Superintendente)
-(Superintendente), e os demais dirigentes responsáveis, 「理事」 (diretor) (diretores).
+**Art. 6.º (Denominação)** O dirigente representante denomina-se 「管長」
+(Superintendente), e os demais dirigentes responsáveis, 「理事」 (diretores).
 
 **Art. 7.º (Qualificação e eleição)** O Superintendente é determinado por eleição
 recíproca dos diretores.
@@ -5785,7 +5960,7 @@ esta pessoa jurídica e superintende seus assuntos.
 jurídica são decididos pela maioria do número fixo de dirigentes responsáveis, e
 o direito de voto de cada um é igual.
 
-### 34.5 # Seção 2 — Substitutos legais
+### 36.5 # Seção 2 — Substitutos legais
 
 **Art. 11.º (Casos em que se deve designar)** Deve-se designar substituto legal
 quando se verificar qualquer dos seguintes casos:
@@ -5808,7 +5983,7 @@ ou do diretor, a totalidade de suas atribuições.
 **Art. 14.º (Cessação)** O substituto legal deixa o cargo naturalmente quando
 cessa o motivo que determinou sua designação.
 
-### 34.6 # Seção 3 — Dirigentes representantes e responsáveis interinos
+### 36.6 # Seção 3 — Dirigentes representantes e responsáveis interinos
 
 **Art. 15.º** O dirigente representante não tem poder de representação em
 matérias em que seus interesses colidam com os desta pessoa jurídica; neste caso,
@@ -5817,14 +5992,14 @@ o conselho deve designar um dirigente representante interino.
 interesse especial; neste caso, o conselho deve designar dirigentes responsáveis
 interinos em número igual ao dos que não têm direito a voto.
 
-### 34.7 # Seção 4 — Escritório
+### 36.7 # Seção 4 — Escritório
 
 **Art. 16.º** No escritório estabelecem-se seis departamentos — Assuntos Gerais,
 Ensino, Finanças, Publicação, Construção e Atividades — e designam-se funcionários
 em número variável.
 2. Os funcionários do parágrafo anterior são nomeados pelo Superintendente.
 
-### 34.8 # Seção 5 — Assembleia geral
+### 36.8 # Seção 5 — Assembleia geral
 
 **Art. 17.º (Membros)** A assembleia geral compõe-se de membros, e são membros os
 que exercem a presidência das igrejas.
@@ -5875,13 +6050,13 @@ regimento de execução deste Regulamento;
 &nbsp;&nbsp;&nbsp;&nbsp;2. matérias relativas aos assuntos e à contabilidade desta
 pessoa jurídica.
 
-### 34.9 # Seção 6 — Auditores
+### 36.9 # Seção 6 — Auditores
 
 **Art. 24.º** Esta pessoa jurídica tem três auditores, aos quais incumbe auditar
 as finanças. 2. Aplicam-se aos auditores, no que couber, os arts. 7.º, parágrafo
 2.º, e 8.º.
 
-### 34.10 # Seção 7 — Órgãos consultivos
+### 36.10 # Seção 7 — Órgãos consultivos
 
 **Art. 25.º** Esta pessoa jurídica pode ter consultivos e conselheiros.
 2. Os consultivos e conselheiros são empossados pelo Superintendente dentre
@@ -5889,7 +6064,7 @@ pessoas de saber e experiência.
 3. O Superintendente pode convocar representantes dos membros das igrejas para
 ouvir sua opinião.
 
-### 34.11 Capítulo III — Igrejas
+### 36.11 Capítulo III — Igrejas
 
 **Art. 26.º (Fundação, alteração do regulamento etc.)** Ao fundar uma igreja, ou
 quando a igreja pretender praticar os atos abaixo, deve obter a aprovação do
@@ -5919,7 +6094,7 @@ terreno do recinto, ou destiná-los a fim diverso do objetivo principal da igrej
 presidente da igreja e seu substituto legal são nomeados pelo Superintendente
 dentre os escolhidos conforme o regulamento da respectiva igreja.
 
-### 34.12 Capítulo IV — Finanças
+### 36.12 Capítulo IV — Finanças
 
 **Art. 29.º (Lançamento e cobrança de contribuição)** Esta pessoa jurídica lança e
 cobra das igrejas e dos membros a contribuição religiosa destinada às despesas de
@@ -5979,7 +6154,7 @@ da assembleia geral, incorpora-se parte ou a totalidade ao patrimônio básico.
 **Art. 42.º (Exercício)** O exercício fiscal desta pessoa jurídica começa em 1º de
 janeiro de cada ano e termina em 31 de dezembro do mesmo ano.
 
-### 34.13 Capítulo V — Atividades
+### 36.13 Capítulo V — Atividades
 
 **Art. 43.º** Esta pessoa jurídica exerce a indústria de mineração, para contribuir
 à consecução de seus fins.
@@ -5991,7 +6166,7 @@ jurídicas que esta assiste; 3. obras de interesse público que esta assiste.
 4. A contabilidade relativa à atividade do parágrafo 1.º deve ser apartada da
 contabilidade geral e escriturada como contabilidade especial.
 
-### 34.14 Capítulo VI — Disposições complementares
+### 36.14 Capítulo VI — Disposições complementares
 
 **Art. 44.º (Alteração do Regulamento e fusão)** Para alterar este Regulamento é
 necessária deliberação da assembleia geral; o mesmo se aplica à fusão desta pessoa
@@ -6009,7 +6184,7 @@ por deliberação da assembleia geral no momento da dissolução.
 **Art. 46.º (Regimento de execução)** O regimento relativo à execução deste
 Regulamento é estabelecido pelos dirigentes responsáveis.
 
-### 34.15 Disposições transitórias
+### 36.15 Disposições transitórias
 
 1. Este Regulamento entra em vigor na data da certificação pelo Ministro da
 Educação.
@@ -6039,231 +6214,7 @@ Regulamento são os seguintes:
 | Auditor | Nihongi Taka |
 | Auditor | Yashiro Hisashi |
 
-## 35. Anexo D — Aviso 「注意」 sobre o valor dos escritos (1953)
-
-**Documento:** 「注意」 (*Chūi*, "Aviso").
-
-**Publicação:** 『栄光』191号, 14 de janeiro de 1953.
-
-**Natureza:** aviso de Meishu-Sama, publicado na abertura do número, e que remete
-à mesa-redonda de difusão realizada na mesma edição. É o documento que fixa o
-princípio econômico dos escritos de Meishu-Sama: valor determinado, e cobrança acima dele
-qualificada como furto.
-**Alcance:** a regra vale para "a Imagem e as demais coisas que escrevi" — isto é,
-para todos os objetos que saíam de sua mão, não apenas para a Imagem.
-
-Tradução integral do aviso. O texto é uma única frase, e é reproduzido aqui na
-íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere
-(『栄光』191号, 3 de outubro de 1952, Igreja Grande Hōhō, Tosu, província de Saga),
-na parte que trata do valor das ofertas.
-
----
-
-### 35.1 O aviso
-
-> Como se vê na mesa-redonda em outra seção, o valor da Imagem e das demais
-> coisas que escrevi é fixo; se alguém obtiver um pouco mais de dinheiro, essa
-> diferença constitui crime de furto. Por mais que se empenhe na fé, a graça
-> diminuirá na mesma proporção — convém compreender bem isto.
-
-### 35.2 O trecho da mesa-redonda a que o aviso remete
-
-**Presidente da mesa (Sakai Tagao):** — Graças a Deus, ultimamente o resultado de
-todas as igrejas vem subindo; e as casas em que a oferenda de gratidão pelo Johrei
-está em ordem são sempre as que vão melhor. É claro que é assim que deve ser, mas
-como é justamente nestas coisas óbvias que a gente se descuida, e como é
-justamente nelas que raramente se acerta, talvez seja bom começarmos falando da
-oferenda de gratidão.
-
-**[Sobre a oferenda de gratidão]**
-
-**Shibuta:** — Desculpem, mas hoje são os Senhores da igreja que vêm fazendo tudo
-bem, de modo que não posso relatar caso por caso; mas, por exemplo, nas taxas A e
-B, quem toma a iniciativa de entregá-las com pontualidade tem uma graça
-visivelmente diferente, e recebe a purificação de forma mais leve.
-
-**Presidente da mesa:** — Entregar as taxas A e B sem dar trabalho é cumprir a
-moral mínima do fiel; isso é o natural.
-
-**[Sobre o valor e a prática]**
-
-**Sakai Mannosuke:** — Ouvi dizer que o Senhor presidente e o Senhor Nozoe, no
-passado, deixaram de aceitar ofertas em dinheiro solto, embrulhadas em papel
-estranho, com 「寸志」 escrito e sem nome; e penso que o brio do professor é coisa
-muito importante.
-
-**Presidente da mesa:** — É verdade. O dinheiro tende a sujar-se, mas é também
-importante; por isso o professor deve ter pensamento limpo ao transmitir a Deus. Se
-tiver pensamento mesquinho e sujo, o resultado é transmitir coisa impura.
-
-**Presidente da mesa:** —... Ultimamente têm aumentado visivelmente as ofertas de
-gratidão pela proteção divina e as 御奉謝金 (oferta por Johrei ministrado) — a oferenda que o fiel recebe quando
-ministra Johrei a outra pessoa, e a que recebe quando ministra Johrei a alguém da
-família. Ouvi dizer que o responsável de uma Igreja Média perguntou se podia usar
-para si a oferta de gratidão pela proteção divina; é como se fosse outro mundo.
-Entre os homens sempre houve, raramente, quem soubesse agradecer a Deus; mas o
-sentido da retribuição não se entendia de modo algum. Alegrar-se e abanar o rabo é
-o nível do animal. Foi com o aparecimento de Meishu-Sama que se ensinou pela
-primeira vez o caminho de oferecer a verdadeira retribuição. Orientar nisso,
-transmitir sem torcer, sem inventar, com retidão — é essa a missão do professor.
-
-**[Sobre o que se faz de errado]**
-
-**Futami:** — Em certa igreja de Kagoshima, o próprio dono da casa dizia que uma
-caligrafia de 「散花結実」 (A flor cai, o fruto amadurece (sanka-kekijitsu)), sem montagem, custou dez mil ienes. Como as caligrafias
-não são mercadoria, não se pode falar em maior ou menor oferta — e houve casos de
-perplexidade.
-
-**Nagatomo:** — Em certa igreja da minha região, a oferenda pelo Byōbu foi de cinco
-mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Hōhō-kai, na
-época, a oferenda era de trezentos ienes. Quanto ao Kyoshu, parece que se
-indicavam os dias em que se havia recebido Johrei: falava-se em "Kyoshu de dez
-dias", "Kyoshu de vinte dias".
-
-**Ōno:** — Em junho de dois anos atrás, quando fui à brigada de serviço, um
-portador de qualificação me perguntou quanto era a oferenda pelo Byōbu; respondi
-trezentos ienes, e ele disse: "Isso é porque o espírito não entrou" — e eu me
-espantei.
-
-**Sawamoto Zentarō:** — Diz-se que uma igreja de Asezu-chō, nas ilhas Gotō de
-Nagasaki, perdeu membros de repente por má fama; como isso também seria obstáculo
-à difusão, fui ver. A esposa do professor fazia coisa de adivinhação: "isto sara",
-"isto não".
-
-**Sawamoto Akio:** — Em certa igreja da minha região, em Narushima o Kyoshu é de
-três dias, mas quem não tem tempo fica sem Kyoshu; na região de Fukue não se faz
-Kyoshu de modo algum.
-
-**Presidente da mesa:** —... Também 「救霊祭」 e outras coisas inventadas; e sair
-dizendo "entronização da Imagem na casa do fiel", "entronização do Byōbu", com o
-professor em visita acompanhado de séquito — o erro também fica muito elaborado e
-movimentado. É como vários parafusos frouxos girando em falso. Fazer e desfazer o
-Kyoshu conforme a conveniência é também rebeldia contra Deus. Se se cumprisse
-conforme a Revelação, o justo tornar-se-ia necessariamente feliz e o errado
-necessariamente pereceria; é só isso. De todo modo, quem entra no caminho sério
-melhora e quem entra no caminho leviano piora — isto é certo. Ultimamente, na
-Sede, elaborou-se também o 教修要綱 (Manual do Curso), e os encontros estreitos entre os dirigentes
-vêm se multiplicando; parece que se aproxima o dia de retornar à unidade com a
-Revelação Divina.
-
-## 36. Anexo E — A primeira grade organizacional (1948)
-
-**Documento:** resposta de Meishu-Sama na 御光話 (Palavras de Luz) de 8 de dezembro de 1948.
-
-**Publicação:** 『御光話録』2号, 8 de janeiro de 1949.
-
-**Natureza:** não é regulamento nem ata: é a resposta oral a uma pergunta de fiel
-sobre mudança de vínculo, e nela Meishu-Sama anuncia a grade inteira. É o
-documento mais explícito de toda a documentação sobre **como se subia na estrutura** —
-porque diz, na mesma frase, o critério de agregação e o critério de mérito.
-**Ponto de atenção:** a grade de 1948 não foi promulgada em texto normativo; foi
-anunciada de passagem. É por isso que a documentação posterior a supõe, sem
-repeti-la.
-
-Tradução integral da pergunta e da resposta. O restante da mesma sessão trata de
-Johrei e não pertence a este anexo.
-
----
-
-**Pergunta.** — Entendo que respeitar a cortesia e a ordem é o espírito deste
-caminho. Mas, quando um membro ou um portador de qualificação muda facilmente de
-vínculo, como se deve proceder?
-
-**Meishu-Sama.** — A questão do vínculo ficará clara agora. Aquilo de aderir a um
-mestre porque se gostou dele, ou de dele se afastar porque não gostou, é um erro
-enorme e, aos olhos de Deus, algo inadmissível. Até hoje eu silenciosamente
-perdoava quem me vinha falar dessas coisas... Assim, **desta vez decidi determinar
-o vínculo por região**.
-
-Há a Sede Central e três Subsedes; às Subsedes pertencem as Associações, e às
-Associações pertencem as filiais.
-
-O líder de filial é um Ministro Responsável; e Ministro Responsável é quem tenha
-conduzido cem ou mais fiéis, ou ofertado trinta mil ienes ou mais, ou por
-recomendação do líder de filial.
-
-Aquilo que tiver dez ou mais Centros de Ensino será considerado uma Associação, e
-o que tiver dez ou mais Associações será considerado uma Subsede.
-
-Afinal, é justo que aqueles com méritos estejam no topo.
-
-## 37. Anexo F — O censo de outubro de 1950
-
-**Documento:** 「本教教勢現在（昭和二十五年十月）」 — "Situação atual da Igreja
-(outubro de 1950)", publicado no folheto 「問題の世界救世教とは何か」 ("O que é,
-afinal, a Igreja Messiânica Mundial?").
-**Publicação:** folheto de divulgação institucional, outubro de 1950.
-
-**Natureza:** recenseamento administrativo reproduzido em material de
-esclarecimento público. É o único documento do período que traz, ao mesmo tempo, a
-lista das sedes e dos templos e a contagem fechada de unidades e de ministros por
-grau.
-**Estatuto da prova:** por ser documento administrativo com data e contagem
-fechada, é a base das contas estruturais do volume (caps. 10 e 15). Os totais de
-fiéis, que não constam deste documento, têm outro estatuto — são declaração
-institucional, e assim se registram.
-
-Tradução integral. A ordem é a do original.
-
----
-
-### 37.1 Situação atual da Igreja — outubro de 1950
-
-**1. Sede provisória da Igreja Messiânica Mundial**
-Shizuoka-ken, Atami-shi, Sakimichō.
-
-**2. Templos Anexos (別院)**
-
-| Templo Anexo | Localização |
-|---|---|
-| Templo Anexo de Hakone | Kanagawa-ken, Ashigara-shimo-gun, Miyagino-mura |
-| Templo Anexo de Odawara | Kanagawa-ken, Odawara-shi, Midori |
-| Templo Anexo de Atami | Shizuoka-ken, Atami-shi, Izusan |
-| Templo Anexo de Tóquio | Tóquio-to, Setagaya-ku, Tamagawa, Uenoge |
-| Templo Anexo de Kyoto | Kyoto-fu, Kyoto-shi, Sakyo-ku, Yoshida, Kaguraoka |
-| Templo Anexo de Osaka | Osaka-fu, Senboku-gun, Takaishi-chō |
-
-**3. Filiais Regionais (分院)**
-
-| Filial | Localização |
-|---|---|
-| Filial de Sapporo | Hokkaidō, Sapporo-shi |
-| Filial de Iwate | Iwate-ken, Ichinoseki-shi |
-| Filial de Toyama | Toyama-ken, Toyama-shi |
-| Filial de Nagoya | Aichi-ken, Nagoya-shi, Higashi-ku |
-| Filial de Kagawa | Kagawa-ken, Sakaide-shi |
-| Filial de Beppu | Ōita-ken, Beppu-shi |
-| Filial de Saga | Saga-ken, Miyaki-gun, Tosu-chō |
-
-**4. Escritórios** — Shizuoka-ken, Atami-shi, Momoyama 50.
-
-&nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Ensino — Shizuoka-ken, Atami-shi, Momoyama 50
-&nbsp;&nbsp;&nbsp;&nbsp;(b) Departamento de Saúde — Shizuoka-ken, Atami-shi, Momoyama 50
-&nbsp;&nbsp;&nbsp;&nbsp;(c) Departamento de Publicação — Kanagawa-ken, Odawara-shi, Midori 4-589
-&nbsp;&nbsp;&nbsp;&nbsp;(d) Departamento de Propaganda — Shizuoka-ken, Atami-shi, Momoyama 50
-&nbsp;&nbsp;&nbsp;&nbsp;(e) Departamento de Construção — Shizuoka-ken, Atami-shi, Momoyama 33
-&nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obra Social — Shizuoka-ken, Atami-shi, Momoyama 50
-
-**5. Igrejas e ministros**
-
-| Categoria | Quantidade |
-|---|---|
-| Igrejas Grandes (大教会) | 4 |
-| Igrejas Médias (中教会) | 78 |
-| igrejas (分教会) | 710 |
-| Ministros Seniores (大教師) | 56 |
-| Ministros Intermediários (中教師) | 430 |
-| Ministros (教師) | 2.244 |
-
-**Nota de leitura.** O documento não traz, ao lado dos números, a data de
-fechamento de cada contagem nem o critério de inclusão das unidades em formação.
-A simetria entre as três categorias de igreja e as três de ministro — quatro
-Igrejas Grandes para cinquenta e seis Ministros Seniores, setenta e oito Igrejas
-Médias para quatrocentos e trinta Ministros Intermediários, setecentas e dez
-igrejas para dois mil duzentos e quarenta e quatro Ministros — é o dado que
-sustenta a leitura do capítulo 10: o grau acompanhava a unidade dirigida.
-
-## 38. Anexo G — O comunicado da reorganização de 1951
+## 37. Anexo F — O comunicado da reorganização de 1951
 
 **Documento:** 「世界救世教の機構整備について」 (*Sekai Kyūseikyō no Kikō Seibi ni
 tsuite*), "Sobre a montagem da estrutura da Igreja Messiânica Mundial".
@@ -6350,13 +6301,120 @@ igrejas, a difusão que abranja várias sedes regionais é permitida por enquant
 mesma sede regional, visando à redução das despesas de difusão e à racionalização
 da difusão.
 
+## 38. Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
+
+**Documento:** 「注意」 (*Chūi*, "Aviso").
+
+**Publicação:** 『栄光』191号, 14 de janeiro de 1953.
+
+**Natureza:** aviso de Meishu-Sama, publicado na abertura do número, e que remete
+à mesa-redonda de difusão realizada na mesma edição. É o documento que fixa o
+princípio econômico dos escritos de Meishu-Sama: valor determinado, e cobrança acima dele
+qualificada como furto.
+**Alcance:** a regra vale para "a Imagem e as demais coisas que escrevi" — isto é,
+para todos os objetos que saíam de sua mão, não apenas para a Imagem.
+
+Tradução integral do aviso. O texto é uma única frase, e é reproduzido aqui na
+íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere
+(『栄光』191号, 3 de outubro de 1952, Igreja Grande Hōhō, Tosu, província de Saga),
+na parte que trata do valor das ofertas.
+
+---
+
+### 38.1 O aviso
+
+> Como se vê na mesa-redonda em outra seção, o valor da Imagem e das demais
+> coisas que escrevi é fixo; se alguém obtiver um pouco mais de dinheiro, essa
+> diferença constitui crime de furto. Por mais que se empenhe na fé, a graça
+> diminuirá na mesma proporção — convém compreender bem isto.
+
+### 38.2 O trecho da mesa-redonda a que o aviso remete
+
+**Presidente da mesa (Sakai Tagao):** — Graças a Deus, ultimamente o resultado de
+todas as igrejas vem subindo; e as casas em que a oferenda de gratidão pelo Johrei
+está em ordem são sempre as que vão melhor. É claro que é assim que deve ser, mas
+como é justamente nestas coisas óbvias que a gente se descuida, e como é
+justamente nelas que raramente se acerta, talvez seja bom começarmos falando da
+oferenda de gratidão.
+
+**[Sobre a oferenda de gratidão]**
+
+**Shibuta:** — Desculpem, mas hoje são os Senhores da igreja que vêm fazendo tudo
+bem, de modo que não posso relatar caso por caso; mas, por exemplo, nas taxas A e
+B, quem toma a iniciativa de entregá-las com pontualidade tem uma graça
+visivelmente diferente, e recebe a purificação de forma mais leve.
+
+**Presidente da mesa:** — Entregar as taxas A e B sem dar trabalho é cumprir a
+moral mínima do fiel; isso é o natural.
+
+**[Sobre o valor e a prática]**
+
+**Sakai Mannosuke:** — Ouvi dizer que o Senhor presidente e o Senhor Nozoe, no
+passado, deixaram de aceitar ofertas em dinheiro solto, embrulhadas em papel
+estranho, com 「寸志」 escrito e sem nome; e penso que o brio do professor é coisa
+muito importante.
+
+**Presidente da mesa:** — É verdade. O dinheiro tende a sujar-se, mas é também
+importante; por isso o professor deve ter pensamento limpo ao transmitir a Deus. Se
+tiver pensamento mesquinho e sujo, o resultado é transmitir coisa impura.
+
+**Presidente da mesa:** —... Ultimamente têm aumentado visivelmente as ofertas de
+gratidão pela proteção divina e as 御奉謝金 (oferta por Johrei ministrado) — a oferenda que o fiel recebe quando
+ministra Johrei a outra pessoa, e a que recebe quando ministra Johrei a alguém da
+família. Ouvi dizer que o responsável de uma Igreja Média perguntou se podia usar
+para si a oferta de gratidão pela proteção divina; é como se fosse outro mundo.
+Entre os homens sempre houve, raramente, quem soubesse agradecer a Deus; mas o
+sentido da retribuição não se entendia de modo algum. Alegrar-se e abanar o rabo é
+o nível do animal. Foi com o aparecimento de Meishu-Sama que se ensinou pela
+primeira vez o caminho de oferecer a verdadeira retribuição. Orientar nisso,
+transmitir sem torcer, sem inventar, com retidão — é essa a missão do professor.
+
+**[Sobre o que se faz de errado]**
+
+**Futami:** — Em certa igreja de Kagoshima, o próprio dono da casa dizia que uma
+caligrafia de 「散花結実」 (A flor cai, o fruto amadurece (sanka-kekijitsu)), sem montagem, custou dez mil ienes. Como as caligrafias
+não são mercadoria, não se pode falar em maior ou menor oferta — e houve casos de
+perplexidade.
+
+**Nagatomo:** — Em certa igreja da minha região, a oferenda pelo Byōbu foi de cinco
+mil ienes, e houve quem a recebesse por sete mil; fiquei espantado. Na Hōhō-kai, na
+época, a oferenda era de trezentos ienes. Quanto ao Kyoshu, parece que se
+indicavam os dias em que se havia recebido Johrei: falava-se em "Kyoshu de dez
+dias", "Kyoshu de vinte dias".
+
+**Ōno:** — Em junho de dois anos atrás, quando fui à brigada de serviço, um
+portador de qualificação me perguntou quanto era a oferenda pelo Byōbu; respondi
+trezentos ienes, e ele disse: "Isso é porque o espírito não entrou" — e eu me
+espantei.
+
+**Sawamoto Zentarō:** — Diz-se que uma igreja de Asezu-chō, nas ilhas Gotō de
+Nagasaki, perdeu membros de repente por má fama; como isso também seria obstáculo
+à difusão, fui ver. A esposa do professor fazia coisa de adivinhação: "isto sara",
+"isto não".
+
+**Sawamoto Akio:** — Em certa igreja da minha região, em Narushima o Kyoshu é de
+três dias, mas quem não tem tempo fica sem Kyoshu; na região de Fukue não se faz
+Kyoshu de modo algum.
+
+**Presidente da mesa:** —... Também 「救霊祭」 e outras coisas inventadas; e sair
+dizendo "entronização da Imagem na casa do fiel", "entronização do Byōbu", com o
+professor em visita acompanhado de séquito — o erro também fica muito elaborado e
+movimentado. É como vários parafusos frouxos girando em falso. Fazer e desfazer o
+Kyoshu conforme a conveniência é também rebeldia contra Deus. Se se cumprisse
+conforme a Revelação, o justo tornar-se-ia necessariamente feliz e o errado
+necessariamente pereceria; é só isso. De todo modo, quem entra no caminho sério
+melhora e quem entra no caminho leviano piora — isto é certo. Ultimamente, na
+Sede, elaborou-se também o 教修要綱 (Manual do Curso), e os encontros estreitos entre os dirigentes
+vêm se multiplicando; parece que se aproxima o dia de retornar à unidade com a
+Revelação Divina.
+
 ## 39. Anexo H — Manual do Curso (教修要綱), 3ª edição (1954)
 
 **Documento:** 教修要綱 (*Kyōshū Yōkō*), "Manual do Curso".
 
 **Data:** 3ª edição, 10 de outubro de 1954.
 
-**Natureza:** o manual de formação do período final. Substitui o Programa de 1947 (Anexo A) e organiza o curso em três lições, com o elenco das doenças e o modo de tratá-las. O volume o cita no capítulo 11; aqui vai a tradução integral.
+**Natureza:** o manual de formação do período final. Substitui o Programa de 1947 (Anexo B) e organiza o curso em três lições, com o elenco das doenças e o modo de tratá-las. O volume o cita no capítulo 11; aqui vai a tradução integral.
 
 **Origem do texto:** fac-símile sem camada de texto; a transcrição japonesa foi feita por OCR e a tradução, a partir dela. As leituras duvidosas do OCR não foram corrigidas por conjetura.
 

@@ -38,7 +38,7 @@ publicação, este texto também declara apenas mês e ano — não se inventou 
 ## 1. A cronologia da institucionalização (1934–1955)
 
 A história institucional do movimento começa em outubro de 1934, quando Meishu-Sama
-inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会** (Dai-Nippon Kannon-kai), a partir do 応神堂 (Ōjin-dō). O que ele próprio dirá depois sobre esse começo é revelador do modo como
+inicia o que chama de **movimento Kannon** sob o nome de **大日本観音会** (Dai-Nippon Kannon-kai, Associação Kannon do Grande Japão), a partir do 応神堂 (Ōjin-dō). O que ele próprio dirá depois sobre esse começo é revelador do modo como
 entendia a relação entre carisma e instituição:
 
 > 「顧みれば昭和九年一〇月私は大日本観音会なる名称のもとに、観音運動を始め、その
@@ -283,7 +283,7 @@ convertidos:
 *"O fato de uma conferência religiosa ter reunido lotação esgotada de público no Hibiya
 Kōkaidō, e ainda por cima mais de sessenta por cento serem pessoas não convertidas, é um
 sucesso de público provavelmente sem precedentes."*
-— 「編集後記（地上天国36号）」, `search2/kikou2/koki36.html`
+— 「編集後記（地上天国36号）」 (Nota da Redação, 『地上天国』36号), `search2/kikou2/koki36.html`
 
 ![Conferência no 日比谷公会堂 (Hibiya Kōkaidō) sobre a civilização verdadeira, 22 de maio de 1951 — a palestra pública de massa de que trata esta seção. [Fotografia da época; data e local conforme a legenda original.]](fotografias/hibiya_1951.jpg)
 
@@ -334,8 +334,8 @@ categorias simultaneamente, e por isso sustenta as contas deste levantamento:
 | 大教会 (Igrejas Grandes) | **4** |
 | 中教会 (Igrejas Médias) | **78** |
 | 分教会 (igrejas) | **710** |
-| 大教師 (Ministros Seniores) | **56** |
-| 中教師 (Ministros Intermediários) | **430** |
+| 大教師 (Ministros Titulares) | **56** |
+| 中教師 (Ministros Adjuntos) | **430** |
 | 教師 (Ministros) | **2.244** |
 | 別院 (Templos Anexos) | 6 |
 | 分院 (Filiais Regionais) | 7 |
@@ -344,8 +344,8 @@ Fonte: `search1/mo/mondai.html`
 
 Duas leituras importam. A primeira é a **simetria**: as três categorias de igreja e as
 três de Ministro formam pares, e a razão entre elas é aproximadamente constante — para
-cada Igreja Grande, quatorze Ministros Seniores; para cada Igreja Média, cerca de cinco
-Ministros Intermediários; para cada igreja, aproximadamente três Ministros. **O grau
+cada Igreja Grande, quatorze Ministros Titulares; para cada Igreja Média, cerca de cinco
+Ministros Adjuntos; para cada igreja, aproximadamente três Ministros. **O grau
 não é uma carreira paralela à estrutura: ele acompanha a unidade que a pessoa dirige.**
 Isso será decisivo no capítulo 14.
 
@@ -871,8 +871,8 @@ Segundo caso, com a mesma estrutura e uma informação adicional — a rapidez:
 > 専心いたしております。」
 
 *"Converti-me no fim do ano passado e em agosto deste ano recebi a qualificação de Ministro
-Responsável Assistente; dedico-me de corpo e alma ao desenvolvimento da Igreja 五六七 do
-Japão."*
+Responsável Assistente; dedico-me de corpo e alma ao desenvolvimento da Igreja Miroku
+do Japão."*
 — `search2/okage/shi/qjokano.html`
 
 **Porta 2 — a qualificação como coroamento de uma cura.** Um terceiro caso mostra que a
@@ -916,18 +916,18 @@ de 1950, que traz um censo institucional detalhado:
 > **大教師 五六、中教師 四三○、教師 二二四四**」
 
 *"V. Igrejas e corpo docente: Igrejas Grandes: 4; Igrejas Médias: 78; igrejas subordinadas:
-710. Ministros Seniores: 56; Ministros Intermediários: 430; Ministros: 2.244."*
+710. Ministros Titulares: 56; Ministros Adjuntos: 430; Ministros: 2.244."*
 — 「問題の世界救世教とは何か」, `search1/mo/mondai.html`
 
 | Grau | Japonês | Quantidade |
 |---|---|---:|
-| 1 | **大教師** — Ministro Sênior | 56 |
-| 2 | **中教師** — Ministro Intermediário | 430 |
+| 1 | **大教師** — Ministro Titular | 56 |
+| 2 | **中教師** — Ministro Adjunto | 430 |
 | 3 | **教師** — Ministro | 2.244 |
 
 A proporção é piramidal — 1 : 7,7 : 40 —, e corresponde com proximidade notável aos três
-tipos de igreja: 56 Ministros Seniores para 4 Igrejas Grandes; 430 Ministros
-Intermediários para 78 Igrejas Médias; 2.244 Ministros para 710 igrejas. **A conclusão
+tipos de igreja: 56 Ministros Titulares para 4 Igrejas Grandes; 430 Ministros
+Adjuntos para 78 Igrejas Médias; 2.244 Ministros para 710 igrejas. **A conclusão
 importante é que o grau acompanha a unidade que a pessoa dirige** — não é uma carreira
 paralela à estrutura organizacional, mas a expressão dela em termos pessoais.
 
@@ -941,7 +941,7 @@ era reservado ao topo:
 
 *"[Pergunta] Quando muitas pessoas se reúnem, nos Cultos Mensais etc., os presidentes de
 igreja podem receber permissão para Johrei coletivo? [Meishu-Sama] Vejamos: sendo Ministro
-Sênior, pode. Exclusivamente o Ministro Sênior —. Daqui em diante, já pode."*
+Titular, pode. Exclusivamente o Ministro Titular —. Daqui em diante, já pode."*
 — 『御垂示録』14号, 15 de outubro de 1952 · `search1/situmon/m271001.html`
 
 E havia uma fronteira operacional precisa entre os graus, que distinguia quem podia
@@ -983,12 +983,12 @@ O mapeamento mais provável, sustentado pela magnitude das três faixas do censo
 | Grau antigo (até 1951) | Grau novo (desde 1952) | Quantidade em 1950 |
 |---|---|---:|
 | 教導師補 (Assistente) | 教師 (Ministro) | 2.244 |
-| 教導師 (Ministro Responsável) | 中教師 (Ministro Intermediário) | 430 |
-| — | 大教師 (Ministro Sênior) | 56 |
+| 教導師 (Ministro Responsável) | 中教師 (Ministro Adjunto) | 430 |
+| — | 大教師 (Ministro Titular) | 56 |
 
 Isto é: o **大教師 é grau novo, sem correspondente anterior** — surgiu apenas em maio de
 1952, e é o que explica por que o Johrei coletivo aparece em 1952 como prerrogativa
-"do Ministro Sênior": era um grau que acabara de ser criado.
+"do Ministro Titular": era um grau que acabara de ser criado.
 
 Duas ressalvas de honestidade intelectual sobre este mapeamento. A primeira é que ele é
 **inferencial, não textual** — nenhum documento localizado diz "o 教導師 passou a se
@@ -1009,8 +1009,8 @@ Reunindo as evidências em uma lista consolidada:
 | **教導師** | Ministro Responsável de Unidade Religiosa | `『御光話録』2号, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
 | **教師** | Ministro | censo de 1950 |
 | 助教師 | Ministro Assistente — terceira linha, só no exterior | `search2/kikou2/rakusei.html`; `hawai20.html` |
-| **中教師** | Ministro Intermediário | censo de 1950 |
-| **大教師** | Ministro Sênior | censo de 1950; `search1/situmon/m271001.html` |
+| **中教師** | Ministro Adjunto | censo de 1950 |
+| **大教師** | Ministro Titular | censo de 1950; `search1/situmon/m271001.html` |
 | **支部長** | líder de filial — é Ministro Responsável | `m231208.html` |
 | **分会長** | líder de Associação | `search1/situmon/m240613.html` |
 | **教会長 / 会長** | presidente de igreja — **nomeado pelo Superintendente** | 規則 art. 28 |
@@ -1273,8 +1273,8 @@ graph TD
     B --> Q["総本部: Atami / Zuiunkyo"]
     B --> R["本部: Odawara"]
     R --> S["17 地方本部 (Sedes Regionais)"]
-    S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Sênior"]
-    T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Intermediário"]
+    S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Titular"]
+    T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Adjunto"]
     U --> V["教会 (Igreja) — Ministro"]
     V --> W["支部 (filial) — Ministro Responsável"]
     W --> X["出張所 / 教導所<br/>Centro de Ensino — Assistente"]
@@ -1817,7 +1817,7 @@ Meishu-Sama o justificou explicitamente contra o sermão:
 bem apenas pelo ouvido, por meio de sermões, tem pouco efeito. Deve-se, através dos olhos,
 purificar o coração das pessoas pela beleza natural e pela beleza artificial, conduzi-las
 ao bem, despertar a fé e fazer conhecer o grande amor de Deus.'"*
-— 『編集後記（地上天国36号）』, `search2/kikou2/koki36.html`
+— 『編集後記（地上天国36号）』 (Nota da Redação, 『地上天国』36号), `search2/kikou2/koki36.html`
 
 E as três categorias de beleza — 天然美 (natural), 人工美 (construída) e as artes:
 
@@ -1969,8 +1969,11 @@ excelentes entram a baixo preço. Esse é o poder da jóia que realiza os desejo
 
 A **agricultura natural** operou como ponte para o mundo rural, com números de
 produtividade usados como prova pública — e há instituições satélites criadas para isso:
-o 農林省自然農法研究会 (『栄光』256号, 14 de abril de 1954 · `search2/sanko/norinsyo.html`)
-e o 自然農法普及会 (『栄光』, 5 de maio de 1953 · `search2/sanko/syui.html`).
+o 農林省自然農法研究会 (Nōrinshō Shizen Nōhō Kenkyū-kai, Grupo de Estudo de
+Agricultura Natural do Ministério da Agricultura e Florestas; 『栄光』256号,
+14 de abril de 1954 · `search2/sanko/norinsyo.html`)
+e o 自然農法普及会 (Shizen Nōhō Fukyū-kai, Associação de Difusão da Agricultura
+Natural; 『栄光』, 5 de maio de 1953 · `search2/sanko/syui.html`).
 
 ![『栄光』256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR do acervo.]](facsimiles/eiko256_norinsyo.jpg)
 
@@ -2108,8 +2111,8 @@ convenção do próprio dossiê é não alterar o texto-base.
    fiel se media pelo que ele podia entronizar em casa e portar consigo.
 5. **As duas nomenclaturas de grau são uma substituição, não duas séries**: 教導師 cede
    lugar a 中教師 entre agosto de 1951 e fevereiro de 1952, com três meses de sobreposição.
-6. **O grau acompanhava a unidade dirigida** — 56 Ministros Seniores para 4 Igrejas Grandes,
-   430 Ministros Intermediários para 78 Igrejas Médias, 2.244 Ministros para 710 igrejas.
+6. **O grau acompanhava a unidade dirigida** — 56 Ministros Titulares para 4 Igrejas Grandes,
+   430 Ministros Adjuntos para 78 Igrejas Médias, 2.244 Ministros para 710 igrejas.
 7. **O Fundador não era o Superintendente.** Havia separação formal entre autoridade
    carismática e autoridade jurídica, e o cargo legalmente responsável era ocupado por outra
    pessoa.

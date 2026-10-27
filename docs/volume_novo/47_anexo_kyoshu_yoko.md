@@ -4,7 +4,7 @@
 
 **Data:** 3ª edição, 10 de outubro de 1954.
 
-**Natureza:** o manual de formação do período final. Substitui o Programa de 1947 (Anexo A) e organiza o curso em três lições, com o elenco das doenças e o modo de tratá-las. O volume o cita no capítulo 11; aqui vai a tradução integral.
+**Natureza:** o manual de formação do período final. Substitui o Programa de 1947 (Anexo B) e organiza o curso em três lições, com o elenco das doenças e o modo de tratá-las. O volume o cita no capítulo 11; aqui vai a tradução integral.
 
 **Origem do texto:** fac-símile sem camada de texto; a transcrição japonesa foi feita por OCR e a tradução, a partir dela. As leituras duvidosas do OCR não foram corrigidas por conjetura.
 

@@ -1,9 +1,13 @@
-# Handoff — revisão do dossiê da difusão (23–24/10/2026)
+# Handoff — revisão do dossiê da difusão (23–27/10/2026)
 
 > **Para a sessão seguinte.** Este arquivo existe para que o trabalho continue sem
 > depender do histórico da sessão anterior. Leia-o inteiro antes de editar
 > qualquer coisa: há uma regra sobre **onde se edita** que, se ignorada, gera
 > retrabalho em tudo.
+>
+> **A revisão foi encerrada em 27/10/2026.** Os pendentes de §4 estão fechados;
+> o que mudou e as decisões tomadas estão em **§9**. O restante do documento fica
+> como registro do diagnóstico que levou até lá.
 
 ---
 
@@ -35,8 +39,8 @@ próxima montagem.
 - `LEVANTAMENTO_DIFUSAO_POS_GUERRA_20260930.md`
 - os `.docx` das três partes (defasados desde 2/10)
 
-Estado atual do volume: **39 capítulos, 7.904 linhas**. PDF e DOCX **estão
-desatualizados** (são de 22/10, antes desta revisão) — regerar só no fim.
+Estado atual do volume: **39 capítulos, 7.962 linhas, 170 páginas, 18 imagens**.
+PDF e DOCX **regenerados em 27/10/2026**, coerentes com o markdown.
 
 ---
 
@@ -452,6 +456,107 @@ scripts/corrigir_fontes_dossie.py       script de apoio da versão antiga
 Decidir na próxima sessão: remover, arquivar em `backups/`, ou manter. Não
 commitar sem decidir — commitar «para não perder» só aumenta a confusão sobre
 qual versão vale.
+
+---
+
+## 9. Encerramento — revisão de 27/10/2026
+
+Os três pendentes e os três parciais de §3.5 estão fechados. O volume foi
+remontado, e PDF e DOCX regerados. **Estado: 39 capítulos, 7.962 linhas, 170
+páginas, 18 imagens em ambos os formatos, 0 achados do verificador de glossário,
+0 caracteres de controlo.**
+
+### 9.1 O pedido de §3.6 — cumprido
+
+O primeiro princípio de §13.1 (volume §4.1) foi reescrito com 「霊界の不思議」,
+『地上天国』9号, como **fonte principal**, e 『信仰雑話』 passou a confirmação
+posterior. O texto novo tem três partes:
+
+1. a citação de 1949, com «形は同一であっても» e o par **代理神霊 / 分神霊**;
+2. a consequência que o artigo tira três parágrafos adiante, ao explicar
+   「鰯の頭も信心から」 — o objeto feito sem qualificação pode até funcionar por
+   algum tempo, e é isso que o distingue do verdadeiro;
+3. 『信仰雑話』 (1948) como resumo que concorda, com a declaração de que não são
+   duas doutrinas, e com as duas precisões que só o artigo de 1949 traz.
+
+O parágrafo que separa texto de conclusão foi mantido.
+
+### 9.2 «jornal *Kō*» — corrigido na origem
+
+`scripts/glossas_volume.py` tinha **duas** entradas para
+`光新聞の拡大は教線の強化`, uma correta («Hikari») e outra com o erro («*Kō*»);
+a última vencia. Corrigida. O erro desapareceu do volume (0 ocorrências).
+
+### 9.3 O verificador, calibrado para o volume
+
+`scripts/auditar_glossario_volume.py` passou a auditar **por omissão o volume
+montado** (`docs/DOSSIE_DIFUSAO_20261020.md`), não as fontes — que é o que o
+leitor vê. `--fontes` reproduz o comportamento antigo. Resultado da mudança:
+
+| Medição | Achados A | Achados C |
+|---|---:|---:|
+| Fontes (antes) | 127 | 0 |
+| Volume, sem calibração | 49 | 17 |
+| **Volume, calibrado (agora)** | **0** | **0** |
+
+As 17 ocorrências tipo C eram todas falsas: `shaku`/`sun`/`ri` dentro da
+transcrição do 教修要綱 (Anexo H, revisão encerrada). O verificador agora
+reconhece os capítulos encerrados **dentro do volume contínuo**, mapeando
+`REVISAO_ENCERRADA` → número de capítulo pelo `PLANO` de `montar_volume_unico.py`.
+
+Regras novas que cortaram os falsos positivos (documentadas no cabeçalho do
+script): termo dentro de `「」`/`『』`, dentro de bloco de código, dentro de
+composto japonês (`御神体` em `御神体代り`, `天国` em `地上天国`), em linha de
+imagem, em itálico de tradução, ou em título 『…』 já seguido de glosa.
+
+O que sobrava de real foi corrigido à mão: ver §9.4.
+
+### 9.4 Decisões editoriais de 27/10 (aplicadas no volume inteiro)
+
+| Questão | Decisão | Alcance |
+|---|---|---|
+| **大教師 / 中教師** | Forma do glossário: **Ministro Titular** e **Ministro Adjunto**. «Sênior/Intermediário» foi eliminado. | cap. 10 (título e corpo), Parte I (tabelas, diagrama, síntese), Anexo D, glossário do volume, diagramas da Parte III — 42 ocorrências |
+| **御霊祭** | **Culto de Entronização** na prosa; japonês só na 1.ª definição, nas citações e no quadro de §16.5. «Festa dos Espíritos» eliminado. | Parte II §16.5 (texto, traduções e tabela) |
+| **御神体** | «objeto de culto» eliminado também dos títulos e do corpo: usa-se **Imagem da Luz Divina**. O capítulo 3 passou a «As Imagens da Luz Divina e os Ohikari», e §31 a «As oferendas diante da Imagem da Luz Divina». | PLANO do montador, Parte III, cap. 1 |
+| **Referências de fonte** | Convenção única: **japonês + tradução na primeira ocorrência no volume, só japonês depois**. Aplicada às obras que faltavam (『御垂示』, 『法難手記』, 『自然農法』, 『編集後記』). | Parte I, II e III; cap. 22 |
+| **Anexos** | Ordem cronológica no `PLANO`; letras A–H reatribuídas nos títulos dos ficheiros **e** nas remissões `(Anexo X)`. A=1946 (Estatuto), B=1947 (Programa), C=1948 (Grade), D=1950 (Censo), E=1951 (Regulamento), F=1951 (Comunicado), G=1953 (Aviso), H=1954 (Manual). | `montar_volume_unico.py`, `40`–`47_anexo_*.md`, Parte II, Parte III |
+
+**Nota sobre a letra do anexo.** Ela agora depende da posição na lista do
+`PLANO`, não do número do ficheiro. Ao acrescentar ou reordenar um anexo,
+reatribuir as letras nos dois lugares — títulos e remissões.
+
+### 9.5 Duas correções no montador
+
+1. **Glosa duplicada em título citado.** 「管長」 (Superintendente) recebia outra
+   glosa em seguida: «(Superintendente) (Superintendente)». O montador passou a
+   verificar se já vem parêntese de tradução depois do título.
+2. **Glosa injetada em tabela que já traduz.** Nas tabelas com coluna própria de
+   romanização (o glossário do cap. 31 e o dos títulos citados no cap. 30), a
+   glosa era acrescentada à coluna japonesa mesmo havendo tradução ao lado.
+   Agora essas linhas não são glosadas; e, nas demais, a glosa não entra se a
+   mesma tradução já aparecer na linha, nem duas vezes para termos distintos que
+   partilham tradução (`月例祭` / `月並祭` = «Culto Mensal»).
+
+### 9.6 Japonês residual — triado, não mais pendente
+
+Medição final: **31 linhas de prosa com 12+ caracteres CJK**. Lidas uma a uma,
+todas são legítimas: citação japonesa com tradução em bloco logo depois, nome
+próprio japonês com romaji e tradução ao lado, ou lista de termos com glosa. O
+único caso sem glosa (`農林省自然農法研究会`, `自然農法普及会`) foi corrigido na
+Parte I.
+
+### 9.7 O que fica em aberto
+
+- **Sobras não rastreadas** de §8 (quatro ficheiros de 20/10): decisão ainda
+  pendente — remover, arquivar ou manter.
+- **`pre_gerar_lote_orais.py`, `gerar_texto_worker_v2.py` e as aulas**
+  (`docs/leituras_*`, `GOSHINSHO.md`, `HISTORICO.md`, `scripts/gerar_docx_leituras.py`)
+  continuam modificados no `working tree`, e são de **outras frentes**. Não
+  entraram neste trabalho e não devem entrar no commit dele.
+- O commit desta frente deve levar **por caminho** apenas: as três partes, os
+  oito anexos, os capítulos tocados de `docs/volume_novo/`, `scripts/glossas_volume.py`,
+  `scripts/auditar_glossario_volume.py`, `scripts/montar_volume_unico.py`,
+  `docs/DOSSIE_DIFUSAO_20261020.{md,pdf,docx}` e este handoff.
 
 
 

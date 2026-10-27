@@ -61,7 +61,7 @@ texto não está nele:
 > ある。すなわち**学ばずして知るという神智**であって」
 
 *"Ora, a capacidade de romper absolutamente essa dificuldade **foi-me dada por
-Deus**: é o que se chama 神智, o saber sem ter aprendido."*
+Deus**: é o que se chama 神智 (Sabedoria Divina), o saber sem ter aprendido."*
 — 「私の文章とその他」, 『栄光』238号, 9 de dezembro de 1953
 
 A clareza da escrita, por sua vez, não é estilo: é decisão contra a interpretação.
@@ -180,7 +180,7 @@ citada, não reformulada.
 
 **Porque a história é falível e o ensinamento não é.** Aqui os dois regimes do
 volume se separam, e não se misturam. O conteúdo doutrinário — o mundo espiritual,
-a salvação, os objetos de culto, a Agricultura Natural, a doença e a pobreza — é
+a salvação, a Imagem da Luz Divina, a Agricultura Natural, a doença e a pobreza — é
 exposto como é: afirma-se, não se relativiza, não se contrasta com a ciência da
 época, não se atribui a contexto histórico. O fato histórico — datas, números,
 cargos, normas, o que a instituição fez — é apurado e conferido, e traz sempre

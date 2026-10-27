@@ -1,4 +1,4 @@
-## 35. Anexo D — Aviso 「注意」 sobre o valor dos escritos (1953)
+## 38. Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
 
 **Documento:** 「注意」 (*Chūi*, "Aviso").
 

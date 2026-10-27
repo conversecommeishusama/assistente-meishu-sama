@@ -101,7 +101,7 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | 水上 | Minakami | Minakami |
 | 応神堂 | Ōjindō | "santuário de Ōjin" |
 | 五六七 | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
-| 大日本観音会 | Dai-Nippon Kannon-kai | "Grande Associação Kannon do Japão" |
+| 大日本観音会 | Dai-Nippon Kannon-kai | "Associação Kannon do Grande Japão" |
 | 日本観音教団 | Nippon Kannon Kyōdan | "Igreja Kannon do Japão" |
 | 日本浄化療法普及会 | Nippon Jōka Ryōhō Fukyūkai | "Associação de Difusão da Terapêutica de Purificação do Japão" |
 | 世界救世教 | Sekai Kyūseikyō | Igreja Messiânica Mundial |

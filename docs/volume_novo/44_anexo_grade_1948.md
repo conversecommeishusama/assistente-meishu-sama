@@ -1,4 +1,4 @@
-## 36. Anexo E — A primeira grade organizacional (1948)
+## 34. Anexo C — A primeira grade organizacional (1948)
 
 **Documento:** resposta de Meishu-Sama na 御光話 de 8 de dezembro de 1948.
 

@@ -1,4 +1,4 @@
-## 32. Anexo A — Programa do Curso da Igreja Kannon do Japão (1947)
+## 33. Anexo B — Programa do Curso da Igreja Kannon do Japão (1947)
 
 **Documento:** 日本観音教団講習要項 (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
 Curso da Igreja Kannon do Japão".

@@ -66,8 +66,8 @@ CAP_MAP = {
 # Remissões com destino próprio, quando o capítulo de origem foi dividido.
 REF_EXCECOES = {
     "3.1": "19.1",   # a grade de 1948 foi para as unidades até 1951
-    "5.1": "3.1",    # o axioma pertence aos objetos de culto
-    "5.2": "3.2",    # a escada dos objetos de culto
+    "5.1": "3.1",    # o axioma pertence às Imagens da Luz Divina
+    "5.2": "3.2",    # a escala das Imagens e dos Ohikari
     "5.4": "15.1",   # o censo de 1950 é o quadro dos ministros de 1951-55
     "5.7": "14.4",   # a reforma anunciada no fim de 1954
     "14.5": "5.3",   # a vestimenta dos oficiantes
@@ -240,6 +240,7 @@ GLOSAS = [
 
 TITULOS_FEITOS = set()
 TABELAS_FEITOS = set()
+GLOSAS_EM_TABELA = set()
 
 
 def glosar(t):
@@ -290,21 +291,51 @@ def glosar(t):
         return lin
 
     t = re.sub(r'(?m)^((?:—|>).*)$', lambda m: ajustar_ref(m.group(1)), t)
+
+    def _norm_tabela(s):
+        """Compara sem acento, caixa ou pontuação — «Kōmyō» == «Komyo»."""
+        import unicodedata as _ud
+        s = _ud.normalize("NFD", s.lower())
+        s = "".join(c for c in s if not _ud.combining(c))
+        s = re.sub(r"[^a-z0-9 ]", " ", s)
+        return re.sub(r"\s+", " ", s).strip()
+
     # Células de tabela: os quadros cronológicos e comparativos são o
     # primeiro lugar em que o leitor encontra o nome de uma instituição ou de
     # uma unidade. A glosa entra uma única vez no volume inteiro, para não
     # alargar as colunas a cada linha.
-    def glosar_celula(tok, cel, fim):
+    def glosar_celula(tok, cel, fim, linha_norm=""):
         if tok in TABELAS_FEITOS or tok not in TAB or not TAB[tok] or tok in IGN:
             return tok
         # a célula já explica o termo entre parênteses: (Kyūseikyō), (v. §15.1)
         if re.match(r"\**\s*[（(]", cel[fim:fim + 4]):
             return tok
+        # A tradução já aparece noutra coluna da mesma linha — é o caso do
+        # glossário, cuja coluna «Português» é a própria glosa — ou na mesma
+        # célula, depois de travessão («**大教師** — Ministro Titular»).
+        # Glosar aqui produzia «大教師 (Ministro Titular) — Ministro Titular».
+        alvo = _norm_tabela(TAB[tok])
+        if alvo and (alvo in linha_norm or alvo in _norm_tabela(cel[fim:])):
+            return tok
+        # dois termos com a mesma tradução na mesma tabela (月例祭 / 月並祭 =
+        # «Culto Mensal») não recebem a glosa duas vezes.
+        if alvo in GLOSAS_EM_TABELA:
+            return tok
         TABELAS_FEITOS.add(tok)
+        GLOSAS_EM_TABELA.add(alvo)
         return tok + " (%s)" % TAB[tok]
 
     def ajustar_linha_tabela(lin):
         partes = lin.split("|")
+        # Tabela com coluna própria de romanização (glossário, títulos citados):
+        # a tradução já está na coluna seguinte, e glosar ali produzia
+        # «相応の理 (princípio da correspondência) | sōō no ri | razão da
+        # correspondência…». Nessas linhas não se glosa nada.
+        if len(partes) >= 4:
+            romaji = partes[2].strip()
+            if romaji and re.fullmatch(r"[A-Za-zÀ-ÿĀ-ſ'’\-\s.]+", romaji):
+                return lin
+        linha_norm = _norm_tabela(lin)
         for k, cel in enumerate(partes):
             if k == 0 or cel.strip() in ("", "---", "—"):
                 continue
@@ -322,7 +353,8 @@ def glosar(t):
 
             cel = re.sub(r"([『「])([^『「」』]{1,80})([」』])", guardar_tit, cel)
             cel = re.sub(r"[\u3040-\u30ff\u4e00-\u9fff]+",
-                         lambda mm, c=cel: glosar_celula(mm.group(0), c, mm.end()), cel)
+                         lambda mm, c=cel: glosar_celula(mm.group(0), c, mm.end(),
+                                                          linha_norm), cel)
             for i, pl in enumerate(placas):
                 cel = cel.replace("\x02%d\x02" % i, pl)
             partes[k] = cel
@@ -384,7 +416,11 @@ def glosar(t):
                 TITULOS_FEITOS.add(cont)
                 usados.add(cont)
                 saida.append(abre + cont + fecha)
-                if TAB[cont]:
+                # se já vem glosa logo depois — "(Superintendente)", como no
+                # regulamento de 1951 —, não se acrescenta outra: a primeira
+                # versão produzia «「管長」 (Superintendente) (Superintendente)».
+                resto = t[m.end():m.end() + 6]
+                if TAB[cont] and not re.match(r"\*{0,2}\s*[（(]", resto):
                     saida.append(" (%s)" % TAB[cont])
             else:
                 usados.add(cont)
@@ -513,7 +549,7 @@ PLANO = [
     ("sec", "I", "1"),
 
     ("titulo", "A Imagem, o culto e as oferendas"),
-    ("merge", [("I", "5", ["1", "2"]), ("III", "27", ["2"])], "Os objetos de culto"),
+    ("merge", [("I", "5", ["1", "2"]), ("III", "27", ["2"])], "As Imagens da Luz Divina e os Ohikari"),
     ("sec", "II", "13"),
     ("merge", [("II", "14", ["1", "3", "4"])], "A ordem do culto"),
     ("novo", "16b_cultos.md"),
@@ -562,14 +598,18 @@ PLANO = [
     # Anexos: traduções integrais dos documentos institucionais. Circulação
     # interna (decisão de 21/10/2026). Ficam depois do glossário para não
     # deslocar a numeração dos capítulos citados no texto.
-    ("novo", "40_anexo_programa_1947.md"),
-    ("novo", "41_anexo_estatuto_1946.md"),
-    ("novo", "42_anexo_regulamento_1951.md"),
-    ("novo", "43_anexo_aviso_1953.md"),
-    ("novo", "44_anexo_grade_1948.md"),
-    ("novo", "45_anexo_censo_1950.md"),
-    ("novo", "46_anexo_reforma_1951.md"),
-    ("novo", "47_anexo_kyoshu_yoko.md"),
+    #
+    # ORDEM CRONOLÓGICA (decisão de 24/10/2026). A letra do anexo acompanha esta
+    # ordem, não o número do ficheiro: A=1946 … H=1954. Ao reordenar, reatribuir
+    # também as letras nos títulos dos ficheiros e nas remissões «(Anexo X)».
+    ("novo", "41_anexo_estatuto_1946.md"),     # A
+    ("novo", "40_anexo_programa_1947.md"),     # B
+    ("novo", "44_anexo_grade_1948.md"),        # C
+    ("novo", "45_anexo_censo_1950.md"),        # D
+    ("novo", "42_anexo_regulamento_1951.md"),  # E
+    ("novo", "46_anexo_reforma_1951.md"),      # F
+    ("novo", "43_anexo_aviso_1953.md"),        # G
+    ("novo", "47_anexo_kyoshu_yoko.md"),       # H
 ]
 
 

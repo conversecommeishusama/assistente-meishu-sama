@@ -35,7 +35,7 @@ própria da unidade, distinta do culto mensal. Os relatos são abundantes: famí
 que levam o doente ao 例祭 e obtêm ali a cura; fiéis que recebem o Ohikari num
 例祭日; e a série que opõe 「一宮例祭、当地の例祭、臨時祭」 — *"o 例祭 de
 Ichinomiya, o 例祭 local e os cultos ocasionais"* —, o que mostra que o 例祭
-convivia com o **culto ocasional** (臨時祭), celebrado por motivo extraordinário.
+convivia com o **Culto Extraordinário** (臨時祭), celebrado por motivo extraordinário.
 
 **O Culto Mensal** (月並祭, também grafado 月例祭) — o culto do ciclo mensal, em
 data fixa de cada unidade. Era incumbência das unidades com instalação própria:
@@ -124,8 +124,8 @@ e ali sozinha aquietava o coração perturbado."*
 — 「浄霊と医学との比較」
 
 A caligrafia em questão é a que traz os dois caracteres **日光** — *nikkō*, "luz
-do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明,
-大光明, tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
+do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明
+(Kōmyō), 大光明 (Daikōmyō), tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
 tokonoma, que funcionava explicitamente como **substituto** (*御神体代り*) da
 Imagem enquanto a família não a recebia. Sobre oferendas nesse caso específico a
 documentação não se pronuncia; o relato menciona apenas a saudação e a quietude do

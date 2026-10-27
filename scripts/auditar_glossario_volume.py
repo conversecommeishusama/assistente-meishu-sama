@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Audita o volume contra o glossário de tradução.
 
+Por omissão audita **o volume montado** (`docs/DOSSIE_DIFUSAO_20261020.md`), não
+as fontes. A razão é de calibração, não de gosto: o `glosar()` do montador insere
+a glosa automaticamente na montagem, e o que se quer medir é o defeito **visível
+pelo leitor no volume** — não a ausência de glosa na fonte, que a montagem supre.
+Medido nas fontes, o verificador superestima (24/10/2026: 127 achados, quase todos
+falsos positivos). Medido no volume, mede o que resta.
+
 Três verificações independentes:
 
   A. TERMO SEM GLOSA — primeira ocorrência de um termo do glossário, em prosa,
@@ -19,6 +26,7 @@ Três verificações independentes:
 Uso:
     python3 scripts/auditar_glossario_volume.py
     python3 scripts/auditar_glossario_volume.py --detalhar
+    python3 scripts/auditar_glossario_volume.py --fontes
     python3 scripts/auditar_glossario_volume.py --arquivo docs/volume_novo/06_grade1948.md
 
 Saída: relatório em reports/auditoria_glossario_volume.json e resumo na tela.
@@ -40,12 +48,80 @@ FONTES = [
     os.path.join(DOCS, "DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md"),
 ]
 NOVO = os.path.join(DOCS, "volume_novo")
+VOLUME = os.path.join(DOCS, "DOSSIE_DIFUSAO_20261020.md")
 
 CJK = r"\u3040-\u30ff\u4e00-\u9fff"
+KANJI = r"\u4e00-\u9fff"
 
 # Anexos cuja revisão já foi feita e encerrada (decisão do autor, 23/10/2026):
 # audita-se para registro, mas os achados não entram na contagem de pendências.
 REVISAO_ENCERRADA = {"47_anexo_kyoshu_yoko.md"}
+
+
+def blocos_de_codigo(texto):
+    """Intervalos de linhas (1-based) ocupados por blocos ``` ... ```."""
+    faixas, dentro, ini = [], False, 0
+    for n, l in enumerate(texto.split("\n"), 1):
+        if l.lstrip().startswith("```"):
+            if dentro:
+                faixas.append((ini, n))
+                dentro = False
+            else:
+                dentro, ini = True, n
+    if dentro:
+        faixas.append((ini, texto.count("\n") + 1))
+    return faixas
+
+
+def em_citacao(texto, pos):
+    """O termo está dentro de 「…」 ou 『…』?
+
+    O `glosar()` do montador protege os trechos entre 「」 e 『』: ali nenhuma
+    glosa é inserida, por decisão editorial. Cobrar glosa dentro de citação é,
+    portanto, falso positivo por construção. O que se mede aqui é a glosa em
+    prosa corrente.
+    """
+    for abre, fecha in (("「", "」"), ("『", "』")):
+        a = texto.rfind(abre, 0, pos)
+        if a < 0:
+            continue
+        if texto.rfind(fecha, 0, pos) > a:
+            continue
+        if texto.find(fecha, pos) >= 0:
+            return True
+    return False
+
+
+def em_composto(texto, ini, fim):
+    """O termo é parte de uma palavra japonesa maior?
+
+    御神体 em 御神体代り, 天国 em 地上天国, 神霊 em 代理神霊: a glosa que
+    interessa é a do composto, não a da parte. Sem esta regra o verificador
+    cobrava glosa de fragmentos.
+    """
+    antes = texto[ini - 1] if ini > 0 else ""
+    depois = texto[fim] if fim < len(texto) else ""
+    return bool(re.match("[" + KANJI + "]", antes or " ")) or \
+        bool(re.match("[" + KANJI + "]", depois or " "))
+
+
+def em_italico_inline(linha, rel):
+    """O termo está entre crases na linha?"""
+    return linha[:rel].count("`") % 2 == 1
+
+
+def em_titulo_glosado(texto, pos):
+    """O termo está dentro de 『…』 seguido de tradução entre parênteses?"""
+    abre = texto.rfind("『", 0, pos)
+    if abre < 0:
+        return False
+    if texto.rfind("』", 0, pos) > abre:
+        return False            # o 『 anterior já foi fechado
+    fecha = texto.find("』", pos)
+    if fecha < 0:
+        return False
+    m = re.match(r"\s*[（(]([^）)\n]{2,80})[）)]", texto[fecha + 1:fecha + 90])
+    return bool(m and re.search(r"[A-Za-zÀ-ÿ]{4,}", m.group(1)))
 
 
 def normalizar(s):
@@ -99,13 +175,65 @@ def carregar_proibicoes():
     return unicos
 
 
-def arquivos():
-    lista = [f for f in FONTES if os.path.exists(f)]
-    if os.path.isdir(NOVO):
-        for nome in sorted(os.listdir(NOVO)):
-            if nome.endswith(".md"):
-                lista.append(os.path.join(NOVO, nome))
-    return lista
+def arquivos(origem="volume"):
+    """Arquivos a auditar.
+
+    ``volume`` (omissão): o volume montado — mede o que o leitor vê.
+    ``fontes``: as três partes + ``docs/volume_novo/*.md`` — mede o insumo.
+    """
+    if origem == "fontes":
+        lista = [f for f in FONTES if os.path.exists(f)]
+        if os.path.isdir(NOVO):
+            for nome in sorted(os.listdir(NOVO)):
+                if nome.endswith(".md"):
+                    lista.append(os.path.join(NOVO, nome))
+        return lista
+    if os.path.exists(VOLUME):
+        return [VOLUME]
+    print("aviso: volume não encontrado (%s); a auditar as fontes" %
+          os.path.relpath(VOLUME, RAIZ))
+    return [f for f in FONTES if os.path.exists(f)]
+
+
+def capitulos_encerrados():
+    """Números dos capítulos cuja fonte está em `REVISAO_ENCERRADA`.
+
+    No volume contínuo não há nome de ficheiro por achado: sem este mapa, os
+    achados do Anexo H — cuja revisão o autor deu por encerrada — voltariam a
+    contar. A numeração segue a regra de `montar_volume_unico.PLANO`: só a
+    entrada "titulo" não incrementa capítulo.
+    """
+    try:
+        if BASE not in sys.path:
+            sys.path.insert(0, BASE)
+        from montar_volume_unico import PLANO
+    except Exception:
+        return set()
+    caps, cap = set(), 0
+    for item in PLANO:
+        if item[0] == "titulo":
+            continue
+        cap += 1
+        if item[0] == "novo" and os.path.basename(item[1]) in REVISAO_ENCERRADA:
+            caps.add(cap)
+    return caps
+
+
+def faixas_encerradas(texto):
+    """Intervalos de linhas (1-based, inclusivos) dos capítulos encerrados."""
+    caps = capitulos_encerrados()
+    if not caps:
+        return []
+    marcas = [(int(m.group(1)), texto.count("\n", 0, m.start()) + 1)
+              for m in re.finditer(r"^## (\d+)\. ", texto, flags=re.M)]
+    faixas = []
+    for i, (num, ini) in enumerate(marcas):
+        if num not in caps:
+            continue
+        fim = marcas[i + 1][1] - 1 if i + 1 < len(marcas) else \
+            texto.count("\n") + 1
+        faixas.append((ini, fim))
+    return faixas
 
 
 def eh_endereco(linha, ini_rel, fim_rel):
@@ -129,27 +257,51 @@ def linha_de(texto, pos):
     return texto[ini:fim if fim > 0 else len(texto)], ini
 
 
-def auditar(caminho, regras, proibicoes):
+def auditar(caminho, regras, proibicoes, faixas=()):
     texto = open(caminho, encoding="utf-8").read()
     nome = os.path.relpath(caminho, RAIZ)
     encerrado = os.path.basename(caminho) in REVISAO_ENCERRADA
+    codigo = blocos_de_codigo(texto)
     achados = []
+
+    def encerrada_linha(n):
+        return any(ini <= n <= fim for ini, fim in faixas)
+
+    def em_codigo(n):
+        return any(ini <= n <= fim for ini, fim in codigo)
+
+    def descartar(m, linha, rel):
+        """Motivos de contexto que tornam a ocorrência não-mensurável."""
+        if linha.lstrip().startswith((">", "|", "#", "—", "!")):
+            return True
+        if linha.count("「") > linha.count("」"):
+            return True
+        n = texto.count("\n", 0, m.start()) + 1
+        if encerrada_linha(n) or em_codigo(n):
+            return True
+        if em_italico_inline(linha, rel):
+            return True
+        if em_citacao(texto, m.start()):
+            return True
+        if em_composto(texto, m.start(), m.end()):
+            return True
+        if em_titulo_glosado(texto, m.start()):
+            return True
+        return False
 
     # --- A: primeira ocorrência em prosa precisa de glosa na vizinhança
     for jp, pt_completo, principal in regras:
         alvo = normalizar(principal)
-        if not alvo:
+        if not alvo or encerrado:
             continue
         primeira = None
         for m in re.finditer(re.escape(jp), texto):
-            linha, _ = linha_de(texto, m.start())
-            if linha.lstrip().startswith((">", "|", "#", "—")):
-                continue
-            if linha.count("「") > linha.count("」"):
+            linha, ini_linha = linha_de(texto, m.start())
+            if descartar(m, linha, m.start() - ini_linha):
                 continue
             primeira = m
             break
-        if primeira is None or encerrado:
+        if primeira is None:
             continue
         janela = texto[max(0, primeira.start() - 140):primeira.end() + 140]
         if alvo in normalizar(janela):
@@ -171,6 +323,9 @@ def auditar(caminho, regras, proibicoes):
             continue
         for m in re.finditer(re.escape(jp) + r"\**[（(]([^）)\n]{2,80})[）)]",
                              texto):
+            linha, ini_linha = linha_de(texto, m.start())
+            if descartar(m, linha, m.start() - ini_linha):
+                continue
             dentro = m.group(1)
             if not re.search(r"[A-Za-zÀ-ÿ]{4,}", dentro):
                 continue            # parêntese com romaji só, ou vazio
@@ -201,7 +356,8 @@ def auditar(caminho, regras, proibicoes):
                     continue
                 if eh_nome_proprio(m.group(0), linha, rel_ini):
                     continue
-                if encerrado:
+                n = texto.count("\n", 0, m.start()) + 1
+                if encerrado or encerrada_linha(n) or em_codigo(n):
                     continue
                 achados.append({
                     "tipo": "C-proibicao",
@@ -210,7 +366,7 @@ def auditar(caminho, regras, proibicoes):
                     "gatilho": p["gatilho"][:4],
                     "motivo": p["motivo"][:120],
                     "gravidade": p["gravidade"],
-                    "linha": texto.count("\n", 0, m.start()) + 1,
+                    "linha": n,
                     "contexto": linha.strip()[:110],
                 })
     return achados
@@ -218,17 +374,21 @@ def auditar(caminho, regras, proibicoes):
 
 def main():
     detalhar = "--detalhar" in sys.argv
+    origem = "fontes" if "--fontes" in sys.argv else "volume"
     alvo = None
     if "--arquivo" in sys.argv:
         alvo = sys.argv[sys.argv.index("--arquivo") + 1]
 
     regras = carregar_glossario()
     proibicoes = carregar_proibicoes()
-    lista = [alvo] if alvo else arquivos()
+    lista = [alvo] if alvo else arquivos(origem)
 
     todos = []
     for f in lista:
-        todos.extend(auditar(f, regras, proibicoes))
+        faixas = ()
+        if os.path.abspath(f) == os.path.abspath(VOLUME):
+            faixas = faixas_encerradas(open(f, encoding="utf-8").read())
+        todos.extend(auditar(f, regras, proibicoes, faixas))
 
     por_tipo = {}
     for a in todos:
@@ -237,6 +397,9 @@ def main():
     print("=" * 74)
     print("AUDITORIA DO GLOSSÁRIO — %d entradas, %d proibições" %
           (len(regras), len(proibicoes)))
+    print("objeto: %s" % ("arquivo indicado" if alvo else
+                          ("fontes (insumo)" if origem == "fontes" else
+                           "volume montado (o que o leitor vê)")))
     print("=" * 74)
     for tipo in sorted(por_tipo):
         print("\n%s: %d" % (tipo, len(por_tipo[tipo])))

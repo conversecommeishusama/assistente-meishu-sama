@@ -164,8 +164,8 @@ graph TD
     B --> Q["総本部: Atami / Zuiunkyō"]
     B --> R["本部: Odawara"]
     R --> S["17 地方本部 (Sedes Regionais)"]
-    S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Sênior"]
-    T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Intermediário"]
+    S --> T["大教会 (Igreja Grande)<br/>≥1.000 membros — Ministro Titular"]
+    T --> U["中教会 (Igreja Média)<br/>≥300 membros — Ministro Adjunto"]
     U --> V["教会 (Igreja) — Ministro"]
     V --> W["支部 (filial) — Ministro Responsável"]
     W --> X["出張所 / 教導所<br/>Centro de Ensino — Assistente"]
@@ -449,7 +449,7 @@ presidia o rito; comparecia depois, como o venerando diante de quem a assembleia
 se curvava. A condução cabia ao Superintendente e aos oficiantes nomeados. A
 segunda é a **natureza da oferenda**: no grande culto ela era solene e
 codificada. A cobertura do Culto de Outono de 1950 descreve as oferendas
-dispostas diante do objeto de culto e a oferenda do *tamagushi*, enquanto a do
+dispostas diante da Imagem da Luz Divina e a oferenda do *tamagushi*, enquanto a do
 culto de 1949 registra "ofertas de mar e montanha" (海山のお供物) dispostas
 diante da Kannon de mil braços, e a de 1950 fala do **fruto da ameixeira** como
 oferenda que encarnava o sentido do rito — *散花結実*, "flor dispersa, fruto
@@ -614,7 +614,8 @@ ingressa na fé» é, portanto, duplo erro: o que se recebe no ingresso é o Ohi
 「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
 
 Essa hierarquia do Ohikari é **distinta** da hierarquia das Imagens entronizadas
-(大光明如来 › 光明如来 › お姿), que o capítulo 3.2 examina: são dois objetos
+(大光明如来 › 光明如来 › お姿 — Daikōmyō Nyorai › Kōmyō Nyorai › a figura), que
+o capítulo 3.2 examina: são dois objetos
 diferentes, com duas escadas diferentes. E o grau do Ohikari não é apenas
 honorífico — ele mede proteção, como Meishu-Sama responde a quem perguntou se um
 portador do Ohikari comum podia fazer Johrei em um portador do Daikōmyō:
@@ -835,7 +836,7 @@ e é ela que impede que a gratuidade de Deus se converta em arbítrio do homem:
 > いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
 > 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
 > よく心得べきである。」
-> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo D)
+> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
 
 *"Como se vê na mesa-redonda publicada em outra seção, **embora o valor do Ohikari e
 dos demais escritos meus seja fixo**, se alguém obtiver um pouco mais de dinheiro,
@@ -1262,7 +1263,8 @@ alguma.
 
 Na madrugada de **8 de maio de 1950**, seis imóveis em Atami e um em Odawara —
 sete ao todo — foram objeto de busca domiciliar simultânea. Meishu-Sama deixou o
-relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』:
+relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』
+(Hōnan Shuki, Notas da Perseguição):
 
 > 「昭和二十五年五月八日未明、突如として青天の霹靂のごとく、本教関係の熱海所在の
 > 建物六ケ所、小田原一ケ所、合計七ケ所に対し、一大**家宅捜索**が行われた。その際
@@ -1469,7 +1471,7 @@ o início de uma etapa nova, sob "novo organismo".
 
 ---
 
-## 31. As oferendas diante do objeto de culto
+## 31. As oferendas diante da Imagem da Luz Divina
 
 Água, sal e arroz lavado são as três oferendas que a tradição xintoísta coloca
 diante do altar. A pergunta que se fez a Meishu-Sama foi se elas valiam também
@@ -1511,7 +1513,8 @@ A resposta é completa, e tem três partes que importam:
    uma prática real, que os fiéis de fato seguiam — e que Meishu-Sama **conhecia
    e nomeia**.
 2. **Dá-lhes um lugar doutrinário preciso**, e não uma simples recusa: são
-   **comida de deus-dragão** (龍神の食べるもの), e os "deuses" dos altares
+   **comida de deus-dragão** (龍神の食べるもの — «o que o deus-dragão come»; 龍神,
+   Ryūjin), e os "deuses" dos altares
    anteriores eram, em sua maioria, dragões. A recusa não é estética — é
    **cosmológica**.
 3. **Substitui a forma**: oferta-se **o que o humano come** — peixe levemente
@@ -1572,7 +1575,7 @@ Isso **fecha a questão** das "regras de orientação do tokonoma": não há reg
 orientação; há regra de **proeminência**.
 
 **A disposição.** As oferendas voltam-se para o humano, para que ele as veja; os
-palitos (箸) do objeto de culto põem-se do lado do objeto, e os dos antepassados,
+palitos (箸) da Imagem da Luz Divina põem-se do lado da Imagem, e os dos antepassados,
 do outro lado (`search1/situmon/m230628.html`). E não é preciso conservá-las
 longo tempo: "dez ou quinze minutos bastam; ofertado e feita a reverência, pode-se
 recolher em seguida" (`search1/situmon/m240108.html`).
@@ -1593,11 +1596,11 @@ objeto não grosseiro (`m240499.html`).
 *"(c) Quando o tokonoma tem vários lugares, em que ordem se devem entronizar as
 caligrafias Dai-Kōmyō Nyorai, Kōmyō Nyorai, Unjō Kannon etc.? — **Dai-Kōmyō
 Nyorai, no lugar mais alto. Depois Kōmyō Nyorai, e depois a figura (お姿). Tudo
-o que é escrita está acima. Refiro-me ao caso dos objetos de culto (御神体).
+o que é escrita está acima. Refiro-me ao caso da Imagem da Luz Divina (御神体).
 A escrita é espírito, a pintura é corpo.**"*
 
 É a formulação mais nítida de um princípio já registrado em outras passagens
-(「文字は霊、絵は体」): **a hierarquia dos objetos de culto segue a natureza do
+(「文字は霊、絵は体」): **a hierarquia das Imagens da Luz Divina segue a natureza do
 suporte** — a escrita é espírito e por isso prevalece; a pintura é corpo. Segue-se que a figura pintada **nunca** se sobrepõe à caligrafia, e que
 uma casa sem lugar para ambas deve **guardar** a que não couber, em lugar de
 rebaixá-la:

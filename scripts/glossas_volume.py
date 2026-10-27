@@ -436,7 +436,7 @@ TERMOS.update({
 ## Títulos de artigos e de folhetos citados nas referências
 TERMOS.update({
     "光明如来様御奉斎で盗難免る": "A entronização da Imagem do Kōmyō Nyorai livra dos roubos",
-    "光新聞の拡大は教線の強化": "A ampliação do jornal *Kō* é o fortalecimento da linha de ensino",
+    "光新聞の拡大は教線の強化": "A ampliação do jornal Hikari é o fortalecimento da linha de ensino",
     "再教修を戴きました感謝の報告": "Relato de gratidão por haver recebido novo curso",
     "問題の世界救世教とは何か": "O que é, afinal, a Igreja Messiânica Mundial",
     "世界救世教秋季大祭に参拝して": "Ao visitar o Grande Culto de Outono da Igreja Messiânica Mundial",

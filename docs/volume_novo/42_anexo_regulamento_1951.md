@@ -1,4 +1,4 @@
-## 34. Anexo C — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
+## 36. Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
 
 **Documento:** 宗教法人「世界救世教」規則 (*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
 "Regulamento da pessoa jurídica religiosa Igreja Messiânica Mundial".
