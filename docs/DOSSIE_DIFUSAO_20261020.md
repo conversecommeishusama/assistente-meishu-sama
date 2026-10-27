@@ -892,7 +892,7 @@ igreja**.
 | **御生誕祭** — Festa do Nascimento | 23 de dezembro | no Templo Messiânico |
 | **月並祭** — Culto Mensal | mensal, em cada unidade | data fixa por unidade |
 | **例祭** — Culto Regular | no calendário de cada igreja | próprio da unidade |
-| **臨時祭** — culto ocasional | por motivo extraordinário | conforme o caso |
+| **臨時祭** — Culto Extraordinário | por motivo extraordinário | conforme o caso |
 | **特別御面会** — Audiência Especial | 1º e 5º de cada mês | Sede |
 | **毎旬の御参拝** — visita a cada dez dias | a cada dez dias | Sede |
 
@@ -1090,9 +1090,9 @@ Do que a documentação registra, o quadro é este:
 Sobre o **sal**, a posição de Meishu-Sama é consistente em três passagens: o
 costume de purificar com sal é "hábito tradicional, sem grande significado —
 nós, mais do que afastar a impureza com sal, purificamos com Johrei"
-(`bunkai04.html`; `bunkai16.html`). Mas o sal **aparece** como oferenda em
+(『御光話録』, junho de 1949). Mas o sal **aparece** como oferenda em
 contexto específico — o do deus-dragão (龍神) —, ao lado do arroz cru, da água,
-de frutas e de peixe (`bunkai20.html`). A distinção é, mais uma vez, de
+de frutas e de peixe (『御光話録』, 7 de junho de 1949). A distinção é, mais uma vez, de
 **destinatário**: ao Kōmyō Nyorai, comida humana; ao deus-dragão, o que é dele.
 
 ### 8.3 Outras regras documentadas da oferenda
@@ -1127,7 +1127,7 @@ recolher em seguida".
 
 **O assento.** A estante de oito pés (八足台), própria do Xintó, **não é
 necessária** para o Kōmyō Nyorai; servem também o suporte de flores ou qualquer
-objeto não grosseiro (`m240499.html`).
+objeto não grosseiro (『御光話録』6号, 23 de abril de 1949).
 
 **A hierarquia dos objetos.** Do mesmo documento, a ordem de precedência:
 
@@ -5478,7 +5478,7 @@ capítulo em que cada um é tratado.
 | 寄付 | kifu | doação | 21 |
 | 理事 | riji | diretor | 13 |
 | 理事長 | rijichō | diretor-presidente | 13 |
-| 臨時祭 | rinji-sai | culto ocasional | 17 |
+| 臨時祭 | rinji-sai | Culto Extraordinário | 17 |
 | 例祭 | reisai | Culto Regular, próprio de cada igreja | 17 |
 | 霊界 | reikai | mundo espiritual | 20 |
 | 霊肉一致 | reiniku itchi | unidade de espírito e corpo | 19 |

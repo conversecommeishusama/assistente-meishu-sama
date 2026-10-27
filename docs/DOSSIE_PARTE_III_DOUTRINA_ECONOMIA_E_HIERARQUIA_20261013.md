@@ -1545,9 +1545,9 @@ Do que o acervo documenta, o quadro é este:
 Sobre o **sal**, a posição de Meishu-Sama é consistente em três passagens: o
 costume de purificar com sal é "hábito tradicional, sem grande significado —
 nós, mais do que afastar a impureza com sal, purificamos com Johrei"
-(`bunkai04.html`; `bunkai16.html`). Mas o sal **aparece** como oferenda em
+(『御光話録』, junho de 1949). Mas o sal **aparece** como oferenda em
 contexto específico — o do deus-dragão (龍神) —, ao lado do arroz cru, da água,
-de frutas e de peixe (`bunkai20.html`). A distinção é, mais uma vez, de
+de frutas e de peixe (『御光話録』, 7 de junho de 1949). A distinção é, mais uma vez, de
 **destinatário**: ao Kōmyō Nyorai, comida humana; ao deus-dragão, o que é dele.
 
 ### 31.3 Outras regras documentadas da oferenda
@@ -1582,7 +1582,7 @@ recolher em seguida" (`search1/situmon/m240108.html`).
 
 **O assento.** A estante de oito pés (八足台), própria do Xintó, **não é
 necessária** para o Kōmyō Nyorai; servem também o suporte de flores ou qualquer
-objeto não grosseiro (`m240499.html`).
+objeto não grosseiro (『御光話録』6号, 23 de abril de 1949).
 
 **A hierarquia dos objetos.** Do mesmo documento, a ordem de precedência:
 

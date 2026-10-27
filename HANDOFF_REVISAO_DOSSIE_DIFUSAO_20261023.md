@@ -133,30 +133,31 @@ Zencho local (`textos_japones/`). Cada item traz o que mudou e onde.
 Feita em 24/10, por medição no volume montado — **não** por memória. É a resposta
 honesta à pergunta «ficou alguma coisa fora?». **Três itens ficaram.**
 
-| # | Pedido | Estado | Prova |
+| # | Pedido | Estado final (27/10) | Prova |
 |---|---|---|---|
 | 1 | Ohikari de primeira vez, sem aula | ✅ feito | §12.5, com três princípios citados |
 | 2 | Johrei intensivo, fora da purificação | ✅ feito | §13.5, com doutrina e praxe separadas |
-| 3 | Ensinamento de que Deus não tem preço | ⚠️ feito, mas **com a fonte errada** — ver §3.6 | §12.4 |
-| 4 | Trechos só em japonês | ❌ **pendente** | 32 linhas de prosa com 12+ CJK (§4.2) |
-| 5 | Uso do glossário como base | ⚠️ parcial | montador alinhado (39 termos); **prosa não** (§4.1) |
-| 6 | «objeto de culto» → «Imagem da Luz Divina» | ✅ feito | 0 ocorrências nas fontes |
+| 3 | Ensinamento de que Deus não tem preço | ✅ feito | §12.4; ver §3.6 |
+| 4 | Trechos só em japonês | ✅ feito | 31 linhas com 12+ CJK, todas triadas: citação com tradução em bloco, termo com romaji, ou linha de documento (§9.6) |
+| 5 | Uso do glossário como base | ✅ feito | verificador calibrado → **0 achados**; graus, 臨時祭 e Miroku/Kyoshu conferidos na prosa (§9.3, §9.4) |
+| 6 | «objeto de culto» → «Imagem da Luz Divina» | ✅ feito | **0 ocorrências**, inclusive nos títulos (cap. 3 e §31) |
 | 7 | Ohikari × Kōmyō (o primeiro é o 「光」) | ✅ feito | §3.2 e §12.2 |
 | 8 | Obras dos anos 50 (Hakone, museu, Nikkōden) | ✅ feito | abertura de I §9 |
-| 9 | Imagem de terceiros, com o argumento do autor | ⚠️ feito com fonte mais fraca — ver §3.6 | §4.1 |
+| 9 | Imagem de terceiros, com o argumento do autor | ✅ feito | §4.1 reescrito com 「霊界の不思議」 como fonte principal (§3.6, §9.1) |
 | 10 | Tenjin → Amatsu Norito; «saudação matinal» | ✅ feito | 0 ocorrências de Tenjin e de «visita matinal» |
-| 11 | 御霊祭 e demais termos sem tradução | ⚠️ parcial | §9.5 traz «(Festa dos Espíritos)», mas o corpo ainda cita o japonês |
-| 12 | Fontes não traduzidas (`『御光話録』`, «jornal *Kō*») | ❌ **pendente** | «jornal *Kō*» persiste em 2 lugares; falta convenção (§4.2) |
+| 11 | 御霊祭 e demais termos sem tradução | ✅ feito | **Culto de Entronização** na prosa; japonês na 1.ª definição, nas citações e no quadro de §16.5 |
+| 12 | Fontes não traduzidas (`『御光話録』`, «jornal *Kō*») | ✅ feito | 0 ocorrências de «*Kō*»; convenção de título aplicada (§9.4) |
 | 13 | 15.5 com o texto do Palácio de Cristal + 3 vícios | ✅ feito | §15.5, com o 御取次 de Abe Seizō |
 | 14 | Hotéis: a proibição é da Imagem, não do hotel | ✅ feito | I §4.2 e §18.2 |
 | 15 | 19.1: filiais dentro das Associações + ligação das classificações | ✅ feito | §19.1 e §19.3 |
 | 16 | 22.4: configuração e texto | ✅ feito | reescrito; declara o que falta |
 | 17 | 井上福夫 = Inoue Motokichi | ✅ feito | unificado, com a variante registada |
-| 18 | Anexos em ondas e por ordem cronológica | ❌ **pendente** | ordem atual: 1947, 1946, 1951, 1953, 1948, 1950, 1951, 1954 (§4.3) |
+| 18 | Anexos em ondas e por ordem cronológica | ⚠️ ordem ✅ · ondas parciais | ordem A=1946…H=1954 feita; a ronda R→M foi feita **sobre o volume inteiro**, não ficheiro a ficheiro — ver §9.8 |
 | 19 | Kyoshu Yoko no fim, sem revisão | ✅ feito | é o Anexo H; excluído do verificador |
 
-**Resumo:** 13 concluídos, 3 parciais, 3 pendentes. Os três pendentes e os três
-parciais estão detalhados em §4.
+**Resumo final: 18 concluídos, 1 parcial** (item 18, na parte das ondas por
+ficheiro). O parcial está explicado em §9.8, com o que já foi medido e o que
+falta.
 
 ---
 
@@ -557,6 +558,47 @@ Parte I.
   oito anexos, os capítulos tocados de `docs/volume_novo/`, `scripts/glossas_volume.py`,
   `scripts/auditar_glossario_volume.py`, `scripts/montar_volume_unico.py`,
   `docs/DOSSIE_DIFUSAO_20261020.{md,pdf,docx}` e este handoff.
+
+### 9.8 A ronda R→M — o que foi feito e o que não foi
+
+O §4.3 pedia duas coisas para os anexos: **reordenar** e **aplicar o sistema de
+ondas** de `HANDOFF_LIVRO_1947_EVANGELHO.md` §4–6, arquivo por arquivo. A primeira
+está feita (§9.4). A segunda foi feita **de outro modo**, e é honesto dizer qual:
+
+**Feito — ronda sobre o volume inteiro, duas passagens:**
+
+| Ronda | O que verificou | Achados | Correções |
+|---|---|---:|---:|
+| **R1** | glossário (A/B/C), caminhos do acervo (D), japonês residual, caracteres de controlo, unidades em transliteração | **5** | — |
+| **M1** | 3 caminhos do acervo na prosa; 2 «culto ocasional» → «Culto Extraordinário» | — | **5** |
+| **R2** | idem, após M1 | **0** | — |
+
+Os 3 caminhos que a R1 encontrou eram nomes de ficheiro entre crases que
+sobreviveram à limpeza do montador porque não estavam em linha de referência:
+`bunkai04.html`, `bunkai16.html`, `bunkai20.html`, `m240499.html`. A limpeza
+remove caminhos de `search1/…`, e estes tinham ficado sem o prefixo. Corrigidos
+na Parte III, substituídos por veículo e data.
+
+A verificação **D** passou a ser permanente em `auditar_glossario_volume.py`.
+Medição que comprova a regra: nas **fontes** ela acusa 274 ocorrências (esperado
+— as fontes citam caminho por desenho); no **volume**, 0. É a demonstração de que
+a limpeza do montador funciona e de que os 3 casos eram exceção real.
+
+**Não feito — as ondas por ficheiro de anexo.** O que a R1/M1 acima garante é a
+**superfície** (glosa, proibição, caminho, medida, japonês legível). Não garante o
+que as ondas de 1947 verificavam no interior de cada tradução: fidelidade ao
+original japonês, unidade de sentido por artigo, títulos, extração. Para isso
+seria preciso abrir cada anexo contra o original — e há uma razão documentada
+para não o ter feito agora: **não há fac-símile** de 講習要項 1947, censo 1950,
+grade 1948, regulamento 1951 nem comunicado 1951 em `pdf_rattail/` (memória do
+repositório). A conferência seria contra o texto já traduzido, isto é, circular.
+
+**Recomendação para a próxima sessão, se o autor quiser fechar o item 18 por
+inteiro:** fazer as ondas nos anexos **com fac-símile disponível** — A (Estatuto
+1946), D (Censo 1950, via 『栄光』), E (Regulamento 1951, 『栄光』125号), G (Aviso
+1953, 『栄光』191号) — e declarar no volume, como já se faz noutros pontos, que os
+restantes foram traduzidos sem confronto de imagem. O Anexo H não entra: revisão
+encerrada por decisão do autor.
 
 
 

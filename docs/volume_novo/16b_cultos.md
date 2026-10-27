@@ -78,7 +78,7 @@ igreja**.
 | **御生誕祭** — Festa do Nascimento | 23 de dezembro | no Templo Messiânico |
 | **月並祭** — Culto Mensal | mensal, em cada unidade | data fixa por unidade |
 | **例祭** — Culto Regular | no calendário de cada igreja | próprio da unidade |
-| **臨時祭** — culto ocasional | por motivo extraordinário | conforme o caso |
+| **臨時祭** — Culto Extraordinário | por motivo extraordinário | conforme o caso |
 | **特別御面会** — Audiência Especial | 1º e 5º de cada mês | Sede |
 | **毎旬の御参拝** — visita a cada dez dias | a cada dez dias | Sede |
 

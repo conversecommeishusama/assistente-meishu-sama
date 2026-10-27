@@ -111,7 +111,7 @@ capítulo em que cada um é tratado.
 | 寄付 | kifu | doação | 21 |
 | 理事 | riji | diretor | 13 |
 | 理事長 | rijichō | diretor-presidente | 13 |
-| 臨時祭 | rinji-sai | culto ocasional | 17 |
+| 臨時祭 | rinji-sai | Culto Extraordinário | 17 |
 | 例祭 | reisai | Culto Regular, próprio de cada igreja | 17 |
 | 霊界 | reikai | mundo espiritual | 20 |
 | 霊肉一致 | reiniku itchi | unidade de espírito e corpo | 19 |

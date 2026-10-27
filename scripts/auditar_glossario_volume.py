@@ -23,6 +23,11 @@ Três verificações independentes:
      `Tosu-chō`), nomes próprios e as tabelas de romaji do próprio glossário não
      contam: ali o ken/chō/ri não é medida.
 
+  D. CAMINHO DO ACERVO — nome de ficheiro do acervo (`bunkai04.html`,
+     `search1/...`) que vazou para o corpo do volume. A regra editorial manda
+     citar veículo, número e data, nunca o caminho. Os nomes aparecem entre
+     crases, e é por aí que se detectam.
+
 Uso:
     python3 scripts/auditar_glossario_volume.py
     python3 scripts/auditar_glossario_volume.py --detalhar
@@ -369,6 +374,23 @@ def auditar(caminho, regras, proibicoes, faixas=()):
                     "linha": n,
                     "contexto": linha.strip()[:110],
                 })
+
+    # --- D: nome de ficheiro do acervo no corpo do volume
+    for m in re.finditer(r"`([^`\n]{3,80})`", texto):
+        dentro = m.group(1)
+        if not re.search(r"(?:^|/)[\w.\-]+\.(?:html?|txt|json)$", dentro):
+            continue
+        n = texto.count("\n", 0, m.start()) + 1
+        if encerrada_linha(n) or em_codigo(n):
+            continue
+        linha, _ = linha_de(texto, m.start())
+        achados.append({
+            "tipo": "D-caminho-do-acervo",
+            "arquivo": nome,
+            "caminho": dentro[:80],
+            "linha": n,
+            "contexto": linha.strip()[:110],
+        })
     return achados
 
 
@@ -414,6 +436,10 @@ def main():
                     print("     %-26s L%-5s %-8s | %s" %
                           (os.path.basename(a["arquivo"])[:26], a["linha"],
                            a["termo"], a.get("contexto", "")[:64]))
+                elif tipo == "D-caminho-do-acervo":
+                    print("     %-26s L%-5s %-30s | %s" %
+                          (os.path.basename(a["arquivo"])[:26], a["linha"],
+                           a["caminho"], a.get("contexto", "")[:48]))
                 elif tipo == "B-glosas-divergentes":
                     print("     %-26s L%-5s %-10s esperado=%-20s achado=%s" %
                           (os.path.basename(a["arquivo"])[:26], a["linha"],
