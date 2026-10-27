@@ -1,0 +1,56 @@
+[Unit]
+Description=Goshinsho Portal (protótipo /portal)
+After=network.target
+
+[Service]
+User=goshinsho
+Group=goshinsho
+WorkingDirectory=/var/www/goshinsho-portal
+Environment=HOME=/var/www/goshinsho-portal
+Environment=HF_HOME=/var/www/goshinsho/.hf_cache
+# 2026-10-14: mesmo modo offline do servico principal -- ver
+# goshinsho.service para o raciocinio (fecha o vetor dos CVEs do transformers).
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+RuntimeDirectory=goshinsho-portal
+# 2026-10-28: a configuração COMUM vive num só sítio.
+#
+# Antes, os dois ficheiros (.env do principal e do portal) tinham 28 variáveis
+# duplicadas, e o portal tinha 3 que lhe são próprias. Ninguém sabia qual
+# estava em vigor: a chave Fish existia SÓ no .env do portal desde 29/09, e o
+# serviço principal nunca a viu — o lote de áudio chegou a gerar 3 dias de CPU
+# com a voz que o usuário tinha rejeitado.
+#
+# Agora: variáveis comuns vêm daqui (EnvironmentFile, lidas pelo systemd antes
+# do processo arrancar) e o `.env` do portal guarda só as 3 próprias. O
+# `load_dotenv()` da app não sobrepõe o que já está no ambiente.
+EnvironmentFile=/var/www/goshinsho/.env
+# 2026-10-21: sync -> gthread, mesma mudança e motivo do goshinsho.service
+# (ver comentário lá). O portal é mais leve, 2x4 chega.
+ExecStart=/var/www/goshinsho/venv/bin/gunicorn --preload --worker-class gthread --workers 2 --threads 4 --timeout 300 --graceful-timeout 30 --keep-alive 5 --bind 127.0.0.1:5092 --control-socket /run/goshinsho-portal/gunicorn.ctl goshinsho.web_app:app
+Restart=always
+RestartSec=5
+
+# --- Sandbox (2026-10-13) ---
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectControlGroups=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectClock=true
+ProtectProc=invisible
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+RemoveIPC=true
+UMask=0077
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/var/www/goshinsho-portal/data /var/www/goshinsho-portal/logs /var/www/goshinsho-portal/backups /var/www/goshinsho-portal/static /var/www/goshinsho/data /var/www/goshinsho/.hf_cache /var/www/goshinsho/.cache
+
+[Install]
+WantedBy=multi-user.target
