@@ -1,0 +1,70 @@
+{% extends "portal_base.html" %}
+{% set nav_ativo = 'artigos' %}
+
+{% block titulo %}Artigos — Portal Goshinsho{% endblock %}
+
+{% block conteudo %}
+<section class="portal-secao">
+    <header class="portal-secao-cabecalho">
+        <h1 class="portal-secao-titulo">Artigos</h1>
+        <p class="portal-secao-desc">
+            Textos escritos pelos leitores e estudiosos do Goshinsho. Cada artigo é
+            publicado com identificação do autor.
+        </p>
+    </header>
+
+    <p class="portal-disclaimer" role="note">
+        <strong>Aviso importante:</strong> {{ aviso_artigos }}
+        <a href="{{ url_for('portal.aviso_artigos') }}">Ler o aviso completo</a>.
+    </p>
+
+    <div class="portal-toolbar">
+        <form class="portal-busca" method="get" action="{{ url_for('portal.artigos_lista') }}">
+            <input type="search" name="q" value="{{ busca or '' }}"
+                   placeholder="Pesquisar por título, assunto ou autor..." aria-label="Pesquisar artigos">
+            <button type="submit" class="portal-btn-secondary">Buscar</button>
+            {% if busca %}
+                <a class="portal-btn-secondary" href="{{ url_for('portal.artigos_lista') }}">Limpar</a>
+            {% endif %}
+        </form>
+        <a class="portal-btn-primary" href="{{ url_for('portal.artigos_novo') }}">+ Publicar artigo</a>
+    </div>
+
+    <div class="portal-lista">
+        {% for a in artigos %}
+            <a class="portal-item" href="{{ url_for('portal.artigo_detalhe', artigo_id=a.id) }}">
+                <div class="portal-item-topo">
+                    <h3>{{ a.titulo }}</h3>
+                    <span class="portal-item-data">📅 {{ a.created_at_fmt }}</span>
+                </div>
+                {% if a.subtitulo %}<p class="portal-item-sub">{{ a.subtitulo }}</p>{% endif %}
+                <p class="portal-item-resumo">{{ a.resumo }}</p>
+                <span class="portal-item-meta">
+                    👤 {{ a.autor_nome }} · 💬 {{ a.qtd_comentarios or 0 }} comentários
+                    {% if a.ultimo_comentario_fmt %} · 🕒 último comentário em {{ a.ultimo_comentario_fmt }}{% endif %}
+                </span>
+            </a>
+        {% else %}
+            <p class="portal-vazio">
+                {% if busca %}
+                    Nenhum artigo encontrado para "{{ busca }}".
+                {% else %}
+                    Nenhum artigo publicado ainda. Seja o primeiro a escrever!
+                {% endif %}
+            </p>
+        {% endfor %}
+    </div>
+
+    {% if total_paginas > 1 %}
+        <nav class="portal-paginacao" aria-label="Paginação">
+            {% if pagina > 1 %}
+                <a class="portal-btn-secondary" href="{{ url_for('portal.artigos_lista', page=pagina-1, q=busca) }}">← Anterior</a>
+            {% endif %}
+            <span class="portal-paginacao-info">Página {{ pagina }} de {{ total_paginas }} ({{ total }} artigos)</span>
+            {% if pagina < total_paginas %}
+                <a class="portal-btn-secondary" href="{{ url_for('portal.artigos_lista', page=pagina+1, q=busca) }}">Próxima →</a>
+            {% endif %}
+        </nav>
+    {% endif %}
+</section>
+{% endblock %}

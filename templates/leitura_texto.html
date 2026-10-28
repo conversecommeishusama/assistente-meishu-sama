@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ titulo }} — Leitura Colaborativa Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=160">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=15">
+    {% if portal_ativo %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}?v=1">
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=16">
 </head>
 <body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}" data-arquivo="{{ nome_arquivo }}">
     <aside class="sidebar" id="sidebar">
@@ -26,6 +29,13 @@
 
     <main class="app-shell">
         <div class="leitura-flutuante" id="leitura-flutuante">
+        {% if portal_ativo %}
+        {# 2026-10-28: pele do Portal (um só conjunto de templates; a flag decide). #}
+        {% set auth_mode = 'link' %}
+        {% set mostrar_menu = true %}
+        {% set nav_ativo = 'escrita' %}
+        {% include "_portal_header.html" %}
+        {% else %}
         <header class="topbar">
             <div class="brand">
                 <button class="hamburger" id="menu-button" aria-label="Abrir menu">
@@ -50,7 +60,12 @@
                 {% endif %}
             </nav>
         </header>
+        {% endif %}
 
+        {% if not acesso_bloqueado %}
+        {# A barra de áudio só faz sentido quando há texto na página. Numa página
+           bloqueada (Palavra Oral sem conta) os botões "Ouvir" e "Sugerir edição"
+           não teriam o que acionar. #}
         <div class="leitura-barra" id="leitura-barra">
             <div class="leitura-barra-botoes">
                 {% set cat_label = 'Palavra Oral' if cat_origem == 'oral' else 'Palavra Escrita' %}
@@ -66,6 +81,7 @@
             </div>
             <div class="leitura-barra-progresso" id="leitura-barra-progresso" aria-label="Progresso da leitura">0%</div>
         </div>
+        {% endif %}
 
         <nav class="community-links" aria-label="Funcionalidades da comunidade">
             <a class="community-link" href="{{ url_for('web.app_view_pt') }}">💬 Chat</a>
@@ -84,11 +100,39 @@
                 <p>⚠️ <strong>Uso exclusivo do Goshinsho:</strong> não autorizamos a reprodução deste conteúdo sem autorização expressa. Tradução em revisão — pode conter erros.</p>
             </div>
 
+            {% if acesso_bloqueado %}
+            {# 2026-09-30: RESTRIÇÃO DA PALAVRA ORAL. O conteúdo NÃO foi enviado
+               ao navegador (ver leitura_routes.leitura_texto_pagina). #}
+            <div class="leitura-bloqueio">
+                <p class="leitura-bloqueio-cadeado" aria-hidden="true">🔒</p>
+                <h2 class="leitura-bloqueio-titulo">Esta obra faz parte da Palavra Oral</h2>
+                <p class="leitura-bloqueio-texto">{{ motivo_bloqueio }}</p>
+                <p class="leitura-bloqueio-texto">
+                    O acesso é gratuito. Crie a sua conta ou entre para continuar a leitura —
+                    você volta direto para <strong>{{ titulo }}</strong>.
+                </p>
+                <div class="leitura-bloqueio-acoes">
+                    {# O prefixo do portal (/portal) vem em request.script_root — sem
+                       ele, o link sairia do protótipo e cairia na produção. #}
+                    {% set next_destino = (request.script_root or '') ~ request.path %}
+                    <a class="btn-primary leitura-bloqueio-entrar"
+                       href="{{ url_for('web.app_view_pt', panel='login', next=next_destino) }}">Entrar</a>
+                    <a class="btn-secondary leitura-bloqueio-criar"
+                       href="{{ url_for('web.app_view_pt', panel='register', next=next_destino) }}">Criar conta gratuita</a>
+                </div>
+                <p class="muted leitura-bloqueio-nota">
+                    A <strong>Palavra Escrita</strong> — os livros e periódicos publicados por
+                    Meishu-Sama — continua aberta a todos, sem necessidade de conta.
+                    <a href="{{ url_for('leitura.leitura_pagina', cat='escrita') }}">Ver a Palavra Escrita</a>.
+                </p>
+            </div>
+            {% else %}
             <div class="leitura-texto" data-audio-ler data-audio-rate="0.95" data-audio-chave="goshinsho-leitura:{{ nome_arquivo }}">
                 {{ conteudo|safe }}
             </div>
+            {% endif %}
 
-            {% if user %}
+            {% if user and not acesso_bloqueado %}
             <!-- Colaboração: o leitor seleciona um trecho e envia observação -->
             <div class="leitura-colaboracao" id="leitura-colaboracao" data-arquivo="{{ nome_arquivo }}">
                 <h2>💬 Contribua com a tradução</h2>
@@ -108,7 +152,7 @@
                 <p class="muted form-error" id="leitura-colab-error" hidden></p>
                 <p class="muted form-ok" id="leitura-colab-ok" hidden></p>
             </div>
-            {% else %}
+            {% elif not acesso_bloqueado %}
             <!-- Colaboração visível também sem login: o envio exige login -->
             <div class="leitura-colaboracao" id="leitura-colaboracao" data-arquivo="{{ nome_arquivo }}" data-requer-login="1">
                 <h2>💬 Contribua com a tradução</h2>
@@ -160,7 +204,7 @@
 
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
-    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=4"></script>
+    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=5"></script>
     <script src="{{ url_for('static', filename='js/leitura_texto.js') }}?v=22"></script>
     <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=8"></script>
 </body>

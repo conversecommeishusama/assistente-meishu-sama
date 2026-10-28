@@ -41,6 +41,28 @@ class Config:
     # GOSHINSHO_FORUM_ENABLED=1 (ex.: .env do /var/www/goshinsho-teste).
     # Decisão do usuário: aguardar retorno dos colaboradores antes de promover.
     FORUM_ENABLED = _env_bool("GOSHINSHO_FORUM_ENABLED", default=False)
+    # 2026-10-28: PORTAL Goshinsho — página principal que agrega acervo, fórum,
+    # artigos e o chat, mais a área de Artigos. Nasceu como protótipo em
+    # /var/www/goshinsho-portal (servido em /portal pelo Caddy) e o usuário
+    # pretende torná-lo o principal; ver HANDOFF_PORTAL_VS_PRODUCAO_20261028.md.
+    #
+    # O default é False porque a produção NÃO deve registar este blueprint: a
+    # landing de captação é o que está no ar. O código do portal passou a viver
+    # aqui (e não numa cópia em /var/www/goshinsho-portal) exactamente porque a
+    # cópia tinha derivado: 24 dos 65 .py eram ficheiros independentes, 9 já
+    # divergiam, e alguns existiam apenas lá, nunca no git.
+    #
+    # Esta flag é também o interruptor da RESTRIÇÃO DA PALAVRA ORAL (ver
+    # `leitura_routes`): as duas coisas nasceram juntas no protótipo e andam
+    # juntas. Assim a produção não muda de comportamento.
+    PORTAL_ENABLED = _env_bool("GOSHINSHO_PORTAL_ENABLED", default=False)
+    # 2026-09-29: chave do HMAC-SHA256 usado para proteger o CPF dos autores de
+    # artigos (services/artigo_service.py). O CPF NUNCA é gravado em claro: fica
+    # só o HMAC desta chave (para provar que é o mesmo documento) e os 3 últimos
+    # dígitos (para o autor se reconhecer). Um SHA-256 sem chave seria reversível
+    # em segundos, já que o espaço de CPFs válidos é de ~1 bilhão de
+    # combinações. Sem esta chave o cadastro de artigo é recusado.
+    ARTIGOS_CPF_HMAC_KEY = _env("ARTIGOS_CPF_HMAC_KEY")
     DEEPSEEK_API_KEY = _env("DEEPSEEK_API_KEY")
     # 2026-09-14: chave do fallback do laço agenciado (ver
     # services/llm_fallback.py). Só usada quando a DeepSeek falha por erro

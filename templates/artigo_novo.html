@@ -1,0 +1,55 @@
+{% extends "portal_base.html" %}
+{% set nav_ativo = 'artigos' %}
+
+{% block titulo %}Publicar artigo — Portal Goshinsho{% endblock %}
+
+{% block conteudo %}
+<section class="portal-secao">
+    <a class="portal-voltar" href="{{ url_for('portal.artigos_lista') }}">← Todos os artigos</a>
+
+    <header class="portal-secao-cabecalho">
+        <h1 class="portal-secao-titulo">Publicar um artigo</h1>
+        <p class="portal-secao-desc">
+            Escreva o seu texto e assine-o. Não são aceitos artigos anônimos ou apócrifos.
+        </p>
+    </header>
+
+    <p class="portal-disclaimer" role="note">
+        <strong>Aviso importante:</strong> {{ aviso_artigos }}
+        <a href="{{ url_for('portal.aviso_artigos') }}">Ler o aviso completo</a>.
+    </p>
+
+    {% if user %}
+        <aside class="portal-info-dados">
+            <h2>Por que pedimos nome completo e CPF?</h2>
+            <p>
+                Para que nenhum artigo seja publicado sem autor identificado. Assinar o texto
+                é o que dá responsabilidade ao que é escrito — e é o que permite ao portal
+                manter a conversa honesta.
+            </p>
+            <ul>
+                <li><strong>Nome completo:</strong> aparece publicamente como autor do artigo.</li>
+                <li><strong>CPF:</strong> usado somente para identificar o autor. <strong>Não é exibido
+                    no site</strong> e <strong>não é gravado em texto claro</strong> — guardamos apenas um
+                    código de verificação (HMAC) e os 3 últimos dígitos, para que você possa
+                    reconhecer o seu próprio cadastro.</li>
+                <li><strong>Autorização:</strong> a publicação só acontece com a sua autorização
+                    expressa, registrada com data.</li>
+            </ul>
+        </aside>
+
+        {% from "_portal_forms.html" import formulario_artigo %}
+        {{ formulario_artigo("artigo-novo", texto_autorizacao, compacto=false) }}
+    {% else %}
+        <p class="portal-caixa-login">
+            Para publicar um artigo é preciso ter uma conta gratuita no Goshinsho.
+            <a href="{{ url_for('web.app_view_pt', panel='login') }}">Faça login</a>
+            ou <a href="{{ url_for('web.app_view_pt', panel='register') }}">crie a sua agora</a>.
+        </p>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/artigos.js') }}?v=1"></script>
+{% endblock %}

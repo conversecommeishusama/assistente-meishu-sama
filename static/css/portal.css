@@ -1,0 +1,760 @@
+/* Portal Goshinsho — protótipo /portal (2026-09-29)
+ *
+ * Só é carregado pelo protótipo. O app.css de produção NÃO é alterado: as
+ * regras do cabeçalho novo vivem aqui, aplicadas à classe `.portal-topbar`.
+ */
+
+/* ------------------------------------------------------------------ */
+/* Tokens do portal                                                    */
+/* ------------------------------------------------------------------ */
+:root {
+    --portal-dourado: #8b6914;
+    --portal-dourado-claro: #b8860b;
+    --portal-dourado-suave: #fdf7e6;
+    --portal-borda: #e6e2d6;
+    --portal-sombra: 0 10px 30px rgba(60, 50, 20, 0.08);
+}
+
+/* ------------------------------------------------------------------ */
+/* Cabeçalho novo (compartilhado por todas as páginas do protótipo)    */
+/* ------------------------------------------------------------------ */
+.portal-topbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.portal-topbar .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    min-width: 0;
+}
+
+/* 2026-09-30: "Goshinsho" na MESMA cor dourada de "Escritos Divinos" (ambos
+   dourados, empilhados). Antes "Goshinsho" saía na cor de texto padrão. */
+.portal-topbar .brand-text strong,
+.portal-topbar .brand-text small {
+    color: var(--portal-dourado);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.portal-topbar .brand-text strong {
+    font-size: 1rem;
+}
+
+.portal-topbar .brand-text small {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+/* Login/Cadastro do cabeçalho (fora do app.html, que usa painéis flutuantes).
+   São links, não botões — ver comentário no partial _portal_header.html. */
+.portal-auth-link {
+    border: 1px solid var(--portal-borda);
+    border-radius: 999px;
+    color: var(--portal-dourado);
+    font-weight: 600;
+    padding: 6px 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.portal-auth-link:hover {
+    background: var(--portal-dourado-suave);
+    border-color: var(--portal-dourado-claro);
+}
+
+.portal-nav {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    justify-content: center;
+}
+
+.portal-nav-link {
+    border-radius: 999px;
+    color: var(--text, #1f1f1f);
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.portal-nav-link:hover {
+    background: var(--portal-dourado-suave);
+    color: var(--portal-dourado);
+}
+
+.portal-nav-link.active {
+    background: var(--portal-dourado-suave);
+    color: var(--portal-dourado);
+}
+
+.portal-nav-link.disabled {
+    color: var(--muted, #5f6368);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ------------------------------------------------------------------ */
+/* Estrutura da página                                                 */
+/* ------------------------------------------------------------------ */
+.portal-body {
+    background: #fbfaf7;
+}
+
+.portal-shell {
+    margin: 0 auto;
+    max-width: 1120px;
+    padding: 24px 20px 60px;
+}
+
+.portal-footer {
+    border-top: 1px solid var(--portal-borda);
+    color: var(--muted, #5f6368);
+    font-size: 0.85rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.portal-footer a {
+    color: var(--portal-dourado);
+    text-decoration: none;
+}
+
+.portal-footer-nota {
+    margin: 8px 0 0;
+    opacity: 0.8;
+}
+
+.portal-hero {
+    padding: 18px 0 8px;
+    text-align: center;
+}
+
+.portal-hero-titulo {
+    color: var(--portal-dourado);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 0 0 6px;
+}
+
+.portal-hero-sub {
+    color: var(--muted, #5f6368);
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Caixa de pergunta                                                   */
+/* ------------------------------------------------------------------ */
+.portal-pergunta {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 16px;
+    box-shadow: var(--portal-sombra);
+    margin: 20px 0 36px;
+    padding: 22px;
+}
+
+/* Título próprio (o h1 da página fica em .portal-hero). */
+.portal-secao-titulo-grande {
+    color: var(--portal-dourado);
+    font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+    margin: 0 0 6px;
+}
+
+.portal-pergunta-titulo {
+    color: var(--portal-dourado);
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    margin: 0 0 14px;
+    text-align: center;
+}
+
+.portal-pergunta-form {
+    align-items: flex-end;
+    display: flex;
+    gap: 10px;
+}
+
+.portal-pergunta-form textarea {
+    border: 1px solid var(--portal-borda);
+    border-radius: 12px;
+    flex: 1 1 auto;
+    font: inherit;
+    min-height: 52px;
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+.portal-pergunta-form textarea:focus {
+    border-color: var(--portal-dourado-claro);
+    outline: 2px solid rgba(184, 134, 11, 0.18);
+}
+
+.portal-pergunta-nota {
+    color: var(--muted, #5f6368);
+    font-size: 0.82rem;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Seções                                                              */
+/* ------------------------------------------------------------------ */
+.portal-secao {
+    margin: 0 0 44px;
+}
+
+.portal-secao-cabecalho {
+    border-bottom: 2px solid var(--portal-dourado-suave);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+}
+
+.portal-secao-titulo {
+    color: var(--portal-dourado);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    margin: 0 0 4px;
+}
+
+.portal-secao-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.portal-secao-link:hover {
+    text-decoration: underline;
+}
+
+.portal-secao-desc {
+    color: var(--muted, #5f6368);
+    margin: 0;
+}
+
+.portal-acervo-bloco {
+    margin-bottom: 22px;
+}
+
+.portal-acervo-subtitulo {
+    color: var(--text, #1f1f1f);
+    font-size: 1.08rem;
+    margin: 0 0 2px;
+}
+
+.portal-acervo-desc {
+    color: var(--muted, #5f6368);
+    font-size: 0.9rem;
+    margin: 0 0 12px;
+}
+
+/* Cartões do acervo — as 3 coleções orais ficam lado a lado */
+.portal-colecoes {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.portal-card {
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 14px;
+    box-shadow: var(--portal-sombra);
+    color: inherit;
+    display: flex;
+    gap: 14px;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.portal-card:hover {
+    border-color: var(--portal-dourado-claro);
+    transform: translateY(-2px);
+}
+
+.portal-card-icone {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.portal-card-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.portal-card-texto strong {
+    font-size: 1.05rem;
+}
+
+.portal-card-texto small {
+    color: var(--muted, #5f6368);
+    font-size: 0.84rem;
+}
+
+.portal-card-jp {
+    color: var(--portal-dourado) !important;
+}
+
+.portal-card-largo {
+    max-width: 420px;
+}
+
+.portal-card-seta {
+    color: var(--portal-dourado);
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Listas (fórum, artigos, comentários)                                */
+/* ------------------------------------------------------------------ */
+.portal-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.portal-item {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 14px;
+    color: inherit;
+    display: block;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+}
+
+.portal-item:hover {
+    border-color: var(--portal-dourado-claro);
+}
+
+.portal-item-topo {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    justify-content: space-between;
+}
+
+.portal-item-topo h3 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.portal-item-data {
+    color: var(--muted, #5f6368);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.portal-item-sub {
+    color: var(--portal-dourado);
+    font-size: 0.9rem;
+    margin: 4px 0 0;
+}
+
+.portal-item-resumo {
+    color: var(--muted, #5f6368);
+    font-size: 0.9rem;
+    margin: 6px 0 8px;
+}
+
+.portal-item-meta {
+    color: var(--muted, #5f6368);
+    display: block;
+    font-size: 0.8rem;
+}
+
+/* Dois destaques lado a lado na seção de artigos */
+.portal-artigos-destaque {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 18px;
+}
+
+.portal-artigos-rotulo {
+    color: var(--muted, #5f6368);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.portal-vazio {
+    background: var(--portal-dourado-suave);
+    border-radius: 12px;
+    color: var(--muted, #5f6368);
+    margin: 0;
+    padding: 14px 16px;
+}
+
+.portal-aviso {
+    border-radius: 10px;
+    margin: 0 0 16px;
+    padding: 12px 14px;
+}
+
+.portal-aviso-erro {
+    background: #fdecea;
+    color: #b3261e;
+}
+
+/* ------------------------------------------------------------------ */
+/* Aviso de responsabilidade dos artigos                               */
+/* ------------------------------------------------------------------ */
+.portal-disclaimer {
+    background: var(--portal-dourado-suave);
+    border-left: 4px solid var(--portal-dourado-claro);
+    border-radius: 8px;
+    color: #4a3c10;
+    font-size: 0.9rem;
+    margin: 0 0 18px;
+    padding: 12px 16px;
+}
+
+.portal-disclaimer a {
+    color: var(--portal-dourado);
+}
+
+/* ------------------------------------------------------------------ */
+/* Caixas rápidas de criação                                           */
+/* ------------------------------------------------------------------ */
+.portal-caixa-rapida {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 14px;
+    margin-top: 18px;
+    padding: 18px 20px;
+}
+
+.portal-caixa-titulo {
+    color: var(--portal-dourado);
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+}
+
+.portal-caixa-nota {
+    color: var(--muted, #5f6368);
+    font-size: 0.86rem;
+    margin: 0 0 14px;
+}
+
+.portal-caixa-login {
+    color: var(--muted, #5f6368);
+    margin: 0;
+}
+
+.portal-caixa-login a {
+    color: var(--portal-dourado);
+    font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ */
+/* Formulários                                                         */
+/* ------------------------------------------------------------------ */
+.portal-form,
+.portal-form-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.portal-form-row {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.portal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.portal-field > span {
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.portal-field > span em {
+    color: var(--muted, #5f6368);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.portal-field input,
+.portal-field textarea {
+    border: 1px solid var(--portal-borda);
+    border-radius: 10px;
+    font: inherit;
+    padding: 10px 12px;
+    width: 100%;
+}
+
+.portal-field input:focus,
+.portal-field textarea:focus {
+    border-color: var(--portal-dourado-claro);
+    outline: 2px solid rgba(184, 134, 11, 0.18);
+}
+
+.portal-check {
+    align-items: flex-start;
+    background: var(--portal-dourado-suave);
+    border-radius: 10px;
+    display: flex;
+    font-size: 0.85rem;
+    gap: 10px;
+    padding: 12px 14px;
+}
+
+.portal-check input {
+    flex: 0 0 auto;
+    margin-top: 3px;
+}
+
+.portal-form-aviso {
+    border-radius: 8px;
+    font-size: 0.86rem;
+    margin: 0;
+    padding: 10px 12px;
+}
+
+.portal-form-aviso.erro {
+    background: #fdecea;
+    color: #b3261e;
+}
+
+.portal-form-aviso.ok {
+    background: #e7f4ea;
+    color: #1e6c33;
+}
+
+.portal-form-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.portal-btn-primary,
+.portal-btn-secondary {
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    padding: 10px 18px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.portal-btn-primary {
+    background: var(--portal-dourado);
+    border: 1px solid var(--portal-dourado);
+    color: #fff;
+}
+
+.portal-btn-primary:hover {
+    background: var(--portal-dourado-claro);
+}
+
+.portal-btn-primary:disabled {
+    cursor: progress;
+    opacity: 0.7;
+}
+
+.portal-btn-secondary {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    color: var(--portal-dourado);
+    display: inline-block;
+}
+
+/* ------------------------------------------------------------------ */
+/* Artigos — página, toolbar, comentários                              */
+/* ------------------------------------------------------------------ */
+.portal-toolbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.portal-busca {
+    align-items: center;
+    display: flex;
+    flex: 1 1 320px;
+    gap: 8px;
+}
+
+.portal-busca input {
+    border: 1px solid var(--portal-borda);
+    border-radius: 999px;
+    flex: 1 1 auto;
+    font: inherit;
+    padding: 9px 14px;
+}
+
+.portal-artigo {
+    margin-bottom: 36px;
+}
+
+.portal-voltar {
+    color: var(--portal-dourado);
+    display: inline-block;
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+    text-decoration: none;
+}
+
+.portal-artigo-cabecalho h1 {
+    color: var(--portal-dourado);
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    margin: 0 0 6px;
+}
+
+.portal-artigo-sub {
+    color: var(--muted, #5f6368);
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+}
+
+.portal-artigo-meta {
+    color: var(--muted, #5f6368);
+    font-size: 0.86rem;
+    margin: 0;
+}
+
+.portal-artigo-corpo {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 14px;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-top: 18px;
+    padding: 24px 26px;
+}
+
+.portal-artigo-corpo p {
+    margin: 0 0 16px;
+}
+
+.portal-artigo-corpo p:last-child {
+    margin-bottom: 0;
+}
+
+.portal-comentarios {
+    margin-top: 32px;
+}
+
+.portal-comentario {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.portal-comentario-texto {
+    margin: 8px 0 0;
+    white-space: pre-line;
+}
+
+.portal-comentarios .portal-form {
+    margin-top: 18px;
+}
+
+.portal-paginacao {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.portal-paginacao-info {
+    color: var(--muted, #5f6368);
+    font-size: 0.86rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Página de aviso / texto legal                                       */
+/* ------------------------------------------------------------------ */
+.portal-legal-corpo {
+    background: #fff;
+    border: 1px solid var(--portal-borda);
+    border-radius: 14px;
+    line-height: 1.7;
+    padding: 24px 26px;
+}
+
+.portal-legal-corpo h2 {
+    color: var(--portal-dourado);
+    font-size: 1.1rem;
+    margin: 22px 0 8px;
+}
+
+.portal-legal-corpo h2:first-child {
+    margin-top: 0;
+}
+
+.portal-info-dados {
+    background: var(--portal-dourado-suave);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    padding: 18px 20px;
+}
+
+.portal-info-dados h2 {
+    color: var(--portal-dourado);
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+}
+
+.portal-info-dados ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+.portal-info-dados li {
+    margin-bottom: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsivo                                                          */
+/* ------------------------------------------------------------------ */
+@media (max-width: 720px) {
+    .portal-topbar {
+        justify-content: center;
+    }
+
+    .portal-nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .portal-pergunta-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .portal-artigo-corpo,
+    .portal-legal-corpo {
+        padding: 18px;
+    }
+}

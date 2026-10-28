@@ -1,0 +1,65 @@
+{% extends "portal_base.html" %}
+{% set nav_ativo = 'artigos' %}
+
+{% block titulo %}Aviso sobre os Artigos — Portal Goshinsho{% endblock %}
+
+{% block conteudo %}
+<section class="portal-secao portal-texto-legal">
+    <a class="portal-voltar" href="{{ url_for('portal.artigos_lista') }}">← Todos os artigos</a>
+
+    <h1 class="portal-secao-titulo">Aviso sobre os Artigos</h1>
+
+    <div class="portal-legal-corpo">
+        <h2>As ideias são do autor, não do portal</h2>
+        <p>
+            Os artigos publicados nesta área são de autoria dos próprios leitores e
+            estudiosos. As ideias, opiniões, interpretações e conclusões contidas em cada
+            artigo são de <strong>responsabilidade exclusiva de seu autor</strong> e
+            <strong>não refletem o pensamento, a posição ou a orientação do Portal
+            Goshinsho</strong>.
+        </p>
+        <p>
+            O Portal Goshinsho <strong>não se responsabiliza pelas ideias ali contidas</strong>,
+            nem por eventuais consequências decorrentes do seu uso, interpretação ou
+            aplicação por parte dos leitores.
+        </p>
+
+        <h2>Nenhum artigo é anônimo</h2>
+        <p>
+            Todo artigo é publicado com identificação do autor: <strong>nome completo</strong>
+            e <strong>CPF</strong> verificados no momento do envio. Não são admitidos artigos
+            anônimos ou apócrifos.
+        </p>
+        <p>
+            O CPF serve apenas para identificar o autor. Ele <strong>não é exibido no site</strong>
+            e <strong>não é armazenado em texto claro</strong>: o sistema guarda somente um código
+            de verificação (HMAC) e os três últimos dígitos, para que o próprio autor possa
+            reconhecer o seu cadastro.
+        </p>
+
+        <h2>Autorização de publicação</h2>
+        <p>
+            Nenhum artigo é publicado sem a <strong>autorização expressa do autor</strong>,
+            registrada com data no momento do envio. O autor declara que o texto é de sua
+            autoria e que assume responsabilidade por ele.
+        </p>
+
+        <h2>Moderação</h2>
+        <p>
+            A moderação do portal avalia apenas <strong>conduta</strong> — discurso de ódio,
+            assédio, ameaça, conteúdo ilegal, spam ou assunto completamente alheio aos
+            ensinamentos. A moderação <strong>não avalia doutrina</strong>: divergir, questionar
+            e interpretar de forma própria é parte legítima do estudo e não é motivo de
+            bloqueio.
+        </p>
+
+        <h2>Conteúdo do acervo</h2>
+        <p>
+            O aviso acima vale para os <strong>artigos da comunidade</strong>. Os textos do acervo
+            (Palavra Escrita e Palavra Oral) são os ensinamentos publicados por Meishu-Sama,
+            apresentados no Goshinsho em tradução própria — ver o
+            <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a>.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -34,6 +34,29 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
     app.config.from_object(Config)
 
     if include_web:
+        # 2026-10-28: PORTAL Goshinsho — página principal que agrega acervo,
+        # fórum, artigos e chat. Registado ANTES de `web_bp` de propósito: o
+        # portal declara a raiz "/" e o Flask resolve rotas iguais pela ORDEM
+        # de registo, por isso registar o portal primeiro faz `/portal` abrir a
+        # página principal do portal em vez da landing de captação.
+        #
+        # O código do portal vivia numa cópia em /var/www/goshinsho-portal e
+        # essa cópia derivou (24 dos 65 .py eram ficheiros independentes; a
+        # correção da voz de 27/10 chegou à produção e não lá, e a restrição da
+        # Palavra Oral ficou lá e nunca chegou ao git). Passou a viver aqui, e o
+        # interruptor é `Config.PORTAL_ENABLED` — que é False na produção, logo
+        # o blueprint nem é importado e nada muda no site que está no ar.
+        if Config.PORTAL_ENABLED:
+            try:
+                from .portal_routes import portal_bp
+
+                app.register_blueprint(portal_bp)
+            except Exception as exc:  # pragma: no cover - defensivo
+                import logging
+
+                logging.getLogger(__name__).warning(
+                    "Não foi possível registrar o Portal: %s", exc)
+
         app.register_blueprint(web_bp)
         # 2026-09-01: Leitura Colaborativa PROMOVIDA para produção (decisão do
         # usuário). Blueprint próprio, separado do Fórum — a Leitura fica
@@ -100,6 +123,12 @@ def create_app(*, include_web: bool = True, warmup_search: bool | None = None):
             "show_developer_nav": is_developer_user(user),
             "public_site_url": Config.PUBLIC_SITE_URL,
             "meta_pixel_id": Config.META_PIXEL_ID,
+            # 2026-10-28: escolhe a "pele" da página. `portal_ativo` é o que
+            # permite ter UM só conjunto de templates: com True o cabeçalho é o
+            # do Portal (`_portal_header.html` + `portal.css`), com False é a
+            # topbar da produção. Antes eram dois conjuntos de templates a
+            # divergir em silêncio — ver HANDOFF_PORTAL_VS_PRODUCAO_20261028.md.
+            "portal_ativo": Config.PORTAL_ENABLED,
         }
 
     @app.before_request

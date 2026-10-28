@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Leitura Colaborativa — Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=160">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=15">
+    {% if portal_ativo %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}?v=1">
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=16">
 </head>
 <body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}"
-      data-estrutura='{{ estrutura | tojson | forceescape }}'>
+      data-estrutura='{{ estrutura | tojson | forceescape }}'
+      data-exigem-conta='{{ exigem_conta | default([]) | list | tojson | forceescape }}'>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span data-i18n="menu">Menu</span>
@@ -26,6 +30,15 @@
     <div class="overlay" id="overlay"></div>
 
     <main class="app-shell">
+        {% if portal_ativo %}
+        {# 2026-10-28: pele do Portal — partial partilhado por todas as páginas.
+           Antes eram dois conjuntos de templates (produção e portal) a divergir
+           em silêncio; agora é um só, e a flag decide qual cabeçalho sai. #}
+        {% set auth_mode = 'link' %}
+        {% set mostrar_menu = true %}
+        {% set nav_ativo = 'escrita' %}
+        {% include "_portal_header.html" %}
+        {% else %}
         <header class="topbar">
             <div class="brand">
                 <button class="hamburger" id="menu-button" aria-label="Abrir menu">
@@ -50,6 +63,7 @@
                 {% endif %}
             </nav>
         </header>
+        {% endif %}
 
         <section class="forum-container leitura-container">
             <!-- Barra fixa de navegação da Leitura Colaborativa (sempre acessível) -->
@@ -103,7 +117,7 @@
                     <button type="button" class="leitura-categoria-card" data-categoria="oral">
                         <span class="leitura-categoria-icone">🗣️</span>
                         <span class="leitura-categoria-titulo">Palavra Oral</span>
-                        <span class="leitura-categoria-desc">Registros das conversas e ensinamentos transmitidos oralmente por Meishu-Sama: Gokōwa-roku, Gosuiji-roku e Mioshie-shū.</span>
+                        <span class="leitura-categoria-desc">Registros das conversas e ensinamentos transmitidos oralmente por Meishu-Sama: Gokōwa-roku, Gosuiji-roku e Mioshie-shū.{% if motivo_oral %} <strong>A leitura exige conta gratuita</strong> — ver o motivo abaixo.{% endif %}</span>
                         <span class="leitura-categoria-meta">{{ estrutura.palavra_oral.colecoes | map(attribute='obras') | map('length') | sum }} textos · 3 coleções</span>
                     </button>
                     <button type="button" class="leitura-categoria-card" data-categoria="escrita">
@@ -158,6 +172,20 @@
             {% endif %}
 
             <div class="leitura-aviso">
+                {% if motivo_oral %}
+                {# 2026-09-30: explicação da restrição da Palavra Oral, na voz do
+                   usuário: Meishu-Sama orientou que aqueles registos eram para
+                   quem participava dos encontros. #}
+                <p>
+                    🔒 <strong>Palavra Oral (Gokōwa-roku, Gosuiji-roku e Mioshie-shū):</strong>
+                    {{ motivo_oral }}
+                    A <strong>Palavra Escrita</strong> permanece <strong>aberta a todos</strong>, sem
+                    necessidade de conta.
+                    {% if not user %}
+                        <a href="{{ url_for('web.app_view_pt', panel='register') }}">Criar conta gratuita</a>.
+                    {% endif %}
+                </p>
+                {% endif %}
                 <p>
                     ⚠️ <strong>Uso exclusivo do Goshinsho:</strong> o conteúdo desta área é de
                     <strong>uso exclusivo do Goshinsho</strong>. <strong>Não autorizamos a reprodução</strong>,
@@ -177,6 +205,6 @@
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
 
     <script src="{{ url_for('static', filename='js/forum.js') }}?v=3"></script>
-    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=4"></script>
+    <script src="{{ url_for('static', filename='js/leitura.js') }}?v=5"></script>
 </body>
 </html>

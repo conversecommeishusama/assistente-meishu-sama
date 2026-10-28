@@ -56,10 +56,23 @@ def leitura_pagina():
     from .services import leitura_service
     estrutura = leitura_service.estrutura_por_categoria()
     obras = leitura_service.listar_obras()
-    return render_template(
-        "leitura.html", user=user, active_tab="leitura",
-        obras=obras, estrutura=estrutura,
-    )
+    contexto = {
+        "user": user,
+        "active_tab": "leitura",
+        "obras": obras,
+        "estrutura": estrutura,
+    }
+    # 2026-10-28: a restrição da Palavra Oral nasceu no protótipo /portal e
+    # nunca chegou aqui — ficou só numa cópia fora do git. Passa a viver neste
+    # ficheiro, atrás de `Config.PORTAL_ENABLED`, para a produção (que tem a
+    # flag a False) não mudar de comportamento.
+    if _restricao_oral_ativa():
+        contexto["exigem_conta"] = {
+            o["arquivo"] for o in obras
+            if leitura_service.obra_exige_conta(o["arquivo"])
+        }
+        contexto["motivo_oral"] = leitura_service.motivo_restricao_oral()
+    return render_template("leitura.html", **contexto)
 
 
 @leitura_bp.get("/leitura/<path:nome_arquivo>")
@@ -80,6 +93,22 @@ def leitura_texto_pagina(nome_arquivo):
     # Categoria de origem (para o botão "voltar" retornar à Palavra Oral ou
     # Escrita — 2026-09-09). Oral = Gokōwa/Gosuiji/Mioshie; senão Escrita.
     cat = "oral" if leitura_service._chave_colecao(nome_arquivo) else "escrita"
+
+    # 2026-09-30 (só com o Portal ativo): RESTRIÇÃO DA PALAVRA ORAL. Quando o
+    # leitor não tem conta e a obra é da Palavra Oral, a página é renderizada
+    # SEM o conteúdo — nenhum byte do texto vai para o HTML. Não é uma camada
+    # de CSS por cima do texto: o texto não é enviado.
+    #
+    # Fail-open em `pode_ler` (falha técnica libera) de propósito: perder
+    # leitor é pior do que servir a mais.
+    acesso_bloqueado = False
+    motivo_bloqueio = None
+    if _restricao_oral_ativa():
+        liberado, motivo = leitura_service.pode_ler(nome_arquivo, user)
+        if not liberado:
+            acesso_bloqueado = True
+            motivo_bloqueio = motivo
+
     return render_template(
         "leitura_texto.html",
         user=user,
@@ -88,8 +117,29 @@ def leitura_texto_pagina(nome_arquivo):
         titulo=titulo or nome_arquivo,
         data=data.isoformat() if data else None,
         cat_origem=cat,
-        conteudo=_conteudo_leitura_html(texto),
+        conteudo="" if acesso_bloqueado else _conteudo_leitura_html(texto),
+        acesso_bloqueado=acesso_bloqueado,
+        motivo_bloqueio=motivo_bloqueio,
     )
+
+
+def _restricao_oral_ativa():
+    """A restrição da Palavra Oral está ligada neste ambiente?
+
+    Vive atrás de `Config.PORTAL_ENABLED` porque as duas coisas nasceram
+    juntas no protótipo /portal: a página principal nova e a regra de que os
+    registos orais exigem conta. A produção tem a flag a False, logo a regra
+    não se aplica e o comportamento mantém-se igual ao que estava no ar.
+
+    Lida em tempo de pedido (e não no import) para um teste poder ligar e
+    desligar sem recriar a app.
+    """
+    try:
+        from .config import Config
+
+        return bool(getattr(Config, "PORTAL_ENABLED", False))
+    except Exception:  # pragma: no cover - defensivo
+        return False
 
 
 def _conteudo_leitura_html(texto):

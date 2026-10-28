@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Portal Goshinsho{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}?v=1">
+</head>
+<body class="portal-body" data-api-prefix="{{ request.script_root }}"
+      {% if user %}data-logged-in="true"{% endif %}>
+    {% set nav_ativo = nav_ativo | default('portal') %}
+    {% set auth_mode = 'link' %}
+    {% set mostrar_menu = false %}
+    {% include "_portal_header.html" %}
+
+    <main class="portal-shell">
+        {% if flash_msg %}
+            <p class="portal-aviso portal-aviso-erro">{{ flash_msg }}</p>
+        {% endif %}
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="portal-footer">
+        <a href="{{ url_for('web.termos_de_uso') }}">Termos de Uso</a> ·
+        <a href="{{ url_for('web.politica_privacidade') }}">Política de Privacidade</a> ·
+        <a href="{{ url_for('web.aviso_independencia') }}">Aviso de Independência</a> ·
+        <a href="{{ url_for('portal.aviso_artigos') }}">Aviso sobre os Artigos</a>
+        <p class="portal-footer-nota">
+            Respostas geradas por IA · Projeto independente, sem vínculo com nenhuma igreja.
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

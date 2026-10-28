@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fórum — Goshinsho</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=153">
+    {% if portal_ativo %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}?v=1">
+    {% endif %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}?v=4">
 </head>
 <body data-logged-in="{% if user %}true{% else %}false{% endif %}" data-api-prefix="{{ request.script_root }}">
@@ -25,6 +28,12 @@
     <div class="overlay" id="overlay"></div>
 
     <main class="app-shell">
+        {% if portal_ativo %}
+        {% set auth_mode = 'link' %}
+        {% set mostrar_menu = true %}
+        {% set nav_ativo = 'forum' %}
+        {% include "_portal_header.html" %}
+        {% else %}
         <header class="topbar">
             <div class="brand">
                 <button class="hamburger" id="menu-button" aria-label="Abrir menu">
@@ -49,6 +58,7 @@
                 {% endif %}
             </nav>
         </header>
+        {% endif %}
 
         {% if flash_msg %}
             <section class="flash error"><div class="flash error">{{ flash_msg }}</div></section>

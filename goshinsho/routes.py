@@ -317,10 +317,56 @@ def _require_developer_json():
 def _require_developer_page():
     user = current_user()
     if not _is_developer_user(user):
-        session["next_url"] = request.path
+        _guardar_next_url()
         flash("Área administrativa restrita.", "error")
         return None, redirect(url_for("web.app_view"))
     return user, None
+
+
+def _next_seguro(destino):
+    """Aceita apenas caminho interno — nunca URL absoluta nem `//host`.
+
+    Sem isto, `?next=https://site-malicioso/` transformaria a tela de login
+    (que é confiável) num trampolim para phishing.
+    """
+    if not destino or not destino.startswith("/"):
+        return False
+    # "//host" e "/\\host" são interpretados como URL absoluta pelo navegador.
+    return not destino.startswith("//") and not destino.startswith("/\\")
+
+
+def _guardar_next_url():
+    """Guarda na sessão o destino de retorno, com prefixo e query string.
+
+    `request.path` NÃO inclui o prefixo quando a app está montada sob um
+    caminho (o protótipo /portal) — ele fica em `request.script_root`. Montar o
+    destino só com `request.path` devolvia o visitante para a produção.
+    """
+    prefixo = (request.script_root or "").rstrip("/")
+    query = request.query_string.decode("utf-8", "replace")
+    destino = f"{prefixo}{request.path}"
+    if query:
+        destino = f"{destino}?{query}"
+    if _next_seguro(destino):
+        session["next_url"] = destino
+
+
+def _destino_pos_login():
+    """Destino interno seguro para depois do login/cadastro.
+
+    Lê `?next=` (validado como caminho interno), senão o `next_url` guardado na
+    sessão. **None** quando não há destino — quem chama usa o padrão da app.
+
+    2026-09-30: `next_url` passou a ser montado por `_guardar_next_url()`, que
+    preserva a query string e o prefixo do portal. Antes guardava só
+    `request.path`, o que descartava os dois — no protótipo /portal isso fazia
+    o login devolver o visitante para a PRODUÇÃO (o `request.path` não inclui o
+    prefixo, que vive em `SCRIPT_NAME`).
+    """
+    destino = (request.args.get("next") or request.form.get("next") or "").strip()
+    if not _next_seguro(destino):
+        destino = ""
+    return destino or session.pop("next_url", None)
 
 
 def _friendly_error(exc):
@@ -919,7 +965,7 @@ def doacao_sucesso():
 def doacao_gerenciar():
     user = current_user()
     if not user:
-        session["next_url"] = request.path
+        _guardar_next_url()
         flash("Faça login para gerenciar sua doação recorrente.", "error")
         return redirect(url_for(_default_app_endpoint()))
     return_url = url_for("web.doacao", _external=True)
@@ -939,13 +985,21 @@ def login():
     limited = _rate_limit_response("login", limit=20, window_seconds=3600, message="Muitas tentativas de login. Tente novamente mais tarde.")
     if limited:
         flash("Muitas tentativas de login. Tente novamente mais tarde.", "error")
-        return redirect(session.pop("next_url", url_for("web.app_view")))
+        return redirect(_destino_pos_login() or url_for("web.app_view"))
 
     # Preserva o contexto da Leitura Colaborativa (se o usuário veio de uma
     # sugestão) mesmo se o login falhar — para ele tentar de novo no painel.
     colab_arquivo = (request.form.get("colab_arquivo") or "").strip()
     if colab_arquivo and "/" not in colab_arquivo and "\\" not in colab_arquivo:
         session["colab_arquivo"] = colab_arquivo
+
+    # 2026-09-30: guarda o destino ANTES de autenticar. O `next` que o visitante
+    # recebeu da tela de bloqueio da Palavra Oral vem no formulário (campo
+    # oculto) — se o login falhar (senha errada), o destino é preservado e ele
+    # volta ao texto depois de acertar, sem perder o lugar.
+    destino = _destino_pos_login()
+    if destino:
+        session["next_url"] = destino
 
     email = request.form.get("email", "").strip().lower()
     password = request.form.get("password", "").strip()
@@ -972,7 +1026,8 @@ def login():
     # um link específico continua indo pra lá). Usa o e-mail do formulário
     # (não current_user()) pra não depender de timing de leitura da sessão
     # logo após login_user().
-    return redirect(session.pop("next_url", url_for(_default_app_endpoint({"email": email}))))
+    return redirect(_destino_pos_login()
+                    or url_for(_default_app_endpoint({"email": email})))
 
 
 
@@ -981,20 +1036,20 @@ def cadastro():
     limited = _rate_limit_response("cadastro", limit=8, window_seconds=3600, message="Muitas tentativas de cadastro. Tente novamente mais tarde.")
     if limited:
         flash("Muitas tentativas de cadastro. Tente novamente mais tarde.", "error")
-        return redirect(session.pop("next_url", url_for("web.app_view")))
+        return redirect(_destino_pos_login() or url_for("web.app_view"))
 
     if not is_human_confirmed(request.form):
         flash(HUMAN_CHECK_REQUIRED, "error")
-        return redirect(session.pop("next_url", url_for("web.app_view")))
+        return redirect(_destino_pos_login() or url_for("web.app_view"))
 
     if is_bot_submission(request.form):
         flash("Cadastro realizado com sucesso. Verifique seu e-mail.", "success")
-        return redirect(session.pop("next_url", url_for("web.app_view")))
+        return redirect(_destino_pos_login() or url_for("web.app_view"))
 
     email = request.form.get("email", "").strip().lower()
     if is_email_blocked(email):
         flash(SIGNUP_GENERIC_ERROR, "error")
-        return redirect(session.pop("next_url", url_for("web.app_view")))
+        return redirect(_destino_pos_login() or url_for("web.app_view"))
 
     password = request.form.get("password", "").strip()
     confirm_password = request.form.get("confirm_password", "").strip()
@@ -1028,7 +1083,7 @@ def cadastro():
     if colab_destino:
         destination = colab_destino
     else:
-        destination = session.pop("next_url", url_for("web.app_view"))
+        destination = _destino_pos_login() or url_for("web.app_view")
     if signup_succeeded:
         separator = "&" if "?" in destination else "?"
         destination = f"{destination}{separator}signup=1"

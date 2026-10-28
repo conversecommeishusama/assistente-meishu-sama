@@ -2334,6 +2334,67 @@ renderFavorites();
 initSignupShield();
 initAuthHashHandler();
 openRequestedPanelFromUrl();
+
+// 2026-09-29: pergunta vinda do Portal (`/portal`). A caixa "Faça aqui sua
+// pergunta ao Chat Goshinsho" leva para /app-pt?q=<pergunta>; aqui a pergunta
+// é colocada no composer. Sem login, a pergunta fica guardada e o painel de
+// cadastro já foi aberto por openRequestedPanelFromUrl — depois de entrar, ela
+// é recuperada por recuperarPerguntaPortalAposLogin().
+function retomarPerguntaDoPortal() {
+    let params;
+    try {
+        params = new URLSearchParams(window.location.search);
+    } catch {
+        return;
+    }
+    const pergunta = (params.get("q") || "").trim();
+    if (!pergunta || !messageInput) return;
+    messageInput.value = pergunta;
+    messageInput.style.height = "auto";
+    messageInput.focus();
+    if (!isLoggedIn) {
+        // Guarda a pergunta para não se perder no cadastro/login.
+        try {
+            sessionStorage.setItem("goshinsho-pergunta-portal", pergunta);
+        } catch {
+            /* sessionStorage indisponível — segue sem guardar */
+        }
+        openAuthPanel();
+        return;
+    }
+    // Logado: limpa a URL (evita reenviar ao recarregar) e já pergunta.
+    params.delete("q");
+    const consulta = params.toString();
+    window.history.replaceState(
+        {},
+        "",
+        window.location.pathname + (consulta ? `?${consulta}` : ""),
+    );
+    chatForm?.requestSubmit();
+}
+
+function recuperarPerguntaPortalAposLogin() {
+    if (!isLoggedIn || !messageInput || messageInput.value.trim()) return;
+    let guardada = null;
+    try {
+        guardada = (sessionStorage.getItem("goshinsho-pergunta-portal") || "").trim();
+    } catch {
+        return;
+    }
+    if (!guardada) return;
+    messageInput.value = guardada;
+    messageInput.style.height = "auto";
+    messageInput.focus();
+    try {
+        sessionStorage.removeItem("goshinsho-pergunta-portal");
+    } catch {
+        /* ignora */
+    }
+}
+
+retomarPerguntaDoPortal();
+recuperarPerguntaPortalAposLogin();
+
 if (quotaCard?.dataset.quota) {
     try {
         updateQuotaCard(JSON.parse(quotaCard.dataset.quota));

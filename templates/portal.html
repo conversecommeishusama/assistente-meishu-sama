@@ -1,0 +1,250 @@
+{% extends "portal_base.html" %}
+
+{% block titulo %}Goshinsho — Escritos Divinos{% endblock %}
+
+{% block conteudo %}
+{# Macro do formulário de artigo — declarada no topo para poder ser usada tanto
+   na seção de Artigos quanto na caixa de diálogo flutuante do cabeçalho. #}
+{% from "_portal_forms.html" import formulario_artigo %}
+
+<section class="portal-hero">
+    <h1 class="portal-hero-titulo">GOSHINSHO - Escritos Divinos</h1>
+    <p class="portal-hero-sub">
+        Este é um portal com o acervo de todos os ensinamentos publicados em vida por
+        Meishu-Sama traduzidos para o português. Possui um Fórum de estudos, espaço para
+        publicação de artigo de membros da comunidade e o assistente "Chat Goshinsho"
+        que responde tudo com base exclusivamente nos Escritos Divinos.
+    </p>
+</section>
+
+{# ---------------------------------------------------------------------
+   CAIXA DE PERGUNTA — encaminha a pergunta para o Chat Goshinsho.
+   --------------------------------------------------------------------- #}
+<section class="portal-pergunta" aria-labelledby="portal-pergunta-titulo">
+    <h2 class="portal-pergunta-titulo" id="portal-pergunta-titulo">
+        Faça aqui sua pergunta ao Chat Goshinsho
+    </h2>
+    <form class="portal-pergunta-form" id="portal-pergunta-form">
+        <label class="sr-only" for="portal-pergunta-campo">Sua pergunta</label>
+        <textarea id="portal-pergunta-campo" rows="2"
+                  placeholder="Escreva a sua pergunta sobre os ensinamentos de Meishu-Sama..."></textarea>
+        <button type="submit" class="portal-btn-primary" id="portal-pergunta-enviar">Perguntar</button>
+    </form>
+    <p class="portal-pergunta-nota">
+        A pergunta é enviada para o Chat, que responde sempre com base nos Escritos.
+        {% if not user %}É necessário ter uma conta gratuita para receber a resposta.{% endif %}
+    </p>
+</section>
+
+{# ---------------------------------------------------------------------
+   ACERVO — Palavra Escrita e Palavra Oral (3 coleções lado a lado).
+   --------------------------------------------------------------------- #}
+<section class="portal-secao" id="acervo" aria-labelledby="acervo-titulo">
+    <header class="portal-secao-cabecalho">
+        <h2 class="portal-secao-titulo" id="acervo-titulo">Acervo completo publicado por Meishu-Sama</h2>
+        <p class="portal-secao-desc">
+            {{ contagens.total }} textos ao todo:
+            {{ contagens.escrita }} da Palavra Escrita e {{ contagens.oral }} da Palavra Oral.
+        </p>
+    </header>
+
+    <div class="portal-acervo-bloco">
+        <h3 class="portal-acervo-subtitulo">Palavra Escrita</h3>
+        <p class="portal-acervo-desc">
+            Livros e periódicos publicados por Meishu-Sama, organizados por ordem de data.
+        </p>
+        <a class="portal-card portal-card-largo"
+           href="{{ url_for('leitura.leitura_pagina', cat='escrita') }}">
+            <span class="portal-card-icone">📖</span>
+            <span class="portal-card-texto">
+                <strong>Palavra Escrita</strong>
+                <small>{{ contagens.escrita }} textos · livros e periódicos</small>
+            </span>
+            <span class="portal-card-seta" aria-hidden="true">→</span>
+        </a>
+    </div>
+
+    <div class="portal-acervo-bloco">
+        <h3 class="portal-acervo-subtitulo">Palavra Oral</h3>
+        <p class="portal-acervo-desc">
+            Registros das conversas e ensinamentos transmitidos oralmente por Meishu-Sama.
+        </p>
+        <div class="portal-colecoes">
+            {% for c in contagens.colecoes %}
+                <a class="portal-card portal-card-colecao"
+                   href="{{ url_for('leitura.leitura_pagina', cat='oral', colecao=c.chave) }}">
+                    <span class="portal-card-icone">🗣️</span>
+                    <span class="portal-card-texto">
+                        <strong>{{ c.titulo }}</strong>
+                        <small class="portal-card-jp">{{ c.jp }}</small>
+                        <small>{{ c.quantidade }} textos</small>
+                    </span>
+                </a>
+            {% else %}
+                <p class="portal-vazio">Não foi possível carregar as coleções agora.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ---------------------------------------------------------------------
+   FÓRUM — 3 tópicos com atualização mais recente + criar assunto.
+   --------------------------------------------------------------------- #}
+<section class="portal-secao" id="forum" aria-labelledby="forum-titulo">
+    <header class="portal-secao-cabecalho">
+        <h2 class="portal-secao-titulo" id="forum-titulo">
+            <a class="portal-secao-link" href="{{ url_for('forum.forum_pagina') if config.FORUM_ENABLED else '#' }}">Fórum</a>
+        </h2>
+        <p class="portal-secao-desc">
+            Espaço da comunidade para discutir os ensinamentos. Cada mensagem passa por
+            moderação de conduta — divergir de ideias é bem-vindo.
+        </p>
+    </header>
+
+    {% if forum_indisponivel %}
+        <p class="portal-vazio">O Fórum será liberado em breve.</p>
+    {% else %}
+        <div class="portal-lista">
+            {% for t in topicos %}
+                <a class="portal-item" href="{{ url_for('forum.topico_pagina', topico_id=t.id) }}">
+                    <div class="portal-item-topo">
+                        <h3>{{ t.titulo }}</h3>
+                        <span class="portal-item-data">🕒 {{ t.ultima_atividade_fmt or t.created_at_fmt or '—' }}</span>
+                    </div>
+                    {% if t.descricao %}<p class="portal-item-resumo">{{ t.descricao }}</p>{% endif %}
+                    <span class="portal-item-meta">
+                        💬 {{ t.qtd_mensagens or 0 }} comentários
+                        {% if t.autor_nome %} · 👤 {{ t.autor_nome }}{% endif %}
+                    </span>
+                </a>
+            {% else %}
+                <p class="portal-vazio">
+                    Nenhum tópico aberto ainda.
+                    {% if user %}Seja o primeiro a abrir uma discussão!{% else %}Faça login para abrir o primeiro.{% endif %}
+                </p>
+            {% endfor %}
+        </div>
+
+        <div class="portal-caixa-rapida">
+            <h3 class="portal-caixa-titulo">Criar um assunto rapidamente</h3>
+            {% if user %}
+                <form class="portal-form-inline" id="portal-topico-form">
+                    <label class="portal-field">
+                        <span>Seu nome ou apelido <em>(seu e-mail nunca é exibido)</em></span>
+                        <input type="text" id="portal-topico-apelido" maxlength="60" required>
+                    </label>
+                    <label class="portal-field">
+                        <span>Assunto</span>
+                        <input type="text" id="portal-topico-titulo" maxlength="200" required>
+                    </label>
+                    <label class="portal-field">
+                        <span>Descrição <em>(opcional)</em></span>
+                        <textarea id="portal-topico-descricao" rows="3"></textarea>
+                    </label>
+                    <p class="portal-form-aviso" id="portal-topico-aviso" hidden></p>
+                    <div class="portal-form-actions">
+                        <button type="submit" class="portal-btn-primary" id="portal-topico-enviar">Abrir assunto</button>
+                        <a class="portal-btn-secondary" href="{{ url_for('forum.forum_novo_pagina') }}">Página completa</a>
+                    </div>
+                </form>
+            {% else %}
+                <p class="portal-caixa-login">
+                    <a href="{{ url_for('web.app_view_pt', panel='login') }}">Faça login</a>
+                    ou <a href="{{ url_for('web.app_view_pt', panel='register') }}">crie sua conta gratuita</a>
+                    para abrir um assunto.
+                </p>
+            {% endif %}
+        </div>
+    {% endif %}
+</section>
+
+{# ---------------------------------------------------------------------
+   ARTIGOS — mais recente, com último comentário e caixa de publicação.
+   --------------------------------------------------------------------- #}
+<section class="portal-secao" id="artigos" aria-labelledby="artigos-titulo">
+    <header class="portal-secao-cabecalho">
+        <h2 class="portal-secao-titulo" id="artigos-titulo">
+            <a class="portal-secao-link" href="{{ url_for('portal.artigos_lista') }}">Artigos</a>
+        </h2>
+        <p class="portal-secao-desc">
+            Textos escritos pelos leitores e estudiosos do Goshinsho.
+        </p>
+    </header>
+
+    <p class="portal-disclaimer" role="note">
+        <strong>Aviso importante:</strong> {{ aviso_artigos }}
+        <a href="{{ url_for('portal.aviso_artigos') }}">Ler o aviso completo</a>.
+    </p>
+
+    <div class="portal-artigos-destaque">
+        <div class="portal-artigos-coluna">
+            <h3 class="portal-artigos-rotulo">Artigo mais recente</h3>
+            {% if artigo_recente %}
+                <a class="portal-item" href="{{ url_for('portal.artigo_detalhe', artigo_id=artigo_recente.id) }}">
+                    <div class="portal-item-topo">
+                        <h3>{{ artigo_recente.titulo }}</h3>
+                        <span class="portal-item-data">📅 {{ artigo_recente.created_at_fmt }}</span>
+                    </div>
+                    {% if artigo_recente.subtitulo %}
+                        <p class="portal-item-sub">{{ artigo_recente.subtitulo }}</p>
+                    {% endif %}
+                    <p class="portal-item-resumo">{{ artigo_recente.resumo }}</p>
+                    <span class="portal-item-meta">
+                        👤 {{ artigo_recente.autor_nome }} · 💬 {{ artigo_recente.qtd_comentarios or 0 }} comentários
+                    </span>
+                </a>
+            {% else %}
+                <p class="portal-vazio">Nenhum artigo publicado ainda. Seja o primeiro a escrever!</p>
+            {% endif %}
+        </div>
+
+        <div class="portal-artigos-coluna">
+            <h3 class="portal-artigos-rotulo">Artigo com comentário mais recente</h3>
+            {% if artigo_comentado %}
+                <a class="portal-item" href="{{ url_for('portal.artigo_detalhe', artigo_id=artigo_comentado.id) }}">
+                    <div class="portal-item-topo">
+                        <h3>{{ artigo_comentado.titulo }}</h3>
+                        <span class="portal-item-data">💬 {{ artigo_comentado.ultimo_comentario_fmt }}</span>
+                    </div>
+                    {% if artigo_comentado.subtitulo %}
+                        <p class="portal-item-sub">{{ artigo_comentado.subtitulo }}</p>
+                    {% endif %}
+                    <p class="portal-item-resumo">{{ artigo_comentado.resumo }}</p>
+                    <span class="portal-item-meta">
+                        👤 {{ artigo_comentado.autor_nome }} · {{ artigo_comentado.qtd_comentarios or 0 }} comentários
+                    </span>
+                </a>
+            {% else %}
+                <p class="portal-vazio">
+                    Nenhum artigo recebeu comentários ainda.
+                    {% if artigo_recente %}Comente o <a href="{{ url_for('portal.artigo_detalhe', artigo_id=artigo_recente.id) }}">artigo mais recente</a>.{% endif %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="portal-caixa-rapida">
+        <h3 class="portal-caixa-titulo">Publicar um artigo</h3>
+        {% if user %}
+            <p class="portal-caixa-nota">
+                Para publicar, informe seu <strong>nome completo</strong> e <strong>CPF</strong> —
+                não são aceitos artigos anônimos ou apócrifos. O CPF é usado apenas para
+                identificar o autor: <strong>não é exibido no site</strong> e não é gravado em texto claro.
+            </p>
+            {% from "_portal_forms.html" import formulario_artigo %}
+            {{ formulario_artigo("portal-artigo", aviso_artigos, compacto=true) }}
+        {% else %}
+            <p class="portal-caixa-login">
+                <a href="{{ url_for('web.app_view_pt', panel='login') }}">Faça login</a>
+                ou <a href="{{ url_for('web.app_view_pt', panel='register') }}">crie sua conta gratuita</a>
+                para publicar um artigo.
+            </p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/portal.js') }}?v=1"></script>
+<script src="{{ url_for('static', filename='js/artigos.js') }}?v=1"></script>
+{% endblock %}

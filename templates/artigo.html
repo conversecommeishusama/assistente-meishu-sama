@@ -1,0 +1,84 @@
+{% extends "portal_base.html" %}
+{% set nav_ativo = 'artigos' %}
+
+{% block titulo %}{{ artigo.titulo }} — Artigos do Portal Goshinsho{% endblock %}
+
+{% block conteudo %}
+<article class="portal-artigo">
+    <a class="portal-voltar" href="{{ url_for('portal.artigos_lista') }}">← Todos os artigos</a>
+
+    <header class="portal-artigo-cabecalho">
+        <h1>{{ artigo.titulo }}</h1>
+        {% if artigo.subtitulo %}<p class="portal-artigo-sub">{{ artigo.subtitulo }}</p>{% endif %}
+        <p class="portal-artigo-meta">
+            👤 <strong>{{ artigo.autor_nome }}</strong>
+            · 📅 {{ artigo.created_at_fmt }}
+            · 💬 {{ comentarios | length }} comentários
+        </p>
+    </header>
+
+    <p class="portal-disclaimer" role="note">
+        <strong>Aviso:</strong> as ideias contidas neste artigo são de responsabilidade
+        exclusiva do autor e <strong>não refletem o pensamento do Portal Goshinsho</strong>.
+        <a href="{{ url_for('portal.aviso_artigos') }}">Ler o aviso completo</a>.
+    </p>
+
+    <div class="portal-artigo-corpo">
+        {% for paragrafo in artigo.conteudo.split('\n\n') %}
+            {% if paragrafo.strip() %}
+                <p>{{ paragrafo.strip() }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</article>
+
+<section class="portal-secao portal-comentarios" aria-labelledby="comentarios-titulo">
+    <h2 class="portal-secao-titulo" id="comentarios-titulo">
+        Comentários ({{ comentarios | length }})
+    </h2>
+
+    <div class="portal-lista" id="portal-comentarios-lista">
+        {% for c in comentarios %}
+            <div class="portal-comentario">
+                <div class="portal-item-topo">
+                    <strong>{{ c.autor_nome }}</strong>
+                    <span class="portal-item-data">{{ c.created_at_fmt }}</span>
+                </div>
+                <p class="portal-comentario-texto">{{ c.conteudo }}</p>
+            </div>
+        {% else %}
+            <p class="portal-vazio" id="portal-comentarios-vazio">
+                Nenhum comentário ainda. Seja o primeiro a comentar.
+            </p>
+        {% endfor %}
+    </div>
+
+    {% if user %}
+        <form class="portal-form" id="portal-comentario-form"
+              data-artigo-id="{{ artigo.id }}">
+            <label class="portal-field">
+                <span>Seu nome ou apelido <em>(seu e-mail nunca é exibido)</em></span>
+                <input type="text" id="portal-comentario-apelido" maxlength="60" required>
+            </label>
+            <label class="portal-field">
+                <span>Comentário</span>
+                <textarea id="portal-comentario-conteudo" rows="5" maxlength="5000" required></textarea>
+            </label>
+            <p class="portal-form-aviso" id="portal-comentario-aviso" hidden></p>
+            <div class="portal-form-actions">
+                <button type="submit" class="portal-btn-primary" id="portal-comentario-enviar">Enviar comentário</button>
+            </div>
+        </form>
+    {% else %}
+        <p class="portal-caixa-login">
+            <a href="{{ url_for('web.app_view_pt', panel='login') }}">Faça login</a>
+            ou <a href="{{ url_for('web.app_view_pt', panel='register') }}">crie sua conta gratuita</a>
+            para comentar.
+        </p>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/artigos.js') }}?v=1"></script>
+{% endblock %}

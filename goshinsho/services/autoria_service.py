@@ -80,6 +80,14 @@ OBRAS_DE_OUTROS: set[str] = {
     # discípulo". Narrar a transcrição na voz dele faria passar por fala
     # directa o que é apontamento de terceiro.
     "19350000 - Curso Kannon (1~7).txt",
+
+    # Dossiê da difusão (2026): estudo montado por nós a partir de documentos da
+    # época, com citações dele em japonês e em tradução. As citações são as
+    # palavras dele, mas o corpo do volume — a análise, as transições, as
+    # conclusões — não é. Sem esta linha o volume cairia no prior MEISHU (o
+    # serviço devolve "meishu" a tudo o que não está declarado) e a análise
+    # seria narrada na voz clonada, como se ele estivesse a explicar-se.
+    "20261020 - A difusão na época de Meishu-Sama.txt",
 }
 
 # Sobreposições explícitas por artigo: {ficheiro: {índice do artigo: autor}}.

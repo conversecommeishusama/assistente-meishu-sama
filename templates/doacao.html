@@ -8,6 +8,12 @@
 </head>
 <body data-doacao-i18n="{{ doacao_i18n | tojson | forceescape }}">
     <main class="app-shell">
+        {% if portal_ativo %}
+        {% set auth_mode = 'link' %}
+        {% set mostrar_menu = false %}
+        {% set nav_ativo = '' %}
+        {% include "_portal_header.html" %}
+        {% else %}
         <header class="topbar">
             <a class="brand brand-link" href="{{ url_for('web.app_view_pt') }}">
                 <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
@@ -19,6 +25,7 @@
                 <a class="nav-link" href="{{ url_for('web.app_view_pt') }}" data-i18n="backToChat">Voltar ao chat</a>
             </nav>
         </header>
+        {% endif %}
 
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}

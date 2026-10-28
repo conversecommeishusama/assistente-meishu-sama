@@ -54,6 +54,12 @@
     <div class="overlay" id="overlay"></div>
 
     <main class="app-shell {% if not messages %}initial-view{% endif %}">
+        {% if portal_ativo %}
+        {% set auth_mode = 'panel' %}
+        {% set mostrar_menu = true %}
+        {% set nav_ativo = 'chat' %}
+        {% include "_portal_header.html" %}
+        {% else %}
         <header class="topbar">
             <div class="brand">
                 <button class="hamburger" id="menu-button" aria-label="Abrir histórico" data-i18n-aria="historyAria">
@@ -83,6 +89,7 @@
                 <button type="button" data-panel="contact-panel" data-i18n="contact">Contato</button>
             </nav>
         </header>
+        {% endif %}
 
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -107,7 +114,17 @@
                     <input name="remember" type="checkbox">
                     <span data-i18n="rememberMe">Mantenha-me conectado</span>
                 </label>
+                {# 2026-09-30: destino de retorno (ex.: o texto da Palavra Oral que a
+                   pessoa clicou). Sem ele, o login devolvia ao início do app e o
+                   leitor perdia o lugar. #}
+                <input type="hidden" name="next" value="{{ request.args.get('next', '') | e }}">
                 <button type="submit" data-i18n="signIn">Entrar</button>
+                {# 2026-09-30: sem este atalho, quem chega pela tela de bloqueio da
+                   Palavra Oral e ainda não tem conta ficava preso no painel de
+                   login (os dois painéis não se falavam). #}
+                <button type="button" class="text-button" data-panel="register-panel">
+                    Não tenho conta — criar cadastro gratuito
+                </button>
                 <button type="button" class="text-button" data-panel="forgot-password-panel" data-i18n="forgotPassword">Esqueci minha senha</button>
                 <button type="button" class="text-button" data-panel="resend-confirm-panel">Reenviar confirmação de e-mail</button>
             </form>
@@ -136,7 +153,14 @@
                     <input name="human_check" type="checkbox" value="1" required>
                     <span data-i18n="humanCheck">Sou humano</span>
                 </label>
+                {# 2026-09-30: destino de retorno (ex.: texto da Palavra Oral). #}
+                <input type="hidden" name="next" value="{{ request.args.get('next', '') | e }}">
                 <button type="submit" data-i18n="createAccount">Cadastrar</button>
+                {# 2026-09-30: quem já tem conta precisa voltar ao login sem
+                   depender dos botões do cabeçalho. #}
+                <button type="button" class="text-button" data-panel="login-panel">
+                    Já tenho conta — entrar
+                </button>
                 <p class="panel-note">
                     Após o cadastro, confirme seu e-mail pelo link enviado (verifique também a pasta de spam).
                 </p>
@@ -459,7 +483,7 @@
     <script src="{{ url_for('static', filename='js/cookie_consent.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/prefix_fetch.js') }}?v=1"></script>
     <script src="{{ url_for('static', filename='js/speech.js') }}?v=25"></script>
-    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=6"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=162"></script>
+    <script src="{{ url_for('static', filename='js/leitura_tts.js') }}?v=7"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=163"></script>
 </body>
 </html>

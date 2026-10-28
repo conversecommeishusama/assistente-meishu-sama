@@ -1,0 +1,65 @@
+{# ---------------------------------------------------------------------------
+   Macros de formulário do Portal Goshinsho.
+
+   `formulario_artigo` é usado em dois lugares — a caixa rápida da página
+   principal e a página dedicada /portal/artigos/novo — para que as duas não
+   divergam em silêncio (mesmos campos, mesmas validações, mesmo texto de
+   autorização).
+--------------------------------------------------------------------------- #}
+{% macro formulario_artigo(id_prefix, texto_autorizacao, compacto=false) %}
+<form class="portal-form artigo-form" id="{{ id_prefix }}-form" novalidate>
+    <div class="portal-form-row">
+        <label class="portal-field">
+            <span>Nome completo <em>(obrigatório — não são aceitos artigos anônimos)</em></span>
+            <input type="text" id="{{ id_prefix }}-nome" name="autor_nome"
+                   placeholder="Ex.: João da Silva Santos" autocomplete="name" required>
+        </label>
+        <label class="portal-field">
+            <span>CPF <em>(só para identificar o autor; não é exibido no site)</em></span>
+            <input type="text" id="{{ id_prefix }}-cpf" name="cpf"
+                   placeholder="000.000.000-00" inputmode="numeric" autocomplete="off"
+                   maxlength="14" required>
+        </label>
+    </div>
+
+    <label class="portal-field">
+        <span>Título do artigo</span>
+        <input type="text" id="{{ id_prefix }}-titulo" name="titulo"
+               placeholder="Um título claro para o seu artigo" maxlength="200" required>
+    </label>
+
+    {% if not compacto %}
+        <label class="portal-field">
+            <span>Subtítulo <em>(opcional)</em></span>
+            <input type="text" id="{{ id_prefix }}-subtitulo" name="subtitulo"
+                   placeholder="Uma linha de apoio ao título" maxlength="240">
+        </label>
+    {% endif %}
+
+    <label class="portal-field">
+        <span>Texto do artigo</span>
+        <textarea id="{{ id_prefix }}-conteudo" name="conteudo" rows="{{ 6 if compacto else 16 }}"
+                  placeholder="Escreva aqui o seu artigo. Separe os parágrafos com uma linha em branco."
+                  required></textarea>
+    </label>
+
+    <label class="portal-check">
+        <input type="checkbox" id="{{ id_prefix }}-autorizacao" name="autorizacao">
+        <span><strong>Autorizo a publicação deste artigo no Portal Goshinsho.</strong>
+            {{ texto_autorizacao }}</span>
+    </label>
+
+    <p class="portal-form-aviso" id="{{ id_prefix }}-aviso" hidden></p>
+
+    <div class="portal-form-actions">
+        <button type="submit" class="portal-btn-primary" id="{{ id_prefix }}-enviar">
+            Publicar artigo
+        </button>
+        {% if compacto %}
+            <a class="portal-btn-secondary" href="{{ url_for('portal.artigos_lista') }}">Ver todos os artigos</a>
+        {% else %}
+            <a class="portal-btn-secondary" href="{{ url_for('portal.artigos_lista') }}">Cancelar</a>
+        {% endif %}
+    </div>
+</form>
+{% endmacro %}

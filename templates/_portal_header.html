@@ -1,0 +1,89 @@
+{# ---------------------------------------------------------------------------
+   Cabeçalho do Portal Goshinsho (novo modelo) — compartilhado por todas as
+   páginas do protótipo /portal.
+
+   Uso (antes do include, na página):
+       set auth_mode = 'panel'  -> 'panel' no chat, 'link' nas demais páginas
+
+   Variáveis opcionais:
+       auth_mode      — 'panel' (abre os painéis flutuantes do app.html) ou
+                        'link' (leva para a página do chat). Padrão: 'link'.
+       mostrar_menu   — true para exibir o botão hambúrguer do menu lateral
+                        (necessário nas páginas que têm sidebar).
+       nav_ativo      — 'oral' | 'escrita' | 'chat' | 'forum' | 'artigos' |
+                        'portal' — marca o item atual no menu.
+
+   ATENÇÃO: não escrever marcadores de comentário Jinja nem de expressão
+   dentro deste bloco — eles fecham o comentário antes do fim e o que sobra
+   passa a ser executado (foi a causa de um RecursionError neste arquivo).
+--------------------------------------------------------------------------- #}
+{% set auth_mode = auth_mode | default('link') %}
+{% set mostrar_menu = mostrar_menu | default(false) %}
+{% set nav_ativo = nav_ativo | default('portal') %}
+{% set chat_url = url_for('web.app_view_pt') %}
+
+<header class="topbar portal-topbar">
+    <div class="brand">
+        {% if mostrar_menu %}
+            <button class="hamburger" id="menu-button" aria-label="Abrir menu" data-i18n-aria="historyAria">
+                <span></span><span></span><span></span>
+            </button>
+        {% endif %}
+        <a class="brand-link brand-home" href="{{ url_for('portal.portal_home') if portal_enabled else chat_url }}"
+           aria-label="Goshinsho — Escritos Divinos">
+            <img src="{{ url_for('web.logo', v=103) }}" alt="Goshinsho">
+            <span class="brand-text">
+                <strong>Goshinsho</strong>
+                <small>Escritos Divinos</small>
+            </span>
+        </a>
+    </div>
+
+    <nav class="portal-nav" aria-label="Navegação principal">
+        <a class="portal-nav-link {% if nav_ativo == 'oral' %}active{% endif %}"
+           href="{{ url_for('leitura.leitura_pagina', cat='oral') }}">Palavras Orais</a>
+        <a class="portal-nav-link {% if nav_ativo == 'escrita' %}active{% endif %}"
+           href="{{ url_for('leitura.leitura_pagina', cat='escrita') }}">Palavras Escritas</a>
+        <a class="portal-nav-link {% if nav_ativo == 'chat' %}active{% endif %}"
+           href="{{ chat_url }}">Chat Goshinsho</a>
+        {% if config.FORUM_ENABLED %}
+            <a class="portal-nav-link {% if nav_ativo == 'forum' %}active{% endif %}"
+               href="{{ url_for('forum.forum_pagina') }}">Fórum</a>
+        {% else %}
+            <span class="portal-nav-link disabled" title="O Fórum será liberado em breve">Fórum</span>
+        {% endif %}
+        {% if portal_enabled %}
+            <a class="portal-nav-link {% if nav_ativo == 'artigos' %}active{% endif %}"
+               href="{{ url_for('portal.artigos_lista') }}">Artigos</a>
+        {% else %}
+            <span class="portal-nav-link disabled" title="Os Artigos estão no Portal Goshinsho">Artigos</span>
+        {% endif %}
+    </nav>
+
+    <nav class="top-actions">
+        {% if mostrar_menu %}{% include "_developer_nav.html" %}{% endif %}
+        {% if user %}
+            <span class="user-pill">{{ user.email }}</span>
+            <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+            <form action="{{ url_for('web.logout') }}" method="post">
+                <button type="submit" data-i18n="logout">Sair</button>
+            </form>
+        {% else %}
+            {% if auth_mode == 'panel' %}
+                <button type="button" data-panel="login-panel" data-i18n="login">Login</button>
+                <button type="button" data-panel="register-panel" data-i18n="register">Cadastro</button>
+            {% else %}
+                {# 2026-09-30: eram <button> com onclick inline, e o onclick NÃO
+                   funcionava: a Content-Security-Policy do app é
+                   `script-src 'self'`, que bloqueia manipuladores inline. Agora
+                   são links normais — funcionam com e sem JavaScript e não
+                   dependem de CSP. #}
+                <a class="nav-link portal-auth-link"
+                   href="{{ chat_url }}?panel=login" data-i18n="login">Login</a>
+                <a class="nav-link portal-auth-link"
+                   href="{{ chat_url }}?panel=register" data-i18n="register">Cadastro</a>
+            {% endif %}
+            <a class="nav-link subscribe-link" href="{{ url_for('web.doacao') }}" data-i18n="subscribe">Apoiar ❤</a>
+        {% endif %}
+    </nav>
+</header>

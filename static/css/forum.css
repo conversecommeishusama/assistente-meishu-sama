@@ -1026,3 +1026,77 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   Restrição da Palavra Oral (2026-09-30)
+   A Palavra Escrita continua aberta; a Palavra Oral exige conta, por respeito
+   à orientação de Meishu-Sama registrada ao final dos textos do Gokōwa-roku.
+   --------------------------------------------------------------------------- */
+
+/* Selo de cadeado nos cartões da lista de obras */
+.leitura-obra-bloqueada .leitura-obra-titulo::after {
+    content: "🔒";
+    font-size: 0.78rem;
+    margin-left: 6px;
+    opacity: 0.85;
+}
+
+/* Tela de bloqueio do texto (o conteúdo nem chega ao navegador) */
+.leitura-bloqueio {
+    background: #fffdf6;
+    border: 1px solid #e8dcc0;
+    border-radius: 16px;
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 30px 26px;
+    text-align: center;
+}
+
+.leitura-bloqueio-cadeado {
+    font-size: 2.4rem;
+    line-height: 1;
+    margin: 0 0 10px;
+}
+
+.leitura-bloqueio-titulo {
+    color: #8b6914;
+    font-size: 1.25rem;
+    margin: 0 0 14px;
+}
+
+.leitura-bloqueio-texto {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+.leitura-bloqueio-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0 16px;
+}
+
+.leitura-bloqueio-nota {
+    border-top: 1px solid #e8dcc0;
+    font-size: 0.86rem;
+    margin: 16px 0 0;
+    padding-top: 14px;
+}
+
+.leitura-bloqueio-nota a {
+    color: #8b6914;
+}
+
+@media (max-width: 480px) {
+    .leitura-bloqueio {
+        padding: 22px 16px;
+    }
+
+    .leitura-bloqueio-acoes a {
+        width: 100%;
+    }
+}

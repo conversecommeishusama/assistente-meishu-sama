@@ -21,6 +21,16 @@
         estrutura = null;
     }
 
+    // Obras que exigem conta (Palavra Oral) — enviadas pelo servidor.
+    var exigemConta = {};
+    try {
+        (JSON.parse(document.body.getAttribute("data-exigem-conta") || "[]") || []).forEach(function (nome) {
+            exigemConta[nome] = true;
+        });
+    } catch (e) {
+        exigemConta = {};
+    }
+
     /* ---------- Progresso (localStorage) ---------- */
 
     function carregarProgresso() {
@@ -109,6 +119,13 @@
             a.className = "leitura-obra-card";
             a.href = API_PREFIX + "/forum/leitura/" + encodeURIComponent(obra.arquivo);
             a.setAttribute("data-arquivo", obra.arquivo);
+
+            // 2026-09-30: marca as obras que exigem conta (Palavra Oral) com um
+            // cadeado, para o visitante entender antes de clicar. O conjunto
+            // vem do servidor em data-exigem-conta (ver leitura_routes.py).
+            if (exigemConta[obra.arquivo]) {
+                a.classList.add("leitura-obra-bloqueada");
+            }
 
             var ano = document.createElement("span");
             ano.className = "leitura-obra-ano";
@@ -274,16 +291,31 @@
         } catch (e) { /* URLSearchParams indisponível — ignora */ }
     }
 
+    // 2026-09-29: atalho vindo do Portal (/portal) — ?cat=oral&colecao=gokowa
+    // abre a Leitura já na lista de livros da coleção escolhida, sem o leitor
+    // ter de navegar duas telas. Reaproveita o mesmo clique do card da coleção.
+    function abrirColecaoDaUrl() {
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var colecao = params.get("colecao");
+            if (!colecao) return;
+            var card = document.querySelector('.leitura-colecao-card[data-colecao="' + colecao + '"]');
+            if (card) card.click();
+        } catch (e) { /* ignora */ }
+    }
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", function () {
             initNavegacao();
             initProgressoTexto();
             abrirCategoriaDaUrl();
+            abrirColecaoDaUrl();
         });
     } else {
         initNavegacao();
         initProgressoTexto();
         abrirCategoriaDaUrl();
+        abrirColecaoDaUrl();
     }
 
     // Expõe funções úteis para o leitura_texto.html (salvar progresso).
