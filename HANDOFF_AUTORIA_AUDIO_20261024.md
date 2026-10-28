@@ -561,3 +561,68 @@ na voz dele.
 Não é decisão minha: 2.299 trechos na voz errada é caro para adivinhar. Falta
 também acrescentá-la ao `escopo_corpus.json` (hoje não está declarada em canal
 nenhum).
+
+---
+
+## 28/10/2026 (fim do dia) — o acervo fechou
+
+### Decisão do usuário: «A Chave da Difusão» leva a voz dele
+
+As duas obras estavam de fora desde 24/10 à espera de decisão. O usuário
+decidiu em 28/10: **voz dele (Fish)**, com uma condição explícita —
+
+> «Só fique atento que é uma coletânea, então possui palavras escritas e
+> palavras orais; nas palavras orais precisa seguir o padrão interlocutor voz
+> normal, Meishu-Sama voz de Meishu-Sama.»
+
+Verificado antes de gerar (não assumido): o padrão **já funcionava**, sem uma
+única exceção.
+
+| | `Interlocutor:` → edge | `Meishu-Sama:` → fish | erros |
+|---|---|---|---|
+| Volume I | 111 | 117 | **0** |
+| Volume II | 296 | 309 | **0** |
+
+O que confundiu o diagnóstico anterior foi contar por autoria da OBRA em vez
+de por trecho: a obra é dele, mas 454 trechos dentro dela são fala de
+terceiro. `montar_lista_audio.py` fazia exactamente essa confusão e anunciava
+«3.953 trechos dele»; passou a contar por `provedor_canonico` e a anunciar
+«3.509 dele + 443 narrador».
+
+Declaradas em `escopo_corpus.json` como **só Leitura** (fora do corpo de
+pesquisa do Chat): são compilações de 1954 organizadas por Nakamura Ichirō,
+não escritos dele — o mesmo critério do dossiê de 2026.
+
+### Cobertura
+
+| | antes | agora |
+|---|---|---|
+| Orais | 93,58 % | **100 %** (21.986 trechos, 0 em falta) |
+| Global (140 obras) | 93,58 % | 100 % fora as duas compilações, que estavam a ser geradas |
+
+### Três defeitos encontrados pelo caminho
+
+**1. Falha de rede custava um trecho.** 3 trechos da primeira passagem
+completa ficaram sem áudio; 2 eram `edge-tts timeout após 120s` num trecho de
+32 caracteres. Nenhum era recusa do provedor. `TENTATIVAS_EDGE=3` com espera
+crescente nos ramos edge e Fish; o ramo XTTS continua a não repetir timeout
+(repetir o que o daemon não serviu em 600 s só ocupa a fila).
+Commit `9ad7a6b2`.
+
+**2. A pausa dependia da união das rotas.** `**Nota (rattail):**` sobrevive
+ao `_preparar_texto_edge` mas o `_preparar_texto_xtts` (rota Fish) devolve
+`**`. `_trecho_sem_fala` sem provedor dizia «tem fala»; o serviço entregava
+uma pausa. Ficava incoerente: `sintetizar()` criava o mp3 da pausa e
+`caminho_em_cache()` devolvia `None`, porque só procurava a chave do provedor
+— 2 trechos «em falta» para sempre (Tijotengoku 3403, Eiko 5980).
+`_trecho_sem_fala` passa a aceitar `provedor`; `_caminho_pausa` consulta sem
+gerar (corre no pedido HTTP, não pode chamar ffmpeg). Commit `ddcdcba6`.
+
+**3. O portal serve código de 30/09 — e a voz dele não toca lá.** Ver
+`HANDOFF_PORTAL_VS_PRODUCAO_20261028.md`. Público não afectado (o
+`goshinsho.com.br` aponta para o 8000, onde está correcto), mas é o próximo
+trabalho.
+
+### Testes
+
+`344 passed, 1 skipped, 1 xfailed, 251 subtests` — suite completa, 4m38s.
