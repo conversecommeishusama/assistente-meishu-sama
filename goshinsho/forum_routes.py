@@ -163,8 +163,16 @@ def topico_pagina(topico_id):
     user = current_user()
     topico = forum_service.get_topico(topico_id)
     if not topico:
+        # 2026-10-28: este ramo renderiza `forum.html` — o template da LISTA —
+        # mas passava só `topicos` e `flash_msg`. O template usa
+        # `total_paginas`, `pagina`, `total` e `busca` na paginação, e um
+        # `UndefinedError` virava **HTTP 500**: quem clicasse num tópico
+        # apagado (ou digitasse o URL à mão) recebia uma página de erro em vez
+        # de "não encontrado". Ficou invisível porque o Fórum está desligado na
+        # produção (FORUM_ENABLED=False) e só o protótipo /portal o serve.
         return render_template(
             "forum.html", user=user, topicos=[], active_tab="forum",
+            total=0, pagina=1, total_paginas=1, busca="",
             flash_msg="Este tópico não foi encontrado ou foi fechado.",
         )
     mensagens = forum_service.list_mensagens_aprovadas(topico_id)

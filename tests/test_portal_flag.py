@@ -28,7 +28,7 @@ from goshinsho.config import Config
 
 
 @contextlib.contextmanager
-def _app_com_portal(ligado: bool):
+def _app_com_portal(ligado: bool, forum=None):
     """App com a flag no estado pedido, ATÉ AO FIM DO PEDIDO.
 
     Tem de ser um context manager e não uma função que devolve a app: a
@@ -36,11 +36,23 @@ def _app_com_portal(ligado: bool):
     (ver `leitura_routes._restricao_oral_ativa`). Se o patch saísse mal a app
     fosse criada, o `test_client()` já corria com a flag a False e o teste
     media o vazio — foi exactamente o que aconteceu à primeira.
+
+    `forum` liga/desliga `Config.FORUM_ENABLED`, que decide se o blueprint do
+    Fórum é registado (na produção está False). Sem o passar, o endpoint nem
+    existe e o pedido dá 404.
     """
-    with mock.patch.object(Config, "PORTAL_ENABLED", ligado):
+    patches = [mock.patch.object(Config, "PORTAL_ENABLED", ligado)]
+    if forum is not None:
+        patches.append(mock.patch.object(Config, "FORUM_ENABLED", forum))
+    for p in patches:
+        p.start()
+    try:
         from goshinsho import create_app
 
         yield create_app(include_web=True)
+    finally:
+        for p in reversed(patches):
+            p.stop()
 
 
 def _rotas(app, caminho):
@@ -262,6 +274,38 @@ class CacheDosTopicosTests(unittest.TestCase):
                                side_effect=RuntimeError("banco em baixo")):
             topicos, total = self.mod._topicos_recentes()
         self.assertEqual((topicos, total), ([], 0))
+
+
+class TopicoInexistenteTests(unittest.TestCase):
+    """Um tópico apagado não pode dar HTTP 500.
+
+    ⚠️ BUG CORRIGIDO (2026-10-28)
+    `forum_routes.topico_pagina`, quando o tópico não existe, renderiza
+    `forum.html` — que é o template da LISTA — e passava só `topicos` e
+    `flash_msg`. O template usa `total_paginas`, `pagina`, `total` e `busca` na
+    paginação, e o `UndefinedError` virava **HTTP 500**: quem clicasse num
+    tópico apagado, ou escrevesse o URL à mão, recebia uma página de erro em
+    vez de "não encontrado".
+
+    Ficou invisível durante semanas porque o Fórum está desligado na produção
+    (`FORUM_ENABLED=False`) — só o protótipo /portal o serve, e ninguém tinha
+    testado esse caminho.
+    """
+
+    def test_topico_inexistente_devolve_a_pagina_do_forum(self):
+        with _app_com_portal(True, forum=True) as app:
+            resposta = app.test_client().get("/forum/nao-existe-este-topico")
+        self.assertEqual(resposta.status_code, 200)
+        corpo = resposta.get_data(as_text=True)
+        self.assertIn("não foi encontrado", corpo)
+
+    def test_paginacao_nao_quebra_com_lista_vazia(self):
+        with _app_com_portal(True, forum=True) as app:
+            corpo = app.test_client().get(
+                "/forum/outro-topico-inexistente").get_data(as_text=True)
+        # Com total_paginas=1 a barra de paginação não aparece, e é isso que
+        # impede o UndefinedError.
+        self.assertNotIn("forum-paginacao", corpo)
 
 
 class NavegacaoDeRetornoAposLoginTests(unittest.TestCase):
