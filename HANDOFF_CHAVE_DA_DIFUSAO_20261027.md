@@ -90,6 +90,7 @@ Formas fixas:
 | 御教え集 / 御垂示録 / 御光話録 | Mioshie-shū / Gosuiji-roku / Gokōwa-roku |
 | 栄光 / 地上天国 / 救世 | Eikō / Tenjō Tengoku / Kyusei |
 | 信仰雑話 / 天国の福音 | Conversas sobre a Fé / O Evangelho do Paraíso |
+| 教えの光 / 妙智之光 / 神智の光 | Luz dos Ensinamentos / Luz da Maravilhosa Sabedoria / Luz da Sabedoria Divina |
 
 Os **18 títulos de artigo** que aparecem nas fichas (`之も慢心`,
 `神仙郷完成兼美術館完成記念祝賀式典御講話1`…) são traduzidos **uma única vez** e
@@ -98,7 +99,26 @@ guardados em `reports/traducao_dendo/titulos_citacao.json`.
 Casos especiais tratados: `発行年月日不明、推定昭和26年頃` → «data de publicação
 desconhecida, provavelmente por volta de 1951»; `特輯号` → «número especial»;
 `P.46` → «p. 46»; `（地上天国13号）` → «(Tenjō Tengoku nº 13)».
+### Séries do Tenjō Tengoku — «Luz da …» (28/10/2026)
 
+Decisão do usuário: os títulos de série **não** vão transliterados; usam a forma
+consagrada do acervo, com «Luz da …»:
+
+| japonês | forma | onde foi confirmada |
+|---|---|---|
+| 妙智之光 | **Luz da Maravilhosa Sabedoria** | `19510520 - Luz dos Ensinamentos.txt` (3×), `Tijotengoku.txt` |
+| 神智の光 | **Luz da Sabedoria Divina** | `Tijotengoku.txt` nº 18 e 19; coerente com `神智` = Sabedoria Divina |
+| 教えの光 | **Luz dos Ensinamentos** | já no glossário |
+
+As duas primeiras entraram no `glossario_traducao.json` (852 → **854** entradas),
+com nota a proibir a transliteração (`Myōchi no Hikari`, `Shinchi no Hikari`).
+Backup: `glossario_traducao.json.bak_luz_da_sabedoria_20261028T181657Z`.
+
+⚠️ `nome_obra()` em `citacoes_dendo.py` consulta a **tabela local primeiro** e o
+glossário depois. Motivo real: 『地上天国』 como **periódico** é «Tenjō Tengoku»
+(§2.7), mas o glossário traz `地上天国` = «Paraíso Terrestre (Paraíso)» — com o
+glossário em primeiro lugar, a ficha de fonte passava a dizer «Paraíso Terrestre
+nº 36». Detetado no dry-run e corrigido antes de publicar.
 ---
 
 ## 5. Tradução
@@ -238,7 +258,7 @@ as duas com `tipo: "livro"` (Palavra Escrita) e `pode_ler()` → `(True, None)`
    `reports/traducao_dendo/revisao/dendo{1,2}_R5.json` — não bloqueiam a leitura.
 2. O ano de publicação (1954) é o do acervo («1954？」); se aparecer documento com
    mês exacto, renomear os cinco ficheiros e o cabeçalho.
-3. `妙智之光` e `神智の光` não têm entrada no glossário: ficaram transliterados
-   (`Myōchi no Hikari`, `Shinchi no Hikari`). Confirmar se há forma consagrada na IM.
-4. Rebentar o índice do Chat (`build_clean_large_indexes.py --install`) se estas
-   obras também devem entrar no corpus de pesquisa.
+3. ~~妙智之光 / 神智の光 sem entrada~~ — **resolvido em 28/10/2026** (§4).
+4. **Rebuild do índice do Chat: não é necessário** (decisão do usuário,
+   28/10/2026). Todo o conteúdo destes dois volumes já está presente nas outras
+   publicações do acervo, por isso a pesquisa não perde nada sem o rebuild.

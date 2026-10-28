@@ -29,8 +29,11 @@ recolhidos e traduzidos UMA vez pela API (cache em
 """
 from __future__ import annotations
 
+import json
 import re
 import unicodedata
+from functools import lru_cache
+from pathlib import Path
 
 MESES = ["", "janeiro", "fevereiro", "março", "abril", "maio", "junho",
          "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -60,12 +63,45 @@ OBRAS = {
     "救世": "Kyusei",
     "信仰雑話": "Conversas sobre a Fé",
     "天国の福音": "O Evangelho do Paraíso",
-    "妙智之光": "Myōchi no Hikari",
+    "妙智之光": "Luz da Maravilhosa Sabedoria",
     "教えの光": "Luz dos Ensinamentos",
-    "神智の光": "Shinchi no Hikari",
+    "神智の光": "Luz da Sabedoria Divina",
 }
 
 _FW = str.maketrans("０１２３４５６７８９", "0123456789")
+
+
+def nome_obra(jp: str, padrao: str | None = None) -> str:
+    """Nome em PT de uma obra/periódico, com o glossário como autoridade.
+
+    Precedência: tabela local (`OBRAS`) → glossário → o próprio japonês.
+
+    A tabela local vem PRIMEIRO de propósito: em ficha de fonte o nome japonês
+    pode ser homógrafo de um conceito doutrinário, e aí vale a transliteração
+    do periódico (§2.7 do protocolo), não a forma do glossário. Exemplo real:
+    『地上天国』 como periódico é «Tenjō Tengoku»; o glossário traz
+    地上天国 = «Paraíso Terrestre (Paraíso)», que seria um erro na citação.
+
+    O glossário entra como segunda fonte para os títulos de obra que ainda não
+    estejam na tabela (a nota explicativa depois do travessão é descartada).
+    """
+    if jp in OBRAS:
+        return OBRAS[jp]
+    try:
+        g = _glossario()
+        if jp in g:
+            forma = g[jp].split(" — ")[0].split(" (")[0].strip()
+            if forma:
+                return forma
+    except Exception:  # noqa: BLE001
+        pass
+    return padrao or jp
+
+
+@lru_cache(maxsize=1)
+def _glossario() -> dict[str, str]:
+    raiz = Path(__file__).resolve().parent.parent
+    return json.loads((raiz / "glossario_traducao.json").read_text("utf-8"))
 
 
 def _n(s: str) -> str:
@@ -211,7 +247,7 @@ def analisar(jp: str) -> dict:
     titulo_jp = None
     if m:
         obra_jp = m.group(1).strip()
-        obra_pt = OBRAS.get(obra_jp, obra_jp)
+        obra_pt = nome_obra(obra_jp)
         numero = m.group(2)
         pagina = m.group(3)
         titulo_jp = _limpar_prefixo(t[:m.start()])
@@ -252,12 +288,12 @@ def montar(d: dict, titulos_pt: dict[str, str] | None = None) -> str:
             partes[0] += f" — {d['extra']}"
     elif d["titulo_jp"]:
         chave = d["titulo_jp"]
-        titulo = titulos_pt.get(chave) or OBRAS.get(chave) or chave
+        titulo = titulos_pt.get(chave) or nome_obra(chave)
         # 「霊層界（天国の福音）」: título + obra entre parênteses
         m = re.match(r"^(.*?)[（(]([^）)]+)[）)]$", chave)
         if m and m.group(2) in OBRAS:
             titulo = (titulos_pt.get(m.group(1), m.group(1))
-                      + f" ({OBRAS[m.group(2)]})")
+                      + f" ({nome_obra(m.group(2))})")
         cab = titulo
         if d["sessao"]:
             cab += f" ({d['sessao']})"
