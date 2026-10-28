@@ -261,6 +261,47 @@ class TrechoSemFalaTests(unittest.TestCase):
         self.assertFalse(tts_service._trecho_sem_fala(t))
 
 
+class MarcadoresCirculadosTests(unittest.TestCase):
+    """① ② ③ não são conteúdo narrável — mas o filtro não sabia.
+
+    ⚠️ BUG CORRIGIDO (2026-10-28)
+    `_SO_PONTUACAO` é `^[^\\w]+$` e em Python `\\w` inclui `str.isalnum()`, que
+    é **True para `②`**. Para o filtro, um símbolo circulado era "conteúdo
+    narrável": o trecho seguia para o edge-tts, que o recusava com
+    `NoAudioReceived`, e ficava registado como falha do lote para sempre.
+
+    Aconteceu com o trecho 407 do Volume I da Chave da Difusão, cujo texto era
+    exactamente `②`. Falhou as 3 tentativas (com a retentativa nova) antes de
+    ser registado.
+    """
+
+    def test_marcador_sozinho_vira_pausa(self):
+        for t in ("②", "①", "③", "①②③", "❶", "❿"):
+            with self.subTest(texto=t):
+                self.assertTrue(tts_service._trecho_sem_fala(t, "edge"))
+                self.assertEqual(tts_service._preparar_texto_edge(t), "")
+
+    def test_marcador_antes_de_texto_nao_engole_o_texto(self):
+        """O marcador sai, o resto fica — não é um trecho sem fala."""
+        casos = {
+            "① Primeiro ponto": "Primeiro ponto",
+            "② Ver o capítulo 3": "Ver o capítulo 3",
+            "❶ item": "item",
+        }
+        for original, esperado in casos.items():
+            with self.subTest(texto=original):
+                self.assertFalse(tts_service._trecho_sem_fala(original, "edge"))
+                self.assertEqual(
+                    tts_service._preparar_texto_edge(original), esperado)
+
+    def test_numeros_de_verdade_continuam_a_ser_lidos(self):
+        """A correção não pode calar um número que deve ser dito em voz alta."""
+        for t in ("1954", "1º de agosto", "Capítulo 3", "12 de setembro"):
+            with self.subTest(texto=t):
+                self.assertFalse(tts_service._trecho_sem_fala(t, "edge"))
+                self.assertEqual(tts_service._preparar_texto_edge(t), t)
+
+
 class RotaEscolhidaDecideAPausaTests(unittest.TestCase):
     """A pausa depende do provedor ESCOLHIDO, não da união das rotas.
 

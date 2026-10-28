@@ -378,6 +378,18 @@ def _normalizar_caracteres(texto: str) -> str:
     # removê-las aqui não as perde.
     out = re.sub(r"[\u4e00-\u9fff\u3040-\u30ff\u3000-\u303f"
                  r"\uff01-\uff60\uff66-\uff9f]+", "", out)
+    # 2026-10-28: marcadores decorativos de lista — ① ② ③ (Enclosed
+    # Alphanumerics, U+2460–U+24FF) e os "dingbat" ❶ ❷ (U+2776–U+2793).
+    #
+    # ⚠️ Estes NÃO estavam cobertos por nada, e o motivo é surpreendente:
+    # `_SO_PONTUACAO` é `^[^\w]+$`, e em Python `\w` inclui `str.isalnum()` —
+    # que é True para `②`. Ou seja, para o filtro um símbolo circulado era
+    # "conteúdo narrável". O trecho seguia para o edge-tts, que o recusava com
+    # `NoAudioReceived`, e ficava registado como falha do lote para sempre
+    # (aconteceu com o trecho 407 do Volume I da Chave da Difusão, cujo texto
+    # era exactamente `②`). Um marcador de lista não se lê em voz alta: o certo
+    # é removê-lo, e se não sobrar nada o trecho vira pausa.
+    out = re.sub(r"[\u2460-\u24ff\u2776-\u2793]", " ", out)
     out = re.sub(r"\s{2,}", " ", out)
     out = re.sub(r"\(\s*\)", "", out)
     return out.strip()
