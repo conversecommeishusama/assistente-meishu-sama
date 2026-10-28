@@ -88,6 +88,53 @@ class _BaseDb(unittest.TestCase):
         db._pool_desativado = self._antes_desativado
 
 
+class LigacaoVivaTests(unittest.TestCase):
+    """`_ligacao_viva`: detetar ligação cortada pelo SERVIDOR, sem ir à rede.
+
+    `conn.closed` só sabe o que o psycopg2 fechou. Quando é o Supabase que
+    corta uma sessão inactiva, `closed` continua 0 e a consulta seguinte
+    rebenta com `OperationalError: SSL connection has been closed
+    unexpectedly` — o utilizador vê um 500 logo no primeiro pedido depois de um
+    período parado.
+
+    Provado à séria em 28/10/2026: `pg_terminate_backend()` na ligação do pool,
+    a partir de uma ligação externa. Antes desta verificação, a tentativa
+    seguinte falhava; agora são 4×OK, 0 falhas, e o pool entrega outra ligação.
+    """
+
+    class _Lig:
+        def __init__(self, closed=0, fileno=10, erro_fileno=False):
+            self.closed = closed
+            self._fileno = fileno
+            self._erro_fileno = erro_fileno
+
+        def fileno(self):
+            if self._erro_fileno:
+                raise OSError("sem socket")
+            return self._fileno
+
+    def test_fechada_pelo_psycopg2(self):
+        self.assertFalse(db._ligacao_viva(self._Lig(closed=2)))
+
+    def test_sem_socket_e_dada_como_boa(self):
+        """Na dúvida, usar — descartar ligações boas seria pior."""
+        self.assertTrue(db._ligacao_viva(self._Lig(erro_fileno=True)))
+        self.assertTrue(db._ligacao_viva(self._Lig(fileno=None)))
+
+    def test_socket_legivel_significa_morta(self):
+        """A outra ponta fechou: o socket fica legível com 0 bytes (EOF)."""
+        with mock.patch("select.select", return_value=([10], [], [])):
+            self.assertFalse(db._ligacao_viva(self._Lig()))
+
+    def test_socket_parado_significa_viva(self):
+        with mock.patch("select.select", return_value=([], [], [])):
+            self.assertTrue(db._ligacao_viva(self._Lig()))
+
+    def test_select_a_falhar_nao_descarta(self):
+        with mock.patch("select.select", side_effect=OSError("select partiu")):
+            self.assertTrue(db._ligacao_viva(self._Lig()))
+
+
 class PoolTests(_BaseDb):
     def test_entrega_e_devolve_a_ligacao(self):
         lig = _LigacaoFalsa()
@@ -132,6 +179,38 @@ class PoolTests(_BaseDb):
                 pass
         self.assertEqual(pool.devolvidas[0][0], "fechada",
                          "ligação com transacção partida foi reutilizada")
+
+    def test_ligacao_morta_por_rede_e_descartada(self):
+        """O caso perigoso: `closed == 0` mas a ligação morreu.
+
+        Se voltar ao pool, envenena o worker — como `minconn=1`, o mesmo
+        socket partido serve todos os pedidos seguintes daquele processo, e
+        uma falha de rede momentânea deixava o site em baixo até reiniciar.
+        """
+        import psycopg2
+
+        lig = _LigacaoFalsa()
+        lig.closed = 0  # psycopg2 ainda não sabe
+        pool = _PoolFalso(lig)
+        with mock.patch.object(db, "_obter_pool", return_value=pool):
+            with self.assertRaises(psycopg2.OperationalError):
+                with db.conexao():
+                    raise psycopg2.OperationalError("server closed the connection")
+        self.assertEqual(pool.devolvidas[0][0], "fechada",
+                         "ligação morta voltou ao pool como reutilizável")
+
+    def test_erro_de_consulta_mantem_a_ligacao(self):
+        """Erro de CONSULTA (SQL inválido, constraint) não estraga a ligação."""
+        import psycopg2
+
+        lig = _LigacaoFalsa()
+        pool = _PoolFalso(lig)
+        with mock.patch.object(db, "_obter_pool", return_value=pool):
+            with self.assertRaises(psycopg2.IntegrityError):
+                with db.conexao():
+                    raise psycopg2.IntegrityError("violates foreign key")
+        self.assertEqual(pool.devolvidas[0][0], "reutilizada",
+                         "descartou uma ligação boa por causa de um erro de SQL")
 
     def test_pool_em_falha_cai_para_ligacao_directa(self):
         """Pool esgotado/erro não pode derrubar o pedido do utilizador."""

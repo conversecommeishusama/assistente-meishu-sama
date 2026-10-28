@@ -127,10 +127,11 @@ class _Conexao:
             try:
                 self._conn = _obter_pool().getconn()
                 self._do_pool = True
-                # Uma ligação que ficou muito tempo parada pode ter sido
-                # fechada pelo Supabase. Descartar e pedir outra é mais barato
-                # do que falhar o pedido do utilizador.
-                if getattr(self._conn, "closed", 1):
+                # Uma ligação que ficou parada pode ter sido cortada do outro
+                # lado (o Supabase fecha sessões inactivas). Descartar antes de
+                # a entregar ao chamador; sem isto, o primeiro pedido depois de
+                # um período de silêncio apanhava um 500.
+                if not _ligacao_viva(self._conn):
                     self._devolver(quebrada=True)
                     self._conn = _obter_pool().getconn()
                 self._conn.autocommit = False
@@ -163,7 +164,7 @@ class _Conexao:
         conn = self._conn
         if conn is None:
             return False
-        quebrada = False
+        quebrada = self._ligacao_morreu(conn, exc)
         try:
             if exc_type is None:
                 conn.commit()
@@ -186,6 +187,81 @@ class _Conexao:
                     pass
                 self._conn = None
         return False  # a excepção continua a subir
+
+    @staticmethod
+    def _ligacao_morreu(conn, exc) -> bool:
+        """A ligação está inutilizável? (para NÃO voltar ao pool)
+
+        Dois casos, e o segundo é o perigoso:
+
+        1. `conn.closed` != 0 — o psycopg2 já sabe que fechou.
+        2. `closed` continua 0 mas a ligação morreu (rede caiu, o Supabase
+           cortou a sessão por inactividade). Aqui o psycopg2 marca-se só
+           depois da primeira tentativa falhada, e é a excepção que o diz:
+           `OperationalError`/`InterfaceError` são erros de LIGAÇÃO; os
+           restantes (por exemplo `IntegrityError`, `ProgrammingError`) são
+           erros de CONSULTA e a ligação está boa.
+
+        Sem o caso 2, uma ligação morta voltava ao pool como reutilizável e
+        envenenava o worker: como `minconn=1`, o mesmo socket partido servia
+        todos os pedidos seguintes daquele processo. Uma falha de rede
+        momentânea deixava o site em baixo até reiniciar.
+        """
+        if getattr(conn, "closed", 1):
+            return True
+        if exc is None:
+            return False
+        try:
+            import psycopg2
+
+            if isinstance(exc, (psycopg2.OperationalError,
+                                psycopg2.InterfaceError)):
+                return True
+        except Exception:  # pragma: no cover - defensivo
+            # Sem psycopg2 importável não há como distinguir: na dúvida,
+            # descartar (perde-se uma ligação, não o serviço).
+            return True
+        return False
+
+
+def _ligacao_viva(conn) -> bool:
+    """A ligação ainda serve? Verificação LOCAL, sem ir à rede.
+
+    `conn.closed` só diz que o *psycopg2* a fechou; não diz nada quando é o
+    SERVIDOR que cortou a sessão (o Supabase fecha sessões inactivas). Nesse
+    caso `closed` continua 0 e a primeira consulta seguinte rebenta com
+    `OperationalError: SSL connection has been closed unexpectedly` — o
+    utilizador vê um 500.
+
+    Um `SELECT 1` resolveria, mas custa um ida-e-volta (~190 ms neste link) em
+    CADA entrega de ligação. Em vez disso olha-se para o socket: se a outra
+    ponta fechou, o socket fica legível com 0 bytes (EOF). `select` é local e
+    custa microssegundos.
+
+    Só devolve False quando tem a certeza. Na dúvida (socket sem `fileno`,
+    plataforma estranha) devolve True e a ligação é usada — uma verificação
+    que descarta ligações boas seria pior do que o problema que resolve.
+    """
+    if getattr(conn, "closed", 1):
+        return False
+    try:
+        import select
+
+        fileno = conn.fileno()
+    except Exception:
+        return True
+    if fileno is None or fileno < 0:
+        return True
+    try:
+        pronto, _, _ = select.select([fileno], [], [], 0)
+    except Exception:
+        return True
+    if not pronto:
+        return True  # nada a ler: ligação sã
+    # Legível quando devia estar parada = a outra ponta escreveu (erro) ou
+    # fechou. Não há `LISTEN/NOTIFY` neste projecto, por isso não há tráfego
+    # legítimo inesperado.
+    return False
 
 
 def conexao() -> _Conexao:
