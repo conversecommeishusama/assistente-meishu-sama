@@ -517,3 +517,47 @@ portal   : forum=True  | fish=True | deepseek=True
 ```
 
 
+
+---
+
+## 11. 28/10 — a lista passou a cobrir tudo (e uma obra ficou à espera)
+
+Pedido: «faça tudo o que estiver faltando dos escritos e dos orais».
+
+O âmbito estava a deixar os orais de fora por omissão: `montar_lista_audio.py`
+só aceitava um tipo de cada vez, e o comando que gerou os orais em Setembro não
+deixou lista nenhuma. Agora `--tipo` aceita combinação (`oral,escrita`) e a
+lista cobre as **138 obras** com pendência: 30 obras, 17.323 trechos
+(15.059 na voz dele, 2.264 de narrador).
+
+Regenerar:
+
+```bash
+.venv/bin/python scripts/montar_lista_audio.py --tipo todos \
+    --incluir-institucional --saida data/tts_lista_leitura_completa.txt
+```
+
+### 11.1 Bug encontrado ao correr: citação japonesa virava falha
+
+Depois de sair kanji/kana sobrava `"〇、、。`. O `〇` (U+3007) não é
+«pontuação» para `_sem_conteudo_narravel`, o texto seguia para o edge-tts e o
+edge recusava com `NoAudioReceived` — mais um trecho sem áudio, registado como
+falha e seguindo. A normalização passou a remover a pontuação CJK
+(`\u3000-\u303f`, inclui 、。〇) e as formas de largura total. Encontrado no
+dossiê da difusão, que cita documentos da época em japonês.
+
+### 11.2 ⚠️ À espera de decisão do usuário
+
+`19540000 - A Chave da Difusão (Volume II).txt` — **2.299 trechos** — ficou
+FORA da lista de propósito. É a tradução de 『伝導の手引』 II (commit `448407b6`,
+outra frente), e o cabeçalho diz «compilação dos ensinamentos do Mestre,
+organizada por **Nakamura Ichirō**».
+
+O `autoria_service` classifica-a como dele (→ Fish). O precedente do **Curso
+Kannon** aponta para o contrário: palavras dele em registo de discípulo →
+narrador. O Manual da Igreja e a Doutrina, que também são compilações, ficaram
+na voz dele.
+
+Não é decisão minha: 2.299 trechos na voz errada é caro para adivinhar. Falta
+também acrescentá-la ao `escopo_corpus.json` (hoje não está declarada em canal
+nenhum).
