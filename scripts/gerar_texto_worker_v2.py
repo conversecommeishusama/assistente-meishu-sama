@@ -43,6 +43,13 @@ RESUMOS_DIR = os.path.join(RAIZ, "data", "tts_resumos")
 LIMITE_XTTS_S = int(os.environ.get("GOSHINSHO_XTTS_ESPERA_S", "600"))
 TENTATIVAS_XTTS = 2
 
+# Tentativas para os provedores REMOTOS (edge e Fish). Ao contrário do XTTS —
+# que roda num daemon local e cuja falha é determinística — estes falham por
+# rede, e uma falha transitória não pode custar o trecho. 2026-10-28: 3 trechos
+# ficaram sem áudio na primeira passagem completa, 2 deles por `edge-tts timeout
+# após 120s` num texto de 32 caracteres — nada errado com o texto.
+TENTATIVAS_EDGE = int(os.environ.get("GOSHINSHO_TTS_TENTATIVAS", "3"))
+
 
 def quebrar_como_front(texto: str) -> list[str]:
     trechos = []
@@ -206,15 +213,33 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
             # rótulo de fala continuam a ser a única regra, e assim este ramo
             # não diverge do caminho do app.
             ja = tts_service.caminho_em_cache(trecho, arquivo=arquivo)
-            try:
-                tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
-            except Exception as e:
+            # 2026-10-28: REPETE. A primeira passagem completa deixou 3 trechos
+            # de fora, e 2 deles eram `edge-tts timeout após 120s` num trecho
+            # de 32 caracteres («18.1 A casa do próprio dirigente») — falha de
+            # rede, não de conteúdo. Uma falha transitória não pode ser
+            # definitiva, e o erro não se distinguia: ficava igual a uma recusa
+            # real do provedor. O NoAudioReceived verdadeiro gasta as
+            # tentativas todas e é registado como antes.
+            erro_edge = None
+            for tentativa in range(1, TENTATIVAS_EDGE + 1):
+                try:
+                    tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
+                    erro_edge = None
+                    break
+                except Exception as e:
+                    erro_edge = e
+                    if tentativa < TENTATIVAS_EDGE:
+                        print(f"[{arquivo}] trecho {i}: {type(e).__name__} — "
+                              f"a repetir ({tentativa}/{TENTATIVAS_EDGE - 1})",
+                              file=sys.stderr, flush=True)
+                        time.sleep(2 * tentativa)
+            if erro_edge is not None:
                 # 2026-10-27: aqui havia `except Exception: pass`. Um trecho
                 # ficava sem áudio e o lote dizia "concluído" — a falha nunca
                 # chegava a nenhum relatório.
-                falhou(i, trecho, "edge", f"{type(e).__name__}: {e}")
+                falhou(i, trecho, "edge", f"{type(erro_edge).__name__}: {erro_edge}")
                 continue
-            if tts_service._trecho_sem_fala(trecho):
+            if tts_service._trecho_sem_fala(trecho, provedor):
                 n_pausa += 1
             elif ja:
                 n_edge_cache += 1
@@ -235,12 +260,28 @@ def processar_obra(caminho: str, spool: str, tts_service, *,
         # branco, porque ninguém distingue depois.
         if provedor == "fish":
             ja = tts_service.caminho_em_cache(trecho, arquivo=arquivo)
-            try:
-                tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
-            except Exception as e:
-                falhou(i, trecho, "fish", f"{type(e).__name__}: {e}")
+            # 2026-10-28: repete, como o ramo do narrador. A chamada é remota:
+            # um 429/erro de rede momentâneo não pode custar o trecho. A falha
+            # só é registada depois de esgotar as tentativas.
+            erro_fish = None
+            for tentativa in range(1, TENTATIVAS_EDGE + 1):
+                try:
+                    tts_service.sintetizar(trecho, voz="meishu", arquivo=arquivo)
+                    erro_fish = None
+                    break
+                except Exception as e:
+                    erro_fish = e
+                    if tentativa < TENTATIVAS_EDGE:
+                        print(f"[{arquivo}] trecho {i}: Fish {type(e).__name__}"
+                              f" — a repetir ({tentativa}/{TENTATIVAS_EDGE - 1})",
+                              file=sys.stderr, flush=True)
+                        time.sleep(3 * tentativa)
+            if erro_fish is not None:
+                falhou(i, trecho, "fish", f"{type(erro_fish).__name__}: {erro_fish}")
                 continue
-            if ja:
+            if tts_service._trecho_sem_fala(trecho, provedor):
+                n_pausa += 1
+            elif ja:
                 n_xtts_cache += 1
             else:
                 n_xtts_novo += 1

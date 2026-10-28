@@ -103,6 +103,28 @@ class EsperarMp3Tests(unittest.TestCase):
                                         limite=1)
         self.assertEqual(estado, "timeout")
 
+    def test_limite_do_worker_nao_e_o_tempo_de_um_trecho(self):
+        """A espera é tempo de FILA, não de síntese.
+
+        Em 27/10 o limite era 300 s («~30 s por trecho») e as obras de artigos
+        longos passaram a falhar sem nada estar errado: dois workers no mesmo
+        daemon somam as esperas. O orquestrador tem de calcular o valor.
+        """
+        with open(os.path.join(RAIZ, "scripts", "pre_gerar_lote_orais.py")) as f:
+            fonte = f.read()
+        self.assertIn("por_daemon", fonte)
+        self.assertIn("GOSHINSHO_XTTS_ESPERA_S", fonte)
+        # 600 s é o tempo de UM trecho; o limite tem de o multiplicar.
+        self.assertIn("600 * por_daemon", fonte)
+
+    def test_timeout_nao_repete_a_tarefa(self):
+        """Repetir depois de um timeout faz o mesmo trabalho duas vezes."""
+        with open(os.path.join(RAIZ, "scripts", "gerar_texto_worker_v2.py")) as f:
+            fonte = f.read()
+        trecho = fonte.split('if estado == "timeout":')[1].split("if tentativa <")[0]
+        self.assertIn("break", trecho,
+                      "timeout não pode cair na repetição de tarefa")
+
 
 class _ServicoFalso:
     """Substituto de `tts_service` para exercitar o laço do worker."""
@@ -114,19 +136,33 @@ class _ServicoFalso:
         self.provedor = provedor
         self.erro_em = erro_em or set()
         self.chamadas = []
+        self.tentativas_por_texto = {}
 
     def provedor_canonico(self, texto, rate="+0%", *, arquivo=None):
         return self.provedor, "pt-BR-AntonioNeural"
 
-    def _trecho_sem_fala(self, texto):
+    def _trecho_sem_fala(self, texto, provedor=None):
+        # `provedor` existe no serviço real desde 2026-10-28: a pausa depende
+        # da rota escolhida, não da união das rotas. O duplo aceita o
+        # parâmetro (e ignora-o) para não divergir da assinatura.
         return False
 
     def caminho_em_cache(self, texto, rate="+0%", *, arquivo=None):
         return None
 
     def sintetizar(self, texto, voz=None, rate="+0%", *, arquivo=None):
+        # `erro_em` conta TENTATIVAS POR TEXTO, não posições na lista de
+        # chamadas. Com `list.index(texto)` a mesma chamada repetida devolvia
+        # sempre 0 e o duplo falhava para sempre — o teste de retentativa
+        # passava a medir o duplo, não o worker (2026-10-28).
+        #
+        # `trecho_que_falha` restringe as falhas a UM texto, para o teste da
+        # obra com 3 trechos não fazer falhar os outros dois.
         self.chamadas.append(texto)
-        if self.chamadas.index(texto) in self.erro_em:
+        n = self.tentativas_por_texto.get(texto, 0)
+        self.tentativas_por_texto[texto] = n + 1
+        alvo = getattr(self, "trecho_que_falha", None)
+        if n in self.erro_em and (alvo is None or texto == alvo):
             raise RuntimeError("edge-tts timeout após 120s")
         return os.path.join(self.tmp, "x.mp3")
 
@@ -159,7 +195,11 @@ class WorkerFalhasTests(unittest.TestCase):
                     "Terceiro trecho do texto.\n")
 
     def test_trecho_que_falha_nao_desaparece(self):
-        servico = _ServicoFalso(self.tmp, erro_em={1})
+        # Falha em TODAS as tentativas do 2.º trecho: `erro_em` conta
+        # tentativas por texto, e `{1}` seria só a segunda tentativa (que o
+        # worker recupera de propósito — ver RetentativaProvedorRemotoTests).
+        servico = _ServicoFalso(self.tmp, erro_em={0, 1, 2, 3, 4, 5})
+        servico.trecho_que_falha = "Segundo trecho do texto."
         with redirect_stderr(io.StringIO()) as err:
             rc = worker.processar_obra(self.obra, self.spool, servico,
                                        dir_falhas=self.falhas_dir)
@@ -215,6 +255,57 @@ class WorkerFalhasTests(unittest.TestCase):
         self.assertEqual(dados["edge_cache"], 0)
         self.assertEqual(dados["falhas"], 0)
         self.assertEqual(dados["trechos"], 3)
+
+
+class RetentativaProvedorRemotoTests(unittest.TestCase):
+    """Falha de rede não pode custar um trecho.
+
+    ⚠️ CONTEXTO (2026-10-28)
+
+    A primeira passagem completa do lote (30 obras, 12.961 trechos) fechou com
+    3 falhas. Duas eram `edge-tts timeout após 120s` — num trecho de **32
+    caracteres** («18.1 A casa do próprio dirigente») — e a terceira um
+    `NoAudioReceived` que também passou à segunda tentativa. Nada errado com os
+    textos: eram falhas transitórias de rede, e o worker não repetia.
+
+    O contraste importa: o XTTS roda num daemon local e falha de forma
+    determinística (repetir é desperdício); edge e Fish são REMOTOS e falham por
+    rede (repetir é obrigatório).
+    """
+
+    TEXTO = "18.1 A casa do próprio dirigente"
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="retry_edge_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.obra = os.path.join(self.tmp, "obra.txt")
+        with open(self.obra, "w") as f:
+            f.write(self.TEXTO + "\n")
+        self.spool = os.path.join(self.tmp, "spool")
+        os.makedirs(self.spool, exist_ok=True)
+
+    def test_falha_transitoria_do_edge_e_repetida(self):
+        servico = _ServicoFalso(self.tmp, erro_em={0, 1})  # falha 2x, passa à 3.ª
+        with redirect_stderr(io.StringIO()):
+            rc = worker.processar_obra(self.obra, self.spool, servico,
+                                       dir_falhas=os.path.join(self.tmp, "f"),
+                                       dir_resumos=os.path.join(self.tmp, "r"))
+        self.assertEqual(rc, 0, "três tentativas deviam recuperar o trecho")
+        self.assertEqual(len(servico.chamadas), 3)
+
+    def test_falha_persistente_e_registada(self):
+        servico = _ServicoFalso(self.tmp, erro_em={0, 1, 2, 3, 4, 5})
+        with redirect_stderr(io.StringIO()):
+            rc = worker.processar_obra(self.obra, self.spool, servico,
+                                       dir_falhas=os.path.join(self.tmp, "f"),
+                                       dir_resumos=os.path.join(self.tmp, "r"))
+        self.assertEqual(rc, 1, "falha real tem de sair != 0")
+        self.assertEqual(len(servico.chamadas), worker.TENTATIVAS_EDGE,
+                         "não pode repetir para sempre")
+
+    def test_remote_tem_mais_tentativas_que_o_daemon(self):
+        """O XTTS é local (determinístico); edge/Fish são remotos (rede)."""
+        self.assertGreater(worker.TENTATIVAS_EDGE, worker.TENTATIVAS_XTTS)
 
 
 class ResumoDaObraTests(unittest.TestCase):
