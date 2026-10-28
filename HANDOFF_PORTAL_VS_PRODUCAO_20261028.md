@@ -167,3 +167,59 @@ Suite completa: **363 verdes**.
   do Caddyfile sai.
 - `GOSHINSHO_FORUM_ENABLED=1` só no portal. Se o portal for o principal, o
   Fórum vai junto (é o que o usuário quer testar).
+
+---
+
+## 8. Pool de ligações: o custo escondido de ~770 ms por consulta
+
+Depois de o portal ficar ao padrão de produção, sobrava um custo que não era
+do portal — era do projecto inteiro. Cinco serviços tinham a **sua** cópia de
+`_conn()`, idêntica byte a byte, e cada chamada abria uma ligação nova ao
+Supabase (host directo, porta 5432, sem pooler). Medido:
+
+```
+connect 1: 783 ms
+connect 2: 778 ms
+connect 3: 756 ms
+connect 4: 761 ms
+```
+
+Uma página que consulta três coisas pagava três vezes. `services/db.py` passou
+a ser a única porta, com pool por processo (`min=1`, `max=8`).
+
+| | antes | depois |
+|---|---|---|
+| `/portal/forum` | 3,04 s | **0,85 s** |
+| `/portal/artigos` | 1,20 s | **0,42 s** |
+| `list_topicos` | 1,76 s | **0,54 s** |
+| `destaques_da_home` | 1,23 s | **0,43 s** |
+
+Dois defeitos apareceram pelo caminho:
+
+**`with _conn() as conn:` nunca fechava a ligação.** Em psycopg2 o `__exit__`
+da ligação faz commit/rollback e **não** fecha — o `with` dos cinco serviços
+deixava a ligação aberta até o CPython a recolher. Com o pool deixa de ser
+possível: o `__exit__` devolve sempre, e ligação com transacção partida é
+descartada em vez de devolvida.
+
+**N+1 em `list_topicos`.** O resumo das últimas 2 postagens era pedido dentro
+de um `for` — uma consulta por tópico. Passou a
+`ROW_NUMBER() OVER (PARTITION BY topico_id)` numa consulta. Igualdade
+verificada contra a consulta antiga: 6 tópicos, 7 postagens, **0 diferenças**.
+
+⚠️ Cuidado com o cast: `topico_id` é `uuid`, e `= ANY(%s)` com uma lista de
+strings falha (`uuid = text`). É preciso `ANY(%s::uuid[])`.
+
+`GOSHINSHO_DB_POOL=0` desliga tudo sem editar código. Se o pool falhar, o
+pedido cai para ligação directa e o pool fica desligado nesse processo — a
+disponibilidade não depende do pool funcionar.
+
+Testado com 40 pedidos concorrentes ao fórum e 30 a `/portal`: 70×200, zero
+tracebacks, 2 sockets para o 5432 (um por worker).
+
+`tests/test_db_pool.py` (12) inclui um teste que **proíbe**
+`psycopg2.connect(` fora de `services/db.py`: se alguém voltar a abrir
+ligações num serviço, o pool deixa de valer nesse caminho e os 770 ms voltam
+sem ninguém notar.
+
+Suite: **380 verdes**.
