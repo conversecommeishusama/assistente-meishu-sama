@@ -626,3 +626,61 @@ trabalho.
 ### Testes
 
 `344 passed, 1 skipped, 1 xfailed, 251 subtests` — suite completa, 4m38s.
+
+---
+
+## 28/10/2026 (00:47) — acervo FECHADO a 100%
+
+```
+Trechos totais ......: 69.831
+  com áudio real ....: 69.298
+  pausas (sem fala) ..:    533   (separadores, tabelas, marcadores ① ② ③)
+  EM FALTA ...........:      0
+```
+
+Verificado de três formas independentes, não por estimativa:
+
+1. `montar_lista_audio.py --tipo todos --incluir-institucional` → **0 obras com
+   pendência**.
+2. `auditar_cobertura_fish.py` (orais) → **100,0%**, 15.644 Fish + 6.342 edge,
+   zero em falta.
+3. Varredura de todos os 69.831 trechos de todas as 140 obras, com
+   `provedor_canonico` + `caminho_em_cache`: **zero sem áudio**.
+
+E a voz confirmada por amostragem aleatória (semente fixa, 100 trechos de 25
+obras), cruzando o provedor esperado com o `sample_rate` real do ficheiro:
+
+```
+fish|44100Hz   79
+edge|24000Hz   21
+incoerências    0
+```
+
+## Os 13 trechos que o lote não conseguiu
+
+Ficaram 13 sem áudio, todos marcadores circulados (`①`, `②`, `③`). A causa é
+de calendário, não de conteúdo: os workers arrancaram às **20:32** e a
+correção dos marcadores foi commitada às **22:32**. Um processo Python não
+recarrega código a meio.
+
+Relaunch com o código novo: `pausa 10 | falhas 0`. Os marcadores passaram a
+ser o que são — pausa — em vez de erro do edge-tts.
+
+**Lição operacional**: depois de corrigir `tts_service`, é preciso
+`systemctl restart goshinsho-tts-pregen`; um lote em curso continua com o
+código antigo em memória. E as falhas que ele registar parecem falhas do
+provedor, não do código.
+
+## Duas caixas que estavam abertas
+
+**Pausas não pré-geradas.** O relatório de pendências exclui os trechos "sem
+fala" (é o comportamento certo: não são fala), mas isso deixava 4 pausas por
+gerar em 69.302. Foram geradas à mão nesta passagem. São 0,006%, mas a
+primeira visita a cada uma passaria pelo serviço em vez de servir de disco.
+
+**Um `fish|24000Hz` no spot check do Volume I** não era erro: era a pausa de
+um trecho cuja rota é Fish. `_gerar_silencio` usa `anullsrc=r=24000`, portanto
+toda pausa tem essa taxa. Um verificador que cruze "provedor" com
+"sample_rate" tem de excluir as pausas primeiro, senão acusa um falso positivo
+— exatamente o que aconteceu aqui, e o que me fez investigar antes de escrever
+"100%".
