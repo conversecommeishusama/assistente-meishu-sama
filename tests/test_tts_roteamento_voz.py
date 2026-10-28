@@ -261,6 +261,76 @@ class TrechoSemFalaTests(unittest.TestCase):
         self.assertFalse(tts_service._trecho_sem_fala(t))
 
 
+class RotaEscolhidaDecideAPausaTests(unittest.TestCase):
+    """A pausa depende do provedor ESCOLHIDO, não da união das rotas.
+
+    ⚠️ BUG CORRIGIDO (2026-10-28)
+    `**Nota (rattail):**` é metadado: `_preparar_texto_xtts` (a preparação do
+    Fish) devolve `**`, enquanto `_preparar_texto_edge` deixa `Nota
+    (rattail):`. `_trecho_sem_fala` sem provedor respondia pela UNIÃO — dizia
+    "tem fala" — e o serviço entregava uma PAUSA. O resultado era uma
+    incoerência invisível: `sintetizar()` criava o mp3 da pausa e
+    `caminho_em_cache()` devolvia `None`, porque só procurava a chave do
+    provedor. Esses trechos ficavam "em falta" para sempre nos relatórios de
+    cobertura e o app voltava a passar pelo serviço em cada pedido.
+    (2 trechos em 68.088 mp3: Tijotengoku 3403 e Eiko 5980.)
+    """
+
+    TEXTO = "**Nota (rattail):**"
+
+    def test_uniao_das_rotas_diz_que_tem_fala(self):
+        # Comportamento antigo, preservado: sem provedor é resposta optimista.
+        self.assertFalse(tts_service._trecho_sem_fala(self.TEXTO))
+
+    def test_rota_do_fish_esvazia_o_texto(self):
+        self.assertTrue(tts_service._trecho_sem_fala(self.TEXTO, "fish"))
+
+    def test_rota_do_narrador_ainda_tem_fala(self):
+        # O edge lê `Nota (rattail):`; só o Fish trata isto como metadado.
+        self.assertFalse(tts_service._trecho_sem_fala(self.TEXTO, "edge"))
+
+    def test_fala_real_continua_a_ser_fala_em_qualquer_rota(self):
+        for texto in ("Meishu-Sama: Pratico há cerca de vinte anos.",
+                      "A gratidão é a base de tudo."):
+            for prov in ("edge", "fish", "xtts"):
+                with self.subTest(texto=texto[:24], provedor=prov):
+                    self.assertFalse(tts_service._trecho_sem_fala(texto, prov))
+
+
+class PausaEncontravelNoCacheTests(unittest.TestCase):
+    """A pausa gerada por `sintetizar()` tem de ser ENCONTRADA por
+    `caminho_em_cache()`. Sem isto, o áudio existia e o app não o via."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self._antes = tts_service._CACHE_DIR
+        tts_service._CACHE_DIR = self.tmp
+        self.addCleanup(self._restaurar)
+
+    def _restaurar(self):
+        tts_service._CACHE_DIR = self._antes
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_sem_ficheiro_a_consulta_nao_gera_nada(self):
+        # Consulta é consulta: não pode chamar ffmpeg no pedido HTTP.
+        self.assertIsNone(tts_service._caminho_pausa("──────────"))
+        self.assertEqual(os.listdir(self.tmp), [])
+
+    def test_pausa_gerada_passa_a_ser_encontrada(self):
+        texto = "──────────"
+        destino = tts_service._pausa_silenciosa(texto)
+        self.assertTrue(os.path.exists(destino))
+        self.assertGreater(os.path.getsize(destino), 0)
+        self.assertEqual(tts_service._caminho_pausa(texto), destino)
+        self.assertEqual(tts_service.caminho_em_cache(texto), destino)
+
+    def test_pausa_com_ficheiro_vazio_nao_e_servida(self):
+        texto = "──────────"
+        destino = tts_service._pausa_silenciosa(texto)
+        open(destino, "wb").close()  # 0 bytes = falha, não cache
+        self.assertIsNone(tts_service._caminho_pausa(texto))
+
+
 class KanaNaPreparacaoTests(unittest.TestCase):
     """A preparação remove kana E kanji (a voz pt-BR não lê nenhum dos dois)."""
 

@@ -26,6 +26,21 @@
       "leitura": true,
       "chat": false,
       "motivo": "HANDOFF_ACERVO §3.3 + §6 item 4: proveniência por esclarecer — leitura colaborativa, fora do corpo de pesquisa."
+    },
+    "20261020 - A difusão na época de Meishu-Sama.txt": {
+      "leitura": true,
+      "chat": false,
+      "motivo": "Dossiê da difusão (volume único, 39 capítulos) — estudo de 2026 montado a partir de documentos da época e de citações de Meishu-Sama. Não é escrito dele: fica na Leitura (para revisão em áudio) e fora do corpo de pesquisa do Chat, que é só de obras do autor. Promovido de docs/DOSSIE_DIFUSAO_20261020.md por scripts/promover_dossie_leitura.py."
+    },
+    "19540000 - A Chave da Difusão (Volume I).txt": {
+      "leitura": true,
+      "chat": false,
+      "motivo": "Compilação dos ensinamentos de Meishu-Sama organizada por Nakamura Ichirō (edição de 1954). As PALAVRAS são dele — o corpo são palestras em primeira pessoa com fonte citada (ex.: 「Palestra de 6/8/1954 — Mioshie-shū nº 13」) — mas a OBRA é de 1954, organizada e publicada pela instituição, e não é um escrito dele: fica na Leitura e fora do corpo de pesquisa do Chat. Decisão do usuário de 28/10/2026. Na Leitura leva a voz dele, com o padrão de diálogo aplicado por provedor_canonico: «Interlocutor:» → narrador, «Meishu-Sama:» → voz dele (verificado: 111 Interlocutor → edge e 117 Meishu-Sama → fish no Vol. I, sem uma única exceção)."
+    },
+    "19540000 - A Chave da Difusão (Volume II).txt": {
+      "leitura": true,
+      "chat": false,
+      "motivo": "Volume II da mesma compilação de 1954 organizada por Nakamura Ichirō — ver a nota do Volume I. Padrão de diálogo verificado: 296 Interlocutor → edge e 309 Meishu-Sama → fish, sem exceção."
     }
   },
 

@@ -69,11 +69,19 @@ def contar(obras) -> list[dict]:
             continue
         ok = falta_dele = falta_outro = 0
         for trecho, autor in autoria_service.trechos_com_autor(arq, texto):
-            if tts_service._trecho_sem_fala(trecho):
+            # 2026-10-28: a contagem passa a usar `provedor_canonico`, não a
+            # autoria da OBRA. São perguntas diferentes: numa compilação as
+            # palavras são dele mas há diálogo dentro dela, e cada fala de
+            # «Interlocutor:» sai no narrador. Contando só pela autoria, «A
+            # Chave da Difusão» aparecia como "3.953 trechos dele" quando 454
+            # deles vão para o edge — um relatório que promete a voz errada é
+            # o mesmo tipo de mensagem que já enganou neste projecto.
+            provedor, _voz = tts_service.provedor_canonico(trecho, arquivo=arq)
+            if tts_service._trecho_sem_fala(trecho, provedor):
                 continue
             if tts_service.caminho_em_cache(trecho, arquivo=arq):
                 ok += 1
-            elif autor == autoria_service.OUTRO:
+            elif provedor == "edge":
                 falta_outro += 1
             else:
                 falta_dele += 1

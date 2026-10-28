@@ -890,8 +890,8 @@ def _preparar_por_provedor(provedor: str, texto: str) -> str:
     return _preparar_texto_xtts(texto)
 
 
-def _trecho_sem_fala(texto: str) -> bool:
-    """True se o trecho não tem NADA pronunciável em NENHUMA rota.
+def _trecho_sem_fala(texto: str, provedor: str | None = None) -> bool:
+    """True se o trecho não tem NADA pronunciável.
 
     Fonte única de verdade para "este trecho não vira áudio de fala". Cobre:
 
@@ -905,11 +905,22 @@ def _trecho_sem_fala(texto: str) -> bool:
     texto CRU, então o trecho seguia para o provedor, que o recusava
     (`NoAudioReceived`) → HTTP 500 → a leitura caía para a voz do NAVEGADOR.
 
+    `provedor` (2026-10-28) restringe a pergunta à rota que o app vai mesmo
+    usar. Sem ele, responde-se pela UNIÃO das rotas — resposta optimista, que
+    não é a que o serviço entrega quando o provedor escolhido esvazia o texto:
+    `**Nota (rattail):**` sobrevive na rota edge (`_preparar_texto_edge` só
+    tira a pontuação) mas é metadado para o Fish (`_preparar_texto_xtts`
+    devolve `**`), logo o áudio real é uma PAUSA. Os dois trechos assim em
+    68 mil ficavam eternamente "em falta" nos relatórios.
+
     Use isto (não `_sem_conteudo_narravel`) nas ferramentas de auditoria, para
     que a cobertura bata com o que o app realmente entrega.
     """
     if _sem_conteudo_narravel(texto):
         return True
+    if provedor:
+        # Uma só rota: a que foi escolhida para este trecho.
+        return _sem_conteudo_narravel(_preparar_por_provedor(provedor, texto))
     # Se QUALQUER rota consegue produzir fala, o trecho é narrável.
     for prep in (_preparar_texto_edge(texto), _preparar_texto_xtts(texto)):
         if not _sem_conteudo_narravel(prep):
@@ -935,16 +946,31 @@ def _gerar_silencio(destino: str, segundos: float = 0.7) -> None:
         raise RuntimeError("ffmpeg não gerou a pausa silenciosa")
 
 
+def _caminho_pausa(texto: str, segundos: float = 0.7) -> str | None:
+    """Caminho do MP3 de pausa deste trecho, se JÁ estiver em disco.
+
+    Existe separada de `_pausa_silenciosa` para que a leitura do cache
+    (`caminho_em_cache`, que corre no pedido HTTP) possa consultar a pausa sem
+    chamar ffmpeg: uma função de consulta não pode gerar áudio.
+    """
+    chave = _chave_cache(f"pausa:{segundos:.2f}", texto, "+0%")
+    destino = os.path.join(_cache_dir(), f"{chave}.mp3")
+    if os.path.exists(destino) and os.path.getsize(destino) > 0:
+        return destino
+    return None
+
+
 def _pausa_silenciosa(texto: str, segundos: float = 0.7) -> str:
     """Devolve o caminho de um MP3 de pausa para um trecho sem fala (com cache).
 
     A chave inclui a duração e o texto, então trocar a duração no futuro não
     reaproveita um arquivo com tamanho errado.
     """
+    existente = _caminho_pausa(texto, segundos)
+    if existente:
+        return existente
     chave = _chave_cache(f"pausa:{segundos:.2f}", texto, "+0%")
     destino = os.path.join(_cache_dir(), f"{chave}.mp3")
-    if os.path.exists(destino):
-        return destino
     _gerar_silencio(destino, segundos)
     return destino
 
@@ -1064,8 +1090,19 @@ def caminho_em_cache(texto: str, rate: str = "+0%", *,
     if not texto:
         return None
     if _trecho_sem_fala(texto):
-        return None  # separador/símbolos: vira pausa, não tem ficheiro
+        # Separador/símbolos: nunca houve fala em rota nenhuma. Se a pausa já
+        # foi gerada, serve-se; enquanto não for, o pedido segue para
+        # `sintetizar()`, que a cria.
+        return _caminho_pausa(texto)
     provedor, voz = provedor_canonico(texto, rate, arquivo=arquivo)
+
+    # 2026-10-28: a rota ESCOLHIDA pode não ter fala mesmo quando outra tem.
+    # `**Nota (rattail):**` sobrevive no edge mas é metadado para o Fish, e o
+    # áudio real que o serviço entrega é uma pausa — criada por `sintetizar()`
+    # mas ignorada aqui, o que fazia destes trechos pendências eternas nos
+    # relatórios e obrigava a passar pelo serviço em cada pedido.
+    if _trecho_sem_fala(texto, provedor):
+        return _caminho_pausa(texto)
 
     # A voz aprovada ganha a qualquer chave local (ver `_caminho_voz_aprovada`).
     if provedor in ("xtts", "fish"):
