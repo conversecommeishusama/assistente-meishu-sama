@@ -71,3 +71,99 @@ portal têm trabalho que não está no git.
 
 Comparar com `cmp`, nunca por tamanho ou data. `stat -c%s` com caminho
 relativo deu valores trocados quando o `cwd` era o do portal.
+
+---
+
+# Resolvido em 28/10/2026 (mesmo dia)
+
+O usuário decidiu: **manter o portal** (quer torná-lo o principal), e o portal
+passa a acompanhar o padrão do Goshinsho em uso. Feito assim:
+
+## 1. O código voltou para o repositório, com um só conjunto de ficheiros
+
+- `goshinsho/portal_routes.py` e `goshinsho/services/artigo_service.py`
+  passaram a viver no `main` (as tabelas `artigos` e `artigo_comentarios` já
+  existiam no Postgres e o `psycopg2` já estava instalado — verificado, não
+  presumido).
+- Templates `portal*`, `artigo*`, `artigos`, `_portal_header`, `_portal_forms`
+  e os assets `portal.css`, `portal.js`, `artigos.js`: idem.
+- `/var/www/goshinsho-portal/{goshinsho,templates,static}` passaram a
+  **symlinks** para `/var/www/goshinsho/`. Zero divergências (verificado com
+  `cmp` ficheiro a ficheiro: 0).
+- Backup completo do estado anterior em
+  `/var/www/goshinsho-portal/backups/pre_unificacao_20261028T220104/`
+  (20 MB, inclui `goshinsho`, `templates`, `static` e `.env`).
+
+## 2. `Config.PORTAL_ENABLED` separa os dois mundos
+
+`GOSHINSHO_PORTAL_ENABLED=1` no `.env` do portal, ausente na produção. Com a
+flag a False o blueprint nem é importado — a produção não mudou de
+comportamento (testado: `/` continua a landing de captação, `/artigos` continua
+404).
+
+A flag é **também** o interruptor da restrição da Palavra Oral. As duas coisas
+nasceram juntas no protótipo e não fazia sentido separá-las.
+
+## 3. Um só conjunto de templates, duas "peles"
+
+`portal_ativo` (injectado pelo `context_processor`) escolhe o cabeçalho:
+`_portal_header.html` + `portal.css` quando ligado, a topbar de produção
+quando desligado. Antes eram ficheiros separados a divergir em silêncio — 10
+templates já tinham derivado.
+
+## 4. O que o portal ganhou por vir para cá
+
+- **A voz dele voltou a tocar.** O `leitura_routes.py` do portal era de 30/09 e
+  não passava `arquivo=` ao `sintetizar()`; sem obra, `provedor_canonico`
+  devolve edge. Medido antes/depois: 24 kHz → **44,1 kHz** na leitura, 24 kHz
+  no chat (correto).
+- Retentativa de provedores remotos, correção da pausa por rota, correção dos
+  marcadores circulados — tudo o que foi feito na produção desde 27/10.
+
+## 5. O que a produção ganhou por o portal vir para cá
+
+- **A restrição da Palavra Oral** (com a flag a False não se aplica, mas está
+  no código, testada e pronta para quando o portal for promovido).
+- `_next_seguro`: o `?next=` do login passou a ser validado como caminho
+  interno. Antes, `?next=https://site-malicioso/` fazia da tela de login um
+  trampolim para phishing.
+- `_guardar_next_url` preserva o prefixo e a query string. Guardava só
+  `request.path`, que não inclui o prefixo do mount — sob `/portal` isso
+  devolvia o visitante à produção.
+- O cadeado nos cartões das obras da Palavra Oral (`data-exigem-conta`).
+- A pergunta do portal retomada no chat (`/app-pt?q=...`).
+
+## 6. Desempenho: 3,98 s → 24 ms na página principal
+
+A página principal abria **três** conexões ao Postgres (o padrão do projecto:
+
+- `forum_service._conn` — uma por função). Medido: 1,24 s + 1,09 s + ~1,2 s.
+
+- `artigo_service.destaques_da_home()` faz as duas consultas de artigos na
+  mesma conexão, com cache de 60 s.
+- `portal_routes._topicos_recentes()` idem.
+
+⚠️ O sentinela da cache era `(None, None)`, que é exactamente o resultado
+quando não há artigos publicados — a cache nunca servia nada e cada visita ia
+ao banco. Passou a `em is None`, e um teste prende isso.
+
+`/portal/artigos` continua a 1,20 s: ali o cache não ajuda, é conteúdo
+paginado. Se incomodar, o próximo passo é um pool de conexões — mas isso é uma
+decisão sobre o projecto inteiro, não só sobre o portal.
+
+## 7. Testes
+
+`tests/test_portal_flag.py` — 19 testes, e o mais importante é o grupo que
+verifica a flag **desligada**. Um teste que só olhasse o portal ligado
+deixaria passar exactamente o acidente que se quer evitar.
+
+Suite completa: **363 verdes**.
+
+## O que continua em aberto
+
+- O `/portal` é servido em `localhost:5092` e exposto pelo Caddy em `/portal*`.
+  Quando for promovido a principal, `GOSHINSHO_PORTAL_ENABLED=1` vai para o
+  `.env` de produção, `GOSHINSHO_URL_PREFIX` fica vazio, e o `handle /portal*`
+  do Caddyfile sai.
+- `GOSHINSHO_FORUM_ENABLED=1` só no portal. Se o portal for o principal, o
+  Fórum vai junto (é o que o usuário quer testar).
