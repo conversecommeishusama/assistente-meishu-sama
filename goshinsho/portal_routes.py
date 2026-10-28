@@ -20,6 +20,7 @@ de conduta) por import — não duplica regra de negócio.
 """
 
 import logging
+import time
 
 from flask import Blueprint, jsonify, render_template, request
 
@@ -97,13 +98,36 @@ def _formata(artigos):
     return artigos
 
 
+# 2026-10-28: a página principal do Portal consulta o fórum para mostrar os 3
+# tópicos mais recentes. Cada consulta abre a sua conexão ao Postgres (o padrão
+# do projecto, ver `forum_service._conn`) e custa ~1,2 s — medido. É uma página
+# de entrada: esperar 1,2 s por "quais são os 3 tópicos recentes" não se
+# justifica, porque isso não muda de segundo a segundo.
+_TOPICOS_TTL_S = 60.0
+_topicos_cache = {"em": None, "valor": ([], 0)}
+
+
 def _topicos_recentes(limite=3):
     """Os `limite` tópicos do fórum com atualização mais recente.
 
     `list_topicos` já ordena por última atividade (mais recente primeiro) e
     devolve as 2 últimas postagens resumidas de cada tópico.
+
+    O resultado fica em cache por 60 s (`_TOPICOS_TTL_S`). Em falha de banco
+    devolve-se o que houver em cache (ou vazio) e a página mostra-se sem os
+    tópicos, em vez de falhar por inteiro.
     """
-    dados = forum_service.list_topicos(page=1, per_page=limite)
+    agora = time.monotonic()
+    if (_topicos_cache["em"] is not None
+            and agora - _topicos_cache["em"] < _TOPICOS_TTL_S):
+        return _topicos_cache["valor"]
+
+    try:
+        dados = forum_service.list_topicos(page=1, per_page=limite)
+    except Exception as exc:
+        _logger.warning("portal: falha ao ler os tópicos do fórum (%s)", exc)
+        return _topicos_cache["valor"]
+
     topicos = dados.get("topicos") or []
     for t in topicos:
         t["ultima_atividade_fmt"] = _formatar_data_iso(t.get("ultima_atividade"))
@@ -112,7 +136,10 @@ def _topicos_recentes(limite=3):
         # (o e-mail do autor nunca é exposto na página do portal).
         for p in t.get("ultimas_postagens") or []:
             p["created_at_fmt"] = _formatar_data_iso(p.get("created_at"))
-    return topicos, dados.get("total") or 0
+    valor = (topicos, dados.get("total") or 0)
+    _topicos_cache["em"] = agora
+    _topicos_cache["valor"] = valor
+    return valor
 
 
 def _estrutura_acervo():
@@ -178,10 +205,10 @@ def portal_home():
     else:
         forum_indisponivel = True
 
-    artigo_recente = artigo_service.artigo_mais_recente()
-    artigo_comentado = artigo_service.artigo_ultimo_comentario()
+    artigo_recente, artigo_comentado = artigo_service.destaques_da_home()
     # Não repetir o mesmo artigo nos dois espaços da página.
-    if artigo_recente and artigo_comentado and artigo_recente["id"] == artigo_comentado["id"]:
+    if artigo_recente and artigo_comentado \
+            and artigo_recente["id"] == artigo_comentado["id"]:
         artigo_comentado = None
     _formata([artigo_recente, artigo_comentado])
 

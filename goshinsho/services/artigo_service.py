@@ -16,6 +16,7 @@ import hashlib
 import hmac
 import logging
 import re
+import time
 from datetime import datetime, timezone
 
 from ..config import Config
@@ -276,6 +277,97 @@ def artigo_mais_recente():
     """O artigo publicado mais recente (ou None)."""
     dados = listar_artigos(page=1, per_page=1)
     return dados["artigos"][0] if dados["artigos"] else None
+
+
+# ---------------------------------------------------------------------------
+# Destaques da página principal do Portal
+# ---------------------------------------------------------------------------
+
+_DESTAQUES_TTL_S = 60.0
+# `em = None` significa "nunca calculado". Não usar (None, None) como sentinela:
+# isso confundia "nunca calculado" com "calculado e sem artigos" e a cache
+# nunca servia nada num site sem artigos publicados (o caso de hoje).
+_destaques_cache = {"em": None, "valor": (None, None)}
+
+
+def _destino_com_mais_comentarios(cur):
+    """Artigo cujo comentário aprovado mais recente é o mais novo de todos."""
+    cur.execute(
+        f"""
+        SELECT {_ARTIGO_COLS},
+               MAX(c.created_at) AS ultimo_comentario,
+               COUNT(c.id) AS qtd_comentarios
+        FROM artigos a
+        JOIN artigo_comentarios c
+          ON c.artigo_id = a.id AND c.status = 'aprovada'
+        WHERE a.status = 'aprovada'
+        GROUP BY a.id
+        ORDER BY MAX(c.created_at) DESC
+        LIMIT 1
+        """
+    )
+    row = cur.fetchone()
+    if not row:
+        return None
+    cols = [d[0] for d in cur.description]
+    dados = _finalizar(dict(zip(cols, row)))
+    dados.setdefault("qtd_comentarios", 0)
+    dados["resumo"] = _resumo(dados.get("conteudo"))
+    return dados
+
+
+def destaques_da_home(ttl_s=None):
+    """(artigo mais recente, artigo com último comentário) para a página inicial.
+
+    Existe porque a página principal do Portal chamava `artigo_mais_recente()`
+    e `artigo_ultimo_comentario()` em separado, e cada uma abre a SUA própria
+    conexão ao Postgres. Medido em 28/10/2026: 1,24 s + 1,09 s = **2,3 s** só
+    nisto, numa página que serve de entrada ao site.
+
+    Duas correções:
+      · as duas consultas passam a correr na MESMA conexão;
+      · o resultado fica em cache por `ttl_s` (60 s), porque "o artigo mais
+        recente" não muda de segundo a segundo e esta é a página mais visitada.
+
+    Devolve sempre um par (pode ter None dos dois lados). Nunca levanta: em
+    falha de banco a página mostra-se sem os destaques, como antes.
+    """
+    ttl = _DESTAQUES_TTL_S if ttl_s is None else float(ttl_s)
+    agora = time.monotonic()
+    if (ttl > 0 and _destaques_cache["em"] is not None
+            and agora - _destaques_cache["em"] < ttl):
+        return _destaques_cache["valor"]
+
+    recente = comentado = None
+    try:
+        with _conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    f"""
+                    SELECT {_ARTIGO_COLS},
+                           (SELECT COUNT(*) FROM artigo_comentarios c
+                             WHERE c.artigo_id = a.id
+                               AND c.status = 'aprovada') AS qtd_comentarios
+                    FROM artigos a
+                    WHERE a.status = 'aprovada'
+                    ORDER BY a.created_at DESC
+                    LIMIT 1
+                    """
+                )
+                row = cur.fetchone()
+                if row:
+                    cols = [d[0] for d in cur.description]
+                    recente = _finalizar(dict(zip(cols, row)))
+                    recente["resumo"] = _resumo(recente.get("conteudo"))
+                comentado = _destino_com_mais_comentarios(cur)
+    except Exception as exc:
+        _logger.warning("destaques_da_home: erro de banco (%s)", exc)
+        # Não envenenar o cache com a falha: a próxima visita tenta de novo.
+        return (None, None)
+
+    _destaques_cache["em"] = agora
+    _destaques_cache["valor"] = (recente, comentado)
+    return (recente, comentado)
 
 
 def artigo_ultimo_comentario():

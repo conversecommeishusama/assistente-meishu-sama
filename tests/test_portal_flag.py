@@ -154,6 +154,116 @@ class RestricaoPalavraOralTests(unittest.TestCase):
         self.assertNotIn('data-audio-ler', corpo)
 
 
+class CacheDosDestaquesTests(unittest.TestCase):
+    """A página principal do Portal não pode abrir duas conexões só para
+    escolher dois artigos.
+
+    Medido em 28/10/2026: `artigo_mais_recente()` (1,24 s) e
+    `artigo_ultimo_comentario()` (1,09 s) abriam a SUA própria conexão ao
+    Postgres — 2,3 s numa página de entrada. `destaques_da_home()` faz as duas
+    na mesma conexão e guarda o resultado 60 s.
+    """
+
+    def setUp(self):
+        from goshinsho.services import artigo_service
+
+        self.servico = artigo_service
+        self._antes = dict(artigo_service._destaques_cache)
+        self.addCleanup(self._restaurar)
+
+    def _restaurar(self):
+        self.servico._destaques_cache.clear()
+        self.servico._destaques_cache.update(self._antes)
+
+    def test_segunda_chamada_nao_toca_no_banco(self):
+        chamadas = []
+        self.servico._destaques_cache.update({"em": None, "valor": (None, None)})
+        with mock.patch.object(self.servico, "_conn",
+                               side_effect=chamadas.append) as conn:
+            conn.return_value.__enter__.return_value.cursor.side_effect = (
+                RuntimeError("sem banco neste teste"))
+            primeiro = self.servico.destaques_da_home()
+            n_depois_da_primeira = len(chamadas)
+            segundo = self.servico.destaques_da_home()
+        self.assertEqual(primeiro, segundo)
+        self.assertEqual(len(chamadas), n_depois_da_primeira,
+                         "a segunda chamada voltou a abrir conexão")
+
+    def test_cache_de_artigos_vazios_tambem_e_guardada(self):
+        """Um site sem artigos publicados não pode pagar 1,2 s por visita.
+
+        O sentinela da cache era `(None, None)`, que é exactamente o resultado
+        quando não há artigos — a cache nunca servia nada e cada visita ia ao
+        banco outra vez.
+        """
+        self.servico._destaques_cache.update({"em": None, "valor": (None, None)})
+        with mock.patch.object(self.servico, "_conn") as conn:
+            # `with _conn() as conn: with conn.cursor() as cur:` — o cursor é
+            # ele próprio um context manager, por isso `cur` é o valor que o
+            # `__enter__` do cursor devolve.
+            cur = (conn.return_value.__enter__.return_value
+                   .cursor.return_value.__enter__.return_value)
+            cur.fetchone.return_value = None
+            cur.description = []
+            self.assertEqual(self.servico.destaques_da_home(), (None, None))
+            self.assertIsNotNone(self.servico._destaques_cache["em"])
+            antes = conn.call_count
+            self.assertEqual(self.servico.destaques_da_home(), (None, None))
+            self.assertEqual(conn.call_count, antes,
+                             "o resultado vazio não foi guardado na cache")
+
+    def test_ttl_zero_desliga_a_cache(self):
+        self.servico._destaques_cache.update({"em": None, "valor": (None, None)})
+        with mock.patch.object(self.servico, "_conn") as conn:
+            cur = (conn.return_value.__enter__.return_value
+                   .cursor.return_value.__enter__.return_value)
+            cur.fetchone.return_value = None
+            cur.description = []
+            self.servico.destaques_da_home(ttl_s=0)
+            self.servico.destaques_da_home(ttl_s=0)
+            self.assertEqual(conn.call_count, 2)
+
+    def test_falha_de_banco_nao_envenena_a_cache(self):
+        self.servico._destaques_cache.update({"em": None, "valor": (None, None)})
+        with mock.patch.object(self.servico, "_conn",
+                               side_effect=RuntimeError("banco em baixo")):
+            self.assertEqual(self.servico.destaques_da_home(), (None, None))
+        self.assertIsNone(self.servico._destaques_cache["em"],
+                          "a falha ficou cacheada e a página nunca recuperaria")
+
+
+class CacheDosTopicosTests(unittest.TestCase):
+    """Mesmo problema, no fórum: 1,2 s para escolher 3 tópicos."""
+
+    def setUp(self):
+        from goshinsho import portal_routes
+
+        self.mod = portal_routes
+        self._antes = dict(portal_routes._topicos_cache)
+        self.addCleanup(self._restaurar)
+
+    def _restaurar(self):
+        self.mod._topicos_cache.clear()
+        self.mod._topicos_cache.update(self._antes)
+
+    def test_segunda_chamada_usa_a_cache(self):
+        self.mod._topicos_cache.update({"em": None, "valor": ([], 0)})
+        with mock.patch.object(self.mod.forum_service, "list_topicos",
+                               return_value={"topicos": [], "total": 0}) as lst:
+            self.mod._topicos_recentes()
+            primeira = lst.call_count
+            self.mod._topicos_recentes()
+        self.assertEqual(lst.call_count, primeira,
+                         "a segunda chamada voltou a consultar o fórum")
+
+    def test_falha_do_forum_nao_derruba_a_pagina(self):
+        self.mod._topicos_cache.update({"em": None, "valor": ([], 0)})
+        with mock.patch.object(self.mod.forum_service, "list_topicos",
+                               side_effect=RuntimeError("banco em baixo")):
+            topicos, total = self.mod._topicos_recentes()
+        self.assertEqual((topicos, total), ([], 0))
+
+
 class NavegacaoDeRetornoAposLoginTests(unittest.TestCase):
     """`_next_seguro`: o destino de retorno não pode ser um trampolim.
 
