@@ -12,6 +12,7 @@ atualizado TIMESTAMPTZ, PK (autor_id, arquivo)).
 from __future__ import annotations
 
 import logging
+from .db import conexao as _conexao
 
 _logger = logging.getLogger(__name__)
 
@@ -27,15 +28,13 @@ CREATE TABLE IF NOT EXISTS leitura_progresso (
 
 
 def _conn():
-    import psycopg2
-    from ..config import Config
+    """Ligação ao Postgres — uma só fonte de verdade (ver `services/db.py`).
 
-    conn_str = getattr(Config, "POSTGRES_CONNECTION_STRING", None) or ""
-    if not conn_str:
-        raise RuntimeError("POSTGRES_CONNECTION_STRING não configurada no .env.")
-    return psycopg2.connect(conn_str, connect_timeout=15)
-
-
+    Antes cada serviço tinha a SUA cópia desta função (5 no total, idênticas),
+    e cada chamada abria uma ligação nova: ~770 ms medidos contra o Supabase.
+    Agora vem do pool do processo. `GOSHINSHO_DB_POOL=0` volta ao anterior.
+    """
+    return _conexao()
 def garantir_tabela_progresso() -> bool:
     """Cria a tabela de progresso se não existir (idempotente)."""
     try:

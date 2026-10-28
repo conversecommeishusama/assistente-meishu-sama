@@ -14,19 +14,19 @@ import logging
 from datetime import datetime, timezone
 
 from ..config import Config
+from .db import conexao as _conexao
 
 _logger = logging.getLogger(__name__)
 
 
 def _conn():
-    import psycopg2
+    """Ligação ao Postgres — uma só fonte de verdade (ver `services/db.py`).
 
-    conn_str = getattr(Config, "POSTGRES_CONNECTION_STRING", None) or ""
-    if not conn_str:
-        raise RuntimeError("POSTGRES_CONNECTION_STRING não configurada no .env.")
-    return psycopg2.connect(conn_str, connect_timeout=15)
-
-
+    Antes cada serviço tinha a SUA cópia desta função (5 no total, idênticas),
+    e cada chamada abria uma ligação nova: ~770 ms medidos contra o Supabase.
+    Agora vem do pool do processo. `GOSHINSHO_DB_POOL=0` volta ao anterior.
+    """
+    return _conexao()
 # ---------------------------------------------------------------------------
 # Tópicos
 # ---------------------------------------------------------------------------
@@ -103,9 +103,16 @@ def list_topicos(page=1, per_page=5, busca=None):
                 cols = [d[0] for d in cur.description]
                 topicos = [_topico_dict(r, cur, cols=cols) for r in cur.fetchall()]
 
-                # Últimas 2 postagens resumidas (1ª linha) por tópico
+                # Últimas 2 postagens resumidas (1ª linha) por tópico.
+                #
+                # 2026-10-28: era `for topico in topicos: ...resumo(cur, id)` —
+                # uma consulta por tópico. Com o pool (services/db.py) cada
+                # consulta ao Supabase custa ~190 ms, por isso a página do
+                # fórum com 20 tópicos pagava ~3,8 s só aqui. Agora é UMA
+                # consulta para todos (ver `_postagens_em_lote`).
+                resumos = _postagens_em_lote(cur, [t["id"] for t in topicos])
                 for topico in topicos:
-                    topico["ultimas_postagens"] = _ultimas_postagens_resumo(cur, topico["id"])
+                    topico["ultimas_postagens"] = resumos.get(topico["id"], [])
 
                 return {
                     "topicos": topicos,
@@ -118,37 +125,72 @@ def list_topicos(page=1, per_page=5, busca=None):
         return {"topicos": [], "total": 0, "pagina": page, "por_pagina": per_page}
 
 
-def _ultimas_postagens_resumo(cur, topico_id):
-    """As 2 últimas postagens aprovadas de um tópico, com a primeira linha
-    resumida (para exibir na caixa do tópico)."""
+def _resumo_da_linha(conteudo):
+    """Primeira linha do conteúdo, cortada a 120 caracteres."""
+    linhas = (conteudo or "").strip().splitlines()
+    texto = linhas[0].strip() if linhas else ""
+    if len(texto) > 120:
+        texto = texto[:120].rstrip() + "…"
+    return texto
+
+
+def _postagens_em_lote(cur, topico_ids):
+    """As 2 últimas postagens aprovadas de CADA tópico, numa só consulta.
+
+    Substitui `_ultimas_postagens_resumo(cur, id)`, que era chamada dentro de
+    um `for` — uma consulta por tópico. Com o pool de ligações (ver
+    `services/db.py`) cada consulta ao Supabase custa ~190 ms, por isso 20
+    tópicos pagavam ~3,8 s **só** a montar as caixas. Aqui é uma consulta.
+
+    `ROW_NUMBER()` por tópico em ordem decrescente de data, ficando as 2
+    primeiras — o mesmo resultado que o `ORDER BY ... LIMIT 2` por tópico,
+    sem o N+1.
+
+    Devolve `{topico_id: [postagem, ...]}`; tópico sem postagens não aparece.
+    """
+    ids = [t for t in (topico_ids or []) if t]
+    if not ids:
+        return {}
     try:
         cur.execute(
             """
-            SELECT papel, autor_nome, conteudo, created_at
-            FROM forum_mensagens
-            WHERE topico_id = %s AND status = 'aprovada'
-            ORDER BY created_at DESC
-            LIMIT 2
+            SELECT topico_id, papel, autor_nome, conteudo, created_at
+            FROM (
+                SELECT topico_id, papel, autor_nome, conteudo, created_at,
+                       ROW_NUMBER() OVER (
+                           PARTITION BY topico_id ORDER BY created_at DESC
+                       ) AS posicao
+                FROM forum_mensagens
+                WHERE topico_id = ANY(%s::uuid[]) AND status = 'aprovada'
+            ) sub
+            WHERE posicao <= 2
+            ORDER BY topico_id, created_at DESC
             """,
-            (topico_id,),
+            (ids,),
         )
-        resumo = []
-        for row in cur.fetchall():
-            papel, autor_nome, conteudo, created_at = row
-            primeira_linha = (conteudo or "").strip().splitlines()
-            texto = primeira_linha[0].strip() if primeira_linha else ""
-            if len(texto) > 120:
-                texto = texto[:120].rstrip() + "…"
-            resumo.append({
+        por_topico = {}
+        for topico_id, papel, autor_nome, conteudo, created_at in cur.fetchall():
+            por_topico.setdefault(topico_id, []).append({
                 "papel": papel,
-                "autor_nome": autor_nome or ("Goshinsho (IA)" if papel == "assistente" else "Membro"),
-                "resumo": texto,
+                "autor_nome": autor_nome or (
+                    "Goshinsho (IA)" if papel == "assistente" else "Membro"),
+                "resumo": _resumo_da_linha(conteudo),
                 "created_at": created_at.isoformat() if created_at else None,
             })
-        return resumo
+        return por_topico
     except Exception as exc:
-        _logger.warning("_ultimas_postagens_resumo: erro (%s)", exc)
-        return []
+        _logger.warning("_postagens_em_lote: erro (%s)", exc)
+        return {}
+
+
+def _ultimas_postagens_resumo(cur, topico_id):
+    """As 2 últimas postagens aprovadas de um tópico, com a primeira linha
+    resumida (para exibir na caixa do tópico).
+
+    Mantida para chamadores isolados; em lista usar `_postagens_em_lote`,
+    que evita uma consulta por tópico.
+    """
+    return _postagens_em_lote(cur, [topico_id]).get(topico_id, [])
 
 
 def get_topico(topico_id):
