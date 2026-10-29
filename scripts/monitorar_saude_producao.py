@@ -73,6 +73,21 @@ MAX_P95_CHAT = float(os.environ.get("MONITOR_MAX_P95_CHAT", 140.0))
 JANELA_CHAT_MIN = int(os.environ.get("MONITOR_JANELA_CHAT_MIN", 1440))
 MIN_AMOSTRAS_CHAT = int(os.environ.get("MONITOR_MIN_AMOSTRAS_CHAT", 3))
 
+# Mínimo de pedidos ACIMA do limite para o alarme disparar.
+#
+# 2026-10-29: o p95 por índice mais próximo só deixa de ser o máximo quando
+# n >= 20 (`ceil(0.95*n)-1` só sai do último elemento a partir daí). Com o
+# volume real (~13 pedidos/dia) o "p95" ERA o máximo, e UM pedido lento segurava
+# o alarme aceso durante as 24h da janela: um pedido de 141,2s em 28/10 23:41
+# manteve 12 execuções seguidas em FALHA, 1,2s acima do teto. Isso treina quem
+# lê o log a ignorar o alerta — o oposto do objectivo.
+# Agora exige-se mais do que um caso isolado. Com n grande o efeito é nulo
+# (2 pedidos acima do teto em 100 já reprovam o p95 de qualquer forma).
+MIN_AMOSTRAS_ACIMA_P95 = int(os.environ.get("MONITOR_MIN_AMOSTRAS_ACIMA_P95", 2))
+# Abaixo disto o p95 reportado é, aritmeticamente, o máximo — e o texto do
+# alerta diz isso em vez de mentir com um rótulo "p95".
+P95_VIRA_MAXIMO_N = 20
+
 # 5xx: só avaliamos com tráfego suficiente, e o limite é percentual.
 JANELA_5XX_MIN = int(os.environ.get("MONITOR_JANELA_5XX_MIN", 15))
 MIN_AMOSTRAS_5XX = int(os.environ.get("MONITOR_MIN_AMOSTRAS_5XX", 20))
@@ -282,11 +297,23 @@ def verificar_p95_chat() -> tuple[bool, str]:
     # p95 por índice mais próximo (suficiente e sem dependências).
     indice = min(len(duracoes) - 1, max(0, math.ceil(0.95 * len(duracoes)) - 1))
     p95 = duracoes[indice]
-    ok = p95 <= MAX_P95_CHAT
-    return ok, (
+
+    # Um único pedido lento não é degradação (ver MIN_AMOSTRAS_ACIMA_P95).
+    acima = [d for d in duracoes if d > MAX_P95_CHAT]
+    ok = len(acima) < MIN_AMOSTRAS_ACIMA_P95
+
+    detalhe = (
         f"p95 /api/chat {p95:.1f}s / limite {MAX_P95_CHAT:.0f}s "
         f"(n={len(duracoes)} em {JANELA_CHAT_MIN} min, máx {duracoes[-1]:.1f}s)"
     )
+    if len(duracoes) < P95_VIRA_MAXIMO_N:
+        detalhe += " [n baixo: este p95 é o máximo]"
+    if len(acima) >= 1:
+        detalhe += (
+            f"; {len(acima)} acima do limite "
+            f"(alarme com {MIN_AMOSTRAS_ACIMA_P95})"
+        )
+    return ok, detalhe
 
 
 def verificar_5xx() -> tuple[bool, str]:
