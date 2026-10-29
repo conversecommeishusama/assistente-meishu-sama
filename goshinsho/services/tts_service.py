@@ -35,12 +35,15 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import logging
 import os
 import re
 import subprocess
 import tempfile
 import threading
 import time
+
+_logger = logging.getLogger(__name__)
 
 VOZES_PT_BR = {
     "antonio": "pt-BR-AntonioNeural",
@@ -58,7 +61,30 @@ VOZ_INTERLOCUTOR = "pt-BR-AntonioNeural"  # edge-tts (Antônio) p/ não-Meishu
 # dentro de `asyncio.run` a esperar resposta, sem log e sem excepção). Sem este
 # limite uma síntese travada bloqueia o worker — e, no lote, também o daemon
 # XTTS que lhe está associado — indefinidamente.
-EDGE_TIMEOUT_S = int(os.environ.get("GOSHINSHO_EDGE_TIMEOUT_S", "120"))
+#
+# 2026-10-29: passou de teto ABSOLUTO para teto de INACTIVIDADE. O `save()` do
+# edge-tts escreve cada bloco de áudio à medida que chega, portanto "sem
+# ficheiro a crescer durante N s" é a assinatura exacta de ligação encalhada.
+# Um teto absoluto de 120 s obrigava a esperar dois minutos para descobrir isso
+# — e, ao mesmo tempo, era apertado para textos longos (medido: 3800 chars =
+# ~38 s de síntese normal num dia bom, logo mais do dobro num dia lento).
+# Agora texto longo que está a progredir nunca é cortado, e o encalhe é
+# detectado em 30 s. `EDGE_TIMEOUT_TOTAL_S` continua a ser a rede de segurança
+# contra progresso infinito (tráfego a pingar gota a gota).
+EDGE_TIMEOUT_S = int(os.environ.get("GOSHINSHO_EDGE_TIMEOUT_S", "30"))
+EDGE_TIMEOUT_TOTAL_S = int(
+    os.environ.get("GOSHINSHO_EDGE_TIMEOUT_TOTAL_S", "120"))
+
+# 2026-10-29: uma retentativa. Em 7 dias, 42 dos 47 erros de TTS foram o
+# edge-tts devolver sem áudio — indisponibilidade curta, que a 2ª tentativa
+# resolve. É UMA tentativa e não mais: o front já pede cada trecho duas vezes
+# (prefetch + tocar no trecho), então retentativas multiplicam-se por 4 durante
+# uma queda real da Microsoft.
+EDGE_TENTATIVAS = int(os.environ.get("GOSHINSHO_EDGE_TENTATIVAS", "2"))
+# Pausa antes da retentativa: uma queda de websocket da Microsoft costuma durar
+# segundos. Repetir em cima do mesmo instante apanha a mesma falha.
+EDGE_PAUSA_RETENTATIVA_S = float(
+    os.environ.get("GOSHINSHO_EDGE_PAUSA_RETENTATIVA_S", "1.5"))
 
 # Versão da amostra de voz usada na clonagem XTTS. Incluída na CHAVE do cache
 # para que, ao trocar a amostra (ex.: para a remasterizada), os áudios antigos
@@ -1239,15 +1265,63 @@ def _sintetizar_com_cache(provedor: str, voz_real: str, texto: str, rate: str) -
 
 
 def _gerar_edge(texto: str, voz_real: str, rate: str, destino: str) -> None:
-    """Gera áudio via edge-tts (async) salvando em `destino`.
+    """Gera áudio via edge-tts (async) salvando em `destino`, com 1 retentativa.
 
-    A síntese corre sempre numa thread própria, esperada com limite
-    (`EDGE_TIMEOUT_S`). Antes, o caminho principal chamava `asyncio.run`
-    directo, sem limite nenhum: o `timeout` existia só no ramo de recurso (para
-    quando já havia um loop a correr). Quando o websocket da Microsoft ficava
-    pendurado — visto em 27/10/2026, um worker do lote passou 11 h dentro de
-    `asyncio.run` — a chamada nunca voltava, sem log e sem excepção. Um mp3
-    parcial é sempre removido, para não ser confundido com áudio válido.
+    A síntese corre sempre numa thread própria, vigiada por `_gerar_edge_uma_vez`
+    (`EDGE_TIMEOUT_S` de INACTIVIDADE + `EDGE_TIMEOUT_TOTAL_S` absoluto). Antes,
+    o caminho principal chamava `asyncio.run` directo, sem limite nenhum: o
+    `timeout` existia só no ramo de recurso (para quando já havia um loop a
+    correr). Quando o websocket da Microsoft ficava pendurado — visto em
+    27/10/2026, um worker do lote passou 11 h dentro de `asyncio.run` — a
+    chamada nunca voltava, sem log e sem excepção.
+
+    2026-10-29: cada tentativa escreve num ficheiro `.part` próprio e só o
+    resultado final é movido para `destino`. Uma thread que encalhou fica viva
+    (é daemon, não há como cancelar `asyncio.run` de fora) e pode continuar a
+    escrever: sem ficheiros separados, o áudio da tentativa seguinte seria
+    sobreposto pelo da anterior.
+    """
+    ultimo_erro: BaseException | None = None
+
+    for tentativa in range(1, EDGE_TENTATIVAS + 1):
+        parcial = f"{destino}.t{tentativa}.part"
+        try:
+            _gerar_edge_uma_vez(texto, voz_real, rate, parcial)
+            os.replace(parcial, destino)
+            return
+        except Exception as exc:  # noqa: BLE001 — reerguido no fim
+            ultimo_erro = exc
+            _remover_ficheiro(parcial)
+            if tentativa < EDGE_TENTATIVAS:
+                _logger.warning(
+                    "edge-tts falhou (tentativa %d/%d): %s — a repetir",
+                    tentativa, EDGE_TENTATIVAS, exc)
+                time.sleep(EDGE_PAUSA_RETENTATIVA_S)
+
+    assert ultimo_erro is not None  # o loop só sai por `return` ou por excepção
+    raise ultimo_erro
+
+
+def _remover_ficheiro(caminho: str) -> None:
+    """Remove o ficheiro se existir (mp3 parcial nunca conta como áudio)."""
+    if not os.path.exists(caminho):
+        return
+    try:
+        os.remove(caminho)
+    except OSError:
+        pass
+
+
+def _gerar_edge_uma_vez(texto: str, voz_real: str, rate: str,
+                        destino: str) -> None:
+    """Uma única chamada ao edge-tts, vigiada por progresso do ficheiro.
+
+    O `save()` do edge-tts escreve cada bloco à medida que o websocket os
+    entrega, portanto o tamanho do ficheiro é o sinal de vida da ligação:
+
+      - cresceu -> houve progresso, reinicia a contagem;
+      - não cresceu durante `EDGE_TIMEOUT_S` -> encalhou, desiste JÁ;
+      - passou `EDGE_TIMEOUT_TOTAL_S` -> progresso infinito, desiste.
     """
 
     async def _gerar() -> None:
@@ -1266,16 +1340,32 @@ def _gerar_edge(texto: str, voz_real: str, rate: str, destino: str) -> None:
             erros.append(e)
 
     t = threading.Thread(target=_correr, name="edge-tts", daemon=True)
+    inicio = time.monotonic()
+    ultimo_progresso = inicio
+    ultimo_tamanho = 0
     t.start()
-    t.join(timeout=EDGE_TIMEOUT_S)
 
-    if t.is_alive() or erros:
-        # Em caso de erro/timeout, remove arquivo parcial.
-        if os.path.exists(destino):
-            try:
-                os.remove(destino)
-            except OSError:
-                pass
-        if erros:
-            raise erros[0]
-        raise RuntimeError(f"edge-tts timeout após {EDGE_TIMEOUT_S}s")
+    while True:
+        t.join(timeout=0.25)
+        if not t.is_alive():
+            break
+        agora = time.monotonic()
+        try:
+            tamanho = os.path.getsize(destino)
+        except OSError:
+            tamanho = 0
+        if tamanho > ultimo_tamanho:
+            ultimo_tamanho = tamanho
+            ultimo_progresso = agora
+        if agora - ultimo_progresso >= EDGE_TIMEOUT_S:
+            _remover_ficheiro(destino)
+            raise RuntimeError(
+                f"edge-tts encalhado: sem áudio novo há {EDGE_TIMEOUT_S}s")
+        if agora - inicio >= EDGE_TIMEOUT_TOTAL_S:
+            _remover_ficheiro(destino)
+            raise RuntimeError(
+                f"edge-tts excedeu {EDGE_TIMEOUT_TOTAL_S}s no total")
+
+    if erros:
+        _remover_ficheiro(destino)
+        raise erros[0]
