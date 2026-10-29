@@ -30,6 +30,32 @@ abertura de ligação.
 Com o pool, a ligação abre uma vez por processo e é reaproveitada: a página
 passa a pagar só as consultas (dezenas de ms).
 
+## Porque se liga ao POOLER e não ao host directo (2026-10-29)
+
+`db.<ref>.supabase.co` **não tem registo A**: é IPv6-only (`2600:1f16:c40:...`,
+AWS us-east-2). Confirmado com `dig A` contra 8.8.8.8 e 1.1.1.1 — nenhum
+responde. Resultado: de vez em quando o `connect_timeout=15` expirava e o
+journal dizia
+
+    db: pool indisponível (...) timeout expired — a usar ligação directa.
+    O pool fica desligado neste processo.
+
+ou seja, o pool era desactivado naquele processo e todas as consultas
+seguintes voltavam a pagar os ~770 ms.
+
+Passou a usar o Supavisor (`aws-1-us-east-2.pooler.supabase.com:5432`,
+modo *session*, autenticação `postgres.<ref>`), que é IPv4. Verificado que
+`inet_server_addr()` devolve exactamente o mesmo endereço — é a mesma base, não
+uma réplica. E é ligeiramente mais rápido (medido, 6 ligações seguidas):
+
+    directo (IPv6): mediana 0,98 s
+    pooler (IPv4):  mediana 0,87 s
+
+O modo *session* (5432) e não *transaction* (6543) porque o 6543 não responde a
+partir desta máquina (expira aos 24 s) e porque o session não restringe
+`SET`/cursores. Nada aqui usa `LISTEN`/`NOTIFY`/tabelas temporárias, mas em
+session mode também não seria problema.
+
 ## Como usar
 
     from .db import conexao
