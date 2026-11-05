@@ -1,12 +1,14 @@
-## 39. Anexo H — Manual do Curso (教修要綱), 3ª edição (1954)
+## 39. Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954
 
-**Documento:** 教修要綱 (*Kyōshū Yōkō*), "Manual do Curso".
+**Documento:** Kyoshu Yōkō, "Manual do Curso".
 
-**Data:** 3ª edição, 10 de outubro de 1954.
+**Data:** edição revista, 10 de outubro de 1954 — a terceira do manual.
 
 **Natureza:** o manual de formação do período final. Substitui o Programa de 1947 (Anexo B) e organiza o curso em três lições, com o elenco das doenças e o modo de tratá-las. O volume o cita no capítulo 11; aqui vai a tradução integral.
 
-**Origem do texto:** fac-símile sem camada de texto; a transcrição japonesa foi feita por OCR e a tradução, a partir dela. As leituras duvidosas do OCR não foram corrigidas por conjetura.
+**Origem do texto:** a transcrição japonesa do manual existe na documentação digital, e é
+dela que sai esta tradução — não de OCR. O fac-símile serve para conferir a paginação e
+as legendas, não como base do texto.
 
 Tradução integral. Os títulos entre 〔 〕 são os do original.
 
@@ -445,7 +447,7 @@ O método mais seguro é apalpar a região dos ombros. A pessoa cujos ombros sã
 O Propósito da Vida
 
 A partir de agora, voltarei a falar sobre assuntos religiosos.
-O fato de o ser humano nascer neste mundo presente se deve à ordem de Deus. O termo "命" (inochi, vida) é o mesmo "命" (mei, ordem); também por isso tem esse sentido. Enquanto o ser humano não souber por que nasceu, não apenas não poderá obter a ação correta nem a tranquilidade e paz espiritual, como haverá o temor de terminar numa vida vã, como quem vive embriagado e morre sonhando.
+O fato de o ser humano nascer neste mundo presente se deve à ordem de Deus. O termo 「命」 (inochi, vida) é o mesmo 「命」 (mei, ordem); também por isso tem esse sentido. Enquanto o ser humano não souber por que nasceu, não apenas não poderá obter a ação correta nem a tranquilidade e paz espiritual, como haverá o temor de terminar numa vida vã, como quem vive embriagado e morre sonhando.
 Então, qual é a intenção de Deus? É construir neste mundo o mundo ideal, em outras palavras, o "Paraíso Terrestre". Em sua escala e em sua concepção, é tão grandioso e majestoso que a sabedoria humana de modo algum o pode compreender. Contudo, a cultura, que progride infinitamente, não tem limite; mas a cultura que até hoje progrediu foi apenas cultura materialista, e não passou de trabalho fundamental para a construção do Paraíso Terrestre.
 E Deus concede a cada pessoa a sua respectiva missão, faz com que cada uma tenha a sua característica, e, renascendo e morrendo, faz com que avancem passo a passo em direção ao objetivo ideal, isto é, a "construção do Paraíso Terrestre". Portanto, deve-se saber que tanto o bem como o mal, tanto a guerra como a paz, tanto a destruição como a criação, não passam de um processo necessário à evolução.
 E qual é a "hora" de hoje? É o período da Transição da Noite para o Dia, em que a destruição e a construção se realizam simultaneamente; ou seja, o mundo inteiro é agora o período do alvorecer, prestes a dar um grande salto em direção a uma nova era. Hoje a humanidade está a ponto de abandonar as vestes da barbárie e alcançar um mundo de cultura elevada.
@@ -503,7 +505,7 @@ Inferior　Inferno do Frio Extremo·Congelamento·
 Fronteira do Fundo
 ―――――――――――――――――――――――――――――――――
 
-Ora, o mundo espiritual é o mundo da vontade e do pensamento. Como não há o obstáculo material do corpo físico, há uma liberdade maravilhosa. Pela vontade do espírito, pode-se ir a qualquer lugar mais rápido que um avião. Mil ri podem ser percorridos em alguns segundos. No entanto, a rapidez ou lentidão do deslocamento do espírito depende da classe do espírito. Quanto mais elevado o espírito — isto é, o espírito que obteve qualificação divina — tanto mais rápido; e o espírito de classe mais baixa leva algumas dezenas de minutos para percorrer mil ri. Por quê? Porque quanto mais baixa a classe do espírito, tanto mais impurezas ele tem e, portanto, tanto mais pesado é. O Espírito Divino de mais alta classe move-se mais rápido que um décimo de milésimo de segundo e, num instante, pode alcançar qualquer distância, por mais longe que seja. Além disso, o espírito, pelo próprio pensamento, expande-se e contrai-se livremente. Num altar de cerca de um shaku de largura, centenas de espíritos ancestrais podem dispor-se lado a lado. Os espíritos ancestrais alegra-se imensamente com os cultos feitos com o coração humano, e não se alegram muito com os que são apenas de forma; por isso, os cultos devem ser realizados conforme a posição de cada um, com o máximo de sinceridade e da forma mais digna possível.
+Ora, o mundo espiritual é o mundo da vontade e do pensamento. Como não há o obstáculo material do corpo físico, há uma liberdade maravilhosa. Pela vontade do espírito, pode-se ir a qualquer lugar mais rápido que um avião. Cerca de quatro mil quilómetros podem ser percorridos em alguns segundos. No entanto, a rapidez ou lentidão do deslocamento do espírito depende da classe do espírito. Quanto mais elevado o espírito — isto é, o espírito que obteve qualificação divina — tanto mais rápido; e o espírito de classe mais baixa leva algumas dezenas de minutos para percorrer a mesma distância. Por quê? Porque quanto mais baixa a classe do espírito, tanto mais impurezas ele tem e, portanto, tanto mais pesado é. O Espírito Divino de mais alta classe move-se mais rápido que um décimo de milésimo de segundo e, num instante, pode alcançar qualquer distância, por mais longe que seja. Além disso, o espírito, pelo próprio pensamento, expande-se e contrai-se livremente. Num altar de cerca de trinta centímetros de largura, centenas de espíritos ancestrais podem dispor-se lado a lado. Os espíritos ancestrais alegram-se imensamente com os cultos feitos com o coração humano, e não se alegram muito com os que são apenas de forma; por isso, os cultos devem ser realizados conforme a posição de cada um, com o máximo de sinceridade e da forma mais digna possível.
 
 Fantasmas
 
@@ -1535,7 +1537,7 @@ O espírito de pessoa viva tem, na sua quase totalidade, como causa as relaçõe
 
 ―Fim―
 
-Kyōshu Yōkō
+Kyoshu Yōkō
 
 1º de outubro do ano 29 da Era Showa (1954) — Impressão
 10 de outubro do ano 29 da Era Showa (1954) — Publicação da edição revisada (Não destinado à venda)

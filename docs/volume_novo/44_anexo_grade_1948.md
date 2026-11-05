@@ -1,12 +1,12 @@
 ## 34. Anexo C — A primeira grade organizacional (1948)
 
-**Documento:** resposta de Meishu-Sama na 御光話 de 8 de dezembro de 1948.
+**Documento:** resposta de Meishu-Sama na Gokōwa de 8 de dezembro de 1948.
 
-**Publicação:** 『御光話録』2号, 8 de janeiro de 1949.
+**Publicação:** 『御光話録』nº 2, 8 de janeiro de 1949.
 
 **Natureza:** não é regulamento nem ata: é a resposta oral a uma pergunta de fiel
 sobre mudança de vínculo, e nela Meishu-Sama anuncia a grade inteira. É o
-documento mais explícito de todo o corpus sobre **como se subia na estrutura** —
+documento mais explícito de toda a documentação sobre **como se subia na estrutura** —
 porque diz, na mesma frase, o critério de agregação e o critério de mérito.
 **Ponto de atenção:** a grade de 1948 não foi promulgada em texto normativo; foi
 anunciada de passagem. É por isso que a documentação posterior a supõe, sem

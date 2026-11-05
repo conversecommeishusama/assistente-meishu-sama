@@ -2,7 +2,7 @@
 
 ### 22.1 O documento de base
 
-O texto central de Meishu-Sama sobre o tema foi publicado em 『救世』63号, 20 de
+O texto central de Meishu-Sama sobre o tema foi publicado em 『救世』nº 63, 20 de
 maio de 1950, sob o título 「家庭菜園と無肥料栽培」 — **"A horta doméstica e o
 cultivo sem adubo"**. A escolha do título não é acidental: o artigo de difusão
 agrícola é endereçado à **horta caseira**, não à lavoura comercial. Essa porta de
@@ -84,7 +84,7 @@ dificuldade estrutural da difusão, reconhecida pelo próprio autor.
 ### 22.3 O enquadramento doutrinário
 
 Noutros textos, Meishu-Sama enquadra a agricultura natural no princípio geral de
-**conformidade com a natureza** (*自然順応・自然尊重*), e a insere numa série de
+**conformidade com a natureza**, e a insere numa série de
 domínios regidos pelo mesmo critério:
 
 > 「今日の日本人は**あまりに自然を無視する結果**である。何でもかんでも人為的に
@@ -143,7 +143,7 @@ arroz sem adubo:
 > 捧げて**この革命的冒険を敢行する。そこに**無肥が信仰としての第一歩を刻み**
 > 打算的計画や利欲から放れた美しい姿がある」
 
-*"**Antes da semeadura, dispõem-se as sementes sobre o altar doméstico (御神床) ou
+*"**Antes da semeadura, dispõem-se as sementes sobre o altar doméstico ou
 sobre o altar do culto mensal, e com profunda prece se empreende esta aventura
 revolucionária.** Aí está **o primeiro passo do cultivo sem adubo como fé**, e a
 figura bela de quem se libertou de cálculos interesseiros e do desejo de lucro."*
@@ -188,3 +188,54 @@ a horta do membro, a proteína animal orgânica industrializada e o insumo
 biológico vendido ao produtor convencional como complemento. Reconhecer isso não
 é julgar a fidelidade de ninguém: é descrever com precisão o que existe, para que
 o leitor não confunda a promessa dos anos 1950 com a configuração do presente.
+
+
+### 22.6 Por que a prática atual não coincide com a proposta inicial
+
+Reconhecer a diferença não basta; é preciso dizer de onde ela vem. As razões que a
+documentação permite sustentar são cinco, e nenhuma delas é má-fé de quem veio depois.
+
+**Primeira: a proposta original não era um método agronômico, era uma tese sobre a causa
+da doença.** O texto de base não descreve rotação, cobertura, compostagem, análise de solo
+nem qualquer protocolo reprodutível: afirma que o adubo é veneno, que o solo intoxicado
+transmite a toxina à planta, e que a planta a transmite ao homem. Dessa proposição não se
+deduz uma técnica — deduz-se uma proibição. Quem veio depois teve de construir a técnica, e
+toda técnica construída é mais matizada do que a proibição de que partiu.
+
+**Segunda: o próprio método previa a queda de produção nos primeiros anos.** O texto é
+explícito ao dizer que «os primeiros um ou dois anos têm mau resultado, porque o solo está
+intoxicado pelo adubo», e recomenda paciência de dois a três anos. Numa agricultura de
+subsistência, isso é suportável; numa agricultura comercial, é prejuízo certo em dois
+exercícios — e não havia, na proposta, mecanismo que compensasse esse prejuízo (preço-prêmio,
+subsídio, mercado cativo). A inviabilidade econômica da conversão, e não a fraqueza da
+doutrina, é a primeira razão da divergência.
+
+**Terceira: a escala pretendida dependia do Estado, não da igreja.** A promessa era a
+supressão do adubo no abastecimento nacional. Isso exige política agrícola, extensão rural e
+mercado — instrumentos que uma instituição religiosa não tem. O que uma igreja pode fazer é
+ensinar o cultivo na horta do membro, e é exatamente o que ela fez, e é a frente que
+sobreviveu.
+
+**Quarta: o comércio de alimentos exige certificação, e a certificação exige insumos
+permitidos.** A produção orgânica certificada não se define por «nenhum insumo»: define-se por
+listas de insumos autorizados, com auditoria externa. Quem quer vender — e a instituição
+quis, desde os anos 1990 — tem de operar dentro dessas listas. É por isso que o produto
+agrícola do grupo aparece hoje como **condicionador biológico do solo**, apresentado como
+complemento que «mitiga os efeitos dos adubos convencionais», e não como a supressão que a
+doutrina pedia. A mudança de função do produto é a tradução comercial da mesma ideia.
+
+**Quinta: havia componentes não transferíveis.** A proposta incluía elementos que não passam
+para um sistema de produção: as sementes passando pelo altar antes do plantio, o Johrei na
+lavoura, e a tese de que a qualidade espiritual do alimento se comunica a quem o come. Esses
+elementos podem ser mantidos na prática do fiel — e são —, mas não podem ser exigidos de um
+produtor terceirizado nem verificados por certificadora.
+
+**A conclusão, e o seu estatuto.** A divergência não é desvio de quem traiu a doutrina, nem
+fidelidade de quem a conservou: é o encontro de uma tese radical com três constrangimentos que
+ela não previu — a economia da conversão, a escala nacional e as regras do mercado
+certificado. O que se pode afirmar com os documentos é isto: **a doutrina permanece íntegra
+como doutrina, e a prática que dela se organizou é uma adaptação, com perdas declaradas**.
+Quem hoje apresenta o produto como realização da proposta de 1950 faz uma afirmação que os
+documentos não sustentam; quem apresenta a prática atual como abandono da doutrina também
+não — porque a horta doméstica, a mais antiga das três frentes, continua a ser exatamente o
+que o artigo de 1950 descrevia.

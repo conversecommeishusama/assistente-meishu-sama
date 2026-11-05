@@ -34,45 +34,47 @@ CAP_MAP = {
     # Parte I
     "1": "2",     # cronologia
     "2": "10",    # difusão pós-guerra
-    "3": "21",    # tipos de unidade -> o que é cada unidade
-    "4": "18",    # como se abria uma unidade
-    "5": "14",    # formação sacerdotal e níveis
-    "6": "23",    # estrutura funcional e hierárquica
+    "3": "22",    # tipos de unidade -> o que é cada unidade
+    "4": "19",    # como se abria uma unidade
+    "5": "15",    # formação sacerdotal e níveis
+    "6": "24",    # estrutura funcional e hierárquica
     "7": "11",    # o Kyoshu
-    "8": "17",    # atividades em torno de Meishu-Sama
-    "9": "28",    # Paraísos Terrestres
-    "12": "29",   # síntese
+    "8": "18",    # atividades em torno de Meishu-Sama
+    "9": "29",    # Paraísos Terrestres
+    "12": "30",   # síntese
     # Parte II
     "13": "4",    # imagens da Luz Divina
     "14": "5",    # como eram os cultos
     "15": "7",    # as oferendas
     "16": "9",    # sufrágio dos antepassados
-    "17": "23",   # presidência da igreja
-    "18": "26",   # agricultura natural
-    "19": "13",   # o Johrei
-    "20": "27",   # nutrição
-    "21": "22",   # economia da igreja
+    "17": "24",   # presidência da igreja
+    "18": "27",   # agricultura natural
+    "19": "14",   # o Johrei
+    "20": "28",   # nutrição
+    "21": "23",   # economia da igreja
     # Parte III
-    "24": "19",   # hierarquia das unidades
-    "25": "16",   # atribuições e cotidiano (25.3 vai à administração)
+    "24": "20",   # hierarquia das unidades
+    "25": "17",   # atribuições e cotidiano (25.3 vai à administração)
     "26": "6",    # culto por tipo de unidade
     "27": "12",   # salvação e Ohikari
-    "28": "22",   # ofertório
-    "29": "28",   # Paraísos Terrestres e mineração
-    "30": "25",   # perseguição de 1950 e reforma
+    "28": "23",   # ofertório
+    "29": "29",   # Paraísos Terrestres e mineração
+    "30": "26",   # perseguição de 1950 e reforma
     "31": "8",    # oferendas diante do objeto de culto
 }
 
 # Remissões com destino próprio, quando o capítulo de origem foi dividido.
 REF_EXCECOES = {
-    "3.1": "19.1",   # a grade de 1948 foi para as unidades até 1951
+    "3.1": "20.1",   # a grade de 1948 foi para as unidades até 1951
     "5.1": "3.1",    # o axioma pertence às Imagens da Luz Divina
     "5.2": "3.2",    # a escala das Imagens e dos Ohikari
-    "5.4": "15.1",   # o censo de 1950 é o quadro dos ministros de 1951-55
-    "5.7": "14.4",   # a reforma anunciada no fim de 1954
-    "14.5": "5.3",   # a vestimenta dos oficiantes
-    "24.3": "20.3",  # a grade de 1951
-    "25.3": "24",    # como a Sede acompanhava as igrejas
+    "5.4": "16.1",   # o censo de 1950 é o quadro dos ministros de 1951-55
+    "5.7": "15.4",   # a reforma anunciada no fim de 1954
+    "14.3": "5.2",   # a vestimenta dos oficiantes
+    "14.4": "5.3",   # a configuração do tokonoma
+    "14.5": "5.2",   # remissão antiga para a vestimenta
+    "24.3": "21.3",  # a grade de 1951
+    "25.3": "25",    # como a Sede acompanhava as igrejas
 }
 
 # Capítulos das partes de origem que não entram no volume.
@@ -132,9 +134,40 @@ def subsecao(src, num, sub):
 
 
 # --------------------------------------------------------------- limpeza
+def _podar_caminho(s):
+    """Remove o caminho do arquivo, preservando a referência bibliográfica.
+
+    Antes, o span inteiro em crase era apagado quando continha um caminho —
+    e com ele ia a citação (『御光話録』nº 12, 21/09/1949), deixando no texto
+    uma linha reduzida a um travessão.
+    """
+    if not re.search(r"search\d|pdf_rattail|/var/www", s):
+        return None
+    s = re.sub(r"(?:/var/www|pdf_rattail|search\d)[\w./-]*", "", s)
+    s = re.sub(r"\s*[·›,]\s*$", "", s.strip())
+    s = re.sub(r"^[\s·›,]+", "", s)
+    return re.sub(r"\s{2,}", " ", s).strip()
+
+
+def _limpar_span(m):
+    dentro = m.group(1)
+    podado = _podar_caminho(dentro)
+    if podado is None:
+        return m.group(0)          # span sem caminho: fica como está
+    if podado == dentro:
+        return m.group(0)
+    if not podado:
+        return ""                  # o span só tinha o caminho
+    return podado                  # mantém a referência, sem as crases
+
+
 def limpar(t):
     # caminhos do acervo
-    t = re.sub(r"`[^`\n]*(?:search\d|pdf_rattail|/var/www)[^`\n]*`", "", t)
+    t = re.sub(r"`([^`\n]*)`", _limpar_span, t)
+
+    # um span que continha apenas o caminho deixa a linha de referência
+    # reduzida a um travessão: a linha inteira sai
+    t = re.sub(r"(?m)^\s*>?\s*—\s*$\n?", "", t)
     # o caminho costumava abrir a referência entre parênteses: "(caminho, 『光』3号)"
     # ficava "(, 『光』3号)"
     t = re.sub(r"\(\s*,\s*", "(", t)
@@ -274,13 +307,12 @@ def glosar(t):
 
     t = re.sub(r'\*".*?"\*', guardar, t, flags=re.S)
 
-    # Títulos de artigos nas linhas de referência: a linha inteira fica
-    # protegida, mas o título em 「」 ou 『』 recebe a glosa.
+    # Títulos de artigos e de publicações nas linhas de referência não recebem
+    # glosa: a citação já traz autor, veículo e data, e a tradução entre
+    # parênteses produzia «『地上天国』 (Paraíso Terrestre)nº 28» — que, além de
+    # ruído, contrariava a decisão do glossário (Tijotengoku para o título,
+    # Paraíso Terrestre para o conceito).
     def glosar_titulo(m):
-        abre, cont, fecha = m.group(1), m.group(2), m.group(3)
-        if cont in TAB and cont not in TITULOS_FEITOS and TAB[cont] and len(cont) <= 60:
-            TITULOS_FEITOS.add(cont)
-            return abre + cont + fecha + " (%s)" % TAB[cont]
         return m.group(0)
 
     def ajustar_ref(lin):
@@ -346,7 +378,12 @@ def glosar(t):
                 if (cont in TAB and cont not in TITULOS_FEITOS and TAB[cont]
                         and len(cont) <= 60):
                     TITULOS_FEITOS.add(cont)
-                    placas.append(abre + cont + fecha + " (%s)" % TAB[cont])
+                    # a célula já traz a tradução ao lado — «**「光明」 (Kōmyō)**» —,
+                    # e acrescentar outra produzia «**「光明」 (Luz) (Kōmyō)**»
+                    if re.match(r"\*{0,2}\s*[（(]", cel[m.end():m.end() + 6]):
+                        placas.append(abre + cont + fecha)
+                    else:
+                        placas.append(abre + cont + fecha + " (%s)" % TAB[cont])
                 else:
                     placas.append(m.group(0))
                 return "\x02%d\x02" % (len(placas) - 1)
@@ -561,12 +598,13 @@ PLANO = [
     ("sec", "I", "2"),
     ("sec", "I", "7"),
     ("sec", "III", "27"),
+    ("novo", "12b_ofertas_gratidao.md"),
     ("sec", "II", "19"),
 
     ("titulo", "A formação do elemento humano"),
     ("novo", "09_ministros_1948_1951.md"),
     ("merge", [("file", "10_ministros_1952_1955.md"), ("sub", "I", "5", "7")],
-     "Os ministros de 1951 a 1955: Ministro, Intermediário e Sênior"),
+     "Os ministros de 1951 a 1955: Ministro, Ministro Adjunto e Ministro Titular"),
     ("merge", [("III", "25", ["1", "2"])], "As atribuições e o cotidiano dos dirigentes"),
     ("sec", "I", "8"),
 
@@ -658,6 +696,10 @@ def emitir():
             corpo = "\n".join(pedacos)
             corpo = limpar(corpo)
         corpo = glosar(polir(podar_coluna_vazia(remapear_refs(corpo))))
+        # Remissões escritas como «capítulo 4.1» passam à forma do volume,
+        # «§4.1». A conversão é feita depois do remapeamento para que os
+        # números já estejam na numeração final.
+        corpo = re.sub(r"\b[Cc]ap[íi]tulo (\d+)\.(\d+)", r"§\1.\2", corpo)
         # vírgulas e separadores órfãos, apenas nas linhas de referência —
         # nas de prosa a vírgula final é legítima e a regra a destruía
         corpo = re.sub(r"(?m)^([>—|].*?)[ \t]*[,·][ \t]*$", r"\1", corpo)

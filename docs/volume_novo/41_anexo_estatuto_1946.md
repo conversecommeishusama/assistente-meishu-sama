@@ -1,6 +1,6 @@
 ## 32. Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946)
 
-**Documento:** 日本浄化療法普及会主旨及会則 (*Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
+**Documento:** estatuto e propósito da Associação de Difusão da Terapêutica de Purificação (*Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
 Kaisoku*), "Propósito e estatuto da Associação de Difusão da Terapêutica de
 Purificação do Japão".
 **Data:** 1946.
@@ -10,7 +10,7 @@ religiosa. Este é o documento que mostra a instituição **antes** de ela ser
 religião: uma associação de difusão terapêutica, com finalidade declarada de
 "bem-estar nacional", e uma cláusula expressa de não ingerência na fé dos
 assócios.
-**Assinatura:** Okada Shigeyoshi (岡田茂吉, Okada Mokichi), em Atami.
+**Assinatura:** Okada Shigeyoshi, em Atami.
 
 Tradução integral. O original traz primeiro o propósito, assinado por Okada, e
 depois o estatuto, em dezesseis artigos.

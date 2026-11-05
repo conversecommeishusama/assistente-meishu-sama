@@ -23,7 +23,7 @@ Tradução integral. A ordem é a do original.
 **1. Sede provisória da Igreja Messiânica Mundial**
 Shizuoka-ken, Atami-shi, Sakimichō.
 
-**2. Templos Anexos (別院)**
+**2. Templos Anexos (betsuin)**
 
 | Templo Anexo | Localização |
 |---|---|
@@ -34,7 +34,7 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 | Templo Anexo de Kyoto | Kyoto-fu, Kyoto-shi, Sakyo-ku, Yoshida, Kaguraoka |
 | Templo Anexo de Osaka | Osaka-fu, Senboku-gun, Takaishi-chō |
 
-**3. Filiais Regionais (分院)**
+**3. Filiais Regionais (bungyō)**
 
 | Filial | Localização |
 |---|---|
@@ -59,12 +59,12 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 
 | Categoria | Quantidade |
 |---|---:|
-| Igrejas Grandes (大教会) | 4 |
-| Igrejas Médias (中教会) | 78 |
-| igrejas (分教会) | 710 |
-| Ministros Titulares (大教師) | 56 |
-| Ministros Adjuntos (中教師) | 430 |
-| Ministros (教師) | 2.244 |
+| Igrejas Grandes (Igreja Grande) | 4 |
+| Igrejas Médias (Igreja Média) | 78 |
+| Igrejas Filiais (Igreja Filial) | 710 |
+| Ministros Titulares (Ministro Titular) | 56 |
+| Ministros Adjuntos (Ministro Adjunto) | 430 |
+| Ministros (Ministro) | 2.244 |
 
 **Nota de leitura.** O documento não traz, ao lado dos números, a data de
 fechamento de cada contagem nem o critério de inclusão das unidades em formação.

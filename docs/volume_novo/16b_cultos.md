@@ -1,19 +1,17 @@
 ### Os tipos de culto
 
-Havia quatro espécies de culto, e a diferença entre elas é de **escala e de
-calendário**, não de rito. O que se fazia diante do altar era o mesmo; o que
-mudava era quem celebrava, para quantos, e com que frequência.
+Havia quatro espécies de culto, e a elas se somava o culto ocasional. A diferença entre
+uma e outra é de **escala e de calendário**, não de rito. O que se fazia diante do altar era
+o mesmo; o que mudava era quem celebrava, para quantos e com que frequência.
 
-**O Grande Culto** (大祭) — as grandes festas sazonais, de primavera e de outono,
-celebradas nos recintos da Sede. A descrição mais completa é a do Culto Especial
-de Outono de 1950, cuja ordem está no capítulo 5. Duas notas sobre esse degrau. A
-primeira é **quem oficia**: o rito não era presidido por Meishu-Sama, que
-comparecia depois, como o venerando diante de quem a assembleia se curvava
-(capítulo 5.1); a condução cabia ao Superintendente e aos oficiantes nomeados. A
-segunda é a
-**natureza da oferenda**: no grande culto ela era solene e codificada — oferendas
-de mar e montanha (海山のお供物), dispostas diante da Imagem da Luz Divina, e o
-**fruto da ameixeira** como oferenda que encarnava o sentido do rito, *散花結実*,
+**O Grande Culto** (taisai) — as grandes festas sazonais, de primavera e de outono,
+celebradas nos recintos da Sede. A descrição mais completa é a do Grande Culto de Outono
+de 1950, cuja ordem está no §5.1. Duas notas sobre esse degrau. A primeira é **quem
+oficia**: o rito não era presidido por Meishu-Sama, que comparecia depois, como o venerando
+diante de quem a assembleia se curvava; a condução cabia ao presidente e aos oficiantes
+nomeados. A segunda é a **natureza da oferenda**: no grande culto ela era solene e
+codificada — oferendas de mar e montanha, dispostas diante da Imagem da Luz Divina, e o
+**fruto da ameixeira** como oferenda que encarnava o sentido do rito, *sanka-kekijitsu*,
 "flor dispersa, fruto realizado":
 
 > 「**御供物の梅の実に象徴された、散花結実**、参加した信徒にもやがて、
@@ -22,44 +20,45 @@ de mar e montanha (海山のお供物), dispostas diante da Imagem da Luz Divina
 *"**Simbolizado pelo fruto da ameixeira entre as oferendas, o 'flor dispersa,
 fruto realizado': também nos fiéis que participaram amadurecerão, no tempo
 devido, frutos abundantes."*
-— 「大祭式典に参加して」『栄光』72号, 4 de outubro de 1950
+— 「大祭式典に参加して」『栄光』nº 72, 4 de outubro de 1950
 
 Na interpretação dos próprios contemporâneos, o rito tinha significado que o
 distinguia dos cultos menores: "a participação mensal do fiel e a participação
 neste rito são de significado essencialmente diferente".
 
-**O Culto Regular** (例祭) — o culto próprio de **cada igreja**, celebrado no
+**O Culto Regular** (reisai) — o culto próprio de **cada igreja**, celebrado no
 calendário daquela igreja. A documentação não lhe fixa periodicidade; o que ela
-mostra é o uso constante da expressão "o 例祭 da minha igreja", como data
+mostra é o uso constante da expressão "o Culto Regular da minha igreja", como data
 própria da unidade, distinta do culto mensal. Os relatos são abundantes: famílias
-que levam o doente ao 例祭 e obtêm ali a cura; fiéis que recebem o Ohikari num
-例祭日; e a série que opõe 「一宮例祭、当地の例祭、臨時祭」 — *"o 例祭 de
-Ichinomiya, o 例祭 local e os cultos ocasionais"* —, o que mostra que o 例祭
-convivia com o **Culto Extraordinário** (臨時祭), celebrado por motivo extraordinário.
+que levam o doente ao Culto Regular e obtêm ali a cura; fiéis que recebem o Ohikari num
+dia do Culto Regular; e a série que opõe 「一宮例祭、当地の例祭、臨時祭」 — *"o Culto Regular do
+Santuário Ichinomiya, o Culto Regular local e o Culto Extraordinário"* —, o que mostra que o
+Culto Regular convivia com o **Culto Extraordinário** (rinji-sai), celebrado por motivo
+extraordinário.
 
-**O Culto Mensal** (月並祭, também grafado 月例祭) — o culto do ciclo mensal, em
-data fixa de cada unidade. Era incumbência das unidades com instalação própria:
-filial, posto avançado e igreja. O 月並祭 tinha uma função institucional precisa:
-**acompanhava a entronização da Imagem**. Um relato de 1950 descreve o que
-sucedeu a quem recebeu a Imagem e foi adiando o culto mensal:
+**O Culto Mensal** — o culto do ciclo mensal, em data fixa de cada unidade. Era
+incumbência das unidades com instalação própria: a Igreja Filial, o posto avançado e a
+igreja. O Culto Mensal tinha uma função institucional precisa: **acompanhava a entronização
+da Imagem**. Um relato de 1950 descreve o que sucedeu a quem recebeu a Imagem e foi adiando
+o culto mensal:
 
 > 「私の家は昭和二十三年九月光明如来様の御神体を御奉斎さして戴きました。
 > その時先生から**月並祭をされた方が良い**と云われましたが、それ程深く考えも
 > せず、またこの次に御願しますと、約半年そのままになっておりました。」
 
-*"Em setembro de 1948 entronizamos em nossa casa a Imagem do Kōmyō Nyorai. Na
+*"Em setembro de 1948 entronizamos em nossa casa a Imagem da Komyo-Nyorai. Na
 ocasião, o dirigente nos disse que **era melhor fazer o culto mensal**; mas não
 pensamos nisso com profundidade e o fomos adiando, e assim ficou por cerca de
 meio ano."*
-— 「光明如来様御奉斎で盗難免る」『栄光』70号, 20 de setembro de 1950
+— 「光明如来様御奉斎で盗難免る」『栄光』nº 70, 20 de setembro de 1950
 
 O mesmo relato acrescenta um dado que interessa ao capítulo 8: as oferendas
 diante da Imagem incluíam arroz lavado. Diz a autora que os ratos roíam flores e
-oferendas no oratório dos antepassados, mas "das oferendas do Kōmyō Nyorai no
-tokonoma, **nem um único grão do arroz lavado ofertado** (御洗米一粒も) foi
+oferendas no oratório dos antepassados, mas "das oferendas da Komyo-Nyorai no
+tokonoma, **nem um único grão do arroz lavado ofertado** foi
 danificado".
 
-**O culto doméstico** — a saudação matinal e vesperal (朝夕の御挨拶) diante da
+**O culto doméstico** — a saudação matinal e vesperal diante da
 Imagem, na própria casa. É o degrau de base, tratado adiante.
 
 A diferença entre o Culto Mensal e o Culto Regular, em resumo: o **mensal**
@@ -75,11 +74,11 @@ igreja**.
 |---|---|---|
 | **春季大祭** — Grande Culto da Primavera | março | nacional |
 | **秋季大祭** — Grande Culto de Outono | setembro (equinócio) | nacional, **7 dias**, rotativo por igreja |
-| **御生誕祭** — Festa do Nascimento | 23 de dezembro | no Templo Messiânico |
+| **御誕生祭** — Culto do Nascimento | 23 de dezembro | no Templo Messiânico |
 | **月並祭** — Culto Mensal | mensal, em cada unidade | data fixa por unidade |
 | **例祭** — Culto Regular | no calendário de cada igreja | próprio da unidade |
 | **臨時祭** — Culto Extraordinário | por motivo extraordinário | conforme o caso |
-| **特別御面会** — Audiência Especial | 1º e 5º de cada mês | Sede |
+| **特別参拝** — Audiência Especial | 1º e 5º de cada mês | Sede |
 | **毎旬の御参拝** — visita a cada dez dias | a cada dez dias | Sede |
 
 A **disciplina do calendário** era levada a sério, e sua violação tratada como
@@ -96,16 +95,14 @@ algo que se deve saber. Em todas as coisas divinas e budistas, antecipar é bom;
 atrasar é absolutamente inadmissível. … Se por conveniência do líder da
 Associação se atrasa uma coisa de Deus, o líder da Associação fica acima de
 Deus — é uma descortesia imperdoável."*
-— 『御光話録』14号, 20 de novembro de 1949
+— 『御光話録』nº 14, 20 de novembro de 1949
 
 Vale aqui uma nota sobre os **cargos litúrgicos**, porque ela afeta a leitura de
-todo o volume. A descrição do Culto de Outono de 1950 nomeia funções que **não
-coincidem com o organograma administrativo**: 祭員長 (oficiante-chefe), 神饌長
-(chefe das oferendas), 神饌元 (ofertantes, em número de cinco) e 信徒総代
-(representantes dos fiéis). Havia, portanto, uma **equipe litúrgica designada
-para cada culto**, distinta da linha de comando administrativa. É um indício de
-que existia uma hierarquia ritual própria, cuja documentação completa não foi
-localizada.
+todo o volume. A descrição do Grande Culto de Outono de 1950 nomeia funções que **não
+coincidem com o organograma administrativo**: o oficiante-chefe, o chefe das oferendas, os
+cinco ofertantes e o representante dos fiéis. Havia, portanto, uma **equipe litúrgica
+designada para cada culto**, distinta da linha de comando administrativa. É um indício de
+que existia uma hierarquia ritual própria, cuja documentação completa não foi localizada.
 
 ### O culto doméstico
 
@@ -123,16 +120,15 @@ saudação matinal e vesperal diante da caligrafia 「日光」 (Nikkō, "Luz do
 e ali sozinha aquietava o coração perturbado."*
 — 「浄霊と医学との比較」
 
-A caligrafia em questão é a que traz os dois caracteres **日光** — *nikkō*, "luz
-do sol" —, e não se confunde com as três caligrafias do Ohikari (光, 光明
-(Kōmyō), 大光明 (Daikōmyō), tratadas no capítulo 3.3). Era um objeto de devoção doméstica, pendurado no
-tokonoma, que funcionava explicitamente como **substituto** (*御神体代り*) da
-Imagem enquanto a família não a recebia. Sobre oferendas nesse caso específico a
-documentação não se pronuncia; o relato menciona apenas a saudação e a quietude do
-coração.
+A caligrafia em questão traz os dois caracteres que se leem *nikkō*, «luz do sol», e não se
+confunde com as três inscrições do Ohikari — Kō, Kōmyō e Daikōmyō —, tratadas no §3.3. Era
+um objeto de devoção doméstica, pendurado no tokonoma, que funcionava explicitamente como
+**substituto** da Imagem enquanto a família não a recebia. Sobre oferendas nesse caso
+específico a documentação não se pronuncia; o relato menciona apenas a saudação e a
+quietude do coração.
 
 Ao culto doméstico pertence ainda, com estatuto próprio, o **sufrágio dos
-antepassados** (先祖祭, tratado no capítulo 9) — rito recorrente, celebrado no
+antepassados** — rito recorrente, celebrado no
 oratório doméstico, distinto do rito de entronização da Imagem. Meishu-Sama chega
 a enunciar como dever da casa nova a instalação do oratório:
 

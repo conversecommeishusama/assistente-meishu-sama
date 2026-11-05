@@ -41,7 +41,7 @@ branda:
 conhecer amplamente à humanidade. É essa a razão do aparecimento da nossa Igreja
 Messiânica; por isso **os textos que escrevo são o que Deus revela, para que todos
 possam entender**."*
-— 「私は真理を書く」, 『地上天国』28号, 25 de setembro de 1951
+— 「私は真理を書く」, 『地上天国』nº 28, 25 de setembro de 1951
 
 E, no mesmo artigo, sem atenuar:
 
@@ -61,8 +61,8 @@ texto não está nele:
 > ある。すなわち**学ばずして知るという神智**であって」
 
 *"Ora, a capacidade de romper absolutamente essa dificuldade **foi-me dada por
-Deus**: é o que se chama 神智 (Sabedoria Divina), o saber sem ter aprendido."*
-— 「私の文章とその他」, 『栄光』238号, 9 de dezembro de 1953
+Deus**: é o que se chama Sabedoria Divina, o saber sem ter aprendido."*
+— 「私の文章とその他」, 『栄光』nº 238, 9 de dezembro de 1953
 
 A clareza da escrita, por sua vez, não é estilo: é decisão contra a interpretação.
 Ele diagnostica nas escrituras anteriores exatamente o vício que este volume não
@@ -93,7 +93,7 @@ Meishu-Sama não faz do escrito o instrumento primeiro da salvação:
 *"E 'religião', como dizem os caracteres, é a doutrina do fundador, e o pressuposto é
 salvar as pessoas pela doutrina; mas, como se disse, **nesta religião o ensino é
 segundo e terceiro, e é pelo Johrei que se torna boa a pessoa**."*
-— 「御説教」, 『地上天国』39号, 25 de agosto de 1952
+— 「御説教」, 『地上天国』nº 39, 25 de agosto de 1952
 
 O Escrito não é um ídolo de papel: é palavra divina, e a salvação opera pelo
 Johrei. É por isso que a documentação do período tem a forma que tem — respostas,
@@ -113,7 +113,7 @@ declarada da decadência das religiões.
 sábios as falsificaram e distorceram para adaptá-las à sua época**, e não em poucos
 pontos; por isso se pode dizer que as religiões existentes já perderam a maior parte
 da força de salvar o mundo presente."*
-— 「真理を説く」, 『救世』58号, 15 de abril de 1950
+— 「真理を説く」, 『救世』nº 58, 15 de abril de 1950
 
 O mecanismo é nomeado, e é o mesmo em toda parte: primeiro a adaptação ao tempo,
 depois a divisão, depois a esterilidade. E o critério que permite reconhecê-lo
@@ -124,7 +124,7 @@ está formulado como lei:
 
 *"Em qualquer matéria, **a falsa verdade desmorona em alguns anos, dezenas ou
 centenas de anos; a verdade, porém, é permanente e imutável.**"*
-— 「真理と非真理」, 『地上天国』6号, 20 de julho de 1949
+— 「真理と非真理」, 『地上天国』nº 6, 20 de julho de 1949
 
 A advertência não se dirige aos inimigos da religião, e sim a quem já recebeu o
 conhecimento — isto é, a quem transmite:
@@ -134,7 +134,7 @@ conhecimento — isto é, a quem transmite:
 
 *"Nós, que por inspiração pudemos conhecer isso, **acautelamo-nos sempre para não
 torcer a grande vontade divina**, e com reta visão de Deus…"*
-— 「五六七世界の建設」, 『光』18号, 16 de julho de 1949
+— 「五六七世界の建設」, 『光』nº 18, 16 de julho de 1949
 
 Daí decorre o dever de quem ensina, formulado sem rodeios. A resposta já está nos
 Escritos; inventá-la é falta, e mentir é falta maior:
@@ -150,7 +150,7 @@ honestidade que não se sabe."*
 
 *"E quando me perguntam, **muitas vezes a coisa está escrita com clareza nos
 Escritos**; é porque habitualmente negligenciam a leitura dos Escritos."*
-— 「大いに神書を読むべし」, 『栄光』80号, 29 de novembro de 1950
+— 「大いに神書を読むべし」, 『栄光』nº 80, 29 de novembro de 1950
 
 E a negligência tem custo declarado: 「御神書の拝読を疎かにするものは力が段々減る
 ものである」 — "quem descuida a leitura reverente dos Escritos vai perdendo força
@@ -206,16 +206,20 @@ chegar sozinho à conclusão.
 
 Três convenções valem para todo o volume.
 
-**As citações** indicam veículo, número e data. Quando o documento de origem
-declara apenas mês e ano, também aqui se declara apenas mês e ano — não se
-atribui dia que a fonte não informa.
+**As citações** indicam veículo, número e data, e transcrevem o original japonês
+seguido de tradução. Quando o documento de origem declara apenas mês e ano,
+também aqui se declara apenas mês e ano — não se atribui dia que a fonte não
+informa.
 
-**O japonês** aparece em caracteres apenas onde a palavra original importa, e
-vem sempre acompanhado de tradução. Quando um caractere não pôde ser lido com
-segurança na fonte, ele aparece entre colchetes — por exemplo `教修が終ら〔れ〕た`
-—, e o texto original não é alterado. Os termos de organização, de culto e de
-qualificação estão reunidos no **Glossário**, e os títulos dos ensinamentos e
-dos periódicos, na lista de **Títulos citados**, ambos no fim do volume.
+**O japonês** aparece em caracteres **apenas nos trechos citados no original**.
+Na prosa, o termo vem em tradução portuguesa; quando não há tradução corrente,
+vem em transliteração, com a grafia japonesa registada no **Glossário** e na
+lista de **Títulos citados**, ambos no fim do volume. Por isso o leitor não
+encontra ideogramas soltos no meio do texto: quem quiser conferir o original
+encontra-o na citação e, para o vocabulário, nas duas listas finais. Quando um
+caractere não pôde ser lido com segurança na fonte, ele aparece entre colchetes
+dentro da própria citação — por exemplo `教修が終ら〔れ〕た` —, e o texto
+original não é alterado.
 
 **Os números** são tratados conforme a natureza do documento. O censo de
 unidades e ministros é documento administrativo e sustenta as contas

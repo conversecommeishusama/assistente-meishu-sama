@@ -1,15 +1,15 @@
 ## 36. Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
 
-**Documento:** 宗教法人「世界救世教」規則 (*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
+**Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
 "Regulamento da pessoa jurídica religiosa Igreja Messiânica Mundial".
 **Data:** 10 de outubro de 1951.
 
-**Publicação:** 『栄光』125号, 10 de outubro de 1951.
+**Publicação:** 『栄光』nº 125, 10 de outubro de 1951.
 
 **Natureza:** o documento legal mais completo do período. É estatuto de pessoa
 jurídica religiosa, elaborado sob a Lei das Pessoas Jurídicas Religiosas de 1951,
 e por isso fala a linguagem do direito civil — representação, mandato, orçamento,
-exercício fiscal. É a fonte primária do capítulo 23 e de boa parte do capítulo 24.
+exercício fiscal. É a fonte primária do capítulo 24 e de boa parte do capítulo 25.
 **Estrutura:** seis capítulos e quarenta e seis artigos, mais as disposições
 transitórias com a lista dos primeiros dirigentes.
 
@@ -69,20 +69,20 @@ avisos do escritório.
 quais um é o dirigente representante.
 
 **Art. 6.º (Denominação)** O dirigente representante denomina-se 「管長」
-(Superintendente), e os demais dirigentes responsáveis, 「理事」 (diretores).
+(presidente), e os demais dirigentes responsáveis, 「理事」 (diretores).
 
-**Art. 7.º (Qualificação e eleição)** O Superintendente é determinado por eleição
+**Art. 7.º (Qualificação e eleição)** O presidente é determinado por eleição
 recíproca dos diretores.
-2. Os diretores são nomeados pelo Superintendente dentre os eleitos na assembleia
+2. Os diretores são nomeados pelo presidente dentre os eleitos na assembleia
 geral.
 
-**Art. 8.º (Mandato)** O mandato do Superintendente e dos diretores é de três anos
+**Art. 8.º (Mandato)** O mandato do presidente e dos diretores é de três anos
 cada, permitida a recondução.
 2. O mandato do diretor suplente é o período de responsabilidade do antecessor.
-3. O Superintendente e os diretores, ainda que após a renúncia ou o término do
+3. O presidente e os diretores, ainda que após a renúncia ou o término do
 mandato, continuam a exercer o cargo até que o sucessor tome posse.
 
-**Art. 9.º (Competência do dirigente representante)** O Superintendente representa
+**Art. 9.º (Competência do dirigente representante)** O presidente representa
 esta pessoa jurídica e superintende seus assuntos.
 
 **Art. 10.º (Competência dos dirigentes responsáveis)** Os assuntos desta pessoa
@@ -94,19 +94,19 @@ o direito de voto de cada um é igual.
 **Art. 11.º (Casos em que se deve designar)** Deve-se designar substituto legal
 quando se verificar qualquer dos seguintes casos:
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. quando o Superintendente ou um diretor faltar por
+&nbsp;&nbsp;&nbsp;&nbsp;1. quando o presidente ou um diretor faltar por
 falecimento, renúncia, término de mandato ou outro motivo, e não for possível
 eleger prontamente o sucessor;
-&nbsp;&nbsp;&nbsp;&nbsp;2. quando o Superintendente ou um diretor não puder
+&nbsp;&nbsp;&nbsp;&nbsp;2. quando o presidente ou um diretor não puder
 exercer o cargo por três meses ou mais, em razão de doença, viagem ou outro
 motivo.
 
-**Art. 12.º (Designação)** O substituto legal do Superintendente é escolhido pelo
-conselho no caso do item 1 do artigo anterior, e nomeado pelo Superintendente no
-caso do item 2. 2. O substituto legal de diretor é nomeado pelo Superintendente
+**Art. 12.º (Designação)** O substituto legal do presidente é escolhido pelo
+conselho no caso do item 1 do artigo anterior, e nomeado pelo presidente no
+caso do item 2. 2. O substituto legal de diretor é nomeado pelo presidente
 ou por seu substituto legal.
 
-**Art. 13.º (Competência)** O substituto legal exerce, em lugar do Superintendente
+**Art. 13.º (Competência)** O substituto legal exerce, em lugar do presidente
 ou do diretor, a totalidade de suas atribuições.
 
 **Art. 14.º (Cessação)** O substituto legal deixa o cargo naturalmente quando
@@ -126,7 +126,7 @@ interinos em número igual ao dos que não têm direito a voto.
 **Art. 16.º** No escritório estabelecem-se seis departamentos — Assuntos Gerais,
 Ensino, Finanças, Publicação, Construção e Atividades — e designam-se funcionários
 em número variável.
-2. Os funcionários do parágrafo anterior são nomeados pelo Superintendente.
+2. Os funcionários do parágrafo anterior são nomeados pelo presidente.
 
 #### Seção 5 — Assembleia geral
 
@@ -135,16 +135,16 @@ que exercem a presidência das igrejas.
 2. O mandato do membro segue o mandato do respectivo presidente.
 
 **Art. 18.º (Convocação)** A assembleia geral ordinária é convocada pelo
-Superintendente uma vez por ano, em fevereiro.
-2. O Superintendente pode convocar assembleia geral extraordinária quando o
+presidente uma vez por ano, em fevereiro.
+2. O presidente pode convocar assembleia geral extraordinária quando o
 considerar necessário. Havendo requisição de um quarto ou mais do total dos
-membros, o Superintendente deve convocá-la. Excetuam-se os casos de necessidade
+membros, o presidente deve convocá-la. Excetuam-se os casos de necessidade
 urgente ou de motivo de força maior; nestes, decide-se entre os dirigentes
 responsáveis, com aprovação na assembleia seguinte.
 
 **Art. 19.º (Duração)** A duração da assembleia geral é fixada em cada caso pelo
-Superintendente.
-2. O Superintendente pode prorrogar a duração quando o considerar necessário.
+presidente.
+2. O presidente pode prorrogar a duração quando o considerar necessário.
 Havendo requisição de um quarto ou mais do total dos membros, deve prorrogá-la.
 
 **Art. 20.º (Presidente e vice-presidente da mesa)** A assembleia geral tem um
@@ -169,9 +169,9 @@ assembleia geral:
 &nbsp;&nbsp;&nbsp;&nbsp;3. matérias relativas ao orçamento e ao balanço;
 &nbsp;&nbsp;&nbsp;&nbsp;4. matérias relativas ao plano de atividades;
 &nbsp;&nbsp;&nbsp;&nbsp;5. as demais matérias especialmente previstas neste
-Regulamento e as que o Superintendente considerar necessárias.
+Regulamento e as que o presidente considerar necessárias.
 
-**Art. 23.º (Matérias de relatório)** O Superintendente deve relatar à assembleia
+**Art. 23.º (Matérias de relatório)** O presidente deve relatar à assembleia
 geral:
 
 &nbsp;&nbsp;&nbsp;&nbsp;1. matérias relativas à elaboração e alteração do
@@ -188,16 +188,16 @@ as finanças. 2. Aplicam-se aos auditores, no que couber, os arts. 7.º, parágr
 #### Seção 7 — Órgãos consultivos
 
 **Art. 25.º** Esta pessoa jurídica pode ter consultivos e conselheiros.
-2. Os consultivos e conselheiros são empossados pelo Superintendente dentre
+2. Os consultivos e conselheiros são empossados pelo presidente dentre
 pessoas de saber e experiência.
-3. O Superintendente pode convocar representantes dos membros das igrejas para
+3. O presidente pode convocar representantes dos membros das igrejas para
 ouvir sua opinião.
 
 ### Capítulo III — Igrejas
 
 **Art. 26.º (Fundação, alteração do regulamento etc.)** Ao fundar uma igreja, ou
 quando a igreja pretender praticar os atos abaixo, deve obter a aprovação do
-Superintendente:
+presidente:
 
 &nbsp;&nbsp;&nbsp;&nbsp;1. tornar-se pessoa jurídica religiosa (inclusive
 estabelecer relação de inclusão com esta pessoa jurídica);
@@ -205,7 +205,7 @@ estabelecer relação de inclusão com esta pessoa jurídica);
 &nbsp;&nbsp;&nbsp;&nbsp;3. fundir-se ou dissolver-se.
 
 **Art. 27.º (Disposição de bens etc.)** A igreja deve obter a aprovação do
-Superintendente para praticar os atos abaixo; excetuam-se os atos dos itens 3 a 5
+presidente para praticar os atos abaixo; excetuam-se os atos dos itens 3 a 5
 quando fundados em necessidade urgente ou de pequena monta, e o ato do item 5
 quando relativo a período temporário:
 
@@ -220,7 +220,7 @@ edificação principal do recinto, ou fazer reforma substancial;
 terreno do recinto, ou destiná-los a fim diverso do objetivo principal da igreja.
 
 **Art. 28.º (Nomeação do dirigente representante e de seu substituto)** O
-presidente da igreja e seu substituto legal são nomeados pelo Superintendente
+presidente da igreja e seu substituto legal são nomeados pelo presidente
 dentre os escolhidos conforme o regulamento da respectiva igreja.
 
 ### Capítulo IV — Finanças
@@ -323,12 +323,12 @@ que sejam pessoas jurídicas religiosas nos termos do parágrafo 3.º das
 disposições transitórias da Lei das Pessoas Jurídicas Religiosas, salvo quanto às
 matérias correspondentes às deste Regulamento; neste caso, aplica-se a disposição
 correspondente deste Regulamento.
-4. O Superintendente, os diretores e os auditores do início da vigência deste
+4. O presidente, os diretores e os auditores do início da vigência deste
 Regulamento são os seguintes:
 
 | Cargo | Nome |
 |---|---|
-| Superintendente | Ōkusa Naoyoshi |
+| presidente | Ōkusa Naoyoshi |
 | Diretor | Abe Yutaka |
 | Diretor | Araya Otomatsu |
 | Diretor | Iwamatsu Yoshio |

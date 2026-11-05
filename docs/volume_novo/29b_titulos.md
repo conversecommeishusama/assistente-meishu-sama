@@ -4,6 +4,8 @@ As referências do estudo indicam o veículo, o número e a data. Para os
 periódicos, o título japonês é o nome próprio da publicação; para os ensinamentos,
 palestras e relatos, é o título com que foram publicados. Esta tabela dá a
 tradução de todos os que aparecem no volume, em ordem alfabética do romanizado.
+Os títulos dos periódicos seguem a **transliteração fixada** — Tijotengoku, Eikō,
+Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem.
 
 ### Periódicos e coletâneas
 
@@ -12,11 +14,11 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | 『栄光』 | Eikō | *Glória* | jornal oficial a partir de 1950 |
 | 『御教え集』 | Oshie-shū | *Coletânea de Ensinamentos* | coletânea de palestras |
 | 『御光話録』 | Gokōwa-roku | *Registro das Palavras de Luz* | respostas orais a fiéis |
-| 『御垂示録』 | Gosurei-roku | *Registro das Instruções* | instruções descendentes |
+| 『御垂示録』 | Gosuiji-roku | *Registro das Instruções* | instruções descendentes |
 | 『光』 | Hikari | *Luz* | primeiro jornal, de 1949 |
 | 『救世』 | Kyūsei | *Salvação do Mundo* | jornal, anterior a 『栄光』 |
 | 『神の光』 | Kami no Hikari | *A Luz de Deus* | publicação do período final |
-| 『地上天国』 | Chijō Tengoku | *Paraíso Terrestre* | revista doutrinária |
+| 『地上天国』 | Tijotengoku | — forma fixada do título, não se traduz | revista doutrinária |
 | 『法難手記』 | Hōnan Shuki | *Notas da Perseguição* | relato dos processos |
 | 『世界救世教』 | Sekai Kyūseikyō | *Igreja Messiânica Mundial* | publicação institucional |
 
@@ -29,11 +31,11 @@ tradução de todos os que aparecem no volume, em ordem alfabética do romanizad
 | 花による天国化運動 | Hana ni yoru tengoku-ka undō | "O movimento de fazer do mundo um paraíso pelas flores" |
 | 奇蹟 | Kiseki | "Milagre" |
 | 記事 | Kiji | "Reportagem" |
-| 教修 | Kyōshu | "O curso" |
+| 教修 | Kyoshu | "O curso" |
 | 浄霊と医学との比較 | Jōrei to igaku to no hikaku | "O Johrei comparado à medicina" |
 | 浄霊とは何か | Jōrei to wa nani ka | "O que é o Johrei" |
 | 黴菌の発生 | Baikin no hassei | "A origem dos micróbios" |
-| 光明如来様御奉斎で盗難免る | Kōmyō Nyorai-sama go-busai de tōnan manugareru | "Livre de um roubo pela entronização do Kōmyō Nyorai" |
+| 光明如来様御奉斎で盗難免る | Komyo-Nyorai-sama go-busai de tōnan manugareru | "Livre de um roubo pela entronização da Komyo-Nyorai" |
 | 鉱山においての奇蹟の数々 | Kōzan ni oite no kiseki no kazukazu | "Os muitos milagres na mina" |
 | 御浄化物語 | Go-jōka monogatari | "Histórias de purificação" |
 | 御講話 | Go-kōwa | "Palestra" |

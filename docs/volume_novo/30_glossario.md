@@ -11,12 +11,12 @@ capítulo em que cada um é tratado.
 | 大教師 | daikyōshi | Ministro Titular | 10 |
 | 大祭 | taisai | Grande Culto, sazonal, na Sede | 17 |
 | 大光明 | dai-kōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
-| 大光明如来 | Dai-Kōmyō Nyorai | Tathāgata da Grande Luz | 12 |
+| 大光明如来 | Daikōmyō Nyorai | Tathāgata da Grande Luz | 12 |
 | 会費 | kaihi | quota periódica do membro | 21 |
-| 会長 | kaichō | presidente de igreja, nomeado pelo Superintendente | 10, 13 |
+| 会長 | kaichō | presidente de igreja, nomeado pelo presidente | 10, 13 |
 | 会則 | kaisoku | estatuto de associação civil | 13 |
 | 外国部 | gaikokubu | Departamento do Exterior | 13 |
-| 管長 | kanchō | Superintendente, representante legal | 13 |
+| 管長 | kanchō | presidente, representante legal | 13 |
 | 監査 | kansa | auditoria | 13, 14 |
 | 監事 | kanji | auditor | 13, 14 |
 | 企画 | kikaku | Planejamento (departamento) | 13 |
@@ -28,7 +28,7 @@ capítulo em que cada um é tratado.
 | 教務 | kyōmu | Doutrina (departamento) | 13 |
 | 教修 | kyōshu | curso de admissão | 4 |
 | 教修会場 | kyōshu kaijō | local onde o curso é ministrado | 8 |
-| 教修要綱 | Kyōshu Yōkō | Manual do Curso | 4 |
+| 教修要綱 | Kyoshu Yōkō | Manual do Curso | 4 |
 | 極め塩 | kime-shiō | sal de purificação | 28 |
 | 供養 | kuyō | sufrágio | 20 |
 | 供物 | kumotsu | oferenda | 17, 28 |
@@ -49,7 +49,7 @@ capítulo em que cada um é tratado.
 | 御守護御礼 | goshugo-rei | oferta pela graça recebida | 21 |
 | 講習要項 | kōshū yōkō | programa de curso de 1947 | 4 |
 | 光明 | kōmyō | "Luz", segundo grau de Ohikari e de Imagem | 12, 19 |
-| 光明如来 | Kōmyō Nyorai | Tathāgata da Luz | 12 |
+| 光明如来 | Komyo-Nyorai | Tathāgata da Luz | 12 |
 | 五十六七 | Iso-roku | "cinco, seis, sete" — romaji *iso-roku*; vertido como Miroku | 2 |
 | 座談会 | zadankai | mesa-redonda | 14 |
 | 師補 | shiho | abreviatura de 教導師補 | 9 |
@@ -84,7 +84,7 @@ capítulo em que cada um é tratado.
 | 追善 | tsuizen | sufrágio em favor do falecido | 20 |
 | 定例布教座談会 | teirei fukyō zadankai | mesa-redonda periódica de difusão | 14 |
 | 天津祝詞 | Amatsu Norito | oração recitada nos cultos | 16 |
-| 天地天国 | Tenchi Tengoku | título de periódico | 3 |
+| 地上天国 | Tijotengoku | título do periódico (não se traduz) | 2 |
 | 導師 | dōshi | mestre que conduz | 9 |
 | 日掛 | higake | pagamento diário parcelado | 19 |
 | 入信 | nyūshin | conversão, ingresso na fé | 3 |
@@ -101,7 +101,7 @@ capítulo em que cada um é tratado.
 | 分担金 | buntankin | rateio de despesa entre igrejas | 21 |
 | 分会 | bunkai | Associação (1948–1951) | 6, 8 |
 | 分会長 | bunkaichō | líder de Associação | 10 |
-| 分教会 | bunkyōkai | igreja subordinada | 6, 8 |
+| 分教会 | bunkyōkai | Igreja Filial | 6, 8 |
 | 分所 | bunsho | Subsede (1948–1951) | 6 |
 | 無肥料 | muhiryō | sem adubo | 22 |
 | 明主様 | Meishu-Sama | forma de tratamento do Fundador | — |

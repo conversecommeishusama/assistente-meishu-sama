@@ -2,15 +2,15 @@
 
 **Documento:** 「世界救世教の機構整備について」 (*Sekai Kyūseikyō no Kikō Seibi ni
 tsuite*), "Sobre a montagem da estrutura da Igreja Messiânica Mundial".
-**Autor:** Ōkusa Naoyoshi, Superintendente.
+**Autor:** Ōkusa Naoyoshi, presidente.
 
-**Publicação:** 『栄光』94号, 7 de março de 1951.
+**Publicação:** 『栄光』nº 94, 7 de março de 1951.
 
 **Natureza:** comunicado da direção. Não é decreto de Meishu-Sama: é a
 
-**explicação** do Superintendente sobre palavras que Meishu-Sama dirigiu à
+**explicação** do presidente sobre palavras que Meishu-Sama dirigiu à
 instituição em 5 de fevereiro daquele ano. A distinção importa, e o volume a
-mantém em todo o capítulo 25 — o texto diz "houve palavras de Meishu-Sama", e o
+mantém em todo o capítulo 26 — o texto diz "houve palavras de Meishu-Sama", e o
 que se segue é a leitura que a direção delas fez.
 **Alcance:** é este comunicado que dissolve as quatro Igrejas Grandes e cria as
 dezessete Sedes Regionais, com os respectivos responsáveis nomeados.
@@ -26,12 +26,12 @@ palavras, chegamos ao seguinte.
 
 **Primeiro.** Estabelecer a Sede Central da Igreja Messiânica Mundial no Paraíso
 Terrestre de Momoyama, Seiseidai, em Atami, e promover o mais rapidamente possível
-a construção do Salão de Salvação (救世会館) como centro mundial.
+a construção do Salão de Salvação como centro mundial.
 
 **Segundo.** Estabelecer a Sede da Igreja Messiânica Mundial em Odawara-shi,
 Midori-chō (sede da Grande Igreja Miroku), e ir progressivamente assumindo a
-forma de sede da comunidade. Os dirigentes passam ao sistema de Superintendente,
-diretores e auditores: Superintendente, o Sr. Ōkusa; diretores, em número de onze
+forma de sede da comunidade. Os dirigentes passam ao sistema de presidente,
+diretores e auditores: presidente, o Sr. Ōkusa; diretores, em número de onze
 — Ōkusa, Momomi (diretor-presidente), Iwamatsu, Watanabe, Koizumi, Moriyama,
 Kawai, Ōnuma, Araya, Kihara e Abe; auditores, em número de três — Yashiro, Naitō
 Raku e Nihongi Teruko. Instituir consultivos, confiados a Shibui Sōsai e Nakajima
@@ -41,7 +41,7 @@ criar os departamentos de Assuntos Gerais, Ensino, Finanças, Construção, Obra
 Social, Propaganda e Publicação, fixando o chefe de cada um.
 
 **Terceiro.** As quatro grandes igrejas até aqui passam por dissolução por
-desenvolvimento (発展的解消); considerando a situação atual da difusão e a
+desenvolvimento (hatten-teki kaishō); considerando a situação atual da difusão e a
 facilidade de ligação entre as províncias de cada região, divide-se por ora o país
 inteiro nas regiões abaixo, com uma sede regional em cada uma, e designa-se desde
 já o responsável de cada sede, conforme a situação atual.
@@ -54,7 +54,7 @@ já o responsável de cada sede, conforme a situação atual.
 | Ōu | Aomori, Akita, Yamagata | Ōkubo Masaharu |
 | Leste de Kantō | Tóquio, Ibaraki, Chiba, Saitama, Yamanashi | Ōnuma Mitsuhiko |
 | Oeste de Kantō | Tochigi, Gunma | Koizumi Morinosuke |
-| Kanagawa-Shizuoka (神静) | Kanagawa, Shizuoka | Nakajima Teruko |
+| Kanagawa-Shizuoka (Shinetsu) | Kanagawa, Shizuoka | Nakajima Teruko |
 | Chūkyō | Aichi, Gifu, Mie | Watanabe Katsuichi |
 | Shin'etsu | Niigata, Nagano | Tomura Hiroyuki |
 | Hokuriku | Toyama, Ishikawa, Fukui | Irie Fujijirō |

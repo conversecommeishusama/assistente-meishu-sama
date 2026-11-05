@@ -1,13 +1,13 @@
 ## 33. Anexo B — Programa do Curso da Igreja Kannon do Japão (1947)
 
-**Documento:** 日本観音教団講習要項 (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
+**Documento:** Programa do Curso da Igreja Kannon do Japão (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
 Curso da Igreja Kannon do Japão".
 **Data:** 1º de julho de 1947.
 
 **Natureza:** norma interna de formação. Não é exposição doutrinária: é o
 regulamento que diz como se realiza o curso, quem responde por ele e o que se
 deve ensinar. É o primeiro currículo escrito do movimento, anterior em sete anos
-ao 教修要綱.
+ao Kyoshu Yōkō.
 **Publicação:** o texto foi reproduzido na coletânea de escritos de Meishu-Sama,
 sem indicação de veículo periódico.
 
@@ -17,7 +17,7 @@ conteúdo mínimo da pregação em oito pontos; e declara que o curso confere o
 direito de portar o 「光」, tratado explicitamente como sinal — comparado à cruz
 do cristianismo.
 
-Tradução integral. A numeração é a do original (一 a 八, mais o parágrafo final).
+Tradução integral. A numeração é a do original.
 
 ---
 
@@ -46,8 +46,8 @@ orientador;
 **4.** O conteúdo essencial da conferência de difusão tem por eixo a doutrina da
 Igreja e deve apoiar-se nos seguintes pontos:
 
-&nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon (観世音), e o
-texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*, o 「普門品」. A fé
+&nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon, e o
+texto em que nos baseamos é o capítulo 26.º do *Sutra Lótus*, o 「普門品」. A fé
 consiste em que Kannon é o criador de todos os fenômenos e a própria Luz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**b.** Kannon está sempre vivo, dentro de nós, e trabalha
@@ -80,7 +80,7 @@ Kannon.
 silêncio a missão de expressar esse poder augusto e essa compaixão de Kannon.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**h.** Cremos sempre no ensino mostrado por Kannon e
-empenhamo-nos, dia a dia, na prática pessoal (勤行), para a expansão do 「念彼観音力」.
+empenhamo-nos, dia a dia, na prática pessoal, para a expansão do 「念彼観音力」.
 
 **5.** A terapia é a concretização dos pontos doutrinários acima, e qualquer
 pessoa pode praticá-la. Tem a propriedade de ser útil em qualquer circunstância:
@@ -94,7 +94,7 @@ orientação nem no âmbito do estudo, lembrando sempre que não passamos de ser
 fiéis de Kannon.
 
 **6.** O 「光」 entregue no curso é o sinal de Kannon, nosso objeto de fé — isto é,
-do Kōmyō Nyorai —, e porta-se como prova de conclusão do curso, exatamente como
+da Komyo-Nyorai —, e porta-se como prova de conclusão do curso, exatamente como
 a cruz no cristianismo.
 
 **7.** A duração do curso tem por meta transmitir o sentido verdadeiro da difusão

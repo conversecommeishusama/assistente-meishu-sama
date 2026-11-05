@@ -2,7 +2,7 @@
 
 **Documento:** 「注意」 (*Chūi*, "Aviso").
 
-**Publicação:** 『栄光』191号, 14 de janeiro de 1953.
+**Publicação:** 『栄光』nº 191, 14 de janeiro de 1953.
 
 **Natureza:** aviso de Meishu-Sama, publicado na abertura do número, e que remete
 à mesa-redonda de difusão realizada na mesma edição. É o documento que fixa o
@@ -12,8 +12,7 @@ qualificada como furto.
 para todos os objetos que saíam de sua mão, não apenas para a Imagem.
 
 Tradução integral do aviso. O texto é uma única frase, e é reproduzido aqui na
-íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere
-(『栄光』191号, 3 de outubro de 1952, Igreja Grande Kōhō, Tosu, província de Saga),
+íntegra, seguido da transcrição do trecho da mesa-redonda a que ele se refere,
 na parte que trata do valor das ofertas.
 
 ---
@@ -55,8 +54,8 @@ muito importante.
 importante; por isso o professor deve ter pensamento limpo ao transmitir a Deus. Se
 tiver pensamento mesquinho e sujo, o resultado é transmitir coisa impura.
 
-**Presidente da mesa:** — ... Ultimamente têm aumentado visivelmente as ofertas de
-gratidão pela proteção divina e as 御奉謝金 — a oferenda que o fiel recebe quando
+**Presidente da mesa:** — … Ultimamente têm aumentado visivelmente as ofertas de
+gratidão pela proteção divina e a oferta por Johrei ministrado — a oferenda que o fiel recebe quando
 ministra Johrei a outra pessoa, e a que recebe quando ministra Johrei a alguém da
 família. Ouvi dizer que o responsável de uma Igreja Média perguntou se podia usar
 para si a oferta de gratidão pela proteção divina; é como se fosse outro mundo.
@@ -93,7 +92,7 @@ Nagasaki, perdeu membros de repente por má fama; como isso também seria obstá
 três dias, mas quem não tem tempo fica sem Kyoshu; na região de Fukue não se faz
 Kyoshu de modo algum.
 
-**Presidente da mesa:** — ... Também 「救霊祭」 e outras coisas inventadas; e sair
+**Presidente da mesa:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
 dizendo "entronização da Imagem na casa do fiel", "entronização do Byōbu", com o
 professor em visita acompanhado de séquito — o erro também fica muito elaborado e
 movimentado. É como vários parafusos frouxos girando em falso. Fazer e desfazer o
@@ -101,6 +100,6 @@ Kyoshu conforme a conveniência é também rebeldia contra Deus. Se se cumprisse
 conforme a Revelação, o justo tornar-se-ia necessariamente feliz e o errado
 necessariamente pereceria; é só isso. De todo modo, quem entra no caminho sério
 melhora e quem entra no caminho leviano piora — isto é certo. Ultimamente, na
-Sede, elaborou-se também o 教修要綱, e os encontros estreitos entre os dirigentes
+Sede, elaborou-se também o Kyoshu Yōkō, e os encontros estreitos entre os dirigentes
 vêm se multiplicando; parece que se aproxima o dia de retornar à unidade com a
 Revelação Divina.
