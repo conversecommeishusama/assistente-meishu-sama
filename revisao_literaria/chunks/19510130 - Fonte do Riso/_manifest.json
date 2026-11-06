@@ -1,0 +1,62 @@
+{
+  "arquivo": "19510130 - Fonte do Riso.txt",
+  "fonte": "livros_publicacao_pt_revisado/19510130 - Fonte do Riso.txt",
+  "chars_fonte": 112305,
+  "total_chunks": 10,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11997,
+      "paragrafos": 21
+    },
+    {
+      "idx": 1,
+      "chars": 11175,
+      "paragrafos": 24
+    },
+    {
+      "idx": 2,
+      "chars": 10461,
+      "paragrafos": 25
+    },
+    {
+      "idx": 3,
+      "chars": 11507,
+      "paragrafos": 10
+    },
+    {
+      "idx": 4,
+      "chars": 11657,
+      "paragrafos": 15
+    },
+    {
+      "idx": 5,
+      "chars": 11576,
+      "paragrafos": 18
+    },
+    {
+      "idx": 6,
+      "chars": 11184,
+      "paragrafos": 17
+    },
+    {
+      "idx": 7,
+      "chars": 10616,
+      "paragrafos": 8
+    },
+    {
+      "idx": 8,
+      "chars": 11648,
+      "paragrafos": 15
+    },
+    {
+      "idx": 9,
+      "chars": 10484,
+      "paragrafos": 9
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-15T17:43:55.890400",
+  "chars_final": 112311,
+  "ratio_tamanho": 1.0
+}

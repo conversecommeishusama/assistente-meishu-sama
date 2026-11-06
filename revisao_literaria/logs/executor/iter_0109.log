@@ -1,0 +1,5 @@
+Chunk 5 de *19491005 - Coleção Jikan Volume 4 Histórias de Milagres* revisado e aceito.
+
+- Revisão literária aplicada aos 4 relatos do chunk (enchente em Ryōgen-mura, terremoto de Fukui, atropelamento, pesca em Aichi): abertura reordenada, calques desfeitos ("grudado em minha mente" → "gravado", "últimas cadeiras" → "últimos assentos"), períodos longos quebrados, repetição de conectivos/expressões removida.
+- Integridade verificada contra o `_src.txt`: 35 linhas / 22 não vazias em ambos, títulos, subtítulos, linhas de atribuição e citações entre aspas idênticos; 10.722 → 10.573 chars (−1,4%).
+- Fila atualizada removendo o item por (livro, chunk) em vez de `pop(0)`, para não colidir com o auditor: `pending` 692 → 691, `done` 73 → 74.

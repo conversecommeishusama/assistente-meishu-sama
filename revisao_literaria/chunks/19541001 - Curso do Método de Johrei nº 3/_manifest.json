@@ -1,0 +1,32 @@
+{
+  "arquivo": "19541001 - Curso do Método de Johrei nº 3.txt",
+  "fonte": "livros_publicacao_pt_revisado/19541001 - Curso do Método de Johrei nº 3.txt",
+  "chars_fonte": 44347,
+  "total_chunks": 4,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11976,
+      "paragrafos": 33
+    },
+    {
+      "idx": 1,
+      "chars": 11998,
+      "paragrafos": 45
+    },
+    {
+      "idx": 2,
+      "chars": 11421,
+      "paragrafos": 51
+    },
+    {
+      "idx": 3,
+      "chars": 8952,
+      "paragrafos": 51
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-17T01:06:49.676458",
+  "chars_final": 44128,
+  "ratio_tamanho": 0.995
+}

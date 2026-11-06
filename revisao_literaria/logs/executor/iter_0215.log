@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina`, chunk 5/10 (sem `nota_auditor`).
+- **Revisão:** aplicada ao `005_src.txt` → `005_out.txt`; ajustes de fluidez/precisão (concordância "Vista dessa forma" → "Visto dessa forma", quebra de períodos arrastados nos parágrafos das tragédias/cinta abdominal/gargarejo, remoção de redundância vocabular), sem tocar em cabeçalhos, atribuições de artigo, `(Nota)` ou citações.
+- **Verificações:** estrutura de linhas/parágrafos idêntica (43 linhas, 26 parágrafos), todos os números preservados (67 anos, 1928, 1948, 1500m, 18min37s0, 19min18s5), aspas idênticas, 7927 → 7821 chars (0,987).
+- **Fila:** item movido para `done` com os campos exatos; `pending` 638 → 637, `done` 127 → 128.

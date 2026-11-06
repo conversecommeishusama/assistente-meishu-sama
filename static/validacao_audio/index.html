@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Validação — Voz Meishu-Sama</title>
+<style>
+  body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; background: #f7f5f0; color: #333; }
+  h1 { color: #5a3e2b; }
+  .bloco { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; }
+  .rotulo { font-weight: bold; margin-bottom: 6px; }
+  .voz-meishu { color: #8b0000; }
+  .voz-interlocutor { color: #1a5276; }
+  audio { width: 100%; margin-top: 8px; }
+  .desc { color: #666; font-size: 0.9em; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <h1>🎧 Validação — Voz do Meishu-Sama</h1>
+  <p>Ouça os áudios gerados para avaliar a qualidade antes da produção em massa.</p>
+
+  <div class="bloco">
+    <div class="rotulo voz-meishu">🎤 Voz do Meishu-Sama (clonada) — fala 1</div>
+    <audio controls preload="none" src="/static/validacao_audio/meishu_1.mp3"></audio>
+    <div class="desc">"Ah, é mesmo? O seu Debune, o Yoshie Fujiwara tem apresentado bastante..."</div>
+  </div>
+
+  <div class="bloco">
+    <div class="rotulo voz-meishu">🎤 Voz do Meishu-Sama (clonada) — fala 2</div>
+    <audio controls preload="none" src="/static/validacao_audio/meishu_2.mp3"></audio>
+    <div class="desc">"É o espírito de alguém que morreu em um acidente de avião..."</div>
+  </div>
+
+  <div class="bloco">
+    <div class="rotulo voz-meishu">🎤 Voz do Meishu-Sama (clonada) — fala 3</div>
+    <audio controls preload="none" src="/static/validacao_audio/meishu_3.mp3"></audio>
+    <div class="desc">"O Amatsu Norito não se usa em cerimônia de casamento, Na ocasião de cultuar, recite-o..."</div>
+  </div>
+
+  <div class="bloco">
+    <div class="rotulo voz-interlocutor">🗣️ Interlocutor (Antônio) — fala 1</div>
+    <audio controls preload="none" src="/static/validacao_audio/interlocutor_1.mp3"></audio>
+    <div class="desc">"O senhor Fujiwara fez praticamente todas as apresentações..."</div>
+  </div>
+
+  <div class="bloco">
+    <div class="rotulo voz-interlocutor">🗣️ Interlocutor (Antônio) — fala 2</div>
+    <audio controls preload="none" src="/static/validacao_audio/interlocutor_2.mp3"></audio>
+    <div class="desc">"É que a pobreza atrapalha muito..."</div>
+  </div>
+</body>
+</html>

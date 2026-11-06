@@ -1,0 +1,16 @@
+**19490830 – Coleção Jikan Volume 5 Diálogos Jikan: reprovado, 4 chunks reabertos.**
+
+Leitura integral e comparada dos 9 chunks (336 linhas, 165 parágrafos), original × montado, parágrafo a parágrafo.
+
+**Verificações estruturais — todas limpas:** a concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (22/13/23/18/10/8/18/20/33); todos os chunks fecham em `\n\n` (o 8 em `\n`, como a fonte). Multiconjunto de dígitos idêntico; as citações entre aspas idênticas caractere a caractere; nomes próprios sem perda real (as 4 reduções — Hanakame, Miyagawa, Monta, Oomoto — são elipses anafóricas de referente inequívoco). Nenhum parágrafo perdido, duplicado ou fundido nas emendas. Três corrupções da fonte reparadas sem perda de conteúdo (duplicação truncada do Danjūrō, ponto faltante em "desapareceram Os filmes italianos", ponto final do parágrafo de Ōkyo).
+
+**Os 6 achados das rodadas anteriores foram todos corrigidos** (costura `\n\n` do chunk 0; "várias vezes" do Asahi Diamond; sujeito explícito de Takamine Chikufū; "cerca de nove shaku" sem "apenas" e "vários assuntos mundanos"; "por inteiro" fora, "vários episódios", "várias coisas"; "o sentido de milhares de palavras").
+
+**O que reprovou:** a mesma classe de bug — quantificador/intensificador que não está na fonte — sobrevive em 4 chunks que nunca foram varridos. O executor corrigiu cada ponto sinalizado sem revarrer a classe:
+
+- **chunk 2** — "agia com agilidade" → "se movia com **grande** agilidade"; "foi muito popular" → "agradou **muitíssimo**"
+- **chunk 3** — "um **grande** prejuízo" → "**enorme** prejuízo"; "preço **muito alto**" → "preço **altíssimo**"
+- **chunk 5** — "**a** região estava coberta" → "**toda a** região era coberta" (mesmo defeito do "por inteiro" já corrigido neste chunk); "ouvia-se um 'sussurro'" → "ouvia-se **entre as folhas** um 'sussurro'"; "recusou **educadamente**" → "recusou **com toda a delicadeza**"
+- **chunk 8** — "me davam **vários** conselhos" → "me davam **toda sorte de** conselhos" (transformação idêntica ao "vários assuntos mundanos" → "os mais variados", já reaberto no chunk 4)
+
+Fila atualizada: os 4 chunks entraram no topo de `QUEUE_EXECUTOR.json` com `nota_auditor` pedindo varredura da classe inteira, os 4 registros antigos saíram de `done`, histórico de auditoria gravado (chunks 2 e 5 agora com 2 entradas — próxima falha vira escalação manual), `montado` zerado no manifesto e o livro removido de `pending` do auditor sem ir para `done`.

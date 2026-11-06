@@ -1,0 +1,18 @@
+**Coletânea de Salmos (19480701) — reaberto o chunk 0.**
+
+Leitura integral das 435 linhas do original contra as 435 do montado, poema a poema.
+
+Integridade (tudo limpo):
+- Concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado — nenhum parágrafo perdido nem duplicado nas duas costuras.
+- 309 poemas na sequência completa 1→309, 44 cabeçalhos de seção idênticos, multiconjunto de dígitos idêntico, contagem de aspas/parênteses idêntica.
+- As 4 correções da rodada anterior (poemas 185, 194, 195, 280) vieram aplicadas exatamente como pedido.
+
+Padrão literário: ganho real e uniforme nos chunks 1 e 2 — regências consertadas (64, 143, 209, 287), calques desfeitos (129 "Cortando"→"Ceifando", 229 "sombra ligeiramente escura"→"penumbra"), anacolutos reparados (182, 184), repetição de "alegria" eliminada em 262. As terminações nominais/elípticas (poemas 8, 40, 56, 87, 96, 162) foram mantidas — é o registro waka do livro, não defeito.
+
+Achados, todos no chunk 0 (sem histórico de reabertura anterior):
+1. Prefácio — "não forcei **muito** a mente" → "não forcei a mente": grau cortado, negação virou absoluta.
+2. Prefácio — "poder de comover **as pessoas**" → "poder de comover": complemento cortado.
+3. Poema 31 — "sem exceção" → "**a todos** sem exceção": destinatário acrescentado que o fonte não explicita.
+4. Poema 68 — "espera o momento" → "espera o momento **certo**": qualificador acrescentado.
+
+Chunk 0 inserido em `pending[0]` do executor com a nota de evidência, entrada antiga removida de `done`, `000_historico_auditoria.jsonl` criado, `montado` zerado no manifesto e o livro retirado de `pending` do auditor sem ir para `done` — ele volta sozinho quando `montar_livro.py` remontar.

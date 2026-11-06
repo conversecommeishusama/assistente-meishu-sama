@@ -1,0 +1,110 @@
+{
+  "tempo": 144.95589900016785,
+  "rodadas_log": [
+    {
+      "rodada": 1,
+      "n_chamadas": 6,
+      "chamadas": [
+        "buscar_termo({\"termo\": \"plano espiritual\"})",
+        "buscar_termo({\"termo\": \"reencarnação\"})",
+        "buscar_termo({\"termo\": \"mudar de plano\"})",
+        "buscar_termo({\"termo\": \"mundo espiritual\"})",
+        "buscar_termo({\"termo\": \"evolução espiritual\"})",
+        "buscar_termo({\"termo\": \"encarnação\"})"
+      ]
+    },
+    {
+      "rodada": 2,
+      "n_chamadas": 6,
+      "chamadas": [
+        "buscar_termo({\"termo\": \"subir ou descer\"})",
+        "buscar_termo({\"termo\": \"alma oculta\"})",
+        "buscar_termo({\"termo\": \"nesta vida\"})",
+        "buscar_termo({\"termo\": \"durante a vida\"})",
+        "buscar_termo({\"termo\": \"ascender\"})",
+        "buscar_termo({\"termo\": \"espírito protetor\"})"
+      ]
+    },
+    {
+      "rodada": 3,
+      "n_chamadas": 4,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"19530915-御垂示録24号.txt\", \"posicao\": 35500, \"tamanho\": 7000})",
+        "ler_mais_contexto({\"arquivo\": \"19530915-御垂示録24号.txt\", \"posicao\": 37500, \"tamanho\": 7000})",
+        "ler_mais_contexto({\"arquivo\": \"19490825-自観叢書第3篇『霊界叢談』.txt\", \"posicao\": 110300, \"tamanho\": 4000})",
+        "ler_mais_contexto({\"arquivo\": \"Tijotengoku.txt\", \"posicao\": 329500, \"tamanho\": 4000})"
+      ]
+    },
+    {
+      "rodada": 4,
+      "n_chamadas": 5,
+      "chamadas": [
+        "buscar_termo({\"termo\": \"nuvens espirituais\"})",
+        "buscar_termo({\"termo\": \"registro no mundo espiritual\"})",
+        "buscar_termo({\"termo\": \"mesma vida\"})",
+        "buscar_termo({\"termo\": \"elevar o espírito\"})",
+        "buscar_termo({\"termo\": \"purificação espiritual subir\"})"
+      ]
+    },
+    {
+      "rodada": 5,
+      "n_chamadas": 3,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1426900, \"tamanho\": 6000})",
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1427700, \"tamanho\": 4000})",
+        "ler_mais_contexto({\"arquivo\": \"19530910-世界救世教奇蹟集.txt\", \"posicao\": 15300, \"tamanho\": 3000})"
+      ]
+    },
+    {
+      "rodada": 6,
+      "n_chamadas": 3,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1425400, \"tamanho\": 3000})",
+        "ler_mais_contexto({\"arquivo\": \"19530910-世界救世教奇蹟集.txt\", \"posicao\": 14800, \"tamanho\": 2000})",
+        "ler_mais_contexto({\"arquivo\": \"19490825-自観叢書第3篇『霊界叢談』.txt\", \"posicao\": 109800, \"tamanho\": 2000})"
+      ]
+    },
+    {
+      "rodada": 7,
+      "n_chamadas": 1,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1424700, \"tamanho\": 2500})"
+      ]
+    },
+    {
+      "rodada": 8,
+      "n_chamadas": 1,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1424000, \"tamanho\": 1500})"
+      ]
+    },
+    {
+      "rodada": 9,
+      "n_chamadas": 1,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1423400, \"tamanho\": 1500})"
+      ]
+    },
+    {
+      "rodada": 10,
+      "n_chamadas": 1,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"Eiko.txt\", \"posicao\": 1422800, \"tamanho\": 1500})"
+      ]
+    },
+    {
+      "rodada": 11,
+      "n_chamadas": 2,
+      "chamadas": [
+        "ler_mais_contexto({\"arquivo\": \"19530910-世界救世教奇蹟集.txt\", \"posicao\": 14000, \"tamanho\": 1400})",
+        "ler_mais_contexto({\"arquivo\": \"Tijotengoku.txt\", \"posicao\": 329000, \"tamanho\": 1600})"
+      ]
+    },
+    {
+      "rodada": 12,
+      "status": "RESPOSTA_FINAL",
+      "tamanho_resposta": 4990
+    }
+  ],
+  "total_rodadas": 12
+}

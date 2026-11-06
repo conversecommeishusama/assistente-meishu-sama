@@ -1,0 +1,15 @@
+Auditoria de `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual` concluída — **livro reprovado**, 3 chunks reabertos.
+
+**Leitura integral** dos 14 chunks (src × out, par a par) + verificações mecânicas:
+- Costuras: concatenação dos 14 `_src` bate byte a byte com o original e a dos 14 `_out` com o montado — nenhum parágrafo perdido, duplicado ou fundido; 439 linhas não vazias em ambos.
+- Multiconjunto de dígitos idêntico (datas, eras Showa, temperaturas, 5,4 l, 75 kg, 80%/20%).
+- Citações entre aspas idênticas, exceto uma maiúscula de reposicionamento ("é só um resfriado" → "É só um resfriado", pensei).
+- Nomes próprios: só 4 divergências, todas conferidas (Galeno 2→1 e Ministro/Ohikari repetidos → anáfora com referente inequívoco; "Caminho" 9→10 = acréscimo, virou achado).
+- Correções das 4 reaberturas anteriores confirmadas nos chunks 3, 5, 6 e 13 ("dinheiro" restaurado, aspas devolvidas, "cultuar Kannon", "fardo de palha de trigo").
+
+**Achados que motivaram a reabertura:**
+- **chunk 5** — "não foi que meu corpo […] conseguiu levantar-se da cama sem a ajuda de ninguém?" virou "não se ergueu da cama sem a ajuda de ninguém?": a negação junto de "sem" admite a leitura oposta à da fonte.
+- **chunk 9** — "Impurezas como urina, diarreia, suor noturno…" virou "As impurezas foram sendo eliminadas com vigor — na urina, na diarreia…": o aposto (elas *são* as impurezas) virou complemento locativo (elas são o *veículo*).
+- **chunk 11** — "um parente me recomendou novamente" virou "voltou a me recomendar o Caminho": termo fixo maiúsculo inserido onde a fonte deixa o objeto implícito.
+
+Fila do executor: 3 entradas antigas removidas de `done`, 3 chunks no início de `pending` com nota de evidência e ordem de revarrer a classe inteira; `_manifest.json` com `montado: false`; item removido de `pending` do auditor sem ir para `done` (volta sozinho após a remontagem).

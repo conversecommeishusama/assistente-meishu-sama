@@ -1,0 +1,99 @@
+{
+  "volume": 4,
+  "titulo": "Gosuiji-roku (御垂示録) — Volume 2",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 355.6,
+  "caracteres_totais": 701216,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19520925 - Gosuiji-roku nº 13.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520925 - Gosuiji-roku nº 13.txt",
+      "caracteres": 37599
+    },
+    {
+      "arquivo_destino": "02_19521015 - Gosuiji-roku nº 14.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521015 - Gosuiji-roku nº 14.txt",
+      "caracteres": 37271
+    },
+    {
+      "arquivo_destino": "03_19521115 - Gosuiji-roku nº 15.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521115 - Gosuiji-roku nº 15.txt",
+      "caracteres": 27818
+    },
+    {
+      "arquivo_destino": "04_19521215 - Gosuiji-roku nº 16.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521215 - Gosuiji-roku nº 16.txt",
+      "caracteres": 41175
+    },
+    {
+      "arquivo_destino": "05_19530215 - Gosuiji-roku nº 17.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530215 - Gosuiji-roku nº 17.txt",
+      "caracteres": 37923
+    },
+    {
+      "arquivo_destino": "06_19530315 - Gosuiji-roku nº 18.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530315 - Gosuiji-roku nº 18.txt",
+      "caracteres": 39242
+    },
+    {
+      "arquivo_destino": "07_19530415 - Gosuiji-roku nº 19.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530415 - Gosuiji-roku nº 19.txt",
+      "caracteres": 41296
+    },
+    {
+      "arquivo_destino": "08_19530515 - Gosuiji-roku nº 20.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530515 - Gosuiji-roku nº 20.txt",
+      "caracteres": 41471
+    },
+    {
+      "arquivo_destino": "09_19530615 - Gosuiji-roku nº 21.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530615 - Gosuiji-roku nº 21.txt",
+      "caracteres": 42216
+    },
+    {
+      "arquivo_destino": "10_19530715 - Gosuiji-roku nº 22.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530715 - Gosuiji-roku nº 22.txt",
+      "caracteres": 32325
+    },
+    {
+      "arquivo_destino": "11_19530815 - Gosuiji-roku nº 23.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530815 - Gosuiji-roku nº 23.txt",
+      "caracteres": 45934
+    },
+    {
+      "arquivo_destino": "12_19530915 - Gosuiji-roku nº 24.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530915 - Gosuiji-roku nº 24.txt",
+      "caracteres": 41659
+    },
+    {
+      "arquivo_destino": "13_19531015 - Gosuiji-roku nº 25.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531015 - Gosuiji-roku nº 25.txt",
+      "caracteres": 35723
+    },
+    {
+      "arquivo_destino": "14_19531115 - Gosuiji-roku nº 26.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531115 - Gosuiji-roku nº 26.txt",
+      "caracteres": 38962
+    },
+    {
+      "arquivo_destino": "15_19531215 - Gosuiji-roku nº 27.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531215 - Gosuiji-roku nº 27.txt",
+      "caracteres": 42109
+    },
+    {
+      "arquivo_destino": "16_19540215 - Gosuiji-roku nº 28.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540215 - Gosuiji-roku nº 28.txt",
+      "caracteres": 39839
+    },
+    {
+      "arquivo_destino": "17_19540315 - Gosuiji-roku nº 29.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540315 - Gosuiji-roku nº 29.txt",
+      "caracteres": 42718
+    },
+    {
+      "arquivo_destino": "18_19540415 - Gosuiji-roku nº 30.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540415 - Gosuiji-roku nº 30.txt",
+      "caracteres": 35936
+    }
+  ]
+}

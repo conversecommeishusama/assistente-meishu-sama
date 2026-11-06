@@ -1,0 +1,10 @@
+Auditoria do `pending[0]` concluída — **aprovado**.
+
+**Livro:** 19490701 – Coleção Jikan Volume 2 · Método de Cultivo sem Fertilizantes (16 chunks, 981 linhas, 561 parágrafos)
+
+- **Fidelidade:** multiconjunto de dígitos idêntico; 114 citações entre aspas idênticas caractere a caractere; nomes, topônimos, datas, unidades e as tabelas comparativas intactos.
+- **Costuras:** concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; contagem de parágrafos idêntica chunk a chunk — nada perdido, duplicado ou fundido nas emendas.
+- **Achados da rodada anterior:** os 4 conferidos e corrigidos — chunk 1 (finalidade voltou a ser finalidade), chunk 2 (vírgula do "mas" adversativo), chunk 5 ("comprovar" → "compreender"), chunk 12 (citação do Sr. Ishikawa restaurada palavra por palavra).
+- **Padrão literário:** ganho real e uniforme nos 60+ relatos; correções de concordância legítimas (enviá-las/limitada) e reparo de uma corrupção da fonte no chunk 9 sem perda de conteúdo.
+
+Item movido de `pending` para `done` em `QUEUE_AUDITOR.json` (remoção por chave, não por índice — a fila recebeu um novo item durante a leitura). Resta em `pending`: 19490625 – Coleção Jikan Volume 1.

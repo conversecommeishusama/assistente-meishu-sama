@@ -1,0 +1,12 @@
+Chunk 1 do *Volume 12 — Coletânea de Narrativas Jikan* reprocessado e aceito.
+
+**O que o auditor pediu e o que foi feito:** o achado era de padrão literário (fidelidade já estava OK) — parágrafos devolvidos praticamente intactos, com calque e repetição vocabular mecânica não desfeitos. Em vez de corrigir só os três pontos citados, revarri o chunk inteiro pela mesma classe: dos 19 parágrafos longos, 10 estavam acima de 0,85 de similaridade src/out; agora o máximo é 0,76, dentro da faixa de calibragem do livro (0,30–0,73).
+
+- **P25** (era 0,968): desfeito o par `possibilidade`/`possibilidade`, eliminado o calque "Uma sociedade ideal em pensamento" e refeita a predicação frouxa, mantendo as duas proposições da fonte.
+- **P49** (0,958): a primeira oração ganhou sujeito expresso e as duas formulações vizinhas da mesma operação foram diferenciadas lexicalmente.
+- **P53** (0,970): segundo "Ooshin Miroku" virou retomada pronominal.
+- Preservados os parágrafos que passaram na auditoria (P34, P44, P50, P57), cabeçalhos e linhas de edição.
+
+**Verificações de fidelidade:** 63 linhas em ambos os arquivos, multiconjunto de dígitos idêntico, as 23 citações entre aspas byte a byte iguais, terminação `\n\n` igual à do `_src.txt`. Tamanho 11 899 → 11 633 chars.
+
+Fila atualizada por `(livro, chunk)`, não por `pop(0)`: pending 625 → 624, done 140 → 141.

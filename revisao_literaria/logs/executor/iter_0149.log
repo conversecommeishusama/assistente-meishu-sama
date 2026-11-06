@@ -1,0 +1,12 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19491130 - Coleção Jikan Volume 8 — Poemas Recentes de Akemaro`, chunk 5/6 (final do livro, poemas 404-486). Sem `nota_auditor`.
+
+**O que foi feito:**
+- Desfusão de 5 pares de poemas colados na mesma linha (408/409, 415/416, 450/451, 469/470, 474/475) — mesmo tratamento já aplicado nos chunks 000-003 deste livro.
+- Construções nominais japonesas reescritas em português natural (445, 484, 481, 485), redundâncias vocabulares aparadas (436, 455), períodos reordenados para cadência (431, 461, 471, 478).
+- Terminologia mantida em continuidade com o chunk 004 ("mundo em desordem como capim emaranhado", "árdua passagem").
+
+**Verificação automática pós-revisão:** 83 poemas 404-486 presentes uma única vez e em ordem; 83 datas idênticas e na mesma sequência; cabeçalhos de seção, as 3 notas `*Não incluído na coletânea completa.` e `(486 poemas coletados)` byte-idênticos; 11.716 → 11.571 chars (-1,2%).
+
+Observação relevante: entre a leitura inicial e a escrita, o auditor reabriu 3 itens (done 94→91, pending 671→674). Usei remoção por `(livro, chunk)` sobre releitura fresca do arquivo, então nada foi sobrescrito — o novo `pending[0]` é `19491025 - Coleção Jikan Volume 7`, chunk 0, com `nota_auditor`. Fila agora: 673 pending, 92 done.

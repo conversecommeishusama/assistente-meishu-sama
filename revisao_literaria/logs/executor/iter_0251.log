@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**Chunk 0 de `19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina`** (reaberto pelo auditor, classe "operadores de restrição / lista aberta suprimidos"):
+
+Os três achados do 4º parágrafo do Prefácio foram devolvidos — `iludir **apenas** pela beleza`, `"terapia sintomática" — **métodos como** o gelo…` (marca de lista aberta), `**Todos esses são apenas** paliativos`.
+
+Revarri o chunk 0 inteiro atrás da mesma classe e achei mais 8 supressões não apontadas: `planejado **conscientemente**`, `não há diferença **alguma**`, `além de **ninguém** levantar dúvidas`, `se **o número de** doenças diminuísse`, `como **também** venho obtendo`, `**qualquer** doença`, `por **alguma** causa`, e na (Nota) `tornando-se diferente do normal`. Conferi token a token (apenas/somente/todo/qualquer/nada/ninguém/etc./`como` exemplificativo); as diferenças restantes são equivalências (`não apenas`→`não só`, `acima de tudo`→`sobretudo`) ou trechos que o auditor endossou explicitamente.
+
+Nada dos trechos endossados foi revertido; 22 parágrafos, 39 quebras e 10 aspas batem com a fonte, arquivo continua terminando em `\n\n`, 9724 → 9474 chars. Fila: 622 pending / 143 done.

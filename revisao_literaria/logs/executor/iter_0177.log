@@ -1,0 +1,8 @@
+Item processado e fila atualizada (pending 664, done 101).
+
+**Chunk 4 de `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`** — reabertura do auditor por deriva de grau/modalidade:
+
+- Os 5 pontos citados foram corrigidos: `acontecimento imenso` → `grande acontecimento`; `imensa pena` → `muita pena`; `perdidas nas chamas` → `que se perderam`; `conseguido entrar` → `entrado`; restaurado `na verdade, não deve ter sido tanto assim`.
+- Revarri a classe inteira nos 9 parágrafos, como pedido, e desfiz cerca de 20 outros deslocamentos do mesmo tipo — intensificadores acrescentados (`tão preciosa`, `toda a sua violência`, `de ponta a ponta`, `em plena madrugada`, `enfim conseguimos`), modais trocados ou suprimidos (`poder`↔`conseguir`, `só posso chorar`, `tenho orgulho de poder`), complementos circunstanciais inventados (`irrompeu casa adentro`, `o fogo recuou`, `tomei o trem`), reforços lexicais (`intacta` por `não estava rasgada`, `agarrada` por `segurando`) e a relação causal `porque` que virara `diante de`.
+- A prosa da rodada anterior foi preservada: eco `dizer/diziam` e o calque `não aguentando mais` continuam desfeitos, o relato do incêndio segue na redação nova.
+- Estrutura intacta: 9 parágrafos, 33 linhas, títulos/endereços/citações idênticos à fonte, costura final em `\n\n`. Tamanho 11304 → 11081 caracteres.

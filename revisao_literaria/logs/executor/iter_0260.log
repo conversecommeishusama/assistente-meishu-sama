@@ -1,0 +1,5 @@
+Chunk 4/5 de "19501120 - Guia Rápido da Igreja Messiânica Mundial" revisado e aceito.
+
+- `004_out.txt` gravado: 20 parágrafos (idêntico à fonte), 8725 → 8619 chars (−1,2%).
+- Ajustes: exegese do kotodama de "ri"/"hō" quebrada em períodos mais curtos, calques desfeitos ("estão repletos em nossas publicações" → "enchem as nossas publicações"), cadência do trecho autobiográfico. Citação de Cristo, nomes próprios (Gōra, Tomoe, Miroku, Tenrin, Jōgyō, Koyama Masao), datas e colofão preservados verbatim.
+- Fila: item movido de `pending` para `done` por (livro, chunk) — 614 pendentes, 151 concluídos. Este era o último chunk ainda em aberto do livro, então a montagem cabe ao laço externo.

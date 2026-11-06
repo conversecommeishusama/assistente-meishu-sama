@@ -1,0 +1,8 @@
+Item processado e encerrado.
+
+**`pending[0]`** era uma reabertura do auditor: chunk 6 de *Coleção Jikan Volume 12 — Coletânea de Narrativas Jikan* (9 chunks).
+
+- **Achado**: `006_out.txt` terminava com um único `\n`, enquanto `006_src.txt` (e todos os outros chunks do livro) termina em `\n\n`. No livro montado isso colava o último parágrafo do chunk 6 com o primeiro do chunk 7.
+- **Correção**: regravado o arquivo terminando em `\n\n`, sem tocar em mais nada — os dois achados já aceitos na rodada anterior (enumeração dos milagres na agricultura; "quase suprimida" / "com o objetivo, é claro, de") ficaram intactos.
+- **Verificação**: 25 parágrafos na fonte e 25 no revisado; 12.383 → 12.206 chars; agora `006_out.txt` termina exatamente com a mesma sequência de `\n` do `_src`.
+- Fila atualizada: pending 630 → 629, done 135 → 136, com os campos `livro/arquivo/chunk/total_chunks/at/nota`.

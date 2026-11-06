@@ -1,0 +1,6 @@
+Chunk 2 de *Coleção Jikan Volume 2* reprocessado conforme o `nota_auditor` e fila atualizada (pending 718→717, done 48).
+
+- Corrigido o achado exato: `no meu arroz mas, preocupado` → `no meu arroz, mas, preocupado`.
+- Revarredura de pontuação do chunk inteiro: quatro outras junções adversativas/coordenadas normalizadas (`; agora` → `, mas agora`; `; mas, resumindo` → `, mas, resumindo`; `fino; mas por volta` → `fino, mas, por volta`; `diques; e toda` → `diques, e toda`), e a parentética por travessões seguida de vírgula (`— … —, eu`) desfeita em vírgulas.
+- Dois retornos à fonte: `sendo o quarto ano` (havia perdido "ano") e corte de "a observar", que não existia no `_src`.
+- Verificação: 42 parágrafos em fonte e revisado; 11.885 → 11.870 chars; nenhuma ocorrência restante de adversativa sem vírgula, e os `;` remanescentes são legítimos.

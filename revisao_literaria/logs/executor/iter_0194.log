@@ -1,0 +1,6 @@
+Item processado e fila atualizada.
+
+- **Chunk:** `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 5/6 (último do livro) → `005_out.txt`
+- **Ajustes:** repetição tripla de "região do estômago" no parágrafo de abertura, conectivos mecânicos podados ("Além disso", "No entanto", "Dessa forma"), períodos picados fundidos em cadência mais natural; citações, nomes, datas e números intactos, colofão preservado literalmente
+- **Integridade:** 28 linhas não-vazias na fonte e no revisado, na mesma ordem; 12.608 → 12.307 chars (−2,4%)
+- **Fila:** pending 653 → 652, done 112 → 113 (removido por `(livro, chunk)`, não por `pop(0)`)

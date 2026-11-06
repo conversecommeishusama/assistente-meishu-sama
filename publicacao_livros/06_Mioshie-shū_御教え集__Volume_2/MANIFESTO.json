@@ -1,0 +1,29 @@
+{
+  "volume": 6,
+  "titulo": "Mioshie-shū (御教え集) — Volume 2",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 350.8,
+  "caracteres_totais": 683017,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19511125 - Mioshie-shū nº 3.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511125 - Mioshie-shū nº 3.txt",
+      "caracteres": 190897
+    },
+    {
+      "arquivo_destino": "02_19511215 - Mioshie-shū nº 4.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511215 - Mioshie-shū nº 4.txt",
+      "caracteres": 164037
+    },
+    {
+      "arquivo_destino": "03_19520115 - Mioshie-shū nº 5.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520115 - Mioshie-shū nº 5.txt",
+      "caracteres": 169749
+    },
+    {
+      "arquivo_destino": "04_19520320 - Mioshie-shū nº 7.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520320 - Mioshie-shū nº 7.txt",
+      "caracteres": 158334
+    }
+  ]
+}

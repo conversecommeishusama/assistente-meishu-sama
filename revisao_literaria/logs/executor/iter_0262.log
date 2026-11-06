@@ -1,0 +1,12 @@
+Item processado: chunk 4 de *Coleção Jikan Vol. 10 — Método de Saúde por Revelação Divina* (reaberto pelo auditor).
+
+O que foi feito, seguindo a `nota_auditor`:
+
+- **Principal (§20, similaridade 0,999 → 0,235):** o parágrafo de fecho de "Como Ver Este Fato" foi efetivamente retrabalhado — gerúndio duplo (`Tendo… tendo…`) desfeito, calque `penso profundamente que` → `tenho a firme convicção de que`, e os três adjuntos empilhados redistribuídos. Citação `"o Reino dos Céus está próximo"`, nomes (Cristo, Maitreya, Buda Shakyamuni, Deus) e a proposição sobre não ser médico/revelação divina permanecem intactos.
+- **Secundário (§7):** `Em suma` duplicado no mesmo parágrafo → primeira ocorrência virou `Acontece que`; a condicional longa (parasitas, tuberculose…) foi quebrada em dois períodos.
+- **Revarredura da classe inteira:** §4, §5, §6, §8, §16, §17 e §19 também estavam devolvidos quase intocados (0,92–0,97) e foram retrabalhados — `se deve` → `decorre`, fusão das duas primeiras frases de §6, cadência da lista de consequências, `Hoje` repetido 3x em §17, `sofrimento` 3x em §19.
+- **Não tocados**, conforme a nota: §1 e §29 (já aceitos), títulos de seção, linhas de procedência, citação do Sr. Sekizen Furuhata, citação do Tokyo Shimbun, `ondas de Luz`.
+
+Verificações: 46 parágrafos na fonte e no revisado; arquivo continua terminando em aspas + duas quebras; 11.128 → 10.880 chars (−2,2%); similaridade média dos parágrafos substantivos 0,869 → 0,643, dentro da faixa dos demais chunks do livro (0,58–0,81).
+
+Fila atualizada — o livro está com os 10 chunks em `done`. Uma observação: entre minha leitura inicial e a escrita, o auditor reabriu outros itens em paralelo (pending 614 → 615); a remoção foi feita por `(livro, chunk)`, não por índice, então nada foi perdido.

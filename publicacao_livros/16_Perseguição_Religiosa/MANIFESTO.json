@@ -1,0 +1,19 @@
+{
+  "volume": 16,
+  "titulo": "Perseguição Religiosa",
+  "nota": "Mesmo assunto: repressão e perseguição à Igreja",
+  "paginas_estimadas": 73.9,
+  "caracteres_totais": 144464,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19501030 - Memórias da Perseguição Religiosa.txt",
+      "fonte": "livros_publicacao_pt_revisado/19501030 - Memórias da Perseguição Religiosa.txt",
+      "caracteres": 138256
+    },
+    {
+      "arquivo_destino": "02_19510805 - Nova Violência.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510805 - Nova Violência.txt",
+      "caracteres": 6208
+    }
+  ]
+}

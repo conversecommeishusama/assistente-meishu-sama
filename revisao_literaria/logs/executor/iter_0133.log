@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon`, chunk 3/7 → `revisao_literaria/chunks/.../003_out.txt`
+- **Revisão:** desfeitos calques da tradução ("Geograficamente falando", "pensando por outro lado, pode-se pensar", cadeia de "Dessa forma"/"Desta forma"/"Além disso"), períodos longos dos trechos sobre Daijo e Budismo Esotérico reorganizados em cadência mais natural.
+- **Verificação:** 30 linhas / 24 parágrafos idênticos em posição, linhas em branco e títulos VIII e IX intactos, 18 aspas preservadas, todos os nomes próprios, números e datas conferidos um a um (única divergência: "Budismo Daijo" 12→11, repetição mecânica no §14 trocada por pronome). Tamanho 9583 → 8951 chars (0,93).
+- **Fila:** pending 680 → 679, done 85 → 86 (removido por `(livro, chunk)`, não por `pop(0)`).
+
+Observação fora do escopo do chunk: o cabeçalho "VII. A Era de Ouro do Budismo Daijo" está duplicado no fim de `002_src.txt` — é defeito da fonte, já refletido em `002_out.txt`; não toquei nele.

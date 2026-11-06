@@ -1,0 +1,107 @@
+{
+  "arquivo": "Medicina_do_Amanha.txt",
+  "fonte": "livros_publicacao_pt_revisado/Medicina_do_Amanha.txt",
+  "chars_fonte": 212599,
+  "total_chunks": 19,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11945,
+      "paragrafos": 38
+    },
+    {
+      "idx": 1,
+      "chars": 11907,
+      "paragrafos": 22
+    },
+    {
+      "idx": 2,
+      "chars": 11704,
+      "paragrafos": 45
+    },
+    {
+      "idx": 3,
+      "chars": 11789,
+      "paragrafos": 30
+    },
+    {
+      "idx": 4,
+      "chars": 11726,
+      "paragrafos": 37
+    },
+    {
+      "idx": 5,
+      "chars": 10653,
+      "paragrafos": 27
+    },
+    {
+      "idx": 6,
+      "chars": 11304,
+      "paragrafos": 27
+    },
+    {
+      "idx": 7,
+      "chars": 11800,
+      "paragrafos": 30
+    },
+    {
+      "idx": 8,
+      "chars": 11813,
+      "paragrafos": 35
+    },
+    {
+      "idx": 9,
+      "chars": 11849,
+      "paragrafos": 35
+    },
+    {
+      "idx": 10,
+      "chars": 11167,
+      "paragrafos": 24
+    },
+    {
+      "idx": 11,
+      "chars": 11547,
+      "paragrafos": 28
+    },
+    {
+      "idx": 12,
+      "chars": 11814,
+      "paragrafos": 31
+    },
+    {
+      "idx": 13,
+      "chars": 11220,
+      "paragrafos": 29
+    },
+    {
+      "idx": 14,
+      "chars": 11593,
+      "paragrafos": 32
+    },
+    {
+      "idx": 15,
+      "chars": 11300,
+      "paragrafos": 30
+    },
+    {
+      "idx": 16,
+      "chars": 11663,
+      "paragrafos": 19
+    },
+    {
+      "idx": 17,
+      "chars": 11959,
+      "paragrafos": 34
+    },
+    {
+      "idx": 18,
+      "chars": 3846,
+      "paragrafos": 7
+    }
+  ],
+  "montado": true,
+  "chars_final": 202622,
+  "ratio_tamanho": 0.953,
+  "montado_em": "2026-08-24T07:53:46.690238"
+}

@@ -1,0 +1,34 @@
+{
+  "volume": 10,
+  "titulo": "Mioshie-shū (御教え集) — Volume 6",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 354.5,
+  "caracteres_totais": 671809,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19530815 - Mioshie-shū nº 24.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530815 - Mioshie-shū nº 24.txt",
+      "caracteres": 140285
+    },
+    {
+      "arquivo_destino": "02_19530915 - Mioshie-shū nº 25.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530915 - Mioshie-shū nº 25.txt",
+      "caracteres": 103115
+    },
+    {
+      "arquivo_destino": "03_19531015 - Mioshie-shū nº 26.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531015 - Mioshie-shū nº 26.txt",
+      "caracteres": 160566
+    },
+    {
+      "arquivo_destino": "04_19531115 - Mioshie-shū nº 27.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531115 - Mioshie-shū nº 27.txt",
+      "caracteres": 104416
+    },
+    {
+      "arquivo_destino": "05_19531215 - Mioshie-shū nº 28.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531215 - Mioshie-shū nº 28.txt",
+      "caracteres": 163427
+    }
+  ]
+}

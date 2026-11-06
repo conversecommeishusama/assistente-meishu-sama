@@ -1,0 +1,5 @@
+Chunk 9/10 de *Coleção Jikan Volume 3 — Conversas sobre o Mundo Espiritual* revisado e aceito.
+
+- `009_out.txt` salvo: 13 parágrafos (igual à fonte), 8294 → 8161 chars.
+- Sem `nota_auditor` no item, então foi passada literária padrão: redundância mecânica desfeita ("por mais que se esforce, quanto mais se esforça"), construções nominais pesadas reescritas, calques aliviados; números, nomes e citações (180 camadas, sun/shaku, "hitodama", "inochi"/"mei") preservados.
+- Fila atualizada por `(livro, chunk)`, não por `pop(0)`: pending 707 → 706, done 58 → 59.

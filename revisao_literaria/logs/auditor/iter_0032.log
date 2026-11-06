@@ -1,0 +1,13 @@
+Auditoria de `pending[0]` concluída — **19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon: reprovado**, chunks 0, 3 e 4 reabertos.
+
+**Verificações estruturais (todas limpas):** concatenação dos 7 `_src` bate byte a byte com o original e a dos 7 `_out` com o montado; 203 linhas e 36 em branco em ambos; parágrafos idênticos chunk a chunk (25/27/27/25/18/22/23); multiconjunto de dígitos idêntico; as 80 citações entre aspas idênticas caractere a caractere; colofão, títulos I–XII (inclusive a duplicação de "VII" vinda da fonte) e o bloco do Dr. Hayashiya intactos.
+
+**Achados (leitura integral, original × montado, parágrafo a parágrafo):** a classe já reprovada na rodada anterior — quantificador/intensificador/atenuador alterado — foi corrigida nos pontos citados dos chunks 0, 1 e 2, mas a varredura mandatada não cobriu tudo:
+
+- **chunk 0** (2ª reabertura, correção cirúrgica): "de várias maneiras" → "das mais variadas formas" — superlativo acrescentado, mesmo defeito do "a maior atenção" já reprovado.
+- **chunk 3** (nunca varrido): "várias novidades" → "novidades"; "várias vicissitudes" → "muitas"; "percebe-se que são tratados" → "trata de" (moldura de percepção suprimida); "atribuir tudo apenas à influência externa" → sem "apenas".
+- **chunk 4** (nunca varrido): "etc." suprimido na lista de divindades principais (fecha lista aberta, e o mesmo "etc." é preservado no chunk 3); "também é venerado por" → "venerado até por" (partícula escalar acrescentada); duas vezes "extremamente X, e Y" virou consecutiva "tão X que Y".
+
+Chunks 1, 2, 5 e 6 aprovados na releitura — inclusive as duas correções de gramática legítimas do chunk 5 ("transformou-se na de um Deus de amor", "Ensina o Mestre que o pecado é...").
+
+Fila atualizada: `montado: false` no manifesto, `done` antigos dos 3 chunks removidos, histórico de auditoria gravado (chunk 0 com 2 entradas — a próxima falha vira escalação manual), livro fora de `pending` do auditor sem ir para `done`. Os itens reabertos foram inseridos logo **após** `pending[0]` do executor, e não antes, porque havia invocação do executor em voo (Vol. 8 chunk 4) e um `pop(0)` no fecho dela apagaria o item recém-inserido.

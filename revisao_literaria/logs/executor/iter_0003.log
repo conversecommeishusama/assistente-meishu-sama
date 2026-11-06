@@ -1,0 +1,5 @@
+Chunk 002 de *19350000 - Curso Kannon (1~7)* revisado e aceito.
+
+- **Revisão**: 116 parágrafos na fonte → 116 na saída; 11.971 → 11.818 caracteres. Números, datas e nomes próprios conferidos por diff (idênticos); esquemas, tabelas e listas com espaçamento ideográfico preservados byte a byte.
+- **Ajustes principais**: redundâncias de fórmula ("o que é chamado de X é denominado…" → "X é o que se denomina…"; "forma de expor… forma de expor"), concordância errada em "esta também é um Plano Divino do mal", calques ("através de" → "por meio de", "No entanto… mas" no mesmo período), e coesão nos parágrafos sobre longitude/latitude e o corpo.
+- **Fila**: item movido de `pending` para `done` em `revisao_literaria/QUEUE_EXECUTOR.json` — restam 760 pendentes, 3 concluídos.

@@ -1,0 +1,8 @@
+Chunk 1 de *Coleção Jikan Volume 8 — Poemas Recentes de Akemaro* reprocessado conforme a `nota_auditor` e devolvido à fila.
+
+- **Os cinco achados nominais**: 136 (calque `penso secretamente` → `no íntimo, penso`), 143 (regência `retribui a graça` + `cumprindo com saúde`), 153 (`Pois` pendurado eliminado), 148 (sujeito abrupto → `descarta-se`), 124 (concessiva integrada à principal).
+- **Mesma classe varrida em 75-155**, incluindo as corridas que tinham voltado intactas: inversões para ritmo (75, 103, 111, 129, 133, 155), particípio pendente em 127, fragmento nominal reordenado em 115, períodos colados em 138/141.
+- **Preservado**: as reescritas que o auditor mandou não desfazer, as citações de 95 e 96, as separações 88/89 e 98/99, termos fixos (`folhas outonais`, `lastimável`), quantificadores e intensificadores — conferidos por contagem contra a fonte.
+- **Verificação**: numeração 75-155 completa e sem duplicata, datas e títulos de seção idênticos à fonte, 11.809 → 11.733 chars, identidade com a fonte caiu de 49% para 10% (nível do chunk 3).
+
+Fila: `pending` 666 → 665, `done` 99 → 100 (item removido por `(livro, chunk)`, não por índice).

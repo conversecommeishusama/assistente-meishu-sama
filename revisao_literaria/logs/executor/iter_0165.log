@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 12/14** (reaberto pelo auditor):
+
+- Correção pedida aplicada: `"pela honra de sermos protegidos por Deus dia e noite"` → `"pela honra de receber proteção divina dia e noite"` — o termo fixo do volume voltou (agora src=out=1 ocorrência no chunk).
+- Varredura dos demais termos fixos do chunk (Johrei 6, Kannon-Sama 4, Komyo-Nyorai, Grão-Mestre, grande compaixão, virtude divina, poder absoluto, Zengen-Sandji, Graça do Poder Kannon): contagem idêntica entre fonte e revisado — nenhum outro dissolvido em paráfrase. Ohikari, Daikōmyō Nyorai, benefício material, Graças Divinas e kyoshu não ocorrem neste chunk.
+- Dois desvios de fidelidade menores que encontrei ao passar (fora do achado do auditor, mas restauração de fonte, não reescrita): `"Compreendi então que aquele homem nos havia sido confiado"` → `"Compreendi então que, certamente, aquele homem nos fora dado"` — o advérbio da fonte tinha sumido e "confiado" deslocava o sentido de "dado".
+- O restante do chunk, já aprovado pelo auditor, foi mantido intacto; nomes, números e citações não foram tocados. 13 parágrafos em ambos, 6314 → 6198 chars.
+
+Fila: `pending` 669 → 668, `done` 96 → 97 (removido por `(livro, chunk)`, não por `pop(0)`).

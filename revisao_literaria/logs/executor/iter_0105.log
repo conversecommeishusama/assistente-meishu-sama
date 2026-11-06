@@ -1,0 +1,8 @@
+Item processado e fila atualizada.
+
+**`19490830 - Coleção Jikan Volume 5 Diálogos Jikan`, chunk 2/9** (reaberto pelo auditor):
+
+- O achado era real: a revisão anterior trocou "… Takamine Mieko. **Ele** criou um estilo único…" por dois-pontos, deixando o sujeito nulo de "criou" com a filha atriz como antecedente imediato. Restaurei sujeito explícito: "…pai do atual astro de cinema Takamine Mieko; **ele** criou um estilo único e, aliado à sua bela voz, conquistou grande fama."
+- Varri o chunk inteiro atrás da mesma classe de bug (fusão de período com dois-pontos/ponto-e-vírgula deixando sujeito nulo). Os demais casos (`Kumoemon, porém, não era excepcional apenas em sua arte: possuía também…`, `…próximo de ser um mestre: sua história de Taikōki…`) não têm concorrência real de antecedente — o único candidato humano é o próprio sujeito tópico. Nenhuma outra correção necessária.
+- Integridade: 21 parágrafos na fonte e no revisado; 11.803 → 11.650 chars.
+- `QUEUE_EXECUTOR.json`: item removido de `pending` por `(livro, chunk)` (não `pop(0)`) e registrado em `done` com os campos padrão. Fila agora em 695 pending / 70 done.

@@ -1,0 +1,5 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 2/14 → `002_out.txt` gravado, item movido para `done` (745 pending / 20 done).
+
+Um ponto que exige sua atenção (não era um `nota_auditor`, é uma corrida de fila): quando li a fila, `pending[0]` era esse chunk 2; ao gravar o resultado, o laço auditor já havia inserido **dois itens reabertos de `19480701 - Coletânea de Salmos` (chunks 1 e 2, com `nota_auditor`) no topo do `pending`**, empurrando meu item para o índice 2. Registrei o done pelo par (livro, chunk) em vez do índice, então nada foi sobrescrito nem perdido — mas o padrão "processe `pending[0]`" fica ambíguo enquanto o auditor injeta itens no topo durante a execução. Como o prompt manda processar só um item por invocação, não avancei nos itens dos Salmos; eles serão o `pending[0]` da próxima chamada.

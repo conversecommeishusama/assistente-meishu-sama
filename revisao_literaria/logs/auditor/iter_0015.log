@@ -1,0 +1,12 @@
+Auditoria de `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes` concluída — **livro reprovado**, 4 chunks reabertos.
+
+**Verificações estruturais (limpas):** concatenação dos 16 `_src` bate byte a byte com o original; a dos 16 `_out`, com o montado — nenhum parágrafo perdido ou duplicado nas costuras. 561 linhas não vazias em ambos, multiconjunto de dígitos idêntico, 228 aspas em ambos, sem palavra repetida nem espaço duplo.
+
+**Achados (leitura integral, chunk a chunk, dos 16 pares src/out):**
+
+1. **Chunk 12 — citação entre aspas reescrita** (proibição expressa do protocolo). Das 114 citações do livro, 113 saíram idênticas; só a fala do Sr. Ishikawa Isamu foi refeita de ponta a ponta ("transformados"→"convertidos", "Isso foi diagnosticado como"→"Diagnosticou-se", "aplicação excessiva de nitrato de amônio"→"desse fertilizante", etc.).
+2. **Chunk 5 — mudança de sentido:** "pude **compreender** que isso é verdade" → "pude **comprovar** que isso é verdade"; atribui ao autor uma comprovação empírica que a fonte não afirma.
+3. **Chunk 1 — ideia acrescentada:** o adjunto de finalidade "para ativar o solo e fortalecer seu poder" virou tese ("o que ativa o solo... é o próprio cultivo contínuo"), decidindo uma relação lógica que a fonte deixa em aberto, e perdeu o "continuamente".
+4. **Chunk 2 — erro de pontuação introduzido:** vírgula suprimida antes do "mas" adversativo ("no meu arroz mas, preocupado, fui verificar") — única ocorrência do livro; o original tinha a vírgula.
+
+**Fila atualizada:** os 4 chunks entraram no topo de `QUEUE_EXECUTOR.json` com nota de evidência (e instrução de revarrer a classe inteira do bug em cada chunk); as entradas antigas deles saíram de `done`; criados os `NNN_historico_auditoria.jsonl` (1ª reabertura de cada); `_manifest.json` com `montado: false` e sem `montado_em`; o livro saiu de `pending` em `QUEUE_AUDITOR.json` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

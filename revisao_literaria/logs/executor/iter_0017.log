@@ -1,0 +1,7 @@
+Item processado: `pending[0]` era uma reabertura do auditor (chunk 6 de *19350000 - Curso Kannon (1~7)*), não uma revisão nova.
+
+- **Achado confirmado**: `006_out.txt` terminava em `\n` enquanto `006_src.txt` termina em `\n\n`; como `montar_livro.py` faz `"".join(partes)`, dois parágrafos ficavam colados no livro montado. Corrigido restaurando só o newline final — o texto revisado não foi tocado.
+- **Classe do bug varrida**: dos 16 `_out.txt` já gerados, `010`, `011` e `012` do mesmo livro tinham o mesmo defeito (já em `done`). Também corrigidos, mesma correção de 1 byte.
+- **Observação para o auditor** (não alterei, está fora do item e é permitido pelo protocolo): `005_out.txt` tem 64 parágrafos contra 59 do `_src` — quebra de parágrafo é explicitamente autorizada pelo protocolo, mas vale conferir se as 5 quebras extras são intencionais.
+
+Fila atualizada: `pending` 751 → 750, `done` 16 → 17.

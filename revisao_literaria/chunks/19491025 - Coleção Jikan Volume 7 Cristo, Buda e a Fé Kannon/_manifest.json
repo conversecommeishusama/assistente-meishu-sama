@@ -1,0 +1,47 @@
+{
+  "arquivo": "19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+  "fonte": "livros_publicacao_pt_revisado/19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+  "chars_fonte": 66305,
+  "total_chunks": 7,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 9311,
+      "paragrafos": 11
+    },
+    {
+      "idx": 1,
+      "chars": 11228,
+      "paragrafos": 2
+    },
+    {
+      "idx": 2,
+      "chars": 10702,
+      "paragrafos": 7
+    },
+    {
+      "idx": 3,
+      "chars": 9583,
+      "paragrafos": 4
+    },
+    {
+      "idx": 4,
+      "chars": 9304,
+      "paragrafos": 2
+    },
+    {
+      "idx": 5,
+      "chars": 9618,
+      "paragrafos": 2
+    },
+    {
+      "idx": 6,
+      "chars": 6559,
+      "paragrafos": 8
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-14T22:40:23.700275",
+  "chars_final": 65001,
+  "ratio_tamanho": 0.98
+}

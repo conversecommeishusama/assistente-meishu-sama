@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`19501030 - Memórias da Perseguição Religiosa`, chunk 7** (reaberto pelo auditor, achado de FIDELIDADE):
+
+- Restaurado `"Você não precisava responder a coisas de que não se lembrava"` na fala do advogado — estava harmonizado como `"O senhor"`. A alternância *você*/*o senhor* dentro da mesma fala é do documento-fonte.
+- Varredura completa das **17 citações entre aspas** do chunk, comparadas caractere a caractere com `007_src.txt`: todas idênticas agora.
+- Nada mais foi revertido, conforme a nota do auditor — mantidos `Estados Unidos`, nomes próprios (Shibui Sōzaburō, Mushanokōji Saneatsu, MacArthur, Truman, Hakone Gōra, Mishima, Atami, Tokkō) e o título de seção.
+- Estrutura preservada: 8 parágrafos, terminação `ades\n\n`. Tamanho 10.973 → 10.858 chars.
+
+Fila: `pending` 614 → 613, `done` 151 → 152.

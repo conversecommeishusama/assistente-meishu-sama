@@ -1,0 +1,12 @@
+Processado o `pending[0]` desta invocação e encerrando conforme instruído.
+
+**Item:** `19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina`, chunk 4/10 — revisado e salvo em `004_out.txt`.
+
+Ajustes principais: desfeita a redundância "relatos publicados nas publicações"; cadeias de conectivos aliviadas ("Por isso se dedicam" → "Daí que se dediquem"; "Por isso o governo" → "Daí que o governo"); períodos arrastados quebrados (parágrafo da detenção de três dias, parágrafo do "um terço / dois terços"). Citações entre aspas, títulos de seção, linhas de atribuição de artigo, datas e números mantidos intactos.
+
+Verificações: 26 parágrafos → 26, 45 linhas → 45, dígitos idênticos ao fonte, 11.128 → 10.978 chars (ratio 0,987), terminação `\n\n` preservada.
+
+Dois pontos que valem registro para o operador do laço:
+
+1. A fila mudou no disco entre minha leitura e minha escrita — o auditor reabriu itens nesse intervalo (pending 639→641 antes do meu pop). Removi por `(livro, chunk)` e reescrevi a partir de uma releitura, então nada foi perdido: pending 640, done 125, os dois reabertos intactos.
+2. O novo `pending[0]` é um item reaberto com `nota_auditor` (`19491230 - Volume 9 Caminho para a Luz`, chunk 3) pedindo três correções pontuais de modalização — não é um chunk novo. A próxima invocação precisa resolver exatamente esses três pontos, não refazer o chunk.

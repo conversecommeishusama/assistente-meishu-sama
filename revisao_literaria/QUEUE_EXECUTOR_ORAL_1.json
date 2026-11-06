@@ -1,0 +1,137 @@
+{
+  "gerado_por": "preparar_filas_orais.py",
+  "gerado_em": "2026-08-18T20:45:57",
+  "fase": "revisao_literaria_oral_executor",
+  "protocol_file": "revisao_literaria/EXECUCAO_PROMPT.md",
+  "pending": [
+    {
+      "livro": "19481208 - Gokōwa-roku nº 1",
+      "arquivo": "19481208 - Gokōwa-roku nº 1.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19490208 - Gokōwa-roku nº 3",
+      "arquivo": "19490208 - Gokōwa-roku nº 3.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19490710 - Gokōwa-roku nº 10",
+      "arquivo": "19490710 - Gokōwa-roku nº 10.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19491021 - Gokōwa-roku nº 13",
+      "arquivo": "19491021 - Gokōwa-roku nº 13.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19500228 - Gokōwa-roku nº 17",
+      "arquivo": "19500228 - Gokōwa-roku nº 17.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19510915 - Gosuiji-roku nº 1",
+      "arquivo": "19510915 - Gosuiji-roku nº 1.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19511125 - Gosuiji-roku nº 3",
+      "arquivo": "19511125 - Gosuiji-roku nº 3.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19511225 - Gosuiji-roku nº 5",
+      "arquivo": "19511225 - Gosuiji-roku nº 5.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19520320 - Mioshie-shū nº 7",
+      "arquivo": "19520320 - Mioshie-shū nº 7.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19520515 - Mioshie-shū nº 9",
+      "arquivo": "19520515 - Mioshie-shū nº 9.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19520715 - Mioshie-shū nº 11",
+      "arquivo": "19520715 - Mioshie-shū nº 11.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19520925 - Mioshie-shū nº 13",
+      "arquivo": "19520925 - Mioshie-shū nº 13.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19521115 - Mioshie-shū nº 15",
+      "arquivo": "19521115 - Mioshie-shū nº 15.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19530215 - Gosuiji-roku nº 17",
+      "arquivo": "19530215 - Gosuiji-roku nº 17.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19530415 - Gosuiji-roku nº 19",
+      "arquivo": "19530415 - Gosuiji-roku nº 19.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19530615 - Gosuiji-roku nº 21",
+      "arquivo": "19530615 - Gosuiji-roku nº 21.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19530815 - Gosuiji-roku nº 23",
+      "arquivo": "19530815 - Gosuiji-roku nº 23.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19531015 - Gosuiji-roku nº 25",
+      "arquivo": "19531015 - Gosuiji-roku nº 25.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19531215 - Gosuiji-roku nº 27",
+      "arquivo": "19531215 - Gosuiji-roku nº 27.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19540215 - Mioshie-shū nº 30",
+      "arquivo": "19540215 - Mioshie-shū nº 30.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    },
+    {
+      "livro": "19540415 - Mioshie-shū nº 32",
+      "arquivo": "19540415 - Mioshie-shū nº 32.txt",
+      "chunk": 0,
+      "total_chunks": 0
+    }
+  ],
+  "in_progress": [],
+  "done": [],
+  "failed": []
+}

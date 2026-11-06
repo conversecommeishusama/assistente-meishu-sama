@@ -1,0 +1,14 @@
+**Auditoria de `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`: reprovado — chunk 10 reaberto (2ª vez).**
+
+Leitura integral: 780 linhas / 341 parágrafos, os 14 chunks comparados `_src` × `_out`, mais o original × montado.
+
+**Fidelidade — passou em tudo:**
+- Concatenação dos 14 `_src` bate byte a byte com o original, e a dos `_out` com o montado; parágrafos 341 = 341, e por chunk também (27/13/17/24/33/31/32/17/24/30/24/30/24/15 em ambos). Nenhuma costura perdeu ou duplicou parágrafo.
+- Multiconjunto de numerais idêntico; nenhum nome próprio, data, dose, idade ou endereço alterado ("Galeno" 2→1 é a 2ª ocorrência virando "dessas teorias", com referente inequívoco); citações entre aspas idênticas; os 3 parênteses a menos viraram travessões preservando o conteúdo.
+- Os 8 achados das rodadas anteriores foram todos corrigidos e conferidos um a um (chunks 3, 4, 5×2, 6, 9, 10, 11, 13): "dinheiro" devolvido, aspas de "fulano se curou…" restauradas, "não foi que… conseguiu erguer-se", "minha cunhada", "passei a cultuar Kannon", aposto das impurezas, "entrega total ao indivíduo", "voltou a me recomendar" sem "o Caminho", "fardo de palha de trigo".
+
+**O que reprovou (padrão literário, chunk 10):** o chunk voltou praticamente igual à fonte — similaridade média 0,984 contra 0,74–0,92 nos demais. A própria nota do executor diz "todas revertidas". O depoimento inteiro de Higuchi Yoko (5 parágrafos, ~3.600 caracteres) saiu idêntico à fonte a menos de duas vírgulas e de um "havia três meses", e os dois parágrafos que a reabertura anterior citou ficaram 100% idênticos. Sobraram intactas redundâncias do tipo "Imediatamente… na hora" / "Para nossa surpresa… boquiabertos" no mesmo período, "comer arroz" 3× em três frases, e a cadeia de cinco orações com "meu coração sofria". Ou seja: fiel, mas sem a revisão literária que é o objetivo da fase.
+
+Ações: item inserido em `pending[0]` de `QUEUE_EXECUTOR.json` com nota_auditor detalhada (incluindo a instrução explícita de **não** desfazer as correções de fidelidade da rodada anterior e de revarrer os 24 parágrafos), entrada acrescentada em `010_historico_auditoria.jsonl` (agora 2 — a próxima falha nesse chunk vira escalação manual), `montado:false` no `_manifest.json`, entrada antiga do chunk 10 removida de `done`, e o livro tirado de `pending` do auditor sem ir para `done`.
+
+Uma ressalva honesta: o chunk 5 (já com 2 reaberturas) tem uma repetição residual não corrigida — "a ter alta do hospital… tive alta" e "Desta vez" repetido. Julguei abaixo do limiar de achado, porque o resto do chunk foi de fato reescrito; se eu o tivesse tratado como achado, a regra obrigaria escalação manual e o livro sairia do circuito.

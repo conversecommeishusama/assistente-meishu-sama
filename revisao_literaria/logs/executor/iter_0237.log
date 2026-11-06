@@ -1,0 +1,14 @@
+Item processado e fila atualizada.
+
+**`19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 0** (reaberto pelo auditor) — retrabalhado atacando a classe inteira apontada na nota, não só as ocorrências citadas:
+
+- **(a)** tautologia: *"minha esposa faleceu. Ela estava grávida do terceiro filho, de cinco meses, e morreu"* → *"minha esposa faleceu: estava grávida de cinco meses, do terceiro filho"* (gravidez, cinco meses e terceiro filho preservados).
+- **(d)** calque duro: *"caí na fatalidade de não ter mais como me reerguer"* → *"cheguei a um ponto em que já não havia como me reerguer"*.
+- **(e)** *"através do passado, do presente e do futuro"* → *"ao longo de"*; *"significado... significado"* → segundo vira *"sentido"*; o período de cinco linhas do Prefácio foi partido em dois.
+- **Fidelidade**: devolvido o quantificador — *"Sempre mantive acesa a convicção..."*.
+- **Varredura da classe**: desfeitos também os ecos `caí/caí`, `na época ×2`, `acabei ×2`, `daquele mesmo ano/do mesmo ano`, `atingiram/fui atingido`, `males sociais ×2`, `voltou ×2`, `naquela época ×2`, `extremamente ×2`, `dali ×2`, `escolas religiosas ×2`; e o pleonasmo `"No entanto, por outro lado"`.
+- Parágrafos 2-16 mantidos como estavam, conforme a nota mandava; itens da lista "já endossados" intocados.
+
+Integridade conferida contra o `_src`: 20 parágrafos, 40 quebras de linha, as 8 citações entre aspas idênticas caractere a caractere, multiconjunto de dígitos idêntico, terminação em `\n\n` preservada (costura dos chunks), 11.672 → 11.424 chars (−2,1%).
+
+Fila: `pending` 628 → 627, `done` 137 → 138 (removido por chave `(livro, chunk)`, não por `pop(0)`).

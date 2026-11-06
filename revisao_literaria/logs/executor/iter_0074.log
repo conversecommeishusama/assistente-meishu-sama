@@ -1,0 +1,6 @@
+Item reaberto (chunk 12, Coleção Jikan Vol. 2) processado e fechado.
+
+- Citação do Sr. Ishikawa Isamu restaurada palavra por palavra do `012_src.txt`, incluindo as aspas simples internas de `'doença do nitrato de amônio'`.
+- Revarredura do chunk inteiro: os 11 pares de aspas agora batem exatamente com a fonte; números (11 ocorrências), nomes próprios e contagem de parágrafos (22) conferidos.
+- Nenhuma outra alteração na prosa fora das aspas — verificado programaticamente que a única edição no arquivo foi a substituição da citação.
+- Fila: item removido por `(livro, chunk)` e movido para `done` (715 pending / 50 done).

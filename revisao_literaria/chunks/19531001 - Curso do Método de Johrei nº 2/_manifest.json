@@ -1,0 +1,37 @@
+{
+  "arquivo": "19531001 - Curso do Método de Johrei nº 2.txt",
+  "fonte": "livros_publicacao_pt_revisado/19531001 - Curso do Método de Johrei nº 2.txt",
+  "chars_fonte": 56482,
+  "total_chunks": 5,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11898,
+      "paragrafos": 21
+    },
+    {
+      "idx": 1,
+      "chars": 11444,
+      "paragrafos": 18
+    },
+    {
+      "idx": 2,
+      "chars": 10610,
+      "paragrafos": 10
+    },
+    {
+      "idx": 3,
+      "chars": 10338,
+      "paragrafos": 9
+    },
+    {
+      "idx": 4,
+      "chars": 12192,
+      "paragrafos": 6
+    }
+  ],
+  "montado": true,
+  "chars_final": 55708,
+  "ratio_tamanho": 0.986,
+  "montado_em": "2026-08-18T13:15:24.860699"
+}

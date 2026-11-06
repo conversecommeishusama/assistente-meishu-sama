@@ -1,0 +1,22 @@
+{
+  "arquivo": "19500921 - Até a Construção do Paraíso Terrestre.txt",
+  "fonte": "livros_publicacao_pt_revisado/19500921 - Até a Construção do Paraíso Terrestre.txt",
+  "chars_fonte": 19079,
+  "total_chunks": 2,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11554,
+      "paragrafos": 25
+    },
+    {
+      "idx": 1,
+      "chars": 7525,
+      "paragrafos": 10
+    }
+  ],
+  "montado": true,
+  "chars_final": 18772,
+  "ratio_tamanho": 0.984,
+  "montado_em": "2026-08-15T02:04:35.339571"
+}

@@ -1,0 +1,17 @@
+{
+  "arquivo": "Revista_Asahi.txt",
+  "fonte": "livros_publicacao_pt_revisado/Revista_Asahi.txt",
+  "chars_fonte": 3582,
+  "total_chunks": 1,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 3582,
+      "paragrafos": 14
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-17T18:43:15.617012",
+  "chars_final": 3584,
+  "ratio_tamanho": 1.001
+}

@@ -1,0 +1,14 @@
+{
+  "volume": 30,
+  "titulo": "Kyusei",
+  "nota": "Volume individual",
+  "paginas_estimadas": 107.4,
+  "caracteres_totais": 210178,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_Kyusei.txt",
+      "fonte": "livros_publicacao_pt_revisado/Kyusei.txt",
+      "caracteres": 210178
+    }
+  ]
+}

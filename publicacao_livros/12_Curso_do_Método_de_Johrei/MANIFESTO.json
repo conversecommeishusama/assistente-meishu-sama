@@ -1,0 +1,59 @@
+{
+  "volume": 12,
+  "titulo": "Curso do Método de Johrei",
+  "nota": "Série completa num volume único",
+  "paginas_estimadas": 404.5,
+  "caracteres_totais": 795252,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19531001 - Curso do Método de Johrei nº 2.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531001 - Curso do Método de Johrei nº 2.txt",
+      "caracteres": 58401
+    },
+    {
+      "arquivo_destino": "02_19531101 - Curso do Método de Johrei nº 1.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531101 - Curso do Método de Johrei nº 1.txt",
+      "caracteres": 48229
+    },
+    {
+      "arquivo_destino": "03_19541001 - Curso do Método de Johrei nº 3.txt",
+      "fonte": "livros_publicacao_pt_revisado/19541001 - Curso do Método de Johrei nº 3.txt",
+      "caracteres": 46017
+    },
+    {
+      "arquivo_destino": "04_19541120 - Curso do Método de Johrei nº 4 Crítica da Farmacologia.txt",
+      "fonte": "livros_publicacao_pt_revisado/19541120 - Curso do Método de Johrei nº 4 Crítica da Farmacologia.txt",
+      "caracteres": 65607
+    },
+    {
+      "arquivo_destino": "05_19550210 - Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550210 - Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos).txt",
+      "caracteres": 99597
+    },
+    {
+      "arquivo_destino": "06_19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+      "caracteres": 89797
+    },
+    {
+      "arquivo_destino": "07_19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+      "caracteres": 76537
+    },
+    {
+      "arquivo_destino": "08_19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+      "caracteres": 116710
+    },
+    {
+      "arquivo_destino": "09_19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+      "caracteres": 76464
+    },
+    {
+      "arquivo_destino": "10_19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+      "caracteres": 117893
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**`19491223 - Montanha e Água`, chunk 11/12** (reaberto pelo auditor):
+
+- **Achado específico resolvido:** poema 1141 voltou ao quantificador da fonte — `quase todos` → `a maioria das pessoas`.
+- **Varredura da classe em todo o chunk** (o que a nota exigia, não só o poema citado): 7 outros deslocamentos de quantificador/intensificador/aproximador corrigidos — 1130 `tantos`→`muitos`, 1120 `bem em frente`→`de frente`, 1137 `Basta que… comece`→`Quando… começa`, 1177 `resplandece`→`brilha`, 1202 singular genérico→plural da fonte, 1214 `Há muito que fazer`→`Há muitas coisas a fazer`, 1229 devolvida a agência `fazer com que`.
+- **Integridade:** 227 linhas, 122 poemas, numeração e linhas de título idênticas à fonte; 14106 → 13954 chars (−1,1%). O restante do chunk, já aprovado na auditoria, não foi tocado.
+
+Fila: pending 657 → 656, done 108 → 109 (item removido por `(livro, chunk)`, não por índice).

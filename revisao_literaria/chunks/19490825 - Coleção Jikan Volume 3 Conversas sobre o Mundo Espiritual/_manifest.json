@@ -1,0 +1,62 @@
+{
+  "arquivo": "19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+  "fonte": "livros_publicacao_pt_revisado/19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+  "chars_fonte": 110859,
+  "total_chunks": 10,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11260,
+      "paragrafos": 15
+    },
+    {
+      "idx": 1,
+      "chars": 11575,
+      "paragrafos": 12
+    },
+    {
+      "idx": 2,
+      "chars": 10703,
+      "paragrafos": 18
+    },
+    {
+      "idx": 3,
+      "chars": 11694,
+      "paragrafos": 31
+    },
+    {
+      "idx": 4,
+      "chars": 11939,
+      "paragrafos": 21
+    },
+    {
+      "idx": 5,
+      "chars": 10426,
+      "paragrafos": 21
+    },
+    {
+      "idx": 6,
+      "chars": 11526,
+      "paragrafos": 15
+    },
+    {
+      "idx": 7,
+      "chars": 11638,
+      "paragrafos": 24
+    },
+    {
+      "idx": 8,
+      "chars": 11804,
+      "paragrafos": 19
+    },
+    {
+      "idx": 9,
+      "chars": 8294,
+      "paragrafos": 13
+    }
+  ],
+  "montado": true,
+  "chars_final": 108846,
+  "ratio_tamanho": 0.982,
+  "montado_em": "2026-08-14T20:06:24.420541"
+}

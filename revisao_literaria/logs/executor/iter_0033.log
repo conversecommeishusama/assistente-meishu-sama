@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 7/14 → `007_out.txt`
+- **Ajustes**: períodos arrastados quebrados nos depoimentos (Matsumoto Kimiko, Usami Masae, Kako Karokuro); gênero inconsistente de "Johrei" (`a Johrei`/`minha primeira Johrei` → `o Johrei`/`meu primeiro Johrei`); repetições de conectivo (`Foi quando` em parágrafos seguidos, `encontro/encontrei`, `disseram… disseram`); calques desfeitos (`não melhorava nada`, `atingindo o auge do pessimismo`, `perguntei a uma pessoa… sobre`).
+- **Preservado e verificado por script**: 65 linhas com mesma estrutura de branco/prefixo `　`, cabeçalhos e blocos de endereço byte a byte idênticos, as 5 citações entre aspas idênticas, todos os números batendo. Tamanho 11 500 → 11 351 chars (−1,3 %).
+- **Fila**: pending 739 → 738, done 26 → 27.

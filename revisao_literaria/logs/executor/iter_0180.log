@@ -1,0 +1,6 @@
+Chunk 8/12 de "19491223 - Montanha e Água" revisado e aceito.
+
+- **Texto**: coletânea de tanka (poemas 822–922). Ajustes de prosa: gerúndios pendentes desfeitos (864 → "Caminho pisando minha própria sombra"), correção do trecho corrompido em 836 ("sozinho no quarto à leio" → "sozinho no quarto, leio"), concordância em 876 ("Liso como... o lago"), repetições mecânicas de conectivo/verbo eliminadas e pontuação uniformizada.
+- **Preservado**: 101 numerações na mesma ordem, 27 marcações de data (Era Showa), todos os títulos de seção, a nota de rodapé de 872 e a forma "paulownia" da fonte (não é papel desta fase decidir terminologia — cheguei a harmonizar com "paulônia" do chunk 007 e revertí, já que o resto do livro usa a forma da fonte).
+- **Tamanho**: 11.762 → 11.688 caracteres; 190 linhas em ambos.
+- **Fila**: item movido para `done` por `(livro, chunk)`, não por `pop(0)`. Restam 661 pendentes / 104 concluídos.

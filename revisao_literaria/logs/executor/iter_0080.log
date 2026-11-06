@@ -1,0 +1,6 @@
+Chunk 5 de *19490825 — Coleção Jikan Volume 3* revisado e fila atualizada (pending 711→710, done 54→55).
+
+- **Revisão**: calques da tradução desfeitos ("Quando eu realizava o tratamento" → "Durante o tratamento"; "Quando perguntei, ele disse" → "Interrogado, disse"), períodos longos quebrados nos parágrafos do caso de Sendai e do espírito do velho, `a velha` uniformizado para `a velha senhora` (forma já usada no chunk 4).
+- **Correção de sentido**: o fonte trazia "o ser humano deve, de forma alguma, praticar atos que sejam vergonhosos" — negação truncada, invertendo a frase; ficou "não deve, de forma alguma, praticar atos indignos de um ser humano".
+- **Verificado**: 21 parágrafos em ambos, 33 citações entre aspas idênticas caractere a caractere, números e nomes próprios conferidos por contagem, 10.426 → 10.124 chars (−2,9%).
+- **Fora do chunk designado, um reparo estrutural**: `004_out.txt` terminava com `\n` simples em vez de `\n\n`, o que fundiria seu último parágrafo com o primeiro deste chunk na montagem do livro. Restaurei só o terminador, sem tocar no texto — está registrado na nota da fila.

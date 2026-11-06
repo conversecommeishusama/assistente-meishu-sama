@@ -1,0 +1,44 @@
+{
+  "volume": 14,
+  "titulo": "Jikan Sōsho — Volume II",
+  "nota": "nº6,7,9,10,12,13,15 — inclui 3 títulos de terceiros sob autorização",
+  "paginas_estimadas": 363.8,
+  "caracteres_totais": 691992,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/19490715-自観叢書第6篇『怪物か聖者か』.txt",
+      "caracteres": 138150
+    },
+    {
+      "arquivo_destino": "02_19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+      "caracteres": 68145
+    },
+    {
+      "arquivo_destino": "03_19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+      "caracteres": 71821
+    },
+    {
+      "arquivo_destino": "04_19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+      "caracteres": 98094
+    },
+    {
+      "arquivo_destino": "05_19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+      "caracteres": 101271
+    },
+    {
+      "arquivo_destino": "06_19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/19491205-自観叢書第13篇『世界の六大神秘家』.txt",
+      "caracteres": 116826
+    },
+    {
+      "arquivo_destino": "07_19500125-自観叢書第15篇『基督と自観師』.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/19500125-自観叢書第15篇『基督と自観師』.txt",
+      "caracteres": 97685
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Auditoria de `19491230 - Coleção Jikan Volume 9 Caminho para a Luz` concluída — **livro reaberto** (chunk 4).
+
+**Fidelidade: limpa.** Leitura integral das 262 linhas / 130 parágrafos, original × montado, parágrafo a parágrafo. Concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (20/18/24/24/17/27); multiconjunto de dígitos idêntico; as 107 aspas e o conteúdo de todas as citações idênticos caractere a caractere nos dois sentidos; nomes próprios, eras, unidades e colofão intactos; todas as 12 diferenças de negação são reformulação equivalente; nenhuma interrogativa mudou de polaridade. Os 6 achados das rodadas anteriores (chunks 1, 2×2, 3, 5×2) foram conferidos um a um e estão todos corrigidos.
+
+**Achado (padrão literário), chunk 4** — tique lexical mecânico não desfeito: `"aos poucos"` 8 vezes no chunk, **3 delas num mesmo parágrafo** (`"foi se recuperando aos poucos" … "foi piorando aos poucos" … "deteriorando-se aos poucos"`, ~950 caracteres). A fonte repetia "gradualmente" e a revisão trocou a palavra 1:1 sem variar a repetição — é a regra 1 do protocolo por aplicar. Agravante: `"piorava/piorando aos poucos"` na mesma fórmula em três relatos clínicos seguidos. A ocorrência dentro da citação do fim da guerra é literal da fonte e foi marcada como intocável na nota.
+
+Chunk 4 tinha 0 reaberturas — reabertura normal, sem escalação.
+
+Fila atualizada: item inserido em `pending[0]` de `QUEUE_EXECUTOR.json` com a evidência concreta e a instrução de varrer a classe inteira; entrada antiga do chunk 4 removida de `done`; `004_historico_auditoria.jsonl` criado; `_manifest.json` com `montado: false` (sem `montado_em`); livro removido de `pending` em `QUEUE_AUDITOR.json` sem ir para `done`. Verificado: nenhum `(livro, chunk)` duplicado entre `pending` e `done`, e nenhum item resgatado por corrida com o executor.

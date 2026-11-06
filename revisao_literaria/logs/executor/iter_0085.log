@@ -1,0 +1,9 @@
+Item processado: chunk 12 de **19490625 - Coleção Jikan Volume 1** (reaberto pelo auditor).
+
+- Achado específico corrigido: "durou um mês inteiro" → "durou um mês" (relato de Tamotsu Harada).
+- Revarredura da classe inteira (quantificador/intensificador sem apoio na fonte): 8 outras ocorrências ajustadas — "não me fez mal algum", "em plena madrugada", "jamais erguia", "de todo desanimado", "tantas pessoas salvas", "A melhora não vinha", "mandou-me cortar o cabelo", "qual não é a diferença".
+- Também restaurei 3 elementos que a reescrita havia enfraquecido/perdido: "um simples espirro", "grande confusão", "à espera apenas da morte".
+- Mantido o que a nota mandou preservar: reparo da duplicação truncada final e a citação literal.
+- Integridade: 24 → 24 parágrafos; 11.459 → 11.212 chars.
+
+Fila: pending 709, done 56 (item removido por identidade `(livro, chunk)`, não por `pop(0)`).

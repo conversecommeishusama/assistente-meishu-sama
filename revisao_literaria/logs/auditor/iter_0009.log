@@ -1,0 +1,14 @@
+**19490625 — Coleção Jikan Volume 1: Tuberculose e Terapia Espiritual — reprovado, 2 chunks reabertos (1ª reabertura de cada).**
+
+Leitura integral das 780 linhas do original contra as 780 do montado, chunk a chunk (14 pares src/out).
+
+Integridade estrutural (sem achados): concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado — nenhum parágrafo perdido, duplicado ou fundido nas costuras; contagem de parágrafos idêntica nos 14 chunks; multiconjunto de dígitos idêntico em todos (datas Era Showa, 39,8°C, 42 graus, três shō, 35 sacas, 460-377 a.C., um sen, 20cc, 15/9 cm); endereços, nomes de fiéis, ministros e associações intactos; hino ◎ e divisórias preservados.
+
+Achados que motivaram a reabertura:
+
+- **chunk 3 — regressão literária introduzida pela própria revisão.** Original: "Observando a religião sob o ponto de vista acadêmico, pode-se dizer ainda o seguinte". Montado: "Vista de um ponto de vista acadêmico, a religião ainda permite dizer o seguinte" — repete "vista/ponto de vista" em quatro palavras e força "a religião" como sujeito de "permite dizer". Ficou pior que a fonte, o oposto do objetivo da fase.
+- **chunk 5 — infidelidade lexical.** Original: "havia gasto tanto com médicos e dinheiro sem melhorar"; montado: "gastara tanto com médicos e **remédios**" — troca de item que afirma um gasto não enunciado (a fonte é desajeitada, mas o conserto correto preservaria "dinheiro"). Secundário no mesmo chunk: a citação `"fulano se curou, sicrano também se curou"` perdeu as aspas, virando aposto após travessão.
+
+Casos examinados e considerados legítimos, não reabertos: reparo da duplicação truncada da fonte no chunk 12 ("Minha irmã mais nova… Quanto à minha irmã mais nova…"); explicitação "nódulo tóxico dissolvido pela primeira febre" (chunk 1), mecânica já descrita no parágrafo anterior do próprio texto; correção de gênero do narrador ("esqueci-me de mim mesma", chunk 13; "a doente", chunk 10); condensação da 2ª ocorrência de "curso (aula) de preparação para receber o Ohikari (kyoshu)" no chunk 4, que é repetição mecânica.
+
+Fila atualizada: chunks 3 e 5 no início de `pending` do executor com `nota_auditor` (incluindo instrução de revarrer a classe inteira do bug, não só o ponto apontado), entradas antigas removidas de `done` (34→32), histórico de auditoria criado para ambos, `montado` do manifesto zerado e o livro retirado de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

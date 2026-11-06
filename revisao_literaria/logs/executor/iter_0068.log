@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19490825 - Coleção Jikan Volume 3 — Conversas sobre o Mundo Espiritual`, chunk 0/10 → `revisao_literaria/chunks/.../000_out.txt`
+
+- Revisão literária dos 15 blocos: 4 títulos, a linha `(Nota)` e o cabeçalho preservados byte a byte; 10 citações entre aspas idênticas; nomes, numerais por extenso e ordem dos fatos conferidos por diff automático.
+- Tamanho: 11.260 → 10.965 chars (−2,6%); similaridade da prosa 0,28–0,87.
+
+**Nota de corrida na fila:** entre a leitura e a gravação, o laço auditor reabriu dois chunks do Volume 1 (chunks 2 e 11 de `19490625 - Tuberculose e Terapia Espiritual`, com `nota_auditor`) e os colocou à frente de `pending`. Movi meu item pela busca por `livro`+`chunk`, não por índice, então nada foi perdido: `pending` 717, `done` 48. Os dois reabertos estão em `pending[0]` e `pending[1]` para a próxima invocação.

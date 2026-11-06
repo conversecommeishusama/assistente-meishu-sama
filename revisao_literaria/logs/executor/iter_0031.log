@@ -1,0 +1,8 @@
+Item processado: **19480701 - Coletânea de Salmos**, chunk 0/3 — item reaberto pelo auditor com `nota_auditor` de 4 achados. Corrigi exatamente os 4 pontos, sem tocar no resto do chunk:
+
+1. Prefácio: `não forcei a mente` → `não forcei demais a mente` (grau restaurado).
+2. Prefácio: `poder de comover` → `poder de comover as pessoas` (objeto restaurado).
+3. Poema 31: removido `a todos`, voltando a `sem exceção, Kanzeon os concederá abundantemente`.
+4. Poema 68: removido `certo` de `espera o momento`.
+
+Verificação: 132 parágrafos não-vazios em fonte e revisado, 114 poemas numerados com a mesma sequência, 12300 → 12218 chars. Fila atualizada: pending 741 → 740, done 24 → 25.

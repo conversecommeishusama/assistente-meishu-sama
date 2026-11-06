@@ -1,0 +1,5 @@
+Chunk 0/14 de *Coleção Jikan Volume 4 – Histórias de Milagres* revisado e aceito.
+
+- **Revisão:** desmontei períodos arrastados (a frase do Festival da Primavera de 1929, a da batalha dos dragões sobre o Lago Biwa), tirei aberturas mecânicas repetidas ("Pode-se dizer que", "A partir de então"), troquei calques por formas naturais e apertei a escolha verbal (*jazia oculto*, *acorreu*, *prostrou-se*).
+- **Integridade:** estrutura de linhas idêntica (24), nenhum parágrafo perdido ou duplicado, nenhum nome próprio/data/número ausente no resultado, e as 17 citações entre aspas conferidas caractere a caractere — todas intactas. Tamanho 9.529 → 9.271 chars (−2,7%).
+- **Fila:** item removido por `(livro, chunk)` e movido para `done` com os campos do schema — 696 pending / 69 done.

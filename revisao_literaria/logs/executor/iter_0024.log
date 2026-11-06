@@ -1,0 +1,5 @@
+Chunk 001 do *Coleção Jikan Volume 1 — Tuberculose e Terapia Espiritual* revisado e aceito.
+
+- **Revisão**: fluidez em períodos longos (sopro vital animal, ação de purificação, pneumonia), variação de conectivos repetidos ("Em primeiro lugar" em dois parágrafos seguidos), correção de calques ("de forma alguma" → "de modo algum", "como resultado" → "em consequência"), sem alterar sentido, nomes (Fudō Myōō, Okada Jikan, Tratamento Kannon), fatos ou ordem.
+- **Verificação**: 35 linhas em ambos, padrão de linhas em branco idêntico, cabeçalhos e títulos de seção byte a byte iguais, nenhum número divergente, 11.812 → 11.608 chars (0,983).
+- **Fila**: item movido para `done` com os campos exatos; `pending` 745 → 744, `done` 20 → 21.

@@ -1,0 +1,10 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro`, chunk 1/6 (poemas 75–155).
+
+- Polimento de cadência em construções arrastadas ou de sujeito solto (76 "Sem o amparo do poder de um super-homem, como sustentar…", 79 "estará em paz, venha o mundo que vier", 118 reordenado para clareza, 90/105 com dois-pontos no lugar do gerúndio pendente).
+- Corrigi duas fusões de poemas em linha única (88/89 e 98/99) — mesmo tratamento que o chunk 0 já recebera.
+- Preservados intactos: os 81 números de poema, as 81 datas entre parênteses, as 6 linhas de seção, as citações entre aspas e todos os nomes próprios (verificado por contagem comparada).
+- Tamanho: 11 462 → 11 399 caracteres (−0,55 %).
+
+Fila: `pending` 676, `done` 89. O próximo item (`Coleção Jikan Volume 4`, chunk 4) traz um `nota_auditor` de retrabalho, que será tratado na próxima invocação.

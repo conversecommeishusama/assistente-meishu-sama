@@ -1,0 +1,8 @@
+Item processado: `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 5 (reaberto pelo auditor).
+
+- **Achado 1 (principal)** — informação acrescentada: "tornando-se um espírito híbrido, **agia por meio dele**" → "tornando-se um espírito híbrido, **passou a agir**". Removido o mecanismo que a fonte não enuncia; mantidas a quebra em duas orações e "ligado à avó".
+- **Achado 2** — marca de lista aberta: "estágio três**:** febre, tosse e expectoração com sangue" → "estágio três**, como** febre, tosse e expectoração com sangue".
+- **Classe revarrida no chunk inteiro** (era o ponto do auditor): todos os marcadores de enumeração aberta e complementos de meio/finalidade conferidos contra a fonte — nenhum outro caso; achei e restaurei uma omissão menor ("conseguimos chegar em segurança" → "consegui chegar **em casa** em segurança").
+- Verificações: 28 parágrafos (= fonte), 32 citações entre aspas idênticas, sequência de dígitos idêntica, arquivo termina em `\n` único; 12311 → 12049 chars.
+
+Fila: pending 639 → 638, done 127.

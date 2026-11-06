@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 1/14 → salvo em `revisao_literaria/chunks/.../001_out.txt`
+- **Revisão:** quebra de períodos arrastados, remoção de calques e repetições de conectivo (`Como exposto acima` 2x, "como se fosse carimbado"), precisão lexical
+- **Integridade verificada:** 20 parágrafos ↔ 20, mesmas posições de linha em branco, 5 citações entre aspas idênticas, datas 1926/1931 e nomes próprios preservados, 9219 → 9070 chars (−1,6%)
+- **Fila:** pending 696 → 695, done 69 → 70 (item removido por chave `(livro, chunk)`, não por `pop(0)`)

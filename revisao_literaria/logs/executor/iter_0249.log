@@ -1,0 +1,12 @@
+Item processado e fila atualizada.
+
+**`19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 1/6** (reaberto pelo auditor):
+
+- **Achado principal**: devolvido "alguns meses depois" no lugar de "poucos meses depois" (o "poucos" fechava um limite superior que a fonte deixa aberto).
+- **Achado secundário**: restaurado o modalizador — "Naturalmente, a manifestação do mistério é o milagre, e por isso mistério e milagre mantêm relação indissociável", sem reintroduzir a cadeia de conectivos.
+- **Varredura da classe inteira no chunk** (aproximadores/quantificadores e modalizadores), não só as duas ocorrências apontadas: restaurados "A partir de então", "Por exemplo:", "nesse aspecto", dois "também" perdidos, e as formas não intensificadas "era isso" / "não adiantava" / "era impossível"; desfeitos intensificadores acrescentados na rodada anterior ("nada menos que isso", "sem efeito algum", "já estava").
+- Ajustes menores de naturalidade PT-BR ("sempre tomando remédios", "ainda criança", "carregava nas costas") e volta à forma da fonte em "na religião Oomoto".
+- O trabalho literário endossado pelo auditor foi mantido intacto, incluindo os itens da lista "não mexer".
+- **Integridade verificada**: 18/18 parágrafos, multiconjunto de dígitos idêntico, 4 citações entre aspas idênticas caractere a caractere, terminação em `\n\n` preservada; 11 801 → 11 461 chars (razão 0,971).
+
+Fila: 621 pending / 144 done.

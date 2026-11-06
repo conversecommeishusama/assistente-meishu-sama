@@ -1,0 +1,8 @@
+Chunk 5 de "19491223 - Montanha e Água" revisado e aceito.
+
+- **Revisado:** poemas 505–609 (tanka, Showa 7/1932), 18 seções + cabeçalho de "Céu Claro de Outono" preservado.
+- **Ajustes principais:** erro gramatical em 511 ("me desenfreado" → "me desenfreio"); repetições/calques desfeitos (594 "profundas/aprofunda" → "fundas/adensa"; 560 "cai sobre" → "pousa"; 578 "estou imerso"); pontuação de fecho regularizada em 606–609.
+- **Integridade conferida:** 105 numerações idênticas e na mesma ordem, 18 datas idênticas, headers idênticos, 37 blocos / 159 linhas iguais, 11 698 → 11 594 chars (−0,9%).
+- **Fila:** item movido de `pending` para `done` por match `(livro, chunk)` — 665 pending, 100 done.
+
+Aviso para a próxima invocação: o novo `pending[0]` (`19491005 - Coleção Jikan Volume 4`, chunk 4) traz `nota_auditor` extensa — é item reaberto e precisa ser tratado conforme a nota, não com revisão genérica.

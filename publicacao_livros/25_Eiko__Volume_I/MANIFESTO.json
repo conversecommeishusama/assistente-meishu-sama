@@ -1,0 +1,14 @@
+{
+  "volume": 25,
+  "titulo": "Eiko — Volume I",
+  "nota": "Redivisão por ano da Era Showa (15-26) — proposta confirmada 2026-08-14",
+  "paginas_estimadas": 289.2,
+  "caracteres_totais": 527560,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_Eiko.txt",
+      "fonte": "livros_publicacao_pt_revisado/Eiko.txt (redivisão por ano)",
+      "caracteres": 527560
+    }
+  ]
+}

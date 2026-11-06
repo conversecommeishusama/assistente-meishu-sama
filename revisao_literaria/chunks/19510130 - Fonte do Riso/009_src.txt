@@ -1,0 +1,101 @@
+1014, “Nossa, que sufoco! Nossa, que sufoco! — Fui ver e era só o chamariz de uma barraca de feira.” — Dango.
+1015, “Nossa, que sufoco! ‘Terremoto! Terremoto!’ — e o banho feminino ficou nu.” — Ichitarō.
+1016, “Nossa, que sufoco! Enquanto diz que odeia homens, vai inchando, vai inchando.” — Ichitarō.
+1017, “Nossa, que sufoco! Na entrada, visitas; na cozinha, o vendedor; o bebê chorando; do ferro de passar sai fumaça; o cachorro late; a urina está quase escapando — por onde começar a arrumar? Ah, o que fazer, o que fazer?” — Menina Boa.
+1018, “Nossa, que sufoco! No meio da noite, confundiu a mãe com a filha.” — Hyōtan.
+1019, “Nossa, que sufoco! A barriga está inchando.” — Beranmē.
+1020, “Nossa, que sufoco! O casal vizinho brigando feio no meio da noite — ‘Ah, que alívio!’ — diz o solteirão, rindo de orelha a orelha.” — Sen-nari.
+1021, “Nossa, que sufoco! Ataque aéreo — ‘Ah, querido, minhas pernas bambeiam, me carregue nas costas.’ — ‘Ora, ora, seu traseiro é bem fofinho, hein.’” — Mukudori.
+1022, “Nossa, que sufoco! Demitido, demitido, demitido.” — Mukudori.
+1023, “Nossa, que sufoco! O Senhor Miroku apareceu (o Senhor Moroku se aposentou).” — Nyūdō.
+1024, “Nossa, que sufoco! O grande exército inimigo avança, avança — vendedor de arroz, peixeiro, verdureiro, loja de saquê, açougueiro, leiteiro, jornaleiro — todos esses chatos como nuvens e névoas, zum-zum-zum.” — Dango.
+1025, “Nossa, que sufoco! Boom — crash — shuu — stone — tontura — desmaio — ah — kyu — puf — arrepiado — de quatro — Namu Kamunagara — Amém — Tenri-Ō no Mikoto.” — Hyōtan.
+1026, “Nossa, que sufoco! A criança que pegou no colo por bajulação fez ‘jááá’.” — Donbei.
+1027, “Nossa, que sufoco! O deus apareceu na superfície com olhos de Marx e boca de ‘Namu Amida Butsu’.” — Meninão.
+1028, “Nossa, que sufoco! No meio do banheiro, um grande terremoto.” — O-Man.
+1029, “Pensando que era a porta da cozinha, abriu e era a patroa tomando banho — nossa, que sufoco! (Na verdade, ele fez de propósito, não?)” — Ichitarō.
+1030, “O hóspede, na ausência do dono, está seduzindo a empregada — ‘Chegou!’ — nossa, que sufoco!” — Ichitarō.
+1031, “No auge do jogo de dados, barulho de moedas — nossa, que sufoco!” — Nikibi.
+1032, “No banho público: ‘Ah, não tem calcinha! Ah, também não tem kimono!’ — nossa, que sufoco!” — Dango.
+1033, “Na ponta da enxada, algo brilhante — nossa, que sufoco! (Olhando bem, era um caco de vidro.)” — Akambō.
+1034, “Quem tem fé profunda não se assusta com nada, mas quem ainda não conhece o deus — enquanto dizia isso, o palestrante foi o primeiro: ‘Nossa, que sufoco!’” — Hyōtan.
+1035, “Escorregando, escorregando, ainda sonolento, fez xixi na cama — nossa, que sufoco!” — Hyōtan.
+
+Título: "Abóbora do Dique"
+
+1036, “A mãe da Abóbora do Dique ser a Velha Ameixa Seca — que engraçado!” — Pimenta.
+1037, “Chamar a Abóbora do Dique de ‘senhora’ — isso é amargo pra mim, diz a Abóbora do Dique.” — Pimenta.
+1038, “Por mais que a Abóbora do Dique se dê ares, no fundo é sempre uma abóbora do dique mesmo, não é, dona Abóbora do Dique?” — Bepin.
+1039, “‘O que é Abóbora do Dique?’ — ‘É uma cara como a sua.’ — ‘Ah, então é coisa de mulher bonita?’ — diz essa Abóbora do Dique.” — Moça.
+1040, “A Abóbora do Dique, candidata a atriz, foi reprovada com estrondo. Ela suspirou e disse: ‘O povo deste mundo não tem olhos, hein!’” — Moça.
+1041, “Se a Abóbora do Dique se matasse, sairia no jornal como ‘uma beldade redondinha’.” — Moça.
+1042, “Se eu fosse Abóbora do Dique, com você seria... hum... pimenta! Por quê? Porque você é vermelha e magricela.” — Akambō.
+1043, “A mesa do café com Abóboras do Dique enfileiradas.” — Akambō.
+1044, “‘Abóbora do Dique — que vergonha, hein!’ — diz a Abóbora do Dique recém-saída.” — Batatinha.
+1045, “Abóbora do Dique, não é para menosprezar tanto assim. Se você me acariciar uma vez, então... hohoho.” — Batatinha.
+1046, “Se a Abóbora do Dique vestir roupa ocidental, parece um brinquedo de porco.” — Pirulito.
+1047, “O rosto queimado de sol da Abóbora do Dique parece uma máscara de ogro passada pó-de-arroz.” — Meninão.
+1048, “No currículo da Abóbora do Dique: ‘Conduta reta, energia vigorosa, força braçal incomparável — qualquer homem ela põe no bolso.’ — Ah, socorro!” — Meninão.
+1049, “O peido da Abóbora do Dique é como trombeta, a diarreia como cano d’água, o cocô como ladrão, a voz como porco, e o comer como elefante, será?” — Sen-nari.
+1050, “Olhando a Abóbora do Dique por trás, parece uma mó rachada.” — Nyūdō.
+1051, “Será que a Abóbora do Dique tem algum talento? Tem sim — é o peso.” — Hyōtan.
+1052, “O cipó da Abóbora do Dique enganchou e não solta — ai, ai, que duro ser um galã.” — Hyōtan.
+1053, “Desculpe ser Abóbora do Dique — foi porque meus pais, na escuridão, me fizeram às pressas.” — Nikibi.
+1054, “Mesmo sendo Abóbora do Dique, quer um marido formado em universidade, bonito, inteligente, com posição social e fortuna de mais de um milhão — o umbigo vai ferver chá!” — Nikibi.
+1055, “Ouvindo a voz anasalada, parece um porco grunhindo — Abóbora do Dique.” — Batatinha.
+1056, “Por mais que seja Abóbora do Dique, depois de tantos anos juntos, de vez em quando não deixa de pensar que não é tão ruim assim, não é?” — Batatinha.
+1057, “Queria dizer que é um tom rosado de cerejeira depois do banho, mas na verdade é como polvo cozido — Abóbora do Dique.” — Batatinha.
+1058, “A Abóbora do Dique, como se tivesse levado uma cuspida de farinha, desfilando pela Ginza com passos elegantes.” — Batatinha.
+1059, “Ah, desculpe — mesmo sendo Abóbora do Dique, propostas de casamento não chovem, não é? Tenha compaixão.” — Nikibi.
+1060, “O rosto da Abóbora do Dique maquiado parece um caqui seco com mofo.” — Kingyo.
+1061, “A Abóbora do Dique vendida na quitanda é diferente da Abóbora do Dique — aquela Abóbora do Dique.” — Herr Bō.
+1062, “O rosto de abóbora passa pelo dique para ver as flores — essa é a verdadeira Abóbora do Dique.” — Pirulito.
+1063, “O mestre disse: ‘Senhores, não podemos ficar tranquilos — parece que o espírito da palavra “Abóbora do Dique” não se desfaz nem na era de Miroku.’” — Funako.
+1064, “Será que a terra era ruim? Coitada, uma Abóbora do Dique cheia de altos e baixos.” — Hyōtan.
+1065, “A parceira da Okame é o Hyottoko; a do tanuki, a raposa; a da Abóbora do Dique, o pepino chocho.” — Hyōtan.
+1066, “A pose de dormir só com a cabeça para fora parece uma Abóbora do Dique saindo da esteira.” — Man-don.
+1067, “A mulher do quitandeiro: rosto de Abóbora do Dique, olhos de bolota, pernas de nabo de Nerima, mãos de taro, fala de lótus, cocô de batata-doce, cabelo crespo como milho, e a tal coisa como berinjela — ih, não tem salvação!” — A-Hō.
+1068, “No jogo das Vinte Perguntas: ‘Agora é animal, mas também vegetal.’ — ‘Então é Abóbora do Dique?’ — Resposta certa!” — A-Hō.
+
+Título: "Seu Henachoko"
+
+1069, “Seu Henachoko, levou bronca da esposa e ficou todo murchinho.” — Dango.
+1070, “Seu Henachoko é o diretor, o professor é o Deresuke, e os alunos que aprendem são só uns trapalhões — que coisa!” — Boneco de Pau.
+1071, “Seu Henachoko, mesmo mandando, quem? A esposa? — Hã, que nada!” — Boneco de Pau.
+1072, “Seu Henachoko estava lendo o jornal do avesso. A esposa: ‘Querido, está do avesso.’ Ele: ‘O quê, sua idiota? É para você ler!’” — Maru-maru.
+1073, “Seu Henachoko disse: ‘Não é que eu tenha assim tanta procura, viu?’” — Nyūdō.
+1074, “Seu Henachoko, fez xixi na cama e desenhou um mapa no futon.” — Watauo.
+1075, “Seu Henachoko, venha comigo até a delegacia — é por causa do caso obsceno. (Hã? O quê? A prova é a sua espinha!)” — Nikibi.
+1076, “A vocação de seu Henachoko é soltar pum, cochilar, catar meleca, comer pra caramba, cagar grosso e ser garanhão — entendeu?” — A-Hō.
+1077, “Você não é um Henachoko — é um Amechoko, porque é mole com a patroa — entendeu?” — Norakura.
+1078, “Dentre tantas propostas de casamento que choviam, foi o deus quem escolheu e lhe concedeu — mesmo sendo esse seu Henachoko de marido.” — Funako.
+1079, “Não é pelo mundo nem pelos outros — é só por si mesmo, pela esposa, pelos filhos que o Henachoko trabalha.” — Hyōtan.
+1080, “Mestre, com todo respeito, deixe-me perguntar uma coisinha: aquele tal de Tagosaku, lá da minha terra, é um Henachoko? (Ah, sim, é isso aí.)” — Ōmaru.
+1081, “Passa a véspera de Ano Novo no armário, seu Henachoko.” — Akambō.
+1082, “Quem boceja na hora da gratidão, quem solta pum, quem cata meleca — isto é, seu Henachoko.” — Maru-maru.
+1083, “A aparência é de Henachoko, mas o coração é muito bom — hohoho.” — Banjo.
+1084, “Enrolando papel em cada furo do briquete de carvão para acender o fogo, seu Henachoko.” — Nikibi.
+1085, “Soprando o soprador de fogo ao contrário, pensando, seu Henachoko.” — Nikibi.
+1086, “Pegando fogo pelos pés e levando um susto com água nos ouvidos, seu Henachoko.” — Batatinha.
+1087, “Passando meio dia catando piolho de sua esposa, seu Henachoko.” — Totsumaru.
+1088, “Olhando dois cachorros no ato, montanha de um Henachoko.” — Totsumaru.
+1089, “Quem vive indo a lugares estranhos — isto é, seu Henachoko.” — A-Hō.
+1090, “‘Hehehe, qualquer coisa, vem aqui um pouquinho’ — puxando a manga da mulher, também é seu Henachoko.” — A-Hō.
+1091, “Quem faz um escândalo por uma coisinha à toa — esse também é seu Henachoko.” — A-Hō.
+1092, “Quem se importa com detalhes nojentos e estranhos — também é seu Henachoko.” — A-Hō.
+1093, “Os humanos de hoje são espertos mas idiotas, parecem trabalhar mas estão dormindo, honestos mas mentirosos, sérios mas contam grandes lorotas, corajosos mas tremem, safados mas falam coisas sérias, o dos outros é seu, o seu é sempre seu, afetuosos mas insensíveis, pedem emprestado e não pagam, mostram a língua, pão-duros mas gastam à toa, mesquinhos mas generosos, praticam a fé com empenho mas acumulam pecados, elogiam e depois criticam, admiram por dentro mas falam mal por fora, ora se curvam ora se empinam, vivos mas são cadáveres, gananciosos mas perdem, teimosos mas são ridicularizados, forçam a barra e falham, se esforçam e caem de cara, nariz empinado e depois são humilhados — esse tipo de sujeito é o Tonchiki-chin, o Tonchiki, o Henachoko.”
+‘A Fonte do Riso’
+
+Impresso em 25 de janeiro de 1951 (Showa 26).
+Publicado em 30 de janeiro de 1951 (Showa 26). Não à venda.
+
+Autor: Jikan.
+Editor responsável: Koyama Masao.
+Impressor: Iijima Kazuo.
+
+Endereço: 1-9, Fukagawa Morishita-chō, Kōtō-ku, Tóquio
+Gráfica: Taiyō Printing Co., Ltd.
+
+Endereço: 1-9, Fukagawa Morishita-chō, Kōtō-ku, Tóquio
+Editora: Eikō Publishing Department, Ltd.
+Telefone: Fukagawa (64) 0625

@@ -1,0 +1,5 @@
+Chunk 5 de *Coleção Jikan Volume 5 — Diálogos Jikan* revisado e fila atualizada.
+
+- `005_out.txt` gravado (11.441 → 11.185 chars, 8 parágrafos em ambos, nomes/números/citações conferidos um a um contra o `_src.txt`).
+- Ajustes: quebra de períodos arrastados no relato da travessia Oku-Nikko → Shiobara, remoção de conectivos repetidos (`Depois de` 5×, `Originalmente` duplicado) e substituição de calques por regência natural em português; cabeçalho de seção (`Yunishigawa Onsen`), nota entre parênteses e todas as falas entre aspas preservados.
+- `QUEUE_EXECUTOR.json`: item movido de `pending` para `done` por `(livro, chunk)` — não por `pop(0)` — restando 700 pendentes / 65 concluídos.

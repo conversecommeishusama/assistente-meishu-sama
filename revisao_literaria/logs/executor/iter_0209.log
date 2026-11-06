@@ -1,0 +1,5 @@
+Chunk 001 de *19500420 – Coleção Jikan Volume 10* revisado e aceito.
+
+- **Ajustes**: quebra de períodos arrastados com variação de cadência; substituição de conectivos repetidos ("Além disso", "Por isso", "Em contraste") por construções mais naturais; remoção de redundância vocabular ("Como resultado da purificação enfraquecida" → "Enfraquecida a purificação"). Nenhum fato, nome, citação ou parágrafo alterado.
+- **Integridade**: 21 linhas em ambos, 12 parágrafos, blocos em branco e os dois cabeçalhos ("Saúde Verdadeira e Saúde Aparente", "Toxina Medicamentosa") em posições idênticas; 10 978 → 10 733 chars (−2,2%).
+- **Fila**: item movido para `done` por identidade (livro, chunk), não por `pop(0)` — pending 641, done 124.

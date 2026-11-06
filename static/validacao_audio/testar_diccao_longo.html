@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação texto longo — dicção (Fish Audio)</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.02rem; }
+  .badge { display: inline-block; font-size: 0.72rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .b-base { background: #e8e8e8; color: #555; }
+  .b-tag { background: #d4e6f9; color: #1a4f8b; }
+  audio { width: 100%; margin-top: 8px; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; font-size: 0.88rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+  .nota { background: #fdf6e3; border-left: 4px solid #d4a72c; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 Texto longo — teste de dicção</h1>
+  <div class="trecho">"Também na música, os japoneses deveriam reconhecer as qualidades do Japão. Na música japonesa, o koto é o melhor..."</div>
+
+  <div class="nota">
+    <strong>Texto bem mais longo</strong> (552 chars, ~46-49s) — fala do Meishu-Sama sobre a música
+    japonesa vs ocidental. Mesma voz (kikivoice remasterizado), mesma velocidade (0.75x).
+    Avalie se a dicção das tags se mantém consistente do início ao fim, e se o "koto"/"canções
+    de ninar" saem compreensíveis.
+  </div>
+
+  <div class="card">
+    <h2>0. Sem instrução <span class="badge b-base">baseline ~46s</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_diccao_fish_longo_v0_base.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>1. "neutral accent, clear enunciation" <span class="badge b-tag">~46s</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_diccao_fish_longo_v1_neutral.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>2. "standard Brazilian Portuguese, precise articulation" <span class="badge b-tag">~48s</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_diccao_fish_longo_v2_brasileiro.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>3. "clear diction, no foreign accent" <span class="badge b-tag">~49s</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_diccao_fish_longo_v3_diccao.mp3"></audio>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">Num texto longo, qual mantém a dicção clara do começo ao fim? Me diga o número.</p>
+</body>
+</html>

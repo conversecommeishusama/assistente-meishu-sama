@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**`19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 9** — item reaberto pelo auditor com `nota_auditor`, tratado como correção pontual nos dois parágrafos indicados; o restante do chunk (aprovado pelo auditor) ficou intacto.
+
+- **L261**: recadenciado de fato — `havia` caiu de 5x para 1x no parágrafo, desfeita a colisão *recusado/recusei* ("Nunca dissera não ao conselho de quem quer que fosse; agora, tendo desistido de tudo, recusei pela primeira vez, com firmeza") e removido o eco *me visitar/me aconselhou* ("veio visitar-me com um conselho").
+- **L266**: o período que empilhava 43 palavras antes do verbo principal foi quebrado em duas orações ("Eu vagara sem cessar na escuridão e no desespero, e me encontrava à beira da morte; foi justamente ali que vislumbrei um fio de luz."); ecos desfeitos — *alegria/alegria* → "júbilo sem medida", *uma luz se acendesse/fio de luz que se acendeu* → "um clarão rompesse".
+- Datas, idades, "3 bu", nomes próprios, citações entre aspas e a fórmula protegida do *kyoshu* não foram tocados. Parágrafos: 20 → 20; tamanho: 14366 → 14149 chars.
+
+Fila: `pending` 673 → 672, `done` 92 → 93 (entrada antiga do mesmo chunk substituída, remoção por chave `(livro, chunk)` e não por `pop(0)`).

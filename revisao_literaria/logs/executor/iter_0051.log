@@ -1,0 +1,6 @@
+Chunk 5/16 de *19490701 - Coleção Jikan Volume 2 — Método de Cultivo sem Fertilizantes* revisado e aceito.
+
+- `005_out.txt` gravado: 28 parágrafos (idêntico à fonte), 11.461 → 11.247 caracteres.
+- Ajustes: calques desfeitos ("o funcionamento das raízes se torna pleno" → "o trabalho das raízes se dá plenamente"), períodos arrastados quebrados nos dois relatos longos (Niyama Haru e Yumoto Eisaku), repetição mecânica removida ("proteção divina" duas vezes na mesma frase), conectivos variados.
+- Preservados literalmente: as duas falas entre aspas (vizinhos e discípulos), os termos "moto-keshi"/"neve podre"/"espiga branca", nomes próprios, e todos os números e medidas (koku, sho, to, kanme, monme, 30%/25%, 130-180 grãos) — verificado por diff de tokens numéricos, conjunto vazio nos dois sentidos.
+- Fila atualizada: pending 727 → 726, done 38 → 39.

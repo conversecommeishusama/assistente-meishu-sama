@@ -1,0 +1,5 @@
+Item processado: chunk 2/9 de **19490830 - Coleção Jikan Volume 5 Diálogos Jikan**.
+
+- Revisado `002_src.txt` → `002_out.txt` (rōkyoku/naniwa-bushi, seção "Música (Ongyoku)" e início de "Cinema"): períodos longos redistribuídos, listas de obras compactadas com ponto e vírgula, calques e conectivos repetidos substituídos.
+- Verificações antes do aceite: 46 linhas em ambos os arquivos com blancos nas mesmas posições, todas as aspas e todos os números idênticos, bloco `(Nota)` e títulos preservados, nenhum nome próprio perdido (diff de maiúsculas só acusa palavras de início de frase). Tamanho 11.803 → 11.646 chars (−1,3%).
+- Fila atualizada removendo por `(livro, chunk)`, não por `pop(0)`. Nota: entre a leitura inicial e a gravação, o auditor reabriu 3 itens (pending 704→707 antes da minha edição); estado final gravado: pending 706, done 59.

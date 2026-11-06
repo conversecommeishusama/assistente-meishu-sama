@@ -1,0 +1,7 @@
+Chunk 1 de *19491230 — Coleção Jikan Volume 9 Caminho para a Luz* revisado e aceito.
+
+- `001_out.txt` gravado: 18 parágrafos (idêntico à fonte), 11.801 → 11.370 chars (0,96×), todos os números, citações entre aspas e nomes próprios conferidos byte a byte contra o `_src.txt`.
+- Ajustes principais: desfeitos calques do japonês (“— era isso. Sem isso, não adiantava” → “— nada menos que isso. Sem esse despertar, nada adiantava”), eliminada repetição vocabular (“carregava nas costas … carrinho carregado” → “levava às costas … carrinho com”), períodos longos do relato de doenças quebrados e conectivos repetidos (“Além disso”/“No entanto”) variados. Cabeçalhos de seção (“Após a Conversão”, “A Era de Ōmori”, “A Era de Kōjimachi”) preservados intactos.
+- Fila atualizada removendo o item por `(livro, chunk)`, não por `pop(0)` — o auditor reabriu 5 chunks entre minha primeira leitura e a escrita, então a releitura evitou mover o item errado.
+
+Próximo `pending[0]` é *19491223 — Montanha e Água*, chunk 2, com `nota_auditor` sobre quantificadores inflados — fica para a próxima invocação, conforme o prompt manda processar só um item.

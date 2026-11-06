@@ -1,0 +1,13 @@
+**19491025 — Coleção Jikan Volume 7: Cristo, Buda e a Fé Kannon — reaberto (chunks 0, 1, 2).**
+
+Leitura integral dos 7 chunks, original × montado.
+
+**Integridade (ok):** concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; 203 linhas em ambos; parágrafos idênticos chunk a chunk (25/27/27/25/18/22/23); multiconjunto de dígitos idêntico; as 160 aspas e todas as citações bíblicas idênticas caractere a caractere; duplicação do título "VII. A Era de Ouro do Budismo Daijo" corretamente preservada como está na fonte.
+
+**Por que não passou:** uma classe recorrente de desvio miúdo de fidelidade — qualificadores acrescentados ou suprimidos em relação à fonte — concentrada nos três primeiros chunks:
+
+- chunk 0: "toda cultura" → "a cultura" e "repetindo" → "repetição **incessante**" no mesmo período; "Uma característica" → "Traço característico **daquele povo**"; "acabou se tornando" → "acabou **reduzida a**"; e um erro de regência introduzido: "o pensamento **a que** mais insistiu" (insistir pede *em*).
+- chunk 1: "respeitava" → "reverenciava"; "com toda a sua força pela Europa" → "por **toda a Europa** com pujança" (afirma extensão geográfica que a fonte não afirma); "de valor literário" → "de **alto** valor literário"; "merece grande atenção" → "merece **a maior** atenção"; "acredita-se que" → "tem-se por certo que"; "**mas** todos são incompreensíveis" → "**e** todos incompreensíveis".
+- chunk 2: "o que se acredita ser resultado da lealdade" → "**privilégio** que se atribui à lealdade"; queda de "pode-se dizer" e de "ainda" na frase sobre o predomínio da visão panteísta grega.
+
+As notas de reabertura trazem a evidência ponto a ponto e mandam revarrer cada chunk inteiro atrás da classe (não só corrigir os itens citados), com lista explícita do que não tocar. Primeira reabertura destes chunks (históricos criados agora, 1 entrada cada); `montado` zerado no manifesto e as entradas antigas removidas do `done` do executor. Fila do auditor fica com 1 item pendente.

@@ -1,0 +1,6 @@
+Chunk 11/14 de "19350000 - Curso Kannon (1~7)" revisado e aceito.
+
+- Saída em `revisao_literaria/chunks/19350000 - Curso Kannon (1~7)/011_out.txt` — 54 blocos na fonte, 54 no revisado; 11.874 → 11.815 caracteres.
+- Preservados intactos: títulos ("Sétima Aula", "A Origem da Medicina Ocidental"), linha de data, tabela Causa → Resultado e o diagrama Espírito/Corpo (espaçamento byte a byte).
+- Ajustes principais: ritmo de períodos arrastados, calques da tradução, concordância ("recitem-na" → "recitem-no", referindo-se ao Norito Celestial) e repetições vocabulares mecânicas.
+- Fila atualizada: `pending` 752 → 751, `done` 11 → 12.

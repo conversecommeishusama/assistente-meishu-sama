@@ -1,0 +1,54 @@
+{
+  "volume": 1,
+  "titulo": "Gokōwa-roku (御光話録) — Volume 1",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 376.9,
+  "caracteres_totais": 741345,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19480101 - Gokōwa-roku (Suplemento).txt",
+      "fonte": "livros_publicacao_pt_revisado/19480101 - Gokōwa-roku (Suplemento).txt",
+      "caracteres": 374998
+    },
+    {
+      "arquivo_destino": "02_19481208 - Gokōwa-roku nº 1.txt",
+      "fonte": "livros_publicacao_pt_revisado/19481208 - Gokōwa-roku nº 1.txt",
+      "caracteres": 35802
+    },
+    {
+      "arquivo_destino": "03_19490000 - Gokōwa-roku nº 4.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490000 - Gokōwa-roku nº 4.txt",
+      "caracteres": 49448
+    },
+    {
+      "arquivo_destino": "04_19490000 - Gokōwa-roku nº 5.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490000 - Gokōwa-roku nº 5.txt",
+      "caracteres": 42653
+    },
+    {
+      "arquivo_destino": "05_19490108 - Gokōwa-roku nº 2.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490108 - Gokōwa-roku nº 2.txt",
+      "caracteres": 61482
+    },
+    {
+      "arquivo_destino": "06_19490208 - Gokōwa-roku nº 3.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490208 - Gokōwa-roku nº 3.txt",
+      "caracteres": 46483
+    },
+    {
+      "arquivo_destino": "07_19490423 - Gokōwa-roku nº 6.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490423 - Gokōwa-roku nº 6.txt",
+      "caracteres": 35747
+    },
+    {
+      "arquivo_destino": "08_19490522 - Gokōwa-roku nº 7.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490522 - Gokōwa-roku nº 7.txt",
+      "caracteres": 46609
+    },
+    {
+      "arquivo_destino": "09_19490530 - Gokōwa-roku nº 8.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490530 - Gokōwa-roku nº 8.txt",
+      "caracteres": 48123
+    }
+  ]
+}

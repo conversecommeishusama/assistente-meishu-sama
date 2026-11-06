@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 5/14 → `005_out.txt` salvo, movido para `done`.
+- **Revisão:** 3 depoimentos (Tomita Hisako, Ota Kazuko, Maruko Taniyao) — cortei redundâncias ("visivelmente definhava a olhos vistos"), desfiz calques arrastados, alternei conectivos repetidos. 31 blocos → 31 blocos; nomes, datas, números, citações entre aspas e divisórias intactos; 11.936 → 11.516 chars.
+
+Uma observação que vale registrar: quando li a fila, `pending[0]` era esse chunk; o laço auditor inseriu um item reaberto (`19480701 - Coletânea de Salmos`, chunk 0, com `nota_auditor` de 4 achados) no topo enquanto eu revisava. Gravei o chunk já concluído em `done` e deixei o item reaberto do auditor intocado como novo `pending[0]` — ele é o alvo da próxima invocação.

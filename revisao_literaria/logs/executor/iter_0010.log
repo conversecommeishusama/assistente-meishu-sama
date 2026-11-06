@@ -1,0 +1,6 @@
+Chunk 009 de `19350000 - Curso Kannon (1~7)` revisado e fila atualizada.
+
+- **Revisado**: `revisao_literaria/chunks/19350000 - Curso Kannon (1~7)/009_out.txt` — 41 parágrafos na fonte e 41 na saída, 11.772 → 11.606 caracteres (ratio 0,986).
+- **Ajustes**: quebra de períodos arrastados (parágrafos sobre roupas/casas e sobre Índia–Inglaterra), eliminação de "Além disso"/"Isso porque" em sequência, corte da redundância "mais odiado e mais árduo que as pessoas detestam".
+- **Preservado verbatim**: bloco esquemático `Kami hitori/Goshū/Suberu`, tabela Japão–Coreia–China, todos os kanji, aspas, datas e números (verificado por comparação automática: conjuntos de dígitos e de sequências CJK idênticos entre fonte e revisado).
+- **Fila**: item movido de `pending` para `done` em `QUEUE_EXECUTOR.json` com os campos exigidos — 753 pendentes, 10 concluídos.

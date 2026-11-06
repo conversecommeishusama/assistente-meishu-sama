@@ -1,0 +1,5 @@
+Chunk 6/9 de *Coleção Jikan Volume 12* revisado e fila atualizada.
+
+- **Ajustes principais**: calques e frases arrastadas na lista dos tipos de fé (ex.: "Aparece quando se esqueceu dela" → "Reaparece quando já se havia esquecido dela"); repetição mecânica de "é claro" (3× no mesmo parágrafo) eliminada; períodos longos redistribuídos em *Pessoas Boas, Tornem-se Fortes* e *O Eu que Eu Vi*.
+- **Integridade verificada**: 25 blocos → 25 blocos (mapeamento 1:1, nenhum parágrafo dividido ou fundido), 11.993 → 11.773 chars (‑1,8%), todos os números/datas idênticos (nº 31, 15/10/1949, nº 6, 20/07/1949, 60 cm a 1 metro, "onze anos"), títulos, linha de publicação e bloco `(Nota)` preservados literalmente.
+- **Fila**: item movido de `pending` para `done` por `(livro, chunk)`, não por índice — pending 646 → 645, done 119 → 120.

@@ -1,0 +1,23 @@
+Item processado e encerrado.
+
+**pending[0]** era uma reabertura do auditor: `19501030 - Memórias da Perseguição Religiosa`, chunk 10 — achado de **fidelidade de grau**.
+
+Correções aplicadas (os dois casos apontados + varredura da classe inteira no chunk, palavra a palavra contra `010_src.txt`):
+
+| # | Antes (montado) | Depois (fonte) |
+|---|---|---|
+| a | "repetiam a mesma pergunta **inúmeras** vezes" | "**várias** vezes" |
+| b | "além de não ser complexo" | "além de não ser **tão** complexo" |
+| 1 | "me perguntou se eu reconhecia" | "me perguntou **algo como** se eu reconhecia" |
+| 2 | "— algumas centenas de pessoas, talvez mil" | "— **talvez** algumas centenas…" |
+| 3 | "examinando **tudo** minuciosamente" | "examinando minuciosamente" |
+| 4 | "**bem que eu** gostaria de perguntar" | "gostaria de perguntar" |
+| 5 | "que **em nada ficam abaixo** das pessoas comuns" | "que **não são inferiores** às pessoas comuns" |
+| 6 | "**decididos a** não soltá-lo" | "**com a intenção de** não o soltar" |
+| 7 | "pode **até** convir aos verdadeiros criminosos" | "pode convir…" |
+| 8 | "são **levados** a dar… respostas conciliatórias" | "são **forçados** a dar…" |
+| 9 | "deve ter sido **bem** pior" | "deve ter sido **muito** pior" |
+
+Preservado conforme a nota: o reparo do anacoluto de Inoue, "indignadíssimos", "só ele", título "Conclusão", nomes, datas/medidas e as citações entre aspas. Estrutura verificada: 9 parágrafos, termina em `.\n\n`, 11.340 → 10.960 chars.
+
+Fila atualizada (`pending` 607, `done` 158) removendo por `(livro, chunk)`, não por `pop(0)`, para não colidir com o auditor.

@@ -1,0 +1,22 @@
+{
+  "arquivo": "Jornais.txt",
+  "fonte": "livros_publicacao_pt_revisado/Jornais.txt",
+  "chars_fonte": 15394,
+  "total_chunks": 2,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11788,
+      "paragrafos": 29
+    },
+    {
+      "idx": 1,
+      "chars": 3606,
+      "paragrafos": 6
+    }
+  ],
+  "montado": true,
+  "chars_final": 15169,
+  "ratio_tamanho": 0.985,
+  "montado_em": "2026-08-17T17:25:24.449222"
+}

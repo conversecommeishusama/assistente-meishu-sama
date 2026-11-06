@@ -1,0 +1,6 @@
+Item processado: **Coleção Jikan Vol. 1 — Tuberculose e Terapia Espiritual, chunk 11** (reabertura do auditor).
+
+- Revarridos os 38 parágrafos, não só os 5 pontos citados. Corrigidos: cadeia de epítetos (`ampla e ilimitada, de grande compaixão e misericórdia`), eco *confiava/confiei*, calque "Meu corpo importante definhava" → "Meu corpo, tão precioso, definhava", trecho truncado do "mundo vazio", eco *saudável/saudável*, e o parágrafo "Graças a isso…" que antes só mudara uma vírgula.
+- Verificado 1:1: números, nomes com macron e as 6 citações entre aspas idênticos à fonte; "voltou a me fazer a mesma recomendação" segue sem "o Caminho". 11 578 → 11 538 chars, 38 parágrafos.
+
+Um problema que não era do chunk e precisa ficar registrado: a fila é reescrita pelo laço auditor enquanto reviso. Ao gravar, meu `pending.pop(0)` pegou outro item — **Vol. 2 chunk 1**, recém-reaberto — e o marcou como `done` com a nota errada, perdendo o `nota_auditor`. Reparei: removi a entrada indevida de `done`, devolvi Vol. 2 chunk 1 a `pending[0]` com o `nota_auditor` recuperado do `001_historico_auditoria.jsonl`, e movi o chunk 11 correto para `done`. Fila validada (719 pending / 46 done, sem interseção; as 2 duplicatas em `done` do Curso Kannon são anteriores a esta sessão). Gravei memória para que futuras invocações removam o item por `(livro, chunk)` em vez de índice.

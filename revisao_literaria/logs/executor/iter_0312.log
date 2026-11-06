@@ -1,0 +1,8 @@
+Chunk 1 de *19501030 - Memórias da Perseguição Religiosa* reprocessado conforme a `nota_auditor` e devolvido à fila como `done` (pending 609→608, done 156→157).
+
+O que foi feito:
+
+- **Achado do auditor corrigido**: `"O incidente terminou sem maiores problemas mas,"` → `"O incidente terminou sem problemas, mas,"` — o atenuador "maiores" (que afirmava haver problemas menores) foi removido e a vírgula do "mas" adversativo restaurada.
+- **Varredura da classe inteira no chunk** (não só o caso citado): `"nada tão grave"` → `"nada tão errado"` (fonte: "algo tão errado"); `"Cabe aqui, creio eu, descrever"` → `"Acho necessário descrever"` (modalidade da fonte enfraquecida); `"Fiquei espantado"` → `"Fiquei surpreso"` (intensificação em relação à fonte). Grep confirma: zero ocorrências de "maiores/talvez/praticamente/inúmeras", "muito"/"um pouco"/"pelo menos" com contagem idêntica à fonte, e nenhum "mas" adversativo sem vírgula anterior (7 ocorrências, todas com vírgula).
+- **Endossos preservados**: "reunia pelo menos uma dezena de pessoas", "fabricavam opinião pública", variações de verbo dicendi — intocados.
+- **Integridade**: 11 parágrafos (igual à fonte), término em `".\n\n"`, aspas idênticas caractere a caractere, e nenhuma diferença em nomes próprios, datas ou números (verificado por diff de tokens). Tamanho: 10.751 → 10.217 caracteres.

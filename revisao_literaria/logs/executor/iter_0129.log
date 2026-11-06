@@ -1,0 +1,14 @@
+Chunk 6 de *Coleção Jikan Volume 5 — Diálogos Jikan* reprocessado e aceito.
+
+**Os três achados do auditor, corrigidos:**
+- (a) "os moradores fogem **todos delas**" → "os moradores fogem **de todas**" — o quantificador volta a incidir sobre as vacinas, não sobre os moradores.
+- (b) "creio que **todos** concordarão" → "creio que concordarão".
+- (c) "é preciso, portanto, **o maior cuidado**" → "é preciso ter **muito cuidado**" (mesma fórmula do verbete "Ordem" no chunk 0).
+
+**Os dois itens extras que a nota mandava conferir:** "refleti **longamente**" → "refleti **profundamente**" (duração voltou a ser profundidade) e "esses **homens**" → "essas **pessoas**".
+
+**Varredura da classe inteira no chunk** (não apenas os pontos citados) achou mais desvios do mesmo tipo, todos revertidos: "acima de **todos**" → "acima de tudo"; "têm **cada um o seu** mérito" → "têm os seus méritos"; "qualidades **de sobra**" → "qualidades suficientes"; "**nomes** da escola" → "mestres da escola"; "**a duras penas**" → "ofegantes"; "**se apoderaram** do cenário" → "dominaram"; "**também** morreu jovem" restaurado; "**ávida** de algo novo" → "ansiosa por"; "**cheia de saúde**" → "muito saudável"; "palpitações **se aceleravam**" → "aumentavam"; "**e** às vezes até faleça" → "ou, às vezes"; "**deveras** lamentável" → "realmente lamentável".
+
+**Verificações:** 18/18 parágrafos, 7/7 citações entre aspas byte-idênticas à fonte, nenhum nome próprio/data/número divergente (o diff de tokens capitalizados só mostra conectivos de início de frase). Tamanho 11.636 → 11.488 chars (−1,3%). O trabalho literário já aprovado (relato da estudante possuída e seção de Korin) foi preservado.
+
+Fila atualizada: 681 pending / 84 done.

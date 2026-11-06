@@ -1,0 +1,6 @@
+Item processado e fila atualizada.
+
+- **Chunk**: `19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina`, chunk 8/10 → `008_out.txt` salvo.
+- **Revisão**: quebrei o longo período-catálogo sobre micróbios em frases com cadência, desfiz calques da tradução, eliminei repetição mecânica ("recebendo/receberam alta", "pouco antes de morrer/falecer") e enxuguei a argumentação das três hipóteses sem perder nenhuma delas.
+- **Preservado**: citação do jornal Mainichi e a resposta oficial entre aspas, verbatim; títulos, notas de edição, números (64, 112, 93), nomes e datas conferidos por contagem de tokens; 57 linhas com o mesmo padrão de linhas em branco do fonte; 11.472 → 11.304 caracteres.
+- **Fila**: pending 635 → 634, done 130 → 131 (remoção por `(livro, chunk)`, não `pop(0)`).

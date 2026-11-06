@@ -1,0 +1,12 @@
+Auditoria de `pending[0]` concluída — **livro reaberto** (não aprovado).
+
+**Livro:** 19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina (10 chunks, 351 linhas, 213 parágrafos)
+
+**Integridade (tudo limpo):** concatenação dos 10 `_src` bate byte a byte com o original e a dos 10 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (22/12/10/15/26/26/19/31/29/23); 138 linhas em branco em ambos; todos os chunks fecham em `\n\n` (o 9 em `i\n`, como a fonte); as 67 citações entre aspas idênticas caractere a caractere; multiconjunto de dígitos idêntico (única diferença é `1899,`→`1899.`); nomes próprios batendo; truncamento da fonte em "junta-s" corretamente preservado; colofão intacto.
+
+**Achados que motivaram a reabertura:**
+
+- **Chunk 3** — mudança de sentido: "o poder misterioso dessa função **produz** a quantidade necessária" virou "**extrai** a quantidade necessária", contradizendo o "alimento sem absolutamente nenhuma vitamina" da mesma frase e a tese do capítulo (função *produtora*). Junto: "amplamente praticada no mundo" → "no mundo inteiro".
+- **Chunk 7** — (a) modalizador suprimido em afirmação terapêutica: "**em geral**, dentro de uma semana, todos se curam por completo, sem exceção" → "no prazo de uma semana..."; também "sobretudo entre os seis e os dez anos" e "**várias** especialidades" → "inúmeras". (b) padrão literário: dois parágrafos longos voltaram byte a byte idênticos à fonte, um deles repetindo "encefalite japonesa" três vezes em duas frases.
+
+**Fila atualizada:** chunks 3 e 7 no topo de `QUEUE_EXECUTOR.pending` com `nota_auditor` (pedindo revarredura da classe inteira, não só das ocorrências citadas); entradas antigas desses dois chunks removidas de `done`; histórico criado em `003_/007_historico_auditoria.jsonl` (1ª reabertura de cada); `_manifest.json` com `montado: false` e sem `montado_em`; item removido de `QUEUE_AUDITOR.pending` sem ir para `done`.

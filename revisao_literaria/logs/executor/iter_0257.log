@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**`19501120 - Guia Rápido da Igreja Messiânica Mundial` — chunk 1/5**
+
+- Revisão literária aplicada: calques arrastados desfeitos, períodos longos reordenados, conectivo repetido alternado (2º "Acima de tudo" → "Sobretudo"), listas de opostos condensadas em pares.
+- Verificação: 9 parágrafos → 9; 10.972 → 10.876 chars (ratio 0,991); aspas 16→16; nenhum nome próprio, número ou data perdido (Darwin, Cristo, Sócrates, Copérnico, Galileu, Lutero, Prêmio Nobel, riquixá, metabolismo, "guá", África).
+- Achado colateral corrigido: `000_out.txt` terminava com um único `\n` — único caso entre 130 chunks não-finais. Como `montar_livro.py` concatena com `"".join`, isso fundiria o último parágrafo do chunk 0 com o primeiro do chunk 1 no livro montado. Acrescentei o `\n` faltante, sem tocar na prosa.
+
+`pending`: 618 → 617; `done`: 147 → 148.

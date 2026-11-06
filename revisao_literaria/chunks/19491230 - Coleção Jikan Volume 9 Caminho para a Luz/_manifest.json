@@ -1,0 +1,42 @@
+{
+  "arquivo": "19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+  "fonte": "livros_publicacao_pt_revisado/19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+  "chars_fonte": 70120,
+  "total_chunks": 6,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11672,
+      "paragrafos": 20
+    },
+    {
+      "idx": 1,
+      "chars": 11801,
+      "paragrafos": 18
+    },
+    {
+      "idx": 2,
+      "chars": 11580,
+      "paragrafos": 24
+    },
+    {
+      "idx": 3,
+      "chars": 11455,
+      "paragrafos": 24
+    },
+    {
+      "idx": 4,
+      "chars": 11301,
+      "paragrafos": 17
+    },
+    {
+      "idx": 5,
+      "chars": 12311,
+      "paragrafos": 27
+    }
+  ],
+  "montado": true,
+  "chars_final": 69465,
+  "ratio_tamanho": 0.991,
+  "montado_em": "2026-08-18T20:00:32.756184"
+}

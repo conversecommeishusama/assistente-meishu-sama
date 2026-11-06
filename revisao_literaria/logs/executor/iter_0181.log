@@ -1,0 +1,6 @@
+Chunk 9/12 de "19491223 - Montanha e Água" revisado e aceito.
+
+- **Saída**: `revisao_literaria/chunks/19491223 - Montanha e Água/009_out.txt` (11.353 → 11.185 chars)
+- **Verificado**: 121 linhas não-vazias idênticas em estrutura, 96 numerações (923–1018) na mesma ordem, 25 cabeçalhos de seção e 22 marcações de data (Era Showa) preservados literalmente, nota `*(As três seguintes, no Jardim Mogusaen.)*` intacta
+- **Ajustes principais**: concordância em 990 (`Açoitado` → `Açoitada`), redundância `ilumina… clareando-o` cortada em 951, `glicínea` → `glicínia` em 956, e reordenação de ritmo/sintaxe em cerca de 50 tanka (958, 965, 985, 993, 1001 entre outros)
+- **Fila**: item movido de `pending` para `done` por chave `(livro, chunk)` — não por `pop(0)` — restando 660 pendentes / 105 concluídos

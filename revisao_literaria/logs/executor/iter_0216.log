@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**Chunk 6/10** de *19500420 — Coleção Jikan Volume 10, Método de Saúde por Revelação Divina* (artigo "Os Japoneses e as Doenças Mentais" + cabeçalho do artigo seguinte):
+
+- Revisão literária aplicada: períodos longos quebrados, calques e repetições vocabulares removidos, conectivos variados, aberturas menos travadas.
+- Integridade verificada contra a fonte: 26 linhas / 19 parágrafos idênticos em posição, blocos em branco iguais, todos os numerais batendo, 10 540 → 10 482 chars (99,4%). Bloco `(Nota)`, título e linha de publicação preservados literalmente.
+- Fila: item movido de `pending` para `done` com os campos exigidos, removido por `(livro, chunk)` — não por `pop(0)`.
+
+Uma observação sobre a fila: entre minha leitura inicial e a gravação, o laço auditor reabriu 2 itens (`done` 128→126, `pending` 637→639); meus números finais (638/127) são consistentes com isso, nada foi perdido. O novo `pending[0]` já traz `nota_auditor` (Volume 12, chunk 2) para a próxima invocação.

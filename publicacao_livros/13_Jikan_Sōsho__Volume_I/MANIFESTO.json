@@ -1,0 +1,34 @@
+{
+  "volume": 13,
+  "titulo": "Jikan Sōsho — Volume I",
+  "nota": "nº1-5, série de ensaios de Meishu-Sama (自観)",
+  "paginas_estimadas": 374.6,
+  "caracteres_totais": 707874,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+      "caracteres": 162282
+    },
+    {
+      "arquivo_destino": "02_19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "caracteres": 188815
+    },
+    {
+      "arquivo_destino": "03_19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+      "caracteres": 113835
+    },
+    {
+      "arquivo_destino": "04_19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+      "caracteres": 135465
+    },
+    {
+      "arquivo_destino": "05_19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+      "caracteres": 107477
+    }
+  ]
+}

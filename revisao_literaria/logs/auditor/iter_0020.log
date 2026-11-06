@@ -1,0 +1,13 @@
+**19490825 — Coleção Jikan Volume 3: reprovado.** Chunks 1, 6 e 7 reabertos (1ª reabertura de cada; sem histórico anterior).
+
+Leitura integral dos 10 chunks, original × montado. Estrutura íntegra: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado, parágrafos idênticos chunk a chunk (15/12/18/46/21/22/15/24/19/13), multiconjunto de dígitos idêntico, rótulos de diálogo (`Ele:`/`Eu:`/`M:`) preservados. Ganho literário real e uniforme — 8 dos 10 chunks passariam sem ressalva.
+
+Os achados:
+
+1. **Chunk 7 — inversão de papéis (mudança de sentido).** Original: "são atormentados pelos grupos de mulheres que **foram enganadas e maltratadas** em vida"; montado: "pelos bandos de mulheres que **enganaram e maltrataram** em vida". Sem sujeito expresso, a relativa lê-se como subjetiva — as mulheres viram agentes, quando no original são as vítimas dos homens descritos na frase anterior.
+
+2. **Chunk 6 — 17 citações entre aspas alteradas.** O protocolo proíbe alterar conteúdo de citação; nos outros 8 chunks as 164 citações ficaram idênticas caractere a caractere, o que confirma o padrão. Três delas mudam sentido além da regra formal: "ficar deitado **para o** treinamento" → "**é parte do** treinamento"; "Isso não pode." → "Isso não pode **ser**." (proibição virou negação de fato, contra o período seguinte, que fala em castigo por desobediência); "Você queria **o** dinheiro" (artigo definido cria referência ao envelope específico). O ponto final de uma citação também saiu de dentro das aspas.
+
+3. **Chunk 1 — 2 citações alteradas.** O relato da enfermeira ("fazer sua existência ser conhecida" → "fazer-se notar", "seu próprio cadáver" → "o próprio cadáver", etc.) e o termo `"advertência"` pluralizado.
+
+A nota do executor para o chunk 6 afirmava "citações... intactas" e a do 7, "citações e nomes preservados literalmente" — a primeira é falsa, a segunda é verdadeira mas não cobria o erro real. Manifest zerado (`montado: false`), entradas antigas dos 3 chunks removidas do `done`, livro fora da fila do auditor — volta sozinho quando `montar_livro.py` remontar.

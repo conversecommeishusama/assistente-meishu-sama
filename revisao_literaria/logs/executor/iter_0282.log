@@ -1,0 +1,9 @@
+Item `pending[0]` processado.
+
+**Achado do auditor (COSTURA) — confirmado e corrigido:** `19501120 - Guia Rápido da Igreja Messiânica Mundial`, chunk 3. O `003_out.txt` terminava em `\n` em vez de `\n\n`; acrescentei apenas o byte faltante, sem alterar uma palavra da prosa (verificado: `novo[:-1] == antigo`).
+
+**Varredura da classe do bug (o que a nota pedia e mais):** comparei o número de `\n` finais de todos os `_out.txt` contra seus `_src.txt` nos 50 livros do corpus — este era o **único** caso divergente. Neste livro, todos os `_out.txt` agora terminam em `\n\n` exceto o 004, que termina como a fonte (`\n`).
+
+**Verificação da montagem (simulada, sem escrever o livro):** concatenação dos `_out.txt` agora bate com a fonte — 134 linhas / 65 em branco / 65 parágrafos em ambos (antes: 133/64 no montado contra 134/65 da fonte, como o auditor mediu).
+
+Fila atualizada removendo por `(livro, chunk)`, não por `pop(0)`: pending 612 → 611, done 153 → 154.

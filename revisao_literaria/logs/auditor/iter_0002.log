@@ -1,0 +1,19 @@
+Auditoria do `pending[0]` concluída — **19350000 - Curso Kannon (1~7)** (14 chunks, 158 mil caracteres, lidos integralmente fonte × montado).
+
+**Decisão: livro não aprovado.** Saiu de `pending` no `QUEUE_AUDITOR.json`, sem ir para `done`.
+
+**Achados**
+
+1. **Costuras coladas (chunks 6, 10, 11, 12)** — já eram o achado da auditoria anterior e continuavam intactos no arquivo montado que recebi: quatro pares de parágrafos distintos fundidos, porque os `_out.txt` terminavam com um `\n` só. Não reabri de novo (já estavam na fila do executor, com histórico); o executor corrigiu 6 e 10 durante minha leitura, 11 e 12 seguem na fila.
+
+2. **Chunk 5, erro novo introduzido pela revisão** — falta a vírgula obrigatória antes de "mas" no verbete do Dragão de Nove Cabeças (`...com frequência mas, aos poucos, humanizou-se`; a fonte tinha a vírgula). Reaberto no topo da fila do executor com nota de escopo estreito: corrigir só a vírgula, preservando a separação dos verbetes de dragão em parágrafos próprios e as aspas angulares. Único caso do tipo no livro inteiro (varri as 14 saídas).
+
+3. **Resto do livro: fiel e com ganho literário real.** Números, datas, nomes próprios, kanji, diagramas, tabelas e citações conferem chunk a chunk. Duas alterações que examinei de perto e considerei legítimas: a remoção de um fragmento corrompido da fonte no chunk 1 (`"unif, "○丶" (ponto central), ` duplicado) e a desambiguação de `no hospital` → `em "hospital"` no chunk 10.
+
+**Bug de infraestrutura — a causa de o livro ter voltado sem nada ter mudado**
+
+`montar_livro.py` só verificava se cada `{NNN}_out.txt` **existia**, não se o chunk reaberto tinha sido reprocessado. Ao zerar `montado` (passo 5d), a iteração seguinte remontava o livro dos `_out.txt` antigos e o reenfileirava: reabertura às 16:34:03, livro de volta na minha fila às 16:34:22, com as quatro costuras idênticas. Cada ciclo desses gasta uma leitura completa do livro à toa.
+
+Corrigido e commitado (`e59595d`): `montar_livro.py` agora pula livro com chunk em `pending`/`in_progress` no executor, e o passo 5d do `AUDITORIA_PROMPT.md` documenta isso e manda limpar do `done` as entradas dos chunks reabertos (fiz essa limpeza para os chunks 5, 11 e 12).
+
+Um resíduo que deixei de propósito: `done` do executor tem entradas duplicadas dos chunks 6 e 10 (versão antiga + reprocessada). É cosmético — `montar_livro.py` não lê mais o `done` — e limpar exigiria outro read-modify-write concorrente com o executor, que está escrevendo o arquivo ao vivo.

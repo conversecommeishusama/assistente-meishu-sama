@@ -1,0 +1,8 @@
+Item processado e fila atualizada.
+
+**`19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro`, chunk 4/6** — era um item reaberto pelo auditor, então tratei exatamente os dois achados, sem retrabalho geral:
+
+- **Poema 393**: o termo doutrinário fixo tinha sido dissolvido (`A grande e árdua passagem… tão penosa de cruzar`). Restaurado para `A grande passagem deste mundo atual, árdua de cruzar, eu a cruzarei com facilidade sob a orientação de Deus` — preserva o termo (volta a 2 ocorrências de "grande passagem" no chunk, como na fonte), desfaz a repetição "difícil…difícil" e elimina o intensificador "tão" que a fonte não tinha.
+- **Poema 341**: `Sabei` → `Saibam`, como na fonte; a reordenação do verso (elogiada pelo auditor) foi mantida.
+
+Verificações: 84 poemas em ambos, numeração 320-403 idêntica linha a linha, 113 linhas nos dois arquivos, nota do poema 394 e títulos de seção intactos; 11.762 → 11.641 chars. Os achados da rodada anterior (338, 332, 386, 387, 395) foram conferidos e não mexi neles. Fila: 667 pending / 98 done.

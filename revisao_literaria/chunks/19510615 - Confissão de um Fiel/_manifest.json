@@ -1,0 +1,37 @@
+{
+  "arquivo": "19510615 - Confissão de um Fiel.txt",
+  "fonte": "livros_publicacao_pt_revisado/19510615 - Confissão de um Fiel.txt",
+  "chars_fonte": 52960,
+  "total_chunks": 5,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 9694,
+      "paragrafos": 12
+    },
+    {
+      "idx": 1,
+      "chars": 9985,
+      "paragrafos": 6
+    },
+    {
+      "idx": 2,
+      "chars": 11908,
+      "paragrafos": 11
+    },
+    {
+      "idx": 3,
+      "chars": 11531,
+      "paragrafos": 15
+    },
+    {
+      "idx": 4,
+      "chars": 9842,
+      "paragrafos": 27
+    }
+  ],
+  "montado": true,
+  "chars_final": 52796,
+  "ratio_tamanho": 0.997,
+  "montado_em": "2026-08-16T11:00:16.732885"
+}

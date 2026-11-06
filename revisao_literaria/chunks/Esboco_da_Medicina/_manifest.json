@@ -1,0 +1,17 @@
+{
+  "arquivo": "Esboco_da_Medicina.txt",
+  "fonte": "livros_publicacao_pt_revisado/Esboco_da_Medicina.txt",
+  "chars_fonte": 5908,
+  "total_chunks": 1,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 5908,
+      "paragrafos": 6
+    }
+  ],
+  "montado": true,
+  "chars_final": 5820,
+  "ratio_tamanho": 0.985,
+  "montado_em": "2026-08-18T02:24:56.044897"
+}

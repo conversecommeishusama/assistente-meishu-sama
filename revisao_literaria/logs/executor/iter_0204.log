@@ -1,0 +1,11 @@
+Item processado e fila atualizada.
+
+**Chunk revisado:** `19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan`, chunk 7/9 → `chunks/.../007_out.txt`
+
+- Períodos longos quebrados/refluidificados (parágrafo da superstição x educação científica; parágrafo materialismo x idealismo).
+- Calques trocados por construção natural ("Nem preciso dizer" → "Escusa dizer"; "Neste ponto, sou o oposto do mundo em geral" → "Nisto sou o oposto do que se dá no mundo em geral").
+- Enumerações de ofícios e hobbies reorganizadas sem perder item.
+- Preservados literalmente: títulos de artigo, linhas de publicação (nº 7/30-08-1949, nº 41/24-12-1949, nº 19/23-07-1949), citações entre aspas, nomes (Hakone Gōra, Yoshida, Alemanha, Kannon de Mil Braços) e números.
+- Verificação: 28 parágrafos → 28; 11.401 → 11.407 chars (ratio 1,001); arquivo termina em `\n\n`.
+
+Duas observações da fila: entre minha leitura inicial e a gravação, o auditor reabriu 2 itens (por isso os contadores foram de 645/120 para 646/119 — remoção feita por `(livro, chunk)`, sem `pop(0)`, nada se perdeu). E o novo `pending[0]` é um item reaberto com `nota_auditor` — 19491230 Vol. 9, chunk 2, sobre a marca de comparação "como a de" apagada no trecho do Mestre Deguchi; a próxima invocação precisa resolver exatamente esse achado.

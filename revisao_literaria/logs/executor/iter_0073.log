@@ -1,0 +1,16 @@
+Item reaberto processado e devolvido a `done`.
+
+**Achado do auditor (chunk 5 de *Coleção Jikan Vol. 2*)** — confirmado e corrigido: `pude comprovar` → `pude compreender que isso é verdade`.
+
+**Revarredura da classe inteira do bug** (verbos de opinião/percepção virando constatação, modalidade enfraquecida ou reforçada) encontrou mais 8 ocorrências no mesmo chunk:
+
+- `entendi que o essencial era` → `pensei que o essencial era`
+- `não parecia fácil de mudar` → `parecia impossível de mudar facilmente` (atenuação da força da fonte)
+- `alegria como a de quem fez uma grande descoberta` → `como se tivesse feito` (hipotético)
+- `Depois de três anos sem fertilizantes` → `Como resultado de três anos…` (causalidade suprimida)
+- `orientações precisas` → `específicas`
+- `a colheita cresceu de 20% a 30%` → `obtive um aumento de 20% a 30% na colheita` (agente restaurado)
+- `orei por Sua proteção também no segundo ano` → `orei pela proteção divina do segundo ano`
+- conectores/qualificadores suprimidos restaurados: `No entanto`, `também`, `muito macio`, `a família de sete pessoas`
+
+Integridade: 21/21 parágrafos, 11.147 → 10.984 chars (−1,5%). Fila: 716 pending / 49 done.

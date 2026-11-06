@@ -1,0 +1,6 @@
+Chunk 1 de "19490830 - Coleção Jikan Volume 5 Diálogos Jikan" revisado e aceito.
+
+- **Ajustes**: duplicação mecânica de frase removida ("Provavelmente, em seus últimos anos, ele raramente aparecia…" aparecia duas vezes colada); períodos longos redistribuídos com variação de cadência; conectivos repetidos ("Além disso", "No entanto") diversificados; calques da tradução suavizados. Citações entre aspas mantidas verbatim.
+- **Integridade**: 27 linhas e mesmas posições de linha em branco do fonte; cabeçalhos de seção ("A Acusação de Roubo", "A Arte de Danjūrō", "Naniwatei Aizō") e bytes finais preservados; todos os nomes próprios, títulos de peça, datas e números conferidos um a um contra o `_src` (nenhuma divergência).
+- **Tamanho**: 12.319 → 12.166 chars (−1,2%).
+- **Fila**: item movido de `pending` para `done` (removido por `(livro, chunk)`, não por índice) — 704 pendentes, 61 concluídos.

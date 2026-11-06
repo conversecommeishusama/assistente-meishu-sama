@@ -1,0 +1,8 @@
+Item processado e fila atualizada.
+
+**Chunk revisado:** `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes` — chunk 13/16 → `chunks/.../013_out.txt`
+
+- Recadenciei os períodos arrastados dos depoimentos (porca curada, repolho, trigo), desfiz calques ("Sou uma pessoa que, desde que recebeu o Ohikari…" → "Desde que recebi o Ohikari…"), cortei redundância mecânica e corrigi a concordância feminina no relato de Shiomi Tomeno ("limitado" → "limitada").
+- Preservados: cabeçalhos de seção, blocos de endereço/assinatura, as duas listas numeradas, e todos os números e unidades (koku, tan, kan, mon, go, shaku, to, tsubo) — verificação automática confirmou paridade de números e do padrão de linhas em branco (69 linhas em ambos); tamanho 11.934 → 11.739 chars (98,4%).
+
+Uma observação relevante: **o auditor inseriu um item reaberto no topo da fila enquanto eu trabalhava**. O `pending[0]` agora é `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 10, com `nota_auditor` extensa (padrão literário não atingido — depoimento de Higuchi Yoko saiu praticamente idêntico à fonte, pede revarredura dos 24 parágrafos). Não o processei, porque a instrução era um item por invocação e o item que eu tinha lido/processado era o do Volume 2. Ele está intacto no topo para a próxima invocação — ou posso atacá-lo agora, se preferir.

@@ -1,0 +1,64 @@
+{
+  "volume": 2,
+  "titulo": "Gokōwa-roku (御光話録) — Volume 2",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 329.0,
+  "caracteres_totais": 647029,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19490710 - Gokōwa-roku nº 10.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490710 - Gokōwa-roku nº 10.txt",
+      "caracteres": 56108
+    },
+    {
+      "arquivo_destino": "02_19490730 - Gokōwa-roku nº 9.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490730 - Gokōwa-roku nº 9.txt",
+      "caracteres": 58589
+    },
+    {
+      "arquivo_destino": "03_19490821 - Gokōwa-roku nº 11.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490821 - Gokōwa-roku nº 11.txt",
+      "caracteres": 62154
+    },
+    {
+      "arquivo_destino": "04_19490921 - Gokōwa-roku nº 12.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490921 - Gokōwa-roku nº 12.txt",
+      "caracteres": 65461
+    },
+    {
+      "arquivo_destino": "05_19491021 - Gokōwa-roku nº 13.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491021 - Gokōwa-roku nº 13.txt",
+      "caracteres": 53176
+    },
+    {
+      "arquivo_destino": "06_19491120 - Gokōwa-roku nº 14.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491120 - Gokōwa-roku nº 14.txt",
+      "caracteres": 57006
+    },
+    {
+      "arquivo_destino": "07_19491220 - Gokōwa-roku nº 15.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491220 - Gokōwa-roku nº 15.txt",
+      "caracteres": 58914
+    },
+    {
+      "arquivo_destino": "08_19500120 - Gokōwa-roku nº 16.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500120 - Gokōwa-roku nº 16.txt",
+      "caracteres": 56180
+    },
+    {
+      "arquivo_destino": "09_19500228 - Gokōwa-roku nº 17.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500228 - Gokōwa-roku nº 17.txt",
+      "caracteres": 64428
+    },
+    {
+      "arquivo_destino": "10_19500423 - Gokōwa-roku nº 18.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500423 - Gokōwa-roku nº 18.txt",
+      "caracteres": 60285
+    },
+    {
+      "arquivo_destino": "11_19500613 - Gokōwa-roku nº 19.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500613 - Gokōwa-roku nº 19.txt",
+      "caracteres": 54728
+    }
+  ]
+}

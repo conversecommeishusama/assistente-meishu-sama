@@ -1,0 +1,6 @@
+Chunk 8/9 de *Coleção Jikan Volume 12 — Coletânea de Narrativas Jikan* revisado e aceito.
+
+- **Ajustes**: quebra/fusão de períodos arrastados (`Aproveitando-se disso, quando nos atacam…` → `É disso que se aproveitam: quando nos atacam…`), remoção de calques (`ser difícil de fazer reconhecer facilmente`, `Considerando isso`), desambiguação de `o primeiro / o último` → `a primeira / a segunda` (ciência visível/invisível).
+- **Preservado literalmente**: título do artigo "Religião Progressista", linha de publicação (Hikari nº 34, 5/11/1949) e todo o colofão (datas, formato, autor, editor, editora).
+- **Verificação**: 17 blocos não-vazios em fonte e saída; todos os numerais idênticos; 4551 → 4498 chars.
+- **Fila**: item movido para `done` por `(livro, chunk)`, não por `pop(0)`. Restam 643 pendentes, 122 concluídos.

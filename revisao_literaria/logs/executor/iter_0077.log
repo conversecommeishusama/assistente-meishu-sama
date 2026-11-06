@@ -1,0 +1,13 @@
+Item processado.
+
+**pending[0]** era o chunk 2 de *19490625 — Coleção Jikan Volume 1: Tuberculose e Terapia Espiritual*, reaberto pelo auditor com `nota_auditor` explícita: o achado **não era de prosa** (a prosa estava aprovada, com instrução de não reescrever nada), mas estrutural — `002_out.txt` terminava em `\n` em vez de `\n\n`, fundindo, no livro montado, o último parágrafo deste chunk com o primeiro do chunk 3.
+
+Correção aplicada exatamente como pedido: o mesmo texto, com a linha em branco final restaurada.
+
+Verificações:
+- `tail -c 2 002_out.txt` → `0a0a` ✅
+- linhas não vazias: 17 (inalterado) ✅
+- tamanho: 11219 → 11220 bytes (apenas o newline) ✅
+- varredura dos 14 `_out.txt` do livro: todos terminam em `\n\n`, exceto `013_out.txt` (último chunk), que termina em `.\n` — coerente com o próprio `013_src.txt` ✅
+
+Fila atualizada removendo o item por `(livro, chunk)` e não por `pop(0)`, para não colidir com o auditor. Agora: 713 pendentes, 52 concluídos; o próximo pendente é o chunk 3 de *Coleção Jikan Volume 3*.

@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19500921 - Até a Construção do Paraíso Terrestre`, chunk 1/2 (sem `nota_auditor`).
+- **Revisão**: calques desfeitos, encadeamento de "Além disso" quebrado, períodos longos redistribuídos; nomes, medidas (jō, chō, shaku, kan), datas, título/assinatura e colofão preservados literalmente.
+- **Integridade**: 10 blocos → 10 blocos; 7525 → 7504 caracteres.
+- **Fila**: `pending` 632 → 631, `done` 133 → 134 (removido por par livro+chunk, não por `pop(0)`).

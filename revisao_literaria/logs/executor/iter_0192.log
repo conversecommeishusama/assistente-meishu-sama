@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 3/6 → `revisao_literaria/chunks/.../003_out.txt`
+- **Revisão:** períodos arrastados desmembrados (prisão de Omiya, viagem a Zenkoji), repetição de conectivo eliminada (`Por isso` 2x, `No entanto` em sequência), calques substituídos; citações entre aspas, poema, títulos de seção e rótulos `Eu:`/`Ele:` mantidos verbatim.
+- **Auto-checagem:** 24 parágrafos em fonte e revisado; 11.455 → 11.374 chars (−0,7%); todos os nomes próprios, datas e números conferem um a um.
+- **Fila:** pending 655 → 654, done 110 → 111 (item removido por `(livro, chunk)`, não por `pop(0)`).

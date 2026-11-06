@@ -1,0 +1,14 @@
+Auditoria do `pending[0]` concluída — **19490830 - Coleção Jikan Volume 5 Diálogos Jikan** foi **reprovado** e devolvido ao executor.
+
+**Verificação estrutural (limpa):** concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; 156 parágrafos em ambos, contagem idêntica chunk a chunk (22/13/21/18/8/8/18/20/28); todos os chunks fecham em `\n\n` (o 8 em `\n`, como a fonte) — nenhum parágrafo perdido, duplicado ou fundido nas costuras. Multiconjunto de dígitos idêntico, 138 citações entre aspas idênticas caractere a caractere, todos os títulos de seção, `(Nota)` e o colofão idênticos linha a linha. Os 3 achados da rodada anterior foram conferidos e estão corrigidos (costura final do chunk 0; sujeito explícito de Takamine Chikufū; "cerca de nove shaku", sem "apenas").
+
+**Leitura integral original × montado:** o ganho literário é real e uniforme — períodos arrastados quebrados, calques desfeitos, conectivos repetidos variados, e duas corrupções da fonte reparadas sem perda (a duplicação truncada sobre Danjūrō no chunk 1 e o período sem ponto no chunk 3). O que barrou foram 6 desvios de quantidade, em 4 chunks:
+
+- **chunk 1** — "mandando refazer **várias vezes**" → "**vezes sem conta**" (inflação de contagem num relato factual).
+- **chunk 4** — "conversa floresceu sobre **vários** assuntos" → "**os mais variados** assuntos". Mesma classe do achado anterior deste chunk: o executor corrigiu o ponto sinalizado e não varreu a classe.
+- **chunk 5** — "cobrindo a estrada" → "cobrindo-a **por inteiro**" (totalidade acrescentada); "surgiram **vários** episódios" → "os episódios começaram"; "perguntei **várias** coisas" → "**muitas** coisas".
+- **chunk 7** — "o significado de **milhares** de palavras em uma única palavra" → "uma só palavra exprime o sentido de **mil**": muda o número e ainda deixa o núcleo "palavras" em elipse. A mesma fórmula no chunk 6 foi preservada corretamente, então a incoerência é interna ao livro.
+
+Descartei dois candidatos após checagem: as 7 quedas de "cerca de" são todas substituição por "uns/umas/por volta de" (aproximador preservado), e a perda de "da manhã" em "por volta das dez horas" fica inequívoca pela frase anterior do mesmo parágrafo.
+
+**Fila atualizada:** chunks 1, 4, 5 e 7 inseridos no início de `pending` do `QUEUE_EXECUTOR.json` com nota de evidência concreta (691→695), entradas antigas deles removidas de `done` (74→70), uma linha em cada `NNN_historico_auditoria.jsonl` (chunk 4 agora com 2 — a próxima falha dele vai para escalação manual), `_manifest.json` com `montado: false` e `montado_em` removido, e o livro tirado de `pending` do `QUEUE_AUDITOR.json` sem ir para `done`.

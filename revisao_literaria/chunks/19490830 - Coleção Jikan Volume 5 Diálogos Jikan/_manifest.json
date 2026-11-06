@@ -1,0 +1,57 @@
+{
+  "arquivo": "19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+  "fonte": "livros_publicacao_pt_revisado/19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+  "chars_fonte": 104846,
+  "total_chunks": 9,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11845,
+      "paragrafos": 22
+    },
+    {
+      "idx": 1,
+      "chars": 11991,
+      "paragrafos": 13
+    },
+    {
+      "idx": 2,
+      "chars": 11803,
+      "paragrafos": 21
+    },
+    {
+      "idx": 3,
+      "chars": 11171,
+      "paragrafos": 18
+    },
+    {
+      "idx": 4,
+      "chars": 10071,
+      "paragrafos": 8
+    },
+    {
+      "idx": 5,
+      "chars": 11441,
+      "paragrafos": 8
+    },
+    {
+      "idx": 6,
+      "chars": 11636,
+      "paragrafos": 18
+    },
+    {
+      "idx": 7,
+      "chars": 11541,
+      "paragrafos": 20
+    },
+    {
+      "idx": 8,
+      "chars": 13347,
+      "paragrafos": 28
+    }
+  ],
+  "montado": true,
+  "chars_final": 102907,
+  "ratio_tamanho": 0.982,
+  "montado_em": "2026-08-14T22:11:23.973821"
+}

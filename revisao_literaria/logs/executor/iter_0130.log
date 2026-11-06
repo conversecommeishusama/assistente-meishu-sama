@@ -1,0 +1,7 @@
+Item `pending[0]` (reaberto pelo auditor) processado e fechado.
+
+**Achado do auditor — resolvido:** no chunk 7 de *19490830 - Coleção Jikan Volume 5 Diálogos Jikan*, a lista dos mestres do maki-e do período Momoyama tinha perdido o "entre outros" da fonte, transformando uma lista parcial em afirmação fechada. Restaurado: "…Koma Kyui, Kyuhaku, Shiomi Masanari, entre outros, que deixaram muitas obras-primas."
+
+**Varredura da classe no chunk inteiro** (pedida na nota): a fonte tem 8 marcas de lista aberta (6 `etc.` + 2 `entre outros`); o revisado tinha 7 e agora tem 8, com correspondência 1:1 marca a marca. As conversões de `etc.` → "e outros"/"e afins" foram mantidas, como a nota mandava. Nenhuma outra supressão ("e assim por diante", "dentre outros") encontrada.
+
+Restante do chunk preservado sem retrabalho — 20/20 parágrafos, números idênticos, 11541 → 11321 chars. Fila atualizada: 682 pending / 83 done.

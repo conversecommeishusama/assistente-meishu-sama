@@ -1,0 +1,22 @@
+{
+  "arquivo": "19510810 - Esboço de um Dia de Julgamento.txt",
+  "fonte": "livros_publicacao_pt_revisado/19510810 - Esboço de um Dia de Julgamento.txt",
+  "chars_fonte": 24463,
+  "total_chunks": 2,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 10927,
+      "paragrafos": 19
+    },
+    {
+      "idx": 1,
+      "chars": 13536,
+      "paragrafos": 28
+    }
+  ],
+  "montado": true,
+  "chars_final": 24150,
+  "ratio_tamanho": 0.987,
+  "montado_em": "2026-08-16T09:49:45.530358"
+}

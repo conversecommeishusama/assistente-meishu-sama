@@ -1,0 +1,29 @@
+{
+  "volume": 15,
+  "titulo": "Poesia e Cânticos",
+  "nota": "Waka, hinos e versos -- gênero distinto da prosa doutrinária",
+  "paginas_estimadas": 186.6,
+  "caracteres_totais": 367567,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19480701 - Coletânea de Salmos.txt",
+      "fonte": "livros_publicacao_pt_revisado/19480701 - Coletânea de Salmos.txt",
+      "caracteres": 32701
+    },
+    {
+      "arquivo_destino": "02_19491223 - Montanha e Água.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491223 - Montanha e Água.txt",
+      "caracteres": 144605
+    },
+    {
+      "arquivo_destino": "03_19510130 - Fonte do Riso.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510130 - Fonte do Riso.txt",
+      "caracteres": 118956
+    },
+    {
+      "arquivo_destino": "04_19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+      "caracteres": 71305
+    }
+  ]
+}

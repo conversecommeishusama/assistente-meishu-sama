@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual`, chunk 8/10 (sem `nota_auditor`).
+- **Revisão:** fluidez e precisão lexical no trecho sobre tengu, reino dos deuses dragão e espíritos de divindades — períodos arrastados reorganizados, calques de tradução desfeitos, repetição de conectivo enxugada.
+- **Integridade verificada:** 19 parágrafos na fonte e 19 no revisado; todos os números idênticos (conjunto igual); nomes próprios conferidos um a um (Mitsumine, Miho, Kuzuryu Gongen, Kusushi, Kinryuzan Senso-ji, Tenmangu, Taira no Masakado, Kojiki etc.); cabeçalhos de seção e a linha `(Nota)` preservados; 11.804 → 11.431 chars.
+- **Fila:** item removido por chave `(livro, chunk)` e movido para `done` com os campos exatos; `pending` 708 → 707, `done` 57 → 58.

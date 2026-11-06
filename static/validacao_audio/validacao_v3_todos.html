@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validação final — v3 (dicção clara) em todos os trechos</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.02rem; }
+  .badge { display: inline-block; font-size: 0.72rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; background: #d9ead3; color: #1e5631; }
+  audio { width: 100%; margin-top: 8px; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; font-size: 0.88rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+  .nota { background: #eef7ee; border-left: 4px solid #2c8b2c; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 Validação — versão v3 em todos os trechos</h1>
+
+  <div class="nota">
+    <strong>Versão v3</strong> = voz kikivoice remasterizada + instrução
+    <em>"clear diction, no foreign accent, careful speech"</em> + velocidade 0.75x.
+    Aplicada a <strong>todos os trechos</strong> que testamos ao longo da sessão, para você
+    confirmar a consistência da dicção em conteúdos variados.
+  </div>
+
+  <div class="card">
+    <h2>A. Acidente de avião <span class="badge">4s</span></h2>
+    <div class="trecho">"É o espírito de alguém que morreu em um acidente de avião..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_v3_A_aviao.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>B. Sobre arte e música <span class="badge">26s</span></h2>
+    <div class="trecho">"Eu também gosto de obras de arte, mas as antigas é que são as verdadeiramente novas..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_v3_B_L43_arte.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>C. Música budista <span class="badge">32s</span></h2>
+    <div class="trecho">"Ficou muito bem-feita, tem um estilo de gagaku. É muito melhor do que o budismo..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_v3_C_L17_musica.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>D. Caracteres possuem luz <span class="badge">18s</span></h2>
+    <div class="trecho">"Isso mesmo. Ou seja, até mesmo os caracteres impressos possuem luz..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_v3_D_G12L21_caracteres.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <h2>E. O koto e a música japonesa <span class="badge">46s</span></h2>
+    <div class="trecho">"Também na música, os japoneses deveriam reconhecer as qualidades do Japão..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_v3_E_L37_koto.mp3"></audio>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">A dicção clara se mantém em todos? Algum trecho ainda tem palavra difícil de entender?</p>
+</body>
+</html>

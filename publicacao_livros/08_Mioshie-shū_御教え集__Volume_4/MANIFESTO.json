@@ -1,0 +1,39 @@
+{
+  "volume": 8,
+  "titulo": "Mioshie-shū (御教え集) — Volume 4",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 348.6,
+  "caracteres_totais": 680140,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19520925 - Mioshie-shū nº 13.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520925 - Mioshie-shū nº 13.txt",
+      "caracteres": 106059
+    },
+    {
+      "arquivo_destino": "02_19521015 - Mioshie-shū nº 14.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521015 - Mioshie-shū nº 14.txt",
+      "caracteres": 135512
+    },
+    {
+      "arquivo_destino": "03_19521115 - Mioshie-shū nº 15.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521115 - Mioshie-shū nº 15.txt",
+      "caracteres": 95611
+    },
+    {
+      "arquivo_destino": "04_19521215 - Mioshie-shū nº 16.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521215 - Mioshie-shū nº 16.txt",
+      "caracteres": 97007
+    },
+    {
+      "arquivo_destino": "05_19530115 - Mioshie-shū nº 17.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530115 - Mioshie-shū nº 17.txt",
+      "caracteres": 107881
+    },
+    {
+      "arquivo_destino": "06_19530215 - Mioshie-shū nº 18.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530215 - Mioshie-shū nº 18.txt",
+      "caracteres": 138070
+    }
+  ]
+}

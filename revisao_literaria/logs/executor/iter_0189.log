@@ -1,0 +1,7 @@
+Chunk 10 de *19491223 - Montanha e Água* reprocessado e fila atualizada.
+
+- **Reabertura do auditor atendida**: o chunk foi refeito por inteiro, poema a poema (99 tankas). Linhas idênticas à fonte caíram de 97/128 (76%) para 34/128 (26%) — dentro da faixa dos outros chunks do livro —, e dessas apenas 5 são poemas: os aforismos 1030, 1033, 1069, 1105 e 1106, mantidos por decisão individual (já naturais, dois deles com aspas/parênteses protegidos).
+- **Todos os casos citados na nota foram trabalhados**: 1057 (clivada pesada + choque pairou/desvanece), 1060 (reordenado, agora inteligível), 1062 e 1113 (calques), 1064, 1068, 1072 (fragmento aforístico legível), 1080, 1098, 1107 (brotos/brotam → brotos despontam), 1115.
+- **Verificações**: numeração 1019-1117, títulos de seção, linhas em branco, datas de era Showa e as aspas de 1030/1113 conferidos por `diff` contra a fonte — sem diferença. 186 linhas em ambos; 11.642 → 11.609 chars.
+
+Fila: 657 pending, 108 done. Item removido por par (livro, chunk), não por índice.

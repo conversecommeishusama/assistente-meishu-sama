@@ -1,0 +1,5 @@
+Item processado: **Coleção Jikan Vol. 8 — chunk 3/6** (poemas 236–319).
+
+- `003_out.txt` gravado; 84 poemas, todas as datas e todos os cabeçalhos idênticos ao fonte (verificado por script); 11.875 → 11.785 chars (99,2%).
+- Ajustes principais: fusão dos poemas 272/273 numa única linha desfeita; fragmentos "Eu, que…" fechados com exclamação; calques (`entoavam`, `vida/idade fixa`) corrigidos; particípio solto (271) e modificador deslocado (316) reordenados; frase truncada em 261 e tempo verbal em 297 regularizados.
+- Fila atualizada por chave `(livro, chunk)` — não por `pop(0)` — para não colidir com o auditor: `pending` 672, `done` 93. Próximo é o chunk 4 do mesmo livro.

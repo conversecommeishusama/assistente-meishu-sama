@@ -1,0 +1,6 @@
+Chunk 11/12 de "19501030 - Memórias da Perseguição Religiosa" revisado e aceito.
+
+- **Revisão**: trecho final do livro (episódio fiscal de 1948, crítica ao indiciamento, palavra final como religioso e colofão). Períodos arrastados quebrados, conectivos repetidos (`Dessa forma`, `No entanto`, `Além disso` em sequência) eliminados, calques da tradução substituídos por construção portuguesa natural.
+- **Preservado**: colofão e ficha de publicação verbatim, as 4 citações entre aspas idênticas, todos os números conferidos por script (`10.500.000`, `800.000`, `7.000.000`, trinta milhões, oitenta pessoas, 1948/1949, 8 de novembro), nomes próprios sem perda — as 2 supressões de `Sr. Shibui` e a de `Hasegawa` viraram pronome com referente inequívoco, e uma delas foi revertida para o nome por risco de ambiguidade.
+- **Integridade**: 11 parágrafos → 11 parágrafos; 12.219 → 11.748 chars (0,96).
+- **Fila**: item removido por `(livro, chunk)` (não `pop(0)`, para não colidir com o auditor) e movido para `done` com os campos do schema. Restam 619 em `pending`.

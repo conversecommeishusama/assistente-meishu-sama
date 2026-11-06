@@ -1,0 +1,42 @@
+{
+  "arquivo": "19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+  "fonte": "livros_publicacao_pt_revisado/19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+  "chars_fonte": 69063,
+  "total_chunks": 6,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11292,
+      "paragrafos": 17
+    },
+    {
+      "idx": 1,
+      "chars": 11462,
+      "paragrafos": 12
+    },
+    {
+      "idx": 2,
+      "chars": 11317,
+      "paragrafos": 15
+    },
+    {
+      "idx": 3,
+      "chars": 11875,
+      "paragrafos": 28
+    },
+    {
+      "idx": 4,
+      "chars": 11401,
+      "paragrafos": 20
+    },
+    {
+      "idx": 5,
+      "chars": 11716,
+      "paragrafos": 20
+    }
+  ],
+  "montado": true,
+  "chars_final": 68489,
+  "ratio_tamanho": 0.992,
+  "montado_em": "2026-08-14T23:31:07.783548"
+}

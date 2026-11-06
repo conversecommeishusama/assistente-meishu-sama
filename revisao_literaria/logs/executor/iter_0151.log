@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**Chunk 3 de "Coleção Jikan Volume 7 — Cristo, Buda e a Fé Kannon"** (reaberto pelo auditor por perda de fidelidade em quantificadores/modalizadores/operadores de escopo):
+
+- Os 4 pontos apontados foram corrigidos: `várias novidades` restaurado; `muitas vicissitudes` → `várias`; `percebe-se que` devolvido; `apenas à influência externa` devolvido.
+- Varredura da classe inteira no chunk, parágrafo a parágrafo, achou mais 13 ocorrências do mesmo defeito — entre elas `mais a oeste`, `principalmente apenas`, `já desde o início`, `simples revisão comum`, a concessão `embora certamente…` que virara afirmação categórica, `pode-se comprová-lo` que virara `comprovam`, `provavelmente`/`acredita-se`, `aproximadamente`, `a ponto de`, `e também proposto`, `imediatamente transmitido`. Também revertido `sem abandonar as ocupações` para `enquanto se dedica às ocupações`, que trocava o sentido.
+- Preservados: títulos VIII/IX, nomes e topônimos, séculos/eras, termos entre aspas, o `etc.` e as reorganizações que o auditor marcou como boas.
+- Tamanho: 9583 → 9338 chars; 25 parágrafos em ambos.
+
+Nota: a fila estava sendo escrita em paralelo pelo auditor — a atualização foi feita relendo e removendo por `(livro, chunk)`, não por índice. Próximo `pending[0]` é o chunk 9 do Volume 4 (Histórias de Milagres).

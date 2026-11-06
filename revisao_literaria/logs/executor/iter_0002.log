@@ -1,0 +1,9 @@
+Chunk 1/14 de *19350000 - Curso Kannon (1~7)* revisado e fila atualizada.
+
+- **Saída:** `revisao_literaria/chunks/19350000 - Curso Kannon (1~7)/001_out.txt` (12189 → 12172 chars)
+- **Ajustes:** quebra de períodos arrastados (propósito da religião, trecho do Kegon-kyō), remoção de calques (“foi feito o acordo” → “firmou-se o acordo”), variação de conectivos repetidos (“Dessa forma / Portanto / Por isso” em sequência)
+- **Achado:** a linha do caractere *Shin* trazia uma duplicação mecânica de transcrição (`"unif, "○丶" (ponto central), ` repetido no meio da enumeração de glosas); colapsei o fragmento sem perder nenhuma glosa
+- **Preservado:** lista dos Oito Grandes Reis Dragões, tabela de sucessão, esquemas da Voz Divina, cabeçalho da Segunda Aula e a citação do Mestre Nangaku em « » verbatim
+- **Verificação:** 100 linhas → 100 linhas, posições de linha em branco idênticas, conjuntos de numerais e de nomes próprios idênticos entre fonte e revisado
+
+Fila: `pending` 762 → 761, `done` 1 → 2.

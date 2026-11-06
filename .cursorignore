@@ -1,0 +1,22 @@
+# Reduz churn do file watcher durante runs de tradução em massa
+reports/translation_review/translation_mass/**/progress.jsonl
+reports/translation_review/translation_mass/**/watchdog.jsonl
+reports/translation_review/translation_mass/**/watchdog.log
+reports/translation_review/translation_mass/**/run.log
+reports/translation_review/translation_mass/**/watchdog_state.json
+reports/translation_review/translation_mass/**/corpus/
+
+# Logs append-only (chat, API, jobs)
+logs/
+logs/**
+
+# Índices / exports pesados (raramente editados no IDE)
+experiments/rebuilt_large_indexes/
+experiments/uploaded_indexes/
+experiments/uploaded_indexes_backup_*/
+exports/
+
+# Backups e quarentena
+.cleanup_quarantine/
+*.tar.gz
+*.tar.gz.sha256

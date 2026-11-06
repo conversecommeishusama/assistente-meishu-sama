@@ -1,0 +1,10 @@
+Item `pending[0]` processado e fechado.
+
+**Chunk 7** de *19500420 - Coleção Jikan Volume 10 — Método de Saúde por Revelação Divina* (reaberto pelo auditor, com `nota_auditor`):
+
+- **Achado principal** — parágrafo "As crianças brincam sob o sol escaldante..." (o maior do livro, similaridade 0,980 contra a fonte) refeito de verdade: as três ocorrências de "em direção ao cérebro/cerebelo" desfeitas por anáfora; as nominalizações-calque ("iniciam um movimento de concentração/invasão") passaram à forma verbal; o eco "em geral, dentro de…" resolvido reformulando a **primeira** ocorrência ("Bastam, via de regra, dois ou três dias"), como a nota exigia. Similaridade agora 0,198.
+- **Achado secundário** — parágrafo "Houve ainda outro caso…" (era 0,994): particípio solto corrigido sem tocar no quadro clínico nem na fala entre aspas → "…e foi esse quadro que o médico tomou, por engano, como tuberculose pulmonar". Agora 0,689.
+- **Revarredura da classe** no chunk inteiro, como pedido: "Deve-se considerar / tenha considerado", "humanos" duas vezes na mesma frase, "hemorragia" três vezes em duas frases, "dizer-se / costuma-se dizer / maneira de falar", "completamente diferente" vs. "cura completa". Restaram acima de 0,90 apenas linhas que **devem** ficar (títulos, linhas de procedência, notas) e o parágrafo dominado por citações entre aspas.
+- **Preservações conferidas por grep**: os quatro operadores da rodada anterior, as citações, títulos e procedências, 54 linhas em ambos, arquivo terminando em `\n\n`. Tamanho 11 683 → 11 460 chars.
+
+Fila: `pending` 621 → 620, `done` 144 → 145. Próximo item: *19501030 - Memórias da Perseguição Religiosa*, chunk 11.

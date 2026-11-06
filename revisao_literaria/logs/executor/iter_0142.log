@@ -1,0 +1,18 @@
+Item processado: chunk 1 de *19491025 – Coleção Jikan Volume 7 (Cristo, Buda e a Fé Kannon)*, que estava reaberto pelo auditor com `nota_auditor`.
+
+**Os cinco achados do auditor, corrigidos:**
+- "merece **a maior** atenção" → "merece **grande** atenção"
+- "**reverenciava** a vida natural… **por toda a Europa** com pujança" → "**respeitava** a vida natural… espalhava-se **com toda a sua força pela Europa**"
+- "de **alto** valor literário" → "de valor literário"
+- "**tem-se por certo** que" → "**acredita-se** que"
+- "numerosíssimos, **e** todos incompreensíveis" → "muito numerosos, **mas** todos são incompreensíveis"
+
+**Revarredura da classe inteira contra `001_src.txt`** (o auditor pediu explicitamente, e havia mais casos além da amostra):
+- conectores suprimidos, restaurados: "No entanto" (3 pontos), "Além disso", "na verdade", "ao mesmo tempo"
+- modalidade endurecida, revertida: "Dir-se-á" → "Deve-se dizer", "dignas de crítica" → "que devem ser criticadas", reflexivo "refinou-se" → passivo "foi refinado"
+- qualificadores acrescentados/deslocados, removidos: "tão peculiar", "essa **mesma** natureza", "cada um" → "as pessoas", "Bom exemplo" → "exemplo muito bom"
+- "como a *Ilíada* e a *Odisseia*" devolvido à condição de exemplificação (o travessão apositivo os tornava lista exaustiva)
+
+Intocados conforme a nota: os cinco blocos bíblicos e suas nove referências, o título "IV. O Cristianismo e Paulo", as aspas de "amor e graça"/"homem criado por Deus"/"ser humano" e as soluções já elogiadas. Verificação: 30 linhas em correspondência 1:1 com a fonte, nenhum parágrafo com desvio de tamanho acima de 25%; 11.228 → 11.071 caracteres.
+
+Fila atualizada por identidade `(livro, chunk)`, não por índice. Observação: durante a execução o laço auditor reabriu o **chunk 2** do mesmo livro, que agora está em `pending` — a próxima invocação pega `pending[0]`, que é outro livro (*Coleção Jikan Volume 5*).

@@ -1,0 +1,15 @@
+Auditoria de `19480701 - Coletânea de Salmos` concluída — **chunk 1 reaberto**.
+
+**Verificações de fidelidade (todas passaram)**
+- Costuras: `cat 000_out 001_out 002_out` bate byte a byte com o montado, e os `_src` batem com o original — nenhum parágrafo perdido nem duplicado; os 3 chunks fecham em `\n\n`.
+- 435 linhas em ambos; numeração 1–309 idêntica; todos os cabeçalhos de seção idênticos; multiset de dígitos idêntico; a única citação entre aspas (poema 94) intacta; nenhum nome próprio alterado.
+- Os 6 achados das rodadas anteriores vieram corrigidos (prefácio "demais"/"as pessoas", poemas 2, 31, 68, 185, 194, 195, 229, 280).
+
+**Achado (chunk 1, poemas 115–222)** — quantificador inflacionado em 3 linhas, mesma classe já apontada no chunk 2 (poema 229) e nunca varrida aqui:
+- 117 `os vários mistérios` → `os muitos mistérios`
+- 191 `as diversas graças` → `as muitas graças`
+- 202 `vários ensinamentos` → `muitos ensinamentos`
+
+O que fecha o caso é a inconsistência interna: o próprio montado preserva `diversos pecados` (144), `diversas calamidades` (170) e `vários pecados` (229). As trocas não ganham fluidez alguma — o ritmo da frase fica idêntico —, então é mudança de grau sem contrapartida literária.
+
+Ações: chunk 1 no topo de `pending` do executor com nota pedindo varredura da classe inteira no chunk, entrada nova em `001_historico_auditoria.jsonl` (2ª de 3 permitidas), `montado=false` no `_manifest.json`, e o livro removido de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

@@ -1,0 +1,27 @@
+{
+  "arquivo": "19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+  "fonte": "livros_publicacao_pt_revisado/19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+  "chars_fonte": 37078,
+  "total_chunks": 3,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11192,
+      "paragrafos": 24
+    },
+    {
+      "idx": 1,
+      "chars": 11365,
+      "paragrafos": 20
+    },
+    {
+      "idx": 2,
+      "chars": 14521,
+      "paragrafos": 29
+    }
+  ],
+  "montado": true,
+  "chars_final": 36956,
+  "ratio_tamanho": 0.997,
+  "montado_em": "2026-08-16T09:42:32.546748"
+}

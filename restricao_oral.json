@@ -1,0 +1,11 @@
+{
+  "_comentario": "Política de acesso da Leitura Colaborativa. A PALAVRA ESCRITA permanece aberta ao mundo. A PALAVRA ORAL (Gokōwa-roku, Gosuiji-roku, Mioshie-shū) exige conta gratuita, por respeito à orientação de Meishu-Sama registrada ao final dos textos do Gokōwa-roku: aqueles registros se destinavam às pessoas que participavam dos encontros, e não ao público em geral. Este arquivo é lido por goshinsho/services/leitura_service.py (função carregar_restricao_oral). Ausência do arquivo = tudo liberado. Para liberar uma obra específica que tenha caído na regra por engano, acrescente o nome do arquivo em obras_liberadas.",
+
+  "palavra_oral_exige_login": true,
+
+  "motivo": "Ao final dos textos do Gokōwa-roku, Meishu-Sama afirma que aqueles registros se destinavam às pessoas que participavam dos encontros — e não ao público em geral. Por respeito a essa orientação, a Palavra Oral é reservada a pessoas com conta no Goshinsho. A Palavra Escrita, publicada por Meishu-Sama para o mundo, permanece aberta a todos.",
+
+  "obras_bloqueadas": [],
+
+  "obras_liberadas": []
+}

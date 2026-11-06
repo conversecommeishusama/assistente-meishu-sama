@@ -1,0 +1,14 @@
+Auditoria de `pending[0]` concluída — livro **reprovado**, dois chunks reabertos.
+
+**Livro:** 19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual (14 chunks, 780 linhas)
+
+**Verificações estruturais (todas OK):** concatenação dos 14 `_src.txt` bate byte a byte com o original e a dos `_out.txt` com o montado — nenhum parágrafo perdido, duplicado ou fundido nas costuras; contagem de parágrafos idêntica chunk a chunk; multiconjunto de dígitos idêntico; as 90 citações entre aspas idênticas (única diferença: `"é só um resfriado"` → `"É só um resfriado"`, maiúscula por reposicionamento no início do período); todos os conteúdos entre parênteses preservados (alguns convertidos em travessão/ponto-e-vírgula); as 6 linhas divisórias `---` intactas; espaços ideográficos preservados. Os dois achados das rodadas anteriores foram de fato corrigidos (chunk 3: abertura sem o eco "vista/ponto de vista"; chunk 5: "gastara tanto dinheiro com médicos" e aspas restauradas em "fulano se curou, sicrano também se curou").
+
+**Achados que motivaram a reabertura** (leitura comparada integral, parágrafo a parágrafo):
+
+- **chunk 6** — `"passei a adorar Kannon todos os dias"` → `"passei a cultuá-la todos os dias"`: o clítico tem como antecedente sintático mais próximo *a bênção*, não a divindade, e o nome próprio some justamente na frase de devoção. Não havia repetição a evitar.
+- **chunk 13** — `"carreguei um fardo de palha de trigo"` → `"ergui um fardo de palha"`: o especificador foi cortado junto com a desrepetição *carreguei/carregá-lo*, que já estava resolvida por *ergui… e o carreguei*.
+
+Ambos são a 1ª reabertura desses chunks (sem histórico prévio), então não houve escalação manual. Fila do executor recebeu os dois itens no topo com `nota_auditor` mandando revarrer a classe inteira; entradas antigas removidas de `done`; `_manifest.json` com `montado: false` (e `montado_em` removido); item retirado de `pending` no `QUEUE_AUDITOR.json` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.
+
+Itens que examinei e **não** considerei achado, para registro: "dissolvido pela primeira febre" (chunk 1) explicita mecanismo já enunciado no parágrafo anterior da própria fonte; "as infelicidades do mundo inteiro" (chunk 7) e a perda de "cada vez mais" em "só piorava" (chunk 3) são ajustes de ênfase dentro de parágrafos que repetiam a expressão; a duplicação truncada da fonte no fim do chunk 12 ("Minha irmã mais nova… Quanto à minha irmã mais nova…") foi reparada sem perda de conteúdo, como no precedente já endossado do Curso Kannon.

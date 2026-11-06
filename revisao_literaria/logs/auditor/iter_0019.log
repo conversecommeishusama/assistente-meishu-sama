@@ -1,0 +1,9 @@
+**19490625 — Coleção Jikan Volume 1 (Tuberculose e Terapia Espiritual): aprovado.**
+
+- Leitura integral e comparada dos 14 chunks (780 linhas, 341 parágrafos), original × montado, parágrafo a parágrafo.
+- **Fidelidade**: multiconjunto de dígitos idêntico; 90 citações idênticas caractere a caractere (só duas diferenças tipográficas por deslocamento da citação para início de período); nomes, datas, idades, endereços, unidades e colofão intactos; estrutura de linhas, divisórias, espaços ideográficos e itálicos preservada.
+- **Costuras**: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; parágrafos por chunk idênticos (27/13/17/24/33/31/32/17/24/30/24/30/24/15); nenhuma sentença suprimida nas maiores reduções.
+- **Os 12 achados das rodadas anteriores** (chunks 2–13) foram conferidos um a um e estão todos corrigidos — inclusive o chunk 10, que na rodada passada tinha voltado praticamente igual à fonte e agora recebeu o trabalho literário de fato.
+- **Três pontos examinados e endossados** (registrados na nota para não serem re-litigados): a anáfora "dessas teorias" no lugar da 2ª ocorrência de Galeno; as duas elisões de "Ministro" no chunk 5; e "nem a dúvida mais renitente diminui o resultado" no chunk 2 — concessiva superlativa que enuncia a mesma proposição da fonte, sem alterar fato, número ou doutrina, e portanto fora da classe de inflação factual já reaberta neste livro.
+
+Item movido de `pending` para `done` em `QUEUE_AUDITOR.json`. A fila já recebeu, nesse meio-tempo, o próximo livro (Volume 3 — Conversas sobre o Mundo Espiritual), que ficou como `pending[0]` para a próxima invocação.

@@ -1,0 +1,14 @@
+**Volume 9 – O Caminho para a Luz: reaberto (chunks 3 e 5).**
+
+Leitura integral e comparada dos 6 chunks (262 linhas, 133 parágrafos), original × montado, parágrafo a parágrafo.
+
+**Integridade estrutural — limpa.** Concatenação dos 6 `_src` bate byte a byte com o original e a dos 6 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (20/18/25/25/17/28); todos fecham em `\n\n` (o 5 em `\n`, como a fonte). Multiconjunto de dígitos e de números por extenso idêntico; as 107 citações entre aspas com diff vazio nos dois sentidos; nomes próprios, topônimos, eras, unidades, rótulos `Eu:`/`Chefe:`/`Ele:`, a estrofe de Tamagawa-kyo, a `(Nota: "Renpei"...)` e o colofão intactos. Nenhum parágrafo abaixo de 0,879 do tamanho da fonte. Varredura de quantificador/intensificador/modalizador refeita do zero nos dois sentidos: todas as ausências são forma equivalente (`cerca de`→`uns`, `gradualmente`→`aos poucos`, `completamente`→`por completo`, `muito difícil`→`dificílimo`), nenhuma quantidade criada ou apagada.
+
+**Os 4 achados das rodadas anteriores estão todos corrigidos** — `várias enfermidades` (c1), partida da residência rumo à delegacia e `como a de um membro da família imperial` (c2), `e assim por diante` / `os defeitos dele em vida` / `sete horas da noite` (c5).
+
+**O que sobrou:**
+
+- **chunk 5** — `"tornando-se um espírito híbrido E AGINDO"` → `"agia POR MEIO DELE"`: acrescenta o mecanismo da possessão, que a fonte não enuncia, e deixa `dele` com antecedente ambíguo. E `"sintomas ... COMO febre, tosse e expectoração"` → dois-pontos apositivos, que fazem a lista ler como exaustiva — mesma classe do `etc.` reaberto neste chunk na rodada anterior, corrigido só na ocorrência apontada. 2ª reabertura (limite ainda não atingido).
+- **chunk 3** — `"PENSEI QUE não suportaria outra tortura"` → `"CERTO DE QUE"`, suposição virando certeza justamente na frase que explica ter assinado o depoimento falso; `"ele me chamou"` → `"mandou me chamar"`, intermediário inexistente na fonte; `"então disse aos que estavam ao redor"` → `"limitei-me a comentar"`, restrição acrescentada. 1ª reabertura.
+
+Chunks 3 e 5 no topo de `QUEUE_EXECUTOR.json` com nota de evidência, entradas antigas removidas de `done`, históricos de auditoria gravados, `montado` zerado no manifesto e o livro retirado de `pending` em `QUEUE_AUDITOR.json` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

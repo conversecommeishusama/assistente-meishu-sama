@@ -1,0 +1,7 @@
+Item processado: chunk 7 de *Coleção Jikan Volume 3 — Conversas sobre o Mundo Espiritual* (reaberto pelo auditor).
+
+- **Achado principal corrigido**: a relativa sem sujeito expresso invertia os papéis — "bandos de mulheres que enganaram e maltrataram" passou a "bandos de mulheres que em vida foram enganadas e maltratadas", restaurando a passiva da fonte (elas são as vítimas).
+- **Verificação pedida de passagem**: confirmada a perda de "como resultado de seu treinamento" na frase dos artistas marciais; restaurada.
+- **Mesma classe de bug varrida no resto do chunk**: repostos "como um pássaro em voo" (Dan-no-ura) e o "também" em "Isso também ocorre porque os tengu os possuem"; trocado "por mais empedernido que seja" por "seja quem for", já que "empedernido" era caracterização inexistente na fonte.
+
+Parágrafos 24↔24, 11638 → 11441 chars. Fila: pending 704→703, done 61→62 (item removido por chave `(livro, chunk)`, não por `pop(0)`).

@@ -1,0 +1,67 @@
+{
+  "arquivo": "19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+  "fonte": "livros_publicacao_pt_revisado/19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+  "chars_fonte": 114116,
+  "total_chunks": 11,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 10737,
+      "paragrafos": 10
+    },
+    {
+      "idx": 1,
+      "chars": 10096,
+      "paragrafos": 6
+    },
+    {
+      "idx": 2,
+      "chars": 11625,
+      "paragrafos": 11
+    },
+    {
+      "idx": 3,
+      "chars": 9521,
+      "paragrafos": 6
+    },
+    {
+      "idx": 4,
+      "chars": 11458,
+      "paragrafos": 6
+    },
+    {
+      "idx": 5,
+      "chars": 11938,
+      "paragrafos": 13
+    },
+    {
+      "idx": 6,
+      "chars": 10415,
+      "paragrafos": 9
+    },
+    {
+      "idx": 7,
+      "chars": 7395,
+      "paragrafos": 2
+    },
+    {
+      "idx": 8,
+      "chars": 11783,
+      "paragrafos": 2
+    },
+    {
+      "idx": 9,
+      "chars": 11338,
+      "paragrafos": 8
+    },
+    {
+      "idx": 10,
+      "chars": 7810,
+      "paragrafos": 9
+    }
+  ],
+  "montado": true,
+  "chars_final": 113958,
+  "ratio_tamanho": 0.999,
+  "montado_em": "2026-08-17T11:23:49.800877"
+}

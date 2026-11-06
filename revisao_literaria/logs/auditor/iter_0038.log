@@ -1,0 +1,15 @@
+Auditoria do `pending[0]` concluída — **19491005 – Coleção Jikan Volume 4, Histórias de Milagres**: livro **reaberto** (2 chunks), não aprovado.
+
+**Verificações feitas** (leitura integral dos 14 chunks, 363 linhas, 245 parágrafos, original × montado):
+
+- Costuras: concatenação dos 14 `_src` bate byte a byte com a fonte e a dos 14 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (17/20/13/20/23/22/27/23/10/20/21/18/13/16) — nenhum parágrafo perdido, duplicado ou fundido.
+- Fidelidade: multiconjunto de algarismos idêntico; as 143 sequências entre aspas idênticas caractere a caractere; nenhum nome próprio perdido (as duas únicas diferenças são `Hojo-cho`→`Hōjō-cho`, forma já usada no cabeçalho da própria fonte, e o typo `Kannon-Sama-Sama` reparado); termos fixos todos com a mesma contagem (Kannon-Sama 75, Johrei 41, Ohikari 19, proteção divina 22, grande compaixão 4, benefício material 12, kyoshu 17).
+- Varredura da classe recorrente (quantificador/intensificador): `várias/vários` 30→20, `completamente` 18→7, `nunca` 12→9, `cerca de` 49→44 — cada ausência conferida uma a uma e todas são reformulação equivalente (`diversos`, `muitas`, `por completo`, `jamais`, `uns`, `por volta de`), não supressão.
+- Os 13 achados das rodadas anteriores estão todos corrigidos (Kannon-Sama do chunk 1, incêndio do chunk 4, pesca do chunk 5, `sempre`/`várias` do chunk 6, `hora adiantada` e onomatopeia do chunk 7, `No entanto` do chunk 8, mais-que-perfeitos do chunk 9, `daquele dia em diante` e o período do desejo do chunk 10, `proteção divina` do chunk 12).
+
+**Dois achados novos, ambos reabertos** (fila do executor, no topo; `montado` zerado no manifesto; `done` antigos dos chunks 3 e 5 removidos):
+
+- **chunk 5 — fidelidade**: `quantidade inesperadamente grande de peixes` virou `quantidade de peixes acima de tudo o que se podia imaginar` (superlativo que não está na fonte, num relato cujos números aparecem logo adiante); e `banhada pela Luz, como se tivesse ressuscitado` virou `os oito de nossa casa renasceram` — comparação da depoente convertida em afirmação.
+- **chunk 3 — padrão literário**: o parágrafo final do relato de Hisako Ono (743 ch, sim. 0,969) voltou praticamente intocado, com `voltei para casa; voltei inconsciente`, três ocorrências de *consciência/inconsciente* em frases vizinhas e `bem mais… bem mais` na mesma frase.
+
+O livro sai de `pending` sem ir para `done`; volta sozinho à fila de auditoria quando o `montar_livro.py` remontar. A fila de auditoria já recebeu, nesse meio-tempo, o Volume 8 (Poemas Recentes de Akemaro) como próximo item.

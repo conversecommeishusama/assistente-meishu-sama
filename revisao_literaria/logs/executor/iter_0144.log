@@ -1,0 +1,8 @@
+Chunk 2 de *Coleção Jikan Volume 7* reprocessado conforme o `nota_auditor` e a fila atualizada.
+
+- Corrigidos os dois achados explícitos: caiu o "privilégio" acrescentado na frase da cidadania romana (voltou a "o que se acredita resultar da lealdade…"), e voltaram o atenuador "pode-se dizer que" e o "ainda" na frase do deus panteísta.
+- Revarrida a classe inteira contra `002_src.txt`, como pedido: restaurados "anteriormente" (2x), "se diz", "pode-se inferir", "certamente", "acreditava-se", "Além desse ponto", "ou seja, para Paulo", a atribuição "Paulo sustenta que" e o "relação de dimensões diferentes"; desfeitas intensificações do revisor (assombroso→surpreendente, sem trégua→continuamente, transbordando→cheio de alegria, de modo algum→certamente não).
+- Preservados: relato da conversão, as 9 citações entre aspas (idênticas byte a byte à fonte), títulos V/VI/VII com a duplicação original, todos os nomes próprios, e a reorganização boa dos períodos longos.
+- 35 linhas em ambos, estrutura de parágrafos idêntica, números conferem; 10.702 → 10.488 caracteres.
+
+Fila: pending 676 → 675, done 89 → 90 (item removido por `(livro, chunk)`, não por índice).

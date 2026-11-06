@@ -1,0 +1,5 @@
+Chunk 0 de **19480701 - Coletânea de Salmos** revisado e aceito.
+
+- `000_out.txt` salvo: 11.996 → 11.892 caracteres, mesma estrutura (162 linhas, 132 não vazias, 114 poemas numerados na mesma ordem, cabeçalhos de seção idênticos).
+- Ajustes principais: prefácio com cadência refeita e conectivos em cadeia removidos; concordância corrigida no poema 64 ("nuvens espirituais **se tornam** obstáculo"); calques desfeitos nos poemas 2, 8, 35, 52 e 78; inversões de ordem nos poemas 9 e 66 para leitura mais natural. Citação do poema 94 preservada literalmente; nomes, números e datas intactos.
+- Fila atualizada: `pending` 749 → 748, `done` 14 → 15.

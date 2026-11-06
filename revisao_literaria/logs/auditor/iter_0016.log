@@ -1,0 +1,15 @@
+Item processado: **19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual** — reprovado.
+
+Leitura integral e comparada dos 14 pares `_src`/`_out` (780 linhas, 162 KB). Verificações mecânicas: `cat` dos 14 `_src` bate byte a byte com o original e a dos 14 `_out` com o montado; multiconjunto de dígitos idêntico; nomes fixos conferidos (Johrei 90/90, Kannon 98/98, Ohikari 21/21, Caminho 9/9 etc.); citações entre aspas idênticas salvo duas mudanças só de maiúscula/ponto forçadas por reposicionamento.
+
+Três achados:
+
+**Chunk 2 — reaberto** (2ª entrada, dentro da regra). `002_out.txt` termina em `\n` simples, e não `\n\n` como todos os outros. Resultado: no livro montado o parágrafo "Expus aqui, sem rodeios, os erros da medicina…" e o de abertura do chunk 3 ficam em linhas consecutivas sem a linha em branco separadora — o montado tem 340 linhas em branco contra 341 do original. A prosa do chunk está aprovada; a nota manda só reemitir o mesmo texto com a linha final.
+
+**Chunk 5 — escalado** (seria a 3ª reabertura). Padrão literário não atingido: 2 parágrafos idênticos byte a byte à fonte, 6 acima de 0,97 e 3 entre 0,93–0,94, média 0,872 — a maior do livro (os demais ficam entre 0,30 e 0,73). As duas rodadas anteriores foram de fidelidade e o executor corrigiu só os pontos citados. Evidências concretas no registro: calque "poder trabalhar… um décimo-milésimo da graça" (recomposto corretamente nos chunks 6, 7, 8 e 11), "casa" 3× em três frases seguidas, "e sofria" pendurado.
+
+**Chunk 10 — escalado, severidade menor** (também 3ª). "o mestre disse" virou "ele disse" com "Meu pai" como antecedente mais próximo.
+
+Fila do auditor atualizada (item removido sem ir para `done`), `002_historico_auditoria.jsonl` acrescido, `_manifest.json` com `montado: false`, `ESCALACOES_MANUAIS.jsonl` criado com as duas linhas.
+
+O livro voltará à fila de auditoria quando o chunk 2 for reprocessado e remontado — e será escalado de novo enquanto os chunks 5 e 10 não forem corrigidos manualmente.

@@ -1,0 +1,9 @@
+Chunk processado e fila atualizada.
+
+**`19350000 - Curso Kannon (1~7)` — chunk 5/14** → `005_out.txt`
+
+- Desfeita a fusão de 7 entradas de deus dragão que estavam coladas em 2 blocos (Dragão Azul/Montanha/Árvore/Fogo e Negro/Mar/Nove Cabeças) — cada uma volta a ser um parágrafo, como as entradas vizinhas.
+- Variada a repetição mecânica de «Em contrapartida»/«Além disso» (6 ocorrências) e refeitos os períodos arrastados sobre o Rio Sanzu e o Caminho dos Fantasmas Famintos.
+- Verificação: 11.934 → 11.761 chars (razão 0,986); parágrafos 59 → 64, delta idêntico aos 5 splits intencionais; nomes próprios, números, datas e os caracteres 乙/乙姫/ノ/九 conferem com a fonte.
+
+Fila: `pending` 757, `done` 6.

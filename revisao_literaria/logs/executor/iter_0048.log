@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes`, chunk 4/16 → `revisao_literaria/chunks/.../004_out.txt`.
+- **Verificações**: 66 linhas em ambos (mesma estrutura de parágrafo/linhas em branco), números idênticos 1:1, citação entre aspas intacta, tabela/títulos/blocos de endereço preservados, 11.587 → 11.327 chars (−2,2%).
+- **Fila**: item movido para `done` com os campos exigidos; `pending` 729, `done` 36.
+
+Observação relevante: enquanto eu revisava, o laço auditor reabriu 2 chunks de `19490625 - Coleção Jikan Volume 1` e os colocou no topo de `pending` (com `nota_auditor`), de modo que `pending[0]` mudou no meio da execução. Fechei o item que eu já havia processado por completo (ele continuava em `pending`, na posição 2) e encerrei sem tocar nos itens do auditor — eles serão pegos pela próxima invocação.

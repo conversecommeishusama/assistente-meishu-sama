@@ -1,0 +1,5 @@
+Chunk 3/5 de "19501120 - Guia Rápido da Igreja Messiânica Mundial" revisado e aceito.
+
+- **Ajustes**: períodos arrastados quebrados, cadeias de "Além disso"/"Portanto" variadas, calques desfeitos ("Nesse ponto, trata-se de…", "o fato de surgir febre significa…"); citações (fala dos terceiros, reclamação a Deus, resposta de Deus e do solo) mantidas literais.
+- **Verificação**: 11 parágrafos → 11; 11.729 → 11.506 chars (−1,9%); todas as 27 citações entre aspas presentes; números/nomes conferidos (8,7 bilhões de ienes, 62–63 milhões de koku, 83 milhões, dō/ri/mi/chi/shinnyō/kubi).
+- **Fila**: item removido por (livro, chunk), não por `pop(0)`; `pending` 616 → 615, `done` 149 → 150.

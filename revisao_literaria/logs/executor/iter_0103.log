@@ -1,0 +1,7 @@
+Chunk 2 de *Coleção Jikan Volume 4 — Histórias de Milagres* revisado e fila atualizada.
+
+- **Revisado**: `revisao_literaria/chunks/19491005 - Coleção Jikan Volume 4 Histórias de Milagres/002_out.txt` (5859 → 5861 chars, 18 linhas em ambos, estrutura de linhas em branco idêntica, todos os números/datas conferidos por contagem — 100.000/10.000/5.000/45.000/55.000/1934/1935/1938 etc. batem exatamente).
+- **Ajustes**: período de abertura sobre a casa do visconde partido em duas frases; desengasgo das construções da narrativa do leilão; repetição intencional dos parágrafos 3–4 ("Como acima…") preservada, assim como cabeçalho de seção, nota de rodapé e citações entre aspas.
+- **Fila**: item movido de `pending` para `done` com os campos exatos (`livro`, `arquivo`, `chunk`, `total_chunks`, `at`, `nota`).
+
+Uma observação: a fila mudou no disco durante o trabalho (o auditor reabriu itens — passou de 695 para 698 pendentes antes da minha escrita). Removi por `(livro, chunk)`, não por índice, então o item certo saiu; mas o próximo `pending[0]` agora é um item reaberto com `nota_auditor` (chunk 0 de *Jikan Volume 5 — Diálogos Jikan*, quebra de parágrafo final perdida), a ser tratado na próxima invocação.

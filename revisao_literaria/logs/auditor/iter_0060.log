@@ -1,0 +1,11 @@
+**19500420 – Coleção Jikan Vol. 10, Método de Saúde por Revelação Divina — reprovado, 3 chunks reabertos.**
+
+Leitura integral dos 10 chunks (351 linhas, 213 não vazias), original × montado, parágrafo a parágrafo. Costuras íntegras: concatenação dos `_src` bate byte a byte com a fonte e a dos `_out` com o montado; contagem de linhas não vazias idêntica chunk a chunk (22/12/10/15/26/26/19/31/29/23). Dígitos, 67 citações entre aspas e nomes próprios idênticos nos dois sentidos. Os 8 achados das rodadas anteriores (chunks 3, 4, 5, 6, 7) foram conferidos um a um e **todos estão corrigidos**.
+
+Achados novos:
+
+- **chunk 0** (fidelidade) — 4º parágrafo do Prefácio perde três operadores: `apenas` em "Fomos iludidos **apenas** pela beleza de sua aparência externa", a marca de lista aberta em "**métodos como** usar gelo..." (virou lista fechada depois de dois-pontos) e o restritivo em "Todos esses são **apenas** paliativos" → "Tudo isso é paliativo". No mesmo parágrafo os outros dois operadores foram preservados — supressão inconsistente. É a classe recorrente do livro, e o chunk 0 nunca tinha sido varrido por ela.
+- **chunk 6** (padrão literário) — o parágrafo da insônia/possessão (817 chars) voltou com similaridade 0,996: só um "e" e três vírgulas mudaram. Mantém "insônia" 3× e "espírito de raposa" 3× em duas frases.
+- **chunk 7** (padrão literário) — chunk menos trabalhado do livro (15 de 31 linhas ≥0,98). O maior parágrafo do livro (1580 chars, 0,980) só recebeu as três correções pontuais da rodada anterior: continua com "em direção ao cérebro/cerebelo" 3×, as nominalizações-calque "movimento de concentração/de invasão" e duas frases seguidas abrindo com "em geral, dentro de". Secundário: o caso da virilha (672 chars, 0,994) com particípio solto sem concordância.
+
+Filas atualizadas: os 3 chunks no topo de `QUEUE_EXECUTOR.json` com `nota_auditor` (e as entradas antigas removidas de `done`), `montado` zerado no `_manifest.json`, item removido de `QUEUE_AUDITOR.json` sem ir para `done`. Chunks 6 e 7 ficam agora com 2 entradas de histórico — uma terceira reprovação neles vai para `ESCALACOES_MANUAIS.jsonl`.

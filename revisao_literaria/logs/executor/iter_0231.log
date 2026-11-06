@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`19500130 - Coleção Jikan Volume 12` — chunk 4/9** (reaberto pelo auditor por padrão literário)
+
+- Reprocessei o chunk inteiro, não só os pontos citados na nota. O P24, que voltara byte a byte igual à fonte, e os grandes P18/P14/P16/P22 foram efetivamente reescritos.
+- Calques desfeitos: "nessa ocasião" (その際), "em quantas vezes … diminuiriam", "a regra impede que seja de outra forma", "precisando encontrar algum trabalho". Corrigido o agramatical "deve-se esforçar-se" e o predicado "faz não diminuir, mas até aumentar" → "em vez de diminuir a tuberculose e a pneumonia, acaba por aumentá-las". Desfeitos o eco *gastaram/desgastaram* e o fecho nominal sem verbo.
+- Não quebrei parágrafos (o auditor sugeriu como opcional): todos os outros 8 chunks do livro preservam contagem 1:1, e mantive isso.
+- Verificações: 24 parágrafos → 24; multiconjunto de dígitos idêntico; citações entre aspas idênticas; similaridade média dos longos 0,905 → 0,34 (faixa dos demais chunks: 0,54–0,73), nenhum acima de 0,93; tamanho 11.818 → 11.021 chars (−6,7%, compressão de redundância vocabular, sem perda de proposição — conferi item a item nos parágrafos que mais encolheram).
+
+Fila: item movido por chave `(livro, chunk)`, não `pop(0)` — a fila havia mudado no disco durante o trabalho (o auditor reabriu outros itens); estado final 632 pending / 133 done.

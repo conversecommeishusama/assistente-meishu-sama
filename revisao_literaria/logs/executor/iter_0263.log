@@ -1,0 +1,6 @@
+Item processado: `19501030 - Memórias da Perseguição Religiosa`, chunk 6 (reaberto pelo auditor).
+
+- Restaurei as **44 citações entre aspas** exatamente como em `006_src.txt` (verificado programaticamente: `qs == qo`, 44/44 idênticas, contagem por parágrafo batendo 8/6/13/8/4/0/5).
+- Fora das aspas: `os senhores a descartam` → `vocês a descartam` (e `para que vocês acreditem`); passiva `para que os depoimentos ... fossem extraídos` → ativa `para extrair os depoimentos da outra parte`.
+- Prosa narrativa entre as falas mantida (não revertida), conforme a nota do auditor. 9 parágrafos, nenhum `senhor` fora de aspas, nomes/valores/datas conferidos um a um, arquivo termina em `Após o Retorno para Casa\n\n`. 11.654 → 11.390 chars.
+- Fila atualizada removendo por `(livro, chunk)`: pending 615 → 614, done 150 → 151.

@@ -1,0 +1,14 @@
+**19491230 — Coleção Jikan Volume 9: O Caminho para a Luz** — reprovado, escalado para correção manual.
+
+Leitura integral e comparada dos 6 chunks (262 linhas, 133 parágrafos), parágrafo a parágrafo.
+
+**Integridade e fidelidade — tudo batendo:** concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; 133 parágrafos e 129 linhas em branco em ambos; multiconjunto de dígitos idêntico; 214 aspas e o conteúdo de todas as citações idênticos caractere a caractere (diff vazio nos dois sentidos); nomes próprios idênticos (a única diferença, `Deus` 22→21, é elipse já endossada em "E está extremamente próximo"); as 24 interrogativas e as 3 exclamativas preservadas linha a linha; as 9 diferenças de negação são reformulação equivalente (`em nada`, `nada`, `nem`, `tampouco`, `sem`, `ninguém`, `impossível`); quantificadores/aproximadores varridos nos dois sentidos e todos com equivalente pleno; nenhum parágrafo abaixo de 0,921 do tamanho da fonte. Os 44 idênticos são material protegido (título, cabeçalhos, rótulos `Eu:`/`Chefe:`, blocos de fala, estrofes, `---`, colofão). Os 13 achados das rodadas anteriores foram conferidos um a um e estão **todos corrigidos**.
+
+**Dois achados novos, ambos de nuance acrescentada sem justificativa literária:**
+
+- **chunk 2** (`L112`) — fonte "fui **chamado** à presença do chefe da seção Tokkō" → montado "fui **levado** à presença". Acrescenta um escolta que a fonte não enuncia, numa cena de coerção policial; é o único edit do parágrafo (sim. 0,987), logo não é subproduto de reescrita. Mesma classe já reaberta no chunk 3 ("ele me chamou" → "mandou me chamar").
+- **chunk 4** — dois intensificadores acrescentados: "O Japão de então **bem** poderia ser chamado de um yakuza nacional" e "Isso mostra **bem** o clima da época".
+
+O chunk 2 já esgotou as duas reaberturas permitidas, então não foi reaberto: gravei em `ESCALACOES_MANUAIS.jsonl` e tirei o livro de `pending` sem passar por `done`. O chunk 4 ainda teria uma reabertura disponível, mas registrei na mesma escalação — reabri-lo sozinho faria `montar_livro.py` remontar e devolver o livro à auditoria com o chunk 2 intacto, gerando uma segunda escalação do mesmo achado. `QUEUE_EXECUTOR.json` e `_manifest.json` ficaram intocados.
+
+Observação: entre a leitura e a escrita da fila, outro processo enfileirou o Volume 12; removi o item por `livro`, não por índice, e o Volume 12 permanece em `pending`.

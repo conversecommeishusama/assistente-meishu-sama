@@ -1,0 +1,22 @@
+Auditoria de `pending[0]` concluída — **19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual**. Livro **reprovado**; 4 chunks reabertos.
+
+**Integridade estrutural (tudo OK)**
+- Concatenação dos 14 `_src.txt` bate byte a byte com o original; a dos 14 `_out.txt` bate byte a byte com o montado.
+- 439 linhas não vazias e 341 vazias em ambos; contagem de parágrafos idêntica chunk a chunk. Nenhum parágrafo perdido, duplicado ou fundido nas costuras (a regressão do `\n` final do chunk 2 veio corrigida).
+- Multiconjunto de dígitos idêntico; 180 aspas em ambos, citações idênticas caractere a caractere; nomes, datas, endereços e assinaturas intactos.
+- Os 9 achados das rodadas anteriores foram conferidos um a um e **todos corrigidos** (cunhada, "dinheiro", "não foi que… conseguiu", "cultuar Kannon", aposto das impurezas, "o Caminho", "de trigo", "entrega total ao indivíduo", padrão literário dos chunks 2/10/11).
+
+**Achado que reprova: inflação de quantificador/intensificador sem apoio na fonte** — classe sistemática, 8 ocorrências em 4 chunks, e a mesma que já foi reaberta duas vezes neste livro (chunk 4: "a olhos vistos"; chunk 11: "o Caminho"):
+
+| chunk | fonte | montado |
+|---|---|---|
+| 7 | "as infelicidades do mundo" | "do mundo **inteiro**" |
+| 8 | "vários remédios" / "várias dúvidas" / "um ano" / "estranha e diferente" | "remédios **de toda sorte**" / "dúvidas **de toda ordem**" / "um ano **inteiro**" / "diferente **de tudo**" |
+| 9 | "muitas injeções" / "aqueles que sofrem de várias maneiras" | "**inúmeras** injeções" / "**todos os** que sofrem, **dos modos mais diversos**" |
+| 12 | "a febre… continuou por um mês" | "durou um mês **inteiro**" |
+
+Em texto de depoimento, amplificar quantificador altera o que a testemunha afirma. Nas notas de reabertura marquei explicitamente o que **não** deve ser mexido (a prosa está boa) e listei as equivalências legítimas ("no corpo inteiro" ← "em todo o corpo", "a família inteira" ← "toda a família" etc.) para o executor não reverter demais.
+
+**Não considerei achado**, e registro para transparência: em `[005#1]` a revisão trocou "pela volta do Ministro" por "pelo seu regresso" — "seu" é tecnicamente ambíguo com "meu marido" como sujeito, mas o único referente semanticamente possível é o Ministro e não há concorrente na mesma frase; muito mais fraco que os casos dos chunks 4 e 6. O chunk 5 já tem 2 reaberturas, e não vou escalar para correção manual por isso. Igualmente aceitei a anáfora "os erros **dessas teorias**" no lugar do segundo "Galeno" (`[000#23]`), referente inequívoco na frase anterior.
+
+**Filas atualizadas**: chunks 7, 8, 9 e 12 inseridos no início de `pending` do executor (com `nota_auditor`), entradas antigas removidas de `done` (51 restantes, sem duplicata deste livro), 1 linha em cada `NNN_historico_auditoria.jsonl` (9 fica com 2 entradas — próxima falha nele vai para escalação manual), `"montado": false` e `montado_em` removido no `_manifest.json`, e o livro tirado de `pending` do auditor sem ir para `done`. Verifiquei depois da escrita que a gravação concorrente do executor (19490825 chunk 5 → done) sobreviveu e nada se perdeu na fila.

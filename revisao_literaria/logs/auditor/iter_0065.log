@@ -1,0 +1,15 @@
+**19501030 — Memórias da Perseguição Religiosa: reprovado. Chunks 6 e 7 reabertos.**
+
+Leitura integral e comparada dos 12 chunks (291 linhas, 148 não vazias), parágrafo a parágrafo.
+
+**Integridade estrutural — íntegra.** Concatenação dos 12 `_src` bate byte a byte com o original e a dos 12 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (19/11/8/8/13/27/9/8/10/11/9/15); todos fecham em `\n\n` (o 11 em `\n`, como a fonte); 144 linhas em branco em ambos. Multiconjunto de dígitos idêntico; nomes próprios, datas, valores, unidades (ken, chō, tsubo, tatames) e o colofão intactos. Nenhum parágrafo perdido, duplicado ou fundido nas emendas.
+
+**Achado que reprova — chunk 6 (`Relato por Escrito — Kane Kyuhei`):** 35 das 44 citações entre aspas foram reescritas por dentro, violando a regra categórica do protocolo. A classe dominante é a troca do tratamento `Você`/`vocês` das falas policiais por `O senhor`/`os senhores`. Isso não é só forma: o próprio livro documenta que a única melhora do interrogatório em relação ao passado foi o registro linguístico da polícia (chunk 1: *"não usavam mais 'kisama' nem 'omae'"*), de modo que elevar esse registro altera o objeto do relato. Há também substituições lexicais dentro das aspas (`"dinheiro ou presentes"` → `"dinheiro nem presente"`, `"o que a outra parte diz"` → `"o que ela diz"`, `"investigamos o Ueda"` → `"nós o investigamos"`). Fora das aspas, dois itens da mesma classe: `"vocês a descartam"` → `"os senhores a descartam"` no discurso indireto livre, e a passiva `"para que os depoimentos da outra parte fossem extraídos"`, que apaga o agente da fonte.
+
+É regressão isolada: os chunks 0-5 e 8-11 mantiveram todas as citações caractere a caractere.
+
+**Achado menor — chunk 7:** uma citação alterada, `"Você não precisava responder"` → `"O senhor não precisava responder"` na fala do advogado. A fonte alterna os dois tratamentos dentro da mesma fala; a harmonização é do executor, não do documento.
+
+O resto do livro tem ganho literário real e uniforme — períodos arrastados quebrados, calques desfeitos, cadeias de conectivos eliminadas, corrupções da fonte reparadas sem perda (`"são salv;"` → `"são salvas;"`; a frase truncada sobre Inoue no chunk 4). As notas de reabertura marcam explicitamente o que **não** deve ser revertido, para o executor não desfazer trabalho correto.
+
+Fila atualizada: chunks 6 e 7 no topo de `QUEUE_EXECUTOR.json` (entradas antigas em `done` removidas, sem duplicata), histórico de auditoria gravado nos dois, `montado` zerado no `_manifest.json`, e o livro removido de `pending` no `QUEUE_AUDITOR.json` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

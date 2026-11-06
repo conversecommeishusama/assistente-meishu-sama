@@ -1,0 +1,16 @@
+Item processado e fila atualizada.
+
+**`19491223 - Montanha e Água`, chunk 8/12** (reaberto pelo auditor):
+
+- **Achado específico (poema 907)**: `quase todos os que andam pela rua` → `a maior parte dos que andam pela rua` — devolvido o quantificador de maioria da fonte.
+- **Varredura da classe inteira no chunk** (o auditor pediu explicitamente, não só o poema citado) — mais 5 deslocamentos encontrados e corrigidos:
+  - 825: `lá fora tudo é silêncio` → `silencioso é o aspecto lá fora` (universal "tudo" inexistente na fonte)
+  - 824: `tal a quietude que` → `a quietude em que` (intensificador de grau introduzido)
+  - 836: `me tome o pressentimento` → `sinta o pressentimento`
+  - 863: `De quando em quando` → `Intermitentemente` (aproximador de frequência mais fraco que a fonte)
+  - 870: `lavando algo` → `lavando coisas`
+  - 897: `que agradável é o jardim` → `é agradável, o jardim` (exclamativa intensificadora)
+- Verificação: inventário de quantificadores/intensificadores/aproximadores da fonte × revisado agora bate 1 para 1; 131 linhas não vazias em ambos; 12.065 → 11.998 chars.
+- O restante do chunk, já aprovado pelo auditor, não foi tocado.
+
+Fila: 658 pending / 107 done (item movido por `(livro, chunk)`, não por índice, para não colidir com o auditor).

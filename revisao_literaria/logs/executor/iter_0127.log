@@ -1,0 +1,4 @@
+Chunk 001 de "19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon" (1/7) revisado e aceito.
+
+- Verificações: 27/27 parágrafos, estrutura de linhas em branco idêntica, 8 citações bíblicas e o cabeçalho "IV. O Cristianismo e Paulo" byte-a-byte iguais, todos os números/referências preservados, 11.199 → 10.833 chars (−3,3%).
+- Fila: item movido para `done` (removido por chave `livro`+`chunk`, não por `pop(0)`); pending 682 → 681, done 83 → 84.

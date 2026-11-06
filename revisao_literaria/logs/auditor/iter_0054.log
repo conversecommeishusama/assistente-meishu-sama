@@ -1,0 +1,14 @@
+**19500921 — Até a Construção do Paraíso Terrestre: reaberto (chunks 0 e 1).**
+
+Leitura integral e comparada dos 2 chunks (75 linhas, 41 parágrafos não vazios: título + 10 poemas + 18 parágrafos de prosa + colofão), parágrafo a parágrafo.
+
+Estrutura/costuras — tudo íntegro: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; parágrafos idênticos chunk a chunk (25/25 e 16/16); 34 linhas em branco em ambos; multiconjunto de dígitos idêntico; as 22 aspas e todas as citações idênticas caractere a caractere (norito, "asas de grou", "avançar cortando as ondas", "Ah, a vontade de Deus…", todos os nomes de edifícios); nomes próprios sem perda (as 3 diferenças — Gōra L33, Monte Sōun L51 — são anáfora com referente inequívoco na oração anterior). Nenhum parágrafo perdido, duplicado ou fundido.
+
+Dois achados reais, ambos de alteração da força da asserção:
+
+- **chunk 0** — o modalizador caiu: fonte "*pode-se dizer que* construir algo assim é quase sem precedentes no Japão" → montado "empreendimento semelhante **é** quase sem precedentes no Japão". A hipótese virou afirmação categórica sobre o ineditismo da própria obra (mesma classe já reaberta no Vol. 7). Secundário: "Havia **algumas** casas de veraneio alugadas" → "Aqui e ali havia casas de veraneio de aluguel".
+- **chunk 1** — qualificador acrescentado: fonte "rochas gigantes se acumulam em camadas, **sem fundo**" → montado "**sem fundo à vista**", o que converte a afirmação absoluta numa observação sobre o alcance do olho. Secundário: "pedras estranhas, com cores e formas interessantes" → "pedras de formas estranhas, de cores e feitios interessantes" criou eco *formas/feitios*.
+
+As duas notas exigem revarredura da classe inteira no chunk, não só dos pontos citados, e listam explicitamente o que já foi endossado para não ser re-litigado ("cerca de vinte a trinta shaku" → "de vinte a trinta shaku"; queda de "ainda" em "ainda se passaram apenas seis anos"; "realmente de uma beleza cênica" → "de rara beleza cênica"; os 4 poemas devolvidos idênticos, que são versos curtos já bem-formados). Fora isso, o ganho literário é real e uniforme (similaridade de 0,35 a 0,93, sem chunk em branco).
+
+Filas atualizadas: chunks 0 e 1 no topo de `QUEUE_EXECUTOR.json` (entradas antigas removidas de `done`, 134→132), histórico de auditoria criado nos dois chunks (1ª reabertura), `_manifest.json` com `montado: false` e sem `montado_em`, e o livro removido de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

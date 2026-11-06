@@ -1,0 +1,5 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 8/14 (sem `nota_auditor`).
+- **Saída:** `revisao_literaria/chunks/.../008_out.txt` — 5989 → 5956 chars (99,4%), 14 linhas em ambos, estrutura de título/autor e linhas em branco preservada; nomes, datas e números idênticos (checagem por tokens: só diferenças de início de frase).
+- **Fila:** item removido por `(livro, chunk)` e movido para `done` com os campos padrão. Pending 689 → 688, done 76 → 77.

@@ -1,0 +1,5 @@
+Chunk 9/12 de **19501030 - Memórias da Perseguição Religiosa** revisado e aceito.
+
+- `009_out.txt` gravado: 11 parágrafos (idêntico à fonte), 11.366 → 10.937 chars (0,96×), sem alteração de nomes, números, citações ou títulos de seção (`Prisão`, `Bobagens`).
+- Principais ajustes: quebra de períodos arrastados (cela de detenção, crítica ao punitivismo), remoção de calques (“como se isso tocasse os sentimentos” → “ferisse a sensibilidade”; “o resultado é que serei inocentado” → “o resultado será minha inocentação”) e de repetição de conectivo e da duplicação “violação dos direitos humanos” no mesmo período.
+- Fila atualizada por match `(livro, chunk)`, sem `pop(0)`: pending 622 → 621, done 143 → 144.

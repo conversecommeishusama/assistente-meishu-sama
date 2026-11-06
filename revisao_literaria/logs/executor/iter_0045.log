@@ -1,0 +1,6 @@
+Chunk 5 de *Coleção Jikan Volume 1* (item reaberto pelo auditor) reprocessado e movido para `done`; fila com 730 pendentes.
+
+- Achado principal corrigido: `"médicos e remédios"` → `"gastara tanto dinheiro com médicos"`, preservando o item lexical "dinheiro" da fonte.
+- Achado secundário: aspas restauradas em `"fulano se curou, sicrano também se curou"`.
+- Revarredura da classe inteira (conforme pedido na nota): ~20 substituições lexicais indevidas revertidas (ministrou→realizou o Johrei, velavam→observavam, fato→situação, transmitir→ensinar, afligia→preocupava, "fizesse chuva ou vento"→"em dias de chuva e de vento") e itens omitidos restaurados ("também", "apenas", "antes", "para trás", "se eu tivesse fé", "devido à experiência anterior").
+- Verificação: 31 parágrafos em fonte e revisado, 28 aspas em ambos, 11.936 → 11.847 chars.

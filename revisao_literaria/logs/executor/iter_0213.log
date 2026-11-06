@@ -1,0 +1,13 @@
+Item processado e encerrado.
+
+**`19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 3/6** — item reaberto pelo auditor com `nota_auditor`. Apliquei exatamente as três correções pedidas, sem tocar no resto (que o auditor havia conferido parágrafo a parágrafo e endossado):
+
+1. **"certo de que não suportaria outra tortura"** → **"pensando que não suportaria outra tortura"** — devolve o modalizador de suposição da fonte, na frase que explica por que ele carimbou um depoimento falso.
+2. **"mandou me chamar"** → **"chamou-me"** — elimina o intermediário que a fonte não menciona.
+3. **"limitei-me a comentar com os que estavam ao redor"** → **"disse então aos que estavam ao redor"** — remove o operador de restrição inexistente na fonte.
+
+Varri o chunk inteiro atrás da mesma classe de bug (modalizadores/operadores epistêmicos acrescidos), já que corrigir só o ponto sinalizado é falha recorrente aqui — não encontrei outros casos.
+
+Integridade: 24 parágrafos na fonte = 24 no revisado, conjunto de dígitos idêntico, 62 aspas em ambos, arquivo continua terminando em `\n\n`. 11.455 → 11.354 chars.
+
+Fila atualizada removendo por `(livro, chunk)` — não por `pop(0)` — para não colidir com o auditor: **pending 639, done 126**.

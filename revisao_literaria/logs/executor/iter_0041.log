@@ -1,0 +1,6 @@
+Chunk 13/14 de *Coleção Jikan Volume 1 — Tuberculose e Terapia Espiritual* revisado e aceito.
+
+- **Ajustes principais:** particípio solto corrigido ("Trabalhando exposta ao vento frio, suas mãos e pés congelaram" → "teve as mãos e os pés congelados"); repetições mecânicas removidas (*carreguei/carregá-lo*, *história/história*); concordância de gênero da narradora (Sakashita Koto) em "esqueci-me de mim mesma"; períodos arrastados quebrados em cadência mais fluida.
+- **Preservado literalmente:** cabeçalho do depoimento, divisórias `---`, todas as citações entre aspas (inclusive a onomatopeia "gatsu"/"gō" e a fala do presidente), datas, números, unidades (kan/gô) e o colofão da obra.
+- **Integridade:** 24 linhas não-vazias na fonte e na saída; 6335 → 6301 chars.
+- **Fila:** item movido para `done` (33 done, 732 pending) em `revisao_literaria/QUEUE_EXECUTOR.json`, com os campos exatos do schema.

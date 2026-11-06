@@ -1,0 +1,62 @@
+{
+  "arquivo": "19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+  "fonte": "livros_publicacao_pt_revisado/19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+  "chars_fonte": 94657,
+  "total_chunks": 10,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 9724,
+      "paragrafos": 11
+    },
+    {
+      "idx": 1,
+      "chars": 10571,
+      "paragrafos": 4
+    },
+    {
+      "idx": 2,
+      "chars": 5330,
+      "paragrafos": 3
+    },
+    {
+      "idx": 3,
+      "chars": 7521,
+      "paragrafos": 4
+    },
+    {
+      "idx": 4,
+      "chars": 11128,
+      "paragrafos": 13
+    },
+    {
+      "idx": 5,
+      "chars": 7927,
+      "paragrafos": 10
+    },
+    {
+      "idx": 6,
+      "chars": 10540,
+      "paragrafos": 4
+    },
+    {
+      "idx": 7,
+      "chars": 11683,
+      "paragrafos": 14
+    },
+    {
+      "idx": 8,
+      "chars": 11528,
+      "paragrafos": 17
+    },
+    {
+      "idx": 9,
+      "chars": 8705,
+      "paragrafos": 9
+    }
+  ],
+  "montado": true,
+  "chars_final": 92736,
+  "ratio_tamanho": 0.98,
+  "montado_em": "2026-08-15T13:54:13.187777"
+}

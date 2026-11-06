@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação de Voz Meishu-Sama</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.15rem; }
+  .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .badge-kiki { background: #d9ead3; color: #1e5631; }
+  .badge-atual { background: #f9e0e0; color: #8b1a1a; }
+  audio { width: 100%; margin-top: 8px; }
+  p { color: #555; font-size: 0.9rem; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; }
+</style>
+</head>
+<body>
+  <h1>🎧 Comparação — Voz Meishu-Sama</h1>
+  <p class="trecho">"Isto é de Sotatsu, do período Ashikaga, anterior à escola Kano."</p>
+
+  <div class="card">
+    <h2>1. Nova amostra (kikivoice) <span class="badge badge-kiki">TESTE</span></h2>
+    <audio controls src="/static/validacao_audio/teste_voz_kikivoice.mp3"></audio>
+    <p>Voz clonada que você fez no kikivoice — limpa, em português.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Amostra atual (remaster 1952) <span class="badge badge-atual">EM USO</span></h2>
+    <audio controls src="/static/validacao_audio/teste_voz_atual.mp3"></audio>
+    <p>Voz atual em produção (remasterizada do áudio histórico de 1952).</p>
+  </div>
+
+  <p style="text-align:center; margin-top:24px; color:#888;">Ouça os dois e me diga qual prefere. 🔊</p>
+</body>
+</html>

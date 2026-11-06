@@ -1,0 +1,11 @@
+Auditoria do `pending[0]` concluída — **19491005 – Coleção Jikan Volume 4, Histórias de Milagres** foi **reaberto** (2 chunks), não aprovado.
+
+**Verificações estruturais (todas limpas):** concatenação dos 14 `_src` bate byte a byte com o original e a dos 14 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (17/20/13/20/23/22/27/23/10/20/21/18/13/16); todos fecham em `\n\n`; multiconjunto de algarismos idêntico; 143 trechos entre aspas idênticos nos dois sentidos. Nenhum parágrafo perdido, duplicado ou fundido nas costuras.
+
+**Achados das rodadas anteriores conferidos e corrigidos:** chunk 4 (L120/L121 refeitos — “não aguentando mais” e o eco entrado/entraram e dizer/diziam sumiram), chunk 7 (aspas da onomatopeia `"batida"` devolvidas, parágrafos do condutor e da carroça enfim recadenciados), chunk 8 (as três aberturas “No entanto” variadas, repetição palestra/centro de ensino desfeita), chunk 12 (“por volta das 7 horas da manhã” em algarismos de volta).
+
+**Por que reabri:**
+- **Chunk 10 — fidelidade/glossário:** em L275 a fonte diz “diante da infinita **grande** compaixão de Kannon-Sama” e o montado grafou “infinita compaixão”. “Grande compaixão” é expressão fixa do volume (4 ocorrências na fonte, 3 no montado). Nota pede só a devolução do epíteto; o resto do chunk está aprovado.
+- **Chunk 9 — padrão literário em 2 parágrafos:** L261 (698 caracteres, sim. 0,973, praticamente intocado) fecha com três mais-que-perfeitos empilhados e “recusado… recusei” na mesma frase; L266 arrasta 43 palavras antes do verbo principal e repete alegria/alegria e acendesse/acendeu. A primeira metade do chunk, essa sim bem trabalhada, está marcada como “não refazer”.
+
+Fila do executor com os dois chunks no topo, históricos de auditoria gravados (1ª reabertura de cada), `montado` zerado no `_manifest.json` e o livro retirado de `pending` no `QUEUE_AUDITOR.json` sem entrar em `done`. O `montar_livro.py` já enfileirou o Volume 8 para a próxima invocação.

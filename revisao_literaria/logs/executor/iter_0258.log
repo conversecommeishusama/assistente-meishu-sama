@@ -1,0 +1,5 @@
+Chunk 2 de *Guia Rápido da Igreja Messiânica Mundial* revisado e aceito.
+
+- **Revisão**: fluidez e cadência (períodos longos quebrados, conectivos repetidos eliminados), calques da tradução removidos ("várias coisas" em série, "Isso porque" encadeado), precisão lexical mantendo o registro coloquial-irônico do original.
+- **Integridade verificada**: 12 parágrafos → 12; 11 citações entre aspas idênticas caractere a caractere (incluindo as duas falas longas do "mestre"); os dois títulos de seção preservados como linhas próprias; 11.594 → 11.545 chars (−0,4%).
+- **Fila**: item removido de `pending` por par (livro, chunk) — não por `pop(0)` — e registrado em `done` com os campos padrão. Restam 616 pendentes / 149 concluídos.

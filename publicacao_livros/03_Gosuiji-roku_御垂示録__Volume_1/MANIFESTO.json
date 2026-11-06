@@ -1,0 +1,69 @@
+{
+  "volume": 3,
+  "titulo": "Gosuiji-roku (御垂示録) — Volume 1",
+  "nota": "Falas orais (série numerada por edição)",
+  "paginas_estimadas": 388.9,
+  "caracteres_totais": 768392,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19510915 - Gosuiji-roku nº 1.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510915 - Gosuiji-roku nº 1.txt",
+      "caracteres": 52225
+    },
+    {
+      "arquivo_destino": "02_19511010 - Gosuiji-roku nº 2.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511010 - Gosuiji-roku nº 2.txt",
+      "caracteres": 84069
+    },
+    {
+      "arquivo_destino": "03_19511125 - Gosuiji-roku nº 3.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511125 - Gosuiji-roku nº 3.txt",
+      "caracteres": 89684
+    },
+    {
+      "arquivo_destino": "04_19511210 - Gosuiji-roku nº 4.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511210 - Gosuiji-roku nº 4.txt",
+      "caracteres": 107535
+    },
+    {
+      "arquivo_destino": "05_19511225 - Gosuiji-roku nº 5.txt",
+      "fonte": "livros_publicacao_pt_revisado/19511225 - Gosuiji-roku nº 5.txt",
+      "caracteres": 88440
+    },
+    {
+      "arquivo_destino": "06_19520125 - Gosuiji-roku nº 6.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520125 - Gosuiji-roku nº 6.txt",
+      "caracteres": 64684
+    },
+    {
+      "arquivo_destino": "07_19520310 - Gosuiji-roku nº 7.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520310 - Gosuiji-roku nº 7.txt",
+      "caracteres": 42287
+    },
+    {
+      "arquivo_destino": "08_19520425 - Gosuiji-roku nº 8.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520425 - Gosuiji-roku nº 8.txt",
+      "caracteres": 87482
+    },
+    {
+      "arquivo_destino": "09_19520515 - Gosuiji-roku nº 9.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520515 - Gosuiji-roku nº 9.txt",
+      "caracteres": 35790
+    },
+    {
+      "arquivo_destino": "10_19520615 - Gosuiji-roku nº 10.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520615 - Gosuiji-roku nº 10.txt",
+      "caracteres": 36874
+    },
+    {
+      "arquivo_destino": "11_19520715 - Gosuiji-roku nº 11.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520715 - Gosuiji-roku nº 11.txt",
+      "caracteres": 34496
+    },
+    {
+      "arquivo_destino": "12_19520825 - Gosuiji-roku nº 12.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520825 - Gosuiji-roku nº 12.txt",
+      "caracteres": 44826
+    }
+  ]
+}

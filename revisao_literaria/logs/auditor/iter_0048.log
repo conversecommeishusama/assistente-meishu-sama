@@ -1,0 +1,16 @@
+All queue state is consistent: the Volume 12 item left `pending` without going to `done` (the Volume 9 item that arrived mid-audit is untouched), chunks 2 and 5 are at the head of the executor queue, their old `done` entries were removed, and the manifest is back to `montado: false` so `montar_livro.py` remonta o livro assim que o executor reprocessar.
+
+**19500130 — Coleção Jikan Volume 12, Coletânea de Narrativas Jikan: reaberto (chunks 2 e 5).**
+
+Leitura integral e comparada dos 9 chunks (502 linhas, 266 linhas de conteúdo), parágrafo a parágrafo.
+
+**Estrutura e costuras — íntegras.** Concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (32/31/31/23/24/29/25/28/14); 502 linhas e 237 linhas em branco em ambos; todos os chunks fecham em `\n\n` (o 8 em `\n`, como a fonte). Nenhum parágrafo perdido, duplicado ou fundido; nenhuma linha abaixo de 0,85 do tamanho da fonte e nenhuma perda de frase (contagem de sentenças igual em todos os pares).
+
+**Fidelidade — sem achado grave.** Multiconjunto de dígitos idêntico; as 109 citações entre aspas idênticas caractere a caractere (diff vazio nos dois sentidos, 218 aspas em ambos); nomes, datas, eras, unidades, títulos de seção, linhas de crédito de periódico, (Notas) de glossário e colofão idênticos. A queda de "Plano Divino" 4→2 é a corrupção da fonte `segundo o Plano Divino segundo o Plano Divino segundo o Plano Divino` reparada. Varredura da classe recorrente (quantificador/intensificador/modalizador) refeita nos dois sentidos: as ~50 ausências têm compensação explícita ("certamente"→"fatalmente"/"por certo", "várias"→"de toda ordem", "deve"→"há de"/"é preciso", "muito poucos"→"pouquíssimos") e as adições de totalidade são idiomáticas ("ao todo", "de nada adianta", "toda sorte").
+
+**Dois achados reais, um em cada chunk reaberto:**
+
+- **chunk 2** — o fecho do artigo "Super-Religião" voltou idêntico à fonte e continua arrastado ("estamos, através da execução constante, obtendo resultados surpreendentes"); "tenta mantê-lo" virou "tenta mantê-lo **a todo custo**", intensificador que não está na fonte; e "cultivar **grandemente** o espírito de tolerância" (calque de 大いに) ficou intocado. É o chunk mais leve do livro (similaridade 0,858, contra 0,31–0,69 dos demais).
+- **chunk 5** — deslocamento de grau: a fonte diz "é **muito semelhante** à terapia sintomática da medicina" e o montado diz "**em nada diferentes** ... da terapia sintomática" — semelhança forte virou identidade.
+
+Nas duas notas pedi explicitamente a varredura da classe inteira no chunk, não só a correção pontual. Era a 1ª auditoria destes chunks (nenhum `historico_auditoria.jsonl` existia); as entradas foram criadas agora.

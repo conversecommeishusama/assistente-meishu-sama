@@ -1,0 +1,92 @@
+{
+  "arquivo": "19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+  "fonte": "livros_publicacao_pt_revisado/19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+  "chars_fonte": 184513,
+  "total_chunks": 16,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11350,
+      "paragrafos": 24
+    },
+    {
+      "idx": 1,
+      "chars": 11404,
+      "paragrafos": 26
+    },
+    {
+      "idx": 2,
+      "chars": 11885,
+      "paragrafos": 35
+    },
+    {
+      "idx": 3,
+      "chars": 11025,
+      "paragrafos": 18
+    },
+    {
+      "idx": 4,
+      "chars": 11587,
+      "paragrafos": 26
+    },
+    {
+      "idx": 5,
+      "chars": 11147,
+      "paragrafos": 21
+    },
+    {
+      "idx": 6,
+      "chars": 11712,
+      "paragrafos": 31
+    },
+    {
+      "idx": 7,
+      "chars": 11779,
+      "paragrafos": 33
+    },
+    {
+      "idx": 8,
+      "chars": 11427,
+      "paragrafos": 43
+    },
+    {
+      "idx": 9,
+      "chars": 11670,
+      "paragrafos": 24
+    },
+    {
+      "idx": 10,
+      "chars": 11691,
+      "paragrafos": 32
+    },
+    {
+      "idx": 11,
+      "chars": 11451,
+      "paragrafos": 23
+    },
+    {
+      "idx": 12,
+      "chars": 11951,
+      "paragrafos": 19
+    },
+    {
+      "idx": 13,
+      "chars": 11934,
+      "paragrafos": 24
+    },
+    {
+      "idx": 14,
+      "chars": 11501,
+      "paragrafos": 20
+    },
+    {
+      "idx": 15,
+      "chars": 10999,
+      "paragrafos": 22
+    }
+  ],
+  "montado": true,
+  "chars_final": 180621,
+  "ratio_tamanho": 0.979,
+  "montado_em": "2026-08-14T19:18:22.586828"
+}

@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491223 - Montanha e Água`, chunk 3/12 (coletânea de tankas nº 291–392) — sem `nota_auditor`.
+- **Revisão:** inversões poéticas para cadência (“Incide o sol pálido”, “Nem se movem os ramos pendentes do salgueiro”), remoção de calques (“se transparentam” → “transparecem”), correção de concordância em cor composta (“vermelha-clara” → “vermelho-clara”), quebra de repetição mecânica (agitação/agitação → bulício/agitação).
+- **Verificações:** numeração 291–392 idêntica (102 itens), todos os 14 blocos de data `(Era Showa …)` inalterados, títulos de seção e linha de nota preservados byte a byte, contagem de linhas 146=146, nomes próprios (Lênin, Shaka, Nichiren, Musashino, Oyamada, Matsuyama, Tsukuba, Kanto, Fuji) sem alteração. Tamanho: 11.573 → 11.480 chars.
+- **Fila:** item removido por `(livro, chunk)` — não `pop(0)` — e gravado em `done` com os campos padrão. Observação: entre a leitura inicial e a gravação, o auditor reabriu 2 itens (`done` 98→96, `pending` 667→669); a atualização foi feita sobre o estado recarregado, logo `pending` 668 / `done` 97 agora.

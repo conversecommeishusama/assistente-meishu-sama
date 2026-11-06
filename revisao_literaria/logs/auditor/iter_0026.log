@@ -1,0 +1,13 @@
+**19491005 – Coleção Jikan Volume 4 (Histórias de Milagres): reaberto** (chunks 7 e 12 devolvidos ao executor).
+
+Leitura integral e comparada dos 14 chunks (363 linhas, 263 parágrafos), original × montado, parágrafo a parágrafo.
+
+**Integridade estrutural — ok.** Concatenação dos 14 `_src` bate byte a byte com o original e a dos 14 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (6/8/4/6/9/12/15/12/3/1/10/6/6/3); 263 linhas não vazias e 101 vazias em ambos; nenhum parágrafo perdido, duplicado ou fundido nas costuras. Nomes, datas, endereços de depoentes, unidades (kan/sun/cho/monme/ri), cabeçalhos, bylines, estrofe de hino e colofão preservados.
+
+**Achados que motivaram a reabertura:**
+
+1. **Chunk 7 — padrão literário não atingido.** É o chunk menos trabalhado do livro (similaridade média 0,931, contra 0,68–0,89 dos demais chunks narrativos), e os parágrafos **maiores** são os menos tocados. Dois voltaram byte a byte idênticos à fonte: o do condutor (778 caracteres), que contém `entregou a mim e ao criminoso ao chefe da estação` — sintaticamente truncado e ambíguo —, "estação" 4×, "chefe da estação" 2× em frases vizinhas e `deixei de acusá-lo com maior severidade`; e o seguinte (299 caracteres), com o calque `por causa das minhas palavras, pareceu sair sem problemas`. Os outros parágrafos longos (906, 1.238, 1.065, 828, 604, 592 caracteres) receberam só retoque cosmético (0,95–0,99). A nota pede revarredura do chunk inteiro, não apenas dos três pontos citados.
+2. **Chunk 7 — aspas de onomatopeia removidas.** Fonte: `ouviu um "batida"`; montado: `ouviu uma batida`. O volume preserva as demais onomatopeias entre aspas (`"batam"`, `"baque"`, `"estalo"`), e a contagem de trechos entre aspas caiu de 143 para 142.
+3. **Chunk 12 — notação de horário.** `por volta das 7 horas da manhã` virou `por volta das sete da manhã`; é a única diferença no multiconjunto de algarismos, e todo o resto do livro grafa horário em algarismos (`10 horas`, `6h32`, `4h30`, `10h05`). Nota marcada como correção pontual, com o restante do chunk aprovado.
+
+Fila do executor com os dois chunks no topo, entradas antigas removidas do `done`, histórico de auditoria criado para ambos (1ª reabertura), `montado` zerado no manifesto e o livro retirado do `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

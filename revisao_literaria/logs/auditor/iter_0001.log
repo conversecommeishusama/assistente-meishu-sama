@@ -1,0 +1,20 @@
+**Auditoria — `19350000 - Curso Kannon (1~7)` (1.728 linhas, 14 chunks): reprovado, 4 chunks reabertos.**
+
+Li o original e o montado inteiros, lado a lado, do cabeçalho até `(15 de setembro de 1935 – Era Showa 10)`.
+
+**Fidelidade (conteúdo)** — sem achado. Nomes, datas, números, ordem narrativa, citações entre aspas, listas (Oito Reis Dragões, Nove/Oito Qualificações, quadros de correspondência com espaçamento ideográfico) e a linha de título estão preservados. As divisões de parágrafo introduzidas no bloco dos deuses dragões (orig. 929/935 → mont. 929–945) são quebra de parágrafo excessivo, permitida pelo item 4 do protocolo. Um artefato do original (`"unif, "○丶" (ponto central), "unificar"`, linha 210) foi limpo — correção de corrupção, não corte de conteúdo.
+
+**Padrão literário** — atingido. Ganho real e consistente: calques desfeitos, cadência variada, conectivos repetidos eliminados, sem rebuscamento.
+
+**Achado que reprovou o livro — 4 costuras de chunk fundidas.** Os arquivos `006/010/011/012_out.txt` terminam com um único `\n`, enquanto os `_src.txt` correspondentes terminam com `\n\n`. Como `montar_livro.py` faz `"".join(partes)`, a linha em branco separadora sumiu no livro montado, colando dois parágrafos distintos em cada emenda:
+
+| montado | original | parágrafos fundidos |
+|---|---|---|
+| 1072–1073 | 1062 / 1064 | "Ela está quase nua…" + "Certa vez, durante o Johrei de uma senhora…" |
+| 1492–1493 | 1483 / 1485 | "Nessas escolas, a educação do caráter…" + "Os esportes serão incentivados…" |
+| 1594–1595 | 1586 / 1588 | "Senão, não funciona…" + "A doença começa quando nuvens espirituais…" |
+| 1705–1706 | 1698 / 1700 | "A medicina ocidental, por ser um obstáculo…" + "O inchaço que se forma e cresce…" |
+
+Contagem de pares linha-cheia/linha-cheia: 195 no original contra 199 no montado — exatamente as 4 perdas, nenhuma outra.
+
+**Ações tomadas:** chunks 6, 10, 11 e 12 inseridos no topo de `QUEUE_EXECUTOR.json` (748 → 752 pendentes) com `nota_auditor` apontando o trecho exato e a instrução de regravar o `_out.txt` preservando o texto já revisado e apenas restaurando o `\n\n` final; criados os 4 `NNN_historico_auditoria.jsonl` (1ª reabertura de cada, nenhum histórico prévio); `_manifest.json` com `montado: false` e `montado_em` removido, para remontagem automática; item retirado de `pending` em `QUEUE_AUDITOR.json` sem ir para `done`.

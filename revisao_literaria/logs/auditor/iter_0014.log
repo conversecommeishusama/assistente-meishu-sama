@@ -1,0 +1,16 @@
+Auditoria de `pending[0]` concluída — **19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual** foi **reprovado** e dois chunks voltaram para o executor.
+
+**Leitura feita:** 780 linhas / 439 parágrafos do original contra o montado, integralmente, mais os 14 pares `_src`/`_out`.
+
+**Fidelidade — íntegra:**
+- Concatenação dos 14 `_src.txt` bate byte a byte com o original; a dos 14 `_out.txt` bate byte a byte com o montado. Nenhum parágrafo perdido, duplicado ou fundido nas costuras (posições de linha em branco idênticas: 342/342).
+- Multiconjunto de numerais idêntico; 89 citações entre aspas em ambos, com só duas diferenças, ambas legítimas ("É só um resfriado" maiusculizado ao virar início de período; ponto final movido para fora em "Eu renasci").
+- Achados das rodadas anteriores conferidos um a um e todos corrigidos: chunk 3 (abertura do parágrafo acadêmico), 4 ("minha cunhada", "futuro da minha filha", "à criança"), 5 ("gastara tanto com médicos e tanto dinheiro", aspas de "fulano se curou…", ênfase afirmativa preservada), 6 ("passei a cultuar Kannon"), 9 (aposto das impurezas restaurado), 10 (as 3 correções de fidelidade mantidas e o depoimento de Higuchi Yoko enfim revisado: similaridade caiu de 0,984 para 0,77), 11 ("voltou a me recomendar", sem "o Caminho"), 13 ("fardo de palha de trigo").
+
+**Motivo da reprovação — padrão literário em dois chunks:**
+- **Chunk 2** (núcleo expositivo do autor): 8 dos 15 parágrafos longos com similaridade >0,97, dois idênticos byte a byte — contra 0,51–0,69 nos chunks 0, 6, 7, 8, 9, 10 e 12 do mesmo livro. Ficaram intactos "Acredito…/Creio…" em frases vizinhas, "certamente de cerca de 80%", e um parágrafo de 850 caracteres que repete três vezes "por todos os meios possíveis".
+- **Chunk 11**: três parágrafos de corpo idênticos à fonte, incluindo "grande compassiva e misericordiosa" (adjetivo modificando adjetivo), "confiava…/confiei" no mesmo período, "saudável" duas vezes em frases seguidas, e o calque "Meu corpo importante definhava" sem tratamento.
+
+Julguei aceitáveis e **não** reabri: as amplificações leves "do mundo inteiro" (chunk 7) e "tamanha eficácia" (chunk 9) — são coesão anafórica, não fato novo; e a remoção do fragmento duplicado truncado da fonte no chunk 12 ("Minha irmã mais nova, uma estudante do quinto ano…"), que é reparo de duplicação mecânica.
+
+Fila atualizada: chunks 2 e 11 no início de `QUEUE_EXECUTOR.json` com nota de evidência e ordem de revarrer o chunk inteiro; entradas antigas desses chunks removidas de `done` (49→47); históricos de auditoria gravados (chunk 2: 1ª entrada; chunk 11: 2ª); `montado` zerado no `_manifest.json`; livro retirado de `pending` em `QUEUE_AUDITOR.json` sem ir para `done`. Restou em `pending` o Volume 2, enfileirado pelo `montar_livro.py` durante esta invocação.

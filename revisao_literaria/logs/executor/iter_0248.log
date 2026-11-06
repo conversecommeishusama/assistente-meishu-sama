@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19501030 - Memórias da Perseguição Religiosa`, chunk 10/12 (sem `nota_auditor`).
+
+- Revisado `010_src.txt` → `010_out.txt` (9 parágrafos em ambos; 11.340 → 10.958 chars, −3,4%).
+- Ajustes principais: fusão de frases picadas na sequência das câmeras/jornalistas em períodos com cadência; calques desfeitos ("achei a maneira da busca muito estranha" → "estranhei aquela maneira de buscar"; "disputa de inteligência" → "disputa de esperteza"); desmanche de cadeias de "Além disso"/"No entanto" na Conclusão.
+- Verificado: multiconjunto de dígitos idêntico; 24 aspas em ambos, citações preservadas caractere a caractere; nomes próprios (Shizuoka, Inoue, Okada, Mainichi, Jūkoku, Mizuguchi, Sengokuhara, Sō Shūgetsu, Oomoto, Tokkō, ken, chō) sem alteração — duas retomadas de "Inoue"/"Meishu-Sama" viraram pronome com referente inequívoco, sem perda de sentido; cabeçalho "Conclusão" e terminação em `\n\n` preservados.
+- `QUEUE_EXECUTOR.json`: item removido por `(livro, chunk)` (não `pop(0)`) e acrescentado em `done` com os campos exatos. Fila agora com 622 `pending` / 143 `done` — o auditor reabriu itens entre a minha leitura e a escrita, e o novo `pending[0]` é um reaberto (`19491230 - Coleção Jikan Volume 9`, chunk 1) com `nota_auditor`, para a próxima invocação.

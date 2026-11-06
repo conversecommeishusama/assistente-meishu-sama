@@ -1,0 +1,9 @@
+Item processado.
+
+**`19480701 - Coletânea de Salmos`, chunk 1/3** — era uma reabertura do auditor com `nota_auditor` (3 achados pontuais). Corrigi exatamente as três linhas citadas, sem tocar no resto do chunk:
+
+- **Poema 194** — `imerecido existir simplesmente sem enfermidades` → `imerecido simplesmente existir sem enfermidades`: o advérbio voltou a modificar *existir* (o mero existir), não *sem enfermidades*.
+- **Poema 185** — `ainda que imerecida` → `ainda que imerecido`: o modificador voltou a referir-se ao autor/ao fato de estar saudável, não à graça. A reformulação condicional aprovada pelo auditor ficou.
+- **Poema 195** — `Poderei louvar…` → `Será que se pode louvar…`: forma impessoal do fonte restaurada, sem o sujeito de 1ª pessoa.
+
+Tamanho: 11.368 → 11.232 chars, 153 linhas em ambos. Fila atualizada: `pending` 745 → 744, `done` 20 → 21.

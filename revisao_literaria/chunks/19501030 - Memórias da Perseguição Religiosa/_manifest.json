@@ -1,0 +1,72 @@
+{
+  "arquivo": "19501030 - Memórias da Perseguição Religiosa.txt",
+  "fonte": "livros_publicacao_pt_revisado/19501030 - Memórias da Perseguição Religiosa.txt",
+  "chars_fonte": 134594,
+  "total_chunks": 12,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11911,
+      "paragrafos": 19
+    },
+    {
+      "idx": 1,
+      "chars": 10488,
+      "paragrafos": 11
+    },
+    {
+      "idx": 2,
+      "chars": 9802,
+      "paragrafos": 8
+    },
+    {
+      "idx": 3,
+      "chars": 11572,
+      "paragrafos": 8
+    },
+    {
+      "idx": 4,
+      "chars": 11311,
+      "paragrafos": 13
+    },
+    {
+      "idx": 5,
+      "chars": 10874,
+      "paragrafos": 27
+    },
+    {
+      "idx": 6,
+      "chars": 11654,
+      "paragrafos": 9
+    },
+    {
+      "idx": 7,
+      "chars": 10973,
+      "paragrafos": 8
+    },
+    {
+      "idx": 8,
+      "chars": 11084,
+      "paragrafos": 10
+    },
+    {
+      "idx": 9,
+      "chars": 11366,
+      "paragrafos": 11
+    },
+    {
+      "idx": 10,
+      "chars": 11340,
+      "paragrafos": 9
+    },
+    {
+      "idx": 11,
+      "chars": 12219,
+      "paragrafos": 11
+    }
+  ],
+  "montado": true,
+  "chars_final": 131741,
+  "ratio_tamanho": 0.979,
+  "montado_em": "2026-08-16T10:13:59.427713"
+}

@@ -1,0 +1,6 @@
+Item processado e encerrado.
+
+- **Chunk**: `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 9/14 (sem `nota_auditor`).
+- **Revisão**: 20 parágrafos reescritos por fluidez/precisão lexical — períodos arrastados quebrados, calques da tradução substituídos, duplicação `Kannon-Sama-Sama` corrigida.
+- **Verificação**: 20→20 parágrafos, todas as citações entre aspas idênticas ao fonte, todos os números idênticos, nomes próprios com contagem igual (peguei uma ocorrência de "Sr. Hayashi" que eu havia trocado por pronome e restaurei), terminação `\n\n` preservada; 14.366 → 14.153 chars.
+- **Fila**: item movido para `done` com os campos exatos; `pending` agora com 687.

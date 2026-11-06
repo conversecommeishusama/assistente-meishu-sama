@@ -1,0 +1,5 @@
+Chunk 3 de *Coleção Jikan Vol. 10 — Método de Saúde por Revelação Divina* revisado e aceito.
+
+- **Ajustes:** períodos arrastados desempacotados (abertura de "A Comédia da Nutrição", trecho dos suplementos, Fletcherismo), calques/genéricos trocados ("não é nada além de" → "não passa de"; "gradualmente" repetido → "aos poucos"/"foi diminuindo"), redundância enxuta nos parágrafos dos digestivos e da fábrica de máquinas.
+- **Integridade:** 21 linhas em src e out, blanks nas mesmas posições; números (1899, 1930, 1600, nº 36, 19/11/1949, Showa 24) e todas as 5 citações entre aspas idênticos; 7796 → 7519 chars (−3,6%).
+- **Fila:** item removido por `(livro, chunk)`, não por `pop(0)` — pending 640 → 639, done 125 → 126.

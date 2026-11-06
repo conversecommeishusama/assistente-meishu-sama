@@ -1,0 +1,14 @@
+{
+  "volume": 29,
+  "titulo": "Tijotengoku",
+  "nota": "Volume individual",
+  "paginas_estimadas": 190.3,
+  "caracteres_totais": 364651,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_Tijotengoku.txt",
+      "fonte": "livros_publicacao_pt_revisado/Tijotengoku.txt",
+      "caracteres": 364651
+    }
+  ]
+}

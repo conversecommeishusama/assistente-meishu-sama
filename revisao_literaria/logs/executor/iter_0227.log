@@ -1,0 +1,7 @@
+Item processado e encerrado.
+
+- **Item**: `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 3 (reaberto pelo auditor com `nota_auditor`).
+- **Correção pedida**: `Pouco mais de um mês depois dessa visita` → `Mais de um mês depois dessa visita` — o "pouco" acrescentava um limite superior que a fonte não dá.
+- **Classe varrida no chunk inteiro**: o inventário de aproximadores/quantificadores (`mais de`, `cerca de`, `aproximadamente`, `quase`, `apenas`, `só`) ficou idêntico entre `003_src.txt` e `003_out.txt`; nenhuma outra ocorrência acrescentada ou removida.
+- **Integridade**: 24 parágrafos em ambos, todos os dígitos batem, as 31 citações entre aspas idênticas caractere a caractere, arquivo continua terminando em `\n\n`. Nada do que o auditor endossou foi revertido.
+- Fila atualizada removendo por `(livro, chunk)`: pending 631 → 630, done 134 → 135.

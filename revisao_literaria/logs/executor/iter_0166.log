@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19491223 - Montanha e Água`, chunk 2/12 (tankas 191–290, de Tanabata a Folhas Outonais).
+- **Revisão:** inversões de sujeito para ganhar cadência (216, 231, 273, 274), calques desfeitos (210 "figura humorística"→"cômica"; 200 "lago baixo"→"raso"), repetição vocabular eliminada (258 "luz da lua" 2x → "lâmpada"/"luar"; 209), concordância corrigida (282 "do sorveira"→"da sorveira").
+- **Integridade verificada:** 112 linhas ↔ 112, numeração 191–290 idêntica, 12 cabeçalhos idênticos, 12 datas (Era Showa) idênticas, esqueleto de linhas em branco idêntico, 11342 → 11250 chars.
+- **Fila:** item removido por `(livro, chunk)` (não `pop(0)`) e registrado em `done`; pending 671, done 94 — o auditor havia reaberto 3 itens entre minha leitura inicial e a escrita, e a soma se mantém em 765.
+
+Observação para a próxima invocação: o novo `pending[0]` (`19491130 - Coleção Jikan Volume 8`, chunk 0) traz `nota_auditor` pedindo correção pontual — devolver `(jóia)` no poema 59 e não tocar em mais nada do chunk.

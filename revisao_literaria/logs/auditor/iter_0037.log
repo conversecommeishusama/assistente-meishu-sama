@@ -1,0 +1,13 @@
+Auditoria concluída — **19491130 · Coleção Jikan Volume 8 · Poemas Recentes de Akemaro**: reprovado, 4 chunks reabertos.
+
+**Verificações estruturais (limpas):** concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; 486 poemas presentes e em sequência 1-486 nos dois arquivos; multiconjunto de dígitos idêntico; 12 citações entre aspas idênticas caractere a caractere; 64 cabeçalhos/notas idênticos linha a linha (só os 2 parágrafos do prefácio, que são prosa, foram reescritos). As 11 linhas a mais no montado são exatamente as 11 linhas em que a fonte trazia dois poemas colados (31/32, 88/89, 98/99, 157/158, 194/195, 272/273, 408/409, 415/416, 450/451, 469/470, 474/475) — separação legítima, reparo de corrupção da fonte. 337 dos 486 poemas foram trabalhados; nenhum chunk passou em branco.
+
+**Achados (leitura poema a poema, original × montado):**
+- **chunk 0** — poema 59: `(jóia)` → `(joia)`; o termo fixo aparece 4× na fonte e o montado trocou só esta, deixando o livro com duas grafias.
+- **chunk 2** — 168 `diversos erros` → `muitos erros`; 235 `muitos santos` → `tantos santos`.
+- **chunk 3** — 318 perde o termo `folhas outonais` (4 ocorrências na fonte, 3 no montado); 309 `desagradável` → `doloroso`; 300 `lastimável` → `lamentável` (única das 13 trocada, colada ao 301 que manteve); 264 acrescenta `tudo purificou`; 241 vira aposição `o espírito de Deus`, afirmando identidade que a fonte não afirma; 283 `ainda inexistente` → `até então inexistente`.
+- **chunk 4** — 393 dissolve o termo doutrinário `grande passagem` em `grande e árdua passagem` (é o título da própria seção) e acrescenta `tão`; 341 `Saibam` → `Sabei`.
+
+Chunks 1 e 5 aprovados. Os achados das rodadas anteriores (204 "de bela vista", 338 "simplesmente", 332 "se regozijam e se alegram", 455 "estação das chuvas", retrabalho de 320-403) foram conferidos um a um e estão corrigidos.
+
+Fila atualizada: os 4 chunks entraram no início de `QUEUE_EXECUTOR.json` com `nota_auditor` detalhada, entradas antigas removidas de `done`, históricos anexados (chunk 0 e 3 na 1ª reabertura; 2 e 4 na 2ª — nenhum atingiu o limite de escalação), `_manifest.json` com `montado: false`, e o livro saiu de `pending` no `QUEUE_AUDITOR.json` sem ir para `done`.

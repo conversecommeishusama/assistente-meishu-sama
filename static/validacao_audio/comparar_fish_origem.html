@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação — Fish Audio: amostra 30s (1952) vs kikivoice</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.05rem; }
+  .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .b-1952 { background: #e8e0d4; color: #6b4a1a; }
+  .b-kiki { background: #d4e6f9; color: #1a4f8b; }
+  audio { width: 100%; margin-top: 8px; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; font-size: 0.9rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+  .nota { background: #fdf6e3; border-left: 4px solid #d4a72c; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 Comparação — origem da extração da voz</h1>
+  <p class="trecho">"Eu também gosto de obras de arte, mas as antigas é que são as verdadeiramente novas..."</p>
+
+  <div class="nota">
+    <strong>Mesmo texto</strong> (L43, ~26s), mesma tecnologia (Fish Audio S2.1, 0.75x),
+    mas a voz foi extraída de <strong>duas amostras diferentes</strong>:
+    o áudio original de 1952 (30s, em japonês) vs a sua clonagem kikivoice (em português).
+  </div>
+
+  <div class="card">
+    <h2>🎙️ Extração do áudio de 1952 <span class="badge b-1952">amostra_meishu_30s.wav</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_amostra30s_L43_speed0.75.mp3"></audio>
+    <p class="desc">Fish clonou direto do áudio japonês de 1952 (30s, com ruído) e sintetizou em português.</p>
+  </div>
+
+  <div class="card">
+    <h2>🐟 Extração do kikivoice <span class="badge b-kiki">amostra_meishu_kikivoice.wav</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_longo_L43_speed0.75.mp3"></audio>
+    <p class="desc">Fish clonou da sua amostra kikivoice (já em português, limpa) — a versão que você aprovou.</p>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">Qual soa mais com a voz do Meishu-Sama? A extração direta de 1952 ou a via kikivoice?</p>
+</body>
+</html>

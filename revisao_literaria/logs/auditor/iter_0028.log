@@ -1,0 +1,11 @@
+**Item processado: 19491005 – Coleção Jikan Volume 4 *Histórias de Milagres*** → **reaberto** (chunks 4 e 8), não aprovado.
+
+Leitura integral e comparada dos 14 chunks (363 linhas, 263 parágrafos), original × montado.
+
+**Fidelidade: sem achados.** Multiconjunto de dígitos idêntico; as 143 citações entre aspas idênticas caractere a caractere (nos dois sentidos); nomes, endereços de depoentes, unidades (kan/sun/cho/monme/bu/ri), datas e colofão intactos. Costuras: concatenação dos 14 `_src` bate byte a byte com o original e a dos 14 `_out` com o montado; contagem de linhas idêntica chunk a chunk — nenhum parágrafo perdido, duplicado ou fundido. Os dois achados da rodada anterior foram conferidos e estão corrigidos: chunk 12 (`por volta das 7 horas da manhã` devolvido em algarismo) e chunk 7 (aspas da onomatopeia `"batida"` restauradas, e o chunk revarrido de fato — similaridade caiu de 0,931 para 0,718, com o parágrafo do condutor e o calque `por causa das minhas palavras` refeitos).
+
+**Padrão literário: 2 chunks abaixo do exigido.**
+- **Chunk 8** (0,928, o menos trabalhado; demais chunks narrativos entre 0,68 e 0,89): três dos oito parágrafos ainda abrem com "No entanto" — o caso que o próprio protocolo nomeia; e o P5 (765 caracteres, praticamente intocado) repete literalmente "ouvir a palestra… ir ao centro de ensino" e "visitei o centro de ensino… ouvi a palestra" em frases vizinhas. Pedido de revarredura integral.
+- **Chunk 4**: dois parágrafos longos do relato do incêndio voltaram intocados (0,980 e 0,992), com eco "entrado/entraram" e "diziam/dizer" no mesmo período e o calque de sujeito obscuro "não aguentando mais". Pedido de refazer o relato inteiro (L23–L27), não só os dois pontos.
+
+Fila atualizada: os dois chunks entraram no início de `QUEUE_EXECUTOR.json` com nota de evidência concreta, as entradas antigas em `done` foram removidas, `_manifest.json` teve `montado` zerado (remontagem automática após o reprocessamento) e o livro saiu de `pending` no `QUEUE_AUDITOR.json` sem ir para `done`. Histórico registrado em `004_`/`008_historico_auditoria.jsonl` (1ª reabertura de cada).

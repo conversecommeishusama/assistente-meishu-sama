@@ -1,0 +1,9 @@
+Item `pending[0]` processado e encerrado.
+
+**Achado do auditor (poema 455, chunk 5 de "Coleção Jikan Vol. 8"):** a revisão anterior tinha trocado "A chuva da estação das chuvas cai suavemente" por "A chuva da estação cai mansamente", apagando o nome da estação (tsuyu) — única ocorrência do termo no livro.
+
+**Correção aplicada:** inverti o período em vez de suprimir o termo — "Cai mansa a chuva da estação das chuvas, o verde do jardim divino se adensa, e tudo é de uma grande serenidade." Resolve a cacofonia chuva/chuvas pela ordem sintática, preservando o nome da estação, a data e a numeração.
+
+**Verificações:** numeração 408–486 íntegra (os +5 números "extras" no revisado são poemas que a fonte trazia fundidos na mesma linha e que a revisão anterior separou — melhoria mantida, conforme pedido do auditor), 83 marcações de data idênticas, tamanho 11.716 → 11.577 chars (−1,2%). Restante do chunk não foi mexido.
+
+Fila: `pending` 670 → 669, `done` 95 → 96.

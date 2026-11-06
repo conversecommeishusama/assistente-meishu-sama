@@ -1,0 +1,11 @@
+Chunk 1 de *Explicação da Agricultura Natural* processado e aceito.
+
+Um ponto que vale registrar: o `001_out.txt` **já existia em disco** (escrito 03:35), mas o item continuava em `pending` — uma invocação anterior escreveu o chunk e morreu antes de atualizar a fila. Em vez de reprocessar, li o arquivo inteiro e validei contra o `_src.txt`:
+
+- 10 parágrafos → 10 parágrafos, mesma estrutura de linhas
+- números idênticos (1 shaku, 150 perfilhos, 15.000 grãos)
+- títulos de seção preservados (Pragas / Danos Causados pelo Vento e pela Água / O Problema dos Parasitas)
+- 11.297 → 10.908 caracteres (−3,4%)
+- revisão de boa qualidade: passivas pesadas desfeitas, repetição de conectivo cortada, redundâncias vocabulares enxutas — sem mudança de sentido
+
+A fila foi atualizada removendo o item por `(livro, chunk)`, não por `pop(0)`, e agora está em 612 pending / 153 done.

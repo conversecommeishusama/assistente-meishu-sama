@@ -1,0 +1,5 @@
+Chunk 4 de "19350000 - Curso Kannon (1~7)" revisado e aceito.
+
+- `004_out.txt` gravado: 47 parágrafos (idêntico à fonte), 11.694 → 11.673 chars, todos os números/datas conferidos idênticos.
+- Blocos estruturais preservados verbatim: diagramas (Amaterasu/guardiões, Governantes do Mundo Divino, 3—2—1 観世音, Ochi—Oto, 立正安国), data `(5 de agosto de 1935 – Era Showa 10)` e os títulos "Quarta Aula" / cabeçalhos de seção.
+- Fila atualizada: `pending` 759 → 758, `done` 4 → 5, com os campos exatos exigidos (`livro`, `arquivo`, `chunk`, `total_chunks`, `at`, `nota`).

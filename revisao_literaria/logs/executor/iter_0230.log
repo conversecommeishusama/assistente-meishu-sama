@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**Chunk 7 de "Coleção Jikan Volume 10 — Método de Saúde por Revelação Divina"** (item reaberto pelo auditor):
+
+- **Achados da nota atendidos**: restaurados "em geral, dentro de uma semana", "sobretudo entre os seis e os dez anos, faixa em que…" e "várias especialidades" (no lugar de "inúmeras"); a correção "dois ou três dias" foi mantida.
+- **Varredura da classe inteira** (modalizador/atenuador/quantificador suprimido ou inflado) no chunk todo — encontrei mais 6 casos que o auditor não citou: "afirmo-o" → "posso afirmá-lo"; "Essa mesma experiência mostra que, quando se aplicam…" → "Ainda segundo essa mesma experiência, se forem aplicadas…"; "a cura completa se dá" → "é possível a cura completa"; "tenha atribuído a doença à transmissão" → "tenha considerado a transmissão"; "que sararia naturalmente" → "que deveria sarar naturalmente"; "aquilo se repetiu por duas semanas" → "aquilo continuou por duas semanas".
+- **Os 2 parágrafos que voltaram byte a byte idênticos** foram reescritos: o das sequelas (enumeração sem "como", fecho invertido para não terminar em construção arrastada) e o da encefalite da medula espinhal (quebrado em três períodos, com as 3 ocorrências de "encefalite japonesa" reduzidas a 1 por anáfora — "naquela"/"ali").
+- **Checagem**: 54 linhas em fonte e revisado, números e citações entre aspas idênticos, 11.683 → 11.526 chars.
+
+Uma observação sobre a fila: entre a leitura inicial e a gravação, o auditor reabriu 2 outros itens (pending 630→632). Como a remoção foi feita por `(livro, chunk)` e não por `pop(0)`, nada se perdeu — estado final 631 pending / 134 done.

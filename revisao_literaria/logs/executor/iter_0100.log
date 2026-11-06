@@ -1,0 +1,5 @@
+Chunk 8/9 de **19490830 - Coleção Jikan Volume 5 Diálogos Jikan** revisado e aceito.
+
+- `008_out.txt` gravado (13.347 → 13.112 chars, −1,8%).
+- Estrutura idêntica ao fonte: 64 linhas, mesmas posições de linha em branco, colofão/notas/títulos de seção intactos; citações do calígrafo e do Ofudesaki mantidas verbatim; números e nomes próprios conferidos 1:1 (única divergência, "Oomoto" 10→9, é anáfora "dessa religião" numa repetição mecânica em frases contíguas).
+- Fila atualizada por chave (livro, chunk), não por `pop(0)`: pending 698→697, done 67→68.

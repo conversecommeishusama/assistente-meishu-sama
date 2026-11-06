@@ -1,0 +1,11 @@
+Item processado e fila atualizada (pending 651 → 650, done 115).
+
+**Chunk revisado:** `19500130 - Coleção Jikan Volume 12`, chunk 1/9 → `001_out.txt`
+- 11.899 → 11.725 chars (ratio 0,985), 32 blocos → 32 blocos, 23 citações idênticas, nenhum número/nome próprio perdido (checado por diff de tokens).
+- Ajustes: períodos arrastados quebrados, conectivos repetidos variados, calques suavizados; correções gramaticais "Ao meu ver" → "A meu ver" e "a maioria são fracassados" → "a maioria é de fracassados".
+
+**Bug de junção encontrado e corrigido** (fora do chunk, mas dentro de `revisao_literaria/`): `montar_livro.py` concatena os `_out.txt` cru, então um chunk que termina com um único `\n` funde o último parágrafo com o primeiro do chunk seguinte. Varri todos os 112 `_out.txt`: dois casos em meio de livro —
+- `Vol. 12/000_out.txt` (predecessor imediato deste chunk) — corrigido antes de qualquer montagem;
+- `Vol. 9 Caminho para a Luz/002_out.txt` — este **já estava montado com dois parágrafos fundidos** na linha 124 do arquivo literário; corrigi o chunk e removi `montado` do `_manifest.json` para o laço remontar o livro.
+
+Os outros 11 casos de `\n` único são chunks finais de livro, onde não há fusão.

@@ -1,0 +1,6 @@
+Item processado e encerrado.
+
+- **Chunk**: `19500420 - Coleção Jikan Volume 10…` chunk 9/10 (último do livro) → `009_out.txt` gravado.
+- **Ajustes**: repetição mecânica de "interpreta isso ao contrário" (3×) variada, períodos arrastados reordenados, calques da tradução suavizados; cabeçalho do artigo "Meu Método de Saúde", linha de publicação (Hikari nº 43) e colofão preservados intactos.
+- **Integridade**: 36 linhas / 23 parágrafos em fonte e revisado; conjunto de números idêntico (67 anos, 70/30, 43, 1950, 72 páginas etc.); 8705 → 8536 chars (−1,9%).
+- **Fila**: item removido por (livro, chunk) e anexado a `done` com os campos exatos — pending 634 → 633, done 131 → 132.

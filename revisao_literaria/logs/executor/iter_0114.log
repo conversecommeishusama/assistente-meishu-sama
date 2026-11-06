@@ -1,0 +1,6 @@
+Item processado.
+
+- **Chunk**: `19490830 - Coleção Jikan Volume 5 Diálogos Jikan`, chunk 7/9 — reaberto pelo auditor com `nota_auditor` (fidelidade numérica).
+- **Correção**: "Deveriam aprender esse estado em que uma só palavra exprime o sentido de mil." → "...em que uma única palavra exprime o sentido de milhares de palavras." Restaura o quantificador indeterminado da fonte e o núcleo elíptico, alinhando-se à fórmula "milhares de palavras" já preservada no chunk 6.
+- **Varredura da classe**: comparei todos os numerais/quantificadores entre `007_src.txt` e `007_out.txt` (1912-1926, quatrocentos–setecentos anos, mil e duzentos, quatro ienes e cinquenta sen etc.) — nenhuma outra divergência; nomes próprios idênticos; 21 parágrafos em ambos; 11541 → 11308 chars.
+- **Fila**: item movido de `pending` para `done` por `(livro, chunk)`, sem `pop(0)`. Agora 690 pending / 75 done.

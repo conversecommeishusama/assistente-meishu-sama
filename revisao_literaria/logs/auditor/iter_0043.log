@@ -1,0 +1,17 @@
+**19491223 - Montanha e Água — reprovado, 5 chunks reabertos (1ª reabertura).**
+
+Leitura integral e comparada dos 12 chunks (1.987 linhas, 1.493 linhas de texto, 1.239 tanka + prefácio + 130 cabeçalhos), poema a poema.
+
+**Integridade estrutural: perfeita.** Concatenação dos 12 `_src` bate byte a byte com o original e a dos 12 `_out` com o montado; contagem de linhas idêntica chunk a chunk (93/120/112/117/130/123/125/136/131/121/128/157); todos fecham em `\n\n` (o 11 em `\n`, como a fonte); numeração 1-1239 completa nos dois arquivos; multiconjunto de dígitos e de números idêntico; as 19 citações entre aspas idênticas caractere a caractere; datas de era Showa, notas de rodapé e o fecho "Total de 1239 poemas registrados" intactos.
+
+**Achado 1 — fidelidade (chunks 2, 5, 8, 11):** quantificador de maioria inflado para quase-totalidade, em 4 poemas:
+- 284 `a maior parte são cores das árvores` → `quase tudo são cores`
+- 525 `em sua maior parte se tinge de púrpura` → `quase toda tingida de púrpura`
+- 907 `a maioria das pessoas que andam pela rua` → `quase todos os que andam pela rua`
+- 1141 `a maioria das pessoas se reúne` → `quase todos se reúnem`
+
+O próprio executor tratou o caso equivalente corretamente no 449 (`a maioria` → `a maior parte`), o que mostra que é deslize, não critério. A varredura completa da classe (apenas/só/muito/todo/cerca de/vários/completamente/realmente) está limpa no resto: todas as demais trocas são reformulação equivalente.
+
+**Achado 2 — padrão literário (chunk 10):** o chunk passou praticamente em branco — 97 de 128 linhas idênticas (76%), contra 21-54% nos outros onze. A nota do executor lista só 5 poemas trabalhados em 99. E os intocados não são material já bom: 1057, 1060, 1062, 1064, 1068, 1072, 1080, 1098, 1107 (repetição mecânica "brotos brotam"), 1113 e 1115 continuam arrastados ou com calque evidente.
+
+Fila do executor: 5 itens inseridos no topo com evidência concreta, entradas antigas de `done` removidas (108→103), `_manifest.json` com `montado: false`, históricos de auditoria criados, livro retirado de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

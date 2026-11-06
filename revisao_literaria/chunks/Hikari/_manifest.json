@@ -1,0 +1,212 @@
+{
+  "arquivo": "Hikari.txt",
+  "fonte": "livros_publicacao_pt_revisado/Hikari.txt",
+  "chars_fonte": 463779,
+  "total_chunks": 40,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11997,
+      "paragrafos": 42
+    },
+    {
+      "idx": 1,
+      "chars": 11937,
+      "paragrafos": 30
+    },
+    {
+      "idx": 2,
+      "chars": 11885,
+      "paragrafos": 26
+    },
+    {
+      "idx": 3,
+      "chars": 11837,
+      "paragrafos": 27
+    },
+    {
+      "idx": 4,
+      "chars": 11976,
+      "paragrafos": 32
+    },
+    {
+      "idx": 5,
+      "chars": 11618,
+      "paragrafos": 27
+    },
+    {
+      "idx": 6,
+      "chars": 11254,
+      "paragrafos": 32
+    },
+    {
+      "idx": 7,
+      "chars": 11447,
+      "paragrafos": 33
+    },
+    {
+      "idx": 8,
+      "chars": 11946,
+      "paragrafos": 22
+    },
+    {
+      "idx": 9,
+      "chars": 11960,
+      "paragrafos": 27
+    },
+    {
+      "idx": 10,
+      "chars": 11622,
+      "paragrafos": 32
+    },
+    {
+      "idx": 11,
+      "chars": 11941,
+      "paragrafos": 28
+    },
+    {
+      "idx": 12,
+      "chars": 11598,
+      "paragrafos": 30
+    },
+    {
+      "idx": 13,
+      "chars": 11830,
+      "paragrafos": 19
+    },
+    {
+      "idx": 14,
+      "chars": 11545,
+      "paragrafos": 23
+    },
+    {
+      "idx": 15,
+      "chars": 11882,
+      "paragrafos": 56
+    },
+    {
+      "idx": 16,
+      "chars": 11558,
+      "paragrafos": 42
+    },
+    {
+      "idx": 17,
+      "chars": 11663,
+      "paragrafos": 30
+    },
+    {
+      "idx": 18,
+      "chars": 11835,
+      "paragrafos": 38
+    },
+    {
+      "idx": 19,
+      "chars": 11935,
+      "paragrafos": 29
+    },
+    {
+      "idx": 20,
+      "chars": 11490,
+      "paragrafos": 30
+    },
+    {
+      "idx": 21,
+      "chars": 11793,
+      "paragrafos": 31
+    },
+    {
+      "idx": 22,
+      "chars": 11604,
+      "paragrafos": 34
+    },
+    {
+      "idx": 23,
+      "chars": 11948,
+      "paragrafos": 35
+    },
+    {
+      "idx": 24,
+      "chars": 11961,
+      "paragrafos": 38
+    },
+    {
+      "idx": 25,
+      "chars": 11980,
+      "paragrafos": 33
+    },
+    {
+      "idx": 26,
+      "chars": 11918,
+      "paragrafos": 31
+    },
+    {
+      "idx": 27,
+      "chars": 10925,
+      "paragrafos": 35
+    },
+    {
+      "idx": 28,
+      "chars": 11611,
+      "paragrafos": 21
+    },
+    {
+      "idx": 29,
+      "chars": 11632,
+      "paragrafos": 31
+    },
+    {
+      "idx": 30,
+      "chars": 10854,
+      "paragrafos": 28
+    },
+    {
+      "idx": 31,
+      "chars": 11342,
+      "paragrafos": 28
+    },
+    {
+      "idx": 32,
+      "chars": 11934,
+      "paragrafos": 32
+    },
+    {
+      "idx": 33,
+      "chars": 11968,
+      "paragrafos": 27
+    },
+    {
+      "idx": 34,
+      "chars": 11961,
+      "paragrafos": 28
+    },
+    {
+      "idx": 35,
+      "chars": 11852,
+      "paragrafos": 33
+    },
+    {
+      "idx": 36,
+      "chars": 11973,
+      "paragrafos": 28
+    },
+    {
+      "idx": 37,
+      "chars": 11056,
+      "paragrafos": 23
+    },
+    {
+      "idx": 38,
+      "chars": 11262,
+      "paragrafos": 34
+    },
+    {
+      "idx": 39,
+      "chars": 7449,
+      "paragrafos": 18
+    }
+  ],
+  "montado": true,
+  "chars_final": 455309,
+  "ratio_tamanho": 0.982,
+  "montado_em": "2026-08-17T17:10:21.308639"
+}

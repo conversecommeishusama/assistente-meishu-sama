@@ -1,0 +1,16 @@
+Item processado: `19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro`, chunk 3 (reabertura do auditor).
+
+Os seis pontos da nota foram resolvidos individualmente no `003_out.txt`, sem desfazer o restante do trabalho literário:
+
+| Poema | Antes | Agora |
+|---|---|---|
+| 318 | "cores das folhas nas montanhas" | "cores das **folhas outonais** das montanhas" |
+| 309 | "Que doloroso é ver" | "Que **desagradável** é ver" |
+| 300 | "Que lamentável é ver" | "É tão **lastimável** ver" |
+| 264 | "e **tudo** purificou" | "e purificou" |
+| 241 | "de Yamato, **o espírito de Deus**" | "de Yamato, **o de Deus**" |
+| 283 | "obra **até então** inexistente" | "obra **ainda** inexistente" |
+
+Verificações: numeração 236–319 completa, 84 datas idênticas às da fonte, todos os 14 títulos/seções preservados, 11.875 → 11.780 chars. A única diferença estrutural de linha é a separação dos poemas 272/273, que vêm fundidos numa só linha na fonte (defeito de formatação, mantida a separação já aceita pelo auditor).
+
+Fila: 668 pending / 97 done.

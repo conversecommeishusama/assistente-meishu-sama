@@ -1,0 +1,6 @@
+Item processado: chunk 6/9 de *19490830 - Coleção Jikan Volume 5 Diálogos Jikan*.
+
+- Revisão salva em `revisao_literaria/chunks/.../006_out.txt` — 18 parágrafos, mesma "forma" de linhas/divisórias do fonte, 11.636 → 11.483 chars.
+- Principais ajustes: calques desfeitos ("os moradores fogem todas", "o quão extraordinário ele era"), períodos arrastados reorganizados nos parágrafos de Korin e do Instituto de Belas-Artes, variação de conectivos repetidos.
+- Preservados verbatim: títulos de seção, as duas citações entre aspas, nomes próprios e a data Era Meiji (1868-1912).
+- Fila atualizada: pending 700 → 699, done 65 → 66 (remoção por chave `(livro, chunk)`, não `pop(0)`).

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação — Fish Audio (trecho novo): kikivoice vs remaster</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.05rem; }
+  .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .b-antes { background: #e8e8e8; color: #555; }
+  .b-depois { background: #d9ead3; color: #1e5631; }
+  audio { width: 100%; margin-top: 8px; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; font-size: 0.9rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+  .nota { background: #eef7ee; border-left: 4px solid #2c8b2c; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 Comparação em trecho novo — kikivoice vs remaster</h1>
+  <p class="trecho">"Isso mesmo. Ou seja, até mesmo os caracteres impressos possuem luz..."</p>
+
+  <div class="nota">
+    <strong>Novo trecho</strong> (Gosuiji-roku nº 12 — sobre os caracteres impressos possuírem luz),
+    para você avaliar com "ouvidos limpos". Mesma velocidade (0.75x), mesma tecnologia Fish S2.1.
+    Compare a dicção e a naturalidade entre as duas versões da voz kikivoice.
+  </div>
+
+  <div class="card">
+    <h2>1. Kikivoice original <span class="badge b-antes">sem tratamento</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_kikivoice_original_G12L21_speed0.75.mp3"></audio>
+    <p class="desc">Voz kikivoice direto (a que você aprovou inicialmente).</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Kikivoice remasterizado <span class="badge b-depois">com tratamento de clareza</span></h2>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_kikivoice_remaster_G12L21_speed0.75.mp3"></audio>
+    <p class="desc">Kikivoice + equalização de clareza (1500/3500Hz) — a que você achou melhor no trecho anterior.</p>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">Neste trecho novo, a versão remasterizada continua melhor? A dicção está clara e natural?</p>
+</body>
+</html>

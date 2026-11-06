@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 13/14 (último) — testemunho da irmã de Take Uchiyama + colofão da obra.
+- **Ajustes principais**: desfeito o calque de pergunta retórica japonesa ("as convulsões não diminuíram de frequência...?" → afirmativa); desemaranhado o período longo sobre o desespero da família em duas frases; variada a repetição de "desamparada"/"situação"; frases arrastadas de calque ("Como se de um dia para o outro", "Nós, que não recebemos nenhum diagnóstico") reescritas.
+- **Preservado**: citação entre aspas literal, nomes (Tenryuso, Mestre Ichikawa, Okada Jikan, Nishiyama Shunnosuke), números/datas, e o bloco de colofão intacto.
+- **Verificação**: 18 linhas em ambos (paridade de parágrafos), tokens de nomes/números idênticos entre fonte e revisto; 6551 → 6297 chars.
+- **Fila**: pending 684 → 683, done 81 → 82 (removido por `(livro, chunk)`, não `pop(0)`).

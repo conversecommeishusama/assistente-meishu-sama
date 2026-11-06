@@ -1,0 +1,6 @@
+Chunk 3 de *Coleção Jikan Volume 2 — Método de Cultivo sem Fertilizantes* revisado e aceito.
+
+- `003_out.txt` gravado (11.025 → 10.668 chars, 0,97 do original).
+- Estrutura verificada: 52 linhas, padrão de linhas em branco idêntico ao fonte, títulos e blocos de endereço/assinatura intactos.
+- Multiset de números idêntico ao fonte (peguei e restaurei um "16 kan" que tinha ficado implícito na reescrita).
+- Fila atualizada: `pending` 729 → 728, `done` 36 → 37. Próximo item é o chunk 4 do mesmo livro.

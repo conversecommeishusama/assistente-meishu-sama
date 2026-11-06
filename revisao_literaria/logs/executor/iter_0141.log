@@ -1,0 +1,6 @@
+Item processado: reabertura do auditor no chunk 0 de **19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon**.
+
+- Os quatro pontos citados pelo auditor foram corrigidos (quantificador `toda cultura`, `incessante` removido, regência de *insistir* desfeita via `o pensamento mais enfatizado pelo apóstolo Paulo`, `daquele povo`/`vivo` desfeitos, `reduzida a` → `se tornando`).
+- Revarri o chunk inteiro contra `000_src.txt` atrás da mesma classe: restaurei atenuadores/intensificadores da fonte suprimidos (`Sem dúvida`, `necessariamente`, `tendem muitas vezes`, `absolutamente` 2x, `No entanto`, `também`) e removi acréscimos (`a maior de todas as criações`, `a que chamamos`, `encerram`, `não cessa de crescer`, `em bloco`, `acabou destruído`).
+- Preservados título, `Jikan, com respeito`, títulos I/II/III, datas, nomes e as aspas; 9311 → 9272 chars, 25 linhas não vazias em ambos, conjunto de números idêntico.
+- Fila atualizada por `(livro, chunk)`: pending 678 → 677, done 87 → 88.

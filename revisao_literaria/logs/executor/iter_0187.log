@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`19491223 - Montanha e Água`, chunk 5** (reaberto pelo auditor):
+
+- **Achado específico resolvido** — poema 525: `"quase toda tingida de púrpura"` → `"tingida em sua maior parte de púrpura"`, devolvendo o quantificador de maioria da fonte.
+- **Varredura da classe em todo o chunk** (quantificadores/intensificadores/aproximadores deslocados), 7 outros casos corrigidos: 509 (`sabe bem demais` / `justamente por isso` → `sabe demais` / `por isso`), 520 (`certa vergonha` → `um pouco de vergonha`), 523 (`cerca elegante` → `boa cerca`), 531 (`morno` → `agradavelmente quente`), 537 (`nada se ver` → `não se ver`), 587 (`até a metade` → `na metade`), 605 (`precioso demais` → `terrivelmente precioso`).
+- Poema 572 (`a maioria das casas`) conferido: já estava fiel. O restante do chunk, aprovado na auditoria, não foi reescrito.
+- Integridade: 105 poemas, 18 títulos e 18 datas idênticos à fonte; 11.698 → 11.596 chars.
+
+Fila: pending 660 → 659, done 105 → 106. O próximo item (`chunk 8` do mesmo livro) traz reabertura da mesma classe de erro.

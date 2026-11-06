@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+**19480701 - Coletânea de Salmos, chunk 1/3** (salmos 115–222) — revisado e salvo em `revisao_literaria/chunks/19480701 - Coletânea de Salmos/001_out.txt`.
+
+- Ajustes: concordância/regência (143 "se em tudo se guardasse a medida", 209 "se não vierem acompanhados da prática"), reordenação por ritmo (119, 133, 137, 151, 184, 187), corte de redundância vocabular (168, 126, 187).
+- Estrutura verificada por diff: numeração 115–222 idêntica, títulos de seção e linhas em branco idênticos, 153 linhas em ambos, 11368 → 11222 chars.
+
+Um ponto que vale registrar: entre a leitura inicial da fila e a gravação, o laço auditor inseriu itens reabertos no topo de `pending` — o item que eu processei tinha ido para o índice 4. Marquei o `done` por identidade (`livro`+`chunk`), não por posição, então nada foi perdido. Agora `pending[0]` é um item reaberto pelo auditor (`19350000 - Curso Kannon (1~7)`, chunk 6, com `nota_auditor` sobre `\n\n` final perdido em `006_out.txt`), que fica para a próxima invocação do laço.

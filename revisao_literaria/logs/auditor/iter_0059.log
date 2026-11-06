@@ -1,0 +1,14 @@
+**19491230 – Coleção Jikan Volume 9 "Caminho para a Luz" — reprovado, chunks 0 e 1 reabertos.**
+
+Leitura integral e comparada dos 6 chunks (262 linhas, 133 parágrafos), parágrafo a parágrafo.
+
+Integridade estrutural, tudo batendo: concatenação dos 6 `_src` idêntica byte a byte à fonte e a dos 6 `_out` ao montado; parágrafos por chunk 20/18/25/25/17/28 nos dois; 129 linhas em branco; 214 aspas e as 107 citações idênticas caractere a caractere (diff vazio nos dois sentidos); multiconjunto de dígitos idêntico; títulos, rótulos `Eu:`/`Chefe:`/`Ele:`, `---` e colofão idênticos linha a linha; costuras corretas (`\n\n` nos chunks 0-4, `\n` no 5). Nenhum parágrafo abaixo de 0,879 do tamanho da fonte, e as quedas de frase são todas fusão legítima.
+
+Os 9 achados das rodadas anteriores foram conferidos um a um e estão **todos corrigidos** — inclusive o tique "aos poucos" do chunk 4 (8→1, classe varrida) e as duas reaberturas dos chunks 2, 3 e 5.
+
+Dois achados novos, ambos da classe recorrente deste livro (operador que a fonte não tem / operador que a fonte tem e sumiu):
+
+- **chunk 1** — "alguns meses depois" → "**poucos** meses depois" (escola de belas-artes). "Alguns" deixa a duração aberta; "poucos" fecha um limite superior que a fonte não dá. É o mesmo achado já reaberto no chunk 3 ("mais de um mês" → "pouco mais de um mês") — e está no **mesmo parágrafo** que a nota do executor declara ter revarrido para essa classe. Secundário: "Naturalmente, a manifestação do mistério é o milagre" → "E, como…", único dos 8 "Naturalmente" do livro que desapareceu.
+- **chunk 0** — "**Especialmente** quando via em jornais ou revistas…" → "**Bastava** ler em jornais e revistas… **para que** a indignação me tomasse": marcador de foco suprimido (único dos 6 do livro perdido) e operador de suficiência acrescentado, mesma classe do "limitei-me a" já reaberto no chunk 3. Secundário: "as colocam em altares ou as **exibem** no alto de pedestais" → "as instalam em altares ou no alto de pedestais" — o verbo de exibição, que é o alvo do escárnio do parágrafo, se perde na fusão.
+
+Filas atualizadas: chunks 1 e 0 no topo de `QUEUE_EXECUTOR.json` com nota de evidência e ordem de varrer a classe inteira; entradas antigas desses dois chunks removidas de `done`; histórico de auditoria acrescido (2 entradas em cada — próxima falha nesses chunks vai para escalação manual); `_manifest.json` com `montado: false`; livro removido de `pending` do auditor sem ir para `done`.

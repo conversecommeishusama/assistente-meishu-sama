@@ -1,0 +1,8 @@
+Item `pending[0]` (chunk 10 de *Curso Kannon (1~7)*, reaberto pelo auditor) processado.
+
+- O que a nota pedia já estava em disco: `010_out.txt` termina com `\n\n`, conteúdo revisado íntegro (70 parágrafos, iguais ao `_src`). A varredura da classe em **todos** os livros/chunks acusa 0 divergências de whitespace inicial/final entre `_src` e `_out`.
+- A causa de o livro montado continuar sem a linha em branco era outra: `_manifest.json` com `"montado": true` e `montado_em` 16:34:22, **anterior** às regravações de 006/010/011/012 (16:36) — e `montar_livro.py` pula livro já montado, então a correção nunca chegaria ao arquivo final. Diff entre o concat atual dos 14 chunks e o montado: exatamente 4 linhas em branco de costura (linhas 1072, 1492, 1594, 1705).
+- Ação: zerei `montado`/`montado_em`/`chars_final`/`ratio_tamanho` no `_manifest.json` (mesmo mecanismo que o `AUDITORIA_PROMPT.md` prescreve ao reabrir chunk), para o presync remontar na próxima iteração. Nada fora de `revisao_literaria/` foi tocado.
+- Fila: item movido para `done` com os campos padrão — `pending` 750 → 749, `done` 17 → 18.
+
+Vale registrar para o dono da infra: essa é uma corrida sistêmica, não um caso isolado — se o auditor zera `montado` e o presync remonta antes de o executor corrigir os chunks reabertos, a correção fica órfã e silenciosa. `montar_livro.py` decidir por comparação de conteúdo (ou por mtime de chunk > `montado_em`) em vez do booleano resolveria a classe.

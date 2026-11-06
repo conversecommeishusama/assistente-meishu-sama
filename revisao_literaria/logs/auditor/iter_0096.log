@@ -1,0 +1,13 @@
+Auditoria de `pending[0]` concluída — **19501030 - Memórias da Perseguição Religiosa** foi **reaberto** (não aprovado).
+
+**Verificações de integridade (todas limpas):** concatenação dos 12 `_src` bate byte a byte com a fonte e a dos 12 `_out` com o montado; parágrafos idênticos chunk a chunk (19/11/8/8/13/27/9/8/10/11/9/15); multiconjunto de dígitos idêntico; as 171 citações entre aspas idênticas caractere a caractere (única diferença é `"Experiente"`→`"experiente"`, maiúscula de início de período); nomes próprios idênticos (só `EUA`→`Estados Unidos`, uniformizando com as outras 5 ocorrências da fonte); polaridade preservada (63 interrogações e 13 exclamações em ambos; as 46 diferenças de negação são todas `não`→`nem`/`sem`/`nada` equivalentes). Os achados das rodadas anteriores nos chunks 6 e 7 estão **corrigidos**: as 44 citações do chunk 6 e as 17 do chunk 7 voltaram a bater byte a byte com o `_src`, e os dois pontos fora das aspas (o "vocês a descartam" e a voz ativa "extrair os depoimentos") também.
+
+**Achados que motivaram a reabertura** — mesma classe (grau/modalidade alterados fora das aspas), em 3 chunks, todos primeira reabertura:
+
+- **chunk 0** — prefácio: `"Penso que, se não houver um grande despertar..."` → `"Se não houver um grande despertar..., o resultado será..."`; modalizador suprimido, opinião virou asserção.
+- **chunk 1** — `"O incidente terminou sem problemas, mas,"` → `"sem maiores problemas mas,"`; afirma problemas que a fonte nega, e perdeu a vírgula do "mas" adversativo.
+- **chunk 10** — Conclusão: `"repetiam a mesma pergunta várias vezes"` → `"inúmeras vezes"` (hipérbole); e `"não é tão complexo"` → `"não ser complexo"` (grau atenuado da fonte virou negação plena).
+
+Endossei explicitamente na nota, para não serem re-litigados: `preciosíssima`, `um simples descuido`, `uma dezena de pessoas`, `fabricavam opinião pública`, `indignadíssimos`, `só ele`, o reparo do anacoluto do relato de Inoue e o reparo de `ouvi do Sr. Fukuo Inoue...`.
+
+Fila atualizada: os 3 chunks entraram no início de `QUEUE_EXECUTOR.pending` com `nota_auditor` (e as entradas antigas deles saíram de `done`), histórico gravado em `000/001/010_historico_auditoria.jsonl`, `_manifest.json` com `montado: false`, e o livro removido de `QUEUE_AUDITOR.pending` sem ir para `done`.

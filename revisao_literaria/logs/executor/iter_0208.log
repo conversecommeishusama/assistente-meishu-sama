@@ -1,0 +1,9 @@
+Chunk 0 de *Coleção Jikan Volume 10 — Método de Saúde por Revelação Divina* revisado e aceito; fila atualizada (pending 643 → 642, done 122 → 123).
+
+Um ponto que precisa da sua decisão, porque está fora do alcance desta fase:
+
+**Defeito de origem no texto-fonte.** Em `livros_publicacao_pt_revisado/19500420 - Coleção Jikan Volume 10....txt`, o parágrafo de abertura de "O Erro da Medicina" termina truncado no meio de uma palavra:
+
+> …usa-se o espanador, varre-se com a vassoura, joga-se o lixo no depósito, **junta-s**
+
+Não é o chunker — confirmei que a truncagem já está no arquivo publicado-revisado. Preservei verbatim (o protocolo proíbe inventar conteúdo e proíbe comparar com o japonês), e registrei na nota do `done`. O conserto exige o original japonês, num passe fora da revisão literária.

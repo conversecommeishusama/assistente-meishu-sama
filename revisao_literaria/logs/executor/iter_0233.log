@@ -1,0 +1,9 @@
+Item processado.
+
+**`19500921 - Até a Construção do Paraíso Terrestre`, chunk 1/2** (reaberto pelo auditor):
+
+- Achado principal corrigido: `sem fundo à vista` → `sem fundo` (o "à vista" convertia a afirmação absoluta do autor em observação visual).
+- Secundário: `pedras de formas estranhas, de cores e feitios interessantes` → `pedras estranhas, de cores e formas interessantes` (eco formas/feitios eliminado).
+- Revarredura completa do chunk contra `001_src.txt` atrás da mesma classe de erro — encontrei mais 8 casos de qualificador/atenuador alterado e restaurei: `parece tão próximo` (a versão anterior afirmava como fato), `pode ser identificada` (modal suprimido), `em todas as montanhas de Hakone` (virara `em nenhuma das`), `o assunto` (virara `a obra`), `afinal`, `de curto prazo` (virara `de tão pouco tempo`), `não se pode dizer que seja perfeito` (virara condicional), `e o dono se oferece` (a subordinada `cujo dono` restringia a oferta a um só dos casos). Também `Prova disso é que` → `Isso porque` (evidencialidade acrescentada) e remoção do reforço `nem um único ferido`.
+- Preservados os dois pontos que o auditor endossou explicitamente (`de vinte a trinta shaku`, queda de `ainda`).
+- 7525 → 7551 chars, 10 parágrafos em ambos. Fila: 630 pending / 135 done.

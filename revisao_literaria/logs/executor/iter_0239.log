@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19501030 - Memórias da Perseguição Religiosa`, chunk 5/12 (sem `nota_auditor`) → `revisao_literaria/chunks/.../005_out.txt`
+- **Verificações**: 27 parágrafos em ambos, todas as 12 citações entre aspas idênticas byte a byte, todos os números idênticos (100.000,00 / 200.000,00 / 80.000,00 / 47 dias / datas), nenhum nome próprio perdido; 10.874 → 10.763 chars (0,99)
+- **Achado extra**: `004_out.txt` estava sem a linha em branco final — como `montar_livro.py` concatena com `"".join`, isso fundiria o último parágrafo do chunk 4 com o primeiro do chunk 5 na montagem. Corrigi (só a quebra de linha, prosa intacta).
+- Fila: pending 628, done 137 (a fila cresceu entre a leitura inicial e a escrita — o auditor reabriu chunks de outro livro nesse intervalo; reli e removi por `(livro, chunk)`, sem `pop(0)`).

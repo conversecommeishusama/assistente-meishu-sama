@@ -1,0 +1,52 @@
+{
+  "arquivo": "19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+  "fonte": "livros_publicacao_pt_revisado/19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+  "chars_fonte": 87003,
+  "total_chunks": 8,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 2966,
+      "paragrafos": 3
+    },
+    {
+      "idx": 1,
+      "chars": 18353,
+      "paragrafos": 1
+    },
+    {
+      "idx": 2,
+      "chars": 10793,
+      "paragrafos": 11
+    },
+    {
+      "idx": 3,
+      "chars": 10454,
+      "paragrafos": 16
+    },
+    {
+      "idx": 4,
+      "chars": 11162,
+      "paragrafos": 10
+    },
+    {
+      "idx": 5,
+      "chars": 11274,
+      "paragrafos": 16
+    },
+    {
+      "idx": 6,
+      "chars": 10986,
+      "paragrafos": 12
+    },
+    {
+      "idx": 7,
+      "chars": 11015,
+      "paragrafos": 21
+    }
+  ],
+  "montado": true,
+  "chars_final": 86652,
+  "ratio_tamanho": 0.996,
+  "montado_em": "2026-08-18T02:16:32.306015"
+}

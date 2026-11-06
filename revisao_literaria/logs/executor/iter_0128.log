@@ -1,0 +1,10 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon`, chunk 2/7 (Paulo; nascimento de Buda; budismo Shojo primitivo).
+
+- Ajustes principais: desfeitos calques do japonês ("está em uma relação tão íntima e inseparável", "tinham tanto zelo que"), cortada a cadeia de conectivos repetidos ("Além disso" / "Além desse ponto"), períodos longos redistribuídos em cadência (Tarso, panteísmo grego/Logos, era de Ashoka).
+- Preservados sem toque: todas as citações bíblicas entre aspas e suas referências, cabeçalhos numerados, contagem de parágrafos (27 não-vazios em ambos), nomes/datas/números. A duplicação do cabeçalho "VII. A Era de Ouro do Budismo Daijo" já existe no arquivo-fonte publicado (linhas 96 e 98) — mantida como está, já que remover conteúdo está fora do escopo desta fase.
+- Tamanho: 10.992 → 10.534 chars (−4,2%, compatível).
+- Fila: item removido por identidade `(livro, chunk)`, não por `pop(0)` — o auditor reabriu itens concorrentemente durante a execução (fila passou de 681 para 682 pending).
+
+O próximo `pending[0]` é um item reaberto com `nota_auditor` (Coleção Jikan Volume 5, chunk 6, deriva de quantificador/grau) — fica para a próxima invocação, conforme instruído.

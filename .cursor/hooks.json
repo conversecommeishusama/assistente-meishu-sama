@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/gate_gokowa_after_edit.py",
+        "matcher": "Write|StrReplace|EditNotebook",
+        "failClosed": true
+      }
+    ]
+  }
+}

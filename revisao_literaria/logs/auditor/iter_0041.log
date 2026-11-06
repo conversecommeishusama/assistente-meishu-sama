@@ -1,0 +1,13 @@
+Auditoria concluída — **19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro: aprovado** e movido para `done` em `QUEUE_AUDITOR.json`.
+
+Resumo do que sustentou a decisão:
+
+- **Estrutura**: concatenação dos 6 `_src` bate byte a byte com o original e a dos 6 `_out` com o montado; cada chunk fecha em `\n\n` e o seguinte abre no poema consecutivo (75, 156, 236, 320, 404).
+- **As +11 linhas do montado** não são conteúdo novo: são as 11 corrupções da fonte em que dois poemas vinham colados na mesma linha (32, 89, 99, 158, 195, 273, 409, 416, 451, 470, 475), conferidas uma a uma. Numeração 1-486 completa e sem lacuna nos dois arquivos.
+- **Fidelidade**: multiconjunto de dígitos idêntico; 12 citações entre aspas idênticas caractere a caractere; nomes próprios idênticos nos dois sentidos; 64 cabeçalhos/notas idênticos e nas mesmas posições relativas aos poemas.
+- **Os 13 achados das 4 rodadas anteriores** estão todos corrigidos (`(jóia)`, `de bela vista`, `diversos`/`muitos`, `folhas outonais`, `desagradável`, `lastimável`, o `tudo` do 264, `grande passagem`, `Saibam`, `estação das chuvas`, e o retrabalho literário dos chunks 1 e 4).
+- **Padrão literário** agora uniforme nos seis chunks (28% / 10% / 38% / 10% / 39% / 25% idênticos à fonte). Os chunks 2 e 4 concentram os idênticos, mas foram lidos verso a verso: são aforismos curtos já bem-formados, não trechos arrastados — e ambos já esgotaram as duas reaberturas permitidas, então apliquei a régua de achado real, não a de percentual.
+
+Cinco pontos limítrofes ficaram registrados na nota como examinados e endossados (267, 427, 153, 248/283, 332), para não voltarem a ser re-litigados numa próxima rodada.
+
+Observação: enquanto eu trabalhava, `montar_livro.py` enfileirou `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`; removi meu item por nome (não por índice), então esse novo pendente foi preservado.

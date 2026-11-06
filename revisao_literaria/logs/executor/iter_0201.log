@@ -1,0 +1,9 @@
+Item `pending[0]` processado e fechado.
+
+**Chunk:** `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 2/6 (reaberto pelo auditor).
+
+- **Achado do auditor resolvido:** "parti para a delegacia de minha residência em Tamagawa Uenoge" → "parti de minha residência em Tamagawa Uenoge — hoje centro de reuniões da Igreja Miroku — rumo à delegacia". A residência volta a ser o ponto de partida, o aposto fica preso a ela, e a delegacia continua sendo a de Omiya (sem fusão com o episódio posterior da Delegacia de Tamagawa).
+- **Varredura da mesma classe de bug** (adjunto/referente deslocado pela reescrita), já que corrigir só o caso apontado é um padrão que já falhou antes: encontrei mais 3 no mesmo chunk — "pediram demissão junto comigo" (fonte diz apenas "juntas") → "em conjunto"; elo causal "Isso porque" e o "sofremos" da repressão haviam sido apagados, restaurados; "dele" acrescentado em "deve lembrar-se bem" removido.
+- **Integridade:** 25/25 parágrafos, 44/44 aspas, sequência de dígitos idêntica à fonte, arquivo continua terminando em `\n\n` (a costura com o chunk 3 não foi reintroduzida). 11.580 → 11.378 chars.
+
+Fila: 647 pending / 118 done.

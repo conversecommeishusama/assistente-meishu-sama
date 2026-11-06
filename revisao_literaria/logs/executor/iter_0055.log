@@ -1,0 +1,15 @@
+Item `pending[0]` processado e fechado.
+
+**Chunk 9/14** de *19490625 - Coleção Jikan Volume 1 — Tuberculose e Terapia Espiritual* (reaberto pelo auditor):
+
+- **Achado do auditor resolvido**: o aposto voltou a ser aposto — "As impurezas — urina, diarreia, suor noturno, catarro, secreções oculares — foram sendo eliminadas com vigor", em vez da versão que transformava a enumeração em complemento locativo ("na urina, na diarreia...").
+- **Revarredura da classe inteira** no chunk, como pedido, com 6 outras alterações de relação lógica/asserção revertidas:
+  - "Fora uma auscultação..." → "Além de uma auscultação..." (exclusão tinha virado adição)
+  - "edificado sobre erros e mentiras" → "consolidado por erros e mentiras"
+  - "rotulou, sem meias palavras" → "rotulou, por completo"
+  - "a doença lhe atacara a garganta" → "teve a garganta atacada" (agente inventado)
+  - "hemoptise repentina" → "hemoptise" (qualificador inexistente na fonte)
+  - restaurados "o médico do hospital" e "relaxamento da energia"
+- **Integridade**: 30 parágrafos na fonte e no revisado; 11 915 → 12 008 chars.
+
+Fila: 725 pendentes, 40 concluídos.

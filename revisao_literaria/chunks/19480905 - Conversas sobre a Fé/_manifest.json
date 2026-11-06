@@ -1,0 +1,97 @@
+{
+  "arquivo": "19480905 - Conversas sobre a Fé.txt",
+  "fonte": "livros_publicacao_pt_revisado/19480905 - Conversas sobre a Fé.txt",
+  "chars_fonte": 185492,
+  "total_chunks": 17,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 10334,
+      "paragrafos": 13
+    },
+    {
+      "idx": 1,
+      "chars": 11636,
+      "paragrafos": 8
+    },
+    {
+      "idx": 2,
+      "chars": 11799,
+      "paragrafos": 9
+    },
+    {
+      "idx": 3,
+      "chars": 10288,
+      "paragrafos": 8
+    },
+    {
+      "idx": 4,
+      "chars": 11811,
+      "paragrafos": 8
+    },
+    {
+      "idx": 5,
+      "chars": 10647,
+      "paragrafos": 9
+    },
+    {
+      "idx": 6,
+      "chars": 11501,
+      "paragrafos": 8
+    },
+    {
+      "idx": 7,
+      "chars": 10297,
+      "paragrafos": 9
+    },
+    {
+      "idx": 8,
+      "chars": 11461,
+      "paragrafos": 10
+    },
+    {
+      "idx": 9,
+      "chars": 11274,
+      "paragrafos": 7
+    },
+    {
+      "idx": 10,
+      "chars": 11885,
+      "paragrafos": 9
+    },
+    {
+      "idx": 11,
+      "chars": 10078,
+      "paragrafos": 6
+    },
+    {
+      "idx": 12,
+      "chars": 10800,
+      "paragrafos": 9
+    },
+    {
+      "idx": 13,
+      "chars": 11804,
+      "paragrafos": 10
+    },
+    {
+      "idx": 14,
+      "chars": 11315,
+      "paragrafos": 13
+    },
+    {
+      "idx": 15,
+      "chars": 11523,
+      "paragrafos": 10
+    },
+    {
+      "idx": 16,
+      "chars": 7039,
+      "paragrafos": 7
+    }
+  ],
+  "montado": true,
+  "chars_final": 182362,
+  "ratio_tamanho": 0.983,
+  "montado_em": "2026-08-24T05:49:07.576344"
+}

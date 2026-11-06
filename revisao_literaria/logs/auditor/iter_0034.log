@@ -1,0 +1,16 @@
+**19491130 — Coleção Jikan Volume 8 (Poemas Recentes de Akemaro): reaberto (chunks 2, 4 e 5).**
+
+Leitura integral e comparada dos 6 chunks (650→661 linhas, 486 poemas), poema a poema.
+
+**Verificações estruturais (todas limpas):** concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; as 550 unidades (486 poemas + 64 cabeçalhos/notas) na mesma ordem nos dois arquivos; numeração 1‑486 íntegra e sem falha; os 486 parênteses de data (`Era Showa … `) idênticos um a um; multiconjunto de dígitos idêntico; as 12 citações entre aspas idênticas caractere a caractere; as 7 notas `*Não incluído na coletânea completa.` nas mesmas posições. O aumento de +11 parágrafos é exatamente o desmembramento dos 11 pontos em que a fonte trazia dois poemas colados numa linha (1 no chunk 0, 2 no 1, 2 no 2, 1 no 3, 5 no 5) — nenhum parágrafo perdido ou duplicado.
+
+**Achados que motivaram a reabertura:**
+- **Chunk 4, poema 338** — `Simplesmente me entrego à grande vontade de Deus` → `Entrego-me inteiramente…`: advérbio restritivo trocado por advérbio de totalidade. Que a fórmula é deliberada está provado pelo poema 342, que a repete e ficou intacto; “simplesmente” cai de 2 para 1 ocorrência.
+- **Chunk 4, poema 332** — o par fixo `se regozijam e alegram` (3 ocorrências na fonte) foi preservado em 290 e 302, mas virou `se alegram e exultam` em 332.
+- **Chunk 4, padrão literário** — 52 dos 84 poemas voltaram idênticos, com as sequências 384‑392 e 394‑403 inteiras sem uma intervenção; sobraram itens reais por fazer (o `é algo que` de 387 e 395; `do fogo, água e terra` em 386, contra `do fogo, da água e da terra` no 358 do mesmo chunk).
+- **Chunk 2, poema 204** — `vila de Atami, de bela vista` → `bela vila de Atami`: o epíteto fixo “de bela vista”, preservado em 361, 436, 450 e 464, cai de 3 para 2 ocorrências e o conteúdo “vista” se perde.
+- **Chunk 5, poema 455** — `A chuva da estação das chuvas` → `A chuva da estação`: some o nome da estação (única ocorrência no livro, 1→0).
+
+Pontos examinados e endossados, para não serem re-litigados: `carregando a neve branca`→`coroado de neve branca` (35); a desambiguação da vista do jardim (118); `ignorando a toxina que corrói`→`ignorando que ela corrói` (164), que segue o enquadramento da própria fonte no 165; `vida fixa`/`idade fixa`→`duração de vida fixada às pessoas` (248/283), descalque coerente nos dois; `Que desagradável`→`Que doloroso` (309), correção de registro.
+
+Chunks 2, 4 e 5 inseridos no topo de `QUEUE_EXECUTOR.json` com a evidência concreta; entradas antigas desses chunks removidas de `done`; histórico de auditoria criado (1ª reabertura de cada); `montado` zerado no `_manifest.json`; livro retirado de `pending` do auditor sem ir para `done`.

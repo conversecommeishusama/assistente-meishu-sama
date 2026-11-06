@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual`, chunk 1/10 → `revisao_literaria/chunks/.../001_out.txt`
+- **Revisão:** desfeitos calques e períodos arrastados, paralelismos encurtados, conectivos repetidos variados; citações entre aspas, nomes (Tokutomi Roka, Tolstói, Gokuraku Jodo, Kanpei/Chuhei/Kensha/Gosha/Sonsha) e números (49/50 dias, cem dias, trinta anos, oito milhões de deuses) mantidos intactos; título de seção "Vários Aspectos Após a Morte" preservado como linha própria.
+- **Integridade:** 12 parágrafos na fonte e 12 no revisado; 11 575 → 11 272 caracteres (−2,6%).
+- **Fila:** pending 715 → 714, done 50 → 51 (item removido por `(livro, chunk)`, não por `pop(0)`).

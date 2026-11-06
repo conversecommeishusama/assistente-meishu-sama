@@ -1,0 +1,10 @@
+**19501120 - Guia Rápido da Igreja Messiânica Mundial — reaberto (2 chunks).**
+
+Li os 5 chunks inteiros, fonte × montado, parágrafo a parágrafo. Fidelidade em ordem: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; multiconjunto de dígitos idêntico; 160 aspas em ambos e o conteúdo citado sem diferença (as 3 divergências — `"Campo"→"campo"`, `"Gō"→"gō"`, `"Vila"→"vila"` — são só caixa por deslocamento para meio de período); nenhum nome próprio perdido ou criado; 69 linhas não vazias em ambos; +1 `?` é a quebra legítima de "o que sou eu? Por que razão…".
+
+Dois achados:
+
+- **chunk 3 — costura.** `003_out.txt` termina em `.\n` em vez de `.\n\n`. Como `montar_livro.py` concatena com `''.join`, o parágrafo "Além disso, 'caminho' (dō)…" e o "Em seguida, 'princípio' (ri)…" ficam em linhas consecutivas sem a linha em branco que separa todos os outros parágrafos (montado 132 linhas/63 brancas contra 133/64 do original). É o mesmo defeito já detectado e corrigido em `000_out.txt` durante o chunk 1 — a classe não foi varrida nos demais chunks.
+- **chunk 2 — padrão literário.** "toda sorte de" virou tique: 4 ocorrências em ~11,5 mil caracteres, mais "armas de toda espécie", todas substituindo o "várias/vários" da fonte (8 → 1). Troca uma repetição mecânica por outra e ainda puxa para totalidade onde a fonte é apenas vaga.
+
+Fila atualizada: os dois chunks entraram no início do `pending` do executor com nota de evidência, as entradas antigas saíram do `done` (153 → 151), históricos de auditoria criados (1ª reabertura de cada), `montado` zerado no manifesto e o livro removido do `pending` do auditor sem ir para `done`.

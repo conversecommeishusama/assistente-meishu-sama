@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes`, chunk 2 de 16 (sem `nota_auditor`; não era reabertura).
+- **Revisão**: fluidez e cadência (quebra do período longo da 2ª capina, uniformização do tempo verbal na descrição do arroz sem fertilizante), pontuação reorganizada no relato das cigarrinhas, aparo de conectivos arrastados — sem mexer em sentido, nomes, datas ou medidas.
+- **Terminologia**: mantido "sem fertilizantes" conforme o texto-fonte destes artigos; o chunk anterior usa "sem adubos" porque o fonte daquele artigo já usava.
+- **Checagens**: 35 parágrafos no fonte e no revisado, conjunto de números/datas idêntico, 0 aspas em ambos, 5 linhas de endereço com recuo preservadas, 11885 → 11875 chars.
+- **Fila**: `pending` 730 → 729, `done` 35 → 36.

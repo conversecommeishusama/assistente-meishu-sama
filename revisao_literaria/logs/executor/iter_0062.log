@@ -1,0 +1,4 @@
+Chunk 11 de *Coleção Jikan Volume 2* revisado e fila atualizada (pending 721 → 720, done 45).
+
+- `011_out.txt` gravado: 23 parágrafos e 50 linhas idênticos à fonte, números (500/1.000 kan, 223/38/150 kan, 52.000 ienes, datas) e as 10 citações entre aspas conferidos byte a byte contra `011_src.txt`; 11.451 → 11.018 chars (−3,8%, só corte de redundância vocabular).
+- Ajustes: perífrases e calques desfeitos, sequência de "Além disso" variada, períodos longos partidos; títulos de artigo, blocos de autoria com espaços ideográficos e divisórias preservados intactos.

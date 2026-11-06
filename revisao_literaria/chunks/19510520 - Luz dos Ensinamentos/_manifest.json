@@ -1,0 +1,77 @@
+{
+  "arquivo": "19510520 - Luz dos Ensinamentos.txt",
+  "fonte": "livros_publicacao_pt_revisado/19510520 - Luz dos Ensinamentos.txt",
+  "chars_fonte": 146188,
+  "total_chunks": 13,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11349,
+      "paragrafos": 41
+    },
+    {
+      "idx": 1,
+      "chars": 11046,
+      "paragrafos": 28
+    },
+    {
+      "idx": 2,
+      "chars": 11914,
+      "paragrafos": 27
+    },
+    {
+      "idx": 3,
+      "chars": 11440,
+      "paragrafos": 40
+    },
+    {
+      "idx": 4,
+      "chars": 11943,
+      "paragrafos": 55
+    },
+    {
+      "idx": 5,
+      "chars": 11862,
+      "paragrafos": 51
+    },
+    {
+      "idx": 6,
+      "chars": 11875,
+      "paragrafos": 34
+    },
+    {
+      "idx": 7,
+      "chars": 11918,
+      "paragrafos": 40
+    },
+    {
+      "idx": 8,
+      "chars": 11931,
+      "paragrafos": 28
+    },
+    {
+      "idx": 9,
+      "chars": 11269,
+      "paragrafos": 34
+    },
+    {
+      "idx": 10,
+      "chars": 11705,
+      "paragrafos": 37
+    },
+    {
+      "idx": 11,
+      "chars": 11922,
+      "paragrafos": 39
+    },
+    {
+      "idx": 12,
+      "chars": 6014,
+      "paragrafos": 23
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-24T05:45:24.261346",
+  "chars_final": 145420,
+  "ratio_tamanho": 0.995
+}

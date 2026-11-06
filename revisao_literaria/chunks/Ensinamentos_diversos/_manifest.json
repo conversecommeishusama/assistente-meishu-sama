@@ -1,0 +1,42 @@
+{
+  "arquivo": "Ensinamentos_diversos.txt",
+  "fonte": "livros_publicacao_pt_revisado/Ensinamentos_diversos.txt",
+  "chars_fonte": 64679,
+  "total_chunks": 6,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11984,
+      "paragrafos": 51
+    },
+    {
+      "idx": 1,
+      "chars": 11987,
+      "paragrafos": 115
+    },
+    {
+      "idx": 2,
+      "chars": 11519,
+      "paragrafos": 65
+    },
+    {
+      "idx": 3,
+      "chars": 11288,
+      "paragrafos": 35
+    },
+    {
+      "idx": 4,
+      "chars": 11302,
+      "paragrafos": 30
+    },
+    {
+      "idx": 5,
+      "chars": 6599,
+      "paragrafos": 11
+    }
+  ],
+  "montado": true,
+  "chars_final": 64558,
+  "ratio_tamanho": 0.998,
+  "montado_em": "2026-08-17T14:18:02.690294"
+}

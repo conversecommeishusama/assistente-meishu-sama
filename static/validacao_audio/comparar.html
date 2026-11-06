@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Comparação — Original vs Remasterizada</title>
+<style>
+  body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f7f5f0; color: #333; }
+  h1 { color: #5a3e2b; }
+  .comparacao { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+  .par { display: flex; gap: 20px; flex-wrap: wrap; }
+  .col { flex: 1; min-width: 300px; }
+  .rotulo { font-weight: bold; margin-bottom: 4px; }
+  .orig { color: #888; }
+  .remaster { color: #8b0000; }
+  audio { width: 100%; margin: 4px 0 8px; }
+  .desc { color: #666; font-size: 0.88em; }
+</style>
+</head>
+<body>
+  <h1>🎧 Comparação — Amostra Original vs Remasterizada</h1>
+  <p>Ouça a MESMA fala com a amostra de voz original (limpa) e com a amostra <strong>remasterizada</strong> (44kHz, menos ruído, voz realçada).</p>
+
+  <div class="comparacao">
+    <div class="rotulo">Fala 1: "Ah, é mesmo? O seu Debune, o Yoshie Fujiwara..."</div>
+    <div class="par">
+      <div class="col">
+        <div class="rotulo orig">Versão atual (amostra limpa 22kHz)</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_1.mp3"></audio>
+      </div>
+      <div class="col">
+        <div class="rotulo remaster">Versão remasterizada (44kHz + realce)</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_remaster_1.mp3"></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparacao">
+    <div class="rotulo">Fala 2: "É o espírito de alguém que morreu em um acidente de avião..."</div>
+    <div class="par">
+      <div class="col">
+        <div class="rotulo orig">Versão atual</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_2.mp3"></audio>
+      </div>
+      <div class="col">
+        <div class="rotulo remaster">Versão remasterizada</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_remaster_2.mp3"></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparacao">
+    <div class="rotulo">Fala 3: "O Amatsu Norito não se usa em cerimônia de casamento..."</div>
+    <div class="par">
+      <div class="col">
+        <div class="rotulo orig">Versão atual</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_3.mp3"></audio>
+      </div>
+      <div class="col">
+        <div class="rotulo remaster">Versão remasterizada</div>
+        <audio controls preload="none" src="/static/validacao_audio/meishu_remaster_3.mp3"></audio>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

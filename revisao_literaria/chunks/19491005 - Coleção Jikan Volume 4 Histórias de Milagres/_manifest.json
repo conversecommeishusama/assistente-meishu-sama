@@ -1,0 +1,82 @@
+{
+  "arquivo": "19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+  "fonte": "livros_publicacao_pt_revisado/19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+  "chars_fonte": 131822,
+  "total_chunks": 14,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 9529,
+      "paragrafos": 6
+    },
+    {
+      "idx": 1,
+      "chars": 9219,
+      "paragrafos": 8
+    },
+    {
+      "idx": 2,
+      "chars": 5859,
+      "paragrafos": 4
+    },
+    {
+      "idx": 3,
+      "chars": 9937,
+      "paragrafos": 6
+    },
+    {
+      "idx": 4,
+      "chars": 11304,
+      "paragrafos": 9
+    },
+    {
+      "idx": 5,
+      "chars": 10722,
+      "paragrafos": 12
+    },
+    {
+      "idx": 6,
+      "chars": 11508,
+      "paragrafos": 15
+    },
+    {
+      "idx": 7,
+      "chars": 11754,
+      "paragrafos": 12
+    },
+    {
+      "idx": 8,
+      "chars": 5989,
+      "paragrafos": 3
+    },
+    {
+      "idx": 9,
+      "chars": 14366,
+      "paragrafos": 1
+    },
+    {
+      "idx": 10,
+      "chars": 8863,
+      "paragrafos": 10
+    },
+    {
+      "idx": 11,
+      "chars": 10091,
+      "paragrafos": 6
+    },
+    {
+      "idx": 12,
+      "chars": 6314,
+      "paragrafos": 6
+    },
+    {
+      "idx": 13,
+      "chars": 6367,
+      "paragrafos": 3
+    }
+  ],
+  "montado": true,
+  "chars_final": 129234,
+  "ratio_tamanho": 0.98,
+  "montado_em": "2026-08-14T23:37:58.966837"
+}

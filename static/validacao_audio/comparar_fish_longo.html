@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validação — Fish Audio trecho longo (0.75x)</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 18px 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { margin-top: 0; font-size: 1.05rem; }
+  .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; background: #d4e6f9; color: #1a4f8b; }
+  audio { width: 100%; margin-top: 8px; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 10px 14px; font-style: italic; color: #444; font-size: 0.9rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 Fish Audio — trechos longos em 0.75x</h1>
+  <p>Voz clonada do Meishu-Sama (amostra kikivoice) via Fish Audio S2.1, gerada em
+  <strong>velocidade 0.75</strong> (a que você aprovou). Trechos contínuos de ensinamento.</p>
+
+  <div class="card">
+    <h2>Trecho 1 — Sobre arte e música <span class="badge">26s</span></h2>
+    <div class="trecho">"Eu também gosto de obras de arte, mas as antigas é que são as verdadeiramente novas..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_longo_L43_speed0.75.mp3"></audio>
+    <p class="desc">Fala do Meishu-Sama (Gokōwa-roku, Suplemento).</p>
+  </div>
+
+  <div class="card">
+    <h2>Trecho 2 — Sobre a música budista <span class="badge">33s</span></h2>
+    <div class="trecho">"Ficou muito bem-feita, tem um estilo de gagaku. É muito melhor do que o budismo..."</div>
+    <audio controls preload="none" src="/static/validacao_audio/teste_voz_fish_longo_L17_speed0.75.mp3"></audio>
+    <p class="desc">Fala do Meishu-Sama (Gokōwa-roku, Suplemento) — o mais longo.</p>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">Como soa o ritmo/liturgia em 0.75x num trecho longo? A voz se mantém estável e natural?</p>
+</body>
+</html>

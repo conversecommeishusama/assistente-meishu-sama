@@ -1,0 +1,8 @@
+Item processado (correção cirúrgica pedida pelo auditor).
+
+- **Livro/chunk**: `19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon`, chunk 0/7 (reaberto com `nota_auditor`).
+- **Correção**: `"muitos estudiosos já pensaram das mais variadas formas"` → `"...já pensaram de várias maneiras"` (fonte: "têm pensado de várias maneiras"). Superlativo acrescentado sobre quantificador simples — mesma classe já reprovada neste livro.
+- **Escopo respeitado**: nada mais do chunk foi tocado; as quatro correções aprovadas na rodada anterior, título, seções I/II/III, datas, nomes próprios e citações entre aspas ficaram intactos.
+- **Varredura da classe inteira no chunk** (não só o caso apontado): `maior`, `ao máximo`, `gravíssimos`, `supremo`, `mais simples` — todos com respaldo direto no `000_src.txt`; `"resumindo ao máximo"` → `"da forma mais resumida possível"` é reformulação equivalente, não intensificação. Nenhum outro resíduo.
+- **Integridade**: 25 parágrafos em ambos; 9613 → 9558 chars.
+- Fila atualizada por `(livro, chunk)`: pending 673 → 672, done 92 → 93.

@@ -1,0 +1,7 @@
+Item processado: chunk 12 de **19350000 - Curso Kannon (1~7)** (reaberto pelo auditor).
+
+- **Achado do auditor (costura quebrada)**: já estava sanado em disco — `012_out.txt` termina em `\n\n` igual ao `_src`, e a linha em branco entre "A medicina ocidental…" e "O inchaço que se forma…" existe no livro montado (linha 1709). Foi corrigido na varredura de classe feita junto com o chunk 6 (16:36), e o `_manifest.json` já está com `montado: false`, então o presync remonta o livro com os fixes de 005/011/012.
+- **Trabalho real feito**: releitura integral src↔out dos 52 parágrafos, com 3 ajustes de fidelidade/registro — "vira água" → "se torna água"; "nunca se tornou absoluta" → "não se tornou absoluta" (o reforço não está no fonte); "apenas quando surge entre eles uma pessoa notável" → "se, porém, surgir entre eles…" (o fonte é condicional, não exclusivo).
+- **Integridade**: 52/52 parágrafos, 112/112 linhas, numerais e termos fixos conferidos um a um; varredura de whitespace de costura nos 50 livros → 0 divergências. 11.845 → 11.711 chars.
+
+Fila: pending 748 → 747, done 18.

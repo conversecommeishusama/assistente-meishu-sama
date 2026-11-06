@@ -1,0 +1,15 @@
+Livro **19491230 – Coleção Jikan Volume 9 · O Caminho para a Luz**: reprovado, chunk 0 reaberto.
+
+**Fidelidade — limpa.** Leitura integral e comparada dos 6 chunks (262 linhas, 133 parágrafos), parágrafo a parágrafo: multiconjunto de dígitos idêntico; as 107 citações entre aspas idênticas caractere a caractere (diff vazio nos dois sentidos, 214 aspas em ambos); rótulos `Eu:`/`Chefe:`/`Ele:`, cabeçalhos de seção, as duas estrofes, a `(Nota: "Renpei"...)` e o colofão idênticos linha a linha; nomes próprios, topônimos, eras e unidades batendo. Costuras: concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; 133/133 parágrafos e 129/129 linhas em branco; chunks 0-4 fecham em `\n\n` e o 5 em `\n` único. Nenhum parágrafo abaixo de 0,879 do tamanho da fonte, e as 11 quedas de frase ≥2 foram conferidas proposição a proposição — todas são fusão legítima. Os 9 achados das rodadas anteriores (chunks 1-5) estão todos corrigidos, e a varredura de quantificador/intensificador/modalizador foi refeita do zero nos dois sentidos e voltou limpa.
+
+**Achado — padrão literário, chunk 0.** Os três últimos parágrafos de prosa do chunk (a quebra da Okada Shoten, a falência do Banco Soko, a conversão à Oomoto) estão em 0,959 / 0,954 / 0,945 de similaridade com a fonte, contra 0,783 de média dos parágrafos longos do resto do chunk — receberam só inversão de conectivo e pontuação. Ficaram de pé as redundâncias mecânicas que a regra 1 do protocolo manda cortar:
+
+- "minha esposa **faleceu**. Ela estava grávida do terceiro filho, de cinco meses, e **morreu**" — tautologia em frases adjacentes;
+- "**caí** em uma grande dificuldade" … "**Caí** no fundo do desespero"; "na época" duas vezes (só mudou de lugar);
+- "**acabei** me convertendo; mas … **acabei** esquecendo-a", no mesmo período;
+- "caí na **fatalidade** de não ter mais como me reerguer" — calque intacto;
+- e, no 3º parágrafo do Prefácio (0,941), "as tendências do mundo **através do** passado" e "**significado** … **significado**" na mesma enumeração.
+
+Junto vai um achado secundário de fidelidade no mesmo chunk: "**sempre tive acesa** a convicção" → "**Mantinha acesa** a convicção" — o imperfeito dá duração, mas não o "sempre".
+
+Chunk 0 nunca havia sido reaberto (0 entradas de histórico), então foi reabertura normal, não escalação: item inserido no topo de `QUEUE_EXECUTOR.json` com a nota de evidência, entrada antiga removida de `done`, `000_historico_auditoria.jsonl` criado, `_manifest.json` com `montado: false` e `montado_em` removido, e o livro retirado de `pending` no `QUEUE_AUDITOR.json` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

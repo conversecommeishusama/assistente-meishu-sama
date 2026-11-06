@@ -1,0 +1,9 @@
+Chunk processado e fila atualizada.
+
+**`19350000 - Curso Kannon (1~7)` — chunk 7/14**
+- Revisado `007_src.txt` → `007_out.txt` (11.818 → 11.704 chars, −1,0%; 30 parágrafos em ambos, blocos 1:1).
+- Ajustes: períodos longos quebrados, conectivos repetidos removidos, calques da tradução trocados por termos naturais ("testaram a atividade espiritual" → "puseram à prova", "bateu em algo preto" → "golpeou").
+- Preservados: citações entre aspas verbatim, título de seção, estrofe ◎ (Shakyamuni/Kannon/Amida), nomes próprios e numerais (checagem automática de dígitos: idênticos).
+- Fila: `pending` 756 → 755, `done` 7 → 8, com os campos exatos do schema.
+
+Um ponto fora do meu chunk que vale registrar: `006_out.txt` termina com um único `\n`, enquanto todos os `_src.txt` e os demais `_out.txt` terminam com `\n\n`. Como `montar_livro.py` concatena com `"".join(partes)`, na montagem o último parágrafo do chunk 6 vai colar no primeiro do chunk 7. Não editei porque o protocolo proíbe mexer em outros chunks — é 1 caractere a acrescentar em `006_out.txt`, se você quiser que eu corrija.

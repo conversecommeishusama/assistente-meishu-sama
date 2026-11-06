@@ -1,0 +1,10 @@
+**19491223 — Montanha e Água: aprovado.** Fila do auditor: `pending` vazia, 10 em `done`.
+
+Leitura integral e comparada dos 12 chunks (1.987 linhas; 1.239 poemas), poema a poema:
+
+- **Fidelidade** — numeração 1–1239 completa e na mesma ordem; dígitos, aspas/citações, 〔 〕 e nomes próprios com multiconjunto idêntico; todos os cabeçalhos de seção, notas de glossário e o fecho voltaram idênticos à fonte. Concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado — nenhum poema perdido, duplicado ou fundido nas costuras.
+- **Achados anteriores** — os 5 estão corrigidos, inclusive o grave do chunk 10 (padrão literário): passou de 76% para 26% de linhas idênticas, com os 12 poemas nomeados pelo auditor todos refeitos.
+- **Classe recorrente do livro** (quantificador/intensificador) revarrida do zero nos dois sentidos: nenhum "quase todo/tudo" no montado, exclusividade preservada, e as ausências de *muito/grande/profundo/intenso* são substituição equivalente ou mais forte.
+- **Padrão literário** — ganho uniforme nos 12 chunks (23–54% de idênticos); os ~530 poemas intocados são versos curtos já bem-formados e aforismos, lidos um a um.
+
+Quatro pontos ficaram registrados na nota como examinados e endossados (prefácio "Nem um nem outro me satisfazem"; poemas 952, 676 e 57), para não serem re-litigados.

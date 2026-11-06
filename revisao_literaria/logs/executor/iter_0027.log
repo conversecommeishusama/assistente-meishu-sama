@@ -1,0 +1,6 @@
+Item processado.
+
+- **Chunk**: `19480701 - Coletânea de Salmos`, chunk 2/3 — reaberto pelo auditor com achado pontual.
+- **Correção**: poema 280 restaurou o elemento suprimido — `Ter-me tornado alguém que passa o verão em Hakone e o inverno em Atami: penso na profundidade da graça divina.` A regência truncada do fonte foi reparada sem cortar o objeto da gratidão.
+- **Verificação**: numeração dos poemas idêntica entre `_src` e `_out` (120 linhas cada); 9033 → 8824 chars. Restante do chunk não tocado, conforme a nota do auditor.
+- **Fila**: pending 744 → 743, done 21 → 22.

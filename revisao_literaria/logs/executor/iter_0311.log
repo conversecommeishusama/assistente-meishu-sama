@@ -1,0 +1,12 @@
+Item `pending[0]` processado e fechado.
+
+**Item:** `19501030 - Memórias da Perseguição Religiosa`, chunk 0/12 — reaberto pelo auditor com `nota_auditor` (FIDELIDADE, supressão de modalizador epistêmico).
+
+**O que foi feito:**
+- Achado específico resolvido: restaurado o "Penso que" no 3º parágrafo do prefácio → `"Penso que, se não houver um grande despertar o quanto antes, isso será algo verdadeiramente lamentável — por isso exponho tudo às claras."`
+- Varredura da **classe inteira** no chunk 0, como pedido — outros dois casos encontrados e corrigidos: `"pela conclusão a que cheguei"` → `"segundo a conclusão a que cheguei"` (evidencial) e `"foi, no essencial, uma mera questão"` → `"foi, principalmente, uma mera questão"` (grau). Os demais modalizadores da fonte já estavam presentes em forma equivalente ("tudo indica", "quase", "talvez", "é possível que", "conta-se", "Diz-se"→"Dizem que", "Imagino", "creio", "deviam", "pareceu", "Como é sabido"→"Como se sabe").
+- Nada mais do chunk 0 foi revertido: os seis trechos explicitamente endossados pelo auditor ficaram intactos.
+
+**Verificações:** 19 parágrafos (fonte e revisado), arquivo termina em `.\n\n`, todos os números idênticos caractere a caractere, datas/nomes/citações inalterados, 11.911 → 11.765 chars.
+
+Fila atualizada removendo o item por `(livro, chunk)` — não por `pop(0)` — para não colidir com o auditor: `pending` 610 → 609, `done` 155 → 156.

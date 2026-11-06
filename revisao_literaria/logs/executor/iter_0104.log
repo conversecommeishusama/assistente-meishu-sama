@@ -1,0 +1,9 @@
+Item processado.
+
+**`19490830 - Coleção Jikan Volume 5 Diálogos Jikan`, chunk 0/9** (reaberto pelo auditor)
+
+O achado do auditor era real e confirmado no disco: `000_out.txt` terminava em `\n` enquanto `000_src.txt` termina em `\n\n`. Como `montar_livro.py` concatena os `_out.txt` sem separador, isso colava o último parágrafo de "O Método da Mão Inversa" no parágrafo de Maruyama Ōkyo que abre o chunk 1 — daí os 155 parágrafos contra 156 do original.
+
+Restaurei a quebra final e mantive o trabalho literário intacto, como a nota pedia. Varri também os outros 8 chunks do livro para a mesma classe de defeito: 1–7 terminam em `\n\n` e o 8 em `\n`, todos batendo com seus `_src.txt`; contagem de parágrafos idêntica em todos (22/13/21/18/8/8/18/20/28).
+
+Fila: 696 pending, 69 done.

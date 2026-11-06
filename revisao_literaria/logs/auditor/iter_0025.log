@@ -1,0 +1,10 @@
+Auditoria de `pending[0]` concluída — **19490830 - Coleção Jikan Volume 5 Diálogos Jikan** foi **reprovado** e devolvido ao executor (2 chunks reabertos).
+
+**Verificação estrutural (limpa):** concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; 165 parágrafos em ambos, contagem idêntica chunk a chunk; multiconjunto de dígitos idêntico; as citações entre aspas idênticas caractere a caractere; 171 linhas em branco e os 4 símbolos `○` preservados. Todos os 10 achados das rodadas anteriores foram conferidos um a um e vieram corrigidos (inclusive "várias vezes" do Asahi Diamond, "cerca de nove shaku", os três do chunk 5, "milhares de palavras" de Seiho e "vários conselhos").
+
+**Achados novos (leitura integral, parágrafo a parágrafo):**
+
+- **Chunk 6** (único que nunca havia passado pelo auditor) — 3 ocorrências da classe já reaberta 4× neste livro: "os moradores fogem **todas**" (as vacinas) virou "fogem **todos** delas" (os moradores); "acho que concordarão" virou "creio que **todos** concordarão"; "é preciso ter **muito cuidado**" virou "é preciso **o maior cuidado**" — sendo que a mesma fórmula foi corretamente preservada no chunk 0.
+- **Chunk 7** — lista aberta fechada: "os principais mestres foram Igarashi Doho, …, Shiomi Masanari, **entre outros**" virou "… e Shiomi Masanari", passando a afirmar que esses cinco foram *os* principais mestres do maki-e.
+
+Fila atualizada: chunks 6 e 7 no início de `QUEUE_EXECUTOR.json` com `nota_auditor` (e as entradas antigas deles removidas de `done`), linha acrescentada em cada `_historico_auditoria.jsonl`, `montado` zerado no `_manifest.json`, e o livro removido de `pending` no `QUEUE_AUDITOR.json` sem ir para `done`. Nenhum chunk atingiu a 3ª reabertura, então não houve escalação manual. O `montar_livro.py` enfileirou o Volume 4 para a próxima invocação.

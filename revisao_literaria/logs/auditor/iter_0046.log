@@ -1,0 +1,12 @@
+Auditoria de `19491230 - Coleção Jikan Volume 9 Caminho para a Luz` concluída: **reprovado**, 2 chunks reabertos.
+
+**Leitura integral e comparada dos 6 chunks** (262 linhas, 133 parágrafos), original × montado. Costuras íntegras: concatenação dos `_src` bate byte a byte com a fonte e a dos `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (20/18/25/25/17/28); todos fecham em `\n\n` (o 5 em `\n`, como a fonte). Dígitos, as 214 aspas e o conteúdo de todas as citações idênticos; cabeçalhos de seção, rótulos `Eu:`/`Chefe:`, a estrofe de Tamagawa-kyo e o colofão intactos. Os 2 achados da rodada anterior estão corrigidos (chunk 1: `várias enfermidades` devolvido; chunk 2: `parti de minha residência ... rumo à delegacia`).
+
+Dois achados novos:
+
+- **Chunk 2** — `"Toda a sua vida passou a ser COMO A DE um membro da família imperial"` virou `"passou a ser A DE um membro da família imperial"`. Sem o `como`, o texto deixa de descrever semelhança de comportamento e passa a afirmar a filiação imperial de Deguchi — justamente a proposição que o autor relata sem endossar, e cujo ponto é que ele passou a se *portar* como imperial. 2ª reabertura deste chunk (a próxima já vai para escalação manual).
+- **Chunk 5** — o `etc.` de `"ombros, braços, abdômen, etc."` sumiu, fechando uma lista que a fonte deixa aberta (mesma classe já corrigida no Volume 7); é o único dos 4 `etc.` do livro que se perdeu. Junto, dois itens menores: `"seus defeitos em vida"` virou `"os defeitos que tivera em vida"`, com dois mais-que-perfeitos de sujeitos diferentes e o possuidor sem dono explícito; e `"sete horas da noite"` perdeu o `da noite`. 1ª reabertura.
+
+Varredura da classe recorrente (quantificador/intensificador/aproximador) refeita nos dois sentidos: todas as demais diferenças são substituição equivalente (`gradualmente`→`aos poucos`, `cerca de`→`uns`, `completamente`→`por completo`, `realmente`→`mesmo`), sem criar nem apagar quantidade; polaridade e interrogativas idênticas linha a linha.
+
+Filas atualizadas: chunks 2 e 5 no topo de `QUEUE_EXECUTOR.json` com a evidência concreta e as entradas antigas removidas de `done`, histórico de auditoria gravado, `montado: false` no manifest e o livro fora de `pending` do auditor (volta sozinho após a remontagem).

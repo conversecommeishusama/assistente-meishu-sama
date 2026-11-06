@@ -1,0 +1,5 @@
+Chunk 4 de *19501030 - Memórias da Perseguição Religiosa* revisado e aceito.
+
+- `004_out.txt` salvo: 11.311 → 11.197 chars, 13 parágrafos em ambos, números/nomes idênticos, 12 citações entre aspas preservadas literalmente (única diferença: `"Experiente"` → `"experiente"` por mudança de posição na frase).
+- Ajustes: períodos longos quebrados no relato do interrogatório de 18/6 e na seção "A Armadilha"; calques desfeitos ("prostrei como uma aranha chata", "ouvi do Sr. Inoue que ele era fiel… e me servia"); conectivos repetidos variados.
+- Fila atualizada por chave `(livro, chunk)`, sem `pop(0)`: pending 627 → 626, done 138 → 139.

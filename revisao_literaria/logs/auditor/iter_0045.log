@@ -1,0 +1,15 @@
+**19491230 — Coleção Jikan Volume 9 · O Caminho para a Luz: REPROVADO nesta rodada.** 2 chunks reabertos (1ª reabertura de cada; sem histórico anterior).
+
+**Leitura integral e comparada** dos 6 chunks (262 linhas, 130 parágrafos), original × montado, parágrafo a parágrafo.
+
+**O que passou.** Multiconjunto de dígitos idêntico; as 107 citações entre aspas idênticas caractere a caractere (diff vazio nos dois sentidos, 214 aspas em ambos); nenhum nome próprio, topônimo, divindade, data, era ou unidade perdido; rótulos `Eu:`/`Chefe:`/`Ele:`, cabeçalhos de seção, as 2 estrofes de poema, a `(Nota: "Renpei"...)`, a divisória `---` e o colofão idênticos linha a linha. Concatenação dos 6 `_src` bate byte a byte com o original e a dos 6 `_out` com o montado; nenhum parágrafo abaixo de 0,879 do tamanho da fonte; os 40 parágrafos idênticos são todos material protegido (títulos, poemas, falas curtas, colofão) — nenhum chunk passou em branco (17–52% de idênticos, todos justificados). Varredura de quantificador/intensificador/modalizador refeita nos dois sentidos: as ausências são reformulação equivalente (`completamente`→`por completo`, `extremamente`→`ao extremo`, `cerca de`→`uns`, `gradualmente`→`aos poucos` ×16); as 12 diferenças de negação não invertem polaridade; interrogativas 24/24.
+
+**Achados que motivaram a reabertura:**
+
+1. **chunk 2** — abertura de "Na Prisão". Fonte: *"fui à delegacia **partindo de** minha residência em Tamagawa Uenoge"*; montado: *"parti para **a delegacia de** minha residência em Tamagawa Uenoge"*. Na leitura natural o sintagma prende-se a "delegacia", e o leitor entende a delegacia local de Tamagawa — quando a intimação, dita na frase anterior, era da **Delegacia de Omiya, Saitama**. Agrava-se porque a Delegacia de Tamagawa existe e aparece adiante, em episódio distinto; e o aposto "hoje centro de reuniões da Igreja Miroku" passa a poder referir-se à delegacia, não à residência.
+
+2. **chunk 1** — *"Apenas havia contraído **várias** doenças"* → *"Apenas contraíra **inúmeras** enfermidades"*. Inflação de quantidade que ainda joga contra o "Apenas" do próprio período (ali o autor minimiza, para dizer que não tem formação médica).
+
+**Nota sobre um bug de costura, já resolvido antes da minha decisão:** o `002_out.txt` terminava em `\n` único e o livro estava montado com dois parágrafos fundidos (linha 124). O executor detectou e corrigiu isso às 00:34 durante esta auditoria, e o livro foi remontado — reverifiquei tudo contra o arquivo atual. A instrução de não reintroduzir o `\n\n` final está gravada na `nota_auditor` do chunk 2.
+
+Filas atualizadas: executor `pending` 648→650 (chunks 1 e 2 no topo, com evidência concreta), entradas antigas removidas de `done`; `_manifest.json` com `montado: false`; auditor `pending` 1→0, sem entrada em `done` — o livro volta sozinho quando `montar_livro.py` remontar.

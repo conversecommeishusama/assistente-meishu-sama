@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**Chunk:** `19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual`, chunk 2/10.
+
+- Ajustes principais: calques desfeitos ("Em resposta às minhas perguntas…" → "Às minhas perguntas, o espírito respondeu…"; "O Paraíso do Extremo Ocidente, em seguida, é um termo budista…" → "Vem em seguida o Paraíso do Extremo Ocidente…"), períodos longos redistribuídos nos trechos do Paraíso do Extremo Ocidente, do Lago de Sangue e do Reino dos Espíritos Famintos, repetição de conectivos aparada.
+- Preservados literalmente: as duas falas entre aspas (a do jovem Yamada e a longa fala do espírito), a nota "(Nota) Shihyo…", o título de seção "Paraíso e Inferno", todos os nomes próprios e termos japoneses.
+- Verificação: 18 parágrafos na fonte e no revisado; conjunto de números idêntico; contagem de nomes próprios idêntica; citações entre aspas byte-a-byte iguais; 10.703 → 10.618 caracteres.
+
+Nota lateral, para você decidir: a fila mudou de tamanho entre a leitura inicial e a escrita (715/50 → 714/51 na gravação), ou seja, o auditor reabriu um item em paralelo — a remoção foi feita por `(livro, chunk)`, não por `pop(0)`, então nada foi perdido. O próximo `pending[0]` (Coleção Jikan Volume 1, chunk 2) já vem com `nota_auditor`.

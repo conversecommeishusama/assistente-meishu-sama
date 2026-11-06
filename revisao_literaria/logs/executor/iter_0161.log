@@ -1,0 +1,10 @@
+Chunk 5 de *19491005 - Coleção Jikan Volume 4 Histórias de Milagres* reprocessado e aceito.
+
+O item vinha reaberto pelo auditor com `nota_auditor` ("padrão literário não atingido"), então revarri o chunk inteiro, parágrafo a parágrafo, e não só os pontos citados:
+
+- **Relato "A estranheza da pesca"** (os parágrafos flagrados): "lugar" caiu de 7 para 3 ocorrências; desfeito o eco *"manifestação do Poder Kannon… grandiosidade desse poder"*; *"e ele nos contou"* → *"meu pai contou"* (referente ambíguo com Kannon-Sama); *"carregando um peso"* → *"com a carga pesada"*; desmontada a cadeia de relativas calcada do japonês no clímax do relato; eliminado o empilhamento *dizem/dizendo/disse*.
+- **Demais parágrafos** (enchente de Ryōgen-mura, terremoto de Fukui, atropelamento) também recadenciados, não apenas os apontados.
+
+Verificações antes do aceite: 15 citações entre aspas idênticas à fonte, todos os números/datas idênticos, contagem de nomes próprios idêntica, 35 linhas com a mesma estrutura de parágrafos e divisórias, 10.688 → 10.187 caracteres (−4,7%). Similaridade com a fonte nos parágrafos longos caiu de 0,90–0,94 para 0,24–0,72 — agora dentro (ou abaixo) da faixa dos chunks que o auditor deu como bem trabalhados.
+
+Fila atualizada removendo o item por `(livro, chunk)` — não por `pop(0)` — para não colidir com o auditor: `pending` 673 → 672, `done` 92 → 93.

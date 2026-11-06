@@ -1,0 +1,29 @@
+{
+  "volume": 17,
+  "titulo": "Agricultura Natural",
+  "nota": "無肥料栽培法 duplicado propositalmente -- também no Jikan Sōsho I",
+  "paginas_estimadas": 327.7,
+  "caracteres_totais": 630789,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19530505 - Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530505 - Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção.txt",
+      "caracteres": 318967
+    },
+    {
+      "arquivo_destino": "02_19510115 - Explicação da Agricultura Natural.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510115 - Explicação da Agricultura Natural.txt",
+      "caracteres": 84718
+    },
+    {
+      "arquivo_destino": "03_19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "caracteres": 188815
+    },
+    {
+      "arquivo_destino": "04_19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+      "fonte": "livros_publicacao_pt_revisado/19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+      "caracteres": 38289
+    }
+  ]
+}

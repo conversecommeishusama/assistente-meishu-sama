@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**pending[0]** era uma reabertura do auditor: chunk 4 de *19490830 - Coleção Jikan Volume 5 Diálogos Jikan*.
+
+- Achado do auditor corrigido: `"Embora sua extensão fosse de apenas nove shaku"` → `"Embora tivesse cerca de nove shaku de comprimento"` (aproximador restaurado, minimizador "apenas" removido).
+- Varredura da mesma classe de bug no chunk inteiro (não só o ponto citado): achei mais uma supressão de aproximador — `"subi mais dois ou três chō"` → `"subi cerca de dois ou três chō"`; e devolvi `"quatro ou cinco lugares assim"` no lugar de `"travessias"` (com concordância ajustada na frase seguinte). Os demais quantificadores (cerca de um shaku, mil jin, cinco sun, um terço, um ri, 130 cm, 5.000/10.000 pés, uns vinte ou trinta segundos) conferem com a fonte.
+- Tamanho 10.261 → 10.045 chars, 18 linhas em ambos.
+
+Fila: 694 em `pending`, 71 em `done` (remoção feita por chave `(livro, chunk)`, não por índice).

@@ -1,0 +1,154 @@
+{
+  "arquivo": "19480101 - Gokōwa-roku (Suplemento).txt",
+  "fonte": "/var/www/goshinsho/revisao_literaria/orais/19480101 - Gokōwa-roku (Suplemento).txt",
+  "chars_fonte": 330493,
+  "total_chunks": 29,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11596,
+      "paragrafos": 52
+    },
+    {
+      "idx": 1,
+      "chars": 11994,
+      "paragrafos": 46
+    },
+    {
+      "idx": 2,
+      "chars": 10293,
+      "paragrafos": 36
+    },
+    {
+      "idx": 3,
+      "chars": 11659,
+      "paragrafos": 32
+    },
+    {
+      "idx": 4,
+      "chars": 11348,
+      "paragrafos": 23
+    },
+    {
+      "idx": 5,
+      "chars": 7527,
+      "paragrafos": 25
+    },
+    {
+      "idx": 6,
+      "chars": 10235,
+      "paragrafos": 11
+    },
+    {
+      "idx": 7,
+      "chars": 11189,
+      "paragrafos": 25
+    },
+    {
+      "idx": 8,
+      "chars": 11761,
+      "paragrafos": 33
+    },
+    {
+      "idx": 9,
+      "chars": 11932,
+      "paragrafos": 42
+    },
+    {
+      "idx": 10,
+      "chars": 11538,
+      "paragrafos": 32
+    },
+    {
+      "idx": 11,
+      "chars": 11765,
+      "paragrafos": 45
+    },
+    {
+      "idx": 12,
+      "chars": 11642,
+      "paragrafos": 33
+    },
+    {
+      "idx": 13,
+      "chars": 11881,
+      "paragrafos": 44
+    },
+    {
+      "idx": 14,
+      "chars": 9498,
+      "paragrafos": 24
+    },
+    {
+      "idx": 15,
+      "chars": 11950,
+      "paragrafos": 27
+    },
+    {
+      "idx": 16,
+      "chars": 11957,
+      "paragrafos": 31
+    },
+    {
+      "idx": 17,
+      "chars": 11958,
+      "paragrafos": 51
+    },
+    {
+      "idx": 18,
+      "chars": 11947,
+      "paragrafos": 31
+    },
+    {
+      "idx": 19,
+      "chars": 10827,
+      "paragrafos": 33
+    },
+    {
+      "idx": 20,
+      "chars": 11996,
+      "paragrafos": 28
+    },
+    {
+      "idx": 21,
+      "chars": 11769,
+      "paragrafos": 32
+    },
+    {
+      "idx": 22,
+      "chars": 11715,
+      "paragrafos": 39
+    },
+    {
+      "idx": 23,
+      "chars": 11655,
+      "paragrafos": 27
+    },
+    {
+      "idx": 24,
+      "chars": 11410,
+      "paragrafos": 31
+    },
+    {
+      "idx": 25,
+      "chars": 11624,
+      "paragrafos": 38
+    },
+    {
+      "idx": 26,
+      "chars": 10527,
+      "paragrafos": 49
+    },
+    {
+      "idx": 27,
+      "chars": 11950,
+      "paragrafos": 33
+    },
+    {
+      "idx": 28,
+      "chars": 13350,
+      "paragrafos": 43
+    }
+  ],
+  "montado": false
+}

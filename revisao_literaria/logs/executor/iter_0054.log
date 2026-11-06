@@ -1,0 +1,8 @@
+Item `pending[0]` (chunk 5/14 de *Coleção Jikan Volume 1*, reaberto pelo auditor) processado e movido para `done`.
+
+- **Achado do auditor resolvido**: o parágrafo do relato "Do Labirinto para a Luz" voltou à construção enfática afirmativa da fonte — "não foi que meu corpo, que antes não conseguia ficar de pé nem andar, conseguiu erguer-se da cama sem a ajuda de ninguém?" — eliminando a leitura invertida que a negação reposicionada admitia.
+- **Revarredura da classe inteira** (interrogativa retórica / negação reposicionada): encontrei mais uma ocorrência criada pela reescrita — "Aquilo curaria minha doença?" tinha substituído a indireta da fonte; restaurada como "Perguntava-me se aquilo curaria minha doença, sentindo uma certa insatisfação". As demais interrogativas ("Por que não a levamos ao médico mais cedo?", "Até quando o demônio da doença atormentaria meu corpo?", "Mas o que aconteceu?") já existiam na fonte.
+- **Achado adicional**: a reescrita anterior tinha fundido "com médicos e dinheiro" em "dinheiro com médicos", suprimindo um elemento; restaurado.
+- **Verificações**: 32 parágrafos em ambos; contagem de `?` e de partículas negativas idêntica parágrafo a parágrafo; todos os números/datas e todas as citações entre aspas conferem exatamente; 11.936 → 11.892 chars.
+
+Fila: 726 pending, 39 done.

@@ -1,0 +1,6 @@
+Chunk 7/10 de *Coleção Jikan Volume 10 — Método de Saúde por Revelação Divina* revisado e aceito.
+
+- `007_out.txt` gravado: 12.089 → 11.947 chars (−1,2%), 31 linhas não vazias em ambos, estrutura de linhas em branco, títulos, linhas de publicação e notas idênticas.
+- Verificações: citações entre aspas byte-a-byte iguais ao fonte; todos os números (35×, nº 38/30/20, 1949, Showa 24, faixas etárias) conferem.
+- Ajustes principais: quebra do período longo da hemorragia; variação da repetição mecânica "sarou / a dor voltou no dia seguinte"; remoção de calques ("não é de se estranhar", "impedindo que algo que deveria sarar sare"); concordância "duas ou três dias" → "dois ou três dias".
+- Fila: item movido para `done` por (livro, chunk) — pending 636 → 635, done 129 → 130.

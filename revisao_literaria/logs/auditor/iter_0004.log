@@ -1,0 +1,17 @@
+**19480701 – Coletânea de Salmos: reprovado, 2 chunks reabertos.**
+
+Leitura integral das 435 linhas do original contra as 435 do montado (139 linhas alteradas, todas examinadas uma a uma).
+
+Integridade estrutural — sem problema:
+- concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; nenhuma perda nem duplicação nas costuras;
+- 30/30, 30/30, 23/23 parágrafos por chunk; numeração 1–309 contínua; todos os 44 títulos de seção idênticos; nenhum número, nome próprio ou conteúdo entre aspas alterado.
+
+Ganho literário real na maior parte: vários erros de fato reparados (concordância em 64 e 209, correlação de tempos em 143, anacoluto em 182, predicação quebrada em 184, particípios soltos em 240/287/299, "do Matriz" → "da Matriz"), calques desfeitos e conectivos repetidos eliminados no prefácio.
+
+Achados que motivaram a reabertura:
+- **Poema 280 (chunk 2)** — corte de conteúdo: "Tornar-se uma pessoa que está em Hakone no verão e em Atami no inverno" virou "Passar o verão em Hakone e o inverno em Atami". O "tornar-se" — a mudança de condição pela qual o autor agradece, objeto da gratidão — sumiu. A construção do fonte era truncada, mas cabia repará-la, não suprimi-la.
+- **Poema 194 (chunk 1)** — "simplesmente existir sem enfermidades" → "existir simplesmente sem enfermidades": o advérbio deixou de modificar "existir" (o *mero* existir) e passou a modificar "sem enfermidades".
+- **Poema 185 (chunk 1)** — "embora seja imerecido" (o fato/o autor) → "ainda que imerecida" (a graça): o modificador trocou de referente.
+- **Poema 195 (chunk 1)** — "Será que se pode louvar" (impessoal) → "Poderei louvar": sujeito de 1ª pessoa que o fonte não explicita.
+
+Fila atualizada: chunks 1 e 2 no topo de `QUEUE_EXECUTOR.json` com `nota_auditor` citando fonte × montado e instrução de corrigir só as linhas apontadas; entradas antigas desses chunks removidas de `done`; histórico registrado (1ª reabertura de cada); `montado` zerado no manifest; livro retirado de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

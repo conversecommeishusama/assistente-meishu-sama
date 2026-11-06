@@ -1,0 +1,11 @@
+**pending[0] processado: Coleção Jikan Volume 12 — Coletânea de Narrativas Jikan → chunk 6 reaberto (1ª reabertura).**
+
+Leitura integral e comparada das 502 linhas (266 parágrafos, 9 chunks), original × montado.
+
+**O que passou:** concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (34/31/32/29/25/35/35/28/17); multiconjunto de dígitos idêntico; as 109 citações entre aspas idênticas caractere a caractere (diff vazio nos dois sentidos); todos os títulos de artigo, linhas de crédito de edição, (Nota)/(Notas) de glossário e o colofão voltaram idênticos. Os 2 achados da rodada anterior estão corrigidos: chunk 2 (fecho de "Super-Religião" refeito, "a todo custo" removido, "cultivar grandemente" → "amplamente") e chunk 5 ("muito semelhantes, nesse ponto, à terapia sintomática", relação de semelhança restaurada). Corrupção da fonte reparada sem perda: a triplicação "segundo o Plano Divino segundo o Plano Divino segundo o Plano Divino". Varredura da classe recorrente (quantificador/intensificador/modalizador) feita nos dois sentidos: o balanço fecha — as ausências têm compensação equivalente ("raríssimos", "abunda", "levará fatalmente", "claríssimo", "há de").
+
+**Achado que motivou a reabertura (chunk 6):**
+- *"Vou começar por meu trabalho…"* — a enumeração dos milagres na agricultura perdeu o verbo que a regia. Fonte: "**há inúmeros exemplos de** campos de trigo…, **de** colheitas…, **e de** cavalos e bois…". Montado: "**incontáveis** campos de trigo … reviveram; colheitas que … renderam mais; cavalos e bois que … retornaram à vida." Os itens 2 e 3 ficaram sem predicado (anacoluto), e o quantificador, que cobria os três, passou a cobrir só o primeiro.
+- *"Depois do fim da guerra…"* — dois operadores acrescentados que não estão na fonte: "quase **toda** suprimida" (fonte: "quase suprimida") e "— **sempre**, é claro, para atormentar" (fonte: "com o objetivo, é claro, de atormentar").
+
+Fila do executor com o chunk 6 no topo e `nota_auditor` mandando revarrer o chunk inteiro pelas duas classes; entrada antiga do chunk removida de `done`; `006_historico_auditoria.jsonl` criado; `montado` zerado no `_manifest.json`; livro retirado de `pending` no `QUEUE_AUDITOR.json` sem ir para `done` (volta sozinho após a remontagem).

@@ -1,0 +1,7 @@
+Item processado: `19350000 - Curso Kannon (1~7)`, chunk 5 (reaberto pelo auditor).
+
+- Corrigido exatamente o achado: vírgula antes de "mas" no verbete do Dragão de Nove Cabeças; resto do chunk intocado (verbetes de dragão em parágrafos próprios e aspas «» preservados).
+- Varredura da mesma classe no chunk: nenhum outro adversativo/causal sem vírgula obrigatória.
+- Fila atualizada: pending 749, done 16.
+
+Uma observação sobre a corrida com o laço auditor: quando comecei, `pending[0]` era o chunk 11 (costura com `\n\n` final). Verifiquei que esse defeito já não existe — `011_out.txt` termina com `\n\n` e a linha em branco está presente no livro montado (linhas 1596-1598). No meio da execução o auditor reescreveu a fila (reabriu os chunks 5, 11 e 12), o chunk 5 passou a ser o `pending[0]` e foi esse que processei. O chunk 11 voltou a ser `pending[0]` para a próxima invocação — pela conferência que fiz, é provável que já esteja resolvido em disco.

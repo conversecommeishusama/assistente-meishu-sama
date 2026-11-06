@@ -1,0 +1,67 @@
+{
+  "arquivo": "19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+  "fonte": "livros_publicacao_pt_revisado/19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+  "chars_fonte": 112826,
+  "total_chunks": 11,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 9615,
+      "paragrafos": 10
+    },
+    {
+      "idx": 1,
+      "chars": 8842,
+      "paragrafos": 5
+    },
+    {
+      "idx": 2,
+      "chars": 11073,
+      "paragrafos": 5
+    },
+    {
+      "idx": 3,
+      "chars": 10633,
+      "paragrafos": 7
+    },
+    {
+      "idx": 4,
+      "chars": 11012,
+      "paragrafos": 8
+    },
+    {
+      "idx": 5,
+      "chars": 8380,
+      "paragrafos": 4
+    },
+    {
+      "idx": 6,
+      "chars": 10584,
+      "paragrafos": 5
+    },
+    {
+      "idx": 7,
+      "chars": 11403,
+      "paragrafos": 4
+    },
+    {
+      "idx": 8,
+      "chars": 11061,
+      "paragrafos": 7
+    },
+    {
+      "idx": 9,
+      "chars": 11996,
+      "paragrafos": 12
+    },
+    {
+      "idx": 10,
+      "chars": 8227,
+      "paragrafos": 7
+    }
+  ],
+  "montado": true,
+  "chars_final": 112235,
+  "ratio_tamanho": 0.995,
+  "montado_em": "2026-08-17T04:02:42.847713"
+}

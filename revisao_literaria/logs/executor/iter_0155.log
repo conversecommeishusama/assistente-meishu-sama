@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**`19491223 - Montanha e Água`, chunk 0/12** — revisado e salvo em `revisao_literaria/chunks/19491223 - Montanha e Água/000_out.txt`.
+
+- Ajustes principais: prefácio reencadeado (eliminado o "No entanto" repetido), calques desfeitos ("a coisa chamada amor" → "o amor"), correção de "na beiral" → "no beiral", eco "Erguendo-se… se ergue" removido no poema 57, inversões arrastadas dos tanka reordenadas.
+- Integridade verificada: 117 linhas ↔ 117, 21 blocos ↔ 21, 79 poemas numerados alinhados um a um, mesmos anos/datas; 10.482 → 10.280 chars (−1,9%).
+- Fila atualizada removendo por `(livro, chunk)`, não por `pop(0)` — o auditor reabriu itens em paralelo durante o processamento (pending 670→672, done 95→93), e nenhuma dessas reaberturas foi perdida.
+
+Observação para a próxima invocação: `pending[0]` agora é `19491130 - Coleção Jikan Volume 8…` chunk 2, com `nota_auditor` pedindo restauração do epíteto "de bela vista" no poema 204 — há 3 itens reabertos com nota na fila.

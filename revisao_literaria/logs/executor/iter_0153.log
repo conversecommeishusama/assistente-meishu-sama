@@ -1,0 +1,8 @@
+Item `pending[0]` processado e encerrado.
+
+**Chunk 10 de "19491005 — Coleção Jikan Volume 4 Histórias de Milagres"** (reabertura do auditor, correção pontual):
+
+- Restaurei o epíteto fixo cortado: "diante da infinita compaixão de Kannon-Sama" → **"diante da infinita e grande compaixão de Kannon-Sama"** — sem a aspereza de "infinita grande". O chunk volta a ter 2 ocorrências de "grande compaixão", como a fonte.
+- Conferi os demais termos fixos do volume no chunk (contagem fonte vs. revisado): Johrei 8/8, Ohikari 4/4, kyoshu 4/4, Kannon 9/9, Daikōmyō Nyorai 1/1, proteção divina 4/4, Grão-Mestre 3/3, Imagem da Luz Divina 2/2 — nenhum dissolvido em paráfrase.
+- O restante do chunk, já aprovado pelo auditor, ficou intacto (21 parágrafos não vazios em ambos; 9166 → 9086 chars).
+- Fila atualizada removendo por `(livro, chunk)`, não por `pop(0)`: pending 672 → 671, done 93 → 94.

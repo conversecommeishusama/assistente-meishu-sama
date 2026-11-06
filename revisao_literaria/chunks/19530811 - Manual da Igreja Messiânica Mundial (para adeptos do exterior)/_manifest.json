@@ -1,0 +1,47 @@
+{
+  "arquivo": "19530811 - Manual da Igreja Messiânica Mundial (para adeptos do exterior).txt",
+  "fonte": "livros_publicacao_pt_revisado/19530811 - Manual da Igreja Messiânica Mundial (para adeptos do exterior).txt",
+  "chars_fonte": 74548,
+  "total_chunks": 7,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11569,
+      "paragrafos": 25
+    },
+    {
+      "idx": 1,
+      "chars": 11411,
+      "paragrafos": 22
+    },
+    {
+      "idx": 2,
+      "chars": 11557,
+      "paragrafos": 22
+    },
+    {
+      "idx": 3,
+      "chars": 11271,
+      "paragrafos": 24
+    },
+    {
+      "idx": 4,
+      "chars": 11646,
+      "paragrafos": 21
+    },
+    {
+      "idx": 5,
+      "chars": 11987,
+      "paragrafos": 19
+    },
+    {
+      "idx": 6,
+      "chars": 5107,
+      "paragrafos": 11
+    }
+  ],
+  "montado": true,
+  "chars_final": 73475,
+  "ratio_tamanho": 0.986,
+  "montado_em": "2026-08-16T15:09:20.591702"
+}

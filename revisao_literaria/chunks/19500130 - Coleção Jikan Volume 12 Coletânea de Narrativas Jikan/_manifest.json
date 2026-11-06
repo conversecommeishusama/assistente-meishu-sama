@@ -1,0 +1,57 @@
+{
+  "arquivo": "19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+  "fonte": "livros_publicacao_pt_revisado/19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+  "chars_fonte": 98085,
+  "total_chunks": 9,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11393,
+      "paragrafos": 32
+    },
+    {
+      "idx": 1,
+      "chars": 11899,
+      "paragrafos": 31
+    },
+    {
+      "idx": 2,
+      "chars": 11776,
+      "paragrafos": 31
+    },
+    {
+      "idx": 3,
+      "chars": 11615,
+      "paragrafos": 23
+    },
+    {
+      "idx": 4,
+      "chars": 11818,
+      "paragrafos": 24
+    },
+    {
+      "idx": 5,
+      "chars": 11778,
+      "paragrafos": 29
+    },
+    {
+      "idx": 6,
+      "chars": 11993,
+      "paragrafos": 25
+    },
+    {
+      "idx": 7,
+      "chars": 11401,
+      "paragrafos": 28
+    },
+    {
+      "idx": 8,
+      "chars": 4412,
+      "paragrafos": 14
+    }
+  ],
+  "montado": true,
+  "chars_final": 96283,
+  "ratio_tamanho": 0.982,
+  "montado_em": "2026-08-15T03:03:31.097018"
+}

@@ -1,0 +1,11 @@
+Item processado e fila atualizada.
+
+**Chunk:** `19500420 - Coleção Jikan Volume 10 …` chunk 4/10 (reaberto pelo auditor).
+
+**Achado (1) — parágrafo devolvido sem trabalho:** o parágrafo-tese de "A Medicina do Espírito Divino é uma Medicina Democrática" foi reescrito — a relativa + instrumental agora fecha a frase, o sujeito de "produz" ficou explícito (*E ela produz*), e a predicação solta foi ancorada (*Uma terapia assim é, portanto, totalmente ideal*). Os seis operadores de grau e o termo "ondas de Luz" permanecem intactos (verificado por grep).
+
+**Achado (2) — nome elidido:** "de nossa Igreja" devolvido no primeiro parágrafo; contagem de *Igreja* voltou a 2 = 2 contra a fonte.
+
+**Varredura das duas classes no chunk inteiro:** dos 13 parágrafos idênticos à fonte, restam só cabeçalhos, linhas de referência bibliográfica e as 2 citações entre aspas (categoria "preservar"); os outros 4 substantivos receberam trabalho (calque "através deste livro", complemento pendurado na introdução da fala de Furuhata, "respaldo à afirmação anterior", duplo "na" na abertura do Tokyo Shimbun). Por diferença de multiconjunto de palavras achei mais três elisões não apontadas pelo auditor e devolvi: "em geral", "gradualmente" e "todos os três".
+
+Fonte 11.128 → revisado 11.021 chars, 46 linhas em ambos, citações byte a byte idênticas. Fila: 627 pending / 138 done.

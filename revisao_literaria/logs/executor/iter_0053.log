@@ -1,0 +1,5 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes`, chunk 7/16 (era `pending[0]` no momento da leitura).
+- **Saída:** `revisao_literaria/chunks/.../007_out.txt` — 33 parágrafos (igual à fonte), 11.779 → 11.377 chars, todos os números/unidades e as 7 citações entre aspas idênticos, blocos de endereço e títulos preservados.
+- **Nota:** enquanto eu trabalhava, o laço auditor reescreveu a fila e reabriu 3 chunks do Volume 1 (`19490625`, chunks 5, 9 e 11, com `nota_auditor`), que passaram a ocupar o topo de `pending`. Movi meu item para `done` pelo índice correto (estava em `pending[3]`), sem tocar nos reabertos — eles são o começo da próxima invocação. Fila agora: 727 pending / 38 done.

@@ -1,0 +1,5 @@
+Chunk 5/7 de *19491025 - Coleção Jikan Volume 7 — Cristo, Buda e a Fé Kannon* revisado e aceito.
+
+- `005_out.txt` gravado (9.618 → 9.361 chars, 21 parágrafos + cabeçalho de seção "XI." preservado, contagem idêntica à fonte).
+- Verificações: nomes próprios/termos fixos conferidos por contagem (as únicas diferenças são reformulações intencionais — `Ele afirma/vê/ensina` → `Afirma/Vê/Ensina` e uma repetição mecânica de "um Deus de justiça"); terminações e divisórias byte-idênticas.
+- Fila atualizada por identidade (livro, chunk), sem `pop(0)`: pending 678 → 677, done 87 → 88.

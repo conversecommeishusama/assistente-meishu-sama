@@ -1,0 +1,12 @@
+Auditoria do item `pending[0]` concluída — **19491130 · Coleção Jikan Volume 8 (Poemas Recentes de Akemaro)**: livro **reaberto**, chunk 1 devolvido ao executor.
+
+**Fidelidade — íntegra (nada a corrigir):**
+- Concatenação dos 6 `_src` bate byte a byte com a fonte e a dos 6 `_out` com o montado; todas as costuras fecham em `\n\n`.
+- 486 poemas nos dois arquivos, numeração 1-486 sem falha; multiconjunto de dígitos idêntico; as 486 datas entre parênteses idênticas; 12 citações entre aspas e todos os glosários em parênteses idênticos; títulos de seção, notas com asterisco e colofão `(486 poemas coletados)` idênticos linha a linha.
+- As 11 linhas a mais no montado são as 11 fusões da fonte (`...maio).32. A sabedoria...`) corretamente separadas — reparo de corrupção, sem perda de texto.
+- Os 12 achados das rodadas anteriores estão todos corrigidos: `(jóia)` no 59, `de bela vista` no 204, `diversos`/`muitos` em 168/235, `folhas outonais` no 318, 309, 300, 264, 241, 283, `simplesmente` no 338, `se regozijam e se alegram` no 332, `grande passagem` no 393, `Saibam` no 341, `estação das chuvas` no 455.
+- Varredura da classe recorrente do livro (quantificador/intensificador) refeita do zero: todas as 20 diferenças são reformulação equivalente (`durante todo o dia`→`o dia inteiro`, `Somente`→`Só`, `muito fácil`→`com muita facilidade`), nenhuma supressão nem inflação.
+
+**Padrão literário — achado que motivou a reabertura:** o chunk 1 (poemas 75-155) é o único que não recebeu retrabalho — 49% dos poemas voltaram idênticos à fonte (contra 10-39% nos outros cinco), em corridas inteiras (123-127, 135-139, 143-146). Restaram calque (`penso secretamente`, 136), regência errada (`retribui à graça`, 143), conector solto (`Pois`, 153) e período picado (124) — sendo que o poema-gêmeo do 153, o 312, foi polido no chunk 3.
+
+Chunk 1 sem reabertura anterior, então foi reaberto normalmente (1ª vez): inserido no topo de `QUEUE_EXECUTOR.json` com a nota de evidência, entrada antiga removida de `done`, `001_historico_auditoria.jsonl` registrado, `montado` zerado no `_manifest.json` e o livro retirado de `pending` no `QUEUE_AUDITOR.json` sem ir para `done`. Verifiquei que a gravação concorrente com o executor (que fechou o 19491005 no mesmo minuto) não perdeu nenhum registro.

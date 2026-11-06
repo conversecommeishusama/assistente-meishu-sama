@@ -1,0 +1,13 @@
+**19491005 — Coleção Jikan Volume 4, Histórias de Milagres: reaberto (chunk 4).**
+
+Leitura integral e comparada dos 14 chunks (363 linhas, 263 parágrafos), original × montado, parágrafo a parágrafo.
+
+**Estrutura e costuras — íntegras.** Concatenação dos 14 `_src` bate byte a byte com a fonte e a dos 14 `_out` com o montado; contagem de parágrafos idêntica chunk a chunk (6/8/4/6/9/12/15/12/3/1/10/6/6/3); todos fecham em `\n\n` (o 13 em `\n`, como a fonte). Nenhum parágrafo perdido, duplicado ou fundido.
+
+**Fidelidade — limpa em quase tudo.** Multiconjunto de dígitos idêntico; as 143 citações entre aspas idênticas caractere a caractere (diff vazio nos dois sentidos); glossário intacto (Kannon-Sama 75, Johrei 41, Ohikari 19, Komyo-Nyorai 14, Igreja Miroku 16, Zengen-Sandji 4, Mestre 53); varredura de quantificadores refeita do zero e limpa — as 10 ocorrências de "vário" ausentes viraram equivalentes ("diversos", "muitas", "das mais variadas formas"), o único "cerca de" a menos caiu sobre um intervalo que já é aproximação ("dois ou três cho"), e todos os "todo/inteiro/imenso" a mais substituem forma equivalente da fonte. Endossados, para não serem re-litigados: `Kannon-Sama-Sama` → `Kannon-Sama` (corrupção da fonte, chunk 9); `Hojo-cho` → `Hōjō-cho` (a fonte usa a forma com mácron no cabeçalho do mesmo depoimento); e as 3 elisões de "Sr. Yoshinari"/Oishi Kume/Suminoe, todas com referente inequívoco na oração anterior.
+
+**O achado.** No chunk 4, a prosa apertou ao custo do grau e da modalidade da fonte, em 5 pontos: "Um **grande** evento" → "acontecimento **imenso**"; "só pude sentir **muita** pena" → "só me restou uma **imensa** pena"; "as três casas... **que se perderam**" → "perdidas **nas chamas**" (circunstância acrescentada); "ninguém havia ainda **entrado**" → "ninguém havia ainda **conseguido entrar**" (modal acrescentado); "mas, **na verdade, não deve ter sido** tanto assim" → "mas **talvez não tenha sido**" (asserção rebaixada).
+
+O trabalho literário pedido na rodada anterior foi de fato feito (L25/L26 caíram de 0,98/0,99 para 0,54/0,30) — a nota manda preservá-lo e revarrer a classe inteira do defeito nos 9 parágrafos, não só os 5 pontos citados.
+
+Fila do executor com o chunk 4 em `pending[0]`, entrada antiga removida de `done`, histórico do chunk com 2 linhas (próxima reabertura seria escalação manual), `montado` zerado no manifesto e o livro fora de `pending` do auditor — volta sozinho quando `montar_livro.py` remontar.

@@ -1,0 +1,6 @@
+Chunk 10 de *Coleção Jikan Volume 1* (reaberto pelo auditor) revisado e fila atualizada.
+
+- Revarri os 24 parágrafos, não apenas os 5 pontos da nota do auditor; mantive intactas as 3 correções de fidelidade da rodada anterior ("entrega total ao indivíduo", "Eu tinha nuvens espirituais demais.", "Nesse contexto, recordo hoje…").
+- Ajustes principais: cortadas as redundâncias "Imediatamente"/"na hora" e "Para nossa surpresa"/"boquiabertos"; desfeito o "comer arroz" 3x + "consegui" 2x; a cadeia de 5 orações (abdômen/febre/sentença de morte) virou dois períodos; "senti/senti" e "Naquela noite, raramente, suei profusamente" alisados; emenda final de Mishima Hamayo recadenciada preservando o nexo "longo período" → casa iluminada.
+- Verificação: 25 blocos → 25, todos os números/datas idênticos, cabeçalhos/endereços/verso preservados, 11 672 → 11 419 chars; similaridade com a fonte agora 0,34–0,87 na prosa (antes 0,984).
+- `QUEUE_EXECUTOR.json`: pending 719 → 718, done 46 → 47.

@@ -1,0 +1,9 @@
+Auditoria de `pending[0]` concluída — **19480701 - Coletânea de Salmos: aprovado**.
+
+- Leitura integral e comparada das 435 linhas (prefácio + 309 poemas + 44 cabeçalhos), verso a verso; 299 versos preservados, 137 linhas reescritas.
+- **Fidelidade**: numeração 1–309 íntegra, cabeçalhos idênticos, numerais idênticos (1948, 309, 33, 84.000, trinta e uma), nenhum nome próprio/divindade/topônimo alterado, as 5 citações entre aspas idênticas caractere a caractere.
+- **Costuras**: concatenação dos 3 `_src.txt` bate byte a byte com o original e a dos 3 `_out.txt` com o montado; fronteiras caem em cabeçalho de seção — nada perdido, duplicado ou fundido.
+- Os achados das 3 rodadas anteriores foram conferidos um a um e estão todos corrigidos (prefácio "demais"/"as pessoas", poemas 2, 31, 68, 117, 191, 202, 185, 194, 195, 229, 280).
+- **Padrão literário**: ganho real e uniforme — modificadores soltos e predicações quebradas reparados, inversões que dão cadência de salmo, repetições mecânicas removidas sem perda de conteúdo, calques desfeitos. Os poemas 56, 96 e 162 mantêm a inversão condicional opaca da fonte de forma consistente nos três — decisão conservadora correta, mexer arbitraria a relação lógica.
+
+Item movido de `pending` para `done` em `QUEUE_AUDITOR.json` (`at: 2026-08-14T17:38:38+02:00`). Entre a minha leitura e a escrita, o `montar_livro.py` enfileirou "19490625 - Coleção Jikan Volume 1" — a entrada foi preservada e é o novo `pending[0]`.

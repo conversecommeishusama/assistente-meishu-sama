@@ -1,0 +1,6 @@
+Chunk 4 de *Coleção Jikan Volume 12 — Coletânea de Narrativas Jikan* revisado e fila atualizada.
+
+- **Revisado:** `chunks/19500130 - .../004_out.txt` (3 artigos: fecho do texto sobre medicina + nota, "O Sol e a Lua", "A Cultura que Ignora a Natureza", "A Luz da Sabedoria").
+- **Ajustes:** correção de "Ao meu ver" → "A meu ver" (2x), desfeitos calques e aberturas emperradas ("Por que teorias tão ousadas como as descritas acima?" → "…como as que acabo de expor?"; "Por exemplo, no campo da política" → "Tomemos a política"), períodos arrastados encurtados com cadência variada, sem tocar em nomes, datas, edições de periódico, cifras (trinta bilhões de ienes), lista das oito direções, citações entre aspas nem cabeçalhos/créditos de publicação.
+- **Integridade:** 25 parágrafos na fonte → 25 no revisado; 12220 → 12052 chars (−1,4%); linha em branco final preservada conforme os chunks anteriores.
+- **Fila:** item movido para `done` com os campos padrão (`livro`, `arquivo`, `chunk`, `total_chunks`, `at`, `nota`). Restam 649 em `pending`, 116 em `done`; próximo é *Coleção Jikan Volume 9 — Caminho para a Luz 1*, chunk 0.

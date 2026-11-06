@@ -1,0 +1,11 @@
+`pending[0]` processado: **19491005 – Coleção Jikan Volume 4, Histórias de Milagres** — **aprovado**, movido para `done` em `QUEUE_AUDITOR.json` (fila agora vazia).
+
+Base da decisão:
+- **Leitura integral comparada** dos 14 chunks (363 linhas, 263 parágrafos), original x montado, parágrafo a parágrafo.
+- **Fidelidade**: dígitos idênticos; 143 citações entre aspas iguais caractere a caractere; títulos, cabeçalhos de depoente e colofão intactos; todos os termos fixos recontados e batendo (Kannon-Sama 75, proteção divina 22, grande compaixão 4, fórmula do kyoshu 14 etc.).
+- **Costuras**: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; contagem de parágrafos idêntica chunk a chunk — nada perdido, duplicado ou fundido.
+- **Rodadas anteriores**: os 15 achados dos chunks 1, 3, 4, 5, 6, 7, 8, 9, 10 e 12 foram conferidos um a um e estão todos corrigidos.
+- **Classe recorrente da coleção** (quantificador/intensificador/modalizador/aproximador) revarrida do zero nos dois sentidos: toda ausência tem compensação equivalente no mesmo período; nenhuma criou ou apagou quantidade, totalidade ou exclusividade.
+- **Padrão literário**: ganho real e uniforme (similaridade dos parágrafos longos entre 0,52 e 0,82 nos 14 chunks); os poucos parágrafos quase intocados são citação, fórmula protegida ou trechos já endossados em auditorias anteriores.
+
+Três pontos ficaram registrados como examinados e endossados (interrogativa retórica convertida no chunk 13, elisões de referente inequívoco no chunk 7, e o `Kannon-Sama-Sama` da fonte desduplicado no chunk 9), para não serem re-litigados.

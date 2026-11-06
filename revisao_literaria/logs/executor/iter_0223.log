@@ -1,0 +1,6 @@
+Chunk 0 de "19500921 - Até a Construção do Paraíso Terrestre" revisado e aceito.
+
+- **Saída**: `revisao_literaria/chunks/19500921 - Até a Construção do Paraíso Terrestre/000_out.txt`
+- **Ajustes**: períodos arrastados desfeitos (narrativa da compra da casa de Fujiyama Raita, obra suspensa pelos ataques aéreos), conectivos repetidos e pleonasmos removidos ("alegremente… em júbilo", repetição de "mundo" no poema); cabeçalho, "Jikan/Akimaro", os 10 versos, `[Poema do Grande Festival de Outono]` e o título de seção preservados.
+- **Integridade verificada**: 25/25 parágrafos, todos os números idênticos, todas as citações entre aspas byte-a-byte iguais, nomes próprios conferidos (única diferença: um "Gōra" redundante virou "ali", referente explícito na frase anterior); 11.554 → 11.186 chars (0,97).
+- **Fila**: item movido para `done`; restam 633 em `pending`.

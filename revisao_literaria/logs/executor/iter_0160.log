@@ -1,0 +1,5 @@
+Item processado (`pending[0]`, reaberto pelo auditor):
+
+**19491005 - Coleção Jikan Volume 4 Histórias de Milagres, chunk 1/14** — o achado do auditor era real: a elisão de `Kannon-Sama` por "ela" no parágrafo de "Minha Confissão". Restaurei o nome e reestruturei o período para acomodar a quarta ocorrência sem soar repetitivo ("E porque quem me emprega como deseja é o mestre, Kannon-Sama, não tenho liberdade alguma; já o poder da sabedoria maravilhosa que Kannon-Sama manifesta através de mim..."). Contagens agora batem exatamente com a fonte: 11 `Kannon-Sama` / 14 `Kannon` / 20 parágrafos; 9503 → 9365 chars. O resto do chunk ficou intocado, como a nota pedia.
+
+Fila: `pending` 674 → 673, `done` 91 → 92.

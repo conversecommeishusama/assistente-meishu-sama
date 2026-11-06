@@ -1,0 +1,5 @@
+Item processado e fila atualizada.
+
+- **Chunk:** `19491223 - Montanha e Água`, chunk 1/12 (tankas 80–190, seções *Passeio pela Região dos Lagos* → *Renovação*).
+- **Revisão:** inversões para dar cadência de tanka, correção de concordância (`parecem haver` → `parece haver`), desfeitos calques (`cobertor d'água` → `manto de água`), verbos e conectivos reordenados; numeração (111 poemas), datas/parênteses (9), cabeçalhos, nota de rodapé e estrutura de linhas idênticos ao fonte (137 linhas ↔ 137). Tamanho 12.157 → 12.026 chars.
+- **Fila:** item movido de `pending` para `done` por chave `(livro, chunk)`, sem `pop(0)`. Observação: entre a leitura inicial e a escrita, o auditor reabriu 5 chunks (a fila foi de 669→674 pending, 96→91 done); a atualização releu o arquivo no momento da escrita, então nenhuma reabertura foi perdida.

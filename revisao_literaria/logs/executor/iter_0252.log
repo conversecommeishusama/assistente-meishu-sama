@@ -1,0 +1,12 @@
+Item processado e fila atualizada.
+
+**`pending[0]`** era uma reabertura do auditor: `19500420 - Coleção Jikan Volume 10…`, chunk 6/10.
+
+O que a nota pedia e o que foi feito:
+- **§ "No entanto, a pobreza espiritual…"** (era 0,996 de similaridade com a fonte → agora 0,847): eco `insônia; e a causa da insônia` desfeito (`provoca insônia — cuja causa…`); `espírito de raposa` 3x → 1x + `seus semelhantes` / `a seu respeito`; o 2º período, que acumulava causal + parentética, foi partido em dois.
+- **§ "Diante do exposto…"** (0,984 → 0,378): `pode-se dizer` 2x → 1x (`cabe chamá-los doentes mentais`), e `em maior ou menor grau` saiu da mesma posição sintática de `em algum grau`.
+- **Revarredura da classe no chunk inteiro** (não só os dois parágrafos): anáfora em `A verdadeira causa das doenças mentais` e `pobreza espiritual`; `existe/também existe/existência`; `vontade` 3x; fórmulas de retomada diferenciadas (*Como se viu* / *nos termos descritos* / *Como já assinalei* / *Diante do exposto*); `nossa Igreja` 3x → 2x; `entre` 5x → 1x no parágrafo dos animais.
+
+Verificações: 26 linhas em ambos, 10 540 → 10 293 chars (0,977), arquivo termina em `\n\n`, e as três correções de fidelidade da rodada anterior, os números da escala, as aspas de "é agora ou nunca"/"rarefeito" e "fonte geradora de ação" continuam intactos. O único parágrafo idêntico à fonte é o bloco `(Nota)`, que é de preservação obrigatória.
+
+Fila: item movido de `pending` para `done` por `(livro, chunk)`, com os seis campos padrão. Próximo `pending[0]` é `19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan 1`.

@@ -1,0 +1,10 @@
+Chunk processado e fila atualizada.
+
+**`19501030 - Memórias da Perseguição Religiosa`, chunk 3/12** (sem `nota_auditor`)
+
+- Revisão salva em `revisao_literaria/chunks/19501030 - Memórias da Perseguição Religiosa/003_out.txt`
+- Ajustes: períodos arrastados do relato dos desmaios quebrados em cadência mais curta; calques e construções travadas trocadas ("Fui colocado em uma cela individual" → "Puseram-me numa cela individual", "Ele me aconselhou a consultar um médico, e eu concordei" → "Aconselhou-me a consultar um médico, e concordei"); repetição de conectivo desfeita ("Além disso" → "No meu caso, ainda por cima"; "No entanto" inicial deslocado); eco de "consegui"/"como de costume" reduzido.
+- Verificações: 8 parágrafos em ambos (incluindo o título de seção "Rumo à Prisão"), 13 citações entre aspas idênticas caractere a caractere, multiconjunto de números idêntico, nomes próprios (Tetsuo Asai, Taira no Shigemori, Shizuoka) preservados, término em `\n\n` mantido, 11.878 → 11.783 chars (ratio 0,992).
+- Fila: item movido de `pending` para `done` por chave `(livro, chunk)`, com os campos exatos exigidos. Grava fresca + `os.replace` atômico — o auditor reabriu `19491230 - Coleção Jikan Volume 9`, chunk 0 no meio do caminho e essa reabertura foi preservada (é o novo `pending[0]`). Restam 628 pendentes.
+
+Uma observação fora do escopo desta invocação: `done` tem duas entradas duplicadas para `19350000 - Curso Kannon (1~7)` (chunks 6 e 10), provavelmente de reaberturas anteriores que não removeram a entrada antiga.

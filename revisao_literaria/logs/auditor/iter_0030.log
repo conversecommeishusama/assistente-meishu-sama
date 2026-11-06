@@ -1,0 +1,17 @@
+Auditoria de `19490830 - Coleção Jikan Volume 5 Diálogos Jikan` concluída — **livro reaberto** (chunk 3).
+
+**Leitura integral e comparada**: 156 parágrafos, 9 chunks, original × montado, parágrafo a parágrafo.
+
+**Verificações estruturais (todas limpas)**: concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; 336 linhas em ambos; contagem de parágrafos idêntica chunk a chunk; multiconjunto de dígitos idêntico; as 138 sequências entre aspas idênticas caractere a caractere. A costura defeituosa do chunk 0 (apontada na 1ª rodada) veio corrigida, e os 10 achados das rodadas anteriores foram conferidos um a um — todos aplicados.
+
+**Achado (fidelidade, chunk 3)** — parágrafo do castigo de Hanakame:
+- Fonte: "A razão era que, **na meia-idade de Hanakame**, o abade de um templo famoso na província de Shizuoka alugou o terreno…"
+- Montado: "A razão era esta: **em sua meia-idade**, o abade de um templo famoso da província de Shizuoka alugou o terreno…"
+
+O possessivo passa a ter como antecedente imediato o sujeito da própria oração ("o abade"), reforçado pelo resto do período, todo sobre ele ("e disso **lhe** adveio um destino terrível"). A fonte é inequívoca; o montado permite a leitura errada. É a mesma classe já reaberta no chunk 2 deste livro (Takamine Chikufū). O chunk 3 tinha 1 entrada de histórico → reabertura (2ª), sem escalação.
+
+**Ponto examinado e endossado**, registrado na nota para não ser re-litigado: no chunk 7, "muito poucos mestres" → "pouquíssimos mestres" **não** é inflação — é a forma sintética do mesmo superlativo, mesmo grau. Não reabri por isso (e o chunk 7 já está no limite de 2 reaberturas).
+
+**Padrão literário**: ganho real e uniforme nos 9 chunks — períodos arrastados quebrados, calques desfeitos, cadeias de conectivos e redundâncias mecânicas eliminadas, cadência variada; nenhum trecho ficou abaixo do padrão.
+
+Fila atualizada: chunk 3 inserido no início de `QUEUE_EXECUTOR.json` (entrada antiga removida de `done`), linha acrescentada em `003_historico_auditoria.jsonl`, `montado` zerado no `_manifest.json`, item removido de `pending` em `QUEUE_AUDITOR.json` sem ir para `done`.

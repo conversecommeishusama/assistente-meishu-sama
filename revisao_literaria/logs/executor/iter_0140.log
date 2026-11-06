@@ -1,0 +1,8 @@
+Item processado: **19491005 – Coleção Jikan Volume 4 (Histórias de Milagres), chunk 4/14** — reabertura do auditor.
+
+- Refiz o relato do incêndio inteiro (L23–L27), não só os dois parágrafos citados: eco `entrado/entraram` + calque de sujeito obscuro (`não aguentando mais`) e o eco `diziam/dizer` com o período causal opaco foram reescritos com sujeito explícito e cadência trabalhada (similaridade com a fonte caiu para 0,30–0,59 nesses parágrafos, contra 0,98–0,99 antes).
+- Na mesma passada varri a mesma classe de defeito no resto do chunk: `porta de vidro` duplicada (L23), `fogo/lambia/continuei` triplicados (L25), cluster `passou/passado/passagem` (L14), `rasgado/rasgada/rasgadura` (L6), `graça/agraciado` (L2). Revertido um deslize meu de terminologia (`bênçãos` → `graças`, glossário fixo).
+- Não toquei: cabeçalhos, nomes, endereços, citações entre aspas, horários/medidas (6h32, dezoito kan/67,5 kg, quatro ou cinco sun, sete ou oito metros) e o parágrafo final de agradecimento.
+- Verificação: 33 linhas em fonte e revisado, linhas em branco na mesma posição, 11.304 → 11.043 chars (−2,3%).
+
+Fila atualizada (item movido de `pending` para `done` por par livro+chunk, sem `pop(0)`). Observação: a fila mudou entre minha leitura inicial e a escrita — o auditor reabriu itens em paralelo (pending 676→678, done 89→87 no intervalo); a gravação foi feita sobre releitura fresca e atômica, sem perder entradas dele.

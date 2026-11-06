@@ -1,0 +1,5 @@
+Processado `pending[0]`: chunk 11/14 de *19491005 - Coleção Jikan Volume 4 Histórias de Milagres*.
+
+- Revisão salva em `revisao_literaria/chunks/.../011_out.txt`; estrutura idêntica (25/25 linhas), títulos, atribuições e as 13 citações entre aspas byte a byte iguais; números e nomes próprios conferem; 10.091 → 9.952 chars (98,6%).
+- Ajustes: períodos arrastados quebrados/fundidos, calques da tradução substituídos, repetição de "minha cabeça ficava" variada; "Hojo-cho" grafado "Hōjō-cho", como no cabeçalho do mesmo relato no chunk anterior.
+- Fila atualizada (item removido por chave `(livro, chunk)`, não por `pop(0)`). Nota: entre a leitura inicial e a escrita o auditor reabriu itens — a fila agora está em 689 pending / 76 done, e os três próximos itens (19490830 - Coleção Jikan, chunks 2, 3 e 5) têm `nota_auditor` a resolver na próxima invocação.

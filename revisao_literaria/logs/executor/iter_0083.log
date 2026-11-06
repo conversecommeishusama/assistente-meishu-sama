@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**pending[0]** era uma reabertura do auditor: `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 8/14.
+
+- Corrigidos os 4 achados literais da nota: `remédios de toda sorte` → `vários remédios`; `dúvidas de toda ordem` → `várias dúvidas`; `passou-se um ano inteiro` → `passou-se um ano`; `estranha, diferente de tudo` → `estranha e diferente`.
+- Revarri o chunk inteiro atrás da mesma classe e achei mais casos: `muitas coisas` → `várias coisas`, `era tudo passageiro` → `apenas passageiro`, `se arrastava havia tanto tempo` → `já era longa`, `pressão alguma` → `pressão`, `só sabia argumentar` → `só argumentava`, `carregada de catarro` → `de catarro`, além de acréscimos removidos (`ainda`, `logo`, `Certa vez`, `o tempo passou`, `separada de nós`) e supressões restauradas (`também` em dois pontos, `Mesmo assim`, `Para mim, porém`, `aqueles que sofrem`).
+- Preservadas as equivalências que o auditor validou e a prosa já aprovada; nomes, datas, números e citações intactos.
+- Parágrafos 29 → 29; 11.941 → 11.791 chars.
+
+Fila: 711 pending / 54 done.

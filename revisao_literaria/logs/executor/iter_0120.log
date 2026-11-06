@@ -1,0 +1,14 @@
+Item processado e fila atualizada.
+
+**Chunk 2 de "19490830 - Coleção Jikan Volume 5 Diálogos Jikan"** (reaberto pelo auditor, classe "inflação de intensificador"):
+
+- Achado sinalizado, corrigido: `se movia com grande agilidade` → `se movia com agilidade`; `o que agradou muitíssimo` → `e isso foi muito popular` (grau simples, como na fonte).
+- Varredura da classe inteira no chunk (o auditor cobrou justamente isso), com conferência automática de todos os intensificadores/quantificadores fonte × revisado — mais 4 casos:
+  - `bem poderia ser incluída` → `poderia`, restaurando também o tempo verbal da fonte (`eu achava que...`);
+  - `pouco famoso` → `não tão famoso`;
+  - `acima de todos` → `acima de tudo`;
+  - `nunca me interessei` → `não tenho interesse` (a fonte afirma estado presente, não uma vida inteira).
+- Trabalho literário já aprovado (sujeito explícito de Takamine Chikufū, "a famosa Toyotake Roshō") foi preservado intacto.
+- Integridade: 21 parágrafos na fonte e no revisado; 11.803 → 11.641 chars (98,6%).
+
+Fila: `pending` 689 → 688, `done` 76 → 77.

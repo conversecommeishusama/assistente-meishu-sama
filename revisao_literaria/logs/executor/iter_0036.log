@@ -1,0 +1,7 @@
+Item processado e fila atualizada.
+
+- **Item**: `19480701 - Coletânea de Salmos`, chunk 2/3 — reaberto pelo auditor com achado único.
+- **Correção**: poema 229, `tantos` → `vários` (quantificador exclamativo afirmava mais que a fonte). `penumbra` mantido, conforme o auditor aprovou.
+- **Varredura da mesma classe** no chunk inteiro: `imenso`, `todos`, `tanto tempo` (poemas 271, 282, 291, 293, 295) já vêm do `_src.txt` — nenhuma outra intensificação introduzida.
+- Resto do chunk intocado (120 linhas em ambos; 9033 → 8825 chars).
+- Fila: 737 pending / 28 done.

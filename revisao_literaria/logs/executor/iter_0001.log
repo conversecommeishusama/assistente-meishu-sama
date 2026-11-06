@@ -1,0 +1,6 @@
+Item processado e fila atualizada.
+
+- **Chunk**: `19350000 - Curso Kannon (1~7)`, chunk 0 de 14 → `000_out.txt` gravado.
+- **Revisão**: períodos arrastados quebrados (abertura, trecho de Susanoo/Amaterasu), calques e repetições vocabulares eliminados, conectivos variados; cabeçalho, tabela do Tamagaeshi, diagramas e listas de divindades preservados intactos.
+- **Verificação**: 50 blocos → 50 blocos; 11.425 → 11.317 caracteres (−0,9%); nomes próprios e números conferidos por diff automático — sem perda nem acréscimo.
+- **Fila**: `pending` 763 → 762, `done` 1, com os campos exatos exigidos.

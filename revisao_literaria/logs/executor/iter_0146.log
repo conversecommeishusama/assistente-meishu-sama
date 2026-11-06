@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro`, chunk 2/6 (sem `nota_auditor`).
+- **Revisão**: poemas 156–235 — ordem natural de frase (156, 164, 170, 201, 204), calques desfeitos ("não há intervalo para se esconder" → "não resta brecha"; "Avistando ao longe" → "Ao longe"), pontuação de cadência em rótulos e exclamações.
+- **Correção estrutural**: dois pares de poemas estavam colados na mesma linha no fonte (157/158 e 194/195) — separados, o que explica 86 → 88 linhas não vazias.
+- **Verificado**: 80 poemas presentes uma única vez, datas entre parênteses, aspas de citação e cabeçalhos de seção idênticos ao `_src`; 11317 → 11206 chars (ratio 0,99).
+- **Fila**: 673 pending / 92 done.

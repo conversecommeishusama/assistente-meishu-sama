@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação de Voz — Kikivoice vs Atual</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem; background: #faf7f2; color: #333; }
+  h1 { color: #8b1a1a; }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 1.2rem; margin: 1.2rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .card h2 { margin-top: 0; font-size: 1.15rem; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; margin-bottom: 8px; }
+  .tag-kiki { background: #d4edda; color: #155724; }
+  .tag-atual { background: #fce4ec; color: #880e4f; }
+  audio { width: 100%; margin-top: 6px; }
+  p.desc { color: #555; font-size: 0.9rem; }
+  .nota { background: #fff8e1; border-left: 4px solid #ffc107; padding: 10px 14px; margin-top: 1.5rem; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>🎧 Comparação de Voz — Meishu-Sama</h1>
+  <p class="desc">Mesmo trecho (Gosuiji-roku nº 1: <em>"Isto é de Sotatsu, do período Ashikaga, anterior à escola Kano."</em>) gerado com duas amostras de referência diferentes.</p>
+
+  <div class="card">
+    <span class="tag tag-kiki">KIKIVOICE (nova amostra — você clonou)</span>
+    <h2>Amostra: kikivoice (voz limpa em português)</h2>
+    <audio controls src="/static/validacao_audio/teste_voz_kikivoice.mp3"></audio>
+    <p class="desc">Voz clonada pelo kikivoice, já falando português, sem ruído. 78s de referência.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag tag-atual">ATUAL (remaster de 1952)</span>
+    <h2>Amostra: remasterizada do áudio histórico (em uso agora)</h2>
+    <audio controls src="/static/validacao_audio/teste_voz_atual.mp3"></audio>
+    <p class="desc">Voz clonada a partir da gravação de 1952 remasterizada (com ruído de fundo). É a que está em produção.</p>
+  </div>
+
+  <div class="nota">
+    <strong>💡 Como avaliar:</strong> ouça os dois e repare em <strong>1)</strong> qual soa mais próxima do Meishu-Sama original, <strong>2)</strong> qual tem menos ruído/chiado, <strong>3)</strong> qual soa menos "feminina" (mais fiel ao timbre masculino), e <strong>4)</strong> qual é mais natural em português.
+  </div>
+</body>
+</html>

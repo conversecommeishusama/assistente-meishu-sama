@@ -1,0 +1,7 @@
+pending[0] processado e encerrado.
+
+- **Item**: `19501030 - Memórias da Perseguição Religiosa`, chunk 6/12 (sem `nota_auditor`).
+- **Revisão**: relato de Kane Kyuhei sobre os interrogatórios — desmontei os blocos-monólito em períodos curtos e cadenciados, cortei repetições mecânicas (`me pressionou fortemente` ×3, cadeia de `eu disse`), removi calques (`Passei uma noite ansiosa e, no dia seguinte, quando fui chamado…`) e uniformizei o tratamento policial→Kane em "o senhor".
+- **Fidelidade**: 9 parágrafos na fonte, 9 na saída; nomes (Kurebayashi, Sawaguchi, Kuriyama, Konagaya, Matsushima, Ueda Gosaburō, Sugiyama, Inaba), datas (8 e 29 de maio de 1950, maio de 1947) e valores (3 mil, 10 mil, 150 mil, 500 mil, 70 mil ienes, 600 tsubo) conferidos um a um; conteúdo das falas entre aspas preservado. Cabeçalhos `Registro da Prisão` e `Após o Retorno para Casa` intactos, arquivo terminando com o mesmo `\n\n` da fonte.
+- **Tamanho**: 11 654 → 11 472 chars (−1,6%).
+- **Fila**: item removido de `pending` por chave `(livro, chunk)` — não por `pop(0)` — e acrescentado a `done` com os campos exatos. O auditor escreveu na fila em paralelo (reabriu `19500130 - Coleção Jikan Volume 12`, chunk 1, com `nota_auditor` longa); esse item está preservado e é o novo `pending[0]`.

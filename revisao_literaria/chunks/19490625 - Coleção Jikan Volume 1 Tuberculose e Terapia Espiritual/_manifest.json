@@ -1,0 +1,82 @@
+{
+  "arquivo": "19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+  "fonte": "livros_publicacao_pt_revisado/19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+  "chars_fonte": 157873,
+  "total_chunks": 14,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11592,
+      "paragrafos": 27
+    },
+    {
+      "idx": 1,
+      "chars": 11812,
+      "paragrafos": 13
+    },
+    {
+      "idx": 2,
+      "chars": 11657,
+      "paragrafos": 17
+    },
+    {
+      "idx": 3,
+      "chars": 11975,
+      "paragrafos": 24
+    },
+    {
+      "idx": 4,
+      "chars": 11872,
+      "paragrafos": 33
+    },
+    {
+      "idx": 5,
+      "chars": 11936,
+      "paragrafos": 31
+    },
+    {
+      "idx": 6,
+      "chars": 10629,
+      "paragrafos": 32
+    },
+    {
+      "idx": 7,
+      "chars": 11500,
+      "paragrafos": 17
+    },
+    {
+      "idx": 8,
+      "chars": 11941,
+      "paragrafos": 24
+    },
+    {
+      "idx": 9,
+      "chars": 11915,
+      "paragrafos": 30
+    },
+    {
+      "idx": 10,
+      "chars": 11672,
+      "paragrafos": 24
+    },
+    {
+      "idx": 11,
+      "chars": 11578,
+      "paragrafos": 30
+    },
+    {
+      "idx": 12,
+      "chars": 11459,
+      "paragrafos": 24
+    },
+    {
+      "idx": 13,
+      "chars": 6335,
+      "paragrafos": 15
+    }
+  ],
+  "montado": true,
+  "chars_final": 155255,
+  "ratio_tamanho": 0.983,
+  "montado_em": "2026-08-14T19:45:26.962923"
+}

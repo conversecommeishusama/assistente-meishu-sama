@@ -1,0 +1,11 @@
+Auditoria de `pending[0]` concluída — **livro reprovado, 2 chunks reabertos**.
+
+**Livro:** 19490625 – Coleção Jikan Volume 1 (Tuberculose e Terapia Espiritual), 14 chunks, 780 linhas lidas do início ao fim, pareadas linha a linha com a fonte.
+
+**Integridade (ok):** concatenação dos 14 `_src` bate byte a byte com o original e a dos `_out` com o montado; máscara de linhas vazias idêntica (439 parágrafos em ambos); multiconjunto de numerais idêntico; contagem de aspas idêntica. Nenhum parágrafo perdido ou duplicado nas costuras. Os 6 achados das rodadas anteriores foram conferidos um a um e estão todos corrigidos (`dinheiro`, aspas da citação, "conseguiu erguer-se", "cultuar Kannon", aposto das impurezas, "o Caminho" removido, "de trigo" restaurado).
+
+**Achados que reprovaram:**
+- **Chunk 4** — `livros...:190`: "teria tido o mesmo fim que **minha cunhada**" virou "o mesmo fim que **ela**", com *Kannon-Sama* nomeada seis palavras antes na mesma frase — o antecedente sintático mais próximo passou a ser a divindade. Mesma classe reaparece em "o futuro **dela**" (era "da minha filha"), com "uma tuberculosa" como antecedente próximo. Secundários anotados: "piorava a olhos vistos" e "à nossa filha" (acréscimos sem apoio na fonte).
+- **Chunk 10** — "entrega total **ao indivíduo**" virou "entrega total **de si**" (destinatário da entrega → objeto entregue: outra afirmação); "Eu tinha nuvens espirituais demais" virou a clivada contorcida "Eram nuvens espirituais em excesso as que eu trazia"; "Nesse contexto" virou "Por isso", criando nexo causal inexistente.
+
+**Fila atualizada:** chunks 4 e 10 inseridos no topo de `QUEUE_EXECUTOR.pending` com nota de evidência e ordem de revarrer a classe inteira; entradas antigas deles removidas de `done`; histórico de auditoria criado para ambos (1ª reabertura de cada); `_manifest.json` com `montado: false` e `montado_em` removido; item retirado de `QUEUE_AUDITOR.pending` sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

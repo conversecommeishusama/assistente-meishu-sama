@@ -1,0 +1,10 @@
+**19350000 - Curso Kannon (1~7) — aprovado.**
+
+- **Leitura integral**, 1.728 linhas do original contra 1.738 do montado, lado a lado do início ao fim.
+- **Fidelidade**: multiconjunto de dígitos idêntico; nomes, datas, ordem dos acontecimentos e conteúdo de todas as citações entre aspas preservados; ◎, 〇, ○, `[Ilustração omitida]`, ideogramas e espaços ideográficos intactos.
+- **Costuras**: os 14 chunks terminam todos em `\n\n`; a concatenação dos `_out` bate byte a byte com o montado, e a dos `_src` com o original — nada perdido nem duplicado. Parágrafos 767→772, e os +5 são o desmembramento dos verbetes de dragão no chunk 5, aprovado na auditoria anterior. As regressões de costura dos chunks 6/10/11/12 e a vírgula do chunk 5 vieram corrigidas.
+- **Padrão literário**: ganho real e uniforme — períodos arrastados quebrados, calques desfeitos, repetição de conectivo eliminada, redundância mecânica reduzida por anáfora sem ambiguidade de referente (Banko Shin'ō, Monte Fuji, Ame no Wakahiko, Oomoto).
+- Duas corrupções da fonte foram reparadas sem perda de conteúdo: a duplicação truncada `"unif, "○丶" (ponto central),` e o `tentar, tentar corrigir`.
+- Ressalva registrada, não reaberta: no chunk 5, 11 pares de aspas retas viraram angulares «» para acompanhar o chunk 4 — desvio de convenção que a auditoria anterior já examinou e endossou explicitamente.
+
+Fila atualizada: livro movido para `done`; `montar_livro.py` enfileirou "19480701 - Coletânea de Salmos" durante esta invocação e ele permanece em `pending`.

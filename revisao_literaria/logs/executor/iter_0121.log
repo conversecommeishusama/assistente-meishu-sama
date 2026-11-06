@@ -1,0 +1,13 @@
+Item `pending[0]` processado e fechado.
+
+**19490830 - Coleção Jikan Volume 5 Diálogos Jikan, chunk 3/9** (item reaberto pelo auditor, com `nota_auditor`):
+
+- Achados exatos do auditor corrigidos: "sofreu **enorme** prejuízo" → "sofreu **grande** prejuízo"; "por um preço **altíssimo**" → "por um preço **muito alto**".
+- Varredura da classe inteira no chunk, conforme pedido — mais 3 desvios encontrados e revertidos à fonte:
+  - "as histórias são **quase sempre** dramas familiares" → "**muitas vezes**" (inflação de frequência);
+  - "os longas italianos… foram **sufocados**" → "foram **pressionados**" (verbo intensificado);
+  - "Por volta das dez horas" → "das dez horas **da manhã**" (informação da fonte suprimida).
+- Trabalho literário já aprovado foi mantido intacto, inclusive o reparo da frase truncada sobre as produções europeias.
+- 18 parágrafos na fonte e 18 no revisado; 11.171 → 10.855 chars.
+
+Fila: 687 pending / 78 done.

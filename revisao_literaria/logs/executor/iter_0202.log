@@ -1,0 +1,5 @@
+Chunk 5/9 de *Coleção Jikan Volume 12* revisado e aceito.
+
+- `005_out.txt` gravado: 29 parágrafos (idênticos em número ao fonte), 11.778 → 11.447 chars.
+- Verificado: todos os números batem (2.140.000 koku, 4.229, 144, 87 bilhões), títulos, linhas de publicação, bloco `(Notas)` e rótulos `(1)`–`(4)` preservados literalmente.
+- Fila atualizada removendo o item por `(livro, chunk)` — não por `pop(0)` — e movido para `done` com os campos padrão. Restam 646 pendentes.

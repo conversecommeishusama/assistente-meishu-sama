@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`19490825 - Coleção Jikan Volume 3`, chunk 6/10** (reaberto pelo auditor):
+
+- Restaurei ao texto-fonte, caractere a caractere, **todas** as citações entre aspas — verificação automática confirma 24/24 segmentos entre aspas byte-idênticos ao `006_src.txt`, incluindo as falas encaixadas em aspas simples.
+- As três com mudança de sentido apontadas na nota foram desfeitas: `"...ficar deitado para o treinamento. Sou eu quem está fazendo isso."`, `"Isso não pode."` (proibição, não negação de fato) e `"Você queria dinheiro..."` (sem artigo definido).
+- Ponto final devolvido para dentro das aspas no fim da fala da moça (`...que mal saio."`).
+- Prosa do narrador ao redor permaneceu revisada; parágrafos 15/15, 11526 → 11336 chars, números (1932, 7º) e nomes próprios (Okada, Asakusa, Showa) conferidos.
+
+Fila: 704 pending / 61 done. Item removido por `(livro, chunk)`, não por índice.

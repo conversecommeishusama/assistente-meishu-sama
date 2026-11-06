@@ -1,0 +1,47 @@
+{
+  "arquivo": "19510115 - Explicação da Agricultura Natural.txt",
+  "fonte": "livros_publicacao_pt_revisado/19510115 - Explicação da Agricultura Natural.txt",
+  "chars_fonte": 82461,
+  "total_chunks": 7,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11387,
+      "paragrafos": 14
+    },
+    {
+      "idx": 1,
+      "chars": 11297,
+      "paragrafos": 10
+    },
+    {
+      "idx": 2,
+      "chars": 11030,
+      "paragrafos": 23
+    },
+    {
+      "idx": 3,
+      "chars": 11551,
+      "paragrafos": 19
+    },
+    {
+      "idx": 4,
+      "chars": 11092,
+      "paragrafos": 20
+    },
+    {
+      "idx": 5,
+      "chars": 11865,
+      "paragrafos": 22
+    },
+    {
+      "idx": 6,
+      "chars": 14239,
+      "paragrafos": 42
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-15T13:59:33.155106",
+  "chars_final": 80996,
+  "ratio_tamanho": 0.982
+}

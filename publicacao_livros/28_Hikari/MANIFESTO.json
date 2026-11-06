@@ -1,0 +1,14 @@
+{
+  "volume": 28,
+  "titulo": "Hikari",
+  "nota": "Volume individual",
+  "paginas_estimadas": 243.2,
+  "caracteres_totais": 478804,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_Hikari.txt",
+      "fonte": "livros_publicacao_pt_revisado/Hikari.txt",
+      "caracteres": 478804
+    }
+  ]
+}

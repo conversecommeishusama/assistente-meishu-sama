@@ -1,0 +1,117 @@
+{
+  "arquivo": "19540825 - Evangelho do Reino dos Céus.txt",
+  "fonte": "livros_publicacao_pt_revisado/19540825 - Evangelho do Reino dos Céus.txt",
+  "chars_fonte": 242732,
+  "total_chunks": 21,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11877,
+      "paragrafos": 36
+    },
+    {
+      "idx": 1,
+      "chars": 11697,
+      "paragrafos": 30
+    },
+    {
+      "idx": 2,
+      "chars": 11120,
+      "paragrafos": 24
+    },
+    {
+      "idx": 3,
+      "chars": 11687,
+      "paragrafos": 25
+    },
+    {
+      "idx": 4,
+      "chars": 11559,
+      "paragrafos": 27
+    },
+    {
+      "idx": 5,
+      "chars": 11870,
+      "paragrafos": 29
+    },
+    {
+      "idx": 6,
+      "chars": 11707,
+      "paragrafos": 25
+    },
+    {
+      "idx": 7,
+      "chars": 11581,
+      "paragrafos": 23
+    },
+    {
+      "idx": 8,
+      "chars": 11891,
+      "paragrafos": 23
+    },
+    {
+      "idx": 9,
+      "chars": 11469,
+      "paragrafos": 24
+    },
+    {
+      "idx": 10,
+      "chars": 11976,
+      "paragrafos": 25
+    },
+    {
+      "idx": 11,
+      "chars": 11050,
+      "paragrafos": 29
+    },
+    {
+      "idx": 12,
+      "chars": 11634,
+      "paragrafos": 27
+    },
+    {
+      "idx": 13,
+      "chars": 11208,
+      "paragrafos": 24
+    },
+    {
+      "idx": 14,
+      "chars": 11654,
+      "paragrafos": 28
+    },
+    {
+      "idx": 15,
+      "chars": 11605,
+      "paragrafos": 35
+    },
+    {
+      "idx": 16,
+      "chars": 11934,
+      "paragrafos": 34
+    },
+    {
+      "idx": 17,
+      "chars": 11979,
+      "paragrafos": 29
+    },
+    {
+      "idx": 18,
+      "chars": 11907,
+      "paragrafos": 25
+    },
+    {
+      "idx": 19,
+      "chars": 11256,
+      "paragrafos": 21
+    },
+    {
+      "idx": 20,
+      "chars": 10071,
+      "paragrafos": 23
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-17T00:48:51.584256",
+  "chars_final": 238703,
+  "ratio_tamanho": 0.983
+}

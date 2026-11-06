@@ -1,0 +1,731 @@
+2026-08-14T15:51:29+02:00 — iteracao 1, pending=763
+2026-08-14T15:54:17+02:00 — iteracao 1 terminou com codigo 0
+2026-08-14T15:54:17+02:00 — iteracao 2, pending=762
+2026-08-14T15:58:09+02:00 — iteracao 2 terminou com codigo 0
+2026-08-14T15:58:09+02:00 — iteracao 3, pending=761
+2026-08-14T16:00:41+02:00 — iteracao 3 terminou com codigo 0
+2026-08-14T16:00:41+02:00 — iteracao 4, pending=760
+2026-08-14T16:03:01+02:00 — iteracao 4 terminou com codigo 0
+2026-08-14T16:03:01+02:00 — iteracao 5, pending=759
+2026-08-14T16:06:40+02:00 — iteracao 5 terminou com codigo 0
+2026-08-14T16:06:41+02:00 — iteracao 6, pending=758
+2026-08-14T16:09:12+02:00 — iteracao 6 terminou com codigo 0
+2026-08-14T16:09:12+02:00 — iteracao 7, pending=757
+2026-08-14T16:11:49+02:00 — iteracao 7 terminou com codigo 0
+2026-08-14T16:11:49+02:00 — iteracao 8, pending=756
+2026-08-14T16:14:54+02:00 — iteracao 8 terminou com codigo 0
+2026-08-14T16:14:54+02:00 — iteracao 9, pending=755
+2026-08-14T16:17:37+02:00 — iteracao 9 terminou com codigo 0
+2026-08-14T16:17:38+02:00 — iteracao 10, pending=754
+2026-08-14T16:20:40+02:00 — iteracao 10 terminou com codigo 0
+2026-08-14T16:20:41+02:00 — iteracao 11, pending=753
+2026-08-14T16:23:48+02:00 — iteracao 11 terminou com codigo 0
+2026-08-14T16:23:48+02:00 — iteracao 12, pending=752
+2026-08-14T16:26:40+02:00 — iteracao 12 terminou com codigo 0
+2026-08-14T16:26:40+02:00 — iteracao 13, pending=751
+2026-08-14T16:28:34+02:00 — iteracao 13 terminou com codigo 0
+2026-08-14T16:28:34+02:00 — iteracao 14, pending=750
+2026-08-14T16:30:03+02:00 — iteracao 14 terminou com codigo 0
+2026-08-14T16:30:03.605292 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T16:30:03+02:00 — iteracao 15, pending=749
+2026-08-14T16:32:41+02:00 — iteracao 15 terminou com codigo 0
+2026-08-14T16:32:41+02:00 — iteracao 16, pending=748
+2026-08-14T16:36:15+02:00 — iteracao 16 terminou com codigo 0
+2026-08-14T16:36:15+02:00 — iteracao 17, pending=751
+2026-08-14T16:37:07+02:00 — iteracao 17 terminou com codigo 0
+2026-08-14T16:37:07+02:00 — iteracao 18, pending=750
+2026-08-14T16:39:25+02:00 — iteracao 18 terminou com codigo 0
+2026-08-14T16:39:25.563707 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T16:39:25+02:00 — iteracao 19, pending=749
+2026-08-14T16:41:18+02:00 — iteracao 19 terminou com codigo 0
+2026-08-14T16:41:18+02:00 — iteracao 20, pending=749
+2026-08-14T16:43:35+02:00 — iteracao 20 terminou com codigo 0
+2026-08-14T16:43:35+02:00 — iteracao 21, pending=748
+2026-08-14T16:45:43+02:00 — iteracao 21 terminou com codigo 0
+2026-08-14T16:45:43.736450 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T16:45:43+02:00 — iteracao 22, pending=747
+2026-08-14T16:49:02+02:00 — iteracao 22 terminou com codigo 0
+2026-08-14T16:49:02.988498 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T16:49:03+02:00 — iteracao 23, pending=746
+2026-08-14T16:52:44+02:00 — iteracao 23 terminou com codigo 0
+2026-08-14T16:52:44+02:00 — iteracao 24, pending=745
+2026-08-14T16:55:18+02:00 — iteracao 24 terminou com codigo 0
+2026-08-14T16:55:18+02:00 — iteracao 25, pending=744
+2026-08-14T16:58:07+02:00 — iteracao 25 terminou com codigo 0
+2026-08-14T16:58:07+02:00 — iteracao 26, pending=745
+2026-08-14T16:58:52+02:00 — iteracao 26 terminou com codigo 0
+2026-08-14T16:58:52+02:00 — iteracao 27, pending=744
+2026-08-14T16:59:22+02:00 — iteracao 27 terminou com codigo 0
+2026-08-14T16:59:22.390830 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T16:59:22+02:00 — iteracao 28, pending=743
+2026-08-14T17:01:27+02:00 — iteracao 28 terminou com codigo 0
+2026-08-14T17:01:27+02:00 — iteracao 29, pending=742
+2026-08-14T17:05:29+02:00 — iteracao 29 terminou com codigo 0
+2026-08-14T17:05:29+02:00 — iteracao 30, pending=741
+2026-08-14T17:07:53+02:00 — iteracao 30 terminou com codigo 0
+2026-08-14T17:07:53+02:00 — iteracao 31, pending=741
+2026-08-14T17:08:41+02:00 — iteracao 31 terminou com codigo 0
+2026-08-14T17:08:42.007481 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T17:08:42+02:00 — iteracao 32, pending=740
+2026-08-14T17:12:34+02:00 — iteracao 32 terminou com codigo 0
+2026-08-14T17:12:34+02:00 — iteracao 33, pending=739
+2026-08-14T17:16:25+02:00 — iteracao 33 terminou com codigo 0
+2026-08-14T17:16:25+02:00 — iteracao 34, pending=738
+2026-08-14T17:20:58+02:00 — iteracao 34 terminou com codigo 0
+2026-08-14T17:20:58+02:00 — iteracao 35, pending=739
+2026-08-14T17:21:27+02:00 — iteracao 35 terminou com codigo 0
+2026-08-14T17:21:27+02:00 — iteracao 36, pending=738
+2026-08-14T17:22:00+02:00 — iteracao 36 terminou com codigo 0
+2026-08-14T17:22:00+02:00 — iteracao 37, pending=737
+2026-08-14T17:25:29+02:00 — iteracao 37 terminou com codigo 0
+2026-08-14T17:25:29+02:00 — iteracao 38, pending=736
+2026-08-14T17:30:10+02:00 — iteracao 38 terminou com codigo 0
+2026-08-14T17:30:10.186390 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T17:30:10+02:00 — iteracao 39, pending=735
+2026-08-14T17:32:29+02:00 — iteracao 39 terminou com codigo 0
+2026-08-14T17:32:30+02:00 — iteracao 40, pending=734
+2026-08-14T17:36:54+02:00 — iteracao 40 terminou com codigo 0
+2026-08-14T17:36:54+02:00 — iteracao 41, pending=733
+2026-08-14T17:38:34+02:00 — iteracao 41 terminou com codigo 0
+2026-08-14T17:38:34.098309 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T17:38:34+02:00 — iteracao 42, pending=732
+2026-08-14T17:40:12+02:00 — iteracao 42 terminou com codigo 0
+2026-08-14T17:40:12+02:00 — iteracao 43, pending=731
+2026-08-14T17:43:12+02:00 — iteracao 43 terminou com codigo 0
+2026-08-14T17:43:12+02:00 — iteracao 44, pending=732
+2026-08-14T17:46:09+02:00 — iteracao 44 terminou com codigo 0
+2026-08-14T17:46:09+02:00 — iteracao 45, pending=731
+2026-08-14T17:48:54+02:00 — iteracao 45 terminou com codigo 0
+2026-08-14T17:48:54.593352 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T17:48:54+02:00 — iteracao 46, pending=730
+2026-08-14T17:52:22+02:00 — iteracao 46 terminou com codigo 0
+2026-08-14T17:52:22+02:00 — iteracao 47, pending=729
+2026-08-14T17:56:06+02:00 — iteracao 47 terminou com codigo 0
+2026-08-14T17:56:06+02:00 — iteracao 48, pending=728
+2026-08-14T18:00:36+02:00 — iteracao 48 terminou com codigo 0
+2026-08-14T18:00:36+02:00 — iteracao 49, pending=729
+2026-08-14T18:03:18+02:00 — iteracao 49 terminou com codigo 0
+2026-08-14T18:03:19+02:00 — iteracao 50, pending=728
+2026-08-14T18:05:21+02:00 — iteracao 50 terminou com codigo 0
+2026-08-14T18:05:21.397848 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T18:05:21+02:00 — iteracao 51, pending=727
+2026-08-14T18:08:28+02:00 — iteracao 51 terminou com codigo 0
+2026-08-14T18:08:28+02:00 — iteracao 52, pending=726
+2026-08-14T18:11:13+02:00 — iteracao 52 terminou com codigo 0
+2026-08-14T18:11:13+02:00 — iteracao 53, pending=725
+2026-08-14T18:14:00+02:00 — iteracao 53 terminou com codigo 0
+2026-08-14T18:14:00+02:00 — iteracao 54, pending=727
+2026-08-14T18:15:20+02:00 — iteracao 54 terminou com codigo 0
+2026-08-14T18:15:20+02:00 — iteracao 55, pending=726
+2026-08-14T18:17:04+02:00 — iteracao 55 terminou com codigo 0
+2026-08-14T18:17:05+02:00 — iteracao 56, pending=725
+2026-08-14T18:19:59+02:00 — iteracao 56 terminou com codigo 0
+2026-08-14T18:20:00.008675 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T18:20:00+02:00 — iteracao 57, pending=724
+2026-08-14T18:23:15+02:00 — iteracao 57 terminou com codigo 0
+2026-08-14T18:23:15+02:00 — iteracao 58, pending=723
+2026-08-14T18:27:25+02:00 — iteracao 58 terminou com codigo 0
+2026-08-14T18:27:25+02:00 — iteracao 59, pending=722
+2026-08-14T18:32:37+02:00 — iteracao 59 terminou com codigo 0
+2026-08-14T18:32:37+02:00 — iteracao 60, pending=723
+2026-08-14T18:35:16+02:00 — iteracao 60 terminou com codigo 0
+2026-08-14T18:35:16+02:00 — iteracao 61, pending=722
+2026-08-14T18:39:41+02:00 — iteracao 61 terminou com codigo 0
+2026-08-14T18:39:41.532846 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T18:39:41+02:00 — iteracao 62, pending=721
+2026-08-14T18:41:59+02:00 — iteracao 62 terminou com codigo 0
+2026-08-14T18:41:59+02:00 — iteracao 63, pending=720
+2026-08-14T18:45:08+02:00 — iteracao 63 terminou com codigo 0
+2026-08-14T18:45:08+02:00 — iteracao 64, pending=719
+2026-08-14T18:47:59+02:00 — iteracao 64 terminou com codigo 0
+2026-08-14T18:47:59+02:00 — iteracao 65, pending=719
+2026-08-14T18:53:14+02:00 — iteracao 65 terminou com codigo 0
+2026-08-14T18:53:14.185807 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T18:53:14+02:00 — iteracao 66, pending=718
+2026-08-14T18:56:00+02:00 — iteracao 66 terminou com codigo 0
+2026-08-14T18:56:00+02:00 — iteracao 67, pending=717
+2026-08-14T18:58:54+02:00 — iteracao 67 terminou com codigo 0
+2026-08-14T18:58:54.802302 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T18:58:54+02:00 — iteracao 68, pending=716
+2026-08-14T19:02:40+02:00 — iteracao 68 terminou com codigo 0
+2026-08-14T19:02:41+02:00 — iteracao 69, pending=717
+2026-08-14T19:06:19+02:00 — iteracao 69 terminou com codigo 0
+2026-08-14T19:06:19+02:00 — iteracao 70, pending=716
+2026-08-14T19:11:10+02:00 — iteracao 70 terminou com codigo 0
+2026-08-14T19:11:10.145983 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T19:11:10+02:00 — iteracao 71, pending=719
+2026-08-14T19:13:30+02:00 — iteracao 71 terminou com codigo 0
+2026-08-14T19:13:30+02:00 — iteracao 72, pending=718
+2026-08-14T19:15:08+02:00 — iteracao 72 terminou com codigo 0
+2026-08-14T19:15:08+02:00 — iteracao 73, pending=717
+2026-08-14T19:17:29+02:00 — iteracao 73 terminou com codigo 0
+2026-08-14T19:17:29+02:00 — iteracao 74, pending=716
+2026-08-14T19:18:22+02:00 — iteracao 74 terminou com codigo 0
+2026-08-14T19:18:22.591467 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T19:18:22+02:00 — iteracao 75, pending=715
+2026-08-14T19:20:49+02:00 — iteracao 75 terminou com codigo 0
+2026-08-14T19:20:49+02:00 — iteracao 76, pending=714
+2026-08-14T19:22:59+02:00 — iteracao 76 terminou com codigo 0
+2026-08-14T19:22:59+02:00 — iteracao 77, pending=714
+2026-08-14T19:23:41+02:00 — iteracao 77 terminou com codigo 0
+2026-08-14T19:23:41.054576 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T19:23:41+02:00 — iteracao 78, pending=713
+2026-08-14T19:27:03+02:00 — iteracao 78 terminou com codigo 0
+2026-08-14T19:27:03+02:00 — iteracao 79, pending=712
+2026-08-14T19:29:40+02:00 — iteracao 79 terminou com codigo 0
+2026-08-14T19:29:40+02:00 — iteracao 80, pending=711
+2026-08-14T19:33:40+02:00 — iteracao 80 terminou com codigo 0
+2026-08-14T19:33:40+02:00 — iteracao 81, pending=710
+2026-08-14T19:36:57+02:00 — iteracao 81 terminou com codigo 0
+2026-08-14T19:36:57+02:00 — iteracao 82, pending=713
+2026-08-14T19:39:18+02:00 — iteracao 82 terminou com codigo 0
+2026-08-14T19:39:18+02:00 — iteracao 83, pending=712
+2026-08-14T19:41:25+02:00 — iteracao 83 terminou com codigo 0
+2026-08-14T19:41:25+02:00 — iteracao 84, pending=711
+2026-08-14T19:43:27+02:00 — iteracao 84 terminou com codigo 0
+2026-08-14T19:43:28+02:00 — iteracao 85, pending=710
+2026-08-14T19:45:26+02:00 — iteracao 85 terminou com codigo 0
+2026-08-14T19:45:26.964935 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T19:45:27+02:00 — iteracao 86, pending=709
+2026-08-14T19:47:42+02:00 — iteracao 86 terminou com codigo 0
+2026-08-14T19:47:42+02:00 — iteracao 87, pending=708
+2026-08-14T19:49:37+02:00 — iteracao 87 terminou com codigo 0
+2026-08-14T19:49:37+02:00 — iteracao 88, pending=707
+2026-08-14T19:51:44+02:00 — iteracao 88 terminou com codigo 0
+2026-08-14T19:51:44.467938 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T19:51:44+02:00 — iteracao 89, pending=706
+2026-08-14T19:54:10+02:00 — iteracao 89 terminou com codigo 0
+2026-08-14T19:54:10+02:00 — iteracao 90, pending=705
+2026-08-14T19:57:32+02:00 — iteracao 90 terminou com codigo 0
+2026-08-14T19:57:32+02:00 — iteracao 91, pending=704
+2026-08-14T20:01:56+02:00 — iteracao 91 terminou com codigo 0
+2026-08-14T20:01:56+02:00 — iteracao 92, pending=706
+2026-08-14T20:03:07+02:00 — iteracao 92 terminou com codigo 0
+2026-08-14T20:03:07+02:00 — iteracao 93, pending=705
+2026-08-14T20:05:12+02:00 — iteracao 93 terminou com codigo 0
+2026-08-14T20:05:12+02:00 — iteracao 94, pending=704
+2026-08-14T20:06:24+02:00 — iteracao 94 terminou com codigo 0
+2026-08-14T20:06:24.423040 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T20:06:24+02:00 — iteracao 95, pending=703
+2026-08-14T20:09:24+02:00 — iteracao 95 terminou com codigo 0
+2026-08-14T20:09:24+02:00 — iteracao 96, pending=702
+2026-08-14T20:12:32+02:00 — iteracao 96 terminou com codigo 0
+2026-08-14T20:12:32+02:00 — iteracao 97, pending=701
+2026-08-14T20:16:03+02:00 — iteracao 97 terminou com codigo 0
+2026-08-14T20:16:03+02:00 — iteracao 98, pending=700
+2026-08-14T20:19:45+02:00 — iteracao 98 terminou com codigo 0
+2026-08-14T20:19:45+02:00 — iteracao 99, pending=699
+2026-08-14T20:23:13+02:00 — iteracao 99 terminou com codigo 0
+2026-08-14T20:23:13+02:00 — iteracao 100, pending=698
+2026-08-14T20:27:04+02:00 — iteracao 100 terminou com codigo 0
+2026-08-14T20:27:04.472213 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T20:27:04+02:00 — iteracao 101, pending=697
+2026-08-14T20:30:09+02:00 — iteracao 101 terminou com codigo 0
+2026-08-14T20:30:09+02:00 — iteracao 102, pending=696
+2026-08-14T20:33:14+02:00 — iteracao 102 terminou com codigo 0
+2026-08-14T20:33:14+02:00 — iteracao 103, pending=695
+2026-08-14T20:36:10+02:00 — iteracao 103 terminou com codigo 0
+2026-08-14T20:36:11+02:00 — iteracao 104, pending=697
+2026-08-14T20:37:11+02:00 — iteracao 104 terminou com codigo 0
+2026-08-14T20:37:12+02:00 — iteracao 105, pending=696
+2026-08-14T20:38:21+02:00 — iteracao 105 terminou com codigo 0
+2026-08-14T20:38:21+02:00 — iteracao 106, pending=695
+2026-08-14T20:39:39+02:00 — iteracao 106 terminou com codigo 0
+2026-08-14T20:39:39.269162 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T20:39:39+02:00 — iteracao 107, pending=694
+2026-08-14T20:42:08+02:00 — iteracao 107 terminou com codigo 0
+2026-08-14T20:42:09+02:00 — iteracao 108, pending=693
+2026-08-14T20:45:32+02:00 — iteracao 108 terminou com codigo 0
+2026-08-14T20:45:32+02:00 — iteracao 109, pending=692
+2026-08-14T20:47:58+02:00 — iteracao 109 terminou com codigo 0
+2026-08-14T20:47:58+02:00 — iteracao 110, pending=691
+2026-08-14T20:50:50+02:00 — iteracao 110 terminou com codigo 0
+2026-08-14T20:50:50+02:00 — iteracao 111, pending=694
+2026-08-14T20:52:06+02:00 — iteracao 111 terminou com codigo 0
+2026-08-14T20:52:06+02:00 — iteracao 112, pending=693
+2026-08-14T20:54:01+02:00 — iteracao 112 terminou com codigo 0
+2026-08-14T20:54:01+02:00 — iteracao 113, pending=692
+2026-08-14T20:54:48+02:00 — iteracao 113 terminou com codigo 0
+2026-08-14T20:54:48+02:00 — iteracao 114, pending=691
+2026-08-14T20:56:00+02:00 — iteracao 114 terminou com codigo 0
+2026-08-14T20:56:01.039882 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T20:56:01+02:00 — iteracao 115, pending=690
+2026-08-14T20:58:32+02:00 — iteracao 115 terminou com codigo 0
+2026-08-14T20:58:32+02:00 — iteracao 116, pending=689
+2026-08-14T21:00:37+02:00 — iteracao 116 terminou com codigo 0
+2026-08-14T21:00:37+02:00 — iteracao 117, pending=688
+2026-08-14T21:04:47+02:00 — iteracao 117 terminou com codigo 0
+2026-08-14T21:04:48+02:00 — iteracao 118, pending=687
+2026-08-14T21:08:00+02:00 — iteracao 118 terminou com codigo 0
+2026-08-14T21:08:00+02:00 — iteracao 119, pending=686
+2026-08-14T21:12:25+02:00 — iteracao 119 terminou com codigo 0
+2026-08-14T21:12:25+02:00 — iteracao 120, pending=689
+2026-08-14T21:14:39+02:00 — iteracao 120 terminou com codigo 0
+2026-08-14T21:14:39+02:00 — iteracao 121, pending=688
+2026-08-14T21:15:38+02:00 — iteracao 121 terminou com codigo 0
+2026-08-14T21:15:38+02:00 — iteracao 122, pending=687
+2026-08-14T21:18:09+02:00 — iteracao 122 terminou com codigo 0
+2026-08-14T21:18:09+02:00 — iteracao 123, pending=686
+2026-08-14T21:20:11+02:00 — iteracao 123 terminou com codigo 0
+2026-08-14T21:20:11.163171 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:20:11+02:00 — iteracao 124, pending=685
+2026-08-14T21:22:10+02:00 — iteracao 124 terminou com codigo 0
+2026-08-14T21:22:10+02:00 — iteracao 125, pending=684
+2026-08-14T21:24:17+02:00 — iteracao 125 terminou com codigo 0
+2026-08-14T21:24:17.105373 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:24:17+02:00 — iteracao 126, pending=683
+2026-08-14T21:27:10+02:00 — iteracao 126 terminou com codigo 0
+2026-08-14T21:27:10+02:00 — iteracao 127, pending=682
+2026-08-14T21:29:30+02:00 — iteracao 127 terminou com codigo 0
+2026-08-14T21:29:30+02:00 — iteracao 128, pending=681
+2026-08-14T21:31:56+02:00 — iteracao 128 terminou com codigo 0
+2026-08-14T21:31:56+02:00 — iteracao 129, pending=682
+2026-08-14T21:34:23+02:00 — iteracao 129 terminou com codigo 0
+2026-08-14T21:34:23+02:00 — iteracao 130, pending=681
+2026-08-14T21:35:54+02:00 — iteracao 130 terminou com codigo 0
+2026-08-14T21:35:54.101526 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:35:54+02:00 — iteracao 131, pending=682
+2026-08-14T21:39:50+02:00 — iteracao 131 terminou com codigo 0
+2026-08-14T21:39:50+02:00 — iteracao 132, pending=681
+2026-08-14T21:40:54+02:00 — iteracao 132 terminou com codigo 0
+2026-08-14T21:40:54.890683 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:40:54+02:00 — iteracao 133, pending=680
+2026-08-14T21:44:38+02:00 — iteracao 133 terminou com codigo 0
+2026-08-14T21:44:38+02:00 — iteracao 134, pending=679
+2026-08-14T21:46:34+02:00 — iteracao 134 terminou com codigo 0
+2026-08-14T21:46:34+02:00 — iteracao 135, pending=678
+2026-08-14T21:49:00+02:00 — iteracao 135 terminou com codigo 0
+2026-08-14T21:49:00+02:00 — iteracao 136, pending=677
+2026-08-14T21:50:53+02:00 — iteracao 136 terminou com codigo 0
+2026-08-14T21:50:53.285138 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:50:53+02:00 — iteracao 137, pending=676
+2026-08-14T21:54:14+02:00 — iteracao 137 terminou com codigo 0
+2026-08-14T21:54:14+02:00 — iteracao 138, pending=676
+2026-08-14T21:55:32+02:00 — iteracao 138 terminou com codigo 0
+2026-08-14T21:55:32.478226 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T21:55:32+02:00 — iteracao 139, pending=675
+2026-08-14T21:59:07+02:00 — iteracao 139 terminou com codigo 0
+2026-08-14T21:59:07+02:00 — iteracao 140, pending=676
+2026-08-14T22:04:21+02:00 — iteracao 140 terminou com codigo 0
+2026-08-14T22:04:21+02:00 — iteracao 141, pending=678
+2026-08-14T22:06:37+02:00 — iteracao 141 terminou com codigo 0
+2026-08-14T22:06:37+02:00 — iteracao 142, pending=677
+2026-08-14T22:09:33+02:00 — iteracao 142 terminou com codigo 0
+2026-08-14T22:09:33+02:00 — iteracao 143, pending=677
+2026-08-14T22:11:23+02:00 — iteracao 143 terminou com codigo 0
+2026-08-14T22:11:23.976649 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:11:24+02:00 — iteracao 144, pending=676
+2026-08-14T22:13:57+02:00 — iteracao 144 terminou com codigo 0
+2026-08-14T22:13:58.038525 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:13:58+02:00 — iteracao 145, pending=675
+2026-08-14T22:16:22+02:00 — iteracao 145 terminou com codigo 0
+2026-08-14T22:16:22.331197 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:16:22+02:00 — iteracao 146, pending=674
+2026-08-14T22:19:29+02:00 — iteracao 146 terminou com codigo 0
+2026-08-14T22:19:29+02:00 — iteracao 147, pending=673
+2026-08-14T22:23:42+02:00 — iteracao 147 terminou com codigo 0
+2026-08-14T22:23:42+02:00 — iteracao 148, pending=672
+2026-08-14T22:26:20+02:00 — iteracao 148 terminou com codigo 0
+2026-08-14T22:26:20+02:00 — iteracao 149, pending=671
+2026-08-14T22:30:01+02:00 — iteracao 149 terminou com codigo 0
+2026-08-14T22:30:01.402934 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:30:01+02:00 — iteracao 150, pending=673
+2026-08-14T22:33:04+02:00 — iteracao 150 terminou com codigo 0
+2026-08-14T22:33:04+02:00 — iteracao 151, pending=672
+2026-08-14T22:35:28+02:00 — iteracao 151 terminou com codigo 0
+2026-08-14T22:35:28+02:00 — iteracao 152, pending=673
+2026-08-14T22:37:05+02:00 — iteracao 152 terminou com codigo 0
+2026-08-14T22:37:06+02:00 — iteracao 153, pending=672
+2026-08-14T22:37:51+02:00 — iteracao 153 terminou com codigo 0
+2026-08-14T22:37:51.120777 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:37:51+02:00 — iteracao 154, pending=671
+2026-08-14T22:40:23+02:00 — iteracao 154 terminou com codigo 0
+2026-08-14T22:40:23.703251 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:40:23+02:00 — iteracao 155, pending=670
+2026-08-14T22:44:19+02:00 — iteracao 155 terminou com codigo 0
+2026-08-14T22:44:19+02:00 — iteracao 156, pending=672
+2026-08-14T22:46:14+02:00 — iteracao 156 terminou com codigo 0
+2026-08-14T22:46:14+02:00 — iteracao 157, pending=671
+2026-08-14T22:49:13+02:00 — iteracao 157 terminou com codigo 0
+2026-08-14T22:49:14+02:00 — iteracao 158, pending=670
+2026-08-14T22:50:15+02:00 — iteracao 158 terminou com codigo 0
+2026-08-14T22:50:15.481761 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T22:50:15+02:00 — iteracao 159, pending=669
+2026-08-14T22:54:07+02:00 — iteracao 159 terminou com codigo 0
+2026-08-14T22:54:07+02:00 — iteracao 160, pending=674
+2026-08-14T22:55:16+02:00 — iteracao 160 terminou com codigo 0
+2026-08-14T22:55:16+02:00 — iteracao 161, pending=673
+2026-08-14T22:59:35+02:00 — iteracao 161 terminou com codigo 0
+2026-08-14T22:59:35+02:00 — iteracao 162, pending=672
+2026-08-14T23:01:58+02:00 — iteracao 162 terminou com codigo 0
+2026-08-14T23:01:58+02:00 — iteracao 163, pending=671
+2026-08-14T23:02:55+02:00 — iteracao 163 terminou com codigo 0
+2026-08-14T23:02:56+02:00 — iteracao 164, pending=670
+2026-08-14T23:03:56+02:00 — iteracao 164 terminou com codigo 0
+2026-08-14T23:03:56+02:00 — iteracao 165, pending=669
+2026-08-14T23:05:14+02:00 — iteracao 165 terminou com codigo 0
+2026-08-14T23:05:14.582381 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T23:05:14+02:00 — iteracao 166, pending=668
+2026-08-14T23:09:18+02:00 — iteracao 166 terminou com codigo 0
+2026-08-14T23:09:18+02:00 — iteracao 167, pending=671
+2026-08-14T23:09:51+02:00 — iteracao 167 terminou com codigo 0
+2026-08-14T23:09:51+02:00 — iteracao 168, pending=670
+2026-08-14T23:12:12+02:00 — iteracao 168 terminou com codigo 0
+2026-08-14T23:12:13+02:00 — iteracao 169, pending=669
+2026-08-14T23:13:42+02:00 — iteracao 169 terminou com codigo 0
+2026-08-14T23:13:42+02:00 — iteracao 170, pending=668
+2026-08-14T23:14:38+02:00 — iteracao 170 terminou com codigo 0
+2026-08-14T23:14:38.669609 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T23:14:38+02:00 — iteracao 171, pending=667
+2026-08-14T23:18:37+02:00 — iteracao 171 terminou com codigo 0
+2026-08-14T23:18:37+02:00 — iteracao 172, pending=668
+2026-08-14T23:21:06+02:00 — iteracao 172 terminou com codigo 0
+2026-08-14T23:21:06+02:00 — iteracao 173, pending=667
+2026-08-14T23:23:27+02:00 — iteracao 173 terminou com codigo 0
+2026-08-14T23:23:27.740702 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T23:23:27+02:00 — iteracao 174, pending=666
+2026-08-14T23:27:28+02:00 — iteracao 174 terminou com codigo 0
+2026-08-14T23:27:28+02:00 — iteracao 175, pending=666
+2026-08-14T23:31:07+02:00 — iteracao 175 terminou com codigo 0
+2026-08-14T23:31:07.786072 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T23:31:07+02:00 — iteracao 176, pending=665
+2026-08-14T23:34:31+02:00 — iteracao 176 terminou com codigo 0
+2026-08-14T23:34:31+02:00 — iteracao 177, pending=665
+2026-08-14T23:37:58+02:00 — iteracao 177 terminou com codigo 0
+2026-08-14T23:37:58.969535 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-14T23:37:59+02:00 — iteracao 178, pending=664
+2026-08-14T23:41:39+02:00 — iteracao 178 terminou com codigo 0
+2026-08-14T23:41:39+02:00 — iteracao 179, pending=663
+2026-08-14T23:45:32+02:00 — iteracao 179 terminou com codigo 0
+2026-08-14T23:45:32+02:00 — iteracao 180, pending=662
+2026-08-14T23:49:24+02:00 — iteracao 180 terminou com codigo 0
+2026-08-14T23:49:24+02:00 — iteracao 181, pending=661
+2026-08-14T23:52:55+02:00 — iteracao 181 terminou com codigo 0
+2026-08-14T23:52:55+02:00 — iteracao 182, pending=660
+2026-08-14T23:55:32+02:00 — iteracao 182 terminou com codigo 0
+2026-08-14T23:55:32+02:00 — iteracao 183, pending=659
+2026-08-15T00:00:08+02:00 — iteracao 183 terminou com codigo 0
+2026-08-15T00:00:08.536093 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:00:08+02:00 — iteracao 184, pending=658
+2026-08-15T00:02:36+02:00 — iteracao 184 terminou com codigo 0
+2026-08-15T00:02:36+02:00 — iteracao 185, pending=657
+2026-08-15T00:05:44+02:00 — iteracao 185 terminou com codigo 0
+2026-08-15T00:05:44+02:00 — iteracao 186, pending=661
+2026-08-15T00:08:14+02:00 — iteracao 186 terminou com codigo 0
+2026-08-15T00:08:14+02:00 — iteracao 187, pending=660
+2026-08-15T00:10:10+02:00 — iteracao 187 terminou com codigo 0
+2026-08-15T00:10:10+02:00 — iteracao 188, pending=659
+2026-08-15T00:12:07+02:00 — iteracao 188 terminou com codigo 0
+2026-08-15T00:12:07+02:00 — iteracao 189, pending=658
+2026-08-15T00:16:18+02:00 — iteracao 189 terminou com codigo 0
+2026-08-15T00:16:18+02:00 — iteracao 190, pending=657
+2026-08-15T00:18:04+02:00 — iteracao 190 terminou com codigo 0
+2026-08-15T00:18:04.441793 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:18:04+02:00 — iteracao 191, pending=656
+2026-08-15T00:20:03+02:00 — iteracao 191 terminou com codigo 0
+2026-08-15T00:20:03+02:00 — iteracao 192, pending=655
+2026-08-15T00:23:43+02:00 — iteracao 192 terminou com codigo 0
+2026-08-15T00:23:43+02:00 — iteracao 193, pending=654
+2026-08-15T00:26:17+02:00 — iteracao 193 terminou com codigo 0
+2026-08-15T00:26:17+02:00 — iteracao 194, pending=653
+2026-08-15T00:28:01+02:00 — iteracao 194 terminou com codigo 0
+2026-08-15T00:28:01.983818 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:28:02+02:00 — iteracao 195, pending=652
+2026-08-15T00:30:57+02:00 — iteracao 195 terminou com codigo 0
+2026-08-15T00:30:57+02:00 — iteracao 196, pending=651
+2026-08-15T00:34:58+02:00 — iteracao 196 terminou com codigo 0
+2026-08-15T00:34:58.499693 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:34:58+02:00 — iteracao 197, pending=650
+2026-08-15T00:36:39+02:00 — iteracao 197 terminou com codigo 0
+2026-08-15T00:36:40+02:00 — iteracao 198, pending=649
+2026-08-15T00:39:28+02:00 — iteracao 198 terminou com codigo 0
+2026-08-15T00:39:28+02:00 — iteracao 199, pending=648
+2026-08-15T00:41:33+02:00 — iteracao 199 terminou com codigo 0
+2026-08-15T00:41:33+02:00 — iteracao 200, pending=649
+2026-08-15T00:42:19+02:00 — iteracao 200 terminou com codigo 0
+2026-08-15T00:42:19+02:00 — iteracao 201, pending=648
+2026-08-15T00:44:00+02:00 — iteracao 201 terminou com codigo 0
+2026-08-15T00:44:00.758212 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:44:00+02:00 — iteracao 202, pending=647
+2026-08-15T00:47:21+02:00 — iteracao 202 terminou com codigo 0
+2026-08-15T00:47:21+02:00 — iteracao 203, pending=646
+2026-08-15T00:50:53+02:00 — iteracao 203 terminou com codigo 0
+2026-08-15T00:50:53+02:00 — iteracao 204, pending=645
+2026-08-15T00:54:19+02:00 — iteracao 204 terminou com codigo 0
+2026-08-15T00:54:19+02:00 — iteracao 205, pending=646
+2026-08-15T00:55:15+02:00 — iteracao 205 terminou com codigo 0
+2026-08-15T00:55:15+02:00 — iteracao 206, pending=645
+2026-08-15T00:56:08+02:00 — iteracao 206 terminou com codigo 0
+2026-08-15T00:56:08.496750 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:56:08+02:00 — iteracao 207, pending=644
+2026-08-15T00:57:41+02:00 — iteracao 207 terminou com codigo 0
+2026-08-15T00:57:41.667389 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T00:57:41+02:00 — iteracao 208, pending=643
+2026-08-15T01:01:17+02:00 — iteracao 208 terminou com codigo 0
+2026-08-15T01:01:17+02:00 — iteracao 209, pending=642
+2026-08-15T01:03:52+02:00 — iteracao 209 terminou com codigo 0
+2026-08-15T01:03:52+02:00 — iteracao 210, pending=641
+2026-08-15T01:05:35+02:00 — iteracao 210 terminou com codigo 0
+2026-08-15T01:05:36+02:00 — iteracao 211, pending=640
+2026-08-15T01:07:02+02:00 — iteracao 211 terminou com codigo 0
+2026-08-15T01:07:02+02:00 — iteracao 212, pending=639
+2026-08-15T01:08:56+02:00 — iteracao 212 terminou com codigo 0
+2026-08-15T01:08:56+02:00 — iteracao 213, pending=640
+2026-08-15T01:09:56+02:00 — iteracao 213 terminou com codigo 0
+2026-08-15T01:09:56+02:00 — iteracao 214, pending=639
+2026-08-15T01:11:18+02:00 — iteracao 214 terminou com codigo 0
+2026-08-15T01:11:19.044328 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:11:19+02:00 — iteracao 215, pending=638
+2026-08-15T01:14:12+02:00 — iteracao 215 terminou com codigo 0
+2026-08-15T01:14:12+02:00 — iteracao 216, pending=637
+2026-08-15T01:16:50+02:00 — iteracao 216 terminou com codigo 0
+2026-08-15T01:16:50+02:00 — iteracao 217, pending=638
+2026-08-15T01:20:23+02:00 — iteracao 217 terminou com codigo 0
+2026-08-15T01:20:23+02:00 — iteracao 218, pending=637
+2026-08-15T01:23:11+02:00 — iteracao 218 terminou com codigo 0
+2026-08-15T01:23:11.305515 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:23:11+02:00 — iteracao 219, pending=637
+2026-08-15T01:24:55+02:00 — iteracao 219 terminou com codigo 0
+2026-08-15T01:24:55.594396 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:24:55+02:00 — iteracao 220, pending=636
+2026-08-15T01:27:22+02:00 — iteracao 220 terminou com codigo 0
+2026-08-15T01:27:22+02:00 — iteracao 221, pending=635
+2026-08-15T01:30:43+02:00 — iteracao 221 terminou com codigo 0
+2026-08-15T01:30:43+02:00 — iteracao 222, pending=634
+2026-08-15T01:32:25+02:00 — iteracao 222 terminou com codigo 0
+2026-08-15T01:32:25.709128 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:32:25+02:00 — iteracao 223, pending=633
+2026-08-15T01:36:53+02:00 — iteracao 223 terminou com codigo 0
+2026-08-15T01:36:53+02:00 — iteracao 224, pending=633
+2026-08-15T01:39:34+02:00 — iteracao 224 terminou com codigo 0
+2026-08-15T01:39:34.074421 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:39:34+02:00 — iteracao 225, pending=632
+2026-08-15T01:41:45+02:00 — iteracao 225 terminou com codigo 0
+2026-08-15T01:41:45.492636 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:41:45+02:00 — iteracao 226, pending=631
+2026-08-15T01:44:48+02:00 — iteracao 226 terminou com codigo 0
+2026-08-15T01:44:48+02:00 — iteracao 227, pending=631
+2026-08-15T01:45:48+02:00 — iteracao 227 terminou com codigo 0
+2026-08-15T01:45:48.382160 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T01:45:48+02:00 — iteracao 228, pending=630
+2026-08-15T01:48:25+02:00 — iteracao 228 terminou com codigo 0
+2026-08-15T01:48:25+02:00 — iteracao 229, pending=629
+2026-08-15T01:50:53+02:00 — iteracao 229 terminou com codigo 0
+2026-08-15T01:50:53+02:00 — iteracao 230, pending=630
+2026-08-15T01:55:02+02:00 — iteracao 230 terminou com codigo 0
+2026-08-15T01:55:03+02:00 — iteracao 231, pending=631
+2026-08-15T02:00:07+02:00 — iteracao 231 terminou com codigo 0
+2026-08-15T02:00:07+02:00 — iteracao 232, pending=632
+2026-08-15T02:02:13+02:00 — iteracao 232 terminou com codigo 0
+2026-08-15T02:02:13+02:00 — iteracao 233, pending=631
+2026-08-15T02:04:35+02:00 — iteracao 233 terminou com codigo 0
+2026-08-15T02:04:35.344164 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T02:04:35+02:00 — iteracao 234, pending=630
+2026-08-15T02:05:12+02:00 — iteracao 234 terminou com codigo 0
+2026-08-15T02:05:12.202461 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T02:05:12+02:00 — iteracao 235, pending=629
+2026-08-15T02:07:24+02:00 — iteracao 235 terminou com codigo 0
+2026-08-15T02:07:24+02:00 — iteracao 236, pending=628
+2026-08-15T02:10:21+02:00 — iteracao 236 terminou com codigo 0
+2026-08-15T02:10:21+02:00 — iteracao 237, pending=628
+2026-08-15T02:14:01+02:00 — iteracao 237 terminou com codigo 0
+2026-08-15T02:14:01.276141 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T02:14:01+02:00 — iteracao 238, pending=627
+2026-08-15T02:16:32+02:00 — iteracao 238 terminou com codigo 0
+2026-08-15T02:16:32+02:00 — iteracao 239, pending=626
+2026-08-15T02:20:46+02:00 — iteracao 239 terminou com codigo 0
+2026-08-15T02:20:46+02:00 — iteracao 240, pending=628
+2026-08-15T02:23:39+02:00 — iteracao 240 terminou com codigo 0
+2026-08-15T02:23:39+02:00 — iteracao 241, pending=627
+2026-08-15T02:26:49+02:00 — iteracao 241 terminou com codigo 0
+2026-08-15T02:26:50+02:00 — iteracao 242, pending=626
+2026-08-15T02:29:02+02:00 — iteracao 242 terminou com codigo 0
+2026-08-15T02:29:02.656616 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T02:29:02+02:00 — iteracao 243, pending=625
+2026-08-15T02:32:18+02:00 — iteracao 243 terminou com codigo 0
+2026-08-15T02:32:18+02:00 — iteracao 244, pending=625
+2026-08-15T02:35:58+02:00 — iteracao 244 terminou com codigo 0
+2026-08-15T02:35:58.319600 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T02:35:58+02:00 — iteracao 245, pending=624
+2026-08-15T02:38:12+02:00 — iteracao 245 terminou com codigo 0
+2026-08-15T02:38:12+02:00 — iteracao 246, pending=623
+2026-08-15T02:40:54+02:00 — iteracao 246 terminou com codigo 0
+2026-08-15T02:40:54+02:00 — iteracao 247, pending=622
+2026-08-15T02:43:39+02:00 — iteracao 247 terminou com codigo 0
+2026-08-15T02:43:39+02:00 — iteracao 248, pending=621
+2026-08-15T02:48:06+02:00 — iteracao 248 terminou com codigo 0
+2026-08-15T02:48:06+02:00 — iteracao 249, pending=622
+2026-08-15T02:50:46+02:00 — iteracao 249 terminou com codigo 0
+2026-08-15T02:50:46+02:00 — iteracao 250, pending=621
+2026-08-15T02:52:54+02:00 — iteracao 250 terminou com codigo 0
+2026-08-15T02:52:54+02:00 — iteracao 251, pending=623
+2026-08-15T02:55:32+02:00 — iteracao 251 terminou com codigo 0
+2026-08-15T02:55:33+02:00 — iteracao 252, pending=622
+2026-08-15T03:00:19+02:00 — iteracao 252 terminou com codigo 0
+2026-08-15T03:00:19+02:00 — iteracao 253, pending=622
+2026-08-15T03:03:31+02:00 — iteracao 253 terminou com codigo 0
+2026-08-15T03:03:31.101292 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:03:31+02:00 — iteracao 254, pending=621
+2026-08-15T03:07:14+02:00 — iteracao 254 terminou com codigo 0
+2026-08-15T03:07:14.425422 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:07:14+02:00 — iteracao 255, pending=620
+2026-08-15T03:10:56+02:00 — iteracao 255 terminou com codigo 0
+2026-08-15T03:10:56.707101 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:10:56+02:00 — iteracao 256, pending=619
+2026-08-15T03:13:15+02:00 — iteracao 256 terminou com codigo 0
+2026-08-15T03:13:15+02:00 — iteracao 257, pending=618
+2026-08-15T03:16:39+02:00 — iteracao 257 terminou com codigo 0
+2026-08-15T03:16:39+02:00 — iteracao 258, pending=617
+2026-08-15T03:19:03+02:00 — iteracao 258 terminou com codigo 0
+2026-08-15T03:19:03+02:00 — iteracao 259, pending=616
+2026-08-15T03:21:25+02:00 — iteracao 259 terminou com codigo 0
+2026-08-15T03:21:25+02:00 — iteracao 260, pending=615
+2026-08-15T03:23:59+02:00 — iteracao 260 terminou com codigo 0
+2026-08-15T03:23:59.092374 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:23:59+02:00 — iteracao 261, pending=614
+2026-08-15T03:26:37+02:00 — iteracao 261 terminou com codigo 0
+2026-08-15T03:26:37+02:00 — iteracao 262, pending=614
+2026-08-15T03:31:06+02:00 — iteracao 262 terminou com codigo 0
+2026-08-15T03:31:06.126663 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:31:06+02:00 — iteracao 263, pending=615
+2026-08-15T03:32:29+02:00 — iteracao 263 terminou com codigo 0
+2026-08-15T03:32:29+02:00 — iteracao 264, pending=614
+2026-08-15T03:33:33+02:00 — iteracao 264 terminou com codigo 0
+2026-08-15T03:33:33.928225 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T03:33:33+02:00 — iteracao 265, pending=613
+2026-08-15T03:35:24+02:00 — iteracao 265 terminou com codigo 1
+2026-08-15T03:35:24+02:00 — falha nao reconhecida como limite de sessao (1 seguidas), aguardando 60s antes de tentar de novo.
+2026-08-15T03:36:25+02:00 — iteracao 266, pending=613
+2026-08-15T03:36:26+02:00 — iteracao 266 terminou com codigo 1
+2026-08-15T03:36:26+02:00 — falha nao reconhecida como limite de sessao (2 seguidas), aguardando 120s antes de tentar de novo.
+2026-08-15T03:38:26+02:00 — iteracao 267, pending=613
+2026-08-15T03:38:28+02:00 — iteracao 267 terminou com codigo 1
+2026-08-15T03:38:28+02:00 — falha nao reconhecida como limite de sessao (3 seguidas), aguardando 240s antes de tentar de novo.
+2026-08-15T03:42:28+02:00 — iteracao 268, pending=613
+2026-08-15T03:42:31+02:00 — iteracao 268 terminou com codigo 1
+2026-08-15T03:42:31+02:00 — falha nao reconhecida como limite de sessao (4 seguidas), aguardando 480s antes de tentar de novo.
+2026-08-15T03:50:31+02:00 — iteracao 269, pending=613
+2026-08-15T03:50:32+02:00 — iteracao 269 terminou com codigo 1
+2026-08-15T03:50:33+02:00 — falha nao reconhecida como limite de sessao (5 seguidas), aguardando 960s antes de tentar de novo.
+2026-08-15T04:06:33+02:00 — iteracao 270, pending=613
+2026-08-15T04:06:34+02:00 — iteracao 270 terminou com codigo 1
+2026-08-15T04:06:34+02:00 — falha nao reconhecida como limite de sessao (6 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T04:36:35+02:00 — iteracao 271, pending=613
+2026-08-15T04:36:36+02:00 — iteracao 271 terminou com codigo 1
+2026-08-15T04:36:36+02:00 — falha nao reconhecida como limite de sessao (7 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T05:06:37+02:00 — iteracao 272, pending=613
+2026-08-15T05:06:39+02:00 — iteracao 272 terminou com codigo 1
+2026-08-15T05:06:39+02:00 — falha nao reconhecida como limite de sessao (8 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T05:36:39+02:00 — iteracao 273, pending=613
+2026-08-15T05:36:41+02:00 — iteracao 273 terminou com codigo 1
+2026-08-15T05:36:41+02:00 — falha nao reconhecida como limite de sessao (9 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T06:06:41+02:00 — iteracao 274, pending=613
+2026-08-15T06:06:43+02:00 — iteracao 274 terminou com codigo 1
+2026-08-15T06:06:43+02:00 — falha nao reconhecida como limite de sessao (10 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T06:36:43+02:00 — iteracao 275, pending=613
+2026-08-15T06:36:45+02:00 — iteracao 275 terminou com codigo 1
+2026-08-15T06:36:45+02:00 — falha nao reconhecida como limite de sessao (11 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T07:06:46+02:00 — iteracao 276, pending=613
+2026-08-15T07:06:48+02:00 — iteracao 276 terminou com codigo 1
+2026-08-15T07:06:48+02:00 — falha nao reconhecida como limite de sessao (12 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T07:36:48+02:00 — iteracao 277, pending=613
+2026-08-15T07:36:50+02:00 — iteracao 277 terminou com codigo 1
+2026-08-15T07:36:50+02:00 — falha nao reconhecida como limite de sessao (13 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T08:06:50+02:00 — iteracao 278, pending=613
+2026-08-15T08:06:52+02:00 — iteracao 278 terminou com codigo 1
+2026-08-15T08:06:52+02:00 — falha nao reconhecida como limite de sessao (14 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T08:36:52+02:00 — iteracao 279, pending=613
+2026-08-15T08:37:41+02:00 — iteracao 279 terminou com codigo 0
+2026-08-15T08:37:41+02:00 — iteracao 280, pending=612
+2026-08-15T08:40:24+02:00 — iteracao 280 terminou com codigo 0
+2026-08-15T08:40:24+02:00 — iteracao 281, pending=613
+2026-08-15T08:41:34+02:00 — iteracao 281 terminou com codigo 0
+2026-08-15T08:41:34+02:00 — iteracao 282, pending=612
+2026-08-15T08:42:31+02:00 — iteracao 282 terminou com codigo 0
+2026-08-15T08:42:31.619551 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T08:42:31+02:00 — iteracao 283, pending=611
+2026-08-15T08:42:48+02:00 — iteracao 283 terminou com codigo 1
+2026-08-15T08:42:48+02:00 — falha nao reconhecida como limite de sessao (1 seguidas), aguardando 60s antes de tentar de novo.
+2026-08-15T08:43:48+02:00 — iteracao 284, pending=611
+2026-08-15T08:43:50+02:00 — iteracao 284 terminou com codigo 1
+2026-08-15T08:43:50+02:00 — falha nao reconhecida como limite de sessao (2 seguidas), aguardando 120s antes de tentar de novo.
+2026-08-15T08:45:50+02:00 — iteracao 285, pending=611
+2026-08-15T08:45:52+02:00 — iteracao 285 terminou com codigo 1
+2026-08-15T08:45:52+02:00 — falha nao reconhecida como limite de sessao (3 seguidas), aguardando 240s antes de tentar de novo.
+2026-08-15T08:49:52+02:00 — iteracao 286, pending=611
+2026-08-15T08:49:54+02:00 — iteracao 286 terminou com codigo 1
+2026-08-15T08:49:54+02:00 — falha nao reconhecida como limite de sessao (4 seguidas), aguardando 480s antes de tentar de novo.
+2026-08-15T08:57:54+02:00 — iteracao 287, pending=611
+2026-08-15T08:57:57+02:00 — iteracao 287 terminou com codigo 1
+2026-08-15T08:57:57+02:00 — falha nao reconhecida como limite de sessao (5 seguidas), aguardando 960s antes de tentar de novo.
+2026-08-15T09:13:57+02:00 — iteracao 288, pending=611
+2026-08-15T09:13:59+02:00 — iteracao 288 terminou com codigo 1
+2026-08-15T09:13:59+02:00 — falha nao reconhecida como limite de sessao (6 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T09:43:59+02:00 — iteracao 289, pending=611
+2026-08-15T09:44:03+02:00 — iteracao 289 terminou com codigo 1
+2026-08-15T09:44:03+02:00 — falha nao reconhecida como limite de sessao (7 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T10:14:03+02:00 — iteracao 290, pending=611
+2026-08-15T10:14:05+02:00 — iteracao 290 terminou com codigo 1
+2026-08-15T10:14:05+02:00 — falha nao reconhecida como limite de sessao (8 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T10:44:06+02:00 — iteracao 291, pending=611
+2026-08-15T10:44:10+02:00 — iteracao 291 terminou com codigo 1
+2026-08-15T10:44:10+02:00 — falha nao reconhecida como limite de sessao (9 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T11:14:10+02:00 — iteracao 292, pending=611
+2026-08-15T11:14:12+02:00 — iteracao 292 terminou com codigo 1
+2026-08-15T11:14:12+02:00 — falha nao reconhecida como limite de sessao (10 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T11:44:12+02:00 — iteracao 293, pending=611
+2026-08-15T11:44:15+02:00 — iteracao 293 terminou com codigo 1
+2026-08-15T11:44:16+02:00 — falha nao reconhecida como limite de sessao (11 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T12:14:16+02:00 — iteracao 294, pending=611
+2026-08-15T12:14:18+02:00 — iteracao 294 terminou com codigo 1
+2026-08-15T12:14:18+02:00 — falha nao reconhecida como limite de sessao (12 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T12:44:18+02:00 — iteracao 295, pending=611
+2026-08-15T12:44:21+02:00 — iteracao 295 terminou com codigo 1
+2026-08-15T12:44:21+02:00 — falha nao reconhecida como limite de sessao (13 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T13:14:21+02:00 — iteracao 296, pending=611
+2026-08-15T13:14:23+02:00 — iteracao 296 terminou com codigo 1
+2026-08-15T13:14:23+02:00 — falha nao reconhecida como limite de sessao (14 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T13:44:24+02:00 — iteracao 297, pending=611
+2026-08-15T13:47:25+02:00 — iteracao 297 terminou com codigo 0
+2026-08-15T13:47:26+02:00 — iteracao 298, pending=610
+2026-08-15T13:51:13+02:00 — iteracao 298 terminou com codigo 0
+2026-08-15T13:51:13+02:00 — iteracao 299, pending=610
+2026-08-15T13:54:13+02:00 — iteracao 299 terminou com codigo 0
+2026-08-15T13:54:13.191723 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T13:54:13+02:00 — iteracao 300, pending=609
+2026-08-15T13:56:00+02:00 — iteracao 300 terminou com codigo 0
+2026-08-15T13:56:00+02:00 — iteracao 301, pending=608
+2026-08-15T13:59:33+02:00 — iteracao 301 terminou com codigo 0
+2026-08-15T13:59:33.158179 — montar_livro.py: 1 livro(s) montado(s) e enfileirado(s) para auditoria.
+2026-08-15T13:59:33+02:00 — iteracao 302, pending=610
+2026-08-15T14:00:42+02:00 — iteracao 302 terminou com codigo 1
+2026-08-15T14:00:42+02:00 — falha nao reconhecida como limite de sessao (1 seguidas), aguardando 60s antes de tentar de novo.
+2026-08-15T14:01:42+02:00 — iteracao 303, pending=610
+2026-08-15T14:01:44+02:00 — iteracao 303 terminou com codigo 1
+2026-08-15T14:01:44+02:00 — falha nao reconhecida como limite de sessao (2 seguidas), aguardando 120s antes de tentar de novo.
+2026-08-15T14:03:44+02:00 — iteracao 304, pending=610
+2026-08-15T14:03:46+02:00 — iteracao 304 terminou com codigo 1
+2026-08-15T14:03:46+02:00 — falha nao reconhecida como limite de sessao (3 seguidas), aguardando 240s antes de tentar de novo.
+2026-08-15T14:07:46+02:00 — iteracao 305, pending=610
+2026-08-15T14:07:48+02:00 — iteracao 305 terminou com codigo 1
+2026-08-15T14:07:48+02:00 — falha nao reconhecida como limite de sessao (4 seguidas), aguardando 480s antes de tentar de novo.
+2026-08-15T14:15:48+02:00 — iteracao 306, pending=610
+2026-08-15T14:15:50+02:00 — iteracao 306 terminou com codigo 1
+2026-08-15T14:15:51+02:00 — falha nao reconhecida como limite de sessao (5 seguidas), aguardando 960s antes de tentar de novo.
+2026-08-15T14:31:51+02:00 — iteracao 307, pending=610
+2026-08-15T14:31:53+02:00 — iteracao 307 terminou com codigo 1
+2026-08-15T14:31:53+02:00 — falha nao reconhecida como limite de sessao (6 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T15:01:53+02:00 — iteracao 308, pending=610
+2026-08-15T15:01:55+02:00 — iteracao 308 terminou com codigo 1
+2026-08-15T15:01:55+02:00 — falha nao reconhecida como limite de sessao (7 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T15:31:55+02:00 — iteracao 309, pending=610
+2026-08-15T15:31:57+02:00 — iteracao 309 terminou com codigo 1
+2026-08-15T15:31:57+02:00 — falha nao reconhecida como limite de sessao (8 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T16:01:57+02:00 — iteracao 310, pending=610
+2026-08-15T16:01:59+02:00 — iteracao 310 terminou com codigo 1
+2026-08-15T16:02:00+02:00 — falha nao reconhecida como limite de sessao (9 seguidas), aguardando 1800s antes de tentar de novo.
+2026-08-15T16:32:00+02:00 — iteracao 311, pending=610
+2026-08-15T16:33:30+02:00 — iteracao 311 terminou com codigo 0
+2026-08-15T16:33:30+02:00 — iteracao 312, pending=609
+2026-08-15T16:35:19+02:00 — iteracao 312 terminou com codigo 0
+2026-08-15T16:35:19+02:00 — iteracao 313, pending=608

@@ -1,0 +1,5 @@
+Chunk 6/14 de *Coleção Jikan Volume 4 — Histórias de Milagres* revisado e aceito.
+
+- `006_out.txt` gravado: 43 linhas, estrutura de parágrafos/blocos idêntica à fonte, cabeçalhos e linhas de atribuição byte-a-byte iguais, todos os números conferidos (11.508 → 11.279 chars, −2%).
+- Ajustes principais: períodos arrastados quebrados nos relatos do forno de telhas e da produção de carvão, calques da tradução substituídos ("Normalmente as toras são embebidas" → "O costume é embeber"), e concordância de gênero do relator masculino corrigida ("grata" → "grato", coerente com "amador"/"leigo" no mesmo depoimento). Citações entre aspas mantidas intactas.
+- Fila atualizada: item movido de `pending` para `done` com os campos exatos exigidos. A fila havia sido alterada pelo auditor entre a leitura inicial e a escrita (reabertura de itens), então removi por `(livro, chunk)` sobre a versão relida — estado final: 694 `pending`, 71 `done`.

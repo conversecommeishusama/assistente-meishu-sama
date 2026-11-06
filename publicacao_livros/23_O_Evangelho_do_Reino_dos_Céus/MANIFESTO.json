@@ -1,0 +1,14 @@
+{
+  "volume": 23,
+  "titulo": "19540825-天国の福音書",
+  "nota": "Volume individual",
+  "paginas_estimadas": 125.5,
+  "caracteres_totais": 250209,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_19540825 - Evangelho do Reino dos Céus.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540825 - Evangelho do Reino dos Céus.txt",
+      "caracteres": 250209
+    }
+  ]
+}

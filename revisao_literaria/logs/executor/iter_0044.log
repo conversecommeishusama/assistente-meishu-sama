@@ -1,0 +1,8 @@
+Chunk 003 de *Coleção Jikan Volume 1* (item reaberto pelo auditor) processado e devolvido a `done`.
+
+- **Achado específico resolvido:** "Vista de um ponto de vista acadêmico, a religião ainda permite dizer o seguinte" → "Examinando a religião sob o ângulo acadêmico, ainda se pode dizer o seguinte" — sem o eco *vista/ponto de vista* e sem forçar "religião" como sujeito de "permite dizer".
+- **Revarredura da classe inteira** (eco lexical criado pela própria revisão, não pela fonte), com detecção automatizada por janela de 12 palavras comparando `_out` contra `_src`: 8 ocorrências corrigidas — *possível…possível calar*, *mostra?/Mostra*, "por isso" duplicado, *inútil…inútil*, *inimiga/inimigo/temer*, *na verdade/de verdade*, entre outras.
+- **Dois desvios de sentido introduzidos pela revisão anterior**, achados na revarredura: "alcançará essa posição" (lia-se como a posição *da medicina*, quando a fonte diz "nossa posição") e a concessiva perdida em "Apesar de ter passado pelo procedimento onze vezes".
+- **Integridade verificada:** 27 parágrafos, 51 linhas, números, nomes próprios e as 6 citações entre aspas idênticos à fonte; 11.975 → 11.812 chars (−1,4%).
+
+Fila: 731 pending / 34 done.

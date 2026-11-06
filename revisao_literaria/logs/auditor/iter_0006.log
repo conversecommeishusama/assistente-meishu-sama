@@ -1,0 +1,14 @@
+**19480701 - Coletânea de Salmos — reaberto** (2ª rodada de auditoria).
+
+Leitura integral: 435 linhas do original contra 435 do montado, prefácio + os 309 poemas, um a um (137 linhas alteradas + o prefácio, todas examinadas).
+
+**Integridade estrutural — OK.** A concatenação dos três `_out.txt` bate byte a byte (md5) com o livro montado, e a dos `_src.txt` com o original: nenhum parágrafo perdido, duplicado ou deslocado nas costuras (chunk 0 fecha no cabeçalho "Diamante e Matriz", chunk 1 em "O Fim da Noite", ambos com `\n\n` limpo). Todos os 33 cabeçalhos de seção preservados, numeração 1–309 íntegra.
+
+**Achados anteriores — todos corrigidos.** Os 8 pontos das notas de 14/08 (prefácio "demais"/"as pessoas", poemas 31, 68, 185, 194, 195, 280) vieram resolvidos exatamente como pedido, sem dano colateral. Ganho literário é real e uniforme: dangling gerunds reparados (182, 184, 287, 299), concordância corrigida (64, 117, 209), anacolutos desfeitos, repetição de "alegria" eliminada em 262, tratamento vocativo uniformizado em "vós" (238, 286, 298).
+
+**Dois achados novos, ambos pontuais:**
+
+1. **Poema 2 (chunk 0)** — epíteto fixo quebrado. A fórmula "livre e desimpedido" ocorre 3× no livro (poemas 2, 44, 135); o revisor manteve nos poemas 44 e 135 e trocou só no 2 por "livre e sem entraves". É epíteto recorrente de Kannon, não repetição mecânica — a variação isolada rompe o eco interno da coletânea (regra de glossário do protocolo).
+2. **Poema 229 (chunk 2)** — quantificador intensificado: fonte "vários pecados e impurezas", montado "tantos pecados e impurezas". "vários" é pluralidade neutra; "tantos" é exclamativo de abundância e afirma mais que o fonte.
+
+Ambos os chunks tinham 1 entrada de histórico (esta é a 2ª reabertura, dentro do limite — não houve escalação). Chunks 0 e 2 inseridos no início de `QUEUE_EXECUTOR.json` com evidência concreta, entradas antigas removidas do `done`, `montado` zerado no `_manifest.json`, e o livro retirado de `pending` do auditor sem ir para `done` — volta sozinho quando `montar_livro.py` remontar.

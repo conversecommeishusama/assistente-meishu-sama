@@ -1,0 +1,9 @@
+Item processado: **Coleção Jikan Volume 5 — chunk 4** (reaberto pelo auditor).
+
+- Achado do auditor resolvido: `os mais variados assuntos mundanos` → `vários assuntos mundanos`.
+- Varredura da classe inteira do bug (inflação/troca de quantificador e intensidade) no chunk: `mais silencioso de todo o alto curso` → sem "de todo"; `cheio de passagens arriscadas` → `havia nele passagens bastante perigosas`; `diminuído muito` → `bastante`; `um trecho de geleira` → `um pouco de geleira`; `tão gelada` → `tão fria como gelo`.
+- Perdas lexicais restauradas: "degelo **da neve**", "**A luz do** sol", "o ar **da montanha**", "mais de quarenta **anos**", "hoje" (dia de descida), "de repente", "vários pontos **do rio**"; retirada a invenção "hóspedes".
+- Preservados o `cerca de nove shaku de comprimento` (correção anterior correta) e o restante do trabalho literário aprovado.
+- Integridade: 8 parágrafos → 8; 10071 → 9886 chars (−1,8%).
+
+Fila atualizada: pending 693 → 692, done 72 → 73. Próximo item é o chunk 5 do mesmo livro.

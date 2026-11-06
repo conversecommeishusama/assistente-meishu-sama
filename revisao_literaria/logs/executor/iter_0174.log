@@ -1,0 +1,9 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19491223 - Montanha e Água`, chunk 4/12 (poemas 393–504, tanka) — sem `nota_auditor`.
+
+Ajustes principais: desfeitos calques ("Altas e baixas" → "Ora altas, ora baixas"; "pensei que ela era grandiosa" → "pensei que fosse grandiosa"), repetições mecânicas ("suaves… suavemente", "névoa… névoa"), perífrases pesadas ("começou a se tornar realidade", "pode ser vislumbrada na montanha de março"), e ortografia atualizada (`bóia` → `boia`, ocorrência única do livro).
+
+Auto-checagem antes do aceite: 130 linhas ↔ 130, os 112 números de poema idênticos e na mesma ordem, os 18 parênteses de data idênticos, todos os títulos de seção idênticos, linhas em branco na mesma posição, arquivo terminando em `Meu Agora` como a fonte; tamanho 11.864 → 11.627 chars (−2,0%).
+
+Nota: entre minha primeira leitura e a escrita, o auditor reabriu um item (`19491130 - Jikan Vol 8`, chunk 1) e ele agora é o `pending[0]`. Usei remoção por (livro, chunk), não `pop(0)`, então nada foi perdido — meu item saiu de `pending` e está em `done`.

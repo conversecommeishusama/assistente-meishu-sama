@@ -1,0 +1,5 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes`, chunk 1/16 → `revisao_literaria/chunks/.../001_out.txt`
+- **Revisão:** períodos longos destravados (parágrafo do composto, parágrafo dos estipêndios/30%), eco de conectivo e repetições removidos, calques naturalizados; cabeçalhos, bloco de assinatura, citação do Grão-Mestre e todos os números preservados (diff numérico limpo), 29 parágrafos → 29, 11404 → 11269 chars.
+- **Nota de percurso:** o laço auditor reescreveu `QUEUE_EXECUTOR.json` durante o trabalho e reabriu 2 chunks de `19490625 - Coleção Jikan Volume 1` (com `nota_auditor`) no topo de `pending`, deslocando meu item. Localizei-o por `(livro, chunk)` em vez de posição e movi para `done` — nada foi perdido. `pending` agora tem 732 itens; `pending[0]` é o chunk 3 reaberto do Volume 1, para a próxima invocação.

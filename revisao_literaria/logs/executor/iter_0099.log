@@ -1,0 +1,5 @@
+Chunk 7/9 de *19490830 - Coleção Jikan Volume 5 Diálogos Jikan* revisado e aceito.
+
+- **Revisão**: seção de crítica de arte (pintura japonesa, escultura, maki-e). Principais ajustes: desfiz o período sintaticamente quebrado sobre Taikan; substituí calques e fórmulas arrastadas por construções naturais em português; variei a cadência nas longas listas de mestres.
+- **Integridade**: 21 parágrafos → 21 parágrafos; 11.541 → 11.288 chars (0,98); nenhum nome próprio, data ou número perdido ou acrescentado (diff de tokens capitalizados só mostra palavras comuns em início de frase).
+- **Fila**: item movido de `pending` para `done` por chave `(livro, chunk)` — 698 pendentes, 67 concluídos.

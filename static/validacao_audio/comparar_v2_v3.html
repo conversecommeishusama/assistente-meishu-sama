@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação v2 vs v3 — todos os trechos</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 16px; background: #f7f4ef; }
+  h1 { color: #6b2d14; }
+  .card { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .card h2 { margin: 0 0 6px; font-size: 1.05rem; }
+  .par { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+  .col { flex: 1; min-width: 280px; }
+  .rot { font-size: 0.8rem; font-weight: bold; margin-bottom: 4px; }
+  .v2 { color: #1a4f8b; }
+  .v3 { color: #1e5631; }
+  .badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 20px; margin-left: 6px; }
+  .b-v2 { background: #d4e6f9; color: #1a4f8b; }
+  .b-v3 { background: #d9ead3; color: #1e5631; }
+  audio { width: 100%; }
+  .trecho { background: #f0eadf; border-radius: 8px; padding: 8px 12px; font-style: italic; color: #444; font-size: 0.85rem; margin-top: 8px; }
+  .nota { background: #fdf6e3; border-left: 4px solid #d4a72c; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+  p.desc { color: #555; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+  <h1>🎧 v2 vs v3 — todos os trechos</h1>
+
+  <div class="nota">
+    Compare as duas instruções de dicção nos <strong>mesmos 5 trechos</strong>:
+    <br><strong>v2</strong> = "standard Brazilian Portuguese, precise articulation"
+    <br><strong>v3</strong> = "clear diction, no foreign accent, careful speech"
+    <br>Mesma voz (kikivoice remasterizada), mesma velocidade (0.75x).
+  </div>
+
+  <div class="card">
+    <h2>A. Acidente de avião</h2>
+    <div class="trecho">"É o espírito de alguém que morreu em um acidente de avião..."</div>
+    <div class="par">
+      <div class="col"><div class="rot v2">v2 <span class="badge b-v2">pt-BR padrão</span></div><audio controls preload="none" src="/static/validacao_audio/teste_v2_A_aviao.mp3"></audio></div>
+      <div class="col"><div class="rot v3">v3 <span class="badge b-v3">dicção clara</span></div><audio controls preload="none" src="/static/validacao_audio/teste_v3_A_aviao.mp3"></audio></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>B. Sobre arte e música</h2>
+    <div class="trecho">"Eu também gosto de obras de arte, mas as antigas é que são as verdadeiramente novas..."</div>
+    <div class="par">
+      <div class="col"><div class="rot v2">v2</div><audio controls preload="none" src="/static/validacao_audio/teste_v2_B_L43_arte.mp3"></audio></div>
+      <div class="col"><div class="rot v3">v3</div><audio controls preload="none" src="/static/validacao_audio/teste_v3_B_L43_arte.mp3"></audio></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>C. Música budista</h2>
+    <div class="trecho">"Ficou muito bem-feita, tem um estilo de gagaku. É muito melhor do que o budismo..."</div>
+    <div class="par">
+      <div class="col"><div class="rot v2">v2</div><audio controls preload="none" src="/static/validacao_audio/teste_v2_C_L17_musica.mp3"></audio></div>
+      <div class="col"><div class="rot v3">v3</div><audio controls preload="none" src="/static/validacao_audio/teste_v3_C_L17_musica.mp3"></audio></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>D. Caracteres possuem luz</h2>
+    <div class="trecho">"Isso mesmo. Ou seja, até mesmo os caracteres impressos possuem luz..."</div>
+    <div class="par">
+      <div class="col"><div class="rot v2">v2</div><audio controls preload="none" src="/static/validacao_audio/teste_v2_D_G12L21_caracteres.mp3"></audio></div>
+      <div class="col"><div class="rot v3">v3</div><audio controls preload="none" src="/static/validacao_audio/teste_v3_D_G12L21_caracteres.mp3"></audio></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>E. O koto e a música japonesa</h2>
+    <div class="trecho">"Também na música, os japoneses deveriam reconhecer as qualidades do Japão..."</div>
+    <div class="par">
+      <div class="col"><div class="rot v2">v2</div><audio controls preload="none" src="/static/validacao_audio/teste_v2_E_L37_koto.mp3"></audio></div>
+      <div class="col"><div class="rot v3">v3</div><audio controls preload="none" src="/static/validacao_audio/teste_v3_E_L37_koto.mp3"></audio></div>
+    </div>
+  </div>
+
+  <p class="desc" style="text-align:center; margin-top:20px;">Qual versão é mais consistente e natural em todos os trechos? v2 ou v3?</p>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Chunk 7/10 de *Coleção Jikan Volume 3 — Conversas sobre o Mundo Espiritual* revisado e aceito.
+
+- `007_out.txt` gravado: 24 parágrafos (idêntico à fonte), 11.638 → 11.391 chars (−2,1%).
+- Verificado: as 12 citações entre aspas estão literais; nenhum nome próprio, data ou número perdido ou acrescentado.
+- Fila atualizada removendo o item por `(livro, chunk)` — não por `pop(0)` — para não colidir com o auditor: pending 709 → 708, done 56 → 57.

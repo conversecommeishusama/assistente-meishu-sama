@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**`pending[0]`** era `19491005 - Coleção Jikan Volume 4 Histórias de Milagres`, chunk 10/14 (sem `nota_auditor`, ou seja, primeira passagem, não reabertura).
+
+- Revisado `010_src.txt` → `010_out.txt` (único arquivo de texto escrito; nada fora de `revisao_literaria/`).
+- Ajustes principais: calques desfeitos ("infinita grande compaixão" → "infinita compaixão"; "De alguma forma, ouvi" → "Foi então que ouvi"), períodos arrastados reorganizados nos dois relatos de cárie óssea, concordância de gênero corrigida ("repleto de esperança" → "repleta", "Agarrando-me" → "Agarrada").
+- Preservados: cabeçalhos de artigo, bylines com endereço, a estrofe de hino que abre o chunk, as citações entre aspas e todos os nomes/datas/números.
+- Verificação: 21 parágrafos na fonte e no revisado; conjunto de numerais idêntico; 9166 → 9077 chars (−1%).
+- Fila: item movido de `pending` para `done` por chave `(livro, chunk)` — não por `pop(0)` — com os campos exatos exigidos. Agora 686 pending / 79 done.

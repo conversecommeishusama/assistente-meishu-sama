@@ -1,0 +1,9 @@
+**19500130 — Coleção Jikan Volume 12 (Coletânea de Narrativas Jikan): aprovado.**
+
+- **Fidelidade**: dígitos, aspas (218), nomes próprios e termos fixos com diff vazio nos dois sentidos; título, 22 títulos de artigo, 22 créditos de publicação, 8 blocos (Nota), 12 rótulos de Tipos de Fé e colofão byte a byte idênticos.
+- **Costuras**: os 9 `_src` concatenados batem com o original e os 9 `_out` com o montado; 502 linhas e 236 linhas em branco em ambos, alinhamento posição a posição; a regressão de `\n\n` do chunk 6 está corrigida.
+- **Achados anteriores**: os 7 (chunks 1×2, 2, 4, 5, 6) conferidos um a um, todos corrigidos.
+- **Varredura da classe recorrente** (exclusividade, totalidade, quantificador, intensificador, modalidade, polaridade) refeita do zero e limpa — inclusive `?` 49/49 e `!` 2/2.
+- **Padrão literário**: nenhum parágrafo de prosa voltou idêntico; as 96 linhas idênticas são só material protegido mais duas frases-fecho curtas.
+
+Fila atualizada: item removido de `pending`, registrado em `done` (12), restam 2 pendentes (Volume 10 e Memórias da Perseguição Religiosa).

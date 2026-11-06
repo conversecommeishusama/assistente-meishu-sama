@@ -1,0 +1,11 @@
+Item `pending[0]` processado e fechado.
+
+**Item:** `19350000 - Curso Kannon (1~7)`, chunk 11/14 — reaberto pelo auditor por costura de chunk.
+
+**O que apurei:** o achado do auditor já estava sanado em disco. `011_out.txt` termina em `\n\n` (igual ao `_src.txt`) e a linha em branco existe no livro montado, entre as linhas 1594 e 1596 (`livros_publicacao_pt_literaria/19350000 - Curso Kannon (1~7).txt:1595`). Conferi a costura dos 14 chunks do livro (fim/início de cada `_src` × `_out`): nenhuma divergente.
+
+**O que fiz de fato:** releitura linha a linha `011_src.txt` × `011_out.txt`. A revisão está fiel (49/49 parágrafos, 104/104 linhas, nomes/datas/números batendo: 1855, Virchow, Hospital Takigawa, Kanda, Masashige/Kiyomaro/Ninomiya Sontoku, 5 de setembro de 1935). A única divergência lexical que achei foi "grande alegria" onde a fonte diz "grande diversão" — restaurei a palavra da fonte. Fila atualizada: pending 749 → 748, done 16 → 17.
+
+Dois pontos que ficam fora do meu escopo, mas registro:
+- O livro montado está defasado em relação aos chunks: `005_out.txt` foi gravado às 16:40:48, depois da montagem (16:39:25), e o montado ainda carrega a versão antiga de uma frase. A próxima passada do `montar_livro.py` corrige.
+- Não commitei — a árvore tem muita coisa modificada de outras frentes e o `EXECUCAO_PROMPT.md` exige isolamento estrito em `revisao_literaria/`.

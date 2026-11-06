@@ -1,0 +1,9 @@
+Item processado e fila atualizada.
+
+**Chunk 2 de "19491230 - Coleção Jikan Volume 9 Caminho para a Luz"** (item reaberto pelo auditor):
+
+- Correção pedida aplicada: `passou a ser a de um membro da família imperial` → `passou a ser **como a de** um membro da família imperial`, restaurando a comparação (comportamento semelhante ao de um membro da família imperial) em vez da afirmação de fato.
+- Varredura da mesma classe de bug no chunk inteiro (marcadores de comparação/modalização: *como, parecendo, talvez, creio, quase, se fosse*…): nenhuma outra perda. As três divergências que a varredura acusou são equivalências legítimas (`Acho`→`Creio`, `parecendo não conseguir conter`→`como se não conseguisse conter`, e um `como` causal em §13).
+- Resto do chunk preservado conforme a instrução explícita do auditor. Verificações: 25 parágrafos = fonte, dígitos idênticos, citações entre aspas idênticas, arquivo terminando em `\n\n`. Tamanho 11.580 → 11.383 chars.
+
+Fila: `pending` 646 → 645, `done` 119 → 120 (item removido por `(livro, chunk)`, não por índice).

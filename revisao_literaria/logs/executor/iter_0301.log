@@ -1,0 +1,8 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19510115 - Explicação da Agricultura Natural`, chunk 6/7 (último do livro) — sem `nota_auditor`.
+- **Revisão**: tabela estatística (25 linhas) e colofão preservados caractere a caractere; prosa dos relatos de experiência trabalhada para fluidez (períodos longos quebrados, conectivo mecânico "Além disso" removido, listas telegráficas de hortaliças com pontuação mais clara). Citações entre aspas, nomes de igrejas/prefeituras, variedades e unidades (kan, tan, shō, momme, se, bu) intactos.
+- **Auto-checagem**: 42 blocos → 42 blocos; 14.239 → 14.148 chars (−0,6%); diff de todos os numerais mostra apenas mudança de pontuação aderente (`120,`→`120`), nenhum valor alterado.
+- **Fila**: item movido para `done` com os campos exatos (`livro`, `arquivo`, `chunk`, `total_chunks`, `at`, `nota`), removendo por chave `(livro, chunk)` em vez de `pop(0)` — a fila havia sido reescrita pelo auditor entre a leitura e a gravação (pending 608→610).
+
+O próximo `pending[0]` é `19501030 - Memórias da Perseguição Religiosa` chunk 0, reaberto pelo auditor com `nota_auditor` sobre supressão de modalizador epistêmico — fica para a próxima invocação.

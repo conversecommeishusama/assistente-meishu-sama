@@ -1,0 +1,9 @@
+Item `pending[0]` processado e encerrado.
+
+- **Item**: `19490830 - Coleção Jikan Volume 5 Diálogos Jikan`, chunk 5/9 — item reaberto pelo auditor com `nota_auditor` (3 achados de fidelidade).
+- **Correções aplicadas** exatamente conforme a nota, sem refazer o trabalho literário já aprovado:
+  - removido "por inteiro" (afirmação de totalidade que não existia na fonte);
+  - restaurado o quantificador: "surgiram **vários** episódios";
+  - restaurado "perguntei **várias** coisas" (estava "muitas").
+- **Verificação**: 8 parágrafos na fonte e no revisado; 11.679 → 11.409 chars.
+- **Fila**: item removido de `pending` por `(livro, chunk)` — não por `pop(0)` — e acrescentado a `done` com os campos padrão. Agora: 691 pending / 74 done.

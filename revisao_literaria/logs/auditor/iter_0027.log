@@ -1,0 +1,13 @@
+Item processado: **19490830 – Coleção Jikan Volume 5 Diálogos Jikan** — reaberto (não aprovado).
+
+**Verificações estruturais (todas passaram):** concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; 165 parágrafos e 171 linhas em branco em ambos; multiconjunto de dígitos idêntico; as 138 citações entre aspas idênticas caractere a caractere; nenhuma costura perdeu ou duplicou parágrafo. Os 12 achados das 4 rodadas anteriores foram conferidos um a um e **todos vieram corrigidos** (incl. `fogem de todas`, `creio que concordarão`, `muito cuidado`, `a região`, `vários episódios/coisas/conselhos/assuntos`, `grande prejuízo`, `preço muito alto`, `cerca de nove shaku`, `milhares de palavras`, `entre outros` do maki-e, sujeito explícito de Takamine Chikufū).
+
+**Achado que impediu a aprovação — chunk 1, parágrafo do nono Danjūrō:**
+- Fonte: *"o que assisti **muito** foram apenas as suas peças da escola"*
+- Montado: *"Do que assisti, pode-se dizer que foram apenas as peças de sua escola"*
+
+O `muito` sumiu. A fonte restringe a exclusividade ao que ele assistia muito; o montado passa a afirmar que tudo o que assistiu foram as dezoito peças. A perda foi introduzida pela própria varredura da rodada anterior — a nota do executor registra ter trocado `sobretudo` por `apenas` nesse sintagma, sem notar que os dois modificadores coexistem na fonte, em posições diferentes.
+
+Ações: chunk 1 inserido no início de `QUEUE_EXECUTOR.json` com nota de correção + varredura da classe; entrada antiga do chunk 1 removida de `done`; 2ª linha em `001_historico_auditoria.jsonl`; `montado` zerado no `_manifest.json`; livro removido de `pending` do auditor sem ir para `done`.
+
+Um ponto examinado e **endossado**, para não ser re-litigado: `muito poucos mestres` → `pouquíssimos mestres` (chunk 7) — superlativo absoluto sintético é o mesmo grau do analítico em português, não é inflação.

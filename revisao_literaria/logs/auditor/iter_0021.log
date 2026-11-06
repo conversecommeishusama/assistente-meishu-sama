@@ -1,0 +1,17 @@
+**Aprovado** — *19490825 – Coleção Jikan Volume 3: Conversas sobre o Mundo Espiritual* (item único de `pending`).
+
+Leitura integral e comparada dos 10 chunks (393 linhas, 189 parágrafos), original × montado.
+
+**Fidelidade**
+- Concatenação dos 10 `_src` bate byte a byte com o original; a dos 10 `_out`, com o montado. Contagem de parágrafos idêntica chunk a chunk (15/12/18/46/21/22/15/24/19/13).
+- 183 citações entre aspas idênticas caractere a caractere (multiconjunto sem diferença nos dois sentidos); dígitos e numerais por extenso conferidos; nomes, eras, unidades, rótulos de diálogo e títulos de seção idênticos.
+- Nenhum parágrafo abaixo de 0,887 do tamanho original; as duas maiores quedas de frase (P119, P157) são fusões legítimas, sem supressão de proposição.
+
+**Os 3 achados das rodadas anteriores foram corrigidos**
+- chunk 1: citação da enfermeira restaurada literalmente e `"advertência"` de volta ao singular;
+- chunk 6: as 17 citações restauradas, inclusive as 3 que mudavam sentido (finalidade do "deitado", `"Isso não pode."` como proibição, `"Você queria dinheiro"` sem artigo) e o ponto final devolvido para dentro das aspas;
+- chunk 7: voz passiva restaurada ("mulheres que em vida foram enganadas e maltratadas") e "como resultado de seu treinamento" preservado.
+
+**Padrão literário**: ganho real e uniforme na prosa do narrador. Os 13 parágrafos idênticos são material protegido (blocos de fala, as duas `(Nota)` de glossário, a enumeração dos infernos e uma frase-ponte). Três pontos foram examinados e endossados na nota, para não serem re-litigados — entre eles `"para afastá-la de mim"` (chunk 6), separação simétrica das mesmas duas partes e mais coerente com o sonho relatado.
+
+`QUEUE_AUDITOR.json`: item movido de `pending` para `done` (`at: 2026-08-14T20:14:16+02:00`). `pending` agora está vazia.

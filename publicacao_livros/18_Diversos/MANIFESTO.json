@@ -1,0 +1,74 @@
+{
+  "volume": 18,
+  "titulo": "Diversos",
+  "nota": "Periódicos pequenos + livros avulsos + registros/discursos breves sem outro grupo natural",
+  "paginas_estimadas": 160.2,
+  "caracteres_totais": 303949,
+  "arquivos": [
+    {
+      "arquivo_destino": "01_Ensinamentos_diversos.txt",
+      "fonte": "livros_publicacao_pt_revisado/Ensinamentos_diversos.txt",
+      "caracteres": 66591
+    },
+    {
+      "arquivo_destino": "02_Jornais.txt",
+      "fonte": "livros_publicacao_pt_revisado/Jornais.txt",
+      "caracteres": 15868
+    },
+    {
+      "arquivo_destino": "03_Relatos_de_Milagres.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/Relatos_de_Milagres.txt",
+      "caracteres": 20120
+    },
+    {
+      "arquivo_destino": "04_Keiko.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/Keiko.txt",
+      "caracteres": 5230
+    },
+    {
+      "arquivo_destino": "05_Revista_Asahi.txt",
+      "fonte": "livros_publicacao_pt_revisado/Revista_Asahi.txt",
+      "caracteres": 3653
+    },
+    {
+      "arquivo_destino": "06_19510615 - Confissão de um Fiel.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510615 - Confissão de um Fiel.txt",
+      "caracteres": 55015
+    },
+    {
+      "arquivo_destino": "07_19530600 - A Story of Ukiyo-e.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530600 - A Story of Ukiyo-e.txt",
+      "caracteres": 43046
+    },
+    {
+      "arquivo_destino": "08_19510601-世界救世教教義解説.txt",
+      "fonte": "backups/remocao_fora_escopo_20260813T225444Z/pt/19510601-世界救世教教義解説.txt",
+      "caracteres": 30247
+    },
+    {
+      "arquivo_destino": "09_19540226 - Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540226 - Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí.txt",
+      "caracteres": 4786
+    },
+    {
+      "arquivo_destino": "10_19510810 - Esboço de um Dia de Julgamento.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510810 - Esboço de um Dia de Julgamento.txt",
+      "caracteres": 25174
+    },
+    {
+      "arquivo_destino": "11_19500921 - Até a Construção do Paraíso Terrestre.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500921 - Até a Construção do Paraíso Terrestre.txt",
+      "caracteres": 19596
+    },
+    {
+      "arquivo_destino": "12_19520000 - HAKONE ART MUSEUM.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520000 - HAKONE ART MUSEUM.txt",
+      "caracteres": 8515
+    },
+    {
+      "arquivo_destino": "13_Esboco_da_Medicina.txt",
+      "fonte": "livros_publicacao_pt_revisado/Esboco_da_Medicina.txt",
+      "caracteres": 6108
+    }
+  ]
+}

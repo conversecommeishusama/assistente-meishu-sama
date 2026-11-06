@@ -1,0 +1,9 @@
+Processado o `pending[0]` desta invocação:
+
+**19510115 - Explicação da Agricultura Natural — chunk 2/7**
+- Revisado em `revisao_literaria/chunks/.../002_out.txt` (11.356 → 11.315 chars, 23 blocos em ambos).
+- Ajustes: períodos arrastados quebrados na seção dos parasitas e na conclusão; enumerações de sintomas/vantagens reorganizadas em cadência mais fluida; conectivos repetidos e calques ("tendo como alvo", "por sua vez") substituídos.
+- Preservados: cabeçalhos de seção, os quatro percentuais por ano, referência `'Eikō' nº 81` e o bloco de endereço/autor do relato.
+- Fila atualizada: item movido para `done` (152 done / 613 pending), removido por `(livro, chunk)` — o item já não estava em `pending[0]` na hora da escrita.
+
+Nota: o auditor inseriu no topo da fila, durante esta execução, dois itens reabertos de *19501120 - Guia Rápido da Igreja Messiânica Mundial* (chunks 2 e 3) com `nota_auditor` — serão o alvo da próxima invocação.

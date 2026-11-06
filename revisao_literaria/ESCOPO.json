@@ -1,0 +1,332 @@
+{
+  "gerado_em": "2026-08-14T15:48:21.740569",
+  "total_arquivos": 54,
+  "total_chunks": 813,
+  "alvo_chars_por_chunk": 12000,
+  "arquivos": [
+    {
+      "arquivo": "19350000 - Curso Kannon (1~7).txt",
+      "fonte": "livros_publicacao_pt_revisado/19350000 - Curso Kannon (1~7).txt",
+      "chars": 158097,
+      "total_chunks": 14
+    },
+    {
+      "arquivo": "19480701 - Coletânea de Salmos.txt",
+      "fonte": "livros_publicacao_pt_revisado/19480701 - Coletânea de Salmos.txt",
+      "chars": 31896,
+      "total_chunks": 3
+    },
+    {
+      "arquivo": "19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual.txt",
+      "chars": 157873,
+      "total_chunks": 14
+    },
+    {
+      "arquivo": "19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes.txt",
+      "chars": 184513,
+      "total_chunks": 16
+    },
+    {
+      "arquivo": "19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual.txt",
+      "chars": 110859,
+      "total_chunks": 10
+    },
+    {
+      "arquivo": "19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+      "fonte": "livros_publicacao_pt_revisado/19490830 - Coleção Jikan Volume 5 Diálogos Jikan.txt",
+      "chars": 104846,
+      "total_chunks": 9
+    },
+    {
+      "arquivo": "19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491005 - Coleção Jikan Volume 4 Histórias de Milagres.txt",
+      "chars": 131822,
+      "total_chunks": 14
+    },
+    {
+      "arquivo": "19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491025 - Coleção Jikan Volume 7 Cristo, Buda e a Fé Kannon.txt",
+      "chars": 66305,
+      "total_chunks": 7
+    },
+    {
+      "arquivo": "19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro.txt",
+      "chars": 69063,
+      "total_chunks": 6
+    },
+    {
+      "arquivo": "19491223 - Montanha e Água.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491223 - Montanha e Água.txt",
+      "chars": 141024,
+      "total_chunks": 12
+    },
+    {
+      "arquivo": "19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+      "fonte": "livros_publicacao_pt_revisado/19491230 - Coleção Jikan Volume 9 Caminho para a Luz.txt",
+      "chars": 70120,
+      "total_chunks": 6
+    },
+    {
+      "arquivo": "19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500130 - Coleção Jikan Volume 12 Coletânea de Narrativas Jikan.txt",
+      "chars": 98085,
+      "total_chunks": 9
+    },
+    {
+      "arquivo": "19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina.txt",
+      "chars": 94657,
+      "total_chunks": 10
+    },
+    {
+      "arquivo": "19500921 - Até a Construção do Paraíso Terrestre.txt",
+      "fonte": "livros_publicacao_pt_revisado/19500921 - Até a Construção do Paraíso Terrestre.txt",
+      "chars": 19079,
+      "total_chunks": 2
+    },
+    {
+      "arquivo": "19501030 - Memórias da Perseguição Religiosa.txt",
+      "fonte": "livros_publicacao_pt_revisado/19501030 - Memórias da Perseguição Religiosa.txt",
+      "chars": 134594,
+      "total_chunks": 12
+    },
+    {
+      "arquivo": "19501120 - Guia Rápido da Igreja Messiânica Mundial.txt",
+      "fonte": "livros_publicacao_pt_revisado/19501120 - Guia Rápido da Igreja Messiânica Mundial.txt",
+      "chars": 53354,
+      "total_chunks": 5
+    },
+    {
+      "arquivo": "19510115 - Explicação da Agricultura Natural.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510115 - Explicação da Agricultura Natural.txt",
+      "chars": 82461,
+      "total_chunks": 7
+    },
+    {
+      "arquivo": "19510130 - Fonte do Riso.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510130 - Fonte do Riso.txt",
+      "chars": 112305,
+      "total_chunks": 10
+    },
+    {
+      "arquivo": "19510615 - Confissão de um Fiel.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510615 - Confissão de um Fiel.txt",
+      "chars": 52960,
+      "total_chunks": 5
+    },
+    {
+      "arquivo": "19510805 - Nova Violência.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510805 - Nova Violência.txt",
+      "chars": 6021,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "19510810 - Esboço de um Dia de Julgamento.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510810 - Esboço de um Dia de Julgamento.txt",
+      "chars": 24463,
+      "total_chunks": 2
+    },
+    {
+      "arquivo": "19510815 - Terapia Revolucionária da Tuberculose.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510815 - Terapia Revolucionária da Tuberculose.txt",
+      "chars": 578712,
+      "total_chunks": 51
+    },
+    {
+      "arquivo": "19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+      "fonte": "livros_publicacao_pt_revisado/19511010 - Doutrina da Igreja Messiânica Mundial (Paraíso Terrestre e Agricultura Natural).txt",
+      "chars": 37078,
+      "total_chunks": 3
+    },
+    {
+      "arquivo": "19520000 - HAKONE ART MUSEUM.txt",
+      "fonte": "livros_publicacao_pt_revisado/19520000 - HAKONE ART MUSEUM.txt",
+      "chars": 8285,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "19521201 - Terapia de Fé para Tuberculose.txt",
+      "fonte": "livros_publicacao_pt_revisado/19521201 - Terapia de Fé para Tuberculose.txt",
+      "chars": 681145,
+      "total_chunks": 59
+    },
+    {
+      "arquivo": "19530101 - Salvando os Estados Unidos.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530101 - Salvando os Estados Unidos.txt",
+      "chars": 368366,
+      "total_chunks": 32
+    },
+    {
+      "arquivo": "19530505 - Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530505 - Explicação do Método da Agricultura Natural para o Aumento Extraordinário da Produção.txt",
+      "chars": 310507,
+      "total_chunks": 31
+    },
+    {
+      "arquivo": "19530600 - A Story of Ukiyo-e.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530600 - A Story of Ukiyo-e.txt",
+      "chars": 42310,
+      "total_chunks": 4
+    },
+    {
+      "arquivo": "19530811 - Manual da Igreja Messiânica Mundial (para adeptos do exterior).txt",
+      "fonte": "livros_publicacao_pt_revisado/19530811 - Manual da Igreja Messiânica Mundial (para adeptos do exterior).txt",
+      "chars": 74548,
+      "total_chunks": 7
+    },
+    {
+      "arquivo": "19530910 - Relatos de Milagres da Igreja Messiânica Mundial.txt",
+      "fonte": "livros_publicacao_pt_revisado/19530910 - Relatos de Milagres da Igreja Messiânica Mundial.txt",
+      "chars": 781352,
+      "total_chunks": 68
+    },
+    {
+      "arquivo": "19531001 - Curso do Método de Johrei nº 2.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531001 - Curso do Método de Johrei nº 2.txt",
+      "chars": 56482,
+      "total_chunks": 5
+    },
+    {
+      "arquivo": "19531101 - Curso do Método de Johrei nº 1.txt",
+      "fonte": "livros_publicacao_pt_revisado/19531101 - Curso do Método de Johrei nº 1.txt",
+      "chars": 46659,
+      "total_chunks": 4
+    },
+    {
+      "arquivo": "19540226 - Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540226 - Palavras de Saudação na Cerimônia de Inauguração da Igreja do Havaí.txt",
+      "chars": 4598,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "19540825 - Evangelho do Reino dos Céus.txt",
+      "fonte": "livros_publicacao_pt_revisado/19540825 - Evangelho do Reino dos Céus.txt",
+      "chars": 242732,
+      "total_chunks": 21
+    },
+    {
+      "arquivo": "19541001 - Curso do Método de Johrei nº 3.txt",
+      "fonte": "livros_publicacao_pt_revisado/19541001 - Curso do Método de Johrei nº 3.txt",
+      "chars": 44347,
+      "total_chunks": 4
+    },
+    {
+      "arquivo": "19541120 - Curso do Método de Johrei nº 4 Crítica da Farmacologia.txt",
+      "fonte": "livros_publicacao_pt_revisado/19541120 - Curso do Método de Johrei nº 4 Crítica da Farmacologia.txt",
+      "chars": 63203,
+      "total_chunks": 6
+    },
+    {
+      "arquivo": "19550210 - Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550210 - Curso do Método de Johrei nº 5 (Tuberculose, Asma e Sintomas Cardíacos).txt",
+      "chars": 96300,
+      "total_chunks": 9
+    },
+    {
+      "arquivo": "19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550401 - Curso do Método de Johrei nº 6 Sobre Doenças por Toxinas Medicamentosas.txt",
+      "chars": 87003,
+      "total_chunks": 8
+    },
+    {
+      "arquivo": "19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+      "chars": 74033,
+      "total_chunks": 7
+    },
+    {
+      "arquivo": "19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+      "fonte": "livros_publicacao_pt_revisado/19550501 - Curso do Método de Johrei nº 8 Doenças do Estômago e Intestino.txt",
+      "chars": 112826,
+      "total_chunks": 11
+    },
+    {
+      "arquivo": "19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+      "chars": 73965,
+      "total_chunks": 7
+    },
+    {
+      "arquivo": "19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+      "fonte": "livros_publicacao_pt_revisado/19550625 - Curso do Método de Johrei nº 10 (Olhos, Ouvidos, Nariz, Garganta e Odontologia).txt",
+      "chars": 114116,
+      "total_chunks": 11
+    },
+    {
+      "arquivo": "Eiko.txt",
+      "fonte": "livros_publicacao_pt_revisado/Eiko.txt",
+      "chars": 1639241,
+      "total_chunks": 141
+    },
+    {
+      "arquivo": "Ensinamentos_diversos.txt",
+      "fonte": "livros_publicacao_pt_revisado/Ensinamentos_diversos.txt",
+      "chars": 64679,
+      "total_chunks": 6
+    },
+    {
+      "arquivo": "Esboco_da_Medicina.txt",
+      "fonte": "livros_publicacao_pt_revisado/Esboco_da_Medicina.txt",
+      "chars": 5908,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "Hikari.txt",
+      "fonte": "livros_publicacao_pt_revisado/Hikari.txt",
+      "chars": 463779,
+      "total_chunks": 40
+    },
+    {
+      "arquivo": "Jornais.txt",
+      "fonte": "livros_publicacao_pt_revisado/Jornais.txt",
+      "chars": 15394,
+      "total_chunks": 2
+    },
+    {
+      "arquivo": "Kyusei.txt",
+      "fonte": "livros_publicacao_pt_revisado/Kyusei.txt",
+      "chars": 204006,
+      "total_chunks": 18
+    },
+    {
+      "arquivo": "Revista_Asahi.txt",
+      "fonte": "livros_publicacao_pt_revisado/Revista_Asahi.txt",
+      "chars": 3582,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "Tijotengoku.txt",
+      "fonte": "livros_publicacao_pt_revisado/Tijotengoku.txt",
+      "chars": 353903,
+      "total_chunks": 30
+    },
+    {
+      "arquivo": "19480905 - Conversas sobre a Fé.txt",
+      "fonte": "livros_publicacao_pt_revisado/19480905 - Conversas sobre a Fé.txt",
+      "chars": 185492,
+      "total_chunks": 17
+    },
+    {
+      "arquivo": "19510520 - Luz dos Ensinamentos.txt",
+      "fonte": "livros_publicacao_pt_revisado/19510520 - Luz dos Ensinamentos.txt",
+      "chars": 146188,
+      "total_chunks": 13
+    },
+    {
+      "arquivo": "19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt",
+      "fonte": "livros_publicacao_pt_revisado/19541211 - Palavras de Meishu-Sama no Palácio de Cristal.txt",
+      "chars": 2011,
+      "total_chunks": 1
+    },
+    {
+      "arquivo": "Medicina_do_Amanha.txt",
+      "fonte": "livros_publicacao_pt_revisado/Medicina_do_Amanha.txt",
+      "chars": 212599,
+      "total_chunks": 19
+    }
+  ]
+}

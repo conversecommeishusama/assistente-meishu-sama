@@ -1,0 +1,6 @@
+Chunk 6/7 de *Coleção Jikan Volume 7 — Cristo, Buda e a Fé Kannon* revisado e aceito.
+
+- **Ajustes**: parágrafo-bloco sobre os estágios do pós-morte reorganizado em períodos com travessões; repetições de "Ele diz ainda / Fala ele, ainda" substituídas por conectivos variados; calques enxugados ("a razão pela qual… é porque", "É um ponto que merece atenção o fato de").
+- **Preservados byte a byte**: bloco citado de Hayashiya Tomojirō (linhas 13-15), título "XII. Conclusão", colofão, e todas as linhas em branco (32 linhas na fonte, 32 no resultado).
+- **Tamanho**: 6559 → 6357 chars (0,97×).
+- Fila: `pending` 677 → 676, `done` 88 → 89. Este era o último chunk do livro, então o laço externo deve montá-lo agora.

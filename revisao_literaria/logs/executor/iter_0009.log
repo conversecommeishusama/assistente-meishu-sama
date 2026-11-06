@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19350000 - Curso Kannon (1~7)`, chunk 8/14 → `008_out.txt`
+- **Revisão:** quebra de períodos arrastados (parágrafos sobre bem/mal e sabedoria, e sobre os três níveis de educação), remoção de calques (“Existe a palavra budista” → “Há no vocabulário budista”; “árvores frutíferas… maçãs, caquis” → “macieiras, caquizeiros”), corte de repetição de conectivos.
+- **Preservados:** cabeçalhos de seção, blocos de lista (níveis sociais, câmaras, estrutura empresarial), data `(25 de agosto de 1935 – Era Showa 10)`, citações entre aspas, nomes e números (verificados por diff de dígitos e de topônimos).
+- **Integridade:** 58 parágrafos na fonte e 58 no revisado; 11.664 → 11.604 chars.
+- **Fila:** pending 755 → 754, done 8 → 9.

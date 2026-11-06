@@ -1,0 +1,9 @@
+**19490830 — Coleção Jikan Volume 5 (Diálogos Jikan): aprovado.**
+
+- Leitura integral e comparada dos 9 chunks (336 linhas, 165 parágrafos), original × montado.
+- Fidelidade: dígitos, 138 citações entre aspas (diff vazio nos dois sentidos), títulos, (Nota) e colofão idênticos; nomes/eras/unidades intactos.
+- Costuras: concatenação dos `_src` bate byte a byte com o original e a dos `_out` com o montado; parágrafos idênticos chunk a chunk (22/13/23/18/10/8/18/20/33).
+- Os 12 achados das rodadas anteriores foram conferidos um a um e todos vieram corrigidos; a varredura da classe recorrente deste livro (quantificador/intensificador/aproximador) foi refeita do zero e voltou limpa — os 5 `cerca de` "ausentes" viraram *por volta de / uns / umas*, e os `todo` extras são idiomáticos.
+- Ganho literário real e uniforme; duas corrupções da fonte reparadas sem perda de conteúdo.
+
+Item movido de `pending` para `done` em `QUEUE_AUDITOR.json`. A fila recebeu, durante a auditoria, dois livros novos de `montar_livro.py` (Volume 7 e Volume 4), agora em `pending`.

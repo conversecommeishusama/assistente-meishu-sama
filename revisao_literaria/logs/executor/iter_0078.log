@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+**Item:** `19490825 - Coleção Jikan Volume 3 Conversas sobre o Mundo Espiritual`, chunk 3/10 → `done` (pending 713 → 712).
+
+- Revisão literária aplicada: elipse verbal na longa enumeração do Reino Animal (evita 12 repetições de "tornam-se"), eliminação de repetições mecânicas ("farejam os segredos alheios", "Outra coisa interessante"), variação de aberturas de parágrafo e de verbos narrativos.
+- Verificações: 46 linhas de parágrafo em ambos os lados, as 46 citações entre aspas idênticas byte a byte, nomes/números conferidos (Hirokichi, Kunitokotachi-no-mikoto, Doryo Gongen, dezenove, cinquenta, três grãos…), 11.694 → 11.589 chars (0,99).
+- Achado adicional: `001_out.txt` e `002_out.txt` deste mesmo livro terminavam com um único `\n`, enquanto os `_src` terminam com `\n\n`. Como `montar_livro.py` concatena com `"".join`, isso fundiria parágrafos nas emendas de chunk no livro montado. Corrigi (apenas whitespace, sem tocar no texto) e registrei na nota da fila. Varri os 50 `_out.txt` existentes: eram os dois únicos casos.

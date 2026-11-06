@@ -1,0 +1,32 @@
+{
+  "arquivo": "19530600 - A Story of Ukiyo-e.txt",
+  "fonte": "livros_publicacao_pt_revisado/19530600 - A Story of Ukiyo-e.txt",
+  "chars_fonte": 42310,
+  "total_chunks": 4,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11473,
+      "paragrafos": 33
+    },
+    {
+      "idx": 1,
+      "chars": 11110,
+      "paragrafos": 20
+    },
+    {
+      "idx": 2,
+      "chars": 11748,
+      "paragrafos": 15
+    },
+    {
+      "idx": 3,
+      "chars": 7979,
+      "paragrafos": 12
+    }
+  ],
+  "montado": true,
+  "chars_final": 41824,
+  "ratio_tamanho": 0.989,
+  "montado_em": "2026-08-16T13:50:56.260296"
+}

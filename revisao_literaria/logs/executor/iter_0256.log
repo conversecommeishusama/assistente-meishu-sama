@@ -1,0 +1,5 @@
+Chunk 0/5 de *Guia Rápido da Igreja Messiânica Mundial* revisado e aceito.
+
+- **Ajustes**: períodos arrastados desempacotados (ex.: "O quanto isso está causando má influência" → "vem influindo mal sobre"), remoção de conectivos repetidos em sequência, melhor regência na enumeração China/Ocidente do 3º parágrafo do capítulo.
+- **Integridade**: 16/16 parágrafos, cabeçalho/data/assinatura intactos, nomes e termos fixos preservados (Sushin, Mukyoku, Amaterasu-tipo de grafia mantida), 10.334 → 10.139 chars (98,1%).
+- **Fila**: item removido por `(livro, chunk)`, não por `pop(0)`; `pending` 619 → 618, `done` 146 → 147.

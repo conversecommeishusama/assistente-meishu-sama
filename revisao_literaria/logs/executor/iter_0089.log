@@ -1,0 +1,6 @@
+Chunk 0 de *Coleção Jikan Volume 5 — Diálogos Jikan* revisado e aceito.
+
+- Cabeçalho, títulos de seção, citações entre aspas, nomes (Ōkura Kihachirō, Kyōdōsho, tokonoma, Johrei) e números (68 anos, cem mil ienes, seis ou sete penhoras) preservados; 22 parágrafos na fonte → 22 no revisado.
+- Ajustes: cadência de período no prefácio e no bloco "Dívidas", eliminação de conectivos repetidos e de calques ("obstruidor" → "obstrutor").
+- Tamanho: 11.845 → 11.645 caracteres (−1,7%).
+- Fila: `pending` 706 → 705, `done` 59 → 60 (item removido por chave `(livro, chunk)`, não por `pop(0)`).

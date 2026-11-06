@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item**: `19491230 - Coleção Jikan Volume 9 Caminho para a Luz`, chunk 2/6 (sem `nota_auditor`).
+- **Revisão**: fluidez e precisão lexical — calques e construções arrastadas desfeitos, cadência variada nos períodos longos (episódio do Daikoku-Sama, era de Tamagawa).
+- **Integridade verificada**: 24 parágrafos → 24; todos os números/datas idênticos; nenhum nome próprio perdido; as 22 citações entre aspas byte a byte iguais; cabeçalhos, estrofe do poema e rótulos `Eu:`/`Chefe:` preservados. Tamanho 11.580 → 11.364 chars.
+- **Fila**: pending 656 → 655, done 109 → 110 (removido por `(livro, chunk)`, não por `pop(0)`).

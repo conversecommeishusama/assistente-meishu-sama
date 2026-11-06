@@ -1,0 +1,15 @@
+**19490830 — Coleção Jikan Volume 5 (Diálogos Jikan): reprovado, 3 chunks reabertos.**
+
+Leitura integral dos 9 chunks (337 linhas, 156 parágrafos), original × montado, parágrafo a parágrafo.
+
+Verificações estruturais: concatenação dos 9 `_src` bate byte a byte com o original e a dos 9 `_out` com o montado; multiconjunto de dígitos idêntico; as 138 citações entre aspas idênticas caractere a caractere; nomes próprios, eras, unidades (ri/shaku/ken/chō/jin/jō/kan/sun/koku) e o colofão intactos; as duas `(Nota)` de glossário preservadas.
+
+Achados:
+
+1. **Chunk 0 — costura, perda de quebra de parágrafo.** `000_out.txt` termina com uma única quebra em vez de duas. No livro montado, o parágrafo final de "O Método da Mão Inversa" e o parágrafo de abertura sobre Maruyama Ōkyo ficam colados em linhas consecutivas: 155 parágrafos contra 156 do original, 336 linhas contra 337.
+2. **Chunk 2 — atribuição ambígua.** "Takamine Chikufū, pai do atual astro de cinema Takamine Mieko. **Ele criou** um estilo único" virou "...Takamine Mieko**: criou** um estilo único", deixando o antecedente do sujeito nulo recair sobre a filha, atriz de cinema, e não sobre o tocador de biwa.
+3. **Chunk 4 — medida.** "Embora tivesse **cerca de** nove shaku de comprimento" virou "Embora sua extensão fosse de **apenas** nove shaku": aproximador suprimido e minimizador acrescentado, num livro em que "cerca de um shaku de largura", na frase anterior, foi corretamente preservado.
+
+Fora esses pontos, o padrão literário é bom e uniforme — períodos arrastados desmembrados, calques desfeitos, cadeias de conectivos variadas — e três corrupções da fonte foram reparadas sem perda de conteúdo (duplicação truncada sobre Danjūrō no chunk 1, ponto faltante no chunk 3, "os moradores fogem todas" no chunk 6).
+
+Filas atualizadas: chunks 0, 2 e 4 no topo de `QUEUE_EXECUTOR.json` com nota de auditoria e evidência, entradas antigas removidas de `done`, histórico registrado (1ª reabertura de cada), `montado` zerado no `_manifest.json` e o livro retirado de `pending` do auditor sem ir para `done`.

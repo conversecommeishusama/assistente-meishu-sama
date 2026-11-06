@@ -1,0 +1,20 @@
+Item `pending[0]` processado e fechado.
+
+**Chunk:** `19500420 - Coleção Jikan Volume 10 Método de Saúde por Revelação Divina`, chunk 3/10 — reaberto pelo auditor com `nota_auditor` de fidelidade.
+
+**Achados da nota, resolvidos:**
+- "o poder misterioso dessa função **extrai** a quantidade necessária" → **produz** (mantida a repetição do original, que é retórica do autor: função *produtora* → *produz*).
+- "se pratica no **mundo inteiro**" → "é **amplamente** praticada no mundo".
+
+**Revarredura da mesma classe no chunk inteiro** (verbo doutrinário virando quase-sinônimo; aproximador virando totalidade) — mais 7 ocorrências devolvidas:
+- "geralmente aceita" (o *geralmente* tinha sido suprimido)
+- "aspecto da cultura mais avançada" (virara "um dos aspectos mais avançados da cultura", trocando o referente do superlativo)
+- "há um efeito temporário, mas **não** duradouro" (virara "**nunca** duradouro")
+- "nutrientes necessários a **todas as funções**" (virara "todas as **demais** funções")
+- "é natural que **outras** funções degenerem" (virara "**as** outras funções")
+- "**livremente** e exatamente na quantidade requerida" (virara "com **toda a** liberdade")
+- "com o máximo de detalhes **possível**" e o marcador "Por exemplo:", ambos suprimidos, restaurados
+
+Integridade: 15 parágrafos ↔ 15, 21 linhas ↔ 21, datas/números/nomes (1899, 1600, 1930, nº 36, 19/11/1949 Showa 24, Horace Fletcher, Hikari) conferidos um a um, tamanho 7521 → 7298 chars.
+
+Fila atualizada por `(livro, chunk)`, sem `pop(0)`: pending 631 → 630, done 134 → 135.

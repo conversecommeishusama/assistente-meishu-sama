@@ -1,0 +1,5 @@
+Chunk 4/7 de *Coleção Jikan Volume 7 — Cristo, Buda e a Fé Kannon* revisado e aceito.
+
+- `004_out.txt` salvo (9573 → 9235 chars, 17 parágrafos + cabeçalho da seção X preservados).
+- Ajustes: períodos arrastados das exposições de Takakusu e Inoue reorganizados, conectivos repetidos (`Dessa forma`, `Além disso`) eliminados, calques de tradução desfeitos; citação de Shakyamuni, nomes próprios e termos fixos (Dharma, Tathagata, Kanzeon-Bosatsu, Budismo Daijo) intactos.
+- Fila atualizada por chave `(livro, chunk)`, sem `pop(0)`: pending 679 → 678, done 86 → 87.

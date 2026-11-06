@@ -1,0 +1,7 @@
+Chunk 9/16 de "19490701 - Coleção Jikan Volume 2 — Método de Cultivo sem Fertilizantes" revisado e aceito.
+
+- **Revisão**: 27 parágrafos → 27; 11670 → 11072 chars; 7 citações entre aspas idênticas byte a byte; todos os tokens numéricos (datas, medidas *tan/se/kan/go/shaku/sun*, idades, percentuais) conferidos por diff — nenhum acréscimo nem perda. Títulos de artigo, blocos de endereço e a divisória `---` preservados intactos.
+- **Trecho quebrado na fonte**: `"Como a água só estava disponível quando chovia, Por ser um local onde só se podia capinar o arrozal quando chovia e se formava água, sofri muito com a falta de água."` — refundido numa frase só, mantendo as duas informações (água só com chuva; capina só com água formada).
+- **Achado fora do chunk**: `008_out.txt` terminava com uma quebra de linha em vez de duas, ao contrário do `008_src.txt`. Como `montar_livro.py` concatena os chunks com `"".join`, isso fundiria o último parágrafo do chunk 8 com o primeiro do 9 no livro montado. Corrigi apenas o caractere final — o texto não foi tocado. Varri os 40 `_out.txt` existentes: era o único caso.
+
+Fila: 722 pending / 43 done.

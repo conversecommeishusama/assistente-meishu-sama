@@ -1,0 +1,258 @@
+[
+  {
+    "volume": 1,
+    "pasta": "01_Gokōwa-roku_御光話録__Volume_1",
+    "titulo": "Gokōwa-roku (御光話録) — Volume 1",
+    "paginas": 376.9,
+    "n_arquivos": 9,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 2,
+    "pasta": "02_Gokōwa-roku_御光話録__Volume_2",
+    "titulo": "Gokōwa-roku (御光話録) — Volume 2",
+    "paginas": 329.0,
+    "n_arquivos": 11,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 3,
+    "pasta": "03_Gosuiji-roku_御垂示録__Volume_1",
+    "titulo": "Gosuiji-roku (御垂示録) — Volume 1",
+    "paginas": 388.9,
+    "n_arquivos": 12,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 4,
+    "pasta": "04_Gosuiji-roku_御垂示録__Volume_2",
+    "titulo": "Gosuiji-roku (御垂示録) — Volume 2",
+    "paginas": 355.6,
+    "n_arquivos": 18,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 5,
+    "pasta": "05_Mioshie-shū_御教え集__Volume_1",
+    "titulo": "Mioshie-shū (御教え集) — Volume 1",
+    "paginas": 279.2,
+    "n_arquivos": 3,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 6,
+    "pasta": "06_Mioshie-shū_御教え集__Volume_2",
+    "titulo": "Mioshie-shū (御教え集) — Volume 2",
+    "paginas": 350.8,
+    "n_arquivos": 4,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 7,
+    "pasta": "07_Mioshie-shū_御教え集__Volume_3",
+    "titulo": "Mioshie-shū (御教え集) — Volume 3",
+    "paginas": 365.9,
+    "n_arquivos": 5,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 8,
+    "pasta": "08_Mioshie-shū_御教え集__Volume_4",
+    "titulo": "Mioshie-shū (御教え集) — Volume 4",
+    "paginas": 348.6,
+    "n_arquivos": 6,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 9,
+    "pasta": "09_Mioshie-shū_御教え集__Volume_5",
+    "titulo": "Mioshie-shū (御教え集) — Volume 5",
+    "paginas": 343.6,
+    "n_arquivos": 5,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 10,
+    "pasta": "10_Mioshie-shū_御教え集__Volume_6",
+    "titulo": "Mioshie-shū (御教え集) — Volume 6",
+    "paginas": 354.5,
+    "n_arquivos": 5,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 11,
+    "pasta": "11_Mioshie-shū_御教え集__Volume_7",
+    "titulo": "Mioshie-shū (御教え集) — Volume 7",
+    "paginas": 355.6,
+    "n_arquivos": 5,
+    "nota": "Falas orais (série numerada por edição)"
+  },
+  {
+    "volume": 12,
+    "pasta": "12_Curso_do_Método_de_Johrei",
+    "titulo": "Curso do Método de Johrei",
+    "paginas": 404.5,
+    "n_arquivos": 10,
+    "nota": "Série completa num volume único"
+  },
+  {
+    "volume": 13,
+    "pasta": "13_Jikan_Sōsho__Volume_I",
+    "titulo": "Jikan Sōsho — Volume I",
+    "paginas": 374.6,
+    "n_arquivos": 5,
+    "nota": "nº1-5, série de ensaios de Meishu-Sama (自観)"
+  },
+  {
+    "volume": 14,
+    "pasta": "14_Jikan_Sōsho__Volume_II",
+    "titulo": "Jikan Sōsho — Volume II",
+    "paginas": 363.8,
+    "n_arquivos": 7,
+    "nota": "nº6,7,9,10,12,13,15 — inclui 3 títulos de terceiros sob autorização"
+  },
+  {
+    "volume": 15,
+    "pasta": "15_Poesia_e_Cânticos",
+    "titulo": "Poesia e Cânticos",
+    "paginas": 186.6,
+    "n_arquivos": 4,
+    "nota": "Waka, hinos e versos -- gênero distinto da prosa doutrinária"
+  },
+  {
+    "volume": 16,
+    "pasta": "16_Perseguição_Religiosa",
+    "titulo": "Perseguição Religiosa",
+    "paginas": 73.9,
+    "n_arquivos": 2,
+    "nota": "Mesmo assunto: repressão e perseguição à Igreja"
+  },
+  {
+    "volume": 17,
+    "pasta": "17_Agricultura_Natural",
+    "titulo": "Agricultura Natural",
+    "paginas": 327.7,
+    "n_arquivos": 4,
+    "nota": "無肥料栽培法 duplicado propositalmente -- também no Jikan Sōsho I"
+  },
+  {
+    "volume": 18,
+    "pasta": "18_Diversos",
+    "titulo": "Diversos",
+    "paginas": 160.2,
+    "n_arquivos": 13,
+    "nota": "Periódicos pequenos + livros avulsos + registros/discursos breves sem outro grupo natural"
+  },
+  {
+    "volume": 19,
+    "pasta": "19_Coletânea_de_Milagres_da_Igreja_Messiânica_Mundial_Kiseki-shū",
+    "titulo": "19530910-世界救世教奇蹟集",
+    "paginas": 409.2,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 20,
+    "pasta": "20_Cura_da_Tuberculose_pela_Fé_Kekkaku_Shinkō_Ryōhō",
+    "titulo": "19521201-結核信仰療法",
+    "paginas": 356.5,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 21,
+    "pasta": "21_O_Tratamento_Revolucionário_da_Tuberculose",
+    "titulo": "19510815-結核の革命的療法",
+    "paginas": 302.7,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 22,
+    "pasta": "22_Salvando_a_América",
+    "titulo": "19530101-アメリカを救う",
+    "paginas": 192.9,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 23,
+    "pasta": "23_O_Evangelho_do_Reino_dos_Céus",
+    "titulo": "19540825-天国の福音書",
+    "paginas": 125.5,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 24,
+    "pasta": "24_Curso_de_Kannon_Kannon_Kōza",
+    "titulo": "19350000-観音講座　（１～７）",
+    "paginas": 82.9,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 25,
+    "pasta": "25_Eiko__Volume_I",
+    "titulo": "Eiko — Volume I",
+    "paginas": 289.2,
+    "n_arquivos": 1,
+    "nota": "Corte respeitando fronteira de ano -- nunca divide um mesmo ano da era Showa entre dois volumes"
+  },
+  {
+    "volume": 26,
+    "pasta": "26_Eiko__Volume_II",
+    "titulo": "Eiko — Volume II",
+    "paginas": 272.7,
+    "n_arquivos": 1,
+    "nota": "Corte respeitando fronteira de ano -- nunca divide um mesmo ano da era Showa entre dois volumes"
+  },
+  {
+    "volume": 27,
+    "pasta": "27_Eiko__Volume_III",
+    "titulo": "Eiko — Volume III",
+    "paginas": 313.9,
+    "n_arquivos": 1,
+    "nota": "Corte respeitando fronteira de ano -- nunca divide um mesmo ano da era Showa entre dois volumes"
+  },
+  {
+    "volume": 28,
+    "pasta": "28_Hikari",
+    "titulo": "Hikari",
+    "paginas": 243.2,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 29,
+    "pasta": "29_Tijotengoku",
+    "titulo": "Tijotengoku",
+    "paginas": 190.3,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 30,
+    "pasta": "30_Kyusei",
+    "titulo": "Kyusei",
+    "paginas": 107.4,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 31,
+    "pasta": "31_Guia_Rápido_da_Igreja_Messiânica_Mundial",
+    "titulo": "19501120-世界救世教早わかり",
+    "paginas": 28.0,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  },
+  {
+    "volume": 32,
+    "pasta": "32_Manual_da_Igreja_Messiânica_Mundial_para_Fiéis_no_Exterior",
+    "titulo": "19530811-世界メシヤ教手引（海外入信者のために）",
+    "paginas": 39.1,
+    "n_arquivos": 1,
+    "nota": "Volume individual"
+  }
+]

@@ -1,0 +1,5 @@
+Chunk 4/6 de "19491230 - Coleção Jikan Volume 9 Caminho para a Luz" revisado e aceito.
+
+- `004_out.txt` gravado: 17 parágrafos (idêntico à fonte), 11.550 → 11.471 chars.
+- Ajustes: períodos arrastados quebrados (compra da Shinzanso e da Tozanso), calques e repetições mecânicas de "gradualmente"/"No entanto" removidos, encadeamento do relato dos arrotos e do episódio do fraque enxugado. Datas, valores em ienes, nomes próprios e todas as citações entre aspas preservados literalmente; cabeçalhos de seção ("A História de uma Senhora", "A Religião Tenri", "Açoitar os Mortos") e a linha final em branco intactos.
+- Fila atualizada por `(livro, chunk)`, sem `pop(0)`: pending 654 → 653, done 111 → 112.

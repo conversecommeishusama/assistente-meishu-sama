@@ -1,0 +1,10 @@
+Item processado e encerrado.
+
+**`19491130 - Coleção Jikan Volume 8 Poemas Recentes de Akemaro`, chunk 2/6** (reaberto pelo auditor):
+
+- **Achado do auditor resolvido** — poema 204 voltou a trazer o epíteto fixo `de bela vista` (景勝): `"Nestes dias percorro, sem me cansar, as cadeias de montanhas da vila de Atami, de bela vista."` Mantido o ganho de ritmo do verso; a forma coincide com a usada nos poemas 361, 400 e 436 dos outros chunks.
+- **Varredura da mesma classe no chunk** (não só o caso apontado) — comparei os 104 segmentos linha a linha contra o `_src.txt`. Achei mais uma supressão lexical: poema 199 tinha perdido o verbo de contemplação (`"Avistando ao longe"` → `"Ao longe"`); restaurado como `"Avistada ao longe"`, que preserva o conteúdo sem o gerúndio solto. Nenhum outro corte.
+- **Invariantes conferidos programaticamente**: numeração dos poemas, parênteses de data, cabeçalhos de seção, notas com asterisco e conteúdo entre aspas idênticos à fonte. Contagem de `de bela vista`: 1 na fonte → 1 no revisado.
+- Tamanho: 11.317 → 11.225 caracteres.
+
+Fila atualizada por `(livro, chunk)`, não por índice: pending 672 → 671, done 93 → 94.

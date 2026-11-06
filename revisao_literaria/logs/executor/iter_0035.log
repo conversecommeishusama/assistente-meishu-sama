@@ -1,0 +1,6 @@
+Item processado (`pending[0]` era uma reabertura do auditor):
+
+- **Livro/chunk:** `19480701 - Coletânea de Salmos`, chunk 0/3
+- **Achado:** poema 2 usava "Livre e sem entraves", quebrando o epíteto fixo de Kannon que a fonte repete três vezes ("livre e desimpedid*" nos poemas 2, 44 e 135; os outros dois já estavam corretos em `000_out.txt` e `001_out.txt`).
+- **Correção:** restaurado "Livre e desimpedido" no poema 2, mantendo a reordenação já aprovada da frase. Nenhuma outra linha do chunk foi tocada.
+- Fila atualizada: 738 pending / 27 done.

@@ -1,0 +1,12 @@
+Item processado (era uma reabertura do auditor, não um chunk novo).
+
+**`19490825 - Coleção Jikan Volume 3`, chunk 1** — resolvi exatamente o que a nota pedia:
+
+- **(a)** Citação da enfermeira restaurada ao literal do `_src`: `tomou a forma` → `tornou-se a forma`, `o próprio cadáver` → `seu próprio cadáver`, `fazer-se notar` → `fazer sua existência ser conhecida`, `Depois de algum tempo` → `Após um tempo`, e a vírgula inserida em `massa irregular, como nuvens` removida. A prosa do narrador ao redor, já aprovada, ficou intacta.
+- **(b)** `"advertências"` → `"advertência"`, com a frase remontada em torno do singular.
+
+Verificação: as 5 citações entre aspas agora batem caractere a caractere com a fonte; 12/12 parágrafos; números (49, 50) e nomes próprios preservados; 11575 → 11287 chars.
+
+Fila atualizada: `pending` 706 → 705, `done` 59 → 60, com os campos `{livro, arquivo, chunk, total_chunks, at, nota}` e remoção por chave (não `pop(0)`).
+
+Um ponto que fica para a próxima iteração: a nota do auditor diz que **o chunk 6 deste mesmo livro tem o mesmo tipo de desvio** em citações. Não o toquei (a instrução era processar só `pending[0]`) — vale conferir se ele foi reaberto na fila; se não foi, o achado do auditor pode ficar órfão.

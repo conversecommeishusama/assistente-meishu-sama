@@ -1,0 +1,16 @@
+Auditoria de `pending[0]` concluída — **19491005 · Coleção Jikan Volume 4 — Histórias de Milagres**: livro **reprovado**, 6 chunks reabertos.
+
+Leitura integral e comparada dos 14 chunks (363 linhas, 263 parágrafos). Estrutura íntegra: concatenação dos `_src` bate byte a byte com a fonte e a dos `_out` com o montado; parágrafos idênticos chunk a chunk; multiconjunto de dígitos idêntico; as 142 citações entre aspas idênticas caractere a caractere. As 6 correções pedidas na rodada anterior foram todas feitas (aspas de `"batida"`, chunk 7 recadenciado de verdade, `No entanto` x3 do chunk 8 desfeito, L261/L266 do chunk 9, `infinita e grande compaixão`, `7 horas` em algarismo).
+
+Achados novos:
+
+| chunk | achado |
+|---|---|
+| 1 | `que Kannon-Sama manifesta` → `que ela manifesta` — única perda de nome próprio do livro (75→74), em passagem doutrinária; `ela` ainda conflita com `o Bodhisattva`/`d'Ele` usados no volume |
+| 5 | padrão literário não atingido — chunk menos trabalhado (sim. 0,834 vs 0,52-0,80 dos demais); `lugar` 4x em L154, eco *dizem/dizendo/disse*, `Poder Kannon`/`desse poder` na mesma frase, `ele nos contou` com antecedente errado (Kannon-Sama, não o pai) |
+| 6 | dois cortes de conteúdo: `Lembrando sempre das palavras` → `Lembrando-me das palavras`; `ouvia várias histórias preciosas` → `ouvia histórias preciosas` |
+| 7 | `algo estivesse acontecendo tão cedo` → `houvesse movimento a hora tão adiantada` — inverte cedo/tarde, contradiz as 3h30 e o `como ainda era cedo, tornou a dormir` seguinte, e fica sem preposição |
+| 10 | `a partir daquele dia, levantei-me` → `naquele mesmo dia eu me levantei` (durativo virou episódio único); e `desejo é transmitir... que... sejam resolvidos`, construção agramatical criada na reordenação |
+| 12 | `receber proteção divina` → `sermos protegidos por Deus` — termo fixo dissolvido (22→21, única perda no livro) |
+
+Fila atualizada: os 6 chunks foram para o topo de `QUEUE_EXECUTOR.pending` com nota de evidência, as entradas antigas em `done` removidas, histórico de auditoria registrado (chunks 1/5/6 na 1ª reabertura; 7/10/12 na 2ª — nenhum atingiu o limite de escalação manual), `montado` zerado no manifesto e o livro removido de `QUEUE_AUDITOR.pending` sem ir para `done`.

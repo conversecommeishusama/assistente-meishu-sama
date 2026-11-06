@@ -1,0 +1,10 @@
+Item processado e fila atualizada.
+
+**`pending[0]`** era uma reabertura do auditor: `19490830 - Coleção Jikan Volume 5 Diálogos Jikan`, chunk 1/9.
+
+- Achado do auditor resolvido: no parágrafo do Asahi Diamond, `refazer a peça vezes sem conta` → `refazer a peça várias vezes` (a fonte diz "várias vezes"; "vezes sem conta" inflava a contagem num relato factual).
+- Varredura da mesma classe no chunk (drift de quantificador/especificidade não presente na fonte): `foram sobretudo as peças de sua escola` → `foram apenas as peças…` (fonte: "apenas"); `Tempos depois, contei` → `Depois, contei` (fonte: "Depois").
+- Nada mais foi reescrito — o trabalho literário já aprovado ficou intacto, inclusive o reparo da duplicação truncada da fonte.
+- Integridade: 13 parágrafos na fonte e no revisado; 11.991 → 11.817 chars.
+
+Fila: `pending` 694 → 693, `done` 71 → 72 (item removido por `(livro, chunk)`, não por `pop(0)`).

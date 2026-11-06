@@ -1,0 +1,7 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 6/14 (não tinha `nota_auditor`; era item novo, não reabertura).
+- **Revisão:** depoimentos de fiéis — quebrei períodos arrastados (parágrafos 7, 18, 31, 60), desfiz calques (“fui acometida novamente por”, “tudo era completamente oposto ao que”, “sem perspectivas de recuperação, desisti”) e pronominalizei repetições mecânicas de “Johrei” dentro da mesma frase.
+- **Preservado, verificado por script:** 40 parágrafos (idênticos em número), todas as 7 citações entre aspas byte a byte, todos os números/datas, e as linhas não-prosa (títulos, endereços, assinaturas com espaços ideográficos) copiadas verbatim do `_src`.
+- **Tamanho:** 10 629 → 10 268 caracteres (0,966).
+- **Fila:** `pending` 740 → 739, `done` 25 → 26.

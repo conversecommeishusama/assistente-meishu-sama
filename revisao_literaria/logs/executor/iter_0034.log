@@ -1,0 +1,6 @@
+Chunk processado e fila atualizada.
+
+- **Item:** `19490625 - Coleção Jikan Volume 1 Tuberculose e Terapia Espiritual`, chunk 8/14 → `revisao_literaria/chunks/.../008_out.txt`
+- **Verificações:** 54 linhas e padrão de parágrafos idênticos ao fonte; títulos, blocos de endereço/assinatura e divisórias `---` byte a byte iguais; citações entre aspas e todos os números conferidos programaticamente (sem divergência); 11.941 → 11.851 caracteres (−0,75%).
+
+Uma observação relevante: entre a leitura e a gravação, o **laço auditor reescreveu a fila** — reabriu dois chunks de `19480701 - Coletânea de Salmos` (com `nota_auditor`) e os inseriu à frente, deslocando meu item de `pending[0]` para `pending[2]`. Por isso movi o item para `done` localizando-o por (`livro`, `chunk`) em vez de `pop(0)`, para não marcar como concluído o item errado. Os dois reabertos ficaram intactos no topo de `pending` para a próxima invocação. Fila agora: 739 pending / 26 done.

@@ -1,0 +1,5 @@
+Chunk 7 de *Coleção Jikan Volume 4 — Histórias de Milagres* revisado e aceito.
+
+- **Ajustes principais**: períodos arrastados desmembrados (relatos da carroça e do trem), repetição mecânica de "imediatamente"/"Perguntei" eliminada, calques substituídos ("os peixes pegariam bem" → "a pesca seria farta"; "observando-os constantemente" → "sem tirar deles os olhos").
+- **Integridade verificada**: 23/23 parágrafos, mapa de linhas em branco idêntico, títulos e linhas de autoria byte a byte iguais, todos os números/nomes/datas preservados, 11 754 → 11 644 chars (−0,9 %).
+- **Fila**: item removido por `(livro, chunk)` — não por `pop(0)` — e movido para `done`. Restam 689 pendentes, 76 concluídos.

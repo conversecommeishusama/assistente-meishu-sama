@@ -1,0 +1,47 @@
+{
+  "arquivo": "19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+  "fonte": "livros_publicacao_pt_revisado/19550425 - Curso do Método de Johrei nº 7 Ginecologia.txt",
+  "chars_fonte": 74033,
+  "total_chunks": 7,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11982,
+      "paragrafos": 31
+    },
+    {
+      "idx": 1,
+      "chars": 11371,
+      "paragrafos": 51
+    },
+    {
+      "idx": 2,
+      "chars": 11892,
+      "paragrafos": 48
+    },
+    {
+      "idx": 3,
+      "chars": 11856,
+      "paragrafos": 43
+    },
+    {
+      "idx": 4,
+      "chars": 11876,
+      "paragrafos": 30
+    },
+    {
+      "idx": 5,
+      "chars": 11992,
+      "paragrafos": 33
+    },
+    {
+      "idx": 6,
+      "chars": 3064,
+      "paragrafos": 9
+    }
+  ],
+  "montado": true,
+  "chars_final": 73495,
+  "ratio_tamanho": 0.993,
+  "montado_em": "2026-08-18T02:33:46.500769"
+}

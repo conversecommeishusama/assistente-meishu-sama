@@ -1,0 +1,47 @@
+{
+  "arquivo": "19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+  "fonte": "livros_publicacao_pt_revisado/19550615 - Curso do Método de Johrei nº 9 (Cabeça).txt",
+  "chars_fonte": 73965,
+  "total_chunks": 7,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 11388,
+      "paragrafos": 12
+    },
+    {
+      "idx": 1,
+      "chars": 11843,
+      "paragrafos": 12
+    },
+    {
+      "idx": 2,
+      "chars": 10405,
+      "paragrafos": 6
+    },
+    {
+      "idx": 3,
+      "chars": 11812,
+      "paragrafos": 7
+    },
+    {
+      "idx": 4,
+      "chars": 7711,
+      "paragrafos": 10
+    },
+    {
+      "idx": 5,
+      "chars": 11813,
+      "paragrafos": 6
+    },
+    {
+      "idx": 6,
+      "chars": 8993,
+      "paragrafos": 9
+    }
+  ],
+  "montado": true,
+  "montado_em": "2026-08-17T04:02:42.849133",
+  "chars_final": 73911,
+  "ratio_tamanho": 0.999
+}

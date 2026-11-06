@@ -1,0 +1,172 @@
+{
+  "arquivo": "19530101 - Salvando os Estados Unidos.txt",
+  "fonte": "livros_publicacao_pt_revisado/19530101 - Salvando os Estados Unidos.txt",
+  "chars_fonte": 368366,
+  "total_chunks": 32,
+  "chunks": [
+    {
+      "idx": 0,
+      "chars": 10975,
+      "paragrafos": 19
+    },
+    {
+      "idx": 1,
+      "chars": 11520,
+      "paragrafos": 18
+    },
+    {
+      "idx": 2,
+      "chars": 11645,
+      "paragrafos": 16
+    },
+    {
+      "idx": 3,
+      "chars": 11297,
+      "paragrafos": 22
+    },
+    {
+      "idx": 4,
+      "chars": 11952,
+      "paragrafos": 23
+    },
+    {
+      "idx": 5,
+      "chars": 11948,
+      "paragrafos": 23
+    },
+    {
+      "idx": 6,
+      "chars": 11747,
+      "paragrafos": 24
+    },
+    {
+      "idx": 7,
+      "chars": 11543,
+      "paragrafos": 17
+    },
+    {
+      "idx": 8,
+      "chars": 11905,
+      "paragrafos": 24
+    },
+    {
+      "idx": 9,
+      "chars": 11749,
+      "paragrafos": 22
+    },
+    {
+      "idx": 10,
+      "chars": 11255,
+      "paragrafos": 16
+    },
+    {
+      "idx": 11,
+      "chars": 11933,
+      "paragrafos": 19
+    },
+    {
+      "idx": 12,
+      "chars": 11533,
+      "paragrafos": 29
+    },
+    {
+      "idx": 13,
+      "chars": 11985,
+      "paragrafos": 24
+    },
+    {
+      "idx": 14,
+      "chars": 11091,
+      "paragrafos": 26
+    },
+    {
+      "idx": 15,
+      "chars": 11671,
+      "paragrafos": 27
+    },
+    {
+      "idx": 16,
+      "chars": 11775,
+      "paragrafos": 16
+    },
+    {
+      "idx": 17,
+      "chars": 10902,
+      "paragrafos": 18
+    },
+    {
+      "idx": 18,
+      "chars": 11675,
+      "paragrafos": 21
+    },
+    {
+      "idx": 19,
+      "chars": 11958,
+      "paragrafos": 19
+    },
+    {
+      "idx": 20,
+      "chars": 11661,
+      "paragrafos": 17
+    },
+    {
+      "idx": 21,
+      "chars": 11579,
+      "paragrafos": 15
+    },
+    {
+      "idx": 22,
+      "chars": 11921,
+      "paragrafos": 16
+    },
+    {
+      "idx": 23,
+      "chars": 11743,
+      "paragrafos": 17
+    },
+    {
+      "idx": 24,
+      "chars": 10998,
+      "paragrafos": 21
+    },
+    {
+      "idx": 25,
+      "chars": 11774,
+      "paragrafos": 19
+    },
+    {
+      "idx": 26,
+      "chars": 11936,
+      "paragrafos": 20
+    },
+    {
+      "idx": 27,
+      "chars": 11543,
+      "paragrafos": 17
+    },
+    {
+      "idx": 28,
+      "chars": 11758,
+      "paragrafos": 18
+    },
+    {
+      "idx": 29,
+      "chars": 11857,
+      "paragrafos": 25
+    },
+    {
+      "idx": 30,
+      "chars": 11808,
+      "paragrafos": 20
+    },
+    {
+      "idx": 31,
+      "chars": 7729,
+      "paragrafos": 13
+    }
+  ],
+  "montado": true,
+  "chars_final": 365837,
+  "ratio_tamanho": 0.993,
+  "montado_em": "2026-08-16T11:37:04.976106"
+}

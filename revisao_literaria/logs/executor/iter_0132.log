@@ -1,0 +1,6 @@
+Item processado (reabertura do auditor, não chunk novo):
+
+- **Achado do auditor resolvido** — `012_out.txt` de *19491005 - Coleção Jikan Volume 4*: `por volta das sete da manhã` → `por volta das 7 horas da manhã`, alinhando com a notação em algarismos usada no volume inteiro.
+- **Varredura de numerais do chunk**: multiconjunto de algarismos idêntico entre `_src` e `_out`; na comparação de numerais por extenso apareceu um `duas` extra (`"e, nas duas, reprovado"`), precisão que não está na fonte — revertido para `"mas fui reprovado"`.
+- Restante do chunk preservado como aprovado pelo auditor. 13 parágrafos em ambos; 6314 → 6198 chars.
+- Fila atualizada removendo por `(livro, chunk)` — não por `pop(0)`. `pending: 680`, `done: 85`.

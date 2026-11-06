@@ -1,0 +1,11 @@
+Item processado e fila atualizada.
+
+**Chunk revisado:** `19490701 - Coleção Jikan Volume 2 Método de Cultivo sem Fertilizantes`, chunk 10/16 → `010_out.txt`.
+
+- 32 parágrafos na fonte e no revisado; 11691 → 11461 chars (−2%).
+- 23 citações entre aspas conferidas byte a byte, tokens numéricos idênticos (diff de contagem vazio), títulos/blocos de autor/divisórias e o final em duas quebras de linha preservados.
+- Ajustes: calques e perífrases da tradução, repetições mecânicas (`colheita` 3x, `antes` duplicado), períodos longos quebrados.
+
+**Uma coisa que você precisa saber:** a fila mudou embaixo de mim durante a execução. Quando comecei, `pending[0]` era esse chunk 10; enquanto eu revisava, o laço auditor reabriu dois chunks e os inseriu no topo (`pending` 722→724, `done` 43→41). Registrei o chunk 10 como `done` no índice em que ele estava (não em `pending[0]`), para não perder o trabalho já gravado em disco nem provocar reprocessamento duplicado.
+
+Estado atual: `pending` 723, `done` 42. O novo `pending[0]` é `19490625 - Coleção Jikan Volume 1`, chunk 4, **com `nota_auditor`** — pede refazer anáforas que embaralham o referente (`ela` competindo com Kannon-Sama) e revarrer o chunk inteiro atrás da mesma classe de erro. É o que a próxima invocação pega.
