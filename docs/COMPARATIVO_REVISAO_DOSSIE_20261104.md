@@ -28,13 +28,30 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 | Capítulo 15 — Os ministros até 1951: Ministro Responsável e Assistente | 14 |
 | Capítulo 16 — Os ministros de 1951 a 1955: Ministro, Ministro Adjunto e Ministro Titular | 13 |
 | Capítulo 17 — As atribuições e o cotidiano dos dirigentes | 9 |
-| Capítulo 21 — As unidades de 1951 a 1955: a grade territorial | 2 |
-| Capítulo 22 — O que é cada unidade | 1 |
-| Capítulo 23 — As ofertas e as dedicações | 1 |
-| Capítulo 24 — A governança e a estrutura funcional | 1 |
-| Capítulo 39 — Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953) | 2 |
-| Capítulo 40 — Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954 | 4 |
-| **Total** | **187** |
+| Capítulo 18 — As atividades em torno de Meishu-Sama | 6 |
+| Capítulo 19 — Como se abria uma unidade | 6 |
+| Capítulo 20 — As unidades até 1951: a grade decimal | 9 |
+| Capítulo 21 — As unidades de 1951 a 1955: a grade territorial | 7 |
+| Capítulo 22 — O que é cada unidade | 3 |
+| Capítulo 23 — As ofertas e as dedicações | 13 |
+| Capítulo 24 — A governança e a estrutura funcional | 8 |
+| Capítulo 25 — Como a Sede acompanhava as igrejas | 8 |
+| Capítulo 26 — A perseguição de 1950 e a reforma de 1951 | 13 |
+| Capítulo 27 — A Agricultura Natural | 2 |
+| Capítulo 28 — Nutrição | 3 |
+| Capítulo 29 — Os Paraísos Terrestres e a mineração | 23 |
+| Capítulo 30 — Síntese | 7 |
+| Capítulo 31 — Títulos citados | 11 |
+| Capítulo 32 — Glossário | 5 |
+| Capítulo 33 — Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946) | 7 |
+| Capítulo 34 — Anexo B — Programa do Curso da Igreja Kannon do Japão (1947) | 1 |
+| Capítulo 35 — Anexo C — A primeira grade organizacional (1948) | 2 |
+| Capítulo 36 — Anexo D — O censo de outubro de 1950 | 3 |
+| Capítulo 37 — Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951) | 8 |
+| Capítulo 38 — Anexo F — O comunicado da reorganização de 1951 | 8 |
+| Capítulo 39 — Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953) | 7 |
+| Capítulo 40 — Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954 | 5 |
+| **Total** | **341** |
 
 ### Correções de montagem (valem para o volume inteiro)
 
@@ -3533,6 +3550,304 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > casa.
 
 
+### Capítulo 18 — As atividades em torno de Meishu-Sama
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> A economia do movimento no período não se explica sem o sistema de **serviço voluntário** — o serviço
+> voluntário, tipicamente de um mês de duração, que fornecia a mão de obra de tudo o que se
+> construiu. Um fiel encerra seu período e registra: 「無事に**一カ月の御奉仕**を終えさせて
+> 頂きまして」 (`search1/i/issyuno5.html`); havia também o serviço de meio período — 「弟は
+> **建設奉仕隊に約半期**」.
+
+> **Depois**
+>
+> A economia do movimento no período não se explica sem o **serviço voluntário** — tipicamente
+> de um mês de duração —, que fornecia a mão de obra de tudo o que se construiu. Um fiel encerra
+> o seu período e registra:
+>
+> > 「無事に**一カ月の御奉仕**を終えさせて頂きまして」
+> > — 「一種の悲喜劇」, testemunho de fiel, 『栄光』nº 251, 10 de março de 1954 · `search1/i/issyuno5.html`
+>
+> *"Concluí sem incidente um mês de serviço voluntário."*
+>
+> Havia também o serviço de meio período — 「弟は**建設奉仕隊に約半期**」, "o meu irmão passou
+> cerca de meio ano no Corpo de Serviço de Construção" —, mencionado numa consulta de agosto de
+> 1951 (『御教え集』nº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Havia até uma alternância sazonal entre as sedes — 「夏は箱根、冬は熱海、それで**春と秋は
+> Quioto**です」 (`search1/kouwa/s270923.html`): "o verão é em Hakone, o inverno em Atami; e a
+> primavera e o outono são em Kyoto". Essa itinerância tinha função de governo: era visitando
+> as regiões que o Fundador mantinha contato com uma estrutura que crescia mais rápido do que
+> a capacidade de supervisão.
+
+> **Depois**
+>
+> Havia até uma alternância sazonal entre as sedes:
+>
+> > 「夏は箱根、冬は熱海、それで**春と秋は京都**です」
+> > — 『御教え集』nº 14, 15 de outubro de 1952 (prédica de 23 de setembro de 1952) · `search1/kouwa/s270923.html`
+>
+> *"No verão, Hakone; no inverno, Atami; e, na primavera e no outono, Kyoto."*
+>
+> Essa itinerância tinha função de governo: era visitando as regiões que o Fundador mantinha
+> contato com uma estrutura que crescia mais rápido do que a capacidade de supervisão.
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> doutrina com a apreciação artística… percorreu templos e museus de toda Nara…; compareceu
+> à reunião de fiéis no teatro de Kyoto e concedeu uma alocução a mais de três mil fiéis."*
+> — `search2/kikou2/koki36.html`
+>
+> ![No 法然院, em Quioto, 30 de maio de 1951
+
+> **Depois**
+>
+> doutrina com a apreciação artística… percorreu templos e museus de toda Nara…; compareceu
+> à reunião de fiéis no teatro de Kyoto e concedeu uma alocução a mais de três mil fiéis."*
+> — 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
+>
+> ![No 法然院, em Quioto, 30 de maio de 1951
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Vale registrar uma característica da documentação que tem consequência metodológica: a documentação
+> majoritário **não é doutrina sistemática**. São **respostas a perguntas de fiéis e
+> dirigentes**, publicadas periodicamente.
+
+> **Depois**
+>
+> Vale registrar uma característica da documentação que tem consequência metodológica: o gênero
+> dominante **não é doutrina sistemática**. São **respostas a perguntas de fiéis e dirigentes**,
+> publicadas periodicamente.
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O próprio título 『御垂示録』 é significativo: instrução descendente é "instrução descendente", e a série se
+> apresenta como **ordem operacional**, não como tratado.
+
+> **Depois**
+>
+> O próprio título 『御垂示録』 é significativo: 「垂示」 é "instrução descendente", e a série se
+> apresenta como **ordem operacional**, não como tratado.
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『地上天国』, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
+
+> **Depois**
+>
+> — 「巻頭言」, 『地上天国』, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
+
+
+### Capítulo 19 — Como se abria uma unidade
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> era realizado num lugar fixo."*
+> — 「支部の現状と発展の為に」, `search2/kikou2/shibuno1.html`
+
+> **Depois**
+>
+> era realizado num lugar fixo."*
+> — 「支部の現状と発展の為に」, 『地上天国』nº 37, 25 de junho de 1952 (reunião de 28 de
+> abril de 1952) · `search2/kikou2/shibuno1.html`
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> nem menos."*
+> — 「質問応答 御光話」, `search1/situmon/m2411.html`
+
+> **Depois**
+>
+> nem menos."*
+> — 『御光話録』nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) ·
+> `search1/situmon/m2411.html`
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> igreja."*
+> — Regulamento da pessoa jurídica religiosa 『世界救世教』『栄光』nº 125, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
+
+> **Depois**
+>
+> igreja."*
+> — Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro de
+> 1951 · `search2/sanko/kisoku.html`
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> de Johrei."*
+> — 「明暗の隔り」, `search2/okage/dokusya/meian01.html`
+
+> **Depois**
+>
+> de Johrei."*
+> — 「明暗の隔り」, 『栄光』nº 105, 23 de maio de 1951 · `search2/okage/dokusya/meian01.html`
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> entronizamos a Imagem da Luz Divina."*
+> — 「御浄化物語」, `search2/okage/ko/qgojoka2.html`
+
+> **Depois**
+>
+> entronizamos a Imagem da Luz Divina."*
+> — 「御浄化物語」, 『地上天国』nº 30, 25 de novembro de 1951 · `search2/okage/ko/qgojoka2.html`
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Apenas esteja ciente disso."*
+> — 「質問応答 御光話」, `search1/situmon/m250228.html`
+
+> **Depois**
+>
+> Apenas esteja ciente disso."*
+> — 『御光話録』nº 19, 13 de junho de 1950 (sessão de 28 de fevereiro de 1950) ·
+> `search1/situmon/m250228.html`
+
+
+### Capítulo 20 — As unidades até 1951: a grade decimal
+
+**1.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> **definição de cada unidade** e o quadro de conjunto. Para não repetir, as definições não
+> se reenunciam aqui: quando um nome aparece sem explicação, a explicação está no capítulo
+> 21.
+
+> **Depois**
+>
+> **definição de cada unidade** e o quadro de conjunto. Para não repetir, as definições não
+> se reenunciam aqui: quando um nome aparece sem explicação, a explicação está no capítulo
+> 22.
+
+**2.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> | Igreja Grande (Igreja Grande) | porte: 1.000+ membros cooperadores | topo da hierarquia de igrejas da Sede Regional |
+
+> **Depois**
+>
+> | Igreja Grande (大教会) | porte: 1.000+ membros cooperadores | topo da hierarquia de igrejas da Sede Regional |
+
+**3.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> | Igreja Média (Igreja Média) | porte: 300+ membros cooperadores | nível intermediário |
+
+> **Depois**
+>
+> | Igreja Média (中教会) | porte: 300+ membros cooperadores | nível intermediário |
+
+**4.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> traz **as duas contagens na mesma página** — igrejas e corpo docente:
+
+> **Depois**
+>
+> traz **as duas contagens na mesma página** — igrejas e ministros:
+
+**5.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> *"V. Igrejas e corpo docente: Igrejas Grandes: quatro; Igrejas Médias:
+> setenta e oito; igrejas subordinadas: setecentas e dez. Ministros Titulares:
+> cinquenta e seis; Ministros Adjuntos: quatrocentos e trinta; Ministros:
+> dois mil duzentos e quarenta e quatro."*
+
+> **Depois**
+>
+> *"V. Igrejas e ministros: Igrejas Grandes: quatro; Igrejas Médias: setenta e oito;
+> Igrejas Filiais: setecentas e dez. Ministros Titulares: cinquenta e seis; Ministros
+> Adjuntos: quatrocentos e trinta; Ministros: dois mil duzentos e quarenta e quatro."*
+
+**6.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> *"Os cultos se estenderam por sete dias na seguinte ordem: dias 21 e 22, Igreja
+> Grande Tengoku; dia 23, Igreja Grande Taisei; dia 24, Igreja Grande Nikkōbō e
+> Igreja Grande Taisei; dias 25, 26 e 27, Igreja Grande Miroku."*
+> — 「世界救世教秋季大祭に参拝して」『地上天国』nº 17, 15 de outubro de 1950
+
+> **Depois**
+>
+> *"Os cultos se estenderam por sete dias na seguinte ordem: dias 21 e 22, Igreja
+> Grande Tengoku; dia 23, Igreja Grande Taisei; dia 24, Igreja Grande Kōhō e
+> Igreja Grande Taisei; dias 25, 26 e 27, Igreja Grande Miroku."*
+> — 「世界救世教秋季大祭に参拝して」, 『地上天国』nº 17, 15 de outubro de 1950 ·
+> `search2/kikou2/sekai03.html`
+
+**7.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949
+>
+> ### 6.1 Os quatro degraus de agregação, e o que cada um contém
+
+> **Depois**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+>
+> ### 6.1 Os quatro degraus de agregação, e o que cada um contém
+
+**8.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> — 「問題の世界救世教とは何か」, panfleto de palestra, outubro de 1950
+
+> **Depois**
+>
+> — 「問題の世界救世教とは何か」, panfleto de palestra, outubro de 1950 · `search1/mo/mondai.html`
+
+**9.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> justo que aqueles com méritos estejam no topo"* —, e a palavra usada é **mérito-serviço**,
+> mérito-serviço.
+
+> **Depois**
+>
+> justo que aqueles com méritos estejam no topo"* —, e a palavra usada é
+> **mérito-serviço**.
+
+
 ### Capítulo 21 — As unidades de 1951 a 1955: a grade territorial
 
 **1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
@@ -3555,6 +3870,65 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 >
 > | 17º | **Assembleia Geral** = todos os presidentes de igreja |
 
+**3.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> | Shinetsu | Kanagawa, Shizuoka |
+
+> **Depois**
+>
+> | Tōkai (nome a confirmar) | Kanagawa, Shizuoka |
+
+**4.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> **当分（一年間）は許さるる**も、出来るっだけ早く
+
+> **Depois**
+>
+> **当分（一年間）は許さるる**も、出来るだけ早く
+
+**5.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> responsáveis regionais — 「評議員制を設け、地方本部長等を以ってこれに充てる
+> 」, *"instituir o conselho e compô-lo com os responsáveis das Sedes
+> Regionais"* —, e restringiu a difusão à própria jurisdição:
+
+> **Depois**
+>
+> responsáveis regionais — 「評議員制を設け、地方本部長等を以ってこれに充てる」,
+> *"instituir o conselho e compô-lo com os responsáveis das Sedes Regionais"* —, e
+> restringiu a difusão à própria jurisdição:
+
+**6.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> — 「世界救世教の機構整備について」『栄光』nº 94, 7 de março de 1951
+
+> **Depois**
+>
+> — 「世界救世教の機構整備について」, 『栄光』nº 94, 7 de março de 1951 ·
+> `search2/sanko/kikoseib.html`
+
+**7.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 29, 15 de março de 1954
+>
+> A última frase é a que mais se cita fora de contexto
+
+> **Depois**
+>
+> — 『御垂示録』nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+>
+> A última frase é a que mais se cita fora de contexto
+
 
 ### Capítulo 22 — O que é cada unidade
 
@@ -3575,6 +3949,30 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > Igrejas Grandes eram quatro, com nome próprio, e a classificação por tamanho corria em
 > paralelo à grade decimal.
 
+**2.** *docs/volume_novo/08_quadro_unidades.md*
+
+> **Antes**
+>
+> | | Igreja (igreja) | Associação (Associação) |
+> |---|---|---|
+
+> **Depois**
+>
+> | Aspecto | Igreja | Associação |
+> |---|---|---|
+
+**3.** *docs/volume_novo/08_quadro_unidades.md*
+
+> **Antes**
+>
+> > — 「支部に常住する支部長の居らねばならぬ事」, 『御教え集』26号, 15 de outubro de 1953
+> > (prédica de 5 de setembro de 1953)
+
+> **Depois**
+>
+> > — 「支部に常住する支部長の居らねばならぬ事」, 『御教え集』nº 26, 15 de outubro de
+> > 1953 (prédica de 5 de setembro de 1953)
+
 
 ### Capítulo 23 — As ofertas e as dedicações
 
@@ -3588,6 +3986,149 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 >
 > legislação, etc. **Não há na documentação da época nenhuma passagem em que Meishu-Sama fale
 
+**2.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Resta um ponto sobre o qual a documentação é silencioso: glúten especificamente. Não há
+
+> **Depois**
+>
+> Resta um ponto sobre o qual a documentação é silenciosa: glúten especificamente. Não há
+
+**3.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> básico, os frutos desses bens, a **contribuição das igrejas **, as
+
+> **Depois**
+>
+> básico, os frutos desses bens, a **contribuição das igrejas**, as
+
+**4.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> O regulamento responde por implicação inequívoca, ao elencar a igrejarateio entre igrejas entre as
+> receitas da pessoa jurídica (art. 30)
+
+> **Depois**
+>
+> O regulamento responde por implicação inequívoca, ao elencar o rateio entre igrejas entre as
+> receitas da pessoa jurídica (art. 30)
+
+**5.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Segundo, a existência de renda própria do ministro, distinta da oferta ao altar: a
+> **oferta por Johrei ministrado** — a oferta que o fiel faz a quem lhe ministrou Johrei — e a
+> **oferta de gratidão pela proteção**.
+
+> **Depois**
+>
+> Segundo, a existência de renda própria do ministro, distinta da oferta ao altar: a
+> **oferta pelo Johrei ministrado** — a que o fiel faz a quem lhe ministrou — e a
+> **oferta de gratidão pela proteção**.
+
+**6.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> tinha profissão, e se a instituição lhe pagava honorário por curso e ele recebia oferta por Johrei ministrado
+> por Johrei, então a remuneração existia **por serviço e por oferta**, e não como
+
+> **Depois**
+>
+> tinha profissão, e se a instituição lhe pagava honorário por curso e ele recebia oferta
+> pelo Johrei que ministrava, então a remuneração existia **por serviço e por oferta**, e não como
+
+**7.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> registro de pagamento mensal pela Sede a ministros. As buscas por *salário*, *salário*,
+> *salário*, *salário* e *honorário* não devolvem material administrativo pertinente: as
+> ocorrências de *mensalidade* referem-se a aulas de arte, e as demais, a contextos alheios
+> à administração eclesiástica.
+
+> **Depois**
+>
+> registro de pagamento mensal pela Sede a ministros. As buscas pelos quatro modos japoneses
+> de dizer «salário» — *kyūryō*, *hōkyū*, *gekkyū* e *kyūyo* — e por «honorário» não devolvem
+> material administrativo pertinente: as ocorrências de *mensalidade* referem-se a aulas de
+> arte, e as demais, a contextos alheios à administração eclesiástica.
+
+**8.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> de dízimo.** As categorias financeiras que ele efetivamente usou são outras: taxa religiosa
+> (taxa religiosa), rateio entre igrejas (rateio entre igrejas), quota do membro (quota do membro), contribuição
+> (contribuição) e doação. Nenhuma delas tem caráter proporcional à renda.
+
+> **Depois**
+>
+> de dízimo.** As categorias financeiras que ele efetivamente usou são outras: a **taxa
+> religiosa**, o **rateio entre igrejas**, a **quota do membro**, a **contribuição** e a
+> **doação**. Nenhuma delas tem caráter proporcional à renda.
+
+**9.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> os três
+> auditor do art. 24 auditam **as finanças da pessoa jurídica**
+
+> **Depois**
+>
+> os três
+> auditores do art. 24 auditam **as finanças da pessoa jurídica**
+
+**10.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> > — comunicação interna citada em 「先生」, 『地上天国』54号, 25 de novembro de 1953
+
+> **Depois**
+>
+> > — comunicação interna citada em 「先生」, 『地上天国』nº 54, 25 de novembro de 1953 ·
+> > `search2/kikou2/sensei.html`
+
+**11.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> > — 布教座談会, 『栄光』191号, 14 de janeiro de 1953
+
+> **Depois**
+>
+> > — 布教座談会, 『栄光』nº 191, 14 de janeiro de 1953 · `search2/sanko/hukyo.html`
+
+**12.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> > — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
+
+> **Depois**
+>
+> > — 「注意」, 『栄光』nº 191, 14 de janeiro de 1953 (Anexo G) · `search1/ti/tyui02.html`
+
+**13.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> artigo de 1953 põe na boca do dirigente corrompido — **promoção, aumento de salário, tratamento**,
+> "promoção, aumento de salário, tratamento" —: só se pede aumento de salário onde
+
+> **Depois**
+>
+> artigo de 1953 põe na boca do dirigente corrompido — **promoção, aumento de salário,
+> tratamento** —: só se pede aumento de salário onde
+
 
 ### Capítulo 24 — A governança e a estrutura funcional
 
@@ -3600,6 +4141,1354 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > **Depois**
 >
 >  C --> F["Assembleia Geral<br/>= todos os presidentes de igreja"]
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 24º | **3 auditor** (auditores) para as finanças |
+
+> **Depois**
+>
+> | 24º | **3 auditores** para as finanças |
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 26º–28º | Igrejas: criação, mudança de regra, fusão, dissolução, obras e venda de bens exigem **aprovação do presidente**; presidente de igreja **nomeada por ele** |
+
+> **Depois**
+>
+> | 26º–28º | Igrejas: criação, mudança de regra, fusão, dissolução, obras e venda de bens exigem **aprovação do presidente**; presidente de igreja **nomeado por ele** |
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> A linha pontilhada entre o Fundador e o presidente não é ornamento: é a separação formal
+> documentada no art. 3.º do regulamento e no comentário de 『地上天国』nº 50.
+>
+> A linha pontilhada entre o Fundador e o presidente não é ornamento: é a separação
+> formal documentada no art. 3º do regulamento e no comentário de 『地上天国』nº 50.
+
+> **Depois**
+>
+> A linha pontilhada entre o Fundador e o presidente não é ornamento: é a separação
+> formal documentada no art. 3º do regulamento e no comentário de 『地上天国』nº 50.
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> B --- E["conselheiros e consultores "]
+
+> **Depois**
+>
+> B --- E["conselheiros e consultores"]
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「救世と自観明主様（一）」『地上天国』nº 50, 25 de julho de 1953 ·
+> `search2/kikou2/kyusei03.html`
+
+> **Depois**
+>
+> — Matsui, 「救世と自観明主様（一）」, 『地上天国』nº 50, 25 de julho de 1953 ·
+> `search2/kikou2/kyusei03.html`
+
+**7.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Kii, Departamento de Contabilidade · `search2/kikou2/honbujim.html`
+
+> **Depois**
+>
+> — Kii, Departamento de Contabilidade, 「本部事務所奉仕者座談会」, 『地上天国』nº 69,
+> 15 de abril de 1955 · `search2/kikou2/honbujim.html`
+
+**8.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 2. **os departamentos** — as repartições de trabalho (Doutrina, Finanças, Construção,
+>  Empreendimentos…), que não são órgãos deliberativos e cuja chefia nem sempre está
+>  documentada (§6.2);
+
+> **Depois**
+>
+> 2. **os departamentos** — as repartições de trabalho (Assuntos Gerais, Doutrina,
+>  Finanças, Publicações, Construção, Empreendimentos), que não são órgãos deliberativos
+>  e cuja chefia nem sempre está documentada (§6.2);
+
+
+### Capítulo 25 — Como a Sede acompanhava as igrejas
+
+**1.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ### 25.3 Como a Sede acompanhava as igrejas
+
+> **Depois**
+>
+> ### 25.3 O que a Sede examinava, e o que apenas autorizava
+
+**2.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> **A forma que de fato existia: reunião periódica, taquigrafada e publicada.** O
+> documentação não guarda formulário de inspeção, mas guarda as atas — e elas são
+
+> **Depois**
+>
+> **A forma que de fato existia: reunião periódica, taquigrafada e publicada.** A
+> documentação não guarda formulário de inspeção, mas guarda as atas — e elas são
+
+**3.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 · `search2/sanko/teirei3.html` | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+
+> **Depois**
+>
+> | 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+
+**4.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> procedimentos às **regulamento interno** — 「この規則の施行に関する細則は、**責任役員が
+> 定める**」 —, e as regulamento interno **não estão na documentação**. É ali que qualquer rotina de
+
+> **Depois**
+>
+> procedimentos aos **regulamentos internos** — 「この規則の施行に関する細則は、**責任役員が
+> 定める**」 —, e os regulamentos internos **não estão na documentação**. É ali que qualquer rotina de
+
+**5.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> organograma da igreja do Havaí (capítulo 16) há **seis auditoria** ao lado do tesoureiro, e a
+> assembleia anual aprova o 「会計報告」 — o relatório contábil do exercício
+> (`search2/kikou2/hawai18.html`). O padrão é antigo: já no estatuto da Terapêutica de Purificação
+> 普及会, 「監事は会の財務を監査す」 (`search1/ni/nihon12.html`). A igreja auditava
+
+> **Depois**
+>
+> organograma da igreja do Havaí (capítulo 16) há **seis auditores** ao lado do tesoureiro, e a
+> assembleia anual aprova o 「会計報告」, o relatório contábil do exercício
+> (`search2/kikou2/hawai18.html`). O padrão é antigo: já no estatuto da Associação de Difusão
+> da Terapêutica de Purificação, 「監事は会の財務を監査す」 — "os auditores auditam as
+> finanças da associação" (`search1/ni/nihon12.html`). A igreja auditava
+
+**6.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — Sakai Takao, presidente de igreja, 「布教座談会」『栄光』nº 191, 14 de janeiro de 1953 ·
+
+> **Depois**
+>
+> — Sakai Takao, presidente de igreja, 「布教座談会」, 『栄光』nº 191, 14 de janeiro de
+> 1953 ·
+
+**7.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Shinetsu | Kanagawa, Shizuoka |
+
+> **Depois**
+>
+> | Tōkai (nome a confirmar) | Kanagawa, Shizuoka |
+
+**8.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 『栄光』nº 125, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
+
+> **Depois**
+>
+> — Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro
+> de 1951 · `search2/sanko/kisoku.html`
+
+
+### Capítulo 26 — A perseguição de 1950 e a reforma de 1951
+
+**1.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> Foram detidos, entre outros, o secretário **Inoue Motokichi (Inoue Motokichi)** e o responsável da
+
+> **Depois**
+>
+> Foram detidos, entre outros, o secretário **Inoue Motokichi** e o responsável da
+
+**2.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> cargo no mesmo ano é implausível. Adota-se aqui a forma **Inoue Motokichi (Inoue
+> Motokichi)**, que é a que assina os textos da época, registrando-se a variante
+
+> **Depois**
+>
+> cargo no mesmo ano é implausível. Adota-se aqui a forma **Inoue Motokichi**, que é a
+> que assina os textos da época, registando-se a variante
+
+**3.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> A acusação era **econômica**: evasão fiscal, suborno (suborno, de
+> ¥300.000), ocultação de patrimônio. **Nada religioso.** É o próprio
+
+> **Depois**
+>
+> A acusação era **econômica**: evasão fiscal, suborno (de ¥300.000) e ocultação de
+> patrimônio. **Nada religioso.** É o próprio
+
+**4.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> *"E como o incidente desta vez **não tem relação alguma com o religioso e é
+> sobretudo uma questão de evasão fiscal, o adequado é chamá-lo não de 'provação'
+> (provação da Lei) e sim de 'provação da lei escrita' (provação da lei escrita)."*
+
+> **Depois**
+>
+> *"E como o incidente desta vez **não tem relação alguma com o religioso e é
+> sobretudo uma questão de evasão fiscal, o adequado é chamá-lo não de "provação da Lei"
+> (*hōnan*) e sim de "provação da lei escrita" (*hōritsunan*)."*
+
+**5.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> Creio firmemente que Deus, valendo-se das mãos das autoridades, **nos concedeu a
+> graça de uma grande retificação **…"*
+
+> **Depois**
+>
+> Creio firmemente que Deus, valendo-se das mãos das autoridades, **nos concedeu a
+> graça de uma grande retificação**…"*
+
+**6.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> palavras, **também esta religião, que por algum tempo permaneceu em estado de
+> recolhimento **, banhada agora pela luz da primavera…"*
+
+> **Depois**
+>
+> palavras, **também esta religião, que por algum tempo permaneceu em estado de
+> recolhimento**, banhada agora pela luz da primavera…"*
+
+**7.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「御講話」, 『御教え集』3号, 25 de novembro de 1951 · `search1/kouwa/s261021.html`
+
+> **Depois**
+>
+> > — 「御講話」, 『御教え集』nº 3, 25 de novembro de 1951 · `search1/kouwa/s261021.html`
+
+**8.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「巻頭言」, 『地上天国』21号, 25 de fevereiro de 1951 · `search2/kikou2/kanto21.html`
+
+> **Depois**
+>
+> > — 「巻頭言」, 『地上天国』nº 21, 25 de fevereiro de 1951 · `search2/kikou2/kanto21.html`
+
+**9.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「読売紙の記事に就て」, 『光』31号, 15 de outubro de 1949 ·
+
+> **Depois**
+>
+> > — 「読売紙の記事に就て」, 『光』nº 31, 15 de outubro de 1949 ·
+
+**10.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「謀略的ユスリ — 埼玉、福島両県下における本教中傷事件」, 『光』28号, 24 de setembro de 1949
+
+> **Depois**
+>
+> > — 「謀略的ユスリ」, 『光』nº 28, 24 de setembro de 1949 · `search1/hi/hikari02.html`
+
+**11.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> O que o episódio muda, em definitivo, é o **sentido** da reforma. Ela deixa de
+> ser apenas reorganização administrativa e passa a ser o que o editorial de
+> fevereiro lhe dá por nome: o fim de um **recolhimento** — um período de recolhimento — e
+> o início de uma etapa nova, sob "novo organismo".
+
+> **Depois**
+>
+> O que o episódio muda, em definitivo, é o **sentido** da reforma. Ela deixa de
+> ser apenas reorganização administrativa e passa a ser, no nome que o editorial de
+> fevereiro lhe dá, o fim do **recolhimento** e o início de uma etapa nova, sob «novo
+> organismo».
+
+**12.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> julgamento no Tribunal Distrital de Shizuoka (静岡地方裁判所). [Fotografia da época; data e local conforme a legenda original.]
+
+> **Depois**
+>
+> julgamento no Tribunal Distrital de Shizuoka (*Shizuoka Chihō Saibansho*). [Fotografia
+> da época; data e local conforme a legenda original.]
+
+**13.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「法難裁判傍聴記（下）」, 『栄光』76号, 1 de novembro de 1950 ·
+> > `search2/kikou2/honan02.html`
+
+> **Depois**
+>
+> — 「法難裁判傍聴記（下）」, 『栄光』nº 76, 1 de novembro de 1950 ·
+> `search2/kikou2/honan02.html`
+
+
+### Capítulo 27 — A Agricultura Natural
+
+**1.** *docs/volume_novo/22_agricultura.md*
+
+> **Antes**
+>
+> maio de 1950, sob o título 「家庭菜園と無肥料栽培」 — **"A horta doméstica e o
+> cultivo sem adubo"**. A escolha do título não é acidental: o artigo de difusão
+
+> **Depois**
+>
+> maio de 1950, sob o título 「家庭菜園と無肥料栽培」 («A horta doméstica e o cultivo sem
+> adubo»). A escolha do título não é acidental: o artigo de difusão
+
+**2.** *docs/volume_novo/22_agricultura.md*
+
+> **Antes**
+>
+> ![『自然農法』 (Shizen Nōhō, *Agricultura Natural*) 1号, novembro de 1954
+
+> **Depois**
+>
+> ![『自然農法』 (Shizen Nōhō, «Agricultura Natural»), nº 1, novembro de 1954
+
+
+### Capítulo 28 — Nutrição
+
+**1.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> publicado na 『光』edição extra de 30 de maio de 1949 sob o título 「自観大先生の御日常」. É
+
+> **Depois**
+>
+> publicado na edição extra de 『光』 de 30 de maio de 1949, sob o título
+> 「自観大先生の御日常」. É
+
+**2.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> *"Depois da refeição, caligrafa imediatamente as obras e as 御光 solicitadas pela
+> organização e pela Igreja Miroku.
+
+> **Depois**
+>
+> *"Depois da refeição, caligrafa imediatamente as obras e as caligrafias de luz
+> solicitadas pela organização e pela Igreja Miroku.
+
+**3.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> detalhada: o relato de **Inoue Motokichi (Inoue Motokichi)**, secretário e editor de
+> 『栄光』 que o acompanhava de perto,
+
+> **Depois**
+>
+> detalhada: o relato de **Inoue Motokichi**, secretário e editor de 『栄光』 que o
+> acompanhava de perto,
+
+
+### Capítulo 29 — Os Paraísos Terrestres e a mineração
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O mesmo padrão se repete em Atami — 「商売人でここで仕事をしている人は**ほとんど全部信者に
+> なっている**」 (`search1/kouwa/s270605.html`): "os comerciantes que trabalham aqui se
+> tornaram fiéis quase todos". **A obra era, ela mesma, o instrumento de conversão** — e
+> nisso a doutrina estética encontra sua eficácia prática.
+
+> **Depois**
+>
+> O mesmo padrão se repete em Atami:
+>
+> > 「商売人でここで仕事をしている人は**ほとんど全部信者になっている**」
+> > — 『御教え集』nº 11, 15 de julho de 1952 (prédica de 5 de junho de 1952) ·
+> > `search1/kouwa/s270605.html`
+>
+> *"Os comerciantes que trabalham aqui tornaram-se fiéis quase todos."*
+>
+> **A obra era, ela mesma, o instrumento de conversão** — e nisso a doutrina estética
+> encontra sua eficácia prática.
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Primeiro Hakone — o espírito: o jardim, o Nikkōden (Nikkōden, «Palácio da Luz
+> Solar»), que servia de salão de audiência e de Johrei, e o museu.
+
+> **Depois**
+>
+> Primeiro Hakone — o espírito: o jardim, o Nikkōden («Palácio da Luz Solar»), que servia
+> de salão de audiência e de Johrei, e o museu.
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> > — 『御教え集』29号, 15 de janeiro de 1954 (prédica de 27 de dezembro de 1953)
+>
+> *"Como sempre digo, **Hakone é o espírito e Atami é o corpo**
+
+> **Depois**
+>
+> > — 『御教え集』nº 29, 15 de janeiro de 1954 (prédica de 27 de dezembro de 1953) ·
+> > `search1/kouwa/s281227.html`
+>
+> *"Como sempre digo, **Hakone é o espírito e Atami é o corpo**
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> > — 『御教え集』32号, 15 de abril de 1954 (Grande Culto da Primavera, 25 de março de 1954)
+
+> **Depois**
+>
+> > — 『御教え集』nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+> > `search1/kouwa/s290325.html`
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> > — 『御教え集』29号, 15 de janeiro de 1954
+>
+> *"No ano que vem, o Salão e o mirante;
+
+> **Depois**
+>
+> > — 『御教え集』nº 29, 15 de janeiro de 1954 · `search1/kouwa/s281227.html`
+>
+> *"No ano que vem, o Salão e o mirante;
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> > — 『御教え集』29号, 15 de janeiro de 1954
+>
+> *"**Mostrar a muitas pessoas o maravilhoso efeito artístico da arte japonesa,
+
+> **Depois**
+>
+> > — 『御教え集』nº 29, 15 de janeiro de 1954 · `search1/kouwa/s281227.html`
+>
+> *"**Mostrar a muitas pessoas o maravilhoso efeito artístico da arte japonesa,
+
+**7.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> projectos de Fukui, que a documentação registra sem desenvolvimento.
+
+> **Depois**
+>
+> projetos de Fukui, que a documentação registra sem desenvolvimento.
+
+**8.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『編集後記（地上天国nº 36）』, `search2/kikou2/koki36.html`
+
+> **Depois**
+>
+> — 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
+
+**9.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「地上天国出来るまで」, `search1/ti/tijote03.html`
+
+> **Depois**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+> `search1/ti/tijote03.html`
+
+**10.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> converteram."*
+> — idem
+
+> **Depois**
+>
+> converteram."*
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+> `search1/tu/tijote03.html`
+
+**11.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> produtividade usados como prova pública — e há instituições satélites criadas para isso:
+> o Grupo de Estudo de Agricultura Natural do Ministério da Agricultura (Nōrinshō Shizen Nōhō Kenkyū-kai, Grupo de Estudo de
+> Agricultura Natural do Ministério da Agricultura e Florestas; 『栄光』nº 256,
+> 14 de abril de 1954 · `search2/sanko/norinsyo.html`)
+> e o Associação de Difusão da Agricultura Natural (Shizen Nōhō Fukyū-kai, Associação de Difusão da Agricultura
+> Natural; 『栄光』, 5 de maio de 1953 · `search2/sanko/syui.html`).
+
+> **Depois**
+>
+> produtividade usados como prova pública — e há instituições satélites criadas para isso: o
+> **Grupo de Estudo de Agricultura Natural do Ministério da Agricultura** (Nōrinshō Shizen Nōhō
+> Kenkyū-kai; 「農林省自然農法研究会趣意書」, 『栄光』nº 256, 14 de abril de 1954 ·
+> `search2/sanko/norinsyo.html`) e a **Associação de Difusão da Agricultura Natural** (Shizen
+> Nōhō Fukyū-kai; folheto inserido em 『革命的増産の自然農法解説』, 5 de maio de 1953 ·
+> `search2/sanko/syui.html`).
+
+**12.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Culto Especial da Primavera · `search1/kouwa/s290325.html`
+
+> **Depois**
+>
+> — 『御教え集』nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+> `search1/kouwa/s290325.html`
+
+**13.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「花による天国化運動」『光』, 8 de maio de 1949 · `search1/ha/hanani.html`
+
+> **Depois**
+>
+> — 「花による天国化運動」, 『光』nº 8, 8 de maio de 1949 · `search1/ha/hanani.html`
+
+**14.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> A expressão **donativo** — "riqueza pura" — é o elo entre a doutrina e a prática
+> financeira: o que entra na obra pela via da gratidão é donativo; o que entra pela
+> especulação, não.
+
+> **Depois**
+>
+> A expressão usada é **jōzai** — «riqueza pura» —, e é o elo entre a doutrina e a prática
+> financeira: o que entra na obra pela via da gratidão é riqueza pura; o que entra pela
+> especulação, não.
+
+**15.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> A expectativa não ficou no papel. Há na documentação a documentação de uma **mina
+> operada por uma igreja**: o **mina de Moriyoshi**, em Akita, província de aldeia de Hinokinai, distrito de Senboku,
+> sob a **Igreja Média Kōei**. Um relato de 1949 descreve a inspeção geológica do local
+> por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e
+> **engenheiro de minas**:
+
+> **Depois**
+>
+> A expectativa não ficou no papel. Há na documentação o registo de uma **mina operada por uma
+> igreja**: a **mina de Moriyoshi** (森吉鉱山), em Hinokinai, distrito de Senboku, província de
+> Akita, sob a **Igreja Média Kōei**. Um relato de 1949 descreve a inspeção geológica do local
+> por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e **engenheiro de
+> minas**, «veterano de minas» na expressão do próprio relato:
+
+**16.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「奇蹟」, 『地上天国』3号, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+
+> **Depois**
+>
+> — 「奇蹟」, 『地上天国』nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+
+**17.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> > — 「鉱山においての奇蹟の数々」, 『栄光』109号, 20 de junho de 1951 ·
+> > `search2/okage/ko/qkozan02.html`
+
+> **Depois**
+>
+> — 「鉱山においての奇蹟の数々」, 『栄光』nº 109, 20 de junho de 1951 ·
+> `search2/okage/ko/qkozan02.html`
+
+**18.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> Os relatos descrevem a construção de uma **planta de concentração de minério**
+>  e um acidente evitado — matéria de **relato de graça**, isto é, narrativa de
+> gratidão.
+
+> **Depois**
+>
+> Os relatos descrevem a construção de uma **planta de concentração de minério** (選鉱工場,
+> *senshō kōjō*) e um acidente evitado — matéria de **relato de graça**, isto é, narrativa de
+> gratidão.
+
+**19.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> Não há, na documentação, balanço, produção declarada ou prestação de contas
+> da Departamento de Empreendimentos; e a ausência é notável justamente porque o período **tem** documentos
+> de contabilidade da pessoa jurídica.
+
+> **Depois**
+>
+> Não há, na documentação, balanço, produção declarada ou prestação de contas do Departamento
+> de Empreendimentos; e a ausência é notável justamente porque o período **tem** documentos de
+> contabilidade da pessoa jurídica.
+
+**20.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+> `search1/tu/tijote03.html`
+
+> **Depois**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+> `search1/ti/tijote03.html`
+
+**21.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> amplamente do clima do Paraíso."*
+> — 「地上天国出来るまで」, `search1/ti/tijote03.html`
+
+> **Depois**
+>
+> amplamente do clima do Paraíso."*
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+> `search1/ti/tijote03.html`
+
+**22.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御教え集』nº 19, 15 de março de 1953 (prédica de 16 de março de 1953) ·
+
+> **Depois**
+>
+> — 『御教え集』nº 8, 20 de abril de 1952 (prédica de 16 de março de 1952) ·
+
+**23.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「忘れ得ぬ思出」, 『地上天国』, testemunho de fiel · `search2/okage/yarawa/qwasure4.html`
+
+> **Depois**
+>
+> — 小林俊子, 「忘れかけた信仰に鞭うたれて」, 『栄光』nº 271, 25 de agosto de 1954 ·
+> `search2/okage/yarawa/qwasure4.html`
+
+
+### Capítulo 30 — Síntese
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Ministro Responsável e Assistente cedem lugar a Ministro, Ministro Adjunto e Ministro
+>  Titular entre 1951 e 1952 (capítulos 14 e 15).
+
+> **Depois**
+>
+> Ministro Responsável e Assistente cedem lugar a Ministro, Ministro Adjunto e Ministro
+>  Titular entre 1951 e 1952 (capítulos 15 e 16).
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> escrito (capítulos 11 e 24).
+
+> **Depois**
+>
+> escrito (capítulos 11 e 25).
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> pagamento, e cobrar acima do fixado é furto (capítulos 12 e 22).
+
+> **Depois**
+>
+> pagamento, e cobrar acima do fixado é furto (capítulos 12 e 23).
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+>  dispensado; censura-se a avareza, não a pobreza; não há percentual (capítulo 14).
+
+> **Depois**
+>
+>  dispensado; censura-se a avareza, não a pobreza; não há percentual (capítulo 13).
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+>  retomadas, e o recebimento frequente é praxe documentada, não norma devocional
+>  (capítulo 20).
+
+> **Depois**
+>
+>  retomadas, e o recebimento frequente é praxe documentada, não norma devocional
+>  (capítulo 14).
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+>  gratidão livres e serviço voluntário (capítulos 22 e 23).
+
+> **Depois**
+>
+>  gratidão livres e serviço voluntário (capítulos 13 e 23).
+
+**7.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+>  problema da sucessão sem o resolver (capítulos 2 e 23).
+
+> **Depois**
+>
+>  problema da sucessão sem o resolver (capítulos 2 e 24).
+
+
+### Capítulo 31 — Títulos citados
+
+**1.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 『御教え集』 | Oshie-shū |
+
+> **Depois**
+>
+> | 『御教え集』 | Mioshie-shū |
+
+**2.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 記事 | Kiji | "Reportagem" |
+> | 教修 | Kyoshu | "O curso" |
+>
+
+> **Depois**
+>
+>
+
+**3.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> Komyo-Nyorai-sama go-busai de tōnan manugareru
+
+> **Depois**
+>
+> Komyo-Nyorai-sama go-hōsai de tōnan manugareru
+
+**4.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 泥棒に入られて | Dorobō ni ira rete |
+
+> **Depois**
+>
+> | 泥棒に入られて | Dorobō ni irareta |
+
+**5.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 非売品 | Hibaihin | "Não se vende" |
+> | 布教 | Fukyō | "Difusão" |
+>
+
+> **Depois**
+>
+>
+
+**6.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 村一番の悪田良化す | Mura ichiban no akuda ryōka su |
+
+> **Depois**
+>
+> | 村一番の悪田良化す | Mura ichiban no akuda ryōkasu |
+
+**7.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 黙示 | Mokushi | "Apocalipse" |
+> | やはり功労のある人が上に行くのが本当ですから | Yahari kōrō no aru hito ga ue ni iku no ga hontō desu kara | "Afinal, é justo que os que têm méritos estejam no topo" |
+>
+
+> **Depois**
+>
+> | 黙示 | Mokushi | "Apocalipse" |
+>
+
+**8.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 今上天皇 | Kinjō tennō | "o imperador reinante" |
+>
+
+> **Depois**
+>
+>
+
+**9.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 救世会館 | Kyūsei Kaikan | "Salão da Salvação do Mundo" |
+
+> **Depois**
+>
+> | 救世会館 | Kyūsei Kaikan | "Salão da Salvação" |
+
+**10.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 五六七 | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
+
+> **Depois**
+>
+> | 五六七 | Miroku | "cinco, seis, sete" — a grafia numérica de **Miroku** (弥勒) |
+
+**11.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 五六七大教会 | Iso-roku daikyōkai | Igreja Grande Miroku (romaji: Iso-roku daikyōkai) |
+
+> **Depois**
+>
+> | 五六七大教会 | Miroku daikyōkai | Igreja Grande Miroku |
+
+
+### Capítulo 32 — Glossário
+
+**1.** *docs/volume_novo/30_glossario.md*
+
+> **Antes**
+>
+> | 御教え集 | Oshie-shū | coletânea de ensinamentos | 3 |
+
+> **Depois**
+>
+> | 御教え集 | Mioshie-shū | coletânea de ensinamentos | 3 |
+
+**2.** *docs/volume_novo/30_glossario.md*
+
+> **Antes**
+>
+> | 御垂示録 | Gosurei-roku | coletânea de instruções | 3 |
+
+> **Depois**
+>
+> | 御垂示録 | Gosuiji-roku | coletânea de instruções | 3 |
+
+**3.** *docs/volume_novo/30_glossario.md*
+
+> **Antes**
+>
+> | 大光明 | dai-kōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
+
+> **Depois**
+>
+> | 大光明 | Daikōmyō | "Grande Luz": grau de Ohikari e de Imagem | 12, 19 |
+
+**4.** *docs/volume_novo/30_glossario.md*
+
+> **Antes**
+>
+> | 五十六七 | Iso-roku | "cinco, seis, sete" — romaji *iso-roku*; vertido como Miroku | 2 |
+
+> **Depois**
+>
+> | 五六七 | Miroku | "cinco, seis, sete": a grafia numérica de 弥勒 | 2 |
+
+**5.** *docs/volume_novo/30_glossario.md*
+
+> **Antes**
+>
+> tabela em ordem de ideograma, apesar de o cabeçalho prometer «ordem alfabética do romanizado»
+
+> **Depois**
+>
+> tabela reordenada por romanizado (126 entradas, sem acentos nem hífenes na chave de ordenação)
+
+
+### Capítulo 33 — Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946)
+
+**1.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(6) conselheiros — vários.
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(6) assessores (評議員) — vários.
+
+**2.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(6) Os conselheiros respondem às consultas do presidente
+> sobre as matérias necessárias.
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(6) Os assessores respondem às consultas do presidente
+> sobre as matérias necessárias.
+
+**3.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> **Art. 11.º** A associação tem conselheiros consultivos. Os consultivos são
+> recomendados pelo conselho e empossados pelo presidente.
+
+> **Depois**
+>
+> **Art. 11.º** A associação tem conselheiros (顧問). Os conselheiros são
+> recomendados pelo conselho de diretores e empossados pelo presidente.
+
+**4.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> Presidente — Conselheiros consultivos | Vice-presidente | Diretor-presidente |
+> Diretores — Conselheiros | Secretaria — Departamento Geral, Departamento de
+> Bem-Estar e Cultura, Departamento de Orientação Técnica, Departamento de Ligação.
+
+> **Depois**
+>
+> Presidente — Conselheiros | Vice-presidente | Diretor-presidente |
+> Diretores — Assessores | Secretaria — Departamento Geral, Departamento de
+> Bem-Estar e Cultura, Departamento de Orientação Técnica, Departamento de Ligação.
+
+**5.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> Yoshihiko, Kawakami Yoshiko, Naitō Raku, Takatō Nobumasa, Ōnuma Mitsuhiko e
+> Ogawa Masayasu. Os consultivos e os membros da secretaria serão anunciados em
+> breve. (1946)
+
+> **Depois**
+>
+> Yoshihiko, Kawakami Yoshiko, Naitō Raku, Takatō Nobumasa, Ōnuma Mitsuhiko e
+> Ogawa Masayasu. Os conselheiros e os membros da secretaria serão anunciados em
+> breve. (1946)
+
+**6.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(2) O sócio especial é quem, concordando com o propósito
+> da associação, seja por ela recomendado ao presidente e aprovado pelo conselho.
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(2) O sócio especial é quem, concordando com o propósito
+> da associação, seja por ela recomendado ao presidente e aprovado pelo conselho de
+> diretores.
+
+**7.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> **Art. 8.º** Ao sócio que tiver palavras ou atos contrários ao propósito e aos
+> fins da associação, aplicar-se-á o desligamento por deliberação do conselho.
+
+> **Depois**
+>
+> **Art. 8.º** Ao sócio que tiver palavras ou atos contrários ao propósito e aos
+> fins da associação, aplicar-se-á o desligamento por deliberação do conselho de
+> diretores.
+
+
+### Capítulo 34 — Anexo B — Programa do Curso da Igreja Kannon do Japão (1947)
+
+**1.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon, e o
+> texto em que nos baseamos é o capítulo 26.º do *Sutra Lótus*, o 「普門品」. A fé
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon, e o
+> texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*, o 「普門品」. A fé
+
+
+### Capítulo 35 — Anexo C — A primeira grade organizacional (1948)
+
+**1.** *docs/volume_novo/44_anexo_grade_1948.md*
+
+> **Antes**
+>
+> Tradução integral da pergunta e da resposta. O restante da mesma sessão trata de
+> Johrei e não pertence a este anexo.
+
+> **Depois**
+>
+> Tradução integral da pergunta e da resposta. O restante da mesma sessão trata de
+> outros assuntos — proteção espiritual, ritos funerários, arte — e não pertence a este
+> anexo.
+
+**2.** *docs/volume_novo/44_anexo_grade_1948.md*
+
+> **Antes**
+>
+> Há a Sede Central e três Subsedes; às Subsedes pertencem as Associações, e às
+> Associações pertencem as filiais.
+
+> **Depois**
+>
+> Há a Sede e três Subsedes; às Subsedes pertencem as Associações, e às Associações
+> pertencem as filiais.
+
+
+### Capítulo 36 — Anexo D — O censo de outubro de 1950
+
+**1.** *docs/volume_novo/45_anexo_censo_1950.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Ensino — Shizuoka-ken, Atami-shi, Momoyama 50
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Doutrina (教務部) — Shizuoka-ken, Atami-shi, Momoyama 50
+
+**2.** *docs/volume_novo/45_anexo_censo_1950.md*
+
+> **Antes**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obra Social — Shizuoka-ken, Atami-shi, Momoyama 50
+
+> **Depois**
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obras Sociais (社会事業部) — Shizuoka-ken, Atami-shi, Momoyama 50
+
+**3.** *docs/volume_novo/45_anexo_censo_1950.md*
+
+> **Antes**
+>
+> | Igrejas Grandes (Igreja Grande) | 4 |
+> | Igrejas Médias (Igreja Média) | 78 |
+> | Igrejas Filiais (Igreja Filial) | 710 |
+> | Ministros Titulares (Ministro Titular) | 56 |
+> | Ministros Adjuntos (Ministro Adjunto) | 430 |
+> | Ministros (Ministro) | 2.244 |
+
+> **Depois**
+>
+> | Igrejas Grandes (大教会) | 4 |
+> | Igrejas Médias (中教会) | 78 |
+> | Igrejas Filiais (分教会) | 710 |
+> | Ministros Titulares (大教師) | 56 |
+> | Ministros Adjuntos (中教師) | 430 |
+> | Ministros (教師) | 2.244 |
+
+
+### Capítulo 37 — Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
+
+**1.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Art. 3.º (Fim)** Esta pessoa jurídica, tendo por mestre o Mestre Okada Jikan e
+> com fundamento no sentido original de sua fundação, visa à construção do Paraíso
+
+> **Depois**
+>
+> **Art. 3.º (Fim)** Esta pessoa jurídica, tendo por Fundador (教主) o Mestre Okada
+> Jikan e com fundamento no sentido original de sua fundação, visa à construção do Paraíso
+
+**2.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Art. 16.º** No escritório estabelecem-se seis departamentos — Assuntos Gerais,
+> Ensino, Finanças, Publicação, Construção e Atividades — e designam-se funcionários
+> em número variável.
+
+> **Depois**
+>
+> **Art. 16.º** No escritório estabelecem-se seis departamentos — Assuntos Gerais,
+> Doutrina, Finanças, Publicação, Construção e Empreendimentos — e designam-se
+> funcionários em número variável.
+
+**3.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Art. 25.º** Esta pessoa jurídica pode ter consultivos e conselheiros.
+> 2. Os consultivos e conselheiros são empossados pelo presidente dentre
+> pessoas de saber e experiência.
+
+> **Depois**
+>
+> **Art. 25.º** Esta pessoa jurídica pode ter consultores (顧問) e conselheiros
+> (相談役).
+> 2. Os consultores e conselheiros são empossados pelo presidente dentre pessoas de
+> saber e experiência.
+
+**4.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> 3. O patrimônio comum é o patrimônio que não seja básico, os frutos dos bens, as
+> quotas das igrejas, as taxas de associação e as receitas em geral.
+
+> **Depois**
+>
+> 3. O patrimônio comum é o patrimônio que não seja básico, os frutos dos bens, a
+> contribuição das igrejas (分担金), a quota dos membros (会費) e as receitas em geral.
+
+**5.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> 2. A atividade do parágrafo anterior é administrada pelo Departamento de
+> Atividades.
+
+> **Depois**
+>
+> 2. A atividade do parágrafo anterior é administrada pelo Departamento de
+> Empreendimentos (事業部).
+
+**6.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Art. 12.º (Designação)** O substituto legal do presidente é escolhido pelo
+> conselho no caso do item 1 do artigo anterior, e nomeado pelo presidente no
+
+> **Depois**
+>
+> **Art. 12.º (Designação)** O substituto legal do presidente é designado pelo
+> conselho de diretores no caso do item 1 do artigo anterior, e nomeado pelo presidente no
+
+**7.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> presidente para praticar os atos abaixo; excetuam-se os atos dos itens 3 a 5
+> quando fundados em necessidade urgente ou de pequena monta, e o ato do item 5
+> quando relativo a período temporário:
+
+> **Depois**
+>
+> presidente para praticar os atos abaixo; excetuam-se os atos dos itens 3 a 5
+> quando fundados em necessidade urgente ou de pequena monta, e o ato do item 5
+> quando relativo a período temporário (no original impresso, «artigo 5.º», por
+> gralha — o contexto é o item 5):
+
+**8.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Art. 25.º** Esta pessoa jurídica pode ter consultores (顧問) e conselheiros
+> (相談役).
+> 2. Os consultores e conselheiros são empossados pelo presidente dentre pessoas de
+> saber e experiência.
+
+> **Depois**
+>
+> **Art. 25.º** Esta pessoa jurídica pode ter conselheiros (顧問) e consultores
+> (相談役).
+> 2. Os conselheiros e consultores são empossados pelo presidente dentre pessoas de
+> saber e experiência.
+
+
+### Capítulo 38 — Anexo F — O comunicado da reorganização de 1951
+
+**1.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> **Natureza:** comunicado da direção. Não é decreto de Meishu-Sama: é a
+>
+> **explicação** do presidente sobre palavras que Meishu-Sama dirigiu à
+> instituição em 5 de fevereiro daquele ano.
+
+> **Depois**
+>
+> **Natureza:** comunicado da direção. Não é decreto de Meishu-Sama: é a
+> **explicação** do presidente sobre palavras que Meishu-Sama dirigiu à instituição
+> em 5 de fevereiro daquele ano.
+
+**2.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> criar os departamentos de Assuntos Gerais, Ensino, Finanças, Construção, Obra
+> Social, Propaganda e Publicação, fixando o chefe de cada um.
+
+> **Depois**
+>
+> criar os departamentos de Assuntos Gerais, Doutrina, Finanças, Construção, Obras
+> Sociais, Propaganda e Publicação, fixando o chefe de cada um.
+
+**3.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> Raku e Nihongi Teruko. Instituir consultivos, confiados a Shibui Sōsai e Nakajima
+> Teruko. Instituir além disso o sistema de conselheiros, preenchido pelos
+> responsáveis de sedes regionais.
+
+> **Depois**
+>
+> Raku e Nihongi Taka. Instituir o cargo de consultor (相談役), confiado a Shibui
+> Sōsai e Nakajima Teruko. Instituir além disso o sistema de assessores (評議員制),
+> preenchido pelos responsáveis de sedes regionais.
+
+**4.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> | Kanagawa-Shizuoka (Shinetsu) | Kanagawa, Shizuoka | Nakajima Teruko |
+
+> **Depois**
+>
+> | Kanagawa-Shizuoka (神静) | Kanagawa, Shizuoka | Nakajima Teruko |
+
+**5.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> Midori-chō (sede da Grande Igreja Miroku), e ir progressivamente assumindo a
+
+> **Depois**
+>
+> Midori-chō (sede da Igreja Grande Miroku), e ir progressivamente assumindo a
+
+**6.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> | Hokuriku | Toyama, Ishikawa, Fukui | Irie Fujijirō |
+
+> **Depois**
+>
+> | Hokuriku | Toyama, Ishikawa, Fukui | Irie Tōjirō |
+
+**7.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> Terrestre de Momoyama, Seiseidai, em Atami, e promover o mais rapidamente possível
+> a construção do Salão de Salvação como centro mundial.
+
+> **Depois**
+>
+> Terrestre de Momoyama, Seiseidai, em Atami, e promover o mais rapidamente possível
+> a construção do Salão da Salvação como centro mundial.
+
+**8.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> Tradução integral.
+>
+> ---
+>
+> A Igreja Messiânica Mundial foi fundada em fevereiro do ano passado;
+
+> **Depois**
+>
+> Tradução integral.
+>
+> **Notas de fidelidade.** O nome do terceiro auditor aparece neste comunicado como
+> 「二本木暉子」 e, no Regulamento de outubro do mesmo ano, como 「二本木タカ」 —
+> adoptou-se a segunda grafia, que é a que o próprio documento legal fixa. O nome do
+> segundo departamento traz, no original, uma variante de leitura (教務, «assuntos de
+> doutrina»), traduzida em todo o volume por **Doutrina**.
+>
+> ---
+>
+> A Igreja Messiânica Mundial foi fundada em fevereiro do ano passado;
 
 
 ### Capítulo 39 — Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
@@ -3623,6 +5512,64 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > **Depois**
 >
 > **Presidente da mesa:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
+
+**3.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> ### O trecho da mesa-redonda a que o aviso remete
+>
+> **Presidente da mesa (Sakai Tagao):** — Graças a Deus, ultimamente o resultado de
+
+> **Depois**
+>
+> ### O trecho da mesa-redonda a que o aviso remete
+>
+> A reunião registada é a mesa-redonda de difusão realizada em **3 de outubro de 1952**
+> na Igreja Grande Kōhō, em Tosu, província de Saga, sob a presidência do
+> **presidente da igreja Sakai Takao** e com **Nozoe Harumichi** na condução da mesa.
+>
+> **Presidente da igreja (Sakai Takao):** — Graças a Deus, ultimamente o resultado de
+
+**4.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Presidente da mesa:** — Entregar as taxas A e B sem dar trabalho é cumprir a
+
+> **Depois**
+>
+> **Presidente da igreja:** — Entregar as taxas A e B sem dar trabalho é cumprir a
+
+**5.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Presidente da mesa:** — É verdade. O dinheiro tende a sujar-se, mas é também
+
+> **Depois**
+>
+> **Presidente da igreja:** — É verdade. O dinheiro tende a sujar-se, mas é também
+
+**6.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Presidente da mesa:** — … Ultimamente têm aumentado visivelmente as ofertas de
+
+> **Depois**
+>
+> **Presidente da igreja:** — … Ultimamente têm aumentado visivelmente as ofertas de
+
+**7.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Presidente da mesa:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
+
+> **Depois**
+>
+> **Presidente da igreja:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
 
 
 ### Capítulo 40 — Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954
@@ -3666,4 +5613,14 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > **Depois**
 >
 > Os espíritos ancestrais alegram-se imensamente com os cultos
+
+**5.** *docs/volume_novo/47_anexo_kyoshu_yoko.md*
+
+> **Antes**
+>
+> no terceiro e último dia, o professor [ ] vos entregará.
+
+> **Depois**
+>
+> no terceiro e último dia, o professor […] vos entregará.
 

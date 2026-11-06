@@ -51,7 +51,7 @@ Sobre a sede própria, o documento não exige nada: a associação é definida p
 agregação de unidades, não por um edifício. O que se pode afirmar é que **a
 associação não é uma igreja em escala menor**. As diferenças são de natureza:
 
-| | Igreja (igreja) | Associação (Associação) |
+| Aspecto | Igreja | Associação |
 |---|---|---|
 | Personalidade jurídica | própria, com regulamento | não tem |
 | Presidente | presidente de igreja nomeado pelo presidente | líder de Associação, sem nomeação estatutária |
@@ -85,8 +85,8 @@ província:
 > **支部長という責任者がなかったら、カラッポのようなものですから嘘なのです。支部と名の
 > つく以上は必ず支部長がいなければならない**のです。それで「**それは閉鎖しろ、支部長が
 > できたらやるように**」と言ってやったのです。」
-> — 「支部に常住する支部長の居らねばならぬ事」, 『御教え集』26号, 15 de outubro de 1953
-> (prédica de 5 de setembro de 1953)
+> — 「支部に常住する支部長の居らねばならぬ事」, 『御教え集』nº 26, 15 de outubro de
+> 1953 (prédica de 5 de setembro de 1953)
 
 *"**Estabelecer um posto avançado não é mau em si; mas ali não havia o líder de filial.
 Havia um posto avançado sem líder de filial.** Isso é falso, e Deus fez [acontecer] para o

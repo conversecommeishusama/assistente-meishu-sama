@@ -87,12 +87,14 @@ associação.
 &nbsp;&nbsp;&nbsp;&nbsp;(1) É sócio comum quem tenha recebido os cursos previstos
 pela associação ou outra orientação desta.
 &nbsp;&nbsp;&nbsp;&nbsp;(2) O sócio especial é quem, concordando com o propósito
-da associação, seja por ela recomendado ao presidente e aprovado pelo conselho.
+da associação, seja por ela recomendado ao presidente e aprovado pelo conselho de
+diretores.
 
 **Art. 7.º** O sócio assume as obrigações estabelecidas pela associação.
 
 **Art. 8.º** Ao sócio que tiver palavras ou atos contrários ao propósito e aos
-fins da associação, aplicar-se-á o desligamento por deliberação do conselho.
+fins da associação, aplicar-se-á o desligamento por deliberação do conselho de
+diretores.
 
 **Art. 9.º** A associação tem os seguintes dirigentes:
 
@@ -101,7 +103,7 @@ fins da associação, aplicar-se-á o desligamento por deliberação do conselho
 &nbsp;&nbsp;&nbsp;&nbsp;(3) diretor-presidente — um;
 &nbsp;&nbsp;&nbsp;&nbsp;(4) diretores — vários (um diretor permanente);
 &nbsp;&nbsp;&nbsp;&nbsp;(5) auditores — dois;
-&nbsp;&nbsp;&nbsp;&nbsp;(6) conselheiros — vários.
+&nbsp;&nbsp;&nbsp;&nbsp;(6) assessores (評議員) — vários.
 
 **Art. 10.º**
 
@@ -113,11 +115,11 @@ representa a associação e superintende os assuntos sociais.
 &nbsp;&nbsp;&nbsp;&nbsp;(4) Os diretores auxiliam o diretor-presidente e tratam dos
 assuntos sociais.
 &nbsp;&nbsp;&nbsp;&nbsp;(5) Os auditores auditam as finanças da associação.
-&nbsp;&nbsp;&nbsp;&nbsp;(6) Os conselheiros respondem às consultas do presidente
+&nbsp;&nbsp;&nbsp;&nbsp;(6) Os assessores respondem às consultas do presidente
 sobre as matérias necessárias.
 
-**Art. 11.º** A associação tem conselheiros consultivos. Os consultivos são
-recomendados pelo conselho e empossados pelo presidente.
+**Art. 11.º** A associação tem conselheiros (顧問). Os conselheiros são
+recomendados pelo conselho de diretores e empossados pelo presidente.
 
 **Art. 12.º** O mandato dos dirigentes é de três anos para o diretor-presidente e
 de dois anos para os demais, permitida a reeleição.
@@ -137,8 +139,8 @@ termina em 31 de março do ano seguinte.
 
 ## Organização
 
-Presidente — Conselheiros consultivos | Vice-presidente | Diretor-presidente |
-Diretores — Conselheiros | Secretaria — Departamento Geral, Departamento de
+Presidente — Conselheiros | Vice-presidente | Diretor-presidente |
+Diretores — Assessores | Secretaria — Departamento Geral, Departamento de
 Bem-Estar e Cultura, Departamento de Orientação Técnica, Departamento de Ligação.
 
 **Nota final.** Quanto ao conteúdo da organização: presidente, Okada Shigeyoshi;
@@ -146,5 +148,5 @@ vice-presidente, Shibui Sōtarō; diretor-presidente, Hayashide Kenjirō; direto
 permanente, Kuronuma Shingyō; diretores, Tsurumi Ken e Mihara Ginjirō;
 conselheiros, Nakajima Takehiko, Sakai Katsuyuki, Araya Otomatsu, Kihara
 Yoshihiko, Kawakami Yoshiko, Naitō Raku, Takatō Nobumasa, Ōnuma Mitsuhiko e
-Ogawa Masayasu. Os consultivos e os membros da secretaria serão anunciados em
+Ogawa Masayasu. Os conselheiros e os membros da secretaria serão anunciados em
 breve. (1946)

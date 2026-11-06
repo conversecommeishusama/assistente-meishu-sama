@@ -13,7 +13,8 @@ anunciada de passagem. É por isso que a documentação posterior a supõe, sem
 repeti-la.
 
 Tradução integral da pergunta e da resposta. O restante da mesma sessão trata de
-Johrei e não pertence a este anexo.
+outros assuntos — proteção espiritual, ritos funerários, arte — e não pertence a este
+anexo.
 
 ---
 
@@ -27,8 +28,8 @@ enorme e, aos olhos de Deus, algo inadmissível. Até hoje eu silenciosamente
 perdoava quem me vinha falar dessas coisas... Assim, **desta vez decidi determinar
 o vínculo por região**.
 
-Há a Sede Central e três Subsedes; às Subsedes pertencem as Associações, e às
-Associações pertencem as filiais.
+Há a Sede e três Subsedes; às Subsedes pertencem as Associações, e às Associações
+pertencem as filiais.
 
 O líder de filial é um Ministro Responsável; e Ministro Responsável é quem tenha
 conduzido cem ou mais fiéis, ou ofertado trinta mil ienes ou mais, ou por

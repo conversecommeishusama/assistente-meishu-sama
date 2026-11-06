@@ -26,7 +26,11 @@ na parte que trata do valor das ofertas.
 
 ### O trecho da mesa-redonda a que o aviso remete
 
-**Presidente da mesa (Sakai Tagao):** — Graças a Deus, ultimamente o resultado de
+A reunião registada é a mesa-redonda de difusão realizada em **3 de outubro de 1952**
+na Igreja Grande Kōhō, em Tosu, província de Saga, sob a presidência do
+**presidente da igreja Sakai Takao** e com **Nozoe Harumichi** na condução da mesa.
+
+**Presidente da igreja (Sakai Takao):** — Graças a Deus, ultimamente o resultado de
 todas as igrejas vem subindo; e as casas em que a oferenda de gratidão pelo Johrei
 está em ordem são sempre as que vão melhor. É claro que é assim que deve ser, mas
 como é justamente nestas coisas óbvias que a gente se descuida, e como é
@@ -40,7 +44,7 @@ bem, de modo que não posso relatar caso por caso; mas, por exemplo, nas taxas A
 B, quem toma a iniciativa de entregá-las com pontualidade tem uma graça
 visivelmente diferente, e recebe a purificação de forma mais leve.
 
-**Presidente da mesa:** — Entregar as taxas A e B sem dar trabalho é cumprir a
+**Presidente da igreja:** — Entregar as taxas A e B sem dar trabalho é cumprir a
 moral mínima do fiel; isso é o natural.
 
 **[Sobre o valor e a prática]**
@@ -50,11 +54,11 @@ passado, deixaram de aceitar ofertas em dinheiro solto, embrulhadas em papel
 estranho, com 「寸志」 escrito e sem nome; e penso que o brio do professor é coisa
 muito importante.
 
-**Presidente da mesa:** — É verdade. O dinheiro tende a sujar-se, mas é também
+**Presidente da igreja:** — É verdade. O dinheiro tende a sujar-se, mas é também
 importante; por isso o professor deve ter pensamento limpo ao transmitir a Deus. Se
 tiver pensamento mesquinho e sujo, o resultado é transmitir coisa impura.
 
-**Presidente da mesa:** — … Ultimamente têm aumentado visivelmente as ofertas de
+**Presidente da igreja:** — … Ultimamente têm aumentado visivelmente as ofertas de
 gratidão pela proteção divina e a oferta por Johrei ministrado — a oferenda que o fiel recebe quando
 ministra Johrei a outra pessoa, e a que recebe quando ministra Johrei a alguém da
 família. Ouvi dizer que o responsável de uma Igreja Média perguntou se podia usar
@@ -92,7 +96,7 @@ Nagasaki, perdeu membros de repente por má fama; como isso também seria obstá
 três dias, mas quem não tem tempo fica sem Kyoshu; na região de Fukue não se faz
 Kyoshu de modo algum.
 
-**Presidente da mesa:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
+**Presidente da igreja:** — … Também 「救霊祭」 e outras coisas inventadas; e sair
 dizendo "entronização da Imagem na casa do fiel", "entronização do Byōbu", com o
 professor em visita acompanhado de séquito — o erro também fica muito elaborado e
 movimentado. É como vários parafusos frouxos girando em falso. Fazer e desfazer o

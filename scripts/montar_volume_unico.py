@@ -166,8 +166,10 @@ def limpar(t):
     t = re.sub(r"`([^`\n]*)`", _limpar_span, t)
 
     # um span que continha apenas o caminho deixa a linha de referência
-    # reduzida a um travessão: a linha inteira sai
-    t = re.sub(r"(?m)^\s*>?\s*—\s*$\n?", "", t)
+    # reduzida a um travessão: a linha inteira sai. O consumo é de espaços e
+    # tabulações, e não de \s: com \s o padrão engolia a linha em branco
+    # seguinte, e a subsecção seguinte ficava colada ao parágrafo anterior.
+    t = re.sub(r"(?m)^[ \t]*>?[ \t]*—[ \t]*$\n?", "", t)
     # o caminho costumava abrir a referência entre parênteses: "(caminho, 『光』3号)"
     # ficava "(, 『光』3号)"
     t = re.sub(r"\(\s*,\s*", "(", t)
@@ -469,6 +471,9 @@ def glosar(t):
     t = "".join(saida)
     t = re.sub(r"(?<=[）)])(?=[『「])", " ", t)
     t = re.sub(r"(?<=[）)])(?=[0-9]+号)", " ", t)
+    # a glosa do romaji entra logo depois de 『…』, e a citação continua em
+    # "nº 2": sem isto saía «(『御垂示録』 (Gosuiji-roku)nº 2».
+    t = re.sub(r"(?<=[）)])(?=n[º°])", " ", t)
     t = re.sub(r"(?<=[）)]) +(?=[,.;])", "", t)
     # a restauração precisa ser iterativa: uma linha protegida pode conter
     # o marcador de um trecho protegido antes dela
@@ -693,6 +698,10 @@ def emitir():
                     p = pegar(src, num, keep=keep)
                     p = re.sub(r"^\s*##\s*\d+\.\s*.*\n", "", p)
                 pedacos.append(p)
+            # num capítulo montado por fusão, a régua horizontal de fim de
+            # secção só faz sentido no último pedaço: nos outros, aparecia a
+            # meio do capítulo
+            pedacos = [re.sub(r"\s*\n-{3,}\s*$", "", x) for x in pedacos[:-1]] + pedacos[-1:]
             corpo = "\n".join(pedacos)
             corpo = limpar(corpo)
         corpo = glosar(polir(podar_coluna_vazia(remapear_refs(corpo))))

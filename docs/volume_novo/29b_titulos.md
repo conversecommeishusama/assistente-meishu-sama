@@ -12,7 +12,7 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | Japonês | Romanizado | Tradução | Natureza |
 |---|---|---|---|
 | 『栄光』 | Eikō | *Glória* | jornal oficial a partir de 1950 |
-| 『御教え集』 | Oshie-shū | *Coletânea de Ensinamentos* | coletânea de palestras |
+| 『御教え集』 | Mioshie-shū | *Coletânea de Ensinamentos* | coletânea de palestras |
 | 『御光話録』 | Gokōwa-roku | *Registro das Palavras de Luz* | respostas orais a fiéis |
 | 『御垂示録』 | Gosuiji-roku | *Registro das Instruções* | instruções descendentes |
 | 『光』 | Hikari | *Luz* | primeiro jornal, de 1949 |
@@ -30,12 +30,10 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 家庭菜園と無肥料栽培 | Katei saien to muhiryō saibai | "A horta doméstica e o cultivo sem adubo" |
 | 花による天国化運動 | Hana ni yoru tengoku-ka undō | "O movimento de fazer do mundo um paraíso pelas flores" |
 | 奇蹟 | Kiseki | "Milagre" |
-| 記事 | Kiji | "Reportagem" |
-| 教修 | Kyoshu | "O curso" |
 | 浄霊と医学との比較 | Jōrei to igaku to no hikaku | "O Johrei comparado à medicina" |
 | 浄霊とは何か | Jōrei to wa nani ka | "O que é o Johrei" |
 | 黴菌の発生 | Baikin no hassei | "A origem dos micróbios" |
-| 光明如来様御奉斎で盗難免る | Komyo-Nyorai-sama go-busai de tōnan manugareru | "Livre de um roubo pela entronização da Komyo-Nyorai" |
+| 光明如来様御奉斎で盗難免る | Komyo-Nyorai-sama go-hōsai de tōnan manugareru | "Livre de um roubo pela entronização da Komyo-Nyorai" |
 | 鉱山においての奇蹟の数々 | Kōzan ni oite no kiseki no kazukazu | "Os muitos milagres na mina" |
 | 御浄化物語 | Go-jōka monogatari | "Histórias de purificação" |
 | 御講話 | Go-kōwa | "Palestra" |
@@ -54,7 +52,7 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 大祭式典に参加して | Taisai shikiten ni sanka shite | "Participando da cerimônia do Grande Culto" |
 | 地上天国建設の土台 | Chijō tengoku kensetsu no dodai | "O fundamento da construção do Paraíso Terrestre" |
 | 地上天国出来るまで | Chijō tengoku dekiru made | "Até que o Paraíso Terrestre se realize" |
-| 泥棒に入られて | Dorobō ni ira rete | "Assaltado por um ladrão" |
+| 泥棒に入られて | Dorobō ni irareta | "Assaltado por um ladrão" |
 | 布教座談会 | Fukyō zadankai | "Mesa-redonda de difusão" |
 | 布教定例座談会 | Fukyō teirei zadankai | "Mesa-redonda periódica de difusão" |
 | 定例布教座談会 | Teirei fukyō zadankai | "Mesa-redonda periódica de difusão" |
@@ -62,8 +60,6 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 支部長懇談会 | Shibuchō kondankai | "Encontro de líderes de filial" |
 | 発端 | Hottan | "O começo" |
 | 八王子の奇蹟 | Hachiōji no kiseki | "O milagre de Hachiōji" |
-| 非売品 | Hibaihin | "Não se vende" |
-| 布教 | Fukyō | "Difusão" |
 | 法難裁判傍聴記 | Hōnan saiban bōchōki | "Crônica das audiências do processo" |
 | 放送に対する抗議文 | Hōsō ni taisuru kōgibun | "Protesto contra a emissão" |
 | 本教の収入に就て | Honkyō no shūnyū ni tsuite | "Sobre a receita desta religião" |
@@ -71,9 +67,8 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 明暗の隔り | Meian no hedatari | "A distância entre luz e trevas" |
 | 問題の世界救世教とは何か | Mondai no Sekai Kyūseikyō to wa nani ka | "Que é, afinal, a Igreja Messiânica Mundial?" |
 | 本部事務所奉仕者座談会 | Honbu jimusho hōshisha zadankai | "Mesa-redonda dos servidores do escritório central" |
-| 村一番の悪田良化す | Mura ichiban no akuda ryōka su | "A pior lavoura da aldeia se recupera" |
+| 村一番の悪田良化す | Mura ichiban no akuda ryōkasu | "A pior lavoura da aldeia se recupera" |
 | 黙示 | Mokushi | "Apocalipse" |
-| やはり功労のある人が上に行くのが本当ですから | Yahari kōrō no aru hito ga ue ni iku no ga hontō desu kara | "Afinal, é justo que os que têm méritos estejam no topo" |
 | 注意 | Chūi | "Aviso" |
 | 献金に就て | Kenkin ni tsuite | "Sobre a contribuição" |
 | 救世と自観明主様 | Kyūsei to Jikan Meishu-Sama | "A salvação e Meishu-Sama Jikan" |
@@ -81,7 +76,6 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 光明 | Kōmyō | "Luz" |
 | 真善美 | Shinzenbi | "Verdade, bem e beleza" |
 | 光新聞の拡大は教線の強化 | Hikari shinbun no kakudai wa kyōsen no kyōka | "Ampliar o jornal Hikari é fortalecer a linha da fé" |
-| 今上天皇 | Kinjō tennō | "o imperador reinante" |
 | ハワイ通信 | Hawai tsūshin | "Correspondência do Havaí" |
 
 ### Nomes de lugares e de instituições
@@ -98,11 +92,11 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 神仙郷 | Shinsenkyō | "pátria dos imortais" |
 | 水晶殿 | Suishōden | "Palácio de Cristal" |
 | 日光殿 | Nikkōden | "Salão da Luz do Sol" |
-| 救世会館 | Kyūsei Kaikan | "Salão da Salvação do Mundo" |
+| 救世会館 | Kyūsei Kaikan | "Salão da Salvação" |
 | 森吉鉱山 | Moriyoshi kōzan | mina de Moriyoshi |
 | 水上 | Minakami | Minakami |
 | 応神堂 | Ōjindō | "santuário de Ōjin" |
-| 五六七 | Iso-roku | "cinco, seis, sete" — lido *iso-roku*; vertido no volume como **Miroku** |
+| 五六七 | Miroku | "cinco, seis, sete" — a grafia numérica de **Miroku** (弥勒) |
 | 大日本観音会 | Dai-Nippon Kannon-kai | "Associação Kannon do Grande Japão" |
 | 日本観音教団 | Nippon Kannon Kyōdan | "Igreja Kannon do Japão" |
 | 日本浄化療法普及会 | Nippon Jōka Ryōhō Fukyūkai | "Associação de Difusão da Terapêutica de Purificação do Japão" |
@@ -111,7 +105,7 @@ Hikari, Kyūsei, Gosuiji-roku, Mioshie-shū, Gokōwa-roku — e não se traduzem
 | 天国大教会 | Tengoku daikyōkai | Igreja Grande do Paraíso |
 | 大成大教会 | Taisei daikyōkai | Igreja Grande da Grande Realização |
 | 光宝大教会 | Kōhō daikyōkai | Igreja Grande do Tesouro da Luz |
-| 五六七大教会 | Iso-roku daikyōkai | Igreja Grande Miroku (romaji: Iso-roku daikyōkai) |
+| 五六七大教会 | Miroku daikyōkai | Igreja Grande Miroku |
 | 光映中教会 | Kōei chūkyōkai | Igreja Média do Reflexo da Luz |
 | 長生中教会 | Chōsei chūkyōkai | Igreja Média da Longa Vida |
 | 光陽中教会 | Kōyō chūkyōkai | Igreja Média do Sol da Luz |

@@ -679,7 +679,8 @@ numa posição privilegiada e invejável para realizar o trabalho. No meu caso, 
 e andei sozinho por toda parte; por isso a natureza da filial acabou se tornando exatamente
 isso. Assim, este mês o culto é num lugar, no mês que vem noutro — nem o culto da filial
 era realizado num lugar fixo."*
-— 「支部の現状と発展の為に」, `search2/kikou2/shibuno1.html`
+— 「支部の現状と発展の為に」, 『地上天国』nº 37, 25 de junho de 1952 (reunião de 28 de
+abril de 1952) · `search2/kikou2/shibuno1.html`
 
 ### 4.2 Imóvel alugado, cedido ou adaptado
 
@@ -717,7 +718,8 @@ Komyo-Nyorai, mas sim algo como «Luz» ou «Shinzenbi».
 — Não; não apenas no hotel — é quando se move a Imagem da Luz Divina que não pode. Uma
 vez colocada a Imagem da Luz Divina num lugar determinado, não se deve movê-la sem mais
 nem menos."*
-— 「質問応答 御光話」, `search1/situmon/m2411.html`
+— 『御光話録』nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) ·
+`search1/situmon/m2411.html`
 
 A regra é notável porque cria um problema prático em nome de um princípio: o curso pode
 ser itinerante, **a Imagem não**. É a Imagem da Luz Divina que fixa o lugar.
@@ -755,7 +757,8 @@ construir, reconstruir, ampliar, transferir ou demolir os principais edifícios 
 ou realizar reforma substancial. Art. 28 — O presidente da igreja e seu substituto são
 nomeados pelo presidente, dentre os selecionados conforme o regulamento da respectiva
 igreja."*
-— Regulamento da pessoa jurídica religiosa 『世界救世教』『栄光』nº 125, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
+— Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro de
+1951 · `search2/sanko/kisoku.html`
 
 O desenho é coerente: a igreja local escolhe seu presidente **por suas próprias regras**,
 mas quem **nomeia** é o presidente; e nenhuma decisão patrimonial de vulto se toma
@@ -771,7 +774,7 @@ retribuição:
 *"Desde a conversão, ano após ano recebeu grandes graças e milagres; e agora, num
 sentimento de retribuição, chegou ao ponto de construir uma nova igreja, isto é, um Centro
 de Johrei."*
-— 「明暗の隔り」, `search2/okage/dokusya/meian01.html`
+— 「明暗の隔り」, 『栄光』nº 105, 23 de maio de 1951 · `search2/okage/dokusya/meian01.html`
 
 E um segundo, com a entronização da Imagem como ato de inauguração:
 
@@ -782,7 +785,7 @@ E um segundo, com a entronização da Imagem como ato de inauguração:
 *"Além disso… num lugar elevado, rico em verde e de brisa perfumada, fizeram-me
 construir uma igreja com perfume de madeira nova; em 23 de julho do ano passado (1951),
 pedi ao Sr. Inoue Motokichi que viesse e entronizamos a Imagem da Luz Divina."*
-— 「御浄化物語」, `search2/okage/ko/qgojoka2.html`
+— 「御浄化物語」, 『地上天国』nº 30, 25 de novembro de 1951 · `search2/okage/ko/qgojoka2.html`
 
 O caso extremo é o Havaí, citado por Meishu-Sama como demonstração de que a obra era
 dos fiéis e não dele:
@@ -810,7 +813,8 @@ Sōtō-shū e a imagem principal é um Kannon de onze faces, que recebeu a abert
 de Meishu-Sama.
 — Não há impedimento…; está bem, mas pode ser que algum dia você vá para outro lugar.
 Apenas esteja ciente disso."*
-— 「質問応答 御光話」, `search1/situmon/m250228.html`
+— 『御光話録』nº 19, 13 de junho de 1950 (sessão de 28 de fevereiro de 1950) ·
+`search1/situmon/m250228.html`
 
 A resposta é uma **política de transitoriedade declarada**: o espaço alheio serve agora,
 mas não é o destino final. Meishu-Sama não exige a ruptura imediata com a forma anterior
@@ -1258,9 +1262,9 @@ a confusão é a causa de quase todos os erros de leitura do período. São elas
 
 1. **os órgãos da pessoa jurídica** — presidente (kanchō), diretores, auditores, conselheiros e
  Assembleia Geral, com as competências que o Regulamento de 1951 lhes atribui (§6.1);
-2. **os departamentos** — as repartições de trabalho (Doutrina, Finanças, Construção,
- Empreendimentos…), que não são órgãos deliberativos e cuja chefia nem sempre está
- documentada (§6.2);
+2. **os departamentos** — as repartições de trabalho (Assuntos Gerais, Doutrina,
+ Finanças, Publicações, Construção, Empreendimentos), que não são órgãos deliberativos
+ e cuja chefia nem sempre está documentada (§6.2);
 3. **a estrutura territorial** — Sede, Sedes Regionais, Igreja Grande, Igreja Média,
  Igreja, filial, posto avançado —, que é a cadeia de unidades tratada nos capítulos
  19 a 21 (§6.3).
@@ -1291,9 +1295,9 @@ revela um desenho institucional deliberado.
 | 17º | **Assembleia Geral** = todos os presidentes de igreja |
 | 18º | Assembleia ordinária: **fevereiro**, anual; extraordinária a pedido de um quarto dos membros |
 | 22º | Competência da Assembleia: alteração do regulamento, disposição de patrimônio, orçamento, planos |
-| 24º | **3 auditor** (auditores) para as finanças |
+| 24º | **3 auditores** para as finanças |
 | 25º | conselheiro e consultor nomeados pelo presidente; este pode convocar representantes dos membros para ouvi-los |
-| 26º–28º | Igrejas: criação, mudança de regra, fusão, dissolução, obras e venda de bens exigem **aprovação do presidente**; presidente de igreja **nomeada por ele** |
+| 26º–28º | Igrejas: criação, mudança de regra, fusão, dissolução, obras e venda de bens exigem **aprovação do presidente**; presidente de igreja **nomeado por ele** |
 | 29º | **taxa religiosa** cobrada de igrejas e membros |
 | 30º | Patrimônio: patrimônio fundamental / patrimônio ordinário; este inclui **contribuições das igrejas e quotas dos membros** |
 | 34º | Inventário patrimonial anual, com auditoria e aprovação da Assembleia |
@@ -1349,7 +1353,7 @@ constituiu-se como nova pessoa jurídica religiosa. E Okada Jikan, o Fundador, p
 chamado Meishu-Sama; estabeleceu-se separadamente o presidente; toda a
 responsabilidade passou a ser suportada pelo presidente e pelos diretores; e
 Meishu-Sama passou a se dedicar exclusivamente à orientação da fé e da doutrina."*
-— 「救世と自観明主様（一）」『地上天国』nº 50, 25 de julho de 1953 ·
+— Matsui, 「救世と自観明主様（一）」, 『地上天国』nº 50, 25 de julho de 1953 ·
 `search2/kikou2/kyusei03.html`
 
 Ou seja: **o Fundador não era o presidente.** Uma figura distinta, Ōkusa Naoyoshi,
@@ -1387,7 +1391,7 @@ graph TD
  B["presidente (kanchō)<br/><i>autoridade jurídica e representação legal</i> — Ōkusa Naoyoshi"]
  B --- C["11 diretores (riji)<br/>deliberam por maioria, voto igual"]
  B --- D["3 auditores (kanji)<br/>finanças"]
- B --- E["conselheiros e consultores "]
+ B --- E["conselheiros e consultores"]
  C --- F["Assembleia Geral (sōkai)<br/>= todos os presidentes de igreja"]
  B --- G["Departamentos (art. 16)<br/>Assuntos Gerais · Doutrina · Finanças<br/>Publicações · Construção · Empreendimentos"]
  B --- Q["Sede Central (sōhonbu): Atami, Seiseidai"]
@@ -1406,9 +1410,6 @@ nem secretaria-geral, porque **nenhum desses cargos consta do regulamento de 195
 funções de chefia de departamento existem — o art. 16 nomeia os departamentos, e o
 comunicado de Ōkusa fala em chefes —, mas a sua composição em 1954–1955 não está em fonte
 citável.
-
-A linha pontilhada entre o Fundador e o presidente não é ornamento: é a separação formal
-documentada no art. 3.º do regulamento e no comentário de 『地上天国』nº 50.
 
 A linha pontilhada entre o Fundador e o presidente não é ornamento: é a separação
 formal documentada no art. 3º do regulamento e no comentário de 『地上天国』nº 50.
@@ -1446,7 +1447,8 @@ temos apelado. Por exemplo, 'falta tanto, contribuam com este valor' — isso qu
 pedimos às igrejas. E quando é necessário, compreendemos bem que Deus reúne exatamente o
 necessário; às vezes ficamos apreensivos, mas de modo hábil conseguimos o provimento, o que
 é verdadeiramente digno de gratidão."*
-— Kii, Departamento de Contabilidade · `search2/kikou2/honbujim.html`
+— Kii, Departamento de Contabilidade, 「本部事務所奉仕者座談会」, 『地上天国』nº 69,
+15 de abril de 1955 · `search2/kikou2/honbujim.html`
 
 ---
 
@@ -1802,7 +1804,7 @@ Ministros, Ministros Responsáveis e fiéis que se reúnem no Templo Anexo. Assi
 solicitude o ensinamento de Kannon nunca antes revelado, fazendo apreender o máximo possível
 da verdade que se estende pelos três mundos — divino, espiritual e fenomênico — e, como
 grande iluminado, empenha-se em formar os talentos úteis à construção do Paraíso Terrestre."*
-— 『地上天国』, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
+— 「巻頭言」, 『地上天国』, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
 
 A palavra usada é **formação** — formar, cultivar. E o método é explicitamente o de
 **perguntas e respostas**, não o de aulas expositivas. Isso explica por que a documentação tem
@@ -1827,11 +1829,18 @@ audiências", escreve um fiel em 1949 (`search1/English/ewata29.html`); outro me
 
 ### 8.2 O serviço voluntário como base econômica
 
-A economia do movimento no período não se explica sem o sistema de **serviço voluntário** — o serviço
-voluntário, tipicamente de um mês de duração, que fornecia a mão de obra de tudo o que se
-construiu. Um fiel encerra seu período e registra: 「無事に**一カ月の御奉仕**を終えさせて
-頂きまして」 (`search1/i/issyuno5.html`); havia também o serviço de meio período — 「弟は
-**建設奉仕隊に約半期**」.
+A economia do movimento no período não se explica sem o **serviço voluntário** — tipicamente
+de um mês de duração —, que fornecia a mão de obra de tudo o que se construiu. Um fiel encerra
+o seu período e registra:
+
+> 「無事に**一カ月の御奉仕**を終えさせて頂きまして」
+> — 「一種の悲喜劇」, testemunho de fiel, 『栄光』nº 251, 10 de março de 1954 · `search1/i/issyuno5.html`
+
+*"Concluí sem incidente um mês de serviço voluntário."*
+
+Havia também o serviço de meio período — 「弟は**建設奉仕隊に約半期**」, "o meu irmão passou
+cerca de meio ano no Corpo de Serviço de Construção" —, mencionado numa consulta de agosto de
+1951 (『御教え集』nº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
 
 Foi essa mão de obra que permitiu mover as rochas dos jardins de Hakone, construir o
 Nikkōden, abrir a mina de Minakami e erguer o Zuiunkyo — com o financiamento monetário vindo
@@ -1849,15 +1858,19 @@ apreciação artística. O relato de 1951 sobre a visita a Quioto e Nara é o ma
 *"Sua Excelência excursionou pelas regiões de Kyoto e Nara, combinando a proclamação da
 doutrina com a apreciação artística… percorreu templos e museus de toda Nara…; compareceu
 à reunião de fiéis no teatro de Kyoto e concedeu uma alocução a mais de três mil fiéis."*
-— `search2/kikou2/koki36.html`
+— 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
 
 ![No 法然院, em Quioto, 30 de maio de 1951 — a primeira excursão de proclamação ao Kansai. [Fotografia da época; data e local conforme a legenda original.]](fotografias/honenin_1951.jpg)
 
-Havia até uma alternância sazonal entre as sedes — 「夏は箱根、冬は熱海、それで**春と秋は
-Quioto**です」 (`search1/kouwa/s270923.html`): "o verão é em Hakone, o inverno em Atami; e a
-primavera e o outono são em Kyoto". Essa itinerância tinha função de governo: era visitando
-as regiões que o Fundador mantinha contato com uma estrutura que crescia mais rápido do que
-a capacidade de supervisão.
+Havia até uma alternância sazonal entre as sedes:
+
+> 「夏は箱根、冬は熱海、それで**春と秋は京都**です」
+> — 『御教え集』nº 14, 15 de outubro de 1952 (prédica de 23 de setembro de 1952) · `search1/kouwa/s270923.html`
+
+*"No verão, Hakone; no inverno, Atami; e, na primavera e no outono, Kyoto."*
+
+Essa itinerância tinha função de governo: era visitando as regiões que o Fundador mantinha
+contato com uma estrutura que crescia mais rápido do que a capacidade de supervisão.
 
 E, no fim da vida, a itinerância de Meishu-Sama aproxima-se da formação de portadores de
 qualificação — movimento que coincide com o anúncio da etapa nova, em dezembro de 1954
@@ -1866,12 +1879,12 @@ levantamento**; registra-se como ponto não documentado.
 
 ### 8.4 O gênero documental dominante
 
-Vale registrar uma característica da documentação que tem consequência metodológica: a documentação
-majoritário **não é doutrina sistemática**. São **respostas a perguntas de fiéis e
-dirigentes**, publicadas periodicamente. As séries principais são 『御光話録』, 『御垂示録』,
+Vale registrar uma característica da documentação que tem consequência metodológica: o gênero
+dominante **não é doutrina sistemática**. São **respostas a perguntas de fiéis e dirigentes**,
+publicadas periodicamente. As séries principais são 『御光話録』, 『御垂示録』,
 『御教え集』, além dos periódicos 『光』, 『救世』, 『栄光』, 『地上天国』 e 『神の光』.
 
-O próprio título 『御垂示録』 é significativo: instrução descendente é "instrução descendente", e a série se
+O próprio título 『御垂示録』 é significativo: 「垂示」 é "instrução descendente", e a série se
 apresenta como **ordem operacional**, não como tratado. Isso tem uma consequência prática
 para quem estuda o período: **a estrutura da organização aparece nos documentos por
 fragmentos**, sempre que alguém faz uma pergunta sobre um caso concreto. Não há — e
@@ -1892,7 +1905,8 @@ projeto, e entre o modelo e a cópia:
 > 体的に大きくなるというわけです。**御神業というものは、すべて型でやってゆく**
 > のですから、本元ができ、また形が大きくなるということは、全体的にそうなる
 > わけです。」
-> — 『御教え集』29号, 15 de janeiro de 1954 (prédica de 27 de dezembro de 1953)
+> — 『御教え集』nº 29, 15 de janeiro de 1954 (prédica de 27 de dezembro de 1953) ·
+> `search1/kouwa/s281227.html`
 
 *"Como sempre digo, **Hakone é o espírito e Atami é o corpo**; portanto, Atami
 ficar pronto significa que se cresce corporalmente. **O Trabalho Divino se faz
@@ -1906,15 +1920,16 @@ lugar é modelo do que deve ocorrer no mundo. É o que ele diz do Paraíso de At
 
 > 「**熱海の地上天国ができるということは、世界的の地上天国のごく根本の型**なのです
 > から、これができると霊界ではたいへんなことになるのです。」
-> — 『御教え集』32号, 15 de abril de 1954 (Grande Culto da Primavera, 25 de março de 1954)
+> — 『御教え集』nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+> `search1/kouwa/s290325.html`
 
 *"**O Paraíso Terrestre de Atami ficar pronto é o tipo fundamental do Paraíso
 Terrestre mundial**; por isso, quando ele se completa, no mundo espiritual
 acontece algo enorme."*
 
 **Segunda: a sequência das obras é doutrinária, e não cronológica por acaso.**
-Primeiro Hakone — o espírito: o jardim, o Nikkōden (Nikkōden, «Palácio da Luz
-Solar»), que servia de salão de audiência e de Johrei, e o museu. Depois Atami — o
+Primeiro Hakone — o espírito: o jardim, o Nikkōden («Palácio da Luz Solar»), que servia
+de salão de audiência e de Johrei, e o museu. Depois Atami — o
 corpo: o Templo Messiânico, o Salão da Salvação e, no alto do mirante, o Palácio de
 Cristal, que ele mesmo descreve antes de existir:
 
@@ -1922,7 +1937,7 @@ Cristal, que ele mesmo descreve antes de existir:
 > のです。……これは予定よりか大きくして、百人ぐらいが一度に腰掛けて景色の鑑賞が
 > できるわけです。……**美術館のほうは箱根のちょうど倍の大きさに**して、いろいろな
 > 点において箱根の経験でよく分かりましたから、すばらしいものを造るつもりです。」
-> — 『御教え集』29号, 15 de janeiro de 1954
+> — 『御教え集』nº 29, 15 de janeiro de 1954 · `search1/kouwa/s281227.html`
 
 *"No ano que vem, o Salão e o mirante; **à casa de vidro do mirante dei o nome de
 «Palácio de Cristal»**. […] Fiz maior do que o previsto, e cerca de cem pessoas
@@ -1937,7 +1952,7 @@ finalidade declarada é a formação do gosto como via de aperfeiçoamento human
 > させる**ということと、今の文明というものは……美によって文明に役立つという
 > ことが、今まで非常に閑却されていたわけです。……**欠点を補うという意味で
 > 立派なものを造る**ということが根本ですから」
-> — 『御教え集』29号, 15 de janeiro de 1954
+> — 『御教え集』nº 29, 15 de janeiro de 1954 · `search1/kouwa/s281227.html`
 
 *"**Mostrar a muitas pessoas o maravilhoso efeito artístico da arte japonesa,
 fazê-las desfrutar e elevar o caráter** — e, quanto à civilização atual […] o
@@ -1958,7 +1973,7 @@ Os Paraísos Terrestres são três, e a ordem entre eles é doutrinária, não g
 Salão da Salvação e o museu — é o **corpo**. E **Quioto, em Sagano** — a **Heiankyō** — é o
 terceiro termo da sequência, o lugar em que, nas palavras do próprio Meishu-Sama, «se constrói
 o puramente japonês». A eles somam-se a aquisição de Manoa, no Havaí (outubro de 1953), e os
-projectos de Fukui, que a documentação registra sem desenvolvimento.
+projetos de Fukui, que a documentação registra sem desenvolvimento.
 
 A ordem — espírito, corpo, e depois o terceiro — não é cronologia: é a gramática com que
 Meishu-Sama descreve a expansão do modelo pelo mundo, e é o que dá sentido à afirmação de que os
@@ -1977,7 +1992,7 @@ Meishu-Sama o justificou explicitamente contra o sermão:
 bem apenas pelo ouvido, por meio de sermões, tem pouco efeito. Deve-se, através dos olhos,
 purificar o coração das pessoas pela beleza natural e pela beleza artificial, conduzi-las
 ao bem, despertar a fé e fazer conhecer o grande amor de Deus.'"*
-— 『編集後記（地上天国nº 36）』, `search2/kikou2/koki36.html`
+— 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
 
 E as três categorias de beleza — beleza natural, beleza construída e as artes:
 
@@ -1988,7 +2003,8 @@ E as três categorias de beleza — beleza natural, beleza construída e as arte
 *"Como sempre digo, o Paraíso Terrestre é o mundo da arte; portanto, além da beleza
 natural e da beleza artificial que descrevi, sem as artes — música, canto e dança — que
 alegram os ouvidos e os olhos, não se pode chamá-lo de perfeito."*
-— 「地上天国出来るまで」, `search1/ti/tijote03.html`
+— 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+`search1/ti/tijote03.html`
 
 ### 9.3 A inauguração como operação de massa
 
@@ -2012,7 +2028,8 @@ para o jardim, mas ainda assim não parecia suficiente, e não houve como estend
 semana. Além dos cultos, como atrações, ao longo dos sete dias, variando a cada dia as
 pessoas e o programa, convidaram-se artistas de primeira linha, para que se desfrutasse
 amplamente do clima do Paraíso."*
-— 「地上天国出来るまで」, `search1/ti/tijote03.html`
+— 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+`search1/ti/tijote03.html`
 
 E um fato que Meishu-Sama usava como demonstração pública, e que ilustra o mecanismo de
 conversão em cadeia:
@@ -2029,12 +2046,19 @@ experiência, numa obra desse porte é natural que haja algumas mortes e muitos 
 finalmente perceberam que não era obra humana, creram na existência de Deus, e parece que
 reconheceram a administração divina que eu conduzo: hoje, todos, sem exceção, se
 converteram."*
-— idem
+— 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+`search1/ti/tijote03.html`
 
-O mesmo padrão se repete em Atami — 「商売人でここで仕事をしている人は**ほとんど全部信者に
-なっている**」 (`search1/kouwa/s270605.html`): "os comerciantes que trabalham aqui se
-tornaram fiéis quase todos". **A obra era, ela mesma, o instrumento de conversão** — e
-nisso a doutrina estética encontra sua eficácia prática.
+O mesmo padrão se repete em Atami:
+
+> 「商売人でここで仕事をしている人は**ほとんど全部信者になっている**」
+> — 『御教え集』nº 11, 15 de julho de 1952 (prédica de 5 de junho de 1952) ·
+> `search1/kouwa/s270605.html`
+
+*"Os comerciantes que trabalham aqui tornaram-se fiéis quase todos."*
+
+**A obra era, ela mesma, o instrumento de conversão** — e nisso a doutrina estética
+encontra sua eficácia prática.
 
 Havia até planejamento de fluxo de visitantes, com controle de acesso — indica que os
 Paraísos eram concebidos como equipamento cultural de escala:
@@ -2046,7 +2070,8 @@ Paraísos eram concebidos como equipamento cultural de escala:
 *"**O museu, com gente chegando em fila, uma atrás da outra, não se consegue
 contemplar com calma.** […] Por isso, penso em **fazer ali uma sala de espera, um lugar
 onde duzentas ou trezentas pessoas possam sentar-se**, e regular a entrada."*
-— `search1/kouwa/s270316.html`
+— 『御教え集』nº 8, 20 de abril de 1952 (prédica de 16 de março de 1952) ·
+`search1/kouwa/s270316.html`
 
 ### 9.4 O calendário ritual
 
@@ -2098,7 +2123,8 @@ contemplar o Paraíso Terrestre em construção. O grandioso e incomparável sal
 desenho de um paraíso vasto além da imaginação, as vistas magníficas de todos os tempos ao
 alcance dos olhos — diante dessa administração divina incompreensível à sabedoria humana,
 eu apenas ficava extasiado."*
-— `search2/okage/yarawa/qwasure4.html`
+— 小林俊子, 「忘れかけた信仰に鞭うたれて」, 『栄光』nº 271, 25 de agosto de 1954 ·
+`search2/okage/yarawa/qwasure4.html`
 
 ### 9.6 A dimensão material das obras
 
@@ -2125,15 +2151,16 @@ descreve sua vantagem com franqueza:
 entre elas não há nada tão esplêndido quanto esta. Como é tão boa e tão barata, chego a
 esfregar os olhos. … Por isso ficando com as mãos no peito, sem fazer nada, coisas
 excelentes entram a baixo preço. Esse é o poder da jóia que realiza os desejos."*
-— Culto Especial da Primavera · `search1/kouwa/s290325.html`
+— 『御教え集』nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+`search1/kouwa/s290325.html`
 
 A **agricultura natural** operou como ponte para o mundo rural, com números de
-produtividade usados como prova pública — e há instituições satélites criadas para isso:
-o Grupo de Estudo de Agricultura Natural do Ministério da Agricultura (Nōrinshō Shizen Nōhō Kenkyū-kai, Grupo de Estudo de
-Agricultura Natural do Ministério da Agricultura e Florestas; 『栄光』nº 256,
-14 de abril de 1954 · `search2/sanko/norinsyo.html`)
-e o Associação de Difusão da Agricultura Natural (Shizen Nōhō Fukyū-kai, Associação de Difusão da Agricultura
-Natural; 『栄光』, 5 de maio de 1953 · `search2/sanko/syui.html`).
+produtividade usados como prova pública — e há instituições satélites criadas para isso: o
+**Grupo de Estudo de Agricultura Natural do Ministério da Agricultura** (Nōrinshō Shizen Nōhō
+Kenkyū-kai; 「農林省自然農法研究会趣意書」, 『栄光』nº 256, 14 de abril de 1954 ·
+`search2/sanko/norinsyo.html`) e a **Associação de Difusão da Agricultura Natural** (Shizen
+Nōhō Fukyū-kai; folheto inserido em 『革命的増産の自然農法解説』, 5 de maio de 1953 ·
+`search2/sanko/syui.html`).
 
 ![『栄光』256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko256_norinsyo.jpg)
 
@@ -2151,7 +2178,7 @@ metros do Parque de Amoreiras de Atami, desenvolve um terreno de cerca de 33 mil
 os tipos de flores do Japão, visa a um jardim florido exemplar, e está prestes a iniciar o
 cultivo em larga escala; no momento, várias dezenas de membros da brigada de serviço estão
 se empenhando."*
-— 「花による天国化運動」『光』, 8 de maio de 1949 · `search1/ha/hanani.html`
+— 「花による天国化運動」, 『光』nº 8, 8 de maio de 1949 · `search1/ha/hanani.html`
 
 ---
 
@@ -2279,7 +2306,7 @@ temas conexos. Cada assertiva remete ao capítulo em que foi demonstrada.
  (capítulo 2).
 4. **O Fundador não era o presidente.** A separação entre autoridade carismática e autoridade
  jurídica está no art. 3.º do Regulamento e num comentário de 『地上天国』, nº 50, e antecipa o
- problema da sucessão sem o resolver (capítulos 2 e 23).
+ problema da sucessão sem o resolver (capítulos 2 e 24).
 
 ### 12.2 As pessoas
 
@@ -2290,14 +2317,14 @@ temas conexos. Cada assertiva remete ao capítulo em que foi demonstrada.
  recomendação —, nunca de formação acadêmica (capítulo 20).
 7. **As duas nomenclaturas de grau são uma substituição, com cerca de um ano de sobreposição**:
  Ministro Responsável e Assistente cedem lugar a Ministro, Ministro Adjunto e Ministro
- Titular entre 1951 e 1952 (capítulos 14 e 15).
+ Titular entre 1951 e 1952 (capítulos 15 e 16).
 8. **O grau acompanhava a unidade dirigida**: 56 Ministros Titulares para 4 Igrejas Grandes,
  430 Ministros Adjuntos para 78 Igrejas Médias, 2.244 Ministros para 710 igrejas (capítulo 16).
 9. **A formação real era a audiência**: a documentação é feita de perguntas e respostas porque
  era assim — oralmente e por casos — que a doutrina circulava (capítulo 18).
 10. **O dirigente era formado pela prática e vigiado pela ata**: as reuniões periódicas de
  difusão serviam para corrigir preços, durações e condutas, e registravam os abusos por
- escrito (capítulos 11 e 24).
+ escrito (capítulos 11 e 25).
 
 ### 12.3 As unidades
 
@@ -2337,19 +2364,19 @@ temas conexos. Cada assertiva remete ao capítulo em que foi demonstrada.
 22. **Salvar é salvar corpo e espírito**, e o Ohikari é o instrumento, não a salvação: ele faz
  do fiel agente da cura, não assistido do dirigente (capítulo 12).
 23. **O Ohikari tem valor fixo, que não é preço**: a graça não tem preço, a oferta não é
- pagamento, e cobrar acima do fixado é furto (capítulos 12 e 22).
+ pagamento, e cobrar acima do fixado é furto (capítulos 12 e 23).
 24. **A outorga sem curso é eficaz e irregular**: eficaz porque o efeito não depende da
  instrução; irregular porque a direção declarou, em 1953, que omitir o Kyoshu por
  conveniência é rebeldia contra Deus (capítulo 12).
 25. **A oferta de gratidão é livre, e o critério é a capacidade**: quem não pode está
- dispensado; censura-se a avareza, não a pobreza; não há percentual (capítulo 14).
+ dispensado; censura-se a avareza, não a pobreza; não há percentual (capítulo 13).
 26. **A retribuição também se faz em serviço**: a brigada voluntária construiu os Paraísos e
  trabalhou na mina, e é isso que explica a economia das obras (capítulos 13 e 17).
 27. **O Johrei trata o padecimento, não santifica a rotina**; a intensidade faz-se por
  retomadas, e o recebimento frequente é praxe documentada, não norma devocional
- (capítulo 20).
+ (capítulo 14).
 28. **A economia dependia de três fontes**: quotas e contribuições das igrejas, ofertas de
- gratidão livres e serviço voluntário (capítulos 22 e 23).
+ gratidão livres e serviço voluntário (capítulos 13 e 23).
 
 ### 12.6 A administração e os conflitos
 

@@ -48,23 +48,23 @@ Shizuoka-ken, Atami-shi, Sakimichō.
 
 **4. Escritórios** — Shizuoka-ken, Atami-shi, Momoyama 50.
 
-&nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Ensino — Shizuoka-ken, Atami-shi, Momoyama 50
+&nbsp;&nbsp;&nbsp;&nbsp;(a) Departamento de Doutrina (教務部) — Shizuoka-ken, Atami-shi, Momoyama 50
 &nbsp;&nbsp;&nbsp;&nbsp;(b) Departamento de Saúde — Shizuoka-ken, Atami-shi, Momoyama 50
 &nbsp;&nbsp;&nbsp;&nbsp;(c) Departamento de Publicação — Kanagawa-ken, Odawara-shi, Midori 4-589
 &nbsp;&nbsp;&nbsp;&nbsp;(d) Departamento de Propaganda — Shizuoka-ken, Atami-shi, Momoyama 50
 &nbsp;&nbsp;&nbsp;&nbsp;(e) Departamento de Construção — Shizuoka-ken, Atami-shi, Momoyama 33
-&nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obra Social — Shizuoka-ken, Atami-shi, Momoyama 50
+&nbsp;&nbsp;&nbsp;&nbsp;(f) Departamento de Obras Sociais (社会事業部) — Shizuoka-ken, Atami-shi, Momoyama 50
 
 **5. Igrejas e ministros**
 
 | Categoria | Quantidade |
 |---|---:|
-| Igrejas Grandes (Igreja Grande) | 4 |
-| Igrejas Médias (Igreja Média) | 78 |
-| Igrejas Filiais (Igreja Filial) | 710 |
-| Ministros Titulares (Ministro Titular) | 56 |
-| Ministros Adjuntos (Ministro Adjunto) | 430 |
-| Ministros (Ministro) | 2.244 |
+| Igrejas Grandes (大教会) | 4 |
+| Igrejas Médias (中教会) | 78 |
+| Igrejas Filiais (分教会) | 710 |
+| Ministros Titulares (大教師) | 56 |
+| Ministros Adjuntos (中教師) | 430 |
+| Ministros (教師) | 2.244 |
 
 **Nota de leitura.** O documento não traz, ao lado dos números, a data de
 fechamento de cada contagem nem o critério de inclusão das unidades em formação.

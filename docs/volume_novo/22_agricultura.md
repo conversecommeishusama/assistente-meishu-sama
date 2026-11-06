@@ -3,13 +3,13 @@
 ### 22.1 O documento de base
 
 O texto central de Meishu-Sama sobre o tema foi publicado em 『救世』nº 63, 20 de
-maio de 1950, sob o título 「家庭菜園と無肥料栽培」 — **"A horta doméstica e o
-cultivo sem adubo"**. A escolha do título não é acidental: o artigo de difusão
+maio de 1950, sob o título 「家庭菜園と無肥料栽培」 («A horta doméstica e o cultivo sem
+adubo»). A escolha do título não é acidental: o artigo de difusão
 agrícola é endereçado à **horta caseira**, não à lavoura comercial. Essa porta de
 entrada — barata, ao alcance do membro comum, com efeito visível no prato — é o
 que explica a capilaridade do método.
 
-![『自然農法』 (Shizen Nōhō, *Agricultura Natural*) 1号, novembro de 1954 — capa do primeiro número da revista que a instituição passou a dedicar exclusivamente ao método. [Fac-símile: capa do número; conferida na imagem, sem OCR da página de abertura, que é manuscrita.]](facsimiles/shizen_noho01_capa.jpg)
+![『自然農法』 (Shizen Nōhō, «Agricultura Natural»), nº 1, novembro de 1954 — capa do primeiro número da revista que a instituição passou a dedicar exclusivamente ao método. [Fac-símile: capa do número; conferida na imagem, sem OCR da página de abertura, que é manuscrita.]](facsimiles/shizen_noho01_capa.jpg)
 
 ### 22.2 O argumento
 

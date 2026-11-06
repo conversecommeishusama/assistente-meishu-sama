@@ -49,8 +49,8 @@ Messiânica Mundial」.
 **Art. 2.º (Sede)** Esta pessoa jurídica religiosa (a seguir, "a pessoa jurídica")
 tem seu escritório em Shizuoka-ken, Atami-shi, Okuho 231-1.
 
-**Art. 3.º (Fim)** Esta pessoa jurídica, tendo por mestre o Mestre Okada Jikan e
-com fundamento no sentido original de sua fundação, visa à construção do Paraíso
+**Art. 3.º (Fim)** Esta pessoa jurídica, tendo por Fundador (教主) o Mestre Okada
+Jikan e com fundamento no sentido original de sua fundação, visa à construção do Paraíso
 Terrestre neste mundo presente — que é o propósito do Criador — mediante a
 realização da verdade; e tem por fim salvar a humanidade do mundo, difundir a
 doutrina, realizar cerimônias e ritos, educar e formar os fiéis, abranger as
@@ -101,8 +101,8 @@ eleger prontamente o sucessor;
 exercer o cargo por três meses ou mais, em razão de doença, viagem ou outro
 motivo.
 
-**Art. 12.º (Designação)** O substituto legal do presidente é escolhido pelo
-conselho no caso do item 1 do artigo anterior, e nomeado pelo presidente no
+**Art. 12.º (Designação)** O substituto legal do presidente é designado pelo
+conselho de diretores no caso do item 1 do artigo anterior, e nomeado pelo presidente no
 caso do item 2. 2. O substituto legal de diretor é nomeado pelo presidente
 ou por seu substituto legal.
 
@@ -124,8 +124,8 @@ interinos em número igual ao dos que não têm direito a voto.
 #### Seção 4 — Escritório
 
 **Art. 16.º** No escritório estabelecem-se seis departamentos — Assuntos Gerais,
-Ensino, Finanças, Publicação, Construção e Atividades — e designam-se funcionários
-em número variável.
+Doutrina, Finanças, Publicação, Construção e Empreendimentos — e designam-se
+funcionários em número variável.
 2. Os funcionários do parágrafo anterior são nomeados pelo presidente.
 
 #### Seção 5 — Assembleia geral
@@ -187,9 +187,10 @@ as finanças. 2. Aplicam-se aos auditores, no que couber, os arts. 7.º, parágr
 
 #### Seção 7 — Órgãos consultivos
 
-**Art. 25.º** Esta pessoa jurídica pode ter consultivos e conselheiros.
-2. Os consultivos e conselheiros são empossados pelo presidente dentre
-pessoas de saber e experiência.
+**Art. 25.º** Esta pessoa jurídica pode ter conselheiros (顧問) e consultores
+(相談役).
+2. Os conselheiros e consultores são empossados pelo presidente dentre pessoas de
+saber e experiência.
 3. O presidente pode convocar representantes dos membros das igrejas para
 ouvir sua opinião.
 
@@ -207,7 +208,8 @@ estabelecer relação de inclusão com esta pessoa jurídica);
 **Art. 27.º (Disposição de bens etc.)** A igreja deve obter a aprovação do
 presidente para praticar os atos abaixo; excetuam-se os atos dos itens 3 a 5
 quando fundados em necessidade urgente ou de pequena monta, e o ato do item 5
-quando relativo a período temporário:
+quando relativo a período temporário (no original impresso, «artigo 5.º», por
+gralha — o contexto é o item 5):
 
 &nbsp;&nbsp;&nbsp;&nbsp;1. dispor de imóveis ou de bens constantes do inventário,
 ou dá-los em garantia;
@@ -235,8 +237,8 @@ divide-se em patrimônio básico e patrimônio comum.
 e outros imóveis; 2. títulos públicos, debêntures e outros valores mobiliários;
 3. bens acumulados com o fim de conservação perpétua; 4. doações designadas como
 patrimônio básico.
-3. O patrimônio comum é o patrimônio que não seja básico, os frutos dos bens, as
-quotas das igrejas, as taxas de associação e as receitas em geral.
+3. O patrimônio comum é o patrimônio que não seja básico, os frutos dos bens, a
+contribuição das igrejas (分担金), a quota dos membros (会費) e as receitas em geral.
 
 **Art. 31.º (Constituição e alteração do patrimônio básico)** Para constituir ou
 alterar o patrimônio básico é necessário deliberação da assembleia geral.
@@ -288,7 +290,7 @@ janeiro de cada ano e termina em 31 de dezembro do mesmo ano.
 **Art. 43.º** Esta pessoa jurídica exerce a indústria de mineração, para contribuir
 à consecução de seus fins.
 2. A atividade do parágrafo anterior é administrada pelo Departamento de
-Atividades.
+Empreendimentos (事業部).
 3. Os rendimentos provenientes da atividade do parágrafo 1.º devem ser aplicados
 nas seguintes pessoas jurídicas e atividades: 1. esta pessoa jurídica; 2. pessoas
 jurídicas que esta assiste; 3. obras de interesse público que esta assiste.

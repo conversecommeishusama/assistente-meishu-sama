@@ -279,7 +279,7 @@ difusão fica muito lenta, e a salvação do Japão fica mais lenta". É a mesma
 lógica da sequência obrigatória da difusão descrita na Parte I (§2.1): a cura
 primeiro, a doutrina depois.
 
-### 25.3 Como a Sede acompanhava as igrejas
+### 25.3 O que a Sede examinava, e o que apenas autorizava
 
 A pergunta admite três respostas, e a primeira inverte a intuição.
 
@@ -297,7 +297,8 @@ examinado é a própria pessoa jurídica:
 inventário patrimonial será elaborado dentro de um mês após o término de cada
 exercício fiscal, com base na posição no fim do exercício anterior, e **deverá
 passar pela auditoria dos auditores e receber a aprovação da Assembleia**."*
-— 『栄光』nº 125, 10 de outubro de 1951 · `search2/sanko/kisoku.html`
+— Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro
+de 1951 · `search2/sanko/kisoku.html`
 
 O art. 17 define quem compõe essa Assembleia, e a definição é decisiva:
 
@@ -331,7 +332,7 @@ necessidade urgente) ou 「軽微のもの」 (de pequena monta) dispensa a apro
 Não há, em contrapartida, nenhum artigo que mande a Sede examinar caixa, livro ou
 conta de uma igreja.
 
-**A forma que de fato existia: reunião periódica, taquigrafada e publicada.** O
+**A forma que de fato existia: reunião periódica, taquigrafada e publicada.** A
 documentação não guarda formulário de inspeção, mas guarda as atas — e elas são
 abundantes, porque saíam impressas em 『栄光』 e 『地上天国』. O instrumento real
 de acompanhamento era a **reunião de dirigentes**, presidida ou orientada por um
@@ -340,7 +341,7 @@ diretor da Sede:
 | Série e data | Veículo | Composição |
 |---|---|---|
 | 「布教定例座談会」(1ª) · 04/09/1952 | 『地上天国』nº 42 · `search2/sanko/teirei1.html` | **um diretor da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
-| 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 · `search2/sanko/teirei3.html` | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+| 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
 | 「布教座談会」 · 03/10/1952 | 『栄光』nº 191 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
 | 「支部長懇談会」 — reunião de presidentes de filial · 28/04/1952 | 『地上天国』nº 37 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
 
@@ -363,7 +364,8 @@ A própria direção descreve o método como duas coisas somadas:
 *"Ultimamente, na Sede, **o Kyoshu Yōkō foi elaborado**, e os **encontros
 estreitos entre os dirigentes** vêm se multiplicando; parece aproximar-se o dia
 de retornar à unidade com a Revelação Divina."*
-— Sakai Takao, presidente de igreja, 「布教座談会」『栄光』nº 191, 14 de janeiro de 1953 ·
+— Sakai Takao, presidente de igreja, 「布教座談会」, 『栄光』nº 191, 14 de janeiro de
+1953 ·
 `search2/sanko/hukyo.html`
 
 Padronizar por documento escrito e multiplicar reuniões: eis a resposta à
@@ -379,7 +381,7 @@ titulares nomeados um a um:
 | Leste de Hokkaidō · Oeste de Hokkaidō | Leste e Oeste de Hokkaidō |
 | Tōhoku · Ōu | Iwate, Miyagi, Fukushima · Aomori, Akita, Yamagata |
 | Leste de Kantō · Oeste de Kantō | Tōkyō, Ibaraki, Chiba, Saitama, Yamanashi · Tochigi, Gunma |
-| Shinetsu | Kanagawa, Shizuoka |
+| Tōkai (nome a confirmar) | Kanagawa, Shizuoka |
 | Chūkyō | Aichi, Gifu, Mie |
 | Shinetsu | Niigata, Nagano |
 | Hokuriku | Toyama, Ishikawa, Fukui |
@@ -407,8 +409,8 @@ escrituração.
 **O que não existe na documentação.** Não há procedimento de exame de contas de igreja
 pela Sede; não há formulário, periodicidade nem regulamento de auditoria. E há uma
 razão documental precisa para essa ausência: o art. 46 do Regulamento remete os
-procedimentos às **regulamento interno** — 「この規則の施行に関する細則は、**責任役員が
-定める**」 —, e as regulamento interno **não estão na documentação**. É ali que qualquer rotina de
+procedimentos aos **regulamentos internos** — 「この規則の施行に関する細則は、**責任役員が
+定める**」 —, e os regulamentos internos **não estão na documentação**. É ali que qualquer rotina de
 fiscalização estaria escrita. A ausência é, portanto, **lacuna documental
 declarada**, e não conclusão negativa: não se pode afirmar que não havia
 fiscalização; pode-se afirmar que a documentação não a documenta.
@@ -422,10 +424,11 @@ como ameaça à instituição é a do fisco, e foi por ali que veio a persecuç�
 
 Uma última nota, sobre a direção da auditoria *dentro* das igrejas. A auditoria
 interna que a documentação registra é a **da própria unidade sobre si mesma**: no
-organograma da igreja do Havaí (capítulo 16) há **seis auditoria** ao lado do tesoureiro, e a
-assembleia anual aprova o 「会計報告」 — o relatório contábil do exercício
-(`search2/kikou2/hawai18.html`). O padrão é antigo: já no estatuto da Terapêutica de Purificação
-普及会, 「監事は会の財務を監査す」 (`search1/ni/nihon12.html`). A igreja auditava
+organograma da igreja do Havaí (capítulo 16) há **seis auditores** ao lado do tesoureiro, e a
+assembleia anual aprova o 「会計報告」, o relatório contábil do exercício
+(`search2/kikou2/hawai18.html`). O padrão é antigo: já no estatuto da Associação de Difusão
+da Terapêutica de Purificação, 「監事は会の財務を監査す」 — "os auditores auditam as
+finanças da associação" (`search1/ni/nihon12.html`). A igreja auditava
 as próprias contas e as submetia à sua assembleia; a Sede aprovava seus atos.
 
 ---
@@ -1238,17 +1241,17 @@ Kabutochō há muitos espíritos de rancor, e eles aderem às notas que de lá s
 que compreendi isso, deixei a especulação e comecei uma mina. Assim, o dinheiro
 que os fiéis trazem é todo riqueza pura.**"*
 
-A expressão **donativo** — "riqueza pura" — é o elo entre a doutrina e a prática
-financeira: o que entra na obra pela via da gratidão é donativo; o que entra pela
+A expressão usada é **jōzai** — «riqueza pura» —, e é o elo entre a doutrina e a prática
+financeira: o que entra na obra pela via da gratidão é riqueza pura; o que entra pela
 especulação, não.
 
 ### 29.2 Uma operação efetivamente existente
 
-A expectativa não ficou no papel. Há na documentação a documentação de uma **mina
-operada por uma igreja**: o **mina de Moriyoshi**, em Akita, província de aldeia de Hinokinai, distrito de Senboku,
-sob a **Igreja Média Kōei**. Um relato de 1949 descreve a inspeção geológica do local
-por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e
-**engenheiro de minas**:
+A expectativa não ficou no papel. Há na documentação o registo de uma **mina operada por uma
+igreja**: a **mina de Moriyoshi** (森吉鉱山), em Hinokinai, distrito de Senboku, província de
+Akita, sob a **Igreja Média Kōei**. Um relato de 1949 descreve a inspeção geológica do local
+por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e **engenheiro de
+minas**, «veterano de minas» na expressão do próprio relato:
 
 > 「昭和十九年十一月二十九日、秋田県仙北郡檜木内村所在の**森吉鉱山**の地質鉱床
 > 調査のため箱根別院の原清作氏と同行当地に出張しました。」
@@ -1256,7 +1259,7 @@ por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e
 *"Em 29 de novembro de 1944 fui em missão ao local, acompanhado do Sr. Hara Seisaku, do
 Templo Anexo de Hakone, para a **inspeção geológica e de jazidas da mina de Moriyoshi**, situado em
 Hikinai, distrito de Senboku, província de Akita."*
-> — 「奇蹟」, 『地上天国』3号, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+— 「奇蹟」, 『地上天国』nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
 
 Nos relatos de 1951, a mina aparece **em plena operação**, e como **obra da
 igreja**:
@@ -1269,11 +1272,11 @@ igreja**:
 Kōei**, estávamos com o ânimo de levar isso até o fim; […] e assim ficou decidido que eu
 me encarregaria da construção de uma usina de concentração de minério de cerca de 50 m²."*
 
-> — 「鉱山においての奇蹟の数々」, 『栄光』109号, 20 de junho de 1951 ·
-> `search2/okage/ko/qkozan02.html`
+— 「鉱山においての奇蹟の数々」, 『栄光』nº 109, 20 de junho de 1951 ·
+`search2/okage/ko/qkozan02.html`
 
-Os relatos descrevem a construção de uma **planta de concentração de minério**
- e um acidente evitado — matéria de **relato de graça**, isto é, narrativa de
+Os relatos descrevem a construção de uma **planta de concentração de minério** (選鉱工場,
+*senshō kōjō*) e um acidente evitado — matéria de **relato de graça**, isto é, narrativa de
 gratidão. O que os relatos **não** descrevem é produção, rendimento ou resultado
 financeiro.
 
@@ -1292,9 +1295,9 @@ fonte significativa de recursos para as construções. Os documentos financeiros
 período — o art. 30 do Regulamento, o artigo de Meishu-Sama sobre a receita da
 igreja, os relatos de ofertório — apontam todos na direção da **contribuição
 voluntária dos fiéis** e do **serviço voluntário de mãos** como fontes principais
-das obras. Não há, na documentação, balanço, produção declarada ou prestação de contas
-da Departamento de Empreendimentos; e a ausência é notável justamente porque o período **tem** documentos
-de contabilidade da pessoa jurídica.
+das obras. Não há, na documentação, balanço, produção declarada ou prestação de contas do Departamento
+de Empreendimentos; e a ausência é notável justamente porque o período **tem** documentos de
+contabilidade da pessoa jurídica.
 
 A conclusão cuidadosa é, portanto, que a mineração foi uma **expectativa
 doutrinária com uma realização morna e documentalmente silenciosa** — e não uma
@@ -1325,7 +1328,7 @@ oitenta**; e por aí se vê quão grande foi a operação."*
 
 > — 「発端」, 『法難手記』, 30 de outubro de 1950 · `search1/ho/hottan.html`
 
-Foram detidos, entre outros, o secretário **Inoue Motokichi (Inoue Motokichi)** e o responsável da
+Foram detidos, entre outros, o secretário **Inoue Motokichi** e o responsável da
 construção em Atami, cujo nome a fonte grafa em kanji. Meishu-Sama ficou sob
 interrogatório por vinte e dois dias; o episódio "chegou a um termo" em **12 de
 julho** de 1950. Em 30 de maio, cinquenta policiais fizeram nova busca no
@@ -1336,16 +1339,17 @@ grafias: **Inoue Motokichi**, editor de 『栄光』 preso em 8 de maio de 1950,
 **Inoue Fukuo**, "meu secretário", preso na onda de outubro do mesmo ano. Não há
 documento que declare tratar-se da mesma pessoa, mas a coincidência de função,
 de casa e de período é total, e a hipótese de duas pessoas distintas com o mesmo
-cargo no mesmo ano é implausível. Adota-se aqui a forma **Inoue Motokichi (Inoue
-Motokichi)**, que é a que assina os textos da época, registrando-se a variante
+cargo no mesmo ano é implausível. Adota-se aqui a forma **Inoue Motokichi**, que é a
+que assina os textos da época, registando-se a variante
 tal como aparece em 『法難手記』.
 
 ![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
 
-![11 de outubro de 1950 — abertura da primeira audiência de julgamento no Tribunal Distrital de Shizuoka (静岡地方裁判所). [Fotografia da época; data e local conforme a legenda original.]](fotografias/kohann_shizuoka_1950.jpg)
+![11 de outubro de 1950 — abertura da primeira audiência de julgamento no Tribunal Distrital de Shizuoka (*Shizuoka Chihō Saibansho*). [Fotografia
+da época; data e local conforme a legenda original.]](fotografias/kohann_shizuoka_1950.jpg)
 
-A acusação era **econômica**: evasão fiscal, suborno (suborno, de
-¥300.000), ocultação de patrimônio. **Nada religioso.** É o próprio
+A acusação era **econômica**: evasão fiscal, suborno (de ¥300.000) e ocultação de
+patrimônio. **Nada religioso.** É o próprio
 Meishu-Sama quem o classifica, e com uma distinção que vale registrar:
 
 > 「そうして私の今回の事件は、**宗教上には何ら関係がなく、単なる脱税問題が主で
@@ -1353,8 +1357,8 @@ Meishu-Sama quem o classifica, e com uma distinção que vale registrar:
 > — 「はしがき」, 『法難手記』 · `search1/ha/hasi03.html`
 
 *"E como o incidente desta vez **não tem relação alguma com o religioso e é
-sobretudo uma questão de evasão fiscal, o adequado é chamá-lo não de 'provação'
-(provação da Lei) e sim de 'provação da lei escrita' (provação da lei escrita)."*
+sobretudo uma questão de evasão fiscal, o adequado é chamá-lo não de "provação da Lei"
+(*hōnan*) e sim de "provação da lei escrita" (*hōritsunan*)."*
 
 O primeiro julgamento foi em **11 de outubro de 1950**, no Tribunal Distrital de
 Shizuoka. Meishu-Sama negou integralmente as acusações, "com palavras cheias de
@@ -1372,8 +1376,8 @@ caso desta provação, quer no caso do incidente da Reiyūkai, trata-se de evas�
 ocultação de patrimônio — **e sobre o conteúdo religioso não há uma palavra, uma frase
 sequer na denúncia.**"*
 
-> — 「法難裁判傍聴記（下）」, 『栄光』76号, 1 de novembro de 1950 ·
-> `search2/kikou2/honan02.html`
+— 「法難裁判傍聴記（下）」, 『栄光』nº 76, 1 de novembro de 1950 ·
+`search2/kikou2/honan02.html`
 
 ### 30.2 A leitura que a igreja fez do episódio
 
@@ -1393,7 +1397,7 @@ extremamente descuidada e frouxa, e a supervisão, insuficiente**. Se não fosse
 este caso, essa frouxidão teria semeado, sem que o soubéssemos, muitas sementes
 de desgraça; e assim penso que **uma grande provação se resolveu em pequena**.
 Creio firmemente que Deus, valendo-se das mãos das autoridades, **nos concedeu a
-graça de uma grande retificação **…"*
+graça de uma grande retificação**…"*
 
 Três afirmações estão aqui, e todas são do próprio Meishu-Sama: (1) a
 administração era **descuidada e frouxa**; (2) a **supervisão era insuficiente**;
@@ -1410,7 +1414,7 @@ O elo causal está **documentado em três fontes independentes**.
 > 「と言うのは、**去年の事件以来、この教団の組織を改めて、今日までやったという
 > 事は、こんなに緯になるというか、ただ広がりっぱなしになっていたのをキュッと
 > 縮めて、いったん経で締めたんですね。**」
-> — 「御講話」, 『御教え集』3号, 25 de novembro de 1951 · `search1/kouwa/s261021.html`
+> — 「御講話」, 『御教え集』nº 3, 25 de novembro de 1951 · `search1/kouwa/s261021.html`
 
 *"Ou seja: **desde o incidente do ano passado reformamos a organização desta
 religião, e o que fizemos até hoje foi isto — aquilo que, por assim dizer,
@@ -1430,7 +1434,7 @@ próprio momento da reforma:
 > 結成し、発足した事も御存知の通りで、それから一ヵ年の月日を閲したのである。
 > **その間本教に対する官憲の大弾圧等もあって、実に波乱万丈の昨年であった。**
 > ……その御言葉通り、**暫く雌伏状態にあった本教も**、いよいよ春光を浴びて……」
-> — 「巻頭言」, 『地上天国』21号, 25 de fevereiro de 1951 · `search2/kikou2/kanto21.html`
+> — 「巻頭言」, 『地上天国』nº 21, 25 de fevereiro de 1951 · `search2/kikou2/kanto21.html`
 
 *"Também nesta religião, como já se sabe, decidiu-se fazer **a reforma de todo o
 organismo da igreja**, e chegou-se finalmente ao dia do *risshun*, 5 de
@@ -1440,7 +1444,7 @@ do Japão e constituímos de novo a Igreja Messiânica Mundial — e decorreu um
 **Nesse intervalo houve também a grande repressão das autoridades contra esta
 religião, e foi deveras um ano de mil vicissitudes.** … Conforme aquelas
 palavras, **também esta religião, que por algum tempo permaneceu em estado de
-recolhimento **, banhada agora pela luz da primavera…"*
+recolhimento**, banhada agora pela luz da primavera…"*
 
 O texto encadeia, em três frases, exatamente a sequência que este capítulo
 propõe: **o ano da grande repressão → o recolhimento → a reforma de todo o
@@ -1461,7 +1465,7 @@ havia uma **campanha articulada** para provocar a repressão:
 > 弾圧せしめようとした謀略**である、一方一味の者が来て**近く埼玉及び福島の
 > 二県に問題発生し、それが原因となって大弾圧がある**から、今の中に手を打たない
 > と危険であると、**暗に運動費を必要とするような口吻を漏らす**等の事もあった」
-> — 「読売紙の記事に就て」, 『光』31号, 15 de outubro de 1949 ·
+> — 「読売紙の記事に就て」, 『光』nº 31, 15 de outubro de 1949 ·
 > `search1/yo/yomiuri3.html`
 
 *"Por esses meios, era um conluio para fazer crer que esta religião espalha
@@ -1495,7 +1499,7 @@ descreve o mecanismo completo, e o descreve com o nome dos lugares e a função 
 > 等の手段をもって本教の信用を傷つけ、……**ある人物を通じて近く本教に対し当局の大弾圧
 > がある**によって、その対策を講ぜざるべからずとなし、**暗に多額の運動費を支出せしむる
 > よう申来る**等、その手段の悪辣なる驚くべきものがある」
-> — 「謀略的ユスリ — 埼玉、福島両県下における本教中傷事件」, 『光』28号, 24 de setembro de 1949
+> — 「謀略的ユスリ」, 『光』nº 28, 24 de setembro de 1949 · `search1/hi/hikari02.html`
 > (aviso impresso enviado às polícias e aos jornais das duas províncias)
 
 *"Ultimamente, sobretudo **em torno das províncias de Saitama e Fukushima**, fabricam-se
@@ -1548,9 +1552,9 @@ crescimento; tratá-la como mero reflexo defensivo seria ler menos do que o
 documento diz.
 
 O que o episódio muda, em definitivo, é o **sentido** da reforma. Ela deixa de
-ser apenas reorganização administrativa e passa a ser o que o editorial de
-fevereiro lhe dá por nome: o fim de um **recolhimento** — um período de recolhimento — e
-o início de uma etapa nova, sob "novo organismo".
+ser apenas reorganização administrativa e passa a ser, no nome que o editorial de
+fevereiro lhe dá, o fim do **recolhimento** e o início de uma etapa nova, sob «novo
+organismo».
 
 ---
 

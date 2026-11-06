@@ -252,7 +252,7 @@ Se não conseguirdes aceitar o que expus até aqui, então, recebendo a graça d
 
 Por isso, como disse no início, este curso de preparação para receber o Ohikari é simples e qualquer um, seja idoso ou criança, o entende imediatamente; mas, por outro lado, justamente por ser demasiado simples, pode haver pontos difíceis de compreender. Se vos tornardes como uma folha em branco, compreendereis de imediato. Não se trata de modo algum de embuste. Creio que, vendo diante de vós a realidade de doentes que se curam, havereis de compreender. Como a cura é por demais eficaz, pode parecer mágica, mas nós estamos ensinando a "semente". Essa "semente" é que "a doença é um processo de purificação", e que, para dissolver rapidamente as toxinas durante essa purificação, utiliza-se a graça divina, isto é, o Elemento Fogo.
 
-Esse Elemento Fogo é a graça divina que emana do Ohikari que, no terceiro e último dia, o professor [ ] vos entregará.
+Esse Elemento Fogo é a graça divina que emana do Ohikari que, no terceiro e último dia, o professor […] vos entregará.
 
 Se, colocando esse Ohikari ao pescoço, praticardes o Johrei, a Luz divina será irradiada da mão através do corpo espiritual do ser humano. Assim, todos vós vos tornareis instrumentos de Deus capazes de curar todas as doenças.
 

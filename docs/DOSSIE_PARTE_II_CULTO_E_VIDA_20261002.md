@@ -1294,9 +1294,10 @@ empurra para ela. É uma inversão completa do enquadramento moderno: a dieta n�
 prescreve por proibição, corrige-se o solo, e o paladar se encarrega do resto.
 
 **Quanto ao tipo de vida que Meishu-Sama levava**, a documentação tem uma fonte direta e
-detalhada: o relato de **Inoue Motokichi (Inoue Motokichi)**, secretário e editor de
-『栄光』 que o acompanhava de perto,
-publicado na 『光』edição extra de 30 de maio de 1949 sob o título 「自観大先生の御日常」. É
+detalhada: o relato de **Inoue Motokichi**, secretário e editor de 『栄光』 que o
+acompanhava de perto,
+publicado na edição extra de 『光』 de 30 de maio de 1949, sob o título
+「自観大先生の御日常」. É
 um documento de valor excepcional, e convém apresentá-lo pelo que ele efetivamente
 registra.
 
@@ -1353,8 +1354,8 @@ surpreende:
 > られるが、全く百文字単位の一気呵成の早業である、「**自分はアメリカ式能率
 > 主義**」とおっしゃっている」
 
-*"Depois da refeição, caligrafa imediatamente as obras e as 御光 solicitadas pela
-organização e pela Igreja Miroku. Escreve **com a mão direita, cujo dedo indicador não
+*"Depois da refeição, caligrafa imediatamente as obras e as caligrafias de luz
+solicitadas pela organização e pela Igreja Miroku. Escreve **com a mão direita, cujo dedo indicador não
 consegue flexionar-se; mas a velocidade é verdadeiramente supersônica: no caso dos 'Luz',
 seiscentas folhas por hora** […] quando escreve cem caracteres '光' com a direita,
 acrescenta com a esquerda o traço do selo […] diz **'isto é produção em série'**; é de
@@ -1415,7 +1416,7 @@ alimentos integrais, frescos, sem aditivos e cultivados sem veneno, com reduçã
 espontânea do consumo de carne decorrente da melhoria do paladar — não como
 abstenção, mas como consequência.
 
-Resta um ponto sobre o qual a documentação é silencioso: glúten especificamente. Não há
+Resta um ponto sobre o qual a documentação é silenciosa: glúten especificamente. Não há
 nenhuma passagem sobre trigo, sobre a fração protéica do trigo, nem sobre
 intolerâncias alimentares. Qualquer atribuição de posição a Meishu-Sama nesse ponto
 seria invenção.
@@ -1445,7 +1446,7 @@ artigo seguinte, ao classificar o patrimônio, nomeia as receitas:
 > 生ずる果実、教会分担金、会費及び一般の収入**とする」
 
 *"Art. 30 — […] O patrimônio comum compreende os bens que não sejam patrimônio
-básico, os frutos desses bens, a **contribuição das igrejas **, as
+básico, os frutos desses bens, a **contribuição das igrejas**, as
 **quotas dos membros (kaihi)** e as receitas gerais."*
 
 Três rubricas, portanto, e a terminologia é reveladora: rateio entre igrejas é **repartição de
@@ -1465,7 +1466,7 @@ igreja no período: uma estrutura formal, com três auditores eleitos (art. 24) 
 prestação de contas anual.
 
 Convém notar a direção da auditoria, para que a leitura não a inverta: os três
-auditor do art. 24 auditam **as finanças da pessoa jurídica**, e o inventário do art.
+auditores do art. 24 auditam **as finanças da pessoa jurídica**, e o inventário do art.
 34 vai, após a auditoria, «à **aprovação da Assembleia**» — que pelo art. 17 é o
 colégio dos presidentes de igreja. Quem tem de prestar contas à assembleia dos
 presidentes é a Sede. O que esta exerce sobre as unidades é aprovação prévia de
@@ -1537,7 +1538,7 @@ coincide com o desenho legal: quem administra é o presidente.
 
 ### 21.3 Remessas das unidades para a região e a Sede
 
-O regulamento responde por implicação inequívoca, ao elencar a igrejarateio entre igrejas entre as
+O regulamento responde por implicação inequívoca, ao elencar o rateio entre igrejas entre as
 receitas da pessoa jurídica (art. 30) e ao autorizar a cobrança da taxa religiosa sobre as
 igrejas (art. 29). Isso estabelece que **as unidades contribuíam** com a Sede. Mas o
 regulamento não fixa valores, percentuais nem periodicidade — deixa isso para as
@@ -1595,13 +1596,13 @@ taxa do curso e inclui nela, expressamente, o **honorário do instrutor**:
 > — 「放送に対する抗議文」, 23 de abril de 1949
 
 Segundo, a existência de renda própria do ministro, distinta da oferta ao altar: a
-**oferta por Johrei ministrado** — a oferta que o fiel faz a quem lhe ministrou Johrei — e a
+**oferta pelo Johrei ministrado** — a que o fiel faz a quem lhe ministrou — e a
 **oferta de gratidão pela proteção**. É o que a mesa-redonda de 1953 registra como receita corrente dos
 dirigentes:
 
 > 「最近は目立って**御守護御礼**も、**御奉謝金**（信者さんが他人を御浄霊した場合に
 > 受ける御礼及び家族を御浄霊させて戴いた場合の御礼）も増えて来ましたが……」
-> — 布教座談会, 『栄光』191号, 14 de janeiro de 1953
+> — 布教座談会, 『栄光』nº 191, 14 de janeiro de 1953 · `search2/sanko/hukyo.html`
 
 Terceiro, e é o ponto que fecha a questão doutrinariamente: **os objetos que
 Meishu-Sama escrevia tinham valor fixo, e cobrar acima dele era furto.** O aviso de
@@ -1611,29 +1612,30 @@ Meishu-Sama escrevia tinham valor fixo, e cobrar acima dele era furto.** O aviso
 > いる**にかかわらず、**少しでも多い金を得るとしたら、その分だけは盗みの罪を
 > 犯す事になる**から、何程一生懸命信仰しても、それだけ御蔭は減る事になるから
 > よく心得べきである。」
-> — 「注意」, 『栄光』191号, 14 de janeiro de 1953 (Anexo G)
+> — 「注意」, 『栄光』nº 191, 14 de janeiro de 1953 (Anexo G) · `search1/ti/tyui02.html`
 
 Quarto, a contrapartida da dedicação integral. O portador de qualificação não devia
 ter profissão — o que, na prática, significava que vivia do exercício do ministério:
 
 > 「**資格者は職業を持っていてはならない、純粋な御奉仕者であらねばならない**」
-> — comunicação interna citada em 「先生」, 『地上天国』54号, 25 de novembro de 1953
+> — comunicação interna citada em 「先生」, 『地上天国』nº 54, 25 de novembro de 1953 ·
+> `search2/kikou2/sensei.html`
 
 **O que se pode inferir com segurança.** Se o ministro de dedicação integral não
-tinha profissão, e se a instituição lhe pagava honorário por curso e ele recebia oferta por Johrei ministrado
-por Johrei, então a remuneração existia **por serviço e por oferta**, e não como
+tinha profissão, e se a instituição lhe pagava honorário por curso e ele recebia oferta
+pelo Johrei que ministrava, então a remuneração existia **por serviço e por oferta**, e não como
 salário fixo pago pela Sede. A inferência é corroborada pelo vocabulário que o
-artigo de 1953 põe na boca do dirigente corrompido — **promoção, aumento de salário, tratamento**,
-"promoção, aumento de salário, tratamento" —: só se pede aumento de salário onde
+artigo de 1953 põe na boca do dirigente corrompido — **promoção, aumento de salário,
+tratamento** —: só se pede aumento de salário onde
 salário existe, e o artigo o apresenta justamente como a linguagem que a reforma
 queria extirpar.
 
 **O que não está documentado.** Não há, na documentação consultada, tabela de
 vencimentos, contrato de trabalho, critério de fixação de honorário por grau, nem
-registro de pagamento mensal pela Sede a ministros. As buscas por *salário*, *salário*,
-*salário*, *salário* e *honorário* não devolvem material administrativo pertinente: as
-ocorrências de *mensalidade* referem-se a aulas de arte, e as demais, a contextos alheios
-à administração eclesiástica. Nem o Regulamento de 1951 nem os relatórios de
+registro de pagamento mensal pela Sede a ministros. As buscas pelos quatro modos japoneses
+de dizer «salário» — *kyūryō*, *hōkyū*, *gekkyū* e *kyūyo* — e por «honorário» não devolvem
+material administrativo pertinente: as ocorrências de *mensalidade* referem-se a aulas de
+arte, e as demais, a contextos alheios à administração eclesiástica. Nem o Regulamento de 1951 nem os relatórios de
 reorganização tratam de vínculo empregatício com oficiantes ou ministros — o que,
 por si, não prova ausência de remuneração, apenas que ela não era objeto do
 estatuto.
@@ -1651,9 +1653,9 @@ preço, mas como sustento de quem intercede (capítulo 12.3).
 A busca pelo termo *dízimo* ("um décimo") na documentação retorna apenas ocorrências
 alheias: o décimo de grau em medição de temperatura, a redução de um décimo na
 legislação, etc. **Não há na documentação da época nenhuma passagem em que Meishu-Sama fale
-de dízimo.** As categorias financeiras que ele efetivamente usou são outras: taxa religiosa
-(taxa religiosa), rateio entre igrejas (rateio entre igrejas), quota do membro (quota do membro), contribuição
-(contribuição) e doação. Nenhuma delas tem caráter proporcional à renda.
+de dízimo.** As categorias financeiras que ele efetivamente usou são outras: a **taxa
+religiosa**, o **rateio entre igrejas**, a **quota do membro**, a **contribuição** e a
+**doação**. Nenhuma delas tem caráter proporcional à renda.
 
 Essa ausência é significativa, e articula-se com a orientação pastoral registrada
 acima. Um dízimo é uma obrigação **proporcional e verificável** — pressupõe
