@@ -13,12 +13,9 @@ segue a **importância do conteúdo**.
 
 ## Como regerar
 
-```
-.venv/bin/python scripts/montar_volume_unico.py
-.venv/bin/python scripts/gerar_pdf_dossie_difusao.py \
-    DOSSIE_DIFUSAO_20261020 "A difusão na época de Meishu-Sama"
-DOCX_CABECALHO="A difusão na época de Meishu-Sama" \
-.venv/bin/python scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_20261020
+```.venv/bin/python scripts/montar_volume_unico.py.venv/bin/python scripts/gerar_pdf_dossie_difusao.py \
+ DOSSIE_DIFUSAO_20261020 "A difusão na época de Meishu-Sama"
+DOCX_CABECALHO="A difusão na época de Meishu-Sama" \.venv/bin/python scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_20261020
 ```
 
 Os capítulos novos estão em `docs/volume_novo/`; a montagem lê esses arquivos e
@@ -59,7 +56,7 @@ despesas de deslocamento e hospedagem. **O Ohikari não é item da lista.** Ele 
 conferido ao fim do curso — é por isso que os relatos dizem "por mil ienes de
 oferta se recebe o Ohikari": o valor é do curso.
 
-**A fala sobre não cobrar o que é de Deus existe, e é esta.** Em 『御光話録』15号,
+**A fala sobre não cobrar o que é de Deus existe, e é esta.** Em 『御光話録』nº 15,
 de 20 de dezembro de 1949: 「以前、ただで治療しろって言う人がいましたが、
 **勿論、観音様は御礼なんかいらないが、取り次ぎする人は家に住んでいるんだし、
 まさかカスミを食って生きるわけには行かない**ですからね」 — *"antes havia quem
@@ -79,8 +76,7 @@ qualifica o gesto como «insultar gravemente a Deus». Tratar a coisa como compr
 venda, nos dois sentidos, é o erro.
 
 **A correção.** Não é exato dizer que o Ohikari passou a ser gratuito: ele manteve
-**valor de referência fixo**, e em 1953 Meishu-Sama ainda fala desse valor
-(「御守はじめその他の私のかいたものの値は一定している」). O que mudou não foi a
+**valor de referência fixo**, e em 1953 Meishu-Sama ainda fala desse valor. O que mudou não foi a
 gratuidade do objeto, e sim **a natureza da cobrança**: do preço da peça para a
 taxa do curso, e do pagamento à divindade para o sustento do intermediário. O
 valor numérico de 1953 continua não documentado — o aviso fixa o princípio, não a
@@ -107,7 +103,7 @@ a horta caseira entre os membros, a produção de proteína animal orgânica e o
 insumo biológico vendido ao produtor convencional como condicionador de solo.
 
 **Água, sal e arroz.** O capítulo 8 apresenta a instrução de 23 de abril de 1949
-como resposta direta: são a oferenda xintoísta (御神饌), são comida de
+como resposta direta: são a oferenda xintoísta (go-shinsen), são comida de
 deus-dragão, e ao Kōmyō Nyorai oferta-se comida humana.
 
 **Sem rastro de versões e sem trilha do acervo.** Nenhuma comparação com edições
@@ -128,7 +124,7 @@ herdados. Uma leitura corrida ainda encontrará frases de transição que pressu
 a divisão antiga, e sobreposições entre capítulos vizinhos — 16 e 17, e 5 e 6.
 
 **Japonês em prosa — resolvido.** `scripts/glossas_volume.py` reúne cerca de 270
-termos e a função `glosar()`, em `montar_volume_unico.py`, insere a tradução
+termos e a função `glosar`, em `montar_volume_unico.py`, insere a tradução
 entre parênteses na primeira ocorrência de cada capítulo. A mesma glosa vale para
 as células de tabela e para os títulos de artigo nas linhas de referência, uma
 única vez no volume: 404 glosas.

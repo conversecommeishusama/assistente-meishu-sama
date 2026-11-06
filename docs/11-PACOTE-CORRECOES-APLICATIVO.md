@@ -31,15 +31,15 @@ do Supabase estão OK; o problema é que a senha do cadastro nunca ficou
 utilizável.
 
 **Achado de código (causa raiz candidata, não 100% confirmada):**
-`goshinsho/routes.py` — `login()` faz `password.strip()` antes de comparar
-(linha ~571); `cadastro()` **não** faz `strip()` na senha antes de enviar
+`goshinsho/routes.py` — `login` faz `password.strip` antes de comparar
+(linha ~571); `cadastro` **não** faz `strip` na senha antes de enviar
 pro Supabase (linha ~600). Se a senha digitada no cadastro tiver qualquer
 espaço (autopreenchimento de teclado, copiar/colar), fica salva com o
 espaço, mas o login sempre remove o espaço — o usuário nunca mais consegue
 entrar com a senha que escolheu.
 
-**Correção sugerida:** remover `.strip()` de `login()` OU adicionar
-`.strip()` em `cadastro()` — escolher uma convenção e manter consistência
+**Correção sugerida:** remover `.strip` de `login` OU adicionar
+`.strip` em `cadastro` — escolher uma convenção e manter consistência
 entre as duas rotas.
 
 **Prioridade:** máxima do pacote — pode estar barrando cadastros reais
@@ -52,17 +52,17 @@ permanentemente, sem gerar nenhum erro visível para a equipe.
 
 Causa raiz confirmada do achado "app não encontra o ensinamento 'os
 japoneses e as doenças mentais' na íntegra, mesmo pedindo repetidamente":
-`goshinsho/services/teaching_article_service.py::find_best_article()` faz
+`goshinsho/services/teaching_article_service.py::find_best_article` faz
 o casamento de título por sobreposição literal de tokens, sem nenhuma
 normalização de plural/singular.
 
 Testado ao vivo:
 - `"Os Japoneses e a Doença Mental"` (singular, título indexado) → score
-  **0.98**
+ **0.98**
 - `"os japoneses e as doenças mentais"` (plural — que é o título **oficial
-  correto** registrado na spec de tradução do livro!) → score **0.26**,
-  abaixo do `min_score=0.55` usado em
-  `find_explicit_article_in_question()` (`conversation_mode.py:133`)
+ correto** registrado na spec de tradução do livro!) → score **0.26**,
+ abaixo do `min_score=0.55` usado em
+ `find_explicit_article_in_question` (`conversation_mode.py:133`)
 
 Resultado prático: `ARTIGO_ID` nunca é injetado no contexto
 (`conversation_context.py:209`), a busca de artigo travado
@@ -81,11 +81,11 @@ removido — inconsistência na lógica de normalização entre artigos.
 
 **Correção sugerida:**
 1. Normalizar singular/plural (stemming leve ou lematização de PT, ex.
-   RSLP do NLTK ou spaCy `pt_core_news`) antes do score de matching de
-   título — vale para qualquer busca por título do sistema, não só este
-   artigo.
+ RSLP do NLTK ou spaCy `pt_core_news`) antes do score de matching de
+ título — vale para qualquer busca por título do sistema, não só este
+ artigo.
 2. Consertar a regra/lista de prefixos de coleção removidos no
-   `title_core_normalized` para cobrir "Jikan Sosho" também.
+ `title_core_normalized` para cobrir "Jikan Sosho" também.
 
 ---
 
@@ -121,7 +121,7 @@ article.scrollIntoView({ behavior: "smooth", block: "end" });
 Quando uma nova mensagem é adicionada ao chat, a página rola para alinhar
 o **fim** do elemento com o fim da viewport — mostrando o final da
 resposta em vez do início. O usuário precisa rolar manualmente para cima
-toda vez para começar a ler do começo. Mesmo padrão em `scrollToBottom()`
+toda vez para começar a ler do começo. Mesmo padrão em `scrollToBottom`
 (linhas 488-489, `window.scrollTo({top: document.body.scrollHeight})`),
 chamada nas linhas 999 e 1059.
 
@@ -131,23 +131,23 @@ chamada nas linhas 999 e 1059.
 ### 3.3 Compartilhar: sem menu visível, sem a pergunta, link quebrado
 **Task #23**
 
-Quatro problemas na função `shareResponse()`
+Quatro problemas na função `shareResponse`
 (`static/js/app.js:738-753`):
 
 1. **Não abre um menu de compartilhamento visível** — usa
-   `navigator.share()` (share sheet nativo, só existe em alguns
-   navegadores/contextos) com fallback silencioso para
-   `clipboard.writeText()`, sem feedback além de um texto temporário
-   "Copiado" no próprio botão.
+ `navigator.share` (share sheet nativo, só existe em alguns
+ navegadores/contextos) com fallback silencioso para
+ `clipboard.writeText`, sem feedback além de um texto temporário
+ "Copiado" no próprio botão.
 2. **Conteúdo compartilhado é só a resposta**, sem a pergunta original
-   junto (`article.querySelector(".bubble").textContent`).
+ junto (`article.querySelector(".bubble").textContent`).
 3. **Grave: o link compartilhado dá 404 para todo mundo.** A URL aponta
-   para `/resposta/<messageId>` (linha 741), mas essa rota **não existe**
-   em `goshinsho/routes.py` (confirmado via grep — zero ocorrências). Não
-   é uma questão de assinante vs. não-assinante: a rota nunca foi
-   implementada, então ninguém consegue abrir um link compartilhado.
+ para `/resposta/<messageId>` (linha 741), mas essa rota **não existe**
+ em `goshinsho/routes.py` (confirmado via grep — zero ocorrências). Não
+ é uma questão de assinante vs. não-assinante: a rota nunca foi
+ implementada, então ninguém consegue abrir um link compartilhado.
 4. **Sugestão do usuário:** ao abrir o link compartilhado, a pessoa
-   deveria ser direcionada para a tela de cadastro.
+ deveria ser direcionada para a tela de cadastro.
 
 **Correção sugerida:** criar a rota `/resposta/<message_id>` (decidir se
 mostra prévia + CTA de cadastro, ou exige login), incluir a pergunta no
@@ -162,7 +162,7 @@ English, cabeçalho, abas e placeholder traduzem corretamente, mas o
 banner inferior inteiro ("Cadastro necessário", texto explicativo, os 3
 chips) continua em português. Ver screenshot `10_english_applied.png`.
 Provável elemento sem atributo `data-i18n` ou fora do escopo de
-`translateInterface()` em `static/js/app.js`.
+`translateInterface` em `static/js/app.js`.
 
 ### 3.5 Cor verde de fundo do logo — precisa localização exata
 **Task #24**
@@ -188,7 +188,7 @@ print/screenshot) antes de identificar o arquivo certo a ajustar.
 **Task #15**
 
 `SES_CONTACT_TO_EMAIL` não está definido no `.env`, então
-`send_contact_emails()` (`goshinsho/services/email_service.py`) nunca
+`send_contact_emails` (`goshinsho/services/email_service.py`) nunca
 envia a notificação de admin quando alguém usa o formulário `/contato` da
 landing page — só salva na tabela Supabase `contatos` e confirma para o
 usuário. Diferente do sistema de tickets (`/api/support/tickets`), que
@@ -260,10 +260,10 @@ foi o caminho real usado nesse fluxo.
 **Escopo da decomissão:**
 1. Desabilitar/remover `deploy/acervo-studio-web.service`.
 2. Remover ou arquivar `goshinsho/studio/` (`routes.py`, `__init__.py`) e
-   `goshinsho/services/acervo_studio_service.py`.
+ `goshinsho/services/acervo_studio_service.py`.
 3. Checar se algum script ativo (`scripts/*.sh`, loops em tmux) depende
-   desses módulos antes de apagar — confirmar zero dependência real antes
-   de excluir código.
+ desses módulos antes de apagar — confirmar zero dependência real antes
+ de excluir código.
 
 ---
 
@@ -275,15 +275,15 @@ Remover os 4 achados de "tutela" (regras por tema/doença/obra na busca ou
 resposta, proibidas por `regra-suprema-tutela-pesquisa.mdc`):
 
 1. Checagem `pergunta_sobre_ohikari` em
-   `goshinsho/pipeline/retrieve_strategy.py` (`_should_use_structural`),
-   ativa hoje no pipeline v2.
+ `goshinsho/pipeline/retrieve_strategy.py` (`_should_use_structural`),
+ ativa hoje no pipeline v2.
 2. Bloco `if is_ohikari` em
-   `goshinsho/services/ai_service.py::answer_question`.
+ `goshinsho/services/ai_service.py::answer_question`.
 3. Mesma lógica em
-   `goshinsho/services/experimental_router.py::select_search_strategy`.
+ `goshinsho/services/experimental_router.py::select_search_strategy`.
 4. Regra estática de desambiguação Ohikari/Ofudesaki em
-   `goshinsho/pipeline/prompts.py` — se ainda necessária, resolver via
-   entrada no `glossario.json` (decisão à parte do usuário).
+ `goshinsho/pipeline/prompts.py` — se ainda necessária, resolver via
+ entrada no `glossario.json` (decisão à parte do usuário).
 
 Ver `docs/03-PRINCIPIOS-E-DIRETRIZES.md` §2 para o contexto completo da
 auditoria.
@@ -299,7 +299,7 @@ auditoria.
 | #16 | Banner de cadastro não traduz | UI/UX | Baixa |
 | #17 | E-mail de confirmação cai no spam | E-mail/DNS | Média |
 | #18 | Login pós-cadastro falha | Crítico | **Máxima** |
-| #19 | Assimetria `.strip()` senha | Crítico (causa de #18) | **Máxima** |
+| #19 | Assimetria `.strip` senha | Crítico (causa de #18) | **Máxima** |
 | #20 | Singular/plural quebra busca de artigo | Crítico | **Máxima** |
 | #21 | Header fixo inacessível | UI/UX | Média |
 | #22 | Scroll mostra fim, não início | UI/UX | Média |

@@ -14,15 +14,15 @@ Teste controlado no **Curso Kannon (1935)** — prosa doutrinária formal, difí
 ## Método
 
 1. **Retradução**: `scripts/teste_retrad_escritos.py` — DeepSeek v4-flash,
-   PROMPT do executor (glossário completo + regras de reconstrução/anti-invenção/
-   sujeito), com adequação mecânica DIÁLOGO → PROSA. Lotes de ~2000 chars.
+ PROMPT do executor (glossário completo + regras de reconstrução/anti-invenção/
+ sujeito), com adequação mecânica DIÁLOGO → PROSA. Lotes de ~2000 chars.
 2. **Pipeline completo**: `scripts/pipeline_retrad_escritos.py` — auditoria
-   (DeepSeek, SYSTEM_PROMPT do auditor + glossário) → ajuste (executor corrige com
-   o erro como reforço) → re-auditoria, até 3 rodadas.
+ (DeepSeek, SYSTEM_PROMPT do auditor + glossário) → ajuste (executor corrige com
+ o erro como reforço) → re-auditoria, até 3 rodadas.
 3. **Avaliação comparativa cega**: `scripts/avaliar_teste_retrad_escritos.py` —
-   Claude (claude-sonnet-5) compara a retradução PIPELINADA vs a revisão
-   literária (regiões dos chunks `*_out.txt` alinhadas por âncoras de conteúdo),
-   sem saber qual é qual. `max_tokens=20000`.
+ Claude (claude-sonnet-5) compara a retradução PIPELINADA vs a revisão
+ literária (regiões dos chunks `*_out.txt` alinhadas por âncoras de conteúdo),
+ sem saber qual é qual. `max_tokens=20000`.
 
 ## Resultado da avaliação (após alinhamento correto)
 
@@ -40,14 +40,14 @@ Terminologia: retradução **8.2** vs 7.5.
 ## Achados-chave do Claude (avaliação cega)
 
 - **T2 (retradução venceu)**: a revisada tinha **inconsistência interna** (tabela
-  etimológica mapeia 隆→龍=Ryū mas o nome sai "Ochi Takuzō") e **inseriu bloco
-  ausente do JP**.
+ etimológica mapeia 隆→龍=Ryū mas o nome sai "Ochi Takuzō") e **inseriu bloco
+ ausente do JP**.
 - **T3 (retradução venceu)**: a revisada **alucinou conteúdo** (título inexistente
-  "Sétima Aula" + continuou além do fim do JP). A retradução respeitou os limites
-  e manteve terminologia (kotodama, Kannon-Sama, Luz/Dia/Noite).
+ "Sétima Aula" + continuou além do fim do JP). A retradução respeitou os limites
+ e manteve terminologia (kotodama, Kannon-Sama, Luz/Dia/Noite).
 - **T1 (revisada venceu)**: a retradução **OMITIU a tabela do silabário gojūon**
-  (ア/カ/サ/タ/ナ) que existe no JP e manteve kanji residual nos diagramas de
-  kotodama.
+ (ア/カ/サ/タ/ナ) que existe no JP e manteve kanji residual nos diagramas de
+ kotodama.
 
 ## Causa raiz da falha do T1 (diagnosticada com o usuário)
 
@@ -108,7 +108,7 @@ conteúdo não traduzido porque trabalham por "sentido", não por "cobertura".
 
 **Abordagem determinística testada e VIÁVEL** (não-LLM, reproduzível):
 1. Detectar blocos não-prosaicos no JP (linhas com kana/kanji sem pontuação de
-   frase `。！？.!?…` — tabelas, diagramas, sequências de caracteres).
+ frase `。！？.!?…` — tabelas, diagramas, sequências de caracteres).
 2. Converter kana → romaji (mapeamento fonético).
 3. Verificar se cada bloco tem correspondência no PT (por âncora fonética).
 4. Bloco do JP sem correspondência no PT = conteúdo ficou para trás → bloqueia.
@@ -124,15 +124,15 @@ antes de aprovar, fecha o gap que executor e auditor (LLM) deixam passar.
 
 Foi implementado `scripts/checador_cobertura.py` (não-LLM, determinístico):
 1. Detecta blocos não-prosaicos do JP (linhas com kana/kanji sem pontuação de
-   frase `。！？.!?…` e sem partículas gramaticais — distingue diagrama/tabela de
-   prosa explicativa).
+ frase `。！？.!?…` e sem partículas gramaticais — distingue diagrama/tabela de
+ prosa explicativa).
 2. Converte kana → romaji (com dígrafos: ダイ→dai, ガワ→gawa etc.).
 3. Verifica correspondência no PT por âncora fonética (linha inteira contígua
-   para linhas só-kana; fonemas para linhas com kanji).
+ para linhas só-kana; fonemas para linhas com kanji).
 4. Classifica em 3 casos:
-   - **omitido** (nenhuma âncora no PT) → BLOQUEIA
-   - **INCOMPLETA** (parte das âncoras) → BLOQUEIA
-   - **presente em japonês cru** (não romanizado) → observação (não bloqueia)
+ - **omitido** (nenhuma âncora no PT) → BLOQUEIA
+ - **INCOMPLETA** (parte das âncoras) → BLOQUEIA
+ - **presente em japonês cru** (não romanizado) → observação (não bloqueia)
 
 Integrado ao `pipeline_retrad_escritos.py` **depois da auditoria**: se o checador
 detectar omissão/incompletude, transforma em ERRO_TRADUCAO sintético → executor
@@ -146,7 +146,7 @@ corrige (com instrução de incluir o bloco) → re-audita → re-checa.
 | **Checador determinístico** | **COBERTURA (BLOQUEIA): 1 bloco omitido** ✅ |
 | Ajuste #1 (executor) | Corrigiu: 5060→5513c, **incluiu a tabela gojūon** ✅ |
 | Auditoria #2 | OK ✅ |
-| Checador (2ª rodada) | Tabela gojūon passa ✅ (resta 1 observação/bloqueio: diagrama 岡田仁斎 parcial) |
+| Checador (2ª rodada) | Tabela gojūon passa ✅ |
 
 **Confirmação**: a camada determinística de cobertura fecha o gap que a auditoria
 semântica pura deixava passar. O fluxo auditoria→checador→correção→re-auditoria
@@ -160,15 +160,15 @@ presentes como observação, mantendo apenas omissão TOTAL como bloqueio.
 ## Conclusão
 
 - O processo de retradução + auditoria + ajuste é **comparável** à revisão
-  literária (empate técnico 7.4 vs 7.3), com vantagens em fidelidade/terminologia
-  e desvantagem em fluidez.
+ literária (empate técnico 7.4 vs 7.3), com vantagens em fidelidade/terminologia
+ e desvantagem em fluidez.
 - Mas o **ponto cego de tabelas/estruturas** (T1) é um risco real: o pipeline
-  pode omitir tabelas/diagramas sem que a auditoria detecte.
+ pode omitir tabelas/diagramas sem que a auditoria detecte.
 - **Decisão do usuário pendente** sobre retraduzir os 8,5M chars de escritos.
 
 ## Arquivos
 
 - Scripts: `scripts/teste_retrad_escritos.py`, `scripts/pipeline_retrad_escritos.py`,
-  `scripts/avaliar_teste_retrad_escritos.py`
+ `scripts/avaliar_teste_retrad_escritos.py`
 - Dados: `/tmp/teste_retrad_escritos/` (trecho_*_jp/final/revisado/VERIFICACAO_T*.txt)
 - Avaliação: `reports/avaliacao_teste_retrad_escritos.json`

@@ -47,15 +47,15 @@ Script: `scripts/pilot_agentic_claude.py` (protótipo de investigação, não
 é a implementação de produção). Três ferramentas expostas ao modelo:
 
 1. `buscar_termo(termo)` — grep literal (case-insensitive simples) sobre
-   todos os arquivos de `textos_portugues/*.txt`, carregados em memória
-   uma vez.
+ todos os arquivos de `textos_portugues/*.txt`, carregados em memória
+ uma vez.
 2. `ler_mais_contexto(arquivo, posicao, tamanho)` — lê uma janela maior
-   ao redor de uma posição já encontrada.
+ ao redor de uma posição já encontrada.
 3. `buscar_artigo_por_titulo(titulo)` — reaproveita `find_best_article`/
-   `load_article_chunks` (`teaching_article_service.py`, **já corrigidos
-   nesta mesma sessão**: de 116 para 3.788 artigos reconhecíveis, com
-   detecção de ambiguidade) para trazer o texto completo de um
-   ensinamento por título aproximado.
+ `load_article_chunks` (`teaching_article_service.py`, **já corrigidos
+ nesta mesma sessão**: de 116 para 3.788 artigos reconhecíveis, com
+ detecção de ambiguidade) para trazer o texto completo de um
+ ensinamento por título aproximado.
 
 Testado com Claude Sonnet 5, Claude Haiku 4.5 e DeepSeek v4-flash (os
 três com o mesmo conjunto de ferramentas, mesmo system prompt), sempre
@@ -118,7 +118,7 @@ recanto pequeno e diferente do acervo (um depoimento específico), nunca
 passando pela definição teológica de base.
 **Causa raiz**: `buscar_termo` faz correspondência literal exata, sem
 normalizar acento nem variação de maiúscula/minúscula além do
-`.lower()` básico.
+`.lower` básico.
 **Recomendação**: normalizar (remover diacríticos via NFD + lowercase)
 tanto a pergunta de busca quanto o texto do acervo antes de comparar —
 mesmo princípio já usado em `fold_ortografico_lower`
@@ -148,12 +148,12 @@ rejeitando/sinalizando citações que não batem.
 **Achado**: perguntado "o que Meishu-Sama falaria sobre a Covid-19?"
 (evento de 2020, ele morreu em 1955), os quatro sistemas se dividiram:
 - **Haiku recusou explicitamente**, explicou por que (data da morte),
-  citou a própria regra de não inventar, e ofereceu buscar ensinamentos
-  gerais sobre epidemia/purificação como alternativa.
+ citou a própria regra de não inventar, e ofereceu buscar ensinamentos
+ gerais sobre epidemia/purificação como alternativa.
 - **DeepSeek e o `pt_direct` (produção atual) construíram uma "inferência"**
-  de como ele veria uma pandemia, rotulada como inferência mas ainda
-  assim um texto extenso que soa como doutrina sobre um evento que ele
-  nunca comentou.
+ de como ele veria uma pandemia, rotulada como inferência mas ainda
+ assim um texto extenso que soa como doutrina sobre um evento que ele
+ nunca comentou.
 **Isso não é um bug introduzido pelo piloto** — o `pt_direct` já faz isso
 hoje em produção. É uma pergunta de política real: o site deveria
 construir "o que ele diria sobre X" para eventos posteriores à morte
@@ -172,15 +172,15 @@ aprendidas **nesta mesma sessão**, ao corrigir o `pt_direct`, se aplicam
 diretamente à nova ferramenta:
 - Tolerância a plural/singular (`_variante_singular_plural`).
 - Fronteira de palavra em vez de substring solta (achado do bug
-  "calamidade" batendo em "calamidades").
+ "calamidade" batendo em "calamidades").
 - Números como conteúdo válido independente do tamanho (achado do bug
-  "8 de novembro"/"28 de novembro").
+ "8 de novembro"/"28 de novembro").
 - Ordenação por relevância dos resultados, não só ordem de leitura do
-  arquivo — `buscar_termo` hoje devolve os N primeiros achados na ordem
-  em que os arquivos são varridos (873 ocorrências os arquivos poderiam
-  ser cortados antes de chegar ao trecho certo); a ferramenta real deveria
-  ordenar por algum sinal de relevância (frequência de termos da pergunta
-  próximos, tamanho do trecho, etc.) antes de cortar para os top-N.
+ arquivo — `buscar_termo` hoje devolve os N primeiros achados na ordem
+ em que os arquivos são varridos (873 ocorrências os arquivos poderiam
+ ser cortados antes de chegar ao trecho certo); a ferramenta real deveria
+ ordenar por algum sinal de relevância (frequência de termos da pergunta
+ próximos, tamanho do trecho, etc.) antes de cortar para os top-N.
 
 ### 3.7 A ferramenta de título já reaproveita as correções desta sessão — ativo, não passivo
 
@@ -194,9 +194,9 @@ novos.
 
 ### 3.8 Acoplamento desnecessário ao modelo de embedding
 
-`get_article_index()` (usado por `buscar_artigo_por_titulo`) chama
-`carregar_indices_pt()`, que **sempre** carrega o modelo de embedding
-(`get_embedding_model()`) mesmo sem fazer nenhuma busca vetorial — só
+`get_article_index` (usado por `buscar_artigo_por_titulo`) chama
+`carregar_indices_pt`, que **sempre** carrega o modelo de embedding
+(`get_embedding_model`) mesmo sem fazer nenhuma busca vetorial — só
 para ter acesso a `chunks`/`metadados`. Para a implementação real, vale
 desacoplar: uma função mais leve que lê só os pickles de chunks/metadados
 sem instanciar o `SentenceTransformer`, evitando custo de
@@ -235,44 +235,44 @@ mais teste antes de remover essa lógica na implementação real.
 ## 4. O que NÃO foi testado ainda (escopo explícito, não presumir)
 
 - **Japonês (`jp_direct`)**: todo o piloto foi em português. O pipeline
-  japonês (`jp_retrieval.py`/`jp_only_pool`) tem sua própria arquitetura
-  e não foi tocado nem testado com busca agenciada.
+ japonês (`jp_retrieval.py`/`jp_only_pool`) tem sua própria arquitetura
+ e não foi tocado nem testado com busca agenciada.
 - **Volume/escala real**: 13 perguntas, não 3.000/mês. Comportamento sob
-  carga (múltiplas perguntas simultâneas, rate limit da API DeepSeek,
-  filas) não foi avaliado.
+ carga (múltiplas perguntas simultâneas, rate limit da API DeepSeek,
+ filas) não foi avaliado.
 - **UX de espera**: respostas agênticas levam 10-55s com várias buscas
-  internas silenciosas. A produção já tem streaming NDJSON para estado
-  de carregamento — vale usá-lo para mostrar progresso real ("buscando
-  'Ohikari'...") em vez de um spinner cego, mas isso não foi implementado
-  nem testado.
+ internas silenciosas. A produção já tem streaming NDJSON para estado
+ de carregamento — vale usá-lo para mostrar progresso real ("buscando
+ 'Ohikari'...") em vez de um spinner cego, mas isso não foi implementado
+ nem testado.
 - **Tratamento de erro/fallback**: o piloto tem um `try/except` básico
-  ao redor da chamada DeepSeek. Produção precisa do mesmo padrão de erro
-  amigável e registro de uso já usado hoje (`_friendly_error`,
-  `deepseek_usage_service.record_deepseek_usage`), estendido para cobrir
-  falhas específicas do laço de ferramentas (limite de taxa, timeout no
-  meio de uma sequência de buscas, etc.).
+ ao redor da chamada DeepSeek. Produção precisa do mesmo padrão de erro
+ amigável e registro de uso já usado hoje (`_friendly_error`,
+ `deepseek_usage_service.record_deepseek_usage`), estendido para cobrir
+ falhas específicas do laço de ferramentas (limite de taxa, timeout no
+ meio de uma sequência de buscas, etc.).
 - **Cache de perguntas frequentes**: discutido com o usuário como forma
-  de baratear ainda mais o custo médio (perguntas tipo FAQ, sem histórico
-  de conversa) — ideia real e viável, não implementada nem desenhada em
-  detalhe ainda.
+ de baratear ainda mais o custo médio (perguntas tipo FAQ, sem histórico
+ de conversa) — ideia real e viável, não implementada nem desenhada em
+ detalhe ainda.
 
 ## 5. Recomendação de sequência para a implementação real
 
 1. Corrigir na ferramenta de busca real (não no protótipo): normalização
-   de acento/maiúscula (§3.3) e reaproveitar `_variante_singular_plural`/
-   `fold_ortografico_lower` já existentes.
+ de acento/maiúscula (§3.3) e reaproveitar `_variante_singular_plural`/
+ `fold_ortografico_lower` já existentes.
 2. Redesenhar o laço de ferramentas com orçamento de síntese separado do
-   orçamento de busca (§3.2) — este é o bug mais sério e não pode ir para
-   produção sem correção.
+ orçamento de busca (§3.2) — este é o bug mais sério e não pode ir para
+ produção sem correção.
 3. Decidir com o usuário a política do §3.5 (resposta especulativa para
-   eventos fora do escopo temporal) e escrever a regra correspondente no
-   system prompt novo.
+ eventos fora do escopo temporal) e escrever a regra correspondente no
+ system prompt novo.
 4. Reforçar a regra de citação literal de arquivo (§3.4).
 5. Desacoplar `buscar_artigo_por_titulo` do carregamento do modelo de
-   embedding (§3.8).
+ embedding (§3.8).
 6. Rodar mais uma rodada de teste (idealmente maior, cobrindo JP também)
-   já com essas correções, antes de considerar substituir o `pt_direct`
-   em produção.
+ já com essas correções, antes de considerar substituir o `pt_direct`
+ em produção.
 7. Só depois disso, planejar a integração real na pipeline (`routes.py`,
-   `pipeline/answer.py`) e a autorização explícita de promoção — nenhuma
-   mudança de produção sem essa autorização, mesma regra de sempre.
+ `pipeline/answer.py`) e a autorização explícita de promoção — nenhuma
+ mudança de produção sem essa autorização, mesma regra de sempre.

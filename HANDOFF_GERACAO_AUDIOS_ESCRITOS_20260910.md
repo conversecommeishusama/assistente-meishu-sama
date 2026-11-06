@@ -183,6 +183,42 @@ nohup bash scripts/sincronizar_audios.sh > logs/sincronizacao_console.log 2>&1 &
 
 ---
 
+## 4-bis. Controle de qualidade da geração (verificado em 2026-09-10, 23:50)
+
+Auditoria feita **durante** a execução (amostras reais, não o log do gerador):
+
+| Verificação | Resultado |
+|---|---|
+| Arquivos corrompidos (0 bytes) | **0** |
+| Integridade (ffprobe, amostras) | ✅ todos com duração válida |
+| **Bitrate Fish** (novos × aprovados) | **128,0 kbps** em ambos → **CONSISTENTE** |
+| **Bitrate edge** (novos × aprovados) | **48,0 kbps** em ambos → **CONSISTENTE** |
+| Roteamento de terceiros | ✅ 0 bugs |
+
+> ⚠️ **Cuidado ao medir qualidade por tamanho de arquivo:** a primeira medição
+> parecia divergente (128 kbps nos novos × 48 kbps nos antigos) — era **viés de
+> amostragem**: o filtro por tamanho (`-size -100k`) classificava trechos Fish
+> **curtos** (ex.: `Pai: Izanagi no Okami`, 30 KB) como se fossem edge. Medindo
+> **por rota real** (via `_identificar_falante`), os bitrates são idênticos.
+> Sempre agrupar por rota, nunca por tamanho de arquivo.
+
+**Investiguados e descartados como falso alarme:**
+
+1. **3 arquivos < 10 KB** — são `"(c)"` (marcador de página, 3 chars), rotulado
+   como metadado → narrador. Legítimo.
+2. **2 trechos de terceiro com áudio Fish em cache** (`Pai:`/`Mãe:` no Curso
+   Kannon) — criados **17:48**, antes do commit do roteamento (**20:41**).
+   São **resíduo**; **ambos já têm** o áudio correto em `edge`. 0 bugs ativos.
+3. **43 trechos com ≤3 caracteres alfanuméricos** (0,17% dos 25.344) — falas
+   curtas legítimas: `"Sim."`, `"Não."`, `(I)`, `(II)`, `53`, `Lei`. Não são
+   defeito.
+
+**Confirmado o roteamento funcionando nos áudios reais:**
+`Pergunta: Sobre a verdade.` → narrador; `Chefe: "Você fica sempre atrás de uma
+cortina de bambu…"` → narrador; `Tanikawa:` (Eiko) → narrador.
+
+---
+
 ## 5. ⚠️ REGRAS CRÍTICAS (já violadas antes — não repetir)
 
 1. **Nunca mudar o roteamento de voz sem regerar.**

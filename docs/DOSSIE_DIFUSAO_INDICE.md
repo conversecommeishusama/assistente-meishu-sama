@@ -45,16 +45,13 @@ na gráfica.
 ### Como regerar
 
 ```
-# volume único (a partir das três partes)
-.venv/bin/python scripts/juntar_dossie_difusao.py
+# volume único (a partir das três partes).venv/bin/python scripts/juntar_dossie_difusao.py
 
-# PDF para impressão
-.venv/bin/python scripts/gerar_pdf_dossie_difusao.py \
-    DOSSIE_DIFUSAO_COMPLETO_20261002 "A difusão na época de Meishu-Sama"
+# PDF para impressão.venv/bin/python scripts/gerar_pdf_dossie_difusao.py \
+ DOSSIE_DIFUSAO_COMPLETO_20261002 "A difusão na época de Meishu-Sama"
 
 # Word
-DOCX_CABECALHO="A difusão na época de Meishu-Sama" \
-.venv/bin/python scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_COMPLETO_20261002
+DOCX_CABECALHO="A difusão na época de Meishu-Sama" \.venv/bin/python scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_COMPLETO_20261002
 ```
 
 O gerador de PDF aceita o nome do `.md` de origem (sem extensão) e o título da
@@ -79,7 +76,7 @@ por exemplo `教修が終ら〔れ〕た` —, e o texto-base não é alterado.
 
 **Citação legal.** O Regulamento de 1951 grafa os artigos com o caractere antigo
 **條** e nunca com o moderno **条**; as citações legais reproduzem a forma da
-fonte (第二十九條, 第三十條).
+fonte.
 
 **Fontes pessoais.** Nenhuma passagem do dossiê tem como fonte única a produção
 própria de um dirigente que se afastou da igreja e escreveu depois contra ela.
@@ -171,7 +168,7 @@ reviravolta doutrinária.
 | Vestimenta dos oficiantes — "sem fonte" | Há **`祭服`** prescrita para o 地鎮祭, com exigência de aprendizado, e escala cromática branco→azul→violeta por grau |
 
 **A reviravolta:** sobre oferecer arroz cru e água, Meishu-Sama **criticava**
-precisamente essa forma arcaica (御講話, 07/12/1953) — mas **instruía** oferecer
+precisamente essa forma arcaica — mas **instruía** oferecer
 água diante do altar dos espíritos. A dificuldade nunca foi falta de fonte: era
 eu procurar o conceito em vez do nome.
 

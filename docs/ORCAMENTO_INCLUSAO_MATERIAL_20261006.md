@@ -22,7 +22,7 @@ verdadeiramente ausentes parecerem presentes.
 **Defeito B — a comparação por janelas exatas falhava por causa de OCR degradado.**
 O método exigia janelas de 60-70 caracteres idênticas. Mas os agregados do app
 (`Eiko.txt`, `Tijotengoku.txt`…) estão **corrompidos por OCR** e ortografia antiga.
-Exemplo real, mesmo artigo (`文化の創造`, 『栄光』1950-09-13):
+Exemplo real, mesmo artigo:
 
 | rattail (transcrição correta) | app `Eiko.txt` |
 |---|---|
@@ -50,11 +50,11 @@ escondia (§6).
 Três medições independentes convergiram:
 
 1. **Cobertura por n-gramas**, com n de 8 a 30: a fração de páginas ausentes fica
-   **estável entre 69% e 77%** — não depende do limiar.
+ **estável entre 69% e 77%** — não depende do limiar.
 2. **Interseção de títulos de artigo**: o app tem **9%** dos títulos de 栄光,
-   **2%** de 地上天国, **7%** de 光, **7%** de 救世.
+ **2%** de 地上天国, **7%** de 光, **7%** de 救世.
 3. **Teste direcional**: o conteúdo do app é ~40-51% encontrável no rattail (é
-   subconjunto, com ruído de OCR); o do rattail é **4-12%** encontrável no app.
+ subconjunto, com ruído de OCR); o do rattail é **4-12%** encontrável no app.
 
 Controle positivo: obras sabidas presentes (御教え集, 御垂示録, 御光話録,
 結核信仰療法, アメリカを救う, 無肥料栽培法) dão **~100%** de cobertura.
@@ -82,9 +82,9 @@ dentro do escopo após excluir:
 
 | Excluído | Págs | Chars |
 |---|---:|---:|
-| Perseguição 1937-45 (明日の医術, 結核…) | 403 | 917.692 |
-| **Não publicado em vida** (『医学革命の書』, 『文明の創造』 — marcados 未発表) | 225 | 249.620 |
-| Institucional / notícia (会報, 実生分会ニュース, 講習要項…) | 28 | 70.500 |
+| Perseguição 1937-45 | 403 | 917.692 |
+| **Não publicado em vida** | 225 | 249.620 |
+| Institucional / notícia | 28 | 70.500 |
 
 > A exclusão dos **não publicados em vida** é nova: são textos que o próprio
 > rattail registra como `未発表`. Pela regra do projeto ("só o que ele publicou em
@@ -114,7 +114,7 @@ dentro do escopo após excluir:
 | 病貧争絶無…観音運動とは何？ | 25 | 25 | 24.676 |
 | (demais obras menores) | — | — | ~600.000 |
 
-**Os quatro maiores veículos (地上天国, 栄光, 光, 救世) = 9,7 M chars = 80% da
+**Os quatro maiores veículos = 9,7 M chars = 80% da
 lacuna.** 地上天国 + 栄光 = **8,0 M chars = 66%**.
 
 ---
@@ -187,7 +187,7 @@ Oito arquivos existem lá e **não** estão em produção:
 | `未刊行-自観叢書第14篇『天国の花』` | — |
 | `Keiko.txt` · `Relatos_de_Milagres.txt` | — |
 
-(Outros 3 — 御垂示録 4/10/24 — são duplicatas com vírgula no nome.)
+
 
 **Parte do trabalho já feito não chegou ao app.** Antes de traduzir material novo,
 vale **promover esta camada**.
@@ -195,7 +195,7 @@ vale **promover esta camada**.
 ### 6.2 ⚠️ O corpus do app tem texto **degradado por OCR**
 
 Os agregados do app (`Eiko.txt`, `Tijotengoku.txt`, `Hikari.txt`, `Kyusei.txt`,
-`Jornais.txt`) contêm kanji corrompidos (`名`→`吊`, `応`→`忚`, `尽`→`盡`) e
+`Jornais.txt`) contêm kanji corrompidos e
 ortografia antiga, enquanto o rattail tem a transcrição correta. Similaridade entre
 o mesmo artigo: **0,73**.
 
@@ -209,13 +209,13 @@ arquivos precisa de **correção de OCR**, não só de tradução.
 1. **O ritmo de tradução não foi medido em car/h** — maior incerteza do prazo.
 2. **A razão JP→PT (×2,3)** veio de 9 pares + do corpus completo (2,20-2,44).
 3. **Margem de erro do volume**: a cobertura por n-gramas varia 69-77% conforme o
-   n; adotei o ponto médio. **O número tem margem de ±10%.**
+ n; adotei o ponto médio. **O número tem margem de ±10%.**
 4. **Reedições pós-guerra não deduplicadas** — o conteúdo único pode ser menor.
-   Duplicatas exatas de título são raras (13 de 2.639 em 栄光), mas reedições
-   formais (ex.: 『結核信仰療法』) não foram tratadas.
+ Duplicatas exatas de título são raras, mas reedições
+ formais não foram tratadas.
 5. **Não auditei** as 276 páginas cujo `『』` não é parseável (1,19 M chars).
 6. **Não inclui** o tempo da sua auditoria teológica (gargalo real) nem o
-   **trabalho de correção de OCR** de §6.2.
+ **trabalho de correção de OCR** de §6.2.
 7. Direitos: a decisão de 05/10 assume domínio público (falecimento 1955 + 70 anos).
 
 ---
@@ -223,7 +223,7 @@ arquivos precisa de **correção de OCR**, não só de tradução.
 ## 8. Recomendação
 
 1. **Promover `reports/periodicos_trabalho/`** (§6.1) — trabalho já feito, fora do
-   ar. Ganho mais rápido, sem custo de tradução.
+ ar. Ganho mais rápido, sem custo de tradução.
 2. **Corrigir o OCR** dos 5 agregados (§6.2) — 5 arquivos, ~1,2 M chars.
 3. **Executar F1** — decisão já tomada; mede o ritmo real de tradução.
 4. Só então dimensionar F2 com ritmo **medido**, não estimado.

@@ -70,7 +70,7 @@ usuário que pergunte sobre assuntos constante ali."*
 |---|---:|---:|
 | Bloco A (Meishu-Sama, incl. OCR) | 969.607 | 2.230.096 |
 | Bloco B (`dendo`) | 375.978 | 864.749 |
-| Bloco C (自観叢書) | 118.187 | 271.830 |
+| Bloco C | 118.187 | 271.830 |
 | **total** | **1.463.772** | **3.366.676** |
 | *do qual OCR (fac-símile, ruidoso)* | *952.783* | *2.191.401* |
 
@@ -175,7 +175,7 @@ de *"baixar não é o mesmo que ganhar acervo"*). Duas opções:
 | Tempo | ~3 h @10 workers | minutos |
 
 **Recomendação:** **opção B**, e só depois — se o uso mostrar lacuna — avaliar a
-A. O bloco C (自観叢書) é que é material genuinamente novo e justifica tradução
+A. O bloco C é que é material genuinamente novo e justifica tradução
 integral, tal como o bloco A.
 
 > Decisão do usuário necessária. Sem ela, o P3 fica por fazer.
@@ -190,33 +190,32 @@ tradução. Verifique se o glossário de tradução está atualizado."*
 **Verificado e corrigido nesta sessão:**
 
 - `glossario_traducao.json` — **852 entradas**; `glossario_regras.json` —
-  versão **2026-10-16b**. Todas as entradas do ajuste de 15/10 (`きれいにする`,
-  `きれいになる`, `清潔にする`, `清くする`, `美にする`, `美しくする`) estão
-  presentes, e as 13 entradas que a auditoria denuncia como invenção também
-  (12 de 13; `霊的医術` não existe).
+ versão **2026-10-16b**. Todas as entradas do ajuste de 15/10 (`きれいにする`,
+ `きれいになる`, `清潔にする`, `清くする`, `美にする`, `美しくする`) estão
+ presentes, e as 13 entradas que a auditoria denuncia como invenção também.
 - **3 regras sensíveis ao contexto que estavam pendentes foram aplicadas** agora
-  (`scripts/anotar_glossario_contexto_20261016.py`):
-  `道理` (Caminho Perfeito vs razão/conclusão lógica — pendência §5/§8 do
-  handoff do livro 1947), `凝り` (Nódulo vs rigidez em enumeração de achaques) e
-  `光明` (Kōmyō só para o amuleto; substantivo comum = luz/Luz).
+ (`scripts/anotar_glossario_contexto_20261016.py`):
+ `道理` (Caminho Perfeito vs razão/conclusão lógica — pendência §5/§8 do
+ handoff do livro 1947), `凝り` (Nódulo vs rigidez em enumeração de achaques) e
+ `光明` (Kōmyō só para o amuleto; substantivo comum = luz/Luz).
 - A trava determinística `scripts/trava_glossario.py` corre na etapa 2 em todas
-  as traduções — é o que garante a aplicação **rigorosa** (não é pedido no
-  prompt: é verificação de saída).
+ as traduções — é o que garante a aplicação **rigorosa** (não é pedido no
+ prompt: é verificação de saída).
 
 ---
 
 ## 9. Premissas e limitações
 
 1. Vazão extrapolada de medição com 10 workers; 24–48 workers assumem que a API
-   DeepSeek não estrangula (fazer **teste de rampa** antes do run definitivo).
+ DeepSeek não estrangula (fazer **teste de rampa** antes do run definitivo).
 2. OCR de fac-símile é leitura automática, com erro — e neste caso com um defeito
-   conhecido: parte das páginas sai com **duas colunas de linhas verticais
-   intercaladas**. As traduções do bloco A-OCR herdam esse erro. Confere-se no
-   PDF antes de citar; e as páginas de OCR devem ser **conferidas contra o
-   fac-símile** antes da tradução, não depois.
+ conhecido: parte das páginas sai com **duas colunas de linhas verticais
+ intercaladas**. As traduções do bloco A-OCR herdam esse erro. Confere-se no
+ PDF antes de citar; e as páginas de OCR devem ser **conferidas contra o
+ fac-símile** antes da tradução, não depois.
 3. Os volumes do bloco C não são de Meishu-Sama: vão **só** para a Leitura
-   Colaborativa, como conteúdo histórico (§4.3).
+ Colaborativa, como conteúdo histórico (§4.3).
 4. O rebuild de `data/clean_corpus` + índices FAISS é **obrigatório** para que
-   (a) as exclusões do gate e (b) as novas obras passem a valer no Chat, e exige
-   autorização (§2, etapa 6).
+ (a) as exclusões do gate e (b) as novas obras passem a valer no Chat, e exige
+ autorização (§2, etapa 6).
 5. `dendo` e as duas OCR são grandes; correr fora do horário de pico.

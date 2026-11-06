@@ -81,6 +81,7 @@ def eh_titulo(linha):
 def limpar_markdown(texto):
     """Remove marcações markdown simples do texto."""
     texto = texto.replace("**", "")
+    texto = texto.replace("*", "")
     texto = re.sub(r"^#{1,6}\s*", "", texto)
     texto = re.sub(r"^>\s?", "", texto)
     texto = texto.replace("`", "")
@@ -325,7 +326,7 @@ if __name__ == "__main__":
         "Aula_01_Existencia_do_Mundo_Espiritual.md": "Encontro_01_A_Existencia_do_Mundo_Espiritual.docx",
         "Aula_02_Constituicao_do_Mundo_Espiritual.md": "Encontro_02_A_Constituicao_do_Mundo_Espiritual.docx",
         "Aula_03_Culto_às_Almas_Obon.md": "Encontro_03_O_Culto_as_Almas_dos_Antepassados_Obon.docx",
-        "Aula_04_Elo_Espiritual_e_Antepassados.md": "Encontro_04_Elo_Espiritual_e_Antepassados.docx",
+        "Aula_04_Elo_Espiritual_e_Destino.md": "Encontro_04_Elo_Espiritual_e_Destino.docx",
         "Aula_05_Morte_Julgamento_e_Destino.md": "Encontro_05_Morte_Julgamento_e_Destino.docx",
         "Aula_06_Vida_no_Mundo_Espiritual_e_Reencarnacao.md": "Encontro_06_Vida_no_Mundo_Espiritual_e_Reencarnacao.docx",
         "Aula_07_Influencia_dos_Antepassados.md": "Encontro_07_A_Influencia_dos_Antepassados.docx",

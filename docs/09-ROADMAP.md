@@ -68,24 +68,24 @@ partida para você descartar, adaptar ou aprofundar — não como sugestão de
 prioridade:
 
 - **Plano de estudo guiado / trilhas temáticas**: sequências de leitura
-  sobre um tema (ex. "o que os Escritos ensinam sobre X", em ordem
-  crescente de profundidade), montadas a partir do acervo já existente —
-  ajuda quem não sabe por onde começar, sem tutela na busca (a trilha é
-  editorial e transparente, não um atalho escondido de retrieval).
+ sobre um tema (ex. "o que os Escritos ensinam sobre X", em ordem
+ crescente de profundidade), montadas a partir do acervo já existente —
+ ajuda quem não sabe por onde começar, sem tutela na busca (a trilha é
+ editorial e transparente, não um atalho escondido de retrieval).
 - **Modo "estudo em grupo"**: uma pergunta feita por um ministro/líder de
-  congregação gera material citável e organizado para compartilhar com um
-  grupo — pode conectar com o interesse em redes sociais/lives (item 6)
-  sem depender de geração de voz/diálogo livre (item 2).
+ congregação gera material citável e organizado para compartilhar com um
+ grupo — pode conectar com o interesse em redes sociais/lives (item 6)
+ sem depender de geração de voz/diálogo livre (item 2).
 - **Métrica de "profundidade alcançada"**: alguma forma de medir, mesmo
-  aproximada, se o uso do Goshinsho está levando a compreensão mais
-  profunda (não só perguntas soltas) — conecta direto com a pergunta em
-  aberto que ficou em [08-MISSAO-E-VISAO.md](08-MISSAO-E-VISAO.md) sobre
-  como saber se o produto está funcionando de verdade.
+ aproximada, se o uso do Goshinsho está levando a compreensão mais
+ profunda (não só perguntas soltas) — conecta direto com a pergunta em
+ aberto que ficou em [08-MISSAO-E-VISAO.md](08-MISSAO-E-VISAO.md) sobre
+ como saber se o produto está funcionando de verdade.
 - **Feedback estruturado de transformação de vida**: já que a visão do
-  produto (08) fala explicitamente em receber relatos de transformação,
-  vale um mecanismo dedicado para coletar isso (não só e-mail avulso) —
-  pode alimentar tanto a prova social quanto uma futura análise de
-  impacto real.
+ produto (08) fala explicitamente em receber relatos de transformação,
+ vale um mecanismo dedicado para coletar isso (não só e-mail avulso) —
+ pode alimentar tanto a prova social quanto uma futura análise de
+ impacto real.
 
 ## Tensões a resolver antes de qualquer item avançar
 

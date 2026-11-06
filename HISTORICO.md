@@ -7,8 +7,6 @@
 
 ---
 
----
-
 ## 27/10 — CHAT: "FALHAS CONSTANTES" COM CAUSA FORA DO MODELO (threads do torch)
 
 > **Relato**: "o chat está tendo falhas constantes ao dar as respostas ao
@@ -79,6 +77,63 @@ reiniciados**; `/health` e `/app-pt/` → 200.
   falhas sem diagnóstico. Um log por pedido (resultado, rodadas, tempo,
   `erro_provedor`) está por decidir.
 - Cache de respostas continua adiado (ver §12.6 do `GOSHINSHO.md`).
+
+---
+
+## 21/10 — AULA 7: BASE REFEITA — SÓ MEISHU-SAMA, DO "EVANGELHO DO PARAÍSO"
+
+> **Pedido**: a aula deve ter apenas os escritos de Meishu-Sama. O tema
+> "doenças espirituais" não existe no *Johrei Hō Kōza* (verificado: 0 ocorrências
+> de `霊的病気` nos 10 fascículos) — existe no *Manual* de 1953, que é **texto de
+> discípulos** (`明主様は…お知りになると…されて`, 3ª pessoa).
+
+- **Nova base do Bloco I** — *O Evangelho do Paraíso* (1947), parte "Ciência
+  Espiritual": "Espírito Protetor Guardião", "A Advertência do Espírito
+  Ancestral", "Epilepsia", "Paralisia Infantil" e "Diversos Aspectos das Doenças
+  de Causa Espiritual" (Fontes 1–5, ~2.640 palavras).
+- **Bloco II** (aborto) mantido verbatim; fontes renumeradas para 6–12.
+- **O Manual de 1953 saiu da apostila.** A aula agora é de uma só obra dele + os
+  periódicos sobre o aborto.
+- **Achado que costura os dois blocos**: em "Epilepsia", o espírito possessor da
+  criada é de um recém-nascido que **a avó matou por compressão ao nascer**.
+- Montagem feita por script a partir do corpus (sem transcrição manual):
+  seções extraídas por faixa de linhas e conferidas por contagem de parágrafos.
+- Plano do Encontro 7 reescrito: 9 pontos centrais, ordem interna sugerida
+  (Bloco I → caso da criada → Bloco II → Hirokichi) e corte de emergência
+  (Fonte 5) para controlar o tempo.
+- Derivados regerados: `textos_avaliacao/Aula_07_...txt` (5.367 palavras) e
+  `docs/leituras_word/Encontro_07_...docx`.
+- **Total da leitura**: ~5.300 palavras (~35–40 min).
+
+---
+
+## 20/10 — AULA 7 DO CICLO: ACRESCENTADO O SUBTEMA "ABORTO PROVOCADO"
+
+> **Pedido**: incluir na Aula 7 ("A Influência dos Antepassados sobre os
+> Descendentes") o assunto do **aborto provocado**.
+
+- **Apostila** (`docs/leituras_integrais/Aula_07_Influencia_dos_Antepassados.md`):
+  sete fontes acrescentadas na íntegra (Fontes 2–8): *Luz dos Ensinamentos*
+  ("Contracepção e Aborto" e "Sobre Natimortos e Abortos Espontâneos"),
+  *Gokōwa-roku* nº 5, nº 9 e nº 10, *Gosuiji-roku* nº 22 e *Hikari* nº 7.
+  **Regra confirmada em 21/10**: a apostila contém **apenas texto-fonte** —
+  nenhuma explicação ou comentário do dirigente. O recorte temático e a
+  orientação ficam no plano de aula.
+- **Plano** (`docs/PLANOS_DE_AULA_Ciclo_Mundo_Espiritual_Antepassados.md`):
+  fontes renumeradas (9), três novos pontos centrais, bloco **"Orientação ao
+  dirigente"** (tema sensível) e duas novas perguntas de debate.
+- **Removida** a linha órfã `Sobre a solução do "conflito"` da apostila: era
+  resto do recorte do Manual, sem corpo de texto (a seção original trata de
+  caráter e toxinas, não de antepassados).
+- **Bug corrigido** em `scripts/gerar_docx_leituras.py`: `limpar_markdown` não
+  removia asteriscos simples (itálico), o que imprimia `*Luz dos Ensinamentos*`
+  nos DOCX (24 parágrafos na Aula 6). Agora remove.
+- Derivados regerados: `textos_avaliacao/Aula_07_...txt` (apagado antes, como
+  manda a convenção) e `docs/leituras_word/Encontro_07_...docx`.
+- **Pendência pré-existente detectada**: o mapa de saída do gerador aponta para
+  `Aula_04_Elo_Espiritual_e_Destino.md`, mas o arquivo foi renomeado para
+  `Aula_04_Elo_Espiritual_e_Antepassados.md` — o DOCX do Encontro 4 não é
+  regerado (o existente foi feito à mão).
 
 ---
 

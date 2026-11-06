@@ -26,7 +26,7 @@
 | 1 | A Existência do Mundo Espiritual | Fundamento — o invisível é real |
 | 2 | A Constituição do Mundo Espiritual | Fundamento — como é o mundo invisível |
 | 3 | **O Culto às Almas dos Antepassados (Obon)** ⭐ | **Âncora — o porquê de todo o ciclo (meta: 02/11)** |
-| 4 | O Elo Espiritual: a Ligação entre Vivos e Antepassados | Ponte — como o invisível age no visível |
+| 4 | A Relação entre os Dois Mundos: Elo Espiritual e Destino | Ponte — como o invisível age no visível |
 | 5 | O Retorno ao Mundo Espiritual: Morte, Julgamento e Destino | A jornada da alma (1) |
 | 6 | A Vida no Mundo Espiritual e a Reencarnação | A jornada da alma (2) |
 | 7 | A Influência dos Antepassados sobre os Descendentes | Aplicação — por que cultuar importa |
@@ -63,28 +63,28 @@ Espiritual"**, **"O Mundo Espiritual e o Mundo Material"**.
 
 **Leitura de apoio (curta, opcional)**:
 - *Manual da Igreja Messiânica Mundial*, seção **"A existência do mundo
-  espiritual"** (texto transcrito na Aula 7 — pode ser usado aqui como reforço).
+ espiritual"** (texto transcrito na Aula 7 — pode ser usado aqui como reforço).
 - *Evangelho do Reino dos Céus*, capítulo **"Mundo Espiritual e Mundo Material"**
-  (versão condensada do mesmo ensinamento).
+ (versão condensada do mesmo ensinamento).
 
 ## 📝 Observações para o dirigente
 
 **O que abordar:**
 1. **O propósito da vida** — nascemos com uma missão no Plano Divino; nada é
-   acaso. Isto dá sentido à preparação para o Culto.
+ acaso. Isto dá sentido à preparação para o Culto.
 2. **Tudo tem espírito e corpo** — a morte não é o fim; é a troca de "roupa"
-   (o corpo é como uma veste para o espírito).
+ (o corpo é como uma veste para o espírito).
 3. **A porta de entrada do ciclo**: se o participante ainda duvida do mundo
-   invisível, esta aula é a base. Usar o exemplo de Meishu-Sama (20+ anos de
-   pesquisa, médiuns, espíritos).
+ invisível, esta aula é a base. Usar o exemplo de Meishu-Sama (20+ anos de
+ pesquisa, médiuns, espíritos).
 4. **Gancho para 02/11**: se a morte não é o fim e os antepassados continuam
-   vivos no mundo espiritual, então cultuá-los faz todo sentido — este estudo
-   nos prepara para isso.
+ vivos no mundo espiritual, então cultuá-los faz todo sentido — este estudo
+ nos prepara para isso.
 
 **Perguntas sugeridas:**
 - Se o ser humano é espírito + corpo, o que muda na forma de ver a morte?
 - Por que será que o mundo moderno, materialista, tem tanta dificuldade em
-  aceitar o mundo invisível?
+ aceitar o mundo invisível?
 
 ---
 
@@ -120,21 +120,21 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 
 **Leitura de apoio**:
 - *Curso Kannon (1~7)*, "Quarta Aula — A Realidade dos Três Mundos" (lista dos
-  Caminhos: Asuras, Fantasmas Famintos, Luxúria, Animais; e os 3 Paraísos).
+ Caminhos: Asuras, Fantasmas Famintos, Luxúria, Animais; e os 3 Paraísos).
 - *Luz dos Ensinamentos*, "Quem é Kakuriyo no Ōkami (o Grande Deus do Mundo Oculto)?" e
-  "Mudanças no Inferno com a Transição para o Mundo Diurno".
+ "Mudanças no Inferno com a Transição para o Mundo Diurno".
 
 ## 📝 Observações para o dirigente
 
 **O que abordar:**
 1. **Os 3 planos e 9 subníveis** (Paraíso / Mundo Intermediário / Inferno) e a
-   correspondência com o mundo material.
+ correspondência com o mundo material.
 2. **As 180 camadas** e a hierarquia — o mundo espiritual é ordenado, não é um
-   "céu" vago.
+ "céu" vago.
 3. **Luz e calor como medida**: subir = mais luz/calor; descer = mais escuridão/
-   frio. Isso explica por que o Inferno é "ausência de Deus".
+ frio. Isso explica por que o Inferno é "ausência de Deus".
 4. **Onde estão os antepassados**: muitos estão no Mundo Intermediário ou no
-   Inferno — e é para eles que o Culto às Almas se dirige (ponte para a Aula 3).
+ Inferno — e é para eles que o Culto às Almas se dirige (ponte para a Aula 3).
 
 **Perguntas sugeridas:**
 - Onde vocês imaginam que estão os nossos antepassados agora?
@@ -220,17 +220,17 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 
 **O que abordar:**
 1. **O que é o Culto às Almas dos Antepassados**: equivale ao Obon do Japão — a
-   ocasião anual em que, por permissão especial, os espíritos que estão no Inferno
-   podem voltar ao convívio dos descendentes e receber oferendas.
+ ocasião anual em que, por permissão especial, os espíritos que estão no Inferno
+ podem voltar ao convívio dos descendentes e receber oferendas.
 2. **Quem pode vir**: só os que estão acima do Yachimata podem vir livremente; os
-   que estão no Inferno, apenas nessa época (permissão de Shakyamuni).
+ que estão no Inferno, apenas nessa época (permissão de Shakyamuni).
 3. **A finalidade**: consolar os espíritos do Inferno, que sofrem; alimentá-los
-   (espiritualmente) e oferecer sufrágio.
+ (espiritualmente) e oferecer sufrágio.
 4. **A ligação com o 02/11**: o Culto no Solo Sagrado é uma oportunidade
-   extraordinária de sufrágio — quanto mais pessoas e mais sinceras, melhor.
-   **Todos os filhos (descendentes) devem sufragar**, não só o mais velho.
+ extraordinária de sufrágio — quanto mais pessoas e mais sinceras, melhor.
+ **Todos os filhos (descendentes) devem sufragar**, não só o mais velho.
 5. **Preparação prática**: as placas (ihai) — individuais para os conhecidos e
-   uma única para "todos os antepassados de todas as gerações".
+ uma única para "todos os antepassados de todas as gerações".
 
 **Perguntas sugeridas:**
 - Por que o Obon é "principalmente para consolar os espíritos do Inferno"?
@@ -238,123 +238,52 @@ Paralelo acessível: *Evangelho do Reino dos Céus*, capítulos homônimos.
 
 ---
 
-# AULA 4 — O Elo Espiritual: a Ligação entre Vivos e Antepassados
+# AULA 4 — A Relação entre os Dois Mundos: Elo Espiritual e Destino
 
 ## 📜 Ensinamento (leitura)
 
-**Fontes**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
-Espiritual"**; *Gokōwa-roku nº 6* (19490423); *Medicina do Amanhã* (13/04/1936,
-a lei redentora); *Curso Kannon (1~7)*, seção "Os pecados dos pais lhe são
-transferidos"; *Eiko nº 104*, *Gosuiji-roku nº 6*, *Mioshie-shū nº 7* e
-*Gokōwa-roku (Suplemento)* (exemplos).
+**Fonte**: *Conversas sobre a Fé* (19480905), capítulo **"Sobre o Elo
+Espiritual"** (versão completa também em *Evangelho do Reino dos Céus*).
 
-> "A expressão 'elo espiritual' parece ter sido pouco usada até hoje. Isso porque
-> sua importância ainda não era conhecida — trata-se de algo mais rarefeito que o
-> ar e invisível aos olhos. Sua influência, porém, não pode ser menosprezada em
-> nenhum assunto humano: para o ser humano, ela é a causa da felicidade e da
-> infelicidade e, em grande escala, chega a influenciar a própria história.
+> "A palavra 'elo espiritual' parece não ter sido muito usada até hoje. Isso
+> porque ainda não se conhecia sua importância — era algo mais rarefeito que o ar,
+> invisível aos olhos. No entanto, em todos os assuntos humanos, sua influência é
+> algo que não se pode menosprezar; para o ser humano, é a causa da felicidade e
+> da infelicidade e, em grande escala, chega a influenciar a própria história.
 >
-> [...] O elo espiritual não se limita aos parentes vivos; estende-se também aos
-> espíritos do mundo espiritual, depois da morte. [...] Os que foram purificados
-> até certo ponto no mundo espiritual são escolhidos como espíritos guardiões e,
-> pelo elo espiritual, protegem as pessoas."
-
-**A ligação funciona nos dois sentidos.** De cima para baixo (Gokōwa-roku nº 6) —
-a purificação dos pais alcança os filhos:
-
-> "Quando a mãe melhorar e se purificar, como pais e filhos estão ligados pelo
-> elo espiritual, a filha também melhorará. Primeiro, você mesma deve acumular
-> mérito; com isso, sua alma brilhará, e essa luz alcançará sua filha."
-
-De baixo para cima — o descendente afeta o antepassado. É o que mostra a lei
-redentora, abaixo, e os exemplos: o antepassado sofre enquanto espera, age sobre
-o descendente para despertá-lo, e se alegra quando o sufrágio finalmente chega.
-
-> **Nota:** o diálogo de *Gokōwa-roku nº 11* (a mudança de seita que "irrita os
-> antepassados") foi **retirado da apostila em 30/09/2026** a pedido do usuário,
-> por ser confuso ao leitor brasileiro — depende de contexto de seitas japonesas
-> (Shingon, Reiyukai) que não faz parte da experiência dele. O princípio que
-> ilustrava permanece sustentado pelas outras fontes. O texto está preservado em
-> `docs/leituras_integrais/complementar/Aula_04_Elo_Espiritual_Material_Complementar.md`
-> §4.
-
-**A lei redentora** (Medicina do Amanhã, 13/04/1936):
-
-> "Os espíritos que caíram no Inferno avançam passo a passo, ainda que
-> lentamente, através das dificuldades das punições de seus pecados. Nessa
-> ocasião, **os elementos espirituais impuros — que poderiam ser chamados de
-> resíduos da purificação das impurezas dos pecados — recaem sobre os
-> descendentes que vivem neste mundo material, fluindo incessantemente. Trata-se
-> de uma espécie de lei de expiação cármica, pela qual o descendente, síntese dos
-> ancestrais, compartilha as impurezas dos pecados.** Como isso é uma lei divina
-> do Deus Supremo na constituição de todas as coisas, é inevitável, e o ser
-> humano nada pode fazer senão submeter-se a ela.
+> Aqui está um ser humano — pode-se pensar que é o próprio leitor. Esse 'eu'
+> possui elos espirituais que o conectam em número incalculável. [...] Entre eles,
+> o elo que conecta marido e mulher é o mais espesso; o de pais e filhos vem em
+> seguida; irmãos, tios, sobrinhos, primos, amigos e conhecidos tornam-se
+> progressivamente mais finos.
 >
-> Esses elementos espirituais impuros recaem sobre o encéfalo e a medula espinhal
-> do ser humano e fluem incessantemente. No momento em que entram no espírito
-> humano, materializam-se instantaneamente; essa materialização é o pus. Isso se
-> torna a causa de todas as doenças."
+> O elo espiritual não se limita aos parentes vivos do ser humano; estende-se
+> também aos espíritos do mundo espiritual, após a morte. [...] Os que foram
+> purificados até certo ponto no mundo espiritual são selecionados como espíritos
+> guardiões e, por meio do elo espiritual, protegem os seres humanos."
 
-**A herança espiritual e o que a interrompe** (Curso Kannon):
+**Sobre o destino** (Evangelho do Reino dos Céus, "Camadas do Mundo Espiritual"):
 
-> "Entre os antepassados e as pessoas de hoje há uma conexão por um elo
-> espiritual (reisen). A medicina chama isso de hereditariedade, mas, como há
-> casos em que essa hereditariedade de fato não ocorre, a teoria hereditária não
-> se tornou absoluta.
->
-> Ainda assim, trata-se de algo absoluto; se, porém, surgir entre eles uma pessoa
-> notável que acumule méritos (toku), esse mérito remove o pecado, interrompe a
-> transmissão e a herança cessa. **Essa herança flui constantemente do mundo
-> espiritual. Os antepassados são julgados e purificados ali, e os pecados
-> julgados e lavados fluem para as pessoas do mundo material.**
->
-> Ancestrais – cabeça – medula espinhal – cauda – descendentes. Nós, descendentes
-> atuais, somos a cauda. [...] A impureza dos pecados que flui para essa medula
-> espinhal desce e se espalha por várias partes: vai para a cabeça, os olhos, o
-> nariz, o coração, os rins, para qualquer lugar. A medula espinhal é a fonte de
-> todas as doenças."
-
-**Exemplos — o sofrimento do descendente causado pelo antepassado** (Eiko nº 104):
-
-> "Os espíritos ancestrais de cada família vão gradualmente compreendendo que,
-> exceto a nossa Igreja, não existe religião que verdadeiramente salve. Por isso,
-> pensam em agarrar-se à nossa Igreja de qualquer maneira [...] Assim, apossando-se
-> de algum dos descendentes, fazem-no adoecer. Nesses casos, na maioria das vezes,
-> utilizam-se das crianças."
-
-(Gosuiji-roku nº 6): "Coisas assim acontecem porque o espírito ancestral, para poder
-ascender, precisa que os descendentes acumulem méritos com empenho. Então, ele
-pensa: 'Preciso fazer este cara acordar para isso', e por isso acontece."
+> "A posição da alma, originalmente, não é fixa: ela sobe e desce sem cessar. Por
+> quê? Porque quanto mais leve, mais sobe, e quanto mais pesada, mais desce. E
+> qual é a causa dessa leveza e desse peso? A bondade ou a maldade das ações
+> humanas. [...] Desde os tempos antigos se diz 'o fardo dos pecados'."
 
 ## 📝 Observações para o dirigente
 
 **O que abordar:**
 1. **O elo espiritual**: o "fio invisível" que liga as pessoas — e que **liga
-   vivos e mortos** (fundamental para entender o Culto).
-2. **A influência recíproca, nos dois sentidos**: os atos dos descendentes
-   afetam os antepassados (a oferenda os eleva; a conduta leviana os irrita) e
-   os antepassados afetam os descendentes (espíritos guardiões; as nuvens
-   espirituais que causam doença). **Isto é a base doutrinária do sufrágio.**
+ vivos e mortos** (fundamental para entender o Culto).
+2. **A influência recíproca**: os pensamentos e atos dos vivos afetam os
+ antepassados e vice-versa. **Isto é a base doutrinária do sufrágio.**
 3. **Espíritos guardiões**: antepassados já purificados protegem os descendentes.
-4. **A lei da redenção — os resíduos fluem constantemente.** Os antepassados são
-   julgados e purificados no mundo espiritual, e **os pecados julgados e lavados
-   fluem para os descendentes**, pela linha "ancestrais – cabeça – medula
-   espinhal – cauda – descendentes". Daí "a medula espinhal é a fonte de todas as
-   doenças". E **só o mérito interrompe a transmissão** — o argumento mais direto
-   do ciclo em favor do Culto.
-5. **Por que o descendente sofre**: o antepassado age **para despertá-lo** e
-   levá-lo a acumular méritos, e assim poder ascender — fazendo adoecer (Eiko
-   nº 104), provocando um acidente (Gosuiji nº 6) ou advertindo com a dor
-   (Mioshie-shū nº 7).
+4. **A alma que sobe e desce**: o "fardo dos pecados" e a leveza da virtude —
+ ligação direta com o porquê de purificarmos nossos antepassados (e a nós).
 
 **Perguntas sugeridas:**
 - De que forma vocês já sentiram a "proteção" ou a "influência" de um antepassado?
-- Se uma pessoa que acumula méritos interrompe a herança do sofrimento da
-  linhagem, o que isso revela sobre a nossa responsabilidade hoje?
-- Olhando para trás em situações difíceis da família, é possível ver nelas um
-  chamado ao mérito, como diz o ensinamento?
 - Se os vivos podem ajudar os mortos pelo elo espiritual, o que isso significa
-  para a nossa conduta diária?
+ para a nossa conduta diária?
 
 ---
 
@@ -395,16 +324,16 @@ pensamentos); e o trecho do tribunal em "O Mundo Espiritual e o Mundo Material".
 
 **O que abordar:**
 1. **A morte como nascimento para o outro mundo** (no budismo, "Ojo" = renascer;
-   no xintoísmo, "Kiyu" = retorno ao oculto).
+ no xintoísmo, "Kiyu" = retorno ao oculto).
 2. **O julgamento é justo e universal**: Rio dos Três Caminhos, Datsueba,
-   Espelho Jōhari (nada fica oculto), tribunal de Enma.
+ Espelho Jōhari (nada fica oculto), tribunal de Enma.
 3. **O destino pós-julgamento**: Paraíso / Mundo Intermediário (a maioria) /
-   Inferno. No Mundo Intermediário há "escola" — palestras dos Ministros
-   espirituais, arrependimento.
+ Inferno. No Mundo Intermediário há "escola" — palestras dos Ministros
+ espirituais, arrependimento.
 4. **Os 49/50 dias**: o espírito permanece ligado até lá — daí os ritos.
 5. **Conexão com o Culto**: muitos dos nossos antepassados podem estar no Mundo
-   Intermediário ou no Inferno, precisando de auxílio. O Culto às Almas é um dos
-   meios desse auxílio.
+ Intermediário ou no Inferno, precisando de auxílio. O Culto às Almas é um dos
+ meios desse auxílio.
 
 **Perguntas sugeridas:**
 - O que mais impressiona vocês na descrição do julgamento?
@@ -414,11 +343,32 @@ pensamentos); e o trecho do tribunal em "O Mundo Espiritual e o Mundo Material".
 
 # AULA 6 — A Vida no Mundo Espiritual e a Reencarnação
 
+> **Foco desta aula (segregação):** aprofundar **o que acontece depois da morte**.
+> As Aulas 1, 2 e 5 entram apenas como **ponte**; o **novo** — e portanto o que
+> deve ser lido com atenção — é: os 49/50 dias e o apego dos vivos; compreender a
+> vida após a morte *antes* de morrer; ter um caminho no mundo espiritual (ou
+> ficar "sem-teto"); a fome no Inferno; o arrependimento que liberta; o sufrágio
+> que eleva; o apego e suas consequências; a animalização; os espíritos híbridos;
+> a reencarnação humana e a prematura.
+
 ## 📜 Ensinamento (leitura)
 
-**Fonte**: *Conversas sobre a Fé*, "Sobre o Elo Espiritual" (parte central sobre
-a reencarnação humana); e *Eiko* (nº 81), ensaio **"Após a Morte do Ser Humano e
-o Reino Animal"**.
+**Leitura principal (na íntegra):**
+`docs/leituras_integrais/Aula_06_Vida_no_Mundo_Espiritual_e_Reencarnacao.md`
+
+**Fontes reunidas nesse arquivo** (em ordem lógica de leitura):
+1. *Conversas sobre o Mundo Espiritual* (1949) — os 49/50 dias; os grupos do mundo
+ espiritual e os "sem-teto"; o Inferno e o Reino dos Espíritos Famintos; os
+ espíritos presos à terra e o amor suicida; a transmigração.
+2. *Gokōwa-roku (Suplemento)* (1948) e *Gokōwa-roku* nº 8, 14, 16 e 19 — o apego
+ que retém o espírito; o sentimento de quem sufraga; a reencarnação prematura;
+ os espíritos híbridos.
+3. *Evangelho do Reino dos Céus* (1947) — o arrependimento como porta de saída; o
+ sufrágio que acelera a purificação.
+4. *Eiko* nº 81 (1950) — **"Após a Morte do Ser Humano e o Reino Animal"**.
+5. *Mioshie-shū* nº 21 e 32 (1953–54) e *Luz dos Ensinamentos* (1951) — os
+ "sem-teto"; a salvação como restauração da condição humana; quem pode vir ao
+ altar.
 
 > "Para esta explicação, é necessário partir do princípio da reencarnação humana.
 > Explicando de forma simples: após a morte, o ser humano vai para o mundo
@@ -445,27 +395,43 @@ o Reino Animal"**.
 > ser celestial do Paraíso e, na ocasião da reencarnação, tornar-se-á um
 > afortunado."
 
-**Leitura de apoio**: *Conversas sobre o Mundo Espiritual*, "Paraíso e Inferno"
-(trecho do Reino Animal); *Luz dos Ensinamentos*, "Sobre o Espírito Secundário no
-Caso de Renascimento".
+**Leitura de apoio (opcional, para aprofundar):** *Conversas sobre o Mundo
+Espiritual*, "Paraíso e Inferno" (trecho do Reino Animal).
 
 ## 📝 Observações para o dirigente
 
-**O que abordar:**
-1. **A vida no mundo espiritual é ativa**: purificação, arrependimento, estudo,
-   convivência em grupos religiosos (quem não tem fé vira "sem-teto" espiritual).
-2. **A reencarnação**: a alma purificada até certo ponto volta a nascer; os
-   pecados residuais continuam a ser purificados na nova vida.
-3. **O Reino Animal**: pensamentos e ações animalizados levam a cair para o reino
-   animal; os animais também podem reencarnar como humanos (transmigração).
-4. **Ligação com o Culto**: quando um antepassado está sofrendo no mundo
-   espiritual (Inferno, Mundo Intermediário ou reino animal), ele **não consegue
-   ascender sozinho** — precisa do sufrágio dos descendentes. Esse é exatamente o
-   papel do Culto às Almas de 02/11.
+**O que abordar (ênfase nos temas novos):**
+1. **Os 49/50 dias**: o espírito permanece ligado à casa/ao objeto; é o **apego
+ dos vivos** que o retém ("não consegue ascender"). Daí os ritos e a
+ recomendação de "esquecer" após os cem dias.
+2. **Compreender a vida após a morte enquanto se vive**: o despreparo leva à
+ possessão e às doenças espirituais; o caso Tokutomi Roka (o descrente fica
+ "demente" no mundo espiritual).
+3. **Ter um caminho — ou ficar "sem-teto"**: o espírito entra no grupo religioso
+ a que pertencia em vida; os sem-teto são incontáveis — "mais numerosos que os
+ humanos".
+4. **O Inferno e a fome**: o Reino dos Espíritos Famintos; o desperdício e o luxo
+ egoísta como causa.
+5. **O arrependimento que liberta**: quem se arrepende é redirecionado à Terra
+ Pura; quem não se arrepende cai no inferno mais baixo.
+6. **O sufrágio que eleva**: quanto mais pessoas sufragarem e quanto mais sincero
+ o sentimento, mais rápido o espírito progride; só quem está acima do Yachimata
+ vem ao altar (exceto no Bon).
+7. **O apego e suas consequências**: espíritos presos à terra (até 30 anos);
+ suicidas; amor suicida (shinju).
+8. **A animalização e o mundo das bestas**: a correspondência entre ação e animal;
+ a transformação **gradual, de baixo para cima**.
+9. **Os espíritos híbridos **: o humano que virou animal e atua como
+ protetor até poder reencarnar humano.
+10. **A reencarnação humana e a prematura**: a alma purificada renasce; a
+ reencarnação rápida por apego "não é boa" e pode ser perigosa.
+11. **Ligação com o Culto**: o antepassado que sofre **não ascende sozinho** —
+ precisa do sufrágio dos descendentes. É o papel do Culto de 02/11.
 
 **Perguntas sugeridas:**
 - Por que alguém que foi "bom desde o nascimento" pode ainda assim sofrer?
 - O que significa "preparar-se para o pós-morte" na prática, hoje?
+- Por que o apego dos vivos pode atrapalhar o antepassado?
 
 ---
 
@@ -500,17 +466,17 @@ cultuasse, apossou-se de uma moça para chamar a atenção da família.
 
 **O que abordar:**
 1. **A influência recíproca** (bem e mal) entre vivos e mortos, pelo elo
-   espiritual.
+ espiritual.
 2. **Antepassados não salvos podem causar doenças/infortúnios** — não por
-   maldade, mas por estarem sofrendo e "procurando ajuda" (possessão).
+ maldade, mas por estarem sofrendo e "procurando ajuda" (possessão).
 3. **A solução**: quando os descendentes entram na fé e sufragam, os antepassados
-   são salvos, e a proteção aumenta. Daí a importância do **Culto às Almas**.
+ são salvos, e a proteção aumenta. Daí a importância do **Culto às Almas**.
 4. **Relato do Hirokichi**: caso concreto que emociona e torna o ensinamento
-   palpável. Ótimo para gerar comoção e engajamento para o 02/11.
+ palpável. Ótimo para gerar comoção e engajamento para o 02/11.
 
 **Perguntas sugeridas:**
 - Conhecem algum caso de doença ou sofrimento na família que possa ter relação
-  com antepassados não sufragados?
+ com antepassados não sufragados?
 - O que significa, na prática, "acumular virtudes" em favor dos antepassados?
 
 ---
@@ -562,20 +528,20 @@ Ancestrais e a Preparação para o Pós-Morte"** — o significado do butsudan.
 
 **O que abordar (aula essencialmente prática):**
 1. **Como cultuar em casa**: o butsudan como "modelo do Paraíso"; o toque do
-   sino (2x); as oferendas (primeiras frutas, coisas raras); a sobra das oferendas
-   ajuda os espíritos famintos.
+ sino (2x); as oferendas (primeiras frutas, coisas raras); a sobra das oferendas
+ ajuda os espíritos famintos.
 2. **As placas (ihai)**: apenas nome + "espírito"; placa única para "todos os
-   antepassados de todas as gerações"; placa individual para os conhecidos.
+ antepassados de todas as gerações"; placa individual para os conhecidos.
 3. **A hierarquia no altar**: Kannon no nível superior; antepassados nos níveis
-   médio/inferior (nunca no mesmo nível — eles sofrem).
+ médio/inferior (nunca no mesmo nível — eles sofrem).
 4. **Quem deve sufragar**: todos os filhos/familiares — não apenas o mais velho.
-   Quanto mais pessoas, mais rápido o espírito progride.
+ Quanto mais pessoas, mais rápido o espírito progride.
 5. **Os 49 dias**: a tabuleta clara é provisória; a preta (dourada) é a oficial,
-   após 49 dias.
+ após 49 dias.
 6. **Preparação imediata para o 02/11**: orientar os participantes a organizarem
-   suas placas/registros de antepassados, anotarem nomes e datas de falecimento
-   (kakocho), e a se prepararem espiritualmente (fé, propósito de servir, acúmulo
-   de virtudes) para o grande dia no Solo Sagrado.
+ suas placas/registros de antepassados, anotarem nomes e datas de falecimento
+ (kakocho), e a se prepararem espiritualmente (fé, propósito de servir, acúmulo
+ de virtudes) para o grande dia no Solo Sagrado.
 
 **Perguntas sugeridas:**
 - Como está organizado o culto aos antepassados na casa de vocês hoje?
@@ -586,14 +552,14 @@ Ancestrais e a Preparação para o Pós-Morte"** — o significado do butsudan.
 ## 🔁 Como o ciclo converge para a cerimônia de 02/11
 
 - **Aula 3 (âncora)** já apresenta o Obon/Culto às Almas e cria o senso de
-  objetivo.
+ objetivo.
 - **Aulas 1–2** dão o fundamento do mundo invisível.
 - **Aulas 4–6** mostram o mecanismo (elo espiritual, julgamento, vida espiritual,
-  reencarnação) — *por que* o sufrágio é necessário.
+ reencarnação) — *por que* o sufrágio é necessário.
 - **Aula 7** mostra a influência dos antepassados — *por que* isso importa para
-  cada família.
+ cada família.
 - **Aula 8** fecha com a prática — *como* cultuar e *como* preparar-se para o
-  grande dia.
+ grande dia.
 
 > 💡 **Sugestão**: entre a Aula 7 e a Aula 8, distribuir um "guia de preparação"
 > simples: cada participante leva para casa a tarefa de listar os antepassados que
@@ -605,13 +571,13 @@ Ancestrais e a Preparação para o Pós-Morte"** — o significado do butsudan.
 ## Notas práticas para o dirigente
 
 1. **Leitura em voz alta**: os capítulos indicados são longos; numa reunião
-   temática, selecionar com antecedência os parágrafos centrais e ler com
-   pausas. Os textos da Leitura Colaborativa estão disponíveis com a **voz de
-   Meishu-Sama** (áudio) no app, se preferir.
+ temática, selecionar com antecedência os parágrafos centrais e ler com
+ pausas. Os textos da Leitura Colaborativa estão disponíveis com a **voz de
+ Meishu-Sama** (áudio) no app, se preferir.
 2. **Conexão com o Johrei**: quando o ensinamento mencionar possessão por
-   antepassados ou purificação, é oportuno lembrar que o Johrei e o sufrágio
-   pelo Komyo-Nyorai são os meios atuais de salvação (sem transformar a reunião
-   em aula de Johrei).
+ antepassados ou purificação, é oportuno lembrar que o Johrei e o sufrágio
+ pelo Komyo-Nyorai são os meios atuais de salvação (sem transformar a reunião
+ em aula de Johrei).
 3. **Cuidado com a nomenclatura**: ao citar, usar sempre o nome da publicação
-   original (ex.: "Mioshie-shū nº 3", "Conversas sobre o Mundo Espiritual",
-   "Luz dos Ensinamentos"), evitando "Zenshū/Rokkan".
+ original (ex.: "Mioshie-shū nº 3", "Conversas sobre o Mundo Espiritual",
+ "Luz dos Ensinamentos"), evitando "Zenshū/Rokkan".

@@ -27,8 +27,8 @@
 ### Arquivos
 
 - **Versão versionada (edite AQUI):** `/var/www/goshinsho/docs/aulas_kyoshu_yoko/`
-  - `Aula_01_Como_o_universo_funciona.md`, `Aula_02_Por_que_adoecemos_e_o_Johrei.md`, `Aula_03_O_que_vem_depois.md`
-  - `gerar_aulas.py` (regenera os artefatos), `saida/` (TXT + DOCX + PDF), `_antigo/` (rascunho da Aula 4 descartada)
+ - `Aula_01_Como_o_universo_funciona.md`, `Aula_02_Por_que_adoecemos_e_o_Johrei.md`, `Aula_03_O_que_vem_depois.md`
+ - `gerar_aulas.py` (regenera os artefatos), `saida/` (TXT + DOCX + PDF), `_antigo/` (rascunho da Aula 4 descartada)
 - **Origem (workspace rattail):** `/var/www/rattail/work/kyoshu_yoko/aulas_simples/`
 - **Workspace multi-pasta:** `/var/www/rattail-goshinsho.code-workspace`
 
@@ -47,16 +47,16 @@
 ### Estado atual (quase pronto — tradução 99,3%)
 
 1. **Verificação concluída:** conclusão corrigida — são **415 artigos ausentes** (a conclusão anterior "ausentes: 0" media séries/arquivos, não artigos).
-   - 寸鉄/寸鉄活人 é **texto canônico de Meishu-Sama** (pseudônimo 白光生, incluído no Zenshū 著述篇).
-   - 質問応答 e 巻頭言 **NÃO estão nas orais** do app (estão no Zenshū 講話篇/著述篇 e no livro 教えの光).
+ - 寸鉄/寸鉄活人 é **texto canônico de Meishu-Sama**.
+ - 質問応答 e 巻頭言 **NÃO estão nas orais** do app.
 2. **Tradução** (deepseek, 16 workers, tmux `trad_periodicos`): **412/415 (99,3%)**. 3 pendentes (`Eiko 250/256/98`) por timeout de 30s da API → corrigido para 240s, sendo retraduzidos.
-   - Plano do Contabo confirmado: **14 vCPU / 49 GB RAM** (upgrade real).
-   - Bug corrigido: glossário rigoroso gerava falso-positivos e lentidão.
+ - Plano do Contabo confirmado: **14 vCPU / 49 GB RAM** (upgrade real).
+ - Bug corrigido: glossário rigoroso gerava falso-positivos e lentidão.
 3. **Consolidação dos achados do Claude:** 1.190 achados · 649 termos · 11 grupos → `docs/DECISOES_GLOSSARIO_CONSOLIDADO_20261008.md` (11 temas + 9 pontos de decisão).
 4. **Ordem "pode fazer" executada** — corrigidos **6 defeitos**:
-   - 2 linhas de cabeçalho vazando para o prompt do LLM (agora **833 entradas válidas**, 0 sem kanji);
-   - notas editoriais `(...)` virando "forma exigida" (causa dos 73 itens de 御守護 falhando) — correção em duas camadas;
-   - +3 defeitos encontrados na verificação.
+ - 2 linhas de cabeçalho vazando para o prompt do LLM (agora **833 entradas válidas**, 0 sem kanji);
+ - notas editoriais `(...)` virando "forma exigida" — correção em duas camadas;
+ - +3 defeitos encontrados na verificação.
 
 ### Arquivos principais
 

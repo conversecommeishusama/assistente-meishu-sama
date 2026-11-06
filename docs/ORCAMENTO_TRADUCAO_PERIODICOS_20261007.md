@@ -161,17 +161,17 @@ O projeto já tem os lançadores prontos — não é preciso construir nada:
 tmux new-session -d -s trad_periodicos
 # P1..P4 = shards (um por veículo; cada worker pega 1 artigo por vez)
 for i in 0..N-1; do
-  tmux new-window -t trad_periodicos -n "shard$i" \
-    ".venv/bin/python scripts/<orquestrador> --shard=$i --total=$N"
+ tmux new-window -t trad_periodicos -n "shard$i" \
+ ".venv/bin/python scripts/<orquestrador> --shard=$i --total=$N"
 done
 ```
 
 - **Um orquestrador por fase** (`ThreadPoolExecutor(max_workers=N)`), padrão de
-  `retraduzir_mioshie_prosa_massa.py` / `auditar_mioshie_prosa_workers.py`.
+ `retraduzir_mioshie_prosa_massa.py` / `auditar_mioshie_prosa_workers.py`.
 - **Checkpoint por item** → retomável; item concluído é pulado.
 - **Logs por worker** em `logs/` (padrão `lancar_shards_gokowa.sh`).
 - **Artefato do projeto para reusar**: `scripts/lancar_shards_gokowa.sh` (lança N
-  shards em tmux) e `scripts/orquestrar_mioshie_8workers.py` (retry + conclusão).
+ shards em tmux) e `scripts/orquestrar_mioshie_8workers.py` (retry + conclusão).
 
 > **Ponto de atenção**: subir 32+ workers na MESMA máquina que serve o app
 > (6 gunicorn + 15 GB). Rodar o lote **fora do horário de pico** ou limitar a
@@ -188,8 +188,7 @@ done
 | Páginas/chars JP | 6.289 págs / 12,18 M chars | **415 artigos / 694.625 chars** |
 
 A diferença (~18×) tem causa metodológica: o orçamento de 06/10 contou **todas as
-páginas** do rattail dos periódicos — incluindo **testemunhos de terceiros**
-(御蔭話), material **já presente** no app e duplicatas. Este orçamento aplica a
+páginas** do rattail dos periódicos — incluindo **testemunhos de terceiros**, material **já presente** no app e duplicatas. Este orçamento aplica a
 **regra de canonicidade do projeto** (autoria de Meishu-Sama) e desconta o que já
 existe. É, portanto, o número **acionável**.
 
@@ -198,27 +197,27 @@ existe. É, portanto, o número **acionável**.
 ## 8. Premissas e limitações
 
 1. **Vazão medida com 10 workers** (§5b); a projeção com 24–32 assume
-   escalabilidade ~linear — **não garantida**, a validar com teste de rampa.
+ escalabilidade ~linear — **não garantida**, a validar com teste de rampa.
 2. **Margem de ±10%** no volume (reconciliação de duplicatas/reedições não feita).
 3. **Não inclui** o tempo da **auditoria teológica** do usuário (gargalo real).
 4. **Não inclui** a tradução dos 2 itens `a_revisar` (genuinamente ambíguos).
 5. Promoção/reindexação **exigem autorização explícita** (regra `GOSHINSHO.md`).
 6. **Concorrência máxima = limite da API DeepSeek**, não do servidor — medir.
 7. ⚠️ **Confirmar o plano** no painel da Contabo: o SO mostra 14 vCPU/49 GB
-   (o doc de 27/08 registrava 6 núcleos/11 GB). Se o upgrade foi feito há pouco
-   e o `uptime` ainda é alto, um **reboot** pode ser necessário para a RAM/CPU
-   novas aparecerem por completo.
+ (o doc de 27/08 registrava 6 núcleos/11 GB). Se o upgrade foi feito há pouco
+ e o `uptime` ainda é alto, um **reboot** pode ser necessário para a RAM/CPU
+ novas aparecerem por completo.
 
 ---
 
 ## 9. Recomendação
 
 1. **Teste de rampa** (10→16→24→32→48 workers) numa amostra pequena, medindo
-   chars/h e taxa de erro — acha o joelho real da API em ~10 min.
-2. **P1 (地上天国)** como piloto real — contém as séries ausentes (質問応答,
-   巻頭言) e valida o pipeline ponta a ponta.
+ chars/h e taxa de erro — acha o joelho real da API em ~10 min.
+2. **P1 (Tijotengoku)** como piloto real — contém as séries ausentes (質問応答,
+ 巻頭言) e valida o pipeline ponta a ponta.
 3. **Guia de estilo** já existe (`docs/GUIA_DE_ESTILO_E_FLUXO_REVISAO.md`) — a
-   revisão literária é a última etapa.
+ revisão literária é a última etapa.
 4. **Auditoria de fidelidade** por lote, com subagente (o executor pode errar).
 5. **Rodar o lote fora do horário de pico** (compartilha a máquina com o app).
 6. **Promover em blocos** ao fim de cada fase (evita rebuildar índices várias vezes).

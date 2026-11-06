@@ -11,9 +11,9 @@
 > - Termo padrão para *shugyō*: **aprimoramento**;
 > - Registro formal (norma culta), frases mais diretas e naturais, pontuação cuidada;
 > - Evitar "homem" (remete a machismo); alternar **"seres humanos" / "as pessoas" /
->   "humanos"** para não ficar redundante;
+> "humanos"** para não ficar redundante;
 > - Capitalização: maiúscula quando nome próprio do plano (Paraíso, Inferno, Mundo
->   Intermediário); minúscula quando uso comum;
+> Intermediário); minúscula quando uso comum;
 > - Preservar tom reverencial e termos sagrados;
 > - Os diálogos também podem ser ajustados (fluência e pontuação).
 
@@ -192,11 +192,11 @@
 
 1. **Registro:** norma culta formal.
 2. **Preferência lexical:** alternar **"seres humanos" / "as pessoas" / "humanos"**
-   para evitar redundância; **evitar "homem"** (remete a machismo).
-3. **"anjos":** confirmado no original japonês (*エンゼル（天使）*) para os deuses
-   do 3º Paraíso — **mantido**.
+ para evitar redundância; **evitar "homem"** (remete a machismo).
+3. **"anjos":** confirmado no original japonês para os deuses
+ do 3º Paraíso — **mantido**.
 4. **Capitalização:** maiúscula quando é nome próprio do plano (Paraíso, Inferno,
-   Mundo Intermediário); minúscula quando uso comum — conforme norma culta.
+ Mundo Intermediário); minúscula quando uso comum — conforme norma culta.
 5. **Diálogos:** podem ser ajustados também (fluência e pontuação).
 6. **Termo padrão para *shugyō*:** "aprimoramento".
 7. **Sem acréscimos fora do original** (colchetes interpretativos viram paráfrase).

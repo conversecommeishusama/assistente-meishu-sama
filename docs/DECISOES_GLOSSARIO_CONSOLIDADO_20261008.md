@@ -86,7 +86,7 @@ Tabela de conversão a fixar no glossário:
 | 経緯を結ぶ | "unir o vertical e o horizontal" |
 | 経の文化 / 緯の文化 | Cultura Vertical / Cultura Horizontal *(já existe)* |
 
-**Nota doutrinária** (a registrar no glossário): o próprio Meishu-Sama define 経 = Oriente / espiritual / ancestralidade e 緯 = Ocidente / material / cristianismo. Nos casos de 十字は経緯を結ぶ, a imagem é a cruz (十) unindo os dois eixos.
+**Nota doutrinária** (a registrar no glossário): o próprio Meishu-Sama define 経 = Oriente / espiritual / ancestralidade e 緯 = Ocidente / material / cristianismo. Nos casos de 十字は経緯を結ぶ, a imagem é a cruz unindo os dois eixos.
 
 **Impacto:** 41 achados.
 
@@ -94,13 +94,13 @@ Tabela de conversão a fixar no glossário:
 
 ### C. 心 e derivados — 59 achados · 🟡 JÁ LEVANTADO POR VOCÊ
 
-**Achado:** 心 aparece 29× em contextos técnicos (霊・心・魂の違い) e é traduzido como "coração", achatando a distinção doutrinária tríplice.
+**Achado:** 心 aparece 29× em contextos técnicos e é traduzido como "coração", achatando a distinção doutrinária tríplice.
 
 **Decisão proposta:**
 
 | JP | Tradução | Exceção |
 |---|---|---|
-| 心 | **mente** / consciência | "coração" apenas em contexto de afeto (真心, 心配) |
+| 心 | **mente** / consciência | "coração" apenas em contexto de afeto |
 | 気持ち | intenção interior / disposição | — |
 | 心配 | preocupação | *(manter)* |
 | 魂 | alma | *(manter)* |
@@ -148,7 +148,7 @@ Tabela de conversão a fixar no glossário:
 |---|---|
 | Divindade (Kannon, Miroku, etc.) | cultuar / consagrar |
 | Espírito, ancestral, falecido | sufragar |
-| Altar, imagem (祗る no sentido de entronizar) | consagrar |
+| Altar, imagem | consagrar |
 
 | Termo | Tradução |
 |---|---|
@@ -182,12 +182,12 @@ Tabela de conversão a fixar no glossário:
 
 | JP | Ação |
 |---|---|
-| 霊統 | **adicionar**: "linhagem espiritual" (par de 血統 → linhagem sanguínea) |
+| 霊統 | **adicionar**: "linhagem espiritual" |
 | 身魂 | **fixar tradução própria**, distinta de 魂 — sugerido "alma" com nota, ou "ser espiritual" |
 | 中有界 / 八衢 | usar **a mesma tradução** ("Mundo Intermediário") para ambos, com nota de que 八衢 é o nome técnico |
 | 霊動 | "movimento espiritual" / "manifestação espiritual (reitō)" |
 
-*(mantidos: 見真実, 霊主体従, 霊線 → "elo espiritual", 中有界, 東洋=縦 / 西洋=横)*
+**
 
 ---
 
@@ -214,7 +214,7 @@ Tabela de conversão a fixar no glossário:
 | Diante do 仏壇 | **apenas** Zengen-Sandji (últimas duas frases) |
 | 天津祝詞 | "Amatsu Norito" 1ª menção → depois "Norito" *(manter)* |
 | 善言讃詞 | recitar a Oração Zengen-Sandji *(usar "recitar", não "oferecer")* |
-| 御讃歌 | "Salmo" *(consistente com 御讃歌集 → Coletânea de Salmos)* |
+| 御讃歌 | "Salmo" ** |
 | 奏上 | recitar |
 
 **Ponto para você decidir:** confirmar a regra 御軸→norito+Zengen / 仏壇→só Zengen.
@@ -232,7 +232,7 @@ Mudanças propostas:
 | 型 | "padrão profético" / "prefiguração" quando manifestação profética; "modelo" no uso genérico |
 | 大乗 | acrescentar glosa "(o Grande Veículo)" na 1ª menção de cada artigo |
 | 散花結実 | expressão fixa: "A flor cai, o fruto amadurece" (sanka-kekijitsu) |
-| 木龍 | "dragão da árvore" (padrão de 地龍 → "dragão da terra") |
+| 木龍 | "dragão da árvore" |
 | 伊都能売 | "Izunome" com nota na 1ª ocorrência |
 | 副霊 × 副守護神 | adicionar **nota de diferenciação** (não confundir) |
 | 正守護神 | manter as 3 traduções já fixadas; atenção redobrada |
@@ -275,10 +275,10 @@ A hipótese de erro de edição foi **descartada**. Verificação no `kowa_full.
 
 | Forma | Ocorr. | Contextos |
 |---|---|---|
-| `時所位` | **8** | uso geral/doutrinário (時所位に応じ / 時所位を得る) |
+| `時所位` | **8** | uso geral/doutrinário |
 | `地所位` | **3** | sempre ligado a mundo/paraíso: 「世界における地所位」「光明世界における地所位」 |
 
-**Conclusão:** `地所位` aparece exclusivamente em passagens sobre posição **no mundo / no Paraíso da Luz** — é coerente como "posição na esfera" (地所), distinta do conceito dinâmico de `時所位` (posição que muda com tempo e lugar).
+**Conclusão:** `地所位` aparece exclusivamente em passagens sobre posição **no mundo / no Paraíso da Luz** — é coerente como "posição na esfera", distinta do conceito dinâmico de `時所位` (posição que muda com tempo e lugar).
 
 Ambas estão **ausentes do `glossario_traducao.json`** (não há nenhuma das duas entradas).
 
@@ -296,7 +296,7 @@ Ambas estão **ausentes do `glossario_traducao.json`** (não há nenhuma das dua
 
 ```
 経, 緯, 縦, 横, 経緯, 経と緯, 経緯を結ぶ
-とっつく / 取っ付く, 死霊, 生き霊(生霊), 狐霊
+とっつく / 取っ付く, 死霊, 生き霊, 狐霊
 お供え, お供えを上げる, 位牌, 御霊紙
 霊統, 時所位 (Jishoi), 地所位
 ```
@@ -304,14 +304,14 @@ Ambas estão **ausentes do `glossario_traducao.json`** (não há nenhuma das dua
 **Entradas AMPLIADAS / REVISADAS (8):**
 
 ```
-心 (+ 気持ち, 心魂)     → "mente/consciência" como padrão
-経の文化, 緯の文化       → cobrir também as formas isoladas
+心 → "mente/consciência" como padrão
+経の文化, 緯の文化 → cobrir também as formas isoladas
 尺・寸・間・町・里・坪・升・合・勺・貫・尋・丈 → tabela métrica
-経綸 / 御経綸            → distinção por sujeito
-祀る / 祭る              → regra por objeto (divindade × espírito)
-御軸                     → diferenciar consagrado × caligrafia
+経綸 / 御経綸 → distinção por sujeito
+祀る / 祭る → regra por objeto (divindade × espírito)
+御軸 → diferenciar consagrado × caligrafia
 型, 大乗, 散花結実, 木龍, 身魂, 中有界/八衢, 御讃歌
-凭る・凭く・憑依          → proibir "possesso"
+凭る・凭く・憑依 → proibir "possesso"
 ```
 
 **Regra de validação NOVA:**
@@ -334,7 +334,7 @@ Ambas estão **ausentes do `glossario_traducao.json`** (não há nenhuma das dua
 | 6 | **玉串** | (A) "oferenda" · (B) manter transliterado |
 | 7 | **癩病** | definir registro (histórico da época × termo sensível) |
 | 8 | **地所位** | (A) "posição no mundo" · (B) transliterar "Chishoi" (espelhando Jishoi) |
-| 9 | **1ª ocorrência por artigo** | implementar modo "primeira ocorrência" na trava? (afeta medidas, 位牌, 天津祝詞, 智慧証覚, 時所位…) |
+| 9 | **1ª ocorrência por artigo** | implementar modo "primeira ocorrência" na trava? |
 
 ---
 

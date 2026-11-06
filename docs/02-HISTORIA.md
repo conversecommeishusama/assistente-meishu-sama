@@ -17,17 +17,17 @@ Duas condições, uma tecnológica e uma legal, se resolveram de forma
 independente e permitiram que este projeto existisse:
 
 - **Tecnológica:** o surgimento de IA de tradução/geração de texto de
-  qualidade suficiente permitiu que uma única pessoa com experiência
-  tradutória — o fundador — traduzisse com qualidade os 128
-  livros/livretos que compõem o acervo. Sem esse avanço, o mesmo trabalho
-  provavelmente levaria muitos anos com uma equipe dedicada de
-  tradutores. Uma estimativa comparativa real está em
-  [10-ESTUDO-TEMPO-TRADUCAO.md](10-ESTUDO-TEMPO-TRADUCAO.md).
+ qualidade suficiente permitiu que uma única pessoa com experiência
+ tradutória — o fundador — traduzisse com qualidade os 128
+ livros/livretos que compõem o acervo. Sem esse avanço, o mesmo trabalho
+ provavelmente levaria muitos anos com uma equipe dedicada de
+ tradutores. Uma estimativa comparativa real está em
+ [10-ESTUDO-TEMPO-TRADUCAO.md](10-ESTUDO-TEMPO-TRADUCAO.md).
 - **Legal:** em 2026 caducaram os direitos autorais de todo o material
-  publicado pela Igreja durante a vida de Meishu-Sama (falecido em 1955)
-  — o que torna esse acervo especificamente utilizável agora. Critério
-  completo de escopo (o que entra e o que fica de fora, e por quê) em
-  [04-ACERVO.md](04-ACERVO.md) §"Base legal e critério de escopo".
+ publicado pela Igreja durante a vida de Meishu-Sama (falecido em 1955)
+ — o que torna esse acervo especificamente utilizável agora. Critério
+ completo de escopo (o que entra e o que fica de fora, e por quê) em
+ [04-ACERVO.md](04-ACERVO.md) §"Base legal e critério de escopo".
 
 Isso muda como ler o resto desta história: a fase de protótipo abaixo
 (maio–junho) não é só "alguém decidiu construir um app de busca" — é o
@@ -103,8 +103,8 @@ de sub-fases, cada uma nascida de um problema real encontrado na anterior:
 | **Fase Inicial** (3/jul) | Reconfirmar que a segmentação de cada livro seguia a unidade temática do autor (capítulo/item/data), não corte tipográfico cego | 6 livros estavam **inteiramente sem divisão** (1 "artigo" = o livro inteiro); regras de detecção de título confundiam endereços de testemunha, citações-fonte e linhas divisórias com títulos reais | Regras de detecção corrigidas; 6 livros re-segmentados; script `reconfirmar_segmentacao_autoral.py` criado como diagnóstico reutilizável |
 | **Fase F / F2** (9–12/jul) | Revisão literária linha a linha de todo o corpus contra o japonês | Descoberto que **passar no gate estrutural (Δ=0)** — mesma contagem de frases/parágrafos JP e PT — não prova nada: 10 de 20 volumes Gokōwa que tinham "passado" tinham troca de falante ou perda de conteúdo mascarada pela contagem batendo por coincidência | Regra permanente: "Δ=0 é necessário, nunca suficiente" — toda promoção exige leitura semântica real, não só métrica numérica |
 | **JP-2** (12/jul) | Verificação estrutural do lado japonês (108 livros) | Um executor reportou "sem bugs" num livro que na verdade tinha 16 de 29 títulos colados uns nos outros | Auditor externo **independente**, cético por padrão, que não aceita o relato do executor sem reconferir do zero, virou padrão obrigatório em toda fase seguinte |
-| **Rotulagem de turnos** (12–15/jul) | Rotular `Interlocutor:`/`Meishu-Sama:` nos diálogos, JP e PT | Um bug sutil (resposta curta citada do interlocutor sendo absorvida dentro do bloco do Meishu-Sama) apareceu em pelo menos 23 livros e pausou a promoção automática por dias até ser corrigido e verificado | Rotulagem mecânica com verificação por código (contagem de marcadores nativos JP `（お伺）`/`〔御垂示〕`), não só heurística de texto |
-| **Chunk turn-aware** (14–15/jul) | Cortar sessões de diálogo muito longas em pedaços menores para melhorar a busca, sem nunca partir um par pergunta/resposta ao meio | Um livro (御教え集8号) tinha rótulo só no PT, nunca no JP — o motor de corte não protegia os pares do lado japonês; achado confirmado por código (6 pares realmente partidos) | Rotulagem do corpo JP replicando o mapa já usado no PT; **fechou 126/126** nesta sessão de documentação |
+| **Rotulagem de turnos** (12–15/jul) | Rotular `Interlocutor:`/`Meishu-Sama:` nos diálogos, JP e PT | Um bug sutil (resposta curta citada do interlocutor sendo absorvida dentro do bloco do Meishu-Sama) apareceu em pelo menos 23 livros e pausou a promoção automática por dias até ser corrigido e verificado | Rotulagem mecânica com verificação por código, não só heurística de texto |
+| **Chunk turn-aware** (14–15/jul) | Cortar sessões de diálogo muito longas em pedaços menores para melhorar a busca, sem nunca partir um par pergunta/resposta ao meio | Um livro tinha rótulo só no PT, nunca no JP — o motor de corte não protegia os pares do lado japonês; achado confirmado por código (6 pares realmente partidos) | Rotulagem do corpo JP replicando o mapa já usado no PT; **fechou 126/126** nesta sessão de documentação |
 | **Fase G** (15/jul, em andamento) | Nova rodada de revisão semântica **e gramatical** do zero sobre o corpus inteiro, porque as correções acumuladas das fases acima podem ter introduzido divergências novas | — (em andamento) | 2 shards paralelos, executor + auditor externo, mesmo padrão da Fase F2/JP-2 |
 
 Um padrão se repete em quase toda sub-fase: **o problema real só aparece
@@ -117,9 +117,9 @@ no aplicativo.
 ## Onde isso deixou o projeto (ver estado detalhado em [07-ESTADO-ATUAL.md](07-ESTADO-ATUAL.md))
 
 - O **aplicativo** está estável em produção desde a v1.2.0 (18/jun); a
-  pipeline v2 e a política "sem tutela" são a arquitetura de busca atual.
+ pipeline v2 e a política "sem tutela" são a arquitetura de busca atual.
 - O **acervo** em produção (o que o usuário busca hoje) ainda reflete o
-  estado de 13 de junho — todas as correções de tradução/segmentação desde
-  então (Fase F em diante) estão em `reports/livros_trabalho/`, aguardando
-  a Fase G fechar e uma promoção conjunta JP+PT autorizada explicitamente
-  pelo usuário.
+ estado de 13 de junho — todas as correções de tradução/segmentação desde
+ então (Fase F em diante) estão em `reports/livros_trabalho/`, aguardando
+ a Fase G fechar e uma promoção conjunta JP+PT autorizada explicitamente
+ pelo usuário.

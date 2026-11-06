@@ -83,12 +83,12 @@ pergunta, nunca como fim em si mesmas.)*
 ## Perguntas em aberto para as próximas sessões
 
 1. Como o problema descrito em "O risco que nos move" (messiânicos
-   seguindo o caminho materialista por ignorância) deve se refletir
-   concretamente em quem o Goshinsho prioriza atender e como? (sessão 3)
+ seguindo o caminho materialista por ignorância) deve se refletir
+ concretamente em quem o Goshinsho prioriza atender e como? (sessão 3)
 2. A "Visão do produto" fala em receber feedback de transformações de
-   vida — existe hoje algum mecanismo para coletar isso, ou é algo a
-   construir? (pode virar um objetivo concreto de produto)
+ vida — existe hoje algum mecanismo para coletar isso, ou é algo a
+ construir? (pode virar um objetivo concreto de produto)
 3. Existe uma forma de medir, mesmo que aproximada, se o Goshinsho está de
-   fato aproximando pessoas da compreensão profunda da Verdade (e não só
-   respondendo perguntas superficialmente)? Isso poderia virar uma
-   diretriz de decisão (sessão 4).
+ fato aproximando pessoas da compreensão profunda da Verdade (e não só
+ respondendo perguntas superficialmente)? Isso poderia virar uma
+ diretriz de decisão (sessão 4).

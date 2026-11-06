@@ -18,15 +18,15 @@
 ## Como a cópia de teste foi montada
 
 - Código (editável): `goshinsho/`, `templates/`, `static/`, `app.py`,
-  `logo.png`, `.env` (copiado, não symlink).
+ `logo.png`, `.env` (copiado, não symlink).
 - Dados pesados (somente leitura, via symlink pro arquivo real): todos os
-  `chunks*.pkl`, `indice*.faiss`, `metadados*.pkl`, `glossario*.json`,
-  `protocolo*.txt`, `data/clean_corpus`, `data/publication_sources`.
+ `chunks*.pkl`, `indice*.faiss`, `metadados*.pkl`, `glossario*.json`,
+ `protocolo*.txt`, `data/clean_corpus`, `data/publication_sources`.
 - `data/support_tickets/` foi criado vazio na cópia.
 - Roda com o mesmo Supabase/Resend/Stripe reais (não há staging separado)
-  — usei a conta de teste já existente (`goshinsho+teste@gmail.com`).
+ — usei a conta de teste já existente (`goshinsho+teste@gmail.com`).
 - Para reabrir: `bash /tmp/claude-0/.../scratchpad/start_test_app.sh` —
-  acessível em `http://127.0.0.1:5090/app` só de dentro do servidor.
+ acessível em `http://127.0.0.1:5090/app` só de dentro do servidor.
 
 ---
 
@@ -55,7 +55,7 @@ tmux, confirmei os executores ativos e processando de novo).
 
 Sem mudança desde a última atualização: o arquivo real de produção
 `metadados_pt.pkl` tem hoje 48.580 registros com schema mínimo (falta
-`arquivo`/`arquivo_original`/etc.), o que zera `get_article_index()`
+`arquivo`/`arquivo_original`/etc.), o que zera `get_article_index`
 (busca de artigo completo). Timestamp estável em 13/jun, não é uma
 mudança recente. Detalhes completos na task #20. Como a promoção
 automática foi cancelada, isso não é mais urgente no sentido de "pode
@@ -75,35 +75,35 @@ todo o código e encontrei tutela ativa em **mais três lugares** que a
 rodada anterior não tinha pego, todos removidos e testados:
 
 - **`goshinsho/pipeline/context.py`** (pipeline v2, ativo em produção
-  agora): a função `_trim_terms()`, usada em toda pergunta pra decidir
-  onde cortar um trecho longo, injetava incondicionalmente uma lista fixa
-  de termos — `ohikari, amuleto, receb, pendur, peito, asma, diafragma,
-  abdômen, johrei, ponto, vital, dolorido` — em **qualquer** pergunta,
-  mesmo sem relação nenhuma com Ohikari. Removido; a lista de termos
-  agora vem só da pergunta real do usuário.
+ agora): a função `_trim_terms`, usada em toda pergunta pra decidir
+ onde cortar um trecho longo, injetava incondicionalmente uma lista fixa
+ de termos — `ohikari, amuleto, receb, pendur, peito, asma, diafragma,
+ abdômen, johrei, ponto, vital, dolorido` — em **qualquer** pergunta,
+ mesmo sem relação nenhuma com Ohikari. Removido; a lista de termos
+ agora vem só da pergunta real do usuário.
 - **`goshinsho/pipeline/scoring.py`**: o arquivo inteiro (apesar do
-  comentário dizer "sem direcionamento por tema") era um sistema de
-  pontuação dedicado à confusão Ohikari-medalha vs.
-  Ofudesaki/Ômoto-escritura, ativo em toda busca (`content_score`,
-  chamado de `answer.py`, `rank.py`, `retrieve.py`). Reescrito mantendo só
-  as partes genéricas (bônus por fala direta de Meishu-Sama, penalização
-  de menção periférica).
+ comentário dizer "sem direcionamento por tema") era um sistema de
+ pontuação dedicado à confusão Ohikari-medalha vs.
+ Ofudesaki/Ômoto-escritura, ativo em toda busca (`content_score`,
+ chamado de `answer.py`, `rank.py`, `retrieve.py`). Reescrito mantendo só
+ as partes genéricas (bônus por fala direta de Meishu-Sama, penalização
+ de menção periférica).
 - **`goshinsho/services/search_service.py`**: **achado maior** — uma rota
-  de busca inteiramente dedicada, `buscar_trechos_ohikari()`, com ~340
-  linhas somando constantes de termos, pools de busca literal/semântica
-  específicos, scoring e promoção de trechos "centrais" — o exemplo mais
-  clássico de tutela que existe ("rota dedicada por tema"). Confirmei que
-  não tinha **nenhum chamador** em lugar nenhum do código (órfã, mas
-  presente) e removi por completo (339 linhas), junto com
-  `pergunta_sobre_ohikari`/`is_ohikari_thread` (também órfãs depois da
-  limpeza da rodada anterior).
+ de busca inteiramente dedicada, `buscar_trechos_ohikari`, com ~340
+ linhas somando constantes de termos, pools de busca literal/semântica
+ específicos, scoring e promoção de trechos "centrais" — o exemplo mais
+ clássico de tutela que existe ("rota dedicada por tema"). Confirmei que
+ não tinha **nenhum chamador** em lugar nenhum do código (órfã, mas
+ presente) e removi por completo (339 linhas), junto com
+ `pergunta_sobre_ohikari`/`is_ohikari_thread` (também órfãs depois da
+ limpeza da rodada anterior).
 - **`goshinsho/pipeline/prompts.py`**: a regra 7 (Ohikari vs.
-  Ofudesaki/Ômoto), que a rodada anterior tinha deixado de propósito por
-  ser "regra base genérica sempre presente" — você pediu para tirar
-  também, removida.
+ Ofudesaki/Ômoto), que a rodada anterior tinha deixado de propósito por
+ ser "regra base genérica sempre presente" — você pediu para tirar
+ também, removida.
 
 **Testado ao vivo depois da limpeza completa:** app sobe normalmente
-(`create_app()` importa sem erro, 40 rotas registradas), e uma pergunta
+(`create_app` importa sem erro, 40 rotas registradas), e uma pergunta
 real sobre Johrei/Ohikari é respondida corretamente pela busca genérica,
 sem erro de JS nem de servidor.
 
@@ -113,7 +113,7 @@ Achado ao investigar por que o app de teste começou a recusar perguntas
 de uma conta já confirmada ("confirme seu e-mail"), depois de eu ter
 usado essa mesma conta com sucesso várias vezes antes na sessão.
 
-**Causa raiz:** `goshinsho/services/auth_service.py::_fetch_auth_user_by_email()`
+**Causa raiz:** `goshinsho/services/auth_service.py::_fetch_auth_user_by_email`
 chamava a API admin do Supabase (`GET /auth/v1/admin/users`) passando
 `email` como parâmetro de query, presumindo que isso filtra por e-mail.
 **Não filtra** — a API ignora esse parâmetro e retorna a primeira página
@@ -122,16 +122,16 @@ vivo: pedindo os dados da conta de teste, a função retornava o registro
 de **outra pessoa completamente diferente** (criada no mesmo dia).
 
 **Impacto real, duplo:**
-1. `is_email_confirmed()` — chamada em toda pergunta via `/api/chat` —
-   verificava a confirmação de e-mail de um usuário aleatório, não do
-   usuário logado. Podia negar acesso a alguém de verdade confirmado, ou
-   liberar acesso a alguém não confirmado, dependendo de quem calhasse
-   ser "o primeiro da lista" naquele momento.
-2. `register_user()` usa a mesma função para checar e-mail já cadastrado
-   antes de permitir novo cadastro — essa checagem também estava
-   quebrada pelo mesmo motivo.
+1. `is_email_confirmed` — chamada em toda pergunta via `/api/chat` —
+ verificava a confirmação de e-mail de um usuário aleatório, não do
+ usuário logado. Podia negar acesso a alguém de verdade confirmado, ou
+ liberar acesso a alguém não confirmado, dependendo de quem calhasse
+ ser "o primeiro da lista" naquele momento.
+2. `register_user` usa a mesma função para checar e-mail já cadastrado
+ antes de permitir novo cadastro — essa checagem também estava
+ quebrada pelo mesmo motivo.
 
-**Corrigido** usando o SDK do Supabase (`admin.auth.admin.list_users()`,
+**Corrigido** usando o SDK do Supabase (`admin.auth.admin.list_users`,
 paginado, filtro exato de e-mail no cliente) em vez da chamada REST crua
 — mesmo padrão que usei várias vezes ao longo desta sessão para consultas
 administrativas reais. **Testado de ponta a ponta**: login + pergunta real
@@ -160,7 +160,7 @@ hindi mostrando a tela inteira traduzida, banner de cadastro incluso.
 
 A rodada anterior tinha corrigido só as partes estáticas (chips) e deixado
 o título/mensagem (que vinham hardcoded em português direto do backend)
-como decisão em aberto. Resolvido: `updateQuotaCard()` no frontend agora
+como decisão em aberto. Resolvido: `updateQuotaCard` no frontend agora
 detecta o estado "cadastro necessário" (`status.plan ===
 "cadastro_necessario"`) e substitui o texto vindo da API por uma versão
 traduzida no idioma escolhido, usando 3 chaves novas
@@ -190,32 +190,32 @@ subir de 2 para 4 workers junto — mudança de uma linha, já validada.
 
 ## O que já estava corrigido/testado na rodada anterior (sem mudança)
 
-- **#18/#19** — assimetria de `.strip()` na senha do cadastro. Corrigido e
-  testado.
+- **#18/#19** — assimetria de `.strip` na senha do cadastro. Corrigido e
+ testado.
 - **#21** — cabeçalho fixo (causa raiz: `overflow-x: hidden` em 3 lugares
-  promovendo `overflow-y` pra `auto`, quebrando `position: sticky`).
-  Corrigido com `overflow-x: clip`. Reconfirmado nesta rodada.
+ promovendo `overflow-y` pra `auto`, quebrando `position: sticky`).
+ Corrigido com `overflow-x: clip`. Reconfirmado nesta rodada.
 - **#22** — resposta mostra do início, não do fim. Corrigido.
 - **#23** — rota `/resposta/<id>` criada, menu de compartilhar visível,
-  pergunta incluída no texto compartilhado. Corrigido e reconfirmado.
+ pergunta incluída no texto compartilhado. Corrigido e reconfirmado.
 - **#25** — decomissão do Acervo Studio preparada na cópia de teste
-  (inclusive um acoplamento frágil extra que descobri: o app público real
-  também importava o módulo do Studio incondicionalmente, mesmo sem usar
-  — corrigido junto).
+ (inclusive um acoplamento frágil extra que descobri: o app público real
+ também importava o módulo do Studio incondicionalmente, mesmo sem usar
+ — corrigido junto).
 
 ---
 
 ## Pendências que continuam precisando da sua decisão (não são bugs, são escolhas)
 
 1. **Aprovação visual do novo `logo.png`** (tom de azul mais claro) — só
-   atualiza o site; o ícone já compilado dentro do `goshinsho.apk` precisa
-   ser regenerado no projeto Android de origem, fora deste servidor.
+ atualiza o site; o ícone já compilado dentro do `goshinsho.apk` precisa
+ ser regenerado no projeto Android de origem, fora deste servidor.
 2. **Endereço real de e-mail** para `SES_CONTACT_TO_EMAIL` (notificação de
-   `/contato`) — coloquei o e-mail de teste como placeholder só pra
-   validar o mecanismo, precisa do endereço real da equipe.
+ `/contato`) — coloquei o e-mail de teste como placeholder só pra
+ validar o mecanismo, precisa do endereço real da equipe.
 3. **O achado urgente do `metadados_pt.pkl`** (topo deste documento) —
-   confirmar se é regressão ou esperado, antes da reconstrução que vem
-   depois da Fase G.
+ confirmar se é regressão ou esperado, antes da reconstrução que vem
+ depois da Fase G.
 4. Aplicar `--preload` + 4 workers em produção quando você autorizar.
 
 ## Testes realizados nesta rodada (resumo)
@@ -228,7 +228,7 @@ tinha confirmado modo aprofundado funcionando em rodadas anteriores),
 menu de compartilhar (visível), troca de idioma pra alemão (banner
 inteiro traduzido), logout. **0 erros de JavaScript/console em toda a
 bateria de testes.** App importa e sobe limpo depois de toda a remoção de
-tutela (`create_app()` OK, 40 rotas).
+tutela (`create_app` OK, 40 rotas).
 
 **Nenhuma alteração foi feita em `/var/www/goshinsho` (produção)** — tudo
 isso vive só em `/var/www/goshinsho-test`, aguardando sua autorização

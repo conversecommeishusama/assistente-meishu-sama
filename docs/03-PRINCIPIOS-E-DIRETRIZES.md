@@ -71,22 +71,22 @@ prompt específica de tema (mesmo estática, mesmo bem-intencionada) — é
 tutela. Com esse critério, os 4 achados da auditoria se resolvem assim:
 
 - 🔴 **Tutela confirmada, corrigir:** `goshinsho/pipeline/retrieve_strategy.py`
-  (`pergunta_sobre_ohikari` pulando a estratégia de sub-consultas
-  estruturais) — ativa hoje no pipeline v2.
+ (`pergunta_sobre_ohikari` pulando a estratégia de sub-consultas
+ estruturais) — ativa hoje no pipeline v2.
 - 🔴 **Tutela confirmada, corrigir (ainda que hoje inativa):**
-  `goshinsho/services/ai_service.py::answer_question` (bloco `if
-  is_ohikari:`) e `goshinsho/services/experimental_router.py::select_search_strategy`
-  — código morto sob a configuração atual, mas deve ser removido, não só
-  deixado desligado, para não voltar a ativar por engano.
+ `goshinsho/services/ai_service.py::answer_question` (bloco `if
+ is_ohikari:`) e `goshinsho/services/experimental_router.py::select_search_strategy`
+ — código morto sob a configuração atual, mas deve ser removido, não só
+ deixado desligado, para não voltar a ativar por engano.
 - 🔴 **Tutela confirmada, corrigir:** a regra estática de desambiguação
-  Ohikari/Ofudesaki em `goshinsho/pipeline/prompts.py` — mesmo sendo
-  sempre presente (não condicional), é conteúdo específico de tema fora
-  do glossário, então cai na mesma régua. Se a desambiguação continuar
-  necessária, o caminho correto é resolver via entrada no
-  `glossario.json`, não via prompt fixo.
+ Ohikari/Ofudesaki em `goshinsho/pipeline/prompts.py` — mesmo sendo
+ sempre presente (não condicional), é conteúdo específico de tema fora
+ do glossário, então cai na mesma régua. Se a desambiguação continuar
+ necessária, o caminho correto é resolver via entrada no
+ `glossario.json`, não via prompt fixo.
 - ✅ As duas flags de `config.py` que dariam tratamento especial por tema
-  (`JOHREI_HO_KOZA_PRIORITY`, `SOURCE_HIERARCHY_WRITTEN_FIRST`) estão
-  confirmadamente desligadas no `.env` de produção.
+ (`JOHREI_HO_KOZA_PRIORITY`, `SOURCE_HIERARCHY_WRITTEN_FIRST`) estão
+ confirmadamente desligadas no `.env` de produção.
 
 **Status (atualizado 15/jul/2026): classificação fechada, correção
 adiada de propósito.** O fundador decidiu agrupar essa correção dentro de
@@ -131,10 +131,10 @@ nunca decisão unilateral do agente.
 Duas regras técnicas que nasceram do mesmo princípio, em domínios
 diferentes:
 - No pareamento JP↔PT: nunca gravar uma posição aproximada por proporção
-  de tamanho de texto — ou se acha a posição real, ou o item fica marcado
-  como pendente, nunca "resolvido" por estimativa.
+ de tamanho de texto — ou se acha a posição real, ou o item fica marcado
+ como pendente, nunca "resolvido" por estimativa.
 - Na promoção de livros: nenhum livro entra em produção parcial — 100% ou
-  fica na fila.
+ fica na fila.
 
 O padrão geral: **é melhor um item explicitamente pendente do que um item
 "resolvido" com uma aproximação que ninguém vai reconferir depois.**
@@ -274,7 +274,7 @@ nenhuma referência a *Tengoku no Ishizue* nos arquivos de trabalho atuais
 (só aparece nesta própria documentação e em relatórios internos de
 planejamento). Mas **7 livros têm uma linha de metadado
 `#K 岡田茂吉全集著述篇...` no cabeçalho do `.txt` de trabalho JP**
-(`山と水`, `信仰雑話`, `新しき暴力`, `アメリカを救う`, `御光話録13号`,
+(`山と水`, `信仰雑話`, `新しき暴力`, `アメリカを救う`, `御光話録nº 13`,
 `明主様御言葉 水晶殿御遷座`, `天国の福音書`) — parece ser proveniência de
 digitalização (de qual edição a página foi escaneada), não texto de
 Meishu-Sama em si. Conferido: o campo que alimenta a citação visível no
@@ -284,12 +284,12 @@ publicação original, não o Zenshū.
 **Resolvido (15/jul/2026), com autorização explícita do usuário.** A
 varredura completa revelou algo mais sério do que a primeira amostragem
 sugeria: a linha de metadado `#K` não era o único problema — havia também
-uma **linha de citação redundante** (`『Título』,data,...,岡田茂吉全集...pXX`)
-que **sobrevivia à limpeza do pipeline de indexação** (`clean_body()` em
+uma **linha de citação redundante** 
+que **sobrevivia à limpeza do pipeline de indexação** (`clean_body` em
 `scripts/build_clean_large_indexes.py`), ou seja, chegaria de fato ao
 texto buscável/citável pela IA. A causa raiz era um **bug real**: a
 checagem que deveria filtrar linhas `#E`/`#S`/`#K`/`#W` rodava depois de
-`clean_heading()` já ter removido o prefixo `#`, então a comparação nunca
+`clean_heading` já ter removido o prefixo `#`, então a comparação nunca
 batia — essas tags nunca foram filtradas, para nenhum livro do corpus que
 as usa. Também foi descoberto, por um `_AUDIT_TRAIL.json` preexistente,
 que **essa mesma limpeza já tinha sido feita antes**, inclusive em
@@ -315,15 +315,15 @@ varredura final no projeto inteiro. Detalhe completo registrado em
 ## Perguntas em aberto para a próxima sessão
 
 1. ~~Decisão pendente da auditoria de tutela~~ — **resolvida nesta
-   sessão**: os 4 achados são tutela (princípio 2); falta só autorização
-   explícita para eu corrigir o código.
+ sessão**: os 4 achados são tutela (princípio 2); falta só autorização
+ explícita para eu corrigir o código.
 2. Esses princípios foram formulados majoritariamente no contexto do
-   trabalho sobre o **acervo**. Fazem sentido do mesmo jeito para decisões
-   sobre o **aplicativo**? A sessão de missão/visão e esta sessão sugerem
-   que sim (o princípio raiz §0 é geral o suficiente), mas vale confirmar
-   caso a caso conforme surgirem decisões concretas de produto.
+ trabalho sobre o **acervo**. Fazem sentido do mesmo jeito para decisões
+ sobre o **aplicativo**? A sessão de missão/visão e esta sessão sugerem
+ que sim (o princípio raiz §0 é geral o suficiente), mas vale confirmar
+ caso a caso conforme surgirem decisões concretas de produto.
 3. O roadmap detalhado (venda de livros-fonte, voz de Meishu-Sama, apps
-   nativos, versões para outras culturas religiosas, lives) foi capturado
-   em [09-ROADMAP.md](09-ROADMAP.md) — vale revisar se esses itens têm
-   alguma tensão com os princípios acima (em especial o princípio 0 e a
-   proibição de tutela) antes de qualquer um entrar em desenvolvimento.
+ nativos, versões para outras culturas religiosas, lives) foi capturado
+ em [09-ROADMAP.md](09-ROADMAP.md) — vale revisar se esses itens têm
+ alguma tensão com os princípios acima (em especial o princípio 0 e a
+ proibição de tutela) antes de qualquer um entrar em desenvolvimento.

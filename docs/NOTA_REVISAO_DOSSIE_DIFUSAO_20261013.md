@@ -59,15 +59,14 @@ como oferendas; a revisão de 5 de outubro a reclassificara como "parcial, com
 reviravolta doutrinária", com base na prédica de 7 de dezembro de 1953.
 
 **Havia uma resposta direta e anterior.** Em 23 de abril de 1949, a pergunta foi
-feita a Meishu-Sama nomeando exatamente os três elementos, e ele respondeu
-(『御光話録』6号 · `search1/situmon/m240499.html`):
+feita a Meishu-Sama nomeando exatamente os três elementos, e ele respondeu:
 
 > 「これは神道では、御神饌が塩や水や洗米ということになってるんですが、
 > **光明如来様はそういうものはいりませんよ。光明如来様は人間のお姿なんですから、
 > 人間の食べるものをお供えするのがいいんです。生米に水なんていうのは龍神の
 > 食べるものです。**……いまに新しくお祀りの形式を作るつもりですが……」
 
-A resposta tem três partes: reconhece a prática (são as 御神饌 do Xintó), dá-lhe
+A resposta tem três partes: reconhece a prática, dá-lhe
 lugar doutrinário (são **comida de deus-dragão**), e substitui a forma (oferta-se
 o que o humano come). Acrescenta ainda que **a nova forma do culto ainda seria
 criada** — o que explica, sem contradição, a crítica de 1953.
@@ -79,7 +78,7 @@ errado**. Procurou-se 御神饌 e termos afins; a resposta estava sob a forma
 ### 3.2 A lacuna da orientação do tokonoma estava errada
 
 A Parte II registrava "sem fonte" para regras de orientação. Há resposta direta,
-de 25 de fevereiro de 1951 (『地上天国』21号 · `search1/situmon/situmo25.html`):
+de 25 de fevereiro de 1951:
 
 > 「**方角は東西南北いずれでもよろしいが、位置はその部屋の一番上座に当たる所が
 > よろしい。**」
@@ -149,8 +148,8 @@ A pasta `search2/kihara/` do acervo tem **duas naturezas**, e a distinção impo
 
 | Natureza | Exemplos | Citação |
 |---|---|---|
-| **Autoria do Kihara** | `kikouwa/` (palestras transcritas), `ryakurek.html` (biografia), `bunsyo/omichi*.html` (お導き集), `bunsyo/kami09/14/22.html` (artigos em 『神の光』), `bunsyo/kaiho2.html`, `bunsyo/ken16.html` | **vedada** |
-| **Documento institucional** publicado em órgão oficial, com vários participantes | `bunsyo/honnen29.html` (mesa-redonda de oficiais, 『栄光』288号, 1954), `bunsyo/teirei3.html` (『栄光』195号, 1953) | **a evitar** — preferir fonte equivalente |
+| **Autoria do Kihara** | `kikouwa/` (palestras transcritas), `ryakurek.html` (biografia), `bunsyo/omichi*.html`, `bunsyo/kami09/14/22.html`, `bunsyo/kaiho2.html`, `bunsyo/ken16.html` | **vedada** |
+| **Documento institucional** publicado em órgão oficial, com vários participantes | `bunsyo/honnen29.html`, `bunsyo/teirei3.html` | **a evitar** — preferir fonte equivalente |
 
 Na Parte III, nenhuma citação remete a `kihara/`. Onde a informação vinha de lá,
 buscou-se equivalente em `search2/sanko/`, `search2/kikou2/` ou `search1/`. Foi o
@@ -180,21 +179,21 @@ Os cinco itens abaixo **foram executados**.
 
 1. **Fontes Kihara — concluído** (item 4). Ver §5 acima.
 2. **Traduções — concluídas** (item 1). Verificação automática: **0 blocos
-   japoneses sem tradução vizinha** nas três partes. Foram 22 traduções
-   inseridas nesta rodada.
+ japoneses sem tradução vizinha** nas três partes. Foram 22 traduções
+ inseridas nesta rodada.
 3. **Tom — ajustado** (item 6). Os dois trechos apontados foram reescritos: a
-   Parte I §2.3 deixou de tratar os números de fiéis como "propaganda" e passou
-   a registrá-los como declarações da instituição; a §9.6 foi retitulada **"A
-   dimensão material das obras"** e abandonou o enquadramento do Paraíso
-   Terrestre como "projeto econômico". Uma afirmação falsa foi corrigida no
-   caminho: a mina **não** era "a principal fonte de receita própria" — o
-   resultado financeiro dela é, na verdade, uma lacuna documental.
+ Parte I §2.3 deixou de tratar os números de fiéis como "propaganda" e passou
+ a registrá-los como declarações da instituição; a §9.6 foi retitulada **"A
+ dimensão material das obras"** e abandonou o enquadramento do Paraíso
+ Terrestre como "projeto econômico". Uma afirmação falsa foi corrigida no
+ caminho: a mina **não** era "a principal fonte de receita própria" — o
+ resultado financeiro dela é, na verdade, uma lacuna documental.
 4. **Fac-símiles — inseridos** (item 5). Nove imagens em `docs/facsimiles/`
-   (5,3 MB), suporte a imagens nos dois geradores, **11 fac-símiles no PDF** e
-   **9 no Word**. O método está declarado na Parte I §11.2.
+ (5,3 MB), suporte a imagens nos dois geradores, **11 fac-símiles no PDF** e
+ **9 no Word**. O método está declarado na Parte I §11.2.
 5. **Revisão cruzada — feita.** A Parte III §26.2 corrigiu o que a Parte II
-   §14.2 dizia, e a Parte III §31 corrigiu a lacuna sobre as oferendas diante do
-   objeto de culto. Ambas as partes ganharam remissões cruzadas.
+ §14.2 dizia, e a Parte III §31 corrigiu a lacuna sobre as oferendas diante do
+ objeto de culto. Ambas as partes ganharam remissões cruzadas.
 
 ### Resultado da verificação (13/10/2026)
 
@@ -240,21 +239,21 @@ estava no dossiê — a Parte I §3 e §6.1 e a Parte II §21.1 citavam os arts.
 supervisão central de um modo que permitia ler o contrário do que o estatuto diz.
 
 O que a leitura do Regulamento **na íntegra** (`search2/sanko/kisoku.html`, 『栄光』
-125号) mostrou:
+nº 125) mostrou:
 
 - **監査 aparece duas vezes, e nos dois casos quem é auditado é a própria pessoa
-  jurídica** (arts. 24 e 34). O art. 17 define que a assembleia que aprova o
-  inventário é o **colégio dos presidentes de igreja**. O estatuto prevê as
-  igrejas examinando as contas da Sede — não o contrário.
+ jurídica** (arts. 24 e 34). O art. 17 define que a assembleia que aprova o
+ inventário é o **colégio dos presidentes de igreja**. O estatuto prevê as
+ igrejas examinando as contas da Sede — não o contrário.
 - O que a Sede exerce sobre as unidades é **aprovação prévia de atos**
-  (arts. 26–28), além da nomeação do presidente (art. 28).
+ (arts. 26–28), além da nomeação do presidente (art. 28).
 - A forma que **de fato** existia é outra: **reunião periódica de dirigentes,
-  taquigrafada e publicada** — as séries 「布教定例座談会」, 「定例布教座談会」,
-  「布教座談会」 e 「支部長懇談会」, presididas ou orientadas por diretor da Sede —
-  com o aviso 「注意」 publicado em seguida como conclusão normativa.
+ taquigrafada e publicada** — as séries 「布教定例座談会」, 「定例布教座談会」,
+ 「布教座談会」 e 「支部長懇談会」, presididas ou orientadas por diretor da Sede —
+ com o aviso 「注意」 publicado em seguida como conclusão normativa.
 - A lacuna é precisa e localizável: o art. 46 remete os procedimentos às
-  **施行細則**, que **não estão no acervo**. É ali que qualquer rotina de
-  fiscalização estaria escrita.
+ **施行細則**, que **não estão no acervo**. É ali que qualquer rotina de
+ fiscalização estaria escrita.
 
 Também se acrescentou ao §28.1 o par de rubricas de oferta **interna à unidade**
 que o dossiê não registrava, ambas definidas em ata de 1953: **御守護御礼** (oferta

@@ -9,7 +9,7 @@
 
 ## 1. Contexto da missão
 
-O **Gokōwa-roku (Suplemento)** (御光話録（補）, 1948) é um registro manuscrito
+O **Gokōwa-roku (Suplemento)** é um registro manuscrito
 de sessões de perguntas e respostas com Meishu-Sama — estilo **truncado/
 telegráfico**. A tradução publicada em `livros_publicacao_pt/` tinha
 **defeitos estruturais** (truncamentos, inversões, omissões). Decidiu-se:
@@ -17,11 +17,11 @@ telegráfico**. A tradução publicada em `livros_publicacao_pt/` tinha
 1. **Retraduzir** o Suplemento inteiro com o DeepSeek como *executor*.
 2. **Auditar** cada retradução com o Claude como *auditor* (semântico).
 3. Se a auditoria for **bem-sucedida** (qualidade boa), **expandir o
-   processo** para todos os textos orais com o mesmo perfil de
-   truncamento, retraduzindo cada um e passando pelo mesmo ciclo de
-   auditoria + ajustes.
+ processo** para todos os textos orais com o mesmo perfil de
+ truncamento, retraduzindo cada um e passando pelo mesmo ciclo de
+ auditoria + ajustes.
 4. Depois de TODOS os orais traduzidos, o Claude faz a **revisão
-   literária** do português de todos juntos.
+ literária** do português de todos juntos.
 
 **IMPORTANTE:** a revisão literária (fluidez/elegância) é SEMPRE a última
 etapa. A auditoria atual é apenas **semântica** (sentido, sujeito/objeto,
@@ -50,43 +50,43 @@ Fluxo do executor: retraduz → valida completude → **trava de glossário**
 - Checkpoint consolidado: `reports/amostragem_semantica_gokowa/laco_retraducao_checkpoint.json`
 - Export para auditoria: `reports/amostragem_semantica_gokowa/retraducao_gokowa_para_auditoria.json`
 - **16 pontos-problema** retraduzidos e **integrados** no texto publicado:
-  `reports/amostragem_semantica_gokowa/pontos_problema/retraducao_pontos_problema.json`
-  + script `scripts/integrar_pontos_gokowa.py`
+ `reports/amostragem_semantica_gokowa/pontos_problema/retraducao_pontos_problema.json`
+ + script `scripts/integrar_pontos_gokowa.py`
 - Texto publicado (fonte de verdade PT):
-  `livros_publicacao_pt_revisado/19480101 - Gokōwa-roku (Suplemento).txt`
-  (também montado em `publicacao_livros/01_.../01_19480101 - Gokōwa-roku (Suplemento).txt`)
+ `livros_publicacao_pt_revisado/19480101 - Gokōwa-roku (Suplemento).txt`
+ (também montado em `publicacao_livros/01_.../01_19480101 - Gokōwa-roku (Suplemento).txt`)
 
 ### Auditoria com Claude — EM ANDAMENTO (6 lotes)
 - Lotes prontos: `reports/amostragem_semantica_gokowa/lotes_claude/`
-  → `lote_1.json` … `lote_6.json` (6 arquivos reais, **957 falas no total;
-  0 vazias**; 16 marcadas como `corrigida:true` com a versão final). O padrão
-  `lote_{1..6}.json` abaixo refere-se a esses 6 arquivos.
+ → `lote_1.json` … `lote_6.json` (6 arquivos reais, **957 falas no total;
+ 0 vazias**; 16 marcadas como `corrigida:true` com a versão final). O padrão
+ `lote_{1..6}.json` abaixo refere-se a esses 6 arquivos.
 - Prompts prontos: `reports/amostragem_semantica_gokowa/lotes_claude/`
-  → `prompt_1.md` … `prompt_6.md` (6 arquivos reais).
+ → `prompt_1.md` … `prompt_6.md` (6 arquivos reais).
 - **Resultados gravados até agora:**
-  - `reports/amostragem_semantica_gokowa/auditoria_lotes/auditoria_lote_6.json` — **COMPLETO** (157 auditadas; 151 OK; 6 ERRO_TRADUCAO → 3,8%)
-  - Lotes 1–5: **NÃO iniciados/completados ainda** (sem arquivo de resultado)
+ - `reports/amostragem_semantica_gokowa/auditoria_lotes/auditoria_lote_6.json` — **COMPLETO** (157 auditadas; 151 OK; 6 ERRO_TRADUCAO → 3,8%)
+ - Lotes 1–5: **NÃO iniciados/completados ainda** (sem arquivo de resultado)
 - **Formato do resultado** (copiar o do lote 6):
-  ```json
-  {
-    "lote": 6,
-    "total_auditadas": 157,
-    "resumo": {"ok": 151, "erro_traducao": 6},
-    "vereditos": [
-      {"indice": 800, "veredito": "OK", "erro": null, "jp": "...", "pt": "..."},
-      {"indice": 808, "veredito": "ERRO_TRADUCAO", "erro": "...", "jp": "...", "pt": "...", "correcao": "..."}
-    ],
-    "observacoes": "qualidade geral..."
-  }
-  ```
-  Gravar em `auditoria_lotes/auditoria_lote_N.json`.
+ ```json
+ {
+ "lote": 6,
+ "total_auditadas": 157,
+ "resumo": {"ok": 151, "erro_traducao": 6},
+ "vereditos": [
+ {"indice": 800, "veredito": "OK", "erro": null, "jp": "...", "pt": "..."},
+ {"indice": 808, "veredito": "ERRO_TRADUCAO", "erro": "...", "jp": "...", "pt": "...", "correcao": "..."}
+ ],
+ "observacoes": "qualidade geral..."
+ }
+ ```
+ Gravar em `auditoria_lotes/auditoria_lote_N.json`.
 
 ### Como lançar a auditoria dos lotes 1–5 (o que falta)
 - Cada lote: o agente lê `prompt_N.md` + `lote_N.json`, audita JP vs PT
-  conforme `INSTRUCOES_PARA_CLAUDE.md`, grava `auditoria_lotes/auditoria_lote_N.json`.
+ conforme `INSTRUCOES_PARA_CLAUDE.md`, grava `auditoria_lotes/auditoria_lote_N.json`.
 - Pode-se usar `runSubagent` (um por lote) **ou** um loop autônomo
-  (padrão do projeto: `run_stateless_claude_loop.sh` + fila JSON), de
-  preferência em `tmux` para não depender da memória do chat.
+ (padrão do projeto: `run_stateless_claude_loop.sh` + fila JSON), de
+ preferência em `tmux` para não depender da memória do chat.
 
 ---
 
@@ -117,8 +117,8 @@ De `glossario_traducao.json` (730 termos). Os críticos:
 | 御額 | caligrafia | — |
 
 **AMULETOS vs IMAGENS** (crítico):
-- Amuletos (御守り, no pescoço): **Ohikari** / **Kōmyō** / **Daikōmyō**
-- Imagens (御軸, adoradas): **Kōmyō Nyorai** / **Daikōmyō Nyorai**
+- Amuletos: **Ohikari** / **Kōmyō** / **Daikōmyō**
+- Imagens: **Kōmyō Nyorai** / **Daikōmyō Nyorai**
 
 ---
 
@@ -128,28 +128,28 @@ De `glossario_traducao.json` (730 termos). Os críticos:
 1. Auditar os lotes **1–5** (o 6 já está pronto), no formato do item 3.
 2. **Consolidar** os 6 resultados → total de erros e taxa.
 3. **Decisão de qualidade**: se a taxa for aceitável (referência: lote 6
-   = 3,8%; auditoria anterior da retradução = 6,8%; texto publicado = 4,3%),
-   **aprovar** o método.
+ = 3,8%; auditoria anterior da retradução = 6,8%; texto publicado = 4,3%),
+ **aprovar** o método.
 4. Corrigir os pontos marcados `ERRO_TRADUCAO` (retraduzir via executor
-   e integrar no texto publicado, como foi feito nos 16 pontos).
+ e integrar no texto publicado, como foi feito nos 16 pontos).
 
 ### Fase B — Levantamento de outros orais com o mesmo perfil
 5. **Identificar quais arquivos de palavras orais têm o mesmo perfil de
-   truncamento** do Gokōwa-roku (Suplemento). Candidatos naturais:
-   Mioshie-shū, Gosuiji-roku, e demais 御光話録 / 御垂示録.
-   Critério: registro manuscrito, sessão de perguntas e respostas, estilo
-   truncado/telegráfico, muitas falas curtas sem verbo.
+ truncamento** do Gokōwa-roku (Suplemento). Candidatos naturais:
+ Mioshie-shū, Gosuiji-roku, e demais 御光話録 / 御垂示録.
+ Critério: registro manuscrito, sessão de perguntas e respostas, estilo
+ truncado/telegráfico, muitas falas curtas sem verbo.
 6. Produzir a **lista** (arquivo → perfil → nº de falas) para aprovação
-   do usuário antes de retraduzir.
+ do usuário antes de retraduzir.
 
 ### Fase C — Retraduzir todos os orais identificados
 7. Para cada arquivo: retraduzir com o executor (mesma arquitetura),
-   auditar com Claude, aplicar ajustes, **integrar** no texto publicado.
+ auditar com Claude, aplicar ajustes, **integrar** no texto publicado.
 8. Repetir o ciclo até todos os orais estarem retraduzidos e auditados.
 
 ### Fase D — Revisão literária final (depois de TODOS os orais)
 9. Só então o Claude faz a **revisão literária** do português de todos os
-   orais juntos (fluidez, elegância, estilo).
+ orais juntos (fluidez, elegância, estilo).
 
 ---
 
@@ -175,9 +175,9 @@ De `glossario_traducao.json` (730 termos). Os críticos:
 ## 7. Avisos operacionais
 
 - `glossario_traducao.json` e `livros_publicacao_pt_revisado/` ficaram
-  **fora do git** por decisão do usuário — **não commitar sem perguntar.**
+ **fora do git** por decisão do usuário — **não commitar sem perguntar.**
 - Verificação determinística antes de declarar trabalho pronto:
-  `scripts/auditoria_final_completa.py`.
+ `scripts/auditoria_final_completa.py`.
 - Processos longos: usar `tmux` + checkpoints em disco (padrão do projeto).
 - **Não confiar na memória do chat** — sempre ler o estado dos arquivos
-  (checkpoints, lotes, `auditoria_lotes/`) antes de agir.
+ (checkpoints, lotes, `auditoria_lotes/`) antes de agir.

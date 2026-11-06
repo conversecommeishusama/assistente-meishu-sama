@@ -1,109 +1,127 @@
 ## Ensinamento — A Influência dos Antepassados sobre os Descendentes
 
-**Fonte 1:** Manual da Igreja Messiânica Mundial (1953), seções "A existência do mundo espiritual" e "Doenças espirituais".
+**Fonte 1:** *O Evangelho do Paraíso* (1947) — "Espírito Protetor Guardião".
 
-A existência do mundo espiritual
-
-Como escrevi anteriormente, por trás do mundo visível existe o mundo espiritual. Ao mesmo tempo que conheceu sua existência por meio da revelação divina, Meishu-Sama dedicou mais de vinte anos ao estudo do espírito, apreendendo minuciosamente sua verdadeira forma. Pode ser difícil, para as pessoas modernas educadas no materialismo, acreditar nas coisas do mundo invisível; hoje, porém, em vários países, a pesquisa espiritual científica floresce, e seus resultados são publicados em diversos livros. Assim, quem teve algum contato com ela não pode negar a realidade do mundo espiritual.
-
-O ser humano, uma vez nascido, inevitavelmente morre — não há nada tão certo quanto isso. Quando o corpo físico já não suporta o uso — por velhice, doença ou acidente —, o espírito abandona o corpo e segue para o mundo espiritual, onde passa a viver como ser espiritual. Nesse mundo, purificam-se as impurezas e os pecados acumulados no corpo espiritual durante a vida no mundo material; quando atinge certo grau, o espírito recebe um novo corpo físico e renasce neste mundo. Assim, alternando entre nascimento e morte, a alma humana é eterna e imortal.
-Na verdade, o mundo espiritual é um mundo misterioso, sutil e profundo, que não se pode explicar de forma simples. Do mais elevado Mundo do Espírito Divino ao mundo dos espíritos humanos, ao Inferno mais baixo e ao chamado Reino Animal dos espíritos animais, há estágios rigorosamente ordenados. Existem também o mundo do pensamento, onde os pensamentos humanos ressoam de imediato, e o mundo do espírito da palavra, onde ressoam as palavras pronunciadas. A bondade, a maldade, a beleza e a feiura desses mundos purificam ou obscurecem o mundo espiritual, e isso se reflete no mundo material, onde surgem a felicidade e a infelicidade. Meishu-Sama nos ensina detalhadamente essa relação íntima entre o mundo espiritual e o mundo material, mas aqui tratarei apenas dos pontos relacionados às doenças.
-
-Antepassados e descendentes estão ligados por um fio invisível, o elo espiritual, e se influenciam mutuamente no bem e no mal. Assim, quando os descendentes acumulam virtudes, os antepassados são purificados e salvos; e, uma vez salvos, aumentam seu poder de proteger os descendentes e de torná-los felizes. Inversamente, as más ações dos descendentes fazem os antepassados sofrerem; e, se estes estão no Inferno, os infortúnios se sucedem na vida dos descendentes.
-
-Para quem estuda a doutrina da Igreja Messiânica e entra em contato com diversos fenômenos espirituais, a realidade do mundo espiritual, o estado do mundo após a morte e a relação entre os espíritos ancestrais e os descendentes tornam-se verdadeiramente compreensíveis. Só ao conhecer isso se obtém a verdadeira tranquilidade e a paz espiritual, e se pode alcançar a felicidade eterna não apenas neste mundo material, mas também após a morte e na próxima vida.
-
-Doenças espirituais
-
-A medicina desconhece por completo as causas de doenças como a epilepsia e a paralisia infantil; por serem inteiramente espirituais, é impossível compreendê-las materialisticamente. A causa é a seguinte: quando um espírito ancestral morreu de forma violenta ou foi subitamente fulminado por um derrame cerebral, não foi salvo no mundo espiritual e, por isso, busca inconscientemente um corpo físico; seguindo o elo espiritual do sangue, pode possuir um descendente. São essas as doenças que então se manifestam.
-
-As doenças que a medicina denomina neurastenia cardíaca também são causadas pela possessão de espíritos de falecidos não salvos e ocorrem com frequência quando os descendentes não realizam as oferendas devidas aos antepassados. Conforme ensinado pela Igreja Messiânica, há inúmeros exemplos de solução rápida por meio dessas oferendas. Há ainda doenças causadas pela possessão de espíritos animais com os quais o ser humano tem innen (afinidade espiritual); as doenças mentais são um exemplo disso.
-
-Existem também doenças espirituais estranhas, sem nome no mundo, que, à luz dos ensinamentos da Igreja Messiânica, na maioria dos casos podem ser discernidas. As pessoas que contraem essas doenças são propensas à possessão: elas próprias têm muitas toxinas e ainda há nuvens espirituais em sua casa. Se o Johrei for aplicado, o espírito possessor se acalma, é salvo e se desprende; no caso de espíritos animais, eles se atrofiam ou se desprendem, e o caso se resolve. Contudo, as doenças espirituais, de modo geral, tendem a demorar mais; portanto, enquanto os familiares se tornam fiéis e aplicam Johrei ao paciente, devem também ajudar o próximo e acumular virtudes. Somente a salvação dos antepassados e a purificação das nuvens espirituais da casa trazem a verdadeira solução.
-
-[Nota] A paralisia infantil é de dois tipos: a espiritual e a não espiritual. A não espiritual consiste na perda do movimento das mãos ou dos pés, devida a toxinas medicamentosas. A maioria dos casos recentes de paralisia infantil nos Estados Unidos decorre de toxinas medicamentosas; esses são os mais fáceis de curar.
-
-Câncer de estômago, tuberculose óssea da coluna vertebral etc. são considerados doenças incuráveis, mas também são espirituais, e a maioria se resolve com o Johrei. A tuberculose óssea da coluna, sobretudo, é uma doença terrível que encurva a coluna; com o Johrei, leva algum tempo para curar completamente, porém melhora dia a dia, e o paciente se recupera com relativa rapidez. Há inúmeros exemplos de pessoas que se preparavam para morrer e foram salvas, passando a correr e a salvar outros através do Johrei. É uma das doenças relativamente fáceis de curar.
-
-Existem ainda — embora não sejam doenças — pessoas com deficiências congênitas e crianças deformadas; isso se deve ao innen de vidas passadas: nasceram com a purificação insuficiente. Nesses casos, não se sabe até onde é possível chegar; mas, como também se trata de nuvens espirituais da casa, pela fé sincera dos familiares alguns encontram solução parcial ou são completamente curados.
-
-[Nota] O câncer de estômago é de dois tipos: o espiritual e o causado por toxinas medicamentosas. Há também casos em que as toxinas contidas na carne animal, pelo consumo excessivo de carne, são a causa do câncer; muitos dos casos recentes de câncer nos Estados Unidos são desse tipo. Se não houver excesso de toxinas medicamentosas, cura-se facilmente comendo muitas hortaliças e aplicando Johrei.
-
-Também o "vício em álcool", embora não seja uma doença, pode ser curado. Isso, do mesmo modo, tem um significado espiritual: aplicando Johrei no abdômen, até as pessoas com vício grave em álcool reduzem naturalmente, e sem esforço, a quantidade que bebem e se satisfazem com pouco. Em pessoas rápidas, algumas sessões de Johrei bastam para que a quantidade de álcool diminua notavelmente. São imensos o impacto social negativo do vício em álcool e o fardo econômico e psicológico que ele impõe às famílias. há, porém, um número considerável de pessoas que se alegram por esse mau hábito ter sido curado tão facilmente, criando um Paraíso no lar.
-
-Quanto aos tipos de doença mencionados acima, a ciência, até hoje, não conhecia as causas nem tinha meios de resolvê-las, e estava completamente às escuras; os pacientes não tinham outra escolha senão desistir tristemente. No entanto, com a Igreja Messiânica, as causas espirituais foram investigadas e resolvidas; com isso, essas famílias não mais produzirão pessoas tão infelizes. O que mais poderia ser senão o evangelho do Paraíso?
-
-Sobre a solução do "conflito"
+Qualquer ser humano, sem exceção, tem no mundo espiritual um espírito protetor guardião, ou aquilo que se chama espírito protetor, que o acompanha e o protege constantemente. Diz-se que o ser humano é filho de Deus e templo de Deus, e, como já foi exposto anteriormente, isso se deve ao fato de ele ter recebido uma missão de Deus, isto é, de possuir uma parcela do espírito de Deus; esta é o espírito protetor primordial, e o espírito animal que, adquirido posteriormente, se encosta à pessoa é o espírito protetor secundário. […] Além desses dois, o primordial e o secundário, existe o espírito protetor guardião, como escrevi no início. Este é um espírito ancestral; e, assim que uma pessoa nasce, alguém entre os espíritos ancestrais é selecionado para protegê-la. […] Frequentemente, quando uma pessoa se depara com um perigo, há casos em que é salva miraculosamente, ou recebe uma sugestão, um aviso em sonho, um pressentimento etc.; tudo isso se deve à atividade do espírito protetor guardião.
 
 ---
 
-**Leitura complementar (relato):** "O Espírito de Hirokichi" (Conversas sobre o Mundo Espiritual).
+**Fonte 2:** *O Evangelho do Paraíso* (1947) — "A Advertência do Espírito Ancestral".
 
-O Espírito de Hirokichi
+Por natureza, os espíritos ancestrais (祖霊) desejam a felicidade de seus descendentes e a prosperidade da linhagem familiar. Em consequência, jamais descuidam de sua constante vigilância, para que os descendentes não cometam os erros e as maldades — causas que contrariam esse propósito — nem enveredem por caminhos desviados. Por isso, quando seus descendentes porventura são seduzidos por demônios e praticam o mal, o espírito ancestral age ao mesmo tempo para adverti-los e para apagar os pecados e impurezas que já cometeram; e, como meio para isso, inflige-lhes as mais diversas calamidades e doenças. Por exemplo, a quem acumulou riquezas ilícitas, inflige incêndios e perdas, fazendo-as desaparecer; e, conforme os pecados e impurezas, realiza também o processo de purificação por meio da doença.
 
-Foi no início da minha carreira, quando eu procurava conciliar a pesquisa espiritual com a prática experimental da cura de doenças. Tratava-se de uma moça de dezenove anos, com tuberculose pulmonar em estágio terminal. Depois de dois tratamentos já se observava um pequeno efeito, e estávamos na terceira vez. Assim que comecei o tratamento, a mãe da moça, a Sra. M (por volta dos cinquenta anos), que observava ao lado, levantou-se de repente e agachou-se, com uma expressão terrível e um ímpeto de quem vai atacar, e disse: "Seu... Seu... Você, que estava prestes a matar a garota que eu queria matar, apareceu do nada e a salvou, hein? Estou tão furioso que não aguento, vou fazer você passar por uma situação horrível." A voz era, sem dúvida, masculina, e eu fiquei surpreso. Disse-lhe: "Afinal, quem é você? Por favor, acalme-se." Acalmei-o; ele, de má vontade, sentou-se e disse:
+Como manifestação disso, há casos como o seguinte. Suponha-se que um bebê ou uma criança pequena seja acometida de um processo de purificação como um resfriado. Segundo nossa terapia, um resfriado comum deveria curar-se facilmente; no entanto, quase não há efeito, e em especial surgem vômitos frequentes, a criança fica absolutamente sem apetite e, em pouco tempo, chega à morte por definhamento — casos que causam estranheza. Isso é inteiramente a advertência do espírito ancestral de que se falou acima, e sua causa está em que o pai se desviou do caminho do casal e se relaciona com outra mulher, ou mantém uma amante. E, caso ele não perceba isso mesmo após uma primeira advertência, o espírito ancestral pode ir tirando a vida dos filhos, um após outro.
+
+---
+
+**Fonte 3:** *O Evangelho do Paraíso* (1947) — "Epilepsia".
+
+A epilepsia, assim como a doença mental, tem por causa a possessão espiritual; a única diferença é que a epilepsia é transitória e se manifesta em crises, e que os seus sintomas são multiformes e variados. E como quase toda epilepsia consiste na possessão por um espírito do falecido, ao sobrevir a crise ela reproduz o estado do instante da morte. Por exemplo, o espumar pela boca é o espírito de um afogado — a que vulgarmente se chama "epilepsia da água"; a "epilepsia do fogo" é o espírito de alguém que morreu queimado; e há também muitos espíritos de pessoas que morreram subitamente de hemorragia cerebral, o que se reconhece bem, pois o enfermo assum[e] o estado de paralisia de meio corpo. Todos os demais casos de morte violenta — isto é, atropelamento, enforcamento, queda, tiro e assim por diante — reproduzem exatamente, tal qual, o estado de agonia do instante da morte. […] Como exemplo de epilepsia, permitam-me relatar o caso da criada que emprego em minha casa há alguns anos. […] Nessa ocasião, ao emitir Espiritual sobre a parte profunda da testa, o espírito possessor solta um grito e repete: "Salve-me!". Quando eu lhe digo "Eu te salvarei, sai deste corpo físico", ele responde: "Não tenho para onde ir". O lugar para onde vai um espírito possessor é um ser humano. […] O espírito desta criada é o de um recém-nascido: a que lhe é avó concebeu um filho fora do casamento e, ao dar à luz, o matou por compressão. É o espírito desse recém-nascido.
+
+---
+
+**Fonte 4:** *O Evangelho do Paraíso* (1947) — "Paralisia Infantil".
+
+Esta doença apresenta tanto a forma verdadeira como a falsa, mas a medicina, desconhecendo essa distinção, confunde as duas. Se então perguntarmos o que é a forma verdadeira, a causa é espiritual: na maioria dos casos, trata-se da possessão pelo espírito de alguém que morreu subitamente de hemorragia cerebral. […] Quanto ao motivo pelo qual o espírito do falecido toma posse: na hemorragia cerebral grave, a passagem para a morte é rápida desde o início da doença; por isso, como o espírito não tem preparação para a morte, mesmo depois de se tornar habitante do mundo espiritual, seus pensamentos são os de alguém que ainda está vivo, mas não possui corpo físico. Por conseguinte, busca inconscientemente um corpo físico; nesse caso, porém, como não pode tomar posse de estranhos, encosta-se nos parentes próximos. Isso porque todos os parentes próximos têm o elo espiritual que os liga; por isso, ele segue esse elo espiritual e toma posse. Aqui, explico esse elo espiritual: entre marido e mulher é o mais espesso; entre pais e filhos, irmãos, parentes, mestres e discípulos, amigos, e assim por diante, torna-se mais fino à medida que o vínculo se enfraquece. E, no caso de possessão pelo espírito do falecido, as crianças são mais suscetíveis à possessão do que os adultos, e ele aproveita como boa oportunidade os momentos de fraqueza, como a febre alta ou a falta de apetite causadas por um resfriado ocasional. Nesse caso, os espíritos dos avós frequentemente tomam posse dos netos, ao passo que, ao contrário, é raro que os espíritos dos pais tomem posse dos filhos.
+
+---
+
+**Fonte 5:** *O Evangelho do Paraíso* (1947) — "Diversos Aspectos das Doenças de Causa Espiritual".
+
+Aqui, farei uma breve observação sobre o espírito de pessoa viva. Além do espírito do falecido, existe também a possessão pelo espírito de pessoa viva. O espírito de pessoa viva tem, em quase todos os casos, as relações entre homens e mulheres como causa, e há dois tipos: o bom e o mau. […] A seguir, no caso mau, os conflitos espirituais entre a esposa legítima e a concubina estão entre os mais frequentes. Por exemplo, há o caso em que um lado amaldiçoa o outro, e o caso em que ambos se amaldiçoam mutuamente; é verdadeiramente o caminho de Ashura. E, como resultado de ser amaldiçoada, a pessoa contrai algo como a doença 'bura-bura'; mas, no diagnóstico médico, é claro que não há como isso ser identificado. Esta doença, ao avançar para um estado grave, chega a ceifar a vida. […] E no caso de possessão pelo espírito do falecido, sente-se calafrios; no caso do espírito de pessoa viva, ao contrário, sente-se calor.
+
+---
+
+**Fonte 6:** *Luz dos Ensinamentos* (1951) — "Contracepção e Aborto".
+
+O aborto é ruim. É diferente do controle de natalidade. Pode-se pensar que ter um filho dificultará a vida, mas isso não é verdade — a criança traz consigo o suficiente para seu próprio sustento; portanto, quanto mais filhos, maior será a renda. Além disso, o aborto é assassinato, um grande erro. O controle de natalidade, comparado ao aborto, tem um pecado menor.
+
+---
+
+**Fonte 7:** *Gokōwa-roku* nº 5 (1949) — "se for inevitável abortar, isso é pecado?".
+
+Interlocutor: No dia a dia, se for inevitável abortar, isso é pecado?
+
+Meishu-Sama: Claro que é ruim. Quando um filho é concebido, Deus concede o necessário para a vida da criança... algo como o sustento. Portanto, é natural que se possa viver. Quem diz que não consegue viver com muitos filhos está fazendo algo errado. Na verdade, quando nascem filhos, a renda também aumenta. O aborto é assassinato, portanto é pecado. Claro, o pecado é menor do que matar um adulto. […] Se o feto é uma fração do ser humano, pode-se considerar que o pecado é uma fração do assassinato comum.
+
+---
+
+**Fonte 8:** *Gosuiji-roku* nº 22 (15/07/1953) — "não existe circunstância inevitável".
+
+Interlocutor: "Se houver circunstâncias e for inevitável, é permitido?"
+
+Meishu-Sama: Não existe circunstância inevitável: o próprio 'inevitável' já constitui pecado. O controle de natalidade, como o aborto, é assassinato — apenas um assassinato pequeno, mas não deixa de ser assassinato; portanto, o pecado é pecado.
+
+Interlocutor: "Às vezes, artistas evitam a gravidez para manter sua arte viva. Isso é permitido?"
+
+Meishu-Sama: Não é permitido.
+
+Meishu-Sama: […] Antes de mais nada, os antepassados ficam extremamente irados — além do pecado em si, eles se irritam muito com a extinção da linhagem. Esse pecado de extinguir a linhagem, somado à ira dos antepassados, não traz nada de bom; mas é um pecado pequeno. O aborto é um pecado maior — depende do tamanho da matéria.
+
+---
+
+**Fonte 9:** *Hikari* nº 7 (30/04/1949) — "O Problema do Controle de Natalidade sob a Perspectiva Religiosa".
+
+Há outro exemplo. Frequentemente, devido à tuberculose ou a outras doenças debilitantes da gestante, diz-se que é perigoso não realizar um aborto induzido, anulando-se assim uma preciosa gravidez. No entanto, segundo minha interpretação, o próprio fato de engravidar significa que o feto pode se desenvolver e nascer com segurança — se não houvesse essa capacidade, a gravidez não ocorreria desde o início. Com base nessa visão, sempre fui contrário ao aborto e, de fato, em dezenas de casos, não houve um único fracasso. Deus não poderia ter criado o ser humano de forma tão imperfeita a ponto de engravidar alguém sem capacidade de dar à luz; devemos acreditar que o Criador de todas as coisas não é tão superficial e obtuso quanto o ser humano imagina.
+
+---
+
+**Fonte 10:** *Gokōwa-roku* nº 9 (30/07/1949) — a possessão pelo espírito de um aborto.
+
+Meishu-Sama: […] Isso é raro, mas a possessão pelo espírito de um bebê é a mais comum. Também há casos de possessão pelo espírito de um aborto, que deseja ser venerado. Portanto, bebês que morrem após o quinto mês de gestação devem ser venerados; muito raramente, mesmo os de três ou quatro meses podem causar problemas.
+
+---
+
+**Fonte 11:** *Luz dos Ensinamentos* (1951) — "Sobre Natimortos e Abortos Espontâneos".
+
+Pergunta: Haveria alguma relação espiritual com natimortos e abortos espontâneos? E, nesses casos, como se deve sufragar o feto como um Buda?
+
+Resposta: Existem causas tanto espirituais quanto físicas. A causa fundamental é a impureza e o pecado da pessoa, e existem vários tipos de impureza e pecado.
+
+Quanto à causa espiritual, quando há uma concubina, ou quando se engana uma mulher com quem se tinha um compromisso, e a esposa engravida, o espírito de pessoa viva (ikiryo) dessa mulher ou da concubina interfere. O feto não se desenvolve devido a esses vários pecados.
+
+No caso de aborto espontâneo, se for depois de cinco meses, o feto deve ser venerado como uma pessoa comum, recebendo um nome póstumo (kaimyo) em um templo e realizando um funeral simples, pois, aos cinco meses, o feto já tem forma humana. No entanto, ocasionalmente, mesmo com três ou quatro meses, pode haver assombrações.
+
+---
+
+**Fonte 12:** *Gokōwa-roku* nº 10 (10/07/1949) — como sufragar o espírito do feto.
+
+Interlocutor: O senhor disse que, em caso de aborto espontâneo após quatro meses de gravidez, deve-se sufragar o espírito. Como proceder para sufragar um espírito que já se passaram vários anos sem que se soubesse? Os nomes póstumos devem ser encomendados a um templo?
+
+Meishu-Sama: Sim, peça a um templo que faça o nome póstumo e realize um funeral simples; prepare uma pequena placa mortuária e cultue-a como se faz com uma pessoa falecida comum.
+
+---
+
+**Leitura complementar (relato):** "O Espírito de Hirokichi" (*Conversas sobre o Mundo Espiritual*, 1949).
+
+**O Espírito de Hirokichi**
+
+Foi no início da minha carreira, quando eu procurava conciliar a pesquisa espiritual com a experimentação da cura de doenças. Tratava-se de uma moça de dezenove anos, com tuberculose pulmonar em estágio terminal. […] Assim que comecei o tratamento, a mãe da moça, a Sra. M (por volta dos cinquenta anos), que observava ao lado, levantou-se de repente e ficou de cócoras, com uma expressão terrível e um ímpeto de quem vai atacar, e disse: "Seu... Seu... Você, que estava prestes a matar a garota que eu queria matar, apareceu do nada e a salvou, hein? Estou tão furioso que não aguento, vou fazer você passar por uma situação horrível." A voz era, sem dúvida, masculina, e fiquei surpreso. Disse-lhe: "Afinal, quem é você? Por favor, acalme-se." Acalmei-o, e ele, de má vontade, sentou-se e disse:
 
 Ele: "Sou um homem chamado Hirokichi."
+
 Eu: "Afinal, qual é a sua relação com este corpo?"
+
 Ele: "Sou o irmão mais novo do ancestral de quatro gerações atrás desta casa, e me chamo Hirokichi."
+
 Eu: "Então, por que você se apossou desta moça e tentou matá-la?"
+
 Ele: "Eu fugi de casa e morri, sou um espírito sem laços, e ninguém cuida de mim. Por isso, para que cuidassem de mim, tentei chamar a atenção dessas pessoas desta casa, causando doenças e várias outras coisas, mas ninguém percebeu. Fiquei tão irritado que não aguentei, e resolvi matar esta moça. Assim, eles perceberiam."
+
 Eu: "Mas você saiu do Inferno, não saiu?"
+
 Ele: "Sim, estive no Inferno por muito tempo, mas já estou farto do Inferno, quero que me consagrem."
+
 Eu: "Mas, se você matar esta moça, cairá num Inferno ainda pior do que antes. Você está ciente disso?"
 
 Ao ouvir isso, ele pareceu um pouco surpreso e disse:
 
 Ele: "Isso é verdade?"
+
 Eu: "Não é apenas verdade; eu faço o trabalho de Deus. Nunca posso mentir. E certamente o consagrarei."
 
-Depois de muito insistir, ele acabou concordando, e passamos a cooperar na cura da doença da moça. Seus modos e sua linguagem eram os de um autêntico *Edokko* (nativo de Tóquio), homem de bom caráter — devia ter sido um comerciante comum do final do período Edo. Durante a possessão divina, a Sra. M permanecia em estado de não-eu, sem qualquer consciência própria: uma médium verdadeiramente ideal. Dali em diante, a doença da moça caminhou bem rumo à cura; um dia, porém, a Sra. M procurou-me de repente. "Desde dois ou três dias atrás, sinto como se algum espírito estivesse se apossando de mim; gostaria que o senhor investigasse."
+Depois de muito insistir, ele acabou concordando, e passamos a cooperar na cura da doença da moça. […] Dali em diante, a doença da moça melhorou dia após dia, até que ela se recuperou por completo. Consagrei, então, o espírito de Hirokichi.
 
-Realizei então, imediatamente, o método de investigação espiritual. Mal a senhora se sentou ereta e fechou os olhos, recitei o norito. Ela caiu em estado de não-eu, e perguntei:
+Antes disso, certa vez, o espírito de Hirokichi se apossara da senhora e dissera: "Graças a você, ultimamente estou numa parte mais elevada do Inferno, e me sinto muito mais aliviado", agradecendo calorosamente. Em seguida, disse: "Tenho um pedido. É que todas as manhãs, gostaria que colocassem três grãos de arroz cozido no canto da pia da cozinha da minha casa, num pequeno copo de saquê." Perguntei-lhe o motivo, e ele respondeu: "No mundo espiritual, três grãos de arroz por dia são suficientes. Além disso, ainda estou numa posição em que não posso ir além da cozinha." […] Dois ou três dias depois, enquanto eu trabalhava no escritório, algo se apossou de mim — uma sensação de alegria, como se lágrimas estivessem prestes a transbordar. Fui imediatamente a uma sala vazia e interroguei o espírito possessor: era o espírito de Hirokichi.
 
-Eu: "Quem é você?"
-M: "Eu sou um deus."
-Eu: "Que deus é?"
-M: "Sou um deus que expulsa os demônios, mas não posso dizer meu nome."
-
-Pensei comigo: (Já ouvira dizer que, entre os deuses, há os verdadeiros e os falsos, e que era preciso ter cautela; talvez este fosse um deus falso. Não podia deixar-me enganar.) E, de sobreaviso, perguntei:
-
-Eu: "Para que o senhor veio?"
-M: "A moça que você está tratando está sendo alvo de um demônio agora; vim lhe ensinar como expulsar esse demônio."
-Eu: "Como devo fazer?"
-M: "Pela manhã e à noite, espalhe sal em direção ao nordeste (ushitora) e recite o norito."
-
-Perguntei outras coisas, mas ele não entrou no assunto; disse apenas: "Já lhe informei o suficiente", e se foi. A Sra. M despertou e, surpresa, perguntou-me:
-
-M: "O senhor viu, Mestre?"
-Eu: "O quê? Não vi nada de especial", respondi.
-
-Então a senhora contou: "No início, quando o senhor recitou o norito, ouvi um som terrível, como um 'whoosh', vindo de trás, e de repente alguém se sentou ao meu lado. Olhando, vi que era uma figura muito grande, sentada, com a cabeça alcançando o batente da porta. O rosto não estava claro, mas tinha cabelos negros caídos para trás, uma faixa na cabeça, e sua vestimenta era feita de folhas finamente trançadas, que brilhavam em cinco cores, muito bonita. Logo em seguida, senti que ele se apossou de mim, e não me lembro de mais nada."
-
-Pensei que este devia ser um deus verdadeiro. Investiguei depois e descobri que era o deus Kunitokotachi-no-mikoto. Dois ou três dias após esse incidente, a Sra. M veio visitar-me outra vez. "Sinto que algo vai se apossar de mim de novo; gostaria que o senhor investigasse", disse ela. Iniciei imediatamente a investigação espiritual, mas, desta vez, tudo foi completamente diferente. Perguntei:
-
-"Quem é você?"
-
-Ele respondeu: "Sou um familiar do *Doryo Gongen* de Odawara."
-
-Perguntei: "Por que se apossou dela?"
-
-Ele disse: "Quero pedir desculpas."
-
-Perguntei: "Qual é a razão?"
-
-"Na verdade, esta senhora é devota do *Doryo Gongen*, mas, como a filha dela foi salva pelo poder do Deus Feroz, fiquei irritado e pensei em atrapalhar. No entanto, fui descoberto e não tenho desculpas."
-
-Assim que terminou de falar, a senhora tombou de lado. De olhos fechados, respirava ofegante e gemia; passados uns cinco minutos, porém, abriu os olhos e disse: "Ah, que susto! Primeiro, uma coisa preta entrou no meu corpo; então alguém veio e bateu nela com algo como um chicote, e ela fugiu."
-
-Pensei: "Então este era o demônio contra o qual o deus de dois ou três dias atrás me alertou." Dali em diante, a doença da moça melhorou dia após dia, até que ela se recuperou por completo. Consagrei, então, o espírito de Hirokichi. Antes disso, certa vez, o espírito de Hirokichi se apossara da senhora e dissera: "Graças a você, ultimamente estou numa parte mais elevada do Inferno, e me sinto muito mais aliviado", agradecendo calorosamente. Em seguida, disse: "Tenho um pedido. É que todas as manhãs, gostaria que colocassem três grãos de arroz cozido no canto da pia da cozinha da minha casa, num pequeno copo de saquê." Perguntei-lhe o motivo, e ele respondeu: "No mundo espiritual, três grãos de arroz por dia são suficientes. Além disso, ainda estou numa posição em que não posso ir além da cozinha."
-
-Algum tempo depois, ele disse: "Consegui chegar até a parte de baixo da escada." Naquela época, em minha casa, os deuses eram consagrados no segundo andar. Mais tarde, disse: "Consegui chegar até o cômodo ao lado do quarto dos deuses." Então eu disse: "Já está bom", e o consagrei.
-
-Dois ou três dias depois, enquanto eu trabalhava no escritório, algo se apossou de mim — uma sensação de alegria, como se lágrimas estivessem prestes a transbordar. Fui imediatamente a uma sala vazia e interroguei o espírito possessor: era o espírito de Hirokichi. Ele disse: "Vim hoje para agradecer. O senhor deve entender bem como estou feliz." E acrescentou: "Tenho outro pedido."
-
-Perguntei: "O quê?"
-
-Ele disse: "É que, desde que fui consagrado, estou realmente muito bem, e quero permanecer nesta situação para sempre. Estou farto do mundo terreno. Lá é preciso trabalhar para comer, há muito sofrimento, e é realmente detestável. Por favor, peça a Deus para que eu não renasça no mundo terreno."
-
-Dito isso, agradeceu calorosamente e foi embora. Casos assim mostram que morrer não é de todo ruim e que ir para o mundo espiritual também tem seu lado bom. E, no mundo espiritual, a cortesia é exata: os espíritos socorridos nunca deixam de vir agradecer. Às vezes agradecem também com coisas materiais, servindo-se das mãos das pessoas — é comum recebermos de lugares inesperados justamente aquilo que desejávamos; é disso que se trata. A Sra. M era uma médium ideal e me rendeu colheitas nada pequenas.
+Ele disse: "Vim hoje para agradecer. O senhor deve entender bem como estou feliz." […] Ele disse: "É que, desde que fui consagrado, estou realmente muito bem, e quero permanecer nesta situação para sempre. Estou farto do mundo terreno. No mundo terreno, é preciso trabalhar para comer, há muito sofrimento, e é realmente detestável. Por favor, peça a Deus para que eu não nasça novamente no mundo terreno." […] Casos assim mostram que morrer não é de todo ruim e que ir para o mundo espiritual também tem seu lado bom.

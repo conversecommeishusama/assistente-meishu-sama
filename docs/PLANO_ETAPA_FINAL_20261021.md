@@ -53,11 +53,11 @@ afirmação e chegar sozinho à conclusão.
 Montagem reprodutível:
 
 ```
-scripts/montar_volume_unico.py            # volume a partir das fontes
-scripts/glossas_volume.py                 # tabela de termos japoneses
+scripts/montar_volume_unico.py # volume a partir das fontes
+scripts/glossas_volume.py # tabela de termos japoneses
 scripts/gerar_pdf_dossie_difusao.py DOSSIE_DIFUSAO_20261020 "A difusão na época de Meishu-Sama"
 DOCX_CABECALHO="A difusão na época de Meishu-Sama" \
-  scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_20261020
+ scripts/gerar_docx_dossie_difusao.py DOSSIE_DIFUSAO_20261020
 ```
 
 Fontes editoriais das partes I, II e III em `FONTES`, no topo do script de
@@ -75,10 +75,10 @@ Convenções: `verificar.py` (caminhos) não se aplica ao volume; `verif_cit.py`
 Levantar, nos Escritos, o que Meishu-Sama diz sobre:
 
 1. a natureza do que escreve — que não é opinião, que vem de Deus, que não pode
-   ser alterado;
+ ser alterado;
 2. a proibição de acrescentar, retirar ou interpretar;
 3. a condenação de quem distorce, de quem ensina o que ele não ensinou, de quem
-   usa o ensinamento em proveito próprio;
+ usa o ensinamento em proveito próprio;
 4. a responsabilidade de quem transmite — dirigente, ministro, tradutor.
 
 Ponto de partida de busca: `御筆` (deu 86 resultados brutos, muitos sobre a
@@ -107,7 +107,7 @@ O que a montagem não resolveu:
 - frases de transição que pressupõem a divisão antiga em três partes;
 - sobreposições entre os capítulos 5 e 6 (ordem do culto / tipos de culto);
 - sobreposições entre os capítulos 16 e 17 (atribuições dos dirigentes /
-  atividades em torno de Meishu-Sama);
+ atividades em torno de Meishu-Sama);
 - remissões internas que apontam para seção que mudou de lugar.
 
 **Revisão dos dois regimes** (ver §1). Passar o volume inteiro procurando
@@ -142,10 +142,10 @@ Candidatos, por capítulo:
 |---|---|
 | 2 | capa ou página dos números de 『光』 que marcam a fundação |
 | 11 | 日本観音教団講習要項 (1947) e 教修要綱, 3ª ed. (1954) |
-| 11 | ata da reunião periódica de difusão (『栄光』195, já há) |
+| 11 | ata da reunião periódica de difusão |
 | 15 | censo de outubro de 1950 |
 | 19 / 20 | grade organizacional de dezembro de 1948 e grade territorial de 1951 |
-| 22 | aviso 「注意」 sobre valores (『栄光』191, já há) |
+| 22 | aviso 「注意」 sobre valores |
 | 23 | Regulamento da pessoa jurídica religiosa (1951) |
 | 24 / 25 | comunicado de reorganização de março de 1951; Reforma de 1951 |
 | 25 | 『法難手記』 (já há) |
@@ -197,7 +197,7 @@ Traduzir na íntegra, ao fim do volume:
 5. 規約 / 細則 — regimento interno, se localizado;
 6. a grade organizacional de dezembro de 1948;
 7. o censo de outubro de 1950;
-8. o aviso 「注意」 sobre valores (『栄光』191, 1953);
+8. o aviso 「注意」 sobre valores;
 9. o estatuto da 日本浄化療法普及会 (1946), se localizado.
 
 Formato de cada anexo: identificação do documento, tradução integral em seções
@@ -228,8 +228,7 @@ As seis fases foram executadas. O que ficou feito, e onde conferir:
 todas verificadas literalmente contra o corpus (o teste de substring está descrito
 no fim do arquivo), em quatro blocos — a natureza do escrito, a alteração como
 causa da decadência, o dever de quem transmite, e o que a documentação **não** diz.
-Os pontos centrais são 「私は真理を書く」 (『地上天国』28号, 25/9/1951) e 「真理を説く」
-(『救世』58号, 15/4/1950). Achado importante para a honestidade do volume: **não há
+Os pontos centrais são 「私は真理を書く」 e 「真理を説く」. Achado importante para a honestidade do volume: **não há
 passagem em que ele proíba, em termos, alterar o escrito** — a proibição é
 consequência, não citação; e **não há nada sobre tradução**. A introdução diz isso.
 
@@ -237,7 +236,7 @@ consequência, não citação; e **não há nada sobre tradução**. A introduç
 1.4), antes das convenções: o que ele diz do que escreve; o que diz de quem altera;
 por que este volume cita tanto e interpreta tão pouco; e a declaração de método.
 Inclui a contrapartida que impede a bibliolatria — 「本教は教えは第二第三で、浄霊に
-よって人を善化する」 (『地上天国』39号, 25/8/1952).
+よって人を善化する」.
 
 **Fase 3 — feita.** Duas ocorrências de "para Meishu-Sama" reescritas como
 afirmação. Renumeração das subseções sem número corrigida no montador (era o defeito
@@ -249,12 +248,12 @@ que **havia ficado de fora do volume**, entrou como 15.5, com um tipo novo de it
 no montador (`sub`).
 
 **Fase 4 — feita em parte, e o resto está bloqueado pela fonte.** Entrou o fac-símile
-da capa de 『自然農法』1号 (novembro de 1954), no capítulo 26. Os outros candidatos da
+da capa de 『自然農法』nº 1 (novembro de 1954), no capítulo 26. Os outros candidatos da
 tabela do §3 **não existem como documento isolado no acervo de PDFs**: não há
 講習要項 de 1947, censo de 1950, grade de 1948, regulamento de 1951 nem comunicado
 de 1951 entre os 756 PDFs de `pdf_rattail/`. Eles existem como texto (e por isso
 estão nos anexos), não como fac-símile. Tentou-se localizar o comunicado de 1951 no
-『栄光』94号 por OCR: as páginas são fotografia de jornal e o OCR não devolve texto
+『栄光』nº 94 por OCR: as páginas são fotografia de jornal e o OCR não devolve texto
 confiável. **Registra-se como não feito, com a razão.**
 
 **Fase 5 — feita.** Oito anexos, traduções integrais, ao fim do volume (caps. 32-39):
@@ -275,10 +274,10 @@ passagem foi feita por leitura de trechos, não de ponta a ponta.
 
 ## 7. Armadilhas já pagas
 - `!` e `\[` dentro de aspas duplas disparam expansão de histórico — usar aspas
-  simples.
+ simples.
 - A montagem roda várias funções em cadeia: `glosar(polir(podar_coluna_vazia(
-  remapear_refs(corpo))))`. Mexer numa quebra a seguinte.
+ remapear_refs(corpo))))`. Mexer numa quebra a seguinte.
 - Marcador `\x01` que sobra no markdown quebra a geração do DOCX
-  ("control characters").
+ ("control characters").
 - `git add -A` neste repositório arrasta dezenas de arquivos alheios à tarefa:
-  adicionar por caminho.
+ adicionar por caminho.

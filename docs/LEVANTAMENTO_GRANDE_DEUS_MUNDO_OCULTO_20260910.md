@@ -53,7 +53,7 @@ Mesmo conteúdo da Leitura (20 ocorrências). **Requer autorização** (regra: e
 
 | Arquivo | Ocorrências |
 |---|---|
-| `19480101 - Gokōwa-roku (Suplemento).txt` | **[T] L771, L773** ("Deus do Mundo Sombrio") · **[T] L885, L889** ("Grande Deus do Mundo Oculto") · [O] L883 · [G] L137, L163, L285, L287, L295, L1161, L1165, L1167, L1255, L1585 (usam "Kakuriyo ..." — conferir grafia) |
+| `19480101 - Gokōwa-roku (Suplemento).txt` | **[T] L771, L773** ("Deus do Mundo Sombrio") · **[T] L885, L889** ("Grande Deus do Mundo Oculto") · [O] L883 · [G] L137, L163, L285, L287, L295, L1161, L1165, L1167, L1255, L1585 (usam "Kakuriyo..." — conferir grafia) |
 | `19490825 - Coleção Jikan Volume 3...txt` | **[T] L85** |
 | `19510520 - Luz dos Ensinamentos.txt` | **[O] L480, L482, L641** |
 | `19511225 - Gosuiji-roku nº 5.txt` | **[T] L583, L595** ("Deus do Mundo Oculto") |

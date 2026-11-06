@@ -59,7 +59,7 @@ retrospectiva, em 15 de julho de 1952 (`search1/kouwa/s270606.html` e
 > 島流しになったり、殺されようとしたりしたから、どうしても明からさまに
 > できない。」
 
-E sobre a proibição, em 『学問のズレ』 (`地天 5号`, 25/jun/1949):
+E sobre a proibição, em 『学問のズレ』:
 
 > 「私は十数年以前から、医学に関する新学説を唱え、それを著書として発刊
 > するや、たちまち発禁となった。**三回までも発禁となった**のでやむを得ず
@@ -212,8 +212,7 @@ curso), não dele:
 > その治療上の実験と研究とを基礎として、ついに『空前の霊療術』なるものを
 > 創成さるゝに到った――それの成果であります。」
 
-O conteúdo são as falas dele; a moldura é do editor. Pela régua do projeto
-(aplicada ao caso dos artigos do 御教え集), **o conteúdo entra; a fala de
+O conteúdo são as falas dele; a moldura é do editor. Pela régua do projeto, **o conteúdo entra; a fala de
 terceiro não**. Sugestão: incluir com a mesma cautela já usada em coletâneas.
 
 **日本医術講義録** (1935) e **明日の医術・新日本医術としての岡田式療病法**
@@ -310,7 +309,7 @@ identificados incluem 江川勝利 (30), 百地超生 (24), 岡田道一 (20),
 松籟生 (12), 本郷弓二 (10), 井上超生 (8), 三浦清治 (7), 山本明実 (4) e outros.
 
 Ressalva importante: artigos de terceiros que **registram fala dele** (ex.: a
-cobertura do 春季大祭, `地天 4号`, 1949) contêm doutrina em primeira pessoa
+cobertura do 春季大祭, `地天 nº 4`, 1949) contêm doutrina em primeira pessoa
 dentro de moldura alheia — mesma situação de `岡田先生療病術講義録`. Precisa de
 leitura linha a linha, não de filtro automático.
 
@@ -371,13 +370,13 @@ auditoria → revisão semântica), sem material paralelo de apoio.
 Decisões do fundador do projeto em 05/out/2026:
 
 - **Item 1** (seguir o padrão do Mioshie-shū): ✅ **decidido** — o padrão é
-  `title_jp` / `title_pt` / `jp_anchor` (citação `『御教え集』N号、昭和X(AAAA)年M月D日発行`)
-  / `pt_anchor` / `pt_prefix`, com o corpo rotulado `Interlocutor:` /
-  `Meishu-Sama:` e a segmentação linha-a-linha em `jp_line_v2`
-  (ver `reports/livros_trabalho/segmentacao_manual/`). As obras aprovadas
-  seguem exatamente esse formato.
+ `title_jp` / `title_pt` / `jp_anchor` (citação `『御教え集』N号、昭和X(AAAA)年M月D日発行`)
+ / `pt_anchor` / `pt_prefix`, com o corpo rotulado `Interlocutor:` /
+ `Meishu-Sama:` e a segmentação linha-a-linha em `jp_line_v2`
+ (ver `reports/livros_trabalho/segmentacao_manual/`). As obras aprovadas
+ seguem exatamente esse formato.
 - **Item 2** (Bloco A entra + precedência no app): ✅ **decidido e
-  implementado** — ver §6b.
+ implementado** — ver §6b.
 - **Item 3** (temas seculares): ⏳ **decisão pendente** — recomendação em §8b.
 
 | # | Obra | Período | Págs | Decisão |
@@ -392,7 +391,7 @@ Decisões do fundador do projeto em 05/out/2026:
 | 8 | 新日本医術書 | 1936 | 14 | **incluir** ✅ |
 | 9 | 日本医術講義録 | 1935 | 19 | **incluir** ✅ (etapa do pensamento) |
 | 10 | 明日の医術・新日本医術としての岡田式療病法 | 1936 | 17 | **incluir** ✅ |
-| 11 | 岡田先生療病術講義録 | 1936 | 10 | **incluir** ✅ (ler a 序言) |
+| 11 | 岡田先生療病術講義録 | 1936 | 10 | **incluir** ✅ |
 | 12 | 瑞光 | 1931-32 | 7 | **incluir** ✅ |
 | 13 | 松風 | 1932-33 | 6 | **incluir** ✅ |
 | 14 | 紫苑 | 1935 | 1 | **incluir** ✅ |
@@ -409,25 +408,24 @@ Decisões do fundador do projeto em 05/out/2026:
 **Recomendo INCLUIR, com um filtro de pertinência.** Razões:
 
 1. **São de autoria dele** — o "secular" está no assunto, não na pena (§4.4).
-   Excluí-los seria o único corte do projeto baseado em *tema*, e isso colide
-   com a regra anti-tutela (`regra-suprema-tutela-pesquisa.mdc`): não cabe ao
-   sistema decidir que doutrina é "suficientemente religiosa". Uma frase sobre
-   economia ou arte pode ser exatamente a analogia que explica um princípio
-   (a própria 観音講座 usa exemplos seculares).
+ Excluí-los seria o único corte do projeto baseado em *tema*, e isso colide
+ com a regra anti-tutela (`regra-suprema-tutela-pesquisa.mdc`): não cabe ao
+ sistema decidir que doutrina é "suficientemente religiosa". Uma frase sobre
+ economia ou arte pode ser exatamente a analogia que explica um princípio.
 2. **Coerência com o item 1** — o Mioshie-shū inclui perguntas sobre saúde,
-   casa, negócios; o critério já aceito é "o que ele publicou", não "o que é
-   assunto religioso".
+ casa, negócios; o critério já aceito é "o que ele publicou", não "o que é
+ assunto religioso".
 3. **Custo assimétrico** — o risco de incluir é uma resposta um pouco menos
-   focada; o de excluir é perder um ensinamento real. O projeto já assumiu
-   essa preferência no caso dos testemunhos (§6).
+ focada; o de excluir é perder um ensinamento real. O projeto já assumiu
+ essa preferência no caso dos testemunhos (§6).
 
 **Filtro proposto** (para não trazer notícia institucional datada, que perde
 sentido fora do contexto):
 - **entra**: artigo de autoria dele com conteúdo reflexivo/doutrinário
-  (política, economia, arte, imprensa, juventude, saúde pública...);
+ (política, economia, arte, imprensa, juventude, saúde pública...);
 - **fica de fora**: notícia/reportagem factual e datada — balanço, comunicado,
-  censo, cobertura de evento, lista de nomeações (`会報`, `実生分会ニュース`,
-  `布教座談会`).
+ censo, cobertura de evento, lista de nomeações (`会報`, `実生分会ニュース`,
+ `布教座談会`).
 
 Em termos práticos, isso exclui as **~26 páginas** de `会報` e
 `実生分会ニュース` (§4.1 nota) e mantém os ~231 artigos de reflexão. Se você
@@ -440,13 +438,13 @@ então até o `会報` entra como registro histórico.
 ## 9. Pendências e próximos passos
 
 1. **Confirmar a Folha de decisão (§8)** — em especial as linhas 9, 10, 11 e 21,
-   que dependem de critério de valor, não de fato.
+ que dependem de critério de valor, não de fato.
 2. **Definir o que fazer com os artigos de terceiros nas coletâneas** — aplicar
-   a mesma solução do 御教え集 (conteúdo dele entra, moldura alheia não) ou
-   excluir o artigo inteiro.
+ a mesma solução do 御教え集 (conteúdo dele entra, moldura alheia não) ou
+ excluir o artigo inteiro.
 3. **Atualizar `04-ACERVO.md`** com a lista nominal do Bloco B, hoje descrito
-   apenas em abstrato ("período de perseguição").
+ apenas em abstrato ("período de perseguição").
 4. **Orçar a tradução do Bloco A** — 227 páginas / ~467 mil caracteres JP sem
-   paralelo PT existente (ver `MAPA_PROMOCAO_E_ORCAMENTO_REVISAO_20260910.md`).
+ paralelo PT existente (ver `MAPA_PROMOCAO_E_ORCAMENTO_REVISAO_20260910.md`).
 5. **Verificar, para cada obra aprovada, se há reescrita pós-guerra** que a
-   torne redundante — método já aplicado a 明日の医術→結核信仰療法.
+ torne redundante — método já aplicado a 明日の医術→結核信仰療法.

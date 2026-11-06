@@ -7,14 +7,14 @@ Messiânica Mundial (Sekai Kyūseikyō), fundada por Meishu-Sama (Mokichi
 Okada). É, ao mesmo tempo:
 
 - um **acervo digital bilíngue** (japonês original ↔ português traduzido, com
-  suporte a mais idiomas na interface) dos ensinamentos, palestras, diálogos
-  e periódicos do fundador;
+ suporte a mais idiomas na interface) dos ensinamentos, palestras, diálogos
+ e periódicos do fundador;
 - um **assistente de IA** que responde perguntas do usuário buscando trechos
-  reais desse acervo (RAG — geração aumentada por recuperação), nunca
-  inventando ou completando pela memória do modelo;
+ reais desse acervo (RAG — geração aumentada por recuperação), nunca
+ inventando ou completando pela memória do modelo;
 - uma **ferramenta interna de revisão editorial** (Acervo Studio,
-  `/studio`) usada pela equipe para segmentar, traduzir, revisar e aprovar o
-  material antes que ele chegue à busca pública.
+ `/studio`) usada pela equipe para segmentar, traduzir, revisar e aprovar o
+ material antes que ele chegue à busca pública.
 
 ## Por que existe
 
@@ -38,28 +38,28 @@ literalmente sobre o que a resposta disser.
 ## Para quem é
 
 - **Fiéis** buscando orientação a partir dos ensinamentos originais, em
-  português, sem precisar navegar o corpus japonês diretamente.
+ português, sem precisar navegar o corpus japonês diretamente.
 - **Estudiosos/tradutores** que precisam do texto japonês e português lado a
-  lado, com citação de fonte confiável.
+ lado, com citação de fonte confiável.
 - **Equipe interna** (Acervo Studio) responsável por manter a qualidade da
-  segmentação, tradução e indexação do acervo.
+ segmentação, tradução e indexação do acervo.
 
 ## O que o Goshinsho explicitamente NÃO é
 
 - Não é uma autoridade religiosa nem substitui orientação pastoral de um
-  ministro/líder da igreja — é uma ferramenta de busca sobre um corpus de
-  texto.
+ ministro/líder da igreja — é uma ferramenta de busca sobre um corpus de
+ texto.
 - Não "conclui" doutrina por analogia ou bom senso quando o corpus é omisso
-  — nesse caso, a resposta deve declarar a ausência de ensino direto, não
-  inventar uma posição plausível (ver `inferencia-legitimada.mdc`).
+ — nesse caso, a resposta deve declarar a ausência de ensino direto, não
+ inventar uma posição plausível (ver `inferencia-legitimada.mdc`).
 - Não trata nenhum tema (doença, obra, ministério) com regra especial ou
-  atalho de busca dedicado — essa prática, chamada internamente de
-  **"tutela"**, é proibida por regra de prioridade máxima do projeto (ver
-  [03-PRINCIPIOS-E-DIRETRIZES.md](03-PRINCIPIOS-E-DIRETRIZES.md)). Isso
-  existe porque um sistema assim, no passado, já tratou perguntas
-  parecidas de forma inconsistente dependendo de palavras-chave — o
-  problema real que motivou a reescrita da pipeline de busca (pipeline v2,
-  ver [05-ARQUITETURA-APLICATIVO.md](05-ARQUITETURA-APLICATIVO.md)).
+ atalho de busca dedicado — essa prática, chamada internamente de
+ **"tutela"**, é proibida por regra de prioridade máxima do projeto (ver
+ [03-PRINCIPIOS-E-DIRETRIZES.md](03-PRINCIPIOS-E-DIRETRIZES.md)). Isso
+ existe porque um sistema assim, no passado, já tratou perguntas
+ parecidas de forma inconsistente dependendo de palavras-chave — o
+ problema real que motivou a reescrita da pipeline de busca (pipeline v2,
+ ver [05-ARQUITETURA-APLICATIVO.md](05-ARQUITETURA-APLICATIVO.md)).
 
 ## As duas frentes de trabalho
 
@@ -67,14 +67,14 @@ O projeto tem, na prática, dois eixos de trabalho bem distintos, cada um com
 seu próprio ritmo e risco:
 
 1. **O aplicativo** — código do produto (`app.py`, `goshinsho/`,
-   `templates/`, `static/`, `deploy/`): como a busca funciona, como a IA
-   responde, autenticação, assinatura, admin. Mudanças aqui afetam
-   diretamente o que o usuário final vê agora.
+ `templates/`, `static/`, `deploy/`): como a busca funciona, como a IA
+ responde, autenticação, assinatura, admin. Mudanças aqui afetam
+ diretamente o que o usuário final vê agora.
 2. **O acervo** — o conteúdo em si (`reports/livros_trabalho/`,
-   `reports/periodicos_trabalho/`): tradução, segmentação, pareamento
-   JP↔PT, qualidade editorial. É um trabalho de curadoria de longo prazo,
-   com suas próprias fases (ver [02-HISTORIA.md](02-HISTORIA.md)), hoje
-   majoritariamente conduzido por processos autônomos supervisionados.
+ `reports/periodicos_trabalho/`): tradução, segmentação, pareamento
+ JP↔PT, qualidade editorial. É um trabalho de curadoria de longo prazo,
+ com suas próprias fases (ver [02-HISTORIA.md](02-HISTORIA.md)), hoje
+ majoritariamente conduzido por processos autônomos supervisionados.
 
 Esta documentação (pasta `docs/`) cobre os dois eixos, mas trata deles
 separadamente — decisões sobre o acervo (glossário, segmentação, promoção

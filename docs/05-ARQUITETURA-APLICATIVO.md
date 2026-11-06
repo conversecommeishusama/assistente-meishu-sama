@@ -52,7 +52,7 @@ Camada opcional (Tier 2, controlada por `Config.RESEARCH_MODE`) que decide
 se uma pergunta é complexa o suficiente (`router.py`, score de
 complexidade 0–1: detecta comparação, múltiplos tópicos) para disparar
 múltiplas sub-buscas em paralelo (`research.py`, reaproveitando
-`retrieve()` da pipeline v2 via `tools.py`) e sintetizar uma resposta única
+`retrieve` da pipeline v2 via `tools.py`) e sintetizar uma resposta única
 a partir delas, medindo latência por fase (`timing.py`).
 
 ## Acervo Studio (`goshinsho/studio/`)

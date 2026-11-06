@@ -263,9 +263,9 @@ unidade.** Confirmada e refinada.
 - **Sal como oferenda** — continua sem fonte.
 - **Lugar de consagração usado por Meishu-Sama** — sem fonte.
 - **Oferendas diante da caligrafia Komyo** — há fonte para o culto matinal e
-  vesperal (Parte II, §14.2), não para oferendas.
-- **Sufrágio na Sede Geral** — o rito existe (`先祖祭`); não há fonte de que fosse
-  celebrado na Sede.
+ vesperal (Parte II, §14.2), não para oferendas.
+- **Sufrágio na Sede Geral** — o rito existe; não há fonte de que fosse
+ celebrado na Sede.
 - **Remuneração** — continua o vazio mais sério.
 - **Paramentos completos** — há veste prescrita e escala de cor, não inventário.
 
@@ -278,10 +278,10 @@ e concluí pela ausência do assunto**. `御霊祭` existe 16 vezes, mas eu proc
 Duas correções de processo:
 
 1. **Antes de declarar lacuna, variar o vocabulário.** Um termo ausente não é um
-   assunto ausente — é uma hipótese lexical não confirmada.
+ assunto ausente — é uma hipótese lexical não confirmada.
 2. **Contar as ocorrências e ler o contexto.** `十分の一` tinha 149 ocorrências: se
-   eu tivesse olhado apenas o número, teria concluído o oposto do correto. O que
-   resolve é ler amostras do contexto, não contar.
+ eu tivesse olhado apenas o número, teria concluído o oposto do correto. O que
+ resolve é ler amostras do contexto, não contar.
 
 Foi também essa sessão que revelou que o `pesq.py` corrompia consultas com espaço no
 rótulo (o `awk` de verificação contava zero para termos que existiam). O script foi

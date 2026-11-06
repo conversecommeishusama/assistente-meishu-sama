@@ -61,10 +61,10 @@ TERMOS = {
     "教導師補": "Ministro Responsável Assistente",
     "教導師": "Ministro Responsável",
     "助教師": "Ministro Assistente",
-    "大教師": "Ministro Sênior",
-    "中教師": "Ministro Intermediário",
+    "大教師": "Ministro Titular",
+    "中教師": "Ministro Adjunto",
     "教師": "ministro",
-    "管長": "Superintendente",
+    "管長": "presidente",
     "理事長": "diretor-presidente",
     "副理事長": "vice-presidente",
     "理事": "diretor",
@@ -521,8 +521,10 @@ EXCECOES_GLOSSARIO = {
         "«esta religião» e não «nossa Igreja»: o volume é estudo histórico em "
         "terceira pessoa, não texto da igreja em primeira.",
     "管長":
-        "«Superintendente» e não «presidente ou líder»: é cargo com definição "
-        "legal no Regulamento de 1951, e o anexo o traduz assim.",
+        "Forma do glossário de tradução: «presidente». A versão anterior usava "
+        "«Superintendente», por analogia com o cargo legal do Regulamento de "
+        "1951; o autor determinou que o glossário prevalece, e o anexo passou a "
+        "traduzir 管長 por «presidente» também.",
     "執事":
         "«administrador-executivo» e não «Secretário»: o volume distingue 執事 "
         "(função de confiança junto ao Fundador) de 秘書 (secretário).",

@@ -23,7 +23,7 @@ Onde o trecho foi lido no artigo inteiro, isso está indicado por **[íntegra]**
 > 「右のごとくであるとしたら、**私の今までかいたものはことごとく真理であって**、
 > 真理の鏡に照らして偽真理の欠陥を晒け出し、改善する方法を諭ゆるので」
 
-**Referência:** 「私は真理を書く」, 『地上天国』28号, 25 de setembro de 1951. **[íntegra]**
+**Referência:** 「私は真理を書く」, 『地上天国』nº 28, 25 de setembro de 1951. **[íntegra]**
 
 *"Chegando finalmente o tempo, Deus, para deslindar a verdade, faz que eu a dê a
 conhecer amplamente à humanidade. É essa a razão do aparecimento da nossa Igreja
@@ -46,7 +46,7 @@ mas integralmente. É a base da premissa do volume.
 > ないかとも思えるのである。と言って**解釈が難しいから、その人次第で色々にとれる
 > から、どうしても分派が出来易い。**」
 
-**Referência:** 「私は真理を書く」, 『地上天国』28号, 25 de setembro de 1951. **[íntegra]**
+**Referência:** 「私は真理を書く」, 『地上天国』nº 28, 25 de setembro de 1951. **[íntegra]**
 
 *"Mas aqui há um inconveniente. É que, por exemplo, os oitenta e quatro mil sutras de
 Śākyamuni, a Bíblia de Cristo, o密教 de Shingon, o *Tannishō* de Shinran, os escritos
@@ -70,7 +70,7 @@ livre é, no texto dele, o mecanismo da dispersão.
 > あろうが、実はいささかも異ってはいない**、至極当りまえの事である。異ったと思う
 > のは、非真理の眼で見るからである」
 
-**Referência:** 「真理の具現」, 『光』18号, 16 de julho de 1949. **[íntegra]**
+**Referência:** 「真理の具現」, 『光』nº 18, 16 de julho de 1949. **[íntegra]**
 
 *"Portanto, as várias exposições que faço, uma vez que declaram a própria verdade do
 modo mais compreensível a todos, farão com que o leitor, sem se prender a nada,
@@ -92,7 +92,7 @@ divergentes é porque se olha com olhos de não-verdade."*
 > 「また私は文章をかく場合、**決して参考書を必要としない。紙に向えば無限に出て
 > くる。**これだけでも神智というもののいかなるものかが分るであろう。」
 
-**Referência:** 「私の文章とその他」, 『栄光』238号, 9 de dezembro de 1953. **[íntegra]**
+**Referência:** 「私の文章とその他」, 『栄光』nº 238, 9 de dezembro de 1953. **[íntegra]**
 
 *"Ora, a capacidade de romper absolutamente essa dificuldade **foi-me dada por
 Deus**: é o que se chama 神智, o saber sem ter aprendido, e consiste em poder
@@ -111,7 +111,7 @@ afirmação de que o escrito não é produto de elaboração humana falível.
 > 「何事についても**偽理は数年、数十年、数百年にして崩壊するが、真理は永久不変で
 > ある。**」
 
-**Referência:** 「真理と非真理」, 『地上天国』6号, 20 de julho de 1949. **[íntegra]**
+**Referência:** 「真理と非真理」, 『地上天国』nº 6, 20 de julho de 1949. **[íntegra]**
 
 *"Em qualquer matéria, **a falsa verdade desmorona em alguns anos, dezenas ou
 centenas de anos; a verdade, porém, é permanente e imutável.**"*
@@ -134,7 +134,7 @@ era.
 > さえ絶えない**ものもあるのであるから、真に大衆に安心立命を与える力などは、
 > 木によって魚を求むるの感なくんば非ずである。」
 
-**Referência:** 「真理を説く」, 『救世』58号, 15 de abril de 1950. **[íntegra]**
+**Referência:** 「真理を説く」, 『救世』nº 58, 15 de abril de 1950. **[íntegra]**
 
 *"Ademais, **na maior parte das religiões, no meio do caminho, alguns estudiosos e
 sábios as falsificaram e distorceram para adaptá-las à sua época**, e não em poucos
@@ -154,7 +154,7 @@ descreve o mecanismo — e a descreve como decadência, não como evolução.
 > 「しかし**真理はどこまでも真理である以上、時の進むに従って漸次理解されるのは
 > 当然**で、それが真理の真理たるゆえんでもある」
 
-**Referência:** 「真理を説く」, 『救世』58号, 15 de abril de 1950. **[íntegra]**
+**Referência:** 「真理を説く」, 『救世』nº 58, 15 de abril de 1950. **[íntegra]**
 
 *"Mas, **sendo a verdade verdade até o fim, é natural que seja compreendida
 gradualmente com o correr do tempo** — e nisso está a razão de a verdade ser
@@ -168,7 +168,7 @@ O que muda é a compreensão dos homens, nunca o conteúdo.
 > 「この事を霊感によって知識し得た吾らは、**常に偉大なる神意を曲解せざるよう戒意
 > し**、正しい神観をもって……」
 
-**Referência:** 「五六七世界の建設」, 『光』18号, 16 de julho de 1949. **[íntegra]**
+**Referência:** 「五六七世界の建設」, 『光』nº 18, 16 de julho de 1949. **[íntegra]**
 
 *"Nós, que por inspiração pudemos conhecer isso, **acautelamo-nos sempre para não
 torcer a grande vontade divina**, e com reta visão de Deus…"*
@@ -191,7 +191,7 @@ O dever de não desviar recai sobre o transmissor, não sobre o leitor distante.
 > 「それから私に質問する場合、**御神書の中にチャンとかいてある事柄がよくある**が、
 > これらは平素全く御神書を読むのを怠っているからである」
 
-**Referência:** 「大いに神書を読むべし」, 『栄光』80号, 29 de novembro de 1950. **[íntegra]**
+**Referência:** 「大いに神書を読むべし」, 『栄光』nº 80, 29 de novembro de 1950. **[íntegra]**
 
 *"E o que sobretudo se deve evitar: há quem, apertado pelas dificuldades, dê uma
 resposta mentirosa; quando o interlocutor investe com força, inventa uma saída
@@ -212,7 +212,7 @@ doutrina própria.
 > する程貪るように、読みたくなるもので、繰返し繰返し肚に入るまで読むのがよいので
 > ある。もちろん読めば読む程御神意がハッキリ判るものである。」
 
-**Referência:** 「大いに神書を読むべし」, 『栄光』80号, 29 de novembro de 1950. **[íntegra]**
+**Referência:** 「大いに神書を読むべし」, 『栄光』nº 80, 29 de novembro de 1950. **[íntegra]**
 
 *"**Quem descuida a leitura reverente dos Escritos vai perdendo força aos poucos.**
 Quanto mais se aprofunda a fé, tanto mais se tem vontade de os ler com avidez; o
@@ -230,7 +230,7 @@ mecanismo.
 > 人を善化する**のであるから、第一手数も時間もかからずして、効果百パーセントという
 > 訳である。」
 
-**Referência:** 「御説教」, 『地上天国』39号, 25 de agosto de 1952. **[íntegra]**
+**Referência:** 「御説教」, 『地上天国』nº 39, 25 de agosto de 1952. **[íntegra]**
 
 *"E 'religião', como dizem os caracteres, é a doutrina do fundador, e o pressuposto é
 salvar as pessoas pela doutrina; mas, como se disse, **nesta religião o ensino é
@@ -251,18 +251,18 @@ Registrado com a mesma clareza, porque a fase 2 não pode afirmar o que não est
 documentado:
 
 1. **Não há passagem em que ele proíba, em termos, acrescentar, retirar ou
-   interpretar.** A proibição é construída por implicação: a alteração é nomeada
-   como a causa da decadência das religiões (item 6), e a interpretação livre como a
-   causa das seitas (item 2). Não se deve citar uma "proibição" que o texto não faz.
+ interpretar.** A proibição é construída por implicação: a alteração é nomeada
+ como a causa da decadência das religiões (item 6), e a interpretação livre como a
+ causa das seitas (item 2). Não se deve citar uma "proibição" que o texto não faz.
 2. **Não há passagem sobre tradução.** As buscas por 翻訳, 通訳 e 外国語 não
-   devolvem nenhum texto em que ele trate da passagem do ensinamento a outra língua.
-   A responsabilidade do tradutor, portanto, deduz-se do item 9 (não inventar, não
-   mentir, admitir o que não sabe) — e não de uma instrução específica.
+ devolvem nenhum texto em que ele trate da passagem do ensinamento a outra língua.
+ A responsabilidade do tradutor, portanto, deduz-se do item 9 (não inventar, não
+ mentir, admitir o que não sabe) — e não de uma instrução específica.
 3. **Não há passagem em que ele comente a alteração de um texto seu.** O que existe é
-   a doutrina geral sobre alteração, não o caso concreto.
+ a doutrina geral sobre alteração, não o caso concreto.
 4. **Não há texto em que ele fale da coleção dos próprios escritos como cânone
-   fechado.** Fala dos 御神書 como conjunto a ler (itens 9 e 10), sem fixar limite,
-   ordem ou versão autorizada.
+ fechado.** Fala dos 御神書 como conjunto a ler (itens 9 e 10), sem fixar limite,
+ ordem ou versão autorizada.
 
 O volume, na introdução, deve dizer isso: o que está documentado é a natureza do
 escrito e o dever de quem transmite; a proibição explícita de alterar é
@@ -274,8 +274,8 @@ escrito e o dever de quem transmite; a proibição explícita de alterar é
 
 | Termo | Resultados | Aproveitado |
 |---|---|---|
-| 御筆 | 14 | nenhum próprio: todos sobre o Ōmoto (お筆先) |
-| 御言葉 | 12 | 1 (「神懸り宗教」, indireto) |
+| 御筆 | 14 | nenhum próprio: todos sobre o Ōmoto |
+| 御言葉 | 12 | 1 |
 | 神の言葉 | 2 | — |
 | 絶対 | 3+ | — |
 | 曲解 | 1 | item 8 |

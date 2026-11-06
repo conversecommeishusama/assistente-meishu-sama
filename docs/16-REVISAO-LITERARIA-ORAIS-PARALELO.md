@@ -33,12 +33,10 @@ Após teste comparativo validado, o executor das orais usará **reescrita SEMÂN
 
 ## Como iniciar (quando a frente atual terminar)
 ```bash
-# 1. Gerar os chunks reais das orais (substitui os placeholders)
-.venv/bin/python revisao_literaria/scripts/preparar_chunks.py --escopo orais
+# 1. Gerar os chunks reais das orais (substitui os placeholders).venv/bin/python revisao_literaria/scripts/preparar_chunks.py --escopo orais
 
 # 2. Atualizar as filas executor com os chunks reais (preparar_filas_orais já
-#    distribui por arquivo; rodar de novo após preparar_chunks para pegar os chunks)
-.venv/bin/python revisao_literaria/scripts/preparar_filas_orais.py 4 5
+# distribui por arquivo; rodar de novo após preparar_chunks para pegar os chunks).venv/bin/python revisao_literaria/scripts/preparar_filas_orais.py 4 5
 
 # 3. Lançar as 9 sessões tmux (4E semântico + 5A)
 bash revisao_literaria/scripts/lancar_orais_paralelo.sh

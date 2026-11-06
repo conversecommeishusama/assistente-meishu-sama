@@ -66,10 +66,10 @@ Ocorre no JP em **8 arquivos** (textos_japones):
 | Arquivo JP | Nº orações |
 |---|---|
 | `19480101-御光話録（補）.txt` (Suplemento) | 7 |
-| `19490921-御光話録12号.txt` | 2 |
-| `19500613-御光話録19号.txt` | 2 |
-| `19511125-御垂示録3号.txt` | 1 |
-| `19530615-御垂示録21号.txt` | 1 |
+| `19490921-御光話録nº 12.txt` | 2 |
+| `19500613-御光話録nº 19.txt` | 2 |
+| `19511125-御垂示録nº 3.txt` | 1 |
+| `19530615-御垂示録nº 21.txt` | 1 |
 | **Total (com sakihae)** | **13** |
 
 ### 2.1b `守り給え` sem `幸倍賜へ` — "mamoritamae" (só, sem sakihae)
@@ -78,7 +78,7 @@ Ocorre em **1 arquivo** adicional:
 
 | Arquivo JP | Nº orações |
 |---|---|
-| `19521201-結核信仰療法.txt` | 1 (`大光明如来様守り給え`) |
+| `19521201-結核信仰療法.txt` | 1 |
 | **Total** | **1** |
 
 ### 2.2 `惟神霊幸倍坐せ` — "kannagara tamati hae mase" (ou "Kamu nagara tamachi haemase")
@@ -88,10 +88,10 @@ Ocorre no JP em **5 arquivos** (textos_japones):
 | Arquivo JP | Nº orações |
 |---|---|
 | `19480101-御光話録（補）.txt` (Suplemento) | 1 |
-| `19500228-御光話録17号.txt` | 1 |
-| `19500613-御光話録19号.txt` | 1 |
-| `19511010-御垂示録2号.txt` | 1 |
-| `19541001-浄霊法講座（三）『浄霊法講座』3号.txt` | 1 |
+| `19500228-御光話録nº 17.txt` | 1 |
+| `19500613-御光話録nº 19.txt` | 1 |
+| `19511010-御垂示録nº 2.txt` | 1 |
+| `19541001-浄霊法講座（三）『浄霊法講座』nº 3.txt` | 1 |
 | **Total** | **5** |
 
 ---
@@ -138,13 +138,13 @@ O JP tem **7** ocorrências de `守り給へ幸倍賜へ` e **1** de `惟神霊�
 | 国常立大（御）神 守り給へ幸倍賜へ | "Kunitokotachi no Ōkami, protegei-nos e abençoai-nos" | **Traduzido** |
 | 大光明如来守り給へ幸倍賜へ | "Daikōmyō Nyorai, protegei-nos e abençoai-nos" | **Traduzido** |
 | 大光明如来守り給へ… | "Daikōmyō Nyorai, protegei-nos..." | **Traduzido** |
-| **惟神霊幸倍坐せ** (二カ所) | **trecho OMITIDO** (não existe no PT produção) | **Omitido** |
+| **惟神霊幸倍坐せ** | **trecho OMITIDO** (não existe no PT produção) | **Omitido** |
 
 **Total no Suplemento produção: 7 traduzidas + 1 omitida.**
 
 ### 4.2 `19480101 - Gokōwa-roku (Suplemento).txt` — **LEITURA COLABORATIVA** (revisada 29/08)
 
-A revisão **recuperou** o trecho omitido (`惟神霊幸倍坐せ`), mas manteve as orações **traduzidas**:
+A revisão **recuperou** o trecho omitido, mas manteve as orações **traduzidas**:
 
 | JP original | PT atual (LEITURA) | Problema |
 |---|---|---|
@@ -177,7 +177,7 @@ A revisão **recuperou** o trecho omitido (`惟神霊幸倍坐せ`), mas manteve
 | 五六七大黒天守り給へ幸倍賜へ | "Miroku Daikokuten, protegei-nos, concedei-nos felicidade abundante" | **Traduzido** |
 | 大黒天神守り給へ幸倍賜へ | "Daikokuten-jin, protegei-nos, concedei-nos felicidade abundante" | **Traduzido** |
 
-(Nota: neste mesmo arquivo, a oração `惟神霊幸倍坐せ` está corretamente transliterada como "Kamu nagara tamachi haemase".)
+
 
 ### 4.6 `19521201 - Terapia de Fé para Tuberculose.txt` — PRODUÇÃO
 

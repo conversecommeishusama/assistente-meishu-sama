@@ -12,7 +12,7 @@
 | # | questão | confirmada? | glossário tem? |
 |---|---|---|---|
 | 1 | 縦横/経緯 → "latitude e longitude" | ✅ **sim** (erro real) | ❌ ausente |
-| 2 | 心 → sempre "coração" | ✅ **sim** | ❌ ausente (só 心魂) |
+| 2 | 心 → sempre "coração" | ✅ **sim** | ❌ ausente |
 | 3 | 尺/寸/間/町/丁 não convertidos | ✅ **sim** | ❌ ausentes |
 | 4 | 時所位 → falta "Jishoi (…)"; depois só "Jishoi" | ✅ **sim** | ❌ ausente |
 | 5 | 祀る/供養/祭る — sufragar × cultuar confuso | ✅ **sim** | ⚠️ confuso |
@@ -31,7 +31,7 @@ sobre a Fé`, +4 arquivos):
 > e o yang. Eu classifico esse yin e yang como **longitude e latitude**: o yang é
 > a longitude…"
 
-**JP correspondente** (`kowa_full.txt`: `経緯結ぶ`, `経緯三段`, `経と緯に火と水`):
+**JP correspondente**:
 
 > 象形文字、〇は世界、**十は経緯結ぶ形**であります。
 > 元素から言うと…**経緯三段**になって…
@@ -45,8 +45,8 @@ Também aparece como `縦横` (11× no kowa).
 
 **Proposta:**
 - `経緯` → **"o vertical e o horizontal"** (ou "a trama e a urdidura" quando
-  tecelagem);
-- `経` → **"o vertical"** (経 = 縦, Norte-Sul); `緯` → **"o horizontal"**;
+ tecelagem);
+- `経` → **"o vertical"**; `緯` → **"o horizontal"**;
 - `経緯結ぶ` → "onde o vertical e o horizontal se cruzam".
 - **Não** usar "latitude/longitude". Registrar no glossário.
 
@@ -54,7 +54,7 @@ Também aparece como `縦横` (11× no kowa).
 
 ## 2. 心 → "coração" (consistente, mas errado em vários contextos)
 
-**Estado:** `心` **não está** no glossário (só `心魂 → "alma/consciência"`).
+**Estado:** `心` **não está** no glossário.
 O tradutor usa **"coração"** sempre.
 
 **Achado do kowa (29 ocorrências — o termo nº 1 em achados):**
@@ -72,7 +72,7 @@ O tradutor usa **"coração"** sempre.
 - `心` → **"mente"** ou **"consciência"** por padrão em contexto doutrinário;
 - **"coração"** só quando o contexto for afeto/sentimento explícito;
 - `心配` → "preocupação" (não "coração"); `真心` → "sinceridade"; `心身` →
-  "mente e corpo".
+ "mente e corpo".
 - Registrar a regra no glossário (classe D — doutrina, mas com regra clara).
 
 ---
@@ -90,12 +90,12 @@ O tradutor usa **"coração"** sempre.
 
 **Proposta** (a decisão é sua — duas opções):
 - **(A) Converter para métrico** com o original entre parênteses:
-  `一寸八分` → "5,4 cm (um sun e meio)" / `九尺` → "2,7 m (nove shaku)";
+ `一寸八分` → "5,4 cm (um sun e meio)" / `九尺` → "2,7 m (nove shaku)";
 - **(B) Transliterar + glosa na 1ª menção**: "nove **shaku** (≈ 2,7 m)".
 - Recomendo **(A)**, por ser acessível ao leitor brasileiro; preservar o número
-  original quando o texto faz jogo com o número (ex.: 五六七).
+ original quando o texto faz jogo com o número.
 
-**Nota:** `一〇軒ばかり先` (casas) e valores monetários (`一五万円`) são outra
+**Nota:** `一〇軒ばかり先` (casas) e valores monetários são outra
 categoria — decidir se convertem (o iene de 1948-55 não é o atual; converter
 seria enganoso → **manter o ien com o valor da época**).
 
@@ -106,15 +106,14 @@ seria enganoso → **manter o ien com o valor da época**).
 **Estado:** ausente do glossário. O PT atual usa só a glosa
 ("tempo, o lugar e a posição") em 4+ arquivos.
 
-**Achado:** `時所位` (じしょい) é **termo técnico** recorrente
-(`時所位とはどういう関係でしょうか`, `霊的に時所位を得ていなかった`).
+**Achado:** `時所位` (じしょい) é **termo técnico** recorrente.
 
 **Proposta (a sua regra):**
 - **1ª ocorrência por texto:** `Jishoi (tempo, local e posição)`;
 - **depois:** só `Jishoi`.
 - Registrar no glossário **com a regra de "1ª ocorrência por arquivo"** — o
-  glossário atual não distingue 1ª menção (por isso a trava forçaria a forma
-  longa em todas).
+ glossário atual não distingue 1ª menção (por isso a trava forçaria a forma
+ longa em todas).
 
 ⚠️ **Requisito técnico:** a trava de glossário hoje exige a mesma forma em todas
 as ocorrências. Para regras de "1ª menção", a trava precisa de um modo novo
@@ -129,22 +128,22 @@ as ocorrências. Para regras de "1ª menção", a trava precisa de um modo novo
 
 **Por que está confuso:** a distinção depende de **quem** é cultuado — mas o
 japonês usa verbos próximos, e a mesma cerimônia pode envolver divindade **e**
-ancestral ao mesmo tempo (ex.: 御先祖に箸をつける / 観音様の御軸に対するお供え).
+ancestral ao mesmo tempo.
 
 **Análise doutrinária** (confirmada no `Gokōwa-roku (Suplemento)`):
 
 | JP | objeto | verbo PT | nota |
 |---|---|---|---|
-| `祀る` (divindade/御神体) | divindade | **cultuar** | não "sufragar" |
-| `祀る` (祖霊/位牌) | ancestral | **cultuar** ou **prestar culto** | |
-| `供養` (祖霊) | ancestral | **sufragar** / **oferecer sufrágio** | |
+| `祀る` | divindade | **cultuar** | não "sufragar" |
+| `祀る` | ancestral | **cultuar** ou **prestar culto** | |
+| `供養` | ancestral | **sufragar** / **oferecer sufrágio** | |
 | `祭る` | genérico | **celebrar culto** / **cultuar** | distinguir de 祭り (festa) |
 | `お供え` | oferenda | **oferenda** | |
 
 **Proposta:** fixar no glossário:
 - `祀る` → **"cultuar"** (divindade) / **"prestar culto a"** (ancestral);
 - `供養` → **"sufrágio"** (substantivo) / **"sufragar"** (verbo) — **só** para
-  ancestrais/falecidos;
+ ancestrais/falecidos;
 - NUNCA usar "sufragar" para divindades;
 - `祭る` → "celebrar o culto de"; `祭り` → "festa".
 - **A decisão é doutrinária (sua)** — registro como classe D.
@@ -164,7 +163,7 @@ O verbo "possessionar" **não existe**.
 
 **Proposta:**
 - `憑る`/`憑く` (espírito se apossa) → **"apossar-se de"**, **"encostar-se em"**,
-  **"o espírito se manifesta em"**, **"tomar posse de"**;
+ **"o espírito se manifesta em"**, **"tomar posse de"**;
 - `憑依` → **"possessão espiritual"** (técnico) ou **"encosto"** (popular);
 - `憑いている` → **"está encostado"** / **"está sob ação de um espírito"**;
 - **NUNCA** "possesso/possessar".
@@ -176,13 +175,13 @@ O verbo "possessionar" **não existe**.
 
 | termo | n | resumo |
 |---|---:|---|
-| 執着 | 13 | "apego" × "obsessão" × "apego (执着的)" — verificar consistência |
+| 執着 | 13 | "apego" × "obsessão" × "apego " — verificar consistência |
 | 経綸 | 8 | **"Plano Divino"** — verificar se é sempre adequado |
 | 型 | 8 | "tipo" × "modelo" × "moldado" — contexto |
 | 御神体 | 6 | "Imagem da Luz Divina" — confirmar |
 | 善言讃詞 | 6 | "Oração Zengen-Sandji" — confirmar formato |
 | 霊線 | 5 | "linha espiritual" — consistência |
-| 御軸 | 5 | "Imagem da Luz Divina" × "caligrafia" (o kowa distingue 御神体/書) |
+| 御軸 | 5 | "Imagem da Luz Divina" × "caligrafia" |
 | 死霊 | 5 | "espírito de morto" — confirmar |
 | 身魂 | 4 | "corpo e alma"? — termo técnico |
 | 応身 | 4 | budismo — "corpo de manifestação" |
@@ -194,8 +193,8 @@ O verbo "possessionar" **não existe**.
 
 1. **Você decide** os itens de classe D (doutrina): 祀る/供養/祭る, 心, 御軸, 応身.
 2. **Eu aplico** os itens mecânicos de consenso: 縦横/経緯, medidas, jishoi,
-   possesso/憑る.
+ possesso/憑る.
 3. **Ajustar a trava** para suportar regras de "1ª ocorrência" (jishoi) — hoje
-   ela exige a mesma forma em todas as ocorrências.
+ ela exige a mesma forma em todas as ocorrências.
 4. **Consolidar**: gerar `glossario_traducao.<versão>.json` com ~40-60 termos
-   novos/revistos, aplicar ao corpus (com backup) e reprocessar a trava.
+ novos/revistos, aplicar ao corpus (com backup) e reprocessar a trava.

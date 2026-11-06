@@ -157,6 +157,21 @@ O handoff completo desta retomada está em
     sofrimento por herança espiritual/encosto ancestral (Eiko nº 104,
     Gosuiji-roku nº 6, Mioshie-shū nº 7, Gokōwa Suplemento, Mioshie-shū nº 3).
     Ver pendência da correção recíproca da Aula 6 no `HISTORICO.md` (30/09), §8.
+  - **Aula 7** (20-21/10): base refeita. O bloco "antepassados e doença" já **não**
+    usa o *Manual* de 1953 (texto de discípulos, em 3ª pessoa — `明主様は…お知りに
+    なる`): passou a ser **O Evangelho do Paraíso (1947)**, tudo de Meishu-Sama —
+    "Espírito Protetor Guardião", "A Advertência do Espírito Ancestral",
+    "Epilepsia", "Paralisia Infantil" e "Diversos Aspectos das Doenças de Causa
+    Espiritual". Acrescentado o subtema **aborto provocado**: "o aborto é
+    assassinato", a recusa do "inevitável" (pobreza, carreira, indicação médica),
+    a ira dos antepassados pela extinção da linhagem, a possessão pelo espírito
+    do feto e o modo de sufragá-lo (critério dos cinco meses). Fontes: *Luz dos
+    Ensinamentos* ("Contracepção e Aborto" e "Sobre Natimortos e Abortos
+    Espontâneos"), Gokōwa-roku nº 5, nº 9 e nº 10, Gosuiji-roku nº 22 e *Hikari*
+    nº 7. **A apostila só contém texto-fonte** — nada de explicação ou comentário
+    do dirigente (isso fica no plano de aula). **Regra derivada:** conferir o
+    original japonês antes de atribuir um texto a Meishu-Sama — a 3ª pessoa
+    (`明主様は…お知りになると…されて`) denuncia texto de discípulo.
   - **NÃO confundir as obras periódicas homônimas**: `御教え集` → **Mioshie-shū**
     e `御垂示録` → **Gosuiji-roku**. Publicadas na mesma data e com o mesmo
     número de fascículo (ex.: n. 3 de 25/11/1951), o mesmo caso pode estar em uma
