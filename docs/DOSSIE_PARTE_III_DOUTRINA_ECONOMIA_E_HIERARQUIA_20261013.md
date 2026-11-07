@@ -42,7 +42,7 @@ tenha ofertado trinta mil ienes ou mais, ou por recomendação do líder de fili
 Aquilo que tiver dez ou mais Centros de Ensino será considerado uma Associação,
 e o que tiver dez ou mais Associações será considerado uma Subsede. Afinal, é
 justo que aqueles com méritos estejam no topo."*
-— 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+— Gokōwa-roku nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
 
 A frase final — "é justo que aqueles com méritos estejam no topo" (功労のある
 人が上に行く) — é a chave do sistema. Três portas dão acesso ao grau, e nenhuma
@@ -73,7 +73,7 @@ subiria de categoria.
 
 Em 5 de fevereiro de 1951 — dia de *risshun*, o início do ano agrícola no
 calendário tradicional — Meishu-Sama comunicou a reforma. O documento que a
-transmite é o comunicado do presidente Ōkusa Naoyoshi, publicado em 『栄光』:
+transmite é o comunicado do presidente Ōkusa Naoyoshi, publicado em Eikō:
 
 > 「一、熱海市桃山、晴々台の地上天国に世界救世教の総本部を置き……
 > 三、**従来の四大教会は発展的解消を遂げ**、現在の布教状況及所属府県の連絡の
@@ -91,7 +91,7 @@ organização em três graus: Igreja Grande, Igreja Média e Igreja. A Igreja
 Grande requer mil ou mais membros cooperadores; a Igreja Média, trezentos ou
 mais. 5. …visando à redução de custos de difusão e à racionalização da
 difusão."*
-— 「世界救世教の機構整備について」, 『栄光』nº 94, 7 de março de 1951 ·
+— *Sobre a organização da estrutura da Igreja Messiânica Mundial*, Eikō nº 94, 7 de março de 1951 ·
 `search2/sanko/kikoseib.html`
 
 Item quinto à parte — que a §30 deste levantamento examina em detalhe — o
@@ -173,7 +173,7 @@ graph TD
 
 A linha pontilhada entre o Fundador e o presidente não é ornamento: é a
 **separação formal entre autoridade carismática e autoridade jurídica**,
-documentada no art. 3º do regulamento de 1951 e comentada em 『地上天国』nº 50.
+documentada no art. 3º do regulamento de 1951 e comentada em Tijotengoku nº 50.
 Meishu-Sama não era o presidente. Quem respondia juridicamente pela pessoa
 jurídica era Ōkusa Naoyoshi, e essa distinção — que a ruptura de 1955 tornaria
 dramática — já estava no papel desde o começo.
@@ -187,14 +187,14 @@ dramática — já estava no papel desde o começo.
 | Função | Nível responsável | Fonte |
 |---|---|---|
 | **Johrei** (cura) | todos, do Centro de Ensino para cima | toda a coleção |
-| Celebrar **culto mensal** e **culto regular** em data fixa | filial, posto avançado, Igreja | `『御光話録』nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
-| Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `『日本観音教団講習要項』, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
-| Formar novos portadores de qualificação | Igreja / Igreja Média | `「献金に就て」, 『救世』nº 57, 8 de abril de 1950 · search1/ke/kenkin.html` |
-| Distribuir o jornal | Centro de Ensino, filial | `「光新聞の拡大は教線の強化」, 『光』nº 33, 29 de outubro de 1949 · search1/hi/hikari03.html` |
-| Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `「布教定例座談会」, 『地上天国』nº 42 e ss. · search2/sanko/teirei1.html` |
-| Abrigar doentes em purificação | Sede da Igreja Média | `『御教え集』nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
+| Celebrar **culto mensal** e **culto regular** em data fixa | filial, posto avançado, Igreja | `Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
+| Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `*, Programa do Curso da Igreja Kannon do Japão*, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
+| Formar novos portadores de qualificação | Igreja / Igreja Média | `*Sobre a contribuição*, Kyūsei nº 57, 8 de abril de 1950 · search1/ke/kenkin.html` |
+| Distribuir o jornal | Centro de Ensino, filial | `*Ampliar o jornal Hikari é fortalecer a linha da fé*, Hikari nº 33, 29 de outubro de 1949 · search1/hi/hikari03.html` |
+| Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `*, Mesa-redonda periódica de difusão*, Tijotengoku nº 42 e ss. · search2/sanko/teirei1.html` |
+| Abrigar doentes em purificação | Sede da Igreja Média | `Mioshie-shū nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
 | Sediar **audiência** (audiências) | Sede (Atami, Hakone, Odawara) | — (v. capítulo 18.1) |
-| Presidir os ritos sazonais em rodízio | Igreja Grande | `「世界救世教秋季大祭に参拝して」, 『地上天国』nº 17, 15 de outubro de 1950 · search2/kikou2/sekai03.html` |
+| Presidir os ritos sazonais em rodízio | Igreja Grande | `*Visitando o Grande Culto de Outono da Igreja Messiânica Mundial*, Tijotengoku nº 17, 15 de outubro de 1950 · search2/kikou2/sekai03.html` |
 | Administração e finanças próprias, com os atos sujeitos a **aprovação prévia** da Sede | Igreja | 規則 arts. 26–30 |
 
 A última linha tem uma contrapartida que convém não deixar implícita: a auditoria
@@ -217,13 +217,13 @@ filial tiver trinta ou mais locais, mesmo um por dia, o presidente não
 conseguirá percorrer todos em um mês. [Meishu-Sama] É mesmo… Isso leva à
 conclusão de que não pode haver trinta ou mais locais. …Em princípio, a Igreja
 Média é que vem primeiro."*
-— 『御垂示録』nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+— Gosuiji-roku nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
 
 Daí um **limite superior prático de trinta filiais por Igreja Média** — não por
 estatuto, mas por aritmética de calendário. A estrutura não era desenhada no
 papel: era deduzida da capacidade física de supervisão.
 
-![『御垂示録』29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+![Gosuiji-roku 2 9号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
 
 ### 25.2 O cotidiano do dirigente de base
 
@@ -253,7 +253,7 @@ ficou espantado. **Logo, o modo de agir do líder de filial estava completamente
 errado.** Ainda assim, se ele tivesse percebido isso, pedido perdão de coração e
 **feito o pai ou a mãe ministrar Johrei na criança**, não teria havido caso em
 que não se salvasse…"*
-— 「御講話」, 『御教え集』nº 22, 15 de junho de 1953 · `search1/kouwa/s280526.html`
+— *Palestra*, Mioshie-shū nº 22, 15 de junho de 1953 · `search1/kouwa/s280526.html`
 
 A lição é precisa: o erro do dirigente foi **ter feito ele mesmo**, em lugar de
 **ter ensinado a família a fazer**. A difusão não se sustentava na capacidade do
@@ -271,7 +271,7 @@ adverte expressamente que a chefia do novo grupo não pode ser do mesmo homem:
 acumulado pela mesma pessoa que é líder de filial da igreja do Kyūseikyō.** Isso
 é completamente separado; e convém que não seja um fiel, mas antes um lavrador
 respeitado da própria terra."*
-— 「御講話」, 『御教え集』nº 19, 15 de março de 1953 · `search1/kouwa/s280225.html`
+— *Palestra*, Mioshie-shū nº 19, 15 de março de 1953 · `search1/kouwa/s280225.html`
 
 A razão é de método, e Meishu-Sama a enuncia: a difusão agrícola devia andar
 **sem exigir a conversão prévia** — "se for preciso virar fiel para começar, a
@@ -297,7 +297,7 @@ examinado é a própria pessoa jurídica:
 inventário patrimonial será elaborado dentro de um mês após o término de cada
 exercício fiscal, com base na posição no fim do exercício anterior, e **deverá
 passar pela auditoria dos auditores e receber a aprovação da Assembleia**."*
-— Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro
+— Regulamento da pessoa jurídica religiosa Sekai Kyūseikyō, Eikō nº 125, 10 de outubro
 de 1951 · `search2/sanko/kisoku.html`
 
 O art. 17 define quem compõe essa Assembleia, e a definição é decisiva:
@@ -327,23 +327,23 @@ igreja depende de aprovação do presidente para uma lista fechada de atos:
 | 27 | alienar ou dar em garantia imóveis e bens do inventário; tomar empréstimo ou prestar fiança; obra maior na sede da igreja; alteração do uso dos edifícios |
 | 28 | o presidente da igreja — ainda que **escolhido pelas regras da própria igreja** — é **nomeado** pelo presidente |
 
-O art. 27 abre exceções estreitas: o ato 「緊急の必要に基くもの」 (por
-necessidade urgente) ou 「軽微のもの」 (de pequena monta) dispensa a aprovação.
+O art. 27 abre exceções estreitas: o ato de **necessidade urgente** ou o de
+**pequena monta** dispensa a aprovação.
 Não há, em contrapartida, nenhum artigo que mande a Sede examinar caixa, livro ou
 conta de uma igreja.
 
 **A forma que de fato existia: reunião periódica, taquigrafada e publicada.** A
 documentação não guarda formulário de inspeção, mas guarda as atas — e elas são
-abundantes, porque saíam impressas em 『栄光』 e 『地上天国』. O instrumento real
+abundantes, porque saíam impressas em Eikō e Tijotengoku. O instrumento real
 de acompanhamento era a **reunião de dirigentes**, presidida ou orientada por um
 diretor da Sede:
 
 | Série e data | Veículo | Composição |
 |---|---|---|
-| 「布教定例座談会」(1ª) · 04/09/1952 | 『地上天国』nº 42 · `search2/sanko/teirei1.html` | **um diretor da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
-| 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
-| 「布教座談会」 · 03/10/1952 | 『栄光』nº 191 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
-| 「支部長懇談会」 — reunião de presidentes de filial · 28/04/1952 | 『地上天国』nº 37 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
+| *Mesa-redonda periódica de difusão*(1ª) · 04/09/1952 | Tijotengoku nº 42 · `search2/sanko/teirei1.html` | **um diretor da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
+| *Mesa-redonda periódica de difusão*(3ª) · 05/01/1953 | Eikō nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+| *Mesa-redonda de difusão* · 03/10/1952 | Eikō nº 191 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
+| *Encontro de líderes de filial* — reunião de presidentes de filial · 28/04/1952 | Tijotengoku nº 37 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
 
 A natureza das atas diz o que nelas se tratava. Não é contabilidade: é
 procedimento, preço e conduta. É numa delas que os próprios dirigentes relatam,
@@ -352,7 +352,7 @@ sete mil ienes pelo mesmo Byōbu, o "Kyoshu de dez dias" que era apenas o númer
 de dias de Johrei recebidos, a região em que não se fazia Kyoshu de modo algum, a
 esposa do ministro que adivinhava se o caso sarava. O quadro completo está
 transcrito no capítulo 11. E depois da reunião vinha **a norma escrita**: o
-aviso 「注意」, publicado na mesma 『栄光』nº 191, começa exatamente por
+aviso *Aviso*, publicado na mesma Eikō nº 191, começa exatamente por
 「別項座談会にもあるごとく……」 — *"conforme a mesa-redonda em outra seção"*.
 
 A própria direção descreve o método como duas coisas somadas:
@@ -364,7 +364,7 @@ A própria direção descreve o método como duas coisas somadas:
 *"Ultimamente, na Sede, **o Kyoshu Yōkō foi elaborado**, e os **encontros
 estreitos entre os dirigentes** vêm se multiplicando; parece aproximar-se o dia
 de retornar à unidade com a Revelação Divina."*
-— Sakai Takao, presidente de igreja, 「布教座談会」, 『栄光』nº 191, 14 de janeiro de
+— Sakai Takao, presidente de igreja, *Mesa-redonda de difusão*, Eikō nº 191, 14 de janeiro de
 1953 ·
 `search2/sanko/hukyo.html`
 
@@ -425,7 +425,7 @@ como ameaça à instituição é a do fisco, e foi por ali que veio a persecuç�
 Uma última nota, sobre a direção da auditoria *dentro* das igrejas. A auditoria
 interna que a documentação registra é a **da própria unidade sobre si mesma**: no
 organograma da igreja do Havaí (capítulo 16) há **seis auditores** ao lado do tesoureiro, e a
-assembleia anual aprova o 「会計報告」, o relatório contábil do exercício
+assembleia anual aprova o **relatório contábil** do exercício
 (`search2/kikou2/hawai18.html`). O padrão é antigo: já no estatuto da Associação de Difusão
 da Terapêutica de Purificação, 「監事は会の財務を監査す」 — "os auditores auditam as
 finanças da associação" (`search1/ni/nihon12.html`). A igreja auditava
@@ -464,7 +464,7 @@ realizado":
 *"**Simbolizado pelo fruto da ameixeira entre as oferendas, o 'flor dispersa,
 fruto realizado': também nos fiéis que participaram amadurecerão, no tempo
 devido, frutos abundantes."*
-— 「大祭式典に参加して」, 『栄光』nº 72, 4 de outubro de 1950 ·
+— *Participando da cerimônia do Grande Culto*, Eikō nº 72, 4 de outubro de 1950 ·
 `search2/kikou2/taisai03.html`
 
 Na interpretação dos próprios contemporâneos, o rito tinha um significado
@@ -491,7 +491,7 @@ recebeu a Imagem e não fez o culto mensal:
 ocasião, o dirigente nos disse que **era melhor fazer o culto mensal**; mas não
 pensamos nisso com profundidade e o fomos adiando, e assim ficou por cerca de
 meio ano."*
-— 「光明如来様御奉斎で盗難免る」, 『栄光』nº 70, 20 de setembro de 1950 ·
+— *Livre de um roubo pela entronização da Komyo-Nyorai*, Eikō nº 70, 20 de setembro de 1950 ·
 `search2/okage/ko/qkomyo19.html`
 
 O mesmo relato acrescenta um dado que interessa diretamente ao capítulo
@@ -514,7 +514,7 @@ ainda não possuía a Imagem:
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
 visita matinal e vesperal diante da caligrafia 'Nikkō'**, e ali sozinha aquietava
 o coração perturbado."*
-— 「浄霊と医学との比較」 · `search1/English/ejorei12.html`
+— *O Johrei comparado à medicina* · `search1/English/ejorei12.html`
 
 Ao culto doméstico pertence ainda, com estatuto próprio, o **sufrágio dos
 antepassados** — rito **recorrente**,
@@ -550,7 +550,7 @@ tanto o espírito quanto a matéria sejam salvos**. Por exemplo, quem sofre de
 doença não alcança a verdadeira salvação com a mera satisfação de uma ideia.
 **Sarar da doença e tornar-se saudável a ponto de poder trabalhar — isso é que é
 ser verdadeiramente salvo.**"*
-— 「問題の世界救世教とは何か」 · `search1/English/emondai.html`
+— *Que é, afinal, a Igreja Messiânica Mundial?* · `search1/English/emondai.html`
 
 O conceito tem um nome: **unidade de espírito e corpo** — "espírito e carne em unidade". E tem um
 fim declarado, que a documentação formula como **mundo sem doença, pobreza nem conflito** — "sem doença, sem
@@ -591,7 +591,7 @@ documentação descreve a sua natureza e a sua função com precisão:
 > され、霊の曇りは解消し病は治るのである。」
 > — 「浄霊とは何か」 · `search1/English/ejorei16.html`
 
-*"Primeiro escrevo o caractere 「光」 (Hikari) numa folha de papel, dobro-o e o entrego ao
+*"Primeiro escrevo o caractere **Hikari** numa folha de papel, dobro-o e o entrego ao
 convertido como **Ohikari**; quando ele o põe no peito e ergue a mão, da palma
 irradia-se luz, a mácula do espírito se desfaz e a doença se cura."*
 
@@ -608,13 +608,13 @@ tendo meu corpo espiritual como intermediário, e do Ohikari irradia-se através
 da palma do fiel."*
 
 Isso estabelece uma **hierarquia própria do Ohikari**, que é preciso ler na ordem
-certa, porque é aqui que a terminologia corrente mais se confunde. **O primeiro
-Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia 「光」
-(Hikari)**; o 「光明」 (Kōmyō) vem depois, e é a ele que corresponde a designação
-**Ohikari Kōmyō**; o 「大光明」 (Daikōmyō) é o terceiro, e é o único reservado a
+certa, porque é aqui que a terminologia corrente mais se confunde. O primeiro
+Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia **Hikari**;
+o **Kōmyō** vem depois, e é a ele que corresponde a designação **Ohikari Kōmyō**;
+o **Daikōmyō** é o terceiro, e é o único reservado a
 portadores de qualificação. Dizer que «o Ohikari Kōmyō é recebido quando a pessoa
 ingressa na fé» é, portanto, duplo erro: o que se recebe no ingresso é o Ohikari
-「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
+**Hikari**, e o Kōmyō não é o primeiro, e sim o segundo grau.
 
 Essa hierarquia do Ohikari é **distinta** da hierarquia das Imagens entronizadas, que o
 §3.2 examina: são dois objetos diferentes, com duas escadas diferentes. E o grau do Ohikari não é apenas
@@ -696,7 +696,7 @@ Ohikari»: o valor é do curso, e o Ohikari é o que se recebe ao completá-lo.
 *"Ao ouvir a explicação, soube que **por mil ienes de oferta se recebe o
 Ohikari**, e que só com isso a própria doença se pode curar; achei que, mesmo por
 dez mil ienes, seria barato."*
-— 「重症の筋炎治る」『光』nº 6, 25 de abril de 1949
+— *Cura de uma miosite grave*, Hikari nº 6, 25 de abril de 1949
 
 O mesmo valor aparece, distorcido, na acusação de um pregador adversário, que fala em
 «dois mil ienes» pelo amuleto — cifra de fonte hostil, registrada apenas como indício da
@@ -1039,7 +1039,7 @@ com o seu âmbito exato:
 oferta quando faz ministrar Johrei a um familiar)**; ouvi dizer que certo
 presidente de Igreja Média perguntou: **'a oferta de gratidão pela proteção, posso usá-la para mim?'**
 — é como se fosse outro mundo."*
-— Sakai Takao, presidente de igreja, 「布教座談会」『栄光』nº 191, 14 de janeiro de 1953 ·
+— Sakai Takao, presidente de igreja, *Mesa-redonda de difusão*, Eikō nº 191, 14 de janeiro de 1953 ·
 `search2/sanko/hukyo.html`
 
 A pergunta é precisa, e a resposta do próprio presidente da igreja que a ouviu
@@ -1126,7 +1126,7 @@ médico a sentença de morte se salva, ou uma enfermidade de dezenas de anos se
 cura em pouco tempo, ou uma casa onde nunca faltava doente se torna casa
 saudável, então **a imensa gratidão e comoção, não podendo conter-se, cristaliza-se
 em contribuição**."*
-— 「本教の収入に就て」, 『救世』nº 56, 1 de abril de 1950 · `search1/ho/honkyo15.html`
+— *Sobre a receita desta religião*, Kyūsei nº 56, 1 de abril de 1950 · `search1/ho/honkyo15.html`
 
 O mesmo artigo explica **como** as obras eram feitas — e aqui a resposta não é
 financeira, mas de trabalho:
@@ -1163,7 +1163,7 @@ contribuição**, e a distinção é doutrinária, não contábil.
 
 De um lado, as peças que Meishu-Sama traçava — o **Ohikari**, a caligrafia
 entronizável, a **Imagem** — tinham **preço fixo**. O valor, no período pós-guerra, era da ordem de milhares de ienes
-(capítulo 20). E em 1953 o princípio é formalizado num **aviso** publicado em 『栄光』:
+(capítulo 20). E em 1953 o princípio é formalizado num **aviso** publicado em Eikō:
 
 > 「御守はじめその他の私のかいたものの値は**一定している**にかかわらず、少しでも
 > 多い金を得るとしたら、**その分だけは盗みの罪を犯す事になる**から、何程一生懸命
@@ -1182,7 +1182,7 @@ a graça do próprio fiel**, e não apenas o erário da instituição. É, de no
 juízo sobre o que a cobrança faz com a fé.
 
 De outro lado, o **serviço espiritual** — o Johrei — tinha oferenda **livre**. A
-ata de uma reunião de difusão de 1953, publicada no mesmo número de 『栄光』,
+ata de uma reunião de difusão de 1953, publicada no mesmo número de Eikō,
 registra a resposta dada a um assistido que perguntou quanto deveria depositar:
 
 > 「あれは神様への御玉串なんで、**幾らと言うのは決っておらん**が、医者に行っても、
@@ -1197,7 +1197,7 @@ O quadro é, portanto, de duas colunas que não se confundem: **preço** para o 
 valor era assunto da consciência de quem recebia. Não há, na documentação, indício de que
 as duas coisas tenham sido jamais unificadas numa tabela única de "tributos".
 
-![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+![Eikō 1 9 1号, 14 de janeiro de 1953 — o aviso *Aviso*, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
 
 ---
 
@@ -1259,7 +1259,7 @@ minas**, «veterano de minas» na expressão do próprio relato:
 *"Em 29 de novembro de 1944 fui em missão ao local, acompanhado do Sr. Hara Seisaku, do
 Templo Anexo de Hakone, para a **inspeção geológica e de jazidas da mina de Moriyoshi**, situado em
 Hikinai, distrito de Senboku, província de Akita."*
-— 「奇蹟」, 『地上天国』nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+— *Milagre*, Tijotengoku nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
 
 Nos relatos de 1951, a mina aparece **em plena operação**, e como **obra da
 igreja**:
@@ -1272,7 +1272,7 @@ igreja**:
 Kōei**, estávamos com o ânimo de levar isso até o fim; […] e assim ficou decidido que eu
 me encarregaria da construção de uma usina de concentração de minério de cerca de 50 m²."*
 
-— 「鉱山においての奇蹟の数々」, 『栄光』nº 109, 20 de junho de 1951 ·
+— *Os muitos milagres na mina*, Eikō nº 109, 20 de junho de 1951 ·
 `search2/okage/ko/qkozan02.html`
 
 Os relatos descrevem a construção de uma **planta de concentração de minério** (選鉱工場,
@@ -1313,7 +1313,7 @@ alguma.
 
 Na madrugada de **8 de maio de 1950**, seis imóveis em Atami e um em Odawara —
 sete ao todo — foram objeto de busca domiciliar simultânea. Meishu-Sama deixou o
-relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』
+relato em primeira pessoa, publicado em outubro daquele ano sob o título Hōnan Shuki
 (Hōnan Shuki, Notas da Perseguição):
 
 > 「昭和二十五年五月八日未明、突如として青天の霹靂のごとく、本教関係の熱海所在の
@@ -1335,15 +1335,15 @@ julho** de 1950. Em 30 de maio, cinquenta policiais fizeram nova busca no
 Templo Anexo de Hakone-Gōra — "eu estava detido, por isso soube depois".
 
 **Nota sobre o nome.** O mesmo secretário aparece na documentação com duas
-grafias: **Inoue Motokichi**, editor de 『栄光』 preso em 8 de maio de 1950, e
+grafias: **Inoue Motokichi**, editor de Eikō preso em 8 de maio de 1950, e
 **Inoue Fukuo**, "meu secretário", preso na onda de outubro do mesmo ano. Não há
 documento que declare tratar-se da mesma pessoa, mas a coincidência de função,
 de casa e de período é total, e a hipótese de duas pessoas distintas com o mesmo
 cargo no mesmo ano é implausível. Adota-se aqui a forma **Inoue Motokichi**, que é a
 que assina os textos da época, registando-se a variante
-tal como aparece em 『法難手記』.
+tal como aparece em Hōnan Shuki.
 
-![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
+![Hōnan Shuki, 30 de outubro de 1950 — capa do caderno. O capítulo *O começo*, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
 
 ![11 de outubro de 1950 — abertura da primeira audiência de julgamento no Tribunal Distrital de Shizuoka (*Shizuoka Chihō Saibansho*). [Fotografia
 da época; data e local conforme a legenda original.]](fotografias/kohann_shizuoka_1950.jpg)
@@ -1376,13 +1376,13 @@ caso desta provação, quer no caso do incidente da Reiyūkai, trata-se de evas�
 ocultação de patrimônio — **e sobre o conteúdo religioso não há uma palavra, uma frase
 sequer na denúncia.**"*
 
-— 「法難裁判傍聴記（下）」, 『栄光』nº 76, 1 de novembro de 1950 ·
+— *Crônica das audiências do processo (II)*, Eikō nº 76, 1 de novembro de 1950 ·
 `search2/kikou2/honan02.html`
 
 ### 30.2 A leitura que a igreja fez do episódio
 
 A leitura interna não foi de vitimização, mas de **correção**. No prefácio do
-mesmo 『法難手記』, Meishu-Sama reconhece a responsabilidade administrativa:
+mesmo Hōnan Shuki, Meishu-Sama reconhece a responsabilidade administrativa:
 
 > 「省りみれば、吾らといえども今回の事件によって、**今日までの経営がいかに杜撰
 > 放漫を極め、監督不行届きであったかは、まこと自責の念に堪えない**ものがある。
@@ -1425,7 +1425,7 @@ A metáfora é doutrinária (a direção vertical-espiritual e a horizontal-mate
 organização **crescia sem estrutura** ("apenas se expandia"), e foi
 **comprimida**.
 
-**Segunda — o editorial do 『地上天国』 de 25 de fevereiro de 1951**, escrito no
+**Segunda — o editorial do Tijotengoku de 25 de fevereiro de 1951**, escrito no
 próprio momento da reforma:
 
 > 「本教も、今回**教団の全機構の改革**をする事となったのは、すでに御承知と思うが、
@@ -1458,7 +1458,7 @@ Igrejas Grandes e criaria as dezessete Sedes Regionais.
 ### 30.4 O contexto que não se pode omitir: a campanha de imprensa
 
 Há um elo anterior entre a imprensa e o processo, e a documentação o documenta. Em
-outubro de 1949, o 『光』 responde a duas reportagens do *Yomiuri* e afirma que
+outubro de 1949, o Hikari responde a duas reportagens do *Yomiuri* e afirma que
 havia uma **campanha articulada** para provocar a repressão:
 
 > 「このような手段で、本教がさも社会に害毒を流すように思わせ**当局を動かし
@@ -1527,7 +1527,7 @@ fiscal, e o inquérito foi conduzido pela promotoria de Shizuoka, não pela agê
 Urawa.
 
 Seis meses depois, em abril de 1950 — um mês antes das buscas —, Meishu-Sama
-voltaria ao tema num artigo inteiro, 『本教の収入に就て』, cujo argumento é
+voltaria ao tema num artigo inteiro, *Sobre a receita desta religião*, cujo argumento é
 justamente que a receita elevada **resulta** da abundância de curas e da
 voluntariedade do ofertório. Um mês depois, veio a madrugada de 8 de maio.
 
@@ -1622,11 +1622,11 @@ Do que a documentação registra, o quadro é este:
 | **arroz lavado** (洗米) | **ofertado à Imagem** — atestado em relato de 1950 | `search2/okage/ko/qkomyo19.html` |
 | **Água** | ofertada diante da caligrafia sagrada e depois usada como água espiritual | `search1/situmon/m230328.html` |
 | **Água** ao oratório | para o falecido recente, por cerca de um ano | `search1/situmon/m270801.html` |
-| **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | 「妙智の鍵」, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
+| **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | *, A chave da sabedoria sutil*, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
 | **海山のお供物** (produtos do mar e da montanha) | nos grandes cultos | `search2/kikou2/syunki01.html` |
 | **梅の実** (fruto da ameixeira) | oferenda simbólica — sanka-kekijitsu | `search2/kikou2/taisai03.html` |
 | **お鏡餅** (bolo de arroz) | na entronização da Imagem | `search2/okage/shi/qsinkei3.html` |
-| **浄め塩** (sal de purificação) | costume, "sem significado profundo" | 「ご存じですか」 · `search1/situmon/bunkai04.html` |
+| **浄め塩** (sal de purificação) | costume, "sem significado profundo" | *, Sabia disto?* · `search1/situmon/bunkai04.html` |
 
 Sobre o **sal**, a posição de Meishu-Sama é consistente em três passagens: o
 costume de purificar com sal é "hábito tradicional, sem grande significado —
@@ -1704,7 +1704,7 @@ pendurar, basta guardá-la.**"*
 Todas as citações provêm da documentação textual do acervo. Nenhuma provém da
 『岡田茂吉全集』 e — por decisão editorial de 6 de outubro de 2026 — **nenhuma
 provém dos materiais de autoria do Rev. Kihara Yoshihiko** (as séries de
-「講話」, a 「教長様お導き集」, a 「略歴」 e os artigos assinados em 『神の光』),
+「講話」, a 「教長様お導き集」, a 「略歴」 e os artigos assinados em Kami no Hikari),
 para que o dossiê não cite um reverendo em detrimento dos demais. Onde a
 documentação institucional do período era conhecida apenas por essa via, a
 citação foi substituída por fonte equivalente em `search2/sanko/`,

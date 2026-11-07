@@ -1,6 +1,6 @@
 ## 32. Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946)
 
-**Documento:** estatuto e propósito da Associação de Difusão da Terapêutica de Purificação (*Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
+**Documento:** estatuto e propósito da Associação de Difusão da Terapêutica de Purificação (*, Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
 Kaisoku*), "Propósito e estatuto da Associação de Difusão da Terapêutica de
 Purificação do Japão".
 **Data:** 1946.

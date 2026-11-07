@@ -106,7 +106,7 @@ a graça» — e o deus verdadeiro salva «por amor sem eu» (capítulo 12.4).
 
 **Não é preço do intermediário.** O que se dá ao ministro é sustento de quem intercede, e
 não honorário de um poder: «naturalmente, Kannon não precisa de oferta alguma, mas quem
-intercede mora numa casa, e não vai viver comendo névoa» (『御光話録』nº 15, 20 de dezembro de
+intercede mora numa casa, e não vai viver comendo névoa» (Gokōwa-roku nº 15, 20 de dezembro de
 1949).
 
 **Não é obrigação sob ameaça.** A resposta de 1949 sobre a incapacidade real mostra o

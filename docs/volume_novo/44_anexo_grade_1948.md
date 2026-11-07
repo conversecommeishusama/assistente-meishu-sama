@@ -2,7 +2,7 @@
 
 **Documento:** resposta de Meishu-Sama na Gokōwa de 8 de dezembro de 1948.
 
-**Publicação:** 『御光話録』nº 2, 8 de janeiro de 1949.
+**Publicação:** Gokōwa-roku nº 2, 8 de janeiro de 1949.
 
 **Natureza:** não é regulamento nem ata: é a resposta oral a uma pergunta de fiel
 sobre mudança de vínculo, e nela Meishu-Sama anuncia a grade inteira. É o

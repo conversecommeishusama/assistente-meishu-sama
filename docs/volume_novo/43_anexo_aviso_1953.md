@@ -1,8 +1,8 @@
-## 38. Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
+## 38. Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953)
 
-**Documento:** 「注意」 (*Chūi*, "Aviso").
+**Documento:** *, Aviso* (*, Chūi*, "Aviso").
 
-**Publicação:** 『栄光』nº 191, 14 de janeiro de 1953.
+**Publicação:** Eikō nº 191, 14 de janeiro de 1953.
 
 **Natureza:** aviso de Meishu-Sama, publicado na abertura do número, e que remete
 à mesa-redonda de difusão realizada na mesma edição. É o documento que fixa o
@@ -51,7 +51,7 @@ moral mínima do fiel; isso é o natural.
 
 **Sakai Mannosuke:** — Ouvi dizer que o Senhor presidente e o Senhor Nozoe, no
 passado, deixaram de aceitar ofertas em dinheiro solto, embrulhadas em papel
-estranho, com 「寸志」 escrito e sem nome; e penso que o brio do professor é coisa
+estranho, com **sunshi** escrito e sem nome; e penso que o brio do professor é coisa
 muito importante.
 
 **Presidente da igreja:** — É verdade. O dinheiro tende a sujar-se, mas é também
@@ -72,7 +72,8 @@ transmitir sem torcer, sem inventar, com retidão — é essa a missão do profe
 **[Sobre o que se faz de errado]**
 
 **Futami:** — Em certa igreja de Kagoshima, o próprio dono da casa dizia que uma
-caligrafia de 「散花結実」, sem montagem, custou dez mil ienes. Como as caligrafias
+caligrafia de **sanka-kekijitsu** ("a flor cai, o fruto amadurece"), sem montagem,
+custou dez mil ienes. Como as caligrafias
 não são mercadoria, não se pode falar em maior ou menor oferta — e houve casos de
 perplexidade.
 

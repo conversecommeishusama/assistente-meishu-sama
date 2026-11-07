@@ -1,10 +1,10 @@
 ## 36. Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
 
-**Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
+**Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*, Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
 "Regulamento da pessoa jurídica religiosa Igreja Messiânica Mundial".
 **Data:** 10 de outubro de 1951.
 
-**Publicação:** 『栄光』nº 125, 10 de outubro de 1951.
+**Publicação:** Eikō nº 125, 10 de outubro de 1951.
 
 **Natureza:** o documento legal mais completo do período. É estatuto de pessoa
 jurídica religiosa, elaborado sob a Lei das Pessoas Jurídicas Religiosas de 1951,
@@ -58,7 +58,7 @@ igrejas e exercer as demais atividades e obras necessárias à consecução dos 
 desta comunidade religiosa.
 
 **Art. 4.º (Forma de publicação)** A publicação desta pessoa jurídica faz-se
-mediante uma inserção no órgão 「栄光」 e afixação por dez dias no quadro de
+mediante uma inserção no órgão Eikō e afixação por dez dias no quadro de
 avisos do escritório.
 
 ### Capítulo II — Dirigentes e outros órgãos
@@ -68,8 +68,8 @@ avisos do escritório.
 **Art. 5.º (Número)** Esta pessoa jurídica tem onze dirigentes responsáveis, dos
 quais um é o dirigente representante.
 
-**Art. 6.º (Denominação)** O dirigente representante denomina-se 「管長」
-(presidente), e os demais dirigentes responsáveis, 「理事」 (diretores).
+**Art. 6.º (Denominação)** O dirigente representante denomina-se **presidente**, e os demais dirigentes
+responsáveis, **diretores**.
 
 **Art. 7.º (Qualificação e eleição)** O presidente é determinado por eleição
 recíproca dos diretores.

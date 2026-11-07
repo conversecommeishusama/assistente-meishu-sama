@@ -2,8 +2,8 @@
 
 ### 22.1 O documento de base
 
-O texto central de Meishu-Sama sobre o tema foi publicado em 『救世』nº 63, 20 de
-maio de 1950, sob o título 「家庭菜園と無肥料栽培」 («A horta doméstica e o cultivo sem
+O texto central de Meishu-Sama sobre o tema foi publicado em Kyūsei nº 63, 20 de
+maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* («A horta doméstica e o cultivo sem
 adubo»). A escolha do título não é acidental: o artigo de difusão
 agrícola é endereçado à **horta caseira**, não à lavoura comercial. Essa porta de
 entrada — barata, ao alcance do membro comum, com efeito visível no prato — é o

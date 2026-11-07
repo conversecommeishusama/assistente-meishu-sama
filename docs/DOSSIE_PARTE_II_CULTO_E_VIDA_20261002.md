@@ -74,7 +74,7 @@ personalidade do autor que o determina: no caso mais elevado, desce o espírito
 divino superior que lhe corresponde. Por isso, **mesmo quando a forma exterior é a
 mesma, se a personalidade do autor é inferior, manifesta-se um espírito divino
 substituto, ou um espírito divino parcial**, correspondente a esse nível."*
-— 「霊界の不思議」, 『地上天国』 (Tijotengoku) nº 9, 25 de outubro de 1949
+— *As maravilhas do mundo espiritual*, Tijotengoku (Tijotengoku) nº 9, 25 de outubro de 1949
 
 Três coisas importam nesta passagem. A primeira é a expressão «mesmo quando a forma
 exterior é a mesma»: a figura idêntica, o traço aparente idêntico, e no entanto
@@ -103,7 +103,7 @@ O objeto feito sem qualificação pode, portanto, até funcionar por algum tempo
 fé de quem o venera —, e é justamente isso que o distingue do verdadeiro: o que nele
 opera é **temporário e fabricado**, e tem fim.
 
-A doutrina não começou aí. 『信仰雑話』 (Conversas sobre a Fé), publicada um ano
+A doutrina não começou aí. *Conversas sobre a fé*, publicada um ano
 antes, resume-a num só período, e o resumo concorda com o artigo:
 
 > 「例えばキリストは十字架へ、諸神諸仏は文字、御鏡、絵画、彫像等へ懸り給い……
@@ -115,7 +115,7 @@ caracteres escritos, nos espelhos, nas pinturas e nas esculturas […] Nesses ca
 **os espíritos elevados dos deuses e budas estão relacionados à personalidade de
 seu autor**; é por isso que, desde a Antiguidade, as pinturas e esculturas de monges
 famosos, sábios e artistas renomados eram consideradas tesouros."*
-— 『信仰雑話』, 5 de setembro de 1948
+— *Conversas sobre a fé*, 5 de setembro de 1948
 
 Não são duas doutrinas: é o mesmo princípio, dito primeiro em resumo e depois em
 desenvolvimento. O que o artigo de 1949 acrescenta — e é o que aqui decide — são as
@@ -123,7 +123,7 @@ duas precisões que faltam ao resumo: que a forma pode ser a mesma, e que ao cas
 inferior corresponde um espírito substituto, não o silêncio.
 
 A obra que o mesmo autor publicou um mês antes trata de outra coisa, e a
-distinção importa para não se citar uma pelo que a outra diz. 『霊界叢談』
+distinção importa para não se citar uma pelo que a outra diz. *Conversas sobre o mundo espiritual*
 (Conversas sobre o Mundo Espiritual, 25 de agosto de 1949) é a exposição da
 **constituição do mundo espiritual** — como se organiza, como se relaciona com o
 mundo visível, o que sucede após a morte. Não é nela que está o princípio sobre o
@@ -150,7 +150,7 @@ fico cansado. **O espírito do mestre está dentro dela. E permanece lá
 indefinidamente.** […] — **O espírito do autor entra também numa imagem de buda
 fundida?** — **É a mesma coisa.** Mesmo a fundida é depois polida, trabalhada de
 vários modos…"*
-— 『御垂示録』nº 4, 10 de dezembro de 1951
+— Gosuiji-roku nº 4, 10 de dezembro de 1951
 
 Se o espírito do autor permanece no objeto, então o autor é parte da definição do
 objeto — e não um detalhe de execução. É por isso que a mesma doutrina distingue
@@ -163,7 +163,7 @@ radicalmente o original da reprodução:
 *"De todo modo, **a gravura é, no fundo, impressão: como se tiram muitas cópias, o
 espírito do autor está ausente**. **É na pintura feita à mão que o espírito do autor
 realmente está presente** — é completamente diferente."*
-— 『御教え集』nº 32, 15 de abril de 1954 (prédica de 15 de março de 1954)
+— Mioshie-shū nº 32, 15 de abril de 1954 (prédica de 15 de março de 1954)
 
 **Terceiro princípio: a Imagem é o representante de Meishu-Sama.** É o que este
 volume já estabeleceu: a Imagem não é sagrada por si, e sim porque foi traçada por
@@ -175,9 +175,10 @@ uma **caligrafia dele** — «no lugar da Imagem» —, e não a imagem de outra
 > 頂いております「日光」の御文字の前で**、乱れる心を独り鎮めておりました。」
 
 *"Como ainda não havíamos entronizado a Imagem da Luz Divina, **em lugar dela fazia a
-saudação matinal e vesperal diante dos caracteres 「日光」 (Nikkō)**, e ali sozinha
+saudação matinal e vesperal diante dos caracteres Nikkō ("Luz do Sol")**, e ali
+sozinha
 aquietava o coração perturbado."*
-— 『浄霊と医学との比較』
+— *O Johrei comparado à medicina*
 
 **A conclusão, então, não é uma inferência frágil: é a aplicação dos três
 princípios.** Uma Imagem escrita por outra pessoa não poderia ser a Imagem da Luz
@@ -214,7 +215,7 @@ necessária deles** — e é apresentada como tal, não como citação.
 ### 14.1 A ordem do culto — documento primário
 
 O documento decisivo é a **cobertura do Culto Especial de Outono de
-1950**, publicada em 『地上天国』nº 17, 15 de outubro de 1950. É o registro mais
+1950**, publicada em Tijotengoku nº 17, 15 de outubro de 1950. É o registro mais
 completo da sequência ritual disponível na documentação:
 
 > 「秋季大祭次第
@@ -248,7 +249,7 @@ ele **não presidia** o rito. O culto era conduzido pelo presidente e pelos
 oficiantes, e Meishu-Sama comparecia depois, como o venerando diante de quem a
 assembleia se curvava.
 
-O mesmo esquema reaparece, com mais nomes, em 『栄光』nº 177, 8 de outubro de 1952,
+O mesmo esquema reaparece, com mais nomes, em Eikō nº 177, 8 de outubro de 1952,
 descrevendo o Culto de Outono daquele ano: o mestre de cerimônias Okaniwa Naoyoshi
 apresentou o relatório diante do altar; Ishizaka Takaaki, como responsável das
 oferendas, e mais seis oficiantes nomeados executaram a oferenda; seguiram-se a
@@ -273,7 +274,7 @@ Mensal das igrejas, e o culto doméstico — está sistematizada no capítulo 6,
 trata do que caracteriza cada degrau.
 
 Quanto ao culto doméstico, a documentação mais direta vem de um relato de fiel
-publicado em 『浄霊と医学との比較』, no qual a autora descreve sua rotina antes de
+publicado em *O Johrei comparado à medicina*, no qual a autora descreve sua rotina antes de
 possuir a Imagem:
 
 > 「私共では私一人入信しているばかりで色々の都合でまだ御神体は御奉斎致して
@@ -410,7 +411,7 @@ ficou pequena.**"*
 
 Para ele, a oferenda crua não é prescrição divina: é resíduo de uma mentalidade estreita.
 A consequência prática está documentada na descrição do Grande Culto de Outono de 1954,
-publicada em 『栄光』nº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
+publicada em Eikō nº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
 Imagem e a oferenda foi apresentada na ordem ritual — **os produtos preciosos do mar e da
 montanha**, dispostos diante dela.
 
@@ -423,7 +424,7 @@ capítulo 8. Não é lacuna: é prescrição em contrário.
 
 ### 15.2 O ofertório de gratidão — o tamagushi
 
-Aqui a documentação é precisa, e a fonte é um questionário: 『御光話録』(perguntas e
+Aqui a documentação é precisa, e a fonte é um questionário: Gokōwa-roku(perguntas e
 respostas), 18 de novembro de 1948. Perguntado especificamente sobre o ofertório e
 sobre como segurá-lo:
 
@@ -495,7 +496,7 @@ Os ancestrais aparecem **na filial**, no culto; o que se lhes dá, porém, é o 
 e é o fiel que o provê. A unidade é o lugar do encontro e da instrução; o lar é o lugar do
 altar.
 
-Um relato de 『栄光』nº 96, 21 de março de 1951, mostra o ministro instruindo a família:
+Um relato de Eikō nº 96, 21 de março de 1951, mostra o ministro instruindo a família:
 
 > 「宮崎先生は**先祖代々の霊を御祭しなさい**と云われましたので、早速位牌を
 > 買って来ましたところ、その夜はどうしても眠る事が出来ませんでした。宮崎先生に
@@ -692,7 +693,7 @@ documento, não o rito.
 
 ### 17.1 O cargo: natureza e duração
 
-O Regulamento da pessoa jurídica religiosa, publicado em 『栄光』nº 125, 10 de
+O Regulamento da pessoa jurídica religiosa, publicado em Eikō nº 125, 10 de
 outubro de 1951, define com precisão. O artigo quinto fixa onze diretores
 responsáveis, um dos quais é o representante. O artigo sexto dá o nome:
 
@@ -720,7 +721,7 @@ Sede."*
 ### 17.2 Quem eram
 
 O documento que dá nomes e datas é o relatório da reorganização de 5 de fevereiro de
-1951, publicado em 『栄光』nº 94, 7 de março de 1951, assinado pelo próprio
+1951, publicado em Eikō nº 94, 7 de março de 1951, assinado pelo próprio
 presidente Ōkusa Naoyoshi. A lista:
 
 | Função | Nomes |
@@ -756,7 +757,7 @@ não podem ser usados como testemunho. O levantamento registra o ponto como **la
 ### 18.1 O documento
 
 A documentação contém o artigo integral de Meishu-Sama sobre o tema, publicado na
-『救世』nº 63, 20 de maio de 1950, sob o título 「家庭菜園と無肥料栽培」 — **"A horta
+Kyūsei nº 63, 20 de maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* — **"A horta
 doméstica e o cultivo sem adubo"**. Vale sublinhar a escolha do título: o artigo de
 difusão agrícola de Meishu-Sama é endereçado à **horta caseira**, não à lavoura
 comercial.
@@ -959,7 +960,7 @@ alcance nacional.
 ### 19.1 Como se ministrava
 
 A documentação conserva uma resposta técnica precisa (`search1/situmon/m271101.html`),
-dada em 『御垂示録』nº 15, 1º de novembro de 1952, a um fiel que descrevia o
+dada em Gosuiji-roku nº 15, 1º de novembro de 1952, a um fiel que descrevia o
 procedimento corrente e perguntava se havia outra forma:
 
 > 「――御浄霊の仕方につきましてお伺いいたします。一般的の御浄霊の仕方をみますと、
@@ -979,7 +980,7 @@ faz-se desde o início só naquele lugar.** Depois, **quando não é assim — q
 corpo está debilitado como um todo, ou quando não se identifica bem o ponto — faz-se
 naquela ordem.**"*
 
-![『御垂示録』nº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
+![Gosuiji-roku nº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
 
 ![Meishu-Sama ministrando Johrei (ご浄霊) numa audiência no 日光殿, o Salão da Luz do Sol, em Hakone. [Fotografia da época; a legenda original identifica a cena e o local, sem data.]](fotografias/johrei_nikkoden.jpg)
 
@@ -1294,10 +1295,10 @@ empurra para ela. É uma inversão completa do enquadramento moderno: a dieta n�
 prescreve por proibição, corrige-se o solo, e o paladar se encarrega do resto.
 
 **Quanto ao tipo de vida que Meishu-Sama levava**, a documentação tem uma fonte direta e
-detalhada: o relato de **Inoue Motokichi**, secretário e editor de 『栄光』 que o
+detalhada: o relato de **Inoue Motokichi**, secretário e editor de Eikō que o
 acompanhava de perto,
-publicado na edição extra de 『光』 de 30 de maio de 1949, sob o título
-「自観大先生の御日常」. É
+publicado na edição extra de Hikari de 30 de maio de 1949, sob o título
+*O dia a dia do grande mestre Jikan*. É
 um documento de valor excepcional, e convém apresentá-lo pelo que ele efetivamente
 registra.
 
@@ -1313,7 +1314,7 @@ O dia começava às 7h30, e começava **pelo rádio**:
 ele tem grande interesse no movimento do mundo hora a hora — **apreende o desenrolar dos
 tempos com espantosa exatidão**, e toma sempre a melhor medida no melhor momento."*
 
-![「自観大先生の御日常」 — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/jikan02_rotina.jpg)
+![*O dia a dia do grande mestre Jikan* — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/jikan02_rotina.jpg)
 
 O relato insiste num traço que contraria a imagem de um mestre apartado do mundo:
 ele ouvia rádio durante todo o trabalho, e acompanhava **novelas, política, religião
@@ -1427,7 +1428,7 @@ seria invenção.
 
 ### 21.1 As taxas legalmente previstas
 
-A resposta mais precisa está no Regulamento de 1951, capítulo IV, 「財務」. O
+A resposta mais precisa está no Regulamento de 1951, capítulo IV, **Finanças**. O
 primeiro artigo do capítulo é também o mais importante:
 
 > 「（教費の賦課徴収）第二十九條　この法人は、その目的達成の経費に充てるため、
@@ -1545,8 +1546,8 @@ regulamento não fixa valores, percentuais nem periodicidade — deixa isso para
 normas de execução, que o art. 46 atribui aos diretores responsáveis.
 
 Há, porém, um documento de época que qualifica com precisão o regime dessas cobranças
-— e ele não é uma prédica, mas um **aviso formal de Meishu-Sama**, publicado em 『栄光』
-de janeiro de 1953 sob o título 「注意」. O aviso trata dos valores das peças que ele
+— e ele não é uma prédica, mas um **aviso formal de Meishu-Sama**, publicado em Eikō
+de janeiro de 1953 sob o título *Aviso*. O aviso trata dos valores das peças que ele
 próprio escrevia — Ohikari, Imagem, caligrafias — e estabelece três coisas:
 
 > 「御守はじめその他の私のかいたものの値は**一定している**にかかわらず、少しでも
@@ -1556,7 +1557,7 @@ próprio escrevia — Ohikari, Imagem, caligrafias — e estabelece três coisas
 *"Embora o valor do Ohikari e das demais coisas que eu escrevi seja **fixo**, se alguém
 obtiver um pouco mais de dinheiro, **essa diferença constitui crime de furto**; por mais
 que se empenhe na fé, a graça diminuirá na mesma proporção — convém compreendê-lo bem."*
-— 「注意」, 『栄光』nº 191, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
+— *Aviso*, Eikō nº 191, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
 
 1. Havia **valor fixo** para as peças escritas por Meishu-Sama — o que responde à pergunta
  sobre a existência de um donativo pelo Ohikari (v. Parte III, §27.3).
@@ -1578,7 +1579,7 @@ fixo** para os objetos que Meishu-Sama traçava, e **oferta livre** para o servi
 espiritual recebido. Cobrar a mais no primeiro caso era furto; no segundo, o valor era
 assunto da consciência do fiel.
 
-![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+![Eikō 1 9 1号, 14 de janeiro de 1953 — o aviso *Aviso*, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
 
 ### 21.4 A remuneração dos ministros de dedicação integral
 
@@ -1689,14 +1690,14 @@ negativas; são pontos em que a documentação não se pronuncia.
 |---|---|
 | Desenho da Imagem por tipo de unidade | Sem fonte. Só há o critério de **tamanho** por proporção ao tokonoma |
 | Imagem escrita por terceiro | Sem fonte direta. Resposta **inferida** de dois princípios (representação e escrita como Luz) |
-| ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — 「生魚、洗米、塩などの正式のお供えの仕方」, 『御光話録』nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
+| ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — *, O modo formal de oferecer peixe cru, arroz lavado e sal*, Gokōwa-roku nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
 | Oferendas no culto diante da caligrafia Kōmyō | Sem fonte. Há fonte para o culto matinal e vesperal; não para oferendas |
-| Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio 「秋季大祭お導き」, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, 「御教え集」nº 29, `search1/kouwa/s281207.html`) e pelo relato de 『栄光』nº 277 (`search2/kikou2/shikiten01.html`) |
+| Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio *, Orientação para o Grande Culto de Outono*, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, Mioshie-shū nº 29, `search1/kouwa/s281207.html`) e pelo relato de Eikō nº 277 (`search2/kikou2/shikiten01.html`) |
 | Oratório de antepassados nas unidades | Sem fonte. As 577 ocorrências de 仏壇 são todas de altar **doméstico** |
 | Lugar de consagração usado por Meishu-Sama | Sem fonte |
 | ~~Rito de sufrágio na Sede Geral~~ | ❌ **Corrigido:** o rito **existe e está documentado** — é o `Sosen-sai`, distinto da entronização da Imagem. Ver §16.5 |
 | ~~Vestimenta própria dos oficiantes~~ | ❌ **Corrigido:** há **veste ceremonial** prescrita para o rito de fundação do terreno, com exigência de aprendizado, e escala cromática branco → azul → violeta por grau. Ver §14.3 |
-| ~~Regras de orientação do tokonoma~~ | ❌ **Corrigido:** para o **altar doméstico** não há direção prescrita — há regra de proeminência: 「方角は東西南北いずれでもよろしいが、位置はその部屋の一番上座に当たる所がよろしい」, 『地上天国』nº 21, 25/02/1951. Mas **há doutrina de orientação** para edifícios, expansão e leitura dos acontecimentos. Ver Parte II, §14.4 |
+| ~~Regras de orientação do tokonoma~~ | ❌ **Corrigido:** para o **altar doméstico** não há direção prescrita — há regra de proeminência: «Qualquer dos pontos cardeais serve; o que importa é que o lugar seja o mais nobre da sala», Tijotengoku nº 21, 25/02/1951. Mas **há doutrina de orientação** para edifícios, expansão e leitura dos acontecimentos. Ver Parte II, §14.4 |
 | Remuneração dos ministros de dedicação integral | Sem fonte. `給料`/`俸給`/`月給` ocorrem, mas **todas em contexto de emprego secular** |
 | Dízimo | Sem fonte. As 149 ocorrências de `十分の一` são todas medidas de temperatura, proporções ou legislação — **nenhuma religiosa** |
 | Glúten, trigo, intolerâncias | Sem fonte. As 134 ocorrências de `小麦` são todas de **lavoura**, nunca de alimentação |
@@ -1730,17 +1731,17 @@ seguem o formato `veículo, número, data · caminho`, conforme convenção defi
 
 | Fonte | Data | Caminho |
 |---|---|---|
-| 『地上天国』nº 17 | 1950-10-15 | `search2/kikou2/sekai03.html` |
-| 『地上天国』nº 4 | 1949-05-25 | `search1/situmon/situmo05.html` |
-| 『栄光』nº 94 | 1951-03-07 | `search2/sanko/kikoseib.html` |
-| 『栄光』nº 96 | 1951-03-21 | `search2/okage/ke/qgekitu6.html` |
-| 『栄光』nº 125 | 1951-10-10 | `search2/sanko/kisoku.html` |
-| 『栄光』nº 177 | 1952-10-08 | `search2/kikou2/syukitai.html` |
-| 『救世』nº 63 | 1950-05-20 | `search1/ka/katei.html` |
-| 『御光話録』(Q&A) | 1948-11-18 | `search1/situmon/m231118a.html` |
-| 『御光話録』(Q&A) | 1948-05-18 | `search1/situmon/m230518.html` |
-| 『御instrução descendente録』nº 15 | 1952-11-01 | `search1/situmon/m271101.html` |
-| 『御教え集』nº 10 | 1952-06-15 | `search1/kouwa/s270517.html` |
+| Tijotengoku nº 17 | 1950-10-15 | `search2/kikou2/sekai03.html` |
+| Tijotengoku nº 4 | 1949-05-25 | `search1/situmon/situmo05.html` |
+| Eikō nº 94 | 1951-03-07 | `search2/sanko/kikoseib.html` |
+| Eikō nº 96 | 1951-03-21 | `search2/okage/ke/qgekitu6.html` |
+| Eikō nº 125 | 1951-10-10 | `search2/sanko/kisoku.html` |
+| Eikō nº 177 | 1952-10-08 | `search2/kikou2/syukitai.html` |
+| Kyūsei nº 63 | 1950-05-20 | `search1/ka/katei.html` |
+| Gokōwa-roku(Q&A) | 1948-11-18 | `search1/situmon/m231118a.html` |
+| Gokōwa-roku(Q&A) | 1948-05-18 | `search1/situmon/m230518.html` |
+| Gosuiji-roku nº 15 | 1952-11-01 | `search1/situmon/m271101.html` |
+| Mioshie-shū nº 10 | 1952-06-15 | `search1/kouwa/s270517.html` |
 | 御講話 | 1935-11-11 | `search1/kouwa/s101111.html` |
 | 御講話 | 1935-05-01 | `search1/kouwa/s100501.html` |
 | 御講話 | 1943-10-23 | `search1/re/reikai05.html`, `search1/ri/rinne.html` |

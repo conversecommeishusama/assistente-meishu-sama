@@ -1,10 +1,10 @@
 ## 37. Anexo F — O comunicado da reorganização de 1951
 
-**Documento:** 「世界救世教の機構整備について」 (*Sekai Kyūseikyō no Kikō Seibi ni
+**Documento:** *, Sobre a organização da estrutura da Igreja Messiânica Mundial* (*, Sekai Kyūseikyō no Kikō Seibi ni
 tsuite*), "Sobre a montagem da estrutura da Igreja Messiânica Mundial".
 **Autor:** Ōkusa Naoyoshi, presidente.
 
-**Publicação:** 『栄光』nº 94, 7 de março de 1951.
+**Publicação:** Eikō nº 94, 7 de março de 1951.
 
 **Natureza:** comunicado da direção. Não é decreto de Meishu-Sama: é a
 **explicação** do presidente sobre palavras que Meishu-Sama dirigiu à instituição

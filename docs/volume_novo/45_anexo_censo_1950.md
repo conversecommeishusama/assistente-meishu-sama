@@ -1,7 +1,7 @@
 ## 35. Anexo D — O censo de outubro de 1950
 
 **Documento:** 「本教教勢現在（昭和二十五年十月）」 — "Situação atual da Igreja
-(outubro de 1950)", publicado no folheto 「問題の世界救世教とは何か」 ("O que é,
+(outubro de 1950)", publicado no folheto *Que é, afinal, a Igreja Messiânica Mundial?* ("O que é,
 afinal, a Igreja Messiânica Mundial?").
 **Publicação:** folheto de divulgação institucional, outubro de 1950.
 

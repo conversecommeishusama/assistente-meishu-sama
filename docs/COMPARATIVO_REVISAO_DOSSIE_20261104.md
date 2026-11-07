@@ -8,6 +8,8 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 
 | Grupo | Alterações |
 |---|---:|
+| Aparelho de citação — termos japoneses em prosa | 28 |
+| Aparelho de citação — tradução das fontes | 259 |
 | Fora do volume — Nota de método (III §32) | 1 |
 | Fora do volume — Síntese das lacunas (II §22) | 6 |
 | Normalização de grafia — Komyo-Nyorai | 17 |
@@ -41,7 +43,7 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 | Capítulo 28 — Nutrição | 3 |
 | Capítulo 29 — Os Paraísos Terrestres e a mineração | 23 |
 | Capítulo 30 — Síntese | 7 |
-| Capítulo 31 — Títulos citados | 11 |
+| Capítulo 31 — Títulos citados | 15 |
 | Capítulo 32 — Glossário | 5 |
 | Capítulo 33 — Anexo A — Estatuto da Associação de Difusão da Terapêutica de Purificação (1946) | 7 |
 | Capítulo 34 — Anexo B — Programa do Curso da Igreja Kannon do Japão (1947) | 1 |
@@ -49,9 +51,9 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 | Capítulo 36 — Anexo D — O censo de outubro de 1950 | 3 |
 | Capítulo 37 — Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951) | 8 |
 | Capítulo 38 — Anexo F — O comunicado da reorganização de 1951 | 8 |
-| Capítulo 39 — Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953) | 7 |
+| Capítulo 39 — Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953) | 7 |
 | Capítulo 40 — Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954 | 5 |
-| **Total** | **341** |
+| **Total** | **632** |
 
 ### Correções de montagem (valem para o volume inteiro)
 
@@ -62,6 +64,2909 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 - **Aspas japonesas.** Um título fechava com `»` em vez de `」` («浄霊法変る»), o que desequilibrava a citação.
 
 ## Alterações, capítulo a capítulo
+
+### Aparelho de citação — termos japoneses em prosa
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Há três graus, e a ordem é fixa: primeiro o 「光」
+> (Hikari), que é *o* Ohikari propriamente dito; depois o 「光明」 (Kōmyō); por último o
+> 「大光明」 (Daikōmyō).
+
+> **Depois**
+>
+> Há três graus, e a ordem é fixa: primeiro o **Hikari**, que é *o* Ohikari
+> propriamente dito; depois o **Kōmyō**; por último o **Daikōmyō**.
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 1 | **「光」 (Hikari)** — o Ohikari | todo convertido, no ato da conversão ou ao fim do Kyoshu |
+> | 2 | **「光明」 (Kōmyō)** — o Ohikari Kōmyō | o fiel, quando a fé amadurece |
+> | 3 | **「大光明」 (Daikōmyō)** — o Ohikari Daikōmyō |
+
+> **Depois**
+>
+> | 1 | **Hikari** — o Ohikari | todo convertido, no ato da conversão ou ao fim do Kyoshu |
+> | 2 | **Kōmyō** — o Ohikari Kōmyō | o fiel, quando a fé amadurece |
+> | 3 | **Daikōmyō** — o Ohikari Daikōmyō |
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> com 42 páginas, marcada como **「非売品」** (não vendida), impressa
+
+> **Depois**
+>
+> com 42 páginas, marcada como **não se vende**, impressa
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O próprio título Gosuiji-roku é significativo: 「垂示」 é "instrução descendente", e a série se
+> apresenta
+
+> **Depois**
+>
+> O próprio título *Gosuiji-roku* é significativo: **suiji** quer dizer "instrução que
+> desce", e a série apresenta
+
+**5.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> assembleia anual aprova o 「会計報告」, o relatório contábil do exercício
+
+> **Depois**
+>
+> assembleia anual aprova o **relatório contábil** do exercício
+
+**6.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> saudação matinal e vesperal diante dos caracteres 「日光」 (Nikkō)**, e ali sozinha
+
+> **Depois**
+>
+> saudação matinal e vesperal diante dos caracteres **Nikkō** ("Luz do Sol")**, e ali
+> sozinha
+
+**7.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> mediante uma inserção no órgão 「栄光」 e afixação
+
+> **Depois**
+>
+> mediante uma inserção no órgão Eikō e afixação
+
+**8.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> O dirigente representante denomina-se 「管長」
+> (presidente), e os demais dirigentes responsáveis, 「理事」 (diretores).
+
+> **Depois**
+>
+> O dirigente representante denomina-se **presidente**, e os demais dirigentes
+> responsáveis, **diretores**.
+
+**9.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> com 「寸志」 escrito e sem nome
+
+> **Depois**
+>
+> com **sunshi** escrito e sem nome
+
+**10.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> caligrafia de 「散花結実」, sem montagem, custou
+
+> **Depois**
+>
+> caligrafia de **sanka-kekijitsu** ("a flor cai, o fruto amadurece"), sem montagem,
+> custou
+
+**11.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> direito de portar o 「光」, tratado explicitamente
+
+> **Depois**
+>
+> direito de portar o **Hikari**, tratado explicitamente
+
+**12.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> capítulo 25.º do *Sutra Lótus*, o 「普門品」. A fé
+
+> **Depois**
+>
+> capítulo 25.º do *Sutra Lótus*, o **Fumon-bon** ("capítulo da porta universal"). A fé
+
+**13.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> Mas, felizmente, o 「念彼観音力」 — o poder de invocar Kannon — conduz-nos
+
+> **Depois**
+>
+> Mas, felizmente, o **nenpi kannon-riki** — o poder de invocar Kannon — conduz-nos
+
+**14.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> para a expansão do 「念彼観音力」.
+
+> **Depois**
+>
+> para a expansão do **nenpi kannon-riki**.
+
+**15.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> **6.** O 「光」 entregue no curso é o sinal de Kannon
+
+> **Depois**
+>
+> **6.** O **Hikari** entregue no curso é o sinal de Kannon
+
+**16.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia 「光」
+> (Hikari)**; o 「光明」 (Kōmyō) vem depois, e é a ele que corresponde a designação
+> **Ohikari Kōmyō**; o 「大光明」 (Daikōmyō) é o terceiro
+
+> **Depois**
+>
+> Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia **Hikari**;
+> o **Kōmyō** vem depois, e é a ele que corresponde a designação **Ohikari Kōmyō**;
+> o **Daikōmyō** é o terceiro
+
+**17.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> A resposta mais precisa está no Regulamento de 1951, capítulo IV, 「財務」. O
+
+> **Depois**
+>
+> A resposta mais precisa está no Regulamento de 1951, capítulo IV, **Finanças**. O
+
+**18.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> o que se recebe no ingresso é o Ohikari
+> 「光」, e o Kōmyō não é o primeiro, e sim o segundo grau.
+
+> **Depois**
+>
+> o que se recebe no ingresso é o Ohikari
+> **Hikari**, e o Kōmyō não é o primeiro, e sim o segundo grau.
+
+**19.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> caligrafia 「光」 dobrada. O que a norma de 1947 fixa
+
+> **Depois**
+>
+> caligrafia **Hikari** dobrada. O que a norma de 1947 fixa
+
+**20.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> entrega em 1954 é a mesma caligrafia 「光」; o que muda
+
+> **Depois**
+>
+> entrega em 1954 é a mesma caligrafia **Hikari**; o que muda
+
+**21.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> *"Primeiro escrevo o caractere 「光」 (Hikari) numa folha de papel
+
+> **Depois**
+>
+> *"Primeiro escrevo o caractere **Hikari** numa folha de papel
+
+**22.** *docs/volume_novo/47_anexo_kyoshu_yoko.md*
+
+> **Antes**
+>
+> O termo 「命」 (inochi, vida) é o mesmo 「命」 (mei, ordem)
+
+> **Depois**
+>
+> O termo *inochi* (vida) é o mesmo *mei* (ordem)
+
+**23.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | Objeto entregue | Ohikari — caligrafia 「光」 | Ohikari — caligrafia 「光」 |
+
+> **Depois**
+>
+> | Objeto entregue | Ohikari — caligrafia **Hikari** | Ohikari — caligrafia **Hikari** |
+
+**24.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> saudação matinal e vesperal diante da caligrafia 「日光」 (Nikkō, "Luz do Sol")**,
+
+> **Depois**
+>
+> saudação matinal e vesperal diante da caligrafia **Nikkō** ("Luz do Sol")**,
+
+**25.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> O art. 27 abre exceções estreitas: o ato 「緊急の必要に基くもの」 (por
+> necessidade urgente) ou 「軽微のもの」 (de pequena monta) dispensa a aprovação.
+
+> **Depois**
+>
+> O art. 27 abre exceções estreitas: o ato de **necessidade urgente** ou o de
+> **pequena monta** dispensa a aprovação.
+
+**26.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> saudação matinal e vesperal diante da caligrafia **Nikkō** ("Luz do Sol")**,
+
+> **Depois**
+>
+> saudação matinal e vesperal diante da caligrafia Nikkō ("Luz do Sol")**,
+
+**27.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> saudação matinal e vesperal diante dos caracteres **Nikkō** ("Luz do Sol")**, e ali
+
+> **Depois**
+>
+> saudação matinal e vesperal diante dos caracteres Nikkō ("Luz do Sol")**, e ali
+
+**28.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> **O primeiro
+> Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia **Hikari**;
+> o **Kōmyō** vem depois, e é a ele que corresponde a designação **Ohikari Kōmyō**;
+> o **Daikōmyō** é o terceiro
+
+> **Depois**
+>
+> O primeiro
+> Ohikari que a pessoa recebe é o Ohikari propriamente dito — a caligrafia **Hikari**;
+> o **Kōmyō** vem depois, e é a ele que corresponde a designação **Ohikari Kōmyō**;
+> o **Daikōmyō** é o terceiro
+
+
+### Aparelho de citação — tradução das fontes
+
+**1.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> há regra de proeminência: 「方角は東西南北いずれでもよろしいが、位置はその部屋の一番上座に当たる所がよろしい」, 『地上天国』nº 21, 25/02/1951.
+
+> **Depois**
+>
+> há regra de proeminência: «Qualquer dos pontos cardeais serve; o que importa é que o lugar seja o mais nobre da sala», Tijotengoku nº 21, 25/02/1951.
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「私とサタンとの闘争史」, `search1/wa/watasi05.html`
+
+> **Depois**
+>
+> — *História da minha luta com Satanás*, `search1/wa/watasi05.html`
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『病原と浄霊の原理』, 『地上天国』, nº 27, 25 de agosto de 1951
+
+> **Depois**
+>
+> — *O princípio da doença e do Johrei*, Tijotengoku, nº 27, 25 de agosto de 1951
+
+**4.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「浄霊法変る」, 『栄光』nº 84, 27 de dezembro de 1950
+
+> **Depois**
+>
+> — *Muda o método de Johrei*, Eikō nº 84, 27 de dezembro de 1950
+
+**5.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 1949-03-08 | Primeiro número do jornal **『光』** |
+
+> **Depois**
+>
+> | 1949-03-08 | Primeiro número do jornal **Hikari** |
+
+**6.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『地上天国』nº 9, 25 de outubro de 1949 · `search1/situmon/situmo11.html`
+
+> **Depois**
+>
+> — Tijotengoku nº 9, 25 de outubro de 1949 · `search1/situmon/situmo11.html`
+
+**7.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 15, 20 de dezembro de 1949 · `search1/situmon/m2409.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 15, 20 de dezembro de 1949 · `search1/situmon/m2409.html`
+
+**8.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231218.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 2, 8 de janeiro de 1949 · `search1/situmon/m231218.html`
+
+**9.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『地上天国』nº 9, 25 de outubro de 1949 · `search1/situmon/situmo11.html`
+
+> **Depois**
+>
+> — Tijotengoku nº 9, 25 de outubro de 1949 · `search1/situmon/situmo11.html`
+
+**10.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 3, 25 de novembro de 1951 · `search1/situmon/m261005a.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 3, 25 de novembro de 1951 · `search1/situmon/m261005a.html`
+
+**11.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「光新聞の拡大は教線の強化」『光』nº 33, 29 de outubro de 1949 · `search1/hi/hikari03.html`
+
+> **Depois**
+>
+> — *Ampliar o jornal Hikari é fortalecer a linha da fé*, Hikari nº 33, 29 de outubro de 1949 · `search1/hi/hikari03.html`
+
+**12.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「編集後記（地上天国nº 36）」, `search2/kikou2/koki36.html`
+
+> **Depois**
+>
+> — *Nota da redação (Tijotengoku nº 36)*, `search2/kikou2/koki36.html`
+
+**13.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「ハワイ通信」『栄光』nº 264, 7 de julho de 1954 · `search2/kikou2/hawai20.html`
+
+> **Depois**
+>
+> — *Correspondência do Havaí*, Eikō nº 264, 7 de julho de 1954 · `search2/kikou2/hawai20.html`
+
+**14.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「本部事務所奉仕者座談会」『地上天国』nº 69, 15 de abril de 1955 · `search2/kikou2/honbujim.html`
+
+> **Depois**
+>
+> — *Mesa-redonda dos servidores do escritório central*, Tijotengoku nº 69, 15 de abril de 1955 · `search2/kikou2/honbujim.html`
+
+**15.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+**16.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「世界救世教の機構整備について」『栄光』nº 94, 7 de março de 1951 ·
+
+> **Depois**
+>
+> — *Sobre a organização da estrutura da Igreja Messiânica Mundial*, Eikō nº 94, 7 de março de 1951 ·
+
+**17.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「世界救世教秋季大祭に参拝して」『地上天国』nº 17, 15 de outubro de 1950 ·
+
+> **Depois**
+>
+> — *Visitando o Grande Culto de Outono da Igreja Messiânica Mundial*, Tijotengoku nº 17, 15 de outubro de 1950 ·
+
+**18.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 分会 | **Associação** | ≥10 Centros de Ensino (1948) | `『御光話録』nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+> **Depois**
+>
+> | 分会 | **Associação** | ≥10 Centros de Ensino (1948) | `Gokōwa-roku nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+**19.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 教導所 | **Centro de Ensino** | Unidade mínima: casa ou sala de atendimento | `『御光話録』nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+> **Depois**
+>
+> | 教導所 | **Centro de Ensino** | Unidade mínima: casa ou sala de atendimento | `Gokōwa-roku nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+**20.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 教修会場 | **local do Kyoshu** | Casa ou salão cedido para o curso | `『御教え集』nº 7, 20 de março de 1952 · search1/kouwa/s270205.html` |
+
+> **Depois**
+>
+> | 教修会場 | **local do Kyoshu** | Casa ou salão cedido para o curso | `Mioshie-shū nº 7, 20 de março de 1952 · search1/kouwa/s270205.html` |
+
+**21.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | Celebrar **Culto Mensal** / **Culto Regular** em data fixa | filial, posto avançado, Igreja | `『御光話録』nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
+
+> **Depois**
+>
+> | Celebrar **Culto Mensal** / **Culto Regular** em data fixa | filial, posto avançado, Igreja | `Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
+
+**22.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | Abrigar doentes em purificação | Sede da Igreja Média | `『御教え集』nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
+
+> **Depois**
+>
+> | Abrigar doentes em purificação | Sede da Igreja Média | `Mioshie-shū nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
+
+**23.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 御講話 de 1º de março de 1954 · `『御垂示録』nº 29, 15 de março de 1954 · search1/situmon/m290301.html`
+
+> **Depois**
+>
+> — 御講話 de 1º de março de 1954 · `Gosuiji-roku nº 29, 15 de março de 1954 · search1/situmon/m290301.html`
+
+**24.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「支部の現状と発展の為に」, 『地上天国』nº 37, 25 de junho de 1952 (reunião de 28 de
+
+> **Depois**
+>
+> — *Pela situação e o desenvolvimento das filiais*, Tijotengoku nº 37, 25 de junho de 1952 (reunião de 28 de
+
+**25.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 10, 10 de julho de 1949 · `search1/situmon/m240503.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 10, 10 de julho de 1949 · `search1/situmon/m240503.html`
+
+**26.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) ·
+
+> **Depois**
+>
+> — Gokōwa-roku nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) ·
+
+**27.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro de
+
+> **Depois**
+>
+> — Regulamento da pessoa jurídica religiosa Sekai Kyūseikyō, Eikō nº 125, 10 de outubro de
+
+**28.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「明暗の隔り」, 『栄光』nº 105, 23 de maio de 1951 · `search2/okage/dokusya/meian01.html`
+
+> **Depois**
+>
+> — *A distância entre luz e trevas*, Eikō nº 105, 23 de maio de 1951 · `search2/okage/dokusya/meian01.html`
+
+**29.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「御浄化物語」, 『地上天国』nº 30, 25 de novembro de 1951 · `search2/okage/ko/qgojoka2.html`
+
+> **Depois**
+>
+> — *Histórias de purificação*, Tijotengoku nº 30, 25 de novembro de 1951 · `search2/okage/ko/qgojoka2.html`
+
+**30.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「御講話」『御教え集』nº 31, 27 de fevereiro de 1954 · `search1/kouwa/s290227.html`
+
+> **Depois**
+>
+> — *Palestra*, Mioshie-shū nº 31, 27 de fevereiro de 1954 · `search1/kouwa/s290227.html`
+
+**31.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 19, 13 de junho de 1950 (sessão de 28 de fevereiro de 1950) ·
+
+> **Depois**
+>
+> — Gokōwa-roku nº 19, 13 de junho de 1950 (sessão de 28 de fevereiro de 1950) ·
+
+**32.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 12, 21 de setembro de 1949 · `search1/situmon/m240613.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 12, 21 de setembro de 1949 · `search1/situmon/m240613.html`
+
+**33.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — `『御光話録』nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html`
+
+> **Depois**
+>
+> — `Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html`
+
+**34.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「質問応答 御光話」, `search1/situmon/m2411.html`
+
+> **Depois**
+>
+> — *Perguntas e respostas: palavras de luz*, `search1/situmon/m2411.html`
+
+**35.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — `『地上天国』nº 9, 25 de outubro de 1949 · search1/situmon/situmo11.html`
+
+> **Depois**
+>
+> — `Tijotengoku nº 9, 25 de outubro de 1949 · search1/situmon/situmo11.html`
+
+**36.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 6, 25 de janeiro de 1952 · `search1/situmon/m260401.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 6, 25 de janeiro de 1952 · `search1/situmon/m260401.html`
+
+**37.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「献金に就て」『救世』nº 57, 8 de abril de 1950 · `search1/ke/kenkin.html`
+
+> **Depois**
+>
+> — *Sobre a contribuição*, Kyūsei nº 57, 8 de abril de 1950 · `search1/ke/kenkin.html`
+
+**38.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「問題の世界救世教とは何か」, `search1/mo/mondai.html`
+
+> **Depois**
+>
+> — *Que é, afinal, a Igreja Messiânica Mundial?*, `search1/mo/mondai.html`
+
+**39.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 14, 15 de outubro de 1952 · `search1/situmon/m271001.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 14, 15 de outubro de 1952 · `search1/situmon/m271001.html`
+
+**40.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 6, 25 de janeiro de 1952 · `search1/situmon/m260401.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 6, 25 de janeiro de 1952 · `search1/situmon/m260401.html`
+
+**41.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | **Ministro Responsável** | Ministro Responsável de Unidade Religiosa | `『御光話録』nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+> **Depois**
+>
+> | **Ministro Responsável** | Ministro Responsável de Unidade Religiosa | `Gokōwa-roku nº 2, 8 de janeiro de 1949 · search1/situmon/m231208.html` |
+
+**42.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「ハワイ通信」, `search2/kikou2/hawai18.html`
+
+> **Depois**
+>
+> — *Correspondência do Havaí*, `search2/kikou2/hawai18.html`
+
+**43.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「明主様御言葉 水晶殿御遷座」, 『栄光』nº 289, 1º de janeiro de 1955 ·
+
+> **Depois**
+>
+> — *Palavras de Meishu-Sama: a transferência do Palácio de Cristal*, Eikō nº 289, 1º de janeiro de 1955 ·
+
+**44.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Abe Seizō, 『栄光』nº 289, 1º de janeiro de 1955 · `search1/o/otori.html`
+
+> **Depois**
+>
+> — Abe Seizō, Eikō nº 289, 1º de janeiro de 1955 · `search1/o/otori.html`
+
+**45.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「先生」, 『地上天国』nº 54, 25 de novembro de 1953 · `search2/kikou2/sensei02.html`
+
+> **Depois**
+>
+> — *Sensei*, Tijotengoku nº 54, 25 de novembro de 1953 · `search2/kikou2/sensei02.html`
+
+**46.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> | 4º | Publicidade oficial: uma vez em 『栄光』 + afixação por 10 dias na sede |
+
+> **Depois**
+>
+> | 4º | Publicidade oficial: uma vez em Eikō + afixação por 10 dias na sede |
+
+**47.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 8, 25 de abril de 1952 · `search1/kouwa/s270401.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 8, 25 de abril de 1952 · `search1/kouwa/s270401.html`
+
+**48.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Matsui, 「救世と自観明主様（一）」, 『地上天国』nº 50, 25 de julho de 1953 ·
+
+> **Depois**
+>
+> — Matsui, *A salvação e Meishu-Sama Jikan (I)*, Tijotengoku nº 50, 25 de julho de 1953 ·
+
+**49.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「質問応答 教えの光」, 『地上天国』nº 21, 25 de fevereiro de 1951 ·
+
+> **Depois**
+>
+> — *Perguntas e respostas: a luz do ensinamento*, Tijotengoku nº 21, 25 de fevereiro de 1951 ·
+
+**50.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — Kii, Departamento de Contabilidade, 「本部事務所奉仕者座談会」, 『地上天国』nº 69,
+
+> **Depois**
+>
+> — Kii, Departamento de Contabilidade, *Mesa-redonda dos servidores do escritório central*, Tijotengoku nº 69,
+
+**51.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「新宗教と世界の年齢」 · `search1/English/esinsyu2.html`
+
+> **Depois**
+>
+> — *As novas religiões e a idade do mundo* · `search1/English/esinsyu2.html`
+
+**52.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — transcrito em 「泥棒に入られて」, `search2/okage/tato/qtsune01.html`
+
+> **Depois**
+>
+> — transcrito em *Assaltado por um ladrão*, `search2/okage/tato/qtsune01.html`
+
+**53.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「放送に対する抗議文」, 23 de abril de 1949 · `search1/ho/hosoni.html`
+
+> **Depois**
+>
+> — *Protesto contra a emissão*, 23 de abril de 1949 · `search1/ho/hosoni.html`
+
+**54.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 3, 8 de fevereiro de 1949 · `search1/situmon/m240128.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 3, 8 de fevereiro de 1949 · `search1/situmon/m240128.html`
+
+**55.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 3, 25 de novembro de 1951 · `search1/situmon/m261008a.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 3, 25 de novembro de 1951 · `search1/situmon/m261008a.html`
+
+**56.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 8, 25 de abril de 1952 · `search1/kouwa/s270401.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 8, 25 de abril de 1952 · `search1/kouwa/s270401.html`
+
+**57.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「注意」『栄光』nº 191 · `search1/ti/tyui02.html`
+
+> **Depois**
+>
+> — *Aviso*, Eikō nº 191 · `search1/ti/tyui02.html`
+
+**58.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「再教修を戴きました感謝の報告」, 『地上天国』nº 47, 25 de abril de 1953 ·
+
+> **Depois**
+>
+> — *Relato de gratidão por ter recebido o re-Kyoshu*, Tijotengoku nº 47, 25 de abril de 1953 ·
+
+**59.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「巻頭言」, 『地上天国』, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
+
+> **Depois**
+>
+> — *Palavras de abertura*, Tijotengoku, número inaugural, 1º de dezembro de 1948 · `search1/situmon/situmo01.html`
+
+**60.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+**61.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
+
+> **Depois**
+>
+> — *Nota da redação*, Tijotengoku nº 36 · `search2/kikou2/koki36.html`
+
+**62.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「編集後記」, 『地上天国』nº 36 · `search2/kikou2/koki36.html`
+
+> **Depois**
+>
+> — *Nota da redação*, Tijotengoku nº 36 · `search2/kikou2/koki36.html`
+
+**63.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+
+> **Depois**
+>
+> — *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+
+**64.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+
+> **Depois**
+>
+> — *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+
+**65.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「地上天国出来るまで」, 『地上天国出来るまで』, 21 de setembro de 1950 ·
+
+> **Depois**
+>
+> — *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+
+**66.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御教え集』nº 8, 20 de abril de 1952 (prédica de 16 de março de 1952) ·
+
+> **Depois**
+>
+> — Mioshie-shū nº 8, 20 de abril de 1952 (prédica de 16 de março de 1952) ·
+
+**67.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 14, 20 de novembro de 1949 · `search1/situmon/m240823.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 14, 20 de novembro de 1949 · `search1/situmon/m240823.html`
+
+**68.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 小林俊子, 「忘れかけた信仰に鞭うたれて」, 『栄光』nº 271, 25 de agosto de 1954 ·
+
+> **Depois**
+>
+> — 小林俊子, *Açoitado por uma fé que quase se esquecera*, Eikō nº 271, 25 de agosto de 1954 ·
+
+**69.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 『御教え集』nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+
+> **Depois**
+>
+> — Mioshie-shū nº 32, 15 de abril de 1954 (prédica de 25 de março de 1954) ·
+
+**70.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — 「花による天国化運動」, 『光』nº 8, 8 de maio de 1949 · `search1/ha/hanani.html`
+
+> **Depois**
+>
+> — *O movimento de fazer do mundo um paraíso pelas flores*, Hikari nº 8, 8 de maio de 1949 · `search1/ha/hanani.html`
+
+**71.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 「霊界の不思議」, 『地上天国』 (Tijotengoku) nº 9, 25 de outubro de 1949
+
+> **Depois**
+>
+> — *As maravilhas do mundo espiritual*, Tijotengoku (Tijotengoku) nº 9, 25 de outubro de 1949
+
+**72.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 『信仰雑話』, 5 de setembro de 1948
+
+> **Depois**
+>
+> — *Conversas sobre a fé*, 5 de setembro de 1948
+
+**73.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 4, 10 de dezembro de 1951
+
+> **Depois**
+>
+> — Gosuiji-roku nº 4, 10 de dezembro de 1951
+
+**74.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 『御教え集』nº 32, 15 de abril de 1954 (prédica de 15 de março de 1954)
+
+> **Depois**
+>
+> — Mioshie-shū nº 32, 15 de abril de 1954 (prédica de 15 de março de 1954)
+
+**75.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 『浄霊と医学との比較』
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina*
+
+**76.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — e ele não é uma prédica, mas um **aviso formal de Meishu-Sama**, publicado em 『栄光』
+
+> **Depois**
+>
+> — e ele não é uma prédica, mas um **aviso formal de Meishu-Sama**, publicado em Eikō
+
+**77.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — 「注意」, 『栄光』nº 191, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
+
+> **Depois**
+>
+> — *Aviso*, Eikō nº 191, 14 de janeiro de 1953 · `search1/ti/tyui02.html`
+
+**78.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — 「生魚、洗米、塩などの正式のお供えの仕方」, 『御光話録』nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
+
+> **Depois**
+>
+> | ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — *, O modo formal de oferecer peixe cru, arroz lavado e sal*, Gokōwa-roku nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
+
+**79.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio 「秋季大祭お導き」, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, 「御教え集」nº 29, `search1/kouwa/s281207.html`) e pelo relato de 『栄光』nº 277 (`search2/kikou2/shikiten01.html`) |
+
+> **Depois**
+>
+> | Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio *, Orientação para o Grande Culto de Outono*, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, Mioshie-shū nº 29, `search1/kouwa/s281207.html`) e pelo relato de Eikō nº 277 (`search2/kikou2/shikiten01.html`) |
+
+**80.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『地上天国』nº 17 | 1950-10-15 | `search2/kikou2/sekai03.html` |
+
+> **Depois**
+>
+> | Tijotengoku nº 17 | 1950-10-15 | `search2/kikou2/sekai03.html` |
+
+**81.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『地上天国』nº 4 | 1949-05-25 | `search1/situmon/situmo05.html` |
+
+> **Depois**
+>
+> | Tijotengoku nº 4 | 1949-05-25 | `search1/situmon/situmo05.html` |
+
+**82.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『栄光』nº 94 | 1951-03-07 | `search2/sanko/kikoseib.html` |
+
+> **Depois**
+>
+> | Eikō nº 94 | 1951-03-07 | `search2/sanko/kikoseib.html` |
+
+**83.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『栄光』nº 96 | 1951-03-21 | `search2/okage/ke/qgekitu6.html` |
+
+> **Depois**
+>
+> | Eikō nº 96 | 1951-03-21 | `search2/okage/ke/qgekitu6.html` |
+
+**84.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『栄光』nº 125 | 1951-10-10 | `search2/sanko/kisoku.html` |
+
+> **Depois**
+>
+> | Eikō nº 125 | 1951-10-10 | `search2/sanko/kisoku.html` |
+
+**85.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『栄光』nº 177 | 1952-10-08 | `search2/kikou2/syukitai.html` |
+
+> **Depois**
+>
+> | Eikō nº 177 | 1952-10-08 | `search2/kikou2/syukitai.html` |
+
+**86.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『救世』nº 63 | 1950-05-20 | `search1/ka/katei.html` |
+
+> **Depois**
+>
+> | Kyūsei nº 63 | 1950-05-20 | `search1/ka/katei.html` |
+
+**87.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『御光話録』(Q&A) | 1948-11-18 | `search1/situmon/m231118a.html` |
+
+> **Depois**
+>
+> | Gokōwa-roku(Q&A) | 1948-11-18 | `search1/situmon/m231118a.html` |
+
+**88.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『御光話録』(Q&A) | 1948-05-18 | `search1/situmon/m230518.html` |
+
+> **Depois**
+>
+> | Gokōwa-roku(Q&A) | 1948-05-18 | `search1/situmon/m230518.html` |
+
+**89.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『御instrução descendente録』nº 15 | 1952-11-01 | `search1/situmon/m271101.html` |
+
+> **Depois**
+>
+> | Gosuiji-roku nº 15 | 1952-11-01 | `search1/situmon/m271101.html` |
+
+**90.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> | 『御教え集』nº 10 | 1952-06-15 | `search1/kouwa/s270517.html` |
+
+> **Depois**
+>
+> | Mioshie-shū nº 10 | 1952-06-15 | `search1/kouwa/s270517.html` |
+
+**91.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+**92.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「世界救世教の機構整備について」, 『栄光』nº 94, 7 de março de 1951 ·
+
+> **Depois**
+>
+> — *Sobre a organização da estrutura da Igreja Messiânica Mundial*, Eikō nº 94, 7 de março de 1951 ·
+
+**93.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Celebrar **culto mensal** e **culto regular** em data fixa | filial, posto avançado, Igreja | `『御光話録』nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
+
+> **Depois**
+>
+> | Celebrar **culto mensal** e **culto regular** em data fixa | filial, posto avançado, Igreja | `Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
+
+**94.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `『日本観音教団講習要項』, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
+
+> **Depois**
+>
+> | Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `*, Programa do Curso da Igreja Kannon do Japão*, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
+
+**95.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Formar novos portadores de qualificação | Igreja / Igreja Média | `「献金に就て」, 『救世』nº 57, 8 de abril de 1950 · search1/ke/kenkin.html` |
+
+> **Depois**
+>
+> | Formar novos portadores de qualificação | Igreja / Igreja Média | `*Sobre a contribuição*, Kyūsei nº 57, 8 de abril de 1950 · search1/ke/kenkin.html` |
+
+**96.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Distribuir o jornal | Centro de Ensino, filial | `「光新聞の拡大は教線の強化」, 『光』nº 33, 29 de outubro de 1949 · search1/hi/hikari03.html` |
+
+> **Depois**
+>
+> | Distribuir o jornal | Centro de Ensino, filial | `*Ampliar o jornal Hikari é fortalecer a linha da fé*, Hikari nº 33, 29 de outubro de 1949 · search1/hi/hikari03.html` |
+
+**97.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `「布教定例座談会」, 『地上天国』nº 42 e ss. · search2/sanko/teirei1.html` |
+
+> **Depois**
+>
+> | Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `*, Mesa-redonda periódica de difusão*, Tijotengoku nº 42 e ss. · search2/sanko/teirei1.html` |
+
+**98.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Abrigar doentes em purificação | Sede da Igreja Média | `『御教え集』nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
+
+> **Depois**
+>
+> | Abrigar doentes em purificação | Sede da Igreja Média | `Mioshie-shū nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
+
+**99.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | Presidir os ritos sazonais em rodízio | Igreja Grande | `「世界救世教秋季大祭に参拝して」, 『地上天国』nº 17, 15 de outubro de 1950 · search2/kikou2/sekai03.html` |
+
+> **Depois**
+>
+> | Presidir os ritos sazonais em rodízio | Igreja Grande | `*Visitando o Grande Culto de Outono da Igreja Messiânica Mundial*, Tijotengoku nº 17, 15 de outubro de 1950 · search2/kikou2/sekai03.html` |
+
+**100.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+**101.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「御講話」, 『御教え集』nº 22, 15 de junho de 1953 · `search1/kouwa/s280526.html`
+
+> **Depois**
+>
+> — *Palestra*, Mioshie-shū nº 22, 15 de junho de 1953 · `search1/kouwa/s280526.html`
+
+**102.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「御講話」, 『御教え集』nº 19, 15 de março de 1953 · `search1/kouwa/s280225.html`
+
+> **Depois**
+>
+> — *Palestra*, Mioshie-shū nº 19, 15 de março de 1953 · `search1/kouwa/s280225.html`
+
+**103.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — Regulamento da pessoa jurídica religiosa 『世界救世教』, 『栄光』nº 125, 10 de outubro
+
+> **Depois**
+>
+> — Regulamento da pessoa jurídica religiosa Sekai Kyūseikyō, Eikō nº 125, 10 de outubro
+
+**104.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | 「布教定例座談会」(1ª) · 04/09/1952 | 『地上天国』nº 42 · `search2/sanko/teirei1.html` | **um diretor da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
+
+> **Depois**
+>
+> | *Mesa-redonda periódica de difusão*(1ª) · 04/09/1952 | Tijotengoku nº 42 · `search2/sanko/teirei1.html` | **um diretor da Sede** e quatro presidentes de Igreja Média; sem limite de participantes, com inscrição recolhida **no escritório da Sede** |
+
+**105.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | 「定例布教座談会」(3ª) · 05/01/1953 | 『栄光』nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+
+> **Depois**
+>
+> | *Mesa-redonda periódica de difusão*(3ª) · 05/01/1953 | Eikō nº 195 | **orientação do diretor-presidente**; seis presidentes de Igreja Média |
+
+**106.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | 「布教座談会」 · 03/10/1952 | 『栄光』nº 191 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
+
+> **Depois**
+>
+> | *Mesa-redonda de difusão* · 03/10/1952 | Eikō nº 191 · `search2/sanko/hukyo.html` | presidente da igreja local e cerca de vinte dirigentes e fiéis |
+
+**107.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | 「支部長懇談会」 — reunião de presidentes de filial · 28/04/1952 | 『地上天国』nº 37 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
+
+> **Depois**
+>
+> | *Encontro de líderes de filial* — reunião de presidentes de filial · 28/04/1952 | Tijotengoku nº 37 · `search2/kikou2/shibuno1.html` | presidentes de filial, **dez minutos cada um** |
+
+**108.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — Sakai Takao, presidente de igreja, 「布教座談会」, 『栄光』nº 191, 14 de janeiro de
+
+> **Depois**
+>
+> — Sakai Takao, presidente de igreja, *Mesa-redonda de difusão*, Eikō nº 191, 14 de janeiro de
+
+**109.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「大祭式典に参加して」, 『栄光』nº 72, 4 de outubro de 1950 ·
+
+> **Depois**
+>
+> — *Participando da cerimônia do Grande Culto*, Eikō nº 72, 4 de outubro de 1950 ·
+
+**110.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「光明如来様御奉斎で盗難免る」, 『栄光』nº 70, 20 de setembro de 1950 ·
+
+> **Depois**
+>
+> — *Livre de um roubo pela entronização da Komyo-Nyorai*, Eikō nº 70, 20 de setembro de 1950 ·
+
+**111.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「問題の世界救世教とは何か」 · `search1/English/emondai.html`
+
+> **Depois**
+>
+> — *Que é, afinal, a Igreja Messiânica Mundial?* · `search1/English/emondai.html`
+
+**112.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「重症の筋炎治る」『光』nº 6, 25 de abril de 1949
+
+> **Depois**
+>
+> — *Cura de uma miosite grave*, Hikari nº 6, 25 de abril de 1949
+
+**113.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — Sakai Takao, presidente de igreja, 「布教座談会」『栄光』nº 191, 14 de janeiro de 1953 ·
+
+> **Depois**
+>
+> — Sakai Takao, presidente de igreja, *Mesa-redonda de difusão*, Eikō nº 191, 14 de janeiro de 1953 ·
+
+**114.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「本教の収入に就て」, 『救世』nº 56, 1 de abril de 1950 · `search1/ho/honkyo15.html`
+
+> **Depois**
+>
+> — *Sobre a receita desta religião*, Kyūsei nº 56, 1 de abril de 1950 · `search1/ho/honkyo15.html`
+
+**115.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「奇蹟」, 『地上天国』nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+
+> **Depois**
+>
+> — *Milagre*, Tijotengoku nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
+
+**116.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「鉱山においての奇蹟の数々」, 『栄光』nº 109, 20 de junho de 1951 ·
+
+> **Depois**
+>
+> — *Os muitos milagres na mina*, Eikō nº 109, 20 de junho de 1951 ·
+
+**117.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「法難裁判傍聴記（下）」, 『栄光』nº 76, 1 de novembro de 1950 ·
+
+> **Depois**
+>
+> — *Crônica das audiências do processo (II)*, Eikō nº 76, 1 de novembro de 1950 ·
+
+**118.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | 「妙智の鍵」, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
+
+> **Depois**
+>
+> | **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | *, A chave da sabedoria sutil*, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
+
+**119.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> | **浄め塩** (sal de purificação) | costume, "sem significado profundo" | 「ご存じですか」 · `search1/situmon/bunkai04.html` |
+
+> **Depois**
+>
+> | **浄め塩** (sal de purificação) | costume, "sem significado profundo" | *, Sabia disto?* · `search1/situmon/bunkai04.html` |
+
+**120.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「私は真理を書く」, 『地上天国』nº 28, 25 de setembro de 1951
+
+> **Depois**
+>
+> — *Eu escrevo a verdade*, Tijotengoku nº 28, 25 de setembro de 1951
+
+**121.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「私の文章とその他」, 『栄光』nº 238, 9 de dezembro de 1953
+
+> **Depois**
+>
+> — *Os meus escritos e outras coisas*, Eikō nº 238, 9 de dezembro de 1953
+
+**122.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「御説教」, 『地上天国』nº 39, 25 de agosto de 1952
+
+> **Depois**
+>
+> — *Sermão*, Tijotengoku nº 39, 25 de agosto de 1952
+
+**123.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「真理を説く」, 『救世』nº 58, 15 de abril de 1950
+
+> **Depois**
+>
+> — *Ensinar a verdade*, Kyūsei nº 58, 15 de abril de 1950
+
+**124.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「真理と非真理」, 『地上天国』nº 6, 20 de julho de 1949
+
+> **Depois**
+>
+> — *Verdade e não-verdade*, Tijotengoku nº 6, 20 de julho de 1949
+
+**125.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「五六七世界の建設」, 『光』nº 18, 16 de julho de 1949
+
+> **Depois**
+>
+> — *A construção do mundo de Miroku*, Hikari nº 18, 16 de julho de 1949
+
+**126.** *docs/volume_novo/01_fontes.md*
+
+> **Antes**
+>
+> — 「大いに神書を読むべし」, 『栄光』nº 80, 29 de novembro de 1950
+
+> **Depois**
+>
+> — *É preciso ler muito os Escritos Divinos*, Eikō nº 80, 29 de novembro de 1950
+
+**127.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+> **Depois**
+>
+> — Gokōwa-roku nº 2, 8 de janeiro de 1949 · `search1/situmon/m231208.html`
+
+**128.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> — 「問題の世界救世教とは何か」, panfleto de palestra, outubro de 1950 · `search1/mo/mondai.html`
+
+> **Depois**
+>
+> — *Que é, afinal, a Igreja Messiânica Mundial?*, panfleto de palestra, outubro de 1950 · `search1/mo/mondai.html`
+
+**129.** *docs/volume_novo/06_grade1948.md*
+
+> **Antes**
+>
+> — 「世界救世教秋季大祭に参拝して」, 『地上天国』nº 17, 15 de outubro de 1950 ·
+
+> **Depois**
+>
+> — *Visitando o Grande Culto de Outono da Igreja Messiânica Mundial*, Tijotengoku nº 17, 15 de outubro de 1950 ·
+
+**130.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> — 「世界救世教の機構整備について」, 『栄光』nº 94, 7 de março de 1951 ·
+
+> **Depois**
+>
+> — *Sobre a organização da estrutura da Igreja Messiânica Mundial*, Eikō nº 94, 7 de março de 1951 ·
+
+**131.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+> **Depois**
+>
+> — Gosuiji-roku nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
+
+**132.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 『御光話録（補）』, 18 de maio de 1948 · search1/situmon/m230518.html
+
+> **Depois**
+>
+> — Gokōwa-roku (suplemento), 18 de maio de 1948 · search1/situmon/m230518.html
+
+**133.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html
+
+> **Depois**
+>
+> — Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html
+
+**134.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 「献金に就て」, 『救世』nº 57, 8 de abril de 1950 · search1/ke/kenkin.html
+
+> **Depois**
+>
+> — *Sobre a contribuição*, Kyūsei nº 57, 8 de abril de 1950 · search1/ke/kenkin.html
+
+**135.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 榊原広吉, 「浄化のおかげ」, 『地上天国』nº 2, 1 de março de 1949 · search2/okage/shi/qjokano.html
+
+> **Depois**
+>
+> — 榊原広吉, *Graças à purificação*, Tijotengoku nº 2, 1 de março de 1949 · search2/okage/shi/qjokano.html
+
+**136.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 勝又嵩, 「死を覚悟した難病　わずか半年健康体へ」, 『光』nº 1, 8 de março de 1949 · search2/okage/shi/qsiwoka8.html
+
+> **Depois**
+>
+> — 勝又嵩, *Doença grave com a morte por certa: corpo são em meio ano*, Hikari nº 1, 8 de março de 1949 · search2/okage/shi/qsiwoka8.html
+
+**137.** *docs/volume_novo/09_ministros_1948_1951.md*
+
+> **Antes**
+>
+> — 『御光話録（補）』, 8 de julho de 1948 · search1/situmon/m230708.html
+
+> **Depois**
+>
+> — Gokōwa-roku (suplemento), 8 de julho de 1948 · search1/situmon/m230708.html
+
+**138.** *docs/volume_novo/10_ministros_1952_1955.md*
+
+> **Antes**
+>
+> — 「問題の世界救世教とは何か」, panfleto de palestra, outubro de 1950 · search1/mo/mondai.html
+
+> **Depois**
+>
+> — *Que é, afinal, a Igreja Messiânica Mundial?*, panfleto de palestra, outubro de 1950 · search1/mo/mondai.html
+
+**139.** *docs/volume_novo/10_ministros_1952_1955.md*
+
+> **Antes**
+>
+> — 『御垂示録』nº 14, 15 de outubro de 1952 · search1/situmon/m271001.html
+
+> **Depois**
+>
+> — Gosuiji-roku nº 14, 15 de outubro de 1952 · search1/situmon/m271001.html
+
+**140.** *docs/volume_novo/10_ministros_1952_1955.md*
+
+> **Antes**
+>
+> — 「ハワイ通信」, 『栄光』nº 257, 21 de abril de 1954
+
+> **Depois**
+>
+> — *Correspondência do Havaí*, Eikō nº 257, 21 de abril de 1954
+
+**141.** *docs/volume_novo/10_ministros_1952_1955.md*
+
+> **Antes**
+>
+> — 「ハワイ通信」, 『栄光』nº 257, 21 de abril de 1954 · search2/kikou2/hawai18.html
+
+> **Depois**
+>
+> — *Correspondência do Havaí*, Eikō nº 257, 21 de abril de 1954 · search2/kikou2/hawai18.html
+
+**142.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — 「大祭式典に参加して」『栄光』nº 72, 4 de outubro de 1950
+
+> **Depois**
+>
+> — *Participando da cerimônia do Grande Culto*, Eikō nº 72, 4 de outubro de 1950
+
+**143.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — 「光明如来様御奉斎で盗難免る」『栄光』nº 70, 20 de setembro de 1950
+
+> **Depois**
+>
+> — *Livre de um roubo pela entronização da Komyo-Nyorai*, Eikō nº 70, 20 de setembro de 1950
+
+**144.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — 『御光話録』nº 14, 20 de novembro de 1949
+
+> **Depois**
+>
+> — Gokōwa-roku nº 14, 20 de novembro de 1949
+
+**145.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — 「質問応答 御光話」, 8 de fevereiro de 1948
+
+> **Depois**
+>
+> — *Perguntas e respostas: palavras de luz*, 8 de fevereiro de 1948
+
+**146.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> do jornal **『光』**, com cem mil fiéis declarados (`search1/ho/honkyo20.html`). Em
+
+> **Depois**
+>
+> do jornal **Hikari**, com cem mil fiéis declarados (`search1/ho/honkyo20.html`). Em
+
+**147.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> entrevista da 『光』 intitulada 「自観大先生との対談」, e é assim que os relatos de fiéis
+
+> **Depois**
+>
+> entrevista da Hikari intitulada *Conversa com o grande mestre Jikan*, e é assim que os relatos de fiéis
+
+**148.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> «Okada-sensei» soaria mal, por haver muitos Okada no mundo (『御垂示録』nº 2, 10 de
+
+> **Depois**
+>
+> «Okada-sensei» soaria mal, por haver muitos Okada no mundo (Gosuiji-rokunº 2, 10 de
+
+**149.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Deus e homem é precisamente isso: ali não há separação» (『御教え集』, prédica de 27 de
+
+> **Depois**
+>
+> Deus e homem é precisamente isso: ali não há separação» (Mioshie-shū, prédica de 27 de
+
+**150.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> tem por título exatamente isso — 「浄霊法変る」, «muda o método do Johrei»:
+
+> **Depois**
+>
+> tem por título exatamente isso — *Muda o método de Johrei*, «muda o método do Johrei»:
+
+**151.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> o modelo se ampliaria até o Paraíso mundial (『御教え集』, nº 10, 15 de junho de 1952;
+
+> **Depois**
+>
+> o modelo se ampliaria até o Paraíso mundial (Mioshie-shū, nº 10, 15 de junho de 1952;
+
+**152.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 『御垂示録』, nº 9, 15 de maio de 1952). A doutrina dos lugares já estava formulada, e é
+
+> **Depois**
+>
+> Gosuiji-roku, nº 9, 15 de maio de 1952). A doutrina dos lugares já estava formulada, e é
+
+**153.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 『栄光』, nº 263, 30 de junho de 1954). Em outubro sai a edição revista do **Kyoshu Yōkō**,
+
+> **Depois**
+>
+> Eikō, nº 263, 30 de junho de 1954). Em outubro sai a edição revista do **Kyoshu Yōkō**,
+
+**154.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> (『栄光』, nº 289, 1º de janeiro de 1955). Em fevereiro de 1955, sua morte
+
+> **Depois**
+>
+> (Eikō, nº 289, 1º de janeiro de 1955). Em fevereiro de 1955, sua morte
+
+**155.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> (`search2/kikou2/kanto68.html`, 『地上天国』, nº 68, 15 de março de 1955).
+
+> **Depois**
+>
+> (`search2/kikou2/kanto68.html`, Tijotengoku, nº 68, 15 de março de 1955).
+
+**156.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> **O jornal.** A sequência de títulos é 『光』 (de março de 1949) → 『救世』 → 『栄光』 →
+
+> **Depois**
+>
+> **O jornal.** A sequência de títulos é Hikari (de março de 1949) → Kyūsei → Eikō →
+
+**157.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 『神の光』 (de 1955), e Meishu-Sama lia essa rotatividade como sinal de orientação
+
+> **Depois**
+>
+> Kami no Hikari (de 1955), e Meishu-Sama lia essa rotatividade como sinal de orientação
+
+**158.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 『光』, e é explícita quanto ao método: quem se desenvolve é quem distribui.
+
+> **Depois**
+>
+> Hikari, e é explícita quanto ao método: quem se desenvolve é quem distribui.
+
+**159.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![『御垂示録』29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-roku29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+**160.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![『栄光』289号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
+
+> **Depois**
+>
+> ![Eikō289号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
+
+**161.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O Regulamento da pessoa jurídica religiosa publicado em 『栄光』nº 125, de 10 de outubro de
+
+> **Depois**
+>
+> O Regulamento da pessoa jurídica religiosa publicado em Eikōnº 125, de 10 de outubro de
+
+**162.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> formal documentada no art. 3º do regulamento e no comentário de 『地上天国』nº 50.
+
+> **Depois**
+>
+> formal documentada no art. 3º do regulamento e no comentário de Tijotengokunº 50.
+
+**163.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> **terceira reunião periódica de difusão** — registrada em 『栄光』nº 195, de 11 de fevereiro
+
+> **Depois**
+>
+> **terceira reunião periódica de difusão** — registrada em Eikōnº 195, de 11 de fevereiro
+
+**164.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![『栄光』195号, 11 de fevereiro de 1953 — o número que traz a ata da terceira reunião periódica de difusão, com as regras de duração e de conduta do Kyoshu. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko195_ata_kyoshu.jpg)
+
+> **Depois**
+>
+> ![Eikō195号, 11 de fevereiro de 1953 — o número que traz a ata da terceira reunião periódica de difusão, com as regras de duração e de conduta do Kyoshu. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko195_ata_kyoshu.jpg)
+
+**165.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ao artigo correspondente (『栄光』, nº 191, 14 de janeiro de 1953; 『栄光』, nº 195, 11 de
+
+> **Depois**
+>
+> ao artigo correspondente (Eikō, nº 191, 14 de janeiro de 1953; Eikō, nº 195, 11 de
+
+**166.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 1953, 『地上天国』 publica o relato de um **re-Kyoshu** — "re-Kyoshu" — realizado numa filial
+
+> **Depois**
+>
+> 1953, Tijotengoku publica o relato de um **re-Kyoshu** — "re-Kyoshu" — realizado numa filial
+
+**167.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 1951 (『御教え集』nº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
+
+> **Depois**
+>
+> 1951 (Mioshie-shūnº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
+
+**168.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> publicadas periodicamente. As séries principais são 『御光話録』, 『御垂示録』,
+
+> **Depois**
+>
+> publicadas periodicamente. As séries principais são Gokōwa-roku, Gosuiji-roku,
+
+**169.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 『御教え集』, além dos periódicos 『光』, 『救世』, 『栄光』, 『地上天国』 e 『神の光』.
+
+> **Depois**
+>
+> Mioshie-shū, além dos periódicos Hikari, Kyūsei, Eikō, Tijotengoku e Kami no Hikari.
+
+**170.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O próprio título 『御垂示録』 é significativo: 「垂示」 é "instrução descendente", e a série se
+
+> **Depois**
+>
+> O próprio título Gosuiji-roku é significativo: 「垂示」 é "instrução descendente", e a série se
+
+**171.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Kenkyū-kai; 「農林省自然農法研究会趣意書」, 『栄光』nº 256, 14 de abril de 1954 ·
+
+> **Depois**
+>
+> Kenkyū-kai; 「農林省自然農法研究会趣意書」, Eikōnº 256, 14 de abril de 1954 ·
+
+**172.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![『栄光』256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko256_norinsyo.jpg)
+
+> **Depois**
+>
+> ![Eikō256号, 14 de abril de 1954 — o número em que se anuncia a criação do grupo de estudo de Agricultura Natural dentro do Ministério da Agricultura. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko256_norinsyo.jpg)
+
+**173.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> jurídica está no art. 3.º do Regulamento e num comentário de 『地上天国』, nº 50, e antecipa o
+
+> **Depois**
+>
+> jurídica está no art. 3.º do Regulamento e num comentário de Tijotengoku, nº 50, e antecipa o
+
+**174.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> A doutrina não começou aí. 『信仰雑話』 (Conversas sobre a Fé), publicada um ano
+
+> **Depois**
+>
+> A doutrina não começou aí. *Conversas sobre a fé*, publicada um ano
+
+**175.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> distinção importa para não se citar uma pelo que a outra diz. 『霊界叢談』
+
+> **Depois**
+>
+> distinção importa para não se citar uma pelo que a outra diz. *Conversas sobre o mundo espiritual*
+
+**176.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 1950**, publicada em 『地上天国』nº 17, 15 de outubro de 1950. É o registro mais
+
+> **Depois**
+>
+> 1950**, publicada em Tijotengokunº 17, 15 de outubro de 1950. É o registro mais
+
+**177.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> O mesmo esquema reaparece, com mais nomes, em 『栄光』nº 177, 8 de outubro de 1952,
+
+> **Depois**
+>
+> O mesmo esquema reaparece, com mais nomes, em Eikōnº 177, 8 de outubro de 1952,
+
+**178.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> publicado em 『浄霊と医学との比較』, no qual a autora descreve sua rotina antes de
+
+> **Depois**
+>
+> publicado em *O Johrei comparado à medicina*, no qual a autora descreve sua rotina antes de
+
+**179.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> publicada em 『栄光』nº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
+
+> **Depois**
+>
+> publicada em Eikōnº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
+
+**180.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Aqui a documentação é precisa, e a fonte é um questionário: 『御光話録』(perguntas e
+
+> **Depois**
+>
+> Aqui a documentação é precisa, e a fonte é um questionário: Gokōwa-roku(perguntas e
+
+**181.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Um relato de 『栄光』nº 96, 21 de março de 1951, mostra o ministro instruindo a família:
+
+> **Depois**
+>
+> Um relato de Eikōnº 96, 21 de março de 1951, mostra o ministro instruindo a família:
+
+**182.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> O Regulamento da pessoa jurídica religiosa, publicado em 『栄光』nº 125, 10 de
+
+> **Depois**
+>
+> O Regulamento da pessoa jurídica religiosa, publicado em Eikōnº 125, 10 de
+
+**183.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 1951, publicado em 『栄光』nº 94, 7 de março de 1951, assinado pelo próprio
+
+> **Depois**
+>
+> 1951, publicado em Eikōnº 94, 7 de março de 1951, assinado pelo próprio
+
+**184.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 『救世』nº 63, 20 de maio de 1950, sob o título 「家庭菜園と無肥料栽培」 — **"A horta
+
+> **Depois**
+>
+> Kyūseinº 63, 20 de maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* — **"A horta
+
+**185.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> dada em 『御垂示録』nº 15, 1º de novembro de 1952, a um fiel que descrevia o
+
+> **Depois**
+>
+> dada em Gosuiji-rokunº 15, 1º de novembro de 1952, a um fiel que descrevia o
+
+**186.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> ![『御垂示録』nº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-rokunº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
+
+**187.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> detalhada: o relato de **Inoue Motokichi**, secretário e editor de 『栄光』 que o
+
+> **Depois**
+>
+> detalhada: o relato de **Inoue Motokichi**, secretário e editor de Eikō que o
+
+**188.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> publicado na edição extra de 『光』 de 30 de maio de 1949, sob o título
+
+> **Depois**
+>
+> publicado na edição extra de Hikari de 30 de maio de 1949, sob o título
+
+**189.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 「自観大先生の御日常」. É
+
+> **Depois**
+>
+> *O dia a dia do grande mestre Jikan*. É
+
+**190.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> ![「自観大先生の御日常」 — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/jikan02_rotina.jpg)
+
+> **Depois**
+>
+> ![*O dia a dia do grande mestre Jikan* — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/jikan02_rotina.jpg)
+
+**191.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> de janeiro de 1953 sob o título 「注意」. O aviso trata dos valores das peças que ele
+
+> **Depois**
+>
+> de janeiro de 1953 sob o título *Aviso*. O aviso trata dos valores das peças que ele
+
+**192.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> ![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+> **Depois**
+>
+> ![Eikō191号, 14 de janeiro de 1953 — o aviso *Aviso*, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+**193.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> transmite é o comunicado do presidente Ōkusa Naoyoshi, publicado em 『栄光』:
+
+> **Depois**
+>
+> transmite é o comunicado do presidente Ōkusa Naoyoshi, publicado em Eikō:
+
+**194.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> documentada no art. 3º do regulamento de 1951 e comentada em 『地上天国』nº 50.
+
+> **Depois**
+>
+> documentada no art. 3º do regulamento de 1951 e comentada em Tijotengokunº 50.
+
+**195.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ![『御垂示録』29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-roku29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+**196.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> abundantes, porque saíam impressas em 『栄光』 e 『地上天国』. O instrumento real
+
+> **Depois**
+>
+> abundantes, porque saíam impressas em Eikō e Tijotengoku. O instrumento real
+
+**197.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> aviso 「注意」, publicado na mesma 『栄光』nº 191, começa exatamente por
+
+> **Depois**
+>
+> aviso *Aviso*, publicado na mesma Eikōnº 191, começa exatamente por
+
+**198.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> (capítulo 20). E em 1953 o princípio é formalizado num **aviso** publicado em 『栄光』:
+
+> **Depois**
+>
+> (capítulo 20). E em 1953 o princípio é formalizado num **aviso** publicado em Eikō:
+
+**199.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ata de uma reunião de difusão de 1953, publicada no mesmo número de 『栄光』,
+
+> **Depois**
+>
+> ata de uma reunião de difusão de 1953, publicada no mesmo número de Eikō,
+
+**200.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ![『栄光』191号, 14 de janeiro de 1953 — o aviso 「注意」, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+> **Depois**
+>
+> ![Eikō191号, 14 de janeiro de 1953 — o aviso *Aviso*, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+**201.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> relato em primeira pessoa, publicado em outubro daquele ano sob o título 『法難手記』
+
+> **Depois**
+>
+> relato em primeira pessoa, publicado em outubro daquele ano sob o título Hōnan Shuki
+
+**202.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> grafias: **Inoue Motokichi**, editor de 『栄光』 preso em 8 de maio de 1950, e
+
+> **Depois**
+>
+> grafias: **Inoue Motokichi**, editor de Eikō preso em 8 de maio de 1950, e
+
+**203.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> tal como aparece em 『法難手記』.
+
+> **Depois**
+>
+> tal como aparece em Hōnan Shuki.
+
+**204.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ![『法難手記』, 30 de outubro de 1950 — capa do caderno. O capítulo 「発端」, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
+
+> **Depois**
+>
+> ![Hōnan Shuki, 30 de outubro de 1950 — capa do caderno. O capítulo *O começo*, com o relato da busca domiciliar de 8 de maio de 1950, abre o volume. [Fac-símile: capa do número.](facsimiles/honan_shuki_hattan.jpg)
+
+**205.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> mesmo 『法難手記』, Meishu-Sama reconhece a responsabilidade administrativa:
+
+> **Depois**
+>
+> mesmo Hōnan Shuki, Meishu-Sama reconhece a responsabilidade administrativa:
+
+**206.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> **Segunda — o editorial do 『地上天国』 de 25 de fevereiro de 1951**, escrito no
+
+> **Depois**
+>
+> **Segunda — o editorial do Tijotengoku de 25 de fevereiro de 1951**, escrito no
+
+**207.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> outubro de 1949, o 『光』 responde a duas reportagens do *Yomiuri* e afirma que
+
+> **Depois**
+>
+> outubro de 1949, o Hikari responde a duas reportagens do *Yomiuri* e afirma que
+
+**208.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> 「講話」, a 「教長様お導き集」, a 「略歴」 e os artigos assinados em 『神の光』),
+
+> **Depois**
+>
+> 「講話」, a 「教長様お導き集」, a 「略歴」 e os artigos assinados em Kami no Hikari),
+
+**209.** *docs/volume_novo/07_grade1951.md*
+
+> **Antes**
+>
+> presidente Ōkusa Naoyoshi, publicado em 『栄光』:
+
+> **Depois**
+>
+> presidente Ōkusa Naoyoshi, publicado em Eikō:
+
+**210.** *docs/volume_novo/12b_ofertas_gratidao.md*
+
+> **Antes**
+>
+> intercede mora numa casa, e não vai viver comendo névoa» (『御光話録』nº 15, 20 de dezembro de
+
+> **Depois**
+>
+> intercede mora numa casa, e não vai viver comendo névoa» (Gokōwa-rokunº 15, 20 de dezembro de
+
+**211.** *docs/volume_novo/22_agricultura.md*
+
+> **Antes**
+>
+> O texto central de Meishu-Sama sobre o tema foi publicado em 『救世』nº 63, 20 de
+
+> **Depois**
+>
+> O texto central de Meishu-Sama sobre o tema foi publicado em Kyūseinº 63, 20 de
+
+**212.** *docs/volume_novo/22_agricultura.md*
+
+> **Antes**
+>
+> maio de 1950, sob o título 「家庭菜園と無肥料栽培」 («A horta doméstica e o cultivo sem
+
+> **Depois**
+>
+> maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* («A horta doméstica e o cultivo sem
+
+**213.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Publicação:** 『栄光』nº 125, 10 de outubro de 1951.
+
+> **Depois**
+>
+> **Publicação:** Eikōnº 125, 10 de outubro de 1951.
+
+**214.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> ## 38. Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
+
+> **Depois**
+>
+> ## 38. Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953)
+
+**215.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Documento:** 「注意」 (*Chūi*, "Aviso").
+
+> **Depois**
+>
+> **Documento:** *Aviso* (*Chūi*, "Aviso").
+
+**216.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Publicação:** 『栄光』nº 191, 14 de janeiro de 1953.
+
+> **Depois**
+>
+> **Publicação:** Eikōnº 191, 14 de janeiro de 1953.
+
+**217.** *docs/volume_novo/44_anexo_grade_1948.md*
+
+> **Antes**
+>
+> **Publicação:** 『御光話録』nº 2, 8 de janeiro de 1949.
+
+> **Depois**
+>
+> **Publicação:** Gokōwa-rokunº 2, 8 de janeiro de 1949.
+
+**218.** *docs/volume_novo/45_anexo_censo_1950.md*
+
+> **Antes**
+>
+> (outubro de 1950)", publicado no folheto 「問題の世界救世教とは何か」 ("O que é,
+
+> **Depois**
+>
+> (outubro de 1950)", publicado no folheto *Que é, afinal, a Igreja Messiânica Mundial?* ("O que é,
+
+**219.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> **Documento:** 「世界救世教の機構整備について」 (*Sekai Kyūseikyō no Kikō Seibi ni
+
+> **Depois**
+>
+> **Documento:** *Sobre a organização da estrutura da Igreja Messiânica Mundial* (*Sekai Kyūseikyō no Kikō Seibi ni
+
+**220.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> **Publicação:** 『栄光』nº 94, 7 de março de 1951.
+
+> **Depois**
+>
+> **Publicação:** Eikōnº 94, 7 de março de 1951.
+
+**221.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 「農林省自然農法研究会趣意書」, Eikōnº 256, 14 de abril de 1954 ·
+
+> **Depois**
+>
+> *Carta de princípios do Grupo de Estudo de Agricultura Natural do Ministério da Agricultura*, Eikō nº 256, 14 de abril de 1954 ·
+
+**222.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![Eikō256号, 14 de abril de 1954
+
+> **Depois**
+>
+> ![Eikō nº 256, 14 de abril de 1954
+
+**223.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> «Okada-sensei» soaria mal, por haver muitos Okada no mundo (Gosuiji-rokunº 2, 10 de
+
+> **Depois**
+>
+> «Okada-sensei» soaria mal, por haver muitos Okada no mundo (Gosuiji-roku nº 2, 10 de
+
+**224.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![Gosuiji-roku29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-roku 2 9号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite prático de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+**225.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![Eikō289号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
+
+> **Depois**
+>
+> ![Eikō 2 8 9号, 1º de janeiro de 1955, primeira página — as palavras de Meishu-Sama na entronização no Palácio de Cristal (水晶殿御遷座), de 11/12/1954. [Fac-símile: primeira página do número — o trecho foi localizado nela por OCR.]](facsimiles/eiko289_suishinden.jpg)
+
+**226.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O Regulamento da pessoa jurídica religiosa publicado em Eikōnº 125, de 10 de outubro de
+
+> **Depois**
+>
+> O Regulamento da pessoa jurídica religiosa publicado em Eikō nº 125, de 10 de outubro de
+
+**227.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> formal documentada no art. 3º do regulamento e no comentário de Tijotengokunº 50.
+
+> **Depois**
+>
+> formal documentada no art. 3º do regulamento e no comentário de Tijotengoku nº 50.
+
+**228.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> **terceira reunião periódica de difusão** — registrada em Eikōnº 195, de 11 de fevereiro
+
+> **Depois**
+>
+> **terceira reunião periódica de difusão** — registrada em Eikō nº 195, de 11 de fevereiro
+
+**229.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> ![Eikō195号, 11 de fevereiro de 1953 — o número que traz a ata da terceira reunião periódica de difusão, com as regras de duração e de conduta do Kyoshu. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko195_ata_kyoshu.jpg)
+
+> **Depois**
+>
+> ![Eikō 1 9 5号, 11 de fevereiro de 1953 — o número que traz a ata da terceira reunião periódica de difusão, com as regras de duração e de conduta do Kyoshu. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/eiko195_ata_kyoshu.jpg)
+
+**230.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 1951 (Mioshie-shūnº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
+
+> **Depois**
+>
+> 1951 (Mioshie-shū nº 1, 20 de setembro de 1951 · `search1/situmon/m260818.html`).
+
+**231.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> Nōhō Fukyū-kai; folheto inserido em 『革命的増産の自然農法解説』, 5 de maio de 1953 ·
+
+> **Depois**
+>
+> Nōhō Fukyū-kai; folheto inserido em *A Agricultura Natural da produção revolucionária*, 5 de maio de 1953 ·
+
+**232.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 1950**, publicada em Tijotengokunº 17, 15 de outubro de 1950. É o registro mais
+
+> **Depois**
+>
+> 1950**, publicada em Tijotengoku nº 17, 15 de outubro de 1950. É o registro mais
+
+**233.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> O mesmo esquema reaparece, com mais nomes, em Eikōnº 177, 8 de outubro de 1952,
+
+> **Depois**
+>
+> O mesmo esquema reaparece, com mais nomes, em Eikō nº 177, 8 de outubro de 1952,
+
+**234.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> publicada em Eikōnº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
+
+> **Depois**
+>
+> publicada em Eikō nº 277: aberto o culto, **oito oficiantes** tomaram assento diante da
+
+**235.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Um relato de Eikōnº 96, 21 de março de 1951, mostra o ministro instruindo a família:
+
+> **Depois**
+>
+> Um relato de Eikō nº 96, 21 de março de 1951, mostra o ministro instruindo a família:
+
+**236.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> O Regulamento da pessoa jurídica religiosa, publicado em Eikōnº 125, 10 de
+
+> **Depois**
+>
+> O Regulamento da pessoa jurídica religiosa, publicado em Eikō nº 125, 10 de
+
+**237.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> 1951, publicado em Eikōnº 94, 7 de março de 1951, assinado pelo próprio
+
+> **Depois**
+>
+> 1951, publicado em Eikō nº 94, 7 de março de 1951, assinado pelo próprio
+
+**238.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> Kyūseinº 63, 20 de maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* — **"A horta
+
+> **Depois**
+>
+> Kyūsei nº 63, 20 de maio de 1950, sob o título *A horta doméstica e o cultivo sem adubo* — **"A horta
+
+**239.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> dada em Gosuiji-rokunº 15, 1º de novembro de 1952, a um fiel que descrevia o
+
+> **Depois**
+>
+> dada em Gosuiji-roku nº 15, 1º de novembro de 1952, a um fiel que descrevia o
+
+**240.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> ![Gosuiji-rokunº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-roku nº 15, 1º de novembro de 1952 — o número que traz a resposta técnica sobre como ministrar Johrei, com a doutrina dos pontos vitais. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/suiji15_johrei.jpg)
+
+**241.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> ![Eikō191号, 14 de janeiro de 1953 — o aviso *Aviso*, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+> **Depois**
+>
+> ![Eikō 1 9 1号, 14 de janeiro de 1953 — o aviso *Aviso*, em que Meishu-Sama fixa o valor das peças que escrevia e qualifica como furto a cobrança acima dele. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+**242.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> documentada no art. 3º do regulamento de 1951 e comentada em Tijotengokunº 50.
+
+> **Depois**
+>
+> documentada no art. 3º do regulamento de 1951 e comentada em Tijotengoku nº 50.
+
+**243.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ![Gosuiji-roku29号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+> **Depois**
+>
+> ![Gosuiji-roku 2 9号, 15 de março de 1954, página 20 — a resposta de que se deduz o limite de trinta filiais por Igreja Média. [Página confirmada por OCR do fac-símile.]](facsimiles/suiji29_limite_trinta.jpg)
+
+**244.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> aviso *Aviso*, publicado na mesma Eikōnº 191, começa exatamente por
+
+> **Depois**
+>
+> aviso *Aviso*, publicado na mesma Eikō nº 191, começa exatamente por
+
+**245.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> ![Eikō191号, 14 de janeiro de 1953 — o aviso *Aviso*, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+> **Depois**
+>
+> ![Eikō 1 9 1号, 14 de janeiro de 1953 — o aviso *Aviso*, que fixa o valor do Ohikari e das demais peças escritas por Meishu-Sama. [Página confirmada por OCR do fac-símile.]](facsimiles/eiko191_aviso_valores.jpg)
+
+**246.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> voltaria ao tema num artigo inteiro, 『本教の収入に就て』, cujo argumento é
+
+> **Depois**
+>
+> voltaria ao tema num artigo inteiro, *Sobre a receita desta religião*, cujo argumento é
+
+**247.** *docs/volume_novo/12b_ofertas_gratidao.md*
+
+> **Antes**
+>
+> intercede mora numa casa, e não vai viver comendo névoa» (Gokōwa-rokunº 15, 20 de dezembro de
+
+> **Depois**
+>
+> intercede mora numa casa, e não vai viver comendo névoa» (Gokōwa-roku nº 15, 20 de dezembro de
+
+**248.** *docs/volume_novo/22_agricultura.md*
+
+> **Antes**
+>
+> O texto central de Meishu-Sama sobre o tema foi publicado em Kyūseinº 63, 20 de
+
+> **Depois**
+>
+> O texto central de Meishu-Sama sobre o tema foi publicado em Kyūsei nº 63, 20 de
+
+**249.** *docs/volume_novo/40_anexo_programa_1947.md*
+
+> **Antes**
+>
+> **Documento:** Programa do Curso da Igreja Kannon do Japão (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
+
+> **Depois**
+>
+> **Documento:** Programa do Curso da Igreja Kannon do Japão (*, Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
+
+**250.** *docs/volume_novo/41_anexo_estatuto_1946.md*
+
+> **Antes**
+>
+> **Documento:** estatuto e propósito da Associação de Difusão da Terapêutica de Purificação (*Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
+
+> **Depois**
+>
+> **Documento:** estatuto e propósito da Associação de Difusão da Terapêutica de Purificação (*, Nihon Jōka Ryōhō Fukyū-kai Shushi oyobi
+
+**251.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
+
+> **Depois**
+>
+> **Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*, Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
+
+**252.** *docs/volume_novo/42_anexo_regulamento_1951.md*
+
+> **Antes**
+>
+> **Publicação:** Eikōnº 125, 10 de outubro de 1951.
+
+> **Depois**
+>
+> **Publicação:** Eikō nº 125, 10 de outubro de 1951.
+
+**253.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Documento:** *Aviso* (*Chūi*, "Aviso").
+
+> **Depois**
+>
+> **Documento:** *, Aviso* (*, Chūi*, "Aviso").
+
+**254.** *docs/volume_novo/43_anexo_aviso_1953.md*
+
+> **Antes**
+>
+> **Publicação:** Eikōnº 191, 14 de janeiro de 1953.
+
+> **Depois**
+>
+> **Publicação:** Eikō nº 191, 14 de janeiro de 1953.
+
+**255.** *docs/volume_novo/44_anexo_grade_1948.md*
+
+> **Antes**
+>
+> **Publicação:** Gokōwa-rokunº 2, 8 de janeiro de 1949.
+
+> **Depois**
+>
+> **Publicação:** Gokōwa-roku nº 2, 8 de janeiro de 1949.
+
+**256.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> **Documento:** *Sobre a organização da estrutura da Igreja Messiânica Mundial* (*Sekai Kyūseikyō no Kikō Seibi ni
+
+> **Depois**
+>
+> **Documento:** *, Sobre a organização da estrutura da Igreja Messiânica Mundial* (*, Sekai Kyūseikyō no Kikō Seibi ni
+
+**257.** *docs/volume_novo/46_anexo_reforma_1951.md*
+
+> **Antes**
+>
+> **Publicação:** Eikōnº 94, 7 de março de 1951.
+
+> **Depois**
+>
+> **Publicação:** Eikō nº 94, 7 de março de 1951.
+
+**258.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — 「浄霊と医学との比較」 · `search1/English/ejorei12.html`
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina* · `search1/English/ejorei12.html`
+
+**259.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — 「浄霊と医学との比較」
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina*
+
 
 ### Fora do volume — Nota de método (III §32)
 
@@ -5039,6 +7944,73 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 >
 > | 五六七大教会 | Miroku daikyōkai | Igreja Grande Miroku |
 
+**12.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 『世界救世教』 | Sekai Kyūseikyō | *Igreja Messiânica Mundial* | publicação institucional |
+
+> **Depois**
+>
+> | 『世界救世教』 | Sekai Kyūseikyō | *Igreja Messiânica Mundial* | publicação institucional |
+> | 『御光話録（補）』 | Gokōwa-roku (suplemento) | *Registro das Palavras de Luz*, suplemento |
+> | 『病原と浄霊の原理』 | Byōgen to jōrei no genri | *O princípio da doença e do Johrei* |
+> | 『信仰雑話』 | Shinkō zatsuwa | *Conversas sobre a fé* |
+> | 『霊界叢談』 | Reikai sōdan | *Conversas sobre o mundo espiritual* |
+> | 『革命的増産の自然農法解説』 | Kakumei-teki zōsan no shizen nōhō kaisetsu | *A Agricultura Natural da produção revolucionária* |
+> | 『日本観音教団講習要項』 | Nippon Kannon Kyōdan kōshū yōkō | *Programa do Curso da Igreja Kannon do Japão* |
+
+**13.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> | 一人対一人では駄目だ | Hitori tai hitori de wa dame da | "Um a um não serve" |
+
+> **Depois**
+>
+> | 大いに神書を読むべし | Ō ni shinsho o yomu beshi | "É preciso ler muito os Escritos Divinos" |
+> | 五六七世界の建設 | Miroku sekai no kensetsu | "A construção do mundo de Miroku" |
+> | 御説教 | Go-sekkyō | "Sermão" |
+> | 巻頭言 | Kantōgen | "Palavras de abertura" |
+> | 編集後記 | Henshū kōki | "Nota da redação" |
+> | 真理を説く | Shinri o toku | "Ensinar a verdade" |
+> | 真理と非真理 | Shinri to hi-shinri | "Verdade e não-verdade" |
+> | 私は真理を書く | Watashi wa shinri o kaku | "Eu escrevo a verdade" |
+> | 私の文章とその他 | Watashi no bunshō to sono ta | "Os meus escritos e outras coisas" |
+> | 浄霊法変る | Jōrei-hō kawaru | "Muda o método de Johrei" |
+> | 霊界の不思議 | Reikai no fushigi | "As maravilhas do mundo espiritual" |
+> | 妙智の鍵 | Myōchi no kagi | "A chave da sabedoria sutil" |
+> | 明主様御言葉 水晶殿御遷座 | Meishu-Sama go-kotoba: Suishōden go-senza | "Palavras de Meishu-Sama: a transferência do Palácio de Cristal" |
+> | 先生 | Sensei | "Sensei" — forma de tratamento do mestre |
+> | 自観大先生との対談 | Jikan daisensei to no taidan | "Conversa com o grande mestre Jikan" |
+> | 秋季大祭お導き | Shūki taisai o-michibiki | "Orientação para o Grande Culto de Outono" |
+> | ご存じですか | Go-zonji desu ka | "Sabia disto?" |
+> | 生魚、洗米、塩などの正式のお供えの仕方 | Nama-zakana, senmai, shio nado no seishiki na o-sonae no shikata | "O modo formal de oferecer peixe cru, arroz lavado e sal" |
+> | 浄化のおかげ | Jōka no okage | "Graças à purificação" |
+> | 忘れかけた信仰に鞭うたれて | Wasurekaketa shinkō ni muchi utarete | "Açoitado por uma fé que quase se esquecera" |
+> | 死を覚悟した難病　わずか半年健康体へ | Shi o kakugo shita nanbyō: wazuka hantoshi kenkō-tai e | "Doença grave com a morte por certa: corpo são em meio ano" |
+> | 一人対一人では駄目だ | Hitori tai hitori de wa dame da | "Um a um não serve" |
+
+**14.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> tabelas com as entradas novas no fim e uma glosa automática na célula
+
+> **Depois**
+>
+> tabelas ordenadas pelo romanizado (3 blocos) e glosa automática removida
+
+**15.** *docs/volume_novo/29b_titulos.md*
+
+> **Antes**
+>
+> entradas novas sem a coluna «Natureza»
+
+> **Depois**
+>
+> coluna «Natureza» preenchida nas 6 entradas novas
+
 
 ### Capítulo 32 — Glossário
 
@@ -5491,7 +8463,7 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > A Igreja Messiânica Mundial foi fundada em fevereiro do ano passado;
 
 
-### Capítulo 39 — Anexo G — Aviso 「注意」 sobre o valor dos escritos (1953)
+### Capítulo 39 — Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953)
 
 **1.** *docs/volume_novo/43_anexo_aviso_1953.md*
 

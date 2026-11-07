@@ -20,7 +20,7 @@ codificada — oferendas de mar e montanha, dispostas diante da Imagem da Luz Di
 *"**Simbolizado pelo fruto da ameixeira entre as oferendas, o 'flor dispersa,
 fruto realizado': também nos fiéis que participaram amadurecerão, no tempo
 devido, frutos abundantes."*
-— 「大祭式典に参加して」『栄光』nº 72, 4 de outubro de 1950
+— *Participando da cerimônia do Grande Culto*, Eikō nº 72, 4 de outubro de 1950
 
 Na interpretação dos próprios contemporâneos, o rito tinha significado que o
 distinguia dos cultos menores: "a participação mensal do fiel e a participação
@@ -50,7 +50,7 @@ o culto mensal:
 ocasião, o dirigente nos disse que **era melhor fazer o culto mensal**; mas não
 pensamos nisso com profundidade e o fomos adiando, e assim ficou por cerca de
 meio ano."*
-— 「光明如来様御奉斎で盗難免る」『栄光』nº 70, 20 de setembro de 1950
+— *Livre de um roubo pela entronização da Komyo-Nyorai*, Eikō nº 70, 20 de setembro de 1950
 
 O mesmo relato acrescenta um dado que interessa ao capítulo 8: as oferendas
 diante da Imagem incluíam arroz lavado. Diz a autora que os ratos roíam flores e
@@ -95,7 +95,7 @@ algo que se deve saber. Em todas as coisas divinas e budistas, antecipar é bom;
 atrasar é absolutamente inadmissível. … Se por conveniência do líder da
 Associação se atrasa uma coisa de Deus, o líder da Associação fica acima de
 Deus — é uma descortesia imperdoável."*
-— 『御光話録』nº 14, 20 de novembro de 1949
+— Gokōwa-roku nº 14, 20 de novembro de 1949
 
 Vale aqui uma nota sobre os **cargos litúrgicos**, porque ela afeta a leitura de
 todo o volume. A descrição do Grande Culto de Outono de 1950 nomeia funções que **não
@@ -116,9 +116,9 @@ ainda não possuía a Imagem:
 
 *"Em nossa casa só eu me converti e, por diversas circunstâncias, ainda não
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
-saudação matinal e vesperal diante da caligrafia 「日光」 (Nikkō, "Luz do Sol")**,
+saudação matinal e vesperal diante da caligrafia Nikkō ("Luz do Sol")**,
 e ali sozinha aquietava o coração perturbado."*
-— 「浄霊と医学との比較」
+— *O Johrei comparado à medicina*
 
 A caligrafia em questão traz os dois caracteres que se leem *nikkō*, «luz do sol», e não se
 confunde com as três inscrições do Ohikari — Kō, Kōmyō e Daikōmyō —, tratadas no §3.3. Era
@@ -135,4 +135,4 @@ a enunciar como dever da casa nova a instalação do oratório:
 > 「**新家庭は必ず仏壇を設けねば駄目なんです。**」
 
 *"**O lar novo tem necessariamente de estabelecer o oratório dos antepassados.**"*
-— 「質問応答 御光話」, 8 de fevereiro de 1948
+— *Perguntas e respostas: palavras de luz*, 8 de fevereiro de 1948
