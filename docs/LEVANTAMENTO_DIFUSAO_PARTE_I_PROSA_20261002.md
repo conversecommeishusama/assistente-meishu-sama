@@ -38,7 +38,7 @@ publicação, este texto também declara apenas mês e ano — não se inventou 
 ## 1. A cronologia da institucionalização (1934–1955)
 
 A história institucional do movimento começa em outubro de 1934, quando Meishu-Sama
-inicia o que chama de **movimento Kannon**, sob o nome de **Associação Kannon do Grande
+inicia o que chama de **movimento Kannon**sob o nome de **Associação Kannon do Grande
 Japão** (Dai-Nippon Kannon-kai), a partir do Ōjin-dō. O que ele próprio dirá depois sobre
 esse começo é revelador do modo como entendia a relação entre carisma e instituição:
 
@@ -79,7 +79,7 @@ religiosa:
 *"Pouco depois veio o fim da guerra e, com a liberdade de crença, em agosto do vigésimo
 segundo ano [1947] obtivemos a personalidade jurídica e finalmente pudemos andar de
 cabeça erguida."*
-— *História da minha luta com Satanás*, `search1/wa/watasi05.html`
+— *História da minha luta com Satanás*, texto inédito, escrito em 1952 · `search1/wa/watasi05.html`
 
 Em 11 de novembro de 1947 celebra-se a cerimônia de fundação da **Igreja Kannon do Japão** (Nihon Kannon Kyōdan)
 (`search1/kouwa/s221199.html`). No ano seguinte há a cisão interna que leva à
@@ -869,7 +869,7 @@ O princípio reaparece, com o mesmo rigor, na distribuição dos amuletos:
 > 【明主様】**師補でもいいですよ。**ただ、一般の人はいけませんがね……」
 
 *"— [Pergunta] Qualquer pessoa serve? — [Meishu-Sama] Sim, serve. **O Ohikari
-'Dai-Kōmyō' é só para portadores de qualificação.** — [Pergunta] O Ohikari 'Dai-Kōmyō'
+'Daikōmyō' é só para portadores de qualificação.** — [Pergunta] O Ohikari 'Daikōmyō'
 pode ser dado também a um Assistente de Ministro? — [Meishu-Sama] **Assistente também
 pode.** Apenas pessoa comum, não…"*
 
@@ -887,7 +887,7 @@ pescoço; a segunda é a da **Imagem da Luz Divina**, o pergaminho que se entron
 tokonoma. Elas não são o mesmo objeto, não se recebem no mesmo ato e não seguem a mesma
 ordem.
 
-**Primeira escada — o Ohikari.** Há três graus, e a ordem é fixa: primeiro o **Hikari**, que é *o* Ohikari
+**Primeira escada — o Ohikari.** Há três graus, e a ordem é fixa: primeiro o **Hikari** que é *o* Ohikari
 propriamente dito; depois o **Kōmyō**; por último o **Daikōmyō**. A sequência é a que Meishu-Sama enuncia ao descrever as três
 caligrafias, e é a que os relatos confirmam: ninguém recebe o Kōmyō antes do Hikari.
 
@@ -905,7 +905,7 @@ caligrafias, e é a que os relatos confirmam: ninguém recebe o Kōmyō antes do
 | 1 | **御屏風観音 (Byōbu Kannon)** — a Kannon do biombo | o fiel, quando a fé amadurece |
 | 2 | **Imagem da Luz Divina 「Komyo-Nyorai」** | idem — **não** no ato da conversão |
 | 3 | **Imagem da Luz Divina 「Daikōmyō Nyorai」** | membro comum, com critério de casa |
-| — | **Imagem 「Daikōmyō Nyorai」 nova**, escrita à mão por Meishu-Sama | **apenas Ministro Responsável** |
+| — | **Imagem 「Daikōmyō Nyorai」 nova**escrita à mão por Meishu-Sama | **apenas Ministro Responsável** |
 
 A última linha da tabela tem um critério explícito de adequação à casa, que é
 simultaneamente doutrinário e prático:
@@ -927,7 +927,7 @@ continente:
 
 *"Não se deve ter desproporção… num tokonoma pequeno não se deve pôr um pergaminho
 grande. Afinal é a 'razão da correspondência'; é preciso que haja correspondência."*
-— *Perguntas e respostas: palavras de luz*, `search1/situmon/m2411.html`
+— *Perguntas e respostas: palavras de luz*, Gokōwa-roku nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) · `search1/situmon/m2411.html`
 
 O ponto decisivo é que **a ordem dos degraus é doutrina pastoral, não logística**. Não se
 trata de racionar objetos escassos, mas de respeitar o ritmo de amadurecimento do fiel:
@@ -1468,7 +1468,7 @@ administrativo:
 *"Como uma de suas manifestações, exibe hoje poder sobre-humano. Como exemplo: **por meio de
 apenas três dias de Kyoshu, concede às pessoas a capacidade de manifestar milagres
 idênticos aos de Cristo.** Seus discípulos já somam centenas de milhares…"*
-— *As novas religiões e a idade do mundo* · `search1/English/esinsyu2.html`
+— *As novas religiões e a idade do mundo*, Eikō nº 244, 20 de janeiro de 1954 · `search1/shi/sinsyu2.html`
 
 O mesmo argumento reaparece em dois textos escritos em 1953 para a *Revolução da
 Medicina*: num caso, "mediante apenas **três dias de Kyoshu**, aquele pai passou a curar
@@ -1817,7 +1817,7 @@ mês eram **Audiência Especial**, e havia ainda a visita a cada dez dias:
 > そこのところは合理的に考えさせていただいております。」
 
 *"— [Pergunta] Como o primeiro dia é a **Audiência Especial** e há também a **visita
-a cada dez dias**, esses pontos eu os tenho considerado racionalmente."*
+a cada dez dias**esses pontos eu os tenho considerado racionalmente."*
 — Gosuiji-roku nº 29, 15 de março de 1954 · `search1/situmon/m290301.html`
 
 A frequência efetiva, nos relatos, era alta — "desde minha conversão já recebi cinco
@@ -2002,7 +2002,7 @@ E as três categorias de beleza — beleza natural, beleza construída e as arte
 *"Como sempre digo, o Paraíso Terrestre é o mundo da arte; portanto, além da beleza
 natural e da beleza artificial que descrevi, sem as artes — música, canto e dança — que
 alegram os ouvidos e os olhos, não se pode chamá-lo de perfeito."*
-— *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+— *Até que o Paraíso Terrestre se realize**, 21 de setembro de 1950 ·
 `search1/ti/tijote03.html`
 
 ### 9.3 A inauguração como operação de massa
@@ -2027,7 +2027,7 @@ para o jardim, mas ainda assim não parecia suficiente, e não houve como estend
 semana. Além dos cultos, como atrações, ao longo dos sete dias, variando a cada dia as
 pessoas e o programa, convidaram-se artistas de primeira linha, para que se desfrutasse
 amplamente do clima do Paraíso."*
-— *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+— *Até que o Paraíso Terrestre se realize**, 21 de setembro de 1950 ·
 `search1/ti/tijote03.html`
 
 E um fato que Meishu-Sama usava como demonstração pública, e que ilustra o mecanismo de
@@ -2045,7 +2045,7 @@ experiência, numa obra desse porte é natural que haja algumas mortes e muitos 
 finalmente perceberam que não era obra humana, creram na existência de Deus, e parece que
 reconheceram a administração divina que eu conduzo: hoje, todos, sem exceção, se
 converteram."*
-— *Até que o Paraíso Terrestre se realize*, *, Até que o Paraíso Terrestre se realize*, 21 de setembro de 1950 ·
+— *Até que o Paraíso Terrestre se realize**, 21 de setembro de 1950 ·
 `search1/ti/tijote03.html`
 
 O mesmo padrão se repete em Atami:
@@ -2068,7 +2068,7 @@ Paraísos eram concebidos como equipamento cultural de escala:
 
 *"**O museu, com gente chegando em fila, uma atrás da outra, não se consegue
 contemplar com calma.** […] Por isso, penso em **fazer ali uma sala de espera, um lugar
-onde duzentas ou trezentas pessoas possam sentar-se**, e regular a entrada."*
+onde duzentas ou trezentas pessoas possam sentar-se**e regular a entrada."*
 — Mioshie-shū nº 8, 20 de abril de 1952 (prédica de 16 de março de 1952) ·
 `search1/kouwa/s270316.html`
 

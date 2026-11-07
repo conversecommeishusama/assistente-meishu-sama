@@ -133,7 +133,7 @@ conhecimento — isto é, a quem transmite:
 > し**、正しい神観をもって」
 
 *"Nós, que por inspiração pudemos conhecer isso, **acautelamo-nos sempre para não
-torcer a grande vontade divina**, e com reta visão de Deus…"*
+torcer a grande vontade divina**e com reta visão de Deus…"*
 — *A construção do mundo de Miroku*, Hikari nº 18, 16 de julho de 1949
 
 Daí decorre o dever de quem ensina, formulado sem rodeios. A resposta já está nos

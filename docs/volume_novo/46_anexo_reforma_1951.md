@@ -1,6 +1,6 @@
 ## 37. Anexo F — O comunicado da reorganização de 1951
 
-**Documento:** *, Sobre a organização da estrutura da Igreja Messiânica Mundial* (*, Sekai Kyūseikyō no Kikō Seibi ni
+**Documento:** *Sobre a organização da estrutura da Igreja Messiânica Mundial* (*, Sekai Kyūseikyō no Kikō Seibi ni
 tsuite*), "Sobre a montagem da estrutura da Igreja Messiânica Mundial".
 **Autor:** Ōkusa Naoyoshi, presidente.
 

@@ -1,6 +1,6 @@
 ## 33. Anexo B — Programa do Curso da Igreja Kannon do Japão (1947)
 
-**Documento:** Programa do Curso da Igreja Kannon do Japão (*, Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
+**Documento:** Programa do Curso da Igreja Kannon do Japão (*Nihon Kannon Kyōdan Kōshū Yōkō*), "Programa do
 Curso da Igreja Kannon do Japão".
 **Data:** 1º de julho de 1947.
 
@@ -47,7 +47,7 @@ orientador;
 Igreja e deve apoiar-se nos seguintes pontos:
 
 &nbsp;&nbsp;&nbsp;&nbsp;**a.** O objeto de nossa fé é Kannon, e o
-texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*, o **Fumon-bon** ("capítulo da porta universal"). A fé
+texto em que nos baseamos é o capítulo 25.º do *Sutra Lótus*o **Fumon-bon** ("capítulo da porta universal"). A fé
 consiste em que Kannon é o criador de todos os fenômenos e a própria Luz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**b.** Kannon está sempre vivo, dentro de nós, e trabalha

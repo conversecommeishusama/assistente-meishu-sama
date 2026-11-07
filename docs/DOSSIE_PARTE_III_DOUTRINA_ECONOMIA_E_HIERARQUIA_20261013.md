@@ -188,10 +188,10 @@ dramática — já estava no papel desde o começo.
 |---|---|---|
 | **Johrei** (cura) | todos, do Centro de Ensino para cima | toda a coleção |
 | Celebrar **culto mensal** e **culto regular** em data fixa | filial, posto avançado, Igreja | `Gokōwa-roku nº 12, 21 de setembro de 1949 · search1/situmon/m240613.html` |
-| Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `*, Programa do Curso da Igreja Kannon do Japão*, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
+| Ministrar o **Kyoshu** | filial, Igreja, local do Kyoshu | `*Programa do Curso da Igreja Kannon do Japão*, 1 de julho de 1947 (Anexo B) · search1/ni/nihon07.html` |
 | Formar novos portadores de qualificação | Igreja / Igreja Média | `*Sobre a contribuição*, Kyūsei nº 57, 8 de abril de 1950 · search1/ke/kenkin.html` |
 | Distribuir o jornal | Centro de Ensino, filial | `*Ampliar o jornal Hikari é fortalecer a linha da fé*, Hikari nº 33, 29 de outubro de 1949 · search1/hi/hikari03.html` |
-| Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `*, Mesa-redonda periódica de difusão*, Tijotengoku nº 42 e ss. · search2/sanko/teirei1.html` |
+| Sediar **mesas-redondas** periódicas | Igreja Média, Igreja Grande | `*Mesa-redonda periódica de difusão*, Tijotengoku nº 42 e ss. · search2/sanko/teirei1.html` |
 | Abrigar doentes em purificação | Sede da Igreja Média | `Mioshie-shū nº 1, 20 de setembro de 1951 · search1/situmon/m260828.html` |
 | Sediar **audiência** (audiências) | Sede (Atami, Hakone, Odawara) | — (v. capítulo 18.1) |
 | Presidir os ritos sazonais em rodízio | Igreja Grande | `*Visitando o Grande Culto de Outono da Igreja Messiânica Mundial*, Tijotengoku nº 17, 15 de outubro de 1950 · search2/kikou2/sekai03.html` |
@@ -361,7 +361,7 @@ A própria direção descreve o método como duas coisas somadas:
 > 懇談**も多くなりつつ有りますから、御神示に帰一し奉る日も間近に迫りつつある
 > ようです。」
 
-*"Ultimamente, na Sede, **o Kyoshu Yōkō foi elaborado**, e os **encontros
+*"Ultimamente, na Sede, **o Kyoshu Yōkō foi elaborado**e os **encontros
 estreitos entre os dirigentes** vêm se multiplicando; parece aproximar-se o dia
 de retornar à unidade com a Revelação Divina."*
 — Sakai Takao, presidente de igreja, *Mesa-redonda de difusão*, Eikō nº 191, 14 de janeiro de
@@ -514,7 +514,7 @@ ainda não possuía a Imagem:
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
 visita matinal e vesperal diante da caligrafia 'Nikkō'**, e ali sozinha aquietava
 o coração perturbado."*
-— *O Johrei comparado à medicina* · `search1/English/ejorei12.html`
+— *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953 · `search1/shi/jorei12.html`
 
 Ao culto doméstico pertence ainda, com estatuto próprio, o **sufrágio dos
 antepassados** — rito **recorrente**,
@@ -603,7 +603,7 @@ Havia **três graus** de Ohikari, conforme a caligrafia nele traçada:
 > — 「黴菌の発生」 · `search1/English/ebaikin5.html`
 
 *"Esse Ohikari é a caligrafia que eu escrevi, e há **três espécies: Hikari, Kōmyō e
-Dai-Kōmyō**; o espírito divino do Deus Senhor (Jeová) transmite-se ao Ohikari
+Daikōmyō**; o espírito divino do Deus Senhor (Jeová) transmite-se ao Ohikari
 tendo meu corpo espiritual como intermediário, e do Ohikari irradia-se através
 da palma do fiel."*
 
@@ -738,7 +738,7 @@ falsos deuses, Meishu-Sama diz por que a venda da graça é sinal de falsidade:
 > — 「神と悪魔」, 23 de outubro de 1943 · `search1/ka/kami08.html`
 
 *"Aquilo de 'se der dinheiro, curo a doença' é **uma espécie de condição de
-troca**, uma **transação entre Deus e o homem**, é **vender a graça**, e é de uma
+troca**uma **transação entre Deus e o homem**é **vender a graça**, e é de uma
 baixeza extrema. […] O deus verdadeiro salva por **amor sem eu**,
 independentemente de recompensa ou condição vinda do homem."*
 
@@ -791,7 +791,7 @@ junto com o corpo**:
 o Ohikari posto no corpo.**"*
 
 Nenhuma Imagem coletiva recebe esse tratamento. É um indício de que o
-Ohikari não era um **objeto de sacralidade autônoma**, mas um vínculo **pessoal** — o
+Ohikari não era um **objeto de sacralidade autônoma**mas um vínculo **pessoal** — o
 que converge com o que o capítulo 4.1 registra sobre a Imagem: também ela não
 é sagrada por si, e sim por ser representante de quem a traçou.
 
@@ -812,7 +812,7 @@ e é a formulação mais direta do princípio:
 > — 『御光話録』15号, 20 de dezembro de 1949
 
 *"Antes havia quem dissesse que se devia tratar de graça; **naturalmente, Kannon não
-precisa de oferta alguma**, mas **quem intercede mora numa casa, e não vai viver
+precisa de oferta alguma**mas **quem intercede mora numa casa, e não vai viver
 comendo névoa**. […] Os ricos podem dar bastante oferta."*
 
 A estrutura da frase é decisiva. Há **dois sujeitos** e **duas economias**: a
@@ -829,7 +829,7 @@ de 1943, e é ainda mais severa:
 > — 「神と悪魔」, 23 de outubro de 1943
 
 *"Aquilo de 'se der dinheiro, curo a doença' é **uma espécie de condição de troca**,
-uma **transação entre Deus e o homem**, é **vender a graça**, e é de uma baixeza
+uma **transação entre Deus e o homem**é **vender a graça**, e é de uma baixeza
 extrema. […] O deus verdadeiro salva por **amor sem eu**, independentemente de
 recompensa ou condição vinda do homem."*
 
@@ -1250,7 +1250,7 @@ especulação, não.
 A expectativa não ficou no papel. Há na documentação o registo de uma **mina operada por uma
 igreja**: a **mina de Moriyoshi** (森吉鉱山), em Hinokinai, distrito de Senboku, província de
 Akita, sob a **Igreja Média Kōei**. Um relato de 1949 descreve a inspeção geológica do local
-por dois membros — um deles, **Ono Matsuzō**, era presidente da Kōyō-kai e **engenheiro de
+por dois membros — um deles, **Ono Matsuzō**era presidente da Kōyō-kai e **engenheiro de
 minas**, «veterano de minas» na expressão do próprio relato:
 
 > 「昭和十九年十一月二十九日、秋田県仙北郡檜木内村所在の**森吉鉱山**の地質鉱床
@@ -1261,7 +1261,7 @@ Templo Anexo de Hakone, para a **inspeção geológica e de jazidas da mina de M
 Hikinai, distrito de Senboku, província de Akita."*
 — *Milagre*, Tijotengoku nº 3, 20 de abril de 1949 · `search2/okage/ki/qkiseki7.html`
 
-Nos relatos de 1951, a mina aparece **em plena operação**, e como **obra da
+Nos relatos de 1951, a mina aparece **em plena operação**e como **obra da
 igreja**:
 
 > 「御鉱山を**光映中教会の経営**で初める光栄に浴した吾々会員は、やり通さねばの
@@ -1437,14 +1437,14 @@ próprio momento da reforma:
 > — 「巻頭言」, 『地上天国』nº 21, 25 de fevereiro de 1951 · `search2/kikou2/kanto21.html`
 
 *"Também nesta religião, como já se sabe, decidiu-se fazer **a reforma de todo o
-organismo da igreja**, e chegou-se finalmente ao dia do *risshun*, 5 de
+organismo da igreja**e chegou-se finalmente ao dia do *risshun*, 5 de
 fevereiro, para **inaugurar sob o novo organismo**. Recordando: também em 5 de
 fevereiro do ano passado, dia do *risshun*, dissolvemos a antiga Igreja Kannon
 do Japão e constituímos de novo a Igreja Messiânica Mundial — e decorreu um ano.
 **Nesse intervalo houve também a grande repressão das autoridades contra esta
 religião, e foi deveras um ano de mil vicissitudes.** … Conforme aquelas
 palavras, **também esta religião, que por algum tempo permaneceu em estado de
-recolhimento**, banhada agora pela luz da primavera…"*
+recolhimento**banhada agora pela luz da primavera…"*
 
 O texto encadeia, em três frases, exatamente a sequência que este capítulo
 propõe: **o ano da grande repressão → o recolhimento → a reforma de todo o
@@ -1505,14 +1505,14 @@ descreve o mecanismo completo, e o descreve com o nome dos lugares e a função 
 *"Ultimamente, sobretudo **em torno das províncias de Saitama e Fukushima**, fabricam-se
 **artigos fictícios e forjados** sobre o Johrei desta religião e publicam-se nos jornais
 locais; ao mesmo tempo, **movem as autoridades e fazem deter e interrogar fiéis desta
-religião**, e por esses meios arranham a reputação da igreja […] e — dizendo, **por
+religião**e por esses meios arranham a reputação da igreja […] e — dizendo, **por
 intermédio de certa pessoa, que em breve haverá contra esta religião uma grande repressão
 das autoridades** e que é preciso tomar providências — **insinuam que se devem despender
 vultosas «despesas de movimento»**. Os meios são de uma vilania espantosa."*
 
 E o artigo seguinte, de outubro, aponta o órgão que a igreja considerava o agente mais
 ativo: «a **agência de Urawa do jornal Yomiuri** parece ser o principal sujeito da
-atividade», e nomeia dois indivíduos — **Fukamachi**, em Saitama, e **Magara**, em Fukushima
+atividade», e nomeia dois indivíduos — **Fukamachi**em Saitama, e **Magara**, em Fukushima
 — como os nomes que a reportagem do jornal apresentava para transferir responsabilidade. A acusação da igreja, portanto,
 não é contra «a imprensa» em abstrato: é contra **um grupo de extorsão que usava a imprensa
 local e a ameaça de repressão policial como instrumento de cobrança**, e contra a agência
@@ -1622,11 +1622,11 @@ Do que a documentação registra, o quadro é este:
 | **arroz lavado** (洗米) | **ofertado à Imagem** — atestado em relato de 1950 | `search2/okage/ko/qkomyo19.html` |
 | **Água** | ofertada diante da caligrafia sagrada e depois usada como água espiritual | `search1/situmon/m230328.html` |
 | **Água** ao oratório | para o falecido recente, por cerca de um ano | `search1/situmon/m270801.html` |
-| **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | *, A chave da sabedoria sutil*, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
+| **生米・塩・水・果物・魚** | oferenda em caso de 龍神 (poço, água) | *A chave da sabedoria sutil*, 7 de junho de 1949 · `search1/situmon/bunkai20.html` |
 | **海山のお供物** (produtos do mar e da montanha) | nos grandes cultos | `search2/kikou2/syunki01.html` |
 | **梅の実** (fruto da ameixeira) | oferenda simbólica — sanka-kekijitsu | `search2/kikou2/taisai03.html` |
 | **お鏡餅** (bolo de arroz) | na entronização da Imagem | `search2/okage/shi/qsinkei3.html` |
-| **浄め塩** (sal de purificação) | costume, "sem significado profundo" | *, Sabia disto?* · `search1/situmon/bunkai04.html` |
+| **浄め塩** (sal de purificação) | costume, "sem significado profundo" | *Sabia disto?* · `search1/situmon/bunkai04.html` |
 
 Sobre o **sal**, a posição de Meishu-Sama é consistente em três passagens: o
 costume de purificar com sal é "hábito tradicional, sem grande significado —

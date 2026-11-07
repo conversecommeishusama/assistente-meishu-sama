@@ -50,7 +50,7 @@ E o substantivo da proposta: **só composto**.
 > たるや素晴しいのである」
 
 *"Com a minha cultura sem adubo, o que mais ajuda não é apenas **não usar
-esterco humano**, mas o fato de que **nenhum outro adubo é necessário — só
+esterco humano**mas o fato de que **nenhum outro adubo é necessário — só
 composto basta**; e, apesar disso, os resultados são esplêndidos."*
 
 Meishu-Sama enumera então seis vantagens, que são a matéria-prima da difusão:

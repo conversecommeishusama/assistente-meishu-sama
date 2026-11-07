@@ -118,7 +118,7 @@ ainda não possuía a Imagem:
 entronizamos a Imagem da Luz Divina; por isso, **em lugar da Imagem, fazia a
 saudação matinal e vesperal diante da caligrafia Nikkō ("Luz do Sol")**,
 e ali sozinha aquietava o coração perturbado."*
-— *O Johrei comparado à medicina*
+— *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953
 
 A caligrafia em questão traz os dois caracteres que se leem *nikkō*, «luz do sol», e não se
 confunde com as três inscrições do Ohikari — Kō, Kōmyō e Daikōmyō —, tratadas no §3.3. Era

@@ -73,7 +73,7 @@ de nível entre os espíritos de divindades e budas que ali se manifestam.** É 
 personalidade do autor que o determina: no caso mais elevado, desce o espírito
 divino superior que lhe corresponde. Por isso, **mesmo quando a forma exterior é a
 mesma, se a personalidade do autor é inferior, manifesta-se um espírito divino
-substituto, ou um espírito divino parcial**, correspondente a esse nível."*
+substituto, ou um espírito divino parcial**correspondente a esse nível."*
 — *As maravilhas do mundo espiritual*, Tijotengoku (Tijotengoku) nº 9, 25 de outubro de 1949
 
 Três coisas importam nesta passagem. A primeira é a expressão «mesmo quando a forma
@@ -178,7 +178,7 @@ uma **caligrafia dele** — «no lugar da Imagem» —, e não a imagem de outra
 saudação matinal e vesperal diante dos caracteres Nikkō ("Luz do Sol")**, e ali
 sozinha
 aquietava o coração perturbado."*
-— *O Johrei comparado à medicina*
+— *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953
 
 **A conclusão, então, não é uma inferência frágil: é a aplicação dos três
 princípios.** Uma Imagem escrita por outra pessoa não poderia ser a Imagem da Luz
@@ -606,7 +606,7 @@ O rito de sufrágio tem, no vocabulário da época, **dois nomes distintos**, pa
 duas cerimônias distintas — e é por isso que a busca pelo conceito ("rito de
 sufrágio") não o encontrava. Ambos estão documentados.
 
-**O Culto de Entronização (「御霊祭」) — a entronização da Imagem.** O nome diz
+**O Culto de Entronização — a entronização da Imagem.** O nome diz
 literalmente «festa dos espíritos»; o que a documentação mostra é sempre a
 consagração do objeto. As 16 ocorrências
 estão invariavelmente ligadas ao ato de receber a Imagem:
@@ -624,7 +624,7 @@ por todo o corpo, as mãos se juntaram e a boca começou a falar."*
 > 「**経緯の御書体を御迎え致し**、岐阜から清水先生を迎え賑かに**御霊祭を執行
 > 致しました**。」
 
-*"**Recebemos a caligrafia keiki**, fizemos vir o Sr. Shimizu de Gifu e **executamos
+*"**Recebemos a caligrafia keiki**fizemos vir o Sr. Shimizu de Gifu e **executamos
 com solenidade o Culto de Entronização**."*
 
 > — 「不治の喘息快癒す」『地上天国』3号, 20 de abril de 1949 ·
@@ -633,7 +633,7 @@ com solenidade o Culto de Entronização**."*
 É, portanto, o **rito de consagração do objeto**, ministrado por um dirigente no
 momento em que a família recebe a Imagem — não o sufrágio dos ancestrais.
 
-**O Sosen-sai (「先祖祭」) — o sufrágio dos antepassados.** 40 ocorrências, e a natureza é
+**O Sosen-sai — o sufrágio dos antepassados.** 40 ocorrências, e a natureza é
 outra:
 é **recorrente** e acontece **no altar doméstico**:
 
@@ -709,7 +709,7 @@ E o sétimo define como se ocupa o cargo e o oitavo, por quanto tempo:
 diretores responsáveis chamam-se **diretores (riji)**. Art. 7º — O presidente
 é **determinado por escolha mútua dos diretores**. Os diretores são nomeados pelo
 presidente dentre os eleitos pela assembleia geral. Art. 8º — **O mandato do
-presidente e dos diretores é de três anos cada**, admitida a recondução."*
+presidente e dos diretores é de três anos cada**admitida a recondução."*
 
 Note-se a inversão que o regulamento consagra: o presidente não é eleito pela
 assembleia, mas pelos pares no colégio de diretores. É a **institucionalização da
@@ -801,7 +801,7 @@ E o substantivo da proposta: **só composto**.
 > たるや素晴しいのである」
 
 *"Com a minha cultura sem adubo, o que mais ajuda não é apenas **não usar esterco
-humano**, mas o fato de que **nenhum outro adubo é necessário — só composto basta**; e,
+humano**mas o fato de que **nenhum outro adubo é necessário — só composto basta**; e,
 apesar disso, os resultados são esplêndidos."*
 
 Meishu-Sama enumera então seis vantagens, que valem ser reproduzidas porque são a
@@ -1312,7 +1312,7 @@ O dia começava às 7h30, e começava **pelo rádio**:
 *"Levanta-se às 7h30 e, primeiro, **liga o rádio: é assim que o dia começa.** […] Sobretudo
 **não se deixa escapar nenhuma notícia**; nós mantemos silêncio rigoroso, e vê-se o quanto
 ele tem grande interesse no movimento do mundo hora a hora — **apreende o desenrolar dos
-tempos com espantosa exatidão**, e toma sempre a melhor medida no melhor momento."*
+tempos com espantosa exatidão**e toma sempre a melhor medida no melhor momento."*
 
 ![*O dia a dia do grande mestre Jikan* — o caderno que traz o relato da rotina diária de Meishu-Sama, com a marcação das horas, o rádio pela manhã e o banho morno. [Fac-símile: capa do número. A página do artigo não pôde ser localizada com segurança no OCR da documentação.]](facsimiles/jikan02_rotina.jpg)
 
@@ -1634,7 +1634,7 @@ queria extirpar.
 **O que não está documentado.** Não há, na documentação consultada, tabela de
 vencimentos, contrato de trabalho, critério de fixação de honorário por grau, nem
 registro de pagamento mensal pela Sede a ministros. As buscas pelos quatro modos japoneses
-de dizer «salário» — *kyūryō*, *hōkyū*, *gekkyū* e *kyūyo* — e por «honorário» não devolvem
+de dizer «salário» — *kyūryō**, *gekkyū* e *kyūyo* — e por «honorário» não devolvem
 material administrativo pertinente: as ocorrências de *mensalidade* referem-se a aulas de
 arte, e as demais, a contextos alheios à administração eclesiástica. Nem o Regulamento de 1951 nem os relatórios de
 reorganização tratam de vínculo empregatício com oficiantes ou ministros — o que,
@@ -1655,7 +1655,7 @@ A busca pelo termo *dízimo* ("um décimo") na documentação retorna apenas oco
 alheias: o décimo de grau em medição de temperatura, a redução de um décimo na
 legislação, etc. **Não há na documentação da época nenhuma passagem em que Meishu-Sama fale
 de dízimo.** As categorias financeiras que ele efetivamente usou são outras: a **taxa
-religiosa**, o **rateio entre igrejas**, a **quota do membro**, a **contribuição** e a
+religiosa**o **rateio entre igrejas**a **quota do membro**a **contribuição** e a
 **doação**. Nenhuma delas tem caráter proporcional à renda.
 
 Essa ausência é significativa, e articula-se com a orientação pastoral registrada
@@ -1690,9 +1690,9 @@ negativas; são pontos em que a documentação não se pronuncia.
 |---|---|
 | Desenho da Imagem por tipo de unidade | Sem fonte. Só há o critério de **tamanho** por proporção ao tokonoma |
 | Imagem escrita por terceiro | Sem fonte direta. Resposta **inferida** de dois princípios (representação e escrita como Luz) |
-| ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — *, O modo formal de oferecer peixe cru, arroz lavado e sal*, Gokōwa-roku nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
+| ~~Água, sal e arroz lavado como oferendas~~ | ❌ **Corrigido em 13/10:** **há ensinamento direto** — *O modo formal de oferecer peixe cru, arroz lavado e sal*, Gokōwa-roku nº 6, 23/04/1949 (`search1/situmon/m240499.html`): são as oferendas sagradas do Xintó e **comida de deus-dragão**; à Komyo-Nyorai oferta-se comida humana. **arroz lavado ofertado à Imagem** está atestado (`search2/okage/ko/qkomyo19.html`). Ver Parte III, §31 |
 | Oferendas no culto diante da caligrafia Kōmyō | Sem fonte. Há fonte para o culto matinal e vesperal; não para oferendas |
-| Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio *, Orientação para o Grande Culto de Outono*, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, Mioshie-shū nº 29, `search1/kouwa/s281207.html`) e pelo relato de Eikō nº 277 (`search2/kikou2/shikiten01.html`) |
+| Oferenda cozinhada no Grande Culto de Outono de 1954 | **Material excluído por política de citação.** A única fonte era o ensaio *Orientação para o Grande Culto de Outono*, de autoria do Rev. Kihara, e nele a mudança aparece como decisão daquele dirigente, não como palavra de Meishu-Sama. O trecho foi substituído pela crítica de Meishu-Sama à forma arcaica (palestra de 07/12/1953, Mioshie-shū nº 29, `search1/kouwa/s281207.html`) e pelo relato de Eikō nº 277 (`search2/kikou2/shikiten01.html`) |
 | Oratório de antepassados nas unidades | Sem fonte. As 577 ocorrências de 仏壇 são todas de altar **doméstico** |
 | Lugar de consagração usado por Meishu-Sama | Sem fonte |
 | ~~Rito de sufrágio na Sede Geral~~ | ❌ **Corrigido:** o rito **existe e está documentado** — é o `Sosen-sai`, distinto da entronização da Imagem. Ver §16.5 |

@@ -1,6 +1,6 @@
 ## 38. Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953)
 
-**Documento:** *, Aviso* (*, Chūi*, "Aviso").
+**Documento:** *Aviso* (*Chūi*, "Aviso").
 
 **Publicação:** Eikō nº 191, 14 de janeiro de 1953.
 

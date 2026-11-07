@@ -1,6 +1,6 @@
 ## 36. Anexo E — Regulamento da pessoa jurídica religiosa 「Igreja Messiânica Mundial」 (1951)
 
-**Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*, Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
+**Documento:** Regulamento da pessoa jurídica religiosa「Igreja Messiânica Mundial」(*Shūkyō Hōjin "Sekai Kyūseikyō" Kisoku*),
 "Regulamento da pessoa jurídica religiosa Igreja Messiânica Mundial".
 **Data:** 10 de outubro de 1951.
 

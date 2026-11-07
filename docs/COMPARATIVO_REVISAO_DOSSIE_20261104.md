@@ -10,19 +10,20 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 |---|---:|
 | Aparelho de citação — termos japoneses em prosa | 28 |
 | Aparelho de citação — tradução das fontes | 259 |
+| Citações sem atribuição — veículo e data | 6 |
 | Fora do volume — Nota de método (III §32) | 1 |
 | Fora do volume — Síntese das lacunas (II §22) | 6 |
 | Normalização de grafia — Komyo-Nyorai | 17 |
 | Normalização de grafia — Kyoshu | 19 |
 | Capítulo 1 — O período e as fontes | 4 |
 | Capítulo 2 — A cronologia da institucionalização (1934–1955) | 13 |
-| Capítulo 3 — As Imagens da Luz Divina e os Ohikari | 6 |
+| Capítulo 3 — As Imagens da Luz Divina e os Ohikari | 9 |
 | Capítulo 4 — As imagens da Luz Divina e o critério de proporção | 6 |
 | Capítulo 5 — A ordem do culto | 5 |
 | Capítulo 6 — Os tipos de culto | 7 |
 | Capítulo 7 — As oferendas do culto | 3 |
 | Capítulo 8 — As oferendas diante da Imagem da Luz Divina | 3 |
-| Capítulo 9 — O sufrágio dos antepassados | 14 |
+| Capítulo 9 — O sufrágio dos antepassados | 16 |
 | Capítulo 10 — A difusão pós-guerra: método, instrumentos e escala | 1 |
 | Capítulo 11 — A formação de novos membros: o Kyoshu | 2 |
 | Capítulo 12 — A salvação e o Ohikari | 4 |
@@ -53,7 +54,7 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 | Capítulo 38 — Anexo F — O comunicado da reorganização de 1951 | 8 |
 | Capítulo 39 — Anexo G — Aviso *Aviso* sobre o valor dos escritos (1953) | 7 |
 | Capítulo 40 — Anexo H — Manual do Curso (Kyoshu Yōkō), edição revista de 1954 | 5 |
-| **Total** | **632** |
+| **Total** | **643** |
 
 ### Correções de montagem (valem para o volume inteiro)
 
@@ -2968,6 +2969,69 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > — *O Johrei comparado à medicina*
 
 
+### Citações sem atribuição — veículo e data
+
+**1.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — *História da minha luta com Satanás*, `search1/wa/watasi05.html`
+
+> **Depois**
+>
+> — *História da minha luta com Satanás*, texto inédito, escrito em 1952 · `search1/wa/watasi05.html`
+
+**2.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — *Perguntas e respostas: palavras de luz*, `search1/situmon/m2411.html`
+
+> **Depois**
+>
+> — *Perguntas e respostas: palavras de luz*, Gokōwa-roku nº 16, 20 de janeiro de 1950 (sessão de novembro-dezembro de 1949) · `search1/situmon/m2411.html`
+
+**3.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> — *As novas religiões e a idade do mundo* · `search1/English/esinsyu2.html`
+
+> **Depois**
+>
+> — *As novas religiões e a idade do mundo*, Eikō nº 244, 20 de janeiro de 1954 · `search1/shi/sinsyu2.html`
+
+**4.** *docs/volume_novo/16b_cultos.md*
+
+> **Antes**
+>
+> — *O Johrei comparado à medicina*
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953
+
+**5.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> — *O Johrei comparado à medicina*
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953
+
+**6.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> — *O Johrei comparado à medicina* · `search1/English/ejorei12.html`
+
+> **Depois**
+>
+> — *O Johrei comparado à medicina*, Eikō nº 194, 4 de fevereiro de 1953 · `search1/shi/jorei12.html`
+
+
 ### Fora do volume — Nota de método (III §32)
 
 **1.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
@@ -4805,6 +4869,40 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > O Ohikari é uma **caligrafia de punho de Meishu-Sama**, dobrada e usada ao pescoço. A
 > documentação descreve a sua natureza e a sua função com precisão:
 
+**7.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> 'Dai-Kōmyō' é só para portadores de qualificação.**
+
+> **Depois**
+>
+> 'Daikōmyō' é só para portadores de qualificação.**
+
+**8.** *docs/LEVANTAMENTO_DIFUSAO_PARTE_I_PROSA_20261002.md*
+
+> **Antes**
+>
+> O Ohikari 'Dai-Kōmyō'
+> pode ser dado também
+
+> **Depois**
+>
+> O Ohikari 'Daikōmyō'
+> pode ser dado também
+
+**9.** *docs/DOSSIE_PARTE_III_DOUTRINA_ECONOMIA_E_HIERARQUIA_20261013.md*
+
+> **Antes**
+>
+> e há **três espécies: Hikari, Kōmyō e
+> Dai-Kōmyō**; o espírito divino
+
+> **Depois**
+>
+> e há **três espécies: Hikari, Kōmyō e
+> Daikōmyō**; o espírito divino
+
 
 ### Capítulo 4 — As imagens da Luz Divina e o critério de proporção
 
@@ -5527,6 +5625,26 @@ A revisão seguiu duas regras fixas: **(1)** o `glossario_traducao.json` é auto
 > a reancorar em fonte institucional, e não como lacuna da prática: o que falta é o
 > documento, não o rito.
 >
+
+**15.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> **O Culto de Entronização (「御霊祭」) — a entronização da Imagem.** O nome diz
+
+> **Depois**
+>
+> **O Culto de Entronização — a entronização da Imagem.** O nome diz
+
+**16.** *docs/DOSSIE_PARTE_II_CULTO_E_VIDA_20261002.md*
+
+> **Antes**
+>
+> **O Sosen-sai (「先祖祭」) — o sufrágio dos antepassados.** 40 ocorrências
+
+> **Depois**
+>
+> **O Sosen-sai — o sufrágio dos antepassados.** 40 ocorrências
 
 
 ### Capítulo 10 — A difusão pós-guerra: método, instrumentos e escala
